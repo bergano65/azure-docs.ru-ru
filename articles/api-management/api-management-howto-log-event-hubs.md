@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 01/29/2018
 ms.author: apimpm
-ms.openlocfilehash: 0d122a56035e58bd5065da8fde56246da6478d54
-ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
+ms.openlocfilehash: f594d4467e64ead40ff3c26aaf3e3a44cb673a98
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82871259"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86250300"
 ---
 # <a name="how-to-log-events-to-azure-event-hubs-in-azure-api-management"></a>Как регистрировать события в Центрах событий Azure при использовании службы управления API Azure
 Центры событий Azure — это высокомасштабируемая служба приема данных, которая может обрабатывать миллионы событий в секунду, позволяя вам обрабатывать и анализировать огромное количество данных, создаваемых подключенными устройствами и приложениями. Центры событий выступают в качестве "главного входа"для событий конвейера. После того как данные поступили в концентратор событий, они могут быть преобразованы и сохранены с использованием любого поставщика аналитики в режиме реального времени или адаптера пакетной обработки или хранения. Центры событий отделяют создание потока событий от потребления этих событий, чтобы потребители событий могли обращаться к событиям по собственному расписанию.
@@ -27,12 +27,12 @@ ms.locfileid: "82871259"
 
 ## <a name="create-an-azure-event-hub"></a>Создание концентратора событий Azure
 
-Подробные инструкции о том, как создать концентратор событий и получить строки подключения, необходимые для отправки событий в концентратор и получения событий из него, см. в статье [Создание пространства имен Центров событий и концентратора событий с помощью портала Azure](https://docs.microsoft.com/azure/event-hubs/event-hubs-create).
+Подробные инструкции о том, как создать концентратор событий и получить строки подключения, необходимые для отправки событий в концентратор и получения событий из него, см. в статье [Создание пространства имен Центров событий и концентратора событий с помощью портала Azure](../event-hubs/event-hubs-create.md).
 
 ## <a name="create-an-api-management-logger"></a>Создание средства ведения журнала для управления API
-Теперь, когда концентратор событий создан, нужно настроить [средство ведения журнала](https://docs.microsoft.com/rest/api/apimanagement/2019-12-01/logger) в службе управления API, которое сможет регистрировать события в концентраторе событий.
+Теперь, когда концентратор событий создан, нужно настроить [средство ведения журнала](/rest/api/apimanagement/2019-12-01/logger) в службе управления API, которое сможет регистрировать события в концентраторе событий.
 
-Средства ведения журнала службы управления API настраиваются с помощью [REST API службы управления API](https://aka.ms/apimapi). Подробные примеры запросов см. [в разделе Создание средств ведения журнала](https://docs.microsoft.com/rest/api/apimanagement/2019-12-01/logger/createorupdate).
+Средства ведения журнала службы управления API настраиваются с помощью [REST API службы управления API](https://aka.ms/apimapi). Подробные примеры запросов см. [в разделе Создание средств ведения журнала](/rest/api/apimanagement/2019-12-01/logger/createorupdate).
 
 ## <a name="configure-log-to-eventhub-policies"></a>Настройка политик входа в eventhub
 
@@ -46,7 +46,7 @@ ms.locfileid: "82871259"
 6. В окне обработки входящих или исходящих запросов щелкните треугольник (рядом со значком карандаша).
 7. Выберите редактор кода. Дополнительные сведения см. в статье [Настройка или изменение политик службы управления API Azure](set-edit-policies.md).
 8. Наведите указатель мыши на раздел политики `inbound` или `outbound`.
-9. В окне справа выберите **Расширенные политики** > **Журнал для EventHub**. В результате будет вставлен шаблон инструкции политики `log-to-eventhub`.
+9. В окне справа выберите **Расширенные политики**  >  **Журнал для EventHub**. В результате будет вставлен шаблон инструкции политики `log-to-eventhub`.
 
 ```xml
 <log-to-eventhub logger-id="logger-id">
@@ -69,7 +69,7 @@ ms.locfileid: "82871259"
 
 ## <a name="preview-the-log-in-event-hubs-by-using-azure-stream-analytics"></a>Предварительный просмотр журнала в концентраторах событий с помощью Azure Stream Analytics
 
-Вы можете просмотреть журнал в концентраторах событий с помощью [запросов Azure Stream Analytics](https://docs.microsoft.com/azure/event-hubs/process-data-azure-stream-analytics). 
+Вы можете просмотреть журнал в концентраторах событий с помощью [запросов Azure Stream Analytics](../event-hubs/process-data-azure-stream-analytics.md). 
 
 1. В портал Azure перейдите к концентратору событий, в который средство ведения журнала отправляет события. 
 2. В разделе " **компоненты**" перейдите на вкладку **обработка данных** .
@@ -79,11 +79,11 @@ ms.locfileid: "82871259"
 ## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительная информация о Центрах событий Azure
   * [Приступая к работе с Центрами событий Azure](../event-hubs/event-hubs-c-getstarted-send.md)
-  * [Прием сообщений через EventProcessorHost](../event-hubs/event-hubs-dotnet-standard-getstarted-receive-eph.md)
+  * [Прием сообщений через EventProcessorHost](../event-hubs/event-hubs-dotnet-standard-getstarted-send.md)
   * [Руководство по программированию Центров событий](../event-hubs/event-hubs-programming-guide.md)
 * Дополнительные сведения об интеграции службы управления API и Центров событий
-  * [Справочник по сущности "Средство ведения журнала"](https://docs.microsoft.com/rest/api/apimanagement/2019-12-01/logger)
-  * [Справочник по политике регистрации в концентраторе событий](https://docs.microsoft.com/azure/api-management/api-management-advanced-policies#log-to-eventhub)
+  * [Справочник по сущности "Средство ведения журнала"](/rest/api/apimanagement/2019-12-01/logger)
+  * [Справочник по политике регистрации в концентраторе событий](./api-management-advanced-policies.md#log-to-eventhub)
   * [Мониторинг API-интерфейсов с помощью Управления API Azure, Центров событий и Moesif](api-management-log-to-eventhub-sample.md)  
 * Узнайте больше об интеграции с [Azure Application Insights](api-management-howto-app-insights.md).
 

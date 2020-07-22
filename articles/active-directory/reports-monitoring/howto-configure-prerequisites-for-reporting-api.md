@@ -9,7 +9,7 @@ editor: ''
 ms.assetid: ada19f69-665c-452a-8452-701029bf4252
 ms.service: active-directory
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
@@ -17,12 +17,12 @@ ms.date: 03/04/2020
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7fd3580ca03fa49d428904c6da78fdf9cda202c7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c4702b12bea2e078af4d10fe9d709d16c361b3f8
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80991268"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85608268"
 ---
 # <a name="prerequisites-to-access-the-azure-active-directory-reporting-api"></a>Предварительные требования для доступа к API отчетов Azure Active Directory
 
@@ -35,7 +35,7 @@ API отчетов использует [OAuth](https://docs.microsoft.com/azure
 1. [Назначение ролей](#assign-roles)
 2. [Требования к лицензии](#license-requirements)
 3. [Регистрация приложения](#register-an-application)
-4. [Предоставление разрешений](#grant-permissions)
+4. [Предоставить разрешения](#grant-permissions)
 5. [Сбор параметров конфигурации](#gather-configuration-settings)
 
 ## <a name="assign-roles"></a>Назначение ролей
@@ -81,11 +81,11 @@ API отчетов использует [OAuth](https://docs.microsoft.com/azure
 
     ![Регистрация приложения](./media/howto-configure-prerequisites-for-reporting-api/04.png)
 
-    a. В текстовом поле **Имя** введите `Reporting API application`.
+    а. В текстовом поле **Имя** введите `Reporting API application`.
 
     b. Для **поддерживаемого типа учетных записей**выберите **учетные записи только в этом Организации**.
 
-    c. В **текстовом поле** **URL-адрес перенаправления** выберите `https://localhost`введите.
+    c. В **текстовом поле** **URL-адрес перенаправления** выберите введите `https://localhost` .
 
     d. Выберите **Зарегистрировать**. 
 
@@ -97,7 +97,7 @@ API отчетов использует [OAuth](https://docs.microsoft.com/azure
 | API | Разрешение |
 | --- | --- |
 | Microsoft Azure Active Directory | Чтение данных каталога |
-| Microsoft Graph | Прочитать все данные журнала аудита |
+| Microsoft Graph | Прочитать все данные журнала аудита |
 
 
 ![Регистрация приложения](./media/howto-configure-prerequisites-for-reporting-api/36.png)
@@ -132,7 +132,7 @@ API отчетов использует [OAuth](https://docs.microsoft.com/azure
 В этом разделе показано, как получить из каталога следующие параметры:
 
 - Доменное имя
-- ИД клиента
+- Идентификатор клиента
 - Секрет клиента
 
 Эти значения необходимы при настройке вызовов API отчетов. 
@@ -184,7 +184,7 @@ API отчетов использует [OAuth](https://docs.microsoft.com/azure
 
 5. На странице **Добавление секрета клиента** добавьте:
 
-    a. В текстовом поле **Описание** введите `Reporting API`.
+    а. В текстовом поле **Описание** введите `Reporting API`.
 
     b. Для параметра **Срок действия истекает** выберите значение **Через 2 года**.
 
@@ -222,7 +222,7 @@ API отчетов использует [OAuth](https://docs.microsoft.com/azure
 
 Выполните действия, описанные в разделе [необходимые условия для доступа к API отчетов Azure Active Directory](howto-configure-prerequisites-for-reporting-api.md) , чтобы убедиться, что приложение работает с нужным набором разрешений. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Получение данных с помощью API отчетов Azure Active Directory с сертификатами](tutorial-access-api-with-certificates.md)
 * [Справочник по API аудита](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/directoryaudit) 

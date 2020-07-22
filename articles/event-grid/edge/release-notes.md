@@ -1,19 +1,14 @@
 ---
 title: Заметки о выпуске IoT Edge службы "Сетка событий Azure" | Документация Майкрософт
 description: Заметки о выпуске службы "Сетка событий Azure" в IoT Edge
-author: banisadr
-ms.author: babanisa
-ms.reviewer: spelluru
-ms.date: 01/09/2020
+ms.date: 07/08/2020
 ms.topic: article
-ms.service: event-grid
-services: event-grid
-ms.openlocfilehash: 18a4fb9a979841bbf6cd0090fc67a77327c61596
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a7582750f5230f02c784b14f50dfc6efa7af8698
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76849712"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86171420"
 ---
 # <a name="release-notes-azure-event-grid-on-iot-edge"></a>Заметки о выпуске: сетка событий Azure на IoT Edge
 
@@ -47,4 +42,4 @@ ms.locfileid: "76849712"
 * Публикация в разделах служебной шины в качестве назначения
 * Публикация в очереди хранилища в качестве назначения
 
-Теги: `1.0.0-preview2`, `1.0`,`latest`
+Теги: `1.0.0-preview2` , `1.0` ,`latest`

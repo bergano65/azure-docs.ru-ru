@@ -48,12 +48,18 @@
           href: tutorial-assess-physical.md
         - name: Перенос физических серверов
           href: tutorial-migrate-physical-virtual-machines.md
+    - name: Оценка и перенос виртуальных машин AWS
+      items:
+        - name: 'Обнаружение, оценка и перенос виртуальных машин Amazon Web Services (AWS) в Azure'
+          href: tutorial-migrate-aws-virtual-machines.md
     - name: Оценка импортированных серверов для миграции
       items:
         - name: Оценка импортированных серверов для миграции
           href: tutorial-assess-import.md
 - name: Основные понятия
   items:
+    - name: Создание плана миграции с помощью службы "Миграция Azure"
+      href: concepts-migration-planning.md
     - name: Таблицы поддержки
       items:
         - name: Общая поддержка
@@ -80,8 +86,10 @@
       href: hyper-v-migration-architecture.md
     - name: Архитектура миграции на основе агента VMware
       href: agent-based-migration-architecture.md
-    - name: Обзор оценок
+    - name: Общие сведения об оценках виртуальных машин Azure
       href: concepts-assessment-calculation.md
+    - name: Общие сведения об оценках AVS
+      href: concepts-azure-vmware-solution-assessment-calculation.md
     - name: Рекомендации по оценке
       href: best-practices-assessment.md
     - name: Общие сведения об анализе зависимостей
@@ -118,16 +126,20 @@
       href: how-to-create-group-machine-dependencies.md
     - name: Анализ зависимостей компьютера (без агентов)
       href: how-to-create-group-machine-dependencies-agentless.md
-    - name: Создание оценки
+    - name: Создание оценки для виртуальных машин Azure
       href: how-to-create-assessment.md
+    - name: Создание оценки AVS
+      href: how-to-create-azure-vmware-solution-assessment.md
     - name: Оценка базы данных SQL Server
-      href: 'https://docs.microsoft.com/sql/dma/dma-assess-sql-data-estate-to-sqldb'
+      href: /sql/dma/dma-assess-sql-data-estate-to-sqldb
     - name: Настройка оценки
       href: how-to-modify-assessment.md
     - name: Добавление средств миграции
       href: how-to-migrate.md
     - name: 'Перенос виртуальных машин VMware на виртуальные машины Azure, зашифрованные с помощью SSE и CMK'
       href: how-to-migrate-vmware-vms-with-cmk-disks.md
+    - name: "Подготовка серверов Windows\_2003 к миграции"
+      href: prepare-windows-server-2003-migration.md
     - name: Подготовка компьютеров к миграции
       href: prepare-for-migration.md
     - name: Удаление проекта службы "Миграция Azure"
@@ -159,9 +171,9 @@
 - name: Ресурсы
   items:
     - name: Миграция с помощью Cloud Adoption Framework
-      href: 'https://docs.microsoft.com/azure/architecture/cloud-adoption/migrate/index'
+      href: /azure/cloud-adoption-framework/migrate/
     - name: REST API
-      href: 'https://docs.microsoft.com/rest/api/migrate/'
+      href: /rest/api/migrate/
     - name: Шаблон Resource Manager
       href: /azure/templates/microsoft.migrate/allversions
     - name: Цены
@@ -169,7 +181,7 @@
     - name: UserVoice
       href: 'https://aka.ms/AzureMigrateUservoice'
     - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
-      href: 'https://docs.microsoft.com/answers/topics/azure-migrate.html'
+      href: /answers/topics/azure-migrate.html
     - name: Блог
       href: 'https://azure.microsoft.com/blog/tag/azure-migrate/'
     - name: Служба "Миграция Azure"

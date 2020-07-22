@@ -98,6 +98,8 @@
           href: concepts-query-performance-insight.md
         - name: Рекомендации по производительности
           href: concepts-performance-recommendations.md
+        - name: Параметры сервера
+          href: concepts-server-parameters.md
     - name: Разработка
       items:
         - name: Совместимость драйверов и инструментов
@@ -110,6 +112,10 @@
           href: concepts-data-in-replication.md
         - name: Реплики чтения
           href: concepts-read-replicas.md
+    - name: Переключение между регионами
+      items:
+        - name: Портал Azure
+          href: howto-move-regions-portal.md
 - name: Практические руководства
   items:
     - name: Управление сервером
@@ -142,6 +148,10 @@
           href: howto-connection-string.md
         - name: Настройка SSL
           href: howto-configure-ssl.md
+        - name: Настройка TLS
+          href: howto-tls-configurations.md
+        - name: Подключение с перенаправлением
+          href: howto-redirection.md
     - name: Настройка параметров сервера
       items:
         - name: Портал Azure

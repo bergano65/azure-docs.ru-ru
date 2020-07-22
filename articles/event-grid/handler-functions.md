@@ -1,18 +1,14 @@
 ---
 title: Использование функции Azure как обработчика событий Сетки событий Azure
 description: Узнайте, как можно использовать функции Azure в качестве обработчиков событий Сетки событий Azure.
-services: event-grid
-author: spelluru
-ms.service: event-grid
 ms.topic: conceptual
-ms.date: 05/11/2020
-ms.author: spelluru
-ms.openlocfilehash: 3ff3c0013cb7a373461b997b9922612763461b8d
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
-ms.translationtype: HT
+ms.date: 07/07/2020
+ms.openlocfilehash: 8e48949bb5fecdf370fdf23146209ad757ffa062
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83595653"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86105767"
 ---
 # <a name="azure-function-as-an-event-handler-for-event-grid-events"></a>Использование функции Azure как обработчика событий Сетки событий
 
@@ -31,6 +27,26 @@ ms.locfileid: "83595653"
 | [Потоковая передача больших данных в хранилище данных](event-grid-event-hubs-integration.md) | Когда Центры событий создают файл сбора, служба "Сетка событий" отправляет событие приложению-функции. Это приложение извлекает файл сбора и переносит данные в хранилище данных. |
 | [Руководство. с примерами интеграции служебной шины Azure со службой "Сетка событий Azure"](../service-bus-messaging/service-bus-to-event-grid-integration-example.md?toc=%2fazure%2fevent-grid%2ftoc.json) | Сетка событий отправляет сообщения из раздела Служебной шины в приложение-функцию и приложение логики. |
 
+## <a name="rest-example-for-put"></a>Пример REST (для PUT)
+
+```json
+{
+    "properties": 
+    {
+        "destination": 
+        {
+            "endpointType": "AzureFunction",
+            "properties": 
+            {
+                "resourceId": "/subscriptions/<AZURE SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP NAME>/providers/Microsoft.Web/sites/<FUNCTION APP NAME>/functions/<FUNCTION NAME>",
+                "maxEventsPerBatch": 1,
+                "preferredBatchSizeInKilobytes": 64
+            }
+        },
+        "eventDeliverySchema": "EventGridSchema"
+    }
+}
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 См. список поддерживаемых обработчиков событий в статье [Обработчики событий](event-handlers.md). 

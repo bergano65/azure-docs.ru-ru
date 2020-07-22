@@ -5,20 +5,20 @@ description: Узнайте, как создать шлюз приложений
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
-ms.topic: article
+ms.topic: how-to
 ms.date: 11/13/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 0a92d0f7d17f6bb83efbe94434c25072975dbe57
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 79a239148647467185e407e1e07fdea658a7be40
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74047359"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86517912"
 ---
 # <a name="create-an-application-gateway-that-hosts-multiple-web-sites-using-the-azure-cli"></a>Создание шлюза приложений, на котором размещено несколько веб-сайтов, с помощью Azure CLI
 
-Чтобы настроить [размещение нескольких веб-сайтов](multiple-site-overview.md) при создании [шлюза приложений](overview.md), можно использовать Azure CLI. В этой статье описано, как определить серверные пулы адресов с помощью масштабируемых наборов виртуальных машин. Затем вы настроите прослушиватели и правила на основе принадлежащих вам доменов, чтобы обеспечить передачу веб-трафика на соответствующие серверы в пулах. В этой статье предполагается, что вы владеете несколькими доменами и в них используются примеры *www\.contoso.com* и *www\.Fabrikam.com*.
+Чтобы настроить [размещение нескольких веб-сайтов](multiple-site-overview.md) при создании [шлюза приложений](overview.md), можно использовать Azure CLI. В этой статье описано, как определить серверные пулы адресов с помощью масштабируемых наборов виртуальных машин. Затем вы настроите прослушиватели и правила на основе принадлежащих вам доменов, чтобы обеспечить передачу веб-трафика на соответствующие серверы в пулах. В этой статье предполагается, что вы владеете несколькими доменами и в них используются примеры *www \. contoso.com* и *www \. Fabrikam.com*.
 
 Вы узнаете, как выполнять следующие задачи:
 
@@ -30,7 +30,7 @@ ms.locfileid: "74047359"
 > * создание масштабируемых наборов виртуальных машин с внутренними пулами.
 > * создание записи CNAME в домене.
 
-![Пример маршрутизации нескольких сайтов](./media/tutorial-multiple-sites-cli/scenario.png)
+:::image type="content" source="./media/tutorial-multiple-sites-cli/scenario.png" alt-text="Шлюз приложений для нескольких сайтов":::
 
 При необходимости эти инструкции можно выполнить с помощью [Azure PowerShell](tutorial-multiple-sites-powershell.md).
 
@@ -119,9 +119,13 @@ az network application-gateway address-pool create \
   --name fabrikamPool
 ```
 
-### <a name="add-backend-listeners"></a>Добавление серверных прослушивателей
+### <a name="add-listeners"></a>Добавление прослушивателей
 
-Добавьте серверные прослушиватели, необходимые для маршрутизации трафика, при помощи команды [az network application-gateway http-listener create](/cli/azure/network/application-gateway/http-listener#az-network-application-gateway-http-listener-create).
+Добавьте прослушиватели, необходимые для маршрутизации трафика, с помощью команды [AZ Network Application-Gateway HTTP-прослушиватель Create](/cli/azure/network/application-gateway/http-listener#az-network-application-gateway-http-listener-create).
+
+>[!NOTE]
+> С помощью шлюза приложений или SKU WAF v2 можно также настроить до 5 имен узлов на прослушиватель, а в имени узла можно использовать подстановочные знаки. Дополнительные сведения см. [в разделе имена узлов с подстановочными знаками в прослушивателе](multiple-site-overview.md#wildcard-host-names-in-listener-preview) .
+>Чтобы использовать несколько имен узлов и подстановочных знаков в прослушивателе с помощью Azure CLI, необходимо использовать `--host-names` вместо `--host-name` . При использовании имен узлов можно указать до 5 имен узлов в виде значений, разделенных запятыми. Например `--host-names "*.contoso.com,*.fabrikam.com"`.
 
 ```azurecli-interactive
 az network application-gateway http-listener create \

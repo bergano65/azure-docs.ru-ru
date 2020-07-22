@@ -9,10 +9,9 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 0e019a9229b671be2fb73e758bd39f33657bc2d4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77083130"
 ---
 # <a name="set-up-cloudsimple-private-cloud-as-a-disaster-recovery-site-for-on-premises-vmware-workloads"></a>Настройка частного облака Клаудсимпле в качестве сайта аварийного восстановления для локальных рабочих нагрузок VMware
@@ -93,6 +92,6 @@ ms.locfileid: "77083130"
 6. При необходимости настройте параметры сети для отдельных виртуальных машин и создайте ВПГ.
 7. Протестируйте отработку отказа после завершения репликации.
 
-## <a name="reference"></a>Справочник
+## <a name="reference"></a>Справка
 
 [Документация по Zerto](https://www.zerto.com/myzerto/technical-documentation/)

@@ -8,14 +8,13 @@ ms.service: storage
 ms.topic: how-to
 ms.date: 12/18/2019
 ms.author: tamram
-ms.reviewer: cbrooks
+ms.reviewer: dineshm
 ms.subservice: blobs
-ms.openlocfilehash: 5250a27e6c5fcf012207f1edb95ad46c0aabfe63
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 2b4eef6a992915e934e69a93d440bc6fa60aa690
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79536179"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84803525"
 ---
 # <a name="create-a-user-delegation-sas-for-a-container-or-blob-with-powershell"></a>Создание SAS для делегирования пользователя для контейнера или большого двоичного объекта с помощью PowerShell
 
@@ -32,7 +31,7 @@ ms.locfileid: "79536179"
 1. Удалите все ранее установленные версии Azure PowerShell.
 
     - Удалите все предыдущие установки Azure PowerShell из Windows с помощью параметра **Apps & features** (Приложения и компоненты) в разделе **Параметры**.
-    - Удалите все модули **Azure** из `%Program Files%\WindowsPowerShell\Modules`.
+    - Удалите все модули **Azure** из `%Program Files%\WindowsPowerShell\Modules` .
 
 1. Убедитесь, что у вас установлена последняя версия PowerShellGet. Откройте окно Windows PowerShell и выполните следующую команду, чтобы установить последнюю версию:
 
@@ -62,7 +61,7 @@ ms.locfileid: "79536179"
 Get-Module -ListAvailable -Name Az.Storage -Refresh
 ```
 
-Дополнительные сведения об установке Azure PowerShell см. в [статье установка Azure PowerShell с помощью PowerShellGet](/powershell/azure/install-az-ps).
+Дополнительные сведения об установке Azure PowerShell см. в статье [Установка Azure PowerShell с помощью PowerShellGet](/powershell/azure/install-az-ps).
 
 ## <a name="sign-in-to-azure-powershell-with-azure-ad"></a>Вход в Azure PowerShell с помощью Azure AD
 
@@ -98,7 +97,7 @@ New-AzRoleAssignment -SignInName <email> `
 
 Так как максимальный интервал, по истечении которого ключ делегирования пользователя является допустимым, — 7 дней с даты начала, необходимо указать время окончания срока действия для SAS в течение 7 дней с момента запуска. После истечения срока действия ключа делегирования пользователя SAS является недействительным, поэтому срок действия SAS с временем окончания срока хранения более 7 дней будет действительным только в течение 7 дней.
 
-Чтобы создать SAS делегирования пользователя для контейнера или большого двоичного объекта с Azure PowerShell, сначала создайте новый объект контекста службы хранилища Azure, `-UseConnectedAccount` указав параметр. `-UseConnectedAccount` Параметр указывает, что команда создает объект контекста в учетной записи Azure AD, с которой вы вошли.
+Чтобы создать SAS делегирования пользователя для контейнера или большого двоичного объекта с Azure PowerShell, сначала создайте новый объект контекста службы хранилища Azure, указав `-UseConnectedAccount` параметр. `-UseConnectedAccount`Параметр указывает, что команда создает объект контекста в учетной записи Azure AD, с которой вы вошли.
 
 Не забудьте заменить значения заполнителей в угловых скобках собственными значениями.
 
@@ -130,7 +129,7 @@ New-AzStorageContainerSASToken -Context $ctx `
 
 Чтобы вернуть маркер SAS для делегирования пользователя для большого двоичного объекта, вызовите команду [New-азсторажеблобсастокен](/powershell/module/az.storage/new-azstorageblobsastoken) , передав созданный ранее объект контекста службы хранилища Azure.
 
-Следующий синтаксис возвращает SAS делегирования пользователя для большого двоичного объекта. В примере указывается `-FullUri` параметр, который возвращает URI большого двоичного объекта с добавленным маркером SAS. Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями:
+Следующий синтаксис возвращает SAS делегирования пользователя для большого двоичного объекта. В примере указывается `-FullUri` параметр, который ВОЗВРАЩАЕТ URI большого двоичного объекта с добавленным маркером SAS. Не забудьте заменить значения заполнителей в квадратных скобках собственными значениями:
 
 ```powershell
 New-AzStorageBlobSASToken -Context $ctx `

@@ -10,14 +10,14 @@ ms.author: sgilley
 author: sdgilley
 ms.reviewer: ranku
 ms.date: 04/09/2020
-ms.openlocfilehash: d960c8225cbb22c221ecaec1b7c49b5bb20c1429
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 5f3a73ed6c7843c13d35a91a75189fe9dd8d4dbd
+ms.sourcegitcommit: d7fba095266e2fb5ad8776bffe97921a57832e23
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82203647"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84628391"
 ---
-# <a name="tutorial-create-a-labeling-project-for-multi-class-image-classification"></a>Руководство по Создание проекта маркировки для многоклассовой классификации изображений 
+# <a name="tutorial-create-a-labeling-project-preview-for-multi-class-image-classification"></a>Руководство по Создание проекта маркировки (предварительная версия) для многоклассовой классификации изображений 
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 В этом руководстве показано, как управлять процессом маркировки (добавления меток) при подготовке данных для создания моделей машинного обучения. Маркировка данных в Машинном обучении Azure предоставляется в общедоступной предварительной версии.
@@ -77,13 +77,13 @@ ms.locfileid: "82203647"
 
 ### <a name="create-a-labeling-project"></a>Создание проекта маркировки
 
-Теперь у вас есть список маркировщиков и доступ к данным для маркировки. Это значит, что вы можете создать проект маркировки.
+Теперь у вас есть доступ к данным для маркировки. Это значит, что вы можете создать проект маркировки.
 
 1. В верхней части страницы щелкните **Проекты**.
 
 1. Выберите **+ Добавить проект**.
 
-    ![Создание проекта](media/tutorial-labeling/create-project.png)
+    :::image type="content" source="media/tutorial-labeling/create-project.png" alt-text="Создание проекта":::
 
 ### <a name="project-details"></a>сведения о проекте;
 
@@ -109,6 +109,12 @@ ms.locfileid: "82203647"
     1. Выберите окружность рядом с именем набора данных в списке, например **images-for-tutorial**.
 
 1. Чтобы продолжить создание проекта, щелкните **Далее**.
+
+### <a name="incremental-refresh"></a>Добавочное обновление
+
+Если вам нужно добавить новые изображения в набор данных проекта, используйте добавочное обновление, чтобы найти и добавить их.  При включении этой функции проект будет периодически проверять наличие новых изображений.  Вы не будете добавлять новые изображения в хранилище данных в этом учебнике, поэтому не отмечайте этот параметр.
+
+Нажмите кнопку **Далее**, чтобы продолжить.
 
 ### <a name="label-classes"></a>Классы меток
 

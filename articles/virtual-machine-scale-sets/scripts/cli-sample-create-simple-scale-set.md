@@ -6,15 +6,15 @@ ms.author: mimckitt
 ms.topic: sample
 ms.service: virtual-machine-scale-sets
 ms.subservice: cli
-ms.date: 03/27/2018
+ms.date: 06/25/2020
 ms.reviewer: jushiman
 ms.custom: mimckitt
-ms.openlocfilehash: 7f80515a0a441f910a2133a36d62a09062c3840f
-ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
+ms.openlocfilehash: 1456301f1cc1da33835206e10dc1550ed8fcbbf2
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83699790"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86503070"
 ---
 # <a name="create-a-virtual-machine-scale-set-with-the-azure-cli"></a>Создание масштабируемого набора виртуальных машин с помощью Azure CLI
 При помощи этого скрипта создается масштабируемый набор виртуальных машин Azure с операционной системой Ubuntu, а также связанные сетевые ресурсы, включая подсистему балансировки нагрузки. После выполнения сценария можно получить доступ к экземплярам виртуальных машин по протоколу SSH.
@@ -43,4 +43,4 @@ az group delete --name myResourceGroup
 | [az group delete](/cli/azure/ad/group) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure/overview).
+Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure/overview).

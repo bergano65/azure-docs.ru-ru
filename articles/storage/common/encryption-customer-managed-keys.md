@@ -8,28 +8,27 @@ ms.service: storage
 ms.date: 03/12/2020
 ms.topic: conceptual
 ms.author: tamram
-ms.reviewer: cbrooks
+ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: b2755d5aa5dbaa669fa2fdd8b84596e040b5dd6b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 5dedd70b51361936808724ef70b96cdf9cfa13f5
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81456827"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85515407"
 ---
 # <a name="use-customer-managed-keys-with-azure-key-vault-to-manage-azure-storage-encryption"></a>Использование управляемых клиентом ключей с Azure Key Vault для управления шифрованием службы хранилища Azure
 
 Для защиты данных в учетной записи хранения можно использовать собственный ключ шифрования. При указании ключа, управляемого клиентом, этот ключ используется для защиты и контроля доступа к ключу, который шифрует ваши данные. Управляемые клиентом ключи обеспечивают большую гибкость при управлении элементами управления доступом.
 
-Для хранения ключей, управляемых клиентом, необходимо использовать Azure Key Vault. Можно либо создать собственные ключи и сохранить их в хранилище ключей, либо использовать Azure Key Vault API для создания ключей. Учетная запись хранения и хранилище ключей должны находиться в одном и том же регионе и в одном клиенте Azure Active Directory (Azure AD), но они могут находиться в разных подписках. Дополнительные сведения о Azure Key Vault см. в разделе [что такое Azure Key Vault?](../../key-vault/general/overview.md).
+Для хранения ключей, управляемых клиентом, необходимо использовать Azure Key Vault. Можно либо создать собственные ключи и хранить их в хранилище ключей, либо использовать API-интерфейсы Azure Key Vault для их генерации. Учетная запись хранения и хранилище ключей должны находиться в одном и том же регионе и в одном клиенте Azure Active Directory (Azure AD), но они могут находиться в разных подписках. Дополнительные сведения о Azure Key Vault см. в разделе [что такое Azure Key Vault?](../../key-vault/general/overview.md).
 
-## <a name="about-customer-managed-keys"></a>Сведения о ключах, управляемых клиентом
+## <a name="about-customer-managed-keys"></a>Сведения об управляемых клиентом ключах
 
 На следующей схеме показано, как служба хранилища Azure использует Azure Active Directory и Azure Key Vault для выполнения запросов с помощью управляемого клиентом ключа:
 
 ![Схема работы ключей, управляемых клиентом, в службе хранилища Azure](media/encryption-customer-managed-keys/encryption-customer-managed-keys-diagram.png)
 
-В следующем списке описаны пронумерованные шаги на схеме.
+В следующем списке описаны шаги, пронумерованные на схеме.
 
 1. Администратор Azure Key Vault предоставляет разрешения на ключи шифрования для управляемого удостоверения, связанного с учетной записью хранения.
 2. Администратор службы хранилища Azure настраивает шифрование с помощью управляемого клиентом ключа для учетной записи хранения.
@@ -68,11 +67,11 @@ ms.locfileid: "81456827"
 
 Чтобы включить управляемые клиентом ключи в учетной записи хранения, необходимо использовать Azure Key Vault для хранения ключей. Необходимо включить как **обратимое удаление** , так и **не очищать** свойства в хранилище ключей.
 
-С шифрованием службы хранилища Azure поддерживаются только 2048-разрядные ключи RSA и RSA-HSM. Дополнительные сведения о ключах см. в разделе **Key Vault Keys** раздела [о Azure Key Vault ключах, секретах и сертификатах](../../key-vault/about-keys-secrets-and-certificates.md#key-vault-keys).
+Шифрование службы хранилища Azure поддерживает ключи RSA и RSA-HSM размером 2048, 3072 и 4096. Дополнительные сведения о ключах см. в разделе **Key Vault Keys** раздела [о Azure Key Vault ключах, секретах и сертификатах](../../key-vault/about-keys-secrets-and-certificates.md#key-vault-keys).
 
 ## <a name="rotate-customer-managed-keys"></a>Смена ключей, управляемых клиентом
 
-Вы можете поворачивать ключ, управляемый клиентом, в Azure Key Vault в соответствии с политиками соответствия требованиям. При вращении ключа необходимо обновить учетную запись хранения, чтобы она использовала новый универсальный код ресурса (URI) версии ключа. Сведения об обновлении учетной записи хранения для использования новой версии ключа в портал Azure см. в разделе **обновление ключа версии раздела** [Настройка управляемых клиентом ключей для службы хранилища Azure с помощью портал Azure](storage-encryption-keys-portal.md).
+Вы можете периодически сменять управляемый клиентом ключ в Azure Key Vault в соответствии с применяемыми политиками соответствия требованиям. При вращении ключа необходимо обновить учетную запись хранения, чтобы она использовала новый универсальный код ресурса (URI) версии ключа. Сведения об обновлении учетной записи хранения для использования новой версии ключа в портал Azure см. в разделе **обновление ключа версии раздела** [Настройка управляемых клиентом ключей для службы хранилища Azure с помощью портал Azure](storage-encryption-keys-portal.md).
 
 При вращении ключа повторное шифрование данных в учетной записи хранения не инициируется. От пользователя не требуется предпринимать никаких действий.
 
@@ -80,23 +79,23 @@ ms.locfileid: "81456827"
 
 Вы можете в любое время отозвать доступ учетной записи хранения к ключу, управляемому клиентом. После отмены доступа к ключам, управляемым клиентом, или после отключения или удаления ключа клиенты не могут вызывать операции, считывающие или записывающие в большой двоичный объект или его метаданные. Попытки вызова любой из следующих операций завершатся ошибкой с кодом ошибки 403 (запрещено) для всех пользователей:
 
-- [Вывод списка больших двоичных объектов](/rest/api/storageservices/list-blobs)при `include=metadata` вызове с параметром в URI запроса
+- [Вывод списка больших двоичных объектов](/rest/api/storageservices/list-blobs)при вызове с `include=metadata` параметром в URI запроса
 - [Get BLOB (Получение BLOB-объекта)](/rest/api/storageservices/get-blob)
 - [Get BLOB Properties (Получение свойств BLOB-объекта)](/rest/api/storageservices/get-blob-properties)
 - [Get BLOB Metadata (Получение метаданных BLOB-объекта)](/rest/api/storageservices/get-blob-metadata)
-- [Set Blob Metadata](/rest/api/storageservices/set-blob-metadata)
-- [Большой двоичный объект моментальных снимков](/rest/api/storageservices/snapshot-blob)при вызове с заголовком `x-ms-meta-name` запроса
-- [Copy Blob](/rest/api/storageservices/copy-blob)
+- [Set BLOB Metadata (Задание метаданных BLOB-объекта)](/rest/api/storageservices/set-blob-metadata)
+- [Большой двоичный объект моментальных снимков](/rest/api/storageservices/snapshot-blob)при вызове с `x-ms-meta-name` заголовком запроса
+- [Копирование BLOB-объекта](/rest/api/storageservices/copy-blob)
 - [Копировать большой двоичный объект из URL-адреса](/rest/api/storageservices/copy-blob-from-url)
 - [Установка уровня большого двоичного объекта](/rest/api/storageservices/set-blob-tier)
-- [Put Block](/rest/api/storageservices/put-block)
+- [Put Block (Вставка блокировки)](/rest/api/storageservices/put-block)
 - [Разместить блок по URL-адресу](/rest/api/storageservices/put-block-from-url)
 - [Append Block](/rest/api/storageservices/append-block)
 - [Добавить блок из URL-адреса](/rest/api/storageservices/append-block-from-url)
-- [вставка большого двоичного объекта](/rest/api/storageservices/put-blob);
+- [Put BLOB (Вставка BLOB-объекта)](/rest/api/storageservices/put-blob)
 - [Put Page](/rest/api/storageservices/put-page)
 - [Размещение страницы по URL-адресу](/rest/api/storageservices/put-page-from-url)
-- [Добавочное копирование большого двоичного объекта](/rest/api/storageservices/incremental-copy-blob)
+- [Incremental Copy Blob](/rest/api/storageservices/incremental-copy-blob) (инкрементная копия Blob);
 
 Чтобы снова вызвать эти операции, восстановите доступ к ключу, управляемому клиентом.
 
@@ -113,4 +112,4 @@ ms.locfileid: "81456827"
 - [Настройка ключей, управляемых клиентом, с помощью Key Vault для шифрования службы хранилища Azure из портал Azure](storage-encryption-keys-portal.md)
 - [Настройка ключей, управляемых клиентом, с помощью Key Vault для шифрования службы хранилища Azure из PowerShell](storage-encryption-keys-powershell.md)
 - [Настройка ключей, управляемых клиентом, с помощью Key Vault для шифрования службы хранилища Azure Azure CLI](storage-encryption-keys-cli.md)
-- [Шифрование неактивных данных в службе хранилища Azure](storage-service-encryption.md)
+- [Шифрование службы хранилища Azure для неактивных данных](storage-service-encryption.md)

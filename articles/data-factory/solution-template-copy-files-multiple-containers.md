@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 11/1/2018
 ms.openlocfilehash: 73560c49e10ab96c934d4dd3cea9395093a26420
-ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82629054"
 ---
 # <a name="copy-files-from-multiple-containers-with-azure-data-factory"></a>Копирование файлов из нескольких контейнеров с помощью Фабрики данных Azure
@@ -52,7 +52,7 @@ ms.locfileid: "82629054"
 
     ![Создание нового подключения к целевому хранилищу](media/solution-template-copy-files-multiple-containers/copy-files-multiple-containers-image2.png)
 
-3. Выберите **Использовать этот шаблон**.
+3. Щелкните **Использовать этот шаблон**.
 
     ![Использовать этот шаблон](media/solution-template-copy-files-multiple-containers/copy-files-multiple-containers-image3.png)
     
@@ -60,7 +60,7 @@ ms.locfileid: "82629054"
 
     ![Отображение конвейера](media/solution-template-copy-files-multiple-containers/copy-files-multiple-containers-image4.png)
 
-5. Выберите **Отладка**, введите **Параметры**и нажмите кнопку **Готово**.
+5. Выберите **Отладка**, введите **Параметры**, а затем нажмите **Готово**.
 
     ![Запуск конвейера](media/solution-template-copy-files-multiple-containers/copy-files-multiple-containers-image5.png)
 

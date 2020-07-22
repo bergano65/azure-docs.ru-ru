@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: ponatara
-ms.openlocfilehash: 29fbe5389da924a2ecc660aa5ce5c4bb0a0902b6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 90d54a8ded99dd8ab43aed688036add6aede20ab
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74084553"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86134834"
 ---
 # <a name="set-up-disaster-recovery-for-a-multi-tier-citrix-xenapp-and-xendesktop-deployment"></a>настройка аварийного восстановления для развертывания Citrix XenApp и XenDesktop
 
@@ -30,8 +30,8 @@ Citrix XenDesktop — это решение для виртуализации �
 
 Прежде чем продолжить, ознакомьтесь со следующими статьями:
 
-1. [Репликация виртуальных машин VMware в Azure с помощью Site Recovery](site-recovery-vmware-to-azure.md)
-1. [Проектирование сети для аварийного восстановления](site-recovery-network-design.md)
+1. [Репликация виртуальных машин VMware в Azure с помощью Site Recovery](./vmware-azure-tutorial.md)
+1. [Проектирование сети для аварийного восстановления](./concepts-on-premises-to-azure-networking.md)
 1. [Тестовая отработка отказа в Azure в Site Recovery](site-recovery-test-failover-to-azure.md)
 1. [Отработка отказа в Site Recovery](site-recovery-failover.md)
 1. [Защита Active Directory и DNS с Azure Site Recovery](site-recovery-active-directory.md)
@@ -96,7 +96,7 @@ Citrix XenDesktop — это решение для виртуализации �
 
 Подробные технические рекомендации по выбору варианта защиты серверов SQL см. в статье [Защита SQL Server с помощью аварийного восстановления SQL Server и Azure Site Recovery](site-recovery-sql.md).
 
-В [этом руководстве](site-recovery-vmware-to-azure.md) приводится процедура первой репликации других компонентов виртуальных машин в Azure.
+В [этом руководстве](./vmware-azure-tutorial.md) приводится процедура первой репликации других компонентов виртуальных машин в Azure.
 
 ![Защита компонентов XenApp](./media/site-recovery-citrix-xenapp-and-xendesktop/citrix-enablereplication.png)
 

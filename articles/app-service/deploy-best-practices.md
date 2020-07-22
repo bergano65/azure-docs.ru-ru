@@ -8,10 +8,9 @@ ms.topic: article
 ms.date: 07/31/2019
 ms.author: jafreebe
 ms.openlocfilehash: 4dd959d75fd582d787e68db4a415a4a694b9cda8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81770689"
 ---
 # <a name="deployment-best-practices"></a>Рекомендации по развертыванию
@@ -119,7 +118,7 @@ az ad sp create-for-rbac --name "myServicePrincipal" --role contributor \
    --sdk-auth
 ```
 
-В скрипте Войдите в систему с `az login --service-principal`помощью, предоставив сведения об участнике. Затем можно использовать `az webapp config container set` для задания имени контейнера, тега, URL-адреса реестра и пароля реестра. Ниже приведены полезные ссылки для создания процесса CI контейнера.
+В скрипте Войдите в систему с помощью `az login --service-principal` , предоставив сведения об участнике. Затем можно использовать `az webapp config container set` для задания имени контейнера, тега, URL-адреса реестра и пароля реестра. Ниже приведены полезные ссылки для создания процесса CI контейнера.
 
 - [Вход в Azure CLI в элементе конфигурации Circle](https://circleci.com/orbs/registry/orb/circleci/azure-cli) 
 
@@ -131,11 +130,11 @@ az ad sp create-for-rbac --name "myServicePrincipal" --role contributor \
 
 ### <a name="node"></a>Узел
 
-По умолчанию KUDU выполняет шаги сборки для приложения узла (`npm install`). Если вы используете службу сборки, например Azure DevOps, сборка KUDU не требуется. Чтобы отключить сборку KUDU, создайте параметр `SCM_DO_BUILD_DURING_DEPLOYMENT`приложения со значением. `false`
+По умолчанию KUDU выполняет шаги сборки для приложения узла ( `npm install` ). Если вы используете службу сборки, например Azure DevOps, сборка KUDU не требуется. Чтобы отключить сборку KUDU, создайте параметр приложения `SCM_DO_BUILD_DURING_DEPLOYMENT` со значением `false` .
 
 ### <a name="net"></a>.NET 
 
-По умолчанию KUDU выполняет шаги сборки для приложения .NET (`dotnet build`). Если вы используете службу сборки, например Azure DevOps, сборка KUDU не требуется. Чтобы отключить сборку KUDU, создайте параметр `SCM_DO_BUILD_DURING_DEPLOYMENT`приложения со значением. `false`
+По умолчанию KUDU выполняет шаги сборки для приложения .NET ( `dotnet build` ). Если вы используете службу сборки, например Azure DevOps, сборка KUDU не требуется. Чтобы отключить сборку KUDU, создайте параметр приложения `SCM_DO_BUILD_DURING_DEPLOYMENT` со значением `false` .
 
 ## <a name="other-deployment-considerations"></a>Другие рекомендации по развертыванию
 
@@ -156,4 +155,4 @@ az ad sp create-for-rbac --name "myServicePrincipal" --role contributor \
 - Выберите элемент Главная страница **с рекомендациями** .
 - Щелкните **рекомендации по обеспечению доступности & производительности** или **рекомендациям по оптимальной конфигурации** , чтобы просмотреть текущее состояние приложения в соответствии с рекомендациями.
 
-Эту ссылку также можно использовать, чтобы напрямую открыть диагностику службы приложений для вашего ресурса `https://ms.portal.azure.com/?websitesextension_ext=asd.featurePath%3Ddetectors%2FParentAvailabilityAndPerformance#@microsoft.onmicrosoft.com/resource/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/troubleshoot`:.
+Эту ссылку также можно использовать, чтобы напрямую открыть диагностику службы приложений для вашего ресурса: `https://ms.portal.azure.com/?websitesextension_ext=asd.featurePath%3Ddetectors%2FParentAvailabilityAndPerformance#@microsoft.onmicrosoft.com/resource/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/troubleshoot` .

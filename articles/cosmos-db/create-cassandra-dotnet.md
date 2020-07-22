@@ -3,23 +3,25 @@ title: Краткое руководство. Использование API Cas
 description: В этом руководстве показано, как использовать API Cassandra Azure Cosmos DB для создания приложения профиля с помощью портала Azure и .NET.
 ms.service: cosmos-db
 ms.subservice: cosmosdb-cassandra
-author: SnehaGunda
-ms.author: sngun
+author: TheovanKraay
+ms.author: thvankra
 ms.devlang: dotnet
 ms.topic: quickstart
-ms.date: 09/24/2018
-ms.openlocfilehash: 1afdc0319ae26fcd6c8cb3ada0b4aa8c31fe1fbb
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.date: 05/18/2020
+ms.openlocfilehash: 88ec29ef1a0c0766a6c50af218e66f5fec3b9087
+ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "79215012"
+ms.lasthandoff: 06/20/2020
+ms.locfileid: "85118429"
 ---
 # <a name="quickstart-build-a-cassandra-app-with-net-sdk-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения Cassandra с помощью пакета SDK для .NET и Azure Cosmos DB
 
 > [!div class="op_single_selector"]
 > * [.NET](create-cassandra-dotnet.md)
-> * [Java](create-cassandra-java.md)
+> * [.NET Core](create-cassandra-dotnet-core.md)
+> * [Java, версия 3](create-cassandra-java.md)
+> * [Java, версия 4](create-cassandra-java-v4.md)
 > * [Node.js](create-cassandra-nodejs.md)
 > * [Python](create-cassandra-python.md)
 >  
@@ -118,31 +120,31 @@ Azure Cosmos DB — это глобально распределенная мн
 
 1. На [портале Azure](https://portal.azure.com/) выберите **Строка подключения**.
 
-    Вы можете использовать кнопку ![Кнопка "Копировать"](./media/create-cassandra-dotnet/copy.png) в правой части экрана, чтобы скопировать значение параметра USERNAME (Имя пользователя).
+1. Вы можете использовать кнопку ![Кнопка "Копировать"](./media/create-cassandra-dotnet/copy.png) в правой части экрана, чтобы скопировать значение параметра USERNAME (Имя пользователя).
 
-    ![Просмотрите и скопируйте ключ доступа на странице "Строка подключения" портала Azure.](./media/create-cassandra-dotnet/keys.png)
+   :::image type="content" source="./media/create-cassandra-dotnet/keys.png" alt-text="Просмотр и копирование ключа доступа на странице "Строка подключения" на портале Azure":::
 
-2. В Visual Studio откройте файл Program.cs. 
+1. В Visual Studio откройте файл Program.cs. 
 
-3. Вставьте полученное на портале значение USERNAME вместо элемента `<FILLME>` в строке 13.
+1. Вставьте полученное на портале значение USERNAME вместо элемента `<FILLME>` в строке 13.
 
     Теперь строка 13 в файле Program.cs будет выглядеть примерно так: 
 
     `private const string UserName = "cosmos-db-quickstart";`
 
-3. Вернитесь на портал и скопируйте значение PASSWORD. Вставьте полученное на портале значение PASSWORD вместо элемента `<FILLME>` в строке 14.
+1. Вернитесь на портал и скопируйте значение PASSWORD. Вставьте полученное на портале значение PASSWORD вместо элемента `<FILLME>` в строке 14.
 
     Теперь строка 14 в файле Program.cs будет выглядеть примерно так: 
 
     `private const string Password = "2Ggkr662ifxz2Mg...==";`
 
-4. Вернитесь на портал и скопируйте значение CONTACT POINT (Точка контакта). Вставьте полученное на портале значение параметра CONTACT POINT над элементом `<FILLME>` в строке 15.
+1. Вернитесь на портал и скопируйте значение CONTACT POINT (Точка контакта). Вставьте полученное на портале значение параметра CONTACT POINT над элементом `<FILLME>` в строке 15.
 
     Теперь строка 15 в файле Program.cs будет выглядеть примерно так: 
 
     `private const string CassandraContactPoint = "cosmos-db-quickstarts.cassandra.cosmosdb.azure.com"; //  DnsName`
 
-5. Сохраните файл Program.cs.
+1. Сохраните файл Program.cs.
     
 ## <a name="run-the-net-app"></a>Запустите приложение .NET.
 
@@ -155,13 +157,13 @@ Azure Cosmos DB — это глобально распределенная мн
     ```
 3. Нажмите клавиши CTRL + F5 для запуска приложения. Приложение откроется в окне консоли. 
 
-    ![Просмотр и проверка выходных данных](./media/create-cassandra-dotnet/output.png)
+    :::image type="content" source="./media/create-cassandra-dotnet/output.png" alt-text="Просмотр и проверка выходных данных":::
 
     Нажмите клавиши CTRL+C, чтобы остановить выполнение программы и закрыть окно консоли. 
     
 4. На портале Azure откройте **обозреватель данных**, чтобы запросить, изменить и обработать новые данные.
 
-    ![Просмотр данных в обозревателе данных](./media/create-cassandra-dotnet/data-explorer.png)
+    :::image type="content" source="./media/create-cassandra-dotnet/data-explorer.png" alt-text="Просмотр данных в обозревателе данных":::
 
 ## <a name="review-slas-in-the-azure-portal"></a>Просмотр соглашений об уровне обслуживания на портале Azure
 

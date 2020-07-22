@@ -7,21 +7,21 @@ author: KumudD
 manager: mtillman
 ms.service: virtual-network
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/18/2020
 ms.author: mnayak
-ms.openlocfilehash: 5d56b276e44a1dbdffb66270e04763ea729628ef
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
-ms.translationtype: HT
+ms.openlocfilehash: 7d41893d734037e466ad786641fed98c461adcfc
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83594923"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86231817"
 ---
 # <a name="configure-routing-preference-for-a-public-ip-address-using-the-azure-portal"></a>Настройка предпочтительного варианта маршрутизации для общедоступного IP-адреса с помощью портала Azure
 
-В этой статье показано, как настроить предпочтительный вариант маршрутизации через сеть ISP (параметр **Интернет**) для общедоступного IP-адреса. Созданный общедоступный IP-адрес можно связать со следующими ресурсами Azure для входящего и исходящего Интернет-трафика.
+В этой статье показано, как настроить [параметры маршрутизации](https://docs.microsoft.com/azure/virtual-network/routing-preference-overview) через сеть ISP (параметр**Интернета** ) для общедоступного IP-адреса. Созданный общедоступный IP-адрес можно связать со следующими ресурсами Azure для входящего и исходящего Интернет-трафика.
 
 * Виртуальная машина
 * Набор масштабирования виртуальных машин

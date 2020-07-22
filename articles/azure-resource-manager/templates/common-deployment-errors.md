@@ -3,29 +3,29 @@ title: Устранение стандартных ошибок разверты
 description: Описывается устранение распространенных ошибок при развертывании ресурсов в Azure с помощью Azure Resource Manager.
 tags: top-support-issue
 ms.topic: troubleshooting
-ms.date: 10/04/2019
-ms.openlocfilehash: bc1568c53cdb5518f694d77a2f28f3cf77296ee2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 06/25/2020
+ms.openlocfilehash: 9914cf8267624cd05db860e7dd8eb8d8c5831f7e
+ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79460387"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86055670"
 ---
 # <a name="troubleshoot-common-azure-deployment-errors-with-azure-resource-manager"></a>Устранение распространенных ошибок развертывания в Azure с помощью Azure Resource Manager | Microsoft Azure
 
 В этой статье описаны некоторые распространенные ошибки при развертывании в Azure и предоставлены сведения об их устранении. Если не удается найти код ошибки развертывания, ознакомьтесь с разделом [Поиск кода ошибки](#find-error-code).
 
-Если вам нужны сведения о коде ошибки и эта информация не указана в этой статье, сообщите нам об этом. В нижней части этой страницы можно оставить отзыв. Отзывы отписываются с проблемами GitHub.
+Если вам нужны сведения о коде ошибки, который отсутствует в этой статье, сообщите нам об этом. Отзыв можно оставить внизу страницы. Все отзывы отслеживаются через раздел проблем на GitHub.
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 ## <a name="error-codes"></a>Коды ошибок
 
-| Код ошибки | Решение | Дополнительные сведения |
+| Код ошибки | Меры по снижению риска | Дополнительные сведения |
 | ---------- | ---------- | ---------------- |
 | AccountNameInvalid | Следуйте ограничениям для имен учетных записей хранения. | [Устранение ошибок, связанных с именами учетных записей хранения](error-storage-account-name.md) |
 | AccountPropertyCannotBeSet | Проверьте доступные свойства учетной записи хранения. | [storageAccounts](/azure/templates/microsoft.storage/storageaccounts) |
-| AllocationFailed | Кластер или регион не имеют доступных ресурсов или не поддерживают запрашиваемый размер виртуальной машины. Повторите запрос позже или укажите другой размер виртуальной машины. | Проблемы подготовки и распределения для [Linux](../../virtual-machines/linux/troubleshoot-deployment-new-vm.md) и [Windows](../../virtual-machines/windows/troubleshoot-deployment-new-vm.md), и [устранение ошибок выделения ресурсов](../../virtual-machines/troubleshooting/allocation-failure.md)|
+| AllocationFailed | Кластер или регион не имеют доступных ресурсов или не поддерживают запрашиваемый размер виртуальной машины. Повторите запрос позже или укажите другой размер виртуальной машины. | Проблемы подготовки и распределения для [Linux](../../virtual-machines/troubleshooting/troubleshoot-deployment-new-vm-linux.md) и [Windows](../../virtual-machines/troubleshooting/troubleshoot-deployment-new-vm-windows.md), и [устранение ошибок выделения ресурсов](../../virtual-machines/troubleshooting/allocation-failure.md)|
 | AnotherOperationInProgress | Дождитесь завершения параллельной операции. | |
 | AuthorizationFailed | Учетная запись или субъект-служба не имеют необходимых прав доступа для выполнения развертывания. Проверьте роль, к которой принадлежит учетная запись, и ее права доступа к области развертывания.<br><br>Эта ошибка может возникать, если требуемый поставщик ресурсов не зарегистрирован. | [Управление доступом на основе ролей в Azure](../../role-based-access-control/role-assignments-portal.md)<br><br>[Устранение ошибок регистрации](error-register-resource-provider.md) |
 | BadRequest | Отправленные значения развертывания не соответствуют значениям, ожидаемым Resource Manager. Проверьте внутреннее сообщение о состоянии. Оно поможет вам в устранении неполадки. | [Справочник по шаблону](/azure/templates/) и [поддерживаемые расположения](resource-location.md) |
@@ -62,8 +62,8 @@ ms.locfileid: "79460387"
 | OperationNotAllowed | Развертывание пытается выполнить операцию, которая превышает квоту для подписки, группы ресурсов или региона. Если это возможно, измените развертывание, чтобы не превышать квоты. В противном случае запросите изменение квот. | [Устранение ошибок квот ресурсов](error-resource-quota.md) |
 | ParentResourceNotFound | Убедитесь, что имеется родительский ресурс, прежде чем создавать дочерние ресурсы. | [Устранение ошибок, связанных с родительскими ресурсами](error-parent-resource.md) |
 | PasswordTooLong | Возможно, вы выбрали пароль, содержащий слишком много символов, или преобразовали значение пароля в защищенную строку перед передачей его в качестве параметра. Если шаблон содержит параметр **защищенной строки**, не нужно преобразовывать значение в защищенную строку. Укажите значение пароля в виде текста. |  |
-| PrivateIPAddressInReservedRange | Указанный IP-адрес включает диапазон адресов, необходимый Azure. Измените IP-адрес, чтобы не использовать зарезервированный диапазон. | [IP-адреса](../../virtual-network/virtual-network-ip-addresses-overview-arm.md) |
-| PrivateIPAddressNotInSubnet | Указанный IP-адрес находится вне диапазона подсети. Измените IP-адрес, чтобы он находился в пределах диапазона подсети. | [IP-адреса](../../virtual-network/virtual-network-ip-addresses-overview-arm.md) |
+| PrivateIPAddressInReservedRange | Указанный IP-адрес включает диапазон адресов, необходимый Azure. Измените IP-адрес, чтобы не использовать зарезервированный диапазон. | [IP-адреса](../../virtual-network/public-ip-addresses.md) |
+| PrivateIPAddressNotInSubnet | Указанный IP-адрес находится вне диапазона подсети. Измените IP-адрес, чтобы он находился в пределах диапазона подсети. | [IP-адреса](../../virtual-network/public-ip-addresses.md) |
 | PropertyChangeNotAllowed | Некоторые свойства не могут быть изменены в развернутом ресурсе. При обновлении ресурса измените только допустимые свойства. | [Обновление ресурса](/azure/architecture/building-blocks/extending-templates/update-resource) |
 | RequestDisallowedByPolicy | Ваша подписка включает в себя политику ресурсов, которая не позволяет выполнить действие, которое вы пытаетесь выполнять во время развертывания. Найдите политику, которая блокирует действие. Если это возможно, измените развертывание в соответствии с ограничениями политики. | [Устранение ошибок с политиками](error-policy-requestdisallowedbypolicy.md) |
 | ReservedResourceName | Укажите ресурс, имя которого не включает в себя зарезервированное имя. | [Зарезервированные имена ресурсов](error-reserved-resource-name.md) |
@@ -114,7 +114,7 @@ ms.locfileid: "79460387"
 Чтобы просмотреть коды и сообщения ошибок развертывания с помощью Azure CLI, используйте следующую команду:
 
 ```azurecli-interactive
-az deployment group operation list --name exampledeployment -g examplegroup --query "[*].properties.statusMessage"
+az deployment operation group list --name exampledeployment -g examplegroup --query "[*].properties.statusMessage"
 ```
 
 Выберите уведомление в портале.
@@ -172,7 +172,7 @@ New-AzResourceGroupDeployment `
 Для просмотра операций развертывания выполните следующую команду.
 
 ```azurecli
-az deployment group operation list \
+az deployment operation group list \
   --resource-group examplegroup \
   --name exampledeployment
 ```
@@ -180,7 +180,7 @@ az deployment group operation list \
 Проверьте содержимое запроса с помощью следующей команды:
 
 ```azurecli
-az deployment group operation list \
+az deployment operation group list \
   --name exampledeployment \
   -g examplegroup \
   --query [].properties.request
@@ -189,7 +189,7 @@ az deployment group operation list \
 Проверьте содержимое ответа с помощью следующей команды:
 
 ```azurecli
-az deployment group operation list \
+az deployment operation group list \
   --name exampledeployment \
   -g examplegroup \
   --query [].properties.response
@@ -223,7 +223,7 @@ az deployment group operation list \
 
 ```json
 {
-  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
   "storageName": {

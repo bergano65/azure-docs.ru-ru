@@ -2,21 +2,21 @@
 title: Соединители прокси приложения отладки-Azure Active Directory | Документация Майкрософт
 description: Проблемы отладки с соединителями прокси приложения Azure Active Directory (Azure AD).
 services: active-directory
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: troubleshooting
 ms.date: 05/21/2019
-ms.author: mimart
+ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: c041578932bd33eb0a2d3afc18a35c2c0458dc8b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 7e7a1de24e5032b2dade2f325560fd6964c892d5
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "72311853"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86145682"
 ---
 # <a name="debug-application-proxy-connector-issues"></a>Устранение проблем с соединителями Application Proxy 
 
@@ -40,11 +40,11 @@ ms.locfileid: "72311853"
 
 ![Блок-схема, показывающая шаги для отладки соединителя](media/application-proxy-debug-connectors/application-proxy-connector-debugging-flowchart.png)
 
-|  | Действие | Описание | 
+| Шаг | Действие | Описание |
 |---------|---------|---------|
 |1 | Поиск группы соединителей, назначенной приложению | Возможно, на нескольких серверах установлен соединитель, и в этом случае соединители должны быть [назначены группам соединителей](application-proxy-connector-groups.md#assign-applications-to-your-connector-groups). Дополнительные сведения о группах соединителей см. в статье [Публикация приложений в отдельных сетях и расположениях с помощью групп соединителей](application-proxy-connector-groups.md). |
 |2 | Установка соединителя и назначение группы | Если соединитель не установлен, см. статью [Установка и регистрация соединителя](application-proxy-add-on-premises-application.md#install-and-register-a-connector).<br></br> Если возникают проблемы при установке соединителя, см. раздел [проблема при установке соединителя](application-proxy-connector-installation-problem.md).<br></br> Если соединитель не назначен группе, см. раздел [назначение соединителя группе](application-proxy-connector-groups.md#create-connector-groups).<br></br>Если приложение не назначено группе соединителей, см. раздел [Назначение приложения для группы соединителей](application-proxy-connector-groups.md#assign-applications-to-your-connector-groups).|
-|3 | Выполнение проверки порта на сервере соединителя | На сервере соединителя выполните проверку порта с помощью [Telnet](https://docs.microsoft.com/windows-server/administration/windows-commands/telnet) или другого средства тестирования портов, чтобы проверить, открыты ли порты 443 и 80.|
+|3 | Выполнение проверки порта на сервере соединителя | На сервере соединителя выполните проверку порта с помощью [Telnet](https://docs.microsoft.com/windows-server/administration/windows-commands/telnet) или другого средства тестирования портов, чтобы проверить, открыты ли порты [443 и 80](application-proxy-add-on-premises-application.md#open-ports).|
 |4 | Настройка доменов и портов | [Убедитесь, что домены и порты настроены правильно](application-proxy-add-on-premises-application.md#prepare-your-on-premises-environment) . Чтобы соединитель работал должным образом, существуют определенные порты, которые должны быть открыты, и URL-адреса, к которым сервер должен иметь доступ. |
 |5 | Проверка использования серверного прокси-сервера | Убедитесь, что соединители используют серверные прокси-серверы или обходят их. Дополнительные сведения см. в разделе [Устранение неполадок прокси-сервера соединителя и проблемы с подключением к службам](application-proxy-configure-connectors-with-proxy-servers.md#troubleshoot-connector-proxy-problems-and-service-connectivity-issues). |
 |6 | Обновление соединителя и центра обновления для использования серверного прокси-сервера | При использовании серверного прокси-сервера необходимо убедиться, что соединитель использует тот же прокси. Дополнительные сведения об устранении неполадок и настройке соединителей для работы с прокси-серверами см. в разделе [Работа с существующими локальными прокси-серверами](application-proxy-configure-connectors-with-proxy-servers.md). |
@@ -53,7 +53,7 @@ ms.locfileid: "72311853"
 |9 | Продлите значение времени ожидания в серверной части | В **дополнительных параметрах** приложения измените значение параметра **время ожидания серверных приложений** на **Long**. См. статью [Добавление локального приложения в Azure AD](application-proxy-add-on-premises-application.md#add-an-on-premises-app-to-azure-ad). |
 |10 | Если проблемы не удается устранить, устраните проблемы с конкретными потоками, проверьте потоки отладки приложения и единого входа. | Использование [приложения "Отладка прокси приложения](application-proxy-debug-apps.md) " позволяет устранить неполадки. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 
 * [Публикация приложений в отдельных сетях и расположениях с помощью групп соединителей](application-proxy-connector-groups.md)

@@ -2,14 +2,14 @@
 title: Краткое руководство. Создание реестра с помощью Azure CLI
 description: Быстрый способ изучить создание частного реестра контейнеров Docker с помощью Azure CLI.
 ms.topic: quickstart
-ms.date: 01/22/2019
+ms.date: 06/12/2020
 ms.custom: seodec18, H1Hack27Feb2017, mvc
-ms.openlocfilehash: 551a3659feb39943c9f794484abb6f2da4367f39
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 31e917fa306330ca579266e21560d7d42c7f2bc7
+ms.sourcegitcommit: 4ac596f284a239a9b3d8ed42f89ed546290f4128
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "74455167"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84752466"
 ---
 # <a name="quickstart-create-a-private-container-registry-using-the-azure-cli"></a>Краткое руководство. Создание закрытого реестра контейнеров с помощью Azure CLI
 
@@ -33,12 +33,13 @@ az group create --name myResourceGroup --location eastus
 
 ## <a name="create-a-container-registry"></a>Создание реестра контейнеров
 
-В этом кратком руководстве описано, как создать реестр ценовой категории *Базовый*. Это оптимальный (недорогой) вариант для разработчиков, которые знакомятся с Реестром контейнеров Azure. Дополнительные сведения об уровнях служб см. в статье [Номера SKU реестра контейнеров][container-registry-skus].
+В этом кратком руководстве описано, как создать реестр ценовой категории *Базовый*. Это оптимальный (недорогой) вариант для разработчиков, которые знакомятся с Реестром контейнеров Azure. Дополнительные сведения об уровнях служб см. в статье [Уровни служб реестра контейнеров][container-registry-skus].
 
 Создайте экземпляр ACR с помощью команды [az acr create][az-acr-create]. Имя реестра должно быть уникальным в пределах Azure и содержать от 5 до 50 буквенно-цифровых символов. В следующем примере используется имя *myContainerRegistry007*. Замените его уникальным значением.
 
 ```azurecli
-az acr create --resource-group myResourceGroup --name myContainerRegistry007 --sku Basic
+az acr create --resource-group myResourceGroup \
+  --name myContainerRegistry007 --sku Basic
 ```
 
 При создании реестра выходные данные выглядят так:
@@ -64,14 +65,14 @@ az acr create --resource-group myResourceGroup --name myContainerRegistry007 --s
 }
 ```
 
-Запишите `loginServer` в выходных данных (в нижнем регистре). Это полное доменное имя реестра. В дальнейшем в этом кратком руководстве будет использоваться `<acrName>` как заполнитель имени реестра контейнеров.
+Запишите `loginServer` в выходных данных (в нижнем регистре). Это полное доменное имя реестра. В дальнейшем в этом кратком руководстве будет использоваться `<registry-name>` как заполнитель имени реестра контейнеров, а `<login-server>` — как заполнитель имени сервера для входа в реестр.
 
 ## <a name="log-in-to-registry"></a>Вход в раздел реестра
 
 Перед отправкой и извлечением образов контейнеров необходимо войти в реестр. Чтобы сделать это, используйте команду [az acr login][az-acr-login].
 
 ```azurecli
-az acr login --name <acrName>
+az acr login --name <registry-name>
 ```
 
 По завершении команда возвращает сообщение `Login Succeeded`.
@@ -83,7 +84,7 @@ az acr login --name <acrName>
 В следующем примере перечисляются репозитории в реестре.
 
 ```azurecli
-az acr repository list --name <acrName> --output table
+az acr repository list --name <registry-name> --output table
 ```
 
 Выходные данные:
@@ -97,7 +98,7 @@ hello-world
 В следующем примере перечисляются теги в репозитории **hello-world**.
 
 ```azurecli
-az acr repository show-tags --name <acrName> --repository hello-world --output table
+az acr repository show-tags --name <registry-name> --repository hello-world --output table
 ```
 
 Выходные данные:
@@ -123,7 +124,10 @@ az group delete --name myResourceGroup
 С помощью этого краткого руководства вы создали Реестр контейнеров Azure с использованием Azure CLI, отправили образ контейнера в реестр, а затем извлекли этот образ оттуда и запустили его. Чтобы продолжить работу с Реестром контейнеров Azure, перейдите к следующим руководствам.
 
 > [!div class="nextstepaction"]
-> [Руководства по использованию Реестра контейнеров Azure][container-registry-tutorial-quick-task]
+> [Руководства по использованию Реестра контейнеров Azure][container-registry-tutorial-prepare-registry]
+
+> [!div class="nextstepaction"]
+> [Руководство. Создание и развертывание образов контейнера в облаке с помощью службы "Задачи Реестра контейнеров Azure"][container-registry-tutorial-quick-task]
 
 <!-- LINKS - external -->
 [docker-linux]: https://docs.docker.com/engine/installation/#supported-platforms
@@ -143,3 +147,4 @@ az group delete --name myResourceGroup
 [azure-cli]: /cli/azure/install-azure-cli
 [container-registry-tutorial-quick-task]: container-registry-tutorial-quick-task.md
 [container-registry-skus]: container-registry-skus.md
+[container-registry-tutorial-prepare-registry]: container-registry-tutorial-prepare-registry.md

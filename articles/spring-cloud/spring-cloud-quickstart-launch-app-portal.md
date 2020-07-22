@@ -6,12 +6,12 @@ ms.service: spring-cloud
 ms.topic: quickstart
 ms.date: 02/15/2020
 ms.author: brendm
-ms.openlocfilehash: 9cd59fdf81e9b5d56872d20c76e8ea177b3c8577
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 118e1e49393a797a065f1e9968a83a6d4464868e
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "79470900"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86171046"
 ---
 # <a name="quickstart-launch-an-existing-azure-spring-cloud-application-using-the-azure-portal"></a>Краткое руководство. Запуск существующего приложения Azure Spring Cloud с помощью портала Azure
 
@@ -43,14 +43,6 @@ ms.locfileid: "79470900"
 3. [установите Maven 3.0 или более поздней версии](https://maven.apache.org/download.cgi);
 4. [установите Azure CLI (версии 2.0.67 или выше)](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest);
 5. [Регистрация для получения подписки Azure](https://azure.microsoft.com/free/)
-
-## <a name="install-the-azure-cli-extension"></a>Установка расширения Azure CLI
-
-Установите расширение Azure Spring Cloud для Azure CLI с помощью следующей команды:
-
-```azurecli
-az extension add --name spring-cloud
-```
 
 ## <a name="provision-a-service-instance-on-the-azure-portal"></a>Подготовка экземпляра службы к работе на портале Azure
 
@@ -112,7 +104,7 @@ az extension add --name spring-cloud
 
 ## <a name="build-and-deploy-microservice-applications"></a>Создание и развертывание приложений микрослужб
 
-1. Откройте [Azure Cloud Shell](https://shell.azure.com) и клонируйте репозиторий с примером приложения на локальный компьютер.  Перед клонированием приложения мы создадим на нем временный каталог `source-code`.
+1. Откройте [Azure Cloud Shell](https://shell.azure.com) или локальную оболочку с установленным интерфейсом командной строки Azure. Перед клонированием примера приложения мы создадим временный каталог `source-code`.
 
     ```console
     mkdir source-code
@@ -127,21 +119,29 @@ az extension add --name spring-cloud
     mvn clean package -DskipTests
     ```
 
-3. Назначьте имена группе ресурсов и службе. Обязательно замените заполнители ниже именем группы ресурсов и именем службы, подготовленными ранее в этом учебнике.
+3. Установите расширение Azure Spring Cloud для Azure CLI с помощью следующей команды:
+
+    ```azurecli
+    az extension add --name spring-cloud
+    ```
+
+4. Назначьте имена группе ресурсов и службе. Обязательно замените заполнители ниже именем группы ресурсов и именем службы, подготовленными ранее в этом учебнике.
 
     ```azurecli
     az configure --defaults group=<resource group name>
     az configure --defaults spring-cloud=<service instance name>
     ```
 
-4. Создайте приложение `gateway` и выполните развертывание файла JAR.
+5. Создайте приложение `gateway` и выполните развертывание файла JAR.
+
+    Создайте приложение с помощью расширения Spring Cloud:
 
     ```azurecli
     az spring-cloud app create -n gateway
     az spring-cloud app deploy -n gateway --jar-path ./gateway/target/gateway.jar
     ```
 
-5. Следуя той же схеме, создайте приложения `account-service` и `auth-service`, и выполните развертывание их файлов JAR.
+6. Следуя той же схеме, создайте приложения `account-service` и `auth-service`, и выполните развертывание их файлов JAR.
 
     ```azurecli
     az spring-cloud app create -n account-service
@@ -150,7 +150,7 @@ az extension add --name spring-cloud
     az spring-cloud app deploy -n auth-service --jar-path ./auth-service/target/auth-service.jar
     ```
 
-6. Для завершения развертывания приложений потребуется несколько минут. Чтобы убедиться, что они развернуты, перейдите в колонку **Приложения** на портале Azure. Вы увидите строку каждого из трех приложений.
+7. Для завершения развертывания приложений потребуется несколько минут. Чтобы убедиться, что они развернуты, перейдите в колонку **Приложения** на портале Azure. Вы увидите строку каждого из трех приложений.
 
 > [!div class="nextstepaction"]
 > [У меня есть проблема](https://www.research.net/r/javae2e?tutorial=asc-portal-quickstart&step=deploy)

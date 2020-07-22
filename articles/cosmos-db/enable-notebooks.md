@@ -3,48 +3,53 @@ title: Включение записных книжек в учетной зап
 description: Встроенные записные книжки Azure Cosmos DB позволяют анализировать и визуализировать данные с помощью портала. В этой статье описывается, как включить эту функцию для учетных записей Cosmos.
 author: deborahc
 ms.service: cosmos-db
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 09/22/2019
 ms.author: dech
-ms.openlocfilehash: dcec310db43baa513b2d574d03f3f35dee3f773b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 4c485bf6b9eb34e68e399c24e51286428f47586f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76768025"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85261908"
 ---
 # <a name="enable-notebooks-for-azure-cosmos-db-accounts-preview"></a>Включение записных книжек для учетных записей Azure Cosmos DB (Предварительная версия)
 
 > [!IMPORTANT]
 > Встроенные записные книжки для Azure Cosmos DB в настоящее время доступны в следующих регионах Azure: Восточная Австралия, восток США, Восточная часть США 2, Северная Европа, Юго-Центральный регион США, Юго-Восточная Азия, южная часть Соединенного Королевства, Западная Европа и Западная часть США 2. Чтобы использовать записные книжки, [Создайте новую учетную запись с записными книжками](#enable-notebooks-in-a-new-cosmos-account) или [включите записные книжки для существующей учетной записи](#enable-notebooks-in-an-existing-cosmos-account) в одном из этих регионов.
 
-Встроенные записные книжки Jupyter в Azure Cosmos DB позволяют анализировать и визуализировать данные из портал Azure. В этой статье описывается, как включить эту функцию для учетной записи Azure Cosmos DB.
+Встроенные записные книжки Jupyter в Azure Cosmos DB позволяют анализировать и визуализировать данные с портала Azure. В этой статье описывается, как включить эту функцию для учетной записи Azure Cosmos DB.
 
 ## <a name="enable-notebooks-in-a-new-cosmos-account"></a>Включение записных книжек в новой учетной записи Cosmos
+
 1. Войдите на [портал Azure](https://portal.azure.com/).
-1. Выберите **создать** > **Azure Cosmos DB****базы данных** > ресурсов.
+1. Последовательно выберите **Создать ресурс** > **Базы данных** > **Azure Cosmos DB**.
 1. На странице **Создание учетной записи Azure Cosmos DB** выберите **записные книжки**. 
  
-    ![Выберите пункт "записные книжки" в колонке Azure Cosmos DB создание](media/enable-notebooks/create-new-account-with-notebooks.png)
+    :::image type="content" source="media/enable-notebooks/create-new-account-with-notebooks.png" alt-text="Выберите пункт "записные книжки" в колонке Azure Cosmos DB создание":::
+
 1. Выберите **Review + create** (Просмотреть и создать). Можно пропустить параметр **сеть** и **теги** . 
 1. Проверьте параметры учетной записи, а затем нажмите кнопку **Создать**. Создание учетной записи занимает несколько минут. Дождитесь, пока на странице портала появится сообщение **Развертывание выполнено**. 
 
-    ![Область "Уведомления" на портале Azure](media/enable-notebooks/create-new-account-with-notebooks-complete.png)
-1. Выберите **Перейти к ресурсу**, чтобы перейти на страницу учетной записи Azure Cosmos DB. 
+   :::image type="content" source="media/enable-notebooks/create-new-account-with-notebooks-complete.png" alt-text="Область "Уведомления" на портале Azure":::
 
-    ![Страница учетной записи Azure Cosmos DB](../../includes/media/cosmos-db-create-dbaccount/azure-cosmos-db-account-created-3.png)
+1. Выберите **Перейти к ресурсу**, чтобы перейти на страницу учетной записи Azure Cosmos DB.
+
+   :::image type="content" source="../../includes/media/cosmos-db-create-dbaccount/azure-cosmos-db-account-created-3.png" alt-text="Страница учетной записи Azure Cosmos DB":::
 
 1. Перейдите в область **Обозреватель данных** . Теперь вы должны увидеть рабочую область записных книжек.
 
-    ![Создание рабочей области записных книжек Azure Cosmos DB](media/enable-notebooks/new-notebooks-workspace.png)
+    :::image type="content" source="media/enable-notebooks/new-notebooks-workspace.png" alt-text="Создание рабочей области записных книжек Azure Cosmos DB":::
 
 ## <a name="enable-notebooks-in-an-existing-cosmos-account"></a>Включение записных книжек в существующей учетной записи Cosmos
+
 Вы также можете включить записные книжки на существующих учетных записях. Этот шаг необходимо выполнить только один раз для каждой учетной записи.
 
 1. Перейдите в область **Обозреватель данных** учетной записи Cosmos.
 1. Выберите **включить записные книжки**.
 
-    ![Создайте новую рабочую область записных книжек в обозреватель данных](media/enable-notebooks/enable-notebooks-workspace.png)
+    :::image type="content" source="media/enable-notebooks/enable-notebooks-workspace.png" alt-text="Создайте новую рабочую область записных книжек в обозреватель данных":::
+
 1. Появится запрос на создание новой рабочей области записных книжек. Выберите **завершить установку.**
 1. Теперь ваша учетная запись включена для использования записных книжек.
 
@@ -54,19 +59,19 @@ ms.locfileid: "76768025"
 
 В этом примере мы будем использовать **GettingStarted. ipynb**. 
 
-![Просмотр записной книжки GettingStarted. ipynb](media/enable-notebooks/select-getting-started-notebook.png)
+:::image type="content" source="media/enable-notebooks/select-getting-started-notebook.png" alt-text="Просмотр записной книжки GettingStarted. ipynb":::
 
 Чтобы запустить записную книжку, сделайте следующее:
 1. Выберите первую ячейку кода, содержащую код Python. 
 1. Выберите **выполнить** , чтобы запустить ячейку. Для запуска ячейки можно также использовать **сочетание клавиш Shift + Ввод** .
 1. Обновите область ресурсов, чтобы увидеть созданную базу данных и контейнер.
 
-    ![Запустить записную книжку "Начало работы"](media/enable-notebooks/run-first-notebook-cell.png)
+    :::image type="content" source="media/enable-notebooks/run-first-notebook-cell.png" alt-text="Запустить записную книжку "Начало работы"":::
 
 Можно также выбрать пункт **создать записную книжку** , чтобы создать новую записную книжку или передать существующий файл записной книжки (ipynb), выбрав команду **отправить файл** в меню **Мои записные книжки** . 
 
-![Создание или передача новой записной книжки](media/enable-notebooks/create-or-upload-new-notebook.png)
+:::image type="content" source="media/enable-notebooks/create-or-upload-new-notebook.png" alt-text="Создание или передача новой записной книжки":::
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Узнайте о преимуществах [записных книжек Azure Cosmos DB Jupyter](cosmosdb-jupyter-notebooks.md)
+- Узнайте больше о преимуществах использования [записных книжек Jupyter в Azure Cosmos DB](cosmosdb-jupyter-notebooks.md).

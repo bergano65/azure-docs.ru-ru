@@ -1,24 +1,24 @@
 ---
 title: Встроенные определения политик для масштабируемых наборов виртуальных машин Azure
 description: Здесь приведены встроенные определения политик в Политике Azure для масштабируемых наборов виртуальных машин Azure. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
-ms.date: 05/13/2020
+ms.date: 07/10/2020
 ms.topic: sample
 author: ju-shim
 ms.author: jushiman
 ms.service: virtual-machine-scale-sets
 ms.custom: subject-policy-samples
-ms.openlocfilehash: 0c408fc37e59b20770266a018c55e2465744943f
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: c99a5a68871f61ad9e2d861b58fbf7f84c869eaa
+ms.sourcegitcommit: 0b2367b4a9171cac4a706ae9f516e108e25db30c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83655158"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86275868"
 ---
-# <a name="azure-policy-built-in-policy-definitions-for-azure-virtual-machine-scale-sets"></a>Встроенные определения политик в Политике Azure для масштабируемых наборов виртуальных машин Azure
+# <a name="azure-policy-built-in-definitions-for-azure-virtual-machine-scale-sets"></a>Встроенные определения в Политике Azure для масштабируемых наборов виртуальных машин Azure
 
 Эта страница представляет собой индекс встроенных определений политик в [Политике Azure](../governance/policy/overview.md) для масштабируемых наборов виртуальных машин Azure. Дополнительные встроенные компоненты Политики Azure для других служб см. в статье [Встроенные определения Политики Azure](../governance/policy/samples/built-in-policies.md).
 
-Имя каждого встроенного определения политики связано с определением политики на портале Azure. Перейдите по ссылке в столбце **GitHub**, чтобы просмотреть исходный код в [репозитории GitHub для службы "Политика Azure"](https://github.com/Azure/azure-policy).
+Имя каждого встроенного определения политики связано с определением политики на портале Azure. Перейдите по ссылке в столбце **Версия**, чтобы просмотреть исходный код в [репозитории GitHub для службы "Политика Azure"](https://github.com/Azure/azure-policy).
 
 ## <a name="microsoftcompute"></a>Microsoft.Compute;
 

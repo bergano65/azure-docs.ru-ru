@@ -12,10 +12,9 @@ manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 42f7e120745357d3bd5735cca568bdd6971ea061
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80652356"
 ---
 # <a name="deploy-password-reset-without-requiring-end-user-registration"></a>Развертывание сброса пароля без регистрации пользователя
@@ -36,7 +35,7 @@ ms.locfileid: "80652356"
 
 Если вы используете параметры по умолчанию, в Azure AD Connect выполняются следующие сопоставления.
 
-| Локальная служба Active Directory | Azure AD |
+| Локальная служба Active Directory | Azure AD |
 | --- | --- |
 | TelephoneNumber | Рабочий телефон |
 | mobile | Мобильный телефон |
@@ -155,13 +154,13 @@ Get-AzureADUser | select DisplayName,UserPrincipalName,otherMails,Mobile,Telepho
 * [Как развернуть самостоятельный сброс пароля?](howto-sspr-deployment.md)
 * [Сброс или изменение пароля](../user-help/active-directory-passwords-update-your-own-password.md)
 * [Регистрация для самостоятельного сброса пароля](../user-help/active-directory-passwords-reset-register.md)
-* [У вас есть вопрос о лицензировании?](concept-sspr-licensing.md)
+* [Требования к лицензированию самостоятельного сброса пароля в Azure AD](concept-sspr-licensing.md)
 * [Доступные пользователям методы проверки подлинности](concept-sspr-howitworks.md#authentication-methods)
 * [Параметры политики для SSPR](concept-sspr-policy.md)
 * [Что такое обратная запись паролей и каково ее назначение](howto-sspr-writeback.md)
 * [Как сообщать о действиях в SSPR](howto-sspr-reporting.md)
 * [Обзор всех параметров SSPR и их значение](concept-sspr-howitworks.md)
-* [Думаю, что что-то не так. Разделы справки устранить неполадки SSPR?](active-directory-passwords-troubleshoot.md)
+* [Как устранить неполадки самостоятельного сброса пароля](active-directory-passwords-troubleshoot.md)
 * [Вопросы, не вошедшие в другие статьи](active-directory-passwords-faq.md)
 
 [Contact]: ./media/howto-sspr-authenticationdata/user-authentication-contact-info.png "Глобальные администраторы могут изменять контактные данные для аутентификации пользователя"

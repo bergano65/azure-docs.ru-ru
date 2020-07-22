@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 10/26/2017
 ms.author: tomfitz
 ms.openlocfilehash: 3dbb88d53a961e277e102d7eec580309951c73b6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75651219"
 ---
 # <a name="work-with-resources-in-the-managed-resource-group-for-azure-managed-application"></a>Работа с ресурсами в управляемой группе ресурсов для управляемого приложения Azure
@@ -89,7 +88,7 @@ az policy assignment show --name locationAssignment --scope $managedGroup --quer
 
 ![Просмотр назначения политики](./media/update-managed-resources/assignment.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Общие сведения об управляемых приложениях Azure см. в разделе [Обзор управляемых приложений Azure](overview.md).
 * Примеры проектов см. в статье [Примеры проектов для управляемых приложений Azure](sample-projects.md).

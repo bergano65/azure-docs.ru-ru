@@ -1,22 +1,22 @@
 ---
 title: Псевдонимы сервера Azure Analysis Services | Документация Майкрософт
-description: Узнайте, как создавать псевдонимы имен серверов Azure Analysis Services. После этого пользователи смогут подключаться к серверу с более коротким именем псевдонима вместо имени сервера.
+description: Узнайте, как создавать псевдонимы имен серверов служб Azure Analysis Services. С их помощью пользователи смогут подключаться к серверу, используя более короткий псевдоним вместо имени сервера.
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 10/29/2019
+ms.date: 06/16/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 5e7017fad90e32cb8c4b952987fe248e463e4d03
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
+ms.openlocfilehash: 435649c5431ff14461245fee88cebe4a2c571663
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "73572295"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85361444"
 ---
 # <a name="alias-server-names"></a>Псевдонимы сервера
 
-С помощью псевдонима сервера пользователи могут подключаться к серверу Analysis Services Azure, используя более короткий *псевдоним* вместо имени сервера. При подключении из клиентского приложения псевдоним указывается как конечная точка в формате протокола **ссылка://**. Затем конечная точка возвращает настоящее имя сервера для подключения.
+С помощью псевдонима сервера пользователи могут подключаться к серверу Analysis Services Azure, используя более короткий *псевдоним* вместо имени сервера. При подключении из клиентского приложения псевдоним указывается как конечная точка в формате протокола **ссылка://** . Затем конечная точка возвращает настоящее имя сервера для подключения.
 
 Псевдонимы сервера удобно использовать в следующих сценариях:
 
@@ -29,7 +29,7 @@ ms.locfileid: "73572295"
 
 ![Псевдоним в формате ссылки](media/analysis-services-alias/aas-alias-browser.png)
 
-При подключении из клиента псевдоним сервера вводится в формате протокола **ссылка://**. Например, в Power BI Desktop это выглядит следующим образом.
+При подключении из клиента псевдоним сервера вводится в формате протокола **ссылка://** . Например, в Power BI Desktop это выглядит следующим образом.
 
 ![Подключение Power BI Desktop](media/analysis-services-alias/aas-alias-connect-pbid.png)
 
@@ -37,7 +37,7 @@ ms.locfileid: "73572295"
 
 Чтобы создать конечную точку псевдонима, можно использовать любой метод, который возвращает допустимое имя сервера Azure Analysis Services. Например, можно указать ссылку на файл в хранилище BLOB-объектов Azure, содержащий настоящее имя сервера, или создать и опубликовать приложение веб-форм ASP.NET.
 
-В этом примере в Visual Studio создается приложение веб-форм ASP.NET. Со страницы Default.aspx удаляются ссылка на главную страницу и пользовательский элемент управления. Страница Default.aspx просто содержит приведенную ниже директиву Page.
+В этом примере в Visual Studio создается приложение веб-форм ASP.NET. Ссылка на страницу и пользовательский элемент управления удаляются со страницы Default. aspx. Страница Default.aspx просто содержит приведенную ниже директиву Page.
 
 ```
 <%@ Page Title="Home Page" Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="FriendlyRedirect._Default" %>
@@ -52,7 +52,7 @@ protected void Page_Load(object sender, EventArgs e)
 }
 ```
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
-[Клиентские библиотеки](analysis-services-data-providers.md)   
+[Клиентские библиотеки](https://docs.microsoft.com/analysis-services/client-libraries?view=azure-analysis-services-current)   
 [Подключение из Power BI Desktop](analysis-services-connect-pbi.md)

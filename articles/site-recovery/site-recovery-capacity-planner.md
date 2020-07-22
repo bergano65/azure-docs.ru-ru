@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/12/2019
 ms.author: raynew
-ms.openlocfilehash: 843d5da26d6791cea880e5dfb654fe27b74f5d9f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a622179d1e83b41e906a9d276377f5c9474264b9
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "73936046"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86129967"
 ---
 # <a name="plan-capacity-for-hyper-v-vm-disaster-recovery"></a>Планирование ресурсов для аварийного восстановления виртуальной машины Hyper-V 
 
@@ -39,7 +39,7 @@ ms.locfileid: "73936046"
 ## <a name="before-you-start"></a>Перед началом работы
 
 * Соберите сведения о среде, включая информацию о виртуальных машинах, количестве дисков на виртуальную машину и объеме хранилища на диск.
-* Определите частоту ежедневных изменений (обновлений) реплицированных данных. Скачайте [инструмент планирования ресурсов Hyper-V](https://www.microsoft.com/download/details.aspx?id=39057), чтобы получить сведения о частоте изменений. См. [дополнительные сведения](site-recovery-capacity-planning-for-hyper-v-replication.md) об этом средстве. Мы советуем использовать это средство в течение недели, чтобы получить средние значения.
+* Определите частоту ежедневных изменений (обновлений) реплицированных данных. Скачайте [инструмент планирования ресурсов Hyper-V](https://www.microsoft.com/download/details.aspx?id=39057), чтобы получить сведения о частоте изменений. См. [дополнительные сведения](./hyper-v-deployment-planner-overview.md) об этом средстве. Мы советуем использовать это средство в течение недели, чтобы получить средние значения.
 
 
 ## <a name="run-the-quick-planner"></a>Запуск средства быстрого планирования
@@ -53,7 +53,7 @@ ms.locfileid: "73936046"
 
    а. В списке **Select your scenario** (Выберите сценарий) выберите пункт **Из Hyper-V в Azure** или **Из VMware или физического сервера в Azure**.
 
-   b. В поле **Average daily data change rate (%)** (Средняя частота ежедневного изменения данных (%)) введите данные, полученные с помощью [инструмента планирования ресурсов Hyper-V](site-recovery-capacity-planning-for-hyper-v-replication.md) или [планировщика ресурсов Site Recovery](./site-recovery-deployment-planner.md).
+   b. В поле **Average daily data change rate (%)** (Средняя частота ежедневного изменения данных (%)) введите данные, полученные с помощью [инструмента планирования ресурсов Hyper-V](./hyper-v-deployment-planner-overview.md) или [планировщика ресурсов Site Recovery](./site-recovery-deployment-planner.md).
 
    c. Параметр **Compression** (Сжатие) не используется при репликации виртуальных машин Hyper-V в Azure. Чтобы использовать сжатие, воспользуйтесь устройством сторонних производителей, например Riverbed.
 
@@ -147,4 +147,4 @@ ms.locfileid: "73936046"
    ![Планировщик ресурсов](./media/site-recovery-capacity-planner/capacity-planner.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
-[Узнайте, как запустить](site-recovery-capacity-planning-for-hyper-v-replication.md) инструмент планирования ресурсов.
+[Узнайте, как запустить](./hyper-v-deployment-planner-overview.md) инструмент планирования ресурсов.

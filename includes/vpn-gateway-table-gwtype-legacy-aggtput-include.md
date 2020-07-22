@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 description: включить файл
 services: vpn-gateway
 author: cherylmc
@@ -9,10 +9,10 @@ ms.date: 03/21/2018
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 9734859c0bf22201c146e5d8a220f3146f6051c4
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "67185177"
 ---
 В следующей таблице приведены типы шлюзов с приблизительной суммарной пропускной способностью в зависимости от SKU шлюза. Эта таблица относится к классической модели развертывания и модели Resource Manager. 

@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: article
-ms.date: 02/19/2020
+ms.date: 06/30/2020
 ms.author: victorh
-ms.openlocfilehash: b1e7dce6f652d8c9e0fcf5974c3e72be9e1e7844
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: b165741f9f7a4eb7af8424b9175aa5ec9261fbcc
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77482192"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85602726"
 ---
 # <a name="azure-firewall-certifications"></a>Сертификаты брандмауэра Azure
 
@@ -25,29 +25,31 @@ ms.locfileid: "77482192"
 Следующие сертификаты брандмауэра Azure предназначены для глобального Azure:
 
 - 23 НИКРР 500
-- АФМ и ДНБ (Нидерланды)
-- AMF и АКПР (Франция)
+- AFM и DNB (Нидерланды)
+- AMF и ACPR (Франция)
 - Апра (Австралия)
 - Аргентины Аргентина
-- IRAP Австралия
+- Австралийская IRAP
 - CDSA
 - КФТК 1,31
 - Аттестация CSA STAR
 - Сертификация CSA STAR
 - Самооценка CSA STAR
-- Законы о конфиденциальности для Канады
+- Законы о защите конфиденциальности Канады
 - DPP (ВЕЛИКОБРИТАНИЯ)
 - ЕС ЕНИСА IAF
-- Типовые статьи ЕС
+- EU Model Clauses
 - Европейский банковский центр
-- ФКА и одного (Великобритания)
+- FCA и PRA (Соединенное Королевство)
 - FERPA (США)
 - FFIEC (США)
-- ФИНМА (Швейцария)
-- ФСА (Дания)
+- FINMA (Швейцария)
+- FSA (Дания)
 - GLBA (США)
 - Германия C5
 - GxP (FDA 21 CFR, ч. 11)
+- HIPPA
+- Акт HITECH (US)
 - HITRUST
 - ISO 20000-1:2011
 - ISO 22301:2012
@@ -60,20 +62,20 @@ ms.locfileid: "77482192"
 - КНФ (Польша)
 - MAS и ABS (Сингапур)
 - МПАА (США)
-- НББ и ФСМА (Бельгия)
+- NBB и FSMA (Бельгия)
 - НЕН 7510:2011 (Нидерланды)
-- NHS IG Toolkit (Великобритания)
+- NHS IG Toolkit (Соединенное Королевство)
 - Нидерландские Бир 2012
 - ОСФИ (Канада)
 - PCI DSS, уровень 1
-- RBI и ИРДАИ (Индия)
+- RBI и IRDAI (Индия)
 - SOC 1 типа 2
 - SOC 2 типа 2
 - SOC 3
 - SOX (США)
 - Испания DPA
 - тисакс
-- трусигхт
+- TruSight
 - G-Cloud, Соединенное Королевство
 - WCAG 2.0
 
@@ -83,18 +85,20 @@ ms.locfileid: "77482192"
 Следующие сертификаты брандмауэра Azure предназначены для Azure для государственных организаций:
 
 - CJIS
-- КНССИ 1253
+- CNSSI 1253
 - Аттестация CSA STAR
 - DFARS
 - DoD DISA имеющих, уровень 2
-- DoE 10 CFR Part 810
+- DoE 10 CFR, часть 810
 - EAR
 - FIPS 140-2
 - FedRAMP — высокий уровень
+- HIPAA
+- Акт HITECH (US)
 - HITRUST
 - IRS 1075
 - ITAR
-- РЕЖИМ MARS-E (US)
+- MARS-E (США)
 - нерк
 - Инфраструктура NIST кибербезопасности
 - NIST SP 800-171
@@ -102,7 +106,7 @@ ms.locfileid: "77482192"
 - SOC 2 типа 2
 - SOC 3
 - SOX (США)
-- Раздел 508 VPAT
+- Раздел 508, VPATS
 
 ## <a name="icsa-labs-corporate-firewall-certification"></a>Сертификация корпоративных брандмауэров Икса Labs
 

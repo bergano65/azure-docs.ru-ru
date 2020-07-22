@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/06/2019
-ms.openlocfilehash: 3aab89f86dcd48328771cd0fda03d1c9de4bc2c2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 5427077a4b07917c8852d0a63c815195e776b9de
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75932106"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86085197"
 ---
 # <a name="manage-resources-for-apache-spark-cluster-on-azure-hdinsight"></a>Управление ресурсами для кластера Apache Spark в Azure HDInsight
 
@@ -34,7 +34,7 @@ ms.locfileid: "75932106"
     ![Запуск пользовательского интерфейса YARN](./media/apache-spark-resource-manager/azure-portal-dashboard-yarn.png)
 
    > [!TIP]  
-   > Также пользовательский интерфейс YARN можно открыть из пользовательского интерфейса Ambari. В пользовательском интерфейсе Ambari перейдите к **YARN** > **быстрые ссылки** > **Active** > **Диспетчер ресурсов Пользовательский интерфейс**.
+   > Также пользовательский интерфейс YARN можно открыть из пользовательского интерфейса Ambari. В пользовательском интерфейсе Ambari перейдите к **YARN**  >  **быстрые ссылки**  >  **Active**  >  **Диспетчер ресурсов Пользовательский интерфейс**.
 
 ## <a name="optimize-clusters-for-spark-applications"></a>Оптимизация кластеров для приложений Spark
 
@@ -44,7 +44,7 @@ ms.locfileid: "75932106"
 
 ### <a name="change-the-parameters-using-ambari-ui"></a>Изменение параметров с помощью пользовательского интерфейса Ambari
 
-1. В пользовательском интерфейсе Ambari перейдите к **Spark2** > **configs** > **Custom Spark2 (значения по умолчанию)**.
+1. В пользовательском интерфейсе Ambari перейдите к **Spark2**  >  **configs**  >  **Custom Spark2 (значения по умолчанию)**.
 
     ![Задание параметров с помощью Ambari Custom](./media/apache-spark-resource-manager/ambari-ui-spark2-configs.png "Задание параметров с помощью Ambari Custom")
 
@@ -62,8 +62,10 @@ ms.locfileid: "75932106"
 
 В следующем фрагменте кода показано, как изменить конфигурацию для приложения, работающего в Jupyter.
 
-    %%configure
-    {"executorMemory": "3072M", "executorCores": 4, "numExecutors":10}
+```scala
+%%configure
+{"executorMemory": "3072M", "executorCores": 4, "numExecutors":10}
+```
 
 Параметры конфигурации следует передавать в виде строки JSON, расположенной сразу после команды magic, как показано в столбце примера.
 
@@ -71,25 +73,29 @@ ms.locfileid: "75932106"
 
 Следующая команда демонстрирует, как можно изменять параметры конфигурации для приложения пакетной службы, отправленного с помощью `spark-submit`.
 
-    spark-submit --class <the application class to execute> --executor-memory 3072M --executor-cores 4 –-num-executors 10 <location of application jar file> <application parameters>
+```scala
+spark-submit --class <the application class to execute> --executor-memory 3072M --executor-cores 4 –-num-executors 10 <location of application jar file> <application parameters>
+```
 
 ### <a name="change-the-parameters-for-an-application-submitted-using-curl"></a>Изменение параметров для приложения, отправленного с помощью cURL
 
 В следующей команде показано, как изменить параметры конфигурации для приложения пакетной службы, отправленного с помощью cURL.
 
-    curl -k -v -H 'Content-Type: application/json' -X POST -d '{"file":"<location of application jar file>", "className":"<the application class to execute>", "args":[<application parameters>], "numExecutors":10, "executorMemory":"2G", "executorCores":5' localhost:8998/batches
+```bash
+curl -k -v -H 'Content-Type: application/json' -X POST -d '{"file":"<location of application jar file>", "className":"<the application class to execute>", "args":[<application parameters>], "numExecutors":10, "executorMemory":"2G", "executorCores":5' localhost:8998/batches
+```
 
 ### <a name="change-these-parameters-on-a-spark-thrift-server"></a>Изменение этих параметров на сервере Thrift Spark
 
 Сервер Thrift Spark предоставляет доступ JDBC и ODBC к кластеру Spark. Такие средства, как Power BI, Tableau и т. д., используют протокол ODBC для взаимодействия с сервером Spark Thrift для выполнения запросов Spark SQL в качестве приложения Spark. Когда вы создаете кластер Spark, запускаются два экземпляра сервера Thrift Spark, по одному на каждый головной узел. Каждый сервер Thrift Spark отображается в пользовательском интерфейсе YARN как приложение Spark.
 
-Сервер Spark Thrift использует динамическое выделение исполнителя Spark и, `spark.executor.instances` следовательно, не используется. Вместо этого сервер Thrift Spark использует `spark.dynamicAllocation.maxExecutors` и `spark.dynamicAllocation.minExecutors`, чтобы указать число исполнителей. Параметры `spark.executor.cores`конфигурации и `spark.executor.memory` используются для изменения размера исполнителя. Эти параметры можно изменить, как описано ниже.
+Сервер Spark Thrift использует динамическое выделение исполнителя Spark и, следовательно, `spark.executor.instances` не используется. Вместо этого сервер Thrift Spark использует `spark.dynamicAllocation.maxExecutors` и `spark.dynamicAllocation.minExecutors`, чтобы указать число исполнителей. Параметры конфигурации `spark.executor.cores` и `spark.executor.memory` используются для изменения размера исполнителя. Эти параметры можно изменить, как описано ниже.
 
-* Разверните категорию **Advanced spark2-Thrift-sparkconf** , чтобы обновить параметры `spark.dynamicAllocation.maxExecutors`, и. `spark.dynamicAllocation.minExecutors`
+* Разверните категорию **Advanced spark2-Thrift-sparkconf** , чтобы обновить параметры `spark.dynamicAllocation.maxExecutors` , и `spark.dynamicAllocation.minExecutors` .
 
     ![Настройка сервера Thrift Spark](./media/apache-spark-resource-manager/ambari-ui-advanced-thrift-sparkconf.png "Настройка сервера Thrift Spark")
 
-* Разверните **пользовательскую категорию spark2-Thrift-sparkconf** , чтобы обновить параметры `spark.executor.cores`, и `spark.executor.memory`.
+* Разверните **пользовательскую категорию spark2-Thrift-sparkconf** , чтобы обновить параметры `spark.executor.cores` , и `spark.executor.memory` .
 
     ![Настройка параметра сервера Spark Thrift](./media/apache-spark-resource-manager/ambari-ui-custom-thrift-sparkconf.png "Настройка параметра сервера Spark Thrift")
 
@@ -97,7 +103,7 @@ ms.locfileid: "75932106"
 
 Память драйверов сервера Thrift Spark настроена так, что она использует 25 % от размера ОЗУ головного узла, при условии, что общий объем ОЗУ головного узла превышает 14 ГБ. Конфигурацию памяти драйверов можно изменить с помощью пользовательского интерфейса Ambari, как показано на снимке экрана ниже.
 
-В пользовательском интерфейсе Ambari перейдите к **Spark2** > **configs** > **Advanced Spark2-env**. Затем укажите значение для **spark_thrift_cmd_opts**.
+В пользовательском интерфейсе Ambari перейдите к **Spark2**  >  **configs**  >  **Advanced Spark2-env**. Затем укажите значение для **spark_thrift_cmd_opts**.
 
 ## <a name="reclaim-spark-cluster-resources"></a>Освобождение кластерных ресурсов Spark
 
@@ -140,7 +146,7 @@ ms.locfileid: "75932106"
 
     ![Завершить работу](./media/apache-spark-resource-manager/apache-ambari-kill-app2.png "Завершить работу")
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>Дополнительно
 
 * [Отслеживание и отладка заданий в кластере Apache Spark в HDInsight на платформе Linux](apache-spark-job-debugging.md)
 

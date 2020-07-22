@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 07/11/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4fd6c18e3a3af763a2f4404e6b9c808e1bd8a4a5
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: f9739fa5e4e59d0808f0bea953c4cfde11e50d37
+ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "71129938"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85607979"
 ---
 # <a name="tutorial-integrate-ascentis-with-azure-active-directory"></a>Руководство по Интеграция Ascentis с Azure Active Directory
 
@@ -88,10 +88,10 @@ ms.locfileid: "71129938"
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в одном из таких форматов:
 
-    | |
-    |--|
-    | `https://selfservice.ascentis.com/<clientname>/STS/signin.aspx?SAMLResponse=true` |
-    | `https://selfservice2.ascentis.com/<clientname>/STS/signin.aspx?SAMLResponse=true` |
+   ```https
+    https://selfservice.ascentis.com/<clientname>/STS/signin.aspx?SAMLResponse=true
+    https://selfservice2.ascentis.com/<clientname>/STS/signin.aspx?SAMLResponse=true
+    ```
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения URL-адреса ответа и URL-адреса входа. Чтобы получить эти данные, обратитесь в [службу поддержки клиентов Ascentis](mailto:support@ascentis.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

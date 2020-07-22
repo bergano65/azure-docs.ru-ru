@@ -7,18 +7,18 @@ author: mmacy
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.topic: conceptual
+ms.topic: how-to
 ms.workload: identity
 ms.date: 04/30/2019
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: 1a520c5a1002e401f880fba84f8fc02a0a678133
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a76935c5b826f8aa686167f702f7170522744155
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77084736"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85477470"
 ---
 # <a name="instantiate-a-confidential-client-application-with-configuration-options-using-msalnet"></a>Создание экземпляра конфиденциального клиентского приложения с параметрами конфигурации с помощью MSAL.NET
 
@@ -35,7 +35,7 @@ ms.locfileid: "77084736"
 ## <a name="configure-the-application-from-the-config-file"></a>Настройка приложения из файла конфигурации
 Имена свойств параметров в MSAL.NET соответствуют именам свойств `AzureADOptions` в ASP.NET Core, поэтому не нужно писать какой бы то ни было никакого связывающего кода.
 
-Конфигурация приложения ASP.NET Core описана в файле *appSettings. JSON* :
+Конфигурация ASP.NET Core приложения описана в *appsettings.js* файле:
 
 ```json
 {
@@ -60,7 +60,7 @@ ms.locfileid: "77084736"
 
 Начиная с версии MSAL.NET v3. x, можно настроить конфиденциальное клиентское приложение в файле конфигурации.
 
-В классе, где требуется настроить и создать экземпляр приложения, необходимо объявить `ConfidentialClientApplicationOptions` объект.  Свяжите конфигурацию, считанную из источника (включая файл appconfig. JSON), с экземпляром параметров приложения с помощью `IConfigurationRoot.Bind()` метода из [пакета NuGet Microsoft. Extensions. Configuration. BINDER](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Binder):
+В классе, где требуется настроить и создать экземпляр приложения, необходимо объявить `ConfidentialClientApplicationOptions` объект.  Свяжите конфигурацию, считанную из источника (включая appconfig.jsв файле), с экземпляром параметров приложения, используя `IConfigurationRoot.Bind()` метод из [Microsoft.Extensions.Configфигурации. Пакет NuGet BINDER](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Binder):
 
 ```csharp
 using Microsoft.Identity.Client;
@@ -70,7 +70,7 @@ _applicationOptions = new ConfidentialClientApplicationOptions();
 configuration.Bind("AzureAD", _applicationOptions);
 ```
 
-Это позволяет привязать содержимое раздела "AzureAD" файла *appSettings. JSON* к соответствующим свойствам `ConfidentialClientApplicationOptions` объекта.  Затем создайте `ConfidentialClientApplication` объект:
+Это позволяет привязать содержимое раздела "AzureAD" *appsettings.jsв* файле к соответствующим свойствам `ConfidentialClientApplicationOptions` объекта.  Затем создайте `ConfidentialClientApplication` объект:
 
 ```csharp
 IConfidentialClientApplication app;

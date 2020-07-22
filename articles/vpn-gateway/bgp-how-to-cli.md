@@ -4,15 +4,14 @@ description: В этой статье описана поэтапная наст
 services: vpn-gateway
 author: yushwang
 ms.service: vpn-gateway
-ms.topic: article
+ms.topic: how-to
 ms.date: 09/25/2018
 ms.author: yushwang
-ms.openlocfilehash: 42a07ac00fd8a26918164f6547bf57c2b021d14c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: d71e8af607ac15c708ff18a2f2a91e11ed36a987
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75863620"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84987748"
 ---
 # <a name="how-to-configure-bgp-on-an-azure-vpn-gateway-by-using-cli"></a>Настройка BGP на VPN-шлюзе Azure с помощью интерфейса командной строки
 
@@ -301,6 +300,6 @@ az network vpn-connection create -n VNet2ToVNet1 -g TestBGPRG2 --vnet-gateway1 /
 
 Подключение будет установлено через несколько минут после выполнения этих действий. Сразу после создания подключения между виртуальными сетями начнется сеанс пиринга BGP.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Установив подключение, можно добавить виртуальные машины в виртуальные сети. Пошаговые инструкции см. в статье о [создании виртуальной машины](../virtual-machines/virtual-machines-windows-hero-tutorial.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).

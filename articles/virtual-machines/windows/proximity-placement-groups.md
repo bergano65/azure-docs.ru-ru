@@ -9,10 +9,10 @@ ms.date: 01/27/2020
 ms.author: cynthn
 ms.reviewer: zivr
 ms.openlocfilehash: 2401e8c160fd1c2ee3a734f374f1d4409c52ed16
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82098532"
 ---
 # <a name="deploy-vms-to-proximity-placement-groups-using-powershell"></a>Развертывание виртуальных машин в группах размещения с помощью PowerShell
@@ -20,11 +20,11 @@ ms.locfileid: "82098532"
 
 Чтобы виртуальные машины максимально близки к максимально возможной задержке, следует развернуть их в [группе размещения](co-location.md#proximity-placement-groups)с учетом расположения.
 
-Группа размещения с учетом расположения — это логическая группировка, используемая для того, чтобы ресурсы вычислений Azure физически размещались близко друг к другу. Группы размещения с учетом расположения удобны для рабочих нагрузок, где требуется низкая задержка.
+Группа размещения близкого взаимодействия — это логическая группировка, используемая для того, чтобы ресурсы вычислений Azure физически размещались близко друг к другу. Группа размещения близкого взаимодействия удобны для рабочих нагрузок, где требуется низкая задержка.
 
 
 ## <a name="create-a-proximity-placement-group"></a>Создание группы размещения близкого взаимодействия
-Создайте группу размещения с учетом расположения с помощью командлета [New-азпроксимитиплацементграуп](https://docs.microsoft.com/powershell/module/az.compute/new-azproximityplacementgroup) . 
+Создайте группу размещения близкого взаимодействия с помощью командлета [New-AzProximityPlacementGroup](https://docs.microsoft.com/powershell/module/az.compute/new-azproximityplacementgroup). 
 
 ```azurepowershell-interactive
 $resourceGroup = "myPPGResourceGroup"
@@ -38,9 +38,9 @@ $ppg = New-AzProximityPlacementGroup `
    -ProximityPlacementGroupType Standard
 ```
 
-## <a name="list-proximity-placement-groups"></a>Список групп размещения с учетом расположения
+## <a name="list-proximity-placement-groups"></a>Перечисление групп размещения близкого взаимодействия
 
-Список всех групп размещения с учетом расположения можно получить с помощью командлета [Get-азпроксимитиплацементграуп](/powershell/module/az.compute/get-azproximityplacementgroup) .
+Список всех групп размещения с учетом расположения можно получить с помощью командлета [Get-AzProximityPlacementGroup](/powershell/module/az.compute/get-azproximityplacementgroup).
 
 ```azurepowershell-interactive
 Get-AzProximityPlacementGroup
@@ -96,7 +96,7 @@ Start-AzVM -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName
 
 
 ## <a name="availability-sets"></a>Группы доступности
-Вы также можете создать группу доступности в группе размещения с близкой назначением. Используйте один и `-ProximityPlacementGroup` тот же параметр с командлетом [New-азаваилабилитисет](/powershell/module/az.compute/new-azavailabilityset) , чтобы создать группу доступности, и все виртуальные машины, созданные в группе доступности, также будут созданы в рамках той же группы размещения близости.
+Вы также можете создать группу доступности в группе размещения с близкой назначением. Используйте один и тот же `-ProximityPlacementGroup` параметр с командлетом [New-азаваилабилитисет](/powershell/module/az.compute/new-azavailabilityset) , чтобы создать группу доступности, и все виртуальные машины, созданные в группе доступности, также будут созданы в рамках той же группы размещения близости.
 
 Чтобы добавить или удалить существующую группу доступности в группе размещения с близкой назначением, необходимо сначала отключить все виртуальные машины в ней. 
 
@@ -171,6 +171,6 @@ Update-AzVmss -VirtualMachineScaleSet $vmss -VMScaleSetName $vmss.Name -Resource
 Start-AzVmss -VMScaleSetName $vmss.Name -ResourceGroupName $vmss.ResourceGroupName
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Можно также использовать [Azure CLI](../linux/proximity-placement-groups.md) для создания групп размещения с учетом расположения.
+Можно также использовать [Azure CLI](../linux/proximity-placement-groups.md) для создания групп размещения близкого взаимодействия.

@@ -9,17 +9,16 @@ editor: ''
 ms.assetid: ''
 ms.service: storsimple
 ms.devlang: NA
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 06/29/2017
 ms.author: alkohli
-ms.openlocfilehash: 07d9e03f1631ebce88a7a7c2e33be62f21dda522
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 549c14e0506613aca91ee4666026348d74afedbe
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "60319677"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85514759"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-manage-your-backup-catalog"></a>Использование службы диспетчера устройств StorSimple для управления каталогом резервного копирования
 ## <a name="overview"></a>Обзор
@@ -109,7 +108,7 @@ ms.locfileid: "60319677"
 
     ![Переход в каталог резервного копирования](./media/storsimple-8000-manage-backup-catalog/bucatalog7.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Узнайте об использовании каталога резервного копирования [для восстановления устройства с помощью набора архивации](storsimple-8000-restore-from-backup-set-u2.md).
 * Узнайте, как [использовать службу диспетчера устройств StorSimple для администрирования устройства StorSimple](storsimple-8000-manager-service-administration.md).
 

@@ -3,17 +3,17 @@ title: Отправка событий хранилища BLOB-объектов 
 description: Используйте службу "Сетка событий Azure" для подписки на события хранилища BLOB-объектов. Отправка событий в веб-перехватчик. Обработка событий в веб-приложении.
 author: normesta
 ms.author: normesta
-ms.reviewer: cbrooks
+ms.reviewer: dineshm
 ms.date: 03/05/2020
 ms.topic: how-to
 ms.service: storage
 ms.subservice: blobs
-ms.openlocfilehash: ad5662a722db764d09c1ead528a98c09c1d3df7f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f6cf929af951a6bbd498d13cd514b8cae8e353f6
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80745513"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84809141"
 ---
 # <a name="quickstart-route-storage-events-to-web-endpoint-with-azure-cli"></a>Краткое руководство. Маршрутизация событий хранилища в конечную точку веб-узла с Azure CLI
 
@@ -159,5 +159,5 @@ az group delete --name <resource_group_name>
 
 Теперь, когда вы знаете, как создавать разделы и подписки на события, ознакомьтесь с дополнительными сведениями о событиях хранилища BLOB-объектов и возможностях службы "Сетка событий":
 
-- [Реагирование на события хранилища BLOB-объектов](storage-blob-event-overview.md)
+- [Reacting to Blob storage events (preview)](storage-blob-event-overview.md) (Реагирование на события хранилища BLOB-объектов)
 - [An introduction to Azure Event Grid](../../event-grid/overview.md) (Общие сведения о службе "Сетка событий Azure")

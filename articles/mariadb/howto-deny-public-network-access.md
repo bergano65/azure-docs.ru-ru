@@ -4,20 +4,20 @@ description: Узнайте, как настроить запрет доступ
 author: kummanish
 ms.author: manishku
 ms.service: mariadb
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/10/2020
-ms.openlocfilehash: 87b6033e486e9009573436628d0183c8a022aced
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f33dbfa0b96d7f6d85443005ff7e8b1a780c75a0
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79375243"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86104390"
 ---
 # <a name="deny-public-network-access-in-azure-database-for-mariadb-using-azure-portal"></a>Запрет доступа к общедоступной сети в базе данных Azure для MariaDB с помощью портал Azure
 
 В этой статье описывается, как настроить сервер базы данных Azure для MariaDB для запрета всех общедоступных конфигураций и разрешить только подключения через частные конечные точки для дальнейшего повышения безопасности сети.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
 
@@ -35,12 +35,12 @@ ms.locfileid: "79375243"
 
     ![Служба "база данных Azure для MariaDB" запрещает доступ к сети](./media/howto-deny-public-network-access/deny-public-network-access.PNG)
 
-1. Чтобы сохранить изменения, нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить** , чтобы сохранить изменения.
 
 1. Уведомление подтверждает успешное включение параметра безопасности подключения.
 
     ![Служба "база данных Azure для MariaDB" запретила доступ к сети](./media/howto-deny-public-network-access/deny-public-network-access-success.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте [, как создавать оповещения по метрикам](howto-alert-metric.md).

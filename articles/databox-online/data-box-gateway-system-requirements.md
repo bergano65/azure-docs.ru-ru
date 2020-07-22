@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 05/08/2019
 ms.author: alkohli
 ms.openlocfilehash: aadaedfd2c9ecf544d142e42a0fbeb410324b7d8
-ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82562446"
 ---
 # <a name="azure-data-box-gateway-system-requirements"></a>Шлюз Azure Data Box требования к системе
@@ -34,7 +34,7 @@ ms.locfileid: "82562446"
 | Виртуальные процессоры (ядра)   | Минимум 4 |
 | Память  | Минимум 8 ГБ|
 | Доступность|Один узел|
-| Диски| Диск ОС — 250 ГБ <br> Диск данных — минимум 2 ТБ, с тонкой подготовкой, с использованием дисков SSD|
+| Диски| Диск ОС: 250 ГБ <br> Диск данных: минимум 2 ТБ, с тонкой подготовкой, с использованием дисков SSD|
 | Сетевые интерфейсы|Один или несколько виртуальных сетевых интерфейсов|
 
 
@@ -48,10 +48,10 @@ ms.locfileid: "82562446"
 
 ## <a name="supported-virtualization-platforms-for-device"></a>Поддерживаемые платформы виртуализации для устройства
 
-| **Операционная система и (или) платформа**  |**Версии**   |**Примечания**  |
+| **Операционная система и (или) платформа**  |**Операционных**   |**Примечания**  |
 |---------|---------|---------|
 |Hyper-V  |  2012 R2 <br> 2016 <br> 2019 |         |
-|VMware ESXi     | 6.0 <br> 6,5 <br> 6.7       |Средства VMware не поддерживаются.         |
+|VMware ESXi     | 6,0 <br> 6,5 <br> 6.7       |Средства VMware не поддерживаются.         |
 
 
 ## <a name="supported-storage-accounts"></a>Учетные записи хранилища BLOB-объектов

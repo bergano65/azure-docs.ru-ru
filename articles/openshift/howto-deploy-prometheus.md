@@ -8,10 +8,9 @@ ms.topic: conceptual
 ms.date: 06/17/2019
 keywords: Prometheus, АТО, openshift, метрики, Red Hat
 ms.openlocfilehash: 7f22df587f51af735e0ea663e53f6eef14d60692
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80886894"
 ---
 # <a name="deploy-a-standalone-prometheus-instance-in-an-azure-red-hat-openshift-cluster"></a>Развертывание автономного экземпляра Prometheus в кластере Azure Red Hat OpenShift
@@ -30,7 +29,7 @@ ms.locfileid: "80886894"
 
 ## <a name="sign-in-to-the-cluster-by-using-the-oc-tool"></a>Вход в кластер с помощью средства OC
 
-1. Откройте веб-браузер и перейдите в веб-консоль кластера (https://openshift.* случайный идентификатор*. *Region*. azmosa.IO).
+1. Откройте веб-браузер и перейдите в веб-консоль кластера ( https://openshift .* случайный идентификатор*. *Region*. azmosa.IO).
 2. Выполните вход с использованием учетных данных Azure.
 3. Выберите свое имя пользователя в правом верхнем углу и нажмите кнопку **Копировать имя входа**.
 4. Вставьте имя пользователя в терминал, который вы будете использовать.
@@ -49,7 +48,7 @@ oc new-project app-project2
 
 
 > [!NOTE]
-> Можно либо использовать параметр `-n` или `--namespace` , либо выбрать активный проект, выполнив `oc project` команду.
+> Можно либо использовать `-n` `--namespace` параметр или, либо выбрать активный проект, выполнив `oc project` команду.
 
 ## <a name="prepare-the-prometheus-configuration-file"></a>Подготовка файла конфигурации Prometheus
 Создайте файл Prometheus. yml, введя следующее содержимое:
@@ -118,7 +117,7 @@ https://raw.githubusercontent.com/openshift/origin/release-3.11/examples/prometh
 ```
 oc process -f https://raw.githubusercontent.com/openshift/origin/release-3.11/examples/prometheus/prometheus-standalone.yaml | oc apply -f - -n prometheus-project
 ```
-Файл Prometheus-standalone. YAML является шаблоном OpenShift. Он создаст экземпляр Prometheus с OAuth-proxy перед ним и экземпляром Алертманажер, также защищенным с помощью OAuth-proxy. В этом шаблоне OAuth-proxy настроен на разрешение любому пользователю, который может «получить» пространство имен Prometheus-Project (см. `-openshift-sar` флаг).
+Файл Prometheus-standalone. YAML является шаблоном OpenShift. Он создаст экземпляр Prometheus с OAuth-proxy перед ним и экземпляром Алертманажер, также защищенным с помощью OAuth-proxy. В этом шаблоне OAuth-proxy настроен на разрешение любому пользователю, который может «получить» пространство имен Prometheus-Project (см `-openshift-sar` . флаг).
 
 > [!NOTE]
 > Чтобы проверить, равны ли Пром StatefulSet и текущие реплики числа, выполните `oc get statefulset -n prometheus-project` команду. Чтобы проверить все ресурсы в проекте, выполните `oc get all -n prometheus-project` команду.
@@ -178,11 +177,11 @@ oc process -f prometheus-sdrole.yml | oc apply -f - -n prometheus-project
 ```
 
 > [!NOTE]
-> Чтобы убедиться, что роль и Ролебиндинг созданы правильно, выполните команды `oc get role` и `oc get rolebinding` .
+> Чтобы убедиться, что роль и Ролебиндинг созданы правильно, выполните `oc get role` команды и `oc get rolebinding` .
 
 ## <a name="optional-deploy-example-application"></a>Необязательно: пример приложения для развертывания
 
-Все работает, но источники метрик отсутствуют. Перейдите по URL-адресуhttps://prom-prometheus-project.appsPrometheus (.* случайный идентификатор*. *Region*. azmosa.IO/). Его можно найти с помощью следующей команды:
+Все работает, но источники метрик отсутствуют. Перейдите по URL-адресу Prometheus ( https://prom-prometheus-project.apps .* случайный идентификатор*. *Region*. azmosa.IO/). Его можно найти с помощью следующей команды:
 
 ```
 oc get route prom -n prometheus-project
@@ -200,7 +199,7 @@ oc new-app python:3.6~https://github.com/Makdaam/prometheus-example --name=examp
 ```
 Новые приложения должны отображаться как допустимые целевые объекты на странице Обнаружение службы в течение 30 секунд после развертывания.
 
-Для получения дополнительных сведений выберите **состояние** > **целевые объекты**.
+Для получения дополнительных сведений выберите **состояние**  >  **целевые объекты**.
 
 > [!NOTE]
 > Для всех успешно бракованных целевых объектов Prometheus добавляет точку данных в метрику вверх. Выберите **Prometheus** в левом верхнем углу **, введите в** качестве выражения и нажмите кнопку **выполнить**.

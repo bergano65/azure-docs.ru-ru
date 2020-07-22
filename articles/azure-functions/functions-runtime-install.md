@@ -5,12 +5,12 @@ author: apwestgarth
 ms.topic: conceptual
 ms.date: 11/28/2017
 ms.author: anwestg
-ms.openlocfilehash: 7ad748aa9a5b45af10121648a668344548484cf7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 73b9533fa00c783e1cfb85270198f5c00c66afd5
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74226727"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86540389"
 ---
 # <a name="install-the-azure-functions-runtime-preview-2"></a>Узнайте, как установить предварительную версию 2 среды выполнения службы "Функции Azure"
 
@@ -71,7 +71,7 @@ ms.locfileid: "74226727"
 
     ![Инструмент настройки предварительной версии среды выполнения службы "Функции Azure"][7]
 
-1. Щелкните вкладку **База данных**, введите сведения о подключении для экземпляра SQL Server, укажите [главный ключ базы данных](https://docs.microsoft.com/sql/relational-databases/security/encryption/sql-server-and-database-encryption-keys-database-engine) и выберите **Применить**.  Подключение к экземпляру SQL Server необходимо, чтобы создать базу данных для поддержки среды выполнения службы "Функции Azure".
+1. Щелкните вкладку **База данных**, введите сведения о подключении для экземпляра SQL Server, укажите [главный ключ базы данных](/sql/relational-databases/security/encryption/sql-server-and-database-encryption-keys-database-engine) и выберите **Применить**.  Подключение к экземпляру SQL Server необходимо, чтобы создать базу данных для поддержки среды выполнения службы "Функции Azure".
 
     ![Настройка базы данных предварительной версии среды выполнения службы "Функции Azure"][8]
 
@@ -99,7 +99,7 @@ ms.locfileid: "74226727"
 
 Чтобы создать первую функцию в предварительной версии среды выполнения службы "Функции Azure", сделайте следующее:
 
-1. Перейдите на **портал среда выполнения функций Azure** , `https://<machinename>.<domain>` например `https://mycomputer.mydomain.com`.
+1. Перейдите на **портал среда выполнения функций Azure** , например `https://<machinename>.<domain>` `https://mycomputer.mydomain.com` .
 
 1. Вам будет предложено **войти**. При развертывании в домене используйте свое имя пользователя и пароль домена. В противном случае используйте имя пользователя и пароль локальной учетной записи для входа на портал.
 

@@ -4,14 +4,14 @@ description: Узнайте, как настроить расширенную з
 author: ajlam
 ms.author: andrela
 ms.service: mysql
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 3/18/2020
-ms.openlocfilehash: 4936f765052d6993e5a372bde6336e00b19a24f6
-ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
+ms.openlocfilehash: ef39d04b980d4f9c7f5baf11bc047acf6239f803
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82509267"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86118551"
 ---
 # <a name="advanced-threat-protection-for-azure-database-for-mysql"></a>Расширенная защита от угроз для Базы данных Azure для MySQL
 
@@ -27,7 +27,7 @@ ms.locfileid: "82509267"
 > Эта функция доступна во всех областях Azure, где База данных Azure для MySQL развернута для серверов общего назначения и оптимизирована для операций в памяти.
 
 ## <a name="set-up-threat-detection"></a>Настройка обнаружения угроз
-1. Запустите портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
+1. Запустите портал Azure по адресу [https://portal.azure.com](https://portal.azure.com) .
 2. Перейдите на страницу настройки сервера Базы данных Azure для MySQL, который требуется защитить. В параметрах безопасности выберите **Расширенная защита от угроз (предварительная версия)**.
 3. На странице настройки **Расширенная защита от угроз (предварительная версия)** сделайте следующее:
 
@@ -61,7 +61,7 @@ ms.locfileid: "82509267"
    ![Оповещение об обнаружении угроз](./media/howto-database-threat-protection-portal/threat-detection-alert-asc.png)
    
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения о [центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro)
+* Узнайте больше о [центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro).
 * Дополнительные сведения о ценах см. на [странице цен на Базу данных Azure для MySQL](https://azure.microsoft.com/pricing/details/mysql/).  

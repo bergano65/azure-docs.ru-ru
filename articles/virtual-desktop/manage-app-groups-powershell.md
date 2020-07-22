@@ -4,26 +4,26 @@ description: Управление группами приложений вирт
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 04/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 531c7a819bf83edff2756fe1e62859bcb8fef459
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
+ms.openlocfilehash: c286a3795cc7cb4c1925ff06b3da19952e7f0b43
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82615270"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85209340"
 ---
 # <a name="manage-app-groups-using-powershell"></a>Управление группами приложений с помощью PowerShell
 
 >[!IMPORTANT]
->Это содержимое относится к обновлению пружины 2020 с Azure Resource Manager объектов виртуальных рабочих столов Windows. Если вы используете виртуальный рабочий стол Windows в выпуске 2019 без Azure Resource Manager объектов, см. [эту статью](./virtual-desktop-fall-2019/manage-app-groups-2019.md).
+>Это содержимое применимо к обновлению за весну 2020 года с объектами Azure Resource Manager для Виртуального рабочего стола Windows. Если вы используете выпуск Виртуального рабочего стола Windows за осень 2019 года без объектов Azure Resource Manager, см. [эту статью](./virtual-desktop-fall-2019/manage-app-groups-2019.md).
 >
-> Обновление 2020 виртуального рабочего стола Windows в настоящее время находится в общедоступной предварительной версии. Эта предварительная версия предоставляется без соглашения об уровне обслуживания, и мы не рекомендуем использовать ее для рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. 
+> Обновление Виртуального рабочего стола Windows за весну 2020 года пока предоставляется как общедоступная предварительная версия. без соглашений об уровне обслуживания. Мы не рекомендуем использовать ее для выполнения производственных рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
 > Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-Группа приложений по умолчанию, созданная для нового пула узлов Виртуального рабочего стола Windows, также позволяет опубликовать полные классические приложения. Кроме того, вы можете создать одну или несколько групп приложений RemoteApp для пула узлов. Следуйте указаниям этого руководства, чтобы создать группу приложений RemoteApp и опубликовать отдельные приложения меню " **Пуск** ".
+Группа приложений по умолчанию, созданная для нового пула узлов Виртуального рабочего стола Windows, также позволяет опубликовать полные классические приложения. Кроме того, вы можете создать одну или несколько групп приложений RemoteApp для пула узлов. Выполните инструкции, приведенные в этом учебнике, чтобы создать группу приложений RemoteApp и опубликовать отдельные приложения в меню **Пуск**.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
@@ -51,46 +51,46 @@ ms.locfileid: "82615270"
    Get-AzWvdApplicationGroup -Name <appgroupname> -ResourceGroupName <resourcegroupname>
    ```
 
-3. Выполните следующий командлет, чтобы получить список приложений меню " **Пуск** " в образе виртуальной машины пула узлов. Запишите значения свойств **FilePath**, **IconPath**, **IconIndex** и другие важные данные для приложения, которое вы хотите опубликовать.
+3. Выполните указанный ниже командлет, чтобы получить список приложений в меню **Пуск**, которые присутствуют в образе виртуальной машины из пула узлов. Запишите значения свойств **FilePath**, **IconPath**, **IconIndex** и другие важные данные для приложения, которое вы хотите опубликовать.
 
    ```powershell
-   Get-AzWvdStartMenuItem -ApplicationGroupName <appgroupname> -ResourceGroupName <resourcegroupname> | Format-List | more 
+   Get-AzWvdStartMenuItem -ApplicationGroupName <appgroupname> -ResourceGroupName <resourcegroupname> | Format-List | more
    ```
 
    Выходные данные должны отображать все пункты меню "Пуск" в следующем формате:
 
    ```powershell
    AppAlias            : access
-   CommandLineArgument : 
-   FilePath            : C:\Program Files\Microsoft Office\root\Office16\MSACCESS.EXE 
-   FriendlyName        : 
-   IconIndex           : 0 
-   IconPath            : C:\Program Files\Microsoft Office\Root\VFS\Windows\Installer\{90160000-000F-0000-1000-0000000FF1CE}\accicons.exe 
-   Id                  : /subscriptions/resourcegroups/providers/Microsoft.DesktopVirtualization/applicationgroups/startmenuitems/Access 
-   Name                : 0301RAG/Access 
+   CommandLineArgument :
+   FilePath            : C:\Program Files\Microsoft Office\root\Office16\MSACCESS.EXE
+   FriendlyName        :
+   IconIndex           : 0
+   IconPath            : C:\Program Files\Microsoft Office\Root\VFS\Windows\Installer\{90160000-000F-0000-1000-0000000FF1CE}\accicons.exe
+   Id                  : /subscriptions/resourcegroups/providers/Microsoft.DesktopVirtualization/applicationgroups/startmenuitems/Access
+   Name                : 0301RAG/Access
    Type                : Microsoft.DesktopVirtualization/applicationgroups/startmenuitems
-   
-   AppAlias            : charactermap 
-   CommandLineArgument : 
-   FilePath            : C:\windows\system32\charmap.exe 
-   FriendlyName        : 
-   IconIndex           : 0 
-   IconPath            : C:\windows\system32\charmap.exe 
-   Id                  : /subscriptions/resourcegroups/providers/Microsoft.DesktopVirtualization/applicationgroups/startmenuitems/Character Map 
-   Name                : 0301RAG/Character Map 
-   Type                : Microsoft.DesktopVirtualization/applicationgroups/startmenuitems 
+
+   AppAlias            : charactermap
+   CommandLineArgument :
+   FilePath            : C:\windows\system32\charmap.exe
+   FriendlyName        :
+   IconIndex           : 0
+   IconPath            : C:\windows\system32\charmap.exe
+   Id                  : /subscriptions/resourcegroups/providers/Microsoft.DesktopVirtualization/applicationgroups/startmenuitems/Character Map
+   Name                : 0301RAG/Character Map
+   Type                : Microsoft.DesktopVirtualization/applicationgroups/startmenuitems
    ```
-   
+
 4. Выполните следующий командлет, чтобы установить приложение на основе свойства `AppAlias`. Свойство `AppAlias` отображается после обработки выходных данных, полученных на шаге 3.
 
    ```powershell
-   New-AzWvdApplication -AppAlias <appalias> -GroupName <appgroupname> -Name <remoteappname> -ResourceGroupName <resourcegroupname> -CommandLineSetting <DoNotAllow|Allow|Require> 
+   New-AzWvdApplication -AppAlias <appalias> -GroupName <appgroupname> -Name <remoteappname> -ResourceGroupName <resourcegroupname> -CommandLineSetting <DoNotAllow|Allow|Require>
    ```
 
 5. Выполните следующий командлет, чтобы опубликовать новую программу RemoteApp в группе приложений, созданной на шаге 1.
 
    ```powershell
-   New-AzWvdApplication -GroupName <appgroupname> -Name <remoteappname> -ResourceGroupName <resourcegroupname> -Filepath <filepath> -IconPath <iconpath> -IconIndex <iconindex> -CommandLineSetting <DoNotAllow|Allow|Require> 
+   New-AzWvdApplication -GroupName <appgroupname> -Name <remoteappname> -ResourceGroupName <resourcegroupname> -Filepath <filepath> -IconPath <iconpath> -IconIndex <iconindex> -CommandLineSetting <DoNotAllow|Allow|Require>
    ```
 
 6. Чтобы убедиться в том, что приложение было опубликовано, выполните указанный ниже командлет.

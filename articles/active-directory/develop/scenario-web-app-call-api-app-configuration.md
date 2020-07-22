@@ -1,6 +1,6 @@
 ---
-title: Настройка веб-приложения, вызывающего веб-API — платформа Microsoft Identity | Службы
-description: Узнайте, как настроить код веб-приложения, вызывающего веб-API
+title: Настройка веб-приложения, которое вызывает веб-API с помощью платформы удостоверений Майкрософт | Azure
+description: Сведения о настройке кода веб-приложения, которое вызывает веб-API
 services: active-directory
 author: jmprieur
 manager: CelesteDG
@@ -8,24 +8,24 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 10/30/2019
+ms.date: 07/14/2020
 ms.author: jmprieur
-ms.custom: aaddev
-ms.openlocfilehash: 68f6f8ec67aca44c89b338287bdd37b6066992e0
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.custom: aaddev, tracking-python
+ms.openlocfilehash: 662520b9e31b4fe9a0925683fd0e661ce179e5b2
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82207026"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86518153"
 ---
-# <a name="a-web-app-that-calls-web-apis-code-configuration"></a>Веб-приложение, вызывающее веб-API: конфигурация кода
+# <a name="a-web-app-that-calls-web-apis-code-configuration"></a>Веб-приложение, которое вызывает веб-API. Конфигурация кода
 
-Как показано в примере с [веб-приложением, в котором выполняется вход пользователей](scenario-web-app-sign-user-overview.md) , веб-приложение использует [поток кода авторизации OAuth 2,0](v2-oauth2-auth-code-flow.md) для входа пользователя. Этот поток включает два шага:
+Как описано на странице [Веб-приложение, которое выполняет вход пользователей в систему](scenario-web-app-sign-user-overview.md), веб-приложение использует для входа пользователей [поток кода авторизации OAuth 2.0](v2-oauth2-auth-code-flow.md). Этот поток включает два этапа:
 
-1. Запросите код авторизации. Эта часть делегирует частное диалоговое окно с пользователем на платформу Microsoft Identity. Во время этого диалогового окна пользователь входит в систему и отправляется на использование веб-API. Когда диалоговое окно закрыто успешно завершается, веб-приложение получает код авторизации в URI перенаправления.
-1. Запросите маркер доступа для API с помощью активации кода авторизации.
+1. Запрос кода авторизации. Эта часть делегирует частный диалог с пользователем на платформу удостоверений Майкрософт. Во время этого диалога пользователь входит в систему и предоставляет согласие на использование веб-API. После успешного завершения частного диалога веб-приложение получает код авторизации в URI перенаправления.
+1. Запрос маркера доступа для API с помощью активации кода авторизации.
 
-[Веб-приложение, которое подписывает сценарии пользователей,](scenario-web-app-sign-user-overview.md) охватывает только первый шаг. Здесь вы узнаете, как изменить веб-приложение так, чтобы оно не только подписывает пользователей, но и теперь вызывало веб-API.
+На странице [Веб-приложение, которое выполняет вход пользователей в систему](scenario-web-app-sign-user-overview.md) описан лишь первый этап. На этой странице содержатся сведения об изменении веб-приложения, чтобы оно не только выполняло вход пользователей в систему, но и вызывало веб-API.
 
 ## <a name="libraries-that-support-web-app-scenarios"></a>Библиотеки, поддерживающие сценарии веб-приложений
 
@@ -33,15 +33,15 @@ ms.locfileid: "82207026"
 
 | Библиотека MSAL | Описание |
 |--------------|-------------|
-| ![MSAL.NET](media/sample-v2-code/logo_NET.png) <br/> MSAL.NET  | Поддержка платформ .NET Framework и .NET Core. Не поддерживается универсальная платформа Windows (UWP), Xamarin. iOS и Xamarin. Android, так как эти платформы используются для создания общедоступных клиентских приложений. Для ASP.NET Core веб-приложений и веб-интерфейсов API MSAL.NET инкапсулируется в библиотеку более высокого уровня с именем Microsoft. Identity. Web.|
+| ![MSAL.NET](media/sample-v2-code/logo_NET.png) <br/> MSAL.NET  | Поддержка платформ .NET Framework и .NET Core. Не поддерживается универсальная платформа Windows (UWP), Xamarin.iOS и Xamarin.Android, так как эти платформы используются для создания общедоступных клиентских приложений. Для ASP.NET Core веб-приложений и веб-интерфейсов API MSAL.NET инкапсулируется в библиотеку более высокого уровня с именем [Microsoft. Identity. Web](https://aka.ms/ms-identity-web) .|
 | ![MSAL Python](media/sample-v2-code/logo_python.png) <br/> MSAL для Python | Поддержка веб-приложений Python. |
 | ![MSAL Java](media/sample-v2-code/logo_java.png) <br/> MSAL для Java | Поддержка веб-приложений Java. |
 
-Выберите вкладку для интересующей вас платформы:
+Выберите нужную вкладку для платформы:
 
 # <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
 
-Чтобы веб-приложение вызывало защищенные интерфейсы API при использовании Microsoft. Identity. Web, необходимо только вызвать `AddWebAppCallsProtectedWebApi` и указать формат сериализации кэша маркеров (например, кэш маркеров в памяти):
+Чтобы разрешить веб-приложению вызывать защищенные интерфейсы API при использовании Microsoft.Identity.Web, необходимо вызвать только `AddWebAppCallsProtectedWebApi` и указать формат сериализации кэша маркеров (например, кэш маркеров в памяти):
 
 ```C#
 // This method gets called by the runtime. Use this method to add services to the container.
@@ -49,8 +49,8 @@ public void ConfigureServices(IServiceCollection services)
 {
     // more code here
 
-    services.AddSignIn(Configuration, "AzureAd")
-            .AddWebAppCallsProtectedWebApi(Configuration,
+    services.AddMicrosoftWebAppAuthentication(Configuration, "AzureAd")
+            .AddMicrosoftWebAppCallsdWebApi(Configuration,
                                            initialScopes: new string[] { "user.read" })
             .AddInMemoryTokenCaches();
 
@@ -58,32 +58,32 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-Если вы хотите получить дополнительные сведения о кэше маркеров, см. раздел [Параметры сериализации кэша маркеров](#token-cache) .
+Дополнительные сведения о кэше маркеров см. в разделе о [параметрах сериализации кэша маркеров](#token-cache).
 
 > [!NOTE]
-> Чтобы полностью понять примеры кода, необходимо ознакомиться с [ASP.NET Core фундаментальными принципами](https://docs.microsoft.com/aspnet/core/fundamentals)и в частности с [внедрением](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection) и [параметрами](https://docs.microsoft.com/aspnet/core/fundamentals/configuration/options)зависимостей.
+> Чтобы полностью понять эти примеры кода, ознакомьтесь с [основами ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals), в частности со сведениями о [параметрах](https://docs.microsoft.com/aspnet/core/fundamentals/configuration/options) и [внедрении зависимостей](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection).
 
 # <a name="aspnet"></a>[ASP.NET](#tab/aspnet)
 
-Поскольку вход пользователя делегируется по промежуточного слоя Open ID Connect (OIDC), необходимо взаимодействовать с процессом OIDC. Взаимодействие зависит от используемой платформы.
+Поскольку вход пользователя делегируется в ПО промежуточного слоя Open ID Connect (OIDC), необходимо взаимодействовать с процессом OIDC. Взаимодействие зависит от используемой платформы.
 
-Для ASP.NET вы подпишитесь на события OIDC по промежуточного слоя:
+Для ASP.NET необходимо подписаться на события ПО промежуточного слоя OIDC:
 
-- Вы можете разрешить ASP.NET Core запросить код авторизации с помощью по промежуточного слоя Open ID Connect. ASP.NET или ASP.NET Core предоставит пользователю возможность входа и предоставления согласия.
-- Вы подпишитесь на веб-приложение, чтобы получить код авторизации. Эта подписка выполняется с помощью делегата C#.
-- При получении кода авторизации вы будете использовать библиотеки MSAL для его активации. Итоговые маркеры доступа и маркеры обновления хранятся в кэше маркеров. Кэш можно использовать в других частях приложения, таких как контроллеры, для получения других маркеров без вмешательства пользователя.
+- Вы можете разрешить ASP.NET Core запросить код авторизации с помощью ПО промежуточного слоя Open ID Connect. ASP.NET или ASP.NET Core разрешит пользователю выполнить вход в систему и предоставить согласие.
+- Подпишитесь на веб-приложение, чтобы получить код авторизации. Эта подписка выполняется с помощью делегата C#.
+- При получении кода авторизации вы будете использовать библиотеки MSAL для его активации. Полученные маркеры доступа и обновления хранятся в кэше маркеров. Кэш можно использовать в других частях приложения, таких как контроллеры, для автоматического получения других маркеров.
 
-Примеры кода, приведенные в этой статье, и следующие из них извлекаются из [примера веб-приложения ASP.NET](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect). Для получения подробных сведений о реализации может потребоваться обратиться к этому примеру.
+Примеры кода в этой и следующей статьях взяты из [примера веб-приложения ASP.NET](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect). Этот пример можно просмотреть для получения подробной информации о его реализации.
 
 # <a name="java"></a>[Java](#tab/java)
 
-Примеры кода в этой статье и следующие сведения извлекаются из [веб-приложения Java, которое вызывает Microsoft Graph](https://github.com/Azure-Samples/ms-identity-java-webapp), пример веб-приложения, в котором используется MSAL для Java.
-В настоящее время пример позволяет MSAL для Java создать URL-адрес авторизации и обработать переход к конечной точке авторизации для платформы Microsoft Identity. Можно также использовать безопасность спринта для входа пользователя в систему. Для получения подробных сведений о реализации может потребоваться ссылка на пример.
+Примеры кода в этой и следующей статьях взяты из примера веб-приложения [Веб-приложение Java, которое вызывает Microsoft Graph](https://github.com/Azure-Samples/ms-identity-java-webapp) с использованием MSAL для Java.
+В настоящее время пример позволяет MSAL для Java создать URL-адрес кода авторизации и обработать переход к конечной точке авторизации для платформы удостоверений Майкрософт. Кроме того, можно использовать безопасность спринта для входа пользователя в систему. Этот пример можно просмотреть для получения подробной информации о его реализации.
 
 # <a name="python"></a>[Python](#tab/python)
 
-Примеры кода, приведенные в этой статье, и следующие из них извлекаются из веб-приложения Python, в котором [вызывается Microsoft Graph](https://github.com/Azure-Samples/ms-identity-python-webapp), пример Web App, использующий MSAL. Языке.
-В настоящее время пример позволяет MSAL. Python создает URL-адрес кода авторизации и обрабатывает переход к конечной точке авторизации для платформы Microsoft Identity. Для получения подробных сведений о реализации может потребоваться ссылка на пример.
+Примеры кода в этой и следующей статьях взяты из примера веб-приложения [Веб-приложение Python, которое вызывает Microsoft Graph](https://github.com/Azure-Samples/ms-identity-python-webapp) с использованием MSAL.Python.
+В настоящее время пример позволяет MSAL.Python создать URL-адрес кода авторизации и обработать переход к конечной точке авторизации для платформы удостоверений Майкрософт. Этот пример можно просмотреть для получения подробной информации о его реализации.
 
 ---
 
@@ -91,13 +91,13 @@ public void ConfigureServices(IServiceCollection services)
 
 # <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
 
-Microsoft. Identity. Web упрощает ваш код, настроив правильные параметры OpenID Connect Connect, подписавшись на событие Received Code и выключая код. Для активации кода авторизации дополнительный код не требуется.
+Microsoft.Identity.Web упрощает ваш код, устанавливая правильные параметры OpenID Connect, подписываясь на событие получения кода и его активации. Для активации кода авторизации дополнительный код не требуется. Сведения о том, как это работает, см. в разделе [Исходный код Microsoft. Identity. Web](https://github.com/AzureAD/microsoft-identity-web/blob/c29f1a7950b940208440bebf0bcb524a7d6bee22/src/Microsoft.Identity.Web/WebAppExtensions/WebAppCallsWebApiAuthenticationBuilderExtensions.cs#L140) .
 
 # <a name="aspnet"></a>[ASP.NET](#tab/aspnet)
 
-ASP.NET обрабатывает вещи так же, как ASP.NET Core, за исключением того, что конфигурация OpenID Connect Connect и `OnAuthorizationCodeReceived` подписка на событие происходит в файле [\стартуп.АУС.КС App_Start](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect/blob/a2da310539aa613b77da1f9e1c17585311ab22b7/WebApp/App_Start/Startup.Auth.cs) . Эти понятия также похожи на ASP.NET Core, за исключением того, что в ASP.NET необходимо указать `RedirectUri` в [файле Web. config # L15](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect/blob/master/WebApp/Web.config#L15). Такая конфигурация немного менее надежна, чем в ASP.NET Core, так как ее необходимо изменить при развертывании приложения.
+ASP.NET функционирует так же, как ASP.NET Core, за исключением того, что конфигурация OpenID Connect и подписка на событие `OnAuthorizationCodeReceived` выполняется в файле [App_Start\Startup.Auth.cs](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect/blob/a2da310539aa613b77da1f9e1c17585311ab22b7/WebApp/App_Start/Startup.Auth.cs). Основные понятия также аналогичны ASP.NET Core, за исключением того, что в ASP.NET необходимо указать `RedirectUri` в [Web.config#L15](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect/blob/master/WebApp/Web.config#L15). Такая конфигурация менее надежна, чем в ASP.NET Core, так как ее необходимо изменить при развертывании приложения.
 
-Вот код для Startup.Auth.cs:
+Ниже приведен код для Startup.Auth.cs:
 
 ```csharp
 public partial class Startup
@@ -166,9 +166,9 @@ public partial class Startup
 
 # <a name="java"></a>[Java](#tab/java)
 
-См. раздел [веб-приложение, которое входит в систему пользователей: конфигурация кода](scenario-web-app-sign-user-app-configuration.md?tabs=java#initialization-code) , чтобы понять, как пример кода Java получает код авторизации. После того как приложение получит код, [аусфилтер. Java # L51-l56](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/d55ee4ac0ce2c43378f2c99fd6e6856d41bdf144/src/main/java/com/microsoft/azure/msalwebsample/AuthFilter.java#L51-L56):
+См. страницу [Веб-приложение, которое выполняет вход пользователей в систему. Конфигурация кода](scenario-web-app-sign-user-app-configuration.md?tabs=java#initialization-code), чтобы понять, как пример кода Java получает код авторизации. После того как приложение получит код, [AuthFilter.java#L51-L56](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/d55ee4ac0ce2c43378f2c99fd6e6856d41bdf144/src/main/java/com/microsoft/azure/msalwebsample/AuthFilter.java#L51-L56) выполняет следующее:
 
-1. Делегаты для `AuthHelper.processAuthenticationCodeRedirect` метода в [AuthHelper. Java # L67-L97](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/d55ee4ac0ce2c43378f2c99fd6e6856d41bdf144/src/main/java/com/microsoft/azure/msalwebsample/AuthHelper.java#L67-L97).
+1. Делегирует метод `AuthHelper.processAuthenticationCodeRedirect` в [AuthHelper.java#L67-L97](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/d55ee4ac0ce2c43378f2c99fd6e6856d41bdf144/src/main/java/com/microsoft/azure/msalwebsample/AuthHelper.java#L67-L97).
 1. Вызывает `getAuthResultByAuthCode`.
 
 ```Java
@@ -191,7 +191,7 @@ class AuthHelper {
 }
 ```
 
-`getAuthResultByAuthCode` Метод определен в [AuthHelper. Java # L176](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/d55ee4ac0ce2c43378f2c99fd6e6856d41bdf144/src/main/java/com/microsoft/azure/msalwebsample/AuthHelper.java#L176). Он создает MSAL `ConfidentialClientApplication`, а затем вызывает метод `acquireToken()` , `AuthorizationCodeParameters` созданный из кода авторизации.
+Метод `getAuthResultByAuthCode` определяется в [AuthHelper.java#L176](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/d55ee4ac0ce2c43378f2c99fd6e6856d41bdf144/src/main/java/com/microsoft/azure/msalwebsample/AuthHelper.java#L176). Он создает MSAL `ConfidentialClientApplication`, а затем вызывает `acquireToken()` с объектом `AuthorizationCodeParameters`, созданным из кода авторизации.
 
 ```Java
    private IAuthenticationResult getAuthResultByAuthCode(
@@ -235,7 +235,7 @@ class AuthHelper {
 
 # <a name="python"></a>[Python](#tab/python)
 
-Будет запрошен поток кода авторизации, как показано в [веб-приложении, которое выполняет вход в систему пользователей: конфигурация кода](scenario-web-app-sign-user-app-configuration.md?tabs=python#initialization-code). Затем код получается от `authorized` функции, Flask маршруты от `/getAToken` URL-адреса. Полный контекст этого кода см. в разделе [app. Корректировка # L30-l44](https://github.com/Azure-Samples/ms-identity-python-webapp/blob/e03be352914bfbd58be0d4170eba1fb7a4951d84/app.py#L30-L44) .
+Будет запрошен поток кода авторизации, как показано на странице [Веб-приложение, которое выполняет вход пользователей в систему. Конфигурация кода](scenario-web-app-sign-user-app-configuration.md?tabs=python#initialization-code). Затем код поступает в функцию `authorized`, которую Flask направляет из URL-адреса `/getAToken`. Полный контекст этого кода см. в разделе [app.py#L30-L44](https://github.com/Azure-Samples/ms-identity-python-webapp/blob/e03be352914bfbd58be0d4170eba1fb7a4951d84/app.py#L30-L44):
 
 ```python
  @app.route("/getAToken")  # Its absolute URL must match your app's redirect_uri set in AAD.
@@ -257,29 +257,29 @@ def authorized():
 
 ---
 
-Вместо секрета клиента конфиденциальное клиентское приложение также может доказать свою личность с помощью сертификата клиента или утверждения клиента.
-Использование утверждений клиента является расширенным сценарием, подробно описанным в [проверочных утверждениях клиента](msal-net-client-assertions.md).
+Вместо секрета клиента конфиденциальное клиентское приложение также может подтвердить свою подлинность с помощью сертификата клиента или утверждения клиента.
+Использование утверждений клиента является расширенным сценарием, подробно описанным на странице [Конфиденциальные утверждения клиентов](msal-net-client-assertions.md).
 
 ## <a name="token-cache"></a>Кэш маркеров
 
 > [!IMPORTANT]
-> Реализация кэша токенов для веб-приложений или веб-API отличается от реализации для классических приложений, которые часто [основаны на файлах](scenario-desktop-acquire-token.md#file-based-token-cache).
-> По соображениям безопасности и производительности важно убедиться, что для веб-приложений и веб-API существует один кэш маркеров на одну учетную запись пользователя. Необходимо сериализовать кэш маркеров для каждой учетной записи.
+> Реализация кэша маркеров для веб-приложений или веб-API отличается от реализации для классических приложений, которая часто [основана на файлах](scenario-desktop-acquire-token.md#file-based-token-cache).
+> В целях повышения безопасности и производительности важно убедиться, что для веб-приложений и веб-API существует отдельный кэш маркеров в каждой учетной записи пользователя. Сериализацию кэша маркеров также следует выполнять отдельно для каждой учетной записи.
 
 # <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
 
-В руководстве по ASP.NET Core используется внедрение зависимостей, позволяющее выбрать реализацию кэша маркеров в файле Startup.cs для приложения. Microsoft. Identity. Web поставляется с предварительно созданными сериализаторами кэша маркеров, описанными в разделе [сериализация кэша маркеров](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/blob/master/Microsoft.Identity.Web/README.md#token-cache-serialization). Интересной возможностью является выбор ASP.NET Core [распределенных кэшей памяти](https://docs.microsoft.com/aspnet/core/performance/caching/distributed#distributed-memory-cache):
+В руководстве по ASP.NET Core используется внедрение зависимостей, позволяющее выбрать реализацию кэша маркеров в файле Startup.cs для приложения. Microsoft.Identity.Web поставляется с предварительно созданными сериализаторами кэша маркеров, описанными в разделе [о сериализации кэша маркеров](msal-net-token-cache-serialization.md#token-cache-for-a-web-app-confidential-client-application). Интересной возможностью является выбор [кэшей распределенной памяти](https://docs.microsoft.com/aspnet/core/performance/caching/distributed#distributed-memory-cache) ASP.NET Core:
 
 ```csharp
 // Use a distributed token cache by adding:
-    services.AddSignIn(Configuration, "AzureAd");
-            .AddWebAppCallsProtectedWebApi(Configuration,
+    services.AddMicrosoftWebAppAuthentication(Configuration, "AzureAd")
+            .AddMicrosoftWebAppCallsWebApi(Configuration,
                                            initialScopes: new string[] { "user.read" })
             .AddDistributedTokenCaches();
 
 // Then, choose your implementation.
 // For instance, the distributed in-memory cache (not cleared when you stop the app):
-services.AddDistributedMemoryCache()
+services.AddDistributedMemoryCache();
 
 // Or a Redis cache:
 services.AddStackExchangeRedisCache(options =>
@@ -297,13 +297,13 @@ services.AddDistributedSqlServerCache(options =>
 });
 ```
 
-Дополнительные сведения о поставщиках кэша маркеров см. также в [учебниках по веб-приложениям ASP.NET Core | Стадия работы с кэшами маркеров](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/2-WebApp-graph-user/2-2-TokenCache) учебника.
+Дополнительные сведения о поставщиках кэша маркеров см. в статье о [сериализации кэша маркеров](https://aka.ms/ms-id-web/token-cache-serialization) Microsoft. Identity. Web, а также в [учебниках по веб-приложениям ASP.NET Core | Стадия кэша маркеров](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/2-WebApp-graph-user/2-2-TokenCache) в учебнике по веб-приложениям.
 
 # <a name="aspnet"></a>[ASP.NET](#tab/aspnet)
 
-Реализация кэша токенов для веб-приложений или веб-API отличается от реализации для классических приложений, которые часто [основаны на файлах](scenario-desktop-acquire-token.md#file-based-token-cache).
+Реализация кэша маркеров для веб-приложений или веб-API отличается от реализации для классических приложений, которая часто [основана на файлах](scenario-desktop-acquire-token.md#file-based-token-cache).
 
-Реализация веб-приложения может использовать сеанс ASP.NET или серверную память. Например, Узнайте, как реализация кэша подключается после создания приложения MSAL.NET в [мсалаппбуилдер. CS # l39-L51](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect/blob/a2da310539aa613b77da1f9e1c17585311ab22b7/WebApp/Utils/MsalAppBuilder.cs#L39-L51):
+Для реализации веб-приложения можно использовать сеанс ASP.NET или память сервера. Например, ознакомьтесь со сведениями о подключении реализации кэша после создания приложения MSAL.NET в разделе [MsalAppBuilder.cs#L39-L51](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect/blob/a2da310539aa613b77da1f9e1c17585311ab22b7/WebApp/Utils/MsalAppBuilder.cs#L39-L51):
 
 ```csharp
 public static class MsalAppBuilder
@@ -326,7 +326,7 @@ public static class MsalAppBuilder
 
 # <a name="java"></a>[Java](#tab/java)
 
-MSAL Java предоставляет методы для сериализации и десериализации кэша маркеров. Пример Java обрабатывает сериализацию из сеанса, как показано в `getAuthResultBySilentFlow` методе в [AuthHelper. Java # L99-L122](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/d55ee4ac0ce2c43378f2c99fd6e6856d41bdf144/src/main/java/com/microsoft/azure/msalwebsample/AuthHelper.java#L99-L122):
+MSAL Java предоставляет методы для сериализации и десериализации кэша маркеров. Пример для Java обрабатывает сериализацию из сеанса, как показано в методе `getAuthResultBySilentFlow` в [AuthHelper.java#L99-L122](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/d55ee4ac0ce2c43378f2c99fd6e6856d41bdf144/src/main/java/com/microsoft/azure/msalwebsample/AuthHelper.java#L99-L122):
 
 ```Java
 IAuthenticationResult getAuthResultBySilentFlow(HttpServletRequest httpRequest, HttpServletResponse httpResponse)
@@ -355,11 +355,11 @@ IAuthenticationResult getAuthResultBySilentFlow(HttpServletRequest httpRequest, 
 }
 ```
 
-Подробные сведения о `SessionManagementHelper` классе приведены в [примере MSAL для Java](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/d55ee4ac0ce2c43378f2c99fd6e6856d41bdf144/src/main/java/com/microsoft/azure/msalwebsample/SessionManagementHelper.java).
+Подробные сведения о классе `SessionManagementHelper` приведены в [примере MSAL для Java](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/d55ee4ac0ce2c43378f2c99fd6e6856d41bdf144/src/main/java/com/microsoft/azure/msalwebsample/SessionManagementHelper.java).
 
 # <a name="python"></a>[Python](#tab/python)
 
-В примере Python один кэш на учетную запись обеспечивается путем повторного создания конфиденциального клиентского приложения для каждого запроса и последующей его сериализации в кэш сеанса Flask:
+В примере Python один кэш на учетную запись обеспечивается путем повторного создания конфиденциального клиентского приложения для каждого запроса и последующей его сериализации в кэше сеанса Flask:
 
 ```python
 from flask import Flask, render_template, session, request, redirect, url_for
@@ -392,9 +392,9 @@ def _build_msal_app(cache=None):
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-На этом этапе при входе пользователя маркер сохраняется в кэше маркеров. Давайте посмотрим, как он используется в других частях веб-приложения.
+На этом этапе при входе пользователя маркер сохраняется в кэше маркеров. Ознакомьтесь со сведениями об использовании кэша в других частях веб-приложения.
 
 > [!div class="nextstepaction"]
-> [Веб-приложение, вызывающее веб-API: удаление учетных записей из кэша при глобальном выходе](scenario-web-app-call-api-sign-in.md)
+> [Веб-приложение, которое вызывает веб-API. Удаление учетных записей из кэша при глобальном выходе](scenario-web-app-call-api-sign-in.md)

@@ -1,6 +1,6 @@
 ---
-title: Служба Azure Front Door | Документация Майкрософт
-description: В статье представлен обзор службы Azure Front Door. Узнайте, подходит ли она для балансировки нагрузки трафика пользователя для вашего приложения.
+title: Azure Front Door
+description: В этой статье представлен список различных действий, которые можно выполнять с помощью обработчика правил службы Azure Front Door.
 services: frontdoor
 documentationcenter: ''
 author: megan-beatty
@@ -12,18 +12,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 4/30/2020
 ms.author: mebeatty
-ms.openlocfilehash: 3e7c9606a17736ea45b09a4d6981b4d55fa6dee6
-ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
+ms.openlocfilehash: e11555e883a323bcb5b0be1c62b2825bce77524e
+ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82515809"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85314004"
 ---
 # <a name="azure-front-door-rules-engine-actions"></a>Действия обработчика правил Azure Front Door
 
 В [обработчике правил Azure Front Door (AFD)](front-door-rules-engine.md) правило состоит из одного или нескольких условий соответствия и действий. В этой статье подробно описаны действия, которые можно использовать в обработчике правил AFD.
 
-Действие определяет поведение, применяемое к типу запроса, который соответствует одному или нескольким условиям соответствия. В обработчике правил AFD правило может содержать до пяти действий, только одно из которых может переопределять конфигурацию маршрута (переадресация или перенаправление). 
+Действие определяет поведение, применяемое к типу запроса, который соответствует одному или нескольким условиям соответствия. В обработчике правил AFD правило может содержать до пяти действий, только одно из которых может переопределять конфигурацию маршрута (переадресация или перенаправление).
 
 Следующие действия доступны для использования в обработчике правил Azure Front Door.  
 

@@ -16,10 +16,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 661747754369c17ca98ae69d477e04124b6a2942
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "60245489"
 ---
 # <a name="azure-ad-connect-sync-understanding-users-groups-and-contacts"></a>Синхронизация Azure AD Connect: общие сведения о пользователях, группах и контактах
@@ -51,9 +51,9 @@ ms.locfileid: "60245489"
     
       * Группа Active Directory, атрибут proxyAddress которой имеет значение *{"X500:/0=contoso.com/ou=users/cn=testgroup"}*, не будет поддерживать электронную почту в Azure AD. У нее нет SMTP-адреса.
       
-      * Группа Active Directory, атрибут proxyAddress которой имеет значения *{"X500:/0 = contoso. com/ou = users/CN = testgroup", "SMTP:\@JohnDoe contoso.com"},* будет включена поддержка электронной почты в Azure AD.
+      * Группа Active Directory, атрибут proxyAddress которой имеет значения *{"X500:/0 = contoso. com/ou = users/CN = testgroup", "SMTP: johndoe \@ contoso.com"},* будет включена поддержка электронной почты в Azure AD.
       
-      * Группа Active Directory, атрибут proxyAddress которой имеет значения *{"X500:/0 = contoso. com/ou = users/CN = testgroup", "SMTP:\@JohnDoe contoso.com"},* также будет включена поддержка электронной почты в Azure AD.
+      * Группа Active Directory, атрибут proxyAddress которой имеет значения *{"X500:/0 = contoso. com/ou = users/CN = testgroup", "SMTP: johndoe \@ contoso.com"},* также будет включена поддержка электронной почты в Azure AD.
 
 ## <a name="contacts"></a>Контакты
 Наличие контактов, представляющих пользователя в разных лесах, — распространенное явление. Это происходит после слияния и поглощения, когда решение GALSync связывает два и более леса Exchange. Контактный объект всегда присоединяется из пространства соединителя к метавселенной с помощью атрибута mail. Если контактный объект или объект-пользователь с тем же адресом электронной почты уже существует, такие объекты объединяются. Это настраивается в правиле **In from AD – Contact Join**. Имеется также правило с именем **In from AD – Contact Common** с потоком атрибутов в атрибут метавселенной **sourceObjectType** с константой **Contact**. Это правило имеет очень низкий приоритет, поэтому если любой объект-пользователь присоединяется к тому же объекту метавселенной, правило **In from AD – User Common** будет передавать значение User в этот атрибут. Благодаря этому правилу атрибут получит значение Contact, если пользователь не был присоединен, а также значение User, если был найден хотя бы один пользователь.
@@ -75,5 +75,5 @@ ms.locfileid: "60245489"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 * [Синхронизация Azure AD Connect: Настройка параметров синхронизации](how-to-connect-sync-whatis.md)
-* [Интеграция локальных удостоверений с Azure Active Directory.](whatis-hybrid-identity.md)
+* [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md)
 

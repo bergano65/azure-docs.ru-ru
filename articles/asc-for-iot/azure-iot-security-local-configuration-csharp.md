@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/26/2019
 ms.author: mlottner
-ms.openlocfilehash: adf0d72763e0cb1892d64c68a6dce05abbf6f582
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: fc869a8ab905275c8082c4fd375f8f6d6d48d97e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81311665"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85205464"
 ---
 # <a name="understanding-the-local-configuration-file-c-agent"></a>Основные сведения о локальном файле конфигурации (агент C#)
 
@@ -30,9 +30,9 @@ ms.locfileid: "81311665"
 
 Агент безопасности C# использует несколько файлов конфигурации:
 
-- **General. config** — конфигурации, связанные с агентом.
-- **Authentication. config** — конфигурация, связанная с аутентификацией (включая сведения о проверке подлинности).
-- **Секуритиотинтерфаце. config** — конфигурации, связанные с IOT.
+- Конфигурации, связанные с **General.config** агента.
+- **Authentication.config** — конфигурация, связанная с аутентификацией (включая сведения о проверке подлинности).
+- **SecurityIotInterface.config** — конфигурации, связанные с IOT.
 
 Файлы конфигурации содержат конфигурацию по умолчанию. Конфигурация проверки подлинности заполняется во время установки агента, и изменения в файле конфигурации вносятся при перезапуске агента.
 
@@ -40,13 +40,13 @@ ms.locfileid: "81311665"
 
 Для Linux:
 
-- Файлы конфигурации операционной системы находятся в `/var/ASCIoTAgent`папке.
+- Файлы конфигурации операционной системы находятся в папке `/var/ASCIoTAgent` .
 
 Для Windows:
 
 - Файлы конфигурации операционной системы находятся в каталоге агента безопасности.
 
-### <a name="generalconfig-configurations"></a>Конфигурации General. config
+### <a name="generalconfig-configurations"></a>Конфигурации General.config
 
 | Имя конфигурации | Возможные значения | Сведения |
 |:-----------|:---------------|:--------|
@@ -62,9 +62,9 @@ ms.locfileid: "81311665"
 | logFilePath | Путь к файлу | Если Филелоглевел >, журналы записываются в этот файл. |
 | дефаултевентприорити | "Высокий", "низкий", "Выкл" | Приоритет события по умолчанию. |
 
-### <a name="generalconfig-example"></a>Пример файла General. config
+### <a name="generalconfig-example"></a>Пример General.config
 
-```XML
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <General>
   <add key="agentId" value="da00006c-dae9-4273-9abc-bcb7b7b4a987" />
@@ -81,24 +81,24 @@ ms.locfileid: "81311665"
 </General>
 ```
 
-### <a name="authenticationconfig"></a>Файл Authentication. config
+### <a name="authenticationconfig"></a>Authentication.config
 
 | Имя конфигурации | Возможные значения | Сведения |
 |:-----------|:---------------|:--------|
-| moduleName | строка | Имя удостоверения модуля безопасности. Это имя должно соответствовать имени удостоверения модуля на устройстве. |
-| deviceId | строка | ИДЕНТИФИКАТОР устройства (зарегистрированный в центре Интернета вещей Azure). || счедулеринтервал | Строка TimeSpan | Внутренний интервал планировщика. |
-| гатевайхостнаме | строка | Имя узла центра Интернета вещей Azure. Обычно <My-Hub>. azure-devices.net |
+| moduleName | string | Имя удостоверения модуля безопасности. Это имя должно соответствовать имени удостоверения модуля на устройстве. |
+| deviceId | string | ИДЕНТИФИКАТОР устройства (зарегистрированный в центре Интернета вещей Azure). || счедулеринтервал | Строка TimeSpan | Внутренний интервал планировщика. |
+| гатевайхостнаме | string | Имя узла центра Интернета вещей Azure. Обычно <My-Hub>. azure-devices.net |
 | filePath | String — путь к файлу | Путь к файлу, содержащему секрет проверки подлинности.|
-| type | "SymmetricKey", "SelfSignedCertificate" | Секрет пользователя для проверки подлинности. Выберите *SymmetricKey* , если секрет пользователя является симметричным ключом, выберите *самозаверяющий сертификат* , если секрет представляет собой самозаверяющий сертификат. |
-| identity | "DPS", "Module", "Device" | Удостоверение проверки подлинности — DP, если проверка подлинности выполняется с помощью DPS, модуля, если проверка подлинности выполняется с помощью учетных данных модуля, или устройства, если проверка подлинности выполняется
+| тип | "SymmetricKey", "SelfSignedCertificate" | Секрет пользователя для проверки подлинности. Выберите *SymmetricKey* , если секрет пользователя является симметричным ключом, выберите *самозаверяющий сертификат* , если секрет представляет собой самозаверяющий сертификат. |
+| удостоверение | "DPS", "Module", "Device" | Удостоверение проверки подлинности — DP, если проверка подлинности выполняется с помощью DPS, модуля, если проверка подлинности выполняется с помощью учетных данных модуля, или устройства, если проверка подлинности выполняется
 | цертификателокатионкинд |  "Локальный_файл", "Store" | Локальный_файл если сертификат хранится в файле, сохраните его, если сертификат находится в хранилище сертификатов. |
-| idScope | строка | Область ИДЕНТИФИКАТОРов DPS |
-| registrationId | строка  | ИДЕНТИФИКАТОР регистрации устройства DPS. |
+| idScope | string | Область ИДЕНТИФИКАТОРов DPS |
+| registrationId | string  | ИДЕНТИФИКАТОР регистрации устройства DPS. |
 |
 
-### <a name="authenticationconfig-example"></a>Пример проверки подлинности. config
+### <a name="authenticationconfig-example"></a>Пример Authentication.config
 
-```XML
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <Authentication>
   <add key="moduleName" value="azureiotsecurity"/>
@@ -113,16 +113,16 @@ ms.locfileid: "81311665"
 </Authentication>
 ```
 
-### <a name="securityiotinterfaceconfig"></a>Секуритиотинтерфаце. config
+### <a name="securityiotinterfaceconfig"></a>SecurityIotInterface.config
 
 | Имя конфигурации | Возможные значения | Сведения |
 |:-----------|:---------------|:--------|
 | transportType | "AMPQ" "Mqtt" | Тип транспорта центра Интернета вещей. |
 |
 
-### <a name="securityiotinterfaceconfig-example"></a>Пример Секуритиотинтерфаце. config
+### <a name="securityiotinterfaceconfig-example"></a>Пример SecurityIotInterface.config
 
-```XML
+```xml
 <ExternalInterface>
   <add key="facadeType"  value="Microsoft.Azure.Security.IoT.Agent.Common.SecurityIoTHubInterface, Security.Common" />
   <add key="transportType" value="Amqp"/>

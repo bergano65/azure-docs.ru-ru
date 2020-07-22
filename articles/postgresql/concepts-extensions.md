@@ -5,19 +5,19 @@ author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 02/13/2020
-ms.openlocfilehash: a12738f5de783c8a34718b8d9cb4bbf54f230589
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 07/10/2020
+ms.openlocfilehash: b97b373936f9c485eaa96cdd34ed33c49e75ad9a
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77201277"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86242072"
 ---
 # <a name="postgresql-extensions-in-azure-database-for-postgresql---single-server"></a>Расширения PostgreSQL в базе данных Azure для PostgreSQL — один сервер
 PostgreSQL предоставляет возможность расширить функциональность базы данных с помощью расширений. Расширения объединяют несколько связанных объектов SQL в один пакет, который можно загрузить или удалить из базы данных с помощью одной команды. После загрузки в базу данных функции расширений, такие как встроенные функции.
 
 ## <a name="how-to-use-postgresql-extensions"></a>Как использовать расширения PostgreSQL
-Чтобы использовать расширения PostgreSQL, их необходимо сначала установить в базу данных. Чтобы установить определенное расширение, выполните команду " [создать расширение](https://www.postgresql.org/docs/current/sql-createextension.html) " из средства PSQL, чтобы загрузить упакованные объекты в базу данных.
+Чтобы использовать расширения PostgreSQL, их необходимо сначала установить в базу данных. Чтобы установить определенное расширение, выполните команду " [создать расширение](https://www.postgresql.org/docs/current/sql-createextension.html)"   из средства PSQL, чтобы загрузить упакованные объекты в базу данных.
 
 База данных Azure для PostgreSQL поддерживает подмножество расширений ключей, как указано ниже. Эти сведения также можно получить, выполнив `SELECT * FROM pg_available_extensions;`. Расширения, выходящие за рамки перечисленных, не поддерживаются. Вы не можете создать собственное расширение в базе данных Azure для PostgreSQL.
 
@@ -212,10 +212,10 @@ PostgreSQL предоставляет возможность расширить 
 ## <a name="dblink-and-postgres_fdw"></a>дблинк и postgres_fdw
 [дблинк](https://www.postgresql.org/docs/current/contrib-dblink-function.html) и [postgres_fdw](https://www.postgresql.org/docs/current/postgres-fdw.html) позволяют подключаться с одного сервера PostgreSQL к другому или к другой базе данных на том же сервере. Принимающий сервер должен разрешать подключения с отправляющего сервера при помощи его брандмауэра. При использовании этих расширений для подключения между серверами Базы данных Azure для PostgreSQL, это можно сделать, задав значение "Вкл." для "Разрешить доступ к службам Azure". Это необходимо, если вы хотите использовать расширения для циклического возвращения на тот же сервер. Параметр "Разрешить доступ к службам Azure" можно найти на странице портала Azure для сервера Postgres в разделе "Безопасность подключения". Включив параметр "разрешить доступ к службам Azure", вы помещаете все IP-адреса Azure в список разрешений.
 
-В настоящее время исходящие подключения из базы данных Azure для PostgreSQL не поддерживаются, за исключением подключений к другим серверам базы данных Azure для PostgreSQL.
+В настоящее время исходящие подключения из базы данных Azure для PostgreSQL не поддерживаются, за исключением подключений к другим серверам базы данных Azure для PostgreSQL в том же регионе.
 
 ## <a name="uuid"></a>uuid
-Если вы планируете `uuid_generate_v4()` использовать из [расширения UUID-ОССП](https://www.postgresql.org/docs/current/uuid-ossp.html), рассмотрите возможность сравнения с `gen_random_uuid()` из [расширения пгкрипто](https://www.postgresql.org/docs/current/pgcrypto.html) для повышения производительности.
+Если вы планируете использовать `uuid_generate_v4()` из [расширения UUID-ОССП](https://www.postgresql.org/docs/current/uuid-ossp.html), рассмотрите возможность сравнения с `gen_random_uuid()` из [расширения пгкрипто](https://www.postgresql.org/docs/current/pgcrypto.html) для повышения производительности.
 
 ## <a name="pgaudit"></a>пгаудит
 [Расширение пгаудит](https://github.com/pgaudit/pgaudit/blob/master/README.md) обеспечивает ведение журнала аудита сеансов и объектов. Сведения об использовании этого расширения в базе данных Azure для PostgreSQL см. в [статье основные понятия аудита](concepts-audit.md). 
@@ -223,7 +223,7 @@ PostgreSQL предоставляет возможность расширить 
 ## <a name="pg_prewarm"></a>pg_prewarm
 Расширение pg_prewarm загружает реляционные данные в кэш. Предварительная подготовка кэшей означает, что запросы имеют лучшее время ответа при первом запуске после перезагрузки. В postgres 10 и ниже предгорячий предназначение выполняется вручную с помощью [предгорячей функции](https://www.postgresql.org/docs/10/pgprewarm.html).
 
-В postgres 11 и более поздних версиях можно настроить предварительную предзагрузку в [автоматическом](https://www.postgresql.org/docs/current/pgprewarm.html)состоянии. Необходимо включить pg_prewarm в список `shared_preload_libraries` параметров и перезапустить сервер, чтобы применить изменения. Параметры можно задать в шаблоне [портал Azure](howto-configure-server-parameters-using-portal.md), [CLI](howto-configure-server-parameters-using-cli.md), REST API или ARM. 
+В postgres 11 и более поздних версиях можно настроить предварительную предзагрузку в [автоматическом](https://www.postgresql.org/docs/current/pgprewarm.html)состоянии. Необходимо включить pg_prewarm в `shared_preload_libraries` список параметров и перезапустить сервер, чтобы применить изменения. Параметры можно задать в шаблоне [портал Azure](howto-configure-server-parameters-using-portal.md), [CLI](howto-configure-server-parameters-using-cli.md), REST API или ARM. 
 
 ## <a name="timescaledb"></a>тимескаледб
 Тимескаледб — это база данных временных рядов, которая упакована как расширение для PostgreSQL. Тимескаледб обеспечивает ориентированные на время аналитические функции, оптимизации и масштабирование postgres для рабочих нагрузок временных рядов.
@@ -231,7 +231,7 @@ PostgreSQL предоставляет возможность расширить 
 [Узнайте больше о тимескаледб](https://docs.timescale.com/latest), охраняемом товарном знаке [шкалы времени, Inc.](https://www.timescale.com/) База данных Azure для PostgreSQL предоставляет версию шкалы времени с открытым исходным кодом. Сведения о том, какие функции шкалы времени доступны в этой версии, см. [в статье сравнение продукта на временной шкале](https://www.timescale.com/products/).
 
 ### <a name="installing-timescaledb"></a>Установка Тимескаледб
-Чтобы установить Тимескаледб, необходимо включить его в общие библиотеки предварительной загрузки сервера. Для вступления в силу `shared_preload_libraries` изменения параметра postgres требуется **Перезагрузка сервера** . Параметры можно изменить с помощью [портал Azure](howto-configure-server-parameters-using-portal.md) или [Azure CLI](howto-configure-server-parameters-using-cli.md).
+Чтобы установить Тимескаледб, необходимо включить его в общие библиотеки предварительной загрузки сервера. Для вступления в `shared_preload_libraries` силу изменения параметра postgres требуется **Перезагрузка сервера** . Параметры можно изменить с помощью [портал Azure](howto-configure-server-parameters-using-portal.md) или [Azure CLI](howto-configure-server-parameters-using-cli.md).
 
 Использование [портал Azure](https://portal.azure.com/):
 
@@ -258,7 +258,7 @@ CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;
 Теперь можно создать таблицу Тимескаледб [с нуля](https://docs.timescale.com/getting-started/creating-hypertables) или перенести [существующие данные временных рядов в PostgreSQL](https://docs.timescale.com/getting-started/migrating-data).
 
 ### <a name="restoring-a-timescale-database"></a>Восстановление базы данных шкалы времени
-Чтобы восстановить базу данных шкалы времени с помощью pg_dump и pg_restore, необходимо выполнить две вспомогательные процедуры в целевой базе данных `timescaledb_pre_restore()` : `timescaledb_post restore()`и.
+Чтобы восстановить базу данных шкалы времени с помощью pg_dump и pg_restore, необходимо выполнить две вспомогательные процедуры в целевой базе данных: `timescaledb_pre_restore()` и `timescaledb_post restore()` .
 
 Сначала подготовьте целевую базу данных:
 
@@ -278,5 +278,5 @@ SELECT timescaledb_post_restore();
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Если вы не видите расширение, которое вы хотите использовать, сообщите нам. Проголосуйте за существующие запросы или создавайте новые запросы на отзыв на [форуме отзывов](https://feedback.azure.com/forums/597976-azure-database-for-postgresql).

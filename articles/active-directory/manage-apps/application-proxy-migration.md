@@ -3,8 +3,8 @@ title: Установка новой версии прокси приложен�
 description: Выберите, какой прокси-сервер лучше всего подходит для обновления Microsoft Forefront или Unified Access Gateway.
 services: active-directory
 documentationcenter: ''
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -12,16 +12,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/17/2019
-ms.author: mimart
+ms.author: kenwith
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4790dc7ebeeee3407e89bcf38d7e3f25699ed328
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: ef1ffb5ec0b39c5331afbc55d99268d9a3997e62
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "67108413"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84764457"
 ---
 # <a name="compare-remote-access-solutions"></a>Сравнение решений для удаленного доступа
 
@@ -32,7 +31,7 @@ ms.locfileid: "67108413"
 
 В таблице ниже приведено сравнение продуктов Threat Management Gateway (TMG), Unified Access Gateway (UAG), прокси-службы веб-приложения (WAP) и прокси-службы Azure AD (AP).
 
-| Функция | TMG | UAG | WAP | AP |
+| Компонент | TMG | UAG | WAP | AP |
 | ------- | --- | --- | --- | --- |
 | Проверка подлинности на основе сертификата | Да | Да | - | - |
 | Выборочная публикация браузерных приложений | Да | Да | Да | Да |
@@ -62,6 +61,6 @@ ms.locfileid: "67108413"
 - Единая панель доступа для пользователей всех приложений, включая O365, интегрированные с Azure AD приложения SaaS и веб-приложения локальной среды. 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Обеспечение безопасного удаленного доступа к локальным приложениям с помощью службы приложений Azure AD](application-proxy.md)

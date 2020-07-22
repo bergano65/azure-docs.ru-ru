@@ -9,10 +9,9 @@ ms.date: 02/25/2020
 ms.author: normesta
 ms.reviewer: stewu
 ms.openlocfilehash: e3997fc215637175165402a926bffc6ac8d02771
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77914864"
 ---
 # <a name="multi-protocol-access-on-azure-data-lake-storage"></a>Multi-protocol access on Azure Data Lake Storage (preview) (Доступ с использованием нескольких протоколов на Azure Data Lake Storage (предварительная версия))
@@ -30,7 +29,7 @@ ms.locfileid: "77914864"
 >
 > [Функции хранилища BLOB-объектов, доступные в Azure Data Lake Storage 2-го поколения](data-lake-storage-supported-blob-storage-features.md)
 >
->[Службы Azure, которые поддерживают Azure Data Lake Storage 2-го поколения](data-lake-storage-supported-azure-services.md)
+>[Службы Azure, поддерживающие Azure Data Lake Storage 2-го поколения](data-lake-storage-supported-azure-services.md)
 
 ## <a name="how-multi-protocol-access-on-data-lake-storage-works"></a>Как работает многопротокольный доступ к хранилищу данных Data Lake
 
@@ -43,9 +42,9 @@ API-интерфейсы больших двоичных объектов и API
 ## <a name="see-also"></a>См. также
 
 - [Функции хранилища BLOB-объектов, доступные в Azure Data Lake Storage 2-го поколения](data-lake-storage-supported-blob-storage-features.md)
-- [Службы Azure, которые поддерживают Azure Data Lake Storage 2-го поколения](data-lake-storage-supported-azure-services.md)
-- [Платформы с открытым кодом, поддерживающие Azure Data Lake Storage 2-го поколения](data-lake-storage-supported-open-source-platforms.md)
-- [Известные проблемы с Azure Data Lake Storage 2-го поколения](data-lake-storage-known-issues.md)
+- [Службы Azure, поддерживающие Azure Data Lake Storage 2-го поколения](data-lake-storage-supported-azure-services.md)
+- [Платформы с открытым кодом, поддерживающие Azure Data Lake Storage 2-го поколения](data-lake-storage-supported-open-source-platforms.md)
+- [Известные проблемы с Azure Data Lake Storage 2-го поколения](data-lake-storage-known-issues.md)
 
 
 

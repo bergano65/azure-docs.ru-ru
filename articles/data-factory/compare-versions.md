@@ -10,12 +10,12 @@ ms.workload: data-services
 ms.topic: overview
 ms.date: 04/09/2018
 ms.author: makromer
-ms.openlocfilehash: ea625fbe28dad08ec2c3e2a64bada96460a04225
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 6c43906468ee0124187dc5ce6d6f1405e3b96b2e
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81415575"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86231239"
 ---
 # <a name="compare-azure-data-factory-with-data-factory-version-1"></a>Сравнение Фабрики данных Azure c Фабрикой данных версии 1
 
@@ -130,14 +130,14 @@ ms.locfileid: "81415575"
 
 ## <a name="authoring-experience"></a>Среда разработки
 
-| &nbsp; | V2 | V1 |
+| | версия 2 | версия 1 |
 | ------ | -- | -- | 
-| Портал Azure | [Да](quickstart-create-data-factory-portal.md) | нет |
-| Azure PowerShell | [Да](quickstart-create-data-factory-powershell.md) | [Да](data-factory-build-your-first-pipeline-using-powershell.md) |
-| Пакет SDK для .NET | [Да](quickstart-create-data-factory-dot-net.md) | [Да](data-factory-build-your-first-pipeline-using-vs.md) |
-| REST API | [Да](quickstart-create-data-factory-rest-api.md) | [Да](data-factory-build-your-first-pipeline-using-rest-api.md) |
-| Пакет SDK для Python | [Да](quickstart-create-data-factory-python.md) | нет |
-| Шаблон Resource Manager | [Да](quickstart-create-data-factory-resource-manager-template.md) | [Да](data-factory-build-your-first-pipeline-using-arm.md) | 
+| **Портал Azure** | [Да](quickstart-create-data-factory-portal.md) | Нет |
+| **Azure PowerShell** | [Да](quickstart-create-data-factory-powershell.md) | [Да](data-factory-build-your-first-pipeline-using-powershell.md) |
+| **Пакет SDK для .NET** | [Да](quickstart-create-data-factory-dot-net.md) | [Да](data-factory-build-your-first-pipeline-using-vs.md) |
+| **REST API** | [Да](quickstart-create-data-factory-rest-api.md) | [Да](data-factory-build-your-first-pipeline-using-rest-api.md) |
+| **Пакет SDK для Python** | [Да](quickstart-create-data-factory-python.md) | Нет |
+| **Шаблон Resource Manager** | [Да](quickstart-create-data-factory-resource-manager-template.md) | [Да](data-factory-build-your-first-pipeline-using-arm.md) | 
 
 ## <a name="roles-and-permissions"></a>Роли и разрешения
 

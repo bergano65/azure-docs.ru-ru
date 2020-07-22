@@ -7,17 +7,20 @@ ms.service: expressroute
 ms.topic: article
 ms.date: 06/28/2019
 ms.author: rambala
-ms.openlocfilehash: 4c3c6ae5fbdd91e6e44438be7fef2a3a91564a34
-ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
+ms.openlocfilehash: da90bbbce485616afdac5997576da99ac4d62c6f
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "74076680"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86521910"
 ---
 # <a name="designing-for-high-availability-with-expressroute"></a>Проектирование для обеспечения высокого уровня доступности с помощью ExpressRoute
 
 ExpressRoute обеспечивает высокий уровень доступности для обеспечения возможности подключения частной сети к ресурсам Майкрософт на несущей категории. Иными словами, в пути ExpressRoute в сети Microsoft нет единой точки отказа. Чтобы максимально увеличить доступность, необходимо также разработать архитектуру клиента и поставщика услуг для канала ExpressRoute, чтобы обеспечить высокий уровень доступности. В этой статье мы рассмотрим рекомендации по архитектуре сети для создания надежного сетевого подключения с помощью ExpressRoute, а затем рассмотрим функции тонкой настройки, которые помогут улучшить высокий уровень доступности канала ExpressRoute.
 
+>[!NOTE]
+>Основные понятия, описанные в этой статье, справедливы при создании канала ExpressRoute в виртуальной глобальной сети или за ее пределами.
+>
 
 ## <a name="architecture-considerations"></a>Рекомендации по архитектуре
 

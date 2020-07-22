@@ -6,22 +6,22 @@ author: azooinmyluggage
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: atulmal
-ms.openlocfilehash: 5ee8ee4d2c9e225d82e58daffeef9e5f09e43e6b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d4f8a41df64c3bcbbd85438e4d340d44d5f16351
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77595371"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86255223"
 ---
 # <a name="github-actions-for-deploying-to-kubernetes-service"></a>Действия GitHub для развертывания в службе Kubernetes
 
-[Действия GitHub](https://help.github.com/en/articles/about-github-actions) дают возможность создавать автоматизированный рабочий процесс жизненного цикла разработки программного обеспечения. Действие [azure/aks-set-context@v1](https://github.com/Azure/aks-set-context) Kubernetes упрощает развертывание кластеров службы Kubernetes Azure. Действие задает контекст целевого кластера AKS, который может использоваться другими действиями, такими как [Azure/K8S-Deploy](https://github.com/Azure/k8s-deploy/tree/master), [Azure/K8S-Create-Secret](https://github.com/Azure/k8s-create-secret/tree/master) и т. д., или выполнение любых команд kubectl.
+[GitHub Actions](https://help.github.com/en/articles/about-github-actions) предоставляет гибкие возможности для создания автоматизированных рабочих процессов жизненного цикла разработки программного обеспечения. Действие Kubernetes [azure/aks-set-context@v1](https://github.com/Azure/aks-set-context) упрощает развертывание кластеров службы Kubernetes Azure. Действие задает контекст целевого кластера AKS, который может использоваться другими действиями, такими как [Azure/K8S-Deploy](https://github.com/Azure/k8s-deploy/tree/master), [Azure/K8S-Create-Secret](https://github.com/Azure/k8s-create-secret/tree/master) и т. д., или выполнение любых команд kubectl.
 
-Рабочий процесс определяется файлом YAML (. yml) в `/.github/workflows/` пути в репозитории. Это определение содержит различные шаги и параметры, составляющие рабочий процесс.
+Рабочий процесс определяется файлом YAML (.yml) по пути `/.github/workflows/` в вашем репозитории. Это определение содержит разные шаги и параметры рабочего процесса.
 
 Для рабочего процесса, предназначенного для AKS, файл содержит три раздела:
 
-|Раздел  |Задачи  |
+|Section  |Задания  |
 |---------|---------|
 |**Аутентификация** | Вход в частный реестр контейнеров (запись контроля доступа) |
 |**Сборка** | Сборка & принудительная отправка образа контейнера  |
@@ -31,7 +31,7 @@ ms.locfileid: "77595371"
 
 ## <a name="create-a-service-principal"></a>Создание субъекта-службы
 
-Вы можете создать [субъект-службу](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object) с помощью команды [AZ AD SP Create/for-RBAC](https://docs.microsoft.com/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac) в [Azure CLI](https://docs.microsoft.com/cli/azure/). Эту команду можно выполнить с помощью [Azure Cloud Shell](https://shell.azure.com/) в портал Azure или нажав кнопку **попробовать** .
+Вы можете создать [субъект-службу](../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) с помощью команды [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac) в [Azure CLI](/cli/azure/). Эту команду можно выполнить в [Azure Cloud Shell](https://shell.azure.com/) на портале Azure или с помощью кнопки **Попробовать**.
 
 ```azurecli-interactive
 az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptions/<SUBSCRIPTION_ID>/resourceGroups/<RESOURCE_GROUP> --sdk-auth
@@ -48,7 +48,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
     (...)
   }
 ```
-Скопируйте этот объект JSON, который можно использовать для проверки подлинности из GitHub.
+Скопируйте этот объект JSON, который затем можно использовать для выполнения аутентификации из GitHub.
 
 ## <a name="configure-the-github-secrets"></a>Настройка секретов GitHub
 
@@ -73,7 +73,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor --scopes /subscriptio
 
 Сборка и отправка образов контейнеров выполняются с помощью `Azure/docker-login@v1` действия. Чтобы развернуть образ контейнера в AKS, необходимо будет использовать `Azure/k8s-deploy@v1` действие. Это действие имеет пять параметров:
 
-| **Параметр**  | **Объяснение**  |
+| **Параметр**  | **Пояснение**  |
 |---------|---------|
 | **namespace** | Используемых Выберите целевое пространство имен Kubernetes. Если пространство имен не указано, команды будут выполняться в пространстве имен по умолчанию. | 
 | **манифесты** |  Необходимости Путь к файлам манифеста, который будет использоваться для развертывания |
@@ -129,7 +129,7 @@ jobs:
           demo-k8s-secret
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Наш набор действий можно найти в разных репозиториях на сайте GitHub, на каждом из которых содержится документация и примеры, которые помогут вам использовать GitHub для непрерывной интеграции и развертывания приложений в Azure.
 

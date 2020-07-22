@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 03/15/2020
 ms.author: apimpm
-ms.openlocfilehash: fefa5ff5d112b479110d484ee0ea4c358b5c88a7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: ecbd4d97bb092ccbdb286e4865bf04e770ca9473
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80335914"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85207895"
 ---
 # <a name="azure-api-management-developer-portal-overview"></a>Обзор портала разработчика в службе управления API Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "80335914"
 
 Создать портал разработчика можно двумя способами:
 
-- **Управляемая версия** — изменение и Настройка портала, встроенного в экземпляр управления API и доступ к которому осуществляется через URL-адрес `<your-api-management-instance-name>.developer.azure-api.net`. Сведения о том, как получить доступ и настроить управляемый портал, см. в [этой статье документации](api-management-howto-developer-portal-customize.md) .
+- **Управляемая версия** — изменение и Настройка портала, встроенного в экземпляр управления API и доступ к которому осуществляется через URL-адрес `<your-api-management-instance-name>.developer.azure-api.net` . Сведения о том, как получить доступ и настроить управляемый портал, см. в [этой статье документации](api-management-howto-developer-portal-customize.md) .
 - **Самостоятельная версия** — путем развертывания и самостоятельного размещения портала за пределами экземпляра управления API. Такой подход позволяет изменить базу кода портала и расширить предоставляемые Основные функциональные возможности, например реализовать пользовательские мини-приложения для интеграции с системами сторонних производителей. В этом сценарии вы являетесь разработчиком портала, и вы несете ответственность за обновление портала до последней версии. Дополнительные сведения и инструкции см. в [репозитории GitHub с исходным кодом портала][1] и [в руководстве по реализации мини-][3]приложения. [Руководство по управляемой версии](api-management-howto-developer-portal-customize.md) переходит на панель администрирования портала, которая обычно используется для управляемых и размещенных на собственном сервере версий.
 
 ## <a name="portal-architectural-concepts"></a>Основные понятия архитектуры портала
@@ -64,11 +64,11 @@ ms.locfileid: "80335914"
 
 Портал построен на основе адаптированной вилки [папербитс Framework](https://paperbits.io/). Первоначальная функциональность Папербитс была расширена для предоставления мини-приложений для управления API (например, списка интерфейсов API, списка продуктов) и соединителя со службой управления API для сохранения и извлечения содержимого.
 
-## <a name="frequently-asked-questions"></a><a name="faq"></a>Часто задаваемые вопросы
+## <a name="frequently-asked-questions"></a><a name="faq"></a> Часто задаваемые вопросы
 
 В этом разделе мы будем отвечать на часто задаваемые вопросы о портале разработчика, который является общим характером. Вопросы, относящиеся к локальной версии, см. в [разделе Wiki репозитория GitHub](https://github.com/Azure/api-management-developer-portal/wiki).
 
-### <a name="how-can-i-migrate-from-the-preview-version-of-the-portal"></a><a id="preview-to-ga"/>Как перейти с предварительной версии портала?
+### <a name="how-can-i-migrate-from-the-preview-version-of-the-portal"></a><a id="preview-to-ga"></a>Как перейти с предварительной версии портала?
 
 С помощью предварительной версии портала разработчика вы подготовили содержимое для предварительного просмотра в службе управления API. Содержимое по умолчанию значительно изменилось в общедоступной версии для повышения удобства работы пользователей. Он также включает новые мини-приложения.
 
@@ -116,7 +116,7 @@ API описан в [разделе вики репозитория GitHub][2]. 
 
 В большинстве случаев — нет.
 
-Если служба управления API находится во внутренней виртуальной сети, портал разработчика доступен только в пределах сети. Имя узла конечной точки управления должно разрешаться во внутренний виртуальный IP-адрес службы с компьютера, используемого для доступа к административному интерфейсу портала. Убедитесь, что конечная точка управления зарегистрирована в DNS. В случае неявной настройки вы увидите ошибку: `Unable to start the portal. See if settings are specified correctly in the configuration (...)`.
+Если служба управления API находится во внутренней виртуальной сети, портал разработчика доступен только в пределах сети. Имя узла конечной точки управления должно разрешаться во внутренний виртуальный IP-адрес службы с компьютера, используемого для доступа к административному интерфейсу портала. Убедитесь, что конечная точка управления зарегистрирована в DNS. В случае неявной настройки вы увидите ошибку: `Unable to start the portal. See if settings are specified correctly in the configuration (...)` .
 
 Если служба управления API находится во внутренней виртуальной сети и к ней осуществляется доступ через шлюз приложений из Интернета, обязательно включите подключение к порталу разработчика и конечным точкам управления API.
 
@@ -151,7 +151,7 @@ CORS можно также включить вручную.
 1. Щелкните **вручную применить его на ссылке глобального уровня** , чтобы просмотреть созданный код политики.
 2. Перейдите ко **всем API** в разделе **API** службы управления API в портал Azure.
 3. Щелкните **</>** значок в разделе **обработка входящего трафика** .
-4. Вставьте политику в **<inbound>** раздел XML-файла. Убедитесь, **<origin>** что значение соответствует домену портала разработчика.
+4. Вставьте политику в **<inbound>** раздел XML-файла. Убедитесь, что **<origin>** значение соответствует домену портала разработчика.
 
 > [!NOTE]
 > 
@@ -165,11 +165,11 @@ CORS можно также включить вручную.
 
 Если вы видите `Oops. Something went wrong. Please try again later.` ошибку при открытии портала в административном режиме, возможно, отсутствуют необходимые разрешения (RBAC).
 
-Устаревшие порталы требовали `Microsoft.ApiManagement/service/getssotoken/action` разрешения в области службы (`/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/Microsoft.ApiManagement/service/<apim-service-name>`), чтобы предоставить администратору пользователей доступ к порталам. Новому порталу требуется разрешение `Microsoft.ApiManagement/service/users/token/action` в области. `/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/Microsoft.ApiManagement/service/<apim-service-name>/users/1`
+Устаревшие порталы требовали разрешения `Microsoft.ApiManagement/service/getssotoken/action` в области службы ( `/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/Microsoft.ApiManagement/service/<apim-service-name>` ), чтобы предоставить администратору пользователей доступ к порталам. Новому порталу требуется разрешение `Microsoft.ApiManagement/service/users/token/action` в области `/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/Microsoft.ApiManagement/service/<apim-service-name>/users/1` .
 
 Чтобы создать роль с требуемым разрешением, можно использовать следующий сценарий PowerShell. Не забудьте изменить `<subscription-id>` параметр. 
 
-```PowerShell
+```powershell
 #New Portals Admin Role 
 Import-Module Az 
 Connect-AzAccount 
@@ -185,9 +185,9 @@ $customRole.AssignableScopes.Add('/subscriptions/<subscription-id>')
 New-AzRoleDefinition -Role $customRole 
 ```
  
-После создания роли она может быть предоставлена любому пользователю из раздела **управления доступом (IAM)** в портал Azure. Назначение этой роли пользователю приведет к назначению разрешения в области службы. Пользователь сможет создавать маркеры SAS от имени *любого* пользователя в службе. Как минимум, эта роль должна быть назначена администратору службы. Следующая команда PowerShell показывает, как назначить роль пользователю `user1` в самой нижней области, чтобы избежать предоставления пользователю ненужных разрешений: 
+После создания роли она может быть предоставлена любому пользователю из раздела **управления доступом (IAM)** в портал Azure. Назначение этой роли пользователю приведет к назначению разрешения в области службы. Пользователь сможет создавать маркеры SAS от имени *любого* пользователя в службе. Как минимум, эта роль должна быть назначена администратору службы. Следующая команда PowerShell показывает, как назначить роль пользователю в самой нижней `user1` области, чтобы избежать предоставления пользователю ненужных разрешений: 
 
-```PowerShell
+```powershell
 New-AzRoleAssignment -SignInName "user1@contoso.com" -RoleDefinitionName "APIM New Portal Admin" -Scope "/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/Microsoft.ApiManagement/service/<apim-service-name>/users/1" 
 ```
 
@@ -195,7 +195,7 @@ New-AzRoleAssignment -SignInName "user1@contoso.com" -RoleDefinitionName "APIM N
 
 ### <a name="im-seeing-the-unable-to-start-the-portal-see-if-settings-are-specified-correctly--error"></a>Я вижу `Unable to start the portal. See if settings are specified correctly (...)` ошибку
 
-Эта ошибка отображается в `GET` `https://<management-endpoint-hostname>/subscriptions/xxx/resourceGroups/xxx/providers/Microsoft.ApiManagement/service/xxx/contentTypes/document/contentItems/configuration?api-version=2018-06-01-preview` случае сбоя вызова. Вызов выполняется из браузера через административный интерфейс портала.
+Эта ошибка отображается `GET` в случае `https://<management-endpoint-hostname>/subscriptions/xxx/resourceGroups/xxx/providers/Microsoft.ApiManagement/service/xxx/contentTypes/document/contentItems/configuration?api-version=2018-06-01-preview` сбоя вызова. Вызов выполняется из браузера через административный интерфейс портала.
 
 Если служба управления API находится в виртуальной сети, см. описанный выше вопрос о подключении к виртуальной сети.
 

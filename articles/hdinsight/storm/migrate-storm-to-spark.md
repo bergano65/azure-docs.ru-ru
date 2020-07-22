@@ -5,14 +5,14 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 01/16/2019
-ms.openlocfilehash: 916c54c3739d1164e4e9c1db67aa1f4e0dbd0c6c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e1262a4699bc42cb5b9a4398be2254854c5d5ff2
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76157796"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86081202"
 ---
 # <a name="migrate-azure-hdinsight-36-apache-storm-to-hdinsight-40-apache-spark"></a>Перенос Apache Storm Azure HDInsight 3,6 в HDInsight 4,0 Apache Spark
 
@@ -39,7 +39,7 @@ Apache Storm может обеспечить различные уровни г�
 |---|---|---|---|
 |**Гарантия обработки событий**|По крайней мере один раз <br> Ровно один раз (Trident) |[Только один раз](https://spark.apache.org/docs/latest/streaming-programming-guide.html)|[Только один раз](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html)|
 |**Обработка модели**|В режиме реального времени <br> Micro Batch (Trident) |Micro Batch |Micro Batch |
-|**Поддержка времени событий**|[Да](https://storm.apache.org/releases/2.0.0/Windowing.html)|нет|[Да](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html)|
+|**Поддержка времени событий**|[Да](https://storm.apache.org/releases/2.0.0/Windowing.html)|Нет|[Да](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html)|
 |**Языки**|Java и т. д.|Scala, Java, Python|Python, R, Scala, Java, SQL|
 
 ### <a name="spark-streaming-vs-spark-structured-streaming"></a>Потоковая передача Spark и структурированной потоковой передачи Spark
@@ -147,7 +147,7 @@ Apache Storm может обеспечить различные уровни г�
     > [!div class="mx-imgBorder"]
     > ![удалять старые кластеры HDInsight по мере необходимости](./media/migrate-storm-to-spark/remove-old-clusters1.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о структуризации, потоковой передаче Spark и структурированной потоковой передаче Spark см. в следующих документах:
 

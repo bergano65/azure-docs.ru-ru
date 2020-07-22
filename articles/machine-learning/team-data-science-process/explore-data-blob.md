@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: e429dce497411305964cb1ec5298228dc4093b1f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 5a0804ae5ee2dbffaa57fc967fda29701562ab44
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81685954"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86085707"
 ---
 # <a name="explore-data-in-azure-blob-storage-with-pandas"></a>Просмотр данных в хранилище BLOB-объектов Azure с помощью Pandas
 
@@ -24,7 +24,7 @@ ms.locfileid: "81685954"
 
 Эта задача является одним из этапов [процесса обработки и анализа данных группы](overview.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 В этой статье предполагается, что вы:
 
 * Создали учетную запись хранения Azure. Инструкции см. в разделе [Создание учетной записи хранения](../../storage/common/storage-account-create.md).
@@ -33,7 +33,7 @@ ms.locfileid: "81685954"
 ## <a name="load-the-data-into-a-pandas-dataframe"></a>Загрузка данных в кадр данных Pandas
 Для просмотра набора данных и управления им набор необходимо сначала скачать из источника больших двоичных объектов в локальный файл, который в последствии можно загрузить в кадр данных Pandas. Ниже приведен порядок выполнения данной процедуры.
 
-1. Скачайте данные из большого двоичного объекта Azure с помощью следующего примера кода Python, используя службу BLOB-объектов. Замените переменные в этом коде своими значениями.
+1. Скачайте данные из большого двоичного объекта Azure с помощью службы BLOB-объектов. Для этого воспользуйтесь приведенным ниже примером кода Python. Замените переменные в этом коде своими значениями.
 
     ```python
     from azure.storage.blob import BlockBlobService
@@ -51,7 +51,7 @@ ms.locfileid: "81685954"
     blob_service=BlockBlobService(account_name=STORAGEACCOUNTNAME,account_key=STORAGEACCOUNTKEY)
     blob_service.get_blob_to_path(CONTAINERNAME,BLOBNAME,LOCALFILENAME)
     t2=time.time()
-    print(("It takes %s seconds to download "+blobname) % (t2 - t1))
+    print(("It takes %s seconds to download "+BLOBNAME) % (t2 - t1))
     ```
 
 1. Прочитайте данные, которые содержит скачанный файл, в блоке данных Pandas.
@@ -63,7 +63,7 @@ ms.locfileid: "81685954"
 
 Теперь вы готовы просматривать эти данные и создавать функции на основе этого набора данных.
 
-## <a name="examples-of-data-exploration-using-pandas"></a><a name="blob-dataexploration"></a>Примеры исследования данных с помощью Pandas
+## <a name="examples-of-data-exploration-using-pandas"></a><a name="blob-dataexploration"></a>Примеры просмотра данных с помощью Pandas
 Вот несколько примеров того, как можно просматривать данные с помощью Pandas.
 
 1. Проверьте **количество строк и столбцов**

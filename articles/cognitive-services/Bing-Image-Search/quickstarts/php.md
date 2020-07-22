@@ -9,15 +9,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-image-search
 ms.topic: quickstart
-ms.date: 03/31/2020
+ms.date: 05/08/2020
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: fffe56986a3b3a64910678d19321e2d04b8fcc55
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: aad804179739a77010446a146d32cd51ac6e6757
+ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80478565"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85603372"
 ---
 # <a name="quickstart-search-for-images-using-the-bing-image-search-rest-api-and-php"></a>Краткое руководство. Поиск изображений с помощью REST API Bing для поиска изображений и PHP
 
@@ -29,19 +29,19 @@ ms.locfileid: "80478565"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* [PHP 5.6.x](https://php.net/downloads.php) или более поздней версии.
+* [PHP 5.6.x или более поздней версии.](https://php.net/downloads.php)
 
 [!INCLUDE [cognitive-services-bing-image-search-signup-requirements](../../../../includes/cognitive-services-bing-image-search-signup-requirements.md)]
 
-См. также [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/).
+См. сведения о [ценах на Cognitive Services (API Поиска Bing)](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/).
 
 ## <a name="create-and-initialize-the-application"></a>Создание и инициализация приложения
 
-Чтобы запустить это приложение, сделайте следующее.
+Чтобы запустить это приложение, сделайте следующее:
 
-1. Убедитесь, что поддержка безопасного HTTP включена в файле `php.ini`. В Windows этот файл находится в `C:\windows`.
+1. Убедитесь, что поддержка безопасного HTTP включена в файле `php.ini`. В Windows этот файл находится в каталоге *C:\windows*.
 2. Создайте проект PHP в используемой вами интегрированной среде разработки или редакторе.
-3. Определите конечную точку API, ключ подписки и условие поиска. Конечной точкой может быть глобальная конечная точка, приведенная ниже, или конечная точка [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемая на портале Azure для вашего ресурса.
+3. Определите конечную точку API, ключ подписки и условие поиска. Эта конечная точка может быть глобальной конечной точкой в следующем коде или конечной точкой [личного поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемой на портале Azure для вашего ресурса.
 
     ```php
     $endpoint = 'https://api.cognitive.microsoft.com/bing/v7.0/images/search';
@@ -138,9 +138,8 @@ $headers = array();
 
 ## <a name="see-also"></a>См. также раздел
 
-* [Что такое API Bing для поиска изображений?](https://docs.microsoft.com/azure/cognitive-services/bing-image-search/overview)  
+* [Знакомство с API Bing для поиска изображений](https://docs.microsoft.com/azure/cognitive-services/bing-image-search/overview)  
 * [Попробуйте API Bing для поиска изображений](https://azure.microsoft.com/services/cognitive-services/bing-image-search-api/) 
-* [Сведения о ценах](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/) на API-интерфейсы Поиска Bing. 
-* [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=bing-image-search-api)  
-* [Документация по службам Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services)
+* [Узнайте о ценах на интерфейсы API Поиска Bing](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/) 
+* [Просмотрите документацию по Cognitive Services](https://docs.microsoft.com/azure/cognitive-services)
 * [Справочник по API Bing для поиска изображений](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference)

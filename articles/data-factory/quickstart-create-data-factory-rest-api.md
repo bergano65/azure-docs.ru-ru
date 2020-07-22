@@ -13,12 +13,12 @@ ms.devlang: rest-api
 ms.topic: quickstart
 ms.date: 06/10/2019
 ms.author: jingwang
-ms.openlocfilehash: b50217a3a8aeda03996183bf1dc82a0be1f485ae
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 357026bbe17650464716282608bc316c5d4b055e
+ms.sourcegitcommit: 374e47efb65f0ae510ad6c24a82e8abb5b57029e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81419108"
+ms.lasthandoff: 06/28/2020
+ms.locfileid: "85514878"
 ---
 # <a name="quickstart-create-an-azure-data-factory-and-pipeline-by-using-the-rest-api"></a>Краткое руководство. Создание фабрики данных Azure и конвейера с помощью REST API
 
@@ -42,7 +42,7 @@ ms.locfileid: "81419108"
 * **Учетная запись хранения Azure.** Хранилище BLOB-объектов используется как хранилище данных **источник** и **приемник**. Если у вас нет учетной записи хранения Azure, ознакомьтесь с разделом [Создание учетной записи хранения](../storage/common/storage-account-create.md).
 * Создайте **контейнер больших двоичных объектов** в хранилище BLOB-объектов, в контейнере создайте входную **папку** и отправьте несколько файлов в нее. Такие средства, как [обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/), можно использовать для подключения к хранилищу BLOB-объектов Azure, создания контейнера BLOB-объектов, отправки входного файла и проверки выходного.
 * Установите **Azure PowerShell**. Следуйте инструкциям по [установке и настройке Azure PowerShell](/powershell/azure/install-Az-ps). В этом руководстве используется PowerShell для вызова REST API.
-* [Используйте следующие инструкции](../active-directory/develop/howto-create-service-principal-portal.md#create-an-azure-active-directory-application), **чтобы создать приложение в Azure Active Directory**. Запишите следующие значения, которые понадобятся на следующих шагах: **идентификатор приложения**, **clientSecrets** и **идентификатор клиента**. Назначьте приложению роль **Участник**.
+* [Используйте следующие инструкции](../active-directory/develop/howto-create-service-principal-portal.md#register-an-application-with-azure-ad-and-create-a-service-principal), **чтобы создать приложение в Azure Active Directory**. Запишите следующие значения, которые понадобятся на следующих шагах: **идентификатор приложения**, **clientSecrets** и **идентификатор клиента**. Назначьте приложению роль **Участник**.
 
 ## <a name="set-global-variables"></a>Настройка глобальных переменных
 

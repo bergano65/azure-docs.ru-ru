@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017,seoapr2020
 ms.date: 04/20/2020
-ms.openlocfilehash: 87350bae282d9d0dccef9cb2121000f7a0473762
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 183bc416dde941f11bd94cfcff3bf738b35f876f
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82195491"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86207388"
 ---
 # <a name="query-apache-hive-through-the-jdbc-driver-in-hdinsight"></a>Отправка запросов в Apache Hive с помощью драйвера JDBC в HDInsight
 
@@ -33,7 +33,9 @@ ms.locfileid: "82195491"
 
 Подключения JDBC к кластеру HDInsight в Azure осуществляются через порт 443. Трафик защищен с помощью TLS/SSL. Открытый шлюз, за которым находятся кластеры, перенаправляет трафик к порту, который фактически прослушивается HiveServer2. В следующей строке подключения показан формат для HDInsight:
 
+```http
     jdbc:hive2://CLUSTERNAME.azurehdinsight.net:443/default;transportMode=http;ssl=true;httpPath=/hive2
+```
 
 Замените `CLUSTERNAME` на имя вашего кластера HDInsight.
 
@@ -49,7 +51,7 @@ ms.locfileid: "82195491"
 
 **Порт 443** можно использовать только для подключения к кластеру из некоторых мест за пределами виртуальной сети Azure. HDInsight — это управляемая служба, которая означает, что все подключения к кластеру управляются через безопасный шлюз. Вы не можете подключиться к HiveServer 2 напрямую через порты 10001 или 10000. Эти порты не видны снаружи.
 
-## <a name="authentication"></a>Аутентификация
+## <a name="authentication"></a>Проверка подлинности
 
 При установке подключения используйте имя администратора кластера HDInsight и пароль для проверки подлинности. Из клиентов JDBC, таких как SQuirreL SQL, введите имя администратора и пароль в параметрах клиента.
 
@@ -83,9 +85,9 @@ SQuirreL SQL — клиент JDBC, который можно использов
 
 5. В диалоговом окне Add Driver (Добавление драйвера) укажите следующие сведения.
 
-    |Свойство | Значение |
+    |Свойство. | Значение |
     |---|---|
-    |Имя|Hive|
+    |Name (Имя)|Hive|
     |Пример URL-адреса|`jdbc:hive2://localhost:443/default;transportMode=http;ssl=true;httpPath=/hive2`|
     |Дополнительный путь к классу|Используйте кнопку **Добавить** , чтобы добавить все скачанные ранее JAR-файлы.|
     |Имя класса|org. Apache. Hive. JDBC. HiveDriver|
@@ -100,9 +102,9 @@ SQuirreL SQL — клиент JDBC, который можно использов
 
 7. Используйте следующие значения в диалоговом окне **Добавление псевдонима** :
 
-    |Свойство |Значение |
+    |Свойство. |Значение |
     |---|---|
-    |Имя|Hive в HDInsight|
+    |Name (Имя)|Hive в HDInsight|
     |Драйвер|Используйте раскрывающийся список, чтобы выбрать драйвер **Hive** .|
     |URL-адрес|`jdbc:hive2://CLUSTERNAME.azurehdinsight.net:443/default;transportMode=http;ssl=true;httpPath=/hive2`. Замените **CLUSTERNAME** именем кластера HDInsight.|
     |Имя пользователя|Имя пользователя для учетной записи входа кластера HDInsight. Значение по умолчанию — **Admin**.|
@@ -121,7 +123,7 @@ SQuirreL SQL — клиент JDBC, который можно использов
 
 9. После подключения введите следующий запрос в диалоговом окне SQL-запрос, а затем щелкните значок **запуска** (работающего человека). В области результатов должны появиться результаты запроса.
 
-    ```hql
+    ```hiveql
     select * from hivesampletable limit 10;
     ```
 
@@ -129,7 +131,7 @@ SQuirreL SQL — клиент JDBC, который можно использов
 
 ## <a name="connect-from-an-example-java-application"></a>Подключение из примера приложения Java
 
-Пример использования клиента Java для запроса Hive в HDInsight можно найти по адресу [https://github.com/Azure-Samples/hdinsight-java-hive-jdbc](https://github.com/Azure-Samples/hdinsight-java-hive-jdbc). Следуйте инструкциям в репозитории, чтобы построить и запустить образец.
+Пример использования клиента Java для запроса Hive в HDInsight можно найти по адресу [https://github.com/Azure-Samples/hdinsight-java-hive-jdbc](https://github.com/Azure-Samples/hdinsight-java-hive-jdbc) . Следуйте инструкциям в репозитории, чтобы построить и запустить образец.
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
@@ -147,7 +149,7 @@ at java.util.concurrent.FutureTask.get(FutureTask.java:206)
 
 **Решение**. чтобы устранить эту ошибку, выполните следующие действия.
 
-1. Выйдите из SQuirreL, а затем перейдите в каталог, где SQuirreL установлен в системе, возможно `C:\Program Files\squirrel-sql-4.0.0\lib`,. В каталоге SquirreL в каталоге `lib` замените существующий файл commons-codec.ja файлом, скачанным из кластера HDInsight.
+1. Выйдите из SQuirreL, а затем перейдите в каталог, где SQuirreL установлен в системе, возможно, `C:\Program Files\squirrel-sql-4.0.0\lib` . В каталоге SquirreL в каталоге `lib` замените существующий файл commons-codec.ja файлом, скачанным из кластера HDInsight.
 
 1. Перезапустите SQuirreL. При последующих подключениях к Hive в HDInsight ошибка больше не должна возникать.
 

@@ -9,15 +9,14 @@ editor: cgronlun
 ms.assetid: ca35e65f-3986-4f1b-bf93-9af6066bb716
 ms.service: data-lake-store
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/26/2018
 ms.author: twooley
-ms.openlocfilehash: cebdff5ed233516683df3330e8fd3332ded664e5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 1ae93dad9a18c18e330b4ff65924dd1db7a1faf0
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79260310"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85515249"
 ---
 # <a name="securing-data-stored-in-azure-data-lake-storage-gen1"></a>Защита данных, хранимых в Azure Data Lake Storage 1-го поколения
 Для защиты данных, хранимых в Azure Data Lake Storage 1-го поколения, необходимо выполнить три шага.  При управлении доступом на основе ролей (RBAC) и при использовании списков управления доступом (ACL) режим доступа должен обеспечивать пользователям и группам безопасности полный доступ к данным.
@@ -29,7 +28,7 @@ ms.locfileid: "79260310"
 
 В этой статье представлены инструкции по использованию портала Azure для выполнения указанных выше задач. Подробные сведения о реализации безопасности на уровне учетной записи и данных в Data Lake Storage 1-го поколения см. в статье [Обеспечение безопасности в Azure Data Lake Storage 1-го поколения](data-lake-store-security-overview.md). Подробные сведения о реализации списков ACL в Data Lake Storage 1-го поколения см. в статье [Обзор контроля доступа в Data Lake Storage 1-го поколения](data-lake-store-access-control.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 Перед началом работы с этим учебником необходимо иметь следующее:
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).

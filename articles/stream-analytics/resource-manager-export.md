@@ -5,14 +5,14 @@ services: stream-analytics
 author: mamccrea
 ms.author: mamccrea
 ms.service: stream-analytics
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/10/2020
-ms.openlocfilehash: 52ea7b45d0dcdb3ae16b8212557ba6ab3344ff15
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 76c2cf7164c3e2d683a9294cb500ed05381811b6
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78968935"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86043535"
 ---
 # <a name="export-an-azure-stream-analytics-job-azure-resource-manager-template"></a>Экспорт шаблона Azure Resource Manager задания Azure Stream Analytics
 
@@ -42,13 +42,13 @@ ms.locfileid: "78968935"
 
 1. Обратите внимание, что в рабочей области задания Stream Analytics отображается папка **deploy (развертывание** ).
 
-1. Изучите файл *JobTemplate. JSON* , который является шаблоном управления ресурсами Azure, который используется для развертывания.
+1. Изучите *JobTemplate.jsв* файле, который является шаблоном управления ресурсами Azure, который используется для развертывания.
 
 ## <a name="complete-the-parameters-file"></a>Завершение работы с файлом параметров
 
 Затем заполните файл параметров шаблона управления ресурсами Azure.
 
-1. Откройте файл *JobTemplate. parameters. JSON* , расположенный в папке **deploy** рабочей области задания Stream Analytics, в Visual Studio Code.
+1. Откройте *JobTemplate.parameters.jsв* файле, расположенном в папке **deploy** рабочей области задания Stream Analytics, в Visual Studio Code.
 
 1. Обратите внимание, что входные и выходные ключи имеют значение null. Замените значения NULL фактическими ключами доступа для входных и выходных ресурсов.
 
@@ -58,7 +58,7 @@ ms.locfileid: "78968935"
 
 Вы можете развернуть задание Azure Stream Analytics с помощью шаблонов Azure Resource Manager, созданных в предыдущем разделе.
 
-В окне PowerShell выполните следующую команду. Не забудьте реаплце *ResourceGroupName*, *TemplateFile*и *TemplateParameterFile* с фактическим именем группы ресурсов, а также полный путь к файлам *JobTemplate. JSON* и *JobTemplate. parameters. JSON* в **папке Deploy (развертывание** ) рабочей области задания.
+В окне PowerShell выполните следующую команду. Не забудьте реаплце *ResourceGroupName*, *TemplateFile*и *TemplateParameterFile* с фактическим именем группы ресурсов, а также полный путь к файлам *JobTemplate.js* и *JobTemplate.parameters.js* файлов в **папке развертывание** рабочей области задания.
 
 Если вы не настроили Azure PowerShell, выполните действия, описанные в разделе [установка Azure PowerShell модуля](https://docs.microsoft.com/powershell/azure/install-Az-ps).
 

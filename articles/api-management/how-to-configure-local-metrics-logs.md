@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 04/30/2020
 ms.author: apimpm
-ms.openlocfilehash: dd49680da6f52e32ddb52dbdb23ad5e8f627a91e
-ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
+ms.openlocfilehash: ac147863fe54be3343eda653fc863ebd08dac54d
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82205070"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86254509"
 ---
 # <a name="configure-local-metrics-and-logs-for-azure-api-management-self-hosted-gateway"></a>Настройка локальных метрик и журналов для самостоятельно размещенного шлюза службы управления API Azure
 
@@ -136,7 +136,7 @@ NAME                                   READY   STATUS    RESTARTS   AGE
 sputnik-metrics-f6d97548f-4xnb7        2/2     Running   0          1m
 ```
 
-Выполните приведенную ниже команду, чтобы проверить, работают ли службы. Запишите и `CLUSTER-IP` `PORT` в статистике службы, которая будет потребоваться позже. Вы можете посетить панель мониторинга Prometheus, используя `EXTERNAL-IP` и `PORT`.
+Выполните приведенную ниже команду, чтобы проверить, работают ли службы. Запишите `CLUSTER-IP` и в `PORT` статистике службы, которая будет потребоваться позже. Вы можете посетить панель мониторинга Prometheus, используя `EXTERNAL-IP` и `PORT` .
 
 ```console
 kubectl get services
@@ -151,10 +151,10 @@ sputnik-metrics-statsd       NodePort       10.0.41.179   <none>          8125:3
 
 | Поле  | По умолчанию | Описание |
 | ------------- | ------------- | ------------- |
-| данные телеметрии. метрики. локальные  | `none` | Включает ведение журнала с использованием статистики. Значение может быть `none`равно `statsd`,. |
+| данные телеметрии. метрики. локальные  | `none` | Включает ведение журнала с использованием статистики. Значение может быть равно `none` , `statsd` . |
 | телеметрии. метрики. Локальные. statsd. Конечная точка  | н/д | Указывает статистику конечной точки. |
 | данные телеметрии. метрики. Локальные. statsd. выборка  | н/д | Задает частоту выборки метрик. Значение может находиться в диапазоне от 0 до 1. Например,`0.5`|
-| данные телеметрии. метрики. local. statsed. Tag-Format  | н/д | [Формат расстановки тегов](https://github.com/prometheus/statsd_exporter#tagging-extensions)в статистике. Значение может быть `none`, `librato`, `dogStatsD`, `influxDB`. |
+| данные телеметрии. метрики. local. statsed. Tag-Format  | н/д | [Формат расстановки тегов](https://github.com/prometheus/statsd_exporter#tagging-extensions)в статистике. Значение может быть `none` , `librato` , `dogStatsD` , `influxDB` . |
 
 Ниже приведен пример конфигурации.
 
@@ -198,20 +198,20 @@ kubectl rollout restart deployment/<deployment-name>
 
 ## <a name="logs"></a>Журналы
 
-Саморазмещенный шлюз выводит журналы в `stdout` и `stderr` по умолчанию. Журналы можно легко просмотреть с помощью следующей команды:
+Саморазмещенный шлюз выводит журналы в `stdout` и по `stderr` умолчанию. Журналы можно легко просмотреть с помощью следующей команды:
 
 ```console
 kubectl logs <pod-name>
 ```
 
-Если собственный шлюз развернут в службе Azure Kubernetes, можно включить [Azure Monitor для контейнеров](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-overview) , собирающих `stdout` и `stderr` исключающих рабочие нагрузки, а также просматривать журналы в log Analytics. 
+Если собственный шлюз развернут в службе Azure Kubernetes, можно включить [Azure Monitor для контейнеров](../azure-monitor/insights/container-insights-overview.md) , собирающих и исключающих `stdout` `stderr` рабочие нагрузки, а также просматривать журналы в log Analytics. 
 
-Шлюз, размещенный на собственном сервере, также поддерживает ряд протоколов `rfc5424`, включая `journal` `localsyslog`, и. В таблице ниже приведены все поддерживаемые параметры. 
+Шлюз, размещенный на собственном сервере, также поддерживает ряд протоколов `localsyslog` , включая, `rfc5424` и `journal` . В таблице ниже приведены все поддерживаемые параметры. 
 
 | Поле  | По умолчанию | Описание |
 | ------------- | ------------- | ------------- |
-| данные телеметрии. Logs. STD  | `text` | Включает ведение журнала для стандартных потоков. Значение может быть `none`равно `text`,,`json` |
-| данные телеметрии. Logs. local  | `none` | Включает локальное ведение журнала. Значение может быть `none`, `auto`, `localsyslog`, `rfc5424`,`journal`  |
+| данные телеметрии. Logs. STD  | `text` | Включает ведение журнала для стандартных потоков. Значение может быть равно `none` , `text` ,`json` |
+| данные телеметрии. Logs. local  | `none` | Включает локальное ведение журнала. Значение может быть `none` , `auto` , `localsyslog` , `rfc5424` ,`journal`  |
 | данные телеметрии. Logs. local. локалсислог. Endpoint  | н/д | Указывает конечную точку локалсислог.  |
 | данные телеметрии. Logs. local. локалсислог. помещений  | н/д | Указывает [код устройства](https://en.wikipedia.org/wiki/Syslog#Facility)локалсислог. Например,`7` 
 | данные телеметрии. Logs. local. rfc5424. Endpoint  | н/д | Указывает конечную точку rfc5424.  |
@@ -232,8 +232,7 @@ kubectl logs <pod-name>
         telemetry.logs.local.localsyslog.facility: "7"
 ```
  
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о самостоятельно размещенном шлюзе см. в статье [Обзор самостоятельного размещения шлюза в службе управления API Azure](self-hosted-gateway-overview.md) .
 * Сведения о [настройке и сохранении журналов в облаке](how-to-configure-local-metrics-logs.md)
-

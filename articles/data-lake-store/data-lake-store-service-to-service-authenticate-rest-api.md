@@ -3,15 +3,15 @@ title: Проверка подлинности между службами — D
 description: Узнайте, как обеспечить проверку подлинности между службами с помощью Azure Data Lake Storage 1-го поколения и Azure Active Directory использования REST API.
 author: twooley
 ms.service: data-lake-store
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: d7d0ec39e9f0f294324eb18337f4234ddaa63e2c
-ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
+ms.openlocfilehash: 725490316ef4fcbce197d5a29b7665b7de7014c9
+ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82688143"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85857114"
 ---
 # <a name="service-to-service-authentication-with-azure-data-lake-storage-gen1-using-rest-api"></a>Аутентификация между службами в Azure Data Lake Storage 1-го поколения с использованием REST API
 > [!div class="op_single_selector"]
@@ -34,19 +34,23 @@ ms.locfileid: "82688143"
 
 В этом сценарии приложение предоставляет собственные учетные данные для выполнения операций. Для этого необходимо отправить запрос POST, аналогичный следующему:
 
-    curl -X POST https://login.microsoftonline.com/<TENANT-ID>/oauth2/token  \
-      -F grant_type=client_credentials \
-      -F resource=https://management.core.windows.net/ \
-      -F client_id=<CLIENT-ID> \
-      -F client_secret=<AUTH-KEY>
+```console
+curl -X POST https://login.microsoftonline.com/<TENANT-ID>/oauth2/token  \
+  -F grant_type=client_credentials \
+  -F resource=https://management.core.windows.net/ \
+  -F client_id=<CLIENT-ID> \
+  -F client_secret=<AUTH-KEY>
+```
 
 Выходные данные этого запроса будут содержать маркер авторизации (`access-token` в приведенных ниже выходных данных) для дальнейшей передачи в вызовах REST API. Сохраните маркер аутентификации в текстовый файл. Он понадобится вам при выполнении вызовов REST к Data Lake Storage 1-го поколения.
 
-    {"token_type":"Bearer","expires_in":"3599","expires_on":"1458245447","not_before":"1458241547","resource":"https://management.core.windows.net/","access_token":"<REDACTED>"}
+```output
+{"token_type":"Bearer","expires_in":"3599","expires_on":"1458245447","not_before":"1458241547","resource":"https://management.core.windows.net/","access_token":"<REDACTED>"}
+```
 
 В этой статье используется **неинтерактивный** подход. Дополнительные сведения о неинтерактивном подходе (вызовы между службами) см. в [этой статье](https://msdn.microsoft.com/library/azure/dn645543.aspx).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье описывается, как использовать аутентификацию между службами, чтобы реализовать аутентификацию в Data Lake Storage 1-го поколения с помощью REST API. Дополнительные сведения об использовании REST API для работы с Data Lake Storage 1-го поколения см. в следующих статьях.
 

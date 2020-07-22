@@ -3,15 +3,14 @@ title: Мониторинг устройства StorSimple 8000
 description: Описание применения службы диспетчера устройств StorSimple для мониторинга использования, производительности ввода-вывода и использования емкости.
 author: alkohli
 ms.service: storsimple
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 10/17/2017
 ms.author: alkohli
-ms.openlocfilehash: b3b77024606c5cdb02ff7bdd357c2d14a2415efa
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 1c2df017a9af47bfa330c8e0fa7561bf5b2d5bae
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76277058"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85514687"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-monitor-your-storsimple-device"></a>Использование службы диспетчера устройств StorSimple для мониторинга устройства StorSimple
 
@@ -138,7 +137,7 @@ Growth (%) = [{Usage(last day) - Usage(first day)} X 100]/Usage(first day)
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Узнайте об [использовании панели мониторинга устройств службы диспетчера устройств StorSimple](storsimple-device-dashboard.md).
 * Узнайте, как [использовать службу диспетчера устройств StorSimple для администрирования устройства StorSimple](storsimple-manager-service-administration.md).
 

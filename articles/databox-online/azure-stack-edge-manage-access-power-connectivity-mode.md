@@ -5,15 +5,14 @@ services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: edge
-ms.topic: article
+ms.topic: how-to
 ms.date: 06/24/2019
 ms.author: alkohli
-ms.openlocfilehash: 939296b1cf606401a801dd72eccbad23da766018
-ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
-ms.translationtype: MT
+ms.openlocfilehash: 6e46d1a923eec5244bf77c201ff0b3189699c9ea
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82569619"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84339728"
 ---
 # <a name="manage-access-power-and-connectivity-mode-for-your-azure-stack-edge"></a>Управление доступом, питанием и режимом подключения для Azure Stackной стороны
 
@@ -66,7 +65,7 @@ ms.locfileid: "82569619"
 -  Создание общего ресурса с соответствующей учетной записью хранения.
 -  Создание пользователя, который имеет доступ к общим папкам на устройстве.
 
-У вас должен быть `User` доступ к Active Directory клиенту, как вам нужно `Read all directory objects`. Вы не можете быть гостевым пользователем, так как у него `Read all directory objects`нет разрешений на доступ к. Если вы являетесь гостевым компьютером, то такие операции, как создание ключа активации, создание общей папки на Azure Stack пограничном устройстве, создание пользователя, Настройка роли вычислений ребра, сброс пароля устройства завершатся неудачей.
+У вас должен `User` быть доступ к Active Directory клиенту, как вам нужно `Read all directory objects` . Вы не можете быть гостевым пользователем, так как у него нет разрешений на доступ к `Read all directory objects` . Если вы являетесь гостевым компьютером, то такие операции, как создание ключа активации, создание общей папки на Azure Stack пограничном устройстве, создание пользователя, Настройка роли вычислений ребра, сброс пароля устройства завершатся неудачей.
 
 Дополнительные сведения о том, как предоставить пользователям доступ к Microsoft Graph API, см. в разделе [Справочник по разрешениям Microsoft Graph](https://docs.microsoft.com/graph/permissions-reference).
 
@@ -80,7 +79,7 @@ ms.locfileid: "82569619"
 
 Прежде чем пытаться создать какой-либо ресурс, убедитесь, что поставщик ресурсов зарегистрирован в подписке. Если поставщик ресурсов не зарегистрирован, необходимо убедиться, что пользователь, создающий новый ресурс, имеет достаточные права для регистрации необходимого поставщика ресурсов на уровне подписки. Если вы еще не сделали этого, вы увидите следующую ошибку:
 
-*Имя подписки \<подписки> не имеет разрешений на регистрацию поставщиков ресурсов: Microsoft. датабокседже.*
+*Подписка \<Subscription name> не имеет разрешений на регистрацию поставщиков ресурсов: Microsoft. датабокседже.*
 
 
 Чтобы получить список зарегистрированных поставщиков ресурсов в текущей подписке, выполните следующую команду:
@@ -89,7 +88,7 @@ ms.locfileid: "82569619"
 Get-AzResourceProvider -ListAvailable |where {$_.Registrationstate -eq "Registered"}
 ```
 
-Для устройства Azure Stack пограничных `Microsoft.DataBoxEdge` устройств необходимо зарегистрировать. Для регистрации `Microsoft.DataBoxEdge`администратор подписки должен выполнить следующую команду:
+Для устройства Azure Stack пограничных устройств `Microsoft.DataBoxEdge` необходимо зарегистрировать. Для регистрации `Microsoft.DataBoxEdge` Администратор подписки должен выполнить следующую команду:
 
 ```PowerShell
 Register-AzResourceProvider -ProviderNamespace Microsoft.DataBoxEdge
@@ -132,6 +131,6 @@ Register-AzResourceProvider -ProviderNamespace Microsoft.DataBoxEdge
 > [!NOTE]
 > При завершении работы физического устройства необходимо будет нажать кнопку питания на устройстве, чтобы включить его.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Сведения об управлении общими папками см. [здесь](azure-stack-edge-manage-shares.md).

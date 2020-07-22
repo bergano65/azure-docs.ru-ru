@@ -4,12 +4,12 @@ description: Узнайте, как развернуть шаблон Azure Reso
 ms.date: 05/20/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 01f04d18ae54c3c512010dd005e9d820b914e536
-ms.sourcegitcommit: 958f086136f10903c44c92463845b9f3a6a5275f
+ms.openlocfilehash: 3112c3940f9d2668f4825de3c2e57a63af009d92
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83714072"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86118908"
 ---
 # <a name="tutorial-deploy-a-local-azure-resource-manager-template"></a>Руководство по развертыванию шаблона Azure Resource Manager
 
@@ -33,7 +33,7 @@ ms.locfileid: "83714072"
 
 ### <a name="editor-optional"></a>Редактор (необязательно)
 
-Шаблоны — это файлы JSON. Для просмотра и изменения шаблонов нужен редактор JSON. Советуем использовать Visual Studio Code с расширением средств Resource Manager. Дополнительные сведения об установке см. в статье [Use Visual Studio Code to create Azure Resource Manager templates](use-vs-code-to-create-template.md)(Создание шаблонов Azure Resource Manager c помощью Visual Studio Code).
+Шаблоны — это файлы JSON. Для просмотра и изменения шаблонов нужен редактор JSON. Советуем использовать Visual Studio Code с расширением средств Resource Manager. Если необходимо установить эти средства, см. статью [Краткое руководство. Создание шаблонов Azure Resource Manager c помощью Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
 
 ## <a name="review-template"></a>Проверка шаблона
 

@@ -4,15 +4,15 @@ description: Из этой статьи вы узнаете, как настро
 services: internet-analyzer
 author: mattcalder
 ms.service: internet-analyzer
-ms.topic: quickstart
+ms.topic: how-to
 ms.date: 10/16/2019
 ms.author: mebeatty
-ms.openlocfilehash: 6a781e767393f35a1ec22f195ba787e3018d8d1e
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
-ms.translationtype: HT
+ms.openlocfilehash: 6ca71bce726f16eeacc96e10eb654bb3e21c5924
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "76713102"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84744091"
 ---
 # <a name="measure-custom-endpoints-to-evaluate-in-your-internet-analyzer-tests"></a>Измерение пользовательских конечных точек для оценки в тестах Анализатора Интернета 
 
@@ -31,7 +31,7 @@ ms.locfileid: "76713102"
 
 1. Скачайте прозрачное однопиксельное тестовое изображение [здесь](https://fpc.msedge.net/apc/trans.gif). Это однопиксельное изображение представляет собой ресурс, который JavaScript клиента будет получать для измерения производительности.
 2. В пользовательском веб-приложении разверните тестовое изображение в общедоступном пути. Путь должен работать по протоколу HTTPS. 
-3. Скопируйте полный URL-адрес пользовательской конечной точки (например, https://contoso.com/test/trans.gif) в поле пользовательской конечной точки во время создания теста).
+3. Скопируйте полный URL-адрес пользовательской конечной точки (например, `https://contoso.com/test/trans.gif`) в поле пользовательской конечной точки во время создания теста.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

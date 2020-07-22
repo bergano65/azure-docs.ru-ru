@@ -5,10 +5,9 @@ ms.reviewer: srinathv
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.openlocfilehash: 35957a1e8a3d6c3d9be06d9d44dbcd47efa0e6ee
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74173155"
 ---
 # <a name="azure-backup-server-and-dpm---faq"></a>Azure Backup Server и DPM — часто задаваемые вопросы
@@ -63,7 +62,7 @@ ms.locfileid: "74173155"
 
 Так как базы данных SharePoint настраиваются в SQL AlwaysOn, их нельзя изменить, не удалив группу доступности. В связи с этим DPM не может восстанавливать базы данных в исходное расположение. Вы можете восстановить базу данных SQL Server в другой экземпляр SQL Server.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 См. другие статьи с вопросами и ответами:
 

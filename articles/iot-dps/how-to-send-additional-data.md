@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 ms.openlocfilehash: de6bb3fe0879a69467283e93a04a355876a02cba
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80246693"
 ---
 # <a name="how-to-transfer-a-payload-between-device-and-dps"></a>Как передавать полезные данные между устройством и службой DPS
 Иногда служба DPS требует больше данных от устройств, чтобы правильно подготавливать их в нужный центр Интернета вещей, и эти данные должны предоставляться устройством. Наоборот, служба DPS может возвращать данные на устройство для упрощения логики на стороне клиента. 
 
-## <a name="when-to-use-it"></a>Когда использовать
+## <a name="when-to-use-it"></a>Сценарии использования
 Эта функция может использоваться в качестве расширения для [пользовательского выделения](https://docs.microsoft.com/azure/iot-dps/how-to-use-custom-allocation-policies). Например, вы хотите выделить устройства на основе модели устройства без вмешательства человека. В этом случае вы будете использовать [пользовательское выделение](https://docs.microsoft.com/azure/iot-dps/how-to-use-custom-allocation-policies). Вы можете настроить устройство для передачи сведений о модели в рамках [вызова регистрации устройства](https://docs.microsoft.com/rest/api/iot-dps/runtimeregistration/registerdevice). Служба DPS передаст полезные данные устройства в пользовательский веб-перехватчик выделения. Функция позволяет решить, к какому центру Интернета вещей будет обращаться это устройство при получении сведений о модели устройства. Аналогично, если веб-перехватчику нужно вернуть некоторые данные на устройство, он передаст данные обратно в виде строки в ответе веб-перехватчика.  
 
 ## <a name="device-sends-data-payload-to-dps"></a>Устройство отправляет полезные данные в службу DPS
@@ -54,7 +54,7 @@ ms.locfileid: "80246693"
    ```
 
 ## <a name="sdk-support"></a>Поддержка пакетов SDK
-Эта функция доступна в клиентских пакетах [SDK](https://docs.microsoft.com/azure/iot-dps/)для C, C#, Java и Node. js.  
+Эта функция доступна в пакетах [SDK для клиента](https://docs.microsoft.com/azure/iot-dps/)C, C#, JAVA и Node.js.  
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Разработка с использованием [пакета SDK для Azure IoT]( https://github.com/Azure/azure-iot-sdks) для Центра Интернета Azure и службы подготовки устройств к добавлению в Центр Интернета вещей

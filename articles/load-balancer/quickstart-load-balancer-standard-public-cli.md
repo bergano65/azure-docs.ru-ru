@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 01/25/2019
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: 1f6a05fdfc28adf412ffbd1402e37b69d1c51634
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 1a2d0322436bd91e92a7018552c5827e021ee74e
+ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "79477771"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85851516"
 ---
 # <a name="quickstart-create-a-standard-load-balancer-to-load-balance-vms-using-azure-cli"></a>Краткое руководство. Создание Load Balancer (цен. категория "Стандартный") с помощью Azure CLI для распределения нагрузки между виртуальными машинами
 
@@ -73,7 +73,7 @@ ms.locfileid: "79477771"
 
 ### <a name="create-the-load-balancer"></a>Создание подсистемы балансировки нагрузки
 
-С помощью команды [az network lb create](https://docs.microsoft.com/cli/azure/network/lb?view=azure-cli-latest) создайте общедоступную подсистему балансировки нагрузки Azure Load Balancer **myLoadBalancer** с интерфейсным пулом **myFrontEnd** и внутренним пулом **myBackEndPool**, связанным с общедоступным IP-адресом **myPublicIP**, созданным на предыдущем шаге. Для создания базового общедоступного IP-адреса используйте `--sku basic`. Для производственных рабочих нагрузок корпорация Майкрософт рекомендует использовать номера SKU ценовой категории "Стандартный".
+С помощью команды [az network lb create](https://docs.microsoft.com/cli/azure/network/lb?view=azure-cli-latest) создайте общедоступную подсистему балансировки нагрузки Azure Load Balancer **myLoadBalancer** с интерфейсным пулом **myFrontEnd** и внутренним пулом **myBackEndPool**, связанным с общедоступным IP-адресом **myPublicIP**, созданным на предыдущем шаге. Для создания Load Balancer уровня "Базовый" используйте `--sku basic`. Для производственных рабочих нагрузок корпорация Майкрософт рекомендует использовать номера SKU ценовой категории "Стандартный".
 
 ```azurecli-interactive
   az network lb create \

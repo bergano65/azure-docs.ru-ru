@@ -9,16 +9,16 @@ ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: 7fff21ec4fdb53483eea1a6c37ce9269081fe77e
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82615452"
 ---
 # <a name="troubleshooting-overview-feedback-and-support"></a>Общие сведения об устранении неисправностей, отзывы и поддержка
 
 >[!IMPORTANT]
->Это содержимое относится к выпуску 2019, который не поддерживает Azure Resource Manager объекты виртуальных рабочих столов Windows. Если вы пытаетесь управлять Azure Resource Manager объектов виртуальных рабочих столов Windows, представленных в обновлении пружины 2020, см. [эту статью](../troubleshoot-set-up-overview.md).
+>Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Если вы хотите обеспечить управление объектами Azure Resource Manager для Виртуального рабочего стола Windows, представленными в обновлении за весну 2020 г., см. [эту статью](../troubleshoot-set-up-overview.md).
 
 В этой статье приводятся общие сведения о проблемах, которые могут возникнуть при настройке среды клиента виртуальных рабочих столов Windows, а также способы решения этих проблем.
 
@@ -53,12 +53,12 @@ ms.locfileid: "82615452"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Сведения об устранении неполадок при создании клиента и пула узлов в среде виртуальных рабочих столов Windows см. в статье [Создание пула клиентов и узлов](troubleshoot-set-up-issues-2019.md).
-- Сведения об устранении неполадок при настройке виртуальной машины в виртуальном рабочем столе Windows см. в разделе [Конфигурация виртуальной машины узла сеанса](troubleshoot-vm-configuration-2019.md).
+- Инструкции по устранению неполадок при создании клиента и пула узлов в среде Виртуального рабочего стола Windows см. в статье [Создание клиента и пула узлов](troubleshoot-set-up-issues-2019.md).
+- Инструкции по устранению неполадок при настройке виртуальной машины через Виртуальный рабочий стол Windows см. в статье [Конфигурация виртуальной машины узла сеанса](troubleshoot-vm-configuration-2019.md).
 - Сведения об устранении неполадок подключения клиентов к виртуальным рабочим столам Windows см. в статье [подключения к службе виртуальных рабочих столов Windows](troubleshoot-service-connection-2019.md).
 - Сведения об устранении неполадок, связанных с удаленный рабочий стол клиентами, см. [в разделе Устранение неполадок клиента удаленный рабочий стол](../troubleshoot-client.md)
-- Сведения об устранении неполадок при использовании PowerShell с виртуальным рабочим столом Windows см. в статье [Windows Virtual Desktop PowerShell](troubleshoot-powershell-2019.md).
+- Инструкции по устранению неполадок при использовании PowerShell через Виртуальный рабочий стол Windows см. в статье [Виртуальный рабочий стол Windows — PowerShell](troubleshoot-powershell-2019.md).
 - Дополнительные сведения о службе см. в разделе [Среда виртуальных рабочих столов Windows](environment-setup-2019.md).
-- Руководство по устранению неполадок см. в разделе [учебник. Устранение неполадок диспетчер ресурсов развертываний шаблонов](../../azure-resource-manager/templates/template-tutorial-troubleshoot.md).
+- Сведения об устранении неполадок см. в статье [Tutorial: Troubleshoot Resource Manager template deployments](../../azure-resource-manager/templates/template-tutorial-troubleshoot.md) (Руководство. Устранение неполадок развертывания шаблонов Resource Manager)
 - Сведения о действиях аудита см. в статье [Операции аудита с помощью Resource Manager](../../azure-resource-manager/management/view-activity-logs.md).
 - Сведения о действиях по определению ошибок при развертывании см. в разделе [Просмотр операций развертывания](../../azure-resource-manager/templates/deployment-history.md).

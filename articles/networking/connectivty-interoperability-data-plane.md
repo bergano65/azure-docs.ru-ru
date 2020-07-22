@@ -10,12 +10,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 10/18/2018
 ms.author: rambala
-ms.openlocfilehash: fe7b74b0d4d065d4f222fefbbdc4a1d434d1163b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 635a8fc5409e18da9529763b06e4a531a36d0156
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80518264"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86169210"
 ---
 # <a name="interoperability-in-azure--data-plane-analysis"></a>Взаимодействие в Azure: анализ плоскости данных
 
@@ -29,13 +29,15 @@ ms.locfileid: "80518264"
 
 Пиринг виртуальных сетей эмулирует функциональные возможности сетевого моста между двумя виртуальными сетями, для которых настроен этот пиринг. Ниже представлена трассировка маршрута пакетов из центральной виртуальной сети на виртуальную машину в периферийной виртуальной сети.
 
-    C:\Users\rb>tracert 10.11.30.4
+```console
+C:\Users\rb>tracert 10.11.30.4
 
-    Tracing route to 10.11.30.4 over a maximum of 30 hops
+Tracing route to 10.11.30.4 over a maximum of 30 hops
 
-      1     2 ms     1 ms     1 ms  10.11.30.4
+  1     2 ms     1 ms     1 ms  10.11.30.4
 
-    Trace complete.
+Trace complete.
+```
 
 На приведенном ниже рисунке показано графическое представление связи между центральной виртуальной сетью и периферийной виртуальной сетью с точки зрения Наблюдателя за сетями Azure.
 
@@ -46,15 +48,17 @@ ms.locfileid: "80518264"
 
 Ниже представлена трассировка маршрута пакетов из центральной виртуальной сети на виртуальную машину в виртуальной сети филиала.
 
-    C:\Users\rb>tracert 10.11.30.68
+```console
+C:\Users\rb>tracert 10.11.30.68
 
-    Tracing route to 10.11.30.68 over a maximum of 30 hops
+Tracing route to 10.11.30.68 over a maximum of 30 hops
 
-      1     1 ms     1 ms     1 ms  10.10.30.142
-      2     *        *        *     Request timed out.
-      3     2 ms     2 ms     2 ms  10.11.30.68
+  1     1 ms     1 ms     1 ms  10.10.30.142
+  2     *        *        *     Request timed out.
+  3     2 ms     2 ms     2 ms  10.11.30.68
 
-    Trace complete.
+Trace complete.
+```
 
 В этом маршруте трассировки первым прыжком является VPN-шлюз Azure центральной виртуальной сети. Второй прыжок — VPN-шлюз виртуальной сети филиала. IP-адрес VPN-шлюза виртуальной сети филиала не объявляется в центральной виртуальной сети. Третий прыжок — виртуальная машина в виртуальной сети филиала.
 
@@ -70,16 +74,18 @@ ms.locfileid: "80518264"
 
 Ниже представлена трассировка маршрута пакетов из центральной виртуальной сети на виртуальную машину в локальном расположении 1.
 
-    C:\Users\rb>tracert 10.2.30.10
+```console
+C:\Users\rb>tracert 10.2.30.10
 
-    Tracing route to 10.2.30.10 over a maximum of 30 hops
+Tracing route to 10.2.30.10 over a maximum of 30 hops
 
-      1     2 ms     2 ms     2 ms  10.10.30.132
-      2     *        *        *     Request timed out.
-      3     *        *        *     Request timed out.
-      4     2 ms     2 ms     2 ms  10.2.30.10
+  1     2 ms     2 ms     2 ms  10.10.30.132
+  2     *        *        *     Request timed out.
+  3     *        *        *     Request timed out.
+  4     2 ms     2 ms     2 ms  10.2.30.10
 
-    Trace complete.
+Trace complete.
+```
 
 В этом маршруте трассировки первый прыжок — это конечная точка туннеля шлюза Azure ExpressRoute от корпоративного пограничного маршрутизатора Майкрософт (MSEE). Вторым и третьим прыжками являются IP-адреса локальной сети для маршрутизатора периметра клиента (CE) и локального расположения 1. Эти IP-адреса не объявляются в центральной виртуальной сети. Четвертый прыжок — виртуальная машина в локальном расположении 1.
 
@@ -88,16 +94,18 @@ ms.locfileid: "80518264"
 
 Ниже представлена трассировка маршрута пакетов из центральной виртуальной сети на виртуальную машину в локальном расположении 2.
 
-    C:\Users\rb>tracert 10.1.31.10
+```console
+C:\Users\rb>tracert 10.1.31.10
 
-    Tracing route to 10.1.31.10 over a maximum of 30 hops
+Tracing route to 10.1.31.10 over a maximum of 30 hops
 
-      1    76 ms    75 ms    75 ms  10.10.30.134
-      2     *        *        *     Request timed out.
-      3     *        *        *     Request timed out.
-      4    75 ms    75 ms    75 ms  10.1.31.10
+  1    76 ms    75 ms    75 ms  10.10.30.134
+  2     *        *        *     Request timed out.
+  3     *        *        *     Request timed out.
+  4    75 ms    75 ms    75 ms  10.1.31.10
 
-    Trace complete.
+Trace complete.
+```
 
 В этом маршруте трассировки в качестве первого прыжка указана конечная точка туннеля от шлюза ExpressRoute до MSEE. Вторым и третьим прыжками являются IP-адреса локальной сети для маршрутизатора CE и локального расположения 2. Эти IP-адреса не объявляются в центральной виртуальной сети. Четвертый прыжок — виртуальная машина в локальном расположении 2.
 
@@ -105,15 +113,17 @@ ms.locfileid: "80518264"
 
 Ниже представлена трассировка маршрута пакетов из центральной виртуальной сети на виртуальную машину в удаленной виртуальной сети.
 
-    C:\Users\rb>tracert 10.17.30.4
+```console
+C:\Users\rb>tracert 10.17.30.4
 
-    Tracing route to 10.17.30.4 over a maximum of 30 hops
+Tracing route to 10.17.30.4 over a maximum of 30 hops
 
-      1     2 ms     2 ms     2 ms  10.10.30.132
-      2     *        *        *     Request timed out.
-      3    69 ms    68 ms    69 ms  10.17.30.4
+  1     2 ms     2 ms     2 ms  10.10.30.132
+  2     *        *        *     Request timed out.
+  3    69 ms    68 ms    69 ms  10.17.30.4
 
-    Trace complete.
+Trace complete.
+```
 
 В этом маршруте трассировки в качестве первого прыжка указана конечная точка туннеля от шлюза ExpressRoute до MSEE. Вторым прыжком является IP-адрес шлюза удаленной виртуальной сети. Диапазон IP-адресов, в который входит адрес второго прыжка, не объявляется в центральной виртуальной сети. Третий прыжок — виртуальная машина в удаленной виртуальной сети.
 
@@ -125,27 +135,31 @@ ms.locfileid: "80518264"
 
 Ниже представлена трассировка маршрута пакетов из периферийной виртуальной сети на виртуальную машину в центральной виртуальной сети.
 
-    C:\Users\rb>tracert 10.10.30.4
+```console
+C:\Users\rb>tracert 10.10.30.4
 
-    Tracing route to 10.10.30.4 over a maximum of 30 hops
+Tracing route to 10.10.30.4 over a maximum of 30 hops
 
-      1    <1 ms    <1 ms    <1 ms  10.10.30.4
+  1    <1 ms    <1 ms    <1 ms  10.10.30.4
 
-    Trace complete.
+Trace complete.
+```
 
 ### <a name="path-to-the-branch-vnet"></a>Путь к виртуальной сети филиала
 
 Ниже представлена трассировка маршрута пакетов из периферийной виртуальной сети на виртуальную машину в виртуальной сети филиала.
 
-    C:\Users\rb>tracert 10.11.30.68
+```console
+C:\Users\rb>tracert 10.11.30.68
 
-    Tracing route to 10.11.30.68 over a maximum of 30 hops
+Tracing route to 10.11.30.68 over a maximum of 30 hops
 
-      1     1 ms    <1 ms    <1 ms  10.10.30.142
-      2     *        *        *     Request timed out.
-      3     3 ms     2 ms     2 ms  10.11.30.68
+  1     1 ms    <1 ms    <1 ms  10.10.30.142
+  2     *        *        *     Request timed out.
+  3     3 ms     2 ms     2 ms  10.11.30.68
 
-    Trace complete.
+Trace complete.
+```
 
 В этом маршруте трассировки первым прыжком является VPN-шлюз центральной виртуальной сети. Второй прыжок — VPN-шлюз виртуальной сети филиала. IP-адрес VPN-шлюза виртуальной сети филиала не объявляется в центральной или периферийной виртуальной сети. Третий прыжок — виртуальная машина в виртуальной сети филиала.
 
@@ -153,16 +167,18 @@ ms.locfileid: "80518264"
 
 Ниже представлена трассировка маршрута пакетов из периферийной виртуальной сети на виртуальную машину в локальном расположении 1.
 
-    C:\Users\rb>tracert 10.2.30.10
+```console
+C:\Users\rb>tracert 10.2.30.10
 
-    Tracing route to 10.2.30.10 over a maximum of 30 hops
+Tracing route to 10.2.30.10 over a maximum of 30 hops
 
-      1    24 ms     2 ms     3 ms  10.10.30.132
-      2     *        *        *     Request timed out.
-      3     *        *        *     Request timed out.
-      4     3 ms     2 ms     2 ms  10.2.30.10
+  1    24 ms     2 ms     3 ms  10.10.30.132
+  2     *        *        *     Request timed out.
+  3     *        *        *     Request timed out.
+  4     3 ms     2 ms     2 ms  10.2.30.10
 
-    Trace complete.
+Trace complete.
+```
 
 В этом Traceroute первый прыжок является конечной точкой туннеля шлюза ExpressRoute виртуальной сети концентратора к MSEE. Вторым и третьим прыжками являются IP-адреса локальной сети для маршрутизатора CE и локального расположения 1. Эти IP-адреса не объявляются в центральной или периферийной виртуальной сети. Четвертый прыжок — виртуальная машина в локальном расположении 1.
 
@@ -170,17 +186,18 @@ ms.locfileid: "80518264"
 
 Ниже представлена трассировка маршрута пакетов из периферийной виртуальной сети на виртуальную машину в локальном расположении 2.
 
+```console
+C:\Users\rb>tracert 10.1.31.10
 
-    C:\Users\rb>tracert 10.1.31.10
+Tracing route to 10.1.31.10 over a maximum of 30 hops
 
-    Tracing route to 10.1.31.10 over a maximum of 30 hops
+  1    76 ms    75 ms    76 ms  10.10.30.134
+  2     *        *        *     Request timed out.
+  3     *        *        *     Request timed out.
+  4    75 ms    75 ms    75 ms  10.1.31.10
 
-      1    76 ms    75 ms    76 ms  10.10.30.134
-      2     *        *        *     Request timed out.
-      3     *        *        *     Request timed out.
-      4    75 ms    75 ms    75 ms  10.1.31.10
-
-    Trace complete.
+Trace complete.
+```
 
 В этом Traceroute первый прыжок является конечной точкой туннеля шлюза ExpressRoute виртуальной сети концентратора к MSEE. Вторым и третьим прыжками являются IP-адреса локальной сети для маршрутизатора CE и локального расположения 2. Эти IP-адреса не объявляются в центральной или периферийной виртуальных сетях. Четвертый прыжок — виртуальная машина в локальном расположении 2.
 
@@ -188,15 +205,17 @@ ms.locfileid: "80518264"
 
 Ниже представлена трассировка маршрута пакетов из периферийной виртуальной сети на виртуальную машину в удаленной виртуальной сети.
 
-    C:\Users\rb>tracert 10.17.30.4
+```console
+C:\Users\rb>tracert 10.17.30.4
 
-    Tracing route to 10.17.30.4 over a maximum of 30 hops
+Tracing route to 10.17.30.4 over a maximum of 30 hops
 
-      1     2 ms     1 ms     1 ms  10.10.30.133
-      2     *        *        *     Request timed out.
-      3    71 ms    70 ms    70 ms  10.17.30.4
+  1     2 ms     1 ms     1 ms  10.10.30.133
+  2     *        *        *     Request timed out.
+  3    71 ms    70 ms    70 ms  10.17.30.4
 
-    Trace complete.
+Trace complete.
+```
 
 В этом Traceroute первый прыжок является конечной точкой туннеля шлюза ExpressRoute виртуальной сети концентратора к MSEE. Вторым прыжком является IP-адрес шлюза удаленной виртуальной сети. Диапазон IP-адресов, в который входит адрес второго прыжка, не объявляется в центральной или периферийной виртуальной сети. Третий прыжок — виртуальная машина в удаленной виртуальной сети.
 
@@ -206,15 +225,17 @@ ms.locfileid: "80518264"
 
 Ниже представлена трассировка маршрута пакетов из виртуальной сети филиала на виртуальную машину в центральной виртуальной сети.
 
-    C:\Windows\system32>tracert 10.10.30.4
+```console
+C:\Windows\system32>tracert 10.10.30.4
 
-    Tracing route to 10.10.30.4 over a maximum of 30 hops
+Tracing route to 10.10.30.4 over a maximum of 30 hops
 
-      1    <1 ms    <1 ms    <1 ms  10.11.30.100
-      2     *        *        *     Request timed out.
-      3     4 ms     3 ms     3 ms  10.10.30.4
+  1    <1 ms    <1 ms    <1 ms  10.11.30.100
+  2     *        *        *     Request timed out.
+  3     4 ms     3 ms     3 ms  10.10.30.4
 
-    Trace complete.
+Trace complete.
+```
 
 В этом маршруте трассировки первым прыжком является VPN-шлюз виртуальной сети филиала. Второй прыжок — VPN-шлюз центральной виртуальной сети. IP-адрес VPN-шлюза центральной виртуальной сети не объявляется в удаленной виртуальной сети. Третий прыжок — виртуальная машина в центральной виртуальной сети.
 
@@ -222,15 +243,17 @@ ms.locfileid: "80518264"
 
 Ниже представлена трассировка маршрута пакетов из виртуальной сети филиала на виртуальную машину в периферийной виртуальной сети.
 
-    C:\Users\rb>tracert 10.11.30.4
+```console
+C:\Users\rb>tracert 10.11.30.4
 
-    Tracing route to 10.11.30.4 over a maximum of 30 hops
+Tracing route to 10.11.30.4 over a maximum of 30 hops
 
-      1     1 ms    <1 ms     1 ms  10.11.30.100
-      2     *        *        *     Request timed out.
-      3     4 ms     3 ms     2 ms  10.11.30.4
+  1     1 ms    <1 ms     1 ms  10.11.30.100
+  2     *        *        *     Request timed out.
+  3     4 ms     3 ms     2 ms  10.11.30.4
 
-    Trace complete.
+Trace complete.
+```
 
 В этом маршруте трассировки первым прыжком является VPN-шлюз виртуальной сети филиала. Второй прыжок — VPN-шлюз центральной виртуальной сети. IP-адрес VPN-шлюза центральной виртуальной сети не объявляется в удаленной виртуальной сети. Третий прыжок — виртуальная машина в периферийной виртуальной сети.
 
@@ -238,17 +261,19 @@ ms.locfileid: "80518264"
 
 Ниже представлена трассировка маршрута пакетов из виртуальной сети филиала на виртуальную машину в локальном расположении 1.
 
-    C:\Users\rb>tracert 10.2.30.10
+```console
+C:\Users\rb>tracert 10.2.30.10
 
-    Tracing route to 10.2.30.10 over a maximum of 30 hops
+Tracing route to 10.2.30.10 over a maximum of 30 hops
 
-      1     1 ms    <1 ms    <1 ms  10.11.30.100
-      2     *        *        *     Request timed out.
-      3     3 ms     2 ms     2 ms  10.2.30.125
-      4     *        *        *     Request timed out.
-      5     3 ms     3 ms     3 ms  10.2.30.10
+  1     1 ms    <1 ms    <1 ms  10.11.30.100
+  2     *        *        *     Request timed out.
+  3     3 ms     2 ms     2 ms  10.2.30.125
+  4     *        *        *     Request timed out.
+  5     3 ms     3 ms     3 ms  10.2.30.10
 
-    Trace complete.
+Trace complete.
+```
 
 В этом маршруте трассировки первым прыжком является VPN-шлюз виртуальной сети филиала. Второй прыжок — VPN-шлюз центральной виртуальной сети. IP-адрес VPN-шлюза центральной виртуальной сети не объявляется в удаленной виртуальной сети. Третий прыжок — точка завершения туннеля VPN на основном маршрутизаторе CE. Четвертый прыжок — это внутренний IP-адрес локального расположения 1. Этот IP-адрес локальной сети не объявляется за пределами маршрутизатора CE. Пятый прыжок — это целевая виртуальная машина в локальном расположении 1.
 
@@ -256,27 +281,29 @@ ms.locfileid: "80518264"
 
 Как уже говорилось в анализе плоскости управления, виртуальная сеть филиала в этой сетевой конфигурации не имеет доступа к локальному расположению 2 или к удаленной виртуальной сети. Результаты следующей команды проверки связи подтверждают это: 
 
-    C:\Users\rb>ping 10.1.31.10
+```console
+C:\Users\rb>ping 10.1.31.10
 
-    Pinging 10.1.31.10 with 32 bytes of data:
+Pinging 10.1.31.10 with 32 bytes of data:
 
-    Request timed out.
-    ...
-    Request timed out.
+Request timed out.
+...
+Request timed out.
 
-    Ping statistics for 10.1.31.10:
-        Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
+Ping statistics for 10.1.31.10:
+    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
 
-    C:\Users\rb>ping 10.17.30.4
+C:\Users\rb>ping 10.17.30.4
 
-    Pinging 10.17.30.4 with 32 bytes of data:
+Pinging 10.17.30.4 with 32 bytes of data:
 
-    Request timed out.
-    ...
-    Request timed out.
+Request timed out.
+...
+Request timed out.
 
-    Ping statistics for 10.17.30.4:
-        Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
+Ping statistics for 10.17.30.4:
+    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
+```
 
 ## <a name="data-path-from-on-premises-location-1"></a>Путь данных из локального расположения 1
 
@@ -284,17 +311,19 @@ ms.locfileid: "80518264"
 
 Ниже представлена трассировка маршрута пакетов из локального расположения 1 на виртуальную машину в центральной виртуальной сети.
 
-    C:\Users\rb>tracert 10.10.30.4
+```console
+C:\Users\rb>tracert 10.10.30.4
 
-    Tracing route to 10.10.30.4 over a maximum of 30 hops
+Tracing route to 10.10.30.4 over a maximum of 30 hops
 
-      1    <1 ms    <1 ms    <1 ms  10.2.30.3
-      2    <1 ms    <1 ms    <1 ms  192.168.30.0
-      3    <1 ms    <1 ms    <1 ms  192.168.30.18
-      4     *        *        *     Request timed out.
-      5     2 ms     2 ms     2 ms  10.10.30.4
+  1    <1 ms    <1 ms    <1 ms  10.2.30.3
+  2    <1 ms    <1 ms    <1 ms  192.168.30.0
+  3    <1 ms    <1 ms    <1 ms  192.168.30.18
+  4     *        *        *     Request timed out.
+  5     2 ms     2 ms     2 ms  10.10.30.4
 
-    Trace complete.
+Trace complete.
+```
 
 В этом маршруте трассировки первые два прыжка являются частью локальной сети. Третий прыжок — основной интерфейс MSEE, подключенный к маршрутизатору CE. Четвертый прыжок — шлюз ExpressRoute в центральной виртуальной сети. Диапазон IP-адресов шлюза ExpressRoute центральной виртуальной сети не объявляется в локальной сети. Пятый прыжок — целевая виртуальная машина.
 
@@ -306,15 +335,17 @@ ms.locfileid: "80518264"
 
 Как говорилось ранее, в тестовой конфигурации VPN-подключение типа "сеть — сеть" используется в качестве резервного, а основным служит подключение ExpressRoute между локальным расположением 1 и центральной виртуальной сетью. Чтобы протестировать путь к данным резервного копирования, давайте выберем сбой связи ExpressRoute между основным маршрутизатором в локальной среде и соответствующим MSEE. Чтобы вызвать сбой соединения ExpressRoute, завершите работу интерфейса CE, подключенного к MSEE:
 
-    C:\Users\rb>tracert 10.10.30.4
+```console
+C:\Users\rb>tracert 10.10.30.4
 
-    Tracing route to 10.10.30.4 over a maximum of 30 hops
+Tracing route to 10.10.30.4 over a maximum of 30 hops
 
-      1    <1 ms    <1 ms    <1 ms  10.2.30.3
-      2    <1 ms    <1 ms    <1 ms  192.168.30.0
-      3     3 ms     2 ms     3 ms  10.10.30.4
+  1    <1 ms    <1 ms    <1 ms  10.2.30.3
+  2    <1 ms    <1 ms    <1 ms  192.168.30.0
+  3     3 ms     2 ms     3 ms  10.10.30.4
 
-    Trace complete.
+Trace complete.
+```
 
 На приведенной ниже рисунке показано представление топологии для подключения виртуальной машины из локального расположения 1 к виртуальной машине в центральной сети через VPN-подключение типа "сеть — сеть" при неработающем подключении ExpressRoute.
 
@@ -326,17 +357,19 @@ ms.locfileid: "80518264"
 
 Теперь мы снова включим основное подключение ExpressRoute, чтобы выполнить анализ пути данных к периферийной виртуальной сети.
 
-    C:\Users\rb>tracert 10.11.30.4
+```console
+C:\Users\rb>tracert 10.11.30.4
 
-    Tracing route to 10.11.30.4 over a maximum of 30 hops
+Tracing route to 10.11.30.4 over a maximum of 30 hops
 
-      1    <1 ms    <1 ms    <1 ms  10.2.30.3
-      2    <1 ms    <1 ms    <1 ms  192.168.30.0
-      3    <1 ms    <1 ms    <1 ms  192.168.30.18
-      4     *        *        *     Request timed out.
-      5     3 ms     2 ms     2 ms  10.11.30.4
+  1    <1 ms    <1 ms    <1 ms  10.2.30.3
+  2    <1 ms    <1 ms    <1 ms  192.168.30.0
+  3    <1 ms    <1 ms    <1 ms  192.168.30.18
+  4     *        *        *     Request timed out.
+  5     3 ms     2 ms     2 ms  10.11.30.4
 
-    Trace complete.
+Trace complete.
+```
 
 Для остальной части анализа пути данных будет включено основное подключение ExpressRoute в локальном расположении 1.
 
@@ -344,46 +377,52 @@ ms.locfileid: "80518264"
 
 Ниже представлена трассировка маршрута пакетов из локального расположения 1 на виртуальную машину в виртуальной сети филиала.
 
-    C:\Users\rb>tracert 10.11.30.68
+```console
+C:\Users\rb>tracert 10.11.30.68
 
-    Tracing route to 10.11.30.68 over a maximum of 30 hops
+Tracing route to 10.11.30.68 over a maximum of 30 hops
 
-      1    <1 ms    <1 ms    <1 ms  10.2.30.3
-      2    <1 ms    <1 ms    <1 ms  192.168.30.0
-      3     3 ms     2 ms     2 ms  10.11.30.68
+  1    <1 ms    <1 ms    <1 ms  10.2.30.3
+  2    <1 ms    <1 ms    <1 ms  192.168.30.0
+  3     3 ms     2 ms     2 ms  10.11.30.68
 
-    Trace complete.
+Trace complete.
+```
 
 ### <a name="path-to-on-premises-location-2"></a>Путь к локальному расположению 2
 
 Как уже говорилось ранее в [анализе плоскости управления][Control-Analysis], локальное расположение 1 в этой сетевой конфигурации не имеет доступа к локальному расположению 2. Результаты следующей команды проверки связи подтверждают это: 
 
-    C:\Users\rb>ping 10.1.31.10
-    
-    Pinging 10.1.31.10 with 32 bytes of data:
+```console
+C:\Users\rb>ping 10.1.31.10
 
-    Request timed out.
-    ...
-    Request timed out.
+Pinging 10.1.31.10 with 32 bytes of data:
 
-    Ping statistics for 10.1.31.10:
-        Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
+Request timed out.
+...
+Request timed out.
+
+Ping statistics for 10.1.31.10:
+    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
+```
 
 ### <a name="path-to-the-remote-vnet"></a>Путь к удаленной виртуальной сети
 
 Ниже представлена трассировка маршрута пакетов из локального расположения 1 на виртуальную машину в удаленной виртуальной сети.
 
-    C:\Users\rb>tracert 10.17.30.4
+```console
+C:\Users\rb>tracert 10.17.30.4
 
-    Tracing route to 10.17.30.4 over a maximum of 30 hops
+Tracing route to 10.17.30.4 over a maximum of 30 hops
 
-      1    <1 ms    <1 ms    <1 ms  10.2.30.3
-      2     2 ms     5 ms     7 ms  192.168.30.0
-      3    <1 ms    <1 ms    <1 ms  192.168.30.18
-      4     *        *        *     Request timed out.
-      5    69 ms    70 ms    69 ms  10.17.30.4
+  1    <1 ms    <1 ms    <1 ms  10.2.30.3
+  2     2 ms     5 ms     7 ms  192.168.30.0
+  3    <1 ms    <1 ms    <1 ms  192.168.30.18
+  4     *        *        *     Request timed out.
+  5    69 ms    70 ms    69 ms  10.17.30.4
 
-    Trace complete.
+Trace complete.
+```
 
 ## <a name="data-path-from-on-premises-location-2"></a>Путь данных из локального расположения 2
 
@@ -391,32 +430,36 @@ ms.locfileid: "80518264"
 
 Ниже представлена трассировка маршрута пакетов из локального расположения 2 на виртуальную машину в центральной виртуальной сети.
 
-    C:\Windows\system32>tracert 10.10.30.4
+```console
+C:\Windows\system32>tracert 10.10.30.4
 
-    Tracing route to 10.10.30.4 over a maximum of 30 hops
+Tracing route to 10.10.30.4 over a maximum of 30 hops
 
-      1    <1 ms    <1 ms    <1 ms  10.1.31.3
-      2    <1 ms    <1 ms    <1 ms  192.168.31.4
-      3    <1 ms    <1 ms    <1 ms  192.168.31.22
-      4     *        *        *     Request timed out.
-      5    75 ms    74 ms    74 ms  10.10.30.4
+  1    <1 ms    <1 ms    <1 ms  10.1.31.3
+  2    <1 ms    <1 ms    <1 ms  192.168.31.4
+  3    <1 ms    <1 ms    <1 ms  192.168.31.22
+  4     *        *        *     Request timed out.
+  5    75 ms    74 ms    74 ms  10.10.30.4
 
-    Trace complete.
+Trace complete.
+```
 
 ### <a name="path-to-the-spoke-vnet"></a>Путь к периферийной виртуальной сети
 
 Ниже представлена трассировка маршрута пакетов из локального расположения 2 на виртуальную машину в периферийной виртуальной сети.
 
-    C:\Windows\system32>tracert 10.11.30.4
+```console
+C:\Windows\system32>tracert 10.11.30.4
 
-    Tracing route to 10.11.30.4 over a maximum of 30 hops
-      1    <1 ms    <1 ms     1 ms  10.1.31.3
-      2    <1 ms    <1 ms    <1 ms  192.168.31.0
-      3    <1 ms    <1 ms    <1 ms  192.168.31.18
-      4     *        *        *     Request timed out.
-      5    75 ms    74 ms    74 ms  10.11.30.4
+Tracing route to 10.11.30.4 over a maximum of 30 hops
+  1    <1 ms    <1 ms     1 ms  10.1.31.3
+  2    <1 ms    <1 ms    <1 ms  192.168.31.0
+  3    <1 ms    <1 ms    <1 ms  192.168.31.18
+  4     *        *        *     Request timed out.
+  5    75 ms    74 ms    74 ms  10.11.30.4
 
-    Trace complete.
+Trace complete.
+```
 
 ### <a name="path-to-the-branch-vnet-on-premises-location-1-and-the-remote-vnet"></a>Путь к виртуальной сети филиала, локальному расположению 1 и удаленной виртуальной сети
 
@@ -428,29 +471,33 @@ ms.locfileid: "80518264"
 
 Ниже представлена трассировка маршрута пакетов из удаленной виртуальной сети на виртуальную машину в центральной виртуальной сети.
 
-    C:\Users\rb>tracert 10.10.30.4
+```console
+C:\Users\rb>tracert 10.10.30.4
 
-    Tracing route to 10.10.30.4 over a maximum of 30 hops
+Tracing route to 10.10.30.4 over a maximum of 30 hops
 
-      1    65 ms    65 ms    65 ms  10.17.30.36
-      2     *        *        *     Request timed out.
-      3    69 ms    68 ms    68 ms  10.10.30.4
+  1    65 ms    65 ms    65 ms  10.17.30.36
+  2     *        *        *     Request timed out.
+  3    69 ms    68 ms    68 ms  10.10.30.4
 
-    Trace complete.
+Trace complete.
+```
 
 ### <a name="path-to-the-spoke-vnet"></a>Путь к периферийной виртуальной сети
 
 Ниже представлена трассировка маршрута пакетов из удаленной виртуальной сети на виртуальную машину в периферийной виртуальной сети.
 
-    C:\Users\rb>tracert 10.11.30.4
+```console
+C:\Users\rb>tracert 10.11.30.4
 
-    Tracing route to 10.11.30.4 over a maximum of 30 hops
+Tracing route to 10.11.30.4 over a maximum of 30 hops
 
-      1    67 ms    67 ms    67 ms  10.17.30.36
-      2     *        *        *     Request timed out.
-      3    71 ms    69 ms    69 ms  10.11.30.4
+  1    67 ms    67 ms    67 ms  10.17.30.36
+  2     *        *        *     Request timed out.
+  3    71 ms    69 ms    69 ms  10.11.30.4
 
-    Trace complete.
+Trace complete.
+```
 
 ### <a name="path-to-the-branch-vnet-and-on-premises-location-2"></a>Путь к виртуальной сети филиала и локальному расположению 2
 
@@ -460,17 +507,18 @@ ms.locfileid: "80518264"
 
 Ниже представлена трассировка маршрута пакетов из удаленной виртуальной сети на виртуальную машину в локальном расположении 1.
 
-    C:\Users\rb>tracert 10.2.30.10
+```console
+C:\Users\rb>tracert 10.2.30.10
 
-    Tracing route to 10.2.30.10 over a maximum of 30 hops
+Tracing route to 10.2.30.10 over a maximum of 30 hops
 
-      1    67 ms    67 ms    67 ms  10.17.30.36
-      2     *        *        *     Request timed out.
-      3     *        *        *     Request timed out.
-      4    69 ms    69 ms    69 ms  10.2.30.10
+  1    67 ms    67 ms    67 ms  10.17.30.36
+  2     *        *        *     Request timed out.
+  3     *        *        *     Request timed out.
+  4    69 ms    69 ms    69 ms  10.2.30.10
 
-    Trace complete.
-
+Trace complete.
+```
 
 ## <a name="expressroute-and-site-to-site-vpn-connectivity-in-tandem"></a>Параллельное использование подключений ExpressRoute и VPN типа "сеть — сеть"
 
@@ -501,7 +549,7 @@ ExpressRoute предоставляется в виде пары каналов,
 Дополнительные сведения см. в статьях [Сведения о VPN-шлюзе][VPN] и [Развертывание высокодоступных виртуальных сетевых модулей][Deploy-NVA].
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В статье [Вопросы и ответы по ExpressRoute][ExR-FAQ] представлены следующие сведения:
 -   количество каналов ExpressRoute, которые можно подключить к шлюзу ExpressRoute;

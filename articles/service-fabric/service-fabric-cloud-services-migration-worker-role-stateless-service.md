@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 11/02/2017
 ms.author: vturecek
 ms.openlocfilehash: caf067f793ca2086bc068907e86a82266627d128
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75463339"
 ---
 # <a name="guide-to-converting-web-and-worker-roles-to-service-fabric-stateless-services"></a>Руководство по преобразованию рабочих ролей и веб-ролей в службы без отслеживания состояния Service Fabric
@@ -34,8 +33,8 @@ ms.locfileid: "75463339"
 | --- | --- | --- |
 | Веб-формы ASP.NET |Нет |Преобразование в ASP.NET Core 1 MVC |
 | ASP.NET MVC 3 |С переносом |Обновление до ASP.NET Core 1 MVC |
-| Веб-API ASP.NET |С переносом |Использование автономно размещаемого сервера или компонента ASP.NET Core 1 |
-| ASP.NET Core 1 |Да |Недоступно |
+| ASP.NET Web API |С переносом |Использование автономно размещаемого сервера или компонента ASP.NET Core 1 |
+| ASP.NET Core 1 |Да |Н/Д |
 
 ## <a name="entry-point-api-and-lifecycle"></a>Жизненный цикл и интерфейс API точки входа
 Рабочая роль и интерфейсы API службы Service Fabric дают возможность использовать похожие точки входа. 
@@ -43,9 +42,9 @@ ms.locfileid: "75463339"
 | **Точка входа** | **Рабочая роль** | **Служба Service Fabric** |
 | --- | --- | --- |
 | Обработка |`Run()` |`RunAsync()` |
-| Запуск виртуальной машины |`OnStart()` |Недоступно |
-| Остановка виртуальной машины |`OnStop()` |Недоступно |
-| Открытие прослушивателя для запросов клиентов |Недоступно |<ul><li> `CreateServiceInstanceListener()` для служб без отслеживания состояния</li><li>`CreateServiceReplicaListener()` для служб с отслеживанием состояния</li></ul> |
+| Запуск виртуальной машины |`OnStart()` |Н/Д |
+| Остановка виртуальной машины |`OnStop()` |Н/Д |
+| Открытие прослушивателя для запросов клиентов |Н/Д |<ul><li> `CreateServiceInstanceListener()` для служб без отслеживания состояния</li><li>`CreateServiceReplicaListener()` для служб с отслеживанием состояния</li></ul> |
 
 ### <a name="worker-role"></a>Рабочая роль
 ```csharp
@@ -109,13 +108,13 @@ namespace Stateless1
 ## <a name="application-api-and-environment"></a>Интерфейс API и среда приложения
 Интерфейс API среды облачных служб предоставляет сведения и функции для текущего экземпляра виртуальной машины, а также сведения о других экземплярах роли виртуальной машины. Платформа Service Fabric предоставляет информацию о своей среде выполнения, а также информацию об узле, на котором работает служба. 
 
-| **Задача среды** | **Облачные службы** | **Service Fabric.** |
+| **Задача среды** | **Облачные службы** | **Service Fabric** |
 | --- | --- | --- |
 | Параметры конфигурации и изменение уведомления |`RoleEnvironment` |`CodePackageActivationContext` |
 | Локальное хранилище |`RoleEnvironment` |`CodePackageActivationContext` |
 | Сведения о конечной точке |`RoleInstance` <ul><li>Текущий экземпляр: `RoleEnvironment.CurrentRoleInstance`</li><li>Другие роли и экземпляр: `RoleEnvironment.Roles`</li> |<ul><li>`NodeContext` для адреса текущего узла</li><li>`FabricClient` и `ServicePartitionResolver` для обнаружения конечной точки службы</li> |
-| Эмуляция среды |`RoleEnvironment.IsEmulated` |Недоступно |
-| Событие одновременного изменения |`RoleEnvironment` |Недоступно |
+| Эмуляция среды |`RoleEnvironment.IsEmulated` |Н/Д |
+| Событие одновременного изменения |`RoleEnvironment` |Н/Д |
 
 ## <a name="configuration-settings"></a>Параметры конфигурации
 Параметры конфигурации в облачных службах задаются для роли виртуальной машины и применяются ко всем экземплярам этой роли. Эти параметры представляют собой пары "ключ — значение", заданные в файлах ServiceConfiguration.*.cscfg. Получить к ним прямой доступ можно через RoleEnvironment. На платформе Service Fabric параметры применяются отдельно к каждой службе и каждому приложению, а не к каждой виртуальной машине. Это обусловлено тем, что на виртуальной машине может быть размещено несколько служб и приложений. Служба состоит из трех пакетов:
@@ -136,7 +135,7 @@ string value = RoleEnvironment.GetConfigurationSettingValue("Key");
 
 ```
 
-#### <a name="service-fabric"></a>Service Fabric.
+#### <a name="service-fabric"></a>Service Fabric
 Каждая служба имеет отдельный пакет конфигурации. Не существует встроенного механизма, который предназначен для глобальных параметров конфигурации, доступных всем приложениям кластера. Если в пакете конфигурации используется специальный файл конфигурации Service Fabric, который называется Settings.xml, значения в этом файле могут перезаписываться на уровне приложения. Это позволяет настраивать параметры конфигурации на этом уровне.
 
 Доступ к параметрам конфигурации можно получить в пределах каждого экземпляра службы через атрибут `CodePackageActivationContext`службы.
@@ -178,7 +177,7 @@ foreach (var settingChange in settingChanges)
 
 ```
 
-#### <a name="service-fabric"></a>Service Fabric.
+#### <a name="service-fabric"></a>Service Fabric
 В каждом из трех типов пакетов в службе — "код", "конфигурация" и "данные" — есть события, которые уведомляют экземпляр службы, когда пакет обновляется, добавляется или удаляется. Служба может содержать несколько пакетов каждого типа. Например, служба может иметь несколько пакетов конфигурации, для каждого из которых можно задать версию и каждый из которых можно обновлять. 
 
 Эти события позволяют интегрировать изменения, которые содержит пакет обновления, без перезапуска экземпляра службы.
@@ -199,7 +198,7 @@ private void CodePackageActivationContext_ConfigurationPackageModifiedEvent(obje
 ## <a name="startup-tasks"></a>Задачи при запуске
 Задачи при запуске — это действия, выполняемые перед запуском приложения. Обычно такая задача запускает скрипты настройки, используя повышенные права. Эти задачи поддерживаются и облачными службами, и платформой Service Fabric. Основное различие состоит в том, что в облачных службах задача при запуске связана с виртуальной машиной, которая является частью экземпляра роли, тогда как в платформе Service Fabric задача при запуске связана со службой, которая не связана с какой-либо виртуальной машиной.
 
-| Service Fabric. | Облачные службы |
+| Service Fabric | Облачные службы |
 | --- | --- |
 | Расположение конфигурации |ServiceDefinition.csdef |
 | Привилегии |Ограниченные или повышенные |
@@ -223,7 +222,7 @@ private void CodePackageActivationContext_ConfigurationPackageModifiedEvent(obje
 
 ```
 
-### <a name="service-fabric"></a>Service Fabric.
+### <a name="service-fabric"></a>Service Fabric
 В Service Fabric точка входа для запуска настраивается для каждой роли в файле ServiceManifest.xml.
 
 ```xml
@@ -243,7 +242,7 @@ private void CodePackageActivationContext_ConfigurationPackageModifiedEvent(obje
 ## <a name="a-note-about-development-environment"></a>Примечание о среде разработки
 Облачные службы и платформа Service Fabric интегрированы с шаблонами проектов в Visual Studio и поддерживают (локально и в Azure) отладку, настройку и развертывание. Кроме того, облачные службы и платформа Service Fabric дают возможность пользоваться локальной средой выполнения разработки. Различие заключается в том, что среда выполнения разработки облачных служб эмулирует среду Azure, в которой она запущена, тогда как платформа Service Fabric использует не эмулятор, а полноценную среду Service Fabric. Среда Service Fabric, в которой вы работаете на компьютере локальной разработки, — это та же среда, которая используется как рабочая.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Чтобы узнать, как эффективно пользоваться всеми функциями Service Fabric, ознакомьтесь с дополнительными сведениями о службах Reliable Services платформы Service Fabric и фундаментальных различиях между облачными службами и архитектурой приложений Service Fabric.
 
 * [Начало работы со службами Reliable Services в Service Fabric](service-fabric-reliable-services-quick-start.md)

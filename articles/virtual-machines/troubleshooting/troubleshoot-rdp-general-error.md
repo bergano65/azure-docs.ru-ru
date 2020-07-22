@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: 7fc0fbf3362d18284ad6a80afa6396b6be1270a9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f996ffa864fb4178ddedecde7c5511d5d9cf39a1
+ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "71058006"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85985812"
 ---
 # <a name="troubleshoot-an-rdp-general-error-in-azure-vm"></a>Устранение общей ошибки RDP на виртуальной машине Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "71058006"
 
 Эта проблема возникает из-за перечисленных ниже причин.
 
-### <a name="cause-1"></a>Причина 1
+### <a name="cause-1"></a>Причина 1
 
 Компонент RDP отключен следующим образом:
 
@@ -50,17 +50,17 @@ ms.locfileid: "71058006"
 - на сервере терминалов;
 - на роле узла сеансов удаленных рабочих столов.
 
-### <a name="cause-2"></a>Причина 2
+### <a name="cause-2"></a>Причина 2
 
 Службы удаленных рабочих столов (TermService) не запущены.
 
-### <a name="cause-3"></a>Причина 3
+### <a name="cause-3"></a>Причина 3
 
 Прослушиватель RDP-TCP настроен неправильно.
 
 ## <a name="solution"></a>Решение
 
-Чтобы устранить эту проблему, [сделайте резервное копирование диска операционной системы](../windows/snapshot-copy-managed-disk.md) и [вложите диск операционной системы к виртуальной машине, которая приходит на помощь](troubleshoot-recovery-disks-portal-windows.md), а затем следуйте инструкциям.
+Прежде чем выполнять какие-либо действия, сделайте моментальный снимок диска ОС затронутой виртуальной машины в качестве резервной копии. Чтобы устранить эту проблему, используйте последовательный контроль или исправьте виртуальную машину в автономном режиме.
 
 ### <a name="serial-console"></a>Серийная консоль
 
@@ -78,29 +78,37 @@ ms.locfileid: "71058006"
 
 #### <a name="step-2-check-the-values-of-rdp-registry-keys"></a>Шаг 2. Проверка значений в разделах реестра протокола RDP
 
-1. Проверьте, не отключен ли протокол RDP политиками.
+1. Проверьте, отключен ли протокол RDP групповыми политиками.
 
-      ```
-      REM Get the local policy 
-      reg query "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server " /v fDenyTSConnections
+    ```
+    REM Get the group policy 
+    reg query "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" /v fDenyTSConnections
+    ```
+    Если групповая политика указывает, что протокол RDP отключен (значение Фденитсконнектионс — 0x1), выполните следующую команду, чтобы включить службу TermService. Если раздел реестра не найден, групповая политика, настроенная для отключения RDP, отсутствует. Вы можете перейти к следующему шагу.
 
-      REM Get the domain policy if any
-      reg query "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" /v fDenyTSConnections
-      ```
+    ```
+    REM update the fDenyTSConnections value to enable TermService service
+    reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" /v fDenyTSConnections /t REG_DWORD /d 0 /f
+    ```
+    > [!NOTE]
+    > Этот шаг позволяет временно включить службу TermService. Изменение будет сброшено после обновления параметров групповой политики. Чтобы устранить эту проблему, необходимо проверить, отключена ли служба TermService локальной групповой политикой или групповой политикой домена, а затем обновить соответствующие параметры политики.
+    
+2. Проверьте текущую конфигурацию удаленного подключения.
+    ```
+    REM Get the local remote connection setting
+    reg query "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections
+    ```
+    Если команда возвращает 0x1, виртуальная машина не разрешает удаленное подключение. Затем разрешите удаленное подключение, используя следующую команду:
+     ```
+     reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f
+     ```
+    
+1. Проверьте текущую конфигурацию сервера терминалов.
 
-      - Если существует политика домена, установка локальной политики будет перезаписана.
-      - Если политика домена указывает, что RDP отключен (1), с контроллера домена обновите политику домена приложения.
-      - Если политика домена утверждается, что RDP включен (0), то обновление не нужно.
-      - Если политика домена не существует, и локальная политика утверждает, что RDP отключен (1), включите протокол RDP, используя следующую команду. 
-      
-            reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f
-                  
-
-2. Проверьте текущую конфигурацию сервера терминалов.
-
-      ```
-      reg query "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" /v TSEnabled
-      ```
+    ```
+    REM Get the local remote connection setting
+    reg query "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" /v TSEnabled
+    ```
 
       Если команда возвращает 0, сервер терминалов отключен. Затем включите сервер терминалов, как показано ниже.
 

@@ -5,12 +5,12 @@ author: vturecek
 ms.topic: conceptual
 ms.date: 01/07/2020
 ms.custom: sfrev
-ms.openlocfilehash: 11e32c9d1290227e638a314ed8417b1bed906842
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 8e1c96d0b04140f8c1121cfb74b43969b49cfdda
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75749531"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86260520"
 ---
 # <a name="service-fabric-programming-model-overview"></a>Общие сведения о модели программирования Service Fabric
 
@@ -26,7 +26,7 @@ Service Fabric предлагает несколько способов запи
 
 По умолчанию Service Fabric развертывает и активирует службы как процессы. Service Fabric также позволяет развертывать службы в [контейнерах](service-fabric-containers-overview.md). Service Fabric поддерживает развертывание контейнеров Linux и контейнеров Windows в Windows Server 2016 и более поздних версиях. Образы контейнеров можно извлечь из любого репозитория контейнеров и развернуть на компьютере. В контейнерах можно развертывать существующие приложения как гостевые исполняемые файлы, а также развертывать службы Reliable Services и Reliable Actors Service Fabric без отслеживания состояния или с отслеживанием состояния. Вы также можете использовать в одном приложении разные службы в процессах и контейнерах.
 
-[Дополнительные сведения о развертывании служб в контейнерах в Windows или Linux](service-fabric-deploy-container.md)
+[Дополнительные сведения о развертывании служб в контейнерах в Windows или Linux](./service-fabric-get-started-containers.md)
 
 ## <a name="reliable-services"></a>Надежные службы
 

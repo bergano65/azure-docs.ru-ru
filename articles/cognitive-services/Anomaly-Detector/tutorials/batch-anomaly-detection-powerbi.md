@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
 ms.topic: tutorial
-ms.date: 03/05/2020
+ms.date: 06/17/2020
 ms.author: aahi
-ms.openlocfilehash: 1b486aaf0ce33e31433c2c3d0f7a1ff2c7089132
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: 9f27deebe3a1fb21f4c7406bfd424196fb1072ec
+ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "78402661"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85921924"
 ---
 # <a name="tutorial-visualize-anomalies-using-batch-detection-and-power-bi"></a>Руководство по визуализации аномалий c помощью пакетного обнаружения и Power BI
 
@@ -32,8 +32,8 @@ ms.locfileid: "78402661"
 * [Подписка Azure](https://azure.microsoft.com/free/)
 * [Microsoft Power BI Desktop](https://powerbi.microsoft.com/get-started/) предоставляется бесплатно.
 * Файл Excel (XLSX) содержит точки данных временных рядов. Пример данных для этого краткого руководства можно найти на сайте [GitHub](https://go.microsoft.com/fwlink/?linkid=2090962).
-* Получив подписку Azure, перейдите к <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics"  title="созданию ресурса Анализа текста"  target="_blank">созданию ресурса Анализа текста<span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку. 
-    * Для подключения приложения к API Анализа текста потребуется ключ и конечная точка из созданного ресурса. Вы сделаете это позже в этом кратком руководстве.
+* Получив подписку Azure, перейдите к <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesAnomalyDetector"  title="Создание ресурса Детектора аномалий"  target="_blank">созданию ресурса Детектора аномалий <span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку. 
+    * Для подключения приложения к API "Детектор аномалий" потребуется ключ и конечная точка из созданного ресурса. Вы сделаете это позже в этом кратком руководстве.
 
 [!INCLUDE [cognitive-services-anomaly-detector-data-requirements](../../../../includes/cognitive-services-anomaly-detector-data-requirements.md)]
 
@@ -143,10 +143,10 @@ Power BI преобразует отметки времени в первом с
 
 Добавьте следующие поля из раздела **Вызванная функция** в поле **Значения** графика. Создайте график, используя параметры в приведенном ниже снимке экрана.
 
-    * Значение
-    * UpperMargins
-    * LowerMargins
-    * ExpectedValues
+* Значение
+* UpperMargins
+* LowerMargins
+* ExpectedValues
 
 ![Изображение экрана новой быстрой меры](../media/tutorials/chart-settings.png)
 

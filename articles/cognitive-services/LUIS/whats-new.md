@@ -2,19 +2,33 @@
 title: Новые возможности службы "Распознавание речи" (LUIS)
 description: Эта статья регулярно обновляется последними сведениями об API Распознавания речи в Azure Cognitive Services.
 ms.topic: overview
-ms.date: 05/19/2020
-ms.openlocfilehash: b4d287c8d1ddbeeee63390fb397718de1234c93e
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
-ms.translationtype: HT
+ms.date: 06/15/2020
+ms.openlocfilehash: d178ee2f5db74949f4a8ad68df93bf3c4407c58a
+ms.sourcegitcommit: 6571e34e609785e82751f0b34f6237686470c1f3
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83675956"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84789214"
 ---
 # <a name="whats-new-in-language-understanding"></a>Новые возможности службы "Распознавание речи"
 
 Узнайте о новых возможностях службы. Это могут быть заметки о выпуске, видео, записи блогов и другие типы информации. Создайте закладку для этой страницы, чтобы получать последние сведения об обновлениях службы.
 
 ## <a name="release-notes"></a>Заметки о выпуске
+
+### <a name="june-2020"></a>Июнь 2020 г.
+
+* [Предварительная версия 3,0. Разработка](luis-migration-authoring-entities.md) Tool
+    * Версия 3.2.0-Preview. 3 — [.NET — NuGet](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring/)
+    * Версия 4.0.0-Preview. 3- [JS-NPM](https://www.npmjs.com/package/@azure/cognitiveservices-luis-authoring)
+* Применение методик DevOps в LUIS
+    * Основные понятия
+        * [Рекомендации по DevOps для LUIS](luis-concept-devops-sourcecontrol.md)
+        * [Рабочие процессы непрерывной интеграции и непрерывной поставки для LUIS DevOps](luis-concept-devops-automation.md)
+        * [Тестирование для LUIS DevOps](luis-concept-devops-testing.md)
+    * Практическое руководство
+        * [Применение DevOps к разработке приложений LUIS с помощью действий GitHub](luis-how-to-devops-with-github.md)
+    * [Полный репозиторий кода GitHub](https://github.com/Azure-Samples/LUIS-DevOps-Template)
 
 ### <a name="may-2020---build"></a>Май 2020 года — //Build
 

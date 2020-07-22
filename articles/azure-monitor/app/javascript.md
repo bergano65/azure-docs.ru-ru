@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: Dawgfan
 ms.author: mmcc
 ms.date: 09/20/2019
-ms.openlocfilehash: 50ce0d57ec7395c69bf65e41b67f0cb005a43cb8
-ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
+ms.openlocfilehash: 4b3d489477a0ee0cc201d4383b5ed960de515c7d
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82854978"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86517116"
 ---
 # <a name="application-insights-for-web-pages"></a>Application Insights для веб-страниц
 
@@ -21,7 +21,7 @@ Application Insights можно использовать с любыми веб-
 ## <a name="adding-the-javascript-sdk"></a>Добавление пакета SDK для JavaScript
 
 1. Сначала требуется ресурс Application Insights. Если у вас еще нет ресурса и ключа инструментирования, следуйте инструкциям в разделе [Создание новых ресурсов](create-new-resource.md).
-2. Скопируйте ключ инструментирования из ресурса, в который необходимо отправить данные телеметрии JavaScript.
+2. Скопируйте _ключ инструментирования_ (также известный как "iKey") для ресурса, в который необходимо отправить данные телеметрии JavaScript (на шаге 1). Вы добавите его в `instrumentationKey` параметр Application Insights SDK для JavaScript.
 3. Добавьте Application Insights пакет SDK для JavaScript на веб-страницу или в приложение одним из следующих двух вариантов:
     * [Установка NPM](#npm-based-setup)
     * [Фрагмент кода JavaScript](#snippet-based-setup)
@@ -34,6 +34,14 @@ Application Insights можно использовать с любыми веб-
 
 ### <a name="npm-based-setup"></a>Установка на основе NPM
 
+Установите через NPM.
+
+```sh
+npm i --save @microsoft/applicationinsights-web
+```
+
+> *Примечание.* **вводы в этот пакет включены**, поэтому **не** нужно устанавливать отдельный пакет типов.
+    
 ```js
 import { ApplicationInsights } from '@microsoft/applicationinsights-web'
 
@@ -47,21 +55,67 @@ appInsights.trackPageView(); // Manually call trackPageView to establish the cur
 
 ### <a name="snippet-based-setup"></a>Настройка на основе фрагментов кода
 
-Если приложение не использует NPM, вы можете напрямую инструментировать веб-страницы с помощью Application Insights, вставляя этот фрагмент в верхней части каждой страницы. Желательно, чтобы он был первым сценарием в `<head>` разделе, чтобы он мог отслеживать все возможные проблемы со всеми зависимостями. Если вы используете серверное приложение Блазор, добавьте фрагмент в начало файла `_Host.cshtml` в `<head>` разделе.
+Если приложение не использует NPM, вы можете напрямую инструментировать веб-страницы с помощью Application Insights, вставляя этот фрагмент в верхней части каждой страницы. Желательно, чтобы он был первым сценарием в `<head>` разделе, чтобы он мог отслеживать любые потенциальные проблемы со всеми зависимостями и при необходимости ошибки JavaScript. Если вы используете серверное приложение Блазор, добавьте фрагмент в начало файла `_Host.cshtml` в `<head>` разделе.
+
+Для облегчения отслеживания версии фрагмента кода, используемого приложением, начиная с версии 2.5.5 в событии просмотра страницы будет включен новый тег AI. internal. snippet, который будет содержать определенную версию фрагмента кода.
+
+Текущий фрагмент кода (приведенный ниже) будет определяться как версия "3".
 
 ```html
 <script type="text/javascript">
-var sdkInstance="appInsightsSDK";window[sdkInstance]="appInsights";var aiName=window[sdkInstance],aisdk=window[aiName]||function(n){var o={config:n,initialize:!0},t=document,e=window,i="script";setTimeout(function(){var e=t.createElement(i);e.src=n.url||"https://az416426.vo.msecnd.net/scripts/b/ai.2.min.js",t.getElementsByTagName(i)[0].parentNode.appendChild(e)});try{o.cookie=t.cookie}catch(e){}function a(n){o[n]=function(){var e=arguments;o.queue.push(function(){o[n].apply(o,e)})}}o.queue=[],o.version=2;for(var s=["Event","PageView","Exception","Trace","DependencyData","Metric","PageViewPerformance"];s.length;)a("track"+s.pop());var r="Track",c=r+"Page";a("start"+c),a("stop"+c);var u=r+"Event";if(a("start"+u),a("stop"+u),a("addTelemetryInitializer"),a("setAuthenticatedUserContext"),a("clearAuthenticatedUserContext"),a("flush"),o.SeverityLevel={Verbose:0,Information:1,Warning:2,Error:3,Critical:4},!(!0===n.disableExceptionTracking||n.extensionConfig&&n.extensionConfig.ApplicationInsightsAnalytics&&!0===n.extensionConfig.ApplicationInsightsAnalytics.disableExceptionTracking)){a("_"+(s="onerror"));var p=e[s];e[s]=function(e,n,t,i,a){var r=p&&p(e,n,t,i,a);return!0!==r&&o["_"+s]({message:e,url:n,lineNumber:t,columnNumber:i,error:a}),r},n.autoExceptionInstrumented=!0}return o}(
-{
-  instrumentationKey:"INSTRUMENTATION_KEY"
-}
-);(window[aiName]=aisdk).queue&&0===aisdk.queue.length&&aisdk.trackPageView({});
+!function(T,l,y){var S=T.location,u="script",k="instrumentationKey",D="ingestionendpoint",C="disableExceptionTracking",E="ai.device.",I="toLowerCase",b="crossOrigin",w="POST",e="appInsightsSDK",t=y.name||"appInsights";(y.name||T[e])&&(T[e]=t);var n=T[t]||function(d){var g=!1,f=!1,m={initialize:!0,queue:[],sv:"4",version:2,config:d};function v(e,t){var n={},a="Browser";return n[E+"id"]=a[I](),n[E+"type"]=a,n["ai.operation.name"]=S&&S.pathname||"_unknown_",n["ai.internal.sdkVersion"]="javascript:snippet_"+(m.sv||m.version),{time:function(){var e=new Date;function t(e){var t=""+e;return 1===t.length&&(t="0"+t),t}return e.getUTCFullYear()+"-"+t(1+e.getUTCMonth())+"-"+t(e.getUTCDate())+"T"+t(e.getUTCHours())+":"+t(e.getUTCMinutes())+":"+t(e.getUTCSeconds())+"."+((e.getUTCMilliseconds()/1e3).toFixed(3)+"").slice(2,5)+"Z"}(),iKey:e,name:"Microsoft.ApplicationInsights."+e.replace(/-/g,"")+"."+t,sampleRate:100,tags:n,data:{baseData:{ver:2}}}}var h=d.url||y.src;if(h){function a(e){var t,n,a,i,r,o,s,c,p,l,u;g=!0,m.queue=[],f||(f=!0,t=h,s=function(){var e={},t=d.connectionString;if(t)for(var n=t.split(";"),a=0;a<n.length;a++){var i=n[a].split("=");2===i.length&&(e[i[0][I]()]=i[1])}if(!e[D]){var r=e.endpointsuffix,o=r?e.location:null;e[D]="https://"+(o?o+".":"")+"dc."+(r||"services.visualstudio.com")}return e}(),c=s[k]||d[k]||"",p=s[D],l=p?p+"/v2/track":config.endpointUrl,(u=[]).push((n="SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details)",a=t,i=l,(o=(r=v(c,"Exception")).data).baseType="ExceptionData",o.baseData.exceptions=[{typeName:"SDKLoadFailed",message:n.replace(/\./g,"-"),hasFullStack:!1,stack:n+"\nSnippet failed to load ["+a+"] -- Telemetry is disabled\nHelp Link: https://go.microsoft.com/fwlink/?linkid=2128109\nHost: "+(S&&S.pathname||"_unknown_")+"\nEndpoint: "+i,parsedStack:[]}],r)),u.push(function(e,t,n,a){var i=v(c,"Message"),r=i.data;r.baseType="MessageData";var o=r.baseData;return o.message='AI (Internal): 99 message:"'+("SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details) ("+n+")").replace(/\"/g,"")+'"',o.properties={endpoint:a},i}(0,0,t,l)),function(e,t){if(JSON){var n=T.fetch;if(n&&!y.useXhr)n(t,{method:w,body:JSON.stringify(e),mode:"cors"});else if(XMLHttpRequest){var a=new XMLHttpRequest;a.open(w,t),a.setRequestHeader("Content-type","application/json"),a.send(JSON.stringify(e))}}}(u,l))}function i(e,t){f||setTimeout(function(){!t&&m.core||a()},500)}var e=function(){var n=l.createElement(u);n.src=h;var e=y[b];return!e&&""!==e||"undefined"==n[b]||(n[b]=e),n.onload=i,n.onerror=a,n.onreadystatechange=function(e,t){"loaded"!==n.readyState&&"complete"!==n.readyState||i(0,t)},n}();y.ld<0?l.getElementsByTagName("head")[0].appendChild(e):setTimeout(function(){l.getElementsByTagName(u)[0].parentNode.appendChild(e)},y.ld||0)}try{m.cookie=l.cookie}catch(p){}function t(e){for(;e.length;)!function(t){m[t]=function(){var e=arguments;g||m.queue.push(function(){m[t].apply(m,e)})}}(e.pop())}var n="track",r="TrackPage",o="TrackEvent";t([n+"Event",n+"PageView",n+"Exception",n+"Trace",n+"DependencyData",n+"Metric",n+"PageViewPerformance","start"+r,"stop"+r,"start"+o,"stop"+o,"addTelemetryInitializer","setAuthenticatedUserContext","clearAuthenticatedUserContext","flush"]),m.SeverityLevel={Verbose:0,Information:1,Warning:2,Error:3,Critical:4};var s=(d.extensionConfig||{}).ApplicationInsightsAnalytics||{};if(!0!==d[C]&&!0!==s[C]){method="onerror",t(["_"+method]);var c=T[method];T[method]=function(e,t,n,a,i){var r=c&&c(e,t,n,a,i);return!0!==r&&m["_"+method]({message:e,url:t,lineNumber:n,columnNumber:a,error:i}),r},d.autoExceptionInstrumented=!0}return m}(y.cfg);(T[t]=n).queue&&0===n.queue.length&&n.trackPageView({})}(window,document,{
+src: "https://az416426.vo.msecnd.net/scripts/b/ai.2.min.js", // The SDK URL Source
+//name: "appInsights", // Global SDK Instance name defaults to "appInsights" when not supplied
+//ld: 0, // Defines the load delay (in ms) before attempting to load the sdk. -1 = block page load and add to head. (default) = 0ms load after timeout,
+//useXhr: 1, // Use XHR instead of fetch to report failures (if available),
+//crossOrigin: "anonymous", // When supplied this will add the provided value as the cross origin attribute on the script tag 
+cfg: { // Application Insights Configuration
+    instrumentationKey: "YOUR_INSTRUMENTATION_KEY_GOES_HERE"
+    /* ...Other Configuration Options... */
+}});
 </script>
 ```
 
+> [!NOTE]
+> Для удобства чтения и сокращения возможных ошибок JavaScript все возможные варианты настройки перечислены в новой строке в коде фрагмента кода выше, если вы не хотите изменять значение строки с комментарием, ее можно удалить.
+
+
+#### <a name="reporting-script-load-failures"></a>Отчеты о сбоях загрузки скрипта
+
+Эта версия фрагмента кода обнаруживает и сообщает об ошибках при загрузке пакета SDK из сети CDN в качестве исключения на портале Azure Monitor (в &gt; обозревателе исключений "ошибки &gt; ") это исключение предоставляет сведения о сбоях этого типа, чтобы вы могли знать, что приложение не передает данные телеметрии (или другие исключения), как ожидалось. Этот сигнал является важным фактором, позволяющим понять, что вы потеряли данные телеметрии, так как пакет SDK не загружался или не инициализируется, что может привести к следующим проблемам:
+- В разделе — Отчеты о том, как пользователи используют (или пытаются использовать) ваш сайт;
+- Отсутствуют данные телеметрии о том, как конечные пользователи используют ваш сайт;
+- Отсутствуют ошибки JavaScript, которые потенциально могут заблокировать конечные пользователи для успешного использования сайта.
+
+Дополнительные сведения об этом исключении см. на странице устранения неполадок [при загрузке пакета SDK](javascript-sdk-load-failure.md) .
+
+Отчет об этом сбое в качестве исключения на портале не использует параметр конфигурации ```disableExceptionTracking``` из конфигурации Application Insights, поэтому при возникновении этого сбоя он всегда будет передан во фрагмент, даже если поддержка Window. OnError отключена.
+
+Отчеты о сбоях загрузки пакета SDK специально не поддерживаются в IE 8 (или менее). Это помогает уменьшить размер минифицированные фрагмента, предполагая, что большинство сред не имеют исключительно IE 8 или меньше. Если у вас есть это требование и вы хотите получать эти исключения, необходимо либо включить выборку поли Fill, либо создать собственную версию фрагмента кода, которая использует ```XDomainRequest``` вместо ```XMLHttpRequest``` , поэтому рекомендуется использовать [предоставленный исходный код фрагмента](https://github.com/microsoft/ApplicationInsights-JS/blob/master/AISKU/snippet/snippet.js) в качестве отправной точки.
+
+> [!NOTE]
+> Если вы используете предыдущую версию фрагмента кода, настоятельно рекомендуется выполнить обновление до последней версии, чтобы получить эти ранее недокументированные проблемы.
+
+#### <a name="snippet-configuration-options"></a>Параметры конфигурации фрагментов
+
+Все параметры конфигурации теперь были перемещены в конец сценария, чтобы избежать случайного введения ошибок JavaScript, которые не приведут к сбою загрузки пакета SDK, но также отключают отчеты об ошибках.
+
+Каждый параметр конфигурации показан выше на новой строке. Если вы не хотите переопределять значение по умолчанию для элемента, указанного как [необязательно], эту строку можно удалить, чтобы максимально ограничить размер возвращаемой страницы.
+
+Доступные параметры конфигурации 
+
+| Имя | Тип | Описание
+|------|------|----------------
+| src | String **[обязательный]** | Полный URL-адрес для загрузки пакета SDK из. Это значение используется для атрибута src динамически добавляемого &lt; скрипта или &gt; тега. Вы можете использовать общедоступное расположение CDN или свое личное размещение.
+| name | String *[необязательно]* | Глобальное имя для инициализированного пакета SDK по умолчанию — appInsights. Таким образом, это ```window.appInsights``` будет ссылка на инициализированный экземпляр. Примечание. Если указать значение имени или предыдущий экземпляр будет назначен (с помощью глобального имени Аппинсигхтссдк), то это значение будет также определено в глобальном пространстве имен как ```window.appInsightsSDK=<name value>``` , это требуется для кода инициализации пакета SDK, чтобы обеспечить инициализацию и обновление правильного каркаса фрагмента и прокси-методов.
+| LD | число в МС *[необязательно]* | Определяет задержку загрузки для ожидания перед попыткой загрузки пакета SDK. Значение по умолчанию — 0 мс, а любое отрицательное значение сразу же добавит тег скрипта в &lt; головной &gt; регион страницы, который затем заблокирует событие загрузки страницы до тех пор, пока не будет загружен (или не завершится) сценарий.
+| усексхр | Boolean *[необязательно]* | Этот параметр используется только для ошибок загрузки пакета SDK для отчетов. При создании отчетов сначала будет предпринята попытка использовать fetch (), если он доступен, а затем переходить на XHR, установив это значение равным true, просто обходит проверку выборки. Это значение необходимо использовать только в том случае, если приложение используется в среде, где при выборке не удалось отправить события сбоя.
+| кроссоригин | String *[необязательно]* | Если этот параметр включен, добавленный к пакету SDK тег скрипта будет содержать атрибут Кроссоригин со строковым значением. Если не определено (по умолчанию), атрибут Кроссоригин не добавляется. Рекомендуемые значения не определены (по умолчанию); ""; или "Anonymous" (для всех допустимых значений см. документацию по [атрибуту HTML: кроссоригин](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin) Documentation)
+| cfg | Object **[обязательный]** | Конфигурация, переданная в пакет SDK для Application Insights во время инициализации.
+
 ### <a name="sending-telemetry-to-the-azure-portal"></a>Отправка данных телеметрии в портал Azure
 
-По умолчанию в Application Insights SDK для JavaScript выполняется Автосбор нескольких элементов телеметрии, которые полезны для определения работоспособности приложения и базового интерфейса пользователя. Сюда входит следующее.
+По умолчанию в Application Insights SDK для JavaScript выполняется Автосбор нескольких элементов телеметрии, которые полезны для определения работоспособности приложения и базового интерфейса пользователя. Вот они:
 
 - **Неперехваченные исключения** в приложении, включая сведения о
     - Трассировка стека
@@ -80,9 +134,9 @@ var sdkInstance="appInsightsSDK";window[sdkInstance]="appInsights";var aiName=wi
 - **Сведения о сеансе**
 
 ### <a name="telemetry-initializers"></a>Инициализаторы телеметрии
-Инициализаторы телеметрии используются для изменения содержимого собранных данных телеметрии перед их отправкой из браузера пользователя. Они также могут использоваться для предотвращения отправки определенных данных телеметрии путем возврата `false`. К экземпляру Application Insights можно добавить несколько инициализаторов телеметрии и они выполняются в порядке их добавления.
+Инициализаторы телеметрии используются для изменения содержимого собранных данных телеметрии перед их отправкой из браузера пользователя. Они также могут использоваться для предотвращения отправки определенных данных телеметрии путем возврата `false` . К экземпляру Application Insights можно добавить несколько инициализаторов телеметрии и они выполняются в порядке их добавления.
 
-Входной аргумент `addTelemetryInitializer` для является обратным вызовом, который [`ITelemetryItem`](https://github.com/microsoft/ApplicationInsights-JS/blob/master/API-reference.md#addTelemetryInitializer) принимает в качестве аргумента и `boolean` возвращает `void`или. При возврате `false`элемент телеметрии не отправляется, в противном случае переходит к следующему инициализатору телеметрии, если таковой имеется или отправляется в конечную точку коллекции телеметрии.
+Входной аргумент для `addTelemetryInitializer` является обратным вызовом, который принимает в [`ITelemetryItem`](https://github.com/microsoft/ApplicationInsights-JS/blob/master/API-reference.md#addTelemetryInitializer) качестве аргумента и возвращает `boolean` или `void` . При возврате `false` элемент телеметрии не отправляется, в противном случае переходит к следующему инициализатору телеметрии, если таковой имеется или отправляется в конечную точку коллекции телеметрии.
 
 Пример использования инициализаторов телеметрии:
 ```ts
@@ -96,8 +150,8 @@ appInsights.addTelemetryInitializer(() => false); // Nothing is sent after this 
 appInsights.trackTrace({message: 'this message will not be sent'}); // Not sent
 ```
 
-## <a name="configuration"></a>Конфигурация
-Большинство полей конфигурации называются так, чтобы их можно было по умолчанию иметь значение false. Все поля являются необязательными `instrumentationKey`, за исключением.
+## <a name="configuration"></a>Параметр Configuration
+Большинство полей конфигурации называются так, чтобы их можно было по умолчанию иметь значение false. Все поля являются необязательными, за исключением `instrumentationKey` .
 
 | Имя | По умолчанию | Описание |
 |------|---------|-------------|
@@ -109,7 +163,7 @@ appInsights.trackTrace({message: 'this message will not be sent'}); // Not sent
 | максбатчинтервал | 15 000 | Время пакетной передачи данных перед отправкой (в миллисекундах) |
 | дисабликсцептионтраккинг | false | Если значение — true, исключения не собираются. Значение по умолчанию — false. |
 | дисаблетелеметри | false | Если значение — true, данные телеметрии не собираются и не отправляются. Значение по умолчанию — false. |
-| енабледебуг | false | Если значение — true, **внутренние** данные отладки создаются как исключение, **а не** заносятся в журнал, независимо от параметров ведения журнала пакета SDK. Значение по умолчанию — false. <br>***Примечание.*** Включение этого параметра приведет к потере телеметрии при возникновении внутренней ошибки. Это может быть полезно для быстрого выявления проблем с конфигурацией или использованием пакета SDK. Если вы не хотите терять данные телеметрии во время отладки, попробуйте использовать `consoleLoggingLevel` или `telemetryLoggingLevel` вместо `enableDebug`. |
+| енабледебуг | false | Если значение — true, **внутренние** данные отладки создаются как исключение, **а не** заносятся в журнал, независимо от параметров ведения журнала пакета SDK. Значение по умолчанию — false. <br>***Примечание.*** Включение этого параметра приведет к потере телеметрии при возникновении внутренней ошибки. Это может быть полезно для быстрого выявления проблем с конфигурацией или использованием пакета SDK. Если вы не хотите терять данные телеметрии во время отладки, попробуйте использовать `consoleLoggingLevel` или `telemetryLoggingLevel` вместо `enableDebug` . |
 | логгинглевелконсоле | 0 | Записывает в консоль **внутренние** ошибки Application Insights. <br>0: выкл., <br>1: только критические ошибки, <br>2: все (ошибки & предупреждения) |
 | логгинглевелтелеметри | 1 | Отправляет **внутренние** ошибки Application Insights как данные телеметрии. <br>0: выкл., <br>1: только критические ошибки, <br>2: все (ошибки & предупреждения) |
 | диагностиклогинтервал | 10000 | внутрикластерных Интервал опроса (в мс) для внутренней очереди ведения журнала |
@@ -132,14 +186,19 @@ appInsights.trackTrace({message: 'this message will not be sent'}); // Not sent
 | исбеаконапидисаблед | true | Если значение равно false, пакет SDK будет отсылать все данные телеметрии с помощью [API маяка](https://www.w3.org/TR/beacon) . |
 | онунлоаддисаблебеакон | false | Значение по умолчанию — false. Когда вкладка закрывается, пакет SDK будет передавать все оставшиеся данные телеметрии с помощью [API маяка](https://www.w3.org/TR/beacon) . |
 | сдкекстенсион | null | Задает имя расширения пакета SDK. Допускаются только буквы. Имя расширения добавляется в качестве префикса к тегу "AI. internal. Сдкверсион" (например, "ext_javascript: 2.0.0"). Значение по умолчанию — null. |
-| исбровсерлинктраккинженаблед | false | Значение по умолчанию — false. Если значение — true, пакет SDK будет отслеживанием всех запросов на [компоновку браузера](https://docs.microsoft.com/aspnet/core/client-side/using-browserlink) . |
+| исбровсерлинктраккинженаблед | false | Значение по умолчанию — false. Если значение — true, пакет SDK будет отслеживанием всех запросов на [компоновку браузера](/aspnet/core/client-side/using-browserlink) . |
 | appId | null | AppId используется для корреляции между зависимостями AJAX, происходящими на стороне клиента, с запросами на стороне сервера. Если API маяка включен, он не может использоваться автоматически, но может быть задан вручную в конфигурации. Значение по умолчанию равно null |
 | енаблекорскоррелатион | false | Если значение — true, пакет SDK добавит два заголовка ("Request-ID" и "Request-context") во все запросы CORS для корреляции исходящих зависимостей AJAX с соответствующими запросами на стороне сервера. Значение по умолчанию — false. |
 | namePrefix | неопределенный | Необязательное значение, которое будет использоваться в качестве постфикса имени для localStorage и имени файла cookie.
-| енаблеаутораутетраккинг | false | Автоматическая регистрация изменений маршрута в одностраничных приложениях (SPA). Если значение — true, каждое изменение маршрута будет отсылать новый pageview Application Insights. Изменения хэш-маршрута`example.com/foo#bar`() также записываются в виде новых просмотров страниц.
+| енаблеаутораутетраккинг | false | Автоматическая регистрация изменений маршрута в одностраничных приложениях (SPA). Если значение — true, каждое изменение маршрута будет отсылать новый pageview Application Insights. Изменения хэш-маршрута ( `example.com/foo#bar` ) также записываются в виде новых просмотров страниц.
 | енаблерекуессеадертраккинг | false | Если значение равно true, заголовки запроса AJAX & FETCH отписываются, по умолчанию — false.
 | енаблереспонсехеадертраккинг | false | Если значение равно true, то заголовки ответа на запрос AJAX & FETCH отписываются, по умолчанию — false.
-| дистрибутедтраЦингмоде | `DistributedTracingModes.AI` | Задает режим распределенной трассировки. Если задан режим AI_AND_W3C или W3C, заголовки контекста трассировки W3C (трацепарент/трацестате) будут формироваться и включаться во все исходящие запросы. AI_AND_W3C предоставляется для обеспечения обратной совместимости с любыми устаревшими службами, Application Insights инструментированные.
+| дистрибутедтраЦингмоде | `DistributedTracingModes.AI` | Задает режим распределенной трассировки. Если задан режим AI_AND_W3C или W3C, заголовки контекста трассировки W3C (трацепарент/трацестате) будут формироваться и включаться во все исходящие запросы. AI_AND_W3C предоставляется для обеспечения обратной совместимости с любыми устаревшими службами, Application Insights инструментированные. См. пример [здесь](./correlation.md#enable-w3c-distributed-tracing-support-for-web-apps).
+| енаблеажаксеррорстатустекст | false | Значение по умолчанию — false. Значение true показывает, что текст данных об ошибке ответа содержится в событии зависимостей при неудачных запросах AJAX.
+| енаблеажаксперфтраккинг | false | Значение по умолчанию — false. Флаг, позволяющий выполнять поиск и включение дополнительного окна браузера. время производительности в сообщаемых метриках AJAX (XHR и FETCH).
+| максажаксперфлукупаттемптс | 3 | Значение по умолчанию — 3. Максимальное количество попыток поиска в окне. время производительности (если доступно). это необходимо, так как не все браузеры заполняют окно. производительность перед созданием отчета о конце запроса XHR и о запросах на выборку добавляется после завершения.
+| ажаксперфлукупделай | 25 | Значение по умолчанию — 25 мс. Время ожидания перед повторной попыткой поиска окон. временные показатели производительности для запроса AJAX, время в миллисекундах и передаваемое непосредственно в setTimeout ().
+| енаблеунхандледпромисережектионтраккинг | false | Если задано значение true, необработанные отклонения в обещании будут собираются и сообщаются как ошибка JavaScript. Если Дисабликсцептионтраккинг имеет значение true (не записывать исключения), значение конфигурации будет проигнорировано, а необработанные отклонения обещаний не будут выводиться.
 
 ## <a name="single-page-applications"></a>Одностраничные приложения
 
@@ -152,11 +211,11 @@ appInsights.trackTrace({message: 'this message will not be sent'}); // Not sent
 
 ## <a name="configuration-autotrackpagevisittime"></a>Конфигурация: Аутотраккпажевиситтиме
 
-С помощью `autoTrackPageVisitTime: true`параметра время, затрачиваемое пользователем на каждую страницу, будет отслеживаниь. На каждом новом PageView время, которое пользователь тратил на *предыдущей* странице, отправляется как [Пользовательская метрика](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-custom-overview) с `PageVisitTime`именем. Эта пользовательская метрика отображается в [Обозреватель метрик](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-getting-started) как "Метрика на основе журнала".
+С помощью параметра `autoTrackPageVisitTime: true` время, затрачиваемое пользователем на каждую страницу, будет отслеживаниь. На каждом новом PageView время, которое пользователь тратил на *предыдущей* странице, отправляется как [Пользовательская метрика](../platform/metrics-custom-overview.md) с именем `PageVisitTime` . Эта пользовательская метрика отображается в [Обозреватель метрик](../platform/metrics-getting-started.md) как "Метрика на основе журнала".
 
 ## <a name="react-extensions"></a>Модули реагирования
 
-| Расширения |
+| Модули |
 |---------------|
 | [React](https://github.com/microsoft/ApplicationInsights-JS/blob/17ef50442f73fd02a758fbd74134933d92607ecf/extensions/applicationinsights-react-js/README.md)|
 | [React Native](https://github.com/microsoft/ApplicationInsights-JS/blob/17ef50442f73fd02a758fbd74134933d92607ecf/extensions/applicationinsights-react-native/README.md)|
@@ -165,25 +224,25 @@ appInsights.trackTrace({message: 'this message will not be sent'}); // Not sent
 
 Для просмотра данных в браузере и на стороне клиента можно перейти к **метрикам** и добавить отдельные метрики, которые вас интересуют:
 
-![](./media/javascript/page-view-load-time.png)
+![Снимок экрана: страница "метрики" в Application Insights показывающая графическое отображение данных метрик для веб-приложения.](./media/javascript/page-view-load-time.png)
 
 Вы также можете просмотреть данные из пакета SDK для JavaScript, используя интерфейс браузера на портале.
 
 Выберите **браузер** , а затем выберите **сбои** или **производительность**.
 
-![](./media/javascript/browser.png)
+![Снимок экрана страницы браузера в Application Insights показывает, как добавить сбои браузера или производительность браузера в метрики, которые можно просмотреть для веб-приложения.](./media/javascript/browser.png)
 
 ### <a name="performance"></a>Производительность
 
-![](./media/javascript/performance-operations.png)
+![Снимок экрана со страницей "производительность" в Application Insights отображение графических показателей операций для веб-приложения.](./media/javascript/performance-operations.png)
 
 ### <a name="dependencies"></a>Зависимости
 
-![](./media/javascript/performance-dependencies.png)
+![Снимок экрана со страницей "производительность" в Application Insights отображение графики метрик зависимости для веб-приложения.](./media/javascript/performance-dependencies.png)
 
-### <a name="analytics"></a>Analytics
+### <a name="analytics"></a>Аналитика
 
-Чтобы запросить данные телеметрии, собранные с помощью пакета SDK для JavaScript, нажмите кнопку **Просмотр в журналах (аналитика)** . Добавив `where` оператор `client_Type == "Browser"`, вы увидите только данные из пакета SDK для JavaScript, и все телеметрии на стороне сервера, собранные другими пакетами SDK, будут исключены.
+Чтобы запросить данные телеметрии, собранные с помощью пакета SDK для JavaScript, нажмите кнопку **Просмотр в журналах (аналитика)** . Добавив `where` оператор `client_Type == "Browser"` , вы увидите только данные из пакета SDK для JavaScript, и все телеметрии на стороне сервера, собранные другими пакетами SDK, будут исключены.
  
 ```kusto
 // average pageView duration by name
@@ -212,7 +271,7 @@ dataset
 
 1. Выберите элемент телеметрии исключения в портал Azure, чтобы просмотреть сведения о сквозной транзакции.
 2. Определяет, какие исходные карты соответствуют этому стеку вызовов. Исходная таблица должна соответствовать исходному файлу кадра стека, но с суффиксом`.map`
-3. Перетащите карты источника в стек вызовов в портал Azure![](https://i.imgur.com/Efue9nU.gif)
+3. Перетащите карты источника в стек вызовов в портал Azure ![ анимированное изображение, показывающее, как перетаскивать файлы сопоставления исходного кода из папки сборки в окно стека вызовов в портал Azure.](https://i.imgur.com/Efue9nU.gif)
 
 ### <a name="application-insights-web-basic"></a>Application Insights Web Basic
 
@@ -220,7 +279,7 @@ dataset
 ```
 npm i --save @microsoft/applicationinsights-web-basic
 ```
-Эта версия поставляется с минимальным числом функций и функциональных возможностей и зависит от того, как вы видите. Например, он не выполняет Автосбор (неперехваченные исключения, AJAX и т. д.). API-интерфейсы для отправки определенных типов телеметрии, `trackTrace`например `trackException`, и т. д., не включены в эту версию, поэтому необходимо предоставить собственную оболочку. Единственный доступный API — `track`. [Пример](https://github.com/Azure-Samples/applicationinsights-web-sample1/blob/master/testlightsku.html) находится здесь.
+Эта версия поставляется с минимальным числом функций и функциональных возможностей и зависит от того, как вы видите. Например, он не выполняет Автосбор (неперехваченные исключения, AJAX и т. д.). API-интерфейсы для отправки определенных типов телеметрии, например `trackTrace` , и `trackException` т. д., не включены в эту версию, поэтому необходимо предоставить собственную оболочку. Единственный доступный API — `track` . [Пример](https://github.com/Azure-Samples/applicationinsights-web-sample1/blob/master/testlightsku.html) находится здесь.
 
 ## <a name="examples"></a>Примеры
 
@@ -231,10 +290,10 @@ npm i --save @microsoft/applicationinsights-web-basic
 Критические изменения в версии пакета SDK v2:
 - Чтобы обеспечить лучшую сигнатуру API, некоторые вызовы API, такие как trackPageView и trackException, были обновлены. Запуск в Internet Explorer 8 и более ранних версиях браузера не поддерживается.
 - В связи с обновлением схемы данных в конверте телеметрии изменились имя и структура поля.
-- `context.operation` Перемещено `context.telemetryTrace`в. Некоторые поля были также изменены (`operation.id` --> `telemetryTrace.traceID`).
-  - Чтобы вручную обновить текущий идентификатор pageview (например, в приложениях SPA), используйте `appInsights.properties.context.telemetryTrace.traceID = Util.generateW3CId()`.
+- Перемещено `context.operation` в `context.telemetryTrace` . Некоторые поля были также изменены ( `operation.id`  -->  `telemetryTrace.traceID` ).
+  - Чтобы вручную обновить текущий идентификатор pageview (например, в приложениях SPA), используйте `appInsights.properties.context.telemetryTrace.traceID = Util.generateW3CId()` .
     > [!NOTE]
-    > Чтобы идентификатор трассировки был уникальным, где ранее использовался `Util.newId()`, теперь используйте. `Util.generateW3CId()` Как и в конечном итоге, это идентификатор операции.
+    > Чтобы идентификатор трассировки был уникальным, где ранее использовался `Util.newId()` , теперь используйте `Util.generateW3CId()` . Как и в конечном итоге, это идентификатор операции.
 
 Если вы используете текущий пакет SDK Application Insights (1.0.20) и хотите узнать, работает ли новый пакет SDK в среде выполнения, обновите URL-адрес в зависимости от текущего сценария загрузки пакета SDK.
 
@@ -243,7 +302,7 @@ npm i --save @microsoft/applicationinsights-web-basic
    "https://az416426.vo.msecnd.net/scripts/b/ai.2.min.js"
    ```
 
-- сценарий NPM. вызовите `downloadAndSetup` , чтобы скачать полный скрипт APPLICATIONINSIGHTS из CDN и инициализировать его с помощью ключа инструментирования:
+- сценарий NPM. вызовите, `downloadAndSetup` чтобы скачать полный скрипт ApplicationInsights из CDN и инициализировать его с помощью ключа инструментирования:
 
    ```ts
    appInsights.downloadAndSetup({
@@ -256,20 +315,29 @@ npm i --save @microsoft/applicationinsights-web-basic
 
 ## <a name="sdk-performanceoverhead"></a>Производительность и затраты на пакет SDK
 
-Всего за 25 КБ со сжатием gzip и для инициализации требуется только ~ 15 мс, Application Insights добавляет незначительное количество лоадтиме на веб-сайт. С помощью фрагмента кода можно быстро загрузить минимальные компоненты библиотеки. В то же время полный скрипт загружается в фоновом режиме.
+Только в 36 КБ со сжатием gzip и при инициализации только ~ 15 мс Application Insights добавляет незначительное количество лоадтиме на веб-сайт. С помощью фрагмента кода можно быстро загрузить минимальные компоненты библиотеки. В то же время полный скрипт загружается в фоновом режиме.
 
 Хотя скрипт скачивается из CDN, все отслеживание вашей страницы помещается в очередь. Когда загруженный скрипт завершает асинхронную инициализацию, отправляются все события, которые были поставлены в очередь. В результате все данные телеметрии не будут потеряны в течение всего жизненного цикла страницы. Этот процесс установки обеспечивает полную систему анализа, невидимую для пользователей.
 
-> Сводка.
-> - **25 КБ** со сжатием gzip
+> Сводка:
+> - ![Версия NPM](https://badge.fury.io/js/%40microsoft%2Fapplicationinsights-web.svg)
+> - ![Сжатый размер gzip](https://img.badgesize.io/https://js.monitor.azure.com/scripts/b/ai.2.min.js.svg?compression=gzip)
 > - **15 мс** общее время инициализации
 > - **Нулевое** отслеживание, пропущенное во время жизненного цикла страницы
 
 ## <a name="browser-support"></a>Поддержка браузеров
 
-![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png) | ![FireFox](https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png) | ![IE](https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png) | ![Opera](https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png) | ![Safari](https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png)
+![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png) | ![Firefox](https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png) | ![IE](https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png) | ![Opera](https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png) | ![Safari](https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png)
 --- | --- | --- | --- | --- |
-Последняя ✔ Chrome |  Последние ✔ Firefox | Internet Explorer 9 + & пограничных ✔ | ✔ Opera последней версии | Самый последний ✔ Safari |
+Последняя ✔ Chrome |  Последние ✔ Firefox | Internet Explorer 9 + & пограничных ✔<br>IE 8 — совместимо | ✔ Opera последней версии | Самый последний ✔ Safari |
+
+## <a name="es3ie8-compatibility"></a>Совместимость ES3 и IE8
+
+В качестве пакета SDK существует множество пользователей, которые не могут управлять браузерами, используемыми клиентами. Поэтому необходимо убедиться, что этот пакет SDK переходит в рабочее состояние и не нарушает выполнение JS при загрузке в более старом браузере. Несмотря на то, что лучше не поддерживать браузеры IE8 и более ранних версий (ES3), существует множество крупных клиентов и пользователей, которые по-прежнему требуют для работы страниц, и, как отмечалось, может или не может контролировать, какой браузер следует использовать для их конечных пользователей.
+
+Это не значит, что мы будем поддерживать только самый низкий распространенный набор функций, только если нам нужно поддерживать совместимость кода ES3 и при добавлении новых функций их потребуется добавить способом, который не нарушает синтаксический анализ ES3 JavaScript и не добавляется в качестве дополнительной функции.
+
+[Полные сведения о поддержке IE8 см. в GitHub.](https://github.com/Microsoft/ApplicationInsights-JS#es3ie8-compatibility)
 
 ## <a name="open-source-sdk"></a>Пакет SDK с открытым исходным кодом
 
@@ -279,3 +347,4 @@ Application Insights SDK JavaScript является открытым кодом
 * [Отслеживание использования](usage-overview.md)
 * [Пользовательские события и метрики](api-custom-events-metrics.md)
 * [Сборка, измерение и обучение](usage-overview.md)
+* [Устранение неполадок при загрузке пакета SDK](javascript-sdk-load-failure.md)

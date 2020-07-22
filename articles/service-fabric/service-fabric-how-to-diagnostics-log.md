@@ -5,12 +5,12 @@ author: srrengar
 ms.topic: conceptual
 ms.date: 03/27/2018
 ms.author: srrengar
-ms.openlocfilehash: 8c4721584e74bd7f7111c516f2d16bd190392bb5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: caa6d4fc27373e524f4c492635cffbf8b735add8
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75614372"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86247223"
 ---
 # <a name="add-logging-to-your-service-fabric-application"></a>Добавление ведения журнала в приложение Service Fabric
 
@@ -96,7 +96,7 @@ internal sealed class ServiceEventSource : EventSource
 
 Ведение журнала ASP.NET Core ([пакет Microsoft.Extensions.Logging NuGet](https://www.nuget.org/packages/Microsoft.Extensions.Logging)) — это платформа ведения журнала, которая предоставляет стандартный API для ведения журналов в приложениях. К системе ведения журнала ASP.NET Core можно подключить поддержку других серверных систем для ведения журнала. Этот метод дает вам широкий спектр ресурсов для ведения и обработки журналов в приложении, не требуя значительных изменений в коде.
 
-1. Добавьте пакет NuGet **Microsoft. Extensions. Logging** в проект, который необходимо инструментировать. Кроме того, добавьте все пакеты поставщиков. Дополнительные сведения см. в разделе [Introduction to Logging in ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/logging) (Вводные сведения о ведении журналов в ASP.NET Core).
+1. Добавьте пакет NuGet **Microsoft. Extensions. Logging** в проект, который необходимо инструментировать. Кроме того, добавьте все пакеты поставщиков. Дополнительные сведения см. в разделе [Introduction to Logging in ASP.NET Core](/aspnet/core/fundamentals/logging) (Вводные сведения о ведении журналов в ASP.NET Core).
 2. Добавьте директиву **using** для **Microsoft. Extensions. Logging** в файл службы.
 3. Определите частную переменную в классе службы.
 
@@ -167,13 +167,3 @@ internal sealed class ServiceEventSource : EventSource
 
 - Дополнительные сведения о [приложении наблюдения за Service Fabric](service-fabric-diagnostics-event-generation-app.md).
 - Изучите методы ведения журнала с использованием [EventFlow](service-fabric-diagnostics-event-aggregation-eventflow.md) и [Диагностики Azure для Windows](service-fabric-diagnostics-event-aggregation-wad.md).
-
-
-
-
-
-
-
-
-
-

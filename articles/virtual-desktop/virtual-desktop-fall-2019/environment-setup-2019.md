@@ -8,21 +8,21 @@ ms.topic: conceptual
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: d666f7e3e43b5429423a5356aa00e074ed020869
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
+ms.openlocfilehash: 153532b3c33158ee1a43db7883eb7a9ec621ade7
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82615335"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86241681"
 ---
 # <a name="windows-virtual-desktop-environment"></a>Среда Виртуального рабочего стола Windows
 
 >[!IMPORTANT]
->Это содержимое относится к выпуску 2019, который не поддерживает Azure Resource Manager объекты виртуальных рабочих столов Windows. Если вы пытаетесь управлять Azure Resource Manager объектов виртуальных рабочих столов Windows, представленных в обновлении пружины 2020, см. [эту статью](../environment-setup.md).
+>Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Если вы хотите обеспечить управление объектами Azure Resource Manager для Виртуального рабочего стола Windows, представленными в обновлении за весну 2020 г., см. [эту статью](../environment-setup.md).
 
 Виртуальный рабочий стол Windows — это служба, которая предоставляет пользователям простой и безопасный доступ к виртуализованным рабочим столам и приложениям RemoteApp. В этом разделе вы узнаете о общей структуре среды виртуальных рабочих столов Windows.
 
-## <a name="tenants"></a>Клиентов
+## <a name="tenants"></a>Клиенты
 
 Клиент виртуальных рабочих столов Windows является основным интерфейсом для управления средой виртуальных рабочих столов Windows. Каждый клиент виртуальных рабочих столов Windows должен быть связан с Azure Active Directory, содержащим пользователей, которые будут входить в среду. С помощью клиента виртуальных рабочих столов Windows можно приступить к созданию пулов узлов для запуска рабочих нагрузок пользователей.
 
@@ -67,5 +67,5 @@ ms.locfileid: "82615335"
 
 Сведения о подключении к виртуальному рабочему столу Windows см. в одной из следующих статей:
 
-- [Подключение из Windows 10 или Windows 7](../connect-windows-7-and-10.md)
+- [Подключение из Windows 10 или Windows 7](connect-windows-7-10-2019.md)
 - [Подключение из веб-браузера](connect-web-2019.md)

@@ -6,12 +6,12 @@ ms.devlang: nodejs
 ms.topic: tutorial
 ms.date: 05/04/2017
 ms.custom: mvc, cli-validate, seodec18
-ms.openlocfilehash: 5dd99d9aa7e63066ac4801282e548f2995e57e67
-ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
+ms.openlocfilehash: 3a33065674f1acf43e276c5dc9d2a15cca52c9ef
+ms.sourcegitcommit: 6fd28c1e5cf6872fb28691c7dd307a5e4bc71228
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82085609"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85208065"
 ---
 # <a name="tutorial-build-a-nodejs-and-mongodb-app-in-azure"></a>Руководство по Разработка приложения на основе Node.js и MongoDB в Azure
 
@@ -127,7 +127,7 @@ MEAN.JS — среда разработки
 
 В Cloud Shell создайте учетную запись Cosmos DB при помощи команды [`az cosmosdb create`](/cli/azure/cosmosdb?view=azure-cli-latest#az-cosmosdb-create).
 
-В следующей команде замените заполнитель *\<cosmosdb_name>* уникальным именем базы данных Cosmos DB. Это имя используется как часть конечной точки Cosmos DB (`https://<cosmosdb_name>.documents.azure.com/`), поэтому оно должно быть уникальным для всех учетных записей Cosmos DB в Azure. В нем могут использоваться только строчные буквы, цифры и дефис (-). Его длина должна быть от 3 до 50 знаков.
+В следующей команде замените заполнитель *\<cosmosdb_name>* уникальным именем базы данных Cosmos DB. Это имя используется как часть конечной точки Cosmos DB (`https://<cosmosdb_name>.documents.azure.com/`), поэтому оно должно быть уникальным для всех учетных записей Cosmos DB в Azure. В нем могут использоваться только строчные буквы, цифры и дефис (-). Его длина должна быть от 3 до 50 знаков.
 
 ```azurecli-interactive
 az cosmosdb create --name <cosmosdb_name> --resource-group myResourceGroup --kind MongoDB
@@ -183,7 +183,7 @@ az cosmosdb list-keys --name <cosmosdb_name> --resource-group myResourceGroup
 
 В локальном репозитории MEAN.js создайте файл с именем _local-production.js_ в папке _config/env/_ . По умолчанию, чтобы этот файл хранился вне репозитория, настраивается _.gitignore_. 
 
-Скопируйте в него следующий код: Замените два заполнителя *\<cosmosdb_name>* именем базы данных Cosmos DB, а заполнитель *\<primary_master_key>*  — ключом, скопированным на предыдущем шаге.
+Скопируйте в него следующий код: Также замените два заполнителя *\<cosmosdb_name>* именем базы данных Cosmos DB, а заполнитель *\<primary_master_key>* ключом, скопированным на предыдущем шаге.
 
 ```javascript
 module.exports = {
@@ -371,7 +371,7 @@ exports.update = function (req, res) {
 
 Прямо перед закрывающим тегом `</section>` добавьте следующую строку для отображения `comment` вместе с остальными данными статьи:
 
-```HTML
+```html
 <p class="lead" ng-bind="vm.article.comment"></p>
 ```
 
@@ -379,7 +379,7 @@ exports.update = function (req, res) {
 
 Прямо перед закрывающим тегом `</a>` добавьте следующую строку для отображения `comment` вместе с остальными данными статьи:
 
-```HTML
+```html
 <p class="list-group-item-text" ng-bind="article.comment"></p>
 ```
 
@@ -387,7 +387,7 @@ exports.update = function (req, res) {
 
 В элементе `<div class="list-group">` и прямо перед закрывающим тегом `</a>` добавьте следующую строку для отображения `comment` вместе с остальными данными статьи:
 
-```HTML
+```html
 <p class="list-group-item-text" data-ng-bind="article.comment"></p>
 ```
 
@@ -395,7 +395,7 @@ exports.update = function (req, res) {
 
 Найдите элемент `<div class="form-group">`, который содержит кнопку "Отправить" и выглядит следующим образом:
 
-```HTML
+```html
 <div class="form-group">
   <button type="submit" class="btn btn-default">{{vm.article._id ? 'Update' : 'Create'}}</button>
 </div>
@@ -403,7 +403,7 @@ exports.update = function (req, res) {
 
 Прямо перед этим тегом добавьте еще один элемент `<div class="form-group">`, который позволяет пользователям изменять поле `comment`. Новый элемент должен выглядеть следующим образом:
 
-```HTML
+```html
 <div class="form-group">
   <label class="control-label" for="comment">Comment</label>
   <textarea name="comment" data-ng-model="vm.article.comment" id="comment" class="form-control" cols="30" rows="10" placeholder="Comment"></textarea>
@@ -497,3 +497,8 @@ az webapp log tail --name <app_name> --resource-group myResourceGroup
 
 > [!div class="nextstepaction"] 
 > [Сопоставление существующего настраиваемого DNS-имени со Службой приложений Azure](app-service-web-tutorial-custom-domain.md)
+
+Дополнительные ресурсы
+
+> [!div class="nextstepaction"]
+> [Настройка приложения Node.js](configure-language-nodejs.md)

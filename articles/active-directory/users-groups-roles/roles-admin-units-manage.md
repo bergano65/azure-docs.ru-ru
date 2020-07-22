@@ -6,7 +6,7 @@ documentationcenter: ''
 author: curtand
 manager: daveba
 ms.service: active-directory
-ms.topic: article
+ms.topic: how-to
 ms.subservice: users-groups-roles
 ms.workload: identity
 ms.date: 04/16/2020
@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7a4a0dfaeda18b3f68ddc3c7cc7333b8c994d174
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 977a90419c142e576fcf484562875d12c8dad451
+ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81684912"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85851769"
 ---
 # <a name="manage-administrative-units-in-azure-active-directory"></a>Управление административными единицами в Azure Active Directory
 
@@ -29,7 +29,7 @@ ms.locfileid: "81684912"
 
 1. Чтобы выполнить запросы из следующих инструкций с помощью [Graph Explorer](https://aka.ms/ge), выполните следующие действия.
 
-    a. На портале Azure перейдите к Azure AD. В списке приложений выберите **Graph Explorer**, а затем выберите **предоставить согласие администратора для проводника Graph**.
+    а. На портале Azure перейдите к Azure AD. В списке приложений выберите **Graph Explorer**, а затем выберите **предоставить согласие администратора для проводника Graph**.
 
     ![Снимок экрана со ссылкой на "предоставление согласия администратора"](./media/roles-admin-units-manage/select-graph-explorer.png)
 
@@ -57,20 +57,24 @@ ms.locfileid: "81684912"
 
 Прежде чем пытаться выполнить следующие команды, установите Azure AD PowerShell (Предварительная версия):
 
-    Connect-AzureAD
-    New-AzureADAdministrativeUnit -Description "West Coast region" -DisplayName "West Coast"
+```powershell
+Connect-AzureAD
+New-AzureADAdministrativeUnit -Description "West Coast region" -DisplayName "West Coast"
+```
 
 При необходимости можно изменить значения, заключенные в кавычки.
 
 ### <a name="use-microsoft-graph"></a>Использование Microsoft Graph
 
-    Http Request
-    POST /administrativeUnits
-    Request body
-    {
-        "displayName": "North America Operations",
-        "description": "North America Operations administration"
-    }
+```http
+Http Request
+POST /administrativeUnits
+Request body
+{
+  "displayName": "North America Operations",
+  "description": "North America Operations administration"
+}
+```
 
 ## <a name="remove-an-administrative-unit"></a>Удаление административной единицы
 
@@ -78,7 +82,7 @@ ms.locfileid: "81684912"
 
 ### <a name="use-the-azure-portal"></a>Использование портала Azure
 
-1. В портал Azure перейдите к**административным единицам** **Azure AD** > . 
+1. В портал Azure перейдите к **Azure AD**  >  **административным единицам**Azure AD. 
 1. Выберите удаляемую административную единицу и нажмите кнопку **Удалить**. 
 1. Чтобы подтвердить удаление административной единицы, выберите **Да**. Административная единица удаляется.
 
@@ -86,17 +90,21 @@ ms.locfileid: "81684912"
 
 ### <a name="use-powershell"></a>Использование PowerShell
 
-    $delau = Get-AzureADAdministrativeUnit -Filter "displayname eq 'DeleteMe Admin Unit'"
-    Remove-AzureADAdministrativeUnit -ObjectId $delau.ObjectId
+```powershell
+$delau = Get-AzureADAdministrativeUnit -Filter "displayname eq 'DeleteMe Admin Unit'"
+Remove-AzureADAdministrativeUnit -ObjectId $delau.ObjectId
+```
 
 Можно изменить значения, заключенные в кавычки, в соответствии с требованиями конкретной среды.
 
 ### <a name="use-the-graph-api"></a>Использование API Graph
 
-    HTTP request
-    DELETE /administrativeUnits/{Admin id}
-    Request body
-    {}
+```http
+HTTP request
+DELETE /administrativeUnits/{Admin id}
+Request body
+{}
+```
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 

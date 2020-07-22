@@ -1,25 +1,25 @@
 ---
 title: Краткое руководство. Предложение поисковых запросов с помощью REST API Автозаполнения Bing и PHP
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как быстро начать предложение условий поиска в режиме реального времени с помощью API Автозаполнения Bing.
+description: Узнайте, как настроить заполнение условий поиска в реальном времени с помощью API Автозаполнения Bing.
 services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-autosuggest
 ms.topic: quickstart
-ms.date: 03/24/2020
+ms.date: 05/06/2020
 ms.author: aahi
-ms.openlocfilehash: 0aa309ba34abdfbe91493498ae6ec49785e0e0d4
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: 6552c345678b6996f4a35e9e1fc7a1838505ff09
+ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80238982"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82930188"
 ---
 # <a name="quickstart-suggest-search-queries-with-the-bing-autosuggest-rest-api-and-php"></a>Краткое руководство. Предложение поисковых запросов с помощью REST API Автозаполнения Bing и PHP
 
-В этом кратком руководстве описано, как настроить осуществление вызовов к API Автозаполнения Bing и получение ответа JSON. Это простое приложение PHP отправляет частичный поисковый запрос к API и возвращает предложения поиска. Хотя это приложение создается на языке PHP, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
+В этом кратком руководстве показано, как вызывать API Автозаполнения Bing и считывать ответ в формате JSON. Это простое приложение PHP отправляет частичный поисковый запрос к API и возвращает предложения поиска. Хотя это приложение создается на языке PHP, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -31,8 +31,8 @@ ms.locfileid: "80238982"
 
 1. Создайте проект PHP в используемой вами интегрированной среде разработки.
 2. Добавьте указанный ниже код.
-3. Замените значение `subscriptionKey` ключом доступа, допустимым для подписки.
-4. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
+3. Замените значение `subscriptionKey` ключом доступа, допустимым для вашей подписки.
+4. Используйте глобальную конечную точку в коде или конечную точку [личного поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемую на портале Azure для вашего ресурса.
 5. Запустите программу.
 
 ```php
@@ -80,7 +80,7 @@ echo json_encode (json_decode ($result), JSON_PRETTY_PRINT);
 ?>
 ```
 
-### <a name="response"></a>Ответ
+## <a name="example-json-response"></a>Пример ответа в формате JSON
 
 Успешный ответ возвращается в формате JSON, как показано в примере ниже. 
 

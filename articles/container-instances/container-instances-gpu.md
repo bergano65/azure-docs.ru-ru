@@ -2,13 +2,13 @@
 title: Развернуть экземпляр контейнера с поддержкой GPU
 description: Узнайте, как развертывать экземпляры контейнеров Azure для запуска приложений-контейнеров с ресурсоемкими вычислениями с помощью ресурсов GPU.
 ms.topic: article
-ms.date: 02/19/2020
-ms.openlocfilehash: 0f1d21c62be5d7ae099faa2c6fcc440829bb451f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 07/02/2020
+ms.openlocfilehash: a25efc90573eb338b81f4a6532a632a140c7ab7d
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77525295"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86259600"
 ---
 # <a name="deploy-container-instances-that-use-gpu-resources"></a>Развертывание экземпляров контейнеров, использующих ресурсы GPU
 
@@ -43,7 +43,7 @@ ms.locfileid: "77525295"
 * **Count** — число GPU: **1**, **2**или **4**.
 * **SKU** — номер SKU GPU: **K80**, **P100**или **V100**. Каждый номер SKU сопоставляется с графическим процессором NVIDIA Tesla в одном из следующих семейств виртуальных машин с поддержкой GPU Azure:
 
-  | номер SKU | Семейство виртуальных машин |
+  | SKU | Семейство виртуальных машин |
   | --- | --- |
   | K80 | [NC](../virtual-machines/nc-series.md) |
   | P100 | [NCv2](../virtual-machines/ncv2-series.md) |
@@ -73,7 +73,7 @@ ms.locfileid: "77525295"
 
 ```YAML
 additional_properties: {}
-apiVersion: '2018-10-01'
+apiVersion: '2019-12-01'
 name: gpucontainergroup
 properties:
   containers:
@@ -139,7 +139,7 @@ Done
       {
         "name": "[parameters('containerGroupName')]",
         "type": "Microsoft.ContainerInstance/containerGroups",
-        "apiVersion": "2018-10-01",
+        "apiVersion": "2019-12-01",
         "location": "[resourceGroup().location]",
         "properties": {
             "containers": [
@@ -168,10 +168,10 @@ Done
 }
 ```
 
-Разверните шаблон с помощью команды [az group deployment create][az-group-deployment-create]. Необходимо указать имя группы ресурсов, созданной в регионе с поддержкой ресурсов GPU, например *eastus*.
+Разверните шаблон с помощью команды [AZ Deployment Group Create][az-deployment-group-create] . Необходимо указать имя группы ресурсов, созданной в регионе с поддержкой ресурсов GPU, например *eastus*.
 
 ```azurecli-interactive
-az group deployment create --resource-group myResourceGroup --template-file gpudeploy.json
+az deployment group create --resource-group myResourceGroup --template-file gpudeploy.json
 ```
 
 Развертывание занимает несколько минут. Затем контейнер запустится и выполнит задание TensorFlow. Для просмотра выходных данных журнала выполните команду [az container logs][az-container-logs]:
@@ -209,7 +209,7 @@ Adding run metadata for 999
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Так как использование ресурсов GPU может быть дорогостоящим, следите, чтобы ваши контейнеры не работали в течение длительного времени. Отслеживайте свои контейнеры на портале Azure или проверяйте состояние группы контейнеров с помощью команды [az container show][az-container-show]. Пример:
+Так как использование ресурсов GPU может быть дорогостоящим, следите, чтобы ваши контейнеры не работали в течение длительного времени. Отслеживайте свои контейнеры на портале Azure или проверяйте состояние группы контейнеров с помощью команды [az container show][az-container-show]. Например:
 
 ```azurecli
 az container show --resource-group myResourceGroup --name gpucontainergroup --output table
@@ -222,10 +222,10 @@ az container delete --resource-group myResourceGroup --name gpucontainergroup -y
 az container delete --resource-group myResourceGroup --name gpucontainergrouprm -y
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь со сведениями о развертывании группы контейнеров с помощью [файла YAML](container-instances-multi-container-yaml.md) или [шаблона Resource Manager](container-instances-multi-container-group.md).
-* Ознакомьтесь со статьей [Размеры виртуальных машин, оптимизированных для GPU](../virtual-machines/linux/sizes-gpu.md).
+* Ознакомьтесь со статьей [Размеры виртуальных машин, оптимизированных для GPU](../virtual-machines/sizes-gpu.md).
 
 
 <!-- IMAGES -->
@@ -240,4 +240,4 @@ az container delete --resource-group myResourceGroup --name gpucontainergrouprm 
 [az-container-show]: /cli/azure/container#az-container-show
 [az-container-logs]: /cli/azure/container#az-container-logs
 [az-container-show]: /cli/azure/container#az-container-show
-[az-group-deployment-create]: /cli/azure/group/deployment#az-group-deployment-create
+[az-deployment-group-create]: /cli/azure/deployment/group#az-deployment-group-create

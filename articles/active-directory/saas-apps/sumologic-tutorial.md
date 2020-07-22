@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/03/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: de6d941c6efe42993b6bad7c556582831d179250
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: bca74d7cce0257f4d852e1520cb23e6a77969ec7
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75659752"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86167731"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-sumologic"></a>Руководство по Интеграция единого входа Azure Active Directory с SumoLogic
 
@@ -83,28 +83,24 @@ ms.locfileid: "75659752"
 
     а. В текстовом поле **Идентификатор** введите URL-адрес в таком формате:
 
-    | |
-    |--|
-    | `https://service.sumologic.com`|
-    | `https://<tenantname>.us2.sumologic.com`|
-    | `https://<tenantname>.us4.sumologic.com`|
-    | `https://<tenantname>.eu.sumologic.com`|
-    | `https://<tenantname>.jp.sumologic.com`|
-    | `https://<tenantname>.de.sumologic.com`|
-    | `https://<tenantname>.ca.sumologic.com`|
+    - `https://service.sumologic.com`
+    - `https://<tenantname>.us2.sumologic.com`
+    - `https://<tenantname>.us4.sumologic.com`
+    - `https://<tenantname>.eu.sumologic.com`
+    - `https://<tenantname>.jp.sumologic.com`
+    - `https://<tenantname>.de.sumologic.com`
+    - `https://<tenantname>.ca.sumologic.com`
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате:
 
-    | |
-    |--|
-    | `https://service.sumologic.com/sumo/saml/consume/<tenantname>`|
-    | `https://service.us2.sumologic.com/sumo/saml/consume/<tenantname>`|
-    | `https://service.us4.sumologic.com/sumo/saml/consume/<tenantname>`|
-    | `https://service.eu.sumologic.com/sumo/saml/consume/<tenantname>`|
-    | `https://service.jp.sumologic.com/sumo/saml/consume/<tenantname>`|
-    | `https://service.de.sumologic.com/sumo/saml/consume/<tenantname>`|
-    | `https://service.ca.sumologic.com/sumo/saml/consume/<tenantname>`|
-    | `https://service.au.sumologic.com/sumo/saml/consume/<tenantname>`|
+    - `https://service.sumologic.com/sumo/saml/consume/<tenantname>`
+    - `https://service.us2.sumologic.com/sumo/saml/consume/<tenantname>`
+    - `https://service.us4.sumologic.com/sumo/saml/consume/<tenantname>`
+    - `https://service.eu.sumologic.com/sumo/saml/consume/<tenantname>`
+    - `https://service.jp.sumologic.com/sumo/saml/consume/<tenantname>`
+    - `https://service.de.sumologic.com/sumo/saml/consume/<tenantname>`
+    - `https://service.ca.sumologic.com/sumo/saml/consume/<tenantname>`
+    - `https://service.au.sumologic.com/sumo/saml/consume/<tenantname>`
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов SumoLogic](https://www.sumologic.com/contact-us/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

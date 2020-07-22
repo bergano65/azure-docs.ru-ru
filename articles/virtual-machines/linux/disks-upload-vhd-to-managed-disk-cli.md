@@ -4,25 +4,25 @@ description: Узнайте, как передать VHD на управляем
 services: virtual-machines,storage
 author: roygara
 ms.author: rogarana
-ms.date: 03/27/2020
-ms.topic: article
+ms.date: 06/15/2020
+ms.topic: how-to
 ms.service: virtual-machines
 ms.subservice: disks
-ms.openlocfilehash: c32915617d3149eee42bfdfd03d22f9ce5799ef2
-ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
+ms.openlocfilehash: 8656f0396aff7f20c867a5fae3d929236a3aa0d5
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82580232"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86510452"
 ---
 # <a name="upload-a-vhd-to-azure-or-copy-a-managed-disk-to-another-region---azure-cli"></a>Отправка VHD в Azure или копирование управляемого диска в другой регион — Azure CLI
 
 [!INCLUDE [disks-upload-vhd-to-disk-intro](../../../includes/disks-upload-vhd-to-disk-intro.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Скачайте последнюю [версию AzCopy V10](../../storage/common/storage-use-azcopy-v10.md#download-and-install-azcopy).
-- [Установите Azure CLI](/cli/azure/install-azure-cli).
+- [Установка Azure CLI](/cli/azure/install-azure-cli).
 - Если вы планируете передать виртуальный жесткий диск из локальной среды, выполните предварительную загрузку виртуального жесткого диска с фиксированным размером, который [был подготовлен для Azure](../windows/prepare-for-upload-vhd-image.md)и хранится локально.
 - Или управляемый диск в Azure, если планируется выполнить действие копирования.
 
@@ -34,7 +34,7 @@ ms.locfileid: "82580232"
 
 Этот тип управляемого диска имеет два уникальных состояния:
 
-- Реадтауплоад. Это означает, что диск готов к получению отправки, но [подпись безопасного доступа](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1) (SAS) не была создана.
+- Реадтауплоад. Это означает, что диск готов к получению отправки, но [подпись безопасного доступа](../../storage/common/storage-sas-overview.md) (SAS) не была создана.
 - Активеуплоад. Это означает, что диск готов к получению отправки, и создан SAS.
 
 > [!NOTE]
@@ -42,11 +42,14 @@ ms.locfileid: "82580232"
 
 ## <a name="create-an-empty-managed-disk"></a>Создание пустого управляемого диска
 
-Перед созданием пустого стандартного жесткого диска для отправки вам потребуется размер файла виртуального жесткого диска, который требуется передать, в байтах. Чтобы получить это значение `wc -c <yourFileName>.vhd` , можно использовать или. `ls -al <yourFileName>.vhd` Это значение используется при указании параметра **--upload-size-bytes** .
+Перед созданием пустого стандартного жесткого диска для отправки вам потребуется размер файла виртуального жесткого диска, который требуется передать, в байтах. Чтобы получить это значение, можно использовать `wc -c <yourFileName>.vhd` или `ls -al <yourFileName>.vhd` . Это значение используется при указании параметра **--upload-size-bytes** .
 
 Создайте пустой жесткий диск "Стандартный" для отправки, указав оба параметра **—-for-upload** и **--upload-size-bytes** в командлете [создания диска](/cli/azure/disk#az-disk-create) .
 
-Замените `<yourdiskname>`, `<yourresourcegroupname>` `<yourregion>` со значениями, выбранными вами. `--upload-size-bytes` Параметр содержит пример значения `34359738880`, заменяя его соответствующим значением.
+Замените `<yourdiskname>` , `<yourresourcegroupname>` `<yourregion>` со значениями, выбранными вами. `--upload-size-bytes`Параметр содержит пример значения `34359738880` , заменяя его соответствующим значением.
+
+> [!TIP]
+> Если вы создаете диск ОС, добавьте в него параметр--Hyper-v-Generation <yourGeneration> `az disk create` .
 
 ```azurecli
 az disk create -n <yourdiskname> -g <yourresourcegroupname> -l <yourregion> --for-upload --upload-size-bytes 34359738880 --sku standard_lrs
@@ -56,7 +59,7 @@ az disk create -n <yourdiskname> -g <yourresourcegroupname> -l <yourregion> --fo
 
 Теперь, когда вы создали пустой управляемый диск, настроенный для процесса отправки, вы можете передать в него VHD. Чтобы отправить VHD на диск, вам потребуется доступный для записи SAS, чтобы можно было ссылаться на него как на место назначения для отправки.
 
-Чтобы создать SAS с возможностью записи для пустого управляемого диска `<yourdiskname>`, `<yourresourcegroupname>`замените и, а затем используйте следующую команду:
+Чтобы создать SAS с возможностью записи для пустого управляемого диска, замените `<yourdiskname>` и `<yourresourcegroupname>` , а затем используйте следующую команду:
 
 ```azurecli
 az disk grant-access -n <yourdiskname> -g <yourresourcegroupname> --access-level Write --duration-in-seconds 86400
@@ -84,7 +87,7 @@ AzCopy.exe copy "c:\somewhere\mydisk.vhd" "sas-URI" --blob-type PageBlob
 
 После завершения передачи вам больше не нужно писать какие-либо данные на диск, отозвать SAS. Отзыв SAS изменит состояние управляемого диска и позволит подключить диск к виртуальной машине.
 
-Замените `<yourdiskname>`и `<yourresourcegroupname>`, а затем используйте следующую команду, чтобы сделать диск пригодным для использования:
+Замените `<yourdiskname>` и `<yourresourcegroupname>` , а затем используйте следующую команду, чтобы сделать диск пригодным для использования:
 
 ```azurecli
 az disk revoke-access -n <yourdiskname> -g <yourresourcegroupname>
@@ -99,7 +102,10 @@ az disk revoke-access -n <yourdiskname> -g <yourresourcegroupname>
 > [!IMPORTANT]
 > При предоставлении размера диска в байтах управляемого диска из Azure необходимо добавить смещение 512. Это обусловлено тем, что при возврате диска в Azure нижний колонтитул опускается. Если этого не сделать, копирование завершится ошибкой. Следующий сценарий уже выполняет это.
 
-`<sourceResourceGroupHere>`Замените `<sourceDiskNameHere>`, `<targetDiskNameHere>`,, `<targetResourceGroupHere>`и `<yourTargetLocationHere>` (примером значения Location будет uswest2) со своими значениями, а затем выполните следующий сценарий, чтобы скопировать управляемый диск.
+Замените `<sourceResourceGroupHere>` , `<sourceDiskNameHere>` , `<targetDiskNameHere>` , `<targetResourceGroupHere>` и `<yourTargetLocationHere>` (примером значения Location будет uswest2) со своими значениями, а затем выполните следующий сценарий, чтобы скопировать управляемый диск.
+
+> [!TIP]
+> Если вы создаете диск ОС, добавьте в него параметр--Hyper-v-Generation <yourGeneration> `az disk create` .
 
 ```azurecli
 sourceDiskName = <sourceDiskNameHere>
@@ -126,4 +132,3 @@ az disk revoke-access -n $targetDiskName -g $targetRG
 ## <a name="next-steps"></a>Дальнейшие действия
 
 После успешной отправки виртуального жесткого диска на управляемый диск можно подключить его как [диск данных к существующей виртуальной машине](add-disk.md) или [подключить диск к виртуальной машине в качестве диска ОС](upload-vhd.md#create-the-vm), чтобы создать новую виртуальную машину. 
-

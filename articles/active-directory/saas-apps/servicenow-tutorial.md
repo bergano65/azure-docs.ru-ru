@@ -12,15 +12,15 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 03/25/2020
+ms.date: 06/19/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8fe6c857e5b0c2f48f27c167c177dbf1f4651986
-ms.sourcegitcommit: e040ab443f10e975954d41def759b1e9d96cdade
+ms.openlocfilehash: 41f42b053181f4115770cd9973621706b248baab
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2020
-ms.locfileid: "80384115"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86168309"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-servicenow"></a>Руководство по интеграции единого входа Azure Active Directory с приложением ServiceNow
 
@@ -101,10 +101,8 @@ ms.locfileid: "80384115"
 
     c. В качестве **URL-адреса ответа** введите один из следующих URL-адресов:
 
-    |||
-    |-|-|
-    | `https://instancename.service-now.com/navpage.do` |
-    | `https://instancename.service-now.com/customer.do` | 
+    - `https://instancename.service-now.com/navpage.do`
+    - `https://instancename.service-now.com/customer.do`
 
     > [!NOTE]
     > Эти значения приведены в качестве примера. Необходимо заменить эти значения фактическим URL-адресом для входа и идентификатором, как описано ниже. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
@@ -173,10 +171,8 @@ ms.locfileid: "80384115"
 
     c. В качестве **URL-адреса ответа** введите один из следующих URL-адресов:
 
-    |||
-    |-|-|
-    | `https://instancename.service-now.com/navpage.do` |
-    | `https://instancename.service-now.com/customer.do` |
+    - `https://instancename.service-now.com/navpage.do`
+    - `https://instancename.service-now.com/customer.do`
 
     > [!NOTE]
     > Эти значения приведены в качестве примера. Необходимо заменить эти значения фактическим URL-адресом для входа и идентификатором, как описано ниже. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

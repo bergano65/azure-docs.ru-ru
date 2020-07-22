@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 01/13/2020
 ms.author: thvankra
-ms.openlocfilehash: 8f84d611ecdf3fc0f86273498753e550315cd878
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
-ms.translationtype: HT
+ms.openlocfilehash: c9517b6d48f21a2ac2c4b92e68c788a33897511b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83586190"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85119160"
 ---
 # <a name="elastically-scale-an-azure-cosmos-db-cassandra-api-account"></a>Эластичное масштабирование учетной записи API Cassandra в Azure Cosmos DB
 
@@ -19,7 +19,7 @@ ms.locfileid: "83586190"
 
 Для API Cassandra вы можете получить сведения о расходуемых единицах запросов для отдельных запросов с помощью [.NET и пакетов SDK для Java](https://docs.microsoft.com/azure/cosmos-db/find-request-unit-charge#cassandra-api). Это может оказаться полезным при определении числа ЕЗ/с для подготовки в службе.
 
-![Операции с базой данных потребляют единицы запроса](./media/request-units/request-units.png)
+:::image type="content" source="./media/request-units/request-units.png" alt-text="Операции с базой данных потребляют единицы запроса" border="false":::
 
 ## <a name="handling-rate-limiting-429-errors"></a>Обработка ограничения частоты (429 ошибок)
 

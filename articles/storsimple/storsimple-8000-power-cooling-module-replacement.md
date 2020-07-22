@@ -9,17 +9,16 @@ editor: ''
 ms.assetid: ''
 ms.service: storsimple
 ms.devlang: NA
-ms.topic: article
+ms.topic: troubleshooting
 ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 06/02/2017
 ms.author: alkohli
-ms.openlocfilehash: 42561570e24aec5edd33248ef1738e53175e480e
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
-ms.translationtype: MT
+ms.openlocfilehash: 045cec85174a88d1d608a4adc679461008852768
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "60632509"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85514591"
 ---
 # <a name="replace-a-power-and-cooling-module-on-your-storsimple-device"></a>Замена блока питания и охлаждения на устройстве StorSimple
 ## <a name="overview"></a>Обзор
@@ -139,6 +138,6 @@ ms.locfileid: "60632509"
    > [!NOTE]
    > Для полной инициализации установленного БПО может потребоваться несколько минут.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 Узнайте подробнее о [замене компонентов оборудования StorSimple](storsimple-8000-hardware-component-replacement.md).
 

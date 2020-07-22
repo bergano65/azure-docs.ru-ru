@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 08/18/2017
 ms.author: masnider
 ms.openlocfilehash: 94ed906533d108081d620e9b183ecfee249d85ca
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75551698"
 ---
 # <a name="cluster-resource-manager-architecture-overview"></a>Общие сведения об архитектуре диспетчера кластерных ресурсов
@@ -55,7 +54,7 @@ ms.locfileid: "75551698"
 ![Архитектура балансировщика ресурсов][Image2]
 </center>
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - В Cluster Resource Manager предусмотрено много параметров для описания кластера. Чтобы узнать больше о них, ознакомьтесь с этой статьей, посвященной [описанию кластера Service Fabric](./service-fabric-cluster-resource-manager-cluster-description.md)
 - Основная задача диспетчера кластерных ресурсов — перераспределение нагрузки кластера и применение правил размещения. Дополнительные сведения о настройке этих функций см. в разделе [Балансировка кластера Service Fabric](./service-fabric-cluster-resource-manager-balancing.md).
 

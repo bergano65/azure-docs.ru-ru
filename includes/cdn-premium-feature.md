@@ -16,7 +16,7 @@ ms.lasthandoff: 04/28/2020
 ms.locfileid: "74284153"
 ---
 > [!IMPORTANT]
-> Это функция **Azure CDN Premium только из Verizon** . для настройки правил на **Azure CDN от Майкрософт** используйте [обработчик стандартных правил](../articles/cdn/cdn-standard-rules-engine-reference.md). Дополнительные правила недоступны для **Azure CDN из Akamai**. Полное сравнение функций CDN см. в разделе [Azure CDN компонентов продукта](../articles/cdn/cdn-features.md). 
+> Это функция только **Azure CDN Premium от Verizon**. Чтобы настроить правила **Azure CDN от Майкрософт**, используйте [стандартный обработчик правил](../articles/cdn/cdn-standard-rules-engine-reference.md). Дополнительные правила недоступны для **Azure CDN от Akamai**. Полное сравнение возможностей CDN см. в статье [Характеристики продукта Azure CDN](../articles/cdn/cdn-features.md). 
 > 
 > 
 

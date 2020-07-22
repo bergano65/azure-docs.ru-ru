@@ -11,13 +11,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc
 ms.topic: article
-ms.date: 09/05/2019
-ms.openlocfilehash: 9652b78674d6a6b905eb049564d1b17cdc7c17b7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 07/08/2020
+ms.openlocfilehash: 4e6f8a115e996ac6862f2fb04e5050b94f9f823b
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78254929"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86132740"
 ---
 # <a name="status-of-migration-scenarios-supported-by-azure-database-migration-service"></a>Состояние сценариев миграции, поддерживаемых Azure Database Migration Service
 
@@ -45,43 +45,50 @@ Azure Database Migration Service предназначен для поддерж�
 
 В следующей таблице показана поддержка автономных миграций в службе Azure Database Migration Service.
 
-| Назначение  | Источник | Поддержка | Состояние |
+| целевого объекта  | Источник | Поддержка | Состояние |
 | ------------- | ------------- |:-------------:|:-------------:|
 | **БД SQL Azure** | SQL Server | ✔ | GA |
-|   | RDS SQL |  |  |
-|   | Oracle; |  |  |
+|   | RDS SQL | X |  |
+|   | Oracle; | X |  |
 | **Управляемый экземпляр Базы данных SQL Azure** | SQL Server | ✔ | GA |
-|   | RDS SQL |  |  |
-|   | Oracle; |  |   |
+|   | RDS SQL | X |  |
+|   | Oracle; | X |   |
 | **Виртуальная машина Azure SQL** | SQL Server | ✔ | GA |
-|   | Oracle; |   |   |
+|   | Oracle; | X |   |
 | **Azure Cosmos DB** | MongoDB | ✔ | GA |
-| **База данных Azure для MySQL** | MySQL |   |   |
-|   | RDS MySQL |   |   |
-| **База данных Azure для PostgreSQL** | PostgreSQL |  |
-|  | RDS PostgreSQL |   |   |
+| **База данных Azure для MySQL** | MySQL | X |   |
+|   | RDS MySQL | X |   |
+| **База данных Azure для PostgreSQL — один сервер** | PostgreSQL | X |
+|  | RDS PostgreSQL | X |   |
+| **База данных Azure для PostgreSQL — масштабирование (Цитус)** | PostgreSQL | X |
+|  | RDS PostgreSQL | X |   |
 
 ### <a name="online-continuous-sync-migration-support"></a>Поддержка миграции с подключением к сети (непрерывная синхронизация)
 
 В следующей таблице показана поддержка миграций с подключением к сети в службе Azure Database Migration Service.
 
-| Назначение  | Источник | Поддержка | Состояние |
+| целевого объекта  | Источник | Поддержка | Состояние |
 | ------------- | ------------- |:-------------:|:-------------:|
 | **БД SQL Azure** | SQL Server | ✔ | GA |
 |   | RDS SQL | ✔ | GA |
-|   | Oracle; |  |  |
+|   | Oracle; | X |  |
 | **Управляемый экземпляр Базы данных SQL Azure** | SQL Server | ✔ | GA |
 |   | RDS SQL | ✔ | GA |
-|   | Oracle; | ✔ | Закрытая предварительная версия |
-| **Виртуальная машина Azure SQL** | SQL Server |   |   |
-|   | Oracle;  |  |  |
+|   | Oracle; | X |  |
+| **Виртуальная машина Azure SQL** | SQL Server | X |   |
+|   | Oracle;  | X |  |
 | **Azure Cosmos DB** | MongoDB | ✔ | GA |
 | **База данных Azure для MySQL** | MySQL | ✔ | GA |
 |   | RDS MySQL | ✔ | GA |
-| **База данных Azure для PostgreSQL** | PostgreSQL | ✔ | GA |
+| **База данных Azure для PostgreSQL — один сервер** | PostgreSQL | ✔ | GA |
+|   | База данных Azure для PostgreSQL — один сервер * | ✔ | GA |
 |   | RDS PostgreSQL | ✔ | GA |
 |   | Oracle; | ✔ | Общедоступная предварительная версия |
+| **База данных Azure для PostgreSQL — масштабирование (Цитус)** | PostgreSQL | ✔ | GA |
+|   | RDS PostgreSQL | ✔ | GA |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+* Поддерживается для PostgreSQL версии 10 и более поздних версий.
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Общие сведения о доступности Azure Database Migration Service и региональных стандартов см. в статье [что такое Azure Database Migration Service](dms-overview.md).

@@ -11,18 +11,18 @@ author: djpmsft
 ms.author: daperlov
 ms.reviewer: maghan
 manager: anandsub
-ms.openlocfilehash: e102b14d8471a19564f66edc27cc328c2a789c98
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.custom: tracking-python
+ms.openlocfilehash: 6ae42c9cb68b28e5d2f0b5a2ba3cf7eab74a74b4
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81414599"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84561127"
 ---
 # <a name="transform-data-by-running-a-python-activity-in-azure-databricks"></a>Преобразование данных с помощью выполнения действий Python в Azure Databricks
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 
-Действие Python в Azure Databricks в [конвейере фабрики данных](concepts-pipelines-activities.md) позволяет запустить файл Python в кластере Azure Databricks. Эта статья посвящена [действиям преобразования данных](transform-data.md), в которых представлен общий обзор преобразования данных и поддерживаемых действий преобразования.Azure Databricks — это управляемая платформа для запуска Apache Spark.
+Действие Python в Azure Databricks в [конвейере фабрики данных](concepts-pipelines-activities.md) позволяет запустить файл Python в кластере Azure Databricks. Эта статья посвящена [действиям преобразования данных](transform-data.md)   , в которых представлен общий обзор преобразования данных и поддерживаемых действий преобразования.Azure Databricks — это управляемая платформа для запуска Apache Spark.
 
 Уделите 11 минут вашего времени, чтобы просмотреть следующее видео с кратким обзором и демонстрацией этой функции:
 
@@ -63,12 +63,12 @@ ms.locfileid: "81414599"
 
 В следующей таблице приведено описание свойств, используемых в определении JSON.
 
-|Свойство|Описание|Обязательный|
+|Свойство|Описание|Обязательно|
 |---|---|---|
 |name|Имя действия в конвейере.|Да|
 |description|Описание действия.|Нет|
 |type|Тип действия Python в Databricks — DatabricksSparkPython.|Да|
-|linkedServiceName|Имя связанной службы Databricks, в которой выполняется действие Python. Дополнительные сведения об этой связанной службе см. в статье [связанные службы](compute-linked-services.md) вычислений.|Да|
+|linkedServiceName|Имя связанной службы Databricks, в которой выполняется действие Python. Дополнительные сведения об этой связанной службе см. в статье [связанные службы вычислений](compute-linked-services.md)   .|Да|
 |pythonFile|URI файла Python, который будет выполнен. Поддерживаются только пути DBFS.|Да|
 |параметры|Параметры командной строки, которые будут переданы в файл Python. Массив строк.|Нет|
 |libraries|Список библиотек, которые должны быть установлены на кластере, на котором будет выполнено задание. Массив объектов <строка, объект>|Нет|

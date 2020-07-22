@@ -10,15 +10,15 @@ ms.service: genomics
 ms.topic: conceptual
 ms.date: 03/02/2018
 ms.openlocfilehash: d6228762b9a1299d8e9229f7a0f73dc7d0bca2b2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "72248590"
 ---
 # <a name="submit-a-workflow-to-microsoft-genomics-using-a-sas-instead-of-a-storage-account-key"></a>Отправка рабочего процесса в Microsoft Genomics с использованием SAS вместо ключа учетной записи хранения 
 
-В этой статье показано, как отправить рабочий процесс в Microsoft Genomicsную службу с помощью файла config. txt, содержащего [подписанные URL-адрес (SAS)](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1) , а не ключи учетной записи хранения. Эта функция может быть полезна, если есть опасения в отношении раскрытия ключа учетной записи хранения в файле config.txt. 
+В этой статье показано, как отправить рабочий процесс в службу Microsoft Genomics с помощью файла config.txt, содержащего [подписанные URL-адрес (SAS)](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1) , а не ключи учетной записи хранения. Эта функция может быть полезна, если есть опасения в отношении раскрытия ключа учетной записи хранения в файле config.txt. 
 
 В этой статье предполагается, что вы уже установили и запустили клиент `msgen` и знаете, как использовать службу хранилища Azure. Если вы успешно отправили рабочий процесс с помощью предоставленных примеров данных, можно приступать к работе с этой статьей. 
 

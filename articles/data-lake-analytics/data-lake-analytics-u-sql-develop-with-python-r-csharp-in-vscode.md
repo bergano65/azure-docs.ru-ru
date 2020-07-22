@@ -6,14 +6,15 @@ ms.service: data-lake-analytics
 author: jejiang
 ms.author: jejiang
 ms.reviewer: jasonwhowell
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 11/22/2017
-ms.openlocfilehash: cb3ddf0c4147fa982e8ab0f9d440292d12803d35
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.custom: tracking-python
+ms.openlocfilehash: a9686cefbbdf04d8425de673827f31cbfecb873c
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "71309708"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86121237"
 ---
 # <a name="develop-u-sql-with-python-r-and-c-for-azure-data-lake-analytics-in-visual-studio-code"></a>Разработка U-SQL с помощью Python, R, и C# для Azure Data Lake Analytics в Visual Studio Code
 Сведения об использовании Visual Studio Code (VSCode) для записи кода программной части Python, R и C# с помощью U-SQL и отправки заданий в службу Azure Data Lake. Дополнительные сведения об использовании Средств Azure Data Lake для VSCode см. в статье [Использование средств Azure Data Lake для Visual Studio Code](data-lake-analytics-data-lake-tools-for-vscode.md).

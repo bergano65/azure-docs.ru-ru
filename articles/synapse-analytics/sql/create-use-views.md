@@ -5,16 +5,16 @@ services: synapse-analytics
 author: azaricstefan
 ms.service: synapse-analytics
 ms.topic: overview
-ms.subservice: ''
-ms.date: 04/15/2020
+ms.subservice: sql
+ms.date: 05/20/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: 0f5323193706fdd00739be6c71a4fe12cfedf21b
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 79206ffb51b41c3d7e671bb37353548b47190f6b
+ms.sourcegitcommit: 6fd28c1e5cf6872fb28691c7dd307a5e4bc71228
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81420778"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85206468"
 ---
 # <a name="create-and-use-views-in-sql-on-demand-preview-using-azure-synapse-analytics"></a>Создание и использование представлений в SQL по запросу (предварительная версия) с помощью Azure Synapse Analytics
 
@@ -22,17 +22,14 @@ ms.locfileid: "81420778"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Первым делом необходимо ознакомиться со статьями, приведенными ниже, и убедиться, что выполнены необходимые условия для создания и использования представлений SQL по запросу:
-
-- [Изначальная настройка](query-data-storage.md#first-time-setup)
-- [Предварительные требования](query-data-storage.md#prerequisites)
+Первый этап — создание базы данных. В ней создается представление и инициализируются объекты, необходимые для проверки подлинности в службе хранилища Azure. Для этого в базе данных выполняется [скрипт установки](https://github.com/Azure-Samples/Synapse/blob/master/SQL/Samples/LdwSample/SampleDB.sql). Все запросы в этой статье будут выполняться в примере базы данных.
 
 ## <a name="create-a-view"></a>Создание представления
 
-Представления можно создавать так же, как и обычные представления SQL Server. Приведенный ниже запрос создает представление, которое считывает файл *population.csv*.
+Представления можно создавать так же, как и обычные представления SQL Server. Приведенный ниже запрос позволяет создать представление, которое считывает файл *population.csv*.
 
 > [!NOTE]
-> Измените первую строку в запросе ([mydbname]), чтобы использовать созданную вами базу данных. Если вы не создали базу данных, ознакомьтесь с разделом [Изначальная настройка](query-data-storage.md#first-time-setup).
+> Измените первую строку в запросе ([mydbname]), чтобы использовать созданную вами базу данных.
 
 ```sql
 USE [mydbname];
@@ -44,8 +41,9 @@ GO
 CREATE VIEW populationView AS
 SELECT * 
 FROM OPENROWSET(
-        BULK 'https://sqlondemandstorage.blob.core.windows.net/csv/population/population.csv',
-         FORMAT = 'CSV', 
+        BULK 'csv/population/population.csv',
+        DATA_SOURCE = 'SqlOnDemandDemo',
+        FORMAT = 'CSV', 
         FIELDTERMINATOR =',', 
         ROWTERMINATOR = '\n'
     )
@@ -57,14 +55,27 @@ WITH (
 ) AS [r];
 ```
 
+В представлении в этом примере применяется функция `OPENROWSET`, которая использует абсолютный путь к базовым файлам. Если есть `EXTERNAL DATA SOURCE` с корневым URL-адресом хранилища, можно использовать `OPENROWSET` с `DATA_SOURCE` и относительным путем к файлу:
+
+```
+CREATE VIEW TaxiView
+AS SELECT *, nyc.filepath(1) AS [year], nyc.filepath(2) AS [month]
+FROM
+    OPENROWSET(
+        BULK 'parquet/taxi/year=*/month=*/*.parquet',
+        DATA_SOURCE = 'sqlondemanddemo',
+        FORMAT='PARQUET'
+    ) AS nyc
+```
+
 ## <a name="use-a-view"></a>Использование представления
 
 Представления в запросах можно использовать так же, как и в запросах SQL Server.
 
-Следующий запрос демонстрирует использование представления *population_csv*, созданного в разделе [Создание представления](#create-a-view). Он возвращает названия стран с их населением в 2019 г. в убывающем порядке.
+Следующий запрос демонстрирует использование представления *population_csv*, созданного в разделе [Создание представления](#create-a-view). Он возвращает названия стран и регионов с численностью населения по состоянию на 2019 г. в убывающем порядке.
 
 > [!NOTE]
-> Измените первую строку в запросе ([mydbname]), чтобы использовать созданную вами базу данных. Если вы не создали базу данных, ознакомьтесь с разделом [Изначальная настройка](query-data-storage.md#first-time-setup).
+> Измените первую строку в запросе ([mydbname]), чтобы использовать созданную вами базу данных.
 
 ```sql
 USE [mydbname];

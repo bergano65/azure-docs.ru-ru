@@ -8,12 +8,12 @@ ms.topic: sample
 ms.date: 04/05/2018
 author: sakash279
 ms.author: akshanka
-ms.openlocfilehash: d04cf082f5dc7ca3ae07b60dc193c66613fa5c4f
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 1f0541cd3ae7cf2c78d3cd2bf6844fed930e7968
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "76771081"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85833153"
 ---
 # <a name="how-to-use-azure-table-storage-or-the-azure-cosmos-db-table-api-from-nodejs"></a>Как использовать в Node.js Хранилище таблиц Azure и API таблиц Azure Cosmos DB
 [!INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
@@ -41,16 +41,19 @@ ms.locfileid: "76771081"
 1. Используя интерфейс командной строки, например **PowerShell** (Windows), **Terminal** (Mac) или **Bash** (Unix), перейдите в папку, в которой вы создали приложение.
 2. Введите в командной строке **npm install azure-storage** . Результат выполнения этой команды будет аналогичен следующему примеру:
 
-       azure-storage@0.5.0 node_modules\azure-storage
-       +-- extend@1.2.1
-       +-- xmlbuilder@0.4.3
-       +-- mime@1.2.11
-       +-- node-uuid@1.4.3
-       +-- validator@3.22.2
-       +-- underscore@1.4.4
-       +-- readable-stream@1.0.33 (string_decoder@0.10.31, isarray@0.0.1, inherits@2.0.1, core-util-is@1.0.1)
-       +-- xml2js@0.2.7 (sax@0.5.2)
-       +-- request@2.57.0 (caseless@0.10.0, aws-sign2@0.5.0, forever-agent@0.6.1, stringstream@0.0.4, oauth-sign@0.8.0, tunnel-agent@0.4.1, isstream@0.1.2, json-stringify-safe@5.0.1, bl@0.9.4, combined-stream@1.0.5, qs@3.1.0, mime-types@2.0.14, form-data@0.2.0, http-signature@0.11.0, tough-cookie@2.0.0, hawk@2.3.1, har-validator@1.8.0)
+   ```bash
+    azure-storage@0.5.0 node_modules\azure-storage
+    +-- extend@1.2.1
+    +-- xmlbuilder@0.4.3
+    +-- mime@1.2.11
+    +-- node-uuid@1.4.3
+    +-- validator@3.22.2
+    +-- underscore@1.4.4
+    +-- readable-stream@1.0.33 (string_decoder@0.10.31, isarray@0.0.1, inherits@2.0.1, core-util-is@1.0.1)
+    +-- xml2js@0.2.7 (sax@0.5.2)
+    +-- request@2.57.0 (caseless@0.10.0, aws-sign2@0.5.0, forever-agent@0.6.1, stringstream@0.0.4, oauth-sign@0.8.0, tunnel-agent@0.4.1, isstream@0.1.2, json-stringify-safe@5.0.1, bl@0.9.4, combined-stream@1.0.5, qs@3.1.0, mime-types@2.0.14, form-data@0.2.0, http-signature@0.11.0, tough-cookie@2.0.0, hawk@2.3.1, har-validator@1.8.0)
+   ```
+
 3. Выполнив команду **ls** вручную, можно убедиться, что папка **node_modules** создана. В этой папке находится пакет **azure-storage** , содержащий библиотеки, необходимые для доступа к хранилищу.
 
 ### <a name="import-the-package"></a>Импорт пакета
@@ -72,10 +75,10 @@ var tableSvc = azure.createTableService('myaccount', 'myaccesskey');
 
 ```javascript
 var tableSvc = azure.createTableService('myaccount', 'myprimarykey', 'myendpoint');
-```  
+```
 
 ## <a name="create-a-table"></a>Создание таблицы
-Следующий код создает объект **TableService** и использует его для создания новой таблицы. 
+Следующий код создает объект **TableService** и использует его для создания новой таблицы.
 
 ```javascript
 var tableSvc = azure.createTableService();
@@ -136,8 +139,6 @@ var task = {
 
 > [!NOTE]
 > Для каждой записи есть поле **Timestamp** , значение которого задается Azure при вставке или обновлении сущности.
->
->
 
 Чтобы создать сущность, можно также использовать **entityGenerator** . В следующем примере код создает сущность для той же задачи с использованием **entityGenerator**.
 
@@ -173,8 +174,6 @@ tableSvc.insertEntity('mytable',task, function (error, result, response) {
 > По умолчанию метод **insertEntity** не возвращает вставленную сущность как часть информации, содержащейся в `response`. Если вы хотите выполнить другие операции с этой сущностью или кэшировать информацию, необходимо, чтобы она была возвращена как часть `result`. Это можно сделать следующим образом, включив **echoContent** :
 >
 > `tableSvc.insertEntity('mytable', task, {echoContent: true}, function (error, result, response) {...}`
->
->
 
 ## <a name="update-an-entity"></a>Обновление сущности
 Для обновления имеющейся сущности доступно несколько методов:
@@ -365,7 +364,7 @@ dc.table.queryEntities(tableName,
 
 Если обратиться к объекту `continuationToken`, то вы обнаружите, что он имеет такие свойства, как `nextPartitionKey`, `nextRowKey` и `targetLocation`, которые можно использовать для итерации по всем результатам.
 
-Можно также использовать `top` вместе с `continuationToken`, чтобы задать размер страницы. 
+Можно также использовать `top` вместе с `continuationToken`, чтобы задать размер страницы.
 
 ## <a name="work-with-shared-access-signatures"></a>Работа с подписями общего доступа
 Подписанные URL-адреса (SAS) — безопасный способ предоставить детализированный доступ к таблицам без указания имени или ключей своей учетной записи хранения. SAS часто используется для предоставления ограниченного доступа к данным, например, позволяет мобильному приложению запрашивать записи.
@@ -394,7 +393,7 @@ var host = tableSvc.host;
 
 Обратите внимание, что также должна быть предоставлена информация об узле, так как она требуется владельцу SAS для совершения попыток доступа к таблице.
 
-Клиентское приложение далее использует подпись SAS с помощью **TableServiceWithSAS** для выполнения операций с таблицей. Следующий пример выполняет подключение к таблице и выполняет запрос. Дополнительные сведения о формате подписанных URL-адресов для таблиц см. в статье об [использование подписанных URL-адресов SAS в службе хранилища Azure](../storage/common/storage-sas-overview.md). 
+Клиентское приложение далее использует подпись SAS с помощью **TableServiceWithSAS** для выполнения операций с таблицей. Следующий пример выполняет подключение к таблице и выполняет запрос. Дополнительные сведения о формате подписанных URL-адресов для таблиц см. в статье об [использование подписанных URL-адресов SAS в службе хранилища Azure](../storage/common/storage-sas-overview.md).
 
 ```javascript
 // Note in the following command, host is in the format: `https://<your_storage_account_name>.table.core.windows.net` and the tableSAS is in the format: `sv=2018-03-28&si=saspolicy&tn=mytable&sig=9aCzs76n0E7y5BpEi2GvsSv433BZa22leDOZXX%2BXXIU%3D`;
@@ -459,6 +458,6 @@ tableSAS = tableSvc.generateSharedAccessSignature('hometasks', { Id: 'user2' });
 
 * [Обозреватель хранилищ Microsoft Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md) — это бесплатное автономное приложение от корпорации Майкрософт, позволяющее визуализировать данные из службы хранилища Azure на платформе Windows, macOS и Linux.
 * Репозиторий [пакета SDK службы хранилища Azure для Node](https://github.com/Azure/azure-storage-node) на сайте GitHub.
-* [Azure для разработчиков Node.js](https://docs.microsoft.com/azure/javascript/)
+* [Azure для разработчиков Node.js](https://docs.microsoft.com/azure/developer/javascript/)
 * [Создание веб-приложений Node.js в Azure](../app-service/app-service-web-get-started-nodejs.md)
 * [Создание и развертывание приложения Node.js в облачной службе Azure](../cloud-services/cloud-services-nodejs-develop-deploy-app.md) (с помощью Windows PowerShell)

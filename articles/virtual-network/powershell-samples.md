@@ -4,7 +4,7 @@ description: Примеры скриптов Azure PowerShell для вирту�
 services: virtual-network
 documentationcenter: virtual-network
 author: KumudD
-manager: twooley
+manager: mtillman
 editor: ''
 tags: ''
 ms.assetid: ''
@@ -15,18 +15,18 @@ ms.tgt_pltfrm: ''
 ms.workload: infrastructure
 ms.date: 07/15/2019
 ms.author: kumud
-ms.openlocfilehash: de752cdacf17193d5be95b2b9f887938ace2d50f
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 1e1bac855ef943bdddcc82966ff3b824bcbe2ad0
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74091867"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86232225"
 ---
 # <a name="azure-powershell-samples-for-virtual-network"></a>Примеры скриптов Azure PowerShell для виртуальной сети
 
 В таблице ниже приведены ссылки на скрипты Azure PowerShell.
 
-| | |
+| Скрипт | Описание |
 |----|----|
 | [Создание виртуальной сети для многоуровневых приложений](./scripts/virtual-network-powershell-sample-multi-tier-application.md) | Создание виртуальной сети с интерфейсной и внутренней подсетями. Трафик к интерфейсной подсети принимается по протоколу HTTP, в то время как трафик к внутренней подсети принимается только от SQL через порт 1433. |
 | [Пиринг между двумя виртуальными сетями](./scripts/virtual-network-powershell-sample-peer-two-virtual-networks.md) | Создание и подключение двух виртуальных сетей в одном регионе. |

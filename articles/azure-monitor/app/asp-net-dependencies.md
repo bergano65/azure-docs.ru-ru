@@ -2,21 +2,21 @@
 title: Отслеживание зависимостей в Azure Application Insights | Документация Майкрософт
 description: Отслеживайте вызовы зависимостей из локального или Microsoft Azure веб-приложения с помощью Application Insights.
 ms.topic: conceptual
-ms.date: 03/26/2020
-ms.openlocfilehash: 2b7a20731fa5eae8313adcf07d877626fcaa4dce
-ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
+ms.date: 06/26/2020
+ms.openlocfilehash: 472d7d26c8a478f521159a44959d7e0a5d749e0d
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82980853"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86081355"
 ---
 # <a name="dependency-tracking-in-azure-application-insights"></a>Отслеживание зависимостей в Azure Application Insights 
 
-*Зависимость* — это внешний компонент, который вызывается приложением. Как правило, это служба, вызываемая с использованием HTTP, база данных или файловая система. [Application Insights](../../azure-monitor/app/app-insights-overview.md) измеряет продолжительность вызовов зависимостей, вне зависимости от того, произошел ли сбой, а также дополнительные сведения, такие как имя зависимости и т. д. Можно исследовать конкретные вызовы зависимостей и сопоставлять их с запросами и исключениями.
+*Зависимость* — это компонент, который вызывается приложением. Как правило, это служба, вызываемая с использованием HTTP, база данных или файловая система. [Application Insights](../../azure-monitor/app/app-insights-overview.md) измеряет продолжительность вызовов зависимостей, вне зависимости от того, произошел ли сбой, а также дополнительные сведения, такие как имя зависимости и т. д. Можно исследовать конкретные вызовы зависимостей и сопоставлять их с запросами и исключениями.
 
 ## <a name="automatically-tracked-dependencies"></a>Автоматически отслеживание зависимостей
 
-Пакеты SDK для Application Insights для .NET и .NET Core `DependencyTrackingTelemetryModule` входят в состав модуля телеметрии, который автоматически собирает зависимости. Эта коллекция зависимостей включается автоматически для приложений [ASP.NET](https://docs.microsoft.com/azure/azure-monitor/app/asp-net) и [ASP.NET Core](https://docs.microsoft.com/azure/azure-monitor/app/asp-net-core) , если они настроены в соответствии со связанными официальными документами. `DependencyTrackingTelemetryModule` поставляется в качестве [этого](https://www.nuget.org/packages/Microsoft.ApplicationInsights.DependencyCollector/) пакета NuGet и передается автоматически при использовании любого из пакетов `Microsoft.ApplicationInsights.Web` NuGet или `Microsoft.ApplicationInsights.AspNetCore`.
+Пакеты SDK для Application Insights для .NET и .NET Core входят в состав `DependencyTrackingTelemetryModule` модуля телеметрии, который автоматически собирает зависимости. Эта коллекция зависимостей включается автоматически для приложений [ASP.NET](https://docs.microsoft.com/azure/azure-monitor/app/asp-net) и [ASP.NET Core](https://docs.microsoft.com/azure/azure-monitor/app/asp-net-core) , если они настроены в соответствии со связанными официальными документами. поставляется `DependencyTrackingTelemetryModule` в качестве [этого](https://www.nuget.org/packages/Microsoft.ApplicationInsights.DependencyCollector/) пакета NuGet и передается автоматически при использовании любого из пакетов NuGet `Microsoft.ApplicationInsights.Web` или `Microsoft.ApplicationInsights.AspNetCore` .
 
  `DependencyTrackingTelemetryModule`в настоящее время отслеживает следующие зависимости автоматически:
 
@@ -24,7 +24,7 @@ ms.locfileid: "82980853"
 |---------------|-------|
 |HTTP/HTTPS | Локальные или удаленные вызовы HTTP/HTTPS |
 |Вызовы WCF| Отслеживание выполняется автоматически только при использовании привязок на основе HTTP.|
-|SQL | Вызовы метода выполняются `SqlClient`с помощью. См. [этот](#advanced-sql-tracking-to-get-full-sql-query) раздел для записи SQL.  |
+|SQL | Вызовы метода выполняются с помощью `SqlClient` . См. [этот](#advanced-sql-tracking-to-get-full-sql-query) раздел для записи SQL.  |
 |[Хранилище Azure (большой двоичный объект, таблица, очередь)](https://www.nuget.org/packages/WindowsAzure.Storage/) | Вызовы, сделанные с помощью клиента службы хранилища Azure. |
 |[Пакет SDK клиента EventHub](https://www.nuget.org/packages/Microsoft.Azure.EventHubs) | Версия 1.1.0 и выше. |
 |[Пакет SDK для клиента служебной шины](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus)| Версия 3.0.0 и выше. |
@@ -34,7 +34,7 @@ ms.locfileid: "82980853"
 
 ## <a name="setup-automatic-dependency-tracking-in-console-apps"></a>Настройка автоматического отслеживания зависимостей в консольных приложениях
 
-Для автоматической записи зависимостей из консольных приложений .NET установите пакет `Microsoft.ApplicationInsights.DependencyCollector`NuGet и инициализируйте `DependencyTrackingTelemetryModule` его следующим образом:
+Для автоматической записи зависимостей из консольных приложений .NET установите пакет NuGet `Microsoft.ApplicationInsights.DependencyCollector` и инициализируйте его `DependencyTrackingTelemetryModule` следующим образом:
 
 ```csharp
     DependencyTrackingTelemetryModule depModule = new DependencyTrackingTelemetryModule();
@@ -78,9 +78,9 @@ ms.locfileid: "82980853"
     }
 ```
 
-Кроме того `TelemetryClient` , предоставляет методы `StartOperation` расширения `StopOperation` , которые можно использовать для ручной трассировки зависимостей, как показано [ниже](custom-operations-tracking.md#outgoing-dependencies-tracking) .
+Кроме того, `TelemetryClient` предоставляет методы расширения, `StartOperation` `StopOperation` которые можно использовать для ручной трассировки зависимостей, как показано [ниже](custom-operations-tracking.md#outgoing-dependencies-tracking) .
 
-Если вы хотите отключить стандартный модуль отслеживания зависимостей, удалите ссылку на Депенденцитраккингтелеметримодуле в [ApplicationInsights. config](../../azure-monitor/app/configuration-with-applicationinsights-config.md) для приложений ASP.NET. Для ASP.NET Core приложений следуйте указаниям [здесь](asp-net-core.md#configuring-or-removing-default-telemetrymodules).
+Если вы хотите отключить стандартный модуль отслеживания зависимостей, удалите ссылку на Депенденцитраккингтелеметримодуле в [ApplicationInsights.config](../../azure-monitor/app/configuration-with-applicationinsights-config.md) для приложений ASP.NET. Для ASP.NET Core приложений следуйте указаниям [здесь](asp-net-core.md#configuring-or-removing-default-telemetrymodules).
 
 ## <a name="tracking-ajax-calls-from-web-pages"></a>Отслеживание вызовов AJAX с веб-страниц
 
@@ -88,20 +88,31 @@ ms.locfileid: "82980853"
 
 ## <a name="advanced-sql-tracking-to-get-full-sql-query"></a>Расширенное отслеживание SQL для получения полного SQL запроса
 
-Для вызовов SQL имя сервера и базы данных всегда собираются и сохраняются как имя собранного `DependencyTelemetry`. Имеется дополнительное поле с именем "Data", которое может содержать полный текст запроса SQL.
+Для вызовов SQL имя сервера и базы данных всегда собираются и сохраняются как имя собранного `DependencyTelemetry` . Имеется дополнительное поле с именем "Data", которое может содержать полный текст запроса SQL.
 
-Для ASP.NET Core приложений никаких дополнительных действий по получению полного SQL Server не требуется.
+Для ASP.NET Core приложений теперь требуется явное согласие на сбор текста SQL с помощью
+```csharp
+services.ConfigureTelemetryModule<DependencyTrackingTelemetryModule>((module, o) => { module. EnableSqlCommandTextInstrumentation = true; });
+```
 
-Для приложений ASP.NET полный SQL-запрос собираются с помощью инструментирования кода на основе байт, для которого требуется модуль инструментирования или с помощью пакета NuGet [Microsoft. Data. SqlClient](https://www.nuget.org/packages/Microsoft.Data.SqlClient) вместо библиотеки System. Data. SqlClient. Дополнительные действия, связанные с платформой, как описано ниже, являются обязательными.
+Для ASP.NET приложений полный текст SQL-запроса собираются с помощью инструментирования байтового кода, для которого требуется использовать модуль инструментирования или пакет NuGet [Microsoft. Data. SqlClient](https://www.nuget.org/packages/Microsoft.Data.SqlClient) , а не библиотеку System. Data. SqlClient. Ниже описаны действия, связанные с платформой для включения полной коллекции запросов SQL.
 
 | Платформа | Шаг (ы), необходимый для получения полного SQL-запроса |
 | --- | --- |
 | Веб-приложение Azure |На панели управления веб-приложения [откройте колонку Application Insights](../../azure-monitor/app/azure-web-apps.md) и включите команды SQL в разделе .NET. |
 | Сервер IIS (виртуальная машина Azure, локальная сеть и т. д.) | Либо используйте пакет NuGet [Microsoft. Data. SqlClient](https://www.nuget.org/packages/Microsoft.Data.SqlClient) , либо используйте модуль монитор состояния PowerShell, чтобы [установить модуль инструментирования](../../azure-monitor/app/status-monitor-v2-api-reference.md) и перезапустить службы IIS. |
 | Облачная служба Azure | Добавление [задачи запуска для установки статусмонитор](../../azure-monitor/app/cloudservices.md#set-up-status-monitor-to-collect-full-sql-queries-optional) <br> Приложение следует подключить к пакету SDK для ApplicationInsights во время сборки, установив пакеты NuGet для приложений [ASP.NET](https://docs.microsoft.com/azure/azure-monitor/app/asp-net) или [ASP.NET Core](https://docs.microsoft.com/azure/azure-monitor/app/asp-net-core) |
-| IIS Express. | Использование пакета NuGet [Microsoft. Data. SqlClient](https://www.nuget.org/packages/Microsoft.Data.SqlClient)
+| IIS Express | Используйте пакет NuGet [Microsoft. Data. SqlClient](https://www.nuget.org/packages/Microsoft.Data.SqlClient) .
 
-В приведенных выше случаях правильный способ проверки правильности установки модуля инструментирования — проверка того, что собранная `DependencyTelemetry` версия пакета SDK — "рддп". "рдддсд" или "рддф" указывает, что зависимости собираются через обратные вызовы DiagnosticSource или EventSource, поэтому полный запрос SQL не будет записан.
+В дополнение к описанным выше действиям для платформы, **необходимо явно включить коллекцию команд SQL** , изменив файл applicationInsights.config следующим образом:
+
+```xml
+<Add Type="Microsoft.ApplicationInsights.DependencyCollector.DependencyTrackingTelemetryModule, Microsoft.AI.DependencyCollector">
+<EnableSqlCommandTextInstrumentation>true</EnableSqlCommandTextInstrumentation>
+</Add>
+```
+
+В приведенных выше случаях правильный способ проверки правильности установки модуля инструментирования — проверка того, что собранная версия пакета SDK `DependencyTelemetry` — "рддп". "рдддсд" или "рддф" указывает, что зависимости собираются через обратные вызовы DiagnosticSource или EventSource, поэтому полный запрос SQL не будет записан.
 
 ## <a name="where-to-find-dependency-data"></a>Где найти данные зависимостей
 
@@ -184,12 +195,12 @@ ms.locfileid: "82980853"
 
 ### <a name="how-does-automatic-dependency-collector-report-failed-calls-to-dependencies"></a>*Как в отчете автоматического сборщика зависимостей не удалось вызвать зависимости?*
 
-* Неудачные вызовы зависимостей будут иметь поле Success со значением false. `DependencyTrackingTelemetryModule`не сообщает `ExceptionTelemetry`. Полная модель данных для зависимости описана [здесь](data-model-dependency-telemetry.md).
+* Неудачные вызовы зависимостей будут иметь поле Success со значением false. `DependencyTrackingTelemetryModule`не сообщает `ExceptionTelemetry` . Полная модель данных для зависимости описана [здесь](data-model-dependency-telemetry.md).
 
 ## <a name="open-source-sdk"></a>Пакет SDK с открытым исходным кодом
 Как и каждый Application Insights пакет SDK, модуль коллекции зависимостей также является открытым исходным кодом. Прочтите код и догляните в него или сообщите о проблемах в [официальном репозитории GitHub](https://github.com/Microsoft/ApplicationInsights-dotnet-server).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Исключения](../../azure-monitor/app/asp-net-exceptions.md)
 * [Данные пользователей и страниц](../../azure-monitor/app/javascript.md)

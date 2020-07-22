@@ -5,17 +5,17 @@ description: Общие сведения о частных конечных то
 services: storage
 author: santoshc
 ms.service: storage
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/12/2020
 ms.author: santoshc
 ms.reviewer: santoshc
 ms.subservice: common
-ms.openlocfilehash: c51f2db698f30368c9d4090d3d571fa0c131178a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 7a216b9e430c10f42d48df01746e111355cf91b8
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79299062"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85513287"
 ---
 # <a name="use-private-endpoints-for-azure-storage"></a>Использование частных конечных точек для службы хранилища Azure
 
@@ -79,17 +79,17 @@ ms.locfileid: "79299062"
 
 В приведенном выше примере записи ресурсов DNS для учетной записи хранения "Сторажеаккаунта" при разрешении из-за пределов виртуальной сети, в которой размещается частная конечная точка, будут:
 
-| Имя                                                  | Тип  | Значение                                                 |
+| Имя                                                  | Type  | Значение                                                 |
 | :---------------------------------------------------- | :---: | :---------------------------------------------------- |
 | ``StorageAccountA.blob.core.windows.net``             | CNAME | ``StorageAccountA.privatelink.blob.core.windows.net`` |
-| ``StorageAccountA.privatelink.blob.core.windows.net`` | CNAME | \<общедоступная конечная точка службы хранилища\>                   |
-| \<общедоступная конечная точка службы хранилища\>                   | Объект     | \<общедоступный IP-адрес службы хранилища\>                 |
+| ``StorageAccountA.privatelink.blob.core.windows.net`` | CNAME | \<storage service public endpoint\>                   |
+| \<storage service public endpoint\>                   | Объект     | \<storage service public IP address\>                 |
 
 Как упоминалось ранее, вы можете запретить или контролировать доступ клиентов за пределами виртуальной сети через общедоступную конечную точку с помощью брандмауэра хранилища.
 
 Записи ресурсов DNS для Сторажеаккаунта, разрешенные клиентом в виртуальной сети, где размещается частная конечная точка, будут:
 
-| Имя                                                  | Тип  | Значение                                                 |
+| Имя                                                  | Type  | Значение                                                 |
 | :---------------------------------------------------- | :---: | :---------------------------------------------------- |
 | ``StorageAccountA.blob.core.windows.net``             | CNAME | ``StorageAccountA.privatelink.blob.core.windows.net`` |
 | ``StorageAccountA.privatelink.blob.core.windows.net`` | Объект     | 10.1.1.5                                              |
@@ -108,13 +108,13 @@ ms.locfileid: "79299062"
 | Служба больших двоичных объектов           | `privatelink.blob.core.windows.net`  |
 | Data Lake Storage 2-го поколения | `privatelink.dfs.core.windows.net`   |
 | Служба файлов           | `privatelink.file.core.windows.net`  |
-| служба очередей          | `privatelink.queue.core.windows.net` |
+| Служба очередей          | `privatelink.queue.core.windows.net` |
 | Служба таблиц          | `privatelink.table.core.windows.net` |
 | Статические веб-сайты        | `privatelink.web.core.windows.net`   |
 
 Дополнительные сведения о настройке собственного DNS-сервера для поддержки частных конечных точек см. в следующих статьях:
 
-- [Разрешение имен ресурсов в виртуальных сетях Azure | Документация Майкрософт](/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances#name-resolution-that-uses-your-own-dns-server)
+- [Разрешение имен ресурсов в виртуальных сетях Azure](/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances#name-resolution-that-uses-your-own-dns-server)
 - [Конфигурация DNS для частных конечных точек](/azure/private-link/private-endpoint-overview#dns-configuration)
 
 ## <a name="pricing"></a>Цены
@@ -137,9 +137,9 @@ ms.locfileid: "79299062"
 
 ### <a name="network-security-group-rules-for-subnets-with-private-endpoints"></a>Правила групп безопасности сети для сетей с частными конечными точками
 
-Сейчас нельзя настроить правила [группы безопасности сети](../../virtual-network/security-overview.md) (NSG) и определяемые пользователем маршруты для частных конечных точек. Правила NSG, применяемые к подсети, в которой размещается частная конечная точка, применяются к частной конечной точке. Для этой проблемы ограниченный обходной путь заключается в реализации правил доступа для частных конечных точек в исходных подсетях, хотя этот подход может потребовать более высоких затрат на управление.
+Сейчас нельзя настроить правила [группы безопасности сети](../../virtual-network/security-overview.md) (NSG) и определяемые пользователем маршруты для частных конечных точек. Правила NSG, применяемые к подсети, в которой размещается частная конечная точка, применяются только к другим конечным точкам (например, к сетевым картам), чем частная Для этой проблемы ограниченный обходной путь заключается в реализации правил доступа для частных конечных точек в исходных подсетях, хотя этот подход может потребовать более высоких затрат на управление.
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Настройка брандмауэров службы хранилища Azure и виртуальных сетей](storage-network-security.md)
-- [Рекомендации по безопасности для хранилища BLOB-объектов](../blobs/security-recommendations.md)
+- [Рекомендации по обеспечению безопасности для хранилища BLOB-объектов](../blobs/security-recommendations.md)

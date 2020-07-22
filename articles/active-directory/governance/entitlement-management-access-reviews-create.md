@@ -10,24 +10,24 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.subservice: compliance
-ms.date: 11/01/2019
+ms.date: 06/18/2020
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a862bbb1f574e4adab2f7d8e59a1abe8e5a5fa2a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f7aed942058a922fc8da504fe14c5ad8e0bed59a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "73608843"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85078598"
 ---
 # <a name="create-an-access-review-of-an-access-package-in-azure-ad-entitlement-management"></a>Создание проверки доступа к пакету Access в управлении назначениями Azure AD
 
 Чтобы снизить риск устаревшего доступа, следует включить периодические проверки пользователей, которые имеют активные назначения для пакета Access в управлении назначением Azure AD. Вы можете включить проверку при создании нового пакета Access или изменении существующего пакета Access. В этой статье описывается включение проверок доступа к пакетам Access.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Чтобы включить проверку пакетов доступа, необходимо выполнить необходимые условия для создания пакета Access.
 - Azure AD Premium P2
@@ -92,7 +92,7 @@ ms.locfileid: "73608843"
   
 Если вы назначили гостевых пользователей в качестве рецензентов и не приняли приглашение на гостевую службу Azure AD, они не будут получать сообщения электронной почты от проверок доступа Azure AD. Прежде чем они смогут получать сообщения электронной почты, они должны принять приглашение и создать учетную запись с помощью Azure AD. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Проверка доступа к пакетам Access](entitlement-management-access-reviews-review-access.md)
 - [Самостоятельный обзор пакетов доступа](entitlement-management-access-reviews-self-review.md)

@@ -3,8 +3,8 @@ title: Реализация Oracle Data Guard на виртуальной маш
 description: Быстрое создание и запуск Oracle Data Guard в среде Azure.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
-author: BorisB2015
-manager: gwallace
+author: rgardler
+manager: ''
 editor: ''
 tags: azure-resource-manager
 ms.assetid: ''
@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
-ms.author: borisb
-ms.openlocfilehash: 96528dc34305e77602634110a0153f7623a15c96
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.author: rogardle
+ms.openlocfilehash: 2b0b85792fe1266d2ec6478561193ef0c80ac98f
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81676765"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86224304"
 ---
 # <a name="implement-oracle-data-guard-on-an-azure-linux-virtual-machine"></a>Реализация Oracle Data Guard на виртуальной машине Azure под управлением Linux 
 
@@ -282,7 +282,7 @@ SQL> ALTER DATABASE ADD STANDBY LOGFILE ('/u01/app/oracle/oradata/cdb1/standby_r
 SQL> ALTER DATABASE ADD STANDBY LOGFILE ('/u01/app/oracle/oradata/cdb1/standby_redo04.log') SIZE 50M;
 ```
 
-Включите воспоминаний (что значительно упрощает восстановление) и задайте для параметра Управление\_резервными\_файлами значение авто. Выйдите из SQL * Plus после этого.
+Включите воспоминаний (что значительно упрощает восстановление) и задайте для параметра Управление РЕЗЕРВными \_ файлами значение \_ Авто. Выйдите из SQL * Plus после этого.
 
 ```bash
 SQL> ALTER DATABASE FLASHBACK ON;
@@ -699,7 +699,7 @@ SQL>
 az group delete --name myResourceGroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Создание полной среды Linux с помощью Azure CLI 2.0](../../linux/create-cli-complete.md)
 

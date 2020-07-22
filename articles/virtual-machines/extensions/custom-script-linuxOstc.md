@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 08/14/2018
 ms.author: danis
 ms.openlocfilehash: 1ca20f2c8cda84c241391f67ac542faa4a1f5ecd
-ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82594718"
 ---
 # <a name="use-the-azure-custom-script-extension-version-1-with-linux-virtual-machines"></a>Использование расширения настраиваемых скриптов Azure версии 1 на виртуальных машинах Linux
@@ -118,15 +118,15 @@ ms.locfileid: "82594718"
 
 ### <a name="property-values"></a>Значения свойств
 
-| Название | Значение и пример | Тип данных |
+| Имя | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
 | версия_API | 2015-06-15 | Дата |
 | publisher | Microsoft.OSTCExtensions | строка |
 | type | CustomScriptForLinux | строка |
-| typeHandlerVersion | 1.5 | int |
+| typeHandlerVersion | 1.5 | INT |
 | fileUris (пример) | `https://github.com/MyProject/Archive/MyPythonScript.py` | массиве |
-| commandToExecute (пример) | python MyPythonScript.py \<my-param1\> | строка |
-| enableInternalDNSCheck | true | boolean |
+| commandToExecute (пример) | MyPythonScript.py Python\<my-param1\> | строка |
+| enableInternalDNSCheck | Да | Логическое |
 | storageAccountName (пример) | examplestorageacct | строка |
 | storageAccountKey (пример) | TmJK/1N3AbAZ3q/+hOXoi/l73zOqsaxXDhqa9Y83/v5UpXQp2DQIBuv2Tifp60cE/OaHsJZmQZ7teQfczQj8hg== | строка |
 

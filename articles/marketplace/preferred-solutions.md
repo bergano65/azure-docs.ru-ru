@@ -1,18 +1,18 @@
 ---
 title: Azure Marketplace и предпочтительные решения AppSource — коммерческий рынок Майкрософт
 description: Предпочтительные решения в Marketplace и способ их выбора
-author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
+author: vikrambmsft
+ms.author: vikramb
 ms.date: 06/27/2018
-ms.author: dsindona
-ms.openlocfilehash: 690ee5ed332c7ed342f786e1a9889746054834fa
-ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
+ms.openlocfilehash: 7574406037bdfb2e9b2c76a3c38293a065028ed2
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82872361"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86121033"
 ---
 # <a name="preferred-solutions-in-microsoft-appsource-and-azure-marketplace"></a>Предпочтительные решения в Microsoft AppSource и Azure Marketplace
 

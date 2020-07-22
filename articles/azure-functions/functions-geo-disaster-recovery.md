@@ -4,12 +4,12 @@ description: Как использовать географические рег
 ms.assetid: 9058fb2f-8a93-4036-a921-97a0772f503c
 ms.topic: conceptual
 ms.date: 08/29/2019
-ms.openlocfilehash: 481a716bd6ced5c304da41c70fdcfc687b76661d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 446a76b823ce3592a83d0c2f898041951361b47e
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79080229"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86506287"
 ---
 # <a name="azure-functions-geo-disaster-recovery"></a>Географическое аварийное восстановление функций Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "79080229"
 * Шаблон "активный — активный". Оба региона активны и получают события (дублирующиеся или циклические). "Активный/активный" рекомендуется для функций HTTPS в сочетании с передней дверцей Azure.
 * Активный/пассивный. Один регион является активным и получает события, а вторичный — бездействие.  Если требуется отработка отказа, дополнительный регион активируется и принимает обработку.  Это рекомендуется для таких функций, как служебная шина и концентраторы событий, отличные от HTTP.
 
-Дополнительные сведения о развертывании в нескольких регионах см. в статье как [запускать приложения в несколько регионов](https://docs.microsoft.com/azure/architecture/reference-architectures/app-service-web-app/multi-region) .
+Дополнительные сведения о развертывании в нескольких регионах см. в статье как [запускать приложения в несколько регионов](/azure/architecture/reference-architectures/app-service-web-app/multi-region) .
 
 ## <a name="activeactive-for-https-functions"></a>"Активный/активный" для функций HTTPS
 
@@ -52,7 +52,7 @@ ms.locfileid: "79080229"
 
 Дополнительные сведения и рекомендации по отработке отказа с помощью [служебной шины](../service-bus-messaging/service-bus-geo-dr.md) и [концентраторов событий](../event-hubs/event-hubs-geo-dr.md)см. в этой статье.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание передней дверцы Azure](../frontdoor/quickstart-create-front-door.md)
 * [Рекомендации по отработке отказа концентраторов событий](../event-hubs/event-hubs-geo-dr.md#considerations)

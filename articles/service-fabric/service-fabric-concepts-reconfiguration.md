@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: aprameyr
 ms.openlocfilehash: bd46a7776495624affef77a44fcf68334750ba17
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75610001"
 ---
 # <a name="reconfiguration-in-azure-service-fabric"></a>Перенастройка в Azure Service Fabric
@@ -48,7 +47,7 @@ ms.locfileid: "75610001"
 
 Используйте отчеты о работоспособности из системных компонентов, таких как System.FM, System.RA и System.RAP, чтобы диагностировать причину блокировки перенастройки. Эти отчеты описаны на [странице отчетов о работоспособности системы](service-fabric-understand-and-troubleshoot-with-system-health-reports.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о понятиях Service Fabric см. в следующих статьях:
 
 - [Жизненный цикл Reliable Services (C#)](service-fabric-reliable-services-lifecycle.md)

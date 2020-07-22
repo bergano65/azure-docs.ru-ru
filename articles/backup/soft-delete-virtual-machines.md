@@ -1,16 +1,17 @@
 ---
-title: Обратимое удаление для виртуальных машин
+title: Обратимое удаление виртуальных машин
 description: Узнайте, как обратимое удаление виртуальных машин делает резервные копии более безопасными.
 ms.topic: conceptual
 ms.date: 04/30/2020
-ms.openlocfilehash: ba00b235ea70bcc2dabbd5a91a3f7003f9bbed49
-ms.sourcegitcommit: 3beb067d5dc3d8895971b1bc18304e004b8a19b3
+ms.custom: references_regions
+ms.openlocfilehash: e447db2c3f862d2f577a9e7d8767946375abf4e0
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82765777"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86503546"
 ---
-# <a name="soft-delete-for-virtual-machines"></a>Обратимое удаление для виртуальных машин
+# <a name="soft-delete-for-virtual-machines"></a>Обратимое удаление виртуальных машин
 
 Обратимое удаление для виртуальных машин защищает резервные копии виртуальных машин от непреднамеренного удаления. Даже после удаления резервных копий они сохраняются в состоянии обратимого удаления в течение 14 дополнительных дней.
 
@@ -67,7 +68,7 @@ ms.locfileid: "82765777"
 
 ### <a name="delete-the-backup-item-using-azure-powershell"></a>Удаление элемента резервного копирования с помощью Azure PowerShell
 
-Удалите элемент резервного копирования с помощью командлета [Disable-азрековерисервицесбаккуппротектион](https://docs.microsoft.com/powershell/module/az.recoveryservices/Disable-AzRecoveryServicesBackupProtection?view=azps-1.5.0) PS.
+Удалите элемент резервного копирования с помощью командлета [Disable-азрековерисервицесбаккуппротектион](/powershell/module/az.recoveryservices/disable-azrecoveryservicesbackupprotection) PS.
 
 ```powershell
 Disable-AzRecoveryServicesBackupProtection -Item $myBkpItem -RemoveRecoveryPoints -VaultId $myVaultID -Force
@@ -94,7 +95,7 @@ VM;iaasvmcontainerv2;selfhostrg;AppVM1    AzureVM             iaasvmcontainerv2;
 $myBkpItem = Get-AzRecoveryServicesBackupItem -BackupManagementType AzureVM -WorkloadType AzureVM -VaultId $myVaultID -Name AppVM1
 ```
 
-Затем выполните операцию отмены удаления с помощью командлета [Undo-азрековерисервицесбаккупитемделетион](https://docs.microsoft.com/powershell/module/az.recoveryservices/undo-azrecoveryservicesbackupitemdeletion?view=azps-3.1.0) PS.
+Затем выполните операцию отмены удаления с помощью командлета [Undo-азрековерисервицесбаккупитемделетион](/powershell/module/az.recoveryservices/undo-azrecoveryservicesbackupitemdeletion) PS.
 
 ```powershell
 Undo-AzRecoveryServicesBackupItemDeletion -Item $myBKpItem -VaultId $myVaultID -Force
@@ -104,7 +105,7 @@ WorkloadName     Operation            Status               StartTime            
 AppVM1           Undelete             Completed            12/5/2019 12:47:28 PM     12/5/2019 12:47:40 PM     65311982-3755-46b5-8e53-c82ea4f0d2a2
 ```
 
-Значение "Делетестате" элемента резервного копирования будет возвращено к "Нотделетед". Но защита по-прежнему останавливается. [Возобновите резервное копирование](https://docs.microsoft.com/azure/backup/backup-azure-vms-automation#change-policy-for-backup-items) , чтобы снова включить защиту.
+Значение "Делетестате" элемента резервного копирования будет возвращено к "Нотделетед". Но защита по-прежнему останавливается. [Возобновите резервное копирование](./backup-azure-vms-automation.md#change-policy-for-backup-items) , чтобы снова включить защиту.
 
 ## <a name="soft-delete-for-vms-using-rest-api"></a>Обратимое удаление для виртуальных машин с помощью REST API
 

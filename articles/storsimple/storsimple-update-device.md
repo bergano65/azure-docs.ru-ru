@@ -14,12 +14,11 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 01/23/2018
 ms.author: twooley
-ms.openlocfilehash: c9451afaefdd220b5f87d4650c7844f06926b03a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: e591a6c1fbf91bb034ec57673f79c549bbec4672
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75933434"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84170092"
 ---
 # <a name="update-your-storsimple-8000-series-device"></a>Обновление устройства StorSimple серии 8000
 > [!NOTE]
@@ -84,22 +83,22 @@ Windows PowerShell для StorSimple используется, чтобы при
 > 
 > 
 
-### <a name="step-1-connect-to-the-serial-console-a-namestep1"></a>Шаг 1. Подключение к последовательной консоли <a name="step1">
+### <a name="step-1-connect-to-the-serial-console"></a>Шаг 1. Подключение к последовательной консоли <a name="step1"></a>
 Сначала используйте приложение, например PuTTY, для доступа к последовательной консоли. В следующей процедуре объясняется, как использовать PuTTY для подключения к последовательной консоли.
 
 [!INCLUDE [storsimple-use-putty](../../includes/storsimple-use-putty.md)]
 
-### <a name="step-2-enter-maintenance-mode-a-namestep2"></a>Шаг 2. Вход в режим обслуживания <a name="step2">
+### <a name="step-2-enter-maintenance-mode"></a>Шаг 2. Вход в режим обслуживания <a name="step2"></a>
 После подключения к консоли проверьте наличие обновлений для установки и перейдите в режим обслуживания, чтобы установить их.
 
 [!INCLUDE [storsimple-enter-maintenance-mode](../../includes/storsimple-enter-maintenance-mode.md)]
 
-### <a name="step-3-install-your-updates-a-namestep3"></a>Шаг 3. Установка обновлений <a name="step3">
+### <a name="step-3-install-your-updates"></a>Шаг 3. Установка обновлений <a name="step3"></a>
 Затем установите обновления.
 
 [!INCLUDE [storsimple-install-maintenance-mode-updates](../../includes/storsimple-install-maintenance-mode-updates.md)]
 
-### <a name="step-4-exit-maintenance-mode-a-namestep4"></a>Шаг 4. Выход из режима обслуживания <a name="step4">
+### <a name="step-4-exit-maintenance-mode"></a>Шаг 4. Выход из режима обслуживания <a name="step4"></a>
 В конце выйдите из режима обслуживания.
 
 [!INCLUDE [storsimple-exit-maintenance-mode](../../includes/storsimple-exit-maintenance-mode.md)]
@@ -119,7 +118,7 @@ Windows PowerShell для StorSimple используется, чтобы при
 ## <a name="what-happens-to-updates-if-you-perform-a-factory-reset-of-the-device"></a>Что происходит с обновлениями при выполнении сброса параметров к значениям по умолчанию?
 Если для устройства выполнить сброс параметров к значениям по умолчанию, все обновления будут потеряны. После того как устройство, для которого выполнен сброс параметров, будет зарегистрировано и настроено, необходимо будет вручную установить обновления с помощью классического портала Azure или Windows PowerShell для StorSimple. Дополнительные сведения о сбросе параметров см. в разделе [Восстановление на устройстве заводских настроек](storsimple-8000-manage-device-controller.md#reset-the-device-to-factory-default-settings).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Узнайте больше об [использовании Windows PowerShell для администрирования устройства StorSimple](storsimple-windows-powershell-administration.md).
 * Узнайте больше об [использовании службы StorSimple Manager для администрирования устройства StorSimple](storsimple-manager-service-administration.md).
 

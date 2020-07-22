@@ -3,15 +3,15 @@ title: Копирование данных из WASB в Azure Data Lake Storage 
 description: Используйте средство DistCp для копирования данных в большие двоичные объекты службы хранилища Azure и обратно в Azure Data Lake Storage 1-го поколения
 author: twooley
 ms.service: data-lake-store
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 01/03/2020
 ms.author: twooley
-ms.openlocfilehash: 455e73ece2d46a508b3077c13c8106fe53beb4de
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c608f357eb1eff9fd36e583b98d26250a71cb923
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75638839"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85515676"
 ---
 # <a name="use-distcp-to-copy-data-between-azure-storage-blobs-and-azure-data-lake-storage-gen1"></a>Использование DistCp для копирования данных между большими двоичными объектами службы хранилища Azure и Azure Data Lake Storage 1-го поколения
 
@@ -23,7 +23,7 @@ ms.locfileid: "75638839"
 
 Если у вас есть кластер HDInsight с доступом к Azure Data Lake Storage 1-го поколения, вы можете использовать средства экосистемы Hadoop, такие как DistCp, для копирования данных в хранилище кластера HDInsight (WASB) и обратно в учетную запись Data Lake Storage 1-го поколения. В этой статье показано, как использовать средство DistCp.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 * **Учетная запись Azure Data Lake Storage 1-го поколения**. За инструкциями по созданию учетной записи обращайтесь к статье [Начало работы с Azure Data Lake Storage 1-го поколения](data-lake-store-get-started-portal.md).
@@ -83,7 +83,7 @@ HDInsight An кластер поставляется с инструментом
 
 * **Шаг 1. Определение общего объема памяти YARN.** Первым шагом является определение объема памяти YARN, доступной для кластера, в котором выполняется задание DistCp. Эта информация доступна на портале Ambari, связанном с кластером. Перейдите по адресу YARN и просмотрите вкладку **configs (конфигурации** ), чтобы увидеть память YARN. Чтобы определить общий объем памяти YARN, умножьте объем памяти YARN для одного узла на количество узлов в кластере.
 
-* **Шаг 2. Расчет количества модулей сопоставления.** Чтобы узнать значение **m**, разделите целую часть общего объема памяти YARN на размер контейнера YARN. Сведения о размере контейнера YARN также доступны на портале Ambari. Перейдите по адресу YARN и просмотрите вкладку **configs (конфигурации** ). В этом окне отображается размер контейнера YARN. Уравнение, которое прибывает в числе модулей сопоставления (**m**),:
+* **Шаг 2. Расчет количества модулей сопоставления.** Чтобы узнать значение **m**, разделите целую часть общего объема памяти YARN на размер контейнера YARN. Сведения о размере контейнера YARN также доступны на портале Ambari. Перейдите по адресу YARN и просмотрите вкладку **configs (конфигурации** ). В этом окне отображается размер контейнера YARN. Уравнение, которое прибывает в числе модулей сопоставления (**m**),:
 
    `m = (number of nodes * YARN memory for each node) / YARN container size`
 
@@ -115,7 +115,7 @@ HDInsight An кластер поставляется с инструментом
 
 * Если выполняется копирование из учетной записи хранилища BLOB-объектов Azure, задание копирования может регулироваться на стороне хранилища BLOB-объектов. Это снижает производительность задания копирования. Дополнительные сведения об ограничениях хранилища BLOB-объектов Azure см. в статье ограничения хранилища Azure в [подписке Azure и ограничениях службы](../azure-resource-manager/management/azure-subscription-service-limits.md).
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 * [Копирование данных из больших двоичных объектов службы хранилища Azure в Data Lake Storage 1-го поколения](data-lake-store-copy-data-azure-storage-blob.md)
 * [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)

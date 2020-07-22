@@ -15,10 +15,9 @@ ms.date: 02/10/2019
 ms.author: juliako
 ms.reviewer: anilmur
 ms.openlocfilehash: f1d4d4f4006702ebe0d057e56cf24a022e73b83e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79251366"
 ---
 # <a name="standard-encoder-formats-and-codecs"></a>Стандартные форматы и кодеки кодировщика
@@ -47,7 +46,7 @@ ms.locfileid: "79251366"
 
 * файлы MXF, GXF и QuickTime со звуковыми дорожками с чередованием стерео или форматом 5.1;
 
-или диспетчер конфигурации служб
+или
 
 * файлы MXF, GXF и QuickTime, где звук переносится как отдельные дорожки PCM, но сопоставление каналов (стерео или 5.1) можно определить по метаданным файла.
 

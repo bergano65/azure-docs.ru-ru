@@ -1,31 +1,36 @@
 ---
-title: rbИнтеграция Azure Active Directory со службой Azure Kubernetes
-description: Узнайте, как использовать Azure CLI для создания кластера Azure Kubernetes Service (AKS) с поддержкой Azure Active Directory.
+title: Интеграция Azure Active Directory со службой Kubernetes Azure (устаревшая служба)
+description: Узнайте, как использовать Azure CLI для создания кластера Azure Kubernetes Service (AKS) с поддержкой Azure Active Directory (прежних версий).
 services: container-service
+author: TomGeske
 ms.topic: article
-ms.date: 04/16/2019
-ms.openlocfilehash: dba6590daf5c64dd1e53663e71a0cc27941b1470
-ms.sourcegitcommit: 31236e3de7f1933be246d1bfeb9a517644eacd61
+ms.date: 07/20/2020
+ms.author: thomasge
+ms.openlocfilehash: dfc3a546f4845d5eb2e4e144b66b5d97e4a68829
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82779949"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86518034"
 ---
-# <a name="integrate-azure-active-directory-with-azure-kubernetes-service-using-the-azure-cli"></a>Интеграция Azure Active Directory со службой Azure Kubernetes с помощью Azure CLI
+# <a name="integrate-azure-active-directory-with-azure-kubernetes-service-using-the-azure-cli-legacy"></a>Интеграция Azure Active Directory со службой Azure Kubernetes с помощью Azure CLI (прежних версий)
 
 Службу Azure Kubernetes (AKS) можно настроить на использование Azure Active Directory (AD) для проверки подлинности пользователей. В этой конфигурации вы можете войти в кластер AKS с помощью маркера проверки подлинности Azure AD. Операторы кластера также могут настраивать Kubernetes управления доступом на основе ролей (RBAC) на основе удостоверения пользователя или членства в группе каталогов.
 
-В этой статье показано, как создать необходимые компоненты Azure AD, а затем развернуть кластер с поддержкой Azure AD и создать базовую роль RBAC в кластере AKS. [Эти действия также можно выполнить с помощью портал Azure][azure-ad-portal].
+В этой статье показано, как создать необходимые компоненты Azure AD, а затем развернуть кластер с поддержкой Azure AD и создать базовую роль RBAC в кластере AKS.
 
 Полный пример скрипта, используемый в этой статье, см. в разделе [Azure CLI Samples AKS Integration by Azure AD][complete-script].
 
-Действительны следующие ограничения.
+> [!Important]
+> AKS имеет новый усовершенствованный интерфейс [Azure AD, управляемый AKS][managed-aad] , который не требует управления сервером или клиентским приложением. Если вы хотите выполнить миграцию, следуйте приведенным [здесь][managed-aad-migrate]инструкциям.
 
-- Azure Active Directory можно включить только при создании нового кластера с поддержкой RBAC. Вы не можете включить эту службу в существующем кластере AKS.
+## <a name="the-following-limitations-apply"></a>Действительны следующие ограничения.
+
+- Azure AD можно включить только в кластере с поддержкой RBAC.
 
 ## <a name="before-you-begin"></a>Перед началом
 
-Требуется Azure CLI версии 2.0.61 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][install-azure-cli].
+Необходимо установить и настроить Azure CLI версии 2.0.61 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][install-azure-cli].
 
 Перейдите по адресу [https://shell.azure.com](https://shell.azure.com), чтобы открыть Cloud Shell в браузере.
 
@@ -77,7 +82,7 @@ serverApplicationSecret=$(az ad sp credential reset \
 Azure AD требуются разрешения для выполнения следующих действий:
 
 * Чтение данных каталога
-* Вход и чтение профилей пользователей
+* Вход в систему и чтение профиля пользователя
 
 Назначьте эти разрешения с помощью команды [AZ AD App Permission Add][az-ad-app-permission-add] :
 
@@ -97,7 +102,7 @@ az ad app permission admin-consent --id  $serverApplicationId
 
 ## <a name="create-azure-ad-client-component"></a>Создание клиентского компонента Azure AD
 
-Второе приложение Azure AD используется, когда пользователь входит в кластер AKS с помощью интерфейса командной строки Kubernetes (`kubectl`). Это клиентское приложение принимает запрос на проверку подлинности от пользователя и проверяет свои учетные данные и разрешения. Создайте приложение Azure AD для клиентского компонента с помощью команды [AZ AD App Create][az-ad-app-create] .
+Второе приложение Azure AD используется, когда пользователь входит в кластер AKS с помощью интерфейса командной строки Kubernetes ( `kubectl` ). Это клиентское приложение принимает запрос на проверку подлинности от пользователя и проверяет свои учетные данные и разрешения. Создайте приложение Azure AD для клиентского компонента с помощью команды [AZ AD App Create][az-ad-app-create] .
 
 ```azurecli-interactive
 clientApplicationId=$(az ad app create \
@@ -196,7 +201,7 @@ kubectl apply -f basic-azure-ad-binding.yaml
 
 ## <a name="access-cluster-with-azure-ad"></a>Доступ к кластеру с помощью Azure AD
 
-Теперь давайте протестируем интеграцию аутентификации Azure AD для кластера AKS. Задайте для `kubectl` контекста конфигурации использование обычных учетных данных пользователя. Этот контекст передает все запросы проверки подлинности обратно через Azure AD.
+Теперь давайте протестируем интеграцию аутентификации Azure AD для кластера AKS. Задайте `kubectl` для контекста конфигурации использование обычных учетных данных пользователя. Этот контекст передает все запросы проверки подлинности обратно через Azure AD.
 
 ```azurecli-interactive
 az aks get-credentials --resource-group myResourceGroup --name $aksname --overwrite-existing
@@ -229,7 +234,7 @@ kube-system   metrics-server-7b97f9cd9-btxzz          1/1     Running   0       
 kube-system   tunnelfront-6ff887cffb-xkfmq            1/1     Running   0          23h
 ```
 
-Токен проверки подлинности `kubectl` , полученный для, кэшируется. После истечения срока действия маркера или повторного создания файла конфигурации Kubernetes будет предложено только выполнить вход.
+Токен проверки подлинности, полученный для `kubectl` , кэшируется. После истечения срока действия маркера или повторного создания файла конфигурации Kubernetes будет предложено только выполнить вход.
 
 Если вы видите сообщение об ошибке авторизации после успешного входа с помощью веб-браузера, как показано в следующем примере выходных данных, проверьте следующие возможные проблемы.
 
@@ -261,7 +266,7 @@ error: You must be logged in to the server (Unauthorized)
 [az-aks-create]: /cli/azure/aks?view=azure-cli-latest#az-aks-create
 [az-aks-get-credentials]: /cli/azure/aks?view=azure-cli-latest#az-aks-get-credentials
 [az-group-create]: /cli/azure/group#az-group-create
-[open-id-connect]:../active-directory/develop/v2-protocols-oidc.md
+[open-id-connect]: ../active-directory/develop/v2-protocols-oidc.md
 [az-ad-user-show]: /cli/azure/ad/user#az-ad-user-show
 [az-ad-app-create]: /cli/azure/ad/app#az-ad-app-create
 [az-ad-app-update]: /cli/azure/ad/app#az-ad-app-update
@@ -273,9 +278,10 @@ error: You must be logged in to the server (Unauthorized)
 [az-group-create]: /cli/azure/group#az-group-create
 [az-account-show]: /cli/azure/account#az-account-show
 [az-ad-signed-in-user-show]: /cli/azure/ad/signed-in-user#az-ad-signed-in-user-show
-[azure-ad-portal]: azure-ad-integration.md
 [install-azure-cli]: /cli/azure/install-azure-cli
 [az-ad-sp-credential-reset]: /cli/azure/ad/sp/credential#az-ad-sp-credential-reset
-[rbac-authorization]: concepts-identity.md#role-based-access-controls-rbac
+[rbac-authorization]: concepts-identity.md#kubernetes-role-based-access-controls-rbac
 [operator-best-practices-identity]: operator-best-practices-identity.md
 [azure-ad-rbac]: azure-ad-rbac.md
+[managed-aad]: managed-aad.md
+[managed-aad-migrate]: managed-aad.md#upgrading-to-aks-managed-azure-ad-integration

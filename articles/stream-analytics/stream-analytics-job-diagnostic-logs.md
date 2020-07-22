@@ -5,16 +5,16 @@ author: jseb225
 ms.author: jeanb
 ms.reviewer: mamccrea
 ms.service: stream-analytics
-ms.topic: conceptual
-ms.date: 03/27/2020
-ms.openlocfilehash: 40b57af95f9ea4d4212756634c721ddd55f85d7b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.topic: troubleshooting
+ms.date: 06/18/2020
+ms.openlocfilehash: 2fb1f22fd555e8ddbdc04842906cddb990956fb5
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82127753"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86044521"
 ---
-# <a name="troubleshoot-azure-stream-analytics-by-using-resource-logs"></a>Устранение неполадок Azure Stream Analytics с помощью журналов ресурсов
+# <a name="troubleshoot-azure-stream-analytics-by-using-resource-logs"></a>Устранение неполадок в Azure Stream Analytics с помощью журналов ресурсов
 
 В некоторых случаях обработка задания Azure Stream Analytics неожиданно прекращается. Очень важно иметь возможность устранения подобных проблем. Сбои могут случиться из-за непредвиденного результата запроса, подключения к устройствам или неожиданного сбоя службы. Журналы ресурсов в Stream Analytics могут помочь определить причину возникающих проблем и сократить время восстановления.
 
@@ -59,23 +59,23 @@ Stream Analytics предоставляет журналы двух типов:
 
 Настоятельно рекомендуется включить журналы ресурсов и отправить их в журналы Azure Monitor. По умолчанию они **отключены** . Чтобы включить их, выполните следующие действия.
 
-1.  Войдите на портал Azure и перейдите к заданию Stream Analytics. В разделе **Мониторинг**выберите **Журналы диагностики**. Затем выберите **Turn on diagnostics** (Включить диагностику).
+1.  [Создайте рабочую область log Analytics](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace) , если она еще не создана. Рекомендуется, чтобы Рабочая область Log Analytics в том же регионе, что и задание Stream Analytics.
+
+2.  Войдите на портал Azure и перейдите к заданию Stream Analytics. В разделе **Мониторинг**выберите **Журналы диагностики**. Затем выберите **Turn on diagnostics** (Включить диагностику).
 
     ![Навигация по колонкам в журналах ресурсов](./media/stream-analytics-job-diagnostic-logs/diagnostic-logs-monitoring.png)  
 
-2.  Создайте **имя** в **параметрах диагностики** и установите флажок рядом с пунктом **Отправить в Log Analytics**. Затем добавьте имеющуюся рабочую область Log Analytics **или создайте новую**. Установите флажки **выполнения** и **разработки** в разделе **журнала**, а в разделе **метрики** — **AllMetrics**. Нажмите кнопку **Сохранить**. Для предотвращения дополнительных затрат рекомендуется использовать рабочую область Log Analytics в том же регионе Azure, что и задание Stream Analytics.
+2.  Укажите **имя** в поле " **имя параметров диагностики** " и установите флажки для **выполнения** и **разработки** в разделе " **Журнал**" и **аллметрикс** в разделе " **Метрика**". Затем выберите **Отправить, чтобы log Analytics** и выбрать рабочую область. Нажмите кнопку **Сохранить**.
 
-    ![Параметры для журналов ресурсов](./media/stream-analytics-job-diagnostic-logs/diagnostic-settings.png)
+    ![Параметры для журналов ресурсов](./media/stream-analytics-job-diagnostic-logs/logs-setup.png)
 
 3. При запуске задания Stream Analytics журналы ресурсов направляются в рабочую область Log Analytics. Чтобы просмотреть журналы ресурсов для задания, выберите **журналы** в разделе **мониторинг** .
 
    ![Журналы ресурсов в разделе "Мониторинг"](./media/stream-analytics-job-diagnostic-logs/diagnostic-logs.png)
 
-4. Stream Analytics предоставляет предварительно определенные запросы, которые позволяют легко находить нужные журналы. 3 категории — **Общие**, **ошибки входных данных** и **ошибки выходных данных**. Например, чтобы просмотреть сводку по всем ошибкам задания за последние семь дней, можно выбрать **выполнение** соответствующего предварительно определенного запроса. 
+4. Stream Analytics предоставляет предварительно определенные запросы, которые позволяют легко находить нужные журналы. Можно выбрать все предварительно определенные запросы на левой панели, а затем нажать кнопку **выполнить**. Результаты запроса будут отображаться в нижней области. 
 
-   ![Журналы ресурсов в разделе "Мониторинг"](./media/stream-analytics-job-diagnostic-logs/logs-categories.png)
-
-   ![Результаты журналов](./media/stream-analytics-job-diagnostic-logs/logs-result.png)
+   ![Журналы ресурсов в разделе "Мониторинг"](./media/stream-analytics-job-diagnostic-logs/logs-example.png)
 
 ## <a name="resource-log-categories"></a>Категории журнала ресурсов
 
@@ -94,14 +94,14 @@ Azure Stream Analytics захватывает две категории журн
 
 Все журналы хранятся в формате JSON. Каждая запись содержит следующие общие строковые поля.
 
-Имя | Описание
+name | Описание:
 ------- | -------
 time | Метка времени журнала (в формате UTC).
 resourceId | Идентификатор ресурса (прописными буквами), с которым была выполнена операция. Содержит идентификатор подписки, группу ресурсов и имя задания. Например, **/SUBSCRIPTIONS/6503D296-DAC1-4449-9B03-609A1F4A1C87/RESOURCEGROUPS/MY-RESOURCE-GROUP/PROVIDERS/MICROSOFT.STREAMANALYTICS/STREAMINGJOBS/MYSTREAMINGJOB**.
 категория | Категория журнала, **Выполнение** или **Разработка**.
 operationName | Имя операции, добавленной в журнал. Например, **Send Events: Ошибка записи выходных данных SQL в mysqloutput (**.
 status | Состояние операции. Например, **Сбой** или **Успешно выполнено**.
-level | Уровень ведения журнала. Например, **Ошибка**, **Предупреждение** или **Информация**.
+уровень | Уровень ведения журнала. Например, **Ошибка**, **Предупреждение** или **Информация**.
 properties | Сведения о записи журнала, сериализованные в строку JSON. Дополнительные сведения приведены в следующем разделе этой статьи.
 
 ### <a name="execution-log-properties-schema"></a>Схема свойств журнала выполнения
@@ -112,7 +112,7 @@ properties | Сведения о записи журнала, сериализо
 
 Любая ошибка, возникающая при обработке данных в задании, находится в этой категории журналов. Чаще всего эти журналы создаются во время операций чтения, сериализации и записи. Эти журналы не содержат ошибок подключения, которые обрабатываются как универсальные события. Вы можете узнать больше о причинах различных [ошибок ввода и вывода данных](https://docs.microsoft.com/azure/stream-analytics/data-errors).
 
-Имя | Описание
+name | Описание
 ------- | -------
 Источник | Имя входных или выходных данных задания, в которых произошла ошибка.
 Сообщение | Сообщение, связанное с ошибкой.
@@ -133,17 +133,17 @@ Type | Тип ошибки. Например **DataConversionError**, **CsvParse
 
 Остальные типы ошибок считаются универсальными событиями.
 
-Имя | Описание
+name | Описание:
 -------- | --------
 Ошибка | (Необязательно.) Сведения об ошибке. Как правило, это сведения об исключении (если они доступны).
 Сообщение| Сообщение журнала.
 Type | Тип сообщения. Сопоставляется с внутренней классификацией ошибок. Например **JobValidationError** или **BlobOutputAdapterInitializationFailure**.
 Идентификатор корреляции | Идентификатор [GUID](https://en.wikipedia.org/wiki/Universally_unique_identifier), однозначно определяющий выполнение задания. Все записи журнала, зафиксированные с начала до завершения задания, имеют одинаковое значение **идентификатора корреляции**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Что такое Stream Analytics?](stream-analytics-introduction.md)
-* [Начало работы со Stream Analytics](stream-analytics-real-time-fraud-detection.md)
-* [Масштабирование заданий Stream Analytics](stream-analytics-scale-jobs.md)
-* [Справочник по языку запросов Stream Analytics](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference)
+* [Приступая к работе с Azure Stream Analytics: выявление мошенничества в режиме реального времени](stream-analytics-real-time-fraud-detection.md)
+* [Масштабирование заданий Azure Stream Analytics для повышения пропускной способности базы данных](stream-analytics-scale-jobs.md)
+* [Stream Analytics Query Language Reference](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference) (Справочник по языку запросов Stream Analytics)
 * [Ошибки данных Stream Analytics](https://docs.microsoft.com/azure/stream-analytics/data-errors)

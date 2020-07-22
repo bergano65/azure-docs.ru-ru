@@ -3,12 +3,12 @@ title: Этапы развертывания схемы
 description: Изучите шаги, связанные с безопасностью и артефактами, с помощью которых осуществляется служба "схемы Azure" при создании назначения схемы.
 ms.date: 05/06/2020
 ms.topic: conceptual
-ms.openlocfilehash: 9efc66baa262e004a8beea5295e8567f4ab119dd
-ms.sourcegitcommit: 602e6db62069d568a91981a1117244ffd757f1c2
+ms.openlocfilehash: d3ccba6645e1b14fffc543af2a6ad40e3634e2ed
+ms.sourcegitcommit: f684589322633f1a0fafb627a03498b148b0d521
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82864000"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85970660"
 ---
 # <a name="stages-of-a-blueprint-deployment"></a>Этапы развертывания схемы
 
@@ -27,7 +27,7 @@ ms.locfileid: "82864000"
 
 Субъекту-службе схем Azure предоставляются права владельца для назначенной подписки или подписок, если используется управляемое системой удостоверение управляемого [удостоверения](../../../active-directory/managed-identities-azure-resources/overview.md) . Предоставленная роль позволяет проектам Azure создавать и позднее отменять **назначенное системой** управляемое удостоверение. При использовании **назначенного пользователем** управляемого удостоверения субъект-служба схем Azure не получает и не требует прав владельца для подписки.
 
-Права предоставляются автоматически, если назначение выполняется на портале. Однако, если назначение выполняется с помощью REST API, предоставление прав необходимо выполнять с помощью отдельного вызова API. В проекте схемы Azure AppId является `f71766dc-90d9-4b7d-bd9d-4499c4331c3f`, но субъект-служба зависит от клиента. Для получения субъекта-службы используйте [Azure Active Directory API Graph](../../../active-directory/develop/active-directory-graph-api.md) и конечную точку RESTful [Свойства serviceprincipals](/graph/api/resources/serviceprincipal) . Затем предоставьте роль _владельца_ в Azure на [портале](../../../role-based-access-control/role-assignments-portal.md), [Azure CLI](../../../role-based-access-control/role-assignments-cli.md), [Azure PowerShell](../../../role-based-access-control/role-assignments-powershell.md), [REST API](../../../role-based-access-control/role-assignments-rest.md)или [шаблоне диспетчер ресурсов](../../../role-based-access-control/role-assignments-template.md).
+Права предоставляются автоматически, если назначение выполняется на портале. Однако, если назначение выполняется с помощью REST API, предоставление прав необходимо выполнять с помощью отдельного вызова API. В проекте схемы Azure AppId является `f71766dc-90d9-4b7d-bd9d-4499c4331c3f` , но субъект-служба зависит от клиента. Для получения субъекта-службы используйте [Azure Active Directory API Graph](../../../active-directory/develop/active-directory-graph-api.md) и конечную точку RESTful [Свойства serviceprincipals](/graph/api/resources/serviceprincipal) . Затем предоставьте роль _владельца_ в Azure на [портале](../../../role-based-access-control/role-assignments-portal.md), [Azure CLI](../../../role-based-access-control/role-assignments-cli.md), [Azure PowerShell](../../../role-based-access-control/role-assignments-powershell.md), [REST API](../../../role-based-access-control/role-assignments-rest.md)или [шаблоне Azure Resource Manager](../../../role-based-access-control/role-assignments-template.md).
 
 Службы схем Azure не развертывают ресурсы напрямую.
 
@@ -54,7 +54,7 @@ ms.locfileid: "82864000"
 
 После завершения развертывания схемы Azure отменяют права управляемого **системой** удостоверения из подписки. Затем служба схем Azure отзывает свои права из подписки. Удаление прав не допускало, что планы Azure станут постоянным владельцем подписки.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте, как использовать [статические и динамические параметры](parameters.md).
 - Научитесь настраивать [последовательность схемы](sequencing-order.md).

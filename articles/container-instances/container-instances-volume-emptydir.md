@@ -4,10 +4,9 @@ description: Узнайте, как подключить том emptyDir для 
 ms.topic: article
 ms.date: 01/31/2020
 ms.openlocfilehash: 64a3c83008f163167528a5e5987fe2316942d5bc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77117737"
 ---
 # <a name="mount-an-emptydir-volume-in-azure-container-instances"></a>Подключение тома emptyDir в службе "Экземпляры контейнеров Azure"
@@ -35,7 +34,7 @@ ms.locfileid: "77117737"
 
 Чтобы подключить том emptyDir в экземпляре контейнера, можно выполнить развертывание с помощью [шаблона Azure Resource Manager](/azure/templates/microsoft.containerinstance/containergroups), [файла YAML](container-instances-reference-yaml.md)или других программных методов для развертывания группы контейнеров.
 
-Сначала заполните `volumes` массив в разделе файла группы `properties` контейнеров. Затем для каждого контейнера в группе контейнеров, в которой нужно подключить том *emptyDir*, заполните массив `volumeMounts` в разделе `properties` определения контейнера.
+Сначала заполните `volumes` массив в разделе файла группы контейнеров `properties` . Затем для каждого контейнера в группе контейнеров, в которой нужно подключить том *emptyDir*, заполните массив `volumeMounts` в разделе `properties` определения контейнера.
 
 Например, при помощи следующего шаблона Resource Manager создается группа из двух контейнеров, в каждом из которых подключается том *emptyDir*:
 

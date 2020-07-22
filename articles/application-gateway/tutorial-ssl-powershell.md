@@ -5,16 +5,16 @@ description: Узнайте, как создать шлюз приложений
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
-ms.topic: article
+ms.topic: how-to
 ms.date: 11/14/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 2bd625982ebd051b92df2f66515fd5b0d0612303
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: af1ba6bdf8edc3ce8653c9ecf196a599fb984ae4
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81311916"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84805931"
 ---
 # <a name="create-an-application-gateway-with-tls-termination-using-azure-powershell"></a>Создание шлюза приложений с завершением TLS с помощью Azure PowerShell
 
@@ -297,6 +297,6 @@ Get-AzPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublicIPAdd
 Remove-AzResourceGroup -Name myResourceGroupAG
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Создание шлюза приложений для размещения нескольких веб-сайтов](./tutorial-multiple-sites-powershell.md)

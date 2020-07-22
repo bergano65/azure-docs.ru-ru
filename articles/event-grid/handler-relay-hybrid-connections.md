@@ -1,18 +1,14 @@
 ---
 title: Гибридное подключение Azure Relay как обработчик событий службы "Сетка событий Azure"
 description: В статье показано, как гибридные подключения Azure Relay можно использовать в качестве обработчиков событий службы "Сетка событий Azure".
-services: event-grid
-author: spelluru
-ms.service: event-grid
 ms.topic: conceptual
-ms.date: 05/11/2020
-ms.author: spelluru
-ms.openlocfilehash: 0631724e688a71d7e9685f5f0ad738d81e2a8034
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
-ms.translationtype: HT
+ms.date: 07/07/2020
+ms.openlocfilehash: 38233a2e103600f07837ce9a1ad8d63fe7e4fb99
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83596113"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86105717"
 ---
 # <a name="relay-hybrid-connection-as-an-event-handler-for-azure-event-grid-events"></a>Гибридное подключение Azure Relay как обработчик событий службы "Сетка событий Azure"
 Обработчик событий — это место, куда отправляются события. Обработчик выполняет последующую обработку полученного события. Некоторые службы Azure автоматически настроены для обработки событий. Одна из них — это **Azure Relay**. 
@@ -25,6 +21,25 @@ ms.locfileid: "83596113"
 |Title  |Описание  |
 |---------|---------|
 | [Руководство. Отправка пользовательских событий для службы Сетка событий Azure по гибридному подключению](custom-event-to-hybrid-connection.md) | Отправка пользовательских событий в существующее гибридное подключение для обработки приложением прослушивателя. |
+
+## <a name="rest-example-for-put"></a>Пример REST (для PUT)
+
+```json
+{
+    "properties": 
+    {
+        "destination": 
+        {
+            "endpointType": "HybridConnection",
+            "properties": 
+            {
+                "resourceId": "/subscriptions/<AZURE SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP NAME>/providers/Microsoft.Relay/namespaces/<RELAY NAMESPACE NAME>/hybridconnections/<HYBRID CONNECTION NAME>"
+            }
+        },
+        "eventDeliverySchema": "EventGridSchema"
+    }
+}
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 См. список поддерживаемых обработчиков событий в статье [Обработчики событий](event-handlers.md). 

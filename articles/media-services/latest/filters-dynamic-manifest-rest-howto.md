@@ -14,10 +14,9 @@ ms.topic: article
 ms.date: 06/13/2019
 ms.author: juliako
 ms.openlocfilehash: f9134dd3bc926e6e2f454e5187e03365e91ed22a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75780340"
 ---
 # <a name="creating-filters-with-media-services-rest-api"></a>Создание фильтров с помощью REST API Служб мультимедиа
@@ -31,7 +30,7 @@ ms.locfileid: "75780340"
 > [!NOTE]
 > Обязательно ознакомьтесь с [пресентатионтимеранже](filters-concept.md#presentationtimerange).
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>Предварительные условия 
 
 Чтобы выполнить действия, описанные в этом разделе, необходимо сделать следующее:
 
@@ -83,7 +82,7 @@ ms.locfileid: "75780340"
 
 ## <a name="create-account-filters"></a>Создание фильтров учетной записи
 
-В скачанной коллекции POST щелкните-> **фильтры учетной записи****создать или обновить фильтр учетной записи**.
+В скачанной коллекции POST щелкните **фильтры учетной записи** -> **создать или обновить фильтр учетной записи**.
 
 Метод HTTP-запроса **PUT** аналогичен следующему:
 
@@ -93,7 +92,7 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 Выберите вкладку **Текст** и вставьте код json, который был [определен ранее](#define-a-filter).
 
-Выберите **Отправить**. 
+Нажмите кнопку **Отправить**. 
 
 Фильтр создан.
 
@@ -101,7 +100,7 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 ## <a name="create-asset-filters"></a>Создание фильтров ресурсов  
 
-В скачанной коллекции после загрузки служб мультимедиа v3 выберите **активы**->**создать или обновить фильтр активов**.
+В скачанной коллекции после загрузки служб мультимедиа v3 выберите **активы** -> **создать или обновить фильтр активов**.
 
 Метод HTTP-запроса **PUT** аналогичен следующему:
 
@@ -111,7 +110,7 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 Выберите вкладку **Текст** и вставьте код json, который был [определен ранее](#define-a-filter).
 
-Выберите **Отправить**. 
+Нажмите кнопку **Отправить**. 
 
 Фильтр ресурса-контейнера создан.
 
@@ -135,6 +134,6 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 |MPEG DASH|`https://amsv3account-usw22.streaming.media.azure.net/fecebb23-46f6-490d-8b70-203e86b0df58/bigbuckbunny.ism/manifest(format=mpd-time-csf,filter=myAssetFilter)`|
 |Smooth Streaming|`https://amsv3account-usw22.streaming.media.azure.net/fecebb23-46f6-490d-8b70-203e86b0df58/bigbuckbunny.ism/manifest(filter=myAssetFilter)`|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Потоковая передача видео](stream-files-tutorial-with-rest.md) 

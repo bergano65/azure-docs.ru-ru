@@ -14,10 +14,9 @@ ms.date: 07/15/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: b3bc87b183803c0854542d6925af7429b593d2af
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81605169"
 ---
 # <a name="sap-hana-large-instances-network-architecture"></a>Сетевая архитектура SAP HANA в Azure (крупные экземпляры)
@@ -199,5 +198,5 @@ ms.locfileid: "81605169"
 > [!IMPORTANT] 
 > Если используется несколько каналов ExpressRoute, чтобы обеспечить правильную маршрутизацию трафика, следует использовать атрибут AS PATH и настройки локального предпочтения BGP.
 
-**Дальнейшие действия**
+**Следующие шаги**
 - Дополнительные сведения см. в статье [Архитектура хранилища SAP HANA (крупные экземпляры)](hana-storage-architecture.md).

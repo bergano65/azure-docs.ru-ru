@@ -3,16 +3,15 @@ title: Управление обслуживанием для виртуальн
 description: Узнайте, как управлять применением обслуживания к виртуальным машинам Azure с помощью управления обслуживанием и портал Azure.
 author: cynthn
 ms.service: virtual-machines
-ms.topic: article
+ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 04/22/2020
 ms.author: cynthn
-ms.openlocfilehash: c0cb4800bdabe5eb500422fca55b3060b6422e8e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 4232f4cd39c3f6dd6efa0bf78959798ea842e2dc
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82139242"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84676052"
 ---
 # <a name="control-updates-with-maintenance-control-and-the-azure-portal"></a>Управление обновлениями с помощью управления обслуживанием и портал Azure
 
@@ -30,11 +29,11 @@ ms.locfileid: "82139242"
 
    ![Снимок экрана, показывающий, как добавить конфигурацию обслуживания](media/virtual-machines-maintenance-control-portal/maintenance-configurations-add.png)
 
-1. Выберите подписку и группу ресурсов, укажите имя конфигурации и выберите регион. Щелкните **Далее**.
+1. Выберите подписку и группу ресурсов, укажите имя конфигурации и выберите регион. Нажмите кнопку **Далее**.
 
    ![Снимок экрана, показывающий основы настройки обслуживания](media/virtual-machines-maintenance-control-portal/maintenance-configurations-basics.png)
 
-1. Добавьте теги и значения. Щелкните **Далее**.
+1. Добавьте теги и значения. Нажмите кнопку **Далее**.
 
    ![Снимок экрана, показывающий, как добавить теги в конфигурацию обслуживания](media/virtual-machines-maintenance-control-portal/maintenance-configurations-tags.png)
 

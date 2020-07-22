@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 4/9/2019
 ms.author: mayg
-ms.openlocfilehash: 2a4752b501e40f9e8a4f3bc82cb2533c11f9e526
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: de55e2d316b6ed7ee51460ce96896ed2ccfe0992
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "73954593"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86129898"
 ---
 # <a name="manage-vm-network-interfaces-for-on-premises-disaster-recovery-to-azure"></a>Управление сетевыми интерфейсами виртуальной машины для локального аварийного восстановления в Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "73954593"
 
 ## <a name="select-the-target-network"></a>Выбор целевой сети
 
-Для виртуальных машин VMware, физических компьютеров и виртуальных машин Hyper-V (без System Center Virtual Machine Manager) можно указать целевую виртуальную сеть для отдельных виртуальных машин. Для виртуальных машин Hyper-V, управляемых с помощью Virtual Machine Manager, используйте [сетевое сопоставление](site-recovery-network-mapping.md), чтобы сопоставить сети виртуальных машин на исходном сервере Virtual Machine Manager с целевыми сетями Azure.
+Для виртуальных машин VMware, физических компьютеров и виртуальных машин Hyper-V (без System Center Virtual Machine Manager) можно указать целевую виртуальную сеть для отдельных виртуальных машин. Для виртуальных машин Hyper-V, управляемых с помощью Virtual Machine Manager, используйте [сетевое сопоставление](./hyper-v-vmm-network-mapping.md), чтобы сопоставить сети виртуальных машин на исходном сервере Virtual Machine Manager с целевыми сетями Azure.
 
 1. В разделе **Реплицированные элементы** в хранилище служб восстановления выберите любой реплицированный элемент, чтобы перейти к его параметрам.
 

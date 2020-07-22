@@ -7,22 +7,21 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: fundamentals
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 10/25/2019
 ms.author: ajburnle
 ms.reviewer: elkuzmen
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 69c96d123ebe97ba4a7a6df0395efe698924fef1
-ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
-ms.translationtype: MT
+ms.openlocfilehash: 1cfa00cceac6c30219d4577cc4ba29c84cb1a75a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2020
-ms.locfileid: "82734745"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85603967"
 ---
 # <a name="add-your-custom-domain-name-using-the-azure-active-directory-portal"></a>Добавление имени личного домена с помощью портала Azure Active Directory
 
-Каждый новый клиент Azure AD поставляется с исходным именем домена, * \<имя_домена>. onmicrosoft.com*. Нельзя изменить или удалить исходное доменное имя, но можно добавить имена Организации. Добавление пользовательских доменных имен поможет вам создать имена пользователей, знакомых с пользователями, например *(alain\@contoso.com*.
+Каждый новый клиент Azure AD поставляется с исходным именем домена, * \<domainname> . onmicrosoft.com*. Нельзя изменить или удалить исходное доменное имя, но можно добавить имена Организации. Добавление пользовательских доменных имен поможет вам создать имена пользователей, знакомых с пользователями, например *(alain \@ contoso.com*.
 
 ## <a name="before-you-begin"></a>Перед началом
 
@@ -50,7 +49,7 @@ ms.locfileid: "82734745"
 
 1. Войдите на [портал Azure](https://portal.azure.com/) с учетной записью глобального администратора каталога.
 
-1. Найдите и выберите *Azure Active Directory* на любой странице. Затем выберите **пользовательские доменные имена** > **Добавить личный домен**.
+1. Найдите и выберите *Azure Active Directory* на любой странице. Затем выберите **пользовательские доменные имена**  >  **Добавить личный домен**.
 
     ![Страница "пользовательские доменные имена" с отображаемым именем "добавить личный домен"](media/add-custom-domain/add-custom-domain.png)
 
@@ -108,7 +107,7 @@ ms.locfileid: "82734745"
 
 - **Убедитесь, что у вас нет неуправляемых клиентов Power BI.** Если пользователи активировали Power BI через функцию самостоятельной регистрации и создали неуправляемый клиент для организации, необходимо взять на себя управление в качестве внутреннего или внешнего администратора с помощью PowerShell. Дополнительные сведения см. в [Смена неуправляемого каталога от имени администратора в Azure Active Directory](../users-groups-roles/domains-admin-takeover.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Добавьте в каталог еще одного глобального администратора. Дополнительные сведения см. в статье [Назначение ролей администратора и других ролей пользователям с помощью Azure Active Directory](active-directory-users-assign-role-azure-portal.md).
 

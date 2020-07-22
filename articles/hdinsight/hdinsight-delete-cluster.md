@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: H1Hack27Feb2017,hdinsightactive
 ms.date: 11/29/2019
-ms.openlocfilehash: 2912777c001a36ec913e2cfd618091ada5aa107a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 60f3ce0ad4f6ee6b1a38130867e0bcd1420620ef
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74807142"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86086370"
 ---
 # <a name="delete-an-hdinsight-cluster-using-your-browser-powershell-or-the-azure-cli"></a>Удаление кластера HDInsight с помощью браузера, PowerShell или Azure CLI
 
@@ -26,7 +26,7 @@ ms.locfileid: "74807142"
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 
-2. В меню слева перейдите к пункту **все службы** > **аналитика** > **кластеров HDInsight** и выберите свой кластер.
+2. В меню слева перейдите к пункту **все службы**  >  **аналитика**  >  **кластеров HDInsight** и выберите свой кластер.
 
 3. В представлении по умолчанию выберите значок **Удалить** . Выполните запрос, чтобы удалить кластер.
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 04/11/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:aspnet-core
-ms.openlocfilehash: db488e4a9ec9aa0f4f12c8de45f123dba1a93cdf
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 2924a950e7b52a41939d1c06305bad2d1b243476
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82112717"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85554145"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-an-aspnet-core-web-app"></a>Краткое руководство. Добавление возможности входа в веб-приложение ASP.NET Core с помощью учетной записи Майкрософт
 В этом кратком руководстве вы на конкретном примере кода изучите, как веб-приложение ASP.NET Core позволяет войти в личные учетные записи (hotmail.com, outlook.com и т. д.), а также рабочие и учебные учетные записи из любого экземпляра Azure Active Directory (Azure AD). (Иллюстрацию см. в разделе [Как работает этот пример](#how-the-sample-works).)
@@ -145,7 +145,7 @@ public void ConfigureServices(IServiceCollection services)
 
 Строка, содержащая `.AddAzureAd`, добавляет в ваше приложение функцию аутентификации платформы удостоверений Майкрософт. Затем выполняется настройка для входа с помощью конечной точки платформы удостоверений Майкрософт.
 
-> |Where  |  |
+> |Where | Описание |
 > |---------|---------|
 > | ClientId  | Идентификатор приложения (клиента), зарегистрированного на портале Azure. |
 > | Authority | Конечная точка службы токенов безопасности для проверки подлинности пользователей. Обычно это <https://login.microsoftonline.com/{tenant}/v2.0> для общедоступного облака, где {tenant} — имя вашего клиента, идентификатор клиента или *common* для ссылки на общую конечную точку (используется для мультитенантных приложений). |
@@ -156,7 +156,7 @@ public void ConfigureServices(IServiceCollection services)
 > Параметр `ValidateIssuer = false` приводится в этом кратком руководстве для упрощения. В реальных приложениях необходимо проверить издателя.
 > См. примеры кода, чтобы узнать, как это сделать.
 >
-> Также обратите внимание на метод `Configure`, который содержит два важных метода: `app.UserCookiePolicy()` и `app.UseAuthentication()`.
+> Также обратите внимание на метод `Configure`, который содержит два важных метода: `app.UseCookiePolicy()` и `app.UseAuthentication()`.
 
 ```csharp
 // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

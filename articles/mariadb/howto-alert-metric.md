@@ -4,14 +4,14 @@ description: В этой статье описывается, как настр�
 author: ajlam
 ms.author: andrela
 ms.service: mariadb
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 3/18/2020
-ms.openlocfilehash: 683b89b29265159b0316d427a7ae616bf3766f7c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 5687255057fdd5e73478626721c789c98b2ea366
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79529023"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86120081"
 ---
 # <a name="use-the-azure-portal-to-set-up-alerts-on-metrics-for-azure-database-for-mariadb"></a>Настройка оповещений на основе метрик для Базы данных Azure для MariaDB на портале Azure
 
@@ -84,6 +84,6 @@ ms.locfileid: "79529023"
 * **отключить** или **включить** его, если нужно временно остановить или возобновить получение уведомлений.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше о [настройке веб-перехватчиков webhook в оповещениях](../monitoring-and-diagnostics/insights-webhooks-alerts.md).
 * Прочитайте [обзор сбора метрики](../monitoring-and-diagnostics/insights-how-to-customize-monitoring.md) и узнайте, как можно обеспечить, чтобы служба была доступна и отвечала на запросы.

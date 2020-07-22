@@ -1,5 +1,5 @@
 ---
-title: Руководство. Использование Azure Key Vault в веб-приложении Azure (.NET) | Документация Майкрософт
+title: Руководство. Использование Azure Key Vault в веб-приложении Azure (.NET) | Документация Майкрософт
 description: Благодаря этому руководству вы настроите приложение ASP.NET Core для считывания секрета из хранилища ключей.
 services: key-vault
 author: msmbaldwin
@@ -7,209 +7,242 @@ manager: rajvijan
 ms.service: key-vault
 ms.subservice: general
 ms.topic: tutorial
-ms.date: 12/21/2018
+ms.date: 05/06/2020
 ms.author: mbaldwin
-ms.custom: mvc
-ms.openlocfilehash: bb907c809d411128ee799d5057379a2022144882
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: f6e70caaedf906142b19ba45f0eb4d818e2955e7
+ms.sourcegitcommit: ff19f4ecaff33a414c0fa2d4c92542d6e91332f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81425783"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85051905"
 ---
-# <a name="tutorial-use-azure-key-vault-with-an-azure-web-app-in-net"></a>Руководство по Использование Azure Key Vault в веб-приложении Azure (.NET)
-
-Служба Azure Key Vault помогает защищать секреты, например ключи API и строки подключения к базе данных. Она позволяет осуществлять доступ к приложениям, службам и ИТ-ресурсам.
-
-В этом руководстве описано, как создать веб-приложение Azure, которое может считывать информацию из хранилища ключей Azure. При этом используются управляемые удостоверения для ресурсов Azure. См. дополнительные сведения о [Службе приложений Azure](../../app-service/overview.md).
-
-В этом руководстве описаны следующие процедуры.
-
-> [!div class="checklist"]
-> * Создать хранилище ключей.
-> * Добавление секрета в хранилище ключей.
-> * получение секрета из хранилища ключей;
-> * создание веб-приложения Azure;
-> * включение управляемого удостоверения для веб-приложения;
-> * назначение разрешения для веб-приложения;
-> * запуск веб-приложения в Azure.
-
-Перед началом работы ознакомьтесь c [основными понятиями службы Key Vault](basic-concepts.md). 
-
-Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-
-## <a name="prerequisites"></a>Предварительные требования
-
-* Для Windows: [пакет SDK для .NET Core 2.1 или более поздней версии](https://www.microsoft.com/net/download/windows).
-* Для Mac: [Visual Studio для Mac](https://visualstudio.microsoft.com/vs/mac/)
-* Для Windows, Mac и Linux:
-  * [Git](https://git-scm.com/downloads);
-  * Для этого руководства требуется запустить Azure CLI локально. Необходимо установить Azure CLI версии 2.0.4 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо установить или обновить CLI, ознакомьтесь со статьей [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli).
-  * [.NET Core](https://www.microsoft.com/net/download/dotnet-core/2.1)
-
-## <a name="about-managed-service-identity"></a>Основные сведения об MSI
-
-Azure Key Vault надежно хранит учетные данные, исключая их отображение в коде. Но для получения ключей нужно выполнить проверку подлинности в Azure Key Vault. А для проверки подлинности в Key Vault требуются учетные данные. Это классическая дилемма. Управляемое удостоверение службы (MSI) решает эту проблему, предоставляя _соответствующее удостоверение_, которое упрощает процесс.
-
-При включении MSI для службы Azure (например, виртуальных машин, Службы приложений Azure или Функций Azure), Azure создает [субъект-службу](basic-concepts.md). MSI делает это для экземпляра службы в Azure Active Directory (Azure AD) и добавляет учетные данные субъекта-службы в этот экземпляр.
-
-![Схема MSI](../media/MSI.png)
-
-Далее, чтобы получить маркер доступа, код вызывает локальную службу метаданных, доступную в ресурсе Azure. Код использует маркер доступа, который получает от локальной конечной точки MSI для проверки подлинности в службе Azure Key Vault.
-
-## <a name="log-in-to-azure"></a>Вход в Azure
-
-Чтобы войти в Azure с помощью Azure CLI, введите следующую команду:
-
-```azurecli
-az login
-```
-
-## <a name="create-a-resource-group"></a>Создание группы ресурсов
-
-Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими.
-
-Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az-group-create).
-
-Затем выберите имя группы ресурсов для заполнителя. В следующем примере создается группа ресурсов в регионе "Западная часть США":
-
-   ```azurecli
-   # To list locations: az account list-locations --output table
-   az group create --name "<YourResourceGroupName>" --location "West US"
-   ```
-
-Работая с этим руководством, вы будете использовать созданную группу ресурсов.
-
-## <a name="create-a-key-vault"></a>Создайте хранилище ключей.
-
-Чтобы создать хранилище ключей в группе ресурсов, укажите следующие сведения:
-
-* Имя хранилища ключей. Строка длиной от 3 до 24 символов, которая может содержать только цифры (0–9), буквы (a-z, A-Z) и дефисы (-).
-* Имя группы ресурсов
-* Расположение. **Западная часть США**
-
-В интерфейсе командной строки Azure введите следующую команду.
-
-```azurecli
-az keyvault create --name "<YourKeyVaultName>" --resource-group "<YourResourceGroupName>" --location "West US"
-```
-
-На этом этапе операции в этом хранилище ключей может выполнять только учетная запись Azure.
-
-## <a name="add-a-secret-to-the-key-vault"></a>Добавление секрета в хранилище ключей
-
-Теперь можно добавить секрет. Это может быть строка подключения с серверу SQL или другие сведения, которые должны быть защищены и при этом доступны приложению.
-
-Введите следующую команду, чтобы создать секрет с именем **AppSecret** в хранилище ключей. 
-
-```azurecli
-az keyvault secret set --vault-name "<YourKeyVaultName>" --name "AppSecret" --value "MySecret"
-```
-
-В этом секрете хранится значение **MySecret**.
-
-Для просмотра хранящегося в секрете значения в виде обычного текста введите следующую команду.
-
-```azurecli
-az keyvault secret show --name "AppSecret" --vault-name "<YourKeyVaultName>"
-```
-
-Эта команда отображает секретные сведения, в том числе URI. 
-
-Выполнив эти действия, вы сохраните в хранилище ключей секрет со значением URI. Запишите эти сведения для дальнейшего использования в этом руководстве. 
-
-## <a name="create-a-net-core-web-app"></a>Создание веб-приложения .NET Core
-
-Чтобы создать веб-приложение .NET Core и опубликовать его в Azure, следуйте инструкциям, указанным в руководстве [Создание веб-приложения ASP.NET Core в Azure](../../app-service/app-service-web-get-started-dotnet.md). 
-
-Вы также можете посмотреть этот видеоролик:
-
->[!VIDEO https://www.youtube.com/embed/EdiiEH7P-bU]
-
-## <a name="open-and-edit-the-solution"></a>Открытие и изменение решения
-
-1. Откройте файл **Pages** > **About.cshtml.cs**.
-
-1. Установите следующие пакеты NuGet:
-   - [AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication)
-   - [Хранилище ключей](https://www.nuget.org/packages/Microsoft.Azure.KeyVault)
-
-1. Импортируйте следующий код в файл *About.cshtml.cs*.
-
-   ```csharp
-    using Microsoft.Azure.KeyVault;
-    using Microsoft.Azure.KeyVault.Models;
-    using Microsoft.Azure.Services.AppAuthentication;
-   ```
-
-   Код в классе AboutModel должен выглядеть следующим образом.
-
-   ```csharp
-    public class AboutModel : PageModel
-    {
-        public string Message { get; set; }
-
-        public async Task OnGetAsync()
-        {
-            Message = "Your application description page.";
-            int retries = 0;
-            bool retry = false;
-            try
-            {
-                /* The next four lines of code show you how to use AppAuthentication library to fetch secrets from your key vault */
-                AzureServiceTokenProvider azureServiceTokenProvider = new AzureServiceTokenProvider();
-                KeyVaultClient keyVaultClient = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(azureServiceTokenProvider.KeyVaultTokenCallback));
-                var secret = await keyVaultClient.GetSecretAsync("https://<YourKeyVaultName>.vault.azure.net/secrets/AppSecret")
-                        .ConfigureAwait(false);
-                Message = secret.Value;
-            }
-            /* If you have throttling errors see this tutorial https://docs.microsoft.com/azure/key-vault/tutorial-net-create-vault-azure-web-app */
-            /// <exception cref="KeyVaultErrorException">
-            /// Thrown when the operation returned an invalid status code
-            /// </exception>
-            catch (KeyVaultErrorException keyVaultException)
-            {
-                Message = keyVaultException.Message;
-            }
-        }
-
-        // This method implements exponential backoff if there are 429 errors from Azure Key Vault
-        private static long getWaitTime(int retryCount)
-        {
-            long waitTime = ((long)Math.Pow(2, retryCount) * 100L);
-            return waitTime;
-        }
-
-        // This method fetches a token from Azure Active Directory, which can then be provided to Azure Key Vault to authenticate
-        public async Task<string> GetAccessTokenAsync()
-        {
-            var azureServiceTokenProvider = new AzureServiceTokenProvider();
-            string accessToken = await azureServiceTokenProvider.GetAccessTokenAsync("https://vault.azure.net");
-            return accessToken;
-        }
-    }
-    ```
-
-## <a name="run-the-web-app"></a>Запуск веб-приложения
-
-1. В главном меню Visual Studio 2019 выберите **Отладка** > **Запуск** (с отладкой или без нее). 
-1. В браузере перейдите на страницу **О программе**.  
-    Отображается значение **AppSecret**.
-
-## <a name="enable-a-managed-identity"></a>Включение управляемого удостоверения
+# <a name="tutorial-use-a-managed-identity-to-connect-key-vault-to-an-azure-web-app-with-net"></a>Руководство по использованию управляемого удостоверения для подключения Key Vault к веб-приложению в .NET
 
 Azure Key Vault позволяет безопасно хранить учетные данные и другие секреты, но для их получения код должен выполнять аутентификацию в Key Vault. Руководство по [управляемым удостоверениям для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md) поможет решить эту проблему путем предоставления службам Azure автоматически управляемого удостоверения в Azure AD. Вы можете использовать это удостоверение для аутентификации в любой службе, которая поддерживает аутентификацию Azure AD, включая Key Vault, не отображая учетные данные в коде.
 
-В Azure CLI выполните команду assign-identity, чтобы создать удостоверение для приложения.
+В инструкциях из этого руководства управляемое удостоверение используется для проверки подлинности веб-приложения Azure в Azure Key Vault. В этом процессе используются [клиентская библиотека Azure Key Vault версии 4 для .NET](/dotnet/api/overview/azure/key-vault?view=azure-dotnet) и [Azure CLI](/cli/azure/get-started-with-azure-cli), но все базовые принципы сохранятся и при использовании другого языка разработки, Azure PowerShell и (или) портала Azure.
 
-```azurecli
-az webapp identity assign --name "<YourAppName>" --resource-group "<YourResourceGroupName>"
+## <a name="prerequisites"></a>Предварительные требования
+
+Для работы с этим кратким руководством сделайте следующее:
+
+* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* [Пакет SDK для .NET Core 3.1 или более поздней версии](https://dotnet.microsoft.com/download/dotnet-core/3.1).
+* [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) или [Azure PowerShell](/powershell/azure/overview).
+
+## <a name="create-a-resource-group"></a>Создание группы ресурсов
+
+Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. Создайте группу ресурсов для размещения веб-приложения и хранилища ключей, выполнив команду [az group create](/cli/azure/group?view=azure-cli-latest#az-group-create).
+
+```azurecli-interactive
+az group create --name "myResourceGroup" -l "EastUS"
 ```
 
-Нужно заменить \<YourAppName> именем приложения, опубликованного в Azure.  
-    Например, если имя опубликованного приложения — **MyAwesomeapp.azurewebsites.net**, измените \<YourAppName> на **MyAwesomeapp**.
+## <a name="set-up-your-key-vault"></a>Настройка хранилища ключей
 
-При публикации приложения в Azure запишите значение `PrincipalId`. Выходные данные команды, выполненной на шаге 1, должны иметь следующий формат:
+Теперь создайте хранилище ключей и поместите в него секрет, который будет использоваться далее в этом руководстве.
+
+Чтобы создать хранилище ключей, используйте команду [az keyvault create](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-create).
+
+> [!Important]
+> Каждое хранилище ключей должно иметь уникальное имя. В следующих примерах замените заполнитель <your-keyvault-name> именем своего хранилища ключей.
+
+```azurecli-interactive
+az keyvault create --name "<your-keyvault-name>" -g "myResourceGroup"
+```
+
+Запишите полученное значение `vaultUri` в формате https://<your-keyvault-name>.vault.azure.net/. Оно вам пригодится на шаге [Обновление кода](#update-the-code).
+
+Теперь поместите секрет в хранилище ключей с помощью команды [az keyvault secret set](/cli/azure/keyvault/secret?view=azure-cli-latest#az-keyvault-secret-set) Задайте для секрета имя MySecret и значение "Success!".
+
+```azurecli-interactive
+az keyvault secret set --vault-name "<your-keyvault-name>" --name "MySecret" --value "Success!"
+```
+
+## <a name="create-a-net-web-app"></a>Создание веб-приложения .NET
+
+### <a name="create-a-local-app"></a>Создание локального приложения
+
+В окне терминала на компьютере создайте каталог `akvwebapp` и перейдите в него.
+
+```bash
+mkdir akvwebapp
+cd akvwebapp
+```
+
+Теперь создайте приложение .NET Core с помощью команды [dotnet new web](/dotnet/core/tools/dotnet-new).
+
+```bash
+dotnet new web
+```
+
+Запустите приложение локально, чтобы увидеть, как оно будет выглядеть после развертывания в Azure. 
+
+```bash
+dotnet run
+```
+
+Откройте веб-браузер и перейдите к приложению в `http://localhost:5000`.
+
+На странице отобразится сообщение **Hello World**, созданное примером приложения.
+
+### <a name="initialize-the-git-repository"></a>Инициализация репозитория Git
+
+В окне терминала нажмите клавиши **CTRL+C**, чтобы выйти из веб-сервера.  Инициализируйте репозиторий Git для проекта .NET Core.
+
+```bash
+git init
+git add .
+git commit -m "first commit"
+```
+
+### <a name="configure-a-deployment-user"></a>Настойка пользователя развертывания
+
+Для развертывания в веб-приложение Azure из FTP и локального репозитория Git можно использовать *пользователя развертывания*. Настроив один раз пользователя развертывания, вы сможете использовать его для всех последующих развертываний в Azure. Имя пользователя и пароль учетной записи развертывания отличаются от учетных данных подписки Azure. 
+
+Чтобы настроить пользователя для развертывания, выполните команду [az webapp deployment user set](/cli/azure/webapp/deployment/user?view=azure-cli-latest#az-webapp-deployment-user-set). Выберите имя пользователя и пароль, которые соответствуют следующим рекомендациям: 
+
+- Имя пользователя должно быть уникальным в Azure. Кроме того, чтобы отправка в локальный репозиторий Git работала, имя пользователя не должно содержать символ @. 
+- Пароль должен содержать не менее восьми символов и включать два из трех следующих элементов: буквы, цифры и символы. 
+
+```azurecli-interactive
+az webapp deployment user set --user-name "<username>" --password "<password>"
+```
+
+В выходных данных JSON пароль отображается как `null`. Если появляется сообщение об ошибке `'Conflict'. Details: 409`, измените имя пользователя. Если появляется сообщение об ошибке `'Bad Request'. Details: 400`, используйте более надежный пароль. 
+
+Запишите имя пользователя и пароль и используйте их для развертывания веб-приложений.
+
+### <a name="create-an-app-service-plan"></a>Создание плана службы приложений
+
+Создайте план службы приложений, выполнив команду Azure CLI [az appservice plan create](/cli/azure/appservice/plan?view=azure-cli-latest). В следующем примере создается план службы приложений с именем `myAppServicePlan` и ценовой категорией **Бесплатный**.
+
+```azurecli-interactive
+az appservice plan create --name myAppServicePlan --resource-group myResourceGroup --sku FREE
+```
+
+После создания плана службы приложений в Azure CLI отображается информация следующего вида:
+
+<pre>
+{ 
+  "adminSiteName": null,
+  "appServicePlanName": "myAppServicePlan",
+  "geoRegion": "West Europe",
+  "hostingEnvironmentProfile": null,
+  "id": "/subscriptions/0000-0000/resourceGroups/myResourceGroup/providers/Microsoft.Web/serverfarms/myAppServicePlan",
+  "kind": "app",
+  "location": "West Europe",
+  "maximumNumberOfWorkers": 1,
+  "name": "myAppServicePlan",
+  &lt; JSON data removed for brevity. &gt;
+  "targetWorkerSizeId": 0,
+  "type": "Microsoft.Web/serverfarms",
+  "workerTierName": null
+} 
+</pre>
+
+
+### <a name="create-a-remote-web-app"></a>Создание удаленного веб-приложения
+
+Создайте [веб-приложение Azure](../../app-service/containers/app-service-linux-intro.md) в плане службы приложений `myAppServicePlan`. 
+
+> [!Important]
+> Как и хранилище ключей, веб-приложение Azure должно иметь уникальное имя. В следующих примерах замените \<your-webapp-name\> именем своего веб-приложения.
+
+
+```azurecli-interactive
+az webapp create --resource-group "myResourceGroup" --plan "myAppServicePlan" --name "<your-webapp-name>" --deployment-local-git
+```
+
+Когда веб-приложение будет создано, в Azure CLI отобразится примерно следующее:
+
+<pre>
+Local git is configured with url of 'https://&lt;username&gt;@&lt;your-webapp-name&gt;.scm.azurewebsites.net/&lt;ayour-webapp-name&gt;.git'
+{
+  "availabilityState": "Normal",
+  "clientAffinityEnabled": true,
+  "clientCertEnabled": false,
+  "clientCertExclusionPaths": null,
+  "cloningInfo": null,
+  "containerSize": 0,
+  "dailyMemoryTimeQuota": 0,
+  "defaultHostName": "&lt;your-webapp-name&gt;.azurewebsites.net",
+  "deploymentLocalGitUrl": "https://&lt;username&gt;@&lt;your-webapp-name&gt;.scm.azurewebsites.net/&lt;your-webapp-name&gt;.git",
+  "enabled": true,
+  &lt; JSON data removed for brevity. &gt;
+}
+</pre>
+
+
+URL-адрес удаленного репозитория Git отображается в свойстве `deploymentLocalGitUrl` в формате `https://<username>@<your-webapp-name>.scm.azurewebsites.net/<your-webapp-name>.git`. Сохраните этот URL-адрес для дальнейшего использования.
+
+Перейдите к только что созданному веб-приложению. Замените _&lt;your-webapp-name>_ именем своего приложения.
+
+```bash
+https://<your-webapp-name>.azurewebsites.net
+```
+
+Вы увидите веб-страницу по умолчанию для только что созданного веб-приложения Azure.
+
+### <a name="deploy-your-local-app"></a>Развертывание локального приложения
+
+Вернитесь к окну локального терминала и добавьте удаленное хранилище Azure в локальный репозиторий Git, заменив *\<deploymentLocalGitUrl-from-create-step>* URL-адресом удаленного хранилища Git, который вы сохранили на предыдущем шаге [Создание удаленного веб-приложения](#create-a-remote-web-app).
+
+```bash
+git remote add azure <deploymentLocalGitUrl-from-create-step>
+```
+
+Отправьте код в удаленное приложение Azure, чтобы развернуть приложение. Когда диспетчер учетных данных Git отобразит запрос на ввод учетных данных, введите соответствующие значения, созданные на шаге [Настройка пользователя развертывания](#configure-a-deployment-user).
+
+```bash
+git push azure master
+```
+
+Выполнение этой команды может занять несколько минут. При выполнении эта команда выводит приблизительно следующие сведения:
+<pre>
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 285 bytes | 95.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Deploy Async
+remote: Updating branch 'master'.
+remote: Updating submodules.
+remote: Preparing deployment for commit id 'd6b54472f7'.
+remote: Repository path is /home/site/repository
+remote: Running oryx build...
+remote: Build orchestrated by Microsoft Oryx, https://github.com/Microsoft/Oryx
+remote: You can report issues at https://github.com/Microsoft/Oryx/issues
+remote:
+remote: Oryx Version      : 0.2.20200114.13, Commit: 204922f30f8e8d41f5241b8c218425ef89106d1d, ReleaseTagName: 20200114.13
+remote: Build Operation ID: |imoMY2y77/s=.40ca2a87_
+remote: Repository Commit : d6b54472f7e8e9fd885ffafaa64522e74cf370e1
+.
+.
+.
+remote: Deployment successful.
+remote: Deployment Logs : 'https://&lt;your-webapp-name&gt;.scm.azurewebsites.net/newui/jsonviewer?view_url=/api/deployments/d6b54472f7e8e9fd885ffafaa64522e74cf370e1/log'
+To https://&lt;your-webapp-name&gt;.scm.azurewebsites.net:443/&lt;your-webapp-name&gt;.git
+   d87e6ca..d6b5447  master -> master
+</pre>
+
+Откройте или обновите в браузере страницу развернутого приложения.
+
+```bash
+http://<your-webapp-name>.azurewebsites.net
+```
+
+Там отобразится сообщение "Hello World!", которое вы уже видели при посещении `http://localhost:5000`.
+
+## <a name="create-and-assign-a-managed-identity"></a>Создание и назначение управляемого удостоверения
+
+В Azure CLI выполните команду [az webapp-identity assign](/cli/azure/webapp/identity?view=azure-cli-latest#az-webapp-identity-assign), чтобы создать удостоверение для этого приложения.
+
+```azurecli-interactive
+az webapp identity assign --name "<your-webapp-name>" --resource-group "myResourceGroup"
+```
+
+Эта операция вернет следующий фрагмент JSON:
 
 ```json
 {
@@ -219,35 +252,88 @@ az webapp identity assign --name "<YourAppName>" --resource-group "<YourResource
 }
 ```
 
->[!NOTE]
->Команда в данной процедуре выполняет те же действия, что и переход на [портал Azure](https://portal.azure.com) и включение параметра **Удостоверение/Назначено системой** в состояние **Включено** в свойствах веб-приложения.
+Чтобы предоставить веб-приложению разрешение на выполнение операций **get** и **list** в хранилище ключей, передайте значение principalID в команду Azure CLI [az keyvault set-policy](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-set-policy).
 
-## <a name="assign-permissions-to-your-app"></a>Назначение разрешений приложению
-
-В следующей команде замените \<YourKeyVaultName> именем хранилища ключей, а \<PrincipalId> — значением **PrincipalId**.
-
-```azurecli
-az keyvault set-policy --name '<YourKeyVaultName>' --object-id <PrincipalId> --secret-permissions get list
+```azurecli-interactive
+az keyvault set-policy --name "<your-keyvault-name>" --object-id "<principalId>" --secret-permissions get list
 ```
 
-Эта команда предоставляет удостоверению (MSI) службы приложений разрешение на выполнение операций **get** и **list** в хранилище ключей.
 
-## <a name="publish-the-web-app-to-azure"></a>Публикация веб-приложения в Azure
+## <a name="modify-the-app-to-access-your-key-vault"></a>Изменение приложения для доступа к хранилищу ключей
 
-Снова опубликуйте свое веб-приложение в Azure, чтобы убедиться, что работающее веб-приложение может получить значение секрета.
+### <a name="install-the-packages"></a>Установка пакетов
 
-1. В Visual Studio выберите проект **key-vault-dotnet-core-quickstart**.
-2. Выберите **Опубликовать** > **Начало**.
-3. Нажмите кнопку **создания**.
+В окне терминала установите пакеты клиентской библиотеки Azure Key Vault для .NET.
 
-После запуска приложения вы должны увидеть, что оно может получать значение секрета.
+```console
+dotnet add package Azure.Identity
+dotnet add package Azure.Security.KeyVault.Secrets
+```
 
-Теперь вы успешно создали веб-приложение .NET, которое хранит секреты в хранилище ключей и получает их оттуда.
+### <a name="update-the-code"></a>Обновление кода
 
-## <a name="clean-up-resources"></a>Очистка ресурсов
-Вы можете удалить виртуальную машину и хранилище ключей, если они больше не нужны.
+Найдите и откройте файл Startup.cs в проекте akvwebapp. 
+
+Добавьте эти две строки в заголовок:
+
+```csharp
+using Azure.Identity;
+using Azure.Security.KeyVault.Secrets;
+using Azure.Core;
+```
+
+Эти строки следует поместить перед вызовом `app.UseEndpoints`, включив в URI значение `vaultUri` для вашего хранилища ключей. Для проверки подлинности в хранилище ключей в следующем примере кода используется функция [DefaultAzureCredential()](/dotnet/api/azure.identity.defaultazurecredential?view=azure-dotnet), которая использует токен из управляемого удостоверения приложения. В ней также реализована экспоненциальная задержка для повторных попыток на случай регулирования запросов к хранилищу ключей.
+
+```csharp
+SecretClientOptions options = new SecretClientOptions()
+    {
+        Retry =
+        {
+            Delay= TimeSpan.FromSeconds(2),
+            MaxDelay = TimeSpan.FromSeconds(16),
+            MaxRetries = 5,
+            Mode = RetryMode.Exponential
+         }
+    };
+var client = new SecretClient(new Uri("https://<your-unique-key-vault-name>.vault.azure.net/"), new DefaultAzureCredential(),options);
+
+KeyVaultSecret secret = client.GetSecret("mySecret");
+
+string secretValue = secret.Value;
+```
+
+Обновите строку `await context.Response.WriteAsync("Hello World!");`, чтобы она выглядела так:
+
+```csharp
+await context.Response.WriteAsync(secretValue);
+```
+
+Не забудьте сохранить внесенные изменения, прежде чем перейти к следующему шагу.
+
+### <a name="redeploy-your-web-app"></a>Повторное развертывание веб-приложения
+
+После обновления кода повторно разверните его в Azure с помощью следующих команд Git:
+
+```bash
+git add .
+git commit -m "Updated web app to access my key vault"
+git push azure master
+```
+
+## <a name="visit-your-completed-web-app"></a>Открытие страницы готового веб-приложения
+
+```bash
+http://<your-webapp-name>.azurewebsites.net
+```
+
+Вместо надписи **Hello World**, которую мы видели раньше, отобразится значение секрета: **Готово!**
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
->[!div class="nextstepaction"]
->[Руководство разработчика хранилища ключей Azure](developers-guide.md)
+- Дополнительные сведения см. в статье [Использование управляемых удостоверений для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md).
+- Дополнительные сведения об использовании управляемых удостоверений в Службе приложений см. в [этой статье](../../app-service/overview-managed-identity.md?tabs=dotnet).
+- Изучите [справочник по API клиентской библиотеки Azure Key Vault для .NET](/dotnet/api/overview/azure/key-vault?view=azure-dotnet).
+- Изучите [исходный код клиентской библиотеки Azure Key Vault для .NET](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/keyvault).
+- Просмотрите сведения о [пакете NuGet клиентской библиотеки Azure Key Vault для .NET версии 4](https://www.nuget.org/packages/Azure.Security.KeyVault.Secrets/).
+
+

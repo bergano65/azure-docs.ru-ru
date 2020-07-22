@@ -2,13 +2,13 @@
 title: Резервное копирование виртуальных машин VMware с помощью Azure Backup Server
 description: Из этой статьи вы узнаете, как использовать Azure Backup Server для резервного копирования виртуальных машин VMware, работающих на сервере VMware vCenter или ESXi.
 ms.topic: conceptual
-ms.date: 12/11/2018
-ms.openlocfilehash: 92846f9bb9259e55a2c957716676ff42c032b2b5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 05/24/2020
+ms.openlocfilehash: c9868012698fcdf5a2352c289de85261b6899dc3
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81537412"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86497919"
 ---
 # <a name="back-up-vmware-vms-with-azure-backup-server"></a>Резервное копирование виртуальных машин VMware с помощью Azure Backup Server
 
@@ -24,21 +24,24 @@ ms.locfileid: "81537412"
 
 ## <a name="before-you-start"></a>Перед началом работы
 
-- Убедитесь, что вы используете версию vCenter/ESXi, которая поддерживается для резервного копирования. См. таблицу поддержки [здесь](https://docs.microsoft.com/azure/backup/backup-mabs-protection-matrix).
+- Убедитесь, что вы используете версию vCenter/ESXi, которая поддерживается для резервного копирования. См. таблицу поддержки [здесь](./backup-mabs-protection-matrix.md).
 - Убедитесь, что Azure Backup Server настроено. Если это еще не сделано, перед началом изучите [это](backup-azure-microsoft-azure-backup.md). Azure Backup Server следует запускать с последними обновлениями.
+- Убедитесь, что открыты следующие сетевые порты:
+  - TCP 443 между MABS и vCenter;
+  - TCP 443 и TCP 902 между MABS и узлом ESXi.
 
 ## <a name="create-a-secure-connection-to-the-vcenter-server"></a>Создание безопасного подключения к серверу vCenter
 
 По умолчанию Azure Backup Server взаимодействует с серверами VMware по протоколу HTTPS. Чтобы настроить соединение HTTPS, скачайте сертификат Центра сертификации (ЦС) VMware и импортируйте его в Azure Backup Server.
 
-### <a name="before-you-begin"></a>Подготовка к работе
+### <a name="before-you-begin"></a>Перед началом
 
 - Если вы не хотите использовать протокол HTTPS, можно [отключить проверку сертификата HTTPS для всех серверов VMware](backup-azure-backup-server-vmware.md#disable-https-certificate-validation).
 - Обычно к серверу vCenter или ESXi можно подключиться из браузера на компьютере Azure Backup Server через веб-клиент vSphere. В первый раз подключение не будет защищено и отобразится следующее.
 - Важно понимать, как Azure Backup Server обрабатывает резервные копии.
   - Первым шагом будет создание Azure Backup Server резервной копии данных в локальном хранилище дисков. Azure Backup Server использует пул хранилища, набор дисков и томов, на которых Azure Backup Server хранит точки восстановления диска для защищенных данных. Пул хранения может быть хранилищем, подключенным напрямую (DAS), оптоволоконным каналом сети SAN или устройством или сетью хранения данных iSCSI. Важно убедиться в наличии достаточного объема хранилища для локального резервного копирования данных виртуальных машин VMware.
   - Затем Azure Backup Server создает резервные копии в Azure из локального хранилища дисков.
-  - Чтобы выяснить, какой объем хранилища необходим, см. [этот раздел](https://docs.microsoft.com/system-center/dpm/create-dpm-protection-groups?view=sc-dpm-1807#figure-out-how-much-storage-space-you-need). Информация предназначена для DPM, но ее также можно использовать для сервера Azure Backup Server.
+  - Чтобы выяснить, какой объем хранилища необходим, см. [этот раздел](/system-center/dpm/create-dpm-protection-groups#figure-out-how-much-storage-space-you-need). Информация предназначена для DPM, но ее также можно использовать для сервера Azure Backup Server.
 
 ### <a name="set-up-the-certificate"></a>Настройка сертификата
 
@@ -58,7 +61,7 @@ ms.locfileid: "81537412"
 
 4. Сохраните файл на компьютере Azure Backup Server с расширением ZIP.
 
-5. Щелкните правой кнопкой мыши **download. zip** > **извлечь все**. Содержимое сжатого ZIP-файла будет извлечено в папку **certs**, которая вмещает следующие элементы.
+5. Щелкните правой кнопкой мыши **download.zip**  >  **извлечь все**. Содержимое сжатого ZIP-файла будет извлечено в папку **certs**, которая вмещает следующие элементы.
    - Файл корневого сертификата с расширением, которое начинается с нумерованной последовательности, например, .0 и .1.
    - Файл списка отзыва сертификатов имеет расширение, которое начинается с такой последовательности, как .r0 или .r1. Файл списка отзыва сертификатов связан с сертификатом.
 
@@ -94,7 +97,7 @@ ms.locfileid: "81537412"
 
 Если в вашей организации есть безопасные границы и вы не хотите использовать протокол HTTPS между серверами VMware и Azure Backup Server компьютером, отключите HTTPS следующим образом:
 
-1. Скопируйте приведенный ниже текст и вставьте его в TXT-файл.
+1. Скопируйте этот текст и вставьте его в простой текстовый файл.
 
     ```text
     Windows Registry Editor Version 5.00
@@ -104,7 +107,7 @@ ms.locfileid: "81537412"
 
 2. На компьютере Azure Backup Server сохраните файл с именем **DisableSecureAuthentication.reg**.
 
-3. Дважды щелкните этот файл, чтобы активировать запись реестра.
+3. Дважды щелкните этот файл, чтобы активировать параметр реестра.
 
 ## <a name="create-a-vmware-role"></a>Создание роли VMware
 
@@ -115,11 +118,11 @@ ms.locfileid: "81537412"
 
     ![Администрирование](./media/backup-azure-backup-server-vmware/vmware-navigator-panel.png)
 
-3. В области **Администрирование** > **роли**щелкните значок Добавить роль (символ +).
+3. В области **Администрирование**  >  **роли**щелкните значок Добавить роль (символ +).
 
     ![Добавление роли](./media/backup-azure-backup-server-vmware/vmware-define-new-role.png)
 
-4. В окне **Создание** > **имени роли**роли введите *BackupAdminRole*. Это может быть любое имя, описывающее назначение этой роли.
+4. В окне **Создание**  >  **имени роли**роли введите *BackupAdminRole*. Это может быть любое имя, описывающее назначение этой роли.
 
 5. Выберите привилегии, как описано в следующей таблице, а затем нажмите кнопку **ОК**.  В списке на панели **Роли** появится новая роль.
    - Щелкните значок рядом с родительской меткой, чтобы раскрыть родительский элемент и просмотреть дочерние привилегии.
@@ -130,72 +133,75 @@ ms.locfileid: "81537412"
 
 ### <a name="role-permissions"></a>Разрешения ролей
 
-| Привилегии для учетной записи пользователя vCenter 6,7                     | Привилегии для учетной записи пользователя vCenter 6,5                     |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Кластер хранилища данных. Настройка кластера дататсторе            | Кластер хранилища данных. Настройка кластера дататсторе            |
-| Datastore.AllocateSpace                                      | Datastore.AllocateSpace                                      |
-| Datastore.Browse datastore                                   | Datastore.Browse datastore                                   |
-| Datastore.Low-level file operations                          | Datastore.Low-level file operations                          |
-| Global.Disable methods                                       | Global.Disable methods                                       |
-| Global.Enable methods                                        | Global.Enable methods                                        |
-| Global.Licenses                                              | Global.Licenses                                              |
-| Global.Log event                                             | Global.Log event                                             |
-| Global.Manage custom attributes                              | Global.Manage custom attributes                              |
-| Global.Set custom attribute                                  | Global.Set custom attribute                                  |
-| Ведущие. local Operations. Создать виртуальную машину                | Ведущие. local Operations. Создать виртуальную машину                |
-| Network.Assign network                                       | Network.Assign network                                       |
-| Resource. Назначение виртуальной машины пулу ресурсов           | Resource. Назначение виртуальной машины пулу ресурсов           |
-| vApp.Add virtual machine                                     | vApp.Add virtual machine                                     |
-| vApp.Assign resource pool                                    | vApp.Assign resource pool                                    |
-| vApp.Unregister                                              | vApp.Unregister                                              |
-| VirtualMachine. Configuration. Добавление или удаление устройства          | VirtualMachine. Configuration. Добавление или удаление устройства          |
-| Виртуальная машина. Конфигурация. получение аренды диска            | Virtual machine.Configuration.Disk lease                     |
-| Virtual machine.Configuration.Add new disk                   | Virtual machine.Configuration.Add new disk                   |
-| Виртуальная машина. Конфигурация. Расширенная конфигурация        | Virtual machine.Configuration.Advanced                       |
-| Виртуальная машина. Конфигурация. переключить отслеживание изменений на диске   | Виртуальная машина. Настройка. Отслеживание изменений на диске          |
-| Виртуальная машина. Конфигурация. Настройка USB-устройства узла     | Виртуальная машина. USB-устройство Configuration. Host               |
-| Виртуальная машина. Конфигурация. Расширение виртуального диска           | Виртуальная машина. Конфигурация. Расширение виртуального диска           |
-| Виртуальная машина. Configuration. запрос несобственных файлов           | Виртуальная машина. Configuration. запрос несобственных файлов           |
-| Виртуальная машина. Конфигурация. изменение размещения файл подкачки     | Виртуальная машина. Размещение Configuration. файл подкачки            |
-| Виртуальная машина. Гостевые операции. выполнение программы гостевой операции | Виртуальная машина. Гостевые операции. выполнение программы гостевой операции |
-| Виртуальная машина. Гостевые операции. изменения гостевой операции | Виртуальная машина. Гостевые операции. изменения гостевой операции |
-| Виртуальная машина. Гостевые операции. запросы гостевых операций    | Виртуальная машина. Гостевые операции. запросы гостевых операций    |
-| Виртуальная машина. Взаимодействовать. Подключение устройства             | Виртуальная машина. Взаимодействовать. Подключение устройства             |
-| Виртуальная машина. Взаимодействовать. Управление операционной системой на виртуальной машине с помощью API Викс | Виртуальная машина. Взаимодействовать. Управление операционной системой на виртуальной машине с помощью API Викс |
-| Виртуальная машина. Взаимодействовать. Выключение питания                      | Виртуальная машина. Взаимодействовать. Выключение питания                      |
-| Виртуальная машина. Инвентаризация. Создание нового                        | Виртуальная машина. Инвентаризация. Создание нового                        |
-| Virtual machine.Inventory.Remove                            | Virtual machine.Inventory.Remove                            |
-| Virtual machine.Inventory.Register                          | Virtual machine.Inventory.Register                          |
-| Виртуальная машина. Подготовка. разрешить доступ к диску             | Виртуальная машина. Подготовка. разрешить доступ к диску             |
-| Виртуальная машина. Подготовка. разрешение доступа к файлам             | Виртуальная машина. Подготовка. разрешение доступа к файлам             |
-| Виртуальная машина. Подготовка. разрешить доступ к диску только для чтения   | Виртуальная машина. Подготовка. разрешить доступ к диску только для чтения   |
-| Виртуальная машина. Подготовка. разрешить скачивание виртуальной машины | Виртуальная машина. Подготовка. разрешить скачивание виртуальной машины |
-| Virtual machine.Snapshot management.  Создание моментального снимка       | Virtual machine.Snapshot management.  Создание моментального снимка       |
-| Виртуальная машина. Управление моментальными снимками. Удалить моментальный снимок        | Виртуальная машина. Управление моментальными снимками. Удалить моментальный снимок        |
-| Виртуальная машина. Управление моментальными снимками. Вернуться к моментальному снимку     | Виртуальная машина. Управление моментальными снимками. Вернуться к моментальному снимку     |
+В следующей таблице перечислены привилегии, которые нужно назначить создаваемой учетной записи пользователя:
 
-<br>
+| Привилегии для учетной записи пользователя vCenter 6.5                          | Привилегии для учетной записи пользователя vCenter 6.7                            |
+|----------------------------------------------------------------------------|----------------------------------------------------------------------------|
+| Кластер хранилища данных. Настройка кластера хранилища данных                           | Кластер хранилища данных. Настройка кластера хранилища данных                           |
+| Datastore.AllocateSpace                                                    | Datastore.AllocateSpace                                                    |
+| Datastore.Browse datastore                                                 | Datastore.Browse datastore                                                 |
+| Datastore.Low-level file operations                                        | Datastore.Low-level file operations                                        |
+| Global.Disable methods                                                     | Global.Disable methods                                                     |
+| Global.Enable methods                                                      | Global.Enable methods                                                      |
+| Global.Licenses                                                            | Global.Licenses                                                            |
+| Global.Log event                                                           | Global.Log event                                                           |
+| Global.Manage custom attributes                                            | Global.Manage custom attributes                                            |
+| Global.Set custom attribute                                                | Global.Set custom attribute                                                |
+| Host.Local operations.Create virtual machine                               | Host.Local operations.Create virtual machine                               |
+| Network.Assign network                                                     | Network.Assign network                                                     |
+| Resource. Assign virtual machine to resource pool                          | Resource. Assign virtual machine to resource pool                          |
+| vApp.Add virtual machine                                                   | vApp.Add virtual machine                                                   |
+| vApp.Assign resource pool                                                  | vApp.Assign resource pool                                                  |
+| vApp.Unregister                                                            | vApp.Unregister                                                            |
+| VirtualMachine.Configuration. Добавление или удаление устройства                         | VirtualMachine.Configuration. Добавление или удаление устройства                         |
+| Virtual machine.Configuration.Disk lease                                   | Virtual machine.Configuration.Acquire disk lease                           |
+| Virtual machine.Configuration.Add new disk                                 | Virtual machine.Configuration.Add new disk                                 |
+| Virtual machine.Configuration.Advanced                                     | Virtual machine.Configuration.Advanced configuration                       |
+| Virtual machine.Configuration.Disk change tracking                         | Virtual machine.Configuration.Toggle disk change tracking                  |
+| Virtual machine.Configuration.Host USB device                              | Virtual machine.Configuration.Configure Host USB device                    |
+| Virtual machine.Configuration.Extend virtual disk                          | Virtual machine.Configuration.Extend virtual disk                          |
+| Virtual machine.Configuration.Query unowned files                          | Virtual machine.Configuration.Query unowned files                          |
+| Virtual machine.Configuration.Swapfile placement                           | Virtual machine.Configuration.Change Swapfile placement                    |
+| Virtual machine.Guest Operations.Guest Operation Program Execution         | Virtual machine.Guest Operations.Guest Operation Program Execution         |
+| Virtual machine.Guest Operations.Guest Operation Modifications             | Virtual machine.Guest Operations.Guest Operation Modifications             |
+| Virtual machine.Guest Operations.Guest Operation Queries                   | Virtual machine.Guest Operations.Guest Operation Queries                   |
+| Virtual machine.Interaction.Device connection                            | Virtual machine.Interaction.Device connection                            |
+| Virtual machine.Interaction.Guest operating system management by VIX API | Virtual machine.Interaction.Guest operating system management by VIX API |
+| Virtual machine.Interaction.Power Off                                    | Virtual machine.Interaction.Power Off                                    |
+| Virtual machine.Inventory.Create new                                      | Virtual machine.Inventory.Create new                                      |
+| Virtual machine.Inventory.Remove                                          | Virtual machine.Inventory.Remove                                          |
+| Virtual machine.Inventory.Register                                        | Virtual machine.Inventory.Register                                        |
+| Virtual machine.Provisioning.Allow disk access                            | Virtual machine.Provisioning.Allow disk access                            |
+| Virtual machine.Provisioning.Allow file access                            | Virtual machine.Provisioning.Allow file access                            |
+| Virtual machine.Provisioning.Allow read-only disk access                  | Virtual machine.Provisioning.Allow read-only disk access                  |
+| Virtual machine.Provisioning.Allow virtual machine download               | Virtual machine.Provisioning.Allow virtual machine download               |
+| Virtual machine.Snapshot management. Create snapshot                      | Virtual machine.Snapshot management. Create snapshot                      |
+| Virtual machine.Snapshot management.Remove Snapshot                       | Virtual machine.Snapshot management.Remove Snapshot                       |
+| Virtual machine.Snapshot management.Revert to snapshot                    | Virtual machine.Snapshot management.Revert to snapshot                    |
 
-| **Привилегии для учетной записи пользователя vCenter 6.0**                | **Привилегии для учетной записи пользователя vCenter 5.5** |
-| ---------------------------------------------------------- | ------------------------------------------- |
-| Datastore.AllocateSpace                                    | Network.Assign                              |
-| Глобальные. Управление настраиваемыми атрибутами                           | Datastore.AllocateSpace                     |
-| Глобальный. Задание настраиваемого атрибута                               | VirtualMachine.Config.ChangeTracking        |
-| Ведущие. local Operations. Создать виртуальную машину              | VirtualMachine.State.RemoveSnapshot         |
-| Network.  Assign network                                   | VirtualMachine.State.CreateSnapshot         |
-| Resource.  Assign virtual machine to resource pool         | VirtualMachine.Provisioning.DiskRandomRead  |
-| Виртуальная машина. Конфигурация. Добавление нового диска                | VirtualMachine.Interact.PowerOff            |
-| Виртуальная машина. Configuration. Advanced                    | VirtualMachine.Inventory.Create             |
-| Виртуальная машина. Настройка. Отслеживание изменений на диске        | VirtualMachine.Config.AddNewDisk            |
-| Виртуальная машина. USB-устройство Configuration. Host             | VirtualMachine.Config.HostUSBDevice         |
-| Виртуальная машина. Configuration. запрос несобственных файлов         | VirtualMachine.Config.AdvancedConfig        |
-| Виртуальная машина. Размещение Configuration. файл подкачки          | VirtualMachine.Config.SwapPlacement         |
-| Виртуальная машина. Взаимодействие. выключение                     | Global.ManageCustomFields                   |
-| Виртуальная машина. Товары. Создание                     |                                             |
-| Виртуальная машина. Подготовка. разрешить доступ к диску            |                                             |
-| Виртуальная машина. Подготовки. Allow read-only disk access |                                             |
-| Виртуальная машина. Управление моментальными снимками. Создать моментальный снимок       |                                             |
-| Виртуальная машина. Управление моментальными снимками. Удалить моментальный снимок       |                                             |
+> [!NOTE]
+> В следующей таблице перечислены привилегии для учетных записей пользователей vCenter 6.0 и vCenter 5.5.
+
+| Привилегии для учетной записи пользователя vCenter 6.0 | Привилегии для учетной записи пользователя vCenter 5.5 |
+| --- | --- |
+| Datastore.AllocateSpace | Network.Assign |
+| Global.Manage custom attributes | Datastore.AllocateSpace |
+| Global.Set custom attribute | VirtualMachine.Config.ChangeTracking |
+| Host.Local operations.Create virtual machine | VirtualMachine.State.RemoveSnapshot |
+| Network. Assign network | VirtualMachine.State.CreateSnapshot |
+| Resource. Assign virtual machine to resource pool | VirtualMachine.Provisioning.DiskRandomRead |
+| Virtual machine.Configuration.Add new disk | VirtualMachine.Interact.PowerOff |
+| Virtual machine.Configuration.Advanced | VirtualMachine.Inventory.Create |
+| Virtual machine.Configuration.Disk change tracking | VirtualMachine.Config.AddNewDisk |
+| Virtual machine.Configuration.Host USB device | VirtualMachine.Config.HostUSBDevice |
+| Virtual machine.Configuration.Query unowned files | VirtualMachine.Config.AdvancedConfig |
+| Virtual machine.Configuration.Swapfile placement | VirtualMachine.Config.SwapPlacement |
+| Virtual machine.Interaction.Power Off | Global.ManageCustomFields |
+| Virtual machine.Inventory. Create new |   |
+| Virtual machine.Provisioning.Allow disk access |   |
+| Virtual machine.Provisioning. Allow read-only disk access |   |
+| Virtual machine.Snapshot management.Create snapshot |   |
+| Virtual machine.Snapshot management.Remove Snapshot |   |
 
 ## <a name="create-a-vmware-account"></a>Создание учетной записи VMware
 
@@ -237,7 +243,7 @@ ms.locfileid: "81537412"
 
     ![Значок Azure Backup Server](./media/backup-azure-backup-server-vmware/mabs-icon.png)
 
-2. В консоли Azure Backup Server щелкните **Управление** >  **рабочие серверы** > **Управление VMware**.
+2. В консоли Azure Backup Server щелкните **Управление**  >   **рабочие серверы**  >  **Управление VMware**.
 
     ![Консоль сервера Azure Backup Server](./media/backup-azure-backup-server-vmware/add-vmware-credentials.png)
 
@@ -257,11 +263,11 @@ ms.locfileid: "81537412"
 
 Добавление vCenter Server в Azure Backup Server
 
-1. В консоли Azure Backup Server щелкните **Управление** > **рабочие серверы** > **Добавить**.
+1. В консоли Azure Backup Server щелкните **Управление**  >  **рабочие серверы**  >  **Добавить**.
 
     ![Открытие мастера добавления рабочего сервера](./media/backup-azure-backup-server-vmware/add-vcenter-to-mabs.png)
 
-2.  > На странице **Мастер добавления рабочего сервера****выберите тип рабочего сервера** , выберите **серверы VMware**и нажмите кнопку **Далее**.
+2. На странице **Мастер добавления рабочего сервера**  >  **выберите тип рабочего сервера** , выберите **серверы VMware**и нажмите кнопку **Далее**.
 
     ![Мастер добавления рабочего сервера](./media/backup-azure-backup-server-vmware/production-server-add-wizard.png)
 
@@ -367,6 +373,21 @@ ms.locfileid: "81537412"
 
     ![Сводка параметров и элементов группы защиты](./media/backup-azure-backup-server-vmware/protection-group-summary.png)
 
+## <a name="vmware-parallel-backups"></a>Параллельные операции резервного копирования VMware
+
+>[!NOTE]
+> Эта функция применима к MABS v3 UR1.
+
+В более ранних версиях MABS параллельные резервные копии выполнялись только в группах защиты. При использовании MABS v3 UR1 все резервные копии виртуальных машин VMWare в одной группе защиты являются параллельными, что приводит к ускорению резервного копирования виртуальных машин. Все задания разностной репликации VMWare выполняются параллельно. По умолчанию число заданий, выполняемых параллельно, равно 8.
+
+Количество заданий можно изменить с помощью раздела реестра, как показано ниже (отсутствует по умолчанию, его необходимо добавить):
+
+**Путь к разделу**:`Software\Microsoft\Microsoft Data Protection Manager\Configuration\ MaxParallelIncrementalJobs\VMWare`<BR>
+**Тип ключа**: DWORD (32-bit).
+
+> [!NOTE]
+> Вы можете увеличить количество заданий. Если задать номер задания 1, задания репликации будут выполняться последовательно. Увеличивая число, необходимо учитывать производительность VMWare. Оцените количество используемых ресурсов и дополнительные сведения об использовании на сервере VMWare vSphere, а также определите число заданий разностной репликации, выполняемых параллельно. Кроме того, это изменение повлияет только на вновь созданные группы защиты. Для существующих групп защиты необходимо временно добавить еще одну виртуальную машину в группу защиты. В этом случае необходимо соответствующим образом обновить конфигурацию группы защиты. После завершения процедуры эту виртуальную машину можно удалить из группы защиты.
+
 ## <a name="vmware-vsphere-67"></a>VMware vSphere 6.7
 
 Чтобы создать резервную копию vSphere 6,7, выполните следующие действия.
@@ -398,6 +419,126 @@ Windows Registry Editor Version 5.00
 "SchUseStrongCrypto"=dword:00000001
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="exclude-disk-from-vmware-vm-backup"></a>Исключение диска из резервной копии виртуальной машины VMware
+
+> [!NOTE]
+> Эта функция применима к MABS v3 UR1.
+
+С помощью MABS v3 UR1 можно исключить конкретный диск из резервной копии виртуальной машины VMware. **ExcludeDisk.ps1** скрипта конфигурации находится в папке `C:\Program Files\Microsoft Azure Backup Server\DPM\DPM\bin folder` .
+
+Чтобы настроить исключение диска, выполните следующие действия.
+
+### <a name="identify-the-vmware-vm-and-disk-details-to-be-excluded"></a>Поиск сведений о виртуальной машине и диске VMWare, которые будут исключены
+
+  1. В консоли VMware перейдите к параметрам виртуальной машины, для которых требуется исключить диск.
+  2. Выберите диск, который необходимо исключить, и запишите путь к этому диску.
+
+        Например, чтобы исключить жесткий диск 2 из TestVM4, путь к жесткому диску 2 — **[datastore1] TestVM4/TestVM4\_1.vmdk**.
+
+        ![Жесткий диск для исключения](./media/backup-azure-backup-server-vmware/test-vm.png)
+
+### <a name="configure-mabs-server"></a>Настройка сервера MABS
+
+Перейдите на сервер MABS, на котором виртуальная машина VMware настроена для защиты, чтобы настроить исключение диска.
+
+  1. Получите сведения о узле VMware, который защищен на сервере MABS.
+
+        ```powershell
+        $psInfo = get-DPMProductionServer
+        $psInfo
+        ```
+
+        ```output
+        ServerName   ClusterName     Domain            ServerProtectionState
+        ----------   -----------     ------            ---------------------
+        Vcentervm1                   Contoso.COM       NoDatasourcesProtected
+        ```
+
+  2. Выберите узел VMware и укажите защиту для узла VMware.
+
+        ```powershell
+        $vmDsInfo = get-DPMDatasource -ProductionServer $psInfo[0] -Inquire
+        $vmDsInfo
+        ```
+
+        ```output
+        Computer     Name     ObjectType
+        --------     ----     ----------
+        Vcentervm1  TestVM2      VMware
+        Vcentervm1  TestVM1      VMware
+        Vcentervm1  TestVM4      VMware
+        ```
+
+  3. Выберите виртуальную машину, для которой требуется исключить диск.
+
+        ```powershell
+        $vmDsInfo[2]
+        ```
+
+        ```output
+        Computer     Name      ObjectType
+        --------     ----      ----------
+        Vcentervm1   TestVM4   VMware
+        ```
+
+  4. Чтобы исключить диск, перейдите в `Bin` папку и запустите сценарий *ExcludeDisk.ps1* со следующими параметрами:
+
+        > [!NOTE]
+        > Перед выполнением этой команды необходимо запустить службу DPMRA на сервере MABS. В противном случае скрипт возвращает значение Success, но не обновляет список исключений. Перед остановкой службы убедитесь, что нет выполняющихся заданий.
+
+     **Чтобы добавить или удалить диск из исключения, выполните следующую команду:**
+
+      ```powershell
+      ./ExcludeDisk.ps1 -Datasource $vmDsInfo[0] [-Add|Remove] "[Datastore] vmdk/vmdk.vmdk"
+      ```
+
+     **Пример**:
+
+     Чтобы добавить исключение диска для TestVM4, выполните следующую команду:
+
+       ```powershell
+      C:\Program Files\Microsoft Azure Backup Server\DPM\DPM\bin> ./ExcludeDisk.ps1 -Datasource $vmDsInfo[2] -Add "[datastore1] TestVM4/TestVM4\_1.vmdk"
+       ```
+
+      ```output
+       Creating C:\Program Files\Microsoft Azure Backup Server\DPM\DPM\bin\excludedisk.xml
+       Disk : [datastore1] TestVM4/TestVM4\_1.vmdk, has been added to disk exclusion list.
+      ```
+
+  5. Убедитесь, что диск добавлен для исключения.
+
+     **Чтобы просмотреть существующее исключение для конкретных виртуальных машин, выполните следующую команду:**
+
+        ```powershell
+        ./ExcludeDisk.ps1 -Datasource $vmDsInfo[0] [-view]
+        ```
+
+     **Пример**
+
+        ```powershell
+        C:\Program Files\Microsoft Azure Backup Server\DPM\DPM\bin> ./ExcludeDisk.ps1 -Datasource $vmDsInfo[2] -view
+        ```
+
+        ```output
+        <VirtualMachine>
+        <UUID>52b2b1b6-5a74-1359-a0a5-1c3627c7b96a</UUID>
+        <ExcludeDisk>[datastore1] TestVM4/TestVM4\_1.vmdk</ExcludeDisk>
+        </VirtualMachine>
+        ```
+
+     После настройки защиты для этой виртуальной машины исключенный диск не будет перечислен во время защиты.
+
+        > [!NOTE]
+        > Если вы выполняете эти действия для уже защищенной виртуальной машины, необходимо запустить проверку согласованности вручную после добавления диска для исключения.
+
+### <a name="remove-the-disk-from-exclusion"></a>Удаление диска из исключения
+
+Чтобы удалить диск из исключения, выполните следующую команду:
+
+```powershell
+C:\Program Files\Microsoft Azure Backup Server\DPM\DPM\bin> ./ExcludeDisk.ps1 -Datasource $vmDsInfo[2] -Remove "[datastore1] TestVM4/TestVM4\_1.vmdk"
+```
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для решения проблем с устранением неполадок при настройке резервного копирования см. статью [Устранение неполадок Azure Backup Server](./backup-azure-mabs-troubleshoot.md).

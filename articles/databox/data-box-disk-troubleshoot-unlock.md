@@ -5,15 +5,15 @@ services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: disk
-ms.topic: article
+ms.topic: troubleshooting
 ms.date: 06/14/2019
 ms.author: alkohli
-ms.openlocfilehash: 02cbf64261bbfbf50561e1b7466b46b27b688e0a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 7b49752eeca6a3600830d71a029b6d93c9390b13
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "67148287"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85560061"
 ---
 # <a name="troubleshoot-disk-unlocking-issues-in-azure-data-box-disk"></a>Устранение неполадок, связанных с разблокировкой диска, в Диск Azure Data Box
 
@@ -47,17 +47,17 @@ To figure out who accessed the **Device credentials** blade, you can query the A
 
 ### <a name="issue-could-not-unlock-drive-from-bitlocker"></a>Ошибка: не удалось разблокировать диск из BitLocker
  
-**Причина:** 
+**Причина** 
 
 Вы использовали пароль в диалоговом окне BitLocker и пытались разблокировать диск с помощью диалогового окна разблокировки в BitLocker. Это не будет работать.
 
-**Разрешение**
+**Способы устранения:**
 
 Чтобы разблокировать Диски Data Box, необходимо использовать средство разблокирования Дисков Data Box и предоставить пароль с портала Azure. Дополнительные сведения см. в статье [учебник. Распаковка, подключение и разблокировка диск Azure Data Box](data-box-disk-deploy-set-up.md#connect-to-disks-and-get-the-passkey).
  
 ### <a name="issue-could-not-unlock-or-verify-some-volumes-contact-microsoft-support"></a>Ошибка: не удалось разблокировать или проверить некоторые тома. Обратитесь в службу технической поддержки Майкрософт.
  
-**Причина:**
+**Причина**
 
 Вы можете увидеть следующую ошибку в журнале ошибок и не иметь возможности разблокировать или проверить некоторые тома.
 
@@ -65,12 +65,12 @@ To figure out who accessed the **Device credentials** blade, you can query the A
  
 Это означает, что в вашем клиенте Windows, скорее всего, отсутствует соответствующая версия Windows PowerShell.
 
-**Разрешение**
+**Способы устранения:**
 
 Вы можете установить [Windows PowerShell версии 5.0](https://www.microsoft.com/download/details.aspx?id=54616) и повторить операцию.
  
 Если тома по-прежнему не удается разблокировать, скопируйте журналы из папки, которая содержит средство разблокировки Диска Data Box, и [обратитесь в службу поддержки Майкрософт](data-box-disk-contact-microsoft-support.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Сведения об [устранении неполадок при проверке](data-box-disk-troubleshoot.md).

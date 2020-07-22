@@ -1,5 +1,5 @@
 ---
-title: Проверка развертываний на предмет рекомендаций
+title: Проверка применения рекомендаций в развертываниях
 titleSuffix: Azure Kubernetes Service
 description: Сведений о проверке применения рекомендаций в развертываниях в Службе Azure Kubernetes с помощью kube-advisor
 services: container-service
@@ -7,12 +7,12 @@ author: seanmck
 ms.topic: troubleshooting
 ms.date: 11/05/2018
 ms.author: seanmck
-ms.openlocfilehash: 17e21c142dc354de7b72bc17396b19366027c5cd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 2b0078f1aff3ef81ee270f67de0fffddec3abab9
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80668402"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86255257"
 ---
 # <a name="checking-for-kubernetes-best-practices-in-your-cluster"></a>Проверка применения рекомендаций Kubernetes в кластере
 
@@ -22,19 +22,19 @@ ms.locfileid: "80668402"
 
 [Средство kube-advisor][kube-advisor-github] представляет собой контейнер, предназначенный для выполнения в кластере. Он запрашивает с сервера API Kubernetes сведения о ваших развертываниях и возвращает набор предложений по оптимизации.
 
-Средство KUBE-Advisor может сообщать о запросах ресурсов и ограничениях, отсутствующих в Подспекс для приложений Windows, а также в приложениях Linux, но само средство KUBE Advisor должно быть запланировано на Pod Linux. Вы можете запланировать запуск модуля Pod в пуле узлов с определенной ОС с помощью [селектора узла][k8s-node-selector] в конфигурации Pod.
+Средство kube-advisor может сообщать о запросах на ресурсы и отсутствующих ограничениях в PodSpecs для приложений Windows, а также приложений Linux, но средство kube-advisor должно при этом быть запланировано в объекте pod Linux. Вы можете запланировать запуск объекта pod в пуле узлов с определенной ОС с помощью [селектора узла][k8s-node-selector] в конфигурации объекта pod.
 
 > [!NOTE]
 > Средство kube-advisor поддерживается корпорацией Майкрософт по мере возможности. Проблемы и предложения следует отправлять в GitHub.
 
 ## <a name="running-kube-advisor"></a>Запуск kube-advisor
 
-Чтобы запустить средство в кластере, для которого настроено [управление доступом на основе ролей (RBAC)](azure-ad-integration.md), используйте приведенные ниже команды. Первая команда создает учетную запись службы Kubernetes. Вторая команда запускает средство в pod с помощью этой учетной записи службы и настраивает удаление pod после выхода. 
+Чтобы запустить средство в кластере, для которого настроено [управление доступом на основе ролей (RBAC)](./azure-ad-integration-cli.md), используйте приведенные ниже команды. Первая команда создает учетную запись службы Kubernetes. Вторая команда запускает средство в pod с помощью этой учетной записи службы и настраивает удаление pod после выхода. 
 
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/Azure/kube-advisor/master/sa.yaml
 
-kubectl run --rm -i -t kubeadvisor --image=mcr.microsoft.com/aks/kubeadvisor --restart=Never --overrides="{ \"apiVersion\": \"v1\", \"spec\": { \"serviceAccountName\": \"kube-advisor\" } }"
+kubectl run --rm -i -t kubeadvisor --image=mcr.microsoft.com/aks/kubeadvisor --restart=Never --overrides="{ \"apiVersion\": \"v1\", \"spec\": { \"serviceAccountName\": \"kube-advisor\" } }" --namespace default
 ```
 
 Если вы не используете RBAC, то можете выполнить команду следующим образом:
@@ -67,7 +67,7 @@ kubectl delete -f https://raw.githubusercontent.com/Azure/kube-advisor/master/sa
 
 Если средство выполняется применительно к кластеру, для которого не включено управление RBAC, очистка не требуется.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Устранение неполадок со службой Azure Kubernetes](troubleshooting.md)
 

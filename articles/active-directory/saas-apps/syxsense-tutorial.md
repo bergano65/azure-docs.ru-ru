@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/07/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 684b8c31524c55ad3335c02ec1268f1afea78a93
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 33574871ede636c3ff349ca960e7df8a33b77463
+ms.sourcegitcommit: 309cf6876d906425a0d6f72deceb9ecd231d387c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77086593"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84267007"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-syxsense"></a>Руководство по Интеграция единого входа Azure Active Directory со Syxsense
 
@@ -86,10 +86,6 @@ ms.locfileid: "77086593"
     а. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<SUBDOMAIN>.cloudmanagementsuite.com/Saml2`.
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<SUBDOMAIN>.cloudmanagementsuite.com/Saml2/Acs`.
-
-1. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
-
-    В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<SUBDOMAIN>.cloudmanagementsuite.com/samlautologin`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Syxsense](mailto:DevTeam@syxsense.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

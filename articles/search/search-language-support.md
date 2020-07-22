@@ -7,13 +7,13 @@ author: yahnoosh
 ms.author: jlembicz
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 11/04/2019
-ms.openlocfilehash: ca2bc66c755da2011cc7016f37b194caa6200d9a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 07/12/2020
+ms.openlocfilehash: 8809dcf58a0baad60ba567980f1e0193138aad19
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "72793596"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86496440"
 ---
 # <a name="how-to-create-an-index-for-multiple-languages-in-azure-cognitive-search"></a>Создание индекса для нескольких языков в Azure Когнитивный поиск
 
@@ -44,7 +44,7 @@ Azure Когнитивный поиск предлагает широкий вы
 
 Если известен язык агента, отправившего запрос, запрос поиска можно ограничить определенным полем с помощью параметра **searchFields** . Следующий запрос будет применен только к описанию на польском языке:
 
-`https://[service name].search.windows.net/indexes/[index name]/docs?search=darmowy&searchFields=PolishContent&api-version=2019-05-06`
+`https://[service name].search.windows.net/indexes/[index name]/docs?search=darmowy&searchFields=PolishContent&api-version=2020-06-30`
 
 Вы можете запросить индекс на портале с помощью [**обозревателя поиска**](search-explorer.md) , чтобы вставить запрос, аналогичный показанному выше.
 
@@ -52,6 +52,7 @@ Azure Когнитивный поиск предлагает широкий вы
 
 Если язык агента, отправившего запрос, неизвестен, запрос можно применить ко всем полям одновременно. При необходимости можно сделать какой-то язык предпочтительным, воспользовавшись [профилями оценки](index-add-scoring-profiles.md). В следующем примере совпадения, найденные в описании на английском языке, получат более высокую оценку, чем совпадения на польском или французском языках:
 
+```http
     "scoringProfiles": [
       {
         "name": "englishFirst",
@@ -60,8 +61,9 @@ Azure Когнитивный поиск предлагает широкий вы
         }
       }
     ]
+```
 
-`https://[service name].search.windows.net/indexes/[index name]/docs?search=Microsoft&scoringProfile=englishFirst&api-version=2019-05-06`
+`https://[service name].search.windows.net/indexes/[index name]/docs?search=Microsoft&scoringProfile=englishFirst&api-version=2020-06-30`
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 description: включить файл
 services: iot-suite
 author: dominicbetts
@@ -9,10 +9,10 @@ ms.date: 09/17/2018
 ms.author: dobett
 ms.custom: include file
 ms.openlocfilehash: c79b6f854dc78670a7eb8a1275c3e2fc46fcdd99
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "67185722"
 ---
 ### <a name="code-walkthrough"></a>Пошаговое руководство по написанию кода

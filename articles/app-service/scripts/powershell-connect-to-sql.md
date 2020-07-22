@@ -6,16 +6,16 @@ ms.assetid: 055440a9-fff1-49b2-b964-9c95b364e533
 ms.topic: sample
 ms.date: 03/20/2017
 ms.custom: mvc
-ms.openlocfilehash: bb5fc8bcc99a4439276f53325c029635143c86c5
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 9086e00e4b6caf89ab249bbf25ca03a6f068ba49
+ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74685383"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85248306"
 ---
-# <a name="connect-an-app-service-app-to-a-sql-database"></a>Подключение приложения Службы приложений к базе данных SQL
+# <a name="connect-an-app-service-app-to-sql-database"></a>Подключение приложения Службы приложений к Базе данных SQL
 
-В этой статье вы узнаете, как создать базу данных SQL Azure и приложение Службы приложений. Затем вы свяжете базу данных SQL с приложением, используя параметры приложения.
+В этой статье показано, как создать базу данных в Базе данных SQL Azure и приложение Службы приложений. Затем вы свяжете базу данных с приложением, используя параметры приложения.
 
 При необходимости установите Azure PowerShell с помощью инструкции, приведенной в [руководстве Azure PowerShell](/powershell/azure/overview), а затем выполните команду `Connect-AzAccount`, чтобы создать подключение к Azure.
 
@@ -23,7 +23,7 @@ ms.locfileid: "74685383"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-[!code-azurepowershell-interactive[main](../../../powershell_scripts/app-service/connect-to-sql/connect-to-sql.ps1?highlight=13 "Connect an app to a SQL database")]
+[!code-azurepowershell-interactive[main](../../../powershell_scripts/app-service/connect-to-sql/connect-to-sql.ps1?highlight=13 "Connect an app to SQL Database")]
 
 ## <a name="clean-up-deployment"></a>Очистка развертывания 
 
@@ -42,8 +42,8 @@ Remove-AzResourceGroup -Name myResourceGroup -Force
 | [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [New-AzAppServicePlan](/powershell/module/az.websites/new-azappserviceplan) | Создает план службы приложений. |
 | [New-AzWebApp](/powershell/module/az.websites/new-azwebapp) | Создает приложение Службы приложений. |
-| [New-AzSQLServer](/powershell/module/az.sql/new-azsqlserver) | Создает сервер базы данных SQL. |
-| [New-AzSqlServerFirewallRule](/powershell/module/az.sql/new-azsqlserverfirewallrule) | Создает правило брандмауэра для сервера Базы данных SQL. |
+| [New-AzSQLServer](/powershell/module/az.sql/new-azsqlserver) | Создает сервер. |
+| [New-AzSqlServerFirewallRule](/powershell/module/az.sql/new-azsqlserverfirewallrule) | Создает правило брандмауэра на уровне сервера. |
 | [New-AzSQLDatabase](/powershell/module/az.sql/new-azsqldatabase) | Создает базу данных или эластичную базу данных. |
 | [Set-AzWebApp](/powershell/module/az.websites/set-azwebapp) | Изменяет конфигурацию приложения Службы приложений. |
 

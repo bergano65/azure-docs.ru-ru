@@ -9,17 +9,16 @@ editor: ''
 ms.assetid: ''
 ms.service: storsimple
 ms.devlang: NA
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 07/03/2017
 ms.author: alkohli
-ms.openlocfilehash: 7801cdc6573799330e5173db82dead8d4f2cd83f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: ed624fd5fb86b95e0b79c1c7ed4de50749ec7046
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80398249"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85512042"
 ---
 # <a name="use-the-device-summary-in-storsimple-device-manager-service"></a>Использование сводки по устройству в службе диспетчера устройств StorSimple
 
@@ -44,7 +43,7 @@ ms.locfileid: "80398249"
 
 ![Основные компоненты устройства](./media/storsimple-8000-device-dashboard/device-summary3.png)
 
-## <a name="monitoring"></a>Мониторинг
+## <a name="monitoring"></a>Наблюдение
 
 * Элемент **Оповещения** содержит все активные оповещения для устройства, сгруппированные по уровню серьезности.
 

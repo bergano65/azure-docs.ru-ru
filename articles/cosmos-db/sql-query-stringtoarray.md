@@ -8,10 +8,9 @@ ms.date: 03/03/2020
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: 18acbd94fa3d717fc20b9e1020b9bf7c6db7744d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78302922"
 ---
 # <a name="stringtoarray-azure-cosmos-db"></a>Стрингтоаррай (Azure Cosmos DB)
@@ -32,12 +31,12 @@ StringToArray(<str_expr>)
   
   Возвращает выражение массива или значение undefine. 
   
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Комментарии
   Вложенные строковые значения должны быть записаны с двойными кавычками, чтобы быть допустимыми JSON. Дополнительные сведения о формате JSON см. в разделе [JSON.org](https://json.org/)
   
 ## <a name="examples"></a>Примеры
   
-  В следующем примере показано, `StringToArray` как ведет себя в разных типах. 
+  В следующем примере показано `StringToArray` , как ведет себя в разных типах. 
   
  Ниже приведены примеры с допустимыми входными данными.
 
@@ -59,7 +58,7 @@ SELECT
 Ниже приведен пример недопустимых входных данных. 
    
  Одинарные кавычки в массиве не являются допустимыми JSON.
-Несмотря на то, что они являются допустимыми в запросе, они не будут анализироваться в допустимые массивы. Строки в строке массива должны либо быть экранированы "[\\"\\"]", либо окружающая кавычка должна быть единственной "[" "]".
+Несмотря на то, что они являются допустимыми в запросе, они не будут анализироваться в допустимые массивы. Строки в строке массива должны либо быть экранированы "[ \\ " \\ "]", либо окружающая кавычка должна быть единственной "[" "]".
 
 ```sql
 SELECT
@@ -95,8 +94,8 @@ SELECT
 
 Эта системная функция не будет использовать индекс.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Строковые функции Azure Cosmos DB](sql-query-string-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство с Azure Cosmos DB](introduction.md)
+- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)

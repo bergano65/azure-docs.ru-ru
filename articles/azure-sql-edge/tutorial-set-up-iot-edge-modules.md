@@ -2,19 +2,19 @@
 title: Настройка модулей IoT Edge в службе SQL Azure для пограничных вычислений
 description: В части 2 (из 3) этого руководства по SQL Azure для пограничных вычислений, посвященного прогнозированию примеси железной руды, вы настроите модули и подключения IoT Edge.
 keywords: ''
-services: sql-database-edge
-ms.service: sql-database-edge
+services: sql-edge
+ms.service: sql-edge
 ms.topic: tutorial
 author: VasiyaKrishnan
 ms.author: vakrishn
 ms.reviewer: sstein
 ms.date: 05/19/2020
-ms.openlocfilehash: bbbbe09aac30165a2f9b7bbe54f58e0c09a6cf09
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: a4087ef56712e098443009bd0457029394ea7b51
+ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83593503"
+ms.lasthandoff: 05/31/2020
+ms.locfileid: "84235027"
 ---
 # <a name="set-up-iot-edge-modules-and-connections"></a>Настройка модулей и подключений IoT Edge
 
@@ -25,7 +25,7 @@ ms.locfileid: "83593503"
 
 ## <a name="create-azure-stream-analytics-module"></a>Создание модуля Azure Stream Analytics
 
-Создайте модуль Azure Stream Analytics, который будет использоваться в этом руководстве. Дополнительные сведения об использовании заданий потоковой передачи с SQL Server см. в статье [Использование потоковых заданий с Базой данных SQL Azure для пограничных вычислений](https://docs.microsoft.com/azure/sql-database-edge/stream-analytics#using-streaming-jobs-with-sql-database-edge).
+Создайте модуль Azure Stream Analytics, который будет использоваться в этом руководстве. Дополнительные сведения об использовании заданий потоковой передачи с SQL для пограничных вычислений см. [здесь](stream-analytics.md).
 
 После создания задания Azure Stream Analytics с помощью среды размещения, установленной в качестве Edge, настройте для учебника входные и выходные данные.
 
@@ -101,7 +101,7 @@ ms.locfileid: "83593503"
 
 ## <a name="deploy-the-azure-sql-edge-module"></a>Развертывание модуля SQL Azure для пограничных вычислений
 
-1. Разверните модуль SQL для пограничных вычислений, выполнив действия, описанные в статье [Развертывание предварительной версии Базы данных SQL Azure для пограничных вычислений](https://docs.microsoft.com/azure/sql-database-edge/deploy-portal#deploy-sql-database-edge).
+1. Разверните модуль SQL Azure для пограничных вычислений, выполнив действия, описанные в статье [Развертывание SQL Azure для пограничных вычислений (предварительная версия)](https://docs.microsoft.com/azure/azure-sql-edge/deploy-portal).
 
 2. На странице **Выбор модулей** в разделе **Specify Route** (Задание маршрута) укажите маршруты для связи модуля с центром IoT Edge следующим образом. 
 

@@ -4,6 +4,8 @@
   items:
     - name: Что такое Виртуальный рабочий стол Windows
       href: overview.md
+    - name: Новые возможности
+      href: whats-new.md
     - name: "Документация по выпуску за осень 2019\_года"
       href: ./virtual-desktop-fall-2019/tenant-setup-azure-active-directory.md
 - name: Учебники
@@ -21,7 +23,7 @@
     - name: Подключение к ресурсам Виртуального рабочего стола Windows
       items:
         - name: Подключение к клиенту Windows Desktop
-          href: connect-windows-7-and-10.md
+          href: connect-windows-7-10.md
         - name: Подключение к веб-клиенту
           href: connect-web.md
         - name: Подключение к клиенту Android
@@ -36,6 +38,8 @@
       items:
         - name: PowerShell
           href: create-host-pools-powershell.md
+        - name: "Развертывание виртуальной машины Windows\_7"
+          href: deploy-windows-7-virtual-machine.md
         - name: Развертывание узла сеансов на основе GPU
           href: configure-vm-gpu.md
         - name: Развертывание существующего пула узлов
@@ -50,6 +54,8 @@
           href: create-fslogix-profile-container.md
         - name: "Использование служб \"Файлы Azure\" и Azure AD\_DS"
           href: create-profile-container-adds.md
+        - name: "Использование служб \"Файлы Azure\" и AD\_DS"
+          href: create-file-share.md
     - name: Настройка параметров пула узлов
       items:
         - name: Свойства RDP
@@ -80,10 +86,14 @@
       href: teams-on-wvd.md
     - name: Настройка Многофакторной идентификации Azure
       href: set-up-mfa.md
+    - name: Настройка автоматических обновлений
+      href: configure-automatic-updates.md
     - name: Установка языковых пакетов
       href: language-packs.md
 - name: Основные понятия
   items:
+    - name: Список надежных URL-адресов
+      href: safe-url-list.md
     - name: Среда Виртуального рабочего стола Windows
       href: environment-setup.md
     - name: Определение задержки подключения пользователей
@@ -108,7 +118,7 @@
       href: troubleshoot-set-up-overview.md
     - name: Выявление и диагностика неполадок
       href: diagnostics-role-service.md
-    - name: Создание пула узлов и клиента
+    - name: Создание пула узлов
       href: troubleshoot-set-up-issues.md
     - name: Конфигурация виртуальной машины узла сеанса
       href: troubleshoot-vm-configuration.md
@@ -134,6 +144,10 @@
       href: 'https://docs.microsoft.com/windows-server/remote/remote-desktop-services/virtual-machine-recs?context=/azure/virtual-desktop/context/context'
 - name: Ресурсы
   items:
+    - name: PowerShell
+      href: /powershell/module/az.desktopvirtualization/?view=azps-4.2.0#desktopvirtualization
+    - name: Справочник по REST API
+      href: /rest/api/desktopvirtualization/
     - name: Средство оценки удобства работы
       href: 'https://azure.microsoft.com/services/virtual-desktop/assessment/'
     - name: Калькулятор цен

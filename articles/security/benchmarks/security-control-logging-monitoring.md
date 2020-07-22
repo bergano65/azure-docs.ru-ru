@@ -8,21 +8,21 @@ ms.date: 04/14/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
 ms.openlocfilehash: e58df0997c62a131a3c9987369f8e076a62d6654
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81408348"
 ---
 # <a name="security-control-logging-and-monitoring"></a>Управление безопасностью: ведение журнала и мониторинг
 
 Журналы безопасности и мониторинг посвящены действиям, связанным с включением, получением и хранением журналов аудита для служб Azure.
 
-## <a name="21-use-approved-time-synchronization-sources"></a>2,1: используйте источники синхронизации утвержденного времени
+## <a name="21-use-approved-time-synchronization-sources"></a>2.1. Использование утвержденных источников синхронизации времени
 
 | Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
-| 2.1 | 6.1 | Microsoft |
+| 2.1 | 6.1 | Майкрософт |
 
 Корпорация Майкрософт поддерживает источники времени для ресурсов Azure. Однако вы можете управлять параметрами синхронизации времени для ресурсов вычислений.
 
@@ -30,37 +30,37 @@ ms.locfileid: "81408348"
 
 - [Настройка синхронизации времени для ресурсов Azure Linux](https://docs.microsoft.com/azure/virtual-machines/linux/time-sync)
 
-## <a name="22-configure-central-security-log-management"></a>2,2: Настройка централизованного управления журналом безопасности
+## <a name="22-configure-central-security-log-management"></a>2.2. Настройка централизованного управления журналами безопасности
 
 | Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
 | 2.2 | 6,5, 6,6 | Customer |
 
-Прием журналов с помощью Azure Monitor для объединения данных безопасности, создаваемых устройствами конечных точек, сетевыми ресурсами и другими системами безопасности. В Azure Monitor используйте рабочие области Log Analytics для запроса и выполнения анализа и используйте учетные записи хранения Azure для долгосрочного и архивного хранения.
+Прием журналов с помощью Azure Monitor для объединения данных безопасности, создаваемых устройствами конечных точек, сетевыми ресурсами и другими системами безопасности. В Azure Monitor используйте рабочие области Log Analytics для запроса и выполнения анализа, а учетные записи хранения Azure — для долгосрочного и архивного хранения.
 
 Кроме того, вы можете включить и подключить данные к Azure Sentinel или сторонним SIEM. 
 
-- [Как подключить метку Azure](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+- [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
 
 - [Как получить журналы и метрики платформы с помощью Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings)
 
 - [Как получить журналы внутреннего узла виртуальной машины Azure с помощью Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/learn/quick-collect-azurevm)
 
-- [Как приступить к работе с Azure Monitor и интеграцией сторонних поставщиков SIEM](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/)
+- [Начало работы с Azure Monitor и интеграция SIEM стороннего производителя](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/)
 
-## <a name="23-enable-audit-logging-for-azure-resources"></a>2,3: Включите ведение журнала аудита для ресурсов Azure.
+## <a name="23-enable-audit-logging-for-azure-resources"></a>2.3. Включение журналов аудита для ресурсов Azure
 
 | Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
 | 2.3 | 6,2, 6,3 | Customer |
 
-Включите параметры диагностики для ресурсов Azure, чтобы получить доступ к журналам аудита, безопасности и диагностики. Журналы действий, которые автоматически доступны, включают источник событий, дату, пользователя, метку времени, исходные адреса, адреса назначения и другие полезные элементы.
+Включите параметры диагностики для ресурсов Azure, чтобы получить доступ к журналам аудита, безопасности и диагностики. Автоматически доступны журналы действий, включающие источник событий, дату, пользователя, метку времени, исходные адреса, адреса назначения и другие полезные элементы.
 
 - [Как получить журналы и метрики платформы с помощью Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings)
 
 - [Общие сведения о ведении журналов и различных типах журналов в Azure](https://docs.microsoft.com/azure/azure-monitor/platform/platform-logs-overview)
 
-## <a name="24-collect-security-logs-from-operating-systems"></a>2,4: получение журналов безопасности из операционных систем
+## <a name="24-collect-security-logs-from-operating-systems"></a>2.4. Сбор журналов безопасности из операционных систем
 
 | Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
@@ -72,7 +72,7 @@ ms.locfileid: "81408348"
 
 - [Общие сведения о сборе данных в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-enable-data-collection)
 
-## <a name="25-configure-security-log-storage-retention"></a>2,5: Настройка хранения журнала безопасности
+## <a name="25-configure-security-log-storage-retention"></a>2.5. Настройка хранения журнала безопасности
 
 | Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
@@ -84,7 +84,7 @@ ms.locfileid: "81408348"
 
 - [Настройка политики хранения для журналов учетных записей хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-monitor-storage-account#configure-logging)
 
-## <a name="26-monitor-and-review-logs"></a>2,6: мониторинг и просмотр журналов
+## <a name="26-monitor-and-review-logs"></a>2.6. Мониторинг и просмотр журналов
 
 | Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
@@ -94,11 +94,11 @@ ms.locfileid: "81408348"
 
 Кроме того, вы можете включить и подключить данные к Azure Sentinel или сторонним SIEM. 
 
-- [Как подключить метку Azure](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+- [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
 
-- [Общие сведения о Log Analytics рабочей области](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal)
+- [Общие сведения о рабочей области Log Analytics](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-portal)
 
-- [Как выполнять пользовательские запросы в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries)
+- [Выполнение пользовательских запросов в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries)
 
 ## <a name="27-enable-alerts-for-anomalous-activities"></a>2,7: Включение оповещений для аномальных действий
 
@@ -110,17 +110,17 @@ ms.locfileid: "81408348"
 
 Кроме того, вы можете включить и подключить данные в Azure Sentinel.
 
-- [Как подключить метку Azure](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+- [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
 
 - [Управление оповещениями в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-managing-and-responding-alerts)
 
 - [Как оповещать данные журнала Log Analytics](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-response)
 
-## <a name="28-centralize-anti-malware-logging"></a>2,8: централизованное ведение журнала защиты от вредоносных программ
+## <a name="28-centralize-anti-malware-logging"></a>2.8. Централизованное ведение журнала защиты от вредоносных программ
 
 | Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
-| 2.8 | 8.6 | Customer |
+| 2,8 | 8.6 | Customer |
 
 Включите сбор событий защиты от вредоносных программ для виртуальных машин Azure и облачных служб.
 
@@ -130,15 +130,15 @@ ms.locfileid: "81408348"
 
 - [Знакомство с антивредоносным по Майкрософт](https://docs.microsoft.com/azure/security/fundamentals/antimalware)
 
-## <a name="29-enable-dns-query-logging"></a>2,9: Включение ведения журнала запросов DNS
+## <a name="29-enable-dns-query-logging"></a>2.9. Включение ведения журнала запросов DNS
 
 | Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
-| 2,9 | 8,7 | Customer |
+| 2.9 | 8,7 | Customer |
 
 Реализуйте сторонние решения из Azure Marketplace для решения регистрации DNS в соответствии с вашими организациями.  
 
-## <a name="210-enable-command-line-audit-logging"></a>2,10: Включение ведения журнала аудита в командной строке
+## <a name="210-enable-command-line-audit-logging"></a>2.10. Включение ведения журнала аудита для командной строки
 
 | Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
@@ -146,13 +146,13 @@ ms.locfileid: "81408348"
 
 Используйте Microsoft Monitoring Agent на всех поддерживаемых виртуальных машинах Windows Azure для регистрации события создания процесса и поля командной строки.   Для поддерживаемых виртуальных машин Linux в Azure можно вручную настроить ведение журнала консоли для каждого узла и использовать syslog для хранения данных.  Кроме того, используйте рабочую область Log Analytics Azure Monitor, чтобы просматривать журналы и выполнять запросы к данным журнала из виртуальных машин Azure. 
 
-- [Сбор данных в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-enable-data-collection#data-collection-tier)
+- [Сбор данных в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-enable-data-collection#data-collection-tier)
 
-- [Как выполнять пользовательские запросы в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries)
+- [Выполнение пользовательских запросов в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/get-started-queries)
 
 - [Источники данных системного журнала в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/data-sources-syslog)
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. следующий контроль безопасности: [Идентификация и управление доступом](security-control-identity-access-control.md) .

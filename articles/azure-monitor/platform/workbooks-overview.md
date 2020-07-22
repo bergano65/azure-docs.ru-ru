@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 10/23/2019
 ms.author: mbullwin
-ms.openlocfilehash: 29e675f3ae35df9211f58d45ad8450566d67a588
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: b06f39de9f977a9f777b21a53e93ca744fccdd93
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77658240"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85560163"
 ---
 # <a name="azure-monitor-workbooks"></a>Изучение и предоставление общего доступа к данным об использовании c интерактивными книгами в Application Insights
 
@@ -31,18 +31,18 @@ ms.locfileid: "77658240"
 * [Метрики](workbooks-data-sources.md#metrics)
 * [Azure Resource Graph](workbooks-data-sources.md#azure-resource-graph)
 * [Оповещения (предварительная версия)](workbooks-data-sources.md#alerts-preview)
-* [Работоспособность рабочей нагрузки (Предварительная версия)](workbooks-data-sources.md#workload-health-preview)
-* [Работоспособность ресурсов Azure (Предварительная версия)](workbooks-data-sources.md#azure-resource-health)
-* [Обозреватель данных Azure (Предварительная версия)](workbooks-data-sources.md#azure-data-explorer-preview)
+* [Работоспособность рабочей нагрузки](workbooks-data-sources.md#workload-health)
+* [Работоспособность ресурсов Azure](workbooks-data-sources.md#azure-resource-health)
+* [Azure Data Explorer](workbooks-data-sources.md#azure-data-explorer)
 
 ## <a name="visualizations"></a>Визуализации
 
 Книги предоставляют широкий набор возможностей для визуализации данных. Подробные примеры каждого типа визуализации см. в приведенных ниже ссылках на примеры.
 
-* [Текст](workbooks-visualizations.md#text)
-* [Диаграммы](workbooks-visualizations.md#charts)
+* [Текстовые](workbooks-visualizations.md#text)
+* [Создание графиков](workbooks-visualizations.md#charts)
 * [Сетки](workbooks-visualizations.md#grids)
-* [Плитка](workbooks-visualizations.md#tiles)
+* [Перевернуто](workbooks-visualizations.md#tiles)
 * [Деревья](workbooks-visualizations.md#trees)
 * [Графы](workbooks-visualizations.md#graphs)
 
@@ -124,7 +124,7 @@ ms.locfileid: "77658240"
 
 Создав собственные шаблоны книг, вы можете поделиться им с более широким сообществом. Чтобы узнать больше, а также просмотреть другие шаблоны, которые не входят в представление коллекции по умолчанию Azure Monitor, посетите наш [репозиторий GitHub](https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/README.md). Чтобы просмотреть существующие книги, посетите [библиотеку книг](https://github.com/microsoft/Application-Insights-Workbooks/tree/master/Workbooks) на сайте GitHub.
 
-## <a name="next-step"></a>Дальнейшие действия
+## <a name="next-step"></a>Следующий шаг
 
 * [Узнайте](workbooks-visualizations.md) больше о книгах с множеством разнообразных вариантов визуализации.
 * [Управление](workbooks-access-control.md) доступом к ресурсам книги и предоставление общего доступа к ним.

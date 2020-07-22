@@ -6,18 +6,18 @@ ms.author: jegeib
 ms.service: security
 ms.topic: article
 ms.date: 02/25/2020
-ms.openlocfilehash: 354707aec90375b4bf25aea6e1baa743d85f20aa
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: da4e61d6c89e62c3598570b30ce749390915ca1b
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77624843"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86259324"
 ---
 # <a name="threat-modeling-tool-update-release-73002061---02112020"></a>Threat Modeling Tool обновления выпуска 7.3.00206.1 — 02/11/2020
 
 Версия 7.3.00206.1 Microsoft Threat Modeling Tool (ТМТ) была выпущена 11 2020 февраля и содержит следующие изменения:
 
-- Исправления ошибок
+- Исправленные ошибки
 
 ## <a name="notable-bug-fixes"></a>Исправления важных ошибок
 
@@ -25,9 +25,11 @@ ms.locfileid: "77624843"
 
 Некоторые клиенты сообщили о получении следующего сообщения об ошибке при открытии файлов, созданных в "Threat Modeling Tool 2016" или пользовательских шаблонах:
 
-    System.InvalidOperationException: Invalid Priority value. Accepted values are [0..4] and 'High', 'Medium', 'Low' at ThreatModeling.Model.Threat.get_Priority()
-    
-    System.ArgumentOutOfRangeException: Accepted values are 'High', 'Medium', and 'Low' Parameter name: value Actual value was 5.6. at ThreatModeling.Model.Threat.set_Priority(String value)
+```output
+System.InvalidOperationException: Invalid Priority value. Accepted values are [0..4] and 'High', 'Medium', 'Low' at ThreatModeling.Model.Threat.get_Priority()
+
+System.ArgumentOutOfRangeException: Accepted values are 'High', 'Medium', and 'Low' Parameter name: value Actual value was 5.6. at ThreatModeling.Model.Threat.set_Priority(String value)
+```
 
 Эта проблема решена в этом выпуске.
 
@@ -44,6 +46,6 @@ ms.locfileid: "77624843"
 
 - Документация по Threat Modeling Tool находится на сайте [docs.microsoft.com](https://docs.microsoft.com/azure/security/azure-security-threat-modeling-tool) и содержит информацию [об использовании средства](https://docs.microsoft.com/azure/security/azure-security-threat-modeling-tool-getting-started).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Скачайте последнюю версию [Microsoft Threat Modeling Tool](https://aka.ms/threatmodelingtool).

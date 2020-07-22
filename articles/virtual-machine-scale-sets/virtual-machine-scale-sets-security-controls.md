@@ -10,10 +10,9 @@ ms.date: 09/05/2019
 ms.reviewer: jushiman
 ms.custom: mimckitt
 ms.openlocfilehash: 030e2c23d68a3fbbc96dd7591583cb27b650d011
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "83200016"
 ---
 # <a name="security-controls-for-azure-virtual-machine-scale-sets"></a>Элементы управления безопасностью для масштабируемых наборов виртуальных машин Azure
@@ -62,6 +61,6 @@ ms.locfileid: "83200016"
 |---|---|--|
 | Поддержка управления конфигурацией (управление версиями конфигураций и т. д.)| Да |  | 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о [встроенных средствах управления безопасностью в службах Azure](../security/fundamentals/security-controls.md).

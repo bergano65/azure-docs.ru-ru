@@ -6,19 +6,19 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: include
-ms.date: 03/12/2020
+ms.date: 06/11/2020
 ms.author: aahi
 ms.reviewer: sumeh, assafi
-ms.openlocfilehash: 8bcc919aee7548e8596d1f44c8a357d3f84dfb14
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: 7f25c9c500615f376ffe2fee2483fbfbdc03f3b8
+ms.sourcegitcommit: c4ad4ba9c9aaed81dfab9ca2cc744930abd91298
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82096016"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84735585"
 ---
 <a name="HOLTop"></a>
 
-#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
+#### <a name="version-30"></a>[Версия 3.0](#tab/version-3)
 
 [Справочная документация по версии 3](https://aka.ms/azsdk-js-textanalytics-ref-docs) | [Исходный код библиотеки версии 3](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/textanalytics/ai-text-analytics) | [Пакет (NPM) для версии 3](https://www.npmjs.com/package/@azure/ai-text-analytics) | [Примеры для версии 3](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/textanalytics/ai-text-analytics/samples)
 
@@ -56,12 +56,12 @@ npm init
 ```
 ### <a name="install-the-client-library"></a>Установка клиентской библиотеки
 
-#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
+#### <a name="version-30"></a>[Версия 3.0](#tab/version-3)
 
 Установите пакеты NPM `@azure/ai-text-analytics`:
 
 ```console
-npm install --save @azure/ai-text-analytics@1.0.0-preview.4
+npm install --save @azure/ai-text-analytics@1.0.0
 ```
 
 > [!TIP]
@@ -83,7 +83,7 @@ npm install --save @azure/cognitiveservices-textanalytics
 Файл `package.json` этого приложения будет дополнен зависимостями.
 Создайте файл с именем `index.js` и добавьте следующее:
 
-#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
+#### <a name="version-30"></a>[Версия 3.0](#tab/version-3)
 
 ```javascript
 "use strict";
@@ -128,7 +128,7 @@ const endpoint = '<paste-your-text-analytics-endpoint-here>';
 
 ## <a name="client-authentication"></a>Аутентификация клиента
 
-#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
+#### <a name="version-30"></a>[Версия 3.0](#tab/version-3)
 
 Создайте новый объект `TextAnalyticsClient`, используя в качестве параметров ключ и конечную точку.
 
@@ -146,7 +146,7 @@ const textAnalyticsClient = new TextAnalyticsClient(endpoint,  new AzureKeyCrede
 
 ## <a name="sentiment-analysis"></a>Анализ мнений
 
-#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
+#### <a name="version-30"></a>[Версия 3.0](#tab/version-3)
 
 Создайте массив строк, содержащий документ, который следует проанализировать. Вызовите метод клиента `analyzeSentiment()` и получите возвращенный объект `SentimentBatchResult`. Выполните итерацию результатов и выведите идентификатор каждого документа, тональность на уровне документа со степенями уверенности. Результат содержит тональность на уровне предложений, а также смещения, длину и показатели уверенности для каждого документа.
 
@@ -213,7 +213,7 @@ ID: 0
 
 ## <a name="language-detection"></a>Определение языка
 
-#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
+#### <a name="version-30"></a>[Версия 3.0](#tab/version-3)
 
 Создайте массив строк, содержащий документ, который следует проанализировать. Вызовите метод клиента `detectLanguage()` и получите возвращенный `DetectLanguageResultCollection`. Затем выполните итерацию результатов и выведите идентификатор каждого документа с указанием соответствующего основного языка.
 
@@ -262,7 +262,7 @@ Document ID: 3 , Language: Chinese_Simplified
 
 ## <a name="named-entity-recognition-ner"></a>Распознавание именованных сущностей (NER)
 
-#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
+#### <a name="version-30"></a>[Версия 3.0](#tab/version-3)
 
 > [!NOTE]
 > В версии `3.0-preview`:
@@ -283,7 +283,7 @@ async function entityRecognition(client){
         console.log(`Document ID: ${document.id}`);
         document.entities.forEach(entity => {
             console.log(`\tName: ${entity.text} \tCategory: ${entity.category} \tSubcategory: ${entity.subCategory ? entity.subCategory : "N/A"}`);
-            console.log(`\tScore: ${entity.score}`);
+            console.log(`\tScore: ${entity.confidenceScore}`);
         });
     });
 }
@@ -297,26 +297,20 @@ entityRecognition(textAnalyticsClient);
 ```console
 Document ID: 0
         Name: Microsoft         Category: Organization  Subcategory: N/A
-        Score: 1
+        Score: 0.29
         Name: Bill Gates        Category: Person        Subcategory: N/A
-        Score: 0.67
+        Score: 0.78
         Name: Paul Allen        Category: Person        Subcategory: N/A
-        Score: 0.81
+        Score: 0.82
         Name: April 4, 1975     Category: DateTime      Subcategory: Date
         Score: 0.8
-        Name: interpreters      Category: PersonType    Subcategory: N/A
-        Score: 0.6
         Name: 8800      Category: Quantity      Subcategory: Number
         Score: 0.8
 Document ID: 1
-        Name: Microsoft         Category: Organization  Subcategory: N/A
-        Score: 0.96
-        Name: Redmond   Category: Location      Subcategory: GPE
-        Score: 0.09
         Name: 21        Category: Quantity      Subcategory: Number
         Score: 0.8
         Name: Seattle   Category: Location      Subcategory: GPE
-        Score: 0.31
+        Score: 0.25
 ```
 
 ## <a name="entity-linking"></a>Связывание сущностей
@@ -337,8 +331,8 @@ async function linkedEntityRecognition(client){
             console.log(`\tName: ${entity.name} \tID: ${entity.dataSourceEntityId} \tURL: ${entity.url} \tData Source: ${entity.dataSource}`);
             console.log(`\tMatches:`)
             entity.matches.forEach(match => {
-                console.log(`\t\tText: ${match.text} \tScore: ${match.score.toFixed(2)}`);
-            });
+                console.log(`\t\tText: ${match.text} \tScore: ${match.confidenceScore.toFixed(2)}`);
+        })
         });
     });
 }
@@ -353,24 +347,24 @@ linkedEntityRecognition(textAnalyticsClient);
 Document ID: 0
         Name: Altair 8800       ID: Altair 8800         URL: https://en.wikipedia.org/wiki/Altair_8800  Data Source: Wikipedia
         Matches:
-                Text: Altair 8800       Score: 0.78
+                Text: Altair 8800       Score: 0.88
         Name: Bill Gates        ID: Bill Gates  URL: https://en.wikipedia.org/wiki/Bill_Gates   Data Source: Wikipedia
         Matches:
-                Text: Bill Gates        Score: 0.55
-                Text: Gates     Score: 0.55
+                Text: Bill Gates        Score: 0.63
+                Text: Gates     Score: 0.63
         Name: Paul Allen        ID: Paul Allen  URL: https://en.wikipedia.org/wiki/Paul_Allen   Data Source: Wikipedia
         Matches:
-                Text: Paul Allen        Score: 0.53
+                Text: Paul Allen        Score: 0.60
         Name: Microsoft         ID: Microsoft   URL: https://en.wikipedia.org/wiki/Microsoft    Data Source: Wikipedia
         Matches:
-                Text: Microsoft         Score: 0.47
-                Text: Microsoft         Score: 0.47
+                Text: Microsoft         Score: 0.55
+                Text: Microsoft         Score: 0.55
         Name: April 4   ID: April 4     URL: https://en.wikipedia.org/wiki/April_4      Data Source: Wikipedia
         Matches:
-                Text: April 4   Score: 0.25
+                Text: April 4   Score: 0.32
         Name: BASIC     ID: BASIC       URL: https://en.wikipedia.org/wiki/BASIC        Data Source: Wikipedia
         Matches:
-                Text: BASIC     Score: 0.28
+                Text: BASIC     Score: 0.33
 ```
 
 #### <a name="version-21"></a>[Версия 2.1](#tab/version-2)
@@ -418,7 +412,7 @@ Document ID: 2
 
 ## <a name="key-phrase-extraction"></a>Извлечение ключевой фразы
 
-#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
+#### <a name="version-30"></a>[Версия 3.0](#tab/version-3)
 
 Создайте массив строк, содержащий документ, который следует проанализировать. Вызовите метод клиента `extractKeyPhrases()` и получите возвращенный объект `ExtractKeyPhrasesResult`. Выполните итерацию результатов и выведите идентификатор каждого документа и все обнаруженные ключевые фразы.
 

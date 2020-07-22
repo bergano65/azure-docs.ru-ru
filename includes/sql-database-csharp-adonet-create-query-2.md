@@ -4,18 +4,18 @@ ms.service: sql-database
 ms.topic: include
 ms.date: 12/10/2018
 ms.author: genemi
-ms.openlocfilehash: e30651cb0ed7d74082163a92acbc428c21018255
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 7943ea13d93fa68b76d333bda5438fb5738f5cd1
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67185365"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86050494"
 ---
 ## <a name="c-program-example"></a>Пример программы C#
 
-В следующих разделах этой статьи представлена программа C#, в которой используется ADO.NET для отправки инструкций Transact-SQL (T-SQL) в базу данных SQL. В программе C# демонстрируются следующие действия:
+В следующих разделах этой статьи представлена программа C#, в которой используется ADO.NET для отправки инструкций Transact-SQL (T-SQL) в Базу данных SQL. В программе C# демонстрируются следующие действия:
 
-- [Подключение к базе данных SQL с помощью ADO.NET](#cs_1_connect)
+- [Подключение к Базе данных SQL с помощью ADO.NET](#cs_1_connect)
 - [Методы, возвращающие инструкции T-SQL](#cs_2_return)
     - Создание таблиц
     - Заполнение таблиц данными
@@ -82,7 +82,7 @@ ms.locfileid: "67185365"
 
 <a name="cs_1_connect"/>
 
-### <a name="connect-to-sql-database-using-adonet"></a>Подключение к базе данных SQL с помощью ADO.NET
+### <a name="connect-to-sql-database-using-adonet"></a>Подключение к Базе данных SQL с помощью ADO.NET
 
 ```csharp
 using System;

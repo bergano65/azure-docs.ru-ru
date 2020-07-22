@@ -1,42 +1,38 @@
 ---
-title: Запрос CSV-файлов с помощью SQL по запросу (Предварительная версия)
-description: В этой статье вы узнаете, как выполнять запросы к отдельным CSV-файлам с различными форматами с помощью SQL по запросу (Предварительная версия).
+title: Запрос CSV-файлов с помощью SQL по запросу (предварительная версия)
+description: В этой статье вы узнаете, как запрашивать отдельные CSV-файлы с различными форматами с помощью SQL по запросу (предварительная версия).
 services: synapse analytics
 author: azaricstefan
 ms.service: synapse-analytics
 ms.topic: how-to
-ms.subservice: ''
-ms.date: 04/15/2020
+ms.subservice: sql
+ms.date: 05/20/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: 3d09692c06bcdffbb070f545950092592e417838
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 628631fb7fddbc07dcb865e3d3badbfb608ad097
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81431596"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85214457"
 ---
 # <a name="query-csv-files"></a>Запрос CSV-файлов
 
-В этой статье вы узнаете, как выполнить запрос к одному CSV-файлу с помощью SQL по запросу (Предварительная версия) в Azure синапсе Analytics. CSV-файлы могут иметь разные форматы: 
+В этой статье вы узнаете, как выполнить запрос одного CSV-файлы с помощью SQL по запросу (предварительная версия) в Azure Synapse Analytics. CSV-файлы могут иметь разные форматы: 
 
-- С строкой заголовка и без нее
-- Значения, разделенные запятыми и символами табуляции
+- Со строкой заголовка и без нее
+- Со значениями, разделенными запятыми и символами табуляции
 - Завершение строк в стиле Windows и UNIX
-- Значения, не заключенные в кавычки и кавычки, и символы экранирования
+- Значения, не заключенные в кавычки и заключенные в кавычки, и символы экранирования
 
 Все приведенные выше варианты будут рассмотрены ниже.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
-Прежде чем читать оставшуюся часть этой статьи, ознакомьтесь со следующими статьями:
-
-- [Изначальная настройка](query-data-storage.md#first-time-setup)
-- [Предварительные требования](query-data-storage.md#prerequisites)
+Для начала **создайте базу данных**, в которой будут созданы таблицы. Затем инициализируйте объекты, выполнив [сценарий установки](https://github.com/Azure-Samples/Synapse/blob/master/SQL/Samples/LdwSample/SampleDB.sql) для этой базы данных. Этот сценарий установки создает источники данных, учетные данные области базы данных и форматы внешних файлов, которые используются в этих примерах.
 
 ## <a name="windows-style-new-line"></a>Новая строка в стиле Windows
 
-В следующем запросе показано, как считать CSV-файл без строки заголовка, с новой строкой в стиле Windows и со столбцами, разделенными запятыми.
+Следующий запрос показывает, как считать CSV-файл без строки заголовка, с новой строкой в стиле Windows и столбцами с разделителями-запятыми.
 
 Предварительный просмотр файла:
 
@@ -45,8 +41,9 @@ ms.locfileid: "81431596"
 ```sql
 SELECT *
 FROM OPENROWSET(
-        BULK 'https://sqlondemandstorage.blob.core.windows.net/csv/population/population.csv',
-         FORMAT = 'CSV',
+        BULK 'csv/population/population.csv',
+        DATA_SOURCE = 'SqlOnDemandDemo',
+        FORMAT = 'CSV', PARSER_VERSION = '2.0',
         FIELDTERMINATOR =',',
         ROWTERMINATOR = '\n'
     )
@@ -61,19 +58,20 @@ WHERE
     AND year = 2017;
 ```
 
-## <a name="unix-style-new-line"></a>Новая строка в стиле UNIX
+## <a name="unix-style-new-line"></a>Новая строка в стиле Unix
 
-В следующем запросе показано, как считать файл без строки заголовка с новой строкой в стиле UNIX и столбцами с разделителями-запятыми. Обратите внимание на другое расположение файла по сравнению с другими примерами.
+Следующий запрос показывает, как считать CSV-файл без строки заголовка, с новой строкой в стиле Unix и столбцами с разделителями-запятыми. Обратите внимание на другое расположение файла по сравнению с другими примерами.
 
 Предварительный просмотр файла:
 
-![Первые 10 строк CSV-файла без строки заголовка и новой строки в стиле UNIX.](./media/query-single-csv-file/population-unix.png)
+![Первые 10 строк CSV-файла без заголовка, новая строка в стиле Unix.](./media/query-single-csv-file/population-unix.png)
 
 ```sql
 SELECT *
 FROM OPENROWSET(
-        BULK 'https://sqlondemandstorage.blob.core.windows.net/csv/population-unix/population.csv',
-        FORMAT = 'CSV',
+        BULK 'csv/population-unix/population.csv',
+        DATA_SOURCE = 'SqlOnDemandDemo',
+        FORMAT = 'CSV', PARSER_VERSION = '2.0',
         FIELDTERMINATOR =',',
         ROWTERMINATOR = '0x0a'
     )
@@ -90,17 +88,18 @@ WHERE
 
 ## <a name="header-row"></a>Строка заголовка
 
-В следующем запросе показано, как прочитать файл со строкой заголовка, с новой строкой в стиле UNIX и со столбцами, разделенными запятыми. Обратите внимание на другое расположение файла по сравнению с другими примерами.
+Следующий запрос показывает, как считать CSV-файл со строкой заголовка, с новой строкой в стиле Unix и столбцами с разделителями-запятыми. Обратите внимание на другое расположение файла по сравнению с другими примерами.
 
 Предварительный просмотр файла:
 
-![Первые 10 строк CSV-файла со строкой заголовка и новой строкой в стиле UNIX.](./media/query-single-csv-file/population-unix-hdr.png)
+![Первые 10 строк CSV-файла с заголовком и новой строкой в стиле Unix.](./media/query-single-csv-file/population-unix-hdr.png)
 
 ```sql
 SELECT *
 FROM OPENROWSET(
-        BULK 'https://sqlondemandstorage.blob.core.windows.net/csv/population-unix-hdr/population.csv',
-        FORMAT = 'CSV',
+        BULK 'csv/population-unix-hdr/population.csv',
+        DATA_SOURCE = 'SqlOnDemandDemo',
+        FORMAT = 'CSV', PARSER_VERSION = '2.0',
         FIELDTERMINATOR =',',
         FIRSTROW = 2
     )
@@ -115,19 +114,20 @@ WHERE
     AND year = 2017;
 ```
 
-## <a name="custom-quote-character"></a>Символ пользовательской кавычки
+## <a name="custom-quote-character"></a>Пользовательский символ кавычек
 
-В следующем запросе показано, как считать файл со строкой заголовка с новой строкой в стиле UNIX, столбцами с разделителями-запятыми и значениями в кавычках. Обратите внимание на другое расположение файла по сравнению с другими примерами.
+Следующий запрос показывает, как считать CSV-файл со строкой заголовка, с новой строкой в стиле Unix, столбцами с разделителями-запятым и значениями в кавычках. Обратите внимание на другое расположение файла по сравнению с другими примерами.
 
 Предварительный просмотр файла:
 
-![Первые 10 строк CSV-файла со строкой заголовка и новой строкой в стиле UNIX и заключенными в кавычки значениями.](./media/query-single-csv-file/population-unix-hdr-quoted.png)
+![Первые 10 строк CSV-файла с заголовком, новой строкой в стиле Unix и значениями в кавычках.](./media/query-single-csv-file/population-unix-hdr-quoted.png)
 
 ```sql
 SELECT *
 FROM OPENROWSET(
-        BULK 'https://sqlondemandstorage.blob.core.windows.net/csv/population-unix-hdr-quoted/population.csv',
-        FORMAT = 'CSV',
+        BULK 'csv/population-unix-hdr-quoted/population.csv',
+        DATA_SOURCE = 'SqlOnDemandDemo',
+        FORMAT = 'CSV', PARSER_VERSION = '2.0',
         FIELDTERMINATOR =',',
         ROWTERMINATOR = '0x0a',
         FIRSTROW = 2,
@@ -145,21 +145,22 @@ WHERE
 ```
 
 > [!NOTE]
-> Этот запрос возвращает те же результаты, если пропущен параметр ФИЕЛДКУОТЕ, поскольку значение по умолчанию для ФИЕЛДКУОТЕ является двойной кавычкой.
+> Этот запрос возвращает те же результаты, если пропущен параметр FIELDQUOTE, поскольку значение по умолчанию для FIELDQUOTE является двойной кавычкой.
 
 ## <a name="escaping-characters"></a>Экранирование символов
 
-В следующем запросе показано, как считать файл со строкой заголовка с новой строкой в стиле UNIX, столбцами, разделенными запятыми, и escape-символом, используемым в качестве разделителя полей (запятая) в значениях. Обратите внимание на другое расположение файла по сравнению с другими примерами.
+Следующий запрос показывает, как считать CSV-файл со строкой заголовка, с новой строкой в стиле Unix, столбцами с разделителями-запятым, а также экранированием символа для разделителя полей (запятой) внутри значений. Обратите внимание на другое расположение файла по сравнению с другими примерами.
 
 Предварительный просмотр файла:
 
-![Первые 10 строк CSV-файла со строкой заголовка и с новой строкой в стиле UNIX и символом Escape, используемым для разделителя полей.](./media/query-single-csv-file/population-unix-hdr-escape.png)
+![Первые 10 строк CSV-файла с заголовком и новой строкой в стиле Unix, а также экранированием символа разделителя.](./media/query-single-csv-file/population-unix-hdr-escape.png)
 
 ```sql
 SELECT *
 FROM OPENROWSET(
-        BULK 'https://sqlondemandstorage.blob.core.windows.net/csv/population-unix-hdr-escape/population.csv',
-        FORMAT = 'CSV',
+        BULK 'csv/population-unix-hdr-escape/population.csv',
+        DATA_SOURCE = 'SqlOnDemandDemo',
+        FORMAT = 'CSV', PARSER_VERSION = '2.0',
         FIELDTERMINATOR =',',
         ROWTERMINATOR = '0x0a',
         FIRSTROW = 2,
@@ -172,25 +173,57 @@ FROM OPENROWSET(
         [population] bigint
     ) AS [r]
 WHERE
-    country_name = 'Slov,enia';
+    country_name = 'Slovenia';
 ```
 
 > [!NOTE]
-> Этот запрос завершится ошибкой, если ESCAPECHAR не указан, так как запятая в "слов, ениа" будет рассматриваться как разделитель полей, а не как часть названия страны. "Слов, ениа" будет рассматриваться как два столбца. Таким образом, в конкретной строке будет по одному столбцу больше, чем у других строк, и по одному столбцу больше, чем определено в предложении WITH.
+> Этот запрос завершится ошибкой, если ESCAPECHAR не указан, так как запятая в "Slov,enia" будет рассматриваться как разделитель полей, а не как часть названия страны или региона. "Slov,enia" будет обработано как два столбца. Таким образом, в конкретной строке будет на один столбец больше, чем в других строках, и на один столбец больше, чем определено в условии WITH.
 
-## <a name="tab-delimited-files"></a>Файлы с разделителями-знаками табуляции
+### <a name="escaping-quoting-characters"></a>Экранирование символов в кавычках
 
-В следующем запросе показано, как считать файл со строкой заголовка, с новой строкой в стиле UNIX и столбцами, разделенными символами табуляции. Обратите внимание на другое расположение файла по сравнению с другими примерами.
+В следующем запросе показано, как считать файл со строкой заголовка с новой строкой в стиле UNIX, столбцами с разделителями-запятыми и символами двойной кавычки в значениях. Обратите внимание на другое расположение файла по сравнению с другими примерами.
 
 Предварительный просмотр файла:
 
-![Первые 10 строк CSV-файла со строкой заголовка и новой строкой и разделителем табуляции в стиле UNIX.](./media/query-single-csv-file/population-unix-hdr-tsv.png)
+![В следующем запросе показано, как считать файл со строкой заголовка с новой строкой в стиле UNIX, столбцами с разделителями-запятыми и символами двойной кавычки в значениях.](./media/query-single-csv-file/population-unix-hdr-escape-quoted.png)
 
 ```sql
 SELECT *
 FROM OPENROWSET(
-        BULK 'https://sqlondemandstorage.blob.core.windows.net/csv/population-unix-hdr-tsv/population.csv',
-        FORMAT = 'CSV',
+        BULK 'csv/population-unix-hdr-escape-quoted/population.csv',
+        DATA_SOURCE = 'SqlOnDemandDemo',
+        FORMAT = 'CSV', PARSER_VERSION = '2.0',
+        FIELDTERMINATOR =',',
+        ROWTERMINATOR = '0x0a',
+        FIRSTROW = 2
+    )
+    WITH (
+        [country_code] VARCHAR (5) COLLATE Latin1_General_BIN2,
+        [country_name] VARCHAR (100) COLLATE Latin1_General_BIN2,
+        [year] smallint,
+        [population] bigint
+    ) AS [r]
+WHERE
+    country_name = 'Slovenia';
+```
+
+> [!NOTE]
+> Символ кавычек нужно экранировать другим символом кавычек. Такой символ может использоваться в значении столбца только в том случае, если значение инкапсулировано с помощью символов кавычек.
+
+## <a name="tab-delimited-files"></a>Файлы с разделителями-табуляциями
+
+Следующий запрос показывает, как считать CSV-файл со строкой заголовка, с новой строкой в стиле Unix и столбцами с разделителями-табуляциями. Обратите внимание на другое расположение файла по сравнению с другими примерами.
+
+Предварительный просмотр файла:
+
+![Первые 10 строк CSV-файла с заголовком, новой строкой в стиле Unix и разделителем — знаком табуляции.](./media/query-single-csv-file/population-unix-hdr-tsv.png)
+
+```sql
+SELECT *
+FROM OPENROWSET(
+        BULK 'csv/population-unix-hdr-tsv/population.csv',
+        DATA_SOURCE = 'SqlOnDemandDemo',
+        FORMAT = 'CSV', PARSER_VERSION = '2.0',
         FIELDTERMINATOR ='\t',
         ROWTERMINATOR = '0x0a',
         FIRSTROW = 2
@@ -208,33 +241,34 @@ WHERE
 
 ## <a name="returning-subset-of-columns"></a>Возвращение подмножества столбцов
 
-До сих пор вы указали схему CSV-файла с помощью и перечислите все столбцы. В запросе можно указать только те столбцы, которые действительно необходимы, используя порядковый номер для каждого столбца. Вы также не пропускаете столбцы без интереса.
+До сих пор вы создавали схему CSV-файла с помощью WITH и перечисления всех столбцов. В запросе можно указать только те столбцы, которые действительно необходимы, используя порядковый номер для каждого столбца. Вы также пропускаете неважные столбцы.
 
-Следующий запрос возвращает количество различных названий стран в файле, указывая только необходимые столбцы:
+Следующий запрос возвращает количество уникальных имен стран или регионов в файле, указывая только необходимые столбцы:
 
 > [!NOTE]
-> Взгляните на предложение WITH в приведенном ниже запросе и обратите внимание на то, что в конце строки, где определен столбец *[country_name]* , есть "2" (без кавычек). Это означает, что столбец *[country_name]* является вторым столбцом в файле. Запрос будет игнорировать все столбцы файла, за исключением второго.
+> Взгляните на условие WITH в приведенном ниже запросе и обратите внимание на "2" (без кавычек) в конце строки, где определяется столбец *[country_name]* . Это означает, что столбец *[country_name]* является вторым столбцом в файле. Запрос будет игнорировать все столбцы файла, за исключением второго.
 
 ```sql
 SELECT
     COUNT(DISTINCT country_name) AS countries
 FROM OPENROWSET(
-        BULK 'https://sqlondemandstorage.blob.core.windows.net/csv/population/population.csv',
-         FORMAT = 'CSV',
+        BULK 'csv/population/population.csv',
+        DATA_SOURCE = 'SqlOnDemandDemo',
+        FORMAT = 'CSV', PARSER_VERSION = '2.0',
         FIELDTERMINATOR =',',
         ROWTERMINATOR = '\n'
     )
 WITH (
-    --[country_code] VARCHAR (5) COLLATE Latin1_General_BIN2,
-    [country_name] VARCHAR (100) COLLATE Latin1_General_BIN2 2
+    --[country_code] VARCHAR (5),
+    [country_name] VARCHAR (100) 2
     --[year] smallint,
     --[population] bigint
 ) AS [r]
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-В следующих статьях будет показано, как:
+В следующих статьях будет показано:
 
-- [Запрос файлов Parquet](query-parquet-files.md)
-- [Запросы к папкам и нескольким файлам](query-folders-multiple-csv-files.md)
+- [Запрашивание файлов Parquet](query-parquet-files.md)
+- [Запрашивание папок и нескольких файлов](query-folders-multiple-csv-files.md)

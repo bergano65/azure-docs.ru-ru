@@ -5,12 +5,12 @@ description: Сведения о создании и использовании 
 services: container-service
 ms.topic: article
 ms.date: 03/09/2020
-ms.openlocfilehash: 5051232f29ad51d9fee893a4a660fc81f6e60d77
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 3055b5d32055d0ed0e3870f16f6af95407a68cd9
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80886744"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86243942"
 ---
 # <a name="use-a-static-public-ip-address-and-dns-label-with-the-azure-kubernetes-service-aks-load-balancer"></a>Использование статического общедоступного IP-адреса и метки DNS с подсистемой балансировки нагрузки Azure Kubernetes Service (AKS)
 
@@ -18,13 +18,13 @@ ms.locfileid: "80886744"
 
 В этой статье описывается создание статического общедоступного IP-адреса и его назначение службе Kubernetes.
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
-В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к этому краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
+В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
 
-Также требуется Azure CLI версии 2.0.59 или более поздней. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
+Кроме того, нужно установить и настроить Azure CLI версии 2.0.59 или более поздней. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
 
-В этой статье рассматривается использование *стандартного* IP-адреса SKU с подсистемой балансировки нагрузки *стандартного* SKU. Дополнительные сведения см. [в разделе Типы IP-адресов и методы распределения в Azure][ip-sku].
+В этой статье рассматривается использование *стандартного* IP-адреса SKU с подсистемой балансировки нагрузки *стандартного* SKU. Дополнительные сведения см. в статье [Типы IP-адресов и методы их распределения в Azure][ip-sku].
 
 ## <a name="create-a-static-ip-address"></a>Создание статического IP-адреса
 
@@ -63,7 +63,7 @@ $ az network public-ip show --resource-group myResourceGroup --name myAKSPublicI
 
 ## <a name="create-a-service-using-the-static-ip-address"></a>Создание службы со статическим IP-адресом
 
-Перед созданием службы убедитесь, что субъект-служба, используемый кластером AKS, имеет делегированные разрешения на доступ к другой группе ресурсов. Пример:
+Перед созданием службы убедитесь, что субъект-служба, используемый кластером AKS, имеет делегированные разрешения на доступ к другой группе ресурсов. Например:
 
 ```azurecli-interactive
 az role assignment create \
@@ -74,7 +74,7 @@ az role assignment create \
 
 Кроме того, вместо субъекта-службы можно использовать управляемое удостоверение, назначенное системой. Дополнительные сведения см. в статье о том, [как использовать управляемые удостоверения](use-managed-identity.md).
 
-Чтобы создать службу *балансировки нагрузки* со статическим общедоступным IP- `loadBalancerIP` адресом, добавьте свойство и значение статического общедоступного IP-адреса в манифест YAML. Создайте файл `load-balancer-service.yaml` и скопируйте в него следующий код YAML. Укажите собственный общедоступный IP-адрес, созданный на предыдущем шаге. В следующем примере также задается заметка для группы ресурсов с именем *myResourceGroup*. Укажите собственное имя группы ресурсов.
+Чтобы создать службу *балансировки нагрузки* со статическим общедоступным IP-адресом, добавьте `loadBalancerIP` свойство и значение статического общедоступного IP-адреса в манифест YAML. Создайте файл `load-balancer-service.yaml` и скопируйте в него следующий код YAML. Укажите собственный общедоступный IP-адрес, созданный на предыдущем шаге. В следующем примере также задается заметка для группы ресурсов с именем *myResourceGroup*. Укажите собственное имя группы ресурсов.
 
 ```yaml
 apiVersion: v1
@@ -100,9 +100,9 @@ kubectl apply -f load-balancer-service.yaml
 
 ## <a name="apply-a-dns-label-to-the-service"></a>Применение метки DNS к службе
 
-Если служба использует динамический или статический общедоступный IP-адрес, можно использовать заметку `service.beta.kubernetes.io/azure-dns-label-name` службы для задания общедоступной метки DNS. При этом будет опубликовано полное доменное имя службы с помощью общедоступных DNS-серверов Azure и домена верхнего уровня. Значение аннотации должно быть уникальным в расположении Azure, поэтому рекомендуется использовать достаточно полную метку.   
+Если служба использует динамический или статический общедоступный IP-адрес, можно использовать заметку службы `service.beta.kubernetes.io/azure-dns-label-name` для задания общедоступной метки DNS. При этом будет опубликовано полное доменное имя службы с помощью общедоступных DNS-серверов Azure и домена верхнего уровня. Значение аннотации должно быть уникальным в расположении Azure, поэтому рекомендуется использовать достаточно полную метку.   
 
-Azure автоматически добавит подсеть по умолчанию, например `<location>.cloudapp.azure.com` (где расположение — выбранный регион), в имя, которое вы задаете, чтобы создать полное DNS-имя. Пример:
+Azure автоматически добавит подсеть по умолчанию, например `<location>.cloudapp.azure.com` (где расположение — выбранный регион), в имя, которое вы задаете, чтобы создать полное DNS-имя. Например:
 
 ```yaml
 apiVersion: v1
@@ -154,7 +154,7 @@ Events:
   Warning  CreatingLoadBalancerFailed  6s (x2 over 12s)  service-controller  Error creating load balancer (will retry): Failed to create load balancer for service default/azure-load-balancer: user supplied IP Address 40.121.183.52 was not found
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для дополнительного управления входящим трафиком приложений можно [создать контроллер входящего трафика][aks-ingress-basic]. Вы также можете [создать контроллер входящего трафика со статическим общедоступным IP-адресом][aks-static-ingress].
 
@@ -173,4 +173,4 @@ Events:
 [aks-quickstart-cli]: kubernetes-walkthrough.md
 [aks-quickstart-portal]: kubernetes-walkthrough-portal.md
 [install-azure-cli]: /cli/azure/install-azure-cli
-[ip-sku]: ../virtual-network/virtual-network-ip-addresses-overview-arm.md#sku
+[ip-sku]: ../virtual-network/public-ip-addresses.md#sku

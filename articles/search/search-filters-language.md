@@ -9,10 +9,10 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 04/22/2020
 ms.openlocfilehash: b0ebbbb64e173e1501f08f8385b14c365759a804
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82116287"
 ---
 # <a name="how-to-filter-by-language-in-azure-cognitive-search"></a>Как фильтровать по языку в Azure Когнитивный поиск 
@@ -21,7 +21,7 @@ ms.locfileid: "82116287"
 
 Параметры запроса используются для ограничения операции поиска, а затем обрезки результатов полей, которые не предоставили содержимого, совместимого с возможностями поиска, которые необходимо доставить.
 
-| Параметры | Назначение |
+| Параметры | Цель |
 |-----------|--------------|
 | **searchFields** | Ограничивает полнотекстовый поиск до списка именованных полей. |
 | **$select** | Обрезает ответ, включая только указанные поля. По умолчанию возвращаются все извлекаемые поля. Параметр **$Select** позволяет выбрать, какие из них следует вернуть. |
@@ -60,7 +60,7 @@ parameters =
 > [!Note]
 > Хотя в запросе нет $filter аргумента, этот вариант использования строго связан с концепциями фильтров, поэтому он представлен как сценарий фильтрации.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 + [Фильтры в Когнитивный поиск Azure](search-filters.md)
 + [Языковые анализаторы](https://docs.microsoft.com/rest/api/searchservice/language-support)

@@ -5,12 +5,12 @@ author: mcoskun
 ms.topic: conceptual
 ms.date: 10/29/2018
 ms.author: mcoskun
-ms.openlocfilehash: ac6bb14517b67a4b308460583e8c9fb99a2df9f0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: bf004b913c032d8a121bf4d508adf4cf9be1c7f9
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75922778"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86253326"
 ---
 # <a name="backup-and-restore-reliable-services-and-reliable-actors"></a>Резервное копирование и восстановление Reliable Services и Reliable Actors
 Azure Service Fabric — это платформа высокой доступности, которая реплицирует состояние между несколькими узлами для обеспечения высокой доступности.  Таким образом, даже в случае сбоя одного узла в кластере службы будут оставаться доступными. Хотя иногда предоставленной платформой встроенной избыточности достаточно, в некоторых случаях желательно выполнять резервное копирование данных службы (во внешнее хранилище).
@@ -149,7 +149,7 @@ protected override async Task<bool> OnDataLossAsync(RestoreContext restoreCtx, C
 > 
 
 ## <a name="deleted-or-lost-service"></a>Удаленная или утерянная служба
-Если служба удалена, прежде чем восстанавливать данные, необходимо заново создать службу.  Важно создать службу с такой же конфигурацией, например с такой же схемой секционирования, чтобы можно было легко восстановить данные.  После запуска службы для восстановления данных службы необходимо вызвать интерфейс API (`OnDataLossAsync` выше) в каждой секции этой службы. Один из способов сделать это — использовать [FabricClient.TestManagementClient.StartPartitionDataLossAsync](https://msdn.microsoft.com/library/mt693569.aspx) в каждой секции.  
+Если служба удалена, прежде чем восстанавливать данные, необходимо заново создать службу.  Важно создать службу с такой же конфигурацией, например с такой же схемой секционирования, чтобы можно было легко восстановить данные.  После запуска службы для восстановления данных службы необходимо вызвать интерфейс API (`OnDataLossAsync` выше) в каждой секции этой службы. Один из способов сделать это — использовать [FabricClient.TestManagementClient.StartPartitionDataLossAsync](/dotnet/api/system.fabric.fabricclient.testmanagementclient?view=azure-dotnet#System_Fabric_FabricClient_TestManagementClient_StartPartitionDataLossAsync_System_Guid_System_Fabric_PartitionSelector_System_Fabric_DataLossMode_) в каждой секции.  
 
 С этого момента реализация осуществляется по описанному выше сценарию. Необходимо восстановить последнюю соответствующую резервную копию из внешнего хранилища для каждого раздела. Следует учитывать один недостаток: идентификатор раздела, возможно, изменен, так как среда выполнения создает идентификаторы разделов динамически. Таким образом, служба должна хранить сведения о соответствующем разделе и имени службы, чтобы правильно определить последнюю резервную копию, которую необходимо восстановить для каждого раздела.
 
@@ -253,11 +253,10 @@ class MyCustomActorService : ActorService
 
 `RestoreAsync` сначала удаляет все имеющиеся состояния в первичной реплике, для которой он вызван. После этого диспетчер надежных состояний создает все надежные объекты, существующие в папке резервного копирования. Затем все надежные объекты получают команду выполнить восстановление из контрольных точек в папке резервного копирования. Наконец, диспетчер надежных состояний восстанавливает собственное состояние из записей журнала в папке резервного копирования и выполняет восстановление. В рамках процесса восстановления операции, начиная с отправной точки, записи журнала которых сохранены в папке резервного копирования, воспроизводятся в надежных объектах. Этот шаг обеспечивает согласованность восстановленного состояния.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
   - [Надежные коллекции](service-fabric-work-with-reliable-collections.md)
   - [Get started with Reliable Services](service-fabric-reliable-services-quick-start.md) (Начало работы с Reliable Services)
   - [Уведомления Reliable Services](service-fabric-reliable-services-notifications.md)
   - [Конфигурация Reliable Services](service-fabric-reliable-services-configuration.md)
-  - [Справочник разработчика по надежным коллекциям](https://msdn.microsoft.com/library/azure/microsoft.servicefabric.data.collections.aspx)
+  - [Справочник разработчика по надежным коллекциям](/dotnet/api/microsoft.servicefabric.data.collections?view=azure-dotnet#microsoft_servicefabric_data_collections)
   - [Periodic backup and restore in Azure Service Fabric](service-fabric-backuprestoreservice-quickstart-azurecluster.md) (Периодическое резервное копирование и восстановление в Azure Service Fabric)
-

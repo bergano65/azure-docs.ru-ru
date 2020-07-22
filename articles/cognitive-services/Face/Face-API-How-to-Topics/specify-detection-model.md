@@ -10,12 +10,12 @@ ms.subservice: face-api
 ms.topic: conceptual
 ms.date: 05/16/2019
 ms.author: yluiu
-ms.openlocfilehash: 40ca1dbf981c5a9025cf5a0bac6b007709d69a77
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: a90b37b197e25a8db79a87761d94dfded53acf50
+ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "76934581"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85323206"
 ---
 # <a name="specify-a-face-detection-model"></a>Указание модели определения лиц
 
@@ -47,11 +47,11 @@ URL-адрес запроса для REST API [обнаружения лиц] б
 
 `https://westus.api.cognitive.microsoft.com/face/v1.0/detect[?returnFaceId][&returnFaceLandmarks][&returnFaceAttributes][&recognitionModel][&returnRecognitionModel][&detectionModel]&subscription-key=<Subscription key>`
 
-Если вы используете клиентскую библиотеку, можно присвоить значение `detectionModel` , передав соответствующую строку. Если оставить его неназначенным, API будет использовать версию модели по умолчанию (`detection_01`). См. Следующий пример кода для клиентской библиотеки .NET.
+Если вы используете клиентскую библиотеку, можно присвоить значение `detectionModel` , передав соответствующую строку. Если оставить его неназначенным, API будет использовать версию модели по умолчанию ( `detection_01` ). См. Следующий пример кода для клиентской библиотеки .NET.
 
 ```csharp
 string imageUrl = "https://news.microsoft.com/ceo/assets/photos/06_web.jpg";
-var faces = await faceClient.Face.DetectWithUrlAsync(imageUrl, false, false, recognitionModel: "recognition_02", detectionModel: "detection_02");
+var faces = await faceClient.Face.DetectWithUrlAsync(imageUrl, false, false, recognitionModel: "recognition_03", detectionModel: "detection_02");
 ```
 
 ## <a name="add-face-to-person-with-specified-model"></a>Добавить лицо к лицу с указанной моделью
@@ -63,7 +63,7 @@ var faces = await faceClient.Face.DetectWithUrlAsync(imageUrl, false, false, rec
 ```csharp
 // Create a PersonGroup and add a person with face detected by "detection_02" model
 string personGroupId = "mypersongroupid";
-await faceClient.PersonGroup.CreateAsync(personGroupId, "My Person Group Name", recognitionModel: "recognition_02");
+await faceClient.PersonGroup.CreateAsync(personGroupId, "My Person Group Name", recognitionModel: "recognition_03");
 
 string personId = (await faceClient.PersonGroupPerson.CreateAsync(personGroupId, "My Person Name")).PersonId;
 
@@ -71,7 +71,7 @@ string imageUrl = "https://news.microsoft.com/ceo/assets/photos/06_web.jpg";
 await client.PersonGroupPerson.AddFaceFromUrlAsync(personGroupId, personId, imageUrl, detectionModel: "detection_02");
 ```
 
-Этот код создает объект **персонграуп** с идентификатором `mypersongroupid` и добавляет в него **пользователя** . Затем он добавляет к этому **пользователю** лицо, использующее `detection_02` модель. Если не указать параметр *детектионмодел* , API будет использовать модель по умолчанию, `detection_01`.
+Этот код создает объект **персонграуп** с идентификатором `mypersongroupid` и добавляет в него **пользователя** . Затем он добавляет к этому **пользователю** лицо, использующее `detection_02` модель. Если не указать параметр *детектионмодел* , API будет использовать модель по умолчанию, `detection_01` .
 
 > [!NOTE]
 > Не нужно использовать одинаковую модель обнаружения для всех лиц в объекте **Person** , и вам не нужно использовать ту же модель обнаружения при обнаружении новых лиц для сравнения с объектом **Person** (например, в API-интерфейсе распознавания [лиц] ).
@@ -81,13 +81,13 @@ await client.PersonGroupPerson.AddFaceFromUrlAsync(personGroupId, personId, imag
 Можно также указать модель обнаружения при добавлении лица в существующий объект **фацелист** . См. Следующий пример кода для клиентской библиотеки .NET.
 
 ```csharp
-await faceClient.FaceList.CreateAsync(faceListId, "My face collection", recognitionModel: "recognition_02");
+await faceClient.FaceList.CreateAsync(faceListId, "My face collection", recognitionModel: "recognition_03");
 
 string imageUrl = "https://news.microsoft.com/ceo/assets/photos/06_web.jpg";
 await client.FaceList.AddFaceFromUrlAsync(faceListId, imageUrl, detectionModel: "detection_02");
 ```
 
-Этот код создает **фацелист** с именем `My face collection` и добавляет к нему лицо с `detection_02` моделью. Если не указать параметр *детектионмодел* , API будет использовать модель по умолчанию, `detection_01`.
+Этот код создает **фацелист** с именем `My face collection` и добавляет к нему лицо с `detection_02` моделью. Если не указать параметр *детектионмодел* , API будет использовать модель по умолчанию, `detection_01` .
 
 > [!NOTE]
 > Не нужно использовать одну и ту же модель обнаружения для всех лиц в объекте **фацелист** , и вам не нужно использовать ту же модель обнаружения при обнаружении новых Сторон для сравнения с объектом **фацелист** .
@@ -103,9 +103,9 @@ await client.FaceList.AddFaceFromUrlAsync(faceListId, imageUrl, detectionModel: 
 |Возвращает атрибуты лица (головной элемент, возраст, распознавания эмоций и т. д.), если они указаны в вызове метода Detect. |  Не возвращает атрибуты лица.     |
 |Возвращает ориентиры для лиц, если они указаны в вызове метода Detect.   | Не возвращает ориентиры для лиц.  |
 
-Лучший способ сравнить производительность моделей `detection_01` и `detection_02` — использовать их в образце набора данных. Мы рекомендуем вызывать API распознавания [лиц] на различных изображениях, особенно в изображениях многих лиц или лиц, которые трудно увидеть, используя каждую модель обнаружения. Обратите внимание на количество сторон, возвращаемых каждой моделью.
+Лучший способ сравнить производительность `detection_01` `detection_02` моделей и — использовать их в образце набора данных. Мы рекомендуем вызывать API распознавания [лиц] на различных изображениях, особенно в изображениях многих лиц или лиц, которые трудно увидеть, используя каждую модель обнаружения. Обратите внимание на количество сторон, возвращаемых каждой моделью.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали, как указать модель обнаружения для использования с различными API распознавания лиц. Затем следуйте инструкциям краткого руководства, чтобы приступить к работе с обнаружением лиц.
 

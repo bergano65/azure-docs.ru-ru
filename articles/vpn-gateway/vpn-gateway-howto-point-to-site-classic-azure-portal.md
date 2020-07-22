@@ -4,15 +4,14 @@ description: Создание классического подключения 
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 01/09/2020
 ms.author: cherylmc
-ms.openlocfilehash: 5d80cb2f2ed844126d1e9311151e6c53fcb11840
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: f68631771b8f86d995108112b1243ab38bf826bc
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79244580"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84984790"
 ---
 # <a name="configure-a-point-to-site-connection-by-using-certificate-authentication-classic"></a>Настройка подключения типа "точка — сеть" с помощью проверки подлинности на основе сертификата (классическая модель)
 
@@ -93,7 +92,7 @@ ms.locfileid: "79244580"
 
 5. В раскрывающемся списке выберите **подписку**, которую хотите использовать.
 
-6. Выберите имеющуюся **группу ресурсов**. Создайте группу ресурсов, выбрав **Создать новый** и введя имя. Если вы создаете группу ресурсов, укажите для нее имя, которое будет использоваться в вашей конфигурации. Дополнительные сведения о группах ресурсов см. в статье [Общие сведения об Azure Resource Manager](../azure-resource-manager/management/overview.md#resource-groups).
+6. Выберите имеющуюся **группу ресурсов**. Создайте группу ресурсов, выбрав **Создать новый** и введя имя. Если вы создаете группу ресурсов, укажите для нее имя, которое будет использоваться в вашей конфигурации. Дополнительные сведения о группах ресурсов см. в разделе [Общие сведения о Azure Resource Manager](../azure-resource-manager/management/overview.md#resource-groups).
 
 7. Выберите **расположение** для вашей виртуальной сети. Этот параметр определяет географическое расположение ресурсов, развертываемых в этой виртуальной сети.
 

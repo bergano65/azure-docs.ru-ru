@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с SpringCM | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с SpringCM | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и SpringCM.
 services: active-directory
 documentationCenter: na
@@ -23,7 +23,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 04/29/2020
 ms.locfileid: "81867429"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-springcm"></a>Руководство. Интеграция Azure Active Directory с SpringCM
+# <a name="tutorial-azure-active-directory-integration-with-springcm"></a>Руководство по Интеграция Azure Active Directory с SpringCM
 
 В этом руководстве описано, как интегрировать SpringCM с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением SpringCM обеспечивает следующие преимущества.
@@ -35,11 +35,11 @@ ms.locfileid: "81867429"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением SpringCM, вам потребуется:
 
-* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка SpringCM с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -100,7 +100,7 @@ ms.locfileid: "81867429"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 

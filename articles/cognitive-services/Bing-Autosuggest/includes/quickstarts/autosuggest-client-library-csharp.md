@@ -6,14 +6,14 @@ author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 04/06/2020
+ms.date: 05/06/2020
 ms.author: aahi
-ms.openlocfilehash: ac46eb0119ac95cf09e48823686a6c563d8d4d4a
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.openlocfilehash: 5d325ac8da43f020f4ab39244d2e6a7dc6ed72b7
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80887366"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86156496"
 ---
 Начните использовать клиентскую библиотеку Автозаполнения Bing для .NET. Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для выполнения базовых задач.
 
@@ -23,29 +23,24 @@ ms.locfileid: "80887366"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure. Если у вас еще нет подписки Azure, создайте [ее бесплатно](https://azure.microsoft.com/free/).
 * Текущая версия [.NET Core](https://dotnet.microsoft.com/download/dotnet-core).
-
-## <a name="setting-up"></a>Настройка
-
-### <a name="create-an-azure-resource"></a>Создание ресурса Azure
 
 [!INCLUDE [cognitive-services-bing-autosuggest-signup-requirements](~/includes/cognitive-services-bing-autosuggest-signup-requirements.md)]
 
-### <a name="create-an-environment-variable"></a>Создание переменной среды
+## <a name="create-environment-variables"></a>Создание переменных среды
 
 >[!NOTE]
-> Конечные точки для ресурсов не из пробной версии, созданных после 1июля 2019 г., поддерживают пользовательский формат поддомена, показанный ниже. Дополнительные сведения и полный список региональных конечных точек см. в статье [Custom subdomain names for Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-custom-subdomains) (Пользовательские имена поддоменов для Cognitive Services). 
+> Конечные точки для ресурсов, созданных после 1 июля 2019 г., поддерживают пользовательский формат поддомена, показанный ниже. Дополнительные сведения и полный список региональных конечных точек см. в статье [Custom subdomain names for Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-custom-subdomains) (Пользовательские имена поддоменов для Cognitive Services). 
 
 Используя ключ и конечную точку из созданного ресурса, создайте две переменные среды для проверки подлинности:
 <!-- replace the below variable names with the names expected in the code sample.-->
-* `AUTOSUGGEST_SUBSCRIPTION_KEY` — ключ ресурса для проверки подлинности запросов.
-* `AUTOSUGGEST_ENDPOINT` — конечная точка ресурса для отправки запросов API. Она должна выглядеть так: 
-  * `https://<your-custom-subdomain>.api.cognitive.microsoft.com` 
+* `AUTOSUGGEST_SUBSCRIPTION_KEY`: ключ ресурса для аутентификации запросов.
+* `AUTOSUGGEST_ENDPOINT`: конечная точка ресурса для отправки запросов API. Результат будет выглядеть так: `https://<your-custom-subdomain>.api.cognitive.microsoft.com`. 
 
 Используйте инструкции для своей операционной системы.
 <!-- replace the below endpoint and key examples -->
-#### <a name="windows"></a>[Windows](#tab/windows)
+### <a name="windows"></a>[Windows](#tab/windows)
 
 ```console
 setx AUTOSUGGEST_SUBSCRIPTION_KEY <replace-with-your-autosuggest-api-key>
@@ -54,7 +49,7 @@ setx AUTOSUGGEST_ENDPOINT <replace-with-your-autosuggest-api-endpoint>
 
 Добавив переменную среды, перезапустите окно консоли.
 
-#### <a name="linux"></a>[Linux](#tab/linux)
+### <a name="linux"></a>[Linux](#tab/linux)
 
 ```bash
 export AUTOSUGGEST_SUBSCRIPTION_KEY=<replace-with-your-autosuggest-api-key>
@@ -63,7 +58,7 @@ export AUTOSUGGEST_ENDPOINT=<replace-with-your-autosuggest-api-endpoint>
 
 После добавления переменной среды запустите `source ~/.bashrc` из окна консоли, чтобы применить изменения.
 
-#### <a name="macos"></a>[macOS](#tab/unix)
+### <a name="macos"></a>[macOS](#tab/unix)
 
 Измените `.bash_profile` и добавьте переменную среды:
 
@@ -75,7 +70,7 @@ export AUTOSUGGEST_ENDPOINT=<replace-with-your-autosuggest-api-endpoint>
 После добавления переменной среды запустите `source .bash_profile` из окна консоли, чтобы применить изменения.
 ***
 
-### <a name="create-a-new-c-application"></a>Создание нового приложения C#
+## <a name="create-a-new-c-application"></a>Создание нового приложения C#
 
 Создайте консольное приложение .NET Core на C# в предпочитаемой интегрированной среде разработки или редакторе. 
 
@@ -133,7 +128,7 @@ static void Main(string[] args)
 }
 ```
 
-### <a name="install-the-client-library"></a>Установка клиентской библиотеки
+## <a name="install-the-client-library"></a>Установка клиентской библиотеки
 
 В каталоге приложения установите клиентскую библиотеку Автозаполнения Bing для .NET, используя следующую команду:
 
@@ -148,12 +143,12 @@ dotnet add package Microsoft.Azure.CognitiveServices.Search.AutoSuggest --versio
 С помощью фрагментов кода ниже показано, как выполнить следующие задачи, используя клиентскую библиотеку Автозаполнения Bing для .NET:
 
 * [аутентификация клиента](#authenticate-the-client);
-* [отправка запроса на автозаполнение](#send-an-autosuggest-request).
+* [отправка запроса к Автозаполнению.](#send-an-autosuggest-request)
 
-## <a name="authenticate-the-client"></a>Аутентификация клиента
+### <a name="authenticate-the-client"></a>Аутентификация клиента
 
 > [!NOTE]
-> В этом кратком руководстве предполагается, что вы уже [создали переменную среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключа Автозаполнения Bing, который называется `AUTOSUGGEST_SUBSCRIPTION_KEY`, и для конечной точки `AUTOSUGGEST_ENDPOINT`.
+> В этом кратком руководстве предполагается, что вы уже [создали переменную среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключа `AUTOSUGGEST_SUBSCRIPTION_KEY` Автозаполнения Bing и конечной точки `AUTOSUGGEST_ENDPOINT`.
 
 
 В новом асинхронном методе создайте экземпляр клиента с использованием конечной точки и ключа. Теперь создайте объект [ApiKeyServiceClientCredentials](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.search.autosuggest.apikeyserviceclientcredentials?view=azure-dotnet) с помощью ключа и используйте его со своей конечной точкой, чтобы создать объект [AutosuggestClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.search.autosuggest.autosuggestclient?view=azure-dotnet).
@@ -170,9 +165,9 @@ async static Task RunQuickstart()
 }
 ```
 
-## <a name="send-an-autosuggest-request"></a>Отправка запроса на автозаполнение
+### <a name="send-an-autosuggest-request"></a>Отправка запроса к Автозаполнению
 
-В том же методе используйте метод [AutoSuggestMethodAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.search.autosuggest.autosuggestclientextensions.autosuggestmethodasync?view=azure-dotnet#Microsoft_Azure_CognitiveServices_Search_AutoSuggest_AutoSuggestClientExtensions_AutoSuggestMethodAsync_Microsoft_Azure_CognitiveServices_Search_AutoSuggest_IAutoSuggestClient_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_Collections_Generic_IList_System_String__System_Threading_CancellationToken_) клиента для отправки запроса в Bing. Затем выполните итерацию предложений по ответу [Suggestions](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.search.autosuggest.models.suggestions?view=azure-dotnet) и выведите первое предложение.
+В том же методе используйте метод [AutoSuggestMethodAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.search.autosuggest.autosuggestclientextensions.autosuggestmethodasync?view=azure-dotnet#Microsoft_Azure_CognitiveServices_Search_AutoSuggest_AutoSuggestClientExtensions_AutoSuggestMethodAsync_Microsoft_Azure_CognitiveServices_Search_AutoSuggest_IAutoSuggestClient_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_Collections_Generic_IList_System_String__System_Threading_CancellationToken_) клиента для отправки запроса в Bing. Затем выполните итерацию по ответу [Suggestions](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.search.autosuggest.models.suggestions?view=azure-dotnet) и выведите на экран первое предложение.
 
 ```csharp
 var result = await client.AutoSuggestMethodAsync("xb");
@@ -208,10 +203,10 @@ dotnet run
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если вы хотите очистить и удалить подписку Cognitive Services, вы можете удалить ресурс или группу ресурсов. При этом удаляются все ресурсы, связанные с ней.
+Если вы хотите очистить и удалить подписку Cognitive Services, вы можете удалить ресурс или группу ресурсов. При этом удаляются все ресурсы, связанные с этой группой ресурсов.
 
-* [Портал](../../../cognitive-services-apis-create-account.md#clean-up-resources)
-* [Azure CLI](../../../cognitive-services-apis-create-account-cli.md#clean-up-resources)
+* [Удаление группы ресурсов на портале Azure](../../../cognitive-services-apis-create-account.md#clean-up-resources)
+* [Удаление группы ресурсов с помощью Azure CLI](../../../cognitive-services-apis-create-account-cli.md#clean-up-resources)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

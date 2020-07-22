@@ -1,5 +1,5 @@
 ---
-title: 'Azure ExpressRoute: примеры конфигурации маршрутизатора'
+title: Azure ExpressRoute. Примеры конфигурации маршрутизатора
 description: Эта страница содержит примеры конфигурации для маршрутизаторов серий Cisco ASA и Juniper MX.
 services: expressroute
 author: cherylmc
@@ -7,122 +7,135 @@ ms.service: expressroute
 ms.topic: article
 ms.date: 03/26/2020
 ms.author: osamaz
-ms.openlocfilehash: 3603bc45b920dc62eb8bf6f2eb8557f98e21638e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 6b9db450139c22fdf2df0875f36c65cdf684dfb3
+ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82024818"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85856703"
 ---
 # <a name="router-configuration-samples-to-set-up-and-manage-routing"></a>Примеры конфигурации маршрутизатора для настройки и управления маршрутизацией
-На этой странице представлены примеры конфигурации интерфейса и маршрутизации для маршрутизаторов серии "Cisco IOS-XE" и "Juniper MX" при работе с Azure ExpressRoute.
+Эта страница содержит примеры конфигурации интерфейса и маршрутизации для маршрутизаторов серий Cisco IOS-XE и Juniper MX при работе с Azure ExpressRoute.
 
 > [!IMPORTANT]
-> Примеры на этой странице предназначены исключительно для руководства. Для поиска подходящих конфигураций в соответствии с вашими потребностями необходимо обратиться к группе "продажи и техническая группа поставщика" и группе разработчиков сети. Корпорация Майкрософт не будет поддерживать проблемы, связанные с конфигурациями, перечисленными на этой странице. Обратитесь к поставщику устройства за проблемами в поддержке.
+> Примеры на этой странице предназначены исключительно для справки. Для получения подходящей конфигурации, которая удовлетворяет вашим потребностям, необходимо провести совместную работу со специалистами по продажам или техническими специалистами поставщика и вашими сетевыми специалистами. Корпорация Майкрософт не предоставляет поддержку по вопросам, связанным с конфигурациями, перечисленными на этой странице. Для получения поддержки обратитесь к поставщику устройства.
 > 
 > 
 
 ## <a name="mtu-and-tcp-mss-settings-on-router-interfaces"></a>Параметры MTU и TCP MSS в интерфейсах маршрутизатора
-Максимальный размер передаваемых данных (MTU) для интерфейса ExpressRoute — 1500, то есть типичный MTU по умолчанию для интерфейса Ethernet на маршрутизаторе. Если маршрутизатор не имеет другого значения MTU по умолчанию, то и значение в интерфейсе маршрутизатора можно не указывать.
+Значение MTU (максимальный передаваемый блок данных) для интерфейса ExpressRoute составляет 1500, что является типичным значением MTU по умолчанию для интерфейса Ethernet на маршрутизаторе. Если маршрутизатор не имеет другого значения MTU по умолчанию, то и значение в интерфейсе маршрутизатора можно не указывать.
 
-В отличие от VPN-шлюза Azure, не нужно указывать максимальный размер сегмента (MSS) TCP для канала ExpressRoute.
+В отличие от VPN-шлюза Azure, MSS (максимальный размер сегмента) TCP для канала ExpressRoute не нужно указывать.
 
-Примеры конфигурации маршрутизатора, приведенные в этой статье, относятся ко всем одноранговым узлам. Для получения дополнительных сведений о маршрутизации обратитесь к статьям [Сеансы пиринга ExpressRoute](expressroute-circuit-peerings.md) и [Требования ExpressRoute к маршрутизации](expressroute-routing.md).
+Приведенные в этой статье примеры конфигурации маршрутизатора применяются ко всем пирингам. Для получения дополнительных сведений о маршрутизации обратитесь к статьям [Сеансы пиринга ExpressRoute](expressroute-circuit-peerings.md) и [Требования ExpressRoute к маршрутизации](expressroute-routing.md).
 
 
 ## <a name="cisco-ios-xe-based-routers"></a>Маршрутизаторы на основе Cisco IOS-XE
-Примеры в этом разделе относятся к любому маршрутизатору с семейством ОС IOS-XE.
+Примеры из этого раздела можно применить к любому маршрутизатору, работающему под управлением ОС семейства IOS-XE.
 
-### <a name="configure-interfaces-and-subinterfaces"></a>Настройка интерфейсов и подинтерфейсов
-Вам потребуется один подинтерфейс для каждого пиринга на каждом маршрутизаторе, подключенном к корпорации Майкрософт. Для подинтерфейса можно определить идентификатор виртуальной ЛС или пару с накоплением идентификаторов виртуальных ЛС и IP-адрес.
+### <a name="configure-interfaces-and-subinterfaces"></a>Настройка интерфейсов и подчиненных интерфейсов
+Вам потребуется один подчиненный интерфейс для каждого пиринга в каждом маршрутизаторе при подключении к Майкрософт. Подчиненный интерфейс можно идентифицировать с помощью идентификатора виртуальной локальной сети или с помощью накопленной пары идентификаторов виртуальных сетей и IP-адреса.
 
 **Определение интерфейса Dot1Q**
 
-Этот образец предоставляет определение подинтерфейса для подинтерфейса с одним ИДЕНТИФИКАТОРом виртуальной ЛС. Идентификатор виртуальной локальной сети уникален в пределах одного пиринга. Последний октет адреса IPv4 всегда будет нечетным числом.
+В этом примере приведено определение подчиненного интерфейса для подчиненного интерфейса с одним идентификатором виртуальной локальной сети. Идентификатор виртуальной локальной сети уникален в пределах одного пиринга. Последний октет адреса IPv4 всегда будет нечетным числом.
 
-    interface GigabitEthernet<Interface_Number>.<Number>
-     encapsulation dot1Q <VLAN_ID>
-     ip address <IPv4_Address><Subnet_Mask>
+```console
+interface GigabitEthernet<Interface_Number>.<Number>
+ encapsulation dot1Q <VLAN_ID>
+ ip address <IPv4_Address><Subnet_Mask>
+```
 
 **Определение интерфейса QinQ**
 
-Этот образец предоставляет определение подинтерфейса для подинтерфейса с двумя идентификаторами виртуальной ЛС. Внешний идентификатор виртуальной ЛС (s-Tag), если он используется, остается одинаковым для всех узлов. Идентификатор внешней виртуальной локальной сети (c-тег) уникален для каждого пиринга. Последний октет адреса IPv4 всегда будет нечетным числом.
+В этом примере приведено определение подчиненного интерфейса для подчиненного интерфейса с двумя идентификаторами виртуальной локальной сети. Идентификатор внешней виртуальной локальной сети (s-тег) остается постоянным для всех пирингов, если используется. Идентификатор внешней виртуальной локальной сети (c-тег) уникален для каждого пиринга. Последний октет адреса IPv4 всегда будет нечетным числом.
 
-    interface GigabitEthernet<Interface_Number>.<Number>
-     encapsulation dot1Q <s-tag> seconddot1Q <c-tag>
-     ip address <IPv4_Address><Subnet_Mask>
+```console
+interface GigabitEthernet<Interface_Number>.<Number>
+ encapsulation dot1Q <s-tag> seconddot1Q <c-tag>
+ ip address <IPv4_Address><Subnet_Mask>
+```
 
 ### <a name="set-up-ebgp-sessions"></a>Настройка сеансов eBGP
-Для каждого пиринга необходимо настроить сеанс BGP с корпорацией Майкрософт. Настройте сеанс BGP, используя следующий пример. Если адрес IPv4, используемый для подинтерфейса, был a. b. c. d, IP-адрес соседа BGP (Майкрософт) будет иметь значение a. b. c. d + 1. Последний октет IPv4-адреса соседа BGP всегда будет четным числом.
+Для каждого пиринга необходимо настроить сеанс BGP с Майкрософт. Настройте сеанс BGP, используя следующий пример. Если IPv4-адрес, используемый для подчиненного интерфейса, a.b.c.d, то IP-адрес соседа BGP (Майкрософт) будет таким: a.b.c.d+1. Последний октет IPv4-адреса соседа BGP всегда будет четным числом.
 
-    router bgp <Customer_ASN>
-     bgp log-neighbor-changes
-     neighbor <IP#2_used_by_Azure> remote-as 12076
-     !        
-     address-family ipv4
-     neighbor <IP#2_used_by_Azure> activate
-     exit-address-family
-    !
+```console
+router bgp <Customer_ASN>
+ bgp log-neighbor-changes
+ neighbor <IP#2_used_by_Azure> remote-as 12076
+ !
+ address-family ipv4
+ neighbor <IP#2_used_by_Azure> activate
+ exit-address-family
+!
+```
 
-### <a name="set-up-prefixes-to-be-advertised-over-the-bgp-session"></a>Настройка префиксов для объявления в сеансе BGP
-Настройте маршрутизатор для объявления выбранных префиксов в корпорацию Майкрософт, используя следующий пример.
+### <a name="set-up-prefixes-to-be-advertised-over-the-bgp-session"></a>Настройка префиксов, объявляемых в сеансе BGP
+Настройте маршрутизатор на объявление выбранных префиксов в Майкрософт, используя следующий пример.
 
-    router bgp <Customer_ASN>
-     bgp log-neighbor-changes
-     neighbor <IP#2_used_by_Azure> remote-as 12076
-     !        
-     address-family ipv4
-      network <Prefix_to_be_advertised> mask <Subnet_mask>
-      neighbor <IP#2_used_by_Azure> activate
-     exit-address-family
-    !
+```console
+router bgp <Customer_ASN>
+ bgp log-neighbor-changes
+ neighbor <IP#2_used_by_Azure> remote-as 12076
+ !
+ address-family ipv4
+  network <Prefix_to_be_advertised> mask <Subnet_mask>
+  neighbor <IP#2_used_by_Azure> activate
+ exit-address-family
+!
+```
 
 ### <a name="route-maps"></a>Карты маршрутизации
-Используйте карты маршрутов и списки префиксов для фильтрации префиксов, распространяемых в сеть. См. Следующий пример и убедитесь, что настроены соответствующие списки префиксов.
+Для фильтрации префиксов, распространяемых в сети, используйте карты маршрутизации и списки префиксов. См. следующий пример и убедитесь, что настроены соответствующие списки префиксов.
 
-    router bgp <Customer_ASN>
-     bgp log-neighbor-changes
-     neighbor <IP#2_used_by_Azure> remote-as 12076
-     !        
-     address-family ipv4
-      network <Prefix_to_be_advertised> mask <Subnet_mask>
-      neighbor <IP#2_used_by_Azure> activate
-      neighbor <IP#2_used_by_Azure> route-map <MS_Prefixes_Inbound> in
-     exit-address-family
-    !
-    route-map <MS_Prefixes_Inbound> permit 10
-     match ip address prefix-list <MS_Prefixes>
-    !
+```console
+router bgp <Customer_ASN>
+ bgp log-neighbor-changes
+ neighbor <IP#2_used_by_Azure> remote-as 12076
+ !
+ address-family ipv4
+  network <Prefix_to_be_advertised> mask <Subnet_mask>
+  neighbor <IP#2_used_by_Azure> activate
+  neighbor <IP#2_used_by_Azure> route-map <MS_Prefixes_Inbound> in
+ exit-address-family
+!
+route-map <MS_Prefixes_Inbound> permit 10
+ match ip address prefix-list <MS_Prefixes>
+!
+```
 
-### <a name="configure-bfd"></a>Настройка БФД
+### <a name="configure-bfd"></a>Настройка BFD
 
-Вы настроите БФД в двух местах: один на уровне интерфейса, а другой — на уровне BGP. Ниже приведен пример для интерфейса QinQ. 
+BFD необходимо настроить в двух местах: один на уровне интерфейса, а другой — на уровне BGP. Ниже приведен пример для интерфейса QinQ. 
 
-    interface GigabitEthernet<Interface_Number>.<Number>
-     bfd interval 300 min_rx 300 multiplier 3
-     encapsulation dot1Q <s-tag> seconddot1Q <c-tag>
-     ip address <IPv4_Address><Subnet_Mask>
-    
-    router bgp <Customer_ASN>
-     bgp log-neighbor-changes
-     neighbor <IP#2_used_by_Azure> remote-as 12076
-     !        
-     address-family ipv4
-      neighbor <IP#2_used_by_Azure> activate
-      neighbor <IP#2_used_by_Azure> fall-over bfd
-     exit-address-family
-    !
+```console
+interface GigabitEthernet<Interface_Number>.<Number>
+ bfd interval 300 min_rx 300 multiplier 3
+ encapsulation dot1Q <s-tag> seconddot1Q <c-tag>
+ ip address <IPv4_Address><Subnet_Mask>
+
+router bgp <Customer_ASN>
+ bgp log-neighbor-changes
+ neighbor <IP#2_used_by_Azure> remote-as 12076
+ !
+ address-family ipv4
+  neighbor <IP#2_used_by_Azure> activate
+  neighbor <IP#2_used_by_Azure> fall-over bfd
+ exit-address-family
+!
+```
 
 
 ## <a name="juniper-mx-series-routers"></a>Маршрутизаторы серии Juniper MX
-Примеры в этом разделе относятся к любому маршрутизатору серии MX Juniper.
+Примеры из этого раздела можно применять ко всем маршрутизаторам серии Juniper MX.
 
-### <a name="configure-interfaces-and-subinterfaces"></a>Настройка интерфейсов и подинтерфейсов
+### <a name="configure-interfaces-and-subinterfaces"></a>Настройка интерфейсов и подчиненных интерфейсов
 
 **Определение интерфейса Dot1Q**
 
-Этот образец предоставляет определение подинтерфейса для подинтерфейса с одним ИДЕНТИФИКАТОРом виртуальной ЛС. Идентификатор виртуальной локальной сети уникален в пределах одного пиринга. Последний октет адреса IPv4 всегда будет нечетным числом.
+В этом примере приведено определение подчиненного интерфейса для подчиненного интерфейса с одним идентификатором виртуальной локальной сети. Идентификатор виртуальной локальной сети уникален в пределах одного пиринга. Последний октет адреса IPv4 всегда будет нечетным числом.
 
+```console
     interfaces {
         vlan-tagging;
         <Interface_Number> {
@@ -134,12 +147,14 @@ ms.locfileid: "82024818"
             }
         }
     }
+```
 
 
 **Определение интерфейса QinQ**
 
-Этот образец предоставляет определение подинтерфейса для подинтерфейса с двумя идентификаторами виртуальной ЛС. Внешний идентификатор виртуальной ЛС (s-Tag), если он используется, остается одинаковым для всех узлов. Идентификатор внешней виртуальной локальной сети (c-тег) уникален для каждого пиринга. Последний октет адреса IPv4 всегда будет нечетным числом.
+В этом примере приведено определение подчиненного интерфейса для подчиненного интерфейса с двумя идентификаторами виртуальной локальной сети. Идентификатор внешней виртуальной локальной сети (s-тег) остается постоянным для всех пирингов, если используется. Идентификатор внешней виртуальной локальной сети (c-тег) уникален для каждого пиринга. Последний октет адреса IPv4 всегда будет нечетным числом.
 
+```console
     interfaces {
         <Interface_Number> {
             flexible-vlan-tagging;
@@ -151,10 +166,12 @@ ms.locfileid: "82024818"
             }                               
         }                                   
     }                           
+```
 
 ### <a name="set-up-ebgp-sessions"></a>Настройка сеансов eBGP
-Для каждого пиринга необходимо настроить сеанс BGP с корпорацией Майкрософт. Настройте сеанс BGP, используя следующий пример. Если адрес IPv4, используемый для подинтерфейса, был a. b. c. d, IP-адрес соседа BGP (Майкрософт) будет иметь значение a. b. c. d + 1. Последний октет IPv4-адреса соседа BGP всегда будет четным числом.
+Для каждого пиринга необходимо настроить сеанс BGP с Майкрософт. Настройте сеанс BGP, используя следующий пример. Если IPv4-адрес, используемый для подчиненного интерфейса, a.b.c.d, то IP-адрес соседа BGP (Майкрософт) будет таким: a.b.c.d+1. Последний октет IPv4-адреса соседа BGP всегда будет четным числом.
 
+```console
     routing-options {
         autonomous-system <Customer_ASN>;
     }
@@ -167,16 +184,18 @@ ms.locfileid: "82024818"
             }                               
         }                                   
     }
+```
 
-### <a name="set-up-prefixes-to-be-advertised-over-the-bgp-session"></a>Настройка префиксов для объявления в сеансе BGP
-Настройте маршрутизатор для объявления выбранных префиксов в корпорацию Майкрософт, используя следующий пример.
+### <a name="set-up-prefixes-to-be-advertised-over-the-bgp-session"></a>Настройка префиксов, объявляемых в сеансе BGP
+Настройте маршрутизатор на объявление выбранных префиксов в Майкрософт, используя следующий пример.
 
+```console
     policy-options {
         policy-statement <Policy_Name> {
             term 1 {
                 from protocol OSPF;
-        route-filter 
-    <Prefix_to_be_advertised/Subnet_Mask> exact;
+                route-filter; 
+                <Prefix_to_be_advertised/Subnet_Mask> exact;
                 then {
                     accept;
                 }
@@ -186,17 +205,18 @@ ms.locfileid: "82024818"
     protocols {
         bgp { 
             group <Group_Name> { 
-                export <Policy_Name>
+                export <Policy_Name>;
                 peer-as 12076;              
                 neighbor <IP#2_used_by_Azure>;
             }                               
         }                                   
     }
-
+```
 
 ### <a name="route-policies"></a>Политики маршрутизации
-Для фильтрации префиксов, распространяемых в сеть, можно использовать карты маршрутов и списки префиксов. Ознакомьтесь со следующим примером и убедитесь, что настроены соответствующие списки префиксов.
+Для фильтрации префиксов, распространяемых в сети, можно использовать карты маршрутизации и списки префиксов. См. следующий пример и убедитесь, что настроены соответствующие списки префиксов.
 
+```console
     policy-options {
         prefix-list MS_Prefixes {
             <IP_Prefix_1/Subnet_Mask>;
@@ -205,7 +225,7 @@ ms.locfileid: "82024818"
         policy-statement <MS_Prefixes_Inbound> {
             term 1 {
                 from {
-                prefix-list MS_Prefixes;
+                    prefix-list MS_Prefixes;
                 }
                 then {
                     accept;
@@ -216,17 +236,19 @@ ms.locfileid: "82024818"
     protocols {
         bgp { 
             group <Group_Name> { 
-                export <Policy_Name>
-                import <MS_Prefixes_Inbound>
+                export <Policy_Name>;
+                import <MS_Prefixes_Inbound>;
                 peer-as 12076;              
                 neighbor <IP#2_used_by_Azure>;
             }                               
         }                                   
     }
+```
 
-### <a name="configure-bfd"></a>Настройка БФД
-Настройте БФД в разделе протокол BGP.
+### <a name="configure-bfd"></a>Настройка BFD
+Настройте BFD в разделе протокола BGP.
 
+```console
     protocols {
         bgp { 
             group <Group_Name> { 
@@ -239,9 +261,32 @@ ms.locfileid: "82024818"
             }                               
         }                                   
     }
+```
 
+### <a name="configure-macsec"></a>Настройка MACSec
+Для конфигурации MACSec ключ связи подключения (CAK) и имя ключа связи подключения (CKN) должны соответствовать значениям, настроенным с помощью команд PowerShell.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+```console
+    security {
+        macsec {
+            connectivity-association <Connectivity_Association_Name> {
+                cipher-suite gcm-aes-xpn-128;
+                security-mode static-cak;
+                pre-shared-key {
+                    ckn <Connectivity_Association_Key_Name>;
+                    cak <Connectivity_Association_Key>; ## SECRET-DATA
+                }
+            }
+            interfaces {
+                <Interface_Number> {
+                    connectivity-association <Connectivity_Association_Name>;
+                }
+            }
+        }
+    }
+```
+
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения см. в разделе [Вопросы и ответы по ExpressRoute](expressroute-faqs.md).
 
 

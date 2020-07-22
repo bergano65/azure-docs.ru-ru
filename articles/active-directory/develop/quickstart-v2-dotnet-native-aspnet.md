@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 12/12/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET
-ms.openlocfilehash: 084083a704a007e6675234883c62350d1d9a0849
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: 22bf7e85a48e0d138bfdbca82cf032287d982899
+ms.sourcegitcommit: 61d92af1d24510c0cc80afb1aebdc46180997c69
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81536154"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85339597"
 ---
 # <a name="quickstart-call-an-aspnet-web-api-protected-by-microsoft-identity-platform"></a>Краткое руководство. Вызов веб-API ASP.NET, защищенного с помощью платформы удостоверений Майкрософт
 
@@ -30,7 +30,7 @@ ms.locfileid: "81536154"
 
 * Visual Studio 2017 или 2019.  Скачайте [Visual Studio бесплатно](https://www.visualstudio.com/downloads/).
 
-* [Учетная запись Майкрософт](https://www.outlook.com) или [Программа для разработчиков Office 365](/office/developer-program/office-365-developer-program).
+* [Учетная запись Майкрософт](https://www.outlook.com) или [Программа для разработчиков Microsoft 365](/office/developer-program/office-365-developer-program).
 
 ## <a name="download-or-clone-this-sample"></a>Скачивание или клонирование этого примера
 

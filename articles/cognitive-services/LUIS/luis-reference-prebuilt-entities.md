@@ -12,11 +12,11 @@ ms.topic: reference
 ms.date: 10/03/2019
 ms.author: diberry
 ms.openlocfilehash: a49452653f8ac4bcc62758d801a235be0929d314
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.sourcegitcommit: 537c539344ee44b07862f317d453267f2b7b2ca6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79219723"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84686636"
 ---
 # <a name="entities-per-culture-in-your-luis-model"></a>Сущности для языков и региональных параметров в модели LUIS
 
@@ -52,15 +52,15 @@ ms.locfileid: "79219723"
 [Измерение](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    V2, V3   |
 [Электронная почта](luis-reference-prebuilt-email.md)   |    V2, V3   |
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   |
-[KeyPhrase](luis-reference-prebuilt-keyphrase.md)   |    -   |
-[Номер](luis-reference-prebuilt-number.md)   |    V2, V3   |
-[Ordinal](luis-reference-prebuilt-ordinal.md)   |    V2, V3   |
+[кэйфрасе](luis-reference-prebuilt-keyphrase.md)   |    -   |
+[Число](luis-reference-prebuilt-number.md)   |    V2, V3   |
+[Порядковый номер](luis-reference-prebuilt-ordinal.md)   |    V2, V3   |
 [OrdinalV2](luis-reference-prebuilt-ordinal-v2.md)   |    -   |
-[Percentage](luis-reference-prebuilt-percentage.md)   |    V2, V3   |
-[PersonName](luis-reference-prebuilt-person.md)   |    V2, V3   |
+[Процент](luis-reference-prebuilt-percentage.md)   |    V2, V3   |
+[персоннаме](luis-reference-prebuilt-person.md)   |    V2, V3   |
 [PhoneNumber](luis-reference-prebuilt-phonenumber.md)   |    V2, V3   |
 [Температура](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    V2, V3   |
-[URL-адрес](luis-reference-prebuilt-url.md)   |    V2, V3   |
+[URL](luis-reference-prebuilt-url.md)   |    V2, V3   |
 
 ## <a name="dutch-entity-support"></a>Поддержка сущностей для голландского языка
 
@@ -74,15 +74,15 @@ ms.locfileid: "79219723"
 [Измерение](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    V2, V3   |
 [Электронная почта](luis-reference-prebuilt-email.md)   |    V2, V3   |
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   |
-[KeyPhrase](luis-reference-prebuilt-keyphrase.md)   |    V2, V3   |
-[Номер](luis-reference-prebuilt-number.md)   |    V2, V3   |
-[Ordinal](luis-reference-prebuilt-ordinal.md)   |    V2, V3   |
+[кэйфрасе](luis-reference-prebuilt-keyphrase.md)   |    V2, V3   |
+[Число](luis-reference-prebuilt-number.md)   |    V2, V3   |
+[Порядковый номер](luis-reference-prebuilt-ordinal.md)   |    V2, V3   |
 [OrdinalV2](luis-reference-prebuilt-ordinal-v2.md)   |    -   |
-[Percentage](luis-reference-prebuilt-percentage.md)   |    V2, V3   |
-[PersonName](luis-reference-prebuilt-person.md)   |    -   |
+[Процент](luis-reference-prebuilt-percentage.md)   |    V2, V3   |
+[персоннаме](luis-reference-prebuilt-person.md)   |    -   |
 [PhoneNumber](luis-reference-prebuilt-phonenumber.md)   |    V2, V3   |
 [Температура](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    V2, V3   |
-[URL-адрес](luis-reference-prebuilt-url.md)   |    V2, V3   |
+[URL](luis-reference-prebuilt-url.md)   |    V2, V3   |
 
 ## <a name="english-american-entity-support"></a>Поддержка сущностей для английского языка (США)
 
@@ -96,15 +96,15 @@ ms.locfileid: "79219723"
 [Измерение](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    V2, V3   |
 [Электронная почта](luis-reference-prebuilt-email.md)   |    V2, V3   |
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    V2, V3   |
-[KeyPhrase](luis-reference-prebuilt-keyphrase.md)   |    V2, V3   |
-[Номер](luis-reference-prebuilt-number.md)   |    V2, V3   |
-[Ordinal](luis-reference-prebuilt-ordinal.md)   |    V2, V3   |
+[кэйфрасе](luis-reference-prebuilt-keyphrase.md)   |    V2, V3   |
+[Число](luis-reference-prebuilt-number.md)   |    V2, V3   |
+[Порядковый номер](luis-reference-prebuilt-ordinal.md)   |    V2, V3   |
 [OrdinalV2](luis-reference-prebuilt-ordinal-v2.md)   |    V2, V3   |
-[Percentage](luis-reference-prebuilt-percentage.md)   |    V2, V3   |
-[PersonName](luis-reference-prebuilt-person.md)   |    V2, V3   |
+[Процент](luis-reference-prebuilt-percentage.md)   |    V2, V3   |
+[персоннаме](luis-reference-prebuilt-person.md)   |    V2, V3   |
 [PhoneNumber](luis-reference-prebuilt-phonenumber.md)   |    V2, V3   |
 [Температура](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    V2, V3   |
-[URL-адрес](luis-reference-prebuilt-url.md)   |    V2, V3   |
+[URL](luis-reference-prebuilt-url.md)   |    V2, V3   |
 
 ## <a name="french-france-entity-support"></a>Поддержка сущностей для французского языка (Франция)
 
@@ -118,15 +118,15 @@ ms.locfileid: "79219723"
 [Измерение](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    V2, V3   |
 [Электронная почта](luis-reference-prebuilt-email.md)   |    V2, V3   |
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   |
-[KeyPhrase](luis-reference-prebuilt-keyphrase.md)   |    V2, V3   |
-[Номер](luis-reference-prebuilt-number.md)   |    V2, V3   |
-[Ordinal](luis-reference-prebuilt-ordinal.md)   |    V2, V3   |
+[кэйфрасе](luis-reference-prebuilt-keyphrase.md)   |    V2, V3   |
+[Число](luis-reference-prebuilt-number.md)   |    V2, V3   |
+[Порядковый номер](luis-reference-prebuilt-ordinal.md)   |    V2, V3   |
 [OrdinalV2](luis-reference-prebuilt-ordinal-v2.md)   |    -   |
-[Percentage](luis-reference-prebuilt-percentage.md)   |    V2, V3   |
-[PersonName](luis-reference-prebuilt-person.md)   |   -   |
+[Процент](luis-reference-prebuilt-percentage.md)   |    V2, V3   |
+[персоннаме](luis-reference-prebuilt-person.md)   |   -   |
 [PhoneNumber](luis-reference-prebuilt-phonenumber.md)   |    V2, V3   |
 [Температура](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    V2, V3   |
-[URL-адрес](luis-reference-prebuilt-url.md)   |    V2, V3   |
+[URL](luis-reference-prebuilt-url.md)   |    V2, V3   |
 
 ## <a name="french-canadian-entity-support"></a>Поддержка сущностей для французского языка (Канада)
 
@@ -140,15 +140,15 @@ ms.locfileid: "79219723"
 [Измерение](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    V2, V3   |
 [Электронная почта](luis-reference-prebuilt-email.md)   |    V2, V3   |
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   |
-[KeyPhrase](luis-reference-prebuilt-keyphrase.md)   |    V2, V3   |
-[Номер](luis-reference-prebuilt-number.md)   |    V2, V3   |
-[Ordinal](luis-reference-prebuilt-ordinal.md)   |    V2, V3   |
+[кэйфрасе](luis-reference-prebuilt-keyphrase.md)   |    V2, V3   |
+[Число](luis-reference-prebuilt-number.md)   |    V2, V3   |
+[Порядковый номер](luis-reference-prebuilt-ordinal.md)   |    V2, V3   |
 [OrdinalV2](luis-reference-prebuilt-ordinal-v2.md)   |    -   |
-[Percentage](luis-reference-prebuilt-percentage.md)   |    V2, V3   |
-[PersonName](luis-reference-prebuilt-person.md)   |    -   |
+[Процент](luis-reference-prebuilt-percentage.md)   |    V2, V3   |
+[персоннаме](luis-reference-prebuilt-person.md)   |    -   |
 [PhoneNumber](luis-reference-prebuilt-phonenumber.md)   |    V2, V3   |
 [Температура](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    V2, V3   |
-[URL-адрес](luis-reference-prebuilt-url.md)   |    V2, V3   |
+[URL](luis-reference-prebuilt-url.md)   |    V2, V3   |
 
 ## <a name="german-entity-support"></a>Поддержка сущностей для немецкого языка
 
@@ -162,15 +162,15 @@ ms.locfileid: "79219723"
 [Измерение](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    V2, V3   |
 [Электронная почта](luis-reference-prebuilt-email.md)   |    V2, V3   |
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   |
-[KeyPhrase](luis-reference-prebuilt-keyphrase.md)   |    V2, V3   |
-[Номер](luis-reference-prebuilt-number.md)   |    V2, V3   |
-[Ordinal](luis-reference-prebuilt-ordinal.md)   |    V2, V3   |
+[кэйфрасе](luis-reference-prebuilt-keyphrase.md)   |    V2, V3   |
+[Число](luis-reference-prebuilt-number.md)   |    V2, V3   |
+[Порядковый номер](luis-reference-prebuilt-ordinal.md)   |    V2, V3   |
 [OrdinalV2](luis-reference-prebuilt-ordinal-v2.md)   |    -   |
-[Percentage](luis-reference-prebuilt-percentage.md)   |    V2, V3   |
-[PersonName](luis-reference-prebuilt-person.md)   |    -   |
+[Процент](luis-reference-prebuilt-percentage.md)   |    V2, V3   |
+[персоннаме](luis-reference-prebuilt-person.md)   |    -   |
 [PhoneNumber](luis-reference-prebuilt-phonenumber.md)   |    V2, V3   |
 [Температура](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    V2, V3   |
-[URL-адрес](luis-reference-prebuilt-url.md)   |    V2, V3   |
+[URL](luis-reference-prebuilt-url.md)   |    V2, V3   |
 
 ## <a name="italian-entity-support"></a>Поддержка сущностей для итальянского языка
 
@@ -186,15 +186,15 @@ ms.locfileid: "79219723"
 [Измерение](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    V2, V3   |
 [Электронная почта](luis-reference-prebuilt-email.md)   |    V2, V3   |
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   |
-[KeyPhrase](luis-reference-prebuilt-keyphrase.md)   |    V2, V3   |
-[Номер](luis-reference-prebuilt-number.md)   |    V2, V3   |
-[Ordinal](luis-reference-prebuilt-ordinal.md)   |    V2, V3   |
+[кэйфрасе](luis-reference-prebuilt-keyphrase.md)   |    V2, V3   |
+[Число](luis-reference-prebuilt-number.md)   |    V2, V3   |
+[Порядковый номер](luis-reference-prebuilt-ordinal.md)   |    V2, V3   |
 [OrdinalV2](luis-reference-prebuilt-ordinal-v2.md)   |    -   |
-[Percentage](luis-reference-prebuilt-percentage.md)   |    V2, V3   |
-[PersonName](luis-reference-prebuilt-person.md)   |    -   |
+[Процент](luis-reference-prebuilt-percentage.md)   |    V2, V3   |
+[персоннаме](luis-reference-prebuilt-person.md)   |    -   |
 [PhoneNumber](luis-reference-prebuilt-phonenumber.md)   |    V2, V3   |
 [Температура](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    V2, V3   |
-[URL-адрес](luis-reference-prebuilt-url.md)   |    V2, V3   |
+[URL](luis-reference-prebuilt-url.md)   |    V2, V3   |
 
 ## <a name="japanese-entity-support"></a>Поддержка сущностей для японского языка
 
@@ -208,15 +208,15 @@ ms.locfileid: "79219723"
 [Измерение](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    V2,-   |
 [Электронная почта](luis-reference-prebuilt-email.md)   |    V2, V3   |
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   |
-[KeyPhrase](luis-reference-prebuilt-keyphrase.md)   |    V2, V3   |
-[Номер](luis-reference-prebuilt-number.md)   |    V2,-   |
-[Ordinal](luis-reference-prebuilt-ordinal.md)   |    V2,-   |
+[кэйфрасе](luis-reference-prebuilt-keyphrase.md)   |    V2, V3   |
+[Число](luis-reference-prebuilt-number.md)   |    V2,-   |
+[Порядковый номер](luis-reference-prebuilt-ordinal.md)   |    V2,-   |
 [OrdinalV2](luis-reference-prebuilt-ordinal-v2.md)   |    -   |
-[Percentage](luis-reference-prebuilt-percentage.md)   |    V2,-   |
-[PersonName](luis-reference-prebuilt-person.md)   |    -   |
+[Процент](luis-reference-prebuilt-percentage.md)   |    V2,-   |
+[персоннаме](luis-reference-prebuilt-person.md)   |    -   |
 [PhoneNumber](luis-reference-prebuilt-phonenumber.md)   |    V2, V3   |
 [Температура](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    V2,-   |
-[URL-адрес](luis-reference-prebuilt-url.md)   |    V2, V3   |
+[URL](luis-reference-prebuilt-url.md)   |    V2, V3   |
 
 ## <a name="korean-entity-support"></a>Поддержка сущностей для корейского языка
 
@@ -230,15 +230,15 @@ ms.locfileid: "79219723"
 [Измерение](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    -   |
 [Электронная почта](luis-reference-prebuilt-email.md)   |    V2, V3   |
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   |
-[KeyPhrase](luis-reference-prebuilt-keyphrase.md)   |    V2, V3   |
-[Номер](luis-reference-prebuilt-number.md)   |    -   |
-[Ordinal](luis-reference-prebuilt-ordinal.md)   |    -   |
+[кэйфрасе](luis-reference-prebuilt-keyphrase.md)   |    V2, V3   |
+[Число](luis-reference-prebuilt-number.md)   |    -   |
+[Порядковый номер](luis-reference-prebuilt-ordinal.md)   |    -   |
 [OrdinalV2](luis-reference-prebuilt-ordinal-v2.md)   |    -   |
-[Percentage](luis-reference-prebuilt-percentage.md)   |    -   |
-[PersonName](luis-reference-prebuilt-person.md)   |    -   |
+[Процент](luis-reference-prebuilt-percentage.md)   |    -   |
+[персоннаме](luis-reference-prebuilt-person.md)   |    -   |
 [PhoneNumber](luis-reference-prebuilt-phonenumber.md)   |    V2, V3   |
 [Температура](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    -   |
-[URL-адрес](luis-reference-prebuilt-url.md)   |    V2, V3   |
+[URL](luis-reference-prebuilt-url.md)   |    V2, V3   |
 
 ## <a name="portuguese-brazil-entity-support"></a>Поддержка сущностей для португальского языка (Бразилия)
 
@@ -252,15 +252,15 @@ ms.locfileid: "79219723"
 [Измерение](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    V2, V3   |
 [Электронная почта](luis-reference-prebuilt-email.md)   |    V2, V3   |
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   |
-[KeyPhrase](luis-reference-prebuilt-keyphrase.md)   |    V2, V3   |
-[Номер](luis-reference-prebuilt-number.md)   |    V2, V3   |
-[Ordinal](luis-reference-prebuilt-ordinal.md)   |    V2, V3   |
+[кэйфрасе](luis-reference-prebuilt-keyphrase.md)   |    V2, V3   |
+[Число](luis-reference-prebuilt-number.md)   |    V2, V3   |
+[Порядковый номер](luis-reference-prebuilt-ordinal.md)   |    V2, V3   |
 [OrdinalV2](luis-reference-prebuilt-ordinal-v2.md)   |    -   |
-[Percentage](luis-reference-prebuilt-percentage.md)   |    V2, V3   |
-[PersonName](luis-reference-prebuilt-person.md)   |    -   |
+[Процент](luis-reference-prebuilt-percentage.md)   |    V2, V3   |
+[персоннаме](luis-reference-prebuilt-person.md)   |    -   |
 [PhoneNumber](luis-reference-prebuilt-phonenumber.md)   |    V2, V3   |
 [Температура](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    V2, V3   |
-[URL-адрес](luis-reference-prebuilt-url.md)   |    V2, V3   |
+[URL](luis-reference-prebuilt-url.md)   |    V2, V3   |
 
 ## <a name="spanish-spain-entity-support"></a>Поддержка сущностей для испанского языка (Испания)
 
@@ -274,15 +274,15 @@ ms.locfileid: "79219723"
 [Измерение](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    V2, V3   |
 [Электронная почта](luis-reference-prebuilt-email.md)   |    V2, V3   |
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   |
-[KeyPhrase](luis-reference-prebuilt-keyphrase.md)   |    V2, V3   |
-[Номер](luis-reference-prebuilt-number.md)   |    V2, V3   |
-[Ordinal](luis-reference-prebuilt-ordinal.md)   |    V2, V3   |
+[кэйфрасе](luis-reference-prebuilt-keyphrase.md)   |    V2, V3   |
+[Число](luis-reference-prebuilt-number.md)   |    V2, V3   |
+[Порядковый номер](luis-reference-prebuilt-ordinal.md)   |    V2, V3   |
 [OrdinalV2](luis-reference-prebuilt-ordinal-v2.md)   |    -   |
-[Percentage](luis-reference-prebuilt-percentage.md)   |    V2, V3   |
-[PersonName](luis-reference-prebuilt-person.md)   |    -   |
+[Процент](luis-reference-prebuilt-percentage.md)   |    V2, V3   |
+[персоннаме](luis-reference-prebuilt-person.md)   |    -   |
 [PhoneNumber](luis-reference-prebuilt-phonenumber.md)   |    V2, V3   |
 [Температура](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    V2, V3   |
-[URL-адрес](luis-reference-prebuilt-url.md)   |    V2, V3   |
+[URL](luis-reference-prebuilt-url.md)   |    V2, V3   |
 
 ## <a name="spanish-mexico-entity-support"></a>Поддержка сущностей для испанского языка (Мексика)
 
@@ -296,15 +296,15 @@ ms.locfileid: "79219723"
 [Измерение](luis-reference-prebuilt-dimension.md):<br>том<br>площадь<br>вес<br>информация (например, бит/байт)<br>длина (например, метр)<br>скорость (например, миль в час)  |    -   |
 [Электронная почта](luis-reference-prebuilt-email.md)   |    V2, V3   |
 [GeographyV2](luis-reference-prebuilt-geographyV2.md)   |    -   |
-[KeyPhrase](luis-reference-prebuilt-keyphrase.md)   |    V2, V3   |
-[Номер](luis-reference-prebuilt-number.md)   |    V2, V3   |
-[Ordinal](luis-reference-prebuilt-ordinal.md)   |    -   |
+[кэйфрасе](luis-reference-prebuilt-keyphrase.md)   |    V2, V3   |
+[Число](luis-reference-prebuilt-number.md)   |    V2, V3   |
+[Порядковый номер](luis-reference-prebuilt-ordinal.md)   |    -   |
 [OrdinalV2](luis-reference-prebuilt-ordinal-v2.md)   |    -   |
-[Percentage](luis-reference-prebuilt-percentage.md)   |    -   |
-[PersonName](luis-reference-prebuilt-person.md)   |    -   |
+[Процент](luis-reference-prebuilt-percentage.md)   |    -   |
+[персоннаме](luis-reference-prebuilt-person.md)   |    -   |
 [PhoneNumber](luis-reference-prebuilt-phonenumber.md)   |    V2, V3   |
 [Температура](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    -   |
-[URL-адрес](luis-reference-prebuilt-url.md)   |    V2, V3   |
+[URL](luis-reference-prebuilt-url.md)   |    V2, V3   |
 
 См. примечания об [устаревших предварительно созданных сущностях](luis-reference-prebuilt-deprecated.md).
 

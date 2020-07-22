@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 04/28/2019
 ms.author: juliako
 ms.openlocfilehash: d66347bc5510189b1d947b4c6b00345b0a56c3f7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80582219"
 ---
 # <a name="media-services-job-error-codes"></a>Коды ошибок заданий служб мультимедиа
@@ -32,12 +32,12 @@ ms.locfileid: "80582219"
 
 Прочитайте статью [сообщества Служб мультимедиа Azure](media-services-community.md), чтобы узнать, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - [Коды ошибок конечной точки потоковой передачи](streaming-endpoint-error-codes.md)
 - [Основные понятия служб мультимедиа Azure](concepts-overview.md)
 - [Квоты и ограничения](limits-quotas-constraints.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Пример: доступ к ErrorCode и сообщению из Апиексцептион с помощью .NET](configure-connect-dotnet-howto.md#connect-to-the-net-client)

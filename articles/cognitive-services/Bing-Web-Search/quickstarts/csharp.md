@@ -8,19 +8,21 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-web-search
 ms.topic: quickstart
-ms.date: 12/09/2019
+ms.date: 05/22/2020
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: cf12b279cf7bcb20aa655646ce34fb9df2bda016
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: 2c13931c7ab7c084b635abb7080f97de6d4bf4bb
+ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76167665"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83873895"
 ---
 # <a name="quickstart-search-the-web-using-the-bing-web-search-rest-api-and-c"></a>Краткое руководство. Поиск в Интернете с помощью REST API Bing для поиска в Интернете и C#
 
-Из этого краткого руководства вы узнаете, как вызвать API Bing для поиска в Интернете и получить ответ в формате JSON. Это приложение C# отправляет поисковый запрос к API и показывает ответ. Хотя это приложение создается на языке C#, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
+Используйте это краткое руководство, чтобы вызвать API Поиска в Интернете Bing. Это приложение C# отправляет поисковый запрос к API и показывает ответ JSON. Хотя это приложение написано на C#, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
+
+В этом примере программы в этом кратком руководстве используются только классы .NET Core.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -30,13 +32,11 @@ ms.locfileid: "76167665"
 * Linux или MacOS: [Mono](https://www.mono-project.com/).  
 * ключ подписки;
 
-В этом примере программы используются только классы .NET Core.
-
 [!INCLUDE [bing-web-search-quickstart-signup](../../../../includes/bing-web-search-quickstart-signup.md)]
 
 ## <a name="create-a-project-and-declare-dependencies"></a>Создание проекта и объявление зависимостей
 
-Создайте проект в Visual Studio или Mono. Выполните этот код, чтобы импортировать требуемые пространства имен и типы.
+Создайте проект в Visual Studio или Mono. Используйте следующий код, чтобы импортировать необходимые пространства имен и типы:
 
 ```csharp
 using System;
@@ -62,7 +62,13 @@ namespace BingSearchApisQuickstart
 
 ## <a name="define-variables"></a>Определение переменных
 
-Прежде чем продолжить, необходимо задать несколько переменных.  В качестве `uriBase` может быть глобальная конечная точка, приведенная ниже, или конечная точка [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемая на портале Azure для вашего ресурса. Убедитесь, что значение `uriBase` указано правильно, и замените значение `accessKey` действительным ключом подписки из своей учетной записи Azure. Вы можете настроить поисковый запрос, заменив значение параметра `searchTerm`. Не забудьте добавить этот код в класс `Program`, как было отмечено выше.
+Прежде чем продолжить, необходимо задать несколько переменных. Добавьте этот код в класс `Program`, созданный в предыдущем разделе: 
+
+1. Для значения `uriBase` вы можете использовать глобальную конечную точку, указанную в коде ниже, или конечную точку [личного поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), которая отображается на портале Azure для вашего ресурса. 
+
+2. Убедитесь, что значение `uriBase` указано правильно, и замените значение `accessKey` ключом подписки из своей учетной записи Azure. 
+
+3. Кроме того, вы можете настроить поисковый запрос, заменив значение параметра `searchTerm`. 
 
 ```csharp
 // Enter a valid subscription key.
@@ -80,7 +86,7 @@ const string searchTerm = "Microsoft Cognitive Services";
 
 Метод `Main()` является обязательным. Именно он всегда вызывается первым при запуске программы. В нашем приложении метод main проверяет `accessKey`, выполняет запрос и выводит ответ.
 
-Не забывайте, что `main()` зависит от методов, которые создаются в следующих разделах.
+Метод `main()` зависит от методов, созданных в следующих разделах.
 
 ```csharp
 static void Main()
@@ -109,7 +115,7 @@ static void Main()
 
 ## <a name="create-a-struct-for-search-results"></a>Создание структуры для результатов поиска
 
-Эта структура возвращает результаты поиска с соответствующими заголовками. Она вызывается при выполнении запроса к API поиска в Интернете Bing, чтобы создать объект результата.
+Создайте структуру, которая возвращает результаты поиска с соответствующими заголовками. Она вызывается при выполнении запроса к API поиска в Интернете Bing, чтобы создать объект результата.
 
 ```csharp
 // Returns search results with headers.
@@ -235,9 +241,9 @@ static string JsonPrettyPrint(string json)
 
 ## <a name="put-it-all-together"></a>Сборка
 
-А теперь выполните созданный код! Если вы хотите сравнить свой код с нашей версией, см. [пример кода на сайте GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/dotnet/Search/BingWebSearchv7.cs).
+А теперь выполните созданный код. Если вы хотите сравнить свой код с нашей версией, см. [пример кода на сайте GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/dotnet/Search/BingWebSearchv7.cs).
 
-## <a name="sample-response"></a>Пример ответа
+## <a name="example-json-response"></a>Пример ответа в формате JSON
 
 Ответы из API Bing для поиска в Интернете возвращаются в формате JSON. Представленный пример сокращен для отображения только одного результата.  
 
@@ -366,6 +372,6 @@ static string JsonPrettyPrint(string json)
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Руководство по одностраничным приложениям для API Bing для Поиска в Интернете](../tutorial-bing-web-search-single-page-app.md)
+> [Руководство по одностраничным приложениям для API Поиска в Интернете Bing](../tutorial-bing-web-search-single-page-app.md)
 
 [!INCLUDE [bing-web-search-quickstart-see-also](../../../../includes/bing-web-search-quickstart-see-also.md)]

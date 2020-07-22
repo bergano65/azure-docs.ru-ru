@@ -11,12 +11,11 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: b0b811a2b7ed432b7fc5015886b28337ca33424e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 2679bc8a9ddf9f748cd0e9d51e1534d120484d0c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76710327"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84267943"
 ---
 # <a name="how-to-identify-scenarios-and-plan-for-advanced-analytics-data-processing"></a>Как определить сценарии и план для расширенной аналитической обработки данных
 
@@ -75,7 +74,7 @@ ms.locfileid: "76710327"
 * если задействован гибридный сценарий, при котором осуществляется доступ к локальным и облачным ресурсам;
 * когда в процессе переноса данные необходимо обработать, изменить или добавить к ним операции бизнес-логики.
 
-Дополнительные сведения см. в статье [Перемещение данных из локального сервера SQL Server в SQL Azure с помощью фабрики данных Azure](move-sql-azure-adf.md).
+Дополнительные сведения см. в статье [Перемещение данных из базы данных SQL Server в SQL Azure с помощью фабрики данных Azure](move-sql-azure-adf.md).
 
 ### <a name="how-much-of-the-data-is-to-be-moved-to-azure"></a>Сколько данных требуется переместить в Azure?
 
@@ -146,11 +145,11 @@ ms.locfileid: "76710327"
 ### <a name="what-tools-should-you-use-for-data-analysis"></a>Какие средства следует использовать для анализа данных?
 
 * [Microsoft Azure PowerShell](/powershell/azure/overview) — язык сценариев, используемый для администрирования ресурсов Azure на языке сценариев
-* [Машинное обучение Azure Studio](../studio/what-is-ml-studio.md)
+* [Студия машинного обучения Azure](../studio/what-is-ml-studio.md)
 * [Revolution Analytics](https://www.microsoft.com/sql-server/machinelearningserver)
 * [RStudio](https://www.rstudio.com)
 * [Инструменты Python для Visual Studio](https://aka.ms/ptvsdocs)
-* [Anaconda](https://www.continuum.io/why-anaconda)
+* [Anaconda](https://www.anaconda.com/)
 * [Записные книжки Jupyter](https://jupyter.org/)
 * [Microsoft Power BI](https://powerbi.microsoft.com)
 

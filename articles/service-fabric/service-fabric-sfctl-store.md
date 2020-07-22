@@ -5,12 +5,12 @@ author: jeffj6123
 ms.topic: reference
 ms.date: 1/16/2020
 ms.author: jejarry
-ms.openlocfilehash: 75c62b54ff3aa7f3af344aa3e1ca81d431ae0ab2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: af5399be44d2946775622598c5c1db3d8355f7cd
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76905625"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86257076"
 ---
 # <a name="sfctl-store"></a>sfctl store
 Выполнение базовых операций на уровне файла с хранилищем образов кластера.
@@ -19,7 +19,7 @@ ms.locfileid: "76905625"
 
 |Команда|Описание|
 | --- | --- |
-| "Удалить" | Удаляет существующее содержимое хранилища образов. |
+| delete | Удаляет существующее содержимое хранилища образов. |
 | root-info | Возвращает сведения о содержимом корневого хранилища образов. |
 | stat | Возвращает сведения о содержимом хранилища образов. |
 
@@ -89,6 +89,6 @@ ms.locfileid: "76905625"
 | --verbose | Повышение уровня детализации журнала. Чтобы включить полные журналы отладки, используйте параметр --debug. |
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Настройте](service-fabric-cli.md) интерфейс командной строки Service Fabric.
-- Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).
+- Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](./scripts/sfctl-upgrade-application.md).

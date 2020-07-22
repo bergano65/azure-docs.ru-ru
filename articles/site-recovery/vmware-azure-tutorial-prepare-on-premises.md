@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 11/12/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 4969a1f14e53aabf79495e179213f9763d4c8803
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: b8fd34c8f1e3a32a8252074941a49d61aa540207
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79222631"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86134912"
 ---
 # <a name="prepare-on-premises-vmware-servers-for-disaster-recovery-to-azure"></a>Подготовка локальных серверов VMware для аварийного восстановления в Azure
 
@@ -103,7 +103,7 @@ Site Recovery требуется доступ к серверам VMware, что
 - На локальном компьютере перед отработкой отказа убедитесь, что для службы Secure Shell настроен автоматический запуск при загрузке системы.
 - Убедитесь, что правила брандмауэра разрешают SSH-подключение.
 - Правила группы безопасности сети на виртуальной машине Azure, для которой выполнена отработка отказа, и подсети Azure, к которой она подключена, должны разрешать входящие подключения к порту SSH.
-- [Добавьте общедоступный IP-адрес](site-recovery-monitoring-and-troubleshooting.md) для виртуальной машины.
+- [Добавьте общедоступный IP-адрес](./site-recovery-monitor-and-troubleshoot.md) для виртуальной машины.
 - Чтобы просмотреть снимок виртуальной машины, можно проверить **диагностику загрузки**.
 
 

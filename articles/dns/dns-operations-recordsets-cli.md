@@ -5,22 +5,22 @@ author: rohinkoul
 ms.assetid: 5356a3a5-8dec-44ac-9709-0c2b707f6cb5
 ms.service: dns
 ms.devlang: azurecli
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: H1Hack27Feb2017
 ms.workload: infrastructure-services
 ms.date: 05/15/2018
 ms.author: rohink
-ms.openlocfilehash: 4e017dc940e1d32888ff279904e44d34db1fd5c3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 4bf3ee75c9445856fb8a2ce789a3f2f345e720fe
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76936889"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84701670"
 ---
 # <a name="manage-dns-records-and-recordsets-in-azure-dns-using-the-azure-cli"></a>Управление записями и наборами записей DNS в Azure DNS с помощью Azure CLI
 
 > [!div class="op_single_selector"]
-> * [Портал Azure](dns-operations-recordsets-portal.md)
+> * [портале Azure](dns-operations-recordsets-portal.md)
 > * [Azure CLI](dns-operations-recordsets-cli.md)
 > * [PowerShell](dns-operations-recordsets.md)
 
@@ -38,7 +38,7 @@ ms.locfileid: "76936889"
 
 ## <a name="create-a-dns-record"></a>Создание записи DNS
 
-Чтобы создать запись DNS, используйте команду `az network dns record-set <record-type> add-record` (где `<record-type>` — это тип записи, например a, SRV, txt и т. д.) Справочные сведения см `az network dns record-set --help`. в разделе.
+Чтобы создать запись DNS, используйте команду `az network dns record-set <record-type> add-record` (где `<record-type>` — это тип записи, например a, SRV, txt и т. д.) Справочные сведения см `az network dns record-set --help` . в разделе.
 
 Создавая запись, вам нужно определить для нее имя группы ресурсов, имя зоны, имя набора записей, тип записей и сведения о создаваемой записи. Имя набора записей должно быть *относительным*, т. е. оно не должно содержать имя зоны.
 
@@ -289,7 +289,7 @@ az network dns record-set a delete --resource-group myresourcegroup --zone-name 
 
 Отобразится запрос на подтверждение операции удаления. Чтобы скрыть этот запрос, используйте параметр `--yes`.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 См. дополнительные сведения о [зонах и записях в Azure DNS](dns-zones-records.md).
 <br>

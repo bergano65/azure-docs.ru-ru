@@ -8,10 +8,10 @@ ms.workload: infrastructure-services
 ms.date: 1/24/2018
 ms.author: xujing
 ms.openlocfilehash: c85eef1a5d035e23c7e63632ac92c21440b15cae
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82101558"
 ---
 # <a name="how-to-deploy-windows-10-on-azure-with-multitenant-hosting-rights"></a>Как развернуть Windows 10 в Azure с правами на мультитенантное размещение 
@@ -26,11 +26,11 @@ ms.locfileid: "82101558"
 ## <a name="deploying-windows-10-image-from-azure-marketplace"></a>Развертывание образа Windows 10 из Azure Marketplace 
 Для развертывания с помощью PowerShell, CLI или шаблонов Azure Resource Manager образ Windows 10 можно найти со следующими именем издателя, предложением и номером SKU.
 
-| ОС  |      PublisherName      |  Предложение | Sku |
+| Операционная система  |      PublisherName      |  ПРЕДЛОЖЕНИЕ | Sku |
 |:----------|:-------------:|:------|:------|
-| Windows 10 Pro    | MicrosoftWindowsDesktop | Windows-10  | RS2-Pro   |
+| Windows 10 Pro    | MicrosoftWindowsDesktop | Windows-10  | RS2-Pro   |
 | Windows 10 Pro N  | MicrosoftWindowsDesktop | Windows-10  | RS2-ProN  |
-| Windows 10 Pro    | MicrosoftWindowsDesktop | Windows-10  | RS3-Pro   |
+| Windows 10 Pro    | MicrosoftWindowsDesktop | Windows-10  | RS3-Pro   |
 | Windows 10 Pro N  | MicrosoftWindowsDesktop | Windows-10  | RS3-ProN  |
 
 ## <a name="uploading-windows-10-vhd-to-azure"></a>Загрузка виртуального жесткого диска Windows 10 в Azure
@@ -105,7 +105,7 @@ LicenseType              :
 >
 >
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 - Узнайте больше о [настройке VDA для Windows 10](https://docs.microsoft.com/windows/deployment/vda-subscription-activation).
 - Узнайте больше о [правах на мультитенантное размещение для Windows 10](https://www.microsoft.com/en-us/CloudandHosting/licensing_sca.aspx).
 

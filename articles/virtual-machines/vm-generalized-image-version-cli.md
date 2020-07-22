@@ -9,10 +9,10 @@ ms.workload: infrastructure
 ms.date: 05/04/2020
 ms.author: cynthn
 ms.openlocfilehash: 5e59872a4da0136232652008a2980601428eeab6
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82796789"
 ---
 # <a name="create-a-vm-from-a-generalized-image-version-using-the-cli"></a>Создание виртуальной машины из универсальной версии образа с помощью интерфейса командной строки
@@ -54,7 +54,7 @@ az vm create\
    --generate-ssh-keys
 ```
 
-Вы также можете использовать определенную версию с помощью идентификатора версии образа для `--image` параметра. Например, чтобы использовать тип Image версии *1.0.0* : `--image "/subscriptions/<subscription ID where the gallery is located>/resourceGroups/myGalleryRG/providers/Microsoft.Compute/galleries/myGallery/images/myImageDefinition/versions/1.0.0"`.
+Вы также можете использовать определенную версию с помощью идентификатора версии образа для `--image` параметра. Например, чтобы использовать тип Image версии *1.0.0* : `--image "/subscriptions/<subscription ID where the gallery is located>/resourceGroups/myGalleryRG/providers/Microsoft.Compute/galleries/myGallery/images/myImageDefinition/versions/1.0.0"` .
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

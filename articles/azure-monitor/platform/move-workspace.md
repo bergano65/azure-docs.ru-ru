@@ -6,12 +6,11 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/13/2019
-ms.openlocfilehash: ca9bb3853698b831fe87f48de346183e4bcd0976
-ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
-ms.translationtype: MT
+ms.openlocfilehash: e0ecfd3acb6a8a1d40e006aef1bbf63eae0e1ff4
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2020
-ms.locfileid: "82731718"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84770804"
 ---
 # <a name="move-a-log-analytics-workspace-to-different-subscription-or-resource-group"></a>Перемещение рабочей области Log Analytics в другую подписку или группу ресурсов
 
@@ -38,6 +37,8 @@ ms.locfileid: "82731718"
 - Запуск и остановка виртуальных машин в нерабочее время
 - Центр безопасности Azure
 
+>[!IMPORTANT]
+> - После включения в рабочей области Azure Sentinel **сейчас не поддерживает** перемещение этой рабочей области в другие группы ресурсов или подписки. Если вам нужно переместить рабочую область, обратитесь в [службу поддержки Azure Sentinel](mailto:AzureSentinel@microsoft.com).
 
 ### <a name="delete-solutions-in-azure-portal"></a>Удаление решений в портал Azure
 Используйте следующую процедуру, чтобы удалить решения с помощью портал Azure:
@@ -104,5 +105,5 @@ Move-AzResource -ResourceId "/subscriptions/00000000-0000-0000-0000-000000000000
 > После операции перемещения удаленные решения и ссылки на учетную запись службы автоматизации необходимо перенастроить, чтобы восстановить предыдущее состояние рабочей области.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Список ресурсов, которые поддерживают перемещение, см. в разделе [Поддержка операций перемещения для ресурсов](../../azure-resource-manager/management/move-support-resources.md).

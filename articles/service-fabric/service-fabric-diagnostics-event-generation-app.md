@@ -5,12 +5,12 @@ author: srrengar
 ms.topic: conceptual
 ms.date: 11/21/2018
 ms.author: srrengar
-ms.openlocfilehash: 97c3be391dfbee7301ea47bf7234a9549d373370
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e1871df962a26def8c12000f8b8bc0cf31bae9a0
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75464724"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86247665"
 ---
 # <a name="application-logging"></a>Ведение журнала приложения
 
@@ -22,11 +22,11 @@ ms.locfileid: "75464724"
 
 ## <a name="application-insights-sdk"></a>Пакет SDK для Application Insights
 
-Azure Application Insights поставляется с широкими возможностями интеграции с Azure Service Fabric. Пользователи могут добавлять пакеты NuGet ИИ Service Fabric и получать данные и журналы, созданные и собранные готовыми к просмотру на портале Azure. Кроме того пользователям рекомендуется добавлять свои собственные данные телеметрии для диагностики и отладки своих приложений, а также получения сведения о самых используемых службах и частей приложений. Класс [TelemetryClient](https://docs.microsoft.com/dotnet/api/microsoft.applicationinsights.telemetryclient?view=azure-dotnet) в пакете SDK предоставляет много способов отслеживать данные телеметрии в приложении. Дополнительные сведения об инструментировании и добавлении Application Insights в приложение см. руководстве по [наблюдению и диагностике приложений .NET](service-fabric-tutorial-monitoring-aspnet.md)
+Azure Application Insights поставляется с широкими возможностями интеграции с Azure Service Fabric. Пользователи могут добавлять пакеты NuGet ИИ Service Fabric и получать данные и журналы, созданные и собранные готовыми к просмотру на портале Azure. Кроме того пользователям рекомендуется добавлять свои собственные данные телеметрии для диагностики и отладки своих приложений, а также получения сведения о самых используемых службах и частей приложений. Класс [TelemetryClient](/dotnet/api/microsoft.applicationinsights.telemetryclient?view=azure-dotnet) в пакете SDK предоставляет много способов отслеживать данные телеметрии в приложении. Дополнительные сведения об инструментировании и добавлении Application Insights в приложение см. руководстве по [наблюдению и диагностике приложений .NET](service-fabric-tutorial-monitoring-aspnet.md)
 
 ## <a name="eventsource"></a>EventSource
 
-Если вы создаете решение Service Fabric из шаблона в Visual Studio, в нем создается класс **ServiceEventSource** или **ActorEventSource**, производный от **EventSource**. При этом создается шаблон, в который вы можете добавлять события для конкретного приложения или службы. Имя **EventSource** **должно** быть уникальным и должно быть переименовано из строки шаблона по умолчанию —&lt;проекта&gt;-&lt;&gt;MyCompany-Solution. Наличие нескольких определений **EventSource** с одинаковым именем приведет к возникновению проблемы во время выполнения. У каждого определенного события должен быть уникальный идентификатор. Если идентификатор не является уникальным, происходит сбой во время выполнения. Некоторые организации предварительно назначают для идентификаторов диапазоны значений, чтобы избежать конфликтов между командами разработчиков. Дополнительные сведения см. в [блоге Вэнса (Vance)](https://blogs.msdn.microsoft.com/vancem/2012/07/09/introduction-tutorial-logging-etw-events-in-c-system-diagnostics-tracing-eventsource/) или в [документации MSDN](https://msdn.microsoft.com/library/dn774985(v=pandp.20).aspx).
+Если вы создаете решение Service Fabric из шаблона в Visual Studio, в нем создается класс **ServiceEventSource** или **ActorEventSource**, производный от **EventSource**. При этом создается шаблон, в который вы можете добавлять события для конкретного приложения или службы. Имя **EventSource** **должно** быть уникальным и должно быть переименовано из строки шаблона по умолчанию — &lt; проекта MyCompany-Solution &gt; - &lt; &gt; . Наличие нескольких определений **EventSource** с одинаковым именем приведет к возникновению проблемы во время выполнения. У каждого определенного события должен быть уникальный идентификатор. Если идентификатор не является уникальным, происходит сбой во время выполнения. Некоторые организации предварительно назначают для идентификаторов диапазоны значений, чтобы избежать конфликтов между командами разработчиков. Дополнительные сведения см. в [блоге Вэнса (Vance)](/archive/blogs/vancem/introduction-tutorial-logging-etw-events-in-c-system-diagnostics-tracing-eventsource) или в [документации MSDN](/previous-versions/msp-n-p/dn774985(v=pandp.20)).
 
 ## <a name="aspnet-core-logging"></a>Ведение журнала ASP.NET Core
 

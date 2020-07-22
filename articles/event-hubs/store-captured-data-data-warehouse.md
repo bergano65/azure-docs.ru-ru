@@ -2,19 +2,14 @@
 title: Руководство по Перенос данных о событиях в Хранилище данных SQL (Центры событий Azure)
 description: Руководство по В этом руководстве показано, как записать данные из концентратора событий в хранилище данных SQL с помощью функции Azure, активируемой службой "Сетка событий".
 services: event-hubs
-author: ShubhaVijayasarathy
-manager: ''
-ms.author: shvija
-ms.custom: seodec18
-ms.date: 01/15/2020
+ms.date: 06/23/2020
 ms.topic: tutorial
-ms.service: event-hubs
-ms.openlocfilehash: 28fa9dddda94845511ead7d8fb7481aff6b6b044
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: b5f38c1a5b60dc8c8f0d9e8710c5dbc95434fe78
+ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80130847"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85322492"
 ---
 # <a name="tutorial-migrate-captured-event-hubs-data-to-a-sql-data-warehouse-using-event-grid-and-azure-functions"></a>Руководство по Перенос собранных данных из Центров событий Azure в Хранилище данных SQL с помощью служб "Сетка событий" и "Функции Azure"
 
@@ -22,18 +17,19 @@ ms.locfileid: "80130847"
 
 ![Visual Studio](./media/store-captured-data-data-warehouse/EventGridIntegrationOverview.PNG)
 
-*   Сначала необходимо создать концентратор событий с включенной функцией **Сбор** и задать хранилище BLOB-объектов Azure как место назначения. Данные, созданные WindTurbineGenerator, потоком передаются в концентратор событий и автоматически записываются в службу хранилища Azure как файлы AVRO. 
-*   Далее нужно создать подписку "Сетка событий Azure" с пространством имен концентраторов событий в качестве источника и конечной точкой функции Azure в качестве целевого назначения.
-*   Каждый раз, когда новый файл AVRO доставляется в большой двоичный объект в службе хранилища Azure с помощью функции "Сбор" концентраторов событий, служба "Сетка событий" уведомляет функцию Azure, предоставляя универсальный код ресурса (URI) большого двоичного объекта. Функция затем переносит данные из большого двоичного объекта в хранилище данных SQL.
+- Сначала необходимо создать концентратор событий с включенной функцией **Сбор** и задать хранилище BLOB-объектов Azure как место назначения. Данные, созданные WindTurbineGenerator, потоком передаются в концентратор событий и автоматически записываются в службу хранилища Azure как файлы AVRO.
+- Далее нужно создать подписку "Сетка событий Azure" с пространством имен концентраторов событий в качестве источника и конечной точкой функции Azure в качестве целевого назначения.
+- Каждый раз, когда новый файл AVRO доставляется в большой двоичный объект в службе хранилища Azure с помощью функции "Сбор" концентраторов событий, служба "Сетка событий" уведомляет функцию Azure, предоставляя универсальный код ресурса (URI) большого двоичного объекта. Функция затем переносит данные из большого двоичного объекта в хранилище данных SQL.
 
-Вот какие действия выполняются в этом руководстве: 
+Вот какие действия выполняются в этом руководстве:
 
 > [!div class="checklist"]
-> * Развертывание инфраструктуры
-> * Публикация кода в приложение-функцию.
-> * Создание подписки "Сетка событий" из приложения-функции
-> * Потоковая передача примера данных в концентратор событий. 
-> * Проверка собранных данных в хранилище данных SQL.
+>
+> - Развертывание инфраструктуры
+> - Публикация кода в приложение-функцию.
+> - Создание подписки "Сетка событий" из приложения-функции
+> - Потоковая передача примера данных в концентратор событий.
+> - Проверка собранных данных в хранилище данных SQL.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -41,20 +37,22 @@ ms.locfileid: "80130847"
 
 - [Visual Studio 2019](https://www.visualstudio.com/vs/). Вместе с программой нужно установить следующие рабочие нагрузки: разработка классических приложений .NET, разработка Azure, разработка ASP.NET и веб-разработка, разработка Node.js и Python.
 - Скачайте пример решения в [репозитории Git](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Azure.Messaging.EventHubs/EventHubsCaptureEventGridDemo). Этот пример состоит из следующих компонентов:
-    - *WindTurbineDataGenerator* — простой издатель, который отправляет образцы данных ветровой турбины в концентратор событий с поддержкой функции "Сбор".
-    - *FunctionDWDumper* — функция Azure, которая получает уведомление Сетки событий, когда файл AVRO записывается в большой двоичный объект в службе хранилища Azure. Она получает путь универсального кода ресурса (URI) большого двоичного объекта, считывает его содержимое и помещает эти данные в хранилище данных SQL.
 
-    Для этого примера используется новый пакет Azure.Messaging.EventHubs. Старый пример, в котором используется пакет Microsoft.Azure.EventHubs, можно найти [здесь](https://github.com/Azure/azure-event-hubs/tree/master/samples/e2e/EventHubsCaptureEventGridDemo). 
+  - *WindTurbineDataGenerator* — простой издатель, который отправляет образцы данных ветровой турбины в концентратор событий с поддержкой функции "Сбор".
+  - *FunctionDWDumper* — функция Azure, которая получает уведомление Сетки событий, когда файл AVRO записывается в большой двоичный объект в службе хранилища Azure. Она получает путь универсального кода ресурса (URI) большого двоичного объекта, считывает его содержимое и помещает эти данные в хранилище данных SQL.
+
+  Для этого примера используется новый пакет Azure.Messaging.EventHubs. Старый пример, в котором используется пакет Microsoft.Azure.EventHubs, можно найти [здесь](https://github.com/Azure/azure-event-hubs/tree/master/samples/e2e/EventHubsCaptureEventGridDemo).
 
 ### <a name="deploy-the-infrastructure"></a>Развертывание инфраструктуры
+
 Разверните необходимую для этого руководства инфраструктуру с помощью Azure PowerShell или Azure CLI, используя [этот шаблон Azure Resource Manager](https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/event-grid/EventHubsDataMigration.json). Этот шаблон создает следующие ресурсы:
 
--   концентратор событий с включенной функцией "Сбор";
--   учетную запись хранения для собранных данных о событии;
--   план службы приложений Azure для размещения приложения-функции;
--   приложение-функцию для обработки записанных файлов событий;
--   SQL Server для размещения хранилища данных;
--   Хранилище данных SQL для хранения перенесенных данных.
+- концентратор событий с включенной функцией "Сбор";
+- учетную запись хранения для собранных данных о событии;
+- план службы приложений Azure для размещения приложения-функции;
+- приложение-функцию для обработки записанных файлов событий;
+- логический север SQL Server для размещения хранилища данных;
+- Хранилище данных SQL для хранения перенесенных данных.
 
 В следующих разделах представлены команды Azure CLI и Azure PowerShell для развертывания инфраструктуры, необходимой для этого руководства. Перед запуском команд обновите имена следующих объектов: 
 
@@ -62,7 +60,7 @@ ms.locfileid: "80130847"
 - регион для группы ресурсов;
 - пространство имен Центров событий;
 - концентратор событий;
-- Azure SQL Server;
+- логический сервер SQL Server;
 - пользователь SQL (и пароль);
 - База данных SQL Azure
 - Хранилище Azure 
@@ -71,6 +69,7 @@ ms.locfileid: "80130847"
 Чтобы создать все артефакты в Azure, этим сценариям понадобится некоторое время. Дождитесь завершения сценария, прежде чем продолжать. Если по какой-либо причине развертывание завершается сбоем, удалите группу ресурсов, исправьте проблему и повторите команду. 
 
 #### <a name="azure-cli"></a>Azure CLI
+
 Чтобы развернуть этот шаблон с помощью Azure CLI, выполните следующие команды.
 
 ```azurecli-interactive
@@ -91,8 +90,8 @@ New-AzResourceGroup -Name rgDataMigration -Location westcentralus
 New-AzResourceGroupDeployment -ResourceGroupName rgDataMigration -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/event-grid/EventHubsDataMigration.json -eventHubNamespaceName <event-hub-namespace> -eventHubName hubdatamigration -sqlServerName <sql-server-name> -sqlServerUserName <user-name> -sqlServerDatabaseName <database-name> -storageName <unique-storage-name> -functionAppName <app-name>
 ```
 
+### <a name="create-a-table-in-sql-data-warehouse"></a>Создание таблицы в хранилище данных SQL
 
-### <a name="create-a-table-in-sql-data-warehouse"></a>Создание таблицы в хранилище данных SQL 
 Создайте таблицу в хранилище данных SQL, запустив сценарий [CreateDataWarehouseTable.sql](https://github.com/Azure/azure-event-hubs/blob/master/samples/e2e/EventHubsCaptureEventGridDemo/scripts/CreateDataWarehouseTable.sql) с помощью [Visual Studio](../synapse-analytics/sql-data-warehouse/sql-data-warehouse-query-visual-studio.md), [SQL Server Management Studio](../synapse-analytics/sql-data-warehouse/sql-data-warehouse-query-ssms.md) или редактора запроса на портале. 
 
 ```sql

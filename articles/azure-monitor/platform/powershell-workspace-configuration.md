@@ -1,47 +1,53 @@
 ---
-title: Создание & Настройка Log Analytics с помощью PowerShell
-description: Log Analytics рабочие области в Azure Monitor хранят данные с серверов в локальной или облачной инфраструктуре. При генерировании системой диагностики Azure можно брать данные компьютера из хранилища Azure.
+title: Создание и настройка Log Analytics с помощью PowerShell
+description: Рабочие области Log Analytics в Azure Monitor сохраняют данные от серверов в локальной или облачной инфраструктуре. При генерировании системой диагностики Azure можно брать данные компьютера из хранилища Azure.
 ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 05/19/2019
-ms.openlocfilehash: 2584cedceab1386cbab9c72bb4b510eebe2122bd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 05/26/2020
+ms.openlocfilehash: d0bbde0ee4fd0eaf7387abaf6d548dc563e5b715
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80054696"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86515450"
 ---
-# <a name="manage-log-analytics-workspace-in-azure-monitor-using-powershell"></a>Управление рабочей областью Log Analytics в Azure Monitor с помощью PowerShell
+# <a name="create-and-configure-a-log-analytics-workspace-in-azure-monitor-using-powershell"></a>Создание и настройка рабочей области Log Analytics в Azure Monitor с помощью PowerShell
+В этой статье представлены два примера кода для создания и настройки рабочих областей Log Analytics в Azure Monitor.  
 
-[Командлеты PowerShell log Analytics](https://docs.microsoft.com/powershell/module/az.operationalinsights/) можно использовать для выполнения различных функций в log Analytics рабочей области в Azure Monitor из командной строки или в составе скрипта.  Примеры задач, которые можно выполнять с помощью PowerShell.
-
-* Создание рабочей области
-* Добавление или удаление решения
-* Импорт и экспорт сохраненных поисков
-* Создание группы компьютеров
-* Включение сбора журналов IIS с компьютеров, на которых установлен агент Windows
-* Сбор счетчиков производительности с компьютеров под управлением Linux и Windows
-* Сбор событий из системного журнала с компьютеров Linux
-* Сбор событий из журналов событий Windows
-* Сбор пользовательских журналов событий
-* Добавление агента Log Analytics на виртуальную машину Azure
-* Настройка Log Analytics для индексирования данных, собранных системой диагностики Azure
-
-Эта статья содержит два примера кода, иллюстрирующих некоторые доступные в PowerShell функции.  Сведения о других функциях см. в [справочнике по командлетам PowerShell Log Analytics](https://docs.microsoft.com/powershell/module/az.operationalinsights/).
 
 > [!NOTE]
 > Компонент Log Analytics раньше назывался Operational Insights, поэтому именно такое имя используется в командлетах.
 
-[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
-Эти примеры работают с версией 1.0.0 или более поздней версии модуля AZ. OperationalInsights.
+## <a name="prerequisites"></a>Предварительные требования
+Эти примеры работают с модулем Az.OperationalInsights версии 1.0.0 или более поздней.
 
+## <a name="create-workspace"></a>Создание рабочей области
+Следующий пример скрипта создает рабочую область без настроенного источника данных. 
 
-## <a name="create-and-configure-a-log-analytics-workspace"></a>Создание и настройка рабочей области Log Analytics
-Этот пример сценария иллюстрирует следующие задачи.
+```powershell
+$ResourceGroup = "my-resource-group"
+$WorkspaceName = "log-analytics-" + (Get-Random -Maximum 99999) # workspace names need to be unique across all Azure subscriptions - Get-Random helps with this for the example code
+$Location = "westeurope"
+
+# Create the resource group if needed
+try {
+    Get-AzResourceGroup -Name $ResourceGroup -ErrorAction Stop
+} catch {
+    New-AzResourceGroup -Name $ResourceGroup -Location $Location
+}
+
+# Create the workspace
+New-AzOperationalInsightsWorkspace -Location $Location -Name $WorkspaceName -Sku Standard -ResourceGroupName $ResourceGroup
+```
+
+## <a name="create-workspace-and-configure-data-sources"></a>Создание рабочей области и настройка источников данных
+
+Следующий пример скрипта создает рабочую область и настраивает несколько источников данных. Эти источники данных требуются только в том случае, если для мониторинга виртуальных машин используется [агент Log Analytics](log-analytics-agent.md).
+
+Этот скрипт выполняет следующие действия:
 
 1. Создание рабочей области
 2. Вывод списка доступных решений
@@ -57,10 +63,19 @@ ms.locfileid: "80054696"
 12. Сбор пользовательского журнала
 
 ```powershell
-
-$ResourceGroup = "oms-example"
+$ResourceGroup = "my-resource-group"
 $WorkspaceName = "log-analytics-" + (Get-Random -Maximum 99999) # workspace names need to be unique across all Azure subscriptions - Get-Random helps with this for the example code
 $Location = "westeurope"
+
+# Create the resource group if needed
+try {
+    Get-AzResourceGroup -Name $ResourceGroup -ErrorAction Stop
+} catch {
+    New-AzResourceGroup -Name $ResourceGroup -Location $Location
+}
+
+# Create the workspace
+New-AzOperationalInsightsWorkspace -Location $Location -Name $WorkspaceName -Sku Standard -ResourceGroupName $ResourceGroup
 
 # List of solutions to enable
 $Solutions = "Security", "Updates", "SQLAssessment"
@@ -178,101 +193,32 @@ New-AzOperationalInsightsCustomLogDataSource -ResourceGroupName $ResourceGroup -
 ```
 
 > [!NOTE]
-> Формат параметра **кустомлогравжсон** , который определяет конфигурацию для пользовательского журнала, может быть сложным. Используйте [Get-азоператионалинсигхтсдатасаурце](https://docs.microsoft.com/powershell/module/az.operationalinsights/get-azoperationalinsightsdatasource?view=azps-3.2.0) , чтобы получить конфигурацию для существующего пользовательского журнала. Свойство **Properties** является конфигурацией, необходимой для параметра **кустомлогравжсон** .
+> Формат параметра **CustomLogRawJson**, который определяет конфигурацию пользовательского журнала, может быть достаточно сложным. Выполните [Get-AzOperationalInsightsDataSource](/powershell/module/az.operationalinsights/get-azoperationalinsightsdatasource?view=azps-3.2.0), чтобы получить конфигурацию для существующего пользовательского журнала. Параметр **Properties** содержит необходимую конфигурацию для параметра **CustomLogRawJson**.
 
 В указанном примере regexDelimiter был определен как \\n для новой строки. Разделителем журнала также может служить метка времени.  Далее приведены поддерживаемые форматы.
 
-| Формат | В стандартных RegEx формат JSON RegEx использует два знака \\ для каждого "\", если тестирование в приложениях RegEx уменьшить с \\ на "\". | | |
-| --- | --- | --- | --- |
-| `YYYY-MM-DD HH:MM:SS` | `((\\d{2})|(\\d{4}))-([0-1]\\d)-(([0-3]\\d)|(\\d))\\s((\\d)|([0-1]\\d)|(2[0-4])):[0-5][0-9]:[0-5][0-9]` | | |
-| `M/D/YYYY HH:MM:SS AM/PM` | `(([0-1]\\d)|[0-9])/(([0-3]\\d)|(\\d))/((\\d{2})|(\\d{4}))\\s((\\d)|([0-1]\\d)|(2[0-4])):[0-5][0-9]:[0-5][0-9]\\s(AM|PM|am|pm)` | | |
+| Формат | Формат регулярных выражений JSON использует два `\\` для каждого `\` в стандартном регулярном выражении, поэтому, если тестирование в приложении Regex уменьшится `\\` до`\` |
+| --- | --- |
+| `YYYY-MM-DD HH:MM:SS` | `((\\d{2})|(\\d{4}))-([0-1]\\d)-(([0-3]\\d)|(\\d))\\s((\\d)|([0-1]\\d)|(2[0-4])):[0-5][0-9]:[0-5][0-9]` |
+| `M/D/YYYY HH:MM:SS AM/PM` | `(([0-1]\\d)|[0-9])/(([0-3]\\d)|(\\d))/((\\d{2})|(\\d{4}))\\s((\\d)|([0-1]\\d)|(2[0-4])):[0-5][0-9]:[0-5][0-9]\\s(AM|PM|am|pm)` |
 | `dd/MMM/yyyy HH:MM:SS` | `(([0-2][1-9]|[3][0-1])\\/(Jan|Feb|Mar|May|Apr|Jul|Jun|Aug|Oct|Sep|Nov|Dec|jan|feb|mar|may|apr|jul|jun|aug|oct|sep|nov|dec)\\/((19|20)[0-9][0-9]))\\s((\\d)|([0-1]\\d)|(2[0-4])):[0-5][0-9]:[0-5][0-9])` |
-| `MMM dd yyyy HH:MM:SS` | `(((?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Sept|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)).*?((?:(?:[0-2]?\\d{1})|(?:[3][01]{1})))(?![\\d]).*?((?:(?:[1]{1}\\d{1}\\d{1}\\d{1})|(?:[2]{1}\\d{3})))(?![\\d]).*?((?:(?:[0-1][0-9])|(?:[2][0-3])|(?:[0-9])):(?:[0-5][0-9])(?::[0-5][0-9])?(?:\\s?(?:am|AM|pm|PM))?))` | | |
-| `yyMMdd HH:mm:ss` | `([0-9]{2}([0][1-9]|[1][0-2])([0-2][0-9]|[3][0-1])\\s\\s?([0-1]?[0-9]|[2][0-3]):[0-5][0-9]:[0-5][0-9])` | | |
-| `ddMMyy HH:mm:ss` | `(([0-2][0-9]|[3][0-1])([0][1-9]|[1][0-2])[0-9]{2}\\s\\s?([0-1]?[0-9]|[2][0-3]):[0-5][0-9]:[0-5][0-9])` | | |
-| `MMM d HH:mm:ss` | `(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\\s\\s?([0]?[1-9]|[1-2][0-9]|[3][0-1])\\s([0-1]?[0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9])` | | |
-| `MMM  d HH:mm:ss` <br> два пробела после МММ | `(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\\s\\s([0]?[1-9]|[1-2][0-9]|[3][0-1])\\s([0][0-9]|[1][0-2]):([0-5][0-9]):([0-5][0-9])` | | |
-| `MMM d HH:mm:ss` | `(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\\s([0]?[1-9]|[1-2][0-9]|[3][0-1])\\s([0][0-9]|[1][0-2]):([0-5][0-9]):([0-5][0-9])` | | |
-| `dd/MMM/yyyy:HH:mm:ss +zzzz` <br> где "+" обозначает "+" или "-" <br> смещение времени часового пояса | `(([0-2][1-9]|[3][0-1])\\/(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\\/((19|20)[0-9][0-9]):([0][0-9]|[1][0-2]):([0-5][0-9]):([0-5][0-9])\\s[\\+|\\-][0-9]{4})` | | |
-| `yyyy-MM-ddTHH:mm:ss` <br> T является литералом буквы T | `((\\d{2})|(\\d{4}))-([0-1]\\d)-(([0-3]\\d)|(\\d))T((\\d)|([0-1]\\d)|(2[0-4])):[0-5][0-9]:[0-5][0-9]` | | |
+| `MMM dd yyyy HH:MM:SS` | `(((?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Sept|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)).*?((?:(?:[0-2]?\\d{1})|(?:[3][01]{1})))(?![\\d]).*?((?:(?:[1]{1}\\d{1}\\d{1}\\d{1})|(?:[2]{1}\\d{3})))(?![\\d]).*?((?:(?:[0-1][0-9])|(?:[2][0-3])|(?:[0-9])):(?:[0-5][0-9])(?::[0-5][0-9])?(?:\\s?(?:am|AM|pm|PM))?))` |
+| `yyMMdd HH:mm:ss` | `([0-9]{2}([0][1-9]|[1][0-2])([0-2][0-9]|[3][0-1])\\s\\s?([0-1]?[0-9]|[2][0-3]):[0-5][0-9]:[0-5][0-9])` |
+| `ddMMyy HH:mm:ss` | `(([0-2][0-9]|[3][0-1])([0][1-9]|[1][0-2])[0-9]{2}\\s\\s?([0-1]?[0-9]|[2][0-3]):[0-5][0-9]:[0-5][0-9])` |
+| `MMM d HH:mm:ss` | `(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\\s\\s?([0]?[1-9]|[1-2][0-9]|[3][0-1])\\s([0-1]?[0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9])` |
+| `MMM  d HH:mm:ss` <br> два пробела после МММ | `(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\\s\\s([0]?[1-9]|[1-2][0-9]|[3][0-1])\\s([0][0-9]|[1][0-2]):([0-5][0-9]):([0-5][0-9])` |
+| `MMM d HH:mm:ss` | `(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\\s([0]?[1-9]|[1-2][0-9]|[3][0-1])\\s([0][0-9]|[1][0-2]):([0-5][0-9]):([0-5][0-9])` |
+| `dd/MMM/yyyy:HH:mm:ss +zzzz` <br> где "+" обозначает "+" или "-" <br> смещение времени часового пояса | `(([0-2][1-9]|[3][0-1])\\/(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\\/((19|20)[0-9][0-9]):([0][0-9]|[1][0-2]):([0-5][0-9]):([0-5][0-9])\\s[\\+|\\-][0-9]{4})` |
+| `yyyy-MM-ddTHH:mm:ss` <br> T является литералом буквы T | `((\\d{2})|(\\d{4}))-([0-1]\\d)-(([0-3]\\d)|(\\d))T((\\d)|([0-1]\\d)|(2[0-4])):[0-5][0-9]:[0-5][0-9]` |
 
-## <a name="configuring-log-analytics-to-send-azure-diagnostics"></a>Настройка Log Analytics для отправки системы диагностики Azure
-Для отслеживания ресурсов Azure без использования агента необходимо включить для этих ресурсов систему диагностики Azure и настроить ее для записи данных в рабочую область Log Analytics. Этот подход отправляет данные непосредственно в рабочую область и не требует записи данных в учетную запись хранения. Ниже перечислены поддерживаемые ресурсы:
-
-| Тип ресурса | Журналы | Метрики |
-| --- | --- | --- |
-| Шлюзы приложений    | Да | Да |
-| Учетные записи службы автоматизации     | Да | |
-| Учетные записи пакетной службы          | Да | Да |
-| Data Lake Analytics     | Да | |
-| Data Lake Store         | Да | |
-| пул эластичных баз данных SQL;        |     | Да |
-| пространство имен концентратора событий;     |     | Да |
-| Центры Интернета вещей;                |     | Да |
-| Key Vault               | Да | |
-| Балансировщики нагрузки          | Да | |
-| Logic Apps              | Да | Да |
-| группы сетевой безопасности; | Да | |
-| Кэш Redis для Azure             |     | Да |
-| Службы поиска         | Да | Да |
-| Пространство имен служебной шины   |     | Да |
-| SQL (версия 12)               |     | Да |
-| Веб-сайты               |     | Да |
-| Фермы веб-серверов        |     | Да |
-
-Дополнительные сведения о доступных метриках см. в разделе [Метрики, поддерживаемые Azure Monitor](../../azure-monitor/platform/metrics-supported.md).
-
-Сведения о доступных журналах см. в статье [Поддерживаемые службы и схема для журналов ресурсов](../../azure-monitor/platform/diagnostic-logs-schema.md).
-
-```powershell
-$workspaceId = "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxx/resourcegroups/oi-default-east-us/providers/microsoft.operationalinsights/workspaces/rollingbaskets"
-
-$resourceId = "/SUBSCRIPTIONS/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxx/RESOURCEGROUPS/DEMO/PROVIDERS/MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/DEMO"
-
-Set-AzDiagnosticSetting -ResourceId $resourceId -WorkspaceId $workspaceId -Enabled $true
-```
-
-Кроме того, вы можете использовать предыдущий командлет для сбора журналов из ресурсов, которые находятся в разных подписках. Этот командлет может работать в нескольких подписках, так как вы предоставляете идентификаторы ресурса, для которого создаются журналы, и рабочей области, в которую они отправляются.
+## <a name="troubleshooting"></a>Устранение неполадок
+При создании рабочей области, которая была удалена в течение последних 14-ти дней и находится в [состоянии обратимого удаления](./delete-workspace.md#soft-delete-behavior), операция может приводить к разным результатам в зависимости от конфигурации рабочей области.
+1. Если вы указали те же параметры имени, группы ресурсов, подписки и региона, которые использовались для удаленной рабочей области, она будет полностью восстановлена с сохранением данных, конфигурации и подключенных агентов.
+2. Если вы указали то же имя рабочей области, но другую группу ресурсов, подписку и (или) регион, появится ошибка с сообщением *Имя рабочей области "ИМЯ" не является уникальным* или *сообщение о конфликте*. Чтобы переопределить функцию обратимого удаления, то есть окончательно удалить рабочую область и создать новую рабочую область с тем же именем, выполните следующий процесс, в котором вы восстановите удаленную рабочую область и удалите ее без возможности восстановления:
+   * [Восстановите](./delete-workspace.md#recover-workspace) свою рабочую область.
+   * [Безвозвратно удалите](./delete-workspace.md#permanent-workspace-delete) рабочую область.
+   * Создайте рабочую области с тем же именем, которое было у удаленной рабочей области.
 
 
-## <a name="configuring-log-analytics-workspace-to-collect-azure-diagnostics-from-storage"></a>Настройка рабочей области Log Analytics для получения сведений о диагностике Azure из хранилища
-Для сбора данных журнала из работающего экземпляра классической облачной службы или кластера Service Fabric необходимо сначала записать данные в службу хранилища Azure. Затем настраивается рабочая область Log Analytics для получения журналов из учетной записи хранения. Ниже перечислены поддерживаемые ресурсы:
-
-* классические облачные службы (рабочие и веб-роли);
-* кластеры Service Fabric;
-
-В приведенном ниже примере показано, как выполнить следующие задачи.
-
-1. Вывод списка существующих учетных записей хранения и расположений, из которых Рабочая область будет индексировать данные
-2. Создание конфигурации для чтения из учетной записи хранения.
-3. Обновление созданной конфигурации для индексирования данных из дополнительных расположений
-4. Удаление созданной конфигурации.
-
-```powershell
-# validTables = "WADWindowsEventLogsTable", "LinuxsyslogVer2v0", "WADServiceFabric*EventTable", "WADETWEventTable"
-$workspace = (Get-AzOperationalInsightsWorkspace).Where({$_.Name -eq "your workspace name"})
-
-# Update these two lines with the storage account resource ID and the storage account key for the storage account you want the workspace to index
-$storageId = "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxx/resourceGroups/demo/providers/Microsoft.Storage/storageAccounts/wadv2storage"
-$key = "abcd=="
-
-# List existing insights
-Get-AzOperationalInsightsStorageInsight -ResourceGroupName $workspace.ResourceGroupName -WorkspaceName $workspace.Name
-
-# Create a new insight
-New-AzOperationalInsightsStorageInsight -ResourceGroupName $workspace.ResourceGroupName -WorkspaceName $workspace.Name -Name "newinsight" -StorageAccountResourceId $storageId -StorageAccountKey $key -Tables @("WADWindowsEventLogsTable") -Containers @("wad-iis-logfiles")
-
-# Update existing insight
-Set-AzOperationalInsightsStorageInsight -ResourceGroupName $workspace.ResourceGroupName -WorkspaceName $workspace.Name -Name "newinsight" -Tables @("WADWindowsEventLogsTable", "WADETWEventTable") -Containers @("wad-iis-logfiles")
-
-# Remove the insight
-Remove-AzOperationalInsightsStorageInsight -ResourceGroupName $workspace.ResourceGroupName -WorkspaceName $workspace.Name -Name "newinsight"
-
-```
-
-Кроме того, вы можете использовать предыдущий сценарий для сбора журналов из учетных записей хранения, которые находятся в разных подписках. Этот сценарий может работать в нескольких подписках, так как вы предоставляете идентификатор ресурса учетной записи хранения и соответствующий ключ доступа. При изменении ключа доступа необходимо обновить данные хранилища с учетом нового ключа.
-
-
-## <a name="next-steps"></a>Дальнейшие шаги
-* Дополнительные сведения об использовании PowerShell для настройки Log Analytics см. в [описании командлетов PowerShell Log Analytics](https://docs.microsoft.com/powershell/module/az.operationalinsights/).
-
+## <a name="next-steps"></a>Дальнейшие действия
+* Дополнительные сведения об использовании PowerShell для настройки Log Analytics см. в [описании командлетов PowerShell Log Analytics](/powershell/module/az.operationalinsights/).

@@ -8,18 +8,18 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 11/27/2019
-ms.openlocfilehash: 90d7da9c8ddd8c9c595f2209dcc34e2f595acfd2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 71c1306d1516d8af3fb16c0ba353ab8144de2562
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78196932"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86202582"
 ---
 # <a name="configure-apache-hive-policies-in-hdinsight-with-enterprise-security-package"></a>Настройка политик Apache Hive в HDInsight с Корпоративным пакетом безопасности
 
 Узнайте, как настроить политики Apache Ranger для Apache Hive. В этой статье вы создадите две политики Ranger, чтобы ограничить доступ к таблице hivesampletable. Таблица hivesampletable поставляется с кластерами HDInsight. После настройки политик вы используете Excel и драйвер ODBC для подключения к таблицам Hive в HDInsight.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Кластер HDInsight с Корпоративным пакетом безопасности. Ознакомьтесь со статьей [Настройка кластера HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory](apache-domain-joined-configure.md).
 * Рабочая станция с Office 2016, Office 2013 профессиональный плюс, Office 365 профессиональный плюс, Excel 2013 автономный или Office 2010 профессиональный плюс.
@@ -52,7 +52,7 @@ ms.locfileid: "78196932"
 2. Выберите **CLUSTERNAME_Hive**в разделе **Hive**. Отобразятся две предварительно настроенные политики.
 3. Выберите **Добавить новую политику**, а затем введите следующие значения:
 
-    |Свойство |Значение |
+    |Свойство. |Значение |
     |---|---|
     |Имя политики|Read-hivesampletable — все|
     |База данных Hive|default|
@@ -70,7 +70,7 @@ ms.locfileid: "78196932"
 
 5. Повторите последние два шага, чтобы создать еще одну политику со следующими свойствами.
 
-    |Свойство |Значение |
+    |Свойство. |Значение |
     |---|---|
     |Имя политики|Read-hivesampletable-devicemake|
     |База данных Hive|default|
@@ -121,7 +121,9 @@ ms.locfileid: "78196932"
 
 1. Перейдите на вкладку **Определение** . Текст команды:
 
-       SELECT * FROM "HIVE"."default"."hivesampletable"
+    ```sql
+    SELECT * FROM "HIVE"."default"."hivesampletable"`
+    ```
 
    В соответствии с заданными политиками Ranger у hiveuser1 есть разрешение select на все столбцы.  Поэтому этот запрос работает с учетными данными учетными hiveuser1, но этот запрос не работает с учетными данными hiveuser2.
 
@@ -136,19 +138,25 @@ ms.locfileid: "78196932"
 1. Добавьте новый лист в Excel.
 2. Выполните последнюю процедуру для импорта данных.  Единственное изменение заключается в том, что нужно использовать учетные данные hiveuser2, а не hiveuser1. При этом произойдет сбой, так как у hiveuser2 есть разрешение только на просмотр двух столбцов. Появится следующая ошибка:
 
-        [Microsoft][HiveODBC] (35) Error from Hive: error code: '40000' error message: 'Error while compiling statement: FAILED: HiveAccessControlException Permission denied: user [hiveuser2] does not have [SELECT] privilege on [default/hivesampletable/clientid,country ...]'.
-        
+    ```output
+    [Microsoft][HiveODBC] (35) Error from Hive: error code: '40000' error message: 'Error while compiling statement: FAILED: HiveAccessControlException Permission denied: user [hiveuser2] does not have [SELECT] privilege on [default/hivesampletable/clientid,country ...]'.
+    ```
+
 3. Выполните ту же процедуру для импорта данных. На этот раз используйте учетные данные hiveuser2 и измените инструкцию FROM в предложении SELECT:
 
-        SELECT * FROM "HIVE"."default"."hivesampletable"
+    ```sql
+    SELECT * FROM "HIVE"."default"."hivesampletable"
+    ```
 
     на:
 
-        SELECT clientid, devicemake FROM "HIVE"."default"."hivesampletable"
+    ```sql
+    SELECT clientid, devicemake FROM "HIVE"."default"."hivesampletable"
+    ```
 
     После этого должны отобразиться два столбца импортируемых данных.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Описание настройки кластера HDInsight с Корпоративным пакетом безопасности см. в статье [Настройка кластера HDInsight с Корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory](apache-domain-joined-configure.md).
 * Сведения об управлении кластером HDInsight с помощью ESP см. в статье [Управление кластерами HDInsight с помощью Корпоративного пакета безопасности](apache-domain-joined-manage.md).

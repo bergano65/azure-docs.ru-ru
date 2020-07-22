@@ -7,19 +7,20 @@ documentationcenter: na
 author: asudbring
 manager: KumudD
 ms.service: virtual-network
+ms.subservice: nat
 Customer intent: As an IT administrator, I want to learn more about Virtual Network NAT, its NAT gateway resources, and what I can use them for.
 ms.devlang: na
-ms.topic: overview
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/14/2020
 ms.author: allensu
-ms.openlocfilehash: 50fc8b9cefe88a80f3f954ce363139b6a4a38589
-ms.sourcegitcommit: 980c3d827cc0f25b94b1eb93fd3d9041f3593036
-ms.translationtype: HT
+ms.openlocfilehash: 80e2ba8df9c81d2a34f63b2f1bc943ee5d731bae
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80548386"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85549587"
 ---
 # <a name="what-is-virtual-network-nat"></a>Что такое NAT виртуальной сети?
 
@@ -143,7 +144,7 @@ NAT виртуальной сети и ресурс шлюза NAT поддер�
 
 Поддержка NAT осуществляется с помощью стандартных каналов.
 
-## <a name="feedback"></a>Отзывы
+## <a name="suggestions"></a>Предложения
 
 Нам важно знать, как можно улучшить эту услугу. Кроме того, вы можете вносить предложения и идеи для NAT в разделе [UserVoice](https://aka.ms/natuservoice).
 

@@ -4,16 +4,16 @@ description: Azure Data Lake Storage 2-го поколения рекоменд�
 author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 11/18/2019
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: 66042568cede364c16302fbd85751de4113bbe0f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 522f9215a0b66c5e6bec5abf41e45489efec19ac
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "74327585"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86106317"
 ---
 # <a name="tune-performance-hive-hdinsight--azure-data-lake-storage-gen2"></a>Настройка производительности: Hive, HDInsight & Azure Data Lake Storage 2-го поколения
 
@@ -57,17 +57,18 @@ ms.locfileid: "74327585"
 
 Число одновременно выполняемых задач для параллелизма ограничивается общим объемом памяти YARN.  Число контейнеров YARN определяет, сколько параллельных задач можно запустить.  Чтобы узнать, сколько памяти YARN доступно для каждого узла, зайдите в Ambari.  Перейдите по адресу YARN и просмотрите вкладку configs (конфигурации).  В этом окне отображается память YARN.  
 
-        Total YARN memory = nodes * YARN memory per node
-        # of YARN containers = Total YARN memory / Tez container size
+- Общий объем памяти YARN = узлы * YARN память на узел
+- \#YARN Containers = Total YARN память/Tez размер контейнера
+
 При использовании Azure Data Lake Storage 2-го поколения повышение производительности достигается за счет максимально возможного уровня параллелизма.  Tez автоматически вычисляет число задач, которые нужно создать, поэтому нет необходимости настраивать этот параметр.   
 
 ## <a name="example-calculation"></a>Пример вычисления
 
 Предположим, что у вас есть кластер D14 с 8 узлами.  
 
-    Total YARN memory = nodes * YARN memory per node
-    Total YARN memory = 8 nodes * 96GB = 768GB
-    # of YARN containers = 768GB / 3072MB = 256
+- Общий объем памяти YARN = узлы * YARN память на узел
+- Общий объем памяти YARN = 8 узлов * 96 ГБ = 768GB
+- \#контейнеров YARN = 768GB/3072MB = 256
 
 ## <a name="further-information-on-hive-tuning"></a>Дополнительные сведения о настройке Hive
 

@@ -9,10 +9,9 @@ ms.date: 11/13/2019
 ms.topic: conceptual
 ms.service: signalr
 ms.openlocfilehash: a8e25907b40b910f2b91884d355b6ac85eeaa250
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74158190"
 ---
 # <a name="reacting-to-azure-signalr-service-events"></a>Reacting to Azure SignalR Service events (Реагирование на события службы Azure SignalR)
@@ -29,7 +28,7 @@ ms.locfileid: "74158190"
 ## <a name="available-azure-signalr-service-events"></a>Доступные события службы SignalR Azure
 Сетка событий использует [подписки на события](../event-grid/concepts.md#event-subscriptions) для маршрутизации сообщений о событиях подписчикам. Подписки на события службы Azure SignalR поддерживают два типа событий:  
 
-|Название мероприятия|Описание|
+|Имя события|Описание:|
 |----------|-----------|
 |`Microsoft.SignalRService.ClientConnectionConnected`|Возникает при подключении клиентского подключения.|
 |`Microsoft.SignalRService.ClientConnectionDisconnected`|Возникает при отключении клиентского соединения.|
@@ -58,10 +57,10 @@ ms.locfileid: "74158190"
 
 Дополнительные сведения см. в статье [схема событий службы SignalR](../event-grid/event-schema-azure-signalr.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о службе "Сетка событий Azure" и предоставление им событий службы SignalR см. в этой статье.
 
 > [!div class="nextstepaction"]
-> [Попробуйте использовать пример интеграции сетки событий со службой "служба Azure SignalR](./signalr-howto-event-grid-integration.md)
-> " о службе "[Сетка событий](../event-grid/overview.md) "
+> [Попробуйте использовать пример интеграции сетки событий со службой](./signalr-howto-event-grid-integration.md) 
+>  Azure SignalR [О сетке событий](../event-grid/overview.md)

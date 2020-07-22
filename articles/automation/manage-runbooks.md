@@ -1,46 +1,43 @@
 ---
 title: Управление модулями runbook в службе автоматизации Azure
-description: В этой статье описывается управление модулями Runbook в службе автоматизации Azure. Он охватывает базовые операции и добавляет некоторые рекомендации.
+description: В этой статье описывается управление последовательностями runbook в службе автоматизации Azure.
 services: automation
 ms.subservice: process-automation
-ms.date: 02/14/2019
+ms.date: 06/10/2020
 ms.topic: conceptual
-ms.openlocfilehash: cd89314b0d847909bf4196361e471b71ebb9b6e9
-ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
+ms.openlocfilehash: eb5eb18351f6411a8049e962deed35e5d8f181d9
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82995495"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86185251"
 ---
 # <a name="manage-runbooks-in-azure-automation"></a>Управление модулями runbook в службе автоматизации Azure
 
-Модуль Runbook можно добавить в службу автоматизации Azure, создав новый или импортировав существующий файл из файла или [коллекции Runbook](automation-runbook-gallery.md). В этой статье содержатся сведения об управлении модулем Runbook, импортированным из файла. Вы можете найти все сведения о доступе к модулям Runbook и модули сообщества в модуле [Runbook и галереях модулей для службы автоматизации Azure](automation-runbook-gallery.md).
-
->[!NOTE]
->Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Инструкции по установке модуля Az в гибридной рабочей роли Runbook см. в статье об [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0). Чтобы обновить модули в учетной записи службы автоматизации, см. руководство по [обновлению модулей Azure PowerShell в службе автоматизации Azure](automation-update-azure-modules.md).
+Чтобы добавить последовательность runbook в службу автоматизации Azure, можно создать новую последовательность или импортировать уже имеющуюся из файла или из [коллекции runbook](automation-runbook-gallery.md). В этой статье содержатся сведения об управлении последовательностью runbook, импортированной из файла. Информацию о получении доступа к последовательностям runbook и модулям сообществ см. в статье о [коллекциях runbook и модулей для службы автоматизации Azure](automation-runbook-gallery.md).
 
 ## <a name="create-a-runbook"></a>Создание модуля runbook
 
-Создайте новый модуль Runbook в службе автоматизации Azure с помощью портал Azure или Windows PowerShell. После создания модуля Runbook его можно изменить с помощью сведений в:
+Создайте новую последовательность runbook в службе автоматизации Azure с помощью портала Azure или Windows PowerShell. После создания последовательности runbook ее можно изменить, используя информацию в следующих документах.
 
-* [Изменение текстового модуля Runbook в службе автоматизации Azure](automation-edit-textual-runbook.md) 
-* [Знакомство с основными понятиями рабочих процессов Windows PowerShell для модулей Runbook службы автоматизации](automation-powershell-workflow.md)
+* [Изменение текстовой последовательности runbook в службе автоматизации Azure](automation-edit-textual-runbook.md) 
+* [Изучение основных понятий рабочего процесса Windows PowerShell для последовательностей runbook службы автоматизации](automation-powershell-workflow.md)
 * [Графическая разработка в службе автоматизации Azure](automation-graphical-authoring-intro.md)
 * [Управление пакетами Python 2 в службе автоматизации Azure](python-packages.md)
 
 ### <a name="create-a-runbook-in-the-azure-portal"></a>Создание модуля Runbook на портале Azure
 
 1. На портале Azure выберите свою учетную запись службы автоматизации.
-2. В центре выберите **модули Runbook** в разделе **Автоматизация процессов** , чтобы открыть список модулей Runbook.
-3. Щелкните **создать Runbook**.
-4. Введите имя модуля Runbook и выберите его [тип](automation-runbook-types.md). Имя Runbook должно начинаться с буквы и может содержать буквы, цифры, символы подчеркивания и тире.
+2. В концентраторе щелкните **Модули Runbook** в разделе **Автоматизация процессов**, чтобы открыть список последовательностей runbook.
+3. Щелкните **Создать Runbook**.
+4. Введите имя последовательности runbook и выберите ее [тип](automation-runbook-types.md). Имя последовательности runbook должно начинаться с буквы и может содержать буквы, цифры, символы подчеркивания и дефисы.
 5. Щелкните **Создать** , чтобы создать модуль Runbook и открыть текстовый редактор.
 
 ### <a name="create-a-runbook-with-powershell"></a>Создание модуля Runbook с помощью PowerShell
 
-Используйте командлет [New-азаутоматионрунбук](https://docs.microsoft.com/powershell/module/az.automation/new-azautomationrunbook?view=azps-3.5.0) для создания пустого модуля Runbook. Используйте параметр `Type` , чтобы указать один из типов Runbook, определенных для `New-AzAutomationRunbook`.
+Используйте командлет [New-AzAutomationRunbook](/powershell/module/az.automation/new-azautomationrunbook?view=azps-3.5.0), чтобы создать пустую последовательность runbook. Используйте параметр `Type`, чтобы задать один из четырех типов Runbook, определенных для `New-AzAutomationRunbook`.
 
-В следующем примере показано, как создать новый пустой Runbook.
+В приведенном ниже примере показано, как создать пустую последовательность runbook.
 
 ```azurepowershell-interactive
 New-AzAutomationRunbook -AutomationAccountName MyAccount `
@@ -49,40 +46,40 @@ New-AzAutomationRunbook -AutomationAccountName MyAccount `
 
 ## <a name="import-a-runbook"></a>Импорт модуля Runbook
 
-Вы можете импортировать скрипт PowerShell или рабочего процесса PowerShell (**. ps1**), графический Runbook (**. graphrunbook**) или сценарий Python 2 (**. копировать**), чтобы создать собственный модуль Runbook.  При этом необходимо указать [тип модуля Runbook](automation-runbook-types.md), который создается во время импорта, с учетом следующих рекомендаций.
+Вы можете импортировать скрипт PowerShell или скрипт рабочего процесса PowerShell (**PS1**), графическую последовательность runbook (**GRAPHRUNBOOK**) или скрипт Python 2 (**PY**), чтобы создать собственную последовательность runbook. При этом необходимо указать [тип модуля Runbook](automation-runbook-types.md), который создается во время импорта, с учетом следующих рекомендаций.
 
-* Вы можете импортировать **PS1** -файл, который не содержит рабочий процесс, в [модуль Runbook PowerShell](automation-runbook-types.md#powershell-runbooks) или [Runbook рабочего процесса PowerShell](automation-runbook-types.md#powershell-workflow-runbooks). Если импортировать его в модуль Runbook рабочего процесса PowerShell, он преобразуется в рабочий процесс. В этом случае комментарии включаются в модуль Runbook для описания внесенных изменений.
+* Вы можете импортировать файл **PS1** без рабочего процесса либо в [последовательность runbook PowerShell](automation-runbook-types.md#powershell-runbooks), либо в [последовательность runbook рабочего процесса PowerShell](automation-runbook-types.md#powershell-workflow-runbooks). Если импортировать его в последовательность runbook рабочего процесса PowerShell, он преобразуется в рабочий процесс. В этом случае в runbook добавляются комментарии для описания внесенных изменений.
 
-* Вы можете импортировать в [модуль Runbook рабочего процесса PowerShell](automation-runbook-types.md#powershell-workflow-runbooks)только **PS1** -файл, содержащий рабочий процесс PowerShell. Если файл содержит несколько рабочих процессов PowerShell, импорт завершится ошибкой. Каждый рабочий процесс необходимо сохранить в отдельный файл и импортировать отдельно.
+* В **последовательность runbook рабочего процесса PowerShell** можно импортировать только файл [PS1](automation-runbook-types.md#powershell-workflow-runbooks), содержащий рабочий процесс PowerShell. Если файл содержит несколько рабочих процессов PowerShell, импорт завершится ошибкой. Каждый рабочий процесс необходимо сохранить в отдельный файл и импортировать отдельно.
 
-* Не импортируйте **PS1** -файл, содержащий рабочий процесс PowerShell, в [модуль Runbook PowerShell](automation-runbook-types.md#powershell-runbooks), так как обработчик сценариев PowerShell не может распознать его.
+* Не импортируйте файл **PS1**, содержащий рабочий процесс PowerShell, в [последовательность runbook PowerShell](automation-runbook-types.md#powershell-runbooks), так как обработчик скриптов PowerShell не сможет его распознать.
 
-* Импортируйте файл **. graphrunbook** в новый [графический модуль Runbook](automation-runbook-types.md#graphical-runbooks). 
+* В новую [графическую последовательность runbook](automation-runbook-types.md#graphical-runbooks) следует импортировать только файл **GRAPHRUNBOOK**.
 
-### <a name="import-a-runbook-from-the-azure-portal"></a>Импорт модуля Runbook из портал Azure
+### <a name="import-a-runbook-from-the-azure-portal"></a>Импорт последовательности runbook с портала Azure
 
 Для импорта файла сценария в службу автоматизации Azure можно использовать описанную ниже процедуру.
 
 > [!NOTE]
-> Вы можете импортировать **PS1** -файл в Runbook рабочего процесса PowerShell с помощью портала.
+> С помощью портала **PS1**-файл можно импортировать только в последовательность runbook рабочего процесса PowerShell.
 
 1. На портале Azure выберите свою учетную запись службы автоматизации.
 2. Щелкните **Модули Runbook** в разделе **Автоматизация процессов**, чтобы открыть список модулей runbook.
-3. Щелкните **Импорт модуля Runbook**.
-4. Щелкните **файл Runbook** и выберите файл для импорта.
-5. Если поле **имя** включено, можно изменить имя модуля Runbook. Имя должно начинаться с буквы и может содержать буквы, цифры, символы подчеркивания и тире.
+3. Щелкните **Импортировать модуль Runbook**.
+4. Щелкните **Файл Runbook** и выберите файл для импорта.
+5. Если поле **Имя** активно, можно изменить имя runbook. Имя должно начинаться с буквы и может содержать буквы, цифры, символы подчеркивания и дефисы.
 6. [Тип Runbook](automation-runbook-types.md) выбирается автоматически, но его можно изменить, учитывая применимые ограничения.
 7. Нажмите кнопку **Создать**. Новый модуль Runbook появится в списке модулей Runbook для учетной записи службы автоматизации.
 8. Перед запуском модуля его необходимо [опубликовать](#publish-a-runbook) .
 
 > [!NOTE]
-> После импорта графического модуля Runbook его можно преобразовать в другой тип. Однако графический модуль Runbook нельзя преобразовать в текстовый модуль Runbook.
+> После импорта графической последовательности runbook ее можно преобразовать в другой тип. Однако графическую последовательность runbook нельзя преобразовать в текстовую последовательность runbook.
 
-### <a name="import-a-runbook-with-windows-powershell"></a>Импорт модуля Runbook с помощью Windows PowerShell
+### <a name="import-a-runbook-with-windows-powershell"></a>Импорт последовательности runbook с помощью Windows PowerShell
 
-Используйте командлет [Import-азаутоматионрунбук](https://docs.microsoft.com/powershell/module/az.automation/import-azautomationrunbook?view=azps-3.5.0) , чтобы импортировать файл скрипта в качестве черновика модуля Runbook. Если модуль Runbook уже существует, Импорт завершается неудачей, `Force` если не используется параметр с командлетом.
+Чтобы импортировать файл скрипта как черновик runbook, воспользуйтесь командлетом [Import-AzAutomationRunbook](/powershell/module/az.automation/import-azautomationrunbook?view=azps-3.5.0). Если runbook уже существует, импорт завершится ошибкой. Чтобы этого не произошло, используйте командлет с параметром `Force`.
 
-В следующем примере показано, как импортировать файл скрипта в модуль Runbook.
+В приведенных ниже примерах показано, как импортировать файл сценария в последовательность runbook.
 
 ```azurepowershell-interactive
 $automationAccountName =  "AutomationAccount"
@@ -95,9 +92,9 @@ Import-AzAutomationRunbook -Name $runbookName -Path $scriptPath `
 -Type PowerShellWorkflow
 ```
 
-## <a name="handle-resources"></a>Ресурсы для управления
+## <a name="handle-resources"></a>Работа с ресурсами
 
-Если модуль Runbook создает [ресурс](automation-runbook-execution.md#resources), он должен проверить, существует ли уже ресурс, прежде чем пытаться его создать. Ниже приведен простой пример.
+Если runbook создает [ресурсы](automation-runbook-execution.md#resources), перед их созданием скрипт должен проверить их наличие. Ниже приведен простой пример.
 
 ```powershell
 $vmName = "WindowsVM1"
@@ -118,7 +115,7 @@ else
 
 ## <a name="retrieve-details-from-activity-log"></a>Получение сведений из журнала действий
 
-Сведения о Runbook, такие как пользователь или учетная запись, запускающие Runbook, можно получить из [журнала действий](automation-runbook-execution.md#activity-logging) для учетной записи службы автоматизации. В следующем примере PowerShell представлен последний пользователь для запуска указанного модуля Runbook.
+Вы можете получить сведения о runbook, например данные о пользователе, запустившем runbook, или учетной записи, которая для этого использовалась, из [журнала действий](automation-runbook-execution.md#activity-logging) учетной записи службы автоматизации. В следующем примере PowerShell определяется последний пользователь, выполнивший указанную последовательность runbook.
 
 ```powershell-interactive
 $SubID = "00000000-0000-0000-0000-000000000000"
@@ -150,13 +147,13 @@ $JobInfo.GetEnumerator() | sort key -Descending | Select-Object -First 1
 
 ## <a name="track-progress"></a>Отслеживание хода выполнения
 
-Рекомендуется создавать модули Runbook в виде модульного характера, используя логику, которая может быть повторно использована и перезапущена. Отслеживание хода выполнения в модуле Runbook гарантирует правильность выполнения логики модуля Runbook при возникновении проблем. 
+Рекомендуется создавать последовательности runbook с модульной структурой, используя удобную для повторного использования и перезапуска логику. Отслеживание хода выполнения в последовательности runbook гарантирует правильность выполнения ее логики при возникновении проблем. 
 
-Ход выполнения Runbook можно отслеживать с помощью внешнего источника, например учетной записи хранения, базы данных или общих файлов. Создайте логику в модуле Runbook, чтобы сначала проверить состояние последнего выполненного действия. Затем, основываясь на результатах проверки, логика может либо пропустить, либо продолжить выполнение конкретных задач в модуле Runbook.
+Отслеживать ход выполнения последовательности runbook можно с использованием внешнего источника, например учетной записи хранения, базы данных или общих файлов. Создайте в последовательности runbook логику, которая позволит сначала проверять состояние последнего выполненного действия. Затем, основываясь на результатах проверки, логика может либо пропустить, либо продолжить выполнение конкретных задач в последовательности runbook.
 
 ## <a name="prevent-concurrent-jobs"></a>Предотвращение выполнения одновременных заданий
 
-Некоторые модули Runbook ведут себя необычным образом, если они выполняются одновременно для нескольких заданий. В этом случае необходимо, чтобы модуль Runbook реализовал логику, чтобы определить, уже запущено ли задание. Ниже приведен простой пример.
+При выполнении нескольких заданий одновременно некоторые последовательности runbook могут работать некорректно. В этом случае важно реализовать логику для проверки последовательности runbook на наличие уже выполняющегося задания. Ниже приведен простой пример.
 
 ```powershell
 # Authenticate to Azure
@@ -164,7 +161,7 @@ $connection = Get-AutomationConnection -Name AzureRunAsConnection
 Connect-AzAccount -ServicePrincipal -Tenant $connection.TenantID `
 -ApplicationId $connection.ApplicationID -CertificateThumbprint $connection.CertificateThumbprint
 
-$AzContext = Select-AzSubscription -SubscriptionId $connection.SubscriptionID
+$AzureContext = Get-AzSubscription -SubscriptionId $connection.SubscriptionID
 
 # Check for already running or new runbooks
 $runbookName = "<RunbookName>"
@@ -184,18 +181,18 @@ If (($jobs.status -contains "Running" -And $runningCount -gt 1 ) -Or ($jobs.Stat
 }
 ```
 
-## <a name="handle-transient-errors-in-a-time-dependent-script"></a>Обработку временных ошибок в скрипте, зависящем от времени
+## <a name="handle-transient-errors-in-a-time-dependent-script"></a>Обработка временных ошибок в скрипте, зависящем от времени
 
-Модули Runbook должны быть надежными и способны обрабатывать [ошибки](automation-runbook-execution.md#errors), включая временные ошибки, которые могут привести к перезапуску или сбою. В случае сбоя Runbook служба автоматизации Azure повторяет ее.
+Последовательности runbook должны быть надежными и поддерживать обработку [ошибок](automation-runbook-execution.md#errors), в том числе временных ошибок, которые могут привести к их перезапуску или сбою. В случае сбоя последовательности runbook служба автоматизации Azure повторяет попытку ее выполнения.
 
-Если модуль Runbook обычно работает в пределах ограничения по времени, то для проверки времени выполнения скрипт должен реализовывать логику. Эта проверка обеспечивает выполнение таких операций, как запуск, завершение работы или масштабирование, только в определенное время.
+Если runbook обычно работает в условиях ограничения по времени, то для проверки времени выполнения скрипт должен реализовывать логику. Эта проверка обеспечивает выполнение таких операций, как запуск, завершение работы или горизонтальное увеличение масштаба, только в определенное время.
 
 > [!NOTE]
-> Местное время для процесса "песочницы" Azure задается в формате UTC. Этот факт следует учитывать при вычислении даты и времени в модулях Runbook.
+> Местное время для процесса песочницы Azure задается в формате UTC. Этот факт следует учитывать при вычислении даты и времени в runbook.
 
 ## <a name="work-with-multiple-subscriptions"></a>Использование нескольких подписок
 
-Модуль Runbook должен иметь возможность работать с [подписками](automation-runbook-execution.md#subscriptions). Например, для решения нескольких подписок модуль Runbook использует командлет [Disable-азконтекстаутосаве](https://docs.microsoft.com/powershell/module/Az.Accounts/Disable-AzContextAutosave?view=azps-3.5.0) . Этот командлет гарантирует, что контекст проверки подлинности не будет получен из другого модуля Runbook, выполняющегося в той же песочнице. Модуль Runbook также использует`AzContext` параметр командлета AZ Module и передает его правильному контексту.
+Последовательность runbook должна поддерживать работу с [подписками](automation-runbook-execution.md#subscriptions). Например, для работы с несколькими подписками последовательность runbook использует командлет [Disable-AzContextAutosave](/powershell/module/Az.Accounts/Disable-AzContextAutosave?view=azps-3.5.0). Этот командлет гарантирует, что контекст проверки подлинности не будет получен из другой последовательности runbook, выполняющейся в той же песочнице. Модуль Runbook также использует `Get-AzContext` командлет, чтобы получить контекст текущего сеанса и присвоить его переменной `$AzureContext` .
 
 ```powershell
 # Ensures that you do not inherit an AzContext in your runbook
@@ -207,7 +204,7 @@ Connect-AzAccount -ServicePrincipal `
 -ApplicationId $Conn.ApplicationID `
 -CertificateThumbprint $Conn.CertificateThumbprint
 
-$context = Get-AzContext
+$AzureContext = Get-AzContext
 
 $ChildRunbookName = 'ChildRunbookDemo'
 $AutomationAccountName = 'myAutomationAccount'
@@ -217,50 +214,50 @@ Start-AzAutomationRunbook `
     -ResourceGroupName $ResourceGroupName `
     -AutomationAccountName $AutomationAccountName `
     -Name $ChildRunbookName `
-    -DefaultProfile $context
+    -DefaultProfile $AzureContext
 ```
 
-## <a name="work-with-a-custom-script"></a>Работа с пользовательским скриптом
+## <a name="work-with-a-custom-script"></a>Работа с пользовательскими скриптами
 
 > [!NOTE]
-> Обычно вы не можете запускать пользовательские сценарии и модули Runbook на узле с установленным агентом Log Analytics. 
+> Обычно пользовательские скрипты и последовательности runbook нельзя запускать на узле с установленным агентом Log Analytics. 
 
 Чтобы использовать пользовательский скрипт, выполните следующие действия.
 
 1. Создайте учетную запись службы автоматизации и получите [роль участника](automation-role-based-access-control.md).
 2. [Свяжите учетную запись с рабочей областью Azure](../security-center/security-center-enable-data-collection.md).
-3. Включите [гибридную рабочую роль Runbook](automation-hybrid-runbook-worker.md), [Управление обновлениями](automation-update-management.md)или другую функцию автоматизации. 
-4. Если на компьютере Linux требуются высокие разрешения. Войдите в систему, чтобы отключить [проверку подписи](automation-linux-hrw-install.md#turn-off-signature-validation).
+3. Включите функцию [Гибридная рабочая роль Runbook](automation-hybrid-runbook-worker.md), [Управление обновлениями](automation-update-management.md) или другую функцию службы автоматизации. 
+4. На компьютере с Linux требуется высокий уровень разрешений. Войдите, чтобы [отключить проверку подписи](automation-linux-hrw-install.md#turn-off-signature-validation).
 
 ## <a name="test-a-runbook"></a>Тестирование runbook
 
-При тестировании модуля Runbook запускается его [черновая версия](#publish-a-runbook) и завершаются все действия, которые он выполняет. Журнал заданий не создается, но [выходные данные](automation-runbook-output-and-messages.md#output-stream) и потоки [предупреждений и ошибок](automation-runbook-output-and-messages.md#message-streams) отображаются в области вывода теста. Сообщения в [подробный поток](automation-runbook-output-and-messages.md#message-streams) отображаются в области вывода только в том случае, если [VerbosePreference](automation-runbook-output-and-messages.md#preference-variables) для `Continue`переменной VerbosePreference задано значение.
+При тестировании модуля Runbook запускается его [черновая версия](#publish-a-runbook) и завершаются все действия, которые он выполняет. Журнал заданий не создается, однако в области вывода теста отображаются [поток вывода](automation-runbook-output-and-messages.md#use-the-output-stream) и поток [предупреждений и ошибок](automation-runbook-output-and-messages.md#monitor-message-streams). Сообщения, предназначенные для [подробного потока](automation-runbook-output-and-messages.md#monitor-message-streams), отображаются в области выходных данных, только если переменная [VerbosePreference](automation-runbook-output-and-messages.md#work-with-preference-variables) имеет значение `Continue`.
 
 Несмотря на то что выполняется черновая версия, модуль Runbook работает в обычном режиме и выполняет все действия с использованием ресурсов среды. В связи с этим тестировать модули Runbook можно только в непроизводственных ресурсах.
 
-Процедура проверки каждого [типа модуля Runbook](automation-runbook-types.md) одинакова. Нет никакой разницы при тестировании между текстовым редактором и графическим редактором в портал Azure.
+Процедура тестирования одинакова для всех [типов runbook](automation-runbook-types.md). Тестирование выполняется на портале Azure одинаково и в текстовом, и в графическом редакторе.
 
-1. Откройте черновую версию модуля Runbook в [текстовом редакторе](automation-edit-textual-runbook.md) или в [графическом редакторе](automation-graphical-authoring-intro.md).
-1. Нажмите кнопку **проверить** , чтобы открыть тестовую страницу.
-1. Если у модуля Runbook есть параметры, они перечислены в левой области, где можно указать значения, которые будут использоваться для теста.
-1. Если вы хотите выполнить тест в [гибридной рабочей роли Runbook](automation-hybrid-runbook-worker.md), измените **Параметры запуска** на **гибридную рабочую роль** и выберите имя целевой группы.  В противном случае оставьте значение **Azure** по умолчанию, чтобы тест выполнялся в облаке.
+1. Откройте черновую версию runbook в [текстовом](automation-edit-textual-runbook.md) или [графическом](automation-graphical-authoring-intro.md) редакторе.
+1. Щелкните **Тест**, чтобы открыть страницу тестирования.
+1. Если у runbook имеются параметры, они отображаются в области слева, где можно указать значения для теста.
+1. Если вы хотите запустить тест с [гибридной рабочей ролью Runbook](automation-hybrid-runbook-worker.md), измените **Параметры запуска**, выбрав значение **Гибридная рабочая роль**, и выберите имя целевой группы.  В противном случае оставьте значение **Azure** по умолчанию, чтобы тест выполнялся в облаке.
 1. Щелкните **Пуск**, чтобы начать тестирование.
-1. Можно использовать кнопки в области вывода, чтобы остановить или приостановить [Рабочий процесс PowerShell](automation-runbook-types.md#powershell-workflow-runbooks) или [графический](automation-runbook-types.md#graphical-runbooks) модуль Runbook во время тестирования. В случае приостановки модуль Runbook завершает действие, начатое до приостановки. Приостановленный модуль Runbook можно остановить или перезапустить.
-1. Проверьте выходные данные модуля Runbook в области вывода.
+1. С помощью кнопок в области вывода можно остановить или приостановить последовательность [runbook рабочего процесса PowerShell](automation-runbook-types.md#powershell-workflow-runbooks) или [графическую последовательность runbook](automation-runbook-types.md#graphical-runbooks) во время ее тестирования. В случае приостановки модуль Runbook завершает действие, начатое до приостановки. Приостановленный модуль Runbook можно остановить или перезапустить.
+1. Проверьте выходные данные runbook в области выходных данных.
 
 ## <a name="publish-a-runbook"></a>Публикация модуля Runbook
 
-Перед запуском вновь созданного или импортированного модуля Runbook его необходимо опубликовать. Каждый модуль Runbook в службе автоматизации Azure имеет черновую версию и опубликованную версию. Запустить можно только опубликованную версию, а изменить — только черновую. Изменения, внесенные в черновик, не влияют на опубликованную версию. Когда необходимо сделать черновую версию доступной, опубликуйте ее, перезаписав текущую опубликованную версию с черновой версией.
+Перед запуском вновь созданного или импортированного модуля Runbook его необходимо опубликовать. У каждой последовательности runbook в службе автоматизации Azure есть черновая и опубликованная версия. Запустить можно только опубликованную версию, а изменить — только черновую. Изменения, внесенные в черновик, не влияют на опубликованную версию. Если требуется черновая версия, ее можно опубликовать, перезаписав текущую опубликованную версию черновой.
 
-### <a name="publish-a-runbook-in-the-azure-portal"></a>Публикация модуля Runbook в портал Azure
+### <a name="publish-a-runbook-in-the-azure-portal"></a>Публикация runbook на портале Azure
 
 1. Откройте модуль Runbook на портале Azure.
-2. Щелкните **Правка**.
-3. Щелкните **опубликовать** , а затем **Да** в ответ на проверочное сообщение.
+2. Нажмите кнопку **Изменить**.
+3. Нажмите кнопку **Опубликовать**, а в ответ на вопрос в проверочном сообщении — кнопку **Да**.
 
-### <a name="publish-a-runbook-using-powershell"></a>Публикация модуля Runbook с помощью PowerShell
+### <a name="publish-a-runbook-using-powershell"></a>Публикация runbook с помощью PowerShell
 
-Опубликуйте модуль Runbook с помощью командлета [Publish-азаутоматионрунбук](https://docs.microsoft.com/powershell/module/Az.Automation/Publish-AzAutomationRunbook?view=azps-3.5.0) . 
+Для публикации runbook используйте командлет [Publish-AzAutomationRunbook](/powershell/module/Az.Automation/Publish-AzAutomationRunbook?view=azps-3.5.0). 
 
 ```azurepowershell-interactive
 $automationAccountName =  "AutomationAccount"
@@ -271,46 +268,46 @@ Publish-AzAutomationRunbook -AutomationAccountName $automationAccountName `
 -Name $runbookName -ResourceGroupName $RGName
 ```
 
-## <a name="schedule-a-runbook-in-the-azure-portal"></a>Планирование Runbook в портал Azure
+## <a name="schedule-a-runbook-in-the-azure-portal"></a>Создание расписания для runbook на портале Azure
 
-После публикации Runbook можно запланировать его выполнение:
+После публикации последовательности runbook можно запланировать ее выполнение.
 
 1. Откройте модуль Runbook на портале Azure.
-2. Выберите **расписания** в разделе **ресурсы**.
+2. В разделе **Ресурсы** выберите **Расписания**.
 3. Выберите **Добавить расписание**.
-4. На панели расписание Runbook выберите **связать расписание с модулем Runbook**.
-5. Выберите **создать новое расписание** на панели расписание.
-6. Введите имя, описание и другие параметры в области новое расписание. 
-7. После создания расписания выделите его и нажмите кнопку **ОК**. Теперь она должна быть связана с модулем Runbook.
-8. Найдите в почтовом ящике сообщение электронной почты с уведомлением о состоянии Runbook.
+4. В области создания расписания runbook выберите **Связать расписание с модулем Runbook**.
+5. В области "Расписание" выберите **Создать новое расписание**.
+6. Введите имя, описание и другие параметры в области создания расписания. 
+7. После создания расписания выделите его и нажмите кнопку **ОК**. Теперь оно должно быть связано с последовательностью runbook.
+8. Найдите в почтовом ящике сообщение электронной почты с уведомлением о состоянии runbook.
 
-## <a name="obtain-job-statuses"></a>Получение состояний заданий
+## <a name="obtain-job-statuses"></a>Получение данных о состоянии заданий
 
-### <a name="view-statuses-in-the-azure-portal"></a>Просмотр состояний в портал Azure
+### <a name="view-statuses-in-the-azure-portal"></a>Просмотр состояний на портале Azure
 
-Подробные сведения об обработке заданий в службе автоматизации Azure приведены в [заданиях](automation-runbook-execution.md#jobs). Когда вы будете готовы просмотреть задания Runbook, используйте портал Azure и получите доступ к учетной записи службы автоматизации. Справа можно просмотреть сводку по всем заданиям Runbook в **статистике заданий**. 
+Подробные сведения об обработке заданий в службе автоматизации Azure приведены в разделе [Задания](automation-runbook-execution.md#jobs). Когда вы будете готовы просмотреть задания runbook, воспользуйтесь порталом Azure и войдите в учетную запись службы автоматизации. В области **Статистика по заданиям** справа можно просмотреть сводку по всем заданиям runbook. 
 
 ![Элемент "Статистика по заданиям"](./media/manage-runbooks/automation-account-job-status-summary.png)
 
-В сводке отображается количество и графическое представление состояния задания для каждого выполненного задания.
+В сводке отображается количество и графическое представление состояний всех выполненных заданий.
 
-Щелкните плитку, чтобы открылась страница Задания, на которой представлен сводный список всех выполненных заданий. На этой странице отображаются сведения о состоянии, имени Runbook, времени начала и времени выполнения каждого задания.
+Щелкните плитку, чтобы открылась страница "Задания", на которой представлен сводный список всех выполненных заданий. На этой странице отображаются сведения о состоянии, имени runbook, времени запуска и времени выполнения каждого задания.
 
 ![Страница "Задания" учетной записи службы автоматизации](./media/manage-runbooks/automation-account-jobs-status-blade.png)
 
-Список заданий можно отфильтровать, выбрав пункт **Фильтровать задания**. Выполните фильтрацию по определенному модулю Runbook, состоянию задания или выбору из раскрывающегося списка и укажите диапазон времени для поиска.
+Список заданий можно отфильтровать, выбрав **Фильтровать задания**. Отфильтруйте список по определенной последовательности runbook или состоянию задания либо выберите вариант из раскрывающегося списка и укажите диапазон времени для поиска.
 
-![Фильтрация состояния задания](./media/manage-runbooks/automation-account-jobs-filter.png)
+![Фильтрация по состоянию задания](./media/manage-runbooks/automation-account-jobs-filter.png)
 
-Кроме того, можно просмотреть сводные данные о задании для конкретного модуля Runbook, выбрав его на странице модули Runbook в учетной записи службы автоматизации, а затем выбрав **задания**. Это действие представляет страницу задания. Здесь можно щелкнуть запись задания, чтобы просмотреть ее сведения и выходные данные.
+Кроме того, для просмотра сводных данных о состоянии заданий определенной последовательности runbook можно выбрать ее модуль на странице "Модули Runbook" учетной записи службы автоматизации, а затем выбрать элемент **Задания**. При выполнении этого действия отображается страница "Задания". Здесь можно щелкнуть запись задания, чтобы просмотреть сведения о ней и ее выходные данные.
 
 ![Страница "Задания" учетной записи службы автоматизации](./media/manage-runbooks/automation-runbook-job-summary-blade.png)
 
-### <a name="retrieve-job-statuses-using-powershell"></a>Получение состояний заданий с помощью PowerShell
+### <a name="retrieve-job-statuses-using-powershell"></a>Получение данных о состоянии заданий с помощью PowerShell
 
-Используйте командлет [Get-азаутоматионжоб](https://docs.microsoft.com/powershell/module/Az.Automation/Get-AzAutomationJob?view=azps-3.7.0) , чтобы получить задания, созданные для модуля Runbook, и сведения о конкретном задании. Если вы запускаете модуль Runbook `Start-AzAutomationRunbook`с помощью, он возвращает результирующее задание. Чтобы получить выходные данные задания, используйте [Get-азаутоматионжобаутпут](https://docs.microsoft.com/powershell/module/Az.Automation/Get-AzAutomationJobOutput?view=azps-3.5.0) .
+Чтобы получить список созданных заданий для последовательности runbook и сведения о конкретном задании, воспользуйтесь командлетом [Get-AzAutomationJob](/powershell/module/Az.Automation/Get-AzAutomationJob?view=azps-3.7.0). Если вы запускаете последовательность runbook с помощью `Start-AzAutomationRunbook`, возвращается результирующее задание. Для получения выходных данных задания используйте командлет [Get-AzAutomationJobOutput](/powershell/module/Az.Automation/Get-AzAutomationJobOutput?view=azps-3.5.0).
 
-В следующем примере возвращается последнее задание для примера модуля Runbook и отображается его состояние, значения, указанные для параметров модуля Runbook, и выходные данные задания.
+В приведенном ниже примере извлекаются сведения о последнем задании для примера runbook и отображаются данные о его состоянии, значения, заданные для параметров runbook, а также выходные данные этого задания.
 
 ```azurepowershell-interactive
 $job = (Get-AzAutomationJob –AutomationAccountName "MyAutomationAccount" `
@@ -321,7 +318,7 @@ Get-AzAutomationJobOutput -ResourceGroupName "ResourceGroup01" `
 –AutomationAccountName "MyAutomationAcct" -Id $job.JobId –Stream Output
 ```
 
-В следующем примере извлекается результат для конкретного задания и возвращается каждая запись. Если имеется [исключение](automation-runbook-execution.md#exceptions) для одной из записей, сценарий записывает исключение вместо значения. Такое поведение полезно, поскольку исключения могут предоставлять дополнительные сведения, которые могут не регистрироваться обычным образом во время вывода.
+В следующем примере извлекаются выходные данные для конкретного задания и возвращается каждая запись. Если для одной из записей возникает [исключение](automation-runbook-execution.md#exceptions), скрипт записывает его вместо значения. Это полезно, так как исключения могут предоставлять дополнительные сведения, которые обычно не удается записать в журнал во время вывода.
 
 ```azurepowershell-interactive
 $output = Get-AzAutomationJobOutput -AutomationAccountName <AutomationAccountName> -Id <jobID> -ResourceGroupName <ResourceGroupName> -Stream "Any"
@@ -341,6 +338,8 @@ foreach($item in $output)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения об обработке модулей Runbook см. [в статье выполнение Runbook в службе автоматизации Azure](automation-runbook-execution.md).
-* Дополнительные сведения об изменении модулей Runbook PowerShell и рабочих процессов PowerShell с помощью текстового редактора см. в статье [Изменение текстовых модулей Runbook в службе автоматизации Azure](automation-edit-textual-runbook.md).
-* Дополнительные сведения о создании графических модулей Runbook см. [в статье графическая разработка в службе автоматизации Azure](automation-graphical-authoring-intro.md).
+* Дополнительные сведения об управлении последовательностями runbook см. в статье [Выполнение runbook в службе автоматизации Azure](automation-runbook-execution.md).
+* Сведения о подготовке последовательностей runbook PowerShell см. в статье [Изменение текстовых последовательностей runbook в службе автоматизации Azure](automation-edit-textual-runbook.md).
+* Дополнительные сведения о создании runbook рабочего процесса PowerShell см. в статье о [рабочем процессе PowerShell для службы автоматизации Azure](automation-powershell-workflow.md).
+* Сведения о создании графических последовательностей runbook см. в статье [о графических runbook в службе автоматизации Azure](automation-graphical-authoring-intro.md).
+* Сведения об устранении неполадок, связанных с выполнением последовательности runbook, см. в статье [Устранение ошибок runbook](troubleshoot/runbooks.md).

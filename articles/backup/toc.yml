@@ -123,6 +123,8 @@
               href: backup-azure-linux-app-consistent.md
         - name: Восстановить
           items:
+            - name: Сведения о восстановлении виртуальных машин Azure
+              href: about-azure-vm-restore.md
             - name: Восстановление виртуальных машин Azure на портале
               href: backup-azure-arm-restore-vms.md
             - name: Восстановление файлов из резервных копий виртуальных машин Azure
@@ -217,8 +219,12 @@
           href: sap-hana-db-manage.md
     - name: Azure Backup Server (MABS)
       items:
-        - name: Таблица защиты посредством Azure Backup Server
-          href: backup-mabs-protection-matrix.md
+        - name: Матрицы защиты
+          items:
+            - name: Матрица защиты MABS V3 UR1
+              href: backup-mabs-protection-matrix.md
+            - name: Матрица защиты MABS V3 RTM
+              href: microsoft-azure-backup-server-protection-v3.md
         - name: Установка и обновление
           items:
             - name: Установка Azure Backup Server
@@ -227,7 +233,7 @@
               href: backup-mabs-add-storage.md
             - name: Новые возможности MABS
               href: backup-mabs-whats-new-mabs.md
-            - name: "MABS версии\_3: заметки о выпуске"
+            - name: 'MABS: заметки о выпуске'
               href: backup-mabs-release-notes-v3.md
             - name: Автоматическая установка
               href: backup-mabs-unattended-install.md
@@ -282,7 +288,9 @@
         - name: Автономное резервное копирование с помощью импорта и экспорта (MARS)
           href: backup-azure-backup-import-export.md
         - name: Автономное резервное копирование с помощью импорта и экспорта (DPM/MABS)
-          href: backup-azure-backup-server-import-export-.md
+          href: backup-azure-backup-server-import-export.md
+        - name: Автономное резервное копирование для DPM и MABS (предыдущие версии)
+          href: offline-backup-server-previous-versions.md
     - name: Мониторинг и оповещения
       items:
         - name: Использование обозревателя резервных копий
@@ -315,11 +323,11 @@
               href: azure-policy-configure-diagnostics.md
         - name: PowerShell
           items:
-            - name: Работа с виртуальными машинами на портале Azure
+            - name: Виртуальные машины Azure
               href: backup-azure-vms-automation.md
-            - name: Работа с DPM на портале Azure
+            - name: Data Protection Manager (DPM)
               href: backup-dpm-automation.md
-            - name: Работа с Windows Server на портале Azure
+            - name: "Использование агента MARS с Windows\_Server"
               href: backup-client-automation.md
             - name: Использование SQL с резервными копиями виртуальных машин Azure
               href: backup-azure-sql-automation.md
@@ -355,12 +363,16 @@
               href: soft-delete-virtual-machines.md
             - name: Для SQL Server и SAP HANA на виртуальных машинах Azure
               href: soft-delete-sql-saphana-in-azure-vm.md
+        - name: Удаление защиты общих папок Azure
+          href: soft-delete-azure-file-share.md
         - name: Безопасность гибридных резервных копий
           href: backup-azure-security-feature.md
         - name: Частные конечные точки
           href: private-endpoints.md
-        - name: Шифрование
+        - name: Шифрование в Azure Backup
           href: backup-encryption.md
+        - name: Шифрование с использованием управляемых пользователем ключей
+          href: encryption-at-rest-with-cmk.md
         - name: Встроенные средства управления безопасностью
           href: backup-security-controls.md
         - name: Базовые средства безопасности
@@ -410,9 +422,9 @@
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
     - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
-      href: 'https://docs.microsoft.com/answers/topics/azure-backup.html'
+      href: /answers/topics/azure-backup.html
     - name: Калькулятор цен
-      href: 'https://azure.microsoft.com/pricing/calculator/'
+      href: azure-backup-pricing.md
     - name: Обновления службы
       href: 'https://azure.microsoft.com/updates/?product=backup'
     - name: Видео

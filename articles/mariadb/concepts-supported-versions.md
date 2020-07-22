@@ -5,13 +5,12 @@ author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 03/18/2020
-ms.openlocfilehash: 361ba17532d27a7020be1b6874993da999f48604
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.date: 6/3/2020
+ms.openlocfilehash: a6d340543289fa07370e053681599348a86940cf
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79527713"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84343410"
 ---
 # <a name="supported-azure-database-for-mariadb-server-versions"></a>Поддерживаемые версии сервера базы данных Azure для MariaDB
 
@@ -26,15 +25,15 @@ MariaDB использует схему именования X. Y. Z. X — ос
 
 ## <a name="mariadb-version-102"></a>MariaDB версии 10,2
 
-Версия исправления: 10.2.25
+Версия исправления: 10.2.31
 
-Дополнительные сведения об улучшениях и исправлениях в этой версии см. в [документации по MariaDB](https://mariadb.com/kb/en/library/mariadb-10225-release-notes/) .
+Дополнительные сведения об улучшениях и исправлениях в этой версии см. в [документации по MariaDB](https://mariadb.com/kb/en/mariadb-10231-release-notes/) .
 
 ## <a name="mariadb-version-103"></a>MariaDB версии 10,3
 
-Версия исправления: 10.3.16
+Версия исправления: 10.3.22
 
-Дополнительные сведения об улучшениях и исправлениях в этой версии см. в [документации по MariaDB](https://mariadb.com/kb/en/library/mariadb-10316-release-notes/) .
+Дополнительные сведения об улучшениях и исправлениях в этой версии см. в [документации по MariaDB](https://mariadb.com/kb/en/mariadb-10322-release-notes/) .
 
 ## <a name="managing-updates-and-upgrades"></a>Управление обновлениями
 Служба автоматически управляет обновлениями для обновлений исправлений. Например, 10.2.21 в 10.2.23.  

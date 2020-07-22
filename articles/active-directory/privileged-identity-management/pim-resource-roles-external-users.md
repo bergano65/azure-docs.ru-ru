@@ -7,7 +7,7 @@ author: curtand
 manager: daveba
 ms.service: active-directory
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: pim
@@ -15,12 +15,12 @@ ms.date: 11/08/2019
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2efcf77d65fa2f9e203ed805cd7d78b9802ee3aa
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 046a0d61bb7a6d715a1d732790d2b472b3e83c13
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74021938"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84743785"
 ---
 # <a name="invite-guest-users-and-assign-azure-resource-roles-in-privileged-identity-management"></a>Приглашение гостевых пользователей и назначение ролей ресурсов Azure в управление привилегированными пользователями
 
@@ -55,7 +55,7 @@ ms.locfileid: "74021938"
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
 
-1. Выберите **Azure Active Directory** > **Параметры пользователя**.
+1. Выберите **Azure Active Directory**  >  **Параметры пользователя**.
 
 1. Выберите **Управление внешними параметрами совместной работы**.
 
@@ -71,7 +71,7 @@ ms.locfileid: "74021938"
 
 1. Откройте **Azure AD privileged Identity Management**.
 
-1. Щелкните **Ресурсы Azure**.
+1. Выберите **ресурсы Azure**.
 
 1. Используйте **Фильтр ресурсов**, чтобы отфильтровать список управляемых ресурсов.
 
@@ -157,13 +157,13 @@ ms.locfileid: "74021938"
 
     ![Ресурсы Azure. страница "аудит ресурсов" со списком времени, запрашивающей стороны и действия](./media/pim-resource-roles-external-users/audit-resource.png)
 
-1. Чтобы просмотреть действие для гостя, выберите **Azure Active Directory** > **пользователей** > *имя гостя*.
+1. Чтобы просмотреть действие для гостя, выберите **Azure Active Directory**  >  **пользователей**  >  *имя гостя*.
 
 1. Выберите **журналы аудита** , чтобы просмотреть журналы аудита для Организации. Если потребуется, примените фильтры.
 
     ![Журнал аудита каталогов: Дата, цель, инициировано и действие](./media/pim-resource-roles-external-users/audit-directory.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Назначение ролей администратора Azure AD в управление привилегированными пользователями](pim-how-to-add-role-to-user.md)
 - [Что такое доступ гостевых пользователей в службе совместной работы Azure AD B2B?](../b2b/what-is-b2b.md)

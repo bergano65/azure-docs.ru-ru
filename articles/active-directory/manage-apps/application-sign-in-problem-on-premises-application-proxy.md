@@ -3,24 +3,24 @@ title: Проблема входа в локальное приложение с
 description: Устранение типичных проблем, препятствующих выполнению входа в локальное приложение, интегрированное с Azure AD, с использованием прокси приложения Azure AD.
 services: active-directory
 documentationcenter: ''
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: troubleshooting
 ms.date: 05/21/2018
-ms.author: mimart
+ms.author: kenwith
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 91a00e243032fd9702e8b549c75363f1a3e1c87f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 29aa4eb0bc40f0b2b960c49cf7b17dc62d92b0ab
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74232323"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85367722"
 ---
 # <a name="problems-signing-in-to-an-on-premises-application-using-the-azure-ad-application-proxy"></a>Проблемы при входе в локальное приложение с помощью прокси приложения Azure AD
 
@@ -36,7 +36,7 @@ ms.locfileid: "74232323"
 
 ## <a name="im-having-a-connectivity-problem-my-application"></a>Возникла проблема с подключением моего приложения
   Приведенные ниже документы помогут устранить некоторые из наиболее распространенных проблем в этой категории.
-  * [Я не знаю, какие порты нужно открыть для моего приложения](application-proxy-connectivity-ports-how-to.md)
+  * [Я не знаю, какие порты нужно открыть для моего приложения](application-proxy-add-on-premises-application.md)
   * [Возникла проблема из-за того, что в группе соединителей для моего приложения нет работающих соединителей](application-proxy-connectivity-no-working-connector.md)
 
 ## <a name="im-having-a-problem-configuring-the-azure-ad-application-proxy-in-the-admin-portal"></a>Возникла проблема при настройке прокси приложения Azure AD на портале администрирования
@@ -58,5 +58,5 @@ ms.locfileid: "74232323"
   Приведенные ниже документы помогут устранить некоторые из наиболее распространенных проблем в этой категории.
   * [Возникла проблема с установкой соединителя агента Application Proxy](application-proxy-connector-installation-problem.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 [Как обеспечить безопасный удаленный доступ к локальным приложениям](application-proxy.md)

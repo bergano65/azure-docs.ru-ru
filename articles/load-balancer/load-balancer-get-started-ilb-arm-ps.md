@@ -7,18 +7,18 @@ documentationcenter: na
 author: asudbring
 ms.service: load-balancer
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.custom: seodec18
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/25/2017
+ms.date: 07/02/2020
 ms.author: allensu
-ms.openlocfilehash: 485afaa4b7009731784cf5da6f8c28e0a787c1d9
-ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
+ms.openlocfilehash: dcf54e5a9bee5f7dc6cba9e3cb178027f53ed5fb
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82629428"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85961291"
 ---
 # <a name="create-an-internal-load-balancer-by-using-the-azure-powershell-module"></a>Создание внутренней подсистемы балансировки нагрузки с помощью модуля Azure PowerShell
 
@@ -141,7 +141,8 @@ $beaddresspool= New-AzLoadBalancerBackendAddressPoolConfig -Name "LB-backend"
 * Правило NAT для входящего трафика для протокола удаленного рабочего стола (RDP): перенаправляет весь входящий трафик порта 3441 через порт 3389.
 * Второе правило NAT для входящего трафика для RDP: перенаправляет весь входящий трафик порта 3442 через порт 3389.
 * Правило проверки работоспособности: проверяется состояние работоспособности пути HealthProbe.aspx.
-* Правило подсистемы балансировки нагрузки: весь трафик, поступающий на общедоступный порт 80, будет направляться на локальный порт 80 в серверном пуле адресов.
+* Правило подсистемы балансировки нагрузки: Балансировка нагрузки всего входящего трафика на общедоступном порте 80 на локальный порт 80 в серверном пуле адресов.
+* [Правило подсистемы балансировки нагрузки портов с высоким уровнем доступности](load-balancer-ha-ports-overview.md) для балансировки нагрузки всего входящего трафика на все порты, чтобы упростить сценарии высокой доступности для стандартных ilB.
 
 ```azurepowershell-interactive
 $inboundNATRule1= New-AzLoadBalancerInboundNatRuleConfig -Name "RDP1" -FrontendIpConfiguration $frontendIP -Protocol TCP -FrontendPort 3441 -BackendPort 3389
@@ -151,6 +152,8 @@ $inboundNATRule2= New-AzLoadBalancerInboundNatRuleConfig -Name "RDP2" -FrontendI
 $healthProbe = New-AzLoadBalancerProbeConfig -Name "HealthProbe" -RequestPath "HealthProbe.aspx" -Protocol http -Port 80 -IntervalInSeconds 15 -ProbeCount 2
 
 $lbrule = New-AzLoadBalancerRuleConfig -Name "HTTP" -FrontendIpConfiguration $frontendIP -BackendAddressPool $beAddressPool -Probe $healthProbe -Protocol Tcp -FrontendPort 80 -BackendPort 80
+
+$haportslbrule = New-AzLoadBalancerRuleConfig -Name "HAPortsRule" -FrontendIpConfiguration $frontendIP -BackendAddressPool $beAddressPool -Probe $healthProbe -Protocol "All" -FrontendPort 0 -BackendPort 0
 ```
 
 ### <a name="step-2-create-the-load-balancer"></a>Шаг 2. Создание подсистемы балансировки нагрузки
@@ -158,8 +161,10 @@ $lbrule = New-AzLoadBalancerRuleConfig -Name "HTTP" -FrontendIpConfiguration $fr
 Создайте подсистему балансировки нагрузки и объедините объекты правил (правила NAT для входящего трафика для удаленного рабочего стола, подсистемы балансировки нагрузки и проверки работоспособности):
 
 ```azurepowershell-interactive
-$NRPLB = New-AzLoadBalancer -ResourceGroupName "NRP-RG" -Name "NRP-LB" -Location "West US" -FrontendIpConfiguration $frontendIP -InboundNatRule $inboundNATRule1,$inboundNatRule2 -LoadBalancingRule $lbrule -BackendAddressPool $beAddressPool -Probe $healthProbe
+$NRPLB = New-AzLoadBalancer -ResourceGroupName "NRP-RG" -Name "NRP-LB" -SKU Standard -Location "West US" -FrontendIpConfiguration $frontendIP -InboundNatRule $inboundNATRule1,$inboundNatRule2 -LoadBalancingRule $lbrule -BackendAddressPool $beAddressPool -Probe $healthProbe
 ```
+
+Для создания Load Balancer уровня "Базовый" используйте `-SKU Basic`. Для производственных рабочих нагрузок компания Майкрософт рекомендует использовать цен. категорию "Стандартный".
 
 ## <a name="create-the-network-interfaces"></a>Создание сетевых интерфейсов
 
@@ -191,53 +196,55 @@ $backendnic2= New-AzNetworkInterface -ResourceGroupName "NRP-RG" -Name lb-nic2-b
 
 Проверьте конфигурацию:
 
-    $backendnic1
+```azurepowershell-interactive
+$backendnic1
+```
 
 Параметры должны выглядеть так:
 
-    Name                 : lb-nic1-be
-    ResourceGroupName    : NRP-RG
-    Location             : westus
-    Id                   : /subscriptions/[Id]/resourceGroups/NRP-RG/providers/Microsoft.Network/networkInterfaces/lb-nic1-be
-    Etag                 : W/"d448256a-e1df-413a-9103-a137e07276d1"
-    ProvisioningState    : Succeeded
-    Tags                 :
-    VirtualMachine       : null
-    IpConfigurations     : [
+```output
+Name                 : lb-nic1-be
+ResourceGroupName    : NRP-RG
+Location             : westus
+Id                   : /subscriptions/[Id]/resourceGroups/NRP-RG/providers/Microsoft.Network/networkInterfaces/lb-nic1-be
+Etag                 : W/"d448256a-e1df-413a-9103-a137e07276d1"
+ProvisioningState    : Succeeded
+Tags                 :
+VirtualMachine       : null
+IpConfigurations     : [
+                     {
+                       "PrivateIpAddress": "10.0.2.6",
+                       "PrivateIpAllocationMethod": "Static",
+                       "Subnet": {
+                         "Id": "/subscriptions/[Id]/resourceGroups/NRP-RG/providers/Microsoft.Network/virtualNetworks/NRPVNet/subnets/LB-Subnet-BE"
+                       },
+                       "PublicIpAddress": {
+                         "Id": null
+                       },
+                       "LoadBalancerBackendAddressPools": [
                          {
-                           "PrivateIpAddress": "10.0.2.6",
-                           "PrivateIpAllocationMethod": "Static",
-                           "Subnet": {
-                             "Id": "/subscriptions/[Id]/resourceGroups/NRP-RG/providers/Microsoft.Network/virtualNetworks/NRPVNet/subnets/LB-Subnet-BE"
-                           },
-                           "PublicIpAddress": {
-                             "Id": null
-                           },
-                           "LoadBalancerBackendAddressPools": [
-                             {
-                               "Id": "/subscriptions/[Id]/resourceGroups/NRP-RG/providers/Microsoft.Network/loadBalancers/NRPlb/backendAddressPools/LB-backend"
-                             }
-                           ],
-                           "LoadBalancerInboundNatRules": [
-                             {
-                               "Id": "/subscriptions/[Id]/resourceGroups/NRP-RG/providers/Microsoft.Network/loadBalancers/NRPlb/inboundNatRules/RDP1"
-                             }
-                           ],
-                           "ProvisioningState": "Succeeded",
-                           "Name": "ipconfig1",
-                           "Etag": "W/\"d448256a-e1df-413a-9103-a137e07276d1\"",
-                           "Id": "/subscriptions/[Id]/resourceGroups/NRP-RG/providers/Microsoft.Network/networkInterfaces/lb-nic1-be/ipConfigurations/ipconfig1"
+                           "Id": "/subscriptions/[Id]/resourceGroups/NRP-RG/providers/Microsoft.Network/loadBalancers/NRPlb/backendAddressPools/LB-backend"
                          }
-                       ]
-    DnsSettings          : {
-                         "DnsServers": [],
-                         "AppliedDnsServers": []
-                       }
-    AppliedDnsSettings   :
-    NetworkSecurityGroup : null
-    Primary              : False
-
-
+                       ],
+                       "LoadBalancerInboundNatRules": [
+                         {
+                           "Id": "/subscriptions/[Id]/resourceGroups/NRP-RG/providers/Microsoft.Network/loadBalancers/NRPlb/inboundNatRules/RDP1"
+                         }
+                       ],
+                       "ProvisioningState": "Succeeded",
+                       "Name": "ipconfig1",
+                       "Etag": "W/\"d448256a-e1df-413a-9103-a137e07276d1\"",
+                       "Id": "/subscriptions/[Id]/resourceGroups/NRP-RG/providers/Microsoft.Network/networkInterfaces/lb-nic1-be/ipConfigurations/ipconfig1"
+                     }
+                   ]
+DnsSettings          : {
+                     "DnsServers": [],
+                     "AppliedDnsServers": []
+                   }
+AppliedDnsSettings   :
+NetworkSecurityGroup : null
+Primary              : False
+```
 
 ### <a name="step-3-assign-the-nic-to-a-vm"></a>Шаг 3. Назначение сетевого адаптера виртуальной машине
 
@@ -328,7 +335,7 @@ Remove-AzLoadBalancer -Name NRP-LB -ResourceGroupName NRP-RG
 > [!NOTE]
 > Используйте дополнительный параметр **-Force**, чтобы избежать запроса подтверждения удаления.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Настройка режима распределения для подсистемы балансировки нагрузки](load-balancer-distribution-mode.md)
 * [Настройка параметров времени ожидания простоя TCP для подсистемы балансировки нагрузки](load-balancer-tcp-idle-timeout.md)

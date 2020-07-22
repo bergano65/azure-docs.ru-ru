@@ -10,10 +10,9 @@ ms.topic: troubleshooting
 ms.workload: big-data
 ms.date: 10/11/2019
 ms.openlocfilehash: f909419810cbd837e57b19a13b2df6ae9ad2ee97
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79213586"
 ---
 # <a name="azure-data-lake-analytics-is-upgrading-to-the-net-framework-v472"></a>Azure Data Lake Analytics выполняется обновление до .NET Framework v 4.7.2
@@ -47,7 +46,7 @@ ms.locfileid: "79213586"
 
 В большинстве случаев не следует повлиять на обратную несовместимость.
 
-## <a name="timeline"></a>Временная шкала
+## <a name="timeline"></a>Сроки
 
 Вы можете проверить развертывание новой среды выполнения в статье [Устранение неполадок среды выполнения](runtime-troubleshoot.md), а также просмотреть все предыдущие выполненные задания.
 
@@ -65,13 +64,13 @@ ms.locfileid: "79213586"
   - Предлагаемое действие: Убедитесь, что TaskFactory. FromAsync правильно возвращает значение true
 
 - DataObject.GetData теперь получает данные в кодировке UTF-8
-  - Для приложений, предназначенных для NET Framework 4, а также для выполняющихся в .NET Framework 4.5.1 или более ранних версиях, DataObject.GetData получает HTML-данные в виде строки ASCII. В результате символы, не входящие в набор ASCII (символы, коды ASCII которых больше 0x7F), представляются двумя случайными символами. #N # #N # для приложений, предназначенных для .NET Framework 4,5 или более поздней версии и `DataObject.GetData` выполняемых на .NET Framework 4.5.2, Извлекает HTML-данные в кодировке UTF-8, которая представляет символы более 0x7f.
+  - Для приложений, предназначенных для NET Framework 4, а также для выполняющихся в .NET Framework 4.5.1 или более ранних версиях, DataObject.GetData получает HTML-данные в виде строки ASCII. В результате символы, не входящие в набор ASCII (символы, коды ASCII которых больше 0x7F), представляются двумя случайными символами. #N # #N # для приложений, предназначенных для .NET Framework 4,5 или более поздней версии и выполняемых на .NET Framework 4.5.2, `DataObject.GetData` ИЗВЛЕКАЕТ HTML-данные в кодировке UTF-8, которая представляет символы более 0x7f.
   - Затронутые библиотеки: гло
   - Предлагаемое действие. Убедитесь, что извлекаемые данные имеют нужный формат.
 
 - XmlWriter вызывает недействительные суррогатные пары
   - Для приложений с целевой платформой .NET Framework 4.5.2 или предыдущих версий запись недействительной суррогатной пары с помощью обработки резервного исключения не всегда вызывает исключение. Для приложений с целевой платформой .NET Framework 4.6 попытка записи недействительной суррогатной пары вызывает исключение `ArgumentException`.
-  - Затронутые библиотеки: System. XML, System. XML. блокировки
+  - Затронутые библиотеки: System.Xml, System.Xml. Блокировки
   - Предлагаемое действие: Убедитесь, что вы не пишете недопустимую суррогатную пару, которая приведет к исключению аргумента
 
 - HtmlTextWriter неправильно отображает элемент `<br/>`
@@ -85,7 +84,7 @@ ms.locfileid: "79213586"
   - Предлагаемое действие: Убедитесь, что вы обрабатываете новое ожидаемое поведение при наличии политики авторизации, имеющей значение null.
   
 - RSACng теперь правильно загружает ключи RSA нестандартного размера
-  - В версиях .NET Framework до 4.6.2 клиенты с нестандартным размером ключа для сертификатов RSA не могли получить доступ к этим ключам через методы расширения `GetRSAPublicKey()` и `GetRSAPrivateKey()`. Исключение `CryptographicException` с сообщением "запрошенный размер ключа не поддерживается". С .NET Framework 4.6.2 Эта проблема исправлена. Аналогично `RSA.ImportParameters()` , `RSACng.ImportParameters()` и теперь работать с нестандартными размерами ключей `CryptographicException`без вызова.
+  - В версиях .NET Framework до 4.6.2 клиенты с нестандартным размером ключа для сертификатов RSA не могли получить доступ к этим ключам через методы расширения `GetRSAPublicKey()` и `GetRSAPrivateKey()`. `CryptographicException`Исключение с сообщением "запрошенный размер ключа не поддерживается". С .NET Framework 4.6.2 Эта проблема исправлена. Аналогично, `RSA.ImportParameters()` и `RSACng.ImportParameters()` теперь работать с нестандартными размерами ключей без вызова `CryptographicException` .
   - Затронутые библиотеки: mscorlib, System. Core
   - Предлагаемое действие: Убедитесь, что ключи RSA работают должным образом.
 
@@ -95,11 +94,11 @@ ms.locfileid: "79213586"
   - Предлагаемое действие:
 
 - Вызовы к конструкторам ClaimsIdentity
-  - Начиная с .NET Framework 4.6.2 конструкторы `T:System.Security.Claims.ClaimsIdentity` с параметром `T:System.Security.Principal.IIdentity` иначе задают свойство `P:System.Security.Claims.ClaimsIdentify.Actor`. Если аргумент `T:System.Security.Principal.IIdentity` является объектом `T:System.Security.Claims.ClaimsIdentity`, а свойство `P:System.Security.Claims.ClaimsIdentify.Actor` этого объекта `T:System.Security.Claims.ClaimsIdentity` не равно `null`, свойство `P:System.Security.Claims.ClaimsIdentify.Actor` присоединяется с помощью метода `M:System.Security.Claims.ClaimsIdentity.Clone`. В 4.6.1 Framework и более ранних версиях `P:System.Security.Claims.ClaimsIdentify.Actor` свойство прикрепляется как существующая ссылка. Из- `P:System.Security.Claims.ClaimsIdentify.Actor` за этого изменения, начиная с .NET Framework 4.6.2, свойство нового `T:System.Security.Claims.ClaimsIdentity` объекта не равно `P:System.Security.Claims.ClaimsIdentify.Actor` свойству `T:System.Security.Principal.IIdentity` аргумента конструктора. В .NET Framework 4.6.1 и более ранних версиях они равны.
+  - Начиная с .NET Framework 4.6.2 конструкторы `T:System.Security.Claims.ClaimsIdentity` с параметром `T:System.Security.Principal.IIdentity` иначе задают свойство `P:System.Security.Claims.ClaimsIdentify.Actor`. Если аргумент `T:System.Security.Principal.IIdentity` является объектом `T:System.Security.Claims.ClaimsIdentity`, а свойство `P:System.Security.Claims.ClaimsIdentify.Actor` этого объекта `T:System.Security.Claims.ClaimsIdentity` не равно `null`, свойство `P:System.Security.Claims.ClaimsIdentify.Actor` присоединяется с помощью метода `M:System.Security.Claims.ClaimsIdentity.Clone`. В 4.6.1 Framework и более ранних версиях `P:System.Security.Claims.ClaimsIdentify.Actor` свойство прикрепляется как существующая ссылка. Из-за этого изменения, начиная с .NET Framework 4.6.2, `P:System.Security.Claims.ClaimsIdentify.Actor` свойство нового `T:System.Security.Claims.ClaimsIdentity` объекта не равно `P:System.Security.Claims.ClaimsIdentify.Actor` свойству `T:System.Security.Principal.IIdentity` аргумента конструктора. В .NET Framework 4.6.1 и более ранних версиях они равны.
   - Затронутые библиотеки: mscorlib
   - Предлагаемое действие: Убедитесь, что ClaimsIdentity работает должным образом в новой среде выполнения
 
 - Сериализация управляющих символов с помощью DataContractJsonSerializer теперь совместима с ECMAScript версии 6 и 8
   - В .NET Framework 4.6.2 и более ранних версиях DataContractJsonSerializer не выполнял сериализацию некоторых специальных управляющих символов, таких как \b, \f и \t, так, как это было совместимо с стандартами ECMAScript версии 6 и V8. Начиная с .NET Framework 4.7 сериализация таких управляющих символов совместима с ECMAScript версий 6 и 8.
-  - Затронутые библиотеки: System. Runtime. Serialization. JSON
+  - Затронутые библиотеки: System.Runtime.Serialization.Jsна
   - Предлагаемое действие: обеспечить то же поведение с DataContractJsonSerializer

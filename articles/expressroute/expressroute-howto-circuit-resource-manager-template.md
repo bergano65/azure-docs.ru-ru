@@ -4,15 +4,14 @@ description: Создание, инициализация, удаление и �
 services: expressroute
 author: charwen
 ms.service: expressroute
-ms.topic: article
+ms.topic: how-to
 ms.date: 11/13/2019
 ms.author: charwen
-ms.openlocfilehash: ac2fb2f884feb0fbe6fbb1731ebe7c8bdad5114b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 336337c0860ba19095665310d2c797cf10ba183f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80616501"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84736311"
 ---
 # <a name="create-an-expressroute-circuit-by-using-azure-resource-manager-template"></a>Создание канала ExpressRoute с помощью шаблона Azure Resource Manager
 
@@ -27,7 +26,7 @@ ms.locfileid: "80616501"
 
 Узнайте, как создать канал ExpressRoute путем развертывания шаблона Azure Resource Manager с помощью Azure PowerShell. Дополнительные сведения о разработке шаблонов Resource Manager см. в разделе [Документация по Azure Resource Manager](/azure/azure-resource-manager/) и в [справочнике по шаблонам](/azure/templates/microsoft.network/expressroutecircuits).
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 * Изучите [предварительные требования](expressroute-prerequisites.md) и [рабочие процессы](expressroute-workflows.md), прежде чем приступить к настройке.
 * Убедитесь в том, что у вас есть разрешения на создание сетевых ресурсов. Если у вас нет нужных разрешений, обратитесь к администратору учетной записи.

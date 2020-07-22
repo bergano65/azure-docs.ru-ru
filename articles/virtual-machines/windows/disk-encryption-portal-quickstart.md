@@ -7,16 +7,16 @@ ms.service: virtual-machines-windows
 ms.subservice: security
 ms.topic: quickstart
 ms.date: 10/02/2019
-ms.openlocfilehash: 2d1600a688af09515b069a3161d724bb8882596a
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
+ms.openlocfilehash: 1327a2c621eca1cfadcf776ecd62f0899651f0bc
+ms.sourcegitcommit: 374d1533ea2f2d9d3f8b6e6a8e65c6a5cd4aea47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82791176"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85807933"
 ---
 # <a name="quickstart-create-and-encrypt-a-windows-virtual-machine-with-the-azure-portal"></a>Краткое руководство. Создание и шифрование виртуальной машины Windows на портале Azure
 
-Виртуальные машины Azure можно создать на портале Azure. Портал Azure — это пользовательский интерфейс на основе веб-браузера, который позволяет создавать виртуальные машины и связанные с ними ресурсы. В этом кратком руководстве вы будете использовать портал Azure для развертывания виртуальной машины Windows под управлением Ubuntu 18.04 LTS, создания хранилища ключей для хранения ключей шифрования, а также для шифрования этой виртуальной машины.
+Виртуальные машины Azure можно создать на портале Azure. Портал Azure — это пользовательский интерфейс на основе веб-браузера, который позволяет создавать виртуальные машины и связанные с ними ресурсы. В этом кратком руководстве показано, как с помощью портала Azure развернуть виртуальную машину Windows, создать хранилище ключей для хранения ключей шифрования, а также зашифровать эту виртуальную машину.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 

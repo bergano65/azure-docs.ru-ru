@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 05/15/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 066e32d5ab21f88b170498173606043c54fec586
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 1aa8708701af37834ae3b6cdc42de9c691ccacec
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79265861"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86084296"
 ---
 # <a name="copy-data-to-or-from-oracle-on-premises-by-using-azure-data-factory"></a>Копирование данных в локальную базу данных Oracle и обратно с помощью Фабрики данных Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "79265861"
 
 [!INCLUDE [data-factory-supported-sources](../../../includes/data-factory-supported-sources.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Фабрика данных поддерживает подключение к локальным источникам Oracle с помощью шлюза управления данными. Дополнительные сведения о шлюзе управления данными см. в [этой](data-factory-data-management-gateway.md) статье. Пошаговые инструкции по настройке шлюза для перемещения данных с помощью конвейера см. в статье, посвященной [перемещению данных между локальными источниками и облаком](data-factory-move-data-between-onprem-and-cloud.md).
 
@@ -99,7 +99,7 @@ ms.locfileid: "79265861"
 
 В приведенной ниже таблице описываются элементы JSON, которые относятся к связанной службе Oracle.
 
-| Свойство | Описание | Обязательный |
+| Свойство. | Описание | Обязательно |
 | --- | --- | --- |
 | type |Для свойства **Type** необходимо задать значение **OnPremisesOracle**. |Да |
 | driverType | Укажите, какой драйвер следует использовать для копирования данных в базу данных Oracle и из нее. Допустимые значения: **Майкрософт** или **ODP** (по умолчанию). Дополнительные сведения о драйверах см. в разделе [Поддерживаемые версии и установка](#supported-versions-and-installation). | Нет |
@@ -150,7 +150,7 @@ ms.locfileid: "79265861"
 
 Раздел **typeProperties** отличается для каждого типа набора данных и предоставляет сведения о расположении данных в хранилище данных. Раздел **typeProperties** набора данных типа **OracleTable** имеет следующие свойства.
 
-| Свойство | Описание | Обязательный |
+| Свойство. | Описание: | Обязательное значение |
 | --- | --- | --- |
 | tableName |Имя таблицы в базе данных Oracle, на которое ссылается связанная служба. |Нет (если указан параметр **oracleReaderQuery** объекта **OracleSource**) |
 
@@ -169,7 +169,7 @@ ms.locfileid: "79265861"
 
 Если источник относится к типу **OracleSource**, в разделе **typeProperties** для действия копирования доступны следующие свойства:
 
-| Свойство | Описание | Допустимые значения | Обязательный |
+| Свойство. | Описание | Допустимые значения | Обязательно |
 | --- | --- | --- | --- |
 | oracleReaderQuery |Используйте пользовательский запрос для чтения данных. |Строка запроса SQL. Например, "select \* from **MyTable**". <br/><br/>Если не указано другое, выполняется инструкция SQL: "select \* from **MyTable**" |Нет<br />(если для свойства **tableName** задано значение **dataset**) |
 
@@ -177,9 +177,9 @@ ms.locfileid: "79265861"
 
 **OracleSink** поддерживает следующие свойства:
 
-| Свойство | Описание | Допустимые значения | Обязательный |
+| Свойство. | Описание | Допустимые значения | Обязательно |
 | --- | --- | --- | --- |
-| writeBatchTimeout |Время ожидания до выполнения операции пакетной вставки, пока не завершится срок ее действия. |**временной**<br/><br/> Пример: 00:30:00 (30 минут). |Нет |
+| writeBatchTimeout |Время ожидания до выполнения операции пакетной вставки, пока не завершится срок ее действия. |**Интервал времени**<br/><br/> Пример: 00:30:00 (30 минут). |Нет |
 | writeBatchSize |Вставляет данные в таблицу SQL, когда размер буфера достигает значения **writeBatchSize**. |Целое число (количество строк) |Нет (значение по умолчанию — 100) |
 | sqlWriterCleanupScript |Указывает запрос на выполнение действия копирования, позволяющий убедиться в том, что данные конкретного среза очищены. |Инструкция запроса. |Нет |
 | sliceIdentifierColumnName |Указывает имя столбца, в которое действие копирования добавляет автоматически созданный идентификатор среза. Значение для имени **sliceIdentifierColumnName** используется для очистки данных конкретного среза при повторном запуске. |Имя столбца с типом данных **binary(32)**. |Нет |
@@ -556,33 +556,39 @@ ms.locfileid: "79265861"
 
 **Сообщение об ошибке**
 
-    Copy activity met invalid parameters: 'UnknownParameterName', Detailed message: Unable to find the requested .NET Framework Data Provider. It may not be installed.
+```text
+Copy activity met invalid parameters: 'UnknownParameterName', Detailed message: Unable to find the requested .NET Framework Data Provider. It may not be installed.
+```
 
 **Возможные причины**
 
 * Поставщик данных .NET Framework для Oracle не был установлен.
 * Поставщик данных .NET Framework для Oracle был установлен в .NET Framework 2.0 и не найден в папках .NET Framework 4.0.
 
-**Разрешение**
+**Способы устранения:**
 
 * Если поставщик данных .NET для Oracle не установлен, [установите его](https://www.oracle.com/technetwork/topics/dotnet/downloads/) и повторите сценарий.
 * Если сообщение об ошибке появляется даже после установки поставщика, выполните следующие действия:
     1. Откройте файл конфигурации .NET 2.0 из папки: <системный диск\>:\Windows\Microsoft.NET\Framework64\v2.0.50727\CONFIG\machine.config.
-    2. Найдите **поставщика данных Oracle для .NET**, Вы сможете найти запись, как показано в следующем примере в разделе **System. Data** > **дбпровидерфакториес**:`<add name="Oracle Data Provider for .NET" invariant="Oracle.DataAccess.Client" description="Oracle Data Provider for .NET" type="Oracle.DataAccess.Client.OracleClientFactory, Oracle.DataAccess, Version=2.112.3.0, Culture=neutral, PublicKeyToken=89b483f429c47342" />`
-* Скопируйте эту запись в файл Machine. config в следующей папке .NET 4,0: <системный диск\>: \Windows\Microsoft.NET\Framework64\v4.0.30319\Config\machine.config. Затем измените версию на 4. xxx. x.x.
+    2. Найдите **поставщика данных Oracle для .NET**, Вы сможете найти запись, как показано в следующем примере в разделе **System. Data**  >  **дбпровидерфакториес**:`<add name="Oracle Data Provider for .NET" invariant="Oracle.DataAccess.Client" description="Oracle Data Provider for .NET" type="Oracle.DataAccess.Client.OracleClientFactory, Oracle.DataAccess, Version=2.112.3.0, Culture=neutral, PublicKeyToken=89b483f429c47342" />`
+* Скопируйте эту запись в файл machine.config в следующей папке .NET 4,0: <системного диска \>:\Windows\Microsoft.NET\Framework64\v4.0.30319\Config\machine.config. Затем измените версию на 4. xxx. x.x.
 * Установите файл <путь установки ODP.NET\>\11.2.0\client_1\odp.net\bin\4\Oracle.DataAccess.dll в глобальный кэш сборок (GAC), выполнив команду **gacutil /i [путь к поставщику]**.
 
 ### <a name="problem-2-datetime-formatting"></a>Проблема 2: формат даты и времени
 
 **Сообщение об ошибке**
 
-    Message=Operation failed in Oracle Database with the following error: 'ORA-01861: literal does not match format string'.,Source=,''Type=Oracle.DataAccess.Client.OracleException,Message=ORA-01861: literal does not match format string,Source=Oracle Data Provider for .NET,'.
+```text
+Message=Operation failed in Oracle Database with the following error: 'ORA-01861: literal does not match format string'.,Source=,''Type=Oracle.DataAccess.Client.OracleException,Message=ORA-01861: literal does not match format string,Source=Oracle Data Provider for .NET,'.
+```
 
-**Разрешение**
+**Способы устранения:**
 
 Необходимо настроить строку запроса в действии копирования в зависимости от того, как настроены даты в базе данных Oracle. Ниже приведен пример (с использованием функции **to_date**):
 
-    "oracleReaderQuery": "$$Text.Format('select * from MyTable where timestampcolumn >= to_date(\\'{0:MM-dd-yyyy HH:mm}\\',\\'MM/DD/YYYY HH24:MI\\') AND timestampcolumn < to_date(\\'{1:MM-dd-yyyy HH:mm}\\',\\'MM/DD/YYYY HH24:MI\\') ', WindowStart, WindowEnd)"
+```console   
+"oracleReaderQuery": "$$Text.Format('select * from MyTable where timestampcolumn >= to_date(\\'{0:MM-dd-yyyy HH:mm}\\',\\'MM/DD/YYYY HH24:MI\\') AND timestampcolumn < to_date(\\'{1:MM-dd-yyyy HH:mm}\\',\\'MM/DD/YYYY HH24:MI\\') ', WindowStart, WindowEnd)"
+```
 
 
 ## <a name="type-mapping-for-oracle"></a>Сопоставление типов для Oracle
@@ -600,9 +606,9 @@ ms.locfileid: "79265861"
 | BLOB |Byte[]<br/>(поддерживается только в Oracle 10g и более поздних версиях при использовании драйвера Майкрософт) |
 | CHAR |Строка |
 | CLOB |Строка |
-| DATE |DateTime |
+| DATE |Дата и время |
 | FLOAT |десятичное число, строка (если точность больше 28) |
-| INTEGER |десятичное число, строка (если точность больше 28) |
+| ЦЕЛОЕ ЧИСЛО |десятичное число, строка (если точность больше 28) |
 | INTERVAL YEAR TO MONTH |Int32 |
 | INTERVAL DAY TO SECOND |TimeSpan |
 | LONG |Строка |
@@ -613,10 +619,10 @@ ms.locfileid: "79265861"
 | NVARCHAR2 |Строка |
 | RAW |Byte[] |
 | ROWID |Строка |
-| timestamp |DateTime |
-| TIMESTAMP WITH LOCAL TIME ZONE |DateTime |
-| TIMESTAMP WITH TIME ZONE |DateTime |
-| UNSIGNED INTEGER |Число |
+| timestamp |Дата и время |
+| TIMESTAMP WITH LOCAL TIME ZONE |Дата и время |
+| TIMESTAMP WITH TIME ZONE |Дата и время |
+| UNSIGNED INTEGER |number |
 | VARCHAR2 |Строка |
 | XML |Строка |
 

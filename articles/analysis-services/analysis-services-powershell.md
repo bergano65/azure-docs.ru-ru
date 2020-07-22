@@ -1,24 +1,23 @@
 ---
 title: Управление службами Azure Analysis Services с помощью PowerShell | Документация Майкрософт
-description: Описание Azure Analysis Services командлетов PowerShell для распространенных административных задач, таких как создание серверов, приостановка операций или изменение уровня обслуживания.
+description: Описание командлетов PowerShell для Azure Analysis Services, используемых для распространенных административных задач, таких как создание серверов, приостановка операций или изменение уровня обслуживания.
 author: minewiskan
 ms.service: azure-analysis-services
-ms.topic: reference
-ms.date: 10/28/2019
+ms.topic: conceptual
+ms.date: 05/19/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 2c8f4c0541d97a189087af692658cfe794eaaf7e
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
-ms.translationtype: MT
+ms.openlocfilehash: dfa9de94665c0ee98d0252be6de807f18e39b087
+ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "73572694"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83697972"
 ---
 # <a name="manage-azure-analysis-services-with-powershell"></a>Управление службами Azure Analysis Services с помощью PowerShell
 
 В этой статье описаны командлеты PowerShell, используемые для выполнения задач управления базами данных и сервером служб Azure Analysis Services. 
 
-Задачи управления ресурсами сервера, такие как создание или удаление сервера, приостановка или возобновление операций сервера или изменение уровня обслуживания (уровня), используют Azure Analysis Services командлетов. Для выполнения других задач управления базами данных, таких как добавление или удаление участников роли, обработка или секционирование, используются командлеты, включенные в том же модуле SqlServer, что и в службах SQL Server Analysis Services.
+Для выполнения таких задач управления ресурсами сервера, как создание или удаление сервера, приостановка или возобновление работы сервера или изменение уровня обслуживания (уровня служб), используются командлеты Azure Analysis Services. Для выполнения других задач управления базами данных, таких как добавление или удаление участников роли, обработка или секционирование, используются командлеты, включенные в том же модуле SqlServer, что и в службах SQL Server Analysis Services.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -26,12 +25,12 @@ ms.locfileid: "73572694"
 
 Для большинства задач PowerShell требуется, чтобы у пользователя были привилегии администратора на сервере служб Analysis Services, которым он управляет. Запланированные задачи PowerShell являются автоматическими операциями. У учетной записи или субъекта-службы, запускающих планировщик, должны быть права администратора на сервере служб Analysis Services. 
 
-Для операций сервера, использующих командлеты Azure PowerShell, ваша учетная запись или планировщик учетной записи также должен принадлежать роли владельца для ресурса в [контроле доступа на основе ролей Azure (RBAC)](../role-based-access-control/overview.md). 
+Для выполнения операций с сервером с использованием командлетов Azure PowerShell учетная запись или планировщик учетной записи должны также принадлежать к роли владельца для данного ресурса (указывается в настройках [управления доступом на основе ролей (RBAC) в Azure](../role-based-access-control/overview.md)). 
 
 ## <a name="resource-and-server-operations"></a>Операции с ресурсами и серверами 
 
-Установка модуля — [AZ. AnalysisServices](https://www.powershellgallery.com/packages/Az.AnalysisServices)   
-Документация — [AZ. AnalysisServices Reference](/powershell/module/az.analysisservices)
+Установка модуля: [Az.AnalysisServices](https://www.powershellgallery.com/packages/Az.AnalysisServices)   
+Документация: [справочные материалы по Az.AnalysisServices](/powershell/module/az.analysisservices)
 
 ## <a name="database-operations"></a>Операции с базой данных
 
@@ -39,8 +38,8 @@ ms.locfileid: "73572694"
 
 Модуль SqlServer предоставляет командлеты для конкретных задач управления базой данных, а также командлет общего назначения Invoke-ASCmd, который принимает запрос TMSL или сценарий. Для служб Azure Analysis Services поддерживаются следующие командлеты из модуля SqlServer.
 
-Установка модуля — [SQLServer](https://www.powershellgallery.com/packages/SqlServer)   
-Документация — [Справочник по SQLServer](/powershell/module/sqlserver)
+Установка модуля: [SqlServer](https://www.powershellgallery.com/packages/SqlServer)   
+Документация: [справочные материалы по SqlServer](/powershell/module/sqlserver)
 
 ### <a name="supported-cmdlets"></a>Поддерживаемые командлеты
 
@@ -60,7 +59,7 @@ ms.locfileid: "73572694"
 ## <a name="related-information"></a>Дополнительные сведения
 
 * [SQL Server PowerShell](https://docs.microsoft.com/sql/powershell/sql-server-powershell)      
-* [Скачайте модуль PowerShell для SQL Server](https://docs.microsoft.com/sql/ssms/download-sql-server-ps-module)   
-* [Скачать SSMS](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms)   
+* [Скачивание модуля PowerShell SQL Server](https://docs.microsoft.com/sql/ssms/download-sql-server-ps-module)   
+* [Скачивание SSMS](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms)   
 * [Модуль SqlServer в коллекции PowerShell](https://www.powershellgallery.com/packages/SqlServer)    
 * [Программирование табличных моделей с уровнем совместимости 1200 и выше](https://docs.microsoft.com/analysis-services/tabular-model-programming-compatibility-level-1200/tabular-model-programming-for-compatibility-level-1200)

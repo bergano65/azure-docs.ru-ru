@@ -5,12 +5,12 @@ ms.topic: tutorial
 ms.date: 07/22/2019
 ms.author: dekapur
 ms.custom: mvc
-ms.openlocfilehash: eeb279892f987ed1f26ced97ab267e8140ccb20e
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 6a3a5211864c4cbadc03bbc77bfef2204f6c2ccf
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75614066"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86244809"
 ---
 # <a name="tutorial-monitor-windows-containers-on-service-fabric-using-azure-monitor-logs"></a>Руководство по Мониторинг контейнеров Windows в Service Fabric с помощью журналов Azure Monitor
 
@@ -37,7 +37,7 @@ ms.locfileid: "75614066"
 В случае, если вы использовали [шаблон](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/5-VM-Windows-OMS-UnSecure), предоставленный в первой части этого руководства, он должен содержать указанные ниже дополнения к универсальному шаблону Azure Resource Manager для Service Fabric. В случае, если вы использовали собственный кластер, для которого необходимо настроить мониторинг контейнеров с помощью журналов Azure Monitor, сделайте следующее.
 
 * Внесите приведенные ниже изменения в шаблон Resource Manager.
-* [Разверните этот шаблон](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-creation-via-arm) с помощью PowerShell, чтобы обновить кластер. Azure Resource Manager определит, что ресурс уже существует, поэтому обновит его.
+* [Разверните этот шаблон](./service-fabric-cluster-creation-via-arm.md) с помощью PowerShell, чтобы обновить кластер. Azure Resource Manager определит, что ресурс уже существует, поэтому обновит его.
 
 ### <a name="adding-azure-monitor-logs-to-your-cluster-template"></a>Добавление журналов Azure Monitor в шаблон кластера
 
@@ -233,6 +233,6 @@ ms.locfileid: "75614066"
 Теперь, когда вы настроили мониторинг для контейнерного приложения, попробуйте выполнить следующее.
 
 * Настройте журналы Azure Monitor для кластера Linux, выполнив действия, аналогичные приведенным выше. Используйте в качестве образца [этот шаблон](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/5-VM-Ubuntu-1-NodeType-Secure-OMS), чтобы внести изменения в шаблон Resource Manager.
-* В журналах Azure Monitor настройте [автоматические оповещения](../log-analytics/log-analytics-alerts.md), которые помогут выполнять обнаружение и диагностику.
+* В журналах Azure Monitor настройте [автоматические оповещения](../azure-monitor/platform/alerts-overview.md), которые помогут выполнять обнаружение и диагностику.
 * Просмотрите список [рекомендуемых счетчиков производительности](service-fabric-diagnostics-event-generation-perf.md) Service Fabric, которые можно настроить для кластеров.
-* Ознакомьтесь с функциями [поиска по журналам и запросов к журналам](../log-analytics/log-analytics-log-searches.md), которые являются частью журналов Azure Monitor.
+* Ознакомьтесь с функциями [поиска по журналам и запросов к журналам](../azure-monitor/log-query/log-query-overview.md), которые являются частью журналов Azure Monitor.

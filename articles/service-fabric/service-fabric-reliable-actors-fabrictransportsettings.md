@@ -5,25 +5,24 @@ author: suchiagicha
 ms.topic: conceptual
 ms.date: 04/20/2017
 ms.author: pepogors
-ms.openlocfilehash: 182b35194a647f5de706f9ada07b8e9db51bb4c2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d5f6d3502662d48cf6ff750c9a695fadfeac97c2
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75645588"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86256240"
 ---
 # <a name="configure-fabrictransport-settings-for-reliable-actors"></a>Настройка параметров FabricTransport для Reliable Actors
 
 Ниже приведены параметры, которые можно настраивать.
-- C#: [FabricTransportRemotingSettings](
-https://docs.microsoft.com/java/api/microsoft.servicefabric.services.remoting.fabrictransport.fabrictransportremotingsettings)
-- Java: [FabricTransportRemotingSettings](https://docs.microsoft.com/java/api/microsoft.servicefabric.services.remoting.fabrictransport.fabrictransportremotingsettings).
+- C#: [FabricTransportRemotingSettings](/java/api/microsoft.servicefabric.services.remoting.fabrictransport.fabrictransportremotingsettings)
+- Java: [FabricTransportRemotingSettings](/java/api/microsoft.servicefabric.services.remoting.fabrictransport.fabrictransportremotingsettings).
 
 Конфигурацию FabricTransport по умолчанию можно изменить одним из следующих способов.
 
 ## <a name="assembly-attribute"></a>Атрибут сборки
 
-Атрибут [FabricTransportActorRemotingProvider](https://docs.microsoft.com/dotnet/api/microsoft.servicefabric.actors.remoting.fabrictransport.fabrictransportactorremotingproviderattribute?redirectedfrom=MSDN) необходимо применить в клиенте субъекта и в сборках службы субъектов.
+Атрибут [FabricTransportActorRemotingProvider](/dotnet/api/microsoft.servicefabric.actors.remoting.fabrictransport.fabrictransportactorremotingproviderattribute) необходимо применить в клиенте субъекта и в сборках службы субъектов.
 
 В следующем примере показано, как изменить значение по умолчанию параметра OperationTimeout в конфигурации FabricTransport.
 

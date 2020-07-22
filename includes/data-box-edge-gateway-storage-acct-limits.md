@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 01/30/2019
 ms.author: alkohli
 ms.openlocfilehash: a3928ac4caca5247dcacc639698a7a7bb49826a1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75468490"
 ---
 Ниже приведены ограничения для размера данных, копируемых в учетную запись хранения. Убедитесь, что отправляемые данные соответствуют этим ограничениям. Самые последние сведения об этих ограничениях см. в разделе [целевые показатели масштабируемости и производительности для хранилища BLOB-объектов](../articles/storage/blobs/scalability-targets.md) и [целевые показатели масштабируемости и производительности файлов Azure](../articles/storage/files/storage-files-scale-targets.md).

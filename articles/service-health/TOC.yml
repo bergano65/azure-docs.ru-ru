@@ -7,7 +7,12 @@
 - name: Краткие руководства
   items:
     - name: Настройка оповещений о событиях работоспособности служб
-      href: ../azure-monitor/platform/alerts-activity-log-service-notifications.md
+      items:
+        - name: Портал Azure
+          href: alerts-activity-log-service-notifications-portal.md
+        - name: Шаблон ARM
+          displayName: Resource Manager
+          href: alerts-activity-log-service-notifications-arm.md
 - name: Основные понятия
   items:
     - name: Страница состояния Azure
@@ -30,9 +35,9 @@
       href: service-health-alert-webhook-pagerduty.md
     - name: Отправка оповещений в OpsGenie
       href: service-health-alert-webhook-opsgenie.md
-    - name: Получение событий работоспособности с помощью REST
-      href: service-health-rest.md
-    - name: Настройка оповещений о событиях работоспособности ресурсов
+    - name: Настройка оповещений о работоспособности ресурсов на портале Azure
+      href: resource-health-alert-monitor-guide.md
+    - name: Настройка оповещений о работоспособности ресурсов с помощью шаблонов Resource Manager
       href: resource-health-alert-arm-template-guide.md
 - name: Справочник
   items:

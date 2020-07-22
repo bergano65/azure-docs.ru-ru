@@ -9,17 +9,16 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 602dca105e91c55c591388a833a36e71f951da8b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77014272"
 ---
 # <a name="shrink-a-cloudsimple-private-cloud"></a>Сжатие Клаудсимпле частного облака
 
 Клаудсимпле обеспечивает гибкость динамического сжатия частного облака.  Частное облако состоит из одного или нескольких кластеров vSphere. Каждый кластер может иметь от 3 до 16 узлов. При сжатии частного облака вы удаляете узел из существующего кластера или удаляете весь кластер. 
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 Для сжатия частного облака должны выполняться следующие условия.  Кластер управления (Первый кластер), созданный при создании частного облака, не может быть удален.
 
@@ -60,7 +59,7 @@ ms.locfileid: "77014272"
 > 2. При возникновении любого нарушения правила DRS узел не удаляется из кластера, а описание задачи показывает, что удаление узла приведет к нарушению правил DRS в кластере.    
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Использование виртуальных машин VMware в Azure](quickstart-create-vmware-virtual-machine.md)
-* Дополнительные сведения о [частных облаках](cloudsimple-private-cloud.md)
+* Узнайте больше о [частных облаках](cloudsimple-private-cloud.md)

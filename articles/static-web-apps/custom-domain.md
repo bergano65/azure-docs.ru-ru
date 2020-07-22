@@ -7,12 +7,11 @@ ms.service: static-web-apps
 ms.topic: conceptual
 ms.date: 05/08/2020
 ms.author: buhollan
-ms.openlocfilehash: 10d3e3674aef901ad35dfb6d0b9fd13715aace55
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
-ms.translationtype: HT
+ms.openlocfilehash: 8e832f57053cb950f705875f2895a9197cc7c83e
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83594943"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85960305"
 ---
 # <a name="setup-a-custom-domain-in-azure-static-web-apps-preview"></a>Настройка личного домена в предварительной версии Статических веб-приложений Azure
 
@@ -29,11 +28,11 @@ ms.locfileid: "83594943"
 
 Существует несколько различных типов конфигураций DNS, доступных для приложения.
 
-| Если требуется                            | То                                                |
-| ----------------------------------------- | --------------------------------------------------- |
-| Включена поддержка `www.example.com`.                 | [Сопоставьте запись CNAME](#map-a-cname-record).           |
-| Включена поддержка `example.com`.                     | [Настройте корневой домен](#configure-a-root-domain) |
-| Направить все поддомены по адресу `www.example.com` | [Сопоставьте подстановочный знак](#map-a-wildcard-domain)                   |
+| Если требуется                                 | То                                                |
+| -----------------------------------------------| --------------------------------------------------- |
+| Поддержка `www.example.com` или`blog.example.net`| [Сопоставьте запись CNAME](#map-a-cname-record).           |
+| Включена поддержка `example.com`.                          | [Настройте корневой домен](#configure-a-root-domain) |
+| Направить все поддомены по адресу `www.example.com`      | [Сопоставьте подстановочный знак](#map-a-wildcard-domain)            |
 
 ## <a name="map-a-cname-record"></a>Сопоставление записи CNAME
 
@@ -92,7 +91,7 @@ ms.locfileid: "83594943"
 
 ## <a name="map-a-wildcard-domain"></a>Сопоставление домена с подстановочными знаками
 
-Иногда требуется, чтобы весь трафик, отправляемый в поддомен, направлялся в другой домен. Распространенным примером является сопоставление всего трафика поддомена с `www.example.com`. Таким образом, даже если кто-то вводит `ww.example.com` вместо `www.example.com`, запрос отправляется в `www.example.com`.
+Иногда требуется, чтобы весь трафик, отправляемый в поддомен, направлялся в другой домен. Распространенным примером является сопоставление всего трафика поддомена с `www.example.com`. Таким образом, даже если кто-то вводит `w.example.com` вместо `www.example.com`, запрос отправляется в `www.example.com`.
 
 ### <a name="configure-dns-provider"></a>Настройка поставщика DNS
 

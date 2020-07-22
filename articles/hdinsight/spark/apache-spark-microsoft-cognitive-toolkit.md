@@ -1,25 +1,25 @@
 ---
-title: Когнитивный инструмент Microsoft с Apache Spark - Azure HDInsight
+title: Microsoft Cognitive Toolkit с Apache Spark Azure HDInsight
 description: Узнайте, как можно применить обученную модель обучения Microsoft Cognitive Toolkit к набору данных с помощью API Python для Spark в кластере Azure HDInsight Spark.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 01/14/2020
-ms.openlocfilehash: 1933db624dfef2ffa747ecb043be6730b6b884b5
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 659e44ddc13cf093d7e571e904e177136ed21127
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "78206560"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86084500"
 ---
 # <a name="use-microsoft-cognitive-toolkit-deep-learning-model-with-azure-hdinsight-spark-cluster"></a>Использование модели глубокого обучения Microsoft Cognitive Toolkit в кластере Azure HDInsight Spark
 
 Ниже перечислены действия, которые вы выполните в этой статье.
 
-1. Запустите пользовательский скрипт для установки [Microsoft Cognitive Toolkit](https://docs.microsoft.com/cognitive-toolkit/) в кластер Azure HDInsight Spark.
+1. Запустите пользовательский скрипт для установки [Microsoft Cognitive Toolkit](https://docs.microsoft.com/cognitive-toolkit/) в кластере Azure HDInsight Spark.
 
 2. передача [Jupyter Notebook](https://jupyter.org/) в кластер [Apache Spark](https://spark.apache.org/) для применения обученной модели глубокого обучения Microsoft Cognitive Toolkit к файлам в учетной записи хранилища BLOB-объектов Azure с помощью [API Python для Spark (PySpark)](https://spark.apache.org/docs/latest/api/python/index.html).
 
@@ -31,14 +31,14 @@ ms.locfileid: "78206560"
 
 ## <a name="how-does-this-solution-flow"></a>Как реализуется это решение?
 
-Это решение разделено между этой статьей и ноутбуком Jupyter, который вы загружаете в рамках этой статьи. Ниже перечислены действия, которые вы выполните в этой статье.
+Это решение делится между этой статьей и записной книжкой Jupyter, которую вы отправляете в рамках этой статьи. Ниже перечислены действия, которые вы выполните в этой статье.
 
 * Запуск действия сценария в кластере HDInsight Spark для установки Microsoft Cognitive Toolkit и пакетов Python.
 * Передача элемента Jupyter Notebook, запускающего решение в кластере HDInsight Spark.
 
 Перечисленные ниже оставшиеся шаги приведены в описании Jupyter Notebook.
 
-* Загрузите образец изображений в набор распределенных данных Spark Resilient или RDD.
+* Загрузите образцы изображений в отказоустойчивый распределенный набор данных Spark или RDD.
   * Загрузка модулей и определение предустановок.
   * Скачивание набора данных локально в кластер Spark.
   * Преобразование набора данных в RDD.
@@ -50,41 +50,41 @@ ms.locfileid: "78206560"
 
 ## <a name="install-microsoft-cognitive-toolkit"></a>Установка Microsoft Cognitive Toolkit
 
-Microsoft Cognitive Toolkit в кластере Spark можно установить с помощью действия сценария. Действие скрипта использует пользовательские скрипты для установки компонентов в кластер, которые недоступны по умолчанию. Пользовательский скрипт с портала Azure можно использовать с помощью HDInsight .NET SDK или с помощью Azure PowerShell. Этот сценарий можно также использовать для установки данного набора средств при создании кластера или после его подготовки и запуска.
+Microsoft Cognitive Toolkit в кластере Spark можно установить с помощью действия сценария. Действие скрипта использует пользовательские скрипты для установки компонентов в кластере, которые недоступны по умолчанию. Пользовательский скрипт можно использовать из портал Azure, с помощью пакета SDK для HDInsight .NET или с помощью Azure PowerShell. Этот сценарий можно также использовать для установки данного набора средств при создании кластера или после его подготовки и запуска.
 
 В этой статье мы используем портал для установки набора средств после того, как кластер был создан. Другие способы выполнения пользовательского сценария описаны в разделе [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](../hdinsight-hadoop-customize-cluster-linux.md).
 
 ### <a name="using-the-azure-portal"></a>Использование портала Azure
 
-Для получения инструкций о том, как использовать портал [Customize HDInsight clusters using Script Action](../hdinsight-hadoop-customize-cluster-linux.md#script-action-during-cluster-creation)Azure для выполнения действия скрипта, см. Обязательно укажите приведенные ниже данные для установки Microsoft Cognitive Toolkit. Используйте следующие значения для действия скрипта:
+Инструкции по использованию портал Azure для выполнения действия сценария см. в разделе [Настройка кластеров HDInsight с помощью действия сценария](../hdinsight-hadoop-customize-cluster-linux.md#script-action-during-cluster-creation). Обязательно укажите приведенные ниже данные для установки Microsoft Cognitive Toolkit. Используйте следующие значения для действия скрипта:
 
 |Свойство |Значение |
 |---|---|
 |Тип скрипта|- Custom|
 |Имя| Установка MCT|
 |URI bash-скрипта|`https://raw.githubusercontent.com/Azure-Samples/hdinsight-pyspark-cntk-integration/master/cntk-install.sh`|
-|Типы узлов:|Голова, Рабочий|
-|Параметры|None|
+|Типы узлов:|Головной, Рабочий|
+|Параметры|Отсутствуют|
 
 ## <a name="upload-the-jupyter-notebook-to-azure-hdinsight-spark-cluster"></a>Передача Jupyter Notebook в кластер Azure HDInsight Spark
 
-Чтобы использовать Microsoft Cognitive Toolkit с кластером Azure HDInsight Spark, необходимо загрузить Jupyter Notebook **CNTK_model_scoring_on_Spark_walkthrough.ipynb** в кластер Azure HDInsight Spark. Этот ноутбук доступен на [https://github.com/Azure-Samples/hdinsight-pyspark-cntk-integration](https://github.com/Azure-Samples/hdinsight-pyspark-cntk-integration)GitHub на .
+Чтобы использовать Microsoft Cognitive Toolkit с кластером Azure HDInsight Spark, необходимо загрузить Jupyter Notebook **CNTK_model_scoring_on_Spark_walkthrough.ipynb** в кластер Azure HDInsight Spark. Эта записная книжка доступна на сайте GitHub по адресу [https://github.com/Azure-Samples/hdinsight-pyspark-cntk-integration](https://github.com/Azure-Samples/hdinsight-pyspark-cntk-integration) .
 
-1. Скачать и [https://github.com/Azure-Samples/hdinsight-pyspark-cntk-integration](https://github.com/Azure-Samples/hdinsight-pyspark-cntk-integration)распаковать .
+1. Скачайте и распакуйте [https://github.com/Azure-Samples/hdinsight-pyspark-cntk-integration](https://github.com/Azure-Samples/hdinsight-pyspark-cntk-integration) .
 
-1. Из веб-браузера, `https://CLUSTERNAME.azurehdinsight.net/jupyter`перейдите к , где `CLUSTERNAME` имя вашего кластера.
+1. В веб-браузере перейдите на страницу `https://CLUSTERNAME.azurehdinsight.net/jupyter`, где `CLUSTERNAME` — это имя вашего кластера.
 
-1. Из ноутбука Jupyter выберите **Загрузка** в правом верхнем углу, `CNTK_model_scoring_on_Spark_walkthrough.ipynb`а затем перейдите к загрузке и выберите файл.
+1. В записной книжке Jupyter выберите **Upload (отправить** ) в правом верхнем углу, а затем перейдите к файлу Download (скачать) и выберите File (файл) `CNTK_model_scoring_on_Spark_walkthrough.ipynb` .
 
-    ![Загрузите ноутбук Jupyter в кластер Azure HDInsight Spark](./media/apache-spark-microsoft-cognitive-toolkit/hdinsight-microsoft-cognitive-toolkit-load-jupyter-notebook.png "Загрузите ноутбук Jupyter в кластер Azure HDInsight Spark")
+    ![Отправка записной книжки Jupyter в кластер Azure HDInsight Spark](./media/apache-spark-microsoft-cognitive-toolkit/hdinsight-microsoft-cognitive-toolkit-load-jupyter-notebook.png "Отправка записной книжки Jupyter в кластер Azure HDInsight Spark")
 
-1. Выберите **Загрузить** еще раз.
+1. Выберите **Отправить** еще раз.
 
-1. После загрузки ноутбука щелкните название ноутбука, а затем следуйте инструкциям в самом блокноте о том, как загрузить набор данных и выполнить статью.
+1. После отправки записной книжки щелкните имя записной книжки, а затем следуйте инструкциям в самой записной книжке о том, как загрузить набор данных и выполнить статью.
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>Дополнительно
 
-* [Обзор: Apache Spark в Azure HDInsight](apache-spark-overview.md)
+* [Обзор: Spark в Azure HDInsight](apache-spark-overview.md)
 
 ### <a name="scenarios"></a>Сценарии
 

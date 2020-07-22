@@ -7,16 +7,16 @@ author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.author: mimart
 ms.subservice: B2C
 ms.date: 02/10/2020
-ms.openlocfilehash: 99e04c95156e40eed8c2b9aa88a2bee6f39e90c9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 3106e5a640ed66828558078e6986979ad7195450
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81392879"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85386221"
 ---
 # <a name="monitor-azure-ad-b2c-with-azure-monitor"></a>Мониторинг Azure AD B2C с помощью Azure Monitor
 
@@ -25,12 +25,12 @@ ms.locfileid: "81392879"
 События журнала можно направить в:
 
 * [Учетная запись хранения](../storage/blobs/storage-blobs-introduction.md)Azure.
-* [Концентратор событий](../event-hubs/event-hubs-about.md) Azure (и интегрируется с экземплярами логики Splunk и Sumo).
 * [Рабочая область log Analytics](../azure-monitor/platform/resource-logs-collect-workspace.md) (для анализа данных, создания панелей мониторинга и оповещения о конкретных событиях).
+* [Концентратор событий](../event-hubs/event-hubs-about.md) Azure (и интегрируется с экземплярами логики Splunk и Sumo).
 
 ![Azure Monitor](./media/azure-monitor/azure-monitor-flow.png)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Чтобы выполнить действия, описанные в этой статье, необходимо развернуть шаблон Azure Resource Manager с помощью модуля Azure PowerShell.
 
@@ -59,7 +59,7 @@ Azure AD B2C использует [мониторинг Azure Active Directory](
 **Идентификатор** каталога Azure AD B2C каталога (также известного как идентификатор клиента).
 
 1. Войдите в [портал Azure](https://portal.azure.com/) в качестве пользователя с ролью *администратора пользователей* (или выше).
-1. Щелкните значок **Каталог + подписка** на панели инструментов портала, а затем выберите каталог, содержащий клиент Azure AD B2C.
+1. Выберите значок **Каталог и подписка** в верхней панели инструментов портала, а затем выберите каталог, содержащий клиент Azure AD B2C.
 1. Выберите **Azure Active Directory**, а затем — **свойства**.
 1. Запишите **идентификатор каталога**.
 
@@ -72,7 +72,7 @@ Azure AD B2C использует [мониторинг Azure Active Directory](
 
 ### <a name="create-an-azure-resource-manager-template"></a>Создание шаблона Azure Resource Manager
 
-Чтобы подключить клиент Azure AD ( **клиент**), создайте [шаблон Azure Resource Manager](../lighthouse/how-to/onboard-customer.md) для вашего предложения со следующими сведениями. Значения `mspOfferName` и `mspOfferDescription` отображаются при просмотре сведений о предложении на [странице поставщики услуг](../lighthouse/how-to/view-manage-service-providers.md) портал Azure.
+Чтобы подключить клиент Azure AD ( **клиент**), создайте [шаблон Azure Resource Manager](../lighthouse/how-to/onboard-customer.md) для вашего предложения со следующими сведениями. `mspOfferName`Значения и `mspOfferDescription` отображаются при просмотре сведений о предложении на [странице поставщики услуг](../lighthouse/how-to/view-manage-service-providers.md) портал Azure.
 
 | Поле   | Определение |
 |---------|------------|
@@ -87,9 +87,9 @@ Azure AD B2C использует [мониторинг Azure Active Directory](
 - [rgDelegatedResourceManagement.json](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/templates/rg-delegated-resource-management/rgDelegatedResourceManagement.json)
 - [rgDelegatedResourceManagement.parameters.json](https://github.com/Azure/Azure-Lighthouse-samples/blob/master/templates/rg-delegated-resource-management/rgDelegatedResourceManagement.parameters.json)
 
-Затем обновите файл параметров, указав значения, записанные ранее. В следующем фрагменте кода JSON показан пример файла параметров шаблона Azure Resource Manager. Для `authorizations.value.roleDefinitionId`используйте [встроенное значение роли](../role-based-access-control/built-in-roles.md) для *роли участника* `b24988ac-6180-42a0-ab88-20f7382dd24c`.
+Затем обновите файл параметров, указав значения, записанные ранее. В следующем фрагменте кода JSON показан пример файла параметров шаблона Azure Resource Manager. Для `authorizations.value.roleDefinitionId` Используйте [встроенное значение роли](../role-based-access-control/built-in-roles.md) для *роли участника* `b24988ac-6180-42a0-ab88-20f7382dd24c` .
 
-```JSON
+```json
 {
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
@@ -141,7 +141,7 @@ Get-AzSubscription
 Select-AzSubscription <subscription ID>
 ```
 
-Наконец, разверните файл шаблона Azure Resource Manager и файлы параметров, которые вы скачали и обновили ранее. Замените значения `Location`, `TemplateFile`и `TemplateParameterFile` соответствующим образом.
+Наконец, разверните файл шаблона Azure Resource Manager и файлы параметров, которые вы скачали и обновили ранее. Замените `Location` значения, `TemplateFile` и `TemplateParameterFile` соответствующим образом.
 
 ```PowerShell
 New-AzDeployment -Name "AzureADB2C" `
@@ -199,7 +199,7 @@ Parameters              :
 
 1. Выйдите из портал Azure, если вы вошли в **систему** . На этом и следующем шаге выполняется обновление учетных данных в сеансе портала.
 1. Войдите в [портал Azure](https://portal.azure.com) с помощью учетной записи администратора Azure AD B2C.
-1. На панели инструментов портала щелкните значок **Каталог + подписка** .
+1. На панели инструментов портала выберите значок **Каталог + подписка**.
 1. Выберите каталог, содержащий подписку.
 
     ![Переключить каталог](./media/azure-monitor/azure-monitor-portal-03-select-subscription.png)
@@ -209,7 +209,7 @@ Parameters              :
 
 ## <a name="configure-diagnostic-settings"></a>Настройка параметров диагностики
 
-Параметры диагностики определяют, где должны отправляться журналы и метрики для ресурса. Возможные места назначения:
+Параметры диагностики определяют, где должны отправляться журналы и метрики для ресурса. Возможные места назначения
 
 - [Учетная запись хранения Azure](../azure-monitor/platform/resource-logs-collect-storage.md)
 - Решения для [концентраторов событий](../azure-monitor/platform/resource-logs-stream-event-hubs.md) .
@@ -224,7 +224,7 @@ Parameters              :
 Чтобы настроить параметры мониторинга для журналов действий Azure AD B2C:
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
-1. Щелкните значок **Каталог + подписка** на панели инструментов портала, а затем выберите каталог, содержащий клиент Azure AD B2C.
+1. Выберите значок **Каталог и подписка** в верхней панели инструментов портала, а затем выберите каталог, содержащий клиент Azure AD B2C.
 1. Выберите **Azure Active Directory**
 1. В разделе **Мониторинг** выберите **Параметры диагностики**.
 1. Если в ресурсе есть параметры, вы увидите список уже настроенных параметров. Либо выберите **Добавить параметр диагностики** , чтобы добавить новый параметр, либо **измените** параметр, чтобы изменить существующий. Каждый параметр может иметь не более одного из целевых типов.
@@ -234,7 +234,7 @@ Parameters              :
 1. Присвойте параметру имя, если его еще нет.
 1. Установите флажок для каждого назначения, чтобы отправить журналы. Выберите **настроить** , чтобы указать их параметры, как описано в следующей таблице.
 
-    | Параметр | Описание |
+    | Параметр | Описание: |
     |:---|:---|
     | "Архивировать в учетной записи хранения"; | Имя учетной записи хранения. |
     | "Передать в концентратор событий"; | Пространство имен, в котором создается концентратор событий (если это первый журнал потоковой передачи) или потоковая передача (если уже есть ресурсы, которые используют потоковую передачу категории журнала в это пространство имен).

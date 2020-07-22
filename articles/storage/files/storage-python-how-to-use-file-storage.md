@@ -3,16 +3,17 @@ title: Разработка для файлов Azure с помощью Python |
 description: Узнайте, как разрабатывать приложения и службы Python, использующие файлы Azure для хранения данных файлов.
 author: roygara
 ms.service: storage
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 12/14/2018
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 139e3009722761172b7bbd57805a7f5b07e55fc0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.custom: tracking-python
+ms.openlocfilehash: c612ddc324144a818dd738b440660d473ec3a1bd
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "68699393"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85509648"
 ---
 # <a name="develop-for-azure-files-with-python"></a>Разработка для файлов Azure с помощью Python
 [!INCLUDE [storage-selector-file-include](../../../includes/storage-selector-file-include.md)]
@@ -47,7 +48,7 @@ pip install azure-storage-file
 Другие методы установки см. в статье [Microsoft Azure Storage SDK for Python](https://github.com/Azure/azure-storage-python/) (Пакет SDK службы хранилища Microsoft Azure для Python) на сайте GitHub.
 
 ## <a name="view-the-sample-application"></a>Просмотр примера приложения
-е. чтобы просмотреть и запустить пример приложения, в котором показано, как использовать Python с файлами Azure, см. статью Служба [хранилища Azure: Начало работы с файлами Azure в Python](https://github.com/Azure-Samples/storage-file-python-getting-started). 
+Чтобы просмотреть и запустить пример приложения, демонстрирующий использование Python с файлами Azure, см. статью Служба [хранилища Azure: Начало работы с файлами Azure в Python](https://github.com/Azure-Samples/storage-file-python-getting-started). 
 
 Чтобы запустить пример приложения, убедитесь, что установили оба пакета: `azure-storage-file` и `azure-storage-common`.
 
@@ -176,9 +177,9 @@ file_service.delete_share(share_name, snapshot=snapshot_id)
 file_service.delete_share(share_name, delete_snapshots=DeleteSnapshot.Include)
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Теперь, когда вы узнали, как работать с файлами Azure с помощью Python, воспользуйтесь следующими ссылками для получения дополнительных сведений.
 
-* [Центр по разработке для Python](https://azure.microsoft.com/develop/python/)
-* [REST API служб хранилища Azure](https://msdn.microsoft.com/library/azure/dd179355)
+* [Центр разработчиков Python](https://azure.microsoft.com/develop/python/)
+* [API-интерфейс REST служб хранилища Azure](https://msdn.microsoft.com/library/azure/dd179355)
 * [пакет SDK для службы хранилища Microsoft Azure для Python](https://github.com/Azure/azure-storage-python)

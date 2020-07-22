@@ -7,21 +7,21 @@ ms.topic: conceptual
 ms.date: 02/16/2018
 ms.author: dukek
 ms.subservice: alerts
-ms.openlocfilehash: 50ad9d57b24fab9ee57c2f9caae8f4c39d2681f0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a97fd56f1dc3409666ad86e81a7ac74fee076fa1
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77669086"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86505692"
 ---
 # <a name="create-an-action-group-with-a-resource-manager-template"></a>Создание группы действий с помощью шаблона Resource Manager
-В этой статье показано, как можно использовать [шаблон Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-authoring-templates) для настройки групп действий. С помощью шаблонов можно автоматически настроить группы действий, которые можно использовать повторно в определенных типах оповещений. С помощью этих групп действий обеспечивается уведомление соответствующих участников при активации оповещения.
+В этой статье показано, как можно использовать [шаблон Azure Resource Manager](../../azure-resource-manager/templates/template-syntax.md) для настройки групп действий. С помощью шаблонов можно автоматически настроить группы действий, которые можно использовать повторно в определенных типах оповещений. С помощью этих групп действий обеспечивается уведомление соответствующих участников при активации оповещения.
 
 Основными шагами являются:
 
 1. Создайте шаблон в виде JSON-файла, который описывает создание группы действий.
 
-2. Разверните шаблон, используя [любой метод развертывания](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-template-deploy).
+2. Разверните шаблон, используя [любой метод развертывания](../../azure-resource-manager/templates/deploy-powershell.md).
 
 Ниже описано, как создать шаблон Resource Manager для группы действий, в котором определения действий жестко запрограммированы, а также представлены способы создания шаблона, принимающего данные конфигурации веб-перехватчика в качестве входных параметров при развертывании шаблона.
 
@@ -162,8 +162,7 @@ ms.locfileid: "77669086"
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
-* Дополнительные сведения о [группах действий](../../azure-monitor/platform/action-groups.md).
-* Узнайте больше об [оповещениях](alerts-overview.md).
+## <a name="next-steps"></a>Дальнейшие действия
+* Дополнительные сведения о группах действий см. в статье [Создание групп действий и управление ими на портале Azure](../../azure-monitor/platform/action-groups.md).
+* Дополнительные сведения об [оповещениях](alerts-overview.md).
 * Узнайте, как добавить [оповещения с помощью шаблона Resource Manager](../../azure-monitor/platform/alerts-activity-log.md).
-

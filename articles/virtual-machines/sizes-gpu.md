@@ -1,25 +1,19 @@
 ---
 title: Размеры виртуальных машин Azure — GPU | Документация Майкрософт
 description: Список различных размеров GPU, доступных для виртуальных машин в Azure. Сведения о количестве виртуальных ЦП, дисков данных и сетевых адаптеров, а также о пропускной способности хранилища и сети для размеров виртуальных машин этой серии.
-services: virtual-machines
-documentationcenter: ''
-author: vikancha
-manager: gwallace
-editor: ''
-tags: azure-resource-manager,azure-service-management
-ms.assetid: ''
+author: vikancha-MSFT
 ms.service: virtual-machines
-ms.devlang: na
+ms.subservice: sizes
 ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 02/03/2020
-ms.author: jonbeck
-ms.openlocfilehash: 5d36ba05d2138a06ebb2ef4e49aadb6032b62b92
-ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
+ms.author: jushiman
+ms.openlocfilehash: efb26260d0e1f59e78c8328de298c3d4d92c19d3
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82627047"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86509324"
 ---
 # <a name="gpu-optimized-virtual-machine-sizes"></a>Размеры виртуальных машин, оптимизированных для GPU
 
@@ -37,11 +31,11 @@ ms.locfileid: "82627047"
 
 Чтобы воспользоваться преимуществами возможностей GPU виртуальных машин Azure серии N, необходимо установить драйверы NVIDIA или AMD GPU.
 
-- Для виртуальных машин, которые поддерживаются графическими процессорами NVIDIA, [расширение драйвера GPU NVIDIA](/azure/virtual-machines/extensions/hpccompute-gpu-windows) устанавливает соответствующие драйверы NVIDIA CUDA или Grid. Для установки расширения и управления им можно использовать портал Azure или такие инструменты, как Azure PowerShell и шаблоны Azure Resource Manager. Сведения о поддерживаемых операционных системах и этапах развертывания см. в [документации по расширению драйвера GPU NVIDIA](/azure/virtual-machines/extensions/hpccompute-gpu-windows). Общие сведения о расширениях виртуальных машин см. в статье [Расширения и компоненты виртуальных машин Azure](/azure/virtual-machines/extensions/overview).
+- Для виртуальных машин, которые поддерживаются графическими процессорами NVIDIA, [расширение драйвера GPU NVIDIA](./extensions/hpccompute-gpu-windows.md) устанавливает соответствующие драйверы NVIDIA CUDA или Grid. Для установки расширения и управления им можно использовать портал Azure или такие инструменты, как Azure PowerShell и шаблоны Azure Resource Manager. Сведения о поддерживаемых операционных системах и этапах развертывания см. в [документации по расширению драйвера GPU NVIDIA](./extensions/hpccompute-gpu-windows.md). Общие сведения о расширениях виртуальных машин см. в статье [Расширения и компоненты виртуальных машин Azure](./extensions/overview.md).
 
-   Кроме того, драйверы NVIDIA GPU можно установить вручную. См. статью [Установка драйверов NVIDIA GPU на виртуальных машинах серии n под управлением Windows](/azure/virtual-machines/windows/n-series-driver-setup) или [Установка драйверов NVIDIA GPU на виртуальных машинах серии n под управлением Linux](/azure/virtual-machines/linux/n-series-driver-setup) для поддерживаемых операционных систем, драйверов, установки и шагов проверки.
+   Кроме того, драйверы NVIDIA GPU можно установить вручную. См. статью [Установка драйверов NVIDIA GPU на виртуальных машинах серии n под управлением Windows](./windows/n-series-driver-setup.md) или [Установка драйверов NVIDIA GPU на виртуальных машинах серии n под управлением Linux](./linux/n-series-driver-setup.md) для поддерживаемых операционных систем, драйверов, установки и шагов проверки.
 
-- Для виртуальных машин, поддерживающих процессоры AMD GPU, см. статью [Установка драйверов GPU AMD на виртуальных машинах серии N под управлением Windows](/azure/virtual-machines/windows/n-series-amd-driver-setup) для поддерживаемых операционных систем, драйверов, установок и шагов проверки.
+- Для виртуальных машин, поддерживающих процессоры AMD GPU, см. статью [Установка драйверов GPU AMD на виртуальных машинах серии N под управлением Windows](./windows/n-series-amd-driver-setup.md) для поддерживаемых операционных систем, драйверов, установок и шагов проверки.
 
 ## <a name="deployment-considerations"></a>Рекомендации по развертыванию
 
@@ -53,7 +47,7 @@ ms.locfileid: "82627047"
 
 - Если вы хотите развернуть большое количество виртуальных машин серии N, мы рекомендуем подписку с оплатой по мере использования или другие варианты покупки. Если вы используете [бесплатную учетную запись Azure](https://azure.microsoft.com/free/), вам доступно ограниченное количество вычислительных ядер Azure.
 
-- Возможно, вам потребуется увеличить квоту на использование ядер (для каждого региона) в подписке Azure и отдельную квоту для ядер серии NC, NCv2, NCv3, ND, NDv2, NV или NVv2. Чтобы запросить увеличение квоты, отправьте [запрос в службу поддержки клиентов](../azure-portal/supportability/how-to-create-azure-support-request.md) бесплатно. Ограничения по умолчанию отличаются в зависимости от категории подписки.
+- Возможно, вам потребуется увеличить квоту на использование ядер (для каждого региона) в подписке Azure и отдельную квоту для ядер серии NC, NCv2, NCv3, ND, NDv2, NV или NVv2. Чтобы увеличить квоту, [отправьте запрос в службу поддержки](../azure-portal/supportability/how-to-create-azure-support-request.md). Это бесплатная услуга. Ограничения по умолчанию отличаются в зависимости от категории подписки.
 
 ## <a name="other-sizes"></a>Остальные размеры
 

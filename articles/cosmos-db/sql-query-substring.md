@@ -8,10 +8,9 @@ ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: d4462fc407093b23510bddfae4d9f55d68f8c0fa
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78303704"
 ---
 # <a name="substring-azure-cosmos-db"></a>Подстрока (Azure Cosmos DB)
@@ -26,7 +25,7 @@ SUBSTRING(<str_expr>, <num_expr1>, <num_expr2>)
 ## <a name="arguments"></a>Аргументы
   
 *str_expr*  
-   Является строковым выражением.
+   Строковое выражение.
   
 *num_expr1*  
    Числовое выражение для обозначения начального символа. Значение 0 является первым символом *str_expr*.
@@ -54,10 +53,10 @@ SELECT SUBSTRING("abc", 1, 1) AS substring
 
 ## <a name="remarks"></a>Remarks
 
-Эта системная функция будет использовать [индекс диапазона](index-policy.md#includeexclude-strategy) , если начальная позиция — `0`.
+Эта системная функция будет использовать [индекс диапазона](index-policy.md#includeexclude-strategy) , если начальная позиция — `0` .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Строковые функции Azure Cosmos DB](sql-query-string-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство с Azure Cosmos DB](introduction.md)
+- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)

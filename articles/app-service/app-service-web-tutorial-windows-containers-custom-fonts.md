@@ -4,18 +4,18 @@ description: Сведения о том, как переносить в Служ
 ms.topic: tutorial
 ms.date: 10/22/2019
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 74cb88bc1ace87155a35163ca8f9d3d6c4242ae0
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 8f2f4f707300e3ebe31f059c65492247befe324a
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80046617"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86169958"
 ---
 # <a name="migrate-an-aspnet-app-to-azure-app-service-using-a-windows-container-preview"></a>Перенос приложения ASP.NET в Службу приложений Azure с помощью контейнера Windows (предварительная версия)
 
 [Служба приложений Azure](overview.md) предоставляет предопределенные стеки приложений на платформе Windows, например ASP.NET или Node.js, выполняющиеся в IIS. Предварительно настроенная среда Windows блокирует в операционной системе возможность административного доступа, установки программного обеспечения, изменений в глобальном кэше сборок и т. д. (см. раздел [Функциональные возможности операционной системы для службы приложений Azure](operating-system-functionality.md)). Тем не менее с помощью пользовательского контейнера Windows в службе приложений можно вносить в ОС изменения, необходимые для вашего приложения. Поэтому легко перенести локальное приложение, которому требуется пользовательская ОС и конфигурация программного обеспечения. В этом руководстве показано, как перенести в службу приложений приложение ASP.NET, которое использует пользовательские шрифты, установленные в библиотеке шрифтов Windows. Вы развернете пользовательский образ Windows из Visual Studio в [Реестр контейнеров Azure](https://docs.microsoft.com/azure/container-registry/), а затем запустите его в службе приложений.
 
-![](media/app-service-web-tutorial-windows-containers-custom-fonts/app-running.png)
+![Показано веб-приложение, выполняемое в контейнере Windows.](media/app-service-web-tutorial-windows-containers-custom-fonts/app-running.png)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -69,13 +69,13 @@ ms.locfileid: "80046617"
 
 Необходимо использовать [поддерживаемый родительский образ](app-service-web-get-started-windows-container.md#use-a-different-parent-image). Измените родительский образ, заменив строку `FROM` приведенным ниже кодом.
 
-```Dockerfile
+```dockerfile
 FROM mcr.microsoft.com/dotnet/framework/aspnet:4.7.2-windowsservercore-ltsc2019
 ```
 
 В конце файла добавьте приведенную ниже строку, после чего сохраните файл.
 
-```Dockerfile
+```dockerfile
 RUN ${source:-obj/Docker/publish/InstallFont.ps1}
 ```
 
@@ -146,7 +146,7 @@ RUN ${source:-obj/Docker/publish/InstallFont.ps1}
 
 Вкладка **Основные сведения** должна выглядеть следующим образом:
 
-![](media/app-service-web-tutorial-windows-containers-custom-fonts/configure-app-basics.png)
+![Показана вкладка "Основные сведения", которая используется для настройки веб-приложения.](media/app-service-web-tutorial-windows-containers-custom-fonts/configure-app-basics.png)
 
 ### <a name="configure-windows-container"></a>Настройка контейнера Windows
 
@@ -167,7 +167,7 @@ RUN ${source:-obj/Docker/publish/InstallFont.ps1}
 
 По завершении операции Azure отображается окно уведомления.
 
-![](media/app-service-web-tutorial-windows-containers-custom-fonts/portal-create-finished.png)
+![Показано сообщение о том, что операция Azure завершена.](media/app-service-web-tutorial-windows-containers-custom-fonts/portal-create-finished.png)
 
 1. Щелкните **Перейти к ресурсу**.
 
@@ -175,17 +175,17 @@ RUN ${source:-obj/Docker/publish/InstallFont.ps1}
 
 В браузере откроется следующая страница:
 
-![](media/app-service-web-tutorial-windows-containers-custom-fonts/app-starting.png)
+![Показана новая страница браузера для веб-приложения.](media/app-service-web-tutorial-windows-containers-custom-fonts/app-starting.png)
 
 Подождите несколько минут и попробуйте еще раз, пока не откроется домашняя страница с тем самым красивым шрифтом.
 
-![](media/app-service-web-tutorial-windows-containers-custom-fonts/app-running.png)
+![Показана домашняя страница со шрифтом, который вы настроили.](media/app-service-web-tutorial-windows-containers-custom-fonts/app-running.png)
 
 **Поздравляем!** Вы перенесли приложение ASP.NET в Службу приложений Azure в контейнере Windows.
 
 ## <a name="see-container-start-up-logs"></a>Просмотр журналов запуска контейнера
 
-Загрузка контейнера Windows может занять некоторое время. Чтобы просмотреть ход выполнения, перейдите по следующему URL-адресу, заменив *\<app_name>* именем приложения.
+Загрузка контейнера Windows может занять некоторое время. Чтобы просмотреть ход выполнения, перейдите по следующему URL-адресу, заменив *\<app-name>* именем приложения.
 ```
 https://<app-name>.scm.azurewebsites.net/api/logstream
 ```
@@ -201,4 +201,3 @@ https://<app-name>.scm.azurewebsites.net/api/logstream
 14/09/2018 23:18:03.823 INFO - Site: fonts-win-container - Container ready
 14/09/2018 23:18:03.823 INFO - Site: fonts-win-container - Container start-up and configuration completed successfully
 ```
-

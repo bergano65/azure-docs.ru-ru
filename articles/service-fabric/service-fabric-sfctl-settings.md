@@ -5,12 +5,12 @@ author: jeffj6123
 ms.topic: reference
 ms.date: 1/16/2020
 ms.author: jejarry
-ms.openlocfilehash: b805b7047b00f416664a001f02f311f6b387af19
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: baf4e843eea859fc16ed6e3bcd509785cc4db8bc
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76896277"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86245591"
 ---
 # <a name="sfctl-settings"></a>sfctl settings
 Настройка локальных параметров этого экземпляра sfctl.
@@ -21,6 +21,6 @@ ms.locfileid: "76896277"
 | [отслеживания](service-fabric-sfctl-settings-telemetry.md) | Настройте локальные параметры телеметрии этого экземпляра sfctl. |
 
 
-## <a name="next-steps"></a>Дальнейшие шаги   
+## <a name="next-steps"></a>Дальнейшие действия   
 - [Настройте](service-fabric-cli.md) Service Fabric CLI.   
-- Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).
+- Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](./scripts/sfctl-upgrade-application.md).

@@ -12,10 +12,9 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/22/2018
 ms.openlocfilehash: 80644ed2d655544fa176a7be92aec3c01aa3bf14
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75966072"
 ---
 # <a name="tutorial-build-your-first-pipeline-to-transform-data-using-hadoop-cluster"></a>Учебник. Создание первого конвейера для преобразования данных с помощью кластера Hadoop
@@ -23,12 +22,12 @@ ms.locfileid: "75966072"
 > * [Обзор и предварительные требования](data-factory-build-your-first-pipeline.md)
 > * [Visual Studio](data-factory-build-your-first-pipeline-using-vs.md)
 > * [PowerShell](data-factory-build-your-first-pipeline-using-powershell.md)
-> * [Шаблон Resource Manager](data-factory-build-your-first-pipeline-using-arm.md)
+> * [Шаблон диспетчер ресурсов](data-factory-build-your-first-pipeline-using-arm.md)
 > * [REST API](data-factory-build-your-first-pipeline-using-rest-api.md)
 
 
 > [!NOTE]
-> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию службы "Фабрика данных", ознакомьтесь с [кратким руководством по созданию фабрики данных с помощью службы "Фабрика данных Azure"](../quickstart-create-data-factory-dot-net.md).
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию службы "Фабрика данных", ознакомьтесь с [кратким руководством по Создание фабрики данных и конвейера с помощью пакета SDK .NET](../quickstart-create-data-factory-dot-net.md).
 
 Из этого учебника вы узнаете, как создать свою первую фабрику данных Azure, используя конвейер данных. Конвейер преобразует входные данные, запуская сценарий Hive в кластере Azure HDInsight (Hadoop) для создания выходных данных.  
 
@@ -76,7 +75,7 @@ adfgetstarted/partitioneddata/year=2016/month=3/000000_0
 
 В примерах строк выше первая из них (содержащая дату 2016-01-01) записывается в файл 000000_0 в папке month=1. Аналогичным образом вторая строка записывается в файл в папке month=2, а третья — в файл в папке month=3.  
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 Для работы с этим учебником необходимо следующее:
 
 1. **Подписка Azure**. Если ее нет, можно за пару минут создать бесплатную пробную учетную запись. Сведения о том, как получить такую учетную запись, см. на странице [бесплатного ознакомительного периода](https://azure.microsoft.com/pricing/free-trial/).
@@ -91,12 +90,12 @@ adfgetstarted/partitioneddata/year=2016/month=3/000000_0
 
 - [Visual Studio](data-factory-build-your-first-pipeline-using-vs.md)
 - [PowerShell](data-factory-build-your-first-pipeline-using-powershell.md)
-- [Шаблон Resource Manager](data-factory-build-your-first-pipeline-using-arm.md)
+- [Шаблон диспетчер ресурсов](data-factory-build-your-first-pipeline-using-arm.md)
 - [REST API](data-factory-build-your-first-pipeline-using-rest-api.md)
 
 Visual Studio предоставляет графический интерфейс для создания фабрик данных. PowerShell, шаблон Resource Manager и интерфейс REST API, в свою очередь, дают возможность сделать это с помощью средств создания сценариев и программирования.
 
 > [!NOTE]
-> Описанный в этом руководстве конвейер данных преобразовывает входные данные в выходные. Он не копирует данные из исходного хранилища данных в целевое. Инструкции по копированию данных из хранилища BLOB-объектов Azure в базу данных SQL с помощью фабрики данных Azure см. в [этой статье](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
+> Описанный в этом руководстве конвейер данных преобразовывает входные данные в выходные. Он не копирует данные из исходного хранилища данных в целевое. Инструкции по копированию данных с помощью Фабрики данных Azure см. в [руководстве по копированию данных из хранилища BLOB-объектов Azure в Базу данных SQL](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
 >
 > Можно объединить в цепочку два действия (выполнить одно действие вслед за другим), настроив выходной набор данных одного действия как входной набор данных другого действия. Подробные сведения см. в статье [Планирование и исполнение с использованием фабрики данных](data-factory-scheduling-and-execution.md).

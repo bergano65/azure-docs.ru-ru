@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: overview
 ms.date: 03/04/2020
 ms.author: aahi
-ms.openlocfilehash: a9519be591581fa434825f1a1fb31749788a21a8
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: 1e9928359f314ed57004df0264ac843871083eba
+ms.sourcegitcommit: f0b206a6c6d51af096a4dc6887553d3de908abf3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78395735"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84141863"
 ---
 # <a name="what-is-the-text-analytics-api"></a>Что такое API "Анализ текста"?
 
@@ -88,7 +88,7 @@ API — это компонент [Microsoft Cognitive Services](https://docs.m
 |------------------------|---------------|
 | Максимальный размер одного документа | 5120 символов, измеренных методом [`StringInfo.LengthInTextElements`](https://docs.microsoft.com/dotnet/api/system.globalization.stringinfo.lengthintextelements). |
 | Максимальный размер всего запроса | 1 МБ |
-| Предельное число документов в запросе | 1000 документов |
+| Предельное число документов в запросе | До 1000 документов ([в зависимости от функции](concepts/data-limits.md)) |
 
 Ограничение частоты зависит от ценовой категории.
 

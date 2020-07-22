@@ -15,10 +15,9 @@ ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: juliako
 ms.openlocfilehash: a83d6ae2e3ed13f0d03e0fdc87a3b45a4119ba88
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77162758"
 ---
 # <a name="perform-live-streaming-with-on-premises-encoders-using-azure-portal"></a>Проведите динамическую потоковую передачу с помощью локальных кодировщиков, используя портал Azure
@@ -30,15 +29,15 @@ ms.locfileid: "77162758"
 > 
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с последней версией [служб мультимедиа v3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
 
 В этом руководстве рассматривается создание **канала** , настроенного для сквозной доставки, с помощью портала Azure. 
 
 ## <a name="prerequisites"></a>Предварительные условия
 Ниже перечислены необходимые условия для выполнения действий, описанных в этом учебнике.
 
-* Учетная запись Azure. Дополнительные сведения см. в статье [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/). 
-* Учетная запись служб мультимедиа. Сведения о создании учетной записи служб мультимедиа см. в разделе [Создание учетной записи служб мультимедиа](media-services-portal-create-account.md).
+* Учетная запись Azure. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/). 
+* Учетная запись служб мультимедиа. Инструкции по созданию учетной записи служб мультимедиа см. в статье [Создание учетной записи служб мультимедиа Azure с помощью портала Azure](media-services-portal-create-account.md).
 * Веб-камера, например [кодировщик Telestream Wirecast](media-services-configure-wirecast-live-encoder.md). 
 
 Настоятельно рекомендуется ознакомиться со следующими статьями:
@@ -130,12 +129,12 @@ ms.locfileid: "77162758"
 ## <a name="get-ingest-urls"></a>Получение URL-адресов приема
 После создания канала можно получить URL-адреса приема, которые необходимо передать динамическому кодировщику. Он использует эти адреса для передачи динамического потока на вход.
 
-![Создание](./media/media-services-portal-passthrough-get-started/media-services-channel-created.png)
+![Создано](./media/media-services-portal-passthrough-get-started/media-services-channel-created.png)
 
 ## <a name="watch-the-event"></a>Просмотр события
 Чтобы просмотреть событие, щелкните **Посмотреть** на портале Azure или скопируйте URL-адрес потоковой передачи и используйте проигрыватель по своему усмотрению. 
 
-![Создание](./media/media-services-portal-passthrough-get-started/media-services-default-event.png)
+![Создано](./media/media-services-portal-passthrough-get-started/media-services-default-event.png)
 
 После остановки интерактивное событие автоматически преобразуется в содержимое по запросу.
 
@@ -150,13 +149,13 @@ ms.locfileid: "77162758"
 
 Для управления ресурсами последовательно выберите **Параметры** и **Ресурсы**.
 
-![Ресурсы](./media/media-services-portal-passthrough-get-started/media-services-assets.png)
+![Активы](./media/media-services-portal-passthrough-get-started/media-services-assets.png)
 
-## <a name="next-step"></a>Дальнейшие действия
+## <a name="next-step"></a>Следующий шаг
 Просмотрите схемы обучения работе со службами мультимедиа.
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

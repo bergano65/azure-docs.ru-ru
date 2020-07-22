@@ -13,10 +13,9 @@ ms.workload: infrastructure
 ms.date: 5/22/2017
 ms.author: xujing
 ms.openlocfilehash: f5639d1cf94c77d699dc6de9841698b045ac1f96
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76543024"
 ---
 # <a name="understand-common-error-messages-when-you-manage-virtual-machines-in-azure"></a>Сведения о сообщениях об ошибках, часто возникающих при управлении виртуальными машинами в Azure
@@ -205,7 +204,7 @@ ms.locfileid: "76543024"
 |  VMExtensionManagementInternalError  |  Произошло несколько ошибок при обработке расширений виртуальной машины. Подробности см. в представлении экземпляров расширений ВМ.  |
 |  VMExtensionProvisioningError  |  Виртуальная машина сообщила о сбое при обработке расширения "{0}". Сообщение об ошибке: "{1}".  |
 |  VMExtensionProvisioningError  |  Не удалось подготовить несколько расширений ВМ на этой ВМ. Подробности см. в представлении экземпляров расширений ВМ.  |
-|  VMExtensionProvisioningTimeout  |  Истекло время ожидания подготовки расширения виртуальной{0}машины "". Возможно, установка расширения занимает слишком много времени, или не удалось получить состояние расширения.  |
+|  VMExtensionProvisioningTimeout  |  Истекло время ожидания подготовки расширения виртуальной машины " {0} ". Возможно, установка расширения занимает слишком много времени, или не удалось получить состояние расширения.  |
 |  VMMarketplaceInvalidInput  |  При создании виртуальной машины не из образа Marketplace сведения о плане не требуются; удалите сведения о плане в запросе. Имя диска ОС — {0}.  |
 |  VMMarketplaceInvalidInput  |  Сведения о приобретении не соответствуют. Невозможно развернуть из образа Marketplace. Имя диска ОС — {0}.  |
 |  VMMarketplaceInvalidInput  |  Для создания виртуальной машины из образа Marketplace требуются сведения о плане в запросе. Имя диска ОС — {0}.  |
@@ -216,4 +215,4 @@ ms.locfileid: "76543024"
 
 
 ## <a name="next-steps"></a>Дальнейшие шаги
-Если вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и выберите **получить поддержку**.
+Если вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните **Получить поддержку**.

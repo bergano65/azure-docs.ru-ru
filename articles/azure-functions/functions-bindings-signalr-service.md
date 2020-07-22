@@ -6,10 +6,9 @@ ms.topic: reference
 ms.date: 02/28/2019
 ms.author: cshoe
 ms.openlocfilehash: 863620ce6f0af33b05ef290ae95ccdc99a53a54d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77523042"
 ---
 # <a name="signalr-service-bindings-for-azure-functions"></a>Привязки службы SignalR для службы "Функции Azure"
@@ -23,11 +22,11 @@ ms.locfileid: "77523042"
 
 ## <a name="add-to-your-functions-app"></a>Добавление в приложение функций
 
-### <a name="functions-2x-and-higher"></a>Функции 2. x и более поздних версий
+### <a name="functions-2x-and-higher"></a>Функции 2.x и более поздних версий
 
 Для работы с триггером и привязками требуется ссылка на соответствующий пакет. Пакет NuGet используется для библиотек классов .NET, в то время как набор расширений используется для всех других типов приложений.
 
-| Язык                                        | Добавить по...                                   | Remarks 
+| Язык                                        | Добавить по...                                   | Комментарии 
 |-------------------------------------------------|---------------------------------------------|-------------|
 | C#                                              | Установка [пакета NuGet], версия 3. x | |
 | Скрипт C#, Java, JavaScript, Python, PowerShell | Регистрация [пакета расширений]          | [Расширение "инструменты Azure] " рекомендуется использовать с Visual Studio Code. |
@@ -43,7 +42,7 @@ ms.locfileid: "77523042"
 
 ### <a name="annotations-library-java-only"></a>Библиотека заметок (только для Java)
 
-Чтобы использовать заметки службы SignalR в функциях Java, необходимо добавить зависимость к артефакту *Azure-functions-Java-Library-SignalR* (версии 1,0 или более поздней) в файл *POM. XML* .
+Чтобы использовать заметки службы SignalR в функциях Java, необходимо добавить зависимость к артефакту *Azure-functions-Java-Library-SignalR* (версии 1,0 или более поздней) в файл *pom.xml* .
 
 ```xml
 <dependency>

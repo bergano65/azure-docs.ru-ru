@@ -8,10 +8,9 @@ ms.date: 09/16/2019
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: e44878b6d65725f08aeca4eb07088315ae2bb78a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78302225"
 ---
 # <a name="rand-azure-cosmos-db"></a>RAND (Azure Cosmos DB)
@@ -27,9 +26,9 @@ RAND ()
 
   Возвращает числовое выражение.
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Комментарии
 
-  `RAND` является недетерминированной функцией. Повторяющиеся вызовы `RAND` не возвращают одинаковые результаты.
+  `RAND` является недетерминированной функцией. Повторяющиеся вызовы не `RAND` возвращают одинаковые результаты.
 
 ## <a name="examples"></a>Примеры
   
@@ -53,4 +52,4 @@ SELECT RAND() AS rand
 
 - [Математические функции Azure Cosmos DB](sql-query-mathematical-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство с Azure Cosmos DB](introduction.md)
+- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)

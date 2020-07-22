@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
-ms.openlocfilehash: 90c890925378c30ce5688d2713990b4b2cdd20c5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 7eb77b9ffae49c7d8d3e5612b685e5725829898f
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75430676"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86499789"
 ---
 # <a name="how-to-authorize-developer-accounts-using-oauth-20-in-azure-api-management"></a>Авторизация учетных записей разработчиков с помощью протокола OAuth 2.0 в службе управления Azure API
 
@@ -50,7 +50,7 @@ ms.locfileid: "75430676"
     > [!NOTE]
     > Эти поля служат для идентификации сервера авторизации OAuth 2.0 в текущем экземпляре службы API Management. Их значения не извлекаются с сервера OAuth 2.0.
 
-3. Заполните поле **Client registration page URL** (URL-адрес страницы регистрации клиента). Это страница, на которой пользователи могут создавать свои учетные записи и управлять ими. Ее URL-адрес зависит от используемого поставщика OAuth 2.0. **URL-адрес страницы регистрации клиента** указывает на страницу, на которой пользователи могут создавать и настраивать собственные учетные записи для поставщиков OAuth 2.0, поддерживающих пользовательское управление учетными записями. В некоторых организациях эта функциональность не настраивается и не используется, даже если поставщик OAuth 2.0 ее поддерживает. Если у вашего поставщика OAuth 2.0 не настроено пользовательское управление учетными записями, введите здесь URL-адрес-заполнитель, такой как URL-адрес вашей компании или URL-адрес `https://placeholder.contoso.com`.
+3. Заполните поле **Client registration page URL** (URL-адрес страницы регистрации клиента). Это страница, на которой пользователи могут создавать свои учетные записи и управлять ими. Ее URL-адрес зависит от используемого поставщика OAuth 2.0. **URL-адрес страницы регистрации клиента** указывает на страницу, которую пользователи могут использовать для создания и настройки собственных учетных записей для поставщиков OAuth 2,0, которые поддерживают управление учетными записями пользователей, например `https://contoso.com/login` . В некоторых организациях эта функциональность не настраивается и не используется, даже если поставщик OAuth 2.0 ее поддерживает. Если у вашего поставщика OAuth 2.0 не настроено пользовательское управление учетными записями, введите здесь URL-адрес-заполнитель, такой как URL-адрес вашей компании или URL-адрес `https://placeholder.contoso.com`.
 
     ![Новый сервер OAuth 2.0](./media/api-management-howto-oauth2/oauth-02.png)
 
@@ -58,7 +58,7 @@ ms.locfileid: "75430676"
 
     Установите нужные флажки в разделе **Типы предоставления авторизации**. **Authorization code** (Код авторизации).
 
-    Введите URL-адрес в поле **Authorization endpoint URL**. Для Azure Active Directory этот URL-адрес будет похож на следующий URL-адрес, `<tenant_id>` где заменяется идентификатором вашего клиента Azure AD.
+    Введите URL-адрес в поле **Authorization endpoint URL**. Для Azure Active Directory этот URL-адрес будет похож на следующий URL-адрес, где `<tenant_id>` заменяется идентификатором вашего клиента Azure AD.
 
     `https://login.microsoftonline.com/<tenant_id>/oauth2/authorize`
 
@@ -75,6 +75,11 @@ ms.locfileid: "75430676"
     Параметр **Client authentication methods** по умолчанию имеет значение **Basic** (Обычная), а параметр **Access token sending method** — значение **Authorization header** (Заголовок авторизации). Эти значения можно настроить в данном разделе формы вместе с параметром **Default scope**.
 
 6. В разделе **Client credentials** (Учетные данные клиента) содержатся поля **Client ID** (Идентификатор клиента) и **Client secret** (Секрет клиента), значения которых получены в ходе создания и настройки сервера OAuth 2.0. После определения значений **Client ID** и **Client secret** генерируется параметр **redirect_uri** (URI перенаправления) для **кода авторизации**. Этот универсальный код ресурса (URI) используется для настройки URL-адреса ответа в конфигурации сервера OAuth 2.0.
+
+    На новом портале разработчика суффикс URI имеет вид:
+
+    - `/signin-oauth/code/callback/{authServerName}`для потока предоставления кода авторизации
+    - `/signin-oauth/implicit/callback`для неявного потока предоставления
 
     ![Новый сервер OAuth 2.0](./media/api-management-howto-oauth2/oauth-04.png)
 
@@ -135,14 +140,14 @@ ms.locfileid: "75430676"
 [api-management-open-console]: ./media/api-management-howto-oauth2/api-management-open-console.png
 [api-management-apis-echo-api]: ./media/api-management-howto-oauth2/api-management-apis-echo-api.png
 
-[How to add operations to an API]: api-management-howto-add-operations.md
+[How to add operations to an API]: ./mock-api-responses.md
 [How to add and publish a product]: api-management-howto-add-products.md
 [Monitoring and analytics]: api-management-monitoring.md
 [Add APIs to a product]: api-management-howto-add-products.md#add-apis
 [Publish a product]: api-management-howto-add-products.md#publish-product
 [Get started with Azure API Management]: get-started-create-service-instance.md
-[API Management policy reference]: api-management-policy-reference.md
-[Caching policies]: api-management-policy-reference.md#caching-policies
+[API Management policy reference]: ./api-management-policies.md
+[Caching policies]: ./api-management-policies.md#caching-policies
 [Create an API Management service instance]: get-started-create-service-instance.md
 
 [https://oauth.net/2/]: https://oauth.net/2/
@@ -153,4 +158,3 @@ ms.locfileid: "75430676"
 [Configure an API to use OAuth 2.0 user authorization]: #step2
 [Test the OAuth 2.0 user authorization in the Developer Portal]: #step3
 [Next steps]: #next-steps
-

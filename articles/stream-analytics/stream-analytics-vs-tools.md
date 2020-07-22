@@ -5,14 +5,14 @@ author: su-jie
 ms.author: sujie
 ms.reviewer: mamccrea
 ms.service: stream-analytics
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 07/10/2018
-ms.openlocfilehash: ad35ed342dfd40b98d61919749479ec5612cdd4f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 95abf403dfd4abd4c0533b6e8b4a2f83b33fa18b
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75369632"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86045558"
 ---
 # <a name="use-visual-studio-to-view-azure-stream-analytics-jobs"></a>Просмотр заданий Azure Stream Analytics с помощью Visual Studio
 
@@ -78,7 +78,7 @@ ms.locfileid: "75369632"
 
    ![Результаты проверки подключения](./media/stream-analytics-vs-tools/stream-analytics-test-connection-results.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Мониторинг заданий Stream Analytics и управление ими с помощью Visual Studio](stream-analytics-monitor-jobs-use-vs.md)
 * [Краткое руководство. Создание задания Stream Analytics с использованием инструментов Azure Stream Analytics для Visual Studio](stream-analytics-quick-create-vs.md)

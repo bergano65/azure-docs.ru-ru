@@ -9,10 +9,9 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: eb033425d18b472c9da1a2d6a1bb6f166702905e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77024812"
 ---
 # <a name="provision-nodes-for-azure-vmware-solution-by-cloudsimple"></a>Подготавливаете узлы для решения VMware для Azure с помощью Клаудсимпле
@@ -44,7 +43,7 @@ ms.locfileid: "77024812"
 11. Выберите число узлов для инициализации.
 12. Выберите **Review + Create** (Просмотреть и создать).
 13. Проверьте параметры. Чтобы изменить параметры, нажмите кнопку **назад**.
-14. Щелкните **Создать**.
+14. Нажмите кнопку **создания**.
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 

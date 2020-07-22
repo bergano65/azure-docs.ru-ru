@@ -11,10 +11,9 @@ ms.topic: article
 ms.date: 05/22/2017
 ms.author: tagore
 ms.openlocfilehash: 1e49a0935a70a2470267e5458fa1f55e3059e965
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77469771"
 ---
 # <a name="enabling-azure-diagnostics-in-azure-cloud-services"></a>Включение системы диагностики Azure в облачных службах Azure
@@ -136,7 +135,7 @@ namespace WorkerRole1
     ```powershell
     (Get-AzureServiceAvailableExtension -ExtensionName 'PaaSDiagnostics' -ProviderNamespace 'Microsoft.Azure.Diagnostics').PublicConfigurationSchema | Out-File -Encoding utf8 -FilePath 'WadConfig.xsd'
     ```
-2. Добавьте XML-файл в свой проект **WorkerRole1**, щелкнув правой кнопкой мыши проект **WorkerRole1** и выбрав **Добавить** -> **Создать элемент…**. -> **Visual C# items** -> **Data** -> **XML-файл**данных элементов Visual C#. Назовите файл «WadExample.xml».
+2. Добавьте XML-файл в свой проект **WorkerRole1**, щелкнув правой кнопкой мыши проект **WorkerRole1** и выбрав **Добавить** -> **Создать элемент…**. -> **Элементы**  ->  Visual C# **Данные**  ->  **XML-файл**. Назовите файл «WadExample.xml».
 
    ![CloudServices_diag_add_xml](./media/cloud-services-dotnet-diagnostics/AddXmlFile.png)
 3. Свяжите файл WadConfig.xsd с файлом конфигурации. Убедитесь, что окно редактора WadExample.xml активно. Нажмите клавишу **F4**, чтобы открыть окно **Свойства**. Щелкните свойство **Схемы** в окне **Свойства**. Нажмите кнопку **...** in the **Schemas** . Нажмите кнопку **Добавить...** , перейдите в расположение, где сохранен XSD-файл, и выберите файл WadConfig.xsd. Нажмите кнопку **ОК**.
@@ -192,7 +191,7 @@ Set-AzureServiceDiagnosticsExtension -StorageContext $storageContext -Diagnostic
 ## <a name="troubleshooting"></a>Устранение неполадок
 Если возникли проблемы, см. сведения в статье [Устранение неполадок с помощью системы диагностики Azure](../azure-diagnostics-troubleshooting.md). Это поможет вам устранить распространенные проблемы.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 [См. перечень статей о системе диагностики виртуальных машин Azure](../azure-monitor/platform/diagnostics-extension-overview.md), чтобы изменить данные, которые вы собираете, устранить неполадки или больше узнать о диагностике в целом.
 
 [EventSource Class]: https://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource(v=vs.110).aspx

@@ -12,14 +12,14 @@ ms.tgt_pltfrm: ''
 ms.workload: infrastructure
 ms.date: 07/07/2017
 ms.author: kumud
-ms.openlocfilehash: 97e26eaed72bc15ebc46a893d269b05484d8a064
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: bcfe82dedcac01c60e93788b78fec779f0da7dbc
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80521540"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86530258"
 ---
-# <a name="create-a-network-for-multi-tier-applications"></a>Создание сети для многоуровневых приложений
+# <a name="use-an-azure-cli-script-sample-to-create-a-network-for-multi-tier-applications"></a>Использование примера сценария Azure CLI для создания сети для многоуровневых приложений
 
 В этом примере скрипта создается виртуальная сеть с интерфейсной и внутренней подсетями. Трафик к интерфейсной подсети принимается по протоколам HTTP и SSH, в то время как трафик к внутренней подсети принимается только от MySQL по порту 3306. После запуска скрипта у вас будет две виртуальные машины, по одной в каждой подсети, на которых вы можете развернуть веб-сервер и программное обеспечение MySQL.
 

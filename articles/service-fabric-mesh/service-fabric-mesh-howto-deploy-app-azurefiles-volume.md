@@ -6,20 +6,20 @@ ms.topic: conceptual
 ms.date: 11/21/2018
 ms.author: dekapur
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 5bb7ab6c861d958f6811ca852363c59cfced3940
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 54edc242260479a8f48cc4aae91845041fc2d376
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76718826"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86260105"
 ---
 # <a name="mount-an-azure-files-based-volume-in-a-service-fabric-mesh-application"></a>Подключение тома службы файлов Azure в приложении "Сетка Service Fabric" 
 
 В этой статье описано подключение тома службы файлов Azure в службе приложения "Сетка Service Fabric".  Драйвер тома службы файлов Azure — это драйвер тома Docker, используемый для подключения общей папки службы файлов Azure в контейнер, используемый для сохранения состояния службы. Тома представляют собой хранилище файлов общего назначения и дают возможность чтения и записи файлов с помощью обычных файловых API-интерфейсов ввода-вывода для дисков.  Дополнительные сведения о томах и параметрах для хранения данных приложения см. в статье о [состоянии хранения](service-fabric-mesh-storing-state.md).
 
-Чтобы подключить том в службе, создайте ресурс тома в приложении "Сетка Service Fabric" и затем укажите этот том в вашей службе.  Объявить ресурс тома и указать на него в ресурсе службы можно в [файлах ресурсов на основе YAML](#declare-a-volume-resource-and-update-the-service-resource-yaml) или [шаблоне развертывания на основе JSON](#declare-a-volume-resource-and-update-the-service-resource-json). Прежде чем подключить тома, сначала необходимо создать учетную запись хранения и [файловый ресурс в службе файлов Azure](/azure/storage/files/storage-how-to-create-file-share).
+Чтобы подключить том в службе, создайте ресурс тома в приложении "Сетка Service Fabric" и затем укажите этот том в вашей службе.  Объявить ресурс тома и указать на него в ресурсе службы можно в [файлах ресурсов на основе YAML](#declare-a-volume-resource-and-update-the-service-resource-yaml) или [шаблоне развертывания на основе JSON](#declare-a-volume-resource-and-update-the-service-resource-json). Прежде чем подключить тома, сначала необходимо создать учетную запись хранения и [файловый ресурс в службе файлов Azure](../storage/files/storage-how-to-create-file-share.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 > [!NOTE]
 > **Известная ошибка развертывания на компьютере Windows RS5 Development.** Существует открытая ошибка с командлетом PowerShell New-Смбглобалмаппинг на компьютерах с Windows RS5, которые предотвращают подключение томов Азурефиле. Ниже приведен пример ошибки, которая возникает при подключении тома на основе Азурефиле на локальном компьютере разработки.
 ```
@@ -246,7 +246,7 @@ application:
             - name: VolumeTestNetwork
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь с примером приложения, использующего том службы файлов Azure, на сайте [GitHub](https://github.com/Azure-Samples/service-fabric-mesh/tree/master/src/counter).
 - Узнайте больше о модели ресурсов Service Fabric из раздела [Introduction to Service Fabric Resource Model](service-fabric-mesh-service-fabric-resources.md) (Общие сведения о модели ресурсов Service Fabric).

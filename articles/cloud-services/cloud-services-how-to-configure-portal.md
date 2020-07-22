@@ -8,12 +8,12 @@ ms.service: cloud-services
 ms.topic: article
 ms.date: 12/07/2016
 ms.author: tagore
-ms.openlocfilehash: e862818a4fe2471af574d153d43f0096af7847b8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 169b12ff4fbf2471270aa912d5d1f8242371036b
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80811413"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86223743"
 ---
 # <a name="how-to-configure-cloud-services"></a>Настройка облачных служб
 
@@ -46,9 +46,9 @@ ms.locfileid: "80811413"
 
 ## <a name="monitoring"></a>Мониторинг
 
-Вы можете включить оповещения в облачной службе. Щелкните **Параметры** >  > **правила генерации оповещений****Добавить оповещение**.
+Вы можете включить оповещения в облачной службе. Щелкните **Параметры**  >  **правила генерации оповещений**  >  **Добавить оповещение**.
 
-![](./media/cloud-services-how-to-configure-portal/cs-alerts.png)
+![Снимок экрана параметров Pan с выделенным параметром "правила генерации оповещений", отмеченный красным цветом и параметром "добавить предупреждение", отмеченный красным цветом.](./media/cloud-services-how-to-configure-portal/cs-alerts.png)
 
 Здесь можно настроить оповещение. Раскрывающийся список **Метрика** позволяет настроить оповещение для следующих типов данных.
 
@@ -58,11 +58,11 @@ ms.locfileid: "80811413"
 * Исходящая скорость сети
 * Процент использования ЦП
 
-![](./media/cloud-services-how-to-configure-portal/cs-alert-item.png)
+![Снимок экрана: Панель добавления правила генерации оповещений со всеми установленными параметрами конфигурации.](./media/cloud-services-how-to-configure-portal/cs-alert-item.png)
 
 ### <a name="configure-monitoring-from-a-metric-tile"></a>Настройка мониторинга с использованием плиток метрик
 
-Вместо использования **параметров** > **Правила оповещений**можно щелкнуть одну из плиток метрик в разделе **мониторинг** облачной службы.
+Вместо использования **параметров**  >  **Правила оповещений**можно щелкнуть одну из плиток метрик в разделе **мониторинг** облачной службы.
 
 ![Мониторинг облачной службы](./media/cloud-services-how-to-configure-portal/cs-monitoring.png)
 
@@ -92,16 +92,16 @@ ms.locfileid: "80811413"
     ![Колонка «Конфигурация»](./media/cloud-services-how-to-configure-portal/cs-settings-config.png)
 3. Нажмите кнопку **Загрузить** .
 
-    ![Скачать](./media/cloud-services-how-to-configure-portal/cs-settings-config-panel-download.png)
+    ![Загрузка](./media/cloud-services-how-to-configure-portal/cs-settings-config-panel-download.png)
 4. Чтобы применить обновления конфигурации, передайте новый файл в службу:
 
     ![Передать](./media/cloud-services-how-to-configure-portal/cs-settings-config-panel-upload.png)
 5. Выберите файл .cscfg и нажмите **ОК**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, как [развернуть облачную службу](cloud-services-how-to-create-deploy-portal.md).
-* Настройка [пользовательского имени домена](cloud-services-custom-domain-name-portal.md).
+* Настройте [имя пользовательского домена](cloud-services-custom-domain-name-portal.md).
 * [Управляйте облачной службой](cloud-services-how-to-manage-portal.md).
 * Настройте [сертификаты TLS/SSL](cloud-services-configure-ssl-certificate-portal.md).
 

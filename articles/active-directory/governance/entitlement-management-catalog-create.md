@@ -10,18 +10,18 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.subservice: compliance
-ms.date: 03/22/2020
+ms.date: 06/18/2020
 ms.author: barclayn
 ms.reviewer: hanki
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ffa6f2fbdcde41d81e268779c3a0586bd8310792
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 16a9c8ddfbc2c2a45067080dc68a759de226591b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80437553"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85339566"
 ---
 # <a name="create-and-manage-a-catalog-of-resources-in-azure-ad-entitlement-management"></a>Создание каталога ресурсов и управление им в управлении назначением Azure AD
 
@@ -57,7 +57,7 @@ ms.locfileid: "80437553"
 
 ## <a name="add-resources-to-a-catalog"></a>Добавление ресурсов в каталог
 
-Чтобы включить ресурсы в пакет Access, ресурсы должны находиться в каталоге. К типам ресурсов, которые можно добавить, относятся группы, приложения и сайты SharePoint Online. Это могут быть группы Office 365, созданные в облаке, или созданные в облаке группы безопасности Azure AD. Приложения могут быть корпоративными приложениями Azure AD, включая приложения SaaS и собственные приложения, Федеративные в Azure AD. Сайтами могут быть сайты SharePoint Online или семейства веб-сайтов SharePoint Online.
+Чтобы включить ресурсы в пакет Access, ресурсы должны находиться в каталоге. К типам ресурсов, которые можно добавить, относятся группы, приложения и сайты SharePoint Online. Группы могут быть созданы в облаке Microsoft 365 группами или облачно созданными группами безопасности Azure AD. Приложения могут быть корпоративными приложениями Azure AD, включая приложения SaaS и собственные приложения, Федеративные в Azure AD. Сайтами могут быть сайты SharePoint Online или семейства веб-сайтов SharePoint Online.
 
 **Предварительная роль:** Просмотр [необходимых ролей для добавления ресурсов в каталог](entitlement-management-delegate.md#required-roles-to-add-resources-to-a-catalog)
 
@@ -137,7 +137,7 @@ ms.locfileid: "80437553"
 
     ![Изменить параметры каталога](./media/entitlement-management-shared/catalog-edit.png)
 
-1. Выберите команду **Сохранить**.
+1. Нажмите кнопку **Сохранить**.
 
 ## <a name="delete-a-catalog"></a>Удаление каталога
 
@@ -157,6 +157,6 @@ ms.locfileid: "80437553"
 
 Также можно удалить каталог с помощью Microsoft Graph.  Пользователь в соответствующей роли с приложением с делегированным `EntitlementManagement.ReadWrite.All` разрешением может вызвать API для [удаления акцесспаккажекаталог](https://docs.microsoft.com/graph/api/accesspackagecatalog-delete?view=graph-rest-beta).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Делегирование управления доступом для доступа к диспетчерам пакетов](entitlement-management-delegate-managers.md)

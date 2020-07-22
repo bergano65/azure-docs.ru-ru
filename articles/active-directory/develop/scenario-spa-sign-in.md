@@ -11,18 +11,17 @@ ms.workload: identity
 ms.date: 02/11/2020
 ms.author: nacanuma
 ms.custom: aaddev
-ms.openlocfilehash: 7e809def048c95b6688a13ac99783615eb045d11
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 53a84bd970d564411ec9a56b54159e5a96717a6e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80885195"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84558766"
 ---
 # <a name="single-page-application-sign-in-and-sign-out"></a>Одностраничное приложение: вход и выход
 
 Узнайте, как добавить вход в код для приложения с одной страницей.
 
-Прежде чем можно будет получить маркеры для доступа к API в приложении, необходим контекст пользователя, прошедшего проверку подлинности. Вход пользователей в приложение в MSAL. js можно выполнять двумя способами:
+Прежде чем можно будет получить маркеры для доступа к API в приложении, необходим контекст пользователя, прошедшего проверку подлинности. Вход пользователей в приложение можно выполнять в MSAL.js двумя способами:
 
 * [Всплывающее окно](#sign-in-with-a-pop-up-window)с помощью `loginPopup` метода
 * [Перенаправление](#sign-in-with-redirect)с помощью `loginRedirect` метода
@@ -30,7 +29,7 @@ ms.locfileid: "80885195"
 При необходимости можно также передать области API, для которых требуется согласие пользователя во время входа в систему.
 
 > [!NOTE]
-> Если у приложения уже есть доступ к контексту пользователя, прошедшему проверку подлинности, или маркеру идентификации, можно пропустить шаг входа и получить токены напрямую. Дополнительные сведения см. в разделе [SSO без имени входа MSAL. js](msal-js-sso.md#sso-without-msaljs-login).
+> Если у приложения уже есть доступ к контексту пользователя, прошедшему проверку подлинности, или маркеру идентификации, можно пропустить шаг входа и получить токены напрямую. Дополнительные сведения см. в разделе [SSO без MSAL.js login](msal-js-sso.md#sso-without-msaljs-login).
 
 ## <a name="choosing-between-a-pop-up-or-redirect-experience"></a>Выбор между всплывающим окном или перенаправлением
 
@@ -45,17 +44,29 @@ ms.locfileid: "80885195"
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
-const loginRequest = {
-    scopes: ["https://graph.microsoft.com/User.ReadWrite"]
+
+const config = {
+    auth: {
+        clientId: 'your_app_id',
+        redirectUri: "your_app_redirect_uri", //defaults to application start page
+        postLogoutRedirectUri: "your_app_logout_redirect_uri"
+    }
 }
 
-userAgentApplication.loginPopup(loginRequest).then(function (loginResponse) {
-    //login success
-    let idToken = loginResponse.idToken;
-}).catch(function (error) {
-    //login failure
-    console.log(error);
-});
+const loginRequest = {
+    scopes: ["User.ReadWrite"]
+}
+
+const myMsal = new userAgentApplication(config);
+
+myMsal.loginPopup(loginRequest)
+    .then(function (loginResponse) {
+        //login success
+        let idToken = loginResponse.idToken;
+    }).catch(function (error) {
+        //login failure
+        console.log(error);
+    });
 ```
 
 # <a name="angular"></a>[Angular](#tab/angular)
@@ -91,7 +102,7 @@ const routes: Routes = [
 export class AppRoutingModule { }
 ```
 
-Для интерфейса всплывающего окна включите параметр `popUp` конфигурации. Вы также можете передать области, требующие согласия, следующим образом:
+Для интерфейса всплывающего окна включите `popUp` параметр конфигурации. Вы также можете передать области, требующие согласия, следующим образом:
 
 ```javascript
 // In app.module.ts
@@ -103,7 +114,7 @@ export class AppRoutingModule { }
             }
         }, {
             popUp: true,
-            consentScopes: ["https://graph.microsoft.com/User.ReadWrite"]
+            consentScopes: ["User.ReadWrite"]
         })
     ]
 })
@@ -117,17 +128,28 @@ export class AppRoutingModule { }
 Методы перенаправления не возвращают обещание из-за перемещения из основного приложения. Чтобы обработать возвращенные токены и получить к ним доступ, необходимо зарегистрировать обратные вызовы в случае успеха и ошибки перед вызовом методов перенаправления.
 
 ```javascript
+
+const config = {
+    auth: {
+        clientId: 'your_app_id',
+        redirectUri: "your_app_redirect_uri", //defaults to application start page
+        postLogoutRedirectUri: "your_app_logout_redirect_uri"
+    }
+}
+
+const loginRequest = {
+    scopes: ["User.ReadWrite"]
+}
+
+const myMsal = new userAgentApplication(config);
+
 function authCallback(error, response) {
     //handle redirect response
 }
 
-userAgentApplication.handleRedirectCallback(authCallback);
+myMsal.handleRedirectCallback(authCallback);
 
-const loginRequest = {
-    scopes: ["https://graph.microsoft.com/User.ReadWrite"]
-}
-
-userAgentApplication.loginRedirect(loginRequest);
+myMsal.loginRedirect(loginRequest);
 ```
 
 # <a name="angular"></a>[Angular](#tab/angular)
@@ -143,7 +165,7 @@ userAgentApplication.loginRedirect(loginRequest);
 
 Библиотека MSAL предоставляет `logout` метод, который очищает кэш в хранилище браузера и отправляет запрос на выход в Azure Active Directory (Azure AD). После выхода библиотека по умолчанию перенаправляется обратно на начальную страницу приложения.
 
-Вы можете настроить универсальный код ресурса (URI), на который будет осуществляться перенаправление после выхода, задав параметр `postLogoutRedirectUri`. Этот URI также должен быть зарегистрирован в качестве URI выхода при регистрации приложения.
+Вы можете настроить универсальный код ресурса (URI), на который будет осуществляться перенаправление после выхода, задав параметр `postLogoutRedirectUri` . Этот URI также должен быть зарегистрирован в качестве URI выхода при регистрации приложения.
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -156,9 +178,9 @@ const config = {
     }
 }
 
-const userAgentApplication = new UserAgentApplication(config);
-userAgentApplication.logout();
+const myMsal = new UserAgentApplication(config);
 
+myMsal.logout();
 ```
 
 # <a name="angular"></a>[Angular](#tab/angular)
@@ -182,7 +204,7 @@ this.authService.logout();
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Получение маркера для приложения](scenario-spa-acquire-token.md)

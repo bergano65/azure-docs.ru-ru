@@ -1,0 +1,1144 @@
+---
+title: Service Fabric базового уровня безопасности для производительности системы безопасности Azure
+description: Базовый план безопасности Service Fabric содержит практические руководства и ресурсы для реализации рекомендаций по безопасности, указанных в статье о производительности системы безопасности Azure.
+author: msmbaldwin
+ms.service: service-fabric
+ms.topic: conceptual
+ms.date: 07/13/2020
+ms.author: mbaldwin
+ms.custom: security-benchmark
+ms.openlocfilehash: d9d5d686c692c45acfff4fa811ed668c17f19861
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86532258"
+---
+# <a name="service-fabric-security-baseline-for-azure-security-benchmark"></a>Service Fabric базового уровня безопасности для производительности системы безопасности Azure
+
+Базовый план безопасности Azure для Service Fabric содержит рекомендации, которые помогут повысить уровень безопасности развертывания.
+
+Базовый план безопасности для этой службы взят из [Эталона безопасности Azure версии 1.0](https://docs.microsoft.com/azure/security/benchmarks/overview), содержащего рекомендации по обеспечению безопасности облачных решений в Azure с помощью наших практических рекомендаций.
+
+Дополнительные сведения см. в статье [Обзор базовой конфигурации безопасности Azure](https://docs.microsoft.com/azure/security/benchmarks/security-baselines-overview).
+
+
+
+## <a name="network-security"></a>Безопасность сети
+
+*Дополнительные сведения см. в статье [Управление безопасностью: безопасность сети](/azure/security/benchmarks/security-control-network-security).*
+
+### <a name="11-protect-azure-resources-within-virtual-networks"></a>1,1: защита ресурсов Azure в виртуальных сетях
+
+**Руководство**. Убедитесь, что все развертывания подсетей виртуальных сетей имеют группу безопасности сети, применяемую к элементам управления доступом к сети, относящимся к доверенным портам и источникам приложения.
+
+* [Deploy Azure Firewall using a template](https://docs.microsoft.com/azure/firewall/deploy-template) (Развертывание службы "Брандмауэр Azure" с помощью шаблона)
+
+* [Создание сетей периметра с помощью групп безопасности сети Azure (группы безопасности сети)](https://docs.microsoft.com/azure/security/fundamentals/service-fabric-best-practices#use-network-isolation-and-security-with-azure-service-fabric)
+
+* [Интеграция кластера Azure Service Fabric с существующей виртуальной сетью](https://docs.microsoft.com/azure/service-fabric/service-fabric-patterns-networking)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**. Customer
+
+### <a name="12-monitor-and-log-the-configuration-and-traffic-of-virtual-networks-subnets-and-nics"></a>1,2. Мониторинг и запись конфигурации и трафика виртуальных сетей, подсетей и сетевых карт
+
+**Руководство**. Используйте центр безопасности Azure и исправьте рекомендации по защите сети для виртуальной сети, подсети и группы безопасности сети, используемой для защиты кластера Azure Service Fabric. Включите журналы потоков группы безопасности сети (NSG) и отправьте журналы в учетную запись хранения Azure для аудита трафика. Вы также можете отправить журналы потоков NSG в рабочую область Azure Log Analytics и использовать Аналитика трафика Azure для получения ценных сведений о потоке трафика в облаке Azure. Некоторые преимущества Azure Аналитика трафика — это возможность визуализировать сетевые активности и определять горячие участки, выявлять угрозы безопасности, анализировать шаблоны потоков трафика и выявлять несетевые настройки.
+
+* [Как включить журналы потоков NSG](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal)
+
+* [Как включить и использовать Azure Аналитика трафика](https://docs.microsoft.com/azure/network-watcher/traffic-analytics)
+
+* [Общие сведения о безопасности сети, предоставляемой центром безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-network-recommendations)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**. Customer
+
+### <a name="13-protect-critical-web-applications"></a>1.3. Защита критических веб-приложений
+
+**Руководство**. предоставление внешнего шлюза для предоставления единой точки входа для пользователей, устройств или других приложений. Служба управления API Azure интегрируется непосредственно с Service Fabric, что позволяет защищать доступ к серверным службам, предотвращать атаки DOS с помощью регулирования, а также проверять ключи API, маркеры JWT, сертификаты и другие учетные данные.
+
+Рассмотрите возможность развертывания брандмауэра веб-приложения Azure (WAF) перед критически важными веб-приложениями для дополнительной проверки входящего трафика. Включите параметр диагностики для WAF и приема журналов в учетную запись хранения, концентратор событий или рабочую область Log Analytics.
+
+* [Общие сведения о Service Fabric со службой управления API Azure](https://docs.microsoft.com/azure/service-fabric/service-fabric-api-management-overview)
+
+* [Интеграция службы Управления API во внутреннюю сеть со Шлюзом приложений](https://docs.microsoft.com/azure/api-management/api-management-howto-integrate-internal-vnet-appgateway)
+
+* [Развертывание WAF Azure](https://docs.microsoft.com/azure/web-application-firewall/ag/create-waf-policy-ag)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="14-deny-communications-with-known-malicious-ip-addresses"></a>1.4. Запрет взаимодействия с известными опасными IP-адресами
+
+**Рекомендации**. для защиты от атак от атак DDoS включите стандартную защиту Azure от атак DDoS в виртуальной сети, в которой развернут кластер Azure Service Fabric. Используйте интегрированную аналитику угроз центра безопасности Azure, чтобы запретить обмен данными с известными вредоносными или неиспользуемыми IP-адресами Интернета.
+
+* [Настройка защиты от атак DDoS](https://docs.microsoft.com/azure/virtual-network/manage-ddos-protection)
+
+* [Общие сведения об интегрированной аналитике угроз в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-alerts-service-layer)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**. Customer
+
+### <a name="15-record-network-packets"></a>1,5: запись сетевых пакетов
+
+**Руководство**. Включение журналов потоков для группы безопасности сети (NSG) для NSG, подключенного к подсети, используемой для защиты кластера Azure Service Fabric. Запишите журналы потоков NSG в учетную запись хранения Azure, чтобы создать записи о потоках. Если требуется для изучения аномальных действий, включите запись пакетов наблюдателя за сетями Azure.
+
+* [Как включить журналы потоков NSG](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-portal)
+
+* [Как включить Наблюдатель за сетями](https://docs.microsoft.com/azure/network-watcher/network-watcher-create)
+
+* [Использование аналитики трафика для визуализации журналов потоков NSG](https://docs.microsoft.com/azure/network-watcher/traffic-analytics)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**. Customer
+
+### <a name="16-deploy-network-based-intrusion-detectionintrusion-prevention-systems-idsips"></a>1,6: развертывание системы обнаружения вторжений на основе сети и предотвращения вторжения (ИДЕНТИФИКАТОРы и IP-адреса)
+
+**Руководство**. Выберите предложение из Azure Marketplace, которое поддерживает функции идентификаторов и IP-адресов с возможностью проверки полезной нагрузки. Если система обнаружения или предотвращения вторжений на основе проверки атакующего кода не является обязательной, можно использовать Брандмауэр Azure с аналитикой угроз. Фильтрация Брандмауэра Azure на основе аналитики угроз может создавать оповещения и запрещать трафик, поступающий с известных вредоносных IP-адресов и доменов, а также передающий на них. IP-адреса и домены также передаются из канала Microsoft Threat Intelligence.
+
+Разверните выбранное решение брандмауэра на каждом из границ сети вашей организации, чтобы обнаружить и/или отклонить вредоносный трафик.
+
+* [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/?term=Firewall)
+
+* [Развертывание брандмауэра Azure](https://docs.microsoft.com/azure/firewall/tutorial-firewall-deploy-portal)
+
+* [Настройка оповещений с помощью брандмауэра Azure](https://docs.microsoft.com/azure/firewall/threat-intel)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="17-manage-traffic-to-web-applications"></a>1.7. Управление трафиком к веб-приложениям
+
+**Руководство**. Развертывание шлюза приложений Azure для веб-приложений с ВКЛЮЧЕНным протоколом HTTPS/SSL для доверенных сертификатов.
+
+* [Развертывание шлюза приложений](https://docs.microsoft.com/azure/application-gateway/quick-create-portal)
+
+* [Настройка шлюза приложений для использования протокола HTTPS](https://docs.microsoft.com/azure/application-gateway/create-ssl-portal)
+
+* [Общие сведения о балансировке нагрузки уровня 7 с помощью шлюзов веб-приложений Azure](https://docs.microsoft.com/azure/application-gateway/overview)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="18-minimize-complexity-and-administrative-overhead-of-network-security-rules"></a>1.8. Уменьшение сложности и дополнительных затрат на администрирование в правилах безопасности сети
+
+**Руководство**. Использование тегов службы виртуальной сети для определения элементов управления доступом к сети для групп безопасности сети (NSG), подключенных к подсети, в которой развернут кластер Azure Service Fabric. Теги служб можно использовать вместо определенных IP-адресов при создании правил безопасности. Указав имя тега службы (например, ApiManagement) в соответствующем исходном поле или поле назначения правила, можно разрешить или запретить трафик для соответствующей службы. Корпорация Майкрософт управляет префиксами адресов, входящих в тег службы, и автоматически обновляет этот тег при изменении адресов.
+
+* [Теги службы виртуальной сети](https://docs.microsoft.com/azure/virtual-network/service-tags-overview)
+
+* [Рекомендации по Service Fabric сети](https://docs.microsoft.com/azure/service-fabric/service-fabric-best-practices-networking)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="19-maintain-standard-security-configurations-for-network-devices"></a>1.9. Поддержание стандартных конфигураций безопасности для сетевых устройств
+
+**Руководство**. Определение и реализация стандартных конфигураций безопасности для сетевых ресурсов, связанных с кластером Azure Service Fabric. Используйте псевдонимы политик Azure в пространствах имен Microsoft. ServiceFabric и Microsoft. Network, чтобы создать настраиваемые политики для аудита или принудительного применения конфигурации сети кластера Azure Service Fabric.
+
+Вы также можете использовать схемы Azure для упрощения крупномасштабных развертываний Azure с помощью ключевых артефактов среды пакетов, таких как шаблоны Azure Resource Manager, элементы управления RBAC и политики, в одном определении схемы. Простое применение схемы к новым подпискам и средам, а также управление точной настройкой и управление с помощью версионирования.
+
+* [Просмотр доступных псевдонимов политик Azure](https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
+
+* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+
+* [Создание схемы Azure](https://docs.microsoft.com/azure/governance/blueprints/create-blueprint-portal)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="110-document-traffic-configuration-rules"></a>1.10. Документация по правилам конфигурации трафика
+
+**Руководство**. Использование тегов для группы безопасности сети (группы безопасности сети) и других ресурсов, связанных с сетевой безопасностью и потоком трафика, связанными с кластером Azure Service Fabric. Для отдельных правил NSG используйте поле "Описание", чтобы указать бизнес-потребности и длительность (и т. д.) любых правил, которые разрешают трафик в сеть и из нее.
+
+Используйте любое из встроенных определений политик Azure, связанных с тегами, например "требовать тег и его значение", чтобы убедиться, что все ресурсы созданы с помощью тегов и уведомлять вас о существующих ресурсах без тегов.
+
+Вы можете использовать Azure PowerShell или интерфейс командной строки Azure (CLI) для поиска и выполнения действий с ресурсами на основе их тегов.
+
+* [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+
+* [Создание виртуальной сети](https://docs.microsoft.com/azure/virtual-network/quick-create-portal)
+
+* [Создание группы безопасности сети с конфигурацией безопасности](https://docs.microsoft.com/azure/virtual-network/tutorial-filter-network-traffic)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="111-use-automated-tools-to-monitor-network-resource-configurations-and-detect-changes"></a>1.11. Использование автоматизированных средств для мониторинга конфигураций сетевых ресурсов и обнаружения изменений
+
+**Руководство**. Использование журнала действий Azure для мониторинга конфигураций сетевых ресурсов и обнаружения изменений сетевых ресурсов, связанных с развертываниями Service Fabric Azure. Создавайте оповещения в Azure Monitor, которые будут запускаться при изменении критических сетевых ресурсов.
+
+* [Как просматривать и извлекать события журнала действий Azure](https://docs.microsoft.com/azure/azure-monitor/platform/activity-log-view)
+
+* [Как создать оповещения в службе Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+## <a name="logging-and-monitoring"></a>Ведение журналов и мониторинг
+
+*Дополнительные сведения см. в статье [Управление безопасностью: ведение журналов и мониторинг](/azure/security/benchmarks/security-control-logging-monitoring).*
+
+### <a name="21-use-approved-time-synchronization-sources"></a>2.1. Использование утвержденных источников синхронизации времени
+
+**Руководство**. Майкрософт хранит источники времени для компонентов кластера Azure Service Fabric. Вы можете обновить синхронизацию времени для развертывания вычислений.
+
+* [Настройка синхронизации времени для ресурсов вычислений Azure](https://docs.microsoft.com/azure/virtual-machines/windows/time-sync)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Microsoft
+
+### <a name="22-configure-central-security-log-management"></a>2.2. Настройка централизованного управления журналами безопасности
+
+**Руководство**. Вы можете подключить кластер Azure Service Fabric к Azure Monitor для агрегирования данных безопасности, создаваемых кластером. См. примеры проблем диагностики и решения с Service Fabric.
+
+* [Настройка интеграции журналов Azure Monitor с Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-diagnostics-oms-setup)
+
+* [Настройка журналов Azure Monitor для мониторинга контейнеров в Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-tutorial-monitoring-wincontainers)
+
+* [Диагностика распространенных сценариев Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-diagnostics-common-scenarios)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="23-enable-audit-logging-for-azure-resources"></a>2.3. Включение журналов аудита для ресурсов Azure
+
+**Руководство**. Включение Azure Monitor для кластера Service Fabric направляет его в рабочую область log Analytics. При этом будут регистрироваться соответствующие сведения о кластере и метрики ОС для всех узлов кластера Azure Service Fabric.
+
+* [Настройка интеграции журналов Azure Monitor с Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-diagnostics-oms-setup)
+
+* [Настройка журналов Azure Monitor для мониторинга контейнеров в Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-tutorial-monitoring-wincontainers)
+
+* [Развертывание агента Log Analytics на узлах](https://docs.microsoft.com/azure/service-fabric/service-fabric-diagnostics-oms-agent)
+
+* [Log Analytics Поиск по журналам](https://docs.microsoft.com/azure/log-analytics/log-analytics-log-searches)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="24-collect-security-logs-from-operating-systems"></a>2.4. Сбор журналов безопасности из операционных систем
+
+**Руководство**. Подключение кластера Azure Service Fabric к Azure Monitor. Убедитесь, что в рабочей области Log Analytics используется срок хранения журнала, заданный в соответствии с нормативными требованиями вашей организации.
+
+* [Настройка интеграции журналов Azure Monitor с Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-diagnostics-oms-setup)
+
+* [Настройка журналов Azure Monitor для мониторинга контейнеров в Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-tutorial-monitoring-wincontainers)
+
+* [Развертывание агента Log Analytics на узлах](https://docs.microsoft.com/azure/service-fabric/service-fabric-diagnostics-oms-agent)
+
+* [Настройка срока хранения Log Analytics рабочей области](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="25-configure-security-log-storage-retention"></a>2.5. Настройка хранения журнала безопасности
+
+**Руководство**. Подключение кластера Azure Service Fabric к Azure Monitor. Убедитесь, что в рабочей области Log Analytics используется срок хранения журнала, заданный в соответствии с нормативными требованиями вашей организации.
+
+* [Настройка интеграции журналов Azure Monitor с Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-diagnostics-oms-setup)
+
+* [Настройка журналов Azure Monitor для мониторинга контейнеров в Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-tutorial-monitoring-wincontainers)
+
+* [Развертывание агента Log Analytics на узлах](https://docs.microsoft.com/azure/service-fabric/service-fabric-diagnostics-oms-agent)
+
+* [Настройка срока хранения Log Analytics рабочей области](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="26-monitor-and-review-logs"></a>2,6: мониторинг и просмотр журналов
+
+**Руководство**. Использование запросов к рабочей области Azure log Analytics для запроса журналов Service Fabric Azure.
+
+* [Log Analytics Поиск по журналам](https://docs.microsoft.com/azure/log-analytics/log-analytics-log-searches)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="27-enable-alerts-for-anomalous-activities"></a>2,7: Включение оповещений для аномальных действий
+
+**Руководство**. Использование рабочей области Azure log Analytics для мониторинга и оповещения о аномальных действиях в журналах безопасности и событиях, связанных с кластером Azure Service Fabric.
+
+* [Управление оповещениями в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-managing-and-responding-alerts)
+
+* [Как оповещать данные журнала Log Analytics](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-response)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**. Customer
+
+### <a name="28-centralize-anti-malware-logging"></a>2.8. Централизованное ведение журнала защиты от вредоносных программ
+
+**Руководство**. по умолчанию Защитник Windows устанавливается на windows Server 2016. Если вы не используете защитник Windows, обратитесь к документации по Антималеваре для правил конфигурации. Защитник Windows не поддерживается в Linux.
+
+* [Дополнительные сведения см. в разделе антивирусная программа "Защитник Windows" в Windows Server 2016.](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/windows-defender-antivirus-on-windows-server-2016)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="29-enable-dns-query-logging"></a>2.9. Включение ведения журнала запросов DNS
+
+**Руководство**. Реализация стороннего решения для ведения журнала DNS.
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="210-enable-command-line-audit-logging"></a>2.10. Включение ведения журнала аудита для командной строки
+
+**Руководство**. Ручная настройка ведения журнала консоли для каждого узла.
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+## <a name="identity-and-access-control"></a>Идентификаторы и управление доступом
+
+*Дополнительные сведения см. в статье [Управление безопасностью: идентификаторы и управление доступом](/azure/security/benchmarks/security-control-identity-access-control).*
+
+### <a name="31-maintain-an-inventory-of-administrative-accounts"></a>3.1. Инвентаризация учетных записей администраторов
+
+**Руководство**. Сохранение записи локальной административной учетной записи, созданной при подготовке кластера Azure Service Fabric, а также любых других создаваемых учетных записей. Кроме того, если используется интеграция Azure AD, в Azure AD есть встроенные роли, которые должны быть явно назначены и, следовательно, доступны для запросов. Используйте модуль Azure AD PowerShell, чтобы выполнять нерегламентированные запросы для обнаружения учетных записей, входящих в группы администраторов.
+
+Кроме того, вы можете использовать рекомендации по управлению удостоверениями и доступом в центре безопасности Azure.
+
+* [Как получить роль каталога в Azure AD с помощью PowerShell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0)
+
+* [Как получить членов роли каталога в Azure AD с помощью PowerShell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0)
+
+* [Мониторинг удостоверений и доступа с помощью центра безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-identity-access)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**. Customer
+
+### <a name="32-change-default-passwords-where-applicable"></a>3.2. Изменение паролей по умолчанию, где применимо
+
+**Руководство**. при подготовке кластера Azure требует создания новых паролей для веб-портала. Пароли по умолчанию для изменения отсутствуют, однако можно указать разные пароли для доступа к веб-порталу.
+
+* [Создание на портале Azure](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-creation-via-portal)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**. Customer
+
+### <a name="33-use-dedicated-administrative-accounts"></a>3.3. Применение выделенных административных учетных записей
+
+**Руководство**. Интеграция аутентификации для Azure Service Fabric с Azure Active Directory. Создание политик и процедур, связанных с использованием выделенных административных учетных записей.
+
+Кроме того, вы можете использовать рекомендации по управлению удостоверениями и доступом в центре безопасности Azure.
+
+* [Настройка проверки подлинности клиента Azure Active Directory](https://docs.microsoft.com/azure/service-fabric/service-fabric-tutorial-create-vnet-and-windows-cluster#set-up-azure-active-directory-client-authentication)
+
+* [Мониторинг удостоверений и доступа с помощью центра безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-identity-access)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**. Customer
+
+### <a name="34-use-single-sign-on-sso-with-azure-active-directory"></a>3.4. Использование единого входа с Azure Active Directory
+
+**Рекомендации**. везде, где это возможно, используйте Azure Active Directory SSO вместо настройки отдельных автономных учетных данных для каждой службы. Используйте рекомендации по управлению удостоверениями и доступом в центре безопасности Azure.
+
+* [Общие сведения об использовании единого входа в Azure AD](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-single-sign-on)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="35-use-multi-factor-authentication-for-all-azure-active-directory-based-access"></a>3.5. Использование многофакторной проверки подлинности для любого доступа на основе Azure Active Directory
+
+**Руководство**. Включите многофакторную проверку подлинности Azure AD и следуйте рекомендациям по управлению идентификацией и доступом в Центре безопасности Azure.
+
+* [Включение MFA в Azure](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted)
+
+* [Мониторинг идентификации и доступа в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-identity-access)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="36-use-dedicated-machines-privileged-access-workstations-for-all-administrative-tasks"></a>3.6. Использование выделенных компьютеров (рабочих станций с привилегированным доступом) для всех административных задач
+
+**Руководство**. Используйте лапы (рабочие станции с привилегированным доступом) с поддержкой многофакторной идентификации (MFA), настроенной для входа в и настройки кластеров Azure Service Fabric и связанных ресурсов.
+
+* [Использование рабочих станций с привилегированным доступом](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations)
+
+* [Включение MFA в Azure](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted)
+
+**Мониторинг Центра безопасности Azure**. Неприменимо
+
+**Ответственность**. Customer
+
+### <a name="37-log-and-alert-on-suspicious-activities-from-administrative-accounts"></a>3,7: журналы и оповещения о подозрительных действиях учетных записей администраторов
+
+**Руководство**. Используйте Privileged Identity Management (PIM) в Azure Active Directory (AD) для создания журналов и оповещений при возникновении подозрительных или небезопасных действий в среде. Кроме того, используйте обнаружение рисков Azure AD для просмотра оповещений и отчетов об опасном поведении пользователя.
+
+* [Развертывание Privileged Identity Management (PIM)](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-deployment-plan)
+
+* [Общие сведения об обнаружении рисков в Azure AD](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risk-events)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="38-manage-azure-resources-from-only-approved-locations"></a>3.8. Управление ресурсами Azure только из утвержденных расположений
+
+**Руководство**. Используйте именованные расположения с условным доступом, чтобы разрешить доступ только из конкретных логических групп диапазонов IP-адресов или стран и регионов.
+
+* [Как настроить именованные расположения](https://docs.microsoft.com/azure/active-directory/reports-monitoring/quickstart-configure-named-locations)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="39-use-azure-active-directory"></a>3.9. Использование Azure Active Directory
+
+**Руководство**. Использование Azure Active Directory (AAD) в качестве централизованной системы проверки подлинности и авторизации для защиты доступа к конечным точкам управления кластеров Azure Service Fabric. Azure AD защищает данные с помощью надежного шифрования для хранимых и транзитных данных. AAD также содержит Salt-записи, хэши и безопасно хранит учетные данные пользователя.
+
+* [Создание и настройка экземпляра Azure AD](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-access-create-new-tenant)
+
+* [Azure Active Directory установки для проверки подлинности клиента Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-creation-setup-aad)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="310-regularly-review-and-reconcile-user-access"></a>3.10. Регулярная проверка и согласование доступа пользователей
+
+**Руководство**. Использование проверки подлинности Azure Active Directory (AAD) в кластере Azure Service Fabric. AAD предоставляет журналы для облегчения поиска устаревших учетных записей. Кроме того, используйте проверку доступа удостоверений Azure, чтобы эффективно управлять членством в группах, доступом к корпоративным приложениям и назначениями ролей. Доступ пользователя можно проверить регулярно, чтобы убедиться, что доступ к ним имеют только нужные пользователи.
+
+* [Использование проверок доступа для идентификации Azure](https://docs.microsoft.com/azure/active-directory/governance/access-reviews-overview)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="311-alert-on-account-login-behavior-deviation"></a>3,11: предупреждение об отклонении режима входа учетной записи
+
+**Руководство**. Использование Azure Active Directory (AAD) для входа и журналов аудита для наблюдения за попытками доступа к отключенным учетным записям; Эти журналы можно интегрировать в любое стороннее средство SIEM/Monitoring.
+
+Этот процесс можно упростить, создав параметры диагностики для учетных записей пользователей AAD, отправив журналы аудита и журналы входа в рабочую область Azure Log Analytics. Настройте нужные оповещения в рабочей области Azure Log Analytics.
+
+* [Как интегрировать журналы действий Azure в Azure Monitor](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="312-alert-on-account-sign-in-behavior-deviation"></a>3,12: предупреждение об отклонении при входе в учетную запись
+
+**Руководство**. Используйте функции защиты идентификации и обнаружения рисков Azure AD, чтобы настроить автоматическое реагирование для обнаружения подозрительных действий, связанных с удостоверениями пользователей. Вы также можете включить данные в Azure Sentinel для дальнейшего изучения.
+
+* [Просмотр рискованных входов в Azure AD](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-risky-sign-ins)
+
+* [Как настроить и включить политики рисков с помощью защиты идентификации](https://docs.microsoft.com/azure/active-directory/identity-protection/howto-identity-protection-configure-risk-policies)
+
+* [Подключение к Azure Sentinel](https://docs.microsoft.com/azure/sentinel/quickstart-onboard)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="313-provide-microsoft-with-access-to-relevant-customer-data-during-support-scenarios"></a>3.13. Предоставление корпорации Майкрософт доступа к соответствующим данным клиентов в рамках сценариев поддержки
+
+**Руководство**: недоступно; Защищенное хранилище еще не поддерживаются для Azure Service Fabric.
+
+* [Список поддерживаемых защищенное хранилище служб](https://docs.microsoft.com/azure/security/fundamentals/customer-lockbox-overview#supported-services-and-scenarios-in-general-availability)
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Неприменимо
+
+## <a name="data-protection"></a>Защита данных
+
+*Дополнительные сведения см. в статье [Управление безопасностью: защита данных](/azure/security/benchmarks/security-control-data-protection).*
+
+### <a name="41-maintain-an-inventory-of-sensitive-information"></a>4.1. Инвентаризация конфиденциальных данных
+
+**Руководство**. Использование тегов в ресурсах, связанных с развертываниями кластера Azure Service Fabric, для помощи в отслеживании ресурсов Azure, в которых хранятся или обрабатываются конфиденциальные данные.
+
+* [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="42-isolate-systems-storing-or-processing-sensitive-information"></a>4.2. Изолирование систем, хранящих или обрабатывающих конфиденциальные данные
+
+**Руководство**. Реализуйте отдельные подписки и группы управления для разработки, тестирования и производства. Ресурсы должны быть разделены виртуальной сетью или подсетью, помечены соответствующим образом и защищены брандмауэром NSG или Azure. Ресурсы, которые хранят или обрабатывают конфиденциальные данные, должны быть достаточно изолированы. Для виртуальных машин, которые хранят или обрабатывают конфиденциальные данные, реализуйте политику и процедуры, чтобы отключить их, когда они не используются.
+
+* [Создание дополнительных подписок Azure](https://docs.microsoft.com/azure/billing/billing-create-subscription)
+
+* [Создание групп управления](https://docs.microsoft.com/azure/governance/management-groups/create)
+
+* [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+
+* [Создание виртуальной сети](https://docs.microsoft.com/azure/virtual-network/quick-create-portal)
+
+* [Создание группы безопасности сети с конфигурацией безопасности](https://docs.microsoft.com/azure/virtual-network/tutorial-filter-network-traffic)
+
+* [Развертывание брандмауэра Azure](https://docs.microsoft.com/azure/firewall/tutorial-firewall-deploy-portal)
+
+* [Как настроить оповещение или оповещение и запретить с помощью брандмауэра Azure](https://docs.microsoft.com/azure/firewall/threat-intel)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="43-monitor-and-block-unauthorized-transfer-of-sensitive-information"></a>4.3. Мониторинг и блокирование несанкционированной передачи конфиденциальной информации
+
+**Руководство**. Развертывание автоматизированного инструмента на периметре сети, который отслеживает несанкционированную передачу конфиденциальной информации и блокирует такие передачи при оповещении специалистов по информационной безопасности.
+
+Для базовой платформы, управляемой корпорацией Майкрософт, корпорация Майкрософт считает все содержимое клиента конфиденциальным и предпринимает все возможные усилия для защиты клиентов от потери данных и раскрытия информации. Чтобы обеспечить безопасность данных клиентов в Azure, корпорация Майкрософт реализовала и поддерживает набор надежных элементов управления защитой данных и
+
+речь.
+
+* [Общие сведения о защите данных клиентов в Azure](https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Совмещаемая блокировка
+
+### <a name="44-encrypt-all-sensitive-information-in-transit"></a>4.4: Шифрование любой конфиденциальной информации при передаче
+
+**Руководство**. шифрование всех конфиденциальных данных во время передачи. Убедитесь, что все клиенты, подключающиеся к ресурсам Azure, могут согласовать TLS 1,2 или более поздней версии.
+
+Следуйте рекомендациям центра безопасности Azure для шифрования неактивных данных и шифрования при передаче, где это применимо.
+
+* [Общие сведения о шифровании при передаче с помощью Azure](https://docs.microsoft.com/azure/security/fundamentals/encryption-overview#encryption-of-data-in-transit)
+
+* [Сценарии защиты кластера Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-security)
+
+* [Руководство по устранению неполадок Service Fabric конфигурации TLS](https://github.com/Azure/Service-Fabric-Troubleshooting-Guides/blob/master/Security/TLS%20Configuration.md)
+
+**Мониторинг центра безопасности Azure**: Сейчас это недоступно
+
+**Ответственность**: Совмещаемая блокировка
+
+### <a name="45-use-an-active-discovery-tool-to-identify-sensitive-data"></a>4.5. Использование средства активного обнаружения для распознавания конфиденциальных данных
+
+**Руководство**. функции для идентификации, классификации и предотвращения потерь данных пока недоступны для службы хранилища Azure или ресурсов для вычислений. Установите сторонние решения, если это необходимо для обеспечения соответствия требованиям.
+
+Для базовой платформы, управляемой корпорацией Майкрософт, корпорация Майкрософт считает все содержимое клиента конфиденциальным и предпринимает все возможные усилия для защиты клиентов от потери данных и раскрытия информации. Чтобы обеспечить безопасность данных клиентов в Azure, корпорация Майкрософт реализовала и поддерживает набор надежных элементов управления и возможностей защиты данных.
+
+* [Общие сведения о защите данных клиентов в Azure](https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Совмещаемая блокировка
+
+### <a name="46-use-role-based-access-control-to-control-access-to-resources"></a>4,6. Использование управления доступом на основе ролей для управления доступом к ресурсам
+
+**Руководство**. Неприменимо; эта рекомендация предназначена для невычислительных ресурсов, которые служат для хранения данных.
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Неприменимо
+
+### <a name="47-use-host-based-data-loss-prevention-to-enforce-access-control"></a>4.7. Использование защиты от потери данных на основе узла для обеспечения контроля доступа
+
+**Руководство**. для кластеров Azure Service Fabric, в которых хранятся или обрабатываются конфиденциальные данные, пометьте кластер и связанные ресурсы как конфиденциальные с помощью тегов. Функции защиты идентификации, классификации и предотвращения потери данных пока недоступны для службы хранилища Azure или ресурсов. Установите сторонние решения, если это необходимо для обеспечения соответствия требованиям.
+
+Для базовой платформы, управляемой корпорацией Майкрософт, корпорация Майкрософт считает все содержимое клиента конфиденциальным и предпринимает все возможные усилия для защиты клиентов от потери данных и раскрытия информации. Чтобы обеспечить безопасность данных клиентов в Azure, корпорация Майкрософт реализовала и поддерживает набор надежных элементов управления и возможностей защиты данных.
+
+* [Общие сведения о защите данных клиентов в Azure](https://docs.microsoft.com/azure/security/fundamentals/protection-customer-data)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Совмещаемая блокировка
+
+### <a name="48-encrypt-sensitive-information-at-rest"></a>4.8. Шифрование конфиденциальной информации при хранении
+
+**Руководство**. используйте шифрование неактивных ресурсов Azure. Корпорация Майкрософт рекомендует разрешить Azure управлять ключами шифрования, однако существует возможность управлять собственными ключами в некоторых экземплярах.
+
+* [Общие сведения о шифровании неактивных в Azure](https://docs.microsoft.com/azure/security/fundamentals/encryption-atrest)
+
+* [Настройка ключей шифрования, управляемых клиентом](https://docs.microsoft.com/azure/storage/common/storage-encryption-keys-portal)
+
+* [Включение шифрования дисков для узлов кластера Azure Service Fabric в Windows](https://docs.microsoft.com/azure/service-fabric/service-fabric-enable-azure-disk-encryption-windows)
+
+* [Включение шифрования дисков для узлов кластера Azure Service Fabric в Linux](https://docs.microsoft.com/azure/service-fabric/service-fabric-enable-azure-disk-encryption-linux)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="49-log-and-alert-on-changes-to-critical-azure-resources"></a>4.9. Включение в журнал и создание оповещений по изменениям критических ресурсов Azure
+
+**Руководство**. Использование Azure Monitor с журналом действий Azure для создания оповещений о том, когда изменения выполняются с важными ресурсами Azure.
+
+* [Создание оповещений для событий журнала действий Azure](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+## <a name="vulnerability-management"></a>управление уязвимостями;
+
+*Дополнительные сведения см. в статье [Управление безопасностью: управление уязвимостями](/azure/security/benchmarks/security-control-vulnerability-management).*
+
+### <a name="51-run-automated-vulnerability-scanning-tools"></a>5.1. Выполнение автоматизированных средства анализа уязвимостей
+
+**Руководство**. регулярное выполнение Service Fabric службы анализа сбоев и Chaos Services для моделирования сбоев в кластере для оценки надежности и надежности служб.
+
+Следуйте рекомендациям центра безопасности Azure по оценке уязвимостей на виртуальных машинах Azure и в образах контейнеров.
+
+Используйте стороннее решение для проведения оценки уязвимостей на сетевых устройствах и веб-приложениях. При проведении удаленной проверки не используйте одну, бессрочную учетную запись администратора. Рассмотрите возможность реализации методологии JIT-подготовки для учетной записи проверки. Учетные данные для учетной записи проверки должны быть защищены, отслеживаться и использоваться только для поиска уязвимостей.
+
+* [Общие сведения о службе анализа сбоев Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-testability-overview)
+
+* [Вызвать контролируемый Chaos в кластерах Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-controlled-chaos)
+
+* [Реализация рекомендаций по оценке уязвимостей в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-vulnerability-assessment-recommendations)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="52-deploy-automated-operating-system-patch-management-solution"></a>5.2. Развертывание автоматизированного решения для управления исправлениями операционной системы
+
+**Руководство**. Включение автоматического обновления образов ОС в масштабируемых наборах виртуальных машин кластера Azure Service Fabric.
+
+Кроме того, для тестирования исправлений ОС перед переходом в рабочую среду используйте ручной триггер для обновления образа операционной системы в масштабируемом наборе. Обратите внимание, что параметр триггера вручную не предоставляет встроенную функцию отката. Мониторинг исправлений ОС с помощью Управление обновлениями из службы автоматизации Azure.
+
+* [Управление исправлениями для узлов кластера Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-best-practices-infrastructure-as-code#azure-virtual-machine-operating-system-automatic-upgrade-configuration)
+
+* [Автоматическое обновление образа ОС с помощью масштабируемых наборов виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade)
+
+* [Как обновить виртуальные машины в соответствии с последней моделью масштабируемого набора](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-upgrade-scale-set#how-to-bring-vms-up-to-date-with-the-latest-scale-set-model)
+
+* [Обзор функции "Управление обновлениями" в службе автоматизации Azure](https://docs.microsoft.com/azure/automation/automation-update-management)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="53-deploy-automated-patch-management-solution-for-third-party-software-titles"></a>5,3: Развертывание автоматизированного решения по управлению исправлениями для программ сторонних разработчиков
+
+**Руководство**. Включение автоматического обновления образов ОС в масштабируемых наборах виртуальных машин кластера Azure Service Fabric. Приложение для управления исправлениями (ВЕХ) — это альтернативное решение, предназначенное для Service Fabric кластеров, размещенных за пределами Azure. ВЕХ можно использовать с кластерами Azure с дополнительными издержками на размещение.
+
+* [Управление исправлениями для узлов кластера Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-best-practices-infrastructure-as-code#azure-virtual-machine-operating-system-automatic-upgrade-configuration)
+
+* [Автоматическое обновление образа ОС с помощью масштабируемых наборов виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade)
+
+* [Настройка расписания обновления ОС для кластеров Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-patch-orchestration-application)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="54-compare-back-to-back-vulnerability-scans"></a>5.4. Сравнение проверок смежных уязвимостей
+
+**Руководство**. Экспорт результатов сканирования с одинаковыми интервалами и сравнение результатов для проверки того, что уязвимости исправлены. При использовании рекомендаций по управлению уязвимостями, предлагаемых центром безопасности Azure, вы можете выполнить сведение на портал выбранного решения для просмотра исторических данных сканирования.
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="55-use-a-risk-rating-process-to-prioritize-the-remediation-of-discovered-vulnerabilities"></a>5.5. Использование процесса оценки рисков для определения приоритета в устранении обнаруженных уязвимостей
+
+**Руководство**. Используйте общую программу оценки рисков (например, Common Vulnerability Scoring System) или оценки рисков по умолчанию, предоставляемые сторонним средством сканирования.
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+## <a name="inventory-and-asset-management"></a>Инвентаризация и управление ресурсами
+
+*Дополнительные сведения см. в статье [Управление безопасностью: инвентаризация и управление ресурсами](/azure/security/benchmarks/security-control-inventory-asset-management).*
+
+### <a name="61-use-automated-asset-discovery-solution"></a>6,1. Использование автоматизированного решения для обнаружения ресурсов
+
+**Руководство**. Используйте Azure Resource Graph для запроса и обнаружения всех ресурсов (например, вычислений, хранилища, сети, портов, протоколов и т. д.) в ваших подписках. Убедитесь в том, что в вашем клиенте есть соответствующие разрешения (на чтение) и вы можете перечислить все подписки Azure, а также ресурсы в ваших подписках.
+
+Хотя классические ресурсы Azure можно обнаружить через Resource Graph, настоятельно рекомендуется в дальнейшем создавать и использовать ресурсы Azure Resource Manager.
+
+* [Как создавать запросы с помощью Azure Resource Graph](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
+
+* [Как просматривать подписки Azure](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
+
+* [Общие сведения об Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="62-maintain-asset-metadata"></a>6.2. Ведение метаданных активов
+
+**Руководство**. Применяйте к ресурсам Azure теги, чтобы логически классифицировать их на основе метаданных.
+
+* [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**. Customer
+
+### <a name="63-delete-unauthorized-azure-resources"></a>6.3. Удаление неавторизованных ресурсов Azure
+
+**Руководство**. Использование тегов, групп управления и отдельных подписок (при необходимости) для Организации и мониторинга ресурсов. Регулярно сверяйте ресурсы, чтобы своевременно удалять неавторизованные ресурсы из подписки.
+
+* [Создание дополнительных подписок Azure](https://docs.microsoft.com/azure/billing/billing-create-subscription)
+
+* [Создание групп управления](https://docs.microsoft.com/azure/governance/management-groups/create)
+
+* [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="64-define-and-maintain-inventory-of-approved-azure-resources"></a>6,4: определение и обслуживание инвентаризации утвержденных ресурсов Azure
+
+**Руководство**. Определите утвержденные ресурсы Azure и программное обеспечение для вычислительных ресурсов.
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="65-monitor-for-unapproved-azure-resources"></a>6.5. Отслеживание неутвержденных ресурсов Azure
+
+**Рекомендации**. Используйте политику Azure, чтобы ограничить тип ресурсов, которые могут быть созданы в подписках клиентов, используя следующие встроенные определения политик:
+
+Недопустимые типы ресурсов
+
+Допустимые типы ресурсов
+
+Используйте граф ресурсов Azure для запроса или обнаружения ресурсов в ваших подписках. Убедитесь в том, что все ресурсы Azure, представленные в среде, утверждены.
+
+* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+
+* [Как создавать запросы с помощью Azure Graph](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="66-monitor-for-unapproved-software-applications-within-compute-resources"></a>6.6. Отслеживание неутвержденных программных приложений в рамках ресурсов вычислений
+
+**Руководство**. Реализация стороннего решения для мониторинга узлов кластера для неутвержденных программных приложений.
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="67-remove-unapproved-azure-resources-and-software-applications"></a>6.7. Удаление неутвержденных ресурсов Azure и программных приложений
+
+**Руководство**. Использование графа ресурсов Azure для запроса или обнаружения всех ресурсов (например, вычислений, хранилища, сети, портов и протоколов и т. д.), включая кластеры Azure Service Fabric, в ваших подписках. Удалите все неутвержденные ресурсы Azure, которые вы обнаружите. Для узлов кластера Azure Service Fabric реализуйте стороннее решение для удаления или оповещения о неутвержденном программном обеспечении.
+
+* [Как создавать запросы с помощью Azure Graph](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="68-use-only-approved-applications"></a>6.8. Использование только утвержденных приложений
+
+**Руководство**. для узлов кластера Azure Service Fabric реализуйте стороннее решение, чтобы предотвратить выполнение несанкционированного программного обеспечения.
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="69-use-only-approved-azure-services"></a>6.9. Использование только утвержденных служб Azure
+
+**Руководство**. Использование политики Azure для ограничения служб, которые можно подготавливать в вашей среде.
+
+* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+
+* [Как отказаться от определенного типа ресурса с помощью Политики Azure](https://docs.microsoft.com/azure/governance/policy/samples/not-allowed-resource-types)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="610-maintain-an-inventory-of-approved-software-titles"></a>6,10: ведение инвентаризации утвержденных наименований программного обеспечения
+
+**Руководство**. для узлов кластера Azure Service Fabric реализуйте стороннее решение, чтобы предотвратить выполнение несанкционированных типов файлов.
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="611-limit-users-ability-to-interact-with-azure-resource-manager"></a>6,11: ограничьте возможность пользователей работать с Azure Resource Manager
+
+**Руководство**. Использование условного доступа Azure для ограничения возможности пользователей взаимодействовать с диспетчером ресурсов Azure путем настройки "блокировать доступ" для приложения "Microsoft Azure управления".
+
+* [Настройка условного доступа для блокировки доступа к диспетчеру ресурсов Azure](https://docs.microsoft.com/azure/role-based-access-control/conditional-access-azure-management)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="612-limit-users-ability-to-execute-scripts-within-compute-resources"></a>6.12. Ограничение возможности пользователей выполнять сценарии в ресурсах вычислений
+
+**Руководство**. Использование конфигураций, специфичных для операционной системы, или сторонних ресурсов для ограничения возможности пользователей выполнять сценарии в ресурсах вычислений Azure.
+
+* [Например, управление выполнением скриптов PowerShell в средах Windows](https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="613-physically-or-logically-segregate-high-risk-applications"></a>6.13. Физическое или логическое разделение приложений с высоким риском
+
+**Руководство**. программное обеспечение, необходимое для бизнес-операций, но может повысить риск для Организации, должно быть изолировано внутри собственной виртуальной машины и (или) виртуальной сети и достаточно защищено с помощью брандмауэра Azure или группы безопасности сети.
+
+* [Создание виртуальной сети](https://docs.microsoft.com/azure/virtual-network/quick-create-portal)
+
+* [Создание NSG с конфигурацией безопасности](https://docs.microsoft.com/azure/virtual-network/tutorial-filter-network-traffic)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+## <a name="secure-configuration"></a>Безопасная конфигурация
+
+*Дополнительные сведения см. в статье [Управление безопасностью: безопасная конфигурация](/azure/security/benchmarks/security-control-secure-configuration).*
+
+### <a name="71-establish-secure-configurations-for-all-azure-resources"></a>7.1. Установка безопасных конфигураций для всех ресурсов Azure
+
+**Руководство**. Использование псевдонимов политик Azure в пространстве имен Microsoft. ServiceFabric для создания настраиваемых политик аудита или принудительного применения сетевой конфигурации кластера Service Fabric.
+
+* [Просмотр доступных псевдонимов политик Azure](https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
+
+* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="72-establish-secure-operating-system-configurations"></a>7.2. Сохранение безопасных конфигураций для операционных систем
+
+**Руководство**. Управление образами операционных систем Azure Service Fabric и их обслуживание осуществляется корпорацией Майкрософт. Клиент, ответственный за реализацию безопасных конфигураций для операционной системы узлов кластера.
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="73-maintain-secure-azure-resource-configurations"></a>7.3. Сохранение безопасных конфигураций для ресурсов Azure
+
+**Рекомендации**. Используйте политику Azure [Deny] и [развертывание, если не существует], чтобы применить параметры безопасности для кластеров Azure Service Fabric и связанных ресурсов.
+
+* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+
+* [Сведения о действии Политик Azure](https://docs.microsoft.com/azure/governance/policy/concepts/effects)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="74-maintain-secure-operating-system-configurations"></a>7.4. Сохранение безопасных конфигураций для операционных систем
+
+**Руководство**. Управление образами операционных систем кластера Azure Service Fabric и их обслуживание корпорацией Майкрософт. Клиент, ответственный за реализацию конфигурации состояния на уровне ОС.
+
+**Мониторинг центра безопасности Azure**: Сейчас это недоступно
+
+**Ответственность**: Совмещаемая блокировка
+
+### <a name="75-securely-store-configuration-of-azure-resources"></a>7.5. Безопасное хранение конфигурации ресурсов Azure
+
+**Руководство**. Если вы используете пользовательские определения политики Azure, используйте Azure DevOps или Azure Repos для безопасного хранения кода и управления им.
+
+* [Как хранить код в Azure DevOps](https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops)
+
+* [Документация по Azure Repos](https://docs.microsoft.com/azure/devops/repos/index?view=azure-devops)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**. Customer
+
+### <a name="76-securely-store-custom-operating-system-images"></a>7.6. Безопасное хранение пользовательских образов операционной системы
+
+**Рекомендации**. при использовании пользовательских образов используйте RBAC, чтобы обеспечить доступ к образам только полномочным пользователям. Для образов контейнеров Храните их в реестре контейнеров Azure и используйте RBAC, чтобы обеспечить доступ к образам только полномочным пользователям.
+
+* [Общие сведения о RBAC в Azure](https://docs.microsoft.com/azure/role-based-access-control/rbac-and-directory-admin-roles)
+
+* [Общие сведения о RBAC для реестра контейнеров](https://docs.microsoft.com/azure/container-registry/container-registry-roles)
+
+* [Настройка RBAC в Azure](https://docs.microsoft.com/azure/role-based-access-control/quickstart-assign-role-user-portal)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="77-deploy-configuration-management-tools-for-azure-resources"></a>7,7: развертывание средств управления конфигурацией для ресурсов Azure
+
+**Руководство**. Использование псевдонимов политик Azure в пространстве имен Microsoft. ServiceFabric для создания настраиваемых политик для оповещения, аудита и принудительного применения конфигураций системы. Кроме того, разрабатывайте процесс и конвейер для управления исключениями политик.
+
+* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="78-deploy-configuration-management-tools-for-operating-systems"></a>7,8: развертывание средств управления конфигурацией для операционных систем
+
+**Руководство**: неприменимо; Это руководство предназначено для вычислений с ресурсами IaaS.
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Неприменимо
+
+### <a name="79-implement-automated-configuration-monitoring-for-azure-resources"></a>7,9. Реализация автоматического мониторинга конфигурации для ресурсов Azure
+
+**Руководство**. Использование псевдонимов политик Azure в пространстве имен Microsoft. ServiceFabric для создания настраиваемых политик для аудита или принудительного применения конфигурации кластера Service Fabric.
+
+* [Просмотр доступных псевдонимов политик Azure](https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
+
+* [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="710-implement-automated-configuration-monitoring-for-operating-systems"></a>7.10. Реализация автоматизированного мониторинга конфигурации для операционных систем
+
+**Руководство**. Использование центра безопасности Azure для выполнения проверок базовых параметров ОС и DOCKER для контейнеров.
+
+* [Общие сведения о рекомендациях центра безопасности Azure в отношении контейнеров](https://docs.microsoft.com/azure/security-center/security-center-container-recommendations)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="711-manage-azure-secrets-securely"></a>7.11. Безопасное управление секретами Azure
+
+**Рекомендации**. Используйте управляемое удостоверение службы в сочетании с Azure Key Vault, чтобы упростить и защитить управление секретами для облачных приложений.
+
+* [Использование управляемых удостоверений для Azure с Service Fabric](https://docs.microsoft.com/azure/service-fabric/concepts-managed-identity)
+
+* [Настройка поддержки управляемого удостоверения для нового кластера Service Fabric](https://docs.microsoft.com/azure/service-fabric/configure-new-azure-service-fabric-enable-managed-identity)
+
+* [Использование управляемого удостоверения с приложением Service Fabric](https://docs.microsoft.com/azure/service-fabric/how-to-managed-identity-service-fabric-app-code)
+
+* [Поддержка Кэйваултреференце приложений для Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-keyvault-references)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="712-manage-identities-securely-and-automatically"></a>7.12. Безопасное и автоматическое управление удостоверениями
+
+**Руководство**. управляемые удостоверения можно использовать в кластерах Service Fabric, развернутых в Azure, а также для приложений, развернутых в качестве ресурсов Azure. Управляемое удостоверение можно использовать для проверки подлинности в любой службе, которая поддерживает проверку подлинности Azure AD, включая Key Vault, при этом не сохраняя каких-либо учетных данных в коде.
+
+* [Использование управляемых удостоверений для Azure с Service Fabric](https://docs.microsoft.com/azure/service-fabric/concepts-managed-identity)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="713-eliminate-unintended-credential-exposure"></a>7.13. Устранение непреднамеренного раскрытия учетных данных
+
+**Руководство**. при использовании любого кода, связанного с развертыванием Service Fabric Azure, можно реализовать средство проверки учетных данных для указания учетных данных в коде. Сканер учетных данных также рекомендует перемещать обнаруженные учетные данные в более безопасные расположения, такие как Azure Key Vault.
+
+Используйте Azure Key Vault для автоматической смены сертификатов Service Fabric кластера.
+
+* [Как настроить сканер учетных данных](https://secdevtools.azurewebsites.net/helpcredscan.html)
+
+* [Управление сертификатами в кластерах Service Fabric](https://docs.microsoft.com/azure/service-fabric/cluster-security-certificate-management#certificate-rotation)
+
+**Мониторинг Центра безопасности Azure**. Неприменимо
+
+**Ответственность**. Customer
+
+## <a name="malware-defense"></a>Защита от вредоносных программ
+
+*Дополнительные сведения см. в статье [Управление безопасностью: защита от вредоносных программ](/azure/security/benchmarks/security-control-malware-defense).*
+
+### <a name="81-use-centrally-managed-anti-malware-software"></a>8.1. Использование централизованно управляемого программного обеспечения для защиты от вредоносных программ
+
+**Руководство**. по умолчанию антивирусная программа "Защитник Windows" установлена на Windows Server 2016. Пользовательский интерфейс установлен по умолчанию на некоторых номерах SKU, но не является обязательным.
+
+Если вы не используете Защитник Windows, обратитесь к документации по работе с антивредоносным ПО, чтобы ознакомиться с правилами настройки. Защитник Windows не поддерживается в Linux.
+
+* [Знакомство с антивирусной программой "Защитник Windows" в Windows Server 2016](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/windows-defender-antivirus-on-windows-server-2016)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="82-pre-scan-files-to-be-uploaded-to-non-compute-azure-resources"></a>8.2. Предварительная проверка файлов для отправки в ресурсы Azure, не являющиеся вычислительными
+
+**Руководство**. Неприменимо; эта рекомендация предназначена для невычислительных ресурсов, которые служат для хранения данных. Защита от вредоносных программ Майкрософт включена на базовом узле, поддерживающем службы Azure (например, Service Fabric), но не выполняется в содержимом клиента.
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Неприменимо
+
+### <a name="83-ensure-anti-malware-software-and-signatures-are-updated"></a>8.3. Своевременное обновление программного обеспечения для защиты от вредоносных программ и подписей
+
+**Руководство**. Неприменимо; эта рекомендация предназначена для невычислительных ресурсов, которые служат для хранения данных. Защита от вредоносных программ Майкрософт включена на базовом узле, поддерживающем службы Azure (например, Service Fabric), но не выполняется в содержимом клиента.
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**: Неприменимо
+
+## <a name="data-recovery"></a>Восстановление данных
+
+*Дополнительные сведения см. в статье [Управление безопасностью: восстановление данных](/azure/security/benchmarks/security-control-data-recovery).*
+
+### <a name="91-ensure-regular-automated-back-ups"></a>9.1. Обеспечение регулярного автоматического резервного копирования
+
+**Руководство**. Служба резервного копирования и восстановления в Service Fabric обеспечивает простую и автоматическую архивацию данных, хранящихся в службах с отслеживанием состояния. Периодическое резервное копирование данных приложения является основой для защиты от потери данных и недоступности службы. Service Fabric предоставляет дополнительную службу резервного копирования и восстановления, которая позволяет настраивать периодическое резервное копирование надежных служб с отслеживанием состояния (включая службы субъекта) без необходимости написания дополнительного кода. Она также упрощает восстановление ранее сделанных резервных копий.
+
+* [Периодическое резервное копирование и восстановление в кластере Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-backuprestoreservice-quickstart-azurecluster)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="92-perform-complete-system-backups-and-backup-any-customer-managed-keys"></a>9,2: выполните полное резервное копирование системы и резервное копирование ключей, управляемых клиентом
+
+**Руководство**. Включите службу восстановления резервных копий в кластере Service Fabric и создайте политики архивации, чтобы периодически и по запросу создавать резервные копии служб с отслеживанием состояния. Резервное копирование ключей, управляемых клиентом, в Azure Key Vault.
+
+* [Периодическое резервное копирование и восстановление в кластере Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-backuprestoreservice-quickstart-azurecluster)
+
+* [Основные сведения о настройке периодического резервного копирования в Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-backuprestoreservice-configure-periodic-backup)
+
+* [Как создать резервную копию ключей хранилища ключей в Azure](https://docs.microsoft.com/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey?view=azurermps-6.13.0)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="93-validate-all-backups-including-customer-managed-keys"></a>9,3: Проверьте все резервные копии, включая управляемые клиентом ключи.
+
+**Руководство**. обеспечение возможности выполнения восстановления из службы восстановления резервных копий за счет периодического просмотра сведений о конфигурации резервного копирования и доступных резервных копий. Проверка восстановления резервных копий ключей, управляемых клиентом.
+
+* [Основные сведения о настройке периодического резервного копирования в Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-backuprestoreservice-configure-periodic-backup)
+
+* [Восстановление резервной копии в Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-backup-restore-service-trigger-restore)
+
+* [Как восстановить резервную копию ключей хранилища ключей в Azure](https://docs.microsoft.com/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="94-ensure-protection-of-backups-and-customer-managed-keys"></a>9,4: Обеспечьте защиту резервных копий и ключей, управляемых клиентом
+
+**Руководство**. резервные копии из службы восстановления Service Fabric резервного копирования используют учетную запись хранения Azure в подписке. Служба хранилища Azure шифрует все данные в неактивных учетных записях хранения. По умолчанию данные шифруются с помощью ключей, управляемых корпорацией Майкрософт. Для дополнительного управления ключами шифрования можно предоставить ключи, управляемые клиентом, для шифрования данных хранилища.
+
+Если вы используете управляемые пользователем ключи, убедитесь, что в Key Vault включен параметр обратимого удаления для защиты ключей от случайного или вредоносного удаления.
+
+* [Шифрование неактивных данных в службе хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-service-encryption)
+
+* [Как включить обратимое удаление в Key Vault](https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete?tabs=azure-portal)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+## <a name="incident-response"></a>Реагирование на инциденты
+
+*Дополнительные сведения см. в статье [Управление безопасностью: реагирование на инциденты](/azure/security/benchmarks/security-control-incident-response).*
+
+### <a name="101-create-an-incident-response-guide"></a>10.1. Создание руководства по реагированию на инциденты
+
+**Руководство**. Разработка руководства по реагированию на инциденты для вашей организации. Убедитесь, что имеются письменные планы реагирования на инциденты, которые определяют все роли персонала, а также этапы обработки инцидентов и управления обнаружением до проверки после инцидента.
+
+* [Руководство по созданию собственного процесса реагирования на инциденты безопасности](https://msrc-blog.microsoft.com/2019/07/01/inside-the-msrc-building-your-own-security-incident-response-process/)
+
+* [Анатомия инцидента Центра Майкрософт по реагированию на угрозы](https://msrc-blog.microsoft.com/2019/06/27/inside-the-msrc-anatomy-of-a-ssirp-incident/)
+
+* [Воспользуйтесь руководством по обработке инцидентов компьютерной безопасности NIST, чтобы помочь в создании собственного плана реагирования на инциденты.](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final)
+
+**Мониторинг Центра безопасности Azure**. Неприменимо
+
+**Ответственность**. Customer
+
+### <a name="102-create-an-incident-scoring-and-prioritization-procedure"></a>10.2. Создание процедуры оценки инцидента и определения приоритетов
+
+**Руководство**. Центр безопасности Azure назначает серьезность каждому оповещению, чтобы определить, какие оповещения следует изучить первыми. Серьезность основывается на том, насколько уверен Центр безопасности в исследовании или аналитике, используемой для оповещения, а также на уровне достоверности злонамеренности события, приведшего к оповещению.
+
+Кроме того, Пометьте подписки с помощью тегов и создайте систему именования для обнаружения и классификации ресурсов Azure, особенно для обработки конфиденциальных данных. Ответственность за исправление предупреждений в зависимости от степени важности ресурсов и среды Azure, в которых произошел инцидент, лежит на вашем уровне.
+
+* [Оповещения безопасности в Центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-alerts-overview)
+
+* [использование тегов для упорядочения ресурсов в Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**: Customer
+
+### <a name="103-test-security-response-procedures"></a>10.3. Проверка процедур реагирования на угрозы
+
+**Рекомендации**. Выполните упражнения, чтобы периодически протестировать возможности ваших систем реагировать на угрозы. Выявите слабые точки и пробелов и пересмотрите план по мере необходимости.
+
+* [Директива NIST по тестированию, обучению и выполнению упражнений для ИТ-планов и возможностей](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-84.pdf)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+### <a name="104-provide-security-incident-contact-details-and-configure-alert-notifications-for-security-incidents"></a>10.4. Предоставление контактных сведений и настройка уведомлений по инцидентам безопасности
+
+**Руководство**. Корпорация Майкрософт будет использовать информацию об инциденте безопасности для связи с вами, если центр Microsoft Security Response Center (MSRC) обнаружит, что к вашим данным был получен незаконный или несанкционированный доступ. Проверьте инциденты после факта обращения, чтобы убедиться в том, что проблемы устранены.
+
+* [Как задать контакт безопасности центра безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-provide-security-contact-details)
+
+**Мониторинг Центра безопасности Azure**: Неприменимо
+
+**Ответственность**. Customer
+
+### <a name="105-incorporate-security-alerts-into-your-incident-response-system"></a>10.5. Включение оповещений системы безопасности в систему реагирования на инциденты
+
+**Рекомендации**. Экспортируйте оповещения и рекомендации центра безопасности Azure с помощью функции непрерывного экспорта. Непрерывный экспорт позволяет экспортировать предупреждения и рекомендации как вручную, так и в постоянном, непрерывном режиме. Можно использовать соединитель данных Центра безопасности Azure для потоковой передачи оповещений Sentinel.
+
+* [Как настроить непрерывный экспорт данных](https://docs.microsoft.com/azure/security-center/continuous-export)
+
+* [Как выполнить потоковую передачу оповещений в Azure Sentinel](https://docs.microsoft.com/azure/sentinel/connect-azure-security-center)
+
+**Мониторинг Центра безопасности Azure**: Да
+
+**Ответственность**: Customer
+
+### <a name="106-automate-the-response-to-security-alerts"></a>10.6. Автоматизация реагирования на оповещения системы безопасности
+
+**Руководство**. Используйте функцию автоматизации рабочих процессов в Центре безопасности Azure для автоматического запуска реагирования с помощью Logic Apps в оповещениях и рекомендациях системы безопасности.
+
+* [Как настроить автоматизацию рабочего процесса и Logic Apps](https://docs.microsoft.com/azure/security-center/workflow-automation)
+
+**Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
+
+**Ответственность**: Customer
+
+## <a name="penetration-tests-and-red-team-exercises"></a>Тесты на проникновение и попытки нарушения безопасности "красной командой"
+
+*Дополнительные сведения см. в статье [Управление безопасностью: тесты на проникновение и попытки нарушения безопасности "красной командой"](/azure/security/benchmarks/security-control-penetration-tests-red-team-exercises).*
+
+### <a name="111-conduct-regular-penetration-testing-of-your-azure-resources-and-ensure-remediation-of-all-critical-security-findings"></a>11,1. Проведите регулярное тестирование на проникновение ресурсов Azure и обеспечьте исправление всех критических результатов безопасности.
+
+**Рекомендации**. Следуйте правилам тестирования уязвимости Microsoft Cloud, чтобы убедиться, что тесты на проникновение не нарушают политики Майкрософт. Используйте стратегию и исполнение Microsoft, а затем протестировать проникновение в реальном времени для управляемой корпорацией Майкрософт облачной инфраструктуры, служб и приложений.
+
+* [Правила тестирования уязвимости Задействований](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1)
+
+* [Microsoft Cloud красное объединение](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
+
+**Мониторинг центра безопасности Azure**: Сейчас это недоступно
+
+**Ответственность**: Совмещаемая блокировка
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+- Ознакомьтесь со статьей [Тесты производительности системы безопасности Azure](/azure/security/benchmarks/overview).
+- Дополнительные сведения о [базовой конфигурации безопасности Azure](/azure/security/benchmarks/security-baselines-overview).

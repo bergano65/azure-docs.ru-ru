@@ -8,28 +8,28 @@ ms.custom: REST
 ms.topic: article
 ms.date: 06/13/2018
 ms.author: routlaw
-ms.openlocfilehash: 07e91f3d9fd32f01db91415bfd90746cd1aef403
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 1aa108d7f903ed791c534b2b88550eb8d022ef64
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78944753"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86502084"
 ---
 # <a name="get-virtual-machine-usage-metrics-using-the-rest-api"></a>Получение метрик использования виртуальной машины с помощью REST API
 
-В этом примере показано, как получить ЦП для [виртуальной машины Linux](https://docs.microsoft.com/azure/virtual-machines/linux/monitor) с помощью [Azure REST API](/rest/api/azure/).
+В этом примере показано, как получить ЦП для виртуальной машины Linux с помощью [Azure REST API](/rest/api/azure/).
 
 Полная справочная документация и дополнительные образцы для REST API можно найти в [Azure Monitor REST API reference](/rest/api/monitor) (Справочник по REST API Azure Monitor). 
 
 ## <a name="build-the-request"></a>Создание запроса
 
-Используйте следующий запрос GET для сбора с виртуальной машины [метрики ЦП в процентах](/azure/monitoring-and-diagnostics/monitoring-supported-metrics#microsoftcomputevirtualmachines)
+Используйте следующий запрос GET для сбора с виртуальной машины [метрики ЦП в процентах](../../azure-monitor/platform/metrics-supported.md#microsoftcomputevirtualmachines)
 
 ```http
 GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmname}/providers/microsoft.insights/metrics?api-version=2018-01-01&metricnames=Percentage%20CPU&timespan=2018-06-05T03:00:00Z/2018-06-07T03:00:00Z
 ```
 
-### <a name="request-headers"></a>Заголовки запроса
+### <a name="request-headers"></a>Заголовки запросов
 
 Ниже приведены обязательные заголовки. 
 
@@ -42,10 +42,10 @@ GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 | Имя | Описание |
 | :--- | :---------- |
-| subscriptionId | Идентификатор подписки Azure. Если у вас несколько подписок, см. раздел [Работа с несколькими подписками](https://docs.microsoft.com/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest). |
+| subscriptionId | Идентификатор подписки Azure. Если у вас несколько подписок, см. раздел [Работа с несколькими подписками](/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest). |
 | имя_группы_ресурсов | Имя группы ресурсов Azure, связанное с ресурсом. Вы можете получить это значение из API-интерфейса Azure Resource Manager, CLI или портала. |
 | vmname | Имя виртуальной машины. |
-| metricnames | Разделенный запятыми список допустимых [метрик Load Balancer](/azure/load-balancer/load-balancer-standard-diagnostics). |
+| metricnames | Разделенный запятыми список допустимых [метрик Load Balancer](../../load-balancer/load-balancer-standard-diagnostics.md). |
 | api-version | Версия API для использования в запросе.<br /><br /> В этом документе рассматривается API версии `2018-01-01`, которая включена в приведенный выше URL-адрес.  |
 | Интервал времени | Строка, в следующем формате `startDateTime_ISO/endDateTime_ISO`, определяет диапазон времени для возвращаемых метрик. Этот необязательный параметр имеет значение для возврата суточных данных в примере. |
 | &nbsp; | &nbsp; |

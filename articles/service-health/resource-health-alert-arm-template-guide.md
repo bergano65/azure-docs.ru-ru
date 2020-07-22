@@ -3,12 +3,12 @@ title: Шаблон для создания оповещений Работос�
 description: Создание оповещений, которые уведомляют о том, когда ресурсы Azure стали недоступны, программными средствами.
 ms.topic: conceptual
 ms.date: 9/4/2018
-ms.openlocfilehash: 60ff5bdf2f4f0dab94c18fd7c751869c1893ad65
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 18a3b2df2d159d2903c69debd79cccfc6d0af63e
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81759014"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86255886"
 ---
 # <a name="configure-resource-health-alerts-using-resource-manager-templates"></a>Настройка оповещений о работоспособности ресурсов с помощью шаблонов Resource Manager
 
@@ -21,55 +21,65 @@ ms.locfileid: "81759014"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 Чтобы следовать инструкциям на этой странице, необходимо заранее сделать следующее:
 
 1. Необходимо установить [модуль Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-Az-ps)
 2. [Создать или повторно использовать группу действий](../azure-monitor/platform/action-groups.md), настроенную на уведомление.
 
-## <a name="instructions"></a>Instructions
+## <a name="instructions"></a>Инструкции
 1. С помощью PowerShell войдите в Azure с помощью учетной записи и выберите нужную подписку.
 
-        Login-AzAccount
-        Select-AzSubscription -Subscription <subscriptionId>
+    ```azurepowershell
+    Login-AzAccount
+    Select-AzSubscription -Subscription <subscriptionId>
+    ```
 
     > С помощью командлета `Get-AzSubscription` можно перечислить подписки, к которым у вас есть доступ.
 
 2. Найдите полный идентификатор Azure Resource Manager для вашей группы действий и сохраните его:
 
-        (Get-AzActionGroup -ResourceGroupName <resourceGroup> -Name <actionGroup>).Id
+    ```azurepowershell
+    (Get-AzActionGroup -ResourceGroupName <resourceGroup> -Name <actionGroup>).Id
+    ```
 
 3. Создайте шаблон Resource Manager для оповещения службы "Работоспособность ресурсов" в виде файла `resourcehealthalert.json` ([подробности см. ниже](#resource-manager-template-options-for-resource-health-alerts)) и сохраните его:
 
 4. Создайте развертывание Azure Resource Manager с помощью этого шаблона:
 
-        New-AzResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName <resourceGroup> -TemplateFile <path\to\resourcehealthalert.json>
+    ```azurepowershell
+    New-AzResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName <resourceGroup> -TemplateFile <path\to\resourcehealthalert.json>
+    ```
 
 5. Вам будет предложено ввести имя оповещения и идентификатор ресурса группы действий, скопированные ранее:
 
-        Supply values for the following parameters:
-        (Type !? for Help.)
-        activityLogAlertName: <Alert Name>
-        actionGroupResourceId: /subscriptions/<subscriptionId>/resourceGroups/<resourceGroup>/providers/microsoft.insights/actionGroups/<actionGroup>
+    ```azurepowershell
+    Supply values for the following parameters:
+    (Type !? for Help.)
+    activityLogAlertName: <Alert Name>
+    actionGroupResourceId: /subscriptions/<subscriptionId>/resourceGroups/<resourceGroup>/providers/microsoft.insights/actionGroups/<actionGroup>
+    ```
 
 6. Если все вышло, вы получите подтверждение в PowerShell:
 
-        DeploymentName          : ExampleDeployment
-        ResourceGroupName       : <resourceGroup>
-        ProvisioningState       : Succeeded
-        Timestamp               : 11/8/2017 2:32:00 AM
-        Mode                    : Incremental
-        TemplateLink            :
-        Parameters              :
-                                Name                     Type       Value
-                                ===============          =========  ==========
-                                activityLogAlertName     String     <Alert Name>
-                                activityLogAlertEnabled  Bool       True
-                                actionGroupResourceId    String     /...
-        
-        Outputs                 :
-        DeploymentDebugLogLevel :
+    ```output
+    DeploymentName          : ExampleDeployment
+    ResourceGroupName       : <resourceGroup>
+    ProvisioningState       : Succeeded
+    Timestamp               : 11/8/2017 2:32:00 AM
+    Mode                    : Incremental
+    TemplateLink            :
+    Parameters              :
+                            Name                     Type       Value
+                            ===============          =========  ==========
+                            activityLogAlertName     String     <Alert Name>
+                            activityLogAlertEnabled  Bool       True
+                            actionGroupResourceId    String     /...
+
+    Outputs                 :
+    DeploymentDebugLogLevel :
+    ```
 
 Обратите внимание, что если вы планируете полностью автоматизировать процесс, вам нужно просто изменить шаблон Resource Manager, чтобы он не выводил запрос на ввод значения на шаге 5.
 
@@ -436,7 +446,7 @@ ms.locfileid: "81759014"
 
 Тем не менее вам лучше знать, какие конфигурации эффективны для вас, поэтому используйте инструменты, приведенные в этой документации, чтобы настроить свою собственную конфигурацию.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительная информация о службе "Работоспособность ресурсов".
 -  [Обзор Работоспособность ресурсов Azure](Resource-health-overview.md)

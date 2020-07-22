@@ -2,19 +2,19 @@
 title: Развертывание модели ML в SQL Azure для пограничных вычислений с помощью ONNX
 description: В части 3 (из 3) руководства по SQL Azure для пограничных вычислений, посвященного прогнозированию примеси железной руды, запустите модели машинного обучения ONNX на SQL Azure для пограничных вычислений.
 keywords: ''
-services: sql-database-edge
-ms.service: sql-database-edge
+services: sql-edge
+ms.service: sql-edge
 ms.topic: tutorial
 author: VasiyaKrishnan
 ms.author: vakrishn
 ms.reviewer: sstein
 ms.date: 05/19/2020
-ms.openlocfilehash: 64594267dc51fa42dabcc3083d18d631904a9cab
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: f38a973611cb1ab18eead4ec51e6be91ada2cc40
+ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83593547"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85318647"
 ---
 # <a name="deploy-ml-model-on-azure-sql-edge-using-onnx"></a>Развертывание модели ML в SQL Azure для пограничных вычислений с помощью ONNX 
 
@@ -32,7 +32,7 @@ ms.locfileid: "83593547"
    |_Поле_|_Значение_|
    |-------|-------|
    |Тип соединений| Microsoft SQL Server|
-   |Обслуживание|Общедоступный IP-адрес, упомянутый в виртуальной машине, созданной для этой демо-версии|
+   |Сервер|Общедоступный IP-адрес, упомянутый в виртуальной машине, созданной для этой демо-версии|
    |Имя пользователя|sa|
    |Пароль|Надежный пароль, который использовался при создании экземпляра SQL Azure для пограничных вычислений.|
    |База данных|По умолчанию|

@@ -1,26 +1,25 @@
 ---
 title: Краткое руководство. Предложение поисковых запросов с помощью REST API Автозаполнения Bing и Java
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как быстро начать предложение условий поиска в режиме реального времени с помощью API Автозаполнения Bing.
+description: Узнайте, как настроить заполнение условий поиска в реальном времени с помощью API Автозаполнения Bing.
 services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-autosuggest
 ms.topic: quickstart
-ms.date: 03/24/2020
+ms.date: 05/06/2020
 ms.author: aahi
-ms.openlocfilehash: b3f279ea50e9923e63f7d6090f4dbaca939eb16c
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: d1c2da10270747aa09ecbcfdc537df567b4cdfc9
+ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80238970"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82929661"
 ---
 # <a name="quickstart-suggest-search-queries-with-the-bing-autosuggest-rest-api-and-java"></a>Краткое руководство. Предложение поисковых запросов с помощью REST API Автозаполнения Bing и Java
 
-
-В этом кратком руководстве описано, как настроить осуществление вызовов к API Автозаполнения Bing и получение ответа JSON. Это простое приложение Java отправляет частичный поисковый запрос к API и возвращает предложения поиска. Хотя это приложение создается на языке Java, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код этого примера доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/java/Search/BingAutosuggestv7.java).
+В этом кратком руководстве показано, как вызывать API Автозаполнения Bing и считывать ответ в формате JSON. Это простое приложение Java отправляет частичный поисковый запрос к API и возвращает предложения поиска. Хотя это приложение создается на языке Java, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код этого примера доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/java/Search/BingAutosuggestv7.java).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -44,7 +43,7 @@ ms.locfileid: "80238970"
     import com.google.gson.JsonParser;
     ```
 
-2. Создайте переменные ключа подписки, узла API и пути к нему, [код рынка](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference#market-codes) и поисковый запрос. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
+2. Создайте переменные ключа подписки, узла API и пути к нему, [код рынка](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference#market-codes) и поисковый запрос. Используйте глобальную конечную точку, приведенную ниже, или конечную точку [личного поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемую на портале Azure для вашего ресурса.
     
     ```java
     static String subscriptionKey = "enter key here";
@@ -57,7 +56,7 @@ ms.locfileid: "80238970"
 
 ## <a name="format-the-response"></a>Форматирование ответа
 
-Чтобы форматировать ответ, который был получен от API Bing для поиска, создайте метод `prettify()`. Чтобы получить строку в формате JSON и конвертировать ее в объект, используйте `JsonParser` библиотеки Gson. Чтобы создать форматированную строку, используйте `GsonBuilder()` и `toJson()`.
+Чтобы форматировать ответ, который был получен от API Bing для поиска, создайте метод `prettify()`. Чтобы получить строку в формате JSON и конвертировать ее в объект, используйте `JsonParser` библиотеки Gson. Затем создайте форматированную строку с помощью `GsonBuilder()` и `toJson()`.
 
 ```java
 // pretty-printer for JSON; uses GSON parser to parse and re-serialize
@@ -73,7 +72,7 @@ public static String prettify(String json_text) {
 
 1. Создайте метод `get_suggestions()` и сделайте следующее:
 
-   1. Создайте URL-адрес для ответа путем комбинации узла API, пути и кодированного поискового запроса. Выполните кодирование URL-адреса запроса перед его добавлением. Создайте строку параметров запроса. Для этого добавьте код рынка к параметру `mkt=` и запрос к параметру `q=`.
+   1. Создайте URL-адрес для запроса, объединив имя узла API и путь, а затем закодируйте поисковый запрос. Выполните кодирование URL-адреса запроса перед его добавлением. Создайте строку параметров запроса. Для этого добавьте код рынка к параметру `mkt=` и запрос к параметру `q=`.
     
       ```java
   
@@ -84,7 +83,7 @@ public static String prettify(String json_text) {
       }
       ```
     
-   2. Создайте URL-адрес запроса с узлом API, путем и созданными выше параметрами. 
+   2. Создайте URL-адрес для запроса, используя имя узла API, путь и созданные ранее параметры. 
     
        ```java
        //...
@@ -103,7 +102,7 @@ public static String prettify(String json_text) {
        //...
       ```
 
-   4. Считайте ответ API, отправленный `StringBuilder`. После записи ответа закройте поток `InputStreamReader` и верните ответ.
+   4. Сохраните ответ API в `StringBuilder`. После записи ответа закройте поток `InputStreamReader` и верните ответ.
 
        ```java
        //...
@@ -119,7 +118,7 @@ public static String prettify(String json_text) {
        return response.toString();
        ```
 
-2. В главной функции приложения вызовите функцию `get_suggestions()` и напечатайте ответ с помощью `prettify()`.
+2. В основной функции приложения вызовите `get_suggestions()` и выведите на экран ответ с использованием `prettify()`.
     
     ```java
     public static void main(String[] args) {

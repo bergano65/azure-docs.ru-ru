@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/01/2020
-ms.openlocfilehash: 83c33e6935de7c9ed9f1b2c9f97aa18dd6b10f01
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: 5d16c62c14ff6f24e519173b979e11d21d997927
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83199911"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86505794"
 ---
 # <a name="perform-cross-resource-log-queries-in-azure-monitor"></a>Выполнение запросов журнала между ресурсами в Azure Monitor  
 
@@ -20,17 +20,17 @@ ms.locfileid: "83199911"
 
 Ранее с помощью службы Azure Monitor вы могли анализировать данные только в пределах текущей рабочей области. Это препятствовало выполнению запросов в нескольких рабочих областях, определенных вашей подпиской.  Кроме того, элементы телеметрии, полученные из веб-приложения с помощью Application Insights, можно было искать только непосредственно в Application Insights или из Visual Studio. Это также усложняло встроенный совместный анализ операционных данных и данных приложения.
 
-Теперь вы можете выполнять запросы не только в нескольких рабочих областях Log Analytics, но также запрашивать данные из приложения Application Insights в той же или другой группе ресурсов или в другой подписке. Благодаря этому вы можете получить представление данных на уровне системы. Запросы таких типов можно выполнять только в [Log Analytics](portals.md).
+Теперь вы можете выполнять запросы не только в нескольких рабочих областях Log Analytics, но также запрашивать данные из приложения Application Insights в той же или другой группе ресурсов или в другой подписке. Благодаря этому вы можете получить представление данных на уровне системы. Запросы таких типов можно выполнять только в [Log Analytics](./log-query-overview.md).
 
 ## <a name="cross-resource-query-limits"></a>Ограничения запросов между ресурсами 
 
 * Число Application Insightsных ресурсов и Log Analytics рабочих областей, которые можно включить в один запрос, ограничено 100.
 * Запрос перекрестных ресурсов не поддерживается в конструкторе представлений. Вы можете создать запрос в Log Analytics и закрепить его на панели мониторинга Azure для [визуализации запроса журнала](../learn/tutorial-logs-dashboards.md). 
-* Запрос между разными ресурсами в оповещениях журнала поддерживается в новом API [правил запросов по расписанию](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules). По умолчанию Azure Monitor использует [устаревшие API оповещения Log Analytics](../platform/api-alerts.md) для создания любого нового правила генерации оповещений на портале Azure, пока вы не переключаетесь с [устаревших API оповещений журнала](../platform/alerts-log-api-switch.md#process-of-switching-from-legacy-log-alerts-api). После переключения новый API используется по умолчанию для новых правил генерации оповещений на портале Azure и позволяет создавать правила генерации оповещений журнала запроса между разными ресурсами. Правила генерации оповещений журнала запросов между ресурсами можно создавать без выполнения переключателя с помощью [шаблона Azure Resource Manager для API счедуледкуерирулес](../platform/alerts-log.md#log-alert-with-cross-resource-query-using-azure-resource-template) , но это правило может управляться несмотря на то, что [счедуледкуерирулес API](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) , а не от портал Azure.
+* Запрос между разными ресурсами в оповещениях журнала поддерживается в новом API [правил запросов по расписанию](/rest/api/monitor/scheduledqueryrules). По умолчанию Azure Monitor использует [устаревшие API оповещения Log Analytics](../platform/api-alerts.md) для создания любого нового правила генерации оповещений на портале Azure, пока вы не переключаетесь с [устаревших API оповещений журнала](../platform/alerts-log-api-switch.md#process-of-switching-from-legacy-log-alerts-api). После переключения новый API используется по умолчанию для новых правил генерации оповещений на портале Azure и позволяет создавать правила генерации оповещений журнала запроса между разными ресурсами. Правила генерации оповещений журнала запросов между ресурсами можно создавать без выполнения переключателя с помощью [шаблона Azure Resource Manager для API счедуледкуерирулес](../platform/alerts-log.md#log-alert-with-cross-resource-query-using-azure-resource-template) , но это правило может управляться несмотря на то, что [счедуледкуерирулес API](/rest/api/monitor/scheduledqueryrules) , а не от портал Azure.
 
 
 ## <a name="querying-across-log-analytics-workspaces-and-from-application-insights"></a>Выполнение запросов в рабочих областях Log Analytics и запрос данных из приложения Application Insights
-Воспользуйтесь идентификатором [*рабочей области*](https://docs.microsoft.com/azure/log-analytics/query-language/workspace-expression) для обращения к другой рабочей области в запросе, а для Application Insights используйте идентификатор [*приложения*](https://docs.microsoft.com/azure/log-analytics/query-language/app-expression).  
+Воспользуйтесь идентификатором [*рабочей области*](./workspace-expression.md) для обращения к другой рабочей области в запросе, а для Application Insights используйте идентификатор [*приложения*](./app-expression.md).  
 
 ### <a name="identifying-workspace-resources"></a>Определение ресурсов рабочей области
 В приведенных ниже примерах демонстрируются запросы к различным рабочим областям Log Analytics. Эти запросы предназначены для получения итогового количества журналов из таблицы "Обновление" в рабочей области с именем *contosoretail-it*. 
@@ -55,7 +55,7 @@ ms.locfileid: "83199911"
 
 * Идентификатор ресурса Azure — это уникальный идентификатор рабочей области в Azure. Он используется, если имя ресурса является неоднозначным.  Для рабочих областей используется следующий формат: */subscriptions/subscriptionId/resourcegroups/resourceGroup/providers/microsoft.OperationalInsights/workspaces/componentName*.  
 
-    Пример:
+    Вот несколько примеров:
     ``` 
     workspace("/subscriptions/e427519-5645-8x4e-1v67-3b84b59a1985/resourcegroups/ContosoAzureHQ/providers/Microsoft.OperationalInsights/workspaces/contosoretail-it").Update | count
     ```
@@ -86,7 +86,7 @@ ms.locfileid: "83199911"
 
 * Идентификатор ресурса Azure — это уникальный идентификатор приложения в Azure. Он используется, если имя ресурса является неоднозначным. Используется такой формат: */subscriptions/subscriptionId/resourcegroups/resourceGroup/providers/microsoft. Компоненты/OperationalInsights/componentName*.  
 
-    Пример:
+    Вот несколько примеров:
     ```
     app("/subscriptions/b459b4f6-912x-46d5-9cb1-b43069212ab4/resourcegroups/Fabrikam/providers/microsoft.insights/components/fabrikamapp").requests | count
     ```

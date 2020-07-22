@@ -3,12 +3,12 @@ title: Описание приложений и служб Azure Service Fabric
 description: Описывает, как манифесты используются для описания приложений и служб Azure Service Fabric.
 ms.topic: conceptual
 ms.date: 8/12/2019
-ms.openlocfilehash: 6014ef6a9b6ec810aafd5e5be96223b8ed92d576
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: fcf4c7611f0a6f52c28b234717b9244ac58ad2d4
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75349964"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86248226"
 ---
 # <a name="service-fabric-application-and-service-manifests"></a>Манифесты службы и приложения Service Fabric
 В этой статье описывается, как с помощью файлов ApplicationManifest.xml и ServiceManifest.xml определяются приложения и службы Service Fabric и выполняется управление их версиями.  Более подробные примеры см. [здесь](service-fabric-manifest-examples.md).  Сведения о схеме XML для этих файлов манифеста см. в статье [Документация по схеме ServiceFabricServiceModel.xsd](service-fabric-service-model-schema.md).
@@ -63,7 +63,7 @@ ms.locfileid: "75349964"
 
 Исполняемый файл, указанный в точке входа **EntryPoint** , обычно является узлом службы, запускаемым на длительный срок. **SetupEntryPoint** — это привилегированная точка входа, которая запускается с теми же учетными данными, что и структура службы (обычно это локальная учетная запись *LocalSystem* ), перед тем, как будут запущены любые другие точки входа.  Наличие отдельной точки входа настройки позволяет избежать необходимости в выполнении узла службы с расширенными правами в течение длительного срока. Исполняемый файл, указанный в **EntryPoint** , запускается после успешного завершения **SetupEntryPoint** . Даже если произошло непредвиденное завершение работы процесса или его сбой, возникающий вследствие этого, процесс отслеживается и перезапускается (снова начиная с точки входа **SetupEntryPoint**).  
 
-Типичные сценарии использования **SetupEntryPoint** относятся к ситуации, когда вы запускаете исполняемый файл перед запуском службы или выполняете операцию с повышенными привилегиями. Пример:
+Типичные сценарии использования **SetupEntryPoint** относятся к ситуации, когда вы запускаете исполняемый файл перед запуском службы или выполняете операцию с повышенными привилегиями. Например:
 
 * Настройка и инициализация переменных среды, необходимых исполняемому файлу службы. Это касается не только исполняемых файлов, написанных с использованием моделей программирования Service Fabric. Например, npm.exe нужны определенные переменные среды, настроенные для развертывания приложения node.js.
 * Настройка контроля доступа посредством установки сертификатов безопасности.
@@ -74,7 +74,7 @@ ms.locfileid: "75349964"
 
 Атрибут **DataPackage** (не задан в предыдущем примере) объявляет папку с именем, указанным в атрибуте **Name**, содержащим произвольные статические данные, которые должны обрабатываться процессом во время выполнения.
 
-**ConfigPackage** объявляет папку с именем, указанным в атрибуте **Name**, которая содержит файл *Settings.xml*. Файл параметров содержит разделы заданных пользователем параметров пар "ключ — значение", которые считываются процессом во время выполнения. При обновлении, если изменилась только **ConfigPackage** **версия** ConfigPackage, запущенный процесс не будет перезапущен. Вместо этого при помощи обратного вызова в процесс передается уведомление о том, что параметры конфигурации изменились, поэтому они были перезагружены в динамическом режиме. Ниже приведен пример файла *Settings. XML* .
+**ConfigPackage** объявляет папку с именем, указанным в атрибуте **Name**, которая содержит файл *Settings.xml*. Файл параметров содержит разделы заданных пользователем параметров пар "ключ — значение", которые считываются процессом во время выполнения. При обновлении, если изменилась только **ConfigPackage** **версия** ConfigPackage, запущенный процесс не будет перезапущен. Вместо этого при помощи обратного вызова в процесс передается уведомление о том, что параметры конфигурации изменились, поэтому они были перезагружены в динамическом режиме. Ниже приведен пример *Settings.xml* файла:
 
 ```xml
 <Settings xmlns:xsd="https://www.w3.org/2001/XMLSchema" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/2011/01/fabric">
@@ -157,7 +157,7 @@ For more information about other features supported by service manifests, refer 
 
 **Сертификаты** (не задано в предыдущем примере). Объявляет сертификаты, используемые для [установки конечных точек HTTPS](service-fabric-service-manifest-resources.md#example-specifying-an-https-endpoint-for-your-service) или[ для шифрования секретов в манифесте приложения](service-fabric-application-secret-management.md).
 
-**Ограничения на размещение** — это инструкции, определяющие, где должны выполняться службы. Эти инструкции присоединяются к отдельным службам, выбранным для одного или нескольких свойств узла. Дополнительные сведения см. в разделе [ограничения размещения и синтаксис свойства Node](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-resource-manager-cluster-description#placement-constraints-and-node-property-syntax) .
+**Ограничения на размещение** — это инструкции, определяющие, где должны выполняться службы. Эти инструкции присоединяются к отдельным службам, выбранным для одного или нескольких свойств узла. Дополнительные сведения см. в разделе [ограничения размещения и синтаксис свойства Node](./service-fabric-cluster-resource-manager-cluster-description.md#placement-constraints-and-node-property-syntax) .
 
 **Политики** (не заданы в предыдущем примере) описывают сбор журналов, [Запуск по умолчанию](service-fabric-application-runas-security.md), [работоспособность](service-fabric-health-introduction.md#health-policies)и политики [безопасности](service-fabric-application-runas-security.md) для установки на уровне приложения, включая сведения о том, имеют ли службы доступ к Service Fabric среде выполнения.
 
@@ -192,6 +192,3 @@ For more information about other features supported by application manifests, re
 [appmodel-diagram]: ./media/service-fabric-application-model/application-model.png
 [cluster-imagestore-apptypes]: ./media/service-fabric-application-model/cluster-imagestore-apptypes.png
 [cluster-application-instances]: media/service-fabric-application-model/cluster-application-instances.png
-
-
-

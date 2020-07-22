@@ -2,25 +2,25 @@
 title: Удалить персональные данные — Azure Active Directory Application Proxy
 description: Удаление персональных данных из соединителей, установленных на устройствах для Azure Active Directory Application Proxy.
 documentationcenter: ''
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/21/2018
-ms.author: mimart
+ms.author: kenwith
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fe97956d99bd5c677e499b532ef85a1bb4d324ef
-ms.sourcegitcommit: b1e25a8a442656e98343463aca706f4fde629867
+ms.openlocfilehash: e78efd71943332e8a40e5b44b6b78f88e516649a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "74275413"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84759969"
 ---
 # <a name="remove-personal-data-for-azure-active-directory-application-proxy"></a>Удаление персональных данных в Azure Active Directory Application Proxy
 
@@ -79,6 +79,6 @@ ms.locfileid: "74275413"
 
 ![Отображает фрагмент кода с выделенным кодом для удаления](./media/application-proxy-remove-personal-data/01.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Общие сведения о прокси приложения см. в статье [Как обеспечить безопасный удаленный доступ к локальным приложениям](application-proxy.md).

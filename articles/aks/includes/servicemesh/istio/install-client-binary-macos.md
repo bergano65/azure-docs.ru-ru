@@ -4,15 +4,15 @@ ms.topic: include
 ms.date: 11/15/2019
 ms.author: pabouwer
 ms.openlocfilehash: 74f5b22ccc822a188059b29d9c661a15cf8412bf
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77594022"
 ---
 ## <a name="download-and-install-the-istio-istioctl-client-binary"></a>Скачивание и установка двоичного файла клиента Istio истиоктл
 
-В оболочке на основе Bash в MacOS используйте `curl` для загрузки выпуска Istio, а затем извлеките с `tar` помощью следующим образом:
+В оболочке на основе Bash в MacOS используйте `curl` для загрузки выпуска Istio, а затем извлеките с помощью `tar` следующим образом:
 
 ```bash
 # Specify the Istio version that will be leveraged throughout these instructions
@@ -21,7 +21,7 @@ ISTIO_VERSION=1.4.0
 curl -sL "https://github.com/istio/istio/releases/download/$ISTIO_VERSION/istio-$ISTIO_VERSION-osx.tar.gz" | tar xz
 ```
 
-`istioctl` Клиентский двоичный файл выполняется на клиентском компьютере и позволяет взаимодействовать с сеткой службы Istio. Используйте следующие команды для установки двоичного файла `istioctl` клиента Istio в оболочке на основе Bash в MacOS. Эти команды копируют двоичный файл клиента `istioctl` в стандартное расположение программ для пользователя в `PATH`.
+`istioctl`Клиентский двоичный файл выполняется на клиентском компьютере и позволяет взаимодействовать с сеткой службы Istio. Используйте следующие команды для установки `istioctl` двоичного файла клиента Istio в оболочке на основе Bash в MacOS. Эти команды копируют двоичный файл клиента `istioctl` в стандартное расположение программ для пользователя в `PATH`.
 
 ```bash
 cd istio-$ISTIO_VERSION

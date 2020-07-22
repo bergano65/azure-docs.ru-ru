@@ -1,25 +1,13 @@
 ---
 title: Справочник по синтаксису SQLRuleAction в служебной шине Azure
 description: В этой статье содержится справочник по синтаксису SQLRuleAction. Действия записываются в синтаксисе на основе языка SQL, который выполняется для сообщения, переданного через посредника.
-services: service-bus-messaging
-documentationcenter: na
-author: axisc
-manager: timlt
-editor: spelluru
-ms.assetid: ''
-ms.service: service-bus-messaging
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 01/24/2020
-ms.author: aschhab
-ms.openlocfilehash: 37615e39577ef60cccc9df91b61a6aa24ca794d0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.date: 06/23/2020
+ms.openlocfilehash: 61fa6e046b4d4a0ba91bf8608c846755026d07ec
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76759634"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85341576"
 ---
 # <a name="sqlruleaction-syntax-reference-for-azure-service-bus"></a>Справочник по синтаксису SQLRuleAction для служебной шины Azure
 
@@ -67,7 +55,7 @@ ms.locfileid: "76759634"
   
 -   `<scope>` — необязательная строка, указывающая область `<property_name>`. Допустимые значения: `sys` или `user`. Значение `sys` указывает область системы, где `<property_name>` — имя общедоступного свойства [класса BrokeredMessage](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage). Значение `user` указывает область пользователя, где `<property_name>` — ключ словаря [класса BrokeredMessage](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage). Область `user` используется по умолчанию, если аргумент `<scope>` не указан.  
   
-### <a name="remarks"></a>Remarks  
+### <a name="remarks"></a>Комментарии  
 
 Попытка доступа к несуществующему системному свойству вызывает ошибку, а попытка доступа к несуществующему свойству пользователя — нет. Вместо этого несуществующее свойство пользователя вычисляется внутри системы как неизвестное значение. Неизвестное значение обрабатывается особым образом во время вычисления оператора.  
   
@@ -119,7 +107,7 @@ ms.locfileid: "76759634"
       <expression>  
 ```  
   
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>Комментарии
   
  Свойство `<pattern>` должно быть выражением, которое будет вычисляться как строка. Оно используется в качестве шаблона для оператора LIKE.      Оно может содержать следующие подстановочные знаки:  
   
@@ -134,7 +122,7 @@ ms.locfileid: "76759634"
       <expression>  
 ```  
   
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>Комментарии
   
  Свойство `<escape_char>` должно быть выражением, которое будет вычисляться в качестве строки с 1 символом. Оно используется в качестве escape-символа для оператора LIKE.  
   
@@ -183,7 +171,7 @@ ms.locfileid: "76759634"
       TRUE | FALSE  
 ```  
   
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>Комментарии
   
 Логические константы представлены в виде ключевого слова `TRUE` или `FALSE`. Значения хранятся в виде `System.Boolean`.  
   
@@ -193,7 +181,7 @@ ms.locfileid: "76759634"
 <string_constant>  
 ```  
   
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>Комментарии
   
 Строковые константы заключаются в одинарные кавычки и включают любые допустимые символы Юникода. Одинарная кавычка, внедренная в строковую константу, представляется в виде двух одинарных кавычек.  
   
@@ -205,13 +193,13 @@ ms.locfileid: "76759634"
       property(name) | p(name)  
 ```  
   
-### <a name="remarks"></a>Remarks  
+### <a name="remarks"></a>Комментарии  
 
 Функция `newid()` возвращает значение **System.Guid**, созданное методом `System.Guid.NewGuid()`.  
   
 Функция `property(name)` возвращает значение свойства, на которое указывает `name`. В качестве значения `name` может использоваться любое допустимое выражение, возвращающее строковое значение.  
   
-## <a name="considerations"></a>Рекомендации
+## <a name="considerations"></a>Особенности
 
 - Оператор SET используется для создания свойства или обновления значения имеющегося свойства.
 - Оператор REMOVE используется для удаления свойства.

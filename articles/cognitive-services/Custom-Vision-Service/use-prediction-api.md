@@ -3,19 +3,19 @@ title: использование конечной точки прогноза �
 titleSuffix: Azure Cognitive Services
 description: Сведения о том, как использовать API для программного тестирования изображений с помощью классификатора Пользовательской службы визуального распознавания.
 services: cognitive-services
-author: anrothMSFT
+author: PatrickFarley
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: custom-vision
 ms.topic: conceptual
 ms.date: 04/02/2019
-ms.author: anroth
-ms.openlocfilehash: 88aaa3d54ea44a15f7900aba093bf28c70c19695
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.author: pafarley
+ms.openlocfilehash: cbc899d1278a2afcdf4948a88b54af81954f1eba
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82129858"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86205600"
 ---
 # <a name="use-your-model-with-the-prediction-api"></a>Использование модели с API-интерфейсом прогнозирования
 
@@ -119,18 +119,18 @@ ms.locfileid: "82129858"
 
 ```json
 {
-    "Id":"7796df8e-acbc-45fc-90b4-1b0c81b73639",
-    "Project":"8622c779-471c-4b6e-842c-67a11deffd7b",
-    "Iteration":"59ec199d-f3fb-443a-b708-4bca79e1b7f7",
-    "Created":"2019-03-20T16:47:31.322Z",
-    "Predictions":[
-        {"TagId":"d9cb3fa5-1ff3-4e98-8d47-2ef42d7fb373","TagName":"cat", "Probability":1.0},
-        {"TagId":"9a8d63fb-b6ed-4462-bcff-77ff72084d99","TagName":"dog", "Probability":0.1087869}
+    "id":"7796df8e-acbc-45fc-90b4-1b0c81b73639",
+    "project":"8622c779-471c-4b6e-842c-67a11deffd7b",
+    "iteration":"59ec199d-f3fb-443a-b708-4bca79e1b7f7",
+    "created":"2019-03-20T16:47:31.322Z",
+    "predictions":[
+        {"tagId":"d9cb3fa5-1ff3-4e98-8d47-2ef42d7fb373","tagName":"cat", "probability":1.0},
+        {"tagId":"9a8d63fb-b6ed-4462-bcff-77ff72084d99","tagName":"dog", "probability":0.1087869}
     ]
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководство вы узнали, как отправлять изображения в классификатор или детектор пользовательского образа, а также как получить ответ программным способом с помощью пакета SDK для C#. Далее вы узнаете, как выполнять комплексные сценарии в C# или приступить к работе с другим языковым пакетом SDK.
 

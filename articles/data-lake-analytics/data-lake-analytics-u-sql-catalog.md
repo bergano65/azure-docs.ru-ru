@@ -7,14 +7,14 @@ author: saveenr
 ms.author: saveenr
 ms.reviewer: jasonwhowell
 ms.assetid: 57143396-ab86-47dd-b6f8-613ba28c28d2
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/09/2017
-ms.openlocfilehash: f3b9f14be4422373fb30f8c3d4909fd9c9546fdf
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 78bd7f446b7716031e3eef02639acc8bb729719e
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "71672844"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86119571"
 ---
 # <a name="get-started-with-the-u-sql-catalog-in-azure-data-lake-analytics"></a>Начало работы с каталогом U-SQL в Azure Data Lake Analytics
 
@@ -24,7 +24,7 @@ ms.locfileid: "71672844"
 
 Следующий скрипт создает возвращающую табличное значение функцию с именем `Searchlog()` в базе данных и схеме по умолчанию:
 
-```
+```usql
 DROP FUNCTION IF EXISTS Searchlog;
 
 CREATE FUNCTION Searchlog()
@@ -55,7 +55,7 @@ END;
 
 Следующий скрипт демонстрирует, как использовать функцию TVF, определенную в предыдущем скрипте:
 
-```
+```usql
 @res =
     SELECT
         Region,
@@ -76,7 +76,7 @@ OUTPUT @res
 
 Следующий скрипт создает представление с именем `SearchlogView` в базе данных и схеме по умолчанию:
 
-```
+```usql
 DROP VIEW IF EXISTS SearchlogView;
 
 CREATE VIEW SearchlogView AS  
@@ -93,7 +93,7 @@ USING Extractors.Tsv();
 
 Следующий скрипт демонстрирует, как использовать определенное представление.
 
-```
+```usql
 @res =
     SELECT
         Region,
@@ -113,7 +113,7 @@ OUTPUT @res
 
 Следующий скрипт создает базу данных и две таблицы:
 
-```
+```usql
 DROP DATABASE IF EXISTS SearchLogDb;
 CREATE DATABASE SearchLogDb;
 USE DATABASE SearchLogDb;
@@ -147,7 +147,7 @@ CREATE TABLE SearchLog2(
 
 Для чтения из таблиц нужно изменить скрипт преобразования, который использовался ранее:
 
-```
+```usql
 @rs1 =
     SELECT
         Region,
@@ -170,7 +170,7 @@ OUTPUT @res
  >[!NOTE]
  >Сейчас выполнять SELECT для таблицы в том же скрипте, где создается таблица, нельзя.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Next Steps
 * [Обзор аналитики озера данных Microsoft Azure](data-lake-analytics-overview.md)
 * [Разработка сценариев U-SQL с помощью средств озера данных для Visual Studio.](data-lake-analytics-data-lake-tools-get-started.md)
 * [Мониторинг и устранение неполадок Azure Data Lake Analytics заданий с помощью портал Azure](data-lake-analytics-monitor-and-troubleshoot-jobs-tutorial.md)

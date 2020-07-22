@@ -135,6 +135,6 @@ Is this a grabage or crap email abcdef@abcd.com, phone: 4255550111, IP:
 
 Подробное описание всех разделов в ответе JSON см. в концептуальном руководстве по поиску [текста](text-moderation-api.md) .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Используйте REST API в коде или следуйте инструкциям в [кратком руководстве по пакету SDK для .NET](dotnet-sdk-quickstart.md) , чтобы интегрировать его с приложением.

@@ -23,13 +23,15 @@
               href: quick-create-simulated-device-symm-key.md
             - name: Java
               href: quick-create-simulated-device-symmetric-key-java.md
+            - name: Python
+              href: quick-create-device-symmetric-key-python.md
         - name: Аттестация на основе сертификата X.509
           items:
             - name: C
               href: quick-create-simulated-device-x509.md
             - name: Java
               href: quick-create-simulated-device-x509-java.md
-            - name: 'C#'
+            - name: C#
               href: quick-create-simulated-device-x509-csharp.md
             - name: Node.js
               href: quick-create-simulated-device-x509-node.md
@@ -41,7 +43,7 @@
               href: quick-create-simulated-device.md
             - name: Java
               href: quick-create-simulated-device-tpm-java.md
-            - name: 'C#'
+            - name: C#
               href: quick-create-simulated-device-tpm-csharp.md
             - name: Node.js
               href: quick-create-simulated-device-tpm-node.md
@@ -53,7 +55,7 @@
           items:
             - name: Java
               href: quick-enroll-device-x509-java.md
-            - name: 'C#'
+            - name: C#
               href: quick-enroll-device-x509-csharp.md
             - name: Node.js
               href: quick-enroll-device-x509-node.md
@@ -63,7 +65,7 @@
           items:
             - name: Java
               href: quick-enroll-device-tpm-java.md
-            - name: 'C#'
+            - name: C#
               href: quick-enroll-device-tpm-csharp.md
             - name: Node.js
               href: quick-enroll-device-tpm-node.md
@@ -79,7 +81,7 @@
       items:
         - name: C
           href: tutorial-provision-device-to-hub.md
-        - name: 'C#'
+        - name: C#
           href: tutorial-net-provision-device-to-hub.md
     - name: 4. Подготовка устройств для нескольких центров
       href: tutorial-provision-multiple-hubs.md
@@ -95,6 +97,8 @@
       href: concepts-device.md
     - name: Безопасность
       href: concepts-security.md
+    - name: Поддержка TLS
+      href: tls-support.md
     - name: Служба
       href: concepts-service.md
     - name: Основные сведения об IP-адресах DPS
@@ -173,6 +177,8 @@
       href: 'https://github.com/Azure/azure-iot-sdk-java'
     - name: Пакет SDK Azure IoT для .NET
       href: 'https://github.com/Azure/azure-iot-sdk-csharp'
+    - name: Azure CLI
+      href: /cli/azure/azure-cli-reference-for-IoT
 - name: Ресурсы
   items:
     - name: Возможности получения поддержки и справки
@@ -198,12 +204,12 @@
     - name: Пакеты SDK для Центра Интернета вещей Azure
       items:
         - name: Пакеты SDK для служб IoT
-          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks'
+          href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks
         - name: Пакеты SDK для устройств Интернета вещей
-          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks'
+          href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks
     - name: Примеры для Интернета вещей Azure
       items:
-        - name: 'C# (.NET)'
+        - name: C# (.NET)
           href: 'https://azure.microsoft.com/resources/samples/azure-iot-samples-csharp/'
         - name: Node.js
           href: 'https://azure.microsoft.com/resources/samples/azure-iot-samples-node/'
@@ -225,16 +231,12 @@
       href: 'https://github.com/Azure/azure-iot-explorer'
     - name: Средство iothub-diagnostics
       href: 'https://github.com/Azure/iothub-diagnostics'
-    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
-      href: 'https://docs.microsoft.com/answers/topics/azure-iot-hub.html'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/iot-hub/'
     - name: Калькулятор цен
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: Обновления службы
       href: 'https://azure.microsoft.com/updates/?product=iot-hub'
-    - name: Stack Overflow
-      href: 'https://stackoverflow.com/questions/tagged/azure-iot-hub'
     - name: Технические примеры использования
       href: 'https://microsoft.github.io/techcasestudies/#technology=IoT&sortBy=featured'
     - name: Видео

@@ -3,12 +3,12 @@ title: Пример скрипта Azure CLI для создания учетн�
 description: Этот скрипт создает учетную запись пакетной службы Azure в режиме подписки пользователя. Эта учетная запись выделяет вычислительные узлы в подписке.
 ms.topic: sample
 ms.date: 01/29/2018
-ms.openlocfilehash: 9f3919574dd7dcbe932c71dfcea2ac52ec906c6c
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: e589361da8442107f06a0933a1f1ac79a88945ff
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83681886"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85964083"
 ---
 # <a name="cli-example-create-a-batch-account-in-user-subscription-mode"></a>Пример использования CLI: создание учетной записи пакетной службы в режиме подписки пользователя
 
@@ -38,8 +38,8 @@ az group delete --name myResourceGroup
 |---|---|
 | [az role assignment create](/cli/azure/role); | Создайте новое назначение роли для пользователя, группы или субъекта-службы. |
 | [az group create](/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
-| [az keyvault create](https://docs.microsoft.com/cli/azure/keyvault#az-keyvault-create) | Создает хранилище ключей. |
-| [az keyvault set-policy](https://docs.microsoft.com/cli/azure/keyvault#az-keyvault-set-policy) | Обновляет политику безопасности указанного хранилища ключей. |
+| [az keyvault create](/cli/azure/keyvault#az-keyvault-create) | Создает хранилище ключей. |
+| [az keyvault set-policy](/cli/azure/keyvault#az-keyvault-set-policy) | Обновляет политику безопасности указанного хранилища ключей. |
 | [az batch account create](/cli/azure/batch/account#az-batch-account-create) | Создает учетную запись пакетной службы.  |
 | [az batch account login](/cli/azure/batch/account#az-batch-account-login) | Выполняет проверку подлинности с помощью указанной учетной записи пакетной службы для дальнейшего взаимодействия с интерфейсом командной строки.  |
 | [az group delete](/cli/azure/group#az-group-delete) | Удаляет группу ресурсов со всеми вложенными ресурсами. |

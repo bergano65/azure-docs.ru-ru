@@ -7,13 +7,13 @@ ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 04/20/2020
 ms.openlocfilehash: 7022c4587b425168fc5bd2182ed65c281633aabf
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82177085"
 ---
-# <a name="integrate-azure-spring-cloud-with-azure-load-balance-solutions"></a>Интеграция Azure Веснного облака с решениями балансировки нагрузки Azure
+# <a name="integrate-azure-spring-cloud-with-azure-load-balance-solutions"></a>Интеграция Azure Spring Cloud с решениями Azure для распределения нагрузки
 
 Azure Веснное облако поддерживает микрослужбы в Azure.  Для повышения бизнеса может потребоваться несколько центров обработки данных с управлением несколькими экземплярами Azure Веснного облака.
 
@@ -40,7 +40,7 @@ Azure уже предоставляет различные решения бал
 1.  Введите полное доменное имя (FQDN) каждой общедоступной конечной точки Azure весны облака.
 1. Нажмите кнопку **ОК**.
 
-    ![Диспетчер трафика 1](media/spring-cloud-load-balancers/traffic-manager-1.png) ![диспетчера трафика 2](media/spring-cloud-load-balancers/traffic-manager-2.png)
+    ![Диспетчер трафика 1 ](media/spring-cloud-load-balancers/traffic-manager-1.png) ![ диспетчера трафика 2](media/spring-cloud-load-balancers/traffic-manager-2.png)
 
 ### <a name="configure-custom-domain"></a>Настроить личный домен
 Чтобы завершить настройку, выполните следующие действия.
@@ -88,7 +88,7 @@ Azure уже предоставляет различные решения бал
 
     ![Передняя дверь 2](media/spring-cloud-load-balancers/front-door-2.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Создание диспетчера трафика](https://docs.microsoft.com/azure/traffic-manager/quickstart-create-traffic-manager-profile/)
 * [Создание шлюза приложений](https://docs.microsoft.com/azure/application-gateway/quick-create-portal)
 * [Создание передней дверцы](https://docs.microsoft.com/azure/frontdoor/quickstart-create-front-door)

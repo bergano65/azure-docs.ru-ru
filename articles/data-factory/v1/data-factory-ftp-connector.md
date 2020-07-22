@@ -13,10 +13,9 @@ ms.date: 05/02/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: eeeb122d240d8c3eae4ebe1650f67cf0e4b9dac6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80992051"
 ---
 # <a name="move-data-from-an-ftp-server-by-using-azure-data-factory"></a>Перемещение данных с FTP-сервера с использованием фабрики данных Azure
@@ -62,18 +61,18 @@ ms.locfileid: "80992051"
 ## <a name="linked-service-properties"></a>Свойства связанной службы
 В приведенной ниже таблице описываются элементы JSON, которые относятся к связанной службе FTP.
 
-| Свойство | Описание | Обязательный | Значение по умолчанию |
+| Свойство. | Описание | Обязательное значение | Значение по умолчанию |
 | --- | --- | --- | --- |
-| type |Задайте значение FtpServer. |Да |&nbsp; |
+| тип |Задайте значение FtpServer. |Да |&nbsp; |
 | host |Укажите имя или IP-адрес FTP-сервера. |Да |&nbsp; |
 | authenticationType |Укажите тип проверки подлинности. |Да |Обычная, анонимная |
-| username |Укажите пользователя, имеющего доступ к FTP-серверу. |Нет |&nbsp; |
-| пароль |Укажите пароль для пользователя (username). |Нет |&nbsp; |
+| username |Укажите пользователя, имеющего доступ к FTP-серверу. |нет |&nbsp; |
+| password |Укажите пароль для пользователя (username). |Нет |&nbsp; |
 | encryptedCredential |Укажите зашифрованные учетные данные для доступа к FTP-серверу. |Нет |&nbsp; |
 | gatewayName |Укажите имя шлюза управления данными для подключения к локальному FTP-серверу. |Нет |&nbsp; |
 | порт |Укажите порт, прослушиваемый FTP-сервером. |Нет |21 |
-| enableSsl |Укажите, какой канал следует использовать (FTP через SSL или TLS). |Нет |Да |
-| enableServerCertificateValidation |Укажите, следует ли включить проверку SSL-сертификата сервера при использовании канала FTP по протоколу SSL или TLS. |Нет |Да |
+| enableSsl |Укажите, какой канал следует использовать (FTP через SSL или TLS). |Нет |true |
+| enableServerCertificateValidation |Уточните, следует ли включать проверку сертификатов TLS и SSL на сервере при использовании FTP через канал SSL или TLS. |Нет |true |
 
 >[!NOTE]
 >Соединитель FTP поддерживает доступ к FTP-серверу без шифрования или с явным шифрованием SSL/TLS. Он не поддерживает неявное шифрование SSL/TLS.
@@ -152,14 +151,14 @@ ms.locfileid: "80992051"
 
 Раздел **typeProperties** отличается для каждого типа набора данных. Он предоставляет сведения, которые относятся к типу набора данных. Раздел **typeProperties** набора данных типа **FileShare** содержит перечисленные ниже свойства.
 
-| Свойство | Описание | Обязательный |
+| Свойство. | Описание | Обязательное значение |
 | --- | --- | --- |
 | folderPath |Подпуть к папке. Чтобы указать специальные знаки в строке, используйте escape-знак "\". Примеры приведены в разделе "Примеры определений связанной службы и набора данных".<br/><br/>Вы можете использовать это свойство вместе с параметром **partitionBy**, чтобы в путях к папкам учитывались дата и время начала и окончания среза. |Да |
 | fileName |Укажите имя файла в свойстве **folderPath**, если требуется создать таблицу, ссылающуюся на конкретный файл в папке. Если этому свойству не присвоить значение, таблица будет указывать на все файлы в папке.<br/><br/>Если свойство **fileName** не указано для выходного набора данных, то имя созданного файла будет иметь следующий формат: <br/><br/>`Data.<Guid>.txt` (пример: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt) |Нет |
 | fileFilter |Укажите фильтр, который будет использоваться для выбора подмножества файлов в **FolderPath**, а не всех файлов.<br/><br/>Допустимые значения: `*` (несколько знаков) и `?` (один знак).<br/><br/>Пример 1: `"fileFilter": "*.log"`<br/>Пример 2: `"fileFilter": 2014-1-?.txt"`<br/><br/> Свойство **fileFilter** применяется ко входному набору данных FileShare. Распределенная файловая система Hadoop (HDFS) не поддерживает это свойство. |Нет |
 | partitionedBy |Используется для того, чтобы указать динамические **путь к папке** и **имя файла** для временного ряда данных. Например, можно указать **путь к папке**, который будет параметризироваться для данных за каждый час. |Нет |
-| format | Поддерживаются следующие типы формата: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat**, **ParquetFormat**. Свойству **type** в разделе format необходимо присвоить одно из этих значений. Дополнительные сведения см. в разделах о [текстовом формате](data-factory-supported-file-and-compression-formats.md#text-format), [формате Json](data-factory-supported-file-and-compression-formats.md#json-format), [формате Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [формате Orc](data-factory-supported-file-and-compression-formats.md#orc-format) и [формате Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format). <br><br> Если требуется скопировать файлы между файловыми хранилищами как есть (двоичное копирование), пропустите раздел формата в определениях входного и выходного наборов данных. |Нет |
-| compression | Укажите тип и уровень сжатия данных. Поддерживаемые типы: **GZip**, **Deflate**, **BZip2** и **ZipDeflate**. Поддерживаемые уровни: **Optimal** и **Fastest**. Узнайте больше о [форматах файлов и сжатия данных в фабрике данных Azure](data-factory-supported-file-and-compression-formats.md#compression-support). |Нет |
+| format | Поддерживаются следующие типы формата: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat**, **ParquetFormat**. Свойству **type** в разделе format необходимо присвоить одно из этих значений. Дополнительные сведения см. в разделах формат [текста](data-factory-supported-file-and-compression-formats.md#text-format), [Формат JSON](data-factory-supported-file-and-compression-formats.md#json-format), [Формат Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [Формат ORC](data-factory-supported-file-and-compression-formats.md#orc-format)и [Формат Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format) . <br><br> Если требуется скопировать файлы между файловыми хранилищами как есть (двоичное копирование), пропустите раздел формата в определениях входного и выходного наборов данных. |Нет |
+| compression | Укажите тип и уровень сжатия данных. Поддерживаемые типы: **GZip**, **Deflate**, **BZip2** и **ZipDeflate**. Поддерживаемые уровни: **Optimal** и **Fastest**. Узнайте больше о [форматах файлов и сжатия данных в фабрике данных Azure](data-factory-supported-file-and-compression-formats.md#compression-support). |нет |
 | useBinaryTransfer |Укажите, следует ли использовать режим передачи в двоичном формате. Значение true, если следует использовать двоичный формат (это значение по умолчанию), и false, если следует использовать ASCII. Это свойство можно использовать, только когда тип связанной службы — FtpServer. |Нет |
 
 > [!NOTE]
@@ -203,7 +202,7 @@ ms.locfileid: "80992051"
 
 Если источник относится к типу **FileSystemSource**, в действии копирования в разделе **typeProperties** доступны указанные ниже свойства.
 
-| Свойство | Описание | Допустимые значения | Обязательный |
+| Свойство. | Описание | Допустимые значения | Обязательно |
 | --- | --- | --- | --- |
 | recursive |Указывает, следует ли читать данные рекурсивно из вложенных папок или только из указанной папки. |True, False (по умолчанию) |Нет |
 

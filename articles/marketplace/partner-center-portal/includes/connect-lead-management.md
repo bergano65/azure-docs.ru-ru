@@ -1,26 +1,24 @@
 ---
 title: Включить имя файла
-description: Включить файл
+description: включить файл
 documentationcenter: partner-center-commercial-marketplace
-author: qianw211
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: include
 ms.date: 08/16/2019
-ms.author: dsindona
 ms.custom: include file
-ms.openlocfilehash: cf6a5730f92eba8f0a4e63bf40a4d2b50f76eb3a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 86b16c92f7a9bd3f594b01820db6cbf7ef5ecb6b
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82131090"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86104370"
 ---
 При публикации предложения в Marketplace через центр партнеров необходимо подключить ваше предложение к системе CRM. Таким образом вы можете получить контактные данные клиента сразу после того, как клиент выражает интерес или развертывает продукт.
 
 1. Выберите назначение интереса, в которое будут отправляться данные о потенциальных клиентах. Поддерживаются следующие системы CRM:
 
-    * [Dynamics 365](../commercial-marketplace-lead-management-instructions-dynamics.md) для участия клиентов
+    * [Dynamics 365](../commercial-marketplace-lead-management-instructions-dynamics.md) для плана Customer Engagement
     * [Marketo](../commercial-marketplace-lead-management-instructions-marketo.md)
     * [Salesforce](../commercial-marketplace-lead-management-instructions-salesforce.md)
 

@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: twooley
 ms.openlocfilehash: 276e691351d852d6dcb0075d47bf33af6767fc10
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79260336"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85847831"
 ---
 # <a name="access-control-in-azure-data-lake-storage-gen1"></a>Контроль доступа в Azure Data Lake Storage 1-го поколения
 
@@ -124,7 +124,7 @@ ms.locfileid: "79260336"
 
 ### <a name="the-owning-group"></a>группа владельцев;
 
-**Вводная информация**
+**Фон**
 
 В списках управления доступом POSIX каждый пользователь связан с "основной группой". Например, пользователь Алиса принадлежит к группе finance. Пользователь Aлиса может принадлежать к нескольким группам, но одна из них всегда назначается как основная. В интерфейсе POSIX, когда пользователь Aлиса создает файл, группа владельцев этого файла задается для основной группы этого пользователя, которой в данном случае является группа finance. В противном случае разрешения группы владельцев будут аналогичны разрешениям, назначенным другим пользователям или группам.
 

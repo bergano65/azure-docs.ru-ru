@@ -11,10 +11,9 @@ ms.topic: article
 ms.date: 05/15/2019
 ms.author: juliako
 ms.openlocfilehash: e9bb516d498d989b97f1069af9a9f4cb673ea96d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74892674"
 ---
 # <a name="view-and-edit-video-indexer-insights"></a>Просмотр и редактирование аналитических сведений Индексатора видео
@@ -27,7 +26,7 @@ ms.locfileid: "74892674"
 
     На странице отображаются сводные аналитические сведения о видео. 
 
-    ![Подробные сведения](./media/video-indexer-view-edit/video-indexer-summarized-insights.png)
+    ![Аналитика](./media/video-indexer-view-edit/video-indexer-summarized-insights.png)
 
 4. Просмотрите сводные аналитические сведения о видео. 
 
@@ -35,11 +34,11 @@ ms.locfileid: "74892674"
 
     Проигрыватель и аналитические сведения синхронизируются. Например, если щелкнуть ключевое слово или строку расшифровки, проигрыватель откроет видео именно в этом месте. В приложении можно настроить представление проигрывателя или аналитических сведений, а также синхронизацию. Дополнительные сведения см. в руководстве по [внедрению мини-приложений Индексатора видео Azure в приложение](video-indexer-embed-widgets.md). 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Использование глубокой аналитики видео](use-editor-create-project.md)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 [Общие сведения об Индексаторе видео](video-indexer-overview.md)
 

@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.reviewer: milanga
-ms.openlocfilehash: 2d746167f993438e5fce467365844df2078c08a6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: b8f100d253dc5ecb321934eb49a1aba60595a5e8
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77919317"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86232582"
 ---
 # <a name="detect-face-and-emotion-with-azure-media-analytics"></a>Обнаружение лиц и определение эмоций с помощью медиа-аналитики Azure
 
@@ -167,8 +167,8 @@ API обнаружения и отслеживания лиц обеспечив
 
 || Значения по умолчанию | Максимальные | Минимальные |
 |--- | --- | --- | --- |
-| AggregateEmotionWindowMs |0,5 |2 |0,25|
-| AggregateEmotionIntervalMs |0,5 |1 |0,25|
+| **AggregateEmotionWindowMs** |0,5 |2 |0,25|
+| **AggregateEmotionIntervalMs** |0,5 |1 |0,25|
 
 ### <a name="json-output"></a>Выходные данные JSON
 Выходные данные JSON для совокупных эмоций (сокращенные).
@@ -348,7 +348,7 @@ API обнаружения и отслеживания лиц обеспечив
 
 #### <a name="create-and-configure-a-visual-studio-project"></a>Создание и настройка проекта Visual Studio
 
-Настройте среду разработки и заполните файл App. config сведениями о соединении, как описано в разделе [Разработка служб мультимедиа с помощью .NET](media-services-dotnet-how-to-use.md). 
+Настройте среду разработки и заполните файл app.config данными о соединении, как описано в разделе [Разработка служб мультимедиа с помощью .NET](media-services-dotnet-how-to-use.md). 
 
 #### <a name="example"></a>Пример
 
@@ -522,7 +522,7 @@ namespace FaceDetection
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="related-links"></a>Связанные ссылки

@@ -6,10 +6,9 @@ ms.topic: reference
 ms.date: 01/14/2019
 ms.author: cshoe
 ms.openlocfilehash: 7ba104e288204dfbf3d24f5783bf69682a286553
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74480575"
 ---
 # <a name="using-the-azure-function-return-value"></a>Использование возвращаемого значения функции Azure
@@ -85,7 +84,7 @@ public static Task<string> Run(WorkItem input, ILogger log)
 }
 ```
 
-# <a name="f"></a>[Ж #](#tab/fsharp)
+# <a name="f"></a>[F#](#tab/fsharp)
 
 Выходная привязка в файле *function.json*:
 
@@ -173,7 +172,7 @@ public static String run(
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Обработчик ошибок привязки функций Azure](./functions-bindings-errors.md)

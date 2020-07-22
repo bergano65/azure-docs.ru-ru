@@ -6,18 +6,18 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.custom: hdinsightactive
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 07/22/2019
-ms.openlocfilehash: b0de9103fd022dc74e7c75017a602eb6701686fe
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c270e9865aff30184ea236f56ab20ede78c5d577
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "73494663"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86075456"
 ---
 # <a name="create-an-apache-spark-machine-learning-pipeline"></a>Создание конвейера машинного обучения Apache Spark
 
-Масштабируемая библиотека машинного обучения Apache Spark предоставляет возможности моделирования для распределенной среды. Пакет [`spark.ml`](https://spark.apache.org/docs/latest/ml-pipeline.html) Spark — это набор интерфейсов API высокого уровня, построенных на основе кадров данных. Эти API позволяют создавать и настраивать практические конвейеры машинного обучения.  *Машинное обучение Spark* использует этот API на основе таблиц данных библиотеки машинного обучения, а не более старый API конвейера на основе RDD.
+Масштабируемая библиотека машинного обучения Apache Spark предоставляет возможности моделирования для распределенной среды. Пакет Spark [`spark.ml`](https://spark.apache.org/docs/latest/ml-pipeline.html) — это набор интерфейсов API высокого уровня, построенных на основе кадров данных. Эти API позволяют создавать и настраивать практические конвейеры машинного обучения.  *Машинное обучение Spark* использует этот API на основе таблиц данных библиотеки машинного обучения, а не более старый API конвейера на основе RDD.
 
 Конвейер машинного обучения — это полный рабочий процесс, объединяющий несколько алгоритмов машинного обучения. Обработка и анализ данных включают в себя много обязательных шагов, требующих последовательности алгоритмов. Конвейеры определяют этапы и порядок процесса машинного обучения. В библиотеке машинного обучения этапы конвейера представлены определенной последовательностью PipelineStages, в которой преобразователь и оценщик выполняют задачи.
 
@@ -132,6 +132,6 @@ only showing top 20 rows
 
 Теперь объект `model` можно использовать для создания прогнозов. Полный пример этого приложения машинного обучения и пошаговые инструкции по его выполнению см. в статье [Создание приложений машинного обучения Apache Spark в Azure HDInsight](apache-spark-ipython-notebook-machine-learning.md).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>Дополнительно
 
 * [Обработка и анализ данных с использованием Scala и Spark в Azure](../../machine-learning/team-data-science-process/scala-walkthrough.md)

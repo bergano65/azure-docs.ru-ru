@@ -4,15 +4,14 @@ description: Дополнительные сведения об инструме
 author: SnehaGunda
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/23/2019
 ms.author: sngun
-ms.openlocfilehash: ae1773ec1d470b9cff2efb00c200427b7b4c2fb4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 8776ecae982a4b1c67f6b66f16fceec930a561f0
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "69614825"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85392137"
 ---
 # <a name="tuning-query-performance-with-azure-cosmos-db"></a>Настройка производительности запросов в Azure Cosmos DB
 
@@ -38,7 +37,7 @@ Azure Cosmos DB предоставляет [API SQL для запроса дан
 
 Пакеты SDK предоставляют различные параметры выполнения запросов. Например, в .NET эти параметры доступны в классе `FeedOptions`. В следующей таблице описаны эти параметры и их влияние на время выполнения запроса. 
 
-| Параметр | Описание |
+| Параметр | Описание: |
 | ------ | ----------- |
 | `EnableCrossPartitionQuery` | Необходимо присвоить значение true для любого запроса, который требуется выполнить более чем в одной секции. Это явный параметр, позволяющий сознательно понизить производительность во время разработки. |
 | `EnableScanInQuery` | Должно быть присвоено значение true, если вы отказались от индексирования, но все равно хотите выполнить запрос с помощью сканирования. Применяется, только если индексирование для запрашиваемого пути фильтра отключено. | 
@@ -124,19 +123,19 @@ Date: Tue, 27 Jun 2017 21:59:49 GMT
 
 Из запроса возвращаются следующие заголовки ответа ключа:
 
-| Параметр | Описание |
+| Параметр | Описание: |
 | ------ | ----------- |
 | `x-ms-item-count` | Число элементов, возвращенных в ответе. Зависит от предоставленного значения `x-ms-max-item-count`, количества элементов, которое может уместиться, исходя из максимального размера полезных данных ответа, подготовленной пропускной способности и времени выполнения запроса. |  
 | `x-ms-continuation:` | Маркер продолжения для возобновления выполнения запроса, если доступны дополнительные результаты. | 
 | `x-ms-documentdb-query-metrics` | Статистика запросов для выполнения. Это строка с разделителями, содержащая статистику времени, затраченного на различных этапах выполнения запроса. Возвращается, если `x-ms-documentdb-populatequerymetrics` имеет значение `True`. | 
 | `x-ms-request-charge` | Число [единиц запросов](request-units.md), использованных запросом. | 
 
-Сведения о заголовках запросов и параметрах интерфейса REST API см. в статье [Querying Azure Cosmos DB resources using the REST API](https://docs.microsoft.com/rest/api/cosmos-db/querying-cosmosdb-resources-using-the-rest-api) (Запрос ресурсов Azure Cosmos DB с помощью REST API).
+Сведения о заголовках запросов и параметрах интерфейса REST API см. в статье [Querying Azure Cosmos DB resources using the REST API](/rest/api/cosmos-db/querying-cosmosdb-resources-using-the-rest-api) (Запрос ресурсов Azure Cosmos DB с помощью REST API).
 
 ## <a name="best-practices-for-query-performance"></a>Рекомендации по повышению производительности запросов
 Ниже приведены наиболее распространенные факторы, влияющие на производительность запросов в Azure Cosmos DB. Мы подробно рассмотрим каждую из этих тем в этой статье.
 
-| Фактор | Подсказка | 
+| Фактор | Совет | 
 | ------ | -----| 
 | Подготовленная пропускная способность | Измерьте единицы запроса на запрос и убедитесь в наличии необходимой подготовленной пропускной способности для запросов. | 
 | Секционирование и ключи секций | Отдайте предпочтение запросам со значением ключа секции в предложении фильтра, чтобы обеспечить низкую задержку. |
@@ -237,7 +236,7 @@ IReadOnlyDictionary<string, QueryMetrics> metrics = result.QueryMetrics;
 
 ```
 
-| Метрика | Единицы | Описание | 
+| Метрика | Единицы | Описание: | 
 | ------ | -----| ----------- |
 | `totalExecutionTimeInMs` | Миллисекунды | Время выполнения запроса | 
 | `queryCompileTimeInMs` | Миллисекунды | Время компиляции запроса  | 
@@ -259,7 +258,7 @@ IReadOnlyDictionary<string, QueryMetrics> metrics = result.QueryMetrics;
 
 Ниже приведены некоторые примеры запросов и интерпретации некоторых метрик, возвращаемые из выполнения запроса. 
 
-| query | Образец метрики | Описание | 
+| Запрос | Образец метрики | Описание: | 
 | ------ | -----| ----------- |
 | `SELECT TOP 100 * FROM c` | `"RetrievedDocumentCount": 101` | Количество полученных документов составляет 100+1 для соответствия предложению TOP. Время запроса главным образом тратится на `WriteOutputTime` и `DocumentLoadTime`, так как он выполняет сканирование. | 
 | `SELECT TOP 500 * FROM c` | `"RetrievedDocumentCount": 501` | RetrievedDocumentCount теперь выше (500+1 для соответствия предложению TOP). | 
@@ -271,7 +270,7 @@ IReadOnlyDictionary<string, QueryMetrics> metrics = result.QueryMetrics;
 | `SELECT TOP 500 c.Name FROM c WHERE STARTSWITH(LOWER(c.Name), 'den')` | `"IndexLookupTime": "00:00:00", "RetrievedDocumentCount": 2491,  "OutputDocumentCount": 500` | Запрос выполняется как операция сканирования, так как он использует `LOWER`, и 500 из 2491 полученных документов возвращаются. |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Дополнительные сведения о поддерживаемых ключевых словах и операторах SQL-запросов см. в статье [SQL-запросы для API DocumentDB в Azure Cosmos DB](sql-query-getting-started.md). 
 * Дополнительные сведения о единицах запроса см. в статье [Единицы запросов в базе данных Azure Cosmos DB](request-units.md).
 * Дополнительные сведения о политике индексирования см. в статье [Как работает индексирование данных в Azure Cosmos DB?](index-policy.md) 

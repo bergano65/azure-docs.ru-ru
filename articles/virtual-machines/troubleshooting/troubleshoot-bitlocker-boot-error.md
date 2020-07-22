@@ -13,12 +13,12 @@ ms.workload: infrastructure
 ms.date: 08/23/2019
 ms.author: genli
 ms.custom: has-adal-ref
-ms.openlocfilehash: 67a3ba99e29582c5681d69cd0c6db377a258020a
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: e0e0d9bfe46a473210b89701b5a8c56e999771d3
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83201349"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86132950"
 ---
 # <a name="bitlocker-boot-errors-on-an-azure-vm"></a>Ошибки загрузки BitLocker на виртуальной машине Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "83201349"
 - Введите пароль для разблокировки этого диска [ ]. Нажмите клавишу Insert для просмотра пароля при вводе.
 - Введите ключ восстановления. Загрузите ключ восстановления с USB-устройства.
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Эта проблема может возникнуть если виртуальная машина не сможет найти файл ключа восстановления BitLocker (BEK) для дешифрования зашифрованного диска.
 
@@ -136,11 +136,15 @@ ms.locfileid: "83201349"
 
     - Приостановите защиту, чтобы временно отключить BitLocker, выполнив следующую команду:
 
-                    manage-bde -protectors -disable F: -rc 0
-           
+    ```console
+    manage-bde -protectors -disable F: -rc 0
+    ```
+
     - Полностью расшифровать диск. Для этого выполните следующую команду:
 
-                    manage-bde -off F:
+    ```console
+    manage-bde -off F:
+    ```
 
 ### <a name="key-encryption-key-scenario"></a>Сценарий ключа шифрования ключа
 
@@ -237,17 +241,17 @@ ms.locfileid: "83201349"
 
 4. После запуска сценария появится следующий результат.
 
-        GAC    Version        Location                                                                              
-        ---    -------        --------                                                                              
-        False  v4.0.30319     C:\Program Files\WindowsPowerShell\Modules\Az.Accounts\...
-        False  v4.0.30319     C:\Program Files\WindowsPowerShell\Modules\Az.Accounts\...
+    Расположение версии GAC                                                                              
+    ---    -------        --------                                                                              
+    False v 4.0.30319 C:\Program Филес\виндовсповершелл\модулес\аз.аккаунтс \. ..  False v 4.0.30319 C:\Program Филес\виндовсповершелл\модулес\аз.аккаунтс \. ..
 
     После завершения сценария отобразятся следующие выходные данные.
 
-        VERBOSE: POST https://myvault.vault.azure.net/keys/rondomkey/<KEY-ID>/unwrapkey?api-
-        version=2015-06-01 with -1-byte payload
-        VERBOSE: received 360-byte response of content type application/json; charset=utf-8
-
+    ```output
+    VERBOSE: POST https://myvault.vault.azure.net/keys/rondomkey/<KEY-ID>/unwrapkey?api-
+    version=2015-06-01 with -1-byte payload
+    VERBOSE: received 360-byte response of content type application/json; charset=utf-8
+    ```
 
 5. Чтобы разблокировать подключенный диск с помощью BEK-файла, выполните следующую команду.
 
@@ -265,11 +269,16 @@ ms.locfileid: "83201349"
 
     - Приостановите защиту, чтобы временно отключить BitLocker, выполнив следующую команду:
 
-             manage-bde -protectors -disable F: -rc 0
-           
+    ```console
+    manage-bde -protectors -disable F: -rc 0
+    ```
+
     - Полностью расшифровать диск. Для этого выполните следующую команду:
 
-                    manage-bde -off F:
+    ```console
+    manage-bde -off F:
+    ```
+
 ## <a name="script-troubleshooting"></a>Устранение неполадок сценариев
 
 **Ошибка: не удалось загрузить файл или сборку**

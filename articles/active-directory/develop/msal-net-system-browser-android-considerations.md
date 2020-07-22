@@ -14,10 +14,10 @@ ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.openlocfilehash: 8e37d443d75dccae8704bc1ff7856e1d24131766
-ms.sourcegitcommit: d662eda7c8eec2a5e131935d16c80f1cf298cb6b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82652703"
 ---
 #  <a name="xamarin-android-system-browser-considerations-for-using-msalnet"></a>Рекомендации по использованию MSAL.NET в браузере системы Xamarin Android
@@ -32,7 +32,7 @@ ms.locfileid: "82652703"
 |------| ------- |
 |Chrome | com.android.chrome|
 |Microsoft Edge | com. Microsoft. еммкс|
-|FireFox | org. Mozilla. Firefox|
+|Firefox | org. Mozilla. Firefox|
 |екосиа | com. екосиа. Android|
 |Киви | com. кивибровсер. browser|
 |Дивный | com. дивный. browser|
@@ -45,8 +45,8 @@ ms.locfileid: "82652703"
 | Устройство | Браузер     |  Результат  | 
 | ------------- |:-------------:|:-----:|
 | Huawei/один + | Chrome\* | Успех|
-| Huawei/один + | Угловой\* | Успех|
-| Huawei/один + | FireFox\* | Успех|
+| Huawei/один + | Пограничный случай\* | Успех|
+| Huawei/один + | Firefox\* | Успех|
 | Huawei/один + | Дивный\* | Успех|
 | Один + | екосиа\* | Успех|
 | Один + | Киви\* | Успех|
@@ -67,7 +67,7 @@ ms.locfileid: "82652703"
 Если на устройстве не включен браузер, MSAL.NET выдаст `AndroidActivityNotFound` исключение.  
   - **Устранение**. Попросите пользователя включить браузер на своем устройстве. Рекомендуется браузер, поддерживающий пользовательские вкладки.
 
-Если проверка подлинности завершается неудачно (например, если проверка подлинности `AuthenticationCanceled MsalClientException`запускается с дуккдуккго), MSAL.NET вернет. 
+Если проверка подлинности завершается неудачно (например, если проверка подлинности запускается с Дуккдуккго), MSAL.NET вернет `AuthenticationCanceled MsalClientException` . 
   - **Проблема с корневым каталогом**: браузер, поддерживающий пользовательские вкладки, не включен на устройстве. Проверка подлинности запущена в браузере, который не смог пройти проверку подлинности. 
   - **Устранение**. Попросите пользователя включить браузер на своем устройстве. Рекомендуется браузер, поддерживающий пользовательские вкладки.
 

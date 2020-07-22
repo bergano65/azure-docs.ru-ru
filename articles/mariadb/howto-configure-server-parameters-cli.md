@@ -1,23 +1,23 @@
 ---
-title: Настройка параметров сервера — Azure CLI — база данных Azure для MariaDB
+title: Настройка параметров сервера — Azure CLI — база данных Azure для MariaDB
 description: В этой статье описывается настройка параметров службы в Базе данных Azure для MariaDB с помощью служебной программы командной строки Azure CL.
 author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.devlang: azurecli
-ms.topic: conceptual
-ms.date: 4/1/2020
-ms.openlocfilehash: 3ba06ea592d51eedbe827e1ab6418f65722d579c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.topic: how-to
+ms.date: 6/11/2020
+ms.openlocfilehash: a5aed10927a808d0002f765d493709e0e49483ff
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80632303"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86104815"
 ---
-# <a name="customize-server-configuration-parameters-by-using-azure-cli"></a>Настройка параметров конфигурации сервера с помощью Azure CLI
+# <a name="configure-server-parameters-in-azure-database-for-mariadb-using-the-azure-cli"></a>Настройка параметров сервера в базе данных Azure для MariaDB с помощью Azure CLI
 С помощью служебной программы командной строки (Azure CLI) можно вывести список параметров конфигурации для сервера Базы данных Azure для MariaDB, а также отобразить и обновить их. Только подмножество конфигураций ядра предоставляется на уровне сервера и может быть изменено.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
 - [Сервер Базы данных Azure для MariaDB](quickstart-create-mariadb-server-database-using-azure-cli.md)
 - Программа командной строки [Azure CLI](/cli/azure/install-azure-cli) (или используйте Azure Cloud Shell в браузере).
@@ -54,6 +54,14 @@ az mariadb server configuration set --name slow_query_log --resource-group myres
 ```
 
 Этот код выполняет сброс конфигурации **slow\_query\_log** к значению по умолчанию **OFF**. 
+
+## <a name="setting-parameters-not-listed"></a>Параметры настройки не указаны
+Если параметр сервера, который требуется обновить, не указан в портал Azure, можно при необходимости задать параметр на уровне соединения с помощью `init_connect` . Это задает параметры сервера для каждого клиента, подключающегося к серверу. 
+
+Обновите параметр конфигурации сервера **init \_ connect** сервера **mydemoserver.MariaDB.Database.Azure.com** в разделе **myresourcegroup** группы ресурсов, чтобы задать значения, такие как кодировка.
+```azurecli-interactive
+az mariadb server configuration set --name init_connect --resource-group myresourcegroup --server mydemoserver --value "SET character_set_client=utf8;SET character_set_database=utf8mb4;SET character_set_connection=latin1;SET character_set_results=latin1;"
+```
 
 ## <a name="working-with-the-time-zone-parameter"></a>Работа с параметром часового пояса
 
@@ -97,6 +105,6 @@ SET time_zone = 'US/Pacific';
 
 Описание [Функций даты и времени](https://mariadb.com/kb/en/library/date-time-functions/) см. в документации по MariaDB.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Настройка [параметров сервера на портале Azure](howto-server-parameters.md)

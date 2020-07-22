@@ -15,10 +15,9 @@ ms.workload: na
 ms.date: 12/30/2019
 ms.author: yelevin
 ms.openlocfilehash: bbc77340375b22f137045d68b7449dd1e8adc4b7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77588388"
 ---
 # <a name="connect-citrix-analytics-security"></a>Подключение Citrix Analytics (модуль безопасности) 
@@ -36,7 +35,7 @@ ms.locfileid: "77588388"
 
 ## <a name="connect-azure-sentinel-to-citrix-analytics-security"></a>Подключение Sentinel Azure к Citrix Analytics (безопасность)
 
-1. В портал Azure перейдите к**соединителям данных** **Azure Sentinel** > , а затем выберите соединитель **Citrix Analytics (безопасность)** .
+1. В портал Azure перейдите к **Azure Sentinel**  >  **соединителям данных** Azure Sentinel, а затем выберите соединитель **Citrix Analytics (безопасность)** .
 
 2. Выберите **открыть страницу соединителя**.
 
@@ -46,6 +45,6 @@ ms.locfileid: "77588388"
 В этом документе вы узнали, как подключить Citrix Analytics (Security) к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
-- [Используйте книги](tutorial-monitor-your-data.md) для отслеживания данных.
+- [Используйте книги](tutorial-monitor-your-data.md) для мониторинга данных.
 
 

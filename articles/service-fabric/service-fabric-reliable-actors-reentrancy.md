@@ -5,12 +5,12 @@ author: vturecek
 ms.topic: conceptual
 ms.date: 11/02/2017
 ms.author: vturecek
-ms.openlocfilehash: 46ce91e607341e2fbdc0b6a3018e74cb24e76839
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 100cf1f7bf8a0c903cfd61d93d2f923c32cabd11
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75645537"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86260960"
 ---
 # <a name="reliable-actors-reentrancy"></a>Повторный вход надежных субъектов
 Среда выполнения Reliable Actors по умолчанию разрешает повторный вход на основе логического контекста вызова. Это позволяет субъектам выполнять повторный вход, если они находятся в той же цепочке контекста вызова. Например, субъект A отправляет сообщение субъекту B, который отправляет сообщение субъекту C. В ходе обработки сообщения, если субъект C осуществит вызов субъекта A, сообщение будет означать повторный вход, поэтому будет разрешено. Любые другие сообщения, являющиеся частью другого контекста вызова, будут заблокированы на субъекте A до тех пор, пока он не завершит обработку.
@@ -102,4 +102,4 @@ static class Program
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* Узнайте больше о возможностях повторного входа в [справочной документации по API субъектов](https://msdn.microsoft.com/library/azure/dn971626.aspx).
+* Узнайте больше о возможностях повторного входа в [справочной документации по API субъектов](/previous-versions/azure/dn971626(v=azure.100)).

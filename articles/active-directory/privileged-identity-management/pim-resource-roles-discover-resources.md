@@ -7,19 +7,19 @@ author: curtand
 manager: daveba
 ms.service: active-directory
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: pim
 ms.date: 11/08/2019
 ms.author: curtand
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 87da43100c7494937ddc842e0f903ba3a360959e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 4852f841fc9ac8ebea586d5e24967a1db20b8044
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74022890"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84743717"
 ---
 # <a name="discover-azure-resources-to-manage-in-privileged-identity-management"></a>Обнаружение ресурсов Azure для управления в управление привилегированными пользователями
 
@@ -33,7 +33,7 @@ ms.locfileid: "74022890"
 
 1. Откройте **Azure AD privileged Identity Management**.
 
-1. Щелкните **Ресурсы Azure**.
+1. Выберите **ресурсы Azure**.
 
     Если вы впервые используете управление привилегированными пользователями для ресурсов Azure, вы увидите страницу " **Поиск ресурсов** ".
 
@@ -64,7 +64,7 @@ ms.locfileid: "74022890"
 
     ![Сообщение, подтверждающее подключение выбранных ресурсов для управления](./media/pim-resource-roles-discover-resources/discovery-manage-resource-message.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Настройка параметров роли ресурсов Azure в управление привилегированными пользователями](pim-resource-roles-configure-role-settings.md)
 - [Назначение ролей ресурсов Azure в управление привилегированными пользователями](pim-resource-roles-assign-roles.md)

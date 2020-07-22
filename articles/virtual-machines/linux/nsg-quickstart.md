@@ -10,10 +10,10 @@ ms.workload: infrastructure-services
 ms.date: 12/13/2017
 ms.author: cynthn
 ms.openlocfilehash: c29fb075fc2d8b512070d7a6cf3fef949def5894
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80066629"
 ---
 # <a name="open-ports-and-endpoints-to-a-vm-with-the-azure-cli"></a>Откройте порты и конечные точки для виртуальной машины с помощью Azure CLI
@@ -46,7 +46,7 @@ az network nsg create \
     --name myNetworkSecurityGroup
 ```
 
-С помощью команды [az network nsg rule create](/cli/azure/network/nsg/rule) добавьте правило, разрешающее HTTP-трафик к вашему веб-серверу (или настройте правило под собственные нужды, например доступ по протоколу SSH или подключение к базе данных). В следующем примере создается правило с именем *myNetworkSecurityGroupRule*. Это правило разрешает TCP-трафик через порт 80:
+С помощью команды [az network nsg rule create](/cli/azure/network/nsg/rule) добавьте правило, разрешающее HTTP-трафик к вашему веб-серверу (или настройте правило под собственные нужды, например доступ по протоколу SSH или подключение к базе данных). В следующем примере создается правило с именем *myNetworkSecurityGroupRule* , разрешающее TCP-трафик через порт 80:
 
 ```azurecli
 az network nsg rule create \
@@ -84,8 +84,8 @@ az network vnet subnet update \
 
 Для веб-приложений с высокой доступностью необходимо поместить виртуальную машину за Azure Load Balancer. Балансировщик нагрузки распределяет трафик между виртуальными машинами с группой безопасности сети, обеспечивающей фильтрацию трафика. Подробные сведения см. в статье [Балансировка нагрузки виртуальных машин Windows в Azure для создания высокодоступного приложения](tutorial-load-balancer.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этом примере создано простое правило, разрешающее трафик HTTP. Информацию о создании более детализированных сред можно найти в следующих статьях.
 
-* [Обзор Azure Resource Manager](../../azure-resource-manager/management/overview.md)
+* [Общие сведения об Azure Resource Manager](../../azure-resource-manager/management/overview.md)
 * [Что такое группа безопасности сети (NSG)?](../../virtual-network/security-overview.md)

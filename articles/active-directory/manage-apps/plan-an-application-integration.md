@@ -3,8 +3,8 @@ title: Приступая к интеграции Azure AD с приложени
 description: Эта статья представляет собой вводное руководство по интеграции Azure Active Directory (AD) с локальными приложениями и облачными приложениями.
 services: active-directory
 documentationcenter: ''
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.devlang: na
@@ -12,15 +12,14 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 07/16/2018
-ms.author: mimart
+ms.author: kenwith
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 89b16a8479f8975d101b8a4e26dcb1885d9730bd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 0d49c23e5968b0fe1b2d4838978fe1b23931e5e9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77063386"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84763097"
 ---
 # <a name="integrating-azure-active-directory-with-applications-getting-started-guide"></a>Руководство по интеграции Azure Active Directory с приложениями
 
@@ -42,7 +41,7 @@ ms.locfileid: "77063386"
 ### <a name="user-and-group-inventory"></a>Инвентаризация пользователей и групп
 * Где находятся учетные записи пользователей?
   * Локальная служба Active Directory
-  * Azure AD
+  * Azure AD
   * в отдельной базе данных приложений, владельцем которой вы являетесь;
   * в несанкционированных приложениях;
   * все вышеперечисленное.
@@ -90,12 +89,12 @@ ms.locfileid: "77063386"
 * [Назначение групп для приложения](../active-directory-applications-guiding-developers-assigning-groups.md)
 * [Совместное использование учетных записей.](../active-directory-sharing-accounts.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Для получения подробных сведений можно скачать планы развертывания Azure Active Directory с сайта [GitHub](https://aka.ms/deploymentplans). Для приложений из коллекции можно загрузить планы развертывания для единого входа, условного доступа и подготовки пользователей с помощью [портал Azure](https://portal.azure.com). 
 
 Чтобы скачать план развертывания на портале Azure, сделайте следующее.
 
 1. Войдите на [портал Azure](https://portal.azure.com).
-2. Выберите **корпоративные приложения** | выбор**плана развертывания****приложения** | .
+2. Выберите **корпоративные приложения**выбор  |  **Pick an App**  |  **плана развертывания**приложения.
 
 Оставьте отзыв о планах развертывания, приняв участие в этом [опросе](https://aka.ms/DeploymentPlanFeedback).

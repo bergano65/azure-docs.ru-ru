@@ -9,10 +9,9 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 02/07/2020
 ms.openlocfilehash: 3feacd94558ba275c81469827993aef106ae633c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77162214"
 ---
 # <a name="apache-hadoop-architecture-in-hdinsight"></a>Архитектура Apache Hadoop в HDInsight
@@ -56,17 +55,17 @@ YARN развертывается во всех типах кластера HDIn
 * [Soft delete for Azure Storage blobs](../storage/blobs/storage-blob-soft-delete.md) (Обратимое удаление больших двоичных объектов службы хранилища Azure)
 * [Отменить удаление BLOB-объекта](https://docs.microsoft.com/rest/api/storageservices/undelete-blob)
 
-### <a name="azure-data-lake-storage-gen-1"></a>Azure Data Lake Storage Gen 1
+### <a name="azure-data-lake-storage-gen-1"></a>Azure Data Lake Storage 1-го поколения
 
 [Restore-Аздаталакестоределетедитем](https://docs.microsoft.com/powershell/module/az.datalakestore/restore-azdatalakestoredeleteditem)
 
 ### <a name="azure-data-lake-storage-gen-2"></a>Azure Data Lake Storage 2-го поколения
 
-[Известные проблемы с Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-known-issues.md)
+[Известные проблемы с Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-known-issues.md)
 
 ## <a name="trash-purging"></a>Удаление корзины
 
-`fs.trash.interval` Свойство из серверной системы **HDFS** > с**расширенным ядром** должно оставаться в значении `0` по умолчанию, поскольку не следует хранить данные в локальной файловой системе. Это значение не влияет на удаленные учетные записи хранения (WASB, ADLS GEN1, АБФС)
+`fs.trash.interval`Свойство из **HDFS**  >  серверной системы HDFS с**расширенным ядром** должно оставаться в значении по умолчанию, поскольку не следует `0` хранить данные в локальной файловой системе. Это значение не влияет на удаленные учетные записи хранения (WASB, ADLS GEN1, АБФС)
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 

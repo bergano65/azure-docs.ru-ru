@@ -6,14 +6,14 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 10/14/2019
-ms.openlocfilehash: 28eeb446e55213f1ffa0a638878f6432fd15a05a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 2a6b324c4caf9619566ba335ab2e5a318ab68bb6
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "72392245"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86079434"
 ---
 # <a name="use-apache-zeppelin-to-run-apache-phoenix-queries-over-apache-hbase-in-azure-hdinsight"></a>Использование Apache Zeppelin для запуска запросов Apache Phoenix через Apache HBase в Azure HDInsight
 
@@ -96,7 +96,7 @@ Apache Zeppelin — это веб-Записная книжка с открыт�
     DROP TABLE dbo.Company;
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Apache Phoenix теперь поддерживает Zeppelin в Azure HDInsight](https://blogs.msdn.microsoft.com/ashish/2018/08/17/apache-phoenix-now-supports-zeppelin-in-azure-hdinsight/)
 - [Грамматика Apache Phoenix](https://phoenix.apache.org/language/index.html)

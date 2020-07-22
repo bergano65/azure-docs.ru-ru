@@ -7,14 +7,14 @@ author: jejiang
 ms.author: jejiang
 ms.reviewer: jasonwhowell
 ms.assetid: dc9b21d8-c5f4-4f77-bcbc-eff458f48de2
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 07/14/2017
-ms.openlocfilehash: e51b5640163546c673a1b0f61da47ccd992f27ad
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 141be5c2747ae5d0a812b1301b6af7203fe24351
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "72030038"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86110612"
 ---
 # <a name="run-u-sql-and-debug-locally-in-visual-studio-code"></a>Запуск и отладка заданий U-SQL локально в Visual Studio Code
 В этой статье описывается, как выполнять задания U-SQL на локальном компьютере для разработки, чтобы ускорить программирование на ранних этапах, и отлаживать код локально в Visual Studio Code. Инструкции по использованию средств Azure Data Lake для Visual Studio Code см. в статье [Использование средств Azure Data Lake для Visual Studio Code](data-lake-analytics-data-lake-tools-for-vscode.md).

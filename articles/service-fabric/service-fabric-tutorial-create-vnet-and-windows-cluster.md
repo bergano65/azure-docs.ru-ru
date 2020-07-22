@@ -4,16 +4,16 @@ description: Из этого руководства вы узнаете, как 
 ms.topic: tutorial
 ms.date: 07/22/2019
 ms.custom: mvc
-ms.openlocfilehash: 2d170057a85a8e223fa9d1bc2bfc17e0c284afcd
-ms.sourcegitcommit: 441db70765ff9042db87c60f4aa3c51df2afae2d
+ms.openlocfilehash: a7390858e55a456ec5fb2f851be1a7443be97082
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80756037"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86245064"
 ---
 # <a name="tutorial-deploy-a-service-fabric-cluster-running-windows-into-an-azure-virtual-network"></a>Руководство по развертыванию кластера Service Fabric на платформе Windows в виртуальной сети Azure
 
-Это руководство представляет первую часть цикла. Вы узнаете, как развернуть в Azure кластер Service Fabric на платформе Windows в [виртуальной сети Azure](../virtual-network/virtual-networks-overview.md) и [группе безопасности сети](../virtual-network/virtual-networks-nsg.md) с помощью шаблона и PowerShell. Выполнив инструкции из этого учебника, вы получите кластер в облаке, в котором можно разворачивать приложения. Создание кластера Linux с помощью Azure CLI описывается в статье о [создании защищенного кластера Linux в Azure](service-fabric-tutorial-create-vnet-and-linux-cluster.md).
+Это руководство представляет первую часть цикла. Вы узнаете, как развернуть в Azure кластер Service Fabric на платформе Windows в [виртуальной сети Azure](../virtual-network/virtual-networks-overview.md) и [группе безопасности сети](../virtual-network/virtual-network-vnet-plan-design-arm.md) с помощью шаблона и PowerShell. Выполнив инструкции из этого учебника, вы получите кластер в облаке, в котором можно разворачивать приложения. Создание кластера Linux с помощью Azure CLI описывается в статье о [создании защищенного кластера Linux в Azure](service-fabric-tutorial-create-vnet-and-linux-cluster.md).
 
 В этом руководстве описывается рабочий сценарий. Если вы хотите создать небольшой кластер для тестирования, ознакомьтесь с [этой статьей](./scripts/service-fabric-powershell-create-secure-cluster-cert.md).
 
@@ -48,7 +48,7 @@ ms.locfileid: "80756037"
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Установите [пакет SDK для Service Fabric и модуль PowerShell](service-fabric-get-started.md).
-* Установите [Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-Az-ps).
+* Установите [Azure PowerShell](/powershell/azure/install-az-ps).
 * Изучите основные понятия для [кластеров Azure](service-fabric-azure-clusters-overview.md).
 * [Спланируйте и подготовьте](service-fabric-cluster-azure-deployment-preparation.md) развертывание рабочего кластера.
 
@@ -73,8 +73,8 @@ ms.locfileid: "80756037"
 * с защитой сертификатом (можно настроить в параметрах шаблона);
 * включен [обратный прокси-сервер](service-fabric-reverseproxy.md);
 * включена [служба DNS](service-fabric-dnsservice.md);
-* [уровень устойчивости](service-fabric-cluster-capacity.md#the-durability-characteristics-of-the-cluster) Bronze (можно настроить в параметрах шаблона);
-* [уровень надежности](service-fabric-cluster-capacity.md#the-reliability-characteristics-of-the-cluster) Silver (можно настроить в параметрах шаблона);
+* [уровень устойчивости](service-fabric-cluster-capacity.md#durability-characteristics-of-the-cluster) Bronze (можно настроить в параметрах шаблона);
+* [уровень надежности](service-fabric-cluster-capacity.md#reliability-characteristics-of-the-cluster) Silver (можно настроить в параметрах шаблона);
 * конечная точка подключения клиента: 19000 (можно настроить в параметрах шаблона);
 * конечная точка HTTP-шлюза: 19080 (можно настроить в параметрах шаблона);
 
@@ -111,7 +111,7 @@ ms.locfileid: "80756037"
 Если вам нужны другие порты приложений, следует изменить ресурсы **Microsoft.Network/loadBalancers** и **Microsoft.Network/networkSecurityGroups**, чтобы разрешить входящий трафик.
 
 ### <a name="windows-defender"></a>Защитник Windows
-по умолчанию на Windows Server 2016 установлена и активирована [Антивирусная программа "Защитник Windows"](/windows/security/threat-protection/windows-defender-antivirus/windows-defender-antivirus-on-windows-server-2016); пользовательский интерфейс устанавливается по умолчанию на некоторых номерах SKU, но не является обязательным. Для каждого типа узла или масштабируемого набора виртуальной машины, объявленного в шаблоне, используется [расширение антивредоносного ПО для виртуальных машин Azure](/azure/virtual-machines/extensions/iaas-antimalware-windows) для исключения каталогов и процессов Service Fabric:
+по умолчанию на Windows Server 2016 установлена и активирована [Антивирусная программа "Защитник Windows"](/windows/security/threat-protection/windows-defender-antivirus/windows-defender-antivirus-on-windows-server-2016); пользовательский интерфейс устанавливается по умолчанию на некоторых номерах SKU, но не является обязательным. Для каждого типа узла или масштабируемого набора виртуальной машины, объявленного в шаблоне, используется [расширение антивредоносного ПО для виртуальных машин Azure](../virtual-machines/extensions/iaas-antimalware-windows.md) для исключения каталогов и процессов Service Fabric:
 
 ```json
 {
@@ -145,8 +145,8 @@ ms.locfileid: "80756037"
 
 **Параметр** | **Пример значения** | **Примечания** 
 |---|---|---|
-|adminUserName|vmadmin| Имя администратора кластера виртуальных машин. [Требования к имени пользователя для виртуальных машин](https://docs.microsoft.com/azure/virtual-machines/windows/faq#what-are-the-username-requirements-when-creating-a-vm). |
-|adminPassword|Password#1234| Пароль администратора для кластера виртуальных машин. [Требования к паролю для виртуальных машин](https://docs.microsoft.com/azure/virtual-machines/windows/faq#what-are-the-password-requirements-when-creating-a-vm).|
+|adminUserName|vmadmin| Имя администратора кластера виртуальных машин. [Требования к имени пользователя для виртуальных машин](../virtual-machines/windows/faq.md#what-are-the-username-requirements-when-creating-a-vm). |
+|adminPassword|Password#1234| Пароль администратора для кластера виртуальных машин. [Требования к паролю для виртуальных машин](../virtual-machines/windows/faq.md#what-are-the-password-requirements-when-creating-a-vm).|
 |clusterName|mysfcluster123| Имя кластера. Может содержать только буквы и цифры. Длина имени должна составлять от 3 до 23 знаков.|
 |location|southcentralus| Расположение кластера. |
 |certificateThumbprint|| <p>Если создается самозаверяющий сертификат или указывается файл сертификата, значение должно быть пустым.</p><p>Если необходимо использовать имеющийся сертификат, который вы ранее передали в хранилище ключей, заполните значение отпечатка SHA1 сертификата. Например, 6190390162C988701DB5676EB81083EA608DCCF3.</p> |
@@ -703,7 +703,7 @@ Get-ServiceFabricClusterHealth
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Кластер, который вы только что создали, используется в других статьях этого цикла учебников. Если вы не собираетесь немедленно приступить к следующей статье, то можете [удалить кластер](service-fabric-cluster-delete.md), чтобы за него не взималась плата.
+Кластер, который вы только что создали, используется в других статьях этого цикла учебников. Если вы не собираетесь немедленно приступить к следующей статье, то можете [удалить кластер](./service-fabric-tutorial-delete-cluster.md), чтобы за него не взималась плата.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 12/15/2015
 ms.author: mimckitt
-ms.openlocfilehash: 16e1dba8c430a5c1e1d1d69910b8ed2c8d0b8138
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 5aeae50c9cb7497c20f785f2a32c96f5a4fdec1e
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81262848"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86186985"
 ---
 # <a name="use-powershell-to-enable-azure-diagnostics-in-a-virtual-machine-running-windows"></a>Включение системы диагностики Azure на виртуальной машине под управлением Windows с помощью PowerShell
 
@@ -31,11 +31,13 @@ ms.locfileid: "81262848"
 
 Чтобы включить расширение диагностики на уже существующей виртуальной машине, созданной с помощью модели развертывания Resource Manager, можете использовать командлет PowerShell [Set-AzVMDiagnosticsExtension](https://docs.microsoft.com/powershell/module/az.compute/set-azvmdiagnosticsextension), как показано ниже.
 
-    $vm_resourcegroup = "myvmresourcegroup"
-    $vm_name = "myvm"
-    $diagnosticsconfig_path = "DiagnosticsPubConfig.xml"
+```azurepowershell
+$vm_resourcegroup = "myvmresourcegroup"
+$vm_name = "myvm"
+$diagnosticsconfig_path = "DiagnosticsPubConfig.xml"
 
-    Set-AzVMDiagnosticsExtension -ResourceGroupName $vm_resourcegroup -VMName $vm_name -DiagnosticsConfigurationPath $diagnosticsconfig_path
+Set-AzVMDiagnosticsExtension -ResourceGroupName $vm_resourcegroup -VMName $vm_name -DiagnosticsConfigurationPath $diagnosticsconfig_path
+```
 
 
 *$diagnosticsconfig_path* — это путь к файлу с конфигурацией диагностики в формате XML, как показано в [примере](#sample-diagnostics-configuration) ниже.  
@@ -46,18 +48,24 @@ ms.locfileid: "81262848"
 
 Если учетная запись хранения диагностики и виртуальная машина относятся к разным подпискам, то в командлет необходимо явно передать параметры *StorageAccountName* и *StorageAccountKey*. Параметр *StorageAccountKey* не требуется, если учетная запись хранения диагностических данных находится в той же подписке, так как командлет может автоматически запрашивать и задавать значение ключа при включении расширения диагностики. Однако если учетная запись хранения диагностики находится в другой подписке, командлет не сможет получить ключ автоматически, и необходимо явно указать ключ с помощью параметра *StorageAccountKey* .  
 
-    Set-AzVMDiagnosticsExtension -ResourceGroupName $vm_resourcegroup -VMName $vm_name -DiagnosticsConfigurationPath $diagnosticsconfig_path -StorageAccountName $diagnosticsstorage_name -StorageAccountKey $diagnosticsstorage_key
+```azurepowershell
+Set-AzVMDiagnosticsExtension -ResourceGroupName $vm_resourcegroup -VMName $vm_name -DiagnosticsConfigurationPath $diagnosticsconfig_path -StorageAccountName $diagnosticsstorage_name -StorageAccountKey $diagnosticsstorage_key
+```
 
 После включения расширения диагностики на виртуальной машине получить текущие параметры можно с помощью командлета [Get-AzVmDiagnosticsExtension](https://docs.microsoft.com/powershell/module/az.compute/get-azvmdiagnosticsextension).
 
-    Get-AzVMDiagnosticsExtension -ResourceGroupName $vm_resourcegroup -VMName $vm_name
+```azurepowershell
+Get-AzVMDiagnosticsExtension -ResourceGroupName $vm_resourcegroup -VMName $vm_name
+```
 
 Командлет возвращает значение *PublicSettings*, содержащее конфигурацию диагностики. Поддерживаются два типа конфигурации: WadCfg и xmlCfg. WadCfg — это конфигурации JSON, а xmlCfg — это конфигурация XML в кодировке Base64. Чтобы прочитать XML-файл, его необходимо декодировать.
 
-    $publicsettings = (Get-AzVMDiagnosticsExtension -ResourceGroupName $vm_resourcegroup -VMName $vm_name).PublicSettings
-    $encodedconfig = (ConvertFrom-Json -InputObject $publicsettings).xmlCfg
-    $xmlconfig = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($encodedconfig))
-    Write-Host $xmlconfig
+```azurepowershell
+$publicsettings = (Get-AzVMDiagnosticsExtension -ResourceGroupName $vm_resourcegroup -VMName $vm_name).PublicSettings
+$encodedconfig = (ConvertFrom-Json -InputObject $publicsettings).xmlCfg
+$xmlconfig = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($encodedconfig))
+Write-Host $xmlconfig
+```
 
 Для удаления расширения диагностики с виртуальной машины вы можете использовать командлет [Remove-AzVmDiagnosticsExtension](https://docs.microsoft.com/powershell/module/az.compute/remove-azvmdiagnosticsextension).  
 
@@ -67,16 +75,20 @@ ms.locfileid: "81262848"
 
 Включить расширение диагностики на виртуальной машине, созданной на основе классической модели развертывания, можно с помощью командлета [Set-AzureVMDiagnosticsExtension](https://docs.microsoft.com/powershell/module/servicemanagement/azure/set-azurevmdiagnosticsextension) . В следующем примере показано, как создать новую виртуальную машину, используя классическую модель развертывания при включенном расширении диагностики.
 
-    $VM = New-AzureVMConfig -Name $VM -InstanceSize Small -ImageName $VMImage
-    $VM = Add-AzureProvisioningConfig -VM $VM -AdminUsername $Username -Password $Password -Windows
-    $VM = Set-AzureVMDiagnosticsExtension -DiagnosticsConfigurationPath $Config_Path -VM $VM -StorageContext $Storage_Context
-    New-AzVM -Location $Location -ServiceName $Service_Name -VM $VM
+```azurepowershell
+$VM = New-AzureVMConfig -Name $VM -InstanceSize Small -ImageName $VMImage
+$VM = Add-AzureProvisioningConfig -VM $VM -AdminUsername $Username -Password $Password -Windows
+$VM = Set-AzureVMDiagnosticsExtension -DiagnosticsConfigurationPath $Config_Path -VM $VM -StorageContext $Storage_Context
+New-AzVM -Location $Location -ServiceName $Service_Name -VM $VM
+```
 
 Чтобы включить расширение диагностики на существующей виртуальной машине, созданной с помощью классической модели развертывания, сначала используйте командлет [Get-AzureVM](https://docs.microsoft.com/powershell/module/servicemanagement/azure/get-azurevm) , который позволит получить конфигурацию виртуальной машины. Затем обновите конфигурацию виртуальной машины, чтобы активировать расширение диагностики, с помощью командлета [Set-AzureVMDiagnosticsExtension](https://docs.microsoft.com/powershell/module/servicemanagement/azure/set-azurevmdiagnosticsextension) . И, наконец, примените обновленную конфигурацию к виртуальной машине с помощью командлета [Update-AzureVM](https://docs.microsoft.com/powershell/module/servicemanagement/azure/update-azurevm).
 
-    $VM = Get-AzureVM -ServiceName $Service_Name -Name $VM_Name
-    $VM_Update = Set-AzureVMDiagnosticsExtension  -DiagnosticsConfigurationPath $Config_Path -VM $VM -StorageContext $Storage_Context
-    Update-AzureVM -ServiceName $Service_Name -Name $VM_Name -VM $VM_Update.VM
+```azurepowershell
+$VM = Get-AzureVM -ServiceName $Service_Name -Name $VM_Name
+$VM_Update = Set-AzureVMDiagnosticsExtension  -DiagnosticsConfigurationPath $Config_Path -VM $VM -StorageContext $Storage_Context
+Update-AzureVM -ServiceName $Service_Name -Name $VM_Name -VM $VM_Update.VM
+```
 
 ## <a name="sample-diagnostics-configuration"></a>Пример конфигурации диагностики
 Представленный ниже XML-код можно использовать для открытой конфигурации диагностики с применением описанных выше сценариев. Конфигурация в данном примере передает в учетную запись хранения диагностических данных различные счетчики производительности вместе с ошибками из журналов приложений, событий безопасности и системных каналов в Windows, а также из журналов инфраструктуры диагностики.
@@ -198,7 +210,7 @@ ms.locfileid: "81262848"
     </PublicConfig>
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные рекомендации по использованию системы диагностики Azure и других методов для устранения неполадок см. в статье [Включение системы диагностики Azure в облачных службах Azure](../../cloud-services/cloud-services-dotnet-diagnostics.md).
 * Пояснение различных параметров XML-конфигураций для расширения диагностики см. в статье, посвященной [схеме конфигураций диагностики](https://msdn.microsoft.com/library/azure/mt634524.aspx).
 

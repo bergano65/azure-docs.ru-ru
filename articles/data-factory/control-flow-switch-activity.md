@@ -10,10 +10,10 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 10/08/2019
 ms.openlocfilehash: 4f839de6e276727fa910f91eccc34601cf34f85c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81418020"
 ---
 # <a name="switch-activity-in-azure-data-factory"></a>Действие переключения в фабрике данных Azure
@@ -67,7 +67,7 @@ ms.locfileid: "81418020"
 
 ## <a name="type-properties"></a>Свойства типа
 
-Свойство | Описание | Допустимые значения | Обязательный
+Свойство | Описание | Допустимые значения | Обязательно
 -------- | ----------- | -------------- | --------
 name | Имя действия переключения. | Строка | Да
 type | Необходимо задать *параметр** | Строка | Да
@@ -82,7 +82,7 @@ cases | Набор вариантов, содержащих значение и 
 > [!NOTE]
 > Этот раздел содержит определения JSON и примеры команд PowerShell для выполнения действий в конвейере. Пошаговые инструкции по созданию конвейера фабрики данных с помощью Azure PowerShell и определений JSON см. в [этом руководстве](quickstart-create-data-factory-powershell.md).
 
-### <a name="pipeline-with-switch-activity-adfv2quickstartpipelinejson"></a>Конвейер с действием Switch (Adfv2QuickStartPipeline. JSON)
+### <a name="pipeline-with-switch-activity-adfv2quickstartpipelinejson"></a>Конвейер с действием Switch (Adfv2QuickStartPipeline.json)
 
 ```json
 {
@@ -329,7 +329,7 @@ Write-Host "\nActivity 'Error' section:" -foregroundcolor "Yellow"
 $result.Error -join "`r`n"
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с другими действиями потока управления, которые поддерживаются фабрикой данных: 
 

@@ -3,15 +3,15 @@ title: Примеры Azure PowerShell для Azure Cosmos DB. API таблиц
 description: Получение примеров Azure PowerShell для выполнения разных типичных задач в учетных записях API таблиц Azure Cosmos DB
 author: markjbrown
 ms.service: cosmos-db
-ms.topic: sample
-ms.date: 05/13/2020
+ms.topic: how-to
+ms.date: 06/12/2020
 ms.author: mjbrown
-ms.openlocfilehash: 1790edd41426a7395705485d764682bd47f75186
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 751fa9daabaaef05abb5df8229e84975b87cffc1
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83649697"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85563834"
 ---
 # <a name="azure-powershell-samples-for-azure-cosmos-db---table-api"></a>Примеры Azure PowerShell для Azure Cosmos DB. API таблиц
 
@@ -20,7 +20,7 @@ ms.locfileid: "83649697"
 > [!NOTE]
 > В примерах используются командлеты управления [Az.CosmosDB](https://docs.microsoft.com/powershell/module/az.cosmosdb). Регулярно проверяйте наличие обновлений для `Az.CosmosDB`.
 
-| | |
+|Задача | Описание |
 |---|---|
 |[Создание учетной записи и таблицы](scripts/powershell/table/ps-table-create.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создание учетной записи Azure Cosmos и таблицы. |
 |[Получение списка либо возврат таблиц](scripts/powershell/table/ps-table-list-get.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Получение списка либо возврат таблиц. |
@@ -30,4 +30,5 @@ ms.locfileid: "83649697"
 |[Изменение приоритета отработки отказа или запуск отработки отказа](scripts/powershell/common/ps-account-failover-priority-update.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Изменяет приоритет региональной отработки отказа для учетной записи Azure Cosmos или позволяет вручную запустить отработку отказа. |
 |[Ключи или строки подключения учетной записи](scripts/powershell/common/ps-account-keys-connection-strings.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Получает первичный и вторичный ключи, строки подключения или воссоздает ключ учетной записи для учетной записи Azure Cosmos. |
 |[Создание учетной записи Cosmos с правилами брандмауэра для IP-адресов](scripts/powershell/common/ps-account-firewall-create.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создает учетную запись Azure Cosmos с активными правилами брандмауэра для IP-адресов. |
+|[Блокировка ресурсов от удаления](scripts/powershell/table/powershell-table-lock.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Запрет на удаление ресурсов с помощью блокировок ресурсов. |
 |||

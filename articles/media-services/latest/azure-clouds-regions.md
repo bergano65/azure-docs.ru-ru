@@ -3,20 +3,20 @@ title: Облака и регионы, в которых доступны слу
 description: В этой статье рассказывается об облаках Azure и регионах, в которых доступны Службы мультимедиа Azure версии 3.
 services: media-services
 documentationcenter: ''
-author: Juliako
+author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 01/21/2020
-ms.author: juliako
-ms.openlocfilehash: 1257bf4dfb0d5b2c4995cac760290f97293a0c0f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.date: 5/28/2020
+ms.author: inhenkel
+ms.custom: references_regions
+ms.openlocfilehash: cefd366e29fe1c6f68ec38816247f78bb53cd6e6
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80382976"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84196241"
 ---
 # <a name="clouds-and-regions-in-which-azure-media-services-v3-exists"></a>Облака и регионы, в которых существуют Службы мультимедиа Azure версии 3
 
@@ -32,6 +32,19 @@ ms.locfileid: "80382976"
 | [StandardEncoderPreset](encoding-concept.md) | Доступно | Доступно | Доступно | Доступно |
 | [LiveEvents](live-streaming-overview.md) | Доступно | Доступно | Доступно | Доступно |
 | [StreamingEndpoints](streaming-endpoint-concept.md) | Доступно | Доступно | Доступно | Доступно |
+
+## <a name="feature-availability-in-preview"></a>Доступность функций в предварительной версии
+
+[Ливетранскриптион](live-transcription.md) доступен в следующих регионах:
+
+- Юго-Восточная Азия
+- Западная Европа
+- Северная Европа
+- Восточная часть США
+- Центральная часть США
+- Центрально-южная часть США
+- западная часть США 2
+- Южная Бразилия
 
 ## <a name="regionsgeographieslocations"></a>Регионы, географические регионы или расположения
 
@@ -69,7 +82,7 @@ az account list-locations
 |Конечные точки||
 | --- | --- |
 | Azure Resource Manager |  `https://management.azure.com/` |
-| Проверка подлинности | `https://login.microsoftonline.com/` |
+| Аутентификация | `https://login.microsoftonline.com/` |
 | Аудитория токена | `https://management.core.windows.net/` |
 
 ### <a name="azure-government"></a>Azure для государственных организаций
@@ -77,7 +90,7 @@ az account list-locations
 |Конечные точки||
 | --- | --- |
 | Azure Resource Manager |  `https://management.usgovcloudapi.net/` |
-| Проверка подлинности | `https://login.microsoftonline.us/` |
+| Аутентификация | `https://login.microsoftonline.us/` |
 | Аудитория токена | `https://management.core.usgovcloudapi.net/` |
 
 ### <a name="azure-germany"></a>Azure для Германии
@@ -85,7 +98,7 @@ az account list-locations
 | Конечные точки ||
 | --- | --- |  
 | Azure Resource Manager | `https://management.cloudapi.de/` |
-| Проверка подлинности | `https://login.microsoftonline.de/` |
+| Аутентификация | `https://login.microsoftonline.de/` |
 | Аудитория токена | `https://management.core.cloudapi.de/`|
 
 ### <a name="azure-china-21vianet"></a>Azure China 21Vianet
@@ -93,7 +106,7 @@ az account list-locations
 |Конечные точки||
 | --- | --- |
 | Azure Resource Manager | `https://management.chinacloudapi.cn/` |
-| Проверка подлинности | `https://login.chinacloudapi.cn/` |
+| Аутентификация | `https://login.chinacloudapi.cn/` |
 | Аудитория токена |  `https://management.core.chinacloudapi.cn/` |
 
 ## <a name="see-also"></a>См. также

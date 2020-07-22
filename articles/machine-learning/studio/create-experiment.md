@@ -10,16 +10,14 @@ author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 02/06/2019
-ms.openlocfilehash: c4c50ba53bc40ad6ae6fc60b3992f9ab992eb268
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: f8984b3b712d591b64c383dabb723ba5afc61efc
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "79204568"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85965150"
 ---
 # <a name="quickstart-create-your-first-data-science-experiment-in-azure-machine-learning-studio-classic"></a>Краткое руководство. Создание первого эксперимента по обработке и анализу данных в Студии машинного обучения Azure (классической)
-
-[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 
 [!INCLUDE [Designer notice](../../../includes/designer-notice.md)]
 
@@ -138,7 +136,7 @@ ms.locfileid: "79204568"
 
 Давайте создадим модель, которая использует подмножество свойств в нашей выборке. Вы можете вернуться сюда позже и выбрать различные свойства, заново запустить эксперимент и оценить результаты. Но для начала давайте попробуем следующие возможности.
 
-    make, body-style, wheel-base, engine-size, horsepower, peak-rpm, highway-mpg, price
+> make, body-style, wheel-base, engine-size, horsepower, peak-rpm, highway-mpg, price
 
 1. Перетащите на холст эксперимента еще один модуль [Select Columns in Dataset][select-columns] (Выбор столбцов в наборе данных). Подключите левый выходной порт модуля [Clean Missing Data][clean-missing-data] (Очистка недостающих данных) к входу модуля [Select Columns in Dataset][select-columns] (Выбор столбцов в наборе данных).
 

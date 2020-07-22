@@ -10,16 +10,16 @@ ms.subservice: video-indexer
 ms.topic: article
 ms.date: 03/26/2020
 ms.author: juliako
-ms.openlocfilehash: 545dbcfb1db5595ff5b2047ec44afa8a065d816d
-ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
+ms.openlocfilehash: d76f3afa3a831f402f93322ecec350bfdb0c788d
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82594854"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86166031"
 ---
 # <a name="embed-video-indexer-widgets-in-your-apps"></a>Внедрение графических мини-приложений индексатора видео в приложения
 
-В этой статье показано, как внедрить графические элементы индексатора видео в приложения. Индексатор видео поддерживает внедрение трех типов мини-приложений в *приложения: «* автоанализ», « *проигрыватель*» и « *Редактор*».
+В этой статье показано, как внедрить графические элементы индексатора видео в приложения. Индексатор видео поддерживает внедрение в приложение трех типов мини-приложений: *Аналитические сведения*, *Проигрыватель* и *Редактор*.
 
 Начиная с версии 2, базовый URL-адрес Widget включает в себя регион указанной учетной записи. Например, создается учетная запись в западной части США: `https://www.videoindexer.ai/embed/insights/.../?location=westus2`.
 
@@ -29,20 +29,20 @@ ms.locfileid: "82594854"
 
 Мини-приложение Cognitive Insights содержит все визуальные аналитические сведения, извлеченные при индексировании видео. Мини-приложение для анализа сведений поддерживает следующие дополнительные параметры URL:
 
-|Название|Определение|Описание|
+|Name (Имя)|Определение|Описание|
 |---|---|---|
 |`widgets` | Строки, разделенные запятыми. | Позволяет управлять аналитическими сведениями, которые необходимо визуализировать.<br/>Пример: `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?widgets=people,keywords` визуализирует только пользователей и ключевые слова UI Insights.<br/>Доступные варианты: люди, Аниматедчарактерс, ключевые слова, метки, тональности, эмоции, темы, опорные кадры, транскрипция, OCR, динамики, сцены и Намедентитиес.|
 |`controls`|Строки, разделенные запятыми.|Позволяет управлять элементами управления, которые необходимо визуализировать.<br/>Пример: `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?controls=search,download` отображает только параметры поиска и кнопку Скачать.<br/>Доступные параметры: Поиск, скачивание, предустановка, язык.|
-|`language`|Короткий код языка (имя языка)|Язык управления аналитикой.<br/>Пример: `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?language=es-es` <br/>или `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?language=spanish`|
+|`language`|Короткий код языка (имя языка)|Язык управления аналитикой.<br/>Например, `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?language=es-es`. <br/>или `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?language=spanish`|
 |`locale` | Короткий код языка | Управляет языком пользовательского интерфейса. Значение по умолчанию — `en`. <br/>Например, `locale=de`.|
 |`tab` | Выбранная по умолчанию вкладка | Управляет вкладкой **Insights** , которая отображается по умолчанию. <br/>Пример: `tab=timeline` подготавливает аналитику к выбранной вкладке **временной шкалы** .|
-|`location` ||`location` Параметр должен быть включен во внедренные ссылки. см. раздел [как получить имя вашего региона](regions.md). Если ваша учетная запись находится на этапе `trial` предварительной версии, следует использовать для значения Location. `trial`значение по умолчанию для `location` параметра.| 
+|`location` ||`location`Параметр должен быть включен во внедренные ссылки. см. раздел [как получить имя вашего региона](regions.md). Если ваша учетная запись находится на этапе предварительной версии, `trial` следует использовать для значения Location. `trial`значение по умолчанию для `location` параметра.| 
 
 ### <a name="player-widget"></a>Мини-приложение Player
 
 Вы можете использовать мини-приложение проигрывателя для потоковой передачи видео с использованием адаптивной скорости. Мини-приложение проигрывателя поддерживает следующие необязательные параметры URL.
 
-|Название|Определение|Описание|
+|Name (Имя)|Определение|Описание|
 |---|---|---|
 |`t` | Секунд с начала | Запускает воспроизведение проигрывателя с указанной временной точки.<br/> Например, `t=60`. |
 |`captions` | Код языка | Извлекает заголовок на указанном языке во время загрузки мини-приложения, чтобы быть доступным в меню **субтитров** .<br/> Например, `captions=en-US`. |
@@ -50,18 +50,18 @@ ms.locfileid: "82594854"
 |`type`| | Активирует обложку аудио Player (часть видео удаляется).<br/> Например, `type=audio`. |
 |`autoplay` | Логическое значение | Указывает, должен ли проигрыватель начать воспроизведение видео при загрузке. Значение по умолчанию — `true`.<br/> Например, `autoplay=false`. |
 |`language`/`locale` | Код языка | Управляет языком проигрывателя. Значение по умолчанию — `en-US`.<br/>Например, `language=de-DE`.|
-|`location` ||`location` Параметр должен быть включен во внедренные ссылки. см. раздел [как получить имя вашего региона](regions.md). Если ваша учетная запись находится на этапе `trial` предварительной версии, следует использовать для значения Location. `trial`значение по умолчанию для `location` параметра.| 
+|`location` ||`location`Параметр должен быть включен во внедренные ссылки. см. раздел [как получить имя вашего региона](regions.md). Если ваша учетная запись находится на этапе предварительной версии, `trial` следует использовать для значения Location. `trial`значение по умолчанию для `location` параметра.| 
 
 ### <a name="editor-widget"></a>Мини-приложение редактора
 
 Вы можете использовать мини-приложение редактора для создания новых проектов и управления аналитическими данными видео. Мини-приложение редактора поддерживает следующие необязательные параметры URL.
 
-|Название|Определение|Описание|
+|Name (Имя)|Определение|Описание|
 |---|---|---|
-|`accessToken`<sup>*</sup> | Строка | Предоставляет доступ к видео, которые используются только в учетной записи, используемой для внедрения мини-приложения.<br> Для мини-приложения редактора `accessToken` требуется параметр. |
+|`accessToken`<sup>*</sup> | Строка | Предоставляет доступ к видео, которые используются только в учетной записи, используемой для внедрения мини-приложения.<br> Для мини-приложения редактора требуется `accessToken` параметр. |
 |`language` | Код языка | Управляет языком проигрывателя. Значение по умолчанию — `en-US`.<br/>Например, `language=de-DE`. |
 |`locale` | Короткий код языка | Управляет языком Insights. Значение по умолчанию — `en`.<br/>Например, `language=de`. |
-|`location` ||`location` Параметр должен быть включен во внедренные ссылки. см. раздел [как получить имя вашего региона](regions.md). Если ваша учетная запись находится на этапе `trial` предварительной версии, следует использовать для значения Location. `trial`значение по умолчанию для `location` Language.| 
+|`location` ||`location`Параметр должен быть включен во внедренные ссылки. см. раздел [как получить имя вашего региона](regions.md). Если ваша учетная запись находится на этапе предварительной версии, `trial` следует использовать для значения Location. `trial`значение по умолчанию для `location` параметра.| 
 
 <sup>*</sup>Владелец должен предоставить `accessToken` осторожность.
 
@@ -69,7 +69,7 @@ ms.locfileid: "82594854"
 
 В этом разделе обсуждается внедрение открытого и закрытого содержимого в приложения.
 
-`location` Параметр должен быть включен во внедренные ссылки. см. раздел [как получить имя вашего региона](regions.md). Если ваша учетная запись находится на этапе `trial` предварительной версии, следует использовать для значения Location. `trial`значение по умолчанию для `location` Language. Например: `https://www.videoindexer.ai/accounts/00000000-0000-0000-0000-000000000000/videos/b2b2c74b8e/?location=trial`.
+`location`Параметр должен быть включен во внедренные ссылки. см. раздел [как получить имя вашего региона](regions.md). Если ваша учетная запись находится на этапе предварительной версии, `trial` следует использовать для значения Location. `trial`значение по умолчанию для `location` параметра. Например, так: `https://www.videoindexer.ai/accounts/00000000-0000-0000-0000-000000000000/videos/b2b2c74b8e/?location=trial`.
 
 > [!IMPORTANT]
 > Совместное использование ссылки на мини-приложение **Player** или **Insights** будет включать маркер доступа и предоставлять учетной записи разрешения только для чтения.
@@ -79,7 +79,7 @@ ms.locfileid: "82594854"
 1. Войдите на веб-сайт [индексатора видео](https://www.videoindexer.ai/) .
 1. Выберите видео, с которым хотите работать, и нажмите кнопку **воспроизвести**.
 1. Выберите нужный тип мини-приложения («**автоаналитические**сведения», « **проигрыватель**» или « **Редактор**»).
-1. Нажмите ** &lt; / кнопку &gt; внедрить**.
+1. Нажмите кнопку ** &lt; / &gt; внедрить**.
 5. Скопируйте код внедрения (отображается в поле **Копировать внедренный код** в диалоговом окне **общий доступ & embed** ).
 6. Добавьте код в приложение.
 
@@ -92,9 +92,9 @@ ms.locfileid: "82594854"
 Чтобы получить содержимое мини-приложения для анализа данных, используйте один из следующих методов.
 
 - API [мини-приложения Get Insights](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Video-Insights-Widget?&pattern=widget) .<br/>
-- [Маркер доступа для получения видео](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Get-Video-Access-Token?). Добавьте его в качестве параметра запроса к URL-адресу. Укажите этот URL-адрес `src` в качестве значения для IFRAME, как показано выше.
+- [Маркер доступа для получения видео](https://api-portal.videoindexer.ai/docs/services/Operations/operations/Get-Video-Access-Token?). Добавьте его в качестве параметра запроса к URL-адресу. Укажите этот URL-адрес в качестве `src` значения для IFRAME, как показано выше.
 
-Чтобы предоставить возможности изменения аналитических сведений во внедренном мини-приложении, необходимо передать маркер доступа, включающий разрешения на редактирование. Используйте [мини-приложение Get Insights](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Video-Insights-Widget?&pattern=widget) или [Получите маркер доступа к видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Video-Access-Token?) с помощью `&allowEdit=true`.
+Чтобы предоставить возможности изменения аналитических сведений во внедренном мини-приложении, необходимо передать маркер доступа, включающий разрешения на редактирование. Используйте [мини-приложение Get Insights](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Video-Insights-Widget?&pattern=widget) или [Получите маркер доступа к видео](https://api-portal.videoindexer.ai/docs/services/operations/operations/Get-Video-Access-Token?) с помощью `&allowEdit=true` .
 
 ## <a name="widgets-interaction"></a>Взаимодействие с мини-приложениями
 
@@ -106,7 +106,7 @@ ms.locfileid: "82594854"
 
 Чтобы получить графические элементы индексатора видео для взаимодействия с другими компонентами, служба индексатора видео:
 
-- Использует метод `postMessage`подключения HTML5 между источниками.
+- Использует метод подключения HTML5 между источниками `postMessage` .
 - проверяет сообщения, поступающие из источника VideoIndexer.ai и в него.
 
 Если вы реализуете собственный код проигрывателя и интегрируетесь с мини-приложениями для «автоанализа», вы обязаны проверить происхождение сообщения, поступающих от VideoIndexer.ai.
@@ -131,47 +131,48 @@ ms.locfileid: "82594854"
 1. Добавьте подключаемый модуль индексатора видео для проигрывателя AMP:<br/> `<script src="https://breakdown.blob.core.windows.net/public/amp-vb.plugin.js"></script>`
 2. Создайте экземпляр Проигрыватель мультимедиа Azure с помощью подключаемого модуля индексатора видео.
 
-        // Init the source.
-        function initSource() {
-            var tracks = [{
-            kind: 'captions',
-            // To load vtt from VI, replace it with your vtt URL.
-            src: this.getSubtitlesUrl("c4c1ad4c9a", "English"),
-            srclang: 'en',
-            label: 'English'
-            }];
-
-            myPlayer.src([
-            {
-                "src": "//amssamples.streaming.mediaservices.windows.net/91492735-c523-432b-ba01-faba6c2206a2/AzureMediaServicesPromo.ism/manifest",
-                "type": "application/vnd.ms-sstr+xml"
-            }
-            ], tracks);
+    ```javascript
+    // Init the source.
+    function initSource() {
+        var tracks = [{
+        kind: 'captions',
+        // To load vtt from VI, replace it with your vtt URL.
+        src: this.getSubtitlesUrl("c4c1ad4c9a", "English"),
+        srclang: 'en',
+        label: 'English'
+        }];
+        myPlayer.src([
+        {
+            "src": "//amssamples.streaming.mediaservices.windows.net/91492735-c523-432b-ba01-faba6c2206a2/AzureMediaServicesPromo.ism/manifest",
+            "type": "application/vnd.ms-sstr+xml"
         }
+        ], tracks);
+    }
 
-        // Init your AMP instance.
-        var myPlayer = amp('vid1', { /* Options */
-            "nativeControlsForTouch": false,
-            autoplay: true,
-            controls: true,
-            width: "640",
-            height: "400",
-            poster: "",
-            plugins: {
-            videobreakedown: {}
-            }
-        }, function () {
-            // Activate the plug-in.
-            this.videobreakdown({
-            videoId: "c4c1ad4c9a",
-            syncTranscript: true,
-            syncLanguage: true,
-            location: "trial" /* location option for paid accounts (default is trial) */
-            });
-
-            // Set the source dynamically.
-            initSource.call(this);
+    // Init your AMP instance.
+    var myPlayer = amp('vid1', { /* Options */
+        "nativeControlsForTouch": false,
+        autoplay: true,
+        controls: true,
+        width: "640",
+        height: "400",
+        poster: "",
+        plugins: {
+        videobreakedown: {}
+        }
+    }, function () {
+        // Activate the plug-in.
+        this.videobreakdown({
+        videoId: "c4c1ad4c9a",
+        syncTranscript: true,
+        syncLanguage: true,
+        location: "trial" /* location option for paid accounts (default is trial) */
         });
+
+        // Set the source dynamically.
+        initSource.call(this);
+    });
+    ```
 
 3. Скопируйте код внедрения для Cognitive Insights.
 
@@ -187,42 +188,46 @@ ms.locfileid: "82594854"
 
     Например, стандартный проигрыватель HTML5:
 
-        <video id="vid1" width="640" height="360" controls autoplay preload>
-           <source src="//breakdown.blob.core.windows.net/public/Microsoft%20HoloLens-%20RoboRaid.mp4" type="video/mp4" /> 
-           Your browser does not support the video tag.
-        </video>    
+    ```html
+    <video id="vid1" width="640" height="360" controls autoplay preload>
+       <source src="//breakdown.blob.core.windows.net/public/Microsoft%20HoloLens-%20RoboRaid.mp4" type="video/mp4" /> 
+       Your browser does not support the video tag.
+    </video>
+    ```
 
 2. Внедрите мини-приложение Cognitive Insights.
 3. Реализуйте обмен данными для проигрывателя, настроив ожидание передачи данных о событии message. Пример:
 
-        <script>
+    ```javascript
+    <script>
     
-            (function(){
-            // Reference your player instance.
-            var playerInstance = document.getElementById('vid1');
+        (function(){
+        // Reference your player instance.
+        var playerInstance = document.getElementById('vid1');
         
-            function jumpTo(evt) {
-              var origin = evt.origin || evt.originalEvent.origin;
+        function jumpTo(evt) {
+          var origin = evt.origin || evt.originalEvent.origin;
         
-              // Validate that the event comes from the videobreakdown domain.
-              if ((origin === "https://www.videobreakdown.com") && evt.data.time !== undefined){
+          // Validate that the event comes from the videobreakdown domain.
+          if ((origin === "https://www.videobreakdown.com") && evt.data.time !== undefined){
                 
-                // Call your player's "jumpTo" implementation.
-                playerInstance.currentTime = evt.data.time;
+            // Call your player's "jumpTo" implementation.
+            playerInstance.currentTime = evt.data.time;
                
-                // Confirm the arrival to us.
-                if ('postMessage' in window) {
-                  evt.source.postMessage({confirm: true, time: evt.data.time}, origin);
-                }
-              }
+            // Confirm the arrival to us.
+            if ('postMessage' in window) {
+              evt.source.postMessage({confirm: true, time: evt.data.time}, origin);
             }
+          }
+        }
         
-            // Listen to the message event.
-            window.addEventListener("message", jumpTo, false);
+        // Listen to the message event.
+        window.addEventListener("message", jumpTo, false);
           
-            }())    
+        }())    
         
-        </script>
+    </script>
+    ```
 
 Дополнительные сведения см. на странице [демонстрации проигрыватель мультимедиа Azure + VI Insights](https://codepen.io/videoindexer/pen/YEyPLd).
 
@@ -234,9 +239,9 @@ ms.locfileid: "82594854"
 
 ### <a name="cognitive-insights-widget"></a>Мини-приложение Cognitive Insights
 
-Вы можете выбрать нужные типы аналитики. Для этого укажите их в качестве значения для следующего параметра URL-адреса, который добавляется в полученный код внедрения (из API или из веб-приложения): `&widgets=<list of wanted widgets>`.
+Вы можете выбрать нужные типы аналитики. Для этого укажите их в качестве значения для следующего параметра URL-адреса, который добавляется в полученный код внедрения (из API или из веб-приложения): `&widgets=<list of wanted widgets>` .
 
-Возможные значения `people`:, `animatedCharacters` , `keywords`, `labels`, `sentiments`, `emotions`, `topics`, `keyframes`, `transcript`, `ocr`, `speakers` `scenes`, и. `namedEntities`
+Возможные значения: `people` , `animatedCharacters` , `keywords` , `labels` , `sentiments` , `emotions` , `topics` , `keyframes` , `transcript` ,,, `ocr` `speakers` `scenes` и `namedEntities` .
 
 Например, если вы хотите внедрить мини-приложение, содержащее только людей и ключевые слова, URL внедрения IFRAME будет выглядеть следующим образом:
 

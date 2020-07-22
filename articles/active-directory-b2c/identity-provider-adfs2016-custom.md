@@ -7,24 +7,24 @@ author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 02/27/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 12845f09ac2eb2342cdb1ab82b703ebd3a67c706
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 20cb5f70a5844cb2d56fc9ff357fcaf640a6c56b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82229737"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85388584"
 ---
 # <a name="add-adfs-as-a-saml-identity-provider-using-custom-policies-in-azure-active-directory-b2c"></a>Добавление ADFS в качестве поставщика удостоверений SAML с помощью пользовательских политик в Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-В этой статье показано, как включить вход для учетной записи пользователя ADFS с помощью [пользовательских политик](custom-policy-overview.md) в Azure Active Directory B2C (Azure AD B2C). Чтобы включить вход, добавьте [технический профиль поставщика удостоверений SAML](saml-identity-provider-technical-profile.md) в настраиваемую политику.
+В этой статье показано, как включить вход для учетной записи пользователя ADFS с помощью [пользовательских политик](custom-policy-overview.md) в Azure Active Directory B2C (Azure AD B2C). Вход в систему включается путем добавления [технического профиля поставщика удостоверений SAML](saml-identity-provider-technical-profile.md) в пользовательскую политику.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](custom-policy-get-started.md).
 - Убедитесь, что у вас есть доступ к PFX-файлу сертификата с закрытым ключом. Можно создать собственный подписанный сертификат и передать его в Azure AD B2C. Azure AD B2C использует этот сертификат для подписи запроса SAML, отправляемого поставщику удостоверений SAML.
@@ -35,7 +35,7 @@ ms.locfileid: "82229737"
 Вам необходимо сохранить сертификат в клиенте Azure AD B2C.
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
-2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C. В верхнем меню выберите фильтр **каталог и подписка** и выберите каталог, содержащий ваш клиент.
+2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C. Выберите фильтр **Каталог и подписка** в верхнем меню и выберите каталог, который содержит ваш клиент.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
 4. На странице "Обзор" выберите **Identity Experience Framework**.
 5. Выберите **Ключи политики**, а затем щелкните **Добавить**.
@@ -48,7 +48,7 @@ ms.locfileid: "82229737"
 
 Если необходимо разрешить пользователям входить в систему с помощью учетной записи ADFS, нужно определить учетную запись в качестве поставщика утверждений, с которым Azure AD B2C может взаимодействовать через конечную точку. Конечная точка предоставляет набор утверждений, используемых Azure AD B2C, чтобы проверить, была ли выполнена проверка подлинности определенного пользователя.
 
-Чтобы определить учетную запись ADFS в качестве поставщика утверждений, добавьте ее в элемент **ClaimsProviders** в файле расширения политики. Дополнительные сведения см. [в разделе Определение технического профиля поставщика удостоверений SAML](saml-identity-provider-technical-profile.md).
+Чтобы определить учетную запись ADFS в качестве поставщика утверждений, добавьте ее в элемент **ClaimsProviders** в файле расширения политики. Дополнительные сведения см. в разделе об [определении технического профиля поставщика удостоверений SAML](saml-identity-provider-technical-profile.md).
 
 1. Откройте файл *TrustFrameworkExtensions.xml*.
 1. Найдите элемент **ClaimsProviders**. Если он не существует, добавьте его в корневой элемент.
@@ -95,9 +95,9 @@ ms.locfileid: "82229737"
 
 1. Замените `your-ADFS-domain` на имя своего домена ADFS и замените значение исходящего утверждения **identityProvider** на свой DNS (произвольное значение, указывающее домен).
 
-1. Откройте `<ClaimsProviders>` раздел и добавьте следующий фрагмент XML-кода. Если ваша политика уже содержит `SM-Saml-idp` технический профиль, перейдите к следующему шагу. Дополнительные сведения см. [в разделе Управление сеансами единого входа](custom-policy-reference-sso.md).
+1. Откройте раздел `<ClaimsProviders>` и добавьте следующий фрагмент кода XML. Если политика уже содержит технический профиль `SM-Saml-idp`, перейдите к следующему шагу. Дополнительные сведения см. в разделе об [управлении сеансом единого входа](custom-policy-reference-sso.md).
 
-    ```XML
+    ```xml
     <ClaimsProvider>
       <DisplayName>Session Management</DisplayName>
       <TechnicalProfiles>
@@ -144,7 +144,7 @@ ms.locfileid: "82229737"
 1. Найдите элемент **OrchestrationStep**, содержащий `Order="1"` в созданном пути взаимодействия пользователя.
 2. Добавьте следующий элемент под элементом **ClaimsProviderSelections**. Установите для параметра **TargetClaimsExchangeId** соответствующее значение, например `ContosoExchange`:
 
-    ```XML
+    ```xml
     <ClaimsProviderSelection TargetClaimsExchangeId="ContosoExchange" />
     ```
 
@@ -155,11 +155,11 @@ ms.locfileid: "82229737"
 1. Найдите элемент **OrchestrationStep**, содержащий `Order="2"` в пути пользователя.
 2. Добавьте следующий элемент **ClaimsExchange**, убедившись, что для идентификатора используется то же значение, которое использовалось для **TargetClaimsExchangeId**.
 
-    ```XML
+    ```xml
     <ClaimsExchange Id="ContosoExchange" TechnicalProfileReferenceId="Contoso-SAML2" />
     ```
 
-    Измените значение **течникалпрофилереференцеид** на идентификатор созданного ранее идентификатора технического профиля. Например, `Contoso-SAML2`.
+    Обновите значение **TechnicalProfileReferenceId**, присвоив ему значение идентификатора ранее созданного технического профиля. Например, `Contoso-SAML2`.
 
 3. Сохраните файл *TrustFrameworkExtensions.xml* и повторно отправьте его для проверки.
 
@@ -208,7 +208,7 @@ https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/your-poli
 
 ## <a name="create-an-azure-ad-b2c-application"></a>Создание приложения Azure AD B2C
 
-Связь с Azure AD B2C происходит через приложение, регистрируемое в клиенте B2C. В этом разделе перечислены необязательные действия, которые можно выполнить, чтобы создать тестовое приложение, если вы его еще не создали.
+Взаимодействие с Azure AD B2C осуществляется с помощью приложения, зарегистрированного в клиенте B2C. В этом разделе перечислены необязательные действия, которые можно выполнить, чтобы создать тестовое приложение, если вы его еще не создали.
 
 [!INCLUDE [active-directory-b2c-appreg-idp](../../includes/active-directory-b2c-appreg-idp.md)]
 

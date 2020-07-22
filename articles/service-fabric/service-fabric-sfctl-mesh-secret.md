@@ -5,12 +5,12 @@ author: jeffj6123
 ms.topic: reference
 ms.date: 1/16/2020
 ms.author: jejarry
-ms.openlocfilehash: fab388ff223eb95020e2ba0945c76532bc54f224
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 2c91a59e57613934c946e3cd56089b330893a51a
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76905987"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86260348"
 ---
 # <a name="sfctl-mesh-secret"></a>sfctl mesh secret
 Получение и удаление ресурсов mesh secret.
@@ -19,9 +19,9 @@ ms.locfileid: "76905987"
 
 |Команда|Описание|
 | --- | --- |
-| "Удалить" | Удаляет ресурс секрета. |
+| delete | Удаляет ресурс секрета. |
 | list | Составляет список всех ресурсов секрета. |
-| показать | Предоставляет ресурс секрета с заданным именем. |
+| show | Предоставляет ресурс секрета с заданным именем. |
 
 ## <a name="sfctl-mesh-secret-delete"></a>sfctl mesh secret delete
 Удаляет ресурс секрета.
@@ -81,6 +81,6 @@ ms.locfileid: "76905987"
 | --verbose | Повышение уровня детализации журнала. Чтобы включить полные журналы отладки, используйте параметр --debug. |
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Настройте](service-fabric-cli.md) Service Fabric CLI.
-- Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).
+- Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](./scripts/sfctl-upgrade-application.md).

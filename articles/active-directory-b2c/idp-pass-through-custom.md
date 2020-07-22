@@ -7,16 +7,16 @@ author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 08/17/2019
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: ff5ef8f742914129d868152814d84d2112267c09
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c434ad6a724ba513caf7923916997600097b43f6
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78187801"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85387870"
 ---
 # <a name="pass-an-access-token-through-a-custom-policy-to-your-application-in-azure-active-directory-b2c"></a>Передача маркера доступа с помощью пользовательской политики в приложение в Azure Active Directory B2C
 
@@ -32,7 +32,7 @@ Azure AD B2C поддерживает передачу маркеров дост
 
 1. Откройте файл *TrustframeworkExtensions.xml* и добавьте элемент **ClaimType** с идентификатором `identityProviderAccessToken` в элемент **ClaimsSchema**:
 
-    ```XML
+    ```xml
     <BuildingBlocks>
       <ClaimsSchema>
         <ClaimType Id="identityProviderAccessToken">
@@ -47,7 +47,7 @@ Azure AD B2C поддерживает передачу маркеров дост
 
 2. Добавьте элемент **OutputClaim** в элемент **TechnicalProfile** для каждого поставщика удостоверений OAuth 2.0, для которого нужно использовать маркер доступа. В следующем примере показано добавление элемента в технический профиль Facebook:
 
-    ```XML
+    ```xml
     <ClaimsProvider>
       <DisplayName>Facebook</DisplayName>
       <TechnicalProfiles>
@@ -64,7 +64,7 @@ Azure AD B2C поддерживает передачу маркеров дост
 3. Сохраните файл *TrustframeworkExtensions.xml*.
 4. Откройте файл политики проверяющей стороны, например *SignUpOrSignIn.xml*, и добавьте элемент **OutputClaim** в **TechnicalProfile**:
 
-    ```XML
+    ```xml
     <RelyingParty>
       <DefaultUserJourney ReferenceId="SignUpOrSignIn" />
       <TechnicalProfile Id="PolicyProfile">

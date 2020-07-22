@@ -1,14 +1,14 @@
 ---
 title: Шаблон. Свойства поля в определении политики
 description: Этот шаблон Политики Azure предоставляет пример использования свойств поля в определении политики.
-ms.date: 01/31/2020
+ms.date: 06/29/2020
 ms.topic: sample
-ms.openlocfilehash: e65767dd9cbe7b2192c21f779643289e5a7fc45e
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 87c550e5fb3ef0efbf219efc738a69071d2e89ba
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77170262"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85565717"
 ---
 # <a name="azure-policy-pattern-field-properties"></a>Шаблон Политики Azure: свойства поля
 

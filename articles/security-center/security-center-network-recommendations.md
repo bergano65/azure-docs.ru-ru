@@ -14,10 +14,9 @@ ms.workload: na
 ms.date: 04/05/2019
 ms.author: memildin
 ms.openlocfilehash: 792b95b120f67afcd360730acbd783a3071388b2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77431491"
 ---
 # <a name="protect-your-network-resources"></a>Защита сетевых ресурсов
@@ -140,5 +139,5 @@ ms.locfileid: "77431491"
 
 Дополнительные сведения о рекомендациях, которые относятся к другим типам ресурсов Azure, см. в следующих статьях:
 
-* [Защита приложений и виртуальных машин в центре безопасности Azure](security-center-virtual-machine-protection.md)
+* [Защита виртуальных машин в центре безопасности Azure](security-center-virtual-machine-protection.md)
 * [Защита службы SQL Azure в центре безопасности Azure.](security-center-sql-service-recommendations.md)

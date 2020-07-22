@@ -1,35 +1,35 @@
 ---
-title: Настройка завершения TLS с помощью сертификатов Key Vault — PowerShell
+title: Настройка сертификатов из Key Vault для завершения TLS-запросов с помощью PowerShell
 titleSuffix: Azure Application Gateway
-description: Узнайте, как интегрировать шлюз приложений Azure с Key Vault для сертификатов сервера, подключенных к прослушивателям с поддержкой HTTPS.
+description: Сведения о том, как интегрировать Шлюз приложений Azure с Key Vault для хранения сертификатов сервера, подключенных к прослушивателям с поддержкой HTTPS.
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
-ms.topic: article
-ms.date: 02/27/2020
+ms.topic: how-to
+ms.date: 05/26/2020
 ms.author: victorh
-ms.openlocfilehash: ffda4b41497a9fd84db5fcee36202eb1c1dca2c0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 5e0cb1a5c5c115aa1aaf9697e19631e2142853a3
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81457847"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84808066"
 ---
-# <a name="configure-tls-termination-with-key-vault-certificates-by-using-azure-powershell"></a>Настройка завершения TLS с использованием Key Vault сертификатов с помощью Azure PowerShell
+# <a name="configure-tls-termination-with-key-vault-certificates-using-azure-powershell"></a>Настройка сертификатов из Key Vault для завершения TLS-запросов с помощью Azure PowerShell
 
-[Azure Key Vault](../key-vault/general/overview.md) — это хранилище секретов, управляемое платформой, которое можно использовать для защиты секретов, ключей и сертификатов TLS/SSL. Шлюз приложений Azure поддерживает интеграцию с Key Vault для сертификатов сервера, подключенных к прослушивателям с поддержкой HTTPS. Эта поддержка ограничена SKU шлюза приложений версии 2.
+Управляемое платформой хранилище секретов [Azure Key Vault](../key-vault/general/overview.md) можно применять для защиты секретов, ключей и сертификатов TLS/SSL. Шлюз приложений Azure теперь поддерживает интеграцию с Key Vault для сертификатов сервера, подключенных к прослушивателям с поддержкой HTTPS. Эта поддержка предоставляется только для ценовой категории Шлюза приложений версии 2.
 
-Дополнительные сведения см. [в статье завершение TLS с использованием сертификатов Key Vault](key-vault-certs.md).
+Дополнительные сведения см. в статье о [завершении TLS-подключений с использованием сертификатов из Key Vault](key-vault-certs.md).
 
-В этой статье показано, как использовать скрипт Azure PowerShell для интеграции хранилища ключей с шлюзом приложений для сертификатов завершения TLS/SSL.
+В этой статье показано, как применить скрипт Azure PowerShell для интеграции хранилища ключей с шлюзом приложений для сертификатов завершения TLS/SSL-запросов.
 
-Для работы с этой статьей требуется Azure PowerShell Module версии 1.0.0 или более поздней. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Чтобы выполнить команды в этой статье, необходимо также создать подключение к Azure, выполнив `Connect-AzAccount`команду.
+Для работы с этой статьей требуется модуль Azure PowerShell 1.0.0 или более поздней версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Для выполнения команд, приведенных в этой статье, также нужно создать подключение к Azure с помощью `Connect-AzAccount`.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Перед началом необходимо установить модуль Манажедсервицеидентити:
+Перед началом работы убедитесь, что на локальном компьютере установлен модуль ManagedServiceIdentity.
 
 ```azurepowershell
 Install-Module -Name Az.ManagedServiceIdentity
@@ -39,16 +39,18 @@ Select-AzSubscription -Subscription <your subscription>
 
 ## <a name="example-script"></a>Пример сценария
 
-### <a name="set-up-variables"></a>Настройка переменных
+### <a name="set-up-variables"></a>Задание переменных
 
 ```azurepowershell
 $rgname = "KeyVaultTest"
 $location = "East US"
-$kv = "TestKeyVaultAppGw"
+$kv = "<your key vault name>"
 $appgwName = "AppGwKVIntegration"
 ```
+> [!IMPORTANT]
+> Имя хранилища ключей должно быть глобально уникальным.
 
-### <a name="create-a-resource-group-and-a-user-managed-identity"></a>Создание группы ресурсов и удостоверения, управляемого пользователем
+### <a name="create-a-resource-group-and-a-user-managed-identity"></a>Создание группы ресурсов и управляемого пользователем удостоверения
 
 ```azurepowershell
 $resourceGroup = New-AzResourceGroup -Name $rgname -Location $location
@@ -71,7 +73,7 @@ $certificate = Get-AzKeyVaultCertificate -VaultName $kv -Name "cert1"
 $secretId = $certificate.SecretId.Replace($certificate.Version, "")
 ```
 > [!NOTE]
-> Для правильной работы функции завершения TLS необходимо использовать флаг-Енаблесофтделете. Если вы настраиваете [Key Vault обратимое удаление с помощью портала](../key-vault/general/overview-soft-delete.md#soft-delete-behavior), срок хранения должен храниться в 90 дней, то есть в значении по умолчанию. Шлюз приложений еще не поддерживает другой срок хранения. 
+> Для правильной работы функции завершения TLS-запросов необходимо использовать флаг -EnableSoftDelete. Если вы [настраиваете обратимое удаление в Key Vault с помощью портала](../key-vault/general/overview-soft-delete.md#soft-delete-behavior), сохраните заданное по умолчанию значение для периода хранения, равное 90 дням. Шлюз приложений пока не поддерживает другие значения. 
 
 ### <a name="create-a-virtual-network"></a>Создание виртуальной сети
 
@@ -82,7 +84,7 @@ $vnet = New-AzvirtualNetwork -Name "Vnet1" -ResourceGroupName $rgname -Location 
   -AddressPrefix "10.0.0.0/16" -Subnet @($sub1, $sub2)
 ```
 
-### <a name="create-a-static-public-virtual-ip-vip-address"></a>Создание статического общедоступного виртуального IP-адреса (VIP)
+### <a name="create-a-static-public-virtual-ip-vip-address"></a>Создание общедоступного виртуального IP-адреса
 
 ```azurepowershell
 $publicip = New-AzPublicIpAddress -ResourceGroupName $rgname -name "AppGwIP" `
@@ -102,7 +104,7 @@ $fp01 = New-AzApplicationGatewayFrontendPort -Name "port1" -Port 443
 $fp02 = New-AzApplicationGatewayFrontendPort -Name "port2" -Port 80
 ```
 
-### <a name="point-the-tlsssl-certificate-to-your-key-vault"></a>Наведите сертификат TLS/SSL в хранилище ключей.
+### <a name="point-the-tlsssl-certificate-to-your-key-vault"></a>Указание сертификата TLS/SSL из хранилища ключей
 
 ```azurepowershell
 $sslCert01 = New-AzApplicationGatewaySslCertificate -Name "SSLCert1" -KeyVaultSecretId $secretId
@@ -142,6 +144,6 @@ $appgw = New-AzApplicationGateway -Name $appgwName -Identity $appgwIdentity -Res
   -SslCertificates $sslCert01 -AutoscaleConfiguration $autoscaleConfig
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-[Дополнительные сведения об увольнении TLS](ssl-overview.md)
+[Дополнительные сведения о завершении TLS-запросов](ssl-overview.md)

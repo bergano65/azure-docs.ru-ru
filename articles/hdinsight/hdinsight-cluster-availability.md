@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 05/01/2020
-ms.openlocfilehash: 4b26128b794a6a667edc578f56ad0bc9fb8303a7
-ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
+ms.openlocfilehash: 615e23dc388f36f5ae1cd7e0d846acc14ffa2236
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82691154"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86086421"
 ---
 # <a name="how-to-monitor-cluster-availability-with-apache-ambari-in-azure-hdinsight"></a>Как отслеживать доступность кластера с помощью Apache Ambari в Azure HDInsight
 
@@ -55,7 +55,7 @@ Ambari также предлагает несколько настраиваем
 
 Ambari предлагает множество стандартных предупреждений, относящихся к доступности, в том числе:
 
-| Имя предупреждения                        | Описание   |
+| Имя предупреждения                        | Описание:   |
 |---|---|
 | Сводка по работоспособности узла           | Это предупреждение уровня обслуживания активируется при наличии неработоспособных узлов с данным|
 | Работоспособность высокой доступности NameNode | Это предупреждение уровня обслуживания активируется, если не запущены активные NameNode или резервные NameNode.|
@@ -80,12 +80,12 @@ Ambari предлагает множество стандартных преду
 
 ![Действие "Управление уведомлениями" Ambari](media/hdinsight-cluster-availability/ambari-manage-notifications.png)
 
-Откроется диалоговое окно для управления уведомлениями об оповещениях. **+** Выберите в нижней части диалогового окна и заполните обязательные поля, чтобы указать Ambari с данными о почтовом сервере, с которых следует отправлять сообщения электронной почты.
+Откроется диалоговое окно для управления уведомлениями об оповещениях. Выберите в **+** нижней части диалогового окна и заполните обязательные поля, чтобы указать Ambari с данными о почтовом сервере, с которых следует отправлять сообщения электронной почты.
 
 > [!TIP]
 > Настройка уведомлений по электронной почте Ambari может быть хорошим способом получения оповещений в одном месте при управлении множеством кластеров HDInsight.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - [Доступность и надежность кластеров Apache Hadoop в HDInsight](hdinsight-high-availability-linux.md)
 - [Доступность кластера — журналы Azure Monitor](./cluster-availability-monitor-logs.md)

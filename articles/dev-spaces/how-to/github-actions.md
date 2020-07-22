@@ -7,10 +7,9 @@ description: Проверка и проверка изменений в запр
 keywords: DOCKER, Kubernetes, Azure, AKS, служба Kubernetes Azure, контейнеры, действия GitHub, Helm, сеть службы, маршрутизация в сети службы, kubectl, K8S
 manager: gwallace
 ms.openlocfilehash: a83da0ef3958748831eb0eeda1aa5e91efa7ef2e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80637944"
 ---
 # <a name="github-actions--azure-kubernetes-service-preview"></a>Действия GitHub & службы Azure Kubernetes (Предварительная версия)
@@ -116,7 +115,7 @@ cd dev-spaces/samples/BikeSharingApp/
 git checkout -b bike-images
 ```
 
-Измените [велосипеды/Server. js][bikes-server-js] , чтобы удалить строки 232 и 233:
+Измените [велосипеды/server.js][bikes-server-js] , чтобы удалить строки 232 и 233:
 
 ```javascript
     // Hard code image url *FIX ME*
@@ -131,7 +130,7 @@ git checkout -b bike-images
     delete theBike._id;
 ```
 
-Сохраните файл, а затем `git add` используйте `git commit` и для размещения изменений.
+Сохраните файл, а затем используйте `git add` и `git commit` для размещения изменений.
 
 ```cmd
 git add Bikes/server.js 

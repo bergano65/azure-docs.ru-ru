@@ -12,10 +12,10 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: f657f02a39a023f6cb620895549105e7fd1eb233
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80128168"
 ---
 # <a name="sql-data-warehouse-data-science-walkthroughs-using-t-sql-and-python-on-azure"></a>Пошаговые руководства обработки и анализа данных хранилища данных SQL с помощью T-SQL и Python в Azure
@@ -30,7 +30,7 @@ ms.locfileid: "80128168"
 В [пошаговом руководстве использование хранилища данных SQL](sqldw-walkthrough.md) показано, как создавать и развертывать классификации машинного обучения и модели регрессии с помощью хранилища данных SQL (SQL DW).  Данные представляют собой общедоступный Нью такси и набор данных FARE.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Описание ключевых компонентов, составляющих процесс обработки и анализа данных группы, см. в статье [Жизненный цикл процесса обработки и анализа данных группы](overview.md).
 

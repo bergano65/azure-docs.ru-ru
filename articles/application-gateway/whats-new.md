@@ -5,14 +5,14 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: overview
-ms.date: 03/24/2020
+ms.date: 06/10/2020
 ms.author: victorh
-ms.openlocfilehash: 70014b5ab37a07e01eaa2db3d729b7d8af520842
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: ebb3e6ba777646d39e3732215aa6c8fdd12ca40a
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81311774"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86186696"
 ---
 # <a name="whats-new-in-azure-application-gateway"></a>Новые возможности в службе "Шлюз приложений Azure"
 
@@ -27,6 +27,8 @@ ms.locfileid: "81311774"
 
 |Компонент  |Описание  |Дата добавления  |
 |---------|---------|---------|
+| Пользовательский порт для проб работоспособности | В SKU Шлюза приложений версии 2 вы теперь можете задать пользовательский порт в конфигурации пробы работоспособности. Дополнительные сведения см. в статье [Обзор мониторинга работоспособности шлюза приложений](application-gateway-probe-overview.md). | Июль 2020 г.
+| Надстройка AKS для контроллера входящего трафика Шлюза приложений (AGIC) (предварительная версия) |Контроллер входящего трафика Шлюза приложений теперь можно развернуть как нативную надстройку AKS с помощью одной строки кода в Azure CLI. В качестве надстройки AKS AGIC используется как полностью управляемая служба, которая по-прежнему выполняется в кластере AKS клиента. См. статью [Что такое контроллер входящего трафика Шлюза приложений](ingress-controller-overview.md#difference-between-helm-deployment-and-aks-add-on). |Июнь 2020 г. |
 | Определенные пользователем маршруты (UDR) в версии 2 (предварительная версия) |Определенные пользователем маршруты теперь поддерживаются в некоторых сценариях для SKU Шлюза приложений версии 2. Дополнительные сведения см. в статье [Обзор конфигурации шлюза приложений](configuration-overview.md#user-defined-routes-supported-on-the-application-gateway-subnet). |Март 2020 г. |
 |Изменения файлов cookie сходства |При включении сходства на основе файлов cookie Шлюз приложений внедряет в дополнение к существующему файлу cookie ApplicationGatewayAffinity другой идентичный файл cookie с именем *ApplicationGatewayAffinityCORS*. В файл cookie *ApplicationGatewayAffinityCORS* добавляются еще два атрибута (*SameSite=None; Secure*), чтобы закрепленные сеансы поддерживались даже для запросов между источниками. Дополнительные сведения см. в разделе [Сходство на основе файлов cookie](configuration-overview.md#cookie-based-affinity). |Февраль 2020 г. |
 |Усовершенствования пробы |Используя расширенные улучшения пробы в SKU Шлюза приложений версии 2, мы упростили [настройки пробы](https://docs.microsoft.com/azure/application-gateway/application-gateway-create-probe-portal#create-probe-for-application-gateway-v2-sku), упростили [тесты работоспособности серверной части по запросу](https://docs.microsoft.com/azure/application-gateway/application-gateway-create-probe-portal#test-backend-health-with-the-probe) и добавили [дополнительные диагностические сведения](https://docs.microsoft.com/azure/application-gateway/application-gateway-backend-health-troubleshooting#error-messages), помогающие устранять проблемы с работоспособностью серверной части.  |Октябрь 2019 г. |

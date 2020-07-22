@@ -8,12 +8,11 @@ ms.service: cloud-services
 ms.topic: article
 ms.date: 07/18/2017
 ms.author: tagore
-ms.openlocfilehash: 4fe1ee3ccf2849943959889838ba0f22fb64bb9a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: beebe60d70b7e4908bd3e9348fe815036d6955c3
+ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79273063"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85920069"
 ---
 # <a name="common-cloud-service-startup-tasks"></a>Стандартные задачи запуска в облачной службе
 В этой статье приведены некоторые примеры стандартных задач запуска, которые можно выполнить в облачной службе. С помощью задач запуска вы можете выполнять различные операции перед запуском роли. Это может быть установка компонента, регистрация компонентов COM, установка разделов реестра или запуск длительного процесса. 
@@ -300,7 +299,7 @@ string fileContent = System.IO.File.ReadAllText(System.IO.Path.Combine(localStor
 
 Эту возможность выполнять различные действия в эмуляторе вычислений и облаке можно получить, создав переменную среды в файле [ServiceDefinition.csdef]. Затем переменная проверяется в задаче запуска.
 
-Чтобы создать переменную среды, добавьте элемент [variable]/[RoleInstanceValue] и создайте значение XPath `/RoleEnvironment/Deployment/@emulated`. При выполнении в эмуляторе вычислений переменная среды **%ComputeEmulatorRunning%** приобретает значение `true`, а при выполнении в облаке — `false`.
+Чтобы создать переменную среды, добавьте элемент [variable] / [RoleInstanceValue] и создайте значение XPath `/RoleEnvironment/Deployment/@emulated` . При выполнении в эмуляторе вычислений переменная среды **%ComputeEmulatorRunning%** приобретает значение `true`, а при выполнении в облаке — `false`.
 
 ```xml
 <ServiceDefinition name="MyService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
@@ -377,9 +376,7 @@ EXIT /B 0
 Ниже приведены некоторые рекомендации, которые необходимо выполнять при настройке задачи для рабочей роли или веб-роли.
 
 ### <a name="always-log-startup-activities"></a>Всегда ведите журнал операций запуска
-В Visual Studio нет отладчика для пошагового выполнения пакетных файлов, поэтому рекомендуется получить столько данных о выполнении пакетных файлов, сколько возможно. Ведение журнала выходных данных пакетных файлов, **stdout** и **stderr**, может предоставить вам важную информацию при попытке отладить и исправить пакетные файлы. Чтобы записывать **stdout** и **stderr** в файл StartupLog.txt в каталоге, указанном переменной среды **%TEMP%**, добавьте текст `>>  "%TEMP%\\StartupLog.txt" 2>&1` в конец конкретных строк, которые нужно добавлять в журнал. Например, для выполнения setup.exe в каталоге **%PathToApp1Install%** :
-
-    "%PathToApp1Install%\setup.exe" >> "%TEMP%\StartupLog.txt" 2>&1
+В Visual Studio нет отладчика для пошагового выполнения пакетных файлов, поэтому рекомендуется получить столько данных о выполнении пакетных файлов, сколько возможно. Ведение журнала выходных данных пакетных файлов, **stdout** и **stderr**, может предоставить вам важную информацию при попытке отладить и исправить пакетные файлы. Чтобы записывать **stdout** и **stderr** в файл StartupLog.txt в каталоге, указанном переменной среды **%TEMP%**, добавьте текст `>>  "%TEMP%\\StartupLog.txt" 2>&1` в конец конкретных строк, которые нужно добавлять в журнал. Например, чтобы выполнить setup.exe в каталоге **% PathToApp1Install%** :`"%PathToApp1Install%\setup.exe" >> "%TEMP%\StartupLog.txt" 2>&1`
 
 Чтобы упростить XML, можно создать файл-оболочку *CMD*, который вызывает все задачи запуска, ведет журналы и гарантирует, что все дочерние задачи используют одинаковые переменные среды
 
@@ -483,7 +480,7 @@ EXIT %ERRORLEVEL%
 Отсутствие `EXIT /B 0` в конце пакетного файла запуска — распространенная причина, по которой роли не запускаются.
 
 > [!NOTE]
-> Замечено, что при использовании параметра `/B` вложенные пакетные файлы иногда зависают. Может потребоваться убедиться, что проблема зависания не произойдет при вызове текущего пакетного файла другим пакетным файлом, например при использовании [оболочки журнала](#always-log-startup-activities). В этом случае можно опустить параметр `/B`.
+> Я заметил, что вложенные пакетные файлы иногда перестают отвечать на запросы при использовании `/B` параметра. Может потребоваться убедиться, что эта проблема не возникает, если другой пакетный файл вызывает текущий пакетный файл, например, если используется [оболочка журнала](#always-log-startup-activities). В этом случае можно опустить параметр `/B`.
 > 
 > 
 
@@ -505,13 +502,10 @@ EXIT %ERRORLEVEL%
 [Startup]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Startup
 [Runtime]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Runtime
 [Среда]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Environment
-[Переменная]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Variable
+[Перемен]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Variable
 [RoleInstanceValue]: https://msdn.microsoft.com/library/azure/gg557552.aspx#RoleInstanceValue
 [RoleEnvironment]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.aspx
 [Конечные точки]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Endpoints
 [LocalStorage]: https://msdn.microsoft.com/library/azure/gg557552.aspx#LocalStorage
 [LocalResources]: https://msdn.microsoft.com/library/azure/gg557552.aspx#LocalResources
 [RoleInstanceValue]: https://msdn.microsoft.com/library/azure/gg557552.aspx#RoleInstanceValue
-
-
-

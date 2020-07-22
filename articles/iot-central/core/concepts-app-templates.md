@@ -7,12 +7,12 @@ ms.date: 10/25/2019
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: 244de9a3236977308a9f7bcaf5106e86a0984201
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: b581242ad5a23072731fc7d30e09e461590ec1ec
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82024682"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85801331"
 ---
 # <a name="what-are-application-templates"></a>Что представляют собой шаблоны приложений?
 
@@ -56,6 +56,10 @@ IoT Central Azure — это независимая от отрасли плат
   - Мониторинг качества воды
 - [Здравоохранение](../healthcare/overview-iot-central-healthcare.md).
   - Непрерывное наблюдение за пациентами
+
+## <a name="application-versions"></a>Версии приложения
+
+Шаблоны связаны с конкретными версиями приложения IoT Central. Версию приложения можно найти на странице [сведения о приложении](./howto-get-app-info.md) по ссылке **Справка** .
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 

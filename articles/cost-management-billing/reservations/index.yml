@@ -1,21 +1,21 @@
 ### YamlMime:Landing
 title: Экономия средств за счет использования резервирований Azure
-summary: Узнайте, как с помощью резервирования Azure вы можете сэкономить деньги, забронировав использование виртуальной машины, хранилища BLOB-объектов Azure или Azure Data Lake Storage 2-го поколения, вычислительной мощности Базы данных SQL, пропускной способности Azure Cosmos DB и других ресурсов Azure на один или три года. 
+summary: Узнайте, как с помощью резервирования Azure вы можете сэкономить деньги, забронировав использование виртуальной машины, хранилища BLOB-объектов Azure или Azure Data Lake Storage 2-го поколения, вычислительной мощности Базы данных SQL, пропускной способности Azure Cosmos DB и других ресурсов Azure на один или три года.
 metadata:
   title: Экономия средств за счет использования резервирований Azure
-  description: Узнайте, как с помощью резервирования Azure вы можете сэкономить деньги, забронировав использование виртуальной машины, хранилища BLOB-объектов Azure или Azure Data Lake Storage 2-го поколения, вычислительной мощности Базы данных SQL, пропускной способности Azure Cosmos DB и других ресурсов Azure на один или три года. 
+  description: Узнайте, как с помощью резервирования Azure вы можете сэкономить деньги, забронировав использование виртуальной машины, хранилища BLOB-объектов Azure или Azure Data Lake Storage 2-го поколения, вычислительной мощности Базы данных SQL, пропускной способности Azure Cosmos DB и других ресурсов Azure на один или три года.
   ms.service: cost-management-billing
   ms.topic: landing-page
   ms.collection: collection
   author: bandersmsft
   ms.author: banders
   ms.date: 04/30/2020
-  ms.openlocfilehash: 648ba197fd30771061f6629fb834bd3dd95cab40
-  ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
+  ms.openlocfilehash: 4706c13d6c9e354c6c7ca382f724a7b1094bdda3
+  ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82628594"
+  ms.lasthandoff: 07/09/2020
+  ms.locfileid: "86207121"
 landingContent:
 - title: Приобретение резервирований
   linkLists:

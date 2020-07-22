@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: 1dac90053797caf66af79e458b9dbb95b682cd17
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79249585"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85846858"
 ---
 # <a name="issue-templates-in-azure-api-management"></a>Шаблоны проблем в службе управления API Azure
 Служба управления API Azure позволяет настраивать содержимое страниц портала разработчика с помощью набора шаблонов. С помощью этих шаблонов вы можете гибко настраивать содержимое страниц, используя синтаксис [DotLiquid](http://dotliquidmarkup.org/), любой удобный текстовый редактор, например [DotLiquid для разработчиков](https://github.com/dotliquid/dotliquid/wiki/DotLiquid-for-Designers), и предоставленный набор локализованных [строковых ресурсов](api-management-template-resources.md#strings), [ресурсов глифов](api-management-template-resources.md#glyphs), а также [элементов управления страницы](api-management-page-controls.md).  
@@ -98,13 +98,13 @@ ms.locfileid: "79249585"
   
 ### <a name="data-model"></a>Модель данных  
   
-|Свойство|Type|Описание|  
+|Свойство.|Type|Описание:|  
 |--------------|----------|-----------------|  
 |`Issues`|Коллекция сущностей [проблем](api-management-template-data-model-reference.md#Issue).|Проблемы, которые отображаются для текущего пользователя.|  
 |`Paging`|Сущность [разбиения по страницам](api-management-template-data-model-reference.md#Paging).|Сведения о разбиении по страницам для коллекции приложений.|  
 |`IsAuthenticated`|Логическое|Указывает, выполнил ли текущий пользователь вход на портал разработчика.|  
 |`CanReportIssues`|Логическое|Указывает, имеет ли текущий пользователь разрешения на сообщение о проблеме.|  
-|`Search`|строка|Это свойство является устаревшим и не должно использоваться.|  
+|`Search`|string|Это свойство является устаревшим и не должно использоваться.|  
   
 ### <a name="sample-template-data"></a>Пример данных шаблона  
   

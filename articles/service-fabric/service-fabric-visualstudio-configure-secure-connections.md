@@ -5,12 +5,12 @@ author: cawaMS
 ms.topic: conceptual
 ms.date: 8/04/2017
 ms.author: cawa
-ms.openlocfilehash: 11f76153726d3fc92118fb46cc61b4627ab6a1b2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d4d6b781d97d481793e69cf2ca97cca5b93ce432
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75464094"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86256099"
 ---
 # <a name="configure-secure-connections-to-a-service-fabric-cluster-from-visual-studio"></a>Настройка безопасных подключений к кластеру Service Fabric из Visual Studio
 Узнайте, как использовать Azure Visual Studio для безопасного доступа к кластеру Service Fabric с настроенной политикой контроля доступа.
@@ -35,9 +35,9 @@ ms.locfileid: "75464094"
 3. Выберите **Опубликовать** в контекстном меню проекта, чтобы открыть диалоговое окно **Опубликовать приложение Azure**, а затем выберите целевой кластер. Средство автоматически разрешает подключение и сохраняет параметры безопасного подключения в профиле публикации.
 4. Можно изменить профиль публикации, чтобы указать безопасное подключение к кластеру (необязательно).
    
-   Так как вы добавляете информацию о сертификате в XML-файл профиля публикации вручную, запишите имя хранилища сертификатов, расположение хранилища и отпечаток сертификата. Эти значения нужно будет указать в качестве имени и расположения хранилища сертификатов. Дополнительные сведения см. в статье [Практическое руководство. Извлечение отпечатка сертификата](https://msdn.microsoft.com/library/ms734695\(v=vs.110\).aspx).
+   Так как вы добавляете информацию о сертификате в XML-файл профиля публикации вручную, запишите имя хранилища сертификатов, расположение хранилища и отпечаток сертификата. Эти значения нужно будет указать в качестве имени и расположения хранилища сертификатов. Дополнительные сведения см. в статье [Практическое руководство. Извлечение отпечатка сертификата](https://techcommunity.microsoft.com/t5/azure-service-fabric/bg-p/Service-Fabric).
    
-   Параметры *ClusterConnectionParameters* позволяют задать параметры PowerShell для подключения к кластеру Service Fabric. Допустимы все значения параметров, которые принимаются командлетом Connect-ServiceFabricCluster. Список доступных параметров см. в статье [Connect-ServiceFabricCluster](https://docs.microsoft.com/powershell/module/servicefabric/connect-servicefabriccluster).
+   Параметры *ClusterConnectionParameters* позволяют задать параметры PowerShell для подключения к кластеру Service Fabric. Допустимы все значения параметров, которые принимаются командлетом Connect-ServiceFabricCluster. Список доступных параметров см. в статье [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster).
    
    При публикации на удаленный кластер необходимо указать соответствующие параметры для этого конкретного кластера. Ниже приведен пример небезопасного подключения к кластеру:
    

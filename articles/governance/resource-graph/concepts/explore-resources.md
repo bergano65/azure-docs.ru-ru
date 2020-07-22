@@ -1,14 +1,13 @@
 ---
 title: Просмотр ресурсов Azure
-description: Узнайте, как использовать язык запросов Graph, чтобы исследовать ресурсы и узнать, как они подключены.
-ms.date: 10/18/2019
+description: Сведения об изучении ресурсов и связей между ними с помощью языка запросов графика ресурсов.
+ms.date: 05/20/2020
 ms.topic: conceptual
-ms.openlocfilehash: 0c191915b8c558d80ffef554ef758a35157e035c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 33bf457a57f7e62b9c99471bcb7676f62046f61d
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76156987"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83654488"
 ---
 # <a name="explore-your-azure-resources-with-resource-graph"></a>Изучение ресурсов Azure с помощью Resource Graph
 
@@ -104,7 +103,7 @@ Search-AzGraph -Query "Resources | where type =~ 'Microsoft.Compute/virtualMachi
 ]
 ```
 
-Свойства указывают дополнительные сведения о самом ресурсе виртуальной машины, все от SKU, ОС, дисков, тегов, а также группу ресурсов и подписку, членом которых является.
+Эти свойства предоставляют дополнительные сведения о самом ресурсе виртуальной машины: номере SKU, ОС, дисках, тегах, группе ресурсов и подписке, в которые входит виртуальная машина.
 
 ### <a name="virtual-machines-by-location"></a>Виртуальные машины по расположению
 
@@ -176,7 +175,7 @@ Resources
 ```
 
 > [!NOTE]
-> Еще один способ получить номер SKU — воспользоваться свойством **Microsoft.Compute/virtualMachines/sku.name** из раздела **aliases**. См. примеры для [отображения псевдонимов](../samples/starter.md#show-aliases) и [отображения различных значений псевдонимов](../samples/starter.md#distinct-alias-values) .
+> Еще один способ получить номер SKU — воспользоваться свойством **Microsoft.Compute/virtualMachines/sku.name** из раздела **aliases**. См. примеры [Показывать псевдонимы](../samples/starter.md#show-aliases) и [Показывать значения разных псевдонимов](../samples/starter.md#distinct-alias-values).
 
 ```azurecli-interactive
 az graph query -q "Resources | where type =~ 'Microsoft.Compute/virtualmachines' and properties.hardwareProfile.vmSize == 'Standard_B2s' | extend disk = properties.storageProfile.osDisk.managedDisk | where disk.storageAccountType == 'Premium_LRS' | project disk.id"
@@ -208,7 +207,7 @@ Resources
 ```
 
 Прежде чем выполнять запрос, давайте ответим на вопрос, как мы узнали, что свойство **type** теперь должно иметь значение **Microsoft.Compute/disks**.
-Если посмотреть на полный идентификатор, то в его строке можно увидеть фрагмент **/providers/Microsoft.Compute/disks/**. Он подсказывает нам, какой тип нужно искать. В качестве альтернативы можно было бы снять ограничение по типу и выполнить поиск только по полю идентификатора. Так как идентификатор уникален, была бы возвращена только одна запись и определить тип можно было бы по свойству **type** в ней.
+Если посмотреть на полный идентификатор, то в его строке можно увидеть фрагмент **/providers/Microsoft.Compute/disks/** . Он подсказывает нам, какой тип нужно искать. В качестве альтернативы можно было бы снять ограничение по типу и выполнить поиск только по полю идентификатора. Так как идентификатор уникален, была бы возвращена только одна запись и определить тип можно было бы по свойству **type** в ней.
 
 > [!NOTE]
 > Чтобы этот пример можно было выполнить, необходимо заменить значение в поле идентификатора результатом из своей среды.
@@ -257,7 +256,7 @@ Search-AzGraph -Query "Resources | where type =~ 'Microsoft.Compute/disks' and i
 
 ## <a name="explore-virtual-machines-to-find-public-ip-addresses"></a>Определение общедоступных IP-адресов виртуальных машин
 
-Сначала этот набор запросов находит и сохраняет все сетевые ресурсы (NIC), подключенные к виртуальным машинам. Затем запросы используют список сетевых адаптеров для поиска каждого ресурса IP-адреса, который является общедоступным IP-адресом, и сохраняет эти значения. Наконец, запросы предоставляют список общедоступных IP-адресов.
+Сначала этот набор используется для поиска и хранения всех ресурсов сетевых интерфейсов (NIC), подключенных к виртуальным машинам. Затем, чтобы найти каждый ресурс общедоступного IP-адреса и сохранить эти значения, в запросах используется список NIC. Наконец, запросы предоставляют список общедоступных IP-адресов.
 
 ```azurecli-interactive
 # Use Resource Graph to get all NICs and store in the 'nics.txt' file
@@ -275,7 +274,7 @@ $nics = Search-AzGraph -Query "Resources | where type =~ 'Microsoft.Compute/virt
 $nics.nic
 ```
 
-Используйте файл (Azure CLI) или переменную (Azure PowerShell) в следующем запросе, чтобы получить сведения о связанных ресурсах сетевого интерфейса, где есть общедоступный IP-адрес, подключенный к СЕТЕВому интерфейсу.
+Используйте файл (Azure CLI) или переменную (Azure PowerShell) в следующем запросе для получения сведений о связанных ресурсах сетевых интерфейсов, с которыми связаны общедоступные IP-адреса.
 
 ```azurecli-interactive
 # Use Resource Graph with the 'nics.txt' file to get all related public IP addresses and store in 'publicIp.txt' file
@@ -293,7 +292,7 @@ $ips = Search-AzGraph -Query "Resources | where type =~ 'Microsoft.Network/netwo
 $ips.publicIp
 ```
 
-Наконец, используйте список ресурсов общедоступного IP-адреса, хранящихся в файле (Azure CLI) или переменной (Azure PowerShell), чтобы получить фактический общедоступный IP-адрес из связанного объекта и отобразить его.
+Наконец, используйте список ресурсов с общедоступными IP-адресами, хранящийся в файле (Azure CLI) или переменной (Azure PowerShell), чтобы получить фактический общедоступный IP-адрес из связанного объекта и отобразить его.
 
 ```azurecli-interactive
 # Use Resource Graph with the 'ips.txt' file to get the IP address of the public IP address resources
@@ -305,10 +304,10 @@ az graph query -q="Resources | where type =~ 'Microsoft.Network/publicIPAddresse
 Search-AzGraph -Query "Resources | where type =~ 'Microsoft.Network/publicIPAddresses' | where id in ('$($ips.publicIp -join "','")') | project ip = tostring(properties['ipAddress']) | where isnotempty(ip) | distinct ip"
 ```
 
-Чтобы узнать, как выполнить эти действия в одном запросе с помощью `join` оператора, ознакомьтесь со [списком виртуальных машин с их сетевым интерфейсом и примером ОБЩЕДОСТУПНОГО IP-адреса](../samples/advanced.md#join-vmpip) .
+Чтобы узнать, как выполнить эти действия в одном запросе с помощью оператора `join`, см. пример [Вывод списка виртуальных машин с их сетевым интерфейсом и общедоступным IP-адресом](../samples/advanced.md#join-vmpip).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте больше о [языке запросов](query-language.md).
-- См. язык, используемый в [начальных запросах](../samples/starter.md).
-- См. Дополнительные сведения о расширенном использовании в [расширенных запросах](../samples/advanced.md).
+- См. описание используемого языка в статье [Примеры запросов к Resource Graph для начинающих](../samples/starter.md).
+- Описание расширенных вариантов использования см. в статье [Примеры расширенных запросов к Resource Graph](../samples/advanced.md).

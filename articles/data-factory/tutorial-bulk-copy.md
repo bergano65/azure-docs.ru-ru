@@ -1,5 +1,5 @@
 ---
-title: Копирование данных в пакетном режиме
+title: Копирование данных в пакетном режиме с помощью PowerShell
 description: Узнайте, как использовать фабрику данных Azure и действие копирования для копирования данных из исходного хранилища данных в хранилище данных назначения в пакетном режиме.
 services: data-factory
 author: linda33wj
@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019
 ms.date: 01/22/2018
-ms.openlocfilehash: 0f73095f72d07989cdfa309454a2b54efa8e5f95
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: b1601bf095b5898de965d42a16e63f278499a9bf
+ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81418768"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85251519"
 ---
-# <a name="copy-multiple-tables-in-bulk-by-using-azure-data-factory"></a>Копирование нескольких таблиц в пакетном режиме с помощью фабрики данных Azure
+# <a name="copy-multiple-tables-in-bulk-by-using-azure-data-factory-using-powershell"></a>Копирование нескольких таблиц в пакетном режиме с помощью Фабрики данных Azure и PowerShell
 
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
@@ -59,7 +59,7 @@ ms.locfileid: "81418768"
 
 **Подготовка исходной базы данных SQL Azure:**
 
-Создайте базу данных SQL Azure, используя пример данных Adventure Works LT, представленный в статье [Создание базы данных SQL Azure на портале Azure](../sql-database/sql-database-get-started-portal.md). В этом руководстве копируются все таблицы из этого примера базы данных в хранилище данных SQL.
+Создайте базу данных в службе "База данных SQL", используя пример данных Adventure Works LT, представленный в статье [Создание базы данных в службе "База данных SQL Azure"](../azure-sql/database/single-database-create-quickstart.md). В этом руководстве копируются все таблицы из этого примера базы данных в хранилище данных SQL.
 
 **Подготовка хранилища данных-приемника SQL Azure:**
 
@@ -69,7 +69,7 @@ ms.locfileid: "81418768"
 
 ## <a name="azure-services-to-access-sql-server"></a>Доступ служб Azure к серверу SQL Server
 
-В базе данных SQL и хранилище данных SQL Azure предоставьте службам Azure доступ к серверу SQL Server. Убедитесь, что параметр **Разрешить доступ к службам Azure** имеет значение **ВКЛ** для вашего сервера Azure SQL. Этот параметр позволяет службе фабрики данных читать данные из базы данных SQL Azure и записывать данные в хранилище данных SQL Azure. Чтобы проверить и при необходимости включить этот параметр, сделайте следующее.
+В базе данных SQL и хранилище данных SQL Azure предоставьте службам Azure доступ к серверу SQL Server. Убедитесь, что параметр **Разрешить доступ к службам Azure** **включен** для вашего сервера. Этот параметр позволяет службе фабрики данных читать данные из базы данных SQL Azure и записывать данные в хранилище данных SQL Azure. Чтобы проверить и при необходимости включить этот параметр, сделайте следующее.
 
 1. Щелкните **Все службы** слева и выберите **Серверы SQL**.
 2. Выберите сервер и щелкните **Брандмауэр** в разделе **Параметры**.
@@ -334,7 +334,7 @@ ms.locfileid: "81418768"
                         "activities": [
                             {
                                 "name": "CopyData",
-                                "description": "Copy data from SQL database to SQL DW",
+                                "description": "Copy data from Azure SQL Database to SQL DW",
                                 "type": "Copy",
                                 "inputs": [
                                     {

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 03/20/2019
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 6f0253490d39e69d491dd5fd3ab0d0d0a32d47bb
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 573aef4f0d340d0d32dc4977e0937bca9c6d3cef
+ms.sourcegitcommit: 61d850bc7f01c6fafee85bda726d89ab2ee733ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82181568"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84338930"
 ---
 # <a name="sign-in-users-and-call-the-microsoft-graph-api-from-a-javascript-single-page-application-spa"></a>Вход пользователей и вызов API Microsoft Graph из одностраничного приложения JavaScript (SPA)
 
@@ -56,13 +56,26 @@ ms.locfileid: "82181568"
 
 * Инструкции в этом руководстве предполагают использование встроенного веб-сервера, например Node.js. Мы рекомендуем использовать [Visual Studio Code](https://code.visualstudio.com/download) в качестве интегрированной среды разработки (IDE).
 
+* Современный браузер. Этот пример кода JavaScript использует соглашения [ES6](http://www.ecma-international.org/ecma-262/6.0/), поэтому он **не** поддерживает **Internet Explorer**.
+
 ## <a name="create-your-project"></a>Создание проекта
 
 Установите [Node.js](https://nodejs.org/en/download/) и создайте папку для размещения приложения. В ней будет реализован простой веб-сервер [Express](https://expressjs.com/) для обслуживания файла `index.html`.
 
-1. Сначала с помощью встроенного терминала Visual Studio Code найдите папку проекта, а затем установите Express, используя npm.
+1. С помощью терминала, например встроенного терминала Visual Studio Code, найдите папку проекта и введите:
 
-1. Затем создайте JS-файл с именем `server.js` и добавьте следующий код:
+   ```console
+   npm init
+   ```
+
+2. Затем установите необходимые зависимости:
+
+   ```console
+   npm install express --save
+   npm install morgan --save
+   ```
+
+1. Теперь создайте JS-файл с именем `index.js` и добавьте следующий код:
 
    ```JavaScript
    const express = require('express');
@@ -269,12 +282,12 @@ ms.locfileid: "82181568"
 
 > ### <a name="set-a-redirect-url-for-nodejs"></a>Настройка URL-адреса перенаправления для Node.js
 >
-> При использовании Node.js порт веб-сервера можно задать в файле *server.js*. В этом учебнике используется порт 3000, но вы можете указать любой другой доступный порт.
+> При использовании Node.js порт веб-сервера можно задать в файле *index.js*. В этом учебнике используется порт 3000, но вы можете указать любой другой доступный порт.
 >
 > Чтобы настроить URL-адрес перенаправления в сведениях о регистрации приложения, снова перейдите на панель **Регистрация приложения** и выполните одно из следующих действий:
 >
 > - Установите значение *`http://localhost:3000/`* в качестве **URL-адреса перенаправления**.
-> - Если вы используете настраиваемый TCP-порт, используйте *`http://localhost:<port>/`* (где *\<порт>*  — это номер пользовательского TCP-порта).
+> - Если вы используете настраиваемый TCP-порт, используйте *`http://localhost:<port>/`* (где *\<port>*  — это номер пользовательского TCP-порта).
 >   1. Скопируйте значение **URL-адреса**.
 >   1. Вернитесь на панель **Регистрация приложения** и вставьте скопированное значение как **URL-адрес перенаправления**.
 >
@@ -308,9 +321,9 @@ ms.locfileid: "82181568"
 ```
 
  Где:
- - *\<Enter_the_Application_Id_Here>*  — **Идентификатор приложения (клиент)** для зарегистрированного приложения.
- - *\<Enter_the_Cloud_Instance_Id_Here>*  — экземпляр облака Azure. Для основного или глобального облака Azure просто введите *https://login.microsoftonline.com* . Сведения для **национальных** облаков (например, Китая) см. в [этой статье](https://docs.microsoft.com/azure/active-directory/develop/authentication-national-cloud).
- - *\<Enter_the_Tenant_info_here>* присваивается одно из следующих значений:
+ - *\<Enter_the_Application_Id_Here>*  — это **идентификатор приложения (клиента)** для зарегистрированного приложения.
+ - *\<Enter_the_Cloud_Instance_Id_Here>* представляет экземпляр облака Azure. Для основного или глобального облака Azure просто введите *https://login.microsoftonline.com* . Сведения для **национальных** облаков (например, Китая) см. в [этой статье](https://docs.microsoft.com/azure/active-directory/develop/authentication-national-cloud).
+ - *\<Enter_the_Tenant_info_here>* может иметь несколько значений:
    - Если приложение поддерживает *учетные записи только в этом каталоге организации*, замените это значение **идентификатором клиента** или **именем клиента** (например, *contoso.microsoft.com*).
    - Если ваше приложение поддерживает *учетные записи в любом каталоге организации*, замените это значение на **organizations**.
    - Если приложение поддерживает *учетные записи в любом каталоге организации и личные учетные записи Майкрософт*, замените это значение на **common**. Чтобы ограничить поддержку только *личными учетными записями Майкрософт*, замените это значение на **consumers**.
@@ -433,7 +446,7 @@ ms.locfileid: "82181568"
    ```
 
    Где:
-   - *\<Enter_the_Graph_Endpoint_Here >*  — экземпляр API Microsoft Graph. Для глобальной конечной точки API Microsoft Graph просто замените эту строку на `https://graph.microsoft.com`. Сведения о национальных облачных развертываниях см. [здесь](https://docs.microsoft.com/graph/deployments).
+   - *\<Enter_the_Graph_Endpoint_Here>*  — экземпляр API MS Graph. Для глобальной конечной точки API Microsoft Graph просто замените эту строку на `https://graph.microsoft.com`. Сведения о национальных облачных развертываниях см. [здесь](https://docs.microsoft.com/graph/deployments).
 
 1. Затем создайте JS-файл с именем `graph.js` для вызова REST к API Microsoft Graph и добавьте следующий код:
 
@@ -496,7 +509,5 @@ ms.locfileid: "82181568"
 
 > [!NOTE]
 > При увеличении количества областей от пользователя могут потребоваться дополнительные согласия.
-
-Если серверному API не требуется область (мы не рекомендуем использовать такую конфигурацию), вы можете применять в вызовах *clientId* в качестве области для получения маркеров.
 
 [!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]

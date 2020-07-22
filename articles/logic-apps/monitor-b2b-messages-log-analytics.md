@@ -6,16 +6,16 @@ ms.suite: integration
 ms.reviewer: divswa, logicappspm
 ms.topic: article
 ms.date: 01/30/2020
-ms.openlocfilehash: e9ba5a516293eb72a715dc9d0df7db4d5a4ea3c5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 5baa4d4d968adb25b5520ca91149970f5c5578e9
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76907985"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86536278"
 ---
-# <a name="set-up-azure-monitor-logs-and-collect-diagnostics-data-for-b2b-messages-in-azure-logic-apps"></a>Настройка журналов Azure Monitor и получение диагностических данных для сообщений B2B в Azure Logic Apps
+# <a name="set-up-azure-monitor-logs-and-collect-diagnostics-data-for-b2b-messages-in-azure-logic-apps"></a>Настройка журналов Azure Monitor и сбор диагностических данных для сообщений B2B в Azure Logic Apps
 
-После настройки связи B2B между торговыми партнерами в учетной записи интеграции эти партнеры могут обмениваться сообщениями с помощью таких протоколов, как AS2, X12 и EDIFACT. Чтобы убедиться, что это взаимодействие работает так, как вы ожидаете, можно настроить [журналы Azure Monitor](../azure-monitor/platform/data-platform-logs.md) для учетной записи интеграции. [Azure Monitor](../azure-monitor/overview.md) помогает отслеживать облачные и локальные среды, чтобы можно было легко поддерживать доступность и производительность. С помощью журналов Azure Monitor можно записывать и хранить данные о данных и событиях времени выполнения, таких как события триггера, события запуска и события действий в [рабочей области log Analytics](../azure-monitor/platform/resource-logs-collect-workspace.md). Для сообщений ведение журнала также собирает следующие сведения:
+После настройки связи B2B между торговыми партнерами в учетной записи интеграции эти партнеры могут обмениваться сообщениями с помощью таких протоколов, как AS2, X12 и EDIFACT. Чтобы убедиться, что это взаимодействие работает так, как вы ожидаете, можно настроить [журналы Azure Monitor](../azure-monitor/platform/data-platform-logs.md) для учетной записи интеграции. [Azure Monitor](../azure-monitor/overview.md) помогает отслеживать облачные и локальные среды, чтобы можно было легко поддерживать доступность и производительность. С помощью журналов Azure Monitor можно записывать и хранить данные о данных и событиях времени выполнения, таких как события триггера, события запуска и события действий в [рабочей области log Analytics](../azure-monitor/platform/resource-logs.md#send-to-log-analytics-workspace). Для сообщений ведение журнала также собирает следующие сведения:
 
 * число и состояние сообщений;
 * состояние подтверждений;
@@ -30,7 +30,7 @@ Azure Monitor позволяет создавать [запросы журнал
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Рабочая область Log Analytics. См. дополнительные сведения о [создании рабочей области Log Analytics](../azure-monitor/learn/quick-create-workspace.md).
 
@@ -44,7 +44,7 @@ Azure Monitor позволяет создавать [запросы журнал
 
 Прежде чем журналы Azure Monitor могут отвестить сообщения B2B для приложения логики, добавьте **Logic Apps B2B** решение в рабочую область log Analytics.
 
-1. В поле поиска [портал Azure](https://portal.azure.com)введите `log analytics workspaces`, а затем выберите **log Analytics рабочие области**.
+1. В поле поиска [портал Azure](https://portal.azure.com)введите `log analytics workspaces` , а затем выберите **log Analytics рабочие области**.
 
    ![Выберите "Log Analytics рабочие области".](./media/monitor-b2b-messages-log-analytics/find-select-log-analytics-workspaces.png)
 
@@ -52,7 +52,7 @@ Azure Monitor позволяет создавать [запросы журнал
 
    ![Выбор рабочей области Log Analytics](./media/monitor-b2b-messages-log-analytics/select-log-analytics-workspace.png)
 
-1. В области Обзор в разделе Начало **работы с log Analytics** > **настроить решения мониторинга**выберите пункт **Просмотреть решения**.
+1. В области Обзор в разделе Начало **работы с log Analytics**  >  **настроить решения мониторинга**выберите пункт **Просмотреть решения**.
 
    ![На панели "Обзор" выберите "Просмотр решений".](./media/monitor-b2b-messages-log-analytics/log-analytics-workspace.png)
 
@@ -60,7 +60,7 @@ Azure Monitor позволяет создавать [запросы журнал
 
    ![В области "Обзор" добавьте новое решение](./media/monitor-b2b-messages-log-analytics/add-logic-apps-management-solution.png)
 
-1. После открытия **Marketplace** в поле поиска введите `logic apps b2b`и выберите **Logic Apps B2B**.
+1. После открытия **Marketplace** в поле поиска введите `logic apps b2b` и выберите **Logic Apps B2B**.
 
    ![В Marketplace выберите "Управление Logic Apps".](./media/monitor-b2b-messages-log-analytics/select-logic-apps-b2b-solution.png)
 
@@ -104,7 +104,7 @@ Azure Monitor позволяет создавать [запросы журнал
 
    1. Когда все будет готово, нажмите кнопку **Сохранить**.
 
-   Пример: 
+   Вот несколько примеров: 
 
    ![Настройка журналов Azure Monitor для сбор диагностических данных](./media/monitor-b2b-messages-log-analytics/send-diagnostics-data-log-analytics-workspace.png)
 
@@ -116,7 +116,7 @@ Azure Monitor позволяет создавать [запросы журнал
 
 1. В поле поиска [портал Azure](https://portal.azure.com) найдите и откройте рабочую область log Analytics.
 
-1. В меню рабочей области выберите > **Logic Apps B2B** **Сводка по рабочей области**.
+1. В меню рабочей области выберите Logic Apps B2B **Сводка по рабочей области**  >  **Logic Apps B2B**.
 
    ![Панель сводки по рабочей области](./media/monitor-b2b-messages-log-analytics/b2b-overview-messages-summary.png)
 
@@ -163,7 +163,7 @@ Azure Monitor позволяет создавать [запросы журнал
 
    * To search results with prebuilt queries, select **Favorites**.
 
-   * Learn [how to build queries by adding filters](../logic-apps/create-monitoring-tracking-queries.md). Or learn more about [how to find data with log searches in Azure Monitor logs](../log-analytics/log-analytics-log-searches.md).
+   * Learn [how to build queries by adding filters](../logic-apps/create-monitoring-tracking-queries.md). Or learn more about [how to find data with log searches in Azure Monitor logs](../azure-monitor/log-query/log-query-overview.md).
 
    * To change query in the search box, update the query with the columns and values that you want to use as filters.
 -->
@@ -277,6 +277,6 @@ Here are the name formats for each downloaded EDIFACT message folder and files.
 |||
 -->
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание, мониторинг и отслеживание запросов](../logic-apps/create-monitoring-tracking-queries.md)

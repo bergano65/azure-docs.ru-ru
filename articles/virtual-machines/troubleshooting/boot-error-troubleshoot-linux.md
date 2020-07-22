@@ -13,10 +13,9 @@ ms.workload: infrastructure
 ms.date: 11/20/2019
 ms.author: vilibert
 ms.openlocfilehash: 37cb201751f72918838efe5837aa0e357d483f24
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74408746"
 ---
 # <a name="troubleshoot-azure-linux-virtual-machines-boot-errors"></a>Устранение ошибок загрузки Azure Виртуальные машины Linux
@@ -27,7 +26,7 @@ ms.locfileid: "74408746"
 
 * [GRUB помощь](troubleshoot-vm-boot-error.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Последовательная консоль виртуальной машины](serial-console-linux.md)
 
@@ -37,15 +36,15 @@ ms.locfileid: "74408746"
 
  Переключение диска. его можно автоматизировать с помощью следующих средств:
 - [Сценарии восстановления PowerShell](https://github.com/Azure/azure-support-scripts/tree/master/VMRecovery/ResourceManager)
-- [Скрипты Bash Recovery](https://github.com/sribs/azure-support-scripts)
+- [скрипты восстановления bash](https://github.com/sribs/azure-support-scripts)
 
 - [CLI](troubleshoot-recovery-disks-linux.md)
 - [Портал Azure](troubleshoot-recovery-disks-portal-linux.md)
 
 
-## <a name="disk-swap-video"></a>Видео о переключении диска:
+## <a name="disk-swap-video"></a>Видео о замене диска
 
-Если у вас нет доступа к GRUB, просмотрите [это](https://youtu.be/m5t0GZ5oGAc) видео и посмотрите, как можно легко автоматизировать процедуру переключения диска для восстановления виртуальной машины.
+Если у вас нет доступа к GRUB, просмотрите [это](https://youtu.be/m5t0GZ5oGAc) видео о том, как можно легко автоматизировать процедуру замены диска для восстановления виртуальной машины.
 
 ## <a name="unofficial-solution"></a>Неофициальное решение
 

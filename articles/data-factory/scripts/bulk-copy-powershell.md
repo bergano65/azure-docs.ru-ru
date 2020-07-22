@@ -10,16 +10,16 @@ ms.workload: data-services
 ms.topic: article
 ms.custom: seo-lt-2019
 ms.date: 10/31/2017
-ms.openlocfilehash: efc79f82a2181099f832da0d4a17fc370bf4f7f6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e0fedd2a304c73347b7ec72818b5289c1df2e561
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74929868"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85248629"
 ---
 # <a name="powershell-script---copy-multiple-tables-in-bulk-by-using-azure-data-factory"></a>Скрипт PowerShell: копирование нескольких таблиц в пакетном режиме с помощью фабрики данных Azure
 
-С помощью этого примера сценария PowerShell можно копировать данные из нескольких таблиц в базе данных SQL Azure в хранилище данных SQL Azure.
+Этот пример сценария PowerShell копирует данные из нескольких таблиц в базе данных SQL Azure в хранилище данных SQL Azure.
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 

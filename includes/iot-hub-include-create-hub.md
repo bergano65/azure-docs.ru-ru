@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/14/2020
 ms.author: robinsh
 ms.custom: include file
-ms.openlocfilehash: cc53f7ae6eb6254eaa05bf643ecfa0188650df95
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
-ms.translationtype: HT
+ms.openlocfilehash: d7ac494edfb9b1deeceafcac523ac58bccde96b3
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77461874"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85365250"
 ---
 В этом разделе описывается создание центра Интернета вещей с помощью [портала Azure](https://portal.azure.com).
 
@@ -56,7 +56,7 @@ ms.locfileid: "77461874"
 
 1.  По завершении выберите **Next: Теги**, чтобы перейти к следующему экрану.
 
-    Теги — это пары "имя — значение". Один и тот же тег можно присвоить нескольким ресурсам и группам ресурсов для их классификации и объединения счетов. Дополнительные сведения см. в статье об [использовании тегов для организации ресурсов в Azure](../articles/azure-resource-manager/management/tag-resources.md).
+    Теги — это пары "имя — значение". Один и тот же тег можно присвоить нескольким ресурсам и группам ресурсов для их классификации и объединения счетов. Дополнительные сведения см. в статье [Использование тегов для организации ресурсов в Azure](../articles/azure-resource-manager/management/tag-resources.md).
 
     ![Назначение тегов для центра с помощью портала Azure](./media/iot-hub-include-create-hub/iot-hub-create-tabs.png)
 

@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 07/01/2018
 ms.author: jehollan
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 42e9ed7c080c9274fad7eda8e4c8af3631ed41f5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 1e4c989e4550c1ea504a08d3cc975f2add5a4ba2
+ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80756485"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86054735"
 ---
 # <a name="create-your-first-function-with-java-and-eclipse"></a>Создание первой функции с помощью Java и Eclipse 
 
@@ -37,14 +37,10 @@ ms.locfileid: "80756485"
 
 ## <a name="create-a-functions-project"></a>Создание проекта Функций Azure
 
-1. В Eclipse откройте меню **файл** и выберите **создать&gt; -Maven проект**. 
+1. В Eclipse откройте меню **файл** и выберите **создать- &gt; Maven проект**. 
 1. Примите значения по умолчанию в диалоговом окне **New Maven Project** (Новый проект Maven) и щелкните **Next** (Далее).
-1. Выберите **Add Archetype** (Добавить архетип) и добавьте записи для [azure-functions-archetype](https://mvnrepository.com/artifact/com.microsoft.azure/azure-functions-archetype).
-    - Идентификатор группы архетипа: com.microsoft.azure.
-    - Идентификатор артефакта архетипа: azure-functions-archetype.
-    - Версия: Проверьте и используйте последнюю версию из [центрального репозитория](https://mvnrepository.com/artifact/com.microsoft.azure/azure-functions-archetype)
-    ![Eclipse Maven CREATE](media/functions-create-first-java-eclipse/functions-create-eclipse.png)  
-1. Нажмите кнопку **ОК**, а затем — **Далее**.  Обязательно `resourceGroup`заполните значения для всех полей, включая, `appName`и `appRegion` (используйте другое AppName, отличное от **Fabrikam-Function-20170920120101928**), и в конечном итоге **завершите работу**.
+1. Найдите и выберите [Azure-functions-архетипа](https://mvnrepository.com/artifact/com.microsoft.azure/azure-functions-archetype) и нажмите кнопку **Далее**.
+1. Обязательно заполните значения для всех полей `resourceGroup` , включая, `appName` и `appRegion` (используйте другое AppName, отличное от **fabrikam-Function-20170920120101928**), и в конечном итоге **завершите работу**.
     ![Eclipse Maven Create2](media/functions-create-first-java-eclipse/functions-create-eclipse2.png)  
 
 Maven создает файлы проекта в новой папке с именем _artifactId_. Созданный код проекта представляет собой простую функцию[активации HTTP](/azure/azure-functions/functions-bindings-http-webhook), которая возвращает текст HTTP-запроса.

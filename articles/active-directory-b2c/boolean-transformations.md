@@ -1,34 +1,34 @@
 ---
 title: Примеры преобразования логических утверждений для пользовательских политик
 titleSuffix: Azure AD B2C
-description: Примеры преобразования логических утверждений для схемы инфраструктура процедур идентификации (инфраструктура процедур идентификации) Azure Active Directory B2C.
+description: Примеры преобразования логических утверждений для схемы Identity Experience Framework (IEF) в Azure Active Directory B2C.
 services: active-directory-b2c
 author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 04/01/2020
+ms.date: 06/06/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 007d613a1f170a0ee278a838c92ade2fce9c6dec
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 7c292f939339add06168c55236f8666651e4aace
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80529204"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85201282"
 ---
 # <a name="boolean-claims-transformations"></a>Преобразования логических утверждений
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-В этой статье приведены примеры использования логических преобразований утверждений схемы инфраструктуры процедур идентификации в Azure Active Directory B2C (Azure AD B2C). Дополнительные сведения см. в статье о [преобразовании утверждений](claimstransformations.md).
+В этой статье приведены примеры использования преобразований логических утверждений схемы инфраструктуры процедур идентификации в Azure Active Directory B2C (Azure AD B2C). Дополнительные сведения см. в статье о [преобразовании утверждений](claimstransformations.md).
 
 ## <a name="andclaims"></a>Утверждение AndClaims
 
 Выполняет операцию AND для двух логических элементов InputClaim и задает элемент OutputClaim с результатом операции.
 
-| Элемент  | TransformationClaimType  | Тип данных  | Примечания |
+| Item  | TransformationClaimType  | Тип данных  | Примечания |
 |-------| ------------------------ | ---------- | ----- |
 | InputClaim | inputClaim1 | Логическое | Первый оцениваемый элемент ClaimType. |
 | InputClaim | inputClaim2  | Логическое | Второй оцениваемый элемент ClaimType. |
@@ -36,7 +36,7 @@ ms.locfileid: "80529204"
 
 В следующем преобразовании утверждений показано, как выполнять операцию AND для двух логических элементов ClaimType: `isEmailNotExist` и `isSocialAccount`. Для исходящего утверждения `presentEmailSelfAsserted` присваивается значение `true`, если значения обоих входящих утверждений — `true`. На шаге оркестрации можно использовать необходимое условие для предварительной настройки страницы самоподтверждения, только если электронная почта учетной записи социальной сети пуста.
 
-```XML
+```xml
 <ClaimsTransformation Id="CheckWhetherEmailBePresented" TransformationMethod="AndClaims">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="isEmailNotExist" TransformationClaimType="inputClaim1" />
@@ -48,7 +48,7 @@ ms.locfileid: "80529204"
 </ClaimsTransformation>
 ```
 
-### <a name="example"></a>Пример
+### <a name="example-of-andclaims"></a>Пример Андклаимс
 
 - Входящие утверждения:
     - **inputClaim1**: true.
@@ -61,7 +61,7 @@ ms.locfileid: "80529204"
 
 Проверяет, равны ли логические значения двух утверждений, и создает исключение, если это не так.
 
-| Элемент | TransformationClaimType  | Тип данных  | Примечания |
+| Item | TransformationClaimType  | Тип данных  | Примечания |
 | ---- | ------------------------ | ---------- | ----- |
 | InputClaim | InputClaim | Логическое | Элемент ClaimType, который необходимо подтвердить. |
 | InputParameter |valueToCompareTo | Логическое | Значение для сравнения (true или false). |
@@ -72,7 +72,7 @@ ms.locfileid: "80529204"
 
 В следующем преобразовании утверждений показано, как проверить значение логического элемента ClaimType на основе значения `true`. Если значение ClaimType `accountEnabled` — false, выдается сообщение об ошибке.
 
-```XML
+```xml
 <ClaimsTransformation Id="AssertAccountEnabledIsTrue" TransformationMethod="AssertBooleanClaimIsEqualToValue">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="accountEnabled" TransformationClaimType="inputClaim" />
@@ -85,7 +85,8 @@ ms.locfileid: "80529204"
 
 
 Технический профиль проверки `login-NonInteractive` вызывает преобразование утверждений `AssertAccountEnabledIsTrue`.
-```XML
+
+```xml
 <TechnicalProfile Id="login-NonInteractive">
   ...
   <OutputClaimsTransformations>
@@ -96,7 +97,7 @@ ms.locfileid: "80529204"
 
 Самоподтвержденный технический профиль вызывает технический профиль проверки **login-NonInteractive**.
 
-```XML
+```xml
 <TechnicalProfile Id="SelfAsserted-LocalAccountSignin-Email">
   <Metadata>
     <Item Key="UserMessageIfClaimsTransformationBooleanValueIsNotEqual">Custom error message if account is disabled.</Item>
@@ -107,27 +108,26 @@ ms.locfileid: "80529204"
 </TechnicalProfile>
 ```
 
-### <a name="example"></a>Пример
+### <a name="example-of-assertbooleanclaimisequaltovalue"></a>Пример Ассертбулеанклаимисекуалтовалуе
 
 - Входящие утверждения:
     - **inputClaim**: false.
     - **valueToCompareTo**: true.
 - Результат: возникла ошибка.
 
-## <a name="comparebooleanclaimtovalue"></a>компаребулеанклаимтовалуе
+## <a name="comparebooleanclaimtovalue"></a>CompareBooleanClaimToValue
 
 Проверяет, что логическое значение утверждения равно `true` или `false`, и возвращает результат сжатия.
 
-| Элемент | TransformationClaimType  | Тип данных  | Примечания |
+| Item | TransformationClaimType  | Тип данных  | Примечания |
 | ---- | ------------------------ | ---------- | ----- |
 | InputClaim | InputClaim | Логическое | Элемент ClaimType, который необходимо подтвердить. |
 | InputParameter |valueToCompareTo | Логическое | Значение для сравнения (true или false). |
-| outputClaim | компарересулт | Логическое | ClaimType, который создается после вызова ClaimsTransformation. |
+| outputClaim | compareResult | Логическое | ClaimType, который создается после вызова ClaimsTransformation. |
 
+В следующем преобразовании утверждений показано, как проверить значение логического элемента ClaimType на основе значения `true`. Если значение `IsAgeOver21Years` ClaimType равно `true`, преобразование утверждений возвращает `true`, в противном случае — `false`.
 
-В следующем преобразовании утверждений показано, как проверить значение логического элемента ClaimType на основе значения `true`. Если `IsAgeOver21Years` значение параметра "число" равно `true`, преобразование "утверждения" возвращает `true`значение, в `false`противном случае —.
-
-```XML
+```xml
 <ClaimsTransformation Id="AssertAccountEnabled" TransformationMethod="CompareBooleanClaimToValue">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="IsAgeOver21Years" TransformationClaimType="inputClaim" />
@@ -141,29 +141,27 @@ ms.locfileid: "80529204"
 </ClaimsTransformation>
 ```
 
-### <a name="example"></a>Пример
+### <a name="example-of-comparebooleanclaimtovalue"></a>Пример Компаребулеанклаимтовалуе
 
 - Входящие утверждения:
     - **inputClaim**: false.
 - Входные параметры:
     - **valueToCompareTo**: true.
 - Исходящие утверждения:
-    - **компарересулт**: false
-
-
+    - **compareResult**: false
 
 ## <a name="notclaims"></a>NotClaims
 
 Выполняет операцию Not для логического элемента inputClaim и задает элемент outputClaim с результатом операции.
 
-| Элемент | TransformationClaimType | Тип данных | Примечания |
+| Item | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | InputClaim | Логическое | Обрабатываемое утверждение. |
 | outputClaim | outputClaim | Логическое | Элементы ClaimType, создаваемые после вызова данного ClaimsTransformation (true или false). |
 
 Это преобразование утверждений используется для выполнения логического отрицания утверждения.
 
-```XML
+```xml
 <ClaimsTransformation Id="CheckWhetherEmailBePresented" TransformationMethod="NotClaims">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="userExists" TransformationClaimType="inputClaim" />
@@ -174,7 +172,7 @@ ms.locfileid: "80529204"
 </ClaimsTransformation>
 ```
 
-### <a name="example"></a>Пример
+### <a name="example-of-notclaims"></a>Пример Нотклаимс
 
 - Входящие утверждения:
     - **inputClaim**: false.
@@ -185,7 +183,7 @@ ms.locfileid: "80529204"
 
 Вычисляет значение Or для двух логических элементов InputClaim и задает элемент outputClaim с результатом операции.
 
-| Элемент | TransformationClaimType | Тип данных | Примечания |
+| Item | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | inputClaim1 | Логическое | Первый оцениваемый элемент ClaimType. |
 | InputClaim | inputClaim2 | Логическое | Второй оцениваемый элемент ClaimType. |
@@ -193,7 +191,7 @@ ms.locfileid: "80529204"
 
 В следующем преобразовании утверждений показано, как выполнять операцию `Or` для двух логических элементов ClaimType. На шаге оркестрации можно использовать необходимое условие для предварительной настройки страницы самоподтверждения, если значение одного из утверждений — `true`.
 
-```XML
+```xml
 <ClaimsTransformation Id="CheckWhetherEmailBePresented" TransformationMethod="OrClaims">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="isLastTOSAcceptedNotExists" TransformationClaimType="inputClaim1" />
@@ -205,7 +203,7 @@ ms.locfileid: "80529204"
 </ClaimsTransformation>
 ```
 
-### <a name="example"></a>Пример
+### <a name="example-of-orclaims"></a>Пример Орклаимс
 
 - Входящие утверждения:
     - **inputClaim1**: true.

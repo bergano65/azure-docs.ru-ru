@@ -7,10 +7,10 @@ author: bwren
 ms.author: bwren
 ms.date: 03/27/2019
 ms.openlocfilehash: 7da2fa2ddfbd9c71563dd8bd2e17b14c6dee62b3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81455468"
 ---
 # <a name="azure-key-vault-analytics-solution-in-azure-monitor"></a>Решение Azure Key Vault Analytics в Azure Monitor
@@ -145,5 +145,5 @@ Set-AzDiagnosticSetting -ResourceId $kv.ResourceId  -WorkspaceId $workspaceId -E
 ## <a name="troubleshooting"></a>Устранение неполадок
 [!INCLUDE [log-analytics-troubleshoot-azure-diagnostics](../../../includes/log-analytics-troubleshoot-azure-diagnostics.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Используйте [запросы журналов в Azure Monitor](../../azure-monitor/log-query/log-query-overview.md) для просмотра подробных Azure Key Vault данных.

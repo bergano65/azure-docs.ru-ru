@@ -5,15 +5,15 @@ titleSuffix: Azure VPN Gateway
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 01/15/2020
 ms.author: cherylmc
-ms.openlocfilehash: d1693a6165aa31b221b6901e2e1c8b2955a3dfb3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: dd246e4e6a59637c720cbaddf1258b6e01f709b0
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76045705"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84986120"
 ---
 # <a name="create-a-vnet-with-a-site-to-site-vpn-connection-using-powershell"></a>Создание виртуальной сети с VPN-подключением типа "сеть — сеть" с помощью PowerShell
 
@@ -129,7 +129,7 @@ New-AzResourceGroup -Name TestRG1 -Location 'East US'
    Set-AzVirtualNetwork -VirtualNetwork $vnet
    ```
 
-## <a name="2-create-the-local-network-gateway"></a>2. <a name="localnet"> </a>Создание шлюза локальной сети
+## <a name="2-create-the-local-network-gateway"></a>2. <a name="localnet"></a> Создание шлюза локальной сети
 
 Обычно термин "шлюз локальной сети" (LNG) означает локальное расположение. Это не то же самое, что шлюз виртуальной сети. Присвойте сайту имя, по которому Azure может обращаться к этому сайту, а затем укажите IP-адрес локального VPN-устройства, к которому вы подключитесь. Вы можете также указать префиксы IP-адресов, которые будут направляться через VPN-шлюз к VPN-устройству. Указываемые префиксы адресов расположены в локальной сети. При изменении локальной сети вы сможете без проблем обновить эти префиксы.
 
@@ -259,7 +259,7 @@ Remove-AzVirtualNetworkGatewayConnection -Name VNet1toSite1 `
 -ResourceGroupName TestRG1
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 *  Установив подключение, можно добавить виртуальные машины в виртуальные сети. Дополнительные сведения о виртуальных машинах см. [здесь](https://docs.microsoft.com/azure/).
 * Сведения о BGP см. в статьях [Обзор использования BGP с VPN-шлюзами Azure](vpn-gateway-bgp-overview.md) и [Настройка BGP на VPN-шлюзах Azure с помощью Azure Resource Manager и PowerShell](vpn-gateway-bgp-resource-manager-ps.md).

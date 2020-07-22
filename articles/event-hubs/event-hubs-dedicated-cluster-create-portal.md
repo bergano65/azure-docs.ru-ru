@@ -1,21 +1,14 @@
 ---
 title: Создание кластера Центров событий ценовой категории "Выделенный" с помощью портала Azure
 description: В этом кратком руководстве описано, как создать кластер Центров событий Azure с помощью портала Azure.
-services: event-hubs
-documentationcenter: ''
-author: femila
-manager: ''
-ms.service: event-hubs
 ms.topic: quickstart
-ms.custom: mvc
-ms.date: 12/20/2019
-ms.author: femila
-ms.openlocfilehash: 5b1574eaac8771043e09500225b65e4835c8e627
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.date: 06/23/2020
+ms.openlocfilehash: cb657619e16f7be1d633bab61625026a40a378b8
+ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77157488"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85323101"
 ---
 # <a name="quickstart-create-a-dedicated-event-hubs-cluster-using-azure-portal"></a>Краткое руководство. Создание выделенного кластера Центров событий с помощью портала Azure 
 Кластеры Центров событий предоставляют однотенантные развертывания для удовлетворения самых высоких требований к потоковой передаче. Для этого предложения предусмотрено Соглашение об уровне обслуживания на уровне 99,99 %, доступное только для ценовой категории "Выделенный". [Кластер Центров событий](event-hubs-dedicated-overview.md) может принимать миллионы событий в секунду с гарантированной емкостью и задержкой менее секунды. Пространства имен и концентраторы событий, созданные в кластере, используют все возможности предложения ценовой категории "Стандартный" и даже больше, но без ограничения объема входящих данных. Кроме того, ценовая категория "Выделенный" предоставляет популярную возможность ["Сбор" в Центрах событий](event-hubs-capture-overview.md) без дополнительных затрат, что позволит вам автоматически в пакетном резжиме обрабатывать и передавать потоки данных в [хранилище BLOB-объектов Azure](../storage/blobs/storage-blobs-introduction.md) или [Azure Data Lake Storage 1-го поколения](../data-lake-store/data-lake-store-overview.md).

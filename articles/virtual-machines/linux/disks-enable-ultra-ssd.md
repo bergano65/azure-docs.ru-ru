@@ -3,16 +3,16 @@ title: Ultra Disks для виртуальных машин Linux — управ
 description: Дополнительные сведения о Ultra Disks для виртуальных машин Azure
 author: roygara
 ms.service: virtual-machines
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/11/2020
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 35eeab099f988941c5acd7ef3da9aa818193bbef
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: 900781efa2a000c1062db45c6b8d0543f3939443
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83197378"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84659241"
 ---
 # <a name="using-azure-ultra-disks"></a>Использование Ultra дисков Azure
 

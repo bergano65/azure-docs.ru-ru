@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Поиск с помощью Python и API Bing для поиска в Интернете
+title: Краткое руководство. Поиск с помощью Python и API Bing для поиска в Интернете
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как отправлять запросы в REST API Bing для поиска в Интернете с помощью Python и получать ответы в формате JSON.
 services: cognitive-services
@@ -8,25 +8,25 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-web-search
 ms.topic: quickstart
-ms.date: 12/09/2019
+ms.date: 05/22/2020
 ms.author: aahi
-ms.custom: seodec2018
-ms.openlocfilehash: c1af1142faca76cc58b6b3ca9a7106bc0433ea18
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.custom: seodec2018, tracking-python
+ms.openlocfilehash: c4dd2de53f0222b687a05690727f0aa9e25c7d53
+ms.sourcegitcommit: 1de57529ab349341447d77a0717f6ced5335074e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74976372"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84608678"
 ---
-# <a name="quickstart-use-python-to-call-the-bing-web-search-api"></a>Краткое руководство. Вызов API Bing для поиска в Интернете с использованием Python  
+# <a name="quickstart-use-python-to-call-the-bing-web-search-api"></a>Краткое руководство. Вызов API Bing для поиска в Интернете с использованием Python  
 
-Из этого краткого руководства вы узнаете, как вызвать API Bing для поиска в Интернете и получить ответ в формате JSON. Это приложение Python отправляет поисковый запрос к API и показывает ответ. Хотя это приложение создается на языке Python, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
+Используйте это краткое руководство, чтобы вызвать API Поиска в Интернете Bing. Это приложение Python отправляет поисковый запрос к API и показывает ответ в формате JSON. Это приложение создано на языке Python. Но API представляет собой веб-службу на основе REST, совместимую с большинством языков программирования.
 
-Этот пример запускается как записная книжка Jupyter в [MyBinder](https://mybinder.org). Выберите эмблему запуска Binder.
+Этот пример запускается как записная книжка Jupyter в [MyBinder](https://mybinder.org). Чтобы запустить его, щелкните эмблему запуска Binder.
 
 [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/Microsoft/cognitive-services-notebooks/master?filepath=BingWebSearchAPI.ipynb)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Python версии 2.x или 3.x](https://www.python.org/)
 
@@ -34,28 +34,30 @@ ms.locfileid: "74976372"
 
 ## <a name="define-variables"></a>Определение переменных
 
-Замените значение `subscription_key` действительным ключом подписки из своей учетной записи Azure.
+1. Замените значение `subscription_key` действительным ключом подписки из своей учетной записи Azure.
 
-```python
-subscription_key = "YOUR_ACCESS_KEY"
-assert subscription_key
-```
+   ```python
+   subscription_key = "YOUR_ACCESS_KEY"
+   assert subscription_key
+   ```
 
-Объявите конечную точку API Bing для поиска в Интернете. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
+2. Объявите конечную точку API Bing для поиска в Интернете. Вы можете использовать глобальную конечную точку, указанную в коде ниже, или конечную точку [личного поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), которая отображается на портале Azure для вашего ресурса.
 
-```python
-search_url = "https://api.cognitive.microsoft.com/bing/v7.0/search"
-```
+   ```python
+   search_url = "https://api.cognitive.microsoft.com/bing/v7.0/search"
+   ```
 
-Вы можете настроить поисковый запрос, заменив значение параметра `search_term`.
+3. Кроме того, вы можете настроить поисковый запрос, заменив значение параметра `search_term`.
 
-```python
-search_term = "Azure Cognitive Services"
-```
+   ```python
+   search_term = "Azure Cognitive Services"
+   ```
 
 ## <a name="make-a-request"></a>Выполнение запроса
 
-В этом блоке для вызова API Bing для поиска в Интернете и возврата результатов в виде объекта JSON используется библиотека `requests`. Ключ API передается в словарь `headers`, а условие поиска и параметры запроса — в словарь `params`. Полный список вариантов и параметров см. в документации по [API Bing для поиска в Интернете версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference).
+В этом коде для вызова API Поиска в Интернете Bing и получения результатов в виде объекта JSON используется библиотека `requests`. Ключ API передается в словарь `headers`, а условие поиска и параметры запроса — в словарь `params`. 
+
+Полный список вариантов и параметров см. в разделе [API Поиска в Интернете Bing версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference).
 
 ```python
 import requests
@@ -69,7 +71,7 @@ search_results = response.json()
 
 ## <a name="format-and-display-the-response"></a>Форматирование и отображение ответа
 
-Объект `search_results` включает результаты поиска и метаданные, например связанные запросы и страницы. Этот код использует библиотеку `IPython.display`, чтобы форматировать и отображать ответ в браузере.
+Объект `search_results` включает результаты поиска и метаданные, описывающие связанные запросы и страницы. Этот код использует библиотеку `IPython.display`, чтобы форматировать и отображать ответ в браузере.
 
 ```python
 from IPython.display import HTML
@@ -84,11 +86,11 @@ HTML("<table>{0}</table>".format(rows))
 
 ## <a name="sample-code-on-github"></a>Пример кода в GitHub
 
-Если вы хотите выполнить этот код локально, готовый [пример можно найти в GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/python/Search/BingWebSearchv7.py).
+Чтобы выполнить этот код локально, см. полный [пример на сайте GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/python/Search/BingWebSearchv7.py).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Руководство по одностраничным приложениям для API Bing для Поиска в Интернете](../tutorial-bing-web-search-single-page-app.md)
+> [Руководство по одностраничным приложениям для API Поиска в Интернете Bing](../tutorial-bing-web-search-single-page-app.md)
 
 [!INCLUDE [bing-web-search-quickstart-see-also](../../../../includes/bing-web-search-quickstart-see-also.md)]

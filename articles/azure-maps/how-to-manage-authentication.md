@@ -1,19 +1,20 @@
 ---
-title: Управление проверкой подлинности | Карты Microsoft Azure
+title: Управление аутентификацией
+titleSuffix: Azure Maps
 description: Используйте портал Azure для управления проверкой подлинности в картах Microsoft Azure.
 author: philmea
 ms.author: philmea
-ms.date: 01/29/2020
+ms.date: 06/12/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: dfe73971f29ea362fdd0ddd654e705b622ab1866
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 174606b4b070b69aba94f438a3f7177f0d5897f8
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80335525"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84981729"
 ---
 # <a name="manage-authentication-in-azure-maps"></a>Управление аутентификацией в Azure Maps
 
@@ -25,97 +26,65 @@ ms.locfileid: "80335525"
 
 Сведения о проверке подлинности можно просмотреть в портал Azure. В учетной записи в меню **Параметры** выберите **Проверка подлинности**.
 
-![Подробные сведения о проверке подлинности](./media/how-to-manage-authentication/how-to-view-auth.png)
+> [!div class="mx-imgBorder"]
+> ![Подробные сведения о проверке подлинности](./media/how-to-manage-authentication/how-to-view-auth.png)
 
+## <a name="discover-category-and-scenario"></a>Определение категории и сценария
 
-## <a name="register-and-configure-an-azure-ad-app"></a>Регистрация и настройка приложения Azure AD
+В зависимости от потребностей приложения существуют определенные пути для защиты приложения. Azure AD определяет категории для поддержки широкого спектра потоков проверки подлинности. Сведения о том, какая категория подходит для приложения, см. в разделе [категории приложений](https://docs.microsoft.com/azure/active-directory/develop/authentication-flows-app-scenarios#application-categories) .
 
-1. В портал Azure в списке служб Azure выберите **Azure Active Directory** > **Регистрация приложений** > **Новая регистрация**.  
+> [!NOTE]
+> Даже если используется проверка подлинности с использованием общего ключа, основные сведения о категориях и сценариях помогут защитить приложение.
 
-    ![Регистрация приложения](./media/how-to-manage-authentication/app-registration.png)
+## <a name="determine-authentication-and-authorization"></a>Определение проверки подлинности и авторизации
 
-1. Если вы уже зарегистрировали приложение, перейдите к следующему шагу. Если вы не зарегистрировали приложение, введите **имя**, выберите **тип учетной записи поддержки**и нажмите кнопку **зарегистрировать**.  
+В следующей таблице описаны распространенные сценарии проверки подлинности и авторизации в Azure Maps. В таблице представлено сравнение типов защиты, предлагаемых каждым сценарием.
 
-    ![Сведения о регистрации приложения](./media/how-to-manage-authentication/app-create.png)
+> [!IMPORTANT]
+> Корпорация Майкрософт рекомендует реализовать Azure Active Directory (Azure AD) с управлением доступом на основе ролей (RBAC) для рабочих приложений.
 
-1. Чтобы назначить разрешения делегированного API для Azure Maps, перейдите в приложение. Затем в разделе **Регистрация приложений**выберите **разрешения** > API**Добавить разрешение**. В разделе API, которые **использует Моя организация**, найдите и выберите **Azure Maps**.
+| Сценарий                                                                                    | Аутентификация | Авторизация | Усилия по разработке | Рабочие усилия |
+| ------------------------------------------------------------------------------------------- | -------------- | ------------- | ------------------ | ------------------ |
+| [Доверенная управляющая программа/неинтерактивное клиентское приложение](./how-to-secure-daemon-app.md)        | Общий ключ     | Н/Д           | Средний             | Высокий               |
+| [Доверенная управляющая программа/неинтерактивное клиентское приложение](./how-to-secure-daemon-app.md)        | Azure AD       | Высокий          | Низкий                | Средний             |
+| [Одностраничное веб-приложение с интерактивным единым входом](./how-to-secure-spa-users.md) | Azure AD       | Высокий          | Средний             | Средний             |
+| [Одностраничное приложение Web с неинтерактивным входом](./how-to-secure-spa-app.md)      | Azure AD       | Высокий          | Средний             | Средний             |
+| [Веб-приложение с интерактивным единым входом](./how-to-secure-webapp-users.md)          | Azure AD       | Высокий          | Высокий               | Средний             |
+| [Устройство с ограниченным входным устройством IoT](./how-to-secure-device-code.md)                     | Azure AD       | Высокий          | Средний             | Средний             |
 
-    ![Добавить разрешения API приложения](./media/how-to-manage-authentication/app-permissions.png)
+Ссылки в таблице ведут к подробным сведениям о конфигурации для каждого сценария.
 
-1. Установите флажок для **доступа к Azure Maps**, а затем выберите **Добавить разрешения**.
-
-    ![Выбор разрешений API приложения](./media/how-to-manage-authentication/select-app-permissions.png)
-
-1. Выполните одно из следующих действий в зависимости от метода проверки подлинности. 
-
-    * Если приложение использует проверку подлинности на основе маркеров пользователя с помощью веб-пакета `oauth2AllowImplicitFlow`SDK Azure Maps, включите. Чтобы включить его, в разделе **манифеста** регистрации приложения задайте `oauth2AllowImplicitFlow` значение true. 
-    
-       ![Манифест приложения](./media/how-to-manage-authentication/app-manifest.png)
-
-    * Если приложение использует проверку подлинности сервера или приложения, то на странице регистрации приложения перейдите в раздел **сертификаты & секреты**. Затем либо отправьте сертификат открытого ключа, либо создайте пароль, выбрав **новый секрет клиента**. 
-    
-       ![Создание секрета клиента](./media/how-to-manage-authentication/app-keys.png)
-
-        Если вы создаете пароль, после нажатия на кнопку **Добавить**Скопируйте пароль и сохраните его в безопасном месте. Этот пароль будет использоваться для получения маркеров из Azure AD.
-
-       ![Добавление секрета клиента](./media/how-to-manage-authentication/add-key.png)
-
-
-## <a name="grant-role-based-access-control-to-azure-maps"></a>Предоставление Azure Maps управления доступом на основе ролей
-
-После связывания учетной записи Azure Maps с клиентом Azure AD можно предоставить контроль доступа. Вы предоставляете *Управление доступом на основе ролей* (RBAC), назначив пользователю, группе или приложению одну или несколько Azure Maps ролей контроля доступа. 
-
-1. Перейдите к **учетной записи Azure Maps**. Выберите**назначение ролей** **управления доступом (IAM)** > .
-
-    ![Предоставление RBAC](./media/how-to-manage-authentication/how-to-grant-rbac.png)
-
-1. На вкладке **назначения ролей** в разделе **роль**выберите **Azure Maps средство чтения даты (Предварительная версия)**. В поле **Назначение доступа к** выберите **Пользователь, группа или субъект-служба Azure AD**. Выберите пользователя или приложение. Затем нажмите кнопку **Save** (Сохранить).
-
-    ![Добавление назначения роли](./media/how-to-manage-authentication/add-role-assignment.png)
-
-## <a name="view-available-azure-maps-rbac-roles"></a>Просмотр доступных ролей RBAC Azure Maps
+## <a name="view-role-definitions"></a>Просмотр определений ролей
 
 Чтобы просмотреть роли RBAC, доступные для Azure Maps, перейдите в раздел **Управление доступом (IAM)**. Выберите **роли**, а затем найдите роли, которые начинаются с *Azure Maps*. Эти Azure Maps роли являются ролями, к которым можно предоставить доступ.
 
-![Просмотр доступных ролей](./media/how-to-manage-authentication/how-to-view-avail-roles.png)
+> [!div class="mx-imgBorder"]
+> ![Просмотр доступных ролей](./media/how-to-manage-authentication/how-to-view-avail-roles.png)
 
-
-## <a name="view-azure-maps-rbac"></a>Просмотр Azure Maps RBAC
-
-RBAC обеспечивает детализированный контроль доступа.
+## <a name="view-role-assignments"></a>Просмотр назначений ролей
 
 Чтобы просмотреть пользователей и приложения, которым было предоставлено значение RBAC для Azure Maps, перейдите в раздел **Управление доступом (IAM)**. Выберите **назначения ролей**, а затем выполните фильтрацию по **Azure Maps**.
 
-![Просмотр пользователей и приложений, которым было предоставлено разрешение RBAC](./media/how-to-manage-authentication/how-to-view-amrbac.png)
-
+> [!div class="mx-imgBorder"]
+> ![Просмотр пользователей и приложений, которым было предоставлено разрешение RBAC](./media/how-to-manage-authentication/how-to-view-amrbac.png)
 
 ## <a name="request-tokens-for-azure-maps"></a>Запрос маркеров для Azure Maps
 
-После регистрации приложения и связывания его с Azure Maps можно запросить маркеры доступа.
+Запросите маркер из конечной точки маркера Azure AD. В запросе Azure AD используйте следующие сведения:
 
-Если приложение использует проверку подлинности на основе маркеров пользователя с помощью веб-пакета SDK Azure Maps, настройте HTML-страницу, указав идентификатор клиента Azure Maps и идентификатор приложения Azure AD.
+| Среда Azure      | Конечная точка маркера Azure AD             | Идентификатор ресурса Azure              |
+| ---------------------- | ----------------------------------- | ------------------------------ |
+| Общедоступное облако Azure:     | `https://login.microsoftonline.com` | `https://atlas.microsoft.com/` |
+| Облако Azure для государственных организаций | `https://login.microsoftonline.us`  | `https://atlas.microsoft.com/` |
 
-Если приложение использует проверку подлинности сервера или приложения, запросите маркер из конечной точки `https://login.microsoftonline.com`маркера Azure AD. В запросе используйте следующие сведения: 
-
-* Идентификатор ресурса Azure AD`https://atlas.microsoft.com/`
-* Идентификатор клиента Azure Maps
-* Идентификатор приложения Azure AD
-* Пароль или сертификат регистрации приложения Azure AD
-
-| Среда Azure   | Конечная точка маркера Azure AD | Идентификатор ресурса Azure |
-| --------------------|-------------------------|-------------------|
-| Общедоступное облако Azure        | `https://login.microsoftonline.com` | `https://atlas.microsoft.com/` |
-| Облако Azure для государственных организаций   | `https://login.microsoftonline.us`  | `https://atlas.microsoft.com/` | 
-
-Дополнительные сведения о запросе маркеров доступа из Azure AD для пользователей и субъектов-служб см. в статье [сценарии проверки подлинности в Azure AD](https://docs.microsoft.com/azure/active-directory/develop/authentication-scenarios).
-
+Дополнительные сведения о запросе маркеров доступа из Azure AD для пользователей и субъектов-служб см. в статье [сценарии проверки подлинности для Azure AD](https://docs.microsoft.com/azure/active-directory/develop/authentication-scenarios) и просмотрите конкретные сценарии в таблице [сценариев](./how-to-manage-authentication.md#determine-authentication-and-authorization).
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения см. в статье [Azure AD и Azure Maps веб-пакет SDK](https://docs.microsoft.com/azure/azure-maps/how-to-use-map-control).
 
 Найдите метрики использования API для учетной записи Azure Maps:
-> [!div class="nextstepaction"] 
+> [!div class="nextstepaction"]
 > [Просмотр метрик использования](how-to-view-api-usage.md)
 
 Просмотрите примеры, демонстрирующие интеграцию Azure AD с Azure Maps:

@@ -8,19 +8,18 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 08/15/2019
 ms.openlocfilehash: 31cdef281b1cb26d01a4690c815e3d3621e2c053
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79271971"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84709051"
 ---
 # <a name="outofmemoryerror-exceptions-for-apache-spark-in-azure-hdinsight"></a>Исключения OutOfMemoryError для Apache Spark в Azure HDInsight
 
-В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при использовании Apache Spark компонентов в кластерах Azure HDInsight.
+В этой статье описываются действия по устранению неполадок и возможные способы исправления проблем, возникающих при использовании компонентов Apache Spark в кластерах Azure HDInsight.
 
 ## <a name="scenario-outofmemoryerror-exception-for-apache-spark"></a>Сценарий: исключение OutOfMemoryError для Apache Spark
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Сбой приложения Apache Spark с необработанным исключением OutOfMemoryError. Может появиться сообщение об ошибке следующего вида:
 
@@ -52,7 +51,7 @@ java.lang.OutOfMemoryError
     ...
 ```
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Наиболее вероятной причиной этого исключения является нехватка памяти кучи, выделенной для виртуальных машин Java. Эти виртуальных машин Java запускаются как исполнители или драйверы в составе приложения Apache Spark.
 
@@ -92,7 +91,7 @@ java.lang.OutOfMemoryError
 
 ## <a name="scenario-java-heap-space-error-when-trying-to-open-apache-spark-history-server"></a>Сценарий: ошибка пространства кучи Java при попытке открыть сервер журнала Apache Spark
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 При открытии событий на сервере журнала Spark появляется следующее сообщение об ошибке:
 
@@ -100,7 +99,7 @@ java.lang.OutOfMemoryError
 scala.MatchError: java.lang.OutOfMemoryError: Java heap space (of class java.lang.OutOfMemoryError)
 ```
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 Эта проблема часто возникает из-за недостатка ресурсов при открытии больших файлов Spark-событий. Размер кучи Spark по умолчанию устанавливается равным 1 ГБ, но для больших файлов событий Spark может потребоваться больше.
 
@@ -122,7 +121,7 @@ hadoop fs -du -s -h wasb:///hdp/spark2-events/application_1503957839788_0264_1/
 
 ![Расширенный раздел spark2-env](./media/apache-spark-ts-outofmemory-heap-space/apache-spark-image01.png)
 
-Добавьте следующее свойство, чтобы изменить объем памяти сервера журнала Spark с 1 ГБ на 4G `SPARK_DAEMON_MEMORY=4g`:.
+Добавьте следующее свойство, чтобы изменить объем памяти сервера журнала Spark с 1 ГБ на 4G: `SPARK_DAEMON_MEMORY=4g` .
 
 ![Spark, свойство](./media/apache-spark-ts-outofmemory-heap-space/apache-spark-image02.png)
 
@@ -132,7 +131,7 @@ hadoop fs -du -s -h wasb:///hdp/spark2-events/application_1503957839788_0264_1/
 
 ## <a name="scenario-livy-server-fails-to-start-on-apache-spark-cluster"></a>Сценарий: Livy Server не запускается в кластере Apache Spark
 
-### <a name="issue"></a>Проблема
+### <a name="issue"></a>Проблемы
 
 Livy Server нельзя запустить на Apache Spark [(Spark 2,1 в Linux (HDI 3,6)]. Попытка перезапуска приводит к последующему стеку ошибок из журналов Livy:
 
@@ -192,7 +191,7 @@ Exception in thread "main" java.lang.OutOfMemoryError: unable to create new nati
   ## using "vmstat" found  we had enough free memory
 ```
 
-### <a name="cause"></a>Причина
+### <a name="cause"></a>Причина:
 
 `java.lang.OutOfMemoryError: unable to create new native thread`ОС с выделенными фрагментами не может назначить больше машинных потоков для виртуальных машин Java. Подтверждает, что это исключение вызвано нарушением числа потоков для каждого процесса.
 
@@ -239,11 +238,11 @@ Exception in thread "main" java.lang.OutOfMemoryError: unable to create new nati
 1. Дождитесь завершения выполнения приведенной выше команды и курсора, чтобы вернуть запрос, а затем перезапустите службу Livy из Ambari, которая должна быть выполнена.
 
 > [!NOTE]
-> `DELETE`сеанс Livy после завершения его выполнения. Сеансы пакетной службы Livy не будут удаляться автоматически сразу после завершения работы приложения Spark, что является конструкцией. Сеанс Livy — это сущность, созданная запросом POST к серверу Livy RESTful. Для `DELETE` удаления этой сущности требуется вызов. Или следует подождать, пока сборщик мусора не запустится.
+> `DELETE`сеанс Livy после завершения его выполнения. Сеансы пакетной службы Livy не будут удаляться автоматически сразу после завершения работы приложения Spark, что является конструкцией. Сеанс Livy — это сущность, созданная запросом POST к серверу Livy RESTful. `DELETE`Для удаления этой сущности требуется вызов. Или следует подождать, пока сборщик мусора не запустится.
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 
@@ -251,8 +250,8 @@ Exception in thread "main" java.lang.OutOfMemoryError: unable to create new nati
 
 * [Отладка приложения Spark в кластерах HDInsight](https://blogs.msdn.microsoft.com/azuredatalake/2016/12/19/spark-debugging-101/).
 
-* Получите ответы от экспертов Azure через [службу поддержки сообщества Azure](https://azure.microsoft.com/support/community/).
+* Получите ответы специалистов Azure на [сайте поддержки сообщества пользователей Azure](https://azure.microsoft.com/support/community/).
 
-* Подключение с [@AzureSupport](https://twitter.com/azuresupport) — официальная учетная запись Microsoft Azure для улучшения качества обслуживания клиентов. Подключение сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
+* Подпишитесь на [@AzureSupport](https://twitter.com/azuresupport) — официальный канал Microsoft Azure для работы с клиентами. Вступайте в сообщество Azure для получения нужных ресурсов: ответов, поддержки и советов экспертов.
 
-* Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Для получения более подробных сведений см. статью [о создании запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).
+* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка**. Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).

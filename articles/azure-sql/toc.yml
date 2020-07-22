@@ -1,0 +1,1144 @@
+- name: Документация по SQL Azure
+  href: index.yml
+- name: Что такое SQL Azure?
+  href: azure-sql-iaas-vs-paas-what-is-overview.md
+- name: Общая документация по Базе данных SQL и Управляемому экземпляру SQL
+  items:
+    - name: Модели приобретения
+      items:
+        - name: Обзор
+          href: database/purchasing-models.md
+        - name: Общие сведения о модели виртуального ядра
+          href: database/service-tiers-vcore.md
+        - name: Преимущество гибридного использования Azure
+          href: azure-hybrid-benefit.md
+        - name: Зарезервированная емкость
+          href: database/reserved-capacity-overview.md
+    - name: Вычисления и хранение
+      items:
+        - name: Обзор
+          href: database/service-tiers-general-purpose-business-critical.md
+          displayName: provisioned compute tier
+        - name: '"Общего назначения" (цен. категория "Стандартный")'
+          href: database/service-tier-general-purpose.md
+        - name: '"Критически важный для бизнеса" (цен. категория "Премиум")'
+          href: database/service-tier-business-critical.md
+    - name: Общие понятия
+      itemS:
+        - name: Сравнение возможностей
+          href: database/features-comparison.md
+        - name: Функции с несколькими моделями
+          href: multi-model-features.md
+        - name: Выполняющаяся в памяти OLTP
+          href: in-memory-oltp-overview.md
+        - name: Темпоральные таблицы
+          href: temporal-tables.md
+        - name: Увеличение и уменьшение масштаба
+          href: database/scale-resources.md
+        - name: Горизонтальное масштабирование для чтения
+          href: database/read-scale-out.md
+        - name: Безопасность
+          items:
+            - name: Обзор
+              href: database/security-overview.md
+              displayName: 'compliance, fedramp, soc, fact, fisc, hitrust, pci, iso'
+            - name: Рекомендации
+              href: database/security-best-practice.md
+            - name: Базовые средства безопасности
+              href: database/security-baseline.md
+            - name: Атрибуты безопасности
+              href: database/security-controls.md
+            - name: Расширенная защита данных
+              href: database/advanced-data-security.md
+            - name: Расширенная защита от угроз
+              href: database/threat-detection-overview.md
+            - name: Обнаружение и классификация данных
+              href: database/data-discovery-and-classification-overview.md
+            - name: Динамическое маскирование данных
+              href: database/dynamic-data-masking-overview.md
+            - name: Оценка уязвимостей SQL
+              items:
+                - name: Оценка уязвимостей SQL
+                  href: database/sql-vulnerability-assessment.md
+                - name: Правила оценки уязвимостей
+                  href: database/sql-database-vulnerability-assessment-rules.md
+            - name: 'Имена для входа, учетные записи пользователей, роли и разрешения'
+              href: database/logins-create-manage.md
+            - name: Аутентификация Azure AD
+              href: database/authentication-aad-overview.md
+              items:
+                - name: "Настройка аутентификации Azure\_AD"
+                  href: database/authentication-aad-configure.md
+                - name: Многофакторная проверка подлинности с помощью AAD
+                  href: database/authentication-mfa-ssms-overview.md
+                - name: Настройка многофакторной проверки подлинности
+                  href: database/authentication-mfa-ssms-configure.md
+                - name: Условный доступ
+                  href: database/conditional-access-configure.md
+            - name: Прозрачное шифрование данных (TDE)
+              items:
+                - name: Обзор
+                  href: database/transparent-data-encryption-tde-overview.md
+                - name: Создание собственных ключей (BYOK)
+                  href: database/transparent-data-encryption-byok-overview.md
+        - name: Непрерывность бизнес-процессов
+          displayName: 'Backup, back up, restore, recovery'
+          items:
+            - name: Обзор
+              href: database/business-continuity-high-availability-disaster-recover-hadr-overview.md
+            - name: Высокий уровень доступности
+              href: database/high-availability-sla.md
+            - name: Группы автоматической отработки отказа
+              href: database/auto-failover-group-overview.md
+            - name: Резервное копирование и восстановление
+              items:
+                - name: Автоматическое резервное копирование
+                  href: database/automated-backups-overview.md
+                - name: Ускоренное восстановление базы данных
+                  href: accelerated-database-recovery.md
+                - name: Восстановление с использованием резервных копий
+                  href: database/recovery-using-backups.md
+                - name: Долгосрочное хранение резервных копий
+                  href: database/long-term-retention-overview.md
+        - name: Мониторинг и настройка
+          items:
+            - name: Документация
+              href: database/monitoring-tuning-index.yml
+            - name: Обзор
+              href: database/monitor-tune-overview.md
+            - name: Intelligent Insights
+              href: database/intelligent-insights-overview.md
+            - name: Аналитика SQL
+              href: /azure/log-analytics/log-analytics-azure-sql?toc=/azure/azure-sql/toc.json
+            - name: Автоматическая настройка
+              href: database/automatic-tuning-overview.md
+            - name: Выполняющаяся в памяти OLTP
+              href: in-memory-oltp-overview.md
+            - name: Расширенные события
+              items:
+                - name: Расширенные события
+                  href: database/xevent-db-diff-from-svr.md
+                - name: 'Расширенные события: файл события'
+                  href: database/xevent-code-event-file.md
+                - name: 'Расширенные события: кольцевой буфер'
+                  href: database/xevent-code-ring-buffer.md
+    - name: Общие практические инструкции
+      items:
+        - name: Запрос на увеличение квоты
+          href: database/quota-increase-request.md
+        - name: Автоматизация заданий
+          href: database/job-automation-overview.md
+        - name: Непрерывность бизнес-процессов
+          items:
+            - name: Настройка группы отработки отказа
+              href: database/auto-failover-group-configure.md
+            - name: Настройка политики временного хранения
+              href: database/temporal-tables-retention-policy.md
+            - name: Настройка политик хранения резервных копий с помощью хранилища BLOB-объектов Azure
+              href: database/long-term-backup-retention-configure.md
+        - name: Безопасность
+          items:
+            - name: Настройка BYOK для TDE
+              href: database/transparent-data-encryption-byok-configure.md
+            - name: Хранение результатов проверок уязвимостей в хранилище
+              href: database/sql-database-vulnerability-assessment-storage.md
+            - name: Always Encrypted
+              items:
+                - name: Использование Azure Key Vault
+                  href: database/always-encrypted-azure-key-vault-configure.md
+                - name: Использование хранилища сертификатов
+                  href: database/always-encrypted-certificate-store-configure.md
+        - name: Мониторинг и настройка
+          items:
+            - name: Выявление проблем с производительностью запросов
+              href: identify-query-performance-issues.md
+            - name: Пакетная обработка для повышения производительности
+              href: performance-improve-use-batching.md
+            - name: Загрузка данных с помощью BCP
+              href: load-from-csv-with-bcp.md
+            - name: Руководство по настройке приложений и баз данных
+              href: database/performance-guidance.md
+            - name: Использование динамических административных представлений для мониторинга производительности
+              href: database/monitoring-with-dmvs.md
+            - name: Ведение журналов диагностических данных телеметрии
+              href: database/metrics-diagnostic-telemetry-logging-streaming-export-configure.md
+            - name: Выполняющаяся в памяти OLTP
+              items:
+                - name: Настройка выполняющейся в памяти OLTP
+                  href: in-memory-oltp-configure.md
+                - name: 'Изучение компонентов, выполняющихся в памяти'
+                  href: in-memory-sample.md
+                - name: Мониторинг используемого пространства в хранилище выполняющейся в памяти OLTP
+                  href: in-memory-oltp-monitor-space.md
+        - name: Загрузка и перемещение данных
+          items:
+            - name: Импорт базы данных из BACPAC-файла
+              href: database/database-import.md
+            - name: Экспорт базы данных в BACPAC-файл
+              href: database/database-export.md
+            - name: Перемещение ресурсов в новый регион
+              href: database/move-resources-across-regions.md
+            - name: Загрузка данных с помощью ADF
+              href: ../data-factory/connector-azure-sql-database.md?toc=/azure/azure-sql/toc.json
+        - name: Разработка приложений для работы с данными
+          items:
+            - name: Обзор
+              href: database/develop-overview.md
+            - name: Работа с данными JSON
+              href: database/json-features.md
+            - name: Использование соединителя Spark
+              href: database/spark-connector.md
+            - name: Использование Службы приложений ASP.NET
+              href: /azure/app-service/app-service-web-tutorial-dotnet-sqldatabase?toc=/azure/azure-sql/toc.json
+            - name: Использование Функций Azure
+              href: /azure/azure-functions/functions-scenario-database-table-cleanup?toc=/azure/azure-sql/toc.json
+            - name: Использование Azure Logic Apps
+              href: /azure/connectors/connectors-create-api-sqlazure?toc=/azure/azure-sql/toc.json
+            - name: Индексирование с помощью службы "Когнитивный поиск Azure"
+              href: /azure/search/search-howto-connecting-azure-sql-database-to-azure-search-using-indexers?toc=/azure/azure-sql/toc.json
+            - name: Интеграция со средой CLR (.NET) на стороне сервера
+              href: 'https://docs.microsoft.com/sql/relational-databases/clr-integration/common-language-runtime-integration-overview?toc=/azure/azure-sql/toc.json'
+            - name: Java
+              items:
+                - name: Использование JDBC Spring Data
+                  href: /java/azure/spring-framework/configure-spring-data-jdbc-with-azure-sql-server?toc=/azure/sql-database/toc.json
+                - name: Использование JPA Spring Data
+                  href: /java/azure/spring-framework/configure-spring-data-jpa-with-azure-sql-server?toc=/azure/sql-database/toc.json
+- name: База данных SQL (SQL DB)
+  items:
+    - name: Документация
+      href: database/index.yml
+    - name: Обзор
+      items:
+        - name: Что такое база данных SQL?
+          href: database/sql-database-paas-overview.md
+        - name: Новые возможности
+          href: database/doc-changes-updates-release-notes.md?&tabs=single-database
+        - name: Отдельные базы данных
+          href: database/single-database-overview.md
+        - name: Эластичные пулы
+          href: database/elastic-pool-overview.md
+        - name: "Логические серверы SQL\_Server"
+          href: database/logical-servers.md
+        - name: Уровни служб
+          items:
+            - name: Бессерверные приложения
+              href: database/serverless-tier-overview.md
+            - name: Общие сведения о модели DTU
+              href: database/service-tiers-dtu.md
+            - name: Уровень "Гипермасштабирование"
+              href: database/service-tier-hyperscale.md
+            - name: Часто задаваемые вопросы о гипермасштабировании
+              href: database/service-tier-hyperscale-frequently-asked-questions-faq.md
+            - name: "Переход с уровня \"Премиум\_RS\""
+              href: database/service-tiers-prs.md
+    - name: Краткие руководства
+      href: database/quickstart-content-reference-guide.md
+      items:
+        - name: Создание базы данных
+          items:
+            - name: Портал Azure
+              href: database/single-database-create-quickstart.md
+            - name: Шаблон ARM
+              displayName: Resource Manager
+              href: database/single-database-create-arm-template-quickstart.md
+        - name: Configure
+          items:
+            - name: Правила брандмауэра для IP-адресов на уровне сервера
+              href: database/firewall-create-server-level-portal-quickstart.md
+    - name: Учебники
+      items:
+        - name: Проектирование базы данных
+          items:
+            - name: Создание базы данных с помощью SSMS
+              href: database/design-first-database-tutorial.md
+            - name: Создание базы данных с помощью .NET
+              href: database/design-first-database-csharp-tutorial.md
+        - name: Непрерывность бизнес-процессов
+          items:
+            - name: Добавление базы данных в группу отработки отказа
+              href: database/failover-group-add-single-database-tutorial.md
+            - name: Добавление пула в группу отработки отказа
+              href: database/failover-group-add-elastic-pool-tutorial.md
+            - name: Настройка параметров безопасности для реплик
+              href: database/active-geo-replication-security-configure.md
+            - name: Географически распределенное приложение
+              href: database/geo-distributed-application-configure-tutorial.md
+            - name: Активная георепликация
+              href: database/active-geo-replication-configure-portal.md
+        - name: Безопасность
+          items:
+            - name: Настройка безопасности
+              href: database/secure-database-tutorial.md
+            - name: Смена ключей BYOK для TDE
+              href: database/transparent-data-encryption-byok-key-rotation.md
+            - name: Удаление предохранителя TDE
+              href: database/transparent-data-encryption-byok-remove-tde-protector.md
+        - name: Перенос данных
+          items:
+            - name: Миграция с помощью DMS
+              href: ../dms/tutorial-sql-server-to-azure-sql.md?toc=/azure/azure-sql/toc.json
+            - name: Настройка синхронизации данных SQL
+              href: database/sql-data-sync-sql-server-configure.md
+            - name: Перенос базы данных SQLite в бессерверную базу данных
+              href: database/migrate-sqlite-db-to-azure-sql-serverless-offline-tutorial.md
+    - name: Основные понятия
+      items:
+        - name: Архитектура подключения
+          href: database/connectivity-architecture.md
+        - name: Параметры подключения
+          href: database/connectivity-settings.md
+        - name: Отличия T-SQL
+          href: database/transact-sql-tsql-differences-sql-server.md
+        - name: Служба автоматизации Azure
+          href: database/automation-manage.md
+        - name: Эластичные запросы
+          href: database/elastic-query-overview.md
+        - name: Эластичные транзакции
+          href: database/elastic-transactions-overview.md
+        - name: Управление ресурсами
+          items:
+            - name: Ресурсы отдельной базы данных
+              items:
+                - name: Ограничения ресурсов для виртуальных ядер
+                  href: database/resource-limits-vcore-single-databases.md
+                - name: Ограничения ресурсов для DTU
+                  href: database/resource-limits-dtu-single-databases.md
+            - name: Ресурсы эластичного пула
+              items:
+                - name: Ограничения ресурсов для виртуальных ядер
+                  href: database/resource-limits-vcore-elastic-pools.md
+                - name: Ограничения ресурсов для DTU
+                  href: database/resource-limits-dtu-elastic-pools.md
+            - name: "Ресурсы логического сервера SQL\_Server"
+              items:
+                - name: Ограничения ресурсов базы данных
+                  href: database/resource-limits-logical-server.md
+        - name: Непрерывность бизнес-процессов
+          items:
+            - name: Активная георепликация
+              href: database/active-geo-replication-overview.md
+            - name: Инструкции по восстановлению после сбоя
+              href: database/disaster-recovery-guidance.md
+            - name: Упражнения по восстановлению
+              href: database/disaster-recovery-drills.md
+        - name: Синхронизация данных SQL
+          items:
+            - name: Обзор
+              href: database/sql-data-sync-data-sql-server-sql-database.md
+            - name: Data Sync Agent
+              href: database/sql-data-sync-agent-overview.md
+            - name: Рекомендации по Синхронизации данных
+              href: database/sql-data-sync-best-practices.md
+            - name: Устранение ошибок Синхронизации данных
+              href: database/sql-data-sync-troubleshoot.md
+        - name: Безопасность
+          items:
+            - name: Аудит Azure SQL
+              href: database/auditing-overview.md
+            - name: Формат журналов аудита
+              href: database/audit-log-format.md
+            - name: Средства контроля сетевого доступа
+              href: database/network-access-controls-overview.md
+            - name: Псевдонимы DNS
+              href: database/dns-alias-overview.md
+            - name: Конечные точки виртуальной сети
+              href: database/vnet-service-endpoint-rule-overview.md
+            - name: Приватный канал
+              href: database/private-endpoint-overview.md
+        - name: Сегментирование базы данных
+          items:
+            - name: Сегментирование базы данных
+              href: database/elastic-scale-introduction.md
+            - name: Глоссарий
+              href: database/elastic-scale-glossary.md
+            - name: Эластичная клиентская библиотека
+              href: database/elastic-database-client-library.md
+            - name: Карты сегментов
+              href: database/elastic-scale-shard-map-management.md
+            - name: Маршрутизация запросов
+              href: database/elastic-scale-data-dependent-routing.md
+            - name: Управление учетными данными
+              href: database/elastic-scale-manage-credentials.md
+            - name: Перемещение сегментированных данных
+              href: database/elastic-scale-overview-split-and-merge.md
+            - name: Часто задаваемые вопросы по инструментам эластичных баз данных
+              href: database/elastic-scale-faq.md
+    - name: Практическое руководство
+      href: database/how-to-content-reference-guide.md
+      items:
+        - name: Подключение и выполнение запросов
+          href: database/connect-query-content-reference-guide.md
+          items:
+            - name: Подключение и выполнение ad-hoc-запросов
+              items:
+                - name: Azure Data Studio
+                  href: /sql/azure-data-studio/quickstart-sql-database?toc=%2Fazure%2Fazure-sql%2Ftoc.json
+                - name: SSMS
+                  href: database/connect-query-ssms.md
+                - name: Портал Azure
+                  href: database/connect-query-portal.md
+                - name: VS Code
+                  href: database/connect-query-vscode.md
+            - name: Подключение и отправка запросов из приложений
+              items:
+                - name: .NET с Visual Studio
+                  href: database/connect-query-dotnet-visual-studio.md
+                - name: .NET Core
+                  href: database/connect-query-dotnet-core.md
+                - name: Использование .NET и многофакторной проверки подлинности в Active Directory
+                  href: database/active-directory-interactive-connect-azure-sql-db.md
+                - name: Go
+                  href: database/connect-query-go.md
+                - name: Java
+                  href: database/connect-query-java.md
+                - name: Node.js
+                  href: database/connect-query-nodejs.md
+                - name: PHP
+                  href: database/connect-query-php.md
+                - name: Python
+                  href: database/connect-query-python.md
+                - name: Ruby
+                  href: database/connect-query-ruby.md
+                - name: R
+                  href: database/connect-query-r.md
+        - name: Управление
+          items:
+            - name: Справочник по API управления
+              href: database/single-database-manage.md
+            - name: DNS-псевдоним в PowerShell
+              href: database/dns-alias-powershell-create.md
+            - name: Управление файловым пространством
+              href: database/file-space-manage.md
+            - name: Решение проблем с подключением с помощью службы "Работоспособность ресурсов"
+              href: database/resource-health-to-troubleshoot-connectivity.md
+            - name: Переход с DTU на виртуальное ядро
+              href: database/migrate-dtu-to-vcore.md
+            - name: Масштабирование ресурсов базы данных
+              href: database/single-database-scale.md
+            - name: Масштабирование ресурсов пула
+              href: database/elastic-pool-scale.md
+            - name: Управление ресурсами пула
+              href: database/elastic-pool-manage.md
+            - name: Управление ресурсами в сжатых эластичных пулах
+              href: database/elastic-pool-resource-management.md
+            - name: Диагностика производительности при гипермасштабировании
+              href: database/hyperscale-performance-diagnostics.md
+        - name: Безопасность
+          items:
+            - name: Запись результатов аудита в учетную запись хранения за брандмауэром или виртуальной сетью
+              href: database/audit-write-storage-account-behind-vnet-firewall.md
+            - name: Настройка обнаружения угроз
+              href: database/threat-detection-configure.md
+            - name: Настройка динамической маскировки данных
+              href: database/dynamic-data-masking-configure-portal.md
+            - name: Брандмауэр на основе IP-адресов
+              href: database/firewall-configure.md
+            - name: "Конечные точки виртуальной сети\_— PowerShell"
+              href: database/scripts/vnet-service-endpoint-rule-powershell-create.md
+        - name: Непрерывность бизнес-процессов
+          items:
+            - name: Настройка политик хранения резервных копий с помощью хранилища BLOB-объектов Azure
+              href: database/long-term-backup-retention-configure.md
+            - name: Настройка георепликации с помощью портала Azure
+              href: database/active-geo-replication-configure-portal.md
+            - name: Настройка параметров безопасности для георепликации
+              href: database/active-geo-replication-security-configure.md
+        - name: Производительность
+          items:
+            - name: Использование анализа производительности запросов
+              href: database/query-performance-insight-use.md
+            - name: Включение автоматической настройки
+              href: database/automatic-tuning-enable.md
+            - name: Включение уведомлений по электронной почте об автоматической настройке
+              href: database/automatic-tuning-email-notifications-configure.md
+            - name: Применение рекомендаций по повышению производительности
+              href: database/database-advisor-find-recommendations-portal.md
+            - name: Создание оповещений
+              href: database/alerts-insights-configure-portal.md
+            - name: Применение рекомендаций от Помощника по базам данных
+              href: database/database-advisor-implement-performance-recommendations.md
+            - name: Потоковая передача данных с помощью Stream Analytics
+              href: database/stream-data-stream-analytics-integration.md
+        - name: Загрузка и перемещение данных
+          items:
+            - name: Миграция в Базу данных SQL
+              href: database/migrate-to-database-from-sql-server.md
+            - name: Управление Базой данных SQL после переноса
+              href: database/manage-data-after-migrating-to-database.md
+            - name: Импорт и экспорт (доступ для служб Azure отключен)
+              href: database/database-import-export-azure-services-off.md
+            - name: Импорт базы данных из BACPAC-файла
+              href: database/database-import.md
+            - name: Копирование базы данных в пределах Azure
+              href: database/database-copy.md
+            - name: Репликация в Базу данных SQL
+              href: database/replication-to-sql-database.md
+            - name: Синхронизация данных SQL
+              items:
+                - name: Реплицировать изменения схемы
+                  href: database/sql-data-sync-update-sync-schema.md
+                - name: Мониторинг с помощью OMS
+                  href: database/sql-data-sync-monitor-sync.md
+        - name: Сегментирование базы данных
+          items:
+            - name: Обновление клиентской библиотеки
+              href: database/elastic-scale-upgrade-client-library.md
+            - name: Создание сегментированного приложения
+              href: database/elastic-scale-get-started.md
+            - name: Запрос горизонтально сегментированных данных
+              href: database/elastic-query-getting-started.md
+            - name: Запросы к нескольким сегментам
+              href: database/elastic-scale-multishard-querying.md
+            - name: Перемещение сегментированных данных
+              href: database/elastic-scale-configure-deploy-split-and-merge.md
+            - name: Конфигурация системы безопасности
+              href: database/elastic-scale-split-merge-security-configuration.md
+            - name: Добавление сегмента
+              href: database/elastic-scale-add-a-shard.md
+            - name: Устранение проблем с картой сегментов
+              href: database/elastic-database-recovery-manager.md
+            - name: Перенос сегментированной базы данных
+              href: database/elastic-convert-to-use-elastic-tools.md
+            - name: Создание счетчиков
+              href: database/elastic-database-perf-counters.md
+            - name: Использование Entity Framework
+              href: database/elastic-scale-use-entity-framework-applications-visual-studio.md
+            - name: Использование платформы Dapper
+              href: database/elastic-scale-working-with-dapper.md
+        - name: Запрашивание распределенных данных
+          items:
+            - name: Запрос вертикально секционированных данных
+              href: database/elastic-query-getting-started-vertical.md
+            - name: Отчеты по масштабируемым уровням данных
+              href: database/elastic-query-horizontal-partitioning.md
+            - name: Запрос к таблицам с разными схемами
+              href: database/elastic-query-vertical-partitioning.md
+        - name: Задания обработки эластичных БД
+          items:
+            - name: Настройка заданий
+              href: database/elastic-jobs-overview.md
+            - name: Создание и управление (Powershell)
+              href: database/elastic-jobs-powershell-create.md
+            - name: Создание управление (T-SQL)
+              href: database/elastic-jobs-tsql-create-manage.md
+            - name: Перенос данных (из старых заданий обработки эластичных БД)
+              href: database/elastic-jobs-migrate.md
+        - name: Разработка структуры приложений для работы с данными
+          items:
+            - name: Аутентификация приложения
+              href: database/application-authentication-get-client-id-keys.md
+            - name: Разработка для аварийного восстановления
+              href: database/designing-cloud-solutions-for-disaster-recovery.md
+            - name: Разработка для эластичных пулов
+              href: database/disaster-recovery-strategies-for-applications-with-elastic-pool.md
+            - name: Разработка для обновления приложений
+              href: database/manage-application-rolling-upgrade.md
+            - name: C и C++
+              href: database/develop-cplusplus-simple.md
+            - name: Excel
+              href: database/connect-excel.md
+            - name: 'Порты: ADO.NET'
+              href: database/adonet-v12-develop-direct-route-ports.md
+            - name: Мультитенантное приложение SaaS
+              items:
+                - name: Шаблоны проектирования SaaS
+                  href: database/saas-tenancy-app-design-patterns.md
+                - name: Индексатор видео SaaS
+                  href: database/saas-tenancy-video-index-wingtip-brk3120-20171011.md
+                - name: Безопасность приложений SaaS
+                  href: database/saas-tenancy-elastic-tools-multi-tenant-row-level-security.md
+                - name: Пример мультитенантного приложения SaaS
+                  items:
+                    - name: Пример приложения Wingtip Tickets
+                      href: database/saas-tenancy-welcome-wingtip-tickets-app.md
+                    - name: Общее руководство
+                      href: database/saas-tenancy-wingtip-app-guidance-tips.md
+                    - name: Отдельное приложение
+                      items:
+                        - name: Развертывание примера приложения
+                          href: database/saas-standaloneapp-get-started-deploy.md
+                        - name: Подготовка клиентов
+                          href: database/saas-standaloneapp-provision-and-catalog.md
+                    - name: Однотенантная база данных
+                      items:
+                        - name: Ознакомление с руководствами
+                          href: database/saas-dbpertenant-wingtip-app-overview.md
+                        - name: Развертывание примера приложения
+                          href: database/saas-dbpertenant-get-started-deploy.md
+                        - name: Подготовка клиентов
+                          href: database/saas-dbpertenant-provision-and-catalog.md
+                        - name: Мониторинг производительности базы данных
+                          href: database/saas-dbpertenant-performance-monitoring.md
+                        - name: Мониторинг с помощью журналов Azure Monitor
+                          href: database/saas-dbpertenant-log-analytics.md
+                        - name: Восстановление одного клиента
+                          href: database/saas-dbpertenant-restore-single-tenant.md
+                        - name: Управление схемой для нескольких клиентов
+                          href: database/saas-tenancy-schema-management.md
+                        - name: Отчеты по всем клиентам
+                          href: database/saas-tenancy-cross-tenant-reporting.md
+                        - name: Аналитика клиента
+                          items:
+                            - name: С помощью Базы данных SQL
+                              href: database/saas-tenancy-tenant-analytics.md
+                            - name: С помощью Хранилища данных SQL
+                              href: database/saas-tenancy-tenant-analytics-adf.md
+                    - name: Аварийное восстановление с использованием георепликации
+                      href: database/saas-dbpertenant-dr-geo-restore.md
+                    - name: Аварийное восстановление с использованием георепликации базы данных
+                      href: database/saas-dbpertenant-dr-geo-replication.md
+                - name: Мультитенантная база данных
+                  items:
+                    - name: Развертывание примера приложения
+                      href: database/saas-multitenantdb-get-started-deploy.md
+                    - name: Подготовка клиентов
+                      href: database/saas-multitenantdb-provision-and-catalog.md
+                    - name: Мониторинг производительности базы данных
+                      href: database/saas-multitenantdb-performance-monitoring.md
+                    - name: Выполнение ad-hoc-запросов
+                      href: database/saas-multitenantdb-adhoc-reporting.md
+                    - name: Управление схемой для нескольких клиентов
+                      href: database/saas-multitenantdb-schema-management.md
+                    - name: 'Извлечение, преобразование и загрузка для анализа'
+                      href: database/saas-multitenantdb-tenant-analytics.md
+    - name: Примеры
+      items:
+        - name: Azure CLI
+          href: database/az-cli-script-samples-content-guide.md?tabs=single-database
+        - name: Azure PowerShell
+          href: database/powershell-script-content-guide.md?tabs=single-database
+        - name: Azure Resource Manager
+          href: database/arm-templates-content-guide.md?tabs=single-database
+        - name: Встроенные компоненты Политики Azure
+          displayName: 'samples, policies, definitions'
+          href: ./database/policy-samples.md
+        - name: Примеры кода
+          href: 'https://azure.microsoft.com/resources/samples/?service=sql-database'
+- name: Управляемый экземпляр SQL (SQL MI)
+  items:
+    - name: Документация
+      href: managed-instance/index.yml
+    - name: Обзор
+      items:
+        - name: Что такое Управляемый экземпляр SQL?
+          href: managed-instance/sql-managed-instance-paas-overview.md
+        - name: Новые возможности
+          href: database/doc-changes-updates-release-notes.md?&tabs=managed-instance
+        - name: Пулы экземпляров
+          href: managed-instance/instance-pools-overview.md
+        - name: Часто задаваемые вопросы
+          displayName: faq
+          href: managed-instance/frequently-asked-questions-faq.md
+    - name: Краткие руководства
+      href: managed-instance/quickstart-content-reference-guide.md
+      items:
+        - name: Создание Управляемого экземпляра
+          items:
+            - name: Портал Azure
+              href: managed-instance/instance-create-quickstart.md
+            - name: PowerShell
+              href: managed-instance/scripts/create-configure-managed-instance-powershell.md
+            - name: Шаблон ARM
+              displayName: Resource Manager
+              href: managed-instance/create-template-quickstart.md
+            - name: Создание пулов экземпляров
+              href: managed-instance/instance-pools-configure.md
+        - name: Configure
+          items:
+            - name: Автоматизированное управление конфигурацией подсети в службе
+              href: managed-instance/subnet-service-aided-configuration-enable.md
+            - name: Общедоступная конечная точка
+              href: managed-instance/public-endpoint-configure.md
+            - name: Минимальная версия TLS
+              href: managed-instance/minimal-tls-version-configure.md
+            - name: Подключение клиентской виртуальной машины
+              href: managed-instance/connect-vm-instance-configure.md
+            - name: Подключение типа "точка — сеть"
+              href: managed-instance/point-to-site-p2s-configure.md
+            - name: Долгосрочное хранение резервных копий
+              href: managed-instance/long-term-backup-retention-configure.md
+        - name: Загрузка данных
+          items:
+            - name: Восстановление примера базы данных
+              href: managed-instance/restore-sample-database-quickstart.md
+    - name: Учебники
+      items:
+        - name: Миграция с помощью DMS
+          href: ../dms/tutorial-sql-server-to-managed-instance.md?toc=/azure/azure-sql/toc.json
+        - name: Настройка безопасности
+          href: managed-instance/aad-security-configure-tutorial.md
+        - name: Добавление экземпляра в группу отработки отказа
+          href: managed-instance/failover-group-add-instance-tutorial.md
+        - name: Перенос локальных пользователей и групп
+          href: managed-instance/migrate-sql-server-users-to-instance-transact-sql-tsql-tutorial.md
+        - name: Репликация транзакций
+          items:
+            - name: Репликация из издателя MI в подписчик MI
+              href: managed-instance/replication-between-two-instances-configure-tutorial.md
+            - name: 'Издатель MI, дистрибьютор MI, подписчик SQL'
+              href: managed-instance/replication-two-instances-and-sql-server-configure-tutorial.md
+    - name: Основные понятия
+      items:
+        - name: Репликация транзакций
+          href: managed-instance/replication-transactional-overview.md
+        - name: Справочник по API управления
+          href: managed-instance/api-references-create-manage-instance.md
+        - name: Ограничения ресурсов
+          href: managed-instance/resource-limits.md
+        - name: Архитектура подключения
+          href: managed-instance/connectivity-architecture-overview.md
+        - name: Отличия T-SQL
+          href: managed-instance/transact-sql-tsql-differences-sql-server.md
+        - name: Служба машинного обучения
+          items:
+            - name: Обзор
+              href: managed-instance/machine-learning-services-overview.md
+            - name: Основные отличия
+              href: managed-instance/machine-learning-services-differences.md
+            - name: Краткие руководства
+              items:
+                - name: Python
+                  items:
+                    - name: Запустить сценарии Python
+                      href: 'https://docs.microsoft.com/sql/machine-learning/tutorials/quickstart-python-create-script?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                    - name: Структуры данных и объекты
+                      href: 'https://docs.microsoft.com/sql/machine-learning/tutorials/quickstart-python-data-structures?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                    - name: Функции Python
+                      href: 'https://docs.microsoft.com/sql/machine-learning/tutorials/quickstart-python-functions?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                    - name: Обучение и оценка модели
+                      href: 'https://docs.microsoft.com/sql/machine-learning/tutorials/quickstart-python-train-score-model?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                - name: R
+                  items:
+                    - name: Запуск сценариев R
+                      href: 'https://docs.microsoft.com/sql/machine-learning/tutorials/quickstart-r-create-script?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                    - name: Типы данных и объекты
+                      href: 'https://docs.microsoft.com/sql/machine-learning/tutorials/quickstart-r-data-types-and-objects?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                    - name: Функции R
+                      href: 'https://docs.microsoft.com/sql/machine-learning/tutorials/quickstart-r-functions?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                    - name: Обучение и оценка модели
+                      href: 'https://docs.microsoft.com/sql/machine-learning/tutorials/quickstart-r-train-score-model?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+            - name: Учебники
+              items:
+                - name: Python
+                  items:
+                    - name: Прокат лыж (линейная регрессия)
+                      items:
+                        - name: 1. Введение
+                          href: 'https://docs.microsoft.com/sql/machine-learning/tutorials/python-ski-rental-linear-regression?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                        - name: 2. Подготовка данных
+                          href: 'https://docs.microsoft.com/sql/machine-learning/tutorials/python-ski-rental-linear-regression-prepare-data?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                        - name: 3. Обучение модели
+                          href: 'https://docs.microsoft.com/sql/machine-learning/tutorials/python-ski-rental-linear-regression-train-model?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                        - name: 4. Развертывание модели
+                          href: 'https://docs.microsoft.com/sql/machine-learning/tutorials/python-ski-rental-linear-regression-deploy-model?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                    - name: Категоризация клиентов (кластеризация методом k-средних)
+                      items:
+                        - name: 1. Введение
+                          href: 'https://docs.microsoft.com/sql/machine-learning/tutorials/python-clustering-model?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                        - name: 2. Подготовка данных
+                          href: 'https://docs.microsoft.com/sql/machine-learning/tutorials/python-clustering-model-prepare-data?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                        - name: 3. Создание модели
+                          href: 'https://docs.microsoft.com/sql/machine-learning/tutorials/python-clustering-model-build?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                        - name: 4. Развертывание модели
+                          href: 'https://docs.microsoft.com/sql/machine-learning/tutorials/python-clustering-model-deploy?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                - name: R
+                  items:
+                    - name: Прокат лыж (дерево принятия решений)
+                      items:
+                        - name: 1. Введение
+                          href: 'https://docs.microsoft.com/sql/machine-learning/tutorials/r-predictive-model-introduction?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                        - name: 2. Подготовка данных
+                          href: 'https://docs.microsoft.com/sql/machine-learning/tutorials/r-predictive-model-prepare-data?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                        - name: 3. Обучение модели
+                          href: 'https://docs.microsoft.com/sql/machine-learning/tutorials/r-predictive-model-train?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                        - name: 4. Развертывание модели
+                          href: 'https://docs.microsoft.com/sql/machine-learning/tutorials/r-predictive-model-deploy?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                    - name: Категоризация клиентов (кластеризация методом k-средних)
+                      items:
+                        - name: 1. Введение
+                          href: 'https://docs.microsoft.com/sql/machine-learning/tutorials/r-clustering-model-introduction?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                        - name: 2. Подготовка данных
+                          href: 'https://docs.microsoft.com/sql/machine-learning/tutorials/r-clustering-model-prepare-data?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                        - name: 3. Создание модели
+                          href: 'https://docs.microsoft.com/sql/machine-learning/tutorials/r-clustering-model-build?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                        - name: 4. Развертывание модели
+                          href: 'https://docs.microsoft.com/sql/machine-learning/tutorials/r-clustering-model-deploy?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+            - name: 'Управление Python, пакеты R'
+              items:
+                - name: Python
+                  items:
+                    - name: Получение сведений о пакете Python
+                      href: 'https://docs.microsoft.com/sql/machine-learning/package-management/python-package-information?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                    - name: Установка с sqlmlutils
+                      href: 'https://docs.microsoft.com/sql/machine-learning/package-management/install-additional-python-packages-on-sql-server?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                - name: R
+                  items:
+                    - name: Получение сведений о пакете R
+                      href: 'https://docs.microsoft.com/sql/machine-learning/package-management/r-package-information?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                    - name: Установка с sqlmlutils
+                      href: 'https://docs.microsoft.com/sql/machine-learning/package-management/install-additional-r-packages-on-sql-server?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                    - name: Создание репозитория miniCRAN
+                      href: 'https://docs.microsoft.com/sql/machine-learning/package-management/create-a-local-package-repository-using-minicran?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+                    - name: Советы по использованию пакетов R
+                      href: 'https://docs.microsoft.com/sql/machine-learning/package-management/tips-for-using-r-packages?context=/azure/azure-sql/managed-instance/context/ml-context&view=azuresqldb-mi-current'
+        - name: Компоненты
+          items:
+            - name: Связанные серверы
+              href: 'https://docs.microsoft.com/sql/relational-databases/linked-servers/linked-servers-database-engine?toc=/azure/azure-sql/toc.json'
+            - name: Компонент Service Broker
+              href: 'https://docs.microsoft.com/sql/database-engine/configure-windows/sql-server-service-broker?toc=/azure/azure-sql/toc.json'
+            - name: Компонент Database Mail
+              href: 'https://docs.microsoft.com/sql/relational-databases/database-mail/database-mail?toc=/azure/azure-sql/toc.json'
+        - name: Безопасность
+          items:
+            - name: Обеспечение безопасности общедоступных конечных точек
+              href: managed-instance/public-endpoint-overview.md
+            - name: Аудит
+              href: managed-instance/auditing-configure.md
+    - name: Практическое руководство
+      items:
+        - name: Обзор
+          href: managed-instance/how-to-content-reference-guide.md
+        - name: Миграция в Управляемый экземпляр SQL
+          href: managed-instance/migrate-to-instance-from-sql-server.md
+        - name: Настройка часового пояса
+          href: managed-instance/timezones-overview.md
+        - name: Настройка типов подключения
+          href: managed-instance/connection-types-overview.md
+        - name: Перенос сертификатов TDE
+          href: managed-instance/tde-certificate-migrate.md
+        - name: Восстановление до точки во времени
+          href: managed-instance/point-in-time-restore.md
+        - name: Определение размера подсети для управляемого экземпляра
+          href: managed-instance/vnet-subnet-determine-size.md
+        - name: Создание виртуальной сети и подсети для управляемого экземпляра
+          href: managed-instance/virtual-network-subnet-create-arm-template.md
+        - name: Настройка существующей виртуальной сети и подсети для управляемого экземпляра
+          href: managed-instance/vnet-existing-add-subnet.md
+        - name: Удаление подсети после удаления управляемого экземпляра
+          href: managed-instance/virtual-cluster-delete.md
+        - name: Настройка пользовательской службы DNS
+          href: managed-instance/custom-dns-configure.md
+        - name: Синхронизация конфигурации сети
+          href: managed-instance/azure-app-sync-network-configuration.md
+        - name: Определение IP-адреса конечной точки управления
+          href: managed-instance/management-endpoint-find-ip-address.md
+        - name: Проверка встроенного брандмауэра для защиты
+          href: managed-instance/management-endpoint-verify-built-in-firewall.md
+        - name: Настройка обнаружения угроз
+          href: managed-instance/threat-detection-configure.md
+        - name: Подключение приложений
+          href: managed-instance/connect-application-instance.md
+        - name: Создание оповещений
+          href: managed-instance/alerts-create.md
+    - name: Примеры
+      items:
+        - name: Azure CLI
+          href: database/az-cli-script-samples-content-guide.md?tabs=managed-instance
+        - name: Azure PowerShell
+          href: database/powershell-script-content-guide.md?tabs=managed-instance
+        - name: Azure Resource Manager
+          href: database/arm-templates-content-guide.md?tabs=managed-instance
+        - name: Встроенные компоненты Политики Azure
+          displayName: 'samples, policies, definitions'
+          href: ./database/policy-samples.md
+        - name: Примеры кода
+          href: 'https://azure.microsoft.com/resources/samples/?service=sql-database'
+- name: "SQL\_Server на виртуальной машине Azure"
+  items:
+    - name: Документация
+      href: virtual-machines/index.yml
+    - name: Windows
+      items:
+        - name: Обзор
+          items:
+            - name: "Общие сведения о виртуальной машине SQL\_Server"
+              href: virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md
+            - name: Новые возможности
+              href: virtual-machines/windows/doc-changes-updates-release-notes.md
+        - name: Краткие руководства
+          items:
+            - name: Создание виртуальной машины SQL
+              items: null
+            - name: Портал
+              href: virtual-machines/windows/sql-vm-create-portal-quickstart.md
+            - name: PowerShell
+              href: virtual-machines/windows/sql-vm-create-powershell-quickstart.md
+            - name: Шаблон ARM
+              href: virtual-machines/windows/create-sql-vm-resource-manager-template.md
+        - name: Основные понятия
+          items:
+            - name: Непрерывность бизнес-процессов
+              items:
+                - name: Обзор
+                  href: virtual-machines/windows/business-continuity-high-availability-disaster-recovery-hadr-overview.md
+                - name: Резервное копирование и восстановление
+                  href: virtual-machines/windows/backup-restore.md
+                - name: Резервное копирование с помощью службы хранилища Azure
+                  href: virtual-machines/windows/azure-storage-sql-server-backup-restore-use.md
+                - name: Группа доступности AlwaysOn
+                  href: virtual-machines/windows/availability-group-overview.md
+                - name: Экземпляр отказоустойчивого кластера
+                  href: virtual-machines/windows/failover-cluster-instance-overview.md
+            - name: Рекомендации
+              items:
+                - name: Производительность
+                  href: virtual-machines/windows/performance-guidelines-best-practices.md
+                - name: Безопасность
+                  href: virtual-machines/windows/security-considerations-best-practices.md
+                - name: Конфигурация кластера
+                  href: virtual-machines/windows/hadr-cluster-best-practices.md
+                - name: Шаблоны приложений
+                  href: virtual-machines/windows/application-patterns-development-strategies.md
+            - name: Управление
+              items:
+                - name: Выделенный узел
+                  href: virtual-machines/windows/dedicated-host.md
+                - name: Расширенная поддержка SQL 2008 и R2
+                  href: virtual-machines/windows/sql-server-2008-extend-end-of-support.md
+        - name: Практические руководства
+          items:
+            - name: Подключение к виртуальной машине SQL Server
+              href: virtual-machines/windows/ways-to-connect-to-sql.md
+            - name: Создание виртуальной машины SQL Server
+              items:
+                - name: Использование портала
+                  href: virtual-machines/windows/create-sql-vm-portal.md
+                - name: Использование Azure PowerShell
+                  href: virtual-machines/windows/create-sql-vm-powershell.md
+            - name: Управление
+              items:
+                - name: С помощью портала Azure
+                  href: virtual-machines/windows/manage-sql-vm-portal.md
+                - name: Модель лицензирования
+                  displayName: 'ahb, ahub, payg, change, modify, update'
+                  href: virtual-machines/windows/licensing-model-azure-hybrid-benefit-ahb-change.md
+                - name: Выпуск
+                  displayName: 'change, modify, update'
+                  href: virtual-machines/windows/change-sql-server-edition.md
+                - name: Память
+                  href: virtual-machines/windows/storage-configuration.md
+                - name: Интеграция с Azure Key Vault
+                  href: virtual-machines/windows/azure-key-vault-integration-configure.md
+                - name: Миграция хранилища в SSD (цен. категория "Ультра")
+                  href: virtual-machines/windows/storage-migrate-to-ultradisk.md
+                - name: Регистрация через поставщика ресурсов виртуальной машины SQL
+                  displayName: 'resource provider, registration'
+                  items:
+                    - name: Одиночная виртуальная машина
+                      href: virtual-machines/windows/sql-vm-resource-provider-register.md
+                    - name: Массовая регистрация нескольких виртуальных машин
+                      href: virtual-machines/windows/sql-vm-resource-provider-bulk-register.md
+                - name: Автоматизация задач управления
+                  items:
+                    - name: "Использование расширения агента IaaS для SQL\_Server"
+                      href: virtual-machines/windows/sql-server-iaas-agent-extension-automate-management.md
+                    - name: Автоматическое исправление
+                      href: virtual-machines/windows/automated-patching.md
+            - name: Миграция
+              items:
+                - name: Перенос базы данных SQL Server на виртуальную машину
+                  href: virtual-machines/windows/migrate-to-vm-from-sql-server.md
+                - name: Перемещение виртуальной машины в другой регион
+                  href: virtual-machines/windows/move-sql-vm-different-region.md
+            - name: Непрерывность бизнес-процессов
+              items:
+                - name: Резервное копирование и восстановление
+                  items:
+                    - name: "Автоматическое резервное копирование (SQL\_2016+)"
+                      href: virtual-machines/windows/automated-backup.md
+                    - name: "Автоматическое резервное копирование (SQL\_2014+)"
+                      href: virtual-machines/windows/automated-backup-sql-2014.md
+                - name: Группа доступности AlwaysOn
+                  items:
+                    - name: Использование CLI виртуальной машины SQL в Azure
+                      href: virtual-machines/windows/availability-group-az-cli-configure.md
+                    - name: Шаблоны быстрого запуска Azure
+                      href: virtual-machines/windows/availability-group-quickstart-template-configure.md
+                    - name: Различные регионы
+                      href: virtual-machines/windows/availability-group-manually-configure-multiple-regions.md
+                    - name: Независимые от домена (рабочая группа)
+                      href: virtual-machines/windows/availability-group-clusterless-workgroup-configure.md
+                    - name: Настройка вручную
+                      items:
+                        - name: Предварительные требования
+                          href: virtual-machines/windows/availability-group-manually-configure-prerequisites-tutorial.md
+                        - name: Учебник
+                          href: virtual-machines/windows/availability-group-manually-configure-tutorial.md
+                        - name: "Подсистема балансировки нагрузки\_— портал Azure"
+                          href: virtual-machines/windows/availability-group-load-balancer-portal-configure.md
+                        - name: "Подсистема балансировки нагрузки\_— Azure PowerShell"
+                          href: virtual-machines/windows/availability-group-listener-powershell-configure.md
+                - name: Экземпляр отказоустойчивого кластера (FCI)
+                  items:
+                    - name: Подготовка виртуальной машины к FCI
+                      href: virtual-machines/windows/failover-cluster-instance-prepare-vm.md
+                    - name: Создание FCI с помощью указанных ниже средств
+                      items:
+                        - name: "Общие диски Azure (SQL\_2019+)"
+                          href: virtual-machines/windows/failover-cluster-instance-azure-shared-disks-manually-configure.md
+                        - name: Локальные дисковые пространства (Win2016+)
+                          href: virtual-machines/windows/failover-cluster-instance-storage-spaces-direct-manually-configure.md
+                        - name: Общая папка ценовой категории "Премиум" (Win2012+)
+                          href: virtual-machines/windows/failover-cluster-instance-premium-file-share-manually-configure.md
+                    - name: Имя распределенной сети (DNN)
+                      items:
+                        - name: Создание DNN для FCI
+                          href: virtual-machines/windows/hadr-distributed-network-name-dnn-configure.md
+                        - name: "Функции DNN и SQL\_Server для FCI"
+                          href: virtual-machines/windows/failover-cluster-instance-dnn-interoperability.md
+                - name: Настройка подключения
+                  items:
+                    - name: Имя виртуальной сети (VNN)
+                      href: virtual-machines/windows/hadr-vnn-azure-load-balancer-configure.md
+        - name: Справочник
+          items:
+            - name: Azure PowerShell
+              href: /powershell/azure/overview
+            - name: Azure CLI
+              href: /cli/azure/
+            - name: T-SQL
+              href: 'https://docs.microsoft.com/sql/t-sql/language-reference'
+            - name: Драйверы SQL Server
+              href: 'https://docs.microsoft.com/sql/connect/sql-connection-libraries'
+            - name: REST
+              href: /rest/api/
+        - name: Ресурсы
+          items:
+            - name: ВОПРОСЫ И ОТВЕТЫ
+              href: virtual-machines/windows/frequently-asked-questions-faq.md
+            - name: Цены
+              href: virtual-machines/windows/pricing-guidance.md
+            - name: SQL Server Data Tools (SSDT)
+              href: '/https://docs.microsoft.com/sql/ssdt/download-sql-server-data-tools-ssdt'
+            - name: SQL Server Management Studio (SSMS)
+              href: 'https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms'
+            - name: Средства SQL Server
+              href: 'https://docs.microsoft.com/sql/tools/overview-sql-tools'
+            - name: Стратегия развития Azure
+              href: 'https://azure.microsoft.com/roadmap/?category=compute'
+            - name: Форум MSDN
+              href: 'https://social.msdn.microsoft.com/Forums/en-US/home?forum=WAVirtualMachinesforWindows&filter=alltypes&brandIgnore=True&sort=relevancedesc&searchTerm=SQL+Server'
+            - name: Stack Overflow
+              href: 'https://stackoverflow.com/search?q=%5Bazure-virtual-machine%5D+sql+server'
+    - name: Linux
+      items:
+        - name: Обзор
+          items:
+            - name: "Сведения о виртуальных машинах SQL\_Server на базе Linux"
+              href: virtual-machines/linux/sql-server-on-linux-vm-what-is-iaas-overview.md
+        - name: Краткие руководства
+          items:
+            - name: "Создание виртуальной машины SQL\_— портал"
+              href: virtual-machines/linux/sql-vm-create-portal-quickstart.md
+        - name: Учебники
+          items:
+            - name: Настройка в Azure групп доступности на виртуальных машинах RHEL с использованием STONITH
+              href: virtual-machines/linux/rhel-high-availability-stonith-tutorial.md
+            - name: настройке прослушивателя группы доступности для SQL Server на виртуальных машинах RHEL в Azure
+              href: virtual-machines/linux/rhel-high-availability-listener-tutorial.md
+        - name: Ресурсы
+          items:
+            - name: ВОПРОСЫ И ОТВЕТЫ
+              href: virtual-machines/linux/frequently-asked-questions-faq.md
+            - name: "Документация по SQL\_Server в Linux"
+              href: 'https://docs.microsoft.com/sql/linux/sql-server-linux-overview'
+            - name: SQL Server Data Tools (SSDT)
+              href: 'https://docs.microsoft.com/sql/ssdt/download-sql-server-data-tools-ssdt'
+            - name: Средства SQL Server
+              href: 'https://docs.microsoft.com/sql/tools/overview-sql-tools'
+            - name: Стратегия развития Azure
+              href: 'https://azure.microsoft.com/roadmap/?category=compute'
+            - name: Stack Overflow
+              href: 'https://stackoverflow.com/search?q=%5Bazure-virtual-machine%5D+sql+server'
+- name: Справочник
+  items:
+    - name: Справочник по языку T-SQL
+      href: /sql/t-sql/language-reference
+    - name: Azure CLI
+      href: /cli/azure/sql
+    - name: Azure PowerShell
+      href: /powershell/module/az.sql
+    - name: .NET
+      href: /dotnet/api/microsoft.azure.management.sql.models
+    - name: Java
+      href: /java/api/com.microsoft.azure.management.sql
+    - name: REST
+      href: /rest/api/sql/
+    - name: Шаблоны Resource Manager для SQL
+      displayName: ARM
+      href: /azure/templates/microsoft.sql/allversions
+    - name: Средства SQL
+      href: /sql/tools/overview-sql-tools
+    - name: SQL Server Management Studio (SSMS)
+      href: /sql/ssms/download-sql-server-management-studio-ssms
+    - name: SQL Server Data Tools (SSDT)
+      href: /sql/ssdt/download-sql-server-data-tools-ssdt
+    - name: BCP
+      href: /sql/tools/bcp-utility
+    - name: SQLCMD
+      href: /sql/tools/sqlcmd-utility
+    - name: SqlPackage
+      href: 'https://docs.microsoft.com/sql/tools/sqlpackage?toc=/azure/azure-sql/toc.json'
+    - name: Пакет библиотеки управления Базой данных SQL
+      href: 'https://www.nuget.org/packages/Microsoft.Azure.Management.Sql'
+    - name: Драйверы SQL-подключения
+      href: /sql/connect/sql-connection-libraries
+    - name: Драйверы SQL Server
+      href: /sql/connect/sql-server-drivers
+      items:
+        - name: ADO.NET
+          href: /sql/connect/ado-net/microsoft-ado-net-sql-server?view=sql-server-ver15
+        - name: JDBC
+          href: /sql/connect/jdbc/microsoft-jdbc-driver-for-sql-server
+        - name: Node.js
+          href: /sql/connect/node-js/node-js-driver-for-sql-server
+        - name: ODBC
+          href: /sql/connect/odbc/microsoft-odbc-driver-for-sql-server
+        - name: PHP
+          href: /sql/connect/php/microsoft-php-driver-for-sql-server
+        - name: Python
+          href: /sql/connect/python/python-driver-for-sql-server
+        - name: Ruby
+          href: /sql/connect/ruby/ruby-driver-for-sql-server
+- name: Ресурсы
+  items:
+    - name: Развитие навыков с помощью Microsoft Learn
+      href: /learn/browse/?products=azure-sql-database
+    - name: Блог по SQL Server
+      href: 'https://cloudblogs.microsoft.com/sqlserver/?product=azure-sql-database'
+    - name: Блог Microsoft Azure
+      href: 'https://azure.microsoft.com/blog/'
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/'
+    - name: Открытые наборы данных
+      href: public-data-sets.md
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/sql-database/'
+    - name: Форум MSDN
+      href: 'https://social.msdn.microsoft.com/Forums/home?forum=ssdsgetstarted'
+    - name: Stack Overflow
+      href: 'https://stackoverflow.com/questions/tagged/sql-azure'
+    - name: Диагностика
+      items:
+        - name: Ошибки подключения.
+          href: database/troubleshoot-common-errors-issues.md
+        - name: Распространенные неполадки с подключением
+          href: database/troubleshoot-common-connectivity-issues.md
+        - name: Служба импорта и экспорта не отвечает на запросы
+          href: database/database-import-export-hang.md
+    - name: Обновления службы
+      items:
+        - name: Обновления IP-адреса шлюза
+          href: database/gateway-migration.md
+        - name: События периодического обслуживания
+          href: database/planned-maintenance.md
+    - name: Видео
+      href: 'https://azure.microsoft.com/documentation/videos/index/?services=sql-database'
+    - name: Обновления службы
+      href: 'https://azure.microsoft.com/updates/?service=sql-database'
+    - name: Центр архитектуры
+      href: /azure/architecture/
+    - name: Истории клиентов
+      href: 'https://customers.microsoft.com/en-us/search?sq=%22Azure%20SQL%20Database%22&ff=&p=0&so=story_publish_date%20desc'

@@ -2,13 +2,13 @@
 title: Подключить секретный том к группе контейнеров
 description: Узнайте, как подключить том secret для хранения конфиденциальной информации, чтобы обеспечить доступ экземплярам контейнеров
 ms.topic: article
-ms.date: 04/03/2020
-ms.openlocfilehash: 756828e71174246450245938595c8872afc62961
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 07/02/2020
+ms.openlocfilehash: ea82ba5994feaf102d4622eada284df431e004d0
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80657149"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86169567"
 ---
 # <a name="mount-a-secret-volume-in-azure-container-instances"></a>Подключение тома secret в службе "Экземпляры контейнеров Azure"
 
@@ -22,7 +22,7 @@ ms.locfileid: "80657149"
 
 ## <a name="mount-secret-volume---azure-cli"></a>Подключение тома secret в Azure CLI
 
-Чтобы развернуть контейнер с одним или несколькими секретами с помощью Azure CLI, добавьте параметры `--secrets` и `--secrets-mount-path` в команду [az container create][az-container-create]. В `/mnt/secrets`этом примере размонтируется *секретный* том, состоящий из двух файлов, содержащих секреты "mysecret1" и "mysecret2":
+Чтобы развернуть контейнер с одним или несколькими секретами с помощью Azure CLI, добавьте параметры `--secrets` и `--secrets-mount-path` в команду [az container create][az-container-create]. В этом примере размонтируется *секретный* том, состоящий из двух файлов, содержащих секреты "mysecret1" и "mysecret2" `/mnt/secrets` :
 
 ```azurecli-interactive
 az container create \
@@ -62,7 +62,7 @@ Bye.
 Следующий шаблон YAML определяет группу контейнеров с одним контейнером, где том *secret* подключается к `/mnt/secrets`. Секретный том содержит два файла, содержащие секреты "mysecret1" и "mysecret2".
 
 ```yaml
-apiVersion: '2018-10-01'
+apiVersion: '2019-12-01'
 location: eastus
 name: secret-volume-demo
 properties:
@@ -112,7 +112,7 @@ az container create \
 <!-- https://github.com/Azure/azure-docs-json-samples/blob/master/container-instances/aci-deploy-volume-secret.json -->
 [!code-json[volume-secret](~/azure-docs-json-samples/container-instances/aci-deploy-volume-secret.json)]
 
-Чтобы выполнить развертывание с помощью шаблона диспетчер ресурсов, сохраните предыдущий JSON в файл с именем `deploy-aci.json`, а затем выполните команду [AZ Deploy Group Create][az-deployment-group-create] с `--template-file` параметром:
+Чтобы выполнить развертывание с помощью шаблона диспетчер ресурсов, сохраните предыдущий JSON в файл с именем `deploy-aci.json` , а затем выполните команду [AZ Deploy Group Create][az-deployment-group-create] с `--template-file` параметром:
 
 ```azurecli-interactive
 # Deploy with Resource Manager template
@@ -121,7 +121,7 @@ az deployment group create \
   --template-file deploy-aci.json
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 ### <a name="volumes"></a>Тома
 

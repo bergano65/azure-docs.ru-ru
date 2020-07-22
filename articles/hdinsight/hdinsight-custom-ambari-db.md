@@ -5,21 +5,21 @@ author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
-ms.topic: conceptual
-ms.date: 10/29/2019
+ms.topic: how-to
+ms.date: 06/24/2019
 ms.author: hrasheed
-ms.openlocfilehash: e7351e2f39c7e4eed84f4a47e3eeb2214a062a94
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 1858e06567a0ab0907e6d2cb60358ff4ac00f9a2
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80240154"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86086353"
 ---
 # <a name="set-up-hdinsight-clusters-with-a-custom-ambari-db"></a>Настройка кластеров HDInsight с помощью настраиваемой базы данных Ambari DB
 
 Apache Ambari упрощает управление и мониторинг кластера Apache Hadoop. Ambari предоставляет простой в использовании пользовательский веб-интерфейс и REST API. Ambari входит в кластеры HDInsight и используется для мониторинга кластера и внесения изменений в конфигурацию.
 
-При нормальном создании кластера, как описано в других статьях, таких как [Настройка кластеров в hdinsight](hdinsight-hadoop-provision-linux-clusters.md), Ambari развертывается в [базе данных SQL Azure S0](../sql-database/sql-database-dtu-resource-limits-single-databases.md#standard-service-tier) , управляемой HDInsight и недоступной пользователям.
+При нормальном создании кластера, как описано в других статьях, таких как [Настройка кластеров в hdinsight](hdinsight-hadoop-provision-linux-clusters.md), Ambari развертывается в [базе данных SQL Azure S0](../azure-sql/database/resource-limits-dtu-single-databases.md#standard-service-tier) , управляемой HDInsight и недоступной пользователям.
 
 Функция Custom Ambari DB позволяет развернуть новый кластер и настроить Ambari во внешней управляемой базе данных. Развертывание выполняется с помощью шаблона Azure Resource Manager. Эта функция имеет следующие преимущества.
 
@@ -38,16 +38,17 @@ Apache Ambari упрощает управление и мониторинг кл
 
 Пользовательская база данных Ambari DB имеет следующие другие требования:
 
+- Имя базы данных не может содержать дефисы и пробелы
 - Необходимо иметь существующий сервер и базу данных SQL Azure.
 - База данных, предоставляемая для установки Ambari, должна быть пустой. В схеме dbo по умолчанию не должно быть таблиц.
 - Пользователь, используемый для подключения к базе данных, должен иметь разрешения SELECT, CREATE TABLE и INSERT для базы данных.
-- Включите параметр, чтобы [Разрешить доступ к службам Azure](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md#azure-portal-steps) на сервере SQL Azure, где будет размещаться Ambari.
-- IP-адреса управления из службы HDInsight должны быть разрешены в SQL Server. Список IP-адресов, которые необходимо добавить в брандмауэр SQL Server, см. в разделе [IP-адреса управления HDInsight](hdinsight-management-ip-addresses.md) .
+- Включите параметр, чтобы [Разрешить доступ к службам Azure](../azure-sql/database/vnet-service-endpoint-rule-overview.md#azure-portal-steps) на сервере, где будет размещаться Ambari.
+- IP-адреса управления из службы HDInsight должны быть разрешены в правиле брандмауэра. Список IP-адресов, которые необходимо добавить в правило брандмауэра уровня сервера, см. в разделе [IP-адреса управления HDInsight](hdinsight-management-ip-addresses.md) .
 
 При размещении Apache Ambari DB во внешней базе данных учитывайте следующие моменты.
 
 - Вы несете ответственность за дополнительные затраты на базу данных SQL Azure, которая содержит Ambari.
-- Периодически создавайте резервную копию пользовательской базы данных Ambari DB. База данных SQL Azure автоматически создает резервные копии, но срок хранения резервной копии изменяется. Дополнительные сведения см. в статье [Подробнее об автоматическом резервном копировании базы данных SQL](../sql-database/sql-database-automated-backups.md).
+- Периодически создавайте резервную копию пользовательской базы данных Ambari DB. База данных SQL Azure автоматически создает резервные копии, но срок хранения резервной копии изменяется. Дополнительные сведения см. в статье [Подробнее об автоматическом резервном копировании базы данных SQL](../azure-sql/database/automated-backups-overview.md).
 
 ## <a name="deploy-clusters-with-a-custom-ambari-db"></a>Развертывание кластеров с помощью настраиваемой базы данных Ambari DB
 
@@ -64,6 +65,6 @@ az group deployment create --name HDInsightAmbariDBDeployment \
     --parameters azuredeploy.parameters.json
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - [Использование внешних хранилищ метаданных в Azure HDInsight](hdinsight-use-external-metadata-stores.md)

@@ -10,15 +10,15 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: tutorial
-ms.date: 03/26/2020
+ms.date: 07/09/2020
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: b7864d89cc14a1473fd43e94bfe74c368bcb391d
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: 2ab87990981f08164bb47cef9eaa1876514f1ad6
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80349482"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86202831"
 ---
 # <a name="tutorial-analyze-videos-with-media-services-v3"></a>Руководство по Анализ видео с помощью Служб мультимедиа версии 3
 
@@ -44,7 +44,7 @@ ms.locfileid: "80349482"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Вы можете скачать [Visual Studio Community 2017](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15) бесплатно, если у вас нет Visual Studio.
+- Если у вас нет Visual Studio, скачайте и установите [Visual Studio Community 2019](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15).
 - [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md).<br/>Запишите значения, которые вы использовали в качестве имени группы ресурсов и имени учетной записи Служб мультимедиа.
 - Выполните действия, описанные в статье [Доступ к API Служб мультимедиа Azure с помощью Azure CLI](access-api-cli-how-to.md), и сохраните учетные данные. Эти данные понадобятся для доступа к API.
 
@@ -148,7 +148,7 @@ ms.locfileid: "80349482"
 
 ### <a name="clean-up-resource-in-your-media-services-account"></a>Очистка ресурсов в учетной записи служб мультимедиа
 
-Как правило, необходимо очистить все, кроме объектов, которые планируется использовать повторно. Обычно повторно используются Transforms и сохраненные StreamingLocators. Если учетную запись требуется очистить после эксперимента, удалите ресурсы, которые не планируется использовать повторно. Например, следующий код удаляет задания.
+Как правило, необходимо очистить все, кроме объектов, которые планируется использовать повторно. Обычно повторно используются Transforms и сохраненные StreamingLocators. Если учетную запись требуется очистить после эксперимента, удалите ресурсы, которые не планируется использовать повторно. Удалить задание и выходной ресурс можно с помощью следующего кода:
 
 [!code-csharp[Main](../../../media-services-v3-dotnet-tutorials/AMSV3Tutorials/AnalyzeVideos/Program.cs#CleanUp)]
 

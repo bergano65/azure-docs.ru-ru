@@ -1,20 +1,21 @@
 ---
-title: Обучение и развертывание модели обучения c подкреплением.
+title: Обучение и развертывание модели обучения подкреплением (Предварительная версия).
 titleSuffix: Azure Machine Learning
-description: Сведения об использовании обучения с подкреплением (ОП) в Машинном обучении Azure для обучения агента ОП игре в Pong.
+description: Узнайте, как использовать Машинное обучение Azure подкреплением Learning (Предварительная версия) для обучения агента RL для воспроизведения Теннисов.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: how-to
 ms.author: peterlu
 author: peterclu
 ms.date: 05/05/2020
-ms.openlocfilehash: 01e7e6c84be13db839338928f8086bcceb2ea169
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.custom: tracking-python
+ms.openlocfilehash: b918369f68c3b0047213c24f1d4666fd0593cf30
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83654421"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86203280"
 ---
 # <a name="reinforcement-learning-preview-with-azure-machine-learning"></a>Обучение с подкреплением (предварительная версия) в Машинном обучении Azure
 

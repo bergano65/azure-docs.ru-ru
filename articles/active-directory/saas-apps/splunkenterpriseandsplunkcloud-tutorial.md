@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с приложениями Splunk Enterprise и Splunk Cloud | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с приложением Splunk Enterprise and Splunk Cloud | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Splunk Enterprise и Splunk Cloud.
 services: active-directory
 documentationCenter: na
@@ -23,7 +23,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 04/29/2020
 ms.locfileid: "81867310"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-splunk-enterprise-and-splunk-cloud"></a>Руководство. Интеграция Azure Active Directory с приложениями Splunk Enterprise и Splunk Cloud
+# <a name="tutorial-azure-active-directory-integration-with-splunk-enterprise-and-splunk-cloud"></a>Руководство по Интеграция Azure Active Directory с приложением Splunk Enterprise and Splunk Cloud
 
 В этом руководстве описано, как интегрировать Splunk Enterprise и Splunk Cloud с Azure Active Directory (Azure AD).
 Интеграция Splunk Enterprise и Splunk Cloud с Azure AD обеспечивает следующие преимущества:
@@ -35,11 +35,11 @@ ms.locfileid: "81867310"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложениями Splunk Enterprise и Splunk Cloud, вам потребуется следующее:
 
-* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
 * Подписка Splunk Enterprise and Splunk Cloud с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -100,7 +100,7 @@ ms.locfileid: "81867310"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 

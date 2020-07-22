@@ -1,22 +1,22 @@
 ---
-title: Краткое руководство. Создание рабочей области
-description: Создайте рабочую область Azure Synapse Analytics, выполнив действия, описанные в этом руководстве.
+title: Краткое руководство. Создание рабочей области Synapse
+description: Создайте рабочую область Synapse, выполнив действия, описанные в этом руководстве.
 services: synapse-analytics
-author: malvenko
+author: pimorano
 ms.service: synapse-analytics
 ms.topic: quickstart
 ms.subservice: ''
 ms.date: 04/15/2020
-ms.author: josels
+ms.author: pimorano
 ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: 49bd251b7f76a844a0d3fd1b1a09f7e15c5e7ddb
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
+ms.openlocfilehash: a069ee40c2db99b05e9620cf83c06c49cc9e29fc
+ms.sourcegitcommit: 0b2367b4a9171cac4a706ae9f516e108e25db30c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82792213"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86274243"
 ---
-# <a name="quickstart-create-an-azure-synapse-analytics-workspace-preview"></a>Краткое руководство. Создание рабочей области Azure Synapse Analytics (предварительная версия)
+# <a name="quickstart-create-a-synapse-workspace"></a>Краткое руководство. Создание рабочей области Synapse
 
 В этом кратком руководстве описаны действия по созданию рабочей области Azure Synapse с помощью портала Azure.
 
@@ -47,7 +47,7 @@ ms.locfileid: "82792213"
     | **Data Lake Storage 2-го поколения** | Учетная запись —`storage account name`. </br> Файловая система —`root file system to use`. | Указывает имя учетной записи хранения ADLS 2-го поколения для использования в качестве основного хранилища, а также используемую файловую систему.|
     ||||
 
-    ![Поток подготовки рабочей области: вкладка "Основные сведения"](media/quickstart-create-synapse-workspace/create-workspace-03.png).
+    ![Поток подготовки рабочей области: вкладка "Основные сведения"](media/quickstart-create-synapse-workspace/create-workspace-03.png)
 
     Учетная запись хранения можно указать такими способами:
     - выбрать в списке учетных записей ADLS 2-го поколения, доступных в вашей подписке;
@@ -60,8 +60,8 @@ ms.locfileid: "82792213"
 
 4. (Необязательно) Измените параметры по умолчанию на вкладке **Security + networking** (Безопасность и сеть).
 5. (Необязательно) Добавьте теги на вкладке **Теги**.
-6. На вкладке **Сводка** будут выполнены необходимые проверки возможности создания рабочей области. После завершения проверки нажмите кнопку **Создать**. ![Поток подготовки рабочей области: вкладка подтверждения](media/quickstart-create-synapse-workspace/create-workspace-05.png)
-7. После успешного завершения подготовки ресурсов вы увидите запись для созданной рабочей области в списке рабочих областей Synapse. ![Список рабочих областей Synapse с новой подготовленной рабочей областью](media/quickstart-create-synapse-workspace/create-workspace-07.png).
+6. На вкладке **Сводка** будут выполнены необходимые проверки возможности создания рабочей области. После завершения проверки нажмите кнопку **Создать**. ![Процедура подготовки рабочей области: вкладка подтверждения](media/quickstart-create-synapse-workspace/create-workspace-05.png)
+7. После успешного завершения подготовки ресурсов вы увидите запись для созданной рабочей области в списке рабочих областей Synapse. ![Список рабочих областей Synapse с новой подготовленной рабочей областью](media/quickstart-create-synapse-workspace/create-workspace-07.png)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -82,4 +82,4 @@ ms.locfileid: "82792213"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь можно создать пулы [SQL](quickstart-create-sql-pool.md) или [Apache Spark](quickstart-create-apache-spark-pool.md), чтобы начать анализ и изучение данных.
+Теперь можно создать пулы [SQL](quickstart-create-sql-pool-studio.md) или [Apache Spark](quickstart-create-apache-spark-pool-studio.md), чтобы начать анализ и изучение данных.

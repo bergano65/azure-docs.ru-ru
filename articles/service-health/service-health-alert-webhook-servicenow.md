@@ -3,12 +3,12 @@ title: Отправка оповещений о работоспособност
 description: Передача в экземпляр ServiceNow персонализированных уведомлений о событиях работоспособности служб.
 ms.topic: conceptual
 ms.date: 06/10/2019
-ms.openlocfilehash: 3daae05aabff571010d043cf5602847e95ea29f0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 96c181991fc962b08e777a55d891b881fc1bdba3
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77654109"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86519083"
 ---
 # <a name="send-azure-service-health-alerts-with-servicenow-using-webhooks"></a>Отправка оповещений о работоспособности службы Azure в ServiceNow с помощью веб-перехватчиков
 
@@ -140,17 +140,18 @@ ms.locfileid: "77654109"
      ![Базовый путь к API в ServiceNow](./media/webhook-alerts/servicenow-base-api-path.png)
 
 1.  Полный URL-адрес интеграции выглядит следующим образом.
-        
-         https://<yourInstanceName>.service-now.com/<baseApiPath>?apiKey=<secret>
 
+    ```http
+    https://<yourInstanceName>.service-now.com/<baseApiPath>?apiKey=<secret>
+    ```
 
 ## <a name="create-an-alert-using-servicenow-in-the-azure-portal"></a>Создание предупреждения для ServiceNow на портале Azure
 ### <a name="for-a-new-action-group"></a>Для новой группы действий сделайте следующее.
-1. Выполните шаги с 1 по 8, описанные [в этой статье](../azure-monitor/platform/alerts-activity-log-service-notifications.md), чтобы создать предупреждение в новой группе действий.
+1. Выполните шаги с 1 по 8, описанные [в этой статье](./alerts-activity-log-service-notifications-portal.md), чтобы создать предупреждение в новой группе действий.
 
 1. В списке **Действия** определите следующие сведения.
 
-    a. **Тип действия: ** *Веб-перехватчик*.
+    а. **Тип действия: ** *Веб-перехватчик*.
 
     b. **Подробности.****URL-адрес интеграции** для ServiceNow, который вы сохранили ранее.
 
@@ -159,7 +160,7 @@ ms.locfileid: "77654109"
 1. Завершив создание оповещения, нажмите кнопку **Сохранить**.
 
 ### <a name="for-an-existing-action-group"></a>Для существующей группы действий сделайте следующее.
-1. На [портале Azure](https://portal.azure.com/) выберите **Монитор**.
+1. В [портал Azure](https://portal.azure.com/)выберите **мониторинг**.
 
 1. В разделе **Параметры** выберите **Группы действий**.
 
@@ -167,7 +168,7 @@ ms.locfileid: "77654109"
 
 1. В список **Действия** добавьте следующие сведения.
 
-    a. **Тип действия: ** *Веб-перехватчик*.
+    а. **Тип действия: ** *Веб-перехватчик*.
 
     b. **Подробности.****URL-адрес интеграции** для ServiceNow, который вы сохранили ранее.
 
@@ -191,8 +192,8 @@ ms.locfileid: "77654109"
 
 1. Откройте [ServiceNow](https://www.servicenow.com/) и убедитесь, что интеграция настроена успешно.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Узнайте, как [настроить уведомления веб-перехватчика для существующих систем управления проблемами](service-health-alert-webhook-guide.md).
 - Ознакомьтесь со [схемой веб-перехватчика оповещений журнала действий](../azure-monitor/platform/activity-log-alerts-webhook.md). 
-- Сведения об [уведомлениях о работоспособности служб](../azure-monitor/platform/service-notifications.md).
-- Дополнительные сведения о [группах действий](../azure-monitor/platform/action-groups.md).
+- Дополнительные сведения об уведомлениях о работоспособности службы см. в [этой статье](./service-notifications.md).
+- Дополнительные сведения о группах действий см. в статье [Создание групп действий и управление ими на портале Azure](../azure-monitor/platform/action-groups.md).

@@ -11,6 +11,8 @@
       href: virtual-machines-availability-set-supportability.md
 - name: Руководство по развертыванию виртуальных машин
   items:
+    - name: Обновление до SLES 15 с пакетом обновления 1 (SP1)
+      href: linux-upgrade-suse-15sp1.md
     - name: Новые развертывания виртуальных машин
       items:
         - name: Linux
@@ -67,6 +69,8 @@
       items:
         - name: Диагностика загрузки
           href: boot-diagnostics.md
+        - name: "Ошибка загрузки\_— произошла ошибка чтения с диска"
+          href: boot-error-disk-read-error-occurred.md
         - name: Ошибки BitLocker
           href: troubleshoot-bitlocker-boot-error.md
         - name: Ошибки "синий экран"
@@ -87,6 +91,8 @@
           href: troubleshoot-reboot-loop.md
         - name: Зависание при запуске обновления Windows
           href: troubleshoot-stuck-updating-boot-error.md
+        - name: Непредвиденная перезагрузка или ошибка
+          href: troubleshoot-unexpected-restart-error-during-vm-boot.md
         - name: Зависание виртуальной машины при запуске
           href: troubleshoot-vm-boot-configure-update.md
         - name: Не удается загрузить виртуальную машину из-за диспетчера загрузки Windows
@@ -95,6 +101,10 @@
           href: unresponsive-vm-apply-windows-update.md
         - name: При применении групповой политики виртуальная машина не отвечает
           href: unresponsive-vm-apply-group-policy.md
+        - name: При применении политики безопасности виртуальная машина не отвечает
+          href: unresponsive-vm-apply-security-policy.md
+        - name: 'STOP-ошибка Windows "Status No Memory" (Состояние: недостаточно памяти)'
+          href: troubleshoot-windows-stop-error.md
 - name: Не удается подключиться к виртуальной машине
   items:
     - name: RDP
@@ -190,6 +200,8 @@
       href: storage-resource-deletion-errors.md
     - name: Ошибки при удалении ресурсов классического хранилища
       href: storage-classic-cannot-delete-storage-account-container-vhd.md
+    - name: VHD не поддерживается при создании виртуальной машины в Azure
+      href: vhd-not-supported-vm-azure.md
     - name: Использование вложенной виртуализации
       href: troubleshoot-vm-by-use-nested-virtualization.md
 - name: Проблемы с производительностью виртуальной машины

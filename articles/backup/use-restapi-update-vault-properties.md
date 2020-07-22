@@ -4,12 +4,12 @@ description: Из этой статьи вы узнаете, как обнови
 ms.topic: conceptual
 ms.date: 12/06/2019
 ms.assetid: 9aafa5a0-1e57-4644-bf79-97124db27aa2
-ms.openlocfilehash: 4c604fe067e73f5f9a17f4b5f810708121cff767
-ms.sourcegitcommit: 3beb067d5dc3d8895971b1bc18304e004b8a19b3
+ms.openlocfilehash: 1f0fee505443b15ba2ea97710efc220ef05df738
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82744567"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86513121"
 ---
 # <a name="update-azure-recovery-services-vault-configurations-using-rest-api"></a>Обновление конфигураций хранилища служб восстановления Azure с помощью REST API
 
@@ -21,11 +21,11 @@ ms.locfileid: "82744567"
 
 Но существуют сценарии, в которых эта возможность не требуется. Хранилище служб восстановления Azure не может быть удалено, если в нем есть элементы резервного копирования, даже обратимо удаленные. Это может привести к проблеме, если необходимо немедленно удалить хранилище. Например: операции развертывания часто удаляют созданные ресурсы в том же рабочем процессе. Развертывание может создать хранилище, настроить резервное копирование для элемента, выполнить тестовое восстановление и перейти к удалению архивных элементов и хранилища. В случае сбоя удаления хранилища может произойти сбой всего развертывания. Отключение обратимого удаления является единственным способом гарантировать немедленное удаление.
 
-Таким образом, клиенту необходимо тщательно выбрать, следует ли отключить обратимое удаление для определенного хранилища в зависимости от сценария. Дополнительные сведения см. в [статье об обратимом удалении](backup-azure-security-feature-cloud.md).
+Поэтому необходимо тщательно выбирать, следует ли отключить обратимое удаление для определенного хранилища в зависимости от сценария. Дополнительные сведения см. в [статье об обратимом удалении](backup-azure-security-feature-cloud.md).
 
 ### <a name="fetch-soft-delete-state-using-rest-api"></a>Получение состояния обратимого удаления с помощью REST API
 
-По умолчанию состояние обратимого удаления будет включено для всех вновь создаваемых хранилищ служб восстановления. Чтобы получить или обновить состояние обратимого удаления для хранилища, используйте [REST API документ](https://docs.microsoft.com/rest/api/backup/backupresourcevaultconfigs) , связанный с конфигурацией резервного хранилища.
+По умолчанию состояние обратимого удаления будет включено для всех вновь создаваемых хранилищ служб восстановления. Чтобы получить или обновить состояние обратимого удаления для хранилища, используйте [REST API документ](/rest/api/backup/backupresourcevaultconfigs) , связанный с конфигурацией резервного хранилища.
 
 Чтобы получить текущее состояние обратимого удаления для хранилища, используйте следующую операцию *Get* .
 
@@ -33,7 +33,7 @@ ms.locfileid: "82744567"
 GET https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupconfig/vaultconfig?api-version=2019-05-13
 ```
 
-URI Get имеет `{subscriptionId}`параметры, `{vaultName}`, `{vaultresourceGroupName}` , и. В этом примере `{vaultName}` — "testvault задано", а `{vaultresourceGroupName}` — "тестваултрг". Так как все необходимые параметры указаны в URI, текст запроса не требуется.
+URI Get имеет `{subscriptionId}` Параметры, `{vaultName}` ,, и `{vaultresourceGroupName}` . В этом примере `{vaultName}` — "testvault задано", а `{vaultresourceGroupName}` — "тестваултрг". Так как все необходимые параметры указаны в URI, текст запроса не требуется.
 
 ```http
 GET https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/testVaultRG/providers/Microsoft.RecoveryServices/vaults/testVault/backupconfig/vaultconfig?api-version=2019-05-13
@@ -43,9 +43,9 @@ GET https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
 
 Успешный ответ для операции GET показан ниже:
 
-|Название  |Type  |Описание  |
+|Название  |Тип  |Описание  |
 |---------|---------|---------|
-|200 ОК     |   [баккупресаурцеваултконфиг](https://docs.microsoft.com/rest/api/backup/backupresourcevaultconfigs/get#backupresourcevaultconfigresource)      | OK        |
+|200 ОК     |   [баккупресаурцеваултконфиг](/rest/api/backup/backupresourcevaultconfigs/get#backupresourcevaultconfigresource)      | ОК        |
 
 ##### <a name="example-response"></a>Пример ответа
 
@@ -71,7 +71,7 @@ GET https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
 PATCH https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupconfig/vaultconfig?api-version=2019-05-13
 ```
 
-URI исправления имеет `{subscriptionId}`параметры, `{vaultName}`, `{vaultresourceGroupName}` и. В этом примере `{vaultName}` — "testvault задано", а `{vaultresourceGroupName}` — "тестваултрг". Если заменить URI приведенными выше значениями, URI будет выглядеть следующим образом.
+URI исправления имеет `{subscriptionId}` Параметры, `{vaultName}` , и `{vaultresourceGroupName}` . В этом примере `{vaultName}` — "testvault задано", а `{vaultresourceGroupName}` — "тестваултрг". Если заменить URI приведенными выше значениями, URI будет выглядеть следующим образом.
 
 ```http
 PATCH https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/testVaultRG/providers/Microsoft.RecoveryServices/vaults/testVault/backupconfig/vaultconfig?api-version=2019-05-13
@@ -81,13 +81,13 @@ PATCH https://management.azure.com/Subscriptions/00000000-0000-0000-0000-0000000
 
 Для создания текста запроса используются следующие общие определения.
 
-Дополнительные сведения см. [в документации по REST API](https://docs.microsoft.com/rest/api/backup/backupresourcevaultconfigs/update#request-body)
+Дополнительные сведения см. [в документации по REST API](/rest/api/backup/backupresourcevaultconfigs/update#request-body)
 
-|Название  |Обязательно  |Type  |Описание  |
+|Имя  |Обязательно  |Тип  |Описание  |
 |---------|---------|---------|---------|
 |eTag     |         |   Строка      |  Необязательный eTag       |
 |location     |  true       |Строка         |   Расположение ресурса      |
-|properties     |         | [VaultProperties](https://docs.microsoft.com/rest/api/recoveryservices/vaults/createorupdate#vaultproperties)        |  Свойства хранилища       |
+|properties     |         | [VaultProperties](/rest/api/recoveryservices/vaults/createorupdate#vaultproperties)        |  Свойства хранилища       |
 |tags     |         | Объект        |     Теги ресурсов    |
 
 #### <a name="example-request-body"></a>Примеры текста запроса
@@ -107,9 +107,9 @@ PATCH https://management.azure.com/Subscriptions/00000000-0000-0000-0000-0000000
 
 Успешный ответ для операции PATCH показан ниже:
 
-|Название  |Type  |Описание  |
+|Название  |Тип  |Описание  |
 |---------|---------|---------|
-|200 ОК     |   [баккупресаурцеваултконфиг](https://docs.microsoft.com/rest/api/backup/backupresourcevaultconfigs/get#backupresourcevaultconfigresource)      | OK        |
+|200 ОК     |   [баккупресаурцеваултконфиг](/rest/api/backup/backupresourcevaultconfigs/get#backupresourcevaultconfigresource)      | ОК        |
 
 ##### <a name="example-response"></a>Пример ответа
 

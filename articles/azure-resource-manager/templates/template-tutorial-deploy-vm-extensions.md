@@ -5,12 +5,12 @@ author: mumian
 ms.date: 04/23/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 06d948b44064f029e00a2ef089077e9b55246545
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: fb99babfd53b26874bed62183871d13ae0ae4baf
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82184968"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86120132"
 ---
 # <a name="tutorial-deploy-virtual-machine-extensions-with-arm-templates"></a>Руководство по развертыванию расширений виртуальных машин с помощью шаблонов Resource Manager
 
@@ -30,7 +30,7 @@ ms.locfileid: "82184968"
 
 Для работы с этой статьей необходимо иметь следующее.
 
-* Visual Studio Code с расширением средств Resource Manager. См. сведения об [использовании Visual Studio Code для создания шаблонов Resource Manager](use-vs-code-to-create-template.md).
+* Visual Studio Code с расширением средств Resource Manager. См. [Краткое руководство. Создание шаблонов Azure Resource Manager c помощью Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
 * Для повышения уровня безопасности используйте пароль, созданный для учетной записи администратора виртуальной машины. Ниже приведен пример создания пароля.
 
     ```console
@@ -102,7 +102,7 @@ Install-WindowsFeature -name Web-Server -IncludeManagementTools
 }
 ```
 
-Дополнительные сведения об определении этого ресурса см. в [справочнике по расширению](https://docs.microsoft.com/azure/templates/microsoft.compute/virtualmachines/extensions). Ниже приведены некоторые важные элементы.
+Дополнительные сведения об определении этого ресурса см. в [справочнике по расширению](/azure/templates/microsoft.compute/virtualmachines/extensions). Ниже приведены некоторые важные элементы.
 
 * **name**. Так как ресурс расширения является дочерним ресурсом объекта виртуальной машины, у имени должен быть префикс имени виртуальной машины. См. о [настройке имени и типа дочернего ресурса](child-resource-name-type.md).
 * **dependsOn**. Создайте ресурс расширения после создания виртуальной машины.

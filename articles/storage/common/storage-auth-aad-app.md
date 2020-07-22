@@ -6,16 +6,15 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 12/04/2019
+ms.date: 06/22/2020
 ms.author: tamram
 ms.subservice: common
 ms.custom: has-adal-ref
-ms.openlocfilehash: 0cda75469edaa183ed6553a431b9ad13b611db7d
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
-ms.translationtype: MT
+ms.openlocfilehash: ddb079051414168b125ce2e42e8badd55580f0c5
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83201073"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85212635"
 ---
 # <a name="acquire-a-token-from-azure-ad-for-authorizing-requests-from-a-client-application"></a>Получение маркера из Azure AD для авторизации запросов из клиентского приложения
 
@@ -58,7 +57,7 @@ ms.locfileid: "83201073"
 
     ![Снимок экрана, показывающий разрешения для хранилища](media/storage-auth-aad-app/registered-app-permissions-1.png)
 
-Панель **разрешений API** теперь показывает, что зарегистрированное приложение Azure AD имеет доступ как к Microsoft Graph, так и к хранилищу Azure. Разрешения предоставляются Microsoft Graph автоматически при первой регистрации приложения в Azure AD.
+Панель **разрешений API** теперь показывает, что зарегистрированное приложение Azure AD имеет доступ как к Microsoft Graph, так и к API-интерфейсам хранилища Azure. Разрешения Microsoft Graph предоставляются автоматически во время первой регистрации приложения в Azure AD.
 
 ![Снимок экрана с разрешениями на регистрацию приложения](media/storage-auth-aad-app/registered-app-permissions-2.png)
 
@@ -213,7 +212,7 @@ private AuthenticationProperties BuildAuthenticationPropertiesForIncrementalCons
 {
     AuthenticationProperties properties = new AuthenticationProperties();
 
-    // Set the scopes, including the scopes that ADAL.NET or MSAL.NET need for the Token cache.
+    // Set the scopes, including the scopes that MSAL.NET needs for the token cache.
     string[] additionalBuildInScopes = new string[] { "openid", "offline_access", "profile" };
     properties.SetParameter<ICollection<string>>(OpenIdConnectParameterNames.Scope,
                                                  scopes.Union(additionalBuildInScopes).ToList());
@@ -245,7 +244,7 @@ private AuthenticationProperties BuildAuthenticationPropertiesForIncrementalCons
 
 ### <a name="provide-values-in-the-settings-file"></a>Указание значений в файле параметров
 
-Затем обновите файл *appSettings. JSON* собственными значениями, как показано ниже.
+Затем обновите *appsettings.jsв* файле собственными значениями, как показано ниже.
 
 ```json
 {
@@ -284,8 +283,8 @@ CloudBlockBlob blob = new CloudBlockBlob(
 Чтобы запустить пример, может потребоваться настроить неявный поток предоставления для регистрации приложения. Выполните следующие действия.
 
 1. Перейдите к регистрации приложения в портал Azure.
-1. В разделе Управление выберите параметр **Проверка подлинности** .
-1. В разделе **Дополнительные параметры**в разделе **неявное предоставление** установите флажки, чтобы включить маркеры доступа и маркеры идентификации, как показано на следующем рисунке:
+1. В разделе **Управление** выберите параметр **Проверка подлинности** .
+1. В разделе **неявное предоставление** установите флажок, чтобы включить маркеры идентификации, как показано на следующем рисунке:
 
     ![Снимок экрана, показывающий, как включить параметры для неявного потока предоставления разрешений](media/storage-auth-aad-app/enable-implicit-grant-flow.png)
 
@@ -294,13 +293,13 @@ CloudBlockBlob blob = new CloudBlockBlob(
 При запуске образца может оказаться, что необходимо обновить URI перенаправления, указанный в регистрации приложения, чтобы использовать порт *localhost* , назначенный во время выполнения. Чтобы обновить URI перенаправления для использования назначенного порта, выполните следующие действия.
 
 1. Перейдите к регистрации приложения в портал Azure.
-1. В разделе Управление выберите параметр **Проверка подлинности** .
+1. В разделе **Управление** выберите параметр **Проверка подлинности** .
 1. В разделе **URI перенаправления**измените порт так, чтобы он совпадал с используемым образцом приложения, как показано на следующем рисунке:
 
     ![Снимок экрана, показывающий URI перенаправления для регистрации приложения](media/storage-auth-aad-app/redirect-uri.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- Дополнительные сведения о платформе Microsoft Identity см. в разделе [платформа Microsoft Identity](https://docs.microsoft.com/azure/active-directory/develop/).
-- Дополнительные сведения о ролях RBAC для службы хранилища Azure см. в статье [Управление правами доступа к данным хранилища с помощью RBAC](storage-auth-aad-rbac.md).
-- Дополнительные сведения об использовании управляемых удостоверений для ресурсов Azure в службе хранилища Azure см. в статье [Проверка подлинности доступа к BLOB-объектам и очередям с Azure Active Directory и управляемыми удостоверениями для ресурсов Azure](storage-auth-aad-msi.md).
+- [Платформа удостоверений Майкрософт](https://docs.microsoft.com/azure/active-directory/develop/)
+- [Управление правами доступа к данным хранилища с помощью RBAC](storage-auth-aad-rbac.md)
+- [Проверка подлинности доступа к BLOB-объектам и очередям с Azure Active Directory и управляемыми удостоверениями для ресурсов Azure](storage-auth-aad-msi.md)

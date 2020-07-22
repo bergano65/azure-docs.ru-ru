@@ -5,10 +5,9 @@ ms.topic: article
 ms.date: 04/15/2019
 ms.custom: mvc
 ms.openlocfilehash: f3f8693d1a9a12e7c35d126ab3e3ca53448e5e40
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74533664"
 ---
 # <a name="azure-container-instances-and-container-orchestrators"></a>Экземпляры контейнеров Azure и оркестраторы контейнеров
@@ -60,7 +59,7 @@ ms.locfileid: "74533664"
 
 Для дополнительных примеров расширения Kubernetes API в бессерверные платформы контейнеров см. проект [Virtual Kubelet](https://github.com/virtual-kubelet/virtual-kubelet).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Создайте свой первый контейнер с использованием службы "Экземпляры контейнеров Azure", используя [краткое руководство](container-instances-quickstart.md).
 

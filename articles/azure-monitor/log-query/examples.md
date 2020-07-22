@@ -7,10 +7,9 @@ author: bwren
 ms.author: bwren
 ms.date: 03/16/2020
 ms.openlocfilehash: 18cd74ac9298b7dd058de2b224f677ec0d8f2d64
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79480289"
 ---
 # <a name="azure-monitor-log-query-examples"></a>Примеры запроса журнала Azure Monitor
@@ -229,7 +228,7 @@ protection_data | join (heartbeat_data) on Computer, round_time
 ### <a name="count-security-events-by-activity-id"></a>Подсчет событий безопасности по идентификатору действия
 
 
-В этом примере используется фиксированная структура столбца **действия** \<: имя\>-\<\>идентификатора.
+В этом примере используется фиксированная структура столбца **Activity** : \<ID\> - \<Name\> .
 Он анализирует значение **Activity** и разделяет его на два новых столбца, а затем подсчитывает число вхождений для каждого значения **activityID**.
 
 ```Kusto
@@ -270,7 +269,7 @@ SecurityEvent
 ```
 
 ### <a name="parse-activity-name-and-id"></a>Анализ имени и идентификатора действия
-Два приведенных ниже примера зависят от фиксированной структуры столбца **действия** : \<имя\>-\<\>идентификатора. Первый пример с помощью оператора **parse** присваивает значения двум новым столбцам: **activityID** и **activityDesc**.
+Два приведенных ниже примера зависят от фиксированной структуры столбца **действия** : \<ID\> - \<Name\> . Первый пример с помощью оператора **parse** присваивает значения двум новым столбцам: **activityID** и **activityDesc**.
 
 ```Kusto
 SecurityEvent
@@ -375,11 +374,11 @@ suspicious_users_that_later_logged_in
 
 ## <a name="usage"></a>Использование
 
-Тип `Usage` данных можно использовать для отслеживания принимаемого объема данных по решению или типу данных. Существуют и другие способы изучения полученных томов данных по [компьютерам](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#data-volume-by-computer) или [подпискам Azure, группам ресурсов или ресурсам](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#data-volume-by-azure-resource-resource-group-or-subscription).
+`Usage`Тип данных можно использовать для отслеживания принимаемого объема данных по решению или типу данных. Существуют и другие способы изучения полученных томов данных по [компьютерам](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#data-volume-by-computer) или [подпискам Azure, группам ресурсов или ресурсам](https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#data-volume-by-azure-resource-resource-group-or-subscription).
 
 #### <a name="data-volume-by-solution"></a>объем данных для каждого решения;
 
-Запрос, используемый для просмотра объема оплачиваемых данных по решениям за последний месяц (за исключением последнего частичного дня):
+Запрос, используемый для просмотра объема оплачиваемых данных по решению за последний месяц (за исключением части последнего дня):
 
 ```kusto
 Usage 
@@ -389,11 +388,11 @@ Usage
 | summarize BillableDataGB = sum(Quantity) / 1000. by bin(StartTime, 1d), Solution | render barchart
 ```
 
-Обратите внимание, `where IsBillable = true` что предложение фильтрует типы данных от определенных решений, для которых не взимается плата за прием.  Кроме того, предложение `TimeGenerated` с имеет значение только для того, чтобы убедиться в том, что запрос в портал Azure будет выглядеть после истечения 24 часов по умолчанию. При использовании типа данных Usage `StartTime` и `EndTime` представляют временные периоды, для которых отображаются результаты. 
+Обратите внимание, что предложение `where IsBillable = true` отсеивает типы данных из определенных решений, для которых не взимается плата за прием данных.  Кроме того, предложение с `TimeGenerated` имеет значение только для того, чтобы убедиться в том, что запрос в портал Azure будет выглядеть после истечения 24 часов по умолчанию. При использовании типа данных об использовании `StartTime` и `EndTime` представляют временные периоды, для которых выводятся результаты. 
 
 #### <a name="data-volume-by-type"></a>Объем данных по типу
 
-Дополнительные сведения можно просмотреть, чтобы увидеть тенденции данных для типа данных:
+Вы можете изучить данные еще подробнее, чтобы найти тенденции для определенных типов данных, выполнив следующий запрос:
 
 ```kusto
 Usage 
@@ -403,7 +402,7 @@ Usage
 | summarize BillableDataGB = sum(Quantity) / 1000. by bin(StartTime, 1d), DataType | render barchart
 ```
 
-Чтобы просмотреть таблицу по решению и типу за прошлый месяц,
+Или чтобы просмотреть таблицу по решению и типу за прошлый месяц, выполните следующий запрос:
 
 ```kusto
 Usage 

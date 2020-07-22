@@ -1,20 +1,14 @@
 ---
 title: Краткое руководство по Azure. Создание концентратора событий с помощью портала Azure
 description: В этом кратком руководстве показано, как создать концентратор событий с помощью портала Azure и как затем отправлять и получать данные используя .NET Standard.
-services: event-hubs
-documentationcenter: ''
-author: spelluru
-ms.service: event-hubs
 ms.topic: quickstart
-ms.custom: mvc
-ms.date: 05/04/2020
-ms.author: spelluru
-ms.openlocfilehash: 7562dc9a70fc462cb9d623a5184fb672a7f7ca39
-ms.sourcegitcommit: 95269d1eae0f95d42d9de410f86e8e7b4fbbb049
+ms.date: 06/23/2020
+ms.openlocfilehash: 9ca71dbb1a82e3fd9fe241e197b0bcbbfec2dcb8
+ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83860262"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85323137"
 ---
 # <a name="quickstart-create-an-event-hub-using-azure-portal"></a>Краткое руководство. Создание концентратора событий с помощью портала Azure
 Центры событий Azure — это платформа потоковой передачи больших данных и служба приема событий, принимающая и обрабатывающая миллионы событий в секунду. Центры событий могут обрабатывать и сохранять события, данные и телеметрию, созданные распределенным программным обеспечением и устройствами. Данные, отправляемые в концентратор событий, можно преобразовывать и сохранять с помощью любого поставщика аналитики в реальном времени, а также с помощью адаптеров пакетной обработки или хранения. Подробный обзор Центров событий см. в статьях [Что такое Центры событий Azure?](event-hubs-about.md) и [Обзор функций Центров событий](event-hubs-features.md).

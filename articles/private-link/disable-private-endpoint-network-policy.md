@@ -4,15 +4,15 @@ description: Узнайте, как отключить политики сети
 services: private-link
 author: malopMSFT
 ms.service: private-link
-ms.topic: article
+ms.topic: how-to
 ms.date: 09/16/2019
 ms.author: allensu
-ms.openlocfilehash: b5ab62e7ab57d32a11a45713519633034deb6a5b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a4c04033f3fb5ff523f0d80bb6c978955f4c9ec2
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75453022"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84737518"
 ---
 # <a name="disable-network-policies-for-private-endpoints"></a>Отключение сетевых политик для частных конечных точек
 
@@ -20,7 +20,7 @@ ms.locfileid: "75453022"
  
 При использовании портала для создания частной конечной точки этот параметр автоматически отключается в рамках процесса создания. Развертывание с использованием других клиентов требует дополнительного шага для изменения этого параметра. Вы можете отключить этот параметр с помощью Cloud Shell из портал Azure или локальной установки Azure PowerShell, Azure CLI или использовать шаблоны Azure Resource Manager.  
  
-`PrivateEndpointNetworkPolicies` В следующих примерах описывается отключение для виртуальной сети с именем *myVirtualNetwork* и подсети *по умолчанию* , размещенной в группе ресурсов с именем *myResourceGroup*.
+В следующих примерах описывается отключение `PrivateEndpointNetworkPolicies` для виртуальной сети с именем *myVirtualNetwork* и подсети *по умолчанию* , размещенной в группе ресурсов с именем *myResourceGroup*.
 
 ## <a name="using-azure-powershell"></a>Использование Azure PowerShell
 В этом разделе описывается, как отключить политики частной конечной точки подсети с помощью Azure PowerShell.
@@ -69,6 +69,6 @@ az network vnet subnet update \
           } 
 } 
 ```
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Дополнительные сведения о [частной конечной точке Azure](private-endpoint-overview.md)
  

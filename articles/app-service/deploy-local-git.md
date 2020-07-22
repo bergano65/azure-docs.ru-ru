@@ -7,10 +7,9 @@ ms.date: 06/18/2019
 ms.reviewer: dariac
 ms.custom: seodec18
 ms.openlocfilehash: efe4c07a6231e0b2c95b049db056a4e5d055db98
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77152998"
 ---
 # <a name="local-git-deployment-to-azure-app-service"></a>Развертывание локального репозитория Git в службе приложений Azure
@@ -45,7 +44,7 @@ ms.locfileid: "77152998"
 
 ### <a name="get-the-deployment-url"></a>Получение URL-адреса развертывания
 
-Чтобы получить URL-адрес для включения локального развертывания Git для существующего приложения, выполните [`az webapp deployment source config-local-git`](/cli/azure/webapp/deployment/source?view=azure-cli-latest#az-webapp-deployment-source-config-local-git) в Cloud Shell. Замените \<имя приложения> и \<имя группы> именем приложения и его группой ресурсов Azure.
+Чтобы получить URL-адрес для включения локального развертывания Git для существующего приложения, выполните [`az webapp deployment source config-local-git`](/cli/azure/webapp/deployment/source?view=azure-cli-latest#az-webapp-deployment-source-config-local-git) в Cloud Shell. Замените \<app-name> и \<group-name> именем приложения и его группой ресурсов Azure.
 
 ```azurecli-interactive
 az webapp deployment source config-local-git --name <app-name> --resource-group <group-name>
@@ -54,17 +53,17 @@ az webapp deployment source config-local-git --name <app-name> --resource-group 
 > Если вы используете план App-Service для Linux, необходимо добавить этот параметр:--Runtime Python | 3.7
 
 
-Чтобы создать приложение с поддержкой Git, выполните команду [`az webapp create`](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create) в Cloud Shell с `--deployment-local-git` параметром. Замените \<имя приложения>, \<имя группы> и \<имя плана> именами для нового приложения Git, группы ресурсов Azure и плана службы приложений Azure.
+Чтобы создать приложение с поддержкой Git, выполните команду [`az webapp create`](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create) в Cloud Shell с `--deployment-local-git` параметром. Замените \<app-name> , \<group-name> и \<plan-name> именами нового приложения Git, его группой ресурсов Azure и планом службы приложений Azure.
 
 ```azurecli-interactive
 az webapp create --name <app-name> --resource-group <group-name> --plan <plan-name> --deployment-local-git
 ```
 
-Любая команда возвращает URL-адрес следующего `https://<deployment-username>@<app-name>.scm.azurewebsites.net/<app-name>.git`вида:. Используйте этот URL-адрес для развертывания приложения на следующем шаге.
+Любая команда возвращает URL-адрес следующего вида: `https://<deployment-username>@<app-name>.scm.azurewebsites.net/<app-name>.git` . Используйте этот URL-адрес для развертывания приложения на следующем шаге.
 
 Вместо использования этого URL-адреса уровня учетной записи можно также включить локальный Git с помощью учетных данных на уровне приложения. Служба приложений Azure автоматически создает эти учетные данные для каждого приложения. 
 
-Получите учетные данные приложения, выполнив следующую команду в Cloud Shell. Замените \<имя приложения> и \<имя группы> именем своего приложения и именем группы ресурсов Azure.
+Получите учетные данные приложения, выполнив следующую команду в Cloud Shell. Замените \<app-name> и \<group-name> именем вашего приложения и именем группы ресурсов Azure.
 
 ```azurecli-interactive
 az webapp deployment list-publishing-credentials --name <app-name> --resource-group <group-name> --query scmUri --output tsv
@@ -74,17 +73,17 @@ az webapp deployment list-publishing-credentials --name <app-name> --resource-gr
 
 ### <a name="deploy-the-web-app"></a>Развертывание веб-приложения
 
-1. Откройте локальное окно терминала в локальном репозитории Git и добавьте Azure Remote. В следующей команде замените \<URL-адрес> на пользовательский URL-адрес развертывания или URL-адрес конкретного приложения, полученный на предыдущем шаге.
+1. Откройте локальное окно терминала в локальном репозитории Git и добавьте Azure Remote. В следующей команде замените на \<url> Пользовательский URL-адрес развертывания или URL-адрес конкретного приложения, полученный на предыдущем шаге.
    
    ```bash
    git remote add azure <url>
    ```
    
-1. Отправка в Azure Remote с помощью `git push azure master`. 
+1. Отправка в Azure Remote с помощью `git push azure master` . 
    
 1. В окне **диспетчера учетных данных Git** введите [пароль пользователя для развертывания](#configure-a-deployment-user), а не пароль для входа в Azure.
    
-1. Просмотрите выходные данные. Вы можете увидеть автоматизацию среды выполнения, например MSBuild для ASP.NET, `npm install` для Node. js и `pip install` для Python. 
+1. Просмотрите выходные данные. `npm install`Для Node.js и для Python можно увидеть автоматизацию среды выполнения, например MSBuild для ASP.NET `pip install` . 
    
 1. Перейдите к приложению в портал Azure, чтобы убедиться, что содержимое развернуто.
 
@@ -125,17 +124,17 @@ az webapp deployment list-publishing-credentials --name <app-name> --resource-gr
    
    ![Скопируйте URL-адрес репозитория Git](media/app-service-deploy-local-git/vsts-repo-ready.png)
 
-1. В локальном окне терминала добавьте удаленное хранилище Azure в локальный репозиторий Git. В команде замените \<URL-адрес> URL-адресом репозитория Git, полученным на предыдущем шаге.
+1. В локальном окне терминала добавьте удаленное хранилище Azure в локальный репозиторий Git. В команде замените \<url> URL-адресом репозитория Git, полученным на предыдущем шаге.
    
    ```bash
    git remote add azure <url>
    ```
    
-1. Отправка в Azure Remote с помощью `git push azure master`. 
+1. Отправка в Azure Remote с помощью `git push azure master` . 
    
 1. На странице **диспетчера учетных данных Git** выполните вход с помощью имени пользователя VisualStudio.com. Другие методы проверки подлинности см. в разделе [Azure DevOps Services проверка подлинности](/vsts/git/auth-overview?view=vsts).
    
-1. После завершения развертывания просмотрите ход выполнения сборки в `https://<azure_devops_account>.visualstudio.com/<project_name>/_build`и ход выполнения развертывания в. `https://<azure_devops_account>.visualstudio.com/<project_name>/_release`
+1. После завершения развертывания просмотрите ход выполнения сборки в `https://<azure_devops_account>.visualstudio.com/<project_name>/_build` и ход выполнения развертывания в `https://<azure_devops_account>.visualstudio.com/<project_name>/_release` .
    
 1. Перейдите к приложению в портал Azure, чтобы убедиться, что содержимое развернуто.
 
@@ -149,10 +148,10 @@ az webapp deployment list-publishing-credentials --name <app-name> --resource-gr
 ---|---|---|
 |`Unable to access '[siteURL]': Failed to connect to [scmAddress]`|Приложение не работает.|запуск приложения на портале Azure. Развертывание Git недоступно, если веб-приложение остановлено.|
 |`Couldn't resolve host 'hostname'`|Неверные сведения об адресе удаленного ресурса "Azure".|используйте команду `git remote -v`, чтобы вывести список всех удаленных репозиториев с соответствующими URL-адресами. Проверьте правильность URL-адреса удаленного репозитория "azure". При необходимости удалите и повторно создайте этот удаленный репозиторий, используя правильный URL-адрес.|
-|`No refs in common and none specified; doing nothing. Perhaps you should specify a branch such as 'master'.`|Вы не указали ветвь во `git push`время или не установили `push.default` значение в. `.gitconfig`|Выполните `git push` команду еще раз, указав главную ветвь `git push azure master`:.|
-|`src refspec [branchname] does not match any.`|Предпринята попытка принудительной отправки в ветвь, отличную от главной, в удаленной службе Azure.|Выполните `git push` команду еще раз, указав главную ветвь `git push azure master`:.|
-|`RPC failed; result=22, HTTP code = 5xx.`|эта ошибка может возникнуть при попытке отправить большой репозиторий Git по протоколу HTTPS.|Измените конфигурацию Git на локальном компьютере, чтобы увеличить ее `postBuffer` размер. Например: `git config --global http.postBuffer 524288000`.|
-|`Error - Changes committed to remote repository but your web app not updated.`|Вы развернули приложение Node. js с файлом _Package. JSON_ , который указывает дополнительные необходимые модули.|Проверьте сообщения `npm ERR!` об ошибках до этой ошибки для получения дополнительных сведений о сбое. Ниже приведены известные причины этой ошибки и соответствующие `npm ERR!` сообщения.<br /><br />**Неправильный формат файла Package. JSON**:`npm ERR! Couldn't read dependencies.`<br /><br />**Собственный модуль не имеет двоичного распространения для Windows**:<br />`npm ERR! \cmd "/c" "node-gyp rebuild"\ failed with 1` <br />или диспетчер конфигурации служб <br />`npm ERR! [modulename@version] preinstall: \make || gmake\ `|
+|`No refs in common and none specified; doing nothing. Perhaps you should specify a branch such as 'master'.`|Вы не указали ветвь во время `git push` или не установили `push.default` значение в `.gitconfig` .|Выполните команду `git push` еще раз, указав главную ветвь: `git push azure master` .|
+|`src refspec [branchname] does not match any.`|Предпринята попытка принудительной отправки в ветвь, отличную от главной, в удаленной службе Azure.|Выполните команду `git push` еще раз, указав главную ветвь: `git push azure master` .|
+|`RPC failed; result=22, HTTP code = 5xx.`|эта ошибка может возникнуть при попытке отправить большой репозиторий Git по протоколу HTTPS.|Измените конфигурацию Git на локальном компьютере, чтобы `postBuffer` увеличить ее размер. Например: `git config --global http.postBuffer 524288000`.|
+|`Error - Changes committed to remote repository but your web app not updated.`|Вы развернули приложение Node.js с _package.jsв_ файле, который указывает дополнительные необходимые модули.|Проверьте `npm ERR!` сообщения об ошибках до этой ошибки для получения дополнительных сведений о сбое. Ниже приведены известные причины этой ошибки и соответствующие `npm ERR!` сообщения.<br /><br />**Неправильный формат package.jsфайла**:`npm ERR! Couldn't read dependencies.`<br /><br />**Собственный модуль не имеет двоичного распространения для Windows**:<br />`npm ERR! \cmd "/c" "node-gyp rebuild"\ failed with 1` <br />или <br />`npm ERR! [modulename@version] preinstall: \make || gmake\ `|
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -9,19 +9,19 @@ editor: ''
 ms.assetid: 6b1a598f-89c0-4244-9b20-f4aaad5233cf
 ms.service: active-directory
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 05/01/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 309adfbebd4f4b615ac1f4061823ca01f3d3ee15
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: eaeaa8625a5bdb5bbf8ce76a68e616a913da5655
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79261077"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86146993"
 ---
 # <a name="azure-ad-connect-sync-scheduler"></a>Синхронизация Azure AD Connect: планировщик
 В этом разделе описывается встроенный планировщик в Azure AD Connect Sync (модуль синхронизации).
@@ -39,6 +39,14 @@ ms.locfileid: "79261077"
 * **Задачи обслуживания**. Обновление ключей и сертификатов для сброса паролей и службы регистрации устройств (DRS). Удаление старых записей из журнала операций.
 
 Сам планировщик работает всегда, но может быть настроен на выполнение только одной или ни одной из этих задач. Например, чтобы настроить собственный цикл синхронизации, вы можете отключить эту задачу в планировщике — при этом задача обслуживания будет выполняться по-прежнему.
+
+>[!IMPORTANT]
+>По умолчанию выполняется цикл синхронизации каждые 30 минут. Если вы изменили цикл синхронизации, необходимо убедиться, что цикл синхронизации выполняется по крайней мере раз в 7 дней. 
+>
+>* Дельта-синхронизация должна выполняться в течение 7 дней после последней разностной синхронизации.
+>* Дельта-синхронизация (после полной синхронизации) должна выполняться в течение 7 дней с момента завершения последней полной синхронизации.
+>
+>В противном случае могут возникнуть проблемы синхронизации, требующие выполнения полной синхронизации для разрешения. Это также относится к серверам в промежуточном режиме.
 
 ## <a name="scheduler-configuration"></a>Конфигурация планировщика
 Чтобы увидеть текущие параметры конфигурации, откройте PowerShell и выполните командлет `Get-ADSyncScheduler`. Отобразятся данные примерно следующего вида:
@@ -109,7 +117,7 @@ ms.locfileid: "79261077"
 
 Если вам необходимо срочно синхронизировать какое-то изменение, цикл синхронизации можно запустить вручную. 
 
-Если необходимо запустить цикл синхронизации вручную, запустите PowerShell `Start-ADSyncSyncCycle -PolicyType Delta`.
+Если необходимо запустить цикл синхронизации вручную, запустите PowerShell `Start-ADSyncSyncCycle -PolicyType Delta` .
 
 Чтобы запустить цикл полной синхронизации, в командной строке PowerShell выполните командлет `Start-ADSyncSyncCycle -PolicyType Initial` .   
 
@@ -207,4 +215,4 @@ Get-ADSyncConnectorRunStatus
 ## <a name="next-steps"></a>Дальнейшие действия
 Узнайте больше о настройке [службы синхронизации Azure AD Connect](how-to-connect-sync-whatis.md) .
 
-Дополнительные сведения об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
+Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

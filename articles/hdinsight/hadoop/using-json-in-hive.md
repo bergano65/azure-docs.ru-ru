@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: seoapr2020
 ms.date: 04/20/2020
-ms.openlocfilehash: 5abc3395152e03520eaff14b02d150892abf0e22
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 31fc6fe02559c356f072761c024308f158ae4d9c
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82184220"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86085452"
 ---
 # <a name="process-and-analyze-json-documents-by-using-apache-hive-in-azure-hdinsight"></a>Обработка и анализ документов JSON с использованием Apache Hive в Azure HDInsight
 
@@ -146,7 +146,7 @@ LATERAL VIEW JSON_TUPLE(jt.json_body, 'StudentId', 'Grade') q1
 
 ![Apache Hive результатов запроса JSON](./media/using-json-in-hive/hdinsight-json-tuple.png)
 
-UDF использует синтаксис [представления бокового смещения](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+LateralView) в Hive, который позволяет кортежу JSON\_создать виртуальную таблицу, применяя функцию определяемого пользователем типа к каждой строке исходной таблицы. `json_tuple` Из-за многократного использования **LATERAL VIEW** синтаксис сложных документов JSON становится слишком громоздким. Кроме того, **JSON_TUPLE** не может управлять вложенными JSON.
+`json_tuple`UDF использует синтаксис [представления бокового смещения](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+LateralView) в Hive, который позволяет \_ кортежу JSON создать виртуальную таблицу, применяя функцию определяемого пользователем типа к каждой строке исходной таблицы. Из-за многократного использования **LATERAL VIEW** синтаксис сложных документов JSON становится слишком громоздким. Кроме того, **JSON_TUPLE** не может управлять вложенными JSON.
 
 ### <a name="use-a-custom-serde"></a>Использование пользовательского SerDe
 
@@ -156,7 +156,7 @@ SerDe отлично подходит для синтаксического ан
 
 Тип оператора JSON в выбранном Hive зависит от сценария. Используя простой документ JSON и одно поле для поиска, выберите параметр UDF **Get_json_object**Hive. При наличии нескольких ключей для поиска можно использовать **json_tuple**. Для вложенных документов используйте **JSON SerDe**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Другие статьи по этой теме см. в следующих источниках:
 

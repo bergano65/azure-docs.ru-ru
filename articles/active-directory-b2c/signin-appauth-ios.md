@@ -7,16 +7,16 @@ author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 11/30/2018
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: c659280ebc8c91b53cbc3a176c84397edd942c23
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 558e6cea4d5e0c9bd0f6222f9070d2b867a5bf44
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78186834"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85384946"
 ---
 # <a name="azure-ad-b2c-sign-in-using-an-ios-application"></a>Azure AD B2C. Вход с помощью приложения iOS
 
@@ -34,13 +34,13 @@ ms.locfileid: "78186834"
 
 ## <a name="create-an-application"></a>Создание приложения
 
-Затем зарегистрируйте приложение в клиенте Azure AD B2C. Это предоставляет Azure AD сведения, необходимые для безопасного обмена данными с приложением.
+Затем зарегистрируйте приложение в клиенте Azure AD B2C. Таким образом в Azure AD поступят сведения, необходимые для безопасного взаимодействия с вашим приложением.
 
 [!INCLUDE [active-directory-b2c-appreg-native](../../includes/active-directory-b2c-appreg-native.md)]
 
-Запишите значение параметра **Идентификатор приложения (клиент)**. Оно вам потребуется в дальнейшем.
+Запишите значение параметра **Идентификатор приложения (клиент)** . Оно вам потребуется в дальнейшем.
 
-Кроме того, запишите пользовательский URI перенаправления для использования на следующем шаге. Например, `com.onmicrosoft.contosob2c.exampleapp://oauth/redirect`.
+Кроме того, запишите пользовательский URI перенаправления, который будет использоваться позже. Например, `com.onmicrosoft.contosob2c.exampleapp://oauth/redirect`.
 
 ## <a name="create-your-user-flows"></a>Создание потоков пользователей
 В Azure AD B2C любое взаимодействие с пользователем определяется [потоком пользователя](user-flow-overview.md). Это приложение предусматривает одну процедуру идентификации, сочетающую в себе вход и регистрацию. При создании потока пользователя обязательно сделайте следующее:
@@ -62,7 +62,7 @@ ms.locfileid: "78186834"
 > AppAuth поддерживает iOS 7 и более поздние версии.  Однако для поддержки социальных имен входа в Google необходим SFSafariViewController, который поддерживает iOS 9 и более поздние версии.
 >
 
-### <a name="configuration"></a>Конфигурация
+### <a name="configuration"></a>Параметр Configuration
 
 Вы можете настроить взаимодействие с Azure AD B2C, указав URI конечной точки авторизации и конечной точки токена.  Для создания URI вам потребуются следующие сведения:
 * идентификатор клиента (например, contoso.onmicrosoft.com);

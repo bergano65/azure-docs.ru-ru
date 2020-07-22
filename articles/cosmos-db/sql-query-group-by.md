@@ -1,25 +1,20 @@
 ---
-title: Предложение GROUP BY в Azure Cosmos DB
-description: Дополнительные сведения о предложении GROUP BY для Azure Cosmos DB.
+title: Предложение GROUP BY в Azure Cosmos DB
+description: Сведения о предложении GROUP BY в Azure Cosmos DB.
 author: timsander1
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 04/10/2020
+ms.date: 05/19/2020
 ms.author: tisande
-ms.openlocfilehash: 8a3cbbafc066747b62f79934f2cd12301aa1ba17
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: b602b56d37cec0e23d31318f6675d031bdd6bcdb
+ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81261607"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83700993"
 ---
-# <a name="group-by-clause-in-azure-cosmos-db"></a>Предложение GROUP BY в Azure Cosmos DB
+# <a name="group-by-clause-in-azure-cosmos-db"></a>Предложение GROUP BY в Azure Cosmos DB
 
-Предложение GROUP BY разделяет результаты запроса в соответствии со значениями одного или нескольких указанных свойств.
-
-> [!NOTE]
-> В настоящее время Azure Cosmos DB поддерживает GROUP BY в пакете SDK для .NET 3,3 и более поздних версий, а также в пакете SDK для JavaScript 3,4 и выше.
-> Поддержка других языковых пакетов SDK в настоящее время недоступна, но планируется.
+Предложение GROUP BY разделяет результаты запроса по значениям одного или нескольких указанных свойств.
 
 ## <a name="syntax"></a>Синтаксис
 
@@ -39,31 +34,36 @@ ms.locfileid: "81261607"
 
 - `<scalar_expression>`
   
-   Допускается любое скалярное выражение, за исключением скалярных вложенных запросов и скалярных статистических выражений. Каждое скалярное выражение должно содержать по крайней мере одну ссылку на свойство. Количество отдельных выражений или количество элементов в каждом выражении не ограничено.
+   Допускается любое скалярное выражение за исключением вложенных запросов и статистических выражений. Каждое скалярное выражение должно содержать ссылку хотя бы на один столбец. Количество отдельных выражений или количество элементов в каждом выражении не ограничиваются.
 
 ## <a name="remarks"></a>Remarks
   
-  Если в запросе используется предложение GROUP BY, предложение SELECT может содержать только подмножество свойств и системных функций, входящих в предложение GROUP BY. Единственным исключением являются [статистические системные функции](sql-query-aggregates.md), которые могут присутствовать в предложении SELECT без включения в предложение GROUP BY. В предложение SELECT можно также включить литеральные значения.
+  Если в запросе используется предложение GROUP BY, предложение SELECT может содержать только подмножество свойств и системных функций, входящих в предложение GROUP BY. Единственным исключением являются [агрегатные системные функции](sql-query-aggregates.md), которые могут присутствовать в предложении SELECT без включения в предложение GROUP BY. Также в предложение SELECT всегда можно включать литеральные значения.
 
-  Предложение GROUP BY должно быть после предложения SELECT, FROM и WHERE и перед предложением предельного значения смещения. В настоящее время нельзя использовать GROUP BY с предложением ORDER BY, но это запланировано.
+  Предложение GROUP BY должно располагаться после предложений SELECT, FROM и WHERE, но перед предложением OFFSET LIMIT. В настоящее время нельзя использовать GROUP BY с предложением ORDER BY, но запланирована поддержка такого варианта.
 
-  Предложение GROUP BY не допускает выполнения следующих действий:
+  В предложении GROUP BY не допускаются следующие механизмы.
   
-- Присвоение псевдонимов свойствам и присвоение псевдонимам системных функций (псевдонимы по-прежнему разрешены в предложении SELECT)
+- Присвоение псевдонимов свойствам и (или) системным функциям (но это обычным образом возможно в предложении SELECT).
 - Вложенные запросы
-- Агрегатные системные функции (разрешены только в предложении SELECT)
+- Агрегатные системные функции (они разрешены только в предложении SELECT).
 
-Запросы с агрегатной системной функцией и вложенным запросом `GROUP BY` с не поддерживаются. Например, следующий запрос не поддерживается.
+Не поддерживаются запросы с агрегатной системной функцией и вложенным запросом с `GROUP BY`. Например, следующий запрос выполнить не удастся:
 
 ```sql
-SELECT COUNT(UniqueLastNames) FROM (SELECT AVG(f.age) FROM f GROUP BY f.lastName) AS UniqueLastNames
+SELECT COUNT(UniqueLastNames)
+FROM (
+SELECT AVG(f.age)
+FROM f
+GROUP BY f.lastName
+) AS UniqueLastNames
 ```
 
 ## <a name="examples"></a>Примеры
 
-В этих примерах используется набор данных информации питании, доступный в [Площадка для тестирования запросов Azure Cosmos DB](https://www.documentdb.com/sql/demo).
+В этих примерах используется набор данных о питательной ценности, доступный на [площадке для тестирования запросов Azure Cosmos DB](https://www.documentdb.com/sql/demo).
 
-Например, Вот запрос, возвращающий общее количество элементов в каждой Фудграуп:
+Например, такой запрос возвращает общее количество элементов в каждой группе foodGroup:
 
 ```sql
 SELECT TOP 4 COUNT(1) AS foodGroupCount, f.foodGroup
@@ -71,28 +71,30 @@ FROM Food f
 GROUP BY f.foodGroup
 ```
 
-Некоторые результаты — (для ограничения результатов используется ключевое слово TOP):
+Вот пример возвращаемых им результатов (для ограничения выходных данных используется ключевое слово TOP):
 
 ```json
-[{
-  "foodGroup": "Fast Foods",
-  "foodGroupCount": 371
-},
-{
-  "foodGroup": "Finfish and Shellfish Products",
-  "foodGroupCount": 267
-},
-{
-  "foodGroup": "Meals, Entrees, and Side Dishes",
-  "foodGroupCount": 113
-},
-{
-  "foodGroup": "Sausages and Luncheon Meats",
-  "foodGroupCount": 244
-}]
+[
+    {
+        "foodGroupCount": 183,
+        "foodGroup": "Cereal Grains and Pasta"
+    },
+    {
+        "foodGroupCount": 133,
+        "foodGroup": "Nut and Seed Products"
+    },
+    {
+        "foodGroupCount": 113,
+        "foodGroup": "Meals, Entrees, and Side Dishes"
+    },
+    {
+        "foodGroupCount": 64,
+        "foodGroup": "Spices and Herbs"
+    }
+]
 ```
 
-В этом запросе используются два выражения для деления результатов:
+Этот запрос содержит два выражения для деления результатов:
 
 ```sql
 SELECT TOP 4 COUNT(1) AS foodGroupCount, f.foodGroup, f.version
@@ -100,32 +102,34 @@ FROM Food f
 GROUP BY f.foodGroup, f.version
 ```
 
-Некоторые результаты:
+Вот пример его результатов:
 
 ```json
-[{
-  "version": 1,
-  "foodGroup": "Nut and Seed Products",
-  "foodGroupCount": 133
-},
-{
-  "version": 1,
-  "foodGroup": "Finfish and Shellfish Products",
-  "foodGroupCount": 267
-},
-{
-  "version": 1,
-  "foodGroup": "Fast Foods",
-  "foodGroupCount": 371
-},
-{
-  "version": 1,
-  "foodGroup": "Sausages and Luncheon Meats",
-  "foodGroupCount": 244
-}]
+[
+    {
+        "foodGroupCount": 183,
+        "foodGroup": "Cereal Grains and Pasta",
+        "version": 1
+    },
+    {
+        "foodGroupCount": 133,
+        "foodGroup": "Nut and Seed Products",
+        "version": 1
+    },
+    {
+        "foodGroupCount": 113,
+        "foodGroup": "Meals, Entrees, and Side Dishes",
+        "version": 1
+    },
+    {
+        "foodGroupCount": 64,
+        "foodGroup": "Spices and Herbs",
+        "version": 1
+    }
+]
 ```
 
-Этот запрос содержит системную функцию в предложении GROUP BY:
+Этот запрос содержит системную функцию в предложении GROUP BY:
 
 ```sql
 SELECT TOP 4 COUNT(1) AS foodGroupCount, UPPER(f.foodGroup) AS upperFoodGroup
@@ -133,28 +137,30 @@ FROM Food f
 GROUP BY UPPER(f.foodGroup)
 ```
 
-Некоторые результаты:
+Вот пример его результатов:
 
 ```json
-[{
-  "foodGroupCount": 371,
-  "upperFoodGroup": "FAST FOODS"
-},
-{
-  "foodGroupCount": 267,
-  "upperFoodGroup": "FINFISH AND SHELLFISH PRODUCTS"
-},
-{
-  "foodGroupCount": 389,
-  "upperFoodGroup": "LEGUMES AND LEGUME PRODUCTS"
-},
-{
-  "foodGroupCount": 113,
-  "upperFoodGroup": "MEALS, ENTREES, AND SIDE DISHES"
-}]
+[
+    {
+        "foodGroupCount": 183,
+        "upperFoodGroup": "CEREAL GRAINS AND PASTA"
+    },
+    {
+        "foodGroupCount": 133,
+        "upperFoodGroup": "NUT AND SEED PRODUCTS"
+    },
+    {
+        "foodGroupCount": 113,
+        "upperFoodGroup": "MEALS, ENTREES, AND SIDE DISHES"
+    },
+    {
+        "foodGroupCount": 64,
+        "upperFoodGroup": "SPICES AND HERBS"
+    }
+]
 ```
 
-В выражении свойства Item в этом запросе используются ключевые слова и системные функции:
+В этом запросе выражение свойства элемента содержит и ключевые слова, и системные функции:
 
 ```sql
 SELECT COUNT(1) AS foodGroupCount, ARRAY_CONTAINS(f.tags, {name: 'orange'}) AS containsOrangeTag,  f.version BETWEEN 0 AND 2 AS correctVersion
@@ -165,19 +171,21 @@ GROUP BY ARRAY_CONTAINS(f.tags, {name: 'orange'}), f.version BETWEEN 0 AND 2
 Результаты:
 
 ```json
-[{
-  "correctVersion": true,
-  "containsOrangeTag": false,
-  "foodGroupCount": 8608
-},
-{
-  "correctVersion": true,
-  "containsOrangeTag": true,
-  "foodGroupCount": 10
-}]
+[
+    {
+        "foodGroupCount": 10,
+        "containsOrangeTag": true,
+        "correctVersion": true
+    },
+    {
+        "foodGroupCount": 8608,
+        "containsOrangeTag": false,
+        "correctVersion": true
+    }
+]
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Начало работы](sql-query-getting-started.md)
 - [Предложение SELECT](sql-query-select.md)

@@ -1,6 +1,6 @@
 ---
 title: Подключение данных контрольной точки к Sentinel Azure | Документация Майкрософт
-description: Узнайте, как подключить данные контрольной точки к Azure Sentinel.
+description: Настройте устройство контрольной точки для пересылки сообщений Syslog в формате CEF в рабочую область Sentinel Azure с помощью агента системного журнала.
 services: sentinel
 documentationcenter: na
 author: yelevin
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/30/2019
 ms.author: yelevin
-ms.openlocfilehash: 70836ec557eff1be035d92e8e7db30a882e05fc6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 32cbdabef4d89c7fabb47a52ebf0589690b7ab33
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77588422"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85566061"
 ---
 # <a name="connect-check-point-to-azure-sentinel"></a>Подключение точки проверки к Azure Sentinel
 
@@ -37,13 +37,13 @@ ms.locfileid: "77588422"
      - Замените **имя** и **IP-адрес целевого сервера** в CLI на имя агента системного журнала и IP-адрес.
      - Задайте формат **CEF**.
 1. Если вы используете версию R 77.30 или R 80.10, прокрутите **экран до пункта установки и следуйте** инструкциям по установке средства экспорта журнала для вашей версии.
-1. Перейдите к [шагу 3. Проверка подключения](connect-cef-verify.md).
+1. Перейдите к процедуре [Шаг 3. Проверка подключения](connect-cef-verify.md).
  
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этом документе вы узнали, как подключить устройства проверки точек к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - [Проверьте подключение](connect-cef-verify.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
-- [Используйте книги](tutorial-monitor-your-data.md) для отслеживания данных.
+- [Используйте книги](tutorial-monitor-your-data.md) для мониторинга данных.
 
 

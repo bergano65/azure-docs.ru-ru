@@ -1,33 +1,32 @@
 ---
-title: Настройка настраиваемых правил v2 с помощью PowerShell
+title: Настройка пользовательских правил версии 2 с помощью PowerShell
 titleSuffix: Azure Web Application Firewall
-description: Узнайте, как настроить настраиваемые правила WAF v2 с помощью Azure PowerShell. Вы можете создавать собственные правила, вычисляемые для каждого запроса, который проходит через брандмауэр.
+description: Узнайте, как настроить пользовательские правила брандмауэра веб-приложения (WAF) версии 2 с помощью Azure PowerShell. Вы можете создать собственные правила, которые оцениваются для каждого запроса, проходящего через брандмауэр.
 services: web-application-firewall
 author: vhorne
 ms.service: web-application-firewall
 ms.topic: article
-ms.date: 11/16/2019
+ms.date: 05/21/2020
 ms.author: victorh
-ms.openlocfilehash: 4c50c4ce344a51a70f6849beb7c5d9d18a2b401d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 2572e30c02552859eb5c61915a9ef524c0c6cc70
+ms.sourcegitcommit: 0690ef3bee0b97d4e2d6f237833e6373127707a7
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77471641"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83758968"
 ---
-# <a name="configure-web-application-firewall-v2-on-application-gateway-with-a-custom-rule-using-azure-powershell"></a>Настройка брандмауэра веб-приложения версии 2 в шлюзе приложений с настраиваемым правилом с помощью Azure PowerShell
+# <a name="configure-web-application-firewall-v2-on-application-gateway-with-a-custom-rule-using-azure-powershell"></a>Настройка брандмауэра веб-приложения версии 2 в Шлюзе приложений с помощью настраиваемого правила в Azure PowerShell
 
 <!--- If you make any changes to the PowerShell in this article, also make the change in the corresponding Sample file: azure-docs-powershell-samples/application-gateway/waf-rules/waf-custom-rules.ps1 --->
 
-Настраиваемые правила позволяют создавать собственные правила, вычисляемые для каждого запроса, который проходит через брандмауэр веб-приложения (WAF) версии 2. Эти правила имеют более высокий приоритет, чем любые правила из управляемых наборов правил. Настраиваемые правила имеют действие (для разрешения или блокировки), условие соответствия и оператор, позволяющие выполнить полную настройку.
+Настраиваемые правила позволяют создавать собственные правила, которые оцениваются для каждого запроса, проходящего через брандмауэр веб-приложения (WAF) версии 2. Эти правила имеют более высокий приоритет, чем любые правила из управляемых наборов правил. Настраиваемые правила имеют действие (разрешение или блокировка), условие соответствия и оператор, что позволяет выполнять полную настройку.
 
-В этой статье создается шлюз приложений WAF v2, использующий настраиваемое правило. Настраиваемое правило блокирует трафик, если заголовок запроса содержит User-Agent *evilbot*.
+В этой статье создается брандмауэр веб-приложения версии 2 в шлюзе приложений, использующий настраиваемое правило. Настраиваемое правило блокирует трафик, если заголовок запроса содержит User-Agent *evilbot*.
 
-Дополнительные примеры настраиваемых правил см. в разделе [Создание и использование настраиваемых правил брандмауэра веб-приложения](create-custom-waf-rules.md) .
+Дополнительные примеры настраиваемых правил см. в статье [Создание и использование настраиваемых правил брандмауэра веб-приложения](create-custom-waf-rules.md).
 
-Если вы хотите выполнить Azure PowerShell в этой статье в одном непрерывном сценарии, который можно скопировать, вставить и запустить, см. статью [примеры PowerShell для шлюза приложений Azure](powershell-samples.md).
+Если вы хотите выполнить код Azure PowerShell из этой статье в виде одного непрерывного скрипта, который можно скопировать, вставить и запустить, см. [примеры PowerShell для Шлюза приложений Azure](powershell-samples.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="azure-powershell-module"></a>модуль Azure PowerShell;
 
@@ -40,7 +39,7 @@ ms.locfileid: "77471641"
 
 ## <a name="example-script"></a>Пример сценария
 
-### <a name="set-up-variables"></a>Настройка переменных
+### <a name="set-up-variables"></a>Задание переменных
 
 ```azurepowershell
 $rgname = "CustomRulesTest"
@@ -138,6 +137,19 @@ $appgw = New-AzApplicationGateway -Name $appgwName -ResourceGroupName $rgname `
   -FirewallPolicy $wafPolicy
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="update-your-waf"></a>Обновление WAF
 
-[Дополнительные сведения о брандмауэре веб-приложения в шлюзе приложений](ag-overview.md)
+После создания брандмауэра WAF его можно обновить с помощью процедуры наподобие следующего кода:
+
+```azurepowershell
+# Get the existing policy
+$policy = Get-AzApplicationGatewayFirewallPolicy -Name $policyName -ResourceGroupName $RGname
+# Add an existing rule named $rule
+$policy.CustomRules.Add($rule)
+# Update the policy
+Set-AzApplicationGatewayFirewallPolicy -InputObject $policy
+```
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+[Дополнительные сведения о брандмауэре веб-приложения для Шлюза приложений](ag-overview.md)

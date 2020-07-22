@@ -3,12 +3,12 @@ title: Создание шаблона кластера Azure Service Fabric
 description: Сведения о создании шаблона Resource Manager для кластера Service Fabric. Настройка безопасности, Azure Key Vault и Azure Active Directory (Azure AD) для проверки подлинности клиентов.
 ms.topic: conceptual
 ms.date: 08/16/2018
-ms.openlocfilehash: 6cf0f9c3b8b54db7bd27ec8dd9c9d59d849c74cc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: b028b5c1f32733146c071e50b24202e5bad945c0
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80985377"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86260498"
 ---
 # <a name="create-a-service-fabric-cluster-resource-manager-template"></a>Создание шаблона Resource Manager для кластера Service Fabric
 
@@ -30,7 +30,7 @@ ms.locfileid: "80985377"
 > Для национальных облаков (Azure для государственных организаций, Azure для Китая и Azure для Германии) также необходимо добавить в шаблон следующие параметры `fabricSettings`: `AADLoginEndpoint`, `AADTokenEndpointFormat` и `AADCertEndpointFormat`.
 
 ## <a name="add-certificates"></a>Добавление сертификатов
-Сертификаты добавляются в шаблон Resource Manager кластера с помощью ссылок на хранилище ключей, которое содержит ключи сертификата. Добавьте эти параметры и значения хранилища ключей в файл параметров шаблона диспетчер ресурсов (*azuredeploy. parameters. JSON*).
+Сертификаты добавляются в шаблон Resource Manager кластера с помощью ссылок на хранилище ключей, которое содержит ключи сертификата. Добавьте эти параметры и значения хранилища ключей в файл параметров шаблона диспетчер ресурсов (*azuredeploy.parameters.jsв*).
 
 ### <a name="add-all-certificates-to-the-virtual-machine-scale-set-osprofile"></a>Добавление всех сертификатов в osProfile набора масштабирования виртуальных машин
 Каждый сертификат, установленный в кластере, должен быть настроен в разделе **osProfile** ресурса масштабируемого набора (Microsoft. COMPUTE/virtualMachineScaleSets). Это указывает, что поставщик ресурсов должен установить сертификат на виртуальных машинах. Эта установка содержит сертификат кластера, а также все сертификаты безопасности приложений, которые планируется использовать для приложений.
@@ -132,7 +132,7 @@ ms.locfileid: "80985377"
 
 ## <a name="add-azure-ad-configuration-to-use-azure-ad-for-client-access"></a>Добавление конфигурации Azure AD для клиентского доступа через Azure AD
 
-Добавьте конфигурации Azure AD в шаблон Resource Manager кластера с помощью ссылок на хранилище ключей, которое содержит ключи сертификата. Добавьте эти параметры и значения Azure AD в файл параметров шаблона диспетчер ресурсов (*azuredeploy. parameters. JSON*). 
+Добавьте конфигурации Azure AD в шаблон Resource Manager кластера с помощью ссылок на хранилище ключей, которое содержит ключи сертификата. Добавьте эти параметры и значения Azure AD в файл параметров шаблона диспетчер ресурсов (*azuredeploy.parameters.jsв*). 
 
 > [!NOTE]
 > В Linux клиенты и пользователи Azure AD должны быть созданы перед созданием кластера.  Дополнительные сведения см.в статье [Set up Azure Active Directory for client authentication](service-fabric-cluster-creation-setup-aad.md) (Настройка Azure AD для проверки подлинности клиентов).
@@ -247,22 +247,22 @@ Test-AzResourceGroupDeployment -ResourceGroupName "myresourcegroup" -TemplateFil
 
 ![Сопоставление зависимостей Resource Manager][cluster-security-arm-dependency-map]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда кластер обладает шаблоном, можно [развернуть его в Azure](service-fabric-cluster-creation-via-arm.md).  Перед развертыванием рабочего кластера необходимо ознакомиться со статьей [Контрольный список готовности рабочей среды](service-fabric-production-readiness-checklist.md).
 
 Дополнительные сведения о синтаксисе и свойствах JSON для ресурсов, развертываемых в этой статье:
 
 * [Microsoft.ServiceFabric/clusters](/azure/templates/microsoft.servicefabric/clusters)
 * [Microsoft.Storage/storageAccounts](/azure/templates/microsoft.storage/storageaccounts)
-* [Microsoft.Network/virtualNetworks](/azure/templates/microsoft.network/virtualnetworks);
+* [Microsoft.Network/virtualNetworks](/azure/templates/microsoft.network/virtualnetworks)
 * [Microsoft.Network/publicIPAddresses](/azure/templates/microsoft.network/publicipaddresses)
-* [Microsoft.Network/loadBalancers](/azure/templates/microsoft.network/loadbalancers);
-* [Microsoft.Compute/virtualMachineScaleSets;](/azure/templates/microsoft.compute/virtualmachinescalesets)
+* [Microsoft.Network/loadBalancers](/azure/templates/microsoft.network/loadbalancers)
+* [Microsoft.Compute/virtualMachineScaleSets](/azure/templates/microsoft.compute/virtualmachinescalesets)
 
 <!-- Links -->
 [service-fabric-cluster-security]: service-fabric-cluster-security.md
 [service-fabric-secure-cluster-5-node-1-nodetype]: https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/5-VM-Windows-1-NodeTypes-Secure
-[resource-group-template-deploy]: https://azure.microsoft.com/documentation/articles/resource-group-template-deploy/
+[resource-group-template-deploy]: ../azure-resource-manager/templates/deploy-powershell.md
 
 <!-- Images -->
 [cluster-security-arm-dependency-map]: ./media/service-fabric-cluster-creation-create-template/cluster-security-arm-dependency-map.png

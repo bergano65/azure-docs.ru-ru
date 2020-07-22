@@ -9,10 +9,10 @@ author: xiaoharper
 ms.author: zhanxia
 ms.date: 10/18/2019
 ms.openlocfilehash: e3cb977871af2e6cd7a59dd48505090dd29e8a76
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75541807"
 ---
 1. Войдите в [Студию машинного обучения Azure](https://ml.azure.com).
@@ -26,7 +26,7 @@ ms.locfileid: "75541807"
     
 1. Перейдите в раздел конструктора рабочей области, чтобы просмотреть список черновиков конвейера. 
     
-    Преобразованные веб-службы можно найти, перейдя **к конечным точкам** > в**режиме реального времени**.
+    Преобразованные веб-службы можно найти, перейдя **к конечным точкам**в  >  **режиме реального времени**.
 
 1. Выберите черновик конвейера, чтобы открыть его.
 

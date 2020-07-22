@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 03/26/2019
 ms.author: lbosq
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 9f9b6614c586d9c7c721dfc59da9c4a9c342b57c
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 25a93377c1594fd1f45229ed2d837f02e9c0a46b
+ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77062075"
+ms.lasthandoff: 06/20/2020
+ms.locfileid: "85118301"
 ---
 # <a name="quickstart-build-a-graph-database-with-the-java-sdk-and-the-azure-cosmos-db-gremlin-api"></a>Краткое руководство. Создание графовой базы данных с помощью пакета SDK для Java и API Gremlin для Azure Cosmos DB
 
@@ -104,7 +104,8 @@ ms.locfileid: "77062075"
 
     Скопируйте первую часть значения URI.
 
-    ![Просмотр и копирование ключа доступа на портале Azure, страница "Ключи"](./media/create-graph-java/copy-access-key-azure-portal.png)
+    :::image type="content" source="./media/create-graph-java/copy-access-key-azure-portal.png" alt-text="Просмотр и копирование ключа доступа на портале Azure, страница "Ключи"":::
+
 2. Откройте файл *src/remote.yaml* и вставьте значение уникального идентификатора вместо `$name$` в `hosts: [$name$.graphs.azure.com]`.
 
     Теперь строка 1 в файле *remote.yaml* будет выглядеть примерно так: 
@@ -168,15 +169,15 @@ ms.locfileid: "77062075"
 
 1. В учетной записи Azure Cosmos DB на портале Azure выберите **Обозреватель данных**, разверните **sample-graph**, а затем выберите **Граф** и нажмите кнопку **Применить фильтр**. 
 
-   ![Создание документов в обозревателе данных на портале Azure](./media/create-graph-java/azure-cosmosdb-data-explorer-expanded.png)
+   :::image type="content" source="./media/create-graph-java/azure-cosmosdb-data-explorer-expanded.png" alt-text="Создание документов в обозревателе данных на портале Azure":::
 
 2. В списке **результатов** обратите внимание на новых пользователей, добавленных в граф. Выберите пользователя **ben**. Вы увидите, что он связан с пользователем robin. Здесь можно перетаскивать вершины мышью, увеличивать или уменьшать масштаб колесиком мыши, а также увеличивать размер графа с помощью двойной стрелки. 
 
-   ![Новые вершины в графе в обозревателе данных на портале Azure](./media/create-graph-java/azure-cosmosdb-graph-explorer-new.png)
+   :::image type="content" source="./media/create-graph-java/azure-cosmosdb-graph-explorer-new.png" alt-text="Новые вершины в графе в обозревателе данных на портале Azure":::
 
 3. Давайте добавим несколько новых пользователей. Щелкните **Создать вершину**, чтобы добавить данные в граф.
 
-   ![Создание документов в обозревателе данных на портале Azure](./media/create-graph-java/azure-cosmosdb-data-explorer-new-vertex.png)
+   :::image type="content" source="./media/create-graph-java/azure-cosmosdb-data-explorer-new-vertex.png" alt-text="Создание документов в обозревателе данных на портале Azure":::
 
 4. В поле метки укажите *пользователя*.
 
@@ -211,17 +212,17 @@ ms.locfileid: "77062075"
 
     По мере добавления новых данных используйте фильтры для ограничения результатов. По умолчанию обозреватель данных использует `g.V()` для получения всех вершин в графе. Вы можете задать для него другой [запрос графа](tutorial-query-graph.md), например `g.V().count()`, который возвращает число всех вершин графа в формате JSON. Если вы изменили фильтр, снова установите фильтр `g.V()` и щелкните **Применить фильтр**, чтобы снова отобразить полный список результатов.
 
-12. Теперь вы можете соединить пользователей rakesh и ashley. Выберите в списке **Результаты** пользователя **ashley** и щелкните ![Изменение целевого объекта вершины в графе](./media/create-graph-java/edit-pencil-button.png) рядом с пунктом **Целевые объекты** внизу справа. Чтобы отобразить кнопку, может потребоваться развернуть окно.
+12. Теперь вы можете соединить пользователей rakesh и ashley. Выберите в списке **Результаты** пользователя **ashley** и щелкните :::image type="content" source="./media/create-graph-java/edit-pencil-button.png" alt-text="Изменение целевого объекта вершины в графе"::: рядом с пунктом **Целевые объекты** внизу справа. Чтобы отобразить кнопку, может потребоваться развернуть окно.
 
-    ![Изменение целевого объекта вершины в графе в Azure CosmosDB](./media/create-graph-java/azure-cosmosdb-data-explorer-edit-target.png)
+    :::image type="content" source="./media/create-graph-java/azure-cosmosdb-data-explorer-edit-target.png" alt-text="Изменение целевого объекта вершины в графе в Azure Cosmos DB":::
 
 13. В поле **Целевой объект** введите *rakesh*, затем в поле **Граничная метка** введите слово *знает* и установите флажок.
 
-    ![Добавление подключения в обозревателе данных в Azure CosmosDB](./media/create-graph-java/azure-cosmosdb-data-explorer-set-target.png)
+    :::image type="content" source="./media/create-graph-java/azure-cosmosdb-data-explorer-set-target.png" alt-text="Добавление подключения в обозревателе данных в Azure Cosmos DB":::
 
 14. Теперь выберите пользователя **rakesh** в списке результатов. Вы увидите, что пользователи ashley и rakesh связаны. 
 
-    ![Две соединенных вершины в обозревателе данных в Azure CosmosDB](./media/create-graph-java/azure-cosmosdb-graph-explorer.png)
+    :::image type="content" source="./media/create-graph-java/azure-cosmosdb-graph-explorer.png" alt-text="Две соединенных вершины в обозревателе данных в Azure Cosmos DB":::
 
 На этом часть руководства, посвященная созданию ресурсов, завершена. Вы можете дополнить граф новыми вершинами, а также изменить существующие вершины или запросы. Теперь давайте изучим метрики, которые предоставляет Azure Cosmos DB, а затем очистим все ресурсы. 
 

@@ -8,27 +8,26 @@ manager: mtillman
 ms.assetid: 3483ee01-8177-49e7-b337-4d5cb14f5e32
 ms.service: role-based-access-control
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 03/18/2020
+ms.date: 06/17/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: cac0116cf7a068e63cb54698f7273b8c063ff854
-ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
-ms.translationtype: MT
+ms.openlocfilehash: 8fa77f13b99564246c048e7b7a8129f9fc141c47
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2020
-ms.locfileid: "82734847"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84984188"
 ---
-# <a name="create-or-update-azure-custom-roles-using-azure-cli"></a>Создание или обновление пользовательских ролей Azure с помощью Azure CLI
+# <a name="create-or-update-azure-custom-roles-using-azure-cli"></a>Создание или изменение настраиваемых ролей Azure с помощью Azure CLI
 
 > [!IMPORTANT]
-> Добавление группы управления в сейчас `AssignableScopes` находится на этапе предварительной версии.
+> Добавление группы управления в `AssignableScopes` сейчас находится на этапе предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
 > Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-Если [встроенные роли Azure](built-in-roles.md) не отвечают конкретным потребностям Организации, можно создать собственные пользовательские роли. В этой статье описывается, как получить список, создать, обновить или удалить пользовательские роли с помощью Azure CLI.
+Если [встроенные роли Azure](built-in-roles.md) не соответствуют потребностям вашей организации, вы можете создать собственные настраиваемые роли. В этой статье описывается, как получить список, создать, обновить или удалить пользовательские роли с помощью Azure CLI.
 
 Пошаговое руководство по созданию настраиваемой роли см. в разделе [учебник. Создание настраиваемой роли Azure с помощью Azure CLI](tutorial-custom-role-cli.md).
 
@@ -41,31 +40,27 @@ ms.locfileid: "82734847"
 
 ## <a name="list-custom-roles"></a>Вывод списка настраиваемых ролей
 
-Чтобы получить список пользовательских ролей, доступных для назначения, используйте команду [az role definition list](/cli/azure/role/definition#az-role-definition-list). В следующих примерах перечислены все пользовательские роли в текущей подписке.
+Чтобы получить список пользовательских ролей, доступных для назначения, используйте команду [az role definition list](/cli/azure/role/definition#az-role-definition-list). В следующем примере перечисляются все пользовательские роли в текущей подписке.
 
 ```azurecli
-az role definition list --custom-role-only true --output json | jq '.[] | {"roleName":.roleName, "roleType":.roleType}'
+az role definition list --custom-role-only true --output json --query '[].{roleName:roleName, roleType:roleType}'
 ```
 
-```azurecli
-az role definition list --output json | jq '.[] | if .roleType == "CustomRole" then {"roleName":.roleName, "roleType":.roleType} else empty end'
-```
-
-```Output
-{
-  "roleName": "My Management Contributor",
-  "type": "CustomRole"
-}
-{
-  "roleName": "My Service Reader Role",
-  "type": "CustomRole"
-}
-{
-  "roleName": "Virtual Machine Operator",
-  "type": "CustomRole"
-}
-
-...
+```json
+[
+  {
+    "roleName": "My Management Contributor",
+    "type": "CustomRole"
+  },
+  {
+    "roleName": "My Service Reader Role",
+    "type": "CustomRole"
+  },
+  {
+    "roleName": "Virtual Machine Operator",
+    "type": "CustomRole"
+  }
+]
 ```
 
 ## <a name="list-a-custom-role-definition"></a>Вывод определения пользовательской роли
@@ -73,7 +68,7 @@ az role definition list --output json | jq '.[] | if .roleType == "CustomRole" t
 Чтобы получить список пользовательских определений ролей, используйте команду [AZ Role Definition List](/cli/azure/role/definition#az-role-definition-list). Это та же команда, которая используется для встроенной роли.
 
 ```azurecli
-az role definition list --name <role_name>
+az role definition list --name {roleName}
 ```
 
 В следующем примере показано определение роли *оператора виртуальной машины* :
@@ -82,14 +77,14 @@ az role definition list --name <role_name>
 az role definition list --name "Virtual Machine Operator"
 ```
 
-```Output
+```json
 [
   {
     "assignableScopes": [
-      "/subscriptions/11111111-1111-1111-1111-111111111111"
+      "/subscriptions/{subscriptionId}"
     ],
     "description": "Can monitor and restart virtual machines.",
-    "id": "/subscriptions/11111111-1111-1111-1111-111111111111/providers/Microsoft.Authorization/roleDefinitions/00000000-0000-0000-0000-000000000000",
+    "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/00000000-0000-0000-0000-000000000000",
     "name": "00000000-0000-0000-0000-000000000000",
     "permissions": [
       {
@@ -121,31 +116,33 @@ az role definition list --name "Virtual Machine Operator"
 В следующем примере перечисляются только действия роли *оператора виртуальной машины* :
 
 ```azurecli
-az role definition list --name "Virtual Machine Operator" --output json | jq '.[] | .permissions[0].actions'
+az role definition list --name "Virtual Machine Operator" --output json --query '[].permissions[0].actions'
 ```
 
-```Output
+```json
 [
-  "Microsoft.Storage/*/read",
-  "Microsoft.Network/*/read",
-  "Microsoft.Compute/*/read",
-  "Microsoft.Compute/virtualMachines/start/action",
-  "Microsoft.Compute/virtualMachines/restart/action",
-  "Microsoft.Authorization/*/read",
-  "Microsoft.ResourceHealth/availabilityStatuses/read",
-  "Microsoft.Resources/subscriptions/resourceGroups/read",
-  "Microsoft.Insights/alertRules/*",
-  "Microsoft.Insights/diagnosticSettings/*",
-  "Microsoft.Support/*"
+  [
+    "Microsoft.Storage/*/read",
+    "Microsoft.Network/*/read",
+    "Microsoft.Compute/*/read",
+    "Microsoft.Compute/virtualMachines/start/action",
+    "Microsoft.Compute/virtualMachines/restart/action",
+    "Microsoft.Authorization/*/read",
+    "Microsoft.ResourceHealth/availabilityStatuses/read",
+    "Microsoft.Resources/subscriptions/resourceGroups/read",
+    "Microsoft.Insights/alertRules/*",
+    "Microsoft.Insights/diagnosticSettings/*",
+    "Microsoft.Support/*"
+  ]
 ]
 ```
 
-## <a name="create-a-custom-role"></a>Создание пользовательской роли
+## <a name="create-a-custom-role"></a>Создание настраиваемой роли
 
 Чтобы создать пользовательскую роль, используйте команду [az role definition create](/cli/azure/role/definition#az-role-definition-create). Определением роли может быть описание JSON или путь к файлу, содержащему описание JSON.
 
 ```azurecli
-az role definition create --role-definition <role_definition>
+az role definition create --role-definition {roleDefinition}
 ```
 
 В следующем примере показано создание пользовательской роли *Оператор виртуальной машины*. Пользовательская роль предоставляет доступ ко всем операциям чтения поставщиков ресурсов *Microsoft.Compute*, *Microsoft.Storage* и *Microsoft.Network*, а также доступ для запуска, перезапуска и мониторинга виртуальных машин. Эту настраиваемую роль можно использовать в двух подписках. В этом примере в качестве входных данных используется JSON-файл.
@@ -173,8 +170,8 @@ vmoperator.json
 
   ],
   "AssignableScopes": [
-    "/subscriptions/11111111-1111-1111-1111-111111111111",
-    "/subscriptions/33333333-3333-3333-3333-333333333333"
+    "/subscriptions/{subscriptionId1}",
+    "/subscriptions/{subscriptionId2}"
   ]
 }
 ```
@@ -188,10 +185,10 @@ az role definition create --role-definition ~/roles/vmoperator.json
 Чтобы обновить пользовательскую роль, сначала используйте команду [az role definition list](/cli/azure/role/definition#az-role-definition-list) для получения определения роли. Затем внесите необходимые изменения в определение роли. И наконец, сохраните обновленное определение роли с помощью команды [az role definition update](/cli/azure/role/definition#az-role-definition-update).
 
 ```azurecli
-az role definition update --role-definition <role_definition>
+az role definition update --role-definition {roleDefinition}
 ```
 
-В следующем примере добавляется операция *Microsoft. Insights/diagnosticSettings/* , которая `Actions` добавляет группу управления в `AssignableScopes` для настраиваемой роли *оператора виртуальной машины* . Добавление группы управления в сейчас `AssignableScopes` находится на этапе предварительной версии.
+В следующем примере добавляется операция *Microsoft. Insights/diagnosticSettings/* , которая `Actions` добавляет группу управления в `AssignableScopes` для настраиваемой роли *оператора виртуальной машины* . Добавление группы управления в `AssignableScopes` сейчас находится на этапе предварительной версии.
 
 vmoperator.json
 
@@ -217,8 +214,8 @@ vmoperator.json
 
   ],
   "AssignableScopes": [
-    "/subscriptions/11111111-1111-1111-1111-111111111111",
-    "/subscriptions/33333333-3333-3333-3333-333333333333",
+    "/subscriptions/{subscriptionId1}",
+    "/subscriptions/{subscriptionId2}",
     "/providers/Microsoft.Management/managementGroups/marketing-group"
   ]
 }
@@ -233,7 +230,7 @@ az role definition update --role-definition ~/roles/vmoperator.json
 Чтобы удалить пользовательскую роль, используйте команду [az role definition delete](/cli/azure/role/definition#az-role-definition-delete). Чтобы указать роль, которую необходимо удалить, используйте имя или идентификатор роли. Чтобы определить идентификатор роли, используйте команду [az role definition list](/cli/azure/role/definition#az-role-definition-list).
 
 ```azurecli
-az role definition delete --name <role_name or role_id>
+az role definition delete --name {roleNameOrId}
 ```
 
 В следующем примере показано удаление пользовательской роли *Оператор виртуальной машины*.
@@ -242,8 +239,8 @@ az role definition delete --name <role_name or role_id>
 az role definition delete --name "Virtual Machine Operator"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Руководство. Создание настраиваемой роли Azure с помощью Azure CLI](tutorial-custom-role-cli.md)
-- [Пользовательские роли Azure](custom-roles.md)
+- [Руководство по Создание настраиваемой роли Azure с помощью Azure CLI](tutorial-custom-role-cli.md)
+- [Настраиваемые роли Azure](custom-roles.md)
 - [Операции поставщика ресурсов Azure Resource Manager](resource-provider-operations.md)

@@ -6,12 +6,12 @@ author: timothymothra
 ms.author: tilee
 ms.date: 01/17/2020
 ms.reviewer: mbullwin
-ms.openlocfilehash: 92c4ccf7246c4e763cbf92aee3c48398d79e0ecc
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: d9906e43bad296cc850942c01c83c6bfee2651fb
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83125712"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85482128"
 ---
 # <a name="connection-strings"></a>Строки подключения
 
@@ -182,8 +182,16 @@ var configuration = new TelemetryConfiguration
 </ApplicationInsights>
 ```
 
+NetCore явно задано:
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    var options = new ApplicationInsightsServiceOptions { ConnectionString = "InstrumentationKey=00000000-0000-0000-0000-000000000000;" };
+    services.AddApplicationInsightsTelemetry(options: options);
+}
+```
 
-NetCore config. JSON: 
+config.jsNetCore: 
 
 ```json
 {

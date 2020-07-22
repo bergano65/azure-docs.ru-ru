@@ -8,18 +8,17 @@ manager: mtillman
 ms.assetid: 8078f366-a2c4-4fbb-a44b-fc39fd89df81
 ms.service: role-based-access-control
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 05/06/2020
+ms.date: 06/17/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: e691e37a85604132a6b1c4b2af3501f2c8636e18
-ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
-ms.translationtype: MT
+ms.openlocfilehash: 9819b90ba390e8601cc33a17338ce9b16bf3b3cc
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82891272"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84982498"
 ---
 # <a name="list-azure-role-definitions"></a>Вывод списка определений ролей Azure
 
@@ -37,7 +36,7 @@ ms.locfileid: "82891272"
 
 1. Щелкните конкретный ресурс.
 
-1. Щелкните **Управление доступом (IAM)**.
+1. Щелкните **Управление доступом (IAM)** .
 
 1. Чтобы просмотреть список всех встроенных и пользовательских ролей, щелкните вкладку **Роли**.
 
@@ -175,50 +174,56 @@ az role definition list
 В следующем примере показан список имен доступных определений роли вместе с описанием.
 
 ```azurecli
-az role definition list --output json | jq '.[] | {"roleName":.roleName, "description":.description}'
+az role definition list --output json --query '[].{roleName:roleName, description:description}'
 ```
 
-```Output
-{
-  "roleName": "API Management Service Contributor",
-  "description": "Can manage service and the APIs"
-}
-{
-  "roleName": "API Management Service Operator Role",
-  "description": "Can manage service but not the APIs"
-}
-{
-  "roleName": "API Management Service Reader Role",
-  "description": "Read-only access to service and APIs"
-}
+```json
+[
+  {
+    "description": "Can manage service and the APIs",
+    "roleName": "API Management Service Contributor"
+  },
+  {
+    "description": "Can manage service but not the APIs",
+    "roleName": "API Management Service Operator Role"
+  },
+  {
+    "description": "Read-only access to service and APIs",
+    "roleName": "API Management Service Reader Role"
+  },
 
-...
+  ...
+
+]
 ```
 
 В следующем примере перечисляются все встроенные роли.
 
 ```azurecli
-az role definition list --custom-role-only false --output json | jq '.[] | {"roleName":.roleName, "description":.description, "roleType":.roleType}'
+az role definition list --custom-role-only false --output json --query '[].{roleName:roleName, description:description, roleType:roleType}'
 ```
 
-```Output
-{
-  "roleName": "API Management Service Contributor",
-  "description": "Can manage service and the APIs",
-  "roleType": "BuiltInRole"
-}
-{
-  "roleName": "API Management Service Operator Role",
-  "description": "Can manage service but not the APIs",
-  "roleType": "BuiltInRole"
-}
-{
-  "roleName": "API Management Service Reader Role",
-  "description": "Read-only access to service and APIs",
-  "roleType": "BuiltInRole"
-}
+```json
+[
+  {
+    "description": "Can manage service and the APIs",
+    "roleName": "API Management Service Contributor",
+    "roleType": "BuiltInRole"
+  },
+  {
+    "description": "Can manage service but not the APIs",
+    "roleName": "API Management Service Operator Role",
+    "roleType": "BuiltInRole"
+  },
+  {
+    "description": "Read-only access to service and APIs",
+    "roleName": "API Management Service Reader Role",
+    "roleType": "BuiltInRole"
+  },
+  
+  ...
 
-...
+]
 ```
 
 ### <a name="list-a-role-definition"></a>Вывод определения роли
@@ -226,7 +231,7 @@ az role definition list --custom-role-only false --output json | jq '.[] | {"rol
 Чтобы получить список сведений о роли, используйте команду [AZ Role Definition List](/cli/azure/role/definition#az-role-definition-list).
 
 ```azurecli
-az role definition list --name <role_name>
+az role definition list --name {roleName}
 ```
 
 В следующем примере показано определение роли *Участник*.
@@ -235,27 +240,27 @@ az role definition list --name <role_name>
 az role definition list --name "Contributor"
 ```
 
-```Output
+```json
 [
   {
-    "additionalProperties": {},
     "assignableScopes": [
       "/"
     ],
     "description": "Lets you manage everything except access to resources.",
-    "id": "/subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c",
+    "id": "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c",
     "name": "b24988ac-6180-42a0-ab88-20f7382dd24c",
     "permissions": [
       {
         "actions": [
           "*"
         ],
-        "additionalProperties": {},
         "dataActions": [],
         "notActions": [
           "Microsoft.Authorization/*/Delete",
           "Microsoft.Authorization/*/Write",
-          "Microsoft.Authorization/elevateAccess/Action"
+          "Microsoft.Authorization/elevateAccess/Action",
+          "Microsoft.Blueprint/blueprintAssignments/write",
+          "Microsoft.Blueprint/blueprintAssignments/delete"
         ],
         "notDataActions": []
       }
@@ -272,43 +277,54 @@ az role definition list --name "Contributor"
 В следующем примере перечисляются только *действия* и *неизменность* роли *участника* .
 
 ```azurecli
-az role definition list --name "Contributor" --output json | jq '.[] | {"actions":.permissions[0].actions, "notActions":.permissions[0].notActions}'
+az role definition list --name "Contributor" --output json --query '[].{actions:permissions[0].actions, notActions:permissions[0].notActions}'
 ```
 
-```Output
-{
-  "actions": [
-    "*"
-  ],
-  "notActions": [
-    "Microsoft.Authorization/*/Delete",
-    "Microsoft.Authorization/*/Write",
-    "Microsoft.Authorization/elevateAccess/Action"
-  ]
-}
+```json
+[
+  {
+    "actions": [
+      "*"
+    ],
+    "notActions": [
+      "Microsoft.Authorization/*/Delete",
+      "Microsoft.Authorization/*/Write",
+      "Microsoft.Authorization/elevateAccess/Action",
+      "Microsoft.Blueprint/blueprintAssignments/write",
+      "Microsoft.Blueprint/blueprintAssignments/delete"
+    ]
+  }
+]
 ```
 
 В следующем примере перечисляются только действия роли *участника виртуальной машины* .
 
 ```azurecli
-az role definition list --name "Virtual Machine Contributor" --output json | jq '.[] | .permissions[0].actions'
+az role definition list --name "Virtual Machine Contributor" --output json --query '[].permissions[0].actions'
 ```
 
-```Output
+```json
 [
-  "Microsoft.Authorization/*/read",
-  "Microsoft.Compute/availabilitySets/*",
-  "Microsoft.Compute/locations/*",
-  "Microsoft.Compute/virtualMachines/*",
-  "Microsoft.Compute/virtualMachineScaleSets/*",
-  "Microsoft.Insights/alertRules/*",
-  "Microsoft.Network/applicationGateways/backendAddressPools/join/action",
-  "Microsoft.Network/loadBalancers/backendAddressPools/join/action",
+  [
+    "Microsoft.Authorization/*/read",
+    "Microsoft.Compute/availabilitySets/*",
+    "Microsoft.Compute/locations/*",
+    "Microsoft.Compute/virtualMachines/*",
+    "Microsoft.Compute/virtualMachineScaleSets/*",
+    "Microsoft.Compute/disks/write",
+    "Microsoft.Compute/disks/read",
+    "Microsoft.Compute/disks/delete",
+    "Microsoft.DevTestLab/schedules/*",
+    "Microsoft.Insights/alertRules/*",
+    "Microsoft.Network/applicationGateways/backendAddressPools/join/action",
+    "Microsoft.Network/loadBalancers/backendAddressPools/join/action",
 
-  ...
+    ...
 
-  "Microsoft.Storage/storageAccounts/listKeys/action",
-  "Microsoft.Storage/storageAccounts/read"
+    "Microsoft.Storage/storageAccounts/listKeys/action",
+    "Microsoft.Storage/storageAccounts/read",
+    "Microsoft.Support/*"
+  ]
 ]
 ```
 
@@ -339,10 +355,10 @@ az role definition list --name "Virtual Machine Contributor" --output json | jq 
 1. Замените *{Filter}* условием, которое необходимо применить для фильтрации списка определений ролей.
 
     > [!div class="mx-tableFixed"]
-    > | Filter | Описание |
+    > | Filter | Описание: |
     > | --- | --- |
     > | `$filter=atScopeAndBelow()` | Перечисляет определения ролей для указанной области и всех ее подобластей. |
-    > | `$filter=type+eq+'{type}'` | Перечисляет определения ролей указанного типа. Тип роли может быть `CustomRole` или. `BuiltInRole` |
+    > | `$filter=type+eq+'{type}'` | Перечисляет определения ролей указанного типа. Тип роли может быть `CustomRole` или `BuiltInRole` . |
 
 Следующий запрос перечисляет определения пользовательских ролей в области действия подписки:
 
@@ -457,9 +473,9 @@ GET https://management.azure.com/providers/Microsoft.Authorization/roleDefinitio
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Встроенные роли Azure](built-in-roles.md)
-- [Пользовательские роли Azure](custom-roles.md)
+- [Настраиваемые роли Azure](custom-roles.md)
 - [Вывод списка назначений ролей Azure с помощью портал Azure](role-assignments-list-portal.md)
-- [Добавление или удаление назначений ролей Azure с помощью портал Azure](role-assignments-portal.md)
+- [Добавление и удаление назначений ролей Azure с помощью портала Azure](role-assignments-portal.md)

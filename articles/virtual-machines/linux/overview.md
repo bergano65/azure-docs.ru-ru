@@ -8,12 +8,12 @@ ms.workload: infrastructure
 ms.date: 11/14/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 83676850a58da4e4bd3c549d9d0c6ac25ae20f83
-ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
+ms.openlocfilehash: 98a118ef662abd323854911e9fc1ffc6b7374db2
+ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81759425"
+ms.lasthandoff: 05/31/2020
+ms.locfileid: "84232994"
 ---
 # <a name="linux-virtual-machines-in-azure"></a>Виртуальные машины Linux в Azure
 
@@ -77,16 +77,16 @@ Microsoft Azure поддерживает различные дистрибути
 Корпорация Майкрософт тесно сотрудничает с партнерами, чтобы гарантировать обновление и оптимизацию доступных образов для среды выполнения Azure.  Дополнительные сведения о партнерах Azure см. по следующим ссылкам.
 
 * Linux в Azure — [рекомендованные дистрибутивы](endorsed-distros.md)
-* SUSE — [Azure Marketplace — SUSE Linux Enterprise Server](https://azuremarketplace.microsoft.com/marketplace/apps/SUSE.SLES?tab=Overview)
-* RedHat: [Azure Marketplace — RedHat Enterprise Linux 7.2](https://azure.microsoft.com/marketplace/partners/redhat/redhatenterpriselinux72/)
-* Canonical — [Azure Marketplace — Ubuntu Server 16.04 LTS](https://azure.microsoft.com/marketplace/partners/canonical/ubuntuserver1604lts/)
-* Debian — [Azure Marketplace — Debian 8 "Jessie"](https://azure.microsoft.com/marketplace/partners/credativ/debian8/)
+* SUSE — [Azure Marketplace — SUSE Linux Enterprise Server](https://azuremarketplace.microsoft.com/marketplace/apps?search=suse%20sles&page=1)
+* RedHat — [Azure Marketplace — Red Hat Enterprise Linux 8.1](https://azuremarketplace.microsoft.com/marketplace/apps/RedHat.RedHatEnterpriseLinux81-ARM)
+* Canonical — [Azure Marketplace — Ubuntu Server](https://azuremarketplace.microsoft.com/marketplace/apps/Canonical.UbuntuServer)
+* Debian — [Azure Marketplace — Debian 8 "Jessie"](https://azuremarketplace.microsoft.com/marketplace/apps/credativ.debian)
 * FreeBSD — [Azure Marketplace —FreeBSD 10.4](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.FreeBSD104)
-* CoreOS — [Azure Marketplace —CoreOS (стабильная версия)](https://azure.microsoft.com/marketplace/partners/coreos/coreosstable/)
-* RancherOS — [Azure Marketplace —RancherOS](https://azure.microsoft.com/marketplace/partners/rancher/rancheros/)
+* CoreOS — [Azure Marketplace — Container Linux от CoreOS](https://azuremarketplace.microsoft.com/marketplace/apps/CoreOS.CoreOS)
+* RancherOS — [Azure Marketplace —RancherOS](https://azuremarketplace.microsoft.com/marketplace/apps/rancher.rancheros)
 * Bitnami — [Bitnami Library для Azure](https://azure.bitnami.com/)
-* Mesosphere — [Azure Marketplace — Mesosphere DC/OS в Azure](https://azure.microsoft.com/marketplace/partners/mesosphere/dcosdcos/)
-* Docker — [Azure Marketplace — служба контейнеров Azure с Docker Swarm](https://azure.microsoft.com/marketplace/partners/microsoft/acsswarms/)
+* Mesosphere — [Azure Marketplace — Mesosphere DC/OS в Azure](https://azure.microsoft.com/services/kubernetes-service/mesosphere/)
+* Docker — [Azure Marketplace — образы Docker](https://azuremarketplace.microsoft.com/marketplace/apps?search=docker&page=1&filters=virtual-machine-images)
 * Jenkins — [Azure Marketplace — платформа CloudBees Jenkins](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/cloudbees.cloudbees-core-contact)
 
 
@@ -108,7 +108,7 @@ Azure поддерживает пакет [cloud-init](https://cloud-init.io/) �
 
 ## <a name="networking"></a>Сеть
 * [Обзор виртуальной сети](../../virtual-network/virtual-networks-overview.md)
-* [IP-адреса в Azure](../../virtual-network/virtual-network-ip-addresses-overview-arm.md)
+* [IP-адреса в Azure](../../virtual-network/public-ip-addresses.md)
 * [Открытие портов для виртуальной машины Linux в Azure](nsg-quickstart.md)
 * [Создание полного доменного имени на портале Azure](portal-create-fqdn.md)
 

@@ -6,12 +6,11 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 10/08/2018
-ms.openlocfilehash: 5c40feec2dca65e4bc9617a71a6d0a8e4c872a3a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 4f24efc4ea306046ab09119b859fa1d0853b25b6
+ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74793231"
+ms.lasthandoff: 05/25/2020
+ms.locfileid: "83834532"
 ---
 # <a name="create-switch-statements-that-run-workflow-actions-based-on-specific-values-in-azure-logic-apps"></a>Создание операторов switch, которые запускают действия рабочего процесса на основе определенных значений в Azure Logic Apps
 
@@ -29,7 +28,7 @@ ms.locfileid: "74793231"
 
 * Чтобы выполнить действия, указанные в данной статье, [создайте этот пример приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md), используя учетную запись Outlook.com или Office 365 Outlook.
 
-  1. Когда вы добавляете действие для отправки сообщения, найдите и выберите действие **Send an approval email** (Отправить сообщение с утверждением)
+  1. Когда вы добавляете действие для отправки сообщения, найдите и выберите действие **Send an approval email** (Отправить сообщение с утверждением).
 
      ![Выбор Send an approval email (Отправить сообщение с утверждением)](./media/logic-apps-control-flow-switch-statement/send-approval-email-action.png)
 
@@ -42,9 +41,9 @@ ms.locfileid: "74793231"
 
 1. В этом примере добавьте оператор switch в конце вашего рабочего процесса. После выполнения последнего шага выберите **Новый шаг**.
 
-   Если вы хотите добавить оператор switch между шагами, наведите указатель мыши на стрелку, где его нужно добавить. Выберите отображаемый **знак плюса** (**+**), а затем щелкните **Добавить действие**.
+   Если вы хотите добавить оператор switch между шагами, наведите указатель мыши на стрелку, где его нужно добавить. Щелкните появившийся знак **плюс** ( **+** ), затем выберите **Добавить действие**.
 
-1. В поле поиска введите слово "switch" в качестве фильтра. Выберите действие: **Switch — Элемент управления**
+1. В поле поиска введите слово "switch" в качестве фильтра. Выбор действия **Switch — Элемент управления**.
 
    ![Добавление switch](./media/logic-apps-control-flow-switch-statement/add-switch-statement.png)
 
@@ -65,9 +64,9 @@ ms.locfileid: "74793231"
 
    | № варианта | **SelectedOption** | Действие |
    |--------|--------------------|--------|
-   | Вариант 1 | **Утверждение** | Добавьте действие Outlook **Send an email** (Отправить сообщение), чтобы отправить сведения об элементе RSS только после того, как утверждающий выбрал **Утвердить**. |
-   | Вариант 2 | **Reject** | Добавьте действие Outlook **Send an email** (Отправить сообщение), чтобы уведомить других утверждающих о том, что элемент RSS был отклонен. |
-   | Значение по умолчанию | None | Никаких действий не требуется. В этом примере вариант **По умолчанию** пуст, потому что для **SelectedOption** доступны только два варианта. |
+   | Вариант 1 | **Утвердить** | Добавьте действие Outlook **Send an email** (Отправить сообщение), чтобы отправить сведения об элементе RSS только после того, как утверждающий выбрал **Утвердить**. |
+   | Вариант 2 | **Отклонить** | Добавьте действие Outlook **Send an email** (Отправить сообщение), чтобы уведомить других утверждающих о том, что элемент RSS был отклонен. |
+   | По умолчанию | None | Никаких действий не требуется. В этом примере вариант **По умолчанию** пуст, потому что для **SelectedOption** доступны только два варианта. |
    |||
 
    ![Оператор switch готов](./media/logic-apps-control-flow-switch-statement/finished-switch.png)
@@ -121,7 +120,7 @@ ms.locfileid: "74793231"
 
 ## <a name="get-support"></a>Получение поддержки
 
-* Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
+* Если у вас есть вопросы, посетите [страницу вопросов и ответов по Azure Logic Apps на сайте Майкрософт](https://docs.microsoft.com/answers/topics/azure-logic-apps.html).
 * Отправить предложения по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Azure Logic Apps](https://aka.ms/logicapps-wish).
 
 ## <a name="next-steps"></a>Дальнейшие действия

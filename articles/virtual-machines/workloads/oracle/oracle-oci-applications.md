@@ -3,22 +3,22 @@ title: Архитектуры для развертывания приложен
 description: Архитектуры приложений для развертывания приложений Oracle, включая E-Business Suite, JD Edwards EnterpriseOne и PeopleSoft на Microsoft Azure виртуальных машинах с базами данных в Azure или в облачной инфраструктуре Oracle (OCI).
 services: virtual-machines-linux
 documentationcenter: ''
-author: BorisB2015
-manager: gwallace
+author: rgardler
+manager: ''
 tags: ''
 ms.service: virtual-machines
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 07/18/2019
-ms.author: borisb
+ms.author: rogardle
 ms.custom: ''
-ms.openlocfilehash: f36dfe0092e3447053871ee0e5b4d659bb443779
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 9fe6886f368d053af919b326fabf1ad4c3066717
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81687488"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86224542"
 ---
 # <a name="architectures-to-deploy-oracle-applications-on-azure"></a>Архитектуры для развертывания приложений Oracle в Azure
 
@@ -44,7 +44,7 @@ OCI предлагает несколько вариантов базы данн
 
 При развертывании приложения с помощью межоблачного межсетевого соединения вы можете продолжать использовать существующий канал ExpressRoute для подключения среды Azure к локальной сети. Однако для соединения с вашим локальным сетевым подключением требуется отдельный канал ExpressRoute.
 
-## <a name="e-business-suite"></a>Набор E-Business
+## <a name="e-business-suite"></a>E-Business Suite;
 
 Oracle E-Business Suite (EBS) — это набор приложений, включая управление цепочкой поставок (SCM) и управление отношениями с клиентами (CRM). Чтобы воспользоваться преимуществами управляемого портфеля баз данных OCI, можно развернуть EBS с помощью межоблачного межплатформенного соединения между Microsoft Azure и OCI. В этой конфигурации уровни представления и приложения выполняются в Azure и на уровне базы данных в OCI, как показано на следующей схеме архитектуры (рис. 1).
 
@@ -79,7 +79,7 @@ Oracle E-Business Suite (EBS) — это набор приложений, вкл
 Корпорация Майкрософт и Oracle рекомендуют настроить высокий уровень доступности. Высокая доступность в Azure может быть достигнута путем настройки двух баз данных Oracle в двух зонах доступности с помощью Oracle Data Guard или Oracle Database облачной службы Ексадата в OCI. При использовании Oracle Database Ексадата облачной службы база данных развертывается в двух подсетях. Вы также можете настроить Oracle Database в виртуальных машинах в OCI в двух доменах доступности с помощью Oracle Data Guard.
 
 
-### <a name="identity-tier"></a>Уровень удостоверений
+### <a name="identity-tier"></a>Уровень идентификации
 
 Уровень удостоверений содержит виртуальную машину утверждения EBS. Утверждение EBS позволяет синхронизировать удостоверения из облачной службы удостоверений Oracle (ИДКС) и Azure AD. Утверждение EBS требуется, так как EBS не поддерживает протоколы единого входа, такие как SAML 2,0 или OpenID Connect Connect. Утверждение EBS использует маркер подключения OpenID Connect (созданный ИДКС), проверяет его, а затем создает сеанс для пользователя в EBS. 
 
@@ -89,7 +89,7 @@ Oracle E-Business Suite (EBS) — это набор приложений, вкл
 
 После установки инфраструктуры можно установить E-Business Suite, следуя руководству по установке, предоставленному Oracle.
 
-## <a name="jd-edwards-enterpriseone"></a>JD Edwards EnterpriseOne
+## <a name="jd-edwards-enterpriseone"></a>JD Edwards EnterpriseOne;
 
 JD Edwards EnterpriseOne Oracle — это интегрированный набор комплексных приложений для планирования корпоративных ресурсов. Это многоуровневое приложение, которое можно настроить с помощью серверной части базы данных Oracle или SQL Server. В этом разделе рассматриваются сведения о развертывании JD Edwards EnterpriseOne с серверной службой базы данных Oracle в OCI или в Azure.
 
@@ -151,7 +151,7 @@ JD Edwards EnterpriseOne Oracle — это интегрированный наб
 
 [!INCLUDE [virtual-machines-oracle-applications-identity](../../../../includes/virtual-machines-oracle-applications-identity.md)]
 
-## <a name="peoplesoft"></a>PeopleSoft
+## <a name="peoplesoft"></a>PeopleSoft;
 
 Пакет приложений Oracle PeopleSoft содержит программное обеспечение для управления персоналом и финансовыми ресурсами. Набор приложений состоит из нескольких многоуровневых приложений, а приложения включают системы управления персоналом (ХРМС), Управление отношениями с клиентами (CRM), управление финансами и управлением цепочкой поставок (ФСКМ), а также управление производительностью предприятия (EPM).
 
@@ -189,8 +189,8 @@ JD Edwards EnterpriseOne Oracle — это интегрированный наб
 
 [!INCLUDE [virtual-machines-oracle-applications-identity](../../../../includes/virtual-machines-oracle-applications-identity.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Используйте [сценарии terraform](https://github.com/microsoft/azure-oracle) , чтобы настроить приложения Oracle в Azure и установить подключение между облаками с OCI.
 
-Дополнительные сведения и технические документы о OCI см. в документации по [облаку Oracle](https://docs.cloud.oracle.com/iaas/Content/home.htm) .
+Дополнительные сведения о платформе OCI приводятся в документации по [Oracle Cloud Infrastructure](https://docs.cloud.oracle.com/iaas/Content/home.htm).

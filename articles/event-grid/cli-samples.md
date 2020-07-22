@@ -1,34 +1,27 @@
 ---
 title: Примеры Azure CLI. Служба "Сетка событий" | Документация Майкрософт
 description: В этой статье представлена таблица со ссылками на примеры скриптов для интерфейса командной строки Azure (CLI) службы "Сетка событий".
-services: event-grid
-author: spelluru
-manager: timlt
-ms.service: event-grid
-ms.devlang: na
 ms.topic: sample
-ms.tgt_pltfrm: na
-ms.date: 01/21/2020
-ms.author: spelluru
-ms.openlocfilehash: 0cef3f5ae7c647236d52e4c571e5fc382e1560f4
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.date: 07/07/2020
+ms.openlocfilehash: 1b8fd66d42de3694ed93275e5ceb45c5fd14d0e5
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "76514618"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86103115"
 ---
 # <a name="azure-cli-samples-for-event-grid"></a>Примеры Azure CLI для службы "Сетка событий"
 
 В таблице ниже приведены ссылки на скрипты Azure CLI для службы "Сетка событий".
 
-| | |
-|-|-|
-|**Подписки на службу "Сетка событий"**||
-| [Подписка на события подписки Azure](scripts/event-grid-cli-azure-subscription.md)| Создание подписки на события, связанные с подпиской Azure. |
-| [Подписка на события хранилища BLOB-объектов](scripts/event-grid-cli-blob.md)| Создание подписки на события, связанные с учетной записью хранения больших двоичных объектов. |
-| [Подписка на события пользовательского раздела](scripts/event-grid-cli-subscribe-custom-topic.md)| Создание подписки на события, связанные с пользовательским разделом. |
-| [Подписка на события группы ресурсов](scripts/event-grid-cli-resource-group.md)| Создает подписку на события для группы ресурсов. |
-| [Подписка на группу ресурсов и фильтрация по ресурсу](scripts/event-grid-cli-resource-group-filter.md)| Создание подписки на события группы ресурсов и фильтрация событий для ресурса. |
-|**Разделы службы "Сетка событий"**||
-| [Создание пользовательского раздела](scripts/event-grid-cli-create-custom-topic.md) | Создание пользовательского раздела "Сетка событий" и возвращение конечной точки и ключа.  |
-| | |
+## <a name="event-grid-subscriptions"></a>Подписки на службу "Сетка событий"
+
+- [Подписка на события подписки Azure](scripts/event-grid-cli-azure-subscription.md) — подписка на события, связанные с подпиской Azure. 
+- [Подписка на события хранилища больших двоичных объектов](scripts/event-grid-cli-blob.md). В этом примере создается подписка на события, связанные с учетной записью хранения больших двоичных объектов. 
+- [Подписка на события пользовательского раздела](scripts/event-grid-cli-subscribe-custom-topic.md). В этом примере создается подписка на события, связанные с пользовательским разделом. 
+- [Подписка на события группы ресурсов](scripts/event-grid-cli-resource-group.md) — подписка на события для группы ресурсов. 
+- [Подписка на события группы ресурсов и фильтрацию ресурсов](scripts/event-grid-cli-resource-group-filter.md) — подписка на события для группы ресурсов и фильтрация событий для ресурса. 
+
+## <a name="event-grid-topics"></a>Разделы Сетки событий
+
+- [Создание пользовательского раздела](scripts/event-grid-cli-create-custom-topic.md) — создание пользовательского раздела Сетки событий и получение конечной точки и ключа. 

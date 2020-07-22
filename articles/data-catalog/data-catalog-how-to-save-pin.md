@@ -4,14 +4,14 @@ description: Это практическое руководство описыв
 author: JasonWHowell
 ms.author: jasonh
 ms.service: data-catalog
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 08/01/2019
-ms.openlocfilehash: a8545939fd027989519e0f7a161f750ec676749a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 2d0baed53441893ec294784f0f8092fe89a347c9
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "68976819"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86523712"
 ---
 # <a name="save-searches-and-pin-data-assets-in-azure-data-catalog"></a>Сохранение поисков и закрепление ресурсов данных в каталоге данных Azure
 ## <a name="introduction"></a>Введение
@@ -74,5 +74,5 @@ ms.locfileid: "68976819"
 
 ![Раздел "Мои ресурсы" на домашней странице](./media/data-catalog-how-to-save-pin/07-my-assets.png)
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Итоги
 Каталог данных Azure предоставляет возможности, которые упрощают поиск нужных источников данных. Поэтому вы и другие сотрудники организации можете тратить меньше времени на поиск данных и больше — на работу с ними. На базе этих основных возможностей реализованы функции сохраненных поисков и закрепленных ресурсов данных, позволяющие пользователям легко находить источники данных, с которыми они работают регулярно.

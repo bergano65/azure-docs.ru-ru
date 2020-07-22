@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 03/29/2016
 ms.author: kundanap
-ms.openlocfilehash: bc99a9c9e9ff985730ec97dbacd1d7c1de06a45e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 2fa87e860d0f5f5117840b9e230e383cdd6aae7c
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74073651"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86187563"
 ---
 # <a name="troubleshooting-azure-windows-vm-extension-failures"></a>Troubleshooting Azure Windows VM extension failures
 [!INCLUDE [virtual-machines-common-extensions-troubleshoot](../../../includes/virtual-machines-common-extensions-troubleshoot.md)]
@@ -31,32 +31,36 @@ ms.locfileid: "74073651"
 
 Azure PowerShell:
 
-      Get-AzVM -ResourceGroupName $RGName -Name $vmName -Status
+```azurepowershell
+Get-AzVM -ResourceGroupName $RGName -Name $vmName -Status
+```
 
 Пример выходных данных:
 
-      Extensions:  {
-      "ExtensionType": "Microsoft.Compute.CustomScriptExtension",
-      "Name": "myCustomScriptExtension",
-      "SubStatuses": [
-        {
-          "Code": "ComponentStatus/StdOut/succeeded",
-          "DisplayStatus": "Provisioning succeeded",
-          "Level": "Info",
-          "Message": "    Directory: C:\\temp\\n\\n\\nMode                LastWriteTime     Length Name
-              \\n----                -------------     ------ ----                              \\n-a---          9/1/2015   2:03 AM         11
-              test.txt                          \\n\\n",
-                      "Time": null
-          },
-        {
-          "Code": "ComponentStatus/StdErr/succeeded",
-          "DisplayStatus": "Provisioning succeeded",
-          "Level": "Info",
-          "Message": "",
-          "Time": null
-        }
+```output
+Extensions:  {
+  "ExtensionType": "Microsoft.Compute.CustomScriptExtension",
+  "Name": "myCustomScriptExtension",
+  "SubStatuses": [
+    {
+      "Code": "ComponentStatus/StdOut/succeeded",
+      "DisplayStatus": "Provisioning succeeded",
+      "Level": "Info",
+      "Message": "    Directory: C:\\temp\\n\\n\\nMode                LastWriteTime     Length Name
+          \\n----                -------------     ------ ----                              \\n-a---          9/1/2015   2:03 AM         11
+          test.txt                          \\n\\n",
+                  "Time": null
+      },
+    {
+      "Code": "ComponentStatus/StdErr/succeeded",
+      "DisplayStatus": "Provisioning succeeded",
+      "Level": "Info",
+      "Message": "",
+      "Time": null
     }
   ]
+}
+```
 
 ## <a name="troubleshooting-extension-failures"></a>Устранение неполадок расширений
 ### <a name="rerun-the-extension-on-the-vm"></a>Повторное выполнение расширения на виртуальной машине
@@ -64,7 +68,9 @@ Azure PowerShell:
 Примечание. В будущем эта функция будет усовершенствована, что позволит устранить необходимость в удалении расширения.
 
 #### <a name="remove-the-extension-from-azure-powershell"></a>Удаление расширения с помощью Azure PowerShell
-    Remove-AzVMExtension -ResourceGroupName $RGName -VMName $vmName -Name "myCustomScriptExtension"
+```azurepowershell
+Remove-AzVMExtension -ResourceGroupName $RGName -VMName $vmName -Name "myCustomScriptExtension"
+```
 
 После удаления расширения шаблон можно выполнить повторно, чтобы запустить скрипты на виртуальной машине.
 

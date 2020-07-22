@@ -5,19 +5,18 @@ description: В этой статье показано, как разверну�
 services: virtual-network
 documentationcenter: na
 author: KumudD
-manager: twooley
+manager: mtillman
 ms.service: virtual-network
 ms.devlang: NA
-ms.topic: article
+ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 03/31/2020
 ms.author: kumud
-ms.openlocfilehash: 7c2f66d92597801aa7c6b0b32f86f594d3effb05
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 51d43a1cdb24455c12717f4db50955fc7bc738f8
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80420601"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84707452"
 ---
 # <a name="deploy-an-ipv6-dual-stack-application-with-basic-load-balancer-in-azure---template"></a>Развертывание приложения с двойным стеком IPv6 с помощью базового Load Balancer в Azure — шаблон
 
@@ -182,4 +181,4 @@ ms.locfileid: "80420601"
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-Вы можете узнать о ценах на [общедоступные IP-адреса](https://azure.microsoft.com/pricing/details/ip-addresses/), [пропускную способность сети](https://azure.microsoft.com/pricing/details/bandwidth/)или [Load Balancer](https://azure.microsoft.com/pricing/details/load-balancer/).
+Вы можете ознакомиться с подробными ценами за использование [общедоступных IP-адресов](https://azure.microsoft.com/pricing/details/ip-addresses/), [пропускной способности сети](https://azure.microsoft.com/pricing/details/bandwidth/) или [подсистемы балансировки нагрузки](https://azure.microsoft.com/pricing/details/load-balancer/).

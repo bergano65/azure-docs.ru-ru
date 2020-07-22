@@ -16,17 +16,16 @@ ms.date: 03/28/2019
 ms.author: arvinh
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: fa0a26eaeac431ed2c78c5bd938bbbe7dff14e0e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77057419"
 ---
 # <a name="tutorial-configure-linkedin-elevate-for-automatic-user-provisioning"></a>Руководство по настройке LinkedIn Elevate для автоматической подготовки пользователей
 
 Цель этого руководства — показать, как настроить автоматическую подготовку и отмену подготовки учетных записей пользователей Azure AD в LinkedIn Elevate.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Сценарий, описанный в этом учебнике, предполагает, что у вас уже имеется:
 
@@ -92,7 +91,7 @@ ms.locfileid: "77057419"
 
 9. Выберите свой экземпляр LinkedIn Elevate и перейдите на вкладку **Подготовка**.
 
-10. Установите для **режима подготовки** значение **автоматически**.
+10. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
     ![Подготовка LinkedIn Elevate](./media/linkedinelevate-provisioning-tutorial/linkedin_elevate3.PNG)
 

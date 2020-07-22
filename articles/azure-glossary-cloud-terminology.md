@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/16/2017
 ms.author: monicar
-ms.openlocfilehash: 7c80ba6b15cec08da9bcefea243493a824ef66bd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: fa7464c70593c83c708aba49235ecdde1be0cc9f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79276482"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84807760"
 ---
 # <a name="microsoft-azure-glossary-a-dictionary-of-cloud-terminology-on-the-azure-platform"></a>Словарь терминов Microsoft Azure: словарь терминов, связанных с облаком на платформе Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "79276482"
 
 ## <a name="account"></a>account
 Учетная запись, используемая для доступа к подписке Azure и управления ей. Зачастую она называется учетной записью Azure, хотя учетной записью может быть любая из следующих: существующая рабочая, учебная или личная учетная запись Майкрософт либо имя пользователя и пароль Office 365. Можно также создать учетную запись для управления подпиской Azure во время регистрации в [бесплатной пробной версии](https://azure.microsoft.com).  
-См. разделы [Регистрация для получения подписки Azure с помощью учетной записи Office 365](cost-management-billing/manage/office-365-account-for-azure-subscription.md) и [Учетные записи для входа](active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md).
+См. статью [Регистрация в подписке Azure с учетной записью Microsoft 365](cost-management-billing/manage/microsoft-365-account-for-azure-subscription.md) и учетными [записями, которые можно использовать для входа](active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md).
 
 ## <a name="api-app"></a>приложение API;
 Другое имя для [приложения службы приложений](#app-service-app).
@@ -94,7 +94,7 @@ ms.locfileid: "79276482"
 Область геообъекта, не пересекающая национальные границы и содержащая один или несколько центров обработки данных. Цены, региональные службы и типы предложений применяются на уровне регионов. Обычно регионы объединяются в пары, даже если находятся в нескольких сотнях километров друг от друга. Пары регионов можно использовать как механизм для аварийного восстановления и сценариев высокой доступности. Также называется *расположением*.  
 См. статью [Регионы Azure](best-practices-availability-paired-regions.md).
 
-## <a name="resource"></a>resource
+## <a name="resource"></a>ресурс
 Элемент, который является частью решения Azure. Каждая служба Azure позволяет развертывать различные типы ресурсов, такие как базы данных или виртуальные машины.   
 См. статью [Общие сведения о диспетчере ресурсов Azure](azure-resource-manager/management/overview.md).
 
@@ -118,18 +118,18 @@ JSON-файл, который декларативно определяет од
 Соглашение, в котором описываются обязательства корпорации Майкрософт в отношении доступности и подключения. В каждой службе Azure есть отдельный SLA.  
 См. статью [Соглашения об уровне обслуживания](https://azure.microsoft.com/support/legal/sla/).
 
-## <a name="shared-access-signature-sas"></a><a name="sas"></a>подписанный URL-адрес (SAS)
+## <a name="shared-access-signature-sas"></a><a name="sas"></a>подпись общего доступа (SAS)
 Подпись, которая позволяет предоставлять ограниченный доступ к ресурсу, не раскрывая ключ учетной записи. Например, [служба хранилища Azure использует подписанный URL-адрес](storage/common/storage-dotnet-shared-access-signature-part-1.md) для предоставления клиентского доступа к объектам, таким как BLOB-объекты. [Центр Интернета Вещей использует подписанный URL-адрес](iot-hub/iot-hub-devguide-security.md#security-tokens) для предоставления устройствам разрешения на отправку данных телеметрии.
 
 ## <a name="storage-account"></a>запись хранения Azure
 Учетная запись, которая предоставляет доступ к службам BLOB-объектов, очередей, таблиц и файлов в службе хранилища Azure. Имя учетной записи хранения определяет уникальное пространство имен для объектов данных в службе хранилища Azure.  
-См. статью [Об учетных записях хранения Azure](storage/common/storage-create-storage-account.md).
+См. раздел [об учетных записях хранения Azure](storage/common/storage-create-storage-account.md)
 
 ## <a name="subscription"></a>Подписка
 Соглашение клиента с корпорацией Майкрософт, которое позволяет им получать доступ к службам Azure. Цены на подписку и связанные условия регулируются предложением, выбранным для подписки.
 См. [Соглашение о подписке Microsoft Online](https://azure.microsoft.com/support/legal/subscription-agreement/) и статью [Связь между подписками Azure и службой Azure Active Directory](active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md).
 
-## <a name="tag"></a>tag
+## <a name="tag"></a>тег
 Условие индексирования, которое позволяет классифицировать ресурсы в соответствии с вашими требованиями к управлению или выставлению счетов. Если имеется сложная коллекция ресурсов, вы можете использовать теги, чтобы визуализировать эти активы наиболее оптимальным способом. Например, можно снабдить тегами ресурсы, которые выполняют в организации одну и ту же роль или относятся к одному отделу.  
 См. статью [Использование тегов для организации ресурсов в Azure](resource-group-using-tags.md).
 

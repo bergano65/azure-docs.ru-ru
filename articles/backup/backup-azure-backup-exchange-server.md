@@ -5,10 +5,10 @@ ms.reviewer: kasinh
 ms.topic: conceptual
 ms.date: 01/31/2019
 ms.openlocfilehash: b45efa0623edbec47b8ae12d3a97b1e032626530
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80396420"
 ---
 # <a name="back-up-an-exchange-server-to-azure-backup-with-system-center-2012-r2-dpm"></a>Резервное копирование Exchange Server в службу архивации Azure с помощью System Center 2012 R2 DPM
@@ -24,7 +24,7 @@ ms.locfileid: "80396420"
 >
 >
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем продолжить, выполните все [предварительные требования](backup-azure-dpm-introduction.md#prerequisites-and-limitations) по использованию Microsoft Azure Backup для защиты рабочих нагрузок. Список предварительных требований:
 
@@ -62,7 +62,7 @@ ms.locfileid: "80396420"
 
    * «Мне нужна краткосрочная защита с использованием диска»;
    * «Мне нужна оперативная защита».
-6. Щелкните **Далее**.
+6. Нажмите кнопку **Далее**.
 7. Выберите параметр **Запустить программу Eseutil для проверки целостности данных** , чтобы проверить целостность баз данных Exchange Server.
 
     После выбора этого параметра Проверка согласованности резервного копирования будет выполняться на сервере DPM во избежание трафика ввода-вывода, созданного при выполнении команды **eseutil** на сервере Exchange.
@@ -72,7 +72,7 @@ ms.locfileid: "80396420"
    > ![ошибка Eseutil](./media/backup-azure-backup-exchange-server/eseutil-error.png)
    >
    >
-8. Щелкните **Далее**.
+8. Нажмите кнопку **Далее**.
 9. Выберите базу данных для **копирующей архивации**, а затем нажмите кнопку **Далее**.
 
    > [!NOTE]
@@ -120,6 +120,6 @@ ms.locfileid: "80396420"
 
     ![Выбор оперативной репликации](./media/backup-azure-backup-exchange-server/choose-online-replication.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Часто задаваемые вопросы о службе архивации Azure](backup-azure-backup-faq.md)

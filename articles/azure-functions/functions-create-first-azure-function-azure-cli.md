@@ -3,13 +3,14 @@ title: Создание функции в Azure, которая отвечает
 description: Узнайте, как создать функцию в командной строке, а затем опубликовать локальный проект в бессерверном размещении в Функциях Azure.
 ms.date: 03/30/2020
 ms.topic: quickstart
+ms.custom: tracking-python
 zone_pivot_groups: programming-languages-set-functions
-ms.openlocfilehash: 7826701a2d328fe40ad75bb3d68b2764d53f9590
-ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
+ms.openlocfilehash: 86be7ec73d8e19597062f3fa3777f3aa422082c3
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82626264"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86506355"
 ---
 # <a name="quickstart-create-a-function-in-azure-that-responds-to-http-requests"></a>Краткое руководство. Создание функции в Azure, которая отвечает на HTTP-запросы
 
@@ -39,7 +40,7 @@ ms.locfileid: "82626264"
 ::: zone-end  
 ::: zone pivot="programming-language-java"  
 > [!NOTE]
-> Если вы не хотите использовать Maven в качестве средства разработки, ознакомьтесь с аналогичными руководствами для разработчиков Java по использованию [Gradle](/azure/azure-functions/functions-create-first-java-gradle), [IntelliJ IDEA](/azure/developer/java/toolkit-for-intellij/quickstart-functions) и [Visual Studio Code](/azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-java).
+> Если вы не хотите использовать Maven в качестве средства разработки, ознакомьтесь с аналогичными руководствами для разработчиков Java по использованию [Gradle](./functions-create-first-java-gradle.md), [IntelliJ IDEA](/azure/developer/java/toolkit-for-intellij/quickstart-functions) и [Visual Studio Code](./functions-create-first-function-vs-code.md?pivots=programming-language-java).
 ::: zone-end  
 
 [!INCLUDE [functions-requirements-cli](../../includes/functions-requirements-cli.md)]
@@ -105,7 +106,7 @@ Maven запрашивает значения, которые позволят �
 | **groupId** | `com.fabrikam` | Это значение уникально идентифицирует проект среди всех остальных. Оно должно соответствовать [правилам именования пакетов](https://docs.oracle.com/javase/specs/jls/se6/html/packages.html#7.7) для Java. |
 | **artifactId** | `fabrikam-functions` | Это значение содержит имя JAR-файла, без номера версии. |
 | **version** | `1.0-SNAPSHOT` | Выберите значение по умолчанию. |
-| **package** | `com.fabrikam.functions` | Это значение определяет пакет Java для создаваемого кода функции. Используйте значение по умолчанию. |
+| **package** | `com.fabrikam` | Это значение определяет пакет Java для создаваемого кода функции. Используйте значение по умолчанию. |
 
 Введите `Y` или нажмите клавишу ВВОД для подтверждения.
 
@@ -138,14 +139,14 @@ cd fabrikam-functions
 
 :::code language="csharp" source="~/functions-docs-csharp/http-trigger-template/HttpExample.cs":::
 
-Возвращаемый объект — это [ActionResult](/dotnet/api/microsoft.aspnetcore.mvc.actionresult), который возвращает ответное сообщение в виде [OkObjectResult](/dotnet/api/microsoft.aspnetcore.mvc.okobjectresult) (200) или [BadRequestObjectResult](/dotnet/api/microsoft.aspnetcore.mvc.badrequestobjectresult) (400). Дополнительные сведения см. в статье [Триггеры и привязки HTTP в службе "Функции Azure"](/azure/azure-functions/functions-bindings-http-webhook?tabs=csharp).
+Возвращаемый объект — это [ActionResult](/dotnet/api/microsoft.aspnetcore.mvc.actionresult), который возвращает ответное сообщение в виде [OkObjectResult](/dotnet/api/microsoft.aspnetcore.mvc.okobjectresult) (200) или [BadRequestObjectResult](/dotnet/api/microsoft.aspnetcore.mvc.badrequestobjectresult) (400). Дополнительные сведения см. в статье [Триггеры и привязки HTTP в службе "Функции Azure"](./functions-bindings-http-webhook.md?tabs=csharp).
 ::: zone-end
 
 ::: zone pivot="programming-language-java"
 #### <a name="functionjava"></a>Function.java
 Файл *Function.java* содержит метод `run`, получающий данные запроса в переменной `request`. Это запрос [HttpRequestMessage](/java/api/com.microsoft.azure.functions.httprequestmessage), дополненный заметкой [HttpTrigger](/java/api/com.microsoft.azure.functions.annotation.httptrigger), которая определяет поведение триггера. 
 
-:::code language="java" source="~/functions-quickstart-java/functions-add-output-binding-storage-queue/src/main/java/com/function/Function.java":::
+:::code language="java" source="~/azure-functions-samples-java/src/main/java/com/functions/Function.java":::
 
 Сообщение-ответ создается API [HttpResponseMessage.Builder](/java/api/com.microsoft.azure.functions.httpresponsemessage.builder).
 
@@ -153,7 +154,7 @@ cd fabrikam-functions
 
 Параметры ресурсов Azure, созданных для размещения приложения, определяются в элементе **конфигурации** подключаемого модуля с **groupId** `com.microsoft.azure` в созданном файле pom.xml. Например, элемент конфигурации ниже указывает развертыванию на основе Maven, что приложение-функцию необходимо создать в группе ресурсов `java-functions-group` в области `westus`. Само приложение-функция работает в Windows, размещенном в плане `java-functions-app-service-plan`, который по умолчанию является бессерверным планом потребления.    
 
-:::code language="java" source="~/functions-quickstart-java/functions-add-output-binding-storage-queue/pom.xml" range="116-155":::
+:::code language="java" source="~/azure-functions-samples-java/pom.xml" range="62-102":::
 
 Вы можете изменить эти параметры, чтобы управлять созданием ресурсов в Azure, например, изменив `runtime.os` с `windows` на `linux` перед первоначальным развертыванием. Полный список параметров, поддерживаемых подключаемым модулем Maven, см. в [сведениях о конфигурации](https://github.com/microsoft/azure-maven-plugins/wiki/Azure-Functions:-Configuration-Details).
 
@@ -168,7 +169,7 @@ cd fabrikam-functions
 
 :::code language="python" source="~/functions-quickstart-templates/Functions.Templates/Templates/HttpTrigger-Python/__init__.py":::
 
-Для триггера HTTP функция получает данные запроса в переменной `req`, как определено в файле *function.json*. `req` — это экземпляр [класса azure.functions.HttpRequest](/python/api/azure-functions/azure.functions.httprequest). Возвращаемый объект, определенный как `$return` в файле *function.json*, — это экземпляр класса [azure.functions.HttpResponse](/python/api/azure-functions/azure.functions.httpresponse). Дополнительные сведения см. в статье [Триггеры и привязки HTTP в службе "Функции Azure"](/azure/azure-functions/functions-bindings-http-webhook?tabs=python).
+Для триггера HTTP функция получает данные запроса в переменной `req`, как определено в файле *function.json*. `req` — это экземпляр [класса azure.functions.HttpRequest](/python/api/azure-functions/azure.functions.httprequest). Возвращаемый объект, определенный как `$return` в файле *function.json*, — это экземпляр класса [azure.functions.HttpResponse](/python/api/azure-functions/azure.functions.httpresponse). Дополнительные сведения см. в статье [Триггеры и привязки HTTP в службе "Функции Azure"](./functions-bindings-http-webhook.md?tabs=python).
 ::: zone-end
 
 ::: zone pivot="programming-language-javascript"
@@ -178,7 +179,7 @@ cd fabrikam-functions
 
 :::code language="javascript" source="~/functions-quickstart-templates/Functions.Templates/Templates/HttpTrigger-JavaScript/index.js":::
 
-Для триггера HTTP функция получает данные запроса в переменной `req`, как определено в файле *function.json*. Ответом является объект, определенный как `$return` в файле *function.json*. Дополнительные сведения см. в статье [Триггеры и привязки HTTP в службе "Функции Azure"](/azure/azure-functions/functions-bindings-http-webhook?tabs=javascript).
+Для триггера HTTP функция получает данные запроса в переменной `req`, как определено в файле *function.json*. Ответом является объект, определенный как `$return` в файле *function.json*. Дополнительные сведения см. в статье [Триггеры и привязки HTTP в службе "Функции Azure"](./functions-bindings-http-webhook.md?tabs=javascript).
 ::: zone-end
 
 ::: zone pivot="programming-language-typescript"
@@ -392,6 +393,11 @@ mvn azure-functions:deploy
 
 > [!TIP]
 > Чтобы просматривать журналы для опубликованного приложения-функции, которые ведутся практически в режиме реального времени, используйте [Live Metrics Stream для Application Insights](functions-monitoring.md#streaming-logs).
+>
+> Выполните следующую команду, чтобы открыть Live Metrics Stream в браузере.
+>   ```
+>   func azure functionapp logstream <APP_NAME> --browser
+>   ```
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -409,8 +415,12 @@ az group delete --name AzureFunctionsQuickstart-rg
 az group delete --name java-functions-group
 ```
 ::: zone-end
+::: zone pivot="programming-language-python"
+Чтобы выйти из виртуальной среды, выполните команду `deactivate`.
+::: zone-end
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Подключение Функций Azure к службе хранилища Azure с помощью средств командной строки](functions-add-output-binding-storage-queue-cli.md)
+ 

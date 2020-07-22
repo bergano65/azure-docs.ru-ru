@@ -3,17 +3,19 @@ title: Документация по Azure Database Migration Service
 summary: Azure Database Migration Service обеспечивает бесперебойную миграцию из нескольких источников баз данных на платформы данных Azure с минимальным временем простоя. Служба использует Помощник по миграции данных для создания экспертных отчетов с рекомендациями по изменениям, которые необходимо выполнить до переноса данных. Когда вы будете готовы приступить к переносу, Azure Database Migration Service выполнит все необходимые действия.
 metadata:
   description: Узнайте, как с помощью Azure Database Migration Service обеспечить бесперебойную миграцию из нескольких источников баз данных на платформы данных Azure с минимальным временем простоя.
+  keywords: azure database migration services, dms service, azure data migration, data migration service, database migration service
   author: HJToland3
   ms.author: jtoland
   ms.date: 12/19/2019
   ms.service: dms
   ms.topic: landing-page
-  ms.openlocfilehash: 9a37c850426cab0d940ab546084c1c64811ccb64
-  ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
+  ms.custom: azure-migrate-seo
+  ms.openlocfilehash: 732870bef2311ac13afb9a6e2a1a329fdd3905e2
+  ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 03/25/2020
-  ms.locfileid: "78164565"
+  ms.lasthandoff: 07/20/2020
+  ms.locfileid: "86522318"
 landingContent:
 - title: Сведения о Azure Database Migration Service
   linkLists:

@@ -1,27 +1,25 @@
 ---
 title: Мы вывыкли классические виртуальные машины Azure 1 марта 2023 г.
 description: В статье представлен общий обзор классической выбытия виртуальной машины.
-services: virtual-machines
 author: tanmaygore
 manager: vashan
 ms.service: virtual-machines
 ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 02/10/2020
 ms.author: tagore
-ms.openlocfilehash: e56aa5ec073aadc2a16d53c266d33255a34077cb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 8c3e55d13c0b5fbf5b813f1669587836bf8b5e2d
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80668808"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86503019"
 ---
 # <a name="migrate-your-iaas-resources-to-azure-resource-manager-by-march-1-2023"></a>Перенос ресурсов IaaS в Azure Resource Manager с 1 марта 2023 г. 
 
 В 2014 мы запустили IaaS на Azure Resource Manager и были усовершенствованы возможности. Поскольку [Azure Resource Manager](https://azure.microsoft.com/features/resource-manager/) теперь обладает полными возможностями IaaS и другими улучшениями, мы не рекомендуем управлять виртуальными машинами IaaS с помощью Azure Service Manager 28 февраля 2020, и эта функция будет полностью прекращена с 1 марта 2023. 
 
-Сегодня около 90% виртуальных машин IaaS используют Azure Resource Manager. Если вы используете ресурсы IaaS с помощью Azure Service Manager (ASM), начните планировать миграцию сейчас и завершите ее 1 марта 2023, чтобы воспользоваться преимуществами [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/management/).
+Сегодня около 90% виртуальных машин IaaS используют Azure Resource Manager. Если вы используете ресурсы IaaS с помощью Azure Service Manager (ASM), начните планировать миграцию сейчас и завершите ее 1 марта 2023, чтобы воспользоваться преимуществами [Azure Resource Manager](../azure-resource-manager/management/index.yml).
 
 Классические виртуальные машины будут следовать [современным политикам жизненного цикла](https://support.microsoft.com/help/30881/modern-lifecycle-policy) для выхода из эксплуатации.
 
@@ -41,10 +39,10 @@ ms.locfileid: "80668808"
 
 - Приступите к планированию перехода на Azure Resource Manager сегодня. 
 
-- Дополнительные [сведения](https://docs.microsoft.com/azure/virtual-machines/windows/migration-classic-resource-manager-overview) о переносе классических виртуальных машин [Linux](./linux/migration-classic-resource-manager-plan.md) и [Windows](./windows/migration-classic-resource-manager-plan.md) в Azure Resource Manager.
+- Дополнительные [сведения](./windows/migration-classic-resource-manager-overview.md) о переносе классических виртуальных машин [Linux](./linux/migration-classic-resource-manager-plan.md) и [Windows](./windows/migration-classic-resource-manager-plan.md) в Azure Resource Manager.
 
-- Дополнительные сведения см. в разделе [часто задаваемые вопросы о классической модели для Azure Resource Manager миграции](https://docs.microsoft.com/azure/virtual-machines/windows/migration-classic-resource-manager-faq) .
+- Дополнительные сведения см. в разделе [часто задаваемые вопросы о классической модели для Azure Resource Manager миграции](./windows/migration-classic-resource-manager-faq.md) .
 
-- Для получения технических вопросов, проблем и подписки список разрешений [обратитесь в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
+- Для получения технических вопросов, проблем и добавления подписок в список разрешений [обратитесь в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
 
 - Другие вопросы не входят в часто задаваемые вопросы и комментарии, приведенные ниже.

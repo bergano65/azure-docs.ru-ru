@@ -7,12 +7,12 @@ ms.date: 01/24/2020
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.openlocfilehash: e68e91d90846ab77b994b53be7a84a9dd8bc5a25
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 18afd9faf21e5de4831d54d0870b64e79d29cb0c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "79216172"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85833305"
 ---
 # <a name="quickstart-manage-blobs-with-javascript-v12-sdk-in-nodejs"></a>Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для JavaScript версии 12 в Node.js
 
@@ -71,9 +71,9 @@ ms.locfileid: "79216172"
         }
     }
     ```
-    
+
     Вы можете указать собственное имя в поле `author`, если хотите.
-   
+
 ### <a name="install-the-package"></a>Установка пакета
 
 Оставаясь в каталоге *blob-quickstart-v12*, установите клиентскую библиотеку хранилища BLOB-объектов Azure для пакета JavaScript с помощью команды `npm install`. Эта команда считывает файл *package.json* и устанавливает клиентскую библиотеку хранилища BLOB-объектов Azure версии 12 для пакета JavaScript и все библиотеки, от которых она зависит.
@@ -95,12 +95,12 @@ npm install
     ```javascript
     const { BlobServiceClient } = require('@azure/storage-blob');
     const uuidv1 = require('uuid/v1');
-    
+
     async function main() {
         console.log('Azure Blob storage v12 - JavaScript quickstart sample');
         // Quick start code goes here
     }
-    
+
     main().then(() => console.log('Done')).catch((ex) => console.log(ex.message));
     ```
 
@@ -166,7 +166,7 @@ const AZURE_STORAGE_CONNECTION_STRING = process.env.AZURE_STORAGE_CONNECTION_STR
 
 ```javascript
 // Create the BlobServiceClient object which will be used to create a container client
-const blobServiceClient = await BlobServiceClient.fromConnectionString(AZURE_STORAGE_CONNECTION_STRING);
+const blobServiceClient = BlobServiceClient.fromConnectionString(AZURE_STORAGE_CONNECTION_STRING);
 
 // Create a unique name for the container
 const containerName = 'quickstart' + uuidv1();
@@ -175,7 +175,7 @@ console.log('\nCreating container...');
 console.log('\t', containerName);
 
 // Get a reference to a container
-const containerClient = await blobServiceClient.getContainerClient(containerName);
+const containerClient = blobServiceClient.getContainerClient(containerName);
 
 // Create the container
 const createContainerResponse = await containerClient.create();
@@ -309,7 +309,7 @@ Done
 Учебники, примеры, краткие руководства и другую документацию можно найти по следующим ссылкам:
 
 > [!div class="nextstepaction"]
-> [Документация по работе с Azure для JavaScript](/azure/javascript/).
+> [Документация по работе с Azure для JavaScript](/azure/developer/javascript/).
 
 * Дополнительные сведения см в документации по [клиентской библиотеке Хранилища Blob-объектов Azure для JavaScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-blob).
 * Дополнительные примеры приложений для хранилища Blob-объектов Azure версии 12 для JavaScript собраны [здесь](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-blob/samples).

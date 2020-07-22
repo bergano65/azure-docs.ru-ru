@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako
 ms.reviewer: anilmur
-ms.openlocfilehash: 4767f7bb5ba02c838c0e21721e55a6564a14acd1
-ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
+ms.openlocfilehash: ca17ffdc2a54b25bbfd855834a366ed381a54678
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2020
-ms.locfileid: "69016657"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86530394"
 ---
 # <a name="comparison-of-azure-on-demand-media-encoders"></a>Сравнение кодировщиков мультимедиа Azure по запросу  
 
@@ -34,14 +34,14 @@ ms.locfileid: "69016657"
 |---|---|---|
 |Применение условной логики при кодировании<br/>(например, если входные данные в формате HD, то следует кодировать звук в формат 5.1)|Нет|Да|
 |Субтитры стандарта|Нет|[Да](media-services-premium-workflow-encoder-formats.md#closed_captioning)|
-|[Dolby® Professional Loudness Correction](https://www.dolby.com/us/en/technologies/dolby-professional-loudness-solutions.pdf)<br/> с Dialogue Intelligence™|Нет|Да|
+|[&reg;Исправление Dolby Professional громкости](https://professional.dolby.com/product/broadcast/vm600/)<br/> анализ с помощью диалоговых средств&trade;|Нет|Да|
 |Устранение чересстрочности, обратное преобразование видео|Basic|Качество трансляции|
 |Обнаружение и удаление черных границ <br/>(вертикальные и горизонтальные рамки)|Нет|Да|
 |Создание эскизов|[Да](media-services-dotnet-generate-thumbnail-with-mes.md)|[Да](media-services-media-encoder-premium-workflow-tutorials.md#thumbnails_to__multibitrate_MP4)|
 |Обрезание и совмещение видео|[Да](media-services-advanced-encoding-with-mes.md#trim_video)|Да|
 |Наложение звука или видео|[Да](media-services-advanced-encoding-with-mes.md#overlay)|[Да](media-services-media-encoder-premium-workflow-multiplefilesinput.md#example-1--overlay-an-image-on-top-of-the-video)|
 |Наложение изображений|Из источников изображений|Из источников изображений и текста|
-|Несколько аудиодорожек на разных языках|Ограничено|[Да](media-services-media-encoder-premium-workflow-multiplefilesinput.md#example-2--multiple-audio-language-encoding)|
+|Несколько аудиодорожек на разных языках|Ограниченный|[Да](media-services-media-encoder-premium-workflow-multiplefilesinput.md#example-2--multiple-audio-language-encoding)|
 
 ## <a name="billing-meter-used-by-each-encoder"></a><a id="billing"></a>Тарифные единицы, используемые кодировщиками
 | Имя обработчика мультимедиа | Применимые цены | Примечания |
@@ -52,7 +52,7 @@ ms.locfileid: "69016657"
 ## <a name="input-containerfile-formats"></a>Контейнер ввода и форматы файлов
 | Контейнер ввода/ форматы файлов | Стандартный кодировщик служб мультимедиа | Media Encoder Premium Workflow |
 | --- | --- | --- |
-| Adobe® Flash® F4V |Да |Да |
+| Adobe &reg; Flash &reg; F4V |Да |Да |
 | MXF/SMPTE 377M |Да |Да |
 | GXF |Да |Да |
 | Транспортные потоки MPEG-2 |Да |Да |
@@ -73,7 +73,7 @@ ms.locfileid: "69016657"
 | Avid DNxHD (в MXF) |Да |Да |
 | DVCPro/DVCProHD (в MXF) |Да |Да |
 | JPEG2000 |Да |Да |
-| MPEG-2 (до 422 Profile и High Level, включая такие варианты, как XDCAM, XDCAM HD, XDCAM IMX, CableLabs® и D10) |До 422 Profile |Да |
+| MPEG-2 (до 422 профиля и высокий уровень), включая такие варианты, как XDCAM, XDCAM HD, XDCAM IMX, CableLabs &reg; и D10). |До 422 Profile |Да |
 | MPEG-1 |Да |Да |
 | Windows Media Video/VC-1 |Да |Да |
 | Canopus HQ/HQX |Нет |Нет |
@@ -91,9 +91,9 @@ ms.locfileid: "69016657"
 | Входные аудиокодеки | Стандартный кодировщик служб мультимедиа | Media Encoder Premium Workflow |
 | --- | --- | --- |
 | AES (SMPTE 331M и 302M, AES3-2003) |Нет |Да |
-| Dolby® E |Нет |Да |
-| Dolby® Digital (AC3) |Нет |Да |
-| Dolby® Digital Plus (E-AC3) |Нет |Да |
+| Dolby &reg; E |Нет |Да |
+| Dolby &reg; Digital (AC3) |Нет |Да |
+| Dolby &reg; Digital Plus (E-AC3) |Нет |Да |
 | AAC (AAC-LC, AAC-HE и AAC-HEv2; до 5.1) |Да |Да |
 | MPEG Layer 2 |Да |Да |
 | MP3 (MPEG-1 Audio Layer 3) |Да |Да |
@@ -106,7 +106,7 @@ ms.locfileid: "69016657"
 ## <a name="output-containerfile-formats"></a>Контейнер вывода и форматы файлов
 | Контейнер вывода/ форматы файлов | Стандартный кодировщик служб мультимедиа | Media Encoder Premium Workflow |
 | --- | --- | --- |
-| Adobe® Flash® F4V |Нет |Да |
+| Adobe &reg; Flash &reg; F4V |Нет |Да |
 | MXF (OP1a, XDCAM и AS02) |Нет |Да |
 | DPP (включая AS11) |Нет |Да |
 | GXF |Нет |Да |
@@ -122,7 +122,7 @@ ms.locfileid: "69016657"
 | AVC (H.264; 8-разрядный; до High Profile, Level 5.2; 4K Ultra HD; AVC Intra) |Только 8 бит 4:2:0 |Да |
 | HEVC (H.265; 8-разрядный и 10-разрядный)  |Нет |Да |
 | Avid DNxHD (в MXF) |Нет |Да |
-| MPEG-2 (до 422 Profile и High Level, включая такие варианты, как XDCAM, XDCAM HD, XDCAM IMX, CableLabs® и D10) |Нет |Да |
+| MPEG-2 (до 422 профиля и высокий уровень), включая такие варианты, как XDCAM, XDCAM HD, XDCAM IMX, CableLabs &reg; и D10). |Нет |Да |
 | MPEG-1 |Нет |Да |
 | Windows Media Video/VC-1 |Нет |Да |
 | Создание эскизов JPEG |Да |Да |
@@ -133,20 +133,20 @@ ms.locfileid: "69016657"
 | Выходные аудиокодеки | Стандартный кодировщик служб мультимедиа | Media Encoder Premium Workflow |
 | --- | --- | --- |
 | AES (SMPTE 331M и 302M, AES3-2003) |Нет |Да |
-| Dolby® Digital (AC3) |Нет |Да |
-| Dolby® Digital Plus (E-AC3) до 7.1 |Нет |Да |
+| Dolby &reg; Digital (AC3) |Нет |Да |
+| Dolby &reg; Digital Plus (E-AC3) до 7,1 |Нет |Да |
 | AAC (AAC-LC, AAC-HE и AAC-HEv2; до 5.1) |Да |Да |
 | MPEG Layer 2 |Нет |Да |
 | MP3 (MPEG-1 Audio Layer 3) |Нет |Да |
 | Windows Media Audio |Нет |Да |
 
 >[!NOTE]
->При кодировании в формат Dolby® Digital (AC3) выходные данные могут записываться только в MP4-файл ISO.
+>Если вы кодируете в Dolby &reg; Digital (AC3), выходные данные могут быть записаны только в формате ISO MP4.
 
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="related-articles"></a>Похожие статьи

@@ -9,10 +9,9 @@ ms.subservice: security-develop
 ms.topic: article
 ms.date: 01/25/2019
 ms.openlocfilehash: 7d0be8d7243331264c10a407e3d78370ea798928
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78269778"
 ---
 # <a name="threat-modeling-tool-update-release-71601261---1292019"></a>Threat Modeling Tool, выпуск обновления 7.1.60126.1 от 29.01.2019
@@ -49,7 +48,7 @@ ms.locfileid: "78269778"
 
 ### <a name="unsupported-systems"></a>Неподдерживаемые системы
 
-#### <a name="issue"></a>Проблема
+#### <a name="issue"></a>Проблемы
 
 Пользователи систем Windows 10, которые не могут установить .NET 4.7.1 или более поздней версии, например Windows 10 Enterprise LTSB (версии 1507), не смогут открыть средство после обновления. Эти старые версии Windows больше не поддерживаются платформами для Threat Modeling Tool и не должны устанавливать последнее обновление.
 

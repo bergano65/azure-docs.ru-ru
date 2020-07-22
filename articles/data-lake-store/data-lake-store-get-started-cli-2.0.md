@@ -3,15 +3,15 @@ title: Управление учетной записью Azure Data Lake Storag
 description: Используйте Azure CLI, чтобы создать учетную запись Data Lake Storage 1-го поколения и выполнить основные операции.
 author: twooley
 ms.service: data-lake-store
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 06/27/2018
 ms.author: twooley
-ms.openlocfilehash: 4e278981ce7647a53d2e80c5b835c8ed666db541
-ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
+ms.openlocfilehash: 92fd681d05b8e5bd7cf07ecd735acd87698935ef
+ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82688172"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85985795"
 ---
 # <a name="get-started-with-azure-data-lake-storage-gen1-using-the-azure-cli"></a>Приступая к работе с Azure Data Lake Storage 1-го поколения с помощью Azure CLI
 
@@ -110,23 +110,25 @@ az dls fs list --account mydatalakestoragegen1 --path /mynewfolder
 
 Результат этой команды должен выглядеть примерно так:
 
-    [
-        {
-            "accessTime": 1491323529542,
-            "aclBit": false,
-            "blockSize": 268435456,
-            "group": "1808bd5f-62af-45f4-89d8-03c5e81bac20",
-            "length": 1589881,
-            "modificationTime": 1491323531638,
-            "msExpirationTime": 0,
-            "name": "mynewfolder/vehicle1_09142014.csv",
-            "owner": "1808bd5f-62af-45f4-89d8-03c5e81bac20",
-            "pathSuffix": "vehicle1_09142014.csv",
-            "permission": "770",
-            "replication": 1,
-            "type": "FILE"
-        }
-    ]
+```output
+[
+    {
+        "accessTime": 1491323529542,
+        "aclBit": false,
+        "blockSize": 268435456,
+        "group": "1808bd5f-62af-45f4-89d8-03c5e81bac20",
+        "length": 1589881,
+        "modificationTime": 1491323531638,
+        "msExpirationTime": 0,
+        "name": "mynewfolder/vehicle1_09142014.csv",
+        "owner": "1808bd5f-62af-45f4-89d8-03c5e81bac20",
+        "pathSuffix": "vehicle1_09142014.csv",
+        "permission": "770",
+        "replication": 1,
+        "type": "FILE"
+    }
+]
+```
 
 ## <a name="rename-download-and-delete-data-from-a-data-lake-storage-gen1-account"></a>Переименование, скачивание и удаление данных из учетной записи Data Lake Storage 1-го поколения 
 
@@ -183,17 +185,19 @@ az dls fs list --account mydatalakestoragegen1 --path /mynewfolder
 
     Результат выполнения должен быть аналогичен следующему:
 
-        {
-            "entries": [
-            "user::rwx",
-            "group::rwx",
-            "other::---"
-          ],
-          "group": "1808bd5f-62af-45f4-89d8-03c5e81bac20",
-          "owner": "1808bd5f-62af-45f4-89d8-03c5e81bac20",
-          "permission": "770",
-          "stickyBit": false
-        }
+    ```output
+    {
+        "entries": [
+        "user::rwx",
+        "group::rwx",
+        "other::---"
+        ],
+        "group": "1808bd5f-62af-45f4-89d8-03c5e81bac20",
+        "owner": "1808bd5f-62af-45f4-89d8-03c5e81bac20",
+        "permission": "770",
+        "stickyBit": false
+    }
+    ```
 
 * **Чтобы создать запись для ACL**, используйте следующую команду:
 
@@ -228,7 +232,7 @@ az dls account delete --account mydatalakestoragegen1
 
 При появлении запроса введите **Y** , чтобы удалить учетную запись.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Использование Azure Data Lake Storage 1-го поколения для обеспечения соответствия требованиям больших данных](data-lake-store-data-scenarios.md) 
 * [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)
 * [Начало работы с Azure Data Lake Analytics с помощью портала Azure](../data-lake-analytics/data-lake-analytics-get-started-portal.md)

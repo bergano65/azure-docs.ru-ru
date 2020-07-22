@@ -15,10 +15,9 @@ ms.workload: TBD
 ms.date: 06/05/2017
 ms.author: twooley
 ms.openlocfilehash: 6d3e3d6cdf7a831bf09d9c4709c1a60d27683438
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75933381"
 ---
 # <a name="deploy-the-storsimple-snapshot-manager-mmc-snap-in"></a>Развертывание оснастки консоли управления диспетчера моментальных снимков StorSimple (необязательно)
@@ -52,8 +51,8 @@ ms.locfileid: "75933381"
 2. Убедитесь, что главный компьютер работает под управлением одной из следующих операционных систем.
    
    * Windows Server 2008 R2 (на серверах под управлением Windows 2008 R2 также необходимо установить Windows Server 2008 с пакетом обновления 1 (SP1) и Windows Management Framework 3.0)
-   * Windows Server 2012
-   * Windows Server 2012 R2
+   * Windows Server 2012
+   * Windows Server 2012 R2
      
      Для виртуального устройства StorSimple в качестве узла необходимо использовать виртуальную машину Microsoft Azure.
 3. Убедитесь, что выполнены все требования к конфигурации Microsoft Azure StorSimple. Дополнительные сведения см. в разделе [Предварительные условия для развертывания](storsimple-8000-deployment-walkthrough-u2.md#deployment-prerequisites).
@@ -211,7 +210,7 @@ ms.locfileid: "75933381"
    2. Выберите на странице **Службы** пункт **Служба управления Microsoft StorSimple**.
    3. Щелкните на правой панели в разделе **Служба управления Microsoft StorSimple** команду **Перезапустить службу**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Дополнительные сведения о StorSimple Snapshot Manager см. в статье [Что такое диспетчер моментальных снимков StorSimple?](storsimple-what-is-snapshot-manager.md)
 * Чтобы узнать больше о пользовательском интерфейсе StorSimple Snapshot Manager, см. статью [Пользовательский интерфейс диспетчера моментальных снимков StorSimple](storsimple-use-snapshot-manager.md).
 * Чтобы узнать больше об использовании StorSimple Snapshot Manager см. статью [Использование диспетчера моментальных снимков StorSimple для администрирования решения StorSimple](storsimple-snapshot-manager-admin.md).

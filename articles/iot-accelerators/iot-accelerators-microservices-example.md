@@ -8,10 +8,10 @@ services: iot-accelerators
 ms.date: 04/19/2018
 ms.topic: conceptual
 ms.openlocfilehash: 1552c54afe2195d58a032e9cc7bfa5aa70c844b1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "61447647"
 ---
 # <a name="customize-and-redeploy-a-microservice"></a>Настройка и повторное развертывание микрослужбы
@@ -56,7 +56,7 @@ ms.locfileid: "61447647"
 1. Убедитесь, что терминал открыт и перейдите в каталог, в который вы клонировали решение для удаленного мониторинга. 
 1. Перейдите в каталог azure-iot-pcs-remote-monitoring-dotnet/services/iothub-manager/Services.
 1. Откройте файл StatusService.cs в любом текстовом редакторе или в интегрированной среде разработки. 
-1. Найдите следующий код:
+1. Найдите следующий код.
 
     ```csharp
     var result = new StatusServiceModel(true, "Alive and well!");
@@ -121,7 +121,7 @@ ms.locfileid: "61447647"
 
 1. Вернитесь в окно терминала и перейдите в этот каталог: azure-iot-pcs-remote-monitoring-dotnet/services/scripts/local.
 2. Откройте файл docker-compose.yml в любом текстовом редакторе или в интегрированной среде разработки.
-3. Найдите следующий код:
+3. Найдите следующий код.
 
     ```yml
     image: azureiotpcs/iothub-manager-dotnet:testing

@@ -5,17 +5,17 @@ description: Используйте REST API службы хранилища Azu
 services: storage
 author: tamram
 ms.service: storage
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 10/01/2019
 ms.author: tamram
-ms.reviewer: cbrooks
+ms.reviewer: ozge
 ms.subservice: common
-ms.openlocfilehash: f5c6125b850062450516e7fc0b19c2e0d5d6f577
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 237ad3215ef0330fed8662d987b1b72eca4aec81
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77916070"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85509189"
 ---
 # <a name="call-rest-api-operations-with-shared-key-authorization"></a>Вызов REST API операций с авторизацией общего ключа
 
@@ -63,9 +63,9 @@ git clone https://github.com/Azure-Samples/storage-dotnet-rest-api-with-auth.git
 
 Ознакомьтесь со ссылкой на операцию [ListContainers](/rest/api/storageservices/List-Containers2) . Эта информация поможет вам понять, откуда берутся некоторые из полей в запросе и ответе.
 
-**Метод запроса**: GET. Эта команда является методом HTTP, который вы указываете как свойство объекта запроса. Другие значения для этой команды включают в себя: HEAD, PUT и DELETE, в зависимости от API, который вы вызываете.
+**Метод запроса**: Get. Эта команда является методом HTTP, который вы указываете как свойство объекта запроса. Другие значения для этой команды включают в себя: HEAD, PUT и DELETE, в зависимости от API, который вы вызываете.
 
-**URI запроса**: `https://myaccount.blob.core.windows.net/?comp=list`.URI запроса создается из конечной точки `http://myaccount.blob.core.windows.net` учетной записи хранения BLOB-объектов и строки `/?comp=list`ресурса.
+**URI запроса**: `https://myaccount.blob.core.windows.net/?comp=list` .URI запроса создается из конечной точки учетной записи хранения BLOB-объектов `http://myaccount.blob.core.windows.net` и строки ресурса `/?comp=list` .
 
 [Параметры URI](/rest/api/storageservices/List-Containers2#uri-parameters): существуют дополнительные параметры запроса, которые вы можете использовать при вызове ListContainers. Некоторыми из этих параметров являются *timeout* для вызова (в секундах) и *prefix*, который используется для фильтрации.
 
@@ -130,7 +130,7 @@ using (var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri)
 {
 ```
 
-Добавьте заголовки запроса для `x-ms-date` и. `x-ms-version` В этом месте кода также можно добавить дополнительные заголовки запросов, необходимые для вызова. В этом примере нет дополнительных заголовков. Примером API, который передается в дополнительных заголовках, является операция задания ACL контейнера. Этот вызов API добавляет заголовок с именем x-MS-BLOB-Public-Access и значение для уровня доступа.
+Добавьте заголовки запроса для `x-ms-date` и `x-ms-version` . В этом месте кода также можно добавить дополнительные заголовки запросов, необходимые для вызова. В этом примере нет дополнительных заголовков. Примером API, который передается в дополнительных заголовках, является операция задания ACL контейнера. Этот вызов API добавляет заголовок с именем x-MS-BLOB-Public-Access и значение для уровня доступа.
 
 ```csharp
 // Add the request headers for x-ms-date and x-ms-version.
@@ -177,7 +177,7 @@ httpRequestMessage.Headers.Authorization = AzureStorageAuthenticationHelper.GetA
 
 Если во время вызова SendAsync вы запускаете средство прослушивания сети, например [Fiddler](https://www.telerik.com/fiddler), вы можете увидеть сведения о запросе и ответе. Давай посмотрим. Имя учетной записи хранения — *contosorest*.
 
-**Получения**
+**Запрос:**
 
 ```
 GET /?comp=list HTTP/1.1
@@ -488,7 +488,7 @@ SharedKey contosorest:uzvWZN1WUIv2LYC6e3En10/7EIQJ5X9KtFQqrZkxi6s=
 
 В [Fiddler](https://www.telerik.com/fiddler) доступны следующие значения:
 
-**Получения**
+**Запрос:**
 
 ```
 GET http://contosorest.blob.core.windows.net/container-1?restype=container&comp=list HTTP/1.1

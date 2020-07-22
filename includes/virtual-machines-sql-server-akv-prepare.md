@@ -13,12 +13,12 @@ ms.workload: iaas-sql-server
 ms.date: 04/30/2018
 ms.author: jroth
 ms.custom: include file
-ms.openlocfilehash: 2c7d312910c6d38c54b291da34bfb827246c7dad
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 66a3ecd82ab61f25c99fd1268d9ce7567b057d66
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79504265"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86050305"
 ---
 ## <a name="prepare-for-akv-integration"></a>Подготовка к интеграции AKV
 Чтобы использовать интеграцию хранилища ключей Azure для настройки виртуальной машины с SQL Server, необходимо выполнить несколько предварительных условий: 
@@ -56,7 +56,9 @@ ms.locfileid: "79504265"
 ### <a name="create-a-key-vault"></a><a id="createkeyvault"></a>Создание хранилища ключей
 Чтобы использовать хранилище ключей Azure для хранения ключей, которые будут использоваться для шифрования на виртуальной машине, необходим доступ к хранилищу ключей. Если вы еще не настроили ваше хранилище ключей, создайте его, выполнив следующие действия, описанные в статье [Приступая к работе с хранилищем ключей Azure](../articles/key-vault/key-vault-overview.md). Перед выполнением этих шагов учтите, что во время этой настройки необходимо собрать некоторые сведения, которые понадобятся в дальнейшем при включении интеграции Azure Key Vault на виртуальной машине SQL.
 
-    New-AzKeyVault -VaultName 'ContosoKeyVault' -ResourceGroupName 'ContosoResourceGroup' -Location 'East Asia'
+```azurepowershell
+New-AzKeyVault -VaultName 'ContosoKeyVault' -ResourceGroupName 'ContosoResourceGroup' -Location 'East Asia'
+```
 
 При создании хранилища ключей запишите возвращенное свойство **vaultUri** , которое является URL-адресом хранилища ключей. В примере, приведенном на этом шаге и показанном ниже, именем хранилища ключей является ContosoKeyVault, поэтому URL-адрес хранилища ключей — https://contosokeyvault.vault.azure.net/.
 

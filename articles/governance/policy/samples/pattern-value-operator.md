@@ -1,14 +1,14 @@
 ---
 title: Шаблон. Оператор value в определении политики
 description: Этот шаблон Политики Azure предоставляет пример использования оператора value в определении политики.
-ms.date: 01/31/2020
+ms.date: 06/29/2020
 ms.topic: sample
-ms.openlocfilehash: ace7b7cd4a765cdb8c7aa764b52b180c60508ab2
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: e246e3a5e2517fa80626081227070bcb2f967784
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77170152"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85565661"
 ---
 # <a name="azure-policy-pattern-the-value-operator"></a>Шаблон Политики Azure: оператор value
 

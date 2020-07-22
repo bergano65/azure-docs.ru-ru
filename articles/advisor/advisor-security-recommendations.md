@@ -3,12 +3,12 @@ title: Обеспечение более надежной защиты ресу�
 description: Используйте Azure Advisor для повышения безопасности развернутых служб Azure.
 ms.topic: article
 ms.date: 01/29/2019
-ms.openlocfilehash: 5a4b7e9a9d9a7919155db361fd2c96ed98e6e5a4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: bf7a316c893600bed18b9392404af5792e2e31f7
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75443038"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85113863"
 ---
 # <a name="make-resources-more-secure-with-azure-advisor"></a>Обеспечение более надежной защиты ресурсов с помощью средства "Помощник по Azure"
 
@@ -24,14 +24,14 @@ ms.locfileid: "75443038"
 
 2.  На панели мониторинга Помощника выберите вкладку **Безопасность**.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы узнать больше о рекомендациях Помощника, ознакомьтесь с приведенными ниже материалами.
 * [Общие сведения об Azure Advisor](advisor-overview.md)
-* [Начало работы с Помощником по Azure](advisor-get-started.md)
-* [Рекомендации Azure Advisor по затратам](advisor-cost-recommendations.md)
-* [Рекомендации Azure Advisor по производительности](advisor-performance-recommendations.md)
-* [Рекомендации Azure Advisor по высокой доступности](advisor-high-availability-recommendations.md)
+* [Начало работы с Помощником](advisor-get-started.md)
+* [Рекомендации по стоимости помощника](advisor-cost-recommendations.md)
+* [Рекомендации по повышению производительности помощника](advisor-performance-recommendations.md)
+* [Рекомендации по обеспечению надежности Advisor](advisor-high-availability-recommendations.md)
 * [Рекомендации для оперативной работы Advisor](advisor-operational-excellence-recommendations.md)
-
+* [REST API Advisor](https://docs.microsoft.com/rest/api/advisor/)
  

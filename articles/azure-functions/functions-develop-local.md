@@ -3,12 +3,12 @@ title: Разработка и запуск функций Azure в локаль
 description: Узнайте, как программировать и тестировать функции Azure на локальном компьютере перед их запуском в Функциях Azure.
 ms.topic: conceptual
 ms.date: 09/04/2018
-ms.openlocfilehash: 835edcb94b294d93cab41ea51b88ac38db71d95e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 2362fcd27f1b5f7c0b3411eae5b3b94c7dc6cf4c
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74230648"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86540185"
 ---
 # <a name="code-and-test-azure-functions-locally"></a>Как программировать и тестировать Функции Azure в локальной среде
 
@@ -20,23 +20,23 @@ ms.locfileid: "74230648"
 
 |Среда                              |Языки         |Описание|
 |-----------------------------------------|------------|---|
-|[Visual Studio Code](functions-develop-vs-code.md)| [C# (библиотека классов)](functions-dotnet-class-library.md), [C# скрипт (.csx)](functions-reference-csharp.md), [JavaScript](functions-reference-node.md), [PowerShell](functions-create-first-function-powershell.md), [Python](functions-reference-python.md) | [Расширение Функций Azure для VS Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) добавляет поддержку средства "Функции" в VS Code. Требуются основные инструменты. Поддерживает разработку на платформах Linux, MacOS и Windows при использовании версии 2.x основных инструментов. Для получения дополнительных сведений см. статью [Создание функции в Azure с помощью Visual Studio Code](functions-create-first-function-vs-code.md). |
+|[Visual Studio Code](functions-develop-vs-code.md)| [C# (библиотека классов)](functions-dotnet-class-library.md), [C# скрипт (.csx)](functions-reference-csharp.md), [JavaScript](functions-reference-node.md), [PowerShell](./functions-create-first-function-vs-code.md?pivots=programming-language-powershell), [Python](functions-reference-python.md) | [Расширение Функций Azure для VS Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) добавляет поддержку средства "Функции" в VS Code. Требуются основные инструменты. Поддерживает разработку на платформах Linux, MacOS и Windows при использовании версии 2.x основных инструментов. Для получения дополнительных сведений см. статью [Создание функции в Azure с помощью Visual Studio Code](functions-create-first-function-vs-code.md). |
 | [Командная строка или терминал](functions-run-local.md) | [C# (библиотека классов)](functions-dotnet-class-library.md), [C# скрипт (.csx)](functions-reference-csharp.md), [JavaScript](functions-reference-node.md), [PowerShell](functions-reference-powershell.md), [Python](functions-reference-python.md) | [Azure functions Core Tools] предоставляет основную среду выполнения и шаблоны для создания функций, которые обеспечивают локальную разработку. Версия 2.x поддерживает разработку в Linux, MacOS и Windows. Во всех средах применяют основные инструменты для локальной среды выполнения средства "Функции". |
 | [Visual Studio 2019](functions-develop-vs.md) | [C# (библиотека классов)](functions-dotnet-class-library.md) | Средства функций Azure включены в рабочую нагрузку **разработки Azure** [Visual Studio 2019](https://www.visualstudio.com/vs/) и более поздних версий. Позволяет компилировать функции в библиотеке классов и публиковать библиотеки DLL в Azure. Включает основные инструменты для локального тестирования. Дополнительные сведения см. в статье [Инструменты Функций Azure для Visual Studio](functions-develop-vs.md). |
-| [Maven](functions-create-first-java-maven.md) (различные) | [Java](functions-reference-java.md) | Интегрируется с основными инструментами и обеспечивает возможность разработки функций Java. Версия 2.x поддерживает разработку в Linux, MacOS и Windows. Дополнительные сведения см. в статье [Создание первой функции с помощью Java и Maven](functions-create-first-java-maven.md). Также поддерживает разработку с помощью [Eclipse](functions-create-maven-eclipse.md) и [IntelliJ IDEA](functions-create-maven-intellij.md). |
+| [Maven](./functions-create-first-azure-function-azure-cli.md?pivots=programming-language-java&tabs=bash,browser) (различные) | [Java](functions-reference-java.md) | Интегрируется с основными инструментами и обеспечивает возможность разработки функций Java. Версия 2.x поддерживает разработку в Linux, MacOS и Windows. Дополнительные сведения см. в статье [Создание первой функции с помощью Java и Maven](./functions-create-first-azure-function-azure-cli.md?pivots=programming-language-java&tabs=bash,browser). Также поддерживает разработку с помощью [Eclipse](functions-create-maven-eclipse.md) и [IntelliJ IDEA](functions-create-maven-intellij.md). |
 
 [!INCLUDE [Don't mix development environments](../../includes/functions-mixed-dev-environments.md)]
 
-Каждая из этих локальных сред разработки позволяет создавать проекты приложений-функций и использовать предопределенные шаблоны решения "Функции" для создания новых функций. Каждая из них использует основные инструменты, чтобы вы могли тестировать и отлаживать функции в реальной среде выполнения решения "Функции" на своем компьютере как и любое другое приложение. Вы также можете опубликовать проект приложения функции из любой из этих сред в Azure.  
+Каждая из этих локальных сред разработки позволяет создавать проекты приложений-функций и использовать предопределенные шаблоны решения "Функции" для создания новых функций. Каждая из них использует основные инструменты, чтобы вы могли тестировать и отлаживать функции в реальной среде выполнения решения "Функции" на своем компьютере как и любое другое приложение. Вы также можете опубликовать проект приложения функции из любой из этих сред в Azure.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 + Дополнительные сведения о локальной разработке скомпилированных функций C# с помощью Visual Studio 2019 см. в статье [разработка функций Azure с помощью Visual Studio](functions-develop-vs.md).
-+ Дополнительные сведения о локальной разработке функций с помощью VS Code на компьютере Mac, Linux или Windows см. в статье [развертывание функций Azure из VS Code](/azure/javascript/tutorial-vscode-serverless-node-01).
++ Дополнительные сведения о локальной разработке функций с помощью VS Code на компьютере Mac, Linux или Windows см. в статье [развертывание функций Azure из VS Code](/azure/developer/javascript/tutorial-vscode-serverless-node-01).
 + Дополнительные сведения о разработке функций из командной строки или терминала см. в статье [Как программировать и тестировать Функции Azure в локальной среде](functions-run-local.md).
 
 <!-- LINKS -->
 
 [Azure Functions Core Tools]: https://www.npmjs.com/package/azure-functions-core-tools
-[Портал Azure]: https://portal.azure.com 
+[Портал Azure]: https://portal.azure.com
 [Node.js]: https://docs.npmjs.com/getting-started/installing-node#osx-or-windows

@@ -17,7 +17,7 @@ ms.locfileid: "75968306"
 ---
 ## <a name="create-an-azure-storage-account"></a>Создание учетной записи хранения Azure
 
-Самый простой способ создать первую учетную запись хранения Azure — использовать [портал Azure](https://portal.azure.com). Дополнительную информацию см. в статье [Об учетных записях хранения Azure](../articles/storage/common/storage-account-create.md).
+Самый простой способ создать первую учетную запись хранения Azure — воспользоваться [порталом Azure](https://portal.azure.com). Дополнительную информацию см. в статье [Об учетных записях хранения Azure](../articles/storage/common/storage-account-create.md).
 
 Кроме того, создать учетную запись хранения Azure можно с помощью [Azure PowerShell](../articles/storage/common/storage-powershell-guide-full.md), [Azure CLI](../articles/storage/common/storage-azure-cli.md) или [поставщика ресурсов службы хранилища Azure для .NET](https://azure.microsoft.com/resources/samples/storage-dotnet-resource-provider-getting-started/).
 

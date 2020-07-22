@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.openlocfilehash: 5c038f0be31acea52c2ef07d43f0dbaf3434a371
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "64709523"
 ---
 # <a name="encoding-error-codes"></a>Коды ошибок кодирования
@@ -30,7 +30,7 @@ ms.locfileid: "64709523"
 | Неизвестно |Неизвестная ошибка при выполнении задачи |
 | ErrorDownloadingInputAssetMalformedContent |Категория ошибок, охватывающая ошибки загрузки входного ресурса, такие как некорректное имя файлов, файлы нулевой длины, неправильное форматирование и т. д. |
 | ErrorDownloadingInputAssetServiceFailure |Категория ошибок, охватывающая проблемы на стороне службы, например проблемы с сетью или хранилищем во время загрузки. |
-| ErrorParsingConfiguration |Категория ошибок, в которых \<задача See cref = "Медиатаск. PrivateData"/> (конфигурация) недопустима, например, конфигурация не является допустимой системной предустановкой или содержит недопустимый XML. |
+| ErrorParsingConfiguration |Категория ошибок, в которых задача \<see cref="MediaTask.PrivateData"/> (конфигурация) является недопустимой, например: конфигурация не является допустимой конфигурацией системы или содержит недопустимый XML. |
 | ErrorExecutingTaskMalformedContent |Категория ошибок, возникающих во время выполнения задачи, которые могут быть вызваны проблемами во входных файлах мультимедиа. |
 | ErrorExecutingTaskUnsupportedFormat |Категория ошибок, в которой обработчик мультимедиа не может обработать представленные файлы — формат мультимедиа не поддерживается или не соответствует конфигурации. Например, при попытке получить только звук из ресурса, который содержит видео. |
 | ErrorProcessingTask |Категория других ошибок обработчика мультимедиа, возникших во время обработки задачи, которые не связаны с содержимым. |
@@ -43,7 +43,7 @@ ms.locfileid: "64709523"
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="related-articles"></a>Похожие статьи

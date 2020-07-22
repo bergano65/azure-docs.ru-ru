@@ -8,18 +8,18 @@ author: asudbring
 manager: kumudD
 ms.service: load-balancer
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.custom: seodec18
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/17/2019
 ms.author: allensu
-ms.openlocfilehash: 8e79f4c791d0252c719846da3aa8024b0e622dca
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e00d6b674453f12f94a2859f9b0533aea0e7332c
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80477022"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86207555"
 ---
 # <a name="load-balancer-health-probes"></a>Пробы работоспособности Load Balancer
 
@@ -29,8 +29,8 @@ ms.locfileid: "80477022"
 
 | | SKU "Стандартный" | SKU "Базовый" |
 | --- | --- | --- |
-| [Типы проб](#types) | TCP, HTTP, HTTPS | TCP, HTTP |
-| [Реакция на сбой пробы работоспособности](#probedown) | При сбое всех проб работоспособности потоки TCP продолжаются. | Все вызонды выключаются, истекает срок действия всех TCP-потоков. | 
+| **[Типы проб](#types)** | TCP, HTTP, HTTPS | TCP, HTTP |
+| **[Поведение при пробном отключении](#probedown)** | При сбое всех проб работоспособности потоки TCP продолжаются. | Все вызонды выключаются, истекает срок действия всех TCP-потоков. | 
 
 
 >[!IMPORTANT]
@@ -85,15 +85,15 @@ ms.locfileid: "80477022"
 Для протокола, используемого зондом работоспособности, можно настроить один из следующих способов.
 
 - [прослушиватели TCP](#tcpprobe);
-- [конечные точки HTTP](#httpprobe);
+- [конечные точки HTTP.](#httpprobe)
 - [конечные точки HTTPS](#httpsprobe);
 
 Доступные протоколы зависят от используемого номера SKU Load Balancer:
 
 || TCP | HTTP | HTTPS |
 | --- | --- | --- | --- |
-| SKU "Стандартный" |    &#9989; |   &#9989; |   &#9989; |
-| SKU "Базовый" |   &#9989; |   &#9989; | &#10060; |
+| **SKU "Стандартный"** |    &#9989; |   &#9989; |   &#9989; |
+| **SKU "Базовый"** |   &#9989; |   &#9989; | &#10060; |
 
 ### <a name="tcp-probe"></a><a name="tcpprobe"></a>Проба TCP
 
@@ -260,7 +260,7 @@ UDP не требует соединения, поэтому состояние 
 - Пробы HTTPS не поддерживают взаимную проверку подлинности с помощью сертификата клиента.
 - При включении отметок времени TCP следует предположить, что зонды работоспособности завершаются ошибкой.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [Load Balancer (цен. Категория "Стандартный")](load-balancer-standard-overview.md)
 - [Краткое руководство. Создание общедоступной подсистемы балансировки нагрузки с помощью Azure PowerShell](quickstart-create-standard-load-balancer-powershell.md)

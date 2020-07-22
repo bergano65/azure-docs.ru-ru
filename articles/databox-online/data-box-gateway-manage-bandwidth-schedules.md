@@ -5,29 +5,28 @@ services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: gateway
-ms.topic: article
+ms.topic: how-to
 ms.date: 03/25/2019
 ms.author: alkohli
-ms.openlocfilehash: feae75b1fbb832f833a01fa20ce07962ab5c484f
-ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
-ms.translationtype: MT
+ms.openlocfilehash: 25f74fb78979313acc068320d842d09a982d8d16
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82561407"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84339150"
 ---
 # <a name="use-the-azure-portal-to-manage-bandwidth-schedules-on-your-azure-data-box-gateway"></a>Управление расписаниями пропускной способности в Шлюзе Azure Data Box с помощью портала Azure  
 
-В этой статье описывается управление пользователями в Шлюзе Azure Data Box. Расписания пропускной способности позволяют настраивать использование пропускной способности сети в разных графиках в разное время дня. Эти расписания можно применить к операциям передачи и загрузки с устройства в облако. 
+В этой статье описывается управление пользователями в Шлюзе Azure Data Box. Расписания пропускной способности позволяют настраивать использование пропускной способности сети в разных графиках в разное время дня. Эти расписания можно применить к операциям передачи и загрузки с устройства в облако.
 
 Вы можете добавлять, изменять или удалять расписания пропускной способности для Шлюза Data Box с помощью портала Azure.
 
 Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
+>
 > * Добавление расписания
 > * изменение расписания;
-> * Удаление расписания 
-
+> * Удаление расписания
 
 ## <a name="add-a-schedule"></a>Добавление расписания
 

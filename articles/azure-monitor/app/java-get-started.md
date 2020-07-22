@@ -6,10 +6,9 @@ author: lgayhardt
 ms.author: lagayhar
 ms.date: 05/24/2019
 ms.openlocfilehash: e56ba304d197984110de5127a0f163ac0accf1aa
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81537514"
 ---
 # <a name="quickstart-get-started-with-application-insights-in-a-java-web-project"></a>Краткое руководство. Начало работы с Application Insights в веб-проекте Java
@@ -38,7 +37,7 @@ Application Insights — это расширяемая служба аналит
 
 # <a name="maven"></a>[Maven](#tab/maven)
 
-Если проект уже настроен на использование Maven для сборки, объедините приведенный ниже код в файл *POM. XML* .
+Если проект уже настроен на использование Maven для сборки, объедините приведенный ниже код в файл *pom.xml* .
 
 Затем обновите зависимости проекта, чтобы скачать двоичные файлы.
 
@@ -75,7 +74,7 @@ Application Insights — это расширяемая служба аналит
 ---
 
 ### <a name="questions"></a>Вопросы
-* *Какова связь между `-web-auto`компонентами `-web` и? `-core`*
+* *Какова связь между `-web-auto` `-web` `-core` компонентами и?*
   * `applicationinsights-web-auto`предоставляет метрики, которые отсчитываются количество запросов HTTP сервлета и время отклика путем автоматической регистрации фильтра Application Insights сервлета в среде выполнения.
   * `applicationinsights-web`также предоставляет метрики, которые отсчитываются количество запросов HTTP сервлета и время ответа, но требуют ручной регистрации фильтра Application Insights сервлета в приложении.
   * `applicationinsights-core`предоставляет только простой API, например, если приложение не основано на сервлета.
@@ -86,8 +85,8 @@ Application Insights — это расширяемая служба аналит
   * Если вы управляете зависимостями вручную...
     * Загрузите последнюю версию [пакета SDK Application Insights для Java](https://github.com/Microsoft/ApplicationInsights-Java/releases/latest) и установите ее вместо более старых версий. Изменения описаны в статье [Заметки о выпуске пакета SDK](https://github.com/Microsoft/ApplicationInsights-Java#release-notes).
 
-## <a name="add-an-applicationinsightsxml-file"></a>Добавление файла *ApplicationInsights. XML*
-Добавьте *ApplicationInsights. XML* в папку ресурсов проекта или убедитесь, что она добавлена в путь к классу развертывания проекта. Скопируйте в него следующий код XML.
+## <a name="add-an-applicationinsightsxml-file"></a>Добавление файла *ApplicationInsights.xml*
+Добавьте *ApplicationInsights.xml* в папку ресурсов проекта или убедитесь, что она добавлена в путь к классу развертывания проекта. Скопируйте в него следующий код XML.
 
 Замените ключ инструментирования на тот, который был получен из портал Azure.
 
@@ -118,7 +117,7 @@ Application Insights — это расширяемая служба аналит
 </ApplicationInsights>
 ```
 
-При необходимости файл конфигурации может находиться в любом расположении, доступном для приложения.  Свойство `-Dapplicationinsights.configurationDirectory` System указывает каталог, содержащий *ApplicationInsights. XML*. Например, файл конфигурации, расположенный в каталоге `E:\myconfigs\appinsights\ApplicationInsights.xml`, будет настроен со свойством `-Dapplicationinsights.configurationDirectory="E:\myconfigs\appinsights"`.
+При необходимости файл конфигурации может находиться в любом расположении, доступном для приложения.  Свойство System `-Dapplicationinsights.configurationDirectory` указывает каталог, содержащий *ApplicationInsights.xml*. Например, файл конфигурации, расположенный в каталоге `E:\myconfigs\appinsights\ApplicationInsights.xml`, будет настроен со свойством `-Dapplicationinsights.configurationDirectory="E:\myconfigs\appinsights"`.
 
 * Ключ инструментирования пересылается вместе с каждым элементом телеметрии; служба Application Insights отобразит его в ресурсе.
 * Компонент HTTP-запросов является необязательным. Он автоматически передает на портал телеметрию о запросах и значения времени ответа.
@@ -129,7 +128,7 @@ Application Insights — это расширяемая служба аналит
 
 1. Системное свойство:-DAPPINSIGHTS_INSTRUMENTATIONKEY = your_ikey
 2. Переменная среды: APPINSIGHTS_INSTRUMENTATIONKEY
-3. Файл конфигурации: *ApplicationInsights. XML*
+3. Файл конфигурации: *ApplicationInsights.xml*
 
 Вы также можете [задать его в коде](../../azure-monitor/app/api-custom-events-metrics.md#ikey):
 
@@ -194,7 +193,7 @@ Application Insights — это расширяемая служба аналит
 
 ## <a name="azure-app-service-config-spring-boot"></a>Конфигурация службы приложений Azure (пружинная загрузка)
 
-Приложения с пружинной загрузкой, запущенные в Windows, нуждаются в дополнительной настройке для запуска в службах приложений Azure. Измените **файл Web. config** и добавьте следующую конфигурацию:
+Приложения с пружинной загрузкой, запущенные в Windows, нуждаются в дополнительной настройке для запуска в службах приложений Azure. Измените **web.config** и добавьте следующую конфигурацию:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -233,7 +232,7 @@ Application Insights — это расширяемая служба аналит
 ![Снимок экрана: панель метрик с выбранным байтовым частным байтом процесса](./media/java-get-started/011-perf-counters.png)
 
 ### <a name="customize-performance-counter-collection"></a>Настройка сбора данных счетчиками производительности
-Чтобы отключить сбор данных о стандартном наборе счетчиков производительности, добавьте следующий код в корневой узел файла *ApplicationInsights. XML* :
+Чтобы отключить сбор данных о стандартном наборе счетчиков производительности, добавьте следующий код в корневой узел файла *ApplicationInsights.xml* :
 
 ```XML
     <PerformanceCounters>

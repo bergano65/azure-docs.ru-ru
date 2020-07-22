@@ -3,14 +3,14 @@ title: Руководство по Использование ASP.NET Core с Б
 description: Узнайте, как создать приложение .NET Core, работающее в службе приложений Azure, с подключением к базе данных SQL.
 ms.devlang: dotnet
 ms.topic: tutorial
-ms.date: 04/23/2020
+ms.date: 05/27/2020
 ms.custom: mvc, cli-validate, seodec18
-ms.openlocfilehash: f8e76c90a670adb8fa5de5a33063d9de3bcc6cc3
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: c020e49b12784e628661bff61fe344df0ac6049a
+ms.sourcegitcommit: 34eb5e4d303800d3b31b00b361523ccd9eeff0ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82207655"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84905992"
 ---
 # <a name="tutorial-build-an-aspnet-core-and-sql-database-app-in-azure-app-service"></a>Руководство по Создание приложения ASP.NET Core и Базы данных SQL в Службе приложений Azure
 
@@ -90,7 +90,7 @@ dotnet run
 
 В Cloud Shell создайте логический сервер базы данных SQL с помощью команды [`az sql server create`](/cli/azure/sql/server?view=azure-cli-latest#az-sql-server-create).
 
-Замените заполнитель *\<server-name>* *уникальным* именем Базы данных SQL. Это имя используется как часть глобально уникальной конечной точки Базы данных SQL: `<server-name>.database.windows.net`. Допустимые символы: `a`-`z`, `0`-`9`, `-`. Кроме того, замените *\<db-username>* и *\<db-password>* именем пользователя и паролем по своему усмотрению. 
+Замените заполнитель *\<server-name>* *уникальным* именем в Базе данных SQL. Это имя используется как часть глобально уникальной конечной точки Базы данных SQL: `<server-name>.database.windows.net`. Допустимые символы: `a`-`z`, `0`-`9`, `-`. Также введите вместо *\<db-username>* и *\<db-password>* имя пользователя и пароль по своему усмотрению. 
 
 
 ```azurecli-interactive
@@ -129,7 +129,7 @@ az sql server firewall-rule create --resource-group myResourceGroup --server <se
 > Вы можете применить еще более строгие ограничения в правиле брандмауэра, [разрешив только исходящие IP-адреса, используемые приложением](overview-inbound-outbound-ips.md#find-outbound-ips).
 >
 
-В Cloud Shell повторно выполните соответствующую команду, чтобы разрешить доступ с локального компьютера, заменив *\<your-ip-address >* [локальным IPv4-адресом](https://www.whatsmyip.org/).
+Чтобы разрешить доступ с локального компьютера, повторно выполните команду в Cloud Shell, заменив *\<your-ip-address>* [соответствующим локальным IPv4-адресом](https://www.whatsmyip.org/).
 
 ```azurecli-interactive
 az sql server firewall-rule create --name AllowLocalClient --server <mysql_server_name> --resource-group myResourceGroup --start-ip-address=<your-ip-address> --end-ip-address=<your-ip-address>
@@ -236,7 +236,7 @@ git commit -m "connect to SQLDB in Azure"
 
 ### <a name="configure-connection-string"></a>Настройка строки подключения
 
-Чтобы задать строки подключения для приложения Azure, используйте команду [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) в Cloud Shell. В следующей команде замените *\<app-name>* . Также замените *\<connection-string>* строкой подключения, созданной ранее.
+Чтобы задать строки подключения для приложения Azure, используйте команду [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) в Cloud Shell. Замените *\<app-name>* в этой команде соответствующим значением, а параметр *\<connection-string>*  — строкой подключения, созданной ранее.
 
 ```azurecli-interactive
 az webapp config connection-string set --resource-group myResourceGroup --name <app-name> --settings MyDbConnection="<connection-string>" --connection-string-type SQLAzure
@@ -446,3 +446,8 @@ az webapp log tail --name <app-name> --resource-group myResourceGroup
 
 > [!div class="nextstepaction"]
 > [Руководство. Сопоставление настраиваемого DNS-имени с приложением](app-service-web-tutorial-custom-domain.md)
+
+Дополнительные ресурсы
+
+> [!div class="nextstepaction"]
+> [Настройка приложения ASP.NET Core](configure-language-dotnetcore.md)

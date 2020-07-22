@@ -4,16 +4,16 @@ description: Сведения о создании заданий импорта 
 author: alkohli
 services: storage
 ms.service: storage
-ms.topic: article
+ms.topic: how-to
 ms.date: 04/08/2019
 ms.author: alkohli
 ms.subservice: common
-ms.openlocfilehash: 201d0c0a545c5ba7ae1bb0b5e119f7acb1ae362f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a88cf9981d4f3a69a503c9caa56be1b5f35029f6
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79268305"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86105189"
 ---
 # <a name="use-azure-importexport-service-to-import-data-to-azure-files"></a>Использование службы "Импорт и экспорт Azure" для импорта данных в службу "Файлы Azure"
 
@@ -21,7 +21,7 @@ ms.locfileid: "79268305"
 
 Служба "Импорт и экспорт Azure" поддерживает только импорт файлов Azure в службу хранилища Azure. Экспорт файлов Azure не поддерживается.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед созданием задания импорта для передачи данных в службу "Файлы Azure" внимательно просмотрите и выполните описанные ниже предварительные требования. Необходимо сделать следующее:
 
@@ -30,7 +30,7 @@ ms.locfileid: "79268305"
 - Соответствующее количество дисков [поддерживаемых типов](storage-import-export-requirements.md#supported-disks).
 - Система с ОС Windows [поддерживаемой версии](storage-import-export-requirements.md#supported-operating-systems).
 - [Скачать WAImportExport версии 2](https://aka.ms/waiev2) в систему Windows. Распакуйте содержимое в папку по умолчанию: `waimportexport`. Например, `C:\WaImportExport`.
-- Учетная запись FedEx или DHL. Если вы хотите использовать перевозчик, отличный от FedEx/DHL, обратитесь в службу поддержки Azure Data Box по `adbops@microsoft.com`адресу.  
+- Учетная запись FedEx или DHL. Если вы хотите использовать перевозчик, отличный от FedEx/DHL, обратитесь в службу поддержки Azure Data Box по адресу `adbops@microsoft.com` .  
     - Учетная запись должна быть действительной, иметь баланс и возможности возврата.
     - Создайте номер отслеживания для задания экспорта.
     - Каждое задание должно иметь отдельный номер отслеживания. Несколько заданий с одним и тем же номером отслеживания не поддерживаются.
@@ -95,15 +95,15 @@ ms.locfileid: "79268305"
 
 5. Используйте параметр `PrepImport`, чтобы скопировать и подготовить данные для диска. Для первого сеанса копирования каталогов и файлов в рамках нового сеанса копирования выполните следующую команду:
 
-       ```
-       .\WAImportExport.exe PrepImport /j:<JournalFile> /id:<SessionId> [/logdir:<LogDirectory>] [/sk:<StorageAccountKey>] [/silentmode] [/InitialDriveSet:<driveset.csv>] DataSet:<dataset.csv>
-       ```
+    ```cmd
+    .\WAImportExport.exe PrepImport /j:<JournalFile> /id:<SessionId> [/logdir:<LogDirectory>] [/sk:<StorageAccountKey>] [/silentmode] [/InitialDriveSet:<driveset.csv>] DataSet:<dataset.csv>
+    ```
 
    Ниже приведен пример импорта такого файла.
 
-       ```
-       .\WAImportExport.exe PrepImport /j:JournalTest.jrn /id:session#1  /sk:************* /InitialDriveSet:driveset.csv /DataSet:dataset.csv /logdir:C:\logs
-       ```
+    ```cmd
+    .\WAImportExport.exe PrepImport /j:JournalTest.jrn /id:session#1  /sk:************* /InitialDriveSet:driveset.csv /DataSet:dataset.csv /logdir:C:\logs
+    ```
 
 6. Файл журнала с именем, указанным с параметром `/j:`, создается при каждом запуске командной строки. Каждый подготовленный диск имеет файл журнала, который должен передаваться при создании задания импорта. Диски без файлов журналов обрабатываться не будут.
 
@@ -145,7 +145,7 @@ ms.locfileid: "79268305"
 
 4. В разделе **Сведения о возврате** сделайте следующее:
 
-    - В раскрывающемся списке выберите перевозчика. Если вы хотите использовать перевозчика, отличный от FedEx/DHL, выберите существующий параметр из раскрывающегося списка. Свяжитесь `adbops@microsoft.com` с командой operations Azure Data Box с информацией о перевозчике, который планируется использовать.
+    - В раскрывающемся списке выберите перевозчика. Если вы хотите использовать перевозчика, отличный от FedEx/DHL, выберите существующий параметр из раскрывающегося списка. Свяжитесь с командой Operations Azure Data Box `adbops@microsoft.com` с информацией о перевозчике, который планируется использовать.
     - Введите допустимый номер учетной записи, созданный в системе этого перевозчика. Корпорация Майкрософт использует эту учетную запись для отправки дисков обратно после завершения задания импорта.
     - Укажите полное и допустимое имя контактного лица, телефон, адрес электронной почты, адрес, город, почтовый индекс, страну (провинцию) и страну (регион).
 
@@ -180,32 +180,32 @@ ms.locfileid: "79268305"
 
 Для последующих сеансов копирования на диски, указанные в файле *InitialDriveset.csv*, создайте еще один *CSV-файл* с набором дисков и укажите его в качестве значения параметра `AdditionalDriveSet`. Используйте **то же имя файла журнала** и укажите **новый идентификатор сеанса**. Формат CSV-файлов AdditionalDriveset и InitialDriveSet совпадает.
 
-    ```
-    WAImportExport.exe PrepImport /j:<JournalFile> /id:<SessionId> /AdditionalDriveSet:<driveset.csv>
-    ```
+```cmd
+WAImportExport.exe PrepImport /j:<JournalFile> /id:<SessionId> /AdditionalDriveSet:<driveset.csv>
+```
 
 Ниже приведен пример импорта такого файла.
 
-    ```
-    WAImportExport.exe PrepImport /j:JournalTest.jrn /id:session#3  /AdditionalDriveSet:driveset-2.csv
-    ```
+```cmd
+WAImportExport.exe PrepImport /j:JournalTest.jrn /id:session#3  /AdditionalDriveSet:driveset-2.csv
+```
 
 
 Чтобы добавить дополнительные данные в тот же файл с набором дисков, используйте команду PrepImport для последующих сеансов копирования и скопируйте дополнительные файлы или папки.
 
 Для последующих сеансов копирования на те же жесткие диски, указанные в файле *InitialDriveset.csv*, укажите имя **того же файла журнала** и **новый идентификатор сеанса**. Указывать ключ учетной записи хранения не требуется.
 
-    ```
-    WAImportExport PrepImport /j:<JournalFile> /id:<SessionId> /j:<JournalFile> /id:<SessionId> [/logdir:<LogDirectory>] DataSet:<dataset.csv>
-    ```
+```cmd
+WAImportExport PrepImport /j:<JournalFile> /id:<SessionId> /j:<JournalFile> /id:<SessionId> [/logdir:<LogDirectory>] DataSet:<dataset.csv>
+```
 
 Ниже приведен пример импорта такого файла.
 
-    ```
-    WAImportExport.exe PrepImport /j:JournalTest.jrn /id:session#2  /DataSet:dataset-2.csv
-    ```
+```cmd
+WAImportExport.exe PrepImport /j:JournalTest.jrn /id:session#2  /DataSet:dataset-2.csv
+```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Просмотр состояния задания и диска](storage-import-export-view-drive-status.md)
 * [Сведения о требованиях службы "Импорт и экспорт"](storage-import-export-requirements.md)

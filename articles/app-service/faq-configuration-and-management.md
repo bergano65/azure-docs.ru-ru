@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 10/30/2018
 ms.author: genli
 ms.openlocfilehash: 867c011cb3086cab736d17501e72bc477d0d2889
-ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82160006"
 ---
 # <a name="configuration-and-management-faqs-for-web-apps-in-azure"></a>Часто задаваемые вопросы о настройке и управлении для функции "Веб-приложения" в Azure
@@ -105,7 +105,7 @@ ms.locfileid: "82160006"
 
 ## <a name="how-do-i-remove-a-header-from-the-http-response"></a>Как удалить заголовок ответа HTTP?
 
-Чтобы удалить заголовки из HTTP-ответа, обновите файл Web. config сайта. Дополнительные сведения см. в статье [Remove standard server headers on your Azure websites](https://azure.microsoft.com/blog/removing-standard-server-headers-on-windows-azure-web-sites/) (Удаление стандартных заголовков сервера на веб-сайтах Azure).
+Чтобы удалить заголовки из HTTP-ответа, обновите файл web.config сайта. Дополнительные сведения см. в статье [Remove standard server headers on your Azure websites](https://azure.microsoft.com/blog/removing-standard-server-headers-on-windows-azure-web-sites/) (Удаление стандартных заголовков сервера на веб-сайтах Azure).
 
 ## <a name="is-app-service-compliant-with-pci-standard-30-and-31"></a>Соответствует ли служба приложений стандарту PCI версий 3.0 и 3.1?
 
@@ -125,7 +125,7 @@ ms.locfileid: "82160006"
 
 Просмотр журналов веб-задания
 
-1. Войдите на **веб-сайт KUDU** (`https://*yourwebsitename*.scm.azurewebsites.net`).
+1. Войдите на **веб-сайт KUDU** ( `https://*yourwebsitename*.scm.azurewebsites.net` ).
 2. Выберите веб-задание.
 3. Нажмите кнопку **Переключить выходные данные**.
 4. Чтобы загрузить выходной файл, выберите ссылку **загрузки**.
@@ -141,13 +141,13 @@ ms.locfileid: "82160006"
 Exception: System.Data.Entity.Core.EntityException: The underlying provider failed on Open. —> System.OverflowException: Arithmetic operation resulted in an overflow. or (64 bit Web app) System.OverflowException: Array dimensions exceeded supported range, at System.Data.SqlClient.TdsParser.ConsumePreLoginHandshake
 ```
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 Исключение было порождено из-за проблемы с диспетчером гибридных подключений, которая затем была исправлена. Не забудьте [обновить диспетчер гибридных подключений](https://go.microsoft.com/fwlink/?LinkID=841308), чтобы устранить эту проблему.
 
 ## <a name="how-do-i-add-a-url-rewrite-rule"></a>Разделы справки добавить правило переопределения URL-адресов?
 
-Чтобы добавить правило переопределения URL-адресов, создайте файл Web. config с соответствующими записями конфигурации в папке **wwwroot** . Дополнительные сведения см. в статье [о службе приложений Azure: Общие сведения о перезаписи URL-адресов](https://blogs.msdn.microsoft.com/madhurabharadwaj/2018/06/01/azure-app-services-understanding-url-re-write/).
+Чтобы добавить правило переопределения URL-адресов, создайте файл web.config с соответствующими записями конфигурации в папке **wwwroot** . Дополнительные сведения см. в статье [о службе приложений Azure: Общие сведения о перезаписи URL-адресов](https://blogs.msdn.microsoft.com/madhurabharadwaj/2018/06/01/azure-app-services-understanding-url-re-write/).
 
 ## <a name="how-do-i-control-inbound-traffic-to-app-service"></a>Как контролировать входящий трафик в службе приложений?
 

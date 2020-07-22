@@ -1,5 +1,5 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл
 ms.topic: include
 ms.custom: include file
@@ -30,17 +30,17 @@ ms.locfileid: "76984595"
 
    [![Копирование идентификатора приложения](media/time-series-insights-aad-registration/active-directory-copy-application-id.png)](media/time-series-insights-aad-registration/active-directory-copy-application-id.png#lightbox)
 
-   Скопируйте значение параметра **Идентификатор приложения (клиента)**, чтобы использовать его в клиентском приложении.
+   Скопируйте значение параметра **Идентификатор приложения (клиента)** , чтобы использовать его в клиентском приложении.
 
 1. В колонке **Аутентификация** указаны важные параметры конфигурации аутентификации. 
 
     1. Добавьте **URI перенаправления** и настройте **Маркеры доступа**, выбрав **+ Add a platform** (+ Добавить платформу).
 
-    1. Определите, является ли приложение **общедоступным клиентом** или нет, выбрав **Да** или **нет**.
+    1. Определите, является ли приложение **общедоступным клиентом** или нет, выбрав **Да** или **Нет**.
 
     1. Проверьте, какие учетные записи и клиенты поддерживаются.
 
-    [![Настройка неявного предоставления](media/time-series-insights-aad-registration/active-directory-auth-blade.png)](media/time-series-insights-aad-registration/active-directory-auth-blade.png#lightbox)
+    [![Настройка неявного предоставления разрешения](media/time-series-insights-aad-registration/active-directory-auth-blade.png)](media/time-series-insights-aad-registration/active-directory-auth-blade.png#lightbox)
 
 1. Выбрав нужную платформу, настройте **URI перенаправления** и **Маркеры доступа** на боковой панели справа от пользовательского интерфейса.
 
@@ -57,16 +57,16 @@ ms.locfileid: "76984595"
 
     Щелкните **Настроить**, а затем **Сохранить**.
 
-1. Выберите **сертификаты & секреты** , а затем **новый секрет клиента** , чтобы создать пароль приложения, который ваше клиентское приложение может использовать для подтверждения его подлинности.
+1. Щелкните **Сертификаты и секреты** и **Создать секрет клиента**, чтобы создать пароль приложения, который клиентское приложение сможет использовать для подтверждения подлинности.
 
-   [![Создать новый секрет клиента](media/time-series-insights-aad-registration/active-directory-application-keys-save.png)](media/time-series-insights-aad-registration/active-directory-application-keys-save.png#lightbox)
+   [![Создание секрета клиента](media/time-series-insights-aad-registration/active-directory-application-keys-save.png)](media/time-series-insights-aad-registration/active-directory-application-keys-save.png#lightbox)
 
    После этого будет отображен секретный пароль клиента. Скопируйте ключ в предпочитаемый текстовый редактор.
 
    > [!NOTE]
    > Вместо этого вы можете импортировать сертификат. Для повышения безопасности мы рекомендуем использовать сертификат. Для этого щелкните **Отправить сертификат**.
 
-1. Свяжите приложение Azure Active Directory с Аналитикой временных рядов Azure. Выберите **разрешения** > **Добавить API разрешений** > , которые**использует Моя организация**. 
+1. Свяжите приложение Azure Active Directory с Аналитикой временных рядов Azure. Последовательно выберите **Разрешения API** > **Add a permission (Добавить разрешение)**  > **Интерфейсы API, используемые моей организацией**. 
 
     [![Связывание API с приложением Azure Active Directory](media/time-series-insights-aad-registration/active-directory-app-api-permission.png)](media/time-series-insights-aad-registration/active-directory-app-api-permission.png#lightbox)
 
@@ -74,4 +74,4 @@ ms.locfileid: "76984595"
 
 1. Затем укажите тип разрешения API, необходимый для приложения. По умолчанию будет выделен тип **Делегированные разрешения**. Выберите тип разрешения и щелкните **Добавить разрешения**.
 
-    [![Укажите тип разрешения API, требуемого для приложения](media/time-series-insights-aad-registration/active-directory-app-permission-grant.png)](media/time-series-insights-aad-registration/active-directory-app-permission-grant.png#lightbox)
+    [![Выбор типа разрешения API, необходимого для приложения](media/time-series-insights-aad-registration/active-directory-app-permission-grant.png)](media/time-series-insights-aad-registration/active-directory-app-permission-grant.png#lightbox)

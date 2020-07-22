@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/19/2020
 ms.author: yelevin
-ms.openlocfilehash: 6b91e36ee09aa855c119add2c0eb268cf8b97393
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 07a6b84569fe0356267440e38b31ac738b2659d6
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81731815"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85260837"
 ---
 # <a name="step-3-validate-connectivity"></a>Шаг 3. Проверка подключения
 
@@ -76,7 +76,7 @@ ms.locfileid: "81731815"
 
     - Файл конфигурации:`/etc/rsyslog.d/security-config-omsagent.conf`
 
-            :rawmsg, regex, "CEF\|ASA" ~
+            :rawmsg, regex, "CEF"|"ASA"
             *.* @@127.0.0.1:25226
 
 1. Проверяет, что управляющая программа системного журнала получает данные через порт 514
@@ -137,5 +137,5 @@ ms.locfileid: "81731815"
 В этом документе вы узнали, как подключить устройства CEF к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats.md).
-- [Используйте книги](tutorial-monitor-your-data.md) для отслеживания данных.
+- [Используйте книги](tutorial-monitor-your-data.md) для мониторинга данных.
 

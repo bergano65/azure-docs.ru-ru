@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/12/2019
 ms.author: memildin
-ms.openlocfilehash: 1a6999c05c0b3dbaf572b376412f666c50c23df7
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 285245e499cfe8a5d7e365044c188191325e4267
+ms.sourcegitcommit: 52d2f06ecec82977a1463d54a9000a68ff26b572
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77604451"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84782863"
 ---
 # <a name="tutorial-improve-your-regulatory-compliance"></a>Руководство по Обеспечение соответствия нормативным требованиям на высоком уровне
 ---
@@ -103,4 +103,4 @@ ms.locfileid: "77604451"
 
 -   [Рекомендации по безопасности в Центре безопасности Azure](security-center-recommendations.md). Узнайте о том, как рекомендации Центра безопасности Azure могут помочь вам защитить ресурсы Azure.
 
--   [Improve your Secure Score in Azure Security Center](security-center-secure-score.md) (Улучшение работы службы "Оценка безопасности" в Центре безопасности Azure). Узнайте о том, как ранжировать уязвимости, а также ознакомьтесь с рекомендациями по обеспечению максимально высокого уровня безопасности.
+-   [Improve your Secure Score in Azure Security Center](secure-score-security-controls.md) (Улучшение работы службы "Оценка безопасности" в Центре безопасности Azure). Узнайте о том, как ранжировать уязвимости, а также ознакомьтесь с рекомендациями по обеспечению максимально высокого уровня безопасности.

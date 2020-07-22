@@ -17,10 +17,9 @@ ms.date: 03/05/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: a7a92bef85cd4ee7530940a065135e88c7530781
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78675608"
 ---
 # <a name="sap-workload-configurations-with-azure-availability-zones"></a>Конфигурации рабочих нагрузок SAP с использованием Зон доступности Azure
@@ -58,7 +57,7 @@ ms.locfileid: "78675608"
 - При развертывании в Зонах доступности Azure необходимо использовать [Управляемые диски Azure](https://azure.microsoft.com/services/managed-disks/). 
 - Сопоставление перечислений зон с физическими зонами фиксируется на уровне подписки Azure. Если вы используете разные подписки для развертывания систем SAP, для каждой подписки следует определить оптимальные зоны.
 - Вы не можете развертывать группы доступности Azure в пределах зоны доступности Azure, если не используете [группу размещения](https://docs.microsoft.com/azure/virtual-machines/linux/co-location)с учетом расположения в Azure. Способ развертывания уровня СУБД SAP и центральных служб в разных зонах, а также развертывание уровня приложений SAP с помощью групп доступности и по-прежнему достигнуть близкого сходства виртуальных машин приводится в статье [группы размещения Azure для обеспечения оптимальной сетевой задержки с приложениями SAP](sap-proximity-placement-scenarios.md). Если вы не используете группы размещения с учетом расположения в Azure, необходимо выбрать одну или другую как платформу развертывания для виртуальных машин.
-- Невозможно использовать [Azure Load Balancer (цен. категория "Базовый")](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview) для создания отказоустойчивых кластерных решений, основанных на службах отказоустойчивого кластера Windows Server или Linux Pacemaker. Вместо этого необходимо использовать [номер SKU Azure Load Balancer (цен. категория "Стандартный")](https://docs.microsoft.com/azure/load-balancer/load-balancer-standard-availability-zones).
+- Невозможно использовать [Azure Load Balancer (цен. категория "Базовый")](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview) для создания отказоустойчивых кластерных решений, основанных на службах отказоустойчивого кластера Windows Server или Linux Pacemaker. Вместо этого необходимо использовать [номер SKU Azure Load Balancer (цен. Категория "Стандартный")](https://docs.microsoft.com/azure/load-balancer/load-balancer-standard-availability-zones).
 
 
 

@@ -14,10 +14,9 @@ ms.workload: na
 ms.date: 12/19/2019
 ms.author: memildin
 ms.openlocfilehash: 74ed55e1d460495bfa8d3d4c00bd37bb7f05260e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75552871"
 ---
 # <a name="protect-azure-data-and-storage-services"></a>Защита данных и служб хранилища Azure
@@ -64,10 +63,10 @@ ms.locfileid: "75552871"
 4. Выполните **действия по исправлению** и нажмите кнопку **сохранить**.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о рекомендациях, относящихся к другим типам ресурсов Azure, см. в следующих разделах:
 
 * [Полный список ссылок на рекомендации по безопасности центра безопасности Azure](recommendations-reference.md)
-* [Защита приложений и виртуальных машин в центре безопасности Azure](security-center-virtual-machine-protection.md)
+* [Защита виртуальных машин в центре безопасности Azure](security-center-virtual-machine-protection.md)
 * [Защита сети в центре безопасности Azure.](security-center-network-recommendations.md)

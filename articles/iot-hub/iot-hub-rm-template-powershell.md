@@ -9,10 +9,9 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 04/02/2019
 ms.openlocfilehash: a1f878361a96c5584f43b31135d79ff799f66efa
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75976621"
 ---
 # <a name="create-an-iot-hub-using-azure-resource-manager-template-powershell"></a>Создание Центра Интернета вещей с помощью шаблона Azure Resource Manager (PowerShell)
@@ -49,7 +48,7 @@ New-AzResourceGroupDeployment `
 
 Как видно из сценария PowerShell, шаблон используется в шаблонах быстрого запуска Azure. Для собственного использования необходимо сначала отправить файл шаблона в Cloud Shell, а затем использовать `-TemplateFile` параметр, чтобы указать имя файла.  Пример см. в разделе [Развертывание шаблона](../azure-resource-manager/templates/quickstart-create-templates-use-visual-studio-code.md?tabs=PowerShell#deploy-the-template).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда центр Интернета вещей развернут с помощью шаблона Azure Resource Manager, может потребоваться дальнейшее изучение:
 

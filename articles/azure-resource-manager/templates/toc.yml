@@ -12,71 +12,163 @@
       href: quickstart-create-templates-use-visual-studio-code.md
     - name: Службы Azure
       items:
-        - name: AKS
-          href: ../../aks/kubernetes-walkthrough-rm-template.md?toc=/azure/azure-resource-manager/templates/toc.json
-        - name: Analysis Services. Создание сервера
-          href: ../../analysis-services/analysis-services-create-template.md?toc=/azure/azure-resource-manager/templates/toc.json
-        - name: Шлюз приложений
-          href: ../../application-gateway/quick-create-template.md?toc=/azure/azure-resource-manager/templates/toc.json
-        - name: Резервное копирование
-          href: ../../backup/quick-backup-vm-template.md?toc=/azure/azure-resource-manager/templates/toc.json
-        - name: Когнитивный поиск
-          href: ../../search/search-get-started-arm.md?toc=/azure/azure-resource-manager/templates/toc.json
-        - name: Экземпляры контейнеров
-          href: ../../container-instances/container-instances-quickstart-template.md?toc=/azure/azure-resource-manager/templates/toc.json
-        - name: Cosmos DB
-          href: ../../cosmos-db/quick-create-template.md?toc=/azure/azure-resource-manager/templates/toc.json
-        - name: Бюджет Управления затратами
-          href: ../../cost-management-billing/costs/quick-create-budget-template.md?toc=/azure/azure-resource-manager/templates/toc.json
-        - name: База данных Azure для MySQL
-          href: ../../mysql/quickstart-create-mysql-server-database-using-arm-template.md?toc=/azure/azure-resource-manager/templates/toc.json
-        - name: Сетка событий Azure
-          href: ../../event-grid/blob-event-quickstart-template.md?toc=/azure/azure-resource-manager/templates/toc.json
-        - name: Концентратор событий
-          href: ../../event-hubs/event-hubs-resource-manager-namespace-event-hub.md?toc=/azure/azure-resource-manager/templates/toc.json
-        - name: Брандмауэр. Зоны доступности
-          href: ../../firewall/deploy-template.md?toc=/azure/azure-resource-manager/templates/toc.json
-        - name: Брандмауэр. Группы IP-адресов
-          href: ../../firewall/quick-create-ipgroup-template.md?toc=/azure/azure-resource-manager/templates/toc.json
-        - name: Брандмауэр. Несколько адресов
-          href: ../../firewall/quick-create-multiple-ip-template.md?toc=/azure/azure-resource-manager/templates/toc.json
-        - name: "HDInsight\_— Spark"
-          href: ../../hdinsight/spark/apache-spark-jupyter-spark-sql.md?toc=/azure/azure-resource-manager/templates/toc.json
-        - name: "HDInsight\_— Hadoop"
-          href: ../../hdinsight/hadoop/apache-hadoop-linux-tutorial-get-started.md?toc=/azure/azure-resource-manager/templates/toc.json
-        - name: "HDInsight\_— Kafka"
-          href: ../../hdinsight/kafka/apache-kafka-quickstart-resource-manager-template.md?toc=/azure/azure-resource-manager/templates/toc.json
-        - name: "HDInsight\_— HBase"
-          href: ../../hdinsight/hbase/quickstart-resource-manager-template.md?toc=/azure/azure-resource-manager/templates/toc.json
-        - name: "HDInsight\_— Interactive Query"
-          href: ../../hdinsight/interactive-query/quickstart-resource-manager-template.md?toc=/azure/azure-resource-manager/templates/toc.json
-        - name: "HDInsight\_— службы ML"
-          href: ../../hdinsight/r-server/quickstart-resource-manager-template.md?toc=/azure/azure-resource-manager/templates/toc.json
-        - name: Key Vault
-          href: ../../key-vault/quick-create-template.md?toc=/azure/azure-resource-manager/templates/toc.json
-        - name: Load Balancer
-          href: ../../load-balancer/quickstart-load-balancer-standard-public-template.md?toc=/azure/azure-resource-manager/templates/toc.json
-        - name: Управляемое приложение
-          href: ../managed-applications/publish-service-catalog-app.md?toc=/azure/azure-resource-manager/templates/toc.json
-        - name: Политика
-          href: ../../governance/policy/assign-policy-template.md?toc=/azure/azure-resource-manager/templates/toc.json
-        - name: Resource Graph
-          href: ../../governance/resource-graph/shared-query-template.md?toc=/azure/azure-resource-manager/templates/toc.json
-        - name: Обмен сообщениями через Служебную шину
-          href: ../../service-bus-messaging/service-bus-resource-manager-namespace-queue.md?toc=/azure/azure-resource-manager/templates/toc.json
-        - name: Service Fabric
-          href: ../../service-fabric/quickstart-cluster-template.md?toc=/azure/azure-resource-manager/templates/toc.json
-        - name: Site Recovery
-          href: ../../site-recovery/quickstart-create-vault-template.md?toc=/azure/azure-resource-manager/templates/toc.json
-        - name: База данных SQL
-          href: ../../sql-database/sql-database-single-database-get-started-template.md?toc=/azure/azure-resource-manager/templates/toc.json
-        - name: Масштабируемые наборы виртуальных машин — Linux
-          href: ../../virtual-machine-scale-sets/quick-create-template-linux.md?toc=/azure/azure-resource-manager/templates/toc.json
-        - name: "Масштабируемые наборы виртуальных машин\_— Windows"
-          href: ../../virtual-machine-scale-sets/quick-create-template-windows.md?toc=/azure/azure-resource-manager/templates/toc.json
-        - name: Брандмауэр веб-приложения
-          href: ../../web-application-firewall/ag/quick-create-template.md?toc=/azure/azure-resource-manager/templates/toc.json
-- name: Руководства
+        - name: Искусственный интеллект и машинное обучение
+          items:
+            - name: Когнитивный поиск
+              href: ../../search/search-get-started-arm.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Cognitive Services
+              href: ../../cognitive-services/resource-manager-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Виртуальная машина для обработки и анализа данных
+              href: ../../machine-learning/data-science-virtual-machine/dsvm-tutorial-resource-manager.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Машинное обучение
+              href: ../../machine-learning/tutorial-resource-manager-workspace.md?toc=/azure/azure-resource-manager/templates/toc.json
+        - name: Analytics
+          items:
+            - name: Службы Analysis Services
+              href: ../../analysis-services/analysis-services-create-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Databricks
+              href: /azure/databricks/scenarios/quickstart-create-databricks-workspace-resource-manager-template?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Центры событий
+              href: ../../event-hubs/event-hubs-resource-manager-namespace-event-hub.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: "HDInsight\_— Hadoop"
+              href: ../../hdinsight/hadoop/apache-hadoop-linux-tutorial-get-started.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: "HDInsight\_— HBase"
+              href: ../../hdinsight/hbase/quickstart-resource-manager-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: "HDInsight\_— Interactive Query"
+              href: ../../hdinsight/interactive-query/quickstart-resource-manager-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: "HDInsight\_— Kafka"
+              href: ../../hdinsight/kafka/apache-kafka-quickstart-resource-manager-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: "HDInsight\_— службы ML"
+              href: ../../hdinsight/r-server/quickstart-resource-manager-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: "HDInsight\_— Spark"
+              href: ../../hdinsight/spark/apache-spark-jupyter-spark-sql.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Stream Analytics
+              href: ../../stream-analytics/quick-create-azure-resource-manager.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Synapse Analytics
+              href: ../../synapse-analytics/sql-data-warehouse/quickstart-arm-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+        - name: Блокчейн
+          items:
+            - name: Блокчейн
+              href: ../../blockchain/service/create-member-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+        - name: Службы вычислений
+          items:
+            - name: Пакетная служба Azure
+              href: ../../batch/quick-create-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Функции
+              href: ../../azure-functions/functions-create-first-function-resource-manager.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Виртуальная машина Linux
+              href: ../../virtual-machines/linux/quick-create-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Масштабируемые наборы виртуальных машин — Linux
+              href: ../../virtual-machine-scale-sets/quick-create-template-linux.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: "Масштабируемые наборы виртуальных машин\_— Windows"
+              href: ../../virtual-machine-scale-sets/quick-create-template-windows.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Виртуальные машины Windows
+              href: ../../virtual-machines/windows/quick-create-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+        - name: Контейнеры
+          items:
+            - name: AKS
+              href: ../../aks/kubernetes-walkthrough-rm-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Экземпляры контейнеров
+              href: ../../container-instances/container-instances-quickstart-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Реестр контейнеров
+              href: ../../container-registry/container-registry-get-started-geo-replication-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Service Fabric
+              href: ../../service-fabric/quickstart-cluster-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+        - name: Базы данных
+          items:
+            - name: Cosmos DB
+              href: ../../cosmos-db/quick-create-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: База данных Azure для MariaDB
+              href: ../../mariadb/quickstart-create-mariadb-server-database-arm-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: База данных Azure для MySQL
+              href: ../../mysql/quickstart-create-mysql-server-database-using-arm-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: База данных Azure для PostgreSQL
+              href: ../../postgresql/quickstart-create-postgresql-server-database-using-arm-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Database Migration Service
+              href: ../../dms/create-dms-resource-manager-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: База данных SQL
+              href: ../../azure-sql/database/single-database-create-arm-template-quickstart.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Управляемый экземпляр SQL
+              href: ../../azure-sql/managed-instance/create-template-quickstart.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: SQL Server на виртуальных машинах
+              href: ../../azure-sql/virtual-machines/windows/create-sql-vm-resource-manager-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+        - name: DevOps
+          items:
+            - name: DevTest Labs
+              href: ../../devtest-labs/create-lab-windows-vm-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Конвейеры
+              href: /azure/devops/pipelines/apps/cd/azure/deploy-arm-template?toc=/azure/azure-resource-manager/templates/toc.json
+        - name: Интеграция
+          items:
+            - name: Сетка событий Azure
+              href: ../../event-grid/blob-event-quickstart-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Logic Apps
+              href: ../../logic-apps/quickstart-create-deploy-azure-resource-manager-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Служебная шина
+              href: ../../service-bus-messaging/service-bus-resource-manager-namespace-queue.md?toc=/azure/azure-resource-manager/templates/toc.json
+        - name: Интернет вещей
+          items:
+            - name: IoT Edge
+              href: ../../iot-edge/how-to-install-iot-edge-ubuntuvm.md?toc=/azure/azure-resource-manager/templates/toc.json
+        - name: Управление
+          items:
+            - name: Помощник
+              href: ../../advisor/advisor-alerts-arm.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Резервное копирование
+              href: ../../backup/quick-backup-vm-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Управление затратами и выставление счетов
+              href: ../../cost-management-billing/costs/quick-create-budget-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Управляемые приложения
+              href: ../managed-applications/publish-service-catalog-app.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Монитор
+              href: ../../azure-monitor/learn/quick-collect-activity-log-arm.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Политика
+              href: ../../governance/policy/assign-policy-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Портал
+              href: ../../azure-portal/quick-create-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Resource Graph
+              href: ../../governance/resource-graph/shared-query-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Управление доступом на основе ролей (RBAC)
+              href: ../../role-based-access-control/quickstart-role-assignments-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Работоспособность служб
+              href: ../../service-health/alerts-activity-log-service-notifications-arm.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Site Recovery
+              href: ../../site-recovery/quickstart-create-vault-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+        - name: Сеть
+          items:
+            - name: Шлюз приложений
+              href: ../../application-gateway/quick-create-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Сеть доставки содержимого
+              href: ../../cdn/create-profile-endpoint-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Брандмауэр. Зоны доступности
+              href: ../../firewall/deploy-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Брандмауэр. Группы IP-адресов
+              href: ../../firewall/quick-create-ipgroup-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Брандмауэр. Несколько адресов
+              href: ../../firewall/quick-create-multiple-ip-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Диспетчер брандмауэра
+              href: ../../firewall-manager/quick-secure-virtual-hub.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Load Balancer
+              href: ../../load-balancer/quickstart-load-balancer-standard-public-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Конечная точка службы "Приватный канал"
+              href: ../../private-link/create-private-endpoint-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Служба "Приватный канал"
+              href: ../../private-link/create-private-link-service-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+            - name: Брандмауэр веб-приложения
+              href: ../../web-application-firewall/ag/quick-create-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+        - name: Безопасность
+          items:
+            - name: Key Vault
+              href: ../../key-vault/secrets/quick-create-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+        - name: Память
+          items:
+            - name: Учетная запись хранения
+              href: ../../storage/common/storage-account-create.md?toc=/azure/azure-resource-manager/templates/toc.json
+        - name: Интернет
+          items:
+            - name: Центры уведомлений
+              href: ../../notification-hubs/create-notification-hub-template.md?toc=/azure/azure-resource-manager/templates/toc.json
+- name: Учебники
   items:
     - name: Шаблоны для начинающих
       items:
@@ -142,20 +234,18 @@
         - name: Использование проверки работоспособности в диспетчере развертывания
           displayName: adm
           href: deployment-manager-tutorial-health-check.md
-- name: Примеры
-  items:
-    - name: Шаблоны быстрого запуска Azure
-      href: 'https://azure.microsoft.com/resources/templates/'
-    - name: Примеры шаблона
-      href: template-samples.md
 - name: Основные понятия
   items:
     - name: Рекомендации по работе с шаблоном
       href: template-best-practices.md
+    - name: Часто задаваемые вопросы
+      href: frequently-asked-questions.md
     - name: Шаблоны для обеспечения согласованности данных в облаке
       href: templates-cloud-consistency.md
     - name: Режимы развертывания
       href: deployment-modes.md
+    - name: Удаление журнала развертывания
+      href: deployment-history-deletions.md
     - name: Удаление ресурсов в полном режиме
       href: complete-mode-deletion.md
     - name: Диспетчер развертывания
@@ -215,16 +305,20 @@
             - name: Выходные данные
               displayName: 'iteration,copy'
               href: copy-outputs.md
-    - name: Использование средств разработки
+    - name: Обнаружение свойств шаблона
       items:
-        - name: VS Code
-          href: use-vs-code-to-create-template.md
-        - name: Visual Studio
-          href: create-visual-studio-deployment-project.md
-        - name: Обновление скрипта развертывания VS для использования модуля Az
-          href: update-visual-studio-deployment-script.md
-        - name: IntelliJ IDEA
-          href: create-templates-use-intellij.md
+        - name: Экспорт шаблона
+          href: export-template-portal.md
+        - name: Обнаружение ресурсов
+          href: view-resources.md
+    - name: Проверка шаблонов
+      items:
+        - name: Развертывание "что если"
+          href: template-deploy-what-if.md
+        - name: Набор средств тестирования
+          href: test-toolkit.md
+        - name: Проверочные варианты
+          href: test-cases.md
     - name: Развертывание шаблонов
       items:
         - name: "Развертывание\_— портал"
@@ -241,13 +335,13 @@
           href: deploy-rest.md
         - name: Развертывание из GitHub
           href: deploy-to-azure-button.md
-        - name: Развертывание "что если"
-          href: template-deploy-what-if.md
         - name: Повторное развертывание при возникновении ошибки
           displayName: rollback
           href: rollback-on-error.md
         - name: Обеспечение защиты шаблона с помощью маркера SAS
           href: secure-template-with-sas-token.md
+        - name: Просмотр журнала развертывания
+          href: deployment-history.md
     - name: Развертывание в области
       items:
         - name: Подписка
@@ -271,10 +365,14 @@
           href: add-template-to-azure-pipelines.md
         - name: "Развертывание\_— GitHub Actions"
           href: deploy-github-actions.md
-    - name: Экспорт шаблона
-      href: export-template-portal.md
-    - name: Просмотр журнала развертывания
-      href: deployment-history.md
+    - name: Использование средств разработки
+      items:
+        - name: Visual Studio
+          href: create-visual-studio-deployment-project.md
+        - name: Обновление скрипта развертывания VS для использования модуля Az
+          href: update-visual-studio-deployment-script.md
+        - name: IntelliJ IDEA
+          href: create-templates-use-intellij.md
     - name: Устранение неполадок развертываний
       items:
         - name: Устранение ошибок развертывания
@@ -347,6 +445,8 @@
       href: /python/api/overview/azure/resources?view=azure-python
 - name: Ресурсы
   items:
+    - name: Шаблоны быстрого запуска Azure
+      href: 'https://azure.microsoft.com/resources/templates/'
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/?category=monitoring-management'
     - name: Калькулятор цен

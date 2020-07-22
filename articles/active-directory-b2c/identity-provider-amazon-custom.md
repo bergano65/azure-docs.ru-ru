@@ -7,16 +7,16 @@ author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/04/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 059c43b24ddc9f319eac4f2783cfc203bed8c7f1
-ms.sourcegitcommit: 0fda81f271f1a668ed28c55dcc2d0ba2bb417edd
+ms.openlocfilehash: 90b107b2335bd5f08eeb0b9aa66c7a9db9b74eb0
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82900433"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85388567"
 ---
 # <a name="set-up-sign-in-with-an-amazon-account-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа в Azure Active Directory B2C с использованием пользовательских политик учетной записи Amazon
 
@@ -24,17 +24,17 @@ ms.locfileid: "82900433"
 
 В этой статье показано, как включить вход для пользователей из учетной записи Amazon с помощью [пользовательских политик](custom-policy-overview.md) в Azure Active Directory B2C (Azure AD B2C).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](custom-policy-get-started.md).
-- Если у вас еще нет учетной записи Amazon, создайте ее [https://www.amazon.com/](https://www.amazon.com/).
+- Если у вас еще нет учетной записи Amazon, создайте ее [https://www.amazon.com/](https://www.amazon.com/) .
 
 ## <a name="create-an-app-in-the-amazon-developer-console"></a>Создание приложения в консоли разработчика Amazon
 
-Чтобы использовать учетную запись Amazon в качестве федеративного поставщика удостоверений в Azure Active Directory B2C (Azure AD B2C), необходимо создать приложение в [службах и технологиях Amazon Developer](https://developer.amazon.com). Если у вас еще нет учетной записи Amazon, вы можете зарегистрироваться по [https://www.amazon.com/](https://www.amazon.com/)адресу.
+Чтобы использовать учетную запись Amazon в качестве федеративного поставщика удостоверений в Azure Active Directory B2C (Azure AD B2C), необходимо создать приложение в [службах и технологиях Amazon Developer](https://developer.amazon.com). Если у вас еще нет учетной записи Amazon, вы можете зарегистрироваться по адресу [https://www.amazon.com/](https://www.amazon.com/) .
 
 > [!NOTE]  
-> Используйте следующие URL-адреса на **шаге 8** ниже, `your-tenant-name` заменив именем своего клиента. При вводе имени клиента используйте все строчные буквы, даже если клиент определен с прописными буквами в Azure AD B2C.
+> Используйте следующие URL-адреса на **шаге 8** ниже, заменив `your-tenant-name` именем своего клиента. При вводе имени клиента используйте все строчные буквы, даже если клиент определен с прописными буквами в Azure AD B2C.
 > - Для **разрешенных источников**введите`https://your-tenant-name.b2clogin.com` 
 > - Для **разрешенных URL-адресов возврата**введите`https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp`
 
@@ -133,7 +133,7 @@ ms.locfileid: "82900433"
 1. Найдите элемент **OrchestrationStep**, содержащий `Order="1"` в созданном пути взаимодействия пользователя.
 2. Добавьте следующий элемент в тэг **ClaimsProviderSelects**. Установите для параметра **TargetClaimsExchangeId** соответствующее значение, например `AmazonExchange`:
 
-    ```XML
+    ```xml
     <ClaimsProviderSelection TargetClaimsExchangeId="AmazonExchange" />
     ```
 
@@ -144,17 +144,17 @@ ms.locfileid: "82900433"
 1. Найдите элемент **OrchestrationStep**, содержащий `Order="2"` в пути пользователя.
 2. Добавьте следующий элемент **ClaimsExchange**, убедившись, что для идентификатора используется то же значение, которое использовалось для **TargetClaimsExchangeId**.
 
-    ```XML
+    ```xml
     <ClaimsExchange Id="AmazonExchange" TechnicalProfileReferenceId="Amazon-OAuth" />
     ```
 
-    Измените значение **течникалпрофилереференцеид** на идентификатор созданного ранее идентификатора технического профиля. Например, `Amazon-OAuth`.
+    Обновите значение **TechnicalProfileReferenceId**, присвоив ему значение идентификатора ранее созданного технического профиля. Например, `Amazon-OAuth`.
 
 3. Сохраните файл *TrustFrameworkExtensions.xml* и повторно отправьте его для проверки.
 
 ## <a name="create-an-azure-ad-b2c-application"></a>Создание приложения Azure AD B2C
 
-Связь с Azure AD B2C происходит через приложение, регистрируемое в клиенте B2C. В этом разделе перечислены необязательные действия, которые можно выполнить, чтобы создать тестовое приложение, если вы его еще не создали.
+Взаимодействие с Azure AD B2C осуществляется с помощью приложения, зарегистрированного в клиенте B2C. В этом разделе перечислены необязательные действия, которые можно выполнить, чтобы создать тестовое приложение, если вы его еще не создали.
 
 [!INCLUDE [active-directory-b2c-appreg-idp](../../includes/active-directory-b2c-appreg-idp.md)]
 

@@ -4,10 +4,9 @@ description: Используйте управление доступом Azure 
 ms.topic: article
 ms.date: 12/02/2019
 ms.openlocfilehash: 3fb103ac4c4dac736b3c0fc99b2cf49f01e9e005
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74893490"
 ---
 # <a name="azure-container-registry-roles-and-permissions"></a>Роли и разрешения реестра контейнеров Azure
@@ -21,7 +20,7 @@ ms.locfileid: "74893490"
 | Читатель | X |  |  | X |  |  |  |
 | AcrPush |  |  | X | X | |  |  |  
 | AcrPull |  |  |  | X |  |  |  |  
-| акрделете |  |  |  |  | X |  |  |
+| AcrDelete |  |  |  |  | X |  |  |
 | AcrImageSigner |  |  |  |  |  |  | X |
 
 ## <a name="differentiate-users-and-services"></a>Различие пользователей и служб
@@ -66,7 +65,7 @@ ms.locfileid: "74893490"
 
 ## <a name="sign-images"></a>Подписывание образов
 
-Возможность подписывания образов обычно назначается автоматизированному процессу, который использует субъект-службу. Это разрешение обычно объединяется с разрешением на [отправку образа](#push-image), чтобы разрешить отправку доверенного образа в реестр. Дополнительные сведения см. в разделе [Доверие содержимому в реестре контейнеров Azure](container-registry-content-trust.md).
+Возможность подписывания образов обычно назначается автоматизированному процессу, который использует субъект-службу. Это разрешение обычно объединяется с разрешением на [отправку образа](#push-image), чтобы разрешить отправку доверенного образа в реестр. Дополнительные сведения см. [в статье о доверии содержимого в реестре контейнеров Azure](container-registry-content-trust.md).
 
 ## <a name="custom-roles"></a>Пользовательские роли
 
@@ -81,9 +80,9 @@ az provider operation show --namespace Microsoft.ContainerRegistry
 Чтобы определить пользовательскую роль, см. раздел [шаги по созданию настраиваемой роли](../role-based-access-control/custom-roles.md#steps-to-create-a-custom-role).
 
 > [!IMPORTANT]
-> В пользовательской роли реестр контейнеров Azure в настоящее время не поддерживает подстановочные знаки, `Microsoft.ContainerRegistry/*` такие `Microsoft.ContainerRegistry/registries/*` как или, которые предоставляют доступ ко всем соответствующим действиям. Укажите в роли все необходимые действия по отдельности.
+> В пользовательской роли реестр контейнеров Azure в настоящее время не поддерживает подстановочные знаки, такие как `Microsoft.ContainerRegistry/*` или `Microsoft.ContainerRegistry/registries/*` , которые предоставляют доступ ко всем соответствующим действиям. Укажите в роли все необходимые действия по отдельности.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Ознакомьтесь с дополнительными сведениями о назначении ролей RBAC для удостоверений Azure с помощью [портала Azure](../role-based-access-control/role-assignments-portal.md), [Azure CLI](../role-based-access-control/role-assignments-cli.md) или других средств Azure.
 

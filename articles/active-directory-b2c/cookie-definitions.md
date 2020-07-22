@@ -7,16 +7,16 @@ author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: reference
 ms.date: 01/23/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: b984b75b3a12606aa0d82c7e7b399d5dce59df33
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 5e44e2e1eb37e808e60134a6fba5051552e84029
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78189520"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85389349"
 ---
 # <a name="cookies-definitions-for-azure-ad-b2c"></a>Определения файлов cookie для Azure AD B2C
 
@@ -28,7 +28,7 @@ ms.locfileid: "78189520"
 
 Чтобы защитить доступ к сайтам, в веб-браузерах будет введена новая модель безопасности по умолчанию, которая предполагает, что все файлы cookie должны быть защищены от внешнего доступа, если не указано иное. Браузер Chrome впервые реализует это изменение, начиная с [Chrome 80 в феврале 2020](https://www.chromium.org/updates/same-site). Дополнительные сведения о подготовке к изменению в Chrome см. в разделе разработчики: Подготовьтесь к [созданию нового SameSite = None; Защита параметров файлов cookie](https://blog.chromium.org/2019/10/developers-get-ready-for-new.html) в блоге Chromium.
 
-Чтобы назначить файлы cookie для межсайтового `SameSite=None`доступа, разработчики должны использовать параметр «новый файл cookie». При наличии `SameSite=None` атрибута необходимо использовать дополнительный `Secure` атрибут, чтобы межсайтовые файлы cookie могли быть доступны только через HTTPS-соединения. Проверка и тестирование всех приложений, в том числе приложений, использующих Azure AD B2C.
+`SameSite=None`Чтобы назначить файлы cookie для межсайтового доступа, разработчики должны использовать параметр «новый файл cookie». При `SameSite=None` наличии атрибута `Secure` необходимо использовать дополнительный атрибут, чтобы межсайтовые файлы cookie могли быть доступны только через HTTPS-соединения. Проверка и тестирование всех приложений, в том числе приложений, использующих Azure AD B2C.
 
 Дополнительные сведения можно найти в разделе
 
@@ -39,7 +39,7 @@ ms.locfileid: "78189520"
 
 В следующей таблице перечислены файлы cookie, используемые в Azure AD B2C.
 
-| Имя | Домен | Окончание срока действия | Назначение |
+| name | Домен | Окончание срока действия | Цель |
 | ----------- | ------ | -------------------------- | --------- |
 | `x-ms-cpim-admin` | main.b2cadmin.ext.azure.com | Конец [сеанса браузера](session-behavior.md) | Хранит данные о членстве пользователей в клиентах. Клиенты, членом которых является пользователь и уровень членства (администратор или пользователь). |
 | `x-ms-cpim-slice` | b2clogin.com, login.microsoftonline.com, домен с фирменной символикой | Конец [сеанса браузера](session-behavior.md) | Используется для маршрутизации запросов к соответствующему рабочему экземпляру. |

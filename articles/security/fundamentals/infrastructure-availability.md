@@ -16,10 +16,9 @@ ms.workload: na
 ms.date: 04/28/2019
 ms.author: terrylan
 ms.openlocfilehash: c50c4faf47caf0a7519d61fdc8989ec9fd809d78
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "68727216"
 ---
 # <a name="azure-infrastructure-availability"></a>Доступность инфраструктуры Azure
@@ -50,7 +49,7 @@ Azure предоставляет хранилище через масштаби�
 - [Компоненты и границы информационной системы Azure](infrastructure-components.md)
 - [Сетевая архитектура Azure](infrastructure-network.md)
 - [Рабочая сеть Azure](production-network.md)
-- [Функции безопасности базы данных SQL Azure](infrastructure-sql.md)
+- [Возможности безопасности Базы данных SQL Azure](infrastructure-sql.md)
 - [Операции и управление в рабочей среде Azure](infrastructure-operations.md)
 - [Мониторинг инфраструктуры Azure](infrastructure-monitoring.md)
 - [Целостность инфраструктуры Azure](infrastructure-integrity.md)

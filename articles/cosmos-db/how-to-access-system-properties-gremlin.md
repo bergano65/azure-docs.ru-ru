@@ -3,20 +3,20 @@ title: Доступ к системным свойствам документа 
 description: Сведения о том, как считывать и записывать свойства документа Cosmos DB с помощью API Gremlin
 ms.service: cosmos-db
 ms.subservice: cosmosdb-graph
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 09/10/2019
 author: luisbosquez
 ms.author: lbosq
-ms.openlocfilehash: 4ed7e67ae0ef027b260d0e0f0407e4e05ed5a8f4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a0feac9bbd98dc4c67464e84e9a3204bd9730355
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78898303"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85390352"
 ---
 # <a name="system-document-properties"></a>Системные свойства документа
 
-Azure Cosmos DB имеет [системные свойства](https://docs.microsoft.com/rest/api/cosmos-db/databases) , такие ```_ts```как ```_self```, ```_attachments```, ```_rid```, и ```_etag``` в каждом документе. Кроме того, обработчик Gremlin добавляет в конце и в начале свойства ```inVPartition``` и ```outVPartition```. По умолчанию эти свойства доступны для обхода. Но определенные (или все) свойства можно включить в операцию обхода Gremlin.
+Azure Cosmos DB имеет [системные свойства](/rest/api/cosmos-db/databases) , такие как ```_ts``` ,, ```_self``` ```_attachments``` , ```_rid``` и ```_etag``` в каждом документе. Кроме того, обработчик Gremlin добавляет в конце и в начале свойства ```inVPartition``` и ```outVPartition```. По умолчанию эти свойства доступны для обхода. Но определенные (или все) свойства можно включить в операцию обхода Gremlin.
 
 ```
 g.withStrategies(ProjectionStrategy.build().IncludeSystemProperties('_ts').create())

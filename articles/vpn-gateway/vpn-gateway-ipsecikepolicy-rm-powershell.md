@@ -5,15 +5,14 @@ description: Настройка политики IPsec/IKE для подключ
 services: vpn-gateway
 author: yushwang
 ms.service: vpn-gateway
-ms.topic: article
+ms.topic: how-to
 ms.date: 02/14/2018
 ms.author: yushwang
-ms.openlocfilehash: eaca48fc354f1cf37635e9729b04eaaaa882ba1c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 504f4f2b2a0aa1fa8cd654c422e7ce8a00593b21
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77161908"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84985287"
 ---
 # <a name="configure-ipsecike-policy-for-s2s-vpn-or-vnet-to-vnet-connections"></a>Настройка политики IPsec/IKE для VPN-подключений типа "сеть — сеть" или "виртуальная сеть — виртуальная сеть"
 
@@ -36,7 +35,7 @@ ms.locfileid: "77161908"
 > 1. Обратите внимание, что политика IPsec/IKE будет актуальна только для следующих номеров SKU шлюзов:
 >    * ***VpnGw1, VpnGw2, VpnGw3*** (на основе маршрутов);
 >    * ***Standard*** и ***HighPerformance*** (на основе маршрутов).
-> 2. Для данного соединения можно указать только ***одну*** комбинацию политики.
+> 2. Можно указать только ***одну*** комбинацию политик для каждого подключения.
 > 3. Вам следует указать все алгоритмы и параметры для IKE (основной режим) и IPsec (быстрый режим). Указать частичную политику нельзя.
 > 4. Ознакомьтесь со спецификациями поставщиков VPN-устройств, чтобы убедиться, что политика поддерживается на локальных VPN-устройствах. Если политики несовместимы, невозможно будет установить VPN-подключения типа "сеть — сеть" или "виртуальная сеть — виртуальная сеть".
 
@@ -64,12 +63,12 @@ ms.locfileid: "77161908"
 | Шифрование IPsec | GCMAES256, GCMAES192, GCMAES128, AES256, AES192, AES128, DES3, DES, нет    |
 | Целостность IPsec  | GCMASE256, GCMAES192, GCMAES128, SHA256, SHA1, MD5 |
 | Группа PFS        | PFS24, ECP384, ECP256, PFS2048, PFS2, PFS1, нет 
-| Время существования QM SA   | (**Необязательно**. Если не указано, используются значения по умолчанию)<br>Секунды (целое число; **min. 300**/Default 27000 секунд)<br>КБ (целое число; **min. 1024,/Default.** 102400000 КБ)   |
+| Время существования QM SA   | (**Необязательно**. Если не указано, используются значения по умолчанию)<br>Секунды (целое число, **минимум 300**, по умолчанию — 27 000 с)<br>Килобайты (целое число, **минимум 1024**, по умолчанию — 102 400 000 КБ)   |
 | Селектор трафика | UsePolicyBasedTrafficSelectors** ($True/$False; **необязательно** — по умолчанию используется значение $False, если не задано другое значение.)    |
 |  |  |
 
 > [!IMPORTANT]
-> 1. **Ваша конфигурация локальных VPN-устройств должна совпадать со следующими алгоритмами и параметрами, указанными в политике Azure IPsec/IKE, или содержать их:**
+> 1. **Ваша конфигурация локальных VPN-устройств должна совпадать со следующими алгоритмами и параметрами, указанными в политике Azure IPsec/IKE, или содержать их.**
 >    * алгоритм шифрования IKE (основной режим или фаза 1);
 >    * алгоритм обеспечения целостности IKE (основной режим или фаза 1);
 >    * группа DH (основной режим или фаза 1);
@@ -151,7 +150,7 @@ $LNGPrefix62   = "10.62.0.0/16"
 $LNGIP6        = "131.107.72.22"
 ```
 
-#### <a name="2-connect-to-your-subscription-and-create-a-new-resource-group"></a>2. Подключитесь к подписке и создайте новую группу ресурсов
+#### <a name="2-connect-to-your-subscription-and-create-a-new-resource-group"></a>2. Подключение к подписке Azure и создание группы ресурсов
 
 Для работы с командлетами диспетчера ресурсов необходимо перейти в режим PowerShell. Дополнительные сведения см. в статье [Использование Azure PowerShell с диспетчером ресурсов Azure](../powershell-azure-resource-manager.md).
 
@@ -163,7 +162,7 @@ Select-AzSubscription -SubscriptionName $Sub1
 New-AzResourceGroup -Name $RG1 -Location $Location1
 ```
 
-#### <a name="3-create-the-virtual-network-vpn-gateway-and-local-network-gateway"></a>3. Создайте виртуальную сеть, VPN-шлюз и шлюз локальной сети.
+#### <a name="3-create-the-virtual-network-vpn-gateway-and-local-network-gateway"></a>3. Создание виртуальной сети, VPN-шлюза и шлюза локальной сети
 
 В следующем примере создается виртуальная сеть TestVNet1 с тремя подсетями и VPN-шлюзом. При замене значений важно, чтобы вы назвали подсеть шлюза именем GatewaySubnet. Если вы используете другое имя, создание шлюза завершится сбоем.
 
@@ -186,7 +185,7 @@ New-AzLocalNetworkGateway -Name $LNGName6 -ResourceGroupName $RG1 -Location $Loc
 
 ### <a name="step-2---create-a-s2s-vpn-connection-with-an-ipsecike-policy"></a><a name="s2sconnection"></a>Шаг 2. Создание VPN-подключения типа "сеть — сеть" с помощью политики IPsec/IKE
 
-#### <a name="1-create-an-ipsecike-policy"></a>1. Создание политики IPsec/IKE
+#### <a name="1-create-an-ipsecike-policy"></a>1. Создайте политику IPsec/IKE
 
 Следующий пример скрипта создает политику IPsec/IKE со следующими параметрами и алгоритмами:
 
@@ -273,7 +272,7 @@ New-AzVirtualNetworkGateway -Name $GWName2 -ResourceGroupName $RG2 -Location $Lo
 
 Аналогично созданию подключения VPN типа "сеть — сеть" создайте политику IPsec/IKE, а затем примените ее к новому подключению.
 
-#### <a name="1-create-an-ipsecike-policy"></a>1. Создание политики IPsec/IKE
+#### <a name="1-create-an-ipsecike-policy"></a>1. Создайте политику IPsec/IKE
 
 Следующий пример скрипта создает другую политику IPsec/IKE с такими параметрами и алгоритмами:
 * IKEv2: AES128, SHA1, DHGroup14
@@ -317,7 +316,7 @@ New-AzVirtualNetworkGatewayConnection -Name $Connection21 -ResourceGroupName $RG
 > [!IMPORTANT]
 > Политика IPsec/IKE поддерживается только для *стандартных* и *высокопроизводительных* VPN-шлюзов на основе маршрутов. Она не работает для шлюзов со SKU класса "Базовый" или VPN-шлюзов на основе политики.
 
-#### <a name="1-show-the-ipsecike-policy-of-a-connection"></a>1. Отображение политики IPsec/IKE для подключения
+#### <a name="1-show-the-ipsecike-policy-of-a-connection"></a>1. Отображение политики подключения IPsec/IKE
 
 В примере ниже показано, как получить настроенную для подключения политику IPsec/IKE. Примеры сценариев являются продолжением примеров выше.
 
@@ -343,7 +342,7 @@ PfsGroup            : PFS24
 
 Если политика IPsec/IKE не настроена, команда (PS> $connection 6. IpsecPolicies) возвращает пустой возвращаемый объект. Это не значит, что для подключения не настроена политика IPsec/IKE. Это значит, что отсутствует настраиваемая политика IPsec/IKE. Фактическое подключение использует политику по умолчанию, согласованную между локальным VPN-устройством и VPN-шлюзом Azure.
 
-#### <a name="2-add-or-update-an-ipsecike-policy-for-a-connection"></a>2. Добавление или изменение политики IPsec/IKE для подключения
+#### <a name="2-add-or-update-an-ipsecike-policy-for-a-connection"></a>2. Добавление или обновление политики IPsec/IKE для подключения
 
 Действия по добавлению новой политики или обновлению существующей (для подключения) остаются теми же. Создайте новую политику, а затем примените ее к подключению.
 

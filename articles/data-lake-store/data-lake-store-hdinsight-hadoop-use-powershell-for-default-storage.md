@@ -3,15 +3,15 @@ title: PowerShell — кластер HDInsight с Data Lake Storage 1-го по�
 description: Используйте Azure PowerShell для создания и использования кластеров Azure HDInsight с Azure Data Lake Storage 1-го поколения.
 author: twooley
 ms.service: data-lake-store
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: 2b4e5fad65d2ad358bca6b5a2b87d4aa36b77e73
-ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
+ms.openlocfilehash: 053ee85318d8ac9ccd5fb8b63fb44df966d34821
+ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82692069"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85855044"
 ---
 # <a name="create-hdinsight-clusters-with-azure-data-lake-storage-gen1-as-default-storage-by-using-powershell"></a>Создание кластеров HDInsight, использующих Azure Data Lake Storage 1-го поколения в качестве хранилища по умолчанию, с помощью PowerShell
 
@@ -31,7 +31,7 @@ ms.locfileid: "82692069"
 
 Чтобы настроить HDInsight для работы с Data Lake Storage 1-го поколения с помощью PowerShell, следуйте инструкциям в следующих пяти разделах.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -52,17 +52,19 @@ ms.locfileid: "82692069"
 
 1. На своем компьютере откройте окно PowerShell и введите приведенные ниже фрагменты кода. Когда будет предложено выполнить вход, войдите как один администраторов или владельцев из подписки. 
 
-        # Sign in to your Azure account
-        Connect-AzAccount
+    ```azurepowershell
+    # Sign in to your Azure account
+    Connect-AzAccount
 
-        # List all the subscriptions associated to your account
-        Get-AzSubscription
+    # List all the subscriptions associated to your account
+    Get-AzSubscription
 
-        # Select a subscription
-        Set-AzContext -SubscriptionId <subscription ID>
+    # Select a subscription
+    Set-AzContext -SubscriptionId <subscription ID>
 
-        # Register for Data Lake Storage Gen1
-        Register-AzResourceProvider -ProviderNamespace "Microsoft.DataLakeStore"
+    # Register for Data Lake Storage Gen1
+    Register-AzResourceProvider -ProviderNamespace "Microsoft.DataLakeStore"
+    ```
 
     > [!NOTE]
     > Если вы регистрируете поставщик ресурсов Data Lake Storage 1-го поколения и видите сообщение об ошибке `Register-AzResourceProvider : InvalidResourceNamespace: The resource namespace 'Microsoft.DataLakeStore' is invalid`, возможно, ваша подписка не добавлена в список разрешений для Data Lake Storage 1-го поколения. Чтобы использовать подписку Azure для Data Lake Storage 1-го поколения, следуйте инструкциям в разделе [Начало работы с Azure Data Lake Storage 1-го поколения с помощью портала Azure](data-lake-store-get-started-portal.md).
@@ -70,44 +72,53 @@ ms.locfileid: "82692069"
 
 2. Учетная запись Data Lake Storage 1-го поколения связывается с группой ресурсов Azure. Для начала создайте группу ресурсов.
 
-        $resourceGroupName = "<your new resource group name>"
-        New-AzResourceGroup -Name $resourceGroupName -Location "East US 2"
+    ```azurepowershell
+    $resourceGroupName = "<your new resource group name>"
+    New-AzResourceGroup -Name $resourceGroupName -Location "East US 2"
+    ```
 
     Вы должны увидеть подобные выходные данные:
 
-        ResourceGroupName : hdiadlgrp
-        Location          : eastus2
-        ProvisioningState : Succeeded
-        Tags              :
-        ResourceId        : /subscriptions/<subscription-id>/resourceGroups/hdiadlgrp
+    ```output
+    ResourceGroupName : hdiadlgrp
+    Location          : eastus2
+    ProvisioningState : Succeeded
+    Tags              :
+    ResourceId        : /subscriptions/<subscription-id>/resourceGroups/hdiadlgrp
+    ```
 
 3. Создайте учетную запись Data Lake Storage 1-го поколения. Имя этой учетной записи должно содержать только строчные буквы и цифры.
 
-        $dataLakeStorageGen1Name = "<your new Data Lake Storage Gen1 name>"
-        New-AzDataLakeStoreAccount -ResourceGroupName $resourceGroupName -Name $dataLakeStorageGen1Name -Location "East US 2"
+    ```azurepowershell
+    $dataLakeStorageGen1Name = "<your new Data Lake Storage Gen1 name>"
+    New-AzDataLakeStoreAccount -ResourceGroupName $resourceGroupName -Name $dataLakeStorageGen1Name -Location "East US 2"
+    ```
 
     Вы должны увидеть подобные выходные данные:
 
-        ...
-        ProvisioningState           : Succeeded
-        State                       : Active
-        CreationTime                : 5/5/2017 10:53:56 PM
-        EncryptionState             : Enabled
-        ...
-        LastModifiedTime            : 5/5/2017 10:53:56 PM
-        Endpoint                    : hdiadlstore.azuredatalakestore.net
-        DefaultGroup                :
-        Id                          : /subscriptions/<subscription-id>/resourceGroups/hdiadlgrp/providers/Microsoft.DataLakeStore/accounts/hdiadlstore
-        Name                        : hdiadlstore
-        Type                        : Microsoft.DataLakeStore/accounts
-        Location                    : East US 2
-        Tags                        : {}
+    ```output
+    ...
+    ProvisioningState           : Succeeded
+    State                       : Active
+    CreationTime                : 5/5/2017 10:53:56 PM
+    EncryptionState             : Enabled
+    ...
+    LastModifiedTime            : 5/5/2017 10:53:56 PM
+    Endpoint                    : hdiadlstore.azuredatalakestore.net
+    DefaultGroup                :
+    Id                          : /subscriptions/<subscription-id>/resourceGroups/hdiadlgrp/providers/Microsoft.DataLakeStore/accounts/hdiadlstore
+    Name                        : hdiadlstore
+    Type                        : Microsoft.DataLakeStore/accounts
+    Location                    : East US 2
+    Tags                        : {}
+    ```
 
 4. При использовании Data Lake Storage 1-го поколения в качестве хранилища по умолчанию необходимо указать путь к корневой папке, в которую будут скопированы связанные с кластером файлы в процессе создания кластера. Используйте приведенные ниже командлеты, чтобы создать корневую папку (в следующем фрагменте это **/clusters/hdiadlcluster**).
 
-        $myrootdir = "/"
-        New-AzDataLakeStoreItem -Folder -AccountName $dataLakeStorageGen1Name -Path $myrootdir/clusters/hdiadlcluster
-
+    ```azurepowershell
+    $myrootdir = "/"
+    New-AzDataLakeStoreItem -Folder -AccountName $dataLakeStorageGen1Name -Path $myrootdir/clusters/hdiadlcluster
+    ````
 
 ## <a name="set-up-authentication-for-role-based-access-to-data-lake-storage-gen1"></a>Настройка проверки подлинности для доступа к Data Lake Storage 1-го поколения на основе ролей
 Каждая подписка Azure связана с сущностью Azure AD. Пользователи и службы, обращающиеся к ресурсам подписки через портал Azure или API Azure Resource Manager, сначала должны пройти аутентификацию в Azure AD. Доступ к подпискам и службам Azure предоставляется путем назначения соответствующей роли для ресурса Azure. В случае служб субъект-служба идентифицирует службу в Azure AD.
@@ -121,15 +132,19 @@ ms.locfileid: "82692069"
 
 1. В окне PowerShell перейдите в расположение, где установлен пакет Windows SDK (обычно это *C:\Program Files (x86)\Windows Kits\10\bin\x86*), и с помощью служебной программы [MakeCert][makecert] создайте самозаверяющий сертификат и закрытый ключ. Используйте следующие команды:
 
-        $certificateFileDir = "<my certificate directory>"
-        cd $certificateFileDir
+    ```azurepowershell
+    $certificateFileDir = "<my certificate directory>"
+    cd $certificateFileDir
 
-        makecert -sv mykey.pvk -n "cn=HDI-ADL-SP" CertFile.cer -r -len 2048
+    makecert -sv mykey.pvk -n "cn=HDI-ADL-SP" CertFile.cer -r -len 2048
+    ```
 
     Вам будет предложено ввести пароль для закрытого ключа. После успешного выполнения команды в указанном каталоге сертификатов должны появиться файлы **CertFile.cer** и **mykey.pvk**.
 2. С помощью служебной программы [Pvk2Pfx][pvk2pfx] преобразуйте созданные программой MakeCert PVK- и CER-файлы в PFX-файл. Выполните следующую команду:
 
-        pvk2pfx -pvk mykey.pvk -spc CertFile.cer -pfx CertFile.pfx -po <password>
+    ```azurepowershell
+    pvk2pfx -pvk mykey.pvk -spc CertFile.cer -pfx CertFile.pfx -po <password>
+    ```
 
     При появлении соответствующего запроса введите указанный ранее пароль для закрытого ключа. Значение, указываемое для параметра **-po**, — это пароль, связанный с PFX-файлом. После успешного выполнения команды в указанном каталоге сертификатов также должен отобразиться файл **CertFile. pfx** .
 
@@ -138,35 +153,43 @@ ms.locfileid: "82692069"
 
 1. В окне консоли PowerShell вставьте из буфера обмена следующие командлеты. Обязательно укажите для свойства **-DisplayName** уникальное значение. Значения свойств **-HomePage** b **-IdentiferUris** — это заполнители, которые не проверяются.
 
-        $certificateFilePath = "$certificateFileDir\CertFile.pfx"
+    ```azurepowershell
+    $certificateFilePath = "$certificateFileDir\CertFile.pfx"
 
-        $password = Read-Host -Prompt "Enter the password" # This is the password you specified for the .pfx file
+    $password = Read-Host -Prompt "Enter the password" # This is the password you specified for the .pfx file
 
-        $certificatePFX = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2($certificateFilePath, $password)
+    $certificatePFX = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2($certificateFilePath, $password)
 
-        $rawCertificateData = $certificatePFX.GetRawCertData()
+    $rawCertificateData = $certificatePFX.GetRawCertData()
 
-        $credential = [System.Convert]::ToBase64String($rawCertificateData)
+    $credential = [System.Convert]::ToBase64String($rawCertificateData)
 
-        $application = New-AzADApplication `
-            -DisplayName "HDIADL" `
-            -HomePage "https://contoso.com" `
-            -IdentifierUris "https://mycontoso.com" `
-            -CertValue $credential  `
-            -StartDate $certificatePFX.NotBefore  `
-            -EndDate $certificatePFX.NotAfter
+    $application = New-AzADApplication `
+        -DisplayName "HDIADL" `
+        -HomePage "https://contoso.com" `
+        -IdentifierUris "https://mycontoso.com" `
+        -CertValue $credential  `
+        -StartDate $certificatePFX.NotBefore  `
+        -EndDate $certificatePFX.NotAfter
 
-        $applicationId = $application.ApplicationId
+    $applicationId = $application.ApplicationId
+    ```
+
 2. С помощью идентификатора приложения создайте субъект-службу.
 
-        $servicePrincipal = New-AzADServicePrincipal -ApplicationId $applicationId
+    ```azurepowershell
+    $servicePrincipal = New-AzADServicePrincipal -ApplicationId $applicationId
 
-        $objectId = $servicePrincipal.Id
+    $objectId = $servicePrincipal.Id
+    ```
+
 3. Предоставьте субъекту-службе доступ к корневой папке Data Lake Storage 1-го поколения и всем папкам в ранее указанном корневом пути. Используйте следующие командлеты.
 
-        Set-AzDataLakeStoreItemAclEntry -AccountName $dataLakeStorageGen1Name -Path / -AceType User -Id $objectId -Permissions All
-        Set-AzDataLakeStoreItemAclEntry -AccountName $dataLakeStorageGen1Name -Path /clusters -AceType User -Id $objectId -Permissions All
-        Set-AzDataLakeStoreItemAclEntry -AccountName $dataLakeStorageGen1Name -Path /clusters/hdiadlcluster -AceType User -Id $objectId -Permissions All
+    ```azurepowershell
+    Set-AzDataLakeStoreItemAclEntry -AccountName $dataLakeStorageGen1Name -Path / -AceType User -Id $objectId -Permissions All
+    Set-AzDataLakeStoreItemAclEntry -AccountName $dataLakeStorageGen1Name -Path /clusters -AceType User -Id $objectId -Permissions All
+    Set-AzDataLakeStoreItemAclEntry -AccountName $dataLakeStorageGen1Name -Path /clusters/hdiadlcluster -AceType User -Id $objectId -Permissions All
+    ```
 
 ## <a name="create-an-hdinsight-linux-cluster-with-data-lake-storage-gen1-as-the-default-storage"></a>Создание кластера HDInsight на платформе Linux, использующего Data Lake Storage 1-го поколения в качестве хранилища по умолчанию
 
@@ -174,42 +197,46 @@ ms.locfileid: "82692069"
 
 1. Получите идентификатор клиента для подписки и сохраните его для последующего использования.
 
-        $tenantID = (Get-AzContext).Tenant.TenantId
+    ```azurepowershell
+    $tenantID = (Get-AzContext).Tenant.TenantId
+    ```
 
 2. Создайте кластер HDInsight с помощью приведенных ниже командлетов.
 
-        # Set these variables
+    ```azurepowershell
+    # Set these variables
 
-        $location = "East US 2"
-        $storageAccountName = $dataLakeStorageGen1Name                         # Data Lake Storage Gen1 account name
+    $location = "East US 2"
+    $storageAccountName = $dataLakeStorageGen1Name                         # Data Lake Storage Gen1 account name
         $storageRootPath = "<Storage root path you specified earlier>" # E.g. /clusters/hdiadlcluster
         $clusterName = "<unique cluster name>"
-        $clusterNodes = <ClusterSizeInNodes>            # The number of nodes in the HDInsight cluster
-        $httpCredentials = Get-Credential
-        $sshCredentials = Get-Credential
+    $clusterNodes = <ClusterSizeInNodes>            # The number of nodes in the HDInsight cluster
+    $httpCredentials = Get-Credential
+    $sshCredentials = Get-Credential
 
-        New-AzHDInsightCluster `
-               -ClusterType Hadoop `
-               -OSType Linux `
-               -ClusterSizeInNodes $clusterNodes `
-               -ResourceGroupName $resourceGroupName `
-               -ClusterName $clusterName `
-               -HttpCredential $httpCredentials `
-               -Location $location `
-               -DefaultStorageAccountType AzureDataLakeStore `
-               -DefaultStorageAccountName "$storageAccountName.azuredatalakestore.net" `
-               -DefaultStorageRootPath $storageRootPath `
-               -Version "3.6" `
-               -SshCredential $sshCredentials `
-               -AadTenantId $tenantId `
-               -ObjectId $objectId `
-               -CertificateFilePath $certificateFilePath `
-               -CertificatePassword $password
+    New-AzHDInsightCluster `
+           -ClusterType Hadoop `
+           -OSType Linux `
+           -ClusterSizeInNodes $clusterNodes `
+           -ResourceGroupName $resourceGroupName `
+           -ClusterName $clusterName `
+           -HttpCredential $httpCredentials `
+           -Location $location `
+           -DefaultStorageAccountType AzureDataLakeStore `
+           -DefaultStorageAccountName "$storageAccountName.azuredatalakestore.net" `
+           -DefaultStorageRootPath $storageRootPath `
+           -Version "3.6" `
+           -SshCredential $sshCredentials `
+           -AadTenantId $tenantId `
+           -ObjectId $objectId `
+           -CertificateFilePath $certificateFilePath `
+           -CertificatePassword $password
+    ```
 
     После успешного выполнения командлетов должны отобразиться сведения о кластере.
 
 ## <a name="run-test-jobs-on-the-hdinsight-cluster-to-use-data-lake-storage-gen1"></a>Выполнение тестовых заданий в кластере HDInsight для использования Data Lake Storage 1-го поколения
-После настройки кластера HDInsight выполните в нем тестовые задания, чтобы проверить, может ли он использовать Data Lake Storage 1-го поколения. Для этого выполните пример задания Hive, чтобы создать таблицу, использующую образец данных, который уже доступен в Data Lake Storage 1-го поколения в * \<корневом каталоге кластера>/example/Data/Sample.log*.
+После настройки кластера HDInsight выполните в нем тестовые задания, чтобы проверить, может ли он использовать Data Lake Storage 1-го поколения. Для этого выполните пример задания Hive, чтобы создать таблицу, которая использует демонстрационные данные, которые уже доступны в Data Lake Storage 1-го поколения по адресу * \<cluster root> /example/Data/Sample.log*.
 
 Следуя инструкциям в этом разделе, вы подключитесь по протоколу Secure Shell (SSH) к созданному кластеру HDInsight на платформе Linux и выполните пример запроса Hive.
 
@@ -218,20 +245,25 @@ ms.locfileid: "82692069"
 
 1. Установив подключение, запустите интерфейс командной строки Hive, выполнив в командной строке следующую команду.
 
-        hive
+    ```powershell
+    hive
+    ```
+
 2. Используя интерфейс командной строки, введите приведенные ниже инструкции, чтобы создать таблицу **vehicles** с помощью демонстрационных данных в Data Lake Storage 1-го поколения.
 
-        DROP TABLE log4jLogs;
+    ```azurepowershell
+    DROP TABLE log4jLogs;
         CREATE EXTERNAL TABLE log4jLogs (t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string)
         ROW FORMAT DELIMITED FIELDS TERMINATED BY ' '
         STORED AS TEXTFILE LOCATION 'adl:///example/data/';
         SELECT t4 AS sev, COUNT(*) AS count FROM log4jLogs WHERE t4 = '[ERROR]' AND INPUT__FILE__NAME LIKE '%.log' GROUP BY t4;
+    ```
 
-    Результаты запроса появятся в консоли SSH.
+Результаты запроса появятся в консоли SSH.
 
-    >[!NOTE]
-    >Путь к демонстрационным данных в приведенной выше команде CREATE TABLE — `adl:///example/data/`, где `adl:///` является корнем кластера. Используя пример корня кластера, указанный в этом руководстве, получаем команду `adl://hdiadlstore.azuredatalakestore.net/clusters/hdiadlcluster`. Можно использовать более короткий вариант пути или указать полный путь к корню кластера.
-    >
+>[!NOTE]
+>Путь к демонстрационным данных в приведенной выше команде CREATE TABLE — `adl:///example/data/`, где `adl:///` является корнем кластера. Используя пример корня кластера, указанный в этом руководстве, получаем команду `adl://hdiadlstore.azuredatalakestore.net/clusters/hdiadlcluster`. Можно использовать более короткий вариант пути или указать полный путь к корню кластера.
+>
 
 ## <a name="access-data-lake-storage-gen1-by-using-hdfs-commands"></a>Доступ к Data Lake Storage 1-го поколения с помощью команд HDFS
 Настроив кластер HDInsight для работы с Data Lake Storage 1-го поколения, можно использовать для доступа к хранилищу команды оболочки HDFS (распределенная файловая система Hadoop).
@@ -243,11 +275,13 @@ ms.locfileid: "82692069"
 
 Когда подключение будет установлено, выведите список файлов в Data Lake Storage 1-го поколения, используя приведенную ниже команду файловой системы HDFS.
 
-    hdfs dfs -ls adl:///
+```azurepowershell
+hdfs dfs -ls adl:///
+```
 
 С помощью команды `hdfs dfs -put` вы можете передать несколько файлов в Data Lake Storage 1-го поколения, а затем с помощью команды `hdfs dfs -ls` проверить, успешно ли они передались.
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 * [Использование Data Lake Storage 1-го поколения с кластерами Azure HDInsight](../hdinsight/hdinsight-hadoop-use-data-lake-store.md)
 * [Создание кластеров HDInsight, использующих Data Lake Storage 1-го поколения, с помощью портала Azure](data-lake-store-hdinsight-hadoop-use-portal.md)
 

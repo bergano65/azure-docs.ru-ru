@@ -1,49 +1,49 @@
 ---
-title: Изменение потоков в API-интерфейсе Azure Cosmos DB для MongoDB
-description: Узнайте, как использовать потоки изменений в API Azure Cosmos DB для MongoDB, чтобы получить изменения, внесенные в данные.
-author: timsander1
+title: Потоки изменений в API Azure Cosmos DB для MongoDB
+description: Узнайте, как использовать потоки изменений в API Azure Cosmos DB для MongoDB, чтобы получать изменения, внесенные в данные.
+author: srchi
 ms.service: cosmos-db
 ms.subservice: cosmosdb-mongo
-ms.topic: conceptual
-ms.date: 03/30/2020
-ms.author: tisande
-ms.openlocfilehash: 7a6060448175530ada5ba95ceda470056a7be002
-ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
+ms.topic: how-to
+ms.date: 06/04/2020
+ms.author: srchi
+ms.openlocfilehash: 2028a8048830587195271675997bf4c880a3fae1
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82872145"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85260769"
 ---
-# <a name="change-streams-in-azure-cosmos-dbs-api-for-mongodb"></a>Изменение потоков в API-интерфейсе Azure Cosmos DB для MongoDB
+# <a name="change-streams-in-azure-cosmos-dbs-api-for-mongodb"></a>Потоки изменений в API Azure Cosmos DB для MongoDB
 
-Поддержка [веб-канала изменений](change-feed.md) в API Azure Cosmos DB для MongoDB доступна с помощью API потоков изменений. С помощью API изменений потоков приложения могут получать изменения, внесенные в коллекцию или элементы одного сегмента. Позже можно будет выполнить дальнейшие действия на основе результатов. Изменения элементов в коллекции фиксируются в порядке их изменения, и порядок сортировки гарантирован на каждом ключе сегмента.
+Поддержка [канала изменений](change-feed.md) в API Azure Cosmos DB для MongoDB доступна с помощью API потоков изменений. С помощью API потоков изменений приложения могут получать изменения, внесенные в коллекцию или элементы в пределах одного сегмента. На основе полученных результатов можно будет выполнять дальнейшие действия. Изменения элементов в коллекции фиксируются в порядке времени их изменения, и в каждом ключе сегмента обязательно соблюдается порядок сортировки.
 
 > [!NOTE]
-> Чтобы использовать потоки изменений, создайте учетную запись с API Azure Cosmos DB версии 3,6 для MongoDB или более поздней версии. Если запустить примеры потока изменений для более ранней версии, может появиться `Unrecognized pipeline stage name: $changeStream` сообщение об ошибке.
+> Чтобы использовать потоки изменений, создайте учетную запись с API Azure Cosmos DB для MongoDB версии 3.6 или более поздней версии. При запуске примеров потока изменений в более ранней версии может появиться сообщение об ошибке `Unrecognized pipeline stage name: $changeStream`.
 
 ## <a name="current-limitations"></a>Текущие ограничения
 
-При использовании потоков изменений применяются следующие ограничения.
+При использовании потоков изменений действуют следующие ограничения.
 
 * Свойства `operationType` и `updateDescription` пока не поддерживаются в выходном документе.
-* Типы `insert`операций `update`, и `replace` сейчас поддерживаются. 
+* В настоящее время поддерживаются типы операций `insert`, `update` и `replace`. 
 * Операция удаления или другие события пока не поддерживаются.
 
-Из-за этих ограничений требуется $match этап, $project этап и параметры Фуллдокумент, как показано в предыдущих примерах.
+В связи с этими ограничениями этап $match, этап $project и параметры fullDocument являются обязательными, как показано в предыдущих примерах.
 
-В отличие от веб-канала изменений в API SQL Azure Cosmos DB, не существует отдельной [библиотеки обработчиков каналов изменений](change-feed-processor.md) для использования потоков изменений или для контейнера аренды. В настоящее время [триггеры функций Azure](change-feed-functions.md) не поддерживаются для обработки потоков изменений.
+В отличие от канала изменений, в API Cosmos DB для SQL нет отдельной [библиотеки обработчика канала изменений](change-feed-processor.md) для использования потоков изменений и нет необходимости в контейнере аренды. В настоящее время поддержка [триггеров Функций Azure](change-feed-functions.md) для обработки потоков изменений отсутствует.
 
 ## <a name="error-handling"></a>Обработка ошибок
 
-При использовании потоков изменений поддерживаются следующие коды ошибок и сообщения:
+При использовании потоков изменений поддерживаются следующие коды ошибок и сообщения.
 
-* **Код ошибки HTTP 16500** — когда поток изменений регулируется, возвращается пустая страница.
+* **Код ошибки HTTP: 16500** — когда поток изменений регулируется, он возвращает пустую страницу.
 
-* **Намеспаценотфаунд (OperationType unvalidate)** — при запуске потока изменений в несуществующей коллекции или при удалении коллекции возвращается `NamespaceNotFound` ошибка. Поскольку `operationType` свойство не может быть возвращено в выходном документе, а не `operationType Invalidate` на ошибку, `NamespaceNotFound` возвращается ошибка.
+* **NamespaceNotFound (OperationType Invalidate)**  — при запуске потока изменений в несуществующей коллекции или при удалении коллекции возвращается ошибка `NamespaceNotFound`. Так как свойство `operationType` не может быть возвращено в выходном документе, вместо ошибки `operationType Invalidate` возвращается ошибка `NamespaceNotFound`.
 
 ## <a name="examples"></a>Примеры
 
-В следующем примере показано, как получить потоки изменений для всех элементов в коллекции. В этом примере создается курсор для просмотра элементов при их вставке, обновлении или замене. Для `$match` получения потоков `$project` изменений требуется этап `fullDocument` , этап и параметр. Наблюдение за операциями удаления с помощью потоков изменений сейчас не поддерживается. В качестве обходного решения можно добавить мягкий маркер для удаляемых элементов. Например, можно добавить атрибут в элемент с именем Deleted. Если вы хотите удалить элемент, можно присвоить параметру "Deleted" `true` значение и задать TTL для элемента. Так как обновление "Deleted `true` " до является обновлением, это изменение будет отображаться в потоке изменений.
+В следующем примере показано, как получить потоки изменений для всех элементов в коллекции. В этом примере создается курсор для просмотра элементов при их вставке, обновлении или замене. Для получения потоков изменений требуются этап `$match`, этап `$project` и параметр `fullDocument`. Наблюдение за операциями удаления с помощью потоков изменений сейчас не поддерживается. В качестве обходного решения в удаляемые элементы можно добавить программный маркер. Например, можно добавить атрибут в элемент с именем "deleted". Если вы захотите удалить элемент, можно присвоить аргументу "deleted" значение `true` и задать срок жизни для элемента. Так как обновление "deleted" до `true` является изменением, оно будет отображено в потоке изменений.
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -61,6 +61,7 @@ while (!cursor.isExhausted()) {
     }
 }
 ```
+
 # <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
@@ -82,15 +83,61 @@ while (enumerator.MoveNext()){
 enumerator.Dispose();
 ```
 
+# <a name="java"></a>[Java](#tab/java)
+
+В следующем примере показано, как использовать функции потока изменений в Java. полный пример см. в этом [репозитории GitHub](https://github.com/Azure-Samples/azure-cosmos-db-mongodb-java-changestream/blob/master/mongostream/src/main/java/com/azure/cosmos/mongostream/App.java). В этом примере также показано, как использовать `resumeAfter` метод для поиска всех изменений с момента последнего считывания. 
+
+```java
+Bson match = Aggregates.match(Filters.in("operationType", asList("update", "replace", "insert")));
+
+// Pick the field you are most interested in
+Bson project = Aggregates.project(fields(include("_id", "ns", "documentKey", "fullDocument")));
+
+// This variable is for second example
+BsonDocument resumeToken = null;
+
+// Now time to build the pipeline
+List<Bson> pipeline = Arrays.asList(match, project);
+
+//#1 Simple example to seek changes
+
+// Create cursor with update_lookup
+MongoChangeStreamCursor<ChangeStreamDocument<org.bson.Document>> cursor = collection.watch(pipeline)
+        .fullDocument(FullDocument.UPDATE_LOOKUP).cursor();
+
+Document document = new Document("name", "doc-in-step-1-" + Math.random());
+collection.insertOne(document);
+
+while (cursor.hasNext()) {
+    // There you go, we got the change document.
+    ChangeStreamDocument<Document> csDoc = cursor.next();
+
+    // Let is pick the token which will help us resuming
+    // You can save this token in any persistent storage and retrieve it later
+    resumeToken = csDoc.getResumeToken();
+    //Printing the token
+    System.out.println(resumeToken);
+    
+    //Printing the document.
+    System.out.println(csDoc.getFullDocument());
+    //This break is intentional but in real project feel free to remove it.
+    break;
+}
+
+cursor.close();
+
+```
+---
+
 ## <a name="changes-within-a-single-shard"></a>Изменения в пределах одного сегмента
 
-В следующем примере показано, как получить изменения элементов в пределах одного сегмента. Этот пример возвращает изменения элементов, у которых ключ сегмента равен "a", а значение ключа сегмента равно "1". Разные клиенты могут одновременно считывать изменения из разных сегментов.
+В следующем примере показано, как получить изменения элементов в пределах одного сегмента. В этом примере показано получение изменений элементов, ключ сегмента которых равен "a", а значение ключа сегмента равно "1". Допускается ситуация, когда разные клиенты могут одновременно считывать изменения из разных сегментов.
 
 ```javascript
 var cursor = db.coll.watch(
     [
-        {
-            $match: {
+        { 
+            $match: { 
                 $and: [
                     { "fullDocument.a": 1 }, 
                     { "operationType": { $in: ["insert", "update", "replace"] } }
@@ -103,7 +150,24 @@ var cursor = db.coll.watch(
 
 ```
 
+## <a name="current-limitations"></a>Текущие ограничения
+
+При использовании потоков изменений действуют следующие ограничения.
+
+* Свойства `operationType` и `updateDescription` пока не поддерживаются в выходном документе.
+* В настоящее время поддерживаются типы операций `insert`, `update` и `replace`. Операция удаления или другие события пока не поддерживаются.
+
+В связи с этими ограничениями этап $match, этап $project и параметры fullDocument являются обязательными, как показано в предыдущих примерах.
+
+## <a name="error-handling"></a>Обработка ошибок
+
+При использовании потоков изменений поддерживаются следующие коды ошибок и сообщения.
+
+* **Код ошибки HTTP: 429** — когда поток изменений регулируется, он возвращает пустую страницу.
+
+* **NamespaceNotFound (OperationType Invalidate)**  — при запуске потока изменений в несуществующей коллекции или при удалении коллекции возвращается ошибка `NamespaceNotFound`. Так как свойство `operationType` не может быть возвращено в выходном документе, вместо ошибки `operationType Invalidate` возвращается ошибка `NamespaceNotFound`.
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Используйте срок жизни для автоматического истечения срока действия данных в API Azure Cosmos DB для MongoDB](mongodb-time-to-live.md)
+* [Завершение срока действия данных с помощью API Azure Cosmos DB для MongoDB](mongodb-time-to-live.md)
 * [Индексирование в API Azure Cosmos DB для MongoDB](mongodb-indexing.md)

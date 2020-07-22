@@ -9,10 +9,10 @@ services: iot-accelerators
 ms.date: 10/04/2018
 ms.topic: conceptual
 ms.openlocfilehash: e27c1c4303129467c0bd05152570e26f129585a1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82186294"
 ---
 # <a name="add-a-custom-grid-to-the-remote-monitoring-solution-accelerator-web-ui"></a>Добавление пользовательской сетки в веб-интерфейс акселератора решения для удаленного мониторинга
@@ -28,7 +28,7 @@ ms.locfileid: "82186294"
 
 Чтобы выполнить действия, описанные в этом руководстве, необходимо установить следующее ПО на локальный компьютер разработки:
 
-- [Git](https://git-scm.com/downloads)
+- [Git](https://git-scm.com/downloads);
 - [Node.js](https://nodejs.org/download/)
 
 ## <a name="before-you-start"></a>Перед началом работы
@@ -277,10 +277,10 @@ npm start
     }
     ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из статьи вы узнали о ресурсах, которые могут помочь вам при настройке или добавлении станицы в веб-интерфейсе в акселераторе решения для удаленного мониторинга.
 
 Вы определили сетку. Теперь необходимо ознакомится со статьей [Add a custom flyout to the Remote Monitoring solution accelerator web UI](iot-accelerators-remote-monitoring-customize-flyout.md) (Добавление пользовательского всплывающего элемента в веб-интерфейс акселератора решения для удаленного мониторинга).
 
-Более подробные сведения об акселераторе решения для удаленного мониторинга см. в [этой статье](iot-accelerators-remote-monitoring-sample-walkthrough.md).
+Дополнительные сведения об ускорителе решений для удаленного мониторинга см. в разделе [архитектура удаленного мониторинга](iot-accelerators-remote-monitoring-sample-walkthrough.md).

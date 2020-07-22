@@ -9,10 +9,10 @@ services: iot-accelerators
 ms.date: 10/05/2018
 ms.topic: conceptual
 ms.openlocfilehash: 3820b34a9c79f3b514327fa45a05eebaf8a2a1ca
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82193179"
 ---
 # <a name="add-a-custom-flyout-to-the-remote-monitoring-solution-accelerator-web-ui"></a>Добавление пользовательского всплывающего элемента в веб-интерфейс акселератора решения для удаленного мониторинга
@@ -28,7 +28,7 @@ ms.locfileid: "82193179"
 
 Чтобы выполнить действия, описанные в этом руководстве, необходимо установить следующее ПО на локальный компьютер разработки:
 
-- [Git](https://git-scm.com/downloads)
+- [Git](https://git-scm.com/downloads);
 - [Node.js](https://nodejs.org/download/)
 
 ## <a name="before-you-start"></a>Перед началом работы
@@ -135,10 +135,10 @@ npm start
 
 Предыдущая команда запускает пользовательский интерфейс локально по адресу `http://localhost:3000/dashboard`. Перейдите на страницу **Пример** и щелкните **Открыть всплывающий элемент**.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из статьи вы узнали о ресурсах, которые могут помочь вам при настройке или добавлении станицы в веб-интерфейсе в акселераторе решения для удаленного мониторинга.
 
 Вы определили всплывающий элемент на странице. Следующий шаг — [Добавление пользовательской панели на панель мониторинга в веб-интерфейсе акселератора решения для удаленного мониторинга](iot-accelerators-remote-monitoring-customize-panel.md).
 
-Более подробные сведения об акселераторе решения для удаленного мониторинга см. в [этой статье](iot-accelerators-remote-monitoring-sample-walkthrough.md).
+Дополнительные сведения об ускорителе решений для удаленного мониторинга см. в разделе [архитектура удаленного мониторинга](iot-accelerators-remote-monitoring-sample-walkthrough.md).

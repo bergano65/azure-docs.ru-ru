@@ -9,10 +9,9 @@ ms.reviewer: jasonh
 ms.topic: troubleshooting
 ms.date: 08/15/2019
 ms.openlocfilehash: 02247adb9852a72b386feb2ef0924b0f1b3d6277
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75895236"
 ---
 # <a name="troubleshoot-apache-hive-by-using-azure-hdinsight"></a>Устранение неполадок в Apache Hive с помощью Azure HDInsight
@@ -41,7 +40,7 @@ ms.locfileid: "75895236"
 
 Код в разделе "Способы устранения" предполагает, что пути к данным в новом кластере являются такими же, как и в старом кластере. Если пути к данным различаются, можно вручную изменить созданный `alltables.sql` файл, чтобы отразить любые изменения.
 
-### <a name="additional-reading"></a>Дополнительные материалы
+### <a name="additional-reading"></a>Дополнительные материалы для чтения
 
 - [Подключение к HDInsight (Hadoop) с помощью SSH](hdinsight-hadoop-linux-use-ssh-unix.md)
 
@@ -69,7 +68,7 @@ ms.locfileid: "75895236"
    /var/log/hive/hiveserver2.log
    ```
 
-### <a name="additional-reading"></a>Дополнительные материалы
+### <a name="additional-reading"></a>Дополнительные материалы для чтения
 
 - [Подключение к HDInsight (Hadoop) с помощью SSH](hdinsight-hadoop-linux-use-ssh-unix.md)
 
@@ -95,7 +94,7 @@ ms.locfileid: "75895236"
    hive -hiveconf hive.root.logger=ALL,console
    ```
 
-### <a name="additional-reading"></a>Дополнительные материалы
+### <a name="additional-reading"></a>Дополнительные материалы для чтения
 
 - [Свойства конфигурации Hive](https://cwiki.apache.org/confluence/display/Hive/Configuration+Properties)
 
@@ -132,7 +131,7 @@ ms.locfileid: "75895236"
     - **TaskConcurrencyAnalyzer** — печать сведений о параллельных задачах в DAG;
     - **VertexLevelCriticalPathAnalyzer** — поиск критического пути на уровне вершины в DAG.
 
-### <a name="additional-reading"></a>Дополнительные материалы
+### <a name="additional-reading"></a>Дополнительные материалы для чтения
 
 - [Подключение к HDInsight (Hadoop) с помощью SSH](hdinsight-hadoop-linux-use-ssh-unix.md)
 
@@ -157,16 +156,16 @@ ms.locfileid: "75895236"
   3. Выберите направленный ациклический граф, который необходимо просмотреть.
   4. Выберите **Скачать данные**.
 
-### <a name="additional-reading"></a><a name="additional-reading-end"></a>Дополнительные материалы
+### <a name="additional-reading"></a><a name="additional-reading-end"></a>Дополнительные материалы для чтения
 
 [Подключение к HDInsight (Hadoop) с помощью SSH](hdinsight-hadoop-linux-use-ssh-unix.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 
-- Получите ответы от экспертов Azure через [службу поддержки сообщества Azure](https://azure.microsoft.com/support/community/).
+- Получите ответы специалистов Azure на [сайте поддержки сообщества пользователей Azure](https://azure.microsoft.com/support/community/).
 
-- Подключение с [@AzureSupport](https://twitter.com/azuresupport) — официальная учетная запись Microsoft Azure для улучшения качества обслуживания клиентов. Подключение сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
+- Подпишитесь на [@AzureSupport](https://twitter.com/azuresupport) — официальный канал Microsoft Azure для работы с клиентами. Вступайте в сообщество Azure для получения нужных ресурсов: ответов, поддержки и советов экспертов.
 
-- Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Для получения более подробных сведений см. статью [о создании запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).
+- Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка**. Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).

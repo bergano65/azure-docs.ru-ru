@@ -15,10 +15,9 @@ ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
 ms.openlocfilehash: 0e49e90209c7337081458b7c214d27b37d3b4da1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74462616"
 ---
 # <a name="analyze-your-media-using-the-azure-portal"></a>Анализ данных мультимедиа с помощью портала Azure 
@@ -60,7 +59,7 @@ ms.locfileid: "74462616"
 
 С помощью файлов скрытых субтитров в этих форматах аудио- и видеофайлы можно сделать доступным для людей с нарушениями слуха.
 
-### <a name="keywords"></a>Ключевые слова
+### <a name="keywords"></a>Keywords
 Выберите этот параметр, если хотите создать XML-файл ключевых слов. Это файл, который содержит ключевые слова, извлеченные из распознанной речи, и информацию об их частоте и расположении в файле.
 
 ### <a name="job-name"></a>Имя задания
@@ -137,10 +136,10 @@ ms.locfileid: "74462616"
 ### <a name="mode"></a>Режим
 Версия 2.0 игнорирует параметр `Mode`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Просмотрите схемы обучения работе со службами мультимедиа.
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]

@@ -5,12 +5,12 @@ author: peterpogorski
 ms.topic: article
 ms.date: 06/29/2018
 ms.author: pepogors
-ms.openlocfilehash: 17bff459a0399d39c6bfdd772ad16d0b5b2f6771
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: b34893b64ac3533406f33c45583a911b70ae42af
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79258490"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86247444"
 ---
 # <a name="service-fabric-for-visual-studio-code"></a>Service Fabric для Visual Studio Code
 
@@ -21,14 +21,14 @@ ms.locfileid: "79258490"
 > [!IMPORTANT]
 > Приложения Java Service Fabric могут разрабатываться на компьютерах Windows, но развернуть их можно только в кластерах Linux в Azure. Отладка приложений Java в ОС Windows не поддерживается.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 Необходимо обязательно установить следующие компоненты во всех средах:
 
 * [Visual Studio Code](https://code.visualstudio.com/)
 * [Node.js](https://nodejs.org/)
-* [Git](https://git-scm.com/)
-* [Пакет SDK для Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started)
+* [GIT](https://git-scm.com/)
+* [Пакет SDK для Service Fabric](./service-fabric-get-started.md)
 * Генераторы Yeoman (установите соответствующие генераторы для своего приложения)
 
    ```sh
@@ -98,7 +98,7 @@ ms.locfileid: "79258490"
 Команда **Service Fabric: Deploy Application** (Service Fabric: развернуть приложение) развертывает приложение Service Fabric в локальном кластере. Перед использованием команды убедитесь, что локальный кластер запущен. 
 
 1. Выберите команду **Service Fabric: Deploy Application** (Service Fabric: развернуть приложение).
-2. Просмотрите локальный кластер с Service Fabric Explorer (http:\//ЛОКАЛХОСТ: 19080/Explorer), чтобы убедиться, что приложение установлено. Это может занять некоторое время.
+2. Просмотрите локальный кластер с Service Fabric Explorer (http: \/ /ЛОКАЛХОСТ: 19080/Explorer), чтобы убедиться, что приложение установлено. Это может занять некоторое время.
 3. Для развертывания в локальном кластере можно также использовать команду **Service Fabric: Publish Application** (Service Fabric: опубликовать приложение) без параметров, заданных в файле Cloud.json.
 
 > [!NOTE]
@@ -124,7 +124,7 @@ ms.locfileid: "79258490"
 2.  Выберите команду **Service Fabric: Clean Application** (Service Fabric: очистить приложение).
 3.  Выходные данные процесса очистки пишутся во встроенный терминал.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения см. в разделе [Разработка и отладка приложений Service Fabric на C# с помощью VS Code](./service-fabric-develop-csharp-applications-with-vs-code.md).
 * Дополнительные сведения см. в статье [Develop Java Service Fabric applications with Visual Studio Code](./service-fabric-develop-java-applications-with-vs-code.md) (Разработка и отладка приложений Java Service Fabric в VS Code).

@@ -123,7 +123,7 @@
           href: partitioning-overview.md
         - name: Секционирование и горизонтальное масштабирование
           href: partition-data.md
-        - name: Создание искусственного ключа секции
+        - name: Ключ искусственного раздела
           href: synthetic-partition-keys.md
     - name: Подготовленная пропускная способность
       items:
@@ -229,6 +229,15 @@
                     - name: GetCurrentTimestamp
                       displayName: 'GetCurrentTimestamp, get current timestamp, timestamp, date and time functions, datetime'
                       href: sql-query-getcurrenttimestamp.md
+                    - name: DateTimeFromParts
+                      displayName: 'DateTimeFromParts, date time from parts, date and time functions, datetime'
+                      href: sql-query-datetimefromparts.md
+                    - name: DateTimeAdd
+                      displayName: 'DateTimeAdd, date time add, timestamp, date and time functions, datetime'
+                      href: sql-query-datetimeadd.md
+                    - name: DateTimeDiff
+                      displayName: 'DateTimeDiff, date time diff, date and time functions, datetime'
+                      href: sql-query-datetimediff.md
                 - name: Математические функции
                   items:
                     - name: Математические функции
@@ -592,12 +601,18 @@
           items:
             - name: .NET
               href: create-cassandra-dotnet.md
-            - name: Java
+            - name: .NET Core
+              href: create-cassandra-dotnet-core.md
+            - name: 'Java, версия 3'
               href: create-cassandra-java.md
+            - name: 'Java, версия 4'
+              href: create-cassandra-java-v4.md
             - name: Node.js
               href: create-cassandra-nodejs.md
             - name: Python
               href: create-cassandra-python.md
+            - name: Golang
+              href: create-cassandra-go.md
         - name: Учебники
           items:
             - name: "1.\_Создание данных и управление ими"
@@ -615,6 +630,8 @@
               href: cassandra-faq.md
             - name: Эластичное масштабирование
               href: manage-scale-cassandra.md
+            - name: Секционирование
+              href: cassandra-partitioning.md
             - name: Вторичные индексы
               href: cassandra-secondary-index.md
         - name: Практические руководства
@@ -857,7 +874,7 @@
               href: table-storage-how-to-use-c-plus.md
             - name: Ruby
               href: table-storage-how-to-use-ruby.md
-            - name: 'F#'
+            - name: F#
               href: /dotnet/articles/fsharp/using-fsharp-on-azure/table-storage
               maintainContext: true
         - name: Основные понятия
@@ -971,41 +988,40 @@
           href: how-to-manage-indexing-policy.md
         - name: Определение уникальных ключей
           href: how-to-define-unique-keys.md
-    - name: Рекомендации
+    - name: Повышение производительности и устранение неполадок
       items:
-        - name: Советы по улучшению производительности
+        - name: Запрос
           items:
             - name: Получение метрик выполнения запросов
-              displayName: 'query profile, profile'
               href: profile-sql-api-query.md
             - name: Настройка производительности запросов
               href: sql-api-query-metrics.md
-            - name: Советы по повышению производительности при использовании пакета SDK для .NET
+            - name: Решение проблем с производительностью запросов
+              href: troubleshoot-query-performance.md
+        - name: .NET
+          items:
+            - name: "Советы по повышению производительности при использовании пакета SDK для .NET версии\_3"
+              href: performance-tips-dotnet-sdk-v3-sql.md
+            - name: "Советы по повышению производительности при использовании пакета SDK для .NET версии\_2"
               href: performance-tips.md
+            - name: Устранение неполадок с пакетом SDK для .NET
+              href: troubleshoot-dot-net-sdk.md
+        - name: Java
+          items:
             - name: "Советы по повышению производительности при использовании пакета SDK для Java версии\_4"
               href: performance-tips-java-sdk-v4-sql.md
-            - name: Советы по повышению производительности при использовании пакета SDK для Java более ранних версий
-              items:
-                - name: "Пакет SDK для Async Java версии\_2"
-                  href: performance-tips-async-java.md
-                - name: "Пакет SDK для Sync Java версии\_2"
-                  href: performance-tips-java.md
-            - name: "Тест производительности\_— пример приложения"
-              href: performance-testing.md
+            - name: "Устранение неполадок с пакетом SDK для Java версии\_4"
+              href: troubleshoot-java-sdk-v4-sql.md
+            - name: "Пакет SDK для Async Java версии\_2"
+              href: performance-tips-async-java.md
+            - name: "Пакет SDK для Sync Java версии\_2"
+              href: performance-tips-java.md
+            - name: "Устранение неполадок\_— пакет SDK для Async Java версии\_2"
+              href: troubleshoot-java-async-sdk.md
+        - name: "Тест производительности\_— пример приложения"
+          href: performance-testing.md
         - name: Экономичные операции чтения и записи
           href: key-value-store-cost.md
-    - name: Диагностика
-      items:
-        - name: Решение проблем с производительностью запросов
-          href: troubleshoot-query-performance.md
-        - name: "Устранение неполадок с пакетом SDK для Java версии\_4"
-          href: troubleshoot-java-sdk-v4-sql.md
-        - name: Устранение неполадок с пакетами SDK для Java более ранних версий
-          items:
-            - name: "Пакет SDK для Async Java версии\_2"
-              href: troubleshoot-java-async-sdk.md
-        - name: Устранение неполадок с пакетом SDK для .NET
-          href: troubleshoot-dot-net-sdk.md
     - name: Перейти на новые пакеты SDK
       items:
         - name: "Переход на пакет SDK для Java версии\_4"
@@ -1050,7 +1066,7 @@
           href: import-github-notebooks.md
         - name: Использование встроенных команд записной книжки на Python
           href: use-python-notebook-features-and-commands.md
-        - name: 'Использование встроенных команд записной книжки на C#'
+        - name: Использование встроенных команд записной книжки на C#
           href: use-csharp-notebook-features-and-commands.md
     - name: Программирование на стороне сервера
       items:
@@ -1150,6 +1166,8 @@
           href: ../data-factory/connector-azure-cosmos-db.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
         - name: Azure Stream Analytics
           href: ../stream-analytics/stream-analytics-documentdb-output.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json
+        - name: Azure Data Explorer
+          href: 'https://github.com/Azure/azure-kusto-labs/tree/master/cosmosdb-adx-integration'
         - name: Центры событий Azure и служба хранилища Azure
           href: 'https://github.com/hdinsight/hdinsight-storm-examples/blob/master/IotExample/README.md'
         - name: Использование начального приложения Spring Boot
@@ -1188,28 +1206,30 @@
           href: how-to-migrate-from-bulk-executor-library.md
         - name: "Массовый исполнитель\_— библиотека Java"
           href: bulk-executor-java.md
-- name: Справочник
+- name: Ссылки на пакеты SDK для API SQL
   items:
-    - name: .NET
-      href: sql-api-sdk-dotnet.md
-    - name: .NET Core
-      href: sql-api-sdk-dotnet-core.md
-    - name: .NET Standard
-      href: sql-api-sdk-dotnet-standard.md
-    - name: Библиотека канала изменений для .NET
-      href: sql-api-sdk-dotnet-changefeed.md
-    - name: Библиотека массового исполнителя для .NET
-      href: sql-api-sdk-bulk-executor-dot-net.md
-    - name: Библиотека массового исполнителя для Java
-      href: sql-api-sdk-bulk-executor-java.md
-    - name: "Пакет SDK Java версии\_4 для Core"
-      href: sql-api-sdk-java-v4.md
-    - name: Старые пакеты SDK Java для Core
+    - name: Пакеты SDK для .NET
       items:
+        - name: "Пакет SDK версии\_3 для .NET"
+          href: sql-api-sdk-dotnet-standard.md
+        - name: "Пакет SDK для .NET версии\_2"
+          href: sql-api-sdk-dotnet.md
+        - name: "Пакет SDK для .NET Core версии\_2"
+          href: sql-api-sdk-dotnet-core.md
+        - name: "Библиотека канала изменений для .NET версии\_2"
+          href: sql-api-sdk-dotnet-changefeed.md
+        - name: "Библиотека исполнителя массовых операций для .NET версии\_2"
+          href: sql-api-sdk-bulk-executor-dot-net.md
+    - name: Пакеты SDK для Java
+      items:
+        - name: "Пакет SDK для Java версии\_4"
+          href: sql-api-sdk-java-v4.md
         - name: "Пакет SDK для Async Java версии\_2"
           href: sql-api-sdk-async-java.md
         - name: "Пакет SDK для Sync Java версии\_2"
           href: sql-api-sdk-java.md
+        - name: "Библиотека массового исполнителя для Java версии\_2"
+          href: sql-api-sdk-bulk-executor-java.md
     - name: Node.js
       href: sql-api-sdk-node.md
     - name: Python
@@ -1237,6 +1257,8 @@
       href: whitepapers.md
     - name: Участники
       href: partners-migration-cosmosdb.md
+    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
+      href: 'https://docs.microsoft.com/answers/topics/azure-cosmos-db.html'
     - name: Видео
       href: 'https://azure.microsoft.com/resources/videos/index/?services=cosmos-db'
     - name: Стратегия развития Azure

@@ -10,12 +10,12 @@ ms.subservice: bing-spell-check
 ms.topic: conceptual
 ms.date: 06/27/2019
 ms.author: aahi
-ms.openlocfilehash: 893317b8f46415b1df540d67ebf28b65c5ba6d32
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: fe540dbb230f033f139e82325bf8e20846f5bfe3
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68883454"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85832548"
 ---
 # <a name="sending-requests-to-the-bing-spell-check-api"></a>Отправка запросов к API Проверки орфографии Bing
 
@@ -25,7 +25,7 @@ ms.locfileid: "68883454"
 https://api.cognitive.microsoft.com/bing/v7.0/spellcheck
 ```  
   
-В запросе должен использоваться протокол HTTPS.
+Для отправки запроса следует использовать протокол HTTPS.
 
 Рекомендуется, чтобы все запросы поступали с сервера. Распространение ключа в рамках клиентского приложения создает больше возможностей для доступа к нему злоумышленников. Сервер также предоставляет единую точку обновления для будущих версий API.
 
@@ -46,15 +46,18 @@ https://api.cognitive.microsoft.com/bing/v7.0/spellcheck
 
 Установить прокси-сервер CORS довольно просто. Это позволит [учебному приложению](../tutorials/spellcheck.md) получить доступ к необязательным заголовкам клиента. Для начала [установите платформу Node.js](https://nodejs.org/en/download/), если она еще не установлена. В командной строке введите следующую команду:
 
-    npm install -g cors-proxy-server
+```console
+npm install -g cors-proxy-server
+```
 
-Затем в HTML-файле измените конечную точку API Bing для проверки орфографии на следующую:
-
-    http://localhost:9090/https://api.cognitive.microsoft.com/bing/v7.0/spellcheck/
+Затем измените конечную точку API Bing для проверки орфографии в HTML-файле на: \
+`http://localhost:9090/https://api.cognitive.microsoft.com/bing/v7.0/spellcheck/`
 
 И наконец, запустите прокси-сервер CORS с помощью следующей команды:
 
-    cors-proxy-server
+```console
+cors-proxy-server
+```
 
 Не закрывайте командное окно, пока используете учебное приложение. Это приведет к остановке прокси-сервера. Теперь в развертываемом разделе заголовков HTTP под результатами поиска можно увидеть заголовок `X-MSEdge-ClientID` (среди прочих) и убедиться, что он одинаковый для всех запросов.
 
@@ -62,14 +65,14 @@ https://api.cognitive.microsoft.com/bing/v7.0/spellcheck
 
 Ниже показан запрос, который включает в себя все рекомендуемые параметры и заголовки запроса. Если вы впервые вызовете любой из интерфейсов API Bing, не включайте заголовок идентификатора клиента. Включите идентификатор клиента, только если вы ранее вызывали API Bing, а Bing возвратил идентификатор клиента для комбинации пользователей и устройств. 
   
-> ```  
-> GET https://api.cognitive.microsoft.com/bing/v7.0/spellcheck?text=when+its+your+turn+turn,+john,+come+runing&mkt=en-us HTTP/1.1
-> Ocp-Apim-Subscription-Key: 123456789ABCDE  
-> X-MSEdge-ClientIP: 999.999.999.999  
-> X-Search-Location: lat:47.60357;long:-122.3295;re:100  
-> X-MSEdge-ClientID: <blobFromPriorResponseGoesHere>  
-> Host: api.cognitive.microsoft.com  
-> ```  
+```http
+GET https://api.cognitive.microsoft.com/bing/v7.0/spellcheck?text=when+its+your+turn+turn,+john,+come+runing&mkt=en-us HTTP/1.1
+Ocp-Apim-Subscription-Key: 123456789ABCDE  
+X-MSEdge-ClientIP: 999.999.999.999  
+X-Search-Location: lat:47.60357;long:-122.3295;re:100  
+X-MSEdge-ClientID: <blobFromPriorResponseGoesHere>  
+Host: api.cognitive.microsoft.com  
+```
 
 Ниже показан ответ на предыдущий запрос. В примере также показаны заголовки ответа для Bing.
 
@@ -121,7 +124,7 @@ BingAPIs-Market: en-US
 }  
 ```  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Что такое API Проверки орфографии Bing?](../overview.md)
+- [Что такое API проверки орфографии Bing?](../overview.md)
 - [Справочник по API Проверки орфографии Bing версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-spell-check-api-v7-reference)

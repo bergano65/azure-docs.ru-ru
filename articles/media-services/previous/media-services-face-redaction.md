@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 6a1b7a76ef1efda51f09ac733b3d434235ff40ef
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 8e150ec037bab0010c5505c880c4cac456118b35
+ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "74900295"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86058016"
 ---
 # <a name="redact-faces-with-azure-media-analytics"></a>Скрытие лиц с помощью аналитики мультимедиа Azure 
 ## <a name="overview"></a>Обзор
@@ -129,9 +129,11 @@ ms.locfileid: "74900295"
 
 Пример foo_IDList.txt
  
-     1
-     2
-     3
+```output
+1
+2
+3
+```
 
 ## <a name="blur-types"></a>Типы размытия
 
@@ -191,7 +193,7 @@ ms.locfileid: "74900295"
 
 #### <a name="create-and-configure-a-visual-studio-project"></a>Создание и настройка проекта Visual Studio
 
-Настройте среду разработки и заполните файл App. config сведениями о соединении, как описано в разделе [Разработка служб мультимедиа с помощью .NET](media-services-dotnet-how-to-use.md). 
+Настройте среду разработки и заполните файл app.config данными о соединении, как описано в разделе [Разработка служб мультимедиа с помощью .NET](media-services-dotnet-how-to-use.md). 
 
 #### <a name="example"></a>Пример
 
@@ -363,7 +365,7 @@ namespace FaceRedaction
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 

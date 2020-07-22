@@ -10,13 +10,13 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: trbye
-zone_pivot_groups: programming-languages-set-nineteen
-ms.openlocfilehash: 311c85e254711a219ac93424b77f35c2662008b7
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+zone_pivot_groups: programming-languages-speech-services-nomore-variant
+ms.openlocfilehash: df8fe6301a629e4f21478d6da4d892afec44c889
+ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83658451"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85601230"
 ---
 # <a name="automatic-language-detection-for-speech-to-text"></a>Автоматическое определение языка для речи в текст
 
@@ -29,7 +29,7 @@ ms.locfileid: "83658451"
 
 ## <a name="automatic-language-detection-with-the-speech-sdk"></a>Автоматическое определение языка с помощью пакета SDK для распознавания речи
 
-Автоматическое определение языка в настоящее время имеет ограничение на два языка на стороне служб для каждого обнаружения. При создании объекта учитывайте это ограничение `AudoDetectSourceLanguageConfig` . В примерах ниже мы создадим `AutoDetectSourceLanguageConfig` , а затем используем его для создания `SpeechRecognizer` .
+Автоматическое определение языка в настоящее время имеет ограничение на четыре языка на стороне служб для каждого обнаружения. При создании объекта учитывайте это ограничение `AudoDetectSourceLanguageConfig` . В примерах ниже мы создадим `AutoDetectSourceLanguageConfig` , а затем используем его для создания `SpeechRecognizer` .
 
 > [!TIP]
 > Можно также указать пользовательскую модель, которая будет использоваться при выполнении преобразования речи в текст. Дополнительные сведения см. [в разделе Использование настраиваемой модели для автоматического определения языка](#use-a-custom-model-for-automatic-language-detection).
@@ -135,6 +135,20 @@ NSString *detectedLanguage = [languageDetectionResult language];
 
 ::: zone-end
 
+::: zone pivot="programming-language-javascript"
+
+```Javascript
+var autoDetectConfig = SpeechSDK.AutoDetectSourceLanguageConfig.fromLanguages(["en-US", "de-DE"]);
+var speechRecognizer = SpeechSDK.SpeechRecognizer.FromConfig(speechConfig, audioConfig, autoDetectConfig);
+speechRecognizer.recognizeOnceAsync((result: SpeechSDK.SpeechRecognitionResult) => {
+        var languageDetectionResult = SpeechSDK.AutoDetectSourceLanguageResult.fromResult(result);
+        var detectedLanguage = languageDetectionResult.language;
+},
+{});
+```
+
+::: zone-end
+
 ## <a name="use-a-custom-model-for-automatic-language-detection"></a>Использование настраиваемой модели для автоматического определения языка
 
 Помимо определения языка с помощью моделей речевых служб, можно указать пользовательскую модель для расширенного распознавания. Если пользовательская модель не указана, служба будет использовать языковую модель по умолчанию.
@@ -213,6 +227,16 @@ SPXAutoDetectSourceLanguageConfiguration* autoDetectSourceLanguageConfig = \
 
 ::: zone-end
 
-## <a name="next-steps"></a>Следующие шаги
+::: zone pivot="programming-language-javascript"
+
+```Javascript
+var enLanguageConfig = SpeechSDK.SourceLanguageConfig.fromLanguage("en-US");
+var frLanguageConfig = SpeechSDK.SourceLanguageConfig.fromLanguage("fr-FR", "The Endpoint Id for custom model of fr-FR");
+var autoDetectConfig = SpeechSDK.AutoDetectSourceLanguageConfig.fromSourceLanguageConfigs([enLanguageConfig, frLanguageConfig]);
+```
+
+::: zone-end
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Справочная документация по пакету SDK для распознавания речи](speech-sdk.md)

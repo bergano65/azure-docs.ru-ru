@@ -8,14 +8,14 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: b54f9f3466fe5f7e2da622077f53575d6f43f72d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 5e7b22a8010d7dfbdeeaeae623a55c1aff9c006c
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80585954"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86510503"
 ---
-# <a name="azure-disk-encryption-sample-scripts"></a>Примеры скриптов шифрования дисков Azure 
+# <a name="azure-disk-encryption-sample-scripts-for-linux-vms"></a>Примеры сценариев шифрования дисков Azure для виртуальных машин Linux
 
 В этой статье приводятся примеры сценариев для подготовки предварительно зашифрованных виртуальных жестких дисков и других задач.
 
@@ -186,7 +186,7 @@ ms.locfileid: "80585954"
 
    ![Указание парольной фразы во время загрузки при настройке Ubuntu 16.04](./media/disk-encryption/ubuntu-1604-preencrypted-fig5.png)
 
-6. Подготовьте виртуальную машину к передаче в Azure, следуя [этим инструкциям](https://azure.microsoft.com/documentation/articles/virtual-machines-linux-create-upload-ubuntu/). Пока не выполняйте последний шаг (отзыв виртуальной машины).
+6. Подготовьте виртуальную машину к передаче в Azure, следуя [этим инструкциям](./create-upload-ubuntu.md?toc=/azure/virtual-machines/linux/toc.json). Пока не выполняйте последний шаг (отзыв виртуальной машины).
 
 Настройте шифрование для Azure, выполнив следующие шаги.
 
@@ -227,7 +227,7 @@ ms.locfileid: "80585954"
     fi
    ```
 
-2. Измените настройки шифрования в */etc/crypttab*. Результат будет выглядеть так:
+2. Измените настройки шифрования в */etc/crypttab*. Он должен выглядеть так:
    ```
     xxx_crypt uuid=xxxxxxxxxxxxxxxxxxxxx none luks,discard,keyscript=/usr/local/sbin/azure_crypt_key.sh
     ```
@@ -252,7 +252,7 @@ ms.locfileid: "80585954"
 
 8. Перейдите к следующему шагу и передайте свой виртуальный жесткий диск в Azure.
 
-### <a name="opensuse-132"></a>openSUSE 13.2
+### <a name="opensuse-132"></a>openSUSE 13.2
 Чтобы настроить шифрование во время установки дистрибутива, сделайте следующее:
 1. При настройке разделов дисков выберите **Encrypt Volume Group** (Шифрование группы томов), а затем введите пароль. Это пароль, который потребуется передать в хранилище ключей.
 
@@ -262,7 +262,7 @@ ms.locfileid: "80585954"
 
    ![Указание парольной фразы во время загрузки при настройке openSUSE 13.2](./media/disk-encryption/opensuse-encrypt-fig2.png)
 
-3. Подготовьте виртуальную машину для передачи в Azure, следуя инструкциям в разделе [Подготовка виртуальной машины SLES или openSUSE для Azure](https://azure.microsoft.com/documentation/articles/virtual-machines-linux-suse-create-upload-vhd/#prepare-opensuse-131). Пока не выполняйте последний шаг (отзыв виртуальной машины).
+3. Подготовьте виртуальную машину для передачи в Azure, следуя инструкциям в разделе [Подготовка виртуальной машины SLES или openSUSE для Azure](./suse-create-upload-vhd.md?toc=/azure/virtual-machines/linux/toc.json#prepare-opensuse-131). Пока не выполняйте последний шаг (отзыв виртуальной машины).
 
 Чтобы настроить шифрование для Azure, сделайте следующее:
 1. Измените файл /etc/dracut.conf и добавьте приведенную ниже строку.
@@ -320,7 +320,7 @@ ms.locfileid: "80585954"
 
 6. Теперь виртуальную машину можно отозвать и передать свой виртуальный жесткий диск в Azure.
 
-### <a name="centos-7-and-rhel-81"></a>CentOS 7 и RHEL 8,1
+### <a name="centos-7-and-rhel-7"></a>CentOS 7 и RHEL 7
 
 Чтобы настроить шифрование во время установки дистрибутива, сделайте следующее:
 1. Во время настройки разделов дисков выберите **Encrypt my data** (Шифрование личных данных).
@@ -339,7 +339,7 @@ ms.locfileid: "80585954"
 
    ![Введение парольной фразы во время загрузки при настройке CentOS 7](./media/disk-encryption/centos-encrypt-fig4.png)
 
-5. Подготовьте виртуальную машину для передачи в Azure, следуя инструкциям в разделе "CentOS 7.0+" статьи [Подготовка виртуальной машины на основе CentOS для Azure](https://azure.microsoft.com/documentation/articles/virtual-machines-linux-create-upload-centos/#centos-70). Пока не выполняйте последний шаг (отзыв виртуальной машины).
+5. Подготовьте виртуальную машину для передачи в Azure, следуя инструкциям в разделе "CentOS 7.0+" статьи [Подготовка виртуальной машины на основе CentOS для Azure](./create-upload-centos.md?toc=/azure/virtual-machines/linux/toc.json#centos-70). Пока не выполняйте последний шаг (отзыв виртуальной машины).
 
 6. Теперь виртуальную машину можно отозвать и передать свой виртуальный жесткий диск в Azure.
 
@@ -439,7 +439,7 @@ ms.locfileid: "80585954"
 На следующем шаге используйте `$secretUrl`, чтобы [подключить диск ОС, не применяя ключ шифрования ключей](#without-using-a-kek).
 
 ### <a name="disk-encryption-secret-encrypted-with-a-kek"></a>Секрет дискового шифрования, зашифрованный с помощью KEK
-Перед передачей секрета в хранилище ключей его можно дополнительно зашифровать с помощью ключа шифрования ключей. Используйте [API](https://msdn.microsoft.com/library/azure/dn878066.aspx) для создания оболочки, чтобы сначала зашифровать секрет с использованием ключа шифрования ключей. Выходными данными этой операции по переносу является строка в кодировке Base64, которую можно затем передать в качестве секрета с помощью [`Set-AzKeyVaultSecret`](/powershell/module/az.keyvault/set-azkeyvaultsecret) командлета.
+Перед передачей секрета в хранилище ключей его можно дополнительно зашифровать с помощью ключа шифрования ключей. Используйте [API](/rest/api/keyvault/wrapkey) для создания оболочки, чтобы сначала зашифровать секрет с использованием ключа шифрования ключей. Выходными данными этой операции по переносу является строка в кодировке Base64, которую можно затем передать в качестве секрета с помощью [`Set-AzKeyVaultSecret`](/powershell/module/az.keyvault/set-azkeyvaultsecret) командлета.
 
 ```powershell
     # This is the passphrase that was provided for encryption during the distribution installation

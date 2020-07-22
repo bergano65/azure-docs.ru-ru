@@ -1,26 +1,29 @@
 ---
-title: Внедрение дифференциальной конфиденциальности с помощью пакета WhiteNoise
+title: Реализация разностной конфиденциальности с помощью пакета Вхитеноисе (Предварительная версия)
 titleSuffix: Azure Machine Learning
 description: Сведения о дифференциальной конфиденциальности и о том, как пакет WhiteNoise поможет внедрить системы с дифференциальной конфиденциальностью, сохраняющие конфиденциальность данных.
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 05/03/2020
+ms.date: 07/09/2020
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.openlocfilehash: 09ac31f31f42f5aed9e7dd464e1fce1436cfe581
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
-ms.translationtype: HT
+ms.openlocfilehash: 9728bf2c86c0629b09e2325650ce288cf9b3cc7e
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83594993"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86199793"
 ---
-# <a name="preserve-data-privacy-by-using-differential-privacy-and-the-whitenoise-package"></a>Сохранение конфиденциальности данных с помощью дифференциальной конфиденциальности и пакета WhiteNoise
+# <a name="preserve-data-privacy-by-using-differential-privacy-and-the-whitenoise-package-preview"></a>Сохранение конфиденциальности данных с помощью разностной конфиденциальности и пакета Вхитеноисе (Предварительная версия)
 
 Сведения о дифференциальной конфиденциальности и о том, как пакет WhiteNoise поможет внедрить системы с дифференциальной конфиденциальностью.
 
 В связи с увеличением объема данных, которые организация собирает и использует для анализа, возникает вопрос конфиденциальности и безопасности. Для анализа необходимо иметь данные. Как правило, чем больше данных используется для обучения моделей, тем они точнее. Если для этих анализов используются персональные данные, то важно, чтобы они оставались частными при использовании.
+
+> [!NOTE]
+> Обратите внимание, что мы переименованы набор средств, и в ближайшие недели будет введено новое имя. 
 
 ## <a name="how-differential-privacy-works"></a>Сведения о работе дифференциальной конфиденциальности
 
@@ -53,7 +56,7 @@ ms.locfileid: "83594993"
 
 Реализация систем с дифференциальной конфиденциальностью — это сложный процесс. WhiteNoise — это проект с открытым кодом, который содержит различные компоненты для создания глобальных систем с дифференциальной конфиденциальностью. WhiteNoise состоит из следующих компонентов верхнего уровня:
 
-- Основные сведения
+- Ядро
 - Система
 
 ### <a name="core"></a>Основные сведения
@@ -79,4 +82,6 @@ ms.locfileid: "83594993"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы узнать, как использовать компоненты WhiteNoise, ознакомьтесь с репозиториями GitHub для [пакета WhiteNoise Core](https://github.com/opendifferentialprivacy/whitenoise-core), [системного пакета WhiteNoise](https://github.com/opendifferentialprivacy/whitenoise-system) и [примеров WhiteNoise](https://github.com/opendifferentialprivacy/whitenoise-samples).
+[Сохранение конфиденциальности данных](how-to-differential-privacy.md) в машинное обучение Azure.
+
+Чтобы узнать больше о компонентах Вхитеноисе, ознакомьтесь с репозиториями GitHub для [пакета Вхитеноисе Core](https://github.com/opendifferentialprivacy/whitenoise-core), пакета [вхитеноисе системы](https://github.com/opendifferentialprivacy/whitenoise-system) и [примеров вхитеноисе](https://github.com/opendifferentialprivacy/whitenoise-samples).

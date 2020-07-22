@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 11/15/2019
 ms.author: rajanaki
-ms.openlocfilehash: 5e74466891a5926d8ae8feb3c1c48348ecf3cfe6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: b9d333467864f67bc357314830ff885af4232ba0
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74135000"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86133184"
 ---
 # <a name="deprecation-of-site-recovery-data-encryption-feature"></a>Нерекомендуемая функция шифрования данных Site Recovery
 
@@ -22,7 +22,7 @@ ms.locfileid: "74135000"
 ## <a name="deprecation-information"></a>Сведения об устаревании
 
 
-Функция шифрования данных Site Recovery была доступна клиентам, которые защищают виртуальные машины Hyper-V, чтобы гарантировать, что реплицированные данные были защищены от угроз безопасности. Эта функция будет признана устаревшей **до 30 декабря 2019**. Он заменяется функцией более расширенного [шифрования неактивных](https://azure.microsoft.com/blog/azure-site-recovery-encryption-at-rest/) компонентов, которая использует [Шифрование службы хранилища](https://docs.microsoft.com/azure/storage/common/storage-service-encryption) (SSE). При использовании SSE данные шифруются до сохранения в хранилище и расшифровки при извлечении, а при отработке отказа в Azure виртуальные машины будут запускаться из зашифрованных учетных записей хранения, что позволит улучшить целевое время восстановления (RTO).
+Функция шифрования данных Site Recovery была доступна клиентам, которые защищают виртуальные машины Hyper-V, чтобы гарантировать, что реплицированные данные были защищены от угроз безопасности. Эта функция будет признана устаревшей **до 30 декабря 2019**. Он заменяется функцией более расширенного [шифрования неактивных](https://azure.microsoft.com/blog/azure-site-recovery-encryption-at-rest/) компонентов, которая использует [Шифрование службы хранилища](../storage/common/storage-service-encryption.md) (SSE). При использовании SSE данные шифруются до сохранения в хранилище и расшифровки при извлечении, а при отработке отказа в Azure виртуальные машины будут запускаться из зашифрованных учетных записей хранения, что позволит улучшить целевое время восстановления (RTO).
 
 Обратите внимание, что если вы являетесь клиентом, использующим эту функцию, вы получите связь со сведениями об устаревании и действиями по исправлению. 
 
@@ -35,9 +35,9 @@ ms.locfileid: "74135000"
 Чтобы продолжить выполнение операций отработки отказа, а репликации выполните следующие действия:
 
 Выполните следующие действия для каждой виртуальной машины. 
-1.  [Отключите репликацию](https://docs.microsoft.com/azure/site-recovery/site-recovery-manage-registration-and-protection#disable-protection-for-a-hyper-v-virtual-machine-replicating-to-azure-using-the-system-center-vmm-to-azure-scenario).
-2.  [Создайте новую политику репликации](https://docs.microsoft.com/azure/site-recovery/hyper-v-azure-tutorial#set-up-a-replication-policy).
-3.  [Включите репликацию](https://docs.microsoft.com/azure/site-recovery/hyper-v-vmm-azure-tutorial#enable-replication) и выберите учетную запись хранения с включенным SSE.
+1.  [Отключите репликацию](./site-recovery-manage-registration-and-protection.md#disable-protection-for-a-hyper-v-virtual-machine-replicating-to-azure-using-the-system-center-vmm-to-azure-scenario).
+2.  [Создайте новую политику репликации](./hyper-v-azure-tutorial.md#set-up-a-replication-policy).
+3.  [Включите репликацию](./hyper-v-vmm-azure-tutorial.md#enable-replication) и выберите учетную запись хранения с включенным SSE.
 
 После завершения начальной репликации в учетные записи хранения с включенным SSE виртуальные машины будут использовать шифрование неактивных данных с Azure Site Recovery.
 

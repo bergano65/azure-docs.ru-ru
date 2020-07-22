@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 04/14/2019
 ms.author: rajanaki
-ms.openlocfilehash: 0a3e5c922009353e4ba9ccab12cf70ea2b5992da
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 1b3fdd93902709541f4a22e652c34973158ad9c7
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "73961484"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86132446"
 ---
 # <a name="troubleshoot-hyper-v-to-azure-replication-and-failover"></a>Устранение неполадок с отработкой отказа и репликацией из Hyper-V в Azure
 
@@ -26,14 +26,14 @@ ms.locfileid: "73961484"
 1. Убедитесь, что узлы и виртуальные машины Hyper-V соответствуют всем [предварительным требованиям](hyper-v-azure-support-matrix.md).
 2. Если серверы Hyper-V расположены в облаках System Center Virtual Machine Manager (VMM), убедитесь, что [сервер VMM](hyper-v-prepare-on-premises-tutorial.md#prepare-vmm-optional) подготовлен.
 3. Проверьте, запущена ли служба управления виртуальными машинами Hyper-V на узлах Hyper-V.
-4. Проверьте журнал Hyper-V-VMMS\Admin на наличие проблем при выполнении входа в виртуальную машину. Этот журнал находится > в **журналах приложений и служб****Microsoft** > **Windows**.
+4. Проверьте журнал Hyper-V-VMMS\Admin на наличие проблем при выполнении входа в виртуальную машину. Этот журнал находится в **журналах приложений и служб**  >  **Microsoft**  >  **Windows**.
 5. Включите на гостевой виртуальной машине инструментарий управления Windows (WMI) и проверьте, что он доступен.
-   - Узнайте о [базовом тестировании инструментария WMI](https://blogs.technet.microsoft.com/askperf/2007/06/22/basic-wmi-testing/).
+   - Узнайте о [базовом тестировании инструментария WMI](https://techcommunity.microsoft.com/t5/ask-the-performance-team/bg-p/AskPerf).
    - Узнайте об [устранении неполадок с помощью инструментария WMI](https://aka.ms/WMiTshooting).
-   - [Устранение](https://technet.microsoft.com/library/ff406382.aspx#H22) неполадок со сценариями и службами WMI.
+   - [Устранение](/previous-versions/tn-archive/ff406382(v=msdn.10)#H22) неполадок со сценариями и службами WMI.
 6. Проверьте, запущена ли на гостевой виртуальной машине последняя версия служб Integration Services.
-    - [Убедитесь](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services), что у вас установлена последняя версия.
-    - [Постоянно обновляйте](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services#keep-integration-services-up-to-date) службы Integration Services.
+    - [Убедитесь](/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services), что у вас установлена последняя версия.
+    - [Постоянно обновляйте](/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services#keep-integration-services-up-to-date) службы Integration Services.
     
 ## <a name="replication-issues"></a>Проблемы с репликацией
 
@@ -42,7 +42,7 @@ ms.locfileid: "73961484"
 1. Убедитесь, что вы используете [последнюю версию](https://social.technet.microsoft.com/wiki/contents/articles/38544.azure-site-recovery-service-updates.aspx) служб Site Recovery.
 2. Проверьте, приостановлена ли репликация.
    - Проверьте состояние работоспособности виртуальной машины в консоли диспетчера Hyper-V.
-   - Если это крайне важно, щелкните правой кнопкой мыши виртуальную машину, > **репликация** > **Просмотр работоспособности репликации**.
+   - Если это крайне важно, щелкните правой кнопкой мыши виртуальную машину, > **репликация**  >  **Просмотр работоспособности репликации**.
    - Если репликация приостановлена, щелкните **Возобновить репликацию**.
 3. Убедитесь, что все необходимые службы запущены. В противном случае перезапустите их.
     - Если вы выполняете репликацию Hyper-V без VMM, на узле Hyper-V должны быть запущены следующие службы:
@@ -57,7 +57,7 @@ ms.locfileid: "73961484"
 5. Проверьте, могут ли узлы Hyper-V подключаться к URL-адресу хранилища BLOB-объектов Azure. Чтобы проверить, могут ли узлы выполнять подключение, установите и проверьте **cbengine.exe**. Просмотрите **TCP-подключения**, чтобы проверить возможность подключения между узлом и хранилищем BLOB-объектов Azure.
 6. Проверьте, есть ли проблемы с производительностью, как описано ниже.
     
-### <a name="performance-issues"></a>Проблемы с производительностью
+### <a name="performance-issues"></a>Проблемы производительности
 
 Ограничения пропускной способности сети могут повлиять на выполнение репликации. Устраните неполадки следующим образом.
 
@@ -66,7 +66,7 @@ ms.locfileid: "73961484"
 3. После запуска профилировщика выполните рекомендации для настройки [пропускной способности](hyper-v-deployment-planner-analyze-report.md#recommendations-with-available-bandwidth-as-input) и [хранилища](hyper-v-deployment-planner-analyze-report.md#vm-storage-placement-recommendation).
 4. Проверьте [ограничения обработки данных](hyper-v-deployment-planner-analyze-report.md#azure-site-recovery-limits). Если на виртуальной машине выполняется активная обработка данных, сделайте следующее.
    - Проверьте, отмечена ли виртуальная машина для повторной синхронизации.
-   - Выполните [эти действия](https://blogs.technet.microsoft.com/virtualization/2014/02/02/hyper-v-replica-debugging-why-are-very-large-log-files-generated/), чтобы исследовать источник обработки данных.
+   - Выполните [эти действия](https://techcommunity.microsoft.com/t5/virtualization/bg-p/Virtualization), чтобы исследовать источник обработки данных.
    - Обработка может возникнуть, если файлы журналов HRL занимают больше 50 % доступного места на диске. Если это проблема, подготовьте дополнительное дисковое пространство для всех виртуальных машин, на которых она возникает.
    - Убедитесь, что репликация не приостановилась. Если она приостановлена, изменения продолжают записываться в HRL-файл, что может способствовать увеличению его размера.
  
@@ -80,7 +80,7 @@ ms.locfileid: "73961484"
 
 2. Чтобы просмотреть подробные сведения, выберите пункт **View Replication Health** (Просмотреть состояние работоспособности репликации).
 
-    - Если репликация приостановлена, щелкните правой кнопкой мыши виртуальную машину > **репликация** > **возобновить репликацию**.
+    - Если репликация приостановлена, щелкните правой кнопкой мыши виртуальную машину > **репликация**  >  **возобновить репликацию**.
     - Перенос виртуальной машины с настроенного в Site Recovery узла Hyper-V на другой узел Hyper-V в том же кластере или на автономный компьютер не влияет на репликацию виртуальной машины. Просто убедитесь, что новый узел Hyper-V соответствует всем предварительным требованиям и настроен в Site Recovery.
 
 ## <a name="app-consistent-snapshot-issues"></a>Проблемы моментальных снимков с согласованием приложений
@@ -107,29 +107,30 @@ ms.locfileid: "73961484"
     ![Динамический диск](media/hyper-v-azure-troubleshoot/dynamic-disk.png)
     
 4. Убедитесь, что диск iSCSI не подключен к виртуальной машине. Эта возможность не поддерживается.
-5. Проверьте, включена ли служба резервного копирования. Убедитесь, что она включена > в **параметрах Hyper-V****Integration Services**.
+5. Проверьте, включена ли служба резервного копирования. Убедитесь, что она включена в **параметрах Hyper-V**  >  **Integration Services**.
 6. Убедитесь, что между приложениями, создающими моментальные снимки VSS, не возникают конфликты. Они возникают, если несколько приложений попытаются создать моментальные снимки VSS одновременно. Например, если приложение резервного копирования создает моментальные снимки VSS в то время, когда по расписанию в политике репликации должно создавать снимки приложение Site Recovery.   
 7. Проверьте, наблюдается ли большая скорость изменения данных на виртуальной машине.
     - Частоту ежедневного изменения данных для гостевых виртуальных машин можно измерить с помощью счетчиков производительности на узле Hyper-V. Чтобы измерить скорость изменения данных, включите следующий счетчик. Зафиксируйте пример этого значения на дисках виртуальной машины в течение 5–15 минут, чтобы получить сведения об изменении данных виртуальной машины.
         - Категория: "Виртуальное устройство хранения Hyper-V".
         - Счетчик: "Записанных байтов в секунду".</br>
         - Скорость изменения данных увеличится или останется на высоком уровне. Это зависит от текущей загруженности виртуальной машины или ее приложений.
-        - Для стандартного хранилища в Site Recovery среднее значение скорости изменения данных исходного диска составляет 2 МБ в секунду. [Дополнительные сведения](hyper-v-deployment-planner-analyze-report.md#azure-site-recovery-limits)
-    - Кроме того, можно [проверить целевые показатели масштабируемости хранилища](https://docs.microsoft.com/azure/storage/common/storage-scalability-targets).
-8. Запустите [планировщик развертывания](hyper-v-deployment-planner-run.md).
-9. Просмотрите рекомендации для настройки [сети](hyper-v-deployment-planner-analyze-report.md#recommendations-with-available-bandwidth-as-input) и [хранилища](hyper-v-deployment-planner-analyze-report.md#recommendations-with-available-bandwidth-as-input).
+        - Для стандартного хранилища в Site Recovery среднее значение скорости изменения данных исходного диска составляет 2 МБ в секунду. [Подробнее](hyper-v-deployment-planner-analyze-report.md#azure-site-recovery-limits)
+    - Кроме того, можно [проверить целевые показатели масштабируемости хранилища](../storage/common/scalability-targets-standard-account.md).
+8. Убедитесь, что если вы используете сервер под управлением Linux, вы включили на нем согласованность приложений. [Подробнее](./site-recovery-faq.md#replication)
+9. Запустите [планировщик развертывания](hyper-v-deployment-planner-run.md).
+10. Просмотрите рекомендации для настройки [сети](hyper-v-deployment-planner-analyze-report.md#recommendations-with-available-bandwidth-as-input) и [хранилища](hyper-v-deployment-planner-analyze-report.md#recommendations-with-available-bandwidth-as-input).
 
 
 ### <a name="vss-failing-inside-the-hyper-v-host"></a>Сбой VSS внутри узла Hyper-V
 
 1. Проверьте журналы событий на наличие ошибок VSS и просмотрите рекомендации.
-    - На сервере узла Hyper-v откройте журнал событий администратора Hyper-v в **Просмотр событий** >  > **журналы приложений и служб****Администратор****Microsoft** > **Windows** > **Hyper-v** > .
+    - На сервере узла Hyper-v откройте журнал событий администратора Hyper-v в **Просмотр событий**  >  **журналы приложений и служб**  >  **Администратор Microsoft**  >  **Windows**  >  **Hyper-v**  >  **Admin**.
     - Проверьте, есть ли там события, указывающие на сбои моментальных снимков с согласованием приложений.
     - Распространенная ошибка: "Hyper-V failed to generate VSS snapshot set for virtual machine 'XYZ': The writer experienced a non-transient error. Restarting the VSS service might resolve issues if the service is unresponsive" (Hyper-V не удалось создать набор моментальных снимков VSS для виртуальной машины XYZ. Повторяющаяся ошибка модуля записи. Если служба VSS не отвечает, можно попробовать перезапустить ее).
 
 2. Чтобы создавать моментальные снимки VSS для виртуальной машины, установите на виртуальной машине службы Integration Services Hyper-V и включите службу интеграции резервного копирования (VSS).
     - Убедитесь, что службы или управляющие программы Integration Services VSS выполняются на гостевой виртуальной машине и находятся в состоянии **ОК**.
-    - Это можно сделать в сеансе PowerShell с повышенными привилегиями на узле Hyper-V с помощью команды **Get-VMIntegrationService\<-VMName VMName>-Name VSS** . Эти сведения можно также получить, войдя на гостевую виртуальную машину. [Подробнее](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services).
+    - Это можно проверить в сеансе PowerShell с повышенными привилегиями на узле Hyper-V с помощью команды **Get-VMIntegrationService-VMName \<VMName> -Name VSS** . Эти сведения можно также получить, войдя на гостевую виртуальную машину. [Подробнее](/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services).
     - Убедитесь, что службы интеграции резервного копирования или VSS на виртуальной машине запущены и находятся в работоспособном состоянии. В противном случае перезапустите эти службы и службу запросов на теневое копирование томов Hyper-V на сервере узла Hyper-V.
 
 ### <a name="common-errors"></a>Распространенные ошибки
@@ -137,15 +138,15 @@ ms.locfileid: "73961484"
 **Код ошибки** | **Сообщение** | **Сведения**
 --- | --- | ---
 **0x800700EA** | "Hyper-V failed to generate VSS snapshot set for virtual machine: More data is available. (0x800700EA). VSS snapshot set generation can fail if backup operation is in progress.<br/><br/> Replication operation for virtual machine failed: More data is available" (Hyper-V не удалось создать набор моментальных снимков VSS для виртуальной машины. Доступно больше данных. Процесс создания моментальных снимков VSS может завершиться неудачно, если выполняется операция резервного копирования. Не удалось выполнить операцию репликации для виртуальной машины. Доступно больше данных). | Проверьте, включен ли на виртуальной машине динамический диск. Эта возможность не поддерживается.
-**0x80070032** | "Hyper-V Volume Shadow Copy Requestor failed to connect to virtual machine <./VMname> because the version does not match the version expected by Hyper-V" (Не удалось подключить службу запросов на теневое копирование томов Hyper-V к виртуальной машине <./имя ВМ>, так как имеющаяся версия не соответствует ожидаемый Hyper-V). | Проверьте, установлены ли последние обновления Windows.<br/><br/> [Обновите](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services#keep-integration-services-up-to-date) службы Integration Services до последней версии.
+**0x80070032** | "Hyper-V Volume Shadow Copy Requestor failed to connect to virtual machine <./VMname> because the version does not match the version expected by Hyper-V" (Не удалось подключить службу запросов на теневое копирование томов Hyper-V к виртуальной машине <./имя ВМ>, так как имеющаяся версия не соответствует ожидаемый Hyper-V). | Проверьте, установлены ли последние обновления Windows.<br/><br/> [Обновите](/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services#keep-integration-services-up-to-date) службы Integration Services до последней версии.
 
 
 
 ## <a name="collect-replication-logs"></a>Сбор журналов событий репликации
 
-Все события репликации Hyper-V регистрируются в журнале Hyper-V-VMMS\Admin, расположенном в журналах **приложений и служб** > **Microsoft** > **Windows**. Кроме того, для службы управления виртуальными машинами Hyper-V можно включить аналитический журнал.
+Все события репликации Hyper-V регистрируются в журнале Hyper-V-VMMS\Admin, расположенном в журналах **приложений и служб**  >  **Microsoft**  >  **Windows**. Кроме того, для службы управления виртуальными машинами Hyper-V можно включить аналитический журнал.
 
-1. Сначала убедитесь, что аналитический журнал и журнал отладки видны в средстве просмотра событий. Чтобы сделать журналы доступными, в Просмотр событий щелкните **Просмотр** > **Показать журналы аналитики и отладки.** Аналитический журнал отображается в группе **Hyper-V-VMMS**.
+1. Сначала убедитесь, что аналитический журнал и журнал отладки видны в средстве просмотра событий. Чтобы сделать журналы доступными, в Просмотр событий щелкните **Просмотр**  >  **Показать журналы аналитики и отладки.** Аналитический журнал отображается в группе **Hyper-V-VMMS**.
 2. В области **Действия** выберите **Включить журнал**. 
 
     ![Включить журнал](media/hyper-v-azure-troubleshoot/enable-log.png)
@@ -169,4 +170,3 @@ ms.locfileid: "73961484"
 
 -   Для VMM выполните сбор данных журнала Site Recovery с помощью [средства Support Diagnostics Platform (SDP)](https://social.technet.microsoft.com/wiki/contents/articles/28198.asr-data-collection-and-analysis-using-the-vmm-support-diagnostics-platform-sdp-tool.aspx).
 -   Для Hyper-V без VMM [загрузите это средство](https://dcupload.microsoft.com/tools/win7files/DIAG_ASRHyperV_global.DiagCab) и запустите его на узле Hyper-V для сбора данных журналов.
-

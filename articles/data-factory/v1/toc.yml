@@ -199,8 +199,6 @@
       href: 'https://azure.microsoft.com/roadmap/'
     - name: Примеры использования
       href: data-factory-customer-case-studies.md
-    - name: Схема обучения
-      href: 'https://azure.microsoft.com/documentation/learning-paths/data-factory'
     - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
       href: 'https://docs.microsoft.com/answers/topics/azure-data-factory.html'
     - name: Цены

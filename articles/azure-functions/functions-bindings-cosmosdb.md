@@ -7,11 +7,10 @@ ms.topic: reference
 ms.date: 11/21/2017
 ms.custom: seodec18
 ms.openlocfilehash: e30b256d9fa43402c3b2c444aa1a0e0dc16cfdcf
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79277548"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84697628"
 ---
 # <a name="azure-cosmos-db-bindings-for-azure-functions-1x"></a>Привязки Azure Cosmos DB для службы "Функции Azure" версии 1.х
 
@@ -166,23 +165,23 @@ namespace CosmosDBSamplesV1
 
 # <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
-Атрибуты не поддерживаются скриптом C#.
+В скрипте C# атрибуты не поддерживаются.
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-Атрибуты не поддерживаются в JavaScript.
+В JavaScript атрибуты не поддерживаются.
 
 ---
 
 ## <a name="trigger---configuration"></a>Конфигурация триггера
 
-В следующей таблице описаны свойства конфигурации привязки, заданные в файле *Function. JSON* и `CosmosDBTrigger` атрибуте.
+В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `CosmosDBTrigger`.
 
 |свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
 |**type** | н/д | Нужно задать значение `cosmosDBTrigger`. |
-|**двух** | н/д | Нужно задать значение `in`. Этот параметр задается автоматически при создании триггера на портале Azure. |
-|**name** | н/д | Имя переменной, используемое в коде функции, представляющей список документов с изменениями. |
+|**direction** | н/д | Нужно задать значение `in`. Этот параметр задается автоматически при создании триггера на портале Azure. |
+|**name** | Недоступно | Имя переменной, используемое в коде функции, представляющей список документов с изменениями. |
 |**коннектионстрингсеттинг**|**ConnectionStringSetting** | Имя параметра приложения, содержащего строку подключения, используемую для подключения к отслеживаемой учетной записи Azure Cosmos DB. |
 |**Имя**|**DatabaseName**  | Имя базы данных Azure Cosmos DB с отслеживаемой коллекцией. |
 |**collectionName** |**CollectionName** | Имя отслеживаемой коллекции. |
@@ -1101,23 +1100,23 @@ module.exports = function (context, req, toDoItem) {
 
 # <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
-Атрибуты не поддерживаются скриптом C#.
+В скрипте C# атрибуты не поддерживаются.
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-Атрибуты не поддерживаются в JavaScript.
+В JavaScript атрибуты не поддерживаются.
 
 ---
 
 ## <a name="input---configuration"></a>Входная конфигурация
 
-В следующей таблице описаны свойства конфигурации привязки, заданные в файле *Function. JSON* и `DocumentDB` атрибуте.
+В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `DocumentDB`.
 
 |свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
 |**type**     | н/д | Нужно задать значение `documentdb`.        |
-|**двух**     | н/д | Нужно задать значение `in`.         |
-|**name**     | н/д | Имя параметра привязки, представляющего документ в функции.  |
+|**direction**     | н/д | Нужно задать значение `in`.         |
+|**name**     | Недоступно | Имя параметра привязки, представляющего документ в функции.  |
 |**Имя** |**DatabaseName** |База данных, содержащая документ.        |
 |**collectionName** |**CollectionName** | Имя коллекции, содержащей документ. |
 |**идентификатор**    | **Id** | Идентификатор документа, который нужно получить. Это свойство поддерживает [выражения привязок](./functions-bindings-expressions-patterns.md). Не задавайте свойства **id** или **sqlQuery** одновременно. Если не задать ни одного из них, извлекается вся коллекция. |
@@ -1440,26 +1439,26 @@ public static async Task Run(ToDoItem[] toDoItemsIn, IAsyncCollector<ToDoItem> t
 
 # <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
-Атрибуты не поддерживаются скриптом C#.
+В скрипте C# атрибуты не поддерживаются.
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-Атрибуты не поддерживаются в JavaScript.
+В JavaScript атрибуты не поддерживаются.
 
 ---
 
 ## <a name="output---configuration"></a>Выходная конфигурация
 
-В следующей таблице описаны свойства конфигурации привязки, заданные в файле *Function. JSON* и `DocumentDB` атрибуте.
+В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `DocumentDB`.
 
 |свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
 |**type**     | н/д | Нужно задать значение `documentdb`.        |
-|**двух**     | н/д | Нужно задать значение `out`.         |
-|**name**     | н/д | Имя параметра привязки, представляющего документ в функции.  |
+|**direction**     | н/д | Нужно задать значение `out`.         |
+|**name**     | Недоступно | Имя параметра привязки, представляющего документ в функции.  |
 |**Имя** | **DatabaseName**|База данных, содержащая коллекцию, в которой создается документ.     |
 |**collectionName** |**CollectionName**  | Имя коллекции, в которой создается документ. |
-|**createIfNotExists**  |**CreateIfNotExists**    | Логическое значение, указывающее, будет ли создана коллекция при ее отсутствии. Значение по умолчанию — *false*, так как коллекции создаются с использованием зарезервированной пропускной способности, с которой связаны ценовые требования. Дополнительные сведения см. на [странице с ценами](https://azure.microsoft.com/pricing/details/documentdb/).  |
+|**createIfNotExists**  |**CreateIfNotExists**    | Логическое значение, указывающее, будет ли создана коллекция при ее отсутствии. Значение по умолчанию — *false*, так как коллекции создаются с использованием зарезервированной пропускной способности, с которой связаны ценовые требования. Дополнительные сведения см. на [странице с расценками](https://azure.microsoft.com/pricing/details/documentdb/).  |
 |**partitionKey**|**PartitionKey** |Если для `CreateIfNotExists` задано значение true, определяется путь к ключу раздела для созданной коллекции.|
 |**collectionThroughput**|**CollectionThroughput**| Если для `CreateIfNotExists` задано значение true, определяется [пропускная способность](../cosmos-db/set-throughput.md) созданной коллекции.|
 |**connection**;    |**ConnectionStringSetting** |Имя параметра приложения, содержащего строку подключения к Azure Cosmos DB.        |
@@ -1475,7 +1474,7 @@ public static async Task Run(ToDoItem[] toDoItemsIn, IAsyncCollector<ToDoItem> t
 
 ## <a name="exceptions-and-return-codes"></a>Исключения и коды возврата
 
-| Привязка | Справочник |
+| Привязка | Справка |
 |---|---|
 | Cosmos DB | [Коды ошибок Cosmos DB](https://docs.microsoft.com/rest/api/cosmos-db/http-status-codes-for-cosmosdb) |
 

@@ -6,12 +6,12 @@ manager: rochakm
 ms.topic: article
 ms.date: 01/10/2020
 ms.author: sutalasi
-ms.openlocfilehash: 6499c986bef965848303ee9833fd59f5e3f0889c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a4140a0b22f7ca8164d50cf60fe57c861f826eb4
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79257996"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86132518"
 ---
 # <a name="set-up-disaster-recovery-to-azure-for-hyper-v-vms-using-powershell-and-azure-resource-manager"></a>Настройка аварийного восстановления виртуальных машин Hyper-V в Azure с помощью PowerShell и Azure Resource Manager
 
@@ -25,7 +25,7 @@ ms.locfileid: "79257996"
 
 Azure PowerShell предоставляет командлеты для управления Azure, используя Windows PowerShell. Командлеты PowerShell для службы Site Recovery, доступные в Azure PowerShell для диспетчера ресурсов Azure, позволяют обеспечить защиту и выполнить восстановление серверов в Azure.
 
-Для работы с этой статьей не требуется большой опыт работы с PowerShell, но необходимо знакомство с основными понятиями, такими как модули, командлеты и сеансы. Дополнительные сведения см. в [документации по PowerShell](/powershell) и [использовании Azure PowerShell с Azure Resource Manager](../powershell-azure-resource-manager.md).
+Для работы с этой статьей не требуется большой опыт работы с PowerShell, но необходимо знакомство с основными понятиями, такими как модули, командлеты и сеансы. Дополнительные сведения см. в [документации по PowerShell](/powershell) и [использовании Azure PowerShell с Azure Resource Manager](../azure-resource-manager/management/manage-resources-powershell.md).
 
 > [!NOTE]
 > Партнеры корпорации Майкрософт в программе для поставщиков облачных решений могут настроить защиту серверов клиентов и управлять ею в своих подписках CSP (клиентские подписки).
@@ -44,9 +44,9 @@ Azure PowerShell предоставляет командлеты для упра
 
 ## <a name="step-1-sign-in-to-your-azure-account"></a>Шаг 1. Вход в учетную запись Azure
 
-1. Откройте консоль PowerShell и выполните следующую команду, чтобы войти в учетную запись Azure. Командлет открывает веб-страницу с приглашением ввести учетные данные вашей учетной записи: `Connect-AzAccount`.
-   - Кроме того, можно включить учетные данные учетной записи в качестве параметра `Connect-AzAccount` в командлете с помощью параметра **Credential** .
-   - Если вы являетесь партнером CSP, работающим от имени клиента, укажите клиента в качестве клиента, используя его идентификатор tenantID или основное доменное имя клиента. Пример: `Connect-AzAccount -Tenant "fabrikam.com"`
+1. Откройте консоль PowerShell и выполните следующую команду, чтобы войти в учетную запись Azure. Командлет открывает веб-страницу с приглашением ввести учетные данные вашей учетной записи: `Connect-AzAccount` .
+   - Кроме того, можно включить учетные данные учетной записи в качестве параметра в `Connect-AzAccount` командлете с помощью параметра **Credential** .
+   - Если вы являетесь партнером CSP, работающим от имени клиента, укажите клиента в качестве клиента, используя его идентификатор tenantID или основное доменное имя клиента. Например: `Connect-AzAccount -Tenant "fabrikam.com"`
 1. Свяжите подписку, которую собираетесь использовать, с учетной записью, так как последняя может иметь несколько подписок:
 
    ```azurepowershell
@@ -73,7 +73,7 @@ Azure PowerShell предоставляет командлеты для упра
 
 ## <a name="step-2-set-up-the-vault"></a>Шаг 2. Настройка хранилища
 
-1. Создайте группу ресурсов для Azure Resource Manager, которой необходимо создать хранилища, или воспользуйтесь существующими группами ресурсов. Создайте группу ресурсов следующим образом. `$ResourceGroupName` Переменная содержит имя группы ресурсов, которую необходимо создать, а $Geo переменная содержит регион Azure, в котором создается группа ресурсов (например, "Южная Бразилия").
+1. Создайте группу ресурсов для Azure Resource Manager, которой необходимо создать хранилища, или воспользуйтесь существующими группами ресурсов. Создайте группу ресурсов следующим образом. `$ResourceGroupName`Переменная содержит имя группы ресурсов, которую необходимо создать, а $Geo переменная содержит регион Azure, в котором создается группа ресурсов (например, "Южная Бразилия").
 
    ```azurepowershell
    New-AzResourceGroup -Name $ResourceGroupName -Location $Geo
@@ -130,7 +130,7 @@ Set-AzRecoveryServicesAsrVaultContext -Vault $vault
 
 Если вы используете основной сервер Hyper-V, скачайте файл установки и сделайте следующее:
 
-1. Извлеките файлы из _азуреситерековерипровидер. exe_ в локальный каталог, выполнив следующую команду:
+1. Извлеките файлы из _AzureSiteRecoveryProvider.exe_ в локальный каталог, выполнив следующую команду:
 
    ```console
    AzureSiteRecoveryProvider.exe /x:. /q
@@ -216,7 +216,7 @@ Set-AzRecoveryServicesAsrVaultContext -Vault $vault
    Completed
    ```
 
-1. Обновите свойства восстановления (например, размер роли виртуальной машины) и сеть Azure, к которой будет подключен сетевой адаптер виртуальной машины после отработки отказа.
+1. Обновите свойства восстановления (например, размер роли виртуальной машины) и сеть Azure, к которой подключится сетевой адаптер виртуальной машины после отработки отказа.
 
    ```console
    PS C:\> $nw1 = Get-AzVirtualNetwork -Name "FailoverNw" -ResourceGroupName "MyRG"
@@ -240,9 +240,9 @@ Set-AzRecoveryServicesAsrVaultContext -Vault $vault
 > Если вы хотите выполнить репликацию на управляемые диски с поддержкой CMK в Azure, выполните следующие действия с помощью команды AZ PowerShell 3.3.0/назад:
 >
 > 1. Включение отработки отказа на управляемые диски путем обновления свойств виртуальной машины
-> 1. Используйте командлет `Get-AzRecoveryServicesAsrReplicationProtectedItem` , чтобы получить идентификатор диска для каждого диска защищенного элемента.
+> 1. Используйте `Get-AzRecoveryServicesAsrReplicationProtectedItem` командлет, чтобы получить идентификатор диска для каждого диска защищенного элемента.
 > 1. Создайте объект Dictionary с помощью `New-Object "System.Collections.Generic.Dictionary``2[System.String,System.String]"` командлета, который будет содержать сопоставление идентификатора диска с набором шифрования диска. Эти наборы шифрования дисков должны быть предварительно созданы в целевом регионе.
-> 1. Обновите свойства виртуальной машины `Set-AzRecoveryServicesAsrReplicationProtectedItem` с помощью командлета, передав объект Dictionary в параметре **дискидтодискенкриптионсетмап** .
+> 1. Обновите свойства виртуальной машины с помощью `Set-AzRecoveryServicesAsrReplicationProtectedItem` командлета, передав объект Dictionary в параметре **дискидтодискенкриптионсетмап** .
 
 ## <a name="step-8-run-a-test-failover"></a>Шаг 8. Запуск тестовой отработки отказа
 
@@ -263,6 +263,6 @@ Set-AzRecoveryServicesAsrVaultContext -Vault $vault
    $TFjob = Start-AzRecoveryServicesAsrTestFailoverCleanupJob -ReplicationProtectedItem $rpi -Comment "TFO done"
    ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Узнайте больше](/powershell/module/az.recoveryservices) об использовании командлетов PowerShell инструмента Azure Resource Manager для службы Azure Site Recovery.

@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 07/24/2019
 ms.author: mlottner
 ms.openlocfilehash: d598d291612c6e4f58caf77e1b213b2bc3f42820
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81311445"
 ---
 # <a name="security-module"></a>Модуль безопасности
@@ -42,7 +42,7 @@ ms.locfileid: "81311445"
 
 Сведения о создании, настройке и настройке двойника см. в статьях [Создание модуля безопасности двойника](quickstart-create-security-twin.md) и [Настройка агентов безопасности](how-to-agent-configuration.md) . Дополнительные сведения о концепции модуля двойников в центре Интернета вещей см. в разделе [Основные сведения о модуле двойников](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-module-twins) .
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - [Обзор центра безопасности Azure для IoT](overview.md)
 - [Развертывание агентов безопасности](how-to-deploy-agent.md)

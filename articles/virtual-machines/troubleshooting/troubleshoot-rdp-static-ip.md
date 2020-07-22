@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 11/08/2018
 ms.author: genli
-ms.openlocfilehash: 92ad33fbc759605ae901c3bcf09283c8e0b1c4b5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 49f3f44c7de8c700d0093c5eb6f166a1dffb34a4
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77918195"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86087254"
 ---
 #  <a name="cannot-remote-desktop-to-azure-virtual-machines-because-of-static-ip"></a>Сбой подключения удаленного рабочего стола к Виртуальным машинам Azure из-за статического IP-адреса
 
@@ -40,7 +40,7 @@ ms.locfileid: "77918195"
 
 При проверке снимка экрана в разделе [Диагностика загрузки](../troubleshooting/boot-diagnostics.md) на портале Azure вы увидите, что виртуальная машина загружается нормально и ожидает учетных данных на экране входа.
 
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 
 У виртуальной машины есть статический IP-адрес, определенный для сетевого интерфейса в Windows. Этот IP-адрес отличается от адреса, который определен на портале Azure.
 
@@ -56,18 +56,27 @@ ms.locfileid: "77918195"
 ). Если последовательная консоль на нужной виртуальной машине не включена, ознакомьтесь со сведениями о том, как [сбросить сетевой интерфейс](reset-network-interface.md).
 2. Проверьте, отключен ли протокол DHCP в сетевом интерфейсе:
 
-        netsh interface ip show config
+    ```console
+    netsh interface ip show config
+    ```
+
 3. Если протокол DHCP отключен, измените конфигурацию сетевого интерфейса так, чтобы использовался протокол DHCP:
 
-        netsh interface ip set address name="<NIC Name>" source=dhc
+    ```console
+    netsh interface ip set address name="<NIC Name>" source=dhc
+    ```
 
     Например, если имя интерфейса взаимодействия — Ethernet 2, выполните команду ниже:
 
-        netsh interface ip set address name="Ethernet 2" source=dhc
+    ```console
+    netsh interface ip set address name="Ethernet 2" source=dhc
+    ```
 
 4. Запросите конфигурацию IP-адреса еще раз, чтобы убедиться, что сетевой интерфейс правильно настроен. Новый IP-адрес должен соответствовать предоставленному Azure.
 
-        netsh interface ip show config
+    ```console
+    netsh interface ip show config
+    ```
 
     На этом этапе не нужно перезапускать виртуальную машину. Она снова станет доступна.
 

@@ -14,10 +14,9 @@ ms.author: sagonzal
 ms.reviewer: nacanuma
 ms.custom: aaddev
 ms.openlocfilehash: 3d834a8d1524595304c22fed9897094622dfd93f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76696220"
 ---
 # <a name="active-directory-federation-services-support-in-msal-for-java"></a>Поддержка службы федерации Active Directory (AD FS) в MSAL для Java
@@ -32,7 +31,7 @@ MSAL для Java подключается к Azure AD, который выпол
 
 ## <a name="acquire-a-token-interactively-for-a-federated-user"></a>Получение маркера в интерактивном режиме для федеративного пользователя
 
-При вызове `ConfidentialClientApplication.AcquireToken()` функции `PublicClientApplication.AcquireToken()` или `AuthorizationCodeParameters` с `DeviceCodeParameters`помощью или, как правило, пользователь работает следующим образом:
+При вызове функции `ConfidentialClientApplication.AcquireToken()` или `PublicClientApplication.AcquireToken()` с помощью `AuthorizationCodeParameters` или `DeviceCodeParameters` , как правило, пользователь работает следующим образом:
 
 1. Пользователь вводит идентификатор своей учетной записи.
 2. В Azure AD кратко отображается «переход на страницу вашей организации», и пользователь перенаправляется на страницу входа поставщика удостоверений. Страница входа обычно настраивается с помощью логотипа Организации.
@@ -44,8 +43,8 @@ MSAL для Java подключается к Azure AD, который выпол
 
 ## <a name="acquire-a-token-via-username-and-password"></a>Получение маркера с помощью имени пользователя и пароля
 
-При получении маркера с помощью `ConfidentialClientApplication.AcquireToken()` или `PublicClientApplication.AcquireToken()` с `IntegratedWindowsAuthenticationParameters` или `UsernamePasswordParameters`, MSAL для Java получает поставщик удостоверений для связи на основе имени пользователя. MSAL для Java получает маркер [маркера SAML 1,1](reference-saml-tokens.md) от поставщика удостоверений, который затем предоставляет Azure AD, который возвращает JSON Web Token (JWT).
+При получении маркера с помощью `ConfidentialClientApplication.AcquireToken()` или `PublicClientApplication.AcquireToken()` с `IntegratedWindowsAuthenticationParameters` или `UsernamePasswordParameters` , MSAL для Java получает поставщик удостоверений для связи на основе имени пользователя. MSAL для Java получает маркер [маркера SAML 1,1](reference-saml-tokens.md) от поставщика удостоверений, который затем предоставляет Azure AD, который возвращает JSON Web Token (JWT).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения об объединенном варианте см. в статье [Настройка поведения при входе Azure Active Directory для приложения с помощью политики обнаружения домашней области](https://docs.microsoft.com/azure/active-directory/manage-apps/configure-authentication-for-federated-users-portal) .

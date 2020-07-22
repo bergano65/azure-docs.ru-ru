@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 11/27/2019
 ms.author: cynthn
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 354cd8d291f8ad5c842d33b5ac63b0deb58b7d41
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a3c37d42cc6cda644063b098cb53f05079455339
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81870043"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86508531"
 ---
 # <a name="manage-the-availability-of-windows-virtual-machines-in-azure"></a>Управление доступностью виртуальных машин Windows в Azure 
 
@@ -21,10 +21,10 @@ ms.locfileid: "81870043"
 
 [!INCLUDE [virtual-machines-common-manage-availability](../../../includes/virtual-machines-common-manage-availability.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Чтобы больше узнать о балансировке нагрузки виртуальных машин, ознакомьтесь с разделом [Балансировка нагрузки виртуальных машин](tutorial-load-balancer.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
-Просмотр эталонных архитектур для запуска N-уровневого приложения на SQL Server в IaaS
+Просмотрите эталонные образцы архитектуры для выполняющихся N-уровневых приложений на SQL Server в IaaS
 
-* [Использование n-уровневого приложения с SQL Server в Azure](https://docs.microsoft.com/azure/architecture/reference-architectures/n-tier/n-tier-sql-server)
-* [Запуск n-уровневого приложения в нескольких регионах Azure для обеспечения высокой доступности](https://docs.microsoft.com/azure/architecture/reference-architectures/n-tier/multi-region-sql-server)
+* [Использование n-уровневого приложения с SQL Server в Azure](/azure/architecture/reference-architectures/n-tier/n-tier-sql-server)
+* [Запуск n-уровневого приложения в нескольких регионах Azure для обеспечения высокой доступности](/azure/architecture/reference-architectures/n-tier/multi-region-sql-server)

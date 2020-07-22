@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.custom: mvc
 ms.date: 04/05/2017
-ms.openlocfilehash: 00aa744f09b7bcbbbc258b92a8fd5ab750e447c7
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 471690c5c0f5ebb4cea111b85cab1fe0524a36cd
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74039113"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86509729"
 ---
 # <a name="deploy-the-lamp-stack-in-a-load-balanced-virtual-machine-scale-set"></a>Развертывание стека LAMP в масштабируемом наборе виртуальных машин с балансировкой нагрузки
 
@@ -50,17 +50,17 @@ az group delete -n myResourceGroup
 
 | Get-Help | Примечания |
 |---|---|
-| [az group create](https://docs.microsoft.com/cli/azure/group) | Создает группу ресурсов, в которой хранятся все ресурсы. |
-| [az vmss create](https://docs.microsoft.com/cli/azure/vmss) | Создает масштабируемый набор виртуальных машин. |
-| [az network lb rule create](https://docs.microsoft.com/cli/azure/network/lb/rule) | Добавляет конечную точку с балансировкой нагрузки. |
-| [az vmss extension set](https://docs.microsoft.com/cli/azure/vmss/extension) | Создает расширение, которое запускает пользовательский сценарий при развертывании виртуальной машины. |
-| [az vmss update-instances](https://docs.microsoft.com/cli/azure/vmss) | Запускает пользовательский сценарий на экземплярах виртуальной машины, которые были развернуты до применения расширения к масштабируемому набору. |
-| [az vmss scale](https://docs.microsoft.com/cli/azure/vmss) | Увеличивает масштабируемый набор, добавляя экземпляры виртуальной машины. После развертывания на этих экземплярах выполняется пользовательский сценарий. |
-| [az network public-ip list](https://docs.microsoft.com/cli/azure/network/public-ip) | Выводит IP-адреса виртуальных машин, созданных в примере. |
-| [az network lb show](https://docs.microsoft.com/cli/azure/network/lb) | Выводит интерфейсный и внутренний порты, используемые подсистемой балансировки нагрузки. |
+| [az group create](/cli/azure/group) | Создает группу ресурсов, в которой хранятся все ресурсы. |
+| [az vmss create](/cli/azure/vmss) | Создает масштабируемый набор виртуальных машин. |
+| [az network lb rule create](/cli/azure/network/lb/rule) | Добавляет конечную точку с балансировкой нагрузки. |
+| [az vmss extension set](/cli/azure/vmss/extension) | Создает расширение, которое запускает пользовательский сценарий при развертывании виртуальной машины. |
+| [az vmss update-instances](/cli/azure/vmss) | Запускает пользовательский сценарий на экземплярах виртуальной машины, которые были развернуты до применения расширения к масштабируемому набору. |
+| [az vmss scale](/cli/azure/vmss) | Увеличивает масштабируемый набор, добавляя экземпляры виртуальной машины. После развертывания на этих экземплярах выполняется пользовательский сценарий. |
+| [az network public-ip list](/cli/azure/network/public-ip) | Выводит IP-адреса виртуальных машин, созданных в примере. |
+| [az network lb show](/cli/azure/network/lb) | Выводит интерфейсный и внутренний порты, используемые подсистемой балансировки нагрузки. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
+Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 
 Дополнительные примеры скриптов интерфейса командной строки для виртуальных машин см. в [документации по виртуальным машинам Azure под управлением Linux](../linux/cli-samples.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).

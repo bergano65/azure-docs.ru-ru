@@ -1,6 +1,6 @@
 ---
 title: Руководство по запуску сборника схем в Azure Sentinel
-description: Руководство по В этой статье описывается, как запустить сборник схем в Azure Sentinel.
+description: В этом учебнике показано, как использовать сборники схем по обеспечению безопасности в Azure Sentinel для настройки автоматического реагирования на связанные с безопасностью угрозы.
 services: sentinel
 documentationcenter: na
 author: yelevin
@@ -16,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/18/2019
 ms.author: yelevin
-ms.openlocfilehash: f6adcb978dbe540d3bdd352089d4dde407d0fb4c
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 5bc6ca30b9dff3686b16fe5237f815f16f849e9e
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77585090"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85558476"
 ---
 # <a name="tutorial-set-up-automated-threat-responses-in-azure-sentinel"></a>Руководство по настройке автоматического реагирования на угрозы в Azure Sentinel
 

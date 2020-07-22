@@ -1,6 +1,6 @@
 ---
 title: Подключение Azure Information Protection к Azure Sentinel
-description: Узнайте, как подключить данные Azure Information Protection в Azure Sentinel.
+description: Потоковая передача данных журнала из Azure Information Protection в Azure Sentinel путем настройки соединителя данных Azure Information Protection. 
 services: sentinel
 author: yelevin
 manager: rkarlin
@@ -10,12 +10,12 @@ ms.subservice: azure-sentinel
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: yelevin
-ms.openlocfilehash: 396fd7c4289c9d02d451b26f5fb6299acd31e2a4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f06f8d3450f8907aa1be34b738565ac55e5e3d2d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77588558"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85559129"
 ---
 # <a name="connect-data-from-azure-information-protection"></a>Подключение данных из Azure Information Protection
 
@@ -39,10 +39,10 @@ ms.locfileid: "77588558"
 
 - Одна из следующих ролей администратора Azure AD для клиента: 
     - Администратор Azure Information Protection
-    - Администратор безопасности.
+    - администратор безопасности;
     - администратор соответствия требованиям.
-    - Администратор данных соответствия требованиям
-    - Глобальный администратор
+    - Администратор данных соответствия
+    - Глобальный администратор.
     
     > [!NOTE]
     > Нельзя использовать роль администратора Azure Information Protection, если клиент находится на [единой платформе меток](/information-protection/faqs#how-can-i-determine-if-my-tenant-is-on-the-unified-labeling-platform).

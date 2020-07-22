@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 04/04/2020
 ms.author: trbye
-ms.openlocfilehash: 924532318fc6638059bbe9eef0065349463523ae
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: a7e47ebd9695b57163aacdfa5faf3ad82fc7e12d
+ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81400873"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85805580"
 ---
 а также как установить [пакет SDK для службы "Речь"](~/articles/cognitive-services/speech-service/speech-sdk.md) для Python. Если вам нужно только имя пакета, чтобы приступить к работе самостоятельно, выполните `pip install azure-cognitiveservices-speech`.
 
@@ -28,27 +28,28 @@ ms.locfileid: "81400873"
 
   - Чтобы установить необходимые пакеты в Ubuntu, выполните следующие команды:
 
-        ```sh
-        sudo apt-get update
-        sudo apt-get install build-essential libssl1.0.0 libasound2
-        ```
+    ```sh
+    sudo apt-get update
+    sudo apt-get install build-essential libssl1.0.0 libasound2
+    ```
 
   - Чтобы установить необходимые пакеты в Debian 9, выполните следующие команды:
 
-        ```sh
-        sudo apt-get update
-        sudo apt-get install build-essential libssl1.0.2 libasound2
-        ```
+    ```sh
+    sudo apt-get update
+    sudo apt-get install build-essential libssl1.0.2 libasound2
+    ```
 
-  - Чтобы установить необходимые пакеты в RHEL/CentOS 8, выполните следующие команды:
+  - Чтобы установить необходимые пакеты в RHEL/CentOS, выполните следующие команды:
 
-        ```sh
-        sudo yum update
-        sudo yum install alsa-lib openssl python3
-        ```
+    ```sh
+    sudo yum update
+    sudo yum install alsa-lib openssl python3
+    ```
 
 > [!NOTE]
-> Если вы используете RHEL/CentOS 8, выполните инструкции по [настройке OpenSSL для Linux](~/articles/cognitive-services/speech-service/how-to-configure-openssl-linux.md).
+> - Если вы используете RHEL/CentOS 7, выполните инструкции по [настройке пакета SDK службы "Речь" в RHEL/CentOS 7](~/articles/cognitive-services/speech-service/how-to-configure-rhel-centos-7.md).
+> - Если вы используете RHEL/CentOS 8, выполните инструкции по [настройке OpenSSL для Linux](~/articles/cognitive-services/speech-service/how-to-configure-openssl-linux.md).
 
 - В Windows для вашей платформы необходим [распространяемый компонент Microsoft Visual C++ для Visual Studio 2019](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads). Обратите внимание, что при первой установке может потребоваться перезагрузить Windows, чтобы продолжить работу с данным руководством.
 - И, наконец, потребуется [Python 3.5–3.8](https://www.python.org/downloads/). Чтобы проверить установку, откройте командную строку, введите команду `python --version` и проверьте результат. Если установка выполнена правильно, вы получите ответ "Python 3.5.1" или аналогичный.

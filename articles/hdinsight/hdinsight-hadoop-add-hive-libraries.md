@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: H1Hack27Feb2017,hdinsightactive
 ms.date: 02/14/2020
-ms.openlocfilehash: 0b746963cea5a950ba47d8b4dfeb074cb0910436
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c678372fbd54e528a8a16eacc601e815cfd32e58
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77471029"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86082239"
 ---
 # <a name="add-custom-apache-hive-libraries-when-creating-your-hdinsight-cluster"></a>Добавление пользовательских библиотек Apache Hive при создании кластера HDInsight
 
@@ -56,7 +56,7 @@ ms.locfileid: "77471029"
 
 1. Для **действий сценария**укажите следующие сведения.
 
-    |Свойство |Значение |
+    |Свойство. |Значение |
     |---|---|
     |Тип скрипта|- Custom|
     |Имя|Библиотеки |
@@ -65,12 +65,12 @@ ms.locfileid: "77471029"
     |Параметры|введите адрес WASB к контейнеру и учетной записи хранения, содержащий JAR-файлы Например, `wasbs://libs@mystorage.blob.core.windows.net/`.|
 
     > [!NOTE]
-    > Для Apache Spark 2,1 используйте следующий URI Bash: `https://hdiconfigactions.blob.core.windows.net/linuxsetupcustomhivelibsv01/setup-customhivelibs-v00.sh`.
+    > Для Apache Spark 2,1 используйте следующий URI Bash: `https://hdiconfigactions.blob.core.windows.net/linuxsetupcustomhivelibsv01/setup-customhivelibs-v00.sh` .
 
 1. Продолжите подготовку кластера, как описано в статье [Создание кластеров Hadoop под управлением Linux в HDInsight](hdinsight-hadoop-provision-linux-clusters.md).
 
 После завершения создания кластера можно использовать JAR, добавленные с помощью этого скрипта из Hive без использования `ADD JAR` инструкции.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о работе с Hive см. в статье [Обзор Apache Hive и HiveQL в Azure HDInsight](hadoop/hdinsight-use-hive.md).

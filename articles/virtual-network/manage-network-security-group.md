@@ -6,17 +6,16 @@ services: virtual-network
 documentationcenter: na
 author: KumudD
 ms.service: virtual-network
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/13/2020
 ms.author: kumud
-ms.openlocfilehash: 62972be5b363c0a22a24a9056b6f3f8b11829566
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 38fe9582595969ac92d3468b3b7e8c0a9d793c0c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82182911"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84708286"
 ---
 # <a name="create-change-or-delete-a-network-security-group"></a>Создание, изменение и удаление группы безопасности сети
 
@@ -56,7 +55,7 @@ ms.locfileid: "82182911"
     | --- | --- |
     | **Подписка** | Выберите свою подписку. |
     | **Группа ресурсов** | Выберите существующую группу ресурсов или щелкните **создать** , чтобы создать новую группу ресурсов. |
-    | **имя**; | Введите уникальную текстовую строку в группе ресурсов. |
+    | **Name** | Введите уникальную текстовую строку в группе ресурсов. |
     | **Регион** | Выберите нужное расположение. |
 
 4. Выберите **Review + create** (Просмотреть и создать).
@@ -65,7 +64,7 @@ ms.locfileid: "82182911"
 
 #### <a name="commands"></a>Команды
 
-| Инструмент | Get-Help |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [az network nsg create](/cli/azure/network/nsg#az-network-nsg-create) |
 | PowerShell | [New-AzNetworkSecurityGroup](/powershell/module/az.network/new-aznetworksecuritygroup) |
@@ -76,7 +75,7 @@ ms.locfileid: "82182911"
 
 #### <a name="commands"></a>Команды
 
-| Инструмент | Get-Help |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network NSG List](/cli/azure/network/nsg#az-network-nsg-list) |
 | PowerShell | [Get-AzNetworkSecurityGroup](/powershell/module/az.network/get-aznetworksecuritygroup) |
@@ -96,12 +95,12 @@ ms.locfileid: "82182911"
 - [Журнал действий](../azure-monitor/platform/platform-logs-overview.md)
 - [Управление доступом (IAM)](../role-based-access-control/overview.md)
 - [Теги](../azure-resource-manager/management/tag-resources.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
-- [Блокировки](../azure-resource-manager/management/lock-resources.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
+- [Намерен](../azure-resource-manager/management/lock-resources.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
 - [Скрипт автоматизации](../azure-resource-manager/templates/export-template-portal.md)
 
 #### <a name="commands"></a>Команды
 
-| Инструмент | Get-Help |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network NSG показывать](/cli/azure/network/nsg#az-network-nsg-show) |
 | PowerShell | [Get-AzNetworkSecurityGroup](/powershell/module/az.network/get-aznetworksecuritygroup) |
@@ -116,7 +115,7 @@ ms.locfileid: "82182911"
 
 #### <a name="commands"></a>Команды
 
-| Инструмент | Get-Help |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network NSG обновление](/cli/azure/network/nsg#az-network-nsg-update) |
 | PowerShell | [Set-AzNetworkSecurityGroup](/powershell/module/az.network/set-aznetworksecuritygroup) |
@@ -137,7 +136,7 @@ ms.locfileid: "82182911"
 
 #### <a name="commands"></a>Команды
 
-| Инструмент | Get-Help |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network NSG Delete](/cli/azure/network/nsg#az-network-nsg-delete) |
 | PowerShell | [Remove-Азнетворксекуритиграуп](/powershell/module/az.network/remove-aznetworksecuritygroup) |
@@ -162,25 +161,25 @@ ms.locfileid: "82182911"
 
     | Параметр | Значение | Сведения |
     | ------- | ----- | ------- |
-    | **Источник** | Одно из двух значений:<ul><li>**Любые**</li><li>**IP-адреса**</li><li>**Тег службы** (правило безопасности для входящего трафика) или **VirtualNetwork** (правило безопасности для исходящего трафика)</li><li>**Группа&nbsp;безопасности&nbsp;приложений**</li></ul> | <p>При выборе **IP-адресов**необходимо также указать **диапазоны исходных IP-адресов и CIDR**.</p><p>При выборе **тега службы**можно также выбрать **тег исходной службы**.</p><p>Если выбрана **Группа безопасности приложений**, необходимо также выбрать существующую группу безопасности приложений. Если выбрать **группу безопасности приложений** как для **источника** , так и для **назначения**, то сетевые интерфейсы в обеих группах безопасности приложений должны находиться в одной виртуальной сети.</p> |
-    | **Исходные IP-адреса и диапазоны CIDR** | Разделенный запятыми список IP-адресов и диапазонов между междоменной маршрутизацией (CIDR) | <p>Этот параметр отображается при изменении **источника** на **IP-адреса**. Необходимо указать одно значение или разделенный запятыми список нескольких значений. Пример нескольких значений: `10.0.0.0/16, 192.188.1.1`. Число значений, которые можно указать, ограничено. Дополнительные сведения см. в статье [ограничения Azure](../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-resource-manager-virtual-networking-limits).</p><p>Если указанный IP-адрес назначен виртуальной машине Azure, укажите его частный IP-адрес, а не его общедоступный IP-адрес. Azure обрабатывает правила безопасности после того, как он преобразует общедоступный IP-адрес в частный IP-адрес для правил безопасности для входящего трафика, но до того, как он переводит частный IP-адрес в общедоступный IP-адрес для исходящих правил. Дополнительные сведения об общедоступных и частных IP-адресах в Azure см. в статье, посвященной [типам IP-адресов](virtual-network-ip-addresses-overview-arm.md).</p> |
+    | **Источник** | Одно из двух значений:<ul><li>**Любые**</li><li>**IP-адреса**</li><li>**Тег службы** (правило безопасности для входящего трафика) или **VirtualNetwork** (правило безопасности для исходящего трафика)</li><li>**&nbsp;Группа безопасности &nbsp; приложений**</li></ul> | <p>При выборе **IP-адресов**необходимо также указать **диапазоны исходных IP-адресов и CIDR**.</p><p>При выборе **тега службы**можно также выбрать **тег исходной службы**.</p><p>Если выбрана **Группа безопасности приложений**, необходимо также выбрать существующую группу безопасности приложений. Если выбрать **группу безопасности приложений** как для **источника** , так и для **назначения**, то сетевые интерфейсы в обеих группах безопасности приложений должны находиться в одной виртуальной сети.</p> |
+    | **Исходные IP-адреса и диапазоны CIDR** | Разделенный запятыми список IP-адресов и диапазонов между междоменной маршрутизацией (CIDR) | <p>Этот параметр отображается при изменении **источника** на **IP-адреса**. Необходимо указать одно значение или разделенный запятыми список нескольких значений. Пример нескольких значений: `10.0.0.0/16, 192.188.1.1` . Число значений, которые можно указать, ограничено. Дополнительные сведения см. в статье [ограничения Azure](../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-resource-manager-virtual-networking-limits).</p><p>Если указанный IP-адрес назначен виртуальной машине Azure, укажите его частный IP-адрес, а не его общедоступный IP-адрес. Azure обрабатывает правила безопасности после того, как он преобразует общедоступный IP-адрес в частный IP-адрес для правил безопасности для входящего трафика, но до того, как он переводит частный IP-адрес в общедоступный IP-адрес для исходящих правил. Дополнительные сведения об общедоступных и частных IP-адресах в Azure см. в статье, посвященной [типам IP-адресов](virtual-network-ip-addresses-overview-arm.md).</p> |
     | **Тег службы источника** | Тег службы из раскрывающегося списка | Этот необязательный параметр отображается, если для правила безопасности входящего трафика задан тег " **источник** — **Служба** ". Тег службы — это предопределенный идентификатор категории IP-адресов. Дополнительные сведения о доступных тегах служб и о том, что представляет каждый тег, см. в разделе [теги служб](security-overview.md#service-tags). |
     | **Исходная группа безопасности приложений** | Существующая группа безопасности приложений | Этот параметр отображается, если для параметра **источник** задать значение **Группа безопасности приложения**. Выберите группу безопасности приложений, которая находится в том же регионе, что и сетевой интерфейс. Узнайте, как [создать группу безопасности приложений](#create-an-application-security-group). |
-    | **Диапазоны исходных портов** | Одно из двух значений:<ul><li>Один порт, например`80`</li><li>Диапазон портов, например`1024-65535`</li><li>Разделенный запятыми список отдельных портов и/или диапазонов портов, например`80, 1024-65535`</li><li>Звездочка (`*`), разрешающая трафик через любой порт</li></ul> | Этот параметр указывает порты, в которых правило разрешает или запрещает трафик. Число портов, которые можно указать, ограничено. Дополнительные сведения см. в статье [ограничения Azure](../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-resource-manager-virtual-networking-limits). |
-    | **Назначение** | Одно из двух значений:<ul><li>**Любые**</li><li>**IP-адреса**</li><li>**Тег службы** (правило безопасности для исходящего трафика) или **VirtualNetwork** (правило безопасности для входящего трафика)</li><li>**Группа&nbsp;безопасности&nbsp;приложений**</li></ul> | <p>При выборе **IP-адресов**также укажите **диапазоны IP-адресов назначения и CIDR**.</p><p>Если выбрать **VirtualNetwork**, трафик будет разрешен для всех IP-адресов в адресном пространстве виртуальной сети. **VirtualNetwork** — это тег службы.</p><p>Если выбрана **Группа безопасности приложений**, необходимо выбрать существующую группу безопасности приложений. Узнайте, как [создать группу безопасности приложений](#create-an-application-security-group).</p> |
+    | **Диапазоны исходных портов** | Одно из двух значений:<ul><li>Один порт, например`80`</li><li>Диапазон портов, например`1024-65535`</li><li>Разделенный запятыми список отдельных портов и/или диапазонов портов, например`80, 1024-65535`</li><li>Звездочка ( `*` ), разрешающая трафик через любой порт</li></ul> | Этот параметр указывает порты, в которых правило разрешает или запрещает трафик. Число портов, которые можно указать, ограничено. Дополнительные сведения см. в статье [ограничения Azure](../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-resource-manager-virtual-networking-limits). |
+    | **Местоназначение** | Одно из двух значений:<ul><li>**Любые**</li><li>**IP-адреса**</li><li>**Тег службы** (правило безопасности для исходящего трафика) или **VirtualNetwork** (правило безопасности для входящего трафика)</li><li>**&nbsp;Группа безопасности &nbsp; приложений**</li></ul> | <p>При выборе **IP-адресов**также укажите **диапазоны IP-адресов назначения и CIDR**.</p><p>Если выбрать **VirtualNetwork**, трафик будет разрешен для всех IP-адресов в адресном пространстве виртуальной сети. **VirtualNetwork** — это тег службы.</p><p>Если выбрана **Группа безопасности приложений**, необходимо выбрать существующую группу безопасности приложений. Узнайте, как [создать группу безопасности приложений](#create-an-application-security-group).</p> |
     | **Диапазоны IP-адресов назначения и CIDR** | Разделенный запятыми список IP-адресов и диапазонов CIDR | <p>Этот параметр отображается при изменении **назначения** на **IP-адреса**. Аналогично **исходным** и **исходным IP-адресам и диапазонам CIDR**можно указать один или несколько адресов или диапазонов. Число, которое можно указать, ограничено. Дополнительные сведения см. в статье [ограничения Azure](../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-resource-manager-virtual-networking-limits).</p><p>Если указанный IP-адрес назначен виртуальной машине Azure, убедитесь, что вы указали его частный IP-адрес, а не его общедоступный. Azure обрабатывает правила безопасности после того, как он преобразует общедоступный IP-адрес в частный IP-адрес для входящих правил безопасности, но до того, как Azure переводит частный IP-адрес в общедоступный IP-адрес для исходящих правил. Дополнительные сведения об общедоступных и частных IP-адресах в Azure см. в статье, посвященной [типам IP-адресов](virtual-network-ip-addresses-overview-arm.md).</p> |
     | **Тег целевой службы** | Тег службы из раскрывающегося списка | Этот необязательный параметр отображается, если изменить **назначение** на **тег службы** для исходящего правила безопасности. Тег службы — это предопределенный идентификатор категории IP-адресов. Дополнительные сведения о доступных тегах служб и о том, что представляет каждый тег, см. в разделе [теги служб](security-overview.md#service-tags). |
     | **Целевая группа безопасности приложений** | Существующая группа безопасности приложений | Этот параметр отображается, если для параметра **назначение** задано значение **Группа безопасности приложения**. Выберите группу безопасности приложений, которая находится в том же регионе, что и сетевой интерфейс. Узнайте, как [создать группу безопасности приложений](#create-an-application-security-group). |
-    | **Диапазоны портов назначения** | Одно из двух значений:<ul><li>Один порт, например`80`</li><li>Диапазон портов, например`1024-65535`</li><li>Разделенный запятыми список отдельных портов и/или диапазонов портов, например`80, 1024-65535`</li><li>Звездочка (`*`), разрешающая трафик через любой порт</li></ul> | Как и в случае с **диапазонами исходных портов**, можно указать один или несколько портов и диапазонов. Число, которое можно указать, ограничено. Дополнительные сведения см. в статье [ограничения Azure](../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-resource-manager-virtual-networking-limits). |
-    | **протокол**; | **ANY**, **TCP**, **UDP**или **ICMP** | Правило может быть ограничено протоколом TCP, протоколом UDP или протоколом обмена сообщениями Интернета (ICMP). По умолчанию правило применяется ко всем протоколам. |
+    | **Диапазоны портов назначения** | Одно из двух значений:<ul><li>Один порт, например`80`</li><li>Диапазон портов, например`1024-65535`</li><li>Разделенный запятыми список отдельных портов и/или диапазонов портов, например`80, 1024-65535`</li><li>Звездочка ( `*` ), разрешающая трафик через любой порт</li></ul> | Как и в случае с **диапазонами исходных портов**, можно указать один или несколько портов и диапазонов. Число, которое можно указать, ограничено. Дополнительные сведения см. в статье [ограничения Azure](../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-resource-manager-virtual-networking-limits). |
+    | **Протокол** | **ANY**, **TCP**, **UDP**или **ICMP** | Правило может быть ограничено протоколом TCP, протоколом UDP или протоколом обмена сообщениями Интернета (ICMP). По умолчанию правило применяется ко всем протоколам. |
     | **Действие** | **Разрешить** или **запретить** | Этот параметр указывает, разрешает или запрещает доступ данного правила к указанной конфигурации источника и назначения. |
     | **Priority** | Значение от 100 до 4096, уникальное для всех правил безопасности в группе безопасности сети | Azure обрабатывает правила безопасности в порядке приоритета. Чем меньше число, тем выше приоритет. При создании правил, таких как 100, 200 и 300, рекомендуется оставлять зазор между номерами приоритетов. Освобождение пропусков упрощает добавление правил в будущем, чтобы их можно было задать выше или ниже приоритета по сравнению с существующими правилами. |
-    | **имя**; | Уникальное имя правила в группе безопасности сети. | Оно может содержать до 80 знаков. Оно должно начинаться с буквы или цифры и должно заканчиваться буквой, цифрой или символом подчеркивания. Имя может содержать только буквы, цифры, символы подчеркивания, точки или дефисы. |
+    | **Name** | Уникальное имя правила в группе безопасности сети. | Оно может содержать до 80 знаков. Оно должно начинаться с буквы или цифры и должно заканчиваться буквой, цифрой или символом подчеркивания. Имя может содержать только буквы, цифры, символы подчеркивания, точки или дефисы. |
     | **Описание** | Текстовое описание | При необходимости можно указать текстовое описание для правила безопасности. |
 
 #### <a name="commands"></a>Команды
 
-| Инструмент | Get-Help |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [az network nsg rule create](/cli/azure/network/nsg/rule#az-network-nsg-rule-create) |
 | PowerShell | [New-AzNetworkSecurityRuleConfig](/powershell/module/az.network/new-aznetworksecurityruleconfig) |
@@ -199,7 +198,7 @@ ms.locfileid: "82182911"
 
 #### <a name="commands"></a>Команды
 
-| Инструмент | Get-Help |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [az network nsg rule list](/cli/azure/network/nsg/rule#az-network-nsg-rule-list) |
 | PowerShell | [Get-Азнетворксекуритирулеконфиг](/powershell/module/az.network/get-aznetworksecurityruleconfig) |
@@ -219,7 +218,7 @@ ms.locfileid: "82182911"
 
 #### <a name="commands"></a>Команды
 
-| Инструмент | Get-Help |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network NSG, отображение правила](/cli/azure/network/nsg/rule#az-network-nsg-rule-show) |
 | PowerShell | [Get-Азнетворксекуритирулеконфиг](/powershell/module/az.network/get-aznetworksecurityruleconfig) |
@@ -235,7 +234,7 @@ ms.locfileid: "82182911"
 
 #### <a name="commands"></a>Команды
 
-| Инструмент | Get-Help |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [az network nsg rule update](/cli/azure/network/nsg/rule#az-network-nsg-rule-update) |
 | PowerShell | [Set-AzNetworkSecurityRuleConfig.](/powershell/module/az.network/set-aznetworksecurityruleconfig) |
@@ -251,7 +250,7 @@ ms.locfileid: "82182911"
 
 #### <a name="commands"></a>Команды
 
-| Инструмент | Get-Help |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network NSG правило Delete](/cli/azure/network/nsg/rule#az-network-nsg-rule-delete) |
 | PowerShell | [Remove-Азнетворксекуритирулеконфиг](/powershell/module/az.network/remove-aznetworksecurityruleconfig) |
@@ -274,7 +273,7 @@ ms.locfileid: "82182911"
     | --- | --- |
     | **Подписка** | Выберите свою подписку. |
     | **Группа ресурсов** | Выберите существующую группу ресурсов или щелкните **создать** , чтобы создать новую группу ресурсов. |
-    | **имя**; | Введите уникальную текстовую строку в группе ресурсов. |
+    | **Name** | Введите уникальную текстовую строку в группе ресурсов. |
     | **Регион** | Выберите нужное расположение. |
 
 5. Выберите **Review + create** (Просмотреть и создать).
@@ -283,7 +282,7 @@ ms.locfileid: "82182911"
 
 #### <a name="commands"></a>Команды
 
-| Инструмент | Get-Help |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network ASG CREATE](/cli/azure/network/asg#az-network-asg-create) |
 | PowerShell | [New-Азаппликатионсекуритиграуп](/powershell/module/az.network/new-azapplicationsecuritygroup) |
@@ -294,7 +293,7 @@ ms.locfileid: "82182911"
 
 #### <a name="commands"></a>Команды
 
-| Инструмент | Get-Help |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network ASG List](/cli/azure/network/asg#az-network-asg-list) |
 | PowerShell | [Get-Азаппликатионсекуритиграуп](/powershell/module/az.network/get-azapplicationsecuritygroup) |
@@ -307,7 +306,7 @@ ms.locfileid: "82182911"
 
 #### <a name="commands"></a>Команды
 
-| Инструмент | Get-Help |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network ASG показывать](/cli/azure/network/asg#az-network-asg-show) |
 | PowerShell | [Get-Азаппликатионсекуритиграуп](/powershell/module/az.network/get-azapplicationsecuritygroup) |
@@ -327,7 +326,7 @@ ms.locfileid: "82182911"
 
 #### <a name="commands"></a>Команды
 
-| Инструмент | Get-Help |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network ASG обновление](/cli/azure/network/asg#az-network-asg-update) |
 | PowerShell | Нет командлета PowerShell |
@@ -344,7 +343,7 @@ ms.locfileid: "82182911"
 
 #### <a name="commands"></a>Команды
 
-| Инструмент | Get-Help |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network ASG Delete](/cli/azure/network/asg#az-network-asg-delete) |
 | PowerShell | [Remove-Азаппликатионсекуритиграуп](/powershell/module/az.network/remove-azapplicationsecuritygroup) |
@@ -355,7 +354,7 @@ ms.locfileid: "82182911"
 
 ### <a name="network-security-group"></a>Группа безопасности сети
 
-| Действие                                                        |   Имя                                                                |
+| Действие                                                        |   name                                                                |
 |-------------------------------------------------------------- |   -------------------------------------------                         |
 | Microsoft.Network/networkSecurityGroups/read                  |   Получение группы безопасности сети.                                          |
 | Microsoft.Network/networkSecurityGroups/write                 |   Создание или обновление группы безопасности сети.                             |
@@ -364,15 +363,15 @@ ms.locfileid: "82182911"
 
 ### <a name="network-security-group-rule"></a>Правило группы безопасности сети
 
-| Действие                                                        |   Имя                                                                |
+| Действие                                                        |   name                                                                |
 |-------------------------------------------------------------- |   -------------------------------------------                         |
-| Microsoft.Network/networkSecurityGroups/rules/read            |   Получение правила.                                                            |
-| Microsoft.Network/networkSecurityGroups/rules/write           |   Создание или обновление правила.                                               |
-| Microsoft.Network/networkSecurityGroups/rules/delete          |   Удаление правила.                                                         |
+| Microsoft.Network/networkSecurityGroups/securityRules/read            |   Получение правила.                                                            |
+| Microsoft.Network/networkSecurityGroups/securityRules/write           |   Создание или обновление правила.                                               |
+| Microsoft.Network/networkSecurityGroups/securityRules/delete          |   Удаление правила.                                                         |
 
 ### <a name="application-security-group"></a>Группа безопасности приложений
 
-| Действие                                                                     | Имя                                                     |
+| Действие                                                                     | name                                                     |
 | --------------------------------------------------------------             | -------------------------------------------              |
 | Microsoft.Network/applicationSecurityGroups/joinIpConfiguration/action     | Присоединение конфигурации IP к группе безопасности приложений.|
 | Microsoft.Network/applicationSecurityGroups/joinNetworkSecurityRule/action | Присоединение правила безопасности к группе безопасности приложений.    |
@@ -380,7 +379,7 @@ ms.locfileid: "82182911"
 | Microsoft.Network/applicationSecurityGroups/write                          | Создание или обновление группы безопасности приложений.           |
 | Microsoft.Network/applicationSecurityGroups/delete                         | Удаление группы безопасности приложений                     |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Создание сети или группы безопасности приложений с помощью [PowerShell](powershell-samples.md) или [Azure CLI](cli-samples.md) примеров сценариев или шаблонов Azure [Диспетчер ресурсов](template-samples.md)
 - Создание и назначение [определений политик Azure](policy-samples.md) для виртуальных сетей

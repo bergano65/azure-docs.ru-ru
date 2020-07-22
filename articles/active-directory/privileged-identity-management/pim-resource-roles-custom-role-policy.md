@@ -7,19 +7,19 @@ author: curtand
 manager: daveba
 ms.service: active-directory
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: pim
 ms.date: 11/08/2019
 ms.author: curtand
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fbe08cff2b57155f8f3315f5d3454abfbdad47a0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: aa51508746d0024be0a5acfaeeac62e86db67d3f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "73847064"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84743751"
 ---
 # <a name="use-custom-roles-for-azure-resources-in-privileged-identity-management"></a>Использование пользовательских ролей для ресурсов Azure в управление привилегированными пользователями
 
@@ -48,7 +48,7 @@ ms.locfileid: "73847064"
 
 Наконец, [назначьте роли](pim-resource-roles-assign-roles.md) определенной группе участников, для которых вы хотите применить настроенные параметры.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Настройка параметров роли ресурсов Azure в управление привилегированными пользователями](pim-resource-roles-configure-role-settings.md)
 - [Пользовательские роли в Azure](../../role-based-access-control/custom-roles.md)

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 12/05/2016
 ms.author: akjosh
-ms.openlocfilehash: 79991dad96742109817d579b951082d1a30e3951
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 529024256b8b3f6da7146787d3a37c59a13b5bd3
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79253914"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86494757"
 ---
 # <a name="exporting-resource-groups-that-contain-vm-extensions"></a>Экспорт групп ресурсов, которые содержат расширения виртуальной машины
 
@@ -33,18 +33,7 @@ ms.locfileid: "79253914"
 
 Скрипт службы автоматизации поддерживает следующие расширения.
 
-| Расширение ||||
-|---|---|---|---|
-| Резервное копирование Acronis | Агент Datadog для Windows | Исправления для ОС Linux | Моментальные снимки виртуальной машины Linux
-| Резервное копирование Acronis для Linux | Расширение Docker | Агент Puppet |
-| Сведения о BG | Расширение DSC | Site 24x7 для Apm Insight |
-| Агент BMC CTM для Linux | Dynatrace для Linux | Site 24x7 для сервера Linux |
-| Агент BMC CTM для Windows | Dynatrace для Windows | Site 24x7 для сервера Windows Server |
-| Клиент Chef | Защитник приложений HPE Security | Trend Micro DSA |
-| Пользовательский скрипт | Защита от вредоносных программ IaaS | Trend Micro DSA для Linux |
-| Расширение пользовательских сценариев | Диагностика IaaS | VM Access для Linux |
-| Custom Script для Linux | Клиент Chef для Linux | VM Access для Linux |
-| Агент Datadog для Linux | Диагностика Linux | Моментальный снимок виртуальной машины |
+> Резервное копирование Acronis, Acronis Backup Linux, BG сведения, BMC CTM для Agent Linux BMC CTM для Agent Windows, клиент Chef, Пользовательский скрипт, расширение пользовательских сценариев, Пользовательский скрипт для Linux, Datadog Linux Agent, Datadog агент Windows, расширение DOCKER, расширение DSC, dynaTrace Linux, dynaTrace Windows, защитник приложения HPE Security, средство защиты от вредоносных программ IaaS, система диагностики для Linux, Chef Agent, сайт Круглосуточная аналитика APM , Сайт Круглосуточная сервер Linux, сайт Круглосуточная Windows Server, Trend Micro DSA, тенденция Micro DSA Linux, доступ к ВИРТУАЛЬНОЙ машине для Linux, виртуальная машина для Linux, моментальный снимок виртуальной машины, моментальный снимок ВМ Linux
 
 ## <a name="export-the-resource-group"></a>Экспорт группы ресурсов
 
@@ -148,7 +137,7 @@ ms.locfileid: "79253914"
 }
 ```
 
-Если вы используете параметры шаблона, чтобы определить значения свойств, их следует создать. Создавая параметры шаблона для значений защищенной конфигурации, обязательно используйте тип параметра `SecureString`, чтобы защитить конфиденциальные значения. Дополнительную информацию об использовании параметров см. в статье [Создание шаблонов Azure Resource Manager](../../resource-group-authoring-templates.md).
+Если вы используете параметры шаблона, чтобы определить значения свойств, их следует создать. Создавая параметры шаблона для значений защищенной конфигурации, обязательно используйте тип параметра `SecureString`, чтобы защитить конфиденциальные значения. Дополнительную информацию об использовании параметров см. в статье [Создание шаблонов Azure Resource Manager](../../azure-resource-manager/templates/template-syntax.md).
 
 Для расширения `IaasDiagnostic` будут создаваться следующие параметры в разделе параметров шаблона Resource Manager.
 

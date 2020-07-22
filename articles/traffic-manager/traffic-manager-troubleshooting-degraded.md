@@ -7,17 +7,17 @@ author: rohinkoul
 manager: kumudD
 ms.service: traffic-manager
 ms.devlang: na
-ms.topic: article
+ms.topic: troubleshooting
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/03/2017
 ms.author: rohink
-ms.openlocfilehash: 6d720067b619b0d871899f2ac9025a9d8ab24d95
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 88c2536ad53be0beb583dc64e633322b2a531d15
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82130772"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86183449"
 ---
 # <a name="troubleshooting-degraded-state-on-azure-traffic-manager"></a>Устранение неполадок, связанных со сбоем диспетчера трафика
 
@@ -48,7 +48,7 @@ ms.locfileid: "82130772"
 
 Кроме того, для просмотра ответа HTTP можно воспользоваться вкладкой "Сеть" средств отладки F12 в Internet Explorer.
 
-В этом примере мы хотим увидеть ответ от нашего URL-адреса пробы: HTTP\/:/watestsdp2008r2.cloudapp.NET:80/Probe. Проблема продемонстрирована в приведенном ниже примере PowerShell.
+В этом примере мы хотим увидеть ответ от нашего URL-адреса пробы: http: \/ /watestsdp2008r2.cloudapp.NET:80/Probe. Проблема продемонстрирована в приведенном ниже примере PowerShell.
 
 ```powershell
 Invoke-WebRequest 'http://watestsdp2008r2.cloudapp.net/Probe' -MaximumRedirection 0 -ErrorAction SilentlyContinue | Select-Object StatusCode,StatusDescription
@@ -56,9 +56,11 @@ Invoke-WebRequest 'http://watestsdp2008r2.cloudapp.net/Probe' -MaximumRedirectio
 
 Выходные данные примера:
 
-    StatusCode StatusDescription
-    ---------- -----------------
-           301 Moved Permanently
+```output
+StatusCode StatusDescription
+---------- -----------------
+        301 Moved Permanently
+```
 
 Обратите внимание, что получен ответ перенаправления. Как упоминалось ранее, любое состояние кода, отличное от 200, свидетельствует о сбое. Диспетчер трафика изменяет состояние конечной точки на Offline (Не в сети). Для решения проблемы проверьте конфигурацию веб-сайта, чтобы обеспечить возврат соответствующего кода состояния из пути проверки. Перенастройте проверку диспетчера трафика таким образом, чтобы она указывала на путь, возвращающий ответ 200.
 
@@ -79,7 +81,7 @@ public class TrustAllCertsPolicy : ICertificatePolicy {
 [System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Next Steps
 
 [О методах маршрутизации трафика в диспетчере трафика](traffic-manager-routing-methods.md)
 

@@ -11,13 +11,13 @@ metadata:
   author: mtillman
   ms.author: mtillman
   manager: daveba
-  ms.date: 05/19/2020
-  ms.openlocfilehash: 4e1b18e1037b37deba3e037f3e896bf1536f4fd7
-  ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+  ms.date: 05/29/2020
+  ms.openlocfilehash: 13e69e5f45244be79d06b0014d32e5c8192c777c
+  ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 05/19/2020
-  ms.locfileid: "83591919"
+  ms.lasthandoff: 07/07/2020
+  ms.locfileid: "86038078"
 highlightedContent:
   items:
   - title: Что такое Azure AD?
@@ -42,15 +42,15 @@ conceptualContent:
   items:
   - title: Управление приложениями
     links:
-    - url: ./manage-apps/what-is-single-sign-on.md
-      itemType: concept
-      text: Что собой представляет единый вход?
-    - url: ./manage-apps/user-provisioning.md
-      itemType: tutorial
-      text: Автоматическая подготовка пользователей
-    - url: ./manage-apps/application-proxy.md
-      itemType: concept
-      text: Прокси приложения для локальных приложений
+    - url: ./manage-apps/what-is-application-management.md
+      itemType: overview
+      text: Что такое управление приложениями?
+    - url: ./manage-apps/view-applications-portal.md
+      itemType: quickstart
+      text: Просмотр приложений, использующих ваш клиент для управления удостоверениями
+    - url: ./manage-apps/add-application-portal-setup-sso.md
+      itemType: quickstart
+      text: Настройка единого входа на основе SAML
     footerLink:
       url: ./manage-apps/index.yml
       text: Подробнее
@@ -109,20 +109,6 @@ conceptualContent:
       text: Условия на основе расположения
     footerLink:
       url: ./conditional-access/index.yml
-      text: Подробнее
-  - title: Разработчики
-    links:
-    - url: ./develop/v2-overview.md
-      itemType: overview
-      text: Общие сведения о платформе удостоверений Майкрософт
-    - url: ./develop/v2-oauth2-auth-code-flow.md
-      itemType: concept
-      text: Поток кода авторизации OAuth 2.0
-    - url: ./develop/quickstart-register-app.md
-      itemType: quickstart
-      text: Регистрация приложения с помощью платформы удостоверений Майкрософт
-    footerLink:
-      url: ./develop/index.yml
       text: Подробнее
   - title: Управление устройствами
     links:
@@ -235,6 +221,20 @@ conceptualContent:
       text: Службы с поддержкой управляемых удостоверений
     footerLink:
       url: ./managed-identities-azure-resources/index.yml
+      text: Подробнее
+  - title: Платформа удостоверений Майкрософт
+    links:
+    - url: ./develop/v2-overview.md
+      itemType: overview
+      text: Общие сведения о платформе удостоверений Майкрософт
+    - url: ./develop/v2-oauth2-auth-code-flow.md
+      itemType: concept
+      text: Поток кода авторизации OAuth 2.0
+    - url: ./develop/quickstart-register-app.md
+      itemType: quickstart
+      text: Регистрация приложения с помощью платформы удостоверений Майкрософт
+    footerLink:
+      url: ./develop/index.yml
       text: Подробнее
   - title: Управление привилегированными пользователями (PIM)
     links:

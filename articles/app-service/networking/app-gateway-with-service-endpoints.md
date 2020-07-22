@@ -15,10 +15,9 @@ ms.date: 12/09/2019
 ms.author: madsd
 ms.custom: seodec18
 ms.openlocfilehash: 5e32baa10e98f0f57a861f8cebfb7506ad615631
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74980066"
 ---
 # <a name="application-gateway-integration-with-service-endpoints"></a>Интеграция шлюза приложений с конечными точками службы
@@ -83,7 +82,7 @@ az webapp config access-restriction set --resource-group myRG --name myWebApp --
 az webapp config access-restriction add --resource-group myRG --name myWebApp --scm-site --rule-name KudoAccess --priority 200 --ip-address 208.130.0.0/16
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о Среда службы приложений см. в [документации по среда службы приложений](https://docs.microsoft.com/azure/app-service/environment).
 
 Для дальнейшей защиты веб-приложения сведения о брандмауэре веб-приложения в шлюзе приложений можно найти в [документации по брандмауэру веб-приложения Azure](../../web-application-firewall/ag/ag-overview.md).

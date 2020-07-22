@@ -5,15 +5,15 @@ author: omidm1
 ms.author: omidm
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: seoapr2020
 ms.date: 04/27/2020
-ms.openlocfilehash: 48b322f32bd6e8f2a2da0c5be8eb7b7987881f83
-ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
+ms.openlocfilehash: 1e88fc64ea297f70f56478588312675fb233f221
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82204123"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86085945"
 ---
 # <a name="use-apache-oozie-with-apache-hadoop-to-define-and-run-a-workflow-on-linux-based-azure-hdinsight"></a>Использование Apache Oozie с Apache Hadoop для определения и запуска рабочих процессов в Azure HDInsight под управлением Linux
 
@@ -33,9 +33,9 @@ ms.locfileid: "82204123"
 
 * **Кластер Hadoop в HDInsight**. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](hadoop/apache-hadoop-linux-tutorial-get-started.md).
 
-* **SSH-клиент**. См. раздел [Подключение к HDInsight (Apache Hadoop) с помощью SSH](hdinsight-hadoop-linux-use-ssh-unix.md).
+* **Клиент SSH**. См. раздел [Подключение к HDInsight (Apache Hadoop) с помощью SSH](hdinsight-hadoop-linux-use-ssh-unix.md).
 
-* **База данных SQL Azure**.  См. статью [Создание базы данных SQL Azure на портал Azure](../sql-database/sql-database-get-started.md).  В этой статье используется база данных с именем **узиетест**.
+* **База данных SQL Azure**.  См. раздел [Создание базы данных в базе данных SQL Azure в портал Azure](../sql-database/sql-database-get-started.md).  В этой статье используется база данных с именем **узиетест**.
 
 * Схема универсального кода ресурса (URI) для основного хранилища кластеров. `wasb://`для службы хранилища Azure `abfs://` для Azure Data Lake Storage 2-го поколения или `adl://` для Azure Data Lake Storage 1-го поколения. Если для службы хранилища Azure включено безопасное перемещение, URI будет таким: `wasbs://`. См. также сведения о [безопасной передаче](../storage/common/storage-require-secure-transfer.md).
 
@@ -45,11 +45,13 @@ ms.locfileid: "82204123"
 
 ![Схема рабочего процесса HDInsight Oozie](./media/hdinsight-use-oozie-linux-mac/oozie-workflow-diagram.png)
 
-1. Действие Hive запускает скрипт HiveQL для извлечения записей из, которые входят `hivesampletable` в состав HDInsight. Каждая строка данных описывает посещение с определенного мобильного устройства. Формат записи таков:
+1. Действие Hive запускает скрипт HiveQL для извлечения записей из `hivesampletable` , которые входят в состав HDInsight. Каждая строка данных описывает посещение с определенного мобильного устройства. Формат записи таков:
 
-        8       18:54:20        en-US   Android Samsung SCH-i500        California     United States    13.9204007      0       0
-        23      19:19:44        en-US   Android HTC     Incredible      Pennsylvania   United States    NULL    0       0
-        23      19:19:46        en-US   Android HTC     Incredible      Pennsylvania   United States    1.4757422       0       1
+    ```output
+    8       18:54:20        en-US   Android Samsung SCH-i500        California     United States    13.9204007      0       0
+    23      19:19:44        en-US   Android HTC     Incredible      Pennsylvania   United States    NULL    0       0
+    23      19:19:46        en-US   Android HTC     Incredible      Pennsylvania   United States    1.4757422       0       1
+    ```
 
     Сценарий Hive, используемый в этом документе, подсчитывает общее количество посещений для каждой платформы (например, Android или iPhone) и сохраняет результаты в новой таблице Hive.
 
@@ -64,7 +66,7 @@ ms.locfileid: "82204123"
 
 В Oozie предполагается, что все ресурсы, необходимые для выполнения задания, должны находиться в том же каталоге. В этом примере используется `wasbs:///tutorials/useoozie`. Чтобы создать каталог, выполните следующие шаги:
 
-1. Измените приведенный ниже код, `sshuser` чтобы заменить именем пользователя SSH для кластера, а замените `CLUSTERNAME` именем кластера.  Затем введите код для подключения к кластеру HDInsight с [помощью SSH](hdinsight-hadoop-linux-use-ssh-unix.md).  
+1. Измените приведенный ниже код, чтобы заменить `sshuser` именем пользователя SSH для кластера, а замените `CLUSTERNAME` именем кластера.  Затем введите код для подключения к кластеру HDInsight с [помощью SSH](hdinsight-hadoop-linux-use-ssh-unix.md).  
 
     ```bash
     ssh sshuser@CLUSTERNAME-ssh.azurehdinsight.net
@@ -77,9 +79,9 @@ ms.locfileid: "82204123"
     ```
 
     > [!NOTE]  
-    > Параметр `-p` означает, что будут созданы все каталоги для пути. `data` Каталог используется для хранения данных, используемых `useooziewf.hql` скриптом.
+    > Параметр `-p` означает, что будут созданы все каталоги для пути. `data`Каталог используется для хранения данных, используемых `useooziewf.hql` скриптом.
 
-3. Измените приведенный ниже код, `sshuser` чтобы заменить его именем пользователя SSH.  Выполните следующую команду, чтобы убедиться, что Oozie может олицетворять учетную запись пользователя:
+3. Измените приведенный ниже код, чтобы заменить `sshuser` его именем пользователя SSH.  Выполните следующую команду, чтобы убедиться, что Oozie может олицетворять учетную запись пользователя:
 
     ```bash
     sudo adduser sshuser users
@@ -97,7 +99,7 @@ hdfs dfs -put /usr/share/java/sqljdbc_7.0/enu/mssql-jdbc*.jar /tutorials/useoozi
 ```
 
 > [!IMPORTANT]  
-> Проверьте фактический драйвер JDBC, существующий по `/usr/share/java/`адресу.
+> Проверьте фактический драйвер JDBC, существующий по адресу `/usr/share/java/` .
 
 Если рабочий процесс использовал другие ресурсы, например JAR-файл, содержащий приложение MapReduce, необходимо добавить и эти ресурсы.
 
@@ -126,11 +128,11 @@ hdfs dfs -put /usr/share/java/sqljdbc_7.0/enu/mssql-jdbc*.jar /tutorials/useoozi
 
    * `${hiveDataFolder}`: содержит расположения файлов данных для таблицы.
 
-     Файл определения рабочего процесса (Workflow. XML) в этой статье передает эти значения в этот скрипт HiveQL во время выполнения.
+     Файл определения рабочего процесса, workflow.xml в этой статье, передает эти значения в этот скрипт HiveQL во время выполнения.
 
 1. Чтобы сохранить файл, нажмите **клавиши CTRL + X**, введите **Y**, а затем нажмите клавишу **Ввод**.  
 
-1. Используйте следующую команду для копирования `useooziewf.hql` в: `wasbs:///tutorials/useoozie/useooziewf.hql`
+1. Используйте следующую команду для копирования `useooziewf.hql` в `wasbs:///tutorials/useoozie/useooziewf.hql` :
 
     ```bash
     hdfs dfs -put useooziewf.hql /tutorials/useoozie/useooziewf.hql
@@ -232,7 +234,7 @@ hdfs dfs -put /usr/share/java/sqljdbc_7.0/enu/mssql-jdbc*.jar /tutorials/useoozi
     sudo apt-get --assume-yes install freetds-dev freetds-bin
     ```
 
-2. Измените приведенный ниже код, `<serverName>` чтобы заменить его на имя сервера SQL Azure `<sqlLogin>` и имя входа Azure SQL Server.  Введите команду для подключения к требуемой базе данных SQL.  Введите пароль в командной строке.
+2. Измените приведенный ниже код `<serverName>` , чтобы заменить [ЛОГИЧЕСКИМ именем SQL Server](../azure-sql/database/logical-servers.md) и `<sqlLogin>` именем входа на сервер.  Введите команду для подключения к требуемой базе данных SQL.  Введите пароль в командной строке.
 
     ```bash
     TDSVER=8.0 tsql -H <serverName>.database.windows.net -U <sqlLogin> -p 1433 -D oozietest
@@ -240,11 +242,13 @@ hdfs dfs -put /usr/share/java/sqljdbc_7.0/enu/mssql-jdbc*.jar /tutorials/useoozi
 
     Выводятся сведения следующего вида:
 
-        locale is "en_US.UTF-8"
-        locale charset is "UTF-8"
-        using default charset "UTF-8"
-        Default database being set to oozietest
-        1>
+    ```output
+    locale is "en_US.UTF-8"
+    locale charset is "UTF-8"
+    using default charset "UTF-8"
+    Default database being set to oozietest
+    1>
+    ```
 
 3. В командной строке `1>` введите следующее:
 
@@ -257,7 +261,7 @@ hdfs dfs -put /usr/share/java/sqljdbc_7.0/enu/mssql-jdbc*.jar /tutorials/useoozi
     GO
     ```
 
-    Если вводится инструкция `GO`, то оцениваются предыдущие инструкции. Эти инструкции создают таблицу с именем `mobiledata`, которая используется рабочим процессом.
+    Если вводится инструкция `GO`, то оцениваются предыдущие инструкции. Эти инструкции создают таблицу с именем `mobiledata` , которая используется рабочим процессом.
 
     Используйте следующие команды для проверки создания таблицы:
 
@@ -268,10 +272,12 @@ hdfs dfs -put /usr/share/java/sqljdbc_7.0/enu/mssql-jdbc*.jar /tutorials/useoozi
 
     Выводятся сведения следующего вида:
 
-        TABLE_CATALOG   TABLE_SCHEMA    TABLE_NAME      TABLE_TYPE
-        oozietest       dbo             mobiledata      BASE TABLE
+    ```output
+    TABLE_CATALOG   TABLE_SCHEMA    TABLE_NAME      TABLE_TYPE
+    oozietest       dbo             mobiledata      BASE TABLE
+    ```
 
-4. Выйдите из программы TSQL, `exit` введя в `1>` командной строке.
+4. Выйдите из программы TSQL, введя `exit` в `1>` командной строке.
 
 ## <a name="create-the-job-definition"></a>Создание определения задания
 
@@ -299,7 +305,7 @@ hdfs dfs -put /usr/share/java/sqljdbc_7.0/enu/mssql-jdbc*.jar /tutorials/useoozi
 
     |Значение заполнителя| Замененное значение|
     |---|---|
-    |wasbs://mycontainer\@mystorageaccount.BLOB.Core.Windows.NET| Значение, полученное на шаге 1.|
+    |wasbs://mycontainer \@ mystorageaccount.BLOB.Core.Windows.NET| Значение, полученное на шаге 1.|
     |admin| Имя входа для кластера HDInsight, если не является администратором.|
     |serverName| Имя сервера базы данных SQL Azure.|
     |sqlLogin| Имя входа сервера базы данных SQL Azure.|
@@ -366,7 +372,7 @@ hdfs dfs -put /usr/share/java/sqljdbc_7.0/enu/mssql-jdbc*.jar /tutorials/useoozi
     </configuration>
     ```
 
-    Большая часть информации в этом файле используется для заполнения значений, используемых в файлах workflow.xml или ooziewf.hql, таких как `${nameNode}`.  Если используется путь `wasbs`, его необходимо указать полностью. Не сокращайте его `wasbs:///`. Запись `oozie.wf.application.path` определяет, где можно найти файл workflow.xml. Этот файл содержит рабочий процесс, запущенный этим заданием.
+    Большая часть информации в этом файле используется для заполнения значений, используемых в файлах workflow.xml или ooziewf.hql, таких как `${nameNode}`.  Если используется путь `wasbs`, его необходимо указать полностью. Не сокращайте его `wasbs:///` . Запись `oozie.wf.application.path` определяет, где можно найти файл workflow.xml. Этот файл содержит рабочий процесс, запущенный этим заданием.
 
 3. Используйте следующую команду для создания конфигурации определения задания Oozie:
 
@@ -416,7 +422,7 @@ hdfs dfs -put /usr/share/java/sqljdbc_7.0/enu/mssql-jdbc*.jar /tutorials/useoozi
 
     После завершения команда должна вернуть идентификатор задания, например `0000005-150622124850154-oozie-oozi-W`. Этот идентификатор используется для управления заданием.
 
-4. Измените приведенный ниже код, `<JOBID>` чтобы заменить идентификатором, возвращенным на предыдущем шаге.  Чтобы просмотреть состояние задания, используйте следующую команду:
+4. Измените приведенный ниже код, чтобы заменить `<JOBID>` идентификатором, возвращенным на предыдущем шаге.  Чтобы просмотреть состояние задания, используйте следующую команду:
 
     ```bash
     oozie job -info <JOBID>
@@ -424,24 +430,26 @@ hdfs dfs -put /usr/share/java/sqljdbc_7.0/enu/mssql-jdbc*.jar /tutorials/useoozi
 
     Эта команда возвращает следующую информацию:
 
-        Job ID : 0000005-150622124850154-oozie-oozi-W
-        ------------------------------------------------------------------------------------------------------------------------------------
-        Workflow Name : useooziewf
-        App Path      : wasb:///tutorials/useoozie
-        Status        : PREP
-        Run           : 0
-        User          : USERNAME
-        Group         : -
-        Created       : 2015-06-22 15:06 GMT
-        Started       : -
-        Last Modified : 2015-06-22 15:06 GMT
-        Ended         : -
-        CoordAction ID: -
-        ------------------------------------------------------------------------------------------------------------------------------------
+    ```output
+    Job ID : 0000005-150622124850154-oozie-oozi-W
+    ------------------------------------------------------------------------------------------------------------------------------------
+    Workflow Name : useooziewf
+    App Path      : wasb:///tutorials/useoozie
+    Status        : PREP
+    Run           : 0
+    User          : USERNAME
+    Group         : -
+    Created       : 2015-06-22 15:06 GMT
+    Started       : -
+    Last Modified : 2015-06-22 15:06 GMT
+    Ended         : -
+    CoordAction ID: -
+    ------------------------------------------------------------------------------------------------------------------------------------
+    ```
 
     Это задание находится в состоянии `PREP`, Это состояние указывает на то, что задание было создано, но не запущено.
 
-5. Измените приведенный ниже код, `<JOBID>` чтобы заменить идентификатором, возвращенным ранее.  Для запуска задания выполните следующую команду:
+5. Измените приведенный ниже код, чтобы заменить `<JOBID>` идентификатором, возвращенным ранее.  Для запуска задания выполните следующую команду:
 
     ```bash
     oozie job -start <JOBID>
@@ -449,7 +457,7 @@ hdfs dfs -put /usr/share/java/sqljdbc_7.0/enu/mssql-jdbc*.jar /tutorials/useoozi
 
     Если вы проверите состояние после этой команды, то увидите состояние выполнения и информацию о действиях для этого задания.  Выполнение задания займет несколько минут.
 
-6. Измените приведенный ниже код, `<serverName>` чтобы заменить его на имя сервера SQL Azure `<sqlLogin>` и имя входа Azure SQL Server.  *После успешного завершения задачи* можно убедиться, что данные были созданы и экспортированы в таблицу базы данных SQL с помощью следующей команды.  Введите пароль в командной строке.
+6. Измените приведенный ниже код, заменив его `<serverName>` именем сервера и именем `<sqlLogin>` входа сервера.  *После успешного завершения задачи* можно убедиться, что данные были созданы и экспортированы в таблицу базы данных SQL с помощью следующей команды.  Введите пароль в командной строке.
 
     ```bash
     TDSVER=8.0 tsql -H <serverName>.database.windows.net -U <sqlLogin> -p 1433 -D oozietest
@@ -464,14 +472,16 @@ hdfs dfs -put /usr/share/java/sqljdbc_7.0/enu/mssql-jdbc*.jar /tutorials/useoozi
 
     При этом возвращается следующая информация:
 
-        deviceplatform  count
-        Android 31591
-        iPhone OS       22731
-        proprietary development 3
-        RIM OS  3464
-        Unknown 213
-        Windows Phone   1791
-        (6 rows affected)
+    ```output
+    deviceplatform  count
+    Android 31591
+    iPhone OS       22731
+    proprietary development 3
+    RIM OS  3464
+    Unknown 213
+    Windows Phone   1791
+    (6 rows affected)
+    ```
 
 Дополнительные сведения о команде Oozie см. на [странице, посвященной программе командной строки Apache Oozie](https://oozie.apache.org/docs/4.1.0/DG_CommandLineTool.html).
 
@@ -505,9 +515,9 @@ Oozie REST API позволяет создавать собственные ут
 
 1. Создайте туннель SSH для кластера HDInsight. Дополнительные сведения см. в статье [Использование туннелирования SSH с для доступа к веб-интерфейсу Ambari, JobHistory, NameNode, Oozie и другим веб-интерфейсам](hdinsight-linux-ambari-ssh-tunnel.md).
 
-2. После создания туннеля откройте веб-интерфейс Ambari в веб-браузере с помощью URI `http://headnodehost:8080`.
+2. После создания туннеля откройте веб-интерфейс Ambari в веб-браузере с помощью URI `http://headnodehost:8080` .
 
-3. В левой части страницы выберите **Oozie** > **быстрые ссылки** > **Oozie веб-интерфейс**.
+3. В левой части страницы выберите **Oozie**  >  **быстрые ссылки**  >  **Oozie веб-интерфейс**.
 
     ![Шаги пользовательского веб-интерфейса Apache Ambari Oozie](./media/hdinsight-use-oozie-linux-mac/hdi-oozie-web-ui-steps.png)
 
@@ -574,7 +584,7 @@ Oozie REST API позволяет создавать собственные ут
     hadoop fs -put coordinator.xml /tutorials/useoozie/coordinator.xml
     ```
 
-4. Чтобы изменить созданный `job.xml` ранее файл, используйте следующую команду:
+4. Чтобы изменить `job.xml` созданный ранее файл, используйте следующую команду:
 
     ```bash
     nano job.xml
@@ -651,4 +661,4 @@ Oozie REST API позволяет создавать собственные ут
 * [Отправка данных для заданий Apache Hadoop в HDInsight](hdinsight-upload-data.md)
 * [Использование Apache Sqoop с Apache Hadoop в HDInsight](hadoop/apache-hadoop-use-sqoop-mac-linux.md)
 * [Использование Apache Hive с Apache Hadoop в HDInsight](hadoop/hdinsight-use-hive.md)
-* [Устранение неполадок Apache Oozie](./troubleshoot-oozie.md)
+* [Устранение неполадок с Apache Oozie](./troubleshoot-oozie.md)

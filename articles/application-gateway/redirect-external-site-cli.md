@@ -4,15 +4,15 @@ description: Узнайте, как создать шлюз приложений
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
-ms.topic: article
+ms.topic: how-to
 ms.date: 11/13/2019
 ms.author: victorh
-ms.openlocfilehash: fc955b4959bb20628463f7699a0b66ec2b89a393
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: b671af46d34e3b45796186cd10282d060fa8c537
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74011597"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84804665"
 ---
 # <a name="create-an-application-gateway-with-external-redirection-using-the-azure-cli"></a>Создание шлюза приложений с перенаправлением внешнего трафика с помощью Azure CLI
 
@@ -88,7 +88,7 @@ az network application-gateway create \
 
 ### <a name="add-the-redirection-configuration"></a>Добавление конфигурации перенаправления
 
-Добавьте конфигурацию перенаправления, которая отправляет трафик из *www\.consoto.org* в прослушиватель для *www\.contoso.com* в шлюз приложений с помощью команды [AZ Network Application-Gateway Redirect-config Create](/cli/azure/network/application-gateway/redirect-config).
+Добавьте конфигурацию перенаправления, которая отправляет трафик из *www \. consoto.org* в прослушиватель для *www \. contoso.com* в шлюз приложений с помощью команды [AZ Network Application-Gateway Redirect-config Create](/cli/azure/network/application-gateway/redirect-config).
 
 ```azurecli-interactive
 az network application-gateway redirect-config create \
@@ -130,9 +130,9 @@ az network application-gateway rule create \
 
 В браузере должен открыться сайт *bing.com*.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-В этом руководстве вы узнали, как выполнять следующие задачи:
+В этом руководстве вы узнали, как:
 
 > * Настройка сети
 > * создание прослушивателя и правила перенаправления;

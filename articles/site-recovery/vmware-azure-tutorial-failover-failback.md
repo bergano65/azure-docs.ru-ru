@@ -5,12 +5,12 @@ ms.service: site-recovery
 ms.topic: tutorial
 ms.date: 12/16/2019
 ms.custom: MVC
-ms.openlocfilehash: 8501bb1a998eb08984a118bfa5d52d1e3f3e4f84
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: bf47f08ac555cf60f59ba2b1a84750b6a9e2e0a1
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75498080"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86132008"
 ---
 # <a name="fail-over--vmware-vms"></a>Отработка отказа виртуальных машин VMware
 
@@ -87,7 +87,7 @@ ms.locfileid: "75498080"
 
 ## <a name="connect-to-failed-over-vm"></a>Подключение к виртуальной машине, на которой выполнялась отработка отказа
 
-1. Если после отработки отказа вы хотите подключиться к виртуальным машинам Azure по протоколу удаленного рабочего стола (RDP) и Secure Shell (SSH), [убедитесь, что выполнены требования]((ailover-failback-overview.md#connect-to-azure-after-failover).
+1. Если после отработки отказа вы хотите подключиться к виртуальным машинам Azure по протоколу удаленного рабочего стола (RDP) и Secure Shell (SSH), [убедитесь, что выполнены требования](failover-failback-overview.md#connect-to-azure-after-failover).
 2. После отработки отказа перейдите к виртуальной машине и проверьте [подключение](../virtual-machines/windows/connect-logon.md) к ней.
 3. Используйте параметр **Изменить точку восстановления** при необходимости выбрать другую точку восстановления после отработки отказа. После фиксации отработки отказа на следующем шаге этот параметр будет недоступным.
 4. После проверки выберите **Зафиксировать**, чтобы завершить подготовку точки восстановления виртуальной машины после отработки отказа.

@@ -1,35 +1,33 @@
 ---
-title: Отправка push-уведомлений в Android с помощью Центров уведомлений Azure и Firebase | Документация Майкрософт
-description: Из этого руководства вы узнаете, как использовать центры уведомлений Azure и Google Firebase Cloud Messaging для отправки push-уведомлений на устройства Android.
+title: Отправка push-уведомлений в Android с помощью Центров уведомлений Azure и Firebase SDK версии 0.6 | Документация Майкрософт
+description: Из этого руководства вы узнаете, как использовать Центры уведомлений Azure и Google Firebase Cloud Messaging для отправки push-уведомлений на устройства Android.
 services: notification-hubs
 documentationcenter: android
 keywords: push-уведомления, push-уведомление, push-уведомление android, FCM, Firebase Cloud Messaging
 author: sethmanheim
 manager: femila
-editor: jwargo
-ms.assetid: 02298560-da61-4bbb-b07c-e79bd520e420
 ms.service: notification-hubs
 ms.workload: mobile
 ms.tgt_pltfrm: mobile-android
 ms.devlang: java
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 09/11/2019
+ms.date: 06/22/2020
 ms.author: sethm
-ms.reviewer: jowargo
+ms.reviewer: thsomasu
 ms.lastreviewed: 09/11/2019
-ms.openlocfilehash: e6bc4ed94c8b8e62740f81497231a163283ebcb7
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: e8c19a491f836a71b26f86924fddad92adb23d42
+ms.sourcegitcommit: b56226271541e1393a4b85d23c07fd495a4f644d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80521555"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85390539"
 ---
-# <a name="tutorial-send-push-notifications-to-android-devices-using-firebase"></a>Руководство по Отправка push-уведомлений на устройства Android с помощью Firebase
+# <a name="tutorial-send-push-notifications-to-android-devices-using-firebase-sdk-version-06"></a>Руководство по отправке push-уведомлений на устройства Android с помощью Firebase SDK версии 0.6
 
 [!INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
 
-В этом руководстве показано, как использовать Центры уведомлений Azure и Firebase Cloud Messaging (FCM) для отправки push-уведомлений в приложение на платформе Android. Следуя инструкциям этого руководства, вы создадите пустое приложение Android, которое получает push-уведомления с помощью Firebase Cloud Messaging.
+В этом руководстве показано, как использовать Центры уведомлений Azure и Firebase Cloud Messaging (FCM) SDK версии 0.6 для отправки push-уведомлений в приложение на платформе Android. Следуя инструкциям этого руководства, вы создадите пустое приложение Android, которое получает push-уведомления с помощью Firebase Cloud Messaging.
 
 Полный код для этого руководства можно скачать на сайте [GitHub](https://github.com/Azure/azure-notificationhubs-android/tree/master/FCMTutorialApp).
 
@@ -259,7 +257,7 @@ ms.locfileid: "80521555"
                 }
 
                 // Check to see if the token has been compromised and needs refreshing.
-                else if ((storedToken=sharedPreferences.getString("FCMtoken", "")) != FCM_token) {
+               else if (!(storedToken = sharedPreferences.getString("FCMtoken", "")).equals(FCM_token)) {
 
                     NotificationHub hub = new NotificationHub(NotificationSettings.HubName,
                             NotificationSettings.HubListenConnectionString, this);
@@ -413,7 +411,7 @@ ms.locfileid: "80521555"
     android:id="@+id/text_hello"
     ```
 
-    ![Центры уведомлений Azure — тестовая отправка](./media/notification-hubs-android-push-notification-google-fcm-get-started/activity-main-xml.png)
+    ![Центры уведомлений Azure — тестовая отправка](./media/notification-hubs-android-push-notification-google-fcm-get-started/activity-main-xml.png)
 
 10. Затем добавьте подкласс для получателя, определенного в AndroidManifest.xml. Добавьте еще один новый класс в проект `FirebaseService`.
 
@@ -547,7 +545,7 @@ Push-уведомления с [Портал Azure] можно отправит�
 4. Нажмите кнопку **Отправить**.  Вы пока не увидите уведомление на устройстве Android, потому что на нем еще не запущено мобильное приложение. После запуска мобильного приложения нажмите еще раз кнопку **Send** (Отправить), чтобы просмотреть уведомление.
 5. Результат операции можно увидеть в списке внизу.
 
-    ![Центры уведомлений Azure — тестовая отправка](./media/notification-hubs-android-push-notification-google-fcm-get-started/notification-hubs-test-send.png)
+    ![Центры уведомлений Azure — тестовая отправка](./media/notification-hubs-android-push-notification-google-fcm-get-started/notification-hubs-test-send.png)
 6. Вы увидите сообщение уведомления на своем устройстве. 
 
     ![Сообщение уведомления на устройстве](./media/notification-hubs-android-push-notification-google-fcm-get-started/notification-on-device.png)
@@ -556,15 +554,17 @@ Push-уведомления с [Портал Azure] можно отправит�
 [!INCLUDE [notification-hubs-sending-notifications-from-the-portal](../../includes/notification-hubs-sending-notifications-from-the-portal.md)]
 
 ### <a name="run-the-mobile-app-on-emulator"></a>Запуск мобильного приложения в эмуляторе
+
 Перед проверкой отправки push-уведомлений в эмуляторе, убедитесь, что образ эмулятора поддерживает уровень API Google, выбранный для приложения. Если образ не поддерживает собственные API-интерфейсы Google, создается исключение **SERVICE\_NOT\_AVAILABLE**.
 
 Кроме того, добавьте учетную запись Google в запущенный эмулятор. Для этого щелкните **Settings** (Параметры) > **Accounts** (Учетные записи). В противном случае попытки регистрации в FCM могут привести к исключению **AUTHENTICATION\_FAILED**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
+
 В этом руководстве вы использовали Firebase Cloud Messaging, для отправки уведомлений на все устройства Android, зарегистрированных в службе. Чтобы узнать, как отправлять push-уведомления на конкретные устройства, перейдите к следующему руководству:
 
 > [!div class="nextstepaction"]
->[Руководство. отправке push-уведомлений на конкретные устройства Android](push-notifications-android-specific-devices-firebase-cloud-messaging.md)
+>[Руководство по отправке push-уведомлений на конкретные устройства Android](push-notifications-android-specific-devices-firebase-cloud-messaging.md)
 
 <!-- Images. -->
 

@@ -9,14 +9,14 @@ ms.subservice: autoscale
 ms.date: 03/27/2018
 ms.reviewer: avverma
 ms.custom: avverma
-ms.openlocfilehash: 95baaaff0936d288b5a56efb8f6ce1ba87637d8a
-ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
+ms.openlocfilehash: fae86e13be624d7a5304aa04b82432e1163b1244
+ms.sourcegitcommit: d7fba095266e2fb5ad8776bffe97921a57832e23
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83700922"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84629556"
 ---
-# <a name="tutorial-automatically-scale-a-virtual-machine-scale-set-with-an-azure-template"></a>Руководство. Автомасштабирование масштабируемого набора виртуальных машин с помощью шаблона Azure
+# <a name="tutorial-automatically-scale-a-virtual-machine-scale-set-with-an-azure-template"></a>Руководство по Автомасштабирование масштабируемого набора виртуальных машин с помощью шаблона Azure
 При создании масштабируемого набора вы определяете количество экземпляров виртуальных машин для запуска. По мере изменения потребностей приложения можно автоматически увеличивать или уменьшать это количество. Возможность автоматического масштабирования позволяет удовлетворить пользовательский спрос или среагировать на изменения производительности приложения на протяжении его жизненного цикла. Из этого руководства вы узнаете, как выполнить следующие задачи:
 
 > [!div class="checklist"]
@@ -183,6 +183,7 @@ ssh azureuser@13.92.224.66 -p 50001
 После входа в систему установите служебную программу **stress**. Запустите *10* **нагрузочных** рабочих процессов, которые создают нагрузку на ЦП. Эти рабочие процессы выполняются на протяжении *420* секунд. Этого достаточно, чтобы активировать правила автомасштабирования для реализации нужного действия.
 
 ```console
+sudo apt-get update
 sudo apt-get -y install stress
 sudo stress --cpu 10 --timeout 420 &
 ```

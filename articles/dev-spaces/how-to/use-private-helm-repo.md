@@ -9,10 +9,10 @@ description: Используйте частный репозиторий Helm �
 keywords: DOCKER, Kubernetes, Azure, AKS, служба контейнеров Azure, контейнеры, Helm
 manager: gwallace
 ms.openlocfilehash: c8f0e463bc78d278d8162f8389664dbb46a83301
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80240467"
 ---
 # <a name="use-a-private-helm-repository-in-azure-dev-spaces"></a>Используйте частный репозиторий Helm в Azure Dev Spaces
@@ -30,7 +30,7 @@ helm repo update
 
 ## <a name="add-the-chart-to-your-application"></a>Добавление диаграммы в приложение
 
-Перейдите в каталог проекта и запустите `azds prep`.
+Перейдите в каталог проекта и запустите `azds prep` .
 
 ```cmd
 azds prep --enable-ingress
@@ -75,7 +75,7 @@ Service 'app1' port 80 (http) is available at http://localhost:54256
 ...
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте больше о [Helm и принципах его работы][helm].
 

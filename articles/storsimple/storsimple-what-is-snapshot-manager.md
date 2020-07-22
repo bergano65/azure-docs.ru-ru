@@ -1,5 +1,5 @@
 ---
-title: Что такое Snapshot Manager в StorSimple? | Документация Майкрософт
+title: Что такое Snapshot Manager в StorSimple? | Документы Майкрософт
 description: Описание диспетчера моментальных снимков StorSimple, его архитектуры и функций.
 services: storsimple
 documentationcenter: NA
@@ -9,18 +9,18 @@ editor: ''
 ms.assetid: 6094c31e-e2d9-4592-8a15-76bdcf60a754
 ms.service: storsimple
 ms.devlang: NA
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 02/27/2017
 ms.author: twooley
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: e58e2d929dd1e4db16ce495ad54045e9dc3a6fb1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 5cc37dde7ed6930d476ed2325ad5a86f2f5cd083
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79267421"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85506231"
 ---
 # <a name="an-introduction-to-storsimple-snapshot-manager"></a>Введение в StorSimple Snapshot Manager
 
@@ -89,7 +89,7 @@ ms.locfileid: "79267421"
 ## <a name="integration-with-windows-volume-shadow-copy-service"></a>Интеграция со службой теневого копирования томов Windows
 Диспетчер моментальных снимков StorSimple использует службу теневого копирования томов Windows (VSS) для сбора данных, согласованных с приложением. VSS повышает согласованность с приложениями путем взаимодействия с приложениями, поддерживающими VSS, для координации создания добавочных моментальных снимков. VSS обеспечивает временное отключение приложений во время создания моментальных снимков. 
 
-Реализация VSS диспетчера моментальных снимков StorSimple работает с SQL Server и универсальными томами NTFS. Применяется следующая обработка. 
+Реализация VSS диспетчера моментальных снимков StorSimple работает с SQL Server и универсальными томами NTFS. Процесс выглядит следующим образом: 
 
 1. Запрашивающая сторона, которой обычно является решение для управления данными и защиты (например, диспетчер моментальных снимков StorSimple), или приложение резервного копирования вызывает VSS и запрашивает сбор сведений из программ записи в целевом приложении.
 2. VSS обращается к компоненту записи, чтобы получить описание данных. Модуль записи возвращает описание данных для резервного копирования. 

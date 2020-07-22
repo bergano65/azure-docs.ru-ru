@@ -1,20 +1,20 @@
 ---
-title: Использование ссылочных данных базы данных SQL в задании Azure Stream Analytics
+title: Использование эталонных данных из Базы данных SQL в задании Azure Stream Analytics
 description: В этой статье описывается, как использовать Базу данных SQL в качестве источника эталонных входных данных для задания Azure Stream Analytics на портале Azure и в Visual Studio.
 author: mamccrea
 ms.author: mamccrea
 ms.reviewer: mamccrea
 ms.service: stream-analytics
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 01/29/2019
-ms.openlocfilehash: e6feca8cc87eadb2be5f43cafaa82195a18c3c75
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: e00ab059c68d7a3f2288d94894199773cab63ac5
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83200383"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86039302"
 ---
-# <a name="use-reference-data-from-a-sql-database-for-an-azure-stream-analytics-job"></a>Использование эталонных данных из базы данных SQL для задания Azure Stream Analytics
+# <a name="use-reference-data-from-a-sql-database-for-an-azure-stream-analytics-job"></a>Использование эталонных данных из Базы данных SQL для задания Azure Stream Analytics
 
 Azure Stream Analytics поддерживает базу данных SQL Azure в качестве источника эталонных входных данных. Базу данных SQL можно использовать как источник эталонных данных для задания Stream Analytics на портале Azure и в Visual Studio с помощью средств Stream Analytics. В этой статье показано, как реализовать оба этих варианта.
 
@@ -40,7 +40,7 @@ Azure Stream Analytics поддерживает базу данных SQL Azure 
 
    ![Настройка эталонной конфигурации Базы данных SQL](./media/sql-reference-data/sql-input-config.png)
 
-3. Проверьте запрос моментального снимка в редакторе SQL-запросов. Дополнительные сведения см. в статье [Краткое руководство. Использование редактора SQL-запросов на портале Azure для подключения к данным и их запроса](../sql-database/sql-database-connect-query-portal.md).
+3. Проверьте запрос моментального снимка в редакторе SQL-запросов. Дополнительные сведения см. в статье [Краткое руководство. Использование редактора SQL-запросов на портале Azure для подключения к данным и их запроса](../azure-sql/database/connect-query-portal.md).
 
 ### <a name="specify-storage-account-in-job-config"></a>Выбор учетной записи хранения в конфигурации задания
 
@@ -60,7 +60,7 @@ Azure Stream Analytics поддерживает базу данных SQL Azure 
 
 1. [Установите инструменты Stream Analytics для Visual Studio](stream-analytics-tools-for-visual-studio-install.md). Поддерживаются следующие версии Visual Studio:
 
-   * Visual Studio 2015
+   * Visual Studio 2015
    * Visual Studio 2019
 
 2. Ознакомьтесь со статьей [Краткое руководство. Создание задания Stream Analytics с использованием инструментов Azure Stream Analytics для Visual Studio](stream-analytics-quick-create-vs.md).
@@ -69,7 +69,7 @@ Azure Stream Analytics поддерживает базу данных SQL Azure 
 
 ### <a name="create-a-sql-database-table"></a>Создание таблицы базы данных SQL
 
-Создайте таблицу для хранения эталонных данных, используя SQL Server Management Studio. Дополнительные сведения см. в статье [Руководство. Разработка первой базы данных SQL Azure с использованием SSMS](../sql-database/sql-database-design-first-database.md).
+Создайте таблицу для хранения эталонных данных, используя SQL Server Management Studio. Дополнительные сведения см. [в статье Проектирование первой базы данных SQL Azure с помощью SSMS](../azure-sql/database/design-first-database-tutorial.md) .
 
 Пример таблицы, используемый в следующем примере, был создан с помощью следующей инструкции:
 
@@ -115,7 +115,7 @@ create table chemicals(Id Bigint,Name Nvarchar(max),FullName Nvarchar(max));
 
 4. Откройте файл SQL в редакторе и напишите SQL-запрос.
 
-5. Если вы используете Visual Studio 2019 и вы установили SQL Server Data Tools, можно проверить запрос, нажав кнопку **выполнить**. Появится окно мастера, которое поможет вам подключиться к базе данных SQL, а результат запроса появится в окне внизу.
+5. Если вы используете Visual Studio 2019 и установили SQL Server Data Tools, запрос можно проверить, щелкнув **Выполнить**. Появится окно мастера, помогающее подключиться к базе данных SQL, и результат запроса появится в окне внизу.
 
 ### <a name="specify-storage-account"></a>Определение учетной записи хранения
 
@@ -129,9 +129,9 @@ create table chemicals(Id Bigint,Name Nvarchar(max),FullName Nvarchar(max));
 
 ## <a name="delta-query"></a>Разностный запрос
 
-Вместе с разностным запросом рекомендуется использовать [темпоральные таблицы в базе данных SQL Azure](../sql-database/sql-database-temporal-tables.md).
+Вместе с разностным запросом рекомендуется использовать [темпоральные таблицы в базе данных SQL Azure](../azure-sql/temporal-tables.md).
 
-1. Создание темпоральной таблицы в базе данных SQL Azure.
+1. Создайте временную таблицу в Базе данных SQL Azure.
    
    ```SQL 
       CREATE TABLE DeviceTemporal 
@@ -156,16 +156,16 @@ create table chemicals(Id Bigint,Name Nvarchar(max),FullName Nvarchar(max));
  
 2. Создайте разностный запрос. 
    
-   Этот запрос извлекает все строки в базе данных SQL, которые были вставлены или удалены в течение времени начала, ** \@ делтастарттиме**и времени окончания ** \@ делтаендтиме**. Разностный запрос должен возвращать те же столбцы, что и запрос моментального снимка, а также столбец **_operation_**. В этом столбце определяется, вставляется или удаляется строка между ** \@ делтастарттиме** и ** \@ делтаендтиме**. Итоговые строки помечены как **1**, если записи были вставлены, или **2**, если они были удалены. Запрос также должен добавлять **водяной знак** из SQL Server стороны, чтобы гарантировать, что все обновления в разностном периоде фиксируются соответствующим образом. Использование разностного запроса без **водяного знака** может привести к неправильному эталонному набору данных.  
+   Этот запрос извлекает все строки в базе данных SQL, которые были вставлены или удалены в течение времени начала, ** \@ делтастарттиме**и времени окончания ** \@ делтаендтиме**. Разностный запрос должен возвращать те же столбцы, что и запрос моментального снимка, а также столбец **_operation_**. Этот столбец определяет, будет ли строка вставлена или удалена в период между **\@deltaStartTime** и **\@deltaEndTime**. Итоговые строки помечены как **1**, если записи были вставлены, или **2**, если они были удалены. Запрос также должен добавлять **водяной знак** на стороне SQL Server, чтобы гарантировать правильное сохранение всех обновлений за период внесения изменений. Использование разностного запроса без **водяного знака** может привести к нарушениям в эталонном наборе данных.  
 
    Темпоральная таблица ведет учет обновленных записей путем записи операций вставки и удаления. Затем среда выполнения Stream Analytics применит результаты разностного запроса к предыдущему моментальному снимку, чтобы обновить эталонные данные. Ниже показан пример разностного запроса.
 
    ```SQL
-      SELECT DeviceId, GroupDeviceId, Description, ValidFrom as watermark 1 as _operation_
+      SELECT DeviceId, GroupDeviceId, Description, ValidFrom as _watermark_, 1 as _operation_
       FROM dbo.DeviceTemporal
       WHERE ValidFrom BETWEEN @deltaStartTime AND @deltaEndTime   -- records inserted
       UNION
-      SELECT DeviceId, GroupDeviceId, Description, ValidTo as watermark 2 as _operation_
+      SELECT DeviceId, GroupDeviceId, Description, ValidTo as _watermark_, 2 as _operation_
       FROM dbo.DeviceHistory   -- table we created in step 1
       WHERE ValidTo BETWEEN @deltaStartTime AND @deltaEndTime     -- record deleted
    ```
@@ -173,7 +173,7 @@ create table chemicals(Id Bigint,Name Nvarchar(max),FullName Nvarchar(max));
    Обратите внимание, что в дополнение к разностному запросу среда выполнения Stream Analytics может периодически выполнять запрос моментального снимка для хранения контрольных точек.
 
 ## <a name="test-your-query"></a>Тестирование запроса
-   Важно убедиться, что запрос возвращает ожидаемый набор данных, который будет использоваться Stream Analytics заданием в качестве ссылочных данных. Чтобы протестировать запрос, перейдите к разделу вход в разделе Топология задания на портале. Затем можно выбрать демонстрационные данные в качестве входных данных ссылки на базу данных SQL. После того как образец станет доступным, можно скачать файл и проверить, правильно ли возвращены данные. Если требуется оптимизировать итерации разработки и тестирования, рекомендуется использовать [средства Stream Analytics для Visual Studio](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-tools-for-visual-studio-install). Вы также можете использовать любой другой инструмент, чтобы сначала убедиться, что запрос возвращает правильные результаты из базы данных SQL Azure, а затем воспользоваться им в задании Stream Analytics. 
+   Важно убедиться, что запрос возвращает ожидаемый набор данных, который будет использоваться заданием Stream Analytics в качестве эталонных данных. Чтобы проверить запрос, перейдите к элементу "Ввод" в разделе "Топология задания" на портале. Теперь выберите "Образец данных" для эталонных входных данных Базы данных SQL. Когда образец станет доступен, скачайте файл и проверьте, правильно ли возвращаются данные. Если вы хотите оптимизировать итерации разработки и тестирования, мы рекомендуем применить [средства Stream Analytics для Visual Studio](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-tools-for-visual-studio-install). Вы можете использовать любой другой инструмент, но сначала убедитесь, что запрос возвращает из Базы данных SQL Azure правильные результаты, а затем применяйте его в задании Stream Analytics. 
 
 ## <a name="faqs"></a>Часто задаваемые вопросы
 
@@ -183,12 +183,12 @@ create table chemicals(Id Bigint,Name Nvarchar(max),FullName Nvarchar(max));
 
 **Как узнать, что моментальный снимок эталонных данных запрашивается из базы данных SQL и используется в задании Azure Stream Analytics?**
 
-Существует две метрики, отфильтрованные по логическому имени (в разделе метрики на портале Azure), которые можно использовать для мониторинга работоспособности входных ссылочных данных базы данных SQL.
+Существует две метрики, отфильтрованные по логическому имени (в разделе метрики портал Azure), которые можно использовать для наблюдения за работоспособностью входных ссылочных данных базы данных SQL.
 
    * Инпутевентс. Эта метрика измеряет количество записей, загруженных в, из набора эталонных данных базы данных SQL.
-   * Инпутевентбитес: Эта метрика измеряет размер моментального снимка эталонных данных, загруженного в память задания Stream Analytics. 
+   * InputEventBytes: эта метрика измеряет размер моментального снимка эталонных данных, загруженного в память задания Stream Analytics. 
 
-С помощью сочетания обеих этих метрик можно определить, запрашивает ли задание базу данных SQL для извлечения набора эталонных данных с последующей загрузкой в память.
+Сочетание этих метрик можно использовать, чтобы определить, запрашивает ли задание запрос к базе данных SQL, чтобы получить эталонный набор данных, а затем загрузить его в память.
 
 **Нужен ли специальный тип базы данных SQL Azure?**
 
@@ -201,5 +201,5 @@ Azure Stream Analytics будет работать с любым типом ба
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Использование эталонных данных для уточняющих запросов в Stream Analytics](stream-analytics-use-reference-data.md)
-* [Краткое руководство. Создание задания Stream Analytics с использованием инструментов Azure Stream Analytics для Visual Studio](stream-analytics-quick-create-vs.md)
+* [Краткое руководство. по созданию задания Stream Analytics с использованием инструментов Azure Stream Analytics для Visual Studio](stream-analytics-quick-create-vs.md)
 * [Тестирование реальных данных в локальной среде с помощью инструментов Azure Stream Analytics для Visual Studio (предварительная версия)](stream-analytics-live-data-local-testing.md)

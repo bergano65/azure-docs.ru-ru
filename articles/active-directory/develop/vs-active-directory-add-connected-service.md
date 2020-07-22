@@ -7,15 +7,15 @@ ms.prod: visual-studio-windows
 ms.technology: vs-azure
 ms.custom: aaddev, vs-azure
 ms.workload: azure-vs
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/12/2018
 ms.author: ghogen
-ms.openlocfilehash: d5b6452684757aead684356fd9bb032b90c58c4a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: b77241b1413fea09e5a16e8bd5cbcda8db5b2327
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81535831"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85477130"
 ---
 # <a name="add-an-azure-active-directory-by-using-connected-services-in-visual-studio"></a>Добавление Azure Active Directory с помощью Подключенные службы в Visual Studio
 
@@ -44,7 +44,7 @@ ms.locfileid: "81535831"
 
     ![Страница "Введение"](./media/vs-azure-active-directory/configure-azure-ad-wizard-1.png)
 
-1. На странице **Единый вход** выберите домен из раскрывающегося списка **Домены**. Список содержит все домены, доступные для учетных записей, перечисленных в диалоговом окне "Параметры учетной записи" Visual Studio (**Параметры учетной записи > файлов...**). В качестве альтернативы можно ввести имя домена, если вы не нашли искомый домен, например `mydomain.onmicrosoft.com`. Вы можете создать новое приложение Azure Active Directory или использовать параметры уже существующего приложения Azure Active Directory. По завершении нажмите кнопку **Далее**.
+1. На странице **Единый вход** выберите домен из раскрывающегося списка **Домены**. Список содержит все домены, доступные для учетных записей, перечисленных в диалоговом окне "Параметры учетной записи" Visual Studio (**Параметры учетной записи > файлов...**). В качестве альтернативы можно ввести имя домена, если вы не нашли искомый домен, например `mydomain.onmicrosoft.com` . Вы можете создать новое приложение Azure Active Directory или использовать параметры уже существующего приложения Azure Active Directory. По завершении нажмите кнопку **Далее**.
 
     ![Страница "Единый вход"](./media/vs-azure-active-directory/configure-azure-ad-wizard-2.png)
 
@@ -70,7 +70,7 @@ ms.locfileid: "81535831"
 - [Что произошло с моим проектом .NET MVC?](vs-active-directory-dotnet-what-happened.md)
 - [Что произошло с моим проектом веб-API?](vs-active-directory-webapi-what-happened.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Сценарии проверки подлинности для Azure Active Directory](authentication-scenarios.md)
+- [Сценарии аутентификации в Azure Active Directory](authentication-scenarios.md)
 - [Добавление возможности входа в веб-приложение ASP.NET с помощью учетной записи Майкрософт](quickstart-v2-aspnet-webapp.md)

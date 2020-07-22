@@ -3,17 +3,17 @@ title: Мониторинг приложений Docker в Azure Application Ins
 description: Счетчики производительности, события и исключения Docker могут отображаться в Application Insights вместе с данными телеметрии из контейнерных приложений.
 ms.topic: conceptual
 ms.date: 03/14/2019
-ms.openlocfilehash: 5ff3d6a2b31425a3fb6857c8c6aed45f7ef18d64
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 6af39db68c2020e578fe6fbd39870b2e00a16e07
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77669613"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86539930"
 ---
 # <a name="monitor-docker-applications-in-application-insights-deprecated"></a>Мониторинг приложений DOCKER в Application Insights (не рекомендуется)
 
 > [!NOTE]
-> Эта статья признана устаревшей. Дополнительные сведения о наших текущих инвестициях в мониторинг контейнеров см. в статье [Общие сведения об Azure Monitor для контейнеров (предварительная версия)](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-overview).
+> Эта статья признана устаревшей. Дополнительные сведения о наших текущих инвестициях в мониторинг контейнеров см. в статье [Общие сведения об Azure Monitor для контейнеров (предварительная версия)](../insights/container-insights-overview.md).
 
 События жизненного цикла и счетчики производительности из контейнеров [Docker](https://www.docker.com/) можно выводить в виде диаграмм в Application Insights. Установите образ [Application Insights](https://hub.docker.com/r/microsoft/applicationinsights/) в контейнер в узле. Он будет отображать счетчики производительности для этого узла, а также для других образов.
 

@@ -6,12 +6,12 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 07/13/2017
 ms.author: yegu
-ms.openlocfilehash: 838835cf44b5ca5048ea6cb7bc1bba582b2a0926
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.openlocfilehash: 74308ae79b899a55db4682474e3dcd9dab26db98
+ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83647983"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85856937"
 ---
 # <a name="manage-azure-cache-for-redis-with-azure-powershell"></a>Управление кэшем Azure для Redis с использованием Azure PowerShell
 > [!div class="op_single_selector"]
@@ -31,22 +31,29 @@ ms.locfileid: "83647983"
 ## <a name="prerequisites"></a>Предварительные требования
 Если вы уже установили Azure PowerShell, необходимо использовать Azure PowerShell 1.0.0 или более поздней версии. Установленную версию Azure PowerShell можно узнать в командной строке Azure PowerShell с помощью такой команды:
 
+```azurepowershell
     Get-Module Az | format-table version
-
+```
 
 Сначала необходимо войти в Azure с помощью следующей команды.
 
+```azurepowershell
     Connect-AzAccount
+```
 
 Укажите адрес электронной почты и пароль своей учетной записи Azure в диалоговом окне входа в Microsoft Azure.
 
 Далее, если у вас есть несколько подписок Azure, необходимо задать лишь одну из них. Чтобы просмотреть список текущих подписок, выполните следующую команду.
 
+```azurepowershell
     Get-AzSubscription | sort SubscriptionName | Select SubscriptionName
+```
 
 Чтобы указать подписку, выполните указанную ниже команду. В приведенном ниже примере имя подписки — `ContosoSubscription`.
 
+```azurepowershell
     Select-AzSubscription -SubscriptionName ContosoSubscription
+```
 
 Чтобы использовать Windows PowerShell с диспетчером ресурсов Azure, необходимо следующее:
 
@@ -54,11 +61,15 @@ ms.locfileid: "83647983"
 
 Чтобы получить подробную справку для любого командлета, встречающегося в этом учебнике, используйте командлет Get-Help.
 
+```azurepowershell
     Get-Help <cmdlet-name> -Detailed
+```
 
 Например, чтобы получить справку для командлета `New-AzRedisCache` , введите:
 
+```azurepowershell
     Get-Help New-AzRedisCache -Detailed
+```
 
 ### <a name="how-to-connect-to-other-clouds"></a>Подключение к другим облакам
 Среда Azure по умолчанию — это `AzureCloud`, представляющая экземпляр глобального облака Azure. Чтобы подключиться к другому экземпляру, используйте команду `Connect-AzAccount`, заменив параметр `-Environment` или -`EnvironmentName` на нужную вам среду или имя среды.
@@ -68,11 +79,15 @@ ms.locfileid: "83647983"
 ### <a name="to-connect-to-the-azure-government-cloud"></a>Подключение к облаку Azure Government
 Чтобы подключиться к облаку Azure Government, используйте одну из следующих команд.
 
+```azurepowershell
     Connect-AzAccount -EnvironmentName AzureUSGovernment
+```
 
 или диспетчер конфигурации служб
 
+```azurepowershell
     Connect-AzAccount -Environment (Get-AzEnvironment -Name AzureUSGovernment)
+```
 
 Чтобы создать кэш в облаке Azure Government, используйте одно из следующих расположений.
 
@@ -84,11 +99,15 @@ ms.locfileid: "83647983"
 ### <a name="to-connect-to-the-azure-china-cloud"></a>Подключение к облаку Azure China
 Чтобы подключиться к облаку Azure China, используйте одну из следующих команд.
 
+```azurepowershell
     Connect-AzAccount -EnvironmentName AzureChinaCloud
+```
 
 или диспетчер конфигурации служб
 
+```azurepowershell
     Connect-AzAccount -Environment (Get-AzEnvironment -Name AzureChinaCloud)
+```
 
 Чтобы создать кэш в облаке Azure China, используйте одно из следующих расположений.
 
@@ -100,12 +119,15 @@ ms.locfileid: "83647983"
 ### <a name="to-connect-to-microsoft-azure-germany"></a>Подключение к Microsoft Azure для Германии
 Чтобы подключиться к Microsoft Azure для Германии, используйте одну из следующих команд.
 
+```azurepowershell
     Connect-AzAccount -EnvironmentName AzureGermanCloud
-
+```
 
 или диспетчер конфигурации служб
 
+```azurepowershell
     Connect-AzAccount -Environment (Get-AzEnvironment -Name AzureGermanCloud)
+```
 
 Чтобы создать кэш в Microsoft Azure для Германии, используйте одно из следующих расположений.
 
@@ -161,6 +183,7 @@ ms.locfileid: "83647983"
 
 Чтобы увидеть список доступных параметров свойства `New-AzRedisCache`и их описания, выполните следующую команду:
 
+```azurepowershell
     PS C:\> Get-Help New-AzRedisCache -detailed
 
     NAME
@@ -232,27 +255,36 @@ ms.locfileid: "83647983"
             ErrorAction, ErrorVariable, WarningAction, WarningVariable,
             OutBuffer, PipelineVariable, and OutVariable. For more information, see
             about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).
+```
 
 Чтобы создать кэш с параметрами по умолчанию, выполните следующую команду:
 
+```azurepowershell
     New-AzRedisCache -ResourceGroupName myGroup -Name mycache -Location "North Central US"
+```
 
 `ResourceGroupName`, `Name` и `Location` — обязательные параметры; остальные указываются по желанию и имеют значения по умолчанию. При выполнении предыдущей команды создается экземпляр кэша Azure для Redis SKU "Стандартный" с заданным именем, расположением и группой ресурсов; размер экземпляра — 1 ГБ, порт без SSL отключен.
 
 Для создания кэша уровня Premium укажите размер P1 (6-60 ГБ), P2 (13-130 ГБ), (26-260 ГБ), P3 и P4 (53-530 ГБ). Чтобы включить кластеризацию, укажите количество сегментов с помощью параметра `ShardCount` . В следующем примере создается кэш P1 уровня Premium с 3 сегментами. Размер кэша P1 уровня Premium — 6 ГБ, и, поскольку мы указали три сегмента, общий размер составляет 18 ГБ (3 x 6 ГБ).
 
+```azurepowershell
     New-AzRedisCache -ResourceGroupName myGroup -Name mycache -Location "North Central US" -Sku Premium -Size P1 -ShardCount 3
+```
 
 Чтобы указать значения для параметра `RedisConfiguration`, включите их в фигурные скобки (`{}`) как пары "ключ-значение" типа `@{"maxmemory-policy" = "allkeys-random", "notify-keyspace-events" = "KEA"}`. В следующем примере создается кэш уровня Standard размером 1 ГБ с политикой максимальной памяти `allkeys-random` и уведомлениями пространства ключей, настроенными с помощью `KEA`. Дополнительные сведения см. в разделах [Уведомления пространства ключей (дополнительные параметры)](cache-configure.md#keyspace-notifications-advanced-settings) и [Политики памяти](cache-configure.md#memory-policies).
 
+```azurepowershell
     New-AzRedisCache -ResourceGroupName myGroup -Name mycache -Location "North Central US" -RedisConfiguration @{"maxmemory-policy" = "allkeys-random", "notify-keyspace-events" = "KEA"}
+```
 
 <a name="databases"></a>
 
 ## <a name="to-configure-the-databases-setting-during-cache-creation"></a>Настройка параметров баз данных в процессе создания кэша
 Параметр `databases` можно настроить только при создании кэша. В следующем примере создается кэш P3 (26 ГБ) уровня Premium на 48 базах данных с использованием командлета [New-AzRedisCache](https://docs.microsoft.com/powershell/module/az.rediscache/New-azRedisCache).
 
+```azurepowershell
     New-AzRedisCache -ResourceGroupName myGroup -Name mycache -Location "North Central US" -Sku Premium -Size P3 -RedisConfiguration @{"databases" = "48"}
+```
 
 Дополнительные сведения о свойстве `databases` см. в разделе о [конфигурации сервера кэша Azure для Redis по умолчанию](cache-configure.md#default-redis-server-configuration). Дополнительные сведения о создании кэша с помощью командлета [New-AzRedisCache](https://docs.microsoft.com/powershell/module/az.rediscache/new-azrediscache) см. в предыдущем разделе "Создание экземпляра кэша Azure для Redis".
 
@@ -261,6 +293,7 @@ ms.locfileid: "83647983"
 
 Чтобы увидеть список доступных параметров свойства `Set-AzRedisCache`и их описания, выполните следующую команду:
 
+```azurepowershell
     PS C:\> Get-Help Set-AzRedisCache -detailed
 
     NAME
@@ -312,12 +345,15 @@ ms.locfileid: "83647983"
             ErrorAction, ErrorVariable, WarningAction, WarningVariable,
             OutBuffer, PipelineVariable, and OutVariable. For more information, see
             about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).
+```
 
 Командлет `Set-AzRedisCache` можно использовать для обновления таких свойств, как значения `Size`, `Sku`, `EnableNonSslPort` и `RedisConfiguration`. 
 
 Следующая команда обновляет политику максимального объема памяти (maxmemory-policy) кэша Azure для Redis с именем myCache.
 
+```azurepowershell
     Set-AzRedisCache -ResourceGroupName "myGroup" -Name "myCache" -RedisConfiguration @{"maxmemory-policy" = "allkeys-random"}
+```
 
 <a name="scale"></a>
 
@@ -340,10 +376,13 @@ ms.locfileid: "83647983"
 
 В следующем примере демонстрируется масштабирование кэша с именем `myCache` в кэш размером 2,5 ГБ. Обратите внимание, что команда будет работать в кэше уровня "Базовый" или "Стандартный".
 
+```azurepowershell
     Set-AzRedisCache -ResourceGroupName myGroup -Name myCache -Size 2.5GB
+```
 
 После запуска этой команды будет возвращено состояние кэша (аналогично вызову `Get-AzRedisCache`). Обратите внимание на то, что параметр `ProvisioningState` имеет значение `Scaling`.
 
+```azurepowershell
     PS C:\> Set-AzRedisCache -Name myCache -ResourceGroupName myGroup -Size 2.5GB
 
 
@@ -370,16 +409,20 @@ ms.locfileid: "83647983"
     StaticIP           :
     TenantSettings     : {}
     ShardCount         :
+```
 
 По завершении операции масштабирования значение параметра `ProvisioningState` изменяется на `Succeeded`. Если масштабирование необходимо повторить, например изменить уровень кэша с уровня "Базовый" на уровень "Стандартный", а затем скорректировать его размер, нужно дождаться завершения предыдущей операции. В противном случае возникнет ошибка следующего вида:
 
+```azurepowershell
     Set-AzRedisCache : Conflict: The resource '...' is not in a stable state, and is currently unable to accept the update request.
+```
 
 ## <a name="to-get-information-about-an-azure-cache-for-redis"></a>Получение сведений об использовании кэша Azure для Redis
 Вы можете получить сведения об использовании кэша с помощью командлета [Get-AzRedisCache](https://docs.microsoft.com/powershell/module/az.rediscache/get-azrediscache).
 
 Чтобы увидеть список доступных параметров свойства `Get-AzRedisCache`и их описания, выполните следующую команду:
 
+```azurepowershell
     PS C:\> Get-Help Get-AzRedisCache -detailed
 
     NAME
@@ -416,17 +459,23 @@ ms.locfileid: "83647983"
             ErrorAction, ErrorVariable, WarningAction, WarningVariable,
             OutBuffer, PipelineVariable, and OutVariable. For more information, see
             about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).
+```
 
 Чтобы получить сведения обо всех кэшах в текущей подписке, выполните командлет `Get-AzRedisCache` без параметров.
 
+```azurepowershell
     Get-AzRedisCache
+```
 
 Чтобы получить сведения обо всех кэшах в определенной группе ресурсов, выполните командлет `Get-AzRedisCache` с параметром `ResourceGroupName`.
 
+```azurepowershell
     Get-AzRedisCache -ResourceGroupName myGroup
+```
 
 Чтобы получить сведения о конкретном кэше, выполните командлет `Get-AzRedisCache` с параметром `Name`, содержащим имя кэша, и параметром `ResourceGroupName` с группой ресурсов, содержащей этот кэш.
 
+```azurepowershell
     PS C:\> Get-AzRedisCache -Name myCache -ResourceGroupName myGroup
 
     Name               : mycache
@@ -450,12 +499,14 @@ ms.locfileid: "83647983"
     StaticIP           :
     TenantSettings     : {}
     ShardCount         :
+```
 
 ## <a name="to-retrieve-the-access-keys-for-an-azure-cache-for-redis"></a>Получение ключей доступа к кэшу Azure для Redis
 С помощью командлета [Get-AzRedisCacheKey](https://docs.microsoft.com/powershell/module/az.rediscache/Get-azRedisCacheKey) получите ключи доступа к кэшу.
 
 Чтобы увидеть список доступных параметров свойства `Get-AzRedisCacheKey`и их описания, выполните следующую команду:
 
+```azurepowershell
     PS C:\> Get-Help Get-AzRedisCacheKey -detailed
 
     NAME
@@ -483,19 +534,23 @@ ms.locfileid: "83647983"
             ErrorAction, ErrorVariable, WarningAction, WarningVariable,
             OutBuffer, PipelineVariable, and OutVariable. For more information, see
             about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).
+```
 
 Чтобы получить ключи к кэшу, вызовите командлет `Get-AzRedisCacheKey` и передайте имя кэша и имя группы ресурсов, содержащей этот кэш.
 
+```azurepowershell
     PS C:\> Get-AzRedisCacheKey -Name myCache -ResourceGroupName myGroup
 
     PrimaryKey   : b2wdt43sfetlju4hfbryfnregrd9wgIcc6IA3zAO1lY=
     SecondaryKey : ABhfB757JgjIgt785JgKH9865eifmekfnn649303JKL=
+```
 
 ## <a name="to-regenerate-access-keys-for-your-azure-cache-for-redis"></a>Повторное создание ключей доступа к кэшу Azure для Redis
 С помощью командлета [New-AzRedisCacheKey](https://docs.microsoft.com/powershell/module/az.rediscache/New-azRedisCacheKey) повторно создайте ключи доступа к кэшу.
 
 Чтобы увидеть список доступных параметров свойства `New-AzRedisCacheKey`и их описания, выполните следующую команду:
 
+```azurepowershell
     PS C:\> Get-Help New-AzRedisCacheKey -detailed
 
     NAME
@@ -528,9 +583,11 @@ ms.locfileid: "83647983"
             ErrorAction, ErrorVariable, WarningAction, WarningVariable,
             OutBuffer, PipelineVariable, and OutVariable. For more information, see
             about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).
+```
 
 Чтобы повторно создать первичный или вторичный ключ кэша, вызовите командлет `New-AzRedisCacheKey`, передайте имя и группу ресурсов и укажите значение `Primary` или `Secondary` для параметра `KeyType`. В приведенном ниже примере создается вторичный ключ доступа для кэша.
 
+```azurepowershell
     PS C:\> New-AzRedisCacheKey -Name myCache -ResourceGroupName myGroup -KeyType Secondary
 
     Confirm
@@ -540,12 +597,14 @@ ms.locfileid: "83647983"
 
     PrimaryKey   : b2wdt43sfetlju4hfbryfnregrd9wgIcc6IA3zAO1lY=
     SecondaryKey : c53hj3kh4jhHjPJk8l0jji785JgKH9865eifmekfnn6=
+```
 
 ## <a name="to-delete-an-azure-cache-for-redis"></a>Удаление кэша Azure для Redis
 С помощью командлета [Remove-AzRedisCache](https://docs.microsoft.com/powershell/module/az.rediscache/remove-azrediscache) удалите кэш Azure для Redis.
 
 Чтобы увидеть список доступных параметров свойства `Remove-AzRedisCache`и их описания, выполните следующую команду:
 
+```azurepowershell
     PS C:\> Get-Help Remove-AzRedisCache -detailed
 
     NAME
@@ -579,14 +638,17 @@ ms.locfileid: "83647983"
             ErrorAction, ErrorVariable, WarningAction, WarningVariable,
             OutBuffer, PipelineVariable, and OutVariable. For more information, see
             about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).
+```
 
 В приведенном ниже примере удаляется кэш с именем `myCache` .
 
+```azurepowershell
     PS C:\> Remove-AzRedisCache -Name myCache -ResourceGroupName myGroup
 
     Confirm
     Are you sure you want to remove Azure Cache for Redis 'myCache'?
     [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): Y
+```
 
 
 ## <a name="to-import-an-azure-cache-for-redis"></a>Импорт экземпляра кэша Azure для Redis
@@ -599,6 +661,7 @@ ms.locfileid: "83647983"
 
 Чтобы увидеть список доступных параметров свойства `Import-AzRedisCache`и их описания, выполните следующую команду:
 
+```azurepowershell
     PS C:\> Get-Help Import-AzRedisCache -detailed
 
     NAME
@@ -643,11 +706,14 @@ ms.locfileid: "83647983"
             ErrorAction, ErrorVariable, WarningAction, WarningVariable,
             OutBuffer, PipelineVariable, and OutVariable. For more information, see
             about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).
+```
 
 
 Приведенная ниже команда импортирует данные из большого двоичного объекта, указанного в универсальном коде ресурса (URI) SAS, в кэш Azure для Redis.
 
+```azurepowershell
     PS C:\>Import-AzRedisCache -ResourceGroupName "resourceGroupName" -Name "cacheName" -Files @("https://mystorageaccount.blob.core.windows.net/mycontainername/blobname?sv=2015-04-05&sr=b&sig=caIwutG2uDa0NZ8mjdNJdgOY8%2F8mhwRuGNdICU%2B0pI4%3D&st=2016-05-27T00%3A00%3A00Z&se=2016-05-28T00%3A00%3A00Z&sp=rwd") -Force
+```
 
 ## <a name="to-export-an-azure-cache-for-redis"></a>Экспорт кэша Azure для Redis
 Экспортировать данные из кэша Azure для Redis можно с помощью командлета `Export-AzRedisCache`.
@@ -659,6 +725,7 @@ ms.locfileid: "83647983"
 
 Чтобы увидеть список доступных параметров свойства `Export-AzRedisCache`и их описания, выполните следующую команду:
 
+```azurepowershell
     PS C:\> Get-Help Export-AzRedisCache -detailed
 
     NAME
@@ -702,13 +769,16 @@ ms.locfileid: "83647983"
             ErrorAction, ErrorVariable, WarningAction, WarningVariable,
             OutBuffer, PipelineVariable, and OutVariable. For more information, see
             about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).
+```
 
 
 Приведенная ниже команда экспортирует данные из экземпляра кэша Azure для Redis в контейнер, указанный универсальным кодом ресурса SAS.
 
-        PS C:\>Export-AzRedisCache -ResourceGroupName "resourceGroupName" -Name "cacheName" -Prefix "blobprefix"
-        -Container "https://mystorageaccount.blob.core.windows.net/mycontainer?sv=2015-04-05&sr=c&sig=HezZtBZ3DURmEGDduauE7
-        pvETY4kqlPI8JCNa8ATmaw%3D&st=2016-05-27T00%3A00%3A00Z&se=2016-05-28T00%3A00%3A00Z&sp=rwdl"
+```azurepowershell
+    PS C:\>Export-AzRedisCache -ResourceGroupName "resourceGroupName" -Name "cacheName" -Prefix "blobprefix"
+    -Container "https://mystorageaccount.blob.core.windows.net/mycontainer?sv=2015-04-05&sr=c&sig=HezZtBZ3DURmEGDduauE7
+    pvETY4kqlPI8JCNa8ATmaw%3D&st=2016-05-27T00%3A00%3A00Z&se=2016-05-28T00%3A00%3A00Z&sp=rwdl"
+```
 
 ## <a name="to-reboot-an-azure-cache-for-redis"></a>Перезапуск кэша Azure для Redis
 Перезапустить экземпляр кэша Azure для Redis можно с помощью командлета `Reset-AzRedisCache`.
@@ -720,6 +790,7 @@ ms.locfileid: "83647983"
 
 Чтобы увидеть список доступных параметров свойства `Reset-AzRedisCache`и их описания, выполните следующую команду:
 
+```azurepowershell
     PS C:\> Get-Help Reset-AzRedisCache -detailed
 
     NAME
@@ -763,12 +834,15 @@ ms.locfileid: "83647983"
             ErrorAction, ErrorVariable, WarningAction, WarningVariable,
             OutBuffer, PipelineVariable, and OutVariable. For more information, see
             about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).
+```
 
 
 Перезапустить оба узла указанного кэша можно с помощью такой команды:
 
-        PS C:\>Reset-AzRedisCache -ResourceGroupName "resourceGroupName" -Name "cacheName" -RebootType "AllNodes"
-        -Force
+```azurepowershell
+    PS C:\>Reset-AzRedisCache -ResourceGroupName "resourceGroupName" -Name "cacheName" -RebootType "AllNodes"
+    -Force
+```
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
@@ -779,5 +853,5 @@ ms.locfileid: "83647983"
 * [Развертывание ресурсов с использованием шаблонов Resource Manager и портала Azure](../azure-resource-manager/templates/deploy-portal.md) — сведения о создании групп ресурсов и управлении ими на портале Azure.
 * [Блог Azure](https://azure.microsoft.com/blog/) — сведения о новых возможностях в Azure.
 * [Блог Windows PowerShell](https://devblogs.microsoft.com/powershell/) — сведения о новых возможностях в Windows PowerShell.
-* [Блог "Hey, Scripting Guy!"](https://blogs.technet.com/b/heyscriptingguy/) — реальные советы и рекомендации от сообщества Windows PowerShell.
+* [Блог "Hey, Scripting Guy!"](https://blogs.technet.microsoft.com/heyscriptingguy/author/the-scripting-guys/) — реальные советы и рекомендации от сообщества Windows PowerShell.
 

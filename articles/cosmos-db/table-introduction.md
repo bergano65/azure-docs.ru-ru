@@ -7,14 +7,14 @@ ms.subservice: cosmosdb-table
 ms.topic: overview
 ms.date: 07/26/2019
 ms.author: sngun
-ms.openlocfilehash: 5b2e2c51eaa878ba0ce8bc31c001575acebe6919
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 91a6ae308faf31b3d3eb0c9f287dd5bd791f628e
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "79214912"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85557522"
 ---
-# <a name="introduction-to-azure-cosmos-db-table-api"></a>Знакомство со службой Azure Cosmos DB. API таблицы
+# <a name="introduction-to-azure-cosmos-db-table-api"></a>Знакомство с Azure Cosmos DB. API таблиц
 
 [Azure Cosmos DB](introduction.md) предоставляет API таблиц для приложений, созданных для хранилища таблиц Azure и требующих таких возможностей уровня "Премиум", как:
 
@@ -32,7 +32,7 @@ ms.locfileid: "79214912"
 ## <a name="table-offerings"></a>Сравнение возможностей хранилища таблиц и API таблицы
 Если вы сейчас используете хранилище таблиц Azure, при переходе на API таблицы Azure Cosmos DB вы получите следующие преимущества:
 
-| | табличное хранилище Azure; | API таблиц Azure Cosmos DB |
+| Компонент | табличное хранилище Azure; | API таблиц Azure Cosmos DB |
 | --- | --- | --- |
 | Задержка | Низкая, без максимального ограничения по задержке. | Задержка операций чтения и записи (доступно при любых объемах по всему миру): менее 10 мс для операций чтения и записи на уровне 99-го процентиля. |
 | Пропускная способность | Модель с переменной пропускной способностью. Ограничение масштабируемости таблиц — 20 000 операций в секунду. | Высокомасштабируемая с [выделенной зарезервированной пропускной способностью на каждую таблицу](request-units.md) в соответствии с соглашениями об уровне обслуживания. Учетные записи не имеют максимального ограничения пропускной способности и поддерживают выполнение более 10 млн операций в секунду на таблицу. |

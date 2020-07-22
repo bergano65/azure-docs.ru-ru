@@ -6,12 +6,12 @@ ms.author: yegu
 ms.service: cache
 ms.topic: conceptual
 ms.date: 04/11/2017
-ms.openlocfilehash: 68c668561123aee943f54e6fdcbad7c6450957f4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 36268910003c4235d7ae60d2fd68bc30d7b8b858
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79278003"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85830015"
 ---
 # <a name="how-to-scale-azure-cache-for-redis"></a>Масштабирование кэша Azure для Redis
 Кэш Azure для Redis предлагается во множестве различных вариантов, отличающихся между собой размером и функциями. После создания кэша можно масштабировать его размер и ценовые категории при изменении требований приложения. В этой статье показано, как масштабировать кэш на портале Azure и с помощью инструментов, таких как Azure PowerShell и Azure CLI.
@@ -24,7 +24,7 @@ ms.locfileid: "79278003"
 * Загрузка сервера Redis
 * Использование памяти
 * Пропускная способность сети
-* Загрузка ЦП
+* Использование ЦП
 
 Если выяснилось, что ваш кэш больше не отвечает требованиям приложения, можно перейти в более высокую или низкую ценовую категорию кэша, которая подходит для вашего приложения. Дополнительные сведения о выборе ценовой категории кэша см. в разделе [Какое предложение и размер кэша Azure для Redis следует использовать](cache-faq.md#what-azure-cache-for-redis-offering-and-size-should-i-use).
 
@@ -64,9 +64,11 @@ ms.locfileid: "79278003"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Вы можете масштабировать кэш Azure для экземпляров Redis с помощью PowerShell, используя командлет [Set-азредискаче](https://docs.microsoft.com/powershell/module/az.rediscache/set-azrediscache) при изменении свойств `Size`, `Sku`или `ShardCount` . В следующем примере демонстрируется масштабирование кэша с именем `myCache` в кэш размером 2,5 ГБ. 
+Вы можете масштабировать кэш Azure для экземпляров Redis с помощью PowerShell, используя командлет [Set-азредискаче](https://docs.microsoft.com/powershell/module/az.rediscache/set-azrediscache) при `Size` `Sku` `ShardCount` изменении свойств, или. В следующем примере демонстрируется масштабирование кэша с именем `myCache` в кэш размером 2,5 ГБ. 
 
-    Set-AzRedisCache -ResourceGroupName myGroup -Name myCache -Size 2.5GB
+```powershell
+   Set-AzRedisCache -ResourceGroupName myGroup -Name myCache -Size 2.5GB
+```
 
 Дополнительные сведения о масштабировании с помощью PowerShell см. в разделе [Масштабирование кэша Azure для Redis с помощью PowerShell](cache-how-to-manage-redis-cache-powershell.md#scale).
 
@@ -78,6 +80,7 @@ ms.locfileid: "79278003"
 ### <a name="scale-using-maml"></a>Масштабирование с помощью MAML
 Чтобы масштабировать экземпляры кэша Azure для Redis с помощью [библиотек Microsoft Azure Management Libraries (MAML)](https://azure.microsoft.com/updates/management-libraries-for-net-release-announcement/), вызовите метод `IRedisOperations.CreateOrUpdate` и передайте ему новый размер `RedisProperties.SKU.Capacity`.
 
+```csharp
     static void Main(string[] args)
     {
         // For instructions on getting the access token, see
@@ -95,6 +98,7 @@ ms.locfileid: "79278003"
         var redisParams = new RedisCreateOrUpdateParameters(redisProperties, redisCacheRegion);
         client.Redis.CreateOrUpdate(resourceGroupName,cacheName, redisParams);
     }
+```
 
 Дополнительные сведения см. в примере [управления кэшем Azure для Redis с помощью MAML](https://github.com/rustd/RedisSamples/tree/master/ManageCacheUsingMAML).
 

@@ -4,14 +4,14 @@ description: Узнайте, как настроить частную ссылк
 author: kummanish
 ms.author: manishku
 ms.service: postgresql
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 01/09/2020
-ms.openlocfilehash: a6baf8b4609382be4a5a31d12cac581da2c17de6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c957e2ee1d1e596ca8e3525e0f4a9802c4039107
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81011673"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86206816"
 ---
 # <a name="create-and-manage-private-link-for-azure-database-for-postgresql---single-server-using-cli"></a>Создание и управление частной связью для базы данных Azure для PostgreSQL — одиночный сервер с помощью интерфейса командной строки
 
@@ -20,7 +20,7 @@ ms.locfileid: "81011673"
 > [!NOTE]
 > Эта функция доступна во всех регионах Azure, где база данных Azure для PostgreSQL-Single Server поддерживает общего назначения и ценовые категории, оптимизированные для памяти.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
 
@@ -39,7 +39,7 @@ az group create --name myResourceGroup --location westeurope
 ```
 
 ## <a name="create-a-virtual-network"></a>Создайте виртуальную сеть
-Создайте виртуальную сеть с помощью команды [AZ Network vnet Create](/cli/azure/network/vnet). В этом примере создается виртуальная сеть по умолчанию с именем *myVirtualNetwork* с подсетью *mySubnet*.
+Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet). В этом примере создается виртуальная сеть по умолчанию с именем *myVirtualNetwork* с подсетью *mySubnet*.
 
 ```azurecli-interactive
 az network vnet create \
@@ -49,7 +49,7 @@ az network vnet create \
 ```
 
 ## <a name="disable-subnet-private-endpoint-policies"></a>Отключение политик подсети частной конечной точки 
-Поскольку Azure развертывает ресурсы в подсеть виртуальной сети, чтобы отключить политики сети частной конечной точки, вам следует создать или обновить подсеть. Обновите конфигурацию подсети *mySubnet* с помощью команды [az network vnet subnet update](https://docs.microsoft.com/cli/azure/network/vnet/subnet?view=azure-cli-latest#az-network-vnet-subnet-update).
+Azure развертывает ресурсы в подсеть в виртуальной сети, поэтому необходимо создать или обновить подсеть, чтобы отключить [политики сети](../private-link/disable-private-endpoint-network-policy.md)частной конечной точки. Обновите конфигурацию подсети *mySubnet* с помощью команды [az network vnet subnet update](https://docs.microsoft.com/cli/azure/network/vnet/subnet?view=azure-cli-latest#az-network-vnet-subnet-update).
 
 ```azurecli-interactive
 az network vnet subnet update \
@@ -72,7 +72,7 @@ az vm create \
 Создайте базу данных Azure для PostgreSQL с помощью команды AZ postgres Server Create. Помните, что имя сервера PostgreSQL должно быть уникальным в пределах Azure, поэтому замените значение заполнителя в квадратных скобках своим уникальным значением: 
 
 ```azurecli-interactive
-# Create a logical server in the resource group 
+# Create a server in the resource group 
 az postgres server create \
 --name mydemoserver \
 --resource-group myresourcegroup \
@@ -82,18 +82,17 @@ az postgres server create \
 --sku-name GP_Gen5_2
 ```
 
-Обратите внимание, что идентификатор сервера PostgreSQL ```/subscriptions/subscriptionId/resourceGroups/myResourceGroup/providers/Microsoft.DBforPostgreSQL/servers/servername.``` аналогичен идентификатору сервера PostgreSQL на следующем шаге. 
-
 ## <a name="create-the-private-endpoint"></a>Создание частной конечной точки 
 Создайте частную конечную точку для сервера PostgreSQL в виртуальной сети. 
+
 ```azurecli-interactive
 az network private-endpoint create \  
     --name myPrivateEndpoint \  
     --resource-group myResourceGroup \  
     --vnet-name myVirtualNetwork  \  
     --subnet mySubnet \  
-    --private-connection-resource-id "<PostgreSQL Server ID>" \  
-    --group-ids postgresqlServer \  
+    --private-connection-resource-id $(az resource show -g myResourcegroup -n mydemoserver --resource-type "Microsoft.DBforPostgreSQL/servers" --query "id") \    
+    --group-id postgresqlServer \  
     --connection-name myConnection  
  ```
 
@@ -124,6 +123,10 @@ az network private-dns record-set a add-record --record-set-name myserver --zone
 > [!NOTE] 
 > Полное доменное имя в параметре DNS клиента не разрешается в настроенный частный IP-адрес. Вам потребуется настроить зону DNS для настроенного FQDN, как показано [ниже](../dns/dns-operations-recordsets-portal.md).
 
+> [!NOTE]
+> Иногда База данных Azure для PostgreSQL и подсеть виртуальной сети относятся к разным подпискам. В этих случаях необходимо обеспечить следующую конфигурацию:
+> - Убедитесь, что в обеих подписках зарегистрирован поставщик ресурсов **Microsoft. дбфорпостгрескл** . Дополнительные сведения см. в разделе [resource-manager-registration][resource-manager-portal]
+
 ## <a name="connect-to-a-vm-from-the-internet"></a>Подключение к виртуальной машине из Интернета
 
 Подключитесь к виртуальной машине *myVm* из Интернета, выполнив следующие действия.
@@ -151,7 +154,7 @@ az network private-dns record-set a add-record --record-set-name myserver --zone
 
 ## <a name="access-the-postgresql-server-privately-from-the-vm"></a>Доступ к серверу PostgreSQL в частном порядке с виртуальной машины
 
-1. На удаленном рабочем столе  *myVm* откройте PowerShell.
+1. Откройте PowerShell на удаленном рабочем столе *myVm*.
 
 2. Введите  `nslookup mydemopostgresserver.privatelink.postgres.database.azure.com`. 
 
@@ -172,7 +175,7 @@ az network private-dns record-set a add-record --record-set-name myserver --zone
     | ------- | ----- |
     | Тип сервера| Выберите **PostgreSQL**.|
     | Имя сервера| Выбор *mydemopostgresserver.privatelink.postgres.Database.Azure.com* |
-    | Имя пользователя | Введите имя пользователя username@servername , которое предоставляется во время создания сервера PostgreSQL. |
+    | Имя пользователя | Введите имя пользователя, username@servername которое предоставляется во время создания сервера PostgreSQL. |
     |Пароль |Введите пароль, указанный при создании сервера PostgreSQL. |
     |SSL|Выберите **обязательный**.|
     ||
@@ -192,5 +195,8 @@ az network private-dns record-set a add-record --record-set-name myserver --zone
 az group delete --name myResourceGroup --yes 
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Подробнее о том [, что такое частная конечная точка Azure](https://docs.microsoft.com/azure/private-link/private-endpoint-overview)
+
+<!-- Link references, to text, Within this same GitHub repo. -->
+[resource-manager-portal]: ../azure-resource-manager/management/resource-providers-and-types.md

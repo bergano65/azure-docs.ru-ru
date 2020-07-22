@@ -62,6 +62,8 @@
           href: tutorial-dr-drill-azure.md
         - name: Отработка отказа с переходом в Azure
           href: hyper-v-azure-failover-failback-tutorial.md
+        - name: Включение локальной репликации с частными конечными точками
+          href: ./hybrid-how-to-enable-replication-private-endpoints.md
     - name: Миграция в Azure
       items:
         - name: Подготовка Azure для репликации в локальной среде
@@ -186,6 +188,8 @@
               href: azure-to-azure-how-to-enable-replication-s2d-vms.md
             - name: Включение репликации для добавленного диска
               href: azure-to-azure-enable-replication-added-disk.md
+            - name: Включение репликации с частными конечными точками
+              href: ./azure-to-azure-how-to-enable-replication-private-endpoints.md
             - name: Исключение дисков
               href: azure-to-azure-exclude-disks.md
             - name: Повторное включение защиты виртуальных машин Azure после отработки отказа
@@ -242,6 +246,8 @@
               href: vmware-azure-set-up-target.md
             - name: Настройка параметров репликации
               href: vmware-azure-set-up-replication.md
+            - name: Включение локальной репликации с частными конечными точками
+              href: ./hybrid-how-to-enable-replication-private-endpoints.md
             - name: Развертывание Службы мобильности
               items:
                 - name: Обзор и установка Службы мобильности
@@ -308,6 +314,8 @@
               href: physical-azure-set-up-source.md
             - name: Настройка целевой среды
               href: vmware-azure-set-up-target.md
+            - name: Включение локальной репликации с частными конечными точками
+              href: ./hybrid-how-to-enable-replication-private-endpoints.md
             - name: Развертывание Службы мобильности
               items:
                 - name: Сведения об установке службы Mobility Service
@@ -403,9 +411,9 @@
         - name: Dynamics AX
           href: site-recovery-dynamicsax.md
         - name: RDS
-          href: 'site-recovery-workload.md#protect-remote-desktop-services'
+          href: site-recovery-workload.md#protect-remote-desktop-services
         - name: Exchange
-          href: 'site-recovery-workload.md#protect-exchange'
+          href: site-recovery-workload.md#protect-exchange
         - name: SAP
           href: site-recovery-sap.md
         - name: Файловый сервер
@@ -415,7 +423,7 @@
         - name: Citrix XenApp и XenDesktop
           href: site-recovery-citrix-xenapp-and-xendesktop.md
         - name: Другие рабочие нагрузки
-          href: 'site-recovery-workload.md#workload-summary'
+          href: site-recovery-workload.md#workload-summary
     - name: Аварийное восстановление на дополнительный сайт
       items:
         - name: Виртуальные машины VMware или физические серверы
@@ -509,7 +517,7 @@
 - name: Сопутствующие материалы
   items:
     - name: Служба автоматизации Azure
-      href: /azure/automation/
+      href: ../automation/index.yml
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure
@@ -517,7 +525,7 @@
     - name: Блог
       href: 'https://azure.microsoft.com/blog/tag/azure-site-recovery/'
     - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
-      href: 'https://docs.microsoft.com/answers/topics/azure-site-recovery.html'
+      href: /answers/topics/azure-site-recovery.html
     - name: Схема обучения
       href: /learn/azure/
     - name: Цены

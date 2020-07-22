@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 03/24/2020
 ms.openlocfilehash: ec2aa5b1492534908adb55544623110242717609
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81416672"
 ---
 # <a name="copy-data-from-and-to-salesforce-service-cloud-by-using-azure-data-factory"></a>Копирование данных из службы Salesforce в облако и обратно с помощью фабрики данных Azure
@@ -27,7 +27,7 @@ ms.locfileid: "81416672"
 
 Этот соединитель облачных служб Salesforce поддерживается для следующих действий:
 
-- [Действие копирования](copy-activity-overview.md) с [поддерживаемой матрицей источника и приемника](copy-activity-overview.md)
+- [Действие копирования](copy-activity-overview.md) с использованием [матрицы поддерживаемых источников и приемников](copy-activity-overview.md)
 - [Действие поиска](control-flow-lookup-activity.md)
 
 Данные из облака службы Salesforce можно скопировать в любое хранилище данных, поддерживаемое в качестве приемника. Вы также можете копировать данные из любого поддерживаемого исходного хранилища данных в облако службы Salesforce. Список хранилищ данных, поддерживаемых действием копирования в качестве источников или приемников, см. в таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) .
@@ -39,7 +39,7 @@ ms.locfileid: "81416672"
 
 Соединитель Salesforce построен на основе API-интерфейса SalesForce RESTFUL/Массовы. По умолчанию соединитель использует [V45](https://developer.salesforce.com/docs/atlas.en-us.218.0.api_rest.meta/api_rest/dome_versions.htm) для копирования данных из Salesforce и использует [V40](https://developer.salesforce.com/docs/atlas.en-us.208.0.api_asynch.meta/api_asynch/asynch_api_intro.htm) для копирования данных в Salesforce. Можно также явно задать версию API, используемую для чтения и записи данных через [ `apiVersion` свойство](#linked-service-properties) в связанной службе.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В Salesforce требуется включить разрешение API. Дополнительные сведения о включении доступа к API в Salesforce с помощью набора разрешений см. [здесь](https://www.data2crm.com/migration/faqs/enable-api-access-salesforce-permission-set/).
 
@@ -62,15 +62,15 @@ ms.locfileid: "81416672"
 
 Для связанной службы Salesforce поддерживаются следующие свойства.
 
-| Свойство | Описание | Обязательный |
+| Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type |Для свойства Type необходимо задать значение **салесфорцесервицеклауд**. |Да |
 | environmentUrl | Укажите URL-адрес облачного экземпляра службы Salesforce. <br> Значение по умолчанию — `"https://login.salesforce.com"`. <br> Чтобы скопировать данные из песочницы, укажите `"https://test.salesforce.com"`. <br> Чтобы скопировать данные из пользовательского домена, укажите URL-адрес, например `"https://[domain].my.salesforce.com"`. |Нет |
 | username |Укажите имя пользователя для учетной записи пользователя. |Да |
-| пароль |Укажите пароль для учетной записи пользователя.<br/><br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Да |
-| securityToken |Укажите маркер безопасности для учетной записи пользователя. <br/><br/>Общие сведения о маркере безопасности см. в статье [Security and the API](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_concepts_security.htm) (Безопасность и API). Маркер безопасности можно пропустить, только если добавить IP-адрес Integration Runtime в [список доверенных IP-адресов](https://developer.salesforce.com/docs/atlas.en-us.securityImplGuide.meta/securityImplGuide/security_networkaccess.htm) в Salesforce. При использовании Azure IR см. [Azure Integration Runtime IP-адресов](azure-integration-runtime-ip-addresses.md).<br/><br/>Инструкции по получению и сбросу маркера безопасности см. в разделе [Получение маркера безопасности](https://help.salesforce.com/apex/HTViewHelpDoc?id=user_security_token.htm). Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Нет |
-| версия_API | Укажите версию API-интерфейса SalesForce RESTFUL или пакета управления для использования, `48.0`например. По умолчанию соединитель использует [V45](https://developer.salesforce.com/docs/atlas.en-us.218.0.api_rest.meta/api_rest/dome_versions.htm) для копирования данных из Salesforce и использует [V40](https://developer.salesforce.com/docs/atlas.en-us.208.0.api_asynch.meta/api_asynch/asynch_api_intro.htm) для копирования данных в Salesforce. | Нет |
-| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md) , используемая для подключения к хранилищу данных. Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. | "Нет" для источника, "Да" для приемника, если связанная с источником служба не имеет среды выполнения интеграции |
+| password |Укажите пароль для учетной записи пользователя.<br/><br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Да |
+| securityToken |Укажите маркер безопасности для учетной записи пользователя. <br/><br/>Общие сведения о маркере безопасности см. в статье [Security and the API](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_concepts_security.htm) (Безопасность и API). Маркер безопасности можно пропустить, только если добавить IP-адрес Integration Runtime в [список доверенных IP-адресов](https://developer.salesforce.com/docs/atlas.en-us.securityImplGuide.meta/securityImplGuide/security_networkaccess.htm) в Salesforce. При использовании Azure IR см. [Azure Integration Runtime IP-адресов](azure-integration-runtime-ip-addresses.md).<br/><br/>Инструкции по получению и сбросу маркера безопасности см. в разделе [Получение маркера безопасности](https://help.salesforce.com/apex/HTViewHelpDoc?id=user_security_token.htm). Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |нет |
+| версия_API | Укажите версию API-интерфейса SalesForce RESTFUL или пакета управления для использования, например `48.0` . По умолчанию соединитель использует [V45](https://developer.salesforce.com/docs/atlas.en-us.218.0.api_rest.meta/api_rest/dome_versions.htm) для копирования данных из Salesforce и использует [V40](https://developer.salesforce.com/docs/atlas.en-us.208.0.api_asynch.meta/api_asynch/asynch_api_intro.htm) для копирования данных в Salesforce. | Нет |
+| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. | "Нет" для источника, "Да" для приемника, если связанная с источником служба не имеет среды выполнения интеграции |
 
 >[!IMPORTANT]
 >При копировании данных в облако службы Salesforce Azure Integration Runtime по умолчанию нельзя использовать для выполнения копирования. Иными словами, если у связанной службы источника нет указанной среды выполнения интеграции, явно [создайте Azure Integration Runtime](create-azure-integration-runtime.md#create-azure-ir) с расположением рядом с экземпляром облачной службы Salesforce. Свяжите связанную облачную службу Salesforce Service, как показано в следующем примере.
@@ -141,7 +141,7 @@ ms.locfileid: "81416672"
 
 Для копирования данных из службы Salesforce в облако и обратно поддерживаются следующие свойства.
 
-| Свойство | Описание | Обязательный |
+| Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Для свойства Type необходимо задать значение **салесфорцесервицеклаудобжект**.  | Да |
 | objectApiName | Имя объекта Salesforce, из которого извлекаются данные. | "Нет" для источника, "Да" для приемника |
@@ -170,7 +170,7 @@ ms.locfileid: "81416672"
 }
 ```
 
-| Свойство | Описание | Обязательный |
+| Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Свойство type для набора данных должно иметь значение **RelationalTable**. | Да |
 | tableName | Имя таблицы в облаке службы Salesforce. | Нет (если свойство query указано в источнике действия) |
@@ -183,7 +183,7 @@ ms.locfileid: "81416672"
 
 Чтобы скопировать данные из облака службы Salesforce, в разделе **источник** действия копирования поддерживаются следующие свойства.
 
-| Свойство | Описание | Обязательный |
+| Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Свойство Type источника действия копирования должно иметь значение **салесфорцесервицеклаудсаурце**. | Да |
 | query |Используйте пользовательский запрос для чтения данных. Вы можете использовать запрос, написанный на [объектно-ориентированном языке запросов Salesforce (SOQL)](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm), или запрос SQL-92. Дополнительные советы см. в разделе [Советы по запросам](#query-tips). Если запрос не указан, будут получены все данные облачного объекта службы Salesforce, указанного в "Обжектапинаме" в наборе данных. | Нет (если в наборе данных задано свойство objectApiName) |
@@ -230,7 +230,7 @@ ms.locfileid: "81416672"
 
 Чтобы скопировать данные в облако службы Salesforce, в разделе **приемника** действия копирования поддерживаются следующие свойства.
 
-| Свойство | Описание | Обязательный |
+| Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Свойство Type приемника действия копирования должно иметь значение **салесфорцесервицеклаудсинк**. | Да |
 | writeBehavior | Поведение операции при записи.<br/>Допустимые значения: **Insert** (Вставка) и **Upsert** (Вставка-обновление). | Нет (по умолчанию используется Insert) |
@@ -277,11 +277,11 @@ ms.locfileid: "81416672"
 
 ### <a name="retrieve-data-from-a-salesforce-service-cloud-report"></a>Получение данных из облачного отчета службы Salesforce
 
-Вы можете получить данные из облачных отчетов службы Salesforce, указав запрос в `{call "<report name>"}`качестве. Например, `"query": "{call \"TestReport\"}"`.
+Вы можете получить данные из облачных отчетов службы Salesforce, указав запрос в качестве `{call "<report name>"}` . Например, `"query": "{call \"TestReport\"}"`.
 
 ### <a name="retrieve-deleted-records-from-the-salesforce-service-cloud-recycle-bin"></a>Извлечение удаленных записей из корзины службы Salesforce в облачной корзине
 
-Чтобы запросить обратимо удаленные записи из корзины службы Salesforce, можно указать `readBehavior` в качестве. `queryAll` 
+Чтобы запросить обратимо удаленные записи из корзины службы Salesforce, можно указать `readBehavior` в качестве `queryAll` . 
 
 ### <a name="difference-between-soql-and-sql-query-syntax"></a>Различия между синтаксисом запросов SOQL и SQL
 
@@ -314,15 +314,15 @@ ms.locfileid: "81416672"
 | Тип данных Cloud службы Salesforce | Тип промежуточных данных фабрики данных |
 |:--- |:--- |
 | Автонумерация |Строка |
-| Флажок |Логическое значение |
+| Флажок |Логическое |
 | Валюта |Decimal |
-| Дата |DateTime |
-| Дата и время |DateTime |
+| Дата |Дата и время |
+| Дата и время |Дата и время |
 | Электронная почта |Строка |
 | Идентификатор |Строка |
 | Связь для подстановки |Строка |
 | Список множественного выбора |Строка |
-| Число |Decimal |
+| number |Decimal |
 | Процент |Decimal |
 | Номер телефона |Строка |
 | Список выбора |Строка |
@@ -335,8 +335,8 @@ ms.locfileid: "81416672"
 
 ## <a name="lookup-activity-properties"></a>Свойства действия поиска
 
-Чтобы получить сведения о свойствах, проверьте [действие поиска](control-flow-lookup-activity.md).
+Подробные сведения об этих свойствах см. в разделе [Действие поиска](control-flow-lookup-activity.md).
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных.

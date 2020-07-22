@@ -13,12 +13,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.date: 02/26/2019
 ms.author: apimpm
-ms.openlocfilehash: 9a9c6897937b73786367accc33e985a268907226
-ms.sourcegitcommit: 8dc84e8b04390f39a3c11e9b0eaf3264861fcafc
+ms.openlocfilehash: 4c3cc572dd9629605414cd88d7735c2b31f92249
+ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81258751"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85851253"
 ---
 # <a name="transform-and-protect-your-api"></a>Преобразование и защита API
 
@@ -80,10 +80,12 @@ ms.locfileid: "81258751"
 
    ![Политики](./media/transform-api/transform-api.png)
 
-7. Измените код элемента **\<outbound>** , чтобы он выглядел следующим образом:
+7. Измените код элемента **\<outbound>** , чтобы он выглядел так:
 
-       <set-header name="X-Powered-By" exists-action="delete" />
-       <set-header name="X-AspNet-Version" exists-action="delete" />
+   ```
+   <set-header name="X-Powered-By" exists-action="delete" />
+   <set-header name="X-AspNet-Version" exists-action="delete" />
+   ```
 
    ![Политики](./media/transform-api/set-policy.png)
 
@@ -112,11 +114,8 @@ ms.locfileid: "81258751"
 2.  Выберите **Все операции**.
 3.  В верхней части экрана выберите вкладку **Конструктор**.
 4.  В разделе **Обработка исходящих запросов** щелкните значок **</>** .
-5.  Установите курсор внутри **&lt;исходящего&gt;** элемента и нажмите кнопку **Вставить политику** в правом верхнем углу.
-6.  На правой панели в разделе **Политики преобразования** щелкните **+Поиск и замена строки в тексте**.
-7.  Измените код **find-and-replace** (в элементе **\<outbound\>** ), чтобы заменить URL-адрес адресом шлюза службы управления API. Пример:
-
-        <find-and-replace from="://conferenceapi.azurewebsites.net" to="://apiphany.azure-api.net/conference"/>
+5.  Установите курсор внутри элемента **&lt;outbound&gt;** и нажмите кнопку **Показать фрагменты слайдов** в правом верхнем углу.
+6.  В окне справа в разделе **Политики преобразования** щелкните **Mask URLs in content** (Маскировка URL-адресов в содержимом).
 
 ## <a name="protect-an-api-by-adding-rate-limit-policy-throttling"></a>защита API путем добавления политик ограничения скорости (регулирования);
 
@@ -130,33 +129,37 @@ ms.locfileid: "81258751"
 4.  В разделе **Обработка входящих запросов** щелкните значок **</>** .
 5.  Поместите курсор на **&lt;входящий&gt;** элемент.
 6.  На правой панели в разделе **Политики ограничения доступа** щелкните **Ограничить частоту вызовов для одного ключа**.
-7.  Замените код **rate-limit-by-key** (в элементе **\<inbound\>** ) следующим фрагментом:
+7.  Замените код **rate-limit-by-key** в элементе **\<inbound\>** следующим фрагментом:
 
-        <rate-limit-by-key calls="3" renewal-period="15" counter-key="@(context.Subscription.Id)" />
+    ```
+    <rate-limit-by-key calls="3" renewal-period="15" counter-key="@(context.Subscription.Id)" />
+    ```
 
 ## <a name="test-the-transformations"></a>проверка преобразований.
 
 Если на этом этапе взглянуть на код в редакторе, ваши политики будут выглядеть так:
 
-    <policies>
-        <inbound>
-            <rate-limit-by-key calls="3" renewal-period="15" counter-key="@(context.Subscription.Id)" />
-            <base />
-        </inbound>
-        <backend>
-            <base />
-        </backend>
-        <outbound>
-            <set-header name="X-Powered-By" exists-action="delete" />
-            <set-header name="X-AspNet-Version" exists-action="delete" />
-            <find-and-replace from="://conferenceapi.azurewebsites.net:443" to="://apiphany.azure-api.net/conference"/>
-            <find-and-replace from="://conferenceapi.azurewebsites.net" to="://apiphany.azure-api.net/conference"/>
-            <base />
-        </outbound>
-        <on-error>
-            <base />
-        </on-error>
-    </policies>
+   ```
+   <policies>
+      <inbound>
+        <rate-limit-by-key calls="3" renewal-period="15" counter-key="@(context.Subscription.Id)" />
+        <base />
+      </inbound>
+      <backend>
+        <base />
+      </backend>
+      <outbound>
+        <set-header name="X-Powered-By" exists-action="delete" />
+        <set-header name="X-AspNet-Version" exists-action="delete" />
+        <find-and-replace from="://conferenceapi.azurewebsites.net:443" to="://apiphany.azure-api.net/conference"/>
+        <find-and-replace from="://conferenceapi.azurewebsites.net" to="://apiphany.azure-api.net/conference"/>
+        <base />
+      </outbound>
+      <on-error>
+        <base />
+      </on-error>
+   </policies>
+   ```
 
 Оставшаяся часть этого раздела посвящена проверке преобразований политики, которые вы задали ранее.
 

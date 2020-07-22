@@ -2,13 +2,13 @@
 title: Перемещение виртуальных машин Azure в новую подписку или группу ресурсов
 description: Используйте Azure Resource Manager, чтобы переместить виртуальные машины в новую группу ресурсов или подписку.
 ms.topic: conceptual
-ms.date: 03/31/2020
-ms.openlocfilehash: e5bd004b6619db9c9882b8e9e6005309317b8ca5
-ms.sourcegitcommit: 3beb067d5dc3d8895971b1bc18304e004b8a19b3
+ms.date: 07/06/2020
+ms.openlocfilehash: c85ec175d802a29de7a8a87ee7a51c0916762a5a
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82744642"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86044555"
 ---
 # <a name="move-guidance-for-virtual-machines"></a>Перемещение руководств для виртуальных машин
 
@@ -25,6 +25,18 @@ ms.locfileid: "82744642"
 * Виртуальные машины с низким приоритетом и масштабируемые наборы виртуальных машин с низким приоритетом нельзя перемещать между группами ресурсов или подписками.
 * Виртуальные машины в группе доступности нельзя перемещать по отдельности.
 
+## <a name="azure-disk-encryption"></a>Шифрование дисков Azure
+
+Вы не можете переместить виртуальную машину, интегрированную с хранилищем ключей, для реализации [шифрования дисков Azure для виртуальных машин Linux](../../../virtual-machines/linux/disk-encryption-overview.md) или [шифрования дисков Azure для виртуальных машин Windows](../../../virtual-machines/windows/disk-encryption-overview.md). Чтобы переместить виртуальную машину, необходимо отключить шифрование.
+
+```azurecli-interactive
+az vm encryption disable --resource-group demoRG --name myVm1
+```
+
+```azurepowershell-interactive
+Disable-AzVMDiskEncryption -ResourceGroupName demoRG -VMName myVm1
+```
+
 ## <a name="virtual-machines-with-azure-backup"></a>Виртуальные машины с Azure Backup
 
 Чтобы переместить виртуальные машины, настроенные с Azure Backup, необходимо удалить точки восстановления из хранилища.
@@ -37,9 +49,9 @@ ms.locfileid: "82744642"
 2. Чтобы переместить виртуальные машины, настроенные с помощью Azure Backup, выполните следующие действия.
 
    1. Найдите расположение виртуальной машины.
-   2. Найдите группу ресурсов со следующим шаблоном именования: `AzureBackupRG_<location of your VM>_1`. Например, *AzureBackupRG_westus2_1*
+   2. Найдите группу ресурсов со следующим шаблоном именования: `AzureBackupRG_<location of your VM>_1` . Например, *AzureBackupRG_westus2_1*
    3. В портал Azure установите флажок **Показывать скрытые типы**.
-   4. Найдите ресурс с типом **Microsoft. COMPUTE/ресторепоинтколлектионс** , который имеет шаблон `AzureBackup_<name of your VM that you're trying to move>_###########`именования.
+   4. Найдите ресурс с типом **Microsoft. COMPUTE/ресторепоинтколлектионс** , который имеет шаблон именования `AzureBackup_<name of your VM that you're trying to move>_###########` .
    5. Удалите этот ресурс. Эта операция удаляет только точки мгновенного восстановления, но не данные резервных копий в хранилище.
    6. После завершения операции удаления можно переместить виртуальную машину.
 

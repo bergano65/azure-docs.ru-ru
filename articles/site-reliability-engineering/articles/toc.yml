@@ -3,5 +3,7 @@
 - name: Часто задаваемые вопросы
   expanded: true
   items:
+    - name: SRE и написание кода
+      href: code.md
     - name: SRE и DevOps
       href: devops.md

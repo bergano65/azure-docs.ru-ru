@@ -9,10 +9,10 @@ services: iot-accelerators
 ms.date: 08/06/2018
 ms.topic: conceptual
 ms.openlocfilehash: 9d5d572c3e32e3645e65ba8d6fc28b567b3c1e9a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "65827212"
 ---
 # <a name="configure-access-controls-for-the-time-series-insights-telemetry-explorer"></a>Настройка управления доступом для обозревателя телеметрии Аналитики временных рядов
@@ -58,7 +58,7 @@ ms.locfileid: "65827212"
 
 В этой статье вы узнали, как обеспечивается управление доступом для обозревателя Аналитики временных рядов в акселераторе решения для удаленного мониторинга.
 
-Дополнительные сведения об ускорителе решений для удаленного мониторинга см. в разделе [архитектура удаленного мониторинга](iot-accelerators-remote-monitoring-sample-walkthrough.md) .
+Более подробные сведения об акселераторе решения для удаленного мониторинга см. в статье [Архитектура предварительно настроенного решения для удаленного мониторинга](iot-accelerators-remote-monitoring-sample-walkthrough.md).
 
 Дополнительные сведения о настройке решения для удаленного мониторинга см. в статье [Настройка и повторное развертывание микрослужбы](iot-accelerators-microservices-example.md).
 <!-- Next tutorials in the sequence -->

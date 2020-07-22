@@ -1,20 +1,14 @@
 ---
 title: Руководство по Отправка настраиваемых событий в гибридное подключение с помощью Сетки событий
 description: Руководство по Используйте службу "Сетка событий Azure" и Azure CLI, чтобы иметь возможность публиковать темы и подписываться на эти события. Гибридное подключение используется для конечной точки.
-services: event-grid
-keywords: ''
-author: spelluru
-ms.author: spelluru
-ms.date: 11/05/2019
+ms.date: 07/07/2020
 ms.topic: tutorial
-ms.service: event-grid
-ms.custom: seodec18
-ms.openlocfilehash: 2773d06fdfc606faaab88340fc2ef9685bba21f9
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 208d8584736a0d7ff591c3a8ed7a08bcbf6dcba4
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73720699"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86114913"
 ---
 # <a name="tutorial-route-custom-events-to-azure-relay-hybrid-connections-with-azure-cli-and-event-grid"></a>Руководство по Маршрутизация пользовательских событий на гибридные подключения Azure Relay с помощью Azure CLI и службы "Сетка событий"
 

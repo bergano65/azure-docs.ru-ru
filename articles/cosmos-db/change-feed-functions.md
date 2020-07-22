@@ -7,18 +7,18 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 12/03/2019
 ms.reviewer: sngun
-ms.openlocfilehash: 7a74635551d8416bf60689b1f1403f29883e81bd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e452f03721551adada69a36b1ce69e57f1111f55
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78851371"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85834069"
 ---
 # <a name="serverless-event-based-architectures-with-azure-cosmos-db-and-azure-functions"></a>Бессерверные архитектуры на основе событий с Azure Cosmos DB и функциями Azure
 
 Функции Azure предоставляют самый простой способ подключения к веб- [каналу изменений](change-feed.md). Вы можете создать небольшие функции повторной подготовки Azure, которые будут автоматически запускаться для каждого нового события в веб-канале изменений контейнера Azure Cosmos.
 
-![Функции на основе событий без сервера, работающие с триггером функций Azure для Cosmos DB](./media/change-feed-functions/functions.png)
+:::image type="content" source="./media/change-feed-functions/functions.png" alt-text="Функции на основе событий без сервера, работающие с триггером функций Azure для Cosmos DB" border="false":::
 
 При [активации функций Azure для Cosmos DB](../azure-functions/functions-bindings-cosmosdb-v2-trigger.md)можно использовать функции масштабирования и надежности [обработчика веб-канала изменений](./change-feed-processor.md)без необходимости поддерживать какую-либо [рабочую инфраструктуру](./change-feed-processor.md). Просто сосредоточьтесь на логике функции Azure, не беспокоясь о остальной части конвейера по источникам событий. Вы даже можете смешивать триггеры с другими [привязками функций Azure](../azure-functions/functions-triggers-bindings.md#supported-bindings).
 
@@ -30,14 +30,14 @@ ms.locfileid: "78851371"
 Чтобы реализовать поток на основе событий без сервера, вам потребуется:
 
 * **Отслеживаемый контейнер**. отслеживаемый контейнер — это контейнер Cosmos Azure, который отслеживается, и в нем хранятся данные, из которых создается веб-канал изменений. Любые операции вставки, обновления отслеживаемого контейнера отражаются в веб-канале изменений контейнера.
-* **Контейнер аренды**. контейнер аренды сохраняет состояние в нескольких динамических экземплярах функций Azure без сервера и включает динамическое масштабирование. Этот контейнер аренды можно вручную или автоматически создать с помощью триггера функций Azure для Cosmos DB. Чтобы автоматически создать контейнер аренды, установите флаг *креателеасеколлектионифнотексистс* в [конфигурации](../azure-functions/functions-bindings-cosmosdb-v2-trigger.md#configuration). Секционированные контейнеры аренды должны иметь определение ключа `/id` секции.
+* **Контейнер аренды**. контейнер аренды сохраняет состояние в нескольких динамических экземплярах функций Azure без сервера и включает динамическое масштабирование. Этот контейнер аренды можно вручную или автоматически создать с помощью триггера функций Azure для Cosmos DB. Чтобы автоматически создать контейнер аренды, установите флаг *креателеасеколлектионифнотексистс* в [конфигурации](../azure-functions/functions-bindings-cosmosdb-v2-trigger.md#configuration). Секционированные контейнеры аренды должны иметь `/id` Определение ключа секции.
 
 ## <a name="create-your-azure-functions-trigger-for-cosmos-db"></a>Создание триггера функций Azure для Cosmos DB
 
 Создание функции Azure с триггером функций Azure для Cosmos DB теперь поддерживается во всех интеграциях IDE и CLI функций Azure.
 
 * [Расширение Visual Studio](../azure-functions/functions-develop-vs.md) для пользователей Visual Studio.
-* [Расширение Visual Studio Code](/azure/javascript/tutorial-vscode-serverless-node-01) для пользователей Visual Studio Code.
+* [Расширение Visual Studio Code](/azure/developer/javascript/tutorial-vscode-serverless-node-01) для пользователей Visual Studio Code.
 * И, наконец, [основные средства интерфейса командной строки](../azure-functions/functions-run-local.md#create-func) для кросс-платформенного интерфейса IDE.
 
 ## <a name="run-your-trigger-locally"></a>Запуск триггера локально
@@ -46,12 +46,12 @@ ms.locfileid: "78851371"
 
 Если вы хотите протестировать сценарии в реальном времени в облаке, вы можете [попробовать Cosmos DB бесплатно](https://azure.microsoft.com/try/cosmosdb/) без какой-либо кредитной карты или подписки Azure.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь вы можете продолжить изучение веб-канала изменений в следующих статьях:
+Вы можете продолжить знакомство с каналом изменений, перейдя к следующим статьям:
 
 * [Работа с поддержкой веб-канала изменений в Azure Cosmos DB](change-feed.md)
 * [Чтение канала изменений Azure Cosmos DB](read-change-feed.md)
-* [Использование библиотеки обработчика веб-канала изменений](change-feed-processor.md)
+* [Using the Azure Cosmos DB change feed processor library](change-feed-processor.md) (Использование библиотеки обработчика канала изменений Azure Cosmos DB)
 * [Using the Azure Cosmos DB change feed processor library](change-feed-processor.md) (Использование библиотеки обработчика канала изменений Azure Cosmos DB)
 * [Обработка данных бессерверных баз данных с помощью Azure Cosmos DB и Функций Azure](serverless-computing-database.md)

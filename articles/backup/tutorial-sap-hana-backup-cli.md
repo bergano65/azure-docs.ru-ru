@@ -3,12 +3,12 @@ title: Учебник по резервному копированию базы 
 description: Из этого учебника вы узнаете, как выполнять резервное копирование баз данных SAP HANA, запущенных на виртуальной машине Azure, в хранилище Служб восстановления для Azure Backup через интерфейс командной строки Azure.
 ms.topic: tutorial
 ms.date: 12/4/2019
-ms.openlocfilehash: cdc8a8fb09a086a2b9212c21d071f267991fa275
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 7d1c52a846b837d47aa40c8f6a68010a8e7f1137
+ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "78206628"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83747289"
 ---
 # <a name="tutorial-back-up-sap-hana-databases-in-an-azure-vm-using-azure-cli"></a>Руководство по Резервное копирование баз данных SAP HANA на виртуальных машинах Azure с помощью Azure CLI
 
@@ -141,6 +141,11 @@ e0f15dae-7cac-4475-a833-f52c50e5b6c3  ConfigureBackup   Completed  hxe         2
 ```
 
 Командлет [az backup job list](https://docs.microsoft.com/cli/azure/backup/job?view=azure-cli-latest#az-backup-job-list) возвращает список всех заданий резервного копирования (запланированных и по требованию), которые были выполнены или выполняются в текущий момент в защищенной базе данных, а также другие операции, такие как регистрация, настройка резервного копирования, удаление данных резервных копий и т. д.
+
+>[!NOTE]
+>Azure Backup не учитывает переход на летнее время при создании резервных копий базы данных SAP HANA, работающей на виртуальной машине Azure.
+>
+>Измените политику вручную, если это необходимо.
 
 ## <a name="trigger-an-on-demand-backup"></a>Активирование резервного копирования по запросу
 

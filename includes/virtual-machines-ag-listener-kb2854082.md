@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
 ms.openlocfilehash: 28aab15dc67e051190e8d4e35e92240a56fe54a6
-ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "67185235"
 ---
 Далее, если серверы в кластере работают под управлением Windows Server 2008 R2 или Windows Server 2012, необходимо убедиться, что исправление [KB2854082](https://support.microsoft.com/kb/2854082) установлено на всех локальных серверах или виртуальных машинах Azure, которые являются частью кластера. Это исправление необходимо установить на все сервера или виртуальные машины в кластере, даже если их нет в группе доступности.

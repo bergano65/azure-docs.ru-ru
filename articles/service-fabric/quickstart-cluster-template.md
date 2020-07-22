@@ -7,26 +7,28 @@ ms.topic: quickstart
 ms.custom: subject-armqs
 ms.author: edoyle
 ms.date: 04/24/2020
-ms.openlocfilehash: 60771d5a188df5dfeca3530a551a116c870e63f5
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 70b5387e5e58bd30aa61feefc1bf4e5e98af9b1d
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82150489"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86259346"
 ---
-# <a name="quickstart-create-a-service-fabric-cluster-using-resource-manager-template"></a>Краткое руководство. Создание кластера Service Fabric с помощью шаблона Resource Manager
+# <a name="quickstart-create-a-service-fabric-cluster-using-arm-template"></a>Краткое руководство. Создание кластера Service Fabric с помощью шаблона ARM
 
-Azure Service Fabric — это платформа распределенных систем, которая дает возможность не только легко упаковывать и развертывать масштабируемые надежные микрослужбы и контейнеры, но и управлять ими. *Кластер* Service Fabric — это подключенный к сети набор виртуальных машин, в котором вы развертываете микрослужбы и управляете ими.
+Azure Service Fabric — это платформа распределенных систем, которая дает возможность не только легко упаковывать и развертывать масштабируемые надежные микрослужбы и контейнеры, но и управлять ими. *Кластер* Service Fabric — это подключенный к сети набор виртуальных машин, в котором вы развертываете микрослужбы и управляете ими. В этой статье описано развертывание тестового кластера Service Fabric в Azure с помощью шаблона Azure Resource Manager (ARM).
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
-В этой статье описывается развертывание тестового кластера Service Fabric в Azure с помощью Resource Manager. Этот кластер с пятью узлами Windows защищен с помощью самозаверяющего сертификата и, таким образом, предназначен только для обучения (а не для рабочих нагрузок).
+Этот кластер с пятью узлами Windows защищен с помощью самозаверяющего сертификата и, таким образом, предназначен только для обучения (а не для рабочих нагрузок). Для развертывания шаблона мы будем использовать Azure PowerShell. В дополнение к Azure PowerShell можно также использовать портал Azure, Azure CLI и REST API. Дополнительные сведения о других методах развертывания см. в статье о [развертывании с использованием шаблонов](../azure-resource-manager/templates/deploy-portal.md).
 
-Для развертывания шаблона мы будем использовать Azure PowerShell. В дополнение к Azure PowerShell можно также использовать портал Azure, Azure CLI и REST API. Дополнительные сведения о других методах развертывания см. в статье о [развертывании с использованием шаблонов](../azure-resource-manager/templates/deploy-portal.md).
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
 
-Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fservice-fabric-secure-cluster-5-node-1-nodetype%2Fazuredeploy.json)
 
 ## <a name="prerequisites"></a>Предварительные требования
+
+Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
 ### <a name="install-service-fabric-sdk-and-powershell-modules"></a>Установите пакет SDK для Service Fabric и модуль PowerShell.
 
@@ -34,7 +36,7 @@ Azure Service Fabric — это платформа распределенных 
 
 * Установите [пакет SDK для Service Fabric и модуль PowerShell](service-fabric-get-started.md).
 
-* Установите [Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-Az-ps).
+* Установите [Azure PowerShell](/powershell/azure/install-az-ps).
 
 ### <a name="download-the-sample-template-and-certificate-helper-script"></a>Загрузка примера шаблона и вспомогательного скрипта сертификата
 
@@ -87,11 +89,9 @@ $certUrlValue = "<Certificate URL>"
 $certThumbprint = "<Certificate Thumbprint>"
 ```
 
-## <a name="create-a-service-fabric-cluster"></a>Создание кластера Service Fabric
+## <a name="review-the-template"></a>Изучение шаблона
 
-### <a name="review-the-template"></a>Изучение шаблона
-
-Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates/blob/master/service-fabric-secure-cluster-5-node-1-nodetype). Шаблон для этой статьи слишком длинный, чтобы его можно было здесь отобразить. Чтобы просмотреть шаблон, перейдите на страницу https://github.com/Azure/azure-quickstart-templates/blob/master/service-fabric-secure-cluster-5-node-1-nodetype/azuredeploy.json.
+Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/service-fabric-secure-cluster-5-node-1-nodetype/). Шаблон для этой статьи слишком длинный, чтобы его можно было здесь отобразить. Вы можете просмотреть его в файле [azuredeploy.json](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/service-fabric-secure-cluster-5-node-1-nodetype/azuredeploy.json).
 
 В шаблоне определено несколько ресурсов Azure:
 
@@ -144,7 +144,7 @@ $certThumbprint = "<Certificate Thumbprint>"
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 
-Сохраните пути к шаблону Resource Manager и файлам параметров в переменных, а затем разверните шаблон.
+Сохраните пути к шаблону ARM и файлам параметров в переменных, а затем разверните шаблон.
 
 ```powershell
 $templateFilePath = "<full path to azuredeploy.json>"

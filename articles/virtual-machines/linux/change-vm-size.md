@@ -7,10 +7,9 @@ ms.topic: article
 ms.date: 02/10/2017
 ms.author: daberry
 ms.openlocfilehash: cf2716ce5d24aa86e32f6f521134590c671d5011
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "83120986"
 ---
 # <a name="resize-a-linux-virtual-machine-using-azure-cli"></a>Изменение размера виртуальной машины Linux с помощью интерфейса командной строки Azure 
@@ -45,7 +44,7 @@ ms.locfileid: "83120986"
    > [!WARNING]
    > Освобождение виртуальной машины также освобождает все назначенные ей динамические IP-адреса. Это не влияет на диски ОС и данных.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Для повышения масштабируемости запустите несколько экземпляров виртуальных машин и выполните горизонтальное масштабирование. Дополнительные сведения см. [в статье Автоматическое масштабирование компьютеров Linux в масштабируемом наборе виртуальных машин][scale-set]. 
 
 <!-- links -->

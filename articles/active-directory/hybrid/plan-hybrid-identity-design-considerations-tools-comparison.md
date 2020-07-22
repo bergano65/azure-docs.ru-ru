@@ -16,10 +16,9 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 052d99a819aee415d5e7ad6dc00b8c786af0f636
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80811100"
 ---
 # <a name="hybrid-identity-directory-integration-tools-comparison"></a>Сравнение инструментов интеграции каталогов гибридной идентификации
@@ -33,5 +32,5 @@ ms.locfileid: "80811100"
 Дополнительные сведения о различиях между Azure AD Connect синхронизацией и Azure AD Connect подготовки облачных ресурсов см. в статье [что такое Azure AD Connect подготовки облака?](../cloud-provisioning/what-is-cloud-provisioning.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Дополнительные сведения об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
+Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
 

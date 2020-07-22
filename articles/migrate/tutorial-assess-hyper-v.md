@@ -2,14 +2,14 @@
 title: Оценка виртуальных машин Hyper-V для миграции в Azure с помощью службы "Миграция Azure" | Документация Майкрософт
 description: В этой статье показано, как оценить готовность локальных виртуальных машин Hyper-V к миграции в Azure с помощью средства оценки серверов Миграции Azure.
 ms.topic: tutorial
-ms.date: 04/15/2020
+ms.date: 06/03/2020
 ms.custom: mvc
-ms.openlocfilehash: c627902268af3a91e172223c1741dd24ea21fa92
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: 4c95916bf5f92f8a82b9dfae50aa311891857e7a
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81535457"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86114250"
 ---
 # <a name="assess-hyper-v-vms-with-azure-migrate-server-assessment"></a>Оценка виртуальных машин Hyper-V с помощью средства "Оценка сервера" службы "Миграция Azure"
 
@@ -36,7 +36,7 @@ ms.locfileid: "81535457"
 - [Завершите](tutorial-prepare-hyper-v.md) работу с первым руководством в этой серии. Если этого не сделать, инструкции в этом руководстве не будут работать.
 - В первом руководстве вы должны были выполнить следующие действия.
     - [Подготовка Azure](tutorial-prepare-hyper-v.md#prepare-azure) для работы со службой "Миграция Azure".
-    - [Подготовка узлов Hyper-V](tutorial-prepare-hyper-v.md#prepare-hyper-v-for-assessment) и оценка виртуальных машин.
+    - [Подготовка узлов Hyper-V](tutorial-prepare-hyper-v.md#prepare-for-assessment) и оценка виртуальных машин.
     - [Проверка](tutorial-prepare-hyper-v.md#prepare-for-appliance-deployment) наличия всего необходимого для развертывания устройства Миграции Azure для оценки Hyper-V.
 
 ## <a name="set-up-an-azure-migrate-project"></a>Настройка проекта службы "Миграция Azure"
@@ -96,12 +96,20 @@ ms.locfileid: "81535457"
     - ```C:\>Get-FileHash -Path <file_location> -Algorithm [Hashing Algorithm]```
     - Пример использования: ```C:\>Get-FileHash -Path ./AzureMigrateAppliance_v1.19.06.27.zip -Algorithm SHA256```
 
-3.  Для версии устройства 2.19.07.30 созданный хэш должен соответствовать этим параметрам.
+3.  Проверьте последние версии и хэш-значения устройств:
 
-  **Алгоритм** | **Значение хэша**
-  --- | ---
-  MD5 | 29a7531f32bcf69f32d964fa5ae950bc
-  SHA256 | 37b3f27bc44f475872e355f04fcb8f38606c84534c117d1609f2d12444569b31
+    - Для общедоступного облака Azure:
+
+        **Сценарий** | **Загрузить** | **SHA256**
+        --- | --- | ---
+        Hyper-V (8,93 ГБ) | [Последняя версия](https://aka.ms/migrate/appliance/hyperv) |  572be425ea0aca69a9aa8658c950bc319b2bdbeb93b440577264500091c846a1
+
+    - Для Azure для государственных организаций:
+
+        **Сценарий*** | **Загрузить** | **SHA256**
+        --- | --- | ---
+        Hyper-V (63,1 МБ) | [Последняя версия](https://go.microsoft.com/fwlink/?linkid=2120200&clcid=0x409) |  2c5e73a1e5525d4fae468934408e43ab55ff397b7da200b92121972e683f9aa3
+
 
 ### <a name="create-the-appliance-vm"></a>Создание виртуальной машины устройства
 
@@ -122,7 +130,7 @@ ms.locfileid: "81535457"
 2. В меню **Choose Import Type** (Выбор типа импорта) щелкните **Copy the virtual machine (create a new unique ID)** (Копировать виртуальную машину (создать уникальный идентификатор)). Затем нажмите кнопку **Далее**.
 3. В меню **Choose Destination** (Выбор назначения) оставьте параметр по умолчанию. Щелкните **Далее**.
 4. В меню **Storage Folders** (Папки хранилища) оставьте значение по умолчанию. Щелкните **Далее**.
-5. В поле **Choose Network** (Выбор сети) укажите виртуальный коммутатор, который будет использоваться виртуальной машиной. Ему требуется подключение к Интернету для отправки данных в Azure. [Узнайте больше о](https://docs.microsoft.com/windows-server/virtualization/hyper-v/get-started/create-a-virtual-switch-for-hyper-v-virtual-machines) создании виртуального коммутатора.
+5. В поле **Choose Network** (Выбор сети) укажите виртуальный коммутатор, который будет использоваться виртуальной машиной. Ему требуется подключение к Интернету для отправки данных в Azure. [Узнайте больше о](/windows-server/virtualization/hyper-v/get-started/create-a-virtual-switch-for-hyper-v-virtual-machines) создании виртуального коммутатора.
 6. Просмотрите информацию на странице **Summary** (Сводка). Нажмите кнопку **Готово**.
 7. В диспетчере Hyper-V в разделе **Virtual Machines** (Виртуальные машины) запустите виртуальную машину.
 
@@ -166,10 +174,7 @@ ms.locfileid: "81535457"
 
 ### <a name="delegate-credentials-for-smb-vhds"></a>Делегирование учетных данных для виртуальных жестких дисков SMB
 
-Если вы запускаете виртуальные жесткие диски в SMB, необходимо включить делегирование учетных данных с устройства на узлы Hyper-V. Для этого требуется следующее:
-
-- Настройте каждый узел в качестве делегата для устройства. Если вы проходили руководства по порядку, то должны были сделать это во время работы с предыдущим руководством, когда готовили Hyper-V для оценки и миграции. Вы должны были настроить CredSSP для узлов [вручную](tutorial-prepare-hyper-v.md#enable-credssp-on-hosts) либо [выполнить скрипт](tutorial-prepare-hyper-v.md#prepare-with-a-script) для этой задачи.
-- Включите делегирование CredSSP, чтобы устройство Миграции Azure могло выступать в качестве клиента, передавая учетные данные узлу.
+Если вы запускаете виртуальные жесткие диски в SMB, необходимо включить делегирование учетных данных с устройства на узлы Hyper-V. Для этого настройте каждый узел в качестве делегата для устройства. Если вы проходили руководства по порядку, то должны были сделать это во время работы с предыдущим руководством, когда готовили Hyper-V для оценки и миграции. Вы должны были настроить CredSSP для узлов [вручную](tutorial-prepare-hyper-v.md#enable-credssp-to-delegate-credentials) либо [выполнить скрипт](tutorial-prepare-hyper-v.md#run-the-script) для этой задачи.
 
 Включите делегирование на устройстве следующим образом:
 
@@ -178,7 +183,7 @@ ms.locfileid: "81535457"
 На виртуальной машине устройства выполните эту команду. HyperVHost1/HyperVHost2 — это примеры имен узлов.
 
 ```
-Enable-WSManCredSSP -Role Client -DelegateComputer HyperVHost1.contoso.com HyperVHost2.contoso.com -Force
+Enable-WSManCredSSP -Role Client -DelegateComputer HyperVHost1.contoso.com, HyperVHost2.contoso.com, HyperVHost1, HyperVHost2 -Force
 ```
 
 Например, ` Enable-WSManCredSSP -Role Client -DelegateComputer HyperVHost1.contoso.com HyperVHost2.contoso.com -Force `.

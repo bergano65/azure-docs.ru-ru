@@ -2,15 +2,15 @@
 title: Развертывание шаблона — портал Azure
 description: Узнайте, как создать и развернуть первый шаблон Azure Resource Manager с помощью портала Azure.
 author: mumian
-ms.date: 06/12/2019
+ms.date: 06/29/2020
 ms.topic: quickstart
 ms.author: jgao
-ms.openlocfilehash: dd3d9caa8184b8637b509fc3318851751b211405
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: ff6c459f2f4178bee6b6b564e177c097d72592a3
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80131875"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85557348"
 ---
 # <a name="quickstart-create-and-deploy-arm-templates-by-using-the-azure-portal"></a>Краткое руководство. Создание и развертывание шаблонов ARM с помощью портала Azure
 
@@ -57,7 +57,7 @@ ms.locfileid: "80131875"
 
     Шаблон отображается на главной панели. Это файл JSON с шестью элементами верхнего уровня: `schema`, `contentVersion`, `parameters`, `variables`, `resources` и `output`. Дополнительные сведения см. в статье [Понимание структуры и синтаксиса шаблонов ARM](./template-syntax.md).
 
-    В шаблоне определяются шесть параметров. Один из них — **storageAccountName**. На втором выделенном элементе на предыдущем снимке экрана показано, как ссылаться на этот параметр в шаблоне. В следующем разделе описано, как изменить шаблон, указав в нем имя созданной учетной записи хранения.
+    В шаблоне определяются восемь параметров. Один из них — **storageAccountName**. На втором выделенном элементе на предыдущем снимке экрана показано, как ссылаться на этот параметр в шаблоне. В следующем разделе описано, как изменить шаблон, указав в нем имя созданной учетной записи хранения.
 
     В шаблоне определяется один ресурс Azure. Тип — `Microsoft.Storage/storageAccounts`. Рассмотрите, как определен ресурс и какова структура его определения.
 1. В верхней части экрана выберите **Загрузить**.
@@ -77,12 +77,10 @@ ms.locfileid: "80131875"
 
 В Azure требуется, чтобы каждая служба Azure имела уникальное имя. Развертывание может завершится сбоем, если ввести уже существующее имя учетной записи. Чтобы избежать этой проблемы, измените шаблон для использования вызова функции шаблона `uniquestring()`, чтобы создать уникальное имя учетной записи хранения.
 
-1. На **домашней странице** или в меню портала Azure выберите команду **Создать ресурс**.
-1. В строке **Поиск в Marketplace** введите **развертывание шаблона** и нажмите клавишу **ВВОД**.
-1. Выберите **Развертывание шаблона**.
+1. В меню портала Azure в поле поиска введите **развернуть**, а затем выберите **Развернуть настраиваемый шаблон**.
 
     ![Библиотека шаблонов Azure Resource Manager](./media/quickstart-create-templates-use-the-portal/azure-resource-manager-template-library.png)
-1. Нажмите кнопку **создания**.
+
 1. Выберите **Создать собственный шаблон в редакторе**.
 1. Выберите **Загрузка файла** и выполните инструкции, чтобы загрузить файл template.json, скачанный вами в предыдущем разделе.
 1. Внесите в шаблон следующие три изменения:
@@ -107,66 +105,75 @@ ms.locfileid: "80131875"
 
      ```json
      {
-       "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+       "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
        "contentVersion": "1.0.0.0",
        "parameters": {
-           "location": {
-               "type": "string"
-           },
-           "accountType": {
-               "type": "string"
-           },
-           "kind": {
-               "type": "string"
-           },
-           "accessTier": {
-               "type": "string"
-           },
-           "supportsHttpsTrafficOnly": {
-               "type": "bool"
-           }
+         "location": {
+           "type": "string"
+         },
+         "accountType": {
+           "type": "string"
+         },
+         "kind": {
+           "type": "string"
+         },
+         "accessTier": {
+           "type": "string"
+         },
+         "minimumTlsVersion": {
+           "type": "string"
+         },
+         "supportsHttpsTrafficOnly": {
+          "type": "bool"
+         },
+         "allowBlobPublicAccess": {
+           "type": "bool"
+         }
        },
        "variables": {
-           "storageAccountName": "[concat(uniqueString(subscription().subscriptionId), 'storage')]"
+         "storageAccountName": "[concat(uniqueString(subscription().subscriptionId), 'storage')]"
        },
        "resources": [
-           {
-               "name": "[variables('storageAccountName')]",
-               "type": "Microsoft.Storage/storageAccounts",
-               "apiVersion": "2018-07-01",
-               "location": "[parameters('location')]",
-               "properties": {
-                   "accessTier": "[parameters('accessTier')]",
-                   "supportsHttpsTrafficOnly": "[parameters('supportsHttpsTrafficOnly')]"
-               },
-               "dependsOn": [],
-               "sku": {
-                   "name": "[parameters('accountType')]"
-               },
-               "kind": "[parameters('kind')]"
-           }
+         {
+           "name": "[variables('storageAccountName')]",
+           "type": "Microsoft.Storage/storageAccounts",
+           "apiVersion": "2019-06-01",
+           "location": "[parameters('location')]",
+           "properties": {
+             "accessTier": "[parameters('accessTier')]",
+             "minimumTlsVersion": "[parameters('minimumTlsVersion')]",
+             "supportsHttpsTrafficOnly": "[parameters('supportsHttpsTrafficOnly')]",
+             "allowBlobPublicAccess": "[parameters('allowBlobPublicAccess')]"
+           },
+           "dependsOn": [],
+           "sku": {
+             "name": "[parameters('accountType')]"
+           },
+           "kind": "[parameters('kind')]",
+           "tags": {}
+         }
        ],
        "outputs": {}
      }
      ```
+
 1. Щелкните **Сохранить**.
 1. Введите следующие значения.
 
     |Имя|Значение|
     |----|----|
     |**Группа ресурсов**|Выберите имя группы ресурсов, созданной в предыдущем разделе. |
+    |**Регион**|Выберите расположение группы ресурсов. Например, **центральная часть США**. |
     |**Расположение**|Выберите расположение учетной записи хранения. Например, **центральная часть США**. |
     |**Тип учетной записи**|В нашем примере используется **Standard_LRS**. |
     |**Вид**|В нашем примере используется **StorageV2**. |
     |**Уровень доступа**|В нашем примере используется **Горячий**. |
-    |**Https Traffic Only Enabled** (Включен только трафик HTTPS)| В нашем примере используется значение **true**. |
-    |**Я принимаю указанные выше условия**|(установите флажок)|
+    |**Минимальная версия TLS**|Введите **TLS1_0**. |
+    |**Supports Https Traffic Only** (Поддержка только трафика HTTPS)| В нашем примере используется значение **true**. |
+    |**Allow Blob Public Access** (Разрешить общий доступ к BLOB-объектам)| Для этого краткого руководства выберите **false**. |
 
-    Ниже приведен снимок экрана с примером развертывания.
-
-    ![Развертывание шаблонов Azure Resource Manager](./media/quickstart-create-templates-use-the-portal/azure-resource-manager-template-tutorial-deploy.png)
-
-1. Щелкните **Приобрести**.
+1. Выберите **Review + create** (Просмотреть и создать).
+1. Нажмите кнопку **создания**.
 1. Чтобы просмотреть состояние развертывания, щелкните значок колокольчика (уведомления) в верхней части экрана. Появится уведомление **Выполняется развертывание**. Подождите, пока развертывание завершится.
 
     ![Развертывание шаблонов Azure Resource Manager — уведомление](./media/quickstart-create-templates-use-the-portal/azure-resource-manager-template-tutorial-portal-notification.png)

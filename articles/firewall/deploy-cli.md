@@ -6,13 +6,13 @@ author: vhorne
 ms.service: firewall
 ms.date: 08/29/2019
 ms.author: victorh
-ms.topic: article
-ms.openlocfilehash: e97783d1a32916cad151f1d0858a8190d0005fd0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.topic: how-to
+ms.openlocfilehash: 3087b01e849aaa4d1f3c2b6b4060cf202927f55f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "73831967"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85602641"
 ---
 # <a name="deploy-and-configure-azure-firewall-using-azure-cli"></a>Развертывание и настройка брандмауэра Azure с помощью Azure CLI
 
@@ -25,7 +25,7 @@ ms.locfileid: "73831967"
 
 При маршрутизации трафика на брандмауэр, используемый в качестве шлюза по умолчанию, для подсети к трафику применяются настроенные правила брандмауэра.
 
-В этой статье вы создадите упрощенную отдельную виртуальную сеть с тремя подсетями для простоты развертывания. Для рабочих развертываний рекомендуется использовать [модель](https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/hub-spoke) "звезда". Брандмауэр находится в собственной виртуальной сети. Серверы рабочей нагрузки размещены в одноранговых виртуальных сетях в одном регионе с одной или несколькими подсетями.
+В этой статье вы создадите упрощенную отдельную виртуальную сеть с тремя подсетями для простоты развертывания. Для развертываний в рабочей среде рекомендуется использовать [звездообразную модель](https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/hub-spoke). Брандмауэр находится в собственной виртуальной сети. Серверы рабочей нагрузки размещены в одноранговых виртуальных сетях в одном регионе с одной или несколькими подсетями.
 
 * **AzureFirewallSubnet** — в этой подсети находится брандмауэр.
 * **Workload-SN** — в этой подсети находится сервер рабочей нагрузки. Трафик этой подсети проходит через брандмауэр.
@@ -284,7 +284,7 @@ az network firewall network-rule create \
    Invoke-WebRequest -Uri https://www.microsoft.com
    ```
 
-   `www.google.com` Запросы должны выполняться успешно, и `www.microsoft.com` запросы должны завершаться ошибкой. Это показывает, что правила брандмауэра работают должным образом.
+   `www.google.com`Запросы должны выполняться успешно, и `www.microsoft.com` запросы должны завершаться ошибкой. Это показывает, что правила брандмауэра работают должным образом.
 
 Итак, теперь вы убедились в том, что правила брандмауэра работают:
 
@@ -302,4 +302,4 @@ az group delete \
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Руководство. Журналы мониторинга брандмауэра Azure](./tutorial-diagnostics.md)
+* [Руководство. Мониторинг журналов и метрик Брандмауэра Azure](./tutorial-diagnostics.md)

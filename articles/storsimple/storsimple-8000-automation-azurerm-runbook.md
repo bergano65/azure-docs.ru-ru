@@ -3,15 +3,15 @@ title: Управление устройствами StorSimple с помощь�
 description: Узнайте, как использовать Runbook службы автоматизации Azure для автоматизации заданий StorSimple.
 author: alkohli
 ms.service: storsimple
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 10/23/2017
 ms.author: alkohli
-ms.openlocfilehash: 727bebe0c190ed4dff4408884c45fe166ad541a9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 737533cd75ebec8d5d6c614f496e0c9b552217aa
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76276975"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85514168"
 ---
 # <a name="use-azure-automation-runbooks-to-manage-storsimple-devices"></a>Управление устройствами StorSimple с помощью Runbook службы автоматизации Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "76276975"
 
 В этом разделе приведен пример сценария Windows PowerShell для StorSimple и подробные сведения о различных шагах, необходимых для импорта сценария в Runbook, а также публикации и выполнения Runbook.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Предварительные условия
 
 Перед началом работы убедитесь, что у вас есть следующие компоненты:
 
@@ -214,6 +214,6 @@ ms.locfileid: "76276975"
 
     ![publish-runbook](./media/storsimple-8000-automation-azurerm-runbook/publish-runbook.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Использование службы диспетчера устройств StorSimple для администрирования устройства StorSimple](storsimple-8000-manager-service-administration.md).

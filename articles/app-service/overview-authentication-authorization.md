@@ -3,15 +3,15 @@ title: Аутентификация и авторизация
 description: Узнайте о встроенной поддержке проверки подлинности и авторизации в службе приложений Azure и функциях Azure, а также о том, как она помогает защитить приложение от несанкционированного доступа.
 ms.assetid: b7151b57-09e5-4c77-a10c-375a262f17e5
 ms.topic: article
-ms.date: 04/15/2020
+ms.date: 07/08/2020
 ms.reviewer: mahender
 ms.custom: seodec18, fasttrack-edit, has-adal-ref
-ms.openlocfilehash: f51a396e997a9e6392f3e86a6f77e581753d6ada
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: 9588777305ca42603623075b908eee5d76164c84
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83196439"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86206759"
 ---
 # <a name="authentication-and-authorization-in-azure-app-service-and-azure-functions"></a>Проверка подлинности и авторизация в службе приложений Azure и функциях Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "83196439"
 
 Модуль проверки подлинности и авторизации выполняется в той же песочнице, что и код приложения. Если он включен, каждый входящий HTTP-запрос проходит через него перед обработкой кодом вашего приложения.
 
-![](media/app-service-authentication-overview/architecture.png)
+![Схема архитектуры, показывающая запросы, перехваченные процессом в песочнице сайта, который взаимодействует с поставщиками удостоверений до разрешения трафика на развернутый сайт.](media/app-service-authentication-overview/architecture.png)
 
 Этот модуль выполняет следующие операции для вашего приложения:
 
@@ -82,8 +82,11 @@ ms.locfileid: "83196439"
 | [Facebook](https://developers.facebook.com/docs/facebook-login) | `/.auth/login/facebook` |
 | [Google](https://developers.google.com/identity/choose-auth) | `/.auth/login/google` |
 | [Twitter](https://developer.twitter.com/en/docs/basics/authentication) | `/.auth/login/twitter` |
+| Любой поставщик [OpenID Connect Connect](https://openid.net/connect/) (Предварительная версия) | `/.auth/login/<providerName>` |
 
-При включении проверки подлинности и авторизации с помощью одного из этих поставщиков конечная точка входа станет доступной для проверки подлинности пользователя и для проверки токенов проверки подлинности от поставщика. Вы можете легко предоставить своим пользователям любое количество этих вариантов входа. Кроме того, вы можете добавить другого поставщика удостоверений или [собственное настраиваемое решение для идентификации][custom-auth].
+При включении проверки подлинности и авторизации с помощью одного из этих поставщиков конечная точка входа станет доступной для проверки подлинности пользователя и для проверки токенов проверки подлинности от поставщика. Вы можете легко предоставить своим пользователям любое количество этих вариантов входа.
+
+Существует [устаревший путь расширения][custom-auth] для интеграции с другими поставщиками удостоверений или настраиваемое решение проверки подлинности, но это не рекомендуется. Вместо этого рассмотрите возможность использования поддержки OpenID Connect Connect.
 
 ## <a name="authentication-flow"></a>Поток проверки подлинности
 
@@ -113,7 +116,7 @@ ms.locfileid: "83196439"
 
 В [портал Azure](https://portal.azure.com)можно настроить авторизацию службы приложений с помощью ряда поведений, если входящий запрос не прошел проверку подлинности.
 
-![](media/app-service-authentication-overview/authorization-flow.png)
+![Снимок экрана, показывающий раскрывающееся меню "действие, которое необходимо выполнить, если запрос не прошел проверку подлинности"](media/app-service-authentication-overview/authorization-flow.png)
 
 Ниже описаны возможные варианты.
 
@@ -125,7 +128,7 @@ ms.locfileid: "83196439"
 
 ### <a name="allow-only-authenticated-requests"></a>Разрешить только запросы, прошедшие проверку подлинности
 
-Параметр — **Войти с помощью \<поставщик>**. Служба приложений перенаправляет все анонимные запросы к `/.auth/login/<provider>` для выбранного вами поставщика. Если анонимный запрос поступает из собственного мобильного приложения, возвращаемый ответ `HTTP 401 Unauthorized`.
+Параметр используется **для \<provider> входа в систему **. Служба приложений перенаправляет все анонимные запросы к `/.auth/login/<provider>` для выбранного вами поставщика. Если анонимный запрос поступает из собственного мобильного приложения, возвращаемый ответ `HTTP 401 Unauthorized`.
 
 В этом случае в клиентском приложении не нужен код для проверки подлинности. Более точная авторизация, например авторизация для конкретной роли, может выполняться путем проверки утверждений пользователя (см. раздел [Access user claims](app-service-authentication-how-to.md#access-user-claims) (Доступ к утверждениям пользователя)).
 
@@ -151,13 +154,14 @@ ms.locfileid: "83196439"
 * [Настройка приложения для использования имени входа Google][Google]
 * [Настройка приложения для использования входа по учетной записи Майкрософт][MSA]
 * [Настройка приложения для использования имени входа Twitter][Twitter]
-* [Практическое руководство. Использование пользовательской проверки подлинности для приложения][custom-auth]
+* [Настройка приложения для использования поставщика OpenID Connect Connect для входа (Предварительная версия)][OIDC]
 
 [AAD]: configure-authentication-provider-aad.md
 [Facebook]: configure-authentication-provider-facebook.md
 [Google]: configure-authentication-provider-google.md
 [MSA]: configure-authentication-provider-microsoft.md
 [Twitter]: configure-authentication-provider-twitter.md
+[OIDC]: configure-authentication-provider-openid-connect.md
 
 [custom-auth]: ../app-service-mobile/app-service-mobile-dotnet-backend-how-to-use-server-sdk.md#custom-auth
 

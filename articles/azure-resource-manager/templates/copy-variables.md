@@ -3,12 +3,11 @@ title: Определение нескольких экземпляров пер
 description: Используйте операцию копирования в шаблоне Azure Resource Manager для многократного прохода при создании переменной.
 ms.topic: conceptual
 ms.date: 02/13/2020
-ms.openlocfilehash: 4fbe392e8a0fb477b6986fc9c7584291590eb4e7
-ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
-ms.translationtype: MT
+ms.openlocfilehash: aca69dd858c7a940592e74123b97b8d364d9e11c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82583376"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84678449"
 ---
 # <a name="variable-iteration-in-arm-templates"></a>Итерация переменных в шаблонах ARM
 
@@ -240,7 +239,7 @@ ms.locfileid: "82583376"
 
 ```json
 {
-  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {},
   "variables": {
@@ -319,7 +318,7 @@ ms.locfileid: "82583376"
 |[Копирование переменных](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/copyvariables.json) |Демонстрирует разные способы итерации переменных. |
 |[Несколько правил безопасности](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/multiplesecurityrules.json) |Развертывает несколько правил безопасности в группу безопасности сети. Кроме того, этот шаблон создает правила безопасности на основе параметра. Чтобы узнать параметр, см. [файл параметров нескольких групп безопасности сети](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/multiplesecurityrules.parameters.json). |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Чтобы пройти обучение, см. раздел [учебник. Создание нескольких экземпляров ресурсов с помощью шаблонов ARM](template-tutorial-create-multiple-instances.md).
 * Другие способы использования элемента copy см. в следующих статьях:

@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 03/27/2019
 ms.author: tamram
 ms.openlocfilehash: 9a60c624b181a1efd2f6deebd349daa82214a8a4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "67184962"
 ---
 <!--created by Robin Shahan to go in the articles for table storage w/powershell.
@@ -27,7 +27,7 @@ ms.locfileid: "67184962"
 
 ### <a name="add-table-entities"></a>Добавление сущностей таблицы
 
-Добавление сущностей в таблицу с помощью **Add-азтаблеров**. В этих примерах используются ключи секций со значениями `partition1` и `partition2`, а также ключи строк, равные аббревиатурам состояний. Свойства в каждой сущности — `username` и. `userid` 
+Добавление сущностей в таблицу с помощью **Add-азтаблеров**. В этих примерах используются ключи секций со значениями `partition1` и `partition2` , а также ключи строк, равные аббревиатурам состояний. Свойства в каждой сущности — `username` и `userid` . 
 
 ```powershell
 $partitionKey1 = "partition1"
@@ -101,7 +101,7 @@ Get-AzTableRow -table $cloudTable `
 
 Этот запрос получает одну запись.
 
-|поле|значение|
+|поле|value|
 |----|----|
 | userid | 1 |
 | username | Chris |
@@ -118,7 +118,7 @@ Get-AzTableRow `
 
 Этот запрос получает одну запись.
 
-|поле|значение|
+|поле|value|
 |----|----|
 | userid | 1 |
 | username | Chris |
@@ -153,7 +153,7 @@ Get-AzTableRow -table $cloudTable `
 
 В результатах показана запись Jessie2.
 
-|поле|значение|
+|поле|value|
 |----|----|
 | userid | 2 |
 | username | Jessie2 |

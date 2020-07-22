@@ -8,17 +8,16 @@ author: KumudD
 manager: mtillman
 ms.service: virtual-network
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/31/2020
 ms.author: kumud
-ms.openlocfilehash: bb90858f7e87e31b8b6028a30a6000bbed4d3e4b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 7ec33a70e96ac9aa989eb898ca450696c589ef1b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80421092"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84702986"
 ---
 # <a name="deploy-an-ipv6-dual-stack-application-in-azure-virtual-network---cli"></a>Развертывание приложения двойного стека IPv6 в виртуальной сети Azure с помощью интерфейса командной строки
 
@@ -28,7 +27,7 @@ ms.locfileid: "80421092"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать Azure CLI локально, в этом кратком руководстве необходимо использовать Azure CLI версии 2.0.49 или более поздней. Выполните команду `az --version`, чтобы узнать установленную версию. Сведения об установке или обновлении Azure CLI см. в [этой статье](/cli/azure/install-azure-cli).
+Если вы решили установить и использовать Azure CLI локально, для выполнения инструкций из этого руководства вам потребуется Azure CLI 2.0.49 или более поздней версии. Выполните команду `az --version`, чтобы узнать установленную версию. Сведения об установке или обновлении Azure CLI см. в [этой статье](/cli/azure/install-azure-cli).
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -130,7 +129,7 @@ az network lb address-pool create \
 ```
 
 ### <a name="create-a-health-probe"></a>Создание пробы работоспособности
-Создайте пробу работоспособности с помощью команды [AZ Network фунтов зонда Create](https://docs.microsoft.com/cli/azure/network/lb/probe?view=azure-cli-latest) , чтобы отслеживать работоспособность виртуальных машин. 
+Создайте зонд работоспособности с помощью команды [az network lb probe create](https://docs.microsoft.com/cli/azure/network/lb/probe?view=azure-cli-latest), чтобы отслеживать работоспособность виртуальных машин. 
 
 ```azurecli
 az network lb probe create -g DsResourceGroup01  --lb-name dsLB -n dsProbe --protocol tcp --port 3389

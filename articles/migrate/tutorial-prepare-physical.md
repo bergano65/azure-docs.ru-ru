@@ -4,18 +4,18 @@ description: Узнайте, как подготовить физические 
 ms.topic: tutorial
 ms.date: 04/15/2020
 ms.custom: mvc
-ms.openlocfilehash: b7bde5df943a35bfcf08ace3b454a26dae8c1d89
-ms.sourcegitcommit: 0fda81f271f1a668ed28c55dcc2d0ba2bb417edd
+ms.openlocfilehash: 31db91b512a4532cca144dc012282ea58a87514f
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82901414"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86113257"
 ---
 # <a name="prepare-for-assessment-and-migration-of-physical-servers-to-azure"></a>Подготовка физических компьютеров к оценке и миграции в Azure
 
 В этой статье описывается, как подготовить к оценке локальные физические серверы с помощью службы [Миграция Azure](migrate-services-overview.md).
 
-Служба [Миграция Azure](migrate-overview.md) объединяет в себе инструменты, которые используются для поиска, оценки и переноса приложений, инфраструктуры и рабочих нагрузок в Microsoft Azure. Она включает в себя инструменты Миграции Azure и предложения независимых поставщиков программного обеспечения. 
+Служба [Миграция Azure](./migrate-services-overview.md) объединяет в себе инструменты, которые используются для поиска, оценки и переноса приложений, инфраструктуры и рабочих нагрузок в Microsoft Azure. Она включает в себя инструменты Миграции Azure и предложения независимых поставщиков программного обеспечения. 
 
 Это руководство является первым в цикле. В нем показано, как оценивать физические компьютеры с помощью Миграции Azure. В этом руководстве описано следующее:
 
@@ -75,11 +75,11 @@ ms.locfileid: "82901414"
     ![Разрешения Azure AD](./media/tutorial-prepare-hyper-v/aad.png)
 
 > [!NOTE]
-> Это значение по умолчанию, которое разрешает выполнять регистрацию. [Подробнее](https://docs.microsoft.com/azure/active-directory/develop/active-directory-how-applications-are-added#who-has-permission-to-add-applications-to-my-azure-ad-instance).
+> Это значение по умолчанию, которое разрешает выполнять регистрацию. [Подробнее](../active-directory/develop/active-directory-how-applications-are-added.md#who-has-permission-to-add-applications-to-my-azure-ad-instance).
 
 #### <a name="assign-application-developer-role"></a>Назначение роли разработчика приложения
 
-Администратор клиента и глобальный администратор могут назначить учетной записи роль разработчика приложений. [Подробнее](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-users-assign-role-azure-portal).
+Администратор клиента и глобальный администратор могут назначить учетной записи роль разработчика приложений. [Подробнее](../active-directory/fundamentals/active-directory-users-assign-role-azure-portal.md).
 
 
 ## <a name="prepare-azure-for-physical-server-migration"></a>Подготовка Azure к переносу физических серверов
@@ -138,7 +138,7 @@ ms.locfileid: "82901414"
 
 Миграции Azure необходимы разрешения для обнаружения локальных серверов.
 
-- **Windows:** Настройте локальную учетную запись для всех серверов Windows, которые вы хотите включить в обнаружение. Эта учетная запись должна быть добавлена в следующие группы: "Пользователи удаленного управления", "Пользователи системного монитора" и "Пользователи журналов производительности".
+- **Windows:** требуется роль администратора домена или локального администратора на всех серверах Windows, которые нужно обнаружить. Учетная запись пользователя должна быть добавлена в следующие группы: "Пользователи удаленного управления", "Пользователи Монитора производительности" и "Пользователи журналов производительности".
 - **Linux:** Вам потребуются права суперпользователя на серверах Linux, которые вы хотите обнаружить.
 
 ## <a name="prepare-for-physical-server-migration"></a>Подготовка к переносу физических серверов
@@ -148,12 +148,14 @@ ms.locfileid: "82901414"
 > [!NOTE]
 > При переносе физических компьютеров средство миграции сервера службы "Миграция Azure" использует ту же архитектуру репликации, что и функция аварийного восстановления на основе агента в Azure Site Recovery, а некоторые из их компонентов используют одну и ту же базу кода. В некоторых местах может упоминаться документация по Site Recovery.
 
-- [Проверьте](migrate-support-matrix-physical-migration.md#physical-server-requirements) требования для миграции физического сервера.
-- Средство миграции сервера службы "Миграция Azure" использует сервер репликации для переноса физического сервера.
+1. [Проверьте](migrate-support-matrix-physical-migration.md#physical-server-requirements) требования для миграции физического сервера.
+2. Средство миграции сервера службы "Миграция Azure" использует сервер репликации для переноса физического сервера.
     - [Проверьте](migrate-replication-appliance.md#appliance-requirements) требования к развертыванию для устройства репликации и [параметры](migrate-replication-appliance.md#mysql-installation) для установки MySQL на устройстве.
     - Проверьте [URL-адреса Azure](migrate-appliance.md#url-access), к которым модуль репликации будет обращаться в общедоступных облаках и облаках для государственных организаций.
     - Просмотрите требования относительно доступа к [порту] (migrate-replication-appliance.md#port-access) для модуля репликации.
-
+3. Прежде чем переносить виртуальные машины в Azure, необходимо внести в них некоторые изменения.
+    - Важно внести эти изменения до начала миграции. Если вы перенесете виртуальную машину до внесения изменений, она может не загрузиться в Azure.
+    - Просмотрите сведения об изменениях для [Windows](prepare-for-migration.md#windows-machines) и [Linux](prepare-for-migration.md#linux-machines), которые необходимо внести.
 
 
 

@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 02/28/2020
-ms.openlocfilehash: f7dc7b520cba2bbf2351d93795a1a26b3b5124be
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 95af0cd4b59863ad0f591476441d9a7733765453
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79471359"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86076034"
 ---
 # <a name="what-is-apache-hive-and-hiveql-on-azure-hdinsight"></a>Обзор Apache Hive и HiveQL в Azure HDInsight
 
@@ -41,7 +41,7 @@ HDInsight предоставляет несколько типов класте�
 | [Представление Hive](../hadoop/apache-hadoop-use-hive-ambari-view.md) |✔ |✔ |Для приложений на основе браузера |
 | [клиент Beeline](../hadoop/apache-hadoop-use-hive-beeline.md) |✔ |✔ |Linux, Unix, Mac OS X или Windows |
 | [REST API](../hadoop/apache-hadoop-use-hive-curl.md) |&nbsp; |✔ |Linux, Unix, Mac OS X или Windows |
-| [Windows PowerShell](../hadoop/apache-hadoop-use-hive-powershell.md) |&nbsp; |✔ |Windows |
+| [Windows PowerShell](../hadoop/apache-hadoop-use-hive-powershell.md) |&nbsp; |✔ |Windows |
 
 ## <a name="hiveql-language-reference"></a>Справочник по языку HiveQL
 
@@ -207,7 +207,7 @@ HDInsight предоставляет LLAP в кластере интеракти
 
 Apache Oozie — это система рабочих процессов и координации, управляющая заданиями Hadoop. Дополнительные сведения см. в статье об [использовании Apache Oozie с Hive для определения и запуска рабочего процесса](../hdinsight-use-oozie-linux-mac.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы знаете, что такое инфраструктура Hive и как ее использовать с Hadoop в HDInsight, воспользуйтесь следующими ссылками, чтобы изучить другие способы работы с Azure HDInsight.
 

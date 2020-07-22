@@ -11,19 +11,18 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: article
-ms.date: 01/08/2020
-ms.openlocfilehash: c34de48d0184057f42d1b779abee56e1fa9ac169
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.date: 06/09/2020
+ms.openlocfilehash: 8cfe8d1a87b8b52c21927696101704bd01b7641a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78255167"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84609256"
 ---
 # <a name="tutorial-migrate-rds-mysql-to-azure-database-for-mysql-online-using-dms"></a>Руководство. Перенос RDS MySQL в базу данных Azure для MySQL Online с помощью DMS
 
 С помощью службы Azure Database Migration Service базы данных из экземпляра RDS MySQL можно перенести в [Базу данных Azure для MySQL](https://docs.microsoft.com/azure/mysql/), не отключая базу данных-источник от сети. Другими словами, миграцию можно выполнить с минимальным временем простоя для приложения. В этом руководстве выполняется перенос примера базы данных **сотрудников** из экземпляра RDS MySQL в Базу данных Azure для MySQL с помощью интерактивного действия миграции в Azure Database Migration Service.
 
-В этом руководстве описано следующее:
+В этом руководстве вы узнаете, как:
 > [!div class="checklist"]
 >
 > * Перенос примера схемы с помощью служебных программ mysqldump и mysql.
@@ -67,6 +66,7 @@ ms.locfileid: "78255167"
 
 1. Чтобы создать группу параметров, выполните инструкции, предоставленные AWS в статье о [файлах журнала Базы данных MySQL](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.Concepts.MySQL.html) в разделе о **формате ведения двоичного журнала**.
 2. Создайте группу параметров со следующей конфигурацией:
+    * log_bin = вкл.
     * binlog_format = row
     * binlog_checksum = NONE
 3. Сохраните новую группу параметров.
@@ -143,7 +143,7 @@ ms.locfileid: "78255167"
 
     ![Отображение поставщиков ресурсов](media/tutorial-rds-mysql-server-azure-db-for-mysql-online/portal-select-resource-provider.png)
 
-3. Найдите миграцию, а затем справа от **Microsoft. Migration**выберите **Register**.
+3. В поле поиска введите migration, а затем справа от **Microsoft.DataMigration** щелкните **Зарегистрировать**.
 
     ![Регистрация поставщика ресурсов](media/tutorial-rds-mysql-server-azure-db-for-mysql-online/portal-register-resource-provider.png)
 
@@ -197,7 +197,7 @@ ms.locfileid: "78255167"
     > [!NOTE]
     > Кроме того, вы можете выбрать **Создать только проект**, чтобы создать проект миграции для отложенного выполнения.
 
-6. Щелкните **Сохранить**.
+6. Нажмите кнопку **Сохранить**.
 
 7. Выберите **Создать и выполнить действие**, чтобы создать проект и выполнить действие миграции.
 
@@ -260,7 +260,7 @@ ms.locfileid: "78255167"
 
 Интерактивный перенос локального экземпляра MySQL в Базу данных Azure для MySQL выполнен.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * См. дополнительные сведения о [службе Azure Database Migration Service](https://docs.microsoft.com/azure/dms/dms-overview).
 * Общие сведения о Базе данных Azure для MySQL см. в [этой статье](https://docs.microsoft.com/azure/mysql/overview).

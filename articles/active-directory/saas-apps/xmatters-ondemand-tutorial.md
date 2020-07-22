@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/29/2019
 ms.author: jeedes
-ms.openlocfilehash: e8ae31122d59238ac104d7d873cf56f32977c9af
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: ada0977dafeba546e84b22c6c61efecce1511dc7
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67086502"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86170162"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-xmatters-ondemand"></a>Руководство по Интеграция Azure Active Directory с xMatters OnDemand
 
@@ -107,24 +107,18 @@ ms.locfileid: "67086502"
 
     а. В текстовом поле **Идентификатор** введите URL-адрес в таком формате:
 
-    | |
-    |--|
-    | `https://<companyname>.au1.xmatters.com.au/`|
-    | `https://<companyname>.cs1.xmatters.com/`|
-    | `https://<companyname>.xmatters.com/`|
-    | `https://www.xmatters.com`|
-    | `https://<companyname>.xmatters.com.au/`|
-    | |
+    - `https://<companyname>.au1.xmatters.com.au/`
+    - `https://<companyname>.cs1.xmatters.com/`
+    - `https://<companyname>.xmatters.com/`
+    - `https://www.xmatters.com`
+    - `https://<companyname>.xmatters.com.au/`
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате:
 
-    | |
-    |--|
-    | `https://<companyname>.au1.xmatters.com.au`|
-    | `https://<companyname>.xmatters.com/sp/<instancename>`|
-    | `https://<companyname>.cs1.xmatters.com/sp/<instancename>`|
-    | `https://<companyname>.au1.xmatters.com.au/<instancename>`|
-    | |
+    - `https://<companyname>.au1.xmatters.com.au`
+    - `https://<companyname>.xmatters.com/sp/<instancename>`
+    - `https://<companyname>.cs1.xmatters.com/sp/<instancename>`
+    - `https://<companyname>.au1.xmatters.com.au/<instancename>`
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов xMatters OnDemand](https://www.xmatters.com/company/contact-us/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

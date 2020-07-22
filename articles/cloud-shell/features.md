@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/26/2019
 ms.author: damaerte
-ms.openlocfilehash: 7490eef7b6203b6bb2623efa4518c7bee5400fb3
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
+ms.openlocfilehash: e7324bfec32368e952af8f24afabe893011454df
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82610774"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86538179"
 ---
 # <a name="features--tools-for-azure-cloud-shell"></a>Функции и средства для Azure Cloud Shell
 
@@ -44,24 +44,24 @@ Cloud Shell безопасно и автоматически выполняет 
 
 ### <a name="azure-drive-azure"></a>Диск Azure (Azure:)
 
-PowerShell в Cloud Shell предоставляет диск Azure (`Azure:`). Вы можете переключиться на диск Azure `cd Azure:` с помощью и вернуться к домашнему `cd  ~`каталогу с помощью.
+PowerShell в Cloud Shell предоставляет диск Azure ( `Azure:` ). Вы можете переключиться на диск Azure с помощью `cd Azure:` и вернуться к домашнему каталогу с помощью `cd  ~` .
 Диск Azure упрощает обнаружение ресурсов Azure и перемещение по ним, включая вычислительные ресурсы, сетевые ресурсы, ресурсы хранилища и т. д., предоставляя возможности навигации как у файловой системы.
 Для управления этими ресурсами можно воспользоваться привычными [командлетами Azure PowerShell](https://docs.microsoft.com/powershell/azure), независимо от используемого диска.
 Любые изменения, внесенные в ресурсы Azure непосредственно на портале Azure или с помощью командлетов Azure PowerShell, отражаются на диске Azure.  Для обновления ресурсов можно запустить `dir -Force`.
 
-![](media/features-powershell/azure-drive.png)
+![Снимок экрана Azure Cloud Shell инициализации и списка ресурсов каталога.](media/features-powershell/azure-drive.png)
 
 ### <a name="manage-exchange-online"></a>Управление Exchange Online
 
-PowerShell в Cloud Shell содержит частную сборку модуля Exchange Online.  Выполните `Connect-EXOPSSession` команду, чтобы получить командлеты Exchange.
+PowerShell в Cloud Shell содержит частную сборку модуля Exchange Online.  Выполните команду `Connect-EXOPSSession` , чтобы получить командлеты Exchange.
 
-![](media/features-powershell/exchangeonline.png)
+![Снимок экрана Azure Cloud Shell с командами Connect-Ексопссессион и Get-User.](media/features-powershell/exchangeonline.png)
 
  Выполнить `Get-Command -Module tmp_*`
 > [!NOTE]
-> Имя модуля должно начинаться с `tmp_`, если установлены модули с таким же префиксом, также отображаются их командлеты. 
+> Имя модуля должно начинаться с `tmp_` , если установлены модули с таким же префиксом, также отображаются их командлеты. 
 
-![](media/features-powershell/exchangeonlinecmdlets.png)
+![Снимок экрана Azure Cloud Shell с командой Get-Command-Module tmp_ *.](media/features-powershell/exchangeonlinecmdlets.png)
 
 ### <a name="deep-integration-with-open-source-tooling"></a>Глубокая интеграция со средствами с открытым кодом
 
@@ -69,16 +69,16 @@ PowerShell в Cloud Shell содержит частную сборку моду�
 
 ## <a name="tools"></a>Инструменты
 
-|Категория   |Название   |
+|Категория   |Имя   |
 |---|---|
 |Средства Linux            |bash<br> zsh<br> sh<br> tmux<br> dig<br>               |
 |Инструменты Azure            |[Azure CLI](https://github.com/Azure/azure-cli) и [классический интерфейс командной строки Azure](https://github.com/Azure/azure-xplat-cli)<br> [AzCopy](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10)<br> [CLI службы "Функции Azure"](https://github.com/Azure/azure-functions-core-tools)<br> [Интерфейс командной строки Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cli)<br> [Batch Shipyard](https://github.com/Azure/batch-shipyard)<br> [blobxfer](https://github.com/Azure/blobxfer)|
-|Текстовые редакторы           |code (редактор Cloud Shell)<br> vim;<br> nano<br> emacs    |
+|Текстовые редакторы           |code (редактор Cloud Shell)<br> vim<br> nano<br> emacs    |
 |Система управления версиями         |git                    |
 |Инструменты сборки            |make<br> maven<br> npm<br> pip         |
 |Контейнеры             |[Виртуальная машина Docker](https://github.com/docker/machine)<br> [Kubectl](https://kubernetes.io/docs/user-guide/kubectl-overview/)<br> [Helm](https://github.com/kubernetes/helm)<br> [Интерфейс командной строки DC/OS](https://github.com/dcos/dcos-cli)         |
 |Базы данных              |Клиент MySQL<br> Клиент PostgreSQL<br> [Программа sqlcmd](https://docs.microsoft.com/sql/tools/sqlcmd-utility)<br> [mssql-scripter](https://github.com/Microsoft/sql-xplat-cli) |
-|Другой                  |Клиент iPython<br> [Интерфейс командной строки Cloud Foundry](https://github.com/cloudfoundry/cli)<br> [Terraform](https://www.terraform.io/docs/providers/azurerm/)<br> [Ansible](https://www.ansible.com/microsoft-azure)<br> [Chef InSpec](https://www.chef.io/inspec/)<br> [Puppet](https://puppet.com/docs/bolt/latest/bolt.html)<br> [Пакет HashiCorp](https://www.packer.io/)|
+|Другое                  |Клиент iPython<br> [Интерфейс командной строки Cloud Foundry](https://github.com/cloudfoundry/cli)<br> [Terraform](https://www.terraform.io/docs/providers/azurerm/)<br> [Ansible](https://www.ansible.com/microsoft-azure)<br> [Chef InSpec](https://www.chef.io/inspec/)<br> [Puppet](https://puppet.com/docs/bolt/latest/bolt.html)<br> [Пакет HashiCorp](https://www.packer.io/)<br> [Интерфейс командной строки Office 365](https://pnp.github.io/office365-cli/)|
 
 ## <a name="language-support"></a>Поддержка языков
 

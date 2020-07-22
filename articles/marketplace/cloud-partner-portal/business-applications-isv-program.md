@@ -1,107 +1,83 @@
 ---
-title: Microsoft Business Applications независимый поставщик программного обеспечения (ISV) подключение программы по подключению
+title: Руководство по адаптации независимого поставщика программного обеспечения (ISV) Microsoft Business Applications
 description: Вот как присоединиться к программе Business Applications ISV Connect.
-author: qianw211
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 7/12/2019
+ms.date: 6/25/2020
 ms.author: dsindona
-ms.openlocfilehash: f7fd3f43c7faddb5481411dc9c4c94864b6dc0b1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 37d8c26bd41f06a39d4404c142aef5faa0bf199c
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80288977"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86170247"
 ---
-# <a name="microsoft-business-applications-independent-software-vendor-isv-connect-program-onboarding-guide"></a>Microsoft Business Applications независимый поставщик программного обеспечения (ISV) подключение программы по подключению
+# <a name="microsoft-business-applications-independent-software-vendor-isv-connect-program-onboarding-guide"></a>Руководство по адаптации независимого поставщика программного обеспечения (ISV) Microsoft Business Applications
 
-[Программа Business Applications Connect ISV](https://partner.microsoft.com/solutions/business-applications/isv-overview) предназначена для ускорения роста и общего успеха независимых поставщиков программного обеспечения (ISV), создающих современные, облачные, бизнес-решения с *участием клиента Dynamics 365 и PowerApps* ("предложения Dynamics CE") или *Dynamics 365 Финансы и операции* ("предложения Dynamics Ops"). Вот как они должны быть частью.
+[Программа Business Applications Connect ISV](https://partner.microsoft.com/solutions/business-applications/isv-overview) предназначена для ускорения роста и общего успеха независимых поставщиков программного обеспечения (ISV), создающих современные, облачные, бизнес-решения с помощью Dynamics 365 и PowerApps (приложения Dynamics CE) или Dynamics 365 Финансы и операции (приложения Dynamics Ops). 
 
-> [!IMPORTANT]
-> Существующие партнеры независимых поставщиков программного обеспечения с *участием клиентов dynamics 365*, *Dynamics 365 for Финансы и Operations*, а также приложения *PowerApps* должны выполнить все описанные ниже действия по адаптации до **15 октября 2019,** чтобы избежать удаления существующих предложений из [Microsoft AppSource](https://appsource.microsoft.com).
-
-Чтобы зарегистрироваться и воспользоваться преимуществами всех [технических, маркетинговых и коммерческих преимуществ](https://partner.microsoft.com/solutions/business-applications/isv-overview) программы Business Applications ISV Connect, мы запрашиваете существующих партнеров ISV (с предложениями *Dynamics CE* и *Ops* ), чтобы выполнить следующие действия.
-
-- [Настройте учетную запись центра партнеров Майкрософт](#set-up-your-microsoft-partner-center-account).
-- [Примите Business Applicationsное дополнение](#accept-the-business-applications-isv-program-addendum).
-- [Настройте сведения о выставлении счетов](#set-up-your-billing-information).
-- Повторно [сертифицировать приложение](#recertify-your-application).
+Чтобы зарегистрироваться и воспользоваться всеми преимуществами поддержки технических, маркетинговых и торговых продаж программы Business Applications ISV Connect, выполните следующие действия в этой статье. 
 
 > [!IMPORTANT]
-> Перед публикацией изменений в существующем предложении необходимо выполнить все описанные выше действия.
+> Перед публикацией изменений в новом или существующем предложении необходимо выполнить все действия, описанные в этой статье.
 
 ## <a name="set-up-your-microsoft-partner-center-account"></a>Настройка учетной записи центра партнеров Майкрософт
 
-[Центр партнеров](https://partner.microsoft.com) — это место для управления параметрами учетной записи для программы ISV Connect.
+Чтобы настроить учетную запись для программы ISV Connect и управлять ею, выполните действия, описанные в статье [создание коммерческой учетной записи Marketplace в центре партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account). В этой статье приведены все шаги по созданию новой учетной записи, а также сведения о добавлении новых издателей в программу коммерческого рынка.
 
 > [!NOTE]
-> Для этого шага требуется роль *владельца* в портал Cloud Partner для заданной учетной записи, а также роли *владельца* или *руководителя* в центре партнеров.
-
-Если вы уже опубликовали предложения Dynamics CE или Dynamics Ops, скорее всего, ваша учетная запись Портал Cloud Partner (CPP) уже была перенесена и активирована в центре партнеров. В противном случае учетную запись центра партнеров можно активировать вручную из профиля издателя CPP.
-
-1. Войдите на страницу **профиля издателя** в [портал Cloud Partner](https://cloudpartner.azure.com/).
-2. Если отображается баннер, показывающий, что параметры учетной записи были перенесены в центр партнеров, перейдите к следующему разделу. В противном случае выберите баннер, предлагающий активировать учетную запись центра партнеров.
-
-Дополнительные сведения см. в статье [Миграция учетных записей из портал Cloud Partner в центр партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/account-migration-from-cpp-to-pc).
+> Для этого шага требуется роль *владельца* или *руководителя* в центре партнеров.
 
 ## <a name="accept-the-business-applications-isv-program-addendum"></a>Примите условия для Business Applications программ ISV
 
-Участие в этой программе требует просмотра и принятия *Business Applicationsного дополнения*.
+Участие в этой программе требует просмотра и принятия [Business Applicationsного дополнения](https://aka.ms/bizappsisvaddendum).
 
 > [!NOTE]
-> Для этого шага требуется роль *владельца* или *руководителя* в центре партнеров, чтобы ваша учетная запись подписывания юридических соглашений. Если вы выполнили миграцию учетной записи Портал Cloud Partner, [активируя учетную запись центра партнеров](#set-up-your-microsoft-partner-center-account) на предыдущем шаге, ваши разрешения также будут перенесены в центр партнеров.
+> Для этого шага требуется роль *владельца* или *руководителя* в центре партнеров, чтобы ваша учетная запись подписывания юридических соглашений. 
 
-1. Перейдите на [панель мониторинга центра партнеров](https://partner.microsoft.com/dashboard/account/agreements) и войдите в центр партнеров по запросу.
-
-2. Под заголовком " **коммерческое Marketplace**" выберите **приложение Microsoft Business Applications ISV**.
-
-3. Выберите ссылку версия и просмотрите соглашение.
-
-4. Выберите **принять соглашение** , чтобы согласиться и принять соглашение.
+1.  Войдите в [Центр партнеров](https://partner.microsoft.com/dashboard).
+2.  Щелкните **Параметры** (значок шестеренки) и выберите **Параметры разработчика**.
+3.  Выберите **соглашения**. 
+4.  Выберите ссылку версия и просмотрите соглашение.
+5.  Чтобы согласиться и принять соглашение, выберите **принять соглашение**.
 
 ## <a name="set-up-your-billing-information"></a>Настройка сведений о выставлении счетов
 
-Затем настройте сведения о выставлении счетов для программы Business Applications ISV Connect.
+Настройте сведения о выставлении счетов для программы Business Applications ISV Connect.
 
 > [!NOTE]
 > Для этого шага требуется роль *владельца* или *руководителя* в центре партнеров для обновления сведений о выставлении счетов.
 
-1. Войдите в [Центр партнеров](https://partner.microsoft.com/dashboard).
+1.  Войдите в [Центр партнеров](https://partner.microsoft.com/dashboard).
+2.  Щелкните **Параметры** (значок шестеренки) и выберите **Параметры разработчика**.
+3.  В разделе **учетная запись**выберите **профиль выставления счетов**.
+4.  Ознакомьтесь с основными контактными данными и сведениями о выставлении счетов, которые заполнены юридическим лицом, и внесите необходимые обновления.
+5.  Если применимо, укажите идентификатор налогоплательщика или идентификатор НДС.
+6.  Нажмите кнопку **Сохранить**, чтобы сохранить изменения.
 
-2. Щелкните значок *Параметры* (шестеренки) и выберите **Параметры разработчика**.
+> [!NOTE]
+> Вы можете обновить профиль выставления счетов в любое время. Однако *название компании* *и адрес* выставления счета не могут быть изменены позже.
 
-3. В разделе *учетные записи*выберите **профиль выставления счетов**.
+## <a name="publish-and-certify-your-application"></a>Публикация и сертификация приложения
 
-4. Ознакомьтесь с основными контактными данными и сведениями о выставлении счетов, которые заполнены юридическим лицом, и внесите необходимые обновления.
+После выполнения описанных выше действий существующие приложения Dynamics 365 CE и/или Dynamics 365 Ops будут доступны для редактирования в центре партнеров. Вы также сможете создавать новые приложения.
 
-5. Укажите параметры идентификатора налогоплательщика или идентификатора НДС, если это применимо.
+Завершающим этапом регистрации в программе Business Applications ISV Connect является публикация и сертификация существующих приложений. Чтобы опубликовать и сертифицировать приложение для AppSource, перейдите по соответствующей ссылке: 
 
-6. Выберите **Сохранить**, чтобы сохранить изменения.
+- [Для служб взаимодействия с клиентами Dynamics 365](https://docs.microsoft.com/powerapps/developer/common-data-service/publish-app-appsource) 
+- [Для Dynamics 365 для финансов и операций](https://docs.microsoft.com/dynamics365/fin-ops-core/dev-itpro/lcs-solutions/lcs-solutions-app-source)
 
-Вы можете обновить профиль выставления счетов в любое время, но в дальнейшем изменить *название компании* *и адрес* выставления счета нельзя.
+> [!IMPORTANT]
+> Необходимо повторно сертифицировать приложения каждые 6 месяцев, чтобы они оставались на AppSource. Дополнительные сведения см. в статье политика [сертификации коммерческого магазина](https://docs.microsoft.com/legal/marketplace/certification-policies)Marketplace. 
 
-## <a name="recertify-your-application"></a>Повторно сертифицировать приложение
+## <a name="next-steps"></a>Дальнейшие действия
 
-После выполнения описанных выше действий существующие предложения Dynamics CE и Dynamics будут доступны для редактирования в центре партнеров. Вы также можете создавать новые предложения в центре партнеров.
+Обратитесь к менеджеру по работе с партнерами или обратитесь в [службу поддержки партнеров Майкрософт](https://aka.ms/marketplacepublishersupport) за помощью к вашей учетной записи. Общие сведения о программе Business Applications ISV Connect см. в следующих статьях:
 
-Заключительный этап регистрации в программе Business Applications ISV Connect приводит к повторной сертификации существующих приложений.
+- **[Business Applications для независимых поставщиков программных продуктов (статья в Интернете)](https://aka.ms/bizappsisvweb)**
 
-1. [Выполните следующие действия](https://partner.microsoft.com/solutions/business-applications/isv-publish) , чтобы повторно сертифицировать приложение в AppSource.
-2. [Создайте и опубликуйте новое предложение](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-new-customer-engagement-offer). Это предложение будет совершенно новым предложением и не заменит существующее.
+- **[Обзор новой программы для Business Applications ISV (PDF)](https://aka.ms/bizappsisvprogram)**
 
-## <a name="further-info"></a>Дополнительные сведения
+- **[Политики программы подключения ISV](https://aka.ms/bizappsisvpolicies)**
 
-Обратитесь к менеджеру по работе с партнерами или обратитесь в [службу поддержки партнеров Майкрософт](https://partner.microsoft.com/support) за помощью к вашей учетной записи. Общие сведения о программе Business Applications Connect ISV и центре партнеров Майкрософт см. в следующих статьях:
-
-#### <a name="business-applications-for-isvs-online-article"></a>Business Applications для независимых поставщиков программных продуктов (статья в Интернете)
-https://partner.microsoft.com/solutions/business-applications/isv-overview
-
-#### <a name="overview-of-the-new-program-for-business-applications-isvs-pdf"></a>Обзор новой программы для Business Applications ISV (PDF)
-https://aka.ms/BizAppsISVProgram
-
-#### <a name="business-applications-isv-connect-program-faq-pdf"></a>Часто задаваемые вопросы о программе Business Applications ISV Connect (PDF)
-https://assetsprod.microsoft.com/business-applications-partner-faq.pdf
-
-#### <a name="upcoming-program-for-business-applications-isvs-blog-post"></a>Предстоящие программы для Business Applications независимых поставщиков программных продуктов (запись блога)
-https://cloudblogs.microsoft.com/dynamics365/bdm/2019/04/17/upcoming-program-for-business-applications-isvs/

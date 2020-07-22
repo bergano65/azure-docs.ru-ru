@@ -1,5 +1,5 @@
 ---
-title: Руководство по Доступ к службе хранилища Azure с помощью учетных данных SAS для Linux в Azure AD
+title: Руководство. Доступ к службе хранилища Azure с помощью учетных данных SAS для Linux в Azure AD
 description: В этом руководстве показано, как использовать назначаемое системой управляемое удостоверение виртуальной машины Linux для доступа к службе хранилища Azure при помощи учетных данных SAS (подписанного URL-адреса) вместо ключа доступа к учетной записи хранения.
 services: active-directory
 documentationcenter: ''
@@ -15,14 +15,14 @@ ms.workload: identity
 ms.date: 11/20/2017
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 670ae329943610ba16411da3782bc1da079c6490
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 6a173fe36c20e9f13f1b1c1f27efc36821c8264a
+ms.sourcegitcommit: 309cf6876d906425a0d6f72deceb9ecd231d387c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74183196"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84266310"
 ---
-# <a name="tutorial-use-a-linux-vm-system-assigned-identity-to-access-azure-storage-via-a-sas-credential"></a>Руководство по Использование назначаемого системой управляемого удостоверения виртуальной машины Linux для доступа к службе хранилища Azure при помощи учетных данных SAS
+# <a name="tutorial-use-a-linux-vm-system-assigned-identity-to-access-azure-storage-via-a-sas-credential"></a>Руководство. Использование назначаемого системой управляемого удостоверения виртуальной машины Linux для доступа к службе хранилища Azure при помощи учетных данных SAS
 
 [!INCLUDE [preview-notice](../../../includes/active-directory-msi-preview-notice.md)]
 

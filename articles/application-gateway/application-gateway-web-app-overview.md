@@ -6,14 +6,13 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: article
-ms.date: 11/14/2019
+ms.date: 06/09/2020
 ms.author: victorh
-ms.openlocfilehash: a171dc795e685655b5a3c73d088d3963c2aaa4ae
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 308098bd1ac49510afccf0a7964face726906332
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81312319"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84628677"
 ---
 # <a name="application-gateway-support-for-multi-tenant-back-ends-such-as-app-service"></a>Поддержка шлюза приложений для серверных интерфейсов с несколькими клиентами, например службы приложений
 
@@ -42,7 +41,7 @@ ms.locfileid: "81312319"
 
 ### <a name="tls-termination-and-end-to-end-tls-with-multi-tenant-services"></a>Завершение TLS и комплексное TLS-обслуживание с несколькими клиентами
 
-С помощью служб с несколькими клиентами поддерживается как завершение TLS, так и сквозное шифрование TLS. Для завершения TLS в шлюзе приложений сертификат TLS по крайней мере должен быть добавлен в прослушиватель шлюза приложений. Однако в случае сквозного TLS Доверенные службы Azure, такие как веб-приложения службы приложений Azure, не нуждаются в список разрешенийии серверных интерфейсов в шлюзе приложений. Поэтому нет необходимости добавлять сертификаты проверки подлинности. 
+С помощью служб с несколькими клиентами поддерживается как завершение TLS, так и сквозное шифрование TLS. Для завершения TLS в шлюзе приложений сертификат TLS по крайней мере должен быть добавлен в прослушиватель шлюза приложений. Однако в случае сквозного TLS Доверенные службы Azure, такие как веб-приложения службы приложений Azure, не нуждаются в разрешении серверных интерфейсов в шлюзе приложений. Поэтому нет необходимости добавлять сертификаты проверки подлинности. 
 
 ![сквозной TLS](./media/application-gateway-web-app-overview/end-to-end-ssl.png)
 

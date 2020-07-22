@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/24/2019
-ms.openlocfilehash: deaa934b257fab74830d75e308a283e7608dc590
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 5588920c860de09ea1561cf5ed4b28a08085438c
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75552599"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86207770"
 ---
 # <a name="run-apache-hive-queries-using-powershell"></a>Выполнение запросов Apache Hive с помощью PowerShell
 
@@ -52,16 +52,20 @@ Azure PowerShell предоставляет *командлеты* , позво�
 
 2. Откройте новую командную строку **Azure PowerShell** . Перейдите к расположению файла `hivejob.ps1`, а затем используйте следующую команду для запуска скрипта:
 
-        .\hivejob.ps1
+    ```azurepowershell
+    .\hivejob.ps1
+    ```
 
     При запуске скрипта вам будет предложено ввести имя кластера и учетные данные администратора HTTPS или кластера. Вам также может быть предложено войти в подписку Azure.
 
 3. Когда задание завершается, возвращается текст следующего содержания:
 
-        Display the standard output...
-        2012-02-03      18:35:34        SampleClass0    [ERROR] incorrect       id
-        2012-02-03      18:55:54        SampleClass1    [ERROR] incorrect       id
-        2012-02-03      19:25:27        SampleClass4    [ERROR] incorrect       id
+    ```output
+    Display the standard output...
+    2012-02-03      18:35:34        SampleClass0    [ERROR] incorrect       id
+    2012-02-03      18:55:54        SampleClass1    [ERROR] incorrect       id
+    2012-02-03      19:25:27        SampleClass4    [ERROR] incorrect       id
+    ```
 
 4. Как уже упоминалось, `Invoke-Hive` можно использовать для отправки запроса и ожидания ответа. Чтобы увидеть работу команды Invoke-Hive, используйте следующий сценарий:
 
@@ -69,9 +73,11 @@ Azure PowerShell предоставляет *командлеты* , позво�
 
     Выходные данные выглядят так:
 
-        2012-02-03    18:35:34    SampleClass0    [ERROR]    incorrect    id
-        2012-02-03    18:55:54    SampleClass1    [ERROR]    incorrect    id
-        2012-02-03    19:25:27    SampleClass4    [ERROR]    incorrect    id
+    ```output
+    2012-02-03    18:35:34    SampleClass0    [ERROR]    incorrect    id
+    2012-02-03    18:55:54    SampleClass1    [ERROR]    incorrect    id
+    2012-02-03    19:25:27    SampleClass4    [ERROR]    incorrect    id
+    ```
 
    > [!NOTE]  
    > Для более длинных запросов HiveQL вы можете использовать командлет Azure PowerShell **Here-Strings** или файлы сценариев HiveQL. В приведенном ниже отрывке кода показано, как использовать командлет `Invoke-Hive` для запуска файла скрипта HiveQL. Файл сценария HiveQL необходимо передать в wasbs://.

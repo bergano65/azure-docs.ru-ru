@@ -16,12 +16,13 @@ ms.date: 01/04/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: 1ff8c382813654b1dee38a99bf2cc0ca67afbedd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.custom: tracking-python
+ms.openlocfilehash: af03d0fc091c34bfef7f38b1a215832086de57c6
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76313833"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86220071"
 ---
 # <a name="how-to-use-notification-hubs-from-python"></a>Использование концентраторов уведомлений с Python
 
@@ -382,7 +383,7 @@ hub.send_baidu_notification(baidu_payload)
 
 Если включить флаг отладки во время инициализации центра уведомлений (NotificationHub), вы увидите подробный дамп HTTP-запроса и ответа HTTP наряду с данными NotificationOutcome, которые указывают, какие именно заголовки HTTP переданы в запросе и какой ответ HTTP был получен от центра уведомлений.
 
-![][1]
+![Снимок экрана консоли с подробными сведениями о дампе запросов и ответов H T T P и сообщениях о результатах уведомлений, отмеченных красным цветом.][1]
 
 Вы увидите подробный результат центра уведомлений, например сведения о том,
 
@@ -403,7 +404,7 @@ hub.send_baidu_notification(baidu_payload)
 hub.send_windows_notification(wns_payload)
 ```
 
-![][2]
+![Снимок экрана консоли с подробными сведениями о запросе H T T и форматом уведомлений служебной шины и значениями X W N S, выделенными красным цветом.][2]
 
 ### <a name="send-notification-specifying-a-tag-or-tag-expression"></a>Отправка уведомления с указанием тега (или регулярного выражения)
 
@@ -413,7 +414,7 @@ hub.send_windows_notification(wns_payload)
 hub.send_windows_notification(wns_payload, "sports")
 ```
 
-![][3]
+![Снимок экрана консоли с подробными сведениями о запросе H T T и форматом уведомлений служебной шины, тегами уведомлений служебной шины и значениями X W N S, выделенными красным цветом.][3]
 
 ### <a name="send-notification-specifying-multiple-tags"></a>Отправка уведомления с указанием нескольких тегов
 
@@ -424,7 +425,7 @@ tags = {'sports', 'politics'}
 hub.send_windows_notification(wns_payload, tags)
 ```
 
-![][4]
+![Снимок экрана консоли с подробными сведениями о запросе H T T и форматом уведомлений служебной шины, тегами уведомлений служебной шины и значениями X W N S, выделенными красным цветом.][4]
 
 ### <a name="templated-notification"></a>Шаблон уведомления
 
@@ -443,11 +444,11 @@ template_payload = {'greeting_en': 'Hello', 'greeting_fr': 'Salut'}
 hub.send_template_notification(template_payload)
 ```
 
-![][5]
+![Снимок экрана консоли с подробными сведениями о запросе H T T, типом содержимого и значениями формата уведомлений служебной шины, выделенными красным цветом.][5]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Next Steps
 
-В этой статье рассмотрено создание простого клиента REST Python для службы "Центры уведомлений". Здесь вы можете сделать следующее:
+В этой статье рассмотрено создание простого клиента REST Python для службы "Центры уведомлений". Здесь можно выполнять следующие действия:
 
 - Скачать полный [пример программы-оболочки REST Python], содержащий весь код из этой статьи.
 - Продолжение изучения функции добавления тегов для концентраторов уведомлений в [учебнике "экстренные новости] "

@@ -11,18 +11,17 @@ Customer intent: I want to filter network traffic to virtual machines that perfo
 ms.assetid: ''
 ms.service: virtual-network
 ms.devlang: ''
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: virtual-network
 ms.workload: infrastructure
 ms.date: 03/30/2018
 ms.author: kumud
 ms.custom: mvc
-ms.openlocfilehash: 08031bc2ac29ea77374e21c4ce6f7bcf6151bcad
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 3b941b81feb54ae6eed0333a9dcb4863cc885686
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "66730035"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84688142"
 ---
 # <a name="filter-network-traffic-with-a-network-security-group-using-powershell"></a>Фильтрация сетевого трафика с помощью группы безопасности сети посредством PowerShell
 
@@ -277,7 +276,7 @@ mstsc /v:myvmWeb
 Install-WindowsFeature -name Web-Server -IncludeManagementTools
 ```
 
-Когда установка служб IIS завершится, отключитесь от виртуальной машины *myVmWeb*, после чего вы останетесь в сеансе удаленного рабочего стола виртуальной машины *myVmMgmt*. Чтобы просмотреть экран приветствия IIS, откройте Интернет-браузер и перейдите по адресу\/http:/мивмвеб.
+Когда установка служб IIS завершится, отключитесь от виртуальной машины *myVmWeb*, после чего вы останетесь в сеансе удаленного рабочего стола виртуальной машины *myVmMgmt*. Чтобы просмотреть экран приветствия IIS, откройте Интернет-браузер и перейдите по адресу http: \/ /мивмвеб.
 
 Отключитесь от виртуальной машины *myVmMgmt*.
 
@@ -300,7 +299,7 @@ Get-AzPublicIpAddress `
 Remove-AzResourceGroup -Name myResourceGroup -Force
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье вы создали группу безопасности сети и связали ее с подсетью виртуальной сети. Дополнительные сведения о группах безопасности сети см. в статьях [Безопасность сети](security-overview.md) и [Create, change, or delete a network security group](manage-network-security-group.md) (Создание, изменение или удаление группы безопасности сети).
 

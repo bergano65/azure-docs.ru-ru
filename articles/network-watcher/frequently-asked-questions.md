@@ -14,16 +14,15 @@ ms.workload: infrastructure-services
 ms.date: 10/10/2019
 ms.author: damendo
 ms.openlocfilehash: b48aab918b477f5c689a50ca476b0b1336642f0f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77471862"
 ---
 # <a name="frequently-asked-questions-faq-about-azure-network-watcher"></a>Часто задаваемые вопросы о наблюдателе за сетями Azure
 Служба [наблюдателя за сетями Azure](https://docs.microsoft.com/azure/network-watcher/network-watcher-monitoring-overview) предоставляет набор средств для мониторинга, диагностики, просмотра метрик и включения или отключения журналов для ресурсов в виртуальной сети Azure. В этой статье содержатся ответы на часто задаваемые вопросы о службе.
 
-## <a name="general"></a>Общие
+## <a name="general"></a>Общие сведения
 
 ### <a name="what-is-network-watcher"></a>Что такое Наблюдатель за сетями?
 Наблюдатель за сетями предназначен для отслеживания и восстановления работоспособности сети компонентов IaaS (инфраструктура как услуга), включая виртуальные машины, виртуальные сети, шлюзы приложений, подсистемы балансировки нагрузки и другие ресурсы в виртуальной сети Azure. Это решение не является решением для мониторинга инфраструктуры PaaS (платформа как услуга) или получения веб-или мобильной аналитики.
@@ -40,7 +39,7 @@ ms.locfileid: "77471862"
   * [Устранение неполадок подключения](https://docs.microsoft.com/azure/network-watcher/network-watcher-connectivity-portal) позволяет выполнять одноразовую проверку подключения и задержку между виртуальной машиной и другим сетевым ресурсом.
   * [Запись пакетов](https://docs.microsoft.com/azure/network-watcher/network-watcher-packet-capture-overview) позволяет захватить весь трафик на виртуальной машине в виртуальной сети.
   * [Устранение неполадок VPN](https://docs.microsoft.com/azure/network-watcher/network-watcher-troubleshoot-overview) запускает несколько проверок диагностики на VPN-шлюзах и подключениях, чтобы помочь в отладке проблем.
-* Logging
+* Ведение журнала
   * [Журналы потоков NSG](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview) позволяют регистрировать весь трафик в [группах безопасности сети (группы безопасности сети)](https://docs.microsoft.com/azure/virtual-network/security-overview) .
   * [Аналитика трафика](https://docs.microsoft.com/azure/network-watcher/traffic-analytics) обрабатывает данные журнала потоков NSG, позволяя визуализировать, запрашивать, анализировать и понимать сетевой трафик.
 
@@ -106,5 +105,5 @@ ms.locfileid: "77471862"
 ### <a name="what-is-the-difference-between-flow-logs-versions-1--2"></a>В чем разница между журналами потоков версии 1 & 2?
 Журналы потоков версии 2 представляют концепцию *состояния потока* & хранят сведения о передаваемых байтах и пакетах. [Дополнительные сведения](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview#log-file).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
  - Перейдите к нашей [странице с обзором документации](https://docs.microsoft.com/azure/network-watcher/) по некоторым руководствам, чтобы приступить к работе с наблюдателем за сетями.

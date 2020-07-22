@@ -11,12 +11,11 @@ ms.reviewer: sawinark
 manager: shwang
 ms.custom: seo-lt-2019
 ms.date: 04/15/2019
-ms.openlocfilehash: 8c85a652cde840336c51e1a5b5459f9dc591e0be
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 9b331ccee183ec101cf3449f12b4f656a1325819
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81414685"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84118092"
 ---
 # <a name="troubleshoot-package-execution-in-the-ssis-integration-runtime"></a>Устранение неполадок при выполнении пакетов в среде выполнения интеграции SSIS
 
@@ -32,16 +31,16 @@ ms.locfileid: "81414685"
 
 ## <a name="common-errors-causes-and-solutions"></a>Распространенные ошибки, причины и решения
 
-### <a name="error-message-connection-timeout-expired-or-the-service-has-encountered-an-error-processing-your-request-please-try-again"></a>Сообщение об ошибке: "истекло время ожидания подключения" или "Служба обнаружила ошибку при обработке запроса. Повторите попытку".
+### <a name="error-message-connection-timeout-expired-or-the-service-has-encountered-an-error-processing-your-request-please-try-again"></a>Сообщение об ошибке: "истекло время ожидания подключения" или "Служба обнаружила ошибку при обработке запроса. Повторите попытку."
 
 Ниже приведены возможные причины и рекомендуемые действия.
 * Источник данных или назначение перегружены. Проверьте загрузку источника данных или назначения и убедитесь, что у него достаточно ресурсов. Например, если вы использовали базу данных SQL Azure, рассмотрите возможность увеличения масштаба, если база данных, скорее всего, истекает время ожидания.
 * Сеть между средой выполнения интеграции SSIS и источником данных или назначением нестабильна, особенно если подключение осуществляется между регионами или между локальными сетями и Azure. Примените шаблон повтора в пакете служб SSIS, выполнив следующие действия.
   * Убедитесь, что пакеты служб SSIS могут быть повторно запущены при сбое без побочных эффектов (например, потери данных или дублирование данных).
-  * Настройте **Повтор** и **интервал повтора** для действия " **выполнение пакета служб SSIS** " на вкладке " ![ **Общие** ". Задайте свойства на вкладке "Общие".](media/how-to-invoke-ssis-package-ssis-activity/ssis-activity-general.png)
+  * Настройте **Повтор** и **интервал повтора** для действия " **выполнение пакета служб SSIS** " на вкладке " **Общие** ". ![ Задание свойств на вкладке «Общие»](media/how-to-invoke-ssis-package-ssis-activity/ssis-activity-general.png)
   * Для ADO.NET и OLE DB компонента источника или назначения задайте **ConnectRetryCount** и **ConnectRetryInterval** в диспетчере соединений в пакете служб SSIS или в действии служб SSIS.
 
-### <a name="error-message-ado-net-source-has-failed-to-acquire-the-connection--with-a-network-related-or-instance-specific-error-occurred-while-establishing-a-connection-to-sql-server-the-server-was-not-found-or-was-not-accessible"></a>Сообщение об ошибке: "источнику ADO NET не удалось получить подключение"... "" при установлении соединения с SQL Server возникла ошибка, связанная с сетью или с конкретным экземпляром. Сервер не найден или недоступен".
+### <a name="error-message-ado-net-source-has-failed-to-acquire-the-connection--with-a-network-related-or-instance-specific-error-occurred-while-establishing-a-connection-to-sql-server-the-server-was-not-found-or-was-not-accessible"></a>Сообщение об ошибке: "источнику ADO NET не удалось получить подключение"... "" при установлении соединения с SQL Server возникла ошибка, связанная с сетью или с конкретным экземпляром. Сервер не найден или недоступен ".
 
 Причина этой проблемы обычно заключается в том, что источник данных или назначение недоступны из среды выполнения интеграции MSSQL Integration Services. Причины могут быть разными. Попробуйте выполнить следующие действия:
 * Убедитесь, что источник данных или имя назначения или IP-адрес правильно передаются.
@@ -74,10 +73,10 @@ ms.locfileid: "81414685"
 * Возможная причина и рекомендуемое действие.
   * Если действие SSIS выполняется пакет из файловой системы (файла пакета или файла проекта), эта ошибка возникает, если проект, пакет или файл конфигурации недоступен с пакетными учетными данными, предоставленными в действии служб SSIS.
     * Если вы используете файл Azure, сделайте следующее:
-      * Путь к файлу должен начинаться \\ \\ \<с имени\>учетной записи\\\<хранения. File.Core.Windows.NET путь к общей папке\>
+      * Путь к файлу должен начинаться с \\ \\ \<storage account name\> . File.Core.Windows.NET\\\<file share path\>
       * Домен должен иметь значение "Azure".
-      * Имя пользователя должно быть \<именем учетной записи хранения\>
-      * Пароль должен быть \<ключом доступа к хранилищу\>
+      * Имя пользователя должно быть\<storage account name\>
+      * Пароль должен быть\<storage access key\>
     * Если вы используете локальный файл, убедитесь, что виртуальная сеть, учетные данные для доступа к пакету и разрешения настроены правильно, чтобы среда выполнения интеграции Azure SSIS могла получить доступ к локальной общей папке.
 
 ### <a name="error-message-the-file-name--specified-in-the-connection-was-not-valid"></a>Сообщение об ошибке: "имя файла"... " указано недопустимое в соединении
@@ -95,20 +94,20 @@ ms.locfileid: "81414685"
 
 ### <a name="error-message-the-database-ssisdb-has-reached-its-size-quota"></a>Сообщение об ошибке: "база данных" SSISDB "достигла квоты на размер"
 
-Возможная причина заключается в том, что база данных SSISDB, созданная в базе данных SQL Azure или управляемом экземпляре при создании среды выполнения интеграции MSSQL Integration Services, достигла своей квоты. Попробуйте выполнить следующие действия:
-* Попробуйте увеличить число единиц транзакций базы данных. См. подробнее об [ограничениях ресурсов для сервера Базы данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-resource-limits-logical-server).
+Возможная причина заключается в том, что база данных SSISDB, созданная в базе данных SQL Azure или в SQL Управляемый экземпляр, достигла своей квоты. Попробуйте выполнить следующие действия:
+* Попробуйте увеличить число единиц транзакций базы данных. Подробные сведения см. в [ограничениях базы данных SQL для логического сервера](https://docs.microsoft.com/azure/sql-database/sql-database-resource-limits-logical-server).
 * Проверьте, создает ли ваш пакет много журналов. В этом случае можно настроить задание обработки эластичных баз данных для очистки этих журналов. См. подробнее об [очистке журналов SSISDB с помощью заданий обработки эластичных баз данных Azure](how-to-clean-up-ssisdb-logs-with-elastic-jobs.md).
 
 ### <a name="error-message-the-request-limit-for-the-database-is--and-has-been-reached"></a>Сообщение об ошибке: "предельное число запросов для базы данных —... и достигнут ".
 
-Если в среде выполнения интеграции SSIS выполняется параллельное выполнение множества пакетов, эта ошибка может возникать из-за того, что SSISDB достигнет предельного количества запросов. Чтобы устранить эту проблему, попробуйте увеличить DTC в SSISDB. См. подробнее об [ограничениях ресурсов для сервера Базы данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-resource-limits-logical-server).
+Если в среде выполнения интеграции SSIS выполняется параллельное выполнение множества пакетов, эта ошибка может возникать из-за того, что SSISDB достигнет предельного количества запросов. Чтобы устранить эту проблему, попробуйте увеличить DTC в SSISDB. Подробные сведения см. в [ограничениях базы данных SQL для логического сервера](https://docs.microsoft.com/azure/sql-database/sql-database-resource-limits-logical-server).
 
 ### <a name="error-message-ssis-operation-failed-with-unexpected-operation-status-"></a>Сообщение об ошибке: "сбой операции служб SSIS с непредвиденным состоянием операции:..."
 
 Эта ошибка в основном вызвана временной проблемой, поэтому попробуйте повторить выполнение пакета. Примените шаблон повтора в пакете служб SSIS, выполнив следующие действия.
 
 * Убедитесь, что пакеты служб SSIS могут быть повторно запущены при сбое без побочных эффектов (например, потери данных или дублирование данных).
-* Настройте **Повтор** и **интервал повтора** для действия " **выполнение пакета служб SSIS** " на вкладке " ![ **Общие** ". Задайте свойства на вкладке "Общие".](media/how-to-invoke-ssis-package-ssis-activity/ssis-activity-general.png)
+* Настройте **Повтор** и **интервал повтора** для действия " **выполнение пакета служб SSIS** " на вкладке " **Общие** ". ![ Задание свойств на вкладке «Общие»](media/how-to-invoke-ssis-package-ssis-activity/ssis-activity-general.png)
 * Для ADO.NET и OLE DB компонента источника или назначения задайте **ConnectRetryCount** и **ConnectRetryInterval** в диспетчере соединений в пакете служб SSIS или в действии служб SSIS.
 
 ### <a name="error-message-there-is-no-active-worker"></a>Сообщение об ошибке: "нет активного рабочего процесса".
@@ -157,7 +156,7 @@ ms.locfileid: "81414685"
   * Журнал выполнения можно найти в [отчете SSMS](https://docs.microsoft.com/sql/integration-services/performance/monitor-running-packages-and-other-operations?view=sql-server-2017#reports) или в папке журнала, указанной в действии выполнения пакета служб SSIS.
   * Виртуальную сеть можно также использовать для доступа к локальным данным в качестве альтернативы. Дополнительные сведения можно найти в привязке [среды выполнения интеграции Azure SSIS к виртуальной сети](join-azure-ssis-integration-runtime-virtual-network.md) .
 
-### <a name="error-message-staging-task-status-failed-staging-task-error-errorcode-2906-errormessage-package-execution-failed-output-operationerrormessages-ssis-executor-exit-code--1n-loglocation-ssistelemetryexecutionlog-effectiveintegrationruntime--executionduration--durationinqueue--integrationruntimequeue--"></a>Сообщение об ошибке: "состояние промежуточной задачи: сбой. Ошибка промежуточной задачи: код ошибки: 2906, ErrorMessage: сбой выполнения пакета., выходные данные: {"Оператионеррормессажес": "службы SSIS Exit код выхода:-1. \ n", "LogLocation": "... \\Ссистелеметри\\ExecutionLog\\... "," еффективеинтегратионрунтиме ":"... "," ексекутиондуратион ":...," дуратионинкуеуе ": {" интегратионрунтимекуеуе ":...}}"
+### <a name="error-message-staging-task-status-failed-staging-task-error-errorcode-2906-errormessage-package-execution-failed-output-operationerrormessages-ssis-executor-exit-code--1n-loglocation-ssistelemetryexecutionlog-effectiveintegrationruntime--executionduration--durationinqueue--integrationruntimequeue--"></a>Сообщение об ошибке: "состояние промежуточной задачи: сбой. Ошибка промежуточной задачи: код ошибки: 2906, ErrorMessage: сбой выполнения пакета., выходные данные: {"Оператионеррормессажес": "службы SSIS Exit код выхода:-1. \ n", "LogLocation": "... \\ Ссистелеметри \\ ExecutionLog \\ ... "," еффективеинтегратионрунтиме ":"... "," ексекутиондуратион ":...," дуратионинкуеуе ": {" интегратионрунтимекуеуе ":...}}"
 
 Убедитесь, что Visual C++ среда выполнения установлена на компьютере, где размещена локальная среда выполнения интеграции. Дополнительные сведения см. в [подокне Настройка автономного IR в качестве прокси-сервера для Azure-SSIS IR в ADF](self-hosted-integration-runtime-proxy-ssis.md#prepare-the-self-hosted-ir) .
 
@@ -179,7 +178,7 @@ ms.locfileid: "81414685"
   * Сведения о том, как задать количество узлов и максимальное параллельное выполнение на каждом узле, см. [в статье Создание среды выполнения интеграции Azure SSIS в фабрике данных Azure](create-azure-ssis-integration-runtime.md).
 * Среда выполнения интеграции служб SSIS остановлена или имеет неработоспособное состояние. Сведения о проверке состояния и ошибок среды выполнения интеграции SSIS см. в разделе [Среда выполнения интеграции Azure SSIS](monitor-integration-runtime.md#azure-ssis-integration-runtime).
 
-Также рекомендуется установить время ожидания на вкладке **Общие** : ![задать свойства на вкладке](media/how-to-invoke-ssis-package-ssis-activity/ssis-activity-general.png)общие.
+Также рекомендуется установить время ожидания на вкладке **Общие** : ![ задать свойства на вкладке Общие ](media/how-to-invoke-ssis-package-ssis-activity/ssis-activity-general.png) .
 
 ### <a name="poor-performance-in-package-execution"></a>Низкая производительность при выполнении пакета
 

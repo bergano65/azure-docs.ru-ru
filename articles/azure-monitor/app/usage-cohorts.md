@@ -7,10 +7,9 @@ ms.author: daviste
 ms.date: 04/10/2018
 ms.reviewer: mbullwin
 ms.openlocfilehash: 0c552e8f3e732c49da02b2f5704fb9cf312fb3e8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77671092"
 ---
 # <a name="application-insights-cohorts"></a>Когорты Application Insights
@@ -129,7 +128,7 @@ _Я определил когорту пользователей из опред
 * Версия с когортой покажет все события пользователей, которые отправили одно или больше событий из Соединенного Королевства в текущем временном диапазоне. Если выполнить разделение по стране или региону, скорее всего, отобразится множество стран и регионов.
 * В версии с фильтрами будут показаны только события из Соединенного Королевства. Но если выполнить разделение по стране или региону, отобразится только Соединенное Королевство.
 
-## <a name="learn-more"></a>Дополнительные сведения
+## <a name="learn-more"></a>Подробнее
 
 * [Язык запросов Analytics](https://go.microsoft.com/fwlink/?linkid=856587)
 * [Пользователи, сеансы, события](usage-segmentation.md)

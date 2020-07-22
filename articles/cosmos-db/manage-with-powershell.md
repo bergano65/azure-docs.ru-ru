@@ -1,33 +1,33 @@
 ---
 title: Создание ресурсов Azure Cosmos DB и управление ими с помощью PowerShell
-description: Используйте Azure Powershell для управления учетными записями, базами данных, контейнерами и пропускной способностью Azure Cosmos.
+description: Используйте Azure PowerShell для управления учетными записями, базами данных, контейнерами и пропускной способностью Azure Cosmos.
 author: markjbrown
 ms.service: cosmos-db
-ms.topic: sample
-ms.date: 04/29/2020
+ms.topic: how-to
+ms.date: 05/13/2020
 ms.author: mjbrown
 ms.custom: seodec18
-ms.openlocfilehash: d4473bbfe10fa2d0fc87eed7889a3e06af650b5b
-ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
+ms.openlocfilehash: 1e43cc48a6c4684326a152adedabcd00a44657a6
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82592151"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85390845"
 ---
 # <a name="manage-azure-cosmos-db-sql-api-resources-using-powershell"></a>Управление ресурсами API SQL для Azure Cosmos DB с помощью PowerShell
 
 В этом руководстве описывается, как с помощью PowerShell написать сценарии и автоматизировать управление ресурсами Azure Cosmos DB, включая учетную запись, базу данных, контейнер и пропускную способность.
 
 > [!NOTE]
-> В примерах этой статьи используются командлеты управления [Az.CosmosDB](https://docs.microsoft.com/powershell/module/az.cosmosdb). Эти Командлеты пока что доступны в предварительной версии и могут быть изменены до выхода общедоступной версии. Любые изменения в командах будут отражены на странице справочника по API [Az.CosmosDB](https://docs.microsoft.com/powershell/module/az.cosmosdb).
+> В примерах этой статьи используются командлеты управления [Az.CosmosDB](https://docs.microsoft.com/powershell/module/az.cosmosdb). Сведения о последних изменениях см. на странице справочника по API [Az.CosmosDB](https://docs.microsoft.com/powershell/module/az.cosmosdb).
 
-Для управления ресурсами Azure Cosmos DB на нескольких платформах можно использовать командлеты `Az` и `Az.CosmosDB` в [кроссплатформенном средстве PowerShell](https://docs.microsoft.com/powershell/scripting/install/installing-powershell), а также [Azure CLI](manage-with-cli.md), [REST API][rp-rest-api] или [портал Azure](create-sql-api-dotnet.md#create-account).
+Для управления ресурсами Azure Cosmos DB на нескольких платформах можно использовать командлеты `Az` и `Az.CosmosDB` в [кроссплатформенном средстве PowerShell](https://docs.microsoft.com/powershell/scripting/install/installing-powershell), а также [Azure CLI](manage-with-cli.md), [REST API][rp-rest-api] или [портал Azure](create-sql-api-dotnet.md#create-account).
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="getting-started"></a>Приступая к работе
 
-Следуйте инструкциям из статьи [Общие сведения об Azure PowerShell][powershell-install-configure], чтобы установить средство PowerShell и войти через него в учетную запись Azure.
+Следуйте инструкциям из статьи об [установке и настройке Azure PowerShell][powershell-install-configure], чтобы установить средство PowerShell и войти через него в учетную запись Azure.
 
 ## <a name="azure-cosmos-accounts"></a>Учетные записи Azure Cosmos
 
@@ -44,6 +44,7 @@ ms.locfileid: "82592151"
 * [вывод списка строк подключения для учетной записи Azure Cosmos;](#list-connection-strings)
 * [изменение приоритета при отработке отказа в учетной записи Azure Cosmos.](#modify-failover-priority)
 * [активация перехода на другой ресурс для учетной записи Azure Cosmos](#trigger-manual-failover)
+* [вывод списка блокировок ресурсов в учетной записи Azure Cosmos DB.](#list-account-locks)
 
 ### <a name="create-an-azure-cosmos-account"></a><a id="create-account"></a> Создание учетной записи Azure Cosmos
 
@@ -327,6 +328,21 @@ Update-AzCosmosDBAccountFailoverPriority `
     -FailoverPolicy $locations
 ```
 
+### <a name="list-resource-locks-on-an-azure-cosmos-db-account"></a><a id="list-account-locks"></a> Вывод списка блокировок ресурсов в учетной записи Azure Cosmos DB
+
+Блокировки ресурсов можно применять к ресурсам Azure Cosmos DB, включая базы данных и коллекции. В примере ниже показано, как вывести список всех блокировок ресурсов Azure в учетной записи Azure Cosmos DB.
+
+```azurepowershell-interactive
+$resourceGroupName = "myResourceGroup"
+$resourceTypeAccount = "Microsoft.DocumentDB/databaseAccounts"
+$accountName = "mycosmosaccount"
+
+Get-AzResourceLock `
+    -ResourceGroupName $resourceGroupName `
+    -ResourceType $resourceTypeAccount `
+    -ResourceName $accountName
+```
+
 ## <a name="azure-cosmos-db-database"></a>База данных Azure Cosmos DB
 
 В следующих разделах описано управление базой данных Azure Cosmos DB, включая:
@@ -337,6 +353,8 @@ Update-AzCosmosDBAccountFailoverPriority `
 * [вывод списка всех баз данных Azure Cosmos DB в учетной записи;](#list-db)
 * [получение сведений об одной базе данных Azure Cosmos DB;](#get-db)
 * [удаление базы данных Azure Cosmos DB.](#delete-db)
+* [создание блокировки ресурса в базе данных Azure Cosmos DB для предотвращения удаления;](#create-db-lock)
+* [снятие блокировки ресурса в базе данных Azure Cosmos DB.](#remove-db-lock)
 
 ### <a name="create-an-azure-cosmos-db-database"></a><a id="create-db"></a>Создание базы данных Azure Cosmos DB
 
@@ -345,7 +363,7 @@ $resourceGroupName = "myResourceGroup"
 $accountName = "mycosmosaccount"
 $databaseName = "myDatabase"
 
-Set-AzCosmosDBSqlDatabase `
+New-AzCosmosDBSqlDatabase `
     -ResourceGroupName $resourceGroupName `
     -AccountName $accountName `
     -Name $databaseName
@@ -359,7 +377,7 @@ $accountName = "mycosmosaccount"
 $databaseName = "myDatabase"
 $databaseRUs = 400
 
-Set-AzCosmosDBSqlDatabase `
+New-AzCosmosDBSqlDatabase `
     -ResourceGroupName $resourceGroupName `
     -AccountName $accountName `
     -Name $databaseName `
@@ -416,6 +434,42 @@ Remove-AzCosmosDBSqlDatabase `
     -Name $databaseName
 ```
 
+### <a name="create-a-resource-lock-on-an-azure-cosmos-db-database-to-prevent-delete"></a><a id="create-db-lock"></a>Создание блокировки ресурса в базе данных Azure Cosmos DB для предотвращения удаления
+
+```azurepowershell-interactive
+$resourceGroupName = "myResourceGroup"
+$resourceType = "Microsoft.DocumentDB/databaseAccounts/sqlDatabases"
+$accountName = "mycosmosaccount"
+$databaseName = "myDatabase"
+$resourceName = "$accountName/$databaseName"
+$lockName = "myResourceLock"
+$lockLevel = "CanNotDelete"
+
+New-AzResourceLock `
+    -ResourceGroupName $resourceGroupName `
+    -ResourceType $resourceType `
+    -ResourceName $resourceName `
+    -LockName $lockName `
+    -LockLevel $lockLevel
+```
+
+### <a name="remove-a-resource-lock-on-an-azure-cosmos-db-database"></a><a id="remove-db-lock"></a>Снятие блокировки ресурса в базе данных Azure Cosmos DB
+
+```azurepowershell-interactive
+$resourceGroupName = "myResourceGroup"
+$resourceType = "Microsoft.DocumentDB/databaseAccounts/sqlDatabases"
+$accountName = "mycosmosaccount"
+$databaseName = "myDatabase"
+$resourceName = "$accountName/$databaseName"
+$lockName = "myResourceLock"
+
+Remove-AzResourceLock `
+    -ResourceGroupName $resourceGroupName `
+    -ResourceType $resourceType `
+    -ResourceName $resourceName `
+    -LockName $lockName
+```
+
 ## <a name="azure-cosmos-db-container"></a>Контейнер Azure Cosmos DB
 
 В следующих разделах описаны процедуры управления контейнером Azure Cosmos DB, включая:
@@ -430,6 +484,8 @@ Remove-AzCosmosDBSqlDatabase `
 * [вывод списка всех контейнеров Azure Cosmos DB в базе данных;](#list-containers)
 * [получение сведений об одном контейнере Azure Cosmos DB в базе данных;](#get-container)
 * [удаление контейнера Azure Cosmos DB.](#delete-container)
+* [создание блокировки ресурса в контейнере Azure Cosmos DB для предотвращения удаления;](#create-container-lock)
+* [снятие блокировки ресурса в контейнере Azure Cosmos DB.](#remove-container-lock)
 
 ### <a name="create-an-azure-cosmos-db-container"></a><a id="create-container"></a>Создание контейнера Azure Cosmos DB
 
@@ -441,7 +497,7 @@ $databaseName = "myDatabase"
 $containerName = "myContainer"
 $partitionKeyPath = "/myPartitionKey"
 
-Set-AzCosmosDBSqlContainer `
+New-AzCosmosDBSqlContainer `
     -ResourceGroupName $resourceGroupName `
     -AccountName $accountName `
     -DatabaseName $databaseName `
@@ -460,7 +516,7 @@ $databaseName = "myDatabase"
 $containerName = "myContainer"
 $partitionKeyPath = "/myPartitionKey"
 
-Set-AzCosmosDBSqlContainer `
+New-AzCosmosDBSqlContainer `
     -ResourceGroupName $resourceGroupName `
     -AccountName $accountName `
     -DatabaseName $databaseName `
@@ -506,7 +562,7 @@ $indexingPolicy = New-AzCosmosDBSqlIndexingPolicy `
     -IndexingMode Consistent `
     -Automatic $true
 
-Set-AzCosmosDBSqlContainer `
+New-AzCosmosDBSqlContainer `
     -ResourceGroupName $resourceGroupName `
     -AccountName $accountName `
     -DatabaseName $databaseName `
@@ -529,7 +585,7 @@ $partitionKeyPath = "/myPartitionKey"
 $indexingPolicy = New-AzCosmosDBSqlIndexingPolicy `
     -IndexingMode None
 
-Set-AzCosmosDBSqlContainer `
+New-AzCosmosDBSqlContainer `
     -ResourceGroupName $resourceGroupName `
     -AccountName $accountName `
     -DatabaseName $databaseName `
@@ -557,7 +613,7 @@ $uniqueKey = New-AzCosmosDBSqlUniqueKey `
 $uniqueKeyPolicy = New-AzCosmosDBSqlUniqueKeyPolicy `
     -UniqueKey $uniqueKey
 
-Set-AzCosmosDBSqlContainer `
+New-AzCosmosDBSqlContainer `
     -ResourceGroupName $resourceGroupName `
     -AccountName $accountName `
     -DatabaseName $databaseName `
@@ -585,7 +641,7 @@ $conflictResolutionPolicy = New-AzCosmosDBSqlConflictResolutionPolicy `
     -Type LastWriterWins `
     -Path $conflictResolutionPath
 
-Set-AzCosmosDBSqlContainer `
+New-AzCosmosDBSqlContainer `
     -ResourceGroupName $resourceGroupName `
     -AccountName $accountName `
     -DatabaseName $databaseName `
@@ -612,7 +668,7 @@ $conflictResolutionPolicy = New-AzCosmosDBSqlConflictResolutionPolicy `
     -Type Custom `
     -ConflictResolutionProcedure $conflictResolutionSproc
 
-Set-AzCosmosDBSqlContainer `
+New-AzCosmosDBSqlContainer `
     -ResourceGroupName $resourceGroupName `
     -AccountName $accountName `
     -DatabaseName $databaseName `
@@ -668,6 +724,43 @@ Remove-AzCosmosDBSqlContainer `
     -DatabaseName $databaseName `
     -Name $containerName
 ```
+### <a name="create-a-resource-lock-on-an-azure-cosmos-db-container-to-prevent-delete"></a><a id="create-container-lock"></a>Создание блокировки ресурса в контейнере Azure Cosmos DB для предотвращения удаления
+
+```azurepowershell-interactive
+$resourceGroupName = "myResourceGroup"
+$resourceType = "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers"
+$accountName = "mycosmosaccount"
+$databaseName = "myDatabase"
+$containerName = "myContainer"
+$resourceName = "$accountName/$databaseName/$containerName"
+$lockName = "myResourceLock"
+$lockLevel = "CanNotDelete"
+
+New-AzResourceLock `
+    -ResourceGroupName $resourceGroupName `
+    -ResourceType $resourceType `
+    -ResourceName $resourceName `
+    -LockName $lockName `
+    -LockLevel $lockLevel
+```
+
+### <a name="remove-a-resource-lock-on-an-azure-cosmos-db-container"></a><a id="remove-container-lock"></a>Снятие блокировки ресурса в контейнере Azure Cosmos DB
+
+```azurepowershell-interactive
+$resourceGroupName = "myResourceGroup"
+$resourceType = "Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers"
+$accountName = "mycosmosaccount"
+$databaseName = "myDatabase"
+$containerName = "myContainer"
+$resourceName = "$accountName/$databaseName/$containerName"
+$lockName = "myResourceLock"
+
+Remove-AzResourceLock `
+    -ResourceGroupName $resourceGroupName `
+    -ResourceType $resourceType `
+    -ResourceName $resourceName `
+    -LockName $lockName
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -683,4 +776,4 @@ Remove-AzCosmosDBSqlContainer `
 [distribute-data-globally]: distribute-data-globally.md
 [azure-resource-groups]: https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#resource-groups
 [azure-resource-tags]: https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags
-[rp-rest-api]: https://docs.microsoft.com/rest/api/cosmos-db-resource-provider/
+[rp-rest-api]: /rest/api/cosmos-db-resource-provider/

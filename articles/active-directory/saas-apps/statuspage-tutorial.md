@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/22/2019
 ms.author: jeedes
-ms.openlocfilehash: d947f610e6a753ce2ed349917640b07a55bbb735
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: c1ad9d7afd215371b92c83445cfd1c8778bc0642
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67089878"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86170536"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-statuspage"></a>Руководство. Интеграция Azure Active Directory и StatusPage
 
@@ -106,18 +106,14 @@ ms.locfileid: "67089878"
     ![Сведения о домене и URL-адресах единого входа для приложения StatusPage](common/idp-intiated.png)
 
     а. В текстовом поле **Идентификатор** введите URL-адрес в таком формате:
-    
-    | |
-    |--|
-    | `https://<subdomain>.statuspagestaging.com/`|
-    | `https://<subdomain>.statuspage.io/`|
+
+    - `https://<subdomain>.statuspagestaging.com/`
+    - `https://<subdomain>.statuspage.io/`
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате:
-    
-    | |
-    |--|
-    | `https://<subdomain>.statuspagestaging.com/sso/saml/consume`|
-    | `https://<subdomain>.statuspage.io/sso/saml/consume`|
+
+    - `https://<subdomain>.statuspagestaging.com/sso/saml/consume`
+    - `https://<subdomain>.statuspage.io/sso/saml/consume`
 
     > [!NOTE]
     > Обратитесь в службу поддержки StatusPage по адресу [SupportTeam@statuspage.io](mailto:SupportTeam@statuspage.io), чтобы запросить метаданные, необходимые для настройки единого входа. 

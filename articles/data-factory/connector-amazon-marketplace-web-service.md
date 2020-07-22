@@ -12,10 +12,10 @@ ms.reviewer: douglasl
 ms.custom: seo-lt-2019
 ms.date: 08/01/2018
 ms.openlocfilehash: 4620ef5b6a72afbe86b0ace33328a769eab31e5e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81418275"
 ---
 # <a name="copy-data-from-amazon-marketplace-web-service-using-azure-data-factory"></a>Копирование данных из Amazon Marketplace Web Service с помощью Фабрики данных Azure
@@ -28,7 +28,7 @@ ms.locfileid: "81418275"
 
 Соединитель Amazon Marketplace Web Service Connector поддерживается для следующих действий:
 
-- [Действие копирования](copy-activity-overview.md) с [поддерживаемой матрицей источника и приемника](copy-activity-overview.md)
+- [Действие копирования](copy-activity-overview.md) с использованием [матрицы поддерживаемых источников и приемников](copy-activity-overview.md)
 - [Действие поиска](control-flow-lookup-activity.md)
 
 Вы можете скопировать данные из Amazon Marketplace Web Service в любой поддерживаемый приемник данных. Список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования, приведен в таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
@@ -45,7 +45,7 @@ ms.locfileid: "81418275"
 
 Для связанной службы Amazon Marketplace Web Service поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательный |
+| Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Для свойства type необходимо задать значение **AmazonMWS**. | Да |
 | endpoint | Конечная точка сервера Amazon MWS (то есть mws.amazonservices.com).  | Да |
@@ -85,11 +85,11 @@ ms.locfileid: "81418275"
 
 ## <a name="dataset-properties"></a>Свойства набора данных
 
-Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о [наборах данных](concepts-datasets-linked-services.md) . Этот раздел содержит список свойств, поддерживаемых набором данных Amazon Marketplace Web Service.
+Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о [наборах данных](concepts-datasets-linked-services.md). Этот раздел содержит список свойств, поддерживаемых набором данных Amazon Marketplace Web Service.
 
 Чтобы скопировать данные из Amazon Marketplace Web Service, установите для свойства type набора данных значение **AmazonMWSObject**. Поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательный |
+| Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Свойство Type набора данных должно иметь значение **амазонмвсобжект** . | Да |
 | tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
@@ -118,14 +118,14 @@ ms.locfileid: "81418275"
 
 ### <a name="amazon-mws-as-source"></a>Amazon MWS в качестве источника
 
-Чтобы скопировать данные из Amazon Marketplace Web Service, задайте тип источника **AmazonMWSSource** в действии копирования. В разделе **источник** действия копирования поддерживаются следующие свойства.
+Чтобы скопировать данные из Amazon Marketplace Web Service, задайте тип источника **AmazonMWSSource** в действии копирования. В разделе **source** действия копирования поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательный |
+| Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Свойство type источника действия копирования должно иметь значение **AmazonMWSSource**. | Да |
 | query | Используйте пользовательский SQL-запрос для чтения данных. Например: `"SELECT * FROM Orders where  Amazon_Order_Id = 'xx'"`. | Нет (если для набора данных задано свойство tableName) |
 
-**Пример.**
+**Пример**.
 
 ```json
 "activities":[
@@ -159,7 +159,7 @@ ms.locfileid: "81418275"
 
 ## <a name="lookup-activity-properties"></a>Свойства действия поиска
 
-Чтобы получить сведения о свойствах, проверьте [действие поиска](control-flow-lookup-activity.md).
+Подробные сведения об этих свойствах см. в разделе [Действие поиска](control-flow-lookup-activity.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

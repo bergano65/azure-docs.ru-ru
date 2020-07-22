@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 04/13/2020
 ms.custom: cc996988-fb4f-47
 ms.openlocfilehash: 057c030b060343d5bc6f85c38d61feee0b01dfde
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "83122309"
 ---
 # <a name="manage-your-function-app"></a>Управление приложением функции 
@@ -35,7 +34,7 @@ ms.locfileid: "83122309"
 
 Вы можете выбрать все необходимое для управления приложением-функцией на странице Обзор, в частности **[Параметры приложения](#settings)** и **[функции платформы](#platform-features)**.
 
-## <a name="application-settings"></a><a name="settings"></a>Параметры приложений
+## <a name="application-settings"></a><a name="settings"></a>Параметры приложения
 
 На вкладке **Параметры приложения** хранятся параметры, используемые приложением функции. Эти параметры хранятся в зашифрованном виде, поэтому необходимо выбрать параметр **Показать значения** , чтобы просмотреть значения на портале. Вы также можете получить доступ к параметрам приложения с помощью Azure CLI.
 
@@ -67,7 +66,7 @@ az functionapp config appsettings set --name <FUNCTION_APP_NAME> \
 
 [!INCLUDE [functions-environment-variables](../../includes/functions-environment-variables.md)]
 
-При разработке приложения-функции локально необходимо сохранить локальные копии этих значений в файле проекта Local. Settings. JSON. Дополнительные сведения см. в разделе [локальный файл параметров](functions-run-local.md#local-settings-file).
+При разработке приложения-функции локально необходимо сохранить локальные копии этих значений в local.settings.jsв файле проекта. Дополнительные сведения см. в разделе [локальный файл параметров](functions-run-local.md#local-settings-file).
 
 ## <a name="platform-features"></a>Функции платформы
 
@@ -83,7 +82,7 @@ az functionapp config appsettings set --name <FUNCTION_APP_NAME> \
 + [Дополнительные инструменты (Kudu)](#kudu)
 + [Варианты развертывания](#deployment)
 + [CORS](#cors)
-+ [Authentication](#auth)
++ [Аутентификация](#auth)
 
 Дополнительные сведения о работе с параметрами службы приложений см. в статье [Настройка параметров в службе приложений Azure](../app-service/configure-common.md).
 
@@ -143,7 +142,7 @@ az functionapp cors add --name <FUNCTION_APP_NAME> \
 Если функции используют триггер HTTP, можно настроить обязательную предварительную проверку подлинности для вызовов. Служба приложений поддерживает Azure Active Directory проверку подлинности и вход с помощью поставщиков социальных сетей, таких как Facebook, Microsoft и Twitter. Дополнительные сведения о настройке определенных поставщиков аутентификации см. в разделе [Проверка подлинности и авторизация в службе приложений Azure](../app-service/overview-authentication-authorization.md). 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 + [Настройка параметров службы приложений Azure](../app-service/configure-common.md)
 + [Непрерывное развертывание для Функций Azure](functions-continuous-deployment.md)

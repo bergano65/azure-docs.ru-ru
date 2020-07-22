@@ -10,10 +10,9 @@ ms.date: 01/30/2020
 ms.author: jlian
 ms.custom: amqp
 ms.openlocfilehash: 373acc30ed652a7f540e840dfad5eeeda65ca179
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81759555"
 ---
 # <a name="504101-gatewaytimeout"></a>504101 GatewayTimeout
@@ -24,13 +23,13 @@ ms.locfileid: "81759555"
 
 При попытке вызвать прямой метод из центра Интернета вещей на устройстве происходит сбой запроса с ошибкой **504101 гатевайтимеаут**.
 
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 
-### <a name="cause-1"></a>Причина 1
+### <a name="cause-1"></a>Причина 1
 
 Центр Интернета вещей обнаружил ошибку и не смог подтвердить, завершился ли прямой метод до истечения времени ожидания.
 
-### <a name="cause-2"></a>Причина 2
+### <a name="cause-2"></a>Причина 2
 
 При использовании более ранней версии пакета SDK для C# для Azure IoT (<1.19.0) связь AMQP между устройством и центром Интернета вещей может быть удалена без вмешательства пользователя из-за ошибки.
 

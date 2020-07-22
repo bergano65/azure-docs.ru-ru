@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 03/30/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: df5c4cef9c2334328dc1291db95cfed3994d1709
-ms.sourcegitcommit: 67addb783644bafce5713e3ed10b7599a1d5c151
+ms.openlocfilehash: 0c860d821ff67b5eb95735e33dd0fda267f9c3bf
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2020
-ms.locfileid: "80669020"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86167340"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-tickitlms-learn"></a>Руководство по интеграции единого входа Azure Active Directory с TickitLMS Learn
 
@@ -95,13 +95,13 @@ ms.locfileid: "80669020"
 
 1. В дополнение к описанному выше приложение TickitLMS Learn ожидает несколько дополнительных атрибутов в ответе SAML, как показано ниже. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями.
     
-    | Имя |   |  Исходный атрибут|
-    | ---------------| --------------- | --------- |
-    | samlaccount |  | user.samlaccount |
-    | employeeid |  | user.employeeid |
-    | роль |  | user.role |
-    | department |  | user.department |
-    | reportsto |  | user.reportsto |
+    | Имя | Исходный атрибут|
+    | ---- | --------------- |
+    | samlaccount | user.samlaccount |
+    | employeeid | user.employeeid |
+    | роль | user.role |
+    | department | user.department |
+    | reportsto | user.reportsto |
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений** и сохранить его на компьютере.
 

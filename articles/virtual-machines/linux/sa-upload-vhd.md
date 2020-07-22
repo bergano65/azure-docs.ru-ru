@@ -1,5 +1,5 @@
 ---
-title: Отправка пользовательского диска Linux с Azure CLI
+title: Передача пользовательского диска Linux с помощью Azure CLI
 description: Создание и передача в Azure виртуального жесткого диска (VHD) с использованием модели развертывания с помощью Resource Manager и Azure CLI
 author: cynthn
 ms.service: virtual-machines-linux
@@ -10,7 +10,6 @@ ms.author: cynthn
 ms.custom: storage accounts
 ms.openlocfilehash: 7ec9b670f8b2eb1731511deb1d01cfc7db55054f
 ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/28/2020
 ms.locfileid: "81758576"
@@ -72,9 +71,9 @@ az vm create --resource-group myResourceGroup --location westus \
     --use-unmanaged-disk
 ```
 
-Целевой должна быть учетная запись хранения, в которую был передан виртуальный диск. Кроме того, нужно задать или указать в запросах все дополнительные параметры, необходимые для команды **az vm create**, включая виртуальную сеть, общедоступный IP-адрес, имя пользователя и ключи SSH. Дополнительные сведения о [доступных параметрах диспетчер ресурсов классической CLI](../azure-cli-arm-commands.md#virtual-machines)см. в этой статье.
+Целевой должна быть учетная запись хранения, в которую был передан виртуальный диск. Кроме того, нужно задать или указать в запросах все дополнительные параметры, необходимые для команды **az vm create**, включая виртуальную сеть, общедоступный IP-адрес, имя пользователя и ключи SSH. Дополнительные сведения о доступных параметрах Resource Manager для классического интерфейса командной строки см. [здесь](../azure-cli-arm-commands.md#virtual-machines).
 
-## <a name="requirements"></a>Requirements (Требования)
+## <a name="requirements"></a>Требования
 Чтобы выполнить приведенные ниже действия, требуется:
 
 * **Операционная система Linux, установленная в VHD-файле**. Установите [рекомендуемый для Azure дистрибутив Linux](endorsed-distros.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) (или см. [сведения о нерекомендованных дистрибутивах](create-upload-generic.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)) на виртуальный диск в формате VHD. Для создания VHD-файлов существует несколько средств.
@@ -82,7 +81,7 @@ az vm create --resource-group myResourceGroup --location westus \
   * Кроме того, можно использовать Hyper-V [в Windows 10](https://msdn.microsoft.com/virtualization/hyperv_on_windows/quick_start/walkthrough_install) или [Windows Server 2012 и 2012 R2](https://technet.microsoft.com/library/hh846766.aspx).
 
 > [!NOTE]
-> Более новый формат VHDX не поддерживается в Azure. При создании виртуальной машины укажите формат VHD. При необходимости можно преобразовать диски VHDX в VHD с помощью [`qemu-img convert`](https://en.wikibooks.org/wiki/QEMU/Images#Converting_image_formats) или командлета [`Convert-VHD`](https://technet.microsoft.com/library/hh848454.aspx) PowerShell. Кроме того, Azure не поддерживает отправку динамических дисков VHD, поэтому перед отправкой необходимо преобразовать такие диски в статические диски VHD. Для преобразования динамических дисков во время передачи в Azure можно использовать [служебные программы Azure VHD для GO](https://github.com/Microsoft/azure-vhd-utils-for-go) .
+> Более новый формат VHDX не поддерживается в Azure. При создании виртуальной машины укажите формат VHD. При необходимости можно преобразовать диски VHDX в диски VHD с помощью командлета PowerShell [`qemu-img convert`](https://en.wikibooks.org/wiki/QEMU/Images#Converting_image_formats) или [`Convert-VHD`](https://technet.microsoft.com/library/hh848454.aspx). Кроме того, Azure не поддерживает отправку динамических дисков VHD, поэтому перед отправкой необходимо преобразовать такие диски в статические диски VHD. Для преобразования динамических дисков во время передачи в Azure можно использовать [служебные программы Azure VHD для GO](https://github.com/Microsoft/azure-vhd-utils-for-go) .
 > 
 > 
 
@@ -103,14 +102,14 @@ Azure поддерживает различные дистрибутивы Linux
 * **[Debian Linux](debian-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)**
 * **[Oracle Linux](oracle-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)**
 * **[Red Hat Enterprise Linux](redhat-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)**
-* **[SLES & openSUSE](suse-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)**
+* **[SLES и OpenSUSE](suse-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)**
 * **[Ubuntu](create-upload-ubuntu.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)**
 * **[Прочее — нерекомендованные дистрибутивы](create-upload-generic.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)**
 
-Другие общие советы по подготовке образов Linux для Azure см. в разделе **[Общие замечания по установке Linux](create-upload-generic.md#general-linux-installation-notes)**.
+Другие общие советы по подготовке образов Linux для Azure см. в разделе **[Общие замечания по установке Linux](create-upload-generic.md#general-linux-installation-notes)** .
 
 > [!NOTE]
-> [Соглашение об уровне обслуживания платформы Azure](https://azure.microsoft.com/support/legal/sla/virtual-machines/) применяется к виртуальным машинам под управлением Linux только в том случае, если один из рекомендованных дистрибутивов используется с подробными сведениями о конфигурации, указанными в разделе "Поддерживаемые версии" в [Linux в рекомендуемых дистрибутивах Azure](endorsed-distros.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+> [Соглашение об уровне обслуживания платформы Azure](https://azure.microsoft.com/support/legal/sla/virtual-machines/) применяется к виртуальным машинам, работающим под управлением Linux, только в том случае, если используется один из рекомендуемых дистрибутивов из раздела "Поддерживаемые версии" статьи [Linux в Azure — рекомендованные дистрибутивы](endorsed-distros.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) с заданными параметрами конфигурации.
 > 
 > 
 
@@ -135,7 +134,7 @@ az storage account create --resource-group myResourceGroup --location westus \
 ```
 
 ## <a name="list-storage-account-keys"></a>Вывод списка ключей учетной записи хранения
-Azure создает два 512-разрядных ключа доступа для каждой учетной записи хранения. Эти ключи используются при аутентификации в учетной записи хранения, например, для выполнения операций записи. Дополнительные сведения о ключах доступа к учетной записи хранения см. в статье [Управление ключами доступа учетной записи хранения](../../storage/common/storage-account-keys-manage.md). Просмотрите список ключей доступа с помощью команды [az storage account keys list](/cli/azure/storage/account/keys).
+Azure создает два 512-разрядных ключа доступа для каждой учетной записи хранения. Эти ключи используются при аутентификации в учетной записи хранения, например, для выполнения операций записи. Сведения о ключах доступа к учетной записи хранения см. в разделе [Управление ключами доступа к учетной записи хранения](../../storage/common/storage-account-keys-manage.md). Просмотрите список ключей доступа с помощью команды [az storage account keys list](/cli/azure/storage/account/keys).
 
 Просмотрите ключи доступа для созданной учетной записи хранения.
 
@@ -235,6 +234,6 @@ az group deployment create --resource-group myNewResourceGroup \
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 После подготовки и передачи пользовательского виртуального диска ознакомьтесь с дополнительными сведениями об [использовании Resource Manager и шаблонов](../../azure-resource-manager/management/overview.md). Возможно, вам также потребуется [добавить диск данных](add-disk.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) для новых виртуальных машин. Если на виртуальных машинах запущены приложения, к которым необходим доступ, [откройте порты и конечные точки](nsg-quickstart.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 

@@ -9,19 +9,19 @@ ms.assetid: ''
 ms.service: active-directory
 ms.subservice: pim
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 08/06/2019
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0303d37ef5bbbf266feb5456b0bc224ce272ee13
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 80a75664b977c7f37808de7ca68b332363886a4e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77499252"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84742987"
 ---
 # <a name="assign-an-azure-ad-custom-role-in-privileged-identity-management"></a>Присвоение настраиваемой роли AAD через Privileged Identity Management (PIM)
 
@@ -74,7 +74,7 @@ ms.locfileid: "77499252"
 1. Если флажок **Постоянный** доступен для просмотра и изменения (в зависимости от параметров роли), вы можете сделать назначение постоянным. Если назначение должно быть постоянно активным или постоянно допустимым, установите этот флажок. Снимите флажок, чтобы ограничить длительность назначения.
 1. Чтобы создать новое назначение роли, последовательно щелкните **Сохранить** и **Добавить**. Отображается уведомление о состоянии процесса назначения.
 
-Чтобы проверить назначение ролей, в открытой роли выберите **назначения** > **назначение** и убедитесь, что назначение роли правильно определено как допустимое или активное.
+Чтобы проверить назначение ролей, в открытой роли выберите **назначения**  >  **назначение** и убедитесь, что назначение роли правильно определено как допустимое или активное.
 
  ![Проверка, отображается ли назначение роли как допустимое или активное](./media/azure-ad-custom-roles-assign/verify-assignments.png)
 

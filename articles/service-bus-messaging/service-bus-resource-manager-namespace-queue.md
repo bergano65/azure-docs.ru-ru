@@ -1,42 +1,35 @@
 ---
 title: Создание пространства имен и очереди Служебной шины Azure с помощью шаблона Azure
 description: Краткое руководство. Создание пространства имен и очереди служебной шины с помощью шаблона диспетчера ресурсов Azure
-services: service-bus-messaging
 documentationcenter: .net
 author: spelluru
-manager: timlt
-editor: ''
-ms.assetid: a6bfb5fd-7b98-4588-8aa1-9d5f91b599b6
-ms.service: service-bus-messaging
-ms.devlang: tbd
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.tgt_pltfrm: dotnet
-ms.workload: na
-ms.date: 03/30/2020
+ms.date: 06/23/2020
 ms.author: spelluru
-ms.openlocfilehash: b08253104eeb61f6bb09fde507473d235a996494
-ms.sourcegitcommit: 7581df526837b1484de136cf6ae1560c21bf7e73
+ms.openlocfilehash: cb87b33ee3f88e17f7d9b7557040849745b2d95f
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80422634"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86248464"
 ---
-# <a name="quickstart-create-a-service-bus-namespace-and-a-queue-using-an-azure-resource-manager-template"></a>Краткое руководство. Создание пространства имен и очереди служебной шины с помощью шаблона диспетчера ресурсов Azure
+# <a name="quickstart-create-a-service-bus-namespace-and-a-queue-using-an-arm-template"></a>Краткое руководство. Создание пространства имен служебной шины и очереди с помощью шаблона ARM
 
-В этой статье показывается, как использовать шаблон Azure Resource Manager, создающий пространство имен служебной шины и очередь в нем. Здесь объясняется, как указать развертываемые ресурсы и определить параметры, указываемые при развертывании. Этот шаблон можно использовать для собственных развертываний или настроить его в соответствии с вашими требованиями.
+В этой статье показано, как использовать шаблон Azure Resource Manager, (шаблон ARM) позволяющий создать пространство имен служебной шины и очередь в нем. Здесь объясняется, как указать развертываемые ресурсы и определить параметры, указываемые при развертывании. Этот шаблон можно использовать для собственных развертываний или настроить его в соответствии с вашими требованиями.
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-servicebus-create-queue%2Fazuredeploy.json)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-None
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="create-a-service-bus-namespace-and-a-queue"></a>Создайте пространство имен и очередь служебной шины.
-
-### <a name="review-the-template"></a>Изучение шаблона
+## <a name="review-the-template"></a>Изучение шаблона
 
 Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/201-servicebus-create-queue).
 
@@ -48,16 +41,16 @@ None
 - [**Microsoft.ServiceBus/namespaces/queues**](/azure/templates/microsoft.servicebus/namespaces/queues)
 
 > [!NOTE]
-> Для скачивания и развертывания можно использовать указанные ниже шаблоны диспетчера ресурсов Azure.
+> Для загрузки и развертывания доступны следующие шаблоны ARM.
 >
 > * [Создание пространства имен служебной шины с очередью и правилом авторизации](service-bus-resource-manager-namespace-auth-rule.md)
 > * [Создание пространства имен служебной шины с разделом и подпиской](service-bus-resource-manager-namespace-topic.md)
 > * [Создайте пространство имен служебной шины](service-bus-resource-manager-namespace.md)
 > * [Создание пространства имен служебной шины с разделом, подпиской и правилом с помощью шаблона Azure Resource Manager](service-bus-resource-manager-namespace-topic-with-rule.md)
 
-См. [примеры шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Servicebus&pageNumber=1&sort=Popular).
+Другие шаблоны можно найти на странице [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Servicebus&pageNumber=1&sort=Popular).
 
-### <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="deploy-the-template"></a>Развертывание шаблона
 
 С помощью этого шаблона вы развернете пространство имен служебной шины с очередью.
 
@@ -65,9 +58,9 @@ None
 
 Чтобы выполнить развертывание автоматически, нажмите следующую кнопку. Создайте группу ресурсов для развертывания, чтобы потом вы могли легко было выполнить очистку.
 
-[![Развертывание в Azure](./media/service-bus-resource-manager-namespace-queue/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-servicebus-create-queue%2Fazuredeploy.json)
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-servicebus-create-queue%2Fazuredeploy.json)
 
-## <a name="verify-the-deployment"></a>Проверка развертывания
+## <a name="validate-the-deployment"></a>Проверка развертывания
 
 1. Выберите **Уведомления** вверху, чтобы просмотреть состояние развертывания. Подождите, пока развертывание успешно завершится. Затем в сообщении уведомления выберите **Перейти к группе ресурсов**, чтобы открыть страницу группы ресурсов, содержащую пространство имен Служебной шины. 
 
@@ -77,7 +70,7 @@ None
     ![Группа ресурсов — пространство имен](./media/service-bus-resource-manager-namespace-queue/resource-group-namespace.png)
 3. Выберите пространство имен в списке, чтобы открылась страница **Пространство имен Служебной шины**. 
 
-## <a name="cleanup-resources"></a>Очистка ресурсов
+## <a name="clean-up-resources"></a>Очистка ресурсов
 
 1. На портале Azure перейдите на страницу **Группа ресурсов** для своей группы ресурсов.
 2. На панели инструментов выберите **Удалить группу ресурсов**. 
@@ -89,7 +82,7 @@ None
 
 См. следующий раздел, в котором показано, как создать правило авторизации для пространства имен или очереди:
 
-[Создание правила авторизации Служебной шины для пространства имен и очереди с помощью шаблона Azure Resource Manager](service-bus-resource-manager-namespace-auth-rule.md)
+[Создание правила авторизации служебной шины для пространства имен и очереди с помощью шаблона ARM](service-bus-resource-manager-namespace-auth-rule.md)
 
 Узнайте, как управлять этими ресурсами, просмотрев следующие статьи:
 

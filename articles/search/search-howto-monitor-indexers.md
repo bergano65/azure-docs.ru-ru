@@ -8,13 +8,13 @@ ms.author: heidist
 ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 11/04/2019
-ms.openlocfilehash: 699b5a4e5a7f10c883667ca5030dd971855467f5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 07/12/2020
+ms.openlocfilehash: 2e62296e95a7b412a24c9d0c151c2bc9175ab4b7
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74112976"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86529750"
 ---
 # <a name="how-to-monitor-azure-cognitive-search-indexer-status-and-results"></a>Как отслеживать состояние и результаты индексатора Azure Когнитивный поиск
 
@@ -82,36 +82,40 @@ Azure Когнитивный поиск предоставляет сведен�
 
 Состояние и журнал выполнения индексатора можно получить с помощью [команды получить состояние индексатора](https://docs.microsoft.com/rest/api/searchservice/get-indexer-status):
 
-    GET https://[service name].search.windows.net/indexers/[indexer name]/status?api-version=2019-05-06
-    api-key: [Search service admin key]
+```http
+GET https://[service name].search.windows.net/indexers/[indexer name]/status?api-version=2020-06-30
+api-key: [Search service admin key]
+```
 
 Ответ содержит сведения об общем состоянии индексатора, последнем (или текущем) вызове индексатора, а также журнал последних вызовов индексатора.
 
-    {
-        "status":"running",
-        "lastResult": {
-            "status":"success",
-            "errorMessage":null,
-            "startTime":"2018-11-26T03:37:18.853Z",
-            "endTime":"2018-11-26T03:37:19.012Z",
-            "errors":[],
-            "itemsProcessed":11,
-            "itemsFailed":0,
-            "initialTrackingState":null,
-            "finalTrackingState":null
-         },
-        "executionHistory":[ {
-            "status":"success",
-             "errorMessage":null,
-            "startTime":"2018-11-26T03:37:18.853Z",
-            "endTime":"2018-11-26T03:37:19.012Z",
-            "errors":[],
-            "itemsProcessed":11,
-            "itemsFailed":0,
-            "initialTrackingState":null,
-            "finalTrackingState":null
-        }]
-    }
+```output
+{
+    "status":"running",
+    "lastResult": {
+        "status":"success",
+        "errorMessage":null,
+        "startTime":"2018-11-26T03:37:18.853Z",
+        "endTime":"2018-11-26T03:37:19.012Z",
+        "errors":[],
+        "itemsProcessed":11,
+        "itemsFailed":0,
+        "initialTrackingState":null,
+        "finalTrackingState":null
+     },
+    "executionHistory":[ {
+        "status":"success",
+         "errorMessage":null,
+        "startTime":"2018-11-26T03:37:18.853Z",
+        "endTime":"2018-11-26T03:37:19.012Z",
+        "errors":[],
+        "itemsProcessed":11,
+        "itemsFailed":0,
+        "initialTrackingState":null,
+        "finalTrackingState":null
+    }]
+}
+```
 
 Журнал выполнения содержит до 50 последних запусков, которые сортируются в обратный хронологический порядок (последний первый).
 
@@ -163,14 +167,16 @@ static void CheckIndexerStatus(Indexer indexer, SearchServiceClient searchServic
 
 Выходные данные в консоли будут выглядеть примерно так:
 
-    Indexer has run 18 times.
-    Indexer Status: Running
-    Latest run
-      Run Status: Success
-      Total Documents: 7, Failed: 0
-      StartTime: 10:02:46 PM, EndTime: 10:02:47 PM, Elapsed: 00:00:01.0990000
-      ErrorMessage: none
-      Document Errors: 0, Warnings: 0
+```output
+Indexer has run 18 times.
+Indexer Status: Running
+Latest run
+  Run Status: Success
+  Total Documents: 7, Failed: 0
+  StartTime: 10:02:46 PM, EndTime: 10:02:47 PM, Elapsed: 00:00:01.0990000
+  ErrorMessage: none
+  Document Errors: 0, Warnings: 0
+```
 
 Обратите внимание, что существует два разных значения состояния. Состояние верхнего уровня — это состояние самого индексатора. Состояние индексатора " **выполняется** " означает, что индексатор настроен правильно и доступен для выполнения, но не выполняется в данный момент.
 
@@ -180,6 +186,6 @@ static void CheckIndexerStatus(Indexer indexer, SearchServiceClient searchServic
 
 Дополнительные сведения о кодах состояния и сведения о мониторинге индексаторов см. в разделе [жетиндексерстатус](https://docs.microsoft.com/rest/api/searchservice/get-indexer-status) в REST API.
 
-Сведения об ошибках или предупреждениях, связанных с конкретным документом, можно получить `IndexerExecutionResult.Errors` , `IndexerExecutionResult.Warnings`перечисляя списки и.
+Сведения об ошибках или предупреждениях, связанных с конкретным документом, можно получить, перечисляя списки `IndexerExecutionResult.Errors` и `IndexerExecutionResult.Warnings` .
 
 Дополнительные сведения о классах пакета SDK для .NET, используемых для мониторинга индексаторов, см. в разделе [индексерексекутионинфо](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.indexerexecutioninfo?view=azure-dotnet) и [индексерексекутионресулт](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.indexerexecutionresult?view=azure-dotnet).

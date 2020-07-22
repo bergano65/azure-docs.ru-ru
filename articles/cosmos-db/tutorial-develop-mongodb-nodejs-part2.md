@@ -10,12 +10,12 @@ ms.date: 12/26/2018
 ms.author: jopapa
 ms.custom: seodec18
 ms.reviewer: sngun
-ms.openlocfilehash: 693222f4c1abd9bda128d18dc4dd67703a245bc8
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: f9ce90a64ca038c99fe4ba63e66f7e5abbd196f6
+ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75441130"
+ms.lasthandoff: 06/20/2020
+ms.locfileid: "85119177"
 ---
 # <a name="create-an-angular-app-with-azure-cosmos-dbs-api-for-mongodb---create-a-nodejs-express-app"></a>Создание приложения Angular с помощью API Azure Cosmos DB для MongoDB. Создание приложения Express Node.js
 
@@ -33,7 +33,7 @@ ms.locfileid: "75441130"
 
 > [!VIDEO https://www.youtube.com/embed/lIwJIYcGSUg]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем начинать работу с этой частью руководства, обязательно просмотрите [вводный видеоролик](tutorial-develop-mongodb-nodejs.md).
 
@@ -163,7 +163,7 @@ ms.locfileid: "75441130"
 
     Этот ответ показывает, что приложение работает локально. 
 
-    ![Запрос и ответ в Postman](./media/tutorial-develop-mongodb-nodejs-part2/azure-cosmos-db-postman.png)
+    :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part2/azure-cosmos-db-postman.png" alt-text="Запрос и ответ в Postman":::
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

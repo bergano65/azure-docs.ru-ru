@@ -6,14 +6,14 @@ ms.reviewer: judupont
 tags: billing
 ms.service: cost-management-billing
 ms.topic: conceptual
-ms.date: 02/13/2020
+ms.date: 06/23/2020
 ms.author: banders
-ms.openlocfilehash: 12ad1f09c988171b0d6212d79ca61d93acf92d80
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 5fb8a9cd5e00bf3a6ebeddaf44a09ac48b94fe7c
+ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77199608"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85849084"
 ---
 # <a name="pay-for-your-azure-subscription-by-invoice"></a>Оплата подписок Azure по счету
 
@@ -42,28 +42,28 @@ ms.locfileid: "77199608"
 
 5. Укажите следующие сведения в поле **Сведения** и нажмите кнопку **Далее**.
 
-         New or existing customer:
-         If existing, current payment method:
-         Order ID (requesting for invoice option):
-         Account Admins Live ID (or Org ID) (should be company domain):
-         Commerce Account ID:
-         Company Name (as registered under VAT or Government Website):
-         Company Address (as registered under VAT or Government Website):
-         Company Website:
-         Country:
-         TAX ID/ VAT ID:
-         Company Established on (Year):
-         Any prior business with Microsoft:
-         Contact Name:
-         Contact Phone:
-         Contact Email:
-         Justification on why you prefer Invoice option over credit card:
+     Новый или существующий клиент:<br>
+     Если существующий, укажите текущий метод оплаты:<br>
+     Идентификатор заказа (запрашивается при оплате по счету):<br>
+     Идентификатор Live ID (или код организации) администраторов учетной записи (домен организации):<br>
+     Идентификатор коммерческой учетной записи:<br>
+     Название организации (как оно зарегистрировано в документации НДС или на веб-сайте для государственных организаций):<br>
+     Адрес организации (как он зарегистрирован в документации НДС или на веб-сайте для государственных организаций):<br>
+     Веб-сайт компании:<br>
+     Страна:<br>
+     КОД НАЛОГОПЛАТЕЛЬЩИКА ИЛИ КОД НДС:<br>
+     Компания зарегистрирована в (год):<br>
+     Вели ли вы бизнес с корпорацией Майкрософт ранее:<br>
+     Имя контактного лица:<br>
+     Контактный телефон:<br>
+     Контактный адрес электронной почты:<br>
+     Почему вы предпочитаете оплату по счету оплате с помощью кредитной карты:<br>
 
-         For cores increase, provide the following additional information:
+     Чтобы увеличить количество ядер.ю укажите следующие дополнительные сведения:<br>
 
-         (Old quota) Existing Cores:
-         (New quota) Requested cores:
-         Specific region & series of Subscription:
+     (Старая квота) существующие ядра:<br>
+     (Новая квота) запрашиваемые ядра:<br>
+     Конкретный регион и серия для подписки:<br>
 
     - **Название компании** и **адрес** должны соответствовать сведениям, указанным для учетной записи Azure. Дополнительные сведения о просмотре или обновлении сведений, см. в разделе [Изменение сведений о профиле для учетной записи Azure](change-azure-account-profile.md).
     - Добавьте контактные данные для выставления счетов в портал Azure до утверждения кредитного лимита. Контактные данные должны быть связаны с финансовым или платежным отделом учетной записи компании. Чтобы обновить контактные данные для выставления счетов, перейдите к [Центру управления учетной записью Azure](https://account.azure.com/Profile).
@@ -113,10 +113,19 @@ ms.locfileid: "77199608"
 ## <a name="check-access-to-a-microsoft-customer-agreement"></a>Проверка доступа к Клиентскому соглашению Майкрософт
 [!INCLUDE [billing-check-mca](../../../includes/billing-check-mca.md)]
 
+## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+
+*Почему мне пришел запрос на юридический документ?*
+
+Иногда корпорации Майкрософт требуются юридические документы, если предоставленная вами информация является неполной или непроверяемой. Примеры могут включать в себя следующие элементы:
+
+* разница между именем учетной записи и названием компании;
+* изменение имени.
+
 ## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
 Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- При необходимости обновите контактные данные для выставления счетов в [Центре управления учетной записью Azure](https://account.azure.com/Profile).
+* При необходимости обновите контактные данные для выставления счетов в [Центре управления учетной записью Azure](https://account.azure.com/Profile).

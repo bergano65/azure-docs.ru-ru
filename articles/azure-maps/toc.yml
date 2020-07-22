@@ -59,6 +59,8 @@
           href: drawing-conversion-error-codes.md
     - name: Покрытие
       items:
+        - name: Покрытие
+          href: geographic-coverage.md
         - name: Наличие информации о геокодировании
           href: geocoding-coverage.md
         - name: Наличие информации о дорожном движении
@@ -89,6 +91,17 @@
           href: how-to-manage-account-keys.md
         - name: Управление аутентификацией
           href: how-to-manage-authentication.md
+          items:
+            - name: Как защитить управляющую программу
+              href: how-to-secure-daemon-app.md
+            - name: Как обеспечить безопасный интерактивный вход в одностраничное приложение
+              href: how-to-secure-spa-users.md
+            - name: Как защитить веб-приложение
+              href: how-to-secure-webapp-users.md
+            - name: Как обеспечить безопасный неинтерактивный вход в одностраничное приложение
+              href: how-to-secure-spa-app.md
+            - name: Защита приложения с ограничением на ввод данных
+              href: how-to-secure-device-code.md
         - name: Управление ценовой категорией
           href: how-to-manage-pricing-tier.md
         - name: Управление Creator
@@ -177,6 +190,14 @@
               href: map-get-information-from-coordinate.md
             - name: Отображение направлений от точки А до точки Б
               href: map-route.md
+        - name: Модуль схем помещений
+          items:
+            - name: Модуль схем помещений
+              href: how-to-use-indoor-module.md
+            - name: Динамический стиль для схем помещений
+              href: indoor-map-dynamic-styling.md
+            - name: Визуализатор ошибок рисования
+              href: drawing-error-visualizer.md
         - name: Модуль пространственного ввода-вывода
           items:
             - name: Использование модуля пространственного ввода-вывода
@@ -211,14 +232,24 @@
           href: how-to-add-tile-layer-android-map.md
         - name: Отображение данных о трафике
           href: how-to-show-traffic-android.md
-    - name: Разработка схем помещений с помощью Creator
+    - name: "Использование Azure Maps в Power\_BI"
       items:
-        - name: Модуль схем помещений
-          href: how-to-use-indoor-module.md
-        - name: Динамический стиль для схем помещений
-          href: indoor-map-dynamic-styling.md
-        - name: Визуализатор ошибок рисования
-          href: drawing-error-visualizer.md
+        - name: Начало работы
+          href: power-bi-visual-getting-started.md
+        - name: Основные сведения о слоях
+          href: power-bi-visual-understanding-layers.md
+        - name: Добавление слоя пузырьков
+          href: power-bi-visual-add-bubble-layer.md
+        - name: Добавление слоя линейчатой диаграммы
+          href: power-bi-visual-add-bar-chart-layer.md
+        - name: Добавление эталонного слоя
+          href: power-bi-visual-add-reference-layer.md
+        - name: Добавление слоя фрагментов
+          href: power-bi-visual-add-tile-layer.md
+        - name: Отображение трафика в режиме реального времени
+          href: power-bi-visual-show-real-time-traffic.md
+        - name: Управление доступом
+          href: power-bi-visual-manage-access.md
     - name: Предоставление отзывов о данных
       href: how-to-use-feedback-tool.md
 - name: Справочник
@@ -227,9 +258,11 @@
       items:
         - name: Требования к пакету рисунков
           href: drawing-requirements.md
+        - name: Объект StylesObject для динамических карт
+          href: schema-stateset-stylesobject.md
         - name: Модель использования транспорта
           href: consumption-model.md
-        - name: Расширение формата GeoJSON
+        - name: Расширенный формат GeoJSON
           href: extend-geojson.md
         - name: Формат GeoJSON для геозоны
           href: geofence-geojson.md
@@ -289,6 +322,8 @@
           href: 'https://aka.ms/am-indoor-module-websdk/'
     - name: Шаблон Resource Manager
       href: /azure/templates/microsoft.maps/accounts
+    - name: Azure CLI
+      href: /cli/azure/maps
 - name: Ресурсы
   items:
     - name: Возможности получения поддержки и справки
@@ -314,19 +349,15 @@
     - name: Пакеты SDK для Центра Интернета вещей Azure
       items:
         - name: Пакеты SDK для служб IoT
-          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks'
+          href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks
         - name: Пакеты SDK для устройств Интернета вещей
-          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks'
+          href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks
     - name: Условия использования Azure Maps
       href: 'https://azure.microsoft.com/support/legal/'
     - name: Цены на Azure Maps
       href: 'https://azure.microsoft.com/pricing/details/azure-maps'
     - name: Калькулятор цен
       href: 'https://azure.microsoft.com/pricing/calculator/'
-    - name: Stack Overflow
-      href: 'https://stackoverflow.com/questions/tagged/azure-maps'
-    - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
-      href: 'https://docs.microsoft.com/answers/topics/azure-maps.html'
     - name: Видео об Azure Maps
       href: 'https://aka.ms/AzureMapsVideos'
     - name: Проекты с открытым исходным кодом

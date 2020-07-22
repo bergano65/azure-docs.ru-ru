@@ -8,31 +8,31 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-local-business
 ms.topic: quickstart
-ms.date: 03/24/2020
+ms.date: 05/12/2020
 ms.author: aahi
-ms.openlocfilehash: 62e975121c05bd4fde2438480f7042b0957a9c82
-ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
+ms.openlocfilehash: 812061bf161a33e4151b7b23265196895e039414
+ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80475596"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85611243"
 ---
 # <a name="quickstart-send-a-query-to-the-bing-local-business-search-api-in-c"></a>Краткое руководство. Отправка запроса в API Bing Local Business Search с помощью C#
 
-С помощью этого краткого руководства вы сможете начать отправку запросов в Bing Local Business Search API в Cognitive Services. Хотя это простое приложение написано на C#, API является веб-службой RESTful, совместимой с любым языком программирования, который может выполнять HTTP-запросы и анализировать JSON.
+Из этого краткого руководства вы узнаете, как отправлять запросы в API Поиска местных компаний Bing в Azure Cognitive Services. Хотя это простое приложение написано на C#, API является веб-службой RESTful, совместимой с любым языком программирования, который может выполнять HTTP-запросы и анализировать JSON.
 
-В этом примере приложения из API извлекаются сведения о местных компаниях по поисковому запросу `hotel in Bellevue`.
+В этом примере приложения из API извлекаются сведения о местных компаниях по поисковому запросу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
+* подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services/).
 * Любой выпуск [Visual Studio 2019](https://www.visualstudio.com/downloads/).
 * Если вы используете Linux или MacOS, это приложение можно запустить с помощью [Mono](https://www.mono-project.com/).
-
-Необходима [учетная запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с API-интерфейсами поиска Bing. Для этого краткого руководства достаточно [бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api).  См. также [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/).
+* Получив подписку Azure, <a href="https://portal.azure.com/#create/Microsoft.CognitiveServicesBingSearch-v7"  title="создайте ресурс Поиска Bing"  target="_blank">Create a Bing Search resource <span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку. После развертывания щелкните **Перейти к ресурсам**.
 
 ## <a name="create-the-request"></a>Создание запроса 
 
-Следующий код создает `WebRequest`, задает заголовок ключа доступа и добавляет строку запроса "restaurant in Bellevue" (ресторан в Бельвю).  Затем код отправляет запрос и назначает ответ строке, содержащей текст JSON.
+Следующий код создает `WebRequest`, задает заголовок ключа доступа и добавляет строку запроса *restaurant in Bellevue* (ресторан в Бельвю).  Затем код отправляет запрос и назначает ответ строке, содержащей текст JSON.
 
 ```csharp
     // Replace the accessKey string value with your valid access key.
@@ -54,10 +54,10 @@ ms.locfileid: "80475596"
 
 ## <a name="run-the-complete-application"></a>Запуск готового приложения
 
-API Bing для поиска местных компаний возвращает локализованные результаты поиска из поисковой системы Bing.
-1. В Visual Studio (подойдет выпуск Community Edition) создайте консольное приложение.
+Следующий код использует API Поиска местных компаний Bing для возврата локализованных результатов поиска из поисковой системы Bing. Этот код можно использовать, выполнив приведенные ниже действия.
+1. В Visual Studio (подойдет выпуск Community Edition) создайте консольное решение.
 2. Замените файл Program.cs кодом, указанным ниже.
-3. Замените значение accessKey ключом доступа, допустимым для подписки.
+3. Замените значение `accessKey` ключом доступа, допустимым для подписки.
 4. Запустите программу.
 
 ```csharp
@@ -210,5 +210,5 @@ namespace localSearch
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - [Краткое руководство. Отправка запроса в API Bing для поиска местных компаний с помощью Java](local-search-java-quickstart.md)
-- [Краткое руководство. Использование Local Business Search с помощью Node](local-search-node-quickstart.md)
+- [Краткое руководство. Использование Поиска местных компаний с помощью Node.js](local-search-node-quickstart.md)
 - [Краткое руководство. Отправка запроса в API Bing Local Business Search с помощью Python](local-search-python-quickstart.md)

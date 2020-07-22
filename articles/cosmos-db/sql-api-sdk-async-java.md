@@ -1,36 +1,42 @@
 ---
-title: 'Azure Cosmos DB: асинхронный API-интерфейс Java для SQL, & ресурсы SDK'
+title: Azure Cosmos DB — API-интерфейс, ресурсы и пакет SDK Async Java SQL
 description: Сведения о пакете SDK и API-интерфейсе SQL Async Java, включая даты выхода и прекращения использования, а также изменения, внесенные в каждую версию пакета SDK SQL Async Java для Azure Cosmos DB.
-author: moderakh
+author: anfeldma-ms
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: java
 ms.topic: reference
-ms.date: 07/01/2019
-ms.author: moderakh
-ms.openlocfilehash: 7dad1e929c2beb32605f67219ed30d2fd9a3a394
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 05/11/2020
+ms.author: anfeldma
+ms.openlocfilehash: adee8064a97c7757ae7a6d3c9475bc5a3044e50d
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80985479"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86232310"
 ---
-# <a name="azure-cosmos-db-async-java-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы по пакету SDK Async Java для API-интерфейса SQL
+# <a name="azure-cosmos-db-async-java-sdk-for-sql-api-release-notes-and-resources"></a>Пакет SDK Async Java в Azure Cosmos DB для API-интерфейса SQL: Заметки о выпуске и материалы
 > [!div class="op_single_selector"]
-> * [.NET](sql-api-sdk-dotnet.md)
-> * [Веб-канал изменений .NET](sql-api-sdk-dotnet-changefeed.md)
-> * [.NET Core](sql-api-sdk-dotnet-core.md)
+> * [Пакет SDK версии 3 для .NET](sql-api-sdk-dotnet-standard.md)
+> * [Пакет SDK для .NET версии 2](sql-api-sdk-dotnet.md)
+> * [Пакет SDK для .NET Core версии 2](sql-api-sdk-dotnet-core.md)
+> * [Пакет SDK для веб-канала изменений .NET версии 2](sql-api-sdk-dotnet-changefeed.md)
 > * [Node.js](sql-api-sdk-node.md)
-> * [Async Java](sql-api-sdk-async-java.md)
-> * [Java](sql-api-sdk-java.md)
+> * [Пакет SDK для Java версии 4](sql-api-sdk-java-v4.md)
+> * [Пакет SDK для Async Java версии 2](sql-api-sdk-async-java.md)
+> * [Пакет SDK для Sync Java версии 2](sql-api-sdk-java.md)
 > * [Python](sql-api-sdk-python.md)
-> * [REST](https://docs.microsoft.com/rest/api/cosmos-db/)
-> * [Поставщик ресурсов REST](https://docs.microsoft.com/rest/api/cosmos-db-resource-provider/)
+> * ПОСЛЕДУЮЩИЕ (/рест/АПИ
+> * [Поставщик ресурсов REST](/azure/azure-resource-manager/management/azure-services-resource-providers)
 > * [SQL](sql-api-query-reference.md)
-> * [Групповой исполнитель — .NET](sql-api-sdk-bulk-executor-dot-net.md)
-> * [Групповой исполнитель — Java](sql-api-sdk-bulk-executor-java.md)
+> * [Групповой исполнитель — .NET v2](sql-api-sdk-bulk-executor-dot-net.md)
+> * [Исполнитель массовых операций — Java](sql-api-sdk-bulk-executor-java.md)
 
 Пакет SDK Async Java для API-интерфейса SQL отличается от пакета SDK Java для API-интерфейса SQL возможностью выполнять асинхронные операции с поддержкой [библиотеки Netty](https://netty.io/). Существующий [пакет SDK Java для API-интерфейса SQL](sql-api-sdk-java.md) не поддерживает асинхронные операции. 
+
+> [!IMPORTANT]  
+> Это *не* последняя версия пакета SDK для Java для Azure Cosmos DB! Для проекта рекомендуется использовать [пакет SDK для Java версии 4 для Azure Cosmos DB](sql-api-sdk-java-v4.md). Следуйте инструкциям из руководства по [переходу на использование пакета SDK для Java версии 4 для Azure Cosmos DB](migrate-java-v4-sdk.md) и статье о [Reactor и RxJava](https://github.com/Azure-Samples/azure-cosmos-java-sql-api-samples/blob/master/reactor-rxjava-guide.md). 
+>
 
 | |  |
 |---|---|
@@ -43,9 +49,9 @@ ms.locfileid: "80985479"
 | **Минимальная поддерживаемая среда выполнения**|[JDK 8](/java/azure/jdk/?view=azure-java-stable); | 
 
 [!INCLUDE [Release notes](~/azure-cosmosdb-java-v2/changelog/README.md)]
-## <a name="faq"></a>часто задаваемые вопросы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 [!INCLUDE [cosmos-db-sdk-faq](../../includes/cosmos-db-sdk-faq.md)]
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 Дополнительные сведения о Cosmos DB см. на странице службы [Microsoft Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/).
 

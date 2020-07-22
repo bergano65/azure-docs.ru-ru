@@ -3,12 +3,12 @@ author: paulbouwer
 ms.topic: include
 ms.date: 10/09/2019
 ms.author: pabouwer
-ms.openlocfilehash: 7a22256c88f9cee3ce62c68a2de4a5974d76f026
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d303def85d66d5c2039b426e48186f90c2b3fff6
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77593744"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86277972"
 ---
 ## <a name="download-and-install-the-linkerd-linkerd-client-binary"></a>Скачивание и установка двоичного файла клиента Linkerd Linkerd
 
@@ -21,14 +21,14 @@ LINKERD_VERSION=stable-2.6.0
 curl -sLO "https://github.com/linkerd/linkerd2/releases/download/$LINKERD_VERSION/linkerd2-cli-$LINKERD_VERSION-linux"
 ```
 
-`linkerd` Клиентский двоичный файл выполняется на клиентском компьютере и позволяет взаимодействовать с сеткой службы Linkerd. Используйте следующие команды для установки двоичного файла `linkerd` клиента Linkerd в оболочке на основе Bash в Linux или [подсистеме Windows для Linux][install-wsl]. Эти команды копируют двоичный файл клиента `linkerd` в стандартное расположение программ для пользователя в `PATH`.
+`linkerd`Клиентский двоичный файл выполняется на клиентском компьютере и позволяет взаимодействовать с сеткой службы Linkerd. Используйте следующие команды для установки `linkerd` двоичного файла клиента Linkerd в оболочке на основе Bash в Linux или [подсистеме Windows для Linux][install-wsl]. Эти команды копируют двоичный файл клиента `linkerd` в стандартное расположение программ для пользователя в `PATH`.
 
 ```bash
 sudo cp ./linkerd2-cli-$LINKERD_VERSION-linux /usr/local/bin/linkerd
 sudo chmod +x /usr/local/bin/linkerd
 ```
 
-Если вы хотите задать завершение командной строки для двоичного файла `linkerd` клиента Linkerd, настройте его следующим образом:
+Если вы хотите задать завершение командной строки для `linkerd` двоичного файла клиента Linkerd, настройте его следующим образом:
 
 ```bash
 # Generate the bash completion file and source it in your current shell
@@ -41,4 +41,4 @@ echo "source ~/completions/linkerd.bash" >> ~/.bashrc
 ```
 
 <!-- LINKS - external -->
-[install-wsl]: https://docs.microsoft.com/windows/wsl/install-win10
+[install-wsl]: /windows/wsl/install-win10

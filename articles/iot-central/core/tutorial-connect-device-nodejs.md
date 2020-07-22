@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
 ms.custom: mqtt
-ms.openlocfilehash: a8c5d9479585c0a519d0ad05a4d73f3f15b21287
-ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
+ms.openlocfilehash: 65f441425113d89010cc2d282758c5a042be9300
+ms.sourcegitcommit: 8e5b4e2207daee21a60e6581528401a96bfd3184
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81758202"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84417911"
 ---
 # <a name="tutorial-create-and-connect-a-client-application-to-your-azure-iot-central-application-nodejs"></a>Руководство по Создание клиентского приложения и его подключение к приложению Azure IoT Central (Node.js)
 
@@ -330,8 +330,9 @@ node environmentalSensor.js
 
 Теперь, когда вы как разработчик устройства узнали о принципах создания устройств с помощью Node.js, ознакомьтесь со следующими руководствами:
 
-- Узнайте, как [подключить реальное устройство MXChip IoT DevKit к приложению Azure IoT Central](./howto-connect-devkit.md).
-- Узнайте о [регистрации устройств с помощью IoT Central и безопасном подключении устройств к Azure IoT Central](./concepts-get-connected.md).
+* Узнайте, как [подключить реальное устройство MXChip IoT DevKit к приложению Azure IoT Central](./howto-connect-devkit.md).
+* Прочитайте статью [Что такое шаблоны устройств?](./concepts-device-templates.md), чтобы узнать больше о роли шаблонов устройств при реализации кода устройства.
+* Узнайте о [регистрации устройств с помощью IoT Central и безопасном подключении устройств к Azure IoT Central](./concepts-get-connected.md).
 
 Если вы хотите продолжать работу с набором руководств по IoT Central, чтобы узнать больше о создании решении IoT Central, ознакомьтесь со следующим руководством:
 

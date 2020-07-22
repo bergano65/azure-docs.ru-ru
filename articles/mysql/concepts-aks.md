@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 3/18/2020
-ms.openlocfilehash: 9e020d34b6cfb8117ccff1114cc938c966126b77
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 07/14/2020
+ms.openlocfilehash: 712bf702ba355ec3b2ca6184c33da8489f8a178e
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79537284"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86519870"
 ---
 # <a name="connecting-azure-kubernetes-service-and-azure-database-for-mysql"></a>Подключение Службы Azure Kubernetes к Базе данных Azure для MySQL
 
@@ -41,13 +41,7 @@ az aks show --resource-group myResourceGroup --name myAKSCluster --query "nodeRe
 az network nic list --resource-group nodeResourceGroup -o table
 ```
 
-## <a name="open-service-broker-for-azure"></a>Открытый компонент Service Broker для Azure 
-[Open Service Broker для Azure](https://github.com/Azure/open-service-broker-azure/blob/master/README.md) (OSBA) позволяет подготавливать службы Azure непосредственно из Kubernetes или Cloud Foundry. Он представляет собой реализацию [API Open Service Broker](https://www.openservicebrokerapi.org/) для Azure.
 
-С помощью OSBA вы можете создать Базу данных Azure для MySQL и связать ее с кластером AKS, используя машинный язык Kubernetes. Узнайте, как использовать OSBA и базу данных Azure для MySQL на [странице OSBA GitHub](https://github.com/Azure/open-service-broker-azure/blob/master/docs/modules/mysql.md). 
-
-
-
-## <a name="next-steps"></a>Дальнейшие шаги
-- [Создание кластера Службы Azure Kubernetes](../aks/kubernetes-walkthrough.md)
+## <a name="next-steps"></a>Дальнейшие действия
+- [Создание кластера службы Azure Kubernetes](../aks/kubernetes-walkthrough.md)
 - Узнайте, как [установить WordPress из чарта Helm с помощью OSBA и Базы данных Azure для MySQL](../aks/integrate-azure.md).

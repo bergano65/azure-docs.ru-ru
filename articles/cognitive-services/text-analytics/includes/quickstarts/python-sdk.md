@@ -2,18 +2,18 @@
 author: aahill
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 04/13/2020
+ms.date: 06/11/2020
 ms.author: aahi
-ms.openlocfilehash: d58f294195efc393c07ecc3886c29e33dba02e6d
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: 6c6de0eb8ca2d1eeee5b882a7a17ca292d816e8a
+ms.sourcegitcommit: c4ad4ba9c9aaed81dfab9ca2cc744930abd91298
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81421900"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84735583"
 ---
 <a name="HOLTop"></a>
 
-#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
+#### <a name="version-30"></a>[Версия 3.0](#tab/version-3)
 
 [Справочная документация по версии 3](https://aka.ms/azsdk-python-textanalytics-ref-docs) | [Исходный код библиотеки версии 3](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/textanalytics) | [Пакет для разработки (PiPy) версии 3](https://pypi.org/project/azure-ai-textanalytics/) | [Образцы кода версии 3](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/textanalytics/azure-ai-textanalytics/samples)
 
@@ -23,11 +23,11 @@ ms.locfileid: "81421900"
 
 ---
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 * [Python 3.x](https://www.python.org/)
-* Получив подписку Azure, перейдите к <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics"  title="созданию ресурса Анализа текста"  target="_blank"> <span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку. После развертывания щелкните **Перейти к ресурсам**.
+* Получив подписку Azure, перейдите к <a href="https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics"  title="созданию ресурса Анализа текста"  target="_blank">созданию ресурса Анализа текста<span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку. После развертывания щелкните **Перейти к ресурсам**.
     * Для подключения приложения к API Анализа текста потребуется ключ и конечная точка из созданного ресурса. Ключ и конечная точка будут вставлены в приведенный ниже код в кратком руководстве.
     * Используйте бесплатную ценовую категорию (`F0`), чтобы опробовать службу, а затем выполните обновление до платного уровня для рабочей среды.
 
@@ -37,7 +37,7 @@ ms.locfileid: "81421900"
 
 После установки Python вы можете установить клиентскую библиотеку с помощью следующей команды:
 
-#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
+#### <a name="version-30"></a>[Версия 3.0](#tab/version-3)
 
 ```console
 pip install azure-ai-textanalytics
@@ -71,7 +71,7 @@ endpoint = "<paste-your-text-analytics-endpoint-here>"
 
 ## <a name="object-model"></a>Объектная модель
 
-#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
+#### <a name="version-30"></a>[Версия 3.0](#tab/version-3)
 
 Клиент Анализа текста представляет собой объект `TextAnalyticsClient`, который выполняет проверку подлинности в Azure с использованием ключа. Этот клиент предоставляет несколько методов для анализа текста по пакетам. 
 
@@ -100,7 +100,7 @@ endpoint = "<paste-your-text-analytics-endpoint-here>"
 
 ## <a name="authenticate-the-client"></a>Аутентификация клиента
 
-#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
+#### <a name="version-30"></a>[Версия 3.0](#tab/version-3)
 
 Создайте функцию для создания экземпляра объекта `TextAnalyticsClient` с использованием указанных ранее значений `key` и `endpoint`. Потом создайте класс. 
 
@@ -129,7 +129,7 @@ client = authenticate_client()
 
 ## <a name="sentiment-analysis"></a>Анализ мнений
 
-#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
+#### <a name="version-30"></a>[Версия 3.0](#tab/version-3)
 
 Создайте функцию с именем `sentiment_analysis_example()`, которая принимает клиент в качестве аргумента, а затем вызывает функцию `analyze_sentiment()`. Возвращаемый объект ответа будет содержать метку тональности и оценку всего входного документа, а также анализ тональности для каждого предложения.
 
@@ -146,7 +146,7 @@ def sentiment_analysis_example(client):
         response.confidence_scores.negative,
     ))
     for idx, sentence in enumerate(response.sentences):
-        print("[Length: {}]".format(sentence.grapheme_length))
+        print("Sentence: {}".format(sentence.text))
         print("Sentence {} sentiment: {}".format(idx+1, sentence.sentiment))
         print("Sentence score:\nPositive={0:.2f}\nNeutral={1:.2f}\nNegative={2:.2f}\n".format(
             sentence.confidence_scores.positive,
@@ -163,14 +163,14 @@ sentiment_analysis_example(client)
 Document Sentiment: positive
 Overall scores: positive=1.00; neutral=0.00; negative=0.00 
 
-[Length: 30]
+Sentence: I had the best day of my life.
 Sentence 1 sentiment: positive
 Sentence score:
 Positive=1.00
 Neutral=0.00
 Negative=0.00
 
-[Length: 30]
+Sentence: I wish you were there with me.
 Sentence 2 sentiment: neutral
 Sentence score:
 Positive=0.21
@@ -197,7 +197,7 @@ Document ID: 4 , Sentiment Score: 1.00
 
 ## <a name="language-detection"></a>Определение языка
 
-#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
+#### <a name="version-30"></a>[Версия 3.0](#tab/version-3)
 
 Создайте функцию с именем `language_detection_example()`, которая принимает клиент в качестве аргумента, а затем вызывает функцию `detect_language()`. Возвращенный объект ответа будет содержать обнаруженный язык в `primary_language`, если выполнение успешное, и значение `error` в противном случае.
 
@@ -242,10 +242,10 @@ Document ID: 3 , Language: Chinese_Simplified
 
 ## <a name="named-entity-recognition-ner"></a>Распознавание именованных сущностей (NER)
 
-#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
+#### <a name="version-30"></a>[Версия 3.0](#tab/version-3)
 
 > [!NOTE]
-> В версии `3.0-preview`: 
+> В версии `3.0`: 
 > * Связывание сущностей — это отдельный запрос, отличный от NER.
 
 Создайте функцию с именем `entity_recognition_example`, которая принимает клиент в качестве аргумента, а затем вызывает функцию `recognize_entities()` и выполняет итерацию результатов. Возвращенный объект ответа будет содержать список обнаруженных сущностей в `entity`, если выполнение успешное, и значение `error` в противном случае. Для каждой обнаруженной сущности выведите ее категорию и подкатегорию, если они существуют.
@@ -260,7 +260,7 @@ def entity_recognition_example(client):
         print("Named Entities:\n")
         for entity in result.entities:
             print("\tText: \t", entity.text, "\tCategory: \t", entity.category, "\tSubCategory: \t", entity.subcategory,
-                    "\n\tLength: \t", entity.grapheme_length, "\tConfidence Score: \t", round(entity.confidence_score, 2), "\n")
+                    "\n\tConfidence Score: \t", round(entity.confidence_score, 2), "\n")
 
     except Exception as err:
         print("Encountered exception. {}".format(err))
@@ -272,11 +272,14 @@ entity_recognition_example(client)
 ```console
 Named Entities:
 
-    Text:    Seattle        Category:        Location       SubCategory:     GPE
-    Length:          7      Confidence Score:        0.92
+        Text:    trip   Category:        Event  SubCategory:     None
+        Confidence Score:        0.61
 
-    Text:    last week      Category:        DateTime       SubCategory:     DateRange
-    Length:          9      Confidence Score:        0.8
+        Text:    Seattle        Category:        Location       SubCategory:     GPE
+        Confidence Score:        0.82
+
+        Text:    last week      Category:        DateTime       SubCategory:     DateRange
+        Confidence Score:        0.8
 ```
 
 ## <a name="entity-linking"></a>Связывание сущностей
@@ -301,7 +304,7 @@ def entity_linking_example(client):
             print("\tMatches:")
             for match in entity.matches:
                 print("\t\tText:", match.text)
-                print("\t\tConfidence Score: {0:.2f}".format(match.confidence_score), "\tLength: {}\n".format(match.grapheme_length))
+                print("\t\tConfidence Score: {0:.2f}".format(match.confidence_score))
             
     except Exception as err:
         print("Encountered exception. {}".format(err))
@@ -313,47 +316,40 @@ entity_linking_example(client)
 ```console
 Linked Entities:
 
-    Name:  Altair 8800     Id:  Altair 8800     Url:  https://en.wikipedia.org/wiki/Altair_8800 
-    Data Source:  Wikipedia
-    Matches:
-        Text: Altair 8800
-        Confidence Score: 0.00     Length: 11
-
-    Name:  Bill Gates     Id:  Bill Gates     Url:  https://en.wikipedia.org/wiki/Bill_Gates 
-    Data Source:  Wikipedia
-    Matches:
-        Text: Bill Gates
-        Confidence Score: 0.00     Length: 10
-
-        Text: Gates
-        Confidence Score: 0.00     Length: 5
-
-    Name:  Paul Allen     Id:  Paul Allen     Url:  https://en.wikipedia.org/wiki/Paul_Allen 
-    Data Source:  Wikipedia
-    Matches:
-        Text: Paul Allen
-        Confidence Score: 0.00     Length: 10
-
-    Name:  Microsoft     Id:  Microsoft     Url:  https://en.wikipedia.org/wiki/Microsoft 
-    Data Source:  Wikipedia
-    Matches:
-        Text: Microsoft
-        Confidence Score: 0.00     Length: 9
-
-        Text: Microsoft
-        Confidence Score: 0.00     Length: 9
-
-    Name:  April 4     Id:  April 4     Url:  https://en.wikipedia.org/wiki/April_4 
-    Data Source:  Wikipedia
-    Matches:
-        Text: April 4
-        Confidence Score: 0.00     Length: 7
-
-    Name:  BASIC     Id:  BASIC     Url:  https://en.wikipedia.org/wiki/BASIC 
-    Data Source:  Wikipedia
-    Matches:
-        Text: BASIC
-        Confidence Score: 0.00     Length: 5
+        Name:  Altair 8800      Id:  Altair 8800        Url:  https://en.wikipedia.org/wiki/Altair_8800
+        Data Source:  Wikipedia
+        Matches:
+                Text: Altair 8800
+                Confidence Score: 0.88
+        Name:  Bill Gates       Id:  Bill Gates         Url:  https://en.wikipedia.org/wiki/Bill_Gates
+        Data Source:  Wikipedia
+        Matches:
+                Text: Bill Gates
+                Confidence Score: 0.63
+                Text: Gates
+                Confidence Score: 0.63
+        Name:  Paul Allen       Id:  Paul Allen         Url:  https://en.wikipedia.org/wiki/Paul_Allen
+        Data Source:  Wikipedia
+        Matches:
+                Text: Paul Allen
+                Confidence Score: 0.60
+        Name:  Microsoft        Id:  Microsoft  Url:  https://en.wikipedia.org/wiki/Microsoft
+        Data Source:  Wikipedia
+        Matches:
+                Text: Microsoft
+                Confidence Score: 0.55
+                Text: Microsoft
+                Confidence Score: 0.55
+        Name:  April 4  Id:  April 4    Url:  https://en.wikipedia.org/wiki/April_4
+        Data Source:  Wikipedia
+        Matches:
+                Text: April 4
+                Confidence Score: 0.32
+        Name:  BASIC    Id:  BASIC      Url:  https://en.wikipedia.org/wiki/BASIC
+        Data Source:  Wikipedia
+        Matches:
+                Text: BASIC
+                Confidence Score: 0.33
 ```
 
 #### <a name="version-21"></a>[Версия 2.1](#tab/version-2)
@@ -409,7 +405,7 @@ Document ID: 2
 ## <a name="key-phrase-extraction"></a>Извлечение ключевой фразы
 
 
-#### <a name="version-30-preview"></a>[Версия 3.0-preview](#tab/version-3)
+#### <a name="version-30"></a>[Версия 3.0](#tab/version-3)
 
 Создайте функцию с именем `key_phrase_extraction_example()`, которая принимает клиент в качестве аргумента, а затем вызывает функцию `extract_key_phrases()`. При успешном выполнении результат будет содержать список обнаруженных ключевых фраз в `key_phrases`. В противном случае вернется `error`. Затем выведите все обнаруженные ключевые фразы.
 

@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: spunukol
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2cd782cdab625934fe60617142e5ac0baf756398
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80128762"
 ---
 # <a name="troubleshooting-devices-using-the-dsregcmd-command"></a>Устранение неполадок устройств с помощью команды dsregcmd
@@ -29,7 +29,7 @@ ms.locfileid: "80128762"
 | AzureAdJoined | ентерприсежоинед | домаинжоинед | Состояние устройства |
 | ---   | ---   | ---   | ---   |
 | YES | NO | NO | Присоединение к Azure AD |
-| NO | NO | YES | Присоединен к домену |
+| NO | NO | YES | быть присоединено к домену; |
 | YES | NO | YES | Гибридное присоединение к AD |
 | NO | YES | YES | Локальная DRS присоединена |
 
@@ -136,7 +136,7 @@ ms.locfileid: "80128762"
 - **Воркплацежоинед:** — задайте значение "Да", если зарегистрированные учетные записи Azure AD были добавлены на устройство в текущем контексте NTuser.
 - **Вамдефаултсет:** — задайте значение "Да", если для вошедшего в систему пользователя создана учетная запись WAM по умолчанию. В этом поле может отображаться сообщение об ошибке, если дсрег/Status запускается из командной строки с повышенными привилегиями. 
 - **Вамдефаултаусорити:** — значение "Организации" для Azure AD.
-- **Вамдефаултид:** -Always "https://login.microsoft.com" для Azure AD.
+- **Вамдефаултид:** -Always " https://login.microsoft.com " для Azure AD.
 - **WamDefaultGUID:** — GUID поставщика WAM (Azure AD/учетная запись Майкрософт) для учетной записи WAM по умолчанию. 
 
 ### <a name="sample-user-state-output"></a>Пример выходных данных пользовательского состояния

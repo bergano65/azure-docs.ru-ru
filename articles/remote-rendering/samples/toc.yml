@@ -1,5 +1,7 @@
 - name: Примеры моделей
   href: sample-model.md
+- name: Средство для работы с объектами службы "Удаленная отрисовка Azure"
+  href: azure-remote-rendering-asset-tool.md
 - name: Приложение для демонстрации Unity
   href: showcase-app.md
 - name: Примеры скриптов PowerShell

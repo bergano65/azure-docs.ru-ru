@@ -1,22 +1,22 @@
 ---
 title: Краткое руководство. Добавление вопросов и ответов на портале QnA Maker
-description: В этом кратком руководстве описано, как добавить наборы вопросов и ответов с метаданными, чтобы пользователи могли найти правильный ответ на свой вопрос.
+description: В этом кратком руководстве описано, как добавить пары вопросов и ответов с метаданными, чтобы пользователи могли найти правильный ответ на свой вопрос.
 ms.topic: quickstart
 ms.date: 05/26/2020
-ms.openlocfilehash: fc8bac425723e9194c447f1cf6ee13547c09d772
-ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
+ms.openlocfilehash: a832d9f421d3a1851401c286f129e29d0196ec99
+ms.sourcegitcommit: 79508e58c1f5c58554378497150ffd757d183f30
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83873689"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84331395"
 ---
 # <a name="quickstart-add-questions-and-answer-with-qna-maker-portal"></a>Краткое руководство. Добавление вопросов и ответов с помощью портала QnA Maker
 
-После создания базы знаний добавьте наборы вопросов и ответов (QnA) с метаданными, чтобы отфильтровать ответ. В следующей таблице собраны вопросы о лимитах для служб Azure, относящиеся к разным службам Azure.
+После создания базы знаний добавьте пары вопросов и ответов (QnA) с метаданными, чтобы отфильтровать ответ. В приведенной ниже таблице собраны вопросы о лимитах для служб Azure, относящиеся к разным службам поиска Azure.
 
 <a name="qna-table"></a>
 
-|Присвойте параметру|Вопросы|Ответ|Метаданные|
+|Пара|Вопросы|Ответ|Метаданные|
 |--|--|--|--|
 |1|`How large a knowledge base can I create?`<br><br>`What is the max size of a knowledge base?`<br><br>`How many GB of data can a knowledge base hold?` |`The size of the knowledge base depends on the SKU of Azure search you choose when creating the QnA Maker service. Read [here](https://docs.microsoft.com/azure/cognitive-services/qnamaker/tutorials/choosing-capacity-qnamaker-deployment) for more details.`|`service=qna_maker`<br>`link_in_answer=true`|
 |2|`How many knowledge bases can I have for my QnA Maker service?`<br><br>`I selected a Azure Cognitive Search tier that holds 15 knowledge bases, but I can only create 14 - what is going on?`<br><br>`What is the connection between the number of knowledge bases in my QnA Maker service and the Azure Cognitive Search service size?` |`Each knowledge base uses 1 index, and all the knowledge bases share a test index. You can have N-1 knowledge bases where N is the number of indexes your Azure Cognitive Search tier supports.`|`service=search`<br>`link_in_answer=false`|
@@ -39,11 +39,11 @@ ms.locfileid: "83873689"
 
 ## <a name="add-additional-alternatively-phrased-questions"></a>Добавление дополнительных вопросов с другими формулировками
 
-В текущей базе знаний есть пары вопросов и ответов по устранению неполадок в QnA Maker. Эти наборы были созданы при добавлении URL-адреса в базу знаний в процессе создания.
+В текущей базе знаний есть пары вопросов и ответов по устранению неполадок в QnA Maker. Эти пары были созданы при добавлении URL-адреса в базу знаний в процессе создания.
 
 При импорте этого URL-адреса был создан только один вопрос с одним ответом. В этой процедуре вы добавите дополнительные вопросы.
 
-1. На странице **Правка** найдите вопрос `How large a knowledge base can I create?` с помощью текстового поля поиска над наборами вопросов и ответов.
+1. На странице **Правка** найдите вопрос `How large a knowledge base can I create?` с помощью текстового поля поиска над парами вопросов и ответов.
 
 1. В столбце **Вопрос** выберите **+ Add alternative phrasing** (Добавить альтернативные выражения) и поочередно введите все новые формулировки, которые представлены в следующей таблице.
 
@@ -70,9 +70,9 @@ ms.locfileid: "83873689"
 
 ## <a name="add-metadata-to-filter-the-answers"></a>Добавление метаданных для фильтрации ответов
 
-Добавление метаданных в набор вопросов и ответов позволяет клиентскому приложению получать ответы с фильтрацией. Фильтр применяется перед применением [первого и второго ранжирования](../concepts/query-knowledge-base.md#ranker-process).
+Добавление метаданных в пары вопросов и ответов позволяет клиентскому приложению получать ответы с фильтрацией. Фильтр применяется перед применением [первого и второго ранжирования](../concepts/query-knowledge-base.md#ranker-process).
 
-1. Добавьте второй набор вопросов и ответов без метаданных из [первой таблицы в этом кратком руководстве](#qna-table), а затем выполните следующие действия.
+1. Добавьте вторую пару вопросов и ответов без метаданных из [первой таблицы в этом кратком руководстве](#qna-table), а затем выполните следующие действия.
 
 1. Щелкните **Параметры просмотра**, а затем **Показать метаданные**.
 
@@ -85,7 +85,7 @@ ms.locfileid: "83873689"
 1. Добавьте пары метаданных для тех же двух тегов метаданных:
 
     `link_in_answer` : `true`<br>
-    `server`: `qna_maker`
+    `service`: `qna_maker`
 
     Теперь у вас есть два вопроса, у которых есть одинаковые теги метаданных с разными значениями.
 

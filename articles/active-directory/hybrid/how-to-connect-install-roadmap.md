@@ -1,5 +1,5 @@
 ---
-title: План установки Azure AD Connect и Azure AD Connect Health. | Документация Майкрософт
+title: План установки Azure AD Connect и Azure AD Connect Health. | Документы Майкрософт
 description: Этот документ содержит общие сведения о параметрах установки и путях, доступных для установки Connect Health и Azure AD Connect.
 services: active-directory
 author: billmath
@@ -8,17 +8,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 09/18/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f9ed613972f166f1f9955fc34e9bb640d87da6b5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: bee5ba92f6795df6635dc98a19cabaeb9692a470
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80331439"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85358741"
 ---
 # <a name="azure-ad-connect-and-azure-ad-connect-health-installation-roadmap"></a>План установки Azure AD Connect и Azure AD Connect Health
 
@@ -32,7 +32,7 @@ ms.locfileid: "80331439"
 | Решение | Сценарий |
 | --- | --- |
 | Перед началом работы: [оборудование и предварительные требования](how-to-connect-install-prerequisites.md) |<li>Шаги, которые нужно выполнить до установки Azure AD Connect.</li> |
-| [Стандартные параметры](how-to-connect-install-express.md) |<li>Рекомендуемый вариант при наличии AD с одним лесом.</li> <li>Пользователи входят в систему с одним и тем же паролем, используя синхронизацию паролей.</li> |
+| [Параметры Express](how-to-connect-install-express.md) |<li>Рекомендуемый вариант при наличии AD с одним лесом.</li> <li>Пользователи входят в систему с одним и тем же паролем, используя синхронизацию паролей.</li> |
 | [Настраиваемые параметры](how-to-connect-install-custom.md) |<li>Используется при наличии нескольких лесов. Поддерживает многие локальные [топологии](plan-connect-topologies.md).</li> <li>Настройка режима входа (например, с помощью сквозной аутентификации, AD FS для федерации или стороннего поставщика удостоверений).</li> <li>Настройка функций синхронизации, таких как фильтрация и обратная запись.</li> |
 | [Обновление из DirSync](how-to-dirsync-upgrade-get-started.md) |<li>Используется при наличии уже работающего сервера DirSync.</li> |
 | [Переход с Azure AD Sync на Azure AD Connect](how-to-upgrade-previous-version.md) |<li>Есть несколько разных способов на выбор.</li> |
@@ -42,11 +42,11 @@ ms.locfileid: "80331439"
 ### <a name="next-steps-to-install-azure-ad-connect"></a>Следующие шаги по установке Azure AD Connect
 |Раздел |Ссылка|  
 | --- | --- |
-|Загрузка Azure AD Connect | [Скачать Azure AD Connect](https://go.microsoft.com/fwlink/?LinkId=615771)|
+|Загрузка Azure AD Connect | [Загрузка Azure AD Connect](https://go.microsoft.com/fwlink/?LinkId=615771)|
 |Установка с помощью стандартных параметров | [Экспресс-установка Azure AD Connect](./how-to-connect-install-express.md)|
 |Установка с помощью настроенных параметров | [Выборочная установка Azure AD Connect](./how-to-connect-install-custom.md)|
 |Обновление из DirSync | [Azure AD Connect: обновление DirSync](./how-to-dirsync-upgrade-get-started.md)|
-|После установки | [Проверка установки и назначение лицензий](how-to-connect-post-installation.md)|
+|После установки | [Проверка установки и назначение лицензий ](how-to-connect-post-installation.md)|
 
 ### <a name="learn-more-about-install-azure-ad-connect"></a>Дополнительные сведения об установке Azure AD Connect
 Также требуется подготовиться к [рабочим](how-to-connect-sync-operations.md) вопросам. Может потребоваться наличие резервного сервера, на который можно будет легко перейти в случае [аварии](how-to-connect-sync-staging-server.md#disaster-recovery). Если планируется часто изменять конфигурацию, следует предусмотреть сервер для [промежуточного режима](how-to-connect-sync-staging-server.md) .
@@ -78,12 +78,12 @@ Azure AD Connect поставляется с несколькими функци
 |Раздел |Ссылка|  
 | --- | --- |
 |Настройка фильтрации | [Синхронизация Azure AD Connect: Настройка фильтрации](how-to-connect-sync-configure-filtering.md)|
-|Синхронизация хэша паролей | [Синхронизация хэша паролей](how-to-connect-password-hash-synchronization.md)|
-|Сквозная проверка подлинности | [Сквозная аутентификация](how-to-connect-pta.md)
+|Синхронизация хэша паролей | [Синхронизации хэша паролей](how-to-connect-password-hash-synchronization.md)|
+|Сквозная проверка подлинности | [Сквозная проверка подлинности](how-to-connect-pta.md)
 |Компонент обратной записи паролей | [Начало работы с управлением паролями](../authentication/quickstart-sspr.md)|
 |Обратная запись устройств | [Включение обратной записи устройств в службе Azure AD Connect](how-to-connect-device-writeback.md)|
 |Предотвращение случайного удаления | [Синхронизация Azure AD Connect: предотвращение случайного удаления](how-to-connect-sync-feature-prevent-accidental-deletes.md)|
-|Автоматическое обновление | [Azure AD Connect: автоматическое обновление](how-to-connect-install-automatic-upgrade.md)|
+|Автоматическое обновление | [Azure AD Connect выполняет следующие функции: Автоматическое обновление](how-to-connect-install-automatic-upgrade.md)|
 
 ## <a name="customize-azure-ad-connect-sync"></a>Настройка синхронизации Azure AD Connect
 Синхронизация Azure AD Connect поставляется с конфигурацией по умолчанию, ориентированной на работу с большинством заказчиков и топологий. Тем не менее, возникают ситуации, когда конфигурация по умолчанию не будет работать и ее необходимо скорректировать. Поддерживается внесение изменений, документированных в этом разделе и связанных статьях.
@@ -97,7 +97,7 @@ Azure AD Connect поставляется с несколькими функци
 ### <a name="next-steps-to-customize-azure-ad-connect-sync"></a>Следующие действия по настройке синхронизации Azure AD Connect
 |Раздел |Ссылка|  
 | --- | --- |
-|Все статьи о синхронизации Azure AD Connect | [Синхронизация Azure AD Connect](how-to-connect-sync-whatis.md)|
+|Все статьи о синхронизации Azure AD Connect | [Службы синхронизации Azure AD Connect](how-to-connect-sync-whatis.md)|
 |технических концепциях | [Синхронизация Azure AD Connect: технические понятия](how-to-connect-sync-technical-concepts.md)|
 |Общие сведения о конфигурации по умолчанию | [Службы синхронизации Azure AD Connect: общие сведения о конфигурации по умолчанию](concept-azure-ad-connect-sync-default-configuration.md)|
 |Общее представление о пользователях и контактах | [Синхронизация Azure AD Connect: общее представление о пользователях и контактах](concept-azure-ad-connect-sync-user-and-contacts.md)|
@@ -132,7 +132,7 @@ Azure AD Connect поставляется с несколькими функци
 
 1. [Получите Azure AD Premium](../fundamentals/active-directory-get-started-premium.md) или [запустите пробную версию](https://azure.microsoft.com/trial/get-started-active-directory/).
 2. [Скачайте и установите агенты Azure AD Connect Health](#download-and-install-azure-ad-connect-health-agent) на серверах удостоверений.
-3. Просмотрите панель мониторинга Azure AD Connect Health по [https://aka.ms/aadconnecthealth](https://aka.ms/aadconnecthealth)адресу.
+3. Просмотрите панель мониторинга Azure AD Connect Health по адресу [https://aka.ms/aadconnecthealth](https://aka.ms/aadconnecthealth) .
 
 > [!NOTE]
 > Помните, чтобы на панели мониторинга Azure AD Connect Health отображались какие-либо данные, потребуется установить агенты Azure AD Connect Health на целевых серверах.
@@ -172,10 +172,10 @@ Azure AD Connect поставляется с несколькими функци
 ## <a name="next-steps"></a>Next Steps
 
 - [Оборудование и предварительные требования](how-to-connect-install-prerequisites.md) 
-- [Стандартные параметры](how-to-connect-install-express.md)
+- [Параметры Express](how-to-connect-install-express.md)
 - [Настраиваемые параметры](how-to-connect-install-custom.md)
 - [Синхронизация хэша паролей](how-to-connect-password-hash-synchronization.md)|
-- [Сквозная аутентификация](how-to-connect-pta.md)
+- [Сквозная проверка подлинности](how-to-connect-pta.md)
 - [Azure AD Connect и федерация](how-to-connect-fed-whatis.md)
 - [Установка агентов Azure AD Connect Health](how-to-connect-health-agent-install.md) 
-- [Синхронизация Azure AD Connect](how-to-connect-sync-whatis.md)
+- [Службы синхронизации Azure AD Connect](how-to-connect-sync-whatis.md)

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/19/2019
 ms.author: jeedes
-ms.openlocfilehash: 6127f149141db275c4b13c25fd6fbd0241b3e404
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 04d6d79000b38116cbda6de960f078608964b6ca
+ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67105035"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85799604"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-confirmit-horizons"></a>Руководство по Интеграция Azure Active Directory с Confirmit Horizons
 
@@ -109,25 +109,23 @@ ms.locfileid: "67105035"
 
     а. В текстовом поле **Идентификатор** введите URL-адрес в таком формате:
 
-    | |
-    |--|
-    | `https://<SUBDOMAIN>.confirmit.com/identity/AuthServices/<UNIQUEID>` |
-    | `https://<SUBDOMAIN>.confirmit.com.au/identity/AuthServices/<UNIQUEID>` |
-    | `https://<SUBDOMAIN>.confirmit.ca/identity/AuthServices/<UNIQUEID>` |
-    | `https://<SUBDOMAIN>.confirmit.hk/identity/AuthServices/<UNIQUEID>` |
-    | `https://sso.us.confirmit.com/<UNIQUEID>` |
-    | |
+    ```http
+    https://<SUBDOMAIN>.confirmit.com/identity/AuthServices/<UNIQUEID>
+    https://<SUBDOMAIN>.confirmit.com.au/identity/AuthServices/<UNIQUEID>
+    https://<SUBDOMAIN>.confirmit.ca/identity/AuthServices/<UNIQUEID>
+    https://<SUBDOMAIN>.confirmit.hk/identity/AuthServices/<UNIQUEID>
+    https://sso.us.confirmit.com/<UNIQUEID>
+    ```
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате:
 
-    | |
-    |--|
-    | `https://<SUBDOMAIN>.confirmit.com/identity/AuthServices/<UNIQUEID>/acs`|
-    | `https://<SUBDOMAIN>.confirmit.com.au/identity/AuthServices/<UNIQUEID>/acs`|
-    | `https://<SUBDOMAIN>.confirmit.ca/identity/AuthServices/<UNIQUEID>/acs`|
-    | `https://<SUBDOMAIN>.confirmit.hk/identity/AuthServices/<UNIQUEID>/acs`|
-    | `https://sso.us.confirmit.com/<UNIQUEID>/saml/acs` |
-    | |
+    ```http
+    https://<SUBDOMAIN>.confirmit.com/identity/AuthServices/<UNIQUEID>/acs
+    https://<SUBDOMAIN>.confirmit.com.au/identity/AuthServices/<UNIQUEID>/acs
+    https://<SUBDOMAIN>.confirmit.ca/identity/AuthServices/<UNIQUEID>/acs
+    https://<SUBDOMAIN>.confirmit.hk/identity/AuthServices/<UNIQUEID>/acs
+    https://sso.us.confirmit.com/<UNIQUEID>/saml/acs
+    ```
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
@@ -135,14 +133,13 @@ ms.locfileid: "67105035"
 
     В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате:
 
-    | |
-    |--|
-    | `https://<SUBDOMAIN>.confirmit.com/identity/<UNIQUEID>` |
-    | `https://<SUBDOMAIN>.confirmit.com.au/identity/<UNIQUEID>` |
-    | `https://<SUBDOMAIN>.confirmit.ca/identity/<UNIQUEID>` |
-    | `https://<SUBDOMAIN>.confirmit.hk/identity/<UNIQUEID>` |
-    | `https://sso.us.confirmit.com/<UNIQUEID>` |
-    | | 
+    ```http
+    https://<SUBDOMAIN>.confirmit.com/identity/<UNIQUEID>
+    https://<SUBDOMAIN>.confirmit.com.au/identity/<UNIQUEID>
+    https://<SUBDOMAIN>.confirmit.ca/identity/<UNIQUEID>
+    https://<SUBDOMAIN>.confirmit.hk/identity/<UNIQUEID>
+    https://sso.us.confirmit.com/<UNIQUEID>
+    ```
 
     > [!NOTE]
     > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить их, обратитесь в [службу поддержки клиентов Confirmit Horizons](mailto:support@confirmit.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

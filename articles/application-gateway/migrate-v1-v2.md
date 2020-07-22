@@ -4,15 +4,15 @@ description: В этой статье показано, как перенест�
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
-ms.topic: article
+ms.topic: how-to
 ms.date: 03/31/2020
 ms.author: victorh
-ms.openlocfilehash: 57a49f9e1473f33eceba14591815415338aeecf4
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: 27e8eaa7b8171d6ccc43f6abc8a4b3d1017d30cb
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83198799"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84804401"
 ---
 # <a name="migrate-azure-application-gateway-and-web-application-firewall-from-v1-to-v2"></a>Перенос шлюза приложений Azure и брандмауэра веб-приложения с версии v1 на v2
 
@@ -198,6 +198,6 @@ ms.locfileid: "83198799"
   
 Вы можете обратиться в службу поддержки Azure в разделе "Конфигурация и настройка/миграция на v2 SKU". Дополнительные сведения о [службе поддержки Azure](https://azure.microsoft.com/support/options/)см. здесь.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Дополнительные сведения о шлюзе приложений версии 2](application-gateway-autoscaling-zone-redundant.md)

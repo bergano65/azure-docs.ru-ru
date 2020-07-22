@@ -3,15 +3,14 @@ title: Использование службы автоматизации Azure 
 description: Узнайте, как активировать задания диспетчера данных StorSimple с помощью службы автоматизации Azure
 author: alkohli
 ms.service: storsimple
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 01/16/2018
 ms.author: alkohli
-ms.openlocfilehash: 034b4996672f0961cf31d342aa6055482f099b9f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 2562e7463ba0a79cf77d21f3bb619f13283c989d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76273989"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85514938"
 ---
 # <a name="use-azure-automation-to-trigger-a-job"></a>Активация задания с помощью службы автоматизации Azure
 
@@ -22,7 +21,7 @@ ms.locfileid: "76273989"
  
 В этой статье подробно описывается создание модуля runbook службы автоматизации Azure, а затем запуск задания преобразования данных с его помощью. Дополнительные сведения о том, как запустить преобразование данных с помощью пакета SDK для .NET, см. в статье [Запуск преобразования данных с помощью пакета SDK для .NET (закрытая предварительная версия)](storsimple-data-manager-dotnet-jobs.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Перед началом работы убедитесь, что у вас есть следующие компоненты:
 
@@ -48,7 +47,7 @@ ms.locfileid: "76273989"
    1. Укажите **имя** учетной записи службы автоматизации.
    2. Выберите **подписку**, связанную со службой диспетчера данных StorSimple.
    3. Создайте группу ресурсов или выберите имеющуюся.
-   4. Выберите **Расположение**.
+   4. Выберите **расположение**.
    5. Оставьте выбранный по умолчанию вариант **Создать учетную запись запуска от имени**.
    6. Чтобы получить ссылки для быстрого доступа к панели мониторинга, установите флажок **Закрепить на панели мониторинга**. Нажмите кнопку **Создать**.
 
@@ -116,6 +115,6 @@ ms.locfileid: "76273989"
 
     ![Добавление модуля runbook 10](./media/storsimple-data-manager-job-using-automation/add-runbook-10.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Используйте диспетчер данных StorSimple пользовательский интерфейс для преобразования данных](storsimple-data-manager-ui.md).

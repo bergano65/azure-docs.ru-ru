@@ -3,12 +3,12 @@ title: Непрерывный мониторинг конвейера выпус
 description: Содержит инструкции для быстрой настройки непрерывного мониторинга с помощью Application Insights
 ms.topic: conceptual
 ms.date: 05/01/2020
-ms.openlocfilehash: 0d47fb1eccdfcfc7b2719825575f06dc85e62452
-ms.sourcegitcommit: d662eda7c8eec2a5e131935d16c80f1cf298cb6b
+ms.openlocfilehash: fd7cd6a107ed45adb60167a57661b60be5dc8212
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82652753"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86517133"
 ---
 # <a name="add-continuous-monitoring-to-your-release-pipeline"></a>Добавление постоянного мониторинга к конвейеру выпуска
 
@@ -20,7 +20,7 @@ Azure Pipelines интегрируется с Application Insights Azure, что
 
 1. В [Azure DevOps](https://dev.azure.com)выберите организацию и проект.
    
-1. В меню слева страницы проекта выберите **конвейеры** > **выпуски**. 
+1. В меню слева страницы проекта выберите **конвейеры**  >  **выпуски**. 
    
 1. Раскройте стрелку рядом с полем **создать** и выберите **Новый конвейер выпуска**. Если у вас еще нет конвейера, на появившейся странице выберите **создать конвейер** .
    
@@ -34,7 +34,7 @@ Azure Pipelines интегрируется с Application Insights Azure, что
 
 1. В области конфигурации **этап 1** заполните следующие поля: 
 
-    | Параметр        | Применение |
+    | Параметр        | Значение |
    | ------------- |:-----|
    | **Название этапа**      | Укажите имя этапа или оставьте его на **этапе 1**. |
    | **Подписка Azure.** | Раскрывающийся список и выберите связанную подписку Azure, которую хотите использовать.|
@@ -101,4 +101,4 @@ az monitor metrics alert create -n 'ServerExceptions_$(Release.DefinitionName)' 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о Azure Pipelines см. в [документации по Azure pipelines](https://docs.microsoft.com/azure/devops/pipelines).
+Дополнительные сведения о Azure Pipelines см. в [документации по Azure pipelines](/azure/devops/pipelines).

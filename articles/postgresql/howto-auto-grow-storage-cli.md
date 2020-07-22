@@ -4,14 +4,14 @@ description: В этой статье описывается, как можно 
 author: ambhatna
 ms.author: ambhatna
 ms.service: postgresql
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 8/7/2019
-ms.openlocfilehash: b0dc2fbb168d9325439ee18a227f71a3b88ef9c8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 2f04bbf052716b32c012222d4c5dbdcd8f4571bd
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74767965"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86119707"
 ---
 # <a name="auto-grow-azure-database-for-postgresql-storage---single-server-using-the-azure-cli"></a>Автоматическое увеличение базы данных Azure для хранилища PostgreSQL — один сервер с помощью Azure CLI
 В этой статье описывается, как можно настроить расширение хранилища базы данных Azure для PostgreSQL, не влияя на рабочую нагрузку.

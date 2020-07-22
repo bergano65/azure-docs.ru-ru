@@ -6,21 +6,19 @@ author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 01/31/2020
+ms.date: 06/03/2020
 ms.author: diberry
-ms.openlocfilehash: bbb2ae0b10af795d71f0a78c045bec0c216ee378
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: a1a72d9be339ed1ee0a1c525ee426047b1768f2f
+ms.sourcegitcommit: 8e5b4e2207daee21a60e6581528401a96bfd3184
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77368404"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84416447"
 ---
-## <a name="prerequisites"></a>предварительные требования
+[Справочная документация](https://westeurope.dev.cognitive.microsoft.com/docs/services/luis-programmatic-apis-v3-0-preview/operations/5890b47c39e2bb052c5b9c45) | [Пример](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/javascript/LUIS/node-model-with-rest/model.js)
 
-* Распознавание речи Azure — ключ ресурса из 32 символов и URL-адреса конечной точки для разработки. Создайте их с помощью [портала Azure](../luis-how-to-azure-subscription.md#create-resources-in-the-azure-portal) или [Azure CLI](../luis-how-to-azure-subscription.md#create-resources-in-azure-cli).
-* Импорт приложения [TravelAgent](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/documentation-samples/quickstarts/change-model/TravelAgent.json) из репозитория GitHub cognitive-services-language-understanding.
-* Идентификатор приложения LUIS для импортированного приложения TravelAgent. Идентификатор приложения отображается на панели мониторинга приложения.
-* Идентификатор версии приложения, которое получает речевые фрагменты. Идентификатор по умолчанию — 0.1.
+## <a name="prerequisites"></a>Предварительные требования
+
 * Язык программирования [Node.js](https://nodejs.org/).
 * [Visual Studio Code](https://code.visualstudio.com/)
 
@@ -28,106 +26,137 @@ ms.locfileid: "77368404"
 
 [!INCLUDE [Quickstart explanation of example utterance JSON file](get-started-get-model-json-example-utterances.md)]
 
+## <a name="create-the-nodejs-project"></a>Создание проекта Node.js
+
+1. Создайте папку для размещения проекта Node.js, например `node-model-with-rest`.
+
+1. Откройте новое окно командной строки, перейдите в только что созданный каталог и введите следующую команду:
+
+    ```console
+    npm init
+    ```
+
+    В ответ на каждый запрос нажимайте клавишу ВВОД, чтобы подтвердить значения по умолчанию.
+
+1. Установите модуль "запрос-обещание", выполнив в командной строке следующую команду:
+
+    ```console
+    npm install --save request
+    npm install --save request-promise
+    npm install --save querystring
+    ```
 
 ## <a name="change-model-programmatically"></a>Изменение модели программными средствами
 
 1. Создайте файл с именем `model.js`. Добавьте следующий код:
 
-    ```javascript
-    var request = require('request');
-    var requestpromise = require('request-promise');
-
-    // 32 character key value
-    const LUIS_authoringKey = "YOUR-KEY";
-
-    // endpoint example: your-resource-name.api.cognitive.microsoft.com
-    const LUIS_endpoint = "YOUR-ENDPOINT";
-    const LUIS_appId = "YOUR-APP-ID";
-    const LUIS_versionId = "0.1";
-    const addUtterancesURI = `https://${LUIS_endpoint}/luis/authoring/v3.0-preview/apps/${LUIS_appId}/versions/${LUIS_versionId}/examples`;
-    const addTrainURI = `https://${LUIS_endpoint}/luis/authoring/v3.0-preview/apps/${LUIS_appId}/versions/${LUIS_versionId}/train`;
-
-    const utterances = [
-            {
-              'text': 'go to Seattle today',
-              'intentName': 'BookFlight',
-              'entityLabels': [
-                {
-                  'entityName': 'Location::LocationTo',
-                  'startCharIndex': 6,
-                  'endCharIndex': 12
-                }
-              ]
-            },
-            {
-                'text': 'a barking dog is annoying',
-                'intentName': 'None',
-                'entityLabels': []
-            }
-          ];
-
-    const main = async() =>{
-
-
-        await addUtterance();
-        await train("POST");
-        await trainStatus("GET");
-
-    }
-    const addUtterance = async () => {
-
-        const options = {
-            uri: addUtterancesURI,
-            method: 'POST',
-            headers: {
-                'Ocp-Apim-Subscription-Key': LUIS_authoringKey
-            },
-            json: true,
-            body: utterances
-        };
-
-        const response = await requestpromise(options)
-        console.log(response.body);
-    }
-    const train = async (verb) => {
-
-        const options = {
-            uri: addTrainURI,
-            method: verb,
-            headers: {
-                'Ocp-Apim-Subscription-Key': LUIS_authoringKey
-            },
-            json: true,
-            body: null // The body can be empty for a training request
-        };
-
-        const response = await requestpromise(options)
-        console.log(response.body);
-    }
-
-    // MAIN
-    main().then(() => console.log("done")).catch((err)=> console.log(err returned));
-    ```
+    [!code-javascript[Code snippet](~/cognitive-services-quickstart-code/javascript/LUIS/node-model-with-rest/model.js)]
 
 1. Замените значения, начинающиеся с `YOUR-`, собственными значениями.
 
     |Сведения|Назначение|
     |--|--|
-    |`YOUR-KEY`|Ключ для разработки (32 символа).|
-    |`YOUR-ENDPOINT`| Конечная точка URL-адреса для разработки. Например, `replace-with-your-resource-name.api.cognitive.microsoft.com`. Имя ресурса задается при создании ресурса.|
     |`YOUR-APP-ID`| Идентификатор приложения LUIS. |
+    |`YOUR-AUTHORING-KEY`|Ключ для разработки (32 символа).|
+    |`YOUR-AUTHORING-ENDPOINT`| Конечная точка URL-адреса для разработки. Например, `https://replace-with-your-resource-name.api.cognitive.microsoft.com/`. Имя ресурса задается при создании ресурса.|
 
     Назначенные ключи и ресурсы отображаются на портале LUIS в разделе "Управление" на странице **ресурсов Azure**. Идентификатор приложения доступен в том же разделе "Управление" на странице **Параметры приложения**.
 
-1. В командной строке каталога, в котором вы создали файл, введите следующую команду, чтобы запустить этот файл:
+1. В командной строке введите следующую команду, чтобы запустить проект:
 
     ```console
     node model.js
     ```
 
+1. Просмотрите ответ разработки.
+
+    ```json
+    addUtterance:
+    [
+      {
+        "value": {
+          "ExampleId": 1137150691,
+          "UtteranceText": "order a pizza"
+        },
+        "hasError": false
+      },
+      {
+        "value": {
+          "ExampleId": 1137150692,
+          "UtteranceText": "order a large pepperoni pizza"
+        },
+        "hasError": false
+      },
+      {
+        "value": {
+          "ExampleId": 1137150693,
+          "UtteranceText": "i want two large pepperoni pizzas on thin crust"
+        },
+        "hasError": false
+      }
+    ]
+    train POST:
+    {
+      "statusId": 9,
+      "status": "Queued"
+    }
+    train GET:
+    [
+      {
+        "modelId": "edb46abf-0000-41ab-beb2-a41a0fe1630f",
+        "details": {
+          "statusId": 9,
+          "status": "Queued",
+          "exampleCount": 0
+        }
+      },
+      {
+        "modelId": "a5030be2-616c-4648-bf2f-380fa9417d37",
+        "details": {
+          "statusId": 9,
+          "status": "Queued",
+          "exampleCount": 0
+        }
+      },
+      {
+        "modelId": "3f2b1f31-a3c3-4fbd-8182-e9d9dbc120b9",
+        "details": {
+          "statusId": 9,
+          "status": "Queued",
+          "exampleCount": 0
+        }
+      },
+      {
+        "modelId": "e4b6704b-1636-474c-9459-fe9ccbeba51c",
+        "details": {
+          "statusId": 9,
+          "status": "Queued",
+          "exampleCount": 0
+        }
+      },
+      {
+        "modelId": "031d3777-2a00-4a7a-9323-9a3280a30000",
+        "details": {
+          "statusId": 9,
+          "status": "Queued",
+          "exampleCount": 0
+        }
+      },
+      {
+        "modelId": "9250e7a1-06eb-4413-9432-ae132ed32583",
+        "details": {
+          "statusId": 9,
+          "status": "Queued",
+          "exampleCount": 0
+        }
+      }
+    ]
+    done
+    ```
+
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-По завершении работы с этим кратким руководством удалите файл из файловой системы.
+Завершив работу с этим кратким руководством, удалите папку проекта из файловой системы.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

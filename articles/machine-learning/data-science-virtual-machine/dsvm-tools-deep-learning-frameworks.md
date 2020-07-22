@@ -6,32 +6,33 @@ keywords: средства анализа и обработки данных, в
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: data-science-vm
+ms.custom: tracking-python
 author: lobrien
 ms.author: laobri
 ms.topic: conceptual
 ms.date: 12/12/2019
-ms.openlocfilehash: d8a5cf428f41b130e6faf68ac87a075c15211099
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c56c7a0d6f0400811d085f60fd71fe72b88bf9ee
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79270073"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86520567"
 ---
 # <a name="deep-learning-and-ai-frameworks-for-the-azure-data-science-vm"></a>Платформы глубокого обучения и искусственного интеллекта для виртуальной машины Azure для обработки и анализа данных
 Платформы глубокого обучения в DSVM перечислены ниже.
 
 ## <a name="caffe"></a>[Caffe](https://github.com/BVLC/caffe)
 
-|    |           |
+| Категория | Значение |
 | ------------- | ------------- |
 | Поддерживаемые версии | |
 | Поддерживаемые выпуски DSVM      | Linux (Ubuntu)     |
-| Настройка и установка на DSVM  | Caffe устанавливается в `/opt/caffe`.   Примеры приведены в `/opt/caffe/examples`.|
-| Как запустить      | Используйте X2Go для входа в виртуальную машину, а затем запустите новый терминал и введите следующее:<br/>`cd /opt/caffe/examples`<br/>`source activate root`<br/>`jupyter notebook`<br/><br/>Откроется новое окно браузера с примерами записных книжек. Двоичные файлы устанавливаются в каталог /opt/caffe/build/install/bin.<br/><br/>Для установленной версии Caffe требуется Python 2,7 и не будет работать с Python 3,5, которая активируется по умолчанию. Чтобы переключиться на Python 2,7 `source activate root` , выполните команду, чтобы переключиться в среду Anaconda.|    
+| Настройка и установка на DSVM  | Caffe устанавливается в `/opt/caffe`.   Примеры приведены в `/opt/caffe/examples` .|
+| Как запустить      | Используйте X2Go для входа в виртуальную машину, а затем запустите новый терминал и введите следующее:<br/>`cd /opt/caffe/examples`<br/>`source activate root`<br/>`jupyter notebook`<br/><br/>Откроется новое окно браузера с примерами записных книжек. Двоичные файлы устанавливаются в каталог /opt/caffe/build/install/bin.<br/><br/>Для установленной версии Caffe требуется Python 2,7 и не будет работать с Python 3,5, которая активируется по умолчанию. Чтобы переключиться на Python 2,7, выполните команду, `source activate root` чтобы переключиться в среду Anaconda.|    
 
 ## <a name="caffe2"></a>[Caffe2](https://github.com/caffe2/caffe2)
 
-|    |           |
+| Категория | Значение |
 | ------------- | ------------- |
 | Поддерживаемые версии | |
 | Поддерживаемые выпуски DSVM      | Linux (Ubuntu)     |
@@ -40,16 +41,16 @@ ms.locfileid: "79270073"
 
 ## <a name="chainer"></a>[Chainer](https://chainer.org/)
 
-|    |           |
+| Категория | Значение |
 | ------------- | ------------- |
 | Поддерживаемые версии | 5,2 |
 | Поддерживаемые выпуски DSVM      | Linux (Ubuntu)     |
 | Настройка и установка на DSVM  | Chainer устанавливается с Python 3.5. |
-| Как запустить      | Терминал: активируйте среду Python 3,5, запустите `python`, а затем `import chainer`. <br/> * JupyterHub: [подключитесь к JupyterHub](dsvm-ubuntu-intro.md#how-to-access-the-ubuntu-data-science-virtual-machine), а затем перейдите в каталог Chain, чтобы найти примеры записных книжек.| 
+| Как запустить      | Терминал: активируйте среду Python 3,5, запустите `python` , а затем `import chainer` . <br/> * JupyterHub: [подключитесь к JupyterHub](dsvm-ubuntu-intro.md#how-to-access-the-ubuntu-data-science-virtual-machine), а затем перейдите в каталог Chain, чтобы найти примеры записных книжек.| 
 
 ## <a name="cuda-cudnn-nvidia-driver"></a>[CUDA, cuDNN, драйвер NVIDIA](https://developer.nvidia.com/cuda-toolkit)
 
-|    |           |
+| Категория | Значение |
 | ------------- | ------------- |
 | Поддерживаемые версии | 10.0.130|
 | Поддерживаемые выпуски DSVM      | Windows и Linux   |
@@ -59,7 +60,7 @@ ms.locfileid: "79270073"
 
 ## <a name="horovod"></a>[Horovod](https://github.com/uber/horovod)
 
-|    |           |
+| Категория | Значение |
 | ------------- | ------------- |
 | Поддерживаемые версии | 0.16.1|
 | Поддерживаемые выпуски DSVM      | Linux (Ubuntu)   |
@@ -68,7 +69,7 @@ ms.locfileid: "79270073"
 
 ## <a name="keras"></a>[Keras](https://keras.io/);
 
-|    |           |
+| Категория | Значение |
 | ------------- | ------------- |
 | Поддерживаемые версии | 2.2.4 |
 | Поддерживаемые выпуски DSVM      | Windows и Linux   |
@@ -77,7 +78,7 @@ ms.locfileid: "79270073"
 
 ## <a name="microsoft-cognitive-toolkit-cntk"></a>[Microsoft Cognitive Toolkit (CNTK)](https://docs.microsoft.com/cognitive-toolkit/)
 
-|    |           |
+| Категория | Значение |
 | ------------- | ------------- |
 | Поддерживаемые версии | 2.5.1 |
 | Поддерживаемые выпуски DSVM      | Windows и Linux   |
@@ -85,16 +86,16 @@ ms.locfileid: "79270073"
 | Как запустить      | Терминал: активируйте правильную среду и запустите Python. <br/>Jupyter: подключитесь к [Jupyter](provision-vm.md) или [JupyterHub](dsvm-ubuntu-intro.md#how-to-access-the-ubuntu-data-science-virtual-machine), а затем откройте каталог CNTK для примеров. |
 
 ## <a name="mxnet"></a>[MXNet](https://mxnet.apache.org/)
-|    |           |
+| Категория | Значение |
 | ------------- | ------------- |
 | Поддерживаемые версии | 1.3.0 |
 | Поддерживаемые выпуски DSVM      | Windows и Linux   |
 | Настройка и установка на DSVM  | MXNet устанавливается в `C:\dsvm\tools\mxnet` в Windows и `/dsvm/tools/mxnet` Ubuntu. Привязки Python устанавливаются в Python 3,6 в [Windows 2016](dsvm-tools-languages.md#python-windows-server-2016-edition) и в Python 3,5 в [Linux](./dsvm-tools-languages.md#python-linux-edition)) привязки R также входят в DSVM Ubuntu. |
-| Как запустить      | Терминал: активируйте правильную среду conda, а `import mxnet`затем запустите. <br/>Jupyter: подключитесь к [Jupyter](provision-vm.md#access-the-dsvm) или [JupyterHub](dsvm-ubuntu-intro.md#how-to-access-the-ubuntu-data-science-virtual-machine), а затем откройте `mxnet` каталог для примеров. |
+| Как запустить      | Терминал: активируйте правильную среду conda, а затем запустите `import mxnet` . <br/>Jupyter: подключитесь к [Jupyter](provision-vm.md#access-the-dsvm) или [JupyterHub](dsvm-ubuntu-intro.md#how-to-access-the-ubuntu-data-science-virtual-machine), а затем откройте `mxnet` каталог для примеров. |
 
 ## <a name="mxnet-model-server"></a>[Сервер модели MXNet](https://github.com/awslabs/mxnet-model-server#quick-start)
 
-|    |           |
+| Категория | Значение |
 | ------------- | ------------- |
 | Поддерживаемые версии | 1.0.1 |
 | Поддерживаемые выпуски DSVM      | Windows и Linux   |
@@ -103,17 +104,17 @@ ms.locfileid: "79270073"
 
 ## <a name="nvidia-system-management-interface-nvidia-smi"></a>[Интерфейс управления системами NVidia (NVIDIA-SMI)](https://developer.nvidia.com/nvidia-system-management-interface)
 
-|    |           |
+| Категория | Значение |
 | ------------- | ------------- |
 | Поддерживаемые версии |  |
 | Поддерживаемые выпуски DSVM      | Windows и Linux   |
 | Для чего она нужна? | Средство NVIDIA для выполнения запросов активности GPU |
 | Настройка и установка на DSVM  | `nvidia-smi`находится в системном пути. |
-| Как запустить      | На виртуальной машине **с графическим процессором**откройте командную строку (в Windows) или терминал (в Linux) и запустите `nvidia-smi`. |
+| Как запустить      | На виртуальной машине **с графическим процессором**откройте командную строку (в Windows) или терминал (в Linux) и запустите `nvidia-smi` . |
 
 ## <a name="pytorch"></a>[PyTorch](https://pytorch.org/)
 
-|    |           |
+| Категория | Значение |
 | ------------- | ------------- |
 | Поддерживаемые версии | 1.2.0 (Ubuntu 16,04, Windows 2016), 1.4.0 (Ubuntu 18,04, Windows 2019) |
 | Поддерживаемые выпуски DSVM      | Linux |
@@ -122,7 +123,7 @@ ms.locfileid: "79270073"
 
 ## <a name="tensorflow"></a>[TensorFlow](https://www.tensorflow.org/);
 
-|    |           |
+| Категория | Значение |
 | ------------- | ------------- |
 | Поддерживаемые версии | 1.13 |
 | Поддерживаемые выпуски DSVM      | Windows, Linux |
@@ -131,7 +132,7 @@ ms.locfileid: "79270073"
 
 ## <a name="tensorflow-serving"></a>[TensorFlow Serving](https://www.tensorflow.org/serving/)
 
-|    |           |
+| Категория | Значение |
 | ------------- | ------------- |
 | Поддерживаемые версии | 1.12 |
 | Поддерживаемые выпуски DSVM      | Linux |
@@ -141,7 +142,7 @@ ms.locfileid: "79270073"
 
 ## <a name="theano"></a>[Theano](https://github.com/Theano/Theano)
 
-|    |           |
+| Категория | Значение |
 | ------------- | ------------- |
 | Поддерживаемые версии | 1.0.3 |
 | Поддерживаемые выпуски DSVM      | Linux |

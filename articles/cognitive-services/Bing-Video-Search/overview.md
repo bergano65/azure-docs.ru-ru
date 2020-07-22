@@ -10,12 +10,12 @@ ms.subservice: bing-video-search
 ms.topic: overview
 ms.date: 12/18/2019
 ms.author: scottwhi
-ms.openlocfilehash: 8377f0f5d586212c94bb763598b6e7a9e391073c
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: 2c52f909cf3cc77b4f5e40ee9804d0c473e575c5
+ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75382724"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85601944"
 ---
 # <a name="what-is-the-bing-video-search-api"></a>Что такое API Поиска видео Bing
 
@@ -35,7 +35,7 @@ API Bing для поиска видео позволяет легко добав
 
 API Bing для поиска видео является веб-службой RESTful, которую легко вызвать с любого языка программирования, поддерживающего выполнение HTTP-запросов и анализ JSON. Вы можете использовать службу с помощью [REST API](csharp.md) или [пакета SDK](video-search-sdk-quickstart.md).
 
-1. Создайте [учетную запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с доступом к API-интерфейсам поиска Bing. Если у вас нет подписки Azure, создайте бесплатную [учетную запись](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api).
+1. Создайте [учетную запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с доступом к API-интерфейсам поиска Bing. Если у вас нет подписки Azure, создайте бесплатную [учетную запись](https://azure.microsoft.com/free/cognitive-services/).
 2. Отправьте запрос к API с допустимым поисковым запросом.
 3. Обработайте ответ API путем анализа возвращенного сообщения JSON.
 
@@ -43,8 +43,6 @@ API Bing для поиска видео является веб-службой R
 ## <a name="next-steps"></a>Дальнейшие действия
 
 В этой интерактивной демоверсии [API Bing для поиска видео](https://azure.microsoft.com/services/cognitive-services/bing-video-search-api/) показано, как можно быстро настроить поисковый запрос и найти видео в Интернете.
-
-Когда будете готовы вызвать API, создайте [учетную запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account). Если у вас нет подписки Azure, создайте бесплатную [учетную запись](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api).
 
 Используйте [это краткое руководство](csharp.md), чтобы быстро начать работу с первым запросом API.
 

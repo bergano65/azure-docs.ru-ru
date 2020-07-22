@@ -4,10 +4,9 @@ description: Описание процедуры определения коли
 ms.topic: conceptual
 ms.date: 2/23/2018
 ms.openlocfilehash: cd5a5c55ff873e4891ac63361d0c4a0b56d70109
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75377214"
 ---
 # <a name="capacity-planning-for-service-fabric-applications"></a>Планирование емкости для приложений Service Fabric
@@ -48,7 +47,7 @@ Number of Nodes = (DB_Size * RF)/Node_Size
 
 ![Таблица для расчета стоимости][Image1]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о секционировании служб см. в статье [Секционирование служб Reliable Services в Service Fabric][10].
 
 <!--Image references-->

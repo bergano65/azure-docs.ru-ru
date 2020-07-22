@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 01/11/2019
 ms.author: dekapur
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 1ff1407400843fdb0f0ff997e2e0a3c1b7e67c7d
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: f7cb3f75dcaaeb6e0304784941dfcfc81ae6d68f
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75494934"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86248396"
 ---
 # <a name="tutorial-deploy-an-application-to-service-fabric-mesh-using-a-template"></a>Руководство. Развертывание приложения в Сетке Service Fabric с помощью шаблона
 
@@ -171,7 +171,7 @@ Result
 ## <a name="retrieve-credentials-for-the-registry"></a>Получение учетных данных для реестра
 
 > [!IMPORTANT]
-> Добавлять администратора для экземпляра ACR не рекомендуется для рабочих сценариев. Здесь это делается для удобства. В рабочих сценариях используйте [субъект-службу](https://docs.microsoft.com/azure/container-registry/container-registry-auth-service-principal) для проверки подлинности пользователя и системы.
+> Добавлять администратора для экземпляра ACR не рекомендуется для рабочих сценариев. Здесь это делается для удобства. В рабочих сценариях используйте [субъект-службу](../container-registry/container-registry-auth-service-principal.md) для проверки подлинности пользователя и системы.
 
 Чтобы развернуть экземпляр контейнера из реестра, который был создан с помощью шаблона, во время развертывания необходимо указать учетные данные реестра. Сначала добавьте администратора в реестр, выполнив следующую команду:
 
@@ -191,7 +191,7 @@ az acr credential show --name myContainerRegistry --query "passwords[0].value"
 
 ## <a name="download-and-explore-the-template-and-parameters-files"></a>Скачивание и изучение файлов шаблона и параметров
 
-Приложение Сетки Service Fabric — это ресурс Azure, который можно развернуть и контролировать с помощью шаблонов Azure Resource Manager (RM). Если вы не знакомы с основными понятиями, связанными с развертыванием решений Azure и управлением ими, см. [обзор Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview) и [Сведения о структуре и синтаксисе шаблонов RM](/azure/azure-resource-manager/resource-group-authoring-templates).
+Приложение Сетки Service Fabric — это ресурс Azure, который можно развернуть и контролировать с помощью шаблонов Azure Resource Manager (RM). Если вы не знакомы с основными понятиями, связанными с развертыванием решений Azure и управлением ими, см. [обзор Azure Resource Manager](../azure-resource-manager/management/overview.md) и [Сведения о структуре и синтаксисе шаблонов RM](../azure-resource-manager/templates/template-syntax.md).
 
 В этом руководстве используется пример приложения списка дел.  Вместо создания новых файлов шаблона и параметров скачайте файлы [шаблона развертывания mesh_rp.windows.json](https://github.com/Azure-Samples/service-fabric-mesh/blob/master/templates/todolist/mesh_rp.windows.json) и [параметров mesh_rp.windows.parameter.json](https://github.com/Azure-Samples/service-fabric-mesh/blob/master/templates/todolist/mesh_rp.windows.parameters.json).
 

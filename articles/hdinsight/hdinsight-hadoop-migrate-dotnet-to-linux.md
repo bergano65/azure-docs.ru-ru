@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 02/27/2018
 ms.author: hrasheed
-ms.openlocfilehash: 4b402975a151d26e8f335c07930274c156ac52fb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a6e9bea5d600771a7754142a4df4c0af503ccf5d
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79272374"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86075490"
 ---
 # <a name="migrate-net-solutions-for-windows-based-hdinsight-to-linux-based-hdinsight"></a>Перенос решений .NET из HDInsight под управлением Windows в HDInsight под управлением Linux
 
@@ -34,15 +34,15 @@ Mono версии 4.2.1 входит в состав HDInsight версии 3.6.
 
 1. Установите [.NET Portability Analyzer](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer). Во время установки выберите используемую версию Visual Studio.
 
-2. В Visual Studio 2015 выберите __анализ__ > __параметров анализатора переносимости__и убедитесь, что в разделе __Mono__ установлен флажок __4,5__ .
+2. В Visual Studio 2015 выберите __анализ__  >  __параметров анализатора переносимости__и убедитесь, что в разделе __Mono__ установлен флажок __4,5__ .
 
     ![Установленный флажок "4.5" для Mono в разделе параметров анализатора](./media/hdinsight-hadoop-migrate-dotnet-to-linux/portability-analyzer-settings.png)
 
-    Нажмите кнопку __ОК__, чтобы сохранить конфигурацию.
+    Нажмите кнопку __ОК__ , чтобы сохранить настройки.
 
-3. Выберите __анализ__ > __анализ переносимости сборки__. Выберите сборку, содержащую решение, а затем щелкните __Открыть__, чтобы начать анализ.
+3. Выберите __анализ__  >  __анализ переносимости сборки__. Выберите сборку, содержащую решение, а затем щелкните __Открыть__, чтобы начать анализ.
 
-4. После завершения анализа выберите __анализ__ > __Просмотр аналитических отчетов__. В разделе __Portability Analysis Results__ (Результаты анализа переносимости) щелкните __Открыть отчет__, чтобы открыть отчет.
+4. После завершения анализа выберите __анализ__  >  __Просмотр аналитических отчетов__. В разделе __Portability Analysis Results__ (Результаты анализа переносимости) щелкните __Открыть отчет__, чтобы открыть отчет.
 
     ![Диалоговое окно результатов анализатора переносимости](./media/hdinsight-hadoop-migrate-dotnet-to-linux/portability-analyzer-results.png)
 
@@ -65,7 +65,7 @@ Mono версии 4.2.1 входит в состав HDInsight версии 3.6.
 
 * [Доступ к журналам приложений Apache Hadoop YARN в HDInsight под управлением Linux](hdinsight-hadoop-access-yarn-app-logs-linux.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * [Использование языка C# для потоковой передачи MapReduce в Hadoop в HDInsight](hadoop/apache-hadoop-dotnet-csharp-mapreduce-streaming.md)
 

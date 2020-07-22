@@ -5,15 +5,14 @@ services: vpn-gateway
 titleSuffix: Azure VPN Gateway
 author: cherylmc
 ms.service: vpn-gateway
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/03/2020
 ms.author: cherylmc
-ms.openlocfilehash: 857b50a04466f43a25cf80d7930cfb4639dc9d65
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 601e31cde22942abd6d2bc7c5bdcbc5d97f5a591
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79244437"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84987669"
 ---
 # <a name="create-a-site-to-site-connection-in-the-azure-portal"></a>Создание подключения типа "сеть — сеть" на портале Azure
 
@@ -44,7 +43,7 @@ ms.locfileid: "79244437"
 В примерах этой статьи мы используем следующие значения. Эти значения можно использовать для создания тестовой среды или для лучшего понимания примеров в этой статье. Дополнительные сведения о параметрах VPN-шлюза см. в разделе [о параметрах VPN-шлюза](vpn-gateway-about-vpn-gateway-settings.md).
 
 * **Имя виртуальной сети:** VNet1
-* **Адресное пространство:** 10.1.0.0/16.
+* **Адресное пространство:** 10.1.0.0/16
 * **Подписка:** подписка, которая будет использоваться.
 * **Группа ресурсов:** TestRG1
 * **Регион:** Восточная часть США

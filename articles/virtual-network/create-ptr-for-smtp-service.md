@@ -8,17 +8,17 @@ author: genlin
 manager: dcscontentpm
 ms.service: virtual-network
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: virtual-network
 ms.workload: infrastructure
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: 6c37ba61005c9936e6421d06369d1f52b93ac264
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c8ffadb8d54db0c2a99dc12e45b5990155a0505e
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77201702"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86135053"
 ---
 # <a name="configure-reverse-lookup-zones-for-an-smtp-banner-check"></a>Настройка зон обратного просмотра для проверки заголовка SMTP
 
@@ -38,10 +38,12 @@ ms.locfileid: "77201702"
 
 Прежде чем настраивать запись типа PTR, убедитесь, что IP-адрес и обратное FQDN (полное доменное имя) принадлежат подписке. Если вы попытаетесь настроить обратное FQDN, не принадлежащее подписке, появится следующее сообщение об ошибке:
 
-    Set-AzPublicIpAddress : ReverseFqdn mail.contoso.com that PublicIPAddress ip01 is trying to use does not belong to subscription <Subscription ID>. One of the following conditions need to be met to establish ownership:
-                        
-    1) ReverseFqdn совпадает с полным доменным именем любого ресурса общедоступного IP-адреса в подписке.
-    2) ReverseFqdn разрешается в полное доменное имя (с использованием цепочки записей CName) любого ресурса общедоступного IP-адреса в той же подписке.
-    3) Он разрешается в IP-адрес (с использованием цепочки записей CName и A) ресурса статического общедоступного IP-адреса в подписке.
+```output
+Set-AzPublicIpAddress : ReverseFqdn mail.contoso.com that PublicIPAddress ip01 is trying to use does not belong to subscription <Subscription ID>. One of the following conditions need to be met to establish ownership:
+                    
+1) ReverseFqdn matches fqdn of any public ip resource under the subscription;
+2) ReverseFqdn resolves to the fqdn (through CName records chain) of any public ip resource under the subscription;
+3) It resolves to the ip address (through CName and A records chain) of a static public ip resource under the subscription.
+```
 
 Если вы вручную измените заголовок SMTP в соответствии с обратным FQDN по умолчанию, удаленный почтовый сервер все еще может выйти из строя, так как для него необходимо, чтобы узел заголовка SMTP соответствовал записи MX для домена.

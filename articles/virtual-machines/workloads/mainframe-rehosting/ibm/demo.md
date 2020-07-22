@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 02/22/2019
 tags: ''
 keywords: ''
-ms.openlocfilehash: 66f80c79219090c27da37dfc1d9149df5604961f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 83f7f16d8406744a10451e8d488b7719845c525d
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "68841388"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86135941"
 ---
 # <a name="set-up-an-application-developers-controlled-distribution-adcd-in-ibm-zdt-v1"></a>Настройка управляемого распределения для разработчиков приложений (АДКД) в IBM зд&T v1
 
@@ -76,21 +76,21 @@ ms.locfileid: "68841388"
 
 4. При входе в систему создайте каталог для отправки пакетов IBM. Помните, что в Linux учитывается регистр. Например, в этой демонстрации предполагается, что пакеты передаются в:
 
-        /home/MyUserID/ZDT/adcd/nov2017/volumes
+    `/home/MyUserID/ZDT/adcd/nov2017/volumes`
 
 5. Отправьте файлы с помощью клиента SSH, например[WinSCP](https://winscp.net/eng/index.php). Так как SCP является частью SSH, используется порт 22, который используется SSH. Если локальный компьютер не является ОС Windows, можно ввести [команду SCP](http://man7.org/linux/man-pages/man1/scp.1.html) в сеансе SSH.
 
 6. Запустите отправку в созданный каталог виртуальных машин Azure, который станет хранилищем образов для зд&T.
 
     > [!NOTE]
-    > Убедитесь, что **адкдтулс. XML** включается в загрузку в каталог **Home/МЮСЕРИД/ЗДТ/адкд/nov2017** . Оно понадобится вам позднее.
+    > Убедитесь, что **ADCDTOOLS.XML** включена в отправку в каталог **Home/мюсерид/ЗДТ/адкд/nov2017** . Оно понадобится вам позднее.
 
 7. Дождитесь отправки файлов, что может занять некоторое время в зависимости от вашего подключения к Azure.
 
 8. После завершения отправки перейдите в каталог Volumes и распакуйте все тома **gz** :
 
-    ```
-        gunzip \*.gz
+    ```console
+    gunzip \*.gz
     ```
     
 ![Проводник, демонстрирующий распакованные тома gz](media/01-gunzip.png)
@@ -100,12 +100,12 @@ ms.locfileid: "68841388"
 Следующим шагом является настройка зд&T для использования переданного пакета. Процесс хранения образов в зд&T позволяет подключать и использовать образы. Он может использовать SSH или FTP.
 
 1. Запустите **здтсервер**. Для этого необходимо находиться на корневом уровне. Введите следующие две команды в указанном порядке:
-    ```
-        sudo su -
-        /opt/ibm/zDT/bin/startServer
+    ```console
+    sudo su -
+    /opt/ibm/zDT/bin/startServer
     ```
 2. Запишите вывод URL-адреса с помощью команды и используйте этот URL-адрес для доступа к веб-серверу. Он выглядит примерно так:
-     > HTTPS://(имя виртуальной машины или IP-адрес): 9443/ЗДТМК/index. HTML
+     > HTTPS://(имя виртуальной машины или IP-адрес): 9443/ЗДТМК/index.html.
      >
      > Помните, что ваш веб-доступ использует порт 9443. Используйте этот параметр для входа на веб-сервер. ИДЕНТИФИКАТОРом пользователя для зд&T является **здтадмин** , а пароль — **Password**.
 
@@ -186,7 +186,7 @@ ms.locfileid: "68841388"
 
 Поздравляем! Теперь вы используете среду IBM мэйнфреймов в Azure.
 
-## <a name="learn-more"></a>Дополнительные сведения
+## <a name="learn-more"></a>Подробнее
 
 - [Миграция мэйнфреймов: мифы и факты](https://docs.microsoft.com/azure/architecture/cloud-adoption/infrastructure/mainframe-migration/myths-and-facts)
 - [IBM DB2 Пурескале в Azure](https://docs.microsoft.com/azure/virtual-machines/linux/ibm-db2-purescale-azure)

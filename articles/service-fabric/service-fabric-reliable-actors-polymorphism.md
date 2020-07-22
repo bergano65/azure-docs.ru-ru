@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 11/02/2017
 ms.author: vturecek
 ms.openlocfilehash: 4e485463f41cdfbadeb166ecbb3a86d4a32c1589
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75348928"
 ---
 # <a name="polymorphism-in-the-reliable-actors-framework"></a>Полиморфизм на платформе надежных субъектов
@@ -85,7 +84,7 @@ public class Circle extends ShapeImpl implements Circle
 
 Обратите внимание на атрибут `ActorService` в типе субъекта. Этот атрибут сообщает платформе Reliable Actors, что ей необходимо автоматически создать службу для размещения субъектов этого типа. В некоторых случаях может потребоваться создать базовый тип, который предназначен исключительно для использования функциональных возможностей совместно с подтипами и никогда не будет использоваться для создания конкретных субъектов. Здесь следует применять ключевое слово `abstract` , указывающее, что вы никогда не будете создавать субъект на основе этого типа.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Узнайте, [каким образом платформа Reliable Actors использует платформу Service Fabric](service-fabric-reliable-actors-platform.md) для обеспечения надежности, масштабируемости и согласованности состояния.
 * Узнайте о [жизненном цикле субъекта](service-fabric-reliable-actors-lifecycle.md).
 

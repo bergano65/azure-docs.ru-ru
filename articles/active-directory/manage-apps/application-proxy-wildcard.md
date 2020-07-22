@@ -3,25 +3,25 @@ title: Приложения с подстановочными знаками в 
 description: Узнайте, как использовать приложения с подстановочным знаком в прокси приложения Azure Active Directory.
 services: active-directory
 documentationcenter: ''
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.date: 09/06/2018
-ms.author: mimart
+ms.author: kenwith
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1e5861e802f39adecb5661bc17c22b432f137d59
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: b566081459b0bab0aae9831e128ffbee0efaf4e2
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81770303"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85367739"
 ---
 # <a name="wildcard-applications-in-the-azure-active-directory-application-proxy"></a>Приложения с подстановочным знаком в прокси приложения Azure Active Directory
 
@@ -43,7 +43,7 @@ ms.locfileid: "81770303"
 
 Можно публиковать приложения с помощью подстановочных знаков, если внутренние и внешние URL-адреса представлены в следующем формате:
 
-> http(s)://*.\<domain\>
+> HTTP (s)://*.\<domain\>
 
 Например: `http(s)://*.adventure-works.com`.
 
@@ -62,7 +62,7 @@ ms.locfileid: "81770303"
 1. Создайте проверенный домен в Azure.
 1. Отправьте TLS-или SSL-сертификат в формате PFX в прокси приложения.
 
-Рассмотрите возможность использования сертификата с подстановочным знаком для сопоставления с приложением, которое вы собираетесь создать. Кроме того, можно использовать сертификат, который предназначенный только для определенных приложений. В этом случае только приложения, указанные в этом сертификате, будут доступны с помощью данного приложения с подстановочным знаком.
+Рассмотрите возможность использования сертификата с подстановочным знаком для сопоставления с приложением, которое вы собираетесь создать. 
 
 По соображениям безопасности это требование является обязательным, и подстановочные знаки не будут поддерживаться для приложений, которые не могут использовать личный домен во внешнем URL-адресе.
 
@@ -74,7 +74,7 @@ ms.locfileid: "81770303"
 
 Чтобы убедиться, что запись CNAME правильно настроена, можно использовать [nslookup](https://docs.microsoft.com/windows-server/administration/windows-commands/nslookup) на одной из целевых конечных точек, например `expenses.adventure-works.com`.  Полученный ответ должен содержать упомянутый выше псевдоним (`<yourAADTenantId>.tenant.runtime.msappproxy.net`).
 
-## <a name="considerations"></a>Рекомендации
+## <a name="considerations"></a>Особенности
 
 Ниже приведены некоторые рекомендации, которые следует учитывать при работе с подстановочными знаками.
 
@@ -156,7 +156,7 @@ ms.locfileid: "81770303"
 
 ![Показывает структуру, реализованную в примере конфигурации](./media/application-proxy-wildcard/05.png)
 
-| Цвет | Описание |
+| Цвет | Описание: |
 | ---   | ---         |
 | Синий  | Приложения, явно опубликованные и видимые в портал Azure. |
 | Серый  | Приложения доступны через родительское приложение. |

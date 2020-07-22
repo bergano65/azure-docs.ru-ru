@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 03/18/2020
 ms.author: sideeksh
-ms.openlocfilehash: 3d33b5a89a718a41e5c547551f6e7eb4f7033a63
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 429ffcab147142ae2e96de13b7c9e1e5ee1ac7ba
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79503131"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86133221"
 ---
 # <a name="configure-mobility-service-proxy-settings-for-azure-to-azure-disaster-recovery"></a>Настройка параметров прокси-сервера службы Mobility Service для аварийного восстановления из Azure в Azure
 
@@ -51,8 +51,8 @@ ms.locfileid: "79503131"
 В этом случае клиент предоставляет настраиваемые параметры прокси приложения в файле конфигурации службы Mobility Service Проксинфо. conf. Этот метод позволяет клиентам предоставлять прокси-сервер только для службы Mobility Service или другой прокси-сервер для службы Azure Site Recovery Mobility Service, чем прокси-сервер (или без прокси-сервера) для остальных приложений на компьютере.
 
 ## <a name="proxy-template"></a>Шаблон прокси-сервера
-Проксинфо. conf содержит следующий шаблон [proxy] address =http://1.2.3.4 порт = 5678 бипасслист = хиперврековериманажер. WindowsAzure. com, Login. микрософтонлине. com, BLOB. Core. Windows. NET. Бипасслист не поддерживает подстановочные знаки, такие как "*. windows.net", но предоставление windows.net достаточно хорошо для обхода. 
+Проксинфо. conf содержит следующий шаблон [proxy] address = http://1.2.3.4 порт = 5678 бипасслист = хиперврековериманажер. WindowsAzure. com, Login. микрософтонлине. com, BLOB. Core. Windows. NET. Бипасслист не поддерживает подстановочные знаки, такие как "*. windows.net", но предоставление windows.net достаточно хорошо для обхода. 
 
-## <a name="next-steps"></a>Дальнейшие действия:
-- Ознакомьтесь с руководством по работе с [сетью](site-recovery-azure-to-azure-networking-guidance.md) для репликации виртуальных машин Azure.
-- Разверните аварийное восстановления, изучив статью [Репликации виртуальной машины Azure в другой регион Azure](site-recovery-azure-to-azure.md).
+## <a name="next-steps"></a>Дальнейшие действия
+- Прочтите [Сети для репликации "Azure — Azure"](./azure-to-azure-about-networking.md).
+- Разверните аварийное восстановления, изучив статью [Репликации виртуальной машины Azure в другой регион Azure](./azure-to-azure-quickstart.md).

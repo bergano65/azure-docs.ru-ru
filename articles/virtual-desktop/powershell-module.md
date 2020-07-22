@@ -1,44 +1,44 @@
 ---
-title: Виртуальный рабочий стол модуля PowerShell для Windows — Azure
-description: Как установить и настроить модуль PowerShell для виртуальных рабочих столов Windows.
+title: Модуль PowerShell для виртуального рабочего стола Windows — Azure
+description: Как установить и настроить модуль PowerShell для виртуального рабочего стола Windows.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 04/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 6741c034351099f544c20749eb7c7a39e7932181
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: 67276f7dedccc20fb768e717c237d04aa4b4a1cf
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83195134"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85212757"
 ---
 # <a name="set-up-the-powershell-module-for-windows-virtual-desktop"></a>Настройка модуля PowerShell для виртуального рабочего стола Windows
 
 >[!IMPORTANT]
 >Это содержимое применимо к обновлению за весну 2020 года с объектами Azure Resource Manager для Виртуального рабочего стола Windows.
 >
-> Обновление Виртуального рабочего стола Windows за весну 2020 года пока предоставляется как общедоступная предварительная версия. Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для выполнения производственных рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. 
+> Обновление Виртуального рабочего стола Windows за весну 2020 года пока предоставляется как общедоступная предварительная версия. без соглашений об уровне обслуживания. Мы не рекомендуем использовать ее для выполнения производственных рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
 > Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-Модуль PowerShell для виртуальных рабочих столов Windows интегрирован в модуль Azure PowerShell. В этой статье вы узнаете, как настроить модуль PowerShell, чтобы можно было выполнять командлеты для виртуальных рабочих столов Windows.
+Модуль PowerShell для виртуального рабочего стола Windows интегрирован в модуль Azure PowerShell. В этой статье вы узнаете, как настроить модуль PowerShell таким образом, чтобы можно было выполнять командлеты для виртуального рабочего стола Windows.
 
 ## <a name="set-up-your-powershell-environment"></a>Настройка среды PowerShell
 
-Чтобы приступить к работе с модулем, сначала установите [последнюю версию PowerShell Core](/powershell/scripting/install/installing-powershell#powershell-core). В настоящее время Командлеты виртуальных рабочих столов Windows работают только с PowerShell Core.
+Прежде чем приступать к работе с модулем, установите [последнюю версию PowerShell Core](/powershell/scripting/install/installing-powershell#powershell-core). Командлеты для виртуального рабочего стола Windows пока работают только с PowerShell Core.
 
-Далее необходимо установить модуль Десктопвиртуализатион для использования в сеансе PowerShell.
+После этого установите модуль виртуализации рабочего стола для использования в сеансе PowerShell.
 
-Выполните следующий командлет PowerShell в режиме с повышенными правами, чтобы установить модуль:
+Для установки этого модуля выполните следующий командлет PowerShell в режиме с повышенными правами:
 
 ```powershell
 Install-Module -Name Az.DesktopVirtualization
 ```
 
 >[!NOTE]
-> Если этот командлет не работает, попробуйте запустить его еще раз с повышенными разрешениями.
+> Если этот командлет не работает, попробуйте выполнить его еще раз с повышенными разрешениями.
 
 Затем выполните следующий командлет для подключения к Azure:
 
@@ -46,7 +46,7 @@ Install-Module -Name Az.DesktopVirtualization
 Connect-AzAccount
 ```
 
-Для входа в учетную запись Azure требуется код, который создается при выполнении командлета Connect. Чтобы войти, перейдите по адресу, <https://microsoft.com/devicelogin> Введите код, а затем выполните вход с помощью учетных данных администратора Azure.
+Для входа в учетную запись Azure требуется код, который создается при выполнении командлета Connect. Чтобы войти, перейдите в <https://microsoft.com/devicelogin>, введите код, а затем выполните вход, указав учетные данные администратора Azure.
 
 ```powershell
 Account SubscriptionName TenantId Environment
@@ -56,23 +56,29 @@ Account SubscriptionName TenantId Environment
 Youradminupn subscriptionname AzureADTenantID AzureCloud
 ```
 
-Будет создан вход в подписку, которая по умолчанию используется для учетных данных администратора.
+Вход будет выполнен в ту подписку, которая задана для ваших учетных данных администратора по умолчанию.
 
 ## <a name="change-the-default-subscription"></a>Изменение подписки по умолчанию
 
-Если вы хотите изменить подписку по умолчанию после входа, выполните следующий командлет:
+Если вы хотите изменить подписку по умолчанию после того, как выполнили вход, выполните следующий командлет:
 
 ```powershell
-Select-AzSubscription -SubscriptionName <preferredsubscriptionname>
+Select-AzSubscription -Subscription <preferredsubscriptionname>
 ```
 
-При выборе новой подписки не нужно указывать идентификатор подписки в запускаемых командлетах. Например, следующий командлет извлекает конкретный узел сеанса, не требуя идентификатора подписки:
+Можно также выбрать один из списка с помощью командлета Out-GridView:
+
+```powershell
+Get-AzSubscription | Out-GridView -PassThru | Select-AzSubscription
+```
+
+При выборе новой подписки указывать идентификатор этой подписки в запускаемых после этого командлетах не нужно. Например, следующий командлет извлекает указанный узел сеанса, не требуя идентификатора подписки:
 
 ```powershell
 Get-AzWvdSessionHost -HostPoolName <hostpoolname> -Name <sessionhostname> -ResourceGroupName <resourcegroupname>
 ```
 
-Можно также изменить подписки для каждого командлета, добавив нужное имя подписки в качестве параметра. Следующий командлет тот же, что и в предыдущем примере, за исключением идентификатора подписки, добавленного в качестве параметра для изменения подписке, используемой командлетом.
+Можно также изменить подписки для каждого командлета, добавив нужное имя подписки в качестве параметра. Следующий командлет аналогичен предыдущему, но использует другую подписку, идентификатор которой добавлен к нему как параметр.
 
 ```powershell
 Get-AzWvdSessionHost -HostPoolName <hostpoolname> -Name <sessionhostname> -ResourceGroupName <resourcegroupname> -SubscriptionId <subscriptionGUID>
@@ -80,15 +86,15 @@ Get-AzWvdSessionHost -HostPoolName <hostpoolname> -Name <sessionhostname> -Resou
 
 ## <a name="get-locations"></a>Получение расположений
 
-Параметр Location является обязательным для всех командлетов **New-азввд** , которые создают новые объекты.
+Параметр Location является обязательным для всех командлетов **New-AzWVD**, которые создают объекты.
 
-Выполните следующий командлет, чтобы получить список расположений, которые поддерживает ваша подписка:
+Выполните следующий командлет, чтобы получить список расположений, поддерживаемых вашей подпиской:
 
 ```powershell
 Get-AzLocation
 ```
 
-Выходные данные **Get-азлокатион** будут выглядеть следующим образом:
+Выходные данные командлета **Get-AzLocation** будут выглядеть следующим образом:
 
 ```powershell
 Location : eastasia
@@ -120,7 +126,7 @@ Providers : {Microsoft.RecoveryServices, Microsoft.DesktopVirtualization,
 Microsoft.ManagedIdentity, Microsoft.SqlVirtualMachineΓÇª}
 ```
 
-Зная расположение учетной записи, вы можете использовать его в командлете. Например, вот командлет, создающий пул узлов в расположении "SoutheastAsia":
+Узнав расположение своей учетной записи, вы сможете использовать его в командлете. Например, следующий командлет создает пул узлов в расположении southeastasia:
 
 ```powershell
 New-AzWvdHostPool -ResourceGroupName <resourcegroupname> -Name <hostpoolname> -WorkspaceName <workspacename> -Location “southeastasia”
@@ -128,13 +134,13 @@ New-AzWvdHostPool -ResourceGroupName <resourcegroupname> -Name <hostpoolname> -W
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь, когда вы настроили модуль PowerShell, командлеты можно использовать для выполнения всех видов действий в виртуальном рабочем столе Windows. Ниже приведены некоторые из мест, которые можно использовать в вашем модуле.
+Теперь, когда вы настроили модуль PowerShell, командлеты можно использовать для выполнения всех видов действий в виртуальном рабочем столе Windows. Вот некоторые места, где можно использовать модуль:
 
-- С помощью наших [руководств по виртуальному рабочему столу Windows]() можно настроить собственную среду виртуальных рабочих столов Windows.
+- Сведения о настройке собственной среды виртуального рабочего стола Windows см. в наших [руководствах по виртуальному рабочему столу Windows]().
 - [Create a host pool with PowerShell](create-host-pools-powershell.md) (Создание пула узлов с помощью PowerShell)
-- [Настройка метода балансировки нагрузки Виртуального рабочего стола Windows](configure-host-pool-load-balancing.md)
+- [Настройка метода балансировки нагрузки виртуального рабочего стола Windows](configure-host-pool-load-balancing.md)
 - [Настройка типа назначения пула узлов личного рабочего стола](configure-host-pool-personal-desktop-assignment-type.md)
-- И это еще не все!
+- И многие другие!
 
-Если у вас возникли проблемы, ознакомьтесь со [статьей, посвященной устранению неполадок PowerShell](troubleshoot-powershell.md) .
+Если у вас возникнут проблемы, обращайтесь за помощью к статье [Устранение неполадок в PowerShell](troubleshoot-powershell.md).
 

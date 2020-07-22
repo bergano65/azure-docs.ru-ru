@@ -7,16 +7,16 @@ author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 02/10/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: a26f6c5e69ca083335580a0368459e062de3941e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a92810841ee5d656b23105d6f40c763847971c4f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78187667"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85387802"
 ---
 # <a name="javascript-samples-for-use-in-azure-active-directory-b2c"></a>Примеры JavaScript для Azure Active Directory B2C
 
@@ -35,13 +35,13 @@ ms.locfileid: "78187667"
 > [!NOTE]
 > Если вы хотите включить JavaScript для потоков пользователей, см. раздел [версии JavaScript и страницы в Azure Active Directory B2C](user-flow-javascript-overview.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 ### <a name="select-a-page-layout"></a>Выберите макет страницы
 
 * Выберите [Макет страницы](contentdefinitions.md#select-a-page-layout) для элементов пользовательского интерфейса приложения.
 
-    Если предполагается использовать JavaScript, необходимо [определить версию макета страницы](contentdefinitions.md#migrating-to-page-layout) с версией страницы `contract` для *всех* определений содержимого в пользовательской политике.
+    Если предполагается использовать JavaScript, необходимо [определить версию макета страницы](contentdefinitions.md#migrating-to-page-layout) с `contract` версией страницы для *всех* определений содержимого в пользовательской политике.
 
 ## <a name="add-the-scriptexecution-element"></a>Добавление элемента ScriptExecution
 
@@ -50,7 +50,7 @@ ms.locfileid: "78187667"
 1. Откройте файл настраиваемой политики. Например, *SignUpOrSignin.xml*.
 2. Добавьте элемент **ScriptExecution** в элемент **UserJourneyBehaviors** в **RelyingParty**:
 
-    ```XML
+    ```xml
     <RelyingParty>
       <DefaultUserJourney ReferenceId="B2CSignUpOrSignInWithPassword" />
       <UserJourneyBehaviors>
@@ -140,6 +140,6 @@ function addTermsOfUseLink() {
 
 Замените `termsOfUseUrl` ссылкой на ваше соглашение об условиях использования. Для каталога создайте новый атрибут пользователя с именем **термсофусе** , а затем включите **термсофусе** в качестве атрибута пользователя.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о настройке пользовательского интерфейса приложений см. в статье [Настройка пользовательского интерфейса приложения с помощью настраиваемой политики в Azure Active Directory B2C](custom-policy-ui-customization.md).

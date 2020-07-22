@@ -1,6 +1,6 @@
 ---
 title: Подключение данных CEF к предварительной версии Azure Sentinel | Документация Майкрософт
-description: Узнайте, как подключить данные CEF к Azure Sentinel.
+description: Подключите внешнее решение, которое отправляет сообщения в формате распространенных событий (CEF) в Azure Sentinel с помощью компьютера Linux в качестве прокси-сервера.
 services: sentinel
 documentationcenter: na
 author: yelevin
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/26/2019
 ms.author: yelevin
-ms.openlocfilehash: 8314614616c6b8969832d52fc684d47ba1bf0fe3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 34091e0c9f18cb87a240054f534f474710eb421d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77588354"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85563926"
 ---
 # <a name="connect-your-external-solution-using-common-event-format"></a>Подключение внешнего решения с помощью общего формата событий
 
@@ -42,7 +42,7 @@ ms.locfileid: "77588354"
  ![CEF в локальной среде](./media/connect-cef/cef-syslog-onprem.png)
 
 
-## <a name="security-considerations"></a>Замечания по безопасности
+## <a name="security-considerations"></a>Вопросы безопасности
 
 Обязательно настройте безопасность компьютера в соответствии с политикой безопасности вашей организации. Например, можно настроить сеть для согласования с политикой безопасности корпоративной сети и изменить порты и протоколы в управляющей программе в соответствии с вашими требованиями. Для улучшения конфигурации безопасности компьютера можно использовать следующие инструкции:  [безопасная виртуальная машина в Azure](../virtual-machines/linux/security-policy.md), рекомендации [по сетевой безопасности](../security/fundamentals/network-best-practices.md).
 
@@ -52,7 +52,7 @@ ms.locfileid: "77588354"
 ## <a name="prerequisites"></a>Предварительные условия
 Убедитесь, что компьютер Linux, используемый в качестве прокси-сервера, работает под управлением одной из следующих операционных систем:
 
-- 64-разрядная
+- 64-разрядная версия
   - CentOS 6 и 7
   - Amazon Linux 2017.09
   - Oracle Linux 6 и 7

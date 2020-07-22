@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Создание Брандмауэра Azure и групп IP-адресов с помощью шаблона Resource Manager
-description: Сведения об использовании шаблона Resource Manager для создания Брандмауэра Azure и групп IP-адресов.
+description: Сведения об использовании шаблона Azure Resource Manager (шаблона ARM) для создания Брандмауэра Azure и групп IP-адресов.
 services: firewall
 author: vhorne
 ms.service: firewall
@@ -8,28 +8,30 @@ ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 04/06/2020
 ms.author: victorh
-ms.openlocfilehash: 403aaafebcae680f337aeff551b81a80a9549252
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: 5ac1248ddcdf8c0eef68b7c32e322398fa01a6f2
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83680565"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86260571"
 ---
-# <a name="quickstart-create-an-azure-firewall-and-ip-groups---resource-manager-template"></a>Краткое руководство. Создание Брандмауэра Azure и групп IP-адресов с помощью шаблона Resource Manager
+# <a name="quickstart-create-an-azure-firewall-and-ip-groups---arm-template"></a>Краткое руководство. Создание Брандмауэра Azure и групп IP-адресов с помощью шаблона ARM
 
-В этом кратком руководстве шаблон Resource Manager используется для развертывания Брандмауэра Azure с примерами групп IP-адресов, используемых в правиле сети и приложения. Группа IP-адресов — это ресурс верхнего уровня, позволяющий определять и группировать IP-адреса, диапазоны и подсети в один объект. Это полезно для управления IP-адресами в правилах Брандмауэра Azure. Вы можете либо вручную ввести IP-адреса, либо импортировать их из файла.
+В этом кратком руководстве показано, как с помощью шаблона Azure Resource Manager (шаблона ARM) развернуть Брандмауэр Azure с примерами групп IP-адресов, используемых в правиле сети и приложения. Группа IP-адресов — это ресурс верхнего уровня, позволяющий определять и группировать IP-адреса, диапазоны и подсети в один объект. Это полезно для управления IP-адресами в правилах Брандмауэра Azure. Вы можете либо вручную ввести IP-адреса, либо импортировать их из файла.
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
+
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-azurefirewall-create-with-ipgroups-and-linux-jumpbox%2Fazuredeploy.json)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
 
-## <a name="create-an-azure-firewall-and-ip-groups"></a>Создание Брандмауэра Azure и групп IP-адресов
+## <a name="review-the-template"></a>Изучение шаблона
 
 Этот шаблон создает Брандмауэр Azure и группы IP-адресов, а также необходимые ресурсы для поддержки Брандмауэра Azure.
-
-### <a name="review-the-template"></a>Изучение шаблона
 
 Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-azurefirewall-create-with-ipgroups-and-linux-jumpbox).
 
@@ -47,9 +49,9 @@ ms.locfileid: "83680565"
 - [**Microsoft.Compute/virtualMachines**](/azure/templates/microsoft.compute/virtualmachines)
 - [**Microsoft.Network/azureFirewalls**](/azure/templates/microsoft.network/azureFirewalls)
 
-### <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="deploy-the-template"></a>Развертывание шаблона
 
-Развертывание шаблона Resource Manager в Azure:
+Разверните шаблон ARM в Azure:
 
 1. Выберите элемент **Развертывание в Azure**, чтобы войти в Azure и открыть шаблон. Шаблон создает Брандмауэр Azure, сетевую инфраструктуру и две виртуальные машины.
 
@@ -76,7 +78,7 @@ ms.locfileid: "83680565"
 
 :::image type="content" source="media/quick-create-ipgroup-template/network-rule.png" alt-text="Правила сети.":::
 
-Дополнительные сведения о синтаксисе JSON и свойствах для брандмауэра в шаблоне см. в статье [Справочник по шаблонам Microsoft.Network azureFirewalls](https://docs.microsoft.com/azure/templates/Microsoft.Network/2019-11-01/azureFirewalls).
+Дополнительные сведения о синтаксисе JSON и свойствах для брандмауэра в шаблоне см. в статье [Справочник по шаблонам Microsoft.Network azureFirewalls](/azure/templates/Microsoft.Network/2019-11-01/azureFirewalls).
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

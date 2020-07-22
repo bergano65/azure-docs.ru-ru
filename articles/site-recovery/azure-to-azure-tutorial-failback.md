@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 11/14/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: c27b7bf29e5f124fdcfb886b658fd8e9d4cc48fe
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: e6257311473987ee053caeade6bfe14533353b73
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74091349"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86134443"
 ---
 # <a name="fail-back-an-azure-vm-between-azure-regions"></a>Восстановление размещения виртуальной машины Azure между регионами Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "74091349"
 > 
 > [!NOTE]
 > 
-> В этом руководстве описано, как выполнить отработку отказа нескольких виртуальных машин в целевой регион и обратно в исходный регион с минимальными настройками. Сведения о более сложных сценариях см. в [документации по виртуальным машинам Windows](https://docs.microsoft.com/azure/virtual-machines/windows/).
+> В этом руководстве описано, как выполнить отработку отказа нескольких виртуальных машин в целевой регион и обратно в исходный регион с минимальными настройками. Сведения о более сложных сценариях см. в [документации по виртуальным машинам Windows](../virtual-machines/windows/index.yml).
 
 ## <a name="before-you-start"></a>Перед началом работы
 

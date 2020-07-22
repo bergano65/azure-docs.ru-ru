@@ -4,17 +4,16 @@ description: Используйте портал Azure для просмотра
 ms.topic: article
 ms.date: 01/05/2018
 ms.openlocfilehash: 1da72706d2554610a685f71199ab14af5e30ce1a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74456290"
 ---
 # <a name="view-container-registry-repositories-in-the-azure-portal"></a>Просмотр списка репозиториев реестра контейнеров на портале Azure
 
 Реестр контейнеров Azure позволяет хранить образы контейнеров Docker в репозиториях. Это позволяет хранить группы образов (версии образов) в изолированных средах. Эти репозитории можно указать при отправке образов в реестр и просмотреть их содержимое на портале Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * **Реестр контейнеров.** Создайте реестр контейнеров в своей подписке Azure. Это можно сделать на [портале Azure](container-registry-get-started-portal.md) или с помощью [Azure CLI](container-registry-get-started-azure-cli.md).
 * **Docker CLI.** Установите интерфейс командной строки [Docker][docker-install] на локальном компьютере.
@@ -43,7 +42,7 @@ docker push myregistry.azurecr.io/samples/nginx
 
 ![Репозитории на портале](./media/container-registry-repositories/container-registry-repositories.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы знаете, как просматривать список репозиториев на портале и работать с ними, попробуйте использовать Реестр контейнеров Azure с кластером [службы Azure Kubernetes (AKS)](../aks/tutorial-kubernetes-prepare-app.md).
 

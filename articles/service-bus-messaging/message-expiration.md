@@ -1,24 +1,13 @@
 ---
 title: Служебная шина Azure — срок действия сообщения
 description: В этой статье объясняется срок действия сообщений служебной шины Azure и время их жизни. После такого крайнего срока сообщение больше не будет доставлено.
-services: service-bus-messaging
-documentationcenter: ''
-author: axisc
-manager: timlt
-editor: spelluru
-ms.service: service-bus-messaging
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.date: 01/24/2020
-ms.author: aschhab
-ms.openlocfilehash: e86c92fa1cfb13929d5617502224f479709efdd3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.date: 06/23/2020
+ms.openlocfilehash: ca789be91e835576ec06a422bdbbbf25eb775dac
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76756340"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85341200"
 ---
 # <a name="message-expiration-time-to-live"></a>Срок действия сообщения (срок жизни)
 
@@ -26,7 +15,7 @@ ms.locfileid: "76756340"
 
 Для среды разработки и тестовой среды, в которых очереди и разделы часто используются в контексте частичного запуска приложений или частей приложений, желательно также выполнять автоматическую сборку мусора для удаления потерянных тестовых сообщений, чтобы следующий тест можно было выполнить "с чистого листа".
 
-Истечением срока действия любого отдельного сообщения можно управлять, задав системное свойство [TimeToLive](/dotnet/api/microsoft.azure.servicebus.message.timetolive#Microsoft_Azure_ServiceBus_Message_TimeToLive), которое указывает относительный срок. Срок действия истекает мгновенно, когда сообщение помещается в очередь в сущности. В это время свойство [ExpiresAtUtc](/dotnet/api/microsoft.azure.servicebus.message.expiresatutc) принимает значение [(**EnqueuedTimeUtc**](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.enqueuedtimeutc#Microsoft_ServiceBus_Messaging_BrokeredMessage_EnqueuedTimeUtc) + [**TimeToLive**)](/dotnet/api/microsoft.azure.servicebus.message.timetolive#Microsoft_Azure_ServiceBus_Message_TimeToLive). Параметр срока жизни (TTL) для сообщения через посредника не применяется, если клиенты не ожидают активного прослушивания.
+Истечением срока действия любого отдельного сообщения можно управлять, задав системное свойство [TimeToLive](/dotnet/api/microsoft.azure.servicebus.message.timetolive#Microsoft_Azure_ServiceBus_Message_TimeToLive), которое указывает относительный срок. Срок действия истекает мгновенно, когда сообщение помещается в очередь в сущности. В это время свойство [ExpiresAtUtc](/dotnet/api/microsoft.azure.servicebus.message.expiresatutc) принимает значение [(**EnqueuedTimeUtc**](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.enqueuedtimeutc#Microsoft_ServiceBus_Messaging_BrokeredMessage_EnqueuedTimeUtc)  +  [**TimeToLive**)](/dotnet/api/microsoft.azure.servicebus.message.timetolive#Microsoft_Azure_ServiceBus_Message_TimeToLive). Параметр срока жизни (TTL) для сообщения через посредника не применяется, если клиенты не ожидают активного прослушивания.
 
 После того, как момент **ExpiresAtUtc** пройдет, сообщения станут недоступными для получения. Срок действия не влияет на сообщения, доставка которых в настоящий момент заблокирована. Эти сообщения по-прежнему обрабатываются обычным образом. Если срок действия блокировки истекает или сообщение отбрасывается, его срок действия вступает в силу немедленно.
 
@@ -74,7 +63,7 @@ ms.locfileid: "76756340"
     - Нет отправок.  
     - Нет обновлений раздела.  
     - Нет запланированных сообщений. 
-- Subscriptions
+- Подписки
     - Нет получений.  
     - Нет обновлений подписки.  
     - В подписке нет новых добавленных правил.  

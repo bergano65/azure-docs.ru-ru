@@ -7,25 +7,25 @@ ms.author: saveenr
 ms.reviewer: jasonwhowell
 ms.topic: conceptual
 ms.date: 06/18/2017
-ms.openlocfilehash: d9fc9bee98391f7272a417324b9c3a540b6adbe6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e8de36cca8386ed2a8ddba5782b7b48f248192e6
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79474515"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85564837"
 ---
 # <a name="get-started-with-azure-data-lake-analytics-using-azure-cli"></a>Начало работы с Azure Data Lake Analytics с помощью интерфейса командной строки Azure
+
 [!INCLUDE [get-started-selector](../../includes/data-lake-analytics-selector-get-started.md)]
 
-В этой статье описано, как использовать Azure CLI для создания учетной записи Data Lake Analytics, а также отправки заданий и каталогов U-SQL. Задание, которое считывает файл с разделителями-табуляциями (TSV) и преобразует его в файл с разделителями-запятыми (CSV). 
+В этой статье описано, как использовать Azure CLI для создания учетной записи Data Lake Analytics, а также отправки заданий и каталогов U-SQL. Задание, которое считывает файл с разделителями-табуляциями (TSV) и преобразует его в файл с разделителями-запятыми (CSV).
 
 ## <a name="prerequisites"></a>Предварительные условия
+
 Для работы вам понадобится следующее:
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-* Для этой статьи требуется Azure CLI версии 2.0 или более поздней версии. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli). 
-
-
+* Для этой статьи требуется Azure CLI версии 2.0 или более поздней версии. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
@@ -46,6 +46,7 @@ az account set --subscription <subscription id>
 ```
 
 ## <a name="create-data-lake-analytics-account"></a>Создание учетной записи аналитики озера данных
+
 Для выполнения любых заданий требуется учетная запись Data Lake Analytics. Для создания учетной записи Data Lake Analytics необходимо указать следующие данные.
 
 * **Группа ресурсов Azure**. В группе ресурсов Azure необходимо создать учетную запись Data Lake Analytics. [Azure Resource Manager](../azure-resource-manager/management/overview.md) позволяет работать с ресурсами в приложении в виде группы. Вы можете развертывать, обновлять или удалять все ресурсы для приложения в рамках одной скоординированной операции.  
@@ -63,7 +64,7 @@ az group create --name "<Resource Group Name>" --location "<Azure Location>"
 ```
 
 * **Имя учетной записи Data Lake Analytics**. Каждой учетной записи Data Lake Analytics присвоено имя.
-* **Расположение**. Используйте один из центров обработки данных Azure, который поддерживает Data Lake Analytics.
+* **Расположение.** Используйте один из центров обработки данных Azure, который поддерживает Data Lake Analytics.
 * **Учетная запись Data Lake Store по умолчанию** — каждая учетная запись Data Lake Analytics содержит учетную запись Data Lake Store по умолчанию.
 
 Чтобы получить список существующих учетных записей Data Lake Store, выполните эту команду:
@@ -88,10 +89,11 @@ az dla account create --account "<Data Lake Analytics Account Name>" --resource-
 
 ```azurecli
 az dla account list
-az dla account show --account "<Data Lake Analytics Account Name>"            
+az dla account show --account "<Data Lake Analytics Account Name>"
 ```
 
 ## <a name="upload-data-to-data-lake-store"></a>Передача данных в хранилище озера данных
+
 В этом руководстве обрабатываются некоторые журналы поиска.  Журнал поиска может храниться в хранилище озера данных или в хранилище больших двоичных объектов Azure.
 
 На портале Azure реализован пользовательский интерфейс для копирования файлов с образцами данных, включая файл журнала поиска, в учетную запись Data Lake Store по умолчанию. О передаче данных в учетную запись Data Lake Store по умолчанию см. в разделе [Подготовка исходных данных](data-lake-analytics-get-started-portal.md).
@@ -106,19 +108,20 @@ az dls fs list --account "<Data Lake Store Account Name>" --path "<Path>"
 Из аналитики озера данных также доступно хранилище больших двоичных объектов Azure.  Чтобы передать данные в хранилище BLOB-объектов Azure, см. статью [Использование интерфейса командной строки (CLI) Azure со службой хранилища Azure](../storage/common/storage-azure-cli.md).
 
 ## <a name="submit-data-lake-analytics-jobs"></a>Отправка заданий аналитики озера данных
+
 Задания аналитики озера данных пишутся на языке U-SQL. Дополнительные сведения о языке U-SQL см. в статье о [начале работы с языком U-SQL](data-lake-analytics-u-sql-get-started.md) и в [справочнике по языку U-SQL](https://docs.microsoft.com/u-sql/).
 
-**Создание скрипта задания аналитики озера данных**
+### <a name="to-create-a-data-lake-analytics-job-script"></a>Создание скрипта задания аналитики озера данных
 
 Создайте текстовый файл со следующим скриптом U-SQL, а затем сохраните текстовый файл на своей рабочей станции.
 
-```
-@a  = 
-    SELECT * FROM 
+```usql
+@a  =
+    SELECT * FROM
         (VALUES
             ("Contoso", 1500.0),
             ("Woodgrove", 2700.0)
-        ) AS 
+        ) AS
               D( customer, amount );
 OUTPUT @a
     TO "/data.csv"
@@ -131,22 +134,22 @@ OUTPUT @a
 
 Проще использовать относительные пути для файлов, которые хранятся в учетных записях Data Lake Store по умолчанию. Также можно использовать абсолютные пути.  Пример:
 
-```
+```usql
 adl://<Data LakeStorageAccountName>.azuredatalakestore.net:443/Samples/Data/SearchLog.tsv
 ```
 
 Необходимо использовать абсолютные пути для доступа к файлам в связанных учетных записях хранения.  Для файлов, хранящихся в связанной учетной записи хранения Azure, используется следующий синтаксис:
 
-```
+```usql
 wasb://<BlobContainerName>@<StorageAccountName>.blob.core.windows.net/Samples/Data/SearchLog.tsv
 ```
 
 > [!NOTE]
-> Контейнер больших двоичных объектов Azure с общедоступными большими двоичными объектами не поддерживается.      
-> Контейнер больших двоичных объектов Azure с общедоступными контейнерами не поддерживается.      
+> Контейнер больших двоичных объектов Azure с общедоступными большими двоичными объектами не поддерживается.
+> Контейнер больших двоичных объектов Azure с общедоступными контейнерами не поддерживается.
 >
 
-**Отправка заданий**
+### <a name="to-submit-jobs"></a>Отправка заданий
 
 Чтобы отправить задание, используйте этот синтаксис:
 
@@ -160,14 +163,14 @@ az dla job submit --account "<Data Lake Analytics Account Name>" --job-name "<Jo
 az dla job submit --account "myadlaaccount" --job-name "myadlajob" --script @"C:\DLA\myscript.txt"
 ```
 
-**Отображение списка заданий и сведений о задании**
+### <a name="to-list-jobs-and-show-job-details"></a>Отображение списка заданий и сведений о задании
 
 ```azurecli
 az dla job list --account "<Data Lake Analytics Account Name>"
 az dla job show --account "<Data Lake Analytics Account Name>" --job-identity "<Job Id>"
 ```
 
-**Отмена заданий**
+### <a name="to-cancel-jobs"></a>Отмена заданий
 
 ```azurecli
 az dla job cancel --account "<Data Lake Analytics Account Name>" --job-identity "<Job Id>"

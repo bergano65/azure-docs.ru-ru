@@ -7,12 +7,11 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 5/11/2020
-ms.openlocfilehash: 524fc747e8e3dc70bdcc594a38b2a083b8381daa
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
-ms.translationtype: MT
+ms.openlocfilehash: 8aae9a0ff3ffdbd4f6bc93db5c6f15dcb938080e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83124080"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84196426"
 ---
 # <a name="using-reference-data-for-lookups-in-stream-analytics"></a>Использование эталонных данных для уточняющих запросов в Stream Analytics
 
@@ -96,13 +95,13 @@ Stream Analytics предоставляет два варианта выполн
 
 Чтобы настроить эталонные данные в Базе данных SQL, необходимо сначала создать входные **Эталонные данные**. В указанной ниже таблице описано каждое свойство, которое необходимо предоставить во время создания входных эталонных данных. Дополнительные сведения см. в статье [Use reference data from a SQL Database for an Azure Stream Analytics job (Preview)](sql-reference-data.md) (Использование эталонных данных из Базы данных SQL для задания Azure Stream Analytics (предварительная версия)).
 
-В качестве входных ссылочных данных можно использовать [управляемый экземпляр базы данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance) . Необходимо [настроить общедоступную конечную точку в управляемый экземпляр базы данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-public-endpoint-configure) а затем вручную настроить следующие параметры в Azure Stream Analytics. Виртуальная машина Azure, на которой работает SQL Server с подключенной базой данных, также поддерживается путем ручной настройки параметров ниже.
+Вы можете использовать [управляемый экземпляр Azure SQL](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance) в качестве входных ссылочных данных. Необходимо [настроить общедоступную конечную точку в управляемый экземпляр SQL](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-public-endpoint-configure) , а затем вручную настроить следующие параметры в Azure Stream Analytics. Виртуальная машина Azure, на которой работает SQL Server с подключенной базой данных, также дополнительно настраивается вручную с использованием параметров ниже.
 
 |**Имя свойства**|**Описание**  |
 |---------|---------|
 |Псевдоним входных данных|Понятное имя, с помощью которого запрос задания будет ссылаться на эти входные данные.|
 |Подписка|Выберите свою подписку|
-|База данных|База данных SQL Azure с эталонными данными. Для Управляемый экземпляр Базы данных SQL Azure необходимо указать порт 3342. Например, *самплесервер. public. Database. Windows. NET, 3342*|
+|База данных|База данных SQL Azure с эталонными данными. Для SQL Управляемый экземпляр необходимо указать порт 3342. Например, *sampleserver.public.database.windows.net,3342*|
 |Имя пользователя|Имя пользователя, связанное с базой данных SQL Azure.|
 |Пароль|Пароль, связанный с базой данных SQL Azure.|
 |Периодическое обновление|Этот параметр позволяет выбрать частоту обновления. Выбор "Вкл." позволит вам указать частоту обновления в формате ДД:ЧЧ:MM.|
@@ -140,7 +139,7 @@ JOIN    refData2 ON refData2.Desc = Step1.Desc
 
 ## <a name="next-steps"></a>Дальнейшие действия
 > [!div class="nextstepaction"]
-> [Краткое руководство по созданию задания Stream Analytics с помощью портала Azure](stream-analytics-quick-create-portal.md)
+> [Краткое руководство. по созданию задания Stream Analytics с помощью портала Azure](stream-analytics-quick-create-portal.md)
 
 <!--Link references-->
 [stream.analytics.developer.guide]: ../stream-analytics-developer-guide.md

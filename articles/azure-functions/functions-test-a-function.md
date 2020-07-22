@@ -5,16 +5,16 @@ author: craigshoemaker
 ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: cshoe
-ms.openlocfilehash: a37fd886e1bc70226b2e54750540dfcb79ee5973
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 1f08d6b8a2ce2381c3bc85891a292ac05561cf34
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75768883"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85832565"
 ---
 # <a name="strategies-for-testing-your-code-in-azure-functions"></a>Методика тестирования кода с помощью Функций Azure
 
-В этой статье показано, как создавать автоматические тесты для Функций Azure. 
+В этой статье показано, как создавать автоматические тесты для Функций Azure.
 
 Рекомендуется провести тестирование всего кода, однако наилучший результат можно получить благодаря созданию программы-оболочки для логики функции и создания тестов за ее пределами. Абстрагирование логики ограничивает строки кода функции и позволяет функции нести единоличную ответственность за вызов других классов или модулей. В этой статье, однако, показано, как создавать автоматические тесты для функций, запускаемых по протоколу HTTP и по таймеру.
 
@@ -26,30 +26,31 @@ ms.locfileid: "75768883"
 Пример репозитория можно найти на [GitHub](https://github.com/Azure-Samples/azure-functions-tests).
 
 ## <a name="c-in-visual-studio"></a>C# в Visual Studio
+
 В следующем примере описано создание приложения-функции C# в Visual Studio, а также запуск и тестирование с помощью [xUnit](https://xunit.github.io).
 
 ![Тестирование Функций Azure с помощью C# в Visual Studio](./media/functions-test-a-function/azure-functions-test-visual-studio-xunit.png)
 
-### <a name="setup"></a>Настройка
+### <a name="setup"></a>Установка
 
 Чтобы настроить среду, создайте функцию и протестируйте приложение. Описанные ниже действия помогут создать приложения и функции, необходимые для поддержки тестов.
 
-1. [Создайте новое приложение-функцию](./functions-create-first-azure-function.md) и назовите его *Functions*.
-2. [Создайте функцию HTTP на основе шаблона](./functions-create-first-azure-function.md) и назовите ее *HttpTrigger*.
-3. [Создайте функцию таймера на основе шаблона](./functions-create-scheduled-function.md) и назовите ее *TimerTrigger*.
-4. [Создайте приложение тестирования xUnit](https://xunit.github.io/docs/getting-started-dotnet-core) в Visual Studio, нажав **Файл > Создать > Проект > Visual C# > .NET Core > Тестовый проект xUnit**, и назовите его *Functions.Test*. 
+1. [Создайте новое приложение-функцию](./functions-create-first-azure-function.md) и назовите его **Functions**.
+2. [Создайте функцию HTTP на основе шаблона](./functions-create-first-azure-function.md) и назовите ее **михттптригжер**.
+3. [Создайте функцию таймера на основе шаблона](./functions-create-scheduled-function.md) и назовите ее **митимертригжер**.
+4. [Создайте тестовое приложение xUnit](https://xunit.github.io/docs/getting-started-dotnet-core) в решении и назовите его **functions. Tests**.
 5. Использование NuGet для добавления ссылки из тестового приложения в [Microsoft. AspNetCore. MVC](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc/)
-6. [Создайте ссылку на приложение *Функции*](https://docs.microsoft.com/visualstudio/ide/managing-references-in-a-project?view=vs-2017) из приложения *Functions.Test*.
+6. [Ссылка на приложение *функций* ](https://docs.microsoft.com/visualstudio/ide/managing-references-in-a-project?view=vs-2017) из приложения *functions. Tests* .
 
 ### <a name="create-test-classes"></a>Создание тестовых классов
 
-Теперь после создания приложений можно создать классы, используемые для запуска автоматических тестов.
+Теперь, когда проекты созданы, можно создать классы, используемые для выполнения автоматических тестов.
 
 Каждая функция принимает экземпляр [ILogger](https://docs.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger) для обработки ведения журнала сообщений. Некоторые тесты либо не ведут журнал сообщений, либо для них не имеет значения, как это происходит. Другие тесты должны оценивать сообщения, записанные в журнал, чтобы определить, проходит ли тест.
 
-`ListLogger` Класс реализует `ILogger` интерфейс и содержит внутренний список сообщений для оценки во время теста.
+Вы создадите новый класс с именем `ListLogger` , содержащий внутренний список сообщений для оценки во время тестирования. Для реализации требуемого `ILogger` интерфейса классу требуется область. Следующий класс разимитирует область для тестовых случаев, передаваемых в `ListLogger` класс.
 
-**Щелкните правой кнопкой мыши** приложение *functions. Test* и выберите **Добавить > класс**, назовите его **NullScope.CS** и введите следующий код:
+Создайте новый класс в проекте *functions. Tests* с именем **NullScope.CS** и введите следующий код:
 
 ```csharp
 using System;
@@ -67,7 +68,7 @@ namespace Functions.Tests
 }
 ```
 
-Затем щелкните **правой кнопкой мыши** приложение *functions. Test* и выберите **Добавить > класс**, назовите его **ListLogger.CS** и введите следующий код:
+Затем создайте новый класс в проекте *functions. Tests* с именем **ListLogger.CS** и введите следующий код:
 
 ```csharp
 using Microsoft.Extensions.Logging;
@@ -90,7 +91,7 @@ namespace Functions.Tests
             this.Logs = new List<string>();
         }
 
-        public void Log<TState>(LogLevel logLevel, 
+        public void Log<TState>(LogLevel logLevel,
                                 EventId eventId,
                                 TState state,
                                 Exception exception,
@@ -107,13 +108,13 @@ namespace Functions.Tests
 
 - **Бегинскопе**: области добавляют контекст в ведение журнала. В этом случае тест просто указывает на статический экземпляр `NullScope` класса, чтобы позволить тесту работать.
 
-- **Включено**: предоставляется значение `false` по умолчанию.
+- **Включено**: предоставляется значение по умолчанию `false` .
 
 - **Журнал**: Этот метод использует предоставленную `formatter` функцию для форматирования сообщения, а затем добавляет полученный текст в `Logs` коллекцию.
 
 Коллекция `Logs` является экземпляром `List<string>` и инициализируется в конструкторе.
 
-Затем, **щелкните правой кнопкой мыши** на приложение *Functions.Test* и выберите **Добавить > Класс**, назовите его **LoggerTypes.cs** и введите приведенный ниже код.
+Затем создайте новый файл в файле *functions. Tests* Project с именем **LoggerTypes.CS** и введите следующий код:
 
 ```csharp
 namespace Functions.Tests
@@ -125,9 +126,10 @@ namespace Functions.Tests
     }
 }
 ```
-Это перечисление определяет тип средства ведения журнала, используемого в тестах. 
 
-Затем **щелкните правой кнопкой мыши** на приложение *Functions.Test* и выберите **Добавить > Класс**, назовите его **TestFactory.cs** и введите приведенный ниже код.
+Это перечисление определяет тип средства ведения журнала, используемого в тестах.
+
+Теперь создайте новый класс в проекте *functions. Tests* с именем **TestFactory.CS** и введите следующий код:
 
 ```csharp
 using Microsoft.AspNetCore.Http;
@@ -161,12 +163,11 @@ namespace Functions.Tests
             return qs;
         }
 
-        public static DefaultHttpRequest CreateHttpRequest(string queryStringKey, string queryStringValue)
+        public static HttpRequest CreateHttpRequest(string queryStringKey, string queryStringValue)
         {
-            var request = new DefaultHttpRequest(new DefaultHttpContext())
-            {
-                Query = new QueryCollection(CreateDictionary(queryStringKey, queryStringValue))
-            };
+            var context = new DefaultHttpContext();
+            var request = context.Request;
+            request.Query = new QueryCollection(CreateDictionary(queryStringKey, queryStringValue));
             return request;
         }
 
@@ -188,17 +189,18 @@ namespace Functions.Tests
     }
 }
 ```
+
 Класс `TestFactory` реализует следующие элементы.
 
 - **Данные**. это свойство возвращает коллекцию образцов данных [IEnumerable](https://docs.microsoft.com/dotnet/api/system.collections.ienumerable) . Пары "ключ-значение" представляют собой значения, которые передаются в строку запроса.
 
-- **Креатедиктионари**: Этот метод принимает пару "ключ-значение" в качестве аргументов и возвращает `Dictionary` новый объект, `QueryCollection` используемый для представления значений строки запроса.
+- **Креатедиктионари**: Этот метод принимает пару "ключ-значение" в качестве аргументов и возвращает новый объект, `Dictionary` используемый для `QueryCollection` представления значений строки запроса.
 
 - **Креатехттпрекуест**. Этот метод создает HTTP-запрос, инициализируемый с помощью заданных параметров строки запроса.
 
 - **Креателогжер**: в зависимости от типа средства ведения журнала этот метод возвращает класс ведения журнала, используемый для тестирования. `ListLogger` следит за сообщениями в журнале, доступными для оценки в тестах.
 
-Затем **щелкните правой кнопкой мыши** на приложение *Functions.Test* и выберите **Добавить > Класс**, назовите его **FunctionsTests.cs** и введите приведенный ниже код.
+Наконец, создайте новый класс в проекте *functions. Tests* с именем **FunctionsTests.CS** и введите следующий код:
 
 ```csharp
 using Microsoft.AspNetCore.Mvc;
@@ -215,8 +217,8 @@ namespace Functions.Tests
         public async void Http_trigger_should_return_known_string()
         {
             var request = TestFactory.CreateHttpRequest("name", "Bill");
-            var response = (OkObjectResult)await HttpTrigger.Run(request, logger);
-            Assert.Equal("Hello, Bill", response.Value);
+            var response = (OkObjectResult)await MyHttpTrigger.Run(request, logger);
+            Assert.Equal("Hello, Bill. This HTTP triggered function executed successfully.", response.Value);
         }
 
         [Theory]
@@ -224,21 +226,22 @@ namespace Functions.Tests
         public async void Http_trigger_should_return_known_string_from_member_data(string queryStringKey, string queryStringValue)
         {
             var request = TestFactory.CreateHttpRequest(queryStringKey, queryStringValue);
-            var response = (OkObjectResult)await HttpTrigger.Run(request, logger);
-            Assert.Equal($"Hello, {queryStringValue}", response.Value);
+            var response = (OkObjectResult)await MyHttpTrigger.Run(request, logger);
+            Assert.Equal($"Hello, {queryStringValue}. This HTTP triggered function executed successfully.", response.Value);
         }
 
         [Fact]
         public void Timer_should_log_message()
         {
             var logger = (ListLogger)TestFactory.CreateLogger(LoggerTypes.List);
-            TimerTrigger.Run(null, logger);
+            MyTimerTrigger.Run(null, logger);
             var msg = logger.Logs[0];
             Assert.Contains("C# Timer trigger function executed at", msg);
         }
     }
 }
 ```
+
 В этом классе реализованы следующие элементы.
 
 - **Http_trigger_should_return_known_string**: этот тест создает запрос со значениями строки запроса `name=Bill` к функции HTTP и проверяет, возвращен ли ожидаемый ответ.
@@ -249,7 +252,7 @@ namespace Functions.Tests
 
 Если вы хотите получить доступ к параметрам приложения в тестах, можно использовать [System. Environment. GetEnvironmentVariable](./functions-dotnet-class-library.md#environment-variables).
 
-### <a name="run-tests"></a>Выполнение тестов
+### <a name="run-tests"></a>Выполнить тесты
 
 Чтобы выполнить тесты, перейдите в **Обозреватель тестов** и щелкните **Запустить все**.
 
@@ -265,18 +268,20 @@ namespace Functions.Tests
 
 ![Тестирование Функций Azure с помощью JavaScript в VS Code](./media/functions-test-a-function/azure-functions-test-vs-code-jest.png)
 
-### <a name="setup"></a>Настройка
+### <a name="setup"></a>Установка
 
 Для настройки среды инициализируйте новое приложение Node.js в пустой папке, запустив `npm init`.
 
 ```bash
 npm init -y
 ```
+
 Затем установите Jest, выполнив следующую команду.
 
 ```bash
 npm i jest
 ```
+
 Теперь обновите _package.json_, чтобы заменить существующую тестовую команду приведенной ниже командой.
 
 ```bash
@@ -286,6 +291,7 @@ npm i jest
 ```
 
 ### <a name="create-test-modules"></a>Создание модулей тестирования
+
 Благодаря инициализации проекта можно создать модули для запуска автоматических тестов. Для начала создайте новую папку с именем *testing* для хранения модулей поддержки.
 
 В папке *testing* добавьте новый файл, присвойте ему имя **defaultContext.js** и добавьте приведенный ниже код.
@@ -295,6 +301,7 @@ module.exports = {
     log: jest.fn()
 };
 ```
+
 Этот модуль имитирует функцию *log*, чтобы предоставить контекст выполнения по умолчанию.
 
 Затем добавьте новый файл, присвойте ему имя **defaultTimer.js** и добавьте следующий код.
@@ -307,7 +314,7 @@ module.exports = {
 
 Этот модуль реализует свойство `IsPastDue`, чтобы установить его как ложный экземпляр таймера. Такие конфигурации таймера, как выражения НКРОНТАБ, не требуются здесь, так как тестовая программа просто вызывает функцию напрямую для проверки результата.
 
-Затем используйте расширение Функций VS Code, чтобы [создать новую Функцию JavaScript HTTP](/azure/javascript/tutorial-vscode-serverless-node-01), и присвойте ей имя *HttpTrigger*. Создав функцию, добавьте новый файл в той же папке с именем **index.test.js** и приведенный ниже код.
+Затем используйте расширение Функций VS Code, чтобы [создать новую Функцию JavaScript HTTP](/azure/developer/javascript/tutorial-vscode-serverless-node-01), и присвойте ей имя *HttpTrigger*. Создав функцию, добавьте новый файл в той же папке с именем **index.test.js** и приведенный ниже код.
 
 ```javascript
 const httpFunction = require('./index');
@@ -325,6 +332,7 @@ test('Http trigger should return known text', async () => {
     expect(context.res.body).toEqual('Hello Bill');
 });
 ```
+
 Функция HTTP на основе шаблона возвращает строку "Hello", сцепленную с именем, указанным в строке запроса. Ложный экземпляр запроса создается этим тестом и передается функции HTTP. Тест проверяет, что метод *log* вызывается один раз, и возвращенный текст приравнивается к "Hello Bill".
 
 Затем используйте расширение Функций VS Code, чтобы создать новую Функцию таймера JavaScript, и присвойте ей имя *TimerTrigger*. Создав функцию, добавьте новый файл в той же папке с именем **index.test.js** и приведенный ниже код.
@@ -339,9 +347,11 @@ test('Timer trigger should log message', () => {
     expect(context.log.mock.calls.length).toBe(1);
 });
 ```
+
 Функция таймера из шаблона записывает сообщение в конце основной части функции. Этот тест гарантирует, что функцию *log* вызывают один раз.
 
-### <a name="run-tests"></a>Выполнение тестов
+### <a name="run-tests"></a>Выполнить тесты
+
 Для выполнения тестов нажмите клавиши **CTRL + ~**, чтобы открыть командное окно, и запустите `npm test`.
 
 ```bash
@@ -370,9 +380,10 @@ npm test
 
 Затем в тесте установите точку останова и нажмите клавишу **F5**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы узнали, как записывать автоматизированные тесты для функций, изучите следующие ресурсы.
+
 - [Запуск функции, не активируемой HTTP-запросом, вручную](./functions-manually-run-non-http.md)
 - [Обработка ошибок службы "Функции Azure"](./functions-bindings-error-pages.md)
 - [Локальная отладка триггера Сетки событий для функций Azure](./functions-debug-event-grid-trigger-local.md)

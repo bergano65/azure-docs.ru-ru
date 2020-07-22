@@ -14,15 +14,14 @@ ms.topic: article
 ms.date: 09/20/2019
 ms.author: juliako
 ms.openlocfilehash: 2268c074480f99ca23117ca2ffd2c87c1dbb10a2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76513241"
 ---
 # <a name="migrate-from-media-indexer-and-media-indexer-2-to-video-indexer"></a>Миграция из индексатора мультимедиа и индексатора мультимедиа 2 в индексатор видео
 
-Процессор [Azure Media indexer](media-services-index-content.md) media и [Azure Media indexer 2 Preview](media-services-process-content-with-indexer2.md) обработчики мультимедиа выводятся из эксплуатации. Сведения о датах выбытия см. в разделе об [устаревших компонентах](legacy-components.md) . [Индексатор видео служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/video-indexer/) заменяет эти устаревшие обработчики мультимедиа.
+Процессор [Azure Media indexer](media-services-index-content.md) media и [Azure Media indexer 2 Preview](media-services-process-content-with-indexer2.md) обработчики мультимедиа выводятся из эксплуатации. Даты прекращения поддержки см. в разделе, посвященном [устаревшим компонентам](legacy-components.md). Вместо этих устаревших компонентов теперь используется [Индексатор видео Служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/video-indexer/).
 
 Индексатор видео служб мультимедиа Azure создан на основе Аналитика мультимедиа Azure, Когнитивный поиск Azure Cognitive Services (например, API распознавания лиц, Microsoft Translator, API компьютерного зрения и службы Пользовательское распознавание речи). Индексатор видео позволяет извлекать аналитические сведения из видеоматериалов с помощью видео- и аудиомоделей. Чтобы узнать, в каких сценариях можно использовать индексатор видео, какие функции он предлагает и как приступить к работе, см. статью [видео и звуковые модели индексатора видео](../video-indexer/video-indexer-overview.md). 
 
@@ -77,9 +76,9 @@ API служб мультимедиа Azure v3 позволяет извлека
 
 ## <a name="need-help"></a>Требуется помощь?
 
-Вы можете отправить запрос в службу поддержки, перейдя к [новому запросу в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest) .
+Вы можете открыть запрос в службу поддержки, перейдя к разделу [нового запроса на техническую поддержку](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Устаревшие компоненты](legacy-components.md)
 * [Страница цен](https://azure.microsoft.com/pricing/details/media-services/#encoding)

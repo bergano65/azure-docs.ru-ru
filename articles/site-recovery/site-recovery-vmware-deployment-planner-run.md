@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 4/15/2019
 ms.author: mayg
-ms.openlocfilehash: 044e5c5df8e0af67e4717b864de1e31fc2520408
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 308958f00a3658196f124ac911d4d0195ebeb228
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "73953282"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86119843"
 ---
 # <a name="run-the-deployment-planner-for-vmware-disaster-recovery"></a>Запуск Планировщик развертывания аварийного восстановления VMware
 В этой статье приведены рекомендации по использованию планировщика развертывания Azure Site Recovery в сценариях рабочих развертываний виртуальных машин VMware в Azure.
@@ -40,18 +40,24 @@ ms.locfileid: "73953282"
 2. Откройте консоль VMware vSphere PowerCLI.
 3. Проверьте, включена ли политика выполнения скрипта. Если отключена, запустите консоль VMware vSphere PowerCLI в режиме администратора и включите ее, выполнив следующую команду:
 
-            Set-ExecutionPolicy –ExecutionPolicy AllSigned
+    ```powershell
+    Set-ExecutionPolicy –ExecutionPolicy AllSigned
+    ```
 
 4. Если Connect-VIServer не распознается как имя командлета, вам может потребоваться выполнить следующую команду:
 
-            Add-PSSnapin VMware.VimAutomation.Core
+    ```powershell
+    Add-PSSnapin VMware.VimAutomation.Core
+    ```
 
 5. Чтобы получить список всех имен виртуальных машин на сервере vCenter Server или узле vSphere ESXi и сохранить их в TXT-файле, выполните приведенные ниже команды.
 Замените значения &lsaquo;имени сервера&rsaquo;, &lsaquo;имени пользователя&rsaquo;, &lsaquo;пароля&rsaquo; и &lsaquo;выходного TXT-файла&rsaquo; собственными.
 
-            Connect-VIServer -Server <server name> -User <user name> -Password <password>
+    ```powershell
+    Connect-VIServer -Server <server name> -User <user name> -Password <password>
 
-            Get-VM |  Select Name | Sort-Object -Property Name >  <outputfile.txt>
+    Get-VM |  Select Name | Sort-Object -Property Name >  <outputfile.txt>
+    ```
 
 6. Откройте выходной файл в Блокноте. Скопируйте имена виртуальных машин, профилирование которых необходимо выполнить, в другой файл (например, в файл ProfileVMList.txt) по одному на строку. Этот файл используется в качестве входного значения параметра *-VMListFile* в программе командной строки.
 
@@ -95,7 +101,7 @@ ASRDeploymentPlanner.exe -Operation StartProfiling /?
 <!-- Maximum number of vms supported-->
 <add key="MaxVmsSupported" value="1000"/>
 ```
-Используя параметры по умолчанию, для профилирования, например, 1500 виртуальных машин создайте два файла VMList.txt. Один файл должен содержать 1000 виртуальных машин, а второй — 500. Запустите два экземпляра Планировщик развертывания Azure Site Recovery: один с списком vmlist1. txt, а другой — с списком vmlist2. txt. Профилируемые данные обеих виртуальных машин VMList можно хранить в одной папке.
+Используя параметры по умолчанию, для профилирования, например, 1500 виртуальных машин создайте два файла VMList.txt. Один файл должен содержать 1000 виртуальных машин, а второй — 500. Запустите два экземпляра Планировщик развертывания Azure Site Recovery, один с VMList1.txt и другой с VMList2.txt. Профилируемые данные обеих виртуальных машин VMList можно хранить в одной папке.
 
 Мы убедились, что в зависимости от конфигурации оборудования (особенно в зависимости от размера ОЗУ сервера, на котором запускается средство для создания отчетов), операция может завершиться ошибкой из-за нехватки памяти. При наличии хорошего оборудования можно увеличить значение параметра MaxVMsSupported.  
 

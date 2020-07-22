@@ -6,13 +6,13 @@ author: vhorne
 ms.service: firewall
 ms.date: 4/10/2019
 ms.author: victorh
-ms.topic: conceptual
-ms.openlocfilehash: 7f48012ca1f97c2e28380d95da37863c4bc17f63
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.topic: how-to
+ms.openlocfilehash: 50d870590fa6b8351838af9cb91b7be39b8d30db
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "73831839"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85610665"
 ---
 # <a name="deploy-and-configure-azure-firewall-using-azure-powershell"></a>Развертывание и настройка брандмауэра Azure с помощью Azure PowerShell
 
@@ -177,7 +177,7 @@ $AppRule1 = New-AzFirewallApplicationRule -Name Allow-Google -SourceAddress 10.0
 $AppRuleCollection = New-AzFirewallApplicationRuleCollection -Name App-Coll01 `
   -Priority 200 -ActionType Allow -Rule $AppRule1
 
-$Azfw.ApplicationRuleCollections = $AppRuleCollection
+$Azfw.ApplicationRuleCollections.Add($AppRuleCollection)
 
 Set-AzFirewall -AzureFirewall $Azfw
 ```
@@ -195,7 +195,7 @@ $NetRule1 = New-AzFirewallNetworkRule -Name "Allow-DNS" -Protocol UDP -SourceAdd
 $NetRuleCollection = New-AzFirewallNetworkRuleCollection -Name RCNet01 -Priority 200 `
    -Rule $NetRule1 -ActionType "Allow"
 
-$Azfw.NetworkRuleCollections = $NetRuleCollection
+$Azfw.NetworkRuleCollections.Add($NetRuleCollection)
 
 Set-AzFirewall -AzureFirewall $Azfw
 ```
@@ -241,7 +241,7 @@ $NIC | Set-AzNetworkInterface
    Invoke-WebRequest -Uri https://www.microsoft.com
    ```
 
-   `www.google.com` Запросы должны выполняться успешно, и `www.microsoft.com` запросы должны завершаться ошибкой. Это показывает, что правила брандмауэра работают должным образом.
+   `www.google.com`Запросы должны выполняться успешно, и `www.microsoft.com` запросы должны завершаться ошибкой. Это показывает, что правила брандмауэра работают должным образом.
 
 Итак, теперь вы убедились в том, что правила брандмауэра работают:
 
@@ -258,4 +258,4 @@ Remove-AzResourceGroup -Name Test-FW-RG
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Руководство. Журналы мониторинга брандмауэра Azure](./tutorial-diagnostics.md)
+* [Руководство. Мониторинг журналов и метрик Брандмауэра Azure](./tutorial-diagnostics.md)

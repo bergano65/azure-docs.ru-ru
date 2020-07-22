@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 12/02/2019
-ms.openlocfilehash: 50bcd42189b1bcc945d726277975892f07f1baa1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 827c1954456ee7943c48525919ed411836f610aa
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78255533"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86114029"
 ---
 # <a name="choose-the-right-mysql-server-option-in-azure"></a>Выбор правильного сервера MySQL в Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "78255533"
 
 Основные различия между этими вариантами показаны в приведенной ниже таблице.
 
-|            | База данных Azure для MySQL | MySQL на виртуальных машинах Azure    |
+| attribute          | База данных Azure для MySQL | MySQL на виртуальных машинах Azure    |
 |:-------------------|:-----------------------------|:--------------------|
 | Соглашение об уровне обслуживания (SLA)                | Предлагает соглашение об уровне обслуживания для уровня доступности 99,99%| До 99,95% доступности с двумя или более экземплярами в одной группе доступности.<br/><br/>доступность на 99,9% для виртуальной машины с одним экземпляром, использующей хранилище класса Premium.<br/><br/>99,99% использования Зоны доступности с несколькими экземплярами в нескольких группах доступности.<br/><br/>Ознакомьтесь с [соглашением об уровне обслуживания виртуальных машин](https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_8/). |
 | Установка исправлений операционной системы        | Автоматически  | Управляется клиентами |
@@ -99,7 +99,7 @@ ms.locfileid: "78255533"
 
   Поскольку нет необходимости изменять уровни представления, приложения и данных, вы экономите время и бюджеты при изменении архитектуры существующего решения. Вместо этого вы можете сосредоточиться на переносе всех ваших решений в Azure и устранении некоторых оптимизаций производительности, которые могут потребоваться для платформы Azure.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. [цены на базу данных Azure для MySQL](https://azure.microsoft.com/pricing/details/MySQL/).
 * Начните с [создания первого сервера](https://docs.microsoft.com/azure/MySQL/quickstart-create-MySQL-server-database-using-azure-portal).

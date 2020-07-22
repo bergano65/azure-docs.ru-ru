@@ -5,12 +5,12 @@ author: KarlErickson
 ms.author: karler
 ms.topic: quickstart
 ms.date: 02/26/2020
-ms.openlocfilehash: 561c45bd13648f5f17273b478f320e9fd3d71331
-ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
+ms.openlocfilehash: 87a4741ea8a64445c10c73bb1204aef1a2fcfaaf
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82857592"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86248804"
 ---
 # <a name="quickstart-build-and-push-java-container-images-to-azure-container-registry"></a>Краткое руководство. Сборка и отправка образов контейнера Java в Реестр контейнеров Azure
 
@@ -177,4 +177,4 @@ docker pull <your registry name>.azurecr.io/gs-spring-boot-docker
 * [Spring Boot on Docker Getting Started](https://spring.io/guides/gs/spring-boot-docker)
 * [Spring Initializr](https://start.spring.io)
 * [Развертывание приложения Spring Boot Application в службе приложений Azure](/azure/developer/java/spring-framework/deploy-spring-boot-java-app-from-container-registry-using-maven-plugin)
-* [Применение пользовательского образа Docker для веб-приложения Azure на платформе Linux](/azure/app-service-web/app-service-linux-using-custom-docker-image)
+* [Применение пользовательского образа Docker для веб-приложения Azure на платформе Linux](../app-service/containers/tutorial-custom-docker-image.md)

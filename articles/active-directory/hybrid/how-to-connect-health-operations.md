@@ -11,16 +11,16 @@ ms.subservice: hybrid
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 07/18/2017
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ef908429d359020282920d73480a472bfde0aa60
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 5cc7c256ca6866e5b981f8740c9953534d830316
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79261519"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85359166"
 ---
 # <a name="azure-active-directory-connect-health-operations"></a>Операции Azure Active Directory Connect Health
 В этой статье описаны различные операции, которые можно выполнить с помощью Azure Active Directory (Azure AD) Connect Health.
@@ -74,7 +74,7 @@ Azure AD Connect Health для службы федерации Active Directory 
 2. В колонке **Сервер** на панели действий нажмите кнопку **Удалить**.
 ![Снимок экрана удаления сервера Azure AD Connect Health](./media/how-to-connect-health-operations/DeleteServer2.png)
 3. Подтвердите удаление. Для этого введите имя сервера в поле подтверждения.
-4. Щелкните **Удалить**.
+4. Щелкните **Delete** (Удалить).
 
 Azure AD Connect Health для доменных служб Azure Active Directory:
 
@@ -82,7 +82,7 @@ Azure AD Connect Health для доменных служб Azure Active Director
 2. Выберите контроллер домена, который нужно удалить.
 3. На панели действий нажмите кнопку **Удалить выбранные**.
 4. Подтвердите операцию удаления сервера.
-5. Щелкните **Удалить**.
+5. Щелкните **Delete** (Удалить).
 
 ### <a name="delete-a-service-instance-from-azure-ad-connect-health-service"></a>Удаление экземпляра службы из службы Azure AD Connect Health
 В некоторых случаях может потребоваться удалить экземпляр службы. Здесь приведены сведения по удалению экземпляра службы из службы Azure AD Connect Health.
@@ -99,7 +99,7 @@ Azure AD Connect Health для доменных служб Azure Active Director
 2. В колонке **Служба** на панели действий нажмите кнопку **Удалить**. 
 ![Снимок экрана удаления службы Azure AD Connect Health](./media/how-to-connect-health-operations/DeleteServer.png)
 3. Подтвердите удаление. Для этого введите имя сервера в поле подтверждения (например, sts.contoso.com).
-4. Щелкните **Удалить**.
+4. Щелкните **Delete** (Удалить).
    <br><br>
 
 [//]: # (Начало раздела RBAC)
@@ -136,9 +136,9 @@ Azure AD Connect Health поддерживает управление досту
 2. Выберите **Добавить**.
 3. В области **Выбор роли** выберите роль (например, **Владелец**).<br>
    ![Снимок экрана окна "Пользователи" компонента управления доступом на основе ролей в Azure AD Connect Health](./media/how-to-connect-health-operations/RBAC_add.png)
-4. Введите имя или идентификатор целевого пользователя или целевой группы. Одновременно можно выбрать сразу несколько пользователей или групп. Щелкните **Выбрать**.
+4. Введите имя или идентификатор целевого пользователя или целевой группы. Одновременно можно выбрать сразу несколько пользователей или групп. Нажмите кнопку **Выбрать**.
    ![Снимок экрана окна "Пользователи" компонента управления доступом на основе ролей в Azure AD Connect Health](./media/how-to-connect-health-operations/RBAC_select_users.png)
-5. Нажмите кнопку **OK**.<br>
+5. Нажмите кнопку **ОК**.<br>
 6. После назначения ролей пользователи и группы отобразятся в списке.<br>
    ![Снимок экрана окна "Пользователи" компонента управления доступом на основе ролей в Azure AD Connect Health с выделенными новыми пользователями](./media/how-to-connect-health-operations/RBAC_user_list.png)
 

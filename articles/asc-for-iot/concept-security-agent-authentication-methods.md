@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 07/23/2019
 ms.author: mlottner
 ms.openlocfilehash: 0d9d51292c3cae9634af917819b558cdfd2fa04b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81311514"
 ---
 # <a name="security-agent-authentication-methods"></a>Методы проверки подлинности агента безопасности
@@ -57,13 +57,13 @@ ms.locfileid: "81311514"
 При [развертывании агента безопасности](how-to-deploy-agent.md)в качестве аргументов должны быть предоставлены сведения о проверке подлинности.
 Эти аргументы описаны в следующей таблице.
 
-|Имя параметра Linux | Имя параметра Windows | Сокращенный параметр |Описание|Элемент Options|
+|Имя параметра Linux | Имя параметра Windows | Сокращенный параметр |Описание|Параметры|
 |---------------------|---------------|---------|---------------|---------------|
 |Проверка подлинности — удостоверение|аусентикатионидентити|ауи|Удостоверение проверки подлинности| **Секуритимодуле** или **устройство**|
 |authentication-method|AuthenticationMethod|аум|Метод проверки подлинности|**SymmetricKey** или **SelfSignedCertificate**|
 |путь к файлу|FilePath|f|Абсолютный полный путь к файлу, содержащему сертификат или симметричный ключ| |
-|имя узла|HostName|hn|Полное доменное имя центра Интернета вещей|Пример: ContosoIotHub.azure-devices.net|
-|идентификатор устройства|DeviceId|Di|Идентификатор устройства.|Пример: MyDevice1|
+|имя узла|HostName|HN|Полное доменное имя центра Интернета вещей|Пример: ContosoIotHub.azure-devices.net|
+|идентификатор устройства|deviceId|Di|Идентификатор устройства.|Пример: MyDevice1|
 |тип сертификата-Location|цертификателокатионкинд|CL|Расположение хранилища сертификатов|**Локальный_файл** или **магазин**|
 |
 
@@ -77,7 +77,7 @@ ms.locfileid: "81311514"
 
 ### <a name="c-based-security-agent"></a>Агент безопасности на основе C#
 
-Измените _файл Authentication. config_ со следующими параметрами:
+Измените _Authentication.config_ со следующими параметрами:
 
 ```xml
 <Authentication>
@@ -92,7 +92,7 @@ ms.locfileid: "81311514"
 
 ### <a name="c-based-security-agent"></a>Агент безопасности на основе C
 
-Измените _локалконфигуратион. JSON_ со следующими параметрами:
+Измените _LocalConfiguration.js_ со следующими параметрами:
 
 ```json
 "Authentication" : {
@@ -104,7 +104,7 @@ ms.locfileid: "81311514"
 }
 ```
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - [Обзор агентов безопасности](security-agent-architecture.md)
 - [Развертывание агента безопасности](how-to-deploy-agent.md)

@@ -11,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein
 ms.date: 07/03/2019
-ms.openlocfilehash: 1a46cb537892d4255fd274b5754ab8e8c0278308
-ms.sourcegitcommit: 318d1bafa70510ea6cdcfa1c3d698b843385c0f6
+ms.openlocfilehash: 5468cfc733b037f6287e8536c8c85994f0840161
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83774461"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86231261"
 ---
 # <a name="use-cli-to-restore-a-managed-instance-database-to-another-geo-region"></a>Восстановление Управляемого экземпляра базы данных в другом географическом регионе с помощью CLI
 
@@ -28,7 +28,7 @@ ms.locfileid: "83774461"
 
 ### <a name="prerequisites"></a>Предварительные требования
 
-Наличие пары управляемых экземпляров. См. сведения о [создании управляемого экземпляра Базы данных SQL Azure с помощью Azure CLI](sql-database-create-configure-managed-instance-cli.md).
+Наличие пары управляемых экземпляров. Ознакомьтесь со сведениями о [создании Управляемого экземпляра SQL Azure с помощью Azure CLI](sql-database-create-configure-managed-instance-cli.md).
 
 ### <a name="sign-in-to-azure"></a>Вход в Azure
 
@@ -56,7 +56,7 @@ az sql midb restore -g $resource --mi $instance -n $managedDatabase --dest-name 
 
 Этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| | |
+| Скрипт | Описание |
 |---|---|
 | [az sql midb](/cli/azure/sql/midb) | Команды базы данных управляемого экземпляра |
 
@@ -64,4 +64,4 @@ az sql midb restore -g $resource --mi $instance -n $managedDatabase --dest-name 
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 
-Дополнительные примеры сценариев интерфейса командной строки для Базы данных SQL Azure см. в [документации по Базе данных SQL](../sql-database-cli-samples.md).
+Дополнительные примеры сценариев интерфейса командной строки для Базы данных SQL Azure см. в [документации по Базе данных SQL](../../azure-sql/database/az-cli-script-samples-content-guide.md).

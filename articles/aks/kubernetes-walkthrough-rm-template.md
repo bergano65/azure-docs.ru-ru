@@ -5,16 +5,16 @@ services: container-service
 ms.topic: quickstart
 ms.date: 04/19/2019
 ms.custom: mvc,subject-armqs
-ms.openlocfilehash: bbe5d9ac21ae9e03d629a1667567a915c8653a8a
-ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
+ms.openlocfilehash: cc71603add2caeb277f8083d292832a374a95544
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81602664"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86251541"
 ---
-# <a name="quickstart-deploy-an-azure-kubernetes-service-aks-cluster-using-an-azure-resource-manager-template"></a>Краткое руководство. Развертывание кластера Службы Azure Kubernetes (AKS) с использованием шаблона Azure Resource Manager
+# <a name="quickstart-deploy-an-azure-kubernetes-service-aks-cluster-using-an-arm-template"></a>Краткое руководство. Развертывание кластера Службы Azure Kubernetes (AKS) с помощью шаблона ARM
 
-Служба Azure Kubernetes (AKS) — это управляемая служба Kubernetes, которая позволяет быстро развертывать кластеры и управлять ими. В этом кратком руководстве вы развернете кластер AKS с использованием шаблона Azure Resource Manager. Затем в кластере будет запущено многоконтейнерное приложение, которое включает в себя веб-интерфейс и экземпляр Redis.
+Служба Azure Kubernetes (AKS) — это управляемая служба Kubernetes, которая позволяет быстро развертывать кластеры и управлять ими. В этом кратком руководстве показано, как развернуть кластер AKS с использованием шаблона Azure Resource Manager (шаблон ARM). Затем в кластере будет запущено многоконтейнерное приложение, которое включает в себя веб-интерфейс и экземпляр Redis.
 
 ![Изображение перехода к приложению Azure для голосования](media/container-service-kubernetes-walkthrough/azure-voting-application.png)
 
@@ -22,7 +22,9 @@ ms.locfileid: "81602664"
 
 В этом руководстве предполагается, что у вас есть некоторое представление о функциях Kubernetes. Дополнительные сведения см. в статье [Ключевые концепции Kubernetes для службы Azure Kubernetes (AKS)][kubernetes-concepts].
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-aks%2Fazuredeploy.json)
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -30,7 +32,9 @@ ms.locfileid: "81602664"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы создать кластер AKS с использованием шаблона Resource Manager, укажите открытый ключ SSH и субъект-службу Azure Active Directory.  Кроме того, для разрешений можно использовать [управляемое удостоверение](use-managed-identity.md) вместо субъекта-службы. Если вам требуется один из этих ресурсов, следуйте инструкциям из следующего раздела. В противном случае перейдите к разделу [Создание кластера AKS](#create-an-aks-cluster).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+
+Чтобы создать кластер AKS с использованием шаблона Resource Manager, укажите открытый ключ SSH и субъект-службу Azure Active Directory. Кроме того, для разрешений можно использовать [управляемое удостоверение](use-managed-identity.md) вместо субъекта-службы. Если вам требуется один из этих ресурсов, выполните инструкции из следующего раздела. В противном случае перейдите к разделу [Изучение шаблона](#review-the-template).
 
 ### <a name="create-an-ssh-key-pair"></a>Создание пары ключей SSH
 
@@ -68,9 +72,7 @@ az ad sp create-for-rbac --skip-assignment
 
 Запишите значения параметров *appId* и *password*. Эти значения используются в приведенных далее действиях.
 
-## <a name="create-an-aks-cluster"></a>Создание кластера AKS
-
-### <a name="review-the-template"></a>Изучение шаблона
+## <a name="review-the-template"></a>Изучение шаблона
 
 Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-aks/).
 
@@ -78,7 +80,7 @@ az ad sp create-for-rbac --skip-assignment
 
 Дополнительные примеры AKS см. на странице [Шаблоны быстрого запуска Azure][aks-quickstart-templates].
 
-### <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="deploy-the-template"></a>Развертывание шаблона
 
 1. Выберите следующее изображение, чтобы войти на портал Azure и открыть шаблон.
 
@@ -303,7 +305,7 @@ az group delete --name myResourceGroup --yes --no-wait
 [kubectl]: https://kubernetes.io/docs/user-guide/kubectl/
 [kubectl-apply]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply
 [kubectl-get]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get
-[azure-dev-spaces]: https://docs.microsoft.com/azure/dev-spaces/
+[azure-dev-spaces]: ../dev-spaces/index.yml
 [aks-quickstart-templates]: https://azure.microsoft.com/resources/templates/?term=Azure+Kubernetes+Service
 
 <!-- LINKS - internal -->

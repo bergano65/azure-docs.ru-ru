@@ -5,21 +5,21 @@ author: vturecek
 ms.topic: conceptual
 ms.date: 07/10/2019
 ms.author: vturecek
-ms.openlocfilehash: a6e4fb48653572139463738c82de632ff7d55074
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c2ee5df9f0b09e30212f61e804e24086874f07f5
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75466250"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86256277"
 ---
 # <a name="getting-started-with-reliable-actors"></a>Приступая к работе с Reliable Actors
 > [!div class="op_single_selector"]
 > * [C# в Windows](service-fabric-reliable-actors-get-started.md)
-> * [Java в Linux](service-fabric-reliable-actors-get-started-java.md)
+> * [Java в Linux](./service-fabric-create-your-first-linux-application-with-java.md)
 
 В этой статье описывается создание и отладка простого приложения Reliable Actor в Visual Studio. Дополнительные сведения о Reliable Actors см. в статье [Общие сведения о надежных субъектах Service Fabric](service-fabric-reliable-actors-introduction.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Приступая к работе, убедитесь, что на вашем компьютере установлена и настроена среда разработки Service Fabric, включая Visual Studio. Дополнительные сведения см. в разделе [Подготовка среды разработки в Linux](service-fabric-get-started.md).
 
@@ -86,7 +86,7 @@ internal class HelloWorld : Actor, IHelloWorld
 
 Создайте простое консольное приложение для вызова службы субъекта.
 
-1. Щелкните решение правой кнопкой мыши в Обозреватель решений > **Добавить** > **Новый проект..**..
+1. Щелкните решение правой кнопкой мыши в Обозреватель решений > **Добавить**  >  **Новый проект..**..
 
 2. В разделе типов проектов **.NET Core** выберите **Консольное приложение (.NET Core)**.  Назовите проект *ActorClient*.
     
@@ -99,7 +99,7 @@ internal class HelloWorld : Actor, IHelloWorld
     
     ![Свойства сборки][8]
 
-4. Для проекта клиента требуется пакет NuGet для Reliable Actors.  Щелкните **Сервис** > диспетчер**пакетов** > NuGet**консоль диспетчера пакетов**.  В консоли диспетчера пакетов введите следующую команду.
+4. Для проекта клиента требуется пакет NuGet для Reliable Actors.  Щелкните **Сервис**диспетчер  >  **пакетов NuGet**  >  **консоль диспетчера пакетов**.  В консоли диспетчера пакетов введите следующую команду.
     
     ```powershell
     Install-Package Microsoft.ServiceFabric.Actors -IncludePrerelease -ProjectName ActorClient
@@ -107,7 +107,7 @@ internal class HelloWorld : Actor, IHelloWorld
 
     Пакет NuGet и все его зависимости будут установлены в проект ActorClient.
 
-5. В проекте клиента также требуется ссылка на проект интерфейсов.  В проекте ActorClient щелкните правой кнопкой мыши элемент **зависимости** и выберите команду **Добавить ссылку...**.  Выберите **проекты > решение** (если оно еще не выбрано), а затем установите флажок рядом с **HelloWorld. interfaces**.  Нажмите кнопку **ОК**.
+5. В проекте клиента также требуется ссылка на проект интерфейсов.  В проекте ActorClient щелкните правой кнопкой мыши элемент **зависимости** и выберите команду **Добавить ссылку...**.  Выберите **проекты > решение** (если оно еще не выбрано), а затем установите флажок рядом с **HelloWorld. interfaces**.  Нажмите кнопку **OK**.
     
     ![Диалоговое окно "Добавление ссылки"][7]
 

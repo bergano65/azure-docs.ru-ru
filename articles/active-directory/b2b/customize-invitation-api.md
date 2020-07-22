@@ -4,19 +4,19 @@ description: Служба совместной работы Azure Active Directo
 services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
-ms.topic: reference
+ms.topic: how-to
 ms.date: 04/11/2017
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: elisolMS
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3a090ee3f9588ff6bff01e12db469bf04407a7fc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e9f62ece12732c45037bcad328eec162bebb4e6a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79263469"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85387207"
 ---
 # <a name="azure-active-directory-b2b-collaboration-api-and-customization"></a>API службы совместной работы Azure Active Directory B2B и настройка
 
@@ -117,9 +117,9 @@ Get-AzureADUser -Filter "UserState eq 'PendingAcceptance'" | Format-List -Proper
 
 ## <a name="see-also"></a>См. также
 
-Ознакомьтесь с справочником по API приглашения [https://developer.microsoft.com/graph/docs/api-reference/v1.0/resources/invitation](https://developer.microsoft.com/graph/docs/api-reference/v1.0/resources/invitation)в.
+Ознакомьтесь с справочником по API приглашения в [https://developer.microsoft.com/graph/docs/api-reference/v1.0/resources/invitation](https://developer.microsoft.com/graph/docs/api-reference/v1.0/resources/invitation) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Что такое служба совместной работы Azure AD B2B?](what-is-b2b.md)
 - [Элементы сообщения с приглашением в службу совместной работы B2B](invitation-email-elements.md)

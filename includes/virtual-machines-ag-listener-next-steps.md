@@ -4,12 +4,12 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
-ms.openlocfilehash: 27b09ea9cc7ce3cf2559304a26d0c04f3ea30b54
-ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
+ms.openlocfilehash: 70b7a869c8b8147f978987b99b4918f573da6d0f
+ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "67185239"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84014828"
 ---
 Кроме автоматического подключения клиентов к первичной реплике, прослушиватель можно использовать для перенаправления рабочих нагрузок только для чтения на вторичные реплики. Это может повысить производительность и масштабируемость решения в целом. Дополнительные сведения см. в записи блога [Use ReadIntent Routing with Azure AlwaysOn Availability Group Listener](https://go.microsoft.com/fwlink/?LinkId=522515) (Использование маршрутизации ReadIntent с прослушивателем группы доступности AlwaysOn Azure).
 
@@ -18,5 +18,5 @@ ms.locfileid: "67185239"
 > 
 > 
 
-Дополнительные сведения об использовании SQL Server в Azure см. в статье [Приступая к работе с SQL Server в виртуальных машинах Azure](../articles/virtual-machines/windows/sql/virtual-machines-windows-sql-server-iaas-overview.md).
+Дополнительные сведения об использовании SQL Server в Azure см. в статье [Приступая к работе с SQL Server в виртуальных машинах Azure](../articles/azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md).
 

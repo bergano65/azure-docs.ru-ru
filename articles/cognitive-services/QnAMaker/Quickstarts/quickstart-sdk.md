@@ -2,18 +2,19 @@
 title: Краткое руководство. Использование пакета SDK для создания базы знаний и управления ей в QnA Maker
 description: В этом кратком руководстве показано, как создать базу знаний и управлять ею с использованием клиентского пакета SDK.
 ms.topic: quickstart
-ms.date: 04/27/2020
+ms.date: 06/18/2020
+ms.custom: tracking-python
 zone_pivot_groups: programming-languages-set-six
-ms.openlocfilehash: 350020069edc2ae01f1716b1e6166da43054b24b
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: f158fd0f9bfa6b2580e36b6588626afa05d1c19f
+ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82204045"
+ms.lasthandoff: 06/20/2020
+ms.locfileid: "85114557"
 ---
-# <a name="quickstart-create-and-manage-knowledge-base"></a>Краткое руководство. Создание базы знаний и управление ею
+# <a name="quickstart-qna-maker-client-library"></a>Краткое руководство. Клиентская библиотека QnA Maker
 
-Начните использовать клиентскую библиотеку QnA Maker. Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для выполнения базовых задач.  QnA Maker представляет собой службу для отправки вопросов и получения ответов из частично структурированного содержимого, например документов с часто задаваемыми вопросами, URL-адресов и руководств по продуктам.
+Начните использовать клиентскую библиотеку QnA Maker. Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для выполнения базовых задач.
 
 ::: zone pivot="programming-language-csharp"
 [!INCLUDE [Get intent with C# and REST](../includes/quickstart-sdk-csharp.md)]
@@ -27,6 +28,13 @@ ms.locfileid: "82204045"
 [!INCLUDE [Get intent with Python and REST](../includes/quickstart-sdk-python.md)]
 ::: zone-end
 
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Если вы хотите очистить и удалить подписку Cognitive Services, вы можете удалить ресурс или группу ресурсов. При этом удаляются все ресурсы, связанные с ней.
+
+* [Портал](../../cognitive-services-apis-create-account.md#clean-up-resources)
+* [Azure CLI](../../cognitive-services-apis-create-account-cli.md#clean-up-resources)
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
@@ -35,3 +43,4 @@ ms.locfileid: "82204045"
 * [Что такое QnA Maker?](../Overview/overview.md)
 * [Редактирование базы знаний](../how-to/edit-knowledge-base.md)
 * [Get analytics on your knowledge base](../how-to/get-analytics-knowledge-base.md) (Получение аналитики по своей базе знаний)
+

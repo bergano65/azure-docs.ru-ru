@@ -9,17 +9,17 @@ editor: ''
 ms.assetid: bf23bd89-35b2-4aca-ac7f-68ee02953f31
 ms.service: azure-cdn
 ms.devlang: multiple
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: integration
 ms.date: 01/23/2017
 ms.author: mazha
-ms.openlocfilehash: 6710f5e5b873f751ad21068acdc15d38574f8378
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 65b3d5a29028214a52e6b26430472394c91c6f27
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "67593440"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84887064"
 ---
 # <a name="monitor-the-health-of-azure-cdn-resources"></a>Отслеживание работоспособности ресурсов Azure CDN
   
@@ -60,7 +60,7 @@ ms.locfileid: "67593440"
 |К сожалению, возникли проблемы при загрузке вспомогательного портала. | Обновления состояния см. здесь позже. Если проблему не удается устранить спустя ожидаемый период времени, обратитесь в службу поддержки.|
 К сожалению, возникли проблемы с некоторыми поставщиками CDN. | Обновления состояния см. здесь позже. Если проблему не удается устранить спустя ожидаемый период времени, обратитесь в службу поддержки. |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Ознакомьтесь с обзором службы работоспособности ресурсов Azure](../resource-health/resource-health-overview.md).
 - [Узнайте, как устранить неполадки со сжатием CDN](./cdn-troubleshoot-compression.md).

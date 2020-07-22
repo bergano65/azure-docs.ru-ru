@@ -4,17 +4,17 @@ description: VPN-подключение P2S можно использовать 
 services: vpn-gateway
 author: anzaman
 ms.service: virtual-wan
-ms.topic: conceptual
-ms.date: 03/27/2020
+ms.topic: how-to
+ms.date: 06/26/2020
 ms.author: alzam
-ms.openlocfilehash: edb509d43742aeecf74107ae8cb625aeafbccb9f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: bf507ff75d88ac4c549233e50a44ea60ab212886
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80385627"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85482995"
 ---
-# <a name="configure-a-vpn-client-for-p2s-openvpn-protocol-connections-azure-ad-authentication"></a>Настройка VPN-клиента для подключений по протоколу P2S Опенвпн: проверка подлинности Azure AD
+# <a name="configure-a-vpn-client-for-p2s-openvpn-protocol-connections-azure-ad-authentication"></a>Настройка VPN-клиента для подключений "точка — сеть" по протоколу OpenVPN. Аутентификация Azure AD
 
 Эта статья поможет настроить VPN-клиент для подключения к виртуальной сети с помощью VPN типа "точка — сеть" и Azure Active Directory проверки подлинности. Прежде чем можно будет подключиться и пройти проверку подлинности с помощью Azure AD, необходимо сначала настроить клиент Azure AD. Дополнительные сведения см. в статье [Настройка клиента Azure AD](openvpn-azure-ad-tenant.md).
 
@@ -88,33 +88,33 @@ ms.locfileid: "80385627"
 
 1. Щелкните многоточие рядом с удаляемым клиентским профилем. Затем щелкните **Remove** (Удалить).
 
-    !["Удалить"](./media/openvpn-azure-ad-client/delete/delete1.jpg)
+    ![удалить](./media/openvpn-azure-ad-client/delete/delete1.jpg)
 
 2. Выберите **Remove** (Удалить), чтобы выполнить удаление.
 
-    !["Удалить"](./media/openvpn-azure-ad-client/delete/delete2.jpg)
+    ![удалить](./media/openvpn-azure-ad-client/delete/delete2.jpg)
 
 ## <a name="create-a-connection"></a><a name="connection"></a>Создание подключения
 
-1. На странице выберите **+**, а затем **+ Добавить**.
+1. На странице выберите **+** , а затем **+ Добавить**.
 
-    ![подключение](./media/openvpn-azure-ad-client/create/create1.jpg)
+    ![соединение](./media/openvpn-azure-ad-client/create/create1.jpg)
 
 2. Заполните сведения о подключении. Если вы не уверены в этих значениях, обратитесь к администратору. После заполнения значений выберите **сохранить**.
 
-    ![подключение](./media/openvpn-azure-ad-client/create/create2.jpg)
+    ![соединение](./media/openvpn-azure-ad-client/create/create2.jpg)
 
 3. Выберите **Connect** (Подключиться), чтобы подключиться к VPN.
 
-    ![подключение](./media/openvpn-azure-ad-client/create/create3.jpg)
+    ![соединение](./media/openvpn-azure-ad-client/create/create3.jpg)
 
 4. Выберите правильные учетные данные, а затем нажмите кнопку **продолжить**.
 
-    ![подключение](./media/openvpn-azure-ad-client/create/create4.jpg)
+    ![соединение](./media/openvpn-azure-ad-client/create/create4.jpg)
 
 5. После успешного подключения значок будет зеленым и, например, **подключенным**.
 
-    ![подключение](./media/openvpn-azure-ad-client/create/create5.jpg)
+    ![соединение](./media/openvpn-azure-ad-client/create/create5.jpg)
 
 ### <a name="to-connect-automatically"></a><a name="autoconnect"></a>Автоматическое подключение
 
@@ -122,19 +122,19 @@ ms.locfileid: "80385627"
 
 1. На домашней странице VPN-клиента выберите **параметры VPN**.
 
-    ![авто](./media/openvpn-azure-ad-client/auto/auto1.jpg)
+    ![auto](./media/openvpn-azure-ad-client/auto/auto1.jpg)
 
 2. Выберите **Да** в диалоговом окне переключение приложений.
 
-    ![авто](./media/openvpn-azure-ad-client/auto/auto2.jpg)
+    ![auto](./media/openvpn-azure-ad-client/auto/auto2.jpg)
 
 3. Убедитесь, что подключение, которое вы хотите установить, еще не подключено, затем выделите профиль и установите флажок " **автоматически устанавливать подключение** ".
 
-    ![авто](./media/openvpn-azure-ad-client/auto/auto3.jpg)
+    ![auto](./media/openvpn-azure-ad-client/auto/auto3.jpg)
 
 4. Выберите **Подключиться** , чтобы инициировать VPN-подключение.
 
-    ![авто](./media/openvpn-azure-ad-client/auto/auto4.jpg)
+    ![auto](./media/openvpn-azure-ad-client/auto/auto4.jpg)
 
 ## <a name="diagnose-connection-issues"></a><a name="diagnose"></a>Diagnose connection issues (Диагностика проблем с подключением)
 
@@ -154,11 +154,11 @@ ms.locfileid: "80385627"
 
     ![diagnose](./media/openvpn-azure-ad-client/diagnose/diagnose4.jpg)
 
-## <a name="faq"></a>часто задаваемые вопросы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 
 ### <a name="how-do-i-add-dns-suffixes-to-the-vpn-client"></a>Разделы справки добавить DNS-суффиксы к VPN-клиенту?
 
-Вы можете изменить скачанный XML-файл профиля и добавить теги ** \<днссуффиксес \<>днссуфикс \<>/днссуфикс \<>/днссуффиксес>**
+Вы можете изменить скачанный XML-файл профиля и добавить ** \<dnssuffixes> \<dnssufix> \</dnssufix> \</dnssuffixes> ** Теги.
 
 ```
 <azvpnprofile>
@@ -176,7 +176,7 @@ ms.locfileid: "80385627"
 
 ### <a name="how-do-i-add-custom-dns-servers-to-the-vpn-client"></a>Разделы справки добавить пользовательские DNS-серверы в VPN-клиент?
 
-Вы можете изменить скачанный XML-файл профиля и добавить теги ** \<DnsServers \<>dnsserver \<>/днссервер \<>/днссерверс>**
+Вы можете изменить скачанный XML-файл профиля и добавить ** \<dnsservers> \<dnsserver> \</dnsserver> \</dnsservers> ** Теги.
 
 ```
 <azvpnprofile>
@@ -192,12 +192,12 @@ ms.locfileid: "80385627"
 ```
 
 > [!NOTE]
-> Клиент Azure AD Опенвпн использует записи DNS таблица политики разрешения имен (NRPT) `ipconfig /all`. Это означает, что DNS-серверы не будут перечислены в выходных данных. Чтобы подтвердить использование параметров DNS, обратитесь к разделу [Get-днсклиентнрптполици](https://docs.microsoft.com/powershell/module/dnsclient/get-dnsclientnrptpolicy?view=win10-ps) в PowerShell.
+> Клиент Azure AD Опенвпн использует записи DNS таблица политики разрешения имен (NRPT). Это означает, что DNS-серверы не будут перечислены в выходных данных `ipconfig /all` . Чтобы подтвердить использование параметров DNS, обратитесь к разделу [Get-днсклиентнрптполици](https://docs.microsoft.com/powershell/module/dnsclient/get-dnsclientnrptpolicy?view=win10-ps) в PowerShell.
 >
 
 ### <a name="how-do-i-add-custom-routes-to-the-vpn-client"></a>Разделы справки добавить настраиваемые маршруты к VPN-клиенту?
 
-Вы можете изменить скачанный XML-файл профиля и добавить ** \<инклудераутес>\<маршрут>\<назначение>\<маска> \</Дестинатион>\</Маск>\</рауте>\</инклудераутес>** Tags.
+Вы можете изменить скачанный XML-файл профиля и добавить ** \<includeroutes> \<route> \<destination> \<mask> \</destination> \</mask> \</route> \</includeroutes> ** Теги.
 
 ```
 <azvpnprofile>
@@ -212,10 +212,30 @@ ms.locfileid: "80385627"
 </clientconfig>
 </azvpnprofile>
 ```
+### <a name="how-do-i-direct-all-traffic-to-the-vpn-tunnel-force-tunnel"></a>Разделы справки направить весь трафик в туннель VPN (принудительный туннель)?
+
+Вы можете изменить скачанный XML-файл профиля и добавить ** \<includeroutes> \<route> \<destination> \<mask> \</destination> \</mask> \</route> \</includeroutes> ** Теги.
+
+```
+<azvpnprofile>
+<clientconfig>
+
+    <includeroutes>
+        <route>
+            <destination>0.0.0.0</destination><mask>1</mask>
+        </route>
+        <route>
+            <destination>128.0.0.0</destination><mask>1</mask>
+        </route>
+    </includeroutes>
+    
+</clientconfig>
+</azvpnprofile>
+```
 
 ### <a name="how-do-i-block-exclude-routes-from-the-vpn-client"></a>Разделы справки блокировать (исключить) маршруты от VPN-клиента?
 
-Вы можете изменить скачанный XML-файл профиля и добавить ** \<ексклудераутес>\<маршрут>\<назначение>\<маска> \</Дестинатион>\</Маск>\</рауте>\</ексклудераутес>** Tags.
+Вы можете изменить скачанный XML-файл профиля и добавить ** \<excluderoutes> \<route> \<destination> \<mask> \</destination> \</mask> \</route> \</excluderoutes> ** Теги.
 
 ```
 <azvpnprofile>

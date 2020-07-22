@@ -3,14 +3,14 @@ title: Настройка среды разработки Windows
 description: Установите среду выполнения, пакет SDK и инструменты и создайте локальный кластер разработки. После завершения установки вы сможете создавать приложения на базе Windows.
 author: peterpogorski
 ms.topic: conceptual
-ms.date: 04/20/2020
+ms.date: 06/16/2020
 ms.custom: sfrev
-ms.openlocfilehash: 1b43c838537e46ffbaf6c4adcfb117f6718bd046
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e82c7809f5a6c79b61dc0c6731a696c672f6aa97
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81731756"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86247342"
 ---
 # <a name="prepare-your-development-environment-on-windows"></a>Настройка среды разработки для Windows
 
@@ -23,7 +23,7 @@ ms.locfileid: "81731756"
 
 Чтобы создавать и запускать [приложения Service Fabric][1] на компьютере для разработки Windows, установите среду выполнения Service Fabric, пакет SDK и инструменты. Также необходимо [включить выполнение сценариев Windows PowerShell](#enable-powershell-script-execution) , включенных в пакет SDK.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 ### <a name="supported-operating-system-versions"></a>Поддерживаемые версии операционных систем
 
@@ -31,7 +31,7 @@ ms.locfileid: "81731756"
 
 * Windows 7
 * Windows 8 и Windows 8.1;
-* Windows Server 2012 R2
+* Windows Server 2012 R2
 * Windows Server 2016
 * Windows 10
 
@@ -42,7 +42,7 @@ ms.locfileid: "81731756"
 
 ## <a name="install-the-sdk-and-tools"></a>Установка пакета SDK и инструментов
 
-Установщик веб-платформы (WebPI) — это рекомендуемый способ установки пакета SDK и средств. При получении ошибок, при выполнения с помощью установщика веб-платформы, также можно найти прямые ссылки на средства установки в заметках о выпуске для определенной версии Service Fabric. Заметки о выпуске можно найти в различных объявлениях о выпусках в [блоге команды Service Fabric](https://blogs.msdn.microsoft.com/azureservicefabric/).
+Установщик веб-платформы (WebPI) — это рекомендуемый способ установки пакета SDK и средств. При получении ошибок, при выполнения с помощью установщика веб-платформы, также можно найти прямые ссылки на средства установки в заметках о выпуске для определенной версии Service Fabric. Заметки о выпуске можно найти в различных объявлениях о выпусках в [блоге команды Service Fabric](https://techcommunity.microsoft.com/t5/azure-service-fabric/bg-p/Service-Fabric).
 
 > [!NOTE]
 > Обновления локального кластера разработки Service Fabric не поддерживаются.
@@ -68,8 +68,8 @@ ms.locfileid: "81731756"
 
 Текущие версии:
 
-* Service Fabric SDK и средства 4.1.409
-* 7.1.409 среды выполнения Service Fabric
+* Service Fabric SDK и средства 4.1.416
+* 7.1.417 среды выполнения Service Fabric
 
 Список поддерживаемых версий см. в статье [Поддерживаемые версии Service Fabric](service-fabric-versions.md).
 
@@ -88,7 +88,7 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force -Scope CurrentUser
 
 [Service Fabric — это оркестратор контейнеров](service-fabric-containers-overview.md) для развертывания микрослужб в кластере компьютеров. Для запуска приложений контейнера Windows на локальном кластере разработки необходимо сначала установить Docker для Windows. Скачайте [Docker CE для Windows (стабильная версия)](https://store.docker.com/editions/community/docker-ce-desktop-windows?tab=description). После установки и запуска Docker щелкните правой кнопкой мыши значок в области уведомлений и выберите **Switch to Windows containers** (Переключиться на контейнеры Windows). Это необходимо для запуска образов Docker на базе Windows.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Среда разработки настроена, и вы готовы к созданию и запуску собственных приложений.
 

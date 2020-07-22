@@ -1,5 +1,5 @@
 ---
-title: Руководство по настройке расширения Visual Studio Code
+title: Руководство по настройке расширения Visual Studio Code (предварительная версия)
 titleSuffix: Azure Machine Learning
 description: Сведения о настройке расширения Машинного обучения Azure для Visual Studio Code
 services: machine-learning
@@ -8,15 +8,15 @@ ms.subservice: core
 ms.topic: tutorial
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 04/13/2020
-ms.openlocfilehash: 731ab18346ac9f100862174312c2c9950026f1eb
-ms.sourcegitcommit: 530e2d56fc3b91c520d3714a7fe4e8e0b75480c8
+ms.date: 07/09/2020
+ms.openlocfilehash: 48fb2ce3672634af202500ccb256e7730933fff8
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/14/2020
-ms.locfileid: "81272932"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86199757"
 ---
-# <a name="set-up-azure-machine-learning-visual-studio-code-extension"></a>Настройка расширения Машинного обучения Azure для Visual Studio Code
+# <a name="set-up-azure-machine-learning-visual-studio-code-extension-preview"></a>Настройка расширения Машинного обучения Azure для Visual Studio Code (предварительная версия)
 
 Узнайте, как настраивать расширение Машинного обучения Azure для Visual Studio Code и выполнять скрипты с его помощью.
 
@@ -69,6 +69,9 @@ ms.locfileid: "81272932"
 
 1. Когда развернется палитра команд, следуйте предложенным инструкциям.
 
+    > [!NOTE]
+    > Если у вас есть готовые ресурсы службы "Машинное обучение Azure", см. руководство о [запуске экспериментов в VS Code](./how-to-manage-resources-vscode.md#run-experiment).
+
     1. Выберите подписку Azure.
     1. В списке сред выберите **файл зависимостей Conda**.
     1. Нажмите **ВВОД**, чтобы просмотреть этот файл. Этот файл содержит зависимости, необходимые для выполнения скриптов. В нашем примере это файл `env.yml` в каталоге `mnist-vscode-docs-sample`.
@@ -78,18 +81,18 @@ ms.locfileid: "81272932"
 
     ```json
     {
-        "workspace": "WS04131142",
-        "resourceGroup": "WS04131142-rg1",
+        "workspace": "WS06271500",
+        "resourceGroup": "WS06271500-rg2",
         "location": "South Central US",
-        "experiment": "WS04131142-exp1",
+        "experiment": "WS06271500-exp1",
         "compute": {
-            "name": "WS04131142-com1",
+            "name": "WS06271500-com1",
             "vmSize": "Standard_D1_v2, Cores: 1; RAM: 3.5GB;"
         },
         "runConfiguration": {
-            "filename": "WS04131142-com1-rc1",
+            "filename": "WS06271500-com1-rc1",
             "environment": {
-                "name": "WS04131142-env1",
+                "name": "WS06271500-env1",
                 "conda_dependencies": [
                     "python=3.6.2",
                     "tensorflow=1.15.0",

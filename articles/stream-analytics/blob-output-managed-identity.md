@@ -4,14 +4,14 @@ description: В этой статье описывается, как испол�
 author: cedarbaum
 ms.author: sacedarb
 ms.service: stream-analytics
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/11/2020
-ms.openlocfilehash: 13f48a9e0bc3ed8f8c4d5f1b7da4b6c03f54cdf8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 99b23b65a0ce1693bcd04d5828fe062f2f43ea73
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79129974"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86044232"
 ---
 # <a name="use-managed-identity-to-authenticate-your-azure-stream-analytics-job-to-azure-blob-storage-output"></a>Использование управляемого удостоверения для проверки подлинности задания Azure Stream Analytics в выходных данных хранилища BLOB-объектов Azure
 
@@ -235,7 +235,7 @@ ms.locfileid: "79129974"
 
 4. [Пользователь, которому назначено удостоверение](../active-directory/managed-identities-azure-resources/overview.md) , не поддерживается. Это означает, что пользователь не может ввести собственный субъект-службу, который будет использоваться их Stream Analyticsным заданием. Субъект-служба необходимо создавать с помощью Azure Stream Analytics.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Описание выходных данных из Azure Stream Analytics](./stream-analytics-define-outputs.md)
 * [Секционирование выходных данных пользовательского большого двоичного объекта Azure Stream Analytics](./stream-analytics-custom-path-patterns-blob-storage-output.md)

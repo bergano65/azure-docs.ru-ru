@@ -3,12 +3,12 @@ title: Указание конечных точек службы Service Fabric
 description: В этой статье поясняется, как описать ресурсы конечной точки в манифесте служб, включая настройку конечных точек HTTPS.
 ms.topic: conceptual
 ms.date: 2/23/2018
-ms.openlocfilehash: 88e71d15829e68bde635f5b4d40224b8fa914f40
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 458a10ca118bbb14f22ad9b1ae127c2036573db9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81417597"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85610750"
 ---
 # <a name="specify-resources-in-a-service-manifest"></a>Указание ресурсов в манифесте службы
 ## <a name="overview"></a>Обзор
@@ -52,8 +52,6 @@ ms.locfileid: "81417597"
 
 ## <a name="example-specifying-an-http-endpoint-for-your-service"></a>Пример. Указание конечной точки HTTP для службы
 Следующий манифест служб в элементе &lt;Resources&gt; определяет один ресурс конечной точки TCP и два ресурса конечной точки HTTP.
-
-Service Fabric автоматически создает список управления доступом (ACL) для конечных точек HTTP.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -157,6 +155,8 @@ Service Fabric автоматически создает список управ
 
 Для кластеров Linux **MY** сохраняет значения по умолчанию в папку **/var/lib/sfcerts**.
 
+## <a name="port-acling-for-http-endpoints"></a>Порт адресам для конечных точек HTTP
+Service Fabric будет автоматически указывать конечные точки HTTP (S) ACL, указанные по умолчанию. Он **не** будет выполнять автоматическое адресам, если с конечной точкой не связана [SecurityAccessPolicy](service-fabric-assign-policy-to-endpoint.md) , а Service Fabric настроен для запуска с использованием учетной записи с правами администратора.
 
 ## <a name="overriding-endpoints-in-servicemanifestxml"></a>Переопределение конечных точек в файле ServiceManifest.xml
 

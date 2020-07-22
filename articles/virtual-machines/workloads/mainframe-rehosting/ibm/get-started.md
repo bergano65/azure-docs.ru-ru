@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 02/22/2019
 tags: ''
 keywords: ''
-ms.openlocfilehash: 13c83c53cdad719d6a4bed4cc1852b85d62082e8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e99685b4d1476ee527b9eb7f1332f6a6beece669
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "68834588"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86499978"
 ---
 # <a name="ibm-workloads-on-azure"></a>Рабочие нагрузки IBM в Azure
 
@@ -35,9 +35,9 @@ Azure поддерживает интеграцию с существующим�
 
 Существует обширная экосистема партнеров, которая поможет вам перенести системы мэйнфреймов IBM в Azure. В большинстве случаев рекомендуется использовать практический подход к использованию, когда это возможно до начинать в поэтапном развертывании переписывания или замены приложений. Получите дополнительные рекомендации и помощь от партнеров в [центре миграции для мэйнфреймов Azure](https://azure.microsoft.com/migration/mainframe/).
 
-**Дальнейшие действия**
+**Следующие шаги**
 
-- [Миграция мэйнфреймов: мифы и факты](https://docs.microsoft.com/azure/architecture/cloud-adoption/infrastructure/mainframe-migration/myths-and-facts)
+- [Миграция мэйнфреймов: мифы и факты](/azure/architecture/cloud-adoption/infrastructure/mainframe-migration/myths-and-facts)
 - [Установка среды разработки и тестирования IBM зд&T в Azure](./install-ibm-z-environment.md)
 - [Настройка управляемого распределения для разработчиков приложений (АДКД) в IBM зд&T v1](./demo.md)
-- [IBM DB2 Пурескале в Azure](https://docs.microsoft.com/azure/virtual-machines/linux/ibm-db2-purescale-azure)
+- [IBM DB2 Пурескале в Azure](../../../linux/ibm-db2-purescale-azure.md)

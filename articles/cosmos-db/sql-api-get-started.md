@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 11/05/2019
 ms.author: kirankk
-ms.openlocfilehash: 2681b2199f321f695bc621ed5580319a5e907b34
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 10a630aa04f51dc96b948b01e5fc01cfad4356fd
+ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "78274026"
+ms.lasthandoff: 06/20/2020
+ms.locfileid: "85118820"
 ---
 # <a name="tutorial-build-a-net-console-app-to-manage-data-in-azure-cosmos-db-sql-api-account"></a>Руководство по Создание консольного приложения .NET для управления данными в учетной записи API SQL для Azure Cosmos DB
 
@@ -64,12 +64,12 @@ ms.locfileid: "78274026"
 1. В окне **Создание проекта** выберите **Консольное приложение (.NET Framework)** для C# и нажмите кнопку **Далее**.
 1. Присвойте проекту имя *CosmosGettingStartedTutorial* и выберите **Создать**.
 
-    ![Настройка проекта](./media/sql-api-get-started/configure-cosmos-getting-started-2019.png)
+    :::image type="content" source="./media/sql-api-get-started/configure-cosmos-getting-started-2019.png" alt-text="Настройка проекта":::
 
 1. В **обозревателе решений** щелкните правой кнопкой мыши новое консольное приложение (оно находится в решении Visual Studio). Затем щелкните **Управление пакетами NuGet**.
 1. В окне **Диспетчер пакетов NuGet** выберите **Обзор** и найдите *Microsoft.Azure.Cosmos*. Выберите **Microsoft.Azure.Cosmos** и щелкните **Установить**.
 
-   ![Установка NuGet для клиентского пакета SDK для Azure Cosmos DB](./media/sql-api-get-started/cosmos-getting-started-manage-nuget-2019.png)
+   :::image type="content" source="./media/sql-api-get-started/cosmos-getting-started-manage-nuget-2019.png" alt-text="Установка NuGet для клиентского пакета SDK для Azure Cosmos DB":::
 
    Идентификатором пакета для клиентской библиотеки API SQL Azure Cosmos DB является [Microsoft Azure Cosmos DB Client Library](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/).
 
@@ -120,7 +120,7 @@ ms.locfileid: "78274026"
 
 1. Откройте [портал Azure](https://portal.azure.com). Найдите учетную записи Azure Cosmos DB и выберите элемент **Ключи**.
 
-   ![Получение ключей Azure Cosmos DB на портале Azure](./media/sql-api-get-started/cosmos-getting-started-portal-keys.png)
+   :::image type="content" source="./media/sql-api-get-started/cosmos-getting-started-portal-keys.png" alt-text="Получение ключей Azure Cosmos DB на портале Azure":::
 
 1. В файле *Program.cs* замените `<your endpoint URL>` значением **URI**. Замените `<your primary key>` фактическим значением **первичного ключа**.
 
@@ -309,7 +309,7 @@ ms.locfileid: "78274026"
 
 1. Нажмите сочетание клавиш Ctrl+Shift+A, чтобы открыть окно **Добавить новый элемент**. Добавьте в ваш проект новый класс `Family.cs`.
 
-    ![Снимок экрана добавления в проект нового класса Family.cs](./media/sql-api-get-started/cosmos-getting-started-add-family-class-2019.png)
+    :::image type="content" source="./media/sql-api-get-started/cosmos-getting-started-add-family-class-2019.png" alt-text="Снимок экрана: добавление в проект нового класса Family.cs":::
 
 1. Скопируйте и вставьте в `Family.cs` элементы `Family`, `Parent`, `Child`, `Pet` и класс `Address`.
 

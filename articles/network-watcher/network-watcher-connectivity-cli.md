@@ -8,28 +8,28 @@ author: damendo
 editor: ''
 ms.service: network-watcher
 ms.devlang: na
-ms.topic: article
+ms.topic: troubleshooting
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/11/2017
 ms.author: damendo
-ms.openlocfilehash: 842e58de8dbc06d3f045b0e9d0dc6b99e6b1e2fe
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 1a9aa212c95d8fef58c3fa92b2c1135f81b708be
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76842892"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84736770"
 ---
 # <a name="troubleshoot-connections-with-azure-network-watcher-using-the-azure-cli"></a>Устранение неполадок подключений с помощью службы "Наблюдатель за сетями Azure" в Azure CLI
 
 > [!div class="op_single_selector"]
 > - [PowerShell](network-watcher-connectivity-powershell.md)
 > - [Azure CLI](network-watcher-connectivity-cli.md)
-> - [REST API Azure](network-watcher-connectivity-rest.md)
+> - [Azure REST API](network-watcher-connectivity-rest.md)
 
 Узнайте, как проверить возможность прямого подключения TCP между виртуальной машиной и определенной конечной точкой с помощью функции устранения неполадок подключения.
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 В данной статье предполагается, что у вас есть следующие ресурсы:
 

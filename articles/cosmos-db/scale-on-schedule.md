@@ -3,15 +3,15 @@ title: Масштабирование Azure Cosmos DB по расписанию 
 description: Узнайте, как масштабировать изменения в пропускной способности Azure Cosmos DB с помощью PowerShell и функций Azure.
 author: markjbrown
 ms.service: cosmos-db
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 01/13/2020
 ms.author: mjbrown
-ms.openlocfilehash: 68ba40ea212c061fa5c8bbddc47ea0dfc6d8caa4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 9f538b02e81d885e22a6417d7c1f139c22635b0d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75935172"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85262486"
 ---
 # <a name="scale-azure-cosmos-db-throughput-by-using-azure-functions-timer-trigger"></a>Масштабирование Azure Cosmos DB пропускной способности с помощью триггера таймера для функций Azure
 
@@ -21,10 +21,10 @@ ms.locfileid: "75935172"
 
 ## <a name="throughput-scheduler-sample-project"></a>Пример проекта планировщика пропускной способности
 
-Чтобы упростить процесс масштабирования Azure Cosmos DB по расписанию, мы создали пример проекта, именуемый [планировщиком пропускной способности Azure Cosmos](https://github.com/Azure-Samples/azure-cosmos-throughput-scheduler). Этот проект является приложением функций Azure с двумя триггерами таймера: "Скалеуптригжер" и "Скаледовнтригжер". Триггеры запускают сценарий PowerShell, который задает пропускную способность для каждого ресурса, `resources.json` как определено в файле каждого триггера. Скалеуптригжер настроен на запуск в течение 8 часов UTC, а Скаледовнтригжер настроен на запуск в 6 РМ UTC, и эти времена можно легко обновить в `function.json` файле для каждого триггера.
+Чтобы упростить процесс масштабирования Azure Cosmos DB по расписанию, мы создали пример проекта, именуемый [планировщиком пропускной способности Azure Cosmos](https://github.com/Azure-Samples/azure-cosmos-throughput-scheduler). Этот проект является приложением функций Azure с двумя триггерами таймера: "Скалеуптригжер" и "Скаледовнтригжер". Триггеры запускают сценарий PowerShell, который задает пропускную способность для каждого ресурса, как определено в `resources.json` файле каждого триггера. Скалеуптригжер настроен на запуск в течение 8 часов UTC, а Скаледовнтригжер настроен на запуск в 6 РМ UTC, и эти времена можно легко обновить в `function.json` файле для каждого триггера.
 
 Вы можете клонировать этот проект локально, изменить его, указав Azure Cosmos DBные ресурсы для увеличения и уменьшения масштаба, а также расписание выполнения. Позже вы сможете развернуть его в подписке Azure и защитить его с помощью управляемого удостоверения службы с разрешениями [управления доступом на основе ролей](role-based-access-control.md) (RBAC) с ролью "Azure Cosmos DB оператор", чтобы настроить пропускную способность для учетных записей Azure Cosmos.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Узнайте больше и загрузите пример из [планировщика пропускной способности Azure Cosmos DB](https://github.com/Azure-Samples/azure-cosmos-throughput-scheduler).

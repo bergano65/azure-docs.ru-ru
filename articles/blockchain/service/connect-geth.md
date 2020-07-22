@@ -1,19 +1,19 @@
 ---
 title: Подключение к службе "Блокчейн Azure" с помощью Geth
 description: Присоединение к экземпляру Geth на узле транзакций службы "Блокчейн Azure"
-ms.date: 11/20/2019
+ms.date: 05/26/2020
 ms.topic: quickstart
-ms.reviewer: janders
-ms.openlocfilehash: 9da78eac1dc429bcc0ad52bb9cb2f1fb743a90d4
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.reviewer: maheshna
+ms.openlocfilehash: 2c5b6a56d96ac132949052e9879c8f61d41ffb06
+ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "74455831"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83994795"
 ---
 # <a name="quickstart-use-geth-to-attach-to-an-azure-blockchain-service-transaction-node"></a>Краткое руководство. Подключение к узлу транзакций службы "Блокчейн Azure" с помощью Geth
 
-При работе с этим кратким руководством вы будете использовать клиент Geth для подключения к экземпляру Geth на узле транзакций службы "Блокчейн Azure". После подключения вы используете консоль JavaScript Geth для вызова web3 JavaScript Dapp API.
+При работе с этим кратким руководством вы будете использовать клиент Geth для подключения к экземпляру Geth на узле транзакций службы "Блокчейн Azure". После присоединения вы используете консоль Geth для вызова JavaScript API для Ethereum.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
@@ -45,7 +45,7 @@ ms.locfileid: "74455831"
     geth attach <connection string>
     ```
 
-1. После подключения к консоли Ethereum для узла транзакций можно вызвать web3 JavaScript Dapp API или API администратора.
+1. После подключения к консоли Ethereum для узла транзакций вы можете использовать API JavaScript для Ethereum.
 
     Например, используйте указанный ниже API-интерфейс, чтобы получить значение chainId.
 

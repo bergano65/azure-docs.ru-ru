@@ -9,12 +9,12 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 10/18/2018
-ms.openlocfilehash: 72261989b7cee9d2251eb18b36431ec807b0e874
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: b50922d129fb4c72db1d6077a49c4d1309d5fe55
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79273011"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86512985"
 ---
 # <a name="quickstart-for-powershell-in-azure-cloud-shell"></a>Краткое руководство по использованию PowerShell в Azure Cloud Shell
 
@@ -27,11 +27,11 @@ ms.locfileid: "79273011"
 
 1. Нажмите кнопку **Cloud Shell** в верхней панели навигации портала Azure.
 
-   ![](media/quickstart-powershell/shell-icon.png)
+   ![Снимок экрана, показывающий, как запустить Azure Cloud Shell из портал Azure.](media/quickstart-powershell/shell-icon.png)
 
 2. Выберите среду PowerShell из раскрывающегося списка, и вы перейдете к диску Azure `(Azure:)`.
 
-   ![](media/quickstart-powershell/environment-ps.png)
+   ![Снимок экрана, показывающий, как выбрать среду PowerShell для Azure Cloud Shell.](media/quickstart-powershell/environment-ps.png)
 
 ## <a name="run-powershell-commands"></a>Выполнение команд PowerShell
 

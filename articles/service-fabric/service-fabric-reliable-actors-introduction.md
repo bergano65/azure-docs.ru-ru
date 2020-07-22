@@ -5,12 +5,12 @@ author: vturecek
 ms.topic: conceptual
 ms.date: 11/01/2017
 ms.author: vturecek
-ms.openlocfilehash: 6aafa2a3372c431f8afa7fad41051c26c3fe5fcd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c534ba54ccea78759628f554707271934ddc9a48
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75645571"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86258482"
 ---
 # <a name="introduction-to-service-fabric-reliable-actors"></a>Общие сведения о надежных субъектах Service Fabric
 Субъекты Reliable Actors — это платформа приложений Service Fabric, основанная на шаблоне [виртуальных субъектов](https://research.microsoft.com/en-us/projects/orleans/). API субъектов Reliable Actors предоставляет однопоточную модель программирования, основанную на той надежности и масштабируемости, которые гарантирует Service Fabric.
@@ -97,7 +97,7 @@ myActor.DoWorkAsync().get();
 * Доставка сообщений не гарантируется.
 * Субъекты могут получать дубликаты сообщений от одного и того же клиента.
 
-## <a name="concurrency"></a>Параллелизм
+## <a name="concurrency"></a>параллелизм
 В среде выполнения субъектов Reliable Actors для доступа к методам субъектов используется простая модель поочередности. Это означает, что в конкретный момент времени в коде объекта субъекта может быть активен только один поток. Поочередный доступ значительно упрощает параллельные системы, поскольку снимает необходимость в механизмах синхронизации для доступа к данным. Это также означает, что системы нужно проектировать с учетом однопоточного доступа для каждого экземпляра субъекта.
 
 * Экземпляр одного субъекта не может обрабатывать больше одного запроса за раз. Если экземпляр субъекта предназначен для обработки одновременных запросов, он может создавать проблемы для пропускной способности.
@@ -137,7 +137,7 @@ myActor.DoWorkAsync().get();
 ## <a name="next-steps"></a>Дальнейшие действия
 Приступите к работе, создав свою первую службу Reliable Actors:
    * [Приступая к работе с Reliable Actors с помощью .NET](service-fabric-reliable-actors-get-started.md)
-   * [Приступая к работе с Reliable Actors с помощью Java](service-fabric-reliable-actors-get-started-java.md)
+   * [Приступая к работе с Reliable Actors с помощью Java](./service-fabric-create-your-first-linux-application-with-java.md)
 
 <!--Image references-->
 [1]: ./media/service-fabric-reliable-actors-introduction/concurrency.png

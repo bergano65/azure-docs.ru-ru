@@ -13,10 +13,9 @@ ms.author: mimart
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 91aafe00856f37e9d7e6b3babafecd2cbdf5f856
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75482001"
 ---
 # <a name="get-all-application-proxy-applications-published-with-the-identical-certificate-and-replace-it"></a>Получить все приложения прокси приложения, опубликованные с помощью идентичного сертификата, и заменить их
@@ -44,7 +43,7 @@ ms.locfileid: "75482001"
 |[Get-AzureADApplicationProxyApplication](https://docs.microsoft.com/powershell/module/azuread/get-azureadapplicationproxyapplication?view=azureadps-2.0) | Извлекает приложение, настроенное для прокси приложения в Azure AD. |
 |[Set-AzureADApplicationProxyApplicationCustomDomainCertificate](https://docs.microsoft.com/powershell/module/azuread/set-azureadapplicationproxyapplicationcustomdomaincertificate?view=azureadps-2.0) | Назначает сертификат приложению, настроенному для прокси приложения в Azure AD. Эта команда отправляет сертификат и позволяет приложению использовать личные домены. |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о модуле Azure AD PowerShell см. в статье [Общие сведения о модуле Azure AD PowerShell](https://docs.microsoft.com/powershell/azure/active-directory/overview?view=azureadps-2.0).
 

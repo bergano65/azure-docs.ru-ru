@@ -24,6 +24,8 @@
           href: work-remotely-support.md
         - name: Конфигурации NVA и дистанционная работа
           href: nva-work-remotely-support.md
+    - name: Основные сведения о структуре VPN-шлюза
+      href: design.md
     - name: Сведения о параметрах VPN-шлюза
       href: vpn-gateway-about-vpn-gateway-settings.md
     - name: Сведения о VPN-устройствах

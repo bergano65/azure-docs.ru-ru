@@ -13,7 +13,7 @@
       href: signalr-quickstart-dotnet.md
     - name: Функции Azure — JavaScript
       href: signalr-quickstart-azure-functions-javascript.md
-    - name: 'Функции Azure — C#'
+    - name: Функции Azure — C#
       href: signalr-quickstart-azure-functions-csharp.md
     - name: "Функции Azure\_— Java"
       href: signalr-quickstart-azure-functions-java.md
@@ -25,16 +25,14 @@
   items:
     - name: Создание бессерверного приложения в реальном времени с аутентификацией
       href: signalr-tutorial-authenticate-azure-functions.md
-    - name: Монитор
-      items:
-        - name: Мониторинг Службы SignalR с помощью журналов диагностики
-          href: signalr-tutorial-diagnostic-logs.md
 - name: Примеры
   items:
     - name: Примеры кода
       href: 'https://github.com/aspnet/AzureSignalR-samples'
     - name: Azure CLI
       href: signalr-reference-cli.md
+    - name: Встроенные политики службы "Политика Azure"
+      href: ./policy-samples.md
 - name: Основные понятия
   items:
     - name: Внутренние компоненты службы Azure SignalR
@@ -49,6 +47,8 @@
           href: signalr-concept-serverless-development-config.md
         - name: Справочник по привязкам Службы SignalR для Функций Azure
           href: ../azure-functions/functions-bindings-signalr-service.md
+        - name: Параметры функции отправки данных в вышестоящий ресурс
+          href: concept-upstream.md
     - name: Высокий уровень доступности
       items:
         - name: Устойчивость и аварийное восстановление
@@ -73,12 +73,26 @@
       items:
         - name: Доступ к смене ключей
           href: signalr-howto-key-rotation.md
+        - name: Использование тегов службы Azure
+          href: howto-service-tags.md
+        - name: Использование частных конечных точек Azure
+          href: howto-private-endpoints.md
+        - name: Управление доступом к сети
+          href: howto-network-access-control.md
+        - name: Использование управляемого удостоверения
+          href: howto-use-managed-identity.md
     - name: Интеграция
       items:
         - name: Привязки для Функций Azure
           href: signalr-concept-azure-functions.md
         - name: Интеграция с Сеткой событий
           href: signalr-howto-event-grid-integration.md
+    - name: Монитор
+      items:
+        - name: Мониторинг Службы SignalR с помощью журналов диагностики
+          href: signalr-howto-diagnostic-logs.md
+        - name: Аудит соответствия требованиям с помощью службы "Политика Azure"
+          href: signalr-howto-azure-policy.md
 - name: Ссылки
   items:
     - name: Azure CLI

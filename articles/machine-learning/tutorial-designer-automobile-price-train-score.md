@@ -1,5 +1,5 @@
 ---
-title: Руководство по прогнозированию цен на автомобили с помощью конструктора
+title: Руководство по прогнозированию цен на автомобили с помощью конструктора (предварительная версия)
 titleSuffix: Azure Machine Learning
 description: Узнайте, как обучить, оценить и развернуть модель машинного обучения с помощью интерфейса с поддержкой перетаскивания. Это первый учебник серии, посвященной прогнозированию цен на автомобили с использованием линейной регрессии.
 author: peterclu
@@ -8,13 +8,14 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
-ms.date: 03/12/2020
-ms.openlocfilehash: 0488002352d222abb0166737f9a042060b1a1bb1
-ms.sourcegitcommit: 0553a8b2f255184d544ab231b231f45caf7bbbb0
+ms.date: 06/28/2020
+ms.custom: designer
+ms.openlocfilehash: 2922b5d3aa6cee0f1222c041a0e9728936754c21
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80389432"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86200035"
 ---
 # <a name="tutorial-predict-automobile-price-with-the-designer-preview"></a>Руководство по прогнозированию цен на автомобили с помощью конструктора (предварительная версия)
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-enterprise-sku.md)]
@@ -76,7 +77,7 @@ ms.locfileid: "80389432"
     Если у вас уже есть доступный целевой объект вычислений, его можно выбрать для запуска этого конвейера.
 
     > [!NOTE]
-    > Конструктор может выполнять эксперименты только с целевыми объектами вычислений для службы "Машинное обучение Azure". Другие целевые объекты вычислений не отображаются.
+    > Конструктор может выполнять обучающие эксперименты только с целевыми объектами вычислительной среды и вычислительных операций Машинного обучения Azure, а другие целевые объекты вычислений не будут отображаться.
 
 1. Укажите имя вычислительного ресурса.
 
@@ -106,8 +107,8 @@ ms.locfileid: "80389432"
 1. В области сведений о модуле справа от холста щелкните **Выходные данные и журнал**.
 
 1. Выберите значок графика, чтобы открыть визуализацию данных.
-
-    ![Визуализация данных](./media/tutorial-designer-automobile-price-train-score/visualize-data.png)
+    
+    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/visualize-data.png"alt-text="Отмечен замещающий текст":::
 
 1. Щелкните любой столбец в окне данных, чтобы просмотреть сведения о нем.
 
@@ -179,8 +180,8 @@ ms.locfileid: "80389432"
 1. В области "Сведения о модуле" справа от холста выберите текстовое поле **Комментарий** и введите *Удалить недостающие строки значений*. 
 
     Теперь конвейер должен выглядеть примерно так:
-    
-    ![Выбор столбца](./media/tutorial-designer-automobile-price-train-score/pipeline-clean.png)
+
+    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/pipeline-clean.png"alt-text="Выбор столбца":::
 
 ## <a name="train-a-machine-learning-model"></a>Обучение модели машинного обучения.
 
@@ -219,18 +220,16 @@ ms.locfileid: "80389432"
 
 1. Выберите модуль **Регрессия** > **Линейная регрессия** и перетащите его на холст конвейера.
 
-1. Подключите выход модуля **Линейная регрессия** к левому входу модуля **Обучение модели**.
-
 1. В палитре модулей разверните раздел **Module training** (Модуль обучения) и перетащите модуль **Обучение модели** на холст.
 
-1. Выберите модуль **Обучение модели** и перетащите его на холст конвейера.
+1. Подключите выход модуля **Линейная регрессия** к левому входу модуля **Обучение модели**.
 
 1. Подключите выход данных для обучения (левый порт) модуля **разделения данных** к правому входу модуля **обучения модели**.
     
     > [!IMPORTANT]
     > Убедитесь, что левый выходной порт модуля **разделения данных** подключается к модулю **обучения модели**. Левый порт содержит набор для обучения. Правый порт содержит набор для проверки.
 
-    ![Снимок экрана: правильная конфигурация модуля Train Model (Обучение модели). Модуль Linear Regression (Линейная регрессия) присоединяется к левому порту модуля Train Model (Обучение модели), а модуль Split Data (Разделение данных) — к правому порту модуля Train Model (Обучение модели).](./media/tutorial-designer-automobile-price-train-score/pipeline-train-model.png)
+    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/pipeline-train-model.png"alt-text="Снимок экрана: правильная конфигурация модуля Train Model (Обучение модели). Модуль Linear Regression (Линейная регрессия) присоединяется к левому порту модуля Train Model (Обучение модели), а модуль Split Data (Разделение данных) — к правому порту модуля Train Model (Обучение модели)":::
 
 1. Выберите модуль **Train Model** (Обучение модели).
 
@@ -245,7 +244,7 @@ ms.locfileid: "80389432"
 
     Теперь конвейер будет выглядеть следующим образом:
 
-    ![Снимок экрана с правильной конфигурацией конвейера после добавления модуля "Обучение модели".](./media/tutorial-designer-automobile-price-train-score/pipeline-train-graph.png)
+    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/pipeline-train-graph.png"alt-text="Снимок экрана с правильной конфигурацией конвейера после добавления модуля Обучение модели":::
 
 ### <a name="add-the-score-model-module"></a>Добавление модуля "Score Model" (Оценка модели)
 
@@ -265,7 +264,7 @@ ms.locfileid: "80389432"
 
     Готовый вариант конвейера должен выглядеть примерно так:
 
-    ![Снимок экрана с правильной конфигурацией конвейера.](./media/tutorial-designer-automobile-price-train-score/pipeline-final-graph.png)
+    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/pipeline-final-graph.png"alt-text="Снимок экрана с правильной конфигурацией конвейера":::
 
 ## <a name="submit-the-pipeline"></a>Отправка конвейера
 
@@ -296,7 +295,7 @@ ms.locfileid: "80389432"
 
     Здесь можно просмотреть прогнозируемые цены и фактические цены из тестовых данных.
 
-    ![Снимок экрана: визуализация выходных данных с выделенным столбцом Scored Label (Метка с оценкой)](./media/tutorial-designer-automobile-price-train-score/score-result.png)
+    :::image type="content" source="./media/tutorial-designer-automobile-price-train-score/score-result.png"alt-text="Снимок экрана: визуализация выходных данных с выделенным столбцом Scored Label (Метка с оценкой)":::
 
 ### <a name="evaluate-models"></a>Анализ моделей
 

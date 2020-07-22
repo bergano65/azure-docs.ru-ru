@@ -9,10 +9,9 @@ ms.topic: conceptual
 ms.custom: seodec18
 ms.date: 01/03/2020
 ms.openlocfilehash: 292496c4d458621213fe62105149ac845d78891e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79479592"
 ---
 # <a name="hdinsight-sdk-for-go-preview"></a>Пакет SDK для HDInsight для Go (Предварительная версия)
@@ -34,9 +33,9 @@ ms.locfileid: "79479592"
 
 Из расположения GOPATH запустите следующий файл: `go get github.com/Azure/azure-sdk-for-go/tree/master/services/preview/hdinsight/mgmt/2018-06-01-preview/hdinsight`
 
-## <a name="authentication"></a>Проверка подлинности
+## <a name="authentication"></a>Аутентификация
 
-Для использования пакета SDK нужно выполнить аутентификацию с помощью подписки Azure.  Ниже описано, как создать субъект-службу и использовать его для аутентификации. После этого у вас будет экземпляр `ClustersClient`, который содержит множество функций (описанных в разделах ниже), которые можно использовать для выполнения операций управления.
+Для использования пакета SDK нужно выполнить аутентификацию с помощью подписки Azure.  Ниже описано, как создать субъект-службу и использовать его для аутентификации. После этого у вас будет экземпляр `ClustersClient` , который содержит множество функций (описанных в разделах ниже), которые можно использовать для выполнения операций управления.
 
 > [!NOTE]  
 > Кроме описанного выше, есть и другие методы аутентификации, которые могут оказаться удобнее для вас. Дополнительные сведения о функциях см. в статье [Методы аутентификации в пакете Azure SDK для Go](https://docs.microsoft.com/azure/go/azure-sdk-go-authorization)

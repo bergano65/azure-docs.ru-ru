@@ -9,19 +9,19 @@ editor: ''
 ms.service: active-directory
 ms.subservice: pim
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 05/11/2020
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c42c0dd3848ec913f991e4b07612669c5a25c9f1
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: 8e3791da8f8a990f62de0052e1662fd6037e936b
+ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83197271"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85849283"
 ---
 # <a name="powershell-for-azure-ad-roles-in-privileged-identity-management"></a>PowerShell для ролей Azure AD в управление привилегированными пользователями
 
@@ -36,14 +36,18 @@ ms.locfileid: "83197271"
 
 1. Установка модуля предварительной версии Azure AD
 
-        Install-module AzureADPreview
+    ```powershell
+    Install-module AzureADPreview
+    ```
 
 1. Перед продолжением убедитесь, что у вас есть необходимые разрешения роли. Если вы пытаетесь выполнить задачи управления, такие как назначение ролей или изменение параметров роли, убедитесь, что у вас есть роль администратора глобального администратора или привилегированной роли. Если вы только пытаетесь активировать собственное назначение, не требуются разрешения, превышающие разрешения пользователя по умолчанию.
 
 1. Подключитесь к Azure AD.
 
-        $AzureAdCred = Get-Credential  
-        Connect-AzureAD -Credential $AzureAdCred
+    ```powershell
+    $AzureAdCred = Get-Credential  
+    Connect-AzureAD -Credential $AzureAdCred
+    ```
 
 1. Найдите идентификатор клиента для вашей организации Azure AD, выбрав **Azure Active Directory**  >  **Свойства**  >  **идентификатор каталога**. В разделе командлеты используйте этот идентификатор всякий раз, когда необходимо указать resourceId.
 
@@ -58,9 +62,11 @@ ms.locfileid: "83197271"
 
 RoleDefinitionId зависит от вашей организации Azure AD и отличается от roleDefinitionId, возвращенного API управления ролями.
 
-    Get-AzureADMSPrivilegedRoleDefinition -ProviderId aadRoles -ResourceId 926d99e7-117c-4a6a-8031-0cc481e9da26
+```powershell
+Get-AzureADMSPrivilegedRoleDefinition -ProviderId aadRoles -ResourceId 926d99e7-117c-4a6a-8031-0cc481e9da26
+```
 
-Результат: ;
+Результат:
 
 ![Получение всех ролей для Организации Azure AD](./media/powershell-for-azure-ad-roles/get-all-roles-result.png)
 
@@ -68,19 +74,25 @@ RoleDefinitionId зависит от вашей организации Azure AD 
 
 Используйте следующий командлет для получения всех назначений ролей в вашей организации Azure AD.
 
-    Get-AzureADMSPrivilegedRoleAssignment -ProviderId "aadRoles" -ResourceId "926d99e7-117c-4a6a-8031-0cc481e9da26"
+```powershell
+Get-AzureADMSPrivilegedRoleAssignment -ProviderId "aadRoles" -ResourceId "926d99e7-117c-4a6a-8031-0cc481e9da26"
+```
 
 Используйте следующий командлет для получения всех назначений ролей для конкретного пользователя. Этот список также называется "Мои роли" на портале Azure AD. Единственное отличие заключается в том, что вы добавили фильтр для идентификатора субъекта. ИДЕНТИФИКАТОРом субъекта в этом контексте является идентификатор пользователя или идентификатор группы.
 
-    Get-AzureADMSPrivilegedRoleAssignment -ProviderId "aadRoles" -ResourceId "926d99e7-117c-4a6a-8031-0cc481e9da26" -Filter "subjectId eq 'f7d1887c-7777-4ba3-ba3d-974488524a9d'" 
+```powershell
+Get-AzureADMSPrivilegedRoleAssignment -ProviderId "aadRoles" -ResourceId "926d99e7-117c-4a6a-8031-0cc481e9da26" -Filter "subjectId eq 'f7d1887c-7777-4ba3-ba3d-974488524a9d'" 
+```
 
 Используйте следующий командлет, чтобы получить все назначения ролей для конкретной роли. RoleDefinitionId здесь является ИДЕНТИФИКАТОРом, возвращаемым предыдущим командлетом.
 
-    Get-AzureADMSPrivilegedRoleAssignment -ProviderId "aadRoles" -ResourceId "926d99e7-117c-4a6a-8031-0cc481e9da26" -Filter "roleDefinitionId eq '0bb54a22-a3df-4592-9dc7-9e1418f0f61c'"
+```powershell
+Get-AzureADMSPrivilegedRoleAssignment -ProviderId "aadRoles" -ResourceId "926d99e7-117c-4a6a-8031-0cc481e9da26" -Filter "roleDefinitionId eq '0bb54a22-a3df-4592-9dc7-9e1418f0f61c'"
+```
 
 Командлеты приводят к отображению списка объектов назначения ролей, показанных ниже. ИДЕНТИФИКАТОР субъекта — это идентификатор пользователя, которому назначена роль. Состояние назначения может быть либо активным, либо допустимым. Если пользователь активен и в поле Линкеделигиблеролеассигнментид есть идентификатор, это означает, что роль в данный момент активирована.
 
-Результат: ;
+Результат:
 
 ![Получение всех назначений ролей для Организации Azure AD](./media/powershell-for-azure-ad-roles/get-all-role-assignments-result.png)
 
@@ -88,14 +100,18 @@ RoleDefinitionId зависит от вашей организации Azure AD 
 
 Используйте следующий командлет для создания подходящего назначения.
 
-    Open-AzureADMSPrivilegedRoleAssignmentRequest -ProviderId 'aadRoles' -ResourceId '926d99e7-117c-4a6a-8031-0cc481e9da26' -RoleDefinitionId 'ff690580-d1c6-42b1-8272-c029ded94dec' -SubjectId 'f7d1887c-7777-4ba3-ba3d-974488524a9d' -Type 'adminAdd' -AssignmentState 'Eligible' -schedule $schedule -reason "dsasdsas" 
+```powershell
+Open-AzureADMSPrivilegedRoleAssignmentRequest -ProviderId 'aadRoles' -ResourceId '926d99e7-117c-4a6a-8031-0cc481e9da26' -RoleDefinitionId 'ff690580-d1c6-42b1-8272-c029ded94dec' -SubjectId 'f7d1887c-7777-4ba3-ba3d-974488524a9d' -Type 'adminAdd' -AssignmentState 'Eligible' -schedule $schedule -reason "dsasdsas" 
+```
 
 Расписание, определяющее время начала и окончания назначения, — это объект, который можно создать, как в следующем примере:
 
-    $schedule = New-Object Microsoft.Open.MSGraph.Model.AzureADMSPrivilegedSchedule
-    $schedule.Type = "Once"
-    $schedule.StartDateTime = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffZ")
-    $schedule.endDateTime = "2020-07-25T20:49:11.770Z"
+```powershell
+$schedule = New-Object Microsoft.Open.MSGraph.Model.AzureADMSPrivilegedSchedule
+$schedule.Type = "Once"
+$schedule.StartDateTime = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffZ")
+$schedule.endDateTime = "2020-07-25T20:49:11.770Z"
+```
 > [!Note]
 > Если значение Енддатетиме установлено в NULL, оно указывает на постоянное назначение.
 
@@ -103,7 +119,9 @@ RoleDefinitionId зависит от вашей организации Azure AD 
 
 Используйте следующий командлет для активации подходящего назначения.
 
-    Open-AzureADMSPrivilegedRoleAssignmentRequest -ProviderId 'aadRoles' -ResourceId '926d99e7-117c-4a6a-8031-0cc481e9da26' -RoleDefinitionId 'f55a9a68-f424-41b7-8bee-cee6a442d418' -SubjectId 'f7d1887c-7777-4ba3-ba3d-974488524a9d' -Type 'UserAdd' -AssignmentState 'Active' -schedule $schedule -reason "dsasdsas" 
+```powershell
+Open-AzureADMSPrivilegedRoleAssignmentRequest -ProviderId 'aadRoles' -ResourceId '926d99e7-117c-4a6a-8031-0cc481e9da26' -RoleDefinitionId 'f55a9a68-f424-41b7-8bee-cee6a442d418' -SubjectId 'f7d1887c-7777-4ba3-ba3d-974488524a9d' -Type 'UserAdd' -AssignmentState 'Active' -schedule $schedule -reason "dsasdsas"
+``` 
 
 Этот командлет почти идентичен командлету для создания назначения роли. Основное различие между командлетами заключается в том, что для параметра – Type Activation — «Усерадд» вместо «Админадд». Другое отличие заключается в том, что параметр – Ассигнментстате — «Active» вместо «право».
 
@@ -116,7 +134,9 @@ RoleDefinitionId зависит от вашей организации Azure AD 
 
 Используйте следующий командлет, чтобы получить все параметры роли в вашей организации Azure AD.
 
-    Get-AzureADMSPrivilegedRoleSetting -ProviderId 'aadRoles' -Filter "ResourceId eq '926d99e7-117c-4a6a-8031-0cc481e9da26'" 
+```powershell
+Get-AzureADMSPrivilegedRoleSetting -ProviderId 'aadRoles' -Filter "ResourceId eq '926d99e7-117c-4a6a-8031-0cc481e9da26'" 
+```
 
 В параметре имеется четыре основных объекта. В настоящее время PIM использует только три из этих объектов. Усермемберсеттингс — это параметры активации, Админелигиблесеттингс — параметры назначения для соответствующих назначений, а Админмемберсеттингс — параметры назначения для активных назначений.
 
@@ -124,14 +144,18 @@ RoleDefinitionId зависит от вашей организации Azure AD 
 
 Чтобы обновить параметр роли, необходимо получить существующий объект параметров для конкретной роли и внести в него изменения:
 
-    $setting = Get-AzureADMSPrivilegedRoleSetting -ProviderId 'aadRoles' -Filter "roleDefinitionId eq 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'"
-    $setting.UserMemberSetting.justificationRule = '{"required":false}'
+```powershell
+$setting = Get-AzureADMSPrivilegedRoleSetting -ProviderId 'aadRoles' -Filter "roleDefinitionId eq 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'"
+$setting.UserMemberSetting.justificationRule = '{"required":false}'
+```
 
 Затем можно применить параметр к одному из объектов для конкретной роли, как показано ниже. ИДЕНТИФИКАТОРом является идентификатор параметра роли, который можно получить из результата выполнения командлета List Role Settings.
 
-    Set-AzureADMSPrivilegedRoleSetting -ProviderId 'aadRoles' -Id 'ff518d09-47f5-45a9-bb32-71916d9aeadf' -ResourceId '3f5887ed-dd6e-4821-8bde-c813ec508cf9' -RoleDefinitionId '2387ced3-4e95-4c36-a915-73d803f93702' -UserMemberSettings $setting 
+```powershell
+Set-AzureADMSPrivilegedRoleSetting -ProviderId 'aadRoles' -Id 'ff518d09-47f5-45a9-bb32-71916d9aeadf' -ResourceId '3f5887ed-dd6e-4821-8bde-c813ec508cf9' -RoleDefinitionId '2387ced3-4e95-4c36-a915-73d803f93702' -UserMemberSettings $setting 
+```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Назначение настраиваемой роли Azure AD](azure-ad-custom-roles-assign.md)
 - [Update or remove an assigned Azure AD custom role in Privileged Identity Management](azure-ad-custom-roles-update-remove.md) (Обновление или удаление назначенной настраиваемой роли AAD в Privileged Identity Management)

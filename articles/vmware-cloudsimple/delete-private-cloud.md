@@ -9,17 +9,16 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 6bc3e7030c500ea2d6072a1cce0f0b3d9fc62801
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77024761"
 ---
 # <a name="delete-a-cloudsimple-private-cloud"></a>Удаление частного облака Клаудсимпле
 
 Клаудсимпле обеспечивает гибкость при удалении частного облака.  Частное облако состоит из одного или нескольких кластеров vSphere. Каждый кластер может иметь от 3 до 16 узлов. При удалении частного облака все кластеры будут удалены.
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 При удалении частного облака удаляется все частное облако.  Все компоненты частного облака будут удалены.  Если вы хотите хранить данные, убедитесь, что вы заархивированы данные в локальное хранилище или в хранилище Azure.
 

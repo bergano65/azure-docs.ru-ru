@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick
-ms.openlocfilehash: 89d2105ab080309639c4341072c3f5f36608dfce
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: e5db52d1e28a7db5594b3b2a16bc145d0a50e2e3
+ms.sourcegitcommit: bc943dc048d9ab98caf4706b022eb5c6421ec459
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81421108"
+ms.lasthandoff: 06/14/2020
+ms.locfileid: "84765086"
 ---
 # <a name="manage-access-to-workspaces-data-and-pipelines"></a>Управление доступом к рабочим областям, данным и конвейерам
 
@@ -34,22 +34,32 @@ ms.locfileid: "81421108"
 
 1. Создайте группу безопасности с именем `Synapse_WORKSPACENAME_Users`.
 2. Создайте группу безопасности с именем `Synapse_WORKSPACENAME_Admins`.
-3. Добавлен параметр `Synapse_WORKSPACENAME_Admins` для `ProjectSynapse_WORKSPACENAME_Users`.
+3. Добавлен параметр `Synapse_WORKSPACENAME_Admins` для `Synapse_WORKSPACENAME_Users`.
+
+> [!NOTE]
+> В [этой статье](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-groups-create-azure-portal) описано, как создать группу безопасности.
+>
+> В [этой статье ](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-groups-membership-azure-portal) описано, как добавить группу безопасности из другой группы безопасности.
+>
+> Замените параметр WORKSPACENAME действительным именем рабочей области.
 
 ### <a name="step-2-prepare-the-default-adls-gen2-account"></a>Шаг 2. Подготовка учетной записи ADLS 2-го поколения по умолчанию
 
-После подготовки рабочей области необходимо выбрать учетную запись ADLS 2-го поколения и контейнер файловой системы для используемой рабочей области.
+После подготовки рабочей области необходимо выбрать учетную запись [Azure Data Lake Storage 2-го поколения](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-introduction) и контейнер файловой системы для используемой рабочей области.
 
 1. Откройте [портал Azure](https://portal.azure.com).
-2. Перейдите к учетной записи ADLS 2-го поколения.
+2. Перейдите к учетной записи Azure Data Lake Storage 2-го поколения.
 3. Перейдите к контейнеру (файловой системы), выбранному для рабочей области Azure Synapse.
 4. Щелкните **Управление доступом (IAM)** .
 5. Назначьте указанные ниже роли:
-   1. роль **Читатель** — `Synapse_WORKSPACENAME_Users`;
-   2. роль **Владелец данных BLOB-объектов хранилища** — `Synapse_WORKSPACENAME_Admins`;
-   3. роль **Участник данных BLOB-объектов хранилища** — `Synapse_WORKSPACENAME_Users`;
-   4. роль **Владелец данных BLOB-объектов хранилища** — `WORKSPACENAME`.
-  
+   1. Роль **Читатель** для: `Synapse_WORKSPACENAME_Users`
+   2. Роль **Владелец данных BLOB-объектов хранилища** для `Synapse_WORKSPACENAME_Admins`
+   3. Роль **Участник данных BLOB-объектов хранилища** для `Synapse_WORKSPACENAME_Users`
+   4. Роль **Владелец данных BLOB-объектов хранилища** для `WORKSPACENAME`
+
+> [!NOTE]
+> Замените параметр WORKSPACENAME действительным именем рабочей области.
+
 ### <a name="step-3-configure-the-workspace-admin-list"></a>Шаг 3. Настройка списка администраторов рабочей области
 
 1. Перейдите к [**пользовательскому веб-интерфейсу Azure Synapse**](https://web.azuresynapse.net).
@@ -66,10 +76,18 @@ ms.locfileid: "81421108"
 6. Щелкните **Выбрать**.
 7. Нажмите кнопку **Сохранить**.
 
+> [!NOTE]
+> Замените параметр WORKSPACENAME действительным именем рабочей области.
+
 ### <a name="step-5-add-and-remove-users-and-admins-to-security-groups"></a>Шаг 5. Добавление и удаление пользователей и администраторов в группах безопасности
 
 1. Добавьте пользователей, которым требуется административный доступ в `Synapse_WORKSPACENAME_Admins`.
 2. Добавьте всех остальных пользователей в `Synapse_WORKSPACENAME_Users`.
+
+> [!NOTE]
+> В [этой статье](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-groups-members-azure-portal) описано, как добавить пользователя в качестве члена группы безопасности.
+> 
+> Замените параметр WORKSPACENAME действительным именем рабочей области.
 
 ## <a name="access-control-to-data"></a>Управление доступом к данным
 
@@ -82,9 +100,13 @@ ms.locfileid: "81421108"
 ## <a name="access-control-to-sql-databases"></a>Управление доступом к Базам данных SQL
 
 > [!TIP]
-> Необходимо выполнить следующие шаги для **каждой** базы данных SQL, чтобы предоставить пользователю доступ ко всем базам данных SQL.
+> Указанные ниже действия необходимо выполнить для **каждой** базы данных SQL, чтобы предоставить пользователю доступ ко всем базам данных SQL, за исключением раздела [Разрешение на уровне сервера](#server-level-permission), где можно назначить пользователю роль sysadmin.
 
 ### <a name="sql-on-demand"></a>SQL по запросу
+
+В этом разделе приведены примеры предоставления пользователю разрешения на доступ к определенной базе данных или разрешение на полный доступ к серверу.
+
+#### <a name="database-level-permission"></a>Разрешение на уровне базы данных
 
 Чтобы предоставить пользователю доступ к **отдельной** базе данных SQL по запросу, выполните действия, описанные в примере ниже.
 
@@ -93,7 +115,7 @@ ms.locfileid: "81421108"
     ```sql
     use master
     go
-    CREATE LOGIN [John.Thomas@microsoft.com] FROM EXTERNAL PROVIDER;
+    CREATE LOGIN [alias@domain.com] FROM EXTERNAL PROVIDER;
     go
     ```
 
@@ -102,7 +124,7 @@ ms.locfileid: "81421108"
     ```sql
     use yourdb -- Use your DB name
     go
-    CREATE USER john FROM LOGIN [John.Thomas@microsoft.com];
+    CREATE USER alias FROM LOGIN [alias@domain.com];
     ```
 
 3. Добавьте пользователя к членам указанной роли:
@@ -110,8 +132,20 @@ ms.locfileid: "81421108"
     ```sql
     use yourdb -- Use your DB name
     go
-    alter role db_owner Add member john -- Type USER name from step 2
+    alter role db_owner Add member alias -- Type USER name from step 2
     ```
+
+> [!NOTE]
+> Замените псевдоним псевдонимом пользователя, которому вы хотите предоставить доступ, а домен — доменом компании, который вы используете.
+
+#### <a name="server-level-permission"></a>Разрешение уровня сервера
+
+Чтобы предоставить пользователю полный доступ ко **всем** базам данных SQL по запросу, выполните действия, описанные в примере ниже.
+
+```sql
+CREATE LOGIN [alias@domain.com] FROM EXTERNAL PROVIDER;
+ALTER SERVER ROLE  sysadmin  ADD MEMBER [alias@domain.com];
+```
 
 ### <a name="sql-pools"></a>Пулы SQL
 
@@ -136,13 +170,6 @@ ms.locfileid: "81421108"
 > Для чтения и записи напрямую из Spark в пул SQL или из него пользователю Spark требуется разрешение *db_owner*.
 
 Создав пользователей, проверьте, может ли SQL по запросу запрашивать учетную запись хранения.
-
-- Выполните следующую команду, предназначенную для базы данных **master** SQL по запросу:
-
-    ```sql
-    CREATE CREDENTIAL [https://<storageaccountname>.dfs.core.windows.net]
-    WITH IDENTITY='User Identity';
-    ```
 
 ## <a name="access-control-to-workspace-pipeline-runs"></a>Управление доступом к запускам конвейеров рабочей области
 
@@ -173,4 +200,4 @@ DROP USER [<workspacename>];
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Общие сведения о доступе к SQL Synapse и управлении им см. в разделе [Управление доступом к SQL Synapse](../sql/access-control.md). Подробные сведения о субъектах базы данных см. в [этой статье](https://msdn.microsoft.com/library/ms181127.aspx). Дополнительные сведения о ролях базы данных см. [здесь](https://msdn.microsoft.com/library/ms189121.aspx).
+Общие сведения об управляемом удостоверении рабочей области Synapse, см. в разделе [Управляемое удостоверение рабочей области Synapse Azure](../security/synapse-workspace-managed-identity.md). Подробные сведения о субъектах базы данных см. в [этой статье](https://msdn.microsoft.com/library/ms181127.aspx). Дополнительные сведения о ролях базы данных см. [здесь](https://msdn.microsoft.com/library/ms189121.aspx).

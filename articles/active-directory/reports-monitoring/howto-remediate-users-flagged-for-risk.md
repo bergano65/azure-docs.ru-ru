@@ -7,7 +7,7 @@ manager: daveba
 ms.assetid: addd60fe-d5ac-4b8b-983c-0736c80ace02
 ms.service: active-directory
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
@@ -15,12 +15,11 @@ ms.date: 11/13/2018
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ea1360499c4f4f9b2f6cfa07e81d8f692d0353d3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 3037dd2e03062ebab0c48438aa4345a766a22fc8
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82100793"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85608931"
 ---
 # <a name="remediate-users-flagged-for-risk-in-the-azure-active-directory-portal"></a>Применение защитных мер к пользователям, находящимся в группе риска на портале Azure Active Directory
 
@@ -32,7 +31,7 @@ ms.locfileid: "82100793"
 
 ## <a name="access-the-users-flagged-for-risk-report"></a>Доступ к отчету о пользователях, находящихся в группе риска
 
-Вы можете просмотреть пользователей, находящихся в группе риска, в [соответствующем отчете](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RiskyUsers) на портале Azure. Если у вас нет Azure AD, вы можете зарегистрироваться бесплатно по адресу [https://aka.ms/AccessAAD](https://aka.ms/AccessAAD). 
+Вы можете просмотреть пользователей, находящихся в группе риска, в [соответствующем отчете](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RiskyUsers) на портале Azure. Если у вас нет Azure AD, вы можете зарегистрироваться бесплатно по адресу [https://aka.ms/AccessAAD](https://aka.ms/AccessAAD) . 
 
 Из отчета о пользователях, находящихся в группе риска, можно выполнить следующие действия для каждого пользователя:
 
@@ -63,7 +62,7 @@ ms.locfileid: "82100793"
 2.  [Включите многофакторную проверку подлинности](https://aka.ms/MFAuth) для всех пользователей. 
 3.  Используйте этот [сценарий исправления](https://aka.ms/remediate) для каждой затронутой учетной записи, чтобы автоматически выполнить действия ниже: 
 
-    a. Сбросить пароль, чтобы защитить учетную запись и прервать активные сеансы.
+    а. Сбросить пароль, чтобы защитить учетную запись и прервать активные сеансы.
 
     b. Удалить делегаты почтовых ящиков.
 
@@ -92,4 +91,4 @@ ms.locfileid: "82100793"
 ## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Защита идентификации Azure Active Directory](../active-directory-identityprotection.md)
-* [Пользователи, находящиеся в группе риска](concept-user-at-risk.md)
+* [Пользователи, помеченные для события риска](concept-user-at-risk.md)

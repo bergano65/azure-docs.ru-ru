@@ -3,12 +3,12 @@ title: Развертывание примеров схем UK OFFICIAL и UK NH
 description: Процедура развертывания для примера схемы UK OFFICIAL и UK NHS и сведения о параметрах артефактов схемы.
 ms.date: 05/08/2020
 ms.topic: sample
-ms.openlocfilehash: 7fa78eab463c9a3202b2ec08e1952e275e51b20d
-ms.sourcegitcommit: ac4a365a6c6ffa6b6a5fbca1b8f17fde87b4c05e
+ms.openlocfilehash: 2ac2d17c08b3f585f86d1b2d339c3c7cf52844ce
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2020
-ms.locfileid: "83005586"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86037177"
 ---
 # <a name="deploy-the-uk-official-and-uk-nhs-blueprint-samples"></a>Развертывание примеров схем UK OFFICIAL и UK NHS
 
@@ -93,7 +93,7 @@ ms.locfileid: "83005586"
 
 Имя артефакта|Тип артефакта|Имя параметра|Описание|
 |-|-|-|-|
-|Инициатива схем для UK OFFICIAL и UK NHS|Назначение политики |Типы ресурсов для аудита журналов диагностики (Политика: инициатива схем для UK OFFICIAL и UK NHS) |Список типов ресурсов для аудита, если журнал диагностики не включен.  Допустимые значения см. в статье [Supported services, schemas, and categories for Azure Resource Logs](../../../../azure-monitor/platform/diagnostic-logs-schema.md) (Поддерживаемые службы, схемы и категории для журналов ресурсов Azure). |
+|Инициатива схем для UK OFFICIAL и UK NHS|Назначение политики |Типы ресурсов для аудита журналов диагностики (Политика: инициатива схем для UK OFFICIAL и UK NHS) |Список типов ресурсов для аудита, если журнал диагностики не включен.  Допустимые значения см. в статье [Supported services, schemas, and categories for Azure Resource Logs](../../../../azure-monitor/platform/resource-logs-schema.md) (Поддерживаемые службы, схемы и категории для журналов ресурсов Azure). |
 |\[Предварительная версия.\] Развертывание агента Log Analytics для виртуальных машин Linux |Назначение политики |Необязательное действие: список образов виртуальных машин с поддерживаемой версией ОС Linux для добавления в область (Политика: \[Предварительная версия.\] развертывание агента Log Analytics для виртуальных машин Linux) |(Необязательно.) Значение по умолчанию — _none_. Дополнительные сведения см. в статье [Create a Log Analytics workspace in the Azure portal](../../../../azure-monitor/learn/quick-create-workspace.md) (Создание рабочей области Log Analytics на портале Azure). |
 |\[Предварительная версия.\] Развертывание агента Log Analytics для виртуальных машин Windows |Назначение политики |Необязательное действие: список образов виртуальных машин с поддерживаемой версией ОС Windows для добавления в область (Политика: \[Предварительная версия.\] развертывание агента Log Analytics для виртуальных машин Windows) |(Необязательно.) Значение по умолчанию — _none_. Дополнительные сведения см. в статье [Create a Log Analytics workspace in the Azure portal](../../../../azure-monitor/learn/quick-create-workspace.md) (Создание рабочей области Log Analytics на портале Azure). |
 

@@ -13,12 +13,12 @@ ms.topic: overview
 ms.date: 11/15/2017
 ms.author: apimpm
 ms.custom: mvc
-ms.openlocfilehash: 8d7fa8b8119ddf1769b36bcb55831047d6242470
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 85fa79cdfc7036be5b0ab20e49986a1d075152c5
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "79215212"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86254662"
 ---
 # <a name="about-api-management"></a>Сведения об Управлении API
 
@@ -102,7 +102,7 @@ API является основой экземпляра службы API Manage
 ## <a name="policies"></a><a name="policies"> </a> Политики
 Политики — это мощная функция управления API, которая позволяет издателю изменять поведение API с помощью настройки. Политика — это коллекция правил, которые выполняются последовательно над запросом или ответом API. Часто используемые правила включают преобразование формата из XML в JSON и ограничение скорости вызовов, позволяющее ограничить число входящих вызовов от разработчика; доступны и другие политики.
 
-Выражения политики можно использовать в качестве значений атрибутов или текстовых значений в любой политике управления API, если в ней не указано иное. Некоторые политики (в том числе [Поток управления](/azure/api-management/api-management-advanced-policies#choose) и [Задание переменной](/azure/api-management/api-management-advanced-policies#set-variable)) основаны на выражениях политики. Дополнительную информацию см. в документации по [расширенным политикам](/azure/api-management/api-management-advanced-policies#AdvancedPolicies) и [выражениям политики](/azure/api-management/api-management-policy-expressions).
+Выражения политики можно использовать в качестве значений атрибутов или текстовых значений в любой политике управления API, если в ней не указано иное. Некоторые политики (в том числе [Поток управления](./api-management-advanced-policies.md#choose) и [Задание переменной](./api-management-advanced-policies.md#set-variable)) основаны на выражениях политики. Дополнительную информацию см. в документации по [расширенным политикам](./api-management-advanced-policies.md#AdvancedPolicies) и [выражениям политики](./api-management-policy-expressions.md).
 
 
 Полный список политик службы управления API см. в [справочнике по политикам][Policy reference]. Дополнительную информацию об использовании и настройке политик см. в статье о [политиках управления API][API Management policies]. Инструкции по созданию продукта с ограничением скорости и политиками квот см. в статье [Защита API путем ограничения скорости с помощью управления API Azure][How create and configure advanced product settings].
@@ -135,17 +135,13 @@ API является основой экземпляра службы API Manage
 [Policies]: #policies
 [Developer portal]: #developer-portal
 
-[How to create APIs]: api-management-howto-create-apis.md
-[How to add operations to an API]: api-management-howto-add-operations.md
+[How to create APIs]: ./import-and-publish.md
+[How to add operations to an API]: ./mock-api-responses.md
 [How to create and publish a product]: api-management-howto-add-products.md
 [How to create and use groups]: api-management-howto-create-groups.md
 [How to associate groups with developers]: api-management-howto-create-groups.md#associate-group-developer
 [How create and configure advanced product settings]: transform-api.md
 [How to create or invite developers]: api-management-howto-create-or-invite-developers.md
-[Policy reference]: api-management-policy-reference.md
+[Policy reference]: ./api-management-policies.md
 [API Management policies]: api-management-howto-policies.md
 [Create an API Management service instance]: get-started-create-service-instance.md
-
-
-
-

@@ -10,10 +10,9 @@ ms.topic: conceptual
 ms.date: 10/23/2019
 ms.author: mbullwin
 ms.openlocfilehash: 380b8a7ce286ab06b6935bf63bf3a0e82f371c2f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77658019"
 ---
 # <a name="workbook-time-parameters"></a>Параметры времени книги
@@ -49,7 +48,7 @@ ms.locfileid: "77658019"
 ### <a name="in-kql"></a>В ККЛ
 1. Добавьте в книгу элемент управления запроса и выберите ресурс Application Insights.
 2. В ККЛ введите фильтр области времени с помощью параметра:`| where timestamp {TimeRange}`
-3. Это увеличивает время оценки запроса до `| where timestamp > ago(1d)`, которое представляет собой значение диапазона времени для параметра.
+3. Это увеличивает время оценки запроса до `| where timestamp > ago(1d)` , которое представляет собой значение диапазона времени для параметра.
 4. Выполнение запроса для просмотра результатов
 
     ![Изображение, показывающее диапазон времени, указанный в ККЛ](./media/workbooks-time/time-in-code.png)

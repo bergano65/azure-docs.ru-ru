@@ -3,13 +3,13 @@ title: Настройка приложений ASP.NET Core Linux
 description: Узнайте, как настроить предварительно созданный контейнер ASP.NET Core для приложения. В этой статье показаны наиболее распространенные задачи настройки.
 ms.devlang: dotnet
 ms.topic: article
-ms.date: 08/13/2019
-ms.openlocfilehash: b1d9e59109f5ace25abb9840b48e44ff03d394e7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 06/02/2020
+ms.openlocfilehash: e009f5b1fc656f700b3f0e76dda6e545aed535d2
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78255908"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84905771"
 ---
 # <a name="configure-a-linux-aspnet-core-app-for-azure-app-service"></a>Настройка приложения ASP.NET Core Linux для службы приложений Azure
 
@@ -41,14 +41,14 @@ az webapp config set --name <app-name> --resource-group <resource-group-name> --
 
 ## <a name="customize-build-automation"></a>Настройка автоматизации сборки
 
-Если приложение развертывается с использованием Git или zip-пакетов с включенной автоматизацией сборки, то Автоматизация сборки службы приложений проходит через следующую последовательность:
+Если приложение развертывается с использованием Git или ZIP-пакетов с включенной автоматизацией сборки, то автоматизация сборки cлужбы приложений проходит в такой последовательности:
 
-1. Запустить пользовательский скрипт, если он `PRE_BUILD_SCRIPT_PATH`указан в.
-1. Выполните `dotnet restore` команду, чтобы восстановить зависимости NuGet.
-1. Выполните `dotnet publish` команду, чтобы создать двоичный файл для рабочей среды.
-1. Запустить пользовательский скрипт, если он `POST_BUILD_SCRIPT_PATH`указан в.
+1. Запустите пользовательский скрипт, если он указан `PRE_BUILD_SCRIPT_PATH`.
+1. Выполните команду `dotnet restore` , чтобы восстановить зависимости NuGet.
+1. Выполните команду `dotnet publish` , чтобы создать двоичный файл для рабочей среды.
+1. Запустите пользовательский скрипт, если он указан `POST_BUILD_SCRIPT_PATH`.
 
-`PRE_BUILD_COMMAND`и `POST_BUILD_COMMAND` представляют собой переменные среды, которые по умолчанию являются пустыми. Чтобы выполнить команды перед сборкой, определите `PRE_BUILD_COMMAND`. Чтобы выполнить команды после сборки, определите `POST_BUILD_COMMAND`.
+`PRE_BUILD_COMMAND` и `POST_BUILD_COMMAND` являются переменными среды, которые по умолчанию пустые. Чтобы выполнить команды перед сборкой, определите `PRE_BUILD_COMMAND`. Чтобы выполнить команды после сборки, определите `POST_BUILD_COMMAND`.
 
 В следующем примере указываются две переменные для ряда команд, разделенных запятыми.
 
@@ -57,7 +57,7 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings POST_BUILD_COMMAND="echo foo, scripts/postbuild.sh"
 ```
 
-Дополнительные переменные среды для настройки автоматизации сборки см. в разделе [Орикс Configuration](https://github.com/microsoft/Oryx/blob/master/doc/configuration.md).
+Дополнительные переменные среды для настройки автоматизации сборки см. в статье [Конфигурация Oryx](https://github.com/microsoft/Oryx/blob/master/doc/configuration.md).
 
 Дополнительные сведения о том, как служба приложений работает и создает ASP.NET Core приложений в Linux, см. в [документации по Орикс: как обнаруживаются и строятся приложения .NET Core](https://github.com/microsoft/Oryx/blob/master/doc/runtimes/dotnetcore.md).
 
@@ -81,8 +81,8 @@ namespace SomeNamespace
     
         public SomeMethod()
         {
-            // retrieve App Service app setting
-            var myAppSetting = _configuration["MySetting"];
+            // retrieve nested App Service app setting
+            var myHierarchicalConfig = _configuration["My:Hierarchical:Config:Data"];
             // retrieve App Service connection string
             var myConnString = _configuration.GetConnectionString("MyDbConnection");
         }
@@ -90,11 +90,18 @@ namespace SomeNamespace
 }
 ```
 
-Например, если настроить параметр приложения с тем же именем в службе приложений и в *appSettings. JSON*, то значение службы приложений имеет приоритет над значением *appSettings. JSON* . Локальное значение *appSettings. JSON* позволяет выполнять отладку приложения локально, но значение службы приложений позволяет запускать приложение в продукте с параметрами рабочей среды. Строки подключения работают таким же образом. Таким образом вы сможете защитить секреты приложения за пределами репозитория кода и получить доступ к соответствующим значениям без изменения кода.
+Если вы настроили параметр приложения с тем же именем в службе приложений и в *appsettings.js*, например, значение службы приложений имеет приоритет над *appsettings.js* значением. Локальная *appsettings.jsпо* значению позволяет выполнять отладку приложения локально, но значение службы приложений позволяет запускать приложение в продукте с параметрами рабочей среды. Строки подключения работают таким же образом. Таким образом вы сможете защитить секреты приложения за пределами репозитория кода и получить доступ к соответствующим значениям без изменения кода.
+
+> [!NOTE]
+> Обратите внимание, что [иерархические данные конфигурации](https://docs.microsoft.com/aspnet/core/fundamentals/configuration/#hierarchical-configuration-data) в *appsettings.js* , доступ к которым осуществляется с помощью `:` стандартного разделителя .NET Core. Чтобы переопределить конкретный иерархический параметр конфигурации в службе приложений, задайте имя параметра приложения с тем же форматом с разделителями в ключе. в [Cloud Shell](https://shell.azure.com)можно выполнить следующий пример:
+
+```azurecli-interactive
+az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings My:Hierarchical:Config:Data="some value"
+```
 
 ## <a name="get-detailed-exceptions-page"></a>Страница «Получение подробных сведений об исключениях»
 
-Когда приложение ASP.NET создает исключение в отладчике Visual Studio, браузер отображает подробное сообщение об исключении, но в службе приложений эта страница заменяется общей ошибкой **HTTP 500** или **при обработке запроса произошла ошибка.** !". Чтобы отобразить страницу подробного исключения в службе приложений, добавьте параметр `ASPNETCORE_ENVIRONMENT` приложения в приложение, выполнив следующую команду в <a target="_blank" href="https://shell.azure.com" >Cloud Shell</a>.
+Когда приложение ASP.NET создает исключение в отладчике Visual Studio, браузер отображает подробное сообщение об исключении, но в службе приложений эта страница заменяется общей ошибкой **HTTP 500** или **при обработке запроса произошла ошибка.** !". Чтобы отобразить страницу подробного исключения в службе приложений, добавьте `ASPNETCORE_ENVIRONMENT` параметр приложения в приложение, выполнив следующую команду в <a target="_blank" href="https://shell.azure.com" >Cloud Shell</a>.
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings ASPNETCORE_ENVIRONMENT="Development"
@@ -154,7 +161,7 @@ project = <project-name>/<project-name>.csproj
 
 ### <a name="using-app-settings"></a>Использование параметров приложения
 
-В <a target="_blank" href="https://shell.azure.com">Azure Cloud Shell</a>добавьте параметр приложения в приложение службы приложений, выполнив следующую команду CLI. Замените * \<имя приложения>*, * \<Resource-Group-Name>* и * \<именем проекта>* соответствующими значениями.
+В <a target="_blank" href="https://shell.azure.com">Azure Cloud Shell</a>добавьте параметр приложения в приложение службы приложений, выполнив следующую команду CLI. Замените *\<app-name>* , *\<resource-group-name>* и *\<project-name>* соответствующими значениями.
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings PROJECT="<project-name>/<project-name>.csproj"
@@ -162,7 +169,26 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 
 ## <a name="access-diagnostic-logs"></a>Доступ к журналам диагностики
 
-[!INCLUDE [Access diagnostic logs](../../../includes/app-service-web-logs-access-no-h.md)]
+ASP.NET Core предоставляет [встроенный поставщик ведения журнала для службы приложений](https://docs.microsoft.com/aspnet/core/fundamentals/logging/#azure-app-service). В *Program.CS* проекта добавьте поставщик в приложение с помощью `ConfigureLogging` метода расширения, как показано в следующем примере:
+
+```csharp
+public static IHostBuilder CreateHostBuilder(string[] args) =>
+    Host.CreateDefaultBuilder(args)
+        .ConfigureLogging(logging =>
+        {
+            logging.AddAzureWebAppDiagnostics();
+        })
+        .ConfigureWebHostDefaults(webBuilder =>
+        {
+            webBuilder.UseStartup<Startup>();
+        });
+```
+
+Затем можно настроить и создать журналы с помощью [стандартного шаблона .NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/logging).
+
+[!INCLUDE [Access diagnostic logs](../../../includes/app-service-web-logs-access-linux-no-h.md)]
+
+Дополнительные сведения об устранении неполадок ASP.NET Core приложений в службе приложений см. в статье [Устранение неполадок ASP.NET Core в службе приложений Azure и службах IIS](https://docs.microsoft.com/aspnet/core/test/troubleshoot-azure-iis) .
 
 ## <a name="open-ssh-session-in-browser"></a>Открытие сеанса SSH в браузере
 

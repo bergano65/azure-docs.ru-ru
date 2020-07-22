@@ -12,17 +12,17 @@ ms.topic: conceptual
 ms.date: 04/14/2020
 ms.custom: seodec18
 ms.openlocfilehash: fd34595d5ea942602efc920904ff326fc203c088
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81380687"
 ---
 # <a name="understand-data-retention-in-azure-time-series-insights"></a>Общие сведения о хранении данных в службе "аналитика временных рядов Azure"
 
 В этой статье описываются два основных параметра, которые влияют на хранение данных в среде службы "аналитика временных рядов Azure".
 
-## <a name="video"></a>Видеоролик
+## <a name="video"></a>Видео
 
 ### <a name="the-following-video-summarizes-time-series-insights-data-retention-and-how-to-plan-for-itbr"></a>В следующем видео приведена сводка по хранению данных в аналитике временных рядов и о том, как спланировать их.</br>
 
@@ -90,11 +90,11 @@ ms.locfileid: "81380687"
 
 [![Хранение сообщений концентратора событий.](media/time-series-insights-concepts-retention/event-hub-retention.png)](media/time-series-insights-concepts-retention/event-hub-retention.png#lightbox)
 
-Если в источнике событий (`timeStampPropertyName`) не настроено ни одного свойства, по умолчанию для аналитики временных рядов используется метка времени прибытия в концентраторе событий в качестве оси X. Если `timeStampPropertyName` настроено что-то другое, среда ищет параметр, настроенный `timeStampPropertyName` в пакете данных при анализе событий.
+Если в источнике событий () не настроено ни одного свойства `timeStampPropertyName` , по умолчанию для аналитики временных рядов используется метка времени прибытия в концентраторе событий в качестве оси X. Если `timeStampPropertyName` настроено что-то другое, среда ищет параметр, настроенный `timeStampPropertyName` в пакете данных при анализе событий.
 
 Узнайте [, как масштабировать среду "аналитика временных рядов](time-series-insights-how-to-scale-your-environment.md) ", чтобы масштабировать среду в соответствии с дополнительной емкостью или увеличить длину хранения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о настройке и изменении параметров хранения данных см. [в этой статьи](time-series-insights-how-to-configure-retention.md).
 

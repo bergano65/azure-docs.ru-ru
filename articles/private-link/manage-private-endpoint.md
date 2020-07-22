@@ -4,15 +4,15 @@ description: Узнайте, как управлять подключениям�
 services: private-link
 author: malopMSFT
 ms.service: private-link
-ms.topic: article
+ms.topic: how-to
 ms.date: 09/16/2019
 ms.author: allensu
-ms.openlocfilehash: 62b24b3e2f5c1b89fa7db581ac34cf58381db2a0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 20695d183ea8184f7ee2948b3897fa1f3a741411
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75452966"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84737501"
 ---
 # <a name="manage-a-private-endpoint-connection"></a>Управление подключением к частной конечной точке
 Частная ссылка Azure работает на модели потока вызовов утверждения, в которой потребитель службы частной связи может запросить подключение к поставщику услуг для использования службы. Затем поставщик услуг может решить, следует ли разрешить потребителю подключаться или нет. Частная ссылка Azure позволяет поставщикам услуг управлять подключением к частной конечной точке в своих ресурсах. В этой статье приводятся инструкции по управлению подключениями к частным конечным точкам.
@@ -58,7 +58,7 @@ Get-AzPrivateLinkService -Name myPrivateLinkService -ResourceGroupName myResourc
  
 #### <a name="approve-a-private-endpoint-connection"></a>Утверждение подключения к частной конечной точке 
  
-Используйте командлет `Approve-AzPrivateEndpointConnection` , чтобы утвердить подключение к частной конечной точке. 
+Используйте `Approve-AzPrivateEndpointConnection` командлет, чтобы утвердить подключение к частной конечной точке. 
  
 ```azurepowershell
 Approve-AzPrivateEndpointConnection -Name myPrivateEndpointConnection -ResourceGroupName myResourceGroup -ServiceName myPrivateLinkService
@@ -66,13 +66,13 @@ Approve-AzPrivateEndpointConnection -Name myPrivateEndpointConnection -ResourceG
  
 #### <a name="deny-private-endpoint-connection"></a>Запретить подключение к частной конечной точке 
  
-Используйте командлет `Deny-AzPrivateEndpointConnection` , чтобы отклонить подключение к частной конечной точке. 
+Используйте `Deny-AzPrivateEndpointConnection` командлет, чтобы отклонить подключение к частной конечной точке. 
 ```azurepowershell
 Deny-AzPrivateEndpointConnection -Name myPrivateEndpointConnection -ResourceGroupName myResourceGroup -ServiceName myPrivateLinkService 
 ```
 #### <a name="remove-private-endpoint-connection"></a>Удаление подключения к частной конечной точке 
  
-Используйте командлет `Remove-AzPrivateEndpointConnection` , чтобы удалить подключение к частной конечной точке. 
+Используйте `Remove-AzPrivateEndpointConnection` командлет, чтобы удалить подключение к частной конечной точке. 
 ```azurepowershell
 Remove-AzPrivateEndpointConnection -Name myPrivateEndpointConnection1 -ResourceGroupName myResourceGroup -ServiceName myPrivateLinkServiceName 
 ```
@@ -87,5 +87,5 @@ az network private-link-service connection update -g myResourceGroup -n myPrivat
    
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- [Сведения о частных конечных точках](private-endpoint-overview.md)
+- [Узнайте больше о частных конечных точках](private-endpoint-overview.md)
  

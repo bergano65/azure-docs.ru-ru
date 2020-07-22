@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 06/05/2017
 ms.author: ramankum
-ms.openlocfilehash: 540ad6e820a909f86b43d1957d8abb407a0606d8
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: da3b80dc2d313b38cc8e505c0e18586c26a7d5db
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81460345"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86501251"
 ---
 # <a name="exportcopy-managed-snapshots-as-vhd-to-a-storage-account-in-different-region-with-powershell"></a>Экспорт или копирование управляемых моментальных снимков в виде VHD в учетную запись хранения в другом регионе с помощью PowerShell
 
@@ -41,9 +41,9 @@ ms.locfileid: "81460345"
 
 | Get-Help | Примечания |
 |---|---|
-| [Grant-AzSnapshotAccess](https://docs.microsoft.com/powershell/module/az.compute/New-AzDisk) | Создает универсальный код ресурса (URI) SAS для моментального снимка, который используется для копирования моментального снимка в учетную запись хранения. |
-| [New-AzureStorageContext](https://docs.microsoft.com/powershell/module/azure.storage/New-AzureStorageContext) | Создает контекст учетной записи хранения с помощью имени учетной записи и ключа. Этот контекст можно использовать для выполнения операций чтения и записи с учетной записью хранения. |
-| [Start-AzureStorageBlobCopy](https://docs.microsoft.com/powershell/module/azure.storage/Start-AzureStorageBlobCopy) | Копирует базовый VHD моментального снимка в учетную запись хранения. |
+| [Grant-AzSnapshotAccess](/powershell/module/az.compute/new-azdisk) | Создает универсальный код ресурса (URI) SAS для моментального снимка, который используется для копирования моментального снимка в учетную запись хранения. |
+| [New-AzureStorageContext](/powershell/module/azure.storage/new-azurestoragecontext) | Создает контекст учетной записи хранения с помощью имени учетной записи и ключа. Этот контекст можно использовать для выполнения операций чтения и записи с учетной записью хранения. |
+| [Start-AzureStorageBlobCopy](/powershell/module/azure.storage/start-azurestorageblobcopy) | Копирует базовый VHD моментального снимка в учетную запись хранения. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

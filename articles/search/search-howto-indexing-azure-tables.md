@@ -8,13 +8,13 @@ ms.author: magottei
 ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 11/04/2019
-ms.openlocfilehash: e8f6c0454497b1cb1d62417e566e9662469c56d0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 07/11/2020
+ms.openlocfilehash: a57232853284dad6f363797c009b1c38738d5b37
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74113004"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86519785"
 ---
 # <a name="how-to-index-tables-from-azure-table-storage-with-azure-cognitive-search"></a>Как индексировать таблицы из хранилища таблиц Azure с помощью Azure Когнитивный поиск
 
@@ -26,7 +26,7 @@ ms.locfileid: "74113004"
 
 * [Портал Azure](https://ms.portal.azure.com)
 * [REST API](https://docs.microsoft.com/rest/api/searchservice/Indexer-operations) когнитивный Поиск Azure
-* [Пакет SDK](https://aka.ms/search-sdk) Azure когнитивный Поиск для .NET
+* [Пакет SDK](https://docs.microsoft.com/dotnet/api/overview/azure/search) Azure когнитивный Поиск для .NET
 
 Здесь демонстрируется процесс работы с использованием REST API. 
 
@@ -49,7 +49,8 @@ ms.locfileid: "74113004"
 
 Создание источника данных:
 
-    POST https://[service name].search.windows.net/datasources?api-version=2019-05-06
+```http
+    POST https://[service name].search.windows.net/datasources?api-version=2020-06-30
     Content-Type: application/json
     api-key: [admin key]
 
@@ -59,6 +60,7 @@ ms.locfileid: "74113004"
         "credentials" : { "connectionString" : "DefaultEndpointsProtocol=https;AccountName=<account name>;AccountKey=<account key>;" },
         "container" : { "name" : "my-table", "query" : "PartitionKey eq '123'" }
     }   
+```
 
 Дополнительные сведения об API создания источника данных см. в статье [Создание источника данных](https://docs.microsoft.com/rest/api/searchservice/create-data-source).
 
@@ -67,9 +69,9 @@ ms.locfileid: "74113004"
 
 Учетные данные для таблицы можно указать одним из описанных ниже способов. 
 
-- **Строка подключения учетной записи хранения с полным доступом** `DefaultEndpointsProtocol=https;AccountName=<your storage account>;AccountKey=<your account key>` . чтобы получить строку подключения из портал Azure, перейдите к**разделу** **Параметры** > колонок >  **учетной записи хранения**ключи (для классических учетных записей хранения) или **Параметры** > **ключи доступа** (для Azure Resource Manager учетных записей хранения).
+- **Строка подключения учетной записи хранения с полным доступом**. чтобы `DefaultEndpointsProtocol=https;AccountName=<your storage account>;AccountKey=<your account key>` получить строку подключения из портал Azure, перейдите к разделу Параметры **колонок учетной записи хранения**  >  **Settings**  >  **ключи** (для классических учетных записей хранения) или **Параметры**  >  **ключи доступа** (для Azure Resource Manager учетных записей хранения).
 - **Строка подключения для подписанного URL-имени учетной записи хранения**. `TableEndpoint=https://<your account>.table.core.windows.net/;SharedAccessSignature=?sv=2016-05-31&sig=<the signature>&spr=https&se=<the validity end time>&srt=co&ss=t&sp=rl` подписанный URL-доступ должен иметь разрешения на список и чтение для контейнеров (в данном случае таблиц) и объектов (строк таблицы).
--  **Подписанный** `ContainerSharedAccessUri=https://<your storage account>.table.core.windows.net/<table name>?tn=<table name>&sv=2016-05-31&sig=<the signature>&se=<the validity end time>&sp=r` URL-доступ к таблице. подпись общего доступа должна иметь разрешения на запрос (чтение) для таблицы.
+-  **Подписанный URL-доступ к таблице**. `ContainerSharedAccessUri=https://<your storage account>.table.core.windows.net/<table name>?tn=<table name>&sv=2016-05-31&sig=<the signature>&se=<the validity end time>&sp=r` подпись общего доступа должна иметь разрешения на запрос (чтение) для таблицы.
 
 Дополнительные сведения о подписанных URL-адресах хранения см. в разделе [Использование подписанных URL-адресов](../storage/common/storage-dotnet-shared-access-signature-part-1.md).
 
@@ -81,7 +83,8 @@ ms.locfileid: "74113004"
 
 Создание индекса:
 
-    POST https://[service name].search.windows.net/indexes?api-version=2019-05-06
+```http
+    POST https://[service name].search.windows.net/indexes?api-version=2020-06-30
     Content-Type: application/json
     api-key: [admin key]
 
@@ -92,6 +95,7 @@ ms.locfileid: "74113004"
             { "name": "SomeColumnInMyTable", "type": "Edm.String", "searchable": true }
           ]
     }
+```
 
 Дополнительные сведения о создании индексов см. в статье [Создание индекса](https://docs.microsoft.com/rest/api/searchservice/create-index).
 
@@ -100,7 +104,8 @@ ms.locfileid: "74113004"
 
 После создания индекса и источника данных можно создать индексатор:
 
-    POST https://[service name].search.windows.net/indexers?api-version=2019-05-06
+```http
+    POST https://[service name].search.windows.net/indexers?api-version=2020-06-30
     Content-Type: application/json
     api-key: [admin key]
 
@@ -110,12 +115,13 @@ ms.locfileid: "74113004"
       "targetIndexName" : "my-target-index",
       "schedule" : { "interval" : "PT2H" }
     }
+```
 
 Этот индексатор выполняется каждые два часа. (Для интервала расписания задано значение "PT2H".) Чтобы запустить индексатор каждые 30 минут, задайте для интервала значение "PT30M". Самый короткий интервал, который можно задать, составляет пять минут. Расписание является необязательным. Если оно не указано, то индексатор выполняется только один раз при его создании. Однако индексатор можно запустить по запросу в любое время.   
 
 Дополнительные сведения об API создания индексатора см. в статье [Создание индексатора](https://docs.microsoft.com/rest/api/searchservice/create-indexer).
 
-Дополнительные сведения об определении расписаний индексаторов см. [в статье Планирование индексаторов для когнитивный Поиск Azure](search-howto-schedule-indexers.md).
+Дополнительные сведения об определении расписаний индексаторов для Когнитивного поиска Azure см. [здесь](search-howto-schedule-indexers.md).
 
 ## <a name="deal-with-different-field-names"></a>Работа с различными именами полей
 Иногда имена полей в существующем индексе отличаются от имен свойств в таблице. Для сопоставления имен свойств таблицы с именами полей в индексе поиска можно использовать сопоставления полей. Дополнительные сведения о сопоставлениях полей см. в статье [сопоставления полей индексатора в Azure когнитивный Поиск моста различий между источниками данных и индексами поиска](search-indexer-field-mappings.md).
@@ -123,7 +129,7 @@ ms.locfileid: "74113004"
 ## <a name="handle-document-keys"></a>Обработка ключей документа
 В Azure Когнитивный поиск ключ документа однозначно определяет документ. Каждый индекс поиска должен содержать только одно поле ключа типа `Edm.String`. Поле ключа является обязательным для каждого документа, который добавляется к индексу. (Фактически, это единственное обязательное для заполнения поле.)
 
-Поскольку строки таблицы имеют составной ключ, Azure Когнитивный поиск создает искусственное поле с `Key` именем, которое представляет собой объединение значений ключа секции и ключа строки. Например, если PartitionKey равен `PK1` и RowKey равен `RK1`, то значение поля `Key` равно `PK1RK1`.
+Поскольку строки таблицы имеют составной ключ, Azure Когнитивный поиск создает искусственное поле `Key` с именем, которое представляет собой объединение значений ключа секции и ключа строки. Например, если PartitionKey равен `PK1` и RowKey равен `RK1`, то значение поля `Key` равно `PK1RK1`.
 
 > [!NOTE]
 > Значение `Key` может содержать знаки, недопустимые в ключах документов, например дефисы. С недопустимыми знаками можно работать с помощью  [функции сопоставления полей](search-indexer-field-mappings.md#base64EncodeFunction)`base64Encode`. В этом случае при передаче ключей документов в вызовах API (например, при поиске) необходимо также использовать безопасное кодирование строки входных данных в Base64.
@@ -135,7 +141,8 @@ ms.locfileid: "74113004"
 
 Чтобы указать, что определенные документы необходимо удалить из индекса, можно использовать стратегию обратимого удаления. Вместо удаления строки добавьте свойство, чтобы указать, что она удалена, и настройте политику обнаружения обратимого удаления в источнике данных. Например, следующая политика считает строку удаленной, если строка имеет свойство `IsDeleted` со значением `"true"`:
 
-    PUT https://[service name].search.windows.net/datasources?api-version=2019-05-06
+```http
+    PUT https://[service name].search.windows.net/datasources?api-version=2020-06-30
     Content-Type: application/json
     api-key: [admin key]
 
@@ -146,11 +153,12 @@ ms.locfileid: "74113004"
         "container" : { "name" : "table name", "query" : "<query>" },
         "dataDeletionDetectionPolicy" : { "@odata.type" : "#Microsoft.Azure.Search.SoftDeleteColumnDeletionDetectionPolicy", "softDeleteColumnName" : "IsDeleted", "softDeleteMarkerValue" : "true" }
     }   
+```
 
 <a name="Performance"></a>
 ## <a name="performance-considerations"></a>Вопросы производительности
 
-По умолчанию Когнитивный поиск Azure использует следующий фильтр запросов: `Timestamp >= HighWaterMarkValue`. Поскольку в таблицах Azure отсутствует вторичный индекс в поле `Timestamp`, запрос такого типа требует просмотра всей таблицы и поэтому выполняется медленно для больших таблиц.
+По умолчанию Когнитивный поиск Azure использует следующий фильтр запросов: `Timestamp >= HighWaterMarkValue` . Поскольку в таблицах Azure отсутствует вторичный индекс в поле `Timestamp`, запрос такого типа требует просмотра всей таблицы и поэтому выполняется медленно для больших таблиц.
 
 
 Ниже приведены два возможных метода повышения производительности индексирования таблиц. Оба эти метода зависят от секционирования таблиц: 

@@ -8,18 +8,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: sample
-ms.date: 07/30/2019
+ms.date: 05/13/2020
 ms.author: aahi
-ms.openlocfilehash: d34f3a03e1bcd35c270d13c4dda57d0394a36e4b
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: 5b3893dce2d20b1de0a78f11263d880e262098d2
+ms.sourcegitcommit: f0b206a6c6d51af096a4dc6887553d3de908abf3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "70387791"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84142390"
 ---
 # <a name="example-detect-language-with-text-analytics"></a>Пример Определение языка с помощью API "Анализ текста"
 
-Функция [распознавания языка](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c7) анализ текста Azure REST API оценивает ввод текста для каждого документа и возвращает идентификаторы языка с показателем, указывающим на надежность анализа.
+Функция [распознавания языка](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/Languages) анализ текста Azure REST API оценивает ввод текста для каждого документа и возвращает идентификаторы языка с показателем, указывающим на надежность анализа.
 
 Эта возможность нужна для содержимого хранилищ, которое собирает произвольный текст, где язык неизвестен. Вы можете проанализировать результаты этого анализа, чтобы определить, какой язык используется во входном документе. В ответах также приводится оценка, отражающая степень доверия к модели. Значение оценки находится в диапазоне от 0 до 1.
 
@@ -67,16 +67,16 @@ ms.locfileid: "70387791"
 
 Дополнительные сведения об определении запроса см. [Вызов REST API анализа текста](text-analytics-how-to-call-api.md). Для удобства повторим следующие моменты.
 
-+ Создайте запрос POST. Для изучения документации по API для этого запроса см. [API Распознавание языка](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c7)
++ Создайте запрос POST. Для изучения документации по API для этого запроса см. [API Распознавание языка](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/Languages)
 
-+ Задайте конечную точку HTTP для распознавание языка. Используйте ресурс "Анализ текста" в Azure либо отдельный контейнер [Text Analytics](text-analytics-how-to-install-containers.md). В URL-адрес необходимо добавить `/text/analytics/v2.1/languages`. Например: `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v2.1/languages`.
++ Задайте конечную точку HTTP для распознавание языка. Используйте ресурс "Анализ текста" в Azure либо отдельный контейнер [Text Analytics](text-analytics-how-to-install-containers.md). В URL-адрес необходимо добавить `/text/analytics/v3.0/languages`. Например: `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.0/languages`.
 
 + Задайте заголовок запроса, чтобы включить [ключ доступа](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource) для операций Анализа текста.
 
 + В тексте запроса укажите набор документов JSON, которые подготовлены для этого анализа.
 
 > [!Tip]
-> Используйте [Postman](text-analytics-how-to-call-api.md) или откройте **консоль тестирования API** в [документации](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c7), чтобы структурировать запрос и передать его (используя метод POST) в службу.
+> Используйте [Postman](text-analytics-how-to-call-api.md) или откройте **консоль тестирования API** в [документации](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/Languages), чтобы структурировать запрос и передать его (используя метод POST) в службу.
 
 ## <a name="step-2-post-the-request"></a>Шаг 2. Отправить запрос
 
@@ -96,68 +96,64 @@ ms.locfileid: "70387791"
 Положительная оценка 1.0 выражает наивысший уровень достоверности анализа.
 
 ```json
-    {
-        "documents": [
-            {
-                "id": "1",
-                "detectedLanguages": [
-                    {
-                        "name": "English",
-                        "iso6391Name": "en",
-                        "score": 1
-                    }
-                ]
+{
+    "documents": [
+        {
+            "id": "1",
+            "detectedLanguage": {
+                "name": "English",
+                "iso6391Name": "en",
+                "confidenceScore": 1.0
             },
-            {
-                "id": "2",
-                "detectedLanguages": [
-                    {
-                        "name": "Spanish",
-                        "iso6391Name": "es",
-                        "score": 1
-                    }
-                ]
+            "warnings": []
+        },
+        {
+            "id": "2",
+            "detectedLanguage": {
+                "name": "Spanish",
+                "iso6391Name": "es",
+                "confidenceScore": 1.0
             },
-            {
-                "id": "3",
-                "detectedLanguages": [
-                    {
-                        "name": "French",
-                        "iso6391Name": "fr",
-                        "score": 1
-                    }
-                ]
+            "warnings": []
+        },
+        {
+            "id": "3",
+            "detectedLanguage": {
+                "name": "French",
+                "iso6391Name": "fr",
+                "confidenceScore": 1.0
             },
-            {
-                "id": "4",
-                "detectedLanguages": [
-                    {
-                        "name": "Chinese_Simplified",
-                        "iso6391Name": "zh_chs",
-                        "score": 1
-                    }
-                ]
+            "warnings": []
+        },
+        {
+            "id": "4",
+            "detectedLanguage": {
+                "name": "Chinese_Simplified",
+                "iso6391Name": "zh_chs",
+                "confidenceScore": 1.0
             },
-            {
-                "id": "5",
-                "detectedLanguages": [
-                    {
-                        "name": "Russian",
-                        "iso6391Name": "ru",
-                        "score": 1
-                    }
-                ]
-            }
-        ],
-        "errors": []
-    }
+            "warnings": []
+        },
+        {
+            "id": "5",
+            "detectedLanguage": {
+                "name": "Russian",
+                "iso6391Name": "ru",
+                "confidenceScore": 1.0
+            },
+            "warnings": []
+        }
+    ],
+    "errors": [],
+    "modelVersion": "2019-10-01"
+}
 ```
 
 ### <a name="ambiguous-content"></a>Неоднозначное содержимое
 
-В некоторых случаях неоднозначность языков на основе входных данных может быть трудно устранить. Используйте параметр `countryHint`, чтобы указать двухбуквенный код страны. По умолчанию API использует US в качестве значения countryHint по умолчанию.Чтобы отменить это поведение, вы можете сбросить этот параметр, установив для этого значения пустую строку `countryHint = ""`.
+В некоторых случаях неоднозначность языков на основе входных данных может быть трудно устранить. Используйте параметр `countryHint`, чтобы указать двухбуквенный код страны или региона. По умолчанию API использует US в качестве значения countryHint по умолчанию.Чтобы отменить это поведение, вы можете сбросить этот параметр, установив для этого значения пустую строку `countryHint = ""`.
 
-Например, слово "Impossible" часто встречается в английском и французском языках, и при ограниченном контексте ответ будет основан на указании "US". Если известно, что источник текста находится во Франции, такие данные можно использовать в качестве указания.
+Например, слово "Impossible" часто встречается и в английском, и в французском языках, и при недостаточном контексте ответ будет основан на подсказке страны или региона ("US"). Если известно, что источник текста находится во Франции, такие данные можно использовать в качестве указания.
 
 **Ввод**
 
@@ -190,7 +186,7 @@ ms.locfileid: "70387791"
                     {
                         "name": "English",
                         "iso6391Name": "en",
-                        "score": 1
+                        "confidenceScore": 1
                     }
                 ]
             },
@@ -200,7 +196,7 @@ ms.locfileid: "70387791"
                     {
                         "name": "French",
                         "iso6391Name": "fr",
-                        "score": 1
+                        "confidenceScore": 1
                     }
                 ]
             }
@@ -218,7 +214,7 @@ ms.locfileid: "70387791"
             {
                 "name": "(Unknown)",
                 "iso6391Name": "(Unknown)",
-                "score": "NaN"
+                "confidenceScore": "NaN"
             }
         ]
     }
@@ -254,7 +250,7 @@ ms.locfileid: "70387791"
             {
               "name": "Spanish",
               "iso6391Name": "es",
-              "score": 0.9375
+              "confidencescore": 0.94
             }
           ]
         }
@@ -267,17 +263,13 @@ ms.locfileid: "70387791"
 
 В этой статье рассматриваются основные понятия и рабочий процесс распознавания языка с помощью анализа текста в Cognitive Services. Мы объяснили и продемонстрировали некоторые моменты:
 
-+ [Распознавание языка](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c7) доступно для широкого спектра языков, наречий, диалектов и некоторых региональных или национальных языков.
++ [Распознавание языка](https://westus2.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/Languages) доступно для широкого спектра языков, наречий, диалектов и некоторых региональных или национальных языков.
 + В тексте запроса передаются документы JSON, которые содержат идентификатор и текст.
 + Запрос POST передается в конечную точку `/languages` используя личный [ключ доступа и конечную точку](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource), допустимые для вашей подписки.
 + Выходные данные ответа состоят из идентификаторов языка для каждого ИД документа. Выходные данные можно передавать в любое приложение, принимающее JSON. Примеры приложений, среди прочих, включают в себя Excel и Power BI.
 
 ## <a name="see-also"></a>См. также раздел
 
- API "Анализ текста": [общие сведения](../overview.md) и [вопросы и ответы](../text-analytics-resource-faq.md)</br>
- [Анализ текста](//go.microsoft.com/fwlink/?LinkID=759712)
-
-## <a name="next-steps"></a>Дальнейшие действия
-
-> [!div class="nextstepaction"]
-> [Анализ тональности](text-analytics-how-to-sentiment-analysis.md)
+* [Text Analytics overview](../overview.md) (Общие сведения об анализе текста)
+* [Использование клиентской библиотеки Анализа текста](../quickstarts/text-analytics-sdk.md)
+* [Новые возможности](../whats-new.md)

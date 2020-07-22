@@ -1,16 +1,16 @@
 ---
 title: Просмотр агрегированной работоспособности сущностей Azure Service Fabric
 description: Описание того, как отправлять запросы, просматривать и оценивать сводные данные о работоспособности сущностей Azure Service Fabric при помощи запросов о работоспособности и общих запросов.
-author: oanapl
+author: georgewallace
 ms.topic: conceptual
 ms.date: 2/28/2018
-ms.author: oanapl
-ms.openlocfilehash: d02d8f717801bf51e43c9dafa5eb9379d0737674
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.author: gwallace
+ms.openlocfilehash: 4f20c5180b078bc49fcf1eb35893325fa3a7fa50
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75464128"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86256158"
 ---
 # <a name="view-service-fabric-health-reports"></a>Просмотр отчетов о работоспособности Service Fabric
 В платформе Azure Service Fabric используется [модель работоспособности](service-fabric-health-introduction.md) с сущностями работоспособности, на основе которых компоненты системы и модули наблюдения создают отчеты о состоянии отслеживаемых локальных условий. [Хранилище данных о работоспособности](service-fabric-health-introduction.md#health-store) содержит все данные о работоспособности, с помощью которых можно определить состояние работоспособности сущностей.
@@ -55,10 +55,10 @@ ms.locfileid: "75464128"
 >
 
 ## <a name="health-queries"></a>Запросы о работоспособности
-Service Fabric предоставляет запросы о работоспособности по каждому поддерживаемому [типу сущностей](service-fabric-health-introduction.md#health-entities-and-hierarchy). Их можно просмотреть с помощью API (используя методы в [FabricClient.HealthManager](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.healthmanager?view=azure-dotnet)), командлетов PowerShell и REST. Эти запросы возвращают все сведения о работоспособности сущности: сводное состояние работоспособности, события работоспособности сущности, состояние работоспособности дочерних элементов (если применимо) и оценки неработоспособности (если сущность неработоспособна) и статистику работоспособности дочерних элементов (если применимо).
+Service Fabric предоставляет запросы о работоспособности по каждому поддерживаемому [типу сущностей](service-fabric-health-introduction.md#health-entities-and-hierarchy). Их можно просмотреть с помощью API (используя методы в [FabricClient.HealthManager](/dotnet/api/system.fabric.fabricclient.healthmanager?view=azure-dotnet)), командлетов PowerShell и REST. Эти запросы возвращают все сведения о работоспособности сущности: сводное состояние работоспособности, события работоспособности сущности, состояние работоспособности дочерних элементов (если применимо) и оценки неработоспособности (если сущность неработоспособна) и статистику работоспособности дочерних элементов (если применимо).
 
 > [!NOTE]
-> Сущность работоспособности возвращается после ее полного заполнения в хранилище данных о работоспособности. Сущность должна быть активной (ее не следует удалять) и у нее должен быть системный отчет. У ее родительских сущностей в цепи иерархии также должны быть системные отчеты. Если любое из этих условий не выполнено, запросы работоспособности будут возвращать исключение [FabricException](https://docs.microsoft.com/dotnet/api/system.fabric.fabricexception) с кодом ошибки [FabricErrorCode](https://docs.microsoft.com/dotnet/api/system.fabric.fabricerrorcode) `FabricHealthEntityNotFound`, из-за которой сущность не удалось возвратить.
+> Сущность работоспособности возвращается после ее полного заполнения в хранилище данных о работоспособности. Сущность должна быть активной (ее не следует удалять) и у нее должен быть системный отчет. У ее родительских сущностей в цепи иерархии также должны быть системные отчеты. Если любое из этих условий не выполнено, запросы работоспособности будут возвращать исключение [FabricException](/dotnet/api/system.fabric.fabricexception) с кодом ошибки [FabricErrorCode](/dotnet/api/system.fabric.fabricerrorcode) `FabricHealthEntityNotFound`, из-за которой сущность не удалось возвратить.
 >
 >
 
@@ -87,7 +87,7 @@ Service Fabric предоставляет запросы о работоспос
 * [Необязательно.] Используйте фильтр, чтобы добавить в статистику работоспособности данные о fabric:/System. Применяется, только если статистика работоспособности не исключена. По умолчанию статистика работоспособности содержит только статистику приложений пользователей, а не приложения System.
 
 ### <a name="api"></a>API
-Чтобы получить сведения о работоспособности кластера, создайте `FabricClient` и вызовите метод [GetClusterHealthAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.healthclient.getclusterhealthasync) в **HealthManager**.
+Чтобы получить сведения о работоспособности кластера, создайте `FabricClient` и вызовите метод [GetClusterHealthAsync](/dotnet/api/system.fabric.fabricclient.healthclient.getclusterhealthasync) в **HealthManager**.
 
 Следующий вызов получает сведения о работоспособности кластера.
 
@@ -95,7 +95,7 @@ Service Fabric предоставляет запросы о работоспос
 ClusterHealth clusterHealth = await fabricClient.HealthManager.GetClusterHealthAsync();
 ```
 
-Следующий код получает сведения о работоспособности кластера, используя настраиваемую политику работоспособности кластера и фильтры для узлов и приложений. Он указывает, что статистика работоспособности должна содержать данные о fabric:/System. Он создает [ClusterHealthQueryDescription](https://docs.microsoft.com/dotnet/api/system.fabric.description.clusterhealthquerydescription), где содержатся входные данные.
+Следующий код получает сведения о работоспособности кластера, используя настраиваемую политику работоспособности кластера и фильтры для узлов и приложений. Он указывает, что статистика работоспособности должна содержать данные о fabric:/System. Он создает [ClusterHealthQueryDescription](/dotnet/api/system.fabric.description.clusterhealthquerydescription), где содержатся входные данные.
 
 ```csharp
 var policy = new ClusterHealthPolicy()
@@ -127,7 +127,7 @@ ClusterHealth clusterHealth = await fabricClient.HealthManager.GetClusterHealthA
 ```
 
 ### <a name="powershell"></a>PowerShell
-Командлет для получения сведений о работоспособности кластера — [Get-ServiceFabricClusterHealth](https://docs.microsoft.com/powershell/module/servicefabric/get-servicefabricclusterhealth). Сначала подключитесь к кластеру, используя командлет [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps) .
+Командлет для получения сведений о работоспособности кластера — [Get-ServiceFabricClusterHealth](/powershell/module/servicefabric/get-servicefabricclusterhealth). Сначала подключитесь к кластеру, используя командлет [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps) .
 
 В этом примере кластер состоит из пяти узлов, а приложение системы и fabric:/WordCount настроены, как описано выше.
 
@@ -225,7 +225,7 @@ HealthEvents            : None
 ```
 
 ### <a name="rest"></a>REST
-Вы можете получить сведения о работоспособности кластера с помощью [запроса GET](https://docs.microsoft.com/rest/api/servicefabric/get-the-health-of-a-cluster) или [запроса POST](https://docs.microsoft.com/rest/api/servicefabric/get-the-health-of-a-cluster-by-using-a-health-policy), в который входят политики работоспособности, описанные в основном тексте.
+Вы можете получить сведения о работоспособности кластера с помощью [запроса GET](/rest/api/servicefabric/get-the-health-of-a-cluster) или [запроса POST](/rest/api/servicefabric/get-the-health-of-a-cluster-by-using-a-health-policy), в который входят политики работоспособности, описанные в основном тексте.
 
 ## <a name="get-node-health"></a>Получение сведений о работоспособности узла
 Возвращает сведения о работоспособности сущности узла и содержит события работоспособности, связанные с узлом. Входные данные:
@@ -235,7 +235,7 @@ HealthEvents            : None
 * фильтры для событий, с помощью которых можно указать, какие записи представляют интерес и будут возвращены в результате, например только с ошибками или с предупреждениями и ошибками (необязательные параметры). При оценке сводного состояния работоспособности сущности используются все события, независимо от выбранного фильтра.
 
 ### <a name="api"></a>API
-Чтобы получить сведения о работоспособности узла через API, создайте `FabricClient` и вызовите метод [GetNodeHealthAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.healthclient.getnodehealthasync) в HealthManager.
+Чтобы получить сведения о работоспособности узла через API, создайте `FabricClient` и вызовите метод [GetNodeHealthAsync](/dotnet/api/system.fabric.fabricclient.healthclient.getnodehealthasync) в HealthManager.
 
 Следующий код получает сведения о работоспособности узла по указанному имени.
 
@@ -243,7 +243,7 @@ HealthEvents            : None
 NodeHealth nodeHealth = await fabricClient.HealthManager.GetNodeHealthAsync(nodeName);
 ```
 
-Следующий код получает сведения о работоспособности узла по указанному имени и передает фильтр событий и настраиваемую политику через [NodeHealthQueryDescription](https://docs.microsoft.com/dotnet/api/system.fabric.description.nodehealthquerydescription).
+Следующий код получает сведения о работоспособности узла по указанному имени и передает фильтр событий и настраиваемую политику через [NodeHealthQueryDescription](/dotnet/api/system.fabric.description.nodehealthquerydescription).
 
 ```csharp
 var queryDescription = new NodeHealthQueryDescription(nodeName)
@@ -256,7 +256,7 @@ NodeHealth nodeHealth = await fabricClient.HealthManager.GetNodeHealthAsync(quer
 ```
 
 ### <a name="powershell"></a>PowerShell
-Командлет для получения сведений о работоспособности узла — [Get-ServiceFabricNodeHealth](https://docs.microsoft.com/powershell/module/servicefabric/get-servicefabricnodehealth). Сначала подключитесь к кластеру, используя командлет [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps) .
+Командлет для получения сведений о работоспособности узла — [Get-ServiceFabricNodeHealth](/powershell/module/servicefabric/get-servicefabricnodehealth). Сначала подключитесь к кластеру, используя командлет [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps) .
 Следующий командлет возвращает сведения о работоспособности узла, используя политики работоспособности по умолчанию:
 
 ```powershell
@@ -294,7 +294,7 @@ _Node_0                     Ok
 ```
 
 ### <a name="rest"></a>REST
-Вы можете получить сведения о работоспособности узла с помощью [запроса GET](https://docs.microsoft.com/rest/api/servicefabric/get-the-health-of-a-node) или [запроса POST](https://docs.microsoft.com/rest/api/servicefabric/get-the-health-of-a-node-by-using-a-health-policy), в который входят политики работоспособности, описанные в основном тексте.
+Вы можете получить сведения о работоспособности узла с помощью [запроса GET](/rest/api/servicefabric/get-the-health-of-a-node) или [запроса POST](/rest/api/servicefabric/get-the-health-of-a-node-by-using-a-health-policy), в который входят политики работоспособности, описанные в основном тексте.
 
 ## <a name="get-application-health"></a>Получение сведений о работоспособности приложения
 Возвращает сведения о работоспособности сущности приложения. В них содержатся данные о состоянии работоспособности развернутого приложения и дочерних элементов службы. Входные данные:
@@ -305,7 +305,7 @@ _Node_0                     Ok
 * [Необязательно.] Используйте фильтр, исключающий статистику работоспособности. Если не он указан, то статистика работоспособности будет содержать количественные данные об исправности, предупреждениях и ошибках для всех дочерних элементов приложения: служб, секций, реплик, развернутых приложений и развернутых пакетов служб.
 
 ### <a name="api"></a>API
-Чтобы получить сведения о работоспособности приложения, создайте `FabricClient` и вызовите метод [GetApplicationHealthAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.healthclient.getapplicationhealthasync) в HealthManager.
+Чтобы получить сведения о работоспособности приложения, создайте `FabricClient` и вызовите метод [GetApplicationHealthAsync](/dotnet/api/system.fabric.fabricclient.healthclient.getapplicationhealthasync) в HealthManager.
 
 Следующий код получает сведения о работоспособности приложения по указанному имени (URI).
 
@@ -313,7 +313,7 @@ _Node_0                     Ok
 ApplicationHealth applicationHealth = await fabricClient.HealthManager.GetApplicationHealthAsync(applicationName);
 ```
 
-Следующий код получает сведения о работоспособности приложения по заданному имени (URI) с указанием фильтров и настраиваемых политик через [ApplicationHealthQueryDescription](https://docs.microsoft.com/dotnet/api/system.fabric.description.applicationhealthquerydescription).
+Следующий код получает сведения о работоспособности приложения по заданному имени (URI) с указанием фильтров и настраиваемых политик через [ApplicationHealthQueryDescription](/dotnet/api/system.fabric.description.applicationhealthquerydescription).
 
 ```csharp
 HealthStateFilter warningAndErrors = HealthStateFilter.Error | HealthStateFilter.Warning;
@@ -440,7 +440,7 @@ HealthEvents                    : None
 ```
 
 ### <a name="rest"></a>REST
-Вы можете получить сведения о работоспособности приложения с помощью [запроса GET](https://docs.microsoft.com/rest/api/servicefabric/get-the-health-of-an-application) или [запроса POST](https://docs.microsoft.com/rest/api/servicefabric/get-the-health-of-an-application-by-using-an-application-health-policy), в который входят политики работоспособности, описанные в основном тексте.
+Вы можете получить сведения о работоспособности приложения с помощью [запроса GET](/rest/api/servicefabric/get-the-health-of-an-application) или [запроса POST](/rest/api/servicefabric/get-the-health-of-an-application-by-using-an-application-health-policy), в который входят политики работоспособности, описанные в основном тексте.
 
 ## <a name="get-service-health"></a>Получение сведений о работоспособности службы
 Возвращает сведения о работоспособности сущности службы. В них содержатся данные о состоянии работоспособности разделов. Входные данные:
@@ -451,7 +451,7 @@ HealthEvents                    : None
 * [Необязательно.] Используйте фильтр, исключающий статистику работоспособности. Если он не указан, то статистика работоспособности содержит количественные данные об исправности, предупреждениях и ошибках для всех секций и реплик службы.
 
 ### <a name="api"></a>API
-Чтобы получить сведения о работоспособности службы через API, создайте `FabricClient` и вызовите метод [GetServiceHealthAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.healthclient.getservicehealthasync) в HealthManager.
+Чтобы получить сведения о работоспособности службы через API, создайте `FabricClient` и вызовите метод [GetServiceHealthAsync](/dotnet/api/system.fabric.fabricclient.healthclient.getservicehealthasync) в HealthManager.
 
 В следующем примере возвращаются сведения о работоспособности службы с указанным именем (URI):
 
@@ -459,7 +459,7 @@ HealthEvents                    : None
 ServiceHealth serviceHealth = await fabricClient.HealthManager.GetServiceHealthAsync(serviceName);
 ```
 
-Следующий код получает сведения о работоспособности службы по указанному имени, то есть универсальному коду ресурса (URI) службы, с указанием фильтров и настраиваемой политики через [ServiceHealthQueryDescription](https://docs.microsoft.com/dotnet/api/system.fabric.description.servicehealthquerydescription).
+Следующий код получает сведения о работоспособности службы по указанному имени, то есть универсальному коду ресурса (URI) службы, с указанием фильтров и настраиваемой политики через [ServiceHealthQueryDescription](/dotnet/api/system.fabric.description.servicehealthquerydescription).
 
 ```csharp
 var queryDescription = new ServiceHealthQueryDescription(serviceName)
@@ -472,7 +472,7 @@ ServiceHealth serviceHealth = await fabricClient.HealthManager.GetServiceHealthA
 ```
 
 ### <a name="powershell"></a>PowerShell
-Командлет для получения сведений о работоспособности службы — [Get-ServiceFabricServiceHealth](https://docs.microsoft.com/powershell/module/servicefabric/get-servicefabricservicehealth). Сначала подключитесь к кластеру, используя командлет [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps) .
+Командлет для получения сведений о работоспособности службы — [Get-ServiceFabricServiceHealth](/powershell/module/servicefabric/get-servicefabricservicehealth). Сначала подключитесь к кластеру, используя командлет [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps) .
 
 Следующий командлет возвращает сведения о работоспособности службы, используя политику работоспособности по умолчанию:
 
@@ -512,7 +512,7 @@ HealthStatistics      :
 ```
 
 ### <a name="rest"></a>REST
-Вы можете получить сведения о работоспособности службы с помощью [запроса GET](https://docs.microsoft.com/rest/api/servicefabric/get-the-health-of-a-service) или [запроса POST](https://docs.microsoft.com/rest/api/servicefabric/get-the-health-of-a-service-by-using-a-health-policy), в который входят политики работоспособности, описанные в основном тексте.
+Вы можете получить сведения о работоспособности службы с помощью [запроса GET](/rest/api/servicefabric/get-the-health-of-a-service) или [запроса POST](/rest/api/servicefabric/get-the-health-of-a-service-by-using-a-health-policy), в который входят политики работоспособности, описанные в основном тексте.
 
 ## <a name="get-partition-health"></a>Получение сведений о работоспособности раздела
 Возвращает сведения о работоспособности сущности раздела. В них содержатся данные о состоянии работоспособности реплик. Входные данные:
@@ -523,14 +523,14 @@ HealthStatistics      :
 * [Необязательно.] Используйте фильтр, исключающий статистику работоспособности. Если он не указан, то статистика работоспособности показывает, сколько реплик находится в исправном состояния, состоянии предупреждения и состоянии ошибки.
 
 ### <a name="api"></a>API
-Чтобы получить сведения о работоспособности раздела через API, создайте `FabricClient` и вызовите метод [GetPartitionHealthAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.healthclient.getpartitionhealthasync) в HealthManager. Чтобы задать необязательные параметры, создайте [PartitionHealthQueryDescription](https://docs.microsoft.com/dotnet/api/system.fabric.description.partitionhealthquerydescription).
+Чтобы получить сведения о работоспособности раздела через API, создайте `FabricClient` и вызовите метод [GetPartitionHealthAsync](/dotnet/api/system.fabric.fabricclient.healthclient.getpartitionhealthasync) в HealthManager. Чтобы задать необязательные параметры, создайте [PartitionHealthQueryDescription](/dotnet/api/system.fabric.description.partitionhealthquerydescription).
 
 ```csharp
 PartitionHealth partitionHealth = await fabricClient.HealthManager.GetPartitionHealthAsync(partitionId);
 ```
 
 ### <a name="powershell"></a>PowerShell
-Командлет для получения сведений о работоспособности раздела — [Get-ServiceFabricPartitionHealth](https://docs.microsoft.com/powershell/module/servicefabric/get-servicefabricpartitionhealth). Сначала подключитесь к кластеру, используя командлет [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps) .
+Командлет для получения сведений о работоспособности раздела — [Get-ServiceFabricPartitionHealth](/powershell/module/servicefabric/get-servicefabricpartitionhealth). Сначала подключитесь к кластеру, используя командлет [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps) .
 
 Следующий командлет позволяет получить сведения о работоспособности всех секций службы **fabric:/WordCount/WordCountService** и отфильтровать состояния работоспособности реплик.
 
@@ -604,7 +604,7 @@ HealthStatistics      :
 ```
 
 ### <a name="rest"></a>REST
-Вы можете получить сведения о работоспособности раздела с помощью [запроса GET](/rest/api/servicefabric/sfclient-api-getpartitionhealth) или [запроса POST](https://docs.microsoft.com/rest/api/servicefabric/get-the-health-of-a-partition-by-using-a-health-policy), в который входят политики работоспособности, описанные в основном тексте.
+Вы можете получить сведения о работоспособности раздела с помощью [запроса GET](/rest/api/servicefabric/sfclient-api-getpartitionhealth) или [запроса POST](/rest/api/servicefabric/get-the-health-of-a-partition-by-using-a-health-policy), в который входят политики работоспособности, описанные в основном тексте.
 
 ## <a name="get-replica-health"></a>Получение сведений о работоспособности реплики
 Возвращает сведения о работоспособности реплики службы с отслеживанием состояния или экземпляра службы без отслеживания состояния. Входные данные:
@@ -614,14 +614,14 @@ HealthStatistics      :
 * фильтры для событий, с помощью которых можно указать, какие записи представляют интерес и будут возвращены в результате, например только с ошибками или с предупреждениями и ошибками (необязательные параметры). При оценке сводного состояния работоспособности сущности используются все события, независимо от выбранного фильтра.
 
 ### <a name="api"></a>API
-Чтобы получить сведения о работоспособности реплики через API, создайте `FabricClient` и вызовите метод [GetReplicaHealthAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.healthclient.getreplicahealthasync) в HealthManager. Чтобы указать дополнительные параметры, используйте [ReplicaHealthQueryDescription](https://docs.microsoft.com/dotnet/api/system.fabric.description.replicahealthquerydescription).
+Чтобы получить сведения о работоспособности реплики через API, создайте `FabricClient` и вызовите метод [GetReplicaHealthAsync](/dotnet/api/system.fabric.fabricclient.healthclient.getreplicahealthasync) в HealthManager. Чтобы указать дополнительные параметры, используйте [ReplicaHealthQueryDescription](/dotnet/api/system.fabric.description.replicahealthquerydescription).
 
 ```csharp
 ReplicaHealth replicaHealth = await fabricClient.HealthManager.GetReplicaHealthAsync(partitionId, replicaId);
 ```
 
 ### <a name="powershell"></a>PowerShell
-Командлет для получения сведений о работоспособности реплики — [Get-ServiceFabricReplicaHealth](https://docs.microsoft.com/powershell/module/servicefabric/get-servicefabricreplicahealth). Сначала подключитесь к кластеру, используя командлет [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps) .
+Командлет для получения сведений о работоспособности реплики — [Get-ServiceFabricReplicaHealth](/powershell/module/servicefabric/get-servicefabricreplicahealth). Сначала подключитесь к кластеру, используя командлет [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps) .
 
 Следующий командлет возвращает сведения о работоспособности первичной реплики для всех разделов службы:
 
@@ -647,7 +647,7 @@ HealthEvents          :
 ```
 
 ### <a name="rest"></a>REST
-Вы можете получить сведения о работоспособности реплики с помощью [запроса GET](https://docs.microsoft.com/rest/api/servicefabric/get-the-health-of-a-replica) или [запроса POST](https://docs.microsoft.com/rest/api/servicefabric/get-the-health-of-a-replica-by-using-a-health-policy), в который входят политики работоспособности, описанные в основном тексте.
+Вы можете получить сведения о работоспособности реплики с помощью [запроса GET](/rest/api/servicefabric/get-the-health-of-a-replica) или [запроса POST](/rest/api/servicefabric/get-the-health-of-a-replica-by-using-a-health-policy), в который входят политики работоспособности, описанные в основном тексте.
 
 ## <a name="get-deployed-application-health"></a>Получение сведений о работоспособности развернутого приложения
 Возвращает сведения о работоспособности приложения, развернутого на сущности узла. В них содержатся данные о состоянии работоспособности развернутых пакетов служб. Входные данные:
@@ -658,7 +658,7 @@ HealthEvents          :
 * [Необязательно.] Используйте фильтр, исключающий статистику работоспособности. Если он не указан, то статистика работоспособности показывает, сколько развернутых пакетов служб находится в исправном состояния, состоянии предупреждения и состоянии ошибки.
 
 ### <a name="api"></a>API
-Чтобы получить сведения о работоспособности приложения, развернутого на узле, через API, создайте `FabricClient` и вызовите метод [GetDeployedApplicationHealthAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.healthclient.getdeployedapplicationhealthasync) в HealthManager. Чтобы задать необязательные параметры, используйте [DeployedApplicationHealthQueryDescription](https://docs.microsoft.com/dotnet/api/system.fabric.description.deployedapplicationhealthquerydescription).
+Чтобы получить сведения о работоспособности приложения, развернутого на узле, через API, создайте `FabricClient` и вызовите метод [GetDeployedApplicationHealthAsync](/dotnet/api/system.fabric.fabricclient.healthclient.getdeployedapplicationhealthasync) в HealthManager. Чтобы задать необязательные параметры, используйте [DeployedApplicationHealthQueryDescription](/dotnet/api/system.fabric.description.deployedapplicationhealthquerydescription).
 
 ```csharp
 DeployedApplicationHealth health = await fabricClient.HealthManager.GetDeployedApplicationHealthAsync(
@@ -706,7 +706,7 @@ HealthStatistics                   :
 ```
 
 ### <a name="rest"></a>REST
-Вы можете получить сведения о работоспособности развернутого приложения с помощью [запроса GET](https://docs.microsoft.com/rest/api/servicefabric/get-the-health-of-a-deployed-application) или [запроса POST](https://docs.microsoft.com/rest/api/servicefabric/get-the-health-of-a-deployed-application-by-using-a-health-policy), в который входят политики работоспособности, описанные в основном тексте.
+Вы можете получить сведения о работоспособности развернутого приложения с помощью [запроса GET](/rest/api/servicefabric/get-the-health-of-a-deployed-application) или [запроса POST](/rest/api/servicefabric/get-the-health-of-a-deployed-application-by-using-a-health-policy), в который входят политики работоспособности, описанные в основном тексте.
 
 ## <a name="get-deployed-service-package-health"></a>Получение сведений о работоспособности развернутого пакета службы
 Возвращает сведения о работоспособности сущности развернутого пакета службы. Входные данные:
@@ -716,7 +716,7 @@ HealthStatistics                   :
 * фильтры для событий, с помощью которых можно указать, какие записи представляют интерес и будут возвращены в результате, например только с ошибками или с предупреждениями и ошибками (необязательные параметры). При оценке сводного состояния работоспособности сущности используются все события, независимо от выбранного фильтра.
 
 ### <a name="api"></a>API
-Чтобы получить сведения о работоспособности развернутого пакета службы через API, создайте `FabricClient` и вызовите метод [GetDeployedServicePackageHealthAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.healthclient.getdeployedservicepackagehealthasync) в HealthManager. Чтобы задать необязательные параметры, используйте [DeployedServicePackageHealthQueryDescription](https://docs.microsoft.com/dotnet/api/system.fabric.description.deployedservicepackagehealthquerydescription).
+Чтобы получить сведения о работоспособности развернутого пакета службы через API, создайте `FabricClient` и вызовите метод [GetDeployedServicePackageHealthAsync](/dotnet/api/system.fabric.fabricclient.healthclient.getdeployedservicepackagehealthasync) в HealthManager. Чтобы задать необязательные параметры, используйте [DeployedServicePackageHealthQueryDescription](/dotnet/api/system.fabric.description.deployedservicepackagehealthquerydescription).
 
 ```csharp
 DeployedServicePackageHealth health = await fabricClient.HealthManager.GetDeployedServicePackageHealthAsync(
@@ -724,7 +724,7 @@ DeployedServicePackageHealth health = await fabricClient.HealthManager.GetDeploy
 ```
 
 ### <a name="powershell"></a>PowerShell
-Командлет для получения сведений о работоспособности развернутого пакета службы — [Get-ServiceFabricDeployedServicePackageHealth](https://docs.microsoft.com/powershell/module/servicefabric/get-servicefabricdeployedservicepackagehealth). Сначала подключитесь к кластеру, используя командлет [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps) . Чтобы узнать, где развернуто приложение, выполните командлет [Get-ServiceFabricApplicationHealth](/powershell/module/servicefabric/get-servicefabricapplicationhealth?view=azureservicefabricps) и просмотрите развернутые приложения. Чтобы увидеть пакеты служб в приложении, просмотрите дочерние элементы развернутого пакета службы в выходных данных командлета [Get-ServiceFabricDeployedApplicationHealth](/powershell/module/servicefabric/get-servicefabricdeployedapplicationhealth?view=azureservicefabricps) .
+Командлет для получения сведений о работоспособности развернутого пакета службы — [Get-ServiceFabricDeployedServicePackageHealth](/powershell/module/servicefabric/get-servicefabricdeployedservicepackagehealth). Сначала подключитесь к кластеру, используя командлет [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps) . Чтобы узнать, где развернуто приложение, выполните командлет [Get-ServiceFabricApplicationHealth](/powershell/module/servicefabric/get-servicefabricapplicationhealth?view=azureservicefabricps) и просмотрите развернутые приложения. Чтобы увидеть пакеты служб в приложении, просмотрите дочерние элементы развернутого пакета службы в выходных данных командлета [Get-ServiceFabricDeployedApplicationHealth](/powershell/module/servicefabric/get-servicefabricdeployedapplicationhealth?view=azureservicefabricps) .
 
 Следующий командлет возвращает сведения о работоспособности пакета службы **WordCountServicePkg** приложения **fabric:/WordCount**, развернутого на узле **_Node2_**. Эта сущность составляет отчеты **System.Hosting** при успешной активации пакета службы и точки входа, а также при успешной регистрации типа службы.
 
@@ -776,7 +776,7 @@ HealthEvents               :
 ```
 
 ### <a name="rest"></a>REST
-Вы можете получить сведения о работоспособности развернутого пакета службы с помощью [запроса GET](https://docs.microsoft.com/rest/api/servicefabric/get-the-health-of-a-service-package) или [запроса POST](https://docs.microsoft.com/rest/api/servicefabric/get-the-health-of-a-service-package-by-using-a-health-policy), в который входят политики работоспособности, описанные в основном тексте.
+Вы можете получить сведения о работоспособности развернутого пакета службы с помощью [запроса GET](/rest/api/servicefabric/get-the-health-of-a-service-package) или [запроса POST](/rest/api/servicefabric/get-the-health-of-a-service-package-by-using-a-health-policy), в который входят политики работоспособности, описанные в основном тексте.
 
 ## <a name="health-chunk-queries"></a>Запросы фрагментов данных о работоспособности
 Запросы фрагментов данных о работоспособности могут возвращать дочерние элементы многоуровневого кластера (рекурсивно) через входные фильтры. Он поддерживает расширенные фильтры, обеспечивающие большую гибкость в выборе возвращаемых дочерних элементов. Фильтры позволяют задать дочерние элементы по уникальному идентификатору или другим идентификаторам групп и (или) состояниям работоспособности. По умолчанию дочерние элементы не обрабатываются, в отличие от команд работоспособности, которые обязательно включают дочерние элементы первого уровня.
@@ -804,14 +804,14 @@ HealthEvents               :
 * политика работоспособности кластера, используемая для оценки узлов и событий кластера (необязательный параметр);
 * сопоставление политики работоспособности приложения с политиками работоспособности, которые используются для переопределения политик манифеста приложения (необязательный параметр);
 * фильтры для узлов и приложений, с помощью которых можно указать, какие записи представляют интерес и будут возвращены в результате (необязательный параметр). Фильтры соответствуют конкретной сущности или группам сущностей либо же применимы ко всем сущностям на этом уровне. Список фильтров может содержать один общий фильтр или фильтры для определенных идентификаторов сущностей с тонкой настройкой, которые возвращены запросом. Если настройки не установлены, по умолчанию дочерние элементы не возвращаются.
-  См. дополнительные сведения о фильтрах в [NodeHealthStateFilter](https://docs.microsoft.com/dotnet/api/system.fabric.health.nodehealthstatefilter) и [ApplicationHealthStateFilter](https://docs.microsoft.com/dotnet/api/system.fabric.health.applicationhealthstatefilter). Фильтры приложений могут рекурсивно указывать расширенные фильтры для дочерних элементов.
+  См. дополнительные сведения о фильтрах в [NodeHealthStateFilter](/dotnet/api/system.fabric.health.nodehealthstatefilter) и [ApplicationHealthStateFilter](/dotnet/api/system.fabric.health.applicationhealthstatefilter). Фильтры приложений могут рекурсивно указывать расширенные фильтры для дочерних элементов.
 
 Результаты для фрагмента содержат дочерние элементы, которые поддерживают фильтры.
 
 В настоящее время запрос фрагмента не возвращает оценки неработоспособности или события сущностей. Эти дополнительные сведения можно получить, используя имеющийся запрос на сведения о работоспособности кластера.
 
 ### <a name="api"></a>API
-Чтобы получить фрагмент данных о работоспособности кластера, создайте `FabricClient` и вызовите метод [GetClusterHealthChunkAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.healthclient.getclusterhealthchunkasync) в **HealthManager**. Можно передать данные в [ClusterHealthQueryDescription](https://docs.microsoft.com/dotnet/api/system.fabric.description.clusterhealthchunkquerydescription) , чтобы описать политики работоспособности и расширенные фильтры.
+Чтобы получить фрагмент данных о работоспособности кластера, создайте `FabricClient` и вызовите метод [GetClusterHealthChunkAsync](/dotnet/api/system.fabric.fabricclient.healthclient.getclusterhealthchunkasync) в **HealthManager**. Можно передать данные в [ClusterHealthQueryDescription](/dotnet/api/system.fabric.description.clusterhealthchunkquerydescription) , чтобы описать политики работоспособности и расширенные фильтры.
 
 Следующий код получает фрагмент данных о работоспособности кластера с расширенными фильтрами.
 
@@ -857,7 +857,7 @@ var result = await fabricClient.HealthManager.GetClusterHealthChunkAsync(queryDe
 ```
 
 ### <a name="powershell"></a>PowerShell
-Командлет для получения сведений о работоспособности кластера — [Get-ServiceFabricClusterChunkHealth](https://docs.microsoft.com/powershell/module/servicefabric/get-servicefabricclusterhealthchunk). Сначала подключитесь к кластеру, используя командлет [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps) .
+Командлет для получения сведений о работоспособности кластера — [Get-ServiceFabricClusterChunkHealth](/powershell/module/servicefabric/get-servicefabricclusterhealthchunk). Сначала подключитесь к кластеру, используя командлет [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps) .
 
 Следующий код получает данные узлов только в том случае, если они находятся в состоянии ошибки, за исключением определенного узла, который будет возвращаться при любых обстоятельствах.
 
@@ -1007,7 +1007,7 @@ ApplicationHealthStateChunks :
 ```
 
 ### <a name="rest"></a>REST
-Вы можете получить фрагмент данных о работоспособности кластера с помощью [запроса GET](https://docs.microsoft.com/rest/api/servicefabric/get-the-health-of-a-cluster-using-health-chunks) или [запроса POST](https://docs.microsoft.com/rest/api/servicefabric/health-of-cluster), в который входят политики работоспособности, описанные в основном тексте.
+Вы можете получить фрагмент данных о работоспособности кластера с помощью [запроса GET](/rest/api/servicefabric/get-the-health-of-a-cluster-using-health-chunks) или [запроса POST](/rest/api/servicefabric/health-of-cluster), в который входят политики работоспособности, описанные в основном тексте.
 
 ## <a name="general-queries"></a>Общие запросы
 Общие запросы возвращают перечень сущностей Service Fabric указанного типа. Их можно просмотреть с помощью API (используя методы **FabricClient.QueryManager**), а также командлетов PowerShell и REST. Эти запросы состоят из вложенных запросов от нескольких компонентов. Один из них — [хранилище данных о работоспособности](service-fabric-health-introduction.md#health-store), заполняющее сводные данные о состоянии работоспособности в каждом результате запроса.  
@@ -1022,29 +1022,29 @@ ApplicationHealthStateChunks :
 Ниже приведены запросы, возвращающие сведения о состоянии работоспособности ( **HealthState** ) для сущностей:
 
 * Список узлов — возвращает список узлов в кластере (с разбивкой на страницы).
-  * API — [FabricClient.QueryClient.GetNodeListAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.queryclient.getnodelistasync)
+  * API — [FabricClient.QueryClient.GetNodeListAsync](/dotnet/api/system.fabric.fabricclient.queryclient.getnodelistasync)
   * PowerShell: Get-ServiceFabricNode.
 * Список приложений — возвращает список приложений в кластере (с разбивкой на страницы).
-  * API — [FabricClient.QueryClient.GetApplicationListAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.queryclient.getapplicationlistasync)
+  * API — [FabricClient.QueryClient.GetApplicationListAsync](/dotnet/api/system.fabric.fabricclient.queryclient.getapplicationlistasync)
   * PowerShell: Get-ServiceFabricApplication.
 * Список служб — возвращает список служб в приложении (с разбивкой на страницы).
-  * API — [FabricClient.QueryClient.GetServiceListAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.queryclient.getservicelistasync)
+  * API — [FabricClient.QueryClient.GetServiceListAsync](/dotnet/api/system.fabric.fabricclient.queryclient.getservicelistasync)
   * PowerShell: Get-ServiceFabricService.
 * Список разделов — возвращает список разделов в службе (с разбивкой на страницы).
-  * API — [FabricClient.QueryClient.GetPartitionListAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.queryclient.getpartitionlistasync)
+  * API — [FabricClient.QueryClient.GetPartitionListAsync](/dotnet/api/system.fabric.fabricclient.queryclient.getpartitionlistasync)
   * PowerShell: Get-ServiceFabricPartition.
 * Список реплик — возвращает список реплик в разделе (с разбивкой на страницы).
-  * API — [FabricClient.QueryClient.GetReplicaListAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.queryclient.getreplicalistasync)
+  * API — [FabricClient.QueryClient.GetReplicaListAsync](/dotnet/api/system.fabric.fabricclient.queryclient.getreplicalistasync)
   * PowerShell: Get-ServiceFabricReplica.
 * Список развернутых приложений — возвращает список развернутых приложений на узле.
-  * API — [FabricClient.QueryClient.GetDeployedApplicationListAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.queryclient.getdeployedapplicationlistasync)
+  * API — [FabricClient.QueryClient.GetDeployedApplicationListAsync](/dotnet/api/system.fabric.fabricclient.queryclient.getdeployedapplicationlistasync)
   * PowerShell: Get-ServiceFabricDeployedApplication.
 * Список развернутых пакетов служб — возвращает список пакетов служб в развернутом приложении.
-  * API — [FabricClient.QueryClient.GetDeployedServicePackageListAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.queryclient.getdeployedservicepackagelistasync)
+  * API — [FabricClient.QueryClient.GetDeployedServicePackageListAsync](/dotnet/api/system.fabric.fabricclient.queryclient.getdeployedservicepackagelistasync)
   * PowerShell: Get-ServiceFabricDeployedApplication.
 
 > [!NOTE]
-> Некоторые запросы возвращают результаты с разбивкой на страницы. Возврат этих запросов представляет собой список, производный от [пажедлист\<T>](https://docs.microsoft.com/dotnet/api/system.fabric.query.pagedlist-1). Если результаты не соответствуют сообщению, возвращается только страница и устанавливается маркер ContinuationToken, который отслеживает остановку перечисления. Чтобы получить следующие результаты, необходимо продолжить вызов того же запроса, передавая маркер продолжения из предыдущего запроса.
+> Некоторые запросы возвращают результаты с разбивкой на страницы. В результатах этих запросов возвращается список, производный от [PagedList\<T>](/dotnet/api/system.fabric.query.pagedlist-1). Если результаты не соответствуют сообщению, возвращается только страница и устанавливается маркер ContinuationToken, который отслеживает остановку перечисления. Чтобы получить следующие результаты, необходимо продолжить вызов того же запроса, передавая маркер продолжения из предыдущего запроса.
 
 ### <a name="examples"></a>Примеры
 Следующий код возвращает неработоспособные приложения в кластере.

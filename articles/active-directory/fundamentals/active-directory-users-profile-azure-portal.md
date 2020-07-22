@@ -7,17 +7,16 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: fundamentals
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 04/11/2019
 ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8ba51b0ad7f314058f34092dff4e26411020086a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 277f4c7016849fbdbac4b5070c2a4db681cc66a9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75422877"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85604018"
 ---
 # <a name="add-or-update-a-users-profile-information-using-azure-active-directory"></a>Добавление или изменение данных профиля пользователя с помощью Azure Active Directory
 Добавьте данные в профиль пользователя, в том числе изображение профиля, сведения о работе и некоторые параметры, с помощью Azure Active Directory (Azure AD). Дополнительные сведения о добавлении новых пользователей см. в статье [Добавление или удаление пользователей в Azure Active Directory](add-users-azure-active-directory.md).
@@ -50,14 +49,14 @@ ms.locfileid: "75422877"
 
     - **Контактная информация для проверки подлинности.** Проверьте актуальность номера телефона и адреса электронной почты пользователя. Azure Active Directory использует эти сведения для установления подлинности личности пользователя во время входа. Контактную информацию для проверки подлинности может изменять только глобальный администратор.
 
-4. Щелкните **Сохранить**.
+4. Нажмите кнопку **Сохранить**.
 
     Все изменения для пользователя сохранятся.
 
     >[!Note]
     >Используйте Windows Server Active Directory для обновления удостоверения, контактных данных или сведений о должности для пользователей, чьим главным источником является Windows Server Active Directory. После завершения обновления изменения будут отображаться после следующего цикла синхронизации.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 После изменения профилей пользователей можно выполнить следующие базовые операции:
 
 - [Добавление или удаление пользователей](add-users-azure-active-directory.md)

@@ -4,12 +4,12 @@ description: Общие сведения о правилах действий в
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.subservice: alerts
-ms.openlocfilehash: 6585890395d7656f239ac3098cd374ecd4757842
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 573567386ba9cbaf8b36440fda5073f899fcdfc7
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80618990"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86112346"
 ---
 # <a name="action-rules-preview"></a>Правила действий (Предварительная версия)
 
@@ -83,7 +83,7 @@ ms.locfileid: "80618990"
 
 #### <a name="suppression"></a>Подавление
 
-Если выбрано **подавление**, настройте продолжительность подавления действий и уведомлений. Выберите один из следующих параметров.
+Если выбрано **подавление**, настройте продолжительность подавления действий и уведомлений. Выберите один из следующих вариантов.
 * **От Now (всегда)**: подавляет все уведомления бессрочно.
 * **В запланированное время**: подавляет уведомления в пределах ограниченной длительности.
 * **С повторением**: подавляет уведомления о повторяющемся ежедневном, еженедельном или ежемесячном расписании.
@@ -160,7 +160,7 @@ Contoso хочет отключить уведомления для всех Sev
 
 ![Правила действий и оповещения журнала (число результатов)](media/alerts-action-rules/action-rules-log-alert-metric-measurement.png)
 
-## <a name="faq"></a>часто задаваемые вопросы
+## <a name="faq"></a>Вопросы и ответы
 
 ### <a name="while-im-configuring-an-action-rule-id-like-to-see-all-the-possible-overlapping-action-rules-so-that-i-avoid-duplicate-notifications-is-it-possible-to-do-that"></a>Хотя я Настраивая правило действия, я хочу увидеть все возможные перекрывающиеся правила действий, чтобы избежать дублирования уведомлений. Возможно ли это сделать?
 
@@ -196,25 +196,28 @@ Contoso хочет отключить уведомления для всех Sev
 
 ### <a name="what-happens-if-i-have-a-resource-thats-monitored-in-two-separate-action-rules-do-i-get-one-or-two-notifications-for-example-vm2-in-the-following-scenario"></a>Что произойдет, если у меня есть ресурс, который отслеживается в двух отдельных правилах действий? Я получаю одно или два уведомления? Например, **VM2** в следующем сценарии:
 
-      action rule AR1 defined for VM1 and VM2 with action group AG1
-      action rule AR2 defined for VM2 and VM3 with action group AG1
+   `action rule AR1 defined for VM1 and VM2 with action group AG1`
+
+   `action rule AR2 defined for VM2 and VM3 with action group AG1`
 
 Для каждого оповещения в VM1 и VM3 группа действий AG1 будет активирована один раз. Для каждого оповещения в **VM2**группа действий AG1 будет вызываться дважды, так как правила действий не будут выполнять дублирование действий. 
 
 ### <a name="what-happens-if-i-have-a-resource-monitored-in-two-separate-action-rules-and-one-calls-for-action-while-another-for-suppression-for-example-vm2-in-the-following-scenario"></a>Что произойдет, если ресурс отслеживается в двух отдельных правилах действий и один вызов действия, а другой — для подавления? Например, **VM2** в следующем сценарии:
 
-      action rule AR1 defined for VM1 and VM2 with action group AG1 
-      action rule AR2 defined for VM2 and VM3 with suppression
+   `action rule AR1 defined for VM1 and VM2 with action group AG1`
+
+   `action rule AR2 defined for VM2 and VM3 with suppression`
 
 Для каждого оповещения в VM1 группа действий AG1 будет активирована один раз. Действия и уведомления для каждого предупреждения в VM2 и VM3 будут подавлены. 
 
 ### <a name="what-happens-if-i-have-an-alert-rule-and-an-action-rule-defined-for-the-same-resource-calling-different-action-groups-for-example-vm1-in-the-following-scenario"></a>Что произойдет, если у меня есть правило генерации оповещений и правило действий, определенное для того же ресурса, вызывающего различные группы действий? Например, **VM1** в следующем сценарии:
 
-      alert rule rule1 on VM1 with action group AG2
-      action rule AR1 defined for VM1 with action group AG1 
- 
+   `alert rule rule1 on VM1 with action group AG2`
+
+   `action rule AR1 defined for VM1 with action group AG1`
+
 Для каждого оповещения в VM1 группа действий AG1 будет активирована один раз. Каждый раз, когда срабатывает правило генерации оповещений "Rule1", оно также будет запускать ГД2 дополнительно. Группы действий, определенные в правилах действий и правилах генерации оповещений, работают независимо друг от друга без дедупликации. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Дополнительные сведения об оповещениях в Azure](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-overview)

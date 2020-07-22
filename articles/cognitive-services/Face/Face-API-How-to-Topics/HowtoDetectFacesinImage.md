@@ -10,12 +10,12 @@ ms.subservice: face-api
 ms.topic: conceptual
 ms.date: 04/18/2019
 ms.author: sbowles
-ms.openlocfilehash: 7070cb3bcd1b519828a750cf4ba6caf7ecb34bbb
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: a3fd308ede17f510b3e9188f2bebc93a08a61181
+ms.sourcegitcommit: 309cf6876d906425a0d6f72deceb9ecd231d387c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "76169879"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84263197"
 ---
 # <a name="get-face-detection-data"></a>Получение данных обнаружения лиц
 
@@ -27,9 +27,9 @@ ms.locfileid: "76169879"
 - Получите расположения различных ориентиров, таких как пупилс, нос и рот, в образе.
 - Догадаться пол, возраст, распознавания эмоций и другие атрибуты обнаруженного лица.
 
-## <a name="setup"></a>Настройка
+## <a name="setup"></a>Установка
 
-В этом учебнике предполагается, что [FaceClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceclient?view=azure-dotnet) вы уже создавали `faceClient`объект фацеклиент с именем с ключом подписки лица и URL-адресом конечной точки. Здесь можно использовать функцию обнаружения лиц, вызвав либо [детектвисурласинк](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperationsextensions.detectwithurlasync?view=azure-dotnet), которая используется в этом руководством, либо [детектвисстреамасинк](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperationsextensions.detectwithstreamasync?view=azure-dotnet). Инструкции по настройке этой функции см. в одном из кратких руководств.
+В этом учебнике предполагается, что вы уже создавали объект [фацеклиент](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceclient?view=azure-dotnet) `faceClient` с именем с ключом подписки лица и URL-адресом конечной точки. Здесь можно использовать функцию обнаружения лиц, вызвав либо [детектвисурласинк](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperationsextensions.detectwithurlasync?view=azure-dotnet), которая используется в этом руководством, либо [детектвисстреамасинк](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperationsextensions.detectwithstreamasync?view=azure-dotnet). Инструкции по настройке этой функции см. в одном из кратких руководств.
 
 В этом разделе рассматриваются особенности вызова метода обнаружения, например, какие аргументы можно передавать и что можно делать с возвращаемыми данными. Рекомендуется запрашивать только необходимые компоненты. Для выполнения каждой операции требуется дополнительное время.
 
@@ -140,14 +140,13 @@ foreach (var face in faces)
 
 Дополнительные сведения о каждом из атрибутов см. в разделе Общие сведения об [обнаружении и атрибутах лиц](../concepts/face-detection.md) .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководство вы узнали, как использовать различные функции обнаружения лиц. Затем интегрируйте эти функции в приложение, выполнив подробное руководство.
 
 - [Руководство. Создание приложения WPF для отображения данных о лицах на изображении](../Tutorials/FaceAPIinCSharpTutorial.md)
-- [Руководство по Создание приложения Android для обнаружения и выделения лиц на изображении](../Tutorials/FaceAPIinJavaForAndroidTutorial.md)
 
-## <a name="related-topics"></a>Связанные темы
+## <a name="related-topics"></a>См. также
 
 - [Справочная документация (ОСТАВШАЯся)](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)
 - [Справочная документация (пакет SDK для .NET)](https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/faceapi?view=azure-dotnet)

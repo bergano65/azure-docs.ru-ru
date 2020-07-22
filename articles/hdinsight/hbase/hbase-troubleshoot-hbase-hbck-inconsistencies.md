@@ -8,10 +8,9 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.date: 08/08/2019
 ms.openlocfilehash: fa02ac0dfe229f3e82d1c1c62d83ca06a81efca6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75887331"
 ---
 # <a name="scenario-hbase-hbck-command-returns-inconsistencies-in-azure-hdinsight"></a>Сценарий: `hbase hbck` команда возвращает несоответствия в Azure HDInsight.
@@ -20,13 +19,13 @@ ms.locfileid: "75887331"
 
 ## <a name="issue-region-is-not-in-hbasemeta"></a>Вопрос. регион не находится в`hbase:meta`
 
-Регион XXX в HDFS, но он отсутствует в `hbase:meta` списке или развернут на любом сервере регионов.
+Регион XXX в HDFS, но он отсутствует в списке `hbase:meta` или развернут на любом сервере регионов.
 
 ### <a name="cause"></a>Причина:
 
 Возможны разные варианты.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 1. Исправьте таблицу meta, выполнив команду:
 
@@ -43,13 +42,13 @@ ms.locfileid: "75887331"
 
 ## <a name="issue-region-is-offline"></a>Ошибка: регион находится в автономном режиме
 
-Регион XXX не развернут ни на одном Регионсервер. Это означает, что регион находится `hbase:meta`в, но вне сети.
+Регион XXX не развернут ни на одном Регионсервер. Это означает, что регион находится в `hbase:meta` , но вне сети.
 
 ### <a name="cause"></a>Причина:
 
 Возможны разные варианты.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 Подключите регионы по сети, выполнив:
 
@@ -65,9 +64,9 @@ hbase hbck -ignorePreCheckPermission –fixAssignment
 
 Возможны разные варианты.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
-Вручную объединить эти регионы. Перейдите к разделу "Таблица пользовательского веб-интерфейса HBase HMaster" и выберите ссылку на таблицу, в которой возникла эта ошибка. Вы увидите начальный ключ или конечный ключ каждого региона, принадлежащего этой таблице. Затем объедините эти регионы. В оболочке HBase выполните `merge_region 'xxxxxxxx','yyyyyyy', true`. Пример:
+Вручную объединить эти регионы. Перейдите к разделу "Таблица пользовательского веб-интерфейса HBase HMaster" и выберите ссылку на таблицу, в которой возникла эта ошибка. Вы увидите начальный ключ или конечный ключ каждого региона, принадлежащего этой таблице. Затем объедините эти регионы. В оболочке HBase выполните `merge_region 'xxxxxxxx','yyyyyyy', true` . Пример:
 
 ```
 RegionA, startkey:001, endkey:010,
@@ -83,13 +82,13 @@ RegionC, startkey:010, endkey:080.
 
 ## <a name="issue-cant-load-regioninfo"></a>Ошибка: не удается загрузить`.regioninfo`
 
-Не удается `.regioninfo` загрузить для `/hbase/data/default/tablex/regiony`региона.
+Не удается загрузить `.regioninfo` для региона `/hbase/data/default/tablex/regiony` .
 
 ### <a name="cause"></a>Причина:
 
 Скорее всего, это происходит из-за частичного удаления области при Регионсервер сбоях или перезагрузке виртуальных машин. В настоящее время хранилище Azure — это плоская файловая система больших двоичных объектов, а некоторые операции с файлами не являются атомарными.
 
-### <a name="resolution"></a>Разрешение
+### <a name="resolution"></a>Решение
 
 Вручную очистите оставшиеся файлы и папки:
 
@@ -97,16 +96,16 @@ RegionC, startkey:010, endkey:080.
 
 1. Выполните `hdfs dfs -rmr /hbase/data/default/tablex/regiony/filez` , чтобы удалить все дочерние файлы и папки
 
-1. Выполните `hdfs dfs -rmr /hbase/data/default/tablex/regiony` процедуру, чтобы удалить папку Region.
+1. Выполните процедуру `hdfs dfs -rmr /hbase/data/default/tablex/regiony` , чтобы удалить папку Region.
 
 ---
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 
-* Получите ответы от экспертов Azure через [службу поддержки сообщества Azure](https://azure.microsoft.com/support/community/).
+* Получите ответы специалистов Azure на [сайте поддержки сообщества пользователей Azure](https://azure.microsoft.com/support/community/).
 
-* Подключение с [@AzureSupport](https://twitter.com/azuresupport) — официальная учетная запись Microsoft Azure для улучшения качества обслуживания клиентов. Подключение сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
+* Подпишитесь на [@AzureSupport](https://twitter.com/azuresupport) — официальный канал Microsoft Azure для работы с клиентами. Вступайте в сообщество Azure для получения нужных ресурсов: ответов, поддержки и советов экспертов.
 
-* Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Для получения более подробных сведений см. статью [о создании запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).
+* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка**. Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).

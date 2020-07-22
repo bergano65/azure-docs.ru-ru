@@ -5,12 +5,12 @@ author: vturecek
 ms.topic: conceptual
 ms.date: 03/19/2018
 ms.author: vturecek
-ms.openlocfilehash: 1516c9005a7c4dd0adcb279e9954e5f882c575c1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 8e462cc5fa82b8692304f58ef6cf0ea0e2db8725
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75645605"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86245982"
 ---
 # <a name="enumerate-service-fabric-reliable-actors"></a>Перечисление Reliable Actors в Service Fabric
 Служба Reliable Actors позволяет клиенту перечислять метаданные о размещенных службой субъектах. Так как служба субъектов — это секционированная служба с отслеживанием состояния, перечисление выполняется по каждому разделу. Так как каждая секция может содержать большое количество субъектов, перечисление возвращается как набор постраничных результатов. Страницы зацикливаются до тех пор, пока все они не будут прочитаны. В следующем примере показано, как создать список всех активных субъектов в одной секции службы субъектов:
@@ -61,7 +61,7 @@ while (continuationToken != null);
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Управление состоянием субъекта](service-fabric-reliable-actors-state-management.md)
 * [Жизненный цикл субъекта и сборка мусора](service-fabric-reliable-actors-lifecycle.md)
-* [Справочная документация по API субъектов](https://msdn.microsoft.com/library/azure/dn971626.aspx)
+* [Справочная документация по API субъектов](/previous-versions/azure/dn971626(v=azure.100))
 * [Пример кода .NET](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started)
 * [Пример кода Java](https://github.com/Azure-Samples/service-fabric-java-getting-started)
 

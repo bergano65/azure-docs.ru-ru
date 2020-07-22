@@ -8,16 +8,16 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 08/26/2019
 ms.author: marsma
 ms.custom: aaddev
-ms.openlocfilehash: 4974fe3b387683f662d7a7b4f3ccb4935153f07e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a570dccad5f14cf9adf5ca2825d8a3b31ae60d3f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80883102"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85477198"
 ---
 # <a name="how-to-request-custom-claims-using-msal-for-ios-and-macos"></a>Как запросить настраиваемые утверждения с помощью MSAL для iOS и macOS
 
@@ -31,9 +31,9 @@ OpenID Connect Connect позволяет при необходимости за
 - Запрос определенных сочетаний стандартных заявок, которые не могут быть указаны с помощью областей для приложения. Например, если маркер доступа отклоняется из-за отсутствия утверждений, приложение может запросить недостающие утверждения с помощью MSAL.
 
 > [!NOTE]
-> MSAL обходит кэш маркера доступа всякий раз, когда указан запрос на утверждение. Важно предоставлять `claimsRequest` параметр только в том случае, если требуются дополнительные утверждения (в отличие от того, что всегда `claimsRequest` предоставляет один и тот же параметр в каждом вызове API MSAL).
+> MSAL обходит кэш маркера доступа всякий раз, когда указан запрос на утверждение. Важно предоставлять `claimsRequest` параметр только в том случае, если требуются дополнительные утверждения (в отличие от того, что всегда предоставляет один и тот же `claimsRequest` параметр в каждом ВЫЗОВЕ API MSAL).
 
-`claimsRequest`можно указать в `MSALSilentTokenParameters` и `MSALInteractiveTokenParameters`:
+`claimsRequest`можно указать в `MSALSilentTokenParameters` и `MSALInteractiveTokenParameters` :
 
 ```objc
 /*!

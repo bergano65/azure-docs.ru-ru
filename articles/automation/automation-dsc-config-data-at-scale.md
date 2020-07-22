@@ -1,6 +1,6 @@
 ---
-title: Данные конфигурации в масштабе — служба автоматизации Azure
-description: Узнайте, как настроить масштабируемые данные для конфигурации состояния в службе автоматизации Azure.
+title: Упорядочение данных в большом масштабе для State Configuration службы автоматизации Azure
+description: Эта статья содержит сведения об упорядочение данных в большом масштабе для State Configuration службы автоматизации Azure.
 keywords: dsc,powershell,конфигурация,установка
 services: automation
 ms.service: automation
@@ -10,47 +10,47 @@ ms.author: migreene
 ms.date: 08/08/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 644ea1c00af7e71ff56852298fff18e5293c137b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: bc55a4c5ab20cac041a00a0f924b207eb256ae8b
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80585572"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86186526"
 ---
-# <a name="configuration-data-at-scale"></a>Использование данных конфигурации в нужном масштабе
+# <a name="configure-data-at-scale-for-azure-automation-state-configuration"></a>Упорядочение данных в большом масштабе для State Configuration службы автоматизации Azure
 
-> Область применения: Windows PowerShell 5,1
+> Область применения: Windows PowerShell 5.1
 
-Управление сотнями или тысячами серверов может оказаться сложной задачей.
-Клиенты предоставили отзыв о том, что наиболее сложный аспект фактически управляет [данными конфигурации](/powershell/scripting/dsc/configurations/configdata).
-Упорядочение информации по логическим конструкциям, таким как расположение, тип и среда.
+Управление сотнями или тысячами серверов бывает очень сложной задачей.
+Клиенты сообщают нам, что самым сложным аспектом обычно становится управление [данными конфигураций](/powershell/scripting/dsc/configurations/configdata).
+Информацию нужно упорядочивать по таким логическим конструкциям, как расположение, тип и среда.
 
 > [!NOTE]
-> В этой статье рассматривается решение, поддерживаемое сообществом с открытым исходным кодом.
-> Поддержка доступна только в форме службы совместной работы GitHub, а не корпорацией Майкрософт.
+> В этой статье рассматривается решение, которое поддерживается сообществом разработчиков ПО с открытым кодом.
+> Поддержка этого решения предоставляется только на форуме GitHub и не имеет отношения к корпорации Майкрософт.
 
-## <a name="community-project-datum"></a>Проект сообщества: база
+## <a name="community-project-datum"></a>Проект сообщества: Datum
 
-Решение, обслуживаемое сообществом [Datum](https://github.com/gaelcolas/Datum) , было создано для решения этой проблемы.
-База данных основана на замечательных идеях от других платформ управления конфигурацией и реализует тот же тип решения для PowerShell DSC.
-Информация [организована в текстовые файлы](https://github.com/gaelcolas/Datum#3-intended-usage) на основе логических идей.
+Для решения этой задачи было создано поддерживаемое сообществом решение с именем [Datum](https://github.com/gaelcolas/Datum).
+Решение Datum основано на замечательных идеях, заимствованных из других платформ управления конфигурацией, и реализует тот же подход для PowerShell DSC.
+Сведения [организованы в текстовые файлы](https://github.com/gaelcolas/Datum#3-intended-usage) по логическим направлениям.
 Пример будет следующим:
 
-- Параметры, которые должны применяться глобально
-- Параметры, которые должны применяться ко всем серверам в расположении
-- Параметры, которые должны применяться ко всем серверам баз данных
-- Параметры отдельных серверов
+- параметры, которые нужно применять глобально;
+- параметры, которые нужно применять ко всем серверам в расположении;
+- параметры, которые нужно применять ко всем серверам баз данных;
+- параметры отдельных серверов.
 
-Эти сведения организованы в предпочтительный формат файла (JSON, YAML или PSD1).
-Затем предоставляются командлеты для создания файлов данных конфигурации путем [консолидации информации](https://github.com/gaelcolas/Datum#datum-tree) из каждого файла в единое представление сервера или роли сервера.
+Все эти сведения можно упорядочить в удобном для вас формате файлов (JSON, YAML или PSD1).
+Предоставляются командлеты, которые создают файлы конфигурации путем [объединения сведений](https://github.com/gaelcolas/Datum#datum-tree) из каждого файла в единое представление для сервера или роли сервера.
 
-После создания файлов данных их можно использовать с [сценариями конфигурации DSC](/powershell/scripting/dsc/configurations/write-compile-apply-configuration) для создания MOF-файлов и [передачи MOF-файлов в службу автоматизации Azure](/azure/automation/tutorial-configure-servers-desired-state#create-and-upload-a-configuration-to-azure-automation).
-Затем зарегистрируйте серверы из [локальной](/azure/automation/automation-dsc-onboarding#onboarding-physicalvirtual-windows-machines-on-premises-or-in-a-cloud-other-than-azure-including-aws-ec2-instances) среды или [в Azure](/azure/automation/automation-dsc-onboarding#onboarding-azure-vms) для извлечения конфигураций.
+После создания файлов данных их можно применить в [скриптах конфигурации DSC](/powershell/scripting/dsc/configurations/write-compile-apply-configuration) для создания MOF-файлов и [передачи MOF-файлов в службу автоматизации Azure](./tutorial-configure-servers-desired-state.md#create-and-upload-a-configuration-to-azure-automation).
+Затем зарегистрируйте серверы [локально](./automation-dsc-onboarding.md#enable-physicalvirtual-linux-machines) или [в Azure](./automation-dsc-onboarding.md#enable-azure-vms) для получения конфигураций.
 
-Чтобы испытать версию Datum, посетите [коллекция PowerShell](https://www.powershellgallery.com/packages/datum/) и скачайте решение или щелкните "сайт проекта", чтобы просмотреть [документацию](https://github.com/gaelcolas/Datum#2-getting-started--concepts).
+Чтобы испытать Datum в работе, откройте [коллекцию PowerShell](https://www.powershellgallery.com/packages/datum/) и скачайте решение или щелкните ссылку "Project Site" (Сайт проекта) для перехода к [документации](https://github.com/gaelcolas/Datum#2-getting-started--concepts).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Общие сведения о службе настройки требуемого состояния Windows PowerShell](/powershell/scripting/dsc/overview/overview)
-- [Ресурсы DSC](/powershell/scripting/dsc/resources/resources)
-- [Настройка локального Configuration Manager](/powershell/scripting/dsc/managing-nodes/metaconfig)
+- Дополнительные сведения о DSC для PowerShell см. в статье [Общие сведения о службе настройки требуемого состояния Windows PowerShell](/powershell/scripting/dsc/overview/overview).
+- Сведения о ресурсах для PowerShell DSC см. в статье [Ресурсы DSC](/powershell/scripting/dsc/resources/resources).
+- Дополнительные сведения см. в статье [Настройка локального диспетчера конфигураций](/powershell/scripting/dsc/managing-nodes/metaconfig).

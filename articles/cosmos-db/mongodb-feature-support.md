@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 10/16/2019
 author: sivethe
 ms.author: sivethe
-ms.openlocfilehash: 94b65b4e7947bc02b1fdaae90c8f774ec216e7bb
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 5d525824039c276d0bc8a63256b32afa9cb25445
+ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80981891"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85851814"
 ---
 # <a name="azure-cosmos-dbs-api-for-mongodb-32-version-supported-features-and-syntax"></a>API Azure Cosmos DB для MongoDB (версии 3.2) — поддержка возможностей и синтаксиса
 
@@ -73,7 +73,7 @@ API Azure Cosmos DB для MongoDB поддерживает приведенны
 - listDatabases
 - whatsmyuri
 
-<a name="aggregation-pipeline"/>
+<a name="aggregation-pipeline"></a>
 
 ## <a name="aggregation-pipelinea"></a>Конвейер статистической обработки</a>
 
@@ -288,7 +288,7 @@ $regex | `{ "Volcano Name": { $regex: "^Rain"} }`|  | -
 
 ### <a name="geospatial-operators"></a>Геопространственные операторы
 
-Оператор | Пример | |
+Оператор | Пример | Поддерживается |
 --- | --- | --- |
 $geoWithin | ```{ "Location.coordinates": { $geoWithin: { $centerSphere: [ [ -121, 46 ], 5 ] } } }``` | Да |
 $geoIntersects |  ```{ "Location.coordinates": { $geoIntersects: { $geometry: { type: "Polygon", coordinates: [ [ [ -121.9, 46.7 ], [ -121.5, 46.7 ], [ -121.5, 46.9 ], [ -121.9, 46.9 ], [ -121.9, 46.7 ] ] ] } } } }``` | Да |

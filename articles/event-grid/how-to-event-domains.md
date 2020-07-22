@@ -1,18 +1,14 @@
 ---
 title: Публикация событий с помощью доменов событий с помощью службы "Сетка событий Azure"
 description: Сведения об управлении большими наборами разделов в Сетке событий Azure и публикация событий в этих разделах с помощью доменов событий.
-services: event-grid
-author: banisadr
-ms.service: event-grid
-ms.author: babanisa
 ms.topic: conceptual
-ms.date: 10/22/2019
-ms.openlocfilehash: 1d07227249806b7d54523af66817a170c19354ee
-ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
+ms.date: 07/07/2020
+ms.openlocfilehash: 30a77d98fdb0d5bfd5169174999a0a08742adfd8
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "72786559"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86105568"
 ---
 # <a name="manage-topics-and-publish-events-using-event-domains"></a>Управление разделами и публикация событий с помощью доменов событий
 

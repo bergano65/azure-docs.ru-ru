@@ -4,10 +4,9 @@ description: Узнайте, как выполнить команду быстр
 ms.topic: article
 ms.date: 07/02/2019
 ms.openlocfilehash: ea4432c9e92c4a0380517e39678814e2d1cb3bfc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74456408"
 ---
 # <a name="check-the-health-of-an-azure-container-registry"></a>Проверка работоспособности реестра контейнеров Azure
@@ -53,7 +52,7 @@ az acr check-health --ignore-errors
 az acr check-health --name myregistry --ignore-errors
 ```      
 
-Образец вывода:
+Пример результатов выполнения:
 
 ```console
 $ az acr check-health --name myregistry --ignore-errors --yes
@@ -72,7 +71,7 @@ Fetch access token for registry 'myregistry.azurecr.io' : OK
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о кодах ошибок, возвращаемых командой [AZ контроля доступа проверки][az-acr-check-health] работоспособности, см [. в](container-registry-health-error-reference.md)этой статье.
 

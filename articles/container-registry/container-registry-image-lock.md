@@ -4,10 +4,9 @@ description: Задайте атрибуты для образа или репо
 ms.topic: article
 ms.date: 09/30/2019
 ms.openlocfilehash: da84767523bb6d948b71b1c1ad2ddaffb628354a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77659702"
 ---
 # <a name="lock-a-container-image-in-an-azure-container-registry"></a>Блокировка образа контейнера в реестре контейнеров Azure
@@ -69,7 +68,7 @@ az acr repository update \
 
 ### <a name="lock-an-image-by-manifest-digest"></a>Блокировка образа с помощью дайджеста манифеста
 
-Чтобы заблокировать изображение *myrepo/MyImage* , определяемое дайджестом манифеста (хэш SHA-256, `sha256:...`представленный в виде), выполните следующую команду. (Чтобы найти дайджест манифеста, связанный с одним или несколькими тегами изображений, выполните команду AZ запись в [репозитории "отобразить-манифесты][az-acr-repository-show-manifests] ".)
+Чтобы заблокировать изображение *myrepo/MyImage* , определяемое дайджестом манифеста (хэш SHA-256, представленный в виде `sha256:...` ), выполните следующую команду. (Чтобы найти дайджест манифеста, связанный с одним или несколькими тегами изображений, выполните команду AZ запись в [репозитории "отобразить-манифесты][az-acr-repository-show-manifests] ".)
 
 ```azurecli
 az acr repository update \

@@ -27,6 +27,8 @@
       href: roles.md
     - name: Расширенное обнаружение многоэтапных атак
       href: fusion.md
+    - name: Расширение Azure Sentinel между рабочими областями и арендаторами
+      href: extend-sentinel-across-workspaces-tenants.md
 - name: Практические руководства
   items:
     - name: Подключение источников данных
@@ -36,9 +38,9 @@
           items:
             - name: AWS CloudTrail
               href: connect-aws.md
-            - name: Azure AD
+            - name: Azure Active Directory
               href: connect-azure-active-directory.md
-            - name: Office 365
+            - name: "Microsoft\_365"
               href: connect-office-365.md
             - name: Cloud App Security
               href: connect-cloud-app-security.md
@@ -66,6 +68,8 @@
               href: connect-windows-security-events.md
         - name: Подключение внешних решений
           items:
+            - name: Alcide kAudit
+              href: connect-alcide-kaudit.md
             - name: Barracuda WAF
               href: connect-barracuda.md
             - name: Barracuda CloudGen Firewall
@@ -76,6 +80,8 @@
               href: connect-f5-big-ip.md
             - name: Forcepoint DLP
               href: connect-forcepoint-dlp.md
+            - name: "Журналы Perimeter\_81"
+              href: connect-perimeter-81-logs.md
             - name: Squadra Technologies secRMM
               href: connect-squadra-secrmm.md
             - name: Symantec ICDx
@@ -92,6 +98,8 @@
                 - name: Шаг 2. Настройка решения для обеспечения безопасности
                   href: connect-cef-solution-config.md
                   items:
+                    - name: "Vectra\_AI Detect"
+                      href: connect-ai-vectra-detect.md
                     - name: Check Point
                       href: connect-checkpoint.md
                     - name: Cisco ASA
@@ -142,10 +150,10 @@
     - name: Полезные ресурсы
       href: resources.md
     - name: Стратегия развития Azure
-      href: 'https://azure.microsoft.com/roadmap/?category=security-identity'
+      href: 'https://azure.microsoft.com/updates/?updateType=security&category=security&query=sentinel'
     - name: 'Блог по безопасности, конфиденциальности и соответствию нормам Azure'
       href: 'https://blogs.msdn.com/b/azuresecurity/'
     - name: Доступность по регионам
-      href: 'https://azure.microsoft.com/regions/services/'
+      href: 'https://azure.microsoft.com/global-infrastructure/services/?products=azure-sentinel'
     - name: Цены
-      href: 'https://azure.microsoft.com/en-us/pricing/details/azure-sentinel/'
+      href: 'https://azure.microsoft.com/pricing/details/azure-sentinel/'

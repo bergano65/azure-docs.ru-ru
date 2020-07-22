@@ -10,13 +10,13 @@ ms.subservice: computer-vision
 ms.topic: quickstart
 ms.date: 04/14/2020
 ms.author: pafarley
-ms.custom: seodec18
-ms.openlocfilehash: d859d04b9fee9af52c2d63004ba9c84665fe9edf
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.custom: seodec18, tracking-python
+ms.openlocfilehash: c7fcf55181640b9bbfe7bbdf64c239c71e1eba67
+ms.sourcegitcommit: 55b2bbbd47809b98c50709256885998af8b7d0c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81404453"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84985901"
 ---
 # <a name="quickstart-analyze-a-local-image-using-the-computer-vision-rest-api-and-python"></a>Краткое руководство. Анализ локального изображения с помощью REST API "Компьютерное зрение" и Python
 
@@ -26,23 +26,24 @@ ms.locfileid: "81404453"
 
 [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/Microsoft/cognitive-services-notebooks/master?filepath=VisionAPI.ipynb)
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/try/cognitive-services/), прежде чем начинать работу.
-
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Установите [Python](https://www.python.org/downloads/), если хотите выполнить этот пример кода в локальной среде.
-- У вас должен быть ключ подписки для Компьютерного зрения. На странице [Try Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=computer-vision) (Пробная версия Cognitive Services) можно получить ключ бесплатной пробной версии. Или следуйте инструкциям из статьи [Create a Cognitive Services account](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) (Создание учетной записи Cognitive Services), чтобы получить подписку Content Moderator и свой ключ. Затем [создайте переменные среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для строки ключа и конечной точки службы с именами `COMPUTER_VISION_SUBSCRIPTION_KEY` и `COMPUTER_VISION_ENDPOINT` соответственно.
-- Должны быть установлены указанные ниже пакеты Python. Чтобы установить пакеты Python, можно использовать [pip](https://packaging.python.org/tutorials/installing-packages/).
-    - requests
-    - [matplotlib](https://matplotlib.org/).
-    - [pillow](https://python-pillow.org/)
+* подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services/).
+* [Python](https://www.python.org/downloads/) и следующие пакеты:
+  * requests
+  * [matplotlib](https://matplotlib.org/).
+  * [pillow](https://python-pillow.org/)
+* Получив подписку Azure, <a href="https://portal.azure.com/#create/Microsoft.CognitiveServicesComputerVision"  title="создайте ресурс Компьютерного зрения"  target="_blank">create a Computer Vision resource <span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку. После развертывания щелкните **Перейти к ресурсам**.
+    * Для подключения приложения к API Компьютерного зрения потребуется ключ и конечная точка из созданного ресурса. Ключ и конечная точка будут вставлены в приведенный ниже код в кратком руководстве.
+    * Используйте бесплатную ценовую категорию (`F0`), чтобы опробовать службу, а затем выполните обновление до платного уровня для рабочей среды.
+* [Создайте переменные среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключа и URL-адреса конечной точки с именами `COMPUTER_VISION_SUBSCRIPTION_KEY` и `COMPUTER_VISION_ENDPOINT` соответственно.
 
 ## <a name="create-and-run-the-sample"></a>Создание и выполнение примера кода
 
 Чтобы создать и запустить пример, сделайте следующее.
 
 1. Скопируйте приведенный ниже код в текстовый редактор.
-1. При необходимости замените значение `image_path` именем файла и URL-адресом другого изображения, анализ которого следует выполнить.
+1. Замените значение `image_path` путем к файлу и именем файла другого изображения, анализ которого следует выполнить.
 1. Сохраните код как файл с расширением `.py`. Например, `analyze-local-image.py`.
 1. Откройте окно командной строки.
 1. В командной строке выполните пример кода с помощью команды `python`. Например, `python analyze-local-image.py`.
@@ -67,9 +68,11 @@ else:
 if 'COMPUTER_VISION_ENDPOINT' in os.environ:
     endpoint = os.environ['COMPUTER_VISION_ENDPOINT']
 
-analyze_url = endpoint + "vision/v2.1/analyze"
+analyze_url = endpoint + "vision/v3.0/analyze"
 
 # Set image_path to the local path of an image that you want to analyze.
+# Sample images are here, if needed:
+# https://github.com/Azure-Samples/cognitive-services-sample-data-files/tree/master/ComputerVision/Images
 image_path = "C:/Documents/ImageToAnalyze.jpg"
 
 # Read the image into a byte array
@@ -92,6 +95,7 @@ image = Image.open(BytesIO(image_data))
 plt.imshow(image)
 plt.axis("off")
 _ = plt.title(image_caption, size="x-large", y=-0.1)
+plt.show()
 ```
 
 ## <a name="examine-the-response"></a>Изучите ответ.

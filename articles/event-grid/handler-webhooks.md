@@ -1,18 +1,14 @@
 ---
 title: Веб-перехватчики в качестве обработчиков событий для событий службы "Сетка событий Azure"
 description: В статье показано, как использовать веб-перехватчики в качестве обработчиков событий службы "Сетка событий Azure". Модули runbook службы автоматизации Azure и приложения логики поддерживаются в виде обработчиков событий через веб-перехватчики.
-services: event-grid
-author: spelluru
-ms.service: event-grid
 ms.topic: conceptual
-ms.date: 05/11/2020
-ms.author: spelluru
-ms.openlocfilehash: ba67b1cd93bc1c713648f799090e0b2cd77cff1b
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
-ms.translationtype: HT
+ms.date: 07/07/2020
+ms.openlocfilehash: 3dc75b15c55c82b6164e77f0ac93a87bced94a64
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83596383"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86105614"
 ---
 # <a name="webhooks-automation-runbooks-logic-apps-as-event-handlers-for-azure-event-grid-events"></a>Веб-перехватчики, модули runbook автоматизации, Logic Apps в качестве обработчиков событий для событий службы "Сетка событий Azure"
 Обработчик событий — это место, куда отправляются события. Обработчик выполняет последующую обработку полученного события. Некоторые службы Azure автоматически настроены для обработки событий. Также для этого можно использовать любой веб-перехватчик. Для обработки событий, веб-перехватчик не обязательно размещать в Azure. Сетка событий поддерживает только конечные точки HTTPS веб-перехватчиков.
@@ -47,6 +43,27 @@ ms.locfileid: "83596383"
 | [Руководство. Отслеживание изменений виртуальной машины с помощью Azure Logic Apps и службы "Сетка событий Azure"](monitor-virtual-machine-changes-event-grid-logic-app.md) | Приложение логики отслеживает изменения в виртуальной машине и отправляет сообщения электронной почты об этих изменениях. |
 | [Руководство. Отправка уведомлений электронной почты о событиях в Центре Интернета вещей Azure с помощью Logic Apps](publish-iot-hub-events-to-logic-apps.md) | Приложение логики отправляет уведомление по электронной почте каждый раз, когда добавляется устройство в Центр Интернета вещей. |
 | [Руководство. Реагирование на события служебной шины Azure, получаемые через Сетку событий Azure с помощью Функций Azure и Azure Logic Apps](../service-bus-messaging/service-bus-to-event-grid-integration-example.md?toc=%2fazure%2fevent-grid%2ftoc.json) | Служба "Сетка событий" отправляет сообщения из раздела служебной шины в приложение-функцию и приложение логики. |
+
+## <a name="rest-example-for-put"></a>Пример REST (для PUT)
+
+```json
+{
+    "properties": 
+    {
+        "destination": 
+        {
+            "endpointType": "WebHook",
+            "properties": 
+            {
+                "endpointUrl": "<WEB HOOK URL>",
+                "maxEventsPerBatch": 1,
+                "preferredBatchSizeInKilobytes": 64
+            }
+        },
+        "eventDeliverySchema": "EventGridSchema"
+    }
+}
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 См. список поддерживаемых обработчиков событий в статье [Обработчики событий](event-handlers.md). 

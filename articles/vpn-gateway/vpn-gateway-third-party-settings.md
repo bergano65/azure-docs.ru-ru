@@ -9,10 +9,9 @@ ms.topic: troubleshooting
 ms.date: 06/15/2018
 ms.author: delhan
 ms.openlocfilehash: b87340fbb3f94eee106fc5d0d72117d30e331035
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75862719"
 ---
 # <a name="community-suggested-third-party-vpn-or-firewall-device-settings-for-azure-vpn-gateway"></a>Предлагаемые сообществом сторонние параметры устройств VPN или брандмауэра для VPN-шлюза Azure
@@ -26,7 +25,7 @@ ms.locfileid: "75862719"
 
 В таблице ниже перечисляются несколько общих устройств и руководства по их использованию:
 
-|Продукт    |Справочник                                                |
+|Продукт    |Справка                                                |
 |-----------|-----------------------------------------------------------|
 |Cisco ASA  |[Предлагаемые сообществом решения для Cisco ASA для VPN-шлюза Azure](https://search.cisco.com/search?query=%22Azure%20VPN%22%20ASA&locale=enUS&tab=Cisco)   |
 |Cisco ISR  |[Предлагаемые сообществом решения для Cisco ISR для VPN-шлюза Azure](https://search.cisco.com/search?query=%22Azure%20VPN%22%20ISR&locale=enUS&tab=Cisco)   |

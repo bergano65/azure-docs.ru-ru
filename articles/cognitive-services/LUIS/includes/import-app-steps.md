@@ -5,14 +5,14 @@ author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 05/07/2020
+ms.date: 06/22/2020
 ms.author: diberry
-ms.openlocfilehash: 4c87ea9ebb2dd7aec36025e4b45f74e186ca1cd4
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 37f1b85b4ce8510d5e288df985a55dba659f0c9b
+ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83588800"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86035472"
 ---
 1. На [портале LUIS](https://www.luis.ai) выберите на странице **Мои приложения** действие **+ Создать приложение для общения**, а затем щелкните **Импортировать в JSON-файл**. Найдите JSON-файл, который вы сохранили на предыдущем шаге. Имя приложения можно не менять. Щелкните **Готово**.
 

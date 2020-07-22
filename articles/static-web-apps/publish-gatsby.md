@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: tutorial
 ms.date: 05/08/2020
 ms.author: aapowell
-ms.openlocfilehash: 14706b623c6973c09b499e4fcd905e3eed430898
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 24d5ee132444f19118613f6b1b798fd763e46e3c
+ms.sourcegitcommit: d118ad4fb2b66c759b70d4d8a18e6368760da3ad
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83593382"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84299329"
 ---
 # <a name="tutorial-publish-a-gatsby-site-to-azure-static-web-apps-preview"></a>Руководство по Публикация сайта Gatsby в предварительной версии службы "Статические веб-приложения Azure"
 
@@ -95,7 +95,7 @@ ms.locfileid: "83593382"
 
 1. Для параметра _Группа ресурсов_ выберите **Создать**. В разделе _Новое имя группы ресурсов_ введите **gatsby-static-web-app** и нажмите кнопку **ОК**.
 
-1. Затем в поле **Имя** укажите глобально уникальное имя для приложения. Допустимые символы: `a-z`, `A-Z`, `0-9` и `-`. Это значение используется в качестве префикса URL-адреса для статического веб-приложения в формате `https://<YOUR_APP_NAME>.azurestaticapps.net`.
+1. В поле **Имя** введите имя приложения. Допустимые символы: `a-z`, `A-Z`, `0-9` и `-`.
 
 1. В поле _Регион_выберите ближайший доступный регион.
 

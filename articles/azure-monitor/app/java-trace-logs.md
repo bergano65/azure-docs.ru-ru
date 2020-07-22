@@ -4,10 +4,9 @@ description: Поиск данных трассировки Log4J или Logback
 ms.topic: conceptual
 ms.date: 05/18/2019
 ms.openlocfilehash: da1b76d52ab93f4d1be7196d6eb7286579481119
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77657220"
 ---
 # <a name="explore-java-trace-logs-in-application-insights"></a>Просмотр журналов трассировки Java в Application Insights
@@ -18,7 +17,7 @@ ms.locfileid: "77657220"
 
 ## <a name="using-the-application-insights-java-agent"></a>Использование агента Application Insights Java
 
-По умолчанию агент Application Insights Java автоматически отслеживает ведение журнала, выполненное `WARN` на уровне и выше.
+По умолчанию агент Application Insights Java автоматически отслеживает ведение журнала, выполненное на `WARN` уровне и выше.
 
 Вы можете изменить пороговое значение ведения журнала, которое захватывается с помощью `AI-Agent.xml` файла:
 

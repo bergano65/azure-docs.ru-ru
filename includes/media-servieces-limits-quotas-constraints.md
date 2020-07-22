@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 03/31/2020
 ms.author: juliako
 ms.openlocfilehash: d6ff823951e6474a35a514036f02c0aabb17bf01
-ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82997708"
 ---
 > [!NOTE]
@@ -85,7 +85,7 @@ ms.locfileid: "82997708"
 
 <sup>7</sup> указатели потоковой передачи не предназначены для управления доступом на уровне пользователей. Для предоставления различных прав доступа отдельным пользователям используйте решения для управления цифровыми правами (DRM).
 
-### <a name="protection-limits"></a>Ограничения защиты
+### <a name="protection-limits"></a>Ограничения на защиту
 
 | Ресурс | Ограничение по умолчанию | 
 | --- | --- | 

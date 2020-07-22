@@ -1,21 +1,20 @@
 ---
-title: Рабочие процессы Apache Oozie & Корпоративная безопасность — Azure HDInsight
+title: Рабочие процессы Apache Oozie и Корпоративный пакет безопасности — Azure HDInsight
 description: Защита рабочих процессов Apache Oozie с помощью Корпоративного пакета безопасности для Azure HDInsight Узнайте, как определить рабочий процесс и отправить задание для Oozie.
 author: omidm1
 ms.author: omidm
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
-ms.custom: hdinsightactive,seodec18
-ms.date: 12/09/2019
-ms.openlocfilehash: 9ef54707f7fac3dd1328e29f6d05f62c1dee2561
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.custom: hdinsightactive,seodec18,seoapr2020
+ms.date: 05/14/2020
+ms.openlocfilehash: 36c04480c46cea904b072c659c5c2642a28e1f27
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78194909"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83647580"
 ---
-# <a name="run-apache-oozie-in-hdinsight-hadoop-clusters-with-enterprise-security-package"></a>Запуск Apache Oozie в кластерах Hadoop HDInsight с Корпоративным пакетом безопасности
+# <a name="run-apache-oozie-in-azure-hdinsight-clusters-with-enterprise-security-package"></a>Выполнение Apache Oozie в кластерах Azure HDInsight с Корпоративным пакетом безопасности
 
 Apache Oozie — это система рабочих процессов и координации, управляющая заданиями Apache Hadoop. Служба Oozie интегрирована со стеком Hadoop и поддерживает следующие задания:
 
@@ -31,7 +30,7 @@ Apache Oozie — это система рабочих процессов и ко
 Кластер Azure HDInsight Hadoop с Корпоративным пакетом безопасности (ESP). Ознакомьтесь со статьей [Настройка кластера HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory](./apache-domain-joined-configure-using-azure-adds.md).
 
 > [!NOTE]  
-> Подробные инструкции по использованию Oozie в кластерах, отличных от ESP, см. [в статье Использование рабочих процессов Apache Oozie в Azure HDInsight под управлением Linux](../hdinsight-use-oozie-linux-mac.md).
+> Подробные инструкции по использованию Oozie в кластерах без пакета ESP см. в статье [Использование рабочих процессов Apache Oozie в Azure HDInsight под управлением Linux](../hdinsight-use-oozie-linux-mac.md).
 
 ## <a name="connect-to-an-esp-cluster"></a>Подключение к кластеру ESP
 
@@ -69,7 +68,7 @@ Apache Oozie — это система рабочих процессов и ко
 
    Замените `DomainUser` именем пользователя домена.
    Замените `DomainUserPath` путем к домашнему каталогу для пользователя домена.
-   Замените `ClusterVersion` версией платформы данных кластера.
+   Замените `ClusterVersion` версией платформы данных, используемой вашим кластером.
 
 2. Для создания и открытия файла выполните следующий запрос:
 
@@ -178,17 +177,17 @@ Apache Oozie — это система рабочих процессов и ко
 
 4. Замените `clustername` именем кластера.
 
-5. Чтобы сохранить файл, нажмите **клавиши CTRL + X**. Введите **Y**. Затем нажмите клавишу **Ввод**.
+5. Чтобы сохранить файл, нажмите **Ctrl+X**. Нажмите клавишу **Y**. Затем нажмите клавишу **ВВОД**.
 
     Рабочий процесс состоит из двух частей:
 
-   - **Записям.** Этот раздел принимает учетные данные, которые используются для проверки подлинности действий Oozie:
+   - **Учетные данные.** Этот раздел принимает учетные данные, которые используются для проверки подлинности действий Oozie:
 
      В этом примере используется проверка подлинности для действий Hive. Дополнительные сведения см. в статье о [проверке подлинности действий](https://oozie.apache.org/docs/4.2.0/DG_ActionAuthentication.html).
 
      Служба учетных данных позволяет действиям Oozie олицетворять пользователя для доступа к службам Hadoop.
 
-   - **Поддержки.** В этом разделе содержатся три действия: map-reduce, действия сервера Hive 2 и сервера Hive 1:
+   - **Действие.** В этом разделе содержатся три действия: map-reduce, действия сервера Hive 2 и сервера Hive 1:
 
      - Действие map-reduce запускает пример из пакета Oozie для выполнения операции map-reduce, в результате которой вы получаете общее количество слов.
 
@@ -230,9 +229,9 @@ Apache Oozie — это система рабочих процессов и ко
    hiveOutputDirectory2=${nameNode}/user/${user.name}/hiveresult2
    ```
 
-   - Используйте URI `adl://home` для свойства `nameNode`, если в качестве основного хранилища кластера используется Azure Data Lake Storage 1-го поколения. Если вы используете хранилище BLOB-объектов Azure, измените его на `wasb://home`. Если вы используете Azure Data Lake Storage 2-го поколения, измените его на `abfs://home`.
+   - Используйте URI `adl://home` для свойства `nameNode`, если в качестве основного хранилища кластера используется Azure Data Lake Storage 1-го поколения. Если вы используете хранилище BLOB-объектов, укажите `wasb://home`. Если вы используете Azure Data Lake Storage 2-го поколения, укажите `abfs://home`.
    - Замените `domainuser` на свое имя пользователя для домена.  
-   - Замените `ClusterShortName` коротким именем кластера. Например, если имя кластера — sechadoopcontoso.azurehdisnight.net (https://*[пример ссылки]*), `clustershortname` представляет собой первые шесть букв имени кластера: **sechad**.  
+   - Замените `ClusterShortName` коротким именем кластера. Например, если имя кластера — sechadoopcontoso.azurehdisnight.net (https:// *[пример ссылки]* ), `clustershortname` представляет собой первые шесть букв имени кластера: **sechad**.  
    - Замените `jdbcurlvalue` на URL-адрес JDBC из файла конфигурации Hive. Например, jdbc:hive2://headnodehost:10001/;transportMode=http.
    - Чтобы сохранить файл, нажмите Ctrl+X, введите `Y`, а затем нажмите клавишу **ВВОД**.
 
@@ -345,7 +344,7 @@ ID                      Status  Ext ID          ExtStatus   ErrCode
 
 2. Следовать инструкциям в [веб-интерфейсе Oozie](../hdinsight-use-oozie-linux-mac.md), чтобы включить туннелирование SSH для граничного узла и получить доступ к пользовательскому веб-интерфейсу.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Используйте Apache Oozie с Apache Hadoop, чтобы определить и запустить рабочий процесс в Azure HDInsight под управлением Linux](../hdinsight-use-oozie-linux-mac.md).
-- [Подключитесь к HDInsight (Apache Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md#authentication-domain-joined-hdinsight).
+- [Использование Oozie с Hadoop для определения и запуска рабочих процессов в Azure HDInsight под управлением Linux](../hdinsight-use-oozie-linux-mac.md).
+- [Проверка подлинности при использовании присоединенного к домену кластера HDInsight](../hdinsight-hadoop-linux-use-ssh-unix.md#authentication-domain-joined-hdinsight).

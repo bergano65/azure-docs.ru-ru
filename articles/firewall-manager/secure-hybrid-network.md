@@ -1,26 +1,24 @@
 ---
-title: Руководство по защите центральной виртуальной сети с помощью предварительной версии Диспетчера брандмауэра Azure
+title: Руководство по защите центральной виртуальной сети с помощью Диспетчера брандмауэра Azure
 description: В этом руководстве вы можете узнать, как защитить виртуальную сеть с помощью Диспетчера брандмауэра Azure на портале Azure.
 services: firewall-manager
 author: vhorne
 ms.service: firewall-manager
 ms.topic: tutorial
-ms.date: 02/18/2020
+ms.date: 06/30/2020
 ms.author: victorh
-ms.openlocfilehash: cdd416bdb833e4784334a6847d724a7375e2ef8d
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 3d4d1e65c2200aee178abefb46d3e330acbd3108
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77459959"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85563635"
 ---
-# <a name="tutorial-secure-your-hub-virtual-network-using-azure-firewall-manager-preview"></a>Руководство по защите центральной виртуальной сети с помощью предварительной версии Диспетчера брандмауэра Azure 
-
-[!INCLUDE [Preview](../../includes/firewall-manager-preview-notice.md)]
+# <a name="tutorial-secure-your-hub-virtual-network-using-azure-firewall-manager"></a>Руководство по защите центральной виртуальной сети с помощью Диспетчера брандмауэра Azure
 
 Возможность контролировать доступ к сетевым ресурсам Azure при подключении локальной сети к виртуальной сети Azure для создания гибридной сети является важной частью общего плана безопасности.
 
-С помощью предварительной версии Диспетчера брандмауэра Azure можно создавать центральную виртуальную сеть для защиты трафика гибридной сети, направляемого на частные IP-адреса, в Azure PaaS и Интернет. Диспетчер брандмауэра Azure позволяет контролировать доступ к гибридной сети с помощью политик, которые определяют разрешенный и запрещенный сетевой трафик.
+С помощью Диспетчера брандмауэра Azure можно создать центральную виртуальную сеть для защиты трафика гибридной сети, направляемого на частные IP-адреса, в Azure PaaS и Интернет. Диспетчер брандмауэра Azure позволяет контролировать доступ к гибридной сети с помощью политик, которые определяют разрешенный и запрещенный сетевой трафик.
 
 Диспетчер брандмауэра также поддерживает архитектуру защищенных виртуальных концентраторов. Сравнение таких типов архитектуры, как защищенный виртуальный концентратор и центр виртуальной сети, см. в [этой статье](vhubs-and-vnets.md).
 
@@ -413,7 +411,7 @@ ms.locfileid: "77459959"
 <!---2. Open a Windows PowerShell command prompt on **VM-Onprem**, and ping the private IP for **VM-spoke-01**.
 
    You should get a reply.--->
-3. Откройте веб-браузер в **VM-Onprem** и перейдите по адресу http://\<частный IP-адрес VM-spoke-01\>.
+3. Откройте веб-браузер в **VM-Onprem** и перейдите по адресу http://\<VM-spoke-01 private IP\>.
 
    Должна отобразиться веб-страница **VM-spoke-01**. ![Веб-страница VM-Spoke-01](media/secure-hybrid-network/vm-spoke-01-web.png)
 
@@ -444,4 +442,4 @@ ms.locfileid: "77459959"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Руководство. Защита виртуальной глобальной сети с помощью предварительной версии Диспетчера брандмауэра Azure](secure-cloud-network.md).
+> [Руководство. Защита виртуальной глобальной сети с помощью Диспетчера брандмауэра Azure](secure-cloud-network.md)

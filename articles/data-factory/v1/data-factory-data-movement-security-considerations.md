@@ -11,19 +11,18 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: abnarain
 robots: noindex
-ms.openlocfilehash: 1f19d258531e5368238cba72c986aede3f4a64ef
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: c22168aade11bbba66682efea0e2f5a1fcc2ac1f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80130840"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84021506"
 ---
 # <a name="azure-data-factory---security-considerations-for-data-movement"></a>Вопросы безопасности при перемещении данных в фабрике данных Azure
 
 > [!NOTE]
 > В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. [рекомендации по безопасному перемещению данных в службе "Фабрика данных"](../data-movement-security-considerations.md).
 
-## <a name="introduction"></a>Введение
+## <a name="introduction"></a>Вступление
 В этой статье описывается базовая инфраструктура безопасности, используемая службами перемещения данных в фабрике данных Azure для защиты данных. Ресурсы управления фабрики данных Azure созданы на основе инфраструктуры безопасности Azure и используют все возможные меры безопасности, предлагаемые Azure.
 
 С помощью фабрики данных можно создать один или несколько [конвейеров](data-factory-create-pipelines.md)данных. Конвейеры — это логические группы действий, которые вместе отвечают за выполнение задачи. Эти конвейеры реализуются в регионе, где была создана фабрика данных. 
@@ -134,7 +133,7 @@ SalesForce поддерживает шифрование Shield Platform Encrypt
 
 На изображениях ниже показано использование шлюза управления данными для перемещения данных между локальной базой данных и службами Azure с помощью ExpressRoute и VPN-подключения IPSec (с помощью виртуальной сети).
 
-**ExpressRoute:**
+**Express Route:**
  
 ![Использование ExpressRoute со шлюзом](media/data-factory-data-movement-security-considerations/express-route-for-gateway.png) 
 
@@ -149,7 +148,7 @@ SalesForce поддерживает шифрование Shield Platform Encrypt
 
 В таблице ниже представлены **исходящий порт** и требования к домену для **корпоративного брандмауэра**.
 
-| Имена доменов | Исходящие порты | Описание |
+| Имена доменов | Исходящие порты | Описание: |
 | ------------ | -------------- | ----------- | 
 | `*.servicebus.windows.net` | 443, 80 | Требуется шлюзу для подключения к службам перемещения данных в фабрике данных. |
 | `*.core.windows.net` | 443 | Используется шлюзом для подключения к учетной записи хранения Azure при помощи функции [промежуточного копирования](data-factory-copy-activity-performance.md#staged-copy). | 
@@ -162,7 +161,7 @@ SalesForce поддерживает шифрование Shield Platform Encrypt
 
 В следующей таблице представлены требования к **входящему порту** для **брандмауэра Windows**.
 
-| Входящие порты | Описание | 
+| Входящие порты | Описание: | 
 | ------------- | ----------- | 
 | 8050 (TCP) | Требуется диспетчером учетных данных для их безопасной настройки для локальных хранилищ данных шлюза. | 
 
@@ -173,9 +172,9 @@ SalesForce поддерживает шифрование Shield Platform Encrypt
 
 Ниже перечислены облачные хранилища данных, которым необходим разрешенный IP-адрес компьютера шлюза. Некоторым из них по умолчанию это может не требоваться. 
 
-- [База данных SQL Azure](../../sql-database/sql-database-firewall-configure.md) 
+- [База данных SQL Azure](../../azure-sql/database/firewall-configure.md) 
 - [Хранилище данных SQL Azure](../../sql-data-warehouse/sql-data-warehouse-get-started-provision.md)
-- [Azure Data Lake Store](../../data-lake-store/data-lake-store-secure-data.md#set-ip-address-range-for-data-access)
+- [Хранилище озера данных Azure](../../data-lake-store/data-lake-store-secure-data.md#set-ip-address-range-for-data-access)
 - [Azure Cosmos DB](../../cosmos-db/firewall-support.md)
 - [Amazon Redshift](https://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-authorize-cluster-access.html) 
 
@@ -190,7 +189,7 @@ SalesForce поддерживает шифрование Shield Platform Encrypt
 **Вопрос**. Каковы требования сертификата к шлюзу?
 **Ответ**. Текущий шлюз требует сертификат, который будет использоваться диспетчером учетных данных для безопасной настройки учетных данных хранилища данных. Этот сертификат является самозаверяющим, созданным и настроенным во время установки шлюза. Вместо этого можно использовать собственный сертификат TLS/SSL. Дополнительные сведения см. в разделе о [диспетчере учетных данных ClickOnce-приложения](#click-once-credentials-manager-app). 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о производительности действия копирования см. в [руководстве о производительности действия копирования и его настройке](data-factory-copy-activity-performance.md).
 
  

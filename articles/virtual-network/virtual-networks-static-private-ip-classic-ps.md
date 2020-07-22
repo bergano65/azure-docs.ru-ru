@@ -8,19 +8,20 @@ manager: dcscontentpm
 tags: azure-service-management
 ms.assetid: 60c7b489-46ae-48af-a453-2b429a474afd
 ms.service: virtual-network
+ms.subservice: ip-services
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/02/2016
 ms.author: genli
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 9255ca3a2ed7e446c60a269deef61372955c25f4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 669b8427f13efcc55a69bc7c970b6658a6719cd8
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81458511"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86134720"
 ---
 # <a name="configure-private-ip-addresses-for-a-virtual-machine-classic-using-powershell"></a>Настройка частных IP-адресов для (классической) виртуальной машины с помощью PowerShell
 
@@ -39,100 +40,120 @@ ms.locfileid: "81458511"
 ## <a name="how-to-verify-if-a-specific-ip-address-is-available"></a>Проверка доступности определенного IP-адреса
 Чтобы проверить, доступен ли IP-адрес *192.168.1.101* в виртуальной сети *TestVNet*, выполните следующую команду PowerShell и проверьте значение для *IsAvailable*.
 
-    Test-AzureStaticVNetIP –VNetName TestVNet –IPAddress 192.168.1.101 
+```azurepowershell
+Test-AzureStaticVNetIP –VNetName TestVNet –IPAddress 192.168.1.101 
+```
 
 Ожидаемые выходные данные:
 
-    IsAvailable          : True
-    AvailableAddresses   : {}
-    OperationDescription : Test-AzureStaticVNetIP
-    OperationId          : fd3097e1-5f4b-9cac-8afa-bba1e3492609
-    OperationStatus      : Succeeded
+```output
+IsAvailable          : True
+AvailableAddresses   : {}
+OperationDescription : Test-AzureStaticVNetIP
+OperationId          : fd3097e1-5f4b-9cac-8afa-bba1e3492609
+OperationStatus      : Succeeded
+```
 
 ## <a name="how-to-specify-a-static-private-ip-address-when-creating-a-vm"></a>Указание статического частного IP-адреса при создании виртуальной машины
 Приведенный ниже сценарий PowerShell создает облачную службу *TestService*, а затем получает образ из Azure, создает виртуальную машину *DNS01* в новой облачной службе с использованием полученного образа, задает для этой виртуальной машины нахождение в подсети *FrontEnd* и устанавливает IP-адрес *192.168.1.7* в качестве статического частного IP-адреса виртуальной машины.
 
-    New-AzureService -ServiceName TestService -Location "Central US"
-    $image = Get-AzureVMImage | where {$_.ImageName -like "*RightImage-Windows-2012R2-x64*"}
-    New-AzureVMConfig -Name DNS01 -InstanceSize Small -ImageName $image.ImageName |
-      Add-AzureProvisioningConfig -Windows -AdminUsername adminuser -Password MyP@ssw0rd!! |
-      Set-AzureSubnet –SubnetNames FrontEnd |
-      Set-AzureStaticVNetIP -IPAddress 192.168.1.7 |
-      New-AzureVM -ServiceName TestService –VNetName TestVNet
+```azurepowershell
+New-AzureService -ServiceName TestService -Location "Central US"
+$image = Get-AzureVMImage | where {$_.ImageName -like "*RightImage-Windows-2012R2-x64*"}
+New-AzureVMConfig -Name DNS01 -InstanceSize Small -ImageName $image.ImageName |
+    Add-AzureProvisioningConfig -Windows -AdminUsername adminuser -Password MyP@ssw0rd!! |
+    Set-AzureSubnet –SubnetNames FrontEnd |
+    Set-AzureStaticVNetIP -IPAddress 192.168.1.7 |
+    New-AzureVM -ServiceName TestService –VNetName TestVNet
+```
 
 Ожидаемые выходные данные:
 
-    WARNING: No deployment found in service: 'TestService'.
-    OperationDescription OperationId                          OperationStatus
-    -------------------- -----------                          ---------------
-    New-AzureService     fcf705f1-d902-011c-95c7-b690735e7412 Succeeded      
-    New-AzureVM          3b99a86d-84f8-04e5-888e-b6fc3c73c4b9 Succeeded  
+```output
+WARNING: No deployment found in service: 'TestService'.
+OperationDescription OperationId                          OperationStatus
+-------------------- -----------                          ---------------
+New-AzureService     fcf705f1-d902-011c-95c7-b690735e7412 Succeeded      
+New-AzureVM          3b99a86d-84f8-04e5-888e-b6fc3c73c4b9 Succeeded  
+```
 
 ## <a name="how-to-retrieve-static-private-ip-address-information-for-a-vm"></a>Как получить информацию о статическом частном IP-адресе виртуальной машины
 Чтобы просмотреть сведения о статическом частном IP-адресе виртуальной машины, созданной с помощью приведенного выше сценария, выполните следующую команду PowerShell и обратите внимание на значения *IpAddress*:
 
-    Get-AzureVM -Name DNS01 -ServiceName TestService
+```azurepowershell
+Get-AzureVM -Name DNS01 -ServiceName TestService
+```
 
 Ожидаемые выходные данные:
 
-    DeploymentName              : TestService
-    Name                        : DNS01
-    Label                       : 
-    VM                          : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVM
-    InstanceStatus              : Provisioning
-    IpAddress                   : 192.168.1.7
-    InstanceStateDetails        : Windows is preparing your computer for first use...
-    PowerState                  : Started
-    InstanceErrorCode           : 
-    InstanceFaultDomain         : 0
-    InstanceName                : DNS01
-    InstanceUpgradeDomain       : 0
-    InstanceSize                : Small
-    HostName                    : rsR2-797
-    AvailabilitySetName         : 
-    DNSName                     : http://testservice000.cloudapp.net/
-    Status                      : Provisioning
-    GuestAgentStatus            : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.GuestAgentStatus
-    ResourceExtensionStatusList : {Microsoft.Compute.BGInfo}
-    PublicIPAddress             : 
-    PublicIPName                : 
-    NetworkInterfaces           : {}
-    ServiceName                 : TestService
-    OperationDescription        : Get-AzureVM
-    OperationId                 : 34c1560a62f0901ab75cde4fed8e8bd1
-    OperationStatus             : OK
+```output
+DeploymentName              : TestService
+Name                        : DNS01
+Label                       : 
+VM                          : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.PersistentVM
+InstanceStatus              : Provisioning
+IpAddress                   : 192.168.1.7
+InstanceStateDetails        : Windows is preparing your computer for first use...
+PowerState                  : Started
+InstanceErrorCode           : 
+InstanceFaultDomain         : 0
+InstanceName                : DNS01
+InstanceUpgradeDomain       : 0
+InstanceSize                : Small
+HostName                    : rsR2-797
+AvailabilitySetName         : 
+DNSName                     : http://testservice000.cloudapp.net/
+Status                      : Provisioning
+GuestAgentStatus            : Microsoft.WindowsAzure.Commands.ServiceManagement.Model.GuestAgentStatus
+ResourceExtensionStatusList : {Microsoft.Compute.BGInfo}
+PublicIPAddress             : 
+PublicIPName                : 
+NetworkInterfaces           : {}
+ServiceName                 : TestService
+OperationDescription        : Get-AzureVM
+OperationId                 : 34c1560a62f0901ab75cde4fed8e8bd1
+OperationStatus             : OK
+```
 
 ## <a name="how-to-remove-a-static-private-ip-address-from-a-vm"></a>Удаление статического частного IP-адреса виртуальной машины
 Чтобы удалить статический частный IP-адрес, добавленный на виртуальную машину в приведенном выше сценарии, выполните следующую команду PowerShell:
 
-    Get-AzureVM -ServiceName TestService -Name DNS01 |
-      Remove-AzureStaticVNetIP |
-      Update-AzureVM
+```azurepowershell
+Get-AzureVM -ServiceName TestService -Name DNS01 |
+    Remove-AzureStaticVNetIP |
+    Update-AzureVM
+```
 
 Ожидаемые выходные данные:
 
-    OperationDescription OperationId                          OperationStatus
-    -------------------- -----------                          ---------------
-    Update-AzureVM       052fa6f6-1483-0ede-a7bf-14f91f805483 Succeeded
+```output
+OperationDescription OperationId                          OperationStatus
+-------------------- -----------                          ---------------
+Update-AzureVM       052fa6f6-1483-0ede-a7bf-14f91f805483 Succeeded
+```
 
 ## <a name="how-to-add-a-static-private-ip-address-to-an-existing-vm"></a>Как добавить статический частный IP-адрес для существующей виртуальной машины
 Чтобы добавить статический частный IP-адрес для виртуальной машины, созданной с помощью приведенного ранее скрипта, выполните такую команду:
 
-    Get-AzureVM -ServiceName TestService -Name DNS01 |
-      Set-AzureStaticVNetIP -IPAddress 192.168.1.7 |
-      Update-AzureVM
+```azurepowershell
+Get-AzureVM -ServiceName TestService -Name DNS01 |
+    Set-AzureStaticVNetIP -IPAddress 192.168.1.7 |
+    Update-AzureVM
+```
 
 Ожидаемые выходные данные:
 
-    OperationDescription OperationId                          OperationStatus
-    -------------------- -----------                          ---------------
-    Update-AzureVM       77d8cae2-87e6-0ead-9738-7c7dae9810cb Succeeded 
+```output
+OperationDescription OperationId                          OperationStatus
+-------------------- -----------                          ---------------
+Update-AzureVM       77d8cae2-87e6-0ead-9738-7c7dae9810cb Succeeded 
+```
 
 ## <a name="set-ip-addresses-within-the-operating-system"></a>Настройка IP-адресов в операционной системе
 
 Не рекомендуется без необходимости статически назначать виртуальной машине Azure частный IP-адрес в ее операционной системе. Если вы будете вручную устанавливать частный IP-адрес в операционной системе, убедитесь, что он соответствует частному IP-адресу, назначенному виртуальной машине Azure, иначе соединение с виртуальной машиной может быть потеряно. Никогда не следует вручную назначать общедоступный IP-адрес для виртуальной машины Azure в ее операционной системе.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Ознакомьтесь с информацией о [зарезервированных общедоступных IP-адресах](virtual-networks-reserved-public-ip.md) .
 * Узнайте об [общедоступных IP-адресах уровня экземпляра (ILPIP)](virtual-networks-instance-level-public-ip.md) .
 * Ознакомьтесь с информацией о [REST API зарезервированных IP-адресов](https://msdn.microsoft.com/library/azure/dn722420.aspx).

@@ -4,20 +4,23 @@ description: Создание экземпляра Azure HPC Cache
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: how-to
-ms.date: 04/23/2020
+ms.date: 06/01/2020
 ms.author: v-erkel
-ms.openlocfilehash: 4ff31ca6a171beece1672802367f08768676efbc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 894595ee3660532bf046a39e994fa669f7c6b002
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82195015"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84434092"
 ---
 # <a name="create-an-azure-hpc-cache"></a>Создание Azure HPC Cache
 
 Кэш создается на портале Azure.
 
 ![снимок экрана с обзором кэша на портале Azure с кнопкой "Создать" внизу](media/hpc-cache-home-page.png)
+
+Щелкните изображение ниже, чтобы просмотреть [видео демонстрацию](https://azure.microsoft.com/resources/videos/set-up-hpc-cache/) создания кэша и добавления целевого объекта хранилища.
+
+[![Эскиз видео: кэш Azure HPC: Настройка (щелкните, чтобы посетить страницу видео)](media/video-4-setup.png)](https://azure.microsoft.com/resources/videos/set-up-hpc-cache/)
 
 ## <a name="define-basic-details"></a>Определение основных сведений
 
@@ -92,7 +95,7 @@ Azure HPC Cache определяет, какие файлы необходимо
 > [!NOTE]
 > Если кэш использует ключи шифрования, управляемые клиентом, то кэш может отображаться в списке ресурсов до того, как состояние развертывания изменится на завершено. Как только кэш находится в состоянии **ожидания ключа** , [его можно авторизовать](customer-keys.md#3-authorize-azure-key-vault-encryption-from-the-cache) для использования хранилища ключей.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 После того как кэш появится в списке **ресурсов** , можно перейти к следующему шагу.
 

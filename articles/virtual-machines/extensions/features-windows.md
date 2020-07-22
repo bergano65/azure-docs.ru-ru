@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 03/30/2018
 ms.author: akjosh
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: cd6439bf1b1f52b8e63819e8e519fc4971d1bc2a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 0ff4fb08b1e627184760bb0a33797b2a324d4c55
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80066854"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86045915"
 ---
 # <a name="virtual-machine-extensions-and-features-for-windows"></a>Обзор расширений и компонентов виртуальной машины под управлением Windows
 
@@ -150,7 +150,7 @@ Set-AzVMAccessExtension -ResourceGroupName "myResourceGroup" -VMName "myVM" -Nam
 
 ### <a name="azure-resource-manager-templates"></a>Шаблоны Azure Resource Manager
 
-Расширения ВМ можно добавлять в шаблоны Azure Resource Manager. Так они смогут выполняться при развертывании соответствующего шаблона. Развертывая расширение вместе с шаблоном, можно создать полностью настроенное развертывание Azure. Например, следующий код JSON из шаблона Resource Manager развертывает набор виртуальных машин с балансировкой нагрузки и базу данных SQL Azure, а затем устанавливает на каждой виртуальной машине приложение .NET Core. Расширение ВМ отвечает за установку программного обеспечения.
+Расширения ВМ можно добавлять в шаблоны Azure Resource Manager. Так они смогут выполняться при развертывании соответствующего шаблона. Развертывая расширение вместе с шаблоном, можно создать полностью настроенное развертывание Azure. Например, следующий код JSON берется из шаблона диспетчер ресурсов развертывает набор виртуальных машин с балансировкой нагрузки и базу данных SQL Azure, а затем устанавливает приложение .NET Core на каждой виртуальной машине. Расширение ВМ отвечает за установку программного обеспечения.
 
 Дополнительные сведения см. в разделе [шаблон полного диспетчер ресурсов](https://github.com/Microsoft/dotnet-core-sample-templates/tree/master/dotnet-core-music-windows).
 
@@ -355,7 +355,7 @@ AutoUpgradeMinorVersion     : True
 
 1. Чтобы проверить журнал гостевого агента Windows, просмотрите действие при подготовке расширения в *к:\виндовсазуре\логс\вааппажент.лог* .
 
-2. Подробные сведения вы можете найти в текущих журналах расширения в каталоге *C:\WindowsAzure\Logs\Plugins\<имя_расширения>*
+2. Дополнительные сведения см. в журналах фактического расширения в *к:\виндовсазуре\логс\плугинс \<extensionName> *
 
 3. Коды ошибок, известные проблемы и другие данные для устранения неполадок вы найдете в документации по конкретному расширению.
 
@@ -421,7 +421,7 @@ Remove-AzVMExtension -ResourceGroupName "myResourceGroup" -VMName "myVM" -Name "
 4. Выберите **Удалить**.
 
 ## <a name="common-vm-extensions-reference"></a>Справочники по распространенным расширениям виртуальной машины
-| Имя расширения | Описание | Дополнительные сведения |
+| Имя расширения | Описание: | Дополнительные сведения |
 | --- | --- | --- |
 | Расширение Custom Script в ОС Windows |Выполняет сценарии на виртуальных машинах Azure. |[Расширение Custom Script в ОС Windows](custom-script-windows.md) |
 | Расширение DSC в ОС Windows |Расширение PowerShell DSC (настройка требуемого состояния) |[Расширение DSC в ОС Windows](dsc-overview.md) |

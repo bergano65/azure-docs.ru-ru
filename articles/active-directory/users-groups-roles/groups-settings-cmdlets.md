@@ -8,18 +8,17 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
-ms.topic: article
+ms.topic: how-to
 ms.date: 03/20/2020
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b50118dcd4bf0fafa3e25399cf7d82558b7c776c
-ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
-ms.translationtype: MT
+ms.openlocfilehash: b91eb361d4bcae304734817ee7f57141d6f06415
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82582794"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84727863"
 ---
 # <a name="azure-active-directory-cmdlets-for-configuring-group-settings"></a>Настройка параметров групп с помощью командлетов Azure Active Directory
 
@@ -28,7 +27,7 @@ ms.locfileid: "82582794"
 > [!IMPORTANT]
 > Для доступа к некоторым параметрам требуется лицензия Azure Active Directory Premium P1. Дополнительные сведения см. [здесь](#template-settings).
 
-Дополнительные сведения о том, как запретить пользователям без прав администратора создавать группы безопасности, см `Set-MsolCompanySettings -UsersPermissionToCreateGroupsEnabled $False` . в разделе [Set-MSOLCompanySettings](https://docs.microsoft.com/powershell/module/msonline/set-msolcompanysettings?view=azureadps-1.0).
+Дополнительные сведения о том, как запретить пользователям без прав администратора создавать группы безопасности, см  `Set-MsolCompanySettings -UsersPermissionToCreateGroupsEnabled $False` . в разделе [Set-MSOLCompanySettings](https://docs.microsoft.com/powershell/module/msonline/set-msolcompanysettings?view=azureadps-1.0).
 
 Параметры групп Office 365 настраиваются с помощью объектов Settings и SettingsTemplate. Изначально в каталоге не отображаются все объекты параметров, так как он настроен с параметрами по умолчанию. Чтобы изменить параметры по умолчанию, необходимо с помощью шаблона параметров создать объект параметров. Шаблоны параметров определены корпорацией Майкрософт. Поддерживается несколько разных шаблонов параметров. Чтобы настроить параметры группы Office 365 для каталога, используйте шаблон Group.Unified. Для настройки параметров отдельной группы Office 365 используйте шаблон Group.Unified.Guest. Этот шаблон используется для управления гостевым доступом к группе Office 365. 
 
@@ -114,7 +113,7 @@ ms.locfileid: "82582794"
    $Setting.Values
    ```
    
-   Результат
+   Выходные данные:
    ```powershell
     Name                          Value
     ----                          -----
@@ -154,8 +153,8 @@ ms.locfileid: "82582794"
 |  <ul><li>UsageGuidelinesUrl<li>Тип: строка<li>Значение по умолчанию: "" |Ссылка на правила использования группы. |
 |  <ul><li>ClassificationDescriptions<li>Тип: строка<li>Значение по умолчанию: "" | Разделенный запятыми список описаний классификаций. Значение ClassificationDescriptions допустимо только в следующем формате:<br>$setting ["Классификатиондескриптионс"] = "Классификация: описание, классификация: описание"<br>где классификация соответствует записи в Классификатионлист.<br>Этот параметр не применяется, если Енаблемиплабелс = = true.|
 |  <ul><li>DefaultClassification<li>Тип: строка<li>Значение по умолчанию: "" | Классификация, которая должна использоваться по умолчанию для группы, если не была указана иная классификация.<br>Этот параметр не применяется, если Енаблемиплабелс = = true.|
-|  <ul><li>PrefixSuffixNamingRequirement<li>Тип: строка<li>Значение по умолчанию: "" | Строка с максимальной длиной 64 символа, которая определяет соглашение об именовании, настроенное для групп Office 365. Дополнительные сведения см. в статье [Принудительное применение политики именования для групп Office 365](groups-naming-policy.md). |
-| <ul><li>CustomBlockedWordsList<li>Тип: строка<li>Значение по умолчанию: "" | Строка фраз с разделителями-запятыми, которые не разрешено использовать в именах или псевдонимах групп. Дополнительные сведения см. в статье [Принудительное применение политики именования для групп Office 365](groups-naming-policy.md). |
+|  <ul><li>PrefixSuffixNamingRequirement<li>Тип: строка<li>Значение по умолчанию: "" | Строка с максимальной длиной 64 символа, которая определяет соглашение об именовании, настроенное для групп Office 365. Дополнительные сведения см. [в разделе принудительная политика именования для групп Office 365](groups-naming-policy.md). |
+| <ul><li>CustomBlockedWordsList<li>Тип: строка<li>Значение по умолчанию: "" | Строка фраз с разделителями-запятыми, которые не разрешено использовать в именах или псевдонимах групп. Дополнительные сведения см. [в разделе принудительная политика именования для групп Office 365](groups-naming-policy.md). |
 | <ul><li>EnableMSStandardBlockedWords<li>Тип: логический<li>Значение по умолчанию: false | Не использовать
 |  <ul><li>AllowGuestsToBeGroupOwner<li>Тип: логический<li> значение по умолчанию: False | Логическое значение, указывающее, может ли гостевой пользователь быть владельцем группы. |
 |  <ul><li>AllowGuestsToAccessGroups<li>Тип: логический<li> значение по умолчанию: True | Логическое значение, указывающее, может ли гостевой пользователь иметь доступ к содержимому групп Office 365.  Для этого параметра не требуется лицензия Azure Active Directory Premium P1.|
@@ -321,7 +320,7 @@ ms.locfileid: "82582794"
 ## <a name="cmdlet-syntax-reference"></a>Справочник по синтаксису командлетов
 Дополнительную документацию по PowerShell Azure Active Directory см. в разделе [Azure Active Directory Cmdlets](/powershell/azure/install-adv2?view=azureadps-2.0) (Командлеты Azure Active Directory).
 
-## <a name="additional-reading"></a>Дополнительные материалы
+## <a name="additional-reading"></a>Дополнительные материалы для чтения
 
 * [Управление доступом к ресурсам с помощью групп Azure Active Directory](../fundamentals/active-directory-manage-groups.md)
-* [Интеграция локальных удостоверений с Azure Active Directory.](../hybrid/whatis-hybrid-identity.md)
+* [Интеграция локальных удостоверений с Azure Active Directory](../hybrid/whatis-hybrid-identity.md)

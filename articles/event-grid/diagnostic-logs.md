@@ -1,18 +1,14 @@
 ---
 title: Сетка событий Azure — журналы диагностики для разделов или доменов
 description: Эта статья содержит общие сведения о журналах диагностики для статьи или домена службы "Сетка событий Azure".
-services: event-grid
-author: spelluru
-ms.service: event-grid
 ms.topic: conceptual
-ms.date: 04/29/2020
-ms.author: spelluru
-ms.openlocfilehash: 93e7e47cbcc1ab9542ba333b89f7dd655a412489
-ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
+ms.date: 07/07/2020
+ms.openlocfilehash: c8f6734d9d43887d0eb0bb90bb08f727732feac3
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82630256"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86116749"
 ---
 #  <a name="diagnostic-logs-for-azure-event-grid-topicsdomains"></a>Журналы диагностики для разделов и доменов службы "Сетка событий Azure"
 Параметры диагностики позволяют пользователям службы "Сетка событий" записывать и просматривать журналы **сбоев публикации и доставки** в учетной записи хранения, концентраторе событий или рабочей области log Analytics. Эта статья содержит схему журналов и пример записи в журнале.

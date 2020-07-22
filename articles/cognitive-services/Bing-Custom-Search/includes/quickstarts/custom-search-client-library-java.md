@@ -8,38 +8,38 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 02/27/2020
 ms.author: aahi
-ms.openlocfilehash: 32e02d3a7c1af6d15e7f381807d80f19b94da38f
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: db7a32ac06e41a72314d3d73208c0d7e1b652649
+ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80587088"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85805699"
 ---
 Приступите к работе с клиентской библиотекой службы Пользовательский поиск Bing для Java. Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для выполнения базовых задач. Служба "API пользовательского поиска Bing" позволяет создавать специально адаптированные интерфейсы поиска без рекламы по темам, которые действительно важны для вас. Исходный код для этого шаблона можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-java-sdk-samples/tree/master/Search/BingCustomSearch)
 
 Используйте клиентскую библиотеку Пользовательского поиска Bing для Java, чтобы:
 
-* Найти результаты поиска в Интернете из вашего экземпляра API Пользовательского поиска Bing. 
+* Найти результаты поиска в Интернете из вашего экземпляра API Пользовательского поиска Bing.
 
 [Справочная документация](https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/bingcustomsearch?view=azure-java-stable) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/Search.BingCustomSearch) | [Артефакт (Maven)](https://search.maven.org/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-customsearch/) | [Примеры](https://github.com/Azure-Samples/cognitive-services-java-sdk-samples)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services/).
 * Текущая версия [пакета средств разработки Java (JDK)](https://www.oracle.com/technetwork/java/javase/downloads/index.html).
 * [Средство сборки Gradle](https://gradle.org/install/) или другой диспетчер зависимостей.
 * Экземпляр службы "Пользовательский поиск Bing". См. [Краткое руководство. Создание первого экземпляра службы "Пользовательский поиск Bing"](../../quick-start.md), чтобы получить дополнительные сведения.
 
 [!INCLUDE [cognitive-services-bing-custom-search-prerequisites](~/includes/cognitive-services-bing-custom-search-signup-requirements.md)]
 
-После получения ключа из своего ресурса или пробной подписки [задайте переменную среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключа с именем `AZURE_BING_CUSTOM_SEARCH_API_KEY`.
+Когда получите ключ из своего ресурса, [создайте переменную среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключа с именем `AZURE_BING_CUSTOM_SEARCH_API_KEY`.
 
 ### <a name="create-a-new-gradle-project"></a>Создание проекта Gradle
 
 > [!TIP]
 > Если вы не используете Gradle, тогда клиентскую библиотеку и сведения для других диспетчеров зависимостей можно найти в [центральном репозитории Maven](https://search.maven.org/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-textanalytics/).
 
-В окне консоли (например, cmd, PowerShell или Bash) создайте новый каталог для приложения и перейдите в него. 
+В окне консоли (например, cmd, PowerShell или Bash) создайте новый каталог для приложения и перейдите в него.
 
 ```console
 mkdir myapp && cd myapp
@@ -53,7 +53,7 @@ gradle init --type basic
 
 Когда появится запрос на выбор **предметно-ориентированного языка**, выберите **Kotlin**.
 
-## <a name="install-the-client-library"></a>Установка клиентской библиотеки 
+## <a name="install-the-client-library"></a>Установка клиентской библиотеки
 
 Найдите файл *build.gradle.kts* и откройте его в предпочитаемой интегрированной среде разработки или текстовом редакторе. Затем скопируйте и вставьте в файл эту конфигурацию сборки. Не забудьте включить клиентскую библиотеку в `dependencies`:
 
@@ -119,7 +119,7 @@ BingCustomSearchAPI client = BingCustomSearchManager.authenticate(subscriptionKe
 
 ## <a name="get-search-results-from-your-custom-search-instance"></a>Получение результатов поиска из пользовательского экземпляра
 
-Используйте функцию клиента [BingCustomInstances.search()](https://docs.microsoft.com/java/api/com.microsoft.azure.cognitiveservices.search.customsearch.bingcustominstances.search?view=azure-java-stable#com_microsoft_azure_cognitiveservices_search_customsearch_BingCustomInstances_search__), чтобы отправить поисковый запрос в пользовательский экземпляр. Установите `withCustomConfig` в свой пользовательский идентификатор конфигурации или по умолчанию на `1`. После получения ответа от API проверьте, были ли найдены результаты поиска. Если да, то получите первый результат поиска, вызвав функцию ответа `webPages().value().get()` и выполнив печать имени результата и URL-адреса. 
+Используйте функцию клиента [BingCustomInstances.search()](https://docs.microsoft.com/java/api/com.microsoft.azure.cognitiveservices.search.customsearch.bingcustominstances.search?view=azure-java-stable#com_microsoft_azure_cognitiveservices_search_customsearch_BingCustomInstances_search__), чтобы отправить поисковый запрос в пользовательский экземпляр. Установите `withCustomConfig` в свой пользовательский идентификатор конфигурации или по умолчанию на `1`. После получения ответа от API проверьте, были ли найдены результаты поиска. Если да, то получите первый результат поиска, вызвав функцию ответа `webPages().value().get()` и выполнив печать имени результата и URL-адреса.
 
 [!code-java[call the custom search API](~/cognitive-services-java-sdk-samples/Search/BingCustomSearch/src/main/java/BingCustomSearchSample.java?name=runSample)]
 

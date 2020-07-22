@@ -4,12 +4,12 @@ description: Сведения о создании и развертывании 
 ms.devlang: java
 ms.date: 08/01/2019
 ms.topic: conceptual
-ms.openlocfilehash: a5015a018f905b4353afd6bf25a48a2d942b3b97
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: fa09fbe8d239bbe10c0762d3aad7e19df23a9044
+ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80153358"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86057455"
 ---
 # <a name="create-and-deploy-arm-templates-by-using-the-intellij-idea"></a>Создание и развертывание шаблонов ARM с помощью IntelliJ идеи
 
@@ -86,4 +86,4 @@ ms.locfileid: "80153358"
 > [руководств для начинающих](./template-tutorial-create-first-template.md).
 
 > [!div class="nextstepaction"]
-> [Azure для разработчиков облачных решений Java](https://docs.microsoft.com/azure/java)
+> [Azure для разработчиков облачных решений Java](/azure/java)

@@ -11,15 +11,15 @@ ms.service: azure-cdn
 ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
-ms.topic: article
+ms.topic: how-to
 ms.date: 02/15/2018
 ms.author: allensu
-ms.openlocfilehash: 4598e6cee6ffbaaeb2a99727842fcd17fe0046c7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 21ff3e456a587a7d676de379987c86f154878c61
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81260570"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84887633"
 ---
 # <a name="manage-expiration-of-web-content-in-azure-cdn"></a>Управление сроком действия веб-содержимого в Azure CDN
 > [!div class="op_single_selector"]
@@ -72,7 +72,7 @@ ms.locfileid: "81260570"
 
 1. В разделе **Настраиваемые правила кэширования** создайте два условия соответствия.
 
-     a. В первом условии соответствия задайте для параметра **Условие соответствия** значение **Путь** и введите значение `/webfolder1/*` для параметра **Значения соответствия**. Задайте для параметра **Поведение кэширования** значение **Переопределить** и введите 4 в поле **Часы**.
+     а. В первом условии соответствия задайте для параметра **Условие соответствия** значение **Путь** и введите значение `/webfolder1/*` для параметра **Значения соответствия**. Задайте для параметра **Поведение кэширования** значение **Переопределить** и введите 4 в поле **Часы**.
 
      b. Во втором условии соответствия задайте параметру **Условие соответствия** значение **Путь** и введите значение `/webfolder1/file1.txt` для параметра **Значения соответствия**. Задайте для параметра **Поведение кэширования** значение **Переопределить** и введите 2 в поле **Часы**.
 
@@ -106,7 +106,7 @@ ms.locfileid: "81260570"
 </configuration>
 ```
 
-Чтобы использовать атрибут **cacheControlMaxAge**, присвойте атрибуту **cacheControlMode** значение `UseMaxAge`. Этот параметр добавляет HTTP-заголовок и директиву (`Cache-Control: max-age=<nnn>`) в ответ. У значения интервала времени для атрибута **cacheControlMaxAge** следующий формат: `<days>.<hours>:<min>:<sec>`. Его значение преобразуется в секунды и используется в качестве значения `Cache-Control` `max-age` директивы. Дополнительные сведения об элементе см `<clientCache>` . в разделе [Client Cache \<clientCache>](https://www.iis.net/ConfigReference/system.webServer/staticContent/clientCache).  
+Чтобы использовать атрибут **cacheControlMaxAge**, присвойте атрибуту **cacheControlMode** значение `UseMaxAge`. Этот параметр добавляет HTTP-заголовок и директиву (`Cache-Control: max-age=<nnn>`) в ответ. У значения интервала времени для атрибута **cacheControlMaxAge** следующий формат: `<days>.<hours>:<min>:<sec>`. Его значение преобразуется в секунды и используется в качестве значения `Cache-Control` `max-age` директивы. Дополнительные сведения об элементе `<clientCache>` см. в описании [клиентского кэша \<clientCache>](https://www.iis.net/ConfigReference/system.webServer/staticContent/clientCache).  
 
 ## <a name="setting-cache-control-headers-programmatically"></a>Определение заголовков Cache-Control программным способом
 Для приложений ASP.NET можно настроить режим кэширования CDN программным способом, задав свойство **HttpResponse.Cache** для API .NET. Дополнительные сведения о свойстве **HttpResponse.Cache**, см. в описании [свойства HttpResponse.Cache](/dotnet/api/system.web.httpresponse.cache#System_Web_HttpResponse_Cache) и [класса HttpCachePolicy](/dotnet/api/system.web.httpcachepolicy).  
@@ -130,7 +130,7 @@ Response.Cache.SetLastModified(DateTime.Now);
 ## <a name="testing-the-cache-control-header"></a>Проверка заголовка Cache-Control
 Вы легко можете проверить установленный для веб-содержимого срок жизни. Используя встроенные в браузер [средства разработчика](https://developer.microsoft.com/microsoft-edge/platform/documentation/f12-devtools-guide/), убедитесь, что ваше веб-содержимое содержит заголовок ответа `Cache-Control`. Для просмотра заголовков ответа можно использовать и другие средства, например **wget**, [Postman](https://www.getpostman.com/) или [Fiddler](https://www.telerik.com/fiddler).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 * [Сведения об элементе **clientCache**](https://www.iis.net/ConfigReference/system.webServer/staticContent/clientCache).
 * [Документация по свойству **HttpResponse.Cache**](/dotnet/api/system.web.httpresponse.cache#System_Web_HttpResponse_Cache). 
 * [Ознакомьтесь с документацией по **классу HttpCachePolicy**](/dotnet/api/system.web.httpcachepolicy)  

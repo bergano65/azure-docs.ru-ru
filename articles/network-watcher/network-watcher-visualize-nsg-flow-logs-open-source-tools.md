@@ -7,26 +7,23 @@ documentationcenter: na
 author: damendo
 ms.service: network-watcher
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
-ms.openlocfilehash: e567994038fb4f71ef86dc577760ecf4699a0b1d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 6d2b2fb55a9c23643bbb778ced047e75871ba7f5
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76840644"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84807672"
 ---
 # <a name="visualize-azure-network-watcher-nsg-flow-logs-using-open-source-tools"></a>Визуализация журналов потоков для групп безопасности сети Наблюдателя за сетями Azure с помощью инструментов с открытым кодом
 
 Журналы потоков для групп безопасности сети содержат информацию о входящем и исходящем IP-трафике групп безопасности сети. Эти журналы потоков отображают сведения о входящем и исходящем потоках на основе правил, сетевой карте, к которой относится поток, 5 кортежах потока (исходные IP-адрес и порт, конечные IP-адрес и порт, тип протокола), а также информацию о том, был поток запрещен или разрешен.
 
 Данные журналы потоков могут быть трудны для анализа вручную и получения информации. Однако существует несколько инструментов с открытым кодом, которые могут помочь визуализировать эти данные. В этой статье описывается решение для визуализации этих журналов с помощью Elastic Stack, что позволит быстро индексировать и визуализировать журналы потоков на панели мониторинга Kibana.
-
-> [!Warning]  
-> В следующих шагах используются журналы потоков версии 1. Дополнительные сведения см. в статье [Общие сведения о ведении журнала потоков для групп безопасности сети](network-watcher-nsg-flow-logging-overview.md). Приведенные ниже инструкции не будут работать с файлами журнала версии 2 без изменений.
 
 ## <a name="scenario"></a>Сценарий
 
@@ -138,6 +135,11 @@ ms.locfileid: "76840644"
                   "protocol" => "%{[records][properties][flows][flows][flowTuples][5]}"
                   "trafficflow" => "%{[records][properties][flows][flows][flowTuples][6]}"
                   "traffic" => "%{[records][properties][flows][flows][flowTuples][7]}"
+                  "flowstate" => "%{[records][properties][flows][flows][flowTuples][8]}"
+                   "packetsSourceToDest" => "%{[records][properties][flows][flows][flowTuples][9]}"
+                   "bytesSentSourceToDest" => "%{[records][properties][flows][flows][flowTuples][10]}"
+                   "packetsDestToSource" => "%{[records][properties][flows][flows][flowTuples][11]}"
+                   "bytesSentDestToSource" => "%{[records][properties][flows][flows][flowTuples][12]}"
                    }
       convert => {"unixtimestamp" => "integer"}
       convert => {"srcPort" => "integer"}
@@ -241,7 +243,7 @@ sudo /etc/init.d/logstash start
 
 Сочетая журналы потоков для групп безопасности сети с Elastic Stack, мы получили эффективный и настраиваемый способ визуализации сетевого трафика. Эти панели мониторинга позволяют быстро получить и предоставить информацию о сетевом трафике, а также отфильтровать ее и проверить на наличие каких-либо потенциальных нарушений. С помощью Kibana эти панели мониторинга можно адаптировать, чтобы создать определенные визуализации, соответствующие требованиям безопасности, аудита и соответствия.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Ознакомьтесь со статьей [Visualizing Network Security Group flow logs with Power BI](network-watcher-visualize-nsg-flow-logs-power-bi.md) (Визуализация журналов потоков для групп безопасности сети с помощью Power BI).
 

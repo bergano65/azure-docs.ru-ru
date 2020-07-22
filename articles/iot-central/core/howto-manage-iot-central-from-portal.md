@@ -9,10 +9,10 @@ ms.date: 02/11/2020
 ms.topic: how-to
 manager: philmea
 ms.openlocfilehash: e7efda8efa27044168386e3ebbc557bf7fb74e8c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80157931"
 ---
 # <a name="manage-iot-central-from-the-azure-portal"></a>Управление IoT Central на портале Azure
@@ -66,7 +66,7 @@ ms.locfileid: "80157931"
 
 ![Портал управления: управление ресурсами](media/howto-manage-iot-central-from-portal/image5a.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы узнали, как управлять приложениями Azure IoT Central на портале Azure, а значит, вы готовы к следующему шагу:
 

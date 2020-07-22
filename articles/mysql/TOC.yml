@@ -109,6 +109,8 @@
           href: concepts-data-encryption-mysql.md
         - name: "Аутентификация Azure\_AD"
           href: concepts-azure-ad-authentication.md
+        - name: Двойное шифрование инфраструктуры
+          href: concepts-infrastructure-double-encryption.md
         - name: Базовые средства безопасности
           href: security-baseline.md
     - name: Непрерывность бизнес-процессов
@@ -132,6 +134,8 @@
           href: concepts-query-performance-insight.md
         - name: Рекомендации по производительности
           href: concepts-performance-recommendations.md
+        - name: Параметры сервера
+          href: concepts-server-parameters.md
     - name: Разработка
       items:
         - name: Совместимость драйверов и инструментов
@@ -190,6 +194,8 @@
           href: howto-connection-string.md
         - name: Настройка SSL
           href: howto-configure-ssl.md
+        - name: Настройка TLS
+          href: howto-tls-configurations.md
         - name: Веб-приложения
           href: howto-connect-webapp.md
         - name: Подключение с перенаправлением
@@ -272,6 +278,10 @@
           href: howto-data-encryption-cli.md
         - name: Проверка шифрования данных
           href: howto-data-encryption-validation.md
+    - name: Двойное шифрование инфраструктуры
+      items:
+        - name: Настройка двойного шифрования инфраструктуры
+          href: howto-double-encryption.md
     - name: "Интеграция с Azure\_AD"
       items:
         - name: Настройка интеграции Azure AD
@@ -290,6 +300,10 @@
           href: howto-restart-server-cli.md
         - name: Azure PowerShell
           href: howto-restart-server-powershell.md
+    - name: Переключение между регионами
+      items:
+        - name: Портал Azure
+          href: howto-move-regions-portal.md
 - name: Справочник
   items:
     - name: Azure CLI

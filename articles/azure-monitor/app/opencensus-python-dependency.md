@@ -5,16 +5,17 @@ ms.topic: conceptual
 author: lzchen
 ms.author: lechen
 ms.date: 10/15/2019
-ms.openlocfilehash: e400669fd96518adead74a81fc332767c5f9b23b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.custom: tracking-python
+ms.openlocfilehash: e99ea1d5a90455a4c470346fbbe5d1095c426e81
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77669936"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86499466"
 ---
 # <a name="track-dependencies-with-opencensus-python"></a>Мониторинг зависимостей с помощью Опенценсус Python
 
-Зависимость — это внешний компонент, который вызывается приложением. Данные зависимостей собираются с помощью Опенценсус Python и различных интеграций. Затем данные отправляются в Application Insights под Azure Monitor в `dependencies` качестве телеметрии.
+Зависимость — это внешний компонент, вызываемый приложением. Данные зависимостей собираются с помощью Опенценсус Python и различных интеграций. Затем данные отправляются в Application Insights под Azure Monitor в качестве `dependencies` телеметрии.
 
 Сначала выполните инструментирование приложения Python с помощью последнего [пакета SDK для Опенценсус Python](../../azure-monitor/app/opencensus-python.md).
 
@@ -35,7 +36,7 @@ with tracer.span(name='foo'): # <-- A dependency telemetry item will be sent for
 
 ## <a name="dependencies-with-requests-integration"></a>Зависимости с интеграцией "запросы"
 
-Отследите исходящие запросы с `requests` помощью интеграции опенценсус.
+Отследите исходящие запросы с помощью `requests` интеграции опенценсус.
 
 Скачайте и установите `opencensus-ext-requests` из [PyPI](https://pypi.org/project/opencensus-ext-requests/) и добавьте его в интеграцию с трассировкой. Запросы, отправленные с помощью библиотеки [запросов](https://pypi.org/project/requests/) Python, будут записаны.
 
@@ -56,7 +57,7 @@ with tracer.span(name='parent'):
 
 ## <a name="dependencies-with-httplib-integration"></a>Зависимости с интеграцией "хттплиб"
 
-Отследите исходящие запросы `httplib` с помощью интеграции опенценсус.
+Отследите исходящие запросы с помощью `httplib` интеграции опенценсус.
 
 Скачайте и установите `opencensus-ext-httplib` из [PyPI](https://pypi.org/project/opencensus-ext-httplib/) и добавьте его в интеграцию с трассировкой. Запросы, отправленные с помощью [http. Client](https://docs.python.org/3.7/library/http.client.html) для Python3 или [хттплиб](https://docs.python.org/2/library/httplib.html) для python2, будут относиться.
 
@@ -82,9 +83,12 @@ conn.close()
 
 ## <a name="dependencies-with-django-integration"></a>Зависимости с интеграцией "Django"
 
-Следите за исходящими запросами Django `django` с помощью интеграции опенценсус.
+Следите за исходящими запросами Django с помощью `django` интеграции опенценсус.
 
-Скачайте и установите `opencensus-ext-django` из [PyPI](https://pypi.org/project/opencensus-ext-django/) и добавьте следующую строку в `MIDDLEWARE` раздел файла Django. `settings.py`
+> [!NOTE]
+> Единственными исходящими отправленными запросами Django являются вызовы к базе данных. Запросы, выполненные в приложении Django, см. в разделе [входящие запросы](./opencensus-python-request.md#tracking-django-applications).
+
+Скачайте и установите `opencensus-ext-django` из [PyPI](https://pypi.org/project/opencensus-ext-django/) и добавьте следующую строку в `MIDDLEWARE` раздел `settings.py` файла Django.
 
 ```python
 MIDDLEWARE = [
@@ -108,7 +112,7 @@ OPENCENSUS = {
 
 ## <a name="dependencies-with-mysql-integration"></a>Зависимости с интеграцией MySQL
 
-Следите за зависимостями MYSQL с `mysql` помощью интеграции опенценсус. Эта интеграция поддерживает библиотеку [соединителей MySQL](https://pypi.org/project/mysql-connector-python/) .
+Следите за зависимостями MYSQL с помощью `mysql` интеграции опенценсус. Эта интеграция поддерживает библиотеку [соединителей MySQL](https://pypi.org/project/mysql-connector-python/) .
 
 Скачайте и установите `opencensus-ext-mysql` из [PyPI](https://pypi.org/project/opencensus-ext-mysql/) и добавьте в код следующие строки.
 
@@ -156,7 +160,7 @@ config_integration.trace_integrations(['pymongo'])
 
 ### <a name="dependencies-with-sqlalchemy-integration"></a>Зависимости с интеграцией "склалчеми"
 
-Следите за зависимостями с помощью `sqlalchemy` склалчеми, используя интеграцию с опенценсус. Эта интеграция отслеживает использование пакета [склалчеми](https://pypi.org/project/SQLAlchemy/) независимо от базовой базы данных.
+Следите за зависимостями с помощью Склалчеми, используя интеграцию с Опенценсус `sqlalchemy` . Эта интеграция отслеживает использование пакета [склалчеми](https://pypi.org/project/SQLAlchemy/) независимо от базовой базы данных.
 
 ```python
 from opencensus.trace import config_integration
@@ -164,9 +168,9 @@ from opencensus.trace import config_integration
 config_integration.trace_integrations(['sqlalchemy'])
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Схема приложений](../../azure-monitor/app/app-map.md)
+* [Схема сопоставления приложений](../../azure-monitor/app/app-map.md)
 * [Доступность](../../azure-monitor/app/monitor-web-app-availability.md)
 * [Поиск](../../azure-monitor/app/diagnostic-search.md)
 * [Запрос к журналу (Analytics)](../../azure-monitor/log-query/log-query-overview.md)

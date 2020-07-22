@@ -18,10 +18,10 @@ ms.author: billmath
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e0186d862968259aae73071cfecd7d62443d0256
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "67109372"
 ---
 # <a name="define-data-protection-strategy-for-your-hybrid-identity-solution"></a>Определение стратегии защиты данных для гибридного решения идентификации
@@ -49,7 +49,7 @@ ms.locfileid: "67109372"
 | Шифрование баз данных на сервере SQL Server |X |X | |
 | Шифрование трафика между виртуальными машинами | | |X |
 | Протокол SSL/TLS | | |X |
-| Виртуальная частная сеть | | |X |
+| VPN | | |X |
 
 > [!NOTE]
 > Ознакомьтесь со статьей [Соответствие продуктов требованиям](https://azure.microsoft.com/support/trust-center/services/) в [центре управления безопасностью Microsoft Azure](https://azure.microsoft.com/support/trust-center/), которая расскажет о том, каким сертификатам соответствует каждая служба Azure.
@@ -171,5 +171,5 @@ Azure AD помогает ИТ-специалистам выявить в сре
 ## <a name="next-steps"></a>Дальнейшие действия
 [Определение задач управления гибридной идентификацией](plan-hybrid-identity-design-considerations-hybrid-id-management-tasks.md)
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также
 [Обзор рекомендаций по проектированию](plan-hybrid-identity-design-considerations-overview.md)

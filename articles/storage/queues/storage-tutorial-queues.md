@@ -1,21 +1,21 @@
 ---
-title: Руководство по работе с очередями хранилища Azure (служба хранилища Azure)
-description: В этом руководстве описано, как использовать службы очередей Azure для создания очередей, а также вставки, получения и удаления сообщений.
+title: Руководство. Работа с очередями службы хранилища Azure в .NET
+description: В этом руководстве описано, как использовать службы очередей Azure для создания очередей, а также вставки, получения и удаления сообщений с помощью кода .NET.
 author: mhopkins-msft
 ms.author: mhopkins
-ms.date: 04/24/2019
+ms.date: 06/09/2020
 ms.service: storage
 ms.subservice: queues
 ms.topic: tutorial
-ms.reviewer: cbrooks
-ms.openlocfilehash: 9cbdc5231fdc9f836f300b1a3a81a237a9efc123
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.reviewer: dineshm
+ms.openlocfilehash: 73bc21307ff0648b7e0aab7611e57f6fa60a806b
+ms.sourcegitcommit: ad66392df535c370ba22d36a71e1bbc8b0eedbe3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75968202"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84809564"
 ---
-# <a name="tutorial-work-with-azure-storage-queues"></a>Руководство по Работа с очередями хранилища Azure
+# <a name="tutorial-work-with-azure-storage-queues-in-net"></a>Руководство по работе с очередями службы хранилища Azure в .NET.
 
 Хранилище очередей Azure реализует облачный механизм очередей для поддержки взаимодействия между компонентами распределенного приложения. Каждая очередь отслеживает список сообщений, которые добавляются компонентом отправителя и обрабатываются компонентом получателя. Очередь позволяет мгновенно масштабировать приложение при любом изменении нагрузки. В этой статье описаны основные процессы работы с очередью хранилища Azure.
 
@@ -25,6 +25,7 @@ ms.locfileid: "75968202"
 >
 > - Создание учетной записи хранения Azure
 > - Создайте приложение
+> - Добавление клиентских библиотек Azure
 > - Добавление поддержки для асинхронных вызовов
 > - Создание очереди
 > - Вставка сообщения в очередь
@@ -36,12 +37,12 @@ ms.locfileid: "75968202"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Получите бесплатную копию межплатформенного редактора [Visual Studio Code](https://code.visualstudio.com/download).
-- Скачайте и установите [пакет SDK для .NET Core](https://dotnet.microsoft.com/download).
+- Скачайте и установите [пакет SDK для .NET Core](https://dotnet.microsoft.com/download) версии 3.1 или более поздней.
 - Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="create-an-azure-storage-account"></a>Создание учетной записи хранения Azure
 
-Прежде всего создайте учетную запись хранения Azure. Пошаговые инструкции по созданию учетной записи хранения см. в [этом кратком руководстве](../common/storage-account-create.md?toc=%2Fazure%2Fstorage%2Fqueues%2Ftoc.json).
+Прежде всего создайте учетную запись хранения Azure. Пошаговые инструкции по созданию учетной записи хранения см. в [этом кратком руководстве](../common/storage-account-create.md?toc=%2Fazure%2Fstorage%2Fqueues%2Ftoc.json). Это отдельный шаг, который вы выполняете после создания бесплатной учетной записи Azure для выполнения предварительных требований.
 
 ## <a name="create-the-app"></a>Создайте приложение
 
@@ -63,7 +64,7 @@ ms.locfileid: "75968202"
    dotnet build
    ```
 
-   Должен отобразиться примерно такой результат:
+   Должен отобразиться похожий результат:
 
    ```output
    C:\Tutorials>dotnet new console -n QueueApp
@@ -71,7 +72,7 @@ ms.locfileid: "75968202"
 
    Processing post-creation actions...
    Running 'dotnet restore' on QueueApp\QueueApp.csproj...
-     Restore completed in 155.62 ms for C:\Tutorials\QueueApp\QueueApp.csproj.
+     Restore completed in 155.63 ms for C:\Tutorials\QueueApp\QueueApp.csproj.
 
    Restore succeeded.
 
@@ -82,7 +83,7 @@ ms.locfileid: "75968202"
    Copyright (C) Microsoft Corporation. All rights reserved.
 
      Restore completed in 40.87 ms for C:\Tutorials\QueueApp\QueueApp.csproj.
-     QueueApp -> C:\Tutorials\QueueApp\bin\Debug\netcoreapp2.1\QueueApp.dll
+     QueueApp -> C:\Tutorials\QueueApp\bin\Debug\netcoreapp3.1\QueueApp.dll
 
    Build succeeded.
        0 Warning(s)
@@ -93,77 +94,64 @@ ms.locfileid: "75968202"
    C:\Tutorials\QueueApp>_
    ```
 
-## <a name="add-support-for-asynchronous-code"></a>Добавление поддержки для асинхронных вызовов
+## <a name="add-the-azure-client-libraries"></a>Добавление клиентских библиотек Azure
 
-Так как приложение использует облачные ресурсы, код выполняется асинхронно. Но ключевые слова C# **async** и **await** не поддерживались в методах **Main** вплоть до версии C# 7.1. Вы можете переключиться на подходящий компилятор, указав флаг в файле **csproj**.
+1. Добавьте клиентские библиотеки службы хранилища Azure в проект с помощью команды `dotnet add package`.
+
+   # <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
+
+   Выполните следующую команду из папки проекта в окне консоли.
+
+   ```console
+   dotnet add package Azure.Storage.Queues
+   ```
+
+   # <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
+
+   Выполните следующие команды из папки проекта в окне консоли.
+
+   ```console
+   dotnet add package Microsoft.Azure.Storage.Common
+   ```
+
+   ```console
+   dotnet add package Microsoft.Azure.Storage.Queue
+   ```
+   ---
+
+### <a name="add-using-statements"></a>Добавление инструкций using
 
 1. Перейдите в каталог проекта и введите в командной строке `code .`, чтобы открыть Visual Studio Code в этом каталоге. Оставьте окно командной строки открытым. Позднее нам нужно будет выполнить здесь другие команды. Если появится предложение добавить необходимые для сборки и отладки ресурсы C#, нажмите кнопку **Да**.
 
-2. Откройте файл **QueueApp.csproj** в редакторе.
+1. Откройте файл исходного кода **Program.cs** и добавьте следующие пространства имен сразу за инструкцией `using System;`. Это приложение использует типы из добавленных пространств имен, чтобы подключаться к службе хранилища Azure и работать с очередями.
 
-3. В файле сборки добавьте `<LangVersion>7.1</LangVersion>` в первый элемент **PropertyGroup**. Добавляйте только тег **LangVersion**, поскольку значение **TargetFramework** может быть разным в зависимости от установленной версии .NET.
+   # <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
 
-   ```xml
-   <Project Sdk="Microsoft.NET.Sdk">
+   :::code language="csharp" source="~/azure-storage-snippets/queues/tutorial/dotnet/dotnet-v12/QueueApp/Program.cs" id="snippet_UsingStatements":::
 
-     <PropertyGroup>
-       <OutputType>Exe</OutputType>
-       <TargetFramework>netcoreapp2.1</TargetFramework>
-       <LangVersion>7.1</LangVersion>
-     </PropertyGroup>
+   # <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
 
-   ...
+   :::code language="csharp" source="~/azure-storage-snippets/queues/tutorial/dotnet/dotnet-v11/QueueApp/Program.cs" id="snippet_UsingStatements":::
 
-   ```
+1. Сохраните файл **Program.cs**.
 
-4. Сохраните файл **QueueApp.csproj**.
+## <a name="add-support-for-asynchronous-code"></a>Добавление поддержки для асинхронных вызовов
 
-5. Откройте файл исходного кода **Program.cs** и обновите метод **Main**, чтобы он выполнялся асинхронно. Замените **void** возвращаемым значением **async Task**.
+Так как приложение использует облачные ресурсы, код выполняется асинхронно.
+
+1. Обновите метод **Main**, чтобы он выполнялся асинхронно. Замените **void** возвращаемым значением **async Task**.
 
    ```csharp
    static async Task Main(string[] args)
    ```
 
-6. Сохраните файл **Program.cs**.
+1. Сохраните файл **Program.cs**.
 
 ## <a name="create-a-queue"></a>Создание очереди
 
-1. Установите в проект пакеты **Microsoft.Azure.Storage.Common** и **Microsoft.Azure.Storage.Queue** с помощью команды `dotnet add package`. Выполните следующие команды dotnet из папки проекта в окне консоли.
+Перед выполнением вызовов к Azure API необходимо получить учетные данные с портала Azure.
 
-   ```console
-   dotnet add package Microsoft.Azure.Storage.Common
-   dotnet add package Microsoft.Azure.Storage.Queue
-   ```
-
-2. Добавьте в начало файла **Program.cs** следующие пространства имен сразу за инструкцией `using System;`. Это приложение использует типы из добавленных пространств имен, чтобы подключаться к службе хранилища Azure и работать с очередями.
-
-   ```csharp
-   using System.Threading.Tasks;
-   using Microsoft.Azure.Storage;
-   using Microsoft.Azure.Storage.Queue;
-   ```
-
-3. Сохраните файл **Program.cs**.
-
-### <a name="get-your-connection-string"></a>Получение строки подключения
-
-Клиентская библиотека использует строку подключения для создания подключения. Строка подключения доступна в разделе **Параметры** для учетной записи хранения на портале Azure.
-
-1. В веб-браузере откройте [портал Azure](https://portal.azure.com/).
-
-2. Войдите в свою учетную запись хранения на портале Azure.
-
-3. Выберите **Ключи доступа**.
-
-4. Нажмите кнопку **копирования** справа от поля **Строка подключения**.
-
-![Строка подключения](media/storage-tutorial-queues/get-connection-string.png)
-
-Строка подключения имеет такой формат:
-
-   ```
-   "DefaultEndpointsProtocol=https;AccountName=<your storage account name>;AccountKey=<your key>;EndpointSuffix=core.windows.net"
-   ```
+[!INCLUDE [storage-quickstart-credentials-include](../../../includes/storage-quickstart-credentials-include.md)]
 
 ### <a name="add-the-connection-string-to-the-app"></a>Добавление строки подключения в приложение
 
@@ -171,272 +159,132 @@ ms.locfileid: "75968202"
 
 1. Вернитесь к окну Visual Studio Code.
 
-2. В классе **Program** добавьте элемент `private const string connectionString =`, в котором будет размещаться строка подключения.
+1. В методе **Main** замените код `Console.WriteLine("Hello World!");` следующей строкой, которая получает строку подключения из переменной среды.
 
-3. После знака равенства вставьте строковое значение, которое вы скопировали ранее на портале Azure. Значение **ConnectionString** будет уникальным для учетной записи.
+   # <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
 
-4. Удалите код Hello World из метода **Main**. Теперь код будет выглядеть, как показано ниже, но с уникальным значением строки подключения.
+   :::code language="csharp" source="~/azure-storage-snippets/queues/tutorial/dotnet/dotnet-v12/QueueApp/Program.cs" id="snippet_DeclareConnectionString":::
 
-   ```csharp
-   namespace QueueApp
-   {
-       class Program
-       {
-           private const string connectionString = "DefaultEndpointsProtocol=https; ...";
+   # <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
 
-           static async Task Main(string[] args)
-           {
-           }
-       }
-   }
-   ```
+   :::code language="csharp" source="~/azure-storage-snippets/queues/tutorial/dotnet/dotnet-v11/QueueApp/Program.cs" id="snippet_DeclareConnectionString":::
 
-5. Обновите **Main**, создав объект **CloudQueue** для передачи в методы отправки и получения данных.
+1. Добавьте в **Main** следующий код, который создает объект очереди для последующей передачи в методы отправки и получения данных.
 
-   ```csharp
-        static async Task Main(string[] args)
-        {
-            CloudStorageAccount storageAccount = CloudStorageAccount.Parse(connectionString);
-            CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
-            CloudQueue queue = queueClient.GetQueueReference("mystoragequeue");
-        }
-   ```
+   # <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
 
-6. Сохраните файл.
+   :::code language="csharp" source="~/azure-storage-snippets/queues/tutorial/dotnet/dotnet-v12/QueueApp/Program.cs" id="snippet_CreateQueueClient":::
+
+   # <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
+
+   :::code language="csharp" source="~/azure-storage-snippets/queues/tutorial/dotnet/dotnet-v11/QueueApp/Program.cs" id="snippet_CreateQueueClient":::
+
+1. Сохраните файл.
 
 ## <a name="insert-messages-into-the-queue"></a>Вставка сообщения в очередь
 
-Создайте новый метод для отправки сообщения в очередь. Добавьте следующий метод в класс **Program**. Этот метод получает ссылку на очередь, а если она не существует, создает новую очередь с помощью вызова [CreateIfNotExistsAsync](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.createifnotexistsasync). Затем он добавляет в очередь сообщение, вызвав [AddMessageAsync](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.addmessageasync).
+Создайте новый метод для отправки сообщения в очередь.
 
-1. Добавьте следующий метод **SendMessageAsync** в класс **Program**.
+1. Добавьте следующий метод **InsertMessageAsync** в класс **Program**.
 
-   ```csharp
-   static async Task SendMessageAsync(CloudQueue theQueue, string newMessage)
-   {
-       bool createdQueue = await theQueue.CreateIfNotExistsAsync();
+   # <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
 
-       if (createdQueue)
-       {
-           Console.WriteLine("The queue was created.");
-       }
+   Этому методу передается ссылка на очередь. Если очередь не существует, она создается при вызове [CreateIfNotExistsAsync](/dotnet/api/azure.storage.queues.queueclient.createifnotexistsasync). Затем сообщение *newMessage* добавляется в очередь путем вызова [SendMessageAsync](/dotnet/api/azure.storage.queues.queueclient.sendmessageasync).
 
-       CloudQueueMessage message = new CloudQueueMessage(newMessage);
-       await theQueue.AddMessageAsync(message);
-   }
-   ```
+   :::code language="csharp" source="~/azure-storage-snippets/queues/tutorial/dotnet/dotnet-v12/QueueApp/Program.cs" id="snippet_InsertMessage":::
 
-2. Сохраните файл.
+   # <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
 
-Сообщение должно быть в формате, допустимом для передачи XML-запросов с кодированием UTF-8. Размер сообщения не должен превышать 64 КБ. Если сообщение содержит двоичные данные, мы советуем использовать кодировку Base64 для сообщения.
+   Этому методу передается ссылка на очередь. Если очередь не существует, она создается при вызове [CreateIfNotExistsAsync](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.createifnotexistsasync). Затем сообщение *newMessage* добавляется в очередь путем вызова [AddMessageAsync](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.addmessageasync).
 
-По умолчанию максимальное время действия сообщения составляет 7 дней. Для срока жизни сообщения можно указать любое положительное число. Чтобы добавить сообщение с неограниченным сроком действия, используйте `Timespan.FromSeconds(-1)` при вызове **AddMessageAsync**.
+   :::code language="csharp" source="~/azure-storage-snippets/queues/tutorial/dotnet/dotnet-v11/QueueApp/Program.cs" id="snippet_InsertMessage":::
 
-```csharp
-await theQueue.AddMessageAsync(message, TimeSpan.FromSeconds(-1), null, null, null);
-```
+1. **Необязательно.** По умолчанию максимальное время хранения сообщения составляет 7 дней. Для срока жизни сообщения можно указать любое положительное число. В следующем фрагменте кода добавляется сообщение, для которого срок действия *никогда* не истекает.
+
+   # <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
+
+    Чтобы добавить сообщение с неограниченным сроком действия, укажите `Timespan.FromSeconds(-1)` в вызове функции **SendMessageAsync**.
+
+   :::code language="csharp" source="~/azure-storage-snippets/queues/tutorial/dotnet/dotnet-v12/QueueApp/Initial.cs" id="snippet_SendNonExpiringMessage":::
+
+   # <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
+
+    Чтобы добавить сообщение с неограниченным сроком действия, укажите `Timespan.FromSeconds(-1)` в вызове функции **AddMessageAsync**.
+
+   :::code language="csharp" source="~/azure-storage-snippets/queues/tutorial/dotnet/dotnet-v11/QueueApp/Initial.cs" id="snippet_SendNonExpiringMessage":::
+
+1. Сохраните файл.
+
+Сообщение очереди должно иметь формат, совместимый с XML-запросом в кодировке UTF-8. Размер сообщения может достигать 64 КБ. Если сообщение содержит двоичные данные, примените к нему [кодировку Base64](/dotnet/api/system.convert.tobase64string).
 
 ## <a name="dequeue-messages"></a>Вывод сообщений из очереди
 
-Создайте новый метод с именем **ReceiveMessageAsync**. Этот метод получает сообщение из очереди, вызывая [GetMessageAsync](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.getmessageasync). Очень важно удалять из очереди успешно полученные сообщения, чтобы они не обрабатывались более одного раза. Получив сообщение, удалите его из очереди с помощью метода [DeleteMessageAsync](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.deletemessageasync).
+Создайте новый метод для получения сообщения из очереди. Очень важно удалять из очереди успешно полученные сообщения, чтобы они не обрабатывались более одного раза.
 
-1. Добавьте следующий метод **ReceiveMessageAsync** в класс **Program**.
+1. Добавьте новый метод с именем **RetrieveNextMessageAsync** в класс **Program**.
 
-   ```csharp
-   static async Task<string> ReceiveMessageAsync(CloudQueue theQueue)
-   {
-       bool exists = await theQueue.ExistsAsync();
+   # <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
 
-       if (exists)
-       {
-           CloudQueueMessage retrievedMessage = await theQueue.GetMessageAsync();
+   Этот метод получает сообщение из очереди, вызывая [ReceiveMessagesAsync](/dotnet/api/azure.storage.queues.queueclient.receivemessagesasync) со значением "1" в первом параметре, чтобы получить только одно следующее сообщение из очереди. Получив сообщение, удалите его из очереди с помощью метода [DeleteMessageAsync](/dotnet/api/azure.storage.queues.queueclient.deletemessageasync).
 
-           if (retrievedMessage != null)
-           {
-               string theMessage = retrievedMessage.AsString;
-               await theQueue.DeleteMessageAsync(retrievedMessage);
-               return theMessage;
-           }
-       }
-   }
-   ```
+   :::code language="csharp" source="~/azure-storage-snippets/queues/tutorial/dotnet/dotnet-v12/QueueApp/Initial.cs" id="snippet_InitialRetrieveMessage":::
 
-2. Сохраните файл.
+   # <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
+
+   Этот метод получает сообщение из очереди, вызывая [GetMessageAsync](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.getmessageasync). Получив сообщение, удалите его из очереди с помощью метода [DeleteMessageAsync](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.deletemessageasync).
+
+   :::code language="csharp" source="~/azure-storage-snippets/queues/tutorial/dotnet/dotnet-v11/QueueApp/Initial.cs" id="snippet_InitialRetrieveMessage":::
+
+1. Сохраните файл.
 
 ## <a name="delete-an-empty-queue"></a>Удаление пустой очереди
 
 По завершении работы с проектом мы рекомендуем всегда оценивать, нужны ли вам созданные ресурсы. Работающие ресурсы могут означать лишние затраты. Если очередь существует, но пуста, предложите пользователю удалить ее.
 
-1. Дополните метод **ReceiveMessageAsync** запросом на удаление пустой очереди.
+1. Дополните метод **RetrieveNextMessageAsync** запросом на удаление пустой очереди.
 
-   ```csharp
-   static async Task<string> ReceiveMessageAsync(CloudQueue theQueue)
-   {
-       bool exists = await theQueue.ExistsAsync();
+   # <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
 
-       if (exists)
-       {
-           CloudQueueMessage retrievedMessage = await theQueue.GetMessageAsync();
+   :::code language="csharp" source="~/azure-storage-snippets/queues/tutorial/dotnet/dotnet-v12/QueueApp/Program.cs" id="snippet_RetrieveMessage":::
 
-           if (retrievedMessage != null)
-           {
-               string theMessage = retrievedMessage.AsString;
-               await theQueue.DeleteMessageAsync(retrievedMessage);
-               return theMessage;
-           }
-           else
-           {
-               Console.Write("The queue is empty. Attempt to delete it? (Y/N) ");
-               string response = Console.ReadLine();
+   # <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
 
-               if (response == "Y" || response == "y")
-               {
-                   await theQueue.DeleteIfExistsAsync();
-                   return "The queue was deleted.";
-               }
-               else
-               {
-                   return "The queue was not deleted.";
-               }
-           }
-       }
-       else
-       {
-           return "The queue does not exist. Add a message to the command line to create the queue and store the message.";
-       }
-   }
-   ```
+   :::code language="csharp" source="~/azure-storage-snippets/queues/tutorial/dotnet/dotnet-v11/QueueApp/Program.cs" id="snippet_RetrieveMessage":::
 
-2. Сохраните файл.
+1. Сохраните файл.
 
 ## <a name="check-for-command-line-arguments"></a>Проверка аргументов командной строки
 
-Если в приложение переданы аргументы командной строки, мы будем считать их сообщением для добавления в очередь. Объедините эти аргументы в одну строку. Добавьте эту строку в очередь сообщений, вызвав добавленный ранее метод **SendMessageAsync**.
+Если в приложение переданы аргументы командной строки, мы будем считать их сообщением для добавления в очередь. Объедините эти аргументы в одну строку. Добавьте эту строку в очередь сообщений, вызвав добавленный ранее метод **InsertMessageAsync**.
 
-Если в командной строке нет аргументов, выполните операцию извлечения. Вызовите метод **ReceiveMessageAsync**, чтобы получить первое сообщение из очереди.
+Если в командной строке нет аргументов, выполните попытку извлечения. Вызовите метод **RetrieveNextMessageAsync**, чтобы получить следующее сообщение из очереди.
 
 Перед завершением работы дождитесь ввода пользователя, используя метод **Console.ReadLine**.
 
 1. Дополните метод **Main** проверкой аргументов командной строки и ожиданием действий пользователя.
 
-   ```csharp
-        static async Task Main(string[] args)
-        {
-            CloudStorageAccount storageAccount = CloudStorageAccount.Parse(connectionString);
-            CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
-            CloudQueue queue = queueClient.GetQueueReference("mystoragequeue");
+   # <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
 
-            if (args.Length > 0)
-            {
-                string value = String.Join(" ", args);
-                await SendMessageAsync(queue, value);
-                Console.WriteLine($"Sent: {value}");
-            }
-            else
-            {
-                string value = await ReceiveMessageAsync(queue);
-                Console.WriteLine($"Received: {value}");
-            }
+   :::code language="csharp" source="~/azure-storage-snippets/queues/tutorial/dotnet/dotnet-v12/QueueApp/Program.cs" id="snippet_Main":::
 
-            Console.Write("Press Enter...");
-            Console.ReadLine();
-        }
-   ```
+   # <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
 
-2. Сохраните файл.
+   :::code language="csharp" source="~/azure-storage-snippets/queues/tutorial/dotnet/dotnet-v11/QueueApp/Program.cs" id="snippet_Main":::
+
+1. Сохраните файл.
 
 ## <a name="complete-code"></a>Полный код
 
 Ниже приведен полный код для этого проекта.
 
-   ```csharp
-   using System;
-   using System.Threading.Tasks;
-   using Microsoft.Azure.Storage;
-   using Microsoft.Azure.Storage.Queue;
+   # <a name="net-v12"></a>[\..NET (версии 12)](#tab/dotnet)
 
-   namespace QueueApp
-   {
-    class Program
-    {
-        // The string value is broken up for better onscreen formatting
-        private const string connectionString = "DefaultEndpointsProtocol=https;" +
-                                                "AccountName=<your storage account name>;" +
-                                                "AccountKey=<your key>;" +
-                                                "EndpointSuffix=core.windows.net";
+   :::code language="csharp" source="~/azure-storage-snippets/queues/tutorial/dotnet/dotnet-v12/QueueApp/Program.cs" id="snippet_AllCode":::
 
-        static async Task Main(string[] args)
-        {
-            CloudStorageAccount storageAccount = CloudStorageAccount.Parse(connectionString);
-            CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
-            CloudQueue queue = queueClient.GetQueueReference("mystoragequeue");
+   # <a name="net-v11"></a>[\..NET (версии 11)](#tab/dotnetv11)
 
-            if (args.Length > 0)
-            {
-                string value = String.Join(" ", args);
-                await SendMessageAsync(queue, value);
-                Console.WriteLine($"Sent: {value}");
-            }
-            else
-            {
-                string value = await ReceiveMessageAsync(queue);
-                Console.WriteLine($"Received {value}");
-            }
-
-            Console.Write("Press Enter...");
-            Console.ReadLine();
-        }
-
-        static async Task SendMessageAsync(CloudQueue theQueue, string newMessage)
-        {
-            bool createdQueue = await theQueue.CreateIfNotExistsAsync();
-
-            if (createdQueue)
-            {
-                Console.WriteLine("The queue was created.");
-            }
-
-            CloudQueueMessage message = new CloudQueueMessage(newMessage);
-            await theQueue.AddMessageAsync(message);
-        }
-
-        static async Task<string> ReceiveMessageAsync(CloudQueue theQueue)
-        {
-            bool exists = await theQueue.ExistsAsync();
-
-            if (exists)
-            {
-                CloudQueueMessage retrievedMessage = await theQueue.GetMessageAsync();
-
-                if (retrievedMessage != null)
-                {
-                    string theMessage = retrievedMessage.AsString;
-                    await theQueue.DeleteMessageAsync(retrievedMessage);
-                    return theMessage;
-                }
-                else
-                {
-                    Console.Write("The queue is empty. Attempt to delete it? (Y/N) ");
-                    string response = Console.ReadLine();
-
-                    if (response == "Y" || response == "y")
-                    {
-                        await theQueue.DeleteIfExistsAsync();
-                        return "The queue was deleted.";
-                    }
-                    else
-                    {
-                        return "The queue was not deleted.";
-                    }
-                }
-            }
-            else
-            {
-                return "The queue does not exist. Add a message to the command line to create the queue and store the message.";
-            }
-        }
-    }
-   }
-   ```
+   :::code language="csharp" source="~/azure-storage-snippets/queues/tutorial/dotnet/dotnet-v11/QueueApp/Program.cs" id="snippet_AllCode":::
+   ---
 
 ## <a name="build-and-run-the-app"></a>Создание и запуск приложения
 
@@ -446,13 +294,13 @@ await theQueue.AddMessageAsync(message, TimeSpan.FromSeconds(-1), null, null, nu
    dotnet build
    ```
 
-2. Когда сборка проекта успешно завершится, выполните следующую команду для добавления первого сообщения в очередь.
+1. Когда сборка проекта успешно завершится, выполните следующую команду для добавления первого сообщения в очередь.
 
    ```console
    dotnet run First queue message
    ```
 
-Вы должны увидеть такой результат:
+   Вы должны увидеть такой результат:
 
    ```output
    C:\Tutorials\QueueApp>dotnet run First queue message
@@ -461,13 +309,13 @@ await theQueue.AddMessageAsync(message, TimeSpan.FromSeconds(-1), null, null, nu
    Press Enter..._
    ```
 
-3. Запустите приложение без аргументов командной строки, чтобы получить и удалить первое сообщение из очереди.
+1. Запустите приложение без аргументов командной строки, чтобы получить и удалить первое сообщение из очереди.
 
    ```console
    dotnet run
    ```
 
-4. Еще несколько раз выполните приложение, пока не закончатся сообщения в очереди. При следующем запуске вы получите сообщение о том, что очередь пуста, и запрос на ее удаление.
+1. Еще несколько раз выполните приложение, пока не закончатся сообщения в очереди. При следующем запуске вы получите сообщение о том, что очередь пуста, и запрос на ее удаление.
 
    ```output
    C:\Tutorials\QueueApp>dotnet run First queue message
@@ -508,10 +356,15 @@ await theQueue.AddMessageAsync(message, TimeSpan.FromSeconds(-1), null, null, nu
 В этом руководстве вы узнали, как выполнять следующие задачи:
 
 1. Создание очереди
-2. Добавление и удаление сообщений из очереди
-3. Удаление очереди службы хранилища Azure
+1. Добавление и удаление сообщений из очереди
+1. Удаление очереди службы хранилища Azure
 
-Ознакомьтесь с кратким руководством по очередям Azure, чтобы получить дополнительные сведения.
+Ознакомьтесь с краткими руководствами по очередям Azure, чтобы получить дополнительные сведения.
 
 > [!div class="nextstepaction"]
-> [Краткое руководство по очередям](storage-quickstart-queues-portal.md)
+> [Краткое руководство. Создание очереди и добавление сообщения в нее с помощью портала Azure](storage-quickstart-queues-portal.md)
+
+- [Краткое руководство. Использование клиентской библиотеки Хранилища очередей Azure версии 12 для .NET](storage-quickstart-queues-dotnet.md)
+- [Краткое руководство. Использование клиентской библиотеки Хранилища очередей Azure версии 12 для Java](storage-quickstart-queues-java.md)
+- [Краткое руководство. Клиентская библиотека Хранилища очередей Azure версии 12 для Python](storage-quickstart-queues-python.md)
+- [Краткое руководство. Использование клиентской библиотеки Хранилища очередей Azure версии 12 для JavaScript](storage-quickstart-queues-nodejs.md)

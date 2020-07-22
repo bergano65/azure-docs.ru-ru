@@ -13,17 +13,16 @@ ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 01/08/2020
 ms.openlocfilehash: 08fa94dbe71299a6653df0b40aa5083375526172
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78255591"
 ---
 # <a name="tutorial-migrate-mongodb-to-azure-cosmos-dbs-api-for-mongodb-offline-using-dms"></a>Руководство. Миграция MongoDB в API Azure Cosmos DB для MongoDB в автономном режиме с помощью DMS
 
 С помощью Azure Database Migration Service можно выполнять автономную (однократную) миграцию баз данных из локального или облачного экземпляра MongoDB в API Azure Cosmos DB для MongoDB.
 
-В этом руководстве описано следующее:
+В этом руководстве вы узнаете, как:
 > [!div class="checklist"]
 >
 > * создание экземпляра Azure Database Migration Service;
@@ -33,7 +32,7 @@ ms.locfileid: "78255591"
 
 В этом руководстве показано, как перенести набор данных из базы данных MongoDB, размещенной на виртуальной машине Azure, в API Azure Cosmos DB для MongoDB с помощью Azure Database Migration Service. Если у вас еще не настроен источник MongoDB, обратитесь к статье [Установка и настройка базы данных MongoDB на виртуальной машине Windows в Azure](https://docs.microsoft.com/azure/virtual-machines/windows/install-mongodb).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством вам потребуется следующее:
 
@@ -64,7 +63,7 @@ ms.locfileid: "78255591"
 
     ![Отображение поставщиков ресурсов](media/tutorial-mongodb-to-cosmosdb/portal-select-resource-provider.png)
 
-3. Найдите миграцию, а затем справа от **Microsoft. Migration**выберите **Register**.
+3. В поле поиска введите migration, а затем справа от **Microsoft.DataMigration** щелкните **Зарегистрировать**.
 
     ![Регистрация поставщика ресурсов](media/tutorial-mongodb-to-cosmosdb/portal-register-resource-provider.png)    
 

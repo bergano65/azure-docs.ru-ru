@@ -9,10 +9,10 @@ ms.date: 12/06/2018
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 6d0737a7300b2a6025f776c1ed65a05cacf2141a
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "67185153"
 ---
 Создание подключения к удаленному рабочему столу для подключения к виртуальной машине, развернутой в вашей виртуальной сети. Лучший способ проверить, можете ли вы подключиться к своей виртуальной машине, — подключиться, используя ее частный IP-адрес, а не имя компьютера. Таким образом, вы проверяете, можете ли вы подключиться, а не правильно ли настроено разрешение имен. 

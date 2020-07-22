@@ -10,18 +10,18 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.subservice: compliance
-ms.date: 03/22/2020
+ms.date: 06/18/2020
 ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ee370bc9c381eb11ae7cae53b31d0c987c52733c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 272dd95b97c65ecc52dd73909f1ed87d5e5ae3ca
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80128606"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86170502"
 ---
 # <a name="add-a-connected-organization-in-azure-ad-entitlement-management"></a>Добавление подключенной Организации в управление назначением Azure AD
 
@@ -42,7 +42,7 @@ ms.locfileid: "80128606"
 
 Способ проверки подлинности пользователей в каталоге или домене Azure AD зависит от типа аутентификации. Типы проверки подлинности для подключенных организаций:
 
-- Azure AD
+- Azure AD
 - [Прямая федерация](../b2b/direct-federation.md)
 - [Одноразовый пароль](../b2b/one-time-passcode.md) (домен)
 
@@ -54,7 +54,7 @@ ms.locfileid: "80128606"
 
 Чтобы добавить внешний каталог или домен Azure AD в качестве подключенной Организации, следуйте инструкциям в этом разделе.
 
-**Предварительная роль**: *глобальный администратор*, *администратор пользователей*или *приглашенный гость*
+**Предварительная роль**: *глобальный администратор* или *администратор пользователей*
 
 1. В портал Azure выберите **Azure Active Directory**, а затем выберите **Управление удостоверениями**.
 

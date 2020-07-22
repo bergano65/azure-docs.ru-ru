@@ -5,12 +5,12 @@ author: mikkelhegn
 ms.topic: conceptual
 ms.date: 02/23/2018
 ms.author: mikhegn
-ms.openlocfilehash: 0bca690fd585b288f15cbab21c1c951474390318
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: b6d6ff37024a3181a43b67d2af26b067225654fe
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78196985"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86257477"
 ---
 # <a name="manage-applications-for-multiple-environments"></a>Управление приложениями для использования в нескольких средах
 
@@ -40,11 +40,11 @@ Azure Service Fabric позволяет создавать кластеры, д�
 
 При создании именованных экземпляров приложения в Service Fabric имеется возможность передавать параметры. Способ их передачи зависит от того, как создается экземпляр приложения.
 
-  - В PowerShell [`New-ServiceFabricApplication`](https://docs.microsoft.com/powershell/module/servicefabric/new-servicefabricapplication?view=azureservicefabricps) командлет принимает параметры приложения в виде хэш-таблицы.
-  - С помощью sfctl [`sfctl application create`](https://docs.microsoft.com/azure/service-fabric/service-fabric-sfctl-application#sfctl-application-create) команда принимает параметры в виде строки JSON. Сценарий install.sh использует sfctl.
+  - В PowerShell [`New-ServiceFabricApplication`](/powershell/module/servicefabric/new-servicefabricapplication?view=azureservicefabricps) командлет принимает параметры приложения в виде хэш-таблицы.
+  - С помощью sfctl [`sfctl application create`](./service-fabric-sfctl-application.md#sfctl-application-create) команда принимает параметры в виде строки JSON. Сценарий install.sh использует sfctl.
   - Visual Studio предоставляет набор файлов параметров в папке Parameters в проекте приложения. Эти файлы параметров используются при публикации из Visual Studio с помощью Azure DevOps Services или Azure DevOps Server. В Visual Studio файлы параметров передаются в сценарий Deploy-FabricApplication.ps1.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В приведенных ниже статьях описывается, как использовать некоторые основные понятия, приведенные в этой статье:
 
 - [Как указать переменные среды для служб в Service Fabric](service-fabric-how-to-specify-environment-variables.md)

@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-mongo
 ms.topic: tutorial
 ms.date: 12/03/2019
 ms.reviewer: sngun
-ms.openlocfilehash: 5b9bc78f6af833d89a3404de0295ddad78ebdf20
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 5283916194d407cebd30ef072907c56ded1c6cb0
+ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74870145"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85848944"
 ---
 # <a name="query-data-by-using-azure-cosmos-dbs-api-for-mongodb"></a>Запрос данных с использованием API Azure Cosmos DB для MongoDB
 
@@ -63,12 +63,15 @@ ms.locfileid: "74870145"
 С учетом приведенного выше образца документа сведений о семье следующий запрос возвращает документы, у которых поле идентификации соответствует `WakefieldFamily`.
 
 **Запрос**
-    
-    db.families.find({ id: "WakefieldFamily"})
+
+```bash
+db.families.find({ id: "WakefieldFamily"})
+```
 
 **Результаты**
 
-    {
+```json
+{
     "_id": "ObjectId(\"58f65e1198f3a12c7090e68c\")",
     "id": "WakefieldFamily",
     "parents": [
@@ -106,19 +109,23 @@ ms.locfileid: "74870145"
     },
     "creationDate": 1431620462,
     "isRegistered": false
-    }
+}
+```
 
 ## <a name="example-query-2"></a><a id="examplequery2"></a> Пример запроса 2 
 
 Следующий запрос возвращает перечень всех детей в семье. 
 
 **Запрос**
-    
-    db.families.find( { id: "WakefieldFamily" }, { children: true } )
+
+```bash 
+db.families.find( { id: "WakefieldFamily" }, { children: true } )
+``` 
 
 **Результаты**
 
-    {
+```json
+{
     "_id": "ObjectId("58f65e1198f3a12c7090e68c")",
     "children": [
       {
@@ -138,28 +145,37 @@ ms.locfileid: "74870145"
         "grade": 8
       }
     ]
-    }
-
+}
+```
 
 ## <a name="example-query-3"></a><a id="examplequery3"></a> Пример запроса 3 
 
 Следующий запрос возвращает перечень всех семей, которые зарегистрированы. 
 
 **Запрос**
-    
-    db.families.find( { "isRegistered" : true })
-**Результаты**: документ не будет возвращен. 
+
+```bash
+db.families.find( { "isRegistered" : true })
+``` 
+
+**Результаты**
+
+Документ не будет возвращен. 
 
 ## <a name="example-query-4"></a><a id="examplequery4"></a> Пример запроса 4
 
 Следующий запрос возвращает перечень всех семей, которые не зарегистрированы. 
 
 **Запрос**
-    
-    db.families.find( { "isRegistered" : false })
+
+```bash
+db.families.find( { "isRegistered" : false })
+``` 
+
 **Результаты**
 
-     {
+```json
+{
     "_id": ObjectId("58f65e1198f3a12c7090e68c"),
     "id": "WakefieldFamily",
     "parents": [{
@@ -193,18 +209,22 @@ ms.locfileid: "74870145"
     "creationDate": 1431620462,
     "isRegistered": false
 }
+```
 
 ## <a name="example-query-5"></a><a id="examplequery5"></a> Пример запроса 5
 
 Следующий запрос возвращает перечень всех семей, которые не зарегистрированы и живут в штате Нью-Йорк. 
 
 **Запрос**
-    
-     db.families.find( { "isRegistered" : false, "address.state" : "NY" })
+
+```bash
+db.families.find( { "isRegistered" : false, "address.state" : "NY" })
+``` 
 
 **Результаты**
 
-     {
+```json
+{
     "_id": ObjectId("58f65e1198f3a12c7090e68c"),
     "id": "WakefieldFamily",
     "parents": [{
@@ -238,19 +258,22 @@ ms.locfileid: "74870145"
     "creationDate": 1431620462,
     "isRegistered": false
 }
-
+```
 
 ## <a name="example-query-6"></a><a id="examplequery6"></a> Пример запроса 6
 
 Следующий запрос возвращает все семьи, где дети ходят в 8-й класс.
 
 **Запрос**
-  
-     db.families.find( { children : { $elemMatch: { grade : 8 }} } )
+
+```bash
+db.families.find( { children : { $elemMatch: { grade : 8 }} } )
+```
 
 **Результаты**
 
-     {
+```json
+{
     "_id": ObjectId("58f65e1198f3a12c7090e68c"),
     "id": "WakefieldFamily",
     "parents": [{
@@ -284,14 +307,17 @@ ms.locfileid: "74870145"
     "creationDate": 1431620462,
     "isRegistered": false
 }
+```
 
 ## <a name="example-query-7"></a><a id="examplequery7"></a> Пример запроса 7
 
 Следующий запрос возвращает семьи, где 3 детей.
 
 **Запрос**
-  
-      db.Family.find( {children: { $size:3} } )
+
+```bash
+db.Family.find( {children: { $size:3} } )
+```
 
 **Результаты**
 

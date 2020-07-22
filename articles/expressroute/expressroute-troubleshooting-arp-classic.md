@@ -4,15 +4,15 @@ description: Инструкции по получению таблиц ARP дл�
 services: expressroute
 author: charwen
 ms.service: expressroute
-ms.topic: article
+ms.topic: troubleshooting
 ms.date: 01/30/2017
 ms.author: charwen
-ms.openlocfilehash: a7a24fc6674adca21e01d2502263c9767510469e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f381c25edae566f2dc9f864beda47e65df5c21e1
+ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80618623"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85985396"
 ---
 # <a name="getting-arp-tables-in-the-classic-deployment-model"></a>Получение таблиц ARP в классической модели развертывания
 > [!div class="op_single_selector"]
@@ -41,10 +41,12 @@ ARP — это протокол уровня 2, который определе�
 
 Ниже приведен пример таблицы ARP.
 
-        Age InterfaceProperty IpAddress  MacAddress    
-        --- ----------------- ---------  ----------    
-         10 On-Prem           10.0.0.1 ffff.eeee.dddd
-          0 Microsoft         10.0.0.2 aaaa.bbbb.cccc
+```output
+Age InterfaceProperty IpAddress  MacAddress    
+--- ----------------- ---------  ----------    
+ 10 On-Prem           10.0.0.1   ffff.eeee.dddd
+  0 Microsoft         10.0.0.2   aaaa.bbbb.cccc
+```
 
 
 В следующем разделе приведены сведения о том, как просмотреть таблицы ARP, видимые на пограничных маршрутизаторах ExpressRoute.
@@ -63,67 +65,81 @@ ARP — это протокол уровня 2, который определе�
 ### <a name="arp-tables-for-azure-private-peering"></a>Таблицы ARP для частного пиринга Azure
 Следующий командлет предоставляет таблицы ARP для частного пиринга Azure.
 
-        # Required variables
-        $ckt = "<your Service Key here>
+```azurepowershell
+# Required variables
+$ckt = "<your Service Key here>
 
-        # ARP table for Azure private peering--primary path
-        Get-AzureDedicatedCircuitPeeringArpInfo -ServiceKey $ckt -AccessType Private -Path Primary
+# ARP table for Azure private peering--primary path
+Get-AzureDedicatedCircuitPeeringArpInfo -ServiceKey $ckt -AccessType Private -Path Primary
 
-        # ARP table for Azure private peering--secondary path
-        Get-AzureDedicatedCircuitPeeringArpInfo -ServiceKey $ckt -AccessType Private -Path Secondary
+# ARP table for Azure private peering--secondary path
+Get-AzureDedicatedCircuitPeeringArpInfo -ServiceKey $ckt -AccessType Private -Path Secondary
+```
 
 Ниже приведен пример выходных данных для одного из путей.
 
-        Age InterfaceProperty IpAddress  MacAddress    
-        --- ----------------- ---------  ----------    
-         10 On-Prem           10.0.0.1 ffff.eeee.dddd
-          0 Microsoft         10.0.0.2 aaaa.bbbb.cccc
+```output
+Age InterfaceProperty IpAddress  MacAddress    
+--- ----------------- ---------  ----------    
+ 10 On-Prem           10.0.0.1   ffff.eeee.dddd
+  0 Microsoft         10.0.0.2   aaaa.bbbb.cccc
+```
 
 
 ### <a name="arp-tables-for-azure-public-peering"></a>Таблицы ARP для общедоступного пиринга Azure
 Следующий командлет предоставляет таблицы ARP для общедоступного пиринга Azure.
 
-        # Required variables
-        $ckt = "<your Service Key here>
+```azurepowershell
+# Required variables
+$ckt = "<your Service Key here>
 
-        # ARP table for Azure public peering--primary path
-        Get-AzureDedicatedCircuitPeeringArpInfo -ServiceKey $ckt -AccessType Public -Path Primary
+# ARP table for Azure public peering--primary path
+Get-AzureDedicatedCircuitPeeringArpInfo -ServiceKey $ckt -AccessType Public -Path Primary
 
-        # ARP table for Azure public peering--secondary path
-        Get-AzureDedicatedCircuitPeeringArpInfo -ServiceKey $ckt -AccessType Public -Path Secondary
-
-Ниже приведен пример выходных данных для одного из путей.
-
-        Age InterfaceProperty IpAddress  MacAddress    
-        --- ----------------- ---------  ----------    
-         10 On-Prem           10.0.0.1 ffff.eeee.dddd
-          0 Microsoft         10.0.0.2 aaaa.bbbb.cccc
-
+# ARP table for Azure public peering--secondary path
+Get-AzureDedicatedCircuitPeeringArpInfo -ServiceKey $ckt -AccessType Public -Path Secondary
+```
 
 Ниже приведен пример выходных данных для одного из путей.
 
-        Age InterfaceProperty IpAddress  MacAddress    
-        --- ----------------- ---------  ----------    
-         10 On-Prem           64.0.0.1 ffff.eeee.dddd
-          0 Microsoft         64.0.0.2 aaaa.bbbb.cccc
+```output
+Age InterfaceProperty IpAddress  MacAddress    
+--- ----------------- ---------  ----------    
+ 10 On-Prem           10.0.0.1   ffff.eeee.dddd
+  0 Microsoft         10.0.0.2   aaaa.bbbb.cccc
+```
+
+
+Ниже приведен пример выходных данных для одного из путей.
+
+```output
+Age InterfaceProperty IpAddress  MacAddress    
+--- ----------------- ---------  ----------    
+ 10 On-Prem           64.0.0.1   ffff.eeee.dddd
+  0 Microsoft         64.0.0.2   aaaa.bbbb.cccc
+```
 
 
 ### <a name="arp-tables-for-microsoft-peering"></a>Таблицы ARP для пиринга Майкрософт
 Следующий командлет предоставляет таблицы ARP для пиринга Майкрософт.
 
-    # ARP table for Microsoft peering--primary path
-    Get-AzureDedicatedCircuitPeeringArpInfo -ServiceKey $ckt -AccessType Microsoft -Path Primary
+```azurepowershell
+# ARP table for Microsoft peering--primary path
+Get-AzureDedicatedCircuitPeeringArpInfo -ServiceKey $ckt -AccessType Microsoft -Path Primary
 
-    # ARP table for Microsoft peering--secondary path
-    Get-AzureDedicatedCircuitPeeringArpInfo -ServiceKey $ckt -AccessType Microsoft -Path Secondary
+# ARP table for Microsoft peering--secondary path
+Get-AzureDedicatedCircuitPeeringArpInfo -ServiceKey $ckt -AccessType Microsoft -Path Secondary
+```
 
 
 Ниже приведен пример выходных данных для одного из путей.
 
-        Age InterfaceProperty IpAddress  MacAddress    
-        --- ----------------- ---------  ----------    
-         10 On-Prem           65.0.0.1 ffff.eeee.dddd
-          0 Microsoft         65.0.0.2 aaaa.bbbb.cccc
+```output
+Age InterfaceProperty IpAddress  MacAddress    
+--- ----------------- ---------  ----------    
+ 10 On-Prem           65.0.0.1   ffff.eeee.dddd
+  0 Microsoft         65.0.0.2   aaaa.bbbb.cccc
+```
 
 
 ## <a name="how-to-use-this-information"></a>Как использовать эти сведения
@@ -135,17 +151,21 @@ ARP — это протокол уровня 2, который определе�
 * Последний октет локального IP-адреса сети Майкрософт всегда является четным числом.
 * Одинаковый MAC-адрес отображается на стороне сети Майкрософт для всех 3 пирингов (первичных или вторичных).
 
-        Age InterfaceProperty IpAddress  MacAddress    
-        --- ----------------- ---------  ----------    
-         10 On-Prem           65.0.0.1 ffff.eeee.dddd
-          0 Microsoft         65.0.0.2 aaaa.bbbb.cccc
+```output
+Age InterfaceProperty IpAddress  MacAddress    
+--- ----------------- ---------  ----------    
+ 10 On-Prem           65.0.0.1   ffff.eeee.dddd
+  0 Microsoft         65.0.0.2   aaaa.bbbb.cccc
+```
 
 ### <a name="arp-table-when-its-on-premises-or-when-the-connectivity-provider-side-has-problems"></a>Таблица ARP, когда она находится в локальной среде или когда на стороне поставщика услуг подключения возникли проблемы
  В таблице ARP отображается только одна запись. Она содержит сопоставление MAC-адреса и IP-адреса, используемого на стороне сети Майкрософт.
 
-        Age InterfaceProperty IpAddress  MacAddress    
-        --- ----------------- ---------  ----------    
-          0 Microsoft         65.0.0.2 aaaa.bbbb.cccc
+```output
+Age InterfaceProperty IpAddress  MacAddress    
+--- ----------------- ---------  ----------    
+   0 Microsoft         65.0.0.2  aaaa.bbbb.cccc
+```
 
 > [!NOTE]
 > В случае возникновения подобной проблемы отправьте запрос на поддержку своему поставщику услуг подключения, чтобы устранить ее.

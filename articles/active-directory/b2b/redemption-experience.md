@@ -11,12 +11,11 @@ author: msmimart
 manager: celestedg
 ms.reviewer: elisol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a0e3a2ddda4529cee584f5eabf6677af940d2bdd
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
-ms.translationtype: HT
+ms.openlocfilehash: d6bf5d40262c5991504d3dc62490fb50f6a20592
+ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83585901"
+ms.lasthandoff: 05/25/2020
+ms.locfileid: "83826100"
 ---
 # <a name="azure-active-directory-b2b-collaboration-invitation-redemption"></a>Активация приглашения службы совместной работы Azure Active Directory B2B
 
@@ -42,9 +41,9 @@ ms.locfileid: "83585901"
 
 > [!IMPORTANT]
 > Прямая ссылка должна предназначаться для определенного клиента. Другими словами, она должна содержать идентификатор клиента или проверенный домен, чтобы гость мог пройти проверку подлинности в клиенте, где находится общее приложение. Общий URL-адрес, например https://myapps.microsoft.com, не будет работать для гостя, так как он будет перенаправляться на свой домашний клиент для проверки подлинности. Ниже приведены некоторые примеры прямых ссылок с контекстом клиента.
- > - Панель доступа к приложениям: https://myapps.microsoft.com/?tenantid=&lt; идентификатор_клиента&gt;. 
- > - Панель доступа к приложениям для проверенного домена: https://myapps.microsoft.com/&lt; проверенный_домен&gt;.
- > - Портал Azure: https://portal.azure.com/&lt; идентификатор_клиента&gt;.
+ > - Панель доступа к приложениям: `https://myapps.microsoft.com/?tenantid=<tenant id>`
+ > - Панель доступа к приложениям для проверенного домена: `https://myapps.microsoft.com/<;verified domain>`
+ > - Портал Azure: `https://portal.azure.com/<tenant id>`
  > - Отдельное приложение: см. статью об использовании [ссылки для прямого входа](../manage-apps/end-user-experiences.md#direct-sign-on-links).
 
 В некоторых случаях рекомендуется использовать приглашение по электронной почте вместо прямой ссылки. Если эти особые случаи актуальны для организации, рекомендуем приглашать пользователей с отправкой приглашения по электронной почте.

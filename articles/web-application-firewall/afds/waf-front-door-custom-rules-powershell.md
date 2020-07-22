@@ -8,10 +8,9 @@ ms.topic: article
 ms.date: 09/05/2019
 ms.author: victorh
 ms.openlocfilehash: 493ed1a31a23366a90b80d3ab510218c8dce0e9c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74186634"
 ---
 # <a name="configure-a-web-application-firewall-policy-using-azure-powershell"></a>Настройка политики брандмауэра веб-приложения с помощью Azure PowerShell
@@ -110,7 +109,7 @@ $myWAFPolicy=New-AzFrontDoorWafPolicy -Name $policyName -ResourceGroupName $reso
 > [!NOTE]
 > Свойство *вебаппликатионфиреваллполицилинк* необходимо установить только один раз, чтобы связать политику безопасности с внешним интерфейсом передней дверцы. Последующие обновления политики автоматически применяются к интерфейсной части.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о [передней дверце](../../frontdoor/front-door-overview.md) 
 - Дополнительные сведения о [WAF с помощью передней дверцы](afds-overview.md)

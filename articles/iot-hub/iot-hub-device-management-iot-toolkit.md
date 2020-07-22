@@ -8,10 +8,9 @@ ms.topic: conceptual
 ms.date: 01/04/2019
 ms.author: junhan
 ms.openlocfilehash: d85e0e967dd802a77ccbc11b884d7a9f2891524d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81688097"
 ---
 # <a name="use-azure-iot-tools-for-visual-studio-code-for-azure-iot-hub-device-management"></a>Управление устройствами Центра Интернета вещей Azure с помощью средств Интернета вещей Azure для Visual Studio Code
@@ -48,7 +47,7 @@ ms.locfileid: "81688097"
 * Активная подписка Azure.
 * Центр Интернета вещей Azure в подписке;
 * [Visual Studio Code](https://code.visualstudio.com/)
-* [Средства Azure IOT для VS Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools) или скопируйте этот URL-адрес и вставьте его в окно браузера`vscode:extension/vsciot-vscode.azure-iot-tools`:.
+* [Средства Azure IOT для VS Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools) или скопируйте этот URL-адрес и вставьте его в окно браузера: `vscode:extension/vsciot-vscode.azure-iot-tools` .
 
 ## <a name="sign-in-to-access-your-iot-hub"></a>Вход в систему для получения доступа к Центру Интернета вещей
 
@@ -71,7 +70,7 @@ ms.locfileid: "81688097"
 
 2. В поле ввода введите имя метода и полезные данные.
 
-3. Результаты будут показаны в **выводе** > представления**центра Интернета вещей Azure** .
+3. Результаты будут показаны в **выводе**  >  представления**центра Интернета вещей Azure** .
 
 ## <a name="read-device-twin"></a>Чтение двойников устройств
 
@@ -95,7 +94,7 @@ ms.locfileid: "81688097"
 
 2. Введите сообщение в поле ввода.
 
-3. Результаты будут показаны в **выводе** > представления**центра Интернета вещей Azure** .
+3. Результаты будут показаны в **выводе**  >  представления**центра Интернета вещей Azure** .
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 

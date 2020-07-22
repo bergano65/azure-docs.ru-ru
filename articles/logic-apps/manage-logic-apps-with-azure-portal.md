@@ -10,10 +10,10 @@ ms.topic: article
 ms.custom: mvc
 ms.date: 04/29/2020
 ms.openlocfilehash: d80972cd200b8f85e14d316c4c06a38f88ac81b5
-ms.sourcegitcommit: acc558d79d665c8d6a5f9e1689211da623ded90a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82598170"
 ---
 # <a name="manage-logic-apps-in-the-azure-portal"></a>Управление приложениями логики в портал Azure
@@ -34,7 +34,7 @@ ms.locfileid: "82598170"
 
 1. Войдите на [портал Azure](https://portal.azure.com) с помощью своей учетной записи Azure.
 
-1. В строке поиска Azure введите `logic apps`и выберите **Logic Apps**.
+1. В строке поиска Azure введите `logic apps` и выберите **Logic Apps**.
 
    ![Поиск и выбор "Logic Apps"](./media/manage-logic-apps-with-azure-portal/find-select-logic-apps.png)
 
@@ -54,11 +54,11 @@ ms.locfileid: "82598170"
 
 1. На панели " **Свойства** " можно просмотреть и скопировать следующие сведения о приложении логики:
 
-   * **имя**;
+   * **Name**
    * **Идентификатор ресурса**
    * **Группа ресурсов**
    * **Расположение**
-   * **Тип** 
+   * **Type** 
    * **Имя подписки**
    * **Идентификатор подписки**
    * **Конечная точка доступа**
@@ -176,7 +176,7 @@ ms.locfileid: "82598170"
 
    ![Удаление нескольких приложений логики](./media/manage-logic-apps-with-azure-portal/delete-multiple-logic-apps.png)
 
-1. Когда появится окно подтверждения, введите `yes`и выберите **Удалить**.
+1. Когда появится окно подтверждения, введите `yes` и выберите **Удалить**.
 
    ![Подтвердите удаление приложений логики](./media/manage-logic-apps-with-azure-portal/delete-confirmation-multiple-logic-apps.png)
 

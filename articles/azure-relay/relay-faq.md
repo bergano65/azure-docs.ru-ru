@@ -1,25 +1,14 @@
 ---
 title: Часто задаваемые вопросы о ретрансляторе Azure | Документация Майкрософт
 description: В этой статье содержатся ответы на некоторые часто задаваемые вопросы о службе Azure Relay.
-services: service-bus-relay
-documentationcenter: na
-author: spelluru
-manager: timlt
-editor: ''
-ms.assetid: 886d2c7f-838f-4938-bd23-466662fb1c8e
-ms.service: service-bus-relay
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 01/21/2020
-ms.author: spelluru
-ms.openlocfilehash: ac8967ab036929bf5363a79c9d7c60485bc98841
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.date: 06/23/2020
+ms.openlocfilehash: 40e6f830e2314f7c8f36fcd25d24a41cc256bef2
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83211987"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85317021"
 ---
 # <a name="azure-relay-faqs"></a>Часто задаваемые вопросы о ретрансляторе Azure
 
@@ -82,11 +71,11 @@ ms.locfileid: "83211987"
 ## <a name="quotas"></a>Квоты
 | Имя квоты | Область |  Примечания | Значение |
 | --- | --- | --- | --- |
-| Параллельные прослушиватели ретранслятора |Объект |Запросы на дополнительные соединения отклоняются, а вызывающий код получает исключение. |25 |
+| Параллельные прослушиватели ретранслятора |Сущность |Запросы на дополнительные соединения отклоняются, а вызывающий код получает исключение. |25 |
 | Параллельные подключения ретрансляции для всех конечных точек ретрансляции в пространстве имен службы |Пространство имен |- |5 000 |
 | Конечные точки ретрансляции на одно пространство имен службы |Пространство имен |- |10 000 |
 | Размер сообщения для ретрансляций [NetOnewayRelayBinding](/dotnet/api/microsoft.servicebus.netonewayrelaybinding) и [NetEventRelayBinding](/dotnet/api/microsoft.servicebus.neteventrelaybinding) |Пространство имен |Входящие сообщения, размер которых превышает эти значения, отклоняются, а в вызывающем коде возникает исключение. |64 КБ |
-| Размер сообщения для ретрансляций [HttpRelayTransportBindingElement](/dotnet/api/microsoft.servicebus.httprelaytransportbindingelement) и [NetTcpRelayBinding](/dotnet/api/microsoft.servicebus.nettcprelaybinding) |Пространство имен |Нет ограничений на размер сообщения. |Неограниченно |
+| Размер сообщения для ретрансляций [HttpRelayTransportBindingElement](/dotnet/api/microsoft.servicebus.httprelaytransportbindingelement) и [NetTcpRelayBinding](/dotnet/api/microsoft.servicebus.nettcprelaybinding) |Пространство имен |Нет ограничений на размер сообщения. |Без ограничений |
 
 ### <a name="does-relay-have-any-usage-quotas"></a>Есть ли у ретранслятора квоты использования?
 По умолчанию для любой облачной службы Майкрософт устанавливается квота совокупного месячного использования в рамках всех подписок клиента. Мы понимаем, что в некоторых случаях вам может потребоваться больше, чем разрешено этими ограничениями. Вы можете в любой момент обратиться в службу поддержки клиентов и договориться об изменении квот в соответствии с вашими потребностями. Для служебной шины установлены следующие квоты общего использования:
@@ -128,12 +117,12 @@ Move-AzResource -DestinationResourceGroupName 'targetRG' -DestinationSubscriptio
 Описание распространенных исключений и сведения о действиях, которые можно предпринять, см. в статье [Исключения ретранслятора][Relay exceptions].
 
 ### <a name="what-is-a-shared-access-signature-and-which-languages-can-i-use-to-generate-a-signature"></a>Что такое подписанный URL-адрес? На каких языках можно создавать подписи?
-Подписанные URL-адреса (SAS) представляют собой механизм аутентификации на базе алгоритма безопасного хэширования SHA-256 или URI. Сведения о создании собственных подписей в Node. js, PHP, Python, Java, C и C# см. в статье [Проверка подлинности служебной шины с помощью подписанных][Shared Access Signatures]URL.
+Подписанные URL-адреса (SAS) представляют собой механизм аутентификации на базе алгоритма безопасного хэширования SHA-256 или URI. Сведения о создании собственных подписей в Node.js, PHP, Python, Java, C и C# см. в статье [Проверка подлинности служебной шины с помощью подписанных][Shared Access Signatures]URL.
 
 ### <a name="is-it-possible-to-whitelist-relay-endpoints"></a>Можно ли добавить конечные точки ретрансляции в список разрешений?
 Да. Клиент ретрансляции устанавливает подключения к службе ретрансляции Azure, используя полные доменные имена. Пользователи могут добавить запись для `*.servicebus.windows.net` в брандмауэры, поддерживающие добавление в список разрешений DNS.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Создание пространства имен](relay-create-namespace-portal.md)
 * [Начало работы с .NET](relay-hybrid-connections-dotnet-get-started.md)
 * [Приступая к работе с Node](relay-hybrid-connections-node-get-started.md)

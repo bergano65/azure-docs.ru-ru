@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: overview
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/20/2020
-ms.openlocfilehash: 1dd716a279f7a09e7d9152ee34ff5c7bdac201dc
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: a8d164dd50ac190d2bc14fea70cde20bfdb89361
+ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82188248"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85849908"
 ---
 # <a name="what-is-ml-services-in-azure-hdinsight"></a>Общие сведения о службах машинного обучения в HDInsight
 
@@ -114,7 +114,9 @@ Microsoft Machine Learning Server доступен в качестве вари�
 
 Объем памяти, доступной для Служб машинного обучения, можно изменить с помощью параметров Hadoop в вызове **RxHadoopMR**:
 
-    hadoopSwitches = "-libjars /etc/hadoop/conf -Dmapred.job.map.memory.mb=6656"  
+```r
+hadoopSwitches = "-libjars /etc/hadoop/conf -Dmapred.job.map.memory.mb=6656"
+```
 
 ### <a name="scale-your-cluster"></a>Масштабирование кластера
 

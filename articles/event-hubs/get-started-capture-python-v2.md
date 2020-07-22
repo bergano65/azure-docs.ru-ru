@@ -1,23 +1,14 @@
 ---
 title: Чтение собранных данных в службе "Центры событий Azure" из приложения Python (последняя версия)
 description: В этой статье показано, как написать код Python для сбора данных, отправляемых в концентратор событий и считывания собранных данных о событиях из учетной записи хранения Azure.
-services: event-hubs
-documentationcenter: ''
-author: spelluru
-editor: ''
-ms.service: event-hubs
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: quickstart
-ms.date: 01/30/2020
-ms.author: spelluru
-ms.openlocfilehash: 191a2246afdc60953d8c353f9ccdc2339130f910
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.date: 06/23/2020
+ms.openlocfilehash: 752a582e59b438f7449d6722b222969dc641880c
+ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82159341"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85315285"
 ---
 # <a name="capture-event-hubs-data-in-azure-storage-and-read-it-by-using-python-azure-eventhub-version-5"></a>Запись данных Центров событий в Хранилище Azure и их чтение с помощью Python (azure-eventhub версии 5)
 
@@ -37,7 +28,7 @@ ms.locfileid: "82159341"
 > * Отправьте данные в концентратор событий с помощью скрипта Python.
 > * Прочитайте и обработайте файлы, полученные от функции "Сбор" службы "Центры событий", с помощью другого скрипта Python.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 - Python 2.7, и 3.5 или более поздней версии, с установленным и обновленным PIP.  
 - Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начать работу.  

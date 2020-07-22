@@ -5,14 +5,14 @@ author: markjbrown
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: sample
-ms.date: 03/17/2020
+ms.date: 05/13/2020
 ms.author: mjbrown
-ms.openlocfilehash: e4cf09ede1ea532d784b6d486cdb54d510d13652
-ms.sourcegitcommit: 07d62796de0d1f9c0fa14bfcc425f852fdb08fb1
+ms.openlocfilehash: 29a5617e9d3ec90af49cc3fb5129ada86bf172ec
+ms.sourcegitcommit: 958f086136f10903c44c92463845b9f3a6a5275f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80365647"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83714310"
 ---
 # <a name="create-a-container-with-indexing-turned-off-in-an-azure-cosmos-db-account-using-powershell"></a>Создание контейнера с отключенным индексированием в учетной записи Azure Cosmos DB с помощью PowerShell
 
@@ -39,10 +39,10 @@ Remove-AzResourceGroup -ResourceGroupName "myResourceGroup"
 | Get-Help | Примечания |
 |---|---|
 |**Azure Cosmos DB**| |
-| [New-AzCosmosDBAccount](https://docs.microsoft.com/powershell/module/az.cosmosdb/new-azcosmosdbaccount) | Создает учетную запись Cosmos DB. |
-| [Set-AzCosmosDBSqlDatabase](https://docs.microsoft.com/powershell/module/az.cosmosdb/set-azcosmosdbsqldatabase) | Создает новую или обновляет существующую базу данных SQL службы Cosmos DB. |
-| [New-AzCosmosDBSqlIndexingPolicy](https://docs.microsoft.com/powershell/module/az.cosmosdb/new-azcosmosdbsqlindexingpolicy) | Создает объект типа PSSqlIndexingPolicy, используемый в качестве параметра для Set-AzCosmosDBSqlContainer. |
-| [Set-AzCosmosDBSqlContainer](https://docs.microsoft.com/powershell/module/az.cosmosdb/set-azcosmosdbsqlcontainer) | Создает новый или обновляет существующий контейнер SQL службы Cosmos DB. |
+| [New-AzCosmosDBAccount](https://docs.microsoft.com/powershell/module/az.cosmosdb/new-azcosmosdbaccount) | Создание учетной записи Cosmos DB. |
+| [New-AzCosmosDBSqlDatabase](https://docs.microsoft.com/powershell/module/az.cosmosdb/new-azcosmosdbsqldatabase) | Создание базы данных SQL Cosmos DB. |
+| [New-AzCosmosDBSqlIndexingPolicy](https://docs.microsoft.com/powershell/module/az.cosmosdb/new-azcosmosdbsqlindexingpolicy) | Создание объекта PSSqlIndexingPolicy, который используется в качестве параметра для командлета New-AzCosmosDBSqlContainer. |
+| [New-AzCosmosDBSqlContainer](https://docs.microsoft.com/powershell/module/az.cosmosdb/new-azcosmosdbsqlcontainer) | Создание контейнера SQL в Cosmos DB. |
 |**Группы ресурсов Azure**| |
 | [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 |||

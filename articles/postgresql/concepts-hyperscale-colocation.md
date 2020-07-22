@@ -8,10 +8,9 @@ ms.subservice: hyperscale-citus
 ms.topic: conceptual
 ms.date: 05/06/2019
 ms.openlocfilehash: 7e4073ec45f4c21f33d20924a9948e72f961c7f8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74967343"
 ---
 # <a name="table-colocation-in-azure-database-for-postgresql--hyperscale-citus"></a>Совместное размещение таблиц в базе данных Azure для PostgreSQL — масштабирование (Цитус)
@@ -109,7 +108,7 @@ GROUP BY page_id ORDER BY count DESC LIMIT 10;
 
 ### <a name="distribute-tables-by-tenant"></a>Распределение таблиц по клиентам
 
-В масштабе Цитус строки с одинаковым значением столбца распределения гарантированно будут находиться на одном узле. Начиная с начала, мы можем создавать таблицы с `tenant_id` помощью в качестве столбца распределения.
+В масштабе Цитус строки с одинаковым значением столбца распределения гарантированно будут находиться на одном узле. Начиная с начала, мы можем создавать таблицы с помощью в `tenant_id` качестве столбца распределения.
 
 ```sql
 -- co-locate tables by using a common distribution column
@@ -138,6 +137,6 @@ GROUP BY page_id;
 
 В некоторых случаях необходимо изменить запросы и схемы таблиц, чтобы включить идентификатор клиента в ограничения UNIQUE и условия JOIN. Это изменение обычно является простым.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте, как данные клиента сохранятся в [учебнике по нескольким клиентам](tutorial-design-database-hyperscale-multi-tenant.md).

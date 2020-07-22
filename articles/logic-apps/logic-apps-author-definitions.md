@@ -7,13 +7,12 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 01/01/2018
 ms.openlocfilehash: 0f5f01c757bf651beddaa76fc3eb8046b21b31eb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75979396"
 ---
-# <a name="create-edit-or-extend-json-for-logic-app-workflow-definitions-in-azure-logic-apps"></a>Создание, изменение или расширение JSON для определений рабочих процессов приложения логики в Azure Logic Apps
+# <a name="create-edit-or-extend-json-for-logic-app-workflow-definitions-in-azure-logic-apps"></a>Создание, редактирование и расширение JSON для определений рабочего процесса приложений логики в Azure Logic Apps
 
 При создании корпоративных решений по интеграции с автоматизированными рабочими процессами на основе [Azure Logic Apps](../logic-apps/logic-apps-overview.md) для описания и проверки определений используется простой декларативный язык JSON (JavaScript Object Notation) и [схема WDL (языка определения рабочего процесса)](../logic-apps/logic-apps-workflow-definition-language.md). Эти форматы позволяют легко читать и понимать определения приложений логики даже без глубоких знаний о программировании.
 Если вы хотите автоматизировать создание и развертывание приложений логики, включите определения приложений логики в [шаблоны Azure Resource Manager](../azure-resource-manager/templates/overview.md) в качестве [ресурсов Azure](../azure-resource-manager/management/overview.md).
@@ -127,11 +126,11 @@ Logic Apps имеет различные функции для работы со
 "uri": "https://www.example.com/?id=@{replace(replace(base64(substring(parameters('order').companyName,5,sub(length(parameters('order').companyName), 5) )),'+','-') ,'/' ,'_' )}"
 ```
 
-1. [`length()`](../logic-apps/logic-apps-workflow-definition-language.md) Получите имя компании, чтобы получить общее количество символов.
+1. Получите [`length()`](../logic-apps/logic-apps-workflow-definition-language.md) имя компании, чтобы получить общее количество символов.
 
 2. Чтобы получить более короткую строку, вычтите `5`.
 
-3. Теперь получите [`substring()`](../logic-apps/logic-apps-workflow-definition-language.md).
+3. Теперь получите [`substring()`](../logic-apps/logic-apps-workflow-definition-language.md) .
 Начнем с индекса `5` и перейдем к оставшейся части строки.
 
 4. Преобразовать эту подстроку в [`base64()`](../logic-apps/logic-apps-workflow-definition-language.md) строку.
@@ -147,7 +146,7 @@ Logic Apps имеет различные функции для работы со
 Например, этот рабочий процесс определяет некоторые категории как параметры и схему, которая сопоставляет категории с определенным URL-адресом.
 Сначала рабочий процесс получает список статей. Затем он использует схему для поиска соответствия URL-адреса и категории для каждой статьи.
 
-*   [`intersection()`](../logic-apps/logic-apps-workflow-definition-language.md) Функция проверяет, соответствует ли категория известной определенной категории.
+*   [`intersection()`](../logic-apps/logic-apps-workflow-definition-language.md)Функция проверяет, соответствует ли категория известной определенной категории.
 
 *   После получения соответствующей категории пример извлекает элемент из схемы, используя квадратные скобки: `parameters[...]`.
 
@@ -240,7 +239,7 @@ Logic Apps имеет различные функции для работы со
 
    Если первое значение меньше второго, то это значит, что с момента первоначального размещения заказа прошло больше секунды.
 
-Для форматирования дат можно использовать модули форматирования строк. Например, чтобы получить RFC1123, используйте [`utcnow('r')`](../logic-apps/logic-apps-workflow-definition-language.md).
+Для форматирования дат можно использовать модули форматирования строк. Например, чтобы получить RFC1123, используйте [`utcnow('r')`](../logic-apps/logic-apps-workflow-definition-language.md) .
 См. дополнительные сведения о [форматировании даты](../logic-apps/logic-apps-workflow-definition-language.md).
 
 ``` json

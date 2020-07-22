@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/22/2019
-ms.openlocfilehash: 8d68a8d6d28d79c50a92cd2d18df2abab26c30ec
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 983091ac0d1f9fdcb33e64d2af521ec3442a040b
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79274727"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86515518"
 ---
 # <a name="syslog-data-sources-in-azure-monitor"></a>Источники данных Syslog в Azure Monitor
 Системный журнал (Syslog) — это протокол ведения журнала событий, который обычно используется в Linux. Приложения отправляют сообщения, которые могут храниться на локальном компьютере или передаваться в сборщик системного журнала. При установке агента Log Analytics для Linux он настраивает локальную управляющую программу Syslog для пересылки сообщений в агент. Затем агент отправляет сообщение в Azure Monitor, где создается соответствующая запись.  
@@ -27,7 +27,7 @@ ms.locfileid: "79274727"
 
 * кернинг
 * пользователь
-* почта
+* mail
 * daemon
 * auth
 * syslog
@@ -47,7 +47,7 @@ ms.locfileid: "79274727"
 ### <a name="configure-syslog-in-the-azure-portal"></a>Настройка системного журнала на портале Azure
 Настройте системный журнал в [меню "Данные" раздела "Расширенные параметры"](agent-data-sources.md#configuring-data-sources). Эта конфигурация передается в файл конфигурации на каждом агенте Linux.
 
-Чтобы добавить новое средство, сначала выберите параметр **Применить приведенную ниже конфигурацию к моим компьютерам** , а затем введите имя и нажмите кнопку **+**. Для каждого устройства будут собираться сообщения только с выбранным уровнем серьезности.  Укажите уровни серьезности сообщений, которые хотите получать от соответствующего устройства. Дополнительные критерии для фильтрации сообщений задавать нельзя.
+Чтобы добавить новое средство, сначала выберите параметр **Применить приведенную ниже конфигурацию к моим компьютерам** , а затем введите имя и нажмите кнопку **+** . Для каждого устройства будут собираться сообщения только с выбранным уровнем серьезности.  Укажите уровни серьезности сообщений, которые хотите получать от соответствующего устройства. Дополнительные критерии для фильтрации сообщений задавать нельзя.
 
 ![Настройка системного журнала](media/data-sources-syslog/configure.png)
 
@@ -64,87 +64,93 @@ ms.locfileid: "79274727"
 #### <a name="rsyslog"></a>rsyslog
 Файл конфигурации для rsyslog находится в расположении **/etc/rsyslog.d/95-omsagent.conf**. Его содержимое по умолчанию приведено ниже. В данном случае собираются сообщения системного журнала, отправленные из локального агента для всех устройств и имеющие уровень серьезности "предупреждение" или выше.
 
-    kern.warning       @127.0.0.1:25224
-    user.warning       @127.0.0.1:25224
-    daemon.warning     @127.0.0.1:25224
-    auth.warning       @127.0.0.1:25224
-    syslog.warning     @127.0.0.1:25224
-    uucp.warning       @127.0.0.1:25224
-    authpriv.warning   @127.0.0.1:25224
-    ftp.warning        @127.0.0.1:25224
-    cron.warning       @127.0.0.1:25224
-    local0.warning     @127.0.0.1:25224
-    local1.warning     @127.0.0.1:25224
-    local2.warning     @127.0.0.1:25224
-    local3.warning     @127.0.0.1:25224
-    local4.warning     @127.0.0.1:25224
-    local5.warning     @127.0.0.1:25224
-    local6.warning     @127.0.0.1:25224
-    local7.warning     @127.0.0.1:25224
+```config
+kern.warning       @127.0.0.1:25224
+user.warning       @127.0.0.1:25224
+daemon.warning     @127.0.0.1:25224
+auth.warning       @127.0.0.1:25224
+syslog.warning     @127.0.0.1:25224
+uucp.warning       @127.0.0.1:25224
+authpriv.warning   @127.0.0.1:25224
+ftp.warning        @127.0.0.1:25224
+cron.warning       @127.0.0.1:25224
+local0.warning     @127.0.0.1:25224
+local1.warning     @127.0.0.1:25224
+local2.warning     @127.0.0.1:25224
+local3.warning     @127.0.0.1:25224
+local4.warning     @127.0.0.1:25224
+local5.warning     @127.0.0.1:25224
+local6.warning     @127.0.0.1:25224
+local7.warning     @127.0.0.1:25224
+```
 
 Устройство можно удалить, выполнив удаление соответствующего раздела в файле конфигурации. Можно ограничить уровни серьезности для сообщений, собираемых с конкретного устройства, изменив соответствующую запись устройства. Например, чтобы ограничить сообщения с пользовательского устройства уровнем серьезности "ошибка" или выше, необходимо изменить соответствующую строку в файле конфигурации таким образом:
 
-    user.error    @127.0.0.1:25224
-
+```config
+user.error    @127.0.0.1:25224
+```
 
 #### <a name="syslog-ng"></a>syslog-ng
 Файл конфигурации для syslog-ng находится в расположении **/etc/syslog-ng/syslog-ng.conf**.  Его содержимое по умолчанию приведено ниже. В данном случае собираются сообщения системного журнала, отправленные из локального агента для всех устройств и всех уровней серьезности.   
 
-    #
-    # Warnings (except iptables) in one file:
-    #
-    destination warn { file("/var/log/warn" fsync(yes)); };
-    log { source(src); filter(f_warn); destination(warn); };
+```config
+#
+# Warnings (except iptables) in one file:
+#
+destination warn { file("/var/log/warn" fsync(yes)); };
+log { source(src); filter(f_warn); destination(warn); };
 
-    #OMS_Destination
-    destination d_oms { udp("127.0.0.1" port(25224)); };
+#OMS_Destination
+destination d_oms { udp("127.0.0.1" port(25224)); };
 
-    #OMS_facility = auth
-    filter f_auth_oms { level(alert,crit,debug,emerg,err,info,notice,warning) and facility(auth); };
-    log { source(src); filter(f_auth_oms); destination(d_oms); };
+#OMS_facility = auth
+filter f_auth_oms { level(alert,crit,debug,emerg,err,info,notice,warning) and facility(auth); };
+log { source(src); filter(f_auth_oms); destination(d_oms); };
 
-    #OMS_facility = authpriv
-    filter f_authpriv_oms { level(alert,crit,debug,emerg,err,info,notice,warning) and facility(authpriv); };
-    log { source(src); filter(f_authpriv_oms); destination(d_oms); };
+#OMS_facility = authpriv
+filter f_authpriv_oms { level(alert,crit,debug,emerg,err,info,notice,warning) and facility(authpriv); };
+log { source(src); filter(f_authpriv_oms); destination(d_oms); };
 
-    #OMS_facility = cron
-    filter f_cron_oms { level(alert,crit,debug,emerg,err,info,notice,warning) and facility(cron); };
-    log { source(src); filter(f_cron_oms); destination(d_oms); };
+#OMS_facility = cron
+filter f_cron_oms { level(alert,crit,debug,emerg,err,info,notice,warning) and facility(cron); };
+log { source(src); filter(f_cron_oms); destination(d_oms); };
 
-    #OMS_facility = daemon
-    filter f_daemon_oms { level(alert,crit,debug,emerg,err,info,notice,warning) and facility(daemon); };
-    log { source(src); filter(f_daemon_oms); destination(d_oms); };
+#OMS_facility = daemon
+filter f_daemon_oms { level(alert,crit,debug,emerg,err,info,notice,warning) and facility(daemon); };
+log { source(src); filter(f_daemon_oms); destination(d_oms); };
 
-    #OMS_facility = kern
-    filter f_kern_oms { level(alert,crit,debug,emerg,err,info,notice,warning) and facility(kern); };
-    log { source(src); filter(f_kern_oms); destination(d_oms); };
+#OMS_facility = kern
+filter f_kern_oms { level(alert,crit,debug,emerg,err,info,notice,warning) and facility(kern); };
+log { source(src); filter(f_kern_oms); destination(d_oms); };
 
-    #OMS_facility = local0
-    filter f_local0_oms { level(alert,crit,debug,emerg,err,info,notice,warning) and facility(local0); };
-    log { source(src); filter(f_local0_oms); destination(d_oms); };
+#OMS_facility = local0
+filter f_local0_oms { level(alert,crit,debug,emerg,err,info,notice,warning) and facility(local0); };
+log { source(src); filter(f_local0_oms); destination(d_oms); };
 
-    #OMS_facility = local1
-    filter f_local1_oms { level(alert,crit,debug,emerg,err,info,notice,warning) and facility(local1); };
-    log { source(src); filter(f_local1_oms); destination(d_oms); };
+#OMS_facility = local1
+filter f_local1_oms { level(alert,crit,debug,emerg,err,info,notice,warning) and facility(local1); };
+log { source(src); filter(f_local1_oms); destination(d_oms); };
 
-    #OMS_facility = mail
-    filter f_mail_oms { level(alert,crit,debug,emerg,err,info,notice,warning) and facility(mail); };
-    log { source(src); filter(f_mail_oms); destination(d_oms); };
+#OMS_facility = mail
+filter f_mail_oms { level(alert,crit,debug,emerg,err,info,notice,warning) and facility(mail); };
+log { source(src); filter(f_mail_oms); destination(d_oms); };
 
-    #OMS_facility = syslog
-    filter f_syslog_oms { level(alert,crit,debug,emerg,err,info,notice,warning) and facility(syslog); };
-    log { source(src); filter(f_syslog_oms); destination(d_oms); };
+#OMS_facility = syslog
+filter f_syslog_oms { level(alert,crit,debug,emerg,err,info,notice,warning) and facility(syslog); };
+log { source(src); filter(f_syslog_oms); destination(d_oms); };
 
-    #OMS_facility = user
-    filter f_user_oms { level(alert,crit,debug,emerg,err,info,notice,warning) and facility(user); };
-    log { source(src); filter(f_user_oms); destination(d_oms); };
+#OMS_facility = user
+filter f_user_oms { level(alert,crit,debug,emerg,err,info,notice,warning) and facility(user); };
+log { source(src); filter(f_user_oms); destination(d_oms); };
+```
 
 Устройство можно удалить, выполнив удаление соответствующего раздела в файле конфигурации. Можно ограничить уровни серьезности для сообщений, собираемых с конкретного устройства, удалив их из его списка.  Например, чтобы ограничить сообщения с пользовательского устройства только уровнями серьезности "оповещение" и "критический", необходимо изменить соответствующий раздел в файле конфигурации таким образом:
 
-    #OMS_facility = user
-    filter f_user_oms { level(alert,crit) and facility(user); };
-    log { source(src); filter(f_user_oms); destination(d_oms); };
-
+```config
+#OMS_facility = user
+filter f_user_oms { level(alert,crit) and facility(user); };
+log { source(src); filter(f_user_oms); destination(d_oms); };
+```
 
 ### <a name="collecting-data-from-additional-syslog-ports"></a>Сбор данных из дополнительных портов системного журнала
 Агент Log Analytics прослушивает сообщения Syslog на локальном клиенте через порт 25224.  При установке агента применяется конфигурация системного журнала по умолчанию. Файл конфигурации расположен в следующем расположении:
@@ -156,16 +162,17 @@ ms.locfileid: "79274727"
 
 * Файл конфигурации FluentD должен быть новым и располагаться в папке `/etc/opt/microsoft/omsagent/conf/omsagent.d`. Замените значение записи **port** собственным номером порта.
 
-        <source>
-          type syslog
-          port %SYSLOG_PORT%
-          bind 127.0.0.1
-          protocol_type udp
-          tag oms.syslog
-        </source>
-        <filter oms.syslog.**>
-          type filter_syslog
-        </filter>
+    ```xml
+    <source>
+        type syslog
+        port %SYSLOG_PORT%
+        bind 127.0.0.1
+        protocol_type udp
+        tag oms.syslog
+    </source>
+    <filter oms.syslog.**>
+        type filter_syslog
+    ```
 
 * Для rsyslog в папке `/etc/rsyslog.d/` необходимо создать файл конфигурации. Замените значение %SYSLOG_PORT% собственным номером порта.  
 
@@ -173,11 +180,13 @@ ms.locfileid: "79274727"
     > Если изменить это значение в файле конфигурации `95-omsagent.conf`, он перезаписывается, когда агент применяет конфигурацию по умолчанию.
     >
 
-        # OMS Syslog collection for workspace %WORKSPACE_ID%
-        kern.warning              @127.0.0.1:%SYSLOG_PORT%
-        user.warning              @127.0.0.1:%SYSLOG_PORT%
-        daemon.warning            @127.0.0.1:%SYSLOG_PORT%
-        auth.warning              @127.0.0.1:%SYSLOG_PORT%
+    ```config
+    # OMS Syslog collection for workspace %WORKSPACE_ID%
+    kern.warning              @127.0.0.1:%SYSLOG_PORT%
+    user.warning              @127.0.0.1:%SYSLOG_PORT%
+    daemon.warning            @127.0.0.1:%SYSLOG_PORT%
+    auth.warning              @127.0.0.1:%SYSLOG_PORT%
+    ```
 
 * Конфигурацию syslog-ng следует изменить. Для этого скопируйте пример конфигурации ниже и добавьте измененные параметры в конец файла конфигурации в папке `/etc/syslog-ng/`. **Не** используйте метку **%WORKSPACE_ID%_oms** или **%WORKSPACE_ID_OMS** по умолчанию. Чтобы различить изменения, определите собственную метку.  
 
@@ -185,9 +194,11 @@ ms.locfileid: "79274727"
     > Если изменить эти значения по умолчанию в файле конфигурации, он перезаписывается, когда агент применяет конфигурацию по умолчанию.
     >
 
-        filter f_custom_filter { level(warning) and facility(auth; };
-        destination d_custom_dest { udp("127.0.0.1" port(%SYSLOG_PORT%)); };
-        log { source(s_src); filter(f_custom_filter); destination(d_custom_dest); };
+    ```config
+    filter f_custom_filter { level(warning) and facility(auth; };
+    destination d_custom_dest { udp("127.0.0.1" port(%SYSLOG_PORT%)); };
+    log { source(s_src); filter(f_custom_filter); destination(d_custom_dest); };
+    ```
 
 После внесения изменений Syslog и службу агента Log Analytics следует перезапустить, чтобы изменения конфигурации вступили в силу.   
 
@@ -208,14 +219,14 @@ ms.locfileid: "79274727"
 ## <a name="log-queries-with-syslog-records"></a>Запросы к журналу для получения записей системного журнала
 В следующей таблице представлены различные примеры запросов к журналу, извлекающих записи из системного журнала.
 
-| query | Описание |
+| Запрос | Описание |
 |:--- |:--- |
 | Системный журнал |Все записи системного журнала. |
 | Syslog &#124; where SeverityLevel == "error" |Все записи системного журнала с уровнем серьезности "ошибка". |
 | Syslog &#124; summarize AggregatedValue = count() by Computer |Число записей системного журнала по компьютеру. |
 | Syslog &#124; summarize AggregatedValue = count() by Facility |Число записей системного журнала по устройству. |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше о [запросах журнала](../../azure-monitor/log-query/log-query-overview.md), которые можно применять для анализа данных, собираемых из источников данных и решений.
 * Используйте [настраиваемые поля](../../azure-monitor/platform/custom-fields.md) для анализа данных из записей системного журнала в отдельных полях.
 * [Настройте агенты Linux](../../azure-monitor/learn/quick-collect-linux-computer.md) для сбора других типов данных.

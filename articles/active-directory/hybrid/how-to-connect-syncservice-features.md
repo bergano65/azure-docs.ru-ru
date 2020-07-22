@@ -11,17 +11,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
-ms.date: 06/25/2018
+ms.topic: how-to
+ms.date: 05/18/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d3f6b698922440c6e3e9b488cca93ca8d98d9c59
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: db5dbef2b57fb89b33ea116d0373184cdade0ac5
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80983081"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85356769"
 ---
 # <a name="azure-ad-connect-sync-service-features"></a>Функции службы синхронизации Azure AD Connect
 
@@ -41,7 +41,7 @@ ms.locfileid: "80983081"
 
 Следующие параметры можно настроить с помощью `Set-MsolDirSyncFeature`:
 
-| DirSyncFeature | Добавление примечаний |
+| DirSyncFeature | Комментарий |
 | --- | --- |
 | [EnableSoftMatchOnUpn](#userprincipalname-soft-match) |Позволяет присоединять объекты по атрибуту userPrincipalName в дополнение к основному адресу SMTP. |
 | [SynchronizeUpnForManagedUsers](#synchronize-userprincipalname-updates) |Позволяет модулю синхронизации обновлять атрибут userPrincipalName для управляемых или лицензированных пользователей (не являющихся федеративными). |
@@ -55,14 +55,14 @@ ms.locfileid: "80983081"
 
 Следующие параметры настраиваются службой Azure AD Connect и не могут изменяться командлетом `Set-MsolDirSyncFeature`:
 
-| DirSyncFeature | Добавление примечаний |
+| DirSyncFeature | Комментарий |
 | --- | --- |
-| DeviceWriteback |[Azure AD Connect: включение обратной записи устройств](how-to-connect-device-writeback.md) |
+| DeviceWriteback |[Azure AD Connect: включение обратной записи устройств](how-to-connect-device-writeback.md) |
 | DirectoryExtensions |[Синхронизация Azure AD Connect: расширения каталогов](how-to-connect-sync-feature-directory-extensions.md) |
 | [DuplicateProxyAddressResiliency<br/>DuplicateUPNResiliency](#duplicate-attribute-resiliency) |Позволяет поместить атрибут, являющийся копией другого объекта, на карантин, вместо того чтобы прерывать весь процесс экспорта для этого объекта. |
 | Синхронизация хэша паролей |[Реализация синхронизации хэшированных паролей в службе синхронизации Azure AD Connect](how-to-connect-password-hash-synchronization.md) |
 |Сквозная проверка подлинности|[Вход пользователей с помощью сквозной проверки подлинности Azure Active Directory](how-to-connect-pta.md)|
-| UnifiedGroupWriteback |[Предварительная версия. Обратная запись групп](how-to-connect-preview.md#group-writeback) |
+| UnifiedGroupWriteback |Обратная запись групп|
 | UserWriteback |Не поддерживается в текущей версии. |
 
 ## <a name="duplicate-attribute-resiliency"></a>Устойчивость повторяющихся атрибутов
@@ -89,16 +89,16 @@ Set-MsolDirSyncFeature -Feature EnableSoftMatchOnUpn -Enable $true
 
 ## <a name="synchronize-userprincipalname-updates"></a>Синхронизация обновлений атрибута userPrincipalName
 
-Исторически обновления атрибута UserPrincipalName, использующего службу синхронизации из локальной среды, были заблокированы, если оба условия не были соблюдены.
+Ранее обновления атрибута userPrincipalName с помощью службы синхронизации из локальной среды блокировались, за исключением тех случаев, когда выполнялись два следующих условия:
 
 * пользователь является управляемым (нефедеративным);
 * пользователю не назначена лицензия.
 
 > [!NOTE]
-> С 2019 марта Синхронизация изменений имени участника-пользователя для учетных записей федеративных пользователей разрешена.
+> Начиная с марта 2019 г. разрешается синхронизировать изменения имени участника-пользователя для федеративных учетных записей пользователей.
 > 
 
-Включение этой функции позволяет модулю синхронизации обновлять userPrincipalName при изменении в локальной среде, а также использовать синхронизацию хэша паролей или сквозную проверку подлинности.
+Включение этой функции позволяет модулю синхронизации обновлять атрибут userPrincipalName при его изменении в локальной среде и при использовании синхронизации хэша паролей или сквозной аутентификации.
 
 Эта функция по умолчанию включена для создаваемых каталогов Azure AD. Чтобы увидеть, включена ли эта функция, выполните следующую команду:  
 
@@ -114,7 +114,7 @@ Set-MsolDirSyncFeature -Feature SynchronizeUpnForManagedUsers -Enable $true
 
 После включения этой функции существующие значения атрибут userPrincipalName останутся неизменными. Если в дальнейшем атрибут userPrincipalName изменится в локальной среде, то имя участника-пользователя будет обновлено при обычной синхронизации изменений для пользователей.  
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
-* [Синхронизация Azure AD Connect](how-to-connect-sync-whatis.md)
+* [Службы синхронизации Azure AD Connect](how-to-connect-sync-whatis.md)
 * [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

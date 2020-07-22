@@ -1,6 +1,6 @@
 ---
-title: Изменение текстовых модулей Runbook в службе автоматизации Azure
-description: В этой статье представлены различные процедуры для работы с модулями Runbook PowerShell и рабочих процессов PowerShell в службе автоматизации Azure с помощью текстового редактора.
+title: Изменение текстовых последовательностей runbook в службе автоматизации Azure
+description: В этой статье рассказывается, как использовать текстовый редактор службы автоматизации Azure для работы с последовательностями runbook PowerShell и рабочих процессов PowerShell.
 services: automation
 ms.service: automation
 ms.subservice: process-automation
@@ -9,69 +9,64 @@ ms.author: magoedte
 ms.date: 08/01/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: aef6a58d18c0d9c1b18915786dd6e3359c31eda0
-ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
+ms.openlocfilehash: c51ef23e27cd63d3706c104d1e39a14bf61c258e
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82855794"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86186356"
 ---
-# <a name="editing-textual-runbooks-in-azure-automation"></a>Изменение текстовых модулей Runbook в службе автоматизации Azure
+# <a name="edit-textual-runbooks-in-azure-automation"></a>Изменение текстовых последовательностей runbook в службе автоматизации Azure
 
-Текстовый редактор в службе автоматизации Azure можно использовать для изменения [модулей Runbook PowerShell](automation-runbook-types.md#powershell-runbooks) и [модулей Runbook рабочих процессов PowerShell](automation-runbook-types.md#powershell-workflow-runbooks). Этот редактор имеет стандартные функции других редакторов кода, таких как IntelliSense. Кроме того, в нем предусмотрены дополнительные специальные функции для доступа к ресурсам, общим для модулей Runbook. 
+Текстовый редактор в службе автоматизации Azure можно использовать для изменения [последовательностей runbook PowerShell](automation-runbook-types.md#powershell-runbooks) и [последовательностей runbook рабочих процессов PowerShell](automation-runbook-types.md#powershell-workflow-runbooks). Этот редактор имеет стандартные функции редакторов кода, таких как IntelliSense. В нем также используется цветовая маркировка и дополнительные специальные функции, предназначенные для упрощения доступа к стандартным ресурсам runbook. 
 
-Текстовый редактор включает функцию, позволяющую вставлять в модуль runbook код для командлетов, ресурсов и дочерних модулей. Вместо того чтобы вводить код самостоятельно, можно выбрать из списка доступных ресурсов, и редактор вставит соответствующий код в модуль Runbook.
+Текстовый редактор включает функцию, позволяющую вставлять в модуль runbook код для командлетов, ресурсов и дочерних модулей. Чтобы не вводить этот код самостоятельно, выберите его из списка доступных ресурсов, и редактор вставит соответствующий код в runbook.
 
-У каждого модуля Runbook в службе автоматизации Azure есть черновая и опубликованная версия. Вы можете изменить черновую версию модуля Runbook, а затем опубликовать ее для последующего использования. Опубликованную версию изменить нельзя. Дополнительные сведения см. [в статье публикация модуля Runbook](manage-runbooks.md#publish-a-runbook).
+У каждого модуля Runbook в службе автоматизации Azure есть черновая и опубликованная версия. Вы можете изменить черновую версию модуля Runbook, а затем опубликовать ее для последующего использования. Опубликованную версию изменить нельзя. Дополнительные сведения см. в разделе [Публикация последовательности runbook](manage-runbooks.md#publish-a-runbook).
 
-В этой статье подробно описано, как использовать этот редактор для выполнения разнообразных задач. Они неприменимы к [графическим модулям Runbook](automation-runbook-types.md#graphical-runbooks). Сведения о работе с этими модулями Runbook см. [в разделе графическая разработка в службе автоматизации Azure](automation-graphical-authoring-intro.md).
+В этой статье подробно описано, как использовать этот редактор для выполнения разнообразных задач. Инструкции для [графических последовательностей runbook](automation-runbook-types.md#graphical-runbooks) будут отличаться. Сведения о работе с такими последовательностями runbook приведены в статье [Графическая разработка в службе автоматизации Azure](automation-graphical-authoring-intro.md).
 
->[!NOTE]
->Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Инструкции по установке модуля Az в гибридной рабочей роли Runbook см. в статье об [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0). Чтобы обновить модули в учетной записи службы автоматизации, см. руководство по [обновлению модулей Azure PowerShell в службе автоматизации Azure](automation-update-azure-modules.md).
+## <a name="edit-a-runbook-with-the-azure-portal"></a>Изменение последовательности runbook с помощью портала Azure
 
-## <a name="editing-a-runbook-with-the-azure-portal"></a>Изменение модуля Runbook с помощью портал Azure
-
-Откройте модуль Runbook для изменения в текстовом редакторе, выполнив описанные ниже действия.
-
-1. В портал Azure выберите свою учетную запись службы автоматизации.
-2. В разделе **Автоматизация процессов**выберите **модули Runbook** , чтобы открыть список модулей Runbook.
-3. Выберите Runbook для редактирования и нажмите кнопку **изменить**.
+1. На портале Azure выберите свою учетную запись службы автоматизации.
+2. В разделе **Автоматизация процессов** выберите **Модули Runbook**, чтобы открыть список модулей.
+3. Выберите последовательность runbook, которую нужно изменить, и нажмите кнопку **Изменить**.
 4. Внесите изменения в модуль runbook.
-5. По завершении редактирования нажмите **Сохранить**.
-6. Нажмите кнопку **опубликовать** , если хотите опубликовать последнюю черновую версию модуля Runbook.
+5. Закончив изменения, нажмите кнопку **Сохранить** .
+6. Чтобы опубликовать последнюю черновую версию последовательности runbook, нажмите кнопку **Опубликовать**.
 
-### <a name="insert-a-cmdlet-into-a-runbook"></a>Вставка командлета в модуль Runbook
+### <a name="insert-a-cmdlet-into-a-runbook"></a>Вставка командлета в runbook
 
-1. На холсте текстового редактора поместите курсор в то место, где нужно поместить командлет.
+1. На холсте текстового редактора установите курсор в то место, куда нужно вставить командлет.
 2. Разверните узел **Командлеты** в элементе управления «Библиотека».
-3. Разверните модуль, содержащий используемый командлет.
-4. Щелкните правой кнопкой мыши имя командлета, которое нужно вставить, и выберите **Добавить на холст**. Если у командлета несколько наборов параметров, редактор добавляет набор по умолчанию. Вы также можете развернуть командлет и выбрать другой набор параметров.
-5. Обратите внимание, что код для командлета вставляется со всем списком параметров.
-6. Укажите соответствующее значение вместо значения, заключенного в угловые скобки (<>), для всех обязательных параметров. Удалите все ненужные параметры.
+3. Откройте модуль, в котором находится нужный командлет.
+4. Щелкните правой кнопкой мыши имя командлета, который нужно вставить, и выберите **Добавить на холст**. Если у командлета больше одного набора параметров, редактор добавит набор параметров по умолчанию. Вы также можете развернуть командлет и выбрать другой набор параметров.
+5. Обратите внимание, что код для командлета вставляется с полным списком параметров.
+6. Для всех необходимых параметров укажите нужное значение вместо значения, заключенного в фигурные скобки <>. Удалите ненужные параметры.
 
-### <a name="insert-code-for-a-child-runbook-into-a-runbook"></a>Вставка кода для дочернего модуля Runbook в Runbook
+### <a name="insert-code-for-a-child-runbook-into-a-runbook"></a>Вставка кода для дочерней последовательности runbook в последовательность runbook
 
-1. На холсте текстового редактора поместите курсор в то место, куда нужно поместить код для [дочернего модуля Runbook](automation-child-runbooks.md).
+1. На холсте текстового редактора установите курсор в то место, куда нужно вставить код для [дочерней последовательности runbook](automation-child-runbooks.md).
 2. Разверните узел **Модули Runbook** в элементе управления «Библиотека».
 3. Щелкните правой кнопкой мыши модуль runbook, который нужно вставить, и выберите **Добавить на холст**.
 4. Код для дочернего модуля Runbook вставляется со всеми заполнителями для всех параметров модуля Runbook.
 5. Замените заполнители на соответствующие значения для каждого параметра.
 
-### <a name="insert-an-asset-into-a-runbook"></a>Вставка ресурса в модуль Runbook
+### <a name="insert-an-asset-into-a-runbook"></a>Вставка ресурса в runbook
 
-1. В элементе управления Canvas текстового редактора поместите курсор в то место, куда нужно поместить код для дочернего модуля Runbook.
+1. На холсте текстового редактора установите курсор в то место, куда нужно вставить код для дочерней последовательности runbook.
 2. Разверните узел **Ресурс-контейнеры** в элементе управления «Библиотека».
 3. Разверните узел для нужного типа ресурса.
-4. Щелкните правой кнопкой мыши имя ресурса, которое нужно вставить, и выберите **Добавить на холст**. Для [переменных ресурсов](automation-variables.md)выберите либо **Добавить "получить переменную" к холсту** , либо **Добавить "задать переменную" на холст**, в зависимости от того, требуется ли получить или задать переменную.
-5. Обратите внимание, что код ресурса вставляется в модуль Runbook.
+4. Щелкните правой кнопкой мыши имя ресурса, который нужно вставить, и выберите **Добавить на холст**. Для [ресурсов-контейнеров переменных](./shared-resources/variables.md) выберите **Добавить "Получить переменную" на холст** или **Добавить "Установить переменную" на холст** в зависимости от того, нужно ли вам получить или задать переменную.
+5. Обратите внимание, что код для ресурса вставляется в последовательность runbook.
 
-## <a name="editing-an-azure-automation-runbook-using-windows-powershell"></a>Изменение модуля Runbook службы автоматизации Azure с помощью Windows PowerShell
+## <a name="edit-an-azure-automation-runbook-using-windows-powershell"></a>Изменение последовательности runbook в службе автоматизации Azure с помощью Windows PowerShell
 
-Чтобы изменить модуль Runbook с помощью Windows PowerShell, воспользуйтесь редактором по своему усмотрению и сохраните модуль Runbook в **PS1** -файл. Для получения содержимого модуля Runbook можно использовать командлет [Export-азаутоматионрунбук](/powershell/module/Az.Automation/Export-AzAutomationRunbook) . С помощью командлета [Import-азаутоматионрунбук](/powershell/module/Az.Automation/import-azautomationrunbook) можно заменить существующий черновик Runbook на измененный.
+Чтобы изменить последовательность runbook с помощью Windows PowerShell, используйте любой редактор и сохраните ее в виде файла **PS1**. Для получения содержимого последовательности runbook можно использовать командлет [Export-AzAutomationRunbook](/powershell/module/Az.Automation/Export-AzAutomationRunbook). Вы можете использовать командлет [Import-AzAutomationRunbook](/powershell/module/Az.Automation/import-azautomationrunbook), чтобы заменить существующую последовательность runbook на измененную.
 
-### <a name="retrieve-the-contents-of-a-runbook-using-windows-powershell"></a>Получение содержимого модуля Runbook с помощью Windows PowerShell
+### <a name="retrieve-the-contents-of-a-runbook-using-windows-powershell"></a>Извлечение содержимого последовательности runbook с помощью Windows PowerShell
 
-Команды в приведенном ниже примере показывают, как извлечь сценарий для модуля и сохранить его в файл сценария. В этом примере извлекается черновая версия. Можно также получить опубликованную версию модуля Runbook, хотя эта версия не может быть изменена.
+Команды в приведенном ниже примере показывают, как извлечь сценарий для модуля и сохранить его в файл сценария. В этом примере извлекается черновая версия. Извлечь можно также опубликованную версию последовательности runbook, но изменить ее нельзя.
 
 ```powershell-interactive
 $resourceGroupName = "MyResourceGroup"
@@ -82,7 +77,7 @@ $scriptFolder = "c:\runbooks"
 Export-AzAutomationRunbook -Name $runbookName -AutomationAccountName $automationAccountName -ResourceGroupName $resourceGroupName -OutputFolder $scriptFolder -Slot Draft
 ```
 
-### <a name="change-the-contents-of-a-runbook-using-windows-powershell"></a>Изменение содержимого модуля Runbook с помощью Windows PowerShell
+### <a name="change-the-contents-of-a-runbook-using-windows-powershell"></a>Изменение содержимого последовательности runbook с помощью Windows PowerShell
 
 Команды в приведенном ниже примере показывают, как заменить существующее содержимое модуля Runbook на содержимое файла сценария. 
 
@@ -96,14 +91,14 @@ Import-AzAutomationRunbook -Path "$scriptfolder\Hello-World.ps1" -Name $runbookN
 Publish-AzAutomationRunbook -Name $runbookName -AutomationAccountName $automationAccountName -ResourceGroupName $resourceGroupName
 ```
 
-## <a name="related-articles"></a>Похожие статьи
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Управление модулями runbook в службе автоматизации Azure](manage-runbooks.md)
-* [Изучение рабочего процесса PowerShell](automation-powershell-workflow.md)
-* [Графическая разработка в службе автоматизации Azure](automation-graphical-authoring-intro.md)
-* [Сертификаты](automation-certificates.md)
-* [Подключения](automation-connections.md)
-* [Учетные данные](automation-credentials.md)
-* [Расписания](automation-schedules.md)
-* [Среды](automation-variables.md)
-* [Справочник по командлетам PowerShell](https://docs.microsoft.com/powershell/module/az.automation/?view=azps-3.7.0#automation)
+* [Управление последовательностями runbook в службе автоматизации Azure.](manage-runbooks.md)
+* [Изучение рабочего процесса PowerShell.](automation-powershell-workflow.md)
+* [Графическая разработка в службе автоматизации Azure.](automation-graphical-authoring-intro.md)
+* [Сертификаты.](./shared-resources/certificates.md)
+* [Соединения](automation-connections.md).
+* [Учетные данные](./shared-resources/credentials.md).
+* [Расписания](./shared-resources/schedules.md).
+* [Переменные](./shared-resources/variables.md).
+* [Справочник по командлетам PowerShell.](/powershell/module/az.automation/?view=azps-3.7.0#automation)

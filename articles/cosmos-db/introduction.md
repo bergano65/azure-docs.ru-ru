@@ -6,12 +6,12 @@ ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: overview
 ms.date: 10/23/2019
-ms.openlocfilehash: 6292c3c2d928581d0564fe457342ea7b1e17111c
-ms.sourcegitcommit: 7d8158fcdcc25107dfda98a355bf4ee6343c0f5c
+ms.openlocfilehash: bfac783fcb8ce88977fc8d97f821a7350f57aab8
+ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80983030"
+ms.lasthandoff: 06/20/2020
+ms.locfileid: "85118582"
 ---
 # <a name="welcome-to-azure-cosmos-db"></a>Вас приветствует Azure Cosmos DB
 
@@ -24,7 +24,7 @@ Azure Cosmos DB — это глобально распределенная мн
 > [!div class="nextstepaction"]
 > [Бесплатная пробная версия Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/)
 
-![Cosmos DB — это глобально распределенная служба базы данных Майкрософт с гибкой масштабируемостью, гарантированно низкой задержкой, пятью моделями согласованности и универсальными соглашениями об уровне обслуживания.](./media/introduction/azure-cosmos-db.png)
+:::image type="content" source="./media/introduction/azure-cosmos-db.png" alt-text="Cosmos DB — это глобально распределенная служба базы данных Майкрософт с гибким горизонтальным увеличением масштаба, гарантированно низкой задержкой, пятью моделями согласованности и универсальными соглашениями об уровне обслуживания." border="false":::
 
 ## <a name="key-benefits"></a>Основные преимущества
 

@@ -11,10 +11,10 @@ ms.workload: big-data
 ms.date: 04/15/2020
 ms.custom: seodec18
 ms.openlocfilehash: 10616c8003d9bbbe42cb70bd1bac4193044907c0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81416992"
 ---
 # <a name="share-a-custom-view-using-a-parameterized-url"></a>Предоставление общего доступа к пользовательскому представлению с помощью параметризованного URL-адреса
@@ -29,7 +29,7 @@ ms.locfileid: "81416992"
 
 ## <a name="environment-id"></a>Идентификатор среды
 
-Параметр `environmentId=<guid>` указывает идентификатор целевой среды. Это компонент полного доменного имени для доступа к данным, и его можно найти в правом верхнем углу окна "Общие сведения о среде" в портал Azure. Это все, что предшествует `env.timeseries.azure.com`.
+Параметр `environmentId=<guid>` указывает идентификатор целевой среды. Это компонент полного доменного имени для доступа к данным, и его можно найти в правом верхнем углу окна "Общие сведения о среде" в портал Azure. Это все, что предшествует `env.timeseries.azure.com` .
 
 Пример параметра идентификатора среды: `?environmentId=10000000-0000-0000-0000-100000000108`.
 
@@ -49,7 +49,7 @@ ms.locfileid: "81416992"
 
 ### <a name="relative-time-values"></a>Относительные значения времени
 
-Для относительного значения времени используйте `relativeMillis=<value>`, где *значение* находится в миллисекундах JavaScript из самой последней метки времени, полученной от API.
+Для относительного значения времени используйте `relativeMillis=<value>` , где *значение* находится в миллисекундах JavaScript из самой последней метки времени, полученной от API.
 
 Например, `&relativeMillis=3600000` позволяет отобразить данные за последние 60 минут.
 
@@ -66,7 +66,7 @@ ms.locfileid: "81416992"
 
 ### <a name="optional-parameters"></a>Необязательные параметры
 
-`timeSeriesDefinitions=<collection of term objects>` Параметр задает термины предиката, которые будут отображаться в представлении Time Series Insights:
+`timeSeriesDefinitions=<collection of term objects>`Параметр задает термины предиката, которые будут отображаться в представлении Time Series Insights:
 
 | Параметр | Элемент URL-адреса | Описание |
 | --- | --- | --- |
@@ -80,16 +80,16 @@ ms.locfileid: "81416992"
 > Если `Events` выбрана мера **усесум** , то счетчик будет выбран по умолчанию.  
 > Если `Events` параметр не выбран, по умолчанию выбирается Average. |
 
-* Пара `multiChartStack=<true/false>` "ключ-значение" позволяет включить в диаграмму стек.
-* Пара `multiChartSameScale=<true/false>` "ключ-значение" обеспечивает одинаковую шкалу по оси Y для разных терминов в пределах необязательного параметра.  
-* `timeBucketUnit=<Unit>&timeBucketSize=<integer>` Позволяет настроить ползунок интервала, чтобы обеспечить более детализированное или более гладкое, более обобщенное представление диаграммы.  
-* `timezoneOffset=<integer>` Параметр позволяет задать часовой пояс для просматриваемой диаграммы в качестве смещения в формате UTC.
+* `multiChartStack=<true/false>`Пара "ключ-значение" позволяет включить в диаграмму стек.
+* `multiChartSameScale=<true/false>`Пара "ключ-значение" обеспечивает одинаковую шкалу по оси Y для разных терминов в пределах необязательного параметра.  
+* `timeBucketUnit=<Unit>&timeBucketSize=<integer>`Позволяет настроить ползунок интервала, чтобы обеспечить более детализированное или более гладкое, более обобщенное представление диаграммы.  
+* `timezoneOffset=<integer>`Параметр позволяет задать часовой пояс для просматриваемой диаграммы в качестве смещения в формате UTC.
 
 | Пары | Описание |
 | --- | --- |
-| `multiChartStack=false` | `true`параметр включен по умолчанию, `false` поэтому он передается в стек. |
-| `multiChartStack=false&multiChartSameScale=true` | Чтобы использовать одну и ту же шкалу оси Y для разных условий, должно быть включено наложение.  `false` Это по умолчанию, поэтому передача `true` включает эту функцию. |
-| `timeBucketUnit=<Unit>&timeBucketSize=<integer>` | Единицы измерения `days`= `hours`, `minutes`, `seconds`, `milliseconds`,.  Единицы всегда следует писать прописными буквами. </br> Определите количество единиц, передав нужное целое число для **timeBucketSize**.  |
+| `multiChartStack=false` | `true`параметр включен по умолчанию, поэтому он передается `false` в стек. |
+| `multiChartStack=false&multiChartSameScale=true` | Чтобы использовать одну и ту же шкалу оси Y для разных условий, должно быть включено наложение.  Это `false` по умолчанию, поэтому передача `true` включает эту функцию. |
+| `timeBucketUnit=<Unit>&timeBucketSize=<integer>` | Единицы измерения = `days` , `hours` ,, `minutes` `seconds` , `milliseconds` .  Единицы всегда следует писать прописными буквами. </br> Определите количество единиц, передав нужное целое число для **timeBucketSize**.  |
 | `timezoneOffset=-<integer>` | Значение целого числа всегда указывается в миллисекундах. |
 
 > [!NOTE]
@@ -132,7 +132,7 @@ https://insights.timeseries.azure.com/samples?environmentId=10000000-0000-0000-0
 
   [![Общее полное представление диаграммы.](media/parameterized-url/share-parameterized-url-full-chart.png)](media/parameterized-url/share-parameterized-url-full-chart.png#lightbox)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте, как [запрашивать данные с помощью C#](time-series-insights-query-data-csharp.md).
 

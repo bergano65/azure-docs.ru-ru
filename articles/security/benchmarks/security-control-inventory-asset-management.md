@@ -8,10 +8,10 @@ ms.date: 04/14/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
 ms.openlocfilehash: aece7278d134145e00b027c184f3817d5566e1e5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81408358"
 ---
 # <a name="security-control-inventory-and-asset-management"></a>Управление безопасностью: Инвентаризация и управление активами
@@ -24,17 +24,17 @@ ms.locfileid: "81408358"
 |--|--|--|
 | 6.1 | 1,1, 1,2, 1,3, 1,4, 9,1, 12,1 | Customer |
 
-Используйте граф ресурсов Azure для запроса или обнаружения всех ресурсов (например, вычислений, хранилища, сети, портов и протоколов и т. д.) в ваших подписках.  Обеспечьте соответствующие разрешения (чтение) в клиенте и перечислите все подписки Azure, а также ресурсы в ваших подписках.
+Используйте граф ресурсов Azure для запроса или обнаружения всех ресурсов (например, вычислений, хранилища, сети, портов и протоколов и т. д.) в ваших подписках.  Убедитесь в том, что в вашем клиенте есть соответствующие разрешения (на чтение) и вы можете перечислить все подписки Azure, а также ресурсы в ваших подписках.
 
-Хотя классические ресурсы Azure могут быть обнаружены с помощью графа ресурсов, настоятельно рекомендуется создавать и использовать Azure Resource Manager ресурсы, идущие вперед.
+Хотя классические ресурсы Azure можно обнаружить через Resource Graph, настоятельно рекомендуется в дальнейшем создавать и использовать ресурсы Azure Resource Manager.
 
-- [Создание запросов с помощью графа ресурсов Azure](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
+- [Как создавать запросы с помощью Azure Resource Graph](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
 
-- [Просмотр подписок Azure](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
+- [Как просматривать подписки Azure](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
 
 - [Общие сведения об Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview)
 
-## <a name="62-maintain-asset-metadata"></a>6,2: сохранение метаданных активов
+## <a name="62-maintain-asset-metadata"></a>6.2. Ведение метаданных активов
 
 | Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
@@ -44,17 +44,17 @@ ms.locfileid: "81408358"
 
 - [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
 
-## <a name="63-delete-unauthorized-azure-resources"></a>6,3: удалите неавторизованные ресурсы Azure
+## <a name="63-delete-unauthorized-azure-resources"></a>6.3. Удаление неавторизованных ресурсов Azure
 
 | Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
 | 6.3 | 1.6 | Customer |
 
-Используйте теги, группы управления и отдельные подписки, если это необходимо, для Организации и мониторинга ресурсов. Регулярно выверка инвентаризации и своевременное удаление неавторизованных ресурсов из подписки.
+Используйте теги, группы управления и отдельные подписки, если это необходимо, для Организации и мониторинга ресурсов. Регулярно сверяйте ресурсы, чтобы своевременно удалять неавторизованные ресурсы из подписки.
 
 - [Создание дополнительных подписок Azure](https://docs.microsoft.com/azure/billing/billing-create-subscription)
 
-- [Создание Группы управления](https://docs.microsoft.com/azure/governance/management-groups/create)
+- [Создание групп управления](https://docs.microsoft.com/azure/governance/management-groups/create)
 
 - [Создание и использование тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
 
@@ -66,7 +66,7 @@ ms.locfileid: "81408358"
 
 Создайте инвентаризацию утвержденных ресурсов Azure и утвержденного программного обеспечения для ресурсов вычислений в соответствии с потребностями Организации.
 
-## <a name="65-monitor-for-unapproved-azure-resources"></a>6,5: отслеживание неутвержденных ресурсов Azure
+## <a name="65-monitor-for-unapproved-azure-resources"></a>6.5. Отслеживание неутвержденных ресурсов Azure
 
 | Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
@@ -74,13 +74,13 @@ ms.locfileid: "81408358"
 
 Используйте политику Azure, чтобы ограничить тип ресурсов, которые могут быть созданы в ваших подписках.
 
-Используйте граф ресурсов Azure для запроса или обнаружения ресурсов в своих подписках.  Убедитесь, что все ресурсы Azure, представленные в окружении, утверждены.
+Используйте Azure Resource Graph для запроса или обнаружения ресурсов в подписках.  Убедитесь в том, что все ресурсы Azure, представленные в среде, утверждены.
 
-- [Настройка и управление политикой Azure](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+- [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
 
-- [Создание запросов с помощью Azure Graph](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
+- [Как создавать запросы с помощью Azure Graph](https://docs.microsoft.com/azure/governance/resource-graph/first-query-portal)
 
-## <a name="66-monitor-for-unapproved-software-applications-within-compute-resources"></a>6,6: отслеживание неутвержденных программных приложений в рамках ресурсов вычислений
+## <a name="66-monitor-for-unapproved-software-applications-within-compute-resources"></a>6.6. Отслеживание неутвержденных программных приложений в рамках ресурсов вычислений
 
 | Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
@@ -90,7 +90,7 @@ ms.locfileid: "81408358"
 
 - [Включение инвентаризации виртуальных машин Azure](https://docs.microsoft.com/azure/automation/automation-tutorial-installed-software)
 
-## <a name="67-remove-unapproved-azure-resources-and-software-applications"></a>6,7: удаление неутвержденных ресурсов Azure и программных приложений
+## <a name="67-remove-unapproved-azure-resources-and-software-applications"></a>6.7. Удаление неутвержденных ресурсов Azure и программных приложений
 
 | Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
@@ -104,7 +104,7 @@ ms.locfileid: "81408358"
 
 - [Включение инвентаризации виртуальных машин Azure](https://docs.microsoft.com/azure/automation/automation-tutorial-installed-software)
 
-## <a name="68-use-only-approved-applications"></a>6,8: Используйте только утвержденные приложения
+## <a name="68-use-only-approved-applications"></a>6.8. Использование только утвержденных приложений
 
 | Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
@@ -114,7 +114,7 @@ ms.locfileid: "81408358"
 
 - [Как использовать адаптивные элементы управления приложениями в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-adaptive-application)
 
-## <a name="69-use-only-approved-azure-services"></a>6,9: Используйте только утвержденные службы Azure
+## <a name="69-use-only-approved-azure-services"></a>6.9. Использование только утвержденных служб Azure
 
 | Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
@@ -122,9 +122,9 @@ ms.locfileid: "81408358"
 
 Используйте политику Azure, чтобы ограничить службы, которые можно подготавливать в вашей среде.
 
-- [Настройка и управление политикой Azure](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
+- [Настройка Политики Azure и управление ею](https://docs.microsoft.com/azure/governance/policy/tutorials/create-and-manage)
 
-- [Как отказаться от определенного типа ресурса с помощью политики Azure](https://docs.microsoft.com/azure/governance/policy/samples/not-allowed-resource-types)
+- [Как отказаться от определенного типа ресурса с помощью Политики Azure](https://docs.microsoft.com/azure/governance/policy/samples/not-allowed-resource-types)
 
 ## <a name="610-maintain-an-inventory-of-approved-software-titles"></a>6,10: ведение инвентаризации утвержденных наименований программного обеспечения
 
@@ -142,17 +142,17 @@ ms.locfileid: "81408358"
 
 | Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
-| 6.11 | 2,9 | Customer |
+| 6.11 | 2.9 | Customer |
 
 Используйте условный доступ Azure, чтобы ограничить возможность пользователей взаимодействовать с диспетчером ресурсов Azure, настроив "блокировать доступ" для приложения "Microsoft Azure Management".
 
 - [Настройка условного доступа для блокировки доступа к диспетчеру ресурсов Azure](https://docs.microsoft.com/azure/role-based-access-control/conditional-access-azure-management)
 
-## <a name="612-limit-users-ability-to-execute-scripts-within-compute-resources"></a>6,12: ограничьте возможность пользователей выполнять сценарии в ресурсах вычислений
+## <a name="612-limit-users-ability-to-execute-scripts-within-compute-resources"></a>6.12. Ограничение возможности пользователей выполнять сценарии в ресурсах вычислений
 
 | Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
-| 6,12 | 2,9 | Customer |
+| 6,12 | 2.9 | Customer |
 
 В зависимости от типа сценариев вы можете использовать конфигурации операционной системы или сторонние ресурсы, чтобы ограничить возможность пользователей выполнять сценарии в ресурсах вычислений Azure.  Можно также использовать адаптивные элементы управления приложениями центра безопасности Azure, чтобы гарантировать выполнение только авторизованного программного обеспечения и блокирование выполнения всех несанкционированных программ на виртуальных машинах Azure.
 
@@ -160,11 +160,11 @@ ms.locfileid: "81408358"
 
 - [Как использовать адаптивные элементы управления приложениями в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-adaptive-application)
 
-## <a name="613-physically-or-logically-segregate-high-risk-applications"></a>6,13: физическое или логическое разделение приложений с высоким риском
+## <a name="613-physically-or-logically-segregate-high-risk-applications"></a>6.13. Физическое или логическое разделение приложений с высоким риском
 
 | Идентификатор Azure | Идентификаторы CIS | Несет |
 |--|--|--|
-| 6,13 | 2,9 | Customer |
+| 6,13 | 2.9 | Customer |
 
 Программное обеспечение, необходимое для бизнес-операций, но которое может повысить риск для Организации, должно быть изолировано в собственной виртуальной машине и (или) виртуальной сети, а также быть достаточно защищено с помощью брандмауэра Azure или группы безопасности сети.
 
@@ -173,6 +173,6 @@ ms.locfileid: "81408358"
 - [Создание NSG с конфигурацией безопасности](https://docs.microsoft.com/azure/virtual-network/tutorial-filter-network-traffic)
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. следующий контроль безопасности: [Безопасная конфигурация](security-control-secure-configuration.md)

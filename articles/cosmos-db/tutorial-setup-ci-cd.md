@@ -3,16 +3,16 @@ title: Настройка конвейера CI/CD с использование
 description: Руководство по настройке рабочего процесса сборки и выпуска в Azure DevOps с использованием задачи сборки эмулятора Cosmos DB.
 author: deborahc
 ms.service: cosmos-db
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 01/28/2020
 ms.author: dech
 ms.reviewer: sngun
-ms.openlocfilehash: 521d5d8d587b39cf573dedc37ea9f6fd53646e66
-ms.sourcegitcommit: 27bbda320225c2c2a43ac370b604432679a6a7c0
+ms.openlocfilehash: 447f999f48edb9696c74ec5decb1109eefb964d7
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80410952"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86206968"
 ---
 # <a name="set-up-a-cicd-pipeline-with-the-azure-cosmos-db-emulator-build-task-in-azure-devops"></a>Настройка конвейера CI/CD с использованием задачи сборки эмулятора Azure Cosmos DB в Azure DevOps
 
@@ -26,26 +26,26 @@ ms.locfileid: "80410952"
 
 Чтобы использовать задачу сборки, нам нужно установить ее в организации Azure DevOps. Найдите расширение **Эмулятор Azure Cosmos DB** в [Marketplace](https://marketplace.visualstudio.com/items?itemName=azure-cosmosdb.emulator-public-preview) и щелкните **Получить бесплатно**.
 
-![Поиск и установка задачи сборки эмулятора Azure Cosmos DB из Marketplace в Azure DevOps](./media/tutorial-setup-ci-cd/addExtension_1.png)
+:::image type="content" source="./media/tutorial-setup-ci-cd/addExtension_1.png" alt-text="Поиск и установка задачи сборки эмулятора Azure Cosmos DB из Marketplace в Azure DevOps":::
 
 Теперь выберите организацию, в которой нужно установить это расширение. 
 
 > [!NOTE]
 > Чтобы установить расширение в организации Azure DevOps, нужно быть владельцем учетной записи или администратором коллекции проектов. Если у вас нет нужных разрешений, но вы являетесь участником учетной записи, попробуйте запросить расширения. [Подробнее.](https://docs.microsoft.com/azure/devops/marketplace/faq-extensions?view=vsts)
 
-![Выбор организации Azure DevOps, в которой нужно установить расширение](./media/tutorial-setup-ci-cd/addExtension_2.png)
+:::image type="content" source="./media/tutorial-setup-ci-cd/addExtension_2.png" alt-text="Выбор организации Azure DevOps, в которой нужно установить расширение":::
 
 ## <a name="create-a-build-definition"></a>Создание определения сборки
 
-Теперь, когда расширение установлено, войдите в учетную запись Azure DevOps и найдите проект на панели мониторинга проектов. Вы можете добавить [конвейер сборки](https://docs.microsoft.com/azure/devops/pipelines/get-started-designer?view=vsts&tabs=new-nav) в проект или изменить имеющийся. Если у вас уже есть конвейер сборки, переходите к разделу, посвященному [добавлению задачи конвейера сборки эмулятора в определение сборки](#addEmulatorBuildTaskToBuildDefinition).
+Теперь, когда расширение установлено, войдите в организацию Azure DevOps и найдите проект на панели мониторинга проектов. Вы можете добавить [конвейер сборки](https://docs.microsoft.com/azure/devops/pipelines/get-started-designer?view=vsts&tabs=new-nav) в проект или изменить имеющийся. Если у вас уже есть конвейер сборки, переходите к разделу, посвященному [добавлению задачи конвейера сборки эмулятора в определение сборки](#addEmulatorBuildTaskToBuildDefinition).
 
 1. Чтобы создать определение сборки, откройте в Azure DevOps вкладку **Сборки**. Щелкните **+Создать.** \> **Новый конвейер сборки**
 
-   ![Создание конвейера сборки](./media/tutorial-setup-ci-cd/CreateNewBuildDef_1.png)
+   :::image type="content" source="./media/tutorial-setup-ci-cd/CreateNewBuildDef_1.png" alt-text="Создание конвейера сборки":::
 
 2. Выберите нужный **источник**, **командный проект**, **репозиторий** и **ветвь по умолчанию для сборок вручную и по расписанию**. Выбрав необходимые параметры, щелкните **Продолжить**.
 
-   ![Выбор командного проекта, репозитория и ветви для конвейера сборки](./media/tutorial-setup-ci-cd/CreateNewBuildDef_2.png)
+   :::image type="content" source="./media/tutorial-setup-ci-cd/CreateNewBuildDef_2.png" alt-text="Выбор командного проекта, репозитория и ветви для конвейера сборки":::
 
 3. И наконец, выберите нужный шаблон для конвейера сборки. В нашем примере для этого руководства выбран шаблон **ASP.NET**. Теперь у вас есть конвейер сборки, который можно настроить для использования задач сборки эмулятора Azure Cosmos DB. 
 
@@ -65,9 +65,27 @@ Start-CosmosDbEmulator
 
 1. Затем выберите **+** рядом с заданием агента, чтобы добавить задачу сборки эмулятора. Выполните поиск по слову **cosmos** в поле поиска, затем выберите **Azure Cosmos DB Emulator** (Эмулятор Azure Cosmos DB) и добавьте его в задание агента. Задача сборки запустит контейнер с уже выполняющимся экземпляром эмулятора Cosmos DB, поэтому задачи эмулятора должны выполняться перед выполнением других задач, для которых требуется эмулятор в состоянии выполнения.
 
-   ![Добавление задачи сборки эмулятора в определение сборки](./media/tutorial-setup-ci-cd/addExtension_3.png)
+   :::image type="content" source="./media/tutorial-setup-ci-cd/addExtension_3.png" alt-text="Добавление задачи сборки эмулятора в определение сборки":::
 
 В этом руководстве вы добавите задачи в начало, чтобы обеспечить доступность эмулятора перед выполнением наших тестов.
+
+### <a name="add-the-task-using-yaml"></a>Добавление задачи с помощью YAML
+
+Этот шаг является необязательным и необходим только при настройке конвейера CI/CD с помощью задачи YAML. В таких случаях можно определить задачу YAML, как показано в следующем коде:
+
+```yml
+- task: azure-cosmosdb.emulator-public-preview.run-cosmosdbemulatorcontainer.CosmosDbEmulator@2
+  displayName: 'Run Azure Cosmos DB Emulator'
+
+- script: yarn test
+  displayName: 'Run API tests (Cosmos DB)'
+  env:
+    HOST: $(CosmosDbEmulator.Endpoint)
+    # Hardcoded key for emulator, not a secret
+    AUTH_KEY: C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==
+    # The emulator uses a self-signed cert, disable TLS auth errors
+    NODE_TLS_REJECT_UNAUTHORIZED: '0'
+```
 
 ## <a name="configure-tests-to-use-the-emulator"></a>Настройка использования эмулятора в тестах
 
@@ -140,39 +158,21 @@ namespace todo.Tests
 
 Перейдите к разделу с параметрами выполнения в задаче Visual Studio Test. В параметре **Файл настроек** укажите, что тесты настраиваются с помощью файла **.runsettings**. В параметре **Переопределить параметры тестового запуска** добавьте `-endpoint $(CosmosDbEmulator.Endpoint)`. Это действие настраивает для тестовой задачи ссылку на другую конечную точку задачи сборки эмулятора вместо той, которая определена в файле **.runsettings**.  
 
-![Переопределение переменной конечной точки для задачи сборки эмулятора](./media/tutorial-setup-ci-cd/addExtension_5.png)
+:::image type="content" source="./media/tutorial-setup-ci-cd/addExtension_5.png" alt-text="Переопределение переменной конечной точки для задачи сборки эмулятора":::
 
 ## <a name="run-the-build"></a>Запустите сборку.
 
 Теперь щелкните **Save and queue** (Сохранить и поместить в очередь), чтобы сохранить сборку и поместить ее в очередь. 
 
-![Сохраните и запустите сборку.](./media/tutorial-setup-ci-cd/runBuild_1.png)
+:::image type="content" source="./media/tutorial-setup-ci-cd/runBuild_1.png" alt-text="Сохранение и запуск сборки":::
 
 После запуска сборки вы увидите, что задача эмулятора Cosmos DB запрашивает и получает образ Docker, в котором установлен эмулятор. 
 
-![Сохраните и запустите сборку.](./media/tutorial-setup-ci-cd/runBuild_4.png)
+:::image type="content" source="./media/tutorial-setup-ci-cd/runBuild_4.png" alt-text="Сохранение и запуск сборки":::
 
 После завершения сборки вы увидите, что все тесты из задачи сборки успешно выполнены для эмулятора Cosmos DB.
 
-![Сохраните и запустите сборку.](./media/tutorial-setup-ci-cd/buildComplete_1.png)
-
-## <a name="set-up-using-yaml"></a>Настройка с помощью YAML
-
-При настройке конвейера CI/CD с помощью задачи YAML задачу можно определить, как показано в следующем коде:
-
-```yml
-- task: azure-cosmosdb.emulator-public-preview.run-cosmosdbemulatorcontainer.CosmosDbEmulator@2
-  displayName: 'Run Azure Cosmos DB Emulator'
-
-- script: yarn test
-  displayName: 'Run API tests (Cosmos DB)'
-  env:
-    HOST: $(CosmosDbEmulator.Endpoint)
-    # Hardcoded key for emulator, not a secret
-    AUTH_KEY: C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==
-    # The emulator uses a self-signed cert, disable TLS auth errors
-    NODE_TLS_REJECT_UNAUTHORIZED: '0'
-```
+:::image type="content" source="./media/tutorial-setup-ci-cd/buildComplete_1.png" alt-text="Сохранение и запуск сборки":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

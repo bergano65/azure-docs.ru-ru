@@ -8,10 +8,10 @@ ms.date: 03/12/2020
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: 02844569137a46ea030b2189191b84a9db24ed22
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79537301"
 ---
 # <a name="st_distance-azure-cosmos-db"></a>ST_DISTANCE (Azure Cosmos DB)
@@ -34,7 +34,7 @@ ST_DISTANCE (<spatial_expr>, <spatial_expr>)
   
 ## <a name="examples"></a>Примеры
   
-  В следующем примере показано, как вернуть все документы семейства, которые находятся в пределах 30 км из указанного расположения, `ST_DISTANCE` используя встроенную функцию. .  
+  В следующем примере показано, как вернуть все документы семейства, которые находятся в пределах 30 км из указанного расположения, используя `ST_DISTANCE` встроенную функцию. .  
   
 ```sql
 SELECT f.id
@@ -54,8 +54,8 @@ WHERE ST_DISTANCE(f.location, {'type': 'Point', 'coordinates':[31.9, -4.8]}) < 3
 
 Эта системная функция будет полезна из [геопространственных индексов](index-policy.md#spatial-indexes).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Пространственные функции Azure Cosmos DB](sql-query-spatial-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство с Azure Cosmos DB](introduction.md)
+- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)

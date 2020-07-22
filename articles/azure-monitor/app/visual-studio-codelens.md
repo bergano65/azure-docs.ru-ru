@@ -7,15 +7,15 @@ ms.author: daviste
 ms.date: 03/17/2017
 ms.reviewer: mbullwin
 ms.custom: vs-azure
-ms.openlocfilehash: dc334932bfd57bc81a58314ee68f02aeed520f41
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 5354379b73eca46e35c41cc0cf580b113dae7e8c
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77670956"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86499262"
 ---
 # <a name="application-insights-telemetry-in-visual-studio-codelens"></a>Телеметрия Application Insights в Visual Studio CodeLens
-Методы в коде веб-приложения можно обозначить с помощью данных телеметрии об исключениях во время выполнения и времени ответа на запрос. Если установить в приложении [Azure Application Insights](../../azure-monitor/app/app-insights-overview.md), данные телеметрии будут отображаться в Visual Studio [CodeLens](https://msdn.microsoft.com/library/dn269218.aspx) в виде примечаний в верхней части данных о функции. Там обычно приведены такие полезные сведения, как число расположений со ссылками на функцию или имя пользователя, который последним вносил в нее изменения.
+Методы в коде веб-приложения можно обозначить с помощью данных телеметрии об исключениях во время выполнения и времени ответа на запрос. Если установить в приложении [Azure Application Insights](../../azure-monitor/app/app-insights-overview.md), данные телеметрии будут отображаться в Visual Studio [CodeLens](/visualstudio/ide/find-code-changes-and-other-history-with-codelens?view=vs-2015) в виде примечаний в верхней части данных о функции. Там обычно приведены такие полезные сведения, как число расположений со ссылками на функцию или имя пользователя, который последним вносил в нее изменения.
 
 ![CodeLens](./media/visual-studio-codelens/codelens-overview.png)
 
@@ -71,6 +71,5 @@ ms.locfileid: "77670956"
 |  |  |
 | --- | --- |
 | **[Работа с Application Insights в Visual Studio](../../azure-monitor/app/visual-studio.md)**<br/>Поиск телеметрии, просмотр данных в CodeLens и настройка Application Insights — все это в Visual Studio |![Щелкните проект правой кнопкой мыши и последовательно выберите пункты "Application Insights" и "Поиск".](./media/visual-studio-codelens/34.png) |
-| **[Добавить дополнительные данные](../../azure-monitor/app/asp-net-more.md)**<br/>Мониторинг использования, доступности, зависимостей и исключений. Интеграция трассировок из платформ ведения журналов. Написание пользовательской телеметрии. |![Visual studio](./media/visual-studio-codelens/64.png) |
+| **[Добавление данных](../../azure-monitor/app/asp-net-more.md)**<br/>Мониторинг использования, доступности, зависимостей и исключений. Интеграция трассировок из платформ ведения журналов. Написание пользовательской телеметрии. |![Visual studio](./media/visual-studio-codelens/64.png) |
 | **[Работа с порталом Application Insights](../../azure-monitor/app/overview-dashboard.md)**<br/>Панели мониторинга, эффективные средства диагностики и анализа, оповещения, карта динамических зависимостей приложения, а также экспорт данных телеметрии. |![Visual studio](./media/visual-studio-codelens/62.png) |
-

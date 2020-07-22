@@ -3,15 +3,15 @@ title: Настройка времени запуска обработчика �
 description: Узнайте, как настроить обработчик канала изменений, чтобы начать чтение с определенной даты и времени
 author: ealsur
 ms.service: cosmos-db
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 08/13/2019
 ms.author: maquaran
-ms.openlocfilehash: 600556a06d3f58c4d2ec79a49fdee5e8e04d4036
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d3d9af1b8cbda3f0fa2ff4650fef4602f7812f79
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77586280"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85261721"
 ---
 # <a name="how-to-configure-the-change-feed-processor-start-time"></a>Настройка времени запуска обработчика канала изменений
 
@@ -49,7 +49,7 @@ ms.locfileid: "77586280"
 * [Примеры использования в GitHub](https://github.com/Azure/azure-cosmos-dotnet-v3/tree/master/Microsoft.Azure.Cosmos.Samples/Usage/ChangeFeed)
 * [Дополнительные примеры на GitHub](https://github.com/Azure-Samples/cosmos-dotnet-change-feed-processor)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы можете продолжить знакомство с обработчиком канала изменений, перейдя к следующим статьям:
 

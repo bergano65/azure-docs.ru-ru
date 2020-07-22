@@ -1,26 +1,26 @@
 ---
-title: Модули IoT Edge Azure Marketplace
-description: Предложение модуля IoT Edge в Azure Marketplace для издателей приложений и служб.
-author: qianw211
+title: Предложения в Azure Marketplace по модулям IoT Edge
+description: Сведения о публикации предложений по модулям IoT Edge в каталоге Azure Marketplace.
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
+author: keferna
+ms.author: keferna
 ms.date: 04/15/2020
-ms.author: dsindona
-ms.openlocfilehash: 762d9947046f159e992f09211bfcd76ff8d6712e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 0b707b2aed68359f8c04f6cd6bee6c95b495178b
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81684333"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86119486"
 ---
 # <a name="iot-edge-modules"></a>Модули IoT Edge
 
-Платформа [Azure IoT Edge](https://azure.microsoft.com/services/iot-edge/) поддерживается облачными службами Azure.  Эта платформа позволяет пользователям развертывать облачные рабочие нагрузки для непосредственного выполнения на устройствах Интернета вещей.  Модуль IoT Edge может выполнять автономные рабочие нагрузки и совершать анализ данных локально. Этот тип предложения помогает экономить пропускную способность, защищать локальные и конфиденциальные данные и обеспечивает малое время отклика.  Теперь вы можете воспользоваться этими заранее подготовленными рабочими нагрузками. До сих пор было доступно лишь несколько решений от корпорации Майкрософт.  Вам нужно было тратить время и ресурсы на создание своих собственных решений для Интернета вещей.
+В основе платформы [Azure IoT Edge](https://azure.microsoft.com/services/iot-edge/) лежит облако Microsoft Azure.  Эта платформа позволяет пользователям развертывать облачные рабочие нагрузки для непосредственного выполнения на устройствах Интернета вещей.  Модуль IoT Edge может выполнять автономные рабочие нагрузки и совершать анализ данных локально. Этот тип предложения помогает экономить пропускную способность, защищать локальные и конфиденциальные данные и обеспечивает малое время отклика.  Теперь вы можете воспользоваться этими заранее подготовленными рабочими нагрузками. До сих пор было доступно лишь несколько решений от корпорации Майкрософт.  Вам нужно было тратить время и ресурсы на создание своих собственных решений для Интернета вещей.
 
-С вводом [модулей IoT Edge в Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/category/internet-of-things?page=1) теперь есть единственное расположение, где издатели могут публиковать и продавать свои решения аудитории Интернета вещей. Разработчики решений для Интернета вещей могут в конечном итоге найти и приобрести возможности для ускорения разработки своих решений.  
+С добавлением [модулей IoT Edge в каталог Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/category/internet-of-things?page=1) у издателей появилось централизованное место, где они могут публиковать и продавать свои решения аудитории, интересующейся Интернетом вещей. Разработчики решений для Интернета вещей могут в конечном итоге найти и приобрести возможности для ускорения разработки своих решений.  
 
-## <a name="key-benefits-of-iot-edge-modules-in-azure-marketplace"></a>Основные преимущества модулей IoT Edge в Azure Marketplace:
+## <a name="key-benefits-of-iot-edge-modules-in-azure-marketplace"></a>Основные преимущества модулей IoT Edge в Azure Marketplace
 
 | **Для издателей**    | **Для клиентов (разработчиков решений для Интернета вещей)**  |
 | :------------------- | :-------------------|
@@ -30,7 +30,7 @@ ms.locfileid: "81684333"
 
 ## <a name="what-is-an-iot-edge-module"></a>Что такое модуль IoT Edge?
 
-Azure IoT Edge позволяет развертывать модули бизнес-логики на пограничных устройствах и управлять этими модулями. Модуль Azure IoT Edge представляет собой наименьшую единицу вычислительных ресурсов, которыми управляет IoT Edge. Эти модули могут содержать службы Майкрософт (например, Azure Stream Analytics), сторонние службы или пользовательский код для конкретного решения. Дополнительные сведения о модулях IoT Edge см. в статье [Общие сведения о модулях IoT Edge Azure](https://docs.microsoft.com/azure/iot-edge/iot-edge-modules).
+Azure IoT Edge позволяет развертывать модули бизнес-логики на пограничных устройствах и управлять этими модулями. Модуль Azure IoT Edge представляет собой наименьшую единицу вычислительных ресурсов, которыми управляет IoT Edge. Эти модули могут содержать службы Майкрософт (например, Azure Stream Analytics), сторонние службы или пользовательский код для конкретного решения. Дополнительные сведения о модулях IoT Edge см. в статье [Общие сведения о модулях IoT Edge Azure](../iot-edge/iot-edge-modules.md).
 
 **Какова разница между типом предложения контейнера и типом предложения модуля IoT Edge?**
 
@@ -40,15 +40,15 @@ Azure IoT Edge позволяет развертывать модули бизн
 
 **Выбор правильного онлайн-магазина**
 
-Модули IoT Edge публикуются только в Azure Marketplace. AppSource не поддерживается.  Дополнительные сведения о различиях и целевой аудитории в онлайн-магазинах см. в статье [Выбор варианта публикации](https://docs.microsoft.com/azure/marketplace/determine-your-listing-type).
+Модули IoT Edge публикуются только в Azure Marketplace. AppSource не поддерживается.  Дополнительные сведения о различиях и целевой аудитории в онлайн-магазинах см. в статье [Выбор варианта публикации](determine-your-listing-type.md).
  
 **Варианты выставления счетов**
 
 Marketplace в настоящее время поддерживает **бесплатные** и **собственные лицензии (BYOL)** как варианты выставления счетов для модулей IoT Edge.
  
-**Параметры публикации**
+**Варианты публикации**
 
-Во всех случаях необходимо выбирать для модулей IoT Edge вариант публикации **Транзакция**.  Варианты публикации см. в [этой статье](https://docs.microsoft.com/azure/marketplace/determine-your-listing-type).  
+Во всех случаях необходимо выбирать для модулей IoT Edge вариант публикации **Транзакция**.  Варианты публикации см. в [этой статье](determine-your-listing-type.md).  
 
 ## <a name="eligibility-criteria"></a>Условия для допуска
 
@@ -58,7 +58,7 @@ Marketplace в настоящее время поддерживает **бесп
 
 Чтобы опубликовать модуль IoT Edge в Azure Marketplace, вам потребуется выполнить следующие условия:
 
-- Доступ к центру партнеров. Дополнительные сведения см. в [руководстве по публикации в Azure Marketplace и AppSource](https://docs.microsoft.com/azure/marketplace/marketplace-publishers-guide).
+- Войдите в Центр партнеров. Дополнительные сведения см. в [руководстве по публикации в Azure Marketplace и AppSource](marketplace-publishers-guide.md).
 - Разместите ваш модуль IoT Edge в Реестре контейнеров Azure. 
 - Подготовьте метаданные модуля IoT Edge, например (не исчерпывающий список): 
     - название;
@@ -75,15 +75,15 @@ Marketplace в настоящее время поддерживает **бесп
 
 ## <a name="documentation-and-resources"></a>Документация и ресурсы
 
-[Создание предложения модуля IOT Edge](./partner-center-portal/azure-iot-edge-module-creation.md) . действия по публикации нового предложения модуля IOT EDGE в центре партнеров.
+[Создание, настройка и публикация предложения модуля IoT Edge в Azure Marketplace](./partner-center-portal/azure-iot-edge-module-creation.md). Эта статься содержит инструкции по публикации нового модуля IoT Edge в Центре партнеров.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если это еще не сделано,
 
-- [Сведения](https://azuremarketplace.microsoft.com/sell) о Marketplace.
+- [изучите информацию](https://azuremarketplace.microsoft.com/sell) о каталоге Marketplace.
 
-Чтобы зарегистрироваться в центре партнеров и приступить к созданию нового предложения или работе над существующим,
+Чтобы зарегистрироваться в Центре партнеров и начать создавать новое предложение или продолжить работу над существующим, сделайте следующее:
 
-- Войдите в [Центр партнеров](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership) , чтобы создать или завершить свое предложение.
-- Сведения о публикации предложения модуля IoT Edge см. в разделе [Create a IOT Edge Module предложение](./partner-center-portal/azure-iot-edge-module-creation.md) .
+- [Войдите в Центр партнеров](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership), чтобы создать или завершить свое предложение.
+- Прочтите статью [Создание, настройка и публикация предложения модуля IoT Edge в Azure Marketplace](./partner-center-portal/azure-iot-edge-module-creation.md). Из нее вы узнаете, как опубликовать свой модуль IoT Edge.

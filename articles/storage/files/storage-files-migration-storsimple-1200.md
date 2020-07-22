@@ -3,16 +3,16 @@ title: Миграция StorSimple 1200 в Синхронизация файло
 description: Узнайте, как перенести виртуальное устройство серии StorSimple 1200 в Синхронизация файлов Azure.
 author: fauhse
 ms.service: storage
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/09/2020
 ms.author: fauhse
 ms.subservice: files
-ms.openlocfilehash: 69225da1506ced879363b10b098d939df93cbfba
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d9cf7b3cf996e41f90e3a40a6ee08d0fd51c8457
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79502376"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85510346"
 ---
 # <a name="storsimple-1200-migration-to-azure-file-sync"></a>Миграция StorSimple 1200 в Синхронизация файлов Azure
 
@@ -214,7 +214,7 @@ Robocopy /MT:32 /UNILOG:<file name> /TEE /B /MIR /COPYALL /DCOPY:DAT <SourcePath
 
 Политика свободного места тома уровня облака действует на уровне тома с потенциальной синхронизацией нескольких конечных точек сервера. Если вы забыли скорректировать свободное пространство даже на одной конечной точке сервера, то Sync продолжит применять наиболее ограниченное правило и попытается сохранить 99% свободного места на диске, что делает локальный кэш не так, как вы можете ожидать. Если это не ваша цель, чтобы иметь только пространство имен для тома, содержащего редко используемые архивные данные.
 
-## <a name="troubleshoot"></a>Диагностика
+## <a name="troubleshoot"></a>Устранение неполадок
 
 Наиболее вероятной причиной проблемы, с которой можно столкнуться, является то, что команда Robocopy завершается с ошибкой *"том Full"* на стороне Windows Server. В этом случае скорость загрузки скорее всего лучше, чем скорость передачи. Распределение по уровням в облаке действует один раз в час, чтобы эвакуировать содержимое с локального диска Windows Server, синхронизированного.
 

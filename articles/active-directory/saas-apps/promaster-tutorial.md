@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 03/12/2020
 ms.author: jeedes
-ms.openlocfilehash: b48d11e15d452b72426c5b83d387f9e004e95dc7
-ms.sourcegitcommit: fab450a18a600d72b583ecfbe6c5e53afd43408c
+ms.openlocfilehash: a1563cc9baff0be844f7a654f8b028356c285b40
+ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80293927"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85800868"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-promaster-by-inlogik"></a>Руководство по Интеграция Azure Active Directory с ProMaster (от Inlogik)
 
@@ -94,29 +94,26 @@ ms.locfileid: "80293927"
 
     а. В текстовом поле **Идентификатор** введите URL-адрес в таком формате:
 
-    | |
-    |-|-|
-    | `https://secure.inlogik.com/<COMPANYNAME>`|
-    | `https://<CUSTOMDOMAIN>/SAMLBASE`|
-    | |
+    ```http
+    https://secure.inlogik.com/<COMPANYNAME>
+    https://<CUSTOMDOMAIN>/SAMLBASE
+    ```
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате:
 
-    | |
-    |-|-|
-    | `https://secure.inlogik.com/<COMPANYNAME>/saml/acs`|
-    | `https://<CUSTOMDOMAIN>/SAMLBASE/saml/acs`|
-    | |
+    ```http
+    https://secure.inlogik.com/<COMPANYNAME>/saml/acs
+    https://<CUSTOMDOMAIN>/SAMLBASE/saml/acs
+    ```
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
     В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате:
 
-    | |
-    |-|-|
-    | `https://secure.inlogik.com/<COMPANYNAME>`|
-    | `https://<CUSTOMDOMAIN>/SAMLBASE`|
-    | |
+    ```http
+    https://secure.inlogik.com/<COMPANYNAME>
+    https://<CUSTOMDOMAIN>/SAMLBASE
+    ```
 
     > [!NOTE]
     > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов ProMaster (от Inlogik)](https://www.inlogik.com/contact). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

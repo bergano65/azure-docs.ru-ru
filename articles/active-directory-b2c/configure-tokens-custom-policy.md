@@ -7,16 +7,16 @@ author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/07/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 0b460d5a3c5535b74e349fa46c6a2ad55fc3a8d8
-ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
+ms.openlocfilehash: 3a35662a3f21aec1306b7b6994e7a08f9cbd467e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82966575"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85389536"
 ---
 # <a name="manage-sso-and-token-customization-using-custom-policies-in-azure-active-directory-b2c"></a>Управление единым входом и настройкой токенов с помощью пользовательских политик в Azure Active Directory B2C
 
@@ -30,7 +30,7 @@ ms.locfileid: "82966575"
 
 Внутри необходимо разместить сведения, влияющие на время существования токенов. Пример XML выглядит так:
 
-```XML
+```xml
 <ClaimsProviders>
   <ClaimsProvider>
     <DisplayName>Token Issuer</DisplayName>
@@ -61,7 +61,7 @@ ms.locfileid: "82966575"
 
     В элемент **ClaimsSchema** добавьте такой элемент.
 
-    ```XML
+    ```xml
     <ClaimType Id="trustFrameworkPolicy">
       <DisplayName>Trust framework policy name</DisplayName>
       <DataType>string</DataType>
@@ -70,7 +70,7 @@ ms.locfileid: "82966575"
 
     Добавьте следующий элемент в элемент **OutputClaims**.
 
-    ```XML
+    ```xml
     <OutputClaim ClaimTypeReferenceId="trustFrameworkPolicy" Required="true" DefaultValue="{policy}" />
     ```
 
@@ -78,17 +78,17 @@ ms.locfileid: "82966575"
 
 - **Утверждение субъекта (sub).** По умолчанию для этого параметра задано значение ObjectID. Если вы хотите установить значение `Not Supported`, замените эту строку:
 
-    ```XML
+    ```xml
     <OutputClaim ClaimTypeReferenceId="objectId" PartnerClaimType="sub" />
     ```
 
     на следующую:
 
-    ```XML
+    ```xml
     <OutputClaim ClaimTypeReferenceId="sub" />
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о [Azure AD B2C сеансе](session-overview.md).
 - Узнайте, как [настроить поведение сеанса в пользовательских политиках](session-behavior-custom-policy.md).

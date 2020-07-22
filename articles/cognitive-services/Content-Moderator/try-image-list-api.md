@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: pafarley
-ms.openlocfilehash: 27d9b12d9e1a0237050243c2b5f07edaa8d8857a
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 0035d367017c92bd151c27e14d744ef41eace069
+ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "72757196"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85800154"
 ---
 # <a name="moderate-with-custom-image-lists-in-the-api-console"></a>Модерация с помощью настраиваемых списков изображений в консоли API
 
@@ -77,19 +77,21 @@ API управления списками можно использовать д
 
 6. Используйте заполнители пар "ключ-значение", чтобы назначить более понятные метаданные для списка.
 
-       {
-          "Name": "MyExclusionList",
-          "Description": "MyListDescription",
-          "Metadata": 
-          {
+    ```json
+    {
+        "Name": "MyExclusionList",
+        "Description": "MyListDescription",
+        "Metadata": 
+        {
             "Category": "Competitors",
             "Type": "Exclude"
-          }
-       }
+        }
+    }
+    ```
 
    Добавьте метаданные списка в виде пар "ключ-значение", а не фактических изображений.
  
-7. Выберите **Отправить**. Будет создан список. Запишите значение **ID** (Идентификатор) этого нового списка. Этот идентификатор необходим для других функций управления списками изображений.
+7. Нажмите кнопку **Отправить**. Будет создан список. Запишите значение **ID** (Идентификатор) этого нового списка. Этот идентификатор необходим для других функций управления списками изображений.
 
    ![Идентификатор списка в поле "Response content" (Содержимое ответа) в консоли "Image Lists - Create" (Списки изображений — создание)](images/try-terms-list-create-2.png)
  
@@ -109,7 +111,7 @@ API управления списками можно использовать д
 
     Откроется консоль API **Image - Get All Image Ids** (Изображение — получение всех идентификаторов изображений).
   
-12. В поле **listId** введите идентификатор списка, а затем введите свой ключ подписки. Выберите **Отправить**.
+12. В поле **listId** введите идентификатор списка, а затем введите свой ключ подписки. Нажмите кнопку **Отправить**.
 
     ![Введенные изображения в поле "Response content" (Содержимое ответа) в консоли "Image - Get All Image Ids" (Изображение — получение всех идентификаторов изображений)](images/try-image-list-create-11.png)
  
@@ -164,6 +166,6 @@ API управления списками можно использовать д
    ![Внесение изменений в поле "Request body" (Текст запроса) в консоли "Image Lists - Update Details" (Списки изображений — обновление сведений)](images/try-terms-list-change-1.png)
  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Используйте в коде REST API или начните с [краткого руководства по работе со списками изображений с помощью .NET](image-lists-quickstart-dotnet.md), чтобы интегрировать эту функцию в приложение.

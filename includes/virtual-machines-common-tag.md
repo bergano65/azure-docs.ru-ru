@@ -4,12 +4,12 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
-ms.openlocfilehash: f6bd574c83d309ce6d6f54fdb1c7d23cb713420d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 196dfdc045fd60e4a253857087177f478f50ea24
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "73182273"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86050270"
 ---
 ## <a name="tagging-a-virtual-machine-through-templates"></a>Пометка виртуальной машины с помощью шаблонов
 Для начала рассмотрим пометку с помощью шаблонов. [Этот шаблон](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-tags) добавляет теги к следующим ресурсам: Compute (виртуальная машина), Storage (учетная запись хранения) и Network (общедоступный IP-адрес, виртуальная сеть и сетевой интерфейс). (Это шаблон для виртуальной машины Windows, но его можно приспособить для виртуальных машин Linux.)
@@ -24,10 +24,12 @@ ms.locfileid: "73182273"
 
 Как видите, теги определяются как пары "ключ-значение", разделенные двоеточием (:). Теги должны быть определены в следующем формате:
 
-        "tags": {
-            "Key1" : "Value1",
-            "Key2" : "Value2"
-        }
+```config
+"tags": {
+    "Key1" : "Value1",
+    "Key2" : "Value2"
+}
+```
 
 Завершив добавление нужных тегов в файл шаблона, сохраните его.
 

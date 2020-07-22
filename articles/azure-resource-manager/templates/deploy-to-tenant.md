@@ -2,13 +2,13 @@
 title: Развертывание ресурсов в клиенте
 description: В этой статье объясняется, как развертывать ресурсы в клиенте в шаблоне Azure Resource Manager.
 ms.topic: conceptual
-ms.date: 03/16/2020
-ms.openlocfilehash: d72b4a63e564732a9a4baaf8b8cd94d0f165e12a
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
-ms.translationtype: HT
+ms.date: 05/08/2020
+ms.openlocfilehash: 45541bcbea5a80e55dbc9f80e1eae8e17189bf6e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83653340"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84945449"
 ---
 # <a name="create-resources-at-the-tenant-level"></a>Создание ресурсов на уровне клиента
 
@@ -72,7 +72,7 @@ https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json
 az deployment tenant create \
   --name demoTenantDeployment \
   --location WestUS \
-  --template-uri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/tenant-level-deployments/new-mg/azuredeploy.json"
+  --template-uri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/tenant-deployments/new-mg/azuredeploy.json"
 ```
 
 Для Azure PowerShell используйте [New-AzTenantDeployment](/powershell/module/az.resources/new-aztenantdeployment).
@@ -81,7 +81,7 @@ az deployment tenant create \
 New-AzTenantDeployment `
   -Name demoTenantDeployment `
   -Location "West US" `
-  -TemplateUri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/tenant-level-deployments/new-mg/azuredeploy.json"
+  -TemplateUri "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/tenant-deployments/new-mg/azuredeploy.json"
 ```
 
 Для REST API используйте инструкции в статье [Развертывания — создание или обновление в области клиента](/rest/api/resources/deployments/createorupdateattenantscope).
@@ -117,7 +117,7 @@ New-AzTenantDeployment `
 
 ## <a name="create-management-group"></a>Создание группы управления
 
-В [следующем примере](https://github.com/Azure/azure-quickstart-templates/tree/master/tenant-level-deployments/new-mg) создается группа управления:
+В [следующем примере](https://github.com/Azure/azure-quickstart-templates/tree/master/tenant-deployments/new-mg) создается группа управления:
 
 ```json
 {
@@ -143,7 +143,7 @@ New-AzTenantDeployment `
 
 ## <a name="assign-role"></a>Назначение роли
 
-В [следующем шаблоне](https://github.com/Azure/azure-quickstart-templates/tree/master/tenant-level-deployments/tenant-role-assignment) назначается роль в области клиента:
+В [следующем шаблоне](https://github.com/Azure/azure-quickstart-templates/tree/master/tenant-deployments/tenant-role-assignment) назначается роль в области клиента:
 
 ```json
 {

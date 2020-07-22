@@ -4,11 +4,10 @@ description: Узнайте, как удалять и развертывать �
 ms.topic: conceptual
 ms.date: 01/19/2018
 ms.openlocfilehash: e3fdd194f2949f1246e991968e02b3278f33f7db
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79282514"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84699844"
 ---
 # <a name="deploy-and-remove-applications-using-powershell"></a>Развертывание и удаление приложений с помощью PowerShell
 
@@ -64,7 +63,7 @@ Connect-ServiceFabricCluster
 
 Команда [Copy-ServiceFabricApplicationPackage](/powershell/module/servicefabric/copy-servicefabricapplicationpackage?view=azureservicefabricps) передает пакет приложения в хранилище образов кластера.
 
-Предположим, вы собрали и упаковали в Visual Studio 2015 приложение с именем *MyApplication*. По умолчанию имя типа приложения отображается в файле ApplicationManifest.xml как MyApplicationType.  Пакет приложения, который содержит необходимый манифест приложения, манифесты служб и пакеты code/config/data, находится в папке *C:\Users\<имя_пользователя\>\Documents\Visual Studio 2015\Projects\MyApplication\MyApplication\pkg\Debug*. 
+Предположим, вы собрали и упаковали в Visual Studio 2015 приложение с именем *MyApplication*. По умолчанию имя типа приложения отображается в файле ApplicationManifest.xml как MyApplicationType.  Пакет приложения, содержащий необходимый манифест приложения, манифесты служб, пакеты кода, конфигурации и данных, находится в папке *C:\Users \<username\> \Documents\Visual Studio 2015 \ Projects\MyApplication\MyApplication\pkg\Debug*. 
 
 Следующая команда выводит содержимое пакета приложения:
 

@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 11/08/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 3bac3cc2a5cedbd4b963a0759e6c8b940d2ca924
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 459c9f2d68d8a3a3c1b597665914146987aecdc2
+ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81421418"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85801807"
 ---
 # <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-using-powershell"></a>Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью PowerShell
 
@@ -64,6 +64,13 @@ New-AzKeyVault -Name 'Contoso-Vault2' -ResourceGroupName 'ContosoResourceGroup' 
 После создания хранилища ваша учетная запись Azure будет единственной учетной записью, с которой можно выполнять любые действия в новом хранилище.
 
 ![Выходные данные после выполнения команды, создающей хранилище ключей](../media/quick-create-powershell/output-after-creating-keyvault.png)
+
+## <a name="give-your-user-account-permissions-to-manage-secrets-in-key-vault"></a>Предоставление учетной записи пользователя разрешений на управление секретами в Key Vault
+
+Используйте командлет Azure PowerShell Set-AzKeyVaultAccessPolicy, чтобы обновить политику доступа Key Vault и предоставить разрешения секретов учетной записи пользователя.
+```azurepowershell-interactive
+Set-AzKeyVaultAccessPolicy -VaultName 'Contoso-Vault2' -UserPrincipalName 'user@domain.com' -PermissionsToSecrets get,set,delete
+```
 
 ## <a name="adding-a-secret-to-key-vault"></a>Добавление секрета в Key Vault
 

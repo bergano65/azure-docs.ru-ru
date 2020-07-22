@@ -3,15 +3,15 @@ title: Передача больших наборов данных в метод
 description: Используйте службу импорта и экспорта для копирования данных из хранилища BLOB-объектов Azure в Azure Data Lake Storage 1-го поколения
 author: twooley
 ms.service: data-lake-store
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: aa3eb0bcd9ddd2a094563efe326f7af7e9e8708a
-ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
+ms.openlocfilehash: d04a5c0e53e9a5db8bba03a5a9e9d95b87a8b5a3
+ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "73839294"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85855677"
 ---
 # <a name="use-the-azure-importexport-service-for-offline-copy-of-data-to-data-lake-storage-gen1"></a>Используйте службу импорта и экспорта Azure для автономной копии данных в Data Lake Storage 1-го поколения
 
@@ -24,24 +24,23 @@ ms.locfileid: "73839294"
 Перед началом работы убедитесь, что у вас есть такие компоненты.
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-* **Учетная запись хранения Azure**.
+* **Учетная запись хранения Azure.**
 * **Учетная запись Azure Data Lake Storage 1-го поколения**. За инструкциями по созданию учетной записи обращайтесь к статье [Начало работы с Azure Data Lake Storage 1-го поколения](data-lake-store-get-started-portal.md).
 
 ## <a name="prepare-the-data"></a>Подготовка данных
 
 Перед использованием службы импорта и экспорта необходимо разделить передаваемый файл данных на **копии, размер которых не превышает 200 ГБ**. Это нужно сделать, так как инструмент для импорта не работает с файлами, размер которых превышает 200 ГБ. В этой статье файл разбивается на фрагменты размером 100 ГБ. Это можно сделать с помощью [Cygwin](https://cygwin.com/install.html). Это средство поддерживает команды Linux. Воспользуйтесь следующей командой:
 
-    split -b 100m 319GB.tsv
+```console
+split -b 100m 319GB.tsv
+```
 
 Операция Split создает файлы с именами, указанными ниже.
 
-    319GB.tsv-part-aa
-
-    319GB.tsv-part-ab
-
-    319GB.tsv-part-ac
-
-    319GB.tsv-part-ad
+* *319. tsv-Part-AA*
+* *319. tsv-Part-AB*
+* *319. tsv. часть-AC*
+* *319. tsv-Part-AD*
 
 ## <a name="get-disks-ready-with-data"></a>Подготовка дисков с данными
 
@@ -219,7 +218,7 @@ Register-AzResourceProvider -ProviderNamespace "Microsoft.DataLakeStore"
 Join-AzDataLakeStoreItem -AccountName "<adlsg1_account_name" -Paths "/importeddatafeb8job/319GB.tsv-part-aa","/importeddatafeb8job/319GB.tsv-part-ab", "/importeddatafeb8job/319GB.tsv-part-ac", "/importeddatafeb8job/319GB.tsv-part-ad" -Destination "/importeddatafeb8job/MergedFile.csv"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)
 * [Начало работы с Azure Data Lake Analytics с помощью портала Azure](../data-lake-analytics/data-lake-analytics-get-started-portal.md)

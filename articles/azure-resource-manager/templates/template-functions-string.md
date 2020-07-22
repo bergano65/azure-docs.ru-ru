@@ -3,47 +3,47 @@ title: Функции шаблона — строка
 description: Описывает функции, используемые в шаблоне Azure Resource Manager для работы со строками.
 ms.topic: conceptual
 ms.date: 04/08/2020
-ms.openlocfilehash: c0517375b273384f263e8ba421995d4afb6c193b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 42df0317658971b9e9bf3fb805c9a5ff44efaf45
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80982420"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85962073"
 ---
 # <a name="string-functions-for-arm-templates"></a>Строковые функции для шаблонов ARM
 
 Диспетчер ресурсов предоставляет следующие функции для работы со строками в шаблонах Azure Resource Manager (ARM):
 
-* [формате](#base64)
+* [base64](#base64)
 * [base64ToJson](#base64tojson)
 * [base64ToString](#base64tostring)
-* [сцеплен](#concat)
-* [содержащих](#contains)
+* [concat](#concat)
+* [contains](#contains)
 * [dataUri](#datauri)
 * [dataUriToString](#datauritostring)
-* [пустых](#empty)
+* [empty](#empty)
 * [endsWith](#endswith)
-* [началь](#first)
+* [first](#first)
 * [format](#format)
-* [устройства](#guid)
+* [guid](#guid)
 * [indexOf](#indexof)
-* [Последняя](#last)
+* [last](#last)
 * [lastIndexOf](#lastindexof)
 * [length](#length)
 * [newGuid](#newguid)
 * [padLeft](#padleft)
 * [replace](#replace)
-* [сразу](#skip)
-* [биваем](#split)
+* [skip](#skip)
+* [split](#split)
 * [startsWith](#startswith)
 * [string](#string)
-* [подстроки](#substring)
-* [нимают](#take)
+* [substring](#substring)
+* [take](#take)
 * [toLower](#tolower)
 * [toUpper](#toupper)
-* [возмож](#trim)
+* [trim](#trim)
 * [uniqueString](#uniquestring)
-* [URI](#uri)
+* [uri](#uri)
 * [uriComponent](#uricomponent)
 * [uriComponentToString](#uricomponenttostring)
 
@@ -55,7 +55,7 @@ ms.locfileid: "80982420"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | inputString |Да |строка |Значение, которое нужно вернуть в кодировке base64. |
 
@@ -69,7 +69,7 @@ ms.locfileid: "80982420"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "stringData": {
@@ -106,7 +106,7 @@ ms.locfileid: "80982420"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | base64Output | Строка | b25lLCB0d28sIHRocmVl |
 | toStringOutput | Строка | one, two, three |
@@ -120,7 +120,7 @@ ms.locfileid: "80982420"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание |
 |:--- |:--- |:--- |:--- |
 | base64Value |Да |строка |Представление в кодировке base64, которое необходимо преобразовать в объект JSON. |
 
@@ -134,7 +134,7 @@ ms.locfileid: "80982420"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "stringData": {
@@ -171,7 +171,7 @@ ms.locfileid: "80982420"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | base64Output | Строка | b25lLCB0d28sIHRocmVl |
 | toStringOutput | Строка | one, two, three |
@@ -185,7 +185,7 @@ ms.locfileid: "80982420"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание |
 |:--- |:--- |:--- |:--- |
 | base64Value |Да |строка |Представление в кодировке base64, которое необходимо преобразовать в строку. |
 
@@ -199,7 +199,7 @@ ms.locfileid: "80982420"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "stringData": {
@@ -236,7 +236,7 @@ ms.locfileid: "80982420"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | base64Output | Строка | b25lLCB0d28sIHRocmVl |
 | toStringOutput | Строка | one, two, three |
@@ -250,10 +250,10 @@ ms.locfileid: "80982420"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |строка или массив |Первая строка или массив для объединения. |
-| дополнительные аргументы |Нет |строка или массив |Дополнительные строки или массивы в последовательном порядке для объединения. |
+| дополнительные аргументы |нет |строка или массив |Дополнительные строки или массивы в последовательном порядке для объединения. |
 
 Эта функция может принимать любое количество аргументов, а также строки или массивы параметров. Однако нельзя указать как массивы, так и строки для параметров. Строки объединяются только с другими строками.
 
@@ -267,7 +267,7 @@ ms.locfileid: "80982420"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "prefix": {
@@ -287,7 +287,7 @@ ms.locfileid: "80982420"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | concatOutput | Строка | prefix-5yj4yjf5mbg72 |
 
@@ -295,24 +295,24 @@ ms.locfileid: "80982420"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
-    "parameters": { 
-        "firstArray": { 
-            "type": "array", 
-            "defaultValue": [ 
-                "1-1", 
-                "1-2", 
-                "1-3" 
-            ] 
+    "parameters": {
+        "firstArray": {
+            "type": "array",
+            "defaultValue": [
+                "1-1",
+                "1-2",
+                "1-3"
+            ]
         },
         "secondArray": {
-            "type": "array", 
-            "defaultValue": [ 
-                "2-1", 
+            "type": "array",
+            "defaultValue": [
+                "2-1",
                 "2-2",
-                "2-3" 
-            ] 
+                "2-3"
+            ]
         }
     },
     "resources": [
@@ -328,11 +328,11 @@ ms.locfileid: "80982420"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | return | Массив | ["1-1", "1-2", "1-3", "2-1", "2-2", "2-3"] |
 
-## <a name="contains"></a>contains
+## <a name="contains"></a>содержит
 
 `contains (container, itemToFind)`
 
@@ -340,7 +340,7 @@ ms.locfileid: "80982420"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | контейнер |Да |массив, объект или строка |Значение, содержащее значение, которое необходимо найти. |
 | itemToFind |Да |строка или целое число |Значение, которое необходимо найти. |
@@ -355,7 +355,7 @@ ms.locfileid: "80982420"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "stringToTest": {
@@ -404,7 +404,7 @@ ms.locfileid: "80982420"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | stringTrue | Bool | True |
 | stringFalse | Bool | False |
@@ -421,7 +421,7 @@ ms.locfileid: "80982420"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | stringToConvert |Да |строка |Значение, которое необходимо преобразовать в URI данных. |
 
@@ -435,7 +435,7 @@ ms.locfileid: "80982420"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "stringToTest": {
@@ -463,7 +463,7 @@ ms.locfileid: "80982420"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | dataUriOutput | Строка | data:text/plain;charset=utf8;base64,SGVsbG8= |
 | toStringOutput | Строка | Привет, мир! |
@@ -476,7 +476,7 @@ ms.locfileid: "80982420"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | dataUriToConvert |Да |строка |Значение URI данных, которое необходимо преобразовать. |
 
@@ -490,7 +490,7 @@ ms.locfileid: "80982420"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "stringToTest": {
@@ -518,12 +518,12 @@ ms.locfileid: "80982420"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | dataUriOutput | Строка | data:text/plain;charset=utf8;base64,SGVsbG8= |
 | toStringOutput | Строка | Привет, мир! |
 
-## <a name="empty"></a>пустых
+## <a name="empty"></a>empty
 
 `empty(itemToTest)`
 
@@ -531,7 +531,7 @@ ms.locfileid: "80982420"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | itemToTest |Да |массив, объект или строка |Значение, которое необходимо проверить, если оно пустое. |
 
@@ -545,7 +545,7 @@ ms.locfileid: "80982420"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "testArray": {
@@ -582,7 +582,7 @@ ms.locfileid: "80982420"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | arrayEmpty | Bool | True |
 | objectEmpty | Bool | True |
@@ -596,7 +596,7 @@ ms.locfileid: "80982420"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | stringToSearch |Да |строка |Значение, содержащее элемент, который необходимо найти. |
 | stringToFind |Да |строка |Значение, которое необходимо найти. |
@@ -611,7 +611,7 @@ ms.locfileid: "80982420"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "resources": [],
     "outputs": {
@@ -645,7 +645,7 @@ ms.locfileid: "80982420"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | startsTrue | Bool | True |
 | startsCapTrue | Bool | True |
@@ -662,7 +662,7 @@ ms.locfileid: "80982420"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |массив или строка |Значение, из которого необходимо извлечь первый элемент или знак. |
 
@@ -676,7 +676,7 @@ ms.locfileid: "80982420"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "arrayToTest": {
@@ -701,7 +701,7 @@ ms.locfileid: "80982420"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | arrayOutput | Строка | one |
 | stringOutput | Строка | O |
@@ -714,13 +714,13 @@ ms.locfileid: "80982420"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
-| formatString | Да | строка | Строка составного формата. |
+| formatString | Да | string | Строка составного формата. |
 | arg1 | Да | Строка, целое число или логическое значение | Значение, включаемое в отформатированную строку. |
-| дополнительные аргументы | Нет | Строка, целое число или логическое значение | Дополнительные значения для включения в отформатированную строку. |
+| дополнительные аргументы | нет | Строка, целое число или логическое значение | Дополнительные значения для включения в отформатированную строку. |
 
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>Комментарии
 
 Эта функция используется для форматирования строки в шаблоне. В нем используются те же параметры форматирования, что и в методе [System. String. Format](/dotnet/api/system.string.format) в .NET.
 
@@ -730,7 +730,7 @@ ms.locfileid: "80982420"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "greeting": {
@@ -759,7 +759,7 @@ ms.locfileid: "80982420"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | форматтест | Строка | Привет, пользователь. Форматированное число: 8 175 133 |
 
@@ -771,12 +771,12 @@ ms.locfileid: "80982420"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
-| baseString |Да |строка |Значение, используемое в хэш-функции для создания GUID. |
+| baseString |Да |string |Значение, используемое в хэш-функции для создания GUID. |
 | Дополнительные параметры (если необходимы) |Нет |строка |Можно добавить столько строк, сколько необходимо для создания значения, которое задает уровень уникальности. |
 
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>Комментарии
 
 Эта функция полезна, если нужно создать значение в формате глобального уникального идентификатора. Указываются значения параметров, которые ограничивают область уникальности результата. Можно указать, является ли уникальным имя в подписке, группе ресурсов или развертывании.
 
@@ -812,7 +812,7 @@ ms.locfileid: "80982420"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {},
     "variables": {},
@@ -842,7 +842,7 @@ ms.locfileid: "80982420"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | stringToSearch |Да |строка |Значение, содержащее элемент, который необходимо найти. |
 | stringToFind |Да |строка |Значение, которое необходимо найти. |
@@ -857,7 +857,7 @@ ms.locfileid: "80982420"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "resources": [],
     "outputs": {
@@ -887,7 +887,7 @@ ms.locfileid: "80982420"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | firstT | Int | 0 |
 | lastT | Int | 3 |
@@ -903,7 +903,7 @@ ms.locfileid: "80982420"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |массив или строка |Значение, из которого необходимо извлечь последний элемент или знак. |
 
@@ -917,7 +917,7 @@ ms.locfileid: "80982420"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "arrayToTest": {
@@ -942,7 +942,7 @@ ms.locfileid: "80982420"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | arrayOutput | Строка | three |
 | stringOutput | Строка | Д. |
@@ -955,7 +955,7 @@ ms.locfileid: "80982420"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | stringToSearch |Да |строка |Значение, содержащее элемент, который необходимо найти. |
 | stringToFind |Да |строка |Значение, которое необходимо найти. |
@@ -970,7 +970,7 @@ ms.locfileid: "80982420"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "resources": [],
     "outputs": {
@@ -1000,7 +1000,7 @@ ms.locfileid: "80982420"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | firstT | Int | 0 |
 | lastT | Int | 3 |
@@ -1016,13 +1016,13 @@ ms.locfileid: "80982420"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |массив, строка или объект |Массив, используемый для получения числа элементов, строки, используемой для получения числа символов, или объекта, используемого для получения числа свойств корневого уровня. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
-Целое число. 
+Целое число.
 
 ### <a name="examples"></a>Примеры
 
@@ -1030,7 +1030,7 @@ ms.locfileid: "80982420"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "arrayToTest": {
@@ -1078,7 +1078,7 @@ ms.locfileid: "80982420"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | arrayLength | Int | 3 |
 | stringLength | Int | 13 |
@@ -1090,7 +1090,7 @@ ms.locfileid: "80982420"
 
 Возвращает значение в формате глобального уникального идентификатора. **Эта функция может использоваться только в значении по умолчанию для параметра.**
 
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>Комментарии
 
 Эту функцию можно использовать только в выражении для значения по умолчанию для параметра. Использование этой функции в любом месте шаблона возвращает ошибку. Функция не разрешена в других частях шаблона, поскольку она возвращает другое значение при каждом вызове. Развертывание одного и того же шаблона с теми же параметрами не будет уверенно давать одинаковые результаты.
 
@@ -1114,7 +1114,7 @@ ms.locfileid: "80982420"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "guidValue": {
@@ -1135,15 +1135,15 @@ ms.locfileid: "80982420"
 
 Выходные данные предыдущего примера зависят от каждого развертывания, но будут выглядеть примерно так:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
-| гуидаутпут | строка | b76a51fc-bd72-4a77-b9a2-3c29e7d2e551 |
+| гуидаутпут | string | b76a51fc-bd72-4a77-b9a2-3c29e7d2e551 |
 
 В следующем примере функция newGuid используется для создания уникального имени для учетной записи хранения. Этот шаблон может работать для тестовой среды, где учетная запись хранения существует в течение короткого времени и не развертывается повторно.
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "guidValue": {
@@ -1178,9 +1178,9 @@ ms.locfileid: "80982420"
 
 Выходные данные предыдущего примера зависят от каждого развертывания, но будут выглядеть примерно так:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
-| намеаутпут | строка | storagenziwvyru7uxie |
+| намеаутпут | string | storagenziwvyru7uxie |
 
 
 ## <a name="padleft"></a>padLeft
@@ -1191,11 +1191,11 @@ ms.locfileid: "80982420"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | значение_для_заполнения  |Да |строка или целое число |Значение, выравниваемое по правому краю. |
 | общая_длина |Да |INT |Общее число символов в возвращаемой строке. |
-| символ_заполнения |Нет |один знак |Символ, используемый для заполнения левой части до достижения общей длины. Значение по умолчанию — пробел. |
+| символ_заполнения |Нет |одиночный символ |Символ, используемый для заполнения левой части до достижения общей длины. Значение по умолчанию — пробел. |
 
 Если длина исходной строки превышает число знаков для заполнения, то знаки не добавляются.
 
@@ -1205,11 +1205,11 @@ ms.locfileid: "80982420"
 
 ### <a name="examples"></a>Примеры
 
-В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/padleft.json) показано, как заполнить указанное пользователем значение параметра, добавляя знак нуля до достижения общего числа знаков. 
+В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/padleft.json) показано, как заполнить указанное пользователем значение параметра, добавляя знак нуля до достижения общего числа знаков.
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "testString": {
@@ -1229,7 +1229,7 @@ ms.locfileid: "80982420"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | stringOutput | Строка | 0000000123 |
 
@@ -1241,7 +1241,7 @@ ms.locfileid: "80982420"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | исходная_строка |Да |строка |Значение, в котором все экземпляры одной строки заменены другой строкой. |
 | oldString |Да |строка |Строка, которая удаляется из исходной строки. |
@@ -1257,7 +1257,7 @@ ms.locfileid: "80982420"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "testString": {
@@ -1281,7 +1281,7 @@ ms.locfileid: "80982420"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | firstOutput | Строка | 1231231234 |
 | secondOutput | Строка | 123-123-xxxx |
@@ -1294,7 +1294,7 @@ ms.locfileid: "80982420"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | originalValue |Да |массив или строка |Массив или строка, используемые для пропуска. |
 | numberToSkip |Да |INT |Число элементов или знаков, которые необходимо пропустить. Если это значение меньше или равно 0, то возвращаются все элементы или знаки в значении. Если он превышает длину массива или строки, возвращается пустой массив или строка. |
@@ -1309,7 +1309,7 @@ ms.locfileid: "80982420"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "testArray": {
@@ -1349,7 +1349,7 @@ ms.locfileid: "80982420"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | arrayOutput | Массив | ["three"] |
 | stringOutput | Строка | two three |
@@ -1362,7 +1362,7 @@ ms.locfileid: "80982420"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | inputString |Да |строка |Строка для разделения. |
 | разделитель |Да |строка или массив строк |Разделитель для разбиения строки. |
@@ -1377,7 +1377,7 @@ ms.locfileid: "80982420"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "firstString": {
@@ -1408,7 +1408,7 @@ ms.locfileid: "80982420"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | firstOutput | Массив | ["one", "two", "three"] |
 | secondOutput | Массив | ["one", "two", "three"] |
@@ -1421,7 +1421,7 @@ ms.locfileid: "80982420"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | stringToSearch |Да |строка |Значение, содержащее элемент, который необходимо найти. |
 | stringToFind |Да |строка |Значение, которое необходимо найти. |
@@ -1436,7 +1436,7 @@ ms.locfileid: "80982420"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "resources": [],
     "outputs": {
@@ -1470,7 +1470,7 @@ ms.locfileid: "80982420"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | startsTrue | Bool | True |
 | startsCapTrue | Bool | True |
@@ -1479,7 +1479,7 @@ ms.locfileid: "80982420"
 | endsCapTrue | Bool | True |
 | endsFalse | Bool | False |
 
-## <a name="string"></a>строка
+## <a name="string"></a>string
 
 `string(valueToConvert)`
 
@@ -1487,7 +1487,7 @@ ms.locfileid: "80982420"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | valueToConvert |Да | Любой |Значение, которое необходимо преобразовать в строку. Можно преобразовать любой тип значения, включая объекты и массивы. |
 
@@ -1501,7 +1501,7 @@ ms.locfileid: "80982420"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "testObject": {
@@ -1544,7 +1544,7 @@ ms.locfileid: "80982420"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | objectOutput | Строка | {"valueA":10,"valueB":"Example Text"} |
 | arrayOutput | Строка | ["a","b","c"] |
@@ -1558,7 +1558,7 @@ ms.locfileid: "80982420"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | stringToParse |Да |строка |Исходная строка, из которой извлекается подстрока. |
 | startIndex |Нет |INT |Отсчитываемая от нуля позиция первого знака для подстроки. |
@@ -1568,7 +1568,7 @@ ms.locfileid: "80982420"
 
 Подстрока. Также может принимать значение пустой строки, когда длина равна нулю.
 
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>Комментарии
 
 Если substring выходит за пределы строки или когда длина меньше нуля, происходит ошибка выполнения функции. Следующий пример завершается ошибкой "Параметры индекса и длины должны относиться к расположению в строке. Параметр индекса: 0, параметр длины: 11, параметр длины строкового параметра: 10".
 
@@ -1576,7 +1576,7 @@ ms.locfileid: "80982420"
 "parameters": {
     "inputString": { "type": "string", "value": "1234567890" }
 },
-"variables": { 
+"variables": {
     "prefix": "[substring(parameters('inputString'), 0, 11)]"
 }
 ```
@@ -1587,7 +1587,7 @@ ms.locfileid: "80982420"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "testString": {
@@ -1607,7 +1607,7 @@ ms.locfileid: "80982420"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | substringOutput | Строка | two |
 
@@ -1619,7 +1619,7 @@ ms.locfileid: "80982420"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | originalValue |Да |массив или строка |Массив или строка, из которых берутся элементы. |
 | numberToTake |Да |INT |Число элементов или знаков, которые необходимо взять. Если это значение меньше или равно 0, то возвращается пустой массив или строка. Если он превышает длину заданного массива или строки, возвращаются все элементы массива или строки. |
@@ -1634,7 +1634,7 @@ ms.locfileid: "80982420"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "testArray": {
@@ -1674,7 +1674,7 @@ ms.locfileid: "80982420"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | arrayOutput | Массив | ["one", "two"] |
 | stringOutput | Строка | on |
@@ -1687,7 +1687,7 @@ ms.locfileid: "80982420"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | изменяемая_строка |Да |строка |Значение, преобразовываемое в нижний регистр. |
 
@@ -1701,7 +1701,7 @@ ms.locfileid: "80982420"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "testString": {
@@ -1725,7 +1725,7 @@ ms.locfileid: "80982420"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | toLowerOutput | Строка | one two three |
 | toUpperOutput | Строка | ONE TWO THREE |
@@ -1738,7 +1738,7 @@ ms.locfileid: "80982420"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | изменяемая_строка |Да |строка |Значение, преобразовываемое в верхний регистр. |
 
@@ -1752,7 +1752,7 @@ ms.locfileid: "80982420"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "testString": {
@@ -1776,7 +1776,7 @@ ms.locfileid: "80982420"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | toLowerOutput | Строка | one two three |
 | toUpperOutput | Строка | ONE TWO THREE |
@@ -1789,9 +1789,9 @@ ms.locfileid: "80982420"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
-| stringToTrim |Да |строка |Обрезаемое значение. |
+| stringToTrim |Да |string |Обрезаемое значение. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -1803,7 +1803,7 @@ ms.locfileid: "80982420"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "testString": {
@@ -1823,7 +1823,7 @@ ms.locfileid: "80982420"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | return | Строка | one two three |
 
@@ -1831,22 +1831,22 @@ ms.locfileid: "80982420"
 
 `uniqueString (baseString, ...)`
 
-Создает детерминированную хэш-строку на основании значений, указанных как параметры. 
+Создает детерминированную хэш-строку на основании значений, указанных как параметры.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
-| baseString |Да |строка |Значение, используемое в хэш-функции для создания уникальной строки. |
+| baseString |Да |string |Значение, используемое в хэш-функции для создания уникальной строки. |
 | Дополнительные параметры (если необходимы) |Нет |строка |Можно добавить столько строк, сколько необходимо для создания значения, которое задает уровень уникальности. |
 
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>Комментарии
 
-Эта функция полезна в тех случаях, когда необходимо создать уникальное имя ресурса. Указываются значения параметров, которые ограничивают область уникальности результата. Можно указать, является ли уникальным имя в подписке, группе ресурсов или развертывании. 
+Эта функция полезна в тех случаях, когда необходимо создать уникальное имя ресурса. Указываются значения параметров, которые ограничивают область уникальности результата. Можно указать, является ли уникальным имя в подписке, группе ресурсов или развертывании.
 
 Возвращаемое значение не является случайной строкой, а результатом хэш-функции. Возвращаемое значение содержит 13 знаков. Он не является глобально уникальным. Вы можете добавить к значению префикс из своего соглашения об именовании, чтобы создать значимое имя. В следующем примере показан формат возвращаемого значения. Фактическое значение зависит от указанных параметров.
 
-    tcvhiyu5h2o5o
+`tcvhiyu5h2o5o`
 
 В следующих примерах показывается, как использовать uniqueString при создании уникального значения для часто используемых уровней.
 
@@ -1871,9 +1871,9 @@ ms.locfileid: "80982420"
 В следующем примере показано, как создать уникальное имя учетной записи хранения на основе вашей группы ресурсов. Внутри группы ресурсов имя не является уникальным, если оно создано аналогичным образом.
 
 ```json
-"resources": [{ 
-    "name": "[concat('storage', uniqueString(resourceGroup().id))]", 
-    "type": "Microsoft.Storage/storageAccounts", 
+"resources": [{
+    "name": "[concat('storage', uniqueString(resourceGroup().id))]",
+    "type": "Microsoft.Storage/storageAccounts",
     ...
 ```
 
@@ -1889,7 +1889,7 @@ ms.locfileid: "80982420"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "resources": [],
     "outputs": {
@@ -1913,19 +1913,19 @@ ms.locfileid: "80982420"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
-| baseUri |Да |строка |Строка базового универсального кода ресурса (URI). Следите за поведением обработки замыкающей косой черты ('/'), как описано ниже в этой таблице.  |
-| relativeUri |Да |строка |Строка относительного универсального кода ресурса (URI), добавляемая к строке базового универсального кода ресурса (URI). |
+| baseUri |Да |string |Строка базового универсального кода ресурса (URI). Следите за поведением обработки замыкающей косой черты ('/'), как описано ниже в этой таблице.  |
+| relativeUri |Да |string |Строка относительного универсального кода ресурса (URI), добавляемая к строке базового универсального кода ресурса (URI). |
 
 * Если **baseUri** заканчивается в конце косой черты, результатом является просто **baseUri** , за которым следует значение **relativeUri**.
 
-* Если **baseUri** не заканчивается в конце косой черты, происходит одно из двух действий.  
+* Если **baseUri** не заканчивается в конце косой черты, происходит одно из двух действий.
 
    * Если параметр **baseUri** вообще не имеет косой черты (кроме символа "//" рядом с передним), результатом является просто **baseUri** , за которым следует значение **relativeUri**.
 
    * Если **baseUri** имеет несколько косых черт, но не заканчивается косой чертой, все, начиная с последней косой черты, удаляется из **baseUri** , а результатом является **baseUri** , за которым следует значение **relativeUri**.
-     
+
 Ниже приведены некоторые примеры:
 
 ```
@@ -1952,11 +1952,11 @@ uri('http://contoso.org/firstpath/azuredeploy.json/', 'myscript.sh') -> http://c
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "variables": {
         "uriFormat": "[uri('http://contoso.com/resources/', 'nested/azuredeploy.json')]",
-        "uriEncoded": "[uriComponent(variables('uriFormat'))]" 
+        "uriEncoded": "[uriComponent(variables('uriFormat'))]"
     },
     "resources": [
     ],
@@ -1979,7 +1979,7 @@ uri('http://contoso.org/firstpath/azuredeploy.json/', 'myscript.sh') -> http://c
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | uriOutput | Строка | `http://contoso.com/resources/nested/azuredeploy.json` |
 | componentOutput | Строка | `http%3A%2F%2Fcontoso.com%2Fresources%2Fnested%2Fazuredeploy.json` |
@@ -1993,7 +1993,7 @@ uri('http://contoso.org/firstpath/azuredeploy.json/', 'myscript.sh') -> http://c
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | stringToEncode |Да |строка |Значение для кодирования. |
 
@@ -2007,11 +2007,11 @@ uri('http://contoso.org/firstpath/azuredeploy.json/', 'myscript.sh') -> http://c
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "variables": {
         "uriFormat": "[uri('http://contoso.com/resources/', 'nested/azuredeploy.json')]",
-        "uriEncoded": "[uriComponent(variables('uriFormat'))]" 
+        "uriEncoded": "[uriComponent(variables('uriFormat'))]"
     },
     "resources": [
     ],
@@ -2034,7 +2034,7 @@ uri('http://contoso.org/firstpath/azuredeploy.json/', 'myscript.sh') -> http://c
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | uriOutput | Строка | `http://contoso.com/resources/nested/azuredeploy.json` |
 | componentOutput | Строка | `http%3A%2F%2Fcontoso.com%2Fresources%2Fnested%2Fazuredeploy.json` |
@@ -2048,7 +2048,7 @@ uri('http://contoso.org/firstpath/azuredeploy.json/', 'myscript.sh') -> http://c
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | uriEncodedString |Да |строка |Значение, закодированное в формате URI, которое необходимо преобразовать в строку. |
 
@@ -2062,11 +2062,11 @@ uri('http://contoso.org/firstpath/azuredeploy.json/', 'myscript.sh') -> http://c
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "variables": {
         "uriFormat": "[uri('http://contoso.com/resources/', 'nested/azuredeploy.json')]",
-        "uriEncoded": "[uriComponent(variables('uriFormat'))]" 
+        "uriEncoded": "[uriComponent(variables('uriFormat'))]"
     },
     "resources": [
     ],
@@ -2089,15 +2089,15 @@ uri('http://contoso.org/firstpath/azuredeploy.json/', 'myscript.sh') -> http://c
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | uriOutput | Строка | `http://contoso.com/resources/nested/azuredeploy.json` |
 | componentOutput | Строка | `http%3A%2F%2Fcontoso.com%2Fresources%2Fnested%2Fazuredeploy.json` |
 | toStringOutput | Строка | `http://contoso.com/resources/nested/azuredeploy.json` |
 
-## <a name="next-steps"></a>Дальнейшие шаги
-* Описание разделов в шаблоне Azure Resource Manager см. в разделе [authoring Azure Resource Manager Templates](template-syntax.md).
-* Сведения о слиянии нескольких шаблонов см. в разделе [Использование связанных шаблонов с Azure Resource Manager](linked-templates.md).
-* Чтобы выполнить итерацию указанного числа раз при создании типа ресурса, см. раздел [Создание нескольких экземпляров ресурсов в Azure Resource Manager](copy-resources.md).
+## <a name="next-steps"></a>Дальнейшие действия
+* Описание разделов в шаблоне Azure Resource Manager см. в статье [Создание шаблонов Azure Resource Manager](template-syntax.md).
+* Инструкции по объединению нескольких шаблонов см. в статье [Использование связанных шаблонов в Azure Resource Manager](linked-templates.md).
+* Указания по выполнению заданного количества циклов итерации при создании типа ресурса см. в статье [Создание нескольких экземпляров ресурсов в Azure Resource Manager](copy-resources.md).
 * Указания по развертыванию созданного шаблона см. в статье, посвященной [развертыванию приложения с помощью шаблона Azure Resource Manager](deploy-powershell.md).
 

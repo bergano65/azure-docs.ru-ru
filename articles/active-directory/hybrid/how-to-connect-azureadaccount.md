@@ -11,18 +11,18 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 04/25/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
-ms.openlocfilehash: 7f6b623cc5f864106dc2f119308370e80014a4c2
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
+ms.openlocfilehash: e4f31c560fe3dd91689b361ed520e466fd52da1c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82611030"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85360016"
 ---
 # <a name="change-the-azure-ad-connector-account-password"></a>Изменение пароля учетной записи соединителя Azure AD
 Учетная запись соединителя Azure AD должна быть бесплатной. Если требуется сбросить ее учетные данные, в этой статье вы найдете необходимые сведения. Например, если глобальный администратор по ошибке сбрасывает пароль учетной записи с помощью PowerShell.
@@ -31,7 +31,7 @@ ms.locfileid: "82611030"
 Если учетной записи соединителя Azure AD не удается связаться с Azure AD из-за проблем с проверкой подлинности, пароль можно сбросить.
 
 1. Войдите на сервер синхронизации Azure AD Connect и запустите PowerShell.
-2. Запустите `Add-ADSyncAADServiceAccount`.
+2. Выполните `Add-ADSyncAADServiceAccount`.
    ![Командлет PowerShell addadsyncaadserviceaccount](./media/how-to-connect-azureadaccount/addadsyncaadserviceaccount.png)
 3. Введите учетные данные глобального администратора Azure AD.
 
@@ -46,8 +46,8 @@ ms.locfileid: "82611030"
 ---
 Событие 659 ошибка при получении конфигурации синхронизации политики паролей. Microsoft. IdentityModel. Clients. ActiveDirectory. Адалсервицеексцептион: AADSTS70002: ошибка при проверке учетных данных. AADSTS50054: старый пароль используется для проверки подлинности.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 **Обзорные статьи**
 
-* [Службы синхронизации Azure AD Connect: общие сведений о синхронизации и ее настройка](how-to-connect-sync-whatis.md)
-* [Интеграция локальных удостоверений с Azure Active Directory.](whatis-hybrid-identity.md)
+* [Синхронизация Azure AD Connect: общие сведений о синхронизации и ее настройка](how-to-connect-sync-whatis.md)
+* [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md)

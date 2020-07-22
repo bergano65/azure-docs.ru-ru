@@ -16,10 +16,9 @@ ms.topic: article
 ms.date: 08/17/2017
 ms.author: rodsan
 ms.openlocfilehash: 748d10b994080b667885e5d0d5f4d688269e86ab
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "68728043"
 ---
 # <a name="microsoft-threat-modeling-tool-mitigations"></a>Устранение рисков с помощью средства моделирования угроз от Майкрософт
@@ -52,6 +51,6 @@ ms.locfileid: "68728043"
 
 В итоге вы можете использовать эти категории, чтобы сосредоточиться на обеспечении безопасности и расставить приоритеты. Например, если вы знаете, что большинство проблем с безопасностью происходит на этапе проверки входных данных, аутентификации и авторизации, вы уже на полпути к их устранению. Дополнительные сведения см. по **[этой ссылке](https://www.google.com/patents/US7818788)**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Ознакомьтесь с **[угрозами средства моделирования угроз](threat-modeling-tool-threats.md)**, чтобы узнать о категориях угроз, используемыми средством для моделирования возможных угроз.

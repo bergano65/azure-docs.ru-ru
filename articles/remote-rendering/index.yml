@@ -9,12 +9,12 @@ metadata:
   author: florianborn71
   ms.author: flborn
   ms.date: 03/26/2020
-  ms.openlocfilehash: e379515ea34206e21f80ceb23a465858d6d4da81
-  ms.sourcegitcommit: 318d1bafa70510ea6cdcfa1c3d698b843385c0f6
+  ms.openlocfilehash: e740fd08dc3e616b0768c6c15fd4191cb58e261a
+  ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 05/21/2020
-  ms.locfileid: "83773225"
+  ms.lasthandoff: 06/30/2020
+  ms.locfileid: "85565420"
 landingContent:
 - title: Сведения об Удаленной отрисовке Azure
   linkLists:
@@ -52,17 +52,27 @@ landingContent:
       url: quickstarts/deploy-to-hololens.md
     - text: Развертывание примера Unity на рабочем столе
       url: quickstarts/deploy-to-desktop.md
+    - text: Развертывание примера в машинном коде C++ в HoloLens
+      url: quickstarts/native-cpp/hololens/deploy-native-cpp-tutorial.md
     - text: Преобразование модели для отрисовки
       url: quickstarts/convert-model.md
-- title: Узнайте, как создать собственное приложение в Unity
+- title: Узнайте, как создать собственное приложение
   linkLists:
   - linkListType: tutorial
     links:
-    - text: Unity. Настройка проекта с нуля
-      url: tutorials/unity/project-setup.md
-    - text: Unity. Работа с удаленными сущностями
-      url: tutorials/unity/working-with-remote-entities.md
-    - text: Unity. Изменение среды и материалов
-      url: tutorials/unity/changing-environment-and-materials.md
+    - text: Обзор
+      url: tutorials/unity/tutorial-landing.md
+    - text: Просмотр модели удаленной отрисовки
+      url: tutorials/unity/view-remote-models/view-remote-models.md
+    - text: Загрузка пользовательских моделей
+      url: tutorials/unity/custom-models/custom-models.md
+    - text: Манипулирование моделями
+      url: tutorials/unity/manipulate-models/manipulate-models.md
+    - text: Детализация материалов, освещения и эффектов
+      url: tutorials/unity/materials-lighting-effects/materials-lighting-effects.md
+    - text: Защита службы "Удаленная отрисовка Azure" и хранилища моделей
+      url: tutorials/unity/security/security.md
+    - text: Создание коммерческого готового приложения в службе "Удаленная отрисовка Azure"
+      url: tutorials/unity/commercial-ready/commercial-ready.md
     - text: Нативный C++. Интеграция Удаленной отрисовки в голографическом приложении HoloLens
       url: tutorials/native-cpp/hololens/integrate-remote-rendering-into-holographic-app.md

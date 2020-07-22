@@ -7,10 +7,9 @@ author: bwren
 ms.author: bwren
 ms.date: 01/19/2018
 ms.openlocfilehash: 48a825f31a1c5f2eab2fbb71b6f030b8acb5617d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77668389"
 ---
 # <a name="alert-management-solution-in-azure-log-analytics"></a>Решение "Управление оповещениями" в Azure Log Analytics
@@ -31,7 +30,7 @@ ms.locfileid: "77668389"
 - Для оповещений Nagios и Zabbix настройте [соответствующие серверы](../../azure-monitor/learn/quick-collect-linux-computer.md) на отправку оповещений в Log Analytics.
 - Для оповещений System Center Operations Manager [подключите группу управления Operations Manager к рабочей области Log Analytics](../../azure-monitor/platform/om-agents.md).  Все оповещения, созданные в System Center Operations Manager, импортируются в Log Analytics.  
 
-## <a name="configuration"></a>Конфигурация
+## <a name="configuration"></a>Параметр Configuration
 Добавьте решение Управление оповещениями в рабочую область Log Analytics, используя процесс, описанный в разделе [Добавление решений](../../azure-monitor/insights/solutions.md). Дополнительная настройка не требуется.
 
 ## <a name="management-packs"></a>Пакеты управления
@@ -41,11 +40,11 @@ ms.locfileid: "77668389"
 
 Дополнительные сведения об обновлении пакетов управления для решений см. в статье [Подключение Operations Manager к Log Analytics](../../azure-monitor/platform/om-agents.md).
 
-## <a name="data-collection"></a>Сбор данных
+## <a name="data-collection"></a>сбор данных
 ### <a name="agents"></a>Агенты
 В следующей таблице описаны подключенные источники, которые поддерживаются этим решением.
 
-| Подключенный источник | Поддержка | Описание |
+| Подключенный источник | Поддержка | Описание: |
 |:--- |:--- |:--- |
 | [Агенты Windows](agent-windows.md) | Нет |Прямые агенты Windows не создают оповещения.  Оповещения Log Analytics могут создаваться на основании событий и данных о производительности, собранных из агентов Windows. |
 | [Агенты Linux](../../azure-monitor/learn/quick-collect-linux-computer.md) | Нет |Прямые агенты Linux не создают оповещения.  Оповещения Log Analytics могут создаваться на основании событий и данных о производительности, собранных из агентов Linux.  Оповещения Nagios и Zabbix собираются с тех серверов, для которых требуется агент Linux. |
@@ -106,7 +105,7 @@ ms.locfileid: "77668389"
 ## <a name="sample-log-searches"></a>Пример поисков журналов
 Следующая таблица содержит примеры поисков по журналам для получения записей оповещений, собранных этим решением. 
 
-| query | Описание |
+| Запрос | Описание |
 |:---|:---|
 | Alert &#124; where SourceSystem == "OpsManager" and AlertSeverity == "error" and TimeRaised > ago(24h) |Критические оповещения, созданные за последние 24 часа. |
 | Alert &#124; where AlertSeverity == "warning" and TimeRaised > ago(24h) |Предупредительные оповещения, созданные за последние 24 часа. |

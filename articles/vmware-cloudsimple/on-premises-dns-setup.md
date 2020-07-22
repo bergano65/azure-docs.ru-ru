@@ -9,10 +9,9 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: c2d69d21eb46d502a45c9df1dfaaa947d26ef7c4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79246114"
 ---
 # <a name="configure-dns-for-name-resolution-for-private-cloud-vcenter-access-from-on-premises-workstations"></a>Настройка DNS для разрешения имен для доступа к службе v-Center для частного облака с локальных рабочих станций
@@ -23,7 +22,7 @@ ms.locfileid: "79246114"
 
 1. Войдите на [портал клаудсимпле](access-cloudsimple-portal.md).
 
-2. Перейдите к разделу **ресурсы** > **частные облака** и выберите частное облако, к которому нужно подключиться.
+2. Перейдите к разделу **ресурсы**  >  **частные облака** и выберите частное облако, к которому нужно подключиться.
 
 3. На странице **Сводка** частного облака в разделе **Основные сведения**скопируйте IP-адрес DNS-сервера частного облака.
 

@@ -13,18 +13,18 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
-ms.openlocfilehash: 41f9f267880d199d2e221453eea5c3584ce96881
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: edbe202350b0912372aad822c8530c5f79c76384
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81868398"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86254832"
 ---
 # <a name="authorize-developer-accounts-by-using-azure-active-directory-in-azure-api-management"></a>Авторизация учетных записей разработчиков с помощью Azure Active Directory в управлении API Azure
 
 В этой статье показывается, как включить доступ к порталу разработчика для пользователей из каталога Active Directory Azure (Azure AD). В этом руководстве также показано, как управлять группами пользователей Azure AD путем добавления внешних групп, содержащих пользователей.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 - Выполните инструкции из краткого руководства [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md).
 - Импортируйте и опубликуйте экземпляр службы управления API Azure. Дополнительные сведения см. в статье об [импорте и публикации](import-and-publish.md).
@@ -34,7 +34,7 @@ ms.locfileid: "81868398"
 ## <a name="authorize-developer-accounts-by-using-azure-ad"></a>Авторизация учетных записей разработчиков с помощью Azure AD
 
 1. Войдите на [портал Azure](https://portal.azure.com). 
-2. Выберите пункт ![Стрелка](./media/api-management-howto-aad/arrow.png).
+2. Выбрать ![Стрелка](./media/api-management-howto-aad/arrow.png).
 3. В поле поиска введите **api**.
 4. Выберите **службы управления API**.
 5. Выберите экземпляр службы управления API.
@@ -73,7 +73,7 @@ ms.locfileid: "81868398"
 
     > [!NOTE]
     > В разделе **Разрешенные клиенты** можно указать несколько доменов. Прежде чем какой-либо пользователь сможет выполнить вход из домена, отличного от домена, в котором было зарегистрировано приложение, глобальный администратор этого другого домена должен предоставить разрешение для доступа приложения к данным каталога. Чтобы предоставить разрешение, глобальный администратор должен: a. Перейдите на страницу `https://<URL of your developer portal>/aadadminconsent` (например, https://contoso.portal.azure-api.net/aadadminconsent).
-    > b. Ввести имя домена клиента Azure AD, к которому требуется предоставить доступ.
+    > Б. Ввести имя домена клиента Azure AD, к которому требуется предоставить доступ.
     > c. Нажмите кнопку **Submit** (Отправить). 
 
 20.  После указания требуемой конфигурации выберите **Добавить**.
@@ -88,7 +88,7 @@ ms.locfileid: "81868398"
 
 1. Вернитесь к регистрации приложения, созданному в предыдущем разделе.
 2. Выберите **разрешения API**и щелкните **+ Добавить разрешение**. 
-3. В области **разрешения API запроса** перейдите на вкладку **API-интерфейсы Майкрософт** и выберите плитку **Microsoft Graph** . Выберите **разрешения приложения**, найдите **Каталог**и выберите разрешение **каталог. чтение. все** . 
+3. В области **разрешения API запроса** выберите вкладку API- **интерфейсы Майкрософт** , прокрутите вниз и выберите плитку **Azure Active Directory графа** . Выберите **разрешения приложения**, найдите **Каталог**и выберите разрешение **каталог. чтение. все** . 
 4. Щелкните **Добавить разрешения** в нижней части панели, а затем щелкните **предоставить согласие администратора для {tenantname}** , чтобы предоставить доступ всем пользователям в этом каталоге. 
 
 Теперь можно добавить внешние группы Azure AD на вкладке **группы** экземпляра службы управления API.
@@ -103,7 +103,7 @@ ms.locfileid: "81868398"
  
 Пользователи из настроенного экземпляра Azure AD теперь могут входить на портал разработчика, просматривать любые группы, которые они могут видеть, и подписываться на них.
 
-## <a name="developer-portal---add-azure-ad-account-authentication"></a><a id="log_in_to_dev_portal"/>Портал разработчика. Добавление проверки подлинности учетной записи Azure AD
+## <a name="developer-portal---add-azure-ad-account-authentication"></a><a id="log_in_to_dev_portal"></a>Портал разработчика. Добавление проверки подлинности учетной записи Azure AD
 
 На портале разработчика для входа с помощью AAD можно **нажать кнопку Вход: мини-приложение OAuth** . Мини-приложение уже включено на странице входа в содержимое портала разработчика по умолчанию.
 
@@ -141,14 +141,14 @@ ms.locfileid: "81868398"
 [api-management-complete-registration]: ./media/api-management-howto-aad/api-management-complete-registration.png
 [api-management-registration-complete]: ./media/api-management-howto-aad/api-management-registration-complete.png
 
-[How to add operations to an API]: api-management-howto-add-operations.md
+[How to add operations to an API]: ./mock-api-responses.md
 [How to add and publish a product]: api-management-howto-add-products.md
 [Monitoring and analytics]: api-management-monitoring.md
 [Add APIs to a product]: api-management-howto-add-products.md#add-apis
 [Publish a product]: api-management-howto-add-products.md#publish-product
 [Get started with Azure API Management]: get-started-create-service-instance.md
-[API Management policy reference]: api-management-policy-reference.md
-[Caching policies]: api-management-policy-reference.md#caching-policies
+[API Management policy reference]: ./api-management-policies.md
+[Caching policies]: ./api-management-policies.md#caching-policies
 [Create an API Management service instance]: get-started-create-service-instance.md
 
 [https://oauth.net/2/]: https://oauth.net/2/

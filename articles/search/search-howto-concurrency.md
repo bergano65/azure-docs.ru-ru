@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: edfb2fe5cc37a00335ca7b5be851a88825b03eb1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f22e69cbc625d21c398151e413574387a2587790
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "72792215"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86145289"
 ---
 # <a name="how-to-manage-concurrency-in-azure-cognitive-search"></a>Управление параллелизмом в Azure Когнитивный поиск
 
@@ -46,7 +46,7 @@ ms.locfileid: "72792215"
 
 ### <a name="sample-code-from-dotnetetagsexplainer-program"></a>Пример кода из [программы DotNetETagsExplainer](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetETagsExplainer)
 
-```
+```csharp
     class Program
     {
         // This sample shows how ETags work by performing conditional updates and deletes
@@ -173,6 +173,7 @@ ms.locfileid: "72792215"
 
 Этот фрагмент получает индекс "hotels", проверяет версию объекта при операции обновления, порождает исключение, если условие не выполняется, а затем совершает повторную попытку операции (до трех раз), начиная с извлечения индекса с сервера, чтобы получить последнюю версию.
 
+```csharp
         private static void EnableSynonymsInHotelsIndexSafely(SearchServiceClient serviceClient)
         {
             int MaxNumTries = 3;
@@ -203,9 +204,9 @@ ms.locfileid: "72792215"
             index.Fields.First(f => f.Name == "tags").SynonymMaps = new[] { "desc-synonymmap" };
             return index;
         }
+```
 
-
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Просмотрите [пример кода C# для синонимов](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetHowToSynonyms), чтобы получить дополнительные сведения о безопасном обновлении существующего индекса.
 
@@ -216,6 +217,6 @@ ms.locfileid: "72792215"
 
 ## <a name="see-also"></a>См. также
 
-[Общие](https://docs.microsoft.com/rest/api/searchservice/common-http-request-and-response-headers-used-in-azure-search)
-
-[коды состояния HTTP](https://docs.microsoft.com/rest/api/searchservice/http-status-codes)для операций с индексами HTTP-запросов и ответов[(REST API)](https://docs.microsoft.com/rest/api/searchservice/index-operations)
+[Общие заголовки](https://docs.microsoft.com/rest/api/searchservice/common-http-request-and-response-headers-used-in-azure-search) 
+ http-запросов и ответов [Коды](https://docs.microsoft.com/rest/api/searchservice/http-status-codes) 
+ состояния HTTP [Операции с индексами (REST API)](https://docs.microsoft.com/rest/api/searchservice/index-operations)

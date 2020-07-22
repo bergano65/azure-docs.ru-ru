@@ -6,15 +6,15 @@ ms.service: data-lake-analytics
 author: saveenr
 ms.author: saveenr
 ms.reviewer: jasonwhowell
-ms.assetid: c1c74e5e-3e4a-41ab-9e3f-e9085da1d315
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 06/20/2017
-ms.openlocfilehash: 0a49cbdb4caf474d0628fea3679ce712d37886e7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.custom: tracking-python
+ms.openlocfilehash: 31a9a12d6c252c60f3000c2a15a5f382734597a2
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "60813405"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86110527"
 ---
 # <a name="extend-u-sql-scripts-with-python-code-in-azure-data-lake-analytics"></a>Расширение возможностей сценариев U-SQL c кодом Python в Azure Data Lake Analytics
 
@@ -26,7 +26,7 @@ ms.locfileid: "60813405"
 * в меню слева в разделе **Приступая к работе** щелкните **Примеры сценариев**;
 * выберите **Установка расширений U-SQL** и нажмите кнопку **ОК**.
 
-## <a name="overview"></a>Обзор 
+## <a name="overview"></a>Обзор
 
 Расширения Python для U-SQL позволяют разработчикам выполнять код Python с массовым параллелизмом. В следующих примерах представлены основные шаги:
 
@@ -35,38 +35,32 @@ ms.locfileid: "60813405"
 * Расширения Python для U-SQL включают встроенный инструмент редукции (`Extension.Python.Reducer`), который выполняет код Python в каждой вершине, назначенный инструменту редукции.
 * Сценарий U-SQL содержит встроенный код Python с функцией `usqlml_main`, которая принимает кадр данных Pandas в качестве входных данных и возвращает его в качестве выходных данных.
 
---
-
-    REFERENCE ASSEMBLY [ExtPython];
-
-    DECLARE @myScript = @"
-    def get_mentions(tweet):
-        return ';'.join( ( w[1:] for w in tweet.split() if w[0]=='@' ) )
-
-    def usqlml_main(df):
-        del df['time']
-        del df['author']
-        df['mentions'] = df.tweet.apply(get_mentions)
-        del df['tweet']
-        return df
-    ";
-
-    @t  = 
-        SELECT * FROM 
-           (VALUES
-               ("D1","T1","A1","@foo Hello World @bar"),
-               ("D2","T2","A2","@baz Hello World @beer")
-           ) AS 
-               D( date, time, author, tweet );
-
-    @m  =
-        REDUCE @t ON date
-        PRODUCE date string, mentions string
-        USING new Extension.Python.Reducer(pyScript:@myScript);
-
-    OUTPUT @m
-        TO "/tweetmentions.csv"
-        USING Outputters.Csv();
+```usql
+REFERENCE ASSEMBLY [ExtPython];
+DECLARE @myScript = @"
+def get_mentions(tweet):
+    return ';'.join( ( w[1:] for w in tweet.split() if w[0]=='@' ) )
+def usqlml_main(df):
+    del df['time']
+    del df['author']
+    df['mentions'] = df.tweet.apply(get_mentions)
+    del df['tweet']
+    return df
+";
+@t  =
+    SELECT * FROM
+       (VALUES
+           ("D1","T1","A1","@foo Hello World @bar"),
+           ("D2","T2","A2","@baz Hello World @beer")
+       ) AS date, time, author, tweet );
+@m  =
+    REDUCE @t ON date
+    PRODUCE date string, mentions string
+    USING new Extension.Python.Reducer(pyScript:@myScript);
+OUTPUT @m
+    TO "/tweetmentions.csv"
+    USING Outputters.Csv();
+```
 
 ## <a name="how-python-integrates-with-u-sql"></a>Интеграция Python c U-SQL
 
@@ -77,30 +71,36 @@ ms.locfileid: "60813405"
 
 ### <a name="schemas"></a>Схемы
 
-* Векторы индексов в Pandas не поддерживаются в U-SQL. Все входные кадры данных в функции Python будут всегда содержать 64-разрядный числовой индекс от 0 до соответствующего количества строк минус 1. 
+* Векторы индексов в Pandas не поддерживаются в U-SQL. Все входные кадры данных в функции Python будут всегда содержать 64-разрядный числовой индекс от 0 до соответствующего количества строк минус 1.
 * Наборы данных U-SQL не могут содержать повторяемые имена столбцов.
-* Имена столбцов в наборах данных не являются строками. 
+* Имена столбцов в наборах данных не являются строками.
 
 ### <a name="python-versions"></a>Версии Python
-Поддерживается только версия Python 3.5.1 (скомпилированная для Windows). 
+
+Поддерживается только версия Python 3.5.1 (скомпилированная для Windows).
 
 ### <a name="standard-python-modules"></a>Стандартные модули Python
+
 Включены все стандартные модули Python.
 
 ### <a name="additional-python-modules"></a>Дополнительные модули Python
+
 Кроме стандартных библиотек Python, включены несколько часто используемых библиотек Python:
 
-    pandas
-    numpy
-    numexpr
+* pandas
+* numpy
+* нумекспр
 
 ### <a name="exception-messages"></a>Сообщения об исключении
+
 В настоящее время исключение в коде Python отображается в качестве общего сбоя вершины. В будущем в сообщениях об ошибках заданий U-SQL будут отображаться сообщения об исключении Python.
 
 ### <a name="input-and-output-size-limitations"></a>Ограничения размера входных и выходных данных
+
 Каждой вершине назначен ограниченный объем памяти. В настоящее время он составляет 6 ГБ на единицу аналитики. Так как входящие и исходящие кадры данных должны существовать в памяти кода Python, общий размер входных и выходных данных должен находиться в пределах 6 ГБ.
 
-## <a name="see-also"></a>См. также
+## <a name="next-steps"></a>Дальнейшие действия
+
 * [Обзор аналитики озера данных Microsoft Azure](data-lake-analytics-overview.md)
 * [Разработка сценариев U-SQL с помощью средств озера данных для Visual Studio.](data-lake-analytics-data-lake-tools-get-started.md)
 * [Использование оконных функций U-SQL для заданий в службе аналитики озера данных Azure](data-lake-analytics-use-window-functions.md)

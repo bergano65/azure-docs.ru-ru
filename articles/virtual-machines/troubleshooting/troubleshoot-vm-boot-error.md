@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 08/28/2019
 ms.author: tiag
-ms.openlocfilehash: c24a840716841d04537ac5b77bcaf26fca4b78cf
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 7774ea5138e6d77547e386531e573457cd6d2862
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77561955"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86525948"
 ---
 # <a name="linux-vm-boots-to-grub-rescue"></a>Виртуальная машина Linux загружается в GRUB
 
@@ -34,8 +34,8 @@ ms.locfileid: "77561955"
 
 * Если вы получаете ошибку **неизвестная**файловая система, эта ошибка может возникать из-за повреждения файловой системы в загрузочном разделе или неверной конфигурации ядра.
 
-   * При возникновении проблем с файловой системой выполните действия, описанные в статье [Восстановление Linux: не удается выполнить подключение SSH к виртуальной машине Linux из-за ошибок файловой системы (fsck, индексных дескрипторов)](https://blogs.msdn.microsoft.com/linuxonazure/2016/09/13/linux-recovery-cannot-ssh-to-linux-vm-due-to-file-system-errors-fsck-inodes/).
-   * В случае проблем с ядром выполните действия, описанные в статье [Восстановление Linux: ручное устранение проблем, связанных со сбоями в работе ядра](https://blogs.msdn.microsoft.com/linuxonazure/2016/10/09/linux-recovery-manually-fixing-non-boot-issues-related-to-kernel-problems/), или [Восстановление Linux. Устранение проблем, связанных с проблемами ядра, с помощью чрут](https://blogs.msdn.microsoft.com/linuxonazure/2016/10/09/linux-recovery-fixing-non-boot-issues-related-to-kernel-problems-using-chroot/).
+   * При возникновении проблем с файловой системой выполните действия, описанные в статье [Восстановление Linux: не удается выполнить подключение SSH к виртуальной машине Linux из-за ошибок файловой системы (fsck, индексных дескрипторов)](/archive/blogs/linuxonazure/linux-recovery-cannot-ssh-to-linux-vm-due-to-file-system-errors-fsck-inodes).
+   * В случае проблем с ядром выполните действия, описанные в статье [Восстановление Linux: ручное устранение проблем, связанных со сбоями в работе ядра](/archive/blogs/linuxonazure/linux-recovery-manually-fixing-non-boot-issues-related-to-kernel-problems), или [Восстановление Linux. Устранение проблем, связанных с проблемами ядра, с помощью чрут](/archive/blogs/linuxonazure/linux-recovery-fixing-non-boot-issues-related-to-kernel-problems-using-chroot).
    
 ### <a name="error---file-not-found"></a>Ошибка-файл не найден
 
@@ -47,11 +47,11 @@ ms.locfileid: "77561955"
 
     2. Затем выполните следующую команду, чтобы повторно создать конфигурацию:`grub2-mkconfig -o /boot/grub2/grub.cfg`
 
-   * Если отсутствующий файл имеет `/boot/grub/menu.lst`значение, эта ошибка относится к более старым версиям ОС (**RHEL 6. x**, **CentOS 6. x** и **Ubuntu 14,04**), поэтому команды могут отличаться. Необходимо будет запустить старый сервер и выполнить тестирование, чтобы убедиться, что указаны правильные команды.
+   * Если отсутствующий файл имеет значение `/boot/grub/menu.lst` , эта ошибка относится к более старым версиям ОС (**RHEL 6. x**, **CentOS 6. x** и **Ubuntu 14,04**), поэтому команды могут отличаться. Необходимо будет запустить старый сервер и выполнить тестирование, чтобы убедиться, что указаны правильные команды.
 
 ### <a name="error---no-such-partition"></a>Ошибка-отсутствует такой раздел
 
-* Если вы получаете ошибку **без такого раздела**, обратитесь к [сценарию case: "нет такой секции" при попытке запустить виртуальную машину после попытки расширения диска операционной системы](https://blogs.technet.microsoft.com/shwetanayak/2017/03/12/case-scenario-no-such-partition-error-while-trying-to-start-the-vm-after-attempting-to-extend-the-os-drive/).
+* Если вы получаете ошибку **без такого раздела**, обратитесь к [сценарию case: "нет такой секции" при попытке запустить виртуальную машину после попытки расширения диска операционной системы](/archive/blogs/shwetanayak/case-scenario-no-such-partition-error-while-trying-to-start-the-vm-after-attempting-to-extend-the-os-drive).
 
 ### <a name="error---grubcfg-file-not-found"></a>Ошибка-файл GRUB. cfg не найден
 
@@ -61,12 +61,11 @@ ms.locfileid: "77561955"
 
     1. Убедитесь `/etc/default/grub` , что существуют и имеют правильные или нужные параметры. Если вы не знакомы с параметрами по умолчанию, можно проверить рабочую виртуальную машину.
 
-    2. Затем выполните следующую команду, чтобы повторно создать конфигурацию: `grub2-mkconfig -o /boot/grub2/grub.cfg`.
+    2. Затем выполните следующую команду, чтобы повторно создать конфигурацию: `grub2-mkconfig -o /boot/grub2/grub.cfg` .
 
-   * Если отсутствующий файл имеет `/boot/grub/menu.lst`значение, эта ошибка относится к более старым версиям ОС (**RHEL 6. x**, **CentOS 6. x** и **Ubuntu 14,04**), поэтому команды могут быть отложены. Запустите старый сервер и проверьте его, чтобы убедиться, что указаны правильные команды.
+   * Если отсутствующий файл имеет значение `/boot/grub/menu.lst` , эта ошибка относится к более старым версиям ОС (**RHEL 6. x**, **CentOS 6. x** и **Ubuntu 14,04**), поэтому команды могут быть отложены. Запустите старый сервер и проверьте его, чтобы убедиться, что указаны правильные команды.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обзор агента виртуальной машины Azure](../extensions/agent-windows.md)
 * [Обзор расширений и компонентов виртуальной машины под управлением Windows](../extensions/features-windows.md)
-

@@ -1,7 +1,7 @@
 ---
-title: Известные проблемы браузера Safari (MSAL. js) | Службы
+title: Известные проблемы браузера Safari (MSAL.js) | Службы
 titleSuffix: Microsoft identity platform
-description: Сведения об известных проблемах при использовании библиотеки проверки подлинности Майкрософт для JavaScript (MSAL. js) в браузере Safari.
+description: Сведения об известных проблемах при использовании библиотеки проверки подлинности Майкрософт для JavaScript (MSAL.js) с помощью браузера Safari.
 services: active-directory
 author: navyasric
 manager: CelesteDG
@@ -14,27 +14,26 @@ ms.author: nacanuma
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.openlocfilehash: edb995e31c2872c1541e29fee09dd66aafc8f9e2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76696118"
 ---
-# <a name="known-issues-on-safari-browser-with-msaljs"></a>Известные проблемы в браузере Safari с MSAL. js 
+# <a name="known-issues-on-safari-browser-with-msaljs"></a>Известные проблемы в браузере Safari с MSAL.js 
 
 ## <a name="silent-token-renewal-on-safari-12-and-itp-20"></a>Автоматическое продление токена в Safari 12 и ITP 2,0
 
 В состав операционных систем Apple iOS 12 и MacOS 10,14 входит выпуск [браузера Safari 12](https://developer.apple.com/safari/whats-new/). В целях обеспечения безопасности и конфиденциальности в Safari 12 включен [интеллектуальная защита от отслеживания 2,0](https://webkit.org/blog/8311/intelligent-tracking-prevention-2-0/). Это по сути заставляет браузер удалять сторонние файлы cookie. ITP 2,0 также обрабатывает файлы cookie, заданные поставщиками удостоверений, как сторонние файлы cookie.
 
-### <a name="impact-on-msaljs"></a>Влияние на MSAL. js
+### <a name="impact-on-msaljs"></a>Влияние на MSAL.js
 
-MSAL. js использует скрытый IFRAME для автоматического получения и продления токена в рамках `acquireTokenSilent` вызовов. Запросы на автоматический маркер зависят от IFRAME, у которого есть доступ к сеансу пользователя, прошедшему проверку подлинности, представленному файлами cookie, заданными Azure AD. При использовании порта ITP 2,0, препятствующего доступу к этим файлам cookie, MSAL. js не может автоматически получать и обновлять `acquireTokenSilent` маркеры, а это приводит к сбоям.
+MSAL.js использует скрытый IFRAME для автоматического получения и продления токена в рамках `acquireTokenSilent` вызовов. Запросы на автоматический маркер зависят от IFRAME, у которого есть доступ к сеансу пользователя, прошедшему проверку подлинности, представленному файлами cookie, заданными Azure AD. Если ITP 2,0 препятствует доступу к этим файлам cookie, MSAL.js не может получать и обновлять маркеры автоматически, а это приводит к `acquireTokenSilent` сбоям.
 
 На этом этапе решения для этой проблемы не существует, и мы оцениваем варианты с помощью сообщества стандартов.
 
 ### <a name="work-around"></a>Обойти
 
-По умолчанию параметр ITP включен в браузере Safari. Чтобы отключить этот параметр, перейдите к пункту **настройки** -> **Конфиденциальность** и снимите флажок **запретить межсайтовую трассировку** .
+По умолчанию параметр ITP включен в браузере Safari. Чтобы отключить этот параметр, перейдите к пункту **настройки**  ->  **Конфиденциальность** и снимите флажок **запретить межсайтовую трассировку** .
 
 ![параметр Safari](./media/msal-js-known-issue-safari-browser/safari.png)
 

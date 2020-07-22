@@ -30,6 +30,10 @@
       href: tutorial-url-redirect-cli.md
     - name: Автоматическое масштабирование и избыточность в пределах зоны
       href: tutorial-autoscale-ps.md
+    - name: Надстройка контроллера входящего трафика для AKS (новый шлюз)
+      href: tutorial-ingress-controller-add-on-new.md
+    - name: Надстройка контроллера входящего трафика для AKS (существующий шлюз)
+      href: tutorial-ingress-controller-add-on-existing.md
 - name: Примеры
   items:
     - name: Azure PowerShell
@@ -66,8 +70,6 @@
           href: redirect-overview.md
         - name: Перезапись заголовков HTTP
           href: rewrite-http-headers.md
-        - name: Пользовательские страницы ошибок
-          href: custom-error.md
     - name: SSL
       items:
         - name: Завершение запросов SSL и сквозное шифрование SSL
@@ -136,10 +138,12 @@
               href: application-gateway-configure-ssl-policy-powershell.md
     - name: Входящий трафик для AKS
       items:
-        - name: Настройка с существующим Шлюзом приложений
+        - name: Прием входящего трафика для AKS через Helm (существующий шлюз)
           href: ingress-controller-install-existing.md
-        - name: Настройка с новым Шлюзом приложений
+        - name: Прием входящего трафика для AKS через Helm (новый шлюз)
           href: ingress-controller-install-new.md
+        - name: Отключение и повторное включение надстройки контроллера входящего трафика для AKS
+          href: ingress-controller-disable-addon.md
         - name: Включение сходства файлов cookie
           href: ingress-controller-cookie-affinity.md
         - name: Включение поддержки нескольких пространств имен
@@ -234,6 +238,8 @@
           href: log-analytics.md
         - name: Проблемы с работоспособностью серверной части
           href: application-gateway-backend-health-troubleshooting.md
+    - name: Пользовательские страницы ошибок
+      href: custom-error.md
     - name: Миграция из версии 1 в версию 2
       href: migrate-v1-v2.md
 - name: Справочник

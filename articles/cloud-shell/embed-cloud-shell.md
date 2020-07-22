@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 12/11/2017
 ms.author: damaerte
 ms.openlocfilehash: bbf6c1f3049265961559ea34c8b748b2b4d263b6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "60614307"
 ---
 # <a name="embed-azure-cloud-shell"></a>Внедрение Azure Cloud Shell
@@ -33,7 +33,7 @@ ms.locfileid: "60614307"
 
 [![Большой запуск](https://shell.azure.com/images/launchcloudshell@2x.png "Запуск Azure Cloud Shell")](https://shell.azure.com)
 
-## <a name="how-to"></a>Практическое руководство
+## <a name="how-to"></a>Практические советы
 
 Интегрируйте кнопку запуска Cloud Shell в файлы Markdown, скопировав следующий фрагмент кода:
 
@@ -50,7 +50,7 @@ ms.locfileid: "60614307"
 
 Задайте определенную оболочку с помощью расширения URL-адреса.
 
-|Среда   |URL-адрес   |
+|Взаимодействие   |URL-адрес   |
 |---|---|
 |Последняя используемая оболочка   |[shell.azure.com](https://shell.azure.com);           |
 |Bash                       |[shell.azure.com/bash](https://shell.azure.com/bash)       |

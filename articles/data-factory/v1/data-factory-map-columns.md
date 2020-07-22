@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 6eb7012e28319ee6cc86de5ee56090743d681068
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: af7a1e40f21b6c9af490abe6f58edcaf798818b4
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74923871"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85318881"
 ---
 # <a name="map-source-dataset-columns-to-destination-dataset-columns"></a>Сопоставление столбцов исходного набора данных со столбцами целевого набора данных
 > [!NOTE]
@@ -39,7 +39,7 @@ ms.locfileid: "74923871"
 > Приведенные ниже примеры предназначены для SQL Azure и большого двоичного объекта Azure, но подходят для любого хранилища данных, поддерживающего прямоугольные наборы данных. В этих примерах можно настроить набор данных и определения связанных служб, чтобы указать данные в соответствующем источнике данных.
 
 ## <a name="sample-1--column-mapping-from-azure-sql-to-azure-blob"></a>Пример 1. Сопоставление столбцов из SQL Azure с большим двоичным объектом Azure
-В этом примере входная таблица имеет структуру, и она указывает на таблицу SQL в базе данных SQL Azure.
+В этом примере входная таблица имеет структуру и указывает на таблицу SQL в базе данных SQL Azure.
 
 ```json
 {
@@ -178,7 +178,7 @@ ms.locfileid: "74923871"
 
 ![Процесс сопоставления столбцов 2](./media/data-factory-map-columns/column-mapping-flow-2.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Ознакомьтесь с руководством по использованию действия копирования в следующей статье: 
 
 - [Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)

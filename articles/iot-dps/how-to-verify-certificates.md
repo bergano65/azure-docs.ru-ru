@@ -8,10 +8,9 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 ms.openlocfilehash: b008c4ebc83200043d51fc8ef367f1983c549949
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74973447"
 ---
 # <a name="how-to-do-proof-of-possession-for-x509-ca-certificates-with-your-device-provisioning-service"></a>Как подтвердить владение сертификатами ЦС X.509 с помощью службы подготовки устройств
@@ -69,7 +68,7 @@ ms.locfileid: "74973447"
 
    ![Проверка отправки сертификата](./media/how-to-verify-certificates/upload-cert-verification.png)  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о создании группы регистрации на портале см. в статье [Как управлять регистрацией устройств с помощью портала Azure](how-to-manage-enrollments.md).
 - Дополнительные сведения о создании группы регистрации с помощью пакетов SDK для служб см. в статье [Как управлять регистрациями устройств с помощью пакетов SDK службы подготовки устройств Azure](how-to-manage-enrollments-sdks.md).

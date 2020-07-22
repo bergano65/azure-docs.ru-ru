@@ -5,9 +5,7 @@ services: notification-hubs
 documentationcenter: mobile
 author: sethmanheim
 manager: femila
-editor: jwargo
 keywords: отправка push-уведомлений, push-уведомления, push-уведомления iOS, push-уведомления android, push-уведомления ios, push-уведомления android
-ms.assetid: 7b385713-ef3b-4f01-8b1f-ffe3690bbd40
 ms.service: notification-hubs
 ms.workload: mobile
 ms.tgt_pltfrm: mobile-multiple
@@ -17,12 +15,12 @@ ms.date: 11/13/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 11/13/2019
-ms.openlocfilehash: 3212520f37d33a2d8fb1b071506f688b9f75f15c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 0fe4ae76645ec2a0ae8aae93b9db987ece9a45b9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76263835"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85255132"
 ---
 # <a name="push-notifications-with-azure-notification-hubs-frequently-asked-questions"></a>Часто задаваемые вопросы об отправке push-уведомлений с помощью Центров уведомлений Azure
 
@@ -56,7 +54,7 @@ ms.locfileid: "76263835"
 
 ### <a name="how-do-i-upgrade-or-downgrade-my-hub-or-namespace-to-a-different-tier"></a>Как мне повысить или понизить уровень для узла или пространства имен?
 
-Перейдите в раздел **[портал Azure]** > **пространства имен** или **концентраторов уведомлений**. Выберите ресурс, который требуется обновить, и перейдите на **страницу цен**. Обратите внимание на следующие требования:
+Перейдите в раздел **[портал Azure]**  >  **пространства имен** или **концентраторов уведомлений**. Выберите ресурс, который требуется обновить, и перейдите на **страницу цен**. Обратите внимание на следующие требования:
 
 * Новая ценовая категория будет применяться ко *всем* узлам в пространстве имен, с которыми вы работаете.
 * Если при снижении уровня будет превышен лимит на число устройств, установленный для нового уровня, такое изменение вступит в силу только тогда, когда вы удалите все лишние устройства.
@@ -69,7 +67,7 @@ ms.locfileid: "76263835"
 
 ### <a name="which-client-platforms-do-you-support"></a>Какие клиентские платформы вы поддерживаете?
 
-Push-уведомления поддерживаются для [iOS](notification-hubs-ios-apple-push-notification-apns-get-started.md), [Android](notification-hubs-android-push-notification-google-fcm-get-started.md), [Windows Universal](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md), [Windows Phone](notification-hubs-windows-mobile-push-notifications-mpns.md), [Android China (через Baidu)](notification-hubs-baidu-china-android-notifications-get-started.md), Xamarin ([iOS](xamarin-notification-hubs-ios-push-notification-apns-get-started.md) и Android и [Safari](https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSafari)). Дополнительные сведения см. на странице [Отправка push-уведомлений с помощью центров уведомлений Azure в iOS].
+Push-уведомления поддерживаются для [iOS](ios-sdk-get-started.md), [Android](notification-hubs-android-push-notification-google-fcm-get-started.md), [Windows Universal](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md), [Windows Phone](notification-hubs-windows-mobile-push-notifications-mpns.md), [Android China (через Baidu)](notification-hubs-baidu-china-android-notifications-get-started.md), Xamarin [iOS](xamarin-notification-hubs-ios-push-notification-apns-get-started.md) и [Android](xamarin-notification-hubs-push-notifications-android-gcm.md)и [Safari](https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSafari). Дополнительные сведения см. на странице центра [уведомлений начало работы учебники](ios-sdk-get-started.md) .
 
 ### <a name="do-you-support-text-message-email-or-web-notifications"></a>Поддерживаются ли уведомления по SMS и электронной почте, а также веб-уведомления?
 
@@ -79,7 +77,7 @@ Push-уведомления поддерживаются для [iOS](notificati
 
 Сведения о поддерживаемых устройствах см. на странице с [ценами на Центры уведомлений].
 
-Если требуется поддержка более 10 000 000 зарегистрированных устройств, необходимо секционировать устройства между несколькими центрами.
+Если требуется поддержка более 10 000 000 зарегистрированных устройств, необходимо секционировать устройства по нескольким пространствам имен.
 
 ### <a name="how-many-push-notifications-can-i-send-out"></a>Сколько push-уведомлений я могу отправить?
 
@@ -206,7 +204,6 @@ Push-уведомления поддерживаются для [iOS](notificati
 [Цены на центры уведомлений]: https://azure.microsoft.com/pricing/details/notification-hubs/
 [Notification Hubs SLA]: https://azure.microsoft.com/support/legal/sla/
 [Использование интерфейса REST центров уведомлений]: https://msdn.microsoft.com/library/azure/dn530746.aspx
-[Отправка push-уведомлений с помощью центров уведомлений Azure в iOS]: https://azure.microsoft.com/documentation/articles/notification-hubs-ios-get-started/
 [Mobile Services Pricing]: https://azure.microsoft.com/pricing/details/mobile-services/
 [Регистрация из внутренней службы приложения]: https://msdn.microsoft.com/library/azure/dn743807.aspx
 [Управление регистрацией]: https://msdn.microsoft.com/library/azure/dn530747.aspx

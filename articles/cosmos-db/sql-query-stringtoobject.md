@@ -8,10 +8,9 @@ ms.date: 03/03/2020
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: c3e61d1efe20910d84ef4ff583d74982b3ea9f3d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78296387"
 ---
 # <a name="stringtoobject-azure-cosmos-db"></a>Стрингтубжект (Azure Cosmos DB)
@@ -34,7 +33,7 @@ StringToObject(<str_expr>)
   
 ## <a name="examples"></a>Примеры
   
-  В следующем примере показано, `StringToObject` как ведет себя в разных типах. 
+  В следующем примере показано `StringToObject` , как ведет себя в разных типах. 
   
  Ниже приведены примеры с допустимыми входными данными.
 
@@ -56,7 +55,7 @@ SELECT
 ```
 
  Ниже приведены примеры с недопустимыми входными данными.
-Несмотря на то, что они являются допустимыми в запросе, они не будут анализироваться в допустимые объекты. Строки в\\строке объекта должны либо быть экранированы "{" a\\":\\" str\\"}", либо окружающая кавычка должна быть единственной "{" a ":" str "}".
+Несмотря на то, что они являются допустимыми в запросе, они не будут анализироваться в допустимые объекты. Строки в строке объекта должны либо быть экранированы "{ \\ " a \\ ": \\ " str \\ "}", либо окружающая кавычка должна быть единственной "{" a ":" str "}".
 
 Одинарные кавычки, относящиеся к именам свойств, не являются допустимыми JSON.
 
@@ -108,8 +107,8 @@ SELECT
 
 Эта системная функция не будет использовать индекс.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Строковые функции Azure Cosmos DB](sql-query-string-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство с Azure Cosmos DB](introduction.md)
+- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)

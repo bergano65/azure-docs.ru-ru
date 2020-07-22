@@ -33,6 +33,8 @@
       href: add-api.md
     - name: Настройка параметров приложения
       href: application-settings.md
+    - name: Настройка интерфейсных платформ и библиотек
+      href: front-end-frameworks.md
 - name: Учебники
   items:
     - name: Публикация из генератора статических сайтов
@@ -43,6 +45,8 @@
           href: publish-hugo.md
         - name: VuePress
           href: publish-vuepress.md
+        - name: Jekyll
+          href: publish-jekyll.md
     - name: Развертывание с платформы
       items:
         - name: Next.js

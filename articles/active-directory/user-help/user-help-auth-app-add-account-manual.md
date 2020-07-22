@@ -7,16 +7,15 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: user-help
-ms.topic: conceptual
+ms.topic: end-user-help
 ms.date: 01/24/2019
 ms.author: curtand
 ms.reviewer: olhaun
-ms.openlocfilehash: b237f710866ad3960dd65902c0789228d8c391bc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 3838234f9f65fcf91f8de33e3d7196aa13f2b903
+ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77062325"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83741720"
 ---
 # <a name="manually-add-an-account-to-the-app"></a>Добавление учетной записи в приложение вручную
 
@@ -93,17 +92,17 @@ ms.locfileid: "77062325"
 
 5. На странице **Add a backup verification method** (Добавление резервного метода проверки подлинности) на компьютере введите полученный в приложении шестизначный код проверки для резервного метода проверки подлинности учетной записи Amazon, а затем щелкните **Verify code and continue** (Проверить код и продолжить).
 
-6. На странице почти готово решите, следует ли сделать компьютер доверенным устройством, а затем выберите **получено. Включите двухфакторную проверку подлинности**.
+6. На странице "Почти готово" выберите, нужно ли назначить компьютер доверенным устройством, а затем щелкните **Got it. Turn on Two-Step Verification** (Понятно. Включите двухфакторную проверку подлинности).
 
     Откроется страница **Дополнительные параметры безопасности** с обновленными сведениями о двухфакторной проверке подлинности.
 
     >[!NOTE]
     >Дополнительные сведения о двухфакторной проверке подлинности и учетной записи Amazon см. в статьях [About Two-Step Verification](https://www.amazon.com/gp/help/customer/display.html?nodeId=201596330) (О двухфакторной проверке подлинности) и [Signing in with Two-Step Verification](https://www.amazon.com/gp/help/customer/display.html?nodeId=201962440) (Вход с использованием двухфакторной проверки подлинности).    
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Добавив учетные записи в приложение, вы можете использовать их для входа с помощью приложения Microsoft Authenticator на мобильном устройстве. Дополнительные сведения см. в статье [Вход с использованием телефона вместо ввода пароля](user-help-auth-app-sign-in.md).
 
-- Если у вас возникли проблемы с получением кода проверки для личного учетная запись Майкрософт, см. раздел **Устранение неполадок с кодом проверки** в [учетная запись Майкрософт сведения о безопасности & коды проверки](https://support.microsoft.com/help/12428/microsoft-account-security-info-verification-codes) .
+- Если у вас возникли проблемы с получением кода проверки для вашей личной учетной записи Майкрософт, ознакомьтесь с разделом **Устранение проблем проверки кода** в статье [Сведения для защиты учетной записи Майкрософт и коды проверки](https://support.microsoft.com/help/12428/microsoft-account-security-info-verification-codes).
 
 - Для устройств под управлением iOS вы можете также выполнить резервное копирование в облако учетных данных и связанных с ними параметров приложений (например, порядок учетных записей). Дополнительные сведения см. в статье [Резервное копирование и восстановление учетных данных с помощью приложения Microsoft Authenticator](user-help-auth-app-backup-recovery.md).

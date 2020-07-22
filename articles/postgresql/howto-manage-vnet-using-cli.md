@@ -1,23 +1,23 @@
 ---
-title: Использование правил виртуальной сети — Azure CLI — "база данных Azure для PostgreSQL" — "один сервер"
-description: В этой статье описывается создание конечных точек службы виртуальной сети и правил для базы данных Azure для PostgreSQL и управление ими с помощью командной строки Azure CLI.
+title: Использование правил виртуальной сети — Azure CLI — база данных Azure для PostgreSQL — отдельный сервер
+description: В этой статье описывается, как создать конечные точки службы виртуальной сети и правила базы данных Azure для PostgreSQL и управлять ими с помощью командной строки Azure CLI.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.devlang: azurecli
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 5/6/2019
-ms.openlocfilehash: 4a5cf7bb13b12224a5a89d3c82670cc2a36b4494
-ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
+ms.openlocfilehash: 3fd055b3696d9f91291ae254acadf27ad154e003
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82509386"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86112601"
 ---
-# <a name="create-and-manage-vnet-service-endpoints-for-azure-database-for-postgresql---single-server-using-azure-cli"></a>Создание конечных точек службы виртуальной сети для базы данных Azure для PostgreSQL-Single Server и управление ими с помощью Azure CLI
+# <a name="create-and-manage-vnet-service-endpoints-for-azure-database-for-postgresql---single-server-using-azure-cli"></a>Создание конечных точек службы виртуальной сети базы данных Azure для PostgreSQL (отдельный сервер) и управление ими с помощью Azure CLI
 Правила и конечные точки служб виртуальной сети расширяют частное адресное пространство виртуальной сети на сервер базы данных Azure для PostgreSQL. С помощью удобных команд интерфейса командной строки Azure (CLI) можно создавать, обновлять, удалять, выводить списки и просматривать правила и конечные точки службы виртуальной сети для управления сервером. Общие сведения о конечных точках службы виртуальной сети базы данных Azure для PostgreSQL, включая ограничения, см. в [этой статье](concepts-data-access-and-security-vnet.md). Конечные точки службы виртуальной сети доступны во всех поддерживаемых регионах базы данных Azure для PostgreSQL.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
 - Установите [Azure CLI](/cli/azure/install-azure-cli) или используйте Azure Cloud Shell в браузере.
 - [сервер и база данных Azure для PostgreSQL](quickstart-create-server-database-azure-cli.md);
@@ -51,10 +51,10 @@ az login
 
 Узнайте больше о [встроенных ролях](https://docs.microsoft.com/azure/active-directory/role-based-access-built-in-roles) и назначении разрешений, определенных для [настраиваемых ролей](https://docs.microsoft.com/azure/active-directory/role-based-access-control-custom-roles).
 
-Виртуальные сети и ресурсы служб Azure могут находиться в одной или разных подписках. Если виртуальные сети и ресурсы служб Azure находятся в разных подписках, ресурсы должны быть размещены в одном клиенте Active Directory (AD). Убедитесь, что у обеих подписок есть зарегистрированный поставщик ресурсов **Microsoft. SQL** . Дополнительные сведения см. в статье [Регистрация в диспетчере ресурсов][resource-manager-portal] .
+Виртуальные сети и ресурсы служб Azure могут находиться в одной или разных подписках. Если виртуальные сети и ресурсы служб Azure находятся в разных подписках, ресурсы должны быть размещены в одном клиенте Active Directory (AD). Убедитесь, что у обеих подписок есть зарегистрированный поставщик ресурсов **Microsoft.Sql**. Дополнительные сведения см. в разделе [resource-manager-registration][resource-manager-portal]
 
 > [!IMPORTANT]
-> Прежде чем выполнять сценарий ниже и настраивать конечные точки службы, советуем прочитать эту статью о конфигурациях конечной точки службы и рекомендациях: **Конечная точка службы для виртуальной сети**. [Конечная точка службы для виртуальной сети](../virtual-network/virtual-network-service-endpoints-overview.md) — это подсеть, значения свойств которой включают в себя одно или несколько формальных имен типов службы Azure. Конечные точки службы виртуальной сети используют имя типа службы **Microsoft.Sql**, которое относится к службе Azure, которая называется "База данных SQL". Этот тег службы также применяется к службам "База данных SQL Azure", "База данных Azure для PostgreSQL" и "База данных Azure для MySQL". Важно отметить, что при применении тега службы **Microsoft.Sql** к конечной точке службы виртуальной сети она настроит трафик конечной точки службы для всех служб базы данных Azure, в том числе служб "База данных SQL Azure", "База данных Azure для PostgreSQL" и "База данных Azure для MySQL" в подсети. 
+> Прежде чем выполнять сценарий ниже и настраивать конечные точки службы, советуем прочитать эту статью о конфигурациях конечной точки службы и рекомендациях: **Конечная точка службы для виртуальной сети.** [Конечная точка службы для виртуальной сети](../virtual-network/virtual-network-service-endpoints-overview.md) — это подсеть, значения свойств которой включают в себя одно формальное имя типа службы Azure или несколько. Конечные точки службы виртуальной сети используют имя типа службы **Microsoft.Sql**, которое относится к службе Azure, которая называется "База данных SQL". Этот тег службы также применяется к службам "База данных SQL Azure", "База данных Azure для PostgreSQL" и "База данных Azure для MySQL". Важно отметить, что при применении тега службы **Microsoft.Sql** к конечной точке службы виртуальной сети она настроит трафик конечной точки службы для всех служб базы данных Azure, в том числе служб "База данных SQL Azure", "База данных Azure для PostgreSQL" и "База данных Azure для MySQL" в подсети. 
 > 
 
 ### <a name="sample-script-to-create-an-azure-database-for-postgresql-database-create-a-vnet-vnet-service-endpoint-and-secure-the-server-to-the-subnet-with-a-vnet-rule"></a>Пример сценария для создания базы данных службы "База данных Azure для PostgreSQL", виртуальной сети, конечной точки службы виртуальной сети и обеспечения безопасности передачи данных с сервера в подсеть с помощью правила виртуальной сети

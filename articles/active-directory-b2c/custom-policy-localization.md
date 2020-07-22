@@ -1,39 +1,39 @@
 ---
 title: Локализация пользовательского интерфейса приложения с помощью настраиваемой политики
-description: Сведения о локализации пользовательского интерфейса с помощью настраиваемой политики в Azure Active Directory B2C.
+description: Узнайте о локализации пользовательского интерфейса с помощью настраиваемой политики в Azure Active Directory B2C.
 services: active-directory-b2c
 author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
-ms.topic: reference
-ms.date: 03/11/2020
+ms.topic: how-to
+ms.date: 05/12/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: be12bce8fa29076621bec35228838a4ebdd97433
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 8939d4546657b049b61eb31c08844dac07c67ae2
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80545870"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85389094"
 ---
 # <a name="localize-the-user-interface-of-your-application-using-a-custom-policy-in-azure-active-directory-b2c"></a>Локализация пользовательского интерфейса приложения с помощью настраиваемой политики в Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Настройка языка в Azure Active Directory B2C (Azure AD B2C) позволяет размещать разные языки в соответствии с потребностями клиентов. Корпорация Майкрософт предоставляет переводы для [языков 36](https://docs.microsoft.com/azure/active-directory-b2c/user-flow-language-customization#supported-languages), но вы также можете предоставить собственные переводы для любого языка. Даже если вам требуется только один язык, на странице можно настроить любой текст. 
+Настройка языка в Azure Active Directory B2C (Azure AD B2C) позволяет применить различные языки в соответствии с потребностями ваших клиентов. Корпорация Майкрософт предоставляет переводы на [36 языках](https://docs.microsoft.com/azure/active-directory-b2c/user-flow-language-customization#supported-languages). Кроме того, вы можете предоставить собственный перевод на любой язык. Даже если вам требуется только один язык, на странице можно настроить любой текст. 
 
-В этой статье описано, как включить поддержку нескольких языковых стандартов или языков в политике для путей взаимодействия пользователя. Локализация состоит из трех этапов: Настройка явного списка поддерживаемых языков, предоставление строк и коллекций для конкретного языка, а также изменение [определения содержимого](contentdefinitions.md) для страницы. 
+В этой статье описано, как включить поддержку нескольких языковых стандартов или языков в политике для путей взаимодействия пользователя. Для локализации нужно выполнить три шага: настроить явный список поддерживаемых языков, предоставить строки и коллекции для каждого языка и изменить [определение содержимого](contentdefinitions.md) для страницы. 
 
 ## <a name="set-up-the-list-of-supported-languages"></a>Настройка списка поддерживаемых языков
 
-Откройте файл расширений политики. Например, <em> `SocialAndLocalAccounts/` </em>.
+Откройте файл расширения политики. Например, <em>`SocialAndLocalAccounts/`**`TrustFrameworkExtensions.xml`**</em>.
 
 1. Найдите элемент [BuildingBlocks](buildingblocks.md). Если такой элемент не существует, добавьте его.
-1. Добавьте `Localization` элемент с поддерживаемыми языками: Английский (по умолчанию) и испанский.  
+1. Добавьте элемент `Localization` с поддерживаемыми языками: английским (по умолчанию) и испанским.  
 
 
-```XML
+```xml
 <Localization Enabled="true">
   <SupportedLanguages DefaultLanguage="en" MergeBehavior="ReplaceAll">
     <SupportedLanguage>en</SupportedLanguage>
@@ -42,16 +42,16 @@ ms.locfileid: "80545870"
 </Localization>
 ```
 
-## <a name="provide-language-specific-labels"></a>Указать метки для конкретного языка
+## <a name="provide-language-specific-labels"></a>Указание меток языка
 
-[LocalizedResources](localization.md#localizedresources) `Localization` элемента содержит список локализованных строк. Элемент локализованных ресурсов имеет идентификатор, который используется для уникальной идентификации локализованных ресурсов. Этот идентификатор используется позже в элементе [определения содержимого](contentdefinitions.md) .
+Атрибут [LocalizedResources](localization.md#localizedresources) элемента `Localization` содержит список локализованных строк. Элемент локализованных ресурсов содержит идентификатор, который используется для уникальной идентификации локализованных ресурсов. Этот идентификатор используется позже в элементе [определения содержимого](contentdefinitions.md).
 
-Вы настраиваете элементы локализованных ресурсов для определения содержимого и любого языка, который требуется поддерживать. Чтобы настроить единую страницу регистрации или входа на английском и испанском языках, добавьте следующие `LocalizedResources` элементы после закрытия `</SupportedLanguages>` элемента.
+Элементы локализованного содержимого следует определить для каждого определения содержимого и языка, поддержка которого требуется. Чтобы настроить единую страницу регистрации или входа на английском и испанском языках, добавьте следующие элементы `LocalizedResources` после элемента `</SupportedLanguages>`.
 
 > [!NOTE]
-> В следующем примере мы добавили символ фунта `#` в беггинг каждой строки, чтобы еасли найти локализованные метки на экране.
+> В следующем примере мы добавили символ решетки `#` в начало каждой строки, чтобы вы могли легко найти локализованные метки на экране.
 
-```XML
+```xml
 <!--Local account sign-up or sign-in page English-->
 <LocalizedResources Id="api.signuporsignin.en">
   <LocalizedStrings>
@@ -216,9 +216,9 @@ ms.locfileid: "80545870"
 
 Вставьте содержимое скопированного элемента ContentDefinitions в качестве дочернего элемента BuildingBlocks.
 
-В следующем примере пользовательские строки на английском (EN) и испанском (ES) языках добавляются на страницу регистрации или входа, а также на страницу регистрации локальной учетной записи. Элемент **LocalizedResourcesReferenceId** для каждого **LocalizedResourcesReference** совпадает с именем языкового стандарта, но в качестве идентификатора можно использовать любую строку. Для каждого сочетания языка и страницы вы указываете на соответствующий **LocalizedResources** , созданный ранее.
+В следующем примере для страницы регистрации или входа добавляются пользовательские строки на английском (en) и испанском (es) языках, включая страницу регистрации локальной учетной записи. Элемент **LocalizedResourcesReferenceId** для каждого **LocalizedResourcesReference** совпадает с именем языкового стандарта, но в качестве идентификатора можно использовать любую строку. Для каждой комбинации языка и страницы укажите соответствующие элементы **LocalizedResources**, созданные ранее.
 
-```XML
+```xml
 <ContentDefinitions>
   <ContentDefinition Id="api.signuporsignin">
     <LocalizedResourcesReferences MergeBehavior="Prepend">
@@ -236,30 +236,30 @@ ms.locfileid: "80545870"
 </ContentDefinitions>
 ```
 
-##  <a name="upload-and-test-your-updated-custom-policy"></a>Отправка и тестирование обновленной пользовательской политики
+##  <a name="upload-and-test-your-updated-custom-policy"></a>Передача и проверка обновленной настраиваемой политики
 
-### <a name="upload-the-custom-policy"></a>Отправка настраиваемой политики
+### <a name="upload-the-custom-policy"></a>Передача настраиваемой политики
 
 1. Сохраните файл расширений.
 1. Убедитесь, что используете каталог с клиентом Azure AD B2C, выбрав фильтр **Каталог и подписка** в меню вверху и каталог с вашим клиентом.
-1. Найдите и выберите **Azure AD B2C**.
-1. В разделе **политики**выберите **инфраструктура процедур идентификации**.
-1. Выберите **Отправить настраиваемую политику**.
+1. Найдите и выберите **Azure AD B2C**.
+1. В разделе **Политики** выберите **Identity Experience Framework**.
+1. Выберите **Отправить пользовательскую политику**.
 1. Выполните отправку ранее измененного файла расширений.
 
 ### <a name="test-the-custom-policy-by-using-run-now"></a>Тестирование настраиваемой политики с помощью параметра **Запустить сейчас**
 
-1. Выберите отправленную политику и нажмите кнопку **Запустить сейчас**.
-1. Вы сможете увидеть локализованную страницу регистрации или входа.
-1. Щелкните ссылку для регистрации, и вы увидите страницу с локализованной подписью.
-1. Переключите язык браузера по умолчанию на испанский. Или же можно добавить параметр строки запроса `ui_locales` в запрос авторизации. Пример: 
+1. Выберите переданную политику и щелкните **Запустить сейчас**.
+1. Отобразится локализованная страница регистрации или входа.
+1. Щелкните ссылку для регистрации, и вы увидите локализованную страницу регистрации.
+1. Переключите язык браузера по умолчанию на испанский. Или можно добавить параметр строки запроса `ui_locales` в запрос авторизации. Пример: 
 
 ```http
-https://yourtenant.b2clogin.com/yourtenant.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1A_signup_signin&client_id=0239a9cc-309c-4d41-12f1-31299feb2e82&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fjwt.ms&scope=openid&response_type=id_token&prompt=login&ui_locales=es
+https://<tenant-name>.b2clogin.com/<tenant-name>.onmicrosoft.com/B2C_1A_signup_signin/oauth2/v2.0/authorize&client_id=0239a9cc-309c-4d41-12f1-31299feb2e82&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fjwt.ms&scope=openid&response_type=id_token&prompt=login&ui_locales=es
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения об элементе [Localization](localization.md) см. в справочнике по инфраструктура процедур идентификации.
-- См. список [идентификаторов строк локализации](localization-string-ids.md) , доступных в Azure AD B2C.
+- Узнайте больше об элементе [локализации](localization.md) в справочных материалах по IEF.
+- Ознакомьтесь со списком [идентификаторов строк локализации](localization-string-ids.md), доступных в Azure AD B2C.
 

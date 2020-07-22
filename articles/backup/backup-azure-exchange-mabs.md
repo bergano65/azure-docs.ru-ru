@@ -4,18 +4,18 @@ description: Узнайте, как выполнить резервное коп
 ms.reviewer: kasinh
 ms.topic: conceptual
 ms.date: 03/24/2017
-ms.openlocfilehash: 1d7d28d813df82a5e1ea0fe424bba2ef5a9a2684
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 2e3e89d93ab35724a09138d48863badad6a41b71
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80421348"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86514124"
 ---
 # <a name="back-up-an-exchange-server-to-azure-with-azure-backup-server"></a>Резервное копирование сервера Exchange Server в Azure с помощью Azure Backup Server
 
 В этой статье описывается, как настроить Microsoft Azure Backup Server (MABS) для резервного копирования сервера Microsoft Exchange Server в Azure.  
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем продолжить, убедитесь, что Azure Backup Server [установлен и подготовлен](backup-azure-microsoft-azure-backup.md).
 
@@ -23,8 +23,8 @@ ms.locfileid: "80421348"
 
 Чтобы установить агент защиты MABS на сервер Exchange Server, выполните следующее.
 
-1. Убедитесь, что брандмауэры настроены правильно. Ознакомьтесь со статьей [Настройка исключений брандмауэра для агента](https://docs.microsoft.com/system-center/dpm/configure-firewall-settings-for-dpm?view=sc-dpm-2019).
-2. Установите агент на сервере Exchange Server, выбрав **Управление > Агенты > Установить** в консоли администратора MABS. Подробные инструкции см. в статье [Установка агента защиты DPM](https://docs.microsoft.com/system-center/dpm/deploy-dpm-protection-agent?view=sc-dpm-2019).
+1. Убедитесь, что брандмауэры настроены правильно. Ознакомьтесь со статьей [Настройка исключений брандмауэра для агента](/system-center/dpm/configure-firewall-settings-for-dpm?view=sc-dpm-2019).
+2. Установите агент на сервере Exchange Server, выбрав **Управление > Агенты > Установить** в консоли администратора MABS. Подробные инструкции см. в статье [Установка агента защиты DPM](/system-center/dpm/deploy-dpm-protection-agent?view=sc-dpm-2019).
 
 ## <a name="create-a-protection-group-for-the-exchange-server"></a>Создание группы защиты для сервера Exchange Server
 
@@ -34,7 +34,7 @@ ms.locfileid: "80421348"
 4. Выберите на сервере Exchange Server базу данных, которую требуется защитить, и нажмите кнопку **Далее**.
 
    > [!NOTE]
-   > Если вы хотите защитить базу данных Exchange 2013, изучите [предварительные требования для Exchange 2013](https://docs.microsoft.com/system-center/dpm/back-up-exchange?view=sc-dpm-2016).
+   > Если вы хотите защитить базу данных Exchange 2013, изучите [предварительные требования для Exchange 2013](/system-center/dpm/back-up-exchange).
    >
    >
 
@@ -53,7 +53,7 @@ ms.locfileid: "80421348"
     После выбора этого параметра Проверка согласованности резервного копирования будет выполняться на MABS, чтобы избежать появления трафика ввода-вывода, который создается при выполнении команды **eseutil** на сервере Exchange.
 
    > [!NOTE]
-   > Чтобы использовать этот параметр, необходимо скопировать файлы ESE. dll и Eseutil. exe в каталог C:\Program Files\Microsoft Azure Баккуп\дпм\дпм\бин на сервере MABS. В противном случае возникнет следующая ошибка:   
+   > Чтобы использовать этот параметр, необходимо скопировать файлы Ese.dll и Eseutil.exe в каталог C:\Program Files\Microsoft Azure Баккуп\дпм\дпм\бин на сервере MABS. В противном случае возникнет следующая ошибка:   
    > ![ошибка Eseutil](./media/backup-azure-backup-exchange-server/eseutil-error.png)
    >
    >
@@ -68,10 +68,10 @@ ms.locfileid: "80421348"
 11. Проверьте, есть ли на диске свободное место, и нажмите кнопку **Далее**.
 12. Выберите время, когда сервер MABS будет создавать начальную репликацию, а затем нажмите кнопку **Далее**.
 13. Выберите параметры проверки согласованности и нажмите кнопку **Далее**.
-14. Выберите базу данных для резервного копирования в Azure и нажмите кнопку **Далее**. Пример:
+14. Выберите базу данных для резервного копирования в Azure и нажмите кнопку **Далее**. Вот несколько примеров:
 
     ![Выбор оперативной защиты данных](./media/backup-azure-backup-exchange-server/specify-online-protection-data.png)
-15. Определите расписание для **службы архивации Azure** и нажмите кнопку **Далее**. Пример:
+15. Определите расписание для **службы архивации Azure** и нажмите кнопку **Далее**. Вот несколько примеров:
 
     ![Выбор расписания оперативного резервного копирования](./media/backup-azure-backup-exchange-server/specify-online-backup-schedule.png)
 
@@ -86,7 +86,7 @@ ms.locfileid: "80421348"
 
     ![Выбор политики оперативного хранения](./media/backup-azure-backup-exchange-server/specify-online-retention-policy.png)
 18. Проверьте параметры и щелкните **Создать группу**.
-19. Нажмите кнопку **Закрыть**.
+19. Щелкните **Закрыть**.
 
 ## <a name="recover-the-exchange-database"></a>Восстановление базы данных Exchange
 
@@ -105,6 +105,6 @@ ms.locfileid: "80421348"
 
     ![Выбор оперативной репликации](./media/backup-azure-backup-exchange-server/choose-online-replication.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Часто задаваемые вопросы о службе архивации Azure](backup-azure-backup-faq.md)

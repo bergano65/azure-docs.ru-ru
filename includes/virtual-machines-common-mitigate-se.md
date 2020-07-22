@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 description: включить файл
 services: virtual-machines
 author: cynthn
@@ -9,10 +9,10 @@ ms.date: 11/12/2019
 ms.author: cynthn;kareni
 ms.custom: include file
 ms.openlocfilehash: 6668d9753d0b93ab907d37cdeff8315f488cff7a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "73935893"
 ---
 **Последнее обновление документа**: 12 ноября 2019 10:00 по тихоокеанскому времени.
@@ -74,7 +74,7 @@ ms.locfileid: "73935893"
 
 **Шаг 1. Отключите технологию Hyper-Threading на виртуальной машине** . клиенты, выполняющие недоверенный код на виртуальной машине с технологией Hyper-Threading, должны отключить технологию Hyper-Threading или перейти на размер виртуальной машины, отличной от Hyper-Threading. В [этом документе приведен](https://docs.microsoft.com/azure/virtual-machines/windows/acu) список размеров виртуальных машин под управлением Hyper-Threading (где отношение виртуальных ЦП к ядру — 2:1). Чтобы проверить, включена ли технология Hyper-Threading на виртуальной машине, обратитесь к приведенному ниже сценарию, используя командную строку Windows в виртуальной машине.
 
-Введите `wmic` текст для входа в интерактивный интерфейс. Затем введите ниже, чтобы просмотреть объем физических и логических процессоров на виртуальной машине.
+Введите текст `wmic` для входа в интерактивный интерфейс. Затем введите ниже, чтобы просмотреть объем физических и логических процессоров на виртуальной машине.
 
 ```console
 CPU Get NumberOfCores,NumberOfLogicalProcessors /Format:List
@@ -101,7 +101,7 @@ Windows OS support for MDS mitigation is enabled: True
 Windows OS support for TAA mitigation is enabled: True
 ```
 
-Если выходные данные показаны `MDS mitigation is enabled: False`, [обратитесь в службу поддержки Azure](https://aka.ms/MicrocodeEnablementRequest-SupportTechnical) для получения доступных вариантов устранения рисков.
+Если выходные данные показаны `MDS mitigation is enabled: False` , [обратитесь в службу поддержки Azure](https://aka.ms/MicrocodeEnablementRequest-SupportTechnical) для получения доступных вариантов устранения рисков.
 
 
 
@@ -110,8 +110,8 @@ Windows OS support for TAA mitigation is enabled: True
 
 **Шаг 4**. для развертываний, использующих [вложенную виртуализацию](https://docs.microsoft.com/azure/virtual-machines/windows/nested-virtualization) (только D3 и E3), эти инструкции применяются в виртуальной машине, используемой в качестве узла Hyper-V.
 
-1.  Следуйте инструкциям в [KB4072698](https://support.microsoft.com/help/4072698/windows-server-guidance-to-protect-against-the-speculative-execution) , чтобы включить защиту с помощью разделов `MinVmVersionForCpuBasedMitigations` реестра.
-2.  Задайте тип планировщика низкоуровневой оболочки `Core` , выполнив приведенные [здесь](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-scheduler-types)инструкции.
+1.  Следуйте инструкциям в [KB4072698](https://support.microsoft.com/help/4072698/windows-server-guidance-to-protect-against-the-speculative-execution) , чтобы включить защиту с помощью `MinVmVersionForCpuBasedMitigations` разделов реестра.
+2.  Задайте тип планировщика низкоуровневой оболочки, выполнив приведенные `Core` [здесь](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-scheduler-types)инструкции.
 
 
 ### <a name="linux"></a>Linux
@@ -121,9 +121,9 @@ Windows OS support for TAA mitigation is enabled: True
 
 **Шаг 1. Отключите технологию Hyper-Threading на виртуальной машине** . клиенты, на которых выполняется ненадежный код на виртуальной машине с Hyper-Threading, должны отключить технологию Hyper-Threading или перейти на виртуальную машину, не связанную с Hyper-Threading.  В [этом документе приведен](https://docs.microsoft.com/azure/virtual-machines/linux/acu) список размеров виртуальных машин под управлением Hyper-Threading (где отношение виртуальных ЦП к ядру — 2:1). Чтобы проверить, выполняется ли виртуальная машина с Hyper-Threading, выполните `lscpu` команду на виртуальной машине Linux. 
 
-Если `Thread(s) per core = 2`значение равно, то технология Hyper-Threading включена. 
+Если значение `Thread(s) per core = 2` равно, то технология Hyper-Threading включена. 
 
-Если `Thread(s) per core = 1`значение равно, то технология Hyper-Threading была отключена. 
+Если значение `Thread(s) per core = 1` равно, то технология Hyper-Threading была отключена. 
 
  
 Пример выходных данных для виртуальной машины с включенной технологией Hyper-Threading: 
@@ -156,7 +156,7 @@ NUMA node(s):          1
 
 При создании виртуальной машины, созданной с помощью технологии Hyper-Threading, Azure выделяет 2 потока на ядро — они называются виртуальных ЦП. Если технология Hyper-Threading отключена, Azure удаляет поток и отображает единые потоковые ядра (физические ядра). Отношение виртуальных ЦП к ЦП равно 2:1, поэтому после отключения технологии Hyper-Threading количество ЦП на виртуальной машине будет уменьшено на половину. Например, D8_v3 виртуальная машина — это ВИРТУАЛЬная машина с технологией Hyper-Threading, работающая на 8 виртуальных ЦП (2 потока на ядро x 4 ядер).  Если технология Hyper-Threading отключена, процессоры будут сбрасываться на 4 физических ядра с 1 потоком на ядро. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье приводятся рекомендации по приведенным ниже рекомендациям по побочным каналам выполнения, влияющим на многие современные процессоры.
 

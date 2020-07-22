@@ -111,7 +111,7 @@
 - name: Примеры
   items:
     - name: Примеры кода
-      href: 'https://docs.microsoft.com/samples/browse/'
+      href: /samples/browse/
     - name: Azure PowerShell
       href: service-fabric-powershell-samples.md
     - name: Интерфейс командной строки Service Fabric
@@ -143,6 +143,8 @@
           href: cluster-security-certificates.md
         - name: Управление сертификатами в Service Fabric
           href: cluster-security-certificate-management.md
+        - name: 'Базовые показатели безопасности, учитываемые решением для оценки безопасности Azure'
+          href: security-baseline.md
     - name: Терминология
       href: service-fabric-technical-overview.md
     - name: Создание приложений
@@ -165,7 +167,7 @@
               href: service-fabric-concepts-partitioning.md
             - name: Повторная настройка служб с отслеживанием состояния
               href: service-fabric-concepts-reconfiguration.md
-            - name: 'Жизненный цикл Reliable Services (C#)'
+            - name: Жизненный цикл Reliable Services (C#)
               href: service-fabric-reliable-services-lifecycle.md
             - name: Жизненный цикл Reliable Services (Java)
               href: service-fabric-reliable-services-lifecycle-java.md
@@ -222,6 +224,8 @@
               href: service-fabric-manifest-example-container-app.md
         - name: Модель размещения
           href: service-fabric-hosting-model.md
+        - name: Дополнительные статьи о жизненном цикле активации и деактивации размещения
+          href: service-fabric-hosting-lifecycle.md
         - name: Защита приложений
           href: service-fabric-application-and-service-security.md
         - name: Состояние службы
@@ -276,6 +280,8 @@
               href: service-fabric-backup-restore-service-trigger-restore.md
             - name: Резервное копирование раздела по запросу
               href: service-fabric-backup-restore-service-ondemand-backup.md
+            - name: Просмотр и изменение резервной копии надежных коллекций в автономном режиме
+              href: backup-explorer.md
         - name: Initializer Code Packages
           href: initializer-codepackages.md
         - name: RunToCompletion
@@ -404,13 +410,13 @@
           href: service-fabric-get-started-containers.md
         - name: Приложение-контейнер Linux
           href: service-fabric-get-started-containers-linux.md
-        - name: 'C#-приложение Reliable Services в Windows'
+        - name: C#-приложение Reliable Services в Windows
           href: service-fabric-reliable-services-quick-start.md
         - name: Java-приложение Reliable Services в Linux
           href: service-fabric-reliable-services-quick-start-java.md
-        - name: 'C#-приложение Reliable Services в Linux'
+        - name: C#-приложение Reliable Services в Linux
           href: service-fabric-create-your-first-linux-application-with-csharp.md
-        - name: 'C#-приложение Reliable Actors в Windows'
+        - name: C#-приложение Reliable Actors в Windows
           href: service-fabric-reliable-actors-get-started.md
         - name: Java-приложение Reliable Actors в Linux
           href: service-fabric-create-your-first-linux-application-with-java.md
@@ -448,7 +454,7 @@
               items:
                 - name: Обмен данными с помощью Reliable Services
                   href: service-fabric-reliable-services-communication.md
-                - name: 'Удаленное взаимодействие со службой (C#)'
+                - name: Удаленное взаимодействие со службой (C#)
                   href: service-fabric-reliable-services-communication-remoting.md
                 - name: Удаленное взаимодействие со службой (Java)
                   href: service-fabric-reliable-services-communication-remoting-java.md
@@ -487,7 +493,7 @@
             - name: Настройка ReliableDictionaryActorStateProvider
               href: service-fabric-reliable-actors-reliabledictionarystateprovider-configuration.md
         - name: Создание службы ASP.NET Core
-          href: service-fabric-add-a-web-frontend.md
+          href: ./service-fabric-reliable-services-communication-aspnetcore.md
         - name: Создание контейнера сервера Apache Tomcat в Linux
           href: service-fabric-get-started-tomcat.md
         - name: Настройка безопасности
@@ -561,7 +567,7 @@
           items:
             - name: Начало работы с VS Code
               href: service-fabric-get-started-vs-code.md
-            - name: 'Разработка приложений Service Fabric на C# с помощью VS Code'
+            - name: Разработка приложений Service Fabric на C# с помощью VS Code
               href: service-fabric-develop-csharp-applications-with-vs-code.md
             - name: Разработка приложений Service Fabric на Java с помощью VS Code
               href: service-fabric-develop-java-applications-with-vs-code.md
@@ -624,7 +630,7 @@
         - name: Настройка непрерывной интеграции
           items:
             - name: Настройка непрерывной интеграции с помощью Azure Pipelines
-              href: service-fabric-set-up-continuous-integration.md
+              href: ./service-fabric-tutorial-deploy-app-with-cicd-vsts.md
             - name: Развертывание приложений Linux с помощью Jenkins
               href: service-fabric-cicd-your-linux-applications-with-jenkins.md
     - name: Настройка обратного прокси-сервера
@@ -893,7 +899,7 @@
     - name: Часто задаваемые вопросы
       href: service-fabric-common-questions.md
     - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
-      href: 'https://docs.microsoft.com/answers/topics/azure-service-fabric.html'
+      href: /answers/topics/azure-service-fabric.html
     - name: Ограничения при развертывании с помощью Azure Resource Manager
       href: service-fabric-azure-resource-manager-guardrails.md
     - name: Цены

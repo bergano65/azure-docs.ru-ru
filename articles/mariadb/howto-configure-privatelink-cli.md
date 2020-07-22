@@ -4,14 +4,14 @@ description: Узнайте, как настроить частную ссылк
 author: kummanish
 ms.author: manishku
 ms.service: mariadb
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 01/09/2020
-ms.openlocfilehash: c28c5494c1cff2c198a94ea6b92003ae74ee2c8e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 97901ee0c431699ac8217619042daefd86df2f38
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79371806"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86120982"
 ---
 # <a name="create-and-manage-private-link-for-azure-database-for-mariadb-using-cli"></a>Создание и управление частной ссылкой для базы данных Azure для MariaDB с помощью интерфейса командной строки
 
@@ -20,7 +20,7 @@ ms.locfileid: "79371806"
 > [!NOTE]
 > Эта функция доступна во всех регионах Azure, где база данных Azure для MariaDB поддерживает общего назначения и ценовые категории, оптимизированные для памяти.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
 
@@ -39,7 +39,7 @@ az group create --name myResourceGroup --location westeurope
 ```
 
 ## <a name="create-a-virtual-network"></a>Создайте виртуальную сеть
-Создайте виртуальную сеть с помощью команды [AZ Network vnet Create](/cli/azure/network/vnet). В этом примере создается виртуальная сеть по умолчанию с именем *myVirtualNetwork* с подсетью *mySubnet*.
+Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet). В этом примере создается виртуальная сеть по умолчанию с именем *myVirtualNetwork* с подсетью *mySubnet*.
 
 ```azurecli-interactive
 az network vnet create \
@@ -49,7 +49,7 @@ az network vnet create \
 ```
 
 ## <a name="disable-subnet-private-endpoint-policies"></a>Отключение политик подсети частной конечной точки 
-Поскольку Azure развертывает ресурсы в подсеть виртуальной сети, чтобы отключить политики сети частной конечной точки, вам следует создать или обновить подсеть. Обновите конфигурацию подсети *mySubnet* с помощью команды [az network vnet subnet update](https://docs.microsoft.com/cli/azure/network/vnet/subnet?view=azure-cli-latest#az-network-vnet-subnet-update).
+Azure развертывает ресурсы в подсеть в виртуальной сети, поэтому необходимо создать или обновить подсеть, чтобы отключить [политики сети](../private-link/disable-private-endpoint-network-policy.md)частной конечной точки. Обновите конфигурацию подсети *mySubnet* с помощью команды [az network vnet subnet update](https://docs.microsoft.com/cli/azure/network/vnet/subnet?view=azure-cli-latest#az-network-vnet-subnet-update).
 
 ```azurecli-interactive
 az network vnet subnet update \
@@ -72,7 +72,7 @@ az vm create \
 Создайте базу данных Azure для MariaDB с помощью команды AZ MariaDB Server Create. Помните, что имя сервера MariaDB должно быть уникальным в пределах Azure, поэтому замените значение заполнителя в квадратных скобках своим уникальным значением: 
 
 ```azurecli-interactive
-# Create a logical server in the resource group 
+# Create a server in the resource group 
 az mariadb server create \
 --name mydemoserver \
 --resource-group myResourcegroup \
@@ -82,20 +82,24 @@ az mariadb server create \
 --sku-name GP_Gen5_2
 ```
 
-Обратите внимание, что идентификатор сервера MariaDB ```/subscriptions/subscriptionId/resourceGroups/myResourceGroup/providers/Microsoft.DBforMariaDB/servers/servername.``` аналогичен идентификатору сервера MariaDB на следующем шаге. 
+> [!NOTE]
+> Иногда база данных Azure для MariaDB и подсеть виртуальной сети относятся к разным подпискам. В этих случаях необходимо обеспечить следующую конфигурацию:
+> - Убедитесь, что в обеих подписках зарегистрирован поставщик ресурсов **Microsoft. дбформариадб** . Дополнительные сведения см. в разделе [resource-manager-registration][resource-manager-portal]
 
 ## <a name="create-the-private-endpoint"></a>Создание частной конечной точки 
 Создайте частную конечную точку для сервера MariaDB в виртуальной сети. 
+
 ```azurecli-interactive
 az network private-endpoint create \  
     --name myPrivateEndpoint \  
     --resource-group myResourceGroup \  
     --vnet-name myVirtualNetwork  \  
     --subnet mySubnet \  
-    --private-connection-resource-id "<MariaDB Server ID>" \  
-    --group-ids mariadbServer \  
+    --private-connection-resource-id $(az resource show -g myResourcegroup -n mydemoserver --resource-type "Microsoft.DBforMariaDB/servers" --query "id") \    
+    --group-id mariadbServer \  
     --connection-name myConnection  
  ```
+
 
 ## <a name="configure-the-private-dns-zone"></a>Настройка частной зоны DNS 
 Создайте Частная зона DNS зону для домена сервера Маридб и создайте связь связи с виртуальной сетью. 
@@ -172,7 +176,7 @@ az network private-dns record-set a add-record --record-set-name mydemoserver --
     | ------- | ----- |
     | Имя подключения| Выберите нужное имя подключения.|
     | Имя узла | Выбор *mydemoserver.privatelink.MariaDB.Database.Azure.com* |
-    | Имя пользователя | Введите имя пользователя *username@servername* , которое предоставляется во время создания сервера MariaDB. |
+    | Имя пользователя | Введите имя пользователя, *username@servername* которое предоставляется во время создания сервера MariaDB. |
     | Пароль | Введите пароль, указанный при создании сервера MariaDB. |
     ||
 
@@ -189,5 +193,8 @@ az network private-dns record-set a add-record --record-set-name mydemoserver --
 az group delete --name myResourceGroup --yes 
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Подробнее о том [, что такое частная конечная точка Azure](https://docs.microsoft.com/azure/private-link/private-endpoint-overview)
+
+<!-- Link references, to text, Within this same GitHub repo. -->
+[resource-manager-portal]: ../azure-resource-manager/management/resource-providers-and-types.md

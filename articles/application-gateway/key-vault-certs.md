@@ -1,22 +1,22 @@
 ---
 title: Завершение TLS с сертификатами Azure Key Vault
-description: Узнайте, как интегрировать шлюз приложений Azure с Key Vault для сертификатов сервера, подключенных к прослушивателям с поддержкой HTTPS.
+description: Сведения о том, как интегрировать Шлюз приложений Azure с Key Vault для хранения сертификатов сервера, подключенных к прослушивателям с поддержкой HTTPS.
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
-ms.topic: article
+ms.topic: conceptual
 ms.date: 4/25/2019
 ms.author: victorh
-ms.openlocfilehash: 780f2774cb37e3d6d43ed5137c29119c0f63fd0a
-ms.sourcegitcommit: 3beb067d5dc3d8895971b1bc18304e004b8a19b3
+ms.openlocfilehash: a214dae7c80cbc520fc6aff5a492466a77261167
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82743697"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85255370"
 ---
 # <a name="tls-termination-with-key-vault-certificates"></a>Завершение TLS с сертификатами Key Vault
 
-[Azure Key Vault](../key-vault/general/overview.md) — это хранилище секретов, управляемое платформой, которое можно использовать для защиты секретов, ключей и сертификатов TLS/SSL. Шлюз приложений Azure поддерживает интеграцию с Key Vault для сертификатов сервера, подключенных к прослушивателям с поддержкой HTTPS. Эта поддержка ограничена номером SKU шлюза приложений версии 2.
+Управляемое платформой хранилище секретов [Azure Key Vault](../key-vault/general/overview.md) можно применять для защиты секретов, ключей и сертификатов TLS/SSL. Шлюз приложений Azure теперь поддерживает интеграцию с Key Vault для сертификатов сервера, подключенных к прослушивателям с поддержкой HTTPS. Эта поддержка ограничена номером SKU шлюза приложений версии 2.
 
 Интеграция Key Vault предлагает две модели для завершения TLS:
 
@@ -43,7 +43,7 @@ ms.locfileid: "82743697"
 
 1. **Создание управляемого удостоверения, назначаемого пользователем**
 
-   Вы создаете или повторно используете существующее назначенное пользователем управляемое удостоверение, которое шлюз приложений использует для получения сертификатов от Key Vault от вашего имени. Дополнительные сведения см. в статье [что такое управляемые удостоверения для ресурсов Azure?](../active-directory/managed-identities-azure-resources/overview.md). На этом шаге создается новое удостоверение в клиенте Azure Active Directory. Удостоверение является доверенным для подписки, которая используется для создания удостоверения.
+   Вы создаете или повторно используете существующее назначенное пользователем управляемое удостоверение, которое шлюз приложений использует для получения сертификатов от Key Vault от вашего имени. Дополнительные сведения см. в статье [Что такое управляемые удостоверения для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md). На этом шаге создается новое удостоверение в клиенте Azure Active Directory. Удостоверение является доверенным для подписки, которая используется для создания удостоверения.
 
 1. **Настройка хранилища ключей**
 
@@ -52,7 +52,7 @@ ms.locfileid: "82743697"
    > [!NOTE]
    > Если вы развертываете шлюз приложений с помощью шаблона ARM, используя Azure CLI или PowerShell или с помощью приложения Azure, развернутого из портал Azure, SSL-сертификат хранится в хранилище ключей в виде файла PFX в кодировке Base64. [Для передачи безопасного значения параметра во время развертывания](../azure-resource-manager/templates/key-vault-parameter.md)необходимо выполнить действия, описанные в разделе Использование Azure Key Vault. 
    >
-   > Особенно важно установить для `enabledForTemplateDeployment` `true`значение. Сертификат может быть незащищенным паролем или иметь пароль. В случае сертификата с паролем в следующем примере показана возможная конфигурация `sslCertificates` записи в `properties` для конфигурации шаблона ARM для шлюза приложений. Значения `appGatewaySSLCertificateData` и `appGatewaySSLCertificatePassword` ищутся из хранилища ключей, как описано в разделе [эталонные секреты с динамическим идентификатором](../azure-resource-manager/templates/key-vault-parameter.md#reference-secrets-with-dynamic-id). `parameters('secretName')` Чтобы увидеть, как выполняется поиск, перейдите по ссылке назад. Если сертификат не защищен паролем, пропустите `password` запись.
+   > Особенно важно установить `enabledForTemplateDeployment` для значение `true` . Сертификат может быть незащищенным паролем или иметь пароль. В случае сертификата с паролем в следующем примере показана возможная конфигурация `sslCertificates` записи в `properties` для конфигурации шаблона ARM для шлюза приложений. Значения `appGatewaySSLCertificateData` и `appGatewaySSLCertificatePassword` ищутся из хранилища ключей, как описано в разделе [эталонные секреты с динамическим идентификатором](../azure-resource-manager/templates/key-vault-parameter.md#reference-secrets-with-dynamic-id). Чтобы увидеть, как выполняется поиск, перейдите по ссылке назад `parameters('secretName')` . Если сертификат не защищен паролем, пропустите `password` запись.
    >   
    > ```
    > "sslCertificates": [
@@ -72,6 +72,6 @@ ms.locfileid: "82743697"
 
    ![Сертификаты хранилища ключей](media/key-vault-certs/ag-kv.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Настройка завершения TLS с использованием Key Vault сертификатов с помощью Azure PowerShell](configure-keyvault-ps.md)

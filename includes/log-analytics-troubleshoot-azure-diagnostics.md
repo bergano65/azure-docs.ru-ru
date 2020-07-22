@@ -34,4 +34,4 @@ ms.locfileid: "67185680"
 
 `Set-AzDiagnosticSetting : A parameter cannot be found that matches parameter name 'WorkspaceId'.`
 
-Обновите версию Azure PowerShell и следуйте инструкциям в статье [установка Azure PowerShell](/powershell/azure/install-az-ps) .
+Обновите версию Azure PowerShell, следуя инструкциям в статье [Установка Azure PowerShell](/powershell/azure/install-az-ps).

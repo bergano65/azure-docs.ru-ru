@@ -7,17 +7,17 @@ ms.topic: how-to
 ms.workload: infrastructure
 ms.date: 09/26/2017
 ms.author: cynthn
-ms.openlocfilehash: 6651ae21694022be86d8db08737c609aed3df569
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 2667ff571070b2e62dcfa4af6e202f1851aa3e80
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81870269"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86525778"
 ---
 # <a name="create-and-manage-a-windows-virtual-machine-that-has-multiple-nics"></a>Создание виртуальной машины Windows, использующей несколько сетевых адаптеров, и управление ею
 Виртуальные машины (VM) в Azure могут иметь несколько виртуальных сетевых адаптеров (NIC). Распространенный сценарий состоит в том, чтобы иметь разные подсети для интерфейсных и внутренних подключений. Вы можете связать несколько сетевых адаптеров на виртуальной машине с несколькими подсетями, но эти подсети должны находиться в одной и той же виртуальной сети (vNet). В этой статье подробно описывается, как создать виртуальную машину с несколькими сетевыми адаптерами. Вы также узнаете, как добавить или удалить сетевые адаптеры на существующей виртуальной машине. Различные [размеры виртуальных машин](sizes.md) поддерживают разное число сетевых карт, так что выбирайте соответствующий размер виртуальной машины.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В следующих примерах замените имена параметров собственными значениями. Примеры имен параметров: *myResourceGroup*, *myVnet* и *myVM*.
 
@@ -33,7 +33,7 @@ New-AzResourceGroup -Name "myResourceGroup" -Location "EastUS"
 ### <a name="create-virtual-network-and-subnets"></a>Создание виртуальных сетей и подсетей
 Общий сценарий для виртуальной сети с двумя или большим количеством подсетей. Одна подсеть может предназначаться для интерфейсного трафика, а другая — для внутреннего. Чтобы подключиться к двум подсетям, вам необходимо будет использовать несколько сетевых адаптеров на виртуальной машине.
 
-1. Определите две подсети виртуальной сети с помощью [New-AzVirtualNetworkSubnetConfig](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetworksubnetconfig). В следующем примере определяются подсети для *mySubnetFrontEnd* и *mySubnetBackEnd*:
+1. Определите две подсети виртуальной сети с помощью [New-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/new-azvirtualnetworksubnetconfig). В следующем примере определяются подсети для *mySubnetFrontEnd* и *mySubnetBackEnd*:
 
     ```powershell
     $mySubnetFrontEnd = New-AzVirtualNetworkSubnetConfig -Name "mySubnetFrontEnd" `
@@ -42,7 +42,7 @@ New-AzResourceGroup -Name "myResourceGroup" -Location "EastUS"
         -AddressPrefix "192.168.2.0/24"
     ```
 
-2. Создайте виртуальную сеть и подсети с помощью командлета [New-AzVirtualNetwork](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetwork). В следующем примере создается виртуальная сеть с именем *myVnet*:
+2. Создайте виртуальную сеть и подсети с помощью командлета [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork). В следующем примере создается виртуальная сеть с именем *myVnet*:
 
     ```powershell
     $myVnet = New-AzVirtualNetwork -ResourceGroupName "myResourceGroup" `
@@ -54,7 +54,7 @@ New-AzResourceGroup -Name "myResourceGroup" -Location "EastUS"
 
 
 ### <a name="create-multiple-nics"></a>Создание нескольких сетевых карт
-Создайте два сетевых адаптера с помощью командлета [New-AzNetworkInterface](https://docs.microsoft.com/powershell/module/az.network/new-aznetworkinterface). Подключите один сетевой адаптер к интерфейсной подсети, а другой — к внутренней. В следующем примере создаются два сетевых адаптера с именами *myNic1* и *myNic2*:
+Создайте два сетевых адаптера с помощью командлета [New-AzNetworkInterface](/powershell/module/az.network/new-aznetworkinterface). Подключите один сетевой адаптер к интерфейсной подсети, а другой — к внутренней. В следующем примере создаются два сетевых адаптера с именами *myNic1* и *myNic2*:
 
 ```powershell
 $frontEnd = $myVnet.Subnets|?{$_.Name -eq 'mySubnetFrontEnd'}
@@ -81,13 +81,13 @@ $myNic2 = New-AzNetworkInterface -ResourceGroupName "myResourceGroup" `
     $cred = Get-Credential
     ```
 
-2. Определите виртуальную машину с помощью [New-AzVMConfig](https://docs.microsoft.com/powershell/module/az.compute/new-azvmconfig). В следующем примере определяется виртуальная машина с именем *myVM* и используется размер виртуальной машины, поддерживающий более двух сетевых адаптеров (*Standard_DS3_v2*):
+2. Определите виртуальную машину с помощью [New-AzVMConfig](/powershell/module/az.compute/new-azvmconfig). В следующем примере определяется виртуальная машина с именем *myVM* и используется размер виртуальной машины, поддерживающий более двух сетевых адаптеров (*Standard_DS3_v2*):
 
     ```powershell
     $vmConfig = New-AzVMConfig -VMName "myVM" -VMSize "Standard_DS3_v2"
     ```
 
-3. Создайте оставшуюся часть конфигурации виртуальной машины с помощью [Set-AzVMOperatingSystem](https://docs.microsoft.com/powershell/module/az.compute/set-azvmoperatingsystem) и [Set-AzVMSourceImage](https://docs.microsoft.com/powershell/module/az.compute/set-azvmsourceimage). В следующем примере создается виртуальная машина Windows Server 2016:
+3. Создайте оставшуюся часть конфигурации виртуальной машины с помощью [Set-AzVMOperatingSystem](/powershell/module/az.compute/set-azvmoperatingsystem) и [Set-AzVMSourceImage](/powershell/module/az.compute/set-azvmsourceimage). В следующем примере создается виртуальная машина Windows Server 2016:
 
     ```powershell
     $vmConfig = Set-AzVMOperatingSystem -VM $vmConfig `
@@ -103,14 +103,14 @@ $myNic2 = New-AzNetworkInterface -ResourceGroupName "myResourceGroup" `
         -Version "latest"
    ```
 
-4. Подключите два созданных ранее сетевых адаптера с помощью [Add-AzVMNetworkInterface](https://docs.microsoft.com/powershell/module/az.compute/add-azvmnetworkinterface):
+4. Подключите два созданных ранее сетевых адаптера с помощью [Add-AzVMNetworkInterface](/powershell/module/az.compute/add-azvmnetworkinterface):
 
     ```powershell
     $vmConfig = Add-AzVMNetworkInterface -VM $vmConfig -Id $myNic1.Id -Primary
     $vmConfig = Add-AzVMNetworkInterface -VM $vmConfig -Id $myNic2.Id
     ```
 
-5. Создайте виртуальную машину с помощью [New-AzVM](https://docs.microsoft.com/powershell/module/az.compute/new-azvm):
+5. Создайте виртуальную машину с помощью [New-AzVM](/powershell/module/az.compute/new-azvm):
 
     ```powershell
     New-AzVM -VM $vmConfig -ResourceGroupName "myResourceGroup" -Location "EastUs"
@@ -121,19 +121,19 @@ $myNic2 = New-AzNetworkInterface -ResourceGroupName "myResourceGroup" `
 ## <a name="add-a-nic-to-an-existing-vm"></a>Добавление сетевой карты в существующую виртуальную машину
 Чтобы добавить виртуальный сетевой адаптер в имеющуюся виртуальную машину, освободите ее, добавьте виртуальный сетевой адаптер, а затем запустите виртуальную машину. Различные [размеры виртуальных машин](sizes.md) поддерживают разное число сетевых карт, так что выбирайте соответствующий размер виртуальной машины. При необходимости вы можете [изменить размер виртуальной машины](resize-vm.md).
 
-1. Освободите виртуальную машину с помощью командлета [Stop-AzVm](https://docs.microsoft.com/powershell/module/az.compute/stop-azvm). В следующем примере освобождается виртуальная машина с именем *myVM* в группе ресурсов *myResourceGroup*:
+1. Освободите виртуальную машину с помощью командлета [Stop-AzVm](/powershell/module/az.compute/stop-azvm). В следующем примере освобождается виртуальная машина с именем *myVM* в группе ресурсов *myResourceGroup*:
 
     ```powershell
     Stop-AzVM -Name "myVM" -ResourceGroupName "myResourceGroup"
     ```
 
-2. Получите существующую конфигурацию виртуальной машины с помощью командлета [Get-AzVm](https://docs.microsoft.com/powershell/module/az.compute/get-azvm). В следующем примере возвращаются сведения для виртуальной машины с именем *myVM* в *myResourceGroup*:
+2. Получите существующую конфигурацию виртуальной машины с помощью командлета [Get-AzVm](/powershell/module/az.compute/get-azvm). В следующем примере возвращаются сведения для виртуальной машины с именем *myVM* в *myResourceGroup*:
 
     ```powershell
     $vm = Get-AzVm -Name "myVM" -ResourceGroupName "myResourceGroup"
     ```
 
-3. В следующем примере создается виртуальный сетевой адаптер с помощью [New-AzNetworkInterface](https://docs.microsoft.com/powershell/module/az.network/new-aznetworkinterface) с именем *myNic3*, подключенный к *mySubnetBackEnd*. Затем с помощью [Add-AzVMNetworkInterface](https://docs.microsoft.com/powershell/module/az.compute/add-azvmnetworkinterface) он подключается к виртуальной машине *myVM* в *myResourceGroup*
+3. В следующем примере создается виртуальный сетевой адаптер с помощью [New-AzNetworkInterface](/powershell/module/az.network/new-aznetworkinterface) с именем *myNic3*, подключенный к *mySubnetBackEnd*. Затем с помощью [Add-AzVMNetworkInterface](/powershell/module/az.compute/add-azvmnetworkinterface) он подключается к виртуальной машине *myVM* в *myResourceGroup*
 
     ```powershell
     # Get info for the back end subnet
@@ -166,7 +166,7 @@ $myNic2 = New-AzNetworkInterface -ResourceGroupName "myResourceGroup" `
     Update-AzVM -VM $vm -ResourceGroupName "myResourceGroup"
     ```
 
-4. Запустите виртуальную машину с помощью [Start-AzVm](https://docs.microsoft.com/powershell/module/az.compute/start-azvm).
+4. Запустите виртуальную машину с помощью [Start-AzVm](/powershell/module/az.compute/start-azvm).
 
     ```powershell
     Start-AzVM -ResourceGroupName "myResourceGroup" -Name "myVM"
@@ -177,19 +177,19 @@ $myNic2 = New-AzNetworkInterface -ResourceGroupName "myResourceGroup" `
 ## <a name="remove-a-nic-from-an-existing-vm"></a>Удаление сетевой карты из существующей виртуальной машины
 Чтобы удалить виртуальный сетевой адаптер с имеющейся виртуальной машины, освободите ее, удалите виртуальный сетевой адаптер, а затем запустите виртуальную машину.
 
-1. Освободите виртуальную машину с помощью командлета [Stop-AzVm](https://docs.microsoft.com/powershell/module/az.compute/stop-azvm). В следующем примере освобождается виртуальная машина с именем *myVM* в группе ресурсов *myResourceGroup*:
+1. Освободите виртуальную машину с помощью командлета [Stop-AzVm](/powershell/module/az.compute/stop-azvm). В следующем примере освобождается виртуальная машина с именем *myVM* в группе ресурсов *myResourceGroup*:
 
     ```powershell
     Stop-AzVM -Name "myVM" -ResourceGroupName "myResourceGroup"
     ```
 
-2. Получите существующую конфигурацию виртуальной машины с помощью командлета [Get-AzVm](https://docs.microsoft.com/powershell/module/az.compute/get-azvm). В следующем примере возвращаются сведения для виртуальной машины с именем *myVM* в *myResourceGroup*:
+2. Получите существующую конфигурацию виртуальной машины с помощью командлета [Get-AzVm](/powershell/module/az.compute/get-azvm). В следующем примере возвращаются сведения для виртуальной машины с именем *myVM* в *myResourceGroup*:
 
     ```powershell
     $vm = Get-AzVm -Name "myVM" -ResourceGroupName "myResourceGroup"
     ```
 
-3. С помощью [Get-AzNetworkInterface](https://docs.microsoft.com/powershell/module/az.network/get-aznetworkinterface) получите сведения об удалении сетевого адаптера. В следующем примере возвращаются сведения о *myNic3*:
+3. С помощью [Get-AzNetworkInterface](/powershell/module/az.network/get-aznetworkinterface) получите сведения об удалении сетевого адаптера. В следующем примере возвращаются сведения о *myNic3*:
 
     ```powershell
     # List existing NICs on the VM if you need to determine NIC name
@@ -198,14 +198,14 @@ $myNic2 = New-AzNetworkInterface -ResourceGroupName "myResourceGroup" `
     $nicId = (Get-AzNetworkInterface -ResourceGroupName "myResourceGroup" -Name "myNic3").Id   
     ```
 
-4. Удалите сетевой адаптер с помощью [Remove-AzVMNetworkInterface](https://docs.microsoft.com/powershell/module/az.compute/remove-azvmnetworkinterface), а затем обновите виртуальную машину с помощью [Update-AzVm](https://docs.microsoft.com/powershell/module/az.compute/update-azvm). В следующем примере удаляется сетевой адаптер *myNic3*, полученный `$nicId` на предыдущем шаге:
+4. Удалите сетевой адаптер с помощью [Remove-AzVMNetworkInterface](/powershell/module/az.compute/remove-azvmnetworkinterface), а затем обновите виртуальную машину с помощью [Update-AzVm](/powershell/module/az.compute/update-azvm). В следующем примере удаляется сетевой адаптер *myNic3*, полученный `$nicId` на предыдущем шаге:
 
     ```powershell
     Remove-AzVMNetworkInterface -VM $vm -NetworkInterfaceIDs $nicId | `
         Update-AzVm -ResourceGroupName "myResourceGroup"
     ```   
 
-5. Запустите виртуальную машину с помощью [Start-AzVm](https://docs.microsoft.com/powershell/module/az.compute/start-azvm).
+5. Запустите виртуальную машину с помощью [Start-AzVm](/powershell/module/az.compute/start-azvm).
 
     ```powershell
     Start-AzVM -Name "myVM" -ResourceGroupName "myResourceGroup"
@@ -221,7 +221,7 @@ $myNic2 = New-AzNetworkInterface -ResourceGroupName "myResourceGroup" `
 }
 ```
 
-Дополнительные сведения см. в статье [Развертывание нескольких экземпляров ресурса или свойства в шаблонах Azure Resource Manager*копирования*](../../resource-group-create-multiple.md). 
+Дополнительные сведения см. в статье [Развертывание нескольких экземпляров ресурса или свойства в шаблонах Azure Resource Manager*копирования*](../../azure-resource-manager/templates/copy-resources.md). 
 
 Вы также можете использовать `copyIndex()`, чтобы добавить номер к имени ресурса. Затем вы можете создать сетевые адаптеры с именами *myNic1*, *MyNic2* и т. д. Ниже показан пример добавления значения индекса.
 
@@ -287,7 +287,5 @@ Azure назначает шлюз по умолчанию для первого 
 
     Маршрут указанный в *192.168.1.1* в разделе **Шлюз** — это маршрут по умолчанию для основного сетевого интерфейса. Маршрут *192.168.2.1* в разделе **Шлюз** — это добавленный маршрут.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 При создании виртуальной машины с несколькими сетевыми адаптерами ознакомьтесь со статьей [Размеры виртуальных машин Windows в Azure](sizes.md). Обратите внимание на максимальное число сетевых адаптеров, поддерживаемых каждым из размеров виртуальной машины. 
-
-

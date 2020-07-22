@@ -2,14 +2,14 @@
 title: Получение подробных сведений о базе данных Azure Blockchain Workbench
 description: Узнайте, как получить сведения о базе данных и сервере базы данных Azure Блокчейн Workbench Preview.
 ms.date: 09/05/2019
-ms.topic: article
+ms.topic: how-to
 ms.reviewer: mmercuri
-ms.openlocfilehash: 2b3190a9d042be8ead1ff3d5ef48d4a2a19e8963
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 898360d8e22803e17ff4da7d3b63f5595cad47ba
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74324693"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85254656"
 ---
 # <a name="get-information-about-your-azure-blockchain-workbench-database"></a>Получение сведений о базе данных Azure Blockchain Workbench
 
@@ -31,7 +31,7 @@ ms.locfileid: "74324693"
 1. Войдите в портал Azure с учетной записью, имеющей разрешения **владельца** для ресурсов Azure блокчейн Workbench.
 2. В левой области навигации выберите **Группа ресурсов**.
 3. Выберите имя группы ресурсов для развертывания Blockchain Workbench.
-4. Выберите **Тип** для сортировки списка ресурсов, а затем выберите **SQL Server**. В отсортированном списке на следующем снимке экрана показаны две базы данных SQL, master и использующая lhgn в качестве **префикса ресурса**.
+4. Выберите **Тип** для сортировки списка ресурсов, а затем выберите **SQL Server**. В отсортированном списке на следующем снимке экрана показаны две базы данных: «Master» и «лхгн» в качестве **префикса ресурса**.
 
    ![Отсортированный список ресурсов Blockchain Workbench](./media/getdb-details/sorted-workbench-resource-list.png)
 
@@ -41,7 +41,7 @@ ms.locfileid: "74324693"
 
 Имя сервера базы данных и имя базы данных позволяют подключиться к базе данных Blockchain Workbench с помощью средства разработки или отчетности.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Database views in Azure Blockchain Workbench](database-views.md) (Представления базы данных в Azure Blockchain Workbench)

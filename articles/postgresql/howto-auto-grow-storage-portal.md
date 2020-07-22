@@ -4,14 +4,14 @@ description: В этой статье описывается, как можно 
 author: ambhatna
 ms.author: ambhatna
 ms.service: postgresql
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 5/29/2019
-ms.openlocfilehash: 5e4f9d68d02edf456394d4ce10b7b6af5f8643d9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 24ca9d84e8e05b2ffe093dc54963c1ac39464105
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74769240"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86119622"
 ---
 # <a name="auto-grow-storage-using-the-azure-portal-in-azure-database-for-postgresql---single-server"></a>Автоматическое расширение хранилища с помощью портал Azure в базе данных Azure для PostgreSQL — один сервер
 В этой статье описывается, как можно настроить расширение хранилища базы данных Azure для PostgreSQL, не влияя на рабочую нагрузку.

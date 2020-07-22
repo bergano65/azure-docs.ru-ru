@@ -10,12 +10,12 @@ metadata:
   author: JnHs
   ms.author: jenhayes
   ms.date: 04/14/2020
-  ms.openlocfilehash: e62db32a20c4124f64e7c77d626099905a960815
-  ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
+  ms.openlocfilehash: 8599ddc8a4216b97be6d5bf183eea68654ff65a4
+  ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 05/27/2020
-  ms.locfileid: "83871804"
+  ms.lasthandoff: 07/08/2020
+  ms.locfileid: "86111547"
 landingContent:
 - title: Сведения об Azure Lighthouse
   linkLists:
@@ -33,7 +33,7 @@ landingContent:
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Подключение клиента к системе делегированного управления ресурсами Azure
+    - text: Подключение клиента к Azure Lighthouse
       url: ./how-to/onboard-customer.md
   - linkListType: concept
     links:
@@ -71,15 +71,17 @@ landingContent:
       url: ./how-to/view-manage-customers.md
     - text: Просмотр поставщиков служб и управление ими
       url: ./how-to/view-manage-service-providers.md
-- title: Работа со службами Azure
+- title: Работа со службами Azure в большом масштабе
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Использование журналов Azure Monitor в большом масштабе
+    - text: Управление рабочими областями Sentinel Azure
+      url: ./how-to/manage-sentinel-workspaces.md
+    - text: Использование журналов Azure Monitor
       url: ./how-to/monitor-at-scale.md
     - text: Отслеживание изменений делегирования
       url: ./how-to/monitor-at-scale.md
-    - text: Развертывание службы "Политика Azure" в большом масштабе
+    - text: Разверните службу "Политика Azure"
       url: ./how-to/policy-at-scale.md
     - text: Развертывание политики, которую можно исправить
       url: ./how-to/deploy-policy-remediation.md
@@ -112,6 +114,6 @@ landingContent:
   - linkListType: get-started
     links:
     - text: Раздел вопросов и ответов об Azure Lighthouse на сайте Майкрософт
-      url: https://docs.microsoft.com/answers/topics/azure-lighthouse.html
+      url: /answers/topics/azure-lighthouse.html
     - text: Запрос на функции продукта
       url: https://feedback.azure.com/forums/922753

@@ -7,10 +7,9 @@ ms.topic: article
 ms.date: 03/15/2019
 ms.author: jenoller
 ms.openlocfilehash: 78132a53313f4a8ee5c10af340c8dab08c3e42c2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77595830"
 ---
 # <a name="customize-coredns-with-azure-kubernetes-service"></a>Настройка CoreDNS с использованием Службы Azure Kubernetes
@@ -24,9 +23,9 @@ ms.locfileid: "77595830"
 > [!NOTE]
 > `kube-dns`предложены различные [варианты настройки][kubednsblog] через карту конфигурации Kubernetes. Кореднс **не** поддерживает обратную совместимость с KUBE-DNS. Все ранее использовавшиеся настройки должны быть обновлены для использования с Кореднс.
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
-В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к этому краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
+В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
 
 ## <a name="what-is-supportedunsupported"></a>Поддерживаемые и неподдерживаемые
 
@@ -34,7 +33,7 @@ ms.locfileid: "77595830"
 
 ## <a name="rewrite-dns"></a>Перезапись DNS
 
-Один из сценариев — выполнить перезапись DNS-имени на лету. В следующем примере замените `<domain to be written>` на собственное полное доменное имя. Создайте файл с именем `corednsms.yaml` и вставьте следующий пример конфигурации:
+Один из сценариев — выполнить перезапись DNS-имени на лету. В следующем примере замените на `<domain to be written>` собственное полное доменное имя. Создайте файл с именем `corednsms.yaml` и вставьте следующий пример конфигурации:
 
 ```yaml
 apiVersion: v1
@@ -64,14 +63,14 @@ kubectl apply -f corednsms.yaml
 kubectl get configmaps --namespace=kube-system coredns-custom -o yaml
 ```
 
-Теперь принудительно перезагрузите ConfigMap Кореднс. Команда [kubectl Delete Pod][kubectl delete] не является обратимой и не приводит к простою. `kube-dns` Удаляются модули, а затем планировщик Kubernetes воссоздает их. Эти новые модули Pod содержат изменение значения TTL.
+Теперь принудительно перезагрузите ConfigMap Кореднс. Команда [kubectl Delete Pod][kubectl delete] не является обратимой и не приводит к простою. `kube-dns`Удаляются модули, а затем планировщик Kubernetes воссоздает их. Эти новые модули Pod содержат изменение значения TTL.
 
 ```console
 kubectl delete pod --namespace kube-system -l k8s-app=kube-dns
 ```
 
 > [!Note]
-> Указанная выше команда верна. Пока мы изменим `coredns`, развертывание находится под именем **KUBE-DNS** .
+> Указанная выше команда верна. Пока мы изменим `coredns` , развертывание находится под именем **KUBE-DNS** .
 
 ## <a name="custom-forward-server"></a>Пользовательский сервер пересылки
 

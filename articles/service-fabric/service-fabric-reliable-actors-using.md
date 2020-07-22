@@ -5,12 +5,12 @@ author: vturecek
 ms.topic: conceptual
 ms.date: 03/19/2018
 ms.author: vturecek
-ms.openlocfilehash: 9f5f9e00c374b16026f22d4efdee51ec94d2902a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: b8bf54f9909125030e067bc483ca2fb7e3dc68a7
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79502284"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86253360"
 ---
 # <a name="implement-service-level-features-in-your-actor-service"></a>Реализация функций уровня службы в службе субъектов
 
@@ -172,7 +172,7 @@ public class Program
 2. Обновите клиенты субъекта после завершения предыдущего обновления.
    Это гарантирует, что прокси-сервер субъекта будет использовать стек удаленного взаимодействия версии 2_1.
 
-3. Этот шаг является необязательным. Измените приведенный выше атрибут, чтобы удалить прослушиватель версии 1.
+3. Это необязательный шаг. Измените приведенный выше атрибут, чтобы удалить прослушиватель версии 1.
 
     ```csharp
     [assembly:FabricTransportActorRemotingProvider(RemotingListenerVersion = RemotingListenerVersion.V2_1,RemotingClientVersion = RemotingClientVersion.V2_1)]
@@ -205,17 +205,17 @@ public class Program
 2. Обновите клиенты субъекта после завершения предыдущего обновления.
    Это гарантирует, что прокси-сервер субъекта будет использовать стек удаленного взаимодействия версии 2.
 
-3. Этот шаг является необязательным. Измените приведенный выше атрибут, чтобы удалить прослушиватель версии 1.
+3. Это необязательный шаг. Измените приведенный выше атрибут, чтобы удалить прослушиватель версии 1.
 
     ```csharp
     [assembly:FabricTransportActorRemotingProvider(RemotingListenerVersion = RemotingListenerVersion.V2,RemotingClientVersion = RemotingClientVersion.V2)]
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Управление состоянием субъекта](service-fabric-reliable-actors-state-management.md)
 * [Жизненный цикл субъекта и сборка мусора](service-fabric-reliable-actors-lifecycle.md)
-* [Справочная документация по API субъектов](https://msdn.microsoft.com/library/azure/dn971626.aspx)
+* [Справочная документация по API субъектов](/previous-versions/azure/dn971626(v=azure.100))
 * [Пример кода .NET](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started)
 * [Пример кода Java](https://github.com/Azure-Samples/service-fabric-java-getting-started)
 

@@ -7,7 +7,7 @@ author: curtand
 manager: daveba
 ms.service: active-directory
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: pim
@@ -15,12 +15,12 @@ ms.date: 11/08/2019
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f0b938dc808d9b02ad4105d85a5b3125135c51d6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 0bfca096eb49ee9f1807935de1dac49151cc8ac3
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74023087"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84743768"
 ---
 # <a name="configure-security-alerts-for-azure-resource-roles-in-privileged-identity-management"></a>Настройка оповещений системы безопасности для ролей ресурсов Azure в управление привилегированными пользователями
 
@@ -34,15 +34,15 @@ ms.locfileid: "74023087"
 
 ![Отчет о предупреждениях, показывающий время последнего сканирования, описание, шаги по устранению рисков, тип, серьезность, влияние на безопасность и способы предотвращения следующего времени](media/pim-resource-roles-configure-alerts/rbac-alert-info.png)
 
-## <a name="alerts"></a>видны узлы
+## <a name="alerts"></a>Предупреждения
 
-| Предупреждение | Severity | Триггер | Рекомендация |
+| Предупреждение | Серьезность | Триггер | Рекомендация |
 | --- | --- | --- | --- |
 | **Ресурсу назначено слишком много владельцев** |Средний |Слишком много пользователей имеют роль владельца. |Изучите список пользователей и назначьте некоторым из них менее привилегированные роли. |
 | **Ресурсу назначено слишком много постоянных владельцев** |Средний |Слишком много пользователей имеют постоянно назначенную роль. |Изучите список пользователей и для некоторых из них назначьте обязательную активацию для использования этой роли. |
 | **Создана дублирующая роль** |Средний |Несколько ролей имеют одинаковые условия. |Используйте только одну из этих ролей. |
 
-### <a name="severity"></a>Severity
+### <a name="severity"></a>Серьезность
 
 - **Высокий**: требуется немедленное действие из-за нарушения политики. 
 - **Средний**: немедленное действие не требуется, но обнаружено потенциальное нарушение политики.
@@ -58,6 +58,6 @@ ms.locfileid: "74023087"
 
 ![Настройка страницы оповещения для включения и настройки параметров](media/pim-resource-roles-configure-alerts/rbac-alert-settings.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Настройка параметров роли ресурсов Azure в управление привилегированными пользователями](pim-resource-roles-configure-role-settings.md)

@@ -5,12 +5,12 @@ ms.date: 09/26/2018
 ms.topic: tutorial
 description: В этом руководстве описано, как использовать Azure Dev Spaces и Visual Studio Code для отладки и быстрого выполнения итерации приложения Node.js в службе Azure Kubernetes
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
-ms.openlocfilehash: 6571e23c3ca9b67d4db3c9c7bcea1e4a3b80e4c1
-ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
+ms.openlocfilehash: 3ee8ec8eb78ccb8a7405fd00654ee00ebba8b7c1
+ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80240516"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85854979"
 ---
 # <a name="create-a-kubernetes-dev-space-visual-studio-code-and-nodejs-with-azure-dev-spaces"></a>Создание пространства разработки Kubernetes: Visual Studio Code и Node.js в Azure Dev Spaces
 
@@ -234,11 +234,11 @@ Azure Dev Spaces — это не просто среда выполнения к
 
 Установите точку останова в файле кода на стороне сервера, например в `app.get('/api'...` в [строке 13`server.js`](https://github.com/Azure/dev-spaces/blob/master/samples/nodejs/getting-started/webfrontend/server.js#L13). 
 
-    ```javascript
-    app.get('/api', function (req, res) {
-        res.send('Hello from webfrontend');
-    });
-    ```
+```javascript
+app.get('/api', function (req, res) {
+    res.send('Hello from webfrontend');
+});
+```
 
 Обновите страницу браузера или нажмите кнопку *Say It Again* (Повторить это), и вы достигнете точки останова и сможете осуществить пошаговое выполнение кода.
 

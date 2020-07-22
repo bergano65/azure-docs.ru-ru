@@ -10,12 +10,12 @@ ms.subservice: bing-autosuggest
 ms.topic: overview
 ms.date: 12/18/2019
 ms.author: scottwhi
-ms.openlocfilehash: a90fa0a66fb32b2a885599f09458964188353880
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: b68bc2eca25c35395d9a31f3a80e45d1595815bf
+ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75448832"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85601978"
 ---
 # <a name="what-is-bing-autosuggest"></a>Что такое API Автозаполнения Bing?
 
@@ -29,9 +29,9 @@ ms.locfileid: "75448832"
 
 ## <a name="workflow"></a>Рабочий процесс
 
-API автозаполнения Bing является веб-службой RESTful, которую легко вызвать с помощью любого языка программирования, поддерживающего выполнение HTTP-запросов и анализ JSON. 
+API автозаполнения Bing является веб-службой RESTful, которую легко вызвать с помощью любого языка программирования, поддерживающего выполнение HTTP-запросов и анализ JSON.
 
-1. Создайте [учетную запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с доступом к API-интерфейсам поиска Bing. Если у вас нет подписки Azure, создайте бесплатную [учетную запись](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api).
+1. Создайте [учетную запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с доступом к API-интерфейсам поиска Bing. Если у вас нет подписки Azure, создайте бесплатную [учетную запись](https://azure.microsoft.com/free/cognitive-services/).
 2. Отправляйте запрос этому API каждый раз, когда пользователь вводит новый символ в поле поиска вашего приложения.
 3. Обработайте ответ API путем анализа возвращенного сообщения JSON.
 

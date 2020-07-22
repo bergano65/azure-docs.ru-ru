@@ -11,24 +11,26 @@ ms.topic: quickstart
 ms.date: 04/14/2020
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: d2226e161d96a52834dc3d0c16a1a053d39f02e5
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: c28b3e648dbb451535c182b28b672e670d749629
+ms.sourcegitcommit: 55b2bbbd47809b98c50709256885998af8b7d0c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81404476"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84985941"
 ---
 # <a name="quickstart-generate-a-thumbnail-using-the-computer-vision-rest-api-and-nodejs"></a>Краткое руководство. Создание эскиза с помощью REST API "Компьютерное зрение" и Node.js
 
 В этом кратком руководстве описано, как создать эскиз изображения с помощью REST API Компьютерного зрения. Метод [Get Thumbnail](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fb) позволяет создать эскиз изображения. Вы можете указать нужную высоту и ширину. При этом пропорции могут отличаться от пропорций исходного изображения. API компьютерного зрения использует интеллектуальную обрезку для идентификации интересующей области и создания координат обрезки для этой области.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/ai/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=cognitive-services), прежде чем начинать работу.
-
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Установите платформу [Node.js](https://nodejs.org) 4.x или более поздней версии.
-- Установите [npm](https://www.npmjs.com/).
-- У вас должен быть ключ подписки для Компьютерного зрения. На странице [Try Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=computer-vision) (Пробная версия Cognitive Services) можно получить ключ бесплатной пробной версии. Или следуйте инструкциям из статьи [Create a Cognitive Services account](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) (Создание учетной записи Cognitive Services), чтобы получить подписку Content Moderator и свой ключ. Затем [создайте переменные среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для строки ключа и конечной точки службы с именами `COMPUTER_VISION_SUBSCRIPTION_KEY` и `COMPUTER_VISION_ENDPOINT` соответственно.
+* подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services/).
+* [Node. js](https://nodejs.org) 4.x или более поздней версии. 
+* [npm](https://www.npmjs.com/) 
+* Получив подписку Azure, <a href="https://portal.azure.com/#create/Microsoft.CognitiveServicesComputerVision"  title="создайте ресурс Компьютерного зрения"  target="_blank">create a Computer Vision resource <span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку. После развертывания щелкните **Перейти к ресурсам**.
+    * Для подключения приложения к API Компьютерного зрения потребуется ключ и конечная точка из созданного ресурса. Ключ и конечная точка будут вставлены в приведенный ниже код в кратком руководстве.
+    * Используйте бесплатную ценовую категорию (`F0`), чтобы опробовать службу, а затем выполните обновление до платного уровня для рабочей среды.
+* [Создайте переменные среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключа и URL-адреса конечной точки с именами `COMPUTER_VISION_SUBSCRIPTION_KEY` и `COMPUTER_VISION_ENDPOINT` соответственно.
 
 ## <a name="create-and-run-the-sample"></a>Создание и выполнение примера кода
 
@@ -53,16 +55,15 @@ ms.locfileid: "81404476"
 ```javascript
 'use strict';
 
-const request = require('request');
+const fs = require('fs');
+const request = require('request').defaults({ encoding: null });
 
 let subscriptionKey = process.env['COMPUTER_VISION_SUBSCRIPTION_KEY'];
 let endpoint = process.env['COMPUTER_VISION_ENDPOINT']
-if (!subscriptionKey) { throw new Error('Set your environment variables for your subscription key and endpoint.'); }
 
-var uriBase = endpoint + 'vision/v2.1/generateThumbnail';
+var uriBase = endpoint + 'vision/v3.0/generateThumbnail';
 
-const imageUrl =
-    'https://upload.wikimedia.org/wikipedia/commons/9/94/Bloodhound_Puppy.jpg';
+const imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/9/94/Bloodhound_Puppy.jpg';
 
 // Request parameters.
 const params = {
@@ -71,6 +72,7 @@ const params = {
     'smartCropping': 'true'
 };
 
+// Construct the request
 const options = {
     uri: uriBase,
     qs: params,
@@ -79,18 +81,23 @@ const options = {
         'Content-Type': 'application/json',
         'Ocp-Apim-Subscription-Key' : subscriptionKey
     }
-};
+}
 
+// Post the request and get the response (an image stream)
 request.post(options, (error, response, body) => {
-  if (error) {
-    console.log('Error: ', error);
-    return;
-  }
+    // Write the stream to file
+    var buf = Buffer.from(body, 'base64');
+    fs.writeFile('thumbnail.png', buf, function (err) {
+        if (err) throw err;
+    });
+
+    console.log('Image saved')
 });
 ```
 
 ## <a name="examine-the-response"></a>Изучите ответ.
 
+Отобразится всплывающее окно с эскизом.
 Успешный ответ возвращается в виде двоичных данных, которые представляют данные изображения для эскиза. Если запрос завершается сбоем, ответ отображается в окне консоли. Ответ на невыполненный запрос содержит код ошибки и сообщение с описанием проблемы.
 
 ## <a name="next-steps"></a>Дальнейшие действия

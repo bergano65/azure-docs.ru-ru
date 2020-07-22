@@ -9,10 +9,10 @@ ms.date: 07/09/2019
 ms.topic: how-to
 manager: peterpr
 ms.openlocfilehash: 6499c9c29d10a2056b0af5499b68b5edd67d82cb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80158424"
 ---
 # <a name="build-the-iot-central-device-bridge-to-connect-other-iot-clouds-to-iot-central"></a>Создание моста устройства IoT Central для подключения других облаков Интернета вещей к IoT Central
@@ -26,7 +26,7 @@ ms.locfileid: "80158424"
 -    Приложение-функция Azure.
 -    Учетная запись хранения Azure
 -    План потребления
--    Azure Key Vault
+-    Хранилище ключей Azure;
 
 Приложение-функция является критической частью моста устройства. Оно получает запросы HTTP POST от других платформ Интернета вещей или любых настраиваемых платформ с помощью простой интеграции веб-перехватчика. Мы представили примеры подключения к облакам Sigfox, Particle и TTN. Вы можете легко расширить это решение, чтобы подключиться к пользовательскому облаку Интернета вещей, если ваша платформа может отправлять запросы HTTP POST в приложение-функцию.
 Приложение-функция преобразует данные в формат, принимаемый IoT Central, и пересылает их с помощью API DPS.
@@ -41,7 +41,7 @@ ms.locfileid: "80158424"
 ## <a name="pricing"></a>Цены
 Ресурсы Azure будут размещаться в подписке Azure. Дополнительные сведения о ценах см. в файле [README](https://aka.ms/iotcentralgithubdevicebridge).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы научились создавать мост устройства IoT Central, можно перейти к следующему шагу:
 
 > [!div class="nextstepaction"]

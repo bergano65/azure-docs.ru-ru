@@ -8,10 +8,10 @@ ms.date: 10/30/2018
 ms.author: msangapu
 ms.custom: seodec18
 ms.openlocfilehash: f0a8b1758571a9473402d11a4d5141a11f76504d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80245826"
 ---
 # <a name="azure-app-service-on-linux-faq"></a>Служба приложений Azure на платформе Linux: вопросы и ответы
@@ -32,8 +32,8 @@ ms.locfileid: "80245826"
 
 | Стек           | Ожидаемое значение                                                                         |
 |-----------------|----------------------------------------------------------------------------------------|
-| Java SE         | команда для запуска приложения JAR (например, `java -jar /home/site/wwwroot/app.jar --server.port=80`) |
-| Tomcat          | расположение скрипта для выполнения необходимых конфигураций (например, `/home/site/deployments/tools/startup_script.sh`).          |
+| Java SE         | команда для запуска приложения JAR (например, `java -jar /home/site/wwwroot/app.jar --server.port=80` ) |
+| Tomcat          | расположение скрипта для выполнения необходимых конфигураций (например, `/home/site/deployments/tools/startup_script.sh` ).          |
 | Node.js         | файл конфигурации PM2 или файл скрипта                                |
 | .NET Core       | имя скомпилированной библиотеки DLL как`dotnet <myapp>.dll`                                 |
 | Ruby            | Скрипт Ruby, с которым требуется инициализировать приложение                     |
@@ -86,7 +86,7 @@ ms.locfileid: "80245826"
 
    Если происходит ошибка и отображается сообщение о том, что команда `curl` не найдена, убедитесь, что вы установили curl с помощью команды `apt-get install curl`, прежде чем выполнили предыдущую команду `curl`.
 
-## <a name="language-support"></a>Языковая поддержка
+## <a name="language-support"></a>Поддержка языков
 
 **Я хочу использовать WebSocket в своем приложении Node.js. Нужно ли для этого выбрать какие-либо специальные параметры или настройки?**
 
@@ -110,7 +110,7 @@ const io = require('socket.io')(server,{
 
 **Я использую собственный пользовательский контейнер. Платформа должна подключить общую папку SMB к `/home/` каталогу.**
 
-Если `WEBSITES_ENABLE_APP_SERVICE_STORAGE` параметр не **указан** или имеет значение *true*, `/home/` каталог **будет совместно использоваться** экземплярами масштабирования, а записываемые файлы **будут сохраняться** при перезапуске. Явное `WEBSITES_ENABLE_APP_SERVICE_STORAGE` задание значения *false* приведет к отключению подключения.
+Если `WEBSITES_ENABLE_APP_SERVICE_STORAGE` параметр не **указан** или имеет значение *true*, `/home/` каталог **будет совместно использоваться** экземплярами масштабирования, а записываемые файлы **будут сохраняться** при перезапуске. Явное задание значения `WEBSITES_ENABLE_APP_SERVICE_STORAGE` *false* приведет к отключению подключения.
 
 **Мой пользовательский контейнер долго запускается, и платформа перезапускает контейнер до завершения его запуска.**
 
@@ -122,7 +122,7 @@ const io = require('socket.io')(server,{
 
 **Какой формат используется для имени образа в частном реестре?**
 
-Добавьте полное имя образа, включая URL-адрес частного реестра (например, myacr.azurecr.io/dotnet:latest). [На портале нельзя вводить](https://feedback.azure.com/forums/169385-web-apps/suggestions/31304650) имена образов, которые используют пользовательский порт. Для установки `docker-custom-image-name`используйте [ `az` программу командной строки](https://docs.microsoft.com/cli/azure/webapp/config/container?view=azure-cli-latest#az-webapp-config-container-set).
+Добавьте полное имя образа, включая URL-адрес частного реестра (например, myacr.azurecr.io/dotnet:latest). [На портале нельзя вводить](https://feedback.azure.com/forums/169385-web-apps/suggestions/31304650) имена образов, которые используют пользовательский порт. Для установки `docker-custom-image-name` Используйте [ `az` программу командной строки](https://docs.microsoft.com/cli/azure/webapp/config/container?view=azure-cli-latest#az-webapp-config-container-set).
 
 **Можно ли предоставить несколько портов в образе настраиваемого контейнера?**
 
@@ -153,7 +153,7 @@ const io = require('socket.io')(server,{
 Создайте следующие параметры приложений:
 
 - DOCKER_REGISTRY_SERVER_USERNAME
-- DOCKER_REGISTRY_SERVER_URL (полный URL-адрес, `https://<server-name>.azurecr.io`пример:)
+- DOCKER_REGISTRY_SERVER_URL (полный URL-адрес, пример: `https://<server-name>.azurecr.io` )
 - DOCKER_REGISTRY_SERVER_PASSWORD (включить доступ с правами администратора в параметрах ACR)
 
 В файле конфигурации укажите образ ACR, как в следующем примере:
@@ -201,7 +201,7 @@ image: <server-name>.azurecr.io/<image-name>:<tag>
 
 Вы можете отправить свои идеи на [форум отзывов о веб-приложениях](https://aka.ms/webapps-uservoice). Добавьте [Linux] в заголовок своей идеи.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения о службе приложений на платформе Linux](app-service-linux-intro.md).
 - [Настройка промежуточных сред в службе приложений Azure](../../app-service/deploy-staging-slots.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json)

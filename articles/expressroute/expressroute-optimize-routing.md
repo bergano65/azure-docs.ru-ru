@@ -4,15 +4,15 @@ description: В этой статье приведены сведения о т�
 services: expressroute
 author: charwen
 ms.service: expressroute
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 07/11/2019
 ms.author: charwen
-ms.openlocfilehash: dcbae103933167c583bf0f73dc2fa09178c38bd5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 2672068e505b7c86127b8b765372e7c607c3875a
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74080136"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86259780"
 ---
 # <a name="optimize-expressroute-routing"></a>Оптимизация маршрутизации ExpressRoute
 При наличии нескольких каналов ExpressRoute к сети Майкрософт можно подключиться по нескольким маршрутам. Поэтому маршрутизация может быть неоптимальной, а это значит, что при передаче трафика из вашей сети в сеть Майкрософт и наоборот он будет проходить более длинный маршрут. А это, в свою очередь, может стать причиной возникновения длительной задержки, которая прямо влияет на производительность приложения и работу пользователей. В настоящей статье описана эта проблема и объясняется, как оптимизировать маршрутизацию с помощью стандартных технологий.
@@ -33,18 +33,18 @@ ms.locfileid: "74080136"
 
 **Cisco IOS — конфигурация XE с точки зрения R1:**
 
-    R1(config)#route-map prefer-ExR permit 10
-    R1(config-route-map)#set local-preference 150
+- R1 (config) #route-Map-Екср, разрешение 10
+- R1 (конфигурация-Route-Map) #set локальное предпочтение 150
 
-    R1(config)#router BGP 345
-    R1(config-router)#neighbor 1.1.1.2 remote-as 12076
-    R1(config-router)#neighbor 1.1.1.2 activate
-    R1(config-router)#neighbor 1.1.1.2 route-map prefer-ExR in
+- R1 (config) #router BGP 345
+- R1 (config-router) #neighbor 1.1.1.2 с удаленным доступом как 12076
+- R1 (config-router) #neighbor 1.1.1.2 активировать
+- R1 (config-router) #neighbor 1.1.1.2 маршрутов — Map-Екср в
 
 **Конфигурация жунос с точки зрения R1:**
 
-    user@R1# set protocols bgp group ibgp type internal
-    user@R1# set protocols bgp group ibgp local-preference 150
+- user@R1# Set протоколы BGP группа ибгп тип Internal
+- user@R1# Set Protocols BGP Group ибгп Local-предпочтения 150
 
 
 

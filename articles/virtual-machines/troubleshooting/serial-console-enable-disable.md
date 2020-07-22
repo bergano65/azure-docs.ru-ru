@@ -15,10 +15,9 @@ ms.workload: infrastructure-services
 ms.date: 8/20/2019
 ms.author: alsin
 ms.openlocfilehash: e09e08f8ba36cf576bc27551254225adee3bb0fd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75451306"
 ---
 # <a name="enable-and-disable-the-azure-serial-console"></a>Включение и отключение последовательной консоли Azure
@@ -34,7 +33,7 @@ ms.locfileid: "75451306"
 ## <a name="subscription-level-enabledisable"></a>Включение или отключение уровня подписки
 
 > [!NOTE]
-> Перед выполнением этой команды убедитесь, что вы в правильном облаке (общедоступное облако Azure, облако для государственных организаций США). Вы можете проверить `az cloud list` и задать облако с помощью `az cloud set -n <Name of cloud>`.
+> Перед выполнением этой команды убедитесь, что вы в правильном облаке (общедоступное облако Azure, облако для государственных организаций США). Вы можете проверить `az cloud list` и задать облако с помощью `az cloud set -n <Name of cloud>` .
 
 ### <a name="azure-cli"></a>Azure CLI
 
@@ -79,7 +78,7 @@ $subscription=(Get-AzContext).Subscription.Id
 Invoke-AzResourceAction -Action enableConsole -ResourceId /subscriptions/$subscription/providers/Microsoft.SerialConsole/consoleServices/default -ApiVersion 2018-05-01
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Дополнительные сведения о [последовательной консоли Azure для виртуальных машин Linux](./serial-console-linux.md)
 * Дополнительные сведения о [последовательной консоли Azure для виртуальных машин Windows](./serial-console-windows.md)
 * Сведения о [возможностях управления питанием в последовательной консоли Azure](./serial-console-power-options.md)

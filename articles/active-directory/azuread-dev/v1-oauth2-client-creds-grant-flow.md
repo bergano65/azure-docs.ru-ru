@@ -13,18 +13,18 @@ ms.author: ryanwi
 ms.reviewer: nacanuma
 ms.custom: aaddev
 ROBOTS: NOINDEX
-ms.openlocfilehash: f2d1eaec80c8925eb7b38af848e29e944f1ebf69
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 977dfea28c5c0dc3f34ada0c138556d70c979e04
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80154548"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85551714"
 ---
 # <a name="service-to-service-calls-using-client-credentials-shared-secret-or-certificate"></a>Вызовы между службами с помощью учетных данных клиента (общий секрет или сертификат)
 
 [!INCLUDE [active-directory-azuread-dev](../../../includes/active-directory-azuread-dev.md)]
 
-Поток предоставления учетных данных клиента OAuth 2,0 позволяет веб-службе (*конфиденциальному клиенту*) использовать собственные учетные данные вместо олицетворения пользователя для проверки подлинности при вызове другой веб-службы. В этом сценарии клиент обычно является службой среднего уровня, веб-службой, службой управляющей программы или веб-сайтом. Для большей надежности Azure AD также позволяет вызывающей службе использовать в качестве учетных данных сертификат (вместо общего секрета).
+Процесс предоставления учетных данных клиента OAuth 2.0 позволяет веб-службе (*конфиденциальный клиент*) вместо олицетворения пользователя использовать свои собственные учетные данные для аутентификации при вызове другой веб-службы. В этом сценарии клиент обычно является службой среднего уровня, веб-службой, службой управляющей программы или веб-сайтом. Для большей надежности Azure AD также позволяет вызывающей службе использовать в качестве учетных данных сертификат (вместо общего секрета).
 
 ## <a name="client-credentials-grant-flow-diagram"></a>Схема потока предоставления учетных данных клиента
 На следующей схеме показано, как работает поток предоставления учетных данных клиента в Azure Active Directory (Azure AD).
@@ -46,18 +46,18 @@ ms.locfileid: "80154548"
 https://login.microsoftonline.com/<tenant id>/oauth2/token
 ```
 
-## <a name="service-to-service-access-token-request"></a>Запрос маркера доступа для взаимодействия между службами
+## <a name="service-to-service-access-token-request"></a>Запрос маркера взаимного доступа между службами
 Существует два сценария. Их выбор зависит от типа защиты клиентского приложения — с помощью общего секрета или с помощью сертификата.
 
-### <a name="first-case-access-token-request-with-a-shared-secret"></a>Первый пример. Запрос маркера доступа по общему секрету
-Если используется общий секрет, запрос маркера доступа для взаимодействия между службами содержит следующие параметры.
+### <a name="first-case-access-token-request-with-a-shared-secret"></a>Первый вариант. Запрос маркера доступа с помощью общего секрета
+При использовании общего секрета запрос маркера взаимного доступа между службами содержит следующие параметры:
 
-| Параметр |  | Описание |
+| Параметр | Тип | Описание |
 | --- | --- | --- |
-| grant_type |обязательные |Указывает запрашиваемый тип предоставления. В потоке предоставления учетных данных клиента этот параметр должен иметь значение **client_credentials**. |
-| client_id |обязательные |Указывает идентификатор клиента Azure AD вызывающей веб-службы. Чтобы узнать идентификатор клиента вызывающего приложения, на [портале Azure](https://portal.azure.com) последовательно выберите **Azure Active Directory** и **Регистрация приложений**, затем щелкните приложение. Параметр client_id — это *идентификатор приложения*. |
-| client_secret |обязательные |Введите ключ, зарегистрированный для вызывающей веб-службы или управляющей программы в Azure AD. Чтобы создать ключ, на портале Azure последовательно выберите **Azure Active Directory** и **Регистрация приложений**, щелкните приложение, последовательно выберите **Параметры** и **Ключи**, затем добавьте ключ.  Преобразуйте этот секрет в формат URL-адреса, когда предоставляете его. |
-| resource |обязательные |Введите URI идентификатора приложения принимающей вызов веб-службы. Чтобы найти URI кода приложения, на портале Azure последовательно выберите **Azure Active Directory** и **Регистрация приложений**, щелкните приложение службы, затем последовательно выберите **Параметры** и **Свойства**. |
+| grant_type |обязательно |Указывает запрашиваемый тип предоставления. В потоке предоставления учетных данных клиента этот параметр должен иметь значение **client_credentials**. |
+| client_id |обязательно |Указывает идентификатор клиента Azure AD вызывающей веб-службы. Чтобы узнать идентификатор клиента вызывающего приложения, на [портале Azure](https://portal.azure.com) последовательно выберите **Azure Active Directory** и **Регистрация приложений**, затем щелкните приложение. Параметр client_id — это *идентификатор приложения*. |
+| client_secret |обязательно |Введите ключ, зарегистрированный для вызывающей веб-службы или управляющей программы в Azure AD. Чтобы создать ключ, на портале Azure последовательно выберите **Azure Active Directory** и **Регистрация приложений**, щелкните приложение, последовательно выберите **Параметры** и **Ключи**, затем добавьте ключ.  Преобразуйте этот секрет в формат URL-адреса, когда предоставляете его. |
+| resource |обязательно |Введите URI идентификатора приложения принимающей вызов веб-службы. Чтобы найти URI кода приложения, на портале Azure последовательно выберите **Azure Active Directory** и **Регистрация приложений**, щелкните приложение службы, затем последовательно выберите **Параметры** и **Свойства**. |
 
 #### <a name="example"></a>Пример
 Ниже приведен запрос HTTP POST на [маркер доступа](../develop/access-tokens.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json) для веб-службы `https://service.contoso.com/`. Параметр `client_id` определяет веб-службу, которая запрашивает маркер доступа.
@@ -70,16 +70,16 @@ Content-Type: application/x-www-form-urlencoded
 grant_type=client_credentials&client_id=625bc9f6-3bf6-4b6d-94ba-e97cf07a22de&client_secret=qkDwDJlDfig2IpeuUZYKH1Wb8q1V0ju6sILxQQqhJ+s=&resource=https%3A%2F%2Fservice.contoso.com%2F
 ```
 
-### <a name="second-case-access-token-request-with-a-certificate"></a>Второй пример. Запрос маркера доступа по сертификату
-Запрос маркера доступа по сертификату для взаимодействия между службами содержит следующие параметры.
+### <a name="second-case-access-token-request-with-a-certificate"></a>Второй вариант. Запрос маркера доступа с помощью сертификата
+Запрос маркера взаимного доступа между службами с помощью сертификата содержит следующие параметры:
 
-| Параметр |  | Описание |
+| Параметр | Тип | Описание |
 | --- | --- | --- |
-| grant_type |обязательные |Указывает запрашиваемый тип ответа. В потоке предоставления учетных данных клиента этот параметр должен иметь значение **client_credentials**. |
-| client_id |обязательные |Указывает идентификатор клиента Azure AD вызывающей веб-службы. Чтобы узнать идентификатор клиента вызывающего приложения, на [портале Azure](https://portal.azure.com) последовательно выберите **Azure Active Directory** и **Регистрация приложений**, затем щелкните приложение. Параметр client_id — это *идентификатор приложения*. |
-| client_assertion_type |обязательные |Значение должно быть `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`. |
-| client_assertion |обязательные | Утверждение (JSON Web Token), которое необходимо создать и подписать с помощью сертификата, зарегистрированного как учетные данные для приложения. Ознакомьтесь с информацией об [учетных данных сертификата](../develop/active-directory-certificate-credentials.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json), чтобы узнать, как зарегистрировать сертификат и задать формат утверждения.|
-| resource | обязательные |Введите URI идентификатора приложения принимающей вызов веб-службы. Чтобы найти URI кода приложения, на портале Azure последовательно выберите **Azure Active Directory** и **Регистрация приложений**, щелкните приложение службы, затем последовательно выберите **Параметры** и **Свойства**. |
+| grant_type |обязательно |Указывает запрашиваемый тип ответа. В потоке предоставления учетных данных клиента этот параметр должен иметь значение **client_credentials**. |
+| client_id |обязательно |Указывает идентификатор клиента Azure AD вызывающей веб-службы. Чтобы узнать идентификатор клиента вызывающего приложения, на [портале Azure](https://portal.azure.com) последовательно выберите **Azure Active Directory** и **Регистрация приложений**, затем щелкните приложение. Параметр client_id — это *идентификатор приложения*. |
+| client_assertion_type |обязательно |Значение должно быть `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`. |
+| client_assertion |обязательно | Утверждение (JSON Web Token), которое необходимо создать и подписать с помощью сертификата, зарегистрированного как учетные данные для приложения. Ознакомьтесь с информацией об [учетных данных сертификата](../develop/active-directory-certificate-credentials.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json), чтобы узнать, как зарегистрировать сертификат и задать формат утверждения.|
+| resource | обязательно |Введите URI идентификатора приложения принимающей вызов веб-службы. Чтобы найти URI кода приложения, на портале Azure последовательно выберите **Azure Active Directory** и **Регистрация приложений**, щелкните приложение службы, затем последовательно выберите **Параметры** и **Свойства**. |
 
 Обратите внимание на то, что параметры являются почти такими же, как и при использовании запроса с помощью общего секрета, за исключением параметра client_secret, который заменяется двумя параметрами: client_assertion_type и client_assertion.
 
@@ -100,26 +100,37 @@ resource=https%3A%2F%contoso.onmicrosoft.com%2Ffc7664b4-cdd6-43e1-9365-c2e1c4e1b
 
 | Параметр | Описание |
 | --- | --- |
-| access_token |Запрошенный маркер доступа. Вызывающая веб-служба может использовать этот маркер для проверки подлинности принимающей веб-службы. |
-| token_type |Обозначает значение типа маркера. Единственный тип, поддерживаемый Azure AD — **носитель**. Дополнительные сведения о токенах носителя см. в разделе [инфраструктура авторизации OAuth 2,0: использование токена носителя (RFC 6750)](https://www.rfc-editor.org/rfc/rfc6750.txt). |
+| access_token |Запрашиваемый маркер доступа. Вызывающая веб-служба может использовать этот маркер для проверки подлинности принимающей веб-службы. |
+| token_type |Указывает значение типа маркера. Единственный тип, поддерживаемый Azure AD — **носитель**. Дополнительные сведения о маркерах носителей см. в спецификации [OAuth 2.0 Authorization Framework: Bearer Token Usage (RFC 6750)](https://www.rfc-editor.org/rfc/rfc6750.txt) (OAuth2.0 Authorization Framework: использование маркера носителя (RFC 6750)). |
 | expires_in |Срок действия маркера доступа (в секундах). |
 | expires_on |Время истечения срока действия маркера доступа. Дата представляется как количество секунд с 1970-01-01T0:0:0Z в формате UTC до истечения срока действия. Это значение используется для определения времени существования кэшированных маркеров. |
 | not_before |Время, начиная с которого маркер доступа становится доступным. Дата представляется как количество секунд с 1970-01-01T0:0:0Z в формате UTC до истечения срока действия маркера.|
-| resource |URI идентификатора приложения принимающей вызов веб-службы. |
+| ресурс |URI идентификатора приложения принимающей вызов веб-службы. |
 
 #### <a name="example-of-response"></a>Пример ответа
 В следующем примере показано сообщение о предоставлении доступа в ответ на запрос маркера доступа к веб-службе.
 
 ```
 {
-"access_token":"eyJhbGciOiJSUzI1NiIsIng1dCI6IjdkRC1nZWNOZ1gxWmY3R0xrT3ZwT0IyZGNWQSIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJodHRwczovL3NlcnZpY2UuY29udG9zby5jb20vIiwiaXNzIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvN2ZlODE0NDctZGE1Ny00Mzg1LWJlY2ItNmRlNTdmMjE0NzdlLyIsImlhdCI6MTM4ODQ0ODI2NywibmJmIjoxMzg4NDQ4MjY3LCJleHAiOjEzODg0NTIxNjcsInZlciI6IjEuMCIsInRpZCI6IjdmZTgxNDQ3LWRhNTctNDM4NS1iZWNiLTZkZTU3ZjIxNDc3ZSIsIm9pZCI6ImE5OTE5MTYyLTkyMTctNDlkYS1hZTIyLWYxMTM3YzI1Y2RlYSIsInN1YiI6ImE5OTE5MTYyLTkyMTctNDlkYS1hZTIyLWYxMTM3YzI1Y2RlYSIsImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzdmZTgxNDQ3LWRhNTctNDM4NS1iZWNiLTZkZTU3ZjIxNDc3ZS8iLCJhcHBpZCI6ImQxN2QxNWJjLWM1NzYtNDFlNS05MjdmLWRiNWYzMGRkNThmMSIsImFwcGlkYWNyIjoiMSJ9.aqtfJ7G37CpKV901Vm9sGiQhde0WMg6luYJR4wuNR2ffaQsVPPpKirM5rbc6o5CmW1OtmaAIdwDcL6i9ZT9ooIIicSRrjCYMYWHX08ip-tj-uWUihGztI02xKdWiycItpWiHxapQm0a8Ti1CWRjJghORC1B1-fah_yWx6Cjuf4QE8xJcu-ZHX0pVZNPX22PHYV5Km-vPTq2HtIqdboKyZy3Y4y3geOrRIFElZYoqjqSv5q9Jgtj5ERsNQIjefpyxW3EwPtFqMcDm4ebiAEpoEWRN4QYOMxnC9OUBeG9oLA0lTfmhgHLAtvJogJcYFzwngTsVo6HznsvPWy7UP3MINA",
+"access_token":"eyJ0eXAiO ... 0X2tnSQLEANnSPHY0gKcgw",
 "token_type":"Bearer",
 "expires_in":"3599",
 "expires_on":"1388452167",
 "resource":"https://service.contoso.com/"
 }
 ```
+## <a name="use-the-access-token-to-access-the-secured-resource"></a>Использование токена доступа для доступа к защищенному ресурсу
 
-## <a name="see-also"></a>См. также
+Служба может использовать полученный маркер доступа для запросов с аутентификацией к нижестоящему веб-API путем установки маркера в заголовке `Authorization`.
+
+### <a name="example"></a>Пример
+
+```
+GET /me?api-version=2013-11-08 HTTP/1.1
+Host: graph.microsoft.com
+Authorization: Bearer eyJ0eXAiO ... 0X2tnSQLEANnSPHY0gKcgw
+```
+
+## <a name="see-also"></a>См. также раздел
 * [OAuth 2.0 в Azure AD](v1-protocols-oauth-code.md)
 * [Пример вызова между службами с помощью общего секрета (на языке C#)](https://github.com/Azure-Samples/active-directory-dotnet-daemon) и [Пример вызова между службами с помощью сертификата (на языке C#)](https://github.com/Azure-Samples/active-directory-dotnet-daemon-certificate-credential)

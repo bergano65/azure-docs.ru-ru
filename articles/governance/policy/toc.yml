@@ -60,20 +60,36 @@
           href: ./samples/pattern-group-with-initiative.md
         - name: Развертывание ресурсов
           href: ./samples/pattern-deploy-resources.md
+    - name: Встроенные средства для обеспечения соответствия нормативным требованиям
+      items:
+        - name: Тестирование безопасности Azure
+          href: ./samples/azure-security-benchmark.md
+        - name: Тесты для оценки безопасности CIS для платформ Microsoft Azure 1.1.0
+          href: ./samples/cis-azure-1-1-0.md
+        - name: NIST SP 800-53 R4
+          href: ./samples/nist-sp-800-53-r4.md
+        - name: NIST SP 800-171 R2
+          href: ./samples/nist-sp-800-171-r2.md
 - name: Основные понятия
   items:
-    - name: Структура определения службы "Политика Azure"
+    - name: Структура определения
       displayName: 'parameters, location, rule, alias, initiatives'
       href: ./concepts/definition-structure.md
-    - name: Сведения о действии Политики
+    - name: Общие сведения о действиях
       displayName: 'order, evaluation'
       href: ./concepts/effects.md
-    - name: Структура назначения в службе "Политика Azure"
+    - name: Структура инициативы
+      displayName: 'parameters, groups, domains, policies'
+      href: ./concepts/initiative-definition-structure.md
+    - name: Структура назначения
       displayName: 'parameters, enforcementmode, policyDefinitionId'
       href: ./concepts/assignment-structure.md
     - name: Оценка влияния новой политики
       displayName: 'audit, enforcementmode, compliance'
       href: ./concepts/evaluate-impact.md
+    - name: Соответствие нормативным требованиям
+      displayName: 'standards, domains, controls'
+      href: ./concepts/regulatory-compliance.md
     - name: Рабочие процессы политики разработки как кода
       displayName: 'devops, infrastructure as code, iac, release, continuous, delivery, deploy'
       href: ./concepts/policy-as-code.md
@@ -83,6 +99,10 @@
     - name: Аудит виртуальных машин с гостевой конфигурацией
       displayName: 'provider, tools, definition'
       href: ./concepts/guest-configuration.md
+    - name: Безопасность
+      items:
+        - name: 'Базовые показатели безопасности, учитываемые решением для оценки безопасности Azure'
+          href: ./concepts/azure-security-benchmark-baseline.md
 - name: Практические руководства
   items:
     - name: Расширение Политики Azure для VS Code
@@ -94,12 +114,17 @@
     - name: Создание политик для свойств массива
       displayName: 'array property, alias, aliases, in, notIn, type, defaultValue'
       href: ./how-to/author-policies-for-arrays.md
-    - name: Создание политики гостевой конфигурации в Windows
-      displayName: 'powershell, dsc, chef, windows'
-      href: ./how-to/guest-configuration-create.md
-    - name: Создание политики гостевой конфигурации в Linux
-      displayName: 'powershell, dsc, chef, linux'
-      href: ./how-to/guest-configuration-create-linux.md
+    - name: Гостевая конфигурация
+      items:
+        - name: Создание политики гостевой конфигурации в Windows
+          displayName: 'powershell, dsc, chef, windows'
+          href: ./how-to/guest-configuration-create.md
+        - name: Создание политики гостевой конфигурации в Linux
+          displayName: 'powershell, dsc, chef, linux'
+          href: ./how-to/guest-configuration-create-linux.md
+        - name: Создание политики гостевой конфигурации на основе групповой политики
+          displayName: 'powershell, dsc, grouppolicy, windows'
+          href: ./how-to/guest-configuration-create-group-policy.md
     - name: Получение данных о соответствии
       displayName: 'evaluation, scan, summarize, query, events, log analytics'
       href: ./how-to/get-compliance-data.md
@@ -113,7 +138,7 @@
       items:
         - name: Интеграция Key Vault с Политикой Azure
           displayName: 'key vault, certificate, key'
-          href: ../../key-vault/azure-policy.md?toc=/azure/governance/policy/toc.json&bc=/azure/governance/policy/breadcrumb/toc.json
+          href: ../../key-vault/general/azure-policy.md?bc=/azure/governance/policy/breadcrumb/toc.json&toc=/azure/governance/policy/toc.json
     - name: Интеграция Azure Lighthouse
       items:
         - name: Развертывание политики в любом масштабе
@@ -124,9 +149,14 @@
           href: ../../lighthouse/how-to/deploy-policy-remediation.md?toc=/azure/governance/policy/toc.json&bc=/azure/governance/policy/breadcrumb/toc.json
     - name: "Интеграция Azure\_Monitor"
       items:
+        - name: Развертывание Azure Monitor в большом масштабе
+          displayName: 'monitor, diagnostic settings, dependency agent'
+          href: ../../azure-monitor/platform/deploy-scale.md?toc=/azure/governance/policy/toc.json&bc=/azure/governance/policy/breadcrumb/toc.json
         - name: Включение Azure Monitor для виртуальных машин (предварительная версия)
           displayName: 'monitor, insights, log analytics, builtin'
           href: ../../azure-monitor/insights/vminsights-enable-at-scale-policy.md?toc=/azure/governance/policy/toc.json&bc=/azure/governance/policy/breadcrumb/toc.json
+- name: Диагностика
+  href: ./troubleshoot/general.md
 - name: Справочник
   items:
     - name: Azure CLI
@@ -134,9 +164,9 @@
     - name: Azure PowerShell
       items:
         - name: Политика
-          href: '/powershell/module/az.resources/#policies'
+          href: /powershell/module/az.resources/#policies
         - name: Анализ политик
-          href: '/powershell/module/az.policyinsights#policy_insights'
+          href: /powershell/module/az.policyinsights#policy_insights
         - name: Гостевая конфигурация
           href: 'https://www.powershellgallery.com/packages/Az.GuestConfiguration'
     - name: Azure SDK для .NET
@@ -151,7 +181,7 @@
           href: /java/api/com.microsoft.azure.management.resources.policyassignment?view=azure-java-stable
         - name: Определения политик
           href: /java/api/com.microsoft.azure.management.resources.PolicyDefinitions?view=azure-java-stable
-    - name: SDK Azure для Node
+    - name: Пакет Azure SDK для JavaScript
       items:
         - name: Политика
           href: /javascript/api/@azure/arm-policy
@@ -198,7 +228,7 @@
     - name: "GitHub\_— репозиторий политики сообщества"
       href: 'https://github.com/Azure/Community-Policy'
     - name: Раздел вопросов и ответов о Политике Azure на сайте Майкрософт
-      href: /answers/topics/azure-policy.html.html
+      href: /answers/topics/azure-policy.html
     - name: 'Канал на YouTube, посвященный системе управления'
       href: 'https://www.youtube.com/channel/UCZZ3-oMrVI5ssheMzaWC4uQ'
     - name: Видео по гостевой конфигурации

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Workstars | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Workstars | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Workstars.
 services: active-directory
 documentationCenter: na
@@ -22,7 +22,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 04/29/2020
 ms.locfileid: "81867897"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-workstars"></a>Учебник. Интеграция Azure Active Directory с Workstars
+# <a name="tutorial-azure-active-directory-integration-with-workstars"></a>Руководство по Интеграция Azure Active Directory с Workstars
 
 В этом учебнике описано, как интегрировать приложение Workstars с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Workstars обеспечивает следующие преимущества:
@@ -34,11 +34,11 @@ ms.locfileid: "81867897"
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Workstars, вам потребуется:
 
-* подписка Azure AD; (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* Подписка Azure AD. (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Workstars с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -99,7 +99,7 @@ ms.locfileid: "81867897"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Изменение базовой конфигурации SAML](common/edit-urls.png)
 
 4. На странице **Настройка единого входа с помощью SAML** выполните следующие действия.
 

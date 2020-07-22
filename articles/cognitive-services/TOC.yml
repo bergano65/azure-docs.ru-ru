@@ -5,12 +5,12 @@
   items:
     - name: Что такое Cognitive Services?
       href: Welcome.md
+    - name: Новые возможности в документации по Когнитивному поиску
+      href: whats-new-docs.md
     - name: Cognitive Services и Машинное обучение
       href: cognitive-services-and-machine-learning.md
     - name: Пользовательские поддомены для Cognitive Services
       href: cognitive-services-custom-subdomains.md
-    - name: Процесс проверки для доступа к Cognitive Services
-      href: cognitive-services-gating-process.md
     - name: Поддержка языков
       href: language-support.md
 - name: Краткие руководства
@@ -19,8 +19,15 @@
       href: cognitive-services-apis-create-account.md
     - name: Создание ресурса с помощью Azure CLI
       href: cognitive-services-apis-create-account-cli.md
+    - name: Создание ресурса с помощью шаблона Resource Manager
+      displayName: Resource Manager
+      href: resource-manager-template.md
     - name: Ведение журнала диагностики
       href: diagnostic-logging.md
+- name: Примеры
+  items:
+    - name: Встроенные компоненты Политики Azure
+      href: ./policy-samples.md
 - name: Безопасность
   items:
     - name: Безопасность Cognitive Services
@@ -31,6 +38,8 @@
       href: ./encryption/cognitive-services-encryption-keys-portal.md
     - name: Аутентификация запросов к Cognitive Services
       href: authentication.md
+    - name: Базовые средства безопасности
+      href: security-baseline.md
 - name: Поддержка контейнеров
   items:
     - name: Поддержка контейнеров
@@ -57,6 +66,24 @@
           href: ../container-registry/container-registry-get-started-azure-cli.md
         - name: Служба Azure Kubernetes (AKS)
           href: ../aks/tutorial-kubernetes-prepare-app.md
+- name: Большие данные
+  items:
+    - name: Cognitive Services для больших данных
+      href: ./big-data/cognitive-services-for-big-data.md
+    - name: Начало работы
+      href: ./big-data/getting-started.md
+    - name: Примеры
+      items:
+        - name: Python
+          href: ./big-data/samples-python.md
+        - name: Scala
+          href: ./big-data/samples-scala.md
+    - name: Рецепты
+      items:
+        - name: 'Рецепт: Детектор аномалий'
+          href: ./big-data/recipes/anomaly-detection.md
+        - name: 'Рецепт: Art Explorer'
+          href: ./big-data/recipes/art-explorer.md
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure

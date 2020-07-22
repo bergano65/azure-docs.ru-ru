@@ -6,14 +6,14 @@ ms.topic: tutorial
 ms.date: 02/26/2018
 ms.author: suhuruli
 ms.custom: mvc
-ms.openlocfilehash: df6719cad79bdb063c2d4d74892206b6e5bbd414
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 672f8916749362e7145799bdefa3bbd628fc9116
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80292039"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86244826"
 ---
-# <a name="tutorial-deploy-a-java-application-to-a-service-fabric-cluster-in-azure"></a>Руководство по развертыванию приложения Java в кластере Service Fabric в Azure
+# <a name="tutorial-deploy-a-java-application-to-a-service-fabric-cluster-in-azure"></a>Руководство по Развертывание приложения Java в кластере Service Fabric в Azure
 
 Это руководство является третьей частью цикла. В нем показано, как развернуть приложение Service Fabric в кластере в Azure.
 
@@ -32,12 +32,12 @@ ms.locfileid: "80292039"
 > * [Настройка мониторинга и диагностики приложения](service-fabric-tutorial-java-elk.md)
 > * [Настройка процесса непрерывной интеграции и доставки](service-fabric-tutorial-java-jenkins.md)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
+* [Установка Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest)
 * Установите пакет SDK для Service Fabric для [Mac](service-fabric-get-started-mac.md) или [Linux](service-fabric-get-started-linux.md).
 * [Установите Python 3](https://wiki.python.org/moin/BeginnersGuide/Download).
 

@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: alkohli
-ms.openlocfilehash: 9cf012df65560a921f2c9f12f6c0362a033300be
-ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
+ms.openlocfilehash: b62441a4b1307a232ad2f592f13253c0759b5431
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82561637"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85564204"
 ---
 # <a name="tutorial-provision-azure-data-box-gateway-in-vmware"></a>Руководство по Подготовка Шлюза Azure Data Box в VMware
 
@@ -145,7 +145,7 @@ ms.locfileid: "82561637"
 
     На этой же странице щелкните **Add hard disk** (Добавить жесткий диск), а затем выберите **Existing hard disk** (Имеющийся жесткий диск). Выберите VMDK-файл в хранилище данных. В результате добавится диск операционной системы. 
 
-     Страница "Настройка параметров"[](./media/data-box-gateway-deploy-provision-vmware/image14.png)
+     ![Страница "Настройка параметров"](./media/data-box-gateway-deploy-provision-vmware/image14.png)
 
     Прокрутите вниз, пока не увидите **New Hard Disk** (Новый жесткий диск), и разверните его для просмотра параметров. Задайте для **узла виртуального устройства** значение **IDE controller 0** (Контроллер 0 IDE).
 

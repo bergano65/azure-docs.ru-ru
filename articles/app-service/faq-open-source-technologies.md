@@ -8,13 +8,12 @@ ms.assetid: 2fa5ee6b-51a6-4237-805f-518e6c57d11b
 ms.topic: article
 ms.date: 10/31/2018
 ms.author: genli
-ms.custom: seodec18
-ms.openlocfilehash: 3a7a00e59db677e156037c007537ab1b54c1cfaf
-ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
-ms.translationtype: MT
+ms.custom: seodec18, tracking-python
+ms.openlocfilehash: 82bdf4cd25d486d48f4f2adda222197a600434d8
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2020
-ms.locfileid: "82159972"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84559577"
 ---
 # <a name="open-source-technologies-faqs-for-web-apps-in-azure"></a>Часто задаваемые вопросы о технологиях с открытым кодом в веб-приложениях Azure
 
@@ -26,15 +25,15 @@ ms.locfileid: "82159972"
 
 Чтобы включить ведение журнала PHP, сделайте следующее:
 
-1. Войдите на **веб-сайт KUDU** (`https://*yourwebsitename*.scm.azurewebsites.net`).
-2. В верхнем меню выберите **консоль отладки** > **cmd**.
+1. Войдите на **веб-сайт KUDU** ( `https://*yourwebsitename*.scm.azurewebsites.net` ).
+2. В верхнем меню выберите **консоль отладки**  >  **cmd**.
 3. Выберите папку **Site**.
 4. Выберите папку **wwwroot**.
 5. Щелкните **+** значок, а затем выберите **создать файл**.
 6. Задайте файлу имя **.user.ini**.
 7. Щелкните значок карандаша рядом с файлом **.user.ini**.
 8. Добавьте в файл следующий код: `log_errors=on`.
-9. Щелкните **Сохранить**.
+9. Нажмите кнопку **Сохранить**.
 10. Щелкните значок карандаша рядом с файлом **wp-config.php**.
 11. Вместо текста в файле добавьте следующий код:
     ```php
@@ -56,7 +55,7 @@ ms.locfileid: "82159972"
   1. Откройте портал Azure и перейдите к своему веб-приложению.
   2. В колонке **Параметры** щелкните **Параметры приложения**.
   3. В разделе **Параметры приложения** добавьте WEBSITE_NODE_DEFAULT_VERSION в качестве ключа и укажите необходимую версию Node.js в качестве значения.
-  4. Перейдите в **консоль KUDU** (`https://*yourwebsitename*.scm.azurewebsites.net`).
+  4. Перейдите в **консоль KUDU** ( `https://*yourwebsitename*.scm.azurewebsites.net` ).
   5. Чтобы проверить версию Node.js, введите следующую команду:  
      ```
      node -v
@@ -91,7 +90,7 @@ ms.locfileid: "82159972"
 
 ## <a name="how-do-i-debug-a-nodejs-app-thats-hosted-in-app-service"></a>Как отлаживать приложение Node.js, размещенное в службе приложений?
 
-1.  Перейдите в **консоль KUDU** (`https://*yourwebsitename*.scm.azurewebsites.net/DebugConsole`).
+1.  Перейдите в **консоль KUDU** ( `https://*yourwebsitename*.scm.azurewebsites.net/DebugConsole` ).
 2.  Перейдите к папке журналов приложений (D:\home\LogFiles\Application).
 3.  Проверьте содержимое файла logging_errors.txt.
 
@@ -138,7 +137,7 @@ The web application[ROOT] registered the JDBC driver [com.mysql.jdbc.Driver] but
 
 1. Удалите файл sqljdbc*.jar из папки app/lib.
 2. При использовании пользовательского веб-сервера Tomcat или веб-сервера Tomcat из Microsoft Azure Marketplace скопируйте этот JAR-файл в папку lib.
-3. Если вы включаете Java из портал Azure (выберите **Java 1,8** > **Tomcat Server**), скопируйте JAR-файл sqljdbc. * в папку, которая находится параллельно с приложением. Затем добавьте в файл web.config следующий параметр classpath:
+3. Если вы включаете Java из портал Azure (выберите **Java 1,8**  >  **Tomcat Server**), скопируйте JAR-файл sqljdbc. * в папку, которая находится параллельно с приложением. Затем добавьте в файл web.config следующий параметр classpath:
 
     ```xml
     <httpPlatform>

@@ -70,7 +70,7 @@
 - name: Справочник
   items:
     - name: Интерфейс командной строки Azure Red Hat OpenShift
-      href: /cli/azure/openshift
+      href: /cli/azure/aro
     - name: "Интерфейсы REST\_API Azure Red Hat OpenShift"
       href: /rest/api/openshift
 - name: Ресурсы

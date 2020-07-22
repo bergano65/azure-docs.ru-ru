@@ -13,10 +13,9 @@ ms.workload: na
 ms.date: 02/20/2020
 ms.author: yelevin
 ms.openlocfilehash: 86854fa22a49f09e5d3d2fc5fdb53c245850fbac
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77587946"
 ---
 # <a name="connect-your-zimperium-mobile-threat-defense-to-azure-sentinel"></a>Подключение средства защиты мобильных устройств от угроз Zimperium к Azure Sentinel
@@ -68,7 +67,7 @@ ms.locfileid: "77587946"
 
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
 
-- [Используйте книги](tutorial-monitor-your-data.md) для отслеживания данных.
+- [Используйте книги](tutorial-monitor-your-data.md) для мониторинга данных.
 
 Дополнительные сведения о Zimperium см. в следующих статьях:
 

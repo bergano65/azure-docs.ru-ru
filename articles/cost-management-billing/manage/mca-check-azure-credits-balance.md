@@ -6,20 +6,23 @@ ms.reviewer: amberb
 tags: billing
 ms.service: cost-management-billing
 ms.topic: conceptual
-ms.date: 02/13/2019
+ms.date: 06/24/2019
 ms.author: banders
-ms.openlocfilehash: e65637f20d14b93c212b1af2f20695ff5dfeb350
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: e238a409adda674e1182c0ffd40a4f666d362731
+ms.sourcegitcommit: f98ab5af0fa17a9bba575286c588af36ff075615
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77199693"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85361512"
 ---
 # <a name="track-microsoft-customer-agreement-azure-credit-balance"></a>Отслеживание кредитного баланса Azure для Клиентского соглашения Майкрософт
 
 На портале Azure или через REST API можно проверить остаток денег на счете Azure для вашей учетной записи выставления счетов в рамках Клиентского соглашения Майкрософт.
 
 В учетной записи выставления счетов для Клиентского соглашения Майкрософт кредиты назначаются профилю выставления счетов. В каждом профиле выставления счетов есть деньги на счете, которые автоматически используются для погашения расходов по соответствующим счетам. Для просмотра кредитного баланса Azure профиля выставления счетов необходимо иметь роль "владелец", "участник", "читатель" или "менеджер счетов" для профиля выставления счетов, или роль "владелец", "участник", "читатель" для учетной записи выставления счетов. Подробные сведения о ролях см. в разделе [Сведения об административных ролях клиентских соглашений Майкрософт в Azure](understand-mca-roles.md).
+
+> [!NOTE]
+> Появление нового кредита на портале Azure может занять до 24 часов. Если вы получаете новый кредит и не видите его на портале, подождите 24 часа.
 
 В этой статье рассматривается учетная запись выставления счетов для Клиентского соглашения Майкрософт. [Проверьте наличие доступа к Клиентскому соглашению Майкрософт](#check-access-to-a-microsoft-customer-agreement).
 
@@ -84,7 +87,7 @@ ms.locfileid: "77199693"
    | Термин | Определение |
    |---|---|
    | Дата транзакции | Дата выполнения транзакции. |
-   | Description | Описание транзакции. |
+   | Описание | Описание транзакции. |
    | Сумма| Сумма транзакции |
    | Balance | Остаток на счете после транзакции. |
 
@@ -196,7 +199,7 @@ GET https://management.azure.com<billingProfileId>/providers/Microsoft.Consumpti
 }
 ```
 
-| Имя элемента  | Description                                                                           |
+| Имя элемента  | Описание                                                                           |
 |---------------|---------------------------------------------------------------------------------------|
 | `estimatedBalance` | Предполагаемая сумма кредитов, которые у вас есть после рассмотрения всех выставленных счетов и незавершенных транзакций. |
 | `currentBalance`   | Количество кредитов по состоянию на момент выставления последнего счета. Сюда не включены незавершенные транзакции.    |
@@ -259,7 +262,7 @@ GET https://management.azure.com<billingProfileId>/providers/Microsoft.Consumpti
   ]
 }
 ```
-| Имя элемента  | Description                                                                                               |
+| Имя элемента  | Описание                                                                                               |
 |---------------|-----------------------------------------------------------------------------------------------------------|
 | `originalAmount` | Первоначальная сумма кредита. |
 | `closedBalance`   | Баланс до выставления последнего счета.    |
@@ -347,7 +350,7 @@ GET https://management.azure.com<billingProfileId>/providers/Microsoft.Consumpti
   ]
 }
 ```
-| Имя элемента  | Description                                                                                               |
+| Имя элемента  | Описание                                                                                               |
 |---------------|-----------------------------------------------------------------------------------------------------------|
 | `transactionDate` | Дата выполнения транзакции. |
 | `description` | Описание транзакции. |
@@ -377,10 +380,10 @@ GET https://management.azure.com<billingProfileId>/providers/Microsoft.Consumpti
 - Openlogic
 - Зарегистрированный пользователь Службы предоставления прав на удаленный доступ XenApp Essentials
 - Ubuntu Advantage
-- Visual Studio Enterprise — ежемесячно
-- Visual Studio Enterprise — ежегодно
-- Visual Studio Professional — ежемесячно
-- Visual Studio Professional — ежегодно
+- Visual Studio Enterprise — ежемесячно
+- Visual Studio Enterprise — ежегодно
+- Visual Studio Professional — ежемесячно
+- Visual Studio Professional — ежегодно
 - Продукты в Azure Marketplace
 - Планы поддержки Azure
 

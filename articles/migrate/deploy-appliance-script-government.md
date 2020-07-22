@@ -3,23 +3,23 @@ title: Настройка устройства "миграция Azure" в Azure
 description: Узнайте, как настроить устройство для миграции Azure в Azure для государственных организаций.
 ms.topic: article
 ms.date: 04/16/2020
-ms.openlocfilehash: fd97161ffa075a6165ea963ef80bfabf8904576e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f0ebc882646b5ff3f62ddddf91cffc85cb5e0da6
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81726739"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86109983"
 ---
 # <a name="set-up-an-appliance-in-azure-government"></a>Настройка устройства в Azure для государственных организаций 
 
-Выполните инструкции из этой статьи, чтобы развернуть [устройство миграции Azure](deploy-appliance.md) для виртуальных машин VMware, виртуальных машин Hyper-V и физических серверов в облаке Azure для государственных организаций. Запустите сценарий для создания устройства и убедитесь, что он может подключиться к Azure. Если вы хотите настроить устройство в общедоступном облаке, выполните инструкции из [этой статьи](deploy-appliance-script.md).
+Выполните инструкции из этой статьи, чтобы развернуть [устройство миграции Azure](./migrate-appliance-architecture.md) для виртуальных машин VMware, виртуальных машин Hyper-V и физических серверов в облаке Azure для государственных организаций. Запустите сценарий для создания устройства и убедитесь, что он может подключиться к Azure. Если вы хотите настроить устройство в общедоступном облаке, выполните инструкции из [этой статьи](deploy-appliance-script.md).
 
 
 > [!NOTE]
 > Возможность развертывания устройства с помощью шаблона (для виртуальных машин VMware и виртуальных машин Hyper-V) не поддерживается в Azure для государственных организаций.
 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Этот сценарий настраивает устройство миграции Azure на существующем физическом компьютере или виртуальной машине.
 
@@ -45,14 +45,14 @@ ms.locfileid: "81726739"
 1. На компьютере, на который был скачан файл, откройте командное окно с правами администратора.
 2. Выполните следующую команду, чтобы создать хэш ZIP-файла.
     - ```C:\>CertUtil -HashFile <file_location> [Hashing Algorithm]```
-    - Пример: ```C:\>CertUtil -HashFile C:\Users\administrator\Desktop\AzureMigrateInstaller-VMWare-USGov.zip MD5```
+    - Например, ```C:\>CertUtil -HashFile C:\Users\administrator\Desktop\AzureMigrateInstaller-VMWare-USGov.zip SHA256```.
 
-3. Проверьте созданные хэш-значения. Последняя версия устройства:
+3. Проверьте последнюю версию и хэш-значение устройства:
 
-    **Алгоритм** | **Значение хэша**
-    --- | ---
-    MD5 | 6316bcc8bc932204295bfe33f4be3949
-          
+    **Алгоритм** | **Загрузить** | **SHA256**
+    --- | --- | ---
+    VMware (63,1 ГБ) | [Последняя версия](https://go.microsoft.com/fwlink/?linkid=2120300&clcid=0x409 ) | 3d5822038646b81f458d89d706832c0a2c0e827bfa9b0a55cc478eaf2757a4de
+
 
 ### <a name="run-the-script"></a>Выполнение скрипта
 
@@ -71,7 +71,7 @@ ms.locfileid: "81726739"
 1. Извлеките сжатый ZIP-файл в папку на компьютере, на котором будет размещено устройство. Убедитесь, что скрипт не выполняется на виртуальной машине в существующем устройстве Миграции Azure.
 2. Запустите PowerShell на компьютере с привилегиями администратора (с повышенными правами).
 3. Измените каталог PowerShell на папку, содержащую содержимое, извлеченное из скачанного ZIP-файла.
-4. Запустите скрипт **азуремигратеинсталлер. ps1**следующим образом:``` PS C:\Users\Administrators\Desktop\AzureMigrateInstaller-VMWare-USGov>AzureMigrateInstaller.ps1 ```
+4. Выполните **AzureMigrateInstaller.ps1**скрипта следующим образом:``` PS C:\Users\Administrators\Desktop\AzureMigrateInstaller-VMWare-USGov>AzureMigrateInstaller.ps1 ```
 5. После успешного выполнения скрипта запускается веб-приложение устройства, которое позволяет настроить устройство. При возникновении проблем просмотрите журналы скриптов в файла c:\ProgramData\Microsoft Азуре\логс\ AzureMigrateScenarioInstaller_<em>timestamp</em>. log.
 
 ### <a name="verify-access"></a>Проверка доступа
@@ -97,13 +97,14 @@ ms.locfileid: "81726739"
 1. На компьютере, на который был скачан файл, откройте командное окно с правами администратора.
 2. Выполните следующую команду, чтобы создать хэш ZIP-файла.
     - ```C:\>CertUtil -HashFile <file_location> [Hashing Algorithm]```
-    - Пример: ```C:\>CertUtil -HashFile C:\Users\administrator\Desktop\AzureMigrateInstaller-HyperV-USGov.zip MD5```
+    - Например, ```C:\>CertUtil -HashFile C:\Users\administrator\Desktop\AzureMigrateInstaller-HyperV-USGov.zip SHA256```.
 
-3. Проверьте созданные хэш-значения. Последняя версия устройства:
+3. Проверьте последнюю версию и хэш-значение устройства:
 
-    **Алгоритм** | **Значение хэша**
-    --- | ---
-    MD5 | 717f8b9185f565006b5aff0215ecadac
+    **Сценарий** | **Загрузить** | **SHA256**
+    --- | --- | ---
+    Hyper-V (63,1 МБ) | [Последняя версия](https://go.microsoft.com/fwlink/?linkid=2120200&clcid=0x409) |  2c5e73a1e5525d4fae468934408e43ab55ff397b7da200b92121972e683f9aa3
+
           
 
 ### <a name="run-the-script"></a>Выполнение скрипта
@@ -123,7 +124,7 @@ ms.locfileid: "81726739"
 1. Извлеките сжатый ZIP-файл в папку на компьютере, на котором будет размещено устройство. Убедитесь, что скрипт не выполняется на виртуальной машине в существующем устройстве Миграции Azure.
 2. Запустите PowerShell на компьютере с привилегиями администратора (с повышенными правами).
 3. Измените каталог PowerShell на папку, содержащую содержимое, извлеченное из скачанного ZIP-файла.
-4. Запустите скрипт **азуремигратеинсталлер. ps1**следующим образом:``` PS C:\Users\Administrators\Desktop\AzureMigrateInstaller-HyperV-USGov>AzureMigrateInstaller.ps1 ``` 
+4. Выполните **AzureMigrateInstaller.ps1**скрипта следующим образом:``` PS C:\Users\Administrators\Desktop\AzureMigrateInstaller-HyperV-USGov>AzureMigrateInstaller.ps1 ``` 
 5. После успешного выполнения скрипта запускается веб-приложение устройства, которое позволяет настроить устройство. При возникновении проблем просмотрите журналы скриптов в файла c:\ProgramData\Microsoft Азуре\логс\ AzureMigrateScenarioInstaller_<em>timestamp</em>. log.
 
 ### <a name="verify-access"></a>Проверка доступа
@@ -138,7 +139,7 @@ ms.locfileid: "81726739"
 ### <a name="download-the-script"></a>Скачивание скрипта
 
 1.  Последовательно выберите разделы **Цели миграции** > **Серверы** > **Azure Migrate: Server Assessment (Миграция Azure: оценка серверов)** и щелкните **Обнаружение**.
-2.  В разделе **Обнаружение компьютеров** > **виртуальные машины виртуализованные?** выберите **не виртуализированный/другой**.
+2.  В разделе **Обнаружение компьютеров**  >  **виртуальные машины виртуализованные?** выберите **не виртуализированный/другой**.
 3.  Нажмите кнопку **скачать**, чтобы скачать сжатый ZIP-файл. 
 
 
@@ -149,13 +150,13 @@ ms.locfileid: "81726739"
 1. На компьютере, на который был скачан файл, откройте командное окно с правами администратора.
 2. Выполните следующую команду, чтобы создать хэш ZIP-файла.
     - ```C:\>CertUtil -HashFile <file_location> [Hashing Algorithm]```
-    - Пример: ```C:\>CertUtil -HashFile C:\Users\administrator\Desktop\AzureMigrateInstaller-Server-USGov.zip MD5```
+    - Например, ```C:\>CertUtil -HashFile C:\Users\administrator\Desktop\AzureMigrateInstaller-Server-USGov.zip SHA256```.
 
-3. Проверьте созданные хэш-значения. Последняя версия устройства:
+3. Проверьте последнюю версию и хэш-значение устройства:
 
-    **Алгоритм** | **Значение хэша**
-    --- | ---
-    MD5 | f81c155fc4a1409901caea948713913f
+    **Сценарий** | **Загрузка*** | **Значение хэша**
+    --- | --- | ---
+    Физическое (63,1 МБ) | [Последняя версия](https://go.microsoft.com/fwlink/?linkid=2120100&clcid=0x409) | 93dfef131026e70acdfad2769cd208ff745ab96a96f013cdf3f9e1e61c9b37e1
           
 
 ### <a name="run-the-script"></a>Выполнение скрипта
@@ -175,14 +176,14 @@ ms.locfileid: "81726739"
 1. Извлеките сжатый ZIP-файл в папку на компьютере, на котором будет размещено устройство. Убедитесь, что скрипт не выполняется на виртуальной машине в существующем устройстве Миграции Azure.
 2. Запустите PowerShell на компьютере с привилегиями администратора (с повышенными правами).
 3. Измените каталог PowerShell на папку, содержащую содержимое, извлеченное из скачанного ZIP-файла.
-4. Запустите скрипт **азуремигратеинсталлер. ps1**следующим образом:``` PS C:\Users\Administrators\Desktop\AzureMigrateInstaller-Server-USGov>AzureMigrateInstaller.ps1 ```
+4. Выполните **AzureMigrateInstaller.ps1**скрипта следующим образом:``` PS C:\Users\Administrators\Desktop\AzureMigrateInstaller-Server-USGov>AzureMigrateInstaller.ps1 ```
 5. После успешного выполнения скрипта запускается веб-приложение устройства, которое позволяет настроить устройство. При возникновении проблем просмотрите журналы скриптов в файла c:\ProgramData\Microsoft Азуре\логс\ AzureMigrateScenarioInstaller_<em>timestamp</em>. log.
 
 ### <a name="verify-access"></a>Проверка доступа
 
 Убедитесь, что устройство может подключаться к URL-адресам Azure для [государственных облаков](migrate-appliance.md#government-cloud-urls).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После развертывания устройства необходимо настроить его в первый раз и зарегистрировать в проекте службы "миграция Azure".
 

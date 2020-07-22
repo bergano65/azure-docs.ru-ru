@@ -3,25 +3,23 @@ title: Устранение неполадок с расширением пан�
 description: Как применить групповую политику для развертывания надстройки Internet Explorer для работы с порталом «Мои приложения».
 services: active-directory
 documentationcenter: ''
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: troubleshooting
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/11/2019
-ms.author: mimart
+ms.author: kenwith
 ms.reviewer: asteen
-ms.custom: H1Hack27Feb2017
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a0269c87572e2a9242a54491103ae0fcc3637518
-ms.sourcegitcommit: b1e25a8a442656e98343463aca706f4fde629867
-ms.translationtype: MT
+ms.openlocfilehash: 16abfbeacd972ee8b0ab55f09945e687c95f0093
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "67723907"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84763267"
 ---
 # <a name="troubleshoot-the-access-panel-extension-for-internet-explorer"></a>Устранение неполадок расширения панели доступа для Internet Explorer
 
@@ -40,7 +38,7 @@ ms.locfileid: "67723907"
 
 1. [Щелкните эту ссылку, чтобы скачать средство диагностики.](https://account.activedirectory.windowsazure.com/applications/AccessPanelExtensionDiagnosticTool/AccessPanelExtensionDiagnosticTool.zip)
 1. Откройте файл и извлеките содержимое на свой компьютер.
-1. Чтобы запустить средство, щелкните правой кнопкой мыши файл с именем *акцесспанелекстенсиондиагностиктул. js* и выберите пункт **Открыть с помощью** > **сервера сценариев на основе Microsoft Windows**.
+1. Чтобы запустить средство, щелкните правой кнопкой мыши файл с именем *AccessPanelExtensionDiagnosticTool.js* и выберите пункт **Открыть с помощью**  >  **сервера сценариев на основе Microsoft Windows**.
 
     ![Открыть с помощью > Сервер сценариев на базе Microsoft Windows](./media/manage-access-panel-browser-extension/open-access-panel-extension-diagnostic-tool.png)
 

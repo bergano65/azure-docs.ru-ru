@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 03/30/2018
 ms.author: akjosh
-ms.openlocfilehash: 67df46742be52b03bd91af19654fbfac5df29646
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 5d0eee6b89ec3e0be944f17c361aafa598724069
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79250521"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86042124"
 ---
 # <a name="virtual-machine-extensions-and-features-for-linux"></a>Обзор расширений и компонентов виртуальных машин под управлением Linux
 
@@ -85,7 +85,7 @@ az vm extension image list --location westus --output table
 
 ### <a name="azure-cli"></a>Azure CLI
 
-Расширения виртуальных машин Azure можно запускать на имеющихся виртуальных машинах с помощью команды [az vm extension set](/cli/azure/vm/extension#az-vm-extension-set). В следующем примере выполняется запуск расширения пользовательского скрипта для виртуальной машины с именем *myVM* в группе ресурсов с именем *myResourceGroup*. Замените пример имени группы ресурсов, имя виртуальной машины и скрипт для запуска (HTTPS:\//RAW.githubusercontent.com/Me/Project/Hello.sh) собственными сведениями. 
+Расширения виртуальных машин Azure можно запускать на имеющихся виртуальных машинах с помощью команды [az vm extension set](/cli/azure/vm/extension#az-vm-extension-set). В следующем примере выполняется запуск расширения пользовательского скрипта для виртуальной машины с именем *myVM* в группе ресурсов с именем *myResourceGroup*. Замените пример имени группы ресурсов, имя виртуальной машины и скрипт для запуска (HTTPS: \/ /RAW.githubusercontent.com/Me/Project/Hello.sh) собственными сведениями. 
 
 ```azurecli
 az vm extension set `
@@ -115,7 +115,7 @@ info:    vm extension set command OK
 
 ### <a name="azure-resource-manager-templates"></a>Шаблоны Azure Resource Manager
 
-Расширения ВМ можно добавлять в шаблоны Azure Resource Manager. Так они смогут выполняться при развертывании соответствующего шаблона. Развертывая расширение вместе с шаблоном, можно создать полностью настроенное развертывание Azure. Например, следующий код JSON из шаблона Resource Manager развертывает набор виртуальных машин с балансировкой нагрузки и базу данных SQL Azure, а затем устанавливает на каждой виртуальной машине приложение .NET Core. Расширение ВМ отвечает за установку программного обеспечения.
+Расширения ВМ можно добавлять в шаблоны Azure Resource Manager. Так они смогут выполняться при развертывании соответствующего шаблона. Развертывая расширение вместе с шаблоном, можно создать полностью настроенное развертывание Azure. Например, следующий JSON взят из шаблона диспетчер ресурсов, который развертывает набор виртуальных машин с балансировкой нагрузки и базу данных SQL Azure, а затем устанавливает приложение .NET Core на каждой виртуальной машине. Расширение ВМ отвечает за установку программного обеспечения.
 
 Дополнительные сведения вы можете получить, ознакомившись с полным [шаблоном Resource Manager](https://github.com/Microsoft/dotnet-core-sample-templates/tree/master/dotnet-core-music-linux).
 
@@ -336,7 +336,7 @@ INFO [Microsoft.OSTCExtensions.LinuxDiagnostic-2.3.9027] Launch command:diagnost
 
 1. Чтобы проверить журнал агента Linux, найдите в файле */var/log/waagent.log* действия, которые выполнялись при подготовке расширения.
 
-2. Дополнительные сведения см. в журналах фактического расширения для *\</Вар/лог/Азуре/extensionName>*
+2. Подробные сведения вы можете найти в текущих журналах расширения в каталоге */var/log/azure/\<extensionName>*.
 
 3. Коды ошибок, известные проблемы и другие данные для устранения неполадок вы найдете в документации по конкретному расширению.
 
@@ -403,7 +403,7 @@ az vm extension delete \
 
 ## <a name="common-vm-extension-reference"></a>Справочные материалы для всех расширений ВМ
 
-| Имя расширения | Описание | Дополнительные сведения |
+| Имя расширения | Описание: | Дополнительные сведения |
 | --- | --- | --- |
 | Расширение пользовательских сценариев для Linux |Выполняет сценарии на виртуальных машинах Azure. |[Расширение пользовательских сценариев для Linux](custom-script-linux.md) |
 | Расширение для доступа к виртуальной машине |Восстанавливает доступ к виртуальной машине Azure. |[Расширение для доступа к виртуальной машине](https://github.com/Azure/azure-linux-extensions/tree/master/VMAccess) |

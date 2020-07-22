@@ -14,10 +14,10 @@ ms.date: 01/21/2020
 ms.author: juliako
 ms.custom: seodec18
 ms.openlocfilehash: 7e4f1141a9d4bd58451782e8412063a22565556d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80584532"
 ---
 # <a name="filtering-ordering-and-paging-of-media-services-entities"></a>Фильтрация, упорядочение и разбиение на страницы объектов служб мультимедиа
@@ -26,7 +26,7 @@ ms.locfileid: "80584532"
 
 ## <a name="considerations"></a>Рекомендации
 
-* Свойства сущностей, имеющих `Datetime` тип, всегда имеют формат UTC.
+* Свойства сущностей, имеющих тип, `Datetime` всегда имеют формат UTC.
 * Перед отправкой запроса пробелы в строке запроса должны быть закодированы в виде URL-адреса.
 
 ## <a name="comparison-operators"></a>Операторы сравнения
@@ -49,7 +49,7 @@ ms.locfileid: "80584532"
 
 Используйте `$filter` для предоставления параметра фильтра OData, чтобы найти только интересующие вас объекты.
 
-В следующем примере показано, `alternateId` как фильтровать значение ресурса:
+В следующем примере показано, как фильтровать `alternateId` значение ресурса:
 
 ```
 GET https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/mediaresources/providers/Microsoft.Media/mediaServices/amstestaccount/assets?api-version=2018-07-01&$filter=properties/alternateId%20eq%20'unique identifier'
@@ -74,7 +74,7 @@ GET https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000
 
 ## <a name="skip-token"></a>Пропустить токен
 
-Если ответ запроса содержит много элементов, служба возвращает значение `$skiptoken` (`@odata.nextLink`), которое используется для получения следующей страницы результатов. Используйте его для постраничного просмотра всего результирующего набора.
+Если ответ запроса содержит много элементов, служба возвращает `$skiptoken` `@odata.nextLink` значение (), которое используется для получения следующей страницы результатов. Используйте его для постраничного просмотра всего результирующего набора.
 
 В службах мультимедиа v3 нельзя настроить размер страницы. Размер страницы зависит от типа сущности. Дополнительные сведения см. в следующих разделах.
 
@@ -83,9 +83,9 @@ GET https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000
 > [!TIP]
 > Всегда используйте `nextLink` для перечисления коллекции и не зависят от конкретного размера страницы.
 >
-> `nextLink` Значение будет представлено только в том случае, если имеется более одной страницы сущностей.
+> `nextLink`Значение будет представлено только в том случае, если имеется более одной страницы сущностей.
 
-Рассмотрим следующий пример использования Where `$skiptoken` . Замените *amstestaccount* именем своей учетной записи и установите для значения *api-version* последнюю версию.
+Рассмотрим следующий пример `$skiptoken` использования WHERE. Замените *amstestaccount* именем своей учетной записи и установите для значения *api-version* последнюю версию.
 
 Если вы запрашиваете список ресурсов следующим образом:
 
@@ -156,13 +156,13 @@ client.Jobs.List(config.ResourceGroup, config.AccountName, VideoAnalyzerTransfor
 
 В следующей таблице показано, как можно применить параметры фильтрации и упорядочивания к разным сущностям.
 
-|Имя сущности|Имя свойства.|Filter|Порядок|
+|Имя сущности|Имя свойства|Filter|Номер|
 |---|---|---|---|
-|[Ресурсы](https://docs.microsoft.com/rest/api/media/assets/)|name|`eq`, `gt`, `lt`, `ge`, `le`|`asc` и `desc`|
+|[Активы](https://docs.microsoft.com/rest/api/media/assets/)|name|`eq`, `gt`, `lt`, `ge`, `le`|`asc` и `desc`|
 ||properties.alternateId |`eq`||
 ||properties.assetId |`eq`||
 ||properties.created| `eq`, `gt`, `lt`| `asc` и `desc`|
-|[Политики ключей содержимого](https://docs.microsoft.com/rest/api/media/contentkeypolicies)|name|`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
+|[Политики ключа содержимого](https://docs.microsoft.com/rest/api/media/contentkeypolicies)|name|`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
 ||properties.created    |`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
 ||properties.description    |`eq`, `ne`, `ge`, `le`, `gt`, `lt`||
 ||properties.lastModified|`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
@@ -180,7 +180,7 @@ client.Jobs.List(config.ResourceGroup, config.AccountName, VideoAnalyzerTransfor
 || properties.created      | `gt`, `ge`, `lt`, `le`| `asc` и `desc`|
 || properties.lastModified | `gt`, `ge`, `lt`, `le`| `asc` и `desc`|
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Список ресурсов](https://docs.microsoft.com/rest/api/media/assets/list)
 * [Список политик ключей содержимого](https://docs.microsoft.com/rest/api/media/contentkeypolicies/list)

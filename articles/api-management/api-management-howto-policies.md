@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/29/2017
 ms.author: apimpm
-ms.openlocfilehash: c10939b50a66cd608d27a71f02d959fbc2380f59
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
+ms.openlocfilehash: cc19c5ea7a45f78110818bc6c8cea8fbe25981c0
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "70072309"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86243449"
 ---
 # <a name="policies-in-azure-api-management"></a>Политики в Azure API Management
 
@@ -58,7 +58,7 @@ ms.locfileid: "70072309"
 </policies> 
 ```
 
-Если во время обработки запроса произошла ошибка, все оставшиеся действия в разделах `inbound`, `backend` или `outbound` пропускаются, и начинают выполняться операторы из раздела `on-error`. Поместив операторы политики в раздел `on-error`, вы можете просмотреть ошибку с помощью свойства `context.LastError`, изучить и настроить ответ на ошибку с помощью политики `set-body`, а также настроить, что именно происходит при возникновении ошибки. Существуют коды ошибок для встроенных действий и для ошибок, которые могут возникать во время обработки оператора политики. Дополнительные сведения см. в статье [Обработка ошибок в политиках управления API](/azure/api-management/api-management-error-handling-policies).
+Если во время обработки запроса произошла ошибка, все оставшиеся действия в разделах `inbound`, `backend` или `outbound` пропускаются, и начинают выполняться операторы из раздела `on-error`. Поместив операторы политики в раздел `on-error`, вы можете просмотреть ошибку с помощью свойства `context.LastError`, изучить и настроить ответ на ошибку с помощью политики `set-body`, а также настроить, что именно происходит при возникновении ошибки. Существуют коды ошибок для встроенных действий и для ошибок, которые могут возникать во время обработки оператора политики. Дополнительные сведения см. в статье [Обработка ошибок в политиках управления API](./api-management-error-handling-policies.md).
 
 ## <a name="how-to-configure-policies"></a><a name="scopes"> </a>Как настраивать политики
 
@@ -66,7 +66,7 @@ ms.locfileid: "70072309"
 
 ## <a name="policy-reference"></a>Справочник по политикам
 
-Полный перечень операторов политик и их параметров см. в [справочнике по политикам](api-management-policy-reference.md).
+Полный перечень операторов политик и их параметров см. в [справочнике по политикам](./api-management-policies.md).
 
 ## <a name="policy-samples"></a>Примеры политик
 
@@ -118,17 +118,17 @@ ms.locfileid: "70072309"
 Дополнительные сведения о работе с политиками см. в следующих статьях:
 
 + [Преобразование API-интерфейсов](transform-api.md).
-+ Полный перечень операторов политик и их параметров см. в [справочнике по политикам](api-management-policy-reference.md).
++ Полный перечень операторов политик и их параметров см. в [справочнике по политикам](./api-management-policies.md).
 + [Примеры политик](policy-samples.md).   
 
-[Policy Reference]: api-management-policy-reference.md
+[Policy Reference]: ./api-management-policies.md
 [Product]: api-management-howto-add-products.md
 [API]: api-management-howto-add-products.md
-[Operation]: api-management-howto-add-operations.md
+[Operation]: ./mock-api-responses.md
 
-[Advanced policies]: https://msdn.microsoft.com/library/azure/dn894085.aspx
-[Control flow]: https://msdn.microsoft.com/library/azure/dn894085.aspx#choose
-[Set variable]: https://msdn.microsoft.com/library/azure/dn894085.aspx#set_variable
-[Policy expressions]: https://msdn.microsoft.com/library/azure/dn910913.aspx
+[Advanced policies]: ./api-management-advanced-policies.md
+[Control flow]: ./api-management-advanced-policies.md#choose
+[Set variable]: ./api-management-advanced-policies.md#set-variable
+[Policy expressions]: ./api-management-policy-expressions.md
 
 [policies-restrict]: ./media/api-management-howto-policies/api-management-policies-restrict.png

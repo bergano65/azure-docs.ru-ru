@@ -11,14 +11,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 5b3e2db9b9769dee7599a2446b272e04cc0bedf7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 74cf34438ca142302a6853e8e488b0c7188b162b
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74703391"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86522369"
 ---
-# <a name="transform-data-in-azure-data-factory"></a>Преобразование данных в фабрике данных Azure
+# <a name="transform-data-in-azure-data-factory-version-1"></a>Преобразование данных в фабрике данных Azure версии 1
 > [!div class="op_single_selector"]
 > * [Hive](data-factory-hive-activity.md)  
 > * [Pig,](data-factory-pig-activity.md)  
@@ -83,7 +83,7 @@ C помощью действия хранимой процедуры SQL Serve
 
 В статье [Связанные службы вычислений](data-factory-compute-linked-services.md) описывается, какие службы вычислений поддерживает фабрика данных. 
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Итоги
 Фабрика данных Azure поддерживает приведенные ниже действия преобразования данных и вычислительных сред для них. Действия преобразования можно добавлять в конвейеры как по отдельности, так и в цепочке с другим действием.
 
 | Действия по преобразованию данных | Вычислительная среда |
@@ -92,7 +92,7 @@ C помощью действия хранимой процедуры SQL Serve
 | [Pig,](data-factory-pig-activity.md) |HDInsight [Hadoop] |
 | [MapReduce](data-factory-map-reduce.md) |HDInsight [Hadoop] |
 | [Потоковая передача Hadoop](data-factory-hadoop-streaming-activity.md) |HDInsight [Hadoop] |
-| [Действия машинного обучения: выполнение пакета и обновление ресурса](data-factory-azure-ml-batch-execution-activity.md) |Azure |
+| [Создание прогнозирующих конвейеров с помощью машинного обучения Azure и фабрики данных Azure](data-factory-azure-ml-batch-execution-activity.md) |Azure |
 | [Хранимая процедура](data-factory-stored-proc-activity.md) |Azure SQL, хранилище данных Azure SQL или SQL Server |
 | [Аналитика озера данных U-SQL](data-factory-usql-activity.md) |Аналитика озера данных Azure |
 | [DotNet](data-factory-use-custom-activities.md) |HDInsight [Hadoop] или пакетная служба Azure |

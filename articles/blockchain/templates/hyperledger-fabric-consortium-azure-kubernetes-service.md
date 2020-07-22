@@ -1,15 +1,15 @@
 ---
 title: Microsoft Kubernetes Service Fabric Consortium в службе Azure (AKS)
 description: Развертывание и настройка сети консорциума Kubernetes для структуры Microsoft Azure
-ms.date: 01/08/2020
-ms.topic: article
-ms.reviewer: v-umha
-ms.openlocfilehash: da4ec99f1b9d73ab67a2312094feaa1a89aee394
-ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
+ms.date: 07/07/2020
+ms.topic: how-to
+ms.reviewer: ravastra
+ms.openlocfilehash: e1cbfa56f1e4ea9f8cbaa0ad973d06e8b8d486ca
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82980237"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86085816"
 ---
 # <a name="hyperledger-fabric-consortium-on-azure-kubernetes-service-aks"></a>Microsoft Kubernetes Service Fabric Consortium в службе Azure (AKS)
 
@@ -19,6 +19,18 @@ ms.locfileid: "82980237"
 
 - Получите опыт работы со структурой «Главная книга» и различные компоненты, которые формируют стандартные блоки блокчейн Network структуры.
 - Узнайте, как развернуть и настроить консорциум по работе с Kubernetes в службе Azure для рабочих сценариев.
+
+[!INCLUDE [Preview note](./includes/preview.md)]
+
+## <a name="choose-an-azure-blockchain-solution"></a>Выберите решение Azure Блокчейн
+
+Прежде чем использовать шаблон решения, Сравните свой сценарий с общими вариантами использования доступных параметров Azure Блокчейн.
+
+Параметр | Модель службы | Общий вариант использования
+-------|---------------|-----------------
+Шаблоны решений | IaaS | Шаблоны решений — это Azure Resource Manager шаблоны, которые можно использовать для предоставления полностью настроенной топологии сети блокчейн. Шаблоны развертывают и настраивают Microsoft Azure службы вычислений, сети и хранения для заданного типа сети блокчейн. Шаблоны решений предоставляются без соглашения об уровне обслуживания. Используйте [страницу Microsoft Q&A вопроса](https://docs.microsoft.com/answers/topics/azure-blockchain-workbench.html) для поддержки.
+[Служба Блокчейн Azure](../service/overview.md) | PaaS | Предварительная версия Azure Блокчейн Service позволяет упростить образование, управление и руководство по сетям блокчейн в консорциуме W3C. Используйте службу Блокчейн Azure для решений, которым требуются сведения о PaaS, управлении консорциумом, а также о конфиденциальности контрактов и транзакций.
+[Azure Blockchain Workbench](../workbench/overview.md) | IaaS и PaaS | Azure Blockchain Workbench (предварительная версия) — это совокупность служб и возможностей Azure, которые позволяют создавать и развертывать приложения блокчейн для совместного использования бизнес-процессов и данных с другими организациями. Используйте Azure Блокчейн Workbench для создания прототипа решения блокчейн или подтверждения концепции приложения блокчейн. Azure Blockchain Workbench предоставляется без соглашения об уровне обслуживания. Используйте [страницу Microsoft Q&A вопроса](https://docs.microsoft.com/answers/topics/azure-blockchain-workbench.html) для поддержки.
 
 ## <a name="hyperledger-fabric-consortium-architecture"></a>Архитектура консорциума по этой структуре в книге
 
@@ -358,8 +370,8 @@ CHANNEL_NAME=<channelName>
 
 Выполните следующие действия.  
 
-1.  Задайте `ORGNAME` и `USER_IDENTITY` в качестве для каждой peerOrg1 `./azhlf chaincode install` и команды Issue.  
-2.  Задайте `ORGNAME` и `USER_IDENTITY` в качестве для каждой peerOrg2 `./azhlf chaincode install` и команды Issue.  
+1.  Задайте `ORGNAME` и `USER_IDENTITY` в качестве для каждой peerOrg1 и `./azhlf chaincode install` команды Issue.  
+2.  Задайте `ORGNAME` и `USER_IDENTITY` в качестве для каждой peerOrg2 и `./azhlf chaincode install` команды Issue.  
 
 ### <a name="instantiate-chaincode"></a>Создание экземпляра чаинкоде  
 
@@ -368,7 +380,7 @@ CHANNEL_NAME=<channelName>
 ```bash
 ./azhlf chaincode instantiate -o $ORGNAME -u $USER_IDENTITY -n $CC_NAME -p $CC_PATH -v $CC_VERSION -l $CC_LANG -c $CHANNEL_NAME -f <instantiateFunc> --args <instantiateFuncArgs>  
 ```
-Передайте имя функции создания экземпляра и список аргументов, разделенных `<instantiateFunc>` пробелами, в и `<instantiateFuncArgs>` соответственно. Например, в chaincode_example02. Go чаинкоде, чтобы создать экземпляр чаинкоде со значением `<instantiateFunc>` `init`и `<instantiateFuncArgs>` в "a" "2000" "b" "1000".
+Передайте имя функции создания экземпляра и список аргументов, разделенных пробелами, в `<instantiateFunc>` и `<instantiateFuncArgs>` соответственно. Например, в chaincode_example02. Go чаинкоде, чтобы создать экземпляр чаинкоде со значением `<instantiateFunc>` `init` и `<instantiateFuncArgs>` в "a" "2000" "b" "1000".
 
 > [!NOTE]
 > Выполните команду один раз из любой одноранговой Организации в канале. После успешной отправки транзакции в заказ, заказ распределяет эту транзакцию всем одноранговым организациям в канале. Таким образом, экземпляр чаинкоде создается на всех одноранговых узлах во всех одноранговых организациях в канале.  
@@ -382,7 +394,7 @@ CHANNEL_NAME=<channelName>
 ./azhlf chaincode invoke -o $ORGNAME -u $USER_IDENTITY -n $CC_NAME -c $CHANNEL_NAME -f <invokeFunc> -a <invokeFuncArgs>  
 ```
 
-Передайте имя функции вызова и список аргументов, разделенных `<invokeFunction>` пробелами, в и `<invokeFuncArgs>` соответственно. Продолжим работу chaincode_example02 с примером чаинкоде. Go, чтобы выполнить операцию `<invokeFunction>` Invoke `invoke` со `<invokeFuncArgs>` значением и на "a" "b" "10".  
+Передайте имя функции вызова и список аргументов, разделенных пробелами, в  `<invokeFunction>`   и  `<invokeFuncArgs>`   соответственно. Продолжим работу chaincode_example02 с примером чаинкоде. Go, чтобы выполнить операцию Invoke со значением  `<invokeFunction>`    `invoke`   и  `<invokeFuncArgs>`   на "a" "b" "10".  
 
 >[!NOTE]
 > Выполните команду один раз из любой одноранговой Организации в канале. После успешной отправки транзакции в заказ, заказ распределяет эту транзакцию всем одноранговым организациям в канале. Таким образом, состояние мира обновляется на всех одноранговых узлах всех одноранговых организаций в канале.  
@@ -395,9 +407,9 @@ CHANNEL_NAME=<channelName>
 ```bash
 ./azhlf chaincode query -o $ORGNAME -u $USER_IDENTITY -n $CC_NAME -c $CHANNEL_NAME -f <queryFunction> -a <queryFuncArgs>  
 ```
-Передайте имя функции запроса и список аргументов, разделенных `<queryFunction>` пробелами, в и `<queryFuncArgs>` соответственно. Опять же, chaincode_example02. Go в качестве ссылки, чтобы запросить значение "a" в мировом состоянии со значением `<queryFunction>`  `query` и `<queryArgs>` в "a".  
+Передайте имя функции запроса и список аргументов, разделенных пробелами, в  `<queryFunction>`   и  `<queryFuncArgs>`   соответственно. Опять же, chaincode_example02. Go в качестве ссылки, чтобы запросить значение "a" в мировом состоянии со значением  `<queryFunction>`    `query` и  `<queryArgs>` в "a".  
 
-## <a name="troubleshoot"></a>Диагностика
+## <a name="troubleshoot"></a>Устранение неполадок
 
 **Проверка версии выполняющегося шаблона**
 
@@ -418,3 +430,17 @@ SWITCH_TO_AKS_CLUSTER $AKS_CLUSTER_RESOURCE_GROUP $AKS_CLUSTER_NAME $AKS_CLUSTER
 kubectl describe pod fabric-tools -n tools | grep "Image:" | cut -d ":" -f 3
 
 ```
+
+## <a name="support-and-feedback"></a>Поддержка и обратная связь
+
+Посещайте [блог, посвященный Блокчейну Azure](https://azure.microsoft.com/blog/topics/blockchain/), чтобы оставаться в курсе предложений услуг для блокчейна и просматривать информацию, предоставляемую группой разработчиков Блокчейна Azure.
+
+Чтобы отправить отзыв о продукте или запросить новые функции, опубликуйте обращение на [форуме обратной связи по блокчейну Azure](https://aka.ms/blockchainuservoice).
+
+### <a name="community-support"></a>Поддержка сообщества
+
+Получите возможность проконсультироваться с инженерами Майкрософт и специалистами из сообщества Блокчейна Azure.
+
+- [Страница вопросов Microsoft Q&](https://docs.microsoft.com/answers/topics/azure-blockchain-workbench.html). Поддержка инженеров шаблонов блокчейн ограничена проблемами развертывания.
+- [Техническое сообщество Майкрософт](https://techcommunity.microsoft.com/t5/Blockchain/bd-p/AzureBlockchain)
+- [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-blockchain-workbench)

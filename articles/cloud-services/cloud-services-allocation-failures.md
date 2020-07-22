@@ -14,12 +14,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: troubleshooting
 ms.date: 06/15/2018
 ms.author: v-six
-ms.openlocfilehash: 470778e5c441bb05ffc7c5e1c5ef97a6c30d3359
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: ab6cc71478e80bc3ff9d81a3a91ce90fbb09adb3
+ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79247544"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85921600"
 ---
 # <a name="troubleshooting-allocation-failure-when-you-deploy-cloud-services-in-azure"></a>Устранение ошибки выделения при развертывании облачных служб в Azure
 ## <a name="summary"></a>Сводка
@@ -41,7 +41,7 @@ ms.locfileid: "79247544"
 ### <a name="error-message"></a>Сообщение об ошибке
 Вы можете получить следующее сообщение об ошибке:
 
-    "Azure operation '{operation id}' failed with code Compute.ConstrainedAllocationFailed. Details: Allocation failed; unable to satisfy constraints in request. The requested new service deployment is bound to an Affinity Group, or it targets a Virtual Network, or there is an existing deployment under this hosted service. Any of these conditions constrains the new deployment to specific Azure resources. Please retry later or try reducing the VM size or number of role instances. Alternatively, if possible, remove the aforementioned constraints or try deploying to a different region."
+> "Операция Azure" {Operation ID} "завершилась ошибкой с кодом COMPUTE. Констраинедаллокатионфаилед. Сведения: сбой при выделении; не удалось удовлетворить ограничения в запросе. Запрошенное новое развертывание службы привязано к территориальной группе, предназначено для выполнения в виртуальной сети, или в этой размещенной службе уже существует развертывание. Любое из этих условий ограничивает новое развертывание использованием определенных ресурсов Azure. Повторите попытку позже или попробуйте уменьшить размер виртуальной машины или количество экземпляров ролей. Кроме того, по возможности удалите вышеупомянутые ограничения или попробуйте выполнить развертывание в другом регионе".
 
 ### <a name="common-issues"></a>Распространенные проблемы
 В этом разделе описаны распространенные сценарии выделения ресурсов, вызывающие прикрепление запросов о распределении к отдельному кластеру.

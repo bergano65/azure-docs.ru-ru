@@ -8,12 +8,11 @@ ms.subservice: cosmosdb-table
 ms.devlang: dotnet
 ms.topic: reference
 ms.date: 03/18/2019
-ms.openlocfilehash: f7c6829d858e36b55f079f8ee03e431f67995e66
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 097868c0f6c64ad8b58dce365a2232bb02b786e2
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81272582"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84168205"
 ---
 # <a name="azure-cosmos-db-table-net-standard-api-download-and-release-notes"></a>API таблиц Azure Cosmos DB и .NET Standard. Скачивание и заметки о выпуске
 > [!div class="op_single_selector"]
@@ -26,7 +25,7 @@ ms.locfileid: "81272582"
 
 |   |   |
 |---|---|
-|**Загрузка пакета SDK**|[NuGet](https://www.nuget.org/packages/Microsoft.Azure.Cosmos.Table)|
+|**Скачивание пакета SDK**|[NuGet](https://www.nuget.org/packages/Microsoft.Azure.Cosmos.Table)|
 |**Пример**|[Пример Cosmos DB API таблиц .NET](https://github.com/Azure-Samples/azure-cosmos-table-dotnet-core-getting-started)|
 |**Краткое руководство**|[Краткое руководство](create-table-dotnet.md)|
 |**Руководство**|[Руководство](tutorial-develop-table-dotnet.md)|
@@ -36,51 +35,51 @@ ms.locfileid: "81272582"
 ## <a name="release-notes-for-200-series"></a>Заметки о выпуске для ряда 2.0.0
 2.0.0 Series использует зависимость от [Microsoft. Azure. Cosmos](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/)с улучшенной производительностью и консолидацией пространства имен для Cosmos DB конечной точки.
 
-### <a name="200-preview"></a><a name="2.0.0-preview"/>2.0.0-preview
+### <a name="200-preview"></a><a name="2.0.0-preview"></a>2.0.0-preview
 * Первоначальный предварительный просмотр пакета SDK для таблиц 2.0.0, который принимает зависимость от [Microsoft. Azure. Cosmos](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/)с повышением производительности и консолидации пространства имен для Cosmos DB конечной точки. Открытый API остается прежним.
 
 ## <a name="release-notes-for-100-series"></a>Заметки о выпуске для серии 1.0.0
-Серия 1.0.0 использует зависимость от [Microsoft. Azure. DocumentDB. Core](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core/).
+Серия 1.0.0 использует зависимость от [Microsoft.Azure.Docументдб. Core](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core/).
 
-### <a name="107"></a><a name="1.0.7"/>1.0.7
-* Повышение производительности путем настройки уровня трассировки по умолчанию для пакета SDK таблицы на SourceLevels. Off, который можно использовать с помощью App. config
+### <a name="107"></a><a name="1.0.7"></a>1.0.7
+* Повышение производительности путем настройки уровня трассировки по умолчанию для пакета SDK таблицы на SourceLevels. Off, который можно использовать с помощью app.config
 
-### <a name="105"></a><a name="1.0.5"/>1.0.5
+### <a name="105"></a><a name="1.0.5"></a>1.0.5
 * Познакомьтесь с новой конфигурацией в разделе Таблеклиентконфигуратион, чтобы использовать исполнитель RESTful для взаимодействия с Cosmos DB API таблиц
 
-### <a name="105-preview"></a><a name="1.0.5-preview"/>1.0.5 — Предварительная версия
-* Исправления ошибок
+### <a name="105-preview"></a><a name="1.0.5-preview"></a>1.0.5 — Предварительная версия
+* Исправленные ошибки
 
-### <a name="104"></a><a name="1.0.4"/>1.0.4
-* Исправления ошибок
+### <a name="104"></a><a name="1.0.4"></a>1.0.4
+* Исправленные ошибки
 * Укажите параметр Хттпклиенттимеаут для Рестексекуторконфигуратион.
 
-### <a name="104-preview"></a><a name="1.0.4-preview"/>1.0.4 — Предварительная версия
-* Исправления ошибок
+### <a name="104-preview"></a><a name="1.0.4-preview"></a>1.0.4 — Предварительная версия
+* Исправленные ошибки
 * Укажите параметр Хттпклиенттимеаут для Рестексекуторконфигуратион.
 
-### <a name="101"></a><a name="1.0.1"/>1.0.1
-* Исправления ошибок
+### <a name="101"></a><a name="1.0.1"></a>1.0.1
+* Исправленные ошибки
 
-### <a name="100"></a><a name="1.0.0"/>1.0.0
+### <a name="100"></a><a name="1.0.0"></a>1.0.0
 * Выпуск общедоступной версии
 
-### <a name="0110-preview"></a><a name="0.11.0-preview"/>0.11.0 — Предварительная версия
+### <a name="0110-preview"></a><a name="0.11.0-preview"></a>0.11.0 — Предварительная версия
 * В то, как можно настроить CloudTableClient, были внесены изменения. Теперь он принимает объект Таблеклиентконфигуратион во время создания. Таблеклиентконфигуратион предоставляет различные свойства для настройки поведения клиента в зависимости от того, является ли Целевая конечная точка Cosmos DB API таблиц или API таблиц хранилища Azure.
 * Добавлена поддержка TableQuery, которая возвращает результаты в отсортированном порядке по пользовательскому столбцу. Эта функция поддерживается только в конечных точках таблицы Cosmos DB.
 * Добавлена поддержка предоставления Рекуестчаржес для различных типов результатов. Эта функция поддерживается только в конечных точках таблицы Cosmos DB.
 
-### <a name="0101-preview"></a><a name="0.10.1-preview"/>0.10.1-preview
+### <a name="0101-preview"></a><a name="0.10.1-preview"></a>0.10.1-preview
 * Добавлена поддержка для маркера SAS, операций TablePermissions, ServiceProperties и ServiceStats относительно конечных точек таблицы службы хранилища Azure. 
    > [!NOTE]
    > Некоторые функциональные возможности в предыдущих версиях пакета SDK для таблиц службы хранилища Azure еще не поддерживаются, такие как шифрование на стороне клиента.
 
-### <a name="0100-preview"></a><a name="0.10.0-preview"/>0.10.0-preview
+### <a name="0100-preview"></a><a name="0.10.0-preview"></a>0.10.0-preview
 * Добавлена поддержка основных операций CRUD, пакетных операций и операций запросов для конечных точек таблиц службы хранилища Azure. 
    > [!NOTE]
    > Некоторые функциональные возможности в предыдущих версиях пакета SDK для таблиц службы хранилища Azure еще не поддерживаются, такие как шифрование на стороне клиента.
 
-### <a name="091-preview"></a><a name="0.9.1-preview"/>0.9.1-preview
+### <a name="091-preview"></a><a name="0.9.1-preview"></a>0.9.1-preview
 * Пакет SDK .NET Standard для таблиц Azure Cosmos DB — это кроссплатформенная библиотека .NET, которая предоставляет эффективный доступ к модели данных таблиц в Cosmos DB. Этот начальный выпуск поддерживает все запросы и CRUD-операции для таблиц и сущностей и содержит API-интерфейсы, подобные тем, что используются в [пакете SDK .NET Framework для таблиц Cosmos DB](table-sdk-dotnet.md). 
    > [!NOTE]
    >  Конечные точки таблиц Службы хранилища Azure не поддерживаются в версии 0.9.1-preview.
@@ -102,7 +101,7 @@ ms.locfileid: "81272582"
 | [1.0.5 — Предварительная версия](#1.0.5-preview) |Аугуест 20, 2019 |--- |
 | [1.0.4](#1.0.4) |Аугуест 12, 2019 |--- |
 | [1.0.4 — Предварительная версия](#1.0.4-preview) |26 июля 2019 г. |--- |
-| 1.0.2 — Предварительная версия |2 мая 2019 г. |--- |
+| 1.0.2-preview |2 мая 2019 г. |--- |
 | [1.0.1](#1.0.1) |19 апреля 2019 г. |--- |
 | [1.0.0](#1.0.0) |13 марта 2019 г. |--- |
 | [0.11.0 — Предварительная версия](#0.11.0-preview) |5 марта 2019 г. |--- |
@@ -111,9 +110,9 @@ ms.locfileid: "81272582"
 | [0.9.1 — Предварительная версия](#0.9.1-preview) |18 октября 2018 г. |--- |
 
 
-## <a name="faq"></a>часто задаваемые вопросы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 
 [!INCLUDE [cosmos-db-sdk-faq](../../includes/cosmos-db-sdk-faq.md)]
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 Дополнительные сведения об API таблицы для базы данных Azure Cosmos DB см. в [этой статье](table-introduction.md).

@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 11/25/2019
-ms.openlocfilehash: 5cf1986711479f7330b0cd477744d9f4e2ac6459
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d8dd9aaeaadf13fa48577cf2853e7bcf58badb41
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76548940"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86079298"
 ---
 # <a name="use-the-extended-features-of-the-apache-spark-history-server-to-debug-and-diagnose-spark-applications"></a>Использование расширенных функций сервера журнала Apache Spark для отладки и диагностики приложений Spark
 
@@ -32,7 +32,7 @@ ms.locfileid: "76548940"
 
 ### <a name="open-the-spark-history-server-web-ui-by-url"></a>Открытие пользовательского веб-интерфейса сервера журнала Spark по URL-адресу
 
-Откройте сервер журнала Spark, перейдя по `https://CLUSTERNAME.azurehdinsight.net/sparkhistory`адресу, где **имя_кластера** — это имя кластера Spark.
+Откройте сервер журнала Spark, перейдя по `https://CLUSTERNAME.azurehdinsight.net/sparkhistory` адресу, где **имя_кластера** — это имя кластера Spark.
 
 Веб-интерфейс сервера журнала Spark может выглядеть следующим образом:
 
@@ -97,7 +97,7 @@ ms.locfileid: "76548940"
    ![Тепловая схема на странице с графиком задания & приложения Spark.](./media/apache-azure-spark-history-server/sparkui-graph-heatmap.png)
 
 
-    |Цвет |Описание |
+    |Цвет |Описание: |
     |---|---|
     |Зеленый|задание выполнено успешно.|
     |Оранжевый|Не удалось выполнить задачу, но это не повлияет на окончательный результат задания. Эти задачи имеют дубликаты или экземпляры повторных попыток, которые могут быть выполнены позже.|
@@ -208,12 +208,12 @@ ms.locfileid: "76548940"
 Чтобы вернуться к версии сообщества, выполните следующие действия.
 
 1. Откройте кластер в Ambari.
-1. Перейдите к **Spark2** > **configs**.
+1. Перейдите к **Spark2**  >  **configs**.
 1. Выберите **пользовательские spark2 — значения по умолчанию**.
 1. Выберите **Добавить свойство...**.
 1. Добавьте **Spark. UI. Улучшенный. Enabled = false**, а затем сохраните его.
 1. Это свойство задает значение **false**.
-1. Нажмите кнопку **Сохранить**, чтобы сохранить конфигурацию.
+1. Нажмите кнопку **сохранить** , чтобы сохранить конфигурацию.
 
     ![Отключение функции в Apache Ambari.](./media/apache-azure-spark-history-server/apache-spark-turn-off.png)
 
@@ -245,7 +245,7 @@ ms.locfileid: "76548940"
 
 ### <a name="how-do-i-upgrade-a-jar-file-in-a-hotfix-scenario"></a>Разделы справки обновить JAR-файл в сценарии исправления?
 
-Если вы хотите обновить исправление, используйте следующий скрипт, который будет обновлен `spark-enhancement.jar*`.
+Если вы хотите обновить исправление, используйте следующий скрипт, который будет обновлен `spark-enhancement.jar*` .
 
 **upgrade_spark_enhancement.sh**:
 
@@ -307,7 +307,7 @@ ms.locfileid: "76548940"
 1. Запустите [портал Azure](https://ms.portal.azure.com), а затем выберите свой кластер.
 2. Завершите [действие скрипта](../hdinsight-hadoop-customize-cluster-linux.md) со следующими параметрами.
 
-    |Свойство |Значение |
+    |Свойство. |Значение |
     |---|---|
     |Тип скрипта|- Custom|
     |Имя|упградежар|
@@ -323,11 +323,11 @@ ms.locfileid: "76548940"
 
 + Входные и выходные данные, использующие RDD, не будут отображаться на вкладке " **данные** ".
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 + [Управление ресурсами для кластера Apache Spark в HDInsight](apache-spark-resource-manager.md)
 + [Настройка параметров Apache Spark](apache-spark-settings.md)
 
-## <a name="feedback"></a>Отзывы
+## <a name="suggestions"></a>Предложения
 
-Если у вас возникли какие-либо отзывы или возникли проблемы при использовании этого средства, отправьте сообщение[hdivstool@microsoft.com](mailto:hdivstool@microsoft.com)электронной почты по адресу ().
+Если у вас возникли какие-либо отзывы или возникли проблемы при использовании этого средства, отправьте сообщение электронной почты по адресу ( [hdivstool@microsoft.com](mailto:hdivstool@microsoft.com) ).

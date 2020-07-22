@@ -2,21 +2,21 @@
 title: Отладка приложений прокси приложения — Azure Active Directory | Документация Майкрософт
 description: Отладка проблем с приложениями прокси приложения Azure Active Directory (Azure AD).
 services: active-directory
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: troubleshooting
 ms.date: 05/21/2019
-ms.author: mimart
+ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 575891d99c077299f5e7abf008c1ebb2b158373f
-ms.sourcegitcommit: b1e25a8a442656e98343463aca706f4fde629867
+ms.openlocfilehash: e61ea30f01e8ae141d24c9bd91b08edef4dbe74e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "74382073"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85555052"
 ---
 # <a name="debug-application-proxy-application-issues"></a>Устранение проблем с приложениями Application Proxy 
 
@@ -39,7 +39,7 @@ ms.locfileid: "74382073"
 
 ![Блок-схема, показывающая шаги для отладки приложения](media/application-proxy-debug-apps/application-proxy-apps-debugging-flowchart.png)
 
-|  | Действие | Описание | 
+| Шаг | Действие | Описание |
 |---------|---------|---------|
 |1 | Откройте браузер, получите доступ к приложению и введите свои учетные данные. | Попробуйте использовать свои учетные данные для входа в приложение и проверьте наличие ошибок, связанных с пользователями, например, если [это корпоративное приложение недоступно](application-proxy-sign-in-bad-gateway-timeout-error.md). |
 |2 | Проверка назначения пользователей приложению | Убедитесь, что учетная запись пользователя имеет разрешение на доступ к приложению из корпоративной сети, а затем проверит вход в приложение, выполнив действия, описанные в разделе [Тестирование приложения](application-proxy-add-on-premises-application.md#test-the-application). Если проблемы при входе сохраняются, см. статью [Устранение ошибок при входе](../reports-monitoring/concept-provisioning-logs.md?context=azure/active-directory/manage-apps/context/manage-apps-context)в систему.  |
@@ -50,7 +50,7 @@ ms.locfileid: "74382073"
 |7 | Проверка задержки сети | Если страница загружается медленно, Узнайте о способах минимизации задержки сети в [вопросах снижения задержки](application-proxy-network-topology.md#considerations-for-reducing-latency). | 
 |8 | См. Дополнительные сведения об устранении неполадок | Если проблемы не удается устранить, ознакомьтесь с дополнительными статьями по устранению неполадок в [документации по службе "прокси приложения](application-proxy-troubleshoot.md)". |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 
 * [Публикация приложений в отдельных сетях и расположениях с помощью групп соединителей](application-proxy-connector-groups.md)

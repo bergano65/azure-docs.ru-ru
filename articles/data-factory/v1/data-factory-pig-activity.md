@@ -13,10 +13,9 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.openlocfilehash: 5b8e7201a6239ef1fe83fb89d4b361995e305bbf
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74703194"
 ---
 # <a name="transform-data-using-pig-activity-in-azure-data-factory"></a>Преобразование данных с помощью действия Pig в фабрике данных Azure
@@ -82,12 +81,12 @@ ms.locfileid: "74703194"
 
 ## <a name="syntax-details"></a>Сведения о синтаксисе
 
-| Свойство | Описание | Обязательный |
+| Свойство | Описание | Обязательно |
 | --- | --- | --- |
 | name |Имя действия. |Да |
 | description |Текст, описывающий, для чего используется действие |Нет |
 | type |HDinsightPig |Да |
-| inputs |Входные данные, используемые действием Pig. |Нет |
+| Ввод данных |Входные данные, используемые действием Pig. |Нет |
 | outputs |Выходные данные, создаваемые действием Pig. |Да |
 | linkedServiceName |Ссылка на кластер HDInsight, зарегистрированный в качестве связанной службы в фабрике данных. |Да |
 | скрипт |Указывается встроенный сценарий Pig. |Нет |
@@ -219,7 +218,7 @@ Store PigSampleOut into 'wasb://adfwalkthrough@anandsub14.blob.core.windows.net/
     Store PigSampleOut into '$Output' USING PigStorage (','); 
     ```
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также
 * [Действие Hive](data-factory-hive-activity.md)
 * [Действие MapReduce](data-factory-map-reduce.md)
 * [Действие потоковой передачи Hadoop](data-factory-hadoop-streaming-activity.md)

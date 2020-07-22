@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 10/28/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET
-ms.openlocfilehash: 1ff92b8a9477800477ebb2d79145ddaa78831f30
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: 5522d35faf1888c862e0c42328f08067e7b9be26
+ms.sourcegitcommit: 61d92af1d24510c0cc80afb1aebdc46180997c69
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81536069"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85339897"
 ---
 # <a name="quickstart-add-sign-in-using-openid-connect-to-a-nodejs-web-app"></a>Краткое руководство. Добавление возможности входа в веб-приложение Node.js с помощью OpenID Connect
 
@@ -28,7 +28,7 @@ ms.locfileid: "81536069"
 
 * Установите Node.js из http://nodejs.org/
 
-* [Учетная запись Майкрософт](https://www.outlook.com) или [Программа для разработчиков Office 365](/office/developer-program/office-365-developer-program).
+* [Учетная запись Майкрософт](https://www.outlook.com) или [Программа для разработчиков Microsoft 365](/office/developer-program/office-365-developer-program).
 
 ## <a name="register-your-application"></a>Регистрация приложения
 1. Войдите на [портал Azure](https://portal.azure.com/) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.

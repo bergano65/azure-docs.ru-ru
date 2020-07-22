@@ -7,14 +7,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: quickstart
-ms.date: 01/27/2020
+ms.date: 05/27/2020
 ms.author: pafarley
-ms.openlocfilehash: e053222d3b79668c2f6044417e31e104ce0f4222
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: b24449f68365e7a784469c8b097ef74d5bfb293c
+ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77118489"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86027381"
 ---
 # <a name="quickstart-extract-receipt-data-using-the-form-recognizer-rest-api-with-curl"></a>Краткое руководство. Извлечение данных квитанции с помощью REST API Распознавателя документов и cURL
 
@@ -26,7 +26,7 @@ ms.locfileid: "77118489"
 
 Для работы с этим кратким руководством требуется следующее:
 - Установленная программа [cURL](https://curl.haxx.se/windows/).
-- URL-адрес изображения квитанции. Вы можете использовать [пример изображения](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/curl/form-recognizer/contoso-allinone.jpg?raw=true) при изучении этого краткого руководства.
+- URL-адрес изображения квитанции. Вы можете использовать [пример изображения](https://raw.githubusercontent.com/Azure-Samples/cognitive-services-REST-api-samples/master/curl/form-recognizer/contoso-allinone.jpg) при изучении этого краткого руководства.
 
 ## <a name="create-a-form-recognizer-resource"></a>Создание ресурса Распознавателя документов
 
@@ -34,32 +34,32 @@ ms.locfileid: "77118489"
 
 ## <a name="analyze-a-receipt"></a>Анализ квитанции
 
-Для начала анализа квитанции запустите API **[анализа](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/AnalyzeReceiptAsync)** , используя приведенную ниже команду cURL. Перед выполнением команды внесите следующие изменения:
+Для начала анализа квитанции запустите API **[анализа](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeReceiptAsync)** , используя приведенную ниже команду cURL. Перед выполнением команды внесите следующие изменения:
 
 1. Замените `<Endpoint>` конечной точкой, полученной из подписки Распознавателя документов.
 1. Замените `<your receipt URL>` на URL-адрес изображения квитанции.
 1. Замените `<subscription key>` ключом подписки, скопированным на предыдущем шаге.
 
 ```bash
-curl -i -X POST "https://<Endpoint>/formrecognizer/v2.0-preview/prebuilt/receipt/analyze" -H "Content-Type: application/json" -H "Ocp-Apim-Subscription-Key: <subscription key>" --data-ascii "{ \"url\": \"<your receipt URL>\"}"
+curl -i -X POST "https://<Endpoint>/formrecognizer/v2.0/prebuilt/receipt/analyze" -H "Content-Type: application/json" -H "Ocp-Apim-Subscription-Key: <subscription key>" --data-ascii "{ \"url\": \"<your receipt URL>\"}"
 ```
 
 Вы получите ответ `202 (Success)`, содержащий заголовок **Operation-Location**. Значение этого заголовка содержит идентификатор операции, который можно использовать для запроса состояния асинхронной операции и получения результатов. В следующем примере строка после `operations/` является идентификатором операции.
 
 ```console
-https://cognitiveservice/formrecognizer/v2.0-preview/prebuilt/receipt/operations/54f0b076-4e38-43e5-81bd-b85b8835fdfb
+https://cognitiveservice/formrecognizer/v2.0/prebuilt/receipt/operations/54f0b076-4e38-43e5-81bd-b85b8835fdfb
 ```
 
 ## <a name="get-the-receipt-results"></a>Получение результатов анализа данных квитанции
 
-После вызова API **анализа квитанции** вызовите API **[получения результатов анализа квитанции](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/GetAnalyzeReceiptResult)** , чтобы узнать о состоянии операции и извлеченных данных. Перед выполнением команды внесите следующие изменения:
+После вызова API **анализа квитанции** вызовите API **[получения результатов анализа квитанции](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/GetAnalyzeReceiptResult)** , чтобы узнать о состоянии операции и извлеченных данных. Перед выполнением команды внесите следующие изменения:
 
 1. Замените `<Endpoint>` конечной точкой, полученной из ключа подписки Распознавателя документов (см. ресурс Распознавателя документов на вкладке **Обзор**).
 1. Замените `<operationId>` идентификатором операции из предыдущего шага.
 1. Замените `<subscription key>` ключом своей подписки.
 
 ```bash
-curl -X GET "https://<Endpoint>/formrecognizer/v2.0-preview/prebuilt/receipt/analyzeResults/<operationId>" -H "Ocp-Apim-Subscription-Key: <subscription key>"
+curl -X GET "https://<Endpoint>/formrecognizer/v2.0/prebuilt/receipt/analyzeResults/<operationId>" -H "Ocp-Apim-Subscription-Key: <subscription key>"
 ```
 
 ### <a name="examine-the-response"></a>Изучите ответ.
@@ -402,4 +402,4 @@ curl -X GET "https://<Endpoint>/formrecognizer/v2.0-preview/prebuilt/receipt/ana
 В этом кратком руководстве для извлечения содержания с изображений квитанции используется REST API Распознавателя документов и cURL. Для более подробного изучения API Распознавателя документов см. справочную документацию.
 
 > [!div class="nextstepaction"]
-> [Справочная документация по REST API](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/AnalyzeReceiptAsync)
+> [Справочная документация по REST API](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeReceiptAsync)

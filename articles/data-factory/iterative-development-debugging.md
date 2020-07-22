@@ -11,10 +11,10 @@ author: djpmsft
 ms.author: daperlov
 manager: anandsub
 ms.openlocfilehash: 49e406f0730189439bb1c2529b23d8ad6d760a2f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81411513"
 ---
 # <a name="iterative-development-and-debugging-with-azure-data-factory"></a>Итеративные разработка и отладка в фабрике данных Azure
@@ -74,5 +74,5 @@ ms.locfileid: "81411513"
 
 ![После включения точки останова для выбранного элемента](media/iterative-development-debugging/iterative-development-image6.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Непрерывные интеграция и развертывание в фабрике данных Azure](continuous-integration-deployment.md)

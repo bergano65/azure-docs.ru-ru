@@ -1,28 +1,27 @@
 ---
 title: Компоненты
-description: Определение компонентов в области удаленной подготовки к просмотру Azure
+description: Определение компонентов в области Удаленной отрисовки Azure
 author: florianborn71
 ms.author: flborn
 ms.date: 02/04/2020
 ms.topic: conceptual
-ms.openlocfilehash: cb8b38addef736914a8627971e57ea2b173293d6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: bd2a6e16d34bf6c5b59ce7fa5c99975d44947770
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80681900"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84021676"
 ---
-# <a name="components"></a>Компоненты
+# <a name="components"></a>Components
 
-Удаленная визуализация Azure использует [системный шаблон компонента сущности](https://en.wikipedia.org/wiki/Entity_component_system) . Хотя [сущности](entities.md) представляют собой расположение и иерархическую композицию объектов, компоненты отвечают за реализацию поведения.
+Удаленная отрисовка Azure использует шаблон проектирования [Entity-Component-System](https://en.wikipedia.org/wiki/Entity_component_system) (Система компонентов cущностей). [Сущности](entities.md) представляют собой данные о расположении и иерархической композиции объектов, а компоненты отвечают за реализацию поведения.
 
-Наиболее часто используемые типы компонентов — это [компоненты сетки](meshes.md), которые добавляют сетки в конвейер отрисовки. Аналогичным образом, [компоненты Light](../overview/features/lights.md) используются для добавления освещения и [вырезание компонентов плоскости](../overview/features/cut-planes.md) для вырезания открытых сеток.
+Чаще всего используются типы компонентов [:::no-loc text="mesh components":::](meshes.md) , которые добавляют сетки в конвейер отрисовки. Аналогичным образом [компоненты освещения](../overview/features/lights.md) используются для добавления освещения, а [компоненты сечения](../overview/features/cut-planes.md) — для сечения открытых сеток.
 
-Все эти компоненты используют преобразование (расположение, поворот, масштабирование) сущности, к которой они присоединены, в качестве контрольной точки.
+Все эти компоненты используют преобразование (изменение расположения, поворота, масштабирование) сущности, к которой они присоединены, в качестве опорной точки.
 
 ## <a name="working-with-components"></a>Работа с компонентами
 
-Можно легко добавлять, удалять и манипулировать компонентами программным способом.
+Вы можете легко программно добавлять и удалять компоненты и оперировать ими.
 
 ```cs
 // create a point light component
@@ -39,15 +38,29 @@ lightComponent.Destroy();
 lightComponent = null;
 ```
 
-Компонент прикрепляется к сущности во время создания. После этого его нельзя переместить в другую сущность. Компоненты явным образом удаляются `Component.Destroy()` с или автоматически при уничтожении сущности-владельца компонента.
+```cpp
+// create a point light component
+ApiHandle<AzureSession> session = GetCurrentlyConnectedSession();
 
-Только один экземпляр каждого типа компонента может быть добавлен в сущность за раз.
+ApiHandle<PointLightComponent> lightComponent = session->Actions()->CreateComponent(ObjectType::PointLightComponent, ownerEntity)->as<PointLightComponent>();
 
-## <a name="unity-specific"></a>Зависит от Unity
+// ...
 
-Интеграция Unity имеет дополнительные функции расширения для взаимодействия с компонентами. См. раздел [объекты и компоненты игры Unity](../how-tos/unity/objects-components.md).
+// destroy the component
+lightComponent->Destroy();
+lightComponent = nullptr;
+```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+
+Компонент прикрепляется к сущности во время создания. После этого его нельзя передать другой сущности. Компоненты явным образом удаляются с помощью функции `Component.Destroy()` или это происходит автоматически при уничтожении сущности-владельца компонента.
+
+За раз к сущности можно добавить только один экземпляр каждого типа компонента.
+
+## <a name="unity-specific"></a>Особенности при работе с Unity
+
+Интеграция Unity предоставляет дополнительные функции расширения для взаимодействия с компонентами. Дополнительную информацию см. в статье [Игровые объекты и компоненты Unity](../how-tos/unity/objects-components.md).
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Границы объектов](object-bounds.md)
 * [Сетки](meshes.md)

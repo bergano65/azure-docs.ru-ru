@@ -9,17 +9,17 @@ editor: ''
 ms.assetid: ''
 ms.service: storsimple
 ms.devlang: NA
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 08/02/2017
 ms.author: alkohli
-ms.openlocfilehash: 5b48cbd1020cfd51fe989a9be33197f2735f21f4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: ed6f9d58c5c54c88acf8e3a0e7fda7d2d65b8637
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "60860514"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85514319"
 ---
 # <a name="install-update-4-on-your-storsimple-device"></a>Установка обновления 4 на устройство StorSimple
 
@@ -74,7 +74,7 @@ ms.locfileid: "60860514"
 
 Необходимо скачать и установить следующие исправления в указанном порядке и в рекомендуемые папки.
 
-| Порядок | КБ | Описание | Тип обновления | Время установки |Установка в папку|
+| Номер | КБ | Описание: | Тип обновления | Время установки |Установка в папку|
 | --- | --- | --- | --- | --- | --- |
 | 1. |KB4011839 |Обновление программного обеспечения |Обычный <br></br>не нарушает работу |~ 25 мин |FirstOrderUpdate|
 | 2A. |KB4011841 <br> KB4011842 |Обновления драйвера LSI и встроенного ПО <br> Обновление встроенного ПО USM (версия 3.38) |Обычный <br></br>не нарушает работу |~ 3 часа <br> (включает 2A. + 2B. + 2C.)|SecondOrderUpdate|
@@ -83,7 +83,7 @@ ms.locfileid: "60860514"
 
 Кроме всех обновлений, перечисленных в предыдущих таблицах, вам также может потребоваться установить обновления встроенного ПО диска. Вы можете проверить, необходимо ли обновление встроенного ПО диска, выполнив командлет `Get-HcsFirmwareVersion` . Если вы используете встроенное ПО версии `XMGJ`, `XGEG`, `KZ50`, `F6C2`, `VR08`, `N002`, `0106`, то эти обновления устанавливать не нужно.
 
-| Порядок | КБ | Описание | Тип обновления | Время установки | Установка в папку|
+| Номер | КБ | Описание: | Тип обновления | Время установки | Установка в папку|
 | --- | --- | --- | --- | --- | --- |
 | 3. |KB3121899 |Встроенное ПО диска |Обслуживание <br></br>нарушает работу |~ 30 мин | ThirdOrderUpdate |
 
@@ -100,6 +100,6 @@ ms.locfileid: "60860514"
 
 [!INCLUDE [storsimple-install-troubleshooting](../../includes/storsimple-install-troubleshooting.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Узнайте больше о [выпуске обновления 4](storsimple-update4-release-notes.md).
 

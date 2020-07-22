@@ -37,13 +37,13 @@ ms.locfileid: "80877858"
 
 [!INCLUDE [Create a Text Analytics container on Azure Kubernetes Service (AKS)](../../containers/includes/create-aks-resource.md)]
 
-#### <a name="key-phrase-extraction"></a>[извлечение ключевых фраз](#tab/keyphrase)
+#### <a name="key-phrase-extraction"></a>[Извлечение ключевых фраз](#tab/keyphrase)
 
 [!INCLUDE [Key Phrase Extraction Kubernetes config and deploy steps](../includes/key-phrase-extraction-kubernetes-config-deploy.md)]
 
 [!INCLUDE [Verify the Key Phrase Extraction container instance](../includes/verify-key-phrase-extraction-container.md)]
 
-#### <a name="language-detection"></a>[распознавание языка](#tab/language)
+#### <a name="language-detection"></a>[Распознавание языка](#tab/language)
 
 [!INCLUDE [Language Detection Kubernetes config and deploy steps](../includes/language-detection-kubernetes-config-deploy.md)]
 
@@ -57,7 +57,7 @@ ms.locfileid: "80877858"
 
 ***
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Использование большего числа [контейнеров Cognitive Services](../../cognitive-services-container-support.md)
 * Использование [подключенной службы анализ текста](../vs-text-connected-service.md)

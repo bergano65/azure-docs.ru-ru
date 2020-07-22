@@ -11,10 +11,10 @@ ms.date: 04/15/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
 ms.openlocfilehash: ba6ceec3064c5c876ca899ab58881e23913b9701
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81429022"
 ---
 # <a name="design-decisions-and-coding-techniques-for-synapse-sql-features-in-azure-synapse-analytics"></a>Разработка решений и методов программирования для функций синапсе SQL в Azure синапсе Analytics
@@ -27,13 +27,13 @@ ms.locfileid: "81429022"
 
 |                                                          |   Пул SQL   | Использование SQL по запросу |
 | -----------------------------------------------------    | ---- | ---- |
-| [Подключения](connect-overview.md)                    | Да | Да |
-| [Классы ресурсов и параллелизм](../sql-data-warehouse/resource-classes-for-workload-management.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) | Да    | Нет |
+| [Соединения](connect-overview.md)                    | Да | Да |
+| [Классы и параллелизм ресурсов](../sql-data-warehouse/resource-classes-for-workload-management.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) | Да    | Нет |
 | [Транзакции](develop-transactions.md)              | Да | Нет |
 | [Пользовательские схемы](develop-user-defined-schemas.md) | Да | Да |
-| [Распределение таблиц](../sql-data-warehouse/sql-data-warehouse-tables-distribute.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)                 | Да | Нет |
-| [Индексы таблицы](../sql-data-warehouse/sql-data-warehouse-tables-index.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)                           | Да | Нет |
-| [Секции таблицы](../sql-data-warehouse/sql-data-warehouse-tables-partition.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)                     | Да | Нет |
+| [Distributing tables in SQL Data Warehouse (Распределение таблиц в хранилище данных SQL)](../sql-data-warehouse/sql-data-warehouse-tables-distribute.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)                 | Да | Нет |
+| [Индексы таблиц](../sql-data-warehouse/sql-data-warehouse-tables-index.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)                           | Да | Нет |
+| [Разделы таблиц](../sql-data-warehouse/sql-data-warehouse-tables-partition.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)                     | Да | Нет |
 | [Статистика](develop-tables-statistics.md)            | Да | Да |
 | [CTAS](../sql-data-warehouse/sql-data-warehouse-develop-ctas.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)                                             | Да | Нет |
 | [Внешние таблицы](develop-tables-external-tables.md) | Да | Да |
@@ -51,10 +51,10 @@ ms.locfileid: "81429022"
 | [Представления](develop-views.md)                             | Да                | Да                     |
 | [Временные таблицы](develop-tables-temporary.md)       | Да                | Да                     |
 | [Динамический SQL](develop-dynamic-sql.md)                 | Да                | Да                     |
-| [Циклов](develop-loops.md)                         | Да                | Да                     |
+| [Выполнение цикла](develop-loops.md)                         | Да                | Да                     |
 | [Группировка по параметрам](develop-group-by-options.md)       | Да                | Нет                      |
-| [Присвоение значения переменной](develop-variable-assignment.md) | Да                | Да                     |
+| [Присваивание переменной](develop-variable-assignment.md) | Да                | Да                     |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные справочные сведения см. в статье [инструкции T-SQL пула SQL](../sql-data-warehouse/sql-data-warehouse-reference-tsql-statements.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
 

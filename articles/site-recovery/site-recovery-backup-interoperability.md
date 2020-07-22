@@ -7,16 +7,16 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/15/2019
 ms.author: sideeksh
-ms.openlocfilehash: d8c896bc655339fbd7d51f738fb629450e8c12ae
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c334eee34eb878135d3d81ab15d03618c6604846
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "72376216"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86135177"
 ---
 # <a name="support-for-using-site-recovery-with-azure-backup"></a>Поддержка использования Site Recovery с Azure Backup
 
-В этой статье описывается поддержка использования [службы Site Recovery](site-recovery-overview.md) вместе со [службой Azure Backup](https://docs.microsoft.com/azure/backup/backup-overview).
+В этой статье описывается поддержка использования [службы Site Recovery](site-recovery-overview.md) вместе со [службой Azure Backup](../backup/backup-overview.md).
 
 **Действие** | **Поддержка Site Recovery** | **Сведения**
 --- | --- | ---

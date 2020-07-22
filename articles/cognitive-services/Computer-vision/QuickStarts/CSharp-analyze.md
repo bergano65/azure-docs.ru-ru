@@ -11,35 +11,38 @@ ms.topic: quickstart
 ms.date: 04/14/2020
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: d8002530120eee4a3613f2310c4a59cc18612cad
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: 1ece80ce5337304d1b0d51e5e334cd64cc133619
+ms.sourcegitcommit: 55b2bbbd47809b98c50709256885998af8b7d0c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81405160"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84984409"
 ---
 # <a name="quickstart-analyze-a-local-image-using-the-computer-vision-rest-api-and-c"></a>Краткое руководство. Анализ локального изображения с помощью REST API "Компьютерное зрение" и C#
 
 Из этого краткого руководства вы узнаете, как анализировать хранимое локально изображение с помощью REST API Компьютерного зрения для извлечения визуальных признаков. С помощью метода [анализа изображений](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) можно извлечь сведения о визуальных признаках из содержимого изображения.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/ai/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=cognitive-services), прежде чем начинать работу.
-
 ## <a name="prerequisites"></a>Предварительные требования
 
-- У вас должна быть [Visual Studio 2015 или более поздней версии](https://visualstudio.microsoft.com/downloads/).
-- У вас должен быть ключ подписки для Компьютерного зрения. На странице [Try Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=computer-vision) (Пробная версия Cognitive Services) можно получить ключ бесплатной пробной версии. Или следуйте инструкциям из статьи [Create a Cognitive Services account](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) (Создание учетной записи Cognitive Services), чтобы получить подписку Content Moderator и свой ключ. Затем [создайте переменные среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для строки ключа и конечной точки службы с именами `COMPUTER_VISION_SUBSCRIPTION_KEY` и `COMPUTER_VISION_ENDPOINT` соответственно.
+* подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services/).
+* Необходимо установить [Visual Studio 2015](https://visualstudio.microsoft.com/downloads/) или более поздней версии.
+* Получив подписку Azure, <a href="https://portal.azure.com/#create/Microsoft.CognitiveServicesComputerVision"  title="создайте ресурс Компьютерного зрения"  target="_blank">create a Computer Vision resource <span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку. После развертывания щелкните **Перейти к ресурсам**.
+    * Для подключения приложения к API Компьютерного зрения потребуется ключ и конечная точка из созданного ресурса. Ключ и конечная точка будут вставлены в приведенный ниже код в кратком руководстве.
+    * Используйте бесплатную ценовую категорию (`F0`), чтобы опробовать службу, а затем выполните обновление до платного уровня для рабочей среды.
+* [Создайте переменные среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключа и URL-адреса конечной точки с именами `COMPUTER_VISION_SUBSCRIPTION_KEY` и `COMPUTER_VISION_ENDPOINT` соответственно.
 
 ## <a name="create-and-run-the-sample-application"></a>Создание и запуск примера приложения
 
 Чтобы создать пример в Visual Studio, сделайте следующее:
 
-1. Создайте решение Visual Studio в Visual Studio, используя шаблон консольного приложения Visual C# (.NET Framework).
+1. Создайте решение или проект Visual Studio в Visual Studio, используя шаблон консольного приложения Visual C# (.NET Core Framework).
 1. Установите пакет NuGet Newtonsoft.Json.
     1. В меню щелкните **Средства**, выберите **Диспетчер пакетов NuGet**, а затем **Управление пакетами NuGet для решения**.
-    1. Перейдите на вкладку **Обзор** и в поле **Поиск** введите Newtonsoft.Json.
+    1. Перейдите на вкладку **Обзор** и в поле **Поиск** введите "Newtonsoft.Jso"n (если еще не отображается).
     1. Выберите **Newtonsoft.Json**, затем установите флажок рядом с именем проекта и щелкните **Установить**.
+1. Скопируйте пример фрагмента кода ниже и вставьте его в файл Program.cs. Измените имя пространства имен, если оно отличается от созданного.
+1. Добавьте выбранный образ в папку bin/debug/netcoreappX.X, а затем — имя образа (с расширением) в переменную "imageFilePath".
 1. Запустите программу.
-1. Введите путь к локальному изображению в командной строке.
 
 ```csharp
 using Newtonsoft.Json.Linq;
@@ -59,26 +62,18 @@ namespace CSHttpClientSample
         static string endpoint = Environment.GetEnvironmentVariable("COMPUTER_VISION_ENDPOINT");
         
         // the Analyze method endpoint
-        static string uriBase = endpoint + "vision/v2.1/analyze";
+        static string uriBase = endpoint + "vision/v3.0/analyze";
 
-        static async Task Main()
+        // Image you want analyzed (add to your bin/debug/netcoreappX.X folder)
+        // For sample images, download one from here (png or jpg):
+        // https://github.com/Azure-Samples/cognitive-services-sample-data-files/tree/master/ComputerVision/Images
+        static string imageFilePath = @"my-sample-image";
+
+        public static void Main()
         {
-            // Get the path and filename to process from the user.
-            Console.WriteLine("Analyze an image:");
-            Console.Write(
-                "Enter the path to the image you wish to analyze: ");
-            string imageFilePath = Console.ReadLine();
+            // Call the API
+            MakeAnalysisRequest(imageFilePath).Wait();
 
-            if (File.Exists(imageFilePath))
-            {
-                // Call the REST API method.
-                Console.WriteLine("\nWait for the results to appear.\n");
-                await MakeAnalysisRequest(imageFilePath);
-            }
-            else
-            {
-                Console.WriteLine("\nInvalid file path");
-            }
             Console.WriteLine("\nPress Enter to exit...");
             Console.ReadLine();
         }
@@ -167,7 +162,7 @@ namespace CSHttpClientSample
 
 ## <a name="examine-the-response"></a>Изучите ответ.
 
-Успешный ответ будет возвращен в формате JSON. После этого запустится синтаксический анализ примера приложения и в окне консоли отобразится успешный ответ, аналогичный следующему.
+Успешный ответ возвращается в окне консоли в формате JSON (в зависимости от используемого образа), как показано в следующем примере:
 
 ```json
 {

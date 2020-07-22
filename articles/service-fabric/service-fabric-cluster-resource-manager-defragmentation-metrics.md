@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 08/18/2017
 ms.author: masnider
 ms.openlocfilehash: bba459be4408f4a4bc438bb33b0570a91e84f2cd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75563366"
 ---
 # <a name="defragmentation-of-metrics-and-load-in-service-fabric"></a>Дефрагментация метрик и нагрузки в Service Fabric
@@ -88,7 +87,7 @@ ClusterManifest.xml:
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Диспетчер кластерных ресурсов предоставляет много параметров для описания кластера. Чтобы узнать больше о них, ознакомьтесь с этой статьей, посвященной [описанию кластера Service Fabric](service-fabric-cluster-resource-manager-cluster-description.md)
 - Метрики показывают, как диспетчер кластерных ресурсов Service Fabric управляет потреблением и емкостью в кластере. Дополнительные сведения о метриках и их настройке см. в [этой статье](service-fabric-cluster-resource-manager-metrics.md) .
 

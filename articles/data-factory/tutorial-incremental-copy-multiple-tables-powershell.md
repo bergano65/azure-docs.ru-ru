@@ -1,6 +1,6 @@
 ---
 title: Добавочное копирование нескольких таблиц с помощью PowerShell
-description: В этом руководстве вы создадите конвейер Фабрики данных Azure, который пошагово копирует разностные данные из нескольких таблиц в локальной базе данных SQL Server в Базу данных SQL Azure.
+description: В этом руководстве показано, как создать конвейер Фабрики данных Azure, который пошагово копирует разностные данные из нескольких таблиц в базе данных SQL Server в базу данных в службе "База данных SQL Azure".
 services: data-factory
 ms.author: yexu
 author: dearandyxu
@@ -10,19 +10,19 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019; seo-dt-2019
-ms.date: 01/30/2020
-ms.openlocfilehash: aa4dbfbaff620c25042d2603dab543661ec2cd14
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.date: 06/10/2020
+ms.openlocfilehash: e7846ae0f52dfee4260838302d55213d2791eb07
+ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81410008"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85250967"
 ---
-# <a name="incrementally-load-data-from-multiple-tables-in-sql-server-to-an-azure-sql-database"></a>Добавочная загрузка данных из нескольких таблиц в SQL Server в Базу данных SQL Azure
+# <a name="incrementally-load-data-from-multiple-tables-in-sql-server-to-azure-sql-database-using-powershell"></a>Добавочная загрузка данных из нескольких таблиц в SQL Server в Базу данных SQL Azure с использованием PowerShell
 
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
-В этом руководстве вы создадите фабрику данных Azure с конвейером, который загружает разностные данные из нескольких таблиц локальной базы данных SQL Server в Базу данных SQL Azure.    
+С помощью этого руководства вы создадите фабрику данных Azure с конвейером, который загружает разностные данные из нескольких таблиц базы данных SQL Server в Базу данных SQL Azure.    
 
 В этом руководстве вы выполните следующие шаги:
 
@@ -69,12 +69,12 @@ ms.locfileid: "81410008"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* **SQL Server.** В этом руководстве используйте локальную базу данных SQL Server в качестве исходного хранилища данных. 
-* **База данных SQL Azure**. Базу данных SQL используйте в качестве принимающего хранилища данных. Если у вас нет базы данных SQL, создайте ее, следуя указаниям в статье [Создание базы данных SQL Azure на портале Azure](../sql-database/sql-database-get-started-portal.md). 
+* **SQL Server.** В этом учебнике используйте базу данных SQL Server в качестве исходного хранилища данных. 
+* **База данных SQL Azure**. Базу данных в службе "База данных SQL Azure" следует использовать в качестве принимающего хранилища данных. Если у вас нет базы данных SQL, создайте ее, следуя указаниям из руководства [Создание отдельной базы данных в Базе данных SQL Azure](../azure-sql/database/single-database-create-quickstart.md). 
 
 ### <a name="create-source-tables-in-your-sql-server-database"></a>Создание исходных таблиц в базе данных SQL Server
 
-1. Откройте [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) или [Azure Data Studio](https://docs.microsoft.com/sql/azure-data-studio/download-azure-data-studio) и подключитесь к локальной базе данных SQL Server.
+1. Откройте [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) или [Azure Data Studio](https://docs.microsoft.com/sql/azure-data-studio/download-azure-data-studio) и подключитесь к базе данных SQL Server.
 
 2. В **Обозревателе сервера (SSMS)** или в **Области подключения (Azure Data Studio)** , щелкните правой кнопкой мыши на базу данных и выберите **Новый запрос**.
 
@@ -113,11 +113,11 @@ ms.locfileid: "81410008"
 
 ### <a name="create-destination-tables-in-your-azure-sql-database"></a>Создание целевых таблиц в базе данных SQL Azure
 
-1. Откройте [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) или [Azure Data Studio](https://docs.microsoft.com/sql/azure-data-studio/download-azure-data-studio) и подключитесь к локальной базе данных SQL Server.
+1. Откройте [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) или [Azure Data Studio](https://docs.microsoft.com/sql/azure-data-studio/download-azure-data-studio) и подключитесь к базе данных SQL Server.
 
 2. В **Обозревателе сервера (SSMS)** или в **Области подключения (Azure Data Studio)** , щелкните правой кнопкой мыши на базу данных и выберите **Новый запрос**.
 
-3. Выполните следующую команду SQL для базы данных SQL, чтобы создать таблицы с именами `customer_table` и `project_table`.  
+3. Выполните следующую команду SQL в базе данных, чтобы создать таблицы с именами `customer_table` и `project_table`.  
 
     ```sql
     create table customer_table
@@ -134,9 +134,9 @@ ms.locfileid: "81410008"
     );
     ```
 
-### <a name="create-another-table-in-the-azure-sql-database-to-store-the-high-watermark-value"></a>Создание дополнительной таблицы в Базе данных SQL Azure для хранения значения верхнего предела
+### <a name="create-another-table-in-azure-sql-database-to-store-the-high-watermark-value"></a>Создание дополнительной таблицы в Базе данных SQL Azure для хранения значения верхнего предела
 
-1. Выполните указанную ниже команду SQL для базы данных SQL, чтобы создать таблицу с именем `watermarktable` для хранения значения предела. 
+1. Выполните указанную ниже команду SQL для базы данных, чтобы создать таблицу с именем `watermarktable` для хранения значения предела. 
     
     ```sql
     create table watermarktable
@@ -159,7 +159,7 @@ ms.locfileid: "81410008"
 
 ### <a name="create-a-stored-procedure-in-the-azure-sql-database"></a>Создание хранимой процедуры в Базе данных SQL Azure 
 
-Выполните указанную ниже команду, чтобы создать хранимую процедуру в базе данных SQL. Эта хранимая процедура обновляет значение предела после каждого запуска конвейера. 
+Выполните указанную ниже команду, чтобы создать хранимую процедуру в своей базе данных. Эта хранимая процедура обновляет значение предела после каждого запуска конвейера. 
 
 ```sql
 CREATE PROCEDURE usp_write_watermark @LastModifiedtime datetime, @TableName varchar(50)
@@ -175,9 +175,9 @@ END
 
 ```
 
-### <a name="create-data-types-and-additional-stored-procedures-in-the-azure-sql-database"></a>Создание типов данных и дополнительных хранимых процедур в Базе данных Azure SQL
+### <a name="create-data-types-and-additional-stored-procedures-in-azure-sql-database"></a>Создание типов данных и дополнительных хранимых процедур в Базе данных SQL Azure
 
-Выполните следующий запрос для создания двух хранимых процедур и двух типов данных в базе данных SQL. Они используются для объединения данных из исходных в целевые таблицы. 
+Выполните следующий запрос, чтобы создать две хранимые процедуры и два типа данных в своей базе данных. Они используются для объединения данных из исходных в целевые таблицы. 
 
 Чтобы упростить начало работы, мы непосредственно используем эти хранимые процедуры, передающие разностные данные в табличной переменной, а затем объединяем их в целевое хранилище. Учтите, что для хранения в табличной переменной не ожидается большое число строк разностных данных (более 100).  
 
@@ -283,17 +283,17 @@ END
 
 * Чтобы создать экземпляры фабрики данных, нужно назначить учетной записи пользователя, используемой для входа в Azure, роль участника, владельца либо администратора подписки Azure.
 
-* Чтобы получить список регионов Azure, в которых сейчас доступна Фабрика данных, выберите интересующие вас регионы на следующей странице, а затем разверните раздел **Аналитика**, чтобы найти пункт **Фабрика данных**: [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/). Хранилища данных (служба хранилища Azure, база данных SQL и т. д.) и вычисления (Azure HDInsight и т. д.), используемые фабрикой данных, могут располагаться в других регионах.
+* Чтобы получить список регионов Azure, в которых сейчас доступна Фабрика данных, выберите интересующие вас регионы на следующей странице, а затем разверните раздел **Аналитика**, чтобы найти пункт **Фабрика данных**: [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/). Хранилища данных (служба хранилища Azure, База данных SQL, Управляемый экземпляр SQL и т. д.) и вычислительные ресурсы (Azure HDInsight и т. д.), используемые фабрикой данных, могут располагаться в других регионах.
 
 [!INCLUDE [data-factory-create-install-integration-runtime](../../includes/data-factory-create-install-integration-runtime.md)]
 
 ## <a name="create-linked-services"></a>Создание связанных служб
 
-Связанная служба в фабрике данных связывает хранилища данных и службы вычислений с фабрикой данных. В этом разделе вы создадите связанные службы локальной базы данных SQL Server и Базы данных SQL Azure. 
+Связанная служба в фабрике данных связывает хранилища данных и службы вычислений с фабрикой данных. В этом разделе вы создадите связанные службы для базы данных SQL Server и базы данных в службе "База данных SQL Azure". 
 
 ### <a name="create-the-sql-server-linked-service"></a>Создание связанной службы SQL Server
 
-На этом шаге вы свяжете локальную базу данных SQL Server с фабрикой данных.
+На этом шаге вы свяжете базу данных SQL Server с фабрикой данных.
 
 1. Создайте JSON-файл с именем**SqlServerLinkedService.json** в папке C:\ADFTutorials\IncCopyMultiTableTutorial (создайте локальные папки, если они не существуют) со следующим содержимым. Выберите правильный раздел в зависимости от типа проверки подлинности, используемого для подключения к SQL Server.  
 
@@ -372,7 +372,7 @@ END
     Properties        : Microsoft.Azure.Management.DataFactory.Models.SqlServerLinkedService
     ```
 
-### <a name="create-the-sql-database-linked-service"></a>Создание связанной службы базы данных SQL
+### <a name="create-the-sql-database-linked-service"></a>Создание связанной службы Базы данных SQL
 
 1. Создайте JSON-файл с именем**AzureSQLDatabaseLinkedService.json** в папке C:\ADFTutorials\IncCopyMultiTableTutorial и добавьте в него следующее содержимое. (Если папка ADF отсутствует, создайте ее.) Вместо значений &lt;servername&gt;, &lt;database name&gt;, &lt;user name&gt; и &lt;password&gt; укажите имя сервера SQL Server, имя базы данных, имя пользователя и пароль, прежде чем сохранить файл. 
 

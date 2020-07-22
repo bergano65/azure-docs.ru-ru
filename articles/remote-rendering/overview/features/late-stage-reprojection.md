@@ -5,12 +5,11 @@ author: sebastianpick
 ms.author: sepick
 ms.date: 02/04/2020
 ms.topic: article
-ms.openlocfilehash: 4aa1148e544ff3451aa1cb956bc4a5fb932b9611
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 8d42087008f1812bc3713456025ed3be351d0917
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80680990"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84022186"
 ---
 # <a name="late-stage-reprojection"></a>Перепроецирование на позднем этапе
 
@@ -24,7 +23,7 @@ ms.locfileid: "80680990"
 
 ## <a name="choose-lsr-mode-in-unity"></a>Выбор режима ЛСР в Unity
 
-В редакторе Unity выберите *файл > параметры сборки*. Выберите *Параметры проигрывателя* в левом нижнем углу, а затем в разделе *Параметры проигрывателя > XR > пакеты sdk виртуальной реальности > Windows Mixed Reality* установите флажок **включить общий доступ к буферу глубины** :
+В редакторе Unity перейдите к *:::no-loc text="File > Build Settings":::* . Выберите *:::no-loc text="Player Settings":::* в левом нижнем углу и убедитесь, что флажок установлен *:::no-loc text="Player > XR Settings > Virtual Reality SDKs > Windows Mixed Reality":::* **:::no-loc text="Enable Depth Buffer Sharing":::** :
 
 ![Флаг включения общего доступа к буферу глубины](./media/unity-depth-buffer-sharing-enabled.png)
 
@@ -44,7 +43,7 @@ ms.locfileid: "80680990"
 
 ### <a name="configure-planar-lsr-in-unity"></a>Настройка плоского ЛСР в Unity
 
-Параметры плоскости являются производными от так называемой *фокусной точкой*, которую необходимо предоставить для каждого кадра `UnityEngine.XR.WSA.HolographicSettings.SetFocusPointForFrame`. Дополнительные сведения см. в разделе [API точки фокусировки Unity](https://docs.microsoft.com/windows/mixed-reality/focus-point-in-unity) . Если не задать точку фокусировки, будет выбрана резервная стратегия. Однако автоматическое резервное восстановление часто приводит к неоптимальным результатам.
+Параметры плоскости являются производными от так называемой *фокусной точкой*, которую необходимо предоставить для каждого кадра `UnityEngine.XR.WSA.HolographicSettings.SetFocusPointForFrame` . Дополнительные сведения см. в разделе [API точки фокусировки Unity](https://docs.microsoft.com/windows/mixed-reality/focus-point-in-unity) . Если не задать точку фокусировки, будет выбрана резервная стратегия. Однако автоматическое резервное восстановление часто приводит к неоптимальным результатам.
 
 Вы можете вычислить фокусную точку самостоятельно, хотя это может иметь смысл основываться на том, который вычисляется узлом удаленной отрисовки. Вызовите метод `RemoteManagerUnity.CurrentSession.GraphicsBinding.GetRemoteFocusPoint` , чтобы получить. Вам будет предложено указать кадр координат, в котором будет выражаться фокусная точка. В большинстве случаев вы просто хотите предоставить результат `UnityEngine.XR.WSA.WorldManager.GetNativeISpatialCoordinateSystemPtr` отсюда.
 
@@ -54,4 +53,4 @@ ms.locfileid: "80680990"
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-* [Запросы данных о производительности на стороне сервера](performance-queries.md)
+* [Запросы данных производительности на стороне сервера](performance-queries.md)

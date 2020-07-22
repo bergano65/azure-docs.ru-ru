@@ -9,10 +9,10 @@ ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 02/27/2020
 ms.openlocfilehash: 545c1720ef379ec74bd2e7c0bc68f6a2fcbba789
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82115505"
 ---
 # <a name="exchange-as2-messages-for-b2b-enterprise-integration-in-azure-logic-apps-with-enterprise-integration-pack"></a>Обмен сообщениями AS2 для интеграции с предприятием B2B в Azure Logic Apps с помощью Пакета интеграции Enterprise
@@ -53,9 +53,9 @@ ms.locfileid: "82115505"
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [получите бесплатную учетную запись Azure](https://azure.microsoft.com/free/).
 
-* Приложение логики, из которого вы хотите использовать соединитель AS2, и триггер, который запускает рабочий процесс приложения логики. Соединитель AS2 предоставляет только действия, а не триггеры. Если вы не работали с приложениями логики, см. руководства по [Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [созданию первого приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
+* Приложение логики, из которого вы хотите использовать соединитель AS2, и триггер, который запускает рабочий процесс приложения логики. Соединитель AS2 предоставляет только действия, а не триггеры. Если вы не знакомы с приложениями логики, ознакомьтесь со статьями [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [Краткое руководство. Создание первого автоматизированного рабочего процесса с помощью Azure Logic Apps на портале Azure](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
-* [Учетная запись интеграции](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md) , связанная с подпиской Azure и связанная с приложением логики, где планируется использовать соединитель AS2. Приложение логики и учетная запись интеграции должны находиться в одном расположении или регионе Azure.
+* [Учетная запись интеграции](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md) , связанная с подпиской Azure и связанная с приложением логики, где планируется использовать соединитель AS2. Как приложение логики, так и учетная запись интеграции должны находиться в одном расположении или регионе Azure.
 
 * По крайней мере два [торговых партнера](../logic-apps/logic-apps-enterprise-integration-partners.md) , которые уже определены в учетной записи интеграции с помощью квалификатора удостоверения AS2.
 
@@ -122,8 +122,8 @@ ms.locfileid: "82115505"
 Дополнительные технические сведения об этом соединителе, такие как действия и ограничения, описанные в файле Swagger соединителя, см. на [странице справочника по соединителю](https://docs.microsoft.com/connectors/as2/). 
 
 > [!NOTE]
-> Для приложений логики в [среде службы интеграции (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md)эта версия этого соединителя использует [ограничения сообщений B2B для интегрированной среды сценариев](../logic-apps/logic-apps-limits-and-config.md#b2b-protocol-limits).
+> Для приложений логики в [среде службы интеграции (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md) эта помеченная как ISE версия соединителя [использует ограничения сообщений B2B для ISE](../logic-apps/logic-apps-limits-and-config.md#b2b-protocol-limits).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).

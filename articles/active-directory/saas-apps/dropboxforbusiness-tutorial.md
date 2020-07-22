@@ -1,6 +1,6 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с Dropbox for Business | Документация Майкрософт
-description: Узнайте, как настроить единый вход Azure Active Directory в Dropbox for Business.
+title: Руководство по интеграции Azure Active Directory с Dropbox Business | Документация Майкрософт
+description: Узнайте, как настроить единый вход Azure Active Directory в Dropbox Business.
 services: active-directory
 documentationCenter: na
 author: jeevansd
@@ -12,22 +12,22 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 01/31/2020
+ms.date: 06/23/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: df7fc366c5087e66c3022c212870397d77e6e34d
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 1c596a1477c773717e0a6170d8931aeaf40594f5
+ms.sourcegitcommit: 1d9f7368fa3dadedcc133e175e5a4ede003a8413
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77046761"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85479969"
 ---
-# <a name="tutorial-integrate-dropbox-for-business-with-azure-active-directory"></a>Руководство по Интеграция Dropbox for Business с Azure Active Directory
+# <a name="tutorial-integrate-dropbox-business-with-azure-active-directory"></a>Руководство по интеграции Dropbox Business с Azure Active Directory
 
-В этом руководстве описано, как интегрировать Dropbox for Business с Azure Active Directory (Azure AD). Интеграция Dropbox for Business с Azure AD обеспечивает следующие возможности.
+В этом руководстве описано, как интегрировать Dropbox Business с Azure Active Directory (Azure AD). Интеграция Dropbox Business с Azure AD обеспечивает следующие возможности:
 
-* С помощью Azure AD вы можете контролировать доступ к приложению Dropbox for Business.
-* Вы можете включить автоматический вход пользователей в Dropbox for Business с использованием учетных записей Azure AD.
+* С помощью Azure AD вы можете контролировать доступ к приложению Dropbox Business.
+* Вы можете включить автоматический вход пользователей в Dropbox Business с учетными записями Azure AD.
 * Централизованное управление учетными записями через портал Azure.
 
 Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
@@ -37,44 +37,44 @@ ms.locfileid: "77046761"
 Чтобы приступить к работе, потребуется следующее.
 
 * Подписка Azure AD. Если у вас нет подписки, [здесь](https://azure.microsoft.com/pricing/free-trial/) вы можете получить бесплатную пробную версию сроком на один месяц.
-* подписка Dropbox for Business с поддержкой единого входа.
+* Подписка Dropbox Business с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
 
-* В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде. Dropbox for Business поддерживает единый вход, инициированный **поставщиком услуг**.
+* В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде. Dropbox Business поддерживает единый вход, инициированный **поставщиком услуг**.
 
 * Dropbox Business поддерживает [автоматическую подготовку пользователей и ее отмену](dropboxforbusiness-tutorial.md).
 * После настройки Dropbox можете применить функцию управления сеансом, которая защищает от хищения и несанкционированного доступа к конфиденциальным данным вашей организации в реальном времени. Управление сеансом является расширением функции условного доступа. [Узнайте, как применять управление сеансами с помощью Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad).
 
-## <a name="adding-dropbox-for-business-from-the-gallery"></a>Добавление Dropbox for Business из коллекции
+## <a name="adding-dropbox-business-from-the-gallery"></a>Добавление Dropbox Business из коллекции
 
-Чтобы настроить интеграцию Dropbox for Business с Azure AD, необходимо добавить Dropbox for Business из коллекции в список управляемых приложений SaaS.
+Чтобы настроить интеграцию Dropbox Business с Azure AD, нужно добавить Dropbox Business из коллекции в список управляемых приложений SaaS.
 
 1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
 1. В области навигации слева выберите службу **Azure Active Directory**.
 1. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 1. Чтобы добавить новое приложение, выберите **Новое приложение**.
-1. В разделе **Добавление из коллекции** в поле поиска введите **Dropbox for Business**.
-1. Выберите **Dropbox for Business** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
+1. В разделе **Добавление из коллекции** в поле поиска введите **Dropbox Business**.
+1. Выберите **Dropbox Business** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-Настройте и проверьте единый вход Azure AD в Dropbox for Business с использованием тестового пользователя **Britta Simon**. Чтобы единый вход работал, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Dropbox for Business.
+Настройте и проверьте единый вход Azure AD в Dropbox Business с использованием тестового пользователя **Britta Simon**. Для обеспечения работы единого входа нужно установить связь между пользователем Azure AD и соответствующим пользователем в Dropbox Business.
 
-Чтобы настроить и проверить единый вход Azure AD в Dropbox for Business, потребуется выполнить действия в следующих стандартных блоках.
+Чтобы настроить и проверить единый вход Azure AD в Dropbox Business, выполните действия в следующих стандартных блоках.
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.    
     1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
     1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
-1. **[Настройка единого входа в Dropbox for Business](#configure-dropbox-for-business-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
-    1. **[Создание тестового пользователя Dropbox for Business](#create-dropbox-for-business-test-user)** требуется для того, чтобы в Dropbox for Business существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+1. **[Настройка единого входа в Dropbox Business](#configure-dropbox-business-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+    1. **[Создание тестового пользователя Dropbox Business](#create-dropbox-business-test-user)** требуется для того, чтобы в Dropbox Business существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
 1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
 Выполните следующие действия, чтобы включить единый вход Azure AD на портале Azure.
 
-1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Dropbox for Business** найдите раздел **Управление** и щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Dropbox Business** найдите раздел **Управление** и щелкните **Единый вход**.
 1. На странице **Выбрать метод единого входа** выберите **SAML**.
 1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
@@ -93,7 +93,7 @@ ms.locfileid: "77046761"
 
     ![Ссылка для скачивания сертификата](common/certificatebase64.png)
 
-1. Скопируйте соответствующий вашим требованиям URL-адрес из раздела **Настройка Dropbox for Business**.
+1. Скопируйте соответствующий вашим требованиям URL-адрес из раздела **Настройка Dropbox Business**.
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
@@ -118,10 +118,10 @@ ms.locfileid: "77046761"
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
-В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к Dropbox for Business.
+В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к Dropbox Business.
 
 1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
-1. В списке приложений выберите **Dropbox for Business**.
+1. В списке приложений выберите **Dropbox Business**.
 1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
@@ -134,17 +134,17 @@ ms.locfileid: "77046761"
 1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-## <a name="configure-dropbox-for-business-sso"></a>Настройка единого входа в Dropbox for Business
+## <a name="configure-dropbox-business-sso"></a>Настройка единого входа в Dropbox Business
 
-1. Чтобы автоматизировать настройку в Dropbox for Business, необходимо установить **расширение браузера My Apps Secure Sign-in Extension**, щелкнув **Установить расширение**.
+1. Чтобы автоматизировать настройку в Dropbox Business, нужно установить **расширение браузера My Apps Secure Sign-in Extension (Безопасный вход в Мои приложения)** , щелкнув **Установить расширение**.
 
     ![Расширение "Мои приложения"](common/install-myappssecure-extension.png)
 
-2. После добавления расширения в браузер щелкните **Настройка Dropbox for Business**, чтобы перейти к приложению Dropbox for Business. После этого укажите учетные данные администратора для входа в Dropbox for Business. Расширение браузера автоматически настроит приложение и автоматизирует шаги 3–8.
+2. После добавления расширения в браузер щелкните **Setup Dropbox Business** (Настроить Dropbox Business), чтобы перейти к приложению Dropbox Business. После этого укажите учетные данные администратора для входа в Dropbox Business. Расширение браузера автоматически настроит приложение и автоматизирует шаги 3–8.
 
     ![Настройка конфигурации](common/setup-sso.png)
 
-3. Если вы хотите вручную настроить Dropbox for Business, откройте новое окно веб-браузера, перейдите к своему клиенту Dropbox for Business и войдите в него. Затем выполните следующие действия.
+3. Если вы хотите вручную настроить Dropbox Business, откройте новое окно веб-браузера, перейдите к своему клиенту Dropbox Business и войдите в него. Затем выполните следующие действия.
 
     ![Настройка единого входа](./media/dropboxforbusiness-tutorial/ic769509.png "Настройка единого входа")
 
@@ -176,20 +176,20 @@ ms.locfileid: "77046761"
 
     c. Щелкните **Отправка сертификата**, а затем перейдите в свой **файл сертификата с кодировкой Base64**, загруженный с портала Azure.
 
-    d. Щелкните **Копировать ссылку** и вставьте это значение **URL-адрес входа** в текстовое поле раздела **Домен и URL-адреса Dropbox for Business** на портале Azure.
+    d. Щелкните **Копировать ссылку** и вставьте скопированное значение **URL-адрес входа** в текстовое поле раздела **Домен и URL-адреса Dropbox Business** на портале Azure.
 
     д) Выберите команду **Сохранить**.
 
-### <a name="create-dropbox-for-business-test-user"></a>Создание тестового пользователя Dropbox for Business
+### <a name="create-dropbox-business-test-user"></a>Создание тестового пользователя Dropbox Business
 
-В этом разделе вы создадите в Dropbox for Business пользователя с именем Britta Simon. Приложение Dropbox for Business поддерживает JIT-подготовку пользователей. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Если пользователь еще не существует в Dropbox for Business, он создается после проверки подлинности.
+В этом разделе описано, как в приложении Dropbox Business создать пользователя с именем B. Simon. Приложение Dropbox Business поддерживает JIT-подготовку пользователей, которая включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Если пользователь еще не существует в Dropbox Business, он создается после проверки подлинности.
 
 >[!Note]
->Если вам нужно вручную создать пользователя, обратитесь в [службу поддержки клиентов Dropbox for Business](https://www.dropbox.com/business/contact).
+>Если вам нужно вручную создать пользователя, обратитесь к [группе поддержки клиентов Dropbox Business](https://www.dropbox.com/business/contact).
 
 ### <a name="test-sso"></a>Проверка единого входа
 
-Щелкнув элемент "Dropbox for Business" на Панели доступа, вы автоматически войдете в приложение Dropbox for Business, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+Щелкнув плитку Dropbox Business на Панели доступа, вы автоматически войдете в приложение Dropbox Business, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
@@ -199,4 +199,6 @@ ms.locfileid: "77046761"
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)
 
-- [Как защитить Dropbox с помощью улучшенного визуального контроля и элементов управления](https://docs.microsoft.com/cloud-app-security/protect-dropbox)
+- [Попробуйте работу в Dropbox Business с Azure AD](https://aad.portal.azure.com/)
+
+- [Что такое управление сеансами в Microsoft Cloud App Security?](https://docs.microsoft.com/cloud-app-security/proxy-intro-aad)

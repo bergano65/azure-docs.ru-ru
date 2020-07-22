@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e7f8dd49f3668b8f68753681123a04d21edac46c
-ms.sourcegitcommit: f7fb9e7867798f46c80fe052b5ee73b9151b0e0b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "60381491"
 ---
 # <a name="azure-active-directory-hybrid-identity-design-considerations"></a>Рекомендации по разработке архитектуры гибридной идентификации в Azure Active Directory
@@ -63,6 +63,6 @@ ms.locfileid: "60381491"
 | Планирование повышения безопасности данных благодаря надежному решению для идентификации |[Определение требований к защите данных](plan-hybrid-identity-design-considerations-dataprotection-requirements.md) <br> [Определение требований к управлению содержимым](plan-hybrid-identity-design-considerations-contentmgt-requirements.md)<br> [Определение требований к управлению доступом](plan-hybrid-identity-design-considerations-accesscontrol-requirements.md)<br> [Определение требований по реагированию на инциденты](plan-hybrid-identity-design-considerations-incident-response-requirements.md) <br> [Определение стратегии защиты данных](plan-hybrid-identity-design-considerations-data-protection-strategy.md) |
 | Планирование жизненного цикла гибридной идентификации |[Определение задач управления гибридной идентификацией](plan-hybrid-identity-design-considerations-hybrid-id-management-tasks.md) <br> [Управление синхронизацией](plan-hybrid-identity-design-considerations-hybrid-id-management-tasks.md)<br> [Определение стратегии внедрения гибридной идентификации](plan-hybrid-identity-design-considerations-lifecycle-adoption-strategy.md) |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 [Определение требований к идентификации](plan-hybrid-identity-design-considerations-business-needs.md)
 

@@ -4,14 +4,14 @@ description: Эта статья описывает, как зарегистри
 author: JasonWHowell
 ms.author: jasonh
 ms.service: data-catalog
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 08/01/2019
-ms.openlocfilehash: 0c5fdac7df41fec3a6206dbd78af74b7f1b58c7f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: b8c6c6e33577fe3d49d8f0c7a94a941827f5cf68
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "68736326"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86523440"
 ---
 # <a name="register-data-sources-in-azure-data-catalog"></a>Регистрация источников данных в каталоге данных Azure
 ## <a name="introduction"></a>Введение
@@ -74,7 +74,7 @@ ms.locfileid: "68736326"
 
 При повторной регистрации уже зарегистрированный источник данных выполняет операцию слияния типа upsert: существующие объекты обновляются, а новые — создаются. Все метаданные, предоставленные пользователями через портал каталога данных, сохраняются.
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Итоги
 Благодаря тому, что из источника в службу каталога копируются структурные и описательные метаданные, регистрация источников данных в каталоге данных позволяет быстрее обнаружить и оценить эти данные. После регистрации источника данных можно обнаруживать его, управлять им и добавлять для него заметки на портале каталога данных.
 
 ## <a name="next-steps"></a>Дальнейшие действия

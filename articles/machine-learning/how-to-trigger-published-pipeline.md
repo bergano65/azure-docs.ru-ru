@@ -3,20 +3,20 @@ title: Активировать конвейер машинного обучен
 titleSuffix: Azure Machine Learning
 description: Узнайте, как активировать выполнение конвейера машинного обучения с помощью Azure Logic Apps.
 services: machine-learning
-author: sanpil
-ms.author: sanpil
+author: NilsPohlmann
+ms.author: nilsp
 ms.service: machine-learning
 ms.subservice: core
 ms.workload: data-services
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 02/07/2020
 ms.custom: contperfq4
-ms.openlocfilehash: 32b3e153a98ca7de91e0dd05258414780b39dec4
-ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
+ms.openlocfilehash: 7d6222b4ea0e30997b3b55adb887c839fef6e624
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82857959"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86207417"
 ---
 # <a name="trigger-a-run-of-a-machine-learning-pipeline-from-a-logic-app"></a>Запуск конвейера Машинное обучение из приложения логики
 
@@ -88,7 +88,7 @@ ms.locfileid: "82857959"
     },
     ```
 
-    `DataStoreName` Используйте добавленные в рабочую область в качестве [необходимого компонента](#prerequisites).
+    Используйте `DataStoreName` добавленные в рабочую область в качестве [необходимого компонента](#prerequisites).
      
     > [!div class="mx-imgBorder"]
     > ![Параметры HTTP](media/how-to-trigger-published-pipeline/http-settings.png)

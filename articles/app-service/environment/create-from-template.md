@@ -8,10 +8,10 @@ ms.date: 06/13/2017
 ms.author: ccompy
 ms.custom: seodec18
 ms.openlocfilehash: e06fcdbac097e85c039e34274c61cb51ee06bcd6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80478325"
 ---
 # <a name="create-an-ase-by-using-an-azure-resource-manager-template"></a>Создание среды ASE с помощью шаблона Azure Resource Manager
@@ -38,7 +38,7 @@ ASE можно создать на портале Azure или с помощью
 
 2. После создания ASE ILB отправляется сертификат TLS/SSL, соответствующий домену ILB ASE.
 
-3. Переданный сертификат TLS/SSL назначается ILB ASE в качестве сертификата TLS/SSL по умолчанию.  Этот сертификат используется для трафика TLS/SSL к приложениям в ILB ASE, когда они используют общий корневой домен, назначенный ASE (например, `https://someapp.mycustomrootdomain.com`).
+3. Переданный сертификат TLS/SSL назначается ILB ASE в качестве сертификата TLS/SSL по умолчанию.  Этот сертификат используется для трафика TLS/SSL к приложениям в ILB ASE, когда они используют общий корневой домен, назначенный ASE (например, `https://someapp.mycustomrootdomain.com` ).
 
 
 ## <a name="create-the-ase"></a>Создание ASE
@@ -62,7 +62,7 @@ New-AzResourceGroupDeployment -Name "CHANGEME" -ResourceGroupName "YOUR-RG-NAME-
 Для создания ASE потребуется около часа. Созданная ASE появится на портале в списке сред службы приложений для подписки, использованной для развертывания.
 
 ## <a name="upload-and-configure-the-default-tlsssl-certificate"></a>Отправка и Настройка сертификата TLS/SSL по умолчанию
-Сертификат TLS/SSL должен быть связан с ASE как сертификат TLS/SSL по умолчанию, используемый для установки TLS-подключений к приложениям. Если DNS-суффикс ASE по умолчанию — *internal-contoso.com*, то для `https://some-random-app.internal-contoso.com` подключения к требуется сертификат TLS/SSL, допустимый для **. internal-contoso.com*. 
+Сертификат TLS/SSL должен быть связан с ASE как сертификат TLS/SSL по умолчанию, используемый для установки TLS-подключений к приложениям. Если DNS-суффикс ASE по умолчанию — *internal-contoso.com*, то для подключения к `https://some-random-app.internal-contoso.com` требуется сертификат TLS/SSL, допустимый для **. internal-contoso.com*. 
 
 Получите допустимый сертификат TLS/SSL с помощью внутренних центров сертификации, приобретите сертификат у внешнего поставщика или используйте самозаверяющий сертификат. Независимо от источника сертификата TLS/SSL, необходимо правильно настроить следующие атрибуты сертификата.
 
@@ -136,7 +136,7 @@ $fileContentEncoded | set-content ($fileName + ".b64")
 }
 ```
 
-После заполнения файла *azuredeploy. parameters. JSON* настройте сертификат TLS/SSL по умолчанию с помощью фрагмента кода PowerShell. Измените пути к файлам в соответствии с расположением файлов шаблонов Resource Manager на вашем компьютере. Введите собственные значения для имени развертывания Resource Manager и группы ресурсов.
+После заполнения *azuredeploy.parameters.js* в файле настройте сертификат TLS/SSL по умолчанию с помощью фрагмента кода PowerShell. Измените пути к файлам в соответствии с расположением файлов шаблонов Resource Manager на вашем компьютере. Введите собственные значения для имени развертывания Resource Manager и группы ресурсов.
 
 ```powershell
 $templatePath="PATH\azuredeploy.json"

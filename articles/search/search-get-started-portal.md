@@ -7,13 +7,13 @@ manager: nitinme
 ms.author: terrychr
 ms.service: cognitive-search
 ms.topic: quickstart
-ms.date: 02/10/2020
-ms.openlocfilehash: 8324ca0184c508591fa4568175bad0f606f952a8
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.date: 06/07/2020
+ms.openlocfilehash: 632071c2a9597fc11ab4ffc0971493ef5b52d807
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80369454"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86083565"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-the-azure-portal"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" на портале Azure
 > [!div class="op_single_selector"]
@@ -25,15 +25,17 @@ ms.locfileid: "80369454"
 > * [Postman](search-get-started-postman.md)
 > * [Python](search-get-started-python.md)
 
-С помощью мастера **импорта данных** и средств **проводника поиска** портала можно быстро освоить основные понятия и создавать интересные запросы к индексу за считаные минуты.
+Мастер **импорта данных** — это средство на портале Azure, помогающее создать индекс поиска, чтобы можно было писать интересующие запросы за считанные минуты. 
 
-Если этих инструментов вам недостаточно, попробуйте применить [программирование службы "Когнитивный поиск Azure" в приложении .NET с помощью кода](search-howto-dotnet-sdk.md) или [Postman для выполнения вызовов REST API](search-get-started-postman.md). 
-
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
+Мастер также содержит страницы для обогащения с помощью ИИ, что позволяет извлекать текст и структуру из файлов изображений и неструктурированного текста. Обработка содержимого с помощью ИИ включает оптическое распознавание символов (OCR), ключевую фразу и извлечение сущностей, а также анализ изображений.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-[Создайте службу "Когнитивный поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Вы можете использовать бесплатную службу для выполнения инструкций, описанных в этом кратком руководстве. 
+Перед началом работы убедитесь, что у вас есть такие компоненты.
+
++ Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/) бесплатно.
+
++ Служба "Когнитивный поиск Azure". [Создайте службу](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Вы можете использовать бесплатную службу для выполнения инструкций, описанных в этом кратком руководстве. 
 
 ### <a name="check-for-space"></a>Проверка доступного пространства
 
@@ -51,15 +53,17 @@ ms.locfileid: "80369454"
 
 ### <a name="step-1---start-the-import-data-wizard-and-create-a-data-source"></a>Шаг 1. Запуск мастера импорта данных и создание источника данных
 
-1. На панели мониторинга службы "Когнитивный поиск Azure" выберите **Импорт данных** на панели команд, чтобы создать и заполнить индекс для поиска.
+1. Войдите на [портал Azure](https://portal.azure.com/) с помощью своей учетной записи Azure.
+
+1. [Найдите службу поиска](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Storage%2storageAccounts/) и на странице обзора щелкните **Импорт данных** на панели команд, чтобы создать и заполнить индекс поиска.
 
    ![Команда импорта данных](media/search-get-started-portal/import-data-cmd.png)
 
-2. В окне мастера щелкните **Connect to your data** (Подключиться к данным)  > **Примеры** > **hotels-sample**. Это встроенный источник данных. Чтобы создать собственный источник данных, вам нужно будет ввести для него имя, тип и сведения о подключении. После создания он становится существующим источником данных, который можно повторно использовать в других операциях импорта.
+1. В окне мастера щелкните **Connect to your data** (Подключиться к данным)  > **Примеры** > **hotels-sample**. Это встроенный источник данных. Чтобы создать собственный источник данных, вам нужно будет ввести для него имя, тип и сведения о подключении. После создания он становится существующим источником данных, который можно повторно использовать в других операциях импорта.
 
    ![Пример набора данных](media/search-get-started-portal/import-datasource-sample.png)
 
-3. Перейдите к следующей странице.
+1. Перейдите к следующей странице.
 
 ### <a name="step-2---skip-the-enrich-content-page"></a>Шаг 2. Пропуск страницы Enrich content (Обогащение содержимого)
 
@@ -146,7 +150,7 @@ ms.locfileid: "80369454"
 
    ![Команда обозревателя поиска](media/search-get-started-portal/search-explorer-cmd.png)
 
-2. В раскрывающемся списке **Индекс** выберите *hotels-sample-index*. Щелкните раскрывающийся список **Версия API**, чтобы просмотреть доступные REST API. Для приведенных ниже запросов используйте общедоступную версию (2019-05-06).
+2. В раскрывающемся списке **Индекс** выберите *hotels-sample-index*. Щелкните раскрывающийся список **Версия API**, чтобы просмотреть доступные REST API. Для приведенных ниже запросов используйте общедоступную версию (2020-06-30).
 
    ![Команды индекса и API](media/search-get-started-portal/search-explorer-changeindex.png)
 
@@ -271,4 +275,9 @@ ms.locfileid: "80369454"
 С помощью мастера портала можно создать готовое к использованию веб-приложение, выполняемое в браузере. Вы можете испытать этот мастер с небольшим индексом, который вы создали, или использовать один из встроенных примеров набора данных для расширенного поиска.
 
 > [!div class="nextstepaction"]
-> [Создание приложения поиска на портале](search-create-app-portal.md)
+> [Создание демонстрационного приложения на портале](search-create-app-portal.md)
+
+Хотите оптимизировать и сократить ваши расходы на облако?
+
+> [!div class="nextstepaction"]
+> [Начните анализировать затраты с помощью службы "Управление затратами"](https://docs.microsoft.com/azure/cost-management-billing/costs/quick-acm-cost-analysis?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)

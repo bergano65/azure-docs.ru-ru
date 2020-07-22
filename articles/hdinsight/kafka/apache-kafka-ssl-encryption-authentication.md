@@ -5,22 +5,22 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 05/01/2019
-ms.openlocfilehash: 02b64d77a4fb1af25e1022de3ac8e4775f916d9e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 9a95970647a26ea80db9f63fb8523c6a65cc5e06
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81261777"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86082086"
 ---
 # <a name="set-up-tls-encryption-and-authentication-for-apache-kafka-in-azure-hdinsight"></a>Настройка шифрования и проверки подлинности TLS для Apache Kafka в Azure HDInsight
 
 В этой статье показано, как настроить шифрование TLS, ранее известное как шифрование SSL (SSL) между Apache Kafka клиентами и брокерами Apache Kafka. Здесь также показано, как настроить проверку подлинности клиентов (иногда это называется двусторонним протоколом TLS).
 
 > [!Important]
-> Для приложений Kafka можно использовать два клиента: клиент Java и клиент консоли. Только клиент `ProducerConsumer.java` Java может использовать TLS как для создания, так и для использования. Клиент `console-producer.sh` производителя консоли не работает с протоколом TLS.
+> Для приложений Kafka можно использовать два клиента: клиент Java и клиент консоли. Только клиент Java `ProducerConsumer.java` может использовать TLS как для создания, так и для использования. Клиент производителя консоли `console-producer.sh` не работает с протоколом TLS.
 
 > [!Note]
 > Производитель консоли HDInsight Kafka с версией 1,1 не поддерживает SSL.
@@ -52,7 +52,7 @@ ms.locfileid: "81261777"
 Используйте следующие подробные инструкции для завершения установки компонента Service Broker.
 
 > [!Important]
-> В следующих фрагментах кода внкс — это сокращение для одного из трех рабочих узлов `wn0`, `wn1` которое должно быть заменено или `wn2` соответствующим образом. `WorkerNode0_Name`и `HeadNode0_Name` должны быть заменены именами соответствующих компьютеров.
+> В следующих фрагментах кода Внкс — это сокращение для одного из трех рабочих узлов, которое должно быть заменено `wn0` `wn1` или `wn2` соответствующим образом. `WorkerNode0_Name`и `HeadNode0_Name` должны быть заменены именами соответствующих компьютеров.
 
 1. Выполните начальную настройку на головном узле 0, который для HDInsight будет заполнять роль центра сертификации (ЦС).
 
@@ -228,7 +228,7 @@ ms.locfileid: "81261777"
 1. Войдите на клиентский компьютер (резервный головной узел).
 1. Создайте хранилище ключей Java и получите подписанный сертификат для брокера. Затем скопируйте сертификат на виртуальную машину, где запущен центр сертификации.
 1. Чтобы подписать сертификат клиента, переключитесь на компьютер ЦС (активный головной узел).
-1. Перейдите на клиентский компьютер (резервный головной узел) и перейдите `~/ssl` к папке. Скопируйте подписанный сертификат на клиентский компьютер.
+1. Перейдите на клиентский компьютер (резервный головной узел) и перейдите к `~/ssl` папке. Скопируйте подписанный сертификат на клиентский компьютер.
 
 Подробные сведения о каждом шаге приведены ниже.
 
@@ -329,7 +329,7 @@ ms.locfileid: "81261777"
     /usr/hdp/current/kafka-broker/bin/kafka-console-producer.sh --broker-list <FQDN_WORKER_NODE>:9093 --topic topic1 --producer.config ~/ssl/client-ssl-auth.properties
     ```
 
-1. Откройте другое SSH-подключение к клиентскому компьютеру и запустите консоль-потребитель и укажите `client-ssl-auth.properties` путь к файлу конфигурации для потребителя.
+1. Откройте другое SSH-подключение к клиентскому компьютеру и запустите консоль-потребитель и укажите путь к `client-ssl-auth.properties` файлу конфигурации для потребителя.
 
     ```bash
     /usr/hdp/current/kafka-broker/bin/kafka-console-consumer.sh --bootstrap-server <FQDN_WORKER_NODE>:9093 --topic topic1 --consumer.config ~/ssl/client-ssl-auth.properties --from-beginning
@@ -349,12 +349,12 @@ ms.locfileid: "81261777"
     /usr/hdp/current/kafka-broker/bin/kafka-console-producer.sh --broker-list <FQDN_WORKER_NODE>:9092 --topic topic1 
     ```
 
-1. Откройте другое SSH-подключение к клиентскому компьютеру и запустите консоль-потребитель и укажите `client-ssl-auth.properties` путь к файлу конфигурации для потребителя.
+1. Откройте другое SSH-подключение к клиентскому компьютеру и запустите консоль-потребитель и укажите путь к `client-ssl-auth.properties` файлу конфигурации для потребителя.
 
     ```bash
     $ /usr/hdp/current/kafka-broker/bin/kafka-console-consumer.sh --bootstrap-server <FQDN_WORKER_NODE>:9093 --topic topic1 --consumer.config ~/ssl/client-ssl-auth.properties --from-beginning
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * [Что такое Apache Kafka в HDInsight?](apache-kafka-introduction.md)

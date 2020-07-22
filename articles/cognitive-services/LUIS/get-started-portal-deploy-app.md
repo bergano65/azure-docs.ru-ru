@@ -3,12 +3,12 @@ title: Краткое руководство. Развертывание при�
 description: В этом кратком руководстве показано, как развернуть приложение путем создания ресурса конечной точки прогнозирования, назначения ресурса, обучения и публикации приложения.
 ms.topic: quickstart
 ms.date: 05/06/2020
-ms.openlocfilehash: 9b22f1eda822b5354f0b434a04c2ea03e4c0ff2a
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 743c2fe311eeeabad5a3e957319be3a6e372e74f
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/19/2020
-ms.locfileid: "83585104"
+ms.locfileid: "83653229"
 ---
 # <a name="quickstart-deploy-an-app-in-the-luis-portal"></a>Краткое руководство. Развертывание приложения на портале LUIS
 
@@ -40,7 +40,8 @@ ms.locfileid: "83585104"
 
 1. Выберите клиент, подписку и группу ресурсов. Выберите **Assign resource** (Присвоить ресурс).
 
-   ![Присвоение ресурса приложению](./media/get-started-portal-deploy-app/assign-resource.png)
+   > [!div class="mx-imgBorder"]
+   > ![Присвоение ресурса приложению](./media/get-started-portal-deploy-app/assign-resource.png)
 
 1. Выполните те же действия, чтобы добавить в приложение ключ разработки.
 
@@ -51,11 +52,11 @@ ms.locfileid: "83585104"
 
 ## <a name="train-the-app"></a>Обучение приложения
 
-[!INCLUDE [LUIS How to Train steps](includes/howto-train.md)]
+Если вы изменили приложение после последнего обучения, повторно [обучите](get-started-portal-build-app.md) его.
 
 ## <a name="publish-the-app-to-the-prediction-endpoint"></a>Публикация приложения в конечной точке прогнозирования
 
-[!INCLUDE [LUIS How to Train steps](includes/howto-publish.md)]
+[!INCLUDE [LUIS How to Publish steps](includes/howto-publish.md)]
 
 ## <a name="prediction-endpoint-request"></a>Запрос конечной точки прогнозирования
 

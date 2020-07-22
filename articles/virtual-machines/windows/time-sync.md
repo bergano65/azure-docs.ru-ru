@@ -8,10 +8,10 @@ ms.workload: infrastructure-services
 ms.date: 09/17/2018
 ms.author: cynthn
 ms.openlocfilehash: cd9a196e5f957782de91cff69c01fbfa5716369a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82100504"
 ---
 # <a name="time-sync-for-windows-vms-in-azure"></a>Синхронизация времени для виртуальных машин Windows в Azure
@@ -44,7 +44,7 @@ ms.locfileid: "82100504"
 
 Наилучшие результаты для развертываний Windows достигаются при использовании Windows Server 2016 в качестве операционной системы на виртуальной машине, что позволяет пользоваться последними улучшениями в плане синхронизации времени.
 
-## <a name="configuration-options"></a>Параметры конфигурации
+## <a name="configuration-options"></a>Варианты настройки
 
 Есть три способа настроить синхронизацию времени для виртуальных машин Windows, размещенных в Azure:
 
@@ -168,13 +168,13 @@ w32tm /config /update
 w32tm /dumpreg /subkey:Parameters | findstr /i "ntpserver"
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ниже приведены ссылки на дополнительные материалы по синхронизации времени:
 
 - [Инструменты и параметры службы времени Windows](https://docs.microsoft.com/windows-server/networking/windows-time-service/Windows-Time-Service-Tools-and-Settings)
 - [Улучшения Windows Server 2016](https://docs.microsoft.com/windows-server/networking/windows-time-service/windows-server-2016-improvements)
-- [Точное время в Windows Server 2016](https://docs.microsoft.com/windows-server/networking/windows-time-service/accurate-time)
+- [Точное время для Windows Server 2016](https://docs.microsoft.com/windows-server/networking/windows-time-service/accurate-time)
 - [Граница области поддержки для настройки службы времени Windows в высокоточных средах](https://docs.microsoft.com/windows-server/networking/windows-time-service/support-boundary)
 
 

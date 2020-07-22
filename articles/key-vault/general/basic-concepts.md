@@ -1,5 +1,5 @@
 ---
-title: Что такое хранилище ключей Azure? | Документация Майкрософт
+title: Что такое хранилище ключей Azure? | Документы Майкрософт
 description: Узнайте, как Azure Key Vault защищает криптографические ключи и секреты, используемые облачными приложениями и службами.
 services: key-vault
 author: msmbaldwin
@@ -10,12 +10,11 @@ ms.subservice: general
 ms.topic: conceptual
 ms.date: 01/18/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 14eda137d386146d96b6b9aa54e1ed57021db19d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 7c64835ced558727718690138c3e7a7666cf0809
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81432142"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84167304"
 ---
 # <a name="azure-key-vault-basic-concepts"></a>Azure Key Vault основные понятия
 
@@ -43,7 +42,7 @@ Azure Key Vault — это средство для безопасного хра
 
     ![Схема работы управляемых удостоверений для ресурсов Azure](../media/key-vault-whatis/msi.png)
 
-## <a name="authentication"></a>Проверка подлинности
+## <a name="authentication"></a>Аутентификация
 Для выполнения любых операций с Key Vault необходимо сначала пройти проверку подлинности. Существует три способа проверки подлинности в Key Vault.
 
 - [Управляемые удостоверения для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md). при развертывании приложения на виртуальной машине в Azure можно назначить удостоверение виртуальной машине, имеющей доступ к Key Vault. Вы также можете назначить удостоверения [другим ресурсам Azure](../../active-directory/managed-identities-azure-resources/overview.md). Преимуществом этого подхода является то, что приложение или служба не управляют поворотом первого секрета. Azure автоматически меняет удостоверение. Рекомендуется использовать такой подход. 

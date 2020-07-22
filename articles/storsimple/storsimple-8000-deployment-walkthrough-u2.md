@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 04/23/2018
 ms.author: alkohli
 ms.openlocfilehash: a56610dd81d6e50da11bbd65bcf0682e399b1783
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79267954"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84707401"
 ---
 # <a name="deploy-your-on-premises-storsimple-device-update-3-and-later"></a>Развертывание локального устройства StorSimple (с обновлением 3 и более поздней версии)
 
@@ -28,10 +28,10 @@ ms.locfileid: "79267954"
 Чтобы завершить процесс установки и настройки, вам потребуются права администратора. Перед началом настройки рекомендуется изучить контрольный список конфигурации. Процессы развертывания и настройки могут занять некоторое время.
 
 > [!NOTE]
-> Сведения о развертывании StorSimple, опубликованные на веб-сайте Microsoft Azure, применяются только к устройствам серии StorSimple 8000. Полные сведения об устройствах серии 7000 см. по адресу: [http://onlinehelp.storsimple.com/](http://onlinehelp.storsimple.com). Сведения о развертывании устройств серии 7000 см. в [кратком руководстве по системе StorSimple](http://onlinehelp.storsimple.com/111_Appliance/). 
+> Сведения о развертывании StorSimple, опубликованные на веб-сайте Microsoft Azure, применяются только к устройствам серии StorSimple 8000. Полные сведения об устройствах серии 7000 см. по адресу: [http://onlinehelp.storsimple.com/](http://onlinehelp.storsimple.com) . Сведения о развертывании устройств серии 7000 см. в [кратком руководстве по системе StorSimple](http://onlinehelp.storsimple.com/111_Appliance/). 
 
 
-## <a name="deployment-steps"></a>Шаги развертывания
+## <a name="deployment-steps"></a>Шаги по развертыванию
 Выполните эти обязательные действия по настройке и подключению устройства StorSimple к службе диспетчера устройств StorSimple. Помимо обязательных существуют дополнительные шаги и процедуры, которые могут потребоваться в ходе развертывания. В пошаговых инструкциях по развертыванию будет рассказано, когда необходимо предпринять каждый из этих дополнительных шагов.
 
 | Шаг | Описание |
@@ -204,7 +204,7 @@ ms.locfileid: "79267954"
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 * [Deploy and manage a StorSimple Cloud Appliance in Azure (Update 3 and later)](storsimple-8000-cloud-appliance-u2.md) (Развертывание и администрирование облачного устройства StorSimple в Azure (обновление 3 и более поздней версии)).
 * [Use the StorSimple Device Manager service to administer your StorSimple device](storsimple-8000-manager-service-administration.md) (Использование службы диспетчера устройств StorSimple для управления устройством StorSimple).
 

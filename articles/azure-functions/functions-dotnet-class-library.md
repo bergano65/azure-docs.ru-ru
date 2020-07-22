@@ -1,14 +1,14 @@
 ---
 title: Справочник разработчика C# по функциям Azure
 description: Узнайте, как разрабатывать Функции Azure с помощью C#.
-ms.topic: reference
+ms.topic: conceptual
 ms.date: 09/12/2018
-ms.openlocfilehash: cfa53fe2defca768196af595c1d088d41bc60f71
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 9ecc2dad8d1d520b44972022d47c312f495d5c38
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79277067"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86506522"
 ---
 # <a name="azure-functions-c-developer-reference"></a>Справочник разработчика C# по функциям Azure
 
@@ -77,7 +77,7 @@ public static class SimpleExample
 } 
 ```
 
-Атрибут `FunctionName` помечает метод как точку входа функции. Имя должно быть уникальным в пределах проекта, начинаться с буквы и содержать только буквы, цифры, `_`и `-`, до 127 символов. Шаблоны проектов часто создают метод `Run`, но метод может иметь любое допустимое имя для метода C#.
+Атрибут `FunctionName` помечает метод как точку входа функции. Имя должно быть уникальным в пределах проекта, начинаться с буквы и содержать только буквы, цифры, `_` и `-` , до 127 символов. Шаблоны проектов часто создают метод `Run`, но метод может иметь любое допустимое имя для метода C#.
 
 Атрибут триггера указывает тип триггера и привязывает входные данные к параметру метода. Пример функции срабатывает по сообщению очереди, а сообщение очереди передается методу в параметре `myQueueItem`.
 
@@ -138,7 +138,7 @@ public static class BindingExpressionsExample
 
 Цель этого файла — предоставить сведения контроллеру масштабирования, который будет использоваться для [принятия решений о масштабировании в плане потребления](functions-scale.md#how-the-consumption-and-premium-plans-work). По этой причине файл содержит только сведения о триггерах, но не о входных или выходных привязках.
 
-Создаваемый файл *function.json* содержит свойство `configurationSource`, которое указывает среде выполнения использовать атрибуты .NET для привязок, вместо конфигурации *function.json*. Пример:
+Создаваемый файл *function.json* содержит свойство `configurationSource`, которое указывает среде выполнения использовать атрибуты .NET для привязок, вместо конфигурации *function.json*. Ниже приведен пример.
 
 ```json
 {
@@ -202,6 +202,28 @@ Visual Studio выполняет проекты Функций с помощью
 [3/1/2018 9:59:53 AM] Starting Host (HostId=contoso2-1518597420, Version=2.0.11353.0, ProcessId=22020, Debug=False, Attempt=0, FunctionsExtensionVersion=)
 ```
 
+## <a name="readytorun"></a>ReadyToRun
+
+Приложение функции можно скомпилировать как [двоичные файлы реадиторун](/dotnet/core/whats-new/dotnet-core-3-0#readytorun-images). Реадиторун является формой предварительной компиляции, которая может повысить производительность при запуске, чтобы снизить влияние [холодного запуска](functions-scale.md#cold-start) при запуске в [плане потребления](functions-scale.md#consumption-plan).
+
+Реадиторун доступен в .NET 3,0 и требует [версии 3,0 среды выполнения функций Azure](functions-versions.md).
+
+Чтобы скомпилировать проект как Реадиторун, обновите файл проекта, добавив `<PublishReadyToRun>` элементы и `<RuntimeIdentifier>` . Ниже приведена конфигурация для публикации в приложении-функции Windows 32 bit.
+
+```xml
+<PropertyGroup>
+  <TargetFramework>netcoreapp3.1</TargetFramework>
+  <AzureFunctionsVersion>v3</AzureFunctionsVersion>
+  <PublishReadyToRun>true</PublishReadyToRun>
+  <RuntimeIdentifier>win-x86</RuntimeIdentifier>
+</PropertyGroup>
+```
+
+> [!IMPORTANT]
+> Реадиторун сейчас не поддерживает перекрестную компиляцию. Приложение должно быть построено на той же платформе, что и целевой объект развертывания. Кроме того, обратите внимание на «разрядность», настроенную в приложении-функции. Например, если приложение-функция в Azure — Windows 64 bit, необходимо скомпилировать приложение в Windows, используя в `win-x64` качестве [идентификатора среды выполнения](/dotnet/core/rid-catalog).
+
+Вы также можете создать приложение с помощью Реадиторун из командной строки. Дополнительные сведения см. в описании `-p:PublishReadyToRun=true` параметра в разделе [`dotnet publish`](/dotnet/core/tools/dotnet-publish) .
+
 ## <a name="supported-types-for-bindings"></a>Поддерживаемые типы для привязок
 
 Все привязки поддерживают определенные типы. Например, атрибут триггера большого двоичного объекта можно применить к строковому параметру, параметру POCO, параметру `CloudBlockBlob` или любому из нескольких других поддерживаемых типов. В [справочной статье о привязках для больших двоичных объектов](functions-bindings-storage-blob-trigger.md#usage) содержится список всех поддерживаемых типов параметров. Дополнительные сведения см. в статье о [триггерах и привязках](functions-triggers-bindings.md) и в [справочной документации по каждому типу привязки](functions-triggers-bindings.md#next-steps).
@@ -216,7 +238,7 @@ Visual Studio выполняет проекты Функций с помощью
 
 ## <a name="writing-multiple-output-values"></a>Написание нескольких значений выходных данных
 
-Для записи нескольких значений в выходную привязку или успешного вызова функции может не привести к передаче в выходную привязку, используйте типы [`ICollector`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/ICollector.cs) или. [`IAsyncCollector`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/IAsyncCollector.cs) Эти типы представляют собой доступные только для записи коллекции, записываемые в выходную привязку по завершении метода.
+Чтобы записать несколько значений в привязку для вывода или если после успешного вызова функции не возвращается значение для передачи в привязку для вывода, используйте типы [`ICollector`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/ICollector.cs) или [`IAsyncCollector`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/IAsyncCollector.cs). Эти типы представляют собой доступные только для записи коллекции, записываемые в выходную привязку по завершении метода.
 
 В следующем примере записываются несколько сообщений очереди в ту же очередь с помощью `ICollector`:
 
@@ -238,7 +260,7 @@ public static class ICollectorExample
 
 ## <a name="logging"></a>Logging
 
-Для записи выходных данных в потоковые журналы в C# включите аргумент с типом [ILogger](https://docs.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger). Мы рекомендуем использовать имя `log`, как показано в следующем примере:  
+Для записи выходных данных в потоковые журналы в C# включите аргумент с типом [ILogger](/dotnet/api/microsoft.extensions.logging.ilogger). Мы рекомендуем использовать имя `log`, как показано в следующем примере:  
 
 ```csharp
 public static class SimpleExample
@@ -255,9 +277,9 @@ public static class SimpleExample
 
 Не используйте `Console.Write` в Функциях Azure. Дополнительные сведения см. в разделе [Запись журналов в функциях C#](functions-monitoring.md#write-logs-in-c-functions) статьи **Мониторинг Функций Azure**.
 
-## <a name="async"></a>Async
+## <a name="async"></a>Асинхронный режим
 
-Чтобы сделать функцию [асинхронной](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/async/), используйте ключевое слово `async` и верните объект `Task`.
+Чтобы сделать функцию [асинхронной](/dotnet/csharp/programming-guide/concepts/async/), используйте ключевое слово `async` и верните объект `Task`.
 
 ```csharp
 public static class AsyncExample
@@ -330,7 +352,7 @@ public static class EnvironmentVariablesExample
 
 Параметры приложения могут считываться из переменных среды при разработке локально и при запуске в Azure. При локальной разработке параметры приложения поступают из коллекции `Values` файла *local.settings.json*. Значение именованного параметра приложения `GetEnvironmentVariable("<app setting name>")` извлекается в локальной среде и среде Azure. Например, при локальном запуске будет возвращено "Имя_сайта", если файл *local.settings.json* содержит `{ "Values": { "WEBSITE_SITE_NAME": "My Site Name" } }`.
 
-Свойство [System.Configuration.ConfigurationManager.AppSettings](https://docs.microsoft.com/dotnet/api/system.configuration.configurationmanager.appsettings) — альтернативный API-интерфейс для получения значения параметра приложения, но рекомендуется использовать `GetEnvironmentVariable`, как показано ниже.
+Свойство [System.Configuration.ConfigurationManager.AppSettings](/dotnet/api/system.configuration.configurationmanager.appsettings) — альтернативный API-интерфейс для получения значения параметра приложения, но рекомендуется использовать `GetEnvironmentVariable`, как показано ниже.
 
 ## <a name="binding-at-runtime"></a>Привязка во время выполнения
 
@@ -349,7 +371,7 @@ public static class EnvironmentVariablesExample
   }
   ```
 
-  где `BindingTypeAttribute` — атрибут .NET, определяющий пользовательскую привязку, а `T` — входной или выходной тип, поддерживаемый этим типом привязки. `T` не может быть параметром типа `out` (например, `out JObject`). Например, выходная привязка таблицы мобильных приложений поддерживает [шесть выходных типов](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.MobileApps/MobileTableAttribute.cs#L17-L22), но можно использовать только [\<ICollector t>](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/ICollector.cs) или [IAsyncCollector\<t>](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/IAsyncCollector.cs) с императивной привязкой.
+  где `BindingTypeAttribute` — атрибут .NET, определяющий пользовательскую привязку, а `T` — входной или выходной тип, поддерживаемый этим типом привязки. `T` не может быть параметром типа `out` (например, `out JObject`). Например, выходная привязка таблицы мобильных приложений поддерживает [шесть выходных типов](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.MobileApps/MobileTableAttribute.cs#L17-L22), но с императивной привязкой можно использовать только [ICollector\<T>](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/ICollector.cs) или [IAsyncCollector\<T>](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/IAsyncCollector.cs).
 
 ### <a name="single-attribute-example"></a>Пример с одним атрибутом
 
@@ -407,7 +429,7 @@ public static class IBinderExampleMultipleAttributes
 
 [!INCLUDE [Supported triggers and bindings](../../includes/functions-bindings.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о триггерах и привязках](functions-triggers-bindings.md)

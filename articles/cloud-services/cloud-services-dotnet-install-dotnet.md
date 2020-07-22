@@ -11,10 +11,9 @@ ms.topic: article
 ms.date: 06/22/2018
 ms.author: tagore
 ms.openlocfilehash: c830dc0ee38ad808579a62274e3db87d0696e099
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79214724"
 ---
 # <a name="install-net-on-azure-cloud-services-roles"></a>Установка .NET для ролей облачных служб Azure
@@ -36,7 +35,7 @@ ms.locfileid: "79214724"
 
 Чтобы добавить установщик для *веб*-роли:
   1. В **обозревателе решений** в разделе **Роли** проекта облачной службы щелкните правой кнопкой мыши *веб-роль* и выберите **Добавить** > **Новая папка**. Создайте папку с именем **bin**.
-  2. Щелкните правой кнопкой мыши папку bin и выберите **Добавить** > **существующий элемент**. Выберите установщик .NET и добавьте его в папку bin.
+  2. Щелкните правой кнопкой мыши папку bin и выберите **Добавить**  >  **существующий элемент**. Выберите установщик .NET и добавьте его в папку bin.
   
 Чтобы добавить установщик для *рабочей* роли:
 * Щелкните правой кнопкой мыши *рабочую* роль и выберите **Добавить** > **Существующий элемент**. Выберите установщик .NET и добавьте его в роль. 
@@ -197,7 +196,7 @@ ms.locfileid: "79214724"
    EXIT /B 0
    ```
 
-3. Добавьте файл install. cmd в каждую роль с помощью команды **Добавить** > **существующий элемент** в **Обозреватель решений** , как описано ранее в этом разделе. 
+3. Добавьте файл install. cmd в каждую роль с помощью команды **Добавить**  >  **существующий элемент** в **Обозреватель решений** , как описано ранее в этом разделе. 
 
     После завершения этого шага все роли должны иметь файл установщика .NET и файл install.cmd.
 
@@ -224,7 +223,7 @@ ms.locfileid: "79214724"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 * [Установка платформы .NET Framework][Installing the .NET Framework]
-* [Практическое руководство. Определение установленных версий платформы .NET Framework][How to: Determine Which .NET Framework Versions Are Installed]
+* [Определение установленных версий платформы .NET Framework][How to: Determine Which .NET Framework Versions Are Installed]
 * [Устранение неполадок .NET Framework установки][Troubleshooting .NET Framework Installations]
 
 [How to: Determine Which .NET Framework Versions Are Installed]: /dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed

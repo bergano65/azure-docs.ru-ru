@@ -8,10 +8,9 @@ ms.topic: article
 ms.date: 11/19/2019
 ms.author: victorh
 ms.openlocfilehash: d4de81bad1ddda2f5b54f47c1be78925ad4cdbf3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74168984"
 ---
 # <a name="infrastructure-fqdns"></a>FQDN инфраструктуры
@@ -28,6 +27,6 @@ ms.locfileid: "74168984"
 
 Вы можете переопределить эту встроенную коллекцию правил инфраструктуры, создав запрещающую коллекцию правил приложений, которая обрабатывается в последнюю очередь. Она всегда будет обрабатываться перед коллекцией правил инфраструктуры. Все, что не входит в коллекцию правил инфраструктуры, по умолчанию будет отклонено.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- См. дополнительные сведения о [развертывании и настройке Брандмауэра Azure](tutorial-firewall-deploy-portal.md).
+- Узнайте, как [развернуть и настроить брандмауэр Azure](tutorial-firewall-deploy-portal.md).

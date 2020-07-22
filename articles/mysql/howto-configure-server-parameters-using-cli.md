@@ -5,19 +5,19 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.devlang: azurecli
-ms.topic: conceptual
-ms.date: 4/1/2020
-ms.openlocfilehash: ca5f80e57f90e4dd26ac2e4a175998ff3de2c102
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.topic: how-to
+ms.date: 6/11/2020
+ms.openlocfilehash: 7c62eb9db2bbde8038f192c9e29a804a0b24cfdb
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80546438"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86101534"
 ---
-# <a name="customize-server-parameters-by-using-azure-cli"></a>Настройка параметров сервера с помощью Azure CLI
+# <a name="configure-server-parameters-in-azure-database-for-mysql-using-the-azure-cli"></a>Настройка параметров сервера в базе данных Azure для MySQL с помощью Azure CLI
 С помощью служебной программы командной строки (Azure CLI) можно вывести список параметров конфигурации для сервера базы данных Azure для MySQL, а также отобразить и обновить их. Только подмножество конфигураций ядра предоставляется на уровне сервера и может быть изменено. 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
 - [Сервер базы данных Azure для MySQL](quickstart-create-mysql-server-database-using-azure-cli.md)
 - Программа командной строки [Azure CLI](/cli/azure/install-azure-cli) (или используйте Azure Cloud Shell в браузере).
@@ -50,6 +50,14 @@ az mysql server configuration set --name slow_query_log --resource-group myresou
 az mysql server configuration set --name slow_query_log --resource-group myresourcegroup --server mydemoserver
 ```
 Этот код выполняет сброс конфигурации **slow\_query\_log** к значению по умолчанию **OFF**. 
+
+## <a name="setting-parameters-not-listed"></a>Параметры настройки не указаны
+Если параметр сервера, который требуется обновить, не указан в портал Azure, можно при необходимости задать параметр на уровне соединения с помощью `init_connect` . Это задает параметры сервера для каждого клиента, подключающегося к серверу. 
+
+Обновите параметр конфигурации сервера **init \_ connect** сервера **mydemoserver.MySQL.Database.Azure.com** в разделе **myresourcegroup** группы ресурсов, чтобы задать значения, такие как кодировка.
+```azurecli-interactive
+az mysql server configuration set --name init_connect --resource-group myresourcegroup --server mydemoserver --value "SET character_set_client=utf8;SET character_set_database=utf8mb4;SET character_set_connection=latin1;SET character_set_results=latin1;"
+```
 
 ## <a name="working-with-the-time-zone-parameter"></a>Работа с параметром часового пояса
 
@@ -94,6 +102,6 @@ SET time_zone = 'US/Pacific';
 Описание [функций даты и времени](https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_convert-tz) можно прочитать в документации по MySQL.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Настройка [параметров сервера на портале Azure](howto-server-parameters.md)

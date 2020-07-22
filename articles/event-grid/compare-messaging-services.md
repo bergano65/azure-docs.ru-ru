@@ -1,20 +1,14 @@
 ---
 title: Сравнение служб обмена сообщениями Azure
 description: 'Описаны три службы обмена сообщениями Azure: Сетка событий, Центры событий и Служебная шина Azure. Рекомендации по выбору служб для различных сценариев.'
-services: event-grid
-author: spelluru
-manager: timlt
-ms.service: event-grid
 ms.topic: overview
-ms.date: 10/22/2019
-ms.author: spelluru
-ms.custom: seodec18
-ms.openlocfilehash: 6122f17637e76f42cc4fbcc87ac9f48da3cdca36
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.date: 07/07/2020
+ms.openlocfilehash: 9c539accbc41f56e4421b9e793c25496987363aa
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "76122208"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86101381"
 ---
 # <a name="choose-between-azure-messaging-services---event-grid-event-hubs-and-service-bus"></a>Сравнение трех служб обмена сообщениями Azure: Сетка событий, Центры событий и Служебная шина
 

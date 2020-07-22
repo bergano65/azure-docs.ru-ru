@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: how-to
 ms.date: 05/08/2020
 ms.author: buhollan
-ms.openlocfilehash: 36aa0a4a87e439c128c5247b6850100a7f2e826e
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
-ms.translationtype: HT
+ms.openlocfilehash: 66ad9c27ca69df230d9ce1d2282e734420fa14f3
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83595573"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85373677"
 ---
 # <a name="configure-application-settings-for-azure-static-web-apps-preview"></a>Настройка параметров приложения для предварительной версии Статических веб-приложений Azure
 
@@ -109,6 +109,8 @@ const connectionString = process.env.DATABASE_CONNECTION_STRING;
 
 1. Нажмите кнопку **ОК**.
 
+1. Нажмите кнопку **Сохранить**.
+
 ### <a name="using-the-azure-cli"></a>Использование Azure CLI
 
 Вы можете использовать команду `az rest` для выполнения пакетной отправки параметров в Azure. Команда принимает параметры приложения в виде объектов JSON в родительском свойстве с именем `properties`.
@@ -156,7 +158,7 @@ const connectionString = process.env.DATABASE_CONNECTION_STRING;
 
 Параметры приложения доступны для просмотра с помощью Azure CLI.
 
-1. В терминале или в командной строке выполните указанную ниже команду. Обязательно замените заполнители `<YOUR_SUBSCRIPTION_ID>`, `<YOUR_RESOURCE_GROUP_NAME>`, `<YOUR_STATIC_SITE_NAME>` вашими значениями.
+- В терминале или в командной строке выполните указанную ниже команду. Обязательно замените заполнители `<YOUR_SUBSCRIPTION_ID>`, `<YOUR_RESOURCE_GROUP_NAME>`, `<YOUR_STATIC_SITE_NAME>` вашими значениями.
 
    ```bash
    az rest --method post --uri "/subscriptions/<YOUR_SUBSCRIPTION_ID>/resourceGroups/<YOUR_RESOURCE_GROUP_NAME>/providers/Microsoft.Web/staticSites/<YOUR_STATIC_SITE_NAME>/listFunctionAppSettings?api-version=2019-12-01-preview"

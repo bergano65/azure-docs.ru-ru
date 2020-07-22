@@ -3,16 +3,15 @@ title: Настройка программного RAID-массива на ви
 description: Узнайте, как использовать mdadm для настройки RAID-массива на платформе Linux в Azure.
 author: rickstercdn
 ms.service: virtual-machines-linux
-ms.topic: article
+ms.topic: how-to
 ms.date: 02/02/2017
 ms.author: rclaus
 ms.subservice: disks
-ms.openlocfilehash: 122abda51b907491b322908c3c2c689bc1723e87
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 3471ccfa0899f73969c511dea283c2d0d7051af8
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79250261"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84659793"
 ---
 # <a name="configure-software-raid-on-linux"></a>Настройка программного RAID-массива в Linux
 Это обычный сценарий для использования программного RAID-массива на виртуальных машинах Linux в Azure, который позволяет представить множество дисков данных в виде одного RAID-устройства. Обычно это делается для повышения производительности и обеспечения возможности увеличения пропускной способности по сравнению с использованием только одного диска.

@@ -14,10 +14,9 @@ ms.author: jmprieur
 ms.reviewer: jmprieur
 ms.custom: aaddev
 ms.openlocfilehash: 28ace84f9a80b71209d7963d02b66317292b151b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80882545"
 ---
 # <a name="prepare-mobile-apps-for-production"></a>Подготовка мобильных приложений для рабочей среды
@@ -44,7 +43,7 @@ ms.locfileid: "80882545"
 
 - Если данные телеметрии доступны, включите ее через MSAL для сбора данных о том, как пользователи входят в приложение.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [!INCLUDE [Common steps to move to production](../../../includes/active-directory-develop-scenarios-production.md)]
 

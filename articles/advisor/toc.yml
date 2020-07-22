@@ -4,13 +4,22 @@
   items:
     - name: Что такое Помощник по Azure?
       href: advisor-overview.md
+- name: Краткие руководства
+  items:
+    - name: Настройка оповещений для новых рекомендаций
+      items:
+        - name: Портал Azure
+          href: advisor-alerts-portal.md
+        - name: Шаблон ARM
+          displayName: Resource Manager
+          href: advisor-alerts-arm.md
 - name: Учебники
   items:
     - name: Начало работы с Помощником
       href: advisor-get-started.md
 - name: Практические руководства
   items:
-    - name: Повышение уровня доступности приложения Azure
+    - name: Повышение уровня надежности приложения Azure
       href: advisor-high-availability-recommendations.md
     - name: Повышение уровня безопасности ресурсов
       href: advisor-security-recommendations.md
@@ -25,7 +34,7 @@
     - name: Разрешения и блокировка действий
       href: permissions.md
     - name: Настройка оповещений для рекомендаций
-      href: advisor-alerts.md
+      href: advisor-alerts-portal.md
     - name: Групповое исправление для рекомендаций
       href: advisor-quick-fix.md
     - name: Данные Помощника в Azure Resource Graph
@@ -35,15 +44,15 @@
     - name: Центр безопасности
       href: 'https://azure.microsoft.com/services/security-center/'
     - name: помощник по базам данных SQL
-      href: 'https://azure.microsoft.com/documentation/articles/sql-database-advisor/'
+      href: ../azure-sql/database/database-advisor-implement-performance-recommendations.md
     - name: Служба приложений
-      href: 'https://docs.microsoft.com/azure/app-service/app-service-best-practices'
+      href: ../app-service/app-service-best-practices.md
     - name: REST API
-      href: 'https://docs.microsoft.com/rest/api/advisor/'
-    - name: CLI
-      href: 'https://docs.microsoft.com/cli/azure/advisor?view=azure-cli-latest'
+      href: /rest/api/advisor/
+    - name: Azure CLI
+      href: /cli/azure/advisor?view=azure-cli-latest
     - name: PowerShell
-      href: 'https://docs.microsoft.com/powershell/module/az.advisor/?view=azps-1.2.0'
+      href: /powershell/module/az.advisor/?view=azps-1.2.0
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure

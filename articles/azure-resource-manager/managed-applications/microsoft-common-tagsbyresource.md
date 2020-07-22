@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 11/11/2019
 ms.author: tomfitz
 ms.openlocfilehash: 23a7c54a84ec083b8fa470f26582913fcc3d2ee6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75652207"
 ---
 # <a name="microsoftcommontagsbyresource-ui-element"></a>Элемент пользовательского интерфейса Microsoft. Common. Тагсбиресаурце
@@ -47,9 +46,9 @@ ms.locfileid: "75652207"
 }
 ```
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Комментарии
 
-- Необходимо указать хотя бы один элемент `resources` в массиве.
+- Необходимо указать хотя бы один элемент в `resources` массиве.
 - Каждый элемент в `resources` должен быть полным типом ресурса. Эти элементы отображаются в раскрывающемся списке **ресурсов** и таггабле пользователем.
 - Выходные данные элемента управления форматируются для простого присваивания значений тегов в шаблоне Azure Resource Manager. Чтобы получить выходные данные элемента управления в шаблоне, включите параметр в шаблон, как показано в следующем примере:
 
@@ -71,7 +70,7 @@ ms.locfileid: "75652207"
 
 - Используйте функцию [If](../templates/template-functions-logical.md#if) при доступе к параметру тагсбиресаурце. Он позволяет назначить пустой объект, если ни один из тегов не назначен данному типу ресурса.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Общие сведения о создании определений пользовательского интерфейса см. в статье [Начало работы с CreateUiDefinition](create-uidefinition-overview.md).
 - Дополнительные сведения об общих свойствах элементов пользовательского интерфейса см. в статье [Элементы CreateUiDefinition](create-uidefinition-elements.md).

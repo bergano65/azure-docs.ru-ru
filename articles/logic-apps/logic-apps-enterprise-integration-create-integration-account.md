@@ -8,14 +8,14 @@ ms.author: divswa
 ms.reviewer: estfan, logicappspm
 ms.topic: conceptual
 ms.date: 07/26/2019
-ms.openlocfilehash: 083ed0001adb5524c124295eb3bc31f4afad99cf
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 4a0d3c344d19d0831dd8525ddf3311e0ce7cd682
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79270333"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86520823"
 ---
-# <a name="create-and-manage-integration-accounts-for-b2b-enterprise-integrations-in-azure-logic-apps"></a>Создание учетных записей интеграции для интеграции B2B Enterprise в Azure Logic Apps и управление ими
+# <a name="create-and-manage-integration-accounts-for-b2b-enterprise-integrations-in-azure-logic-apps"></a>Создание корпоративных учетных записей интеграции и управление ими для корпоративных интеграций B2B в Azure Logic Apps.
 
 Чтобы создавать [решения для корпоративной интеграции и B2B](../logic-apps/logic-apps-enterprise-integration-overview.md) с помощью [Azure Logic Apps](../logic-apps/logic-apps-overview.md), необходимо создать учетную запись интеграции. По сути, это отдельный ресурс Azure, предоставляющий защищенный, масштабируемый и управляемый контейнер для артефактов интеграции, которые вы определяете и используете в рабочих процессах приложения логики.
 
@@ -39,7 +39,7 @@ ms.locfileid: "79270333"
 
 ## <a name="create-integration-account"></a>Создание учетной записи интеграции
 
-Для этой задачи можно использовать либо портал Azure, выполнив действия, описанные в этом разделе, [Azure PowerShell](/powershell/module/Az.LogicApp/New-AzIntegrationAccount)или [Azure CLI](https://docs.microsoft.com/cli/azure/resource?view=azure-cli-latest#az-resource-create).
+Для этой задачи можно использовать либо портал Azure, выполнив действия, описанные в этом разделе, [Azure PowerShell](/powershell/module/Az.LogicApp/New-AzIntegrationAccount)или [Azure CLI](/cli/azure/resource?view=azure-cli-latest#az-resource-create).
 
 1. Войдите на [портал Azure](https://portal.azure.com) с помощью учетных данных учетной записи Azure.
 
@@ -57,15 +57,15 @@ ms.locfileid: "79270333"
 
    | Свойство | Обязательно | Значение | Описание |
    |----------|----------|-------|-------------|
-   | **имя**; | Да | <*Интеграция — имя учетной записи*> | Имя учетной записи интеграции, которое может содержать только буквы, цифры, дефисы (`-`), символы подчеркивания (`_`), круглые скобки`(`( `)`,) и точки (`.`). В этом примере используется "Fabrikam-Integration". |
-   | **Подписка** | Да | <*Имя подписки Azure*> | Имя подписки Azure. |
-   | **Группа ресурсов** | Да | <*Azure-Resource-Group-Name*> | Имя [группы ресурсов Azure](../azure-resource-manager/management/overview.md) , используемой для организации связанных ресурсов. В этом примере создайте новую группу ресурсов с именем "Фабрикаминтегратион-RG". |
+   | **имя**; | Да | <*Интеграция — имя учетной записи*> | Имя учетной записи интеграции, которое может содержать только буквы, цифры, дефисы ( `-` ), символы подчеркивания ( `_` ), круглые скобки ( `(` , `)` ) и точки ( `.` ). В этом примере используется "Fabrikam-Integration". |
+   | **Подписка** | Да | <*Azure-subscription-name*> | Имя подписки Azure. |
+   | **Группа ресурсов** | Да | <*имя_группы_ресурсов_Azure*> | Имя [группы ресурсов Azure](../azure-resource-manager/management/overview.md) , используемой для организации связанных ресурсов. В этом примере создайте новую группу ресурсов с именем "Фабрикаминтегратион-RG". |
    | **Ценовая категория** | Да | <*уровень цен*> | Ценовая категория для учетной записи интеграции, которую можно изменить позже. В этом примере выберите **Free (бесплатный**). Дополнительные сведения см. в следующих статьях: <p>- [Модель ценообразования Logic Apps](../logic-apps/logic-apps-pricing.md#integration-accounts) <p>- [Ограничения и конфигурация Logic Apps](../logic-apps/logic-apps-limits-and-config.md#integration-account-limits) <p>- [Цены на Logic Apps](https://azure.microsoft.com/pricing/details/logic-apps/) |
-   | **Расположение** | Да | <*Azure-Region*> | Регион, в котором хранятся метаданные учетной записи интеграции. Выберите то же расположение, что и приложение логики, или создайте приложения логики в том же расположении, что и учетная запись интеграции. В этом примере используйте "Западная часть США". <p>**Примечание**. чтобы создать учетную запись интеграции в [среде службы интеграции (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md), выберите эту интегрированную среду сценариев в качестве расположения. Дополнительные сведения см. [в разделе Создание учетных записей интеграции в интегрированной среде сценариев](../logic-apps/add-artifacts-integration-service-environment-ise.md#create-integration-account-environment). |
-   | **Log Analytics** | Нет | Выкл., вкл. | Для этого примера не устанавливайте параметр **Off** . |
+   | **Расположение** | Да | <*Azure-region*> | Регион, в котором хранятся метаданные учетной записи интеграции. Выберите то же расположение, что и приложение логики, или создайте приложения логики в том же расположении, что и учетная запись интеграции. В этом примере используйте "Западная часть США". <p>**Примечание**. чтобы создать учетную запись интеграции в [среде службы интеграции (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md), выберите эту интегрированную среду сценариев в качестве расположения. Дополнительные сведения см. [в разделе Создание учетных записей интеграции в интегрированной среде сценариев](../logic-apps/add-artifacts-integration-service-environment-ise.md#create-integration-account-environment). |
+   | **Служба Log Analytics** | Нет | Выкл., вкл. | Для этого примера не устанавливайте параметр **Off** . |
    |||||
 
-1. По завершении нажмите кнопку **создать**.
+1. По завершении нажмите кнопку **Создать**.
 
    После завершения развертывания Azure откроет учетную запись интеграции.
 
@@ -132,19 +132,19 @@ ms.locfileid: "79270333"
 
 #### <a name="azure-cli"></a>Azure CLI
 
-1. [Установите Azure CLI необходимые компоненты](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest), если это еще не сделано.
+1. [Установите Azure CLI необходимые компоненты](/cli/azure/get-started-with-azure-cli?view=azure-cli-latest), если это еще не сделано.
 
-1. В портал Azure откройте среду [**Cloud Shell**](https://docs.microsoft.com/azure/cloud-shell/overview?view=azure-cli-latest) Azure.
+1. В портал Azure откройте среду [**Cloud Shell**](../cloud-shell/overview.md?view=azure-cli-latest) Azure.
 
    ![Открытие Azure Cloud Shell](./media/logic-apps-enterprise-integration-create-integration-account/open-azure-cloud-shell-window.png)
 
-1. В командной строке введите [команду **AZ Resource** ](https://docs.microsoft.com/cli/azure/resource?view=azure-cli-latest#az-resource-update)и задайте `skuName` для нее более высокий уровень.
+1. В командной строке введите [команду **AZ Resource** ](/cli/azure/resource?view=azure-cli-latest#az-resource-update)и задайте `skuName` для нее более высокий уровень.
 
    ```azurecli
    az resource update --resource-group {ResourceGroupName} --resource-type Microsoft.Logic/integrationAccounts --name {IntegrationAccountName} --subscription {AzureSubscriptionID} --set sku.name={SkuName}
    ```
   
-   Например, если имеется уровень "базовый", можно задать для `skuName` `Standard`значение:
+   Например, если имеется уровень "базовый", можно задать для значение `skuName` `Standard` :
 
    ```azurecli
    az resource update --resource-group FabrikamIntegration-RG --resource-type Microsoft.Logic/integrationAccounts --name Fabrikam-Integration --subscription XXXXXXXXXXXXXXXXX --set sku.name=Standard
@@ -154,21 +154,21 @@ ms.locfileid: "79270333"
 
 ### <a name="downgrade-pricing-tier"></a>Ценовая категория понижения уровня
 
-Чтобы внести это изменение, используйте [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest).
+Чтобы внести это изменение, используйте [Azure CLI](/cli/azure/get-started-with-azure-cli?view=azure-cli-latest).
 
-1. [Установите Azure CLI необходимые компоненты](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest), если это еще не сделано.
+1. [Установите Azure CLI необходимые компоненты](/cli/azure/get-started-with-azure-cli?view=azure-cli-latest), если это еще не сделано.
 
-1. В портал Azure откройте среду [**Cloud Shell**](https://docs.microsoft.com/azure/cloud-shell/overview?view=azure-cli-latest) Azure.
+1. В портал Azure откройте среду [**Cloud Shell**](../cloud-shell/overview.md?view=azure-cli-latest) Azure.
 
    ![Открытие Azure Cloud Shell](./media/logic-apps-enterprise-integration-create-integration-account/open-azure-cloud-shell-window.png)
 
-1. В командной строке введите [команду **AZ Resource** ](https://docs.microsoft.com/cli/azure/resource?view=azure-cli-latest#az-resource-update) и установите `skuName` на более низкий уровень.
+1. В командной строке введите [команду **AZ Resource** ](/cli/azure/resource?view=azure-cli-latest#az-resource-update) и установите `skuName` на более низкий уровень.
 
    ```azurecli
    az resource update --resource-group <resourceGroupName> --resource-type Microsoft.Logic/integrationAccounts --name <integrationAccountName> --subscription <AzureSubscriptionID> --set sku.name=<skuName>
    ```
   
-   Например, если у вас уровень Standard, можно задать для `skuName` `Basic`значение:
+   Например, если у вас уровень Standard, можно задать `skuName` для значение `Basic` :
 
    ```azurecli
    az resource update --resource-group FabrikamIntegration-RG --resource-type Microsoft.Logic/integrationAccounts --name Fabrikam-Integration --subscription XXXXXXXXXXXXXXXXX --set sku.name=Basic
@@ -178,7 +178,7 @@ ms.locfileid: "79270333"
 
 Если вы хотите связать приложение логики с другой учетной записью интеграции или больше не используете учетную запись интеграции с приложением логики, удалите ссылку с помощью обозреватель ресурсов Azure.
 
-1. Откройте окно браузера и перейдите в [Обозреватель ресурсов Azure (https://resources.azure.com)](https://resources.azure.com). Войдите, используя те же учетные данные Azure.
+1. Откройте окно браузера и перейдите в [Обозреватель ресурсов Azure ( https://resources.azure.com) ](https://resources.azure.com). Войдите, используя те же учетные данные Azure.
 
    ![Обозреватель ресурсов Azure](./media/logic-apps-enterprise-integration-create-integration-account/resource-explorer.png)
 
@@ -206,7 +206,7 @@ ms.locfileid: "79270333"
    },
    ```
 
-   Пример:
+   Вот несколько примеров:
 
    ![Найти объект "integrationAccount"](./media/logic-apps-enterprise-integration-create-integration-account/resource-explorer-delete-integration-account.png)
 
@@ -222,7 +222,7 @@ ms.locfileid: "79270333"
 
 Вы можете переместить учетную запись интеграции в другую группу ресурсов Azure или подписку Azure. При перемещении ресурсов Azure создает новые идентификаторы ресурсов, поэтому убедитесь, что вместо них используются новые идентификаторы, и обновите все сценарии или средства, связанные с перемещенными ресурсами. Если вы хотите изменить подписку, необходимо также указать существующую или новую группу ресурсов.
 
-Для этой задачи можно использовать либо портал Azure, выполнив действия, описанные в этом разделе, или [Azure CLI](https://docs.microsoft.com/cli/azure/resource?view=azure-cli-latest#az-resource-move).
+Для этой задачи можно использовать либо портал Azure, выполнив действия, описанные в этом разделе, или [Azure CLI](/cli/azure/resource?view=azure-cli-latest#az-resource-move).
 
 1. Войдите на [портал Azure](https://portal.azure.com) с помощью учетных данных учетной записи Azure.
 
@@ -254,7 +254,7 @@ ms.locfileid: "79270333"
 
 ## <a name="delete-integration-account"></a>Удаление учетной записи интеграции
 
-Для этой задачи можно использовать либо портал Azure, выполнив действия, описанные в этом разделе, [Azure CLI](https://docs.microsoft.com/cli/azure/resource?view=azure-cli-latest#az-resource-delete)или [Azure PowerShell](/powershell/module/az.logicapp/remove-azintegrationaccount).
+Для этой задачи можно использовать либо портал Azure, выполнив действия, описанные в этом разделе, [Azure CLI](/cli/azure/resource?view=azure-cli-latest#az-resource-delete)или [Azure PowerShell](/powershell/module/az.logicapp/remove-azintegrationaccount).
 
 1. Войдите на [портал Azure](https://portal.azure.com) с помощью учетных данных учетной записи Azure.
 
@@ -276,7 +276,7 @@ ms.locfileid: "79270333"
 
    ![Чтобы подтвердить удаление, выберите "Да".](./media/logic-apps-enterprise-integration-create-integration-account/confirm-delete.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание торговых партнеров в учетной записи интеграции](../logic-apps/logic-apps-enterprise-integration-partners.md)
 * [Создание соглашений между партнерами в учетной записи интеграции](../logic-apps/logic-apps-enterprise-integration-agreements.md)

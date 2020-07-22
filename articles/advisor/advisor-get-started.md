@@ -3,12 +3,12 @@ title: Приступая к работе с Помощником по Azure
 description: Приступая к работе с Azure Advisor
 ms.topic: article
 ms.date: 02/01/2019
-ms.openlocfilehash: 8c2699030b1a6d428ddc2a4db40a66003824cf10
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e91049077502a6c0eedf0a4f979c073690c214da
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79259634"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85117868"
 ---
 # <a name="get-started-with-azure-advisor"></a>Приступая к работе с Помощником по Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "79259634"
 
 1. На панели мониторинга Помощника будет отображаться сводка рекомендаций для всех выбранных подписок.  Можно выбрать подписки, для которых необходимы рекомендации. Используйте для этого фильтр в раскрывающемся списке подписок.
 
-1. Чтобы получить рекомендации для определенной категории, щелкните одну из вкладок: **Высокий уровень доступности**, **Безопасность**, **Производительность** или **Стоимость**. 
+1. Чтобы получить рекомендации по определенной категории, щелкните одну из вкладок: **надежность**, **Безопасность**, **производительность**или **стоимость**. 
 
    ![Панель мониторинга Azure Advisor](./media/advisor-overview/advisor-dashboard.png)
 
@@ -124,7 +124,8 @@ Advisor отслеживает использование виртуальной
 Дополнительные сведения о Помощнике см. в таких разделах.
 
 - [Общие сведения об Azure Advisor](advisor-overview.md)
-- [Рекомендации Azure Advisor по высокой доступности](advisor-high-availability-recommendations.md)
+- [Рекомендации по обеспечению надежности Advisor](advisor-high-availability-recommendations.md)
 - [Рекомендации Azure Advisor по безопасности](advisor-security-recommendations.md)
 - [Рекомендации Azure Advisor по производительности](advisor-performance-recommendations.md)
-- [Рекомендации Azure Advisor по затратам](advisor-performance-recommendations.md)
+- [Рекомендации Azure Advisor по затратам](advisor-cost-recommendations.md)
+- [Рекомендации для оперативной работы Advisor](advisor-operational-excellence-recommendations.md)

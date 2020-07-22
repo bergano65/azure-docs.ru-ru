@@ -9,17 +9,17 @@ editor: ''
 ms.assetid: ''
 ms.service: storsimple
 ms.devlang: NA
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 07/03/2017
 ms.author: alkohli
-ms.openlocfilehash: ab874bbdcd47a4bfa9abfba721afa46d0f23a338
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 038084ba9ae43e14bc2eb42bf258912be27d062c
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79268032"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86527869"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-change-your-storsimple-passwords"></a>Изменение паролей StorSimple с помощью службы диспетчера устройств StorSimple
 
@@ -36,25 +36,25 @@ ms.locfileid: "79268032"
 
 2. В табличном списке устройств выберите и щелкните устройство, для которого требуется изменить пароль.
 
-    ![](./media/storsimple-8000-change-passwords/changepwd1.png)
+    ![Снимок экрана, показывающий службу StorSimple Device Manager. В разделе Управление выбираются устройства. В списке устройств выбрано одно устройство.](./media/storsimple-8000-change-passwords/changepwd1.png)
 
 3. В колонке **Параметры** выберите **Параметры устройства > Безопасность**.
 
-    ![](./media/storsimple-8000-change-passwords/changepwd2.png)
+    ![Снимок экрана, показывающий колонку параметров службы Device Manager. В разделе Параметры устройства выбран параметр безопасность.](./media/storsimple-8000-change-passwords/changepwd2.png)
 
 4. В колонке **Параметры безопасности** щелкните **Пароль**, чтобы изменить пароль администратора устройства.
 
-    ![](./media/storsimple-8000-change-passwords/changepwd3.png)
+    ![Снимок экрана, показывающий колонку "Параметры безопасности". Кнопка ввода пароля выделена.](./media/storsimple-8000-change-passwords/changepwd3.png)
 
 5. В колонке **Пароль** введите пароль администратора длиной от 8 до 15 символов. Пароль должен содержать не менее 3 букв в верхнем и нижнем регистре, цифр и специальных символов.
 
 6. Подтвердите пароль.
 
-    ![](./media/storsimple-8000-change-passwords/changepwd4.png)
+    ![Снимок экрана, показывающий колонку "пароль". В разделе пароль администратора устройства заполняются поля новый пароль и подтверждение пароля.](./media/storsimple-8000-change-passwords/changepwd4.png)
 
 7. Щелкните **Сохранить** и при появлении запроса на подтверждение щелкните **Да**.
 
-    ![](./media/storsimple-8000-change-passwords/changepwd6.png)
+    ![Снимок экрана, показывающий колонку "пароль". Кнопка сохранить выделена.](./media/storsimple-8000-change-passwords/changepwd6.png)
 
 Теперь пароль администратора устройства изменен. Этот новый пароль можно использовать для доступа к интерфейсу Windows PowerShell.
 
@@ -70,29 +70,29 @@ ms.locfileid: "79268032"
 
 2. В табличном списке устройств выберите и щелкните устройство StorSimple, для которого требуется изменить пароль Snapshot Manager.
 
-     ![](./media/storsimple-8000-change-passwords/changepwd1.png)
+     ![Снимок экрана, показывающий службу StorSimple Device Manager. В разделе Управление выбираются устройства. В списке устройств выбрано одно устройство.](./media/storsimple-8000-change-passwords/changepwd1.png)
 
 3. В колонке **Параметры** выберите **Параметры устройства > Безопасность**.
 
-     ![](./media/storsimple-8000-change-passwords/changepwd2.png)
+     ![Снимок экрана, показывающий колонку параметров службы Device Manager. В разделе Параметры устройства выбран параметр безопасность.](./media/storsimple-8000-change-passwords/changepwd2.png)
 
 4. В колонке **Параметры безопасности** щелкните **Пароль**, чтобы задать или изменить пароль Snapshot Manager для StorSimple.
 
-     ![](./media/storsimple-8000-change-passwords/changepwd3.png) 
+     ![Снимок экрана, показывающий колонку "Параметры безопасности". Кнопка ввода пароля выделена.](./media/storsimple-8000-change-passwords/changepwd3.png) 
 
 5. В колонке **Пароль** введите пароль длиной 14 или 15 символов. Убедитесь в том, что пароль состоит не менее чем из 3 букв в верхнем и нижнем регистре, цифр и специальных символов.
 
 6. Подтвердите пароль.
 
-     ![](./media/storsimple-8000-change-passwords/changepwd5.png)
+     ![Снимок экрана, показывающий колонку "пароль". В разделе Snapshot Manager пароль заполняются поля новый пароль и подтверждение пароля.](./media/storsimple-8000-change-passwords/changepwd5.png)
 
 7. Щелкните **Сохранить** и при появлении запроса на подтверждение щелкните **Да**.
 
-     ![](./media/storsimple-8000-change-passwords/changepwd6.png)
+     ![Снимок экрана, показывающий колонку "пароль". Кнопка сохранить выделена.](./media/storsimple-8000-change-passwords/changepwd6.png)
 
 Теперь пароль диспетчера моментальных снимков StorSimple должен быть обновлен.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше о [безопасности StorSimple](storsimple-8000-security.md).
 * Узнайте больше об [изменении конфигурации устройства](storsimple-8000-modify-device-config.md).
 * Узнайте больше об [использовании службы диспетчера устройств StorSimple для администрирования устройства StorSimple](storsimple-8000-manager-service-administration.md).

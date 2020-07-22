@@ -4,16 +4,16 @@ description: Узнайте, как настроить инструмент по
 author: twooley
 services: storage
 ms.service: storage
-ms.topic: article
+ms.topic: how-to
 ms.date: 01/15/2017
 ms.author: twooley
 ms.subservice: common
-ms.openlocfilehash: f65220a04a709bae5a6892bfd4105195cee35741
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: bd74caf391fcf1538bf920f41638b23672b47015
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75978418"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85512222"
 ---
 # <a name="setting-up-the-azure-importexport-tool"></a>Настройка инструмента импорта и экспорта Azure
 Инструмент импорта и экспорта Microsoft Azure используется в службе импорта и экспорта Microsoft Azure для подготовки и исправления дисков. Это средство может выполнять перечисленные ниже функции.  
@@ -24,7 +24,7 @@ ms.locfileid: "75978418"
 
 -   Это средство также позволяет восстанавливать на дисках поврежденные или отсутствующие файлы после завершения задания экспорта.  
 
-## <a name="prerequisites"></a>Предварительные требования  
+## <a name="prerequisites"></a>Предварительные условия  
 При подготовке дисков для задания импорта необходимо выполнить следующие условия.  
 
 -   У вас должна быть активная подписка Azure.  
@@ -247,11 +247,11 @@ Examples:
         es\drama /dstdir:movies/drama/ /skipwrite
 ```  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Подготовка жестких дисков для задания импорта](../storage-import-export-tool-preparing-hard-drives-import-v1.md)   
 * [Предварительный просмотр использования дисков для задания экспорта](../storage-import-export-tool-previewing-drive-usage-export-v1.md)   
 * [Просмотр состояния задания с помощью файлов журнала копирования](../storage-import-export-tool-reviewing-job-status-v1.md)   
-* [Восстановление задания импорта](../storage-import-export-tool-repairing-an-import-job-v1.md)   
-* [Исправление задания экспорта](../storage-import-export-tool-repairing-an-export-job-v1.md)   
-* [Устранение неполадок средства импорта и экспорта Azure](storage-import-export-tool-troubleshooting-v1.md)
+* [Подготовка задания импорта](../storage-import-export-tool-repairing-an-import-job-v1.md)   
+* [Подготовка задания экспорта](../storage-import-export-tool-repairing-an-export-job-v1.md)   
+* [Устранение неполадок со средством импорта и экспорта Azure](storage-import-export-tool-troubleshooting-v1.md)

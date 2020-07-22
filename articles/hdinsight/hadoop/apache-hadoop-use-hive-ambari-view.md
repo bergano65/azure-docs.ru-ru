@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/23/2020
-ms.openlocfilehash: 832caaed0816e3dd7d177f634209dea42e5312c7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: cc04a891bb32ede6c7bb72a339b728642cf343ed
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82192686"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86207828"
 ---
 # <a name="use-apache-ambari-hive-view-with-apache-hadoop-in-hdinsight"></a>Использование представления Hive Apache Ambari с Apache Hadoop в HDInsight
 
@@ -27,9 +27,9 @@ ms.locfileid: "82192686"
 
 ## <a name="run-a-hive-query"></a>Выполнение запроса Hive
 
-1. В [портал Azure](https://portal.azure.com/)выберите свой кластер.  Инструкции см. в разделе [список и отображение кластеров](../hdinsight-administer-use-portal-linux.md#showClusters) . Кластер открывается в новом представлении портала.
+1. На [портале Azure](https://portal.azure.com/) выберите свой кластер.  Инструкции см. в разделе [список и отображение кластеров](../hdinsight-administer-use-portal-linux.md#showClusters) . Кластер открывается в новом представлении портала.
 
-1. На **панели мониторинга кластера**выберите **представления Ambari**. Если запрашивается проверка подлинности, используйте имя пользователя и пароль учетной записи входа в кластер (по умолчанию — `admin`), указанные при создании кластера. Можно также выбрать `https://CLUSTERNAME.azurehdinsight.net/#/main/views` в браузере, где `CLUSTERNAME` — это имя кластера.
+1. На **панели мониторинга кластера**выберите **представления Ambari**. Если запрашивается проверка подлинности, используйте имя пользователя и пароль учетной записи входа в кластер (по умолчанию — `admin`), указанные при создании кластера. Можно также выбрать `https://CLUSTERNAME.azurehdinsight.net/#/main/views` в браузере `CLUSTERNAME` , где — это имя кластера.
 
 1. В списке представлений выберите __Представление Hive__.
 
@@ -75,8 +75,10 @@ ms.locfileid: "82192686"
 
 1. Когда запрос будет выполнен, на вкладке **Результаты** появятся результаты этой операции. Вот пример результата запроса:
 
-        loglevel       count
-        [ERROR]        3
+    ```output
+    loglevel       count
+    [ERROR]        3
+    ```
 
     Для просмотра сведений журнала, созданных заданием, можно использовать вкладку **Журнал** .
 
@@ -146,7 +148,7 @@ add jar /myudfs.jar;
 create temporary function myawesomeudf as 'com.myudfs.Awesome';
 ```
 
-Затем вы можете использовать эту функцию в своем запросе. Например, `SELECT myawesomeudf(name) FROM people;`.
+Затем вы можете использовать эту функцию в своем запросе. Пример: `SELECT myawesomeudf(name) FROM people;`.
 
 Дополнительные сведения об использовании определяемых пользователем функций с Hive в HDInsight см. в следующих статьях:
 

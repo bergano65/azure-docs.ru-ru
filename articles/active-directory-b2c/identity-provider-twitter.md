@@ -7,22 +7,22 @@ author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 08/08/2019
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 62a283efb93987d3c4a6564c9b25d2031c269559
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e07be01a0fb6d74b4dcef5cbc6ec129f95fd2e7d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80051470"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85387938"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-twitter-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью Twitter через Azure Active Directory B2C
 
 ## <a name="create-an-application"></a>Создание приложения
 
-Чтобы использовать Twitter в качестве поставщика удостоверений в Azure AD B2C, необходимо создать приложение Twitter. Если у вас еще нет учетной записи Twitter, вы можете зарегистрироваться по [https://twitter.com/signup](https://twitter.com/signup)адресу.
+Чтобы использовать Twitter в качестве поставщика удостоверений в Azure AD B2C, необходимо создать приложение Twitter. Если у вас еще нет учетной записи Twitter, вы можете зарегистрироваться по адресу [https://twitter.com/signup](https://twitter.com/signup) .
 
 1. Выполните вход на [веб-сайт разработчиков Twitter](https://developer.twitter.com/en/apps) с учетными данными для учетной записи Twitter.
 1. Выберите **Create an app** (Создать приложение).
@@ -35,11 +35,11 @@ ms.locfileid: "80051470"
 
 ## <a name="configure-twitter-as-an-identity-provider-in-your-tenant"></a>Настройка Twitter в качестве поставщика удостоверений в клиенте
 
-1. Войдите в [портал Azure](https://portal.azure.com/) как глобальный администратор клиента Azure AD B2C.
+1. Войдите на [портал Azure](https://portal.azure.com/) с правами глобального администратора клиента Azure AD B2C.
 1. Убедитесь, что используете каталог с клиентом Azure AD B2C, выбрав фильтр **Каталог и подписка** в меню вверху и каталог с вашим клиентом.
 1. Выберите **Все службы** в левом верхнем углу окна портала Azure, найдите службу **Azure AD B2C** и выберите ее.
 1. Выберите **поставщики удостоверений**, а затем выберите **Twitter**.
-1. Введите **имя**. Например, *Twitter*.
+1. Введите **Имя**. Например, *Twitter*.
 1. В поле **идентификатор клиента**введите ключ API потребителя созданного ранее приложения Twitter.
 1. В качестве **секрета клиента**введите записанный секретный ключ API-интерфейса потребителя.
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.

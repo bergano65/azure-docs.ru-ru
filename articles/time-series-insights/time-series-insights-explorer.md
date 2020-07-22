@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 04/14/2020
 ms.custom: seodec18
 ms.openlocfilehash: b564373780da5bba71bc46ddbac3dc69a0c94a4a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81382783"
 ---
 # <a name="azure-time-series-insights-explorer"></a>Обозреватель службы "Аналитика временных рядов Azure"
@@ -28,7 +28,7 @@ ms.locfileid: "81382783"
 > [!TIP]
 > Краткий обзор демонстрационной среды см. в [кратком руководстве по службе "аналитика временных рядов Azure](time-series-quickstart.md)".
 
-## <a name="video"></a>Видеоролик
+## <a name="video"></a>Видео
 
 ### <a name="learn-about-querying-data-by-using-the-time-series-insights-explorer-br"></a>Сведения о запросах данных с помощью обозревателя "аналитика временных рядов". </br>
 
@@ -37,7 +37,7 @@ ms.locfileid: "81382783"
 >[!NOTE]
 >Воспроизведение предыдущего видео <a href="https://www.youtube.com/watch?v=6ehNf6AJkFo">"Начало работы с аналитикой временных рядов с помощью акселератора решений Интернета вещей Azure".</a>
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем использовать обозреватель службы "Аналитика временных рядов Azure", необходимо сделать следующее:
 
@@ -123,7 +123,7 @@ ms.locfileid: "81382783"
 
 Теперь вы узнали о ключевых функциях, параметрах конфигурации и параметрах вывода, доступных в веб-приложении обозревателя "аналитика временных рядов".
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [диагностировать и устранять проблемы](time-series-insights-diagnose-and-solve-problems.md) в среде "аналитика временных рядов".
 

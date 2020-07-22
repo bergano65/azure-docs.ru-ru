@@ -6,19 +6,19 @@ author: rwike77
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: azuread-dev
-ms.topic: conceptual
+ms.topic: how-to
 ms.workload: identity
 ms.date: 02/18/2019
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: luleon, hirsin, paulgarn
 ROBOTS: NOINDEX
-ms.openlocfilehash: 5d92b43b47a20a75d2c8b6becb69cfee5829e80f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: bbd622ccb7aeecfff4d3dc744623105a593e6a67
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80154854"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85383586"
 ---
 # <a name="debug-saml-based-single-sign-on-to-applications-in-azure-active-directory"></a>Отладка единого входа на основе SAML в приложениях в Azure Active Directory
 
@@ -33,7 +33,7 @@ ms.locfileid: "80154854"
 Перейдите по одной из следующих ссылок, чтобы загрузить и установить расширение защищенного входа в мои приложения.
 
 - [Chrome](https://go.microsoft.com/fwlink/?linkid=866367)
-- [Microsoft ребро](https://go.microsoft.com/fwlink/?linkid=845176)
+- [Microsoft Edge](https://go.microsoft.com/fwlink/?linkid=845176)
 - [Firefox](https://go.microsoft.com/fwlink/?linkid=866366)
 
 ## <a name="test-saml-based-single-sign-on"></a>Тестирование единого входа на основе SAML
@@ -102,6 +102,6 @@ ms.locfileid: "80154854"
 1. Теперь, когда вы проверили ответ SAML, ознакомьтесь со статьей [Ошибка на странице приложения после входа в](../manage-apps/application-sign-in-problem-application-error.md) систему, чтобы получить рекомендации по устранению проблемы. 
 1. Если вы по-прежнему не можете войти в систему, можно попросить поставщика приложения, что отсутствует в ответе SAML.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда единый вход работает в вашем приложении, вы можете [автоматизировать подготовку пользователей и отменить подготовку к приложениям SaaS](../manage-apps/user-provisioning.md) или начать [работу с условным доступом](../conditional-access/app-based-conditional-access.md).

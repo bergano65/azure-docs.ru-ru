@@ -8,21 +8,22 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: quickstart
-ms.date: 02/10/2020
+ms.date: 05/26/2020
 ms.author: erhopf
+ms.custom: tracking-python
 zone_pivot_groups: programming-languages-set-one
-ms.openlocfilehash: fe2f4f2bea52650c2baa2ac3380b5b92f01c15eb
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: c3c3e2badfb9fe1678f09262e02809e9fa06560e
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83587054"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86147183"
 ---
 # <a name="quickstart-look-up-words-with-bilingual-dictionary"></a>Краткое руководство. Поиск слов в двуязычном словаре
 
 Из этого краткого руководства вы узнаете, как найти варианты перевода определенного термина и примеры их использования с помощью Переводчика.
 
-Для работы с этим кратким руководством требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с ресурсом Переводчика. Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](https://azure.microsoft.com/try/cognitive-services/), чтобы получить ключ подписки.
+Для работы с этим кратким руководством требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с ресурсом Переводчика.
 
 ::: zone pivot="programming-language-csharp"
 [!INCLUDE [C# quickstart](includes/dictionary-csharp.md)]

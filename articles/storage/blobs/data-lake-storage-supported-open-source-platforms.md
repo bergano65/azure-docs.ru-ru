@@ -9,13 +9,12 @@ ms.date: 02/26/2020
 ms.author: normesta
 ms.reviewer: stewu
 ms.openlocfilehash: 422b814f1d9738ca4f03d08dfecc6761b764f997
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78196031"
 ---
-# <a name="open-source-platforms-that-support-azure-data-lake-storage-gen2"></a>Платформы с открытым кодом, поддерживающие Azure Data Lake Storage 2-го поколения
+# <a name="open-source-platforms-that-support-azure-data-lake-storage-gen2"></a>Платформы с открытым кодом, поддерживающие Azure Data Lake Storage 2-го поколения
 
 В этой статье перечислены платформы с открытым кодом, которые поддерживают Data Lake Storage 2-го поколения.  
 
@@ -34,9 +33,9 @@ ms.locfileid: "78196031"
 | [Azure Databricks](https://azure.microsoft.com/services/databricks/) | 5.1+ | [Версии Databricks Runtime](https://docs.databricks.com/release-notes/runtime/databricks-runtime-ver.html) |
 |[Hortonworks](https://hortonworks.com/)| 3.1.x++ | [Настройка доступа к данным в облаке](https://docs.hortonworks.com/HDPDocuments/Cloudbreak/Cloudbreak-2.9.0/cloud-data-access/content/cb_configuring-access-to-adls2.html) |
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
-- [Известные проблемы с Azure Data Lake Storage 2-го поколения](data-lake-storage-known-issues.md)
+- [Известные проблемы с Azure Data Lake Storage 2-го поколения](data-lake-storage-known-issues.md)
 - [Функции хранилища BLOB-объектов, доступные в Azure Data Lake Storage 2-го поколения](data-lake-storage-supported-blob-storage-features.md)
-- [Службы Azure, которые поддерживают Azure Data Lake Storage 2-го поколения](data-lake-storage-supported-azure-services.md)
+- [Службы Azure, поддерживающие Azure Data Lake Storage 2-го поколения](data-lake-storage-supported-azure-services.md)
 - [Multi-protocol access on Azure Data Lake Storage (preview)](data-lake-storage-multi-protocol-access.md) (Доступ с использованием нескольких протоколов на Azure Data Lake Storage (предварительная версия))

@@ -6,27 +6,27 @@ ms.date: 09/04/2018
 ms.author: glenga
 ms.custom: fasttrack-edit
 ms.openlocfilehash: 819eed1eb4e32469bf0572a6548f5a2a44091ef0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77279718"
 ---
 В этой таблице показаны привязки, которые поддерживаются в основных версиях среды выполнения функций Azure:
 
 
-| Type | 1.x | 2. x и выше<sup>1</sup> | Триггер | Входные данные | Выходные данные |
+| Тип | 1.x | 2. x и выше<sup>1</sup> | Триггер | Входные данные | Выходные данные |
 | ---- | :-: | :-: | :------: | :---: | :----: |
 | [Хранилище BLOB-объектов](../articles/azure-functions/functions-bindings-storage-blob.md)          |✔|✔|✔|✔|✔|
 | [База данных Cosmos](../articles/azure-functions/functions-bindings-documentdb.md)               |✔|✔|✔|✔|✔|
-| [Сетка событий Azure](../articles/azure-functions/functions-bindings-event-grid.md)              |✔|✔|✔| |✔|
+| [Сетка событий](../articles/azure-functions/functions-bindings-event-grid.md)              |✔|✔|✔| |✔|
 | [Центры событий](../articles/azure-functions/functions-bindings-event-hubs.md)              |✔|✔|✔| |✔|
 | [Веб-перехватчики HTTP &](../articles/azure-functions/functions-bindings-http-webhook.md)             |✔|✔|✔| |✔|
 | [Центр Интернета вещей](../articles/azure-functions/functions-bindings-event-iot.md)             |✔|✔|✔| |✔|
 | [Таблицы Excel<br/>Microsoft Graph](../articles/azure-functions/functions-bindings-microsoft-graph.md)   ||✔| |✔|✔|
 | [Файлы OneDrive<br/>Microsoft Graph](../articles/azure-functions/functions-bindings-microsoft-graph.md) ||✔| |✔|✔|
 | [Электронная почта Outlook<br/>Microsoft Graph](../articles/azure-functions/functions-bindings-microsoft-graph.md)  ||✔| | |✔|
-| [События<br/>Microsoft Graph](../articles/azure-functions/functions-bindings-microsoft-graph.md)         ||✔|✔|✔|✔|
+| [<br/>События Microsoft Graph](../articles/azure-functions/functions-bindings-microsoft-graph.md)         ||✔|✔|✔|✔|
 | [Маркеры безопасности<br/>Microsoft Graph](../articles/azure-functions/functions-bindings-microsoft-graph.md)    ||✔| |✔| |
 | [Мобильные приложения](../articles/azure-functions/functions-bindings-mobile-apps.md)             |✔| | |✔|✔|
 | [Центры уведомлений](../articles/azure-functions/functions-bindings-notification-hubs.md) |✔|| | |✔|

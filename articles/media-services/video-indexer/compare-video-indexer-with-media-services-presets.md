@@ -15,10 +15,9 @@ ms.topic: article
 ms.date: 02/24/2020
 ms.author: juliako
 ms.openlocfilehash: dcfc6ea4afe23424e72c625518356be52f62bc81
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77602190"
 ---
 # <a name="compare-azure-media-services-v3-presets-and-video-indexer"></a>Сравнение предустановок Служб мультимедиа версии 3 и Индексатора видео 
@@ -31,10 +30,10 @@ ms.locfileid: "77602190"
 
 |Компонент|API Индексатора видео |Предустановки анализатора видео и звука<br/>в Службах мультимедиа Azure, версия 3|
 |---|---|---|
-|Аналитические сведения о мультимедиа|[Расширенная архитектура](video-indexer-output-json-v2.md) |[Основы](../latest/intelligence-concept.md)|
+|Аналитические сведения о мультимедиа|[Расширенная архитектура](video-indexer-output-json-v2.md) |[Основные сведения](../latest/intelligence-concept.md)|
 |Возможности|Ознакомьтесь с полным списком поддерживаемых возможностей в следующей статье: <br/> [Обзор](video-indexer-overview.md)|Возвращает только аналитические сведения о видео|
 |Выставление счетов|[Цены на службы мультимедиа](https://azure.microsoft.com/pricing/details/media-services/#analytics)|[Цены на службы мультимедиа](https://azure.microsoft.com/pricing/details/media-services/#analytics)|
-|Соответствие нормативным требованиям|Чтобы узнать о последних обновлениях для обеспечения соответствия требованиям, посетите [PDF-файл предложения соответствия требованиям Azure](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942/file/178110/23/Microsoft%20Azure%20Compliance%20Offerings.pdf) и выполните поиск по фразе "индексатор видео", чтобы проверить, соответствует ли он интересующему сертификату.|Чтобы узнать о последних обновлениях соответствия требованиям, посетите [PDF-файл](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942/file/178110/23/Microsoft%20Azure%20Compliance%20Offerings.pdf) и выполните поиск по запросу "службы мультимедиа", чтобы проверить, соответствует ли он интересующему сертификату.|
+|Соответствие нормативным требованиям|Чтобы узнать о последних обновлениях соответствия требованиям, посетите [Offerings.pdfсоответствие требованиям Azure](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942/file/178110/23/Microsoft%20Azure%20Compliance%20Offerings.pdf) и выполните поиск по запросу "индексатор видео", чтобы проверить, соответствует ли он интересующему сертификату.|Чтобы узнать о последних обновлениях соответствия требованиям, посетите [Offerings.pdfсоответствие требованиям Azure](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942/file/178110/23/Microsoft%20Azure%20Compliance%20Offerings.pdf) и найдите "службы мультимедиа", чтобы проверить, соответствует ли он интересующему нас сертификату.|
 |"Бесплатная пробная версия"|Восточная часть США|Недоступно|
 |Доступность по регионам|См. раздел [доступность Cognitive Services по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services) .|См. раздел [доступность служб мультимедиа по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=media-services).|
 

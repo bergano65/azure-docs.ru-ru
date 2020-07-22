@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: reference
 ms.date: 07/08/2019
 ms.author: cshoe
-ms.openlocfilehash: 1688fe848beb62731391bf4399a0dabec5265320
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 2dde784e2f67266b2f6c6ccd7da20f01546bbda7
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79277522"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86506491"
 ---
 # <a name="register-azure-functions-binding-extensions"></a>Регистрация расширений привязки функций Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "79277522"
 
 ## <a name="extension-bundles-for-local-development"></a><a name="extension-bundles"></a>Пакеты расширений для локальной разработки
 
-Пакеты расширений — это технология развертывания, позволяющая добавить совместимый набор функций расширений привязки к приложению-функции. При создании приложения добавляется предопределенный набор расширений. Пакеты расширений, определенные в пакете, совместимы друг с другом, что позволяет избежать конфликтов между пакетами. Пакеты расширений можно включить в файле host. JSON приложения.  
+Пакеты расширений — это технология развертывания, позволяющая добавить совместимый набор функций расширений привязки к приложению-функции. При создании приложения добавляется предопределенный набор расширений. Пакеты расширений, определенные в пакете, совместимы друг с другом, что позволяет избежать конфликтов между пакетами. Пакеты расширений можно включить в host.jsфайла приложения.  
 
 Вы можете использовать пакеты расширений с версией 2. x и более поздними версиями среды выполнения функций. При разработке локально убедитесь, что вы используете последнюю версию [Azure functions Core Tools](functions-run-local.md#v2).
 
@@ -41,15 +41,15 @@ ms.locfileid: "79277522"
 
 Если вы не используете пакеты расширений, необходимо установить пакет SDK для .NET Core 2. x на локальном компьютере перед установкой каких бы то ни было расширений привязки. Пакеты расширений удаляют это требование для локальной разработки. 
 
-Чтобы использовать пакеты расширений, обновите файл *Host. JSON* , включив в него следующую запись `extensionBundle`:
+Чтобы использовать пакеты расширений, обновите *host.js* для файла, включив в него следующую запись `extensionBundle` :
  
 [!INCLUDE [functions-extension-bundles-json](../../includes/functions-extension-bundles-json.md)]
 
 <a name="local-csharp"></a>
 
-## <a name="c-class-library-with-visual-studio"></a><a name="vs"></a>Библиотека\# классов C в Visual Studio
+## <a name="c-class-library-with-visual-studio"></a><a name="vs"></a>\#Библиотека классов C в Visual Studio
 
-В **Visual Studio**пакеты можно установить из консоли диспетчера пакетов с помощью команды [Install-Package](https://docs.microsoft.com/nuget/tools/ps-ref-install-package) , как показано в следующем примере:
+В **Visual Studio**пакеты можно установить из консоли диспетчера пакетов с помощью команды [Install-Package](/nuget/tools/ps-ref-install-package) , как показано в следующем примере:
 
 ```powershell
 Install-Package Microsoft.Azure.WebJobs.Extensions.ServiceBus -Version <TARGET_VERSION>
@@ -63,7 +63,7 @@ Install-Package Microsoft.Azure.WebJobs.Extensions.ServiceBus -Version <TARGET_V
 
 ## <a name="c-class-library-with-visual-studio-code"></a><a name="vs-code"></a>Библиотека классов C# с Visual Studio Code
 
-В **Visual Studio Code**установите пакеты для проекта библиотеки классов C# из командной строки с помощью команды [DotNet add package](https://docs.microsoft.com/dotnet/core/tools/dotnet-add-package) в .NET Core CLI. В следующем примере показано, как добавить привязку:
+В **Visual Studio Code**установите пакеты для проекта библиотеки классов C# из командной строки с помощью команды [DotNet add package](/dotnet/core/tools/dotnet-add-package) в .NET Core CLI. В следующем примере показано, как добавить привязку:
 
 ```terminal
 dotnet add package Microsoft.Azure.WebJobs.Extensions.<BINDING_TYPE_NAME> --version <TARGET_VERSION>
@@ -71,10 +71,10 @@ dotnet add package Microsoft.Azure.WebJobs.Extensions.<BINDING_TYPE_NAME> --vers
 
 Интерфейс .NET Core CLI можно использовать только при разработке в среде "Функции Azure" версии 2.х.
 
-Замените `<BINDING_TYPE_NAME>` на имя пакета, содержащего необходимую привязку. Нужную ссылочную статью привязки можно найти в [списке поддерживаемых привязок](./functions-triggers-bindings.md#supported-bindings).
+Замените на `<BINDING_TYPE_NAME>` имя пакета, содержащего необходимую привязку. Нужную ссылочную статью привязки можно найти в [списке поддерживаемых привязок](./functions-triggers-bindings.md#supported-bindings).
 
 Замените `<TARGET_VERSION>` в этом примере определенной версией пакета, например `3.0.0-beta5`. Допустимые версии перечислены на отдельных страницах пакета по адресу [NuGet.org](https://nuget.org). Основные версии, соответствующие функциям среды выполнения 1. x или 2. x, указаны в справочной статье для привязки.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 > [!div class="nextstepaction"]
 > [Пример триггера и привязки функции Azure](./functions-bindings-example.md)

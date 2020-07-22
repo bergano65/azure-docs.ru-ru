@@ -8,12 +8,12 @@ ms.topic: tutorial
 description: В этом руководстве описано, как использовать Azure Dev Spaces и Visual Studio Code для командной разработки в приложении Java в службе Kubernetes Azure.
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
 manager: gwallace
-ms.openlocfilehash: 352671b2fe31095b0ffcaffb49195071a456a892
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 8bfcf16d3fcf685f946eb38b0b47fce4f2feba5b
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "78245023"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86220241"
 ---
 # <a name="team-development-using-java-and-visual-studio-code-with-azure-dev-spaces"></a>Коллективная разработка с помощью Azure Dev Spaces в Java и Visual Studio Code
 
@@ -34,7 +34,7 @@ ms.locfileid: "78245023"
 * Некоторые разработчики прибегают к моделированию или макетированию многих зависимостей служб. Этот подход может помочь, но управление этими макетами может вскоре повлиять на стоимость разработки. Кроме того, этот подход приводит к значительным отличиям вашей среды от рабочей, что может приводить к появлению незначительных ошибок.
 * По этой причине выполнение любого типа интеграционного тестирования становится затруднительным. Фактически интеграционное тестирование можно выполнить только после фиксации, что означает, что вы обнаружите проблемы позже в цикле разработки.
 
-    ![](media/common/microservices-challenges.png)
+    ![Схема, на которой показаны сложности, возникающие при разработке микрослужб.](media/common/microservices-challenges.png)
 
 ### <a name="work-in-a-shared-dev-space"></a>Работа в общей среде разработки
 С помощью Azure Dev Spaces можно настроить *общую среду разработки* в Azure. Каждый разработчик может сосредоточиться только на своей части приложения и может итеративно разрабатывать *код до фиксации* в среде разработки, в которой уже содержатся все другие службы и облачные ресурсы, от которых зависят сценарии. Зависимости всегда актуальны, и разработчикам следует работать также, как в рабочей среде.
@@ -56,7 +56,7 @@ _Без_ использования сред Dev Spaces у Василия был
 
 1. Клонируйте [пример приложения Dev Spaces](https://github.com/Azure/dev-spaces): `git clone https://github.com/Azure/dev-spaces && cd dev-spaces`
 1. Проверьте удаленную ветвь *azds_updates*: `git checkout -b azds_updates origin/azds_updates`
-1. Выберите среду _dev_: `azds space select --name dev`. При появлении запроса на выбор родительского пространства выберите _\<none\>_ .
+1. Выберите среду _dev_: `azds space select --name dev`. При появлении запроса на выбор родительского пространства разработки выберите _\<none\>_ .
 1. Перейдите в каталог _mywebapi_ и выполните `azds up -d`
 1. Перейдите в каталог _webfrontend_ и выполните `azds up -d`
 1. Выполните `azds list-uris`, чтобы увидеть общедоступную конечную точку для _webfrontend_
@@ -94,7 +94,7 @@ azds space select --name scott
 
 В соответствии с нашей вводной гипотезой мы использовали имя _scott_ для нового пространства, чтобы коллеги могли определить, кто работает в нем. Его можно назвать как угодно, независимо от значения названия, например _sprint4_ или _demo_. В любом случае _dev_ служит основой для всех разработчиков, работающих над частью этого приложения.
 
-![](media/common/ci-cd-space-setup.png)
+![Схема, на которой показана простая настройка пространства CI/CD.](media/common/ci-cd-space-setup.png)
 
 Выполните команду `azds space list`, чтобы просмотреть список всех пространств в среде разработки. Столбец _Выбрано_ указывает, какое пространство в данный момент выбрано (true/false). В вашем случае пространство с именем _dev/scott_ было автоматически выбрано при создании. Вы можете выбрать другое пространство в любое время с помощью команды `azds space select`.
 

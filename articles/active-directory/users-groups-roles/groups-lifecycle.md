@@ -9,18 +9,17 @@ editor: ''
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
-ms.topic: article
+ms.topic: how-to
 ms.date: 03/13/2020
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 562b551bc8a46a45135bf6a9a8e328b4b0e74f98
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 182f51a150c2ef944b0104b73c63028e915c1a4a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80048243"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84728339"
 ---
 # <a name="configure-the-expiration-policy-for-office-365-groups"></a>Настройка политики срока действия для групп Office 365
 
@@ -65,7 +64,7 @@ ms.locfileid: "80048243"
 Роль | Разрешения
 -------- | --------
 Глобальный администратор, администратор группы или администратор пользователей | Может создавать, читать, обновлять и удалять параметры политики срока действия групп Office 365<br>Может обновить любую группу Office 365
-User (Пользователь) | Может обновлять группу Office 365, которой владеет<br>Может восстанавливать группу Office 365, которой владеет<br>Может считывать параметры политики срока действия
+Пользователь | Может обновлять группу Office 365, которой владеет<br>Может восстанавливать группу Office 365, которой владеет<br>Может считывать параметры политики срока действия
 
 Дополнительные сведения о разрешениях на восстановление удаленных групп см. в статье [Восстановление удаленной группы Office 365 в Azure Active Directory](groups-restore-deleted.md).
 
@@ -134,7 +133,7 @@ User (Пользователь) | Может обновлять группу Off
    Connect-AzureAD
    ```
 
-1. Настройте параметры срока действия с помощью командлета New-AzureADMSGroupLifecyclePolicy, чтобы задать время существования всех групп Office 365 в Организации Azure AD до 365 дней. Уведомления об обновлении для групп Office 365 без владельцев будут отправляться наemailaddress@contoso.com"".
+1. Настройте параметры срока действия с помощью командлета New-AzureADMSGroupLifecyclePolicy, чтобы задать время существования всех групп Office 365 в Организации Azure AD до 365 дней. Уведомления об обновлении для групп Office 365 без владельцев будут отправляться на " emailaddress@contoso.com ".
   
    ``` PowerShell
    New-AzureADMSGroupLifecyclePolicy -GroupLifetimeInDays 365 -ManagedGroupTypes All -AlternateNotificationEmails emailaddress@contoso.com
@@ -144,7 +143,7 @@ User (Пользователь) | Может обновлять группу Off
 
    - идентификатор политики;
    - Срок жизни всех групп Office 365 в Организации Azure AD составляет 365 дней.
-   - Уведомления об обновлении для групп Office 365 без владельцев будут отправляться наemailaddress@contoso.com"."
+   - Уведомления об обновлении для групп Office 365 без владельцев будут отправляться на " emailaddress@contoso.com ."
   
    ```powershell
    Get-AzureADMSGroupLifecyclePolicy

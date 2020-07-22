@@ -8,17 +8,17 @@ ms.topic: troubleshooting
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 5825466c099a8c57477f2d9d0420da74ccb2e96d
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
+ms.openlocfilehash: aad3bffeba4395ba415fb99a3667d04d18769a47
+ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82615400"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86026701"
 ---
 # <a name="tenant-and-host-pool-creation"></a>Создание пула узлов и клиента
 
 >[!IMPORTANT]
->Это содержимое относится к выпуску 2019, который не поддерживает Azure Resource Manager объекты виртуальных рабочих столов Windows. Если вы пытаетесь управлять Azure Resource Manager объектов виртуальных рабочих столов Windows, представленных в обновлении пружины 2020, см. [эту статью](../troubleshoot-set-up-issues.md).
+>Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Если вы хотите обеспечить управление объектами Azure Resource Manager для Виртуального рабочего стола Windows, представленными в обновлении за весну 2020 г., см. [эту статью](../troubleshoot-set-up-issues.md).
 
 В этой статье рассматриваются проблемы во время первоначальной настройки клиента виртуальных рабочих столов Windows и соответствующей инфраструктуры пула узлов сеансов.
 
@@ -28,17 +28,35 @@ ms.locfileid: "82615400"
 
 ## <a name="acquiring-the-windows-10-enterprise-multi-session-image"></a>Получение многосеансового образа Windows 10 Корпоративная
 
-Чтобы использовать многосеансовый образ Windows 10 Enterprise, перейдите в Azure Marketplace, выберите начало **работы** > с**Microsoft Windows 10** > и [Windows 10 Корпоративная для виртуальных рабочих столов версии 1809](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftwindowsdesktop.windows-10?tab=PlansAndPrice).
+Чтобы использовать многосеансовый образ Windows 10 Enterprise, перейдите в Azure Marketplace, выберите начало **работы**с  >  **Microsoft Windows 10** > и [Windows 10 Корпоративная для виртуальных рабочих столов версии 1809](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftwindowsdesktop.windows-10?tab=PlansAndPrice).
 
-![Снимок экрана: выбор Windows 10 Корпоративная для виртуальных рабочих столов версии 1809.](../media/AzureMarketPlace.png)
+> [!div class="mx-imgBorder"]
+> ![Снимок экрана: выбор Windows 10 Корпоративная для виртуальных рабочих столов версии 1809.](../media/AzureMarketPlace.png)
 
 ## <a name="creating-windows-virtual-desktop-tenant"></a>Создание клиента виртуальных рабочих столов Windows
 
 В этом разделе рассматриваются потенциальные проблемы при создании клиента виртуальных рабочих столов Windows.
 
+### <a name="error-aadsts650052-the-app-needs-access-to-a-service"></a>Ошибка: AADSTS650052 приложению требуется доступ к службе.
+
+Пример необработанной ошибки:
+
+```Error
+AADSTS650052 Message The app needs access to a service(\"{name}\") that your organization
+\"{organization}\" has not subscribed to or enabled. Contact your IT Admin to review the 
+configuration of your service subscriptions.650052 Message The app needs access to a service
+(\"{name}\") that your organization \"{organization}\" has not subscribed to or enabled. 
+Contact your IT Admin to review the configuration of your service subscriptions.
+```
+
+**Причина:** Не предоставлено согласие на виртуальный рабочий стол Windows в экземпляре Azure Active Directory.
+
+**Исправление:** [Следуйте этому руководству](https://docs.microsoft.com/azure/virtual-desktop/virtual-desktop-fall-2019/tenant-setup-azure-active-directory#grant-permissions-to-windows-virtual-desktop) , чтобы предоставить согласие.
+
 ### <a name="error-the-user-isnt-authorized-to-query-the-management-service"></a>Ошибка: пользователь не имеет разрешения на запрос к службе управления
 
-![Снимок экрана окна PowerShell, в котором пользователь не имеет права выполнять запросы к службе управления.](../media/UserNotAuthorizedNewTenant.png)
+> [!div class="mx-imgBorder"]
+> ![Снимок экрана окна PowerShell, в котором пользователь не имеет права выполнять запросы к службе управления.](../media/UserNotAuthorizedNewTenant.png)
 
 Пример необработанной ошибки:
 
@@ -59,7 +77,8 @@ ms.locfileid: "82615400"
 
 **Исправление:** Следуйте инструкциям в статье [назначение роли приложения тенанткреатор пользователю в клиенте Azure Active Directory](tenant-setup-azure-active-directory.md#assign-the-tenantcreator-application-role). После выполнения инструкций Вы получите пользователя, назначенного роли Тенанткреатор.
 
-![Снимок экрана с назначенной ролью Тенанткреатор.](../media/TenantCreatorRoleAssigned.png)
+> [!div class="mx-imgBorder"]
+> ![Снимок экрана с назначенной ролью Тенанткреатор.](../media/TenantCreatorRoleAssigned.png)
 
 ## <a name="creating-windows-virtual-desktop-session-host-vms"></a>Создание виртуальных машин узла сеансов виртуальных рабочих столов Windows
 
@@ -71,7 +90,8 @@ ms.locfileid: "82615400"
 
 ### <a name="error-when-using-the-link-from-github-the-message-create-a-free-account-appears"></a>Ошибка. при использовании ссылки из GitHub появляется сообщение "создание бесплатной учетной записи"
 
-![Снимок экрана для создания бесплатной учетной записи.](../media/be615904ace9832754f0669de28abd94.png)
+> [!div class="mx-imgBorder"]
+> ![Снимок экрана для создания бесплатной учетной записи.](../media/be615904ace9832754f0669de28abd94.png)
 
 **Причина 1:** В учетной записи, используемой для входа в Azure, нет активных подписок, или используемая учетная запись не имеет разрешений на просмотр подписок.
 
@@ -94,7 +114,8 @@ ms.locfileid: "82615400"
 
 ### <a name="error-you-receive-template-deployment-is-not-valid-error"></a>Ошибка: появляется сообщение об ошибке "развертывание шаблона недопустимо"
 
-![Снимок экрана: "развертывание шаблона... является недопустимым "ошибка](../media/troubleshooting-marketplace-validation-error-generic.png)
+> [!div class="mx-imgBorder"]
+> ![Снимок экрана: "развертывание шаблона... является недопустимым "ошибка](../media/troubleshooting-marketplace-validation-error-generic.png)
 
 Перед выполнением конкретных действий необходимо проверить журнал действий, чтобы просмотреть подробные сведения об ошибке при проверке развертывания.
 
@@ -103,10 +124,14 @@ ms.locfileid: "82615400"
 1. Выйдите из текущего предложения по развертыванию Azure Marketplace.
 2. В верхней строке поиска найдите и выберите **Журнал действий**.
 3. Найдите действие **Проверка развертывания** с состоянием **Ошибка** и выберите действие.
-   ![Снимок экрана: отдельное действие * * проверить развертывание * * с состоянием * * ошибка * *](../media/troubleshooting-marketplace-validation-error-activity-summary.png)
+   
+   > [!div class="mx-imgBorder"]
+   > ![Снимок экрана: отдельное действие * * проверить развертывание * * с состоянием * * ошибка * *](../media/troubleshooting-marketplace-validation-error-activity-summary.png)
 
 4. Выберите JSON, а затем прокрутите вниз до нижней части экрана, пока не увидите поле "statusMessage".
-   ![Снимок экрана невыполненной активности с красной рамкой вокруг свойства statusMessage текста JSON.](../media/troubleshooting-marketplace-validation-error-json-boxed.png)
+   
+   > [!div class="mx-imgBorder"]
+   > ![Снимок экрана невыполненной активности с красной рамкой вокруг свойства statusMessage текста JSON.](../media/troubleshooting-marketplace-validation-error-json-boxed.png)
 
 Если шаблон операции выходит за пределы квоты, можно выполнить одно из следующих действий, чтобы устранить эту проблему.
 
@@ -122,9 +147,10 @@ ms.locfileid: "82615400"
 3. После определения ошибки используйте сообщение об ошибке и ресурсы в статье [Устранение распространенных ошибок развертывания Azure с Azure Resource Manager](../../azure-resource-manager/resource-manager-common-deployment-errors.md) для решения проблемы.
 4. Удалите все ресурсы, созданные во время предыдущего развертывания, и повторите попытку развертывания шаблона.
 
-### <a name="error-your-deployment-failedhostnamejoindomain"></a>Ошибка: не удалось выполнить развертывание...\<. имя узла>/жоиндомаин
+### <a name="error-your-deployment-failedhostnamejoindomain"></a>Ошибка: сбой развертывания... \<hostname> /жоиндомаин
 
-![Снимок экрана сбоя развертывания.](../media/e72df4d5c05d390620e07f0d7328d50f.png)
+> [!div class="mx-imgBorder"]
+> ![Снимок экрана сбоя развертывания.](../media/e72df4d5c05d390620e07f0d7328d50f.png)
 
 Пример необработанной ошибки:
 
@@ -165,7 +191,8 @@ ms.locfileid: "82615400"
 
 ### <a name="error-vmextensionprovisioningerror"></a>Ошибка: Вмекстенсионпровисионинжеррор
 
-![Снимок экрана развертывания: не удалось выполнить состояние подготовки терминала.](../media/7aaf15615309c18a984673be73ac969a.png)
+> [!div class="mx-imgBorder"]
+> ![Снимок экрана развертывания: не удалось выполнить состояние подготовки терминала.](../media/7aaf15615309c18a984673be73ac969a.png)
 
 **Причина 1:** Временная ошибка в среде виртуальных рабочих столов Windows.
 
@@ -175,7 +202,8 @@ ms.locfileid: "82615400"
 
 ### <a name="error-the-admin-username-specified-isnt-allowed"></a>Ошибка: указанное имя администратора не разрешено
 
-![Снимок экрана развертывания, в котором указанное административное сообщение не разрешено.](../media/f2b3d3700e9517463ef88fa41875bac9.png)
+> [!div class="mx-imgBorder"]
+> ![Снимок экрана развертывания, в котором указанное административное сообщение не разрешено.](../media/f2b3d3700e9517463ef88fa41875bac9.png)
 
 Пример необработанной ошибки:
 
@@ -194,7 +222,8 @@ ms.locfileid: "82615400"
 
 ### <a name="error-vm-has-reported-a-failure-when-processing-extension"></a>Ошибка: виртуальная машина сообщила об ошибке при обработке расширения
 
-![Снимок экрана: операция с ресурсом завершена с состоянием подготовки терминала в развертывании.](../media/49c4a1836a55d91cd65125cf227f411f.png)
+> [!div class="mx-imgBorder"]
+> ![Снимок экрана: операция с ресурсом завершена с состоянием подготовки терминала в развертывании.](../media/49c4a1836a55d91cd65125cf227f411f.png)
 
 Пример необработанной ошибки:
 
@@ -220,7 +249,8 @@ ms.locfileid: "82615400"
 
 ### <a name="error-deploymentfailed--powershell-dsc-configuration-firstsessionhost-completed-with-errors"></a>Ошибка: DeploymentFailed — конфигурация PowerShell DSC "Фирстсессионхост" завершена с ошибками
 
-![Снимок экрана развертывания с конфигурацией PowerShell DSC "Фирстсессионхост" завершился с ошибками.](../media/64870370bcbe1286906f34cf0a8646ab.png)
+> [!div class="mx-imgBorder"]
+> ![Снимок экрана развертывания с конфигурацией PowerShell DSC "Фирстсессионхост" завершился с ошибками.](../media/64870370bcbe1286906f34cf0a8646ab.png)
 
 Пример необработанной ошибки:
 
@@ -349,7 +379,8 @@ New-RdsRoleAssignment -TenantName <Windows Virtual Desktop tenant name> -RoleDef
 
 ### <a name="error-user-requires-azure-multi-factor-authentication-mfa"></a>Ошибка: пользователю требуется многофакторная идентификация Azure (MFA)
 
-![Снимок экрана развертывания не удалось выполнить из-за отсутствия многофакторной проверки подлинности (MFA)](../media/MFARequiredError.png)
+> [!div class="mx-imgBorder"]
+> ![Снимок экрана развертывания не удалось выполнить из-за отсутствия многофакторной проверки подлинности (MFA)](../media/MFARequiredError.png)
 
 Пример необработанной ошибки:
 
@@ -375,14 +406,20 @@ New-RdsRoleAssignment -TenantName <Windows Virtual Desktop tenant name> -RoleDef
 - ИссервицепринЦипал: **true**
 - Aadtenantid и: идентификатор клиента Azure AD созданного субъекта-службы.
 
+### <a name="error-vmsubnet-not-available-when-configuring-virtual-networks"></a>Ошибка: подсеть vmSubnet недоступна при настройке виртуальных сетей
+
+**Причина:** В шаблоне ВВД Marketplace пользовательский интерфейс отображает только те подсети, которые имеют по крайней мере столько доступных IP-адресов, сколько указано в шаблоне. Фактическое число доступных IP-адресов в подсети должно быть равно количеству новых виртуальных машин, которые развертываются, но не могут быть вычислены текущим пользовательским интерфейсом.
+
+**Исправление:** Можно указать подсеть по крайней мере с количеством доступных IP-адресов в качестве числа добавляемых виртуальных машин, не используя пользовательский интерфейс Marketplace. это можно сделать, указав имя подсети в параметре "**ексистингсубнетнаме**" при повторном [развертывании существующего развертывания](expand-existing-host-pool-2019.md#redeploy-from-azure) или [развертывании с помощью базового шаблона ARM из GitHub](create-host-pools-arm-template.md#run-the-azure-resource-manager-template-for-provisioning-a-new-host-pool).
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Общие сведения об устранении неполадок с виртуальным рабочим столом Windows и сведениями о эскалации см. в разделе [Обзор устранения неполадок, обратная связь и поддержка](troubleshoot-set-up-overview-2019.md).
-- Сведения об устранении неполадок при настройке виртуальной машины в виртуальном рабочем столе Windows см. в разделе [Конфигурация виртуальной машины узла сеанса](troubleshoot-vm-configuration-2019.md).
+- Общие сведения об устранении неполадок с Виртуальным рабочим столом Windows и о путях эскалации см. в статье [Общие сведения об устранении неисправностей, отзывы и поддержка](troubleshoot-set-up-overview-2019.md).
+- Инструкции по устранению неполадок при настройке виртуальной машины через Виртуальный рабочий стол Windows см. в статье [Конфигурация виртуальной машины узла сеанса](troubleshoot-vm-configuration-2019.md).
 - Сведения об устранении неполадок подключения клиентов к виртуальным рабочим столам Windows см. в статье [подключения к службе виртуальных рабочих столов Windows](troubleshoot-service-connection-2019.md).
 - Сведения об устранении неполадок, связанных с удаленный рабочий стол клиентами, см. [в разделе Устранение неполадок клиента удаленный рабочий стол](../troubleshoot-client.md)
-- Сведения об устранении неполадок при использовании PowerShell с виртуальным рабочим столом Windows см. в статье [Windows Virtual Desktop PowerShell](troubleshoot-powershell-2019.md).
+- Инструкции по устранению неполадок при использовании PowerShell через Виртуальный рабочий стол Windows см. в статье [Виртуальный рабочий стол Windows — PowerShell](troubleshoot-powershell-2019.md).
 - Дополнительные сведения о службе см. в разделе [Среда виртуальных рабочих столов Windows](environment-setup-2019.md).
-- Руководство по устранению неполадок см. в разделе [учебник. Устранение неполадок диспетчер ресурсов развертываний шаблонов](../../azure-resource-manager/templates/template-tutorial-troubleshoot.md).
+- Сведения об устранении неполадок см. в статье [Tutorial: Troubleshoot Resource Manager template deployments](../../azure-resource-manager/templates/template-tutorial-troubleshoot.md) (Руководство. Устранение неполадок развертывания шаблонов Resource Manager)
 - Сведения о действиях аудита см. в статье [Операции аудита с помощью Resource Manager](../../azure-resource-manager/management/view-activity-logs.md).
 - Дополнительные сведения об определении ошибок во время развертывания см. в статье [Просмотр операций развертывания с помощью портала Azure](../../azure-resource-manager/templates/deployment-history.md).

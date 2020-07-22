@@ -9,17 +9,17 @@ editor: ''
 ms.assetid: 31879821-b599-4609-a7f4-d4b0f658a933
 ms.service: storsimple
 ms.devlang: NA
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: NA
 ms.workload: na
 ms.date: 11/11/2016
 ms.author: alkohli
-ms.openlocfilehash: dbab2aaab2c12bef07748f54e5864d042f1c982a
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
+ms.openlocfilehash: d806d8a04dc1bd8547808d20c77bfec310f7dd06
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "60302505"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85507489"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-view-jobs-for-the-storsimple-virtual-array"></a>Использование службы диспетчера устройств StorSimple для просмотра заданий виртуального массива StorSimple
 ## <a name="overview"></a>Обзор
@@ -63,6 +63,6 @@ ms.locfileid: "60302505"
 
 Эти ошибки свойственны заданиям резервного копирования, восстановления, обновления и отработки отказа. Если виртуальная машина подготовлена в Hyper-V, она в конечном итоге синхронизирует время с гипервизором. После этого можно перезапустить задание.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 [Узнайте, как использовать локальный веб-интерфейс для администрирования виртуального массива StorSimple](storsimple-ova-web-ui-admin.md).
 

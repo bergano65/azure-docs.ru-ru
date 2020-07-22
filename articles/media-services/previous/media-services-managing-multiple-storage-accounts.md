@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako
-ms.openlocfilehash: 252d5e551dad56108ad952eb0c7c3b39df0585d5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 2796a2be5c779124db4dd7f1137ebbff4094705d
+ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "69901783"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86056707"
 ---
 # <a name="managing-media-services-assets-across-multiple-storage-accounts"></a>Управление ресурсами Служб мультимедиа в нескольких учетных записях хранения  
 
@@ -27,11 +27,11 @@ ms.locfileid: "69901783"
 * балансирование нагрузки ваших ресурсов-контейнеров между несколькими учетными записями хранения;
 * масштабирование служб мультимедиа для больших объемов обработки содержимого (сейчас действует ограничение в 500 ТБ на одну учетную запись хранения). 
 
-В этой статье показано, как подключить несколько учетных записей хранения к учетной записи служб мультимедиа с помощью [интерфейсов API Azure Resource Manager](/rest/api/media/operations/azure-media-services-rest-api-reference) и [Powershell](/powershell/module/az.media). Здесь также описывается, как указывать другие учетные записи хранения при создании файлов с помощью пакета SDK служб мультимедиа. 
+В этой статье показано, как подключить несколько учетных записей хранения к учетной записи служб мультимедиа с помощью [Azure Resource Manager API](/rest/api/media/operations/azure-media-services-rest-api-reference) и [PowerShell](/powershell/module/az.media). Здесь также описывается, как указывать другие учетные записи хранения при создании файлов с помощью пакета SDK служб мультимедиа. 
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-## <a name="considerations"></a>Рекомендации
+## <a name="considerations"></a>Особенности
 
 При подключении нескольких учетных записей хранения к своей учетной записи служб мультимедиа обратите внимание на следующее.
 
@@ -48,19 +48,21 @@ ms.locfileid: "69901783"
 
 Чтобы присоединить учетные записи хранения к учетной записи AMS, используйте [интерфейсы api Azure Resource Manager](/rest/api/media/operations/azure-media-services-rest-api-reference) и [PowerShell](/powershell/module/az.media), как показано в следующем примере:
 
-    $regionName = "West US"
-    $subscriptionId = " xxxxxxxx-xxxx-xxxx-xxxx- xxxxxxxxxxxx "
-    $resourceGroupName = "SkyMedia-USWest-App"
-    $mediaAccountName = "sky"
-    $storageAccount1Name = "skystorage1"
-    $storageAccount2Name = "skystorage2"
-    $storageAccount1Id = "/subscriptions/$subscriptionId/resourceGroups/$resourceGroupName/providers/Microsoft.Storage/storageAccounts/$storageAccount1Name"
-    $storageAccount2Id = "/subscriptions/$subscriptionId/resourceGroups/$resourceGroupName/providers/Microsoft.Storage/storageAccounts/$storageAccount2Name"
-    $storageAccount1 = New-AzMediaServiceStorageConfig -StorageAccountId $storageAccount1Id -IsPrimary
-    $storageAccount2 = New-AzMediaServiceStorageConfig -StorageAccountId $storageAccount2Id
-    $storageAccounts = @($storageAccount1, $storageAccount2)
+```azurepowershell
+$regionName = "West US"
+$subscriptionId = " xxxxxxxx-xxxx-xxxx-xxxx- xxxxxxxxxxxx "
+$resourceGroupName = "SkyMedia-USWest-App"
+$mediaAccountName = "sky"
+$storageAccount1Name = "skystorage1"
+$storageAccount2Name = "skystorage2"
+$storageAccount1Id = "/subscriptions/$subscriptionId/resourceGroups/$resourceGroupName/providers/Microsoft.Storage/storageAccounts/$storageAccount1Name"
+$storageAccount2Id = "/subscriptions/$subscriptionId/resourceGroups/$resourceGroupName/providers/Microsoft.Storage/storageAccounts/$storageAccount2Name"
+$storageAccount1 = New-AzMediaServiceStorageConfig -StorageAccountId $storageAccount1Id -IsPrimary
+$storageAccount2 = New-AzMediaServiceStorageConfig -StorageAccountId $storageAccount2Id
+$storageAccounts = @($storageAccount1, $storageAccount2)
     
-    Set-AzMediaService -ResourceGroupName $resourceGroupName -AccountName $mediaAccountName -StorageAccounts $storageAccounts
+Set-AzMediaService -ResourceGroupName $resourceGroupName -AccountName $mediaAccountName -StorageAccounts $storageAccounts
+```
 
 ### <a name="support-for-cool-storage"></a>Поддержка "холодного" хранилища
 
@@ -280,6 +282,6 @@ namespace MultipleStorageAccounts
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

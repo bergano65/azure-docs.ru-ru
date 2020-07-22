@@ -9,10 +9,9 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 0dd5ede110255b6e53bbc397e683e66b3beffc65
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77019627"
 ---
 # <a name="connect-from-on-premises-to-cloudsimple-using-expressroute"></a>Подключение из локальной среды к Клаудсимпле с помощью ExpressRoute
@@ -21,7 +20,7 @@ ms.locfileid: "77019627"
 
 [![Подключение к локальной системе ExpressRoute — Global Reach](media/cloudsimple-global-reach-connection.png)](media/cloudsimple-global-reach-connection.png)
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 Для установления подключения Global Reach из локальной среды требуется блок сетевых адресов **/29** .  Адресное пространство/29 используется для транзитной сети между каналами ExpressRoute.  Транзитная сеть не должна перекрываться ни с одной из виртуальных сетей Azure, локальных сетей или Клаудсимпле частными облачными сетями.
 
@@ -61,7 +60,7 @@ ms.locfileid: "77019627"
     [![Копия авторизации канала ExpressRoute](media/azure-expressroute-transit-authorization-copy.png)](media/azure-expressroute-transit-authorization-copy.png)
 
     > [!IMPORTANT]
-    > **Идентификатор ресурса** должен быть скопирован из пользовательского интерфейса и должен быть в формате ```/subscriptions/<subscription-ID>/resourceGroups/<resource-group-name>/providers/Microsoft.Network/expressRouteCircuits/<express-route-circuit-name>``` , если он предоставляется для поддержки.
+    > **Идентификатор ресурса** должен быть скопирован из пользовательского интерфейса и должен быть в формате, ```/subscriptions/<subscription-ID>/resourceGroups/<resource-group-name>/providers/Microsoft.Network/expressRouteCircuits/<express-route-circuit-name>``` если он предоставляется для поддержки.
 
 6. Отправьте билет с <a href="https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest" target="_blank">поддержкой</a> создаваемого подключения.
     * Тип проблемы: **Техническая**

@@ -6,10 +6,9 @@ author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 05/06/2020
 ms.openlocfilehash: 21e98ee9dc59e7520fb715f1146e492b9198f883
-ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82891607"
 ---
 # <a name="dependency-auto-collection"></a>Автоматический сбор зависимостей
@@ -84,9 +83,9 @@ ms.locfileid: "82891607"
 
 | Библиотеки обмена данными | Версии |
 | ------------------------|----------|
-| [XMLHttpRequest](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest) | All |
+| [XMLHttpRequest](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest) | Все |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Настройка отслеживания зависимостей для платформы [.NET](../../azure-monitor/app/asp-net-dependencies.md).
 - Настройка отслеживания зависимостей для [Java](../../azure-monitor/app/java-agent.md).

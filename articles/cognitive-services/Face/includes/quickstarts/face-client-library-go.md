@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.topic: include
 ms.date: 01/27/2020
 ms.author: pafarley
-ms.openlocfilehash: 4a96f0e887bb04aea6d451e08bd5d26d1cc6edca
-ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
+ms.openlocfilehash: 887b9fa62b89c500ef3b2b0164ba0281f911621e
+ms.sourcegitcommit: 55b2bbbd47809b98c50709256885998af8b7d0c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82587870"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85073324"
 ---
 Начало работы с клиентской библиотекой Распознавания лиц для Go. Здесь приведены действия по установке библиотеки и тестированию примеров кода для выполнения базовых задач. В службе "Распознавание лиц" доступны передовые алгоритмы обнаружения и распознавания лиц на изображениях.
 
@@ -30,66 +30,14 @@ ms.locfileid: "82587870"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
 * Последняя версия [Go](https://golang.org/dl/).
+* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services/).
+* Получив подписку Azure, перейдите к <a href="https://portal.azure.com/#create/Microsoft.CognitiveServicesFace"  title="Создание ресурса Распознавания лиц"  target="_blank">созданию ресурса Распознавания лиц<span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку. После развертывания щелкните **Перейти к ресурсам**.
+    * Для подключения приложения к API Распознавания лиц потребуется ключ и конечная точка из созданного ресурса. Ключ и конечная точка будут вставлены в приведенный ниже код в кратком руководстве.
+    * Используйте бесплатную ценовую категорию (`F0`), чтобы опробовать службу, а затем выполните обновление до платного уровня для рабочей среды.
+* После получения ключа и конечной точки [задайте переменные среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключа и конечной точки с именами `FACE_SUBSCRIPTION_KEY` и `FACE_ENDPOINT` соответственно.
 
-## <a name="set-up"></a>Настройка
-
-### <a name="create-a-face-azure-resource"></a>Создание ресурса API Распознавания лиц 
-
-Начните использовать службу "Распознавание лиц" с создания ресурса Azure. Выберите ресурс подходящего типа:
-
-* [Пробный ресурс](https://azure.microsoft.com/try/cognitive-services/#decision) (подписка Azure не требуется): 
-    * срок действия —7 дней, бесплатно. После регистрации ключ пробной версии и конечная точка будут доступными на [веб-сайте Azure](https://azure.microsoft.com/try/cognitive-services/my-apis/). 
-    * Это отличный вариант, если вы хотите опробовать службу "Распознавание лиц", но у вас нет подписки Azure.
-* Ресурс [службы "Распознавание лиц"](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesFace):
-    * доступен на портале Azure до удаления.
-    * Используйте бесплатную ценовую категорию, чтобы опробовать службу, а затем выполните обновление до платного уровня для рабочей среды.
-* Ресурс [с несколькими службами](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesAllInOne):
-    * доступен на портале Azure до удаления.  
-    * Используйте одни и те же ключ и конечную точку для приложений в нескольких экземплярах Cognitive Services.
-
-### <a name="create-an-environment-variable"></a>Создание переменной среды
-
->[!NOTE]
-> Конечные точки для ресурсов не из пробной версии, созданных после 1июля 2019 г., поддерживают пользовательский формат поддомена, показанный ниже. Дополнительные сведения и полный список региональных конечных точек см. в статье [Custom subdomain names for Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-custom-subdomains) (Пользовательские имена поддоменов для Cognitive Services). 
-
-Используя ключ и конечную точку из созданного ресурса, создайте две переменные среды для проверки подлинности:
-* `FACE_SUBSCRIPTION_KEY` — ключ ресурса для проверки подлинности запросов.
-* `FACE_ENDPOINT` — конечная точка ресурса для отправки запросов API. Она должна выглядеть так: 
-  * `https://<your-custom-subdomain>.api.cognitive.microsoft.com` 
-
-Используйте инструкции для своей операционной системы.
-<!-- replace the below endpoint and key examples -->
-#### <a name="windows"></a>[Windows](#tab/windows)
-
-```console
-setx FACE_SUBSCRIPTION_KEY <replace-with-your-product-name-key>
-setx FACE_ENDPOINT <replace-with-your-product-name-endpoint>
-```
-
-Добавив переменную среды, перезапустите окно консоли.
-
-#### <a name="linux"></a>[Linux](#tab/linux)
-
-```bash
-export FACE_SUBSCRIPTION_KEY=<replace-with-your-product-name-key>
-export FACE_ENDPOINT=<replace-with-your-product-name-endpoint>
-```
-
-После добавления переменной среды запустите `source ~/.bashrc` из окна консоли, чтобы применить изменения.
-
-#### <a name="macos"></a>[macOS](#tab/unix)
-
-Измените `.bash_profile` и добавьте переменную среды:
-
-```bash
-export FACE_SUBSCRIPTION_KEY=<replace-with-your-product-name-key>
-export FACE_ENDPOINT=<replace-with-your-product-name-endpoint>
-```
-
-После добавления переменной среды запустите `source .bash_profile` из окна консоли, чтобы применить изменения.
-***
+## <a name="setting-up"></a>Настройка
 
 ### <a name="create-a-go-project-directory"></a>Создание каталога проекта Go
 
@@ -301,13 +249,13 @@ touch sample-app.go
 
 ## <a name="take-a-snapshot-for-data-migration"></a>создание моментального снимка для переноса данных.
 
-Функция моментальных снимков позволяет перемещать сохраненные данные о лицах, например обученный объект **PersonGroup**, в другую подписку Azure Cognitive Services. Эту функцию можно использовать, если вы, например, создали объект **PersonGroup** в бесплатной пробной подписке и теперь хотите перенести его в платную подписку. Подробный обзор функции создания моментальных снимков см. в руководстве по [переносу данных о лицах](../../Face-API-How-to-Topics/how-to-migrate-face-data.md).
+Функция моментальных снимков позволяет перемещать сохраненные данные о лицах, например обученный объект **PersonGroup**, в другую подписку Azure Cognitive Services. Эту функцию можно использовать, если вы, например, создали объект **PersonGroup** в бесплатной подписке и теперь хотите перенести его в платную подписку. Подробный обзор функции создания моментальных снимков см. в руководстве по [переносу данных о лицах](../../Face-API-How-to-Topics/how-to-migrate-face-data.md).
 
 В этом примере выполняется перенос объекта **PersonGroup**, созданного при выполнении инструкций из раздела [Создание и обучение на основе изображения группы людей](#create-and-train-a-person-group). Вы можете сначала выполнить эти инструкции или использовать собственные конструкции API Распознавания лиц.
 
 ### <a name="set-up-target-subscription"></a>Создание целевой подписки
 
-Во-первых, у вас должна быть вторая подписка Azure с ресурсом Распознавания лиц. Для этого выполните инструкции из раздела [Настройка](#set-up). 
+Во-первых, у вас должна быть вторая подписка Azure с ресурсом Распознавания лиц. Для этого выполните инструкции из раздела [Настройка](#setting-up). 
 
 Затем создайте следующие переменные в верхней части метода **main**. Вам также потребуется создать новые переменные среды для идентификатора подписки учетной записи Azure, ключ, конечную точку и идентификатор подписки для новой (целевой) учетной записи.
 

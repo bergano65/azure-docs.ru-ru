@@ -12,10 +12,9 @@ ms.subservice: fundamentals
 ms.date: 10/31/2019
 ms.author: martinco
 ms.openlocfilehash: d039373d3e70076149da2b970a234b59d7aa661a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75422946"
 ---
 # <a name="azure-active-directory-general-operations-guide-reference"></a>Справочник по общим операциям Azure Active Directory
@@ -69,7 +68,7 @@ ms.locfileid: "75422946"
 
 #### <a name="hybrid-management-recommended-reading"></a>Рекомендуемый способ чтения для гибридного управления
 
-- [Azure AD Connect: автоматическое обновление](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-install-automatic-upgrade)
+- [Azure AD Connect выполняет следующие функции: Автоматическое обновление](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-install-automatic-upgrade)
 - [Общие сведения о соединителях Azure AD Application Proxy | Автоматические обновления](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-connectors#automatic-updates)
 
 ### <a name="azure-ad-connect-health-alert-baseline"></a>Базовый план оповещений Azure AD Connect Health
@@ -92,7 +91,7 @@ ms.locfileid: "75422946"
 
 - [Устранение неполадок прокси-сервера приложений](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-troubleshoot)
 - [Azure Active Directory: устранение неполадок с самостоятельным сбросом пароля](https://docs.microsoft.com/azure/active-directory/active-directory-passwords-troubleshoot#password-writeback-event-log-error-codes)
-- [Общие сведения о соединителях Azure AD Application Proxy](https://docs.microsoft.com/azure/active-directory/application-proxy-understand-connectors)
+- [Сведения о соединителях прокси приложения Azure AD](https://docs.microsoft.com/azure/active-directory/application-proxy-understand-connectors)
 - [Azure AD Connect: Устранение неполадок сквозной проверки подлинности](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-troubleshoot-pass-through-authentication#collecting-pass-through-authentication-agent-logs)
 - [Устранение ошибок для расширения NPS Azure MFA](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication-nps-errors)
 
@@ -106,7 +105,7 @@ ms.locfileid: "75422946"
 
 #### <a name="on-premises-agents-management-recommended-reading"></a>Рекомендованное чтение для управления локальными агентами
 
-- [Общие сведения о соединителях Azure AD Application Proxy](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-connectors)
+- [Сведения о соединителях прокси приложения Azure AD](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-connectors)
 - [Краткое руководство по сквозной проверке подлинности Azure AD](../hybrid/how-to-connect-pta-quick-start.md#step-4-ensure-high-availability)
 
 ## <a name="management-at-scale"></a>Управление в масштабе
@@ -127,7 +126,7 @@ ms.locfileid: "75422946"
 
 Корпорация Майкрософт отправляет администраторам сообщения электронной почты, чтобы уведомлять о различных изменениях в службе, необходимых обновлениях конфигурации и ошибках, требующих вмешательства администратора. Важно, чтобы клиенты настроили адреса электронной почты для уведомлений, чтобы уведомления отправлялись соответствующим членам группы, которые могут подтвердить работу и действовать на всех уведомлениях. Рекомендуется добавить нескольких получателей в [Центр сообщений Office 365](https://docs.microsoft.com/office365/admin/manage/message-center) и запросить отправку уведомлений (включая Azure AD Connect Health уведомления) в список рассылки или общий почтовый ящик. Если у вас есть только одна учетная запись глобального администратора с адресом электронной почты, обязательно настройте по крайней мере две учетные записи, поддерживающие электронную почту.
 
-Azure AD использует два адреса "от": <o365mc@email2.microsoft.com>, которые отправляют уведомления центра сообщений Office 365; и <azure-noreply@microsoft.com>, который отправляет уведомления, связанные с:
+Azure AD использует два адреса "от": <o365mc@email2.microsoft.com> , которые отправляют уведомления центра сообщений Office 365 и <azure-noreply@microsoft.com> , которые отправляют уведомления, связанные с:
 
 - [Проверки доступа Azure AD](https://docs.microsoft.com/azure/active-directory/governance/access-reviews-overview)
 - [Azure AD Connect Health](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-health-operations#enable-email-notifications)
@@ -166,9 +165,9 @@ Azure AD использует два адреса "от": <o365mc@email2.microso
 
 [Модель уровня](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material) состоит из трех уровней и включает только учетные записи администратора, а не учетные записи обычных пользователей.
 
-- **Уровень 0** — прямое управление корпоративными удостоверениями в среде. К уровню 0 принадлежат учетные записи, группы и другие ресурсы с прямым или непрямым административным контролем над лесами, доменами или контроллерами доменов Active Directory, а также над их ресурсами. Степень безопасности всех ресурсов уровня 0 одинакова, так как фактически все они находятся под контролем друг друга.
-- **Уровень 1** . Управление корпоративными серверами и приложениями. К ресурсам уровня 1 принадлежат серверные операционные системы, облачные службы и корпоративные приложения. Учетные записи администраторов уровня 1 предоставляют права административного управления значительной частью бизнеса, в основе которого лежат эти ресурсы. Распространенный пример такой роли — администратор сервера. Он занимается обслуживанием операционных систем этих ресурсов и может повлиять на все службы предприятия.
-- **Уровень 2** . Управление пользовательскими рабочими станциями и устройствами. Учетные записи администраторов уровня 2 предоставляют права административного управления значительной частью бизнеса, а именно над рабочими станциями и устройствами, лежащими в его основе. К их примерам можно отнести администраторов службы технической поддержки или компьютеров, так как они могут повлиять на целостность данных практически любого пользователя.
+- **Уровень 0**   — Прямое управление корпоративными удостоверениями в среде. К уровню 0 принадлежат учетные записи, группы и другие ресурсы с прямым или непрямым административным контролем над лесами, доменами или контроллерами доменов Active Directory, а также над их ресурсами. Степень безопасности всех ресурсов уровня 0 одинакова, так как фактически все они находятся под контролем друг друга.
+- **Уровень 1**   — Управление серверами и приложениями предприятия. К ресурсам уровня 1 принадлежат серверные операционные системы, облачные службы и корпоративные приложения. Учетные записи администраторов уровня 1 предоставляют права административного управления значительной частью бизнеса, в основе которого лежат эти ресурсы. Распространенный пример такой роли — администратор сервера. Он занимается обслуживанием операционных систем этих ресурсов и может повлиять на все службы предприятия.
+- **Уровень 2**   — Управление пользовательскими рабочими станциями и устройствами. Учетные записи администраторов уровня 2 предоставляют права административного управления значительной частью бизнеса, а именно над рабочими станциями и устройствами, лежащими в его основе. К их примерам можно отнести администраторов службы технической поддержки или компьютеров, так как они могут повлиять на целостность данных практически любого пользователя.
 
 Блокировка доступа к локальным компонентам удостоверений, таким как Azure AD Connect, AD FS и службы SQL, так же, как и для контроллеров домена.
 
@@ -184,6 +183,6 @@ Azure AD использует два адреса "от": <o365mc@email2.microso
 - Блокировка AD FS.
 - Блокировка доступа к компьютерам с помощью локальных компонентов удостоверений.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения о реализации всех возможностей, которые вы не развернули, см. в статье [планы развертывания Azure AD](active-directory-deployment-plans.md) .

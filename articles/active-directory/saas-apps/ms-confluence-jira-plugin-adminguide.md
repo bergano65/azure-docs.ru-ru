@@ -16,10 +16,10 @@ ms.date: 11/19/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8679f9a03fded546db68f058bca716ba053aa0fe
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "73161208"
 ---
 # <a name="atlassian-jira-and-confluence-admin-guide-for-azure-active-directory"></a>Atlassian JIRA и Confluence в руководстве администратора для Azure Active Directory
@@ -45,7 +45,7 @@ ms.locfileid: "73161208"
 
 Администраторы Jira и Confluence могут использовать подключаемый модуль, чтобы включить единый вход с помощью Azure AD.
 
-## <a name="assumptions"></a>Допущения
+## <a name="assumptions"></a>Предположения
 
 * Экземпляры Jira и Confluence поддерживают протокол HTTPS.
 * Пользователи уже созданы в Jira или Confluence.
@@ -72,7 +72,7 @@ ms.locfileid: "73161208"
 * Jira Core и Jira Software: версии 6.0–7.12;
 * Jira Service Desk: версии 3.0.0–3.5.0.
 * JIRA поддерживает также 5.2. Дополнительные сведения см. в статье об [использовании единого входа Microsoft Azure Active Directory для JIRA 5.2](https://docs.microsoft.com/azure/active-directory/saas-apps/jira52microsoft-tutorial).
-* Confluence: версии c 5.0 по 5.10
+* Confluence: От 5.0 до 5.10
 * Confluence: версия 6.0.1;
 * Confluence: версия 6.1.1;
 * Confluence: версия 6.2.1;
@@ -95,7 +95,7 @@ ms.locfileid: "73161208"
 
 2. Откройте консоль администрирования Jira или Confluence и установите флажок **Надстройки**.
 
-3. В центре загрузки Майкрософт Скачайте [подключаемый модуль единого входа Microsoft SAML для JIRA](https://www.microsoft.com/download/details.aspx?id=56506)/ .[подключаемый модуль единого входа Microsoft SAML для Confluence](https://www.microsoft.com/download/details.aspx?id=56503).
+3. В центре загрузки Майкрософт Скачайте [подключаемый модуль единого входа Microsoft SAML для JIRA](https://www.microsoft.com/download/details.aspx?id=56506) /  .[подключаемый модуль единого входа Microsoft SAML для Confluence](https://www.microsoft.com/download/details.aspx?id=56503).
 
    Соответствующая версия подключаемого модуля появится в результатах поиска.
 
@@ -113,11 +113,11 @@ ms.locfileid: "73161208"
 
 * **URL-адрес метаданных**. URL-адрес для получения метаданных федерации из Azure AD.
 
-* **Идентификаторы**. URL-адрес, который используется в Azure AD для проверки источника запроса. Это поле соответствует элементу **Идентификатор** в Azure AD. Подключаемый модуль автоматически получает этот URL-адрес как HTTPS://*\<домен: Port>*/.
+* **Идентификаторы**. URL-адрес, который используется в Azure AD для проверки источника запроса. Это поле соответствует элементу **Идентификатор** в Azure AD. Подключаемый модуль автоматически получает этот URL-адрес как https:// *\<domain:port>* /.
 
-* **URL-адрес ответа**. URL-адрес ответа в поставщике удостоверений (IdP), который инициирует вход SAML. Это поле сопоставляется с элементом **URL-адрес ответа** в Azure AD. Подключаемый модуль автоматически получает этот URL-адрес как HTTPS://*\<домен: Port>*/плугинс/сервлет/самл/АУС.
+* **URL-адрес ответа**. URL-адрес ответа в поставщике удостоверений (IdP), который инициирует вход SAML. Это поле сопоставляется с элементом **URL-адрес ответа** в Azure AD. Подключаемый модуль автоматически получает этот URL-адрес как https:// *\<domain:port>* /плугинс/сервлет/самл/АУС.
 
-* **Sign On URL** (URL-адрес для входа). URL-адрес входа в поставщик удостоверений, который инициирует вход SAML. Он сопоставляется с элементом **Вход** в Azure AD. Подключаемый модуль автоматически получает этот URL-адрес как HTTPS://*\<домен: Port>*/плугинс/сервлет/самл/АУС.
+* **Sign On URL** (URL-адрес для входа). URL-адрес входа в поставщик удостоверений, который инициирует вход SAML. Он сопоставляется с элементом **Вход** в Azure AD. Подключаемый модуль автоматически получает этот URL-адрес как https:// *\<domain:port>* /плугинс/сервлет/самл/АУС.
 
 * **IdP Entity ID** (Идентификатор сущности IdP). Идентификатор сущности, который использует поставщик удостоверений. Это поле заполняется, если URL-адрес метаданных разрешен.
 
@@ -190,7 +190,7 @@ ms.locfileid: "73161208"
 * Jira Core и Jira Software: версии 6.0–7.12;
 * Jira Service Desk: версии 3.0.0–3.5.0.
 * JIRA поддерживает также 5.2. Дополнительные сведения см. в статье об [использовании единого входа Microsoft Azure Active Directory для JIRA 5.2](https://docs.microsoft.com/azure/active-directory/saas-apps/jira52microsoft-tutorial).
-* Confluence: версии c 5.0 по 5.10
+* Confluence: От 5.0 до 5.10
 * Confluence: версия 6.0.1;
 * Confluence: версия 6.1.1;
 * Confluence: версия 6.2.1;

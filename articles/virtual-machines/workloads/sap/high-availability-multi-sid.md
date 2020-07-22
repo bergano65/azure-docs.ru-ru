@@ -1,5 +1,5 @@
 ---
-title: Создание конфигурации с несколькими идентификаторами безопасности SAP в Azure | Документация Майкрософт
+title: Создание конфигурации с несколькими идентификаторами безопасности SAP высокого уровня доступности в Azure
 description: Руководство по обеспечению высокого уровня доступности для конфигурации SAP NetWeaver с несколькими ИД безопасности на виртуальных машинах Windows
 services: virtual-machines-windows, virtual-network, storage
 documentationcenter: saponazure
@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 12/09/2016
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 8c7c6b797605da2884c6bffc47e593ffc9a3faca
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 6e2055d194e1836ebc0b2e1181ca49794bc4a3b6
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77615132"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86508012"
 ---
 # <a name="create-an-sap-netweaver-multi-sid-configuration"></a>Создание конфигурации с несколькими идентификаторами безопасности SAP NetWeaver
 
@@ -414,10 +414,10 @@ ms.locfileid: "77615132"
 [virtual-machines-windows-classic-ps-sql-alwayson-availability-groups]:./../../windows/sqlclassic/virtual-machines-windows-classic-ps-sql-alwayson-availability-groups.md
 [virtual-machines-windows-classic-ps-sql-int-listener]:./../../windows/sqlclassic/virtual-machines-windows-classic-ps-sql-int-listener.md
 [virtual-machines-windows-portal-sql-alwayson-availability-groups-manual]:./../../windows/sql/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual.md
-[virtual-machines-windows-portal-sql-alwayson-int-listener]:./../../windows/sql/virtual-machines-windows-portal-sql-alwayson-int-listener.md
-[virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions]:./../../windows/sql/virtual-machines-windows-sql-high-availability-dr.md
-[virtual-machines-sql-server-infrastructure-services]:./../../windows/sql/virtual-machines-windows-sql-server-iaas-overview.md
-[virtual-machines-sql-server-performance-best-practices]:./../../windows/sql/virtual-machines-windows-sql-performance.md
+[virtual-machines-windows-portal-sql-alwayson-int-listener]:../../../azure-sql/virtual-machines/windows/availability-group-load-balancer-portal-configure.md
+[virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions]:../../../azure-sql/virtual-machines/windows/business-continuity-high-availability-disaster-recovery-hadr-overview.md
+[virtual-machines-sql-server-infrastructure-services]:../../../azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md
+[virtual-machines-sql-server-performance-best-practices]:../../../azure-sql/virtual-machines/windows/performance-guidelines-best-practices.md
 [virtual-machines-upload-image-windows-resource-manager]:../../virtual-machines-windows-upload-image.md
 [virtual-machines-windows-tutorial]:../../virtual-machines-windows-hero-tutorial.md
 [virtual-machines-workload-template-sql-alwayson]:https://azure.microsoft.com/documentation/templates/sql-server-2014-alwayson-dsc/
@@ -444,7 +444,7 @@ ms.locfileid: "77615132"
 [xplat-cli-azure-resource-manager]:../../../xplat-cli-azure-resource-manager.md
 
 
-В сентябре 2016 Корпорация Майкрософт выпустила функцию, в которой можно управлять несколькими виртуальными IP-адресами с помощью [внутреннего балансировщика нагрузки Azure][load-balancer-multivip-overview]. Эта функция уже существует во внешней подсистеме балансировки нагрузки Azure.
+В сентябре 2016 г. корпорация Майкрософт выпустила функцию, которая дает возможность управлять несколькими виртуальными IP-адресами с помощью [внутренней подсистемы балансировки нагрузки Azure][load-balancer-multivip-overview]. Эта функция уже существует во внешней подсистеме балансировки нагрузки Azure.
 
 При наличии развертывания SAP внутреннюю подсистему балансировки нагрузки Azure можно использовать для создания конфигурации кластера Windows для SAP ASCS/SCS, как описано в статье [SAP NetWeaver на виртуальных машинах Windows. Руководство по обеспечению высокого уровня доступности][sap-ha-guide].
 
@@ -455,7 +455,7 @@ ms.locfileid: "77615132"
 
 [!INCLUDE [updated-for-az](../../../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 Необходимо настроить кластер WSFC, используемый для одного экземпляра SAP ASCS/SCS, как описано в статье [SAP NetWeaver на виртуальных машинах Windows. Руководство по обеспечению высокого уровня доступности][sap-ha-guide] и как показано на этой диаграмме:
 
 ![Высокодоступный экземпляр SAP ASCS/SCS][sap-ha-guide-figure-6001]
@@ -472,7 +472,7 @@ ms.locfileid: "77615132"
 >Максимальное количество экземпляров SAP ASCS/SCS в одном кластере WSFC равно максимальному количеству частных внешних IP-адресов на одну внутреннюю подсистему балансировки нагрузки Azure.
 >
 
-Дополнительные сведения об ограничениях подсистемы балансировки нагрузки см. в пункте "Частный внешний IP-адрес на балансировщик нагрузки" раздела [Ограничения сети — Azure Resource Manager][networking-limits-azure-resource-manager].
+Дополнительные сведения об ограничениях подсистемы балансировки нагрузки см. в пункте "Частный внешний IP-адрес на подсистему балансировки нагрузки" раздела [Ограничения сети — Azure Resource Manager][networking-limits-azure-resource-manager].
 
 Общая картина с двумя системами SAP высокого уровня доступности будет выглядеть следующим образом:
 
@@ -641,33 +641,33 @@ Write-Host "Successfully added new IP '$ILBIP' to the internal load balancer '$I
 
 Основные действия:
 
-1. [Установите первый узел кластера SAP][sap-ha-guide-9.1.2].  
- На этом шаге вы устанавливаете SAP с экземпляром ASCS/SCS высокого уровня доступности на **существующем узле 1 кластера WSFC**.
+1. [Установка первого узла кластера SAP.][sap-ha-guide-9.1.2]  
+ На этом шаге устанавливается SAP с высокодоступным экземпляром ASCS/SCS на **СУЩЕСТВУЮЩЕМ узле 1 кластера WSFC**.
 
-2. [Измените профиль SAP экземпляра ASCS/SCS][sap-ha-guide-9.1.3].
+2. [Изменение профиля SAP для экземпляра ASCS/SCS.][sap-ha-guide-9.1.3]
 
-3. [Настройка порта пробы][sap-ha-guide-9.1.4].  
+3. [Настройка порта пробы.][sap-ha-guide-9.1.4]  
  На этом шаге настраивается порт пробы SAP-SID2-IP кластерного ресурса SAP с помощью PowerShell. Настройку следует выполнять на одном из узлов кластера SAP ASCS/SCS.
 
-4. [Установите экземпляр базы данных][sap-ha-guide-9.2].  
+4. [Установка экземпляра базы данных.][sap-ha-guide-9.2]  
  На этом шаге в выделенном кластере WSFC устанавливается СУБД.
 
-5. [Установите второй узел кластера][sap-ha-guide-9.3].  
+5. [Установка второго узла кластера.][sap-ha-guide-9.3]  
  На этом шаге устанавливается SAP с высокодоступным экземпляром ASCS/SCS на существующем узле 2 кластера WSFC.
 
 6. Открытие портов брандмауэра Windows для экземпляра SAP ASCS/SCS и порта пробы.  
  На обоих узлах кластера, используемых для экземпляров SAP ASCS/SCS, откройте все порты брандмауэра Windows, используемые SAP ASCS/SCS. Эти порты подробно описаны в статье [SAP NetWeaver на виртуальных машинах Windows. Руководство по обеспечению высокого уровня доступности][sap-ha-guide-8.8].  
  Кроме того, откройте порт пробы внутренней подсистемы балансировки нагрузки Azure. В нашем случае это порт 62350.
 
-7. [Измените тип запуска экземпляра службы Windows SAP ERS][sap-ha-guide-9.4].
+7. [Изменение типа запуска службы Windows для экземпляра SAP ERS.][sap-ha-guide-9.4]
 
 8. [Установка основного сервера приложений SAP][sap-ha-guide-9.5] на новой выделенной виртуальной машине.
 
 9. [Установка дополнительного сервера приложений SAP][sap-ha-guide-9.6] на новой выделенной виртуальной машине.
 
-10. [Протестируйте отработку отказа экземпляра SAP ASCS/SCS и репликацию SIOS][sap-ha-guide-10].
+10. [Тестирование отработки отказа экземпляра SAP ASCS/SCS и репликации SIOS.][sap-ha-guide-10]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Ограничения сети — Azure Resource Manager][networking-limits-azure-resource-manager]
 - [Несколько виртуальных IP-адресов для Azure Load Balancer][load-balancer-multivip-overview]

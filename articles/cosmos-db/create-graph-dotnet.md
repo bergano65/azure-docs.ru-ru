@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 02/21/2020
 ms.author: lbosq
-ms.openlocfilehash: bf453587b354b5db3f3ef1a80f974bcb8f8f4e14
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: a85df3e437f2c1ec93996cdaacfccadeaa47cc99
+ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81730019"
+ms.lasthandoff: 06/20/2020
+ms.locfileid: "85118259"
 ---
 # <a name="quickstart-build-a-net-framework-or-core-application-using-the-azure-cosmos-db-gremlin-api-account"></a>Краткое руководство. Создание приложения .NET Framework или Core с помощью учетной записи API Gremlin для Azure Cosmos DB
 
@@ -109,7 +109,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
    **Конечная точка Gremlin** — это значение используется при подключении к учетной записи графа с помощью библиотеки Gremlin.Net.
 
-    ![Копирование конечной точки](./media/create-graph-dotnet/endpoint.png)
+    :::image type="content" source="./media/create-graph-dotnet/endpoint.png" alt-text="Копирование конечной точки":::
 
    Чтобы запустить этот пример, скопируйте значение **конечной точки Gremlin**, удалите номер порта в конце, где URI принимает значение `https://<your cosmos db account name>.gremlin.cosmosdb.azure.com`. Значение конечной точки должно выглядеть как `testgraphacct.gremlin.cosmosdb.azure.com`
 
@@ -146,7 +146,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
     Вы можете масштабировать граф, развернуть отображаемое пространство, указать дополнительные вершины и переместить их на поверхность отображения.
 
-    ![Просмотр графа в обозревателе данных на портале Azure](./media/create-graph-dotnet/graph-explorer.png)
+    :::image type="content" source="./media/create-graph-dotnet/graph-explorer.png" alt-text="Просмотр графа в обозревателе данных на портале Azure":::
 
 ## <a name="review-slas-in-the-azure-portal"></a>Просмотр соглашений об уровне обслуживания на портале Azure
 

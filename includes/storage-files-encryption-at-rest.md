@@ -9,10 +9,10 @@ ms.date: 12/27/2019
 ms.author: rogarana
 ms.custom: include file
 ms.openlocfilehash: ed061234da27716bfcdaf1cc065568908108f90a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77597867"
 ---
 Все данные, хранящиеся в службе файлов Azure, шифруются при помощи шифрования службы хранилища Azure (SSE). Шифрование службы хранилища работает аналогично BitLocker в Windows: данные шифруются под уровнем файловой системы. Так как данные шифруются под файловой системой файлового ресурса Azure по мере их кодирования на диск, вам не нужно иметь доступ к базовому ключу на клиенте для чтения и записи в файловый ресурс Azure.

@@ -5,12 +5,13 @@ author: gvashishtha
 ms.topic: tutorial
 ms.date: 02/28/2020
 ms.author: gopalv
-ms.openlocfilehash: 2dd911eff1ba98341451ef9826b8053bc8059047
-ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
+ms.custom: tracking-python
+ms.openlocfilehash: bbb784a1245ecc8d6f3d3aee45b729984568fc6c
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82581527"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86506099"
 ---
 # <a name="tutorial-deploy-a-pre-trained-image-classification-model-to-azure-functions-with-pytorch"></a>Руководство по развертыванию предварительно обученной модели классификации изображений в Функциях Azure с помощью PyTorch
 
@@ -114,7 +115,7 @@ py -m venv .venv
     func new --name classify --template "HTTP trigger"
     ```
 
-    Эта команда создает папку *classify*, которая соответствует имени функции. В этой папке содержатся два файла: *\_\_init\_\_.py*, содержащий код функции, и *function.json*, который описывает триггер функции и его входные и выходные привязки. Дополнительные сведения о содержимом этих файлов см. в разделе [об изучении содержимого файла](/azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-python#optional-examine-the-file-contents) краткого руководства по программированию на Python.
+    Эта команда создает папку *classify*, которая соответствует имени функции. В этой папке содержатся два файла: *\_\_init\_\_.py*, содержащий код функции, и *function.json*, который описывает триггер функции и его входные и выходные привязки. Дополнительные сведения о содержимом этих файлов см. в разделе [об изучении содержимого файла](./functions-create-first-azure-function-azure-cli.md?pivots=programming-language-python#optional-examine-the-file-contents) краткого руководства по программированию на Python.
 
 
 ## <a name="run-the-function-locally"></a>Локальное выполнение функции

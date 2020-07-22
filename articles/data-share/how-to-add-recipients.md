@@ -4,14 +4,14 @@ description: Узнайте, как добавлять получателей в
 author: joannapea
 ms.author: joanpo
 ms.service: data-share
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 07/10/2019
-ms.openlocfilehash: 9f49ab3aed60bfbe04ad022070a931461e3f52f5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 8188fa4de91dd64589693026f69f7d142751e542
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "73490525"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86110869"
 ---
 # <a name="how-to-add-a-recipient-to-an-existing-data-share-in-azure-data-share"></a>Добавление получателя в существующую общую папку данных в общем ресурсе данных Azure
 

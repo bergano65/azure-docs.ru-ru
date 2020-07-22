@@ -4,14 +4,14 @@ description: В этой статье описывается, как можно 
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 5/6/2019
-ms.openlocfilehash: 13b26b545f9e95ce2457e4f8d9cf32da59cd91e6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e6b3d6b4d08c699b9747bb5b0fe11ce471dc3fe9
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74770158"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86106702"
 ---
 # <a name="restart-azure-database-for-postgresql---single-server-using-the-azure-cli"></a>Перезапустите базу данных Azure для PostgreSQL — один сервер с помощью Azure CLI
 В этой статье объясняется, как перезапустить сервер в Базе данных Azure для PostgreSQL. Возможно, вам потребуется перезапустить сервер в целях обслуживания, что приводит к кратковременному отключению во время выполнения операции.
@@ -30,7 +30,7 @@ ms.locfileid: "74770158"
 > Для работы с этим руководством вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы проверить версию, в командной строке Azure CLI введите `az --version`. Чтобы выполнить установку или обновление, см. сведения в статье [Установка Azure CLI]( /cli/azure/install-azure-cli).
 
 
-## <a name="restart-the-server"></a>Перезапустите сервер.
+## <a name="restart-the-server"></a>Перезагрузите сервер.
 
 Перезапустите сервер с помощью следующей команды:
 

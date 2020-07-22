@@ -5,18 +5,19 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: overview
-ms.date: 09/17/2019
+ms.date: 05/21/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7b044a4fd4e29bfe35abff7a4b36e5bae783328b
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.custom: contperfq4
+ms.openlocfilehash: fb8687c091e8c34ad1fbae2a50981327b3994b6e
+ms.sourcegitcommit: ff19f4ecaff33a414c0fa2d4c92542d6e91332f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79215992"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85051941"
 ---
 # <a name="what-is-conditional-access"></a>Что собой представляет условный доступ
 
@@ -33,7 +34,7 @@ ms.locfileid: "79215992"
 - продуктивная работа пользователей в любом месте и в любое время;
 - защищать ресурсы организации.
 
-С помощью политик условного доступа можно применять необходимые элементы управления доступом, чтобы обеспечить безопасность вашей организации и не выходить за пределы пользователя, когда это не требуется.
+С помощью политик условного доступа можно применять необходимые элементы управления доступом, чтобы поддерживать безопасность вашей организации, не мешая пользователям без необходимости.
 
 ![Поток процесса концептуального условного доступа](./media/overview/conditional-access-overview-how-it-works.png)
 
@@ -47,7 +48,7 @@ ms.locfileid: "79215992"
    - Политики могут быть нацелены на конкретных пользователей и группы, предоставляя администраторам детальный контроль над доступом.
 - Сведения о расположении IP-адреса
    - Организации могут создавать диапазоны доверенных IP-адресов, которые можно использовать при принятии решений о политике. 
-   - Администраторы могут указать диапазоны IP-адресов целых стран, чтобы заблокировать или разрешить трафик.
+   - Администраторы могут указывать целые страны или регионы для обозначения диапазонов IP-адресов, с которых нужно заблокировать или разрешить трафик.
 - Устройство
    - Для применения политик условного доступа можно использовать пользователей с устройствами определенных платформ или устройствами, помеченными определенным состоянием.
 - Приложение
@@ -71,7 +72,7 @@ ms.locfileid: "79215992"
 
 ## <a name="commonly-applied-policies"></a>Обычно применяемые политики
 
-Многие организации имеют распространенные проблемы с доступом, которые политики условного доступа могут использовать следующим образом:
+Многие организации сталкиваются с [типичными проблемами с доступом, в решении которых могут помочь политики условного доступа](concept-conditional-access-policy-common.md), как например:
 
 - по требованию многофакторной проверки подлинности для пользователей с административными ролями;
 - по требованию многофакторной проверки подлинности для задач управления Azure;
@@ -92,16 +93,12 @@ ms.locfileid: "79215992"
 
 [!INCLUDE [Active Directory P1 license](../../../includes/active-directory-p1-license.md)]
 
-Клиенты с [лицензиями Microsoft 365 бизнес](/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-business-service-description) также имеют доступ к функциям условного доступа. 
+Клиенты с [лицензиями Microsoft 365 бизнес премиум](/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-business-service-description) также имеют доступ к функциям условного доступа. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Building a Conditional Access policy piece by piece](concept-conditional-access-policies.md) (Пошаговое создание политики условного доступа)
-
-Сведения о реализации условного доступа см.в статье [How To: Plan your Conditional Access deployment in Azure Active Directory](plan-conditional-access.md) (Практическое руководство. Планирование развертывания с условным доступом в Azure Active Directory).
-
-[Что такое Защита идентификации Azure Active Directory (обновленная)?](../identity-protection/overview-v2.md)
-
-[Общие сведения о Microsoft Cloud App Security](/cloud-app-security/what-is-cloud-app-security)
-
-[Документация по Microsoft Intune](/intune/index)
+- [Building a Conditional Access policy piece by piece](concept-conditional-access-policies.md) (Пошаговое создание политики условного доступа)
+- [Планирование развертывания политики условного доступа](plan-conditional-access.md)
+- [Что такое Защита идентификации Azure Active Directory (обновленная)?](../identity-protection/overview-v2.md)
+- [Общие сведения о Microsoft Cloud App Security](/cloud-app-security/what-is-cloud-app-security)
+- [Документация по Microsoft Intune](/intune/index)

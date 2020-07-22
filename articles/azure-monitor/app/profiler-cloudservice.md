@@ -6,24 +6,24 @@ author: cweining
 ms.author: cweining
 ms.date: 08/06/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: 3fbeb1120e97a884135cd4622a49ef97fd43e58e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: eba250f3ca6a7af8480d24a99e6c3e8278009b82
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77671670"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86499449"
 ---
 # <a name="profile-live-azure-cloud-services-with-application-insights"></a>Профилирование облачных служб реального времени Azure с помощью Application Insights
 
 Вы можете развернуть Application Insights Profiler для следующих служб:
 * [Служба приложений Azure](profiler.md?toc=/azure/azure-monitor/toc.json)
 * [Приложения Azure Service Fabric](profiler-servicefabric.md?toc=/azure/azure-monitor/toc.json)
-* [виртуальные машины Azure](profiler-vm.md?toc=/azure/azure-monitor/toc.json);
+* [Виртуальные машины Azure](profiler-vm.md?toc=/azure/azure-monitor/toc.json)
 
 Application Insights Profiler поставляется с расширением системы диагностики Azure. Вам достаточно настроить систему диагностики Azure, чтобы установить Profiler и отправлять профили в ресурс Application Insights.
 
 ## <a name="enable-profiler-for-azure-cloud-services"></a>Включение Profiler для облачных служб Azure
-1. Убедитесь, что вы используете [.NET Framework 4.6.1](https://docs.microsoft.com/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed) или более поздней версии. Если используется семейство ОС 4, необходимо установить .NET Framework 4.6.1 или более поздней версии с [задачей запуска](https://docs.microsoft.com/azure/cloud-services/cloud-services-dotnet-install-dotnet). Семейство ОС версии 5 включает совместимую версию .NET Framework по умолчанию. 
+1. Убедитесь, что вы используете [.NET Framework 4.6.1](/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed) или более поздней версии. Если используется семейство ОС 4, необходимо установить .NET Framework 4.6.1 или более поздней версии с [задачей запуска](../../cloud-services/cloud-services-dotnet-install-dotnet.md). Семейство ОС версии 5 включает совместимую версию .NET Framework по умолчанию. 
 
 1. Добавьте [Application Insights для облачных служб Azure](../../azure-monitor/app/cloudservices.md?toc=/azure/azure-monitor/toc.json).
 
@@ -37,11 +37,11 @@ Application Insights Profiler поставляется с расширением
 
 1. Настройте расширение система диагностики Azure, чтобы включить профилировщик:
 
-    a. Выберите файл [система диагностики Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics) *Diagnostics. wadcfgx* для роли приложения, как показано ниже:  
+    а. Выберите файл [система диагностики Azure](../platform/diagnostics-extension-overview.md) *Diagnostics. wadcfgx* для роли приложения, как показано ниже:  
 
       ![Расположение файла конфигурации диагностики](./media/profiler-cloudservice/cloudservice-solutionexplorer.png)  
 
-      Если вы не можете найти файл, см. статью [Настройка системы диагностики для облачных служб и виртуальных машин Azure](https://docs.microsoft.com/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines).
+      Если вы не можете найти файл, см. статью [Настройка системы диагностики для облачных служб и виртуальных машин Azure](/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines).
 
     b. Добавьте следующий раздел `SinksConfig` в качестве дочернего элемента `WadCfg`:  
 
@@ -68,7 +68,7 @@ Application Insights Profiler поставляется с расширением
 
 1. Разверните службу с новой конфигурацией диагностики. При этом Application Insights Profiler настраивается для этой службы.
  
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Создайте трафик к приложению (например, запустите [тест доступности](monitor-web-app-availability.md)). Подождите 10–15 минут, пока трассировки не начнут отправляться в экземпляр Application Insights.
 * См. раздел [трассировки профайлера](profiler-overview.md?toc=/azure/azure-monitor/toc.json) в портал Azure.

@@ -3,16 +3,15 @@ title: Перенос виртуальных машин Azure на управл�
 description: Миграция виртуальных машин Azure, созданных с помощью неуправляемых дисков в учетных записях хранения, на Управляемые диски.
 author: roygara
 ms.service: virtual-machines-windows
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/30/2019
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: e8f2753ac9062803a2d6252eca1829cb0b168f02
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: d64ebb053ef01e375edd52ad0bf2c1f424f1b837
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77921357"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84660831"
 ---
 # <a name="migrate-azure-vms-to-managed-disks-in-azure"></a>Миграция виртуальных машин Azure на Управляемые диски Azure
 

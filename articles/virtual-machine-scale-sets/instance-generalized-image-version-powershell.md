@@ -10,10 +10,9 @@ ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
 ms.openlocfilehash: f61977c1c1be07ffe744608c1bf8ec5a8013f8d0
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82797088"
 ---
 # <a name="create-a-scale-set-from-a-generalized-image"></a>Создание масштабируемого набора из обобщенного образа
@@ -22,7 +21,7 @@ ms.locfileid: "82797088"
 
 После создания обобщенного образа можно создать масштабируемый набор виртуальных машин с помощью командлета [New-азвмсс](/powershell/module/az.compute/new-azvmss) . 
 
-В этом примере мы используем идентификатор определения образа, чтобы убедиться, что новая виртуальная машина будет использовать самую последнюю версию образа. Вы также можете использовать определенную версию с помощью идентификатора версии образа для `-ImageReferenceId`. Например, чтобы использовать тип Image версии *1.0.0* : `-ImageReferenceId "/subscriptions/<subscription ID where the gallery is located>/resourceGroups/myGalleryRG/providers/Microsoft.Compute/galleries/myGallery/images/myImageDefinition/versions/1.0.0"`. 
+В этом примере мы используем идентификатор определения образа, чтобы убедиться, что новая виртуальная машина будет использовать самую последнюю версию образа. Вы также можете использовать определенную версию с помощью идентификатора версии образа для `-ImageReferenceId` . Например, чтобы использовать тип Image версии *1.0.0* : `-ImageReferenceId "/subscriptions/<subscription ID where the gallery is located>/resourceGroups/myGalleryRG/providers/Microsoft.Compute/galleries/myGallery/images/myImageDefinition/versions/1.0.0"` . 
 
 Имейте в виду, что использование конкретной версии образа означает, что автоматизация может завершиться ошибкой, если эта версия изображения недоступна, так как она была удалена или удалена из региона. Рекомендуется использовать идентификатор определения образа для создания новой виртуальной машины, если только не требуется определенная версия образа.
 
@@ -172,13 +171,13 @@ New-AzVmss `
 
 Создание и настройка всех ресурсов и виртуальных машин масштабируемого набора занимает несколько минут.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 С помощью [построителя образов Azure (Предварительная версия)](../virtual-machines/linux/image-builder-overview.md) можно автоматизировать создание версий изображений, а также использовать его для обновления и [создания новой версии образа из существующей версии образа](../virtual-machines/linux/image-builder-gallery-update-image-version.md). 
 
 Вы также можете создать ресурс коллекции общих образов с помощью шаблонов. Существует несколько шаблонов быстрого запуска Azure: 
 
-- [Создание Общей коллекции образов.](https://azure.microsoft.com/resources/templates/101-sig-create/)
-- [Создание определения образа в Общей коллекции образов](https://azure.microsoft.com/resources/templates/101-sig-image-definition-create/)
-- [Создание версии образа в Общей коллекции образов](https://azure.microsoft.com/resources/templates/101-sig-image-version-create/)
+- [Создание коллекции общих образов](https://azure.microsoft.com/resources/templates/101-sig-create/)
+- [Создание определения образа в коллекции общих образов](https://azure.microsoft.com/resources/templates/101-sig-image-definition-create/)
+- [Создание версии образа в коллекции общих образов](https://azure.microsoft.com/resources/templates/101-sig-image-version-create/)
 
 Дополнительные сведения о коллекциях общих образов см. в [обзорной статье](shared-image-galleries.md). Если вы столкнетесь с проблемами, обратитесь к статье об [устранении неполадок c коллекциями общих образов](troubleshooting-shared-images.md).

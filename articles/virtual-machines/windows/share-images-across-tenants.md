@@ -1,19 +1,20 @@
 ---
 title: Совместное использование образов коллекций в клиентах в Azure
 description: Узнайте, как совместно использовать образы виртуальных машин в клиентах Azure с помощью общих коллекций образов.
-author: cynthn
+author: axayjo
 ms.service: virtual-machines-windows
 ms.subservice: imaging
 ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 07/15/2019
-ms.author: cynthn
-ms.openlocfilehash: 7c35799147d276bf4b6f07893b7cd975c5c5823c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.author: akjosh
+ms.reviewer: cynthn
+ms.openlocfilehash: 6d8d10153eb0467a84f86e54cf5b640b3162e4a1
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82101201"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86224185"
 ---
 # <a name="share-gallery-vm-images-across-azure-tenants"></a>Совместное использование образов виртуальных машин коллекции в клиентах Azure
 
@@ -82,6 +83,6 @@ Add-AzVMNetworkInterface -Id $nic.Id
 New-AzVM -ResourceGroupName $resourceGroup -Location $location -VM $vmConfig
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы также можете создавать ресурсы коллекции общих образов с помощью [портал Azure](shared-images-portal.md).

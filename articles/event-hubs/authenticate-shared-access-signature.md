@@ -1,19 +1,14 @@
 ---
 title: Проверка подлинности доступа к концентраторам событий Azure с помощью подписанных URL
 description: В этой статье показано, как проверить подлинность доступа к ресурсам концентраторов событий с помощью подписанных URL.
-services: event-hubs
-ms.service: event-hubs
-documentationcenter: ''
-author: spelluru
 ms.topic: conceptual
-ms.date: 11/26/2019
-ms.author: spelluru
-ms.openlocfilehash: cde5992355d274410bb43b1e3e60fbba1afe4e44
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 06/23/2020
+ms.openlocfilehash: ed389460cf3461df060df79fb756e73711f693f0
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81676353"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85318051"
 ---
 # <a name="authenticate-access-to-event-hubs-resources-using-shared-access-signatures-sas"></a>Проверка подлинности доступа к ресурсам концентраторов событий с помощью подписанных URL-адресов (SAS)
 Подписанный URL-адрес (SAS) обеспечивает детальный контроль над типом предоставляемого доступа для клиентов, имеющих подписанный общий доступ. Ниже приведены некоторые элементы управления, которые можно задать в SAS: 
@@ -63,7 +58,7 @@ SHA-256('https://<yournamespace>.servicebus.windows.net/'+'\n'+ 1438205742)
 
 Маркер содержит нехэшируемые значения, что позволяет получателю повторно вычислить хэш с теми же параметрами и проверить, что издатель использует допустимый ключ подписи.
 
-URI ресурса — это полный URI ресурса служебной шины, к которому запрашивается доступ. <namespace>Например, http://.<entityPath> servicebus.Windows.NET/или `sb://<namespace>.servicebus.windows.net/<entityPath>;` ,. `http://contoso.servicebus.windows.net/eventhubs/eh1`
+URI ресурса — это полный URI ресурса служебной шины, к которому запрашивается доступ. Например, http:// <namespace> . servicebus.Windows.NET/ <entityPath> или, `sb://<namespace>.servicebus.windows.net/<entityPath>;` `http://contoso.servicebus.windows.net/eventhubs/eh1` .
 
 URI должен быть закодирован с помощью знака процента.
 
@@ -222,7 +217,7 @@ private static string createToken(string resourceUri, string keyName, string key
 ## <a name="authenticating-event-hubs-consumers-with-sas"></a>Проверка подлинности потребителей концентраторов событий с SAS 
 Для проверки подлинности серверных приложений, которые используют данные, формируемые производителями концентраторов событий, для аутентификации на основе токенов концентраторов событий требуется, чтобы клиенты имели права **управления** или **прослушиваемые** привилегии, назначенные его пространству имен концентраторов событий или экземпляру концентратора событий или разделу. Данные потребляются из концентраторов событий с помощью групп потребителей. Хотя политика SAS обеспечивает детализированную область, эта область определяется только на уровне сущности, а не на уровне потребителя. Это означает, что привилегии, определенные на уровне пространства имен или на уровне экземпляра или раздела концентратора событий, будут применяться к группам потребителей этой сущности.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 См. следующие статьи:
 
 - [Авторизация с помощью SAS](authenticate-shared-access-signature.md)

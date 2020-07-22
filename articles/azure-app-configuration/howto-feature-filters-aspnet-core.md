@@ -8,10 +8,10 @@ ms.author: lcozzens
 ms.topic: conceptual
 ms.date: 3/9/2020
 ms.openlocfilehash: 181c97615985283011834dcf9145810b1563fb4a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80057002"
 ---
 # <a name="use-feature-filters-to-enable-a-feature-for-a-subset-of-users"></a>Использование фильтров компонентов для включения функции для подмножества пользователей
@@ -20,7 +20,7 @@ ms.locfileid: "80057002"
 
 Напротив, _Условный флаг функции_ позволяет динамически включать или отключать флаг функции. Приложение может вести себя по-разному в зависимости от условий флага компонента. Предположим, что вы хотите, чтобы новая функция отображалась небольшому числу пользователей. Условный флаг функции позволяет включить флаг компонента для некоторых пользователей, одновременно отключив его для других. _Фильтры компонентов_ определяют состояние флага компонента каждый раз, когда он оценивается.
 
-`Microsoft.FeatureManagement` Библиотека содержит два фильтра компонентов:
+`Microsoft.FeatureManagement`Библиотека содержит два фильтра компонентов:
 
 - `PercentageFilter`включает флаг компонента на основе процента.
 - `TimeWindowFilter`включает флаг компонента в течение указанного периода времени.
@@ -29,7 +29,7 @@ ms.locfileid: "80057002"
 
 ## <a name="registering-a-feature-filter"></a>Регистрация фильтра компонентов
 
-Вы регистрируете фильтр компонентов, вызывая `AddFeatureFilter` метод, указывая имя фильтра компонентов. Например, регистрируется `PercentageFilter`следующий код:
+Вы регистрируете фильтр компонентов, вызывая `AddFeatureFilter` метод, указывая имя фильтра компонентов. Например, регистрируется следующий код `PercentageFilter` :
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -49,7 +49,7 @@ public void ConfigureServices(IServiceCollection services)
 
 1. В портал Azure перейдите к хранилищу конфигураций и щелкните **Диспетчер компонентов**.
 
-1. Щелкните контекстное меню для флага *бета-версии* , созданного в кратком руководстве. Щелкните **Правка**.
+1. Щелкните контекстное меню для флага *бета-версии* , созданного в кратком руководстве. Нажмите кнопку **Изменить**.
 
     > [!div class="mx-imgBorder"]
     > ![Изменение флага бета-версии компонента](./media/edit-beta-feature-flag.png)
@@ -85,7 +85,7 @@ public void ConfigureServices(IServiceCollection services)
 > [!div class="mx-imgBorder"]
 > ![Перцентажефилтер в действии](./media/feature-flags-percentagefilter.gif)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Общие сведения об управлении функциями](./concept-feature-management.md)

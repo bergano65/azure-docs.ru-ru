@@ -8,45 +8,47 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-visual-search
 ms.topic: quickstart
-ms.date: 12/17/2019
+ms.date: 05/22/2020
 ms.author: aahi
-ms.openlocfilehash: e19f582084bec6915f95cf16fd8571b8d99da6fd
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: 20c5ef930af8cc279f63432e9e3a14a0767ca592
+ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75379646"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83870355"
 ---
 # <a name="quickstart-get-image-insights-using-the-bing-visual-search-rest-api-and-ruby"></a>Краткое руководство. Получение аналитических сведений об изображениях с помощью REST API визуального поиска Bing и Ruby
 
-В этом кратком руководстве используется язык программирования Ruby для вызова визуального поиска Bing и отображения результатов. Запрос POST передает изображение в конечную точку API. Результаты включают в себя URL-адреса и описательные сведения об изображениях, аналогичных переданному изображению.
+Из этого краткого руководства вы узнаете, как сделать первый вызов API Визуального поиска Bing, используя язык программирования Ruby. Запрос POST передает изображение в конечную точку API. Результаты включают в себя URL-адреса и описательные сведения об изображениях, аналогичных переданному изображению.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Перед выполнением этого краткого руководства сделайте следующее.
-
 * Установите [Ruby 2.4 или более поздней версии](https://www.ruby-lang.org/en/downloads/).
-* Получите ключ подписки.
+* Получить ключ подписки.
 
 [!INCLUDE [cognitive-services-bing-visual-search-signup-requirements](../../../../includes/cognitive-services-bing-visual-search-signup-requirements.md)]
 
 ## <a name="project-and-required-modules"></a>Проект и необходимые модули
 
-Создайте проект Ruby в используемой вами интегрированной среде разработки или текстовом редакторе. Импортируйте `net/http`, `uri` и `json` для обработки текста JSON результатов. Библиотека `base64` используется для кодирования строки имени файла. 
+Создайте проект Ruby в используемой вами интегрированной среде разработки или текстовом редакторе. Импортируйте `net/http`, `uri` и `json` для обработки текста JSON результатов. Импортируйте библиотеку `base64`, которая кодирует строку имени файла. 
 
-```
+```ruby
 require 'net/https'
 require 'uri'
 require 'json'
 require 'base64'
-
 ```
 
 ## <a name="define-variables"></a>Определение переменных
 
-Следующий код назначает обязательные переменные. Убедитесь, что конечная точка указана верно, и замените значение `accessKey` ключом подписки из своей учетной записи Azure.  `batchNumber` — это идентификатор GUID, необходимый для начальных и конечных границ данных POST.  Переменная `fileName` определяет файл изображения для POST.  Блок `if` проверяет ключ подписки на допустимость.
+Следующий код объявляет основную функцию и назначает необходимые переменные. 
 
-```
+1. Убедитесь, что конечная точка указана верно, и замените значение `accessKey` действительным ключом подписки из своей учетной записи Azure. 
+2. Для `batchNumber` назначьте идентификатор GUID, необходимый для начальных и конечных границ данных POST. 
+3. Для `fileName` назначьте файл изображения, который будет использоваться для POST. 
+4. Используйте блок `if`, чтобы проверить ключ подписки на допустимость.
+
+```ruby
 accessKey = "ACCESS-KEY"
 uri  = "https://api.cognitive.microsoft.com"
 path = "/bing/v7.0/images/visualsearch"
@@ -63,40 +65,40 @@ end
 
 ## <a name="form-data-for-post-request"></a>Формирование данных для запроса POST
 
-Данные изображения для POST заключены в начальные и конечные границы. Следующие функции задают границы.
+1. Заключите данные изображения для POST в начальные и конечные границы. Следующие функции задают границы.
 
-```
-def BuildFormDataStart(batNum, fileName)
-    startBoundary = "--batch_" + batNum
-    return startBoundary + "\r\n" + "Content-Disposition: form-data; name=\"image\"; filename=" + "\"" + fileName + "\"" + "\r\n\r\n"   
-end
+   ```ruby
+   def BuildFormDataStart(batNum, fileName)
+       startBoundary = "--batch_" + batNum
+       return startBoundary + "\r\n" + "Content-Disposition: form-data; name=\"image\"; filename=" + "\"" + fileName + "\"" + "\r\n\r\n"    
+   end
 
-def BuildFormDataEnd(batNum)
-    return "\r\n\r\n" + "--batch_" + batNum + "--" + "\r\n"
-end
-```
+   def BuildFormDataEnd(batNum)
+       return "\r\n\r\n" + "--batch_" + batNum + "--" + "\r\n"
+   end
+   ```
 
-Далее создайте URI конечной точки и массив, содержащий текст POST.  Используйте предыдущую функцию, чтобы загрузить начальную границу в массив. Просмотрите файл изображения в массиве. Затем считайте конечную границу в массив.
+2. Создайте URI конечной точки и массив, содержащий текст POST. Используйте предыдущую функцию, чтобы загрузить начальную границу в массив. Выполните чтение файла изображения в массив, а затем чтение конечной границы в массив.
 
-```
-uri = URI(uri + path)
-print uri
-print "\r\n\r\n"
+   ```ruby
+   uri = URI(uri + path)
+   print uri
+   print "\r\n\r\n"
 
-post_body = []
+   post_body = []
 
-post_body << BuildFormDataStart(batchNumber, fileName)
+   post_body << BuildFormDataStart(batchNumber, fileName)
 
-post_body << File.read(fileName) #Base64.encode64(File.read(fileName))
+   post_body << File.read(fileName) #Base64.encode64(File.read(fileName))
 
-post_body << BuildFormDataEnd(batchNumber)
-```
+   post_body << BuildFormDataEnd(batchNumber)
+   ```
 
 ## <a name="create-the-http-request"></a>Создание HTTP-запроса
 
-Установите заголовок `Ocp-Apim-Subscription-Key`.  Создание запроса. Затем назначьте заголовок и тип содержимого. Присоедините текст POST, созданный ранее, к запросу.
+Установите заголовок `Ocp-Apim-Subscription-Key`. Создайте запрос, а затем назначьте заголовок и тип содержимого. Присоедините текст POST, созданный ранее, к запросу.
 
-```
+```ruby
 header = {'Ocp-Apim-Subscription-Key': accessKey}
 request = Net::HTTP::Post.new(uri)  # , 'ImageKnowledge' => 'ImageKnowledge'
 
@@ -108,9 +110,9 @@ request.body = post_body.join
 
 ## <a name="request-and-response"></a>Запрос и ответ
 
-Ruby отправляет запрос и возвращает ответ с помощью следующей строки кода.
+Ruby отправляет запрос и возвращает ответ с помощью приведенного ниже кода.
 
-```
+```ruby
 response = Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https') do |http|
    http.request(request)
 end
@@ -121,7 +123,7 @@ end
 
 Отобразите заголовки ответа и отформатируйте выходные данные с помощью библиотеки JSON.
 
-```
+```ruby
 puts "\nRelevant Headers:\n\n"
 response.each_header do |key, value|
     if key.start_with?("bingapis-") or key.start_with?("x-msedge-") then
@@ -134,11 +136,11 @@ puts JSON::pretty_generate(JSON(response.body))
 
 ```
 
-## <a name="results"></a>Результаты
+## <a name="json-response"></a>Ответ JSON
 
 Приведенный ниже код JSON представляет собой сегмент выходных данных.
 
-```
+```JSON
 Relevant Headers:
 
 bingapis-traceid: 6E19E78D4FEC4A61AB4F85977EEDB8E6
@@ -284,5 +286,5 @@ JSON Response:
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Знакомство с API визуального поиска Bing](../overview.md)
-> [Build a Visual Search single-page web app](../tutorial-bing-visual-search-single-page-app.md) (Создание одностраничного веб-приложения Визуального поиска)
+> [Знакомство с API Визуального поиска Bing](../overview.md)
+> [Создание одностраничного веб-приложения Визуального поиска](../tutorial-bing-visual-search-single-page-app.md)

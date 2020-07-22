@@ -4,12 +4,12 @@ description: Узнайте, как создать приложение логи
 ms.topic: conceptual
 ms.subservice: alerts
 ms.date: 05/27/2019
-ms.openlocfilehash: 9042ed8ddbb698192e638fa7538f74561574c262
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 05349554f4c5e076562a75d48d58e0849986d6cc
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77668236"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86539505"
 ---
 # <a name="how-to-integrate-the-common-alert-schema-with-logic-apps"></a>Как интегрировать общую схему предупреждений с Logic Apps
 
@@ -20,16 +20,16 @@ ms.locfileid: "77668236"
 [Общая схема предупреждений](https://aka.ms/commonAlertSchemaDocs) предоставляет стандартизованную и расширяемую схему JSON для всех различных типов оповещений. Общая схема предупреждений наиболее полезна при программном использовании — через веб-перехватчики, модули Runbook и приложения логики. В этой статье мы продемонстрируем, как можно создать одно приложение логики для обработки всех ваших оповещений. Те же принципы могут применяться и к другим программным методам. Приложение логики, описываемое в этой статье, создает четко определенные переменные для [полей "важный"](alerts-common-schema-definitions.md#essentials), а также описывает способ обработки логики определенного [типа оповещений](alerts-common-schema-definitions.md#alert-context) .
 
 
-## <a name="prerequisites"></a>Предварительные условия 
+## <a name="prerequisites"></a>Предварительные требования 
 
 В этой статье предполагается, что читатель знаком с 
-* Настройка правил оповещений ([Метрика](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-metric), [Журнал](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-log), [Журнал действий](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log))
-* Настройка [групп действий](https://docs.microsoft.com/azure/azure-monitor/platform/action-groups)
-* Включение [общей схемы предупреждений](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-common-schema#how-do-i-enable-the-common-alert-schema) из групп действий
+* Настройка правил оповещений ([Метрика](./alerts-metric.md), [Журнал](./alerts-log.md), [Журнал действий](./alerts-activity-log.md))
+* Настройка [групп действий](./action-groups.md)
+* Включение [общей схемы предупреждений](./alerts-common-schema.md#how-do-i-enable-the-common-alert-schema) из групп действий
 
 ## <a name="create-a-logic-app-leveraging-the-common-alert-schema"></a>Создание приложения логики, использующего общую схему предупреждений
 
-1. Выполните действия, описанные [в статье Создание приложения логики](https://docs.microsoft.com/azure/azure-monitor/platform/action-groups-logic-app). 
+1. Выполните действия, описанные [в статье Создание приложения логики](./action-groups-logic-app.md). 
 
 1.  Выберите триггер **При получении HTTP-запроса**.
 
@@ -130,13 +130,12 @@ ms.locfileid: "77668236"
       if(equals(triggerBody()?['data']?['essentials']?['monitoringService'],'Application Insights'),triggerBody()?['data']?['alertContext']?['SearchResults'],'NA')
     ```
     
-     Дополнительные сведения о [написании выражений приложения логики](https://docs.microsoft.com/azure/logic-apps/workflow-definition-language-functions-reference#logical-comparison-functions).
+     Дополнительные сведения о [написании выражений приложения логики](../../logic-apps/workflow-definition-language-functions-reference.md#logical-comparison-functions).
 
     
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные [сведения о группах действий](../../azure-monitor/platform/action-groups.md).
+* [Узнайте о группах действий.](../../azure-monitor/platform/action-groups.md)
 * Дополнительные [сведения о схеме общих предупреждений](https://aka.ms/commonAlertSchemaDocs).
-

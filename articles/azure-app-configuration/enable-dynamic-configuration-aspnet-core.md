@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/24/2019
 ms.author: lcozzens
 ms.custom: mvc
-ms.openlocfilehash: e9df6d2e7a8219d16e7b60f7c3b8d826a87e6110
-ms.sourcegitcommit: 8a9c54c82ab8f922be54fb2fcfd880815f25de77
+ms.openlocfilehash: 5ac09aae724cf7481245ba9e898b52945b394cae
+ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80348852"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85856523"
 ---
 # <a name="tutorial-use-dynamic-configuration-in-an-aspnet-core-app"></a>Руководство. Использование динамической конфигурации в приложении ASP.NET Core
 
@@ -310,11 +310,16 @@ ASP.NET Core имеет подключаемую систему конфигур
 
 1. Чтобы создать приложение с помощью .NET Core CLI, выполните следующую команду в оболочке командной строки:
 
+```console
         dotnet build
+```
 
 1. Когда создание завершится, запустите веб-приложение локально с помощью следующей команды:
 
+```console
         dotnet run
+```
+
 1. Откройте окно браузера и перейдите по URL-адресу, указанному в выходных данных `dotnet run`.
 
     ![Локальный запуск приложения быстрого запуска](./media/quickstarts/aspnet-core-app-launch-local-before.png)

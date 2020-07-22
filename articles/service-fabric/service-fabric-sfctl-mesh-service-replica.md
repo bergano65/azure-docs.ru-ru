@@ -5,12 +5,12 @@ author: jeffj6123
 ms.topic: reference
 ms.date: 1/16/2020
 ms.author: jejarry
-ms.openlocfilehash: ac604ec0a854964746ef34627b054e853662265f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: cbfdba30663e2aa531ab1db955b0e035a0588709
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76905951"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86245727"
 ---
 # <a name="sfctl-mesh-service-replica"></a>sfctl mesh service-replica
 Получение сведений о репликах и списка реплик данной службы в ресурсе приложения.
@@ -20,7 +20,7 @@ ms.locfileid: "76905951"
 |Команда|Описание|
 | --- | --- |
 | list | Выводит список всех реплик службы. |
-| показать | Получает заданную реплику службы приложения. |
+| show | Получает заданную реплику службы приложения. |
 
 ## <a name="sfctl-mesh-service-replica-list"></a>sfctl mesh service-replica list
 Выводит список всех реплик службы.
@@ -68,6 +68,6 @@ ms.locfileid: "76905951"
 | --verbose | Повышение уровня детализации журнала. Чтобы включить полные журналы отладки, используйте параметр --debug. |
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Настройте](service-fabric-cli.md) Service Fabric CLI.
-- Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).
+- Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](./scripts/sfctl-upgrade-application.md).

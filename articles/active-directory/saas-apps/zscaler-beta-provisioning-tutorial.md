@@ -16,10 +16,9 @@ ms.topic: article
 ms.date: 03/27/2019
 ms.author: jeedes
 ms.openlocfilehash: 505cd7a3350c937885f0f03268ef326a4f784258
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77062751"
 ---
 # <a name="tutorial-configure-zscaler-beta-for-automatic-user-provisioning"></a>Руководство. Настройка бета-версии Zscaler для автоматической подготовки пользователей
@@ -76,7 +75,7 @@ ms.locfileid: "77062751"
 
 * Рекомендуется назначить одного пользователя Azure AD в Zscaler Beta для тестирования конфигурации автоматической подготовки пользователей. Дополнительные пользователи и/или группы можно назначить позднее.
 
-* При назначении пользователя в Zscaler Beta необходимо выбрать допустимую роль конкретного приложения (если она доступна) в диалоговом окне назначения. Пользователи с ролью **доступа по умолчанию** исключаются из подготовки.
+* При назначении пользователя в Zscaler Beta необходимо выбрать допустимую роль конкретного приложения (если она доступна) в диалоговом окне назначения. Пользователи с ролью **Доступ по умолчанию** исключаются из подготовки.
 
 ## <a name="configuring-automatic-user-provisioning-to-zscaler-beta"></a>Настройка автоматической подготовки пользователей в Zscaler Beta
 
@@ -95,11 +94,11 @@ ms.locfileid: "77062751"
 
     ![Ссылка на Zscaler Beta в списке приложений](common/all-applications.png)
 
-3. Перейдите на вкладку **Подготовка** .
+3. Выберите вкладку **Подготовка**.
 
     ![Подготовка бета-версии Zscaler](./media/zscaler-beta-provisioning-tutorial/provisioning-tab.png)
 
-4. Установите для **режима подготовки** значение **автоматически**.
+4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
     ![Подготовка бета-версии Zscaler](./media/zscaler-beta-provisioning-tutorial/provisioning-credentials.png)
 
@@ -164,7 +163,7 @@ ms.locfileid: "77062751"
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../active-directory-saas-provisioning-reporting.md)
 

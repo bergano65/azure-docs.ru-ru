@@ -4,14 +4,14 @@ description: В этой статье описывается, как настр�
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 02/28/2018
-ms.openlocfilehash: a9d078fe9aab12b9044733d17a1437801d5130a4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 7a7a98818ba565aad9f2404c77682171514c7573
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74763682"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86117990"
 ---
 # <a name="configure-server-parameters-in-azure-database-for-postgresql---single-server-via-the-azure-portal"></a>Настройка параметров сервера в базе данных Azure для PostgreSQL — Single Server с помощью портал Azure 
 С помощью портала Azure можно вывести список параметров конфигурации для сервера базы данных Azure для PostgreSQL, а также отобразить и обновить их.

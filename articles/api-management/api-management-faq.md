@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/19/2017
 ms.author: apimpm
-ms.openlocfilehash: 219681351159de6ac6bb48ff979cc68aa4ee18d3
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 72f9381a320dc0fb946dbf6f48c5bcab5390aed5
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82233488"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86243602"
 ---
 # <a name="azure-api-management-faqs"></a>Часто задаваемые вопросы о службе управления API Azure
 Ознакомьтесь с ответами на часто задаваемые вопросы, шаблонами и рекомендациями относительно службы управления API Azure.
@@ -49,7 +49,7 @@ ms.locfileid: "82233488"
 Это значит, что мы активно изучаем отзывы пользователей о работе функции. Функция в предварительной версии фактически завершена, но, возможно, мы внесем важные изменения в ответ на отзывы клиентов. Мы рекомендуем не закладывать в основу рабочей среды функции в предварительной версии.
 
 ### <a name="how-can-i-secure-the-connection-between-the-api-management-gateway-and-my-back-end-services"></a>Как защитить подключение шлюза управления API к внутренним службам?
-Существует несколько способов защитить такое подключение. Можно выполнить следующие действия.
+Существует несколько способов защитить такое подключение. Вы можете:
 
 * Использование обычной проверки подлинности HTTP. Дополнительные сведения см. в статье об [импорте и публикации первого API](import-and-publish.md).
 * Используйте взаимную проверку подлинности TLS, как описано в статье [Защита серверных служб с помощью проверки подлинности на основе сертификата клиента в службе управления API Azure](api-management-howto-mutual-certificates.md).
@@ -57,7 +57,7 @@ ms.locfileid: "82233488"
 * подключить экземпляр службы управления API к виртуальной сети Azure.
 
 ### <a name="how-do-i-copy-my-api-management-service-instance-to-a-new-instance"></a>Как скопировать экземпляр службы управления API в новый экземпляр?
-Существует несколько способов сделать это. Можно выполнить следующие действия.
+Существует несколько способов сделать это. Вы можете:
 
 * использовать функцию архивации и восстановления в службе управления API. Дополнительные сведения см. в статье [Реализация аварийного восстановления с помощью функций резервного копирования и восстановления службы в Azure API Management](api-management-howto-disaster-recovery-backup-restore.md).
 * создать функцию архивации и восстановления с помощью [REST API управления API](/rest/api/apimanagement/). Используйте REST API, чтобы сохранить и восстановить сущности из необходимого экземпляра службы.
@@ -68,7 +68,7 @@ ms.locfileid: "82233488"
 
 * [REST API службы управления API](/rest/api/apimanagement/);
 * [SDK для библиотеки управления службой ApiManagement Microsoft Azure](https://aka.ms/apimsdk);
-* командлетов PowerShell для [развертывания служб](https://docs.microsoft.com/powershell/module/wds) и [управления ими](https://docs.microsoft.com/powershell/azure/servicemanagement/overview).
+* командлетов PowerShell для [развертывания служб](/powershell/module/wds) и [управления ими](/powershell/azure/servicemanagement/overview).
 
 ### <a name="how-do-i-add-a-user-to-the-administrators-group"></a>Как добавить пользователя в группу администраторов?
 Есть несколько способов добавления пользователя в эту группу:
@@ -77,7 +77,7 @@ ms.locfileid: "82233488"
 2. Перейдите в группу ресурсов, где содержится экземпляр службы управления API, который нужно обновить.
 3. В службе управления API назначьте пользователю роль **участника "Служба управления API** ".
 
-Теперь добавленный участник сможет использовать [командлеты](https://docs.microsoft.com/powershell/azure/overview) Azure PowerShell. Войдите в систему от имени администратора:
+Теперь добавленный участник сможет использовать [командлеты](/powershell/azure/overview) Azure PowerShell. Войдите в систему от имени администратора:
 
 1. Используйте командлет `Connect-AzAccount`, чтобы войти.
 2. Задайте контекст для подписки, содержащей службу, используя `Set-AzContext -SubscriptionID <subscriptionGUID>`.
@@ -85,16 +85,16 @@ ms.locfileid: "82233488"
 4. Используйте этот URL-адрес, чтобы войти на портал администрирования.
 
 ### <a name="why-is-the-policy-that-i-want-to-add-unavailable-in-the-policy-editor"></a>Почему политика, которую я хочу добавить, недоступна в редакторе политик?
-Если в редакторе политик нужная политика отображается серым цветом или недоступна, убедитесь в правильности области ее действия. Каждый оператор предназначен для использования в конкретной области и разделе политики. Разделы политики и области ее действия см. в подразделе об использовании в разделе [API Management policies](/azure/api-management/api-management-policies) (Политики управления API).
+Если в редакторе политик нужная политика отображается серым цветом или недоступна, убедитесь в правильности области ее действия. Каждый оператор предназначен для использования в конкретной области и разделе политики. Разделы политики и области ее действия см. в подразделе об использовании в разделе [API Management policies](./api-management-policies.md) (Политики управления API).
 
 ### <a name="how-do-i-set-up-multiple-environments-in-a-single-api"></a>Как настроить несколько сред в одном API?
-Чтобы настроить несколько сред, например тестовую и рабочую, в одном API, используйте один из двух способов. Можно выполнить следующие действия.
+Чтобы настроить несколько сред, например тестовую и рабочую, в одном API, используйте один из двух способов. Вы можете:
 
 * разместить различные API в одном клиенте;
 * разместить один и тот же API в разных клиентах.
 
 ### <a name="can-i-use-soap-with-api-management"></a>Можно ли использовать SOAP в управлении API?
-Сейчас поддерживается [сквозная передача SOAP](https://blogs.msdn.microsoft.com/apimanagement/2016/10/13/soap-pass-through/). Администраторы могут импортировать WSDL-файл своей службы SOAP, и служба управления API Azure создаст внешний интерфейс SOAP. Для служб SOAP доступны документация портала для разработчиков, консоль тестирования, политики и средства анализа.
+Сейчас поддерживается [сквозная передача SOAP](https://azure.microsoft.com/blog/soap-pass-through/). Администраторы могут импортировать WSDL-файл своей службы SOAP, и служба управления API Azure создаст внешний интерфейс SOAP. Для служб SOAP доступны документация портала для разработчиков, консоль тестирования, политики и средства анализа.
 
 ### <a name="can-i-configure-an-oauth-20-authorization-server-with-ad-fs-security"></a>Можно ли настроить на сервере авторизации OAuth 2.0 систему безопасности служб федерации Active Directory?
 Дополнительные сведения о настройке системы безопасности служб федерации Active Directory (AD FS) на сервере авторизации OAuth 2.0 см. в записи блога [Using ADFS in API Management](https://phvbaars.wordpress.com/2016/02/06/using-adfs-in-api-management/) (Использование служб федерации Active Directory в службе управления API).
@@ -109,7 +109,7 @@ ms.locfileid: "82233488"
 Да. Это можно сделать с помощью PowerShell или отправить сертификат непосредственно в API. После этого будет отключена проверка цепочки сертификатов, и вы сможете использовать самозаверяющий или подписанный в частном порядке сертификат при обмене данными между управлением API и службами серверной части.
 
 #### <a name="powershell-method"></a>Метод PowerShell ####
-[`New-AzApiManagementBackend`](https://docs.microsoft.com/powershell/module/az.apimanagement/new-azapimanagementbackend) Используйте командлеты PowerShell (для новой серверной [`Set-AzApiManagementBackend`](https://docs.microsoft.com/powershell/module/az.apimanagement/set-azapimanagementbackend) части) или (для существующих серверных интерфейсов) `-SkipCertificateChainValidation` и задайте `True`для параметра значение.
+Используйте [`New-AzApiManagementBackend`](/powershell/module/az.apimanagement/new-azapimanagementbackend) командлеты PowerShell (для новой серверной части) или [`Set-AzApiManagementBackend`](/powershell/module/az.apimanagement/set-azapimanagementbackend) (для существующих серверных интерфейсов) и задайте `-SkipCertificateChainValidation` для параметра значение `True` .
 
 ```powershell
 $context = New-AzApiManagementContext -resourcegroup 'ContosoResourceGroup' -servicename 'ContosoAPIMService'

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: a03bc24b689df342be40536c26149a7611fc5176
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f18885634503cc65a5bf78d93bd84afd018956bd
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79283320"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86170808"
 ---
 # <a name="managing-media-services-entities-with-rest"></a>Управление сущностями служб мультимедиа с помощью REST  
 
@@ -49,73 +49,83 @@ ms.locfileid: "79283320"
 
 В следующем примере показано, как создать AccessPolicy.
 
-    POST https://media.windows.net/API/AccessPolicies HTTP/1.1
-    Content-Type: application/json;odata=verbose
-    Accept: application/json;odata=verbose
-    DataServiceVersion: 3.0
-    MaxDataServiceVersion: 3.0
-    x-ms-version: 2.19
-    Authorization: Bearer <ENCODED JWT TOKEN> 
-    Host: media.windows.net
-    Content-Length: 74
-    Expect: 100-continue
+```console
+POST https://media.windows.net/API/AccessPolicies HTTP/1.1
+Content-Type: application/json;odata=verbose
+Accept: application/json;odata=verbose
+DataServiceVersion: 3.0
+MaxDataServiceVersion: 3.0
+x-ms-version: 2.19
+Authorization: Bearer <ENCODED JWT TOKEN> 
+Host: media.windows.net
+Content-Length: 74
+Expect: 100-continue
 
-    {"Name": "DownloadPolicy", "DurationInMinutes" : "300", "Permissions" : 1}
+{"Name": "DownloadPolicy", "DurationInMinutes" : "300", "Permissions" : 1}
+```
 
 ## <a name="querying-entities"></a>Запрашивание сущностей
 Запрашивание и перечисление сущностей выполняется просто. Для этого используется только запрос HTTP GET и необязательные операции OData.
 В следующем примере извлекается список всех сущностей MediaProcessor.
 
-    GET https://media.windows.net/API/MediaProcessors HTTP/1.1
-    Content-Type: application/json;odata=verbose
-    Accept: application/json;odata=verbose
-    DataServiceVersion: 3.0
-    MaxDataServiceVersion: 3.0
-    x-ms-version: 2.19
-    Authorization: Bearer <ENCODED JWT TOKEN> 
-    Host: media.windows.net
+```console
+GET https://media.windows.net/API/MediaProcessors HTTP/1.1
+Content-Type: application/json;odata=verbose
+Accept: application/json;odata=verbose
+DataServiceVersion: 3.0
+MaxDataServiceVersion: 3.0
+x-ms-version: 2.19
+Authorization: Bearer <ENCODED JWT TOKEN> 
+Host: media.windows.net
+```
 
 Кроме того, вы можете получить конкретную сущность или все наборы сущностей, связанные с определенной сущностью, как в приведенных ниже примерах.
 
-    GET https://media.windows.net/API/JobTemplates('nb:jtid:UUID:e81192f5-576f-b247-b781-70a790c20e7c') HTTP/1.1
-    Content-Type: application/json;odata=verbose
-    Accept: application/json;odata=verbose
-    DataServiceVersion: 3.0
-    MaxDataServiceVersion: 3.0
-    x-ms-version: 2.19
-    Authorization: Bearer <ENCODED JWT TOKEN> 
-    Host: media.windows.net
+```console
+GET https://media.windows.net/API/JobTemplates('nb:jtid:UUID:e81192f5-576f-b247-b781-70a790c20e7c') HTTP/1.1
+Content-Type: application/json;odata=verbose
+Accept: application/json;odata=verbose
+DataServiceVersion: 3.0
+MaxDataServiceVersion: 3.0
+x-ms-version: 2.19
+Authorization: Bearer <ENCODED JWT TOKEN> 
+Host: media.windows.net
 
-    GET https://media.windows.net/API/JobTemplates('nb:jtid:UUID:e81192f5-576f-b247-b781-70a790c20e7c')/TaskTemplates HTTP/1.1
-    Content-Type: application/json;odata=verbose
-    Accept: application/json;odata=verbose
-    DataServiceVersion: 3.0
-    MaxDataServiceVersion: 3.0
-    x-ms-version: 2.19
-    Authorization: Bearer <ENCODED JWT TOKEN> 
-    Host: media.windows.net
+GET https://media.windows.net/API/JobTemplates('nb:jtid:UUID:e81192f5-576f-b247-b781-70a790c20e7c')/TaskTemplates HTTP/1.1
+Content-Type: application/json;odata=verbose
+Accept: application/json;odata=verbose
+DataServiceVersion: 3.0
+MaxDataServiceVersion: 3.0
+x-ms-version: 2.19
+Authorization: Bearer <ENCODED JWT TOKEN> 
+Host: media.windows.net
+```
 
 Следующий пример возвращает только свойство State всех сущностей Jobs.
 
-    GET https://media.windows.net/API/Jobs?$select=State HTTP/1.1
-    Content-Type: application/json;odata=verbose
-    Accept: application/json;odata=verbose
-    DataServiceVersion: 3.0
-    MaxDataServiceVersion: 3.0
-    x-ms-version: 2.19
-    Authorization: Bearer <ENCODED JWT TOKEN> 
-    Host: media.windows.net
+```console
+GET https://media.windows.net/API/Jobs?$select=State HTTP/1.1
+Content-Type: application/json;odata=verbose
+Accept: application/json;odata=verbose
+DataServiceVersion: 3.0
+MaxDataServiceVersion: 3.0
+x-ms-version: 2.19
+Authorization: Bearer <ENCODED JWT TOKEN> 
+Host: media.windows.net
+```
 
 В следующем примере возвращаются все объекты JobTemplate с именем "SampleTemplate".
 
-    GET https://media.windows.net/API/JobTemplates?$filter=startswith(Name,%20'SampleTemplate') HTTP/1.1
-    Content-Type: application/json;odata=verbose
-    Accept: application/json;odata=verbose
-    DataServiceVersion: 3.0
-    MaxDataServiceVersion: 3.0
-    x-ms-version: 2.19
-    Authorization: Bearer <ENCODED JWT TOKEN> 
-    Host: media.windows.net
+```console
+GET https://media.windows.net/API/JobTemplates?$filter=startswith(Name,%20'SampleTemplate') HTTP/1.1
+Content-Type: application/json;odata=verbose
+Accept: application/json;odata=verbose
+DataServiceVersion: 3.0
+MaxDataServiceVersion: 3.0
+x-ms-version: 2.19
+Authorization: Bearer <ENCODED JWT TOKEN> 
+Host: media.windows.net
+```
 
 > [!NOTE]
 > Операция $expand не поддерживается в службах мультимедиа, так же как и неподдерживаемые методы LINQ, описанные в разделе "Рекомендации по LINQ (службы WCF Data Services)".
@@ -127,51 +137,57 @@ ms.locfileid: "79283320"
 
 В следующем примере показано, как с помощью ссылок **skip** и **top** пропустить первые 2000 заданий и получить следующую 1000 заданий.  
 
-    GET https://media.windows.net/api/Jobs()?$skip=2000&$top=1000 HTTP/1.1
-    Content-Type: application/json;odata=verbose
-    Accept: application/json;odata=verbose
-    DataServiceVersion: 3.0
-    MaxDataServiceVersion: 3.0
-    x-ms-version: 2.19
-    Authorization: Bearer <ENCODED JWT TOKEN>
-    Host: media.windows.net
+```console
+GET https://media.windows.net/api/Jobs()?$skip=2000&$top=1000 HTTP/1.1
+Content-Type: application/json;odata=verbose
+Accept: application/json;odata=verbose
+DataServiceVersion: 3.0
+MaxDataServiceVersion: 3.0
+x-ms-version: 2.19
+Authorization: Bearer <ENCODED JWT TOKEN>
+Host: media.windows.net
+```
 
 ## <a name="updating-entities"></a>Обновление сущностей
 В зависимости от типа сущности и состояния, в котором она находится, можно обновить свойства этой сущности с помощью HTTP-запросов PATCH, PUT или MERGE. Дополнительные сведения об этих операциях см. [здесь](https://msdn.microsoft.com/library/dd541276.aspx).
 
 В следующем примере кода показано, как обновить свойство Name сущности Asset.
 
-    MERGE https://media.windows.net/API/Assets('nb:cid:UUID:80782407-3f87-4e60-a43e-5e4454232f60') HTTP/1.1
-    Content-Type: application/json;odata=verbose
-    Accept: application/json;odata=verbose
-    DataServiceVersion: 3.0
-    MaxDataServiceVersion: 3.0
-    x-ms-version: 2.19
-    Authorization: Bearer <ENCODED JWT TOKEN>
-    Host: media.windows.net
-    Content-Length: 21
-    Expect: 100-continue
+```console
+MERGE https://media.windows.net/API/Assets('nb:cid:UUID:80782407-3f87-4e60-a43e-5e4454232f60') HTTP/1.1
+Content-Type: application/json;odata=verbose
+Accept: application/json;odata=verbose
+DataServiceVersion: 3.0
+MaxDataServiceVersion: 3.0
+x-ms-version: 2.19
+Authorization: Bearer <ENCODED JWT TOKEN>
+Host: media.windows.net
+Content-Length: 21
+Expect: 100-continue
 
-    {"Name" : "NewName" }
+{"Name" : "NewName" }
+```
 
 ## <a name="deleting-entities"></a>Удаление сущностей
 Сущности в службах мультимедиа можно удалить с помощью запроса HTTP DELETE. В зависимости от сущности порядок, в котором удаляются сущности, может быть важным. Например, чтобы удалить сущность наподобие Asset, нужно перед этим отозвать (или удалить) все указатели (Locator), которые ссылаются на эту сущность.
 
 В приведенном ниже примере показан способ удаления сущности Locator (указатель), которая использовалась для отправки файла в хранилище больших двоичных объектов.
 
-    DELETE https://media.windows.net/API/Locators('nb:lid:UUID:76dcc8e8-4230-463d-97b0-ce25c41b5c8d') HTTP/1.1
-    Content-Type: application/json;odata=verbose
-    Accept: application/json;odata=verbose
-    DataServiceVersion: 3.0
-    MaxDataServiceVersion: 3.0
-    x-ms-version: 2.19
-    Authorization: Bearer <ENCODED JWT TOKEN>
-    Host: media.windows.net
-    Content-Length: 0
+```console
+DELETE https://media.windows.net/API/Locators('nb:lid:UUID:76dcc8e8-4230-463d-97b0-ce25c41b5c8d') HTTP/1.1
+Content-Type: application/json;odata=verbose
+Accept: application/json;odata=verbose
+DataServiceVersion: 3.0
+MaxDataServiceVersion: 3.0
+x-ms-version: 2.19
+Authorization: Bearer <ENCODED JWT TOKEN>
+Host: media.windows.net
+Content-Length: 0
+```
 
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

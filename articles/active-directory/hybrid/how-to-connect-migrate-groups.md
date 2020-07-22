@@ -5,18 +5,18 @@ services: active-directory
 author: billmath
 manager: daveba
 ms.service: active-directory
-ms.topic: reference
+ms.topic: how-to
 ms.workload: identity
 ms.date: 04/02/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: da2328674fd601f2e04684e8a9af1ae242ff6106
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 5ef693a48dc52854e4e1fd8359ef24f65ce236f7
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82229805"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85358588"
 ---
 # <a name="migrate-groups-from-one-forest-to-another-for-azure-ad-connect"></a>Миграция групп из одного леса в другой для Azure AD Connect
 
@@ -29,7 +29,7 @@ ms.locfileid: "82229805"
 
 ## <a name="migrate-groups"></a>Миграция групп
 
-Начиная с версии 1.5.18.0, Azure AD Connect поддерживает использование `mS-DS-ConsistencyGuid` атрибута для групп. Если вы выбираете `mS-DS-ConsistencyGuid` в качестве атрибута привязки источника и значение заполняется в Active Directory, Azure AD Connect использует значение в `mS-DS-ConsistencyGuid` качестве. `immutableId` В противном случае он возвращается к `objectGUID`использованию. Но обратите внимание, что Azure AD Connect не записывает значение `mS-DS-ConsistencyGuid` обратно в атрибут в Active Directory.
+Начиная с версии 1.5.18.0, Azure AD Connect поддерживает использование `mS-DS-ConsistencyGuid` атрибута для групп. Если вы выбираете `mS-DS-ConsistencyGuid` в качестве атрибута привязки источника и значение заполняется в Active Directory, Azure AD Connect использует значение в `mS-DS-ConsistencyGuid` качестве `immutableId` . В противном случае он возвращается к использованию `objectGUID` . Но обратите внимание, что Azure AD Connect не записывает значение обратно в `mS-DS-ConsistencyGuid` атрибут в Active Directory.
 
 При перемещении между лесами при перемещении объекта группы из одного леса (скажем, F1) в другой лес (скажем, F2) необходимо скопировать `mS-DS-ConsistencyGuid` значение (если оно имеется) или `objectGUID` значение из объекта в лесу F1 в `mS-DS-ConsistencyGuid` атрибут объекта в F2.
 
@@ -124,5 +124,5 @@ Set-ADGroup -Identity $dn -Replace @{'mS-DS-ConsistencyGuid'=$targetGuid} -Error
 
 ```
 
-## <a name="next-steps"></a>Следующие шаги
-Дополнительные сведения об интеграции локальных удостоверений см. в статье [Подключение Active Directory к Azure Active Directory](whatis-hybrid-identity.md).
+## <a name="next-steps"></a>Дальнейшие шаги
+Дополнительные сведения об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

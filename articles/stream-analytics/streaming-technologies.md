@@ -8,10 +8,9 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/15/2019
 ms.openlocfilehash: 2146b1bd782aba5d98729a2d37d956744e469ba1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75860254"
 ---
 # <a name="choose-a-real-time-analytics-and-streaming-processing-technology-on-azure"></a>Выбор технологии анализа и потоковой обработки в реальном времени в Azure
@@ -50,7 +49,7 @@ Azure Stream Analytics поддерживает определяемые пол�
 
 Azure Stream Analytics является собственной технологией корпорации Майкрософт и доступна только в Azure. Если требуется, чтобы ваше решение было переносимым в облаках или локально, рассмотрите технологии с открытым исходным кодом, такие как структурированная потоковая передача Spark.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Создание Stream Analytics задания с помощью портал Azure](stream-analytics-quick-create-portal.md)
 * [Создание Stream Analytics задания с помощью Azure PowerShell](stream-analytics-quick-create-powershell.md)

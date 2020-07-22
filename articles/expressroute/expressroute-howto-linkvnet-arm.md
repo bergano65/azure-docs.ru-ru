@@ -4,16 +4,16 @@ description: В этом документе содержатся общие св
 services: expressroute
 author: charwen
 ms.service: expressroute
-ms.topic: article
+ms.topic: how-to
 ms.date: 05/20/2018
 ms.author: charwen
 ms.custom: seodec18
-ms.openlocfilehash: 755b1898ee4cbc32de3a65a6bbc368ecf3eb3acf
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c8fd3bc4a2efd90857d0696491102790b069d5e1
+ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80616382"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85984157"
 ---
 # <a name="connect-a-virtual-network-to-an-expressroute-circuit"></a>Подключение виртуальной сети к каналу ExpressRoute
 > [!div class="op_single_selector"]
@@ -33,7 +33,7 @@ ms.locfileid: "80616382"
 * Если включить надстройку канала ExpressRoute Premium, вы сможете подключить к каналу ExpressRoute больше виртуальных сетей, включая сети из других геополитических регионов. Дополнительную информацию о надстройке Premium см. в разделе [Вопросы и ответы](expressroute-faqs.md).
 
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 * Прежде чем приступить к настройке, изучите [предварительные требования](expressroute-prerequisites.md), [требования к маршрутизации](expressroute-routing.md) и [рабочие процессы](expressroute-workflows.md).
 
@@ -97,12 +97,14 @@ $auth1 = Get-AzExpressRouteCircuitAuthorization -ExpressRouteCircuit $circuit -N
 
 Ответ будет содержать ключ и состояние разрешения.
 
-    Name                   : MyAuthorization1
-    Id                     : /subscriptions/&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&/resourceGroups/ERCrossSubTestRG/providers/Microsoft.Network/expressRouteCircuits/CrossSubTest/authorizations/MyAuthorization1
-    Etag                   : &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& 
-    AuthorizationKey       : ####################################
-    AuthorizationUseStatus : Available
-    ProvisioningState      : Succeeded
+```azurepowershell
+Name                   : MyAuthorization1
+Id                     : /subscriptions/&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&/resourceGroups/ERCrossSubTestRG/providers/Microsoft.Network/expressRouteCircuits/CrossSubTest/authorizations/MyAuthorization1
+Etag                   : &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& 
+AuthorizationKey       : ####################################
+AuthorizationUseStatus : Available
+ProvisioningState      : Succeeded
+```
 
 
 
@@ -195,5 +197,5 @@ $connection.ExpressRouteGatewayBypass = $True
 Set-AzVirtualNetworkGatewayConnection -VirtualNetworkGatewayConnection $connection
 ``` 
 
-## <a name="next-steps"></a>Дальнейшие шаги
-Дополнительные сведения об ExpressRoute см. в статье [вопросы и ответы по expressroute](expressroute-faqs.md).
+## <a name="next-steps"></a>Дальнейшие действия
+Дополнительные сведения об ExpressRoute см. в статье [Вопросы и ответы по ExpressRoute](expressroute-faqs.md).

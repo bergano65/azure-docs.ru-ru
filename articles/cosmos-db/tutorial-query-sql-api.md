@@ -1,6 +1,6 @@
 ---
 title: Руководство по Как выполнять запросы с помощью SQL в базе данных Azure Cosmos DB
-description: Руководство по Узнайте, как выполнять запросы SQL в Azure Cosmos DB с помощью Площадки для тестирования запросов
+description: Руководство по выполнению запросов SQL в Azure Cosmos DB с помощью Площадки для тестирования запросов
 author: markjbrown
 ms.author: mjbrown
 ms.service: cosmos-db
@@ -8,12 +8,12 @@ ms.custom: tutorial-develop, mvc
 ms.topic: tutorial
 ms.date: 11/05/2019
 ms.reviewer: sngun
-ms.openlocfilehash: 7e83ed0f9e635ed24b7e6115eeaaa9057d422c69
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: e8d1498520ea0c59372ec4e1096b6f2b4bcf885f
+ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74870077"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85921120"
 ---
 # <a name="tutorial-query-azure-cosmos-db-by-using-the-sql-api"></a>Руководство по Выполнение запросов в Azure Cosmos DB с использованием API SQL
 
@@ -56,6 +56,7 @@ ms.locfileid: "74870077"
   "isRegistered": false
 }
 ```
+
 ## <a name="where-can-i-run-sql-queries"></a>Где могут выполняться SQL-запросы
 
 Вы можете выполнять запросы с помощью обозревателя данных на портале Azure, через [REST API и пакеты SDK](sql-api-sdk-dotnet.md) и даже через [площадку для запросов](https://www.documentdb.com/sql/demo), которая выполняет запросы с использованием существующего набора примера данных.
@@ -65,7 +66,7 @@ ms.locfileid: "74870077"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-В этом руководстве предполагается, что у вас есть учетная запись и коллекция базы данных Azure Cosmos DB. У вас их нет? Выполните задачи [5-минутного краткого руководства](create-cosmosdb-resources-portal.md).
+В этом руководстве предполагается, что у вас есть учетная запись и коллекция базы данных Azure Cosmos DB. Если у вас их нет, выполните указанные ниже действия. Выполните задачи [5-минутного краткого руководства](create-cosmosdb-resources-portal.md).
 
 ## <a name="example-query-1"></a>Пример запроса 1
 
@@ -73,9 +74,11 @@ ms.locfileid: "74870077"
 
 **Запрос**
 
+```sql
     SELECT * 
     FROM Families f 
     WHERE f.id = "WakefieldFamily"
+```
 
 **Результаты**
 
@@ -114,19 +117,30 @@ ms.locfileid: "74870077"
 
 **Запрос**
 
+```sql
     SELECT c.givenName 
     FROM Families f 
     JOIN c IN f.children 
     WHERE f.id = 'WakefieldFamily'
+```
 
 **Результаты**
 
-[ { "givenName": "Jesse" }, { "givenName": "Lisa" } ]
+```
+[
+    {
+        "givenName": "Jesse"
+    },
+    {
+        "givenName": "Lisa"
+    }
+]
+```
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве вы выполнили следующее:
+В этом учебнике были выполнены следующие задачи:
 
 > [!div class="checklist"]
 > * Вы научились выполнять запросы с помощью SQL.  

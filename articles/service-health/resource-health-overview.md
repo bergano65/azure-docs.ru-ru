@@ -3,12 +3,11 @@ title: Обзор службы "Работоспособность ресурс�
 description: Обзор службы "Работоспособность ресурсов Azure"
 ms.topic: conceptual
 ms.date: 05/10/2019
-ms.openlocfilehash: 7a1dfe5e93d0e19aeb343d113a24ed882a5b3f69
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: f0d2fdb8e1c8b92dba526650405405db8ae8a776
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80159257"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86041580"
 ---
 # <a name="resource-health-overview"></a>Обзор Работоспособность ресурсов
  

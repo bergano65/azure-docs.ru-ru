@@ -3,25 +3,24 @@ title: Функции шаблонов — объекты
 description: Описывает функции, используемые в шаблоне Azure Resource Manager для работы с объектами.
 ms.topic: conceptual
 ms.date: 04/27/2020
-ms.openlocfilehash: 2f77cd85802a2ecb3670cfc6d6b36e5e852fb2a6
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
-ms.translationtype: MT
+ms.openlocfilehash: fede4d6c71e45b119e500d4c9c6f91765d052036
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82231328"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84676800"
 ---
 # <a name="object-functions-for-arm-templates"></a>Функции объектов для шаблонов ARM
 
 Диспетчер ресурсов предоставляет несколько функций для работы с объектами в шаблоне Azure Resource Manager (ARM).
 
 * [contains](#contains)
-* [пустых](#empty)
-* [крайне](#intersection)
-* [формат](#json)
+* [empty](#empty)
+* [intersection](#intersection)
+* [json](#json)
 * [length](#length)
-* [наборов](#union)
+* [union](#union)
 
-## <a name="contains"></a>contains
+## <a name="contains"></a>содержит
 
 `contains(container, itemToFind)`
 
@@ -29,7 +28,7 @@ ms.locfileid: "82231328"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | контейнер |Да |массив, объект или строка |Значение, содержащее значение, которое необходимо найти. |
 | itemToFind |Да |строка или целое число |Значение, которое необходимо найти. |
@@ -44,7 +43,7 @@ ms.locfileid: "82231328"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "stringToTest": {
@@ -93,7 +92,7 @@ ms.locfileid: "82231328"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | stringTrue | Bool | True |
 | stringFalse | Bool | False |
@@ -102,7 +101,7 @@ ms.locfileid: "82231328"
 | arrayTrue | Bool | True |
 | arrayFalse | Bool | False |
 
-## <a name="empty"></a>пустых
+## <a name="empty"></a>empty
 
 `empty(itemToTest)`
 
@@ -110,7 +109,7 @@ ms.locfileid: "82231328"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | itemToTest |Да |массив, объект или строка |Значение, которое необходимо проверить, если оно пустое. |
 
@@ -124,7 +123,7 @@ ms.locfileid: "82231328"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "testArray": {
@@ -161,7 +160,7 @@ ms.locfileid: "82231328"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | arrayEmpty | Bool | True |
 | objectEmpty | Bool | True |
@@ -175,11 +174,11 @@ ms.locfileid: "82231328"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |массив или объект |Первое значение для поиска общих элементов. |
 | arg2 |Да |массив или объект |Второе значение для поиска общих элементов. |
-| дополнительные аргументы |Нет |массив или объект |Дополнительные значения для поиска общих элементов. |
+| дополнительные аргументы |нет |массив или объект |Дополнительные значения для поиска общих элементов. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -191,7 +190,7 @@ ms.locfileid: "82231328"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "firstObject": {
@@ -228,7 +227,7 @@ ms.locfileid: "82231328"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | objectOutput | Объект | {"one": "a", "three": "c"} |
 | arrayOutput | Массив | ["two", "three"] |
@@ -241,7 +240,7 @@ ms.locfileid: "82231328"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |строка |Значение, которое необходимо преобразовать в формат JSON. |
 
@@ -249,7 +248,7 @@ ms.locfileid: "82231328"
 
 Объект JSON из указанной строки или пустой объект, если указано значение **null**.
 
-### <a name="remarks"></a>Примечания
+### <a name="remarks"></a>Комментарии
 
 Если необходимо включить значение параметра или переменную в объект JSON, используйте функцию [concat](template-functions-string.md#concat) для создания строки, передаваемой в функцию.
 
@@ -259,7 +258,7 @@ ms.locfileid: "82231328"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "jsonObject1": {
@@ -296,7 +295,7 @@ ms.locfileid: "82231328"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | jsonOutput1 | Логическое значение | True |
 | jsonOutput2 | Объект | {"a": "b"} |
@@ -310,7 +309,7 @@ ms.locfileid: "82231328"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |массив, строка или объект |Массив, используемый для получения числа элементов, строки, используемой для получения числа символов, или объекта, используемого для получения числа свойств корневого уровня. |
 
@@ -324,7 +323,7 @@ ms.locfileid: "82231328"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "arrayToTest": {
@@ -372,7 +371,7 @@ ms.locfileid: "82231328"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | arrayLength | Int | 3 |
 | stringLength | Int | 13 |
@@ -386,11 +385,11 @@ ms.locfileid: "82231328"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | arg1 |Да |массив или объект |Первое значение для объединения элементов. |
 | arg2 |Да |массив или объект |Второе значение для объединения элементов. |
-| дополнительные аргументы |Нет |массив или объект |Дополнительные значения для объединения элементов. |
+| дополнительные аргументы |нет |массив или объект |Дополнительные значения для объединения элементов. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -402,7 +401,7 @@ ms.locfileid: "82231328"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "firstObject": {
@@ -439,11 +438,11 @@ ms.locfileid: "82231328"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | objectOutput | Объект | {"one": "a", "two": "b", "three": "c2", "four": "d", "five": "e"} |
 | arrayOutput | Массив | ["one", "two", "three", "four"] |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Описание разделов в шаблоне Azure Resource Manager см. [в разделе Общие сведения о структуре и синтаксисе шаблонов ARM](template-syntax.md).

@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/16/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ccdab373be4bab876ef52ba478076b6a8b6e0845
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 87488c05aa5f7503529d2bf24c0af6a12fa92bc8
+ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "76291181"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85848607"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-jive"></a>Руководство по Интеграция единого входа Azure Active Directory с Jive
 
@@ -84,13 +84,15 @@ ms.locfileid: "76291181"
 
 1. На странице **Базовая конфигурация SAML** введите значения следующих полей.
 
-а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<instance name>.jivecustom.com`.
+   а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<instance name>.jivecustom.com`.
 
-    b. In the **Identifier (Entity ID)** text box, type a URL using the following pattern:
-    `https://<instance name>.jiveon.com`
+   b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате:
+   ```http
+   https://<instance name>.jiveon.com
+   ```
 
     > [!NOTE]
-    > These values are not real. Update these values with the actual Sign on URL and Identifier. Contact [Jive Client support team](https://www.jivesoftware.com/services-support/) to get these values. You can also refer to the patterns shown in the **Basic SAML Configuration** section in the Azure portal.
+    > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки Jive](https://www.jivesoftware.com/services-support/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 

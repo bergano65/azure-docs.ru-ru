@@ -6,13 +6,13 @@ ms.topic: article
 ms.date: 03/12/2020
 author: sabbour
 ms.author: asabbour
-keywords: АТО, openshift, AZ АТО, Red Hat, CLI
+keywords: aro, openshift, az aro, red hat, cli
 ms.custom: mvc
 ms.openlocfilehash: 45da3034891e5a82fb8423adb6bcd5e867f9d4e2
-ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82205005"
 ---
 # <a name="configure-azure-active-directory-authentication-for-an-azure-red-hat-openshift-4-cluster-cli"></a>Настройка проверки подлинности Azure Active Directory для кластера Azure Red Hat OpenShift 4 (CLI)
@@ -24,7 +24,7 @@ ms.locfileid: "82205005"
 Создайте URL-адрес обратного вызова OAuth кластера и сохраните его в переменной **оаускаллбаккурл**. Не забудьте заменить **АТО-RG** именем группы ресурсов, а **АТО-Cluster —** именем кластера.
 
 > [!NOTE]
-> `AAD` Раздел в URL-адресе обратного вызова OAuth должен соответствовать имени поставщика удостоверений OAuth, которое будет настроено позже.
+> `AAD`Раздел в URL-адресе обратного вызова OAuth должен соответствовать имени поставщика удостоверений OAuth, которое будет настроено позже.
 
 ```azurecli-interactive
 domain=$(az aro show -g aro-rg -n aro-cluster --query clusterProfile.domain -o tsv)
@@ -36,7 +36,7 @@ oauthCallbackURL=https://oauth-openshift.apps.$domain.$location.aroapp.io/oauth2
 
 ## <a name="create-an-azure-active-directory-application-for-authentication"></a>Создание приложения Azure Active Directory для проверки подлинности
 
-Создайте приложение Azure Active Directory и получите созданный идентификатор приложения. Замените ** \<ClientSecret>** защищенным паролем.
+Создайте приложение Azure Active Directory и получите созданный идентификатор приложения. Замените **\<ClientSecret>** защищенным паролем.
 
 ```azurecli-interactive
 az ad app create \
@@ -74,9 +74,9 @@ az account show --query tenantId -o tsv
 - изменить поведение определенных утверждений в токенах, возвращаемых Azure AD;
 - добавлять пользовательские утверждения для приложения и обращаться к ним.
 
-Мы настроим OpenShift на использование `email` утверждения и вернемся `upn` к установке предпочтительного имени пользователя, ДОбавив в `upn` маркер идентификации, возвращенный Azure Active Directory.
+Мы настроим OpenShift на использование `email` утверждения и вернемся к `upn` установке предпочтительного имени пользователя, добавив в `upn` маркер идентификации, возвращенный Azure Active Directory.
 
-Создайте файл **manifest. JSON** для настройки приложения Azure Active Directory.
+Создайте **manifest.js** для файла, чтобы настроить приложение Azure Active Directory.
 
 ```bash
 cat > manifest.json<< EOF
@@ -97,7 +97,7 @@ EOF
 
 ## <a name="update-the-azure-active-directory-applications-optionalclaims-with-a-manifest"></a>Обновление optionalClaims приложения Azure Active Directory с помощью манифеста
 
-Замените ** \<AppID>** идентификатором, полученным ранее.
+Замените **\<AppID>** идентификатором, который вы получили ранее.
 
 ```azurecli-interactive
 az ad app update \
@@ -109,7 +109,7 @@ az ad app update \
 
 Чтобы иметь возможность считывать сведения о пользователе из Azure Active Directory, необходимо определить соответствующие области.
 
-Замените ** \<AppID>** идентификатором, полученным ранее.
+Замените **\<AppID>** идентификатором, который вы получили ранее.
 
 Добавьте разрешение для области **графа Azure Active Directory Graph. пользователь. Read** , чтобы включить вход и чтение профиля пользователя.
 
@@ -131,7 +131,7 @@ az ad app permission add \
 
 ## <a name="configure-openshift-openid-authentication"></a>Настройка проверки подлинности OpenShift OpenID Connect
 
-Получите `kubeadmin` учетные данные. Выполните следующую команду, чтобы найти пароль для `kubeadmin` пользователя.
+Получите `kubeadmin` учетные данные. Выполните следующую команду, чтобы найти пароль для пользователя `kubeadmin`.
 
 ```azurecli-interactive
 az aro list-credentials \
@@ -139,7 +139,7 @@ az aro list-credentials \
   --resource-group aro-rg
 ```
 
-В следующем примере выходных данных показано, что пароль будет `kubeadminPassword`находиться в.
+В следующем примере вывода показано, что пароль будет находиться в `kubeadminPassword`.
 
 ```json
 {
@@ -148,13 +148,13 @@ az aro list-credentials \
 }
 ```
 
-Войдите на сервер API кластера OpenShift с помощью следующей команды. `$apiServer` Переменная была задана [ранее](). Замените ** \<кубеадмин Password>** паролем, который вы получили.
+Войдите на сервер API кластера OpenShift с помощью следующей команды. `$apiServer`Переменная была задана [ранее](). Замените **\<kubeadmin password>** паролем, который вы получили.
 
 ```azurecli-interactive
 oc login $apiServer -u kubeadmin -p <kubeadmin password>
 ```
 
-Создайте секрет OpenShift для хранения секрета приложения Azure Active Directory, заменив ** \<ClientSecret>** на секрет, полученный ранее.
+Создайте секрет OpenShift для хранения секрета приложения Azure Active Directory, заменив **\<ClientSecret>** его секретом, полученным ранее.
 
 ```azurecli-interactive
 oc create secret generic openid-client-secret-azuread \
@@ -162,7 +162,7 @@ oc create secret generic openid-client-secret-azuread \
   --from-literal=clientSecret=<ClientSecret>
 ```    
 
-Создайте файл **oidc. YAML** , чтобы настроить проверку подлинности OpenShift openid connect в Azure Active Directory. Замените ** \<AppID>** и ** \<TenantId>** значениями, полученными ранее.
+Создайте файл **oidc. YAML** , чтобы настроить проверку подлинности OpenShift openid connect в Azure Active Directory. Замените **\<AppID>** и **\<TenantId>** значениями, полученными ранее.
 
 ```bash
 cat > oidc.yaml<< EOF

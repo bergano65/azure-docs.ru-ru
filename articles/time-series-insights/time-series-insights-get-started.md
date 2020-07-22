@@ -1,28 +1,28 @@
 ---
 title: созданию среды Azure Time Series Insights | Документация Майкрософт
-description: Узнайте, как использовать портал Azure для создания новой среды "аналитика временных рядов".
+description: Узнайте, как использовать портал Azure для создания новой среды службы "аналитика временных рядов Azure".
 ms.service: time-series-insights
 services: time-series-insights
 author: deepakpalled
 ms.author: dpalled
-manager: cshankar
+manager: diviso
 ms.reviewer: v-mamcge, jasonh, kfile
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 04/16/2020
+ms.date: 06/30/2020
 ms.custom: seodec18
-ms.openlocfilehash: 7459c6afc775aa0df43d6f9285191c4c7e1b8cb8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 02997b421a57363e04a0d988685b76f59954439e
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81602372"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86495148"
 ---
-# <a name="create-a-new-time-series-insights-environment-in-the-azure-portal"></a>Создание среды Time Series Insights на портале Azure
+# <a name="create-a-new-azure-time-series-insights-gen1-environment-in-the-azure-portal"></a>Создайте новую среду Gen1 "аналитика временных рядов Azure" в портал Azure
 
-В этой статье описывается, как создать новую среду "Аналитика временных рядов" с помощью портала Azure.
+В этой статье описывается создание новой среды Azure Time Series Insights с помощью портал Azure.
 
-Служба "Аналитика временных рядов" позволяет быстро начать работу с визуализацией и выполнением запросов к данным, поступающих в Центры Интернета вещей и Центры событий Azure. Благодаря этому вы можете опрашивать большие объемы данных временных рядов за секунды.  Эта технология разработана специально для Интернета вещей (IoT) и способна обрабатывать терабайты данных.
+Служба "аналитика временных рядов Azure" позволяет начать визуализацию и запрос данных, передаваемых в центры Интернета вещей Azure и концентраторы событий за считаные минуты, позволяя выполнять запросы к большим объемам данных временных рядов за считаные секунды.  Эта технология разработана специально для Интернета вещей (IoT) и способна обрабатывать терабайты данных.
 
 ## <a name="steps-to-create-the-environment"></a>Процедура создания среды
 
@@ -34,18 +34,18 @@ ms.locfileid: "81602372"
 
 1. Выберите категорию **Интернет вещей**, а затем — **Аналитика временных рядов**.
 
-   [![Создание среды Time Series Insights](media/time-series-insights-get-started/tsi-create-new-environment.png)](media/time-series-insights-get-started/tsi-create-new-environment.png#lightbox)
+   [![Создание среды службы "аналитика временных рядов Azure"](media/time-series-insights-get-started/tsi-create-new-environment.png)](media/time-series-insights-get-started/tsi-create-new-environment.png#lightbox)
 
 1. На странице **Аналитика временных рядов** выберите **Создать**.
 
 1. Заполните обязательные параметры. В следующей таблице объясняется каждый параметр:
 
-   [![Создание группы ресурсов Time Series Insights](media/time-series-insights-get-started/tsi-configure-and-create.png)](media/time-series-insights-get-started/tsi-configure-and-create.png#lightbox)
+   [![Создание группы ресурсов службы "аналитика временных рядов Azure"](media/time-series-insights-get-started/tsi-configure-and-create.png)](media/time-series-insights-get-started/tsi-configure-and-create.png#lightbox)
 
    Параметр|Рекомендуемое значение|Описание
    ---|---|---
-   Имя среды | Уникальное имя | Это имя представляет среду в [обозревателе временных рядов](https://insights.timeseries.azure.com).
-   Подписка | Ваша подписка | Если у вас несколько подписок, лучше выбрать ту, которая содержит источник событий. Служба "аналитика временных рядов" может автоматически обнаруживать ресурсы центра Интернета вещей Azure и концентратора событий, существующие в одной подписке.
+   Имя среды | Уникальное имя | Это имя представляет среду в [обозревателе временных рядов](https://insights.timeseries.azure.com)
+   Подписка | Ваша подписка | Если у вас несколько подписок, лучше выбрать ту, которая содержит источник событий. Служба "аналитика временных рядов Azure" может автоматически обнаруживать ресурсы центра Интернета вещей Azure и концентратора событий, существующие в одной подписке.
    Группа ресурсов | Создайте новую или используйте существующую | Группы ресурсов — это набор совместно используемых ресурсов Azure. Можно выбрать существующую группу ресурсов, например ту, которая содержит концентратор событий или центр Интернета вещей. Или же можно создать новую, если этот ресурс не связан с другими ресурсами.
    Расположение | Ближайший источник событий | Предпочтительно выбирать то же расположение центра обработки данных, которое содержит данные об источниках событий. Это позволит избежать дополнительных затрат на обеспечение пропускной способности между регионами и между зонами, а также дополнительной задержки при перемещении данных за пределы региона.
    Ценовая категория | S1 | Выберите необходимую пропускную способность. Чтобы обеспечить наименьшие затраты и определить начальную производительность, выберите S1.
@@ -59,11 +59,11 @@ ms.locfileid: "81602372"
 
 1. В разделе **Общие сведения о**ресурсе проверьте параметры конфигурации развертывания.
 
-   [![Закрепление Time Series Insights на панели мониторинга](media/time-series-insights-get-started/tsi-verify-deployment.png)](media/time-series-insights-get-started/tsi-verify-deployment.png#lightbox)
+   [![Создание ПИН-кода службы "аналитика временных рядов Azure" на панели мониторинга](media/time-series-insights-get-started/tsi-verify-deployment.png)](media/time-series-insights-get-started/tsi-verify-deployment.png#lightbox)
 
-1. **(Необязательно)** Щелкните **значок закрепления** в правом верхнем углу, чтобы легко получить доступ к среде "аналитика временных рядов" в будущем.
+1. **(Необязательно)** Щелкните **значок закрепления** в правом верхнем углу, чтобы легко получить доступ к среде службы "аналитика временных рядов Azure" в будущем.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Определите политики доступа к данным](time-series-insights-data-access.md) для защиты среды.
 
@@ -71,4 +71,4 @@ ms.locfileid: "81602372"
 
 * [Отправка событий](time-series-insights-send-events.md) в источник событий.
 
-* Просмотр среды в [обозревателе "аналитика временных рядов](https://insights.timeseries.azure.com)".
+* Просматривайте свою среду в обозревателе службы " [аналитика временных рядов Azure](https://insights.timeseries.azure.com)".

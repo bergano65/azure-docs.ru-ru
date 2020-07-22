@@ -8,12 +8,12 @@ ms.devlang: nodejs
 ms.topic: quickstart
 ms.date: 06/05/2019
 ms.author: lbosq
-ms.openlocfilehash: e6456c79dbce1f8bb874ce4c88b932e592235a82
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 9365a71d7e5bab86b5c1d58a32510b9c5c5f15d1
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80244432"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85964538"
 ---
 # <a name="quickstart-build-a-nodejs-application-by-using-azure-cosmos-db-gremlin-api-account"></a>Краткое руководство. Создание приложения Node.js с помощью учетной записи API Gremlin для Azure Cosmos DB
 
@@ -154,13 +154,13 @@ ms.locfileid: "80244432"
 
     `config.endpoint = "https://<your_Gremlin_account_name>.gremlin.cosmosdb.azure.com:443/";`
 
-    ![Просмотр и копирование ключа доступа на портале Azure, страница обзора](./media/create-graph-nodejs/gremlin-uri.png)
+    :::image type="content" source="./media/create-graph-nodejs/gremlin-uri.png" alt-text="Просмотр и копирование ключа доступа на портале Azure, страница обзора":::
 
 3. В файле *config.js* заполните значения параметра config.primaryKey значением **первичного ключа** на странице **Ключи** учетной записи Cosmos DB на портале Azure. 
 
     `config.primaryKey = "PRIMARYKEY";`
 
-   ![Колонка "Ключи" на портале Azure](./media/create-graph-nodejs/keys.png)
+   :::image type="content" source="./media/create-graph-nodejs/keys.png" alt-text="Колонка "Ключи" на портале Azure":::
 
 4. Введите имя базы данных и графа (контейнера) для значения config.database и config.collection. 
 

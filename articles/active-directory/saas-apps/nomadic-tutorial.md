@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/05/2019
 ms.author: jeedes
-ms.openlocfilehash: 259d20474ef075f6247878b2b7798c6fa8e608aa
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 07e6e0d1a7d358deebba7b4857b6afebcfb3be1c
+ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73161265"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85800199"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-nomadic"></a>Руководство. Интеграция Azure Active Directory с Nomadic
 
@@ -109,10 +109,10 @@ ms.locfileid: "73161265"
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате:
     
-    | |
-    |--|
-    | `https://<company name>.nomadic.fm/auth/saml2/sp` |
-    | `https://<company name>.staging.nomadic.fm/auth/saml2/sp` |
+    ```http
+    https://<company name>.nomadic.fm/auth/saml2/sp
+    https://<company name>.staging.nomadic.fm/auth/saml2/sp
+    ```
 
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Nomadic](mailto:help@nomadic.fm). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

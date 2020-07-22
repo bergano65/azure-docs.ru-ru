@@ -9,12 +9,13 @@ ms.custom:
 - seodec18
 - seo-python-october2019
 - cli-validate
-ms.openlocfilehash: 504e2f7c07d8d29e4fe4dad52dc008c895517a3d
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
+- tracking-python
+ms.openlocfilehash: 29aeae7683c46b1e10acdf1b2c4a7183c22eb408
+ms.sourcegitcommit: ad66392df535c370ba22d36a71e1bbc8b0eedbe3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82609788"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84807313"
 ---
 # <a name="tutorial-deploy-a-python-django-web-app-with-postgresql-in-azure-app-service"></a>Руководство по развертыванию веб-приложения Python (Django) с PostgreSQL в Службе приложений Azure
 
@@ -180,7 +181,7 @@ az webapp up --plan myAppServicePlan --location westus2 --sku B1 --name <app-nam
 }
 </pre>
 
-Скопируйте значение *\<app-resource-goup>* . Оно вам потребуется позже для настройки приложения. 
+Скопируйте значение *\<app-resource-group>* . Оно вам потребуется позже для настройки приложения. 
 
 > [!TIP]
 > Соответствующие параметры сохраняются в скрытом каталоге *.azure* в репозитории. Вы можете применить эту простую команду позже, чтобы повторно развернуть изменения и немедленно включить ведение журналов диагностики:
@@ -195,7 +196,7 @@ az webapp up --plan myAppServicePlan --location westus2 --sku B1 --name <app-nam
 
 При локальном запуске приложения переменные среды можно задать в сеансе терминала. В Службе приложений для этого используются *параметры приложения*, которые устанавливаются командой [az webapp config appsettings set](/cli/azure/webapp/config/appsettings#az-webapp-config-appsettings-set).
 
-Выполните следующую команду, чтобы указать сведения о подключении к базе данных в параметрах приложения. Замените заполнители *\<app-name>* , *\<app-resource-group>* и *\<postgresql-name>* реальными значениями. Помните, что учетные данные пользователя `root` и `Pollsdb1` созданы с помощью `az postgres up`.
+Выполните следующую команду, чтобы указать сведения о подключении к базе данных в параметрах приложения. Замените *\<app-name>* , *\<app-resource-group>* и *\<postgresql-name>* собственными значениями. Помните, что учетные данные пользователя `root` и `Pollsdb1` созданы с помощью `az postgres up`.
 
 ```azurecli
 az webapp config appsettings set --name <app-name> --resource-group <app-resource-group> --settings DJANGO_ENV="production" DBHOST="<postgresql-name>.postgres.database.azure.com" DBUSER="root@<postgresql-name>" DBPASS="Pollsdb1" DBNAME="pollsdb"
@@ -219,6 +220,8 @@ cd site/wwwroot
 
 # Activate default virtual environment in App Service container
 source /antenv/bin/activate
+# Install packages
+pip install -r requirements.txt
 # Run database migrations
 python manage.py migrate
 # Create the super user (follow prompts)

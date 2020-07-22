@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
-ms.openlocfilehash: b8215cd852d54283bfc6bd47e77d7d63ee4e2582
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 7b586edd7adce8bcea61419005a3ce8cfc814fb3
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79475499"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86254951"
 ---
 # <a name="how-to-authorize-developer-accounts-by-using-azure-active-directory-b2c-in-azure-api-management"></a>Как авторизовать учетные записи разработчиков с помощью Azure Active Directory B2C в службе управления API Azure
 
@@ -118,13 +118,13 @@ Azure Active Directory B2C — это облачное решение, позв
    > [!NOTE]
    > Если Azure Active Directory B2C является единственным активным параметром на вкладке **Удостоверения** на портале издателя, вы будете сразу перенаправлены к политике регистрации.
 
-   ![Developer portal][api-management-howto-aad-b2c-dev-portal-b2c-options]
+   ![Портал разработчика][api-management-howto-aad-b2c-dev-portal-b2c-options]
 
    После завершения регистрации вы будете перенаправлены обратно на портал разработчика. Теперь вы вошли на портал разработчика вашего экземпляра службы управления API.
 
     ![Регистрация завершена][api-management-registration-complete]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 *  [Azure Active Directory B2C: регистрация и вход пользователей в приложения]
 *  [Azure Active Directory B2C: расширяемая инфраструктура политик]
@@ -182,25 +182,25 @@ Azure Active Directory B2C — это облачное решение, позв
 [api-management-groups]: ./media/api-management-howto-aad/api-management-groups.png
 [api-management-edit-group]: ./media/api-management-howto-aad/api-management-edit-group.png
 
-[How to add operations to an API]: api-management-howto-add-operations.md
+[How to add operations to an API]: ./mock-api-responses.md
 [How to add and publish a product]: api-management-howto-add-products.md
 [Monitoring and analytics]: api-management-monitoring.md
 [Add APIs to a product]: api-management-howto-add-products.md#add-apis
 [Publish a product]: api-management-howto-add-products.md#publish-product
 [Get started with Azure API Management]: get-started-create-service-instance.md
-[API Management policy reference]: api-management-policy-reference.md
-[Caching policies]: api-management-policy-reference.md#caching-policies
+[API Management policy reference]: ./api-management-policies.md
+[Caching policies]: ./api-management-policies.md#caching-policies
 [Create an API Management service instance]: get-started-create-service-instance.md
 
 [https://oauth.net/2/]: https://oauth.net/2/
 [WebApp-GraphAPI-DotNet]: https://github.com/AzureADSamples/WebApp-GraphAPI-DotNet
-[Azure Active Directory B2C: регистрация и вход пользователей в приложения]: https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-overview
-[Авторизация учетных записей разработчиков с помощью Azure Active Directory в управлении API Azure]: https://docs.microsoft.com/azure/api-management/api-management-howto-aad
-[Azure Active Directory B2C: расширяемая инфраструктура политик]: https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-reference-policies
-[Azure Active Directory (AD) B2C: организация регистрации и входа для потребителей с учетными записями Microsoft]: https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-setup-msa-app
-[Azure Active Directory B2C: организация регистрации и входа для потребителей с учетными записями Google+]: https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-setup-goog-app
-[Azure Active Directory B2C: регистрация и вход пользователей с учетными записями Facebook]: https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-setup-fb-app
-[Azure Active Directory B2C: регистрация и вход пользователей с помощью учетных записей LinkedIn]: https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-setup-li-app
+[Azure Active Directory B2C: регистрация и вход пользователей в приложения]: ../active-directory-b2c/overview.md
+[Авторизация учетных записей разработчиков с помощью Azure Active Directory в управлении API Azure]: ./api-management-howto-aad.md
+[Azure Active Directory B2C: расширяемая инфраструктура политик]: ../active-directory-b2c/user-flow-overview.md
+[Azure Active Directory (AD) B2C: организация регистрации и входа для потребителей с учетными записями Microsoft]: ../active-directory-b2c/identity-provider-microsoft-account.md
+[Azure Active Directory B2C: организация регистрации и входа для потребителей с учетными записями Google+]: ../active-directory-b2c/identity-provider-google.md
+[Azure Active Directory B2C: регистрация и вход пользователей с учетными записями Facebook]: ../active-directory-b2c/identity-provider-facebook.md
+[Azure Active Directory B2C: регистрация и вход пользователей с помощью учетных записей LinkedIn]: ../active-directory-b2c/identity-provider-linkedin.md
 
 [Prerequisites]: #prerequisites
 [Configure an OAuth 2.0 authorization server in API Management]: #step1

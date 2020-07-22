@@ -3,12 +3,11 @@ title: Определяемые пользователем функции в ш�
 description: Описывает, как определять и использовать определяемые пользователем функции в шаблоне Azure Resource Manager.
 ms.topic: conceptual
 ms.date: 03/09/2020
-ms.openlocfilehash: 2c09572a460aa028b23987033d2b77e2aad8a0cd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 69f4e98d389cc8dbe5cd3f4b628189676c501106
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78943216"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84672941"
 ---
 # <a name="user-defined-functions-in-azure-resource-manager-template"></a>Определяемые пользователем функции в шаблоне Azure Resource Manager
 
@@ -48,7 +47,7 @@ ms.locfileid: "78943216"
 
 ```json
 {
- "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+ "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
  "contentVersion": "1.0.0.0",
  "parameters": {
    "storageNamePrefix": {
@@ -104,7 +103,7 @@ ms.locfileid: "78943216"
 * Для параметров этой функции нельзя задавать значения по умолчанию.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о доступных свойствах определяемых пользователем функций см. в разделе Общие сведения о [структуре и синтаксисе шаблонов Azure Resource Manager](template-syntax.md).
 * Список доступных функций шаблонов см. в разделе [функции шаблонов Azure Resource Manager](template-functions.md).

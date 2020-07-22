@@ -12,16 +12,16 @@ author: nabhishek
 manager: shwang
 ms.date: 03/15/2018
 ms.openlocfilehash: 6b010000a674e351051c664dd5eeacd40e802439
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81414608"
 ---
 # <a name="transform-data-by-running-a-jar-activity-in-azure-databricks"></a>Преобразование данных с помощью выполнения действий Jar в Azure Databricks
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
-Действие Jar в Azure Databricks в [конвейере фабрики данных](concepts-pipelines-activities.md) позволяет запустить файл Spark Jar в кластере Azure Databricks. Эта статья посвящена [действиям преобразования данных](transform-data.md), в которых представлен общий обзор преобразования данных и поддерживаемых действий преобразования.Azure Databricks — это управляемая платформа для запуска Apache Spark.
+Действие Jar в Azure Databricks в [конвейере фабрики данных](concepts-pipelines-activities.md) позволяет запустить файл Spark Jar в кластере Azure Databricks. Эта статья посвящена [действиям преобразования данных](transform-data.md)   , в которых представлен общий обзор преобразования данных и поддерживаемых действий преобразования.Azure Databricks — это управляемая платформа для запуска Apache Spark.
 
 Уделите 11 минут вашего времени, чтобы просмотреть следующее видео с кратким обзором и демонстрацией этой функции:
 
@@ -56,12 +56,12 @@ ms.locfileid: "81414608"
 
 В следующей таблице приведено описание свойств, используемых в определении JSON.
 
-|Свойство|Описание|Обязательный|
+|Свойство|Описание|Обязательно|
 |:--|---|:-:|
 |name|Имя действия в конвейере.|Да|
 |description|Описание действия.|Нет|
 |type|Тип действия Jar в Databricks — DatabricksSparkJar.|Да|
-|linkedServiceName|Имя связанной службы Databricks, в которой выполняется действие Jar. Дополнительные сведения об этой связанной службе см. в статье [связанные службы](compute-linked-services.md) вычислений.|Да|
+|linkedServiceName|Имя связанной службы Databricks, в которой выполняется действие Jar. Дополнительные сведения об этой связанной службе см. в статье [связанные службы вычислений](compute-linked-services.md)   .|Да|
 |mainClassName|Полное имя класса, содержащего метод main, который будет выполнен. Этот класс должен содержаться в файле JAR, предоставляемом в виде библиотеки.|Да|
 |параметры|Параметры, которые будут переданы в метод main.  Массив строк.|Нет|
 |libraries|Список библиотек, которые должны быть установлены на кластере, на котором будет выполнено задание. Массив объектов <строка, объект>|Да (по крайней мере один метод, содержащий mainClassName)|

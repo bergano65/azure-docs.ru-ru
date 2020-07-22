@@ -8,10 +8,9 @@ ms.service: web-application-firewall
 ms.date: 10/25/2019
 ms.author: victorh
 ms.openlocfilehash: 1ed2e0cf8cc8cd841d8779462d62ba4852774a3a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74083904"
 ---
 # <a name="associate-a-waf-policy-with-an-existing-application-gateway"></a>Связывание политики WAF с существующим шлюзом приложений
@@ -52,5 +51,5 @@ ms.locfileid: "74083904"
       Set-AzApplicationGateway -ApplicationGateway $gw`
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 [Сведения о настраиваемых правилах.](configure-waf-custom-rules.md)

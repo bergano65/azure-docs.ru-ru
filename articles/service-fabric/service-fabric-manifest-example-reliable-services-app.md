@@ -6,11 +6,10 @@ ms.topic: conceptual
 ms.date: 06/11/2018
 ms.author: pepogors
 ms.openlocfilehash: f40e54f5260f827f0b18c833d23d1f57b5ebc3a3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79282358"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84701104"
 ---
 # <a name="reliable-services-application-and-service-manifest-examples"></a>Примеры манифестов приложений Reliable Services и служб
 Ниже приведены примеры манифестов приложений и служб для приложения Service Fabric с внешним веб-интерфейсном ASP.NET Core и серверной частью с отслеживанием состояния. Цель этих примеров — показать, какие параметры являются доступными и как их использовать. Эти манифесты приложений и служб основаны на манифестах [в кратком руководстве по Service Fabric для .NET](https://github.com/Azure-Samples/service-fabric-dotnet-quickstart/).

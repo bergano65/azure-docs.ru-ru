@@ -10,18 +10,18 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.subservice: compliance
-ms.date: 10/15/2019
+ms.date: 06/18/2020
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 102bbfbd1c02c93830f5c7fce89fe95d7fde54c5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 800c3dbeb96dfb87c7b495909e21eca929bec726
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79261896"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85550318"
 ---
 # <a name="change-resource-roles-for-an-access-package-in-azure-ad-entitlement-management"></a>Изменение ролей ресурсов для пакета Access в управлении назначениями Azure AD
 
@@ -90,10 +90,10 @@ ms.locfileid: "79261896"
 
     После выбора группы или группы в столбце **подтипа** будет отображаться один из следующих подтипов:
 
-    |  |  |
+    | Подтип | Описание: |
     | --- | --- |
     | Безопасность | Используется для предоставления доступа к ресурсам. |
-    | Distribution | Используется для отправки уведомлений группе людей. |
+    | Распределение | Используется для отправки уведомлений группе людей. |
     | O365 | Группа Office 365, не поддерживающая команды. Используется для совместной работы пользователей как внутри организации, так и за ее пределами. |
     | Группа | Группа Office 365, в которой включены команды. Используется для совместной работы пользователей как внутри организации, так и за ее пределами. |
 
@@ -180,7 +180,7 @@ Azure AD может автоматически назначать пользов
 
 Если удалить члена из команды, он также будет удален из группы Office 365. С удалением из чата команды может возникнуть задержка. Дополнительные сведения см. в разделе [членство в группе](https://docs.microsoft.com/microsoftteams/office-365-groups#group-membership).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Создание простой группы и добавление в нее участников с помощью Azure Active Directory](../fundamentals/active-directory-groups-create-azure-portal.md)
 - [Узнайте как настроить утверждения роли, выдаваемые в токене SAML для корпоративных приложений](../develop/active-directory-enterprise-app-role-management.md)

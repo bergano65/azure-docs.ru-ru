@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: tutorial
 ms.date: 11/12/2019
 ms.author: raynew
-ms.openlocfilehash: b978190776aee3c89d3beadde76d20c4327b012f
-ms.sourcegitcommit: 0553a8b2f255184d544ab231b231f45caf7bbbb0
+ms.openlocfilehash: ccf83bacedb667e52e9865b6d451641faa0ac414
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80388922"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86131184"
 ---
 # <a name="migrate-on-premises-machines-to-azure"></a>Миграция локальных компьютеров в Azure
 
@@ -132,21 +132,21 @@ Hyper-V | [Включение репликации](hyper-v-azure-tutorial.md#en
 
 - Выполните любые действия по настройке после миграции приложения, такие как обновление строк подключения к базе данных и конфигурация веб-сервера. 
 - Выполните приемочное тестирование конечного приложения и миграции на перенесенном приложении, работающем в Azure.
-- [Агент виртуальной машины Azure](https://docs.microsoft.com/azure/virtual-machines/extensions/agent-windows) управляет взаимодействием виртуальной машины с контроллером Azure Fabric. Это обязательно для некоторых служб Azure, таких как Azure Backup, Site Recovery и служба безопасности Azure.
+- [Агент виртуальной машины Azure](../virtual-machines/extensions/agent-windows.md) управляет взаимодействием виртуальной машины с контроллером Azure Fabric. Это обязательно для некоторых служб Azure, таких как Azure Backup, Site Recovery и служба безопасности Azure.
     - При переносе компьютеров и физических серверов VMware установщик Mobility Service устанавливает доступный агент виртуальной машины Azure на компьютерах Windows. Мы рекомендуем установить агент на виртуальных машинах Linux после отработки отказа.
     - Если вы переносите виртуальные машины Azure в дополнительный регион, агент виртуальной машины Azure нужно подготовить к работе на виртуальной машине перед миграцией.
     - Если вы переносите виртуальные машины Hyper-V в Azure, установите агент виртуальной машины Azure на виртуальной машине Azure после миграции.
 - Вручную удалите поставщик или агент Site Recovery с виртуальной машины. Если вы переносите виртуальные машины VMware или физические серверы, удалите службу Mobility Service на виртуальной машине.
 - Для повышения устойчивости:
-    - Обеспечьте безопасность данных путем резервного копирования виртуальных машин Azure с помощью службы Azure Backup. [Подробнее]( https://docs.microsoft.com/azure/backup/quick-backup-vm-portal).
+    - Обеспечьте безопасность данных путем резервного копирования виртуальных машин Azure с помощью службы Azure Backup. [Подробнее](../backup/quick-backup-vm-portal.md).
     - Обеспечьте непрерывную работу и постоянную доступность рабочих нагрузок за счет репликации виртуальных машин Azure в дополнительный регион с помощью Site Recovery. [Подробнее](azure-to-azure-quickstart.md).
 - Для повышения уровня безопасности:
-    - Заблокируйте и ограничьте доступ входящего трафика с помощью [JIT-администрирования]( https://docs.microsoft.com/azure/security-center/security-center-just-in-time) центра безопасности Azure.
-    - Ограничьте сетевой трафик конечными точками с помощью [групп безопасности сети](https://docs.microsoft.com/azure/virtual-network/security-overview).
-    - Разверните [шифрование дисков Azure](https://docs.microsoft.com/azure/security/azure-security-disk-encryption-overview), чтобы обеспечить безопасность дисков и защитить данные от кражи и несанкционированного доступа.
+    - Заблокируйте и ограничьте доступ входящего трафика с помощью [JIT-администрирования](../security-center/security-center-just-in-time.md) центра безопасности Azure.
+    - Ограничьте сетевой трафик конечными точками с помощью [групп безопасности сети](../virtual-network/security-overview.md).
+    - Разверните [шифрование дисков Azure](../security/fundamentals/azure-disk-encryption-vms-vmss.md), чтобы обеспечить безопасность дисков и защитить данные от кражи и несанкционированного доступа.
     - Ознакомьтесь с дополнительными сведениями о [защите ресурсов IaaS]( https://azure.microsoft.com/services/virtual-machines/secure-well-managed-iaas/ ) и посетите [центр безопасности Azure](https://azure.microsoft.com/services/security-center/ ).
 - Для мониторинга и управления:
-    - Рассмотрите возможность развертывания [службы "Управление затратами Azure"](https://docs.microsoft.com/azure/cost-management/overview) для мониторинга использования ресурсов и затрат.
+    - Рассмотрите возможность развертывания [службы "Управление затратами Azure"](../cost-management-billing/cloudyn/overview.md) для мониторинга использования ресурсов и затрат.
 
 ### <a name="post-migration-steps-on-premises"></a>Действия после миграции в локальной среде
 

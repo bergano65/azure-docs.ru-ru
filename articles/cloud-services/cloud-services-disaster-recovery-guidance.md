@@ -10,12 +10,11 @@ ms.workload: cloud-services
 ms.topic: article
 ms.date: 04/04/2017
 ms.author: memccror
-ms.openlocfilehash: e3f0fd88eb302dac208f43d0622ae28b31dcddc2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: d4f869c8b4ae6e90cfe64a2bf3d13839d72727be
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77157513"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84015307"
 ---
 # <a name="what-to-do-in-the-event-of-an-azure-service-disruption-that-impacts-azure-cloud-services"></a>Что делать, если прерывание работы службы Azure влияет на облачные службы Azure
 Корпорация Майкрософт прилагает все усилия для того, чтобы наши службы всегда были доступны. Иногда по независящим от нас обстоятельствам происходят незапланированные нарушения работы служб.
@@ -47,7 +46,7 @@ ms.locfileid: "77157513"
 В зависимости от источников данных приложения может потребоваться проверка процедур восстановления для источника данных приложения.
 
 * Источники данных службы хранилища Azure см. в статье [избыточность службы хранилища Azure](../storage/common/storage-redundancy.md) для проверки доступных параметров на основе выбранной модели избыточности для вашего приложения.
-* Аналогичные сведения для источников данных базы данных SQL приведены в разделе [Обзор. Непрерывность облачных бизнес-процессов и аварийное восстановление баз данных с базой данных SQL](../sql-database/sql-database-business-continuity.md) .
+* Аналогичные сведения для источников данных базы данных SQL приведены в разделе [Обзор. Непрерывность облачных бизнес-процессов и аварийное восстановление баз данных с базой данных SQL](../azure-sql/database/business-continuity-high-availability-disaster-recover-hadr-overview.md) .
 
 
 ## <a name="option-3-wait-for-recovery"></a>Вариант 3. Ожидание восстановления

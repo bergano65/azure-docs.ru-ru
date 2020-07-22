@@ -12,17 +12,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/02/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9b2a0d0b77b6db481b13785907a1359d2bbe3e9b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: cfb6e0608609a3940affd83a0aa235a2ef7c041c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80984510"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85357568"
 ---
 # <a name="changing-the-adsync-service-account-password"></a>Изменение пароля учетной записи службы ADSync
 Если изменить пароль учетной записи службы ADSync, служба синхронизации не сможет правильно запуститься до тех пор, пока не будет отменен ключ шифрования и не повторно инициализирует пароль учетной записи службы ADSync. 
@@ -122,6 +122,6 @@ Azure AD Connect, как часть служб синхронизации, ис�
 ## <a name="next-steps"></a>Дальнейшие шаги
 **Обзорные статьи**
 
-* [Службы синхронизации Azure AD Connect: общие сведений о синхронизации и ее настройка](how-to-connect-sync-whatis.md)
+* [Синхронизация Azure AD Connect: общие сведений о синхронизации и ее настройка](how-to-connect-sync-whatis.md)
 
-* [Интеграция локальных удостоверений с Azure Active Directory.](whatis-hybrid-identity.md)
+* [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md)

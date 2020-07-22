@@ -14,10 +14,9 @@ ms.author: jeferrie
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.openlocfilehash: 3aac63369dffa5b8ba0b9e55b5063ad8136c95cf
-ms.sourcegitcommit: d815163a1359f0df6ebfbfe985566d4951e38135
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82883232"
 ---
 # <a name="use-msalnet-to-sign-in-users-with-social-identities"></a>Использование MSAL.NET для входа пользователей с удостоверениями социальных сетей
@@ -76,7 +75,7 @@ AuthenticationResult ar = await application.AcquireTokenInteractive(scopes)
 
 В предыдущем фрагменте кода:
 
-- `policy`— Это строка, содержащая имя пользовательского потока Azure AD B2C или настраиваемой политики (например, `PolicySignUpSignIn`).
+- `policy`— Это строка, содержащая имя пользовательского потока Azure AD B2C или настраиваемой политики (например, `PolicySignUpSignIn` ).
 - `ParentActivityOrWindow`требуется для Android (действие) и является необязательным для других платформ, поддерживающих родительский пользовательский интерфейс, такой как Windows в Microsoft Windows и UIViewController в iOS. Дополнительные сведения о диалоговом окне пользовательского интерфейса см. в разделе [виспарентактивитйорвиндов](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/Acquiring-tokens-interactively#withparentactivityorwindow) на вики-сайте MSAL.
 - `GetAccountByPolicy(IEnumerable<IAccount>, string)`метод, который находит учетную запись для заданной политики. Пример:
 
@@ -93,13 +92,13 @@ AuthenticationResult ar = await application.AcquireTokenInteractive(scopes)
   }
   ```
 
-Применение пользовательского потока или настраиваемой политики (например, предоставление пользователю возможности изменять свой профиль или сброс пароля) в настоящее время выполняется путем вызова `AcquireTokenInteractive`. Для этих двух политик не используется возвращаемый результат маркера или проверки подлинности.
+Применение пользовательского потока или настраиваемой политики (например, предоставление пользователю возможности изменять свой профиль или сброс пароля) в настоящее время выполняется путем вызова `AcquireTokenInteractive` . Для этих двух политик не используется возвращаемый результат маркера или проверки подлинности.
 
 ## <a name="profile-edit-policies"></a>Политики изменения профиля
 
 Чтобы пользователи могли входить с помощью социальных удостоверений, а затем изменять их профиль, примените политику изменения профиля Azure AD B2C.
 
-Это можно сделать, `AcquireTokenInteractive` вызвав с полномочиями для этой политики. Так как пользователь уже выполнил вход и имеет активный сеанс cookie, используйте `Prompt.NoPrompt` , чтобы запретить отображение диалогового окна выбора учетной записи.
+Это можно сделать, вызвав `AcquireTokenInteractive` с полномочиями для этой политики. Так как пользователь уже выполнил вход и имеет активный сеанс cookie, используйте, `Prompt.NoPrompt` чтобы запретить отображение диалогового окна выбора учетной записи.
 
 ```csharp
 private async void EditProfileButton_Click(object sender, RoutedEventArgs e)
@@ -157,7 +156,7 @@ AcquireTokenByUsernamePassword(
 
 ## <a name="google-auth-and-embedded-webview"></a>Google auth и Embedded WebView
 
-Если вы используете Google в качестве поставщика удостоверений, мы рекомендуем использовать системный браузер, так как Google не разрешает [проверку подлинности из внедренных](https://developers.googleblog.com/2016/08/modernizing-oauth-interactions-in-native-apps.html)веб – представлений. В настоящее `login.microsoftonline.com` время является доверенным центром Google и будет работать с внедренными WebView. Но не `b2clogin.com` является доверенным центром Google, поэтому пользователи не смогут пройти проверку подлинности.
+Если вы используете Google в качестве поставщика удостоверений, мы рекомендуем использовать системный браузер, так как Google не разрешает [проверку подлинности из внедренных](https://developers.googleblog.com/2016/08/modernizing-oauth-interactions-in-native-apps.html)веб – представлений. В настоящее время `login.microsoftonline.com` является доверенным центром Google и будет работать с внедренными WebView. Но не `b2clogin.com` является доверенным центром Google, поэтому пользователи не смогут пройти проверку подлинности.
 
 Мы предоставим обновление этой [проблемы](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/688) в случае изменения.
 
@@ -176,7 +175,7 @@ MSAL.NET поддерживает [кэш маркеров](/dotnet/api/microsof
 
 Симптомом такого сценария является то, что MSAL.NET возвращается `Missing from the token response` при доступе к `preferred_username` значению утверждения в маркерах, выдаваемых Azure AD B2C. MSAL использует `Missing from the token response` значение для `preferred_username` для поддержки кросс-совместимости кэша между библиотеками.
 
-### <a name="workarounds"></a>Обходные пути
+### <a name="workarounds"></a>Методы обхода проблемы
 
 #### <a name="mitigation-for-missing-tenant-id"></a>Устранение рисков для отсутствующего идентификатора клиента
 
@@ -186,11 +185,11 @@ MSAL.NET поддерживает [кэш маркеров](/dotnet/api/microsof
 
 #### <a name="mitigation-for-missing-from-the-token-response"></a>Устранение рисков "отсутствует в ответе маркера"
 
-Один из `name` `preferred_username`вариантов — использовать утверждение вместо. Чтобы включить `name` утверждение в ТОКЕНы идентификации, выданные Azure AD B2C, выберите **Отображаемое имя** при настройке потока пользователя.
+Один из вариантов — использовать `name` утверждение вместо `preferred_username` . Чтобы включить `name` утверждение в токены идентификации, выданные Azure AD B2C, выберите **Отображаемое имя** при настройке потока пользователя.
 
 Дополнительные сведения об указании утверждений, возвращаемых потоками пользователей, см. [в разделе Учебник. Создание пользовательских потоков в Azure AD B2C](../../active-directory-b2c/tutorial-create-user-flows.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о получении маркеров в интерактивном режиме с помощью MSAL.NET для Azure AD B2C приложений приведены в следующем примере.
 

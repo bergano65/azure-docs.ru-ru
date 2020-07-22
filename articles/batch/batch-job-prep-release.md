@@ -1,15 +1,15 @@
 ---
-title: Создание задач для подготовки & выполнения заданий на COMPUTE nodes
+title: Создание задач подготовки и выполнения заданий на вычислительных узлах
 description: Используйте задачи подготовки на уровне задания для минимизации передачи данных на вычислительные узлы пакетной службы Azure и задачи снятия для очистки узла после завершения задания.
-ms.topic: article
+ms.topic: how-to
 ms.date: 02/17/2020
 ms.custom: seodec18
-ms.openlocfilehash: c9c88994a65d4d2cb8c8373d2bbb4aa2877fe465
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 4bd7c87028dc01fdccecdb7beac765e74fb3435c
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82116066"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85964368"
 ---
 # <a name="run-job-preparation-and-job-release-tasks-on-batch-compute-nodes"></a>Выполнение задач подготовки и задач завершения заданий на вычислительных узлах пакетной службы
 
@@ -40,7 +40,7 @@ ms.locfileid: "82116066"
 
 **Хранение журнала**
 
-Может возникнуть необходимость хранить копию файлов журнала, создаваемых задачами, или, например, файлы аварийных дампов, создаваемые приложениями, в которых возникает сбой. В таких случаях с помощью **задачи снятия задания** можно сжать и передать эти данные в учетную запись [хранения Azure][azure_storage].
+Может возникнуть необходимость хранить копию файлов журнала, создаваемых задачами, или, например, файлы аварийных дампов, создаваемые приложениями, в которых возникает сбой. В таких случаях с помощью **задачи снятия задания** можно сжать и передать эти данные в учетную запись [службы хранилища Azure][azure_storage].
 
 > [!TIP]
 > Для хранения журналов и других выходных данных заданий и задач также можно использовать библиотеку [Azure Batch File Conventions](batch-task-output.md) .
@@ -50,7 +50,7 @@ ms.locfileid: "82116066"
 ## <a name="job-preparation-task"></a>Задача подготовки задания
 
 
-Перед выполнением задач задания Пакетная службы выполняет задачу подготовки задания на каждом вычислительном узле, запланированном для выполнения задачи. По умолчанию пакет ожидает завершения задачи подготовки задания перед выполнением задач, запланированных для выполнения на узле. Это ожидание можно отключить в настройках службы. При перезапуске узла задача подготовки задания выполняется снова. Это поведение также можно отключить. Если у вас есть задание с задачей подготовки задания и настроенной задачей диспетчера заданий, задача подготовки задания выполняется перед задачей «диспетчер заданий» так же, как и для всех остальных задач. Задача подготовки задания всегда выполняется в первую очередь.
+Перед выполнением задач задания пакетная служба выполняет задачу подготовки задания на каждом вычислительном узле, где запланировано выполнение задач. По умолчанию пакетная служба ожидает завершения задачи подготовки задания и только после этого запускает задачи, запланированные для выполнения на узле. Это ожидание можно отключить в настройках службы. При перезапуске узла задача подготовки задания выполняется повторно. Это поведение можно отключить. Если у вас есть задание с настроенной задачей подготовки задания и задачей диспетчера заданий, задача подготовки задания выполняется до задачи диспетчера заданий, так же как и в случае с остальными задачами. Задача подготовки задания всегда выполняется в первую очередь.
 
 Задача подготовки задания выполняется только на узлах, на которых запланировано выполнение задач. Благодаря этому на узлах, которым не назначены задачи, ненужная задача подготовки выполняться не будет. Это может произойти, если число задач в задании меньше количества узлов в пуле. То же самое происходит, когда включено [параллельное выполнение](batch-parallel-node-tasks.md) , в результате чего некоторые узлы бездействуют, если число задач оказывается меньше, чем общее число возможных параллельных задач. Не выполняя задачи по подготовке заданий на неактивных узлах, вы сократите свои расходы на передачу данных.
 
@@ -66,14 +66,14 @@ ms.locfileid: "82116066"
 > [!NOTE]
 > Задача снятия задания также выполняется при удалении задания. Однако если задание уже было прекращено, задача снятия задания при последующем удалении задания вторично не выполняется.
 
-Задачи выпуска заданий могут выполняться не более чем на 15 минут до завершения пакетной службой. Дополнительные сведения см. в [справочной документации по REST API](https://docs.microsoft.com/rest/api/batchservice/job/add#jobreleasetask).
+Задачи выпуска заданий могут выполняться максимум в течение 15 минут до того, как они будут завершены пакетной службой. Дополнительные сведения см. в [справочной документации REST API](/rest/api/batchservice/job/add#jobreleasetask).
 > 
 > 
 
 ## <a name="job-prep-and-release-tasks-with-batch-net"></a>Задачи подготовки и снятия заданий с использованием пакетной службы .NET
 Чтобы использовать задачу подготовки задания, назначьте объект [JobPreparationTask][net_job_prep] свойству [CloudJob.JobPreparationTask][net_job_prep_cloudjob]. Аналогичным образом инициализируйте задачу [JobReleaseTask][net_job_release] и назначьте ее свойству [CloudJob.JobReleaseTask][net_job_prep_cloudjob] задания, чтобы настроить задачу снятия задания.
 
-В этом фрагменте кода `myBatchClient` представляет собой экземпляр [BatchClient][net_batch_client], а `myPool` — существующий пул в учетной записи пакетной службы.
+В этом фрагменте кода `myBatchClient` представляет собой экземпляр [BatchClient][net_batch_client], а `myPool` — существующий пул в учетной записи пакетной службы.
 
 ```csharp
 // Create the CloudJob for CloudPool "myPool"
@@ -99,7 +99,7 @@ myJob.JobReleaseTask =
 await myJob.CommitAsync();
 ```
 
-Как упоминалось выше, задача снятия выполняется, когда задание прекращается или удаляется. Для завершения задания используется [JobOperations.TerminateJobAsync][net_job_terminate], а для удаления — [JobOperations.DeleteJobAsync][net_job_delete]. Обычно оба эти действия выполняются после завершения задач задания или по истечении времени ожидания, которое было определено.
+Как упоминалось выше, задача снятия выполняется, когда задание прекращается или удаляется. Для завершения задания используется [JobOperations.TerminateJobAsync][net_job_terminate], а для удаления — [JobOperations.DeleteJobAsync][net_job_delete]. Обычно оба эти действия выполняются после завершения задач задания или по истечении времени ожидания, которое было определено.
 
 ```csharp
 // Terminate the job to mark it as Completed; this will initiate the
@@ -178,7 +178,7 @@ Sample complete, hit ENTER to exit...
 
 ![Свойства подготовки задания на портале Azure][1]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 ### <a name="application-packages"></a>Пакеты приложений
 Для подготовки вычислительных узлов к выполнению задач вы можете использовать не только задачи подготовки заданий, но и функцию пакетной службы [Пакет приложения](batch-application-packages.md) . Эта функция особенно полезна для развертывания приложений, которые не требуют выполнения установщика, приложений с большим числом файлов (более 100) и приложений, требующих строгого управления версиями.
 
@@ -189,33 +189,33 @@ Sample complete, hit ENTER to exit...
 
 Эта публикация написана одним из участников команды разработчиков пакетной службы Azure. В ней приведены несколько методов, которые можно использовать при развертывании приложений и данных на вычислительных узлах.
 
-[api_net]: https://msdn.microsoft.com/library/azure/mt348682.aspx
-[api_net_listjobs]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.joboperations.listjobs.aspx
-[api_rest]: https://msdn.microsoft.com/library/azure/dn820158.aspx
+[api_net]: /dotnet/api/microsoft.azure.batch
+[api_net_listjobs]: /dotnet/api/microsoft.azure.batch.joboperations
+[api_rest]: /rest/api/batchservice/
 [azure_storage]: https://azure.microsoft.com/services/storage/
 [portal]: https://portal.azure.com
 [job_prep_release_sample]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/ArticleProjects/JobPrepRelease
 [forum_post]: https://social.msdn.microsoft.com/Forums/en-US/87b19671-1bdf-427a-972c-2af7e5ba82d9/installing-applications-and-staging-data-on-batch-compute-nodes?forum=azurebatch
-[net_batch_client]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.batchclient.aspx
+[net_batch_client]: /dotnet/api/microsoft.azure.batch.batchclient
 [net_cloudjob]:https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudjob.aspx
-[net_job_prep]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.jobpreparationtask.aspx
-[net_job_prep_cloudjob]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudjob.jobpreparationtask.aspx
-[net_job_prep_resourcefiles]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.jobpreparationtask.resourcefiles.aspx
-[net_job_delete]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.joboperations.deletejobasync.aspx
-[net_job_terminate]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.joboperations.terminatejobasync.aspx
-[net_job_release]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.jobreleasetask.aspx
-[net_job_release_cloudjob]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudjob.jobreleasetask.aspx
-[pool_starttask]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudpool.starttask.aspx
+[net_job_prep]: /dotnet/api/microsoft.azure.batch.jobpreparationtask
+[net_job_prep_cloudjob]: /dotnet/api/microsoft.azure.batch.cloudjob
+[net_job_prep_resourcefiles]: /dotnet/api/microsoft.azure.batch.jobpreparationtask
+[net_job_delete]: /previous-versions/azure/mt281411(v=azure.100)
+[net_job_terminate]: /previous-versions/azure/mt188985(v=azure.100)
+[net_job_release]: /dotnet/api/microsoft.azure.batch.jobreleasetask
+[net_job_release_cloudjob]: /dotnet/api/microsoft.azure.batch.cloudjob
+[pool_starttask]: /dotnet/api/microsoft.azure.batch.cloudpool
 
-[net_list_certs]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.certificateoperations.listcertificates.aspx
-[net_list_compute_nodes]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.listcomputenodes.aspx
-[net_list_job_schedules]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.jobscheduleoperations.listjobschedules.aspx
-[net_list_jobprep_status]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.joboperations.listjobpreparationandreleasetaskstatus.aspx
-[net_list_jobs]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.joboperations.listjobs.aspx
-[net_list_nodefiles]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.joboperations.listnodefiles.aspx
-[net_list_pools]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.listpools.aspx
-[net_list_schedule_jobs]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.jobscheduleoperations.listjobs.aspx
-[net_list_task_files]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudtask.listnodefiles.aspx
-[net_list_tasks]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.joboperations.listtasks.aspx
+[net_list_certs]: /dotnet/api/microsoft.azure.batch.certificateoperations
+[net_list_compute_nodes]: /dotnet/api/microsoft.azure.batch.pooloperations
+[net_list_job_schedules]: /dotnet/api/microsoft.azure.batch.jobscheduleoperations
+[net_list_jobprep_status]: /dotnet/api/microsoft.azure.batch.joboperations
+[net_list_jobs]: /dotnet/api/microsoft.azure.batch.joboperations
+[net_list_nodefiles]: /dotnet/api/microsoft.azure.batch.joboperations
+[net_list_pools]: /dotnet/api/microsoft.azure.batch.pooloperations
+[net_list_schedule_jobs]: /dotnet/api/microsoft.azure.batch.jobscheduleoperations
+[net_list_task_files]: /dotnet/api/microsoft.azure.batch.cloudtask
+[net_list_tasks]: /dotnet/api/microsoft.azure.batch.joboperations
 
 [1]: ./media/batch-job-prep-release/portal-jobprep-01.png

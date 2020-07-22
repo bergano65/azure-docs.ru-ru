@@ -3,15 +3,15 @@ title: Подключение кластера Avere vFXT в Azure
 description: Сведения о подключении клиентов к Avere vFXT для Azure.
 author: ekpgh
 ms.service: avere-vfxt
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 12/16/2019
 ms.author: rohogue
-ms.openlocfilehash: b8486b5a33226b1faa5e3874144129dbe7a1a2f2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e8850162847f2dd416b0951a797e2eb0cd7d55d2
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76153417"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86229573"
 ---
 # <a name="mount-the-avere-vfxt-cluster"></a>Подключение кластера Avere vFXT
 
@@ -102,7 +102,7 @@ IP-адрес представляет собой один из определе
 
 ``mount -o hard,proto=tcp,mountproto=tcp,retry=30 ${VSERVER_IP_ADDRESS}:/${NAMESPACE_PATH} ${LOCAL_FILESYSTEM_MOUNT_POINT}``
 
-| Обязательные параметры | |
+| Обязательные параметры | Описание |
 --- | ---
 ``hard`` | Нежесткие подключения к кластеру vFXT связаны со сбоями в работе приложений и возможной потерей данных.
 ``proto=netid`` | Этот параметр поддерживает соответствующую обработку сетевых ошибок NFS.

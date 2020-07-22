@@ -13,17 +13,16 @@ ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 04/11/2020
 ms.openlocfilehash: e8f79512e132ff4632c067b23ad6e80a76b8d4cf
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81113887"
 ---
 # <a name="tutorial-migrate-postgresql-to-azure-db-for-postgresql-online-using-dms-via-the-azure-cli"></a>Руководство. Миграция PostgreSQL в базу данных Azure для PostgreSQL Online с помощью DMS через Azure CLI
 
 Azure Database Migration Service можно использовать для переноса баз данных из локального экземпляра PostgreSQL в [Базу данных Azure для PostgreSQL](https://docs.microsoft.com/azure/postgresql/) с минимальным временем простоя. Другими словами, миграцию можно выполнить с минимальным временем простоя для приложения. В этом руководстве выполняется миграция примера базы данных **Прокат DVD** из локального экземпляра PostgreSQL 9.6 в Базу данных Azure для PostgreSQL с помощью действия сетевой миграции в Azure Database Migration Service.
 
-В этом руководстве описано следующее:
+В этом руководстве вы узнаете, как:
 > [!div class="checklist"]
 >
 > * перенос примера схемы с помощью служебной программы pg_dump;
@@ -38,7 +37,7 @@ Azure Database Migration Service можно использовать для пе
 > [!IMPORTANT]
 > Чтобы процесс миграции был выполнен без проблем, Майкрософт рекомендует создать экземпляр Azure Database Migration Service в том же регионе Azure, в котором размещена целевая база данных. Перемещение данных между регионами и географическими областями может замедлить процесс миграции и привести к ошибкам.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством вам потребуется следующее:
 
@@ -182,7 +181,7 @@ Azure Database Migration Service можно использовать для пе
        ```azurecli
        az extension list -otable
        ```
-       Должны выводиться следующие данные:
+       Вы должны увидеть следующий результат.
 
        ```output
        ExtensionType    Name
@@ -361,7 +360,7 @@ Azure Database Migration Service можно использовать для пе
    az dms project task show --service-name PostgresCLI --project-name PGMigration --resource-group PostgresDemo --name Runnowtask
    ```
 
-   ИЛИ
+   OR
 
     ```azurecli
    az dms project task show --service-name PostgresCLI --project-name PGMigration --resource-group PostgresDemo --name Runnowtask --expand output

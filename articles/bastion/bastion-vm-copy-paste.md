@@ -4,15 +4,15 @@ description: Из этой статьи вы узнаете, как копиро
 services: bastion
 author: charwen
 ms.service: bastion
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/04/2020
 ms.author: charwen
-ms.openlocfilehash: 8580b7e28c8a4860739efa0763ebb7c20a80585e
-ms.sourcegitcommit: 31236e3de7f1933be246d1bfeb9a517644eacd61
+ms.openlocfilehash: 4e818617b70e874153e026bcf40b6dfee8a8e04e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82780289"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84744244"
 ---
 # <a name="copy-and-paste-to-a-virtual-machine-azure-bastion"></a>Копирование и вставка на виртуальную машину: Azure бастиона
 
@@ -60,4 +60,4 @@ ms.locfileid: "82780289"
  
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Ознакомьтесь с [часто задаваемыми вопросами о бастиона](bastion-faq.md).
+Ознакомьтесь с [часто задаваемыми вопросами о Бастионе Azure](bastion-faq.md).

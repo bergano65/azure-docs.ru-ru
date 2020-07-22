@@ -13,10 +13,9 @@ ms.date: 03/04/2019
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7360b11f41cc08c2beb3ffa227e1658881798502
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75422999"
 ---
 # <a name="identity-data-storage-for-european-customers-in-azure-active-directory"></a>Хранение данных удостоверений клиентов из ЕС — Azure Active Directory
@@ -27,7 +26,7 @@ ms.locfileid: "75422999"
 ## <a name="microsoft-azure-multi-factor-authentication-mfa"></a>Многофакторная проверка подлинности Microsoft Azure (MFA)
     
 - Вся двухфакторная проверка подлинности, использующая телефонные звонки или SMS-сообщения, поступает из центров обработки данных США и направляется глобальными поставщиками.
-- Push-уведомления, использующие приложение Microsoft Authenticator, берутся из центров обработки данных США. Кроме того, службы, связанные с поставщиками устройств, также могут играть в игру, а эти службы, возможно, вне Европы.
+- Push-уведомления, использующие приложение Microsoft Authenticator, формируются в центрах обработки данных в США. Кроме того, службы, связанные с поставщиками устройств, также могут играть в игру, а эти службы, возможно, вне Европы.
 - OATH-коды всегда проверяются в США. 
 
 Дополнительные сведения о том, какие сведения о пользователе собираются в Azure сервер Многофакторной идентификации (сервер MFA) и в облачной службе Azure MFA, см. в статье [сбор данных пользователей многофакторной идентификации Azure](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-reporting-datacollection).
@@ -59,7 +58,7 @@ Azure AD DS хранит данные пользователей в том же 
 
 Дополнительные сведения о местонахождении данных служб Майкрософт см. в разделе [Где находятся ваши данные?](https://www.microsoft.com/trustcenter/privacy/where-your-data-is-located) Центра управления безопасностью Майкрософт.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения об этих функциях и возможностях, описанных выше, смотрите в следующих статьях.
 - [Что такое Многофакторная идентификация Azure?](https://docs.microsoft.com/azure/active-directory/authentication/multi-factor-authentication)
 

@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 02/27/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: f15beeee2c5843506f0bf89b4c6d66d77826e152
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 0e5cabdf9c69ead9a2d7f497aceec183cf0be900
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81459896"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86509670"
 ---
 # <a name="troubleshoot-a-vms-operating-system-disk"></a>Устранение неполадок диска операционной системы виртуальных машин
 
@@ -40,14 +40,14 @@ ms.locfileid: "81459896"
 
 | Get-Help | Примечания |
 |---|---|
-| [az vm show](https://docs.microsoft.com/cli/azure/vm) | Возвращает список виртуальных машин. В этом случае параметр запроса используется для возвращения диска операционной системы виртуальной машины. Это значение добавляется к имени переменной uri. |
-| [az vm delete](https://docs.microsoft.com/cli/azure/vm) | Удаляет виртуальную машину. |
-| [az vm create](https://docs.microsoft.com/cli/azure/vm) | Создает виртуальную машину.  |
-| [az vm disk attach](https://docs.microsoft.com/cli/azure/vm/disk) | Подключает диск к виртуальной машине. |
-| [az vm list-ip-addresses](https://docs.microsoft.com/cli/azure/vm) | Возвращает IP-адреса виртуальной машины. |
+| [az vm show](/cli/azure/vm) | Возвращает список виртуальных машин. В этом случае параметр запроса используется для возвращения диска операционной системы виртуальной машины. Это значение добавляется к имени переменной uri. |
+| [az vm delete](/cli/azure/vm) | Удаляет виртуальную машину. |
+| [az vm create](/cli/azure/vm) | Создает виртуальную машину.  |
+| [az vm disk attach](/cli/azure/vm/disk) | Подключает диск к виртуальной машине. |
+| [az vm list-ip-addresses](/cli/azure/vm) | Возвращает IP-адреса виртуальной машины. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
+Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 
 Дополнительные примеры скриптов интерфейса командной строки для виртуальных машин см. в [документации по виртуальным машинам Azure под управлением Linux](../linux/cli-samples.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).

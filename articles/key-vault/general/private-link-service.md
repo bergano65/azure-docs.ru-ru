@@ -7,12 +7,12 @@ ms.date: 03/08/2020
 ms.service: key-vault
 ms.subservice: general
 ms.topic: quickstart
-ms.openlocfilehash: 678e91126c04d5b299d9234a1602580260c5aee6
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: c832634a4b9154ec800da8c8ff25c6d81c620e9f
+ms.sourcegitcommit: 1de57529ab349341447d77a0717f6ced5335074e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81421568"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84610157"
 ---
 # <a name="integrate-key-vault-with-azure-private-link"></a>Интеграция Key Vault со службой "Приватный канал Azure"
 
@@ -104,7 +104,7 @@ az keyvault create --name {KEY VAULT NAME} --resource-group {RG} --location {AZU
 ```
 ### <a name="turn-on-key-vault-firewall"></a>Включение брандмауэра Key Vault
 ```console
-az keyvault update --name {KEY VAULT NAME} --resource-group {RG} --location {AZURE REGION} --default-action deny
+az keyvault update --name {KEY VAULT NAME} --resource-group {RG} --default-action deny
 ```
 ### <a name="create-a-virtual-network"></a>Создайте виртуальную сеть
 ```console
@@ -124,7 +124,7 @@ az network private-dns zone create --resource-group {RG} --name privatelink.vaul
 ```
 ### <a name="link-private-dns-zone-to-virtual-network"></a>Связывание частной зоны DNS с виртуальной сетью 
 ```console
-az network private-dns link vnet create --resoruce-group {RG} --virtual-network {vNet NAME} --zone-name privatelink.vaultcore.azure.net --name {dnsZoneLinkName} --registration-enabled true
+az network private-dns link vnet create --resource-group {RG} --virtual-network {vNet NAME} --zone-name privatelink.vaultcore.azure.net --name {dnsZoneLinkName} --registration-enabled true
 ```
 ### <a name="create-a-private-endpoint-automatically-approve"></a>Создание частной конечной точки (автоматическое утверждение) 
 ```console
@@ -225,13 +225,16 @@ Aliases:  <your-key-vault-name>.vault.azure.net
 
 ## <a name="limitations-and-design-considerations"></a>Проблемы и ограничения разработки
 
+> [!NOTE]
+> Количество хранилищ ключей с включенными частными конечными точками для каждой подписки можно настраивать. Ниже приведено ограничение по умолчанию. Если вы хотите запросить увеличение ограничения для вашей службы, отправьте электронное письмо по адресу akv-privatelink@microsoft.com. Мы одобряем эти запросы в зависимости от индивидуальной ситуации.
+
 **Цены**. Сведения о ценах на службу "Приватный канал Azure" см. [здесь](https://azure.microsoft.com/pricing/details/private-link/).
 
 **Ограничения**.  Частная конечная точка для Azure Key Vault поддерживается только в общедоступных регионах Azure.
 
 **Максимальное число частных конечных точек на Key Vault**: 64
 
-**Максимальное число хранилищ ключей с частными конечными точками на одну подписку**: 64
+**Число хранилищ ключей с частными конечными точками на одну подписку по умолчанию**: 400.
 
 Дополнительные сведения см. в разделе [Azure Private Link service: Limitations](../../private-link/private-link-service-overview.md#limitations) (Служба "Приватный канал Azure". Ограничения)
 

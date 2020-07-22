@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 078ed3e5f3a19bfa4350f9edea858b717c69e3f8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: aea3a173fd07b66021d35142a84499ae9c66c014
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81537157"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86518204"
 ---
 # <a name="a-web-api-that-calls-web-apis-move-to-production"></a>Веб-API, который вызывает веб-API: переместить в рабочую среду
 
@@ -30,4 +30,4 @@ ms.locfileid: "81537157"
 
 | Пример | Платформа | Описание |
 |--------|----------|-------------|
-| [Active-Directory-aspnetcore-webapi-Tutorial-v2](https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2/tree/master/2.%20Web%20API%20now%20calls%20Microsoft%20Graph) | Веб-API ASP.NET Core 2,2, Desktop (WPF) | ASP.NET Core 2,2 вызовы веб-API Microsoft Graph, которые вызываются из приложения WPF с помощью платформы Microsoft Identity (v 2.0). |
+| [Active-Directory-aspnetcore-webapi-Tutorial-v2](https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2/tree/master/2.%20Web%20API%20now%20calls%20Microsoft%20Graph) глава 1 | ASP.NET Core веб-API, Desktop (WPF) | ASP.NET Core вызовы веб-API Microsoft Graph, которые вызываются из приложения WPF с помощью платформы Microsoft Identity (v 2.0). |

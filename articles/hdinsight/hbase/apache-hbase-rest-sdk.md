@@ -5,15 +5,15 @@ author: ashishthaps
 ms.author: ashishth
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/02/2019
-ms.openlocfilehash: eba7d7ad009b2ef0442a916983489489eb5cceb8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 9d03a201711488b1c0a3f4f2bab0981f83374a5d
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74806666"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86085588"
 ---
 # <a name="use-the-net-sdk-for-apache-hbase"></a>Использование пакета SDK для .NET для Apache HBase
 
@@ -25,7 +25,9 @@ ms.locfileid: "74806666"
 
 Пакет SDK для .NET HBase предоставляется в виде пакета NuGet, который можно установить из **консоли диспетчера пакетов NuGet** в Visual Studio при помощи следующей команды:
 
-    Install-Package Microsoft.HBase.Client
+```console
+Install-Package Microsoft.HBase.Client
+```
 
 ## <a name="instantiate-a-new-hbaseclient-object"></a>Создание нового экземпляра объекта HBaseClient
 
@@ -185,7 +187,7 @@ finally
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Начало работы с примером Apache HBase в HDInsight](apache-hbase-tutorial-get-started-linux.md)
 * Создание полнофункционального приложения на основе руководства по [анализу тональности в Twitter в режиме реального времени с помощью Apache HBase](../hdinsight-hbase-analyze-twitter-sentiment.md)

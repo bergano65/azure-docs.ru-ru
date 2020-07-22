@@ -2,22 +2,22 @@
 title: Ресурсы для переноса приложений в Azure Active Directory | Документы Майкрософт
 description: Ресурсы, помогающие перенести процессы, связанные с доступом к приложениям и проверкой подлинности, в Azure Active Directory (Azure AD).
 services: active-directory
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.topic: conceptual
+ms.topic: how-to
 ms.workload: identity
 ms.date: 02/29/2020
-ms.author: mimart
+ms.author: kenwith
 ms.reviewer: baselden
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b30469858a5dd83f7f5f707f74466302b3000510
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 3fe21b6509080e88c63d9c02c8116f3882fb64dd
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78968730"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84763114"
 ---
 # <a name="resources-for-migrating-applications-to-azure-active-directory"></a>Ресурсы для переноса приложений в Azure Active Directory
 
@@ -32,6 +32,6 @@ ms.locfileid: "78968730"
 | [План развертывания. Переход с AD FS на сквозную проверку подлинности](https://aka.ms/ADFSTOPTADPDownload)|Сквозная проверка подлинности Azure AD позволяет пользователям входить в локальные и облачные приложения, используя одни и те же пароли. Эта функция облегчает работу пользователей, так как им не нужно запоминать на один пароль больше. Она также сокращает затраты на ИТ-поддержку, так как снижается вероятность того, что пользователи забудут процедуру входа. Если пользователи выполняют вход с помощью Azure AD, эта функция проверяет пароли пользователей непосредственно в локальной службе Active Directory.|
 | [План развертывания. Включение единого входа в приложение SaaS с помощью Azure AD](https://aka.ms/SSODPDownload) | Единый вход позволяет вам получать доступ ко всем приложениям и ресурсам, которые необходимы для ведения бизнеса. При этом выполняется однократный вход с использованием одной учетной записи пользователя. Например, после входа пользователя в систему он может перейти из Microsoft Office в SalesForce, а затем в Box без повторной проверки подлинности (например, ввода пароля). 
 | [План развертывания. Добавление приложений в Azure AD с помощью Application Proxy](https://aka.ms/AppProxyDPDownload)| Традиционно для доступа сотрудников к локальным приложениям с ноутбуков и других устройств требуются виртуальные частные сети (VPN) или сети периметра. Помимо того, что такие решения довольно сложны и их непросто защитить, на их настройку и управление требуются немалые средства. Azure AD Application Proxy упрощает доступ к локальным приложениям. |
-| [Планы развертывания](../fundamentals/active-directory-deployment-plans.md) | Дополнительные планы развертывания для развертывания таких функций, как многофакторная идентификация, условный доступ, подготовка пользователей, простой единый вход, самостоятельный сброс пароля и многое другое! |
+| [О планах развертывания в Аналитике компьютеров](../fundamentals/active-directory-deployment-plans.md) | Дополнительные планы развертывания для развертывания таких функций, как многофакторная идентификация, условный доступ, подготовка пользователей, простой единый вход, самостоятельный сброс пароля и многое другое! |
 
 

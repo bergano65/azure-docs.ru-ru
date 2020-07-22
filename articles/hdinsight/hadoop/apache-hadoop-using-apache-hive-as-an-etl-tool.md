@@ -5,15 +5,15 @@ author: ashishthaps
 ms.author: ashishth
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/28/2020
-ms.openlocfilehash: c289892246cfce3ffac3f668577073a2af92511f
-ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
+ms.openlocfilehash: 1627fccb49f0ddbf7a3a0a42f5a483059101dae2
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82509556"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86076068"
 ---
 # <a name="use-apache-hive-as-an-extract-transform-and-load-etl-tool"></a>Использование Apache Hive как средства для извлечения, преобразования и загрузки
 
@@ -75,7 +75,7 @@ Hadoop обычно используется в процессах ETL, кото
 * приложения или службы, которым нужны данные в определенных форматах или в виде файлов с определенным типом структуры информации;
 * Хранилище документов JSON, например Azure Cosmos DB.
 
-## <a name="considerations"></a>Рекомендации
+## <a name="considerations"></a>Особенности
 
 Модель извлечения, преобразования и загрузки обычно используется в следующих ситуациях.
 

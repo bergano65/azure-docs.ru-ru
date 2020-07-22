@@ -6,12 +6,12 @@ ms.devlang: azurecli
 ms.topic: sample
 ms.date: 10/25/2017
 ms.author: tomfitz
-ms.openlocfilehash: 346ea59209bc2f74970e708c947f5caa158a0338
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 0c2fc3dc4e76f295dff94ebda71d54bad425b621
+ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75648791"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86056146"
 ---
 # <a name="deploy-a-managed-application-for-service-catalog-with-azure-cli"></a>Развертывание управляемого приложения для каталога службы с помощью Azure CLI
 
@@ -33,10 +33,10 @@ ms.locfileid: "75648791"
 
 | Get-Help | Примечания |
 |---|---|
-| [az managedapp create](https://docs.microsoft.com/cli/azure/managedapp#az-managedapp-create) | Позволяет создать управляемое приложение. Укажите идентификатор определения и параметры для шаблона. |
+| [az managedapp create](/cli/azure/managedapp#az-managedapp-create) | Позволяет создать управляемое приложение. Укажите идентификатор определения и параметры для шаблона. |
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Общие сведения об управляемых приложениях Azure см. в [этой статье](../overview.md).
-* Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
+* Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).

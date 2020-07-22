@@ -6,12 +6,12 @@ ms.date: 04/23/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: seodec18
-ms.openlocfilehash: 7fd84fc2e98578772c806f358cb8d6c400e0d994
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 73a50c282eee023bff525bc737bd2170938de1dc
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82185019"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86119282"
 ---
 # <a name="tutorial-integrate-azure-key-vault-in-your-arm-template-deployment"></a>Руководство по Интеграция с Azure Key Vault при развертывании шаблона ARM
 
@@ -37,7 +37,7 @@ ms.locfileid: "82185019"
 
 Для работы с этой статьей необходимо иметь следующее.
 
-* Visual Studio Code с расширением средств Resource Manager. См. сведения об [использовании Visual Studio Code для создания шаблонов Resource Manager](use-vs-code-to-create-template.md).
+* Visual Studio Code с расширением средств Resource Manager. См. [Краткое руководство. Создание шаблонов Azure Resource Manager c помощью Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
 * С целью повышения уровня безопасности используйте пароль, созданный для учетной записи администратора виртуальной машины. Ниже приведен пример создания пароля.
 
     ```console
@@ -192,7 +192,7 @@ Write-Host "Press [ENTER] to continue ..."
 
 1. Откройте [портал Azure](https://portal.azure.com).
 
-1. Выберите **Группа ресурсов** >  **\<*имя вашей группы ресурсов*>**  > **simpleWinVM**.
+1. Выберите **Группы ресурсов** >  **\<*YourResourceGroupName*>**  > **simpleWinVM**.
 1. Выберите **Подключение** в верхней части страницы.
 1. Выберите **Скачать RDP-файл** и следуйте инструкциям, чтобы войти в виртуальную машину с помощью пароля, сохраненного в хранилище ключей.
 

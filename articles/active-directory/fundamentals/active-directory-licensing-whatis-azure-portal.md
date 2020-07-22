@@ -15,10 +15,9 @@ ms.reviewer: krbain
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9eec896e6cccaf58c83820161c54c4f10cfadadd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77561567"
 ---
 # <a name="what-is-group-based-licensing-in-azure-active-directory"></a>Что такое лицензии групп в Azure Active Directory?
@@ -39,7 +38,7 @@ ms.locfileid: "77561567"
 ### <a name="required-number-of-licenses"></a>Необходимое количество лицензий
 Если каким-либо группам назначена лицензия, то их каждому уникальному участнику тоже нужно назначить лицензию. Хотя назначить лицензии каждому участнику группы по-отдельности не требуется, необходимо иметь достаточное количество лицензий для всех участников. Например, если имеются 1000 уникальных участников, которые входят в лицензированные группы в клиенте, необходимо иметь по крайней мере 1000 лицензий, чтобы выполнить условия лицензионного соглашения.
 
-## <a name="features"></a>Компоненты
+## <a name="features"></a>Функции
 
 Ниже приведены основные возможности группового лицензирования.
 
@@ -61,7 +60,7 @@ ms.locfileid: "77561567"
 
 Если вы хотите оставить отзыв или запрос на создание функции, это можно сделать на [администраторском форуме Azure AD](https://feedback.azure.com/forums/169401-azure-active-directory?category_id=162510).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о других сценариях управления лицензиями на основе группы см. в следующих статьях:
 

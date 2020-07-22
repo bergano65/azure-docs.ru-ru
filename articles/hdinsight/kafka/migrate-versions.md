@@ -8,10 +8,10 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 12/18/2019
 ms.openlocfilehash: 0a31c6cf32222277e033aacf7d04622c54aef9ea
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80437015"
 ---
 # <a name="migrate-apache-kafka-workloads-to-azure-hdinsight-40"></a>Перенос рабочих нагрузок Apache Kafka в Azure HDInsight 4,0
@@ -54,7 +54,7 @@ HDInsight 3,6 поддерживает две версии Kafka: 1.0.0 и 1.1.0
 
 ## <a name="kafka-client-compatibility"></a>Kafka совместимость клиента
 
-Новые брокеры Kafka поддерживают более старые клиенты. [Пропустить-35-получение версии протокола](https://cwiki.apache.org/confluence/display/KAFKA/KIP-35+-+Retrieving+protocol+version) предоставила механизм для динамического определения функциональных возможностей брокера Kafka и [пропустить-97: Улучшенная политика совместимости RPC для клиента Kafka](https://cwiki.apache.org/confluence/display/KAFKA/KIP-97%3A+Improved+Kafka+Client+RPC+Compatibility+Policy) предоставила новую политику совместимости и гарантирует наличие клиента Java. Ранее клиенту Kafka пришлось взаимодействовать с брокером той же или более новой версии. Теперь новые версии клиентов Java и других клиентов, которые поддерживают пропустить-35, такие как `librdkafka` , могут возвращаться к старым типам запросов или выдавать соответствующие ошибки, если функциональность недоступна.
+Новые брокеры Kafka поддерживают более старые клиенты. [Пропустить-35-получение версии протокола](https://cwiki.apache.org/confluence/display/KAFKA/KIP-35+-+Retrieving+protocol+version) предоставила механизм для динамического определения функциональных возможностей брокера Kafka и [пропустить-97: Улучшенная политика совместимости RPC для клиента Kafka](https://cwiki.apache.org/confluence/display/KAFKA/KIP-97%3A+Improved+Kafka+Client+RPC+Compatibility+Policy) предоставила новую политику совместимости и гарантирует наличие клиента Java. Ранее клиенту Kafka пришлось взаимодействовать с брокером той же или более новой версии. Теперь новые версии клиентов Java и других клиентов, которые поддерживают пропустить-35, такие как, `librdkafka` могут возвращаться к старым типам запросов или выдавать соответствующие ошибки, если функциональность недоступна.
 
 ![Обновление совместимости клиента Kafka](./media/upgrade-threesix-to-four/apache-kafka-client-compatibility.png)
 
@@ -82,7 +82,7 @@ HDInsight 3,6 поддерживает две версии Kafka: 1.0.0 и 1.1.0
 
 1. **При необходимости удалите старый кластер и тестовые приложения.** После завершения и правильной работы коммутатора удалите старый кластер HDInsight 3,6 Kafka, а также поставщиков и потребителей, которые использовались в тесте по мере необходимости.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Оптимизация производительности для кластеров Apache Kafka HDInsight](apache-kafka-performance-tuning.md)
-* [Краткое руководство. Создание кластера Apache Kafka в Azure HDInsight с помощью портал Azure](apache-kafka-get-started.md)
+* [Краткое руководство. Создание кластера Apache Kafka в Azure HDInsight с помощью портала Azure](apache-kafka-get-started.md)

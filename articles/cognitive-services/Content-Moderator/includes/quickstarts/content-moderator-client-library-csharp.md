@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: quickstart
-ms.date: 01/27/2020
+ms.date: 05/27/2020
 ms.author: pafarley
-ms.openlocfilehash: 50572c037cc7927a06bcf8d95305353238989ae9
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: 3245b4d0ce164acd8fcd367597dcbddc9436c782
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82186516"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85965932"
 ---
 Приступите к работе с клиентской библиотекой Content Moderator для .NET. Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для выполнения базовых задач. Content Moderator — это когнитивная служба, которая проверяет текст, изображения и видео на наличие потенциально оскорбительных, представляющих риск или нежелательных по иным причинам материалов. При обнаружении таких материалов служба применяет к содержимому соответствующие метки (флаги). Затем приложение может обрабатывать помеченное содержимое для обеспечения соответствия нормативным требованиям или оставлять его как предполагаемую среду для пользователей.
 
@@ -160,7 +160,7 @@ https://moderatorsampleimages.blob.core.windows.net/samples/sample5.png
 
 Передайте входные и выходные файлы в следующий вызов метода в методе `Main`. Этот метод будет определен позднее.
 
-[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/ContentModerator/Program.cs?name=snippet_textmod_call)]
+[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/ContentModerator/Program.cs?name=snippet_imagemod_call)]
 
 ### <a name="define-helper-class"></a>Определение вспомогательного класса
 

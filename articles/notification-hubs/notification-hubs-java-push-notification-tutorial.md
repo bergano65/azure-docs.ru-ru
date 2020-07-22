@@ -16,12 +16,12 @@ ms.date: 01/04/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: d48973cc7c5ed1fc7ae3f96128d488f3f1df3a05
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: ecfd6bf9d20309619155bf35c87bdb4c08665f73
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76263869"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86169550"
 ---
 # <a name="how-to-use-notification-hubs-from-java"></a>Использование концентраторов уведомлений из Java
 
@@ -51,7 +51,9 @@ ms.locfileid: "76263869"
 
 для сборки:
 
-    mvn package
+```cmd
+mvn package
+```
 
 ## <a name="code"></a>Код
 
@@ -59,126 +61,126 @@ ms.locfileid: "76263869"
 
 **Создание NamespaceManager:**
 
-    ```java
-    NamespaceManager namespaceManager = new NamespaceManager("connection string")
-    ```
+```java
+NamespaceManager namespaceManager = new NamespaceManager("connection string")
+```
 
 **Создание центра уведомлений:**
 
-    ```java
-    NotificationHubDescription hub = new NotificationHubDescription("hubname");
-    hub.setWindowsCredential(new WindowsCredential("sid","key"));
-    hub = namespaceManager.createNotificationHub(hub);
-    ```
+```java
+NotificationHubDescription hub = new NotificationHubDescription("hubname");
+hub.setWindowsCredential(new WindowsCredential("sid","key"));
+hub = namespaceManager.createNotificationHub(hub);
+```
 
- ИЛИ
+ OR
 
-    ```java
-    hub = new NotificationHub("connection string", "hubname");
-    ```
+```java
+hub = new NotificationHub("connection string", "hubname");
+```
 
 **Получение центра уведомлений:**
 
-    ```java
-    hub = namespaceManager.getNotificationHub("hubname");
-    ```
+```java
+hub = namespaceManager.getNotificationHub("hubname");
+```
 
 **Обновление центра уведомлений:**
 
-    ```java
-    hub.setMpnsCredential(new MpnsCredential("mpnscert", "mpnskey"));
-    hub = namespaceManager.updateNotificationHub(hub);
-    ```
+```java
+hub.setMpnsCredential(new MpnsCredential("mpnscert", "mpnskey"));
+hub = namespaceManager.updateNotificationHub(hub);
+```
 
 **Удаление центра уведомлений:**
 
-    ```java
-    namespaceManager.deleteNotificationHub("hubname");
-    ```
+```java
+namespaceManager.deleteNotificationHub("hubname");
+```
 
 ### <a name="registration-cruds"></a>Операции CRUD для регистрации
 
 **Создание клиента центра уведомлений:**
 
-    ```java
-    hub = new NotificationHub("connection string", "hubname");
-    ```
+```java
+hub = new NotificationHub("connection string", "hubname");
+```
 
 **Создание регистрации Windows:**
 
-    ```java
-    WindowsRegistration reg = new WindowsRegistration(new URI(CHANNELURI));
-    reg.getTags().add("myTag");
-    reg.getTags().add("myOtherTag");
-    hub.createRegistration(reg);
-    ```
+```java
+WindowsRegistration reg = new WindowsRegistration(new URI(CHANNELURI));
+reg.getTags().add("myTag");
+reg.getTags().add("myOtherTag");
+hub.createRegistration(reg);
+```
 
 **Создание регистрации iOS:**
 
-    ```java
-    AppleRegistration reg = new AppleRegistration(DEVICETOKEN);
-    reg.getTags().add("myTag");
-    reg.getTags().add("myOtherTag");
-    hub.createRegistration(reg);
-    ```
+```java
+AppleRegistration reg = new AppleRegistration(DEVICETOKEN);
+reg.getTags().add("myTag");
+reg.getTags().add("myOtherTag");
+hub.createRegistration(reg);
+```
 
 Аналогичным образом вы можете создавать регистрации для Android (FCM), Windows Phone (MPNS) и Kindle Fire (ADM).
 
 **Создание регистрации шаблона:**
 
-    ```java
-    WindowsTemplateRegistration reg = new WindowsTemplateRegistration(new URI(CHANNELURI), WNSBODYTEMPLATE);
-    reg.getHeaders().put("X-WNS-Type", "wns/toast");
-    hub.createRegistration(reg);
-    ```
+```java
+WindowsTemplateRegistration reg = new WindowsTemplateRegistration(new URI(CHANNELURI), WNSBODYTEMPLATE);
+reg.getHeaders().put("X-WNS-Type", "wns/toast");
+hub.createRegistration(reg);
+```
 
 **Создайте регистрации с помощью инструкции CREATE Registration ID + Upsert:**
 
 Этот шаблон позволяет удалить повторы, образовавшиеся из-за потерянных ответов, если в устройстве хранятся идентификаторы регистраций.
 
-    ```java
-    String id = hub.createRegistrationId();
-    WindowsRegistration reg = new WindowsRegistration(id, new URI(CHANNELURI));
-    hub.upsertRegistration(reg);
-    ```
+```java
+String id = hub.createRegistrationId();
+WindowsRegistration reg = new WindowsRegistration(id, new URI(CHANNELURI));
+hub.upsertRegistration(reg);
+```
 
 **Обновление регистраций:**
 
-    ```java
-    hub.updateRegistration(reg);
-    ```
+```java
+hub.updateRegistration(reg);
+```
 
 **Удаление регистраций:**
 
-    ```java
-    hub.deleteRegistration(regid);
-    ```
+```java
+hub.deleteRegistration(regid);
+```
 
 **Запрос регистраций:**
 
 * **Получение одной регистрации:**
 
-    ```java
-    hub.getRegistration(regid);
-    ```
+```java
+hub.getRegistration(regid);
+```
 
 * **Получение всех регистраций в центре:**
 
-    ```java
-    hub.getRegistrations();
-    ```
+```java
+hub.getRegistrations();
+```
 
 * **Получение регистраций с тегом:**
 
-    ```java
-    hub.getRegistrationsByTag("myTag");
-    ```
+```java
+hub.getRegistrationsByTag("myTag");
+```
 
 * **Получение регистраций по каналу:**
 
-    ```java
-    hub.getRegistrationsByChannel("devicetoken");
-    ```
+```java
+hub.getRegistrationsByChannel("devicetoken");
+```
 
 Все запросы коллекций поддерживают маркеры $top и маркеры продолжения.
 
@@ -192,52 +194,52 @@ API установки — это альтернативный механизм 
 
 Вот пример для Amazon Kindle Fire.
 
-    ```java
-    Installation installation = new Installation("installation-id", NotificationPlatform.Adm, "adm-push-channel");
-    hub.createOrUpdateInstallation(installation);
-    ```
+```java
+Installation installation = new Installation("installation-id", NotificationPlatform.Adm, "adm-push-channel");
+hub.createOrUpdateInstallation(installation);
+```
 
 Если нужно обновление:
 
-    ```java
-    installation.addTag("foo");
-    installation.addTemplate("template1", new InstallationTemplate("{\"data\":{\"key1\":\"$(value1)\"}}","tag-for-template1"));
-    installation.addTemplate("template2", new InstallationTemplate("{\"data\":{\"key2\":\"$(value2)\"}}","tag-for-template2"));
-    hub.createOrUpdateInstallation(installation);
-    ```
+```java
+installation.addTag("foo");
+installation.addTemplate("template1", new InstallationTemplate("{\"data\":{\"key1\":\"$(value1)\"}}","tag-for-template1"));
+installation.addTemplate("template2", new InstallationTemplate("{\"data\":{\"key2\":\"$(value2)\"}}","tag-for-template2"));
+hub.createOrUpdateInstallation(installation);
+```
 
 Для сложных сценариев можно выполнять частичное обновление, которое позволяет изменять только определенные свойства объекта установки. Частичное обновление является подмножеством операций исправления JSON, которые можно выполнить для объекта установки.
 
-    ```java
-    PartialUpdateOperation addChannel = new PartialUpdateOperation(UpdateOperationType.Add, "/pushChannel", "adm-push-channel2");
-    PartialUpdateOperation addTag = new PartialUpdateOperation(UpdateOperationType.Add, "/tags", "bar");
-    PartialUpdateOperation replaceTemplate = new PartialUpdateOperation(UpdateOperationType.Replace, "/templates/template1", new InstallationTemplate("{\"data\":{\"key3\":\"$(value3)\"}}","tag-for-template1")).toJson());
-    hub.patchInstallation("installation-id", addChannel, addTag, replaceTemplate);
-    ```
+```java
+PartialUpdateOperation addChannel = new PartialUpdateOperation(UpdateOperationType.Add, "/pushChannel", "adm-push-channel2");
+PartialUpdateOperation addTag = new PartialUpdateOperation(UpdateOperationType.Add, "/tags", "bar");
+PartialUpdateOperation replaceTemplate = new PartialUpdateOperation(UpdateOperationType.Replace, "/templates/template1", new InstallationTemplate("{\"data\":{\"key3\":\"$(value3)\"}}","tag-for-template1")).toJson());
+hub.patchInstallation("installation-id", addChannel, addTag, replaceTemplate);
+```
 
 Удаление установки:
 
-    ```java
-    hub.deleteInstallation(installation.getInstallationId());
-    ```
+```java
+hub.deleteInstallation(installation.getInstallationId());
+```
 
 `CreateOrUpdate`, `Patch` и `Delete` в итоге согласовывается с `Get`. Запрошенная операция просто добавляется в системную очередь во время вызова и затем выполняется в фоновом режиме. Операция Get не предназначена для использования в основном сценарии среды выполнения. Она предусмотрена только для отладки и устранения неполадок и строго регулируется службой.
 
 Поток отправки для установки аналогичен потоку отправки для регистрации. Чтобы отправлять уведомления в конкретный объект установки, необходимо просто использовать тег InstallationId:{desired-id}. В этом случае используется приведенный ниже код.
 
-    ```java
-    Notification n = Notification.createWindowsNotification("WNS body");
-    hub.sendNotification(n, "InstallationId:{installation-id}");
-    ```
+```java
+Notification n = Notification.createWindowsNotification("WNS body");
+hub.sendNotification(n, "InstallationId:{installation-id}");
+```
 
 Для одного из нескольких шаблонов:
 
-    ```java
-    Map<String, String> prop =  new HashMap<String, String>();
-    prop.put("value3", "some value");
-    Notification n = Notification.createTemplateNotification(prop);
-    hub.sendNotification(n, "InstallationId:{installation-id} && tag-for-template1");
-    ```
+```java
+Map<String, String> prop =  new HashMap<String, String>();
+prop.put("value3", "some value");
+Notification n = Notification.createTemplateNotification(prop);
+hub.sendNotification(n, "InstallationId:{installation-id} && tag-for-template1");
+```
 
 ### <a name="schedule-notifications-available-for-standard-tier"></a>Планирование уведомлений (доступно для уровня STANDARD)
 
@@ -245,12 +247,12 @@ API установки — это альтернативный механизм 
 
 **Планирование собственных уведомлений Windows:**
 
-    ```java
-    Calendar c = Calendar.getInstance();
-    c.add(Calendar.DATE, 1);
-    Notification n = Notification.createWindowsNotification("WNS body");
-    hub.scheduleNotification(n, c.getTime());
-    ```
+```java
+Calendar c = Calendar.getInstance();
+c.add(Calendar.DATE, 1);
+Notification n = Notification.createWindowsNotification("WNS body");
+hub.scheduleNotification(n, c.getTime());
+```
 
 ### <a name="importexport-available-for-standard-tier"></a>Импорт или экспорт (доступно для уровня STANDARD)
 
@@ -258,39 +260,39 @@ API установки — это альтернативный механизм 
 
 **Отправка задания экспорта:**
 
-    ```java
-    NotificationHubJob job = new NotificationHubJob();
-    job.setJobType(NotificationHubJobType.ExportRegistrations);
-    job.setOutputContainerUri("container uri with SAS signature");
-    job = hub.submitNotificationHubJob(job);
-    ```
+```java
+NotificationHubJob job = new NotificationHubJob();
+job.setJobType(NotificationHubJobType.ExportRegistrations);
+job.setOutputContainerUri("container uri with SAS signature");
+job = hub.submitNotificationHubJob(job);
+```
 
 **Отправка задания импорта:**
 
-    ```java
-    NotificationHubJob job = new NotificationHubJob();
-    job.setJobType(NotificationHubJobType.ImportCreateRegistrations);
-    job.setImportFileUri("input file uri with SAS signature");
-    job.setOutputContainerUri("container uri with SAS signature");
-    job = hub.submitNotificationHubJob(job);
-    ```
+```java
+NotificationHubJob job = new NotificationHubJob();
+job.setJobType(NotificationHubJobType.ImportCreateRegistrations);
+job.setImportFileUri("input file uri with SAS signature");
+job.setOutputContainerUri("container uri with SAS signature");
+job = hub.submitNotificationHubJob(job);
+```
 
 **Ожидание завершения задания:**
 
-    ```java
-    while(true){
-        Thread.sleep(1000);
-        job = hub.getNotificationHubJob(job.getJobId());
-        if(job.getJobStatus() == NotificationHubJobStatus.Completed)
-            break;
-    }
-    ```
+```java
+while(true){
+    Thread.sleep(1000);
+    job = hub.getNotificationHubJob(job.getJobId());
+    if(job.getJobStatus() == NotificationHubJobStatus.Completed)
+        break;
+}
+```
 
 **Получение всех заданий:**
 
-    ```java
-    List<NotificationHubJob> jobs = hub.getAllNotificationHubJobs();
-    ```
+```java
+List<NotificationHubJob> jobs = hub.getAllNotificationHubJobs();
+```
 
 **URI с подписью SAS —**
 
@@ -302,79 +304,79 @@ API установки — это альтернативный механизм 
 
 * **Магазин Windows и Windows Phone 8.1 (без Silverlight)**
 
-    ```java
-    String toast = "<toast><visual><binding template=\"ToastText01\"><text id=\"1\">Hello from Java!</text></binding></visual></toast>";
-    Notification n = Notification.createWindowsNotification(toast);
-    hub.sendNotification(n);
-    ```
+```java
+String toast = "<toast><visual><binding template=\"ToastText01\"><text id=\"1\">Hello from Java!</text></binding></visual></toast>";
+Notification n = Notification.createWindowsNotification(toast);
+hub.sendNotification(n);
+```
 
 * **iOS**
 
-    ```java
-    String alert = "{\"aps\":{\"alert\":\"Hello from Java!\"}}";
-    Notification n = Notification.createAppleNotification(alert);
-    hub.sendNotification(n);
-    ```
+```java
+String alert = "{\"aps\":{\"alert\":\"Hello from Java!\"}}";
+Notification n = Notification.createAppleNotification(alert);
+hub.sendNotification(n);
+```
 
 * **Android**
 
-    ```java
-    String message = "{\"data\":{\"msg\":\"Hello from Java!\"}}";
-    Notification n = Notification.createFcmNotification(message);
-    hub.sendNotification(n);
-    ```
+```java
+String message = "{\"data\":{\"msg\":\"Hello from Java!\"}}";
+Notification n = Notification.createFcmNotification(message);
+hub.sendNotification(n);
+```
 
 * **Windows Phone 8.0 и 8.1 Silverlight**
 
-    ```java
-    String toast = "<?xml version=\"1.0\" encoding=\"utf-8\"?>" +
-                "<wp:Notification xmlns:wp=\"WPNotification\">" +
-                    "<wp:Toast>" +
-                        "<wp:Text1>Hello from Java!</wp:Text1>" +
-                    "</wp:Toast> " +
-                "</wp:Notification>";
-    Notification n = Notification.createMpnsNotification(toast);
-    hub.sendNotification(n);
-    ```
+```java
+String toast = "<?xml version=\"1.0\" encoding=\"utf-8\"?>" +
+            "<wp:Notification xmlns:wp=\"WPNotification\">" +
+                "<wp:Toast>" +
+                    "<wp:Text1>Hello from Java!</wp:Text1>" +
+                "</wp:Toast> " +
+            "</wp:Notification>";
+Notification n = Notification.createMpnsNotification(toast);
+hub.sendNotification(n);
+```
 
 * **Kindle Fire**
 
-    ```java
-    String message = "{\"data\":{\"msg\":\"Hello from Java!\"}}";
-    Notification n = Notification.createAdmNotification(message);
-    hub.sendNotification(n);
-    ```
+```java
+String message = "{\"data\":{\"msg\":\"Hello from Java!\"}}";
+Notification n = Notification.createAdmNotification(message);
+hub.sendNotification(n);
+```
 
 * **Отправка к тегам**
   
-    ```java
-    Set<String> tags = new HashSet<String>();
-    tags.add("boo");
-    tags.add("foo");
-    hub.sendNotification(n, tags);
-    ```
+```java
+Set<String> tags = new HashSet<String>();
+tags.add("boo");
+tags.add("foo");
+hub.sendNotification(n, tags);
+```
 
 * **Отправка к выражению тега**
 
-    ```java
-    hub.sendNotification(n, "foo && ! bar");
-    ```
+```java
+hub.sendNotification(n, "foo && ! bar");
+```
 
 * **Отправка шаблонного уведомления**
 
-    ```java
-    Map<String, String> prop =  new HashMap<String, String>();
-    prop.put("prop1", "v1");
-    prop.put("prop2", "v2");
-    Notification n = Notification.createTemplateNotification(prop);
-    hub.sendNotification(n);
-    ```
+```java
+Map<String, String> prop =  new HashMap<String, String>();
+prop.put("prop1", "v1");
+prop.put("prop2", "v2");
+Notification n = Notification.createTemplateNotification(prop);
+hub.sendNotification(n);
+```
 
 После выполнения кода Java на целевом устройстве должно отобразиться уведомление.
 
 ## <a name="next-steps"></a><a name="next-steps"></a>Дальнейшие действия
 
-В этом разделе было показано, как создать простой клиент REST Java для службы "Центры уведомлений". Здесь вы можете сделать следующее:
+В этом разделе было показано, как создать простой клиент REST Java для службы "Центры уведомлений". Здесь можно выполнять следующие действия:
 
 * Скачайте полный [пакет SDK для Java], содержащий весь код пакета SDK.
 * Попробуйте разные примеры:
@@ -384,7 +386,7 @@ API установки — это альтернативный механизм 
   * [Отправка уведомлений проверенным пользователям]
   * [Отправка кроссплатформенных уведомлений проверенным пользователям]
 
-[Пакет SDK для Java]: https://github.com/Azure/azure-notificationhubs-java-backend
+[пакет SDK для Java]: https://github.com/Azure/azure-notificationhubs-java-backend
 [Get started tutorial]: notification-hubs-ios-apple-push-notification-apns-get-started.md
 [Приступая к работе с центрами уведомлений]: notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md
 [Отправка экстренных новостей]: notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns.md

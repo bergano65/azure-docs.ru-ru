@@ -6,12 +6,12 @@ ms.devlang: nodejs
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.custom: mvc, cli-validate, seodec18
-ms.openlocfilehash: c08b99b0449608309b42e51c0ffb8d4b71a0621f
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 3729e0e0831319b42615c11db1ea9ba20f0a0e74
+ms.sourcegitcommit: 6fd28c1e5cf6872fb28691c7dd307a5e4bc71228
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82085346"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85207266"
 ---
 # <a name="build-a-nodejs-and-mongodb-app-in-azure-app-service-on-linux"></a>Разработка приложения на основе Node.js и MongoDB в Службе приложений Azure в Linux
 
@@ -122,7 +122,7 @@ MEAN.JS version: 0.5.0
 
 В Cloud Shell создайте учетную запись Cosmos DB при помощи команды [`az cosmosdb create`](/cli/azure/cosmosdb?view=azure-cli-latest#az-cosmosdb-create).
 
-В следующей команде замените заполнитель *\<cosmosdb-name>* уникальным именем базы данных Cosmos DB. Это имя используется как часть конечной точки Cosmos DB (`https://<cosmosdb-name>.documents.azure.com/`), поэтому оно должно быть уникальным для всех учетных записей Cosmos DB в Azure. В нем могут использоваться только строчные буквы, цифры и дефис (-). Его длина должна быть от 3 до 50 знаков.
+В следующей команде замените заполнитель *\<cosmosdb-name>* уникальным именем базы данных Cosmos DB. Это имя используется как часть конечной точки Cosmos DB (`https://<cosmosdb-name>.documents.azure.com/`), поэтому оно должно быть уникальным для всех учетных записей Cosmos DB в Azure. В нем могут использоваться только строчные буквы, цифры и дефис (-). Его длина должна быть от 3 до 50 знаков.
 
 ```azurecli-interactive
 az cosmosdb create --name <cosmosdb-name> --resource-group myResourceGroup --kind MongoDB
@@ -179,7 +179,7 @@ az cosmosdb list-keys --name <cosmosdb-name> --resource-group myResourceGroup
 
 В локальном репозитории MEAN.js создайте файл с именем _local-production.js_ в папке _config/env/_ . Чтобы этот файл хранился вне репозитория, настраивается _.gitignore_.
 
-Скопируйте в него следующий код: Замените два заполнителя *\<cosmosdb-name>* именем базы данных Cosmos DB, а заполнитель *\<primary-master-key>*  — ключом, скопированным на предыдущем шаге.
+Скопируйте в него следующий код: Также замените два заполнителя *\<cosmosdb-name>* именем базы данных Cosmos DB, а заполнитель *\<primary-master-key>* замените ключом, скопированным на предыдущем шаге.
 
 ```javascript
 module.exports = {
@@ -367,7 +367,7 @@ exports.update = function (req, res) {
 
 Прямо перед закрывающим тегом `</section>` добавьте следующую строку для отображения `comment` вместе с остальными данными статьи:
 
-```HTML
+```html
 <p class="lead" ng-bind="vm.article.comment"></p>
 ```
 
@@ -375,7 +375,7 @@ exports.update = function (req, res) {
 
 Прямо перед закрывающим тегом `</a>` добавьте следующую строку для отображения `comment` вместе с остальными данными статьи:
 
-```HTML
+```html
 <p class="list-group-item-text" ng-bind="article.comment"></p>
 ```
 
@@ -383,7 +383,7 @@ exports.update = function (req, res) {
 
 В элементе `<div class="list-group">` и прямо перед закрывающим тегом `</a>` добавьте следующую строку для отображения `comment` вместе с остальными данными статьи:
 
-```HTML
+```html
 <p class="list-group-item-text" data-ng-bind="article.comment"></p>
 ```
 
@@ -391,7 +391,7 @@ exports.update = function (req, res) {
 
 Найдите элемент `<div class="form-group">`, который содержит кнопку "Отправить" и выглядит следующим образом:
 
-```HTML
+```html
 <div class="form-group">
   <button type="submit" class="btn btn-default">{{vm.article._id ? 'Update' : 'Create'}}</button>
 </div>
@@ -399,7 +399,7 @@ exports.update = function (req, res) {
 
 Прямо перед этим тегом добавьте еще один элемент `<div class="form-group">`, который позволяет пользователям изменять поле `comment`. Новый элемент должен выглядеть следующим образом:
 
-```HTML
+```html
 <div class="form-group">
   <label class="control-label" for="comment">Comment</label>
   <textarea name="comment" data-ng-model="vm.article.comment" id="comment" class="form-control" cols="30" rows="10" placeholder="Comment"></textarea>
@@ -444,7 +444,7 @@ git push azure master
 
 ## <a name="stream-diagnostic-logs"></a>Потоковая передача журналов диагностики
 
-[!INCLUDE [Access diagnostic logs](../../../includes/app-service-web-logs-access-no-h.md)]
+[!INCLUDE [Access diagnostic logs](../../../includes/app-service-web-logs-access-linux-no-h.md)]
 
 ## <a name="manage-your-azure-app"></a>Управление приложением Azure
 

@@ -5,12 +5,12 @@ author: mumian
 ms.date: 12/04/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: ad79721b88f886426d658ed6ee89c4969e1f1baa
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 43291bdaa277c06262be2d7bb5ba8d3f61ff35ea
+ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75470289"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86056894"
 ---
 # <a name="tutorial-use-azure-deployment-manager-with-resource-manager-templates-public-preview"></a>Руководство по использованию диспетчера развертывания Azure с шаблонами Resource Manager (общедоступная предварительная версия)
 
@@ -40,7 +40,7 @@ ms.locfileid: "75470289"
 
 Дополнительные ресурсы:
 
-* [Справочник по REST API диспетчера развертывания Azure](https://docs.microsoft.com/rest/api/deploymentmanager/).
+* [Справочник по REST API диспетчера развертывания Azure](/rest/api/deploymentmanager/).
 * [Руководство. Use health check in Azure Deployment Manager](./deployment-manager-tutorial-health-check.md) (Учебник по использованию проверки работоспособности в диспетчере развертывания Azure).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
@@ -52,7 +52,7 @@ ms.locfileid: "75470289"
 Для работы с этой статьей необходимо иметь следующее.
 
 * Опыт разработки [шаблонов Azure Resource Manager](overview.md).
-* Установите Azure PowerShell. Дополнительные сведения см. в статье [Начало работы с Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps).
+* Установите Azure PowerShell. Дополнительные сведения см. в статье [Начало работы с Azure PowerShell](/powershell/azure/get-started-azureps).
 * Командлеты диспетчера развертывания. Чтобы установить эти командлеты предварительной версии, вам понадобится последняя версия PowerShellGet. Сведения о получении последней версии см. в статье [Установка PowerShellGet](/powershell/scripting/gallery/installing-psget). После установки PowerShellGet закройте окно PowerShell. Откройте новое окно PowerShell с повышенными привилегиями и выполните следующую команду:
 
     ```powershell

@@ -5,19 +5,19 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/23/2020
-ms.openlocfilehash: 0ccb87017f962650f099d506e1d200ab408316d6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a88d4893daa12ff2c35ee7cf8f4e5b7569f854f6
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82195151"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86086200"
 ---
 # <a name="overview-of-apache-spark-streaming"></a>Общие сведения о потоковой передаче Apache Spark
 
-[Apache Spark](https://spark.apache.org/) Потоковая передача обеспечивает обработку потока данных в кластерах HDInsight Spark. С гарантией того, что любое событие ввода обрабатывается ровно один раз, даже если происходит сбой узла. Поток Spark — это длительно выполняемое задание, которое получает входные данные из широкого спектра источников, включая концентраторы событий Azure. Кроме того, центр Интернета вещей Azure, Apache Kafka, Apache Flume, `ZeroMQ`Twitter, необработанные сокеты TCP или от мониторинга Apache Hadoop YARN FileSystem. В отличие от отдельного процесса, управляемого событиями, потоковая передача данных из потока Spark выполняется в окнах времени. Например, 2-секундный срез, а затем преобразует каждый пакет данных с помощью операций Map, reduce, Join и Extract. Затем поток Spark записывает преобразованные данные в файловые системы, базы данных, панели мониторинга и консоль.
+[Apache Spark](https://spark.apache.org/) Потоковая передача обеспечивает обработку потока данных в кластерах HDInsight Spark. С гарантией того, что любое событие ввода обрабатывается ровно один раз, даже если происходит сбой узла. Поток Spark — это длительно выполняемое задание, которое получает входные данные из широкого спектра источников, включая концентраторы событий Azure. Кроме того, центр Интернета вещей Azure, Apache Kafka, Apache Flume, Twitter, `ZeroMQ` необработанные сокеты TCP или от мониторинга Apache Hadoop YARN FileSystem. В отличие от отдельного процесса, управляемого событиями, потоковая передача данных из потока Spark выполняется в окнах времени. Например, 2-секундный срез, а затем преобразует каждый пакет данных с помощью операций Map, reduce, Join и Extract. Затем поток Spark записывает преобразованные данные в файловые системы, базы данных, панели мониторинга и консоль.
 
 ![Потоковая обработка с помощью HDInsight и потоковой передачи Spark](./media/apache-spark-streaming-overview/hdinsight-spark-streaming.png)
 
@@ -89,7 +89,7 @@ val wordCounts = pairs.reduceByKey(_ + _)
 wordCounts.print()
 ```
 
-### <a name="run-the-application"></a>Выполнение приложения
+### <a name="run-the-application"></a>Запуск приложения
 
 Запустите приложение потоковой передачи и продолжайте его работу, пока не будет получен сигнал завершения.
 
@@ -154,7 +154,7 @@ SELECT * FROM demo_numbers
 
 Итоговые выходные данные выглядят следующим образом:
 
-| значение | time |
+| value | time |
 | --- | --- |
 |10 | 1497314465256 |
 |11 | 1497314470272 |
@@ -222,7 +222,7 @@ ssc.start()
 
 После истечения первой минуты будут получены 12 записей — по шесть записей из каждого из двух пакетов, собранных в окне.
 
-| значение | time |
+| value | time |
 | --- | --- |
 | 1 | 1497316294139 |
 | 2 | 1497316299158
@@ -251,7 +251,7 @@ ssc.start()
 
 Состояние всех приложений можно также проверить с помощью запроса GET к конечной точке LIVY. Наконец, можно завершить работу приложения, выполнив запрос DELETE к конечной точке LIVY. Дополнительные сведения об API LIVY см. в статье [Удаленная отправка заданий Spark в кластер Azure HDInsight с помощью Apache Spark REST API](apache-spark-livy-rest-interface.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Создание кластеров под управлением Linux в HDInsight с помощью портала Azure](../hdinsight-hadoop-create-linux-clusters-portal.md)
 * [Руководство по программированию потоковой передачи Apache Spark](https://people.apache.org/~pwendell/spark-releases/latest/streaming-programming-guide.html)

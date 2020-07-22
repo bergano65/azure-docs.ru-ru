@@ -3,8 +3,8 @@ title: Настройка Oracle ASM в виртуальной машине Linu
 description: Быстрая подготовка и запуск Oracle ASM в среде Azure.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
-author: BorisB2015
-manager: gwallace
+author: rgardler
+manager: ''
 editor: ''
 tags: azure-resource-manager
 ms.assetid: ''
@@ -13,17 +13,17 @@ ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
-ms.author: borisb
-ms.openlocfilehash: aa65b789d02c60ef6042aa62e1c138c0e1bd7224
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.author: rogardle
+ms.openlocfilehash: a707081aca4a28743bff8bdd1046a5e9aee285f1
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81676897"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86224406"
 ---
 # <a name="set-up-oracle-asm-on-an-azure-linux-virtual-machine"></a>Настройка Oracle ASM в виртуальной машине Linux в Azure  
 
-Виртуальные машины Azure предоставляют полностью настраиваемую и гибкую вычислительную среду. В этом руководстве описано развертывание базовой виртуальной машины Azure, а также установка и настройка Oracle ASM.  Вы научитесь:
+Виртуальные машины Azure предоставляют полностью настраиваемую и гибкую вычислительную среду. В этом руководстве описано развертывание базовой виртуальной машины Azure, а также установка и настройка Oracle ASM.  Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Создание виртуальной машины базы данных Oracle и подключение к ней.
@@ -246,7 +246,7 @@ ssh <publicIpAddress>
    Syncing disks.
    ```
 
-4. Повторите предыдущую `fdisk` команду для `/dev/sdd`, `/dev/sde`и `/dev/sdf`.
+4. Повторите предыдущую `fdisk` команду для `/dev/sdd` , `/dev/sde` и `/dev/sdf` .
 
 5. Проверьте конфигурацию диска:
 
@@ -427,7 +427,7 @@ ssh <publicIpAddress>
    > Ключ должен содержать строку `ssh-rsa`. Кроме того, содержимое ключа должно быть одной строкой текста.
    >  
 
-6. В клиентской системе запустите PuTTY. В области **Категория** выберите **Подключение** > **SSH** > **AUTH**. В поле **файл закрытого ключа для проверки подлинности** перейдите к разделу, созданному ранее.
+6. В клиентской системе запустите PuTTY. В области **Категория** выберите **Подключение**  >  **SSH**  >  **AUTH**. В поле **файл закрытого ключа для проверки подлинности** перейдите к разделу, созданному ранее.
 
    ![Снимок экрана параметров аутентификации SSH](./media/oracle-asm/setprivatekey.png)
 
@@ -580,7 +580,7 @@ ssh <publicIpAddress>
 az group delete --name myResourceGroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Реализация Oracle Data Guard на виртуальной машине Azure под управлением Linux](configure-oracle-dataguard.md)
 

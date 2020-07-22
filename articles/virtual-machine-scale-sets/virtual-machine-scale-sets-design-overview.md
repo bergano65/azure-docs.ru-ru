@@ -7,15 +7,15 @@ ms.author: mimckitt
 ms.topic: conceptual
 ms.service: virtual-machine-scale-sets
 ms.subservice: management
-ms.date: 06/01/2017
+ms.date: 06/25/2020
 ms.reviewer: jushiman
 ms.custom: mimckitt
-ms.openlocfilehash: 0676a7d31d141e0c264119a54b77ec29a527374b
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: d2160f2c014e1bf7c486c29a48c756936df12788
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83200197"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85373987"
 ---
 # <a name="design-considerations-for-scale-sets"></a>Рекомендации по проектированию масштабируемых наборов
 В этой статье рассматриваются вопросы проектирования масштабируемых наборов виртуальных машин. Сведения о том, что такое масштабируемые наборы виртуальных машин, см. в статье [Обзор масштабируемых наборов виртуальных машин](virtual-machine-scale-sets-overview.md).

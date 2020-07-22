@@ -10,18 +10,15 @@ ms.assetid: c49187db-b976-4731-89d6-11a0bf653db1
 ms.service: machine-learning
 ms.subservice: studio
 ms.workload: data-services
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 01/12/2017
-ms.openlocfilehash: 1308f658b6ae7c8f46b989f8205568fa195fb4aa
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
-ms.translationtype: MT
+ms.openlocfilehash: c274579e756b3c22920023d68501981d5b4a8b01
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82209355"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84705871"
 ---
 # <a name="use-azure-machine-learning-studio-classic-web-service-parameters"></a>Использование параметров веб-службы Машинное обучение Azure Studio (классическая модель)
-
-[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 
 Веб-служба машинного обучения Azure создается при публикации эксперимента, содержащего модули с настраиваемыми параметрами. В некоторых случаях может потребоваться изменение поведения модуля, пока веб-служба выполняется. *Параметры веб-службы* позволяют это сделать. 
 
@@ -55,7 +52,7 @@ ms.locfileid: "82209355"
    * В разделе **Укажите тип проверки подлинности**выберите "Учетная запись".
    * Введите данные учетной записи для хранилища BLOB-объектов Azure. 
 
-3. Щелкните значок справа от элемента **Путь к BLOB-объекту, начиная с параметра контейнера**. Это выглядит следующим образом.
+3. Щелкните значок справа от элемента **Путь к BLOB-объекту, начиная с параметра контейнера**. Это выглядит следующим образом:
    
    ![Значок параметра веб-службы](./media/web-service-parameters/icon.png)
    

@@ -7,12 +7,12 @@ ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 03/27/2018
 ms.author: cynthn
-ms.openlocfilehash: 8ca16c8f114cf1732bcfb1c8a7d9ae85414d70e5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 5d15db9c9ef6e1cd637d9585fe07be269346f161
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79267213"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86502299"
 ---
 # <a name="manage-the-availability-of-linux-virtual-machines"></a>Управление доступностью виртуальных машин Linux
 
@@ -20,6 +20,5 @@ ms.locfileid: "79267213"
 
 [!INCLUDE [virtual-machines-common-manage-availability](../../../includes/virtual-machines-common-manage-availability.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
-Чтобы больше узнать о балансировке нагрузки виртуальных машин, ознакомьтесь с разделом [Балансировка нагрузки виртуальных машин](../virtual-machines-linux-load-balance.md).
-
+## <a name="next-steps"></a>Дальнейшие действия
+Чтобы больше узнать о балансировке нагрузки виртуальных машин, ознакомьтесь с разделом [Балансировка нагрузки виртуальных машин](../../load-balancer/load-balancer-overview.md).

@@ -1,46 +1,31 @@
 ---
-title: Примеры политик службы управления API Azure | Документация Майкрософт
-description: Сведения о политиках, доступных для использования в службе управления API Azure.
-services: api-management
-documentationcenter: ''
-author: vladvino
-manager: cflower
-editor: ''
+title: Встроенные определения политик для службы "Управление API"
+description: Здесь приведены встроенные определения политик в Политике Azure для службы "Управление API Azure". Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
+ms.date: 07/10/2020
+author: georgewallace
+ms.author: gwallace
 ms.service: api-management
-ms.workload: mobile
-ms.tgt_pltfrm: na
 ms.topic: sample
-ms.date: 10/31/2017
-ms.author: apimpm
-ms.custom: mvc
-ms.openlocfilehash: 9bdcf9ea247adb8d5941c75f90f7db3915af20bc
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.custom: subject-policy-samples
+ms.openlocfilehash: 02e3dacef17e02d25819aaeab6c0add2c20fc6ff
+ms.sourcegitcommit: 0b2367b4a9171cac4a706ae9f516e108e25db30c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75940947"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86275600"
 ---
-# <a name="api-management-policy-samples"></a>Примеры политик службы управления API Azure
+# <a name="azure-policy-built-in-policy-definitions-for-azure-api-management"></a>Встроенные определения политик в Политике Azure для службы "Управление API Azure"
 
-[Политики](api-management-howto-policies.md) представляют собой одну из эффективных функций системы, позволяющих издателю изменять поведение API-интерфейса путем его настройки. Политика — это коллекция правил, которые выполняются последовательно над запросом или ответом API. В следующей таблице содержатся ссылки на примеры и дается краткое описание каждого примера.
+Эта страница представляет собой индекс встроенных определений политик в [Политике Azure](../governance/policy/overview.md) для службы "Управление API Azure". Дополнительные встроенные компоненты Политики Azure для других служб см. в статье [Встроенные определения Политики Azure](../governance/policy/samples/built-in-policies.md). Примеры политик для службы "Управление API" см. в [индексе политик для этой службы](./policies/index.md).
 
-|                                                                                                                                                                      |                                                                                                                                                                                                                             |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Входящие политики**                                                                                                                                                 |                                                                                                                                                                                                                             |
-| [Добавление заголовка перенаправления, позволяющее серверному API создавать правильные URL-адреса](./policies/set-header-to-enable-backend-to-construct-urls.md?toc=api-management/toc.json) | Добавление заголовка перенаправления во входящий запрос, что позволяет серверному API создавать правильные URL-адреса.                                                                                                        |
-| [Добавление заголовка, который содержит идентификатор корреляции](./policies/add-correlation-id.md?toc=api-management/toc.json)                                                             | Добавление заголовка, который содержит идентификатор корреляции для входящего запроса.                                                                                                                                        |
-| [Добавление функций в серверную службу и кэширование ответа](./policies/cache-response.md?toc=api-management/toc.json)                                             | Добавление функций в серверную службу. В статье показано, как принять имя вместо широты и долготы в API прогнозирования погоды.                                                                    |
-| [Авторизация доступа на основе утверждений JWT](./policies/authorize-request-based-on-jwt-claims.md?toc=api-management/toc.json)                                              | Авторизация доступа к определенным методам HTTP в API на основе утверждений JWT.                                                                                                                                       |
-| [Авторизация запросов с помощью внешнего авторизатора](./policies/authorize-request-using-external-authorizer.md)                                                   | Использование внешнего авторизатора для защиты доступа через API.                                                                                                                                                               |
-| [Авторизация доступа с помощью токена OAuth Google](./policies/use-google-as-oauth-token-provider.md?toc=api-management/toc.json)                                            | Авторизация доступа к конечным точкам с использованием Google в качестве поставщика токена OAuth.                                                                                                                                    |
-| [Фильтрация IP-адресов при использовании Шлюза приложений](./policies/filter-ip-addresses-when-using-appgw.md) | Фильтрация IP-адресов в политиках при доступе к экземпляру службы "Управление API" через Шлюз приложений.
-| [Создание подписанного URL-адреса и запроса на перенаправление к службе хранилища Azure](./policies/generate-shared-access-signature.md?toc=api-management/toc.json)                  | Создание [подписанного URL-адреса](https://docs.microsoft.com/azure/storage/storage-dotnet-shared-access-signature-part-1) с помощью выражений и перенаправление запроса в службу хранилища Azure с использованием политики rewrite-uri. |
-| [Получение маркера доступа OAuth2 из AAD и его перенаправление в серверную часть](./policies/use-oauth2-for-authorization.md?toc=api-management/toc.json)                             | Пример использования OAuth2 для авторизации между шлюзом и серверной частью. В статье показано, как получить маркер доступа из AAD и перенаправить его в серверную часть.                                                    |
-| [Получение маркера X-CSRF из шлюза SAP с помощью политики отправки запроса](./policies/get-x-csrf-token-from-sap-gateway.md?toc=api-management/toc.json)                           | Реализация шаблона X-CSRF, используемого во многих API-интерфейсах. Этот пример относится только к шлюзу SAP.                                                                                                                           |
-| [Маршрутизация запроса в зависимости от размера его текста](./policies/route-requests-based-on-size.md?toc=api-management/toc.json)                                            | Маршрутизация запроса в зависимости от размера его текста.                                                                                                                                                       |
-| [Отправка контекстной информации запроса во внутреннюю службу](./policies/send-request-context-info-to-backend-service.md?toc=api-management/toc.json)                    | Отправка контекстной информации запроса во внутреннюю службу для ведения журнала или обработки.                                                                                                                                |
-| [Установка длительности для кэширования ответа](./policies/set-cache-duration.md?toc=api-management/toc.json)                                                                          | Установка длительности кэширования ответа при помощи значения maxAge в заголовке Cache-Control, который отправляется с сервера.                                                                                                             |
-| **Исходящие политики**                                                                                                                                                |                                                                                                                                                                                                                             |
-| [Фильтрация содержимого ответа](./policies/filter-response-content.md?toc=api-management/toc.json)                                                                         | Фильтрация элементов данных из полезных данных ответа по продукту, связанному с запросом.                                                                                                        |
-| **Политики обработки ошибок**                                                                                                                                                |                                                                                                                                                                                                                             |
-| [Запись ошибок в журнал для Stackify](./policies/log-errors-to-stackify.md?toc=api-management/toc.json)                                                                           | Добавление политики регистрации ошибок для их отправки в Stackify и записи в журнал.                                                                                                                                            |
+Имя каждого встроенного определения политики связано с определением политики на портале Azure. Перейдите по ссылке в столбце **Версия**, чтобы просмотреть исходный код в [репозитории GitHub для службы "Политика Azure"](https://github.com/Azure/azure-policy).
+
+## <a name="azure-api-management"></a>Cлужба управления Azure API
+
+[!INCLUDE [azure-policy-samples-rp-apimanagement](../../includes/policy/samples/byrp/microsoft.apimanagement.md)]
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+- Ознакомьтесь со встроенными инициативами в [репозитории GitHub для Политики Azure](https://github.com/Azure/azure-policy).
+- Изучите статью о [структуре определения Политики Azure](../governance/policy/concepts/definition-structure.md).
+- Изучите [сведения о действии политик](../governance/policy/concepts/effects.md).

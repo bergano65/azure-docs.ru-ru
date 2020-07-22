@@ -4,12 +4,12 @@ description: Из этой статьи вы узнаете, как настра
 ms.topic: conceptual
 ms.date: 08/03/2018
 ms.assetid: b80b3a41-87bf-49ca-8ef2-68e43c04c1a3
-ms.openlocfilehash: 4789ef1e0e09df521f8cab539d972e9e669e0a58
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 595291549b4d181967ea168d0dc71bc7e2237a67
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79248168"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86514209"
 ---
 # <a name="back-up-an-azure-vm-using-azure-backup-via-rest-api"></a>Резервное копирование виртуальных машин Azure с помощью службы Azure Backup и REST API
 
@@ -23,13 +23,13 @@ ms.locfileid: "79248168"
 
 ### <a name="discover-unprotected-azure-vms"></a>Обнаружение незащищенных виртуальных машин Azure
 
-Во-первых, для хранилища нужно обеспечить возможность идентификации виртуальной машины Azure. Это можно сделать с помощью [операции обновления](https://docs.microsoft.com/rest/api/backup/protectioncontainers/refresh). Это асинхронная операция *POST*, которая предоставляет хранилищу самый последний список всех незащищенных виртуальных машин в текущей подписке для кэширования. После кэширования виртуальной машины Службы восстановления получат доступ к виртуальной машине для включения защиты.
+Во-первых, для хранилища нужно обеспечить возможность идентификации виртуальной машины Azure. Это можно сделать с помощью [операции обновления](/rest/api/backup/protectioncontainers/refresh). Это асинхронная операция *POST*, которая предоставляет хранилищу самый последний список всех незащищенных виртуальных машин в текущей подписке для кэширования. После кэширования виртуальной машины Службы восстановления получат доступ к виртуальной машине для включения защиты.
 
 ```http
 POST https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{vaultresourceGroupname}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/refreshContainers?api-version=2016-12-01
 ```
 
-Для URI POST используются параметры `{subscriptionId}`, `{vaultName}`, `{vaultresourceGroupName}`, `{fabricName}`. Значение параметра `{fabricName}` — Azure. В нашем примере значения параметров `{vaultName}` и `{vaultresourceGroupName}` — testVault и testVaultRG. Так как все необходимые параметры указаны в URI, текст запроса не требуется.
+Для URI POST используются параметры `{subscriptionId}`, `{vaultName}`, `{vaultresourceGroupName}`, `{fabricName}`. Значение параметра `{fabricName}` — Azure. В соответствии с нашим примером `{vaultName}` это «testvault задано» и `{vaultresourceGroupName}` «тестваултрг». Так как все необходимые параметры указаны в URI, текст запроса не требуется.
 
 ```http
 POST https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/testVaultRG/providers/Microsoft.RecoveryServices/vaults/testVault/backupFabrics/Azure/refreshContainers?api-version=2016-12-01
@@ -37,11 +37,11 @@ POST https://management.azure.com/Subscriptions/00000000-0000-0000-0000-00000000
 
 #### <a name="responses"></a>Ответы
 
-Операция обновления — это [асинхронная операция](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-async-operations). Это означает, что такая операция создает другую операцию, которая должна отслеживаться отдельно.
+Операция обновления — это [асинхронная операция](../azure-resource-manager/management/async-operations.md). Это означает, что такая операция создает другую операцию, которая должна отслеживаться отдельно.
 
 Она возвращает два ответа: 202 (принято), когда создается другая операция, и 200 (ОК), когда эта операция завершается.
 
-|Имя  |Type  |Описание  |
+|Имя  |Тип  |Описание  |
 |---------|---------|---------|
 |204 No Content (содержимое отсутствует)     |         |  ОК (без содержимого, которое возвращаются)      |
 |202 — принято     |         |     Принято    |
@@ -92,7 +92,7 @@ X-Powered-By: ASP.NET
 
 ### <a name="selecting-the-relevant-azure-vm"></a>Выбор нужной виртуальной машины Azure
 
- Вы можете убедиться, что кэширование выполнено, [отобразив список всех защищаемых элементов](https://docs.microsoft.com/rest/api/backup/backupprotectableitems/list) в пределах подписки. Затем в ответе найдите нужную виртуальную машину. [Ответ этой операции](#example-responses-1) также содержит сведения о том, как службы восстановления ИДЕНТИФИЦИРУют виртуальную машину.  Ознакомившись с этой процедурой, вы можете пропустить этот шаг и перейти непосредственно к [включению защиты](#enabling-protection-for-the-azure-vm).
+ Вы можете убедиться, что кэширование выполнено, [отобразив список всех защищаемых элементов](/rest/api/backup/backupprotectableitems/list) в пределах подписки. Затем в ответе найдите нужную виртуальную машину. [Ответ этой операции](#example-responses-1) также содержит сведения о том, как службы восстановления ИДЕНТИФИЦИРУют виртуальную машину.  Ознакомившись с этой процедурой, вы можете пропустить этот шаг и перейти непосредственно к [включению защиты](#enabling-protection-for-the-azure-vm).
 
 Это можно сделать с помощью операции *GET*.
 
@@ -104,9 +104,9 @@ URI *GET* имеет все необходимые параметры. Для э
 
 #### <a name="responses"></a><a name="responses-1"></a>Ответы
 
-|Имя  |Type  |Описание  |
+|Имя  |Тип  |Описание  |
 |---------|---------|---------|
-|200 ОК     | [WorkloadProtectableItemResourceList](https://docs.microsoft.com/rest/api/backup/backupprotectableitems/list#workloadprotectableitemresourcelist)        |       OK |
+|200 ОК     | [WorkloadProtectableItemResourceList](/rest/api/backup/backupprotectableitems/list#workloadprotectableitemresourcelist)        |       ОК |
 
 #### <a name="example-responses"></a><a name="example-responses-1"></a>Примеры ответов
 
@@ -162,7 +162,7 @@ X-Powered-By: ASP.NET
 
 ### <a name="enabling-protection-for-the-azure-vm"></a>Включение защиты для виртуальной машины Azure
 
-После кэширования и идентификации соответствующей виртуальной машины выберите политику защиты. Дополнительные сведения о существующих политиках в хранилище см. в [списке API политик](https://docs.microsoft.com/rest/api/backup/backuppolicies/list). Ссылаясь на имя политики, выберите [соответствующую политику](/rest/api/backup/protectionpolicies/get). См. дополнительные сведения о [создании политик](backup-azure-arm-userestapi-createorupdatepolicy.md). В приведенном ниже примере выбрана политика DefaultPolicy.
+После кэширования и идентификации соответствующей виртуальной машины выберите политику защиты. Дополнительные сведения о существующих политиках в хранилище см. в [списке API политик](/rest/api/backup/backuppolicies/list). Ссылаясь на имя политики, выберите [соответствующую политику](/rest/api/backup/protectionpolicies/get). См. дополнительные сведения о [создании политик](backup-azure-arm-userestapi-createorupdatepolicy.md). В приведенном ниже примере выбрана политика DefaultPolicy.
 
 Включение защиты — это асинхронная операция *PUT*, которая создает защищенный элемент.
 
@@ -180,11 +180,11 @@ PUT https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
 
 Чтобы создать защищенный элемент, используйте компоненты текста запроса.
 
-|Имя  |Type  |Описание  |
+|Имя  |Тип  |Описание  |
 |---------|---------|---------|
 |properties     | AzureIaaSVMProtectedItem        |Свойства ресурса ProtectedItem         |
 
-Полный список определений в тексте запроса и другие сведения см. в [документации по созданию защищенного элемента для REST API](https://docs.microsoft.com/rest/api/backup/protecteditems/createorupdate#request-body).
+Полный список определений в тексте запроса и другие сведения см. в [документации по созданию защищенного элемента для REST API](/rest/api/backup/protecteditems/createorupdate#request-body).
 
 ##### <a name="example-request-body"></a>Примеры текста запроса
 
@@ -204,13 +204,13 @@ PUT https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
 
 #### <a name="responses"></a>Ответы
 
-Создание защищенного элемента — это [асинхронная операция](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-async-operations). Это означает, что такая операция создает другую операцию, которая должна отслеживаться отдельно.
+Создание защищенного элемента — это [асинхронная операция](../azure-resource-manager/management/async-operations.md). Это означает, что такая операция создает другую операцию, которая должна отслеживаться отдельно.
 
 Она возвращает два ответа: 202 (принято), когда создается другая операция, и 200 (ОК), когда эта операция завершается.
 
-|Имя  |Type  |Описание  |
+|Имя  |Тип  |Описание  |
 |---------|---------|---------|
-|200 ОК     |    [ProtectedItemResource](https://docs.microsoft.com/rest/api/backup/protecteditemoperationresults/get#protecteditemresource)     |  OK       |
+|200 ОК     |    [ProtectedItemResource](/rest/api/backup/protecteditemoperationresults/get#protecteditemresource)     |  ОК       |
 |202 — принято     |         |     Принято    |
 
 ##### <a name="example-responses"></a>Примеры ответов
@@ -272,11 +272,11 @@ GET https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000
 }
 ```
 
-Это является подтверждением того, что защита виртуальной машины включена, и первая операция резервного копирования будет активирована в соответствии с расписанием политики.
+Это подтверждает, что для виртуальной машины включена защита, а первая резервная копия будет активирована в соответствии с расписанием политики.
 
 ## <a name="trigger-an-on-demand-backup-for-a-protected-azure-vm"></a>Активация резервного копирования по запросу для защищенной виртуальной машины Azure
 
-После настройки виртуальной машины Azure для резервного копирования эта операция будет активирована в соответствии с расписанием политики. Вы можете дождаться первого запланированного резервного копирования или активировать эту операцию по требованию в любое время. Срок хранения для резервных копий по запросу отличается от срока хранения политики резервного копирования. Кроме того, вы можете указать определенные дату и время. Если срок хранения не будет указан, будет использоваться значение по умолчанию — 30 дней со дня активации резервного копирования по запросу.
+Когда виртуальная машина Azure настроена для архивации, резервное копирование выполняется в соответствии с расписанием политики. Вы можете дождаться первого запланированного резервного копирования или активировать эту операцию по требованию в любое время. Срок хранения для резервных копий по запросу отличается от срока хранения политики резервного копирования. Кроме того, вы можете указать определенные дату и время. Если срок хранения не будет указан, будет использоваться значение по умолчанию — 30 дней со дня активации резервного копирования по запросу.
 
 Активация резервного копирования по запросу — это операция *POST*.
 
@@ -294,11 +294,11 @@ POST https://management.azure.com/Subscriptions/00000000-0000-0000-0000-00000000
 
 Чтобы активировать резервное копирование по запросу, используйте компоненты текста запроса.
 
-|Имя  |Type  |Описание  |
+|Имя  |Тип  |Описание  |
 |---------|---------|---------|
-|properties     | [IaaSVMBackupRequest](https://docs.microsoft.com/rest/api/backup/backups/trigger#iaasvmbackuprequest)        |Свойства BackupRequestResource         |
+|properties     | [IaaSVMBackupRequest](/rest/api/backup/backups/trigger#iaasvmbackuprequest)        |Свойства BackupRequestResource         |
 
-Полный список определений в тексте запроса и другие сведения см. в [документации по активации резервного копирования для защищенных элементов для REST API](https://docs.microsoft.com/rest/api/backup/backups/trigger#request-body).
+Полный список определений в тексте запроса и другие сведения см. в [документации по активации резервного копирования для защищенных элементов для REST API](/rest/api/backup/backups/trigger#request-body).
 
 #### <a name="example-request-body"></a>Примеры текста запроса
 
@@ -315,11 +315,11 @@ POST https://management.azure.com/Subscriptions/00000000-0000-0000-0000-00000000
 
 ### <a name="responses"></a>Ответы
 
-Активация резервного копирования по запросу — это [асинхронная операция](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-async-operations). Это означает, что такая операция создает другую операцию, которая должна отслеживаться отдельно.
+Активация резервного копирования по запросу — это [асинхронная операция](../azure-resource-manager/management/async-operations.md). Это означает, что такая операция создает другую операцию, которая должна отслеживаться отдельно.
 
 Она возвращает два ответа: 202 (принято), когда создается другая операция, и 200 (ОК), когда эта операция завершается.
 
-|Имя  |Type  |Описание  |
+|Имя  |Тип  |Описание  |
 |---------|---------|---------|
 |202 — принято     |         |     Принято    |
 
@@ -419,7 +419,7 @@ X-Powered-By: ASP.NET
 
 ### <a name="stop-protection-and-delete-data"></a>Снятие защиты и удаление данных
 
-Чтобы снять защиту с защищенной виртуальной машины и удалить резервную копию данных, выполните [операцию удаления](https://docs.microsoft.com/rest/api/backup/protecteditems/delete).
+Чтобы снять защиту с защищенной виртуальной машины и удалить резервную копию данных, выполните [операцию удаления](/rest/api/backup/protecteditems/delete).
 
 Остановка защиты и удаление данных осуществляется с помощью операции *DELETE*.
 
@@ -435,11 +435,11 @@ DELETE https://management.azure.com//Subscriptions/00000000-0000-0000-0000-00000
 
 #### <a name="responses"></a><a name="responses-2"></a>Ответы
 
-*DELETE* — это [асинхронная операция](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-async-operations). Это означает, что такая операция создает другую операцию, которая должна отслеживаться отдельно.
+*DELETE* — это [асинхронная операция](../azure-resource-manager/management/async-operations.md). Это означает, что такая операция создает другую операцию, которая должна отслеживаться отдельно.
 
 Она возвращает два ответа: 202 (принято), когда создается другая операция, и 204 (содержимое отсутствует), когда эта операция завершается.
 
-|Имя  |Type  |Описание  |
+|Имя  |Тип  |Описание  |
 |---------|---------|---------|
 |204 NoContent (содержимое отсутствует)     |         |  NoContent       |
 |202 — принято     |         |     Принято    |
@@ -466,7 +466,7 @@ DELETE https://management.azure.com//Subscriptions/00000000-0000-0000-0000-00000
 
 Ответ будет в том же формате, что и при [активации резервного копирования по запросу](#example-responses-3). Итоговое задание должно отслеживаться, как описано в [документации по мониторингу заданий для REST API](backup-azure-arm-userestapi-managejobs.md#tracking-the-job).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Восстановление данных из резервной копии виртуальной машины Azure](backup-azure-arm-userestapi-restoreazurevms.md)
 

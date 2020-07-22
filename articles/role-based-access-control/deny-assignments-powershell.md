@@ -7,18 +7,18 @@ author: rolyon
 manager: mtillman
 ms.service: role-based-access-control
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 06/12/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: cd852d19b284f97995855fe06c97ea0ea69be293
-ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
+ms.openlocfilehash: 648de447a08e593af28d11a3be206a2cfee80902
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2020
-ms.locfileid: "82733968"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84790098"
 ---
 # <a name="list-azure-deny-assignments-using-azure-powershell"></a>Список запрещенных назначений в Azure с помощью Azure PowerShell
 
@@ -123,7 +123,7 @@ Get-AzDenyAssignment -Scope /subscriptions/<subscription_id>
 PS C:\> Get-AzDenyAssignment -Scope /subscriptions/11111111-1111-1111-1111-111111111111
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Общие сведения о назначении Deny в Azure](deny-assignments.md)
 - [Список запрещенных назначений в Azure с помощью портал Azure](deny-assignments-portal.md)

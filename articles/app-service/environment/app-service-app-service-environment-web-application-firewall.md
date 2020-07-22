@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 03/03/2018
 ms.author: stefsch
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 33fd0b6a3a07fa4fbc5448a97ca93c75a3e239d5
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: d629aca791794de6c3e065fdc9f4a9e7f6d8a5df
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83684218"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85833187"
 ---
 # <a name="configuring-a-web-application-firewall-waf-for-app-service-environment"></a>Настройка брандмауэра веб-приложения (WAF) для среды службы приложений
 ## <a name="overview"></a>Обзор
@@ -89,9 +89,11 @@ Barracuda WAF использует TCP-порт 8000 для настройки �
 ![Переводы веб-сайта][WebsiteTranslations]
 
 ## <a name="securing-traffic-to-app-service-environment-using-network-security-groups-nsg"></a>Защита трафика в среде службы приложений с помощью групп безопасности сети (NSG)
-Дополнительные сведения об ограничении трафика в среду службы приложений только от WAF с помощью виртуального IP-адреса облачной службы см. в [документации по управлению входящим трафиком](app-service-app-service-environment-control-inbound-traffic.md). Ниже приведен пример команды Powershell для выполнения этой задачи для TCP-порта 80.
+Дополнительные сведения об ограничении трафика в среду службы приложений только от WAF с помощью виртуального IP-адреса облачной службы см. в [документации по управлению входящим трафиком](app-service-app-service-environment-control-inbound-traffic.md). Ниже приведен пример команды PowerShell для выполнения этой задачи для TCP-порта 80.
 
-    Get-AzureNetworkSecurityGroup -Name "RestrictWestUSAppAccess" | Set-AzureNetworkSecurityRule -Name "ALLOW HTTP Barracuda" -Type Inbound -Priority 201 -Action Allow -SourceAddressPrefix '191.0.0.1'  -SourcePortRange '*' -DestinationAddressPrefix '*' -DestinationPortRange '80' -Protocol TCP
+```azurepowershell-interactive
+Get-AzureNetworkSecurityGroup -Name "RestrictWestUSAppAccess" | Set-AzureNetworkSecurityRule -Name "ALLOW HTTP Barracuda" -Type Inbound -Priority 201 -Action Allow -SourceAddressPrefix '191.0.0.1'  -SourcePortRange '*' -DestinationAddressPrefix '*' -DestinationPortRange '80' -Protocol TCP
+```
 
 Замените SourceAddressPrefix на виртуальный IP-адрес (VIP) облачной службы WAF.
 

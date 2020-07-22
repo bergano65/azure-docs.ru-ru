@@ -3,12 +3,12 @@ title: Импорт образов контейнеров
 description: Импорт образов контейнеров в Реестр контейнеров Azure с помощью API-интерфейсов Azure без использования команд Docker.
 ms.topic: article
 ms.date: 03/16/2020
-ms.openlocfilehash: caf7a47ac8f7ff0e72d2e049a7013542d274a225
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a7a6566540880d027b1dc3428d394b352f34318d
+ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80051926"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86023522"
 ---
 # <a name="import-container-images-to-a-container-registry"></a>Импорт образов контейнеров в реестр контейнеров
 
@@ -72,13 +72,13 @@ az acr import \
 
 ### <a name="import-from-microsoft-container-registry"></a>Импорт из Реестра контейнеров Майкрософт
 
-Например, импортируйте последний образ Windows Server Core из репозитория `windows` в Реестр контейнеров Майкрософт.
+Например, импортируйте `ltsc2019` образ Windows Server Core из `windows` репозитория в реестре контейнеров Microsoft.
 
 ```azurecli
 az acr import \
 --name myregistry \
---source mcr.microsoft.com/windows/servercore:latest \
---image servercore:latest
+--source mcr.microsoft.com/windows/servercore:ltsc2019 \
+--image servercore:ltsc2019
 ```
 
 ## <a name="import-from-another-azure-container-registry"></a>Импорт из другого Реестра контейнеров Azure
@@ -110,7 +110,7 @@ az acr import \
 
 ### <a name="import-from-a-registry-in-a-different-subscription"></a>Импорт из реестра в другой подписке
 
-В следующем примере *mysourceregistry* находится в другой подписке, нежели *myregistry*, и в одном и том же клиенте Active Directory. Укажите идентификатор ресурса исходного реестра с параметром `--registry`. Обратите внимание `--source` , что параметр указывает только исходный репозиторий и тег, а не имя сервера входа в реестр.
+В следующем примере *mysourceregistry* находится в другой подписке, нежели *myregistry*, и в одном и том же клиенте Active Directory. Укажите идентификатор ресурса исходного реестра с параметром `--registry`. Обратите внимание, что `--source` параметр указывает только исходный репозиторий и тег, а не имя сервера входа в реестр.
 
 ```azurecli
 az acr import \

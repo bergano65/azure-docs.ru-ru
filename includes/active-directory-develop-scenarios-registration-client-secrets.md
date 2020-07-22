@@ -15,10 +15,10 @@ ms.date: 04/18/2018
 ms.author: jmprieur
 ms.custom: include file
 ms.openlocfilehash: a5d34ac7eea50b67bd679d8cb8ddecf7ca277abd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76773383"
 ---
 ## <a name="register-secrets-or-certificates"></a>Регистрация секретов или сертификатов
@@ -42,5 +42,5 @@ ms.locfileid: "76773383"
 
 Кроме того, вы можете зарегистрировать приложение в Azure AD с помощью программ командной строки. В примере [Active-Directory-команда dotnetcore-демон-v2](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) показано, как зарегистрировать секрет приложения или сертификат в приложении Azure AD:
 
-- Дополнительные сведения о регистрации секрета приложения см. в разделе [аппкреатионскриптс/configure. ps1](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/5199032b352a912e7cc0fce143f81664ba1a8c26/AppCreationScripts/Configure.ps1#L190).
-- Дополнительные сведения о регистрации сертификата в приложении см. в разделе [аппкреатионскриптс-висцерт/configure. ps1](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/5199032b352a912e7cc0fce143f81664ba1a8c26/AppCreationScripts-withCert/Configure.ps1#L162-L178).
+- Дополнительные сведения о регистрации секрета приложения см. в разделе [аппкреатионскриптс/Configure.ps1](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/5199032b352a912e7cc0fce143f81664ba1a8c26/AppCreationScripts/Configure.ps1#L190).
+- Дополнительные сведения о регистрации сертификата в приложении см. в разделе [аппкреатионскриптс-висцерт/Configure.ps1](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/5199032b352a912e7cc0fce143f81664ba1a8c26/AppCreationScripts-withCert/Configure.ps1#L162-L178).

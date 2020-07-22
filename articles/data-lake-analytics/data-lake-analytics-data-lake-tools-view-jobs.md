@@ -5,14 +5,14 @@ ms.service: data-lake-analytics
 author: jasonwhowell
 ms.author: jasonh
 ms.assetid: bdf27b4d-6f58-4093-ab83-4fa3a99b5650
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 08/02/2017
-ms.openlocfilehash: 2d33a6ec5ff6b687913914e9433b85765aaa7aec
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e0db5482a48819074fc0552417aa79dbc2e5cf66
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "71309946"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86120183"
 ---
 # <a name="use-job-browser-and-job-view-for-azure-data-lake-analytics"></a>Использование обозревателя и представления заданий Azure Data Lake Analytics
 Служба Azure Data Lake Analytics архивирует отправленные задания в хранилище запросов. В этой статье вы узнаете, как использовать браузер и представление заданий в средствах Azure Data Lake для Visual Studio, чтобы находить исторические сведения о заданиях. 
@@ -165,7 +165,7 @@ ms.locfileid: "71309946"
   
     Здесь показываются сведения о выполнении вершин. Профиль задания архивирует каждый журнал выполнения вершин, например общий объем считанных и записанных данных, среда выполнения, состояние и т. д. В этом представлении можно получить дополнительные сведения о выполнении задания. Дополнительные сведения см. в статье[Использование представления выполнения вершин в инструментах Data Lake для Visual Studio](data-lake-analytics-data-lake-tools-use-vertex-execution-view.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Next Steps
 * Сведения о записи диагностических сведений см. в статье [доступ к журналам диагностики для Azure Data Lake Analytics](data-lake-analytics-diagnostic-logs.md)
 * Более сложный запрос можно посмотреть в статье [Анализ журналов веб-сайта с помощью аналитики озера данных Azure](data-lake-analytics-analyze-weblogs.md).
 * Дополнительные сведения см. в статье [Использование представления выполнения вершин в инструментах Data Lake для Visual Studio](data-lake-analytics-data-lake-tools-use-vertex-execution-view.md).

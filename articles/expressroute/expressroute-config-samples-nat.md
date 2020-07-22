@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: article
 ms.date: 12/06/2018
 ms.author: cherylmc
-ms.openlocfilehash: ef2fd40db422c459ca966e802344ef45f7ec01de
-ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
+ms.openlocfilehash: 3393c661240ae5619597256a6691ae43608d622b
+ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "74072115"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85856708"
 ---
 # <a name="router-configuration-samples-to-set-up-and-manage-nat"></a>Примеры конфигурации маршрутизатора для настройки и управления NAT
 
@@ -30,59 +30,71 @@ ms.locfileid: "74072115"
 
 ## <a name="cisco-asa-firewalls"></a>Брандмауэры Cisco ASA
 ### <a name="pat-configuration-for-traffic-from-customer-network-to-microsoft"></a>Конфигурация NAT для трафика от сети клиента в Майкрософт
-    object network MSFT-PAT
-      range <SNAT-START-IP> <SNAT-END-IP>
+
+```console
+object network MSFT-PAT
+  range <SNAT-START-IP> <SNAT-END-IP>
 
 
-    object-group network MSFT-Range
-      network-object <IP> <Subnet_Mask>
+object-group network MSFT-Range
+  network-object <IP> <Subnet_Mask>
 
-    object-group network on-prem-range-1
-      network-object <IP> <Subnet-Mask>
+object-group network on-prem-range-1
+  network-object <IP> <Subnet-Mask>
 
-    object-group network on-prem-range-2
-      network-object <IP> <Subnet-Mask>
+object-group network on-prem-range-2
+  network-object <IP> <Subnet-Mask>
 
-    object-group network on-prem
-      network-object object on-prem-range-1
-      network-object object on-prem-range-2
+object-group network on-prem
+  network-object object on-prem-range-1
+  network-object object on-prem-range-2
 
-    nat (outside,inside) source dynamic on-prem pat-pool MSFT-PAT destination static MSFT-Range MSFT-Range
+nat (outside,inside) source dynamic on-prem pat-pool MSFT-PAT destination static MSFT-Range MSFT-Range
+```
 
 ### <a name="pat-configuration-for-traffic-from-microsoft-to-customer-network"></a>Конфигурация PAT для трафика из Майкрософт в клиентскую сеть
 
 **Интерфейсы и направление:**
 
-    Source Interface (where the traffic enters the ASA): inside
-    Destination Interface (where the traffic exits the ASA): outside
+Исходный интерфейс (где трафик входит в ASA): внутренний интерфейс (где трафик выходит из ASA): вне
 
-**Настройка**
+**Конфигурация:**
 
 Пул преобразования сетевых адресов:
 
-    object network outbound-PAT
-        host <NAT-IP>
+```console
+object network outbound-PAT
+    host <NAT-IP>
+```
 
 Целевой сервер:
 
-    object network Customer-Network
-        network-object <IP> <Subnet-Mask>
+```console
+object network Customer-Network
+    network-object <IP> <Subnet-Mask>
+```
 
-Группа объектов для клиентских IP-адресов
+Группа объектов для IP-адресов клиентов:
 
-    object-group network MSFT-Network-1
-        network-object <MSFT-IP> <Subnet-Mask>
+```console
+object-group network MSFT-Network-1
+    network-object <MSFT-IP> <Subnet-Mask>
 
-    object-group network MSFT-PAT-Networks
-        network-object object MSFT-Network-1
+object-group network MSFT-PAT-Networks
+    network-object object MSFT-Network-1
+```
 
 Команды преобразования сетевых адресов:
 
-    nat (inside,outside) source dynamic MSFT-PAT-Networks pat-pool outbound-PAT destination static Customer-Network Customer-Network
+```console
+nat (inside,outside) source dynamic MSFT-PAT-Networks pat-pool outbound-PAT destination static Customer-Network Customer-Network
+```
 
 
 ## <a name="juniper-srx-series-routers"></a>Маршрутизаторы серии Juniper SRX
 ### <a name="1-create-redundant-ethernet-interfaces-for-the-cluster"></a>1. создание избыточных интерфейсов Ethernet для кластера
+
+```console
     interfaces {
         reth0 {
             description "To Internal Network";
@@ -112,17 +124,50 @@ ms.locfileid: "74072115"
             }
         }
     }
-
+```
 
 ### <a name="2-create-two-security-zones"></a>2. Создание двух зон безопасности
 * Доверенная зона предназначена для внутренней сети, а недоверенная зона — для внешней сети, направленной на граничные маршрутизаторы.
 * Назначьте соответствующие интерфейсы зонам.
 * Включите службы для интерфейсов.
 
-    security {       zones {           security-zone Trust {               host-inbound-traffic {                   system-services {                       ping;                   }                   protocols {                       bgp;                   }               }               interfaces {                   reth0.100;               }           }           security-zone Untrust {               host-inbound-traffic {                   system-services {                       ping;                   }                   protocols {                       bgp;                   }               }               interfaces {                   reth1.100;               }           }       }   }
+```console
+    security {
+        zones {
+            security-zone Trust {
+                host-inbound-traffic {
+                    system-services {
+                        ping;
+                    }
+                    protocols {
+                        bgp;
+                    }
+                }
+                interfaces {
+                    reth0.100;
+                }
+            }
+            security-zone Untrust {
+                host-inbound-traffic {
+                    system-services {
+                        ping;
+                    }
+                    protocols {
+                        bgp;
+                    }
+                }
+                interfaces {
+                    reth1.100;
+                }
+            }
+        }
+    }
+```
 
 
 ### <a name="3-create-security-policies-between-zones"></a>3. Создание политик безопасности между зонами
+
+```console
     security {
         policies {
             from-zone Trust to-zone Untrust {
@@ -151,12 +196,13 @@ ms.locfileid: "74072115"
             }
         }
     }
-
+```
 
 ### <a name="4-configure-nat-policies"></a>4. Настройка политик NAT
 * Создайте два пула NAT. Один будет использоваться для исходящего трафика NAT в Майкрософт, а второй — для трафика от Майкрософт клиенту.
 * Создайте правила для преобразования сетевых адресов соответствующего трафика.
-  
+
+```console
        security {
            nat {
                source {
@@ -211,11 +257,14 @@ ms.locfileid: "74072115"
                }
            }
        }
+```
 
 ### <a name="5-configure-bgp-to-advertise-selective-prefixes-in-each-direction"></a>5. Настройка BGP для объявления выборочных префиксов в каждом направлении
 См. примеры на странице образцов [конфигурации маршрутизации](expressroute-config-samples-routing.md) .
 
 ### <a name="6-create-policies"></a>6. Создание политик
+
+```console
     routing-options {
                   autonomous-system <Customer-ASN>;
     }
@@ -309,6 +358,7 @@ ms.locfileid: "74072115"
             }
         }
     }
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения см. в разделе [Вопросы и ответы по ExpressRoute](expressroute-faqs.md).

@@ -1,5 +1,5 @@
 ---
-title: Использование Synapse Studio (предварительная версия)
+title: Краткое руководство. Использование Synapse Studio
 description: В этом кратком руководстве вы увидите и узнаете, как легко запрашивать файлы различных типов с помощью Synapse Studio.
 services: synapse-analytics
 author: jovanpop-msft
@@ -9,14 +9,14 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: jovanpop
 ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: 64895e5f48168305aea3e83596cdbcae982a6cb9
-ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
+ms.openlocfilehash: 271fd77e519ce9d78e2fa4e4837004a77cf73522
+ms.sourcegitcommit: 0b2367b4a9171cac4a706ae9f516e108e25db30c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82692426"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86276062"
 ---
-# <a name="quickstart-using-synapse-studio-preview"></a>Краткое руководство. Использование Synapse Studio (предварительная версия)
+# <a name="quickstart-use-synapse-studio-preview"></a>Краткое руководство. Использование Synapse Studio (предварительная версия)
 
 В этом кратком руководстве вы узнаете, как запрашивать файлы с помощью Synapse Studio.
 
@@ -52,7 +52,7 @@ ms.locfileid: "82692426"
 > Чтобы иметь возможность запрашивать файлы, необходимо быть членом роли `Storage Blob Reader` в базовом хранилище. Узнайте, как [назначить для **Модуля чтения данных BLOB-объектов хранилища** или **Участника для данных BLOB-объектов хранилища** разрешения RBAC в службе хранилища Azure](../storage/common/storage-auth-aad-rbac-portal.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json#assign-a-built-in-rbac-role).
 
 1. Отправьте некоторые файлы `PARQUET`.
-2. Выберите один или несколько файлов, а затем создайте новый скрипт SQL или записную книжку Spark, чтобы просмотреть содержимое файлов. Если вы хотите создать записную книжку, необходимо создать [пул Apache Spark в рабочей области](quickstart-create-apache-spark-pool.md).
+2. Выберите один или несколько файлов, а затем создайте новый скрипт SQL или записную книжку Spark, чтобы просмотреть содержимое файлов. Если вы хотите создать записную книжку, необходимо создать [пул Apache Spark в рабочих областях Synapse](quickstart-create-apache-spark-pool-studio.md).
 
    ![Файлы запросов в хранилище](./media/quickstart-synapse-studio/query-files-on-storage.png)
 
@@ -64,7 +64,7 @@ ms.locfileid: "82692426"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Включение пользователей Azure AD для запроса файлов путем назначения для [**модуля чтения данных BLOB-объектов хранилища** или **участника для данных BLOB-объектов хранилища** разрешений RBAC в службе хранилища Azure](../storage/common/storage-auth-aad-rbac-portal.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json#assign-a-built-in-rbac-role)
+- Включение пользователей Azure AD для запроса файлов [путем назначения для **Модуля чтения данных BLOB-объектов хранилища** или **Участника для данных BLOB-объектов хранилища** разрешений RBAC в службе хранилища Azure](../storage/common/storage-auth-aad-rbac-portal.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json#assign-a-built-in-rbac-role)
 - [Запросы к файлам в службе хранилища Azure с помощью SQL по запросу](sql/on-demand-workspace-overview.md)
-- [Создание пула Apache Spark с помощью портала Azure](quickstart-create-apache-spark-pool.md)
+- [Создание пула Apache Spark с помощью портала Azure](quickstart-create-apache-spark-pool-portal.md)
 - [Создание отчета Power BI о файлах, хранящихся в службе хранилища Azure](sql/tutorial-connect-power-bi-desktop.md)

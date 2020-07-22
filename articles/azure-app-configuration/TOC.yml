@@ -103,6 +103,8 @@
       href: howto-import-export-data.md
     - name: Маршрутизация событий в пользовательскую конечную точку
       href: howto-app-configuration-event.md
+    - name: Автоматическое резервное копирование хранилища конфигурации
+      href: howto-backup-config-store.md
     - name: Рекомендации
       href: howto-best-practices.md
 - name: Справочник

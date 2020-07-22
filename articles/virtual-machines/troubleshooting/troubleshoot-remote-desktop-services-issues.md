@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/23/2018
 ms.author: genli
-ms.openlocfilehash: 4b314fbdb9cbc0c0b797cbee8e92ee4702bbea81
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 0b00785fed7708986885e9da9102e8f1b4fd4539
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77919470"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86508888"
 ---
 # <a name="remote-desktop-services-isnt-starting-on-an-azure-vm"></a>Службы удаленных рабочих столов не запускаются на виртуальной машине Azure
 
@@ -47,7 +47,9 @@ ms.locfileid: "77919470"
 
     Кроме того, доступ к этим ошибкам можно получить через консоль последовательного доступа с помощью следующего запроса: 
 
-        wevtutil qe system /c:1 /f:text /q:"Event[System[Provider[@Name='Service Control Manager'] and EventID=7022 and TimeCreated[timediff(@SystemTime) <= 86400000]]]" | more 
+    ```console
+   wevtutil qe system /c:1 /f:text /q:"Event[System[Provider[@Name='Service Control Manager'] and EventID=7022 and TimeCreated[timediff(@SystemTime) <= 86400000]]]" | more
+    ```
 
 ## <a name="cause"></a>Причина
  
@@ -94,7 +96,7 @@ ms.locfileid: "77919470"
    ```
 8. Если служба не запускается, выполните поиск решения на основе полученного сообщения об ошибке:
 
-    |  Ошибка |  Предложение |
+    |  Error |  Предложение |
     |---|---|
     |5 — ACCESS DENIED |Ознакомьтесь с разделом [Служба TermService остановлена из-за ошибки отказа в доступе](#termservice-service-is-stopped-because-of-an-access-denied-problem). |
     |1053 — ERROR_SERVICE_REQUEST_TIMEOUT  |См. раздел [Служба TermService отключена](#termservice-service-is-disabled).  |  
@@ -179,29 +181,44 @@ ms.locfileid: "77919470"
 
 1. Эта проблема возникает, если запускаемая учетная запись этой службы была изменена. Изменить ее на учетную запись по умолчанию: 
 
-        sc config TermService obj= 'NT Authority\NetworkService'
+    ```console
+    sc config TermService obj= 'NT Authority\NetworkService'
+    ```
+
 2. Запустите службу:
 
-        sc start TermService
+    ```console
+    sc start TermService
+    ```
+
 3. Попробуйте подключиться к виртуальной машине с помощью удаленного рабочего стола.
 
 #### <a name="termservice-service-crashes-or-hangs"></a>Происходит сбой службы TermService сбоя или она зависает
 1. Если служба зависла в состоянии **Запуск** или**Остановка**, попробуйте остановить службу: 
 
-        sc stop TermService
+    ```console
+    sc stop TermService
+    ```
+
 2. Изолируйте службу в собственном контейнере svchost.
 
-        sc config TermService type= own
+    ```console
+    sc config TermService type= own
+    ```
+
 3. Запустите службу:
 
-        sc start TermService
+    ```console
+    sc start TermService
+    ```
+
 4. Если службу по-прежнему не удается запустить, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
 
 ### <a name="repair-the-vm-offline"></a>Автономное восстановление виртуальной машины
 
 #### <a name="attach-the-os-disk-to-a-recovery-vm"></a>Подключите диск ОС к виртуальной машине восстановления.
 
-1. [Подключите диск операционной системы к виртуальной машине восстановления](../windows/troubleshoot-recovery-disks-portal.md).
+1. [Подключите диск операционной системы к виртуальной машине восстановления](./troubleshoot-recovery-disks-portal-windows.md).
 2. Установите подключение с помощью удаленного рабочего стола к виртуальной машине, используемой для восстановления. Убедитесь, что в консоли "Управление дисками" для подключенного диска отображается состояние **Подключен**. Запишите или запомните букву диска, которая присвоена подключенному диску ОС.
 3. Откройте экземпляр командной строки с повышенными привилегиями (**Запуск от имени администратора**). Затем выполните следующий сценарий. Предполагается, что буква диска, назначенная подключенному диску ОС, — **F**. Замените его соответствующим значением в виртуальной машине. 
 
@@ -217,7 +234,7 @@ ms.locfileid: "77919470"
    reg add "HKLM\BROKENSYSTEM\ControlSet002\services\TermService" /v type /t REG_DWORD /d 16 /f
    ```
 
-4. [Отключение диска операционной системы и повторное создание виртуальной машины](../windows/troubleshoot-recovery-disks-portal.md). Затем проверьте, устранена ли проблема.
+4. [Отключение диска операционной системы и повторное создание виртуальной машины](./troubleshoot-recovery-disks-portal-windows.md). Затем проверьте, устранена ли проблема.
 
 ## <a name="need-help-contact-support"></a>Требуется помощь? Обращение в службу поддержки
 

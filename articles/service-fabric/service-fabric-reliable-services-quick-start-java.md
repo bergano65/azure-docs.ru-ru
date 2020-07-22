@@ -5,12 +5,12 @@ author: suhuruli
 ms.topic: conceptual
 ms.date: 11/02/2017
 ms.author: suhuruli
-ms.openlocfilehash: 7855b92c90a9ccd208a25080c260437e6808d1b7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f4cab376318bec471fa59614e5bcc716a31dc333
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82184152"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86260941"
 ---
 # <a name="get-started-with-reliable-services-in-java"></a>Приступая к работе с Reliable Services в Java
 > [!div class="op_single_selector"]
@@ -190,7 +190,7 @@ protected CompletableFuture<?> runAsync(CancellationToken cancellationToken) {
 ReliableHashMap<String,Long> map = this.stateManager.<String, Long>getOrAddReliableHashMapAsync("myHashMap")
 ```
 
-[ReliableHashMap](https://docs.microsoft.com/java/api/microsoft.servicefabric.data.collections.reliablehashmap) — это реализация словаря, которая позволяет надежно хранить состояние службы. В Service Fabric с помощью Reliable HashMap можно хранить данные непосредственно в службе без использования внешнего постоянного хранилища. Reliable HashMap делает данные высокодоступными. Service Fabric выполняет эту задачу, автоматически создавая несколько *реплик* службы и управляя ими. Кроме того, платформа предоставляет API-интерфейс, который упрощает управление этими репликами и переходы между их состояниями.
+[ReliableHashMap](/java/api/microsoft.servicefabric.data.collections.reliablehashmap) — это реализация словаря, которая позволяет надежно хранить состояние службы. В Service Fabric с помощью Reliable HashMap можно хранить данные непосредственно в службе без использования внешнего постоянного хранилища. Reliable HashMap делает данные высокодоступными. Service Fabric выполняет эту задачу, автоматически создавая несколько *реплик* службы и управляя ими. Кроме того, платформа предоставляет API-интерфейс, который упрощает управление этими репликами и переходы между их состояниями.
 
 В Reliable Collections можно хранить любые типы объектов Java, включая пользовательские типы. Необходимо только учитывать следующее.
 
@@ -225,7 +225,7 @@ return map.computeAsync(tx, "counter", (k, v) -> {
 Операции Reliable HashMap являются *транзакционными*, так что вы можете сохранять согласованное состояние между несколькими службами Reliable HashMap и операциями. Например, вы можете получить рабочий элемент из надежного словаря, выполнить с ним операцию и сохранить результат в другой службе Reliable HashMap, и это все в пределах одной транзакции. Такая операция называется атомарной. Предусматривается, что либо вся операция завершится успешно, либо она будет полностью отменена. Если ошибка возникнет после выведения элемента из очереди, но до сохранения результата, будет выполнен откат всей транзакции, а элемент останется в очереди для обработки.
 
 
-## <a name="build-the-application"></a>Построение приложения
+## <a name="build-the-application"></a>Сборка приложения
 
 Формирование шаблонов Yeoman включает в себя сценарий Gradle, используемый для создания приложения, и сценарии bash, используемые для развертывания и удаления приложения. Чтобы запустить приложение, сначала его нужно создать с помощью следующего скрипта Gradle:
 
@@ -261,6 +261,6 @@ $ gradle
 > Чтобы развернуть приложение в защищенном кластере Linux в Azure, настройте сертификат для проверки приложения в среде выполнения Service Fabric. Таким образом, службы Reliable Services смогут взаимодействовать с API среды выполнения Service Fabric. Дополнительные сведения см. в разделе [Настройка приложения Reliable Services для запуска на кластерах Linux](./service-fabric-configure-certificates-linux.md#configure-a-reliable-services-app-to-run-on-linux-clusters).  
 >
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Командная строка Azure Service Fabric](service-fabric-cli.md)

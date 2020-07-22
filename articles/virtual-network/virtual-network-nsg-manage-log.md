@@ -6,16 +6,15 @@ services: virtual-network
 author: KumudD
 manager: mtillman
 ms.service: virtual-network
-ms.topic: article
+ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 06/04/2018
 ms.author: kumud
-ms.openlocfilehash: cfc1b933abbbc3736145ff3c6a600f48260538d2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: c56b5ac1c1aa6fa5894d1aedcb94fe4694c2db28
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82133825"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84696037"
 ---
 # <a name="resource-logging-for-a-network-security-group"></a>Ведение журнала ресурсов для группы безопасности сети
 
@@ -56,7 +55,7 @@ ms.locfileid: "82133825"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Вы можете выполнить приведенные ниже команды в [Azure Cloud Shell](https://shell.azure.com/powershell) или с помощью PowerShell на своем компьютере. Azure Cloud Shell — это бесплатная интерактивная оболочка. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. При запуске PowerShell с компьютера необходим модуль Azure PowerShell версии 1.0.0 или более поздней. Выполните `Get-Module -ListAvailable Az` на компьютере, чтобы получить сведения об установленной версии. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если вы используете PowerShell локально, вам также потребуется выполнить `Connect-AzAccount` вход в Azure с учетной записью, имеющей [необходимые разрешения](virtual-network-network-interface.md#permissions).
+Вы можете выполнить приведенные ниже команды в [Azure Cloud Shell](https://shell.azure.com/powershell) или с помощью PowerShell на своем компьютере. Azure Cloud Shell — это бесплатная интерактивная оболочка. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. При запуске PowerShell с компьютера необходим модуль Azure PowerShell версии 1.0.0 или более поздней. Выполните `Get-Module -ListAvailable Az` на компьютере, чтобы получить сведения об установленной версии. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если вы используете PowerShell локально, вам также потребуется выполнить вход в `Connect-AzAccount` Azure с учетной записью, имеющей [необходимые разрешения](virtual-network-network-interface.md#permissions).
 
 Чтобы включить ведение журнала ресурсов, необходим идентификатор существующего NSG. Если у вас нет существующего NSG, вы можете создать его с помощью [New-азнетворксекуритиграуп](/powershell/module/az.network/new-aznetworksecuritygroup).
 

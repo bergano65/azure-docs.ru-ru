@@ -4,10 +4,9 @@ description: Удаление Application Insights пакета SDK для ASP.N
 ms.topic: conceptual
 ms.date: 04/06/2020
 ms.openlocfilehash: 1c9ff8d3d305645ac7d113421e2c6c5f8451bd2b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80805109"
 ---
 # <a name="how-to-remove-application-insights-in-visual-studio"></a>Удаление Application Insights в Visual Studio
@@ -49,7 +48,7 @@ ms.locfileid: "80805109"
 
 # <a name="net"></a>[.NET](#tab/net)
 
-1. В *Обозреватель решений* справа щелкните правой кнопкой мыши **решение** и выберите пункт **Управление пакетами NuGet для решения**.
+1. В *Обозреватель решений*   справа щелкните правой кнопкой мыши **решение**   и выберите пункт **Управление пакетами NuGet для решения**.
 
     После этого появится экран, позволяющий изменить все пакеты NuGet, которые являются частью проекта.
     
@@ -58,9 +57,9 @@ ms.locfileid: "80805109"
     > [!NOTE]
     > Если включена коллекция трассировки, сначала необходимо удалить Microsoft. ApplicationInsights. TraceListener без выбранных зависимостей, а затем выполнить следующие действия, чтобы удалить Microsoft. ApplicationInsights. Web с выбранным параметром удалить зависимости.
     
-1. Щелкните пакет Microsoft. ApplicationInsights. Web.Справа установите флажок *Project (проект* ), чтобы выбрать все проекты.
+1. Щелкните пакет Microsoft. ApplicationInsights. Web.Справа установите флажок *Project (проект*),   чтобы выбрать все проекты.
     
-1. Чтобы удалить все зависимости при удалении, нажмите кнопку раскрывающегося списка **Параметры** под разделом, в котором был выбран проект.
+1. Чтобы удалить все зависимости при удалении, нажмите **Options**   кнопку раскрывающегося списка параметры под разделом, в котором был выбран проект.
 
     В разделе *Параметры удаления*установите флажок рядом с элементом *удалить зависимости*.
 
@@ -68,15 +67,15 @@ ms.locfileid: "80805109"
     
     ![Установите флажок удалить зависимости, а затем удалите](./media/remove-application-insights/uninstall-framework.png)
 
-    Отобразится диалоговое окно, в котором будут показаны все зависимости, удаляемые из приложения.Нажмите кнопку **ОК** , чтобы удалить.
+    Отобразится диалоговое окно, в котором будут показаны все зависимости, удаляемые из приложения.Нажмите кнопку **ОК**   , чтобы удалить.
     
     ![Установите флажок удалить зависимости, а затем удалите](./media/remove-application-insights/preview-uninstall-framework.png)
     
-1.  После удаления все еще можно увидеть "ApplicationInsights. config" и "AiHandleErrorAttribute.cs" в *Обозреватель решений*.Эти два файла можно удалить вручную.
+1.  После удаления все по-прежнему могут отображаться "ApplicationInsights.config" и "AiHandleErrorAttribute.cs" в *Обозреватель решений*.Эти два файла можно удалить вручную.
 
 # <a name="net-core"></a>[.NET Core](#tab/netcore)
 
-1. В *Обозреватель решений* справа щелкните правой кнопкой мыши **решение** и выберите пункт **Управление пакетами NuGet для решения**.
+1. В *Обозреватель решений*   справа щелкните правой кнопкой мыши **решение**   и выберите пункт **Управление пакетами NuGet для решения**.
 
     После этого появится экран, позволяющий изменить все пакеты NuGet, которые являются частью проекта.
 
@@ -107,7 +106,7 @@ ms.locfileid: "80805109"
      <ApplicationInsightsResourceId>/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/WebApplication4</ApplicationInsightsResourceId>
     ```
 
-- Packages. config
+- Packages.config
 
     ```xml
     <packages>
@@ -197,7 +196,7 @@ ms.locfileid: "80805109"
       </ItemGroup>
     ```
 
-- AppSettings. JSON:
+- Appsettings.js:
 
     ```json
     "ApplicationInsights": {
@@ -227,6 +226,6 @@ ms.locfileid: "80805109"
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview)

@@ -4,15 +4,15 @@ description: Увеличение лимита сети
 author: anavinahar
 ms.author: anavin
 ms.date: 01/23/2020
-ms.topic: article
+ms.topic: how-to
 ms.service: azure-supportability
 ms.assetid: ce37c848-ddd9-46ab-978e-6a1445728a3b
-ms.openlocfilehash: 9b5c7043b06172c2d4931ca1c3fd3ac5d0e80883
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: acb05da0255445de31e08f2724dcb484a3e05b17
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76547811"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84764271"
 ---
 # <a name="networking-limit-increase"></a>Увеличение лимита сети
 
@@ -37,7 +37,7 @@ ms.locfileid: "76547811"
 
     ![Справка и поддержка](./media/networking-quota-request/help-plus-support.png)
 
-1. Выберите **новый запрос в службу поддержки**.
+1. Выберите **Новый запрос в службу поддержки**.
 
     ![Новый запрос на техническую поддержку](./media/networking-quota-request/new-support-request.png)
 
@@ -69,9 +69,9 @@ ms.locfileid: "76547811"
 
 Выполните эти инструкции, чтобы создать запрос в службу поддержки с помощью функции " **использование и квота** " в портал Azure.
 
-1. В https://portal.azure.comнайдите и выберите **подписки**.
+1. В https://portal.azure.com найдите и выберите **подписки**.
 
-    ![Subscriptions](./media/networking-quota-request/search-for-suscriptions.png)
+    ![Подписки](./media/networking-quota-request/search-for-suscriptions.png)
 
 1. Выберите подписку, которая требует увеличенную квоту.
 

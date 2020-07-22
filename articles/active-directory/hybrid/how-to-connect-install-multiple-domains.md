@@ -11,17 +11,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/31/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0775e717c0610e122bb31f752beecd2c97599053
-ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
+ms.openlocfilehash: 7a49abdea9d5b80687c53fbaa3d41480825ed504
+ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82201046"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85849948"
 ---
 # <a name="multiple-domain-support-for-federating-with-azure-ad"></a>Поддержка нескольких доменов для федерации с Azure AD
 В следующей документации представлено руководство по использованию нескольких доменов верхнего уровня и поддоменов в федерации с Office 365 или доменами Azure AD.
@@ -73,7 +73,9 @@ ms.locfileid: "82201046"
 
 Ниже приведено пользовательское правило утверждения, которое реализует эту логику.
 
-    c:[Type == "http://schemas.xmlsoap.org/claims/UPN"] => issue(Type = "http://schemas.microsoft.com/ws/2008/06/identity/claims/issuerid", Value = regexreplace(c.Value, ".+@(?<domain>.+)", "http://${domain}/adfs/services/trust/"));
+```
+c:[Type == "http://schemas.xmlsoap.org/claims/UPN"] => issue(Type = "http://schemas.microsoft.com/ws/2008/06/identity/claims/issuerid", Value = regexreplace(c.Value, ".+@(?<domain>.+)", "http://${domain}/adfs/services/trust/"));
+```
 
 
 > [!IMPORTANT]
@@ -137,14 +139,16 @@ ms.locfileid: "82201046"
 ## <a name="support-for-subdomains"></a>Поддержка поддоменов
 При добавлении поддомена он унаследует параметры родительского домена из-за особенностей обработки доменов Azure AD.  Поэтому значение IssuerUri должно совпадать со значением этого параметра у родительских элементов.
 
-Давайте предположим, что у меня был домен bmcontoso.com, а затем я добавил поддомен corp.bmcontoso.com.  IssuerUri для пользователя из corp.bmcontoso.com должен быть **`http://bmcontoso.com/adfs/services/trust`**.  Однако стандартное правило, реализованное выше для Azure AD, создаст маркер с издателем как **`http://corp.bmcontoso.com/adfs/services/trust`**. , который не будет соответствовать необходимому значению для домена, и аутентификация завершится неудачно.
+Давайте предположим, что у меня был домен bmcontoso.com, а затем я добавил поддомен corp.bmcontoso.com.  IssuerUri для пользователя из corp.bmcontoso.com должен быть **`http://bmcontoso.com/adfs/services/trust`** .  Однако стандартное правило, реализованное выше для Azure AD, создаст маркер с издателем как **`http://corp.bmcontoso.com/adfs/services/trust`** . , который не будет соответствовать необходимому значению для домена, и аутентификация завершится неудачно.
 
 ### <a name="how-to-enable-support-for-subdomains"></a>Как включить поддержку для поддоменов
 Чтобы обойти это поведение, необходимо обновить отношение доверия проверяющей стороны AD FS для Microsoft Online.  Для этого необходимо настроить пользовательское правило утверждения так, чтобы оно удаляло поддомены из суффикса UPN пользователя при создании настраиваемого значения элемента Issuer.
 
 Это можно сделать с помощью следующего утверждения:
 
-    c:[Type == "http://schemas.xmlsoap.org/claims/UPN"] => issue(Type = "http://schemas.microsoft.com/ws/2008/06/identity/claims/issuerid", Value = regexreplace(c.Value, "^.*@([^.]+\.)*?(?<domain>([^.]+\.?){2})$", "http://${domain}/adfs/services/trust/"));
+```    
+c:[Type == "http://schemas.xmlsoap.org/claims/UPN"] => issue(Type = "http://schemas.microsoft.com/ws/2008/06/identity/claims/issuerid", Value = regexreplace(c.Value, "^.*@([^.]+\.)*?(?<domain>([^.]+\.?){2})$", "http://${domain}/adfs/services/trust/"));
+```
 
 [!NOTE]
 Последнее число в регулярном выражении задает количество родительских доменов в корневом домене. Так как здесь используется bmcontoso.com, необходимы два родительских домена. Если бы нужно было сохранить три родительских домена (т. е. corp.bmcontoso.com), использовалось бы число три. Впоследствии может быть задан диапазон. Совпадение всегда будет выполняться для соответствия максимальному количеству доменов. "{2,3}" означает, что два домена будут сопоставлены с тремя (т. е. bmfabrikam.com и corp.bmcontoso.com).
@@ -156,11 +160,14 @@ ms.locfileid: "82201046"
 3. Выберите третье правило утверждения и замените ![Изменить правила утверждений](./media/how-to-connect-install-multiple-domains/sub1.png).
 4. Замените текущее утверждение:
 
-        c:[Type == "http://schemas.xmlsoap.org/claims/UPN"] => issue(Type = "http://schemas.microsoft.com/ws/2008/06/identity/claims/issuerid", Value = regexreplace(c.Value, ".+@(?<domain>.+)","http://${domain}/adfs/services/trust/"));
+   ```
+   c:[Type == "http://schemas.xmlsoap.org/claims/UPN"] => issue(Type = "http://schemas.microsoft.com/ws/2008/06/identity/claims/issuerid", Value = regexreplace(c.Value, ".+@(?<domain>.+)","http://${domain}/adfs/services/trust/"));
+   ```
+    на
 
-       with
-
-        c:[Type == "http://schemas.xmlsoap.org/claims/UPN"] => issue(Type = "http://schemas.microsoft.com/ws/2008/06/identity/claims/issuerid", Value = regexreplace(c.Value, "^.*@([^.]+\.)*?(?<domain>([^.]+\.?){2})$", "http://${domain}/adfs/services/trust/"));
+   ```
+   c:[Type == "http://schemas.xmlsoap.org/claims/UPN"] => issue(Type = "http://schemas.microsoft.com/ws/2008/06/identity/claims/issuerid", Value = regexreplace(c.Value, "^.*@([^.]+\.)*?(?<domain>([^.]+\.?){2})$", "http://${domain}/adfs/services/trust/"));
+   ```
 
     ![Заменить утверждение](./media/how-to-connect-install-multiple-domains/sub2.png)
 
@@ -173,4 +180,4 @@ ms.locfileid: "82201046"
 
 Дополнительные сведения см. в статье [Синхронизация Azure AD Connect: планировщик](how-to-connect-sync-feature-scheduler.md).
 
-Дополнительные сведения об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
+Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

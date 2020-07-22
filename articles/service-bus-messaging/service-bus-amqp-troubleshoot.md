@@ -1,25 +1,13 @@
 ---
 title: Устранение ошибок AMQP в служебной шине Azure | Документация Майкрософт
 description: Содержит список ошибок AMQP, которые могут возникнуть при использовании служебной шины Azure, и причины этих ошибок.
-services: service-bus-messaging
-documentationcenter: na
-author: axisc
-manager: timlt
-editor: spelluru
-ms.assetid: ''
-ms.service: service-bus-messaging
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 04/03/2019
-ms.author: aschhab
-ms.openlocfilehash: 85d24a9e7c753ec5dba80c4f259dd3fb51d9c14b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.date: 06/23/2020
+ms.openlocfilehash: 9680e930dd8c1cb8cbd062f029af9d674d62c0e2
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "60402791"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85337816"
 ---
 # <a name="amqp-errors-in-azure-service-bus"></a>Ошибки AMQP в служебной шине Azure
 В этой статье приведены некоторые ошибки, которые вы получаете при использовании AMQP с служебной шиной Azure. Все это стандартное поведение службы. Вы можете избежать их, сделав вызов отправки и получения для соединения или ссылки, который автоматически воссоздает соединение или связь.
@@ -45,7 +33,7 @@ Error{condition=amqp:connection:forced, description='The connection was inactive
 Error{condition=amqp:connection:forced, description='The connection was inactive for more than the allowed 60000 milliseconds and is closed by container 'LinkTracker'. TrackingId:0000000000000000000000000000000000000_G21, SystemTracker:gateway5, Timestamp:2019-03-06T18:41:51', info=null}
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения о служебной шине и AMQP см. по следующим ссылкам.
 

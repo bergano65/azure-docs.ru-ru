@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: tutorial
 ms.date: 08/12/2019
 ms.author: ambapat
-ms.openlocfilehash: 94bcba80e5768d57e3dc97bed1a74a8369ac60b9
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: fcb9d0d6c7e077ee805662df1d2ad87872b42f97
+ms.sourcegitcommit: d7fba095266e2fb5ad8776bffe97921a57832e23
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81425803"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84629332"
 ---
 # <a name="change-a-key-vault-tenant-id-after-a-subscription-move"></a>Изменение идентификатора клиента хранилища ключей после перемещения подписки
 
@@ -47,7 +47,7 @@ Set-AzResource -ResourceId $vaultResourceId -Properties $vault.Properties  # Mod
 
 ```azurecli
 az account set -s <your-subscriptionId>                                    # Select your Azure Subscription
-tenantId=$(az account show --query tenantId)                               # Get your tenantId
+$tenantId=$(az account show --query tenantId)                               # Get your tenantId
 az keyvault update -n myvault --remove Properties.accessPolicies           # Remove the access policies
 az keyvault update -n myvault --set Properties.tenantId=$tenantId          # Update the key vault tenantId
 ```
@@ -61,4 +61,4 @@ az keyvault update -n myvault --set Properties.tenantId=$tenantId          # Upd
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Если у вас возникли вопросы о хранилище ключей Azure, посетите [форумы хранилища ключей Azure](https://social.msdn.microsoft.com/forums/azure/home?forum=AzureKeyVault)
+Если у вас возникли вопросы об Azure Key Vault, посетите [страницу корпорации Майкрософт с вопросами и ответами об Azure Key Vault](https://docs.microsoft.com/answers/topics/azure-key-vault.html).

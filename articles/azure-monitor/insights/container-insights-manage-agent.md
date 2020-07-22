@@ -2,13 +2,13 @@
 title: Как управлять агентом Azure Monitor для контейнеров | Документация Майкрософт
 description: В этой статье описывается управление наиболее распространенными задачами обслуживания с помощью контейнерного агента Log Analytics, используемого решением "Azure Monitor для контейнеров".
 ms.topic: conceptual
-ms.date: 01/24/2020
-ms.openlocfilehash: 1a1f8d690979a846dbf5041999180221752acc0b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 06/15/2020
+ms.openlocfilehash: fc5bc0d60cb4ef1e375a997cbb3fe4bd2aed3235
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79275325"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86107416"
 ---
 # <a name="how-to-manage-the-azure-monitor-for-containers-agent"></a>Как управлять агентом Azure Monitor для контейнеров
 
@@ -16,94 +16,130 @@ ms.locfileid: "79275325"
 
 ## <a name="how-to-upgrade-the-azure-monitor-for-containers-agent"></a>Способы обновления агента решения "Azure Monitor для контейнеров"
 
-Решение "Azure Monitor для контейнеров" использует контейнерную версию агента Log Analytics для Linux. При выпуске новой версии агента агент автоматически обновляется на управляемых кластерах Kubernetes, размещенных в службе Kubernetes Azure (AKS) и Azure Red Hat OpenShift. Для [гибридного кластера Kubernetes](container-insights-hybrid-setup.md) агент не управляется, и необходимо вручную обновить агент.
+Решение "Azure Monitor для контейнеров" использует контейнерную версию агента Log Analytics для Linux. При выпуске новой версии агент обновляется автоматически в управляемых кластерах Kubernetes, размещенных в Службе Azure Kubernetes (AKS) и Azure Red Hat OpenShift версии 3.x. В [гибридных кластерах Kubernetes](container-insights-hybrid-setup.md) и Azure Red Hat OpenShift версии 4. x агент не управляется и необходимо вручную обновить агент.
 
-В случае сбоя обновления агента для кластера, размещенного в AKS, в этой статье также описывается процесс обновления агента вручную. Выпущенные версии см. в [объявлениях о выпусках агента](https://github.com/microsoft/docker-provider/tree/ci_feature_prod).
+На случай сбоя обновления агента для кластера, размещенного в AKS или Azure Red Hat OpenShift версии 3.x, в этой статье также описывается процесс обновления агента вручную. Выпущенные версии см. в [объявлениях о выпусках агента](https://github.com/microsoft/docker-provider/tree/ci_feature_prod).
 
-### <a name="upgrade-agent-on-monitored-kubernetes-cluster"></a>Обновление агента в отслеживаемом кластере Kubernetes
+### <a name="upgrade-agent-on-aks-cluster"></a>Обновление агента в кластере AKS
 
-Процесс обновления агента в кластерах, кроме Azure Red Hat OpenShift, состоит из двух прямых шагов вперед. Первым шагом является отключение мониторинга с использованием решения "Azure Monitor для контейнеров" с помощью Azure CLI. Выполните действия, описанные в [этой статье](container-insights-optout.md?#azure-cli). С помощью Azure CLI можно удалить агент из узлов в кластере, не влияя на решение и соответствующие данные, хранящиеся в рабочей области. 
+Процесс обновления агента в кластере AKS состоит из двух простых шагов. Первым шагом является отключение мониторинга с использованием решения "Azure Monitor для контейнеров" с помощью Azure CLI. Выполните действия, описанные в [этой статье](container-insights-optout.md?#azure-cli). С помощью Azure CLI можно удалить агент из узлов в кластере, не влияя на решение и соответствующие данные, хранящиеся в рабочей области. 
 
 >[!NOTE]
 >Пока вы выполняете обслуживание, узлы в кластере не переадресовывают собранные данные, а представления производительности не будут отображать данные в период между удалением агента и установкой новой версии. 
 >
 
-Чтобы установить новую версию агента, выполните действия, описанные в разделе [Включение мониторинга с помощью Azure CLI](container-insights-enable-new-cluster.md#enable-using-azure-cli), чтобы завершить этот процесс.  
+Чтобы установить новую версию агента, выполните действия, описанные в статье о [включении мониторинга с помощью Azure CLI](container-insights-enable-new-cluster.md#enable-using-azure-cli).  
 
-После повторного включения мониторинга может потребоваться около 15 минут, прежде чем можно будет просмотреть обновленные метрики работоспособности для кластера. Чтобы проверить, успешно ли обновлен агент, выполните эту команду: `kubectl logs omsagent-484hw --namespace=kube-system`.
+После включения мониторинга может пройти около 15 минут, прежде чем вы сможете просмотреть обновленные метрики работоспособности кластера. Чтобы проверить, успешно ли обновлен агент, выполните эту команду: `kubectl logs omsagent-484hw --namespace=kube-system`.
 
 Состояние должно выглядеть примерно так, как в следующем примере, где значения *omi* и *omsagent* должны соответствовать последней версии, указанной в [журнале выпусков агентов](https://github.com/microsoft/docker-provider/tree/ci_feature_prod).  
 
-    User@aksuser:~$ kubectl logs omsagent-484hw --namespace=kube-system
-    :
-    :
-    instance of Container_HostInventory
-    {
-        [Key] InstanceID=3a4407a5-d840-4c59-b2f0-8d42e07298c2
-        Computer=aks-nodepool1-39773055-0
-        DockerVersion=1.13.1
-        OperatingSystem=Ubuntu 16.04.3 LTS
-        Volume=local
-        Network=bridge host macvlan null overlay
-        NodeRole=Not Orchestrated
-        OrchestratorType=Kubernetes
-    }
-    Primary Workspace: b438b4f6-912a-46d5-9cb1-b44069212abc    Status: Onboarded(OMSAgent Running)
-    omi 1.4.2.5
-    omsagent 1.6.0-163
-    docker-cimprov 1.0.0.31
-
-## <a name="upgrade-agent-on-hybrid-kubernetes-cluster"></a>Обновление агента в гибридном кластере Kubernetes
-
-Процесс обновления агента в кластере Kubernetes, размещенном в локальной среде, AKS Engine в Azure и Azure Stack можно выполнить, выполнив следующую команду:
-
+```console
+User@aksuser:~$ kubectl logs omsagent-484hw --namespace=kube-system
+:
+:
+instance of Container_HostInventory
+{
+    [Key] InstanceID=3a4407a5-d840-4c59-b2f0-8d42e07298c2
+    Computer=aks-nodepool1-39773055-0
+    DockerVersion=1.13.1
+    OperatingSystem=Ubuntu 16.04.3 LTS
+    Volume=local
+    Network=bridge host macvlan null overlay
+    NodeRole=Not Orchestrated
+    OrchestratorType=Kubernetes
+}
+Primary Workspace: b438b4f6-912a-46d5-9cb1-b44069212abc
+Status: Onboarded(OMSAgent Running)
+omi 1.4.2.5
+omsagent 1.6.0-163
+docker-cimprov 1.0.0.31
 ```
+
+### <a name="upgrade-agent-on-hybrid-kubernetes-cluster"></a>Обновление агента в гибридном кластере Kubernetes
+
+Выполните следующие действия, чтобы обновить агент в кластере Kubernetes, работающем на:
+
+* самоуправляемых кластерах Kubernetes, размещенных в Azure с использованием AKS Engine;
+* самоуправляемых кластерах Kubernetes, размещенных на Azure Stack или локально с использованием AKS Engine;
+* Red Hat OpenShift версии 4.х.
+
+Если рабочая область Log Analytics находится в коммерческой службе Azure, выполните следующую команду.
+
+```console
 $ helm upgrade --name myrelease-1 \
 --set omsagent.secret.wsid=<your_workspace_id>,omsagent.secret.key=<your_workspace_key>,omsagent.env.clusterName=<my_prod_cluster> incubator/azuremonitor-containers
 ```
 
-Если Рабочая область Log Analytics находится в Azure для Китая, выполните следующую команду:
+Если Рабочая область Log Analytics находится в Azure для Китая (21Vianet), выполните следующую команду:
 
-```
+```console
 $ helm upgrade --name myrelease-1 \
 --set omsagent.domain=opinsights.azure.cn,omsagent.secret.wsid=<your_workspace_id>,omsagent.secret.key=<your_workspace_key>,omsagent.env.clusterName=<your_cluster_name> incubator/azuremonitor-containers
 ```
 
-Если Рабочая область Log Analytics находится в Azure для государственных организаций США, выполните следующую команду:
+Если рабочая область Log Analytics находится в Azure для государственных организаций США, выполните следующую команду.
 
-```
+```console
 $ helm upgrade --name myrelease-1 \
 --set omsagent.domain=opinsights.azure.us,omsagent.secret.wsid=<your_workspace_id>,omsagent.secret.key=<your_workspace_key>,omsagent.env.clusterName=<your_cluster_name> incubator/azuremonitor-containers
 ```
 
+### <a name="upgrade-agent-on-azure-red-hat-openshift-v4"></a>Обновление агента на Azure Red Hat OpenShift версии 4
+
+Выполните следующие действия, чтобы обновить агент в кластере Kubernetes, работающем на Azure Red Hat OpenShift версии 4.х. 
+
+>[!NOTE]
+>Azure Red Hat OpenShift версии 4.x поддерживает только работу в коммерческом облаке Azure.
+>
+
+```console
+$ helm upgrade --name myrelease-1 \
+--set omsagent.secret.wsid=<your_workspace_id>,omsagent.secret.key=<your_workspace_key>,omsagent.env.clusterId=<azureAroV4ResourceId> incubator/azuremonitor-containers
+```
+
+### <a name="upgrade-agent-on-azure-arc-enabled-kubernetes"></a>Обновление агента в службе "Дуга" в Azure с включенной Kubernetes
+
+Выполните следующую команду, чтобы обновить агент в кластере Kubernetes с включенной службой "Дуга Azure" без конечной точки прокси-сервера.
+
+```console
+$ helm upgrade --install azmon-containers-release-1  –set omsagent.secret.wsid=<your_workspace_id>,omsagent.secret.key=<your_workspace_key>,omsagent.env.clusterId=<resourceIdOfAzureArcK8sCluster>
+```
+
+Выполните следующую команду, чтобы обновить агент, если указана конечная точка прокси-сервера. Дополнительные сведения о конечной точке прокси-сервера см. в разделе [Настройка конечной точки прокси-](container-insights-enable-arc-enabled-clusters.md#configure-proxy-endpoint)сервера.
+
+```console
+$ helm upgrade –name azmon-containers-release-1 –set omsagent.proxy=<proxyEndpoint>,omsagent.secret.wsid=<your_workspace_id>,omsagent.secret.key=<your_workspace_key>,omsagent.env.clusterId=<resourceIdOfAzureArcK8sCluster>
+```
+
 ## <a name="how-to-disable-environment-variable-collection-on-a-container"></a>Как отключить коллекцию переменных среды для контейнера
 
-Azure Monitor для контейнеров собирает переменные среды из контейнеров, запущенных в pod, и представляет их на панели свойств выбранного контейнера в представлении **Контейнеры**. Это поведение можно контролировать, отключив коллекцию для определенного контейнера во время развертывания кластера Kubernetes или после установки переменной среды *AZMON_COLLECT_ENV*. Эта возможность доступна в версии агента ciprod11292018 и более поздних версиях.  
+Azure Monitor для контейнеров собирает переменные среды из контейнеров, запущенных в pod, и представляет их на панели свойств выбранного контейнера в представлении **Контейнеры**. Этим поведением можно управлять путем отключения коллекции для определенного контейнера либо во время развертывания кластера Kubernetes, либо после, задав переменную среды *AZMON_COLLECT_ENV*. Эта возможность доступна в версии агента ciprod11292018 и более поздних версиях.  
 
 Чтобы отключить коллекцию переменных среды для нового или существующего контейнера, задайте переменную **AZMON_COLLECT_ENV** со значением **False** в YAML-файле конфигурации развертывания Kubernetes. 
 
-```  
+```yaml
 - name: AZMON_COLLECT_ENV  
   value: "False"  
-```  
+```
 
-Выполните следующую команду, чтобы применить изменения к кластерам Kubernetes, отличным от Azure Red Hat OpenShift) `kubectl apply -f  <path to yaml file>`:. Чтобы изменить ConfigMap и применить это изменение для кластеров Azure Red Hat OpenShift, выполните следующую команду:
+Выполните следующую команду, чтобы применить изменения к кластерам Kubernetes, иным чем Azure Red Hat OpenShift: `kubectl apply -f  <path to yaml file>`. Чтобы изменить ConfigMap и применить это изменение для кластеров Azure Red Hat OpenShift, выполните следующую команду.
 
-``` bash
+```bash
 oc edit configmaps container-azm-ms-agentconfig -n openshift-azure-logging
 ```
 
-Откроется текстовый редактор по умолчанию. После задания переменной сохраните файл в редакторе.
+Это откроет текстовый редактор по умолчанию. После задания переменной сохраните файл в редакторе.
 
 Чтобы проверить, действует ли изменение конфигурации, в Azure Monitor для контейнеров выберите контейнер в представлении **Контейнеры**, а затем на панели свойств разверните узел **Переменные среды**.  В разделе должна отображаться только переменная, созданная ранее, — **AZMON_COLLECT_ENV=FALSE**. Для всех других контейнеров в разделе переменных среды должны быть перечислены все обнаруженные переменные среды.
 
 Можно повторно включить обнаружение переменных среды. Для этого примените тот же процесс, что и ранее, и измените значение с **False** на **True**, а затем снова запустите команду `kubectl`, чтобы обновить контейнер.  
 
-```  
+```yaml
 - name: AZMON_COLLECT_ENV  
   value: "True"  
 ```  
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если при попытке обновления агента у вас возникли проблемы, ознакомьтесь с [руководством по устранению неполадок](container-insights-troubleshoot.md).

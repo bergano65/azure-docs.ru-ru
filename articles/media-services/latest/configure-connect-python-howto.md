@@ -13,21 +13,21 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/15/2019
 ms.author: juliako
-ms.openlocfilehash: 98a8cdf4120cf56184eb5735249640e3423acdf4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.custom: tracking-python
+ms.openlocfilehash: 3e6e421d346925f751595ce2fb2d0891e31dc108
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74888467"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84559622"
 ---
 # <a name="connect-to-media-services-v3-api---python"></a>Подключение к API служб мультимедиа v3 — Python
 
 В этой статье показано, как подключиться к пакету SDK для служб мультимедиа Azure v3 для Python с помощью метода входа субъекта-службы.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 - Скачать Python из [Python.org](https://www.python.org/downloads/)
-- Обязательно задайте переменную `PATH` среды.
+- Обязательно задайте `PATH` переменную среды.
 - [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md). Обязательно запомните имя группы ресурсов и имя учетной записи служб мультимедиа.
 - Выполните действия, описанные в разделе [API Access](access-api-cli-how-to.md) . Запишите идентификатор подписки, идентификатор приложения (идентификатор клиента), ключ проверки подлинности (секрет) и идентификатор клиента, необходимые на следующем шаге.
 
@@ -38,8 +38,8 @@ ms.locfileid: "74888467"
 
 Для работы со службами мультимедиа Azure с помощью Python необходимо установить эти модули.
 
-* `azure-mgmt-resource` Модуль, который включает модули Azure для Active Directory.
-* `azure-mgmt-media` Модуль, который включает сущности служб мультимедиа.
+* `azure-mgmt-resource`Модуль, который включает модули Azure для Active Directory.
+* `azure-mgmt-media`Модуль, который включает сущности служб мультимедиа.
 
 Откройте программу командной строки и используйте следующие команды для установки модулей.
 
@@ -101,7 +101,7 @@ pip3 install azure-mgmt-media==1.1.1
 
 1. Запуск файла
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Воспользуйтесь [пакетом SDK для Python](https://aka.ms/ams-v3-python-sdk).
 - Ознакомьтесь со справочной документации по [Python](https://aka.ms/ams-v3-python-ref) Служб мультимедиа.

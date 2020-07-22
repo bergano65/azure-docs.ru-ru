@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 04/15/2020
 ms.author: vvasic
 ms.reviewer: jrasnick
-ms.openlocfilehash: e078893b3bbe0ef5661cd87bad62b320f78ceb5d
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: b81f1e49b2209d0a236f1fb453bb7fe679bb3608
+ms.sourcegitcommit: 6a9f01bbef4b442d474747773b2ae6ce7c428c1f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81421238"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84112760"
 ---
 # <a name="azure-synapse-analytics-sql-resource-consumption"></a>Потребление ресурсов SQL Azure Synapse Analytics
 
@@ -77,7 +77,7 @@ CREATE DATABASE mySQLDW
 
 #### <a name="capacity-limits"></a>Ограничения емкости
 
-Для каждого сервера SQL (например, myserver.database.windows.net) предусмотрена квота [DTU (единицы передачи данных)](../../sql-database/sql-database-service-tiers-dtu.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json), которая позволяет применить только определенное число единиц использования хранилища данных. Дополнительные сведения см. в статье об [ограничениях емкости для управления рабочей нагрузкой](../sql-data-warehouse/sql-data-warehouse-service-capacity-limits.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json#workload-management).
+Для каждого сервера SQL (например, myserver.database.windows.net) предусмотрена квота [DTU (единицы передачи данных)](../../azure-sql/database/service-tiers-dtu.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json), которая позволяет применить только определенное число единиц использования хранилища данных. Дополнительные сведения см. в статье об [ограничениях емкости для управления рабочей нагрузкой](../sql-data-warehouse/sql-data-warehouse-service-capacity-limits.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json#workload-management).
 
 ### <a name="how-many-data-warehouse-units-do-i-need"></a>Сколько единиц использования хранилища данных требуется
 
@@ -106,7 +106,7 @@ CREATE DATABASE mySQLDW
 Чтобы просмотреть текущие параметры DWU, сделайте следующее:
 
 1. Откройте обозреватель объектов SQL Server в Visual Studio.
-2. Подключитесь к базе данных master, связанной с логическим сервером Базы данных SQL.
+2. Подключитесь к базе данных master, связанной с логическим сервером SQL Server.
 3. Выберите в sys.database_service_objectives динамическое административное представление. Например:
 
 ```sql
@@ -148,7 +148,7 @@ Set-AzSqlDatabase -DatabaseName "MySQLDW" -ServerName "MyServer" -RequestedServi
 
 Изменение DWU:
 
-1. Подключитесь к базе данных master, связанной с логическим сервером Базы данных SQL.
+1. Подключитесь к базе данных master, связанной с вашим сервером.
 2. Используйте оператор TSQL [ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest). В приведенном ниже примере для базы данных MySQLDW устанавливается целевой уровень обслуживания DW1000c.
 
 ```Sql
@@ -184,7 +184,7 @@ Content-Type: application/json; charset=UTF-8
 
 Чтобы проверить состояние изменений DWU, сделайте следующее:
 
-1. Подключитесь к базе данных master, связанной с логическим сервером Базы данных SQL.
+1. Подключитесь к базе данных master, связанной с вашим сервером.
 2. Отправьте запрос ниже, чтобы проверить состояние базы данных.
 
 ```sql

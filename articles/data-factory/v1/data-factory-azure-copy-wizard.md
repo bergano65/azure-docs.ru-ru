@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: fef9059700e2bd94029c40bb819870a7174e0812
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: fa9786f31e1cf9ee15afdc03d289a04198836133
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74930118"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86086846"
 ---
 # <a name="azure-data-factory-copy-wizard"></a>Мастер копирования фабрики данных Azure
 > [!NOTE]
@@ -69,10 +69,12 @@ ms.locfileid: "74930118"
 
 Предположим, что у вас есть входные каталоги с именами в следующем формате:
 
-    2016/03/01/01
-    2016/03/01/02
-    2016/03/01/03
-    ...
+```text
+2016/03/01/01
+2016/03/01/02
+2016/03/01/03
+...
+```
 
 Нажмите кнопку **Обзор** в разделе **Файл или папка**, перейдите к любой из этих папок, например 2016->03->01->02, и щелкните **Выбрать**. В текстовом поле появится такое значение: `2016/03/01/02`. Измените в нем **2016** на **{year}**, **03** на **{month}**, **01** на **{day}**, **02** на **{hour}** и нажмите клавишу **TAB**. Вы увидите раскрывающиеся списки, в которых можно выбрать формат для этих четырех переменных, как показано ниже.
 
@@ -89,5 +91,5 @@ ms.locfileid: "74930118"
 
 ![Планирование свойств](./media/data-factory-copy-wizard/scheduling-properties.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Краткое пошаговое руководство по созданию конвейера с действием копирования с помощью мастера копирования фабрики данных см. в [этой статье](data-factory-copy-data-wizard-tutorial.md).

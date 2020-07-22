@@ -3,23 +3,23 @@ title: Отправка виртуального жесткого диска в 
 description: Узнайте, как передать VHD на управляемый диск Azure и скопировать управляемый диск в регионах с помощью Azure PowerShell, используя прямую передачу.
 author: roygara
 ms.author: rogarana
-ms.date: 03/27/2020
-ms.topic: article
+ms.date: 06/15/2020
+ms.topic: how-to
 ms.service: virtual-machines
 ms.tgt_pltfrm: linux
 ms.subservice: disks
-ms.openlocfilehash: 6242baf5a541231d367d456450388ef455312780
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d03e911b88e6a7729b0519e74941b47d85a97901
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82182520"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84944633"
 ---
 # <a name="upload-a-vhd-to-azure-or-copy-a-managed-disk-to-another-region---azure-powershell"></a>Отправка VHD в Azure или копирование управляемого диска в другой регион — Azure PowerShell
 
 [!INCLUDE [disks-upload-vhd-to-disk-intro](../../../includes/disks-upload-vhd-to-disk-intro.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 - Скачайте последнюю [версию AzCopy V10](../../storage/common/storage-use-azcopy-v10.md#download-and-install-azcopy).
 - [Установите модуль Azure PowerShell](/powershell/azure/install-Az-ps).
@@ -42,11 +42,14 @@ ms.locfileid: "82182520"
 
 ## <a name="create-an-empty-managed-disk"></a>Создание пустого управляемого диска
 
-Перед созданием пустого стандартного жесткого диска для отправки вам потребуется размер файла виртуального жесткого диска, который требуется передать, в байтах. Пример кода получит это, но для самостоятельного использования можно использовать: `$vhdSizeBytes = (Get-Item "<fullFilePathHere>").length`. Это значение используется при указании параметра **-уплоадсизеинбитес** .
+Перед созданием пустого стандартного жесткого диска для отправки вам потребуется размер файла виртуального жесткого диска, который требуется передать, в байтах. Пример кода получит это, но для самостоятельного использования можно использовать: `$vhdSizeBytes = (Get-Item "<fullFilePathHere>").length` . Это значение используется при указании параметра **-уплоадсизеинбитес** .
 
 Теперь в локальной оболочке создайте пустой жесткий диск "Стандартный" для отправки, указав параметр **отправки** в параметре **-CreateOption** , а также параметр **-уплоадсизеинбитес** в командлете [New-аздискконфиг](https://docs.microsoft.com/powershell/module/az.compute/new-azdiskconfig?view=azps-1.8.0) . Затем вызовите [New-аздиск](https://docs.microsoft.com/powershell/module/az.compute/new-azdisk?view=azps-1.8.0) , чтобы создать диск.
 
-Замените `<yourdiskname>`, `<yourresourcegroupname>`и `<yourregion>` выполните следующие команды:
+Замените `<yourdiskname>` , `<yourresourcegroupname>` и `<yourregion>` выполните следующие команды:
+
+> [!TIP]
+> При создании диска ОС добавьте параметр-Хипервженератион " <yourGeneration> " в `New-AzDiskConfig` .
 
 ```powershell
 $vhdSizeBytes = (Get-Item "<fullFilePathHere>").length
@@ -60,7 +63,7 @@ New-AzDisk -ResourceGroupName '<yourresourcegroupname' -DiskName '<yourdiskname>
 
 Теперь, когда вы создали пустой управляемый диск, настроенный для процесса отправки, вы можете передать в него VHD. Чтобы отправить VHD на диск, вам потребуется доступный для записи SAS, чтобы можно было ссылаться на него как на место назначения для отправки.
 
-Чтобы создать SAS с возможностью записи для пустого управляемого диска `<yourdiskname>`, `<yourresourcegroupname>`замените и, а затем используйте следующие команды:
+Чтобы создать SAS с возможностью записи для пустого управляемого диска, замените `<yourdiskname>` и `<yourresourcegroupname>` , а затем используйте следующие команды:
 
 ```powershell
 $diskSas = Grant-AzDiskAccess -ResourceGroupName '<yourresourcegroupname>' -DiskName '<yourdiskname>' -DurationInSecond 86400 -Access 'Write'
@@ -82,7 +85,7 @@ AzCopy.exe copy "c:\somewhere\mydisk.vhd" $diskSas.AccessSAS --blob-type PageBlo
 
 После завершения передачи вам больше не нужно писать какие-либо данные на диск, отозвать SAS. Отзыв SAS изменит состояние управляемого диска и позволит подключить диск к виртуальной машине.
 
-Замените `<yourdiskname>`и `<yourresourcegroupname>`, затем выполните следующую команду:
+Замените `<yourdiskname>` и `<yourresourcegroupname>` , затем выполните следующую команду:
 
 ```powershell
 Revoke-AzDiskAccess -ResourceGroupName '<yourresourcegroupname>' -DiskName '<yourdiskname>'
@@ -97,7 +100,10 @@ Revoke-AzDiskAccess -ResourceGroupName '<yourresourcegroupname>' -DiskName '<you
 > [!IMPORTANT]
 > При предоставлении размера диска в байтах управляемого диска из Azure необходимо добавить смещение 512. Это обусловлено тем, что при возврате диска в Azure нижний колонтитул опускается. Если этого не сделать, копирование завершится ошибкой. Следующий сценарий уже выполняет это.
 
-Замените `<sourceResourceGroupHere>`, `<sourceDiskNameHere>`, `<targetDiskNameHere>`, `<targetResourceGroupHere>` `<yourOSTypeHere>` и `<yourTargetLocationHere>` (примером значения Location будет uswest2) со своими значениями, а затем выполните следующий сценарий, чтобы скопировать управляемый диск.
+Замените `<sourceResourceGroupHere>` , `<sourceDiskNameHere>` , `<targetDiskNameHere>` , `<targetResourceGroupHere>` `<yourOSTypeHere>` и `<yourTargetLocationHere>` (примером значения Location будет uswest2) со своими значениями, а затем выполните следующий сценарий, чтобы скопировать управляемый диск.
+
+> [!TIP]
+> При создании диска ОС добавьте параметр-Хипервженератион " <yourGeneration> " в `New-AzDiskConfig` .
 
 ```powershell
 
@@ -127,7 +133,7 @@ Revoke-AzDiskAccess -ResourceGroupName $sourceRG -DiskName $sourceDiskName
 Revoke-AzDiskAccess -ResourceGroupName $targetRG -DiskName $targetDiskName 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 После успешной отправки виртуального жесткого диска на управляемый диск можно подключить его к виртуальной машине и начать использовать.
 

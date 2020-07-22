@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 02/18/2020
-ms.openlocfilehash: c1e5ca8b0bb828e5e8ce896bba6a5278266b118e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 43abe6a827af668f2b756e5f00497fbfe1698413
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77560088"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86083242"
 ---
 # <a name="apache-hadoop-clusters-with-secure-transfer-storage-accounts-in-azure-hdinsight"></a>Apache Hadoop кластеры с учетными записями хранения с безопасной переносю в Azure HDInsight
 
@@ -32,13 +32,13 @@ ms.locfileid: "77560088"
 
 ### <a name="powershell"></a>PowerShell
 
-Для командлета PowerShell [New-азсторажеаккаунт](https://docs.microsoft.com/powershell/module/az.storage/new-azstorageaccount)убедитесь, что `-EnableHttpsTrafficOnly` параметр имеет значение `1`.
+Для командлета PowerShell [New-азсторажеаккаунт](https://docs.microsoft.com/powershell/module/az.storage/new-azstorageaccount)убедитесь, что параметр `-EnableHttpsTrafficOnly` имеет значение `1` .
 
 Сведения об обновлении существующей учетной записи хранения с помощью PowerShell см. в статье [требование безопасной пересылки с помощью PowerShell](../storage/common/storage-require-secure-transfer.md#require-secure-transfer-with-powershell).
 
 ### <a name="azure-cli"></a>Azure CLI
 
-Для команды Azure CLI [AZ Storage Account Create](https://docs.microsoft.com/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-create), убедитесь, что `--https-only` параметр имеет значение `true`.
+Для команды Azure CLI [AZ Storage Account Create](https://docs.microsoft.com/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-create), убедитесь, что параметр `--https-only` имеет значение `true` .
 
 Сведения об обновлении существующей учетной записи хранения с Azure CLI см. в разделе [Обязательное безопасное перемещение с помощью Azure CLI](../storage/common/storage-require-secure-transfer.md#require-secure-transfer-with-azure-cli).
 
@@ -50,7 +50,7 @@ ms.locfileid: "77560088"
 * Создайте кластер с помощью [портала Azure](https://portal.azure.com) и укажите связанную учетную запись хранения.
 * Используйте действия скриптов для добавления дополнительных учетных записей хранения с включенной безопасной передачей в имеющийся кластер HDInsight. Дополнительные сведения см. в статье [Добавление дополнительных учетных записей хранения в HDInsight](hdinsight-hadoop-add-storage.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * использование службы хранилища Azure (WASB) вместо [Apache Hadoop HDFS](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsUserGuide.html) в качестве хранилища данных по умолчанию.
 * Сведения о том, как HDInsight использует службу хранилища Azure, см. в статье [Использование службы хранилища Azure в HDInsight](hdinsight-hadoop-use-blob-storage.md).

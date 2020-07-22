@@ -10,10 +10,9 @@ ms.date: 10/10/2019
 ms.reviewer: jushiman
 ms.custom: mimckitt
 ms.openlocfilehash: 6b9805d66149a18216a200bc89a79b3e06106c9d
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "83195108"
 ---
 # <a name="azure-disk-encryption-for-virtual-machine-scale-sets"></a>Шифрование дисков Azure для масштабируемых наборов виртуальных машин
@@ -27,7 +26,7 @@ ms.locfileid: "83195108"
 
 Основные сведения о шифровании дисков Azure для масштабируемых наборов виртуальных машин см. в статье [Шифрование масштабируемых наборов виртуальных машин с помощью Azure CLI](disk-encryption-cli.md) или [Шифрование масштабируемых наборов виртуальных машин с помощью учебников по Azure PowerShell](disk-encryption-powershell.md) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Шифрование масштабируемых наборов виртуальных машин с помощью Azure Resource Manager](disk-encryption-azure-resource-manager.md)
 - [Creating and configuring a key vault for Azure Disk Encryption](disk-encryption-key-vault.md) (Создание и настройка хранилища ключей для шифрования дисков Azure)

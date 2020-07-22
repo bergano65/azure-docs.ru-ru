@@ -5,14 +5,16 @@ description: Преобразуйте экспериментальные зап�
 author: bjcmit
 ms.author: brysmith
 ms.service: machine-learning
+ms.subservice: core
 ms.topic: tutorial
 ms.date: 04/30/2020
-ms.openlocfilehash: a0b66f233de9e1bfdc6d011b65489884a1049a12
-ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
+ms.custom: tracking-python
+ms.openlocfilehash: eabd4ceced77e90646169d80d08338c81af96e2f
+ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82559676"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86025647"
 ---
 # <a name="tutorial-convert-ml-experiments-to-production-python-code"></a>Руководство по Преобразование экспериментов машинного обучения в рабочий код Python
 

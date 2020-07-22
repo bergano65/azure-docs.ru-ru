@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 03a16ac065b585c499efa268500e0a8c81c07738
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f38ef2c337564d2b36d3939b3ed03130437e35ea
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80333820"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86221771"
 ---
 # <a name="weather-services-in-azure-maps"></a>Службы погоды в Azure Maps
 
@@ -46,56 +46,56 @@ ms.locfileid: "80333820"
 |18      |Фаренгейта          |
 |19      |Кельвина              |
 |20      |percent             |
-|21      |FLOAT               |
+|21      |float               |
 |22      |Целое число             |
 
 
 ## <a name="weather-icons"></a>Значки погоды
 
-Некоторые API службы погоды возвращают `iconCode` в ответ. `iconCode` — Числовое значение, используемое для определения значка. Не следует напрямую связываться с этими изображениями из приложений, URL-адреса могут и изменяться.
+Некоторые API службы погоды возвращают `iconCode` в ответ. `iconCode`— Числовое значение, используемое для определения значка. Не следует напрямую связываться с этими изображениями из приложений, URL-адреса могут и изменяться.
 
 | Номер значка |Значок| День | Ночной | Text |
 |-------------|:----:|-----|-------|------|
-| 1           |![](./media/weather-services-concepts/sunny-i.png)                      | Да |  Нет    | Солнечно|
-| 2           |![](./media/weather-services-concepts/mostly-sunny.png)                | Да |  Нет    | В основном Sunny|
-| 3           |![](./media/weather-services-concepts/partly-sunny.png)                | Да |  Нет    | Частично Sunny|
-| 4           |![](./media/weather-services-concepts/intermittent-clouds.png)         | Да |  Нет    | Временные облака|
-| 5           |![](./media/weather-services-concepts/hazy-sunshine.png)               | Да |  Нет    | Хази солнца |
-| 6           |![](./media/weather-services-concepts/mostly-cloudy.png)               | Да |  Нет    | В основном это облачная|
-| 7           |![](./media/weather-services-concepts/cloudy-i.png)                     | Да |  Да   | Облачно |
-| 8           |![](./media/weather-services-concepts/dreary-overcast.png)             | Да |  Да   | Дреари (Оверкаст)|
-| 11           |![](./media/weather-services-concepts/fog-i.png)                       | Да |  Да   | Туман|
-| 12           |![](./media/weather-services-concepts/showers-i.png)                   | Да |  Да   | Ливни|
-| 13           |![](./media/weather-services-concepts/mostly-cloudy-showers.png)       | Да |  Нет    | В основном облачное с ливни|
-| 14           |![](./media/weather-services-concepts/partly-sunny-showers.png)        | Да |  Нет    | Частично Sunny с ливни|
-| 15           |![](./media/weather-services-concepts/tstorms-i.png)                   | Да |  Да   | сундерстормс|
-| 16           |![](./media/weather-services-concepts/mostly-cloudy-tstorms.png)       | Да |  Нет    | В основном облачное с Сундерстормс|
-| 17           |![](./media/weather-services-concepts/partly-sunny-tstorms.png)        | Да |  Нет    | Частично Sunny с Сундерстормс|
-| 18           |![](./media/weather-services-concepts/rain-i.png)                      | Да |  Да   | Дождя|
-| 19           |![](./media/weather-services-concepts/flurries-i.png)                  | Да |  Да   | флурриес|
-| 20           |![](./media/weather-services-concepts/mostly-cloudy-flurries.png)      | Да |  Нет    | В основном облачное с Флурриес|
-| 21           |![](./media/weather-services-concepts/partly-sunny-flurries.png)       | Да |  Нет    | Частично Sunny с Флурриес|
-| 22           |![](./media/weather-services-concepts/snow-i.png)                      | Да |  Да   | Снег|
-| 23           |![](./media/weather-services-concepts/mostly-cloudy-snow.png)          | Да |  Нет    | В основном облачное с снег|
-| 24           |![](./media/weather-services-concepts/ice-i.png)                       | Да |  Да   | Айс (Ice) |
-| 25           |![](./media/weather-services-concepts/sleet-i.png)                     | Да |  Да   | слит|
-| 26           |![](./media/weather-services-concepts/freezing-rain.png)              | Да |  Да   | Замораживание дождя|
-| 29           |![](./media/weather-services-concepts/rain-snow.png)                  | Да |  Да   | Дождя и снег|
-| 30           |![](./media/weather-services-concepts/hot-i.png)                       | Да |  Да   | Горячий|
-| 31           |![](./media/weather-services-concepts/cold-i.png)                      | Да |  Да   | Холодный|
-| 32           |![](./media/weather-services-concepts/windy-i.png)                     | Да |  Да   | Ветрено|
-| 33           |![](./media/weather-services-concepts/clear-night.png)                | Нет  |  Да   | Clear|
-| 34           |![](./media/weather-services-concepts/mostly-clear-night.png)          | Нет  |  Да   | В основном ясно|
-| 35           |![](./media/weather-services-concepts/partly-cloudy-night.png)         | Нет  |  Да   | Частичное облако|
-| 36           |![](./media/weather-services-concepts/intermittent-clouds-Night.png)   | Нет  |  Да   | Временные облака|
-| 37           |![](./media/weather-services-concepts/hazymoon-light.png)             | Нет  |  Да   | Хазиное совместительство|
-| 38           |![](./media/weather-services-concepts/mostly-cloudy-night.png)         | нет  |  Да   | В основном это облачная|
-| 39           |![](./media/weather-services-concepts/partly-cloudy-showers-night.png)  | нет  |  Да   | Частичное облако с ливни|
-| 40           |![](./media/weather-services-concepts/mostly-cloudy-showers-night.png)  | Нет  |  Да   | В основном облачное с ливни|
-| 41           |![](./media/weather-services-concepts/partly-cloudy-tstorms-night.png)  | Нет  |  Да   | Частичное облако с Сундерстормс|
-| 42           |![](./media/weather-services-concepts/mostly-cloudy-tstorms-night.png)  | Нет  |  Да   | В основном облачное с Сундерстормс|
-| 43           |![](./media/weather-services-concepts/mostly-cloudy-flurries-night.png) | Нет  |  Да   | В основном облачное с Флурриес|
-| 44           |![](./media/weather-services-concepts/mostly-cloudy-snow.png)          | Нет  |  Да   | В основном облачное с снег|
+| 1           | :::image type="icon" source="./media/weather-services-concepts/sunny-i.png"::: | Да |  Нет    | Солнечно|
+| 2           | :::image type="icon" source="./media/weather-services-concepts/mostly-sunny.png"::: | Да |  Нет    | В основном Sunny|
+| 3           | :::image type="icon" source="./media/weather-services-concepts/partly-sunny.png"::: | Да |  Нет    | Частично Sunny|
+| 4           | :::image type="icon" source="./media/weather-services-concepts/intermittent-clouds.png"::: | Да |  Нет    | Временные облака|
+| 5           | :::image type="icon" source="./media/weather-services-concepts/hazy-sunshine.png"::: | Да |  Нет    | Хази солнца |
+| 6           | :::image type="icon" source="./media/weather-services-concepts/mostly-cloudy.png"::: | Да |  Нет    | В основном это облачная|
+| 7           | :::image type="icon" source="./media/weather-services-concepts/cloudy-i.png"::: | Да |  Да   | Облачно |
+| 8           | :::image type="icon" source="./media/weather-services-concepts/dreary-overcast.png"::: | Да |  Да   | Дреари (Оверкаст)|
+| 11           | :::image type="icon" source="./media/weather-services-concepts/fog-i.png"::: | Да |  Да   | Туман|
+| 12           | :::image type="icon" source="./media/weather-services-concepts/showers-i.png"::: | Да |  Да   | Ливни|
+| 13           | :::image type="icon" source="./media/weather-services-concepts/mostly-cloudy-showers.png"::: | Да |  Нет    | В основном облачное с ливни|
+| 14           | :::image type="icon" source="./media/weather-services-concepts/partly-sunny-showers.png"::: | Да |  Нет    | Частично Sunny с ливни|
+| 15           | :::image type="icon" source="./media/weather-services-concepts/tstorms-i.png"::: | Да |  Да   | сундерстормс|
+| 16           | :::image type="icon" source="./media/weather-services-concepts/mostly-cloudy-tstorms.png"::: | Да |  Нет    | В основном облачное с Сундерстормс|
+| 17           | :::image type="icon" source="./media/weather-services-concepts/partly-sunny-tstorms.png"::: | Да |  Нет    | Частично Sunny с Сундерстормс|
+| 18           | :::image type="icon" source="./media/weather-services-concepts/rain-i.png"::: | Да |  Да   | Дождя|
+| 19           | :::image type="icon" source="./media/weather-services-concepts/flurries-i.png"::: | Да |  Да   | флурриес|
+| 20           | :::image type="icon" source="./media/weather-services-concepts/mostly-cloudy-flurries.png"::: | Да |  Нет    | В основном облачное с Флурриес|
+| 21           | :::image type="icon" source="./media/weather-services-concepts/partly-sunny-flurries.png"::: | Да |  Нет    | Частично Sunny с Флурриес|
+| 22           | :::image type="icon" source="./media/weather-services-concepts/snow-i.png"::: | Да |  Да   | Снег|
+| 23           | :::image type="icon" source="./media/weather-services-concepts/mostly-cloudy-snow.png"::: | Да |  Нет    | В основном облачное с снег|     
+| 24           | :::image type="icon" source="./media/weather-services-concepts/ice-i.png"::: | Да |  Да   | Айс (Ice) |
+| 25           | :::image type="icon" source="./media/weather-services-concepts/sleet-i.png"::: | Да |  Да   | слит|
+| 26           | :::image type="icon" source="./media/weather-services-concepts/freezing-rain.png"::: | Да |  Да   | Замораживание дождя|
+| 29           | :::image type="icon" source="./media/weather-services-concepts/rain-snow.png"::: | Да |  Да   | Дождя и снег|
+| 30           | :::image type="icon" source="./media/weather-services-concepts/hot-i.png"::: | Да |  Да   | Горячий|
+| 31           | :::image type="icon" source="./media/weather-services-concepts/cold-i.png"::: | Да |  Да   | Холодный|
+| 32           | :::image type="icon" source="./media/weather-services-concepts/windy-i.png"::: | Да |  Да   | Ветрено|
+| 33           | :::image type="icon" source="./media/weather-services-concepts/clear-night.png"::: | Нет  |  Да   | Очистить|
+| 34           | :::image type="icon" source="./media/weather-services-concepts/mostly-clear-night.png"::: | Нет  |  Да   | В основном ясно|
+| 35           | :::image type="icon" source="./media/weather-services-concepts/partly-cloudy-night.png"::: | Нет  |  Да   | Частичное облако|
+| 36           | :::image type="icon" source="./media/weather-services-concepts/intermittent-clouds-Night.png"::: | Нет  |  Да   | Временные облака|
+| 37           | :::image type="icon" source="./media/weather-services-concepts/hazymoon-light.png"::: | Нет  |  Да   | Хазиное совместительство|
+| 38           | :::image type="icon" source="./media/weather-services-concepts/mostly-cloudy-night.png"::: | нет  |  Да   | В основном это облачная|
+| 39           | :::image type="icon" source="./media/weather-services-concepts/partly-cloudy-showers-night.png"::: | нет  |  Да   | Частичное облако с ливни|
+| 40           | :::image type="icon" source="./media/weather-services-concepts/mostly-cloudy-showers-night.png"::: | Нет  |  Да   | В основном облачное с ливни|
+| 41           | :::image type="icon" source="./media/weather-services-concepts/partly-cloudy-tstorms-night.png"::: | Нет  |  Да   | Частичное облако с Сундерстормс|
+| 42           | :::image type="icon" source="./media/weather-services-concepts/mostly-cloudy-tstorms-night.png"::: | Нет  |  Да   | В основном облачное с Сундерстормс|
+| 43           | :::image type="icon" source="./media/weather-services-concepts/mostly-cloudy-flurries-night.png"::: | Нет  |  Да   | В основном облачное с Флурриес|
+| 44           | :::image type="icon" source="./media/weather-services-concepts/mostly-cloudy-snow.png"::: | Нет  |  Да   | В основном облачное с снег|
 
 
 ## <a name="radar-and-satellite-imagery-color-scale"></a>Цветовая шкала лепестковых и вспомогательных изображений
@@ -108,22 +108,22 @@ ms.locfileid: "80333820"
 
 | Шестнадцатеричный код цвета | Образец цвета | Условие погоды |
 |----------------|--------------|-------------------|
-| #93c701        | ![](./media/weather-services-concepts/color-93c701.png) | Дождя-light |
-| #ffd701        | ![](./media/weather-services-concepts/color-ffd701.png) | Дождя — умеренный |
-| #f05514        | ![](./media/weather-services-concepts/color-f05514.png) | Дождя-очень высокая |
-| #dc250e        | ![](./media/weather-services-concepts/color-dc250e.png) | Дождя — серьезный |
-| #9ec8f2        | ![](./media/weather-services-concepts/color-9ec8f2.png) | Снег-light |
-| #2a8fdb        | ![](./media/weather-services-concepts/color-2a8fdb.png) | Снег — умеренный |
-| #144bed        | ![](./media/weather-services-concepts/color-144bed.png) | Снег-очень высокая |
-| #020096        | ![](./media/weather-services-concepts/color-020096.png) | Снег — серьезный |
-| #e6a5c8        | ![](./media/weather-services-concepts/color-e6a5c8.png) | Ice-light |
-| #d24fa0        | ![](./media/weather-services-concepts/color-d24fa0.png) | Ice — умеренный |
-| #b71691        | ![](./media/weather-services-concepts/color-b71691.png) | Ice — серьезное |
-| #7a1570        | ![](./media/weather-services-concepts/color-7a1570.png) | Ice-тяжелая |
-| #c196e6        | ![](./media/weather-services-concepts/color-c196e6.png) | Смешение-светлое |
-| #ae6ee6        | ![](./media/weather-services-concepts/color-ae6ee6.png) | Сочетание-умеренный |
-| #8a32d7        | ![](./media/weather-services-concepts/color-8a32d7.png) | С высокой интенсивностью |
-| #6500ba        | ![](./media/weather-services-concepts/color-6500ba.png) | Смешивание-серьезное |
+| #93c701        | ![Цвет для дождя-light.](./media/weather-services-concepts/color-93c701.png) | Дождя-light |
+| #ffd701        | ![Цвет для дождя-Moderate.](./media/weather-services-concepts/color-ffd701.png) | Дождя — умеренный |
+| #f05514        | ![Цвет для дождя-высокая.](./media/weather-services-concepts/color-f05514.png) | Дождя-очень высокая |
+| #dc250e        | ![Цвет для дождя — серьезность.](./media/weather-services-concepts/color-dc250e.png) | Дождя — серьезный |
+| #9ec8f2        | ![Цвет для снег-light.](./media/weather-services-concepts/color-9ec8f2.png) | Снег-light |
+| #2a8fdb        | ![Цвет для снег-Moderate.](./media/weather-services-concepts/color-2a8fdb.png) | Снег — умеренный |
+| #144bed        | ![Цвет для снег-высокая.](./media/weather-services-concepts/color-144bed.png) | Снег-очень высокая |
+| #020096        | ![Цвет для снег — серьезность.](./media/weather-services-concepts/color-020096.png) | Снег — серьезный |
+| #e6a5c8        | ![Цвет для ICE-light.](./media/weather-services-concepts/color-e6a5c8.png) | Ice-light |
+| #d24fa0        | ![Цвет для ICE — умеренный.](./media/weather-services-concepts/color-d24fa0.png) | Ice — умеренный |
+| #b71691        | ![Цвет для Ice-критическое.](./media/weather-services-concepts/color-b71691.png) | Ice — серьезное |
+| #7a1570        | ![Цвет для ICE-тяжелая.](./media/weather-services-concepts/color-7a1570.png) | Ice-тяжелая |
+| #c196e6        | ![Цвет для сочетания-освещения.](./media/weather-services-concepts/color-c196e6.png) | Смешение-светлое |
+| #ae6ee6        | ![Цвет для сочетания-умеренный.](./media/weather-services-concepts/color-ae6ee6.png) | Сочетание-умеренный |
+| #8a32d7        | ![Цвет для интенсивного смешивания.](./media/weather-services-concepts/color-8a32d7.png) | С высокой интенсивностью |
+| #6500ba        | ![Цвет для Mix-критическое.](./media/weather-services-concepts/color-6500ba.png) | Смешивание-серьезное |
 
 Ниже показана подробная цветовая палитра для лепестковых плиток с шестнадцатеричными кодами цветов и dBZ. dBZ представляет интенсивность осадков в погодной лепестковой диаграммы. 
 
@@ -199,18 +199,18 @@ ms.locfileid: "80333820"
 
 | Шестнадцатеричный код цвета | Образец цвета | Температура облака |
 |----------------|--------------|-------------------|
-| #b5b5b5        | ![](./media/weather-services-concepts/color-b5b5b5.png) | Низкая температура | 
-| #d24fa0        | ![](./media/weather-services-concepts/color-d24fa0.png) |  |
-| #8a32d7        | ![](./media/weather-services-concepts/color-8a32d7.png) |  |
-| #144bed        | ![](./media/weather-services-concepts/color-144bed.png) |  |
-| #479702        | ![](./media/weather-services-concepts/color-479702.png) |  |
-| #72b403        | ![](./media/weather-services-concepts/color-72b403.png) |  |
-| #93c701        | ![](./media/weather-services-concepts/color-93c701.png) |  |
-| #ffd701        | ![](./media/weather-services-concepts/color-ffd701.png) |  |
-| #f05514        | ![](./media/weather-services-concepts/color-f05514.png) |  |
-| #dc250e        | ![](./media/weather-services-concepts/color-dc250e.png) |  |
-| #ba0808        | ![](./media/weather-services-concepts/color-ba0808.png) |  |
-| #1f1f1f        | ![](./media/weather-services-concepts/color-1f1f1f.png) | Температура — высокая |
+| #b5b5b5        | ![Плитка цвета для #b5b5b5.](./media/weather-services-concepts/color-b5b5b5.png) | Низкая температура | 
+| #d24fa0        | ![Плитка цвета для #d24fa0.](./media/weather-services-concepts/color-d24fa0.png) |  |
+| #8a32d7        | ![Плитка цвета для #8a32d7.](./media/weather-services-concepts/color-8a32d7.png) |  |
+| #144bed        | ![Плитка цвета для #144bed.](./media/weather-services-concepts/color-144bed.png) |  |
+| #479702        | ![Плитка цвета для #479702.](./media/weather-services-concepts/color-479702.png) |  |
+| #72b403        | ![Плитка цвета для #72b403.](./media/weather-services-concepts/color-72b403.png) |  |
+| #93c701        | ![Плитка цвета для #93c701.](./media/weather-services-concepts/color-93c701.png) |  |
+| #ffd701        | ![Плитка цвета для #ffd701.](./media/weather-services-concepts/color-ffd701.png) |  |
+| #f05514        | ![Плитка цвета для #f05514.](./media/weather-services-concepts/color-f05514.png) |  |
+| #dc250e        | ![Плитка цвета для #dc250e.](./media/weather-services-concepts/color-dc250e.png) |  |
+| #ba0808        | ![Плитка цвета для #ba0808.](./media/weather-services-concepts/color-ba0808.png) |  |
+| #1f1f1f        | ![Плитка цвета для #1f1f1f.](./media/weather-services-concepts/color-1f1f1f.png) | Температура — высокая |
 
 
 Ниже показана подробная цветовая палитра для инфракрасных спутниковых плиток.

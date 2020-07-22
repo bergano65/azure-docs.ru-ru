@@ -1,57 +1,236 @@
 ---
 title: Общие сведения о запрашивании данных в хранилище с помощью SQL по запросу (предварительная версия)
-description: В этом разделе содержатся примеры запросов, которые можно использовать для работы с ресурсом SQL по запросу (предварительной версии) в Azure Synapse Analytics.
+description: В этой статье описывается, как выполнять запросы к службе хранилища Azure с помощью ресурса SQL по запросу (предварительная версия) в Azure Synapse Analytics.
 services: synapse analytics
 author: azaricstefan
 ms.service: synapse-analytics
 ms.topic: overview
-ms.subservice: ''
+ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: e18fc765385e6d703e735a1ca15c539c32f36e93
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 4f78928c26b595caafd6709a200297d62ce1c361
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82116253"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86259676"
 ---
-# <a name="overview-query-data-in-storage"></a>Общие сведения. Запрашивание данных в хранилище
+# <a name="query-storage-files-using-sql-on-demand-preview-resources-within-synapse-sql"></a>Запрашивание файлов хранилища с помощью ресурсов SQL по запросу (предварительная версия) в Synapse SQL
 
-В этом разделе содержатся примеры запросов, которые можно использовать для работы с ресурсом SQL по запросу (предварительной версии) в Azure Synapse Analytics.
-В настоящее время поддерживаются следующие файлы: 
-- CSV
-- Parquet
-- JSON
+SQL по запросу (предварительная версия) позволяет запрашивать данные в озере данных. Предоставляемая контактная зона для запросов T-SQL позволяет запрашивать частично структурированные и неструктурированные данные. Возможность запрашивания данных поддерживает следующие аспекты T-SQL:
 
-## <a name="prerequisites"></a>Предварительные требования
+- Полная контактная зона инструкции [SELECT](/sql/t-sql/queries/select-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest), включая большинство [функций и операторов SQL](overview-features.md).
+- CREATE EXTERNAL TABLE AS SELECT ([CETAS](develop-tables-cetas.md)) создает [внешнюю таблицу](develop-tables-external-tables.md), а затем в параллельном режиме экспортирует результаты инструкции SELECT Transact-SQL в службу хранилища Azure.
+
+Дополнительные сведения о поддерживаемых и неподдерживаемых возможностях SQL по запросу см. в статье с [общими сведениями об SQL по запросу](on-demand-workspace-overview.md) или следующих статьях:
+- [Создание возможностей доступа к хранилищу](develop-storage-files-overview.md). Из этой статьи вы узнаете, как использовать [внешние таблицы](develop-tables-external-tables.md) и функцию [OPENROWSET](develop-openrowset.md) для считывания данных из хранилища.
+- [Управление доступом к хранилищу](develop-storage-files-storage-access-control.md). Из этой статьи вы узнаете, как обеспечить доступ Synapse SQL к хранилищу с использованием аутентификации SAS или управляемого удостоверения рабочей области.
+
+## <a name="overview"></a>Обзор
+
+Чтобы оптимизировать процесс запрашивания данных, размещенных в файлах службы хранилища Azure, SQL по запросу использует функцию [OPENROWSET](develop-openrowset.md) со следующими дополнительными возможностями:
+
+- [Запрашивание нескольких файлов или папок](#query-multiple-files-or-folders)
+- [Формат PARQUET](#query-parquet-files)
+- [Запрашивание CSV-файлов и текстовых файлов с разделителями (признак конца поля, признак конца строки, escape-символ)](#query-csv-files)
+- [Считывание выбранного подмножества столбцов](#read-a-chosen-subset-of-columns)
+- [Вывод схемы](#schema-inference)
+- [Функция filename](#filename-function)
+- [Функция filepath](#filepath-function)
+- [Работа со сложными типами, а также вложенными и повторяющимися структурами данных](#work-with-complex-types-and-nested-or-repeated-data-structures)
+
+## <a name="query-parquet-files"></a>Запрашивание файлов PARQUET
+
+Для запрашивания исходных данных в формате PARQUET используйте параметр FORMAT = 'PARQUET'.
+
+```syntaxsql
+SELECT * FROM
+OPENROWSET( BULK N'https://myaccount.dfs.core.windows.net//mycontainer/mysubfolder/data.parquet', FORMAT = 'PARQUET') 
+WITH (C1 int, C2 varchar(20), C3 as varchar(max)) as rows
+```
+
+См. [примеры запросов к файлам в формате PARQUET](query-parquet-files.md).
+
+## <a name="query-csv-files"></a>Запросы к CSV-файлам
+
+Чтобы запросить исходные данные в формате CSV, используйте параметр FORMAT = 'CSV'. Вы можете указать схему CSV-файла в функции `OPENROWSET` при запрашивании CSV-файлов:
+
+```sql
+SELECT * FROM
+OPENROWSET( BULK N'https://myaccount.dfs.core.windows.net/mycontainer/mysubfolder/data.csv', FORMAT = 'CSV', PARSER_VERSION='2.0') 
+WITH (C1 int, C2 varchar(20), C3 as varchar(max)) as rows
+```
+
+Для настройки правил синтаксического анализа пользовательских файлов CSV можно использовать некоторые дополнительные параметры:
+- ESCAPE_CHAR = 'char'. Определяет символ в файле, который используется для экранирования самого себя и всех значений разделителей. Если за escape-символом следует значение, отличное от него самого или какого-либо из значений разделителей, при считывании этого значения escape-символ пропускается.
+Параметр ESCAPE_CHAR будет применяться независимо от того, включен ли параметр FIELDQUOTE. Он не будет использоваться для экранирования символа кавычек. Символ кавычек нужно экранировать другим символом кавычек. Такой символ может использоваться в значении столбца только в том случае, если значение инкапсулировано с помощью символов кавычек.
+- FIELDTERMINATOR ='field_terminator'. Определяет используемый признак конца поля. По умолчанию признаком конца поля считается запятая ( **,** ).
+- ROWTERMINATOR ='row_terminator'. Определяет используемый признак конца строки. По умолчанию признаком конца строки считается символ новой строки ( **\r\n**).
+
+## <a name="file-schema"></a>Схема файла
+
+Язык SQL в Synapse SQL позволяет определить схему файла как часть функции `OPENROWSET` и считывать все столбцы или их подмножество. Либо служба попытается автоматически определить типы столбцов из файла с помощью вывода схемы.
+
+### <a name="read-a-chosen-subset-of-columns"></a>Считывание выбранного подмножества столбцов
+
+Чтобы указать столбцы для считывания, включите необязательное предложение WITH в инструкцию `OPENROWSET`.
+
+- Если используются CSV-файлы данных, для считывания всех столбцов укажите имена и типы данных столбцов. Если нужно считать подмножество столбцов, используйте порядковые номера, чтобы выбрать столбцы из исходных файлов данных по порядковому номеру. Столбцы будут привязаны к порядковым обозначениям.
+- Если используются файлы данных PARQUET, укажите имена столбцов, совпадающие с именами столбцов в исходных файлах данных. Столбцы будут привязаны к именам.
+
+```sql
+SELECT * FROM
+OPENROWSET( BULK N'https://myaccount.dfs.core.windows.net/mycontainer/mysubfolder/data.parquet', FORMAT = 'PARQUET') 
+WITH (
+      C1 int, 
+      C2 varchar(20),
+      C3 as varchar(max)
+) as rows
+```
+
+Для каждого столбца необходимо указать его имя и тип в предложении `WITH`.
+См. примеры в разделе [Возвращение подмножества столбцов](query-single-csv-file.md#returning-subset-of-columns).
+
+## <a name="schema-inference"></a>Вывод схемы
+
+Если вы не указываете предложение WITH в инструкции `OPENROWSET`, служба попытается автоматически определить (вывести) схему из базовых файлов.
+
+> [!NOTE]
+> Сейчас это поддерживается только для формата PARQUET.
+
+```sql
+SELECT * FROM
+OPENROWSET( BULK N'https://myaccount.dfs.core.windows.net/mycontainer/mysubfolder/data.parquet', FORMAT = 'PARQUET') 
+```
+
+Убедитесь, что для оптимальной производительности используются [соответствующие выводимые типы данных](best-practices-sql-on-demand.md#check-inferred-data-types). 
+
+## <a name="query-multiple-files-or-folders"></a>Запрашивание нескольких файлов или папок
+
+Чтобы выполнить запрос T-SQL набора файлов в папке или набора папок в качестве одной сущности или набора строк, укажите путь к папке или шаблон пути (с подстановочными знаками) к набору файлов или папок.
+
+Применяются следующие правила.
+
+- Шаблоны можно использовать как часть пути к папке или в имени файла.
+- В одной части пути к каталогу или имени файла могут использоваться несколько шаблонов.
+- Если указано несколько подстановочных знаков, в результирующий набор файлов будут включены все файлы, связанные со всеми соответствующими путями.
+
+```sql
+SELECT * FROM
+OPENROWSET( BULK N'https://myaccount.dfs.core.windows.net/myroot/*/mysubfolder/*.parquet', FORMAT = 'PARQUET' ) as rows
+```
+
+См. [примеры запросов к нескольким файлам и папкам](query-folders-multiple-csv-files.md).
+
+## <a name="file-metadata-functions"></a>Функции метаданных файлов
+
+### <a name="filename-function"></a>Функция filename
+
+Эта функция возвращает имя файла, из которого получена строка. 
+
+Для запрашивания определенных файлов используйте инструкции из раздела [Filename](query-specific-files.md#filename).
+
+Тип возвращаемых данных — nvarchar(1024). Для оптимальной производительности всегда приводите результат функции filename к соответствующему типу данных. Если используется символьный тип данных, убедитесь, что используется соответствующая длина.
+
+### <a name="filepath-function"></a>Функция filepath
+
+Эта функция возвращает полный путь или часть пути:
+
+- При вызове без параметра она возвращает полный путь, из которого была получена строка.
+- При вызове с параметром она возвращает ту часть пути, которая соответствует подстановочному знаку в позиции, определенной в этом параметре. Например, при значении параметра 1 возвращается часть пути, соответствующая первому подстановочному знаку.
+
+См. сведения в разделе [Filepath](query-specific-files.md#filepath).
+
+Тип возвращаемых данных — nvarchar(1024). Для оптимальной производительности всегда приводите результат функции filepath к соответствующему типу данных. Если используется символьный тип данных, убедитесь, что используется соответствующая длина.
+
+## <a name="work-with-complex-types-and-nested-or-repeated-data-structures"></a>Работа со сложными типами, а также вложенными и повторяющимися структурами данных
+
+Чтобы оптимизировать работу с данными, которые хранятся во вложенных или повторяющихся типах данных (например, в файлах [Parquet](https://github.com/apache/parquet-format/blob/master/LogicalTypes.md#nested-types)), в SQL по запросу добавлены перечисленные ниже расширения.
+
+#### <a name="project-nested-or-repeated-data"></a>Вложенные или повторяющиеся данные в проекте
+
+Для проецирования данных выполните инструкцию SELECT для файлов PARQUET, которые содержат столбцы вложенных типов данных. При выводе вложенные значения сериализуются в формат JSON и возвращаются с типом данных SQL varchar(8000).
+
+```sql
+    SELECT * FROM
+    OPENROWSET
+    (   BULK 'unstructured_data_path' ,
+        FORMAT = 'PARQUET' )
+    [AS alias]
+```
+
+См. сведения о запрашивании вложенных типов данных в разделе [Вложенные или повторяющиеся данные в проекте](query-parquet-nested-types.md#project-nested-or-repeated-data).
+
+#### <a name="access-elements-from-nested-columns"></a>Доступ к элементам из вложенных столбцов
+
+Чтобы получить доступ к вложенным элементам из вложенных столбцов, таким как Struct, используйте точечную нотацию для конкатенации имен полей в строку пути. Передайте полученный путь в параметре column_name предложения WITH функции `OPENROWSET`.
+
+Ниже приводится пример фрагмента с таким синтаксисом.
+
+```syntaxsql
+    OPENROWSET
+    (   BULK 'unstructured_data_path' ,
+        FORMAT = 'PARQUET' )
+    WITH ({'column_name' 'column_type',})
+    [AS alias]
+    'column_name' ::= '[field_name.] field_name'
+```
+
+По умолчанию функция `OPENROWSET` сопоставляет имя исходного поля и путь к нему с именами столбцов в предложении WITH. С помощью предложения WITH можно получить доступ к элементам на разных уровнях вложенности в пределах одного исходного файла PARQUET.
+
+**Возвращаемые значения**
+
+- Функция возвращает скалярное значение, например int, decimal и varchar, из указанного элемента и по указанному пути для всех типов Parquet, которые не находятся в группе вложенных типов.
+- Если путь указывает на элемент вложенного типа, функция возвращает фрагмент JSON, который начинается с верхнего элемента указанного пути. Этот фрагмент JSON имеет тип varchar(8000).
+- Если свойство не удается найти по указанному значению column_name, функция возвращает ошибку.
+- Если свойство не удается найти по указанному значению column_path, в зависимости от настроенного [режима PATH](/sql/relational-databases/json/json-path-expressions-sql-server?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest#PATHMODE), функция возвращает ошибку (строгий режим) или значение NULL (нестрогий режим).
+
+См. примеры таких запросов в разделе [Доступ к элементам из вложенных столбцов](query-parquet-nested-types.md#access-elements-from-nested-columns).
+
+#### <a name="access-elements-from-repeated-columns"></a>Доступ к элементам из повторяющихся столбцов
+
+Чтобы получить доступ к элементам из повторяющегося столбца, например Array или Map, используйте функцию [JSON_VALUE](/sql/t-sql/functions/json-value-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) для каждого проецируемого скалярного элемента, предоставив ей следующие данные:
+
+- Вложенный или повторяющийся столбец в качестве первого параметра.
+- [Путь JSON](/sql/relational-databases/json/json-path-expressions-sql-server?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest), который обозначает нужный элемент свойства, в качестве второго параметра.
+
+Чтобы обратиться к элементам с нескалярным значением из повторяющегося столбца, используйте функцию [JSON_QUERY](/sql/t-sql/functions/json-query-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) для каждого проецируемого нескалярного элемента, предоставив ей следующие данные:
+
+- Вложенный или повторяющийся столбец в качестве первого параметра.
+- [Путь JSON](/sql/relational-databases/json/json-path-expressions-sql-server?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest), который обозначает нужный элемент свойства, в качестве второго параметра.
+
+Фрагмент такого синтаксиса приводится ниже.
+
+```syntaxsql
+    SELECT
+       { JSON_VALUE (column_name, path_to_sub_element), }
+       { JSON_QUERY (column_name [ , path_to_sub_element ]), )
+    FROM
+    OPENROWSET
+    (   BULK 'unstructured_data_path' ,
+        FORMAT = 'PARQUET' )
+    [AS alias]
+```
+
+См. [примеры запросов для получения доступа к элементам из повторяющихся столбцов](query-parquet-nested-types.md#access-elements-from-repeated-columns).
+
+## <a name="query-samples"></a>Примеры запросов
+
+Чтобы узнать больше о том, как запрашивать данные различных типов, воспользуйтесь примерами запросов.
+
+### <a name="tools"></a>Инструменты
 
 Ниже указаны средства, необходимые для создания запросов.
-
-- Выберите клиент SQL:
     - Azure Synapse Studio (предварительная версия)
     - Azure Data Studio
     - SQL Server Management Studio
 
-Кроме того, используются следующие параметры:
+### <a name="demo-setup"></a>Настройка демонстрации
 
-| Параметр                                 | Описание                                                   |
-| ----------------------------------------- | ------------------------------------------------------------- |
-| Адрес конечной точки службы SQL по запросу    | Будет использоваться в качестве имени сервера.                                   |
-| Регион конечной точки службы SQL по запросу     | Будет использоваться для определения хранилища, используемого в примерах. |
-| Имя пользователя и пароль для доступа к конечной точке | Будет использоваться для доступа к конечной точке.                               |
-| База данных, которая будет использоваться для создания представлений     | Эта база данных будет использоваться в качестве начальной точки в примерах.       |
+Для начала **создайте базу данных**, в которой будут выполняться запросы. Затем инициализируйте объекты, выполнив [скрипт настройки](https://github.com/Azure-Samples/Synapse/blob/master/SQL/Samples/LdwSample/SampleDB.sql) для этой базы данных. 
 
-## <a name="first-time-setup"></a>Изначальная настройка
-
-При использовании приведенных далее примеров необходимо выполнить два действия:
-
-- создайте базу данных для представлений (если необходимо использовать представления);
-- создайте учетные данные, которые будут использоваться SQL по запросу для доступа к файлам в хранилище.
-
-### <a name="create-database"></a>Создание базы данных
-
-Для создания представлений понадобится база данных. Используйте эту базу данных в примерах запросов в этой документации.
+Этот скрипт создает источники данных, учетные данные области базы данных и форматы внешних файлов, которые используются для чтения данных в этих примерах.
 
 > [!NOTE]
 > Базы данных используются только для просмотра метаданных, а не для реальных данных.  Запишите имя используемой базы данных, ведь оно потребуется позже.
@@ -60,66 +239,14 @@ ms.locfileid: "82116253"
 CREATE DATABASE mydbname;
 ```
 
-### <a name="create-credentials"></a>Создание учетных данных
-
-Перед выполнением запросов следует создать учетные данные. Эти учетные данные будут использоваться службой SQL по запросу для доступа к файлам в хранилище.
-
-> [!NOTE]
-> Для успешного выполнения указаний в этом разделе необходимо использовать маркер SAS.
->
-> Чтобы приступить к использованию маркеров SAS, необходимо удалить UserIdentity, который описан в этой [статье](develop-storage-files-storage-access-control.md#disable-forcing-azure-ad-pass-through).
->
-> По умолчанию для SQL по запросу всегда используется сквозной доступ через Azure Active Directory.
-
-Дополнительные сведения об управлении доступом к хранилищу см. по этой [ссылке](develop-storage-files-storage-access-control.md).
-
-Чтобы создать учетные данные для контейнеров CSV, JSON и Parquet, выполните следующий код:
-
-```sql
--- create credentials for CSV container in our demo storage account
-IF EXISTS (SELECT * FROM sys.credentials WHERE name = 'https://sqlondemandstorage.blob.core.windows.net/csv')
-DROP CREDENTIAL [https://sqlondemandstorage.blob.core.windows.net/csv];
-GO
-
-CREATE CREDENTIAL [https://sqlondemandstorage.blob.core.windows.net/csv]
-WITH IDENTITY='SHARED ACCESS SIGNATURE',  
-SECRET = 'sv=2018-03-28&ss=bf&srt=sco&sp=rl&st=2019-10-14T12%3A10%3A25Z&se=2061-12-31T12%3A10%3A00Z&sig=KlSU2ullCscyTS0An0nozEpo4tO5JAgGBvw%2FJX2lguw%3D';
-GO
-
--- create credentials for JSON container in our demo storage account
-IF EXISTS (SELECT * FROM sys.credentials WHERE name = 'https://sqlondemandstorage.blob.core.windows.net/json')
-DROP CREDENTIAL [https://sqlondemandstorage.blob.core.windows.net/json];
-GO
-
-CREATE CREDENTIAL [https://sqlondemandstorage.blob.core.windows.net/json]
-WITH IDENTITY='SHARED ACCESS SIGNATURE',  
-SECRET = 'sv=2018-03-28&ss=bf&srt=sco&sp=rl&st=2019-10-14T12%3A10%3A25Z&se=2061-12-31T12%3A10%3A00Z&sig=KlSU2ullCscyTS0An0nozEpo4tO5JAgGBvw%2FJX2lguw%3D';
-GO
-
--- create credentials for PARQUET container in our demo storage account
-IF EXISTS (SELECT * FROM sys.credentials WHERE name = 'https://sqlondemandstorage.blob.core.windows.net/parquet')
-DROP CREDENTIAL [https://sqlondemandstorage.blob.core.windows.net/parquet];
-GO
-
-CREATE CREDENTIAL [https://sqlondemandstorage.blob.core.windows.net/parquet]
-WITH IDENTITY='SHARED ACCESS SIGNATURE',  
-SECRET = 'sv=2018-03-28&ss=bf&srt=sco&sp=rl&st=2019-10-14T12%3A10%3A25Z&se=2061-12-31T12%3A10%3A00Z&sig=KlSU2ullCscyTS0An0nozEpo4tO5JAgGBvw%2FJX2lguw%3D';
-GO
-```
-
-## <a name="provided-demo-data"></a>Предоставление демонстрационных данных
+### <a name="provided-demo-data"></a>Предоставление демонстрационных данных
 
 Демонстрационные данные содержат указанные ниже наборы данных.
 
-- NYC Taxi - Yellow Taxi Trip Records (Такси Нью-Йорка. Записи поездок такси желтого цвета) — часть общедоступного набора данных по Нью-Йорку:
-  - Формат CSV
-  - Формат Parquet
-- Набор данных о населении:
-  - Формат CSV
+- NYC Taxi - Yellow Taxi Trip Records (Такси Нью-Йорка. Записи поездок такси желтого цвета) — часть общедоступного набора данных по Нью-Йорку в формате CSV и Parquet
+- Набор данных по населению в формате CSV
 - Примеры файлов Parquet со вложенными столбцами:
-  - Формат Parquet
-- Книги JSON:
-  - Формат JSON
+- Книги в формате JSON
 
 | Путь к папке                                                  | Описание                                                  |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -132,54 +259,15 @@ GO
 | /json/                                                       | Родительская папка для данных в формате JSON.                        |
 | /json/books/                                                 | Файлы JSON с данными книг.                                   |
 
-## <a name="validation"></a>Проверка
-
-Выполните следующие три запроса и проверьте, правильно ли созданы учетные данные.
-
-> [!NOTE]
-> Все универсальные коды ресурсов (URI) в примерах запросов используют учетную запись хранения, расположенную в регионе Azure "Северная Европа". Убедитесь, что вы создали соответствующие учетные данные. Выполните приведенный ниже запрос и убедитесь, что в списке указана учетная запись хранения.
-
-```sql
-SELECT name
-FROM sys.credentials
-WHERE
-     name IN ( 'https://sqlondemandstorage.blob.core.windows.net/csv',
-     'https://sqlondemandstorage.blob.core.windows.net/parquet',
-     'https://sqlondemandstorage.blob.core.windows.net/json');
-```
-
-Если вы не можете найти соответствующие учетные данные, см. раздел [Изначальная установка](#first-time-setup).
-
-### <a name="sample-query"></a>Пример запроса
-
-Последний шаг проверки — выполнение следующего запроса:
-
-```sql
-SELECT
-    COUNT_BIG(*)
-FROM  
-    OPENROWSET(
-        BULK 'https://sqlondemandstorage.blob.core.windows.net/parquet/taxi/year=2017/month=9/*.parquet',
-        FORMAT='PARQUET'
-    ) AS nyc;
-```
-
-Этот запрос выше должен вернуть такое число: **8945574**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь вы готовы для работы со следующими руководствами:
+Сведения о запрашивании файлов разных типов, о создании и использовании представлений см. в следующих статьях:
 
-- [Запрашивание одного CSV-файла](query-single-csv-file.md)
-
-- [Запрашивание папок и нескольких CSV-файлов](query-folders-multiple-csv-files.md)
-
-- [Запрашивание конкретных файлов](query-specific-files.md)
-
+- [Запрашивание CSV-файлов](query-single-csv-file.md)
 - [Запрашивание файлов Parquet](query-parquet-files.md)
-
-- [Запрашивание вложенных типов Parquet](query-parquet-nested-types.md)
-
 - [Запрашивание JSON-файлов](query-json-files.md)
-
+- [Запрашивание вложенных значений](query-parquet-nested-types.md)
+- [Запрашивание папок и нескольких CSV-файлов](query-folders-multiple-csv-files.md)
+- [Использование метаданных файла в запросах](query-specific-files.md)
 - [Создание и использование представлений](create-use-views.md)

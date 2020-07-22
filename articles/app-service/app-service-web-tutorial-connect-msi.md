@@ -5,12 +5,12 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 04/27/2020
 ms.custom: mvc, cli-validate
-ms.openlocfilehash: 142cd2611e0dcf3227474efadded7bac88a4390a
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: e38711cbb5ccd9fe4cc8584a9229a1c57550d618
+ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82207642"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84021234"
 ---
 # <a name="tutorial-secure-azure-sql-database-connection-from-app-service-using-a-managed-identity"></a>Руководство по Безопасное подключение к Базе данных SQL Azure из службы приложений с использованием управляемого удостоверения
 
@@ -45,17 +45,17 @@ ms.locfileid: "82207642"
 
 Эта статья является продолжением статьи [Руководство. Создание приложения ASP.NET в Azure с подключением к Базе данных SQL](app-service-web-tutorial-dotnet-sqldatabase.md) или [Руководство по созданию приложения ASP.NET Core и Базы данных SQL в Службе приложений Azure](app-service-web-tutorial-dotnetcore-sqldb.md). Если вы еще не ознакомились с этими руководствами, сначала изучите одно из них. Кроме того, вы можете адаптировать шаги для своего собственного приложения .NET с Базой данных SQL.
 
-Чтобы отладить приложение, используя Базу данных SQL в качестве серверного компонента, убедитесь, что вы разрешили клиентские подключения со своего компьютера. В противном случае добавьте IP-адрес клиента, выполнив шаги, указанные в разделе [Управление правилами брандмауэра для IP-адресов на уровне сервера с помощью портала Azure](../sql-database/sql-database-firewall-configure.md#use-the-azure-portal-to-manage-server-level-ip-firewall-rules).
+Чтобы отладить приложение, используя Базу данных SQL в качестве серверного компонента, убедитесь, что вы разрешили клиентские подключения со своего компьютера. В противном случае добавьте IP-адрес клиента, выполнив шаги, указанные в разделе [Управление правилами брандмауэра для IP-адресов на уровне сервера с помощью портала Azure](../azure-sql/database/firewall-configure.md#use-the-azure-portal-to-manage-server-level-ip-firewall-rules).
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 ## <a name="grant-database-access-to-azure-ad-user"></a>Предоставление доступа к базе данных для пользователя Azure AD
 
-Сначала включите аутентификацию Azure AD в базе данных SQL, назначив пользователя Azure AD администратором Active Directory сервера базы данных SQL. Этот пользователь отличается от учетной записи Майкрософт, которую вы использовали для регистрации на подписку Azure. Это должен быть пользователь, которого вы создали, импортировали, синхронизировали или пригласили в Azure AD. Дополнительные сведения о разрешенных пользователях Azure AD см. в разделе [Возможности и ограничения Azure AD в базе данных SQL](../sql-database/sql-database-aad-authentication.md#azure-ad-features-and-limitations).
+Сначала включите аутентификацию Azure AD в базе данных SQL, назначив пользователя Azure AD администратором Active Directory сервера. Этот пользователь отличается от учетной записи Майкрософт, которую вы использовали для регистрации на подписку Azure. Это должен быть пользователь, которого вы создали, импортировали, синхронизировали или пригласили в Azure AD. Дополнительные сведения о разрешенных пользователях Azure AD см. в разделе [Возможности и ограничения Azure AD в базе данных SQL](../azure-sql/database/authentication-aad-overview.md#azure-ad-features-and-limitations).
 
 Если в вашем клиенте Azure AD отсутствует пользователь, создайте его, выполнив действия, описанные в статье [Add or delete users using Azure Active Directory](../active-directory/fundamentals/add-users-azure-active-directory.md) (Добавление или удаление пользователей с помощью Azure Active Directory).
 
-Найдите ИД объекта пользователя Azure AD с помощью [`az ad user list`](/cli/azure/ad/user?view=azure-cli-latest#az-ad-user-list) и замените *\<user-principal-name>* . Результат сохраняется в переменной.
+Найдите идентификатор объекта пользователя Azure AD с помощью [`az ad user list`](/cli/azure/ad/user?view=azure-cli-latest#az-ad-user-list) и замените *\<user-principal-name>* . Результат сохраняется в переменной.
 
 ```azurecli-interactive
 azureaduser=$(az ad user list --filter "userPrincipalName eq '<user-principal-name>'" --query [].objectId --output tsv)
@@ -64,13 +64,13 @@ azureaduser=$(az ad user list --filter "userPrincipalName eq '<user-principal-na
 > Чтобы просмотреть список всех имен участников-пользователей в Azure AD, запустите `az ad user list --query [].userPrincipalName`.
 >
 
-Добавьте этого пользователя Azure AD в качестве администратора Active Directory с помощью команды [`az sql server ad-admin create`](/cli/azure/sql/server/ad-admin?view=azure-cli-latest#az-sql-server-ad-admin-create) в Cloud Shell. В следующей команде замените *\<имя-сервера>* именем сервера Базы данных SQL (без суффикса `.database.windows.net`).
+Добавьте этого пользователя Azure AD в качестве администратора Active Directory с помощью команды [`az sql server ad-admin create`](/cli/azure/sql/server/ad-admin?view=azure-cli-latest#az-sql-server-ad-admin-create) в Cloud Shell. В следующей команде замените *\<server-name>* именем сервера (без суффикса `.database.windows.net`).
 
 ```azurecli-interactive
 az sql server ad-admin create --resource-group myResourceGroup --server-name <server-name> --display-name ADMIN --object-id $azureaduser
 ```
 
-Для получения дополнительных сведений о добавлении администратора Active Directory см. раздел [Подготовка администратора Azure Active Directory для сервера базы данных SQL Azure](../sql-database/sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-azure-sql-database-server)
+Для получения дополнительных сведений о добавлении администратора Active Directory см. раздел [Подготовка администратора Azure Active Directory для сервера](../azure-sql/database/authentication-aad-configure.md#provision-azure-ad-admin-sql-managed-instance)
 
 ## <a name="set-up-visual-studio"></a>Настройка Visual Studio
 
@@ -125,12 +125,12 @@ Install-Package Microsoft.Azure.Services.AppAuthentication -Version 1.4.0
     </SqlAuthenticationProviders>
     ```    
 
-- Найдите строку подключения с именем `MyDbConnection` и замените ее значение `connectionString` на `"server=tcp:<server-name>.database.windows.net;database=<db-name>;UID=AnyString;Authentication=Active Directory Interactive"`. Замените _\<server-name>_ и _\<db-name>_ на имя вашего сервера и имя базы данных.
+- Найдите строку подключения с именем `MyDbConnection` и замените ее значение `connectionString` на `"server=tcp:<server-name>.database.windows.net;database=<db-name>;UID=AnyString;Authentication=Active Directory Interactive"`. Замените _\<server-name>_ и _\<db-name>_ именем вашего сервера и именем базы данных.
 
 > [!NOTE]
 > Только что зарегистрированный класс SqlAuthenticationProvider основывается на библиотеке AppAuthentication, установленной ранее. По умолчанию он использует назначенное системой удостоверение. Чтобы использовать назначенное пользователем удостоверение, необходимо предоставить дополнительную конфигурацию. Сведения о библиотеке AppAuthentication см. в разделе [Поддержка строки подключения](../key-vault/general/service-to-service-authentication.md#connection-string-support).
 
-Это все, что необходимо для подключения к Базе данных SQL. При отладке в Visual Studio ваш код использует имя пользователя Azure AD, указанное в разделе [Настройка Visual Studio](#set-up-visual-studio). Позже вы настроите сервер Базы данных SQL, чтобы разрешить установку подключения с использованием управляемого удостоверения вашего приложения Службы приложений.
+Это все, что необходимо для подключения к Базе данных SQL. При отладке в Visual Studio ваш код использует имя пользователя Azure AD, указанное в разделе [Настройка Visual Studio](#set-up-visual-studio). Позже вы настроите Базу данных SQL, чтобы разрешить установку подключения с использованием управляемого удостоверения вашего приложения Службы приложений.
 
 Введите `Ctrl+F5`, чтобы снова запустить приложение. То же приложение CRUD в вашем браузере теперь подключается к базе данных SQL Azure напрямую, используя аутентификацию Azure AD. Эта настройка позволяет запускать перенос базы данных из Visual Studio.
 
@@ -158,7 +158,7 @@ conn.AccessToken = (new Microsoft.Azure.Services.AppAuthentication.AzureServiceT
 > [!NOTE]
 > Этот демонстрационный код является синхронным для ясности и простоты.
 
-Это все, что необходимо для подключения к Базе данных SQL. При отладке в Visual Studio ваш код использует имя пользователя Azure AD, указанное в разделе [Настройка Visual Studio](#set-up-visual-studio). Позже вы настроите сервер Базы данных SQL, чтобы разрешить установку подключения с использованием управляемого удостоверения вашего приложения Службы приложений. Класс `AzureServiceTokenProvider` кэширует токен в памяти и извлекает его из Azure AD прямо перед истечением срока действия. Для обновления токена не требуется пользовательский код.
+Это все, что необходимо для подключения к Базе данных SQL. При отладке в Visual Studio ваш код использует имя пользователя Azure AD, указанное в разделе [Настройка Visual Studio](#set-up-visual-studio). Позже вы настроите Базу данных SQL, чтобы разрешить установку подключения с использованием управляемого удостоверения вашего приложения Службы приложений. Класс `AzureServiceTokenProvider` кэширует токен в памяти и извлекает его из Azure AD прямо перед истечением срока действия. Для обновления токена не требуется пользовательский код.
 
 > [!TIP]
 > Если настроенный вами пользователь Azure AD имеет доступ к нескольким клиентам, вызовите `GetAccessTokenAsync("https://database.windows.net/", tenantid)` с идентификатором нужного клиента, чтобы получить соответствующий маркер доступа.
@@ -204,7 +204,7 @@ az webapp identity assign --resource-group myResourceGroup --name <app-name>
 > ```
 >
 
-В Cloud Shell войдите в базу данных SQL с помощью команды SQLCMD. Замените _\<server-name>_ именем сервера базы данных SQL, _\<db-name>_ , а _\<aad-user-name>_ и _\<aad-password>_  — учетными данными пользователя Azure AD.
+В Cloud Shell войдите в базу данных SQL с помощью команды SQLCMD. Замените _\<server-name>_ именем сервера, _\<db-name>_ именем базы данных, которое использует приложение, а _\<aad-user-name>_ и _\<aad-password>_ учетными данными пользователя Azure AD.
 
 ```azurecli-interactive
 sqlcmd -S <server-name>.database.windows.net -d <db-name> -U <aad-user-name> -P "<aad-password>" -G -l 30
@@ -220,7 +220,7 @@ ALTER ROLE db_ddladmin ADD MEMBER [<identity-name>];
 GO
 ```
 
-*\<Identity-name>*  — имя управляемого удостоверения в Azure AD. Если удостоверение назначено системой, имя всегда совпадает с именем приложения Службы приложений. Чтобы предоставить разрешения для группы Azure AD, используйте отображаемое имя группы (например, *myAzureSQLDBAccessGroup*).
+*\<identity-name>*  — имя управляемого удостоверения в Azure AD. Если удостоверение назначено системой, имя всегда совпадает с именем приложения Службы приложений. Чтобы предоставить разрешения для группы Azure AD, используйте отображаемое имя группы (например, *myAzureSQLDBAccessGroup*).
 
 Введите `EXIT`, чтобы вернуться в командную строку Cloud Shell.
 

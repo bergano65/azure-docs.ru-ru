@@ -6,14 +6,14 @@ author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 04/06/2020
+ms.date: 05/06/2020
 ms.author: aahi
-ms.openlocfilehash: b352e785673d7c4ed3a9b346758ef0d1fa68b36d
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.openlocfilehash: ee897a22ceda4378ea9dba4579d5108a2ddf0b0d
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80887374"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86156727"
 ---
 Эта статья поможет вам начать работу с клиентской библиотекой Автозаполнения Bing для Go. Здесь приведены действия по установке библиотеки и тестированию примеров кода для выполнения базовых задач. 
 
@@ -23,31 +23,26 @@ ms.locfileid: "80887374"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+* Подписка Azure. Если у вас еще нет подписки Azure, создайте [ее бесплатно](https://azure.microsoft.com/free/).
 * Последняя версия [Go](https://golang.org/dl/).
-
-## <a name="setting-up"></a>Настройка
-
-### <a name="create-an-azure-resource"></a>Создание ресурса Azure 
 
 Начните использовать клиентскую библиотеку Автозаполнения Bing, создав ресурс Azure. Выберите ниже ресурс подходящего типа.
 
 [!INCLUDE [cognitive-services-bing-autosuggest-signup-requirements](~/includes/cognitive-services-bing-autosuggest-signup-requirements.md)]
 
-### <a name="create-an-environment-variable"></a>Создание переменной среды
+## <a name="create-environment-variables"></a>Создание переменных среды
 
 >[!NOTE]
-> Конечные точки для ресурсов не из пробной версии, созданных после 1июля 2019 г., поддерживают пользовательский формат поддомена, показанный ниже. Дополнительные сведения и полный список региональных конечных точек см. в статье [Custom subdomain names for Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-custom-subdomains) (Пользовательские имена поддоменов для Cognitive Services). 
+> Конечные точки для ресурсов, созданных после 1 июля 2019 г., поддерживают пользовательский формат поддомена, показанный ниже. Дополнительные сведения и полный список региональных конечных точек см. в статье [Custom subdomain names for Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-custom-subdomains) (Пользовательские имена поддоменов для Cognitive Services). 
 
 Используя ключ и конечную точку из созданного ресурса, создайте две переменные среды для проверки подлинности:
 <!-- replace the below variable names with the names expected in the code sample.-->
-* `AUTOSUGGEST_SUBSCRIPTION_KEY` — ключ ресурса для проверки подлинности запросов.
-* `AUTOSUGGEST_ENDPOINT` — конечная точка ресурса для отправки запросов API. Она должна выглядеть так: 
-  * `https://<your-custom-subdomain>.api.cognitive.microsoft.com` 
+* `AUTOSUGGEST_SUBSCRIPTION_KEY`: ключ ресурса для аутентификации запросов.
+* `AUTOSUGGEST_ENDPOINT`: конечная точка ресурса для отправки запросов API. Она должна выглядеть так: `https://<your-custom-subdomain>.api.cognitive.microsoft.com`. 
 
 Используйте инструкции для своей операционной системы.
 <!-- replace the below endpoint and key examples -->
-#### <a name="windows"></a>[Windows](#tab/windows)
+### <a name="windows"></a>[Windows](#tab/windows)
 
 ```console
 setx BING_AUTOSUGGEST_SUBSCRIPTION_KEY <replace-with-your-autosuggest-api-key>
@@ -56,7 +51,7 @@ setx BING_AUTOSUGGEST_ENDPOINT <replace-with-your-autosuggest-api-endpoint>
 
 Добавив переменную среды, перезапустите окно консоли.
 
-#### <a name="linux"></a>[Linux](#tab/linux)
+### <a name="linux"></a>[Linux](#tab/linux)
 
 ```bash
 export AUTOSUGGEST_SUBSCRIPTION_KEY=<replace-with-your-autosuggest-api-key>
@@ -65,7 +60,7 @@ export AUTOSUGGEST_ENDPOINT=<replace-with-your-autosuggest-api-endpoint>
 
 После добавления переменной среды запустите `source ~/.bashrc` из окна консоли, чтобы применить изменения.
 
-#### <a name="macos"></a>[macOS](#tab/unix)
+### <a name="macos"></a>[macOS](#tab/unix)
 
 Измените `.bash_profile` и добавьте переменную среды:
 
@@ -77,13 +72,13 @@ export AUTOSUGGEST_ENDPOINT=<replace-with-your-autosuggest-api-endpoint>
 После добавления переменной среды запустите `source .bash_profile` из окна консоли, чтобы применить изменения.
 ***
 
-### <a name="create-a-new-go-project"></a>Создание проекта Go
+## <a name="create-a-new-go-project"></a>Создание проекта Go
 
 В окне консоли (cmd, PowerShell, терминал или Bash) создайте новую рабочую область для проекта Go и перейдите в нее. Рабочая область будет содержать три папки: 
 
-* каталог **src** содержит исходный код и пакеты. Все пакеты, установленные с помощью команды `go get`, будут находиться именно здесь;
-* каталог **pkg** содержит скомпилированные объекты пакета Go. Все эти файлы имеют расширение `.a`;
-* каталог **bin** содержит двоичные исполняемые файлы, создаваемые при запуске `go install`.
+* **src** — этот каталог содержит исходный код и пакеты. Все пакеты, установленные с помощью команды `go get`, будут находиться именно здесь;
+* **pkg**: этот каталог содержит скомпилированные объекты пакета Go. Все эти файлы имеют расширение `.a`;
+* **bin**: этот каталог содержит двоичные исполняемые файлы, создаваемые при выполнении `go install`.
 
 > [!TIP]
 > Дополнительные сведения о структуре рабочей области Go вы найдете [здесь](https://golang.org/doc/code.html#Workspaces). В этом руководством содержатся сведения о настройке `$GOPATH` и `$GOROOT`.
@@ -95,7 +90,7 @@ $ mkdir -p my-app/{src, bin, pkg}
 $ cd my-app
 ```
 
-### <a name="install-the-client-library-for-go"></a>Установка клиентской библиотеки для Go
+## <a name="install-the-client-library-for-go"></a>Установка клиентской библиотеки для Go
 
 Теперь установите клиентскую библиотеку для Go: 
 
@@ -109,7 +104,7 @@ $ go get -u <library-location-or-url>
 $ dep ensure -add <library-location-or-url>
 ```
 
-### <a name="create-your-go-application"></a>Создание приложения Go
+## <a name="create-your-go-application"></a>Создание приложения Go
 
 Далее создадим файл с именем `src/sample-app.go`:
 
@@ -118,7 +113,7 @@ $ cd src
 $ touch sample-app.go
 ```
 
-Откройте файл `sample-app.go`, добавьте пакет и импортируйте следующие библиотеки:
+Откройте `sample-app.go`, добавьте пакет и импортируйте следующие библиотеки.
 
 ```Go
 package main
@@ -157,7 +152,7 @@ func main() {
 * [аутентификация клиента](#authenticate-the-client);
 * [отправка запроса API](#send-an-api-request).
 
-## <a name="authenticate-the-client"></a>Аутентификация клиента
+### <a name="authenticate-the-client"></a>Аутентификация клиента
 
 > [!NOTE] 
 > В этом кратком руководстве предполагается, что вы уже [создали переменную среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключа Автозаполнения Bing, который называется `BING_AUTOSUGGEST_SUBSCRIPTION_KEY`, и конечной точки `BING_AUTOSUGGEST_ENDPOINT`.
@@ -174,9 +169,9 @@ client.Authorizer = autorest.NewCognitiveServicesAuthorizer(subscription_key)
 client.Endpoint = endpoint
 ```
 
-## <a name="send-an-api-request"></a>Отправка запроса API
+### <a name="send-an-api-request"></a>Отправка запроса API
 
-В том же методе используйте метод [AutoSuggestMethodAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.search.autosuggest.autosuggestclientextensions.autosuggestmethodasync?view=azure-dotnet#Microsoft_Azure_CognitiveServices_Search_AutoSuggest_AutoSuggestClientExtensions_AutoSuggestMethodAsync_Microsoft_Azure_CognitiveServices_Search_AutoSuggest_IAutoSuggestClient_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_Collections_Generic_IList_System_String__System_Threading_CancellationToken_) клиента для отправки запроса в Bing. Затем выполните итерацию предложений по ответу [Suggestions](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.search.autosuggest.models.suggestions?view=azure-dotnet) и выведите первое предложение.
+В том же методе используйте метод [AutoSuggestMethodAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.search.autosuggest.autosuggestclientextensions.autosuggestmethodasync?view=azure-dotnet#Microsoft_Azure_CognitiveServices_Search_AutoSuggest_AutoSuggestClientExtensions_AutoSuggestMethodAsync_Microsoft_Azure_CognitiveServices_Search_AutoSuggest_IAutoSuggestClient_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_String_System_Collections_Generic_IList_System_String__System_Threading_CancellationToken_) клиента для отправки запроса в Bing. Затем выполните итерацию по ответу [Suggestions](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.search.autosuggest.models.suggestions?view=azure-dotnet) и выведите на экран первое предложение.
 
 ```Go
 // This should return the query suggestion "xbox."
@@ -214,8 +209,8 @@ go run sample-app.go
 
 Если вы хотите очистить и удалить подписку Cognitive Services, вы можете удалить ресурс или группу ресурсов. При этом удаляются все ресурсы, связанные с ней.
 
-* [Портал](../../../cognitive-services-apis-create-account.md#clean-up-resources)
-* [Azure CLI](../../../cognitive-services-apis-create-account-cli.md#clean-up-resources)
+* [Удаление группы ресурсов на портале Azure](../../../cognitive-services-apis-create-account.md#clean-up-resources)
+* [Удаление группы ресурсов с помощью Azure CLI](../../../cognitive-services-apis-create-account-cli.md#clean-up-resources)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

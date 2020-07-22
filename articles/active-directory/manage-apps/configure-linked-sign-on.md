@@ -2,22 +2,21 @@
 title: Связанный вход для приложений Azure AD — платформа Microsoft Identity
 description: Настройка связанного единого входа (SSO) для корпоративных приложений Azure на платформе удостоверений Microsoft Identity (Azure AD)
 services: active-directory
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.service: active-directory
 ms.subservice: app-mgmt
-ms.topic: article
+ms.topic: how-to
 ms.workload: identity
 ms.date: 05/08/2019
-ms.author: mimart
+ms.author: kenwith
 ms.reviewer: arvinh,luleon
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dfe4aeb17f482cc9d4126efc6d65d3f7d173536b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 5cfcece43ae1b7d7bcf0c38feba14f1e82b29f18
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77063549"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84763488"
 ---
 # <a name="configure-linked-sign-on"></a>Настройка связанного единого входа
 
@@ -31,7 +30,7 @@ ms.locfileid: "77063549"
 
 1. Войдите на [портал Azure](https://portal.azure.com) в качестве администратора облачных приложений или администратора приложения для клиента Azure AD.
 
-1. Перейдите в раздел **Azure Active Directory** > **корпоративные приложения**. Вы увидите случайную выборку приложений, размещенных в арендаторе Azure AD. 
+1. Перейдите в раздел **Azure Active Directory**  >  **корпоративные приложения**. Вы увидите случайную выборку приложений, размещенных в арендаторе Azure AD. 
 
 1. В меню **Тип приложения** выберите **Все приложения** и щелкните **Применить**.
 

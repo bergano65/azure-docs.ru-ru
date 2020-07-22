@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 12/08/2018
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: d348f2696ef865616669af311477cb3a90a59a50
-ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
+ms.openlocfilehash: 4a3516d96e397944adcd31628a561a243e178c2d
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82995865"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86183041"
 ---
 # <a name="apple-fairplay-license-requirements-and-configuration"></a>Требования и конфигурация лицензии Apple FairPlay 
 
@@ -27,7 +27,7 @@ ms.locfileid: "82995865"
 
 Службы мультимедиа также предоставляют интерфейсы API, которые можно использовать для настройки лицензий FairPlay. В этом разделе рассматриваются требования к лицензиям FairPlay и показано, как настроить лицензию **FairPlay** с помощью API Служб мультимедиа. 
 
-## <a name="requirements"></a>Требования
+## <a name="requirements"></a>Requirements (Требования)
 
 При использовании Служб мультимедиа для шифрования содержимого HLS с помощью **Apple FairPlay** и доставки лицензий FairPlay требуется следующее.
 
@@ -61,6 +61,9 @@ ms.locfileid: "82995865"
   * DER-файл;
   * PFX-файл;
   * пароль для PFX-файла.
+  
+> [!NOTE]
+> Службы мультимедиа Azure не проверяют дату истечения срока действия сертификата во время упаковки или доставки ключей. После истечения срока действия сертификата он будет продолжать работать.
 
 ## <a name="fairplay-and-player-apps"></a>FairPlay и приложения проигрывателя
 

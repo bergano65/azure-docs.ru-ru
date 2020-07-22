@@ -6,15 +6,15 @@ ms.author: mimckitt
 ms.topic: conceptual
 ms.service: virtual-machine-scale-sets
 ms.subservice: faq
-ms.date: 05/24/2019
+ms.date: 06/30/2020
 ms.reviewer: jushiman
 ms.custom: mimckitt
-ms.openlocfilehash: a3074fdd10ef960a1c0b58b973d57da14d888af4
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: cf58b62001ce5d193e3a06973215d82138ad4b59
+ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83200162"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85855586"
 ---
 # <a name="azure-virtual-machine-scale-sets-faqs"></a>Часто задаваемые вопросы о масштабируемых наборах виртуальных машин Azure
 
@@ -224,17 +224,17 @@ az sf cluster create -h
 }
 ```
 
-Имя элемента конфигурации Linux | Обязательно | Тип | Описание
+Имя элемента конфигурации Linux | Обязательно | Тип | Описание:
 --- | --- | --- | ---
 ssh | Нет | Коллекция | Указывает конфигурацию ключа SSH для операционной системы Linux.
-path | Да | Строка | Указывает путь к файлу Linux, где должны храниться ключи SSH или сертификат.
+путь | Да | Строка | Указывает путь к файлу Linux, где должны храниться ключи SSH или сертификат.
 keyData | Да | Строка | Указывает открытый ключ SSH в кодировке Base64.
 
 Пример см. в [шаблоне быстрого запуска 101-vm-sshkey на сайте GitHub](https://github.com/Azure/azure-quickstart-templates/blob/master/101-vm-sshkey/azuredeploy.json).
 
 ### <a name="when-i-run-update-azvmss-after-adding-more-than-one-certificate-from-the-same-key-vault-i-see-the-following-message"></a>При выполнении команды `Update-AzVmss` после добавления нескольких сертификатов из одного хранилища ключей отображается следующая ошибка:
 
->Обновление-Азвмсс: Список секретов содержит повторяющиеся экземпляры/Subscriptions/ \< My-Subscription-id>/ресаурцеграупс/интернал-РГ-Дев/провидерс/Микрософт.кэйваулт/ваултс/интернал-кэйваулт-Дев, что запрещено.
+>Обновление-Азвмсс: Список секретов содержит повторяющиеся экземпляры/Subscriptions/ \<my-subscription-id> /ресаурцеграупс/интернал-РГ-Дев/провидерс/Микрософт.кэйваулт/ваултс/интернал-кэйваулт-Дев, что запрещено.
 
 Такая ситуация может произойти при попытке повторно добавить то же хранилище вместо использования нового сертификата хранилища для имеющегося исходного хранилища. Команда `Add-AzVmssSecret` не работает должным образом при добавлении дополнительных секретов.
 
@@ -332,7 +332,7 @@ Update-AzVmss -VirtualMachineScaleSet $vmss -ResourceGroup $rg -Name $vmssName
 
 С точки зрения соответствия масштабируемые наборы виртуальных машин являются основной частью вычислительной платформы Azure. Они используют те же группы, средства, процессы, методы развертывания, элементы управления безопасностью, JIT-компиляцию, возможности мониторинга, оповещения и т. д., что и поставщик вычислительных ресурсов. Масштабируемые наборы виртуальных машин соответствуют требованиям сферы платежных карт, так как поставщик вычислительных ресурсов является частью аттестации по требованиям Стандарта безопасности данных в сфере платежных карт (PCI DSS).
 
-Дополнительные сведения см. в [центре управления безопасностью Майкрософт](https://www.microsoft.com/TrustCenter/Compliance/PCI).
+Дополнительные сведения см. [в центре управления безопасностью Майкрософт](https://www.microsoft.com/TrustCenter/Compliance/PCI).
 
 ### <a name="does-managed-identities-for-azure-resources-work-with-virtual-machine-scale-sets"></a>Работают ли [управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/msi-overview) с масштабируемыми наборами виртуальных машин?
 
@@ -346,7 +346,7 @@ Update-AzVmss -VirtualMachineScaleSet $vmss -ResourceGroup $rg -Name $vmssName
 
 В Azure CLI есть возможность только удалить отдельный экземпляр. При попытке удалить один экземпляр с блокировкой, блокировка учитывается, и вы не сможете удалить этот экземпляр.
 
-## <a name="extensions"></a>Модули
+## <a name="extensions"></a>Расширения
 
 ### <a name="how-do-i-delete-a-virtual-machine-scale-set-extension"></a>Как удалить расширение масштабируемого набора виртуальных машин?
 
@@ -465,11 +465,11 @@ Update-AzVmss -ResourceGroupName $rgname -Name $vmssname -VirtualMachineScaleSet
     Update-AzVmss -ResourceGroupName $vmssResourceGroup -Name $vmssName -VirtualMachineScaleSet $vmss
     ```
 
-## <a name="networking"></a>Сеть
+## <a name="networking"></a>Сети
 
 ### <a name="is-it-possible-to-assign-a-network-security-group-nsg-to-a-scale-set-so-that-it-applies-to-all-the-vm-nics-in-the-set"></a>Можно ли назначить группу безопасности сети масштабируемому набору, чтобы она применялась ко всем сетевым картам виртуальных машин в наборе?
 
-Да. Группу безопасности сети можно применить непосредственно к масштабируемому набору, указав ее в разделе networkInterfaceConfigurations сетевого профиля. Пример
+Да. Группу безопасности сети можно применить непосредственно к масштабируемому набору, указав ее в разделе networkInterfaceConfigurations сетевого профиля. Пример.
 
 ```json
 "networkProfile": {
@@ -523,7 +523,7 @@ IP-адреса выбираются из указанной подсети.
 
 ### <a name="can-i-use-scale-sets-with-accelerated-networking"></a>Можно ли использовать масштабируемые наборы с ускоренной сетью?
 
-Да. Чтобы использовать ускоренную сеть, в настройках networkInterfaceConfigurations масштабируемого набора задайте для параметра enableAcceleratedNetworking значение true. Например.
+Да. Чтобы использовать ускоренную сеть, в настройках networkInterfaceConfigurations масштабируемого набора задайте для параметра enableAcceleratedNetworking значение true. Например:
 
 ```json
 "networkProfile": {
@@ -543,7 +543,7 @@ IP-адреса выбираются из указанной подсети.
 
 ### <a name="how-can-i-configure-the-dns-servers-used-by-a-scale-set"></a>Как настроить DNS-серверы, используемые масштабируемым набором?
 
-Чтобы создать масштабируемый набор виртуальных машин с пользовательской конфигурацией DNS, добавьте пакет JSON dnsSettings в раздел networkInterfaceConfigurations конфигурации масштабируемого набора. Пример
+Чтобы создать масштабируемый набор виртуальных машин с пользовательской конфигурацией DNS, добавьте пакет JSON dnsSettings в раздел networkInterfaceConfigurations конфигурации масштабируемого набора. Пример.
 
 ```json
     "dnsSettings":{
@@ -553,7 +553,7 @@ IP-адреса выбираются из указанной подсети.
 
 ### <a name="how-can-i-configure-a-scale-set-to-assign-a-public-ip-address-to-each-vm"></a>Как настроить масштабируемый набор, чтобы назначать общедоступный IP-адрес каждой виртуальной машине?
 
-Чтобы создать масштабируемый набор виртуальных машин, который назначает общедоступный IP-адрес каждой виртуальной машине, убедитесь, что версия API ресурса Microsoft. COMPUTE/virtualMachineScaleSets равна 2017-03-30, и добавьте пакет JSON _publicipaddressconfiguration_ в раздел ipConfigurations масштабируемого набора. Пример
+Чтобы создать масштабируемый набор виртуальных машин, который назначает общедоступный IP-адрес каждой виртуальной машине, убедитесь, что версия API ресурса Microsoft. COMPUTE/virtualMachineScaleSets равна 2017-03-30, и добавьте пакет JSON _publicipaddressconfiguration_ в раздел ipConfigurations масштабируемого набора. Пример.
 
 ```json
     "publicipaddressconfiguration": {

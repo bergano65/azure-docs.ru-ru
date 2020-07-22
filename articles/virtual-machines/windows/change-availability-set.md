@@ -6,12 +6,12 @@ author: cynthn
 ms.topic: article
 ms.date: 01/31/2020
 ms.author: cynthn
-ms.openlocfilehash: 092dafff6622d3402322eb96d0fe4215e52e16b5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e014dbe440f1b7baf39c290b8b7ab8fcaea0bada
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76964929"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86165861"
 ---
 # <a name="change-the-availability-set-for-a-vm"></a>Изменение группы доступности для виртуальной машины
 Ниже приведены инструкции по изменению группы доступности виртуальной машины с помощью Azure PowerShell. Виртуальную машину можно добавить в группу доступности только при ее создании. Чтобы изменить группу доступности, необходимо удалить и повторно создать виртуальную машину. 
@@ -19,6 +19,8 @@ ms.locfileid: "76964929"
 Эта статья относится к виртуальным машинам Linux и Windows.
 
 Последнее тестирование этой статьи выполнялось 12.02.2019 г. с помощью [Azure Cloud Shell](https://shell.azure.com/powershell) и [модуля Az PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps) версии 1.2.0.
+
+В этом примере не проверяется, подключена ли виртуальная машина к подсистеме балансировки нагрузки. Если виртуальная машина подключена к подсистеме балансировки нагрузки, необходимо обновить скрипт для обработки этого случая. 
 
 
 ## <a name="change-the-availability-set"></a>Изменение группы доступности 
@@ -102,7 +104,7 @@ ms.locfileid: "76964929"
        -DisableBginfoExtension
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Увеличьте емкость хранилища для виртуальной машины, добавив дополнительный [диск данных](attach-managed-disk-portal.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 

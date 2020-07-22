@@ -4,26 +4,24 @@ description: Если у вас есть внутренние учетные з�
 services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 04/12/2020
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 783fc0fa6f6c4e6c918fa3ff5fe0b53a71fa0178
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c03c2c55988df04cc45ef4a1d66d959513c1626d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81680178"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85551373"
 ---
 # <a name="invite-internal-users-to-b2b-collaboration"></a>Пригласите внутренних пользователей в службу совместной работы B2B
 
-|     |
-| --- |
-| Приглашение внутренних пользователей использовать службу совместной работы B2B — это общедоступная Предварительная версия функции Azure Active Directory. Дополнительные сведения о предварительных версиях см. в разделе Дополнительные [условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). |
-|     |
+> [!NOTE]
+> Приглашение внутренних пользователей использовать службу совместной работы B2B — это общедоступная Предварительная версия функции Azure Active Directory. См. подробные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Прежде чем обеспечить доступность службы совместной работы Azure AD B2B, организации могут совместно работать с распространителями, поставщиками, поставщиками и другими гостевыми пользователями, настроив для них внутренние учетные данные. Если у вас есть внутренние гостевые пользователи, вы можете пригласить их на использование службы совместной работы B2B, чтобы вы могли воспользоваться преимуществами Azure AD B2B. Гостевые пользователи B2B смогут использовать свои удостоверения и учетные данные для входа, и вам не потребуется сохранять пароли или управлять жизненным циклом учетных записей.
 
@@ -62,7 +60,7 @@ ms.locfileid: "81680178"
 ```powershell
 Uninstall-Module AzureADPreview
 Install-Module AzureADPreview
-$ADGraphUser = Get-AzureADUser -searchstring "<<external email>>"
+$ADGraphUser = Get-AzureADUser -objectID "UPN of Internal User"
 $msGraphUser = New-Object Microsoft.Open.MSGraph.Model.User -ArgumentList $ADGraphUser.ObjectId
 New-AzureADMSInvitation -InvitedUserEmailAddress <<external email>> -SendInvitationMessage $True -InviteRedirectUrl "http://myapps.microsoft.com" -InvitedUser $msGraphUser
 ```

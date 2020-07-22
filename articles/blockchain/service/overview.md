@@ -1,15 +1,15 @@
 ---
 title: Общие сведения о службе "Блокчейн Azure"
 description: Общие сведения о службе "Блокчейн Azure".
-ms.date: 03/30/2020
+ms.date: 05/22/2020
 ms.topic: overview
 ms.reviewer: ravastra
-ms.openlocfilehash: 821bac0da13209e5126f5bab109aa0895ade840a
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: d7aedbc837a58a65fe4c29dbdeed8662d94fc534
+ms.sourcegitcommit: 6fd28c1e5cf6872fb28691c7dd307a5e4bc71228
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80529144"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85214083"
 ---
 # <a name="what-is-azure-blockchain-service"></a>Что собой представляет служба "Блокчейн Azure"?
 
@@ -59,7 +59,7 @@ ms.locfileid: "80529144"
 
 ## <a name="develop-using-familiar-development-tools"></a>Разработка с использованием привычных инструментов
 
-Используя финансовый протокол Quorum Ethereum с открытым кодом, вы можете разрабатывать приложения для службы "Блокчейн Azure" так же, как и для существующих приложений Ethereum. Благодаря сотрудничеству с ведущими партнерами в отрасли, расширение Visual Studio Code для комплекта SDK Блокчейна Azure позволяет разработчикам использовать привычные инструменты, такие как Truffle Suite, для создания смарт-контрактов. С помощью расширения для комплекта SDK Блокчейна Azure разработчики могут создать консорциум или подключиться к существующему консорциуму, чтобы вы могли создавать и развертывать смарт-контракты из одной интегрированной среды разработки. С помощью расширения Visual Studio Code для Блокчейна Azure вы можете создать консорциум или подключиться к существующему консорциуму, чтобы создавать и развертывать смарт-контракты из одной интегрированной среды разработки. Чтобы узнать больше, ознакомьтесь с [комплектом SDK для Блокчейна Azure в marketplace VS Code](https://aka.ms/vscodebcextension) и прочитайте руководство пользователя по комплекту SDK для Блокчейна Azure на [этой странице](https://aka.ms/vscodebcextensionwiki).
+Используя финансовый протокол Quorum Ethereum с открытым кодом, вы можете разрабатывать приложения для службы "Блокчейн Azure" так же, как и для существующих приложений Ethereum. Благодаря сотрудничеству с ведущими партнерами в отрасли, расширение Visual Studio Code для комплекта SDK Блокчейна Azure позволяет разработчикам использовать привычные инструменты, такие как Truffle Suite, для создания смарт-контрактов. С помощью расширения Visual Studio Code для Блокчейна Azure вы можете создать консорциум или подключиться к существующему консорциуму, чтобы создавать и развертывать смарт-контракты из одной интегрированной среды разработки. Чтобы узнать больше, ознакомьтесь с [комплектом SDK для Блокчейна Azure в marketplace VS Code](https://aka.ms/vscodebcextension) и прочитайте руководство пользователя по комплекту SDK для Блокчейна Azure на [этой странице](https://aka.ms/vscodebcextensionwiki).
 
 ## <a name="publish-blockchain-data"></a>Публикация данных блокчейна
 
@@ -69,13 +69,13 @@ ms.locfileid: "80529144"
 
 Посещайте [блог, посвященный Блокчейну Azure](https://azure.microsoft.com/blog/topics/blockchain/), чтобы оставаться в курсе предложений услуг для блокчейна и просматривать информацию, предоставляемую группой разработчиков Блокчейна Azure.
 
-Чтобы отправить отзыв о продукте или запросить новые функции, опубликуйте обращение на [форуме обратной связи по Блокчейну Azure](https://aka.ms/blockchainuservoice).
+Чтобы отправить отзыв о продукте или запросить новые функции, опубликуйте обращение на [форуме обратной связи по блокчейну Azure](https://aka.ms/blockchainuservoice).
 
 ### <a name="community-support"></a>Поддержка сообщества
 
 Получите возможность проконсультироваться с инженерами Майкрософт и специалистами из сообщества Блокчейна Azure.
 
-* [Форум MSDN по Блокчейну Azure](https://social.msdn.microsoft.com/Forums/home?forum=azureblockchain)
+* [Страница с вопросами о службе "Блокчейн Azure" (раздел вопросов и ответов на сайте Майкрософт)](https://docs.microsoft.com/answers/topics/azure-blockchain-service.html)
 * [Техническое сообщество Майкрософт](https://techcommunity.microsoft.com/t5/Blockchain/bd-p/AzureBlockchain)
 * [Stack Overflow](https://stackoverflow.com/questions/tagged/AzureBlockchainService)
 

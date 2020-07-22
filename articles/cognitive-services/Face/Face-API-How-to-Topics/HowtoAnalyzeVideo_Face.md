@@ -10,12 +10,12 @@ ms.subservice: face-api
 ms.topic: sample
 ms.date: 03/01/2018
 ms.author: sbowles
-ms.openlocfilehash: ab3f596000216e8555bb84d0d47aff9a6e969eeb
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: d52f4ad7be6ce31fd2d01208536945c1f9ab2d7d
+ms.sourcegitcommit: 55b2bbbd47809b98c50709256885998af8b7d0c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76169899"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84986718"
 ---
 # <a name="example-how-to-analyze-videos-in-real-time"></a>Пример Анализ видео в реальном времени
 
@@ -201,13 +201,12 @@ namespace VideoFrameConsoleApplication
 
 Чтобы приступить к работе с этим примером, сделайте следующее:
 
-1. Получите ключи API-интерфейсов зрения в разделе [Подписки](https://azure.microsoft.com/try/cognitive-services/). Для анализа кадров видео можно использовать следующие API-интерфейсы:
-    - [API компьютерного зрения](https://docs.microsoft.com/azure/cognitive-services/computer-vision/home)
-    - [API Распознавания лиц](https://docs.microsoft.com/azure/cognitive-services/face/overview)
-
-2. Клонируйте репозиторий GitHub [Cognitive-Samples-VideoFrameAnalysis](https://github.com/Microsoft/Cognitive-Samples-VideoFrameAnalysis/).
-
-3. Откройте пример в Visual Studio 2015, создайте и запустите примеры приложений.
+1. Создайте [учетную запись Azure](https://azure.microsoft.com/free/cognitive-services/). Если она у вас уже есть, перейдите к следующему шагу.
+2. Создайте ресурсы для Компьютерного зрения и Распознавания лиц на портале Azure, чтобы получить ключ и конечную точку. При настройке обязательно выберите уровень "Бесплатный" (F0).
+   - [Компьютерное зрение](https://portal.azure.com/#create/Microsoft.CognitiveServicesComputerVision)
+   - [Распознавание лиц.](https://portal.azure.com/#create/Microsoft.CognitiveServicesFace) После развертывания ресурсов щелкните **Перейти к ресурсу**, чтобы получить ключ и конечную точку для каждого ресурса. 
+3. Клонируйте репозиторий GitHub [Cognitive-Samples-VideoFrameAnalysis](https://github.com/Microsoft/Cognitive-Samples-VideoFrameAnalysis/).
+4. Откройте пример в Visual Studio, выполните сборку и запуск примеров приложений.
     - Для примера BasicConsoleSample ключ Распознавания лиц содержится непосредственно в коде [BasicConsoleSample/Program.cs](https://github.com/Microsoft/Cognitive-Samples-VideoFrameAnalysis/blob/master/Windows/BasicConsoleSample/Program.cs).
     - Для LiveCameraSample ключи следует ввести в области "Параметры" приложения. Они будут сохраняться во всех сеансах как пользовательские данные.
         
@@ -216,7 +215,7 @@ namespace VideoFrameConsoleApplication
 
 ## <a name="summary"></a>Сводка
 
-С помощью этого руководства вы научились запускать анализ потоков видео в реальном времени с использованием API распознавания лиц, API компьютерного зрения и API распознавания эмоций, а также научились приступить к работе с использованием наших примеров кода. Вы можете создать свое приложения, используя бесплатные ключи API на странице регистрации Azure Cognitive Services [здесь](https://azure.microsoft.com/try/cognitive-services/). 
+С помощью этого руководства вы научились запускать анализ потоков видео в реальном времени с использованием API распознавания лиц, API компьютерного зрения и API распознавания эмоций, а также научились приступить к работе с использованием наших примеров кода.
 
 Отправляйте отзывы и предложения в [репозиторий GitHub](https://github.com/Microsoft/Cognitive-Samples-VideoFrameAnalysis/) или более подробные отзывы об API — на наш [сайт UserVoice](https://cognitive.uservoice.com/).
 

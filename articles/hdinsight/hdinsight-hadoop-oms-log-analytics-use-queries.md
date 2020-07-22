@@ -5,17 +5,17 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/02/2019
-ms.openlocfilehash: 65e85548420116bdfcab87fe9f81a20e66226beb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c2ddcd8ea3524b4afdfa7f70d21f0cba96975f72
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74803843"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86085367"
 ---
-# <a name="query-azure-monitor-logs-to-monitor-hdinsight-clusters"></a>Запрос журналов Azure Monitor для мониторинга кластеров HDInsight
+# <a name="query-azure-monitor-logs-to-monitor-hdinsight-clusters"></a>Мониторинг кластеров HDInsight с помощью запросов к журналам Azure Monitor
 
 Ознакомьтесь с некоторыми базовыми сценариями использования журналов Azure Monitor для мониторинга кластеров Azure HDInsight.
 
@@ -127,7 +127,7 @@ search in (metrics_resourcemanager_queue_root_default_CL) *
 
 Дополнительные сведения см. в статье [Создание и просмотр оповещений метрик, а также управление ими с помощью Azure Monitor](../azure-monitor/platform/alerts-metric.md).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>Дополнительно
 
 * [Начало работы с запросами к журналам Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
 * [Создание пользовательских представлений с помощью конструктора представлений в Azure Monitor](../azure-monitor/platform/view-designer.md)

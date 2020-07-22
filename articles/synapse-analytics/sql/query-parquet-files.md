@@ -1,172 +1,148 @@
 ---
-title: Запрос файлов Parquet с помощью SQL по запросу (Предварительная версия)
-description: В этой статье вы узнаете, как запрашивать файлы Parquet с помощью SQL по запросу (Предварительная версия).
+title: Запрос файлов Parquet с помощью SQL по запросу (предварительная версия)
+description: Из этой статьи вы узнаете, как запрашивать файлы Parquet, используя решение "SQL по запросу" (предварительная версия).
 services: synapse analytics
 author: azaricstefan
 ms.service: synapse-analytics
 ms.topic: how-to
-ms.subservice: ''
-ms.date: 04/15/2020
+ms.subservice: sql
+ms.date: 05/20/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: 0b272a8c8ce81fc40585014e5930f5d7b1b5f2c0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 4bab1ef4588a705f0dd6cdb34be8272868f826e9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81431700"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85207572"
 ---
-# <a name="query-parquet-files-using-sql-on-demand-preview-in-azure-synapse-analytics"></a>Запрос файлов Parquet с помощью SQL по запросу (Предварительная версия) в Azure синапсе Analytics
+# <a name="query-parquet-files-using-sql-on-demand-preview-in-azure-synapse-analytics"></a>Запрос файлов Parquet с помощью SQL по запросу (предварительная версия) в Azure Synapse Analytics
 
-В этой статье вы узнаете, как написать запрос с помощью SQL по запросу (Предварительная версия), который будет считывать файлы Parquet.
+В этой статье вы узнаете, как с помощью SQL по запросу (предварительная версия) написать запрос, который будет считывать файлы Parquet.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
-Прежде чем читать оставшуюся часть этой статьи, ознакомьтесь со следующими статьями:
-
-- [Изначальная настройка](query-data-storage.md#first-time-setup)
-- [Предварительные требования](query-data-storage.md#prerequisites)
+Первым делом вам нужно **создать базу данных**, у которой источник данных ссылается на учетную запись хранения [набора NYC Yellow Taxi](https://azure.microsoft.com/services/open-datasets/catalog/nyc-taxi-limousine-commission-yellow-taxi-trip-records/). Затем инициализируйте объекты, выполнив [скрипт настройки](https://github.com/Azure-Samples/Synapse/blob/master/SQL/Samples/LdwSample/SampleDB.sql) для этой базы данных. Этот сценарий установки создает источники данных, учетные данные области базы данных и форматы внешних файлов, которые используются в этих примерах.
 
 ## <a name="dataset"></a>Dataset
 
-Вы можете запросить файлы Parquet так же, как и CSV-файлы. Единственное отличие заключается в том, что параметр FILEFORMAT должен иметь значение PARQUET. В примерах этой статьи показаны особенности чтения файлов Parquet.
+В этом примере используется набор данных [NYC Yellow Taxi](https://azure.microsoft.com/services/open-datasets/catalog/nyc-taxi-limousine-commission-yellow-taxi-trip-records/). Запросить файлы Parquet можно таким же образом, как вы [считываете CSV-файлы](query-parquet-files.md). Единственное различие состоит в том, что параметр `FILEFORMAT` должен иметь значение `PARQUET`. В примерах в этой статье показаны особенности считывания файлов Parquet.
 
-> [!NOTE]
-> При чтении файлов Parquet указывать столбцы в предложении OPENROWSET WITH не требуется. SQL по запросу будет использовать метаданные в файле Parquet и привязывать столбцы по имени.
+## <a name="query-set-of-parquet-files"></a>Запрашивание набора файлов Parquet
 
-Для образцов запросов вы будете использовать папку *Parquet/такси* . Он содержит данные о Нью такси-желтом путешествии, которые записываются с 2016 июля. до июня 2018.
-
-Данные секционированы по годам и месяцам, а структура папок выглядит следующим образом:
-
-- год = 2016
-  - месяц = 6
-  - ...
-  - месяц = 12
-- year = 2017 г.
-  - месяц = 1
-  - ...
-  - месяц = 12
-- year = 2018
-  - месяц = 1
-  - ...
-  - месяц = 6
-
-## <a name="query-set-of-parquet-files"></a>Набор запросов Parquet файлов
-
-При запросе файлов Parquet можно указать только интересующие столбцы.
+При запросе файлов Parquet можно указать только необходимые столбцы.
 
 ```sql
 SELECT
-        YEAR(pickup_datetime),
-        passenger_count,
+        YEAR(tpepPickupDateTime),
+        passengerCount,
         COUNT(*) AS cnt
 FROM  
     OPENROWSET(
-        BULK 'https://sqlondemandstorage.blob.core.windows.net/parquet/taxi/*/*/*',
+        BULK 'puYear=2018/puMonth=*/*.snappy.parquet',
+        DATA_SOURCE = 'YellowTaxi',
         FORMAT='PARQUET'
     ) WITH (
-        pickup_datetime DATETIME2,
-        passenger_count INT
+        tpepPickupDateTime DATETIME2,
+        passengerCount INT
     ) AS nyc
 GROUP BY
-    passenger_count,
-    YEAR(pickup_datetime)
+    passengerCount,
+    YEAR(tpepPickupDateTime)
 ORDER BY
-    YEAR(pickup_datetime),
-    passenger_count;
+    YEAR(tpepPickupDateTime),
+    passengerCount;
 ```
 
 ## <a name="automatic-schema-inference"></a>Автоматический вывод схемы
 
-При чтении файлов Parquet не нужно использовать предложение OPENROWSET WITH. Имена столбцов и типов данных автоматически считываются из файлов Parquet.
+При чтении файлов Parquet не нужно использовать предложение OPENROWSET WITH. Имена столбцов и типы данных автоматически считываются из файлов Parquet.
 
-В следующем примере показаны возможности автоматического вывода схемы для файлов Parquet. Он возвращает число строк в сентябре 2017 без указания схемы.
-
-> [!NOTE]
-> При чтении файлов Parquet не нужно указывать столбцы в предложении OPENROWSET WITH. В этом случае служба запросов по запросу SQL будет использовать метаданные в файле Parquet и привязывать столбцы по имени.
-
-```sql
-SELECT
-    COUNT_BIG(*)
-FROM
-    OPENROWSET(
-        BULK 'https://sqlondemandstorage.blob.core.windows.net/parquet/taxi/year=2017/month=9/*.parquet',
-        FORMAT='PARQUET'
-    ) AS nyc;
-```
-
-### <a name="query-partitioned-data"></a>Запрос секционированных данных
-
-Набор данных, указанный в этом примере, разделен на отдельные вложенные папки. Вы можете ориентироваться на конкретные секции с помощью функции FilePath. В этом примере показаны FARE суммы по годам, месяцам и payment_type за первые три месяца 2017.
+В приведенном ниже примере показаны возможности автоматического вывода схемы для файлов Parquet. Он возвращает число строк за сентябрь 2017 г. без указания схемы.
 
 > [!NOTE]
-> Запрос SQL по запросу совместим со схемой секционирования Hive/Hadoop.
+> При чтении файлов Parquet указывать столбцы в предложении OPENROWSET WITH не требуется. В этом случае служба запросов SQL по запросу будет использовать метаданные в файле Parquet и привязывать столбцы по имени.
 
 ```sql
-SELECT
-    nyc.filepath(1) AS [year],
-    nyc.filepath(2) AS [month],
-    payment_type,
-    SUM(fare_amount) AS fare_total
-FROM
+SELECT TOP 10 *
+FROM  
     OPENROWSET(
-        BULK 'https://sqlondemandstorage.blob.core.windows.net/parquet/taxi/year=*/month=*/*.parquet',
+        BULK 'puYear=2018/puMonth=*/*.snappy.parquet',
+        DATA_SOURCE = 'YellowTaxi',
         FORMAT='PARQUET'
     ) AS nyc
+```
+
+### <a name="query-partitioned-data"></a>Запрашивание секционированных данных
+
+Набор данных, представленный в этом примере, разделен на отдельные вложенные папки. Вы можете выбрать конкретные разделы с помощью функции filepath. В этом примере показаны суммы по тарифам за год, месяц и payment_type за первые три месяца 2017 года.
+
+> [!NOTE]
+> Запрос службы "SQL по запросу" совместим со схемой секционирования Hive на платформе Hadoop.
+
+```sql
+SELECT
+        YEAR(tpepPickupDateTime),
+        passengerCount,
+        COUNT(*) AS cnt
+FROM  
+    OPENROWSET(
+        BULK 'puYear=*/puMonth=*/*.snappy.parquet',
+        DATA_SOURCE = 'YellowTaxi',
+        FORMAT='PARQUET'
+    ) nyc
 WHERE
     nyc.filepath(1) = 2017
     AND nyc.filepath(2) IN (1, 2, 3)
-    AND pickup_datetime BETWEEN CAST('1/1/2017' AS datetime) AND CAST('3/31/2017' AS datetime)
+    AND tpepPickupDateTime BETWEEN CAST('1/1/2017' AS datetime) AND CAST('3/31/2017' AS datetime)
 GROUP BY
-    nyc.filepath(1),
-    nyc.filepath(2),
-    payment_type
+    passengerCount,
+    YEAR(tpepPickupDateTime)
 ORDER BY
-    nyc.filepath(1),
-    nyc.filepath(2),
-    payment_type;
+    YEAR(tpepPickupDateTime),
+    passengerCount;
 ```
 
 ## <a name="type-mapping"></a>Сопоставление типов
 
-Файлы Parquet содержат описания типов для каждого столбца. В следующей таблице описано, как типы Parquet сопоставляются с собственными типами SQL.
+Файлы Parquet содержат описания типов для каждого столбца. В приведенной ниже таблице показано, как типы Parquet сопоставляются с собственными типами SQL.
 
-| Тип Parquet | Логический тип Parquet (Аннотация) | Тип данных SQL |
+| Тип Parquet | Логический тип Parquet (заметка) | Тип данных SQL |
 | --- | --- | --- |
 | BOOLEAN | | bit |
-| ДВОИЧНЫЙ/BYTE_ARRAY | | varbinary |
+| BINARY / BYTE_ARRAY | | varbinary |
 | DOUBLE | | FLOAT |
 | FLOAT | | real |
-| ТИПА | | INT |
+| INT32 | | INT |
 | INT64 | | BIGINT |
 | INT96 | |datetime2 |
 | FIXED_LEN_BYTE_ARRAY | |binary |
 | BINARY |UTF8 |varchar \*(параметры сортировки UTF8) |
 | BINARY |STRING |varchar \*(параметры сортировки UTF8) |
-| BINARY |ПЕРЕЧИСЛЕНИЯ|varchar \*(параметры сортировки UTF8) |
+| BINARY |ENUM|varchar \*(параметры сортировки UTF8) |
 | BINARY |UUID |UNIQUEIDENTIFIER |
 | BINARY |DECIMAL |Decimal |
-| BINARY |JSON |varchar (max) \*(параметры сортировки UTF8) |
+| BINARY |JSON |varchar(max) \*(параметры сортировки UTF8) |
 | BINARY |BSON |varbinary(max) |
 | FIXED_LEN_BYTE_ARRAY |DECIMAL |Decimal |
-| BYTE_ARRAY |INTERVAL |varchar (max), сериализованный в стандартизированный формат |
-| ТИПА |INT (8, true) |smallint |
-| ТИПА |INT (16, true) |smallint |
-| ТИПА |INT (32, true) |INT |
-| ТИПА |INT (8, false) |tinyint |
-| ТИПА |INT (16, false) |INT |
-| ТИПА |INT (32, false) |BIGINT |
-| ТИПА |DATE |Дата |
-| ТИПА |DECIMAL |Decimal |
-| ТИПА |время ()|time |
-| INT64 |INT (64, true) |BIGINT |
-| INT64 |INT (64, false) |десятичное число (20, 0) |
+| BYTE_ARRAY |INTERVAL |varchar(max), сериализованный в стандартизированный формат |
+| INT32 |INT(8, true) |smallint |
+| INT32 |INT(16, true) |smallint |
+| INT32 |INT(32, true) |INT |
+| INT32 |INT(8, false) |tinyint |
+| INT32 |INT(16, false) |INT |
+| INT32 |INT(32, false) |BIGINT |
+| INT32 |DATE |Дата |
+| INT32 |DECIMAL |Decimal |
+| INT32 |TIME (MILLIS)|time |
+| INT64 |INT(64, true) |BIGINT |
+| INT64 |INT(64, false) |decimal(20,0) |
 | INT64 |DECIMAL |Decimal |
-| INT64 |ВРЕМЯ (МИКРОСРЕДЫ И NANO) |time |
-|INT64 |МЕТКА ВРЕМЕНИ (НА«НА», МИКРОИЛИ NANOS) |datetime2 |
-|[Сложный тип](https://github.com/apache/parquet-format/blob/master/LogicalTypes.md#lists) |Список |varchar (max), сериализованный в JSON |
-|[Сложный тип](https://github.com/apache/parquet-format/blob/master/LogicalTypes.md#maps)|MAP|varchar (max), сериализованный в JSON |
+| INT64 |TIME (MICROS / NANOS) |time |
+|INT64 |TIMESTAMP (MILLIS / MICROS / NANOS) |datetime2 |
+|[Сложный тип](https://github.com/apache/parquet-format/blob/master/LogicalTypes.md#lists) |Список |varchar(max), сериализованный в JSON |
+|[Сложный тип](https://github.com/apache/parquet-format/blob/master/LogicalTypes.md#maps)|MAP|varchar(max), сериализованный в JSON |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Перейдите к следующей статье, чтобы узнать, как [запросить вложенные типы Parquet](query-parquet-nested-types.md).

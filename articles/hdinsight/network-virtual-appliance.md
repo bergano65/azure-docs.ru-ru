@@ -5,14 +5,14 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
-ms.date: 05/06/2020
-ms.openlocfilehash: cbc2104ae3c55ae3670867b7a253d812f3a4be0e
-ms.sourcegitcommit: 602e6db62069d568a91981a1117244ffd757f1c2
+ms.topic: how-to
+ms.date: 06/30/2020
+ms.openlocfilehash: 805be8d5c9ab4f6316251adbb9bce3e99f4fa01d
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82864712"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86086676"
 ---
 # <a name="configure-network-virtual-appliance-in-azure-hdinsight"></a>Настройка сетевого виртуального устройства в Azure HDInsight
 
@@ -21,13 +21,14 @@ ms.locfileid: "82864712"
 
 Брандмауэр Azure автоматически настраивается на разрешение трафика для многих распространенных важных сценариев. Для использования другого сетевого виртуального устройства потребуется настроить ряд дополнительных функций. При настройке сетевого виртуального устройства учитывайте следующие факторы:
 
-* В разделе "Конечные точки" должны быть указаны конечные точки для включенных служб.
+* Службы, поддерживающие конечную точку службы, можно настроить с помощью конечных точек службы, что приведет к обходу NVA, обычно в отношении затрат или соображений производительности.
 * Зависимости IP-адресов предназначены для трафика, отличного от HTTP и S (трафик TCP и UDP).
-* Полные доменные конечные точки HTTP и HTTPS можно разместить на устройстве NVA.
-* Конечные точки HTTP и HTTPS с подстановочными знаками — это зависимости, которые могут различаться в зависимости от количества квалификаторов.
+* Полные доменные конечные точки HTTP и HTTPS могут быть список разрешений на устройстве NVA.
 * Назначьте таблицу маршрутов, созданную в подсети HDInsight.
 
 ## <a name="service-endpoint-capable-dependencies"></a>Зависимости, поддерживающие конечную точку службы
+
+При необходимости можно включить одну или несколько из следующих конечных точек службы, что приведет к обходу NVA. Этот параметр может быть полезен для больших объемов передачи данных, чтобы сэкономить на затратах, а также для оптимизации производительности. 
 
 | **Конечная точка** |
 |---|
@@ -39,16 +40,14 @@ ms.locfileid: "82864712"
 
 | **Конечная точка** | **Сведения** |
 |---|---|
-| \*:123 | Проверка часов NTP. Трафик проверяется в нескольких конечных точках на порте 123. |
-| IP-адреса, опубликованные [здесь](hdinsight-management-ip-addresses.md) | Эти IP-адреса являются службой HDInsight. |
-| Частные IP-адреса AAD DS для кластеров ESP |
-| \*: 16800 для активации KMS Windows |
-| \*12000 для Log Analytics |
+| IP-адреса, опубликованные [здесь](hdinsight-management-ip-addresses.md) | Эти IP-адреса предназначены для элемента управления HDInsight и должны включаться в UDR во избежание асимметричной маршрутизации. |
+| AAD — частные IP-адреса DS | Требуется только для кластеров ESP|
+
 
 ### <a name="fqdn-httphttps-dependencies"></a>Зависимости FQDN протокола HTTP/HTTPS
 
 > [!Important]
-> Приведенный ниже список содержит лишь несколько наиболее важных полных доменных имен. Для настройки NVA [в этом файле](https://github.com/Azure-Samples/hdinsight-fqdn-lists/blob/master/HDInsightFQDNTags.json)можно получить дополнительные полные доменные имена (в основном служба хранилища Azure и служебная шина Azure).
+> Приведенный ниже список содержит лишь несколько наиболее важных полных доменных имен. Полный список полных доменных имен (в основном служба хранилища Azure и служебная шина Azure) можно получить для настройки NVA [в этом файле](https://github.com/Azure-Samples/hdinsight-fqdn-lists/blob/master/HDInsightFQDNTags.json). Эти зависимости используются операциями плоскости управления HDInsight для успешного создания кластера.
 
 | **Конечная точка**                                                          |
 |---|
@@ -56,20 +55,8 @@ ms.locfileid: "82864712"
 | security.ubuntu.com:80                                                |
 | ocsp.msocsp.com:80                                                    |
 | ocsp.digicert.com:80                                                  |
-| wawsinfraprodbay063.blob.core.windows.net:443                         |
-| registry-1.docker.io:443                                              |
-| auth.docker.io:443                                                    |
-| production.cloudflare.docker.com:443                                  |
-| download.docker.com:443                                               |
-| us.archive.ubuntu.com:80                                              |
-| download.mono-project.com:80                                          |
-| packages.treasuredata.com:80                                          |
-| security.ubuntu.com:80                                                |
-| azure.archive.ubuntu.com:80                                           |
-| ocsp.msocsp.com:80                                                    |
-| ocsp.digicert.com:80                                                  |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Ограничение исходящего трафика с помощью брандмауэра](./hdinsight-restrict-outbound-traffic.md)
 * [Архитектура виртуальной сети Azure HDInsight](hdinsight-virtual-network-architecture.md)

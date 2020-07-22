@@ -9,15 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 01/24/2020
+ms.date: 04/29/2020
 ms.author: juliako
 ms.custom: ''
-ms.openlocfilehash: 3ea6c4226a59ba020a477cc5811033ff3dc3c2e9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 57a8d308955719be0d84b87fb3a23c6f510c2836
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76772079"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84234901"
 ---
 # <a name="use-the-content-aware-encoding-preset-to-find-the-optimal-bitrate-value-for-a-given-resolution"></a>Используйте предустановку кодирования с поддержкой содержимого, чтобы найти оптимальное значение скорости для заданного разрешения.
 
@@ -55,9 +54,10 @@ ms.locfileid: "76772079"
 
 Вы можете создать преобразования, использующие эту предустановку, как показано ниже. 
 
-> [!TIP]
-> В разделе [дальнейшие действия](#next-steps) приведены учебники, в которых используются преобразование выходные данные. Выходной ресурс можно доставить из конечных точек потоковой передачи служб мультимедиа в таких протоколах, как MPEG-ТИРЕ и HLS (как показано в учебниках).
+В разделе [дальнейшие действия](#next-steps) приведены учебники, в которых используются преобразование выходные данные. Выходной ресурс можно доставить из конечных точек потоковой передачи служб мультимедиа в таких протоколах, как MPEG-ТИРЕ и HLS (как показано в учебниках).
 
+> [!NOTE]
+> Обязательно используйте предустановку **контентаваринкодинг** , не контентаваринкодинжекспериментал.
 
 ```csharp
 TransformOutput[] output = new TransformOutput[]
@@ -76,12 +76,12 @@ TransformOutput[] output = new TransformOutput[]
 ```
 
 > [!NOTE]
-> Счета для заданий кодирования `ContentAwareEncoding` , использующих предустановку, выставляются на основе выходных минут. 
-
+> Счета для заданий кодирования, использующих `ContentAwareEncoding` предустановку, выставляются на основе выходных минут. 
+  
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-* [Руководство по Отправка, кодировка и потоковая передача видео с помощью Служб мультимедиа версии 3](stream-files-tutorial-with-api.md)
+* [Учебник. Отправка, кодирование и потоковая передача видео со службами мультимедиа v3](stream-files-tutorial-with-api.md)
 * [Учебник. кодирование удаленного файла на основе URL-адреса и поток видео — остальное](stream-files-tutorial-with-rest.md)
 * [Руководство. кодирование удаленного файла на основе URL-адреса и потока видео — CLI](stream-files-cli-quickstart.md)
 * [Руководство. кодирование удаленного файла на основе URL-адреса и поток видео — .NET](stream-files-dotnet-quickstart.md)
-* [Руководство. кодирование удаленного файла на основе URL-адреса и поток видео-Node. js](stream-files-nodejs-quickstart.md)
+* [Руководство. кодирование удаленного файла на основе URL-адреса и потоковой передачи видео Node.js](stream-files-nodejs-quickstart.md)

@@ -1,22 +1,21 @@
 ---
 title: Интеграция локальных приложений с Cloud App Security Azure AD
 description: Настройка локального приложения в Azure Active Directory для работы с Microsoft Cloud App Security (MCAS). Используйте Управление условным доступом к приложениям МКАС, чтобы отслеживать и контролировать сеансы в режиме реального времени на основе политик условного доступа. Эти политики можно применять к локальным приложениям, использующим Application Proxy в Azure Active Directory (Azure AD).
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 12/19/2018
-ms.author: mimart
+ms.author: kenwith
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eb97f9dd87277215a5d4708d3a6f49564c490204
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 889168782acabaafa4200a8ebd097e431a68ede3
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74275493"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84764576"
 ---
 # <a name="configure-real-time-application-access-monitoring-with-microsoft-cloud-app-security-and-azure-active-directory"></a>Настройка мониторинга доступа к приложениям в режиме реального времени с помощью Microsoft Cloud App Security и Azure Active Directory
 Настройте локальное приложение в Azure Active Directory (Azure AD) для использования Microsoft Cloud App Security (MCAS) в целях мониторинга в режиме реального времени. МКАС использует Управление условным доступом к приложениям для мониторинга и контроля сеансов в режиме реального времени на основе политик условного доступа. Эти политики можно применять к локальным приложениям, использующим Application Proxy в Azure Active Directory (Azure AD).
@@ -30,7 +29,7 @@ ms.locfileid: "74275493"
 
 Дополнительные сведения см. в статье о [защите приложений с помощью управления условным доступом к приложениям для Microsoft Cloud App Security](/cloud-app-security/proxy-intro-aad).
 
-## <a name="requirements"></a>Требования
+## <a name="requirements"></a>Requirements (Требования)
 
 Лицензия
 

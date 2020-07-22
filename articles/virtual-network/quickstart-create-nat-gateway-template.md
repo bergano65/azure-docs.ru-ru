@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Создание шлюза NAT с помощью шаблона Resource Manager
+title: Руководство по Создание шлюза NAT с помощью шаблона Resource Manager
 titleSuffix: Azure Virtual Network NAT
 description: В этом кратком руководстве показано, как создать шлюз NAT с помощью шаблона Azure Resource Manager.
 services: load-balancer
@@ -8,21 +8,22 @@ author: asudbring
 manager: KumudD
 Customer intent: I want to create a NAT gateway by using an Azure Resource Manager template so that I can provide outbound connectivity for my virtual machines.
 ms.service: virtual-network
+ms.subservice: nat
 ms.devlang: na
-ms.topic: quickstart
+ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/09/2020
 ms.author: allensu
 ms.custom: subject-armqs
-ms.openlocfilehash: 3850f3f22e730e46f6d278b6cef0e17d357b126d
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: fbc8b48f4ff6a6df687d45a53008a159c5322084
+ms.sourcegitcommit: 537c539344ee44b07862f317d453267f2b7b2ca6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81618051"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84703576"
 ---
-# <a name="quickstart-create-a-nat-gateway---resource-manager-template"></a>Краткое руководство. Создание шлюза NAT с помощью шаблона Resource Manager
+# <a name="tutorial-create-a-nat-gateway---resource-manager-template"></a>Руководство по Создание шлюза NAT с помощью шаблона Resource Manager
 
 Вы можете начать работу с преобразованием сетевых адресов (NAT) виртуальной сети с помощью шаблона Azure Resource Manager.  Этот шаблон развертывает виртуальную сеть, ресурс шлюза NAT и виртуальную машину Ubuntu. Виртуальная машина Ubuntu развертывается в подсети, связанной с ресурсом шлюза NAT.
 

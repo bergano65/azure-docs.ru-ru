@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 04/03/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ef8094464b428f1f46017b0d4abaac5aeb1fa428
-ms.sourcegitcommit: 75089113827229663afed75b8364ab5212d67323
+ms.openlocfilehash: 7a502a8273aef3df3488764ea7b01c21c512ba43
+ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82024537"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85800232"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-mongodb-cloud"></a>Руководство по Интеграции единого входа Azure Active Directory с MongoDB Cloud
 
@@ -101,11 +101,11 @@ ms.locfileid: "82024537"
 
 1. Кроме описанных выше атрибутов приложение MongoDB Cloud ожидает несколько дополнительных атрибутов в ответе SAML. Эти атрибуты также заранее заполнены, однако их можно изменить в соответствии с требованиями.
     
-    | Имя | |  Атрибут источника|
-    | ---------------| --------------- | --------- |
-    | email | | user.userprincipalname |
-    | firstName | | user.givenname |
-    | lastName | | user.surname |
+    | Имя | Атрибут источника|
+    | ---------------| --------- |
+    | email | user.userprincipalname |
+    | firstName | user.givenname |
+    | lastName | user.surname |
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** выберите **XML метаданных федерации**. Щелкните **Скачать**, чтобы получить сертификат и сохранить его на локальном компьютере.
 
@@ -166,7 +166,7 @@ ms.locfileid: "82024537"
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
-- [Регистрация для использования MongoDB Atlas в Azure](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/mongodb.mongodb_atlas_azure_08082019?tab=Overview)
+- [Регистрация для использования MongoDB Atlas в Azure](https://azuremarketplace.microsoft.com/marketplace/apps/mongodb.mongodb_atlas_may_2020?tab=Overview)
 
 - [Попробуйте MongoDB Cloud совместно с Azure AD](https://aad.portal.azure.com/)
 

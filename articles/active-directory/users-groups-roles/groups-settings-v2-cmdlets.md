@@ -8,18 +8,17 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
-ms.topic: article
+ms.topic: how-to
 ms.date: 11/08/2019
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cc12e571ca955a0ddc47e1c1dd73c2717161df4b
-ms.sourcegitcommit: d9cd51c3a7ac46f256db575c1dfe1303b6460d04
-ms.translationtype: MT
+ms.openlocfilehash: 03c5e3fe7fe84b968b59d0668619b3feddacc4f1
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82739319"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84727829"
 ---
 # <a name="azure-active-directory-version-2-cmdlets-for-group-management"></a>Командлеты Azure Active Directory версии 2 для управления группами
 
@@ -322,7 +321,7 @@ ms.locfileid: "82739319"
 * postmaster
 * root
 * secure
-* безопасность
+* security
 * ssl-admin
 * webmaster
 
@@ -336,9 +335,9 @@ ms.locfileid: "82739319"
 
 Обратная запись групп Office 365 — это общедоступная Предварительная версия функции Azure Active Directory (Azure AD) и доступна с любым платным планом лицензирования Azure AD. Некоторые юридические сведения о предварительных версиях см. в разделе Дополнительные [условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительную документацию по PowerShell Azure Active Directory см. в разделе [Azure Active Directory Cmdlets](/powershell/azure/install-adv2?view=azureadps-2.0) (Командлеты Azure Active Directory).
 
 * [Управление доступом к ресурсам с помощью групп Azure Active Directory](../fundamentals/active-directory-manage-groups.md?context=azure/active-directory/users-groups-roles/context/ugr-context)
-* [Интеграция локальных удостоверений с Azure Active Directory.](../hybrid/whatis-hybrid-identity.md?context=azure/active-directory/users-groups-roles/context/ugr-context)
+* [Интеграция локальных удостоверений с Azure Active Directory](../hybrid/whatis-hybrid-identity.md?context=azure/active-directory/users-groups-roles/context/ugr-context)

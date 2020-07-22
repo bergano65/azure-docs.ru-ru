@@ -5,12 +5,12 @@ author: dkkapur
 ms.topic: conceptual
 ms.date: 9/11/2018
 ms.author: dekapur
-ms.openlocfilehash: 6a00b7d1b72d594c08021982b2448de6275414c8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 6b07e3fe14478cf45df2f02378da4e83853cf9ea
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75610069"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86261038"
 ---
 # <a name="plan-and-prepare-your-service-fabric-standalone-cluster-deployment"></a>Планирование и подготовка развертывания изолированного кластера Service Fabric
 
@@ -51,7 +51,7 @@ ms.locfileid: "75610069"
 
 ## <a name="prepare-the-machines-that-will-serve-as-nodes"></a>Подготовка компьютеров, которые будут работать в качестве узлов
 
-Ниже перечислены некоторые требования к каждому компьютеру, который требуется добавить в кластер.
+Ниже приведены рекомендуемые спецификации для компьютеров в кластере Service Fabric.
 
 * Не менее 16 ГБ ОЗУ.
 * Наличие не менее 40 ГБ свободного дискового пространства.
@@ -59,11 +59,13 @@ ms.locfileid: "75610069"
 * Подключение к защищенной сети или сетям для всех компьютеров.
 * Установлена ОС Windows Server (допустимые версии: 2012 R2, 2016, 1709 или 1803). Service Fabric версии 6.4.654.9590 и более поздних версий также поддерживает сервер 2019 и 1809.
 * [.NET Framework 4.5.1 или более поздней версии](https://www.microsoft.com/download/details.aspx?id=40773), полная установка
-* [Windows PowerShell 3,0](https://msdn.microsoft.com/powershell/scripting/install/installing-windows-powershell)
-* [Служба RemoteRegistry](https://technet.microsoft.com/library/cc754820) должна быть запущена на всех компьютерах.
-* Диск установки Service Fabric должен быть файловой системой NTFS
+* [Windows PowerShell 3.0](/powershell/scripting/windows-powershell/install/installing-windows-powershell?view=powershell-7)
+* [Служба RemoteRegistry](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754820(v=ws.11)) должна быть запущена на всех компьютерах.
+* **Диск установки Service Fabric должен быть файловой системой NTFS**
+* ** *Журналы производительности служб Windows & оповещения* и *журнал событий Windows* должны [быть включены](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc755249(v=ws.11))**.
 
-У администратора кластера, который развертывает и настраивает кластер, должны быть [привилегии администратора](https://social.technet.microsoft.com/wiki/contents/articles/13436.windows-server-2012-how-to-add-an-account-to-a-local-administrator-group.aspx) на всех компьютерах. Пакет Service Fabric нельзя установить на контроллере домена.
+> [!IMPORTANT]
+> У администратора кластера, который развертывает и настраивает кластер, должны быть [привилегии администратора](https://social.technet.microsoft.com/wiki/contents/articles/13436.windows-server-2012-how-to-add-an-account-to-a-local-administrator-group.aspx) на всех компьютерах. Пакет Service Fabric нельзя установить на контроллере домена.
 
 ## <a name="download-the-service-fabric-standalone-package-for-windows-server"></a>Скачивание изолированного пакета Service Fabric для Windows Server
 [Скачайте изолированный пакет Service Fabric для Windows Server](https://go.microsoft.com/fwlink/?LinkId=730690) и извлеките его содержимое на компьютер развертывания, который не является частью кластера, или на один из компьютеров, которые будут частью кластера.
@@ -155,7 +157,7 @@ Passed                     : True
 В настоящее время данный модуль тестирования конфигурации не проверяет конфигурацию безопасности, поэтому ее нужно проверить отдельно.
 
 > [!NOTE]
-> Мы постоянно вносим улучшения для повышения надежности модуля. Поэтому, если вы обнаружили сбои в работе модуля TestConfiguration или полагаете, что в нем чего-то не хватает, сообщите нам через [поддерживаемые каналы](https://docs.microsoft.com/azure/service-fabric/service-fabric-support).
+> Мы постоянно вносим улучшения для повышения надежности модуля. Поэтому, если вы обнаружили сбои в работе модуля TestConfiguration или полагаете, что в нем чего-то не хватает, сообщите нам через [поддерживаемые каналы](./service-fabric-support.md).
 >
 >
 

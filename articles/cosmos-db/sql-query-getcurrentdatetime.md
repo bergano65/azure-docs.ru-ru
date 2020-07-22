@@ -4,30 +4,31 @@ description: Дополнительные сведения о функции SQL
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 09/13/2019
+ms.date: 07/09/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: d50b08ab85c7e299c465c3eb6f34e867d6634006
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 4db2ec7bbd05d982af57c05fd46ef7da7c682e15
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78303908"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86258811"
 ---
 # <a name="getcurrentdatetime-azure-cosmos-db"></a>Жеткуррентдатетиме (Azure Cosmos DB)
- Возвращает текущее значение даты и времени (в формате UTC) в виде строки ISO 8601.
+
+Возвращает текущее значение даты и времени (в формате UTC) в виде строки ISO 8601.
   
 ## <a name="syntax"></a>Синтаксис
   
 ```sql
 GetCurrentDateTime ()
 ```
-  
+
 ## <a name="return-types"></a>Типы возвращаемых данных
   
-  Возвращает строковое значение даты и времени в формате UTC 8601 в формате `YYYY-MM-DDThh:mm:ss.fffffffZ` , где:
+  Возвращает строковое значение даты и времени в формате UTC 8601 в формате, `YYYY-MM-DDThh:mm:ss.fffffffZ` где:
   
-  |||
+  |Формат|Описание|
   |-|-|
   |YYYY|год из четырех цифр|
   |ММ|месяц (2 цифры) (01 = Январь и т. д.)|
@@ -43,7 +44,7 @@ GetCurrentDateTime ()
 
 ## <a name="remarks"></a>Remarks
 
-  Жеткуррентдатетиме () является недетерминированной функцией. 
+  Жеткуррентдатетиме () является недетерминированной функцией.
   
   Возвращаемый результат — UTC.
 
@@ -65,8 +66,8 @@ SELECT GetCurrentDateTime() AS currentUtcDateTime
 }]  
 ```  
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Функции даты и времени Azure Cosmos DB](sql-query-date-time-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство с Azure Cosmos DB](introduction.md)
+- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)

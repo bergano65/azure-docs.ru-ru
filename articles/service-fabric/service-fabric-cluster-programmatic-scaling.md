@@ -5,12 +5,12 @@ author: mjrousos
 ms.topic: conceptual
 ms.date: 01/23/2018
 ms.author: mikerou
-ms.openlocfilehash: bd7c57f3089115e4da861fc8fd20331ab92bc33e
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
+ms.openlocfilehash: 19f773fa781c51f64412039201842a7af4c29052
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82787147"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86261125"
 ---
 # <a name="scale-a-service-fabric-cluster-programmatically"></a>Программное масштабирование кластера Service Fabric 
 
@@ -20,16 +20,16 @@ ms.locfileid: "82787147"
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="manage-credentials"></a>Управление учетными данными
-Одна из проблем написания службы для обработки масштабирования заключается в том, что служба должна иметь возможность доступа к ресурсам масштабируемого набора виртуальных машин без интерактивного входа в систему. Доступ к кластеру Service Fabric прост, если служба масштабирования изменяет собственное приложение Service Fabric, но для доступа к масштабируемому набору нужны учетные данные. Чтобы войти в систему, можно использовать [субъект-службу](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli) , созданный с помощью [Azure CLI](https://github.com/azure/azure-cli).
+Одна из проблем написания службы для обработки масштабирования заключается в том, что служба должна иметь возможность доступа к ресурсам масштабируемого набора виртуальных машин без интерактивного входа в систему. Доступ к кластеру Service Fabric прост, если служба масштабирования изменяет собственное приложение Service Fabric, но для доступа к масштабируемому набору нужны учетные данные. Чтобы войти в систему, можно использовать [субъект-службу](/cli/azure/create-an-azure-service-principal-azure-cli) , созданный с помощью [Azure CLI](https://github.com/azure/azure-cli).
 
 Чтобы создать субъект-службу, необходимо выполнить следующие действия:
 
-1. Войдите в Azure CLI (`az login`) в качестве пользователя с доступом к масштабируемому набору виртуальных машин.
+1. Войдите в Azure CLI () в `az login` качестве пользователя с доступом к масштабируемому набору виртуальных машин.
 2. Создайте субъект-службу с помощью `az ad sp create-for-rbac`.
     1. Запишите идентификатор приложения (другое название — идентификатор клиента), имя, пароль и клиент для последующего использования.
     2. Также вам понадобится идентификатор подписки, который можно просмотреть с помощью `az account list`.
 
-Библиотека вычислений Fluent может выполнить вход с использованием этих учетных данных, как показано ниже (Обратите внимание `IAzure` , что основные типы Azure Fluent, такие как, находятся в пакете [Microsoft. Azure. Management. Fluent](https://www.nuget.org/packages/Microsoft.Azure.Management.Fluent/) ):
+Библиотека вычислений Fluent может выполнить вход с использованием этих учетных данных, как показано ниже (Обратите внимание, что основные типы Azure Fluent, такие как `IAzure` , находятся в пакете [Microsoft. Azure. Management. Fluent](https://www.nuget.org/packages/Microsoft.Azure.Management.Fluent/) ):
 
 ```csharp
 var credentials = new AzureCredentials(new ServicePrincipalLoginInformation {
@@ -59,7 +59,7 @@ var newCapacity = (int)Math.Min(MaximumNodeCount, scaleSet.Capacity + 1);
 scaleSet.Update().WithCapacity(newCapacity).Apply(); 
 ``` 
 
-Кроме того, размер масштабируемого набора виртуальных машин можно изменить с помощью командлетов PowerShell. [`Get-AzVmss`](https://docs.microsoft.com/powershell/module/az.compute/get-azvmss)может получить объект масштабируемого набора виртуальных машин. Текущая емкость указывается в свойстве `.sku.capacity`. После изменения емкости до требуемого значения масштабируемый набор виртуальных машин в Azure можно обновить с помощью [`Update-AzVmss`](https://docs.microsoft.com/powershell/module/az.compute/update-azvmss) команды.
+Кроме того, размер масштабируемого набора виртуальных машин можно изменить с помощью командлетов PowerShell. [`Get-AzVmss`](/powershell/module/az.compute/get-azvmss)может получить объект масштабируемого набора виртуальных машин. Текущая емкость указывается в свойстве `.sku.capacity`. После изменения емкости до требуемого значения масштабируемый набор виртуальных машин в Azure можно обновить с помощью [`Update-AzVmss`](/powershell/module/az.compute/update-azvmss) команды.
 
 Как и при добавлении узла вручную, добавления экземпляра масштабируемого набора должно быть достаточно для запуска нового узла Service Fabric, так как шаблон масштабируемого набора включает расширения для автоматического присоединения новых экземпляров к кластеру Service Fabric. 
 
@@ -121,4 +121,4 @@ await client.ClusterManager.RemoveNodeStateAsync(mostRecentLiveNode.NodeName);
 
 - [Масштабирование кластера Service Fabric с помощью правил автомасштабирования](./service-fabric-cluster-scale-in-out.md)
 - [Свободные библиотеки управления Azure для .NET](https://github.com/Azure/azure-sdk-for-net/tree/Fluent) (для взаимодействия с базовыми масштабируемыми наборами виртуальных машин для кластеров Service Fabric)
-- [System.Fabric.FabricClient](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient) (для взаимодействия с кластером Service Fabric и его узлами)
+- [System.Fabric.FabricClient](/dotnet/api/system.fabric.fabricclient) (для взаимодействия с кластером Service Fabric и его узлами)

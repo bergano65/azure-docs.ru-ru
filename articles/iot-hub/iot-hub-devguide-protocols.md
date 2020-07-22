@@ -12,10 +12,9 @@ ms.custom:
 - amqp
 - mqtt
 ms.openlocfilehash: 433e4160972a06ee3652410e062f6602e9ca6767
-ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82996921"
 ---
 # <a name="reference---choose-a-communication-protocol"></a>Справочник — выбор протокола связи
@@ -67,6 +66,6 @@ ms.locfileid: "82996921"
 
 После создания Центра Интернета вещей в регионе Azure IP-адрес центра остается неизменным в течение всего времени его существования. Однако для обеспечения качества обслуживания при перемещении корпорацией Майкрософт Центра Интернета вещей в другую единицу масштабирования центру назначается новый IP-адрес.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о реализации Центром Интернета вещей протокола MQTT см. в статье [Взаимодействие с Центром Интернета вещей с помощью протокола MQTT](iot-hub-mqtt-support.md).

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 11/12/2018
 ms.author: genli
-ms.openlocfilehash: 315974e4995630eb3af055ac0e1c44f7d8dd0737
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 6bce1616ce0c7f7e42810a551acb2f02165ccf93
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77918246"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86078635"
 ---
 #  <a name="cannot-remote-desktop-to-a-vm-because-the-network-interface-is-disabled"></a>Сбой подключения удаленного рабочего стола к виртуальной машине из-за отключенного сетевого интерфейса
 
@@ -40,21 +40,29 @@ ms.locfileid: "77918246"
 ). Если последовательное консоль не включена на виртуальной машине, см. раздел [Сброс сетевого интерфейса](#reset-network-interface).
 2. Проверьте состояние сетевого интерфейса:
 
-        netsh interface show interface
+    ```console
+    netsh interface show interface
+    ```
 
     Запишите имя отключенного сетевого интерфейса.
 
 3. Включите сетевой интерфейс:
 
-        netsh interface set interface name="interface Name" admin=enabled
+    ```console
+    netsh interface set interface name="interface Name" admin=enabled
+    ```
 
     Например, если имя интерфейса взаимодействия — Ethernet 2, выполните команду ниже:
 
-        netsh interface set interface name="Ethernet 2" admin=enabled
+    ```console
+    netsh interface set interface name="Ethernet 2" admin=enabled
+    ```
 
 4.  Снова проверьте состояние сетевого интерфейса, чтобы убедиться, что он включен.
 
-        netsh interface show interface
+    ```console
+    netsh interface show interface
+    ```
 
     На этом этапе не нужно перезапускать виртуальную машину. Она снова станет доступна.
 

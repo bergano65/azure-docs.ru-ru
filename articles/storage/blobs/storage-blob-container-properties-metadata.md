@@ -6,14 +6,14 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 12/04/2019
+ms.date: 07/01/2020
 ms.author: tamram
-ms.openlocfilehash: c66b521b5cd75825fcafe07b24d5d527c45f5153
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 455595a2e41ecc05f7064044e09df8efcd9d4548
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79135927"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85833406"
 ---
 # <a name="manage-container-properties-and-metadata-with-net"></a>Управление свойствами контейнера и метаданными с помощью .NET
 
@@ -25,14 +25,27 @@ ms.locfileid: "79135927"
 
 - **Определяемые пользователем метаданные**. определяемые пользователем метаданные состоят из одной или нескольких пар "имя-значение", указанных для ресурса хранилища BLOB-объектов. Метаданные можно использовать для хранения дополнительных значений в ресурсе. Значения метаданных предназначены только для ваших собственных целей и не влияют на поведение ресурса.
 
+Пары "имя-значение" метаданных являются допустимыми заголовками HTTP и должны соответствовать всем ограничениям, регулирующим заголовки HTTP. Имена метаданных должны представлять собой допустимые имена HTTP-заголовков и допустимые идентификаторы C#, могут содержать только символы ASCII и должны обрабатываться без учета регистра. Значения метаданных, содержащие символы, отличные от ASCII, должны быть в кодировке Base64 или в кодировке URL.
+
+## <a name="retrieve-container-properties"></a>Получение свойств контейнера
+
+# <a name="net-v12-sdk"></a>[NET (пакет SDK версии 12)](#tab/dotnet).
+
+Чтобы получить свойства контейнера, вызовите один из следующих методов:
+
+- [GetProperties](/dotnet/api/azure.storage.blobs.blobcontainerclient.getproperties)
+- [жетпропертиесасинк](/dotnet/api/azure.storage.blobs.blobcontainerclient.getpropertiesasync)
+
+Следующий пример кода извлекает системные свойства контейнера и записывает некоторые значения свойств в окно консоли:
+
+:::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Metadata.cs" id="Snippet_ReadContainerProperties":::
+
+# <a name="net-v11-sdk"></a>[.NET (пакет SDK версии 11)](#tab/dotnet11).
+
 Получение значений свойств и метаданных для ресурса хранилища BLOB-объектов — это двухэтапный процесс. Прежде чем считывать эти значения, необходимо их четко получить, вызвав метод **FetchAttributes** или **FetchAttributesAsync**. Исключением из этого правила является то, что методы **Exists** и **ексистсасинк** вызывают соответствующий метод **FetchAttributes** , как описано в разделе. При вызове одного из этих методов не требуется также вызывать **FetchAttributes**.
 
 > [!IMPORTANT]
 > Если обнаружится, что значения свойств или метаданных для ресурса хранилища не были заполнены, проверьте вызывает ли ваш код метод **FetchAttributes** или **FetchAttributesAsync**.
-
-Пары "имя-значение" метаданных являются допустимыми заголовками HTTP и должны соответствовать всем ограничениям, регулирующим заголовки HTTP. Имена метаданных должны представлять собой допустимые имена HTTP-заголовков и допустимые идентификаторы C#, могут содержать только символы ASCII и должны обрабатываться без учета регистра. Значения метаданных, содержащие символы, отличные от ASCII, должны быть в кодировке Base64 или в кодировке URL.
-
-## <a name="retrieve-container-properties"></a>Получение свойств контейнера
 
 Чтобы получить свойства контейнера, вызовите один из следующих методов:
 
@@ -63,14 +76,40 @@ private static async Task ReadContainerPropertiesAsync(CloudBlobContainer contai
 }
 ```
 
+---
+
 ## <a name="set-and-retrieve-metadata"></a>Установка и получение метаданных
+
+# <a name="net-v12-sdk"></a>[NET (пакет SDK версии 12)](#tab/dotnet).
+
+Метаданные можно указать как одну или несколько пар "имя-значение" для BLOB-ресурса или ресурса контейнера. Чтобы задать метаданные, добавьте пары "имя-значение" в объект [IDictionary](/dotnet/api/system.collections.idictionary) , а затем вызовите один из следующих методов для записи значений:
+
+- [сетметадата](/dotnet/api/azure.storage.blobs.blobcontainerclient.setmetadata)
+- [сетметадатаасинк](/dotnet/api/azure.storage.blobs.blobcontainerclient.setmetadataasync)
+
+Имя метаданных должно соответствовать соглашениям об именовании идентификаторов C#. Имена метаданных сохраняют регистр, с которым они были созданы, но не учитывают регистр при установке или чтении. Если для ресурса передается несколько заголовков метаданных с одним и тем же именем, то запятая хранилища BLOB-объектов разделяет и объединяет два значения и возвращает код HTTP-ответа 200 (ОК).
+
+В следующем примере кода задаются метаданные для контейнера.
+
+:::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Metadata.cs" id="Snippet_AddContainerMetadata":::
+
+Чтобы получить метаданные, вызовите один из следующих методов:
+
+- [GetProperties](/dotnet/api/azure.storage.blobs.blobcontainerclient.getproperties)
+- [Жетпропертиесасинк](/dotnet/api/azure.storage.blobs.blobcontainerclient.getpropertiesasync).
+
+Затем считайте значения, как показано в примере ниже.
+
+:::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Metadata.cs" id="Snippet_ReadContainerMetadata":::
+
+# <a name="net-v11-sdk"></a>[.NET (пакет SDK версии 11)](#tab/dotnet11).
 
 Метаданные можно указать как одну или несколько пар "имя-значение" для BLOB-ресурса или ресурса контейнера. Чтобы задать метаданные, добавьте пары "имя-значение" в коллекцию **метаданных** ресурса, а затем вызовите один из следующих методов для записи значений:
 
 - [сетметадата](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.setmetadata)
 - [сетметадатаасинк](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.setmetadataasync)
 
-Имя метаданных должно соответствовать соглашениям об именовании идентификаторов C#. Имена метаданных сохраняют регистр, с которым они были созданы, но не учитывают регистр при установке или чтении. Если для ресурса отправляется несколько заголовков метаданных с одним и тем же именем, хранилище BLOB-объектов возвращает код ошибки HTTP 400 (недопустимый запрос).
+Имя метаданных должно соответствовать соглашениям об именовании идентификаторов C#. Имена метаданных сохраняют регистр, с которым они были созданы, но не учитывают регистр при установке или чтении. Если для ресурса передается несколько заголовков метаданных с одним и тем же именем, то запятая хранилища BLOB-объектов разделяет и объединяет два значения и возвращает код HTTP-ответа 200 (ОК).
 
 В следующем примере кода задаются метаданные для контейнера. Одно значение задается с помощью метода коллекции **Add** . Другое значение задается с помощью неявного синтаксиса «ключ/значение». Можно использовать любой из способов.
 
@@ -126,10 +165,12 @@ public static async Task ReadContainerMetadataAsync(CloudBlobContainer container
 }
 ```
 
+---
+
 [!INCLUDE [storage-blob-dotnet-resources-include](../../../includes/storage-blob-dotnet-resources-include.md)]
 
 ## <a name="see-also"></a>См. также
 
 - [Операция получения свойств контейнера](/rest/api/storageservices/get-container-properties)
 - [Операция задания метаданных контейнера](/rest/api/storageservices/set-container-metadata)
-- [Операция получения метаданных контейнера](/rest/api/storageservices/set-container-metadata)
+- [Операция получения метаданных контейнера](/rest/api/storageservices/get-container-metadata)

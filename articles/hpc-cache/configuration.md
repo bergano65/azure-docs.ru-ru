@@ -3,15 +3,15 @@ title: Настройка параметров кэша Azure HPC
 description: В этой статье объясняется, как настроить дополнительные параметры для кэша, такие как MTU и без-root-Squash, а также как получить доступ к Экспресс-моментальным снимкам из целевых объектов хранилища BLOB-объектов Azure.
 author: ekpgh
 ms.service: hpc-cache
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/06/2020
 ms.author: v-erkel
-ms.openlocfilehash: a3bab06166110a3627bb3a99d51ceb09b0c7ed80
-ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
+ms.openlocfilehash: b01c4d896d5ec600e0fe22e3ca7b7816141776a4
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82871414"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86497205"
 ---
 # <a name="configure-additional-azure-hpc-cache-settings"></a>Настройка дополнительных параметров кэша Azure HPC
 
@@ -22,6 +22,9 @@ ms.locfileid: "82871414"
 Чтобы просмотреть параметры, откройте страницу **настройки** кэша в портал Azure.
 
 ![снимок экрана страницы конфигурации в портал Azure](media/configuration.png)
+
+> [!TIP]
+> В [видео "Управление кэшем Azure HPC](https://azure.microsoft.com/resources/videos/managing-hpc-cache/) " отображается страница конфигурации и ее параметры.
 
 ## <a name="adjust-mtu-value"></a>Изменить значение MTU
 <!-- linked from troubleshoot-nas article -->
@@ -48,9 +51,9 @@ ms.locfileid: "82871414"
 
 Если параметр root Squash отключен, запрос от корневого пользователя клиента (UID 0) передается в серверную систему хранения NFS в качестве корневого каталога. Такая конфигурация может допускать недопустимый доступ к файлам.
 
-Установка корневого squash в кэше может помочь компенсировать требуемый ``no_root_squash`` параметр в системах NAS, которые используются в качестве целевых объектов хранилища. (Дополнительные сведения о [необходимых компонентах хранилища NFS](hpc-cache-prereqs.md#nfs-storage-requirements)). Она также может повысить безопасность при использовании целевых объектов хранилища BLOB-объектов Azure.
+Установка корневого squash в кэше может помочь компенсировать требуемый ``no_root_squash`` параметр в системах NAS, которые используются в качестве целевых объектов хранилища. (Дополнительные сведения о [необходимых компонентах хранилища NFS](hpc-cache-prerequisites.md#nfs-storage-requirements)). Она также может повысить безопасность при использовании целевых объектов хранилища BLOB-объектов Azure.
 
-Значение по умолчанию — **Да**. (Кэши, созданные до апреля 2020, могут иметь значение по умолчанию **No**.)
+Значение по умолчанию — **Да**. (Кэши, созданные до апреля 2020, могут иметь значение по умолчанию **No**.)
 
 ## <a name="view-snapshots-for-blob-storage-targets"></a>Просмотр моментальных снимков для целевых объектов хранилища BLOB-объектов
 

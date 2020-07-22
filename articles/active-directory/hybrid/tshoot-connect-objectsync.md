@@ -10,17 +10,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: troubleshooting
 ms.date: 04/29/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6e10d00ed90248319801974c7c1e7fadf835024b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 73d4239dd34f2a64aa7b3edbf88bad4348e01291
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81407015"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85356208"
 ---
 # <a name="troubleshoot-object-synchronization-with-azure-ad-connect-sync"></a>Устранение неполадок синхронизации объектов с помощью службы синхронизации Azure AD Connect
 В этой статье приводятся пошаговые инструкции по устранению неполадок, связанных с синхронизацией объектов, с помощью задач устранения неполадок. Ознакомиться с устранением неполадок в Azure Active Directory Connect (Azure AD) можно [в этом коротком видео](https://aka.ms/AADCTSVideo).
@@ -43,7 +43,7 @@ ms.locfileid: "81407015"
 Следующие входные параметры необходимы для выполнения задачи по устранению неполадок.
 1.  **Object Distinguished Name** (Различающееся имя объекта) — различающееся имя объекта, неполадки которого требуется устранить.
 2.  **AD Connector Name** (Имя соединителя AD) — имя леса AD, где находится указанный выше объект.
-3.  Глобальные административные учетные данные глобального ![администратора клиента Azure AD](media/tshoot-connect-objectsync/objsynch1.png)
+3.  Глобальные административные учетные данные глобального администратора клиента Azure AD ![](media/tshoot-connect-objectsync/objsynch1.png)
 
 ### <a name="understand-the-results-of-the-troubleshooting-task"></a>Изучение результатов задачи устранения неполадок
 Задача устранения неполадок выполняет следующие проверки.
@@ -80,7 +80,7 @@ ms.locfileid: "81407015"
 ## <a name="object-is-filtered-due-to-ou-filtering"></a>Фильтрование объекта при фильтрации подразделения
 Объект находится за пределами области из-за настройки фильтрации подразделений. В следующем примере объект принадлежит к подразделению OU=NoSync,DC=bvtadwbackdc,DC=com.  Это подразделение не включено в область синхронизации.</br>
 
-![Подразделение](./media/tshoot-connect-objectsync/objsynch7.png)
+![OU](./media/tshoot-connect-objectsync/objsynch7.png)
 
 ## <a name="linked-mailbox-issue"></a>Проблема из-за связанного почтового ящика
 Связанный почтовый ящик должен быть привязан к внешней главной учетной записи, расположенной в другом доверенному лесу учетных записей. Если внешняя главная учетная запись отсутствует, то Azure AD Connect не будет синхронизировать учетную запись пользователя, которая соответствует связанному почтовому ящику в лесу Exchange, с клиентом Azure AD.</br>
@@ -97,4 +97,4 @@ ms.locfileid: "81407015"
 ![Отчет HTML](media/tshoot-connect-objectsync/objsynch8.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Дополнительные сведения об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
+Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

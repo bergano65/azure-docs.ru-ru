@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 04/25/2018
 ms.author: azfuncdf
 ms.openlocfilehash: 7951f216143bef0d48a6b751beff3f8f4316b9bd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75433332"
 ---
 # <a name="disaster-recovery-and-geo-distribution-in-azure-durable-functions"></a>Аварийное восстановление и географическое распространение в Azure Устойчивые функции
@@ -81,6 +80,6 @@ ms.locfileid: "75433332"
 
 ![Схема, демонстрирующая сценарий 3.](./media/durable-functions-disaster-recovery-geo-distribution/durable-functions-geo-scenario03.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения см. в статье [Проектирование высокодоступных приложений с использованием RA-GRS](../../storage/common/storage-designing-ha-apps-with-ragrs.md).

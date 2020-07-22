@@ -7,16 +7,16 @@ author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 07/25/2019
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 80bd1b65d04ea49fc742033e1850d95a85021c9f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 5cbedad360e5270238225503e7802d571820c871
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78188177"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85388159"
 ---
 # <a name="set-up-sign-in-with-a-linkedin-account-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа в Azure Active Directory B2C с помощью учетной записи LinkedIn с использованием пользовательских политик
 
@@ -24,7 +24,7 @@ ms.locfileid: "78188177"
 
 В этой статье показано, как включить вход для пользователей из учетной записи LinkedIn с помощью [пользовательских политик](custom-policy-overview.md) в Azure Active Directory B2C (Azure AD B2C).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](custom-policy-get-started.md).
 - Учетная запись LinkedIn. Если у вас еще нет [учетной записи, создайте](https://www.linkedin.com/start/join)ее.
@@ -61,7 +61,7 @@ ms.locfileid: "78188177"
 Вам необходимо сохранить секрет клиента, который ранее был записан в клиенте Azure AD B2C.
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
-2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C. В верхнем меню выберите фильтр **каталог и подписка** и выберите каталог, содержащий ваш клиент.
+2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C. Выберите фильтр **Каталог и подписка** в верхнем меню и выберите каталог, который содержит ваш клиент.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
 4. На странице "Обзор" выберите **Identity Experience Framework**.
 5. Выберите **ключи политики** и нажмите кнопку **Добавить**.
@@ -77,7 +77,7 @@ ms.locfileid: "78188177"
 
 Определите учетную запись LinkedIn в качестве поставщика утверждений, добавив ее в элемент **клаимспровидерс** в файле расширения политики.
 
-1. Откройте файл *SocialAndLocalAccounts/* * TrustFrameworkExtensions. XML** * в редакторе. Этот файл находится в [начальном пакете пользовательской политики][starter-pack] , скачанном в рамках одного из необходимых компонентов.
+1. Откройте файл *SocialAndLocalAccounts/* * TrustFrameworkExtensions.xml** * в редакторе. Этот файл находится в [начальном пакете пользовательской политики][starter-pack] , скачанном в рамках одного из необходимых компонентов.
 1. Найдите элемент **ClaimsProviders**. Если он не существует, добавьте его в корневой элемент.
 1. Добавьте новый элемент **ClaimsProvider** следующим образом.
 
@@ -134,9 +134,9 @@ ms.locfileid: "78188177"
 
 В техническом профиле LinkedIn необходимо добавить преобразования утверждений **екстрактгивеннамефромлинкединреспонсе** и **Екстрактсурнамефромлинкединреспонсе** в список клаимстрансформатионс. Если в файле не определен элемент **клаимстрансформатионс** , добавьте РОДИТЕЛЬСКИЕ XML-элементы, как показано ниже. Для преобразований утверждений также требуется новый тип утверждения, определенный с именем **нуллстрингклаим**.
 
-Добавьте элемент **BuildingBlocks** в начало файла *TrustFrameworkExtensions. XML* . Пример см. в *файле TrustFrameworkBase. XML* .
+Добавьте элемент **BuildingBlocks** в начало файла *TrustFrameworkExtensions.xml* . См. *TrustFrameworkBase.xml* в качестве примера.
 
-```XML
+```xml
 <BuildingBlocks>
   <ClaimsSchema>
     <!-- Claim type needed for LinkedIn claims transformations -->
@@ -184,7 +184,7 @@ ms.locfileid: "78188177"
 
 На этом этапе поставщик удостоверений настроен, но он недоступен ни на одном из экранов регистрации или входа. Чтобы сделать его доступным, необходимо создать дубликат существующего шаблона пути взаимодействия пользователя, а затем изменить его таким образом, чтобы он также содержал поставщик удостоверений LinkedIn.
 
-1. Откройте файл *TrustFrameworkBase. XML* в начальном пакете.
+1. Откройте файл *TrustFrameworkBase.xml* в начальном пакете.
 2. Найдите и скопируйте все содержимое элемента **UserJourney**, в котором присутствует запись `Id="SignUpOrSignIn"`.
 3. Откройте файл *TrustFrameworkExtensions.xml* и найдите элемент **UserJourneys**. Если элемент не существует, добавьте его.
 4. Вставьте все скопированное содержимое элемента **UserJourney** в качестве дочернего элемента в элемент **UserJourneys**.
@@ -197,7 +197,7 @@ ms.locfileid: "78188177"
 1. Найдите элемент **OrchestrationStep**, содержащий `Order="1"` в созданном пути взаимодействия пользователя.
 2. Добавьте следующий элемент под элементом **ClaimsProviderSelections**. Установите для параметра **TargetClaimsExchangeId** соответствующее значение, например `LinkedInExchange`:
 
-    ```XML
+    ```xml
     <ClaimsProviderSelection TargetClaimsExchangeId="LinkedInExchange" />
     ```
 
@@ -208,17 +208,17 @@ ms.locfileid: "78188177"
 1. Найдите элемент **OrchestrationStep**, содержащий `Order="2"` в пути пользователя.
 2. Добавьте следующий элемент **ClaimsExchange**, убедившись, что для идентификатора используется то же значение, которое использовалось для **TargetClaimsExchangeId**.
 
-    ```XML
+    ```xml
     <ClaimsExchange Id="LinkedInExchange" TechnicalProfileReferenceId="LinkedIn-OAUTH" />
     ```
 
-    Измените значение **течникалпрофилереференцеид** на идентификатор созданного ранее идентификатора технического профиля. Например, `LinkedIn-OAUTH`.
+    Обновите значение **TechnicalProfileReferenceId**, присвоив ему значение идентификатора ранее созданного технического профиля. Например, `LinkedIn-OAUTH`.
 
 3. Сохраните файл *TrustFrameworkExtensions.xml* и повторно отправьте его для проверки.
 
 ## <a name="create-an-azure-ad-b2c-application"></a>Создание приложения Azure AD B2C
 
-Связь с Azure AD B2C происходит через приложение, регистрируемое в клиенте B2C. В этом разделе перечислены необязательные действия, которые можно выполнить, чтобы создать тестовое приложение, если вы его еще не создали.
+Взаимодействие с Azure AD B2C осуществляется с помощью приложения, зарегистрированного в клиенте B2C. В этом разделе перечислены необязательные действия, которые можно выполнить, чтобы создать тестовое приложение, если вы его еще не создали.
 
 [!INCLUDE [active-directory-b2c-appreg-idp](../../includes/active-directory-b2c-appreg-idp.md)]
 
@@ -241,14 +241,14 @@ ms.locfileid: "78188177"
 
 В существующем элементе **Metadata** элемента **техническом профиле**обновите следующие элементы **элементов** из:
 
-```XML
+```xml
 <Item Key="ClaimsEndpoint">https://api.linkedin.com/v1/people/~:(id,first-name,last-name,email-address,headline)</Item>
 <Item Key="scope">r_emailaddress r_basicprofile</Item>
 ```
 
-на:
+В:
 
-```XML
+```xml
 <Item Key="ClaimsEndpoint">https://api.linkedin.com/v2/me</Item>
 <Item Key="scope">r_emailaddress r_liteprofile</Item>
 ```
@@ -257,7 +257,7 @@ ms.locfileid: "78188177"
 
 В **метаданных** **техническом профиле**добавьте следующие элементы **Item** :
 
-```XML
+```xml
 <Item Key="external_user_identity_claim_id">id</Item>
 <Item Key="BearerTokenTransmissionMethod">AuthorizationHeader</Item>
 <Item Key="ResolveJsonPathsInJsonTokens">true</Item>
@@ -267,14 +267,14 @@ ms.locfileid: "78188177"
 
 В существующей **OutputClaims** **техническом профиле**обновите следующие элементы **OutputClaim** из:
 
-```XML
+```xml
 <OutputClaim ClaimTypeReferenceId="givenName" PartnerClaimType="firstName" />
 <OutputClaim ClaimTypeReferenceId="surname" PartnerClaimType="lastName" />
 ```
 
-на:
+В:
 
-```XML
+```xml
 <OutputClaim ClaimTypeReferenceId="givenName" PartnerClaimType="firstName.localized" />
 <OutputClaim ClaimTypeReferenceId="surname" PartnerClaimType="lastName.localized" />
 ```
@@ -283,7 +283,7 @@ ms.locfileid: "78188177"
 
 В **Аутпутклаимстрансформатионс** **техническом профиле**добавьте следующие элементы **аутпутклаимстрансформатион** :
 
-```XML
+```xml
 <OutputClaimsTransformation ReferenceId="ExtractGivenNameFromLinkedInResponse" />
 <OutputClaimsTransformation ReferenceId="ExtractSurNameFromLinkedInResponse" />
 ```
@@ -292,9 +292,9 @@ ms.locfileid: "78188177"
 
 На последнем шаге были добавлены новые преобразования утверждений, которые необходимо определить. Чтобы определить преобразования утверждений, добавьте их в список **клаимстрансформатионс**. Если в файле не определен элемент **клаимстрансформатионс** , добавьте РОДИТЕЛЬСКИЕ XML-элементы, как показано ниже. Для преобразований утверждений также требуется новый тип утверждения, определенный с именем **нуллстрингклаим**.
 
-Элемент **BuildingBlocks** должен быть добавлен в начало файла. Пример см. в *файле TrustframeworkBase. XML* .
+Элемент **BuildingBlocks** должен быть добавлен в начало файла. См. *TrustframeworkBase.xml* в качестве примера.
 
-```XML
+```xml
 <BuildingBlocks>
   <ClaimsSchema>
     <!-- Claim type needed for LinkedIn claims transformations -->
@@ -336,9 +336,9 @@ ms.locfileid: "78188177"
 
 1. Выполните описанные выше действия, чтобы разрешить Azure AD B2C Федерацию с LinkedIn, чтобы пользователь мог войти в систему. В рамках Федерации Azure AD B2C получает маркер доступа для LinkedIn.
 2. Сохраните маркер доступа LinkedIn в заявке. [См. инструкции здесь](idp-pass-through-custom.md).
-3. Добавьте следующий поставщик утверждений, который выполняет запрос к `/emailAddress` API LinkedIn. Чтобы авторизовать этот запрос, необходим маркер доступа LinkedIn.
+3. Добавьте следующий поставщик утверждений, который выполняет запрос к API LinkedIn `/emailAddress` . Чтобы авторизовать этот запрос, необходим маркер доступа LinkedIn.
 
-    ```XML
+    ```xml
     <ClaimsProvider>
       <DisplayName>REST APIs</DisplayName>
       <TechnicalProfiles>
@@ -366,7 +366,7 @@ ms.locfileid: "78188177"
 
 4. Добавьте следующий шаг оркестрации в путь взаимодействия пользователя, чтобы поставщик утверждений API активировался при входе пользователя с помощью LinkedIn. Обязательно обновите `Order` номер соответствующим образом. Добавьте этот шаг сразу после шага оркестрации, запускающего технический профиль LinkedIn.
 
-    ```XML
+    ```xml
     <!-- Extra step for LinkedIn to get the email -->
     <OrchestrationStep Order="3" Type="ClaimsExchange">
       <Preconditions>

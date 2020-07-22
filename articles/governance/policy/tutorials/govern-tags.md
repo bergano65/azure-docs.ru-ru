@@ -3,16 +3,16 @@ title: Руководство по Администрирование систе
 description: С помощью действия изменения в службе "Политика Azure" можно создать и применить модель управления тегами к новым и имеющимся ресурсам.
 ms.date: 04/21/2020
 ms.topic: tutorial
-ms.openlocfilehash: 6319bbde2fdc8f78e2743dd5f1565c8680433fea
-ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
+ms.openlocfilehash: 8b3d0db100a601950ec82824897a3ba3e5145b79
+ms.sourcegitcommit: f0b206a6c6d51af096a4dc6887553d3de908abf3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81759064"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84142271"
 ---
 # <a name="tutorial-manage-tag-governance-with-azure-policy"></a>Руководство по системе управления тегами с помощью Политики Azure
 
-[Теги](../../../azure-resource-manager/management/tag-resources.md) являются важной частью организации ресурсов Azure в таксономию. Если следовать [рекомендациям по управлению тегами](/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging#naming-and-tagging-resources), с помощью тегов можно применять бизнес-политики с использованием службы "Политика Azure" или [отслеживать затраты с помощью службы "Управление затратами"](../../../cost-management-billing/costs/cost-mgt-best-practices.md#organize-and-tag-your-resources).
+[Теги](../../../azure-resource-manager/management/tag-resources.md) являются важной частью организации ресурсов Azure в таксономию. Если следовать [рекомендациям по управлению тегами](/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging#naming-and-tagging-resources), с помощью тегов можно применять бизнес-политики с использованием службы "Политика Azure" или [отслеживать затраты с помощью службы "Управление затратами"](../../../cost-management-billing/costs/cost-mgt-best-practices.md#tag-shared-resources).
 Независимо от метода и причины применения тегов, важно иметь возможность быстро добавлять, изменять и удалять эти теги в ресурсах Azure. Чтобы узнать, поддерживает ли ваш ресурс Azure теги, см. статью [Поддержка тегов](../../../azure-resource-manager/management/tag-support.md).
 
 Действие [изменения](../concepts/effects.md#modify) Политики Azure призвано помочь в управлении тегами, независимо от этапа управления ресурсами. Действие **изменения** помогает в следующих случаях:

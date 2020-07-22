@@ -9,12 +9,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: overview
 ms.date: 09/30/2019
-ms.openlocfilehash: 327aadbc2996e91ef0f7639da86a647ddd42247c
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 937b836582cfcbf11564aa28b11cd8647afa835c
+ms.sourcegitcommit: 1f48ad3c83467a6ffac4e23093ef288fea592eb5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81410941"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84191110"
 ---
 # <a name="what-is-azure-data-factory"></a>Что такое фабрика данных Azure?
 
@@ -83,7 +83,7 @@ ms.locfileid: "81410941"
 
 Связанные службы используются в фабрике данных для двух целей:
 
-- Для представления **хранилища данных**, включая, помимо прочего, локальную базу данных SQL Server, базу данных Oracle, общий файловый ресурс и учетную запись хранилища BLOB-объектов Azure. Список поддерживаемых хранилищ см. в статье [о действии копирования](copy-activity-overview.md).
+- Для представления **хранилища данных**, включая, помимо прочего, базу данных SQL Server, базу данных Oracle, общую папку и учетную запись хранилища BLOB-объектов Azure. Список поддерживаемых хранилищ см. в статье [о действии копирования](copy-activity-overview.md).
 
 - Для представления **вычислительного ресурса**, в котором можно выполнить действие. Например, действие HDInsightHive выполняется в кластере Hadoop в HDInsight. Список поддерживаемых действий преобразования и вычислительных сред см. в статье [о преобразовании данных](transform-data.md).
 

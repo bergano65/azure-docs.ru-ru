@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 08/16/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8c87fe6dce4fa35eaed4ab43d6dcbffeae32e27f
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 04002cb62190addac2c3d71e320501846c873c87
+ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "69626066"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85799706"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-blink"></a>Руководство по интеграции единого входа Azure Active Directory с Blink
 
@@ -85,11 +85,10 @@ ms.locfileid: "69626066"
 
     а. В текстовом поле **URL-адрес входа** введите URL-адрес в одном из таких форматов:
     
-    | | |
-    |-|-|
-    | `https://app.joinblink.com`|
-    | `https://<SUBDOMAIN>.joinblink.com`|
-    | | |
+    ```http
+    https://app.joinblink.com
+    https://<SUBDOMAIN>.joinblink.com
+    ```
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://api.joinblink.com/saml/o-<TENANTID>`.
 

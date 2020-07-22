@@ -2,21 +2,21 @@
 title: Локальная отладка функций Azure в Сетке событий
 description: Узнайте, как локально отлаживать функции Azure, активированные событием в Сетке событий
 author: craigshoemaker
-ms.topic: reference
+ms.topic: conceptual
 ms.date: 10/18/2018
 ms.author: cshoe
-ms.openlocfilehash: 97509001aa66c2c1bf0c91b6b2a5ab25f9d6ec88
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d57b230ceecc8e676eea6a1ab0855761e78f723b
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74227067"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86242752"
 ---
 # <a name="azure-function-event-grid-trigger-local-debugging"></a>Локальная отладка триггера Сетки событий для функций Azure
 
 В этой статье показано, как отладить локальную функцию, которая обрабатывает событие в Сетке событий Azure, вызванное учетной записью хранения. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 - Создайте новое приложение-функцию или используйте существующее.
 - Создайте новую учетную запись хранения или используйте существующую.
@@ -62,7 +62,7 @@ ngrok http -host-header=localhost 7071
 
 ![Добавление события учетной записи хранения](./media/functions-debug-event-grid-trigger-local/functions-debug-event-grid-trigger-local-add-event.png)
 
-В окне *События* нажмите кнопку **Подписка на события**. В окне *Подписка на события* щелкните выпадающий список *Тип конечной точки* и выберите **Веб-перехватчик**.
+В окне *События* нажмите кнопку **Подписка на события**. В окне *Подписка на события* щелкните раскрывающийся список *тип конечной точки* и выберите пункт **веб-перехватчик**.
 
 ![Выбор типа подписки](./media/functions-debug-event-grid-trigger-local/functions-debug-event-grid-trigger-local-event-subscription-type.png)
 
@@ -91,8 +91,8 @@ ngrok http -host-header=localhost 7071
 - Щелкните правой кнопкой мыши и выберите **Создать контейнер BLOB-объектов**.
 - Присвойте контейнеру имя **test**.
 - Выберите контейнер с именем *test*.
-- Нажмите кнопку **Отправить**.
-- Щелкните **Отправить файлы**.
+- Нажмите кнопку " **Отправить** ".
+- Щелкните **отправить файлы** .
 - Выберите файл и отправьте его в контейнер BLOB-объектов.
 
 ## <a name="debug-the-function"></a>Отладка функции

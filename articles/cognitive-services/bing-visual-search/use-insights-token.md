@@ -10,18 +10,27 @@ ms.subservice: bing-visual-search
 ms.topic: conceptual
 ms.date: 4/26/2019
 ms.author: scottwhi
-ms.openlocfilehash: 251197c456ece4fe2dbbe264219d52f3502b7492
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.custom: tracking-python
+ms.openlocfilehash: fc589f53fc10e376479bf54ec408a95dac42db4d
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "67341724"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86523967"
 ---
 # <a name="use-an-insights-token-to-get-insights-for-an-image"></a>Использование токена Insights для получения ценной информации об изображении
 
-API Bing для наглядного поиска возвращает сведения об изображении, которое вы предоставляете. Изображение можно предоставить с помощью URL-адреса изображения, токена аналитики или через отправку изображения. Сведения об этих параметрах см. в разделе [что такое API визуального поиска Bing?](overview.md). В этой статье демонстрируется использование токена аналитики. Примеры, демонстрирующие, как отправить изображение для получения аналитических сведений, см. в кратком руководстве ([C#](quickstarts/csharp.md) | [Java](quickstarts/java.md) | [node. js](quickstarts/nodejs.md) | [Python](quickstarts/python.md)).
+API Bing для наглядного поиска возвращает сведения об изображении, которое вы предоставляете. Изображение можно предоставить с помощью URL-адреса изображения, токена аналитики или через отправку изображения. Сведения об этих параметрах см. в разделе [что такое API визуального поиска Bing?](overview.md). В этой статье демонстрируется использование токена аналитики. Примеры, демонстрирующие, как отправить изображение для получения аналитических сведений, см. в кратком руководстве:
 
-Если вы отправляете Визуальный поиск Bing маркер изображения или URL-адрес, в следующем примере отображаются данные формы, которые необходимо включить в текст записи. Данные формы должны включать `Content-Disposition` заголовок, и его `name` параметр должен иметь значение "кновледжерекуест". Дополнительные сведения об `imageInfo` объекте см. в запросе:
+* ([C#](quickstarts/csharp.md)
+
+* [Java](quickstarts/java.md)
+
+* [Node.js](quickstarts/nodejs.md)
+
+* [Python](quickstarts/python.md)).
+
+Если вы отправляете Визуальный поиск Bing маркер изображения или URL-адрес, в следующем примере отображаются данные формы, которые необходимо включить в текст записи. Данные формы должны включать `Content-Disposition` заголовок, и его параметр должен иметь значение `name` "кновледжерекуест". Дополнительные сведения об `imageInfo` объекте см. в запросе:
 
 ```json
 {
@@ -58,14 +67,23 @@ Content-Disposition: form-data; name="knowledgeRequest"
 --boundary_1234-abcd--
 ```
 
-Примеры использования токена Insights см. в разделе [C#](#use-with-c) | [Java](#use-with-java) | [node. js](#use-with-nodejs) | [Python](#use-with-python).
+Примеры использования токена Insights см. в следующих статьях:
+
+* [C#](#use-with-c)
+
+* [Java](#use-with-java)
+
+* [Node.js](#use-with-nodejs)
+
+* [Python](#use-with-python)
 
 ## <a name="use-with-c"></a>Использование с C #
 
 ### <a name="c-prerequisites"></a>Предварительные требования для C#
 
-- Любая версия [Visual Studio 2019](https://www.visualstudio.com/downloads/) для получения этого кода, работающего в Windows.
-- Подписка Azure. В этом кратком руководстве вы можете использовать [бесплатный пробный](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api) ключ подписки или платный ключ подписки.
+* подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services/).
+* Получив подписку Azure, <a href="https://portal.azure.com/#create/Microsoft.CognitiveServicesBingSearch-v7"  title="создайте ресурс Поиска Bing"  target="_blank">Create a Bing Search resource <span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку. После развертывания щелкните **Перейти к ресурсам**.
+* Любая версия [Visual Studio 2019](https://www.visualstudio.com/downloads/) для получения этого кода, работающего в Windows.
 
 ## <a name="run-the-application"></a>Выполнение приложения
 
@@ -237,8 +255,10 @@ namespace VisualSearchInsightsToken
 
 ### <a name="java-prerequisites"></a>Предварительные требования для Java
 
-- Для компиляции и выполнения этого кода необходимо использовать [JDK 7 или 8](https://aka.ms/azure-jdks) . Вы можете использовать Java IDE, если у вас есть Избранное, но достаточно текстового редактора.
-- В этом кратком руководстве вы можете использовать [бесплатный пробный](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api) ключ подписки или платный ключ подписки.
+* подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services/).
+* Получив подписку Azure, <a href="https://portal.azure.com/#create/Microsoft.CognitiveServicesBingSearch-v7"  title="создайте ресурс Поиска Bing"  target="_blank">Create a Bing Search resource <span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку. После развертывания щелкните **Перейти к ресурсам**.
+* [JDK 7 или 8](https://aka.ms/azure-jdks) для компиляции и выполнения этого кода. Вы можете использовать Java IDE, если у вас есть Избранное, но достаточно текстового редактора.
+
 
 ## <a name="run-the-java-application"></a>Запуск приложения Java
 
@@ -347,12 +367,13 @@ public class InsightsToken {
 }
 ```
 
-## <a name="use-with-nodejs"></a>Использование с Node. js
+## <a name="use-with-nodejs"></a>Использование с Node.js
 
 ### <a name="nodejs-prerequisites"></a>Необходимые компоненты Node.js
 
-- Для выполнения этого кода необходимо наличие [node. js 6](https://nodejs.org/en/download/) .
-- В этом кратком руководстве вы можете использовать [бесплатный пробный](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api) ключ подписки или платный ключ подписки.
+* подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services/).
+* Получив подписку Azure, <a href="https://portal.azure.com/#create/Microsoft.CognitiveServicesBingSearch-v7"  title="создайте ресурс Поиска Bing"  target="_blank">Create a Bing Search resource <span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку. После развертывания щелкните **Перейти к ресурсам**.
+* Для выполнения этого кода необходимо иметь [Node.js 6](https://nodejs.org/en/download/) .
 
 ## <a name="run-the-javascript-application"></a>Запуск приложения JavaScript
 
@@ -415,8 +436,9 @@ function requestCallback(err, res, body) {
 
 ### <a name="python-prerequisites"></a>Предварительные требования для Python
 
-- Для выполнения этого кода необходимо наличие [Python 3](https://www.python.org/) .
-- В рамках этого краткого руководства можно использовать ключ [бесплатной пробной](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api) подписки или ключ платной подписки.
+* подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services/).
+* Получив подписку Azure, <a href="https://portal.azure.com/#create/Microsoft.CognitiveServicesBingSearch-v7"  title="создайте ресурс Поиска Bing"  target="_blank">Create a Bing Search resource <span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку. После развертывания щелкните **Перейти к ресурсам**.
+* Для выполнения этого кода необходимо наличие [Python 3](https://www.python.org/) .
 
 ## <a name="run-the-python-application"></a>Запуск приложения Python
 
@@ -479,5 +501,4 @@ if __name__ == '__main__':
 [Create a Visual Search single-page web app](tutorial-bing-visual-search-single-page-app.md) (Создание одностраничного веб-приложения Визуального поиска)  
 [Знакомство с API Визуального поиска Bing](overview.md)  
 [Пробная версия Cognitive Services](https://aka.ms/bingvisualsearchtryforfree)  
-[Получить ключ доступа бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/?api=bing-visual-search-api)  
 [Образы — Визуальный поиск](https://aka.ms/bingvisualsearchreferencedoc)

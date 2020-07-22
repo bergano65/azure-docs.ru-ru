@@ -8,12 +8,12 @@ ms.devlang: nodejs
 ms.topic: tutorial
 ms.date: 04/20/2020
 ms.author: dech
-ms.openlocfilehash: ef493b6b21eb0ba0ad6d22a21e4e205a9fecacb6
-ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
+ms.openlocfilehash: 5d41f467efafa42bd73fce258ca97e4412a7cf48
+ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82858066"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86026854"
 ---
 # <a name="tutorial-build-a-nodejs-console-app-with-the-javascript-sdk-to-manage-azure-cosmos-db-sql-api-data"></a>Руководство по Создание консольного приложения Node.js с помощью пакета SDK JavaScript для управления данными API SQL для Azure Cosmos DB
 
@@ -90,7 +90,7 @@ ms.locfileid: "82858066"
 
    Сведения о конечной точке и ключе можно найти на панели **Ключи** [портала Azure](https://portal.azure.com).
 
-   ![Снимок экрана получения ключей на портале Azure][keys]
+   :::image type="content" source="media/sql-api-nodejs-get-started/node-js-tutorial-keys.png" alt-text="Снимок экрана получения ключей на портале Azure":::
 
 В пакете SDK для JavaScript используются универсальные термины — *контейнер* и *элемент*. Контейнер может представлять собой коллекцию, граф или таблицу. Элемент может представлять собой документ, ребро, вершину или запись и является содержимым внутри контейнера. В предыдущем фрагменте кода `module.exports = config;` используется для экспорта объекта конфигурации, чтобы на него можно было ссылаться в файле *app.js*.
 
@@ -223,4 +223,3 @@ node app.js
 > [Мониторинг Azure Cosmos DB](monitor-accounts.md)
 
 [create-account]: create-sql-api-dotnet.md#create-account
-[keys]: media/sql-api-nodejs-get-started/node-js-tutorial-keys.png

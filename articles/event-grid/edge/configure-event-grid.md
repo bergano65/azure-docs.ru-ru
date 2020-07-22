@@ -5,22 +5,20 @@ author: VidyaKukke
 manager: rajarv
 ms.author: vkukke
 ms.reviewer: spelluru
-ms.date: 10/03/2019
+ms.date: 07/08/2020
 ms.topic: article
-ms.service: event-grid
-services: event-grid
-ms.openlocfilehash: 841b5092775353bbe3340dbbd55610026f998a15
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 632227579fd021a0d2ce1d0b1bb0b8a8288c5f47
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76846470"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86171675"
 ---
 # <a name="event-grid-configuration"></a>Конфигурация сетки событий
 
 Сетка событий предоставляет множество конфигураций, которые можно изменять для каждой среды. В следующем разделе приведена ссылка на все доступные параметры и их значения по умолчанию.
 
-## <a name="tls-configuration"></a>Конфигурация TLS
+## <a name="tls-configuration"></a>Конфигурация протокола TLS
 
 Общие сведения о проверке подлинности клиента см. в разделе [безопасность и проверка подлинности](security-authentication.md). Примеры использования можно найти в [этой статье](configure-api-protocol.md).
 
@@ -75,10 +73,10 @@ ms.locfileid: "76846470"
 
 | Имя свойства | Описание |
 | ---------------- | ------------ |
-| `api__deliveryPolicyLimits__maxBatchSizeInBytes` | Максимальное значение, `ApproxBatchSizeInBytes` допустимое для регулятора. Значение по умолчанию — `1_058_576`.
-| `api__deliveryPolicyLimits__maxEventsPerBatch` | Максимальное значение, `MaxEventsPerBatch` допустимое для регулятора. Значение по умолчанию — `50`.
-| `broker__defaultMaxBatchSizeInBytes` | Максимальный размер запроса на доставку, `MaxEventsPerBatch` если указан только. Значение по умолчанию — `1_058_576`.
-| `broker__defaultMaxEventsPerBatch` | Максимальное число событий, добавляемых в пакет, если указано `MaxBatchSizeInBytes` только значение. Значение по умолчанию — `10`.
+| `api__deliveryPolicyLimits__maxBatchSizeInBytes` | Максимальное значение, допустимое для `ApproxBatchSizeInBytes` регулятора. Значение по умолчанию — `1_058_576`.
+| `api__deliveryPolicyLimits__maxEventsPerBatch` | Максимальное значение, допустимое для `MaxEventsPerBatch` регулятора. Значение по умолчанию — `50`.
+| `broker__defaultMaxBatchSizeInBytes` | Максимальный размер запроса на доставку `MaxEventsPerBatch` , если указан только. Значение по умолчанию — `1_058_576`.
+| `broker__defaultMaxEventsPerBatch` | Максимальное число событий, добавляемых в пакет, если `MaxBatchSizeInBytes` указано только значение. Значение по умолчанию — `10`.
 
 ## <a name="metrics"></a>Метрики
 
@@ -86,4 +84,4 @@ ms.locfileid: "76846470"
 
 | Имя свойства | Описание |
 | ---------------- | ------------ |
-| `metrics__reporterType` | Тип создателя для метрик енпоинт. Значение по `none` умолчанию — и отключает метрики. Значение, `prometheus` чтобы включить метрики в формате Prometheus демонстрации.
+| `metrics__reporterType` | Тип создателя для конечной точки метрик. Значение по умолчанию — `none` и отключает метрики. Значение, чтобы `prometheus` включить метрики в формате Prometheus демонстрации.

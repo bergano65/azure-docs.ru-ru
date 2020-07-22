@@ -7,17 +7,17 @@ ms.topic: quickstart
 ms.date: 10/26/2018
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: c419c2127b1c5fe3aaa60c6e828ff0c5a6676c07
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: c0008ab89f4599e2ada51b5637a9665a249bc1c4
+ms.sourcegitcommit: 61d92af1d24510c0cc80afb1aebdc46180997c69
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77598551"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85340833"
 ---
-# <a name="quickstart-create-and-manage-an-azure-file-share-with-azure-powershell"></a>Краткое руководство: создание общих файловых ресурсов Azure и управление ими с помощью Azure PowerShell 
+# <a name="quickstart-create-and-manage-an-azure-file-share-with-azure-powershell"></a>Краткое руководство. Создание общих файловых ресурсов Azure и управление ими с помощью Azure PowerShell 
 В этом руководстве рассматриваются основы работы с [общими файловыми ресурсами Azure](storage-files-introduction.md) с помощью PowerShell. Общие файловые ресурсы Azure отличаются от других ресурсов тем, что хранятся в облаке и поддерживаются платформой Azure. Общие файловые ресурсы Azure поддерживают отраслевой протокол SMB и позволяют совместно использовать файлы на нескольких компьютерах, а также в нескольких приложениях и экземплярах. 
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
@@ -40,7 +40,7 @@ New-AzResourceGroup `
 ## <a name="create-a-storage-account"></a>Создание учетной записи хранения
 Учетная запись хранения представляет собой общий пул носителей, который можно использовать для развертывания общих папок Azure. Учетная запись хранения может содержать любое количество общих ресурсов, а общий ресурс может содержать любое количество файлов, насколько позволяет емкость учетной записи хранения. В этом примере создается версия 2 общего назначения (учетная запись хранения GPv2), которая может хранить общие папки Azure ценовой категории "Стандартный" или другие ресурсы хранения, такие как большие двоичные объекты или очереди, на вращающемся носителе жесткого диска (HDD). Служба "Файлы Azure" также поддерживает твердотельные накопители (SSD) ценовой категории "Премиум". Общие папки Azure этой категории можно создать в учетных записях хранения Файлов.
 
-В этом примере создается учетная запись хранения с помощью командлета [New-AzStorageAccount](/powershell/module/az.storage/new-azstorageaccount). Учетная запись хранения называется *mystorageaccount\<случайное число>* , и к переменной **$storageAcct** добавляется ссылка на эту учетную запись. Имена учетных записей хранения должны быть уникальными. Чтобы сделать имя уникальным, используйте команду `Get-Random` для добавления к нему номера. 
+В этом примере создается учетная запись хранения с помощью командлета [New-AzStorageAccount](/powershell/module/az.storage/new-azstorageaccount). Учетная запись хранения называется *mystorageaccount\<random number>* , и к переменной **$storageAcct** добавляется ссылка на эту учетную запись. Имена учетных записей хранения должны быть уникальными. Чтобы сделать имя уникальным, используйте команду `Get-Random` для добавления к нему номера. 
 
 ```azurepowershell-interactive 
 $storageAccountName = "mystorageacct$(Get-Random)"
@@ -199,7 +199,7 @@ Get-AzStorageFile `
 
 ```azurepowershell-interactive
 $share = Get-AzStorageShare -Context $storageAcct.Context -Name $shareName
-$snapshot = $share.Snapshot()
+$snapshot = $share.CloudFileShare.Snapshot()
 ```
 
 ### <a name="browse-share-snapshots"></a>Просмотр снимков общего ресурса

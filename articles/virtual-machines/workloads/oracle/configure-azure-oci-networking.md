@@ -2,8 +2,8 @@
 title: Подключение Azure ExpressRoute к облачной инфраструктуре Oracle | Документация Майкрософт
 description: Подключение Azure ExpressRoute с помощью Oracle Cloud Infrastructure (OCI) Фастконнект для включения решений для приложений Oracle в разных облаках
 documentationcenter: virtual-machines
-author: BorisB2015
-manager: gwallace
+author: rgardler
+manager: ''
 editor: ''
 tags: azure-resource-manager
 ms.assetid: ''
@@ -12,31 +12,31 @@ ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 03/16/2020
-ms.author: borisb
-ms.openlocfilehash: 70556cbbfefd6ad22ef96ee16065209031ea456c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.author: rogardle
+ms.openlocfilehash: 95f1f7b42b88baaab6d89192f226ca67962544fb
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81683754"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86220479"
 ---
 # <a name="set-up-a-direct-interconnection-between-azure-and-oracle-cloud-infrastructure"></a>Настройка прямого взаимодействия между Azure и облачной инфраструктурой Oracle  
 
 Чтобы создать [интегрированную среду с несколькими облаками](oracle-oci-overview.md), корпорация Майкрософт и Oracle предлагают прямое взаимодействие между Azure и облачной инфраструктурой Oracle (OCI) через [ExpressRoute](../../../expressroute/expressroute-introduction.md) и [фастконнект](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectoverview.htm). Благодаря взаимосвязи ExpressRoute и Фастконнект клиенты могут столкнуться с низкой задержкой, высокой пропускной способностью и частным прямым подключением между двумя облаками.
 
 > [!IMPORTANT]
-> Oracle будет сертифицировать эти приложения для запуска в Azure при использовании решения Azure/Oracle Cloud Interconnect с 2020 мая.
-> * Набор E-Business
-> * JD Edwards EnterpriseOne
-> * PeopleSoft
-> * Розничные приложения Oracle
-> * Oracle Hyperion Financial Management
+> К маю 2020 г. следующие приложения будут сертифицированы Oracle для запуска в Azure при использовании соединения между облаками Azure и Oracle Cloud:
+> * E-Business Suite
+> * JD Edwards EnterpriseOne;
+> * PeopleSoft;
+> * приложения Oracle Retail;
+> * Oracle Hyperion Financial Management.
 
 На следующем рисунке показан общий обзор соединения:
 
 ![Сетевое подключение между облаками](media/configure-azure-oci-networking/azure-oci-connect.png)
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 * Чтобы установить подключение между Azure и OCI, необходимо иметь активную подписку Azure и активную службу OCI.
 
@@ -66,7 +66,7 @@ ms.locfileid: "81683754"
     * В поле **ключ службы поставщика**вставьте ключ службы ExpressRoute.
     * Используйте пространство частных IP-адресов First/30, отрезать пространство на предыдущем шаге для **основного IP-адреса BGP** и второго/30-адресного пространства для **дополнительного IP-адреса BGP** .
         * Назначьте первый пригодный для использования адрес из двух диапазонов для IP-адреса Oracle BGP (первичного и вторичного) и второго адреса для IP-адреса клиента BGP (с точки зрения Фастконнект). Первый пригодный IP-адрес — это второй IP-адрес в адресном пространстве/30 (первый IP-адрес зарезервирован корпорацией Майкрософт).
-    * Нажмите кнопку **Создать**.
+    * Нажмите **Создать**.
 1. Завершите связывание Фастконнект с виртуальной облачной сетью в клиенте Oracle через шлюз динамической маршрутизации, используя таблицу маршрутов.
 1. Перейдите в Azure и убедитесь, что **состояние поставщика** для канала ExpressRoute изменилось на " **подготовлено** " и что пиринг типа "частный" **Azure** был подготовлен. Это предварительные требования для следующих шагов.
 
@@ -102,7 +102,7 @@ ms.locfileid: "81683754"
 
 На этом этапе процесс удаления и отмены инициализации завершен.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о межоблачном подключении между OCI и Azure см. в [документации Oracle](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/azure.htm).
 * Используйте [сценарии terraform](https://aka.ms/azureociinterconnecttf) для развертывания инфраструктуры для целевых приложений Oracle в Azure и настройки сетевого соединения. 

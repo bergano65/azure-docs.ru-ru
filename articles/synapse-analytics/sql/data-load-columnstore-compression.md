@@ -1,5 +1,5 @@
 ---
-title: Повышение производительности индекса columnstore
+title: Повышение производительности индекса columnstore (Предварительная версия рабочих областей)
 description: Вы можете снизить требования к памяти (или увеличить объем доступной памяти), чтобы достичь максимально возможного числа строк, которые индекс columnstore сжимает в каждой группе строк.
 services: synapse-analytics
 author: kevinvngo
@@ -11,14 +11,14 @@ ms.date: 04/15/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: f1f3667c088c5f7300317ea02ca19a72e4e62905
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c885bce5ca17d5919ec134d179f6009e91a969cc
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81431037"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86495488"
 ---
-# <a name="maximizing-rowgroup-quality-for-columnstore"></a>Максимальное повышение качества группы строк для индекса columnstore
+# <a name="maximizing-rowgroup-quality-for-columnstore-index-performance"></a>Максимизация качества группы строк для производительности индекса columnstore
 
 Качество группы строк определяется количеством строк в группе строк. Увеличение объема доступной памяти может максимально увеличить число строк, сжатых индексом columnstore, в каждый группы строк.  Эти способы можно использовать, чтобы оптимизировать степень сжатия и производительность запросов для индексов columnstore.
 
@@ -80,8 +80,8 @@ from cte;
 Максимальный объем памяти, требуемый для сжатия одной группы строк, составляет приблизительно
 
 - 72 МБ +
-- \#\* \#столбцы \* строк 8 байт +
-- \#строки \* \#короткие-строковые столбцы \* 32 байт +
+- \#\* \# столбцы строк \* 8 байт +
+- \#строки \* \# короткие-строковые столбцы \* 32 байт +
 - \#столбцы длинных строк \* 16 МБ для словаря сжатия
 
 где столбцы коротких строк используют типы строковых данных размером <= 32 байта, а столбцы длинных строк используют типы строковых данных размером > 32 байта.
@@ -139,7 +139,7 @@ OPTION (MAXDOP 1);
 - Сведения об увеличении числа DWU см.в разделе [Масштабирование производительности](../sql-data-warehouse/quickstart-scale-compute-portal.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
 - Сведения об изменении класса ресурсов для запросов см. в разделе [Пример изменения класса ресурсов пользователя](../sql-data-warehouse/resource-classes-for-workload-management.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json#change-a-users-resource-class).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы узнать больше о способах повышения производительности в синапсе SQL, см. [Обзор производительности](../overview-cheat-sheet.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
 

@@ -9,12 +9,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 10/23/2019
 ms.author: mbullwin
-ms.openlocfilehash: cc2cde7932f783f63ee2783f0589ce4f88f248a2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: b5822c1af4f3bc5d9519af93054a01c3cdc82001
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77658108"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86504997"
 ---
 # <a name="workbook-resource-parameters"></a>Параметры ресурса книги
 
@@ -61,7 +61,7 @@ ms.locfileid: "77658108"
 > [!NOTE]
 > Граф ресурсов Azure пока недоступен во всех облаках. Если выбран этот подход, убедитесь, что он поддерживается в целевом облаке.
 
-[Документация по графу ресурсов Azure](https://docs.microsoft.com/azure/governance/resource-graph/overview)
+[Документация по Azure Resource Graph](../../governance/resource-graph/overview.md)
 
 ## <a name="creating-a-resource-parameter--json-list"></a>Создание параметра ресурса (список JSON)
 1. Начните с пустой книги в режиме редактирования.
@@ -81,7 +81,7 @@ ms.locfileid: "77658108"
     ]
     ```
     2. Нажмите синюю кнопку _обновления_ .
-6. При необходимости задайте `Include only resource types` значение _Application Insights_
+6. При необходимости задайте значение `Include only resource types` _Application Insights_
 7. Нажмите кнопку "Сохранить" на панели инструментов, чтобы создать параметр.
 
 ## <a name="referencing-a-resource-parameter"></a>Ссылка на параметр ресурса
@@ -107,11 +107,11 @@ ms.locfileid: "77658108"
 | `{Applications:value}` | Значение выбранного ресурса | _"/Subscriptions/<>/resourceGroups/<ресурсов-Group>/providers/<Resource-Type>/акмеаусентикатион"_ |
 | `{Applications:name}` | Имя выбранного ресурса | `acmefrontend` |
 | `{Applications:resourceGroup}` | Группа ресурсов выбранного ресурса | `acmegroup` |
-| `{Applications:resourceType}` | Тип выбранного ресурса | _Microsoft. Insights/компоненты_ |
+| `{Applications:resourceType}` | Тип выбранного ресурса | _microsoft.insights/components_ |
 | `{Applications:subscription}` | Подписка выбранного ресурса |  |
 | `{Applications:grid}` | Сетка, показывающая свойства ресурса. Полезно для отображения в текстовом блоке во время отладки  |  |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Узнайте](workbooks-visualizations.md) больше о книгах с множеством разнообразных вариантов визуализации.
 * [Управление](workbooks-access-control.md) доступом к ресурсам книги и предоставление общего доступа к ним.

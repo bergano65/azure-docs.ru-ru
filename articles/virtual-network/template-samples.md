@@ -4,7 +4,7 @@ description: Сведения о разных шаблонах Azure Resource Ma
 services: virtual-network
 documentationcenter: virtual-network
 author: KumudD
-manager: twooley
+manager: mtillman
 editor: ''
 tags: ''
 ms.assetid: ''
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: ''
 ms.workload: infrastructure
 ms.date: 04/22/2019
 ms.author: kumud
-ms.openlocfilehash: 5971b3251812ea4193e71173943ffc0d48207567
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: e6e759fa75e1957e726dc9f6f3d0035869f35e3f
+ms.sourcegitcommit: 537c539344ee44b07862f317d453267f2b7b2ca6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75975367"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84707826"
 ---
 # <a name="azure-resource-manager-template-samples-for-virtual-network"></a>Примеры шаблонов Azure Resource Manager для виртуальной сети
 
@@ -29,7 +29,7 @@ ms.locfileid: "75975367"
 Синтаксис JSON и используемые в шаблонах свойства см. в статье о [типах ресурсов Microsoft.Network](/azure/templates/microsoft.network/allversions).
 
 
-| Задача | Description |
+| Задача | Описание |
 |----|----|
 |[Создание виртуальной сети с двумя подсетями](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vnet-two-subnets)| Создание виртуальной сети с двумя подсетями.|
 |[Маршрутизация трафика через виртуальный сетевой модуль](https://github.com/Azure/azure-quickstart-templates/tree/master/201-userdefined-routes-appliance)| Создание виртуальной сети с тремя подсетями. Развертывание виртуальной машины в каждой подсети. Создание таблицы маршрутов, содержащей маршруты для направления трафика из одной подсети в другую через виртуальную машину в третьей подсети. Связывание таблицы маршрутов и одной из подсетей.|

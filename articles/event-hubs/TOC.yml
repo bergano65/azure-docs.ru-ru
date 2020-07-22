@@ -213,14 +213,20 @@
           href: configure-customer-managed-key.md
     - name: Диагностика
       items:
-        - name: Руководство по устранению неполадок
+        - name: Устранение проблем подключения
           href: troubleshooting-guide.md
+        - name: Устранение проблем с проверкой подлинности и авторизацией
+          href: troubleshoot-authentication-authorization.md
+        - name: Руководство по устранению неполадок с Kafka для Центров событий
+          href: apache-kafka-troubleshooting-guide.md
         - name: Исключения .NET
           href: event-hubs-messaging-exceptions.md
         - name: Исключения Resource Manager
           href: resource-manager-exceptions.md
 - name: Справочник
   items:
+    - name: Пакеты SDK
+      href: sdks.md
     - name: .NET
       items:
         - name: Клиентская библиотека
@@ -271,6 +277,12 @@
               href: /javascript/api/@azure/event-hubs/?view=azure-node-legacy
         - name: Библиотека управления
           href: /javascript/api/@azure/arm-eventhub/?view=azure-node-latest
+    - name: Go
+      items:
+        - name: Клиентская библиотека
+          href: 'https://pkg.go.dev/github.com/Azure/azure-event-hubs-go?tab=doc'
+        - name: Библиотека управления
+          href: 'https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/services/eventhub/mgmt/2017-04-01/eventhub?tab=doc'
     - name: REST
       href: /rest/api/eventhub
     - name: Шаблон Resource Manager

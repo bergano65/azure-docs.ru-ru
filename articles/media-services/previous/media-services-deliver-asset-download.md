@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.openlocfilehash: 21fcc6ae09718ffbb22e1d438926586dd3cde71d
-ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "61465666"
 ---
 # <a name="how-to-deliver-an-asset-by-download"></a>Пошаговое руководство. Доставка ресурса по скачиванию  
@@ -27,7 +27,7 @@ ms.locfileid: "61465666"
 В этом примере показано, как загрузить мультимедийные активы из служб мультимедиа на локальный компьютер. Код запрашивает задания, связанные с учетной записью служб мультимедиа, по идентификатору задания и обращается к соответствующей коллекции **OutputMediaAssets** (которая представляет собой набор из одного или нескольких выходных мультимедийных активов, являющихся результатом выполнения задания). В этом примере показано, как загрузить выходные мультимедийные активы из задания, но вы можете применить тот же подход для загрузки других активов.
 
 >[!NOTE]
->Действует ограничение в 1 000 000 записей для разных политик AMS (например, для политики Locator или ContentKeyAuthorizationPolicy). Указывайте один и тот же идентификатор политики, если вы используете те же дни, разрешения доступа и т. д., например политики для указателей, которые должны оставаться на месте в течение длительного времени (политики запрета передачи). Дополнительные сведения см. в [этой](media-services-dotnet-manage-entities.md#limit-access-policies) статье.
+>Действует ограничение в 1 000 000 записей для разных политик AMS (например, для политики Locator или ContentKeyAuthorizationPolicy). Указывайте один и тот же идентификатор политики, если вы используете те же дни, разрешения доступа и т. д., например политики для указателей, которые должны оставаться на месте в течение длительного времени (политики запрета передачи). Дополнительные сведения см. в [этой статье](media-services-dotnet-manage-entities.md#limit-access-policies).
 
 ```csharp
     // Download the output asset of the specified job to a local folder.
@@ -84,7 +84,7 @@ ms.locfileid: "61465666"
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="see-also"></a>См. также

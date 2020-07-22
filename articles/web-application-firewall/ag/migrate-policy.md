@@ -7,16 +7,16 @@ author: vhorne
 ms.service: web-application-firewall
 ms.date: 04/16/2020
 ms.author: ant
-ms.openlocfilehash: fb3b922b753b9696aa26ea189597589ecc5772db
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: eccd6b33353e071a66225279f1f1c150d4bdaafc
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81536630"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86143854"
 ---
 # <a name="migrate-web-application-firewall-policies-using-azure-powershell"></a>Перенос политик брандмауэра веб-приложения с помощью Azure PowerShell
 
-Этот сценарий упрощает переход с WAF config или Custom Rule-WAF Policy на полную политику WAF. На портале может появиться предупреждение " *Миграция в политику WAF*" или "новые возможности общедоступной предварительной версии WAF", такие как геосоответствие настраиваемых правил, "на сайт", "политика WAF для каждого сайта" или "идентификатор набора правил для ленты". Чтобы использовать любую из этих функций, требуется полная политика WAF, связанная с вашим шлюзом приложений. 
+Этот сценарий упрощает переход с WAF config или Custom Rule-WAF Policy на полную политику WAF. На портале может появиться предупреждение " *Миграция в политику WAF*" или вы хотите, чтобы новые функции WAF, такие как геосоответствие настраиваемых правил (Предварительная версия), политика WAF для каждого сайта и политика для каждого URI WAF (Предварительная версия), или набор правил защиты Bot (Предварительная версия). Чтобы использовать любую из этих функций, требуется полная политика WAF, связанная с вашим шлюзом приложений. 
 
 Дополнительные сведения о создании новой политики WAF см. в статье [Создание политик брандмауэра веб-приложения для шлюза приложений](create-waf-policy-ag.md). Дополнительные сведения о миграции см. [в статье миграция в WAF Policy](create-waf-policy-ag.md#migrate-to-waf-policy).
 
@@ -217,6 +217,6 @@ function Main() {
 
 Main
 ```
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения о [группах правил и правилах CR в брандмауэре веб-приложений](application-gateway-crs-rulegroups-rules.md).

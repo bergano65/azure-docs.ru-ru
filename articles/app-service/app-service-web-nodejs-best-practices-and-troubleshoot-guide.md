@@ -1,6 +1,6 @@
 ---
-title: Рекомендации по использованию и устранению неполадок в Node. js
-description: Ознакомьтесь с рекомендациями и действиями по устранению неполадок для приложений Node. js, работающих в службе приложений Azure.
+title: Node.js рекомендации и устранение неполадок
+description: Ознакомьтесь с рекомендациями и действиями по устранению неполадок для Node.js приложений, работающих в службе приложений Azure.
 author: msangapu-msft
 ms.assetid: 387ea217-7910-4468-8987-9a1022a99bef
 ms.devlang: nodejs
@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 11/09/2017
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: 682884d11b298a97e27056af3c10802dfd410e4c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e2c60e851d61a5f33e1b050412b0e91b81e20a16
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75430568"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86169991"
 ---
 # <a name="best-practices-and-troubleshooting-guide-for-node-applications-on-azure-app-service-windows"></a>Рекомендации и руководство по устранению неполадок в приложениях Node.js в Службе приложений Azure (Windows)
 
@@ -29,7 +29,7 @@ ms.locfileid: "75430568"
 
 ### <a name="nodeprocesscountperapplication"></a>nodeProcessCountPerApplication
 
-Этот параметр определяет количество процессов Node, запущенных в одном приложении IIS. Значение по умолчанию — 1. Если задать значение 0, число файлов node.exe будет совпадать с числом ЦП на виртуальной машине. Для большинства приложений рекомендуемое значение — 0. Это позволяет использовать все виртуальные ЦП на вашем компьютере. Файл node.exe является однопотоковым, поэтому один такой файл потребляет не более 1 виртуального ЦП. Чтобы добиться максимальной производительности приложения Node, используйте все виртуальные ЦП.
+Этот параметр определяет количество процессов Node, запущенных в одном приложении IIS. Значение по умолчанию — 1. Если задать значение 0, число файлов node.exe будет совпадать с числом ЦП на виртуальной машине. Для большинства приложений рекомендуемое значение — 0. Это позволяет использовать все виртуальные ЦП на вашем компьютере. Файл node.exe является однопотоковым, поэтому один такой файл потребляет не более 1 виртуального ЦП. Чтобы добиться максимальной производительности приложения Node, используйте все виртуальные ЦП.
 
 ### <a name="nodeprocesscommandline"></a>nodeProcessCommandLine
 
@@ -170,7 +170,7 @@ http.createServer(function (req, res) {
 
 Перейдите в каталог site/wwwroot. Здесь вы увидите интерфейс командной строки, как показано в следующем примере.
 
-![](./media/app-service-web-nodejs-best-practices-and-troubleshoot-guide/scm_install_v8.png)
+![Снимок экрана, показывающий каталог site/wwwroot и командную строку.](./media/app-service-web-nodejs-best-practices-and-troubleshoot-guide/scm_install_v8.png)
 
 Выполните команду `npm install v8-profiler`.
 
@@ -203,11 +203,11 @@ http.createServer(function (req, res) {
 
 Предыдущий код описывает функцию WriteConsoleLog, а затем записывает вывод профиля в файл profile.cpuprofile, расположенный в каталоге site wwwroot. Отправьте запрос в приложение. В каталоге site wwwroot будет создан файл profile.cpuprofile.
 
-![](./media/app-service-web-nodejs-best-practices-and-troubleshoot-guide/scm_profile.cpuprofile.png)
+![Снимок экрана, на котором показан файл Profile. CPUPROFILE.](./media/app-service-web-nodejs-best-practices-and-troubleshoot-guide/scm_profile.cpuprofile.png)
 
 Загрузите этот файл и откройте его с помощью средств Chrome (клавиша F12). Нажмите клавишу F12 на Chrome, а затем выберите вкладку **Профили** . Нажмите кнопку **загрузить** . Выберите загруженный файл profile.cpuprofile. Щелкните только что загруженный профиль.
 
-![](./media/app-service-web-nodejs-best-practices-and-troubleshoot-guide/chrome_tools_view.png)
+![Снимок экрана, на котором показан загруженный файл Profile. CPUPROFILE.](./media/app-service-web-nodejs-best-practices-and-troubleshoot-guide/chrome_tools_view.png)
 
 Можно увидеть, что на работу функции WriteConsoleLog ушло 95 % времени. В выходных данных вы также увидите точные номера строк и исходные файлы, которые вызывают проблему.
 

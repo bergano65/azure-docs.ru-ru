@@ -1,18 +1,18 @@
 ---
 title: Создание целевой страницы в Azure Marketplace | Azure
 description: Сведения о создании целевой страницы в Azure Marketplace и Microsoft AppSource для издателей приложений и служб.
-author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
+author: vikrambmsft
+ms.author: vikramb
 ms.date: 06/04/2018
-ms.author: dsindona
-ms.openlocfilehash: 0952c1d4b6955ff20f06afc6eaded18fbd105708
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: b7f80910e19348dfa3540f141424205a7531f5e7
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80387807"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86102826"
 ---
 # <a name="build-your-landing-page"></a>Создание целевой страницы
 
@@ -48,7 +48,7 @@ ms.locfileid: "80387807"
 | **Помещайте соответствующие названия продуктов и ключевые слова выше сгиба** | Не заставляйте пользователей прокручивать страницу, чтобы увидеть, какой продукт или решение вы представляете. |
 | **Используйте изображения торговой марки для проверки вашего решения в соответствии с рекомендациями по фирменной символике корпорации Майкрософт, например "Сертифицировано для Azure"**. | Не используйте неутвержденные изображения фирменной символики корпорации Майкрософт. |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 *   Дополнительные сведения об эмблеме "Сертифицировано Azure" см. в разделе [Рекомендации по сертификации Microsoft Azure](https://azure.microsoft.com/support/legal/marketplace/certified-guidelines).
 *   Дополнительные сведения о фирменной символике см. на странице [Brand Central](https://microsoft.sharepoint.com/teams/brandcentral).

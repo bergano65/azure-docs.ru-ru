@@ -3,24 +3,24 @@ title: Проблема при добавлении приложения не и
 description: Сведения об общих проблемах, возникающих при добавлении пользовательских приложений не из коллекции
 services: active-directory
 documentationcenter: ''
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.assetid: ''
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: troubleshooting
 ms.date: 09/11/2018
-ms.author: mimart
+ms.author: kenwith
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 38a9ef04389318d3588649117c930ff6efa3fe4e
-ms.sourcegitcommit: b1e25a8a442656e98343463aca706f4fde629867
+ms.openlocfilehash: ce103ca6c958b0524d753da25c2a79aadfb7c8b3
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "65784474"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84760292"
 ---
 # <a name="problem-adding-a-non-gallery-application"></a>Проблема при добавлении приложения не из коллекции
 
@@ -96,7 +96,7 @@ ms.locfileid: "65784474"
 
 - **UPN** — пользователь, который выполнил операцию.
 
-  *  Пример: **тперкинс\@f128.info**
+  *  Пример: **тперкинс \@ f128.info**
 
 - **Идентификатор клиента** — уникальный идентификатор клиента, к которому относится пользователь, выполнивший операцию.
 
@@ -122,7 +122,7 @@ ms.locfileid: "65784474"
 
 - **Подробные сведения** — подробное описание результата операции.
 
-  *  Пример: **внутренний URL `https://bing.com/` -адрес является недопустимым, так как он уже используется**
+  *  Пример: **внутренний URL-адрес `https://bing.com/` является недопустимым, так как он уже используется**
 
 - **Скопировать ошибку** — щелкните **значок копирования** справа от текстового поля **Скопировать ошибку**, чтобы скопировать в буфер обмена все подробности уведомления, которые можно будет передать в службу поддержки или группу продукта. 
 - инженер

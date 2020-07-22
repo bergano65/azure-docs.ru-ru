@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: 4edee73e13c0490810706a0f7a028b54f37b287b
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: f3660956a3e66fc9a632eace378feb8873bceaf8
+ms.sourcegitcommit: 374e47efb65f0ae510ad6c24a82e8abb5b57029e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67093053"
+ms.lasthandoff: 06/28/2020
+ms.locfileid: "85506095"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-redvector"></a>Руководство. Интеграция Azure Active Directory с RedVector
 
@@ -107,7 +107,7 @@ ms.locfileid: "67093053"
 
     а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://sso2.redvector.com/adfs/<Companyname>`.
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<Companyname>.redvector.com/saml2`.
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://sso2.redvector.com/saml2`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов RedVector](mailto:sso@redvector.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

@@ -7,10 +7,9 @@ ms.topic: conceptual
 ms.date: 07/25/2019
 ms.author: alkohli
 ms.openlocfilehash: 89f367e866c1a794f4359c76b8b8a8a9cfefd50d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76273809"
 ---
 # <a name="use-the-new-authentication-for-your-storsimple"></a>Использование нового режима аутентификации для StorSimple
@@ -38,10 +37,10 @@ ms.locfileid: "76273809"
 
 Если вы используете виртуальный массив StorSimple, убедитесь, что в правила брандмауэра включен следующий URL-адрес:
 
-| Шаблон URL-адреса                         | Облако | Компонент или функция         |
+| Шаблон URL-адреса                         | Cloud | Компонент или функция         |
 |------------------------------------|-------|---------------------------------|
 | `https://login.windows.net`        | Azure Public |Служба аутентификации AAD      |
-| `https://login.microsoftonline.us` | US Government |Служба аутентификации AAD      |
+| `https://login.microsoftonline.us` | US (США) |Служба аутентификации AAD      |
 
 Полный список шаблонов URL-адресов для виртуальных массивов StorSimple см. в разделе [Шаблоны URL-адресов для правил брандмауэра](storsimple-ova-system-requirements.md#url-patterns-for-firewall-rules).
 
@@ -84,6 +83,6 @@ ms.locfileid: "76273809"
 
     ![Подтверждение повторного создания](./media/storsimple-virtual-array-aad-registration-key/aad-registration-key2.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Ознакомьтесь с дополнительными сведениями о развертывании [виртуального массива StorSimple](storsimple-virtual-array-deploy1-portal-prep.md).

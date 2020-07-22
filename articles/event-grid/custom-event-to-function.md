@@ -1,19 +1,14 @@
 ---
 title: Краткое руководство. Отправка настраиваемых событий в Функции Azure с помощью Сетки событий
 description: Краткое руководство. Используйте службу "Сетка событий Azure" и Azure CLI или портал, чтобы иметь возможность публиковать темы и подписываться на эти события. Служба "Функции Azure" используется для конечной точки.
-services: event-grid
-keywords: ''
-author: banisadr
-ms.author: babanisa
-ms.date: 11/15/2019
+ms.date: 07/07/2020
 ms.topic: quickstart
-ms.service: event-grid
-ms.openlocfilehash: 5e38571cf84537fd722093b96cd277743e8ce80c
-ms.sourcegitcommit: fab450a18a600d72b583ecfbe6c5e53afd43408c
+ms.openlocfilehash: 26ddfd1aeb61d3786edcdfca1acf5e293e4145ae
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80292152"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86115100"
 ---
 # <a name="quickstart-route-custom-events-to-an-azure-function-with-event-grid"></a>Краткое руководство. Маршрутизация настраиваемых событий в Функции Azure с помощью Сетки событий
 

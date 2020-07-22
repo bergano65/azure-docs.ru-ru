@@ -1,5 +1,5 @@
 ---
-title: Расширение драйвера GPU NVIDIA — виртуальные машины Linux в Azure
+title: Расширение драйвера GPU NVIDIA для виртуальных машин Linux в Azure
 description: Расширение Microsoft Azure для установки драйверов GPU NVIDIA на вычислительных виртуальных машинах серии N под управлением Linux.
 services: virtual-machines-linux
 documentationcenter: ''
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/11/2019
 ms.author: akjosh
-ms.openlocfilehash: e7f6653043d46925d6a4c35eedaf81224ea6c36d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 52f896e5cbcc8089ee8683338c99fb514400be4a
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81415784"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86511149"
 ---
 # <a name="nvidia-gpu-driver-extension-for-linux"></a>Расширение драйвера GPU NVIDIA для Linux
 
@@ -26,11 +26,10 @@ ms.locfileid: "81415784"
 
 Это расширение устанавливает драйверы GPU NVIDIA на виртуальных машинах серии N для Linux. В зависимости от семейства виртуальных машин расширение устанавливает драйверы CUDA или GRID. При установке драйверов NVIDIA с помощью этого расширения требуется принять условия [лицензионного соглашения NVIDIA](https://go.microsoft.com/fwlink/?linkid=874330). Во время установки драйвера виртуальная машина может быть перезагружена для завершения процедуры.
 
-Инструкции по установке драйверов вручную и текущим поддерживаемым версиям доступны [здесь](
-https://docs.microsoft.com/azure/virtual-machines/linux/n-series-driver-setup).
+Инструкции по установке драйверов вручную и сведения о поддерживаемых сейчас версиях приводятся [здесь](../linux/n-series-driver-setup.md).
 Это расширение также доступно для установки драйверов GPU NVIDIA на [виртуальных машинах Windows серии N](hpccompute-gpu-windows.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="operating-system"></a>Операционная система
 
@@ -39,8 +38,8 @@ https://docs.microsoft.com/azure/virtual-machines/linux/n-series-driver-setup).
 | Distribution | Версия |
 |---|---|
 | Linux: Ubuntu | 16.04 LTS, 18.04 LTS |
-| Linux: Red Hat Enterprise Linux | 7.3, 7.4, 7.5, 7.6 |
-| Linux: CentOS | 7.3, 7.4, 7.5, 7.6 |
+| Linux: Red Hat Enterprise Linux | 7,3, 7,4, 7,5, 7,6, 7,7 |
+| Linux: CentOS | 7,3, 7,4, 7,5, 7,6, 7,7 |
 
 ### <a name="internet-connectivity"></a>Подключение к Интернету
 
@@ -62,7 +61,7 @@ https://docs.microsoft.com/azure/virtual-machines/linux/n-series-driver-setup).
   "properties": {
     "publisher": "Microsoft.HpcCompute",
     "type": "NvidiaGpuDriverLinux",
-    "typeHandlerVersion": "1.2",
+    "typeHandlerVersion": "1.3",
     "autoUpgradeMinorVersion": true,
     "settings": {
     }
@@ -70,34 +69,34 @@ https://docs.microsoft.com/azure/virtual-machines/linux/n-series-driver-setup).
 }
 ```
 
-### <a name="properties"></a>Элемент Property
+### <a name="properties"></a>Свойства
 
 | Имя | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
 | версия_API | 2015-06-15 | Дата |
 | publisher | Microsoft.HpcCompute | строка |
 | type | NvidiaGpuDriverLinux | строка |
-| typeHandlerVersion | 1.2 | INT |
+| typeHandlerVersion | 1.3 | INT |
 
-### <a name="settings"></a>"Настройки"
+### <a name="settings"></a>Настройки
 
 Все эти параметры не являются обязательными. По умолчанию ядро не обновляется (если это не требуется для установки драйвера), устанавливается последний поддерживаемый драйвер и набор инструментов CUDA Toolkit (если это применимо).
 
 | Имя | Описание | Значение по умолчанию | Допустимые значения | Тип данных |
 | ---- | ---- | ---- | ---- | ---- |
 | updateOS | Обновление ядра, даже если для установки драйвера это не требуется | false | true, false | Логическое |
-| driverVersion | NV: версия драйвера GRID<br> NC/ND: версия набора инструментов CUDA Toolkit. Последние версии драйверов для выбранного набора CUDA Toolkit устанавливаются автоматически. | последняя | GRID: "430,30", "418,70", "410,92", "410,71", "390,75", "390,57", "390,42"<br> CUDA: 10.0.130, 9.2.88, 9.1.85 | строка |
+| driverVersion | NV: версия драйвера GRID.<br> NC/ND: версия набора инструментов CUDA Toolkit. Последние версии драйверов для выбранного набора CUDA Toolkit устанавливаются автоматически. | последняя | GRID: 430.30, 418.70, 410.92, 410.71, 390.75, 390.57, 390.42.<br> CUDA: 10.0.130, 9.2.88, 9.1.85. | строка |
 | installCUDA | Установка набора инструментов CUDA Toolkit. Это относится только к виртуальным машинам серии NC/ND. | Да | true, false | Логическое |
 
 
-## <a name="deployment"></a>Deployment (Развертывание)
+## <a name="deployment"></a>Развертывание
 
 
 ### <a name="azure-resource-manager-template"></a>Шаблон Azure Resource Manager 
 
 Расширения виртуальной машины Azure можно развернуть с помощью шаблонов Azure Resource Manager. Шаблоны идеально подходят для развертывания одной или нескольких виртуальных машин, требующих настройки после развертывания.
 
-Конфигурацию JSON для расширения виртуальной машины можно вложить в ресурс виртуальной машины или поместить в корень или на верхний уровень JSON-файла шаблона Resource Manager. Размещение конфигурации JSON влияет на значения имени и типа ресурса. Дополнительные сведения см. в разделе [Задание имени и типа для дочерних ресурсов](../../azure-resource-manager/resource-manager-template-child-resource.md). 
+Конфигурацию JSON для расширения виртуальной машины можно вложить в ресурс виртуальной машины или поместить в корень или на верхний уровень JSON-файла шаблона Resource Manager. Размещение конфигурации JSON влияет на значения имени и типа ресурса. Дополнительные сведения см. в разделе [Указание имени и типа дочернего ресурса в шаблоне Resource Manager](../../azure-resource-manager/templates/child-resource-name-type.md). 
 
 В следующем примере предполагается, что расширение виртуальной машины расположено в ресурсе виртуальной машины. При вложении ресурса расширения JSON помещается в объект `"resources": []` виртуальной машины.
 
@@ -113,7 +112,7 @@ https://docs.microsoft.com/azure/virtual-machines/linux/n-series-driver-setup).
   "properties": {
     "publisher": "Microsoft.HpcCompute",
     "type": "NvidiaGpuDriverLinux",
-    "typeHandlerVersion": "1.2",
+    "typeHandlerVersion": "1.3",
     "autoUpgradeMinorVersion": true,
     "settings": {
     }
@@ -131,14 +130,14 @@ Set-AzVMExtension
     -Publisher "Microsoft.HpcCompute" `
     -ExtensionName "NvidiaGpuDriverLinux" `
     -ExtensionType "NvidiaGpuDriverLinux" `
-    -TypeHandlerVersion 1.2 `
+    -TypeHandlerVersion 1.3 `
     -SettingString '{ `
     }'
 ```
 
 ### <a name="azure-cli"></a>Azure CLI
 
-Ниже показаны примеры Azure Resource Manager и PowerShell, о которых говорилось ранее. Также в них добавлены настраиваемые параметры в качестве примера установки драйвера, отличного от драйвера умолчанию. В частности, обновляется ядро ОС и устанавливается конкретный драйвер версии набора инструментов CUDA Toolkit.
+В следующем примере показаны приведенные выше Azure Resource Manager и примеры PowerShell.
 
 ```azurecli
 az vm extension set \
@@ -146,16 +145,27 @@ az vm extension set \
   --vm-name myVM \
   --name NvidiaGpuDriverLinux \
   --publisher Microsoft.HpcCompute \
-  --version 1.2 \
+  --version 1.3 
+```
+
+В следующем примере также добавляются два дополнительных настраиваемых параметра в качестве примера для установки драйвера, не установленного по умолчанию. В частности, он обновляет ядро ОС до последней версии и устанавливает конкретный драйвер CUDA Toolkit. Обратите внимание, что параметр "--Settings" является необязательным и имеет значение по умолчанию. Обратите внимание, что обновление ядра может увеличить время установки расширения. Кроме того, выбор определенной (более старой) версии CUDA толкит может быть не всегда совместим с новыми ядрами.
+
+```azurecli
+az vm extension set \
+  --resource-group myResourceGroup \
+  --vm-name myVM \
+  --name NvidiaGpuDriverLinux \
+  --publisher Microsoft.HpcCompute \
+  --version 1.3 \
   --settings '{ \
     "updateOS": true, \
-    "driverVersion": "9.1.85", \
+    "driverVersion": "10.0.130" \
   }'
 ```
 
 ## <a name="troubleshoot-and-support"></a>Устранение неполадок и поддержка
 
-### <a name="troubleshoot"></a>Устранение неполадок
+### <a name="troubleshoot"></a>Диагностика
 
 Сведения о состоянии развертывания расширения можно получить на портале Azure, а также с помощью Azure PowerShell или Azure CLI. Чтобы просмотреть состояние развертывания расширений для определенной виртуальной машины, выполните следующую команду.
 
@@ -167,7 +177,7 @@ Get-AzVMExtension -ResourceGroupName myResourceGroup -VMName myVM -Name myExtens
 az vm extension list --resource-group myResourceGroup --vm-name myVM -o table
 ```
 
-Выходные данные выполнения расширения регистрируются в следующем файле:
+Выходные данные выполнения расширения записываются в следующий файл. Сведения о состоянии установки (любой длительный запуск) и об устранении любых сбоев см. в этом файле.
 
 ```bash
 /var/log/azure/nvidia-vmext-status
@@ -188,9 +198,9 @@ az vm extension list --resource-group myResourceGroup --vm-name myVM -o table
 
 ### <a name="support"></a>Поддержка
 
-Если вам нужна дополнительная помощь в любой момент в этой статье, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack overflow](https://azure.microsoft.com/support/community/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и выберите получить поддержку. Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
+Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/community/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните "Получить поддержку". Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о расширениях виртуальных машин см. в обзоре [расширений и компонентов виртуальной машины для Linux](features-linux.md).
 
-См. дополнительные сведения о [размерах виртуальных машин серии N, оптимизированных для GPU](../linux/sizes-gpu.md).
+См. дополнительные сведения о [размерах виртуальных машин серии N, оптимизированных для GPU](../sizes-gpu.md).

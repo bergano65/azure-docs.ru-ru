@@ -15,12 +15,12 @@ ms.date: 11/17/2019
 ms.author: zhenlwa
 ms.custom: azure-functions
 ms.tgt_pltfrm: Azure Functions
-ms.openlocfilehash: ba70d5f186c1424b2019716ab7a87aeae85f8913
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: e8f5b21189007d2b15c2ff31b778144d9a672318
+ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74187298"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85856473"
 ---
 # <a name="tutorial-use-dynamic-configuration-in-an-azure-functions-app"></a>Руководство по использованию динамической конфигурации в приложении Функций Azure
 
@@ -67,7 +67,7 @@ ms.locfileid: "74187298"
     }
     ```
 
-3. Обновите метод `Run` и оповещение об обновлениях конфигурации, используя метод `Refresh` в начале вызова функций. Это не будет работать, если время истечения срока действия кэша не достигнуто. Удалите оператор `await`, если вы предпочитаете, чтобы конфигурация обновлялась без блокировки.
+3. Обновите метод `Run` и оповещение об обновлениях конфигурации, используя метод `TryRefreshAsync` в начале вызова функций. Это не будет работать, если время истечения срока действия кэша не достигнуто. Удалите оператор `await`, если вы предпочитаете, чтобы конфигурация обновлялась без блокировки.
 
     ```csharp
     public static async Task<IActionResult> Run(
@@ -75,7 +75,7 @@ ms.locfileid: "74187298"
     {
         log.LogInformation("C# HTTP trigger function processed a request.");
 
-        await ConfigurationRefresher.Refresh();
+        await ConfigurationRefresher.TryRefreshAsync(); 
 
         string keyName = "TestApp:Settings:Message";
         string message = Configuration[keyName];
@@ -90,15 +90,21 @@ ms.locfileid: "74187298"
 
 1. Задайте переменную среды с именем **ConnectionString** и укажите для нее ключ доступа к хранилищу конфигураций приложений. Если вы используете командную строку Windows, выполните следующую команду и перезапустите командную строку, чтобы изменения вступили в силу:
 
-        setx ConnectionString "connection-string-of-your-app-configuration-store"
+    ```console
+    setx ConnectionString "connection-string-of-your-app-configuration-store"
+    ```
 
     Если вы используете Windows PowerShell, выполните следующую команду:
 
-        $Env:ConnectionString = "connection-string-of-your-app-configuration-store"
+    ```powershell
+    $Env:ConnectionString = "connection-string-of-your-app-configuration-store"
+    ```
 
     Если вы используете macOS или Linux, выполните следующую команду:
 
-        export ConnectionString='connection-string-of-your-app-configuration-store'
+    ```console
+    export ConnectionString='connection-string-of-your-app-configuration-store'
+    ```
 
 2. Чтобы проверить работу функции, нажмите клавишу F5. Если будет предложено, примите запрос от Visual Studio на скачивание и установку **основных инструментов решения "Функции Azure" (CLI)** . Кроме того, возможно, вам понадобиться включить исключение брандмауэра, чтобы инструменты могли обрабатывать HTTP-запросы.
 

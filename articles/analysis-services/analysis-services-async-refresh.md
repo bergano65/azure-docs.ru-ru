@@ -7,12 +7,13 @@ ms.topic: conceptual
 ms.date: 04/15/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: c5f6cec8b7fd1169a4f04649fcaf7bb7ada33833
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.custom: references_regions
+ms.openlocfilehash: 0a5a7ac7d830cb03b1370c31d7e854f3b2a5a2fc
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81406283"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86507188"
 ---
 # <a name="asynchronous-refresh-with-the-rest-api"></a>Асинхронное обновление с помощью REST API
 
@@ -30,7 +31,7 @@ REST API для Azure Analysis Services позволяет выполнять о
 https://<rollout>.asazure.windows.net/servers/<serverName>/models/<resource>/
 ```
 
-Например, рассмотрим модель с именем AdventureWorks на сервере с именем `myserver`, расположенную в регионе Azure "Западная часть США". Тогда у сервера будет такое имя:
+Например, рассмотрим модель с именем AdventureWorks на сервере с именем `myserver` , расположенную в регионе Azure "Западная часть США". Тогда у сервера будет такое имя:
 
 ```
 asazure://westus.asazure.windows.net/myserver 
@@ -56,7 +57,7 @@ https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/
 https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/refreshes
 ```
 
-## <a name="authentication"></a>Проверка подлинности
+## <a name="authentication"></a>Аутентификация
 
 Все вызовы должны проходить проверку подлинности, для чего нужен допустимый токен Azure Active Directory (OAuth 2) в заголовке авторизации, и соответствовать следующим требованиям:
 
@@ -97,10 +98,10 @@ https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/refres
 
 Указывать параметры не обязательно. Применяются значения по умолчанию.
 
-| Имя             | Type  | Описание  |По умолчанию  |
+| Имя             | Тип  | Описание  |По умолчанию  |
 |------------------|-------|--------------|---------|
-| `Type`           | Перечисление.  | Тип выполняемой обработки. Тип выполняемой обработки зависит от типа [команды refresh](https://docs.microsoft.com/analysis-services/tmsl/refresh-command-tmsl) TMSL: full, clearValues, calculate, dataOnly, automatic или defragment. Тип add не поддерживается.      |   automatic      |
-| `CommitMode`     | Перечисление.  | Определяет, будут объекты зафиксированы в пакетах или только после завершения. Режимы: default, transactional, partialBatch.  |  transactional       |
+| `Type`           | Перечисление  | Тип выполняемой обработки. Тип выполняемой обработки зависит от типа [команды refresh](https://docs.microsoft.com/analysis-services/tmsl/refresh-command-tmsl) TMSL: full, clearValues, calculate, dataOnly, automatic или defragment. Тип add не поддерживается.      |   automatic      |
+| `CommitMode`     | Перечисление  | Определяет, будут объекты зафиксированы в пакетах или только после завершения. Режимы: default, transactional, partialBatch.  |  transactional       |
 | `MaxParallelism` | Int   | Это значение определяет максимальное количество потоков, над которыми можно параллельно выполнять команды обработки. Это значение согласуется со свойством MaxParallelism, которое можно задать, используя [команду sequence](https://docs.microsoft.com/analysis-services/tmsl/sequence-command-tmsl) или другими способами.       | 10        |
 | `RetryCount`     | Int   | Указывает число попыток повторить операцию, по исчерпании которого будет определен сбой.      |     0    |
 | `Objects`        | Массив | Массив объектов для обработки. Для каждого объекта указываются параметр table, если нужно обработать целую таблицу, или параметры table и partition для обработки секции. Если нет указанных объектов, обновляется вся модель. |   Обработка целой модели      |
@@ -121,7 +122,7 @@ https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/refres
 |`failed`     |   Ошибка при выполнении операции.      |
 |`succeeded`      |   Операция успешно завершена.      |
 
-## <a name="get-refreshesrefreshid"></a>GET /refreshes/\<refreshId>
+## <a name="get-refreshesrefreshid"></a>ПОЛУЧИТЬ/рефрешес/\<refreshId>
 
 Чтобы проверить состояние обновления, используйте команду GET с идентификатором обновления. Ниже приведен пример текста ответа. Если операция выполняется, `inProgress` возвращается в состояние.
 
@@ -158,20 +159,20 @@ https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/refres
 [
     {
         "refreshId": "1344a272-7893-4afa-a4b3-3fb87222fdac",
-        "startTime": "2017-12-09T01:58:04.76",
-        "endTime": "2017-12-09T01:58:12.607",
+        "startTime": "2017-12-07T02:06:57.1838734Z",
+        "endTime": "2017-12-07T02:07:00.4929675Z",
         "status": "succeeded"
     },
     {
         "refreshId": "474fc5a0-3d69-4c5d-adb4-8a846fa5580b",
-        "startTime": "2017-12-07T02:05:48.32",
-        "endTime": "2017-12-07T02:05:54.913",
+        "startTime": "2017-12-07T01:05:54.157324Z",
+        "endTime": "2017-12-07T01:05:57.353371Z",
         "status": "succeeded"
     }
 ]
 ```
 
-## <a name="delete-refreshesrefreshid"></a>DELETE /refreshes/\<refreshId>
+## <a name="delete-refreshesrefreshid"></a>УДАЛИТЬ/рефрешес/\<refreshId>
 
 Чтобы отменить выполняющееся обновление, примените команду DELETE к идентификатору обновления.
 
@@ -218,11 +219,11 @@ https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/refres
 Дополнительные сведения о том, как настроить субъект-службу и назначить необходимые разрешения в Azure AS, см. в статьях [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../active-directory/develop/howto-create-service-principal-portal.md) и [Добавление субъекта-службы к роли администратора сервера](analysis-services-addservprinc-admins.md). Выполнив эти шаги, сделайте дополнительно следующее:
 
 1.    В примере кода найдите **центр String =...**, замените **Общий** идентификатором клиента вашей организации.
-2.    Закомментируйте или раскомментируйте код, так чтобы класс ClientCredential использовался для создания экземпляра объекта cred. Убедитесь, что доступ к значениям \<App ID> и \<App Key> осуществляется безопасно, или настройте для субъектов-служб проверку подлинности.
+2.    Закомментируйте или раскомментируйте код, так чтобы класс ClientCredential использовался для создания экземпляра объекта cred. Убедитесь, \<App ID> что \<App Key> доступ к значениям и осуществляется безопасным способом, или используйте проверку подлинности на основе сертификатов для субъектов-служб.
 3.    Запустите образец.
 
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 [Регистрируют](analysis-services-samples.md)   
 [REST API](https://docs.microsoft.com/rest/api/analysisservices/servers)   

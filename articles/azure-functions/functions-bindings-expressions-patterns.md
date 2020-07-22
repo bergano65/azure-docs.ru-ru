@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: reference
 ms.date: 02/18/2019
 ms.author: cshoe
-ms.openlocfilehash: 2d0cf18de09932c5d66e269a85919f4d85383c5b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: ca3e342d42e6baf2bc4caaed07dc196203d8a032
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79277652"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85261075"
 ---
 # <a name="azure-functions-binding-expression-patterns"></a>Шаблоны выражений привязки функций Azure
 
@@ -37,7 +37,8 @@ ms.locfileid: "79277652"
 
 Если функция выполняется локально, значения параметра приложения поступают из файла *local.settings.json*.
 
-Обратите внимание, что свойство `connection` триггеров и привязок является особым случаем и автоматически разрешает значения как параметры приложения без знаков процента. 
+> [!NOTE]
+> `connection`Свойство триггеров и привязок является особым случаем и автоматически разрешает значения в виде параметров приложения без знаков процента. 
 
 Следующий пример представляет собой триггер хранилища очередей Azure. Этот триггер использует параметр приложения `%input-queue-name%`, чтобы определить очередь, для которой он должен срабатывать.
 

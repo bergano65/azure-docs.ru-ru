@@ -3,15 +3,19 @@ title: Мониторинг сайта SharePoint с помощью Application 
 description: Начало мониторинга нового приложения с помощью нового ключа инструментирования
 ms.topic: conceptual
 ms.date: 07/11/2018
-ms.openlocfilehash: 395e8d667985318f4a084428c6fd4c395ee8b956
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a545a24b5a9af883200f25cc83486e3c5621bd78
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77671449"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86516895"
 ---
 # <a name="monitor-a-sharepoint-site-with-application-insights"></a>Мониторинг сайта SharePoint с помощью Application Insights
+
 Azure Application Insights позволяет отслеживать доступность, производительность и использование приложений. В этой статье вы узнаете, как настроить эту службу для сайта SharePoint.
+
+> [!NOTE]
+> Из-за проблем с безопасностью вы не можете напрямую добавить сценарий, описанный в этой статье, к веб-страницам в современном UX SharePoint. В качестве альтернативы можно использовать [SharePoint Framework (спфкс)](/sharepoint/dev/spfx/extensions/overview-extensions) для создания пользовательского расширения, которое можно использовать для установки Application Insights на сайтах SharePoint. Дополнительные сведения см. в статье [Создание решения расширения спфкс с помощью AppInsights, установленного с нуля](https://github.com/microsoft/ApplicationInsights-JS/tree/master/SPO#how-to-create-a-spfx-extension-solution-with-appinsights-installed-from-scratch) , или [Просмотр примера](https://github.com/microsoft/ApplicationInsights-JS/tree/master/SPO/AppInsightsExtensionSolutionSample). 
 
 ## <a name="create-an-application-insights-resource"></a>Создание ресурса Application Insights
 На [портале Azure](https://portal.azure.com) создайте ресурс Application Insights. Выберите приложение ASP.NET в качестве типа приложения.
@@ -39,7 +43,7 @@ var sdkInstance="appInsightsSDK";window[sdkInstance]="appInsights";var aiName=wi
 </script>
 ```
 
-Вставьте сценарий непосредственно перед тегом &lt;/ХЕАД&gt; каждой страницы, которую требуется отвести от него. Если у веб-сайта есть эталонная страница, можно разместить сценарий там. Например, в проекте ASP.NET MVC скрипт следует разместить на странице View\Shared\_Layout.cshtml.
+Вставьте сценарий непосредственно перед &lt; &gt; тегом/ХЕАД каждой страницы, которую требуется отвести от него. Если у веб-сайта есть эталонная страница, можно разместить сценарий там. Например, в проекте ASP.NET MVC скрипт следует разместить на странице View\Shared\_Layout.cshtml.
 
 Сценарий содержит ключ инструментирования, который направляет данные телеметрии к ресурсу Application Insights.
 
@@ -49,18 +53,18 @@ var sdkInstance="appInsightsSDK";window[sdkInstance]="appInsights";var aiName=wi
 
 Ознакомьтесь с главной страницей и измените ее с помощью SharePoint Designer или другого редактора.
 
-![](./media/sharepoint/03-master.png)
+![Снимок экрана, показывающий, как изменить главную страницу с помощью конструктора SharePoint или другого редактора.](./media/sharepoint/03-master.png)
 
-Добавьте код прямо перед тегом </head> . 
+Добавьте код непосредственно перед </head> тегами. 
 
-![](./media/sharepoint/04-code.png)
+![Снимок экрана, на котором показано, куда добавить код на страницу сайта.](./media/sharepoint/04-code.png)
 
 #### <a name="or-on-individual-pages"></a>На отдельных страницах
 Для мониторинга ограниченного набора страниц добавьте сценарий отдельно для каждой страницы. 
 
 Вставьте веб-часть и внедрите в нее фрагмент кода.
 
-![](./media/sharepoint/05-page.png)
+![Снимок экрана, показывающий Добавление сценария для наблюдения за ограниченным набором страниц.](./media/sharepoint/05-page.png)
 
 ## <a name="view-data-about-your-app"></a>Просмотр данных о приложении
 Разверните приложение заново.
@@ -69,7 +73,7 @@ var sdkInstance="appInsightsSDK";window[sdkInstance]="appInsights";var aiName=wi
 
 В окне поиска отобразятся первые события. 
 
-![](./media/sharepoint/09-search.png)
+![Снимок экрана, на котором показаны новые данные, которые можно просмотреть в приложении.](./media/sharepoint/09-search.png)
 
 Нажмите кнопку «Обновить» через несколько секунд, если ожидаете дополнительные данные.
 
@@ -78,7 +82,7 @@ var sdkInstance="appInsightsSDK";window[sdkInstance]="appInsights";var aiName=wi
 
 1. Скопируйте ключ инструментирования приложения из раскрывающегося списка "Основные компоненты" в Application Insights. 
 
-    ![](./media/sharepoint/02-props.png)
+    ![Снимок экрана, показывающий копирование инструментирования приложения из раскрывающегося списка Essentials в Application Insights.](./media/sharepoint/02-props.png)
 
 1. Вставьте ключ инструментирования вместо строки "XXXX" в приведенном ниже фрагменте кода. 
 2. Внедрите скрипт в приложение SharePoint вместо фрагмента кода, полученного с портала.
@@ -132,10 +136,8 @@ function onRequestFail(sender, args) {
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Next Steps
 * [Использование веб-тестов](../../azure-monitor/app/monitor-web-app-availability.md) для мониторинга доступности сайта.
 * [Использование Application Insights](../../azure-monitor/app/app-insights-overview.md) для других типов приложений.
 
 <!--Link references-->
-
-

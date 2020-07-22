@@ -16,6 +16,11 @@
     - name: Трансляция с помощью портала и OBS
       displayName: 'live, event, portal, obs'
       href: live-events-obs-quickstart.md
+    - name: 'Отправка, кодирование и потоковая передача содержимого с помощью портала'
+      href: manage-assets-quickstart.md
+    - name: Шифрование содержимого с помощью портала
+      displayName: 'protect, drm, aes'
+      href: encrypt-content-quickstart.md
 - name: Учебники
   items:
     - name: Кодирование размещенных удаленно файлов и потоковая передача видео
@@ -97,7 +102,7 @@
       items:
         - name: Обзор
           href: live-streaming-overview.md
-        - name: События и выходные данные прямой трансляции
+        - name: События и выходные данные трансляции
           href: live-events-outputs-concept.md
           displayName: 'vanity, ingest'
         - name: Проверенные локальные динамические кодировщики
@@ -154,6 +159,8 @@
           href: streaming-policy-concept.md
         - name: Политики ключа содержимого
           href: content-key-policy-concept.md
+        - name: "Защита контента в Azure\_AD"
+          href: azure-ad-content-protection.md
     - name: Наблюдение
       items:
         - name: События в Сетке событий
@@ -181,18 +188,31 @@
           items:
             - name: Коды ошибок конечной точки потоковой передачи
               href: streaming-endpoint-error-codes.md
-            - name: 'Коды ошибок, связанных с трансляцией'
+            - name: Коды ошибок трансляции
               href: live-event-error-codes.md
             - name: Коды ошибок задания
               href: job-error-codes.md
     - name: Высокий уровень доступности
       items:
-        - name: Кодирование
+        - name: Видео по запросу
           displayName: 'failover, bcdr, HA, high availability'
           href: media-services-high-availability-encoding.md
         - name: Потоковая передача
           displayName: 'failover, bcdr, HA, high availability'
           href: media-services-high-availability-streaming.md
+    - name: Устранение неполадок
+      items:
+        - name: Часто задаваемые вопросы
+          displayName: faqs
+          href: frequently-asked-questions.md
+        - name: Коды ошибок
+          items:
+            - name: Коды ошибок конечной точки потоковой передачи
+              href: streaming-endpoint-error-codes.md
+            - name: Коды ошибок трансляции
+              href: live-event-error-codes.md
+            - name: Коды ошибок задания
+              href: job-error-codes.md
     - name: Миграция из версии 2 в версию 3
       items:
         - name: Сравнение версий 2 и 3
@@ -291,7 +311,7 @@
           href: live-events-wirecast-quickstart.md
         - name: Проверка локального кодировщика
           href: become-on-premises-encoder-partner.md
-        - name: 'Коды ошибок, связанных с трансляцией'
+        - name: Коды ошибок трансляции
           href: live-event-error-codes.md
     - name: Использование Сетки событий
       items:
@@ -338,19 +358,6 @@
           href: download-results-howto.md
         - name: Описательный звуковой сигнал
           href: signal-descriptive-audio-howto.md
-    - name: Диагностика
-      items:
-        - name: Часто задаваемые вопросы
-          displayName: faqs
-          href: frequently-asked-questions.md
-        - name: Коды ошибок
-          items:
-            - name: Коды ошибок конечной точки потоковой передачи
-              href: streaming-endpoint-error-codes.md
-            - name: 'Коды ошибок, связанных с трансляцией'
-              href: live-event-error-codes.md
-            - name: Коды ошибок задания
-              href: job-error-codes.md
 - name: Справочник
   items:
     - name: Спецификация OpenAPI (Swagger)
@@ -369,11 +376,17 @@
         - name: Python
           href: 'https://aka.ms/ams-v3-python-ref'
         - name: Node.js
-          href: 'https://aka.ms/ams-v3-nodejs-ref'
+          href: 'https://docs.microsoft.com/javascript/api/overview/azure/mediaservices/management'
         - name: Go
           href: 'https://aka.ms/ams-v3-go-ref'
     - name: Шаблон Resource Manager
       href: /azure/templates/microsoft.media/allversions
+    - name: Схемы кодировщика ценовой категории "Стандартный"
+      items:
+        - name: Входные метаданные
+          href: input-metadata-schema.md
+        - name: Выходные метаданные
+          href: output-metadata-schema.md
 - name: Ресурсы
   items:
     - name: Сообщество Служб мультимедиа Azure

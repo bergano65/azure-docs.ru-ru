@@ -3,15 +3,15 @@ title: Настройка производительности Azure Data Lake S
 description: Советы по повышению производительности при использовании Azure PowerShell с Azure Data Lake Storage 1-го поколения.
 author: stewu
 ms.service: data-lake-store
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 01/09/2018
 ms.author: stewu
-ms.openlocfilehash: c975af1799d427651b76bb9fde5ff765afed3f86
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f5e6f6601a563a387476e4e2eaf353c8bef384ea
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "73904575"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85504701"
 ---
 # <a name="performance-tuning-guidance-for-using-powershell-with-azure-data-lake-storage-gen1"></a>Рекомендации по настройке производительности для использования PowerShell с Azure Data Lake Storage 1-го поколения
 
@@ -21,7 +21,7 @@ ms.locfileid: "73904575"
 
 ## <a name="performance-related-properties"></a>Свойства, связанные с производительностью
 
-| Свойство            | По умолчанию | Описание |
+| Свойство.            | По умолчанию | Описание |
 |---------------------|---------|-------------|
 | PerFileThreadCount  | 10      | Этот параметр позволяет выбрать количество параллельных потоков для отправки или скачивания каждого файла. Это количество представляет собой максимальное количество потоков, которые можно выделить для каждого файла. В зависимости от сценария количество потоков может быть меньше (например, при передаче файла размером 1 КБ вы получите один поток, даже если запросите 20 потоков).  |
 | ConcurrentFileCount | 10      | Этот параметр предназначен для отправки или скачивания папок. Он определяет количество одновременно отправляемых или скачиваемых файлов. Это количество представляет собой максимальное количество файлов, которые можно передать или скачать одновременно. В зависимости от сценария количество параллельно передаваемых или скачиваемых файлов может быть меньше (например, при передаче двух файлов одновременно будут передаваться два файла, даже если запрошено 15). |
@@ -96,7 +96,7 @@ Export-AzDataLakeStoreItem -AccountName "Data Lake Storage Gen1 account name" `
 
 * **Ошибки регулирования.** При слишком высоком уровне параллелизма могут возникнуть ошибки регулирования. При этом необходимо уменьшить уровень параллелизма или обратиться к нам.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Использование Azure Data Lake Storage 1-го поколения для обеспечения соответствия требованиям больших данных](data-lake-store-data-scenarios.md) 
 * [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)

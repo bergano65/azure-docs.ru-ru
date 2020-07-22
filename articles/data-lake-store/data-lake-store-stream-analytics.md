@@ -3,15 +3,14 @@ title: Потоковая передача данных из Stream Analytics в
 description: Используйте Azure Stream Analytics для потоковой передачи данных в Azure Data Lake Storage 1-го поколения.
 author: twooley
 ms.service: data-lake-store
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/30/2018
 ms.author: twooley
-ms.openlocfilehash: f1740d167bedd20f51ad5bf24a56b7e7e787f754
-ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
-ms.translationtype: MT
+ms.openlocfilehash: 42c7894c33fe0f09748beee20508e7670545c0ed
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82690978"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85515172"
 ---
 # <a name="stream-data-from-azure-storage-blob-into-azure-data-lake-storage-gen1-using-azure-stream-analytics"></a>Потоковая передача данных из большого двоичного объекта службы хранилища Azure в Azure Data Lake Storage 1-го поколения с помощью Azure Stream Analytics
 В этой статье вы узнаете, как использовать Azure Data Lake Storage 1-го поколения в качестве выходных данных для задания Azure Stream Analytics. В этой статье показан простой сценарий, в котором данные считываются из большого двоичного объекта службы хранилища Azure (входные данные) и записываются в Data Lake Storage 1-го поколения (выходные данные).
@@ -21,14 +20,14 @@ ms.locfileid: "82690978"
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 
-* **Учетная запись хранения Azure**. Контейнер больших двоичных объектов из этой учетной записи будет использоваться для ввода данных для задания Stream Analytics. Для работы с этим руководством предполагается, что у вас есть учетная запись хранилища с именем **storageforasa**, а в ней — контейнер с именем **storageforasacontainer**. После создания контейнера отправьте в него образец файла данных. 
+* **Учетная запись хранения Azure.** Контейнер больших двоичных объектов из этой учетной записи будет использоваться для ввода данных для задания Stream Analytics. Для работы с этим руководством предполагается, что у вас есть учетная запись хранилища с именем **storageforasa**, а в ней — контейнер с именем **storageforasacontainer**. После создания контейнера отправьте в него образец файла данных. 
   
 * **Учетная запись Data Lake Storage 1-го поколения**. Следуйте инструкциям из статьи [Начало работы с Azure Data Lake Storage Gen1 с помощью портала Azure](data-lake-store-get-started-portal.md). Предположим, у вас есть учетная запись Data Lake Storage 1-го поколения **myadlsg1**. 
 
 ## <a name="create-a-stream-analytics-job"></a>Создание задания Stream Analytics
 Для начала нужно создать задание Stream Analytics с источником входных данных и целевым объектом для выходных данных. В этом руководстве источником является контейнер больших двоичных объектов Azure, а целевым объектом — Data Lake Storage 1-го поколения.
 
-1. Войдите в [портал Azure](https://portal.azure.com).
+1. Выполните вход на [портал Azure](https://portal.azure.com).
 
 2. В области слева щелкните **Задания Stream Analytics**, а затем нажмите кнопку **Добавить**.
 
@@ -112,5 +111,5 @@ ms.locfileid: "82690978"
 
     В области обозревателя данных Azure Data Explorer можно увидеть, что выходные данные записаны в папку, указанную в параметрах выходных данных Data Lake Storage 1-го поколения (`streamanalytics/job/output/{date}/{time}`).  
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 * [Создание кластера HDInsight для работы с Data Lake Storage 1-го поколения](data-lake-store-hdinsight-hadoop-use-portal.md)

@@ -5,12 +5,12 @@ author: mumian
 ms.date: 04/23/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: cf876d3c7c100f001ba81082d792e81a777c7315
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 3ed653c511dbd775d124e1abd6f4bb02923edb25
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82193043"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86102078"
 ---
 # <a name="tutorial-create-arm-templates-with-dependent-resources"></a>Руководство по созданию шаблонов Resource Manager с зависимыми ресурсами
 
@@ -33,7 +33,7 @@ ms.locfileid: "82193043"
 
 Для работы с этой статьей необходимо иметь следующее.
 
-* Visual Studio Code с расширением средств Resource Manager. См. сведения об [использовании Visual Studio Code для создания шаблонов Resource Manager](use-vs-code-to-create-template.md).
+* Visual Studio Code с расширением средств Resource Manager. См. [Краткое руководство. Создание шаблонов Azure Resource Manager c помощью Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
 * Для повышения уровня безопасности используйте пароль, созданный для учетной записи администратора виртуальной машины. Ниже приведен пример создания пароля.
 
     ```console

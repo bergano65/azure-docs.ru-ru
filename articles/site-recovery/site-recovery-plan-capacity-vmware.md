@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.date: 4/9/2019
 ms.topic: conceptual
 ms.author: ramamill
-ms.openlocfilehash: 467c70a722b8a243be6ac2826188a4ba3459aa06
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a74d9347d0050a2970e698ae616eb09fe32bdc5b
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79257619"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86135444"
 ---
 # <a name="plan-capacity-and-scaling-for-vmware-disaster-recovery-to-azure"></a>Планирование ресурсов и масштабирования для аварийного восстановления из VMware в Azure
 
@@ -92,11 +92,13 @@ ms.locfileid: "79257619"
 
     ![Снимок экрана с диалоговым окном свойств службы Azure Backup](./media/site-recovery-vmware-to-azure/throttle2.png)
 
-Чтобы настроить регулирование, можно также использовать командлет [Set-OBMachineSetting](https://technet.microsoft.com/library/hh770409.aspx) . Пример:
+Чтобы настроить регулирование, можно также использовать командлет [Set-OBMachineSetting](/previous-versions/windows/powershell-scripting/hh770409(v=wps.640)) . Ниже приведен пример:
 
-    $mon = [System.DayOfWeek]::Monday
-    $tue = [System.DayOfWeek]::Tuesday
-    Set-OBMachineSetting -WorkDay $mon, $tue -StartWorkHour "9:00:00" -EndWorkHour "18:00:00" -WorkHourBandwidth  (512*1024) -NonWorkHourBandwidth (2048*1024)
+```azurepowershell-interactive
+$mon = [System.DayOfWeek]::Monday
+$tue = [System.DayOfWeek]::Tuesday
+Set-OBMachineSetting -WorkDay $mon, $tue -StartWorkHour "9:00:00" -EndWorkHour "18:00:00" -WorkHourBandwidth  (512*1024) -NonWorkHourBandwidth (2048*1024)
+```
 
 **Set-OBMachineSetting -NoThrottle** указывает, что регулирование не требуется.
 
@@ -124,7 +126,7 @@ ms.locfileid: "79257619"
 
 ### <a name="migrate-machines-to-use-the-new-process-server"></a>Перенос компьютеров для использования нового сервера обработки
 
-1. Выберите **Параметры** > **Site Recovery серверы**. Выберите сервер конфигурации и разверните список **Серверы обработки**.
+1. Выберите **Параметры**  >  **Site Recovery серверы**. Выберите сервер конфигурации и разверните список **Серверы обработки**.
 
     ![Снимок экрана с диалоговым окном "Сервер обработки"](./media/site-recovery-vmware-to-azure/migrate-ps2.png)
 2. Щелкните используемый сервер обработки правой кнопкой мыши и выберите **Switch** (Переключить).
@@ -144,12 +146,12 @@ ms.locfileid: "79257619"
 
 Чтобы добавить новый главный целевой сервер для виртуальной машины под управлением Windows, выполните следующие действия.
 
-1. Перейдите > в **хранилище служб восстановления****Site Recovery** > **серверы конфигурации**инфраструктуры.
+1. Перейдите в **хранилище служб восстановления**  >  **Site Recovery**  >  **серверы конфигурации**инфраструктуры.
 2. Выберите нужный сервер конфигурации, а затем выберите **Главный целевой сервер**.
 
     ![Снимок экрана, на котором показана кнопка "Добавить главный целевой сервер"](media/site-recovery-plan-capacity-vmware/add-master-target-server.png)
 3. Загрузите унифицированный файл установки и запустите его на виртуальной машине, чтобы настроить главный целевой сервер.
-4. Нажмите кнопку **установить главный целевой** > сервер**Далее**.
+4. Нажмите кнопку **установить главный целевой**сервер  >  **Далее**.
 
     ![Снимок экрана, показывающий выбор опции "Установка главного целевого сервера"](media/site-recovery-plan-capacity-vmware/choose-MT.PNG)
 5. Выберите место установки по умолчанию, а затем выберите **Install** (Установить).
@@ -163,11 +165,11 @@ ms.locfileid: "79257619"
     ![Снимок экрана, показывающий, где вводить IP-адрес и парольную фразу для сервера конфигурации](media/site-recovery-plan-capacity-vmware/cs-ip-passphrase.PNG)
 8. Выберите **Зарегистрировать**. По завершении регистрации выберите **Готово**.
 
-После успешного завершения регистрации сервер будет указан в портал Azure в >  **хранилище служб восстановления****Site Recovery** > **серверы конфигурации**инфраструктуры на главных целевых серверах сервера конфигурации.
+После успешного завершения регистрации сервер будет указан в портал Azure в **хранилище служб восстановления**  >  **Site Recovery**  >  **серверы конфигурации**инфраструктуры на главных целевых серверах сервера конфигурации.
 
  > [!NOTE]
  > Загрузите последнюю версию [унифицированной программы установки главного целевого сервера для Windows](https://aka.ms/latestmobsvc).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Скачайте и запустите [Планировщик ресурсов Site Recovery](https://aka.ms/asr-deployment-planner).

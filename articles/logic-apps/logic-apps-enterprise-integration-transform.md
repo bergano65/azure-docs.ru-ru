@@ -9,10 +9,9 @@ ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 07/08/2016
 ms.openlocfilehash: 500769a39ba7658b35c1abb80101f6234170c941
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74792378"
 ---
 # <a name="create-maps-that-transform-xml-between-formats-in-azure-logic-apps-with-enterprise-integration-pack"></a>Создание преобразований или сопоставлений, которые изменяют форматы данных XML в Azure Logic Apps с Пакетом интеграции Enterprise
@@ -30,7 +29,7 @@ ms.locfileid: "74792378"
 
 **Ниже приведены указания по использованию преобразования**.
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Предварительные условия
 
 * Создание учетной записи интеграции и добавление карты в нее  
 
@@ -69,7 +68,7 @@ ms.locfileid: "74792378"
 * Передача существующих карт  
 * Включена поддержка формата XML.
 
-## <a name="advanced-features"></a>Дополнительные функции
+## <a name="advanced-features"></a>Дополнительные возможности
 
 ### <a name="reference-assembly-or-custom-code-from-maps"></a>Базовая сборка или настраиваемый код из карт 
 Действие преобразования также поддерживает карты или преобразования со ссылкой на внешнюю сборку. Эта возможность позволяет вызывать настраиваемый код .NET непосредственно из карт XSLT. Ниже приведены предварительные требования для использования сборки в картах.
@@ -133,7 +132,7 @@ ms.locfileid: "74792378"
 
 
 
-## <a name="learn-more"></a>Дополнительные сведения
+## <a name="learn-more"></a>Подробнее
 * [Дополнительные сведения о Пакете интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md "Дополнительные сведения о Пакет интеграции Enterprise")  
 * [Дополнительные сведения о сопоставлениях](../logic-apps/logic-apps-enterprise-integration-maps.md "Сведения о картах интеграции Enterprise")  
 

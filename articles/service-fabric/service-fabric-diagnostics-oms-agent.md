@@ -5,12 +5,12 @@ author: srrengar
 ms.topic: conceptual
 ms.date: 04/16/2018
 ms.author: srrengar
-ms.openlocfilehash: c3c1bf511f3313e7408d6ce90b73de60bd1309f7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: b91a8a8742a5bdc9454ebcbd8894889084a12a79
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79366751"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86258690"
 ---
 # <a name="performance-monitoring-with-azure-monitor-logs"></a>Мониторинг производительности с помощью журналов Azure Monitor
 
@@ -23,7 +23,7 @@ ms.locfileid: "79366751"
 
 ## <a name="add-the-agent-extension-via-azure-cli"></a>Добавление расширения агента через Azure CLI
 
-Добавить агент Log Analytics в кластер лучше всего через API масштабируемого набора виртуальных машин, доступные в Azure CLI. Если Azure CLI еще не настроен, перейдите на портал Azure и откройте экземпляр [Cloud Shell](../cloud-shell/overview.md) или [установите Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
+Добавить агент Log Analytics в кластер лучше всего через API масштабируемого набора виртуальных машин, доступные в Azure CLI. Если Azure CLI еще не настроен, перейдите на портал Azure и откройте экземпляр [Cloud Shell](../cloud-shell/overview.md) или [установите Azure CLI](/cli/azure/install-azure-cli).
 
 1. Как только придет запрос Cloud Shell, убедитесь, что вы работаете в той же подписке, что и ресурс. Проверьте это с помощью `az account show` и убедитесь, что значение "name" соответствует подписке кластера.
 
@@ -67,13 +67,13 @@ ms.locfileid: "79366751"
 
 После добавления агента Log Analytics перейдите на портал Log Analytics, чтобы выбрать счетчики производительности, данные которых необходимо собирать.
 
-1. На портале Azure перейдите в группу ресурсов, в которой вы создали решение "Аналитика Service Fabric". Выберите **ServiceFabric\<имя_рабочей_области_Log_Analytics\>**.
+1. На портале Azure перейдите в группу ресурсов, в которой вы создали решение "Аналитика Service Fabric". Выберите **ServiceFabric \<nameOfLog AnalyticsWorkspace\> **.
 
 2. Щелкните **Log Analytics**.
 
 3. Нажмите кнопку **Дополнительные параметры**.
 
-4. Нажмите кнопку **Данные**, затем нажмите кнопку **Счетчики производительности Windows или Linux**. Существует список счетчиков по умолчанию, которые можно выбрать. Вы также можете задать интервал коллекции. Можно также выбрать [дополнительные счетчики производительности](service-fabric-diagnostics-event-generation-perf.md), чтобы они выполняли сбор данных. Правильный формат см. в [этой статье](https://msdn.microsoft.com/library/windows/desktop/aa373193(v=vs.85).aspx).
+4. Нажмите кнопку **Данные**, затем нажмите кнопку **Счетчики производительности Windows или Linux**. Существует список счетчиков по умолчанию, которые можно выбрать. Вы также можете задать интервал коллекции. Можно также выбрать [дополнительные счетчики производительности](service-fabric-diagnostics-event-generation-perf.md), чтобы они выполняли сбор данных. Правильный формат см. в [этой статье](/windows/win32/perfctrs/specifying-a-counter-path).
 
 5. Нажмите кнопку **Сохранить**, затем нажмите кнопку **ОК**.
 
@@ -89,8 +89,8 @@ ms.locfileid: "79366751"
 
 ![Запрос счетчика производительности Log Analytics](media/service-fabric-diagnostics-event-analysis-oms/oms_node_metrics_table.PNG)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Включите сбор соответствующих [счетчиков производительности](service-fabric-diagnostics-event-generation-perf.md). Чтобы настроить агент Log Analytics для сбора данных определенных счетчиков производительности, ознакомьтесь с разделом [Настройка источников данных](../azure-monitor/platform/agent-data-sources.md#configuring-data-sources).
-* Настройка журналов Azure Monitor для настройки [автоматизированных оповещений](../log-analytics/log-analytics-alerts.md) , помогающих в обнаружении и диагностике
+* Настройка журналов Azure Monitor для настройки [автоматизированных оповещений](../azure-monitor/platform/alerts-overview.md) , помогающих в обнаружении и диагностике
 * В качестве альтернативы можно собирать счетчики производительности с помощью [расширения Диагностики Azure и отправлять их в Application Insight](service-fabric-diagnostics-event-aggregation-wad.md#add-the-application-insights-sink-to-the-resource-manager-template).

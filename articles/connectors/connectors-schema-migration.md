@@ -7,17 +7,16 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 08/25/2018
 ms.openlocfilehash: cef0fcb990cd2c5c6583822d4dc4c6993c52eac2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75666794"
 ---
 # <a name="migrate-logic-apps-to-latest-schema-version"></a>Перенос приложения логики в последнюю версию схемы
 
 Чтобы переместить существующие приложения логики в новую схему, выполните следующие действия: 
 
-1. В [портал Azure](https://portal.azure.com)откройте приложение логики в конструкторе приложений логики.
+1. Откройте приложение логики в конструкторе приложений логики на [портале Azure](https://portal.azure.com).
 
 2. В меню приложения логики щелкните **Обзор**. На панели инструментов выберите **Обновить схему**.
 
@@ -38,6 +37,6 @@ ms.locfileid: "75666794"
 
 * Завершив перенос, приступайте к обновлению приложений логики, чтобы использовать [управляемые интерфейсы API](../connectors/apis-list.md) там, где это возможно. Например, начните использовать Dropbox версии 2 везде, где использовали DropBox версии 1.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Узнайте, как [вручную перенести приложения логики](../logic-apps/logic-apps-schema-2015-08-01.md)

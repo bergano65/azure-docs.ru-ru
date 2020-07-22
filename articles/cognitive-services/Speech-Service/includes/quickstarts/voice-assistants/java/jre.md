@@ -11,7 +11,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 04/28/2020
 ms.locfileid: "80671292"
 ---
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы нужно сделать следующее:
 

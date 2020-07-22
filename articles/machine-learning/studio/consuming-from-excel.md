@@ -5,21 +5,18 @@ description: Машинное обучение Azure Studio (классичес�
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
-ms.topic: conceptual
+ms.topic: how-to
 author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 02/01/2018
-ms.openlocfilehash: 333ed411ab818cff77a7cba6c7de4f42c36f5b6b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 8f9e0fb900bb3265c6ec79a85fb19efd76e719ae
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79218212"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84696564"
 ---
 # <a name="consuming-an-azure-machine-learning-studio-classic-web-service-from-excel"></a>Использование веб-службы Машинное обучение Azure Studio (классической) из Excel
-
-[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 
 Машинное обучение Azure Studio (классическая модель) упрощает вызов веб-служб непосредственно из Excel без необходимости написания кода.
 

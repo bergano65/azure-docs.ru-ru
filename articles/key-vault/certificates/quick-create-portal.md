@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 03/24/2020
 ms.author: mbaldwin
-ms.openlocfilehash: b0d6221aaafe3ade70bc23ce4196a7b53c9474c5
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: ec1d02cefcdb443a74fab52496cd9428a852139f
+ms.sourcegitcommit: 1692e86772217fcd36d34914e4fb4868d145687b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81421038"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84169973"
 ---
 # <a name="quickstart-set-and-retrieve-a-certificate-from-azure-key-vault-using-the-azure-portal"></a>Краткое руководство. Настройка и получение сертификата из Azure Key Vault с помощью портала Azure
 
@@ -67,7 +67,8 @@ Azure Key Vault — это облачная служба, которая пре�
 
 ![Свойства сертификатов](../media/certificates/quick-create-portal/current-version-hidden.png)
 
-Нажав кнопку "Скачать в формате CER" либо "Скачать в формате PFX или PEM", вы можете скачать сертификат. 
+## <a name="export-certificate-from-key-vault"></a>Экспорт сертификата из Key Vault
+Чтобы скачать сертификат, нажмите кнопку "Скачать в формате CER" либо "Скачать в формате PFX или PEM". 
 
 ![Скачивание сертификата](../media/certificates/quick-create-portal/current-version-shown.png)
 

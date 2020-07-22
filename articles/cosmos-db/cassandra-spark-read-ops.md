@@ -2,20 +2,20 @@
 title: Чтения табличных данных API Cassandra с помощью Spark
 titleSufix: Azure Cosmos DB
 description: В этой статье рассказывается, как читать данные из таблиц API Cassandra в Azure Cosmos DB.
-author: kanshiG
-ms.author: govindk
+author: TheovanKraay
+ms.author: thvankra
 ms.reviewer: sngun
 ms.service: cosmos-db
 ms.subservice: cosmosdb-cassandra
-ms.topic: conceptual
-ms.date: 12/06/2018
+ms.topic: how-to
+ms.date: 06/02/2020
 ms.custom: seodec18
-ms.openlocfilehash: 01a9582062d8eb0d039473a03901fc83fe179020
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 4ecb7758ee5f58345fccc2c490cee4d23043a20c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "60893407"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85257420"
 ---
 # <a name="read-data-from-azure-cosmos-db-cassandra-api-tables-using-spark"></a>Чтения данных из таблиц API Cassandra в Azure Cosmos DB с помощью Spark
 
@@ -83,7 +83,7 @@ readBooksDF.show
 
 ### <a name="apply-filters"></a>Применение фильтров
 
-В настоящее время включение предиката не поддерживается; приведенные ниже примеры демонстрируют фильтрацию на стороне клиента. 
+Вы можете отправить предикаты в базу данных, чтобы обеспечить более оптимизированные запросы Spark. Предикат — это условие в запросе, возвращающее значение true или false, которое обычно находится в предложении WHERE. Предикат принудительно раскрывает данные в запросе к базе данных, уменьшая количество записей, полученных из базы данных, и повышая производительность запросов. По умолчанию API набора данных Spark автоматически передает допустимые предложения WHERE в базу данных. 
 
 ```scala
 val readBooksDF = spark
@@ -102,6 +102,10 @@ readBooksDF.printSchema
 readBooksDF.explain
 readBooksDF.show
 ```
+
+Раздел Пушедфилтерс физического плана включает фильтр push-уведомлений GreaterThan. 
+
+:::image type="content" source="./media/cassandra-spark-read-ops/pushdown-predicates.png" alt-text="Partition":::
 
 ## <a name="rdd-api"></a>API RRD
 
@@ -136,12 +140,12 @@ spark
 select * from books_vw where book_pub_year > 1891
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные статьи по работе с API Cassandra для Azure Cosmos DB из Spark:
  
  * [Операции upsert](cassandra-spark-upsert-ops.md)
  * [Операции удаления](cassandra-spark-delete-ops.md)
- * [Операции агрегирования](cassandra-spark-aggregation-ops.md)
+ * [Операции агрегатных вычислений](cassandra-spark-aggregation-ops.md)
  * [Операции копирования таблиц](cassandra-spark-table-copy-ops.md)
 

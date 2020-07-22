@@ -5,15 +5,15 @@ author: ashishthaps
 ms.author: ashishth
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/17/2019
-ms.openlocfilehash: b1d81296c996ab09cb6482cb970496779ccf8bd6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 14591f334801329e78000a007783c3d6c4c3b5ae
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75435492"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86082545"
 ---
 # <a name="apache-phoenix-in-azure-hdinsight"></a>Apache Phoenix в Azure HDInsight
 
@@ -72,7 +72,7 @@ WHERE metric_type = 'm';
 
 Сканирование с пропуском использует перечисление `SEEK_NEXT_USING_HINT` фильтра HBase. С помощью `SEEK_NEXT_USING_HINT` при сканировании с пропуском отслеживается набор ключей или диапазон ключей, выполняемый в каждом столбце. При сканировании пропускается ключ, который был передан во время оценки фильтра, и определяет, является ли он одним из комбинаций. Если нет, оценивается следующий ключ с самым высоким значением для перехода.
 
-### <a name="transactions"></a>Транзакции
+### <a name="transactions"></a>Transactions
 
 Не смотря на то, что HBase предоставляет транзакции на уровне строк, Phoenix интегрируется с [Tephra](https://tephra.io/), чтобы добавить поддержку транзакций между строками и между таблицами с полной семантикой [ACID](https://en.wikipedia.org/wiki/ACID).
 
@@ -134,7 +134,7 @@ CREATE TABLE Saltedweblogs (
 
     ![Раздел конфигурации Ambari Phoenix SQL](./media/hdinsight-phoenix-in-hdinsight/apache-ambari-phoenix.png)
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>Дополнительно
 
 * [Использование Apache Phoenix с кластерами HBase под управлением Linux в HDInsight](hbase/apache-hbase-query-with-phoenix.md)
 

@@ -9,13 +9,13 @@ ms.service: media-services
 ms.subservice: video-indexer
 ms.topic: article
 ms.date: 05/15/2019
-ms.author: anzaman
-ms.openlocfilehash: b71890323f6aca92fb9f847252feed57d8db234f
-ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
+ms.author: kumud
+ms.openlocfilehash: 45da0556d074fdb81002f73cd89d0c35cb37276e
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82594956"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86530055"
 ---
 # <a name="azure-regions-in-which-video-indexer-exists"></a>Регионы Azure, в которых доступен Индексатор видео
 
@@ -23,7 +23,7 @@ API Индексатора видео содержат параметр **locati
 
 ## <a name="locations"></a>Расположения
 
-`location` Параметру должно быть присвоено имя кода региона Azure в качестве значения. При использовании индексатора видео в режиме предварительного просмотра следует поместиться `"trial"` в качестве значения. `trial`значение по умолчанию для `location` параметра. В противном случае для получения имени кода региона Azure, в котором развернута ваша учетная запись и к которому должен быть направлен ваш вызов, выполните следующую строку в [Azure CLI](/cli/azure):
+`location`Параметру должно быть присвоено имя кода региона Azure в качестве значения. При использовании индексатора видео в режиме предварительного просмотра следует поместиться в `"trial"` качестве значения. `trial`значение по умолчанию для `location` параметра. В противном случае для получения имени кода региона Azure, в котором развернута ваша учетная запись и к которому должен быть направлен ваш вызов, выполните следующую строку в [Azure CLI](/cli/azure):
 
 ```azurecli-interactive
 az account list-locations

@@ -6,12 +6,12 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.date: 11/09/2018
 ms.author: edprice
-ms.openlocfilehash: 98e912894a4d93a057a2f6a2153d0690deaed250
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 7e2ec4bfe04112d300a63e6326f0391968e385f7
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78968897"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86510741"
 ---
 # <a name="deploy-ibm-db2-purescale-on-azure"></a>Развертывание IBM DB2 pureScale в Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "78968897"
 Репозиторий также содержит скрипты для настройки панели мониторинга Grafana. Вы можете использовать панель мониторинга для запроса Prometheus, системы мониторинга и оповещения с открытым кодом и DB2.
 
 > [!NOTE]
-> Скрипт deploy.sh в клиенте создает закрытые ключи SSH и передает их в шаблон развертывания через HTTPS. Для безопасного хранения секретов, ключей и паролей рекомендуем использовать [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-overview).
+> Скрипт deploy.sh в клиенте создает закрытые ключи SSH и передает их в шаблон развертывания через HTTPS. Для безопасного хранения секретов, ключей и паролей рекомендуем использовать [Azure Key Vault](../../key-vault/general/overview.md).
 
 ## <a name="how-the-deployment-script-works"></a>Как работает скрипт развертывания
 
@@ -133,7 +133,7 @@ ms.locfileid: "78968897"
 
 Дополнительные сведения об этих и других известных проблемах см. в файле kb.md в репозитории [DB2onAzure](https://aka.ms/DB2onAzure).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 -   [Создание необходимых пользователей для установки компонентов Пурескале DB2](https://www.ibm.com/support/knowledgecenter/en/SSEPGG_11.1.0/com.ibm.db2.luw.qb.server.doc/doc/t0055374.html?pos=2)
 

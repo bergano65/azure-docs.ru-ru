@@ -10,15 +10,15 @@ author: likebupt
 ms.author: keli19
 ms.date: 04/22/2020
 ms.openlocfilehash: c98935781699510d84247f80367d5c57cb388f6b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82137643"
 ---
 # <a name="two-class-decision-forest-module"></a>Модуль леса решений с двумя классами
 
-В этой статье описывается модуль в Машинное обучение Azure Designer (Предварительная версия).
+В этой статье описывается модуль в конструкторе Машинного обучения Azure (предварительная версия).
 
 Этот модуль используется для создания модели машинного обучения на основе алгоритма лесов принятия решений.  
 
@@ -108,6 +108,6 @@ ms.locfileid: "82137643"
 
 + Чтобы использовать модель для оценки, добавьте модуль **оценки модели** в конвейер.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-См. [набор модулей, доступных](module-reference.md) для машинное обучение Azure. 
+Ознакомьтесь с [набором доступных модулей](module-reference.md) в службе Машинного обучения Azure. 

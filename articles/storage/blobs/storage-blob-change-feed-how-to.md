@@ -9,10 +9,9 @@ ms.service: storage
 ms.subservice: blobs
 ms.reviewer: sadodd
 ms.openlocfilehash: 75995eeb3f8255cb4c60d5be267f9c343edfea89
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74111857"
 ---
 # <a name="process-change-feed-in-azure-blob-storage-preview"></a>Обработка канала изменений в хранилище BLOB-объектов Azure (Предварительная версия)
@@ -28,11 +27,11 @@ ms.locfileid: "74111857"
 
 1. В Visual Studio добавьте URL-адрес `https://azuresdkartifacts.blob.core.windows.net/azuresdkpartnerdrops/index.json` в источники пакетов NuGet. 
 
-   Дополнительные сведения см. в разделе [источники пакетов](https://docs.microsoft.com/nuget/consume-packages/install-use-packages-visual-studio#package-sources).
+   Сведения о том, как это сделать, см. в разделе [Источники пакетов](https://docs.microsoft.com/nuget/consume-packages/install-use-packages-visual-studio#package-sources).
 
 2. В диспетчере пакетов NuGet найдите пакет **Microsoft. Azure. Storage. пр** и установите его в свой проект. 
 
-   Дополнительные сведения см. в разделе [Поиск и установка пакета](https://docs.microsoft.com/nuget/consume-packages/install-use-packages-visual-studio#find-and-install-a-package).
+   Инструкции см. в разделе [Поиск и установка пакета](https://docs.microsoft.com/nuget/consume-packages/install-use-packages-visual-studio#find-and-install-a-package).
 
 ## <a name="connect-to-the-storage-account"></a>Подключение к учетной записи хранения
 
@@ -60,7 +59,7 @@ public bool GetBlobClient(ref CloudBlobClient cloudBlobClient, string storageCon
 
 ## <a name="initialize-the-change-feed"></a>Инициализация веб-канала изменений
 
-Добавьте следующие операторы using в начало файла кода. 
+Добавьте в начало файла кода приведенные ниже операторы using. 
 
 ```csharp
 using Avro.Generic;
@@ -369,6 +368,6 @@ private async Task<bool> IsSegmentConsumableAsync(ChangeFeed changeFeed, ChangeF
 >[!TIP]
 > Сегмент может иметь журналы веб-канала изменений в одном или нескольких *чункфилепас*. В случае нескольких *чункфилепас* система внутренним образом разделяет записи на несколько сегментов, чтобы управлять пропускной способностью публикации. Гарантируется, что каждая секция сегмента будет содержать изменения взаимоисключающих больших двоичных объектов и может обрабатываться независимо, без нарушения порядка. Класс **чанжефидсегментшардреадер** можно использовать для перебора записей на уровне сегментов, если это наиболее эффективно для вашего сценария.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о журналах веб-канала изменений. См. [веб-канал изменений в хранилище BLOB-объектов Azure (Предварительная версия)](storage-blob-change-feed.md)

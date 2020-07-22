@@ -2,13 +2,12 @@
 title: Приложения для рендеринга
 description: Вы можете использовать в пакетной службе Azure любые приложения для рендеринга Но некоторые распространенные версии уже включены в образы виртуальных машин Azure Marketplace.
 ms.date: 09/19/2019
-ms.topic: conceptual
-ms.openlocfilehash: f04fff3df2deb714f0432e5ad77d921a2d7ac205
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.topic: how-to
+ms.openlocfilehash: f876671c6ac16137c2c1cf8d40bd70860c06975b
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82115794"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85960492"
 ---
 # <a name="pre-installed-applications-on-rendering-vm-images"></a>Предварительно установленные приложения в образах виртуальных машин для рендеринга
 
@@ -18,55 +17,55 @@ ms.locfileid: "82115794"
 
 Некоторые приложения поддерживают только платформу Windows, но большинство из них доступны как в Windows, так и в Linux.
 
-## <a name="applications-on-centos-7-rendering-images"></a>Приложения на изображениях отрисовки CentOS 7
+## <a name="applications-on-centos-7-rendering-images"></a>Приложения на CentOS 7 для отрисовки изображений
 
-Следующий список относится к образам визуализации CentOS 7,6, версия 1.1.6.
+Следующий список относится к отрисовке изображений CentOS 7.6, версия 1.1.6.
 
 * Autodesk Maya I/O 2017 обновление 5 (версия сборки: 201708032230);
 * Autodesk Maya I/O 2018 обновление 2 (версия сборки: 201711281015);
-* Обновление 1 для Autodesk Maya I/O 2019
-* Autodesk Arnold для Maya 2017 (Arnold версии 5.3.1.1) Мтоа-3.2.1.1-2017
-* Autodesk Arnold для Maya 2018 (Arnold версии 5.3.1.1) Мтоа-3.2.1.1-2018
-* Autodesk Arnold для Maya 2019 (Arnold версии 5.3.1.1) Мтоа-3.2.1.1-2019
+* Autodesk Maya I/O 2019 обновление 1;
+* Autodesk Arnold for Maya 2017 (Arnold версии 5.3.1.1) MtoA-3.2.1.1-2017;
+* Autodesk Arnold for Maya 2018 (Arnold версии 5.3.1.1) MtoA-3.2.1.1-2018;
+* Autodesk Arnold for Maya 2019 (Arnold версии 5.3.1.1) MtoA-3.2.1.1-2019;
 * Chaos Group V-Ray for Maya 2017 (версия 3.60.04);
 * Chaos Group V-Ray for Maya 2018 (версия 3.60.04);
 * Blender (2.68).
-* Наложение (2,8)
+* Blender (2.8)
 
-## <a name="applications-on-latest-windows-server-2016-rendering-images"></a>Приложения на последних изображениях отрисовки Windows Server 2016
+## <a name="applications-on-latest-windows-server-2016-rendering-images"></a>Приложения последней версии Windows Server 2016 для отрисовки изображений
 
-Приведенный ниже список относится к образам визуализации Windows Server 2016, версия 1.3.8.
+Следующий список относится к отрисовке изображений Windows Server 2016, версия 1.3.8.
 
 * Autodesk Maya I/O 2017 обновление 5 (версия 17.4.5459);
-* Autodesk Maya I/O 2018 с обновлением 6 (версия 18.4.0.7622)
-* Autodesk Maya ввода-вывода 2019
+* Autodesk Maya I/O 2018 обновление 6 (версия 18.4.0.7622);
+* Autodesk Maya I/O 2019;
 * Autodesk 3ds Max I/O 2018 обновление 4 (версия 20.4.0.4254);
 * Autodesk 3ds Max I/O 2019 обновление 1 (версия 21.2.0.2219);
-* Autodesk 3ds Max I/O 2020 с обновлением 2
-* Autodesk Arnold для Maya 2017 (Arnold версии 5.3.0.2) Мтоа-3.2.0.2-2017
-* Autodesk Arnold для Maya 2018 (Arnold версии 5.3.0.2) Мтоа-3.2.0.2-2018
-* Autodesk Arnold для Maya 2019 (Arnold версии 5.3.0.2) Мтоа-3.2.0.2-2019
-* Autodesk Arnold для 3ds Max 2018 (Arnold версия 5.3.0.2) (версия 1.2.926)
-* Autodesk Arnold для 3ds Max 2019 (Arnold версия 5.3.0.2) (версия 1.2.926)
-* Autodesk Arnold для 3ds Max 2020 (Arnold версия 5.3.0.2) (версия 1.2.926)
-* Chaos Group V-Ray для Maya 2017 (версия 4.12.01)
-* Chaos Group V-Ray для Maya 2018 (версия 4.12.01)
-* Chaos Group V-Ray для Maya 2019 (версия 4.04.03)
-* Chaos Group V-Ray для 3ds Max 2018 (версия 4.20.01)
-* Chaos Group V-Ray для 3ds Max 2019 (версия 4.20.01)
-* Chaos Group V-Ray для 3ds Max 2020 (версия 4.20.01)
+* Autodesk 3ds Max I/O 2020 обновление 2;
+* Autodesk Arnold for Maya 2017 (Arnold версии 5.3.0.2) MtoA-3.2.0.2-2017;
+* Autodesk Arnold for Maya 2018 (Arnold версии 5.3.0.2) MtoA-3.2.0.2-2018;
+* Autodesk Arnold for Maya 2019 (Arnold версии 5.3.0.2) MtoA-3.2.0.2-2019;
+* Autodesk Arnold for 3ds Max 2018 (Arnold версии 5.3.0.2) (версия 1.2.926);
+* Autodesk Arnold for 3ds Max 2019 (Arnold версии 5.3.0.2) (версия 1.2.926);
+* Autodesk Arnold for 3ds Max 2020 (Arnold версии 5.3.0.2) (версия 1.2.926);
+* Chaos Group V-Ray for Maya 2017 (версия 4.12.01);
+* Chaos Group V-Ray for Maya 2018 (версия 4.12.01);
+* Chaos Group V-Ray for Maya 2019 (версия 4.04.03);
+* Chaos Group V-Ray for 3ds Max 2018 (версия 4.20.01);
+* Chaos Group V-Ray for 3ds Max 2019 (версия 4.20.01);
+* Chaos Group V-Ray for 3ds Max 2020 (версия 4.20.01);
 * Blender (2.79).
-* Наложение (2,80)
-* AZ 10
+* Blender (2.80)
+* AZ 10
 
 > [!IMPORTANT]
-> Чтобы запустить V-Ray с Maya за пределами [шаблонов расширений пакетной](https://github.com/Azure/batch-extension-templates)службы `vrayses.exe` Azure, запустите перед выполнением подготовки к просмотру. Чтобы запустить врайсес. exe за пределами шаблонов, можно использовать следующую команду `%MAYA_2017%\vray\bin\vrayses.exe"`.
+> Чтобы запустить V-Ray с Maya за пределами [шаблонов расширения пакетной службы Azure](https://github.com/Azure/batch-extension-templates), запустите `vrayses.exe` перед выполнением отрисовки. Чтобы запустить vrayses.exe за пределами шаблонов, можно использовать следующую команду: `%MAYA_2017%\vray\bin\vrayses.exe"`.
 >
-> Пример см. в описании задачи запуска [шаблона Maya и V-Ray](https://github.com/Azure/batch-extension-templates/blob/master/templates/maya/render-vray-windows/pool.template.json) на сайте GitHub.
+> Пример см. в описании задачи запуска шаблона [Maya и V-Ray](https://github.com/Azure/batch-extension-templates/blob/master/templates/maya/render-vray-windows/pool.template.json) на GitHub.
 
-## <a name="applications-on-previous-windows-server-2016-rendering-images"></a>Приложения на предыдущих изображениях подготовки к просмотру Windows Server 2016
+## <a name="applications-on-previous-windows-server-2016-rendering-images"></a>Приложения предыдущих версий Windows Server 2016 для отрисовки изображений
 
-Приведенный ниже список относится к образам визуализации Windows Server 2016, версия 1.3.7.
+Следующий список относится к отрисовке изображений Windows Server 2016, версии 1.3.7.
 
 * Autodesk Maya I/O 2017 обновление 5 (версия 17.4.5459);
 * Autodesk Maya I/O 2018 обновление 4 (версия 18.4.0.7622);
@@ -74,17 +73,17 @@ ms.locfileid: "82115794"
 * Autodesk 3ds Max I/O 2018 обновление 4 (версия 20.4.0.4254);
 * Autodesk Arnold for Maya 2017 (Arnold версии 5.2.0.1) MtoA-3.1.0.1-2017;
 * Autodesk Arnold for Maya 2018 (Arnold версии 5.2.0.1) MtoA-3.1.0.1-2018;
-* Autodesk Arnold для 3ds Max 2018 (Arnold версия 5.0.2.4) (версия 1.2.926)
-* Autodesk Arnold для 3ds Max 2019 (Arnold версия 5.0.2.4) (версия 1.2.926)
-* Chaos Group V-Ray для Maya 2018 (версия 3.52.03)
-* Chaos Group V-Ray для 3ds Max 2018 (версия 3.60.02)
-* Chaos Group V-Ray для Maya 2019 (версия 3.52.03)
-* Chaos Group V-Ray для 3ds Max 2019 (версия 4.10.01)
+* Autodesk Arnold for 3ds Max 2018 (Arnold версии 5.0.2.4) (версия 1.2.926);
+* Autodesk Arnold for 3ds Max 2019 (Arnold версии 5.0.2.4) (версия 1.2.926);
+* Chaos Group V-Ray for Maya 2018 (версия 3.52.03);
+* Chaos Group V-Ray for 3ds Max 2018 (версия 3.60.02);
+* Chaos Group V-Ray for Maya 2019 (версия 3.52.03);
+* Chaos Group V-Ray for 3ds Max 2019 (версия 4.10.01);
 * Blender (2.79).
 
 > [!NOTE]
-> Chaos Group V-Ray для 3ds Max 2019 (версия 4.10.01) вводит критические изменения в V-Ray. Чтобы использовать предыдущую версию (Version 3.60.02), используйте узлы отрисовки Windows Server 2016, версия 1.3.2.
+> Chaos Group V-Ray for 3ds Max 2019 (версия 4.10.01) вносит критические изменения в V-Ray. Чтобы использовать предыдущую версию (версия 3.60.02), используйте узлы отрисовки Windows Server 2016, версии 1.3.2.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы использовать образы виртуальных машин для рендеринга, их необходимо указывать в конфигурации пула при создании пула. Подробнее см. статью о [возможностях рендеринга в пакетной службе](https://docs.microsoft.com/azure/batch/batch-rendering-functionality#batch-pools).
+Чтобы использовать образы виртуальных машин для рендеринга, их необходимо указывать в конфигурации пула при создании пула. Подробнее см. статью о [возможностях рендеринга в пакетной службе](./batch-rendering-functionality.md#batch-pools).

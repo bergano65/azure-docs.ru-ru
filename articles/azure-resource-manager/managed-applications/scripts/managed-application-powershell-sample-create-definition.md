@@ -6,12 +6,12 @@ ms.devlang: powershell
 ms.topic: sample
 ms.date: 10/27/2017
 ms.author: tomfitz
-ms.openlocfilehash: 09fe1455f0dba57fd23aeeb66acb1f99fc2513d4
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: b605d63db09b81bfe73eca8f4abd7a38d2325004
+ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75648991"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86056027"
 ---
 # <a name="create-a-managed-application-definition-with-powershell"></a>Создание определения управляемого приложения с помощью Azure PowerShell
 
@@ -32,10 +32,10 @@ ms.locfileid: "75648991"
 
 | Get-Help | Примечания |
 |---|---|
-| [New-AzManagedApplicationDefinition](https://docs.microsoft.com/powershell/module/az.resources/new-azmanagedapplicationdefinition) | Позволяет создать определение управляемого приложения. Укажите пакет с необходимыми файлами. |
+| [New-AzManagedApplicationDefinition](/powershell/module/az.resources/new-azmanagedapplicationdefinition) | Позволяет создать определение управляемого приложения. Укажите пакет с необходимыми файлами. |
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Общие сведения об управляемых приложениях Azure см. в [этой статье](../overview.md).
-* Дополнительные сведения см. в [документации по Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps).
+* Дополнительные сведения см. в [документации по Azure PowerShell](/powershell/azure/get-started-azureps).

@@ -11,22 +11,22 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 07/12/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 90a624a6b3b4696899af0d8606f653df260cc201
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 7275d115210100bdd4a3a2eb683c867a6a4a4f4a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "60348286"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85358707"
 ---
 # <a name="select-which-installation-type-to-use-for-azure-ad-connect"></a>Выбор типа установки для Azure AD Connect
 При новой установке Azure AD Connect есть два типа установки: экспресс и пользовательская. Этот раздел поможет вам выбрать оптимальный вариант установки.
 
-## <a name="express"></a>Express
+## <a name="express"></a>Экспресс-оценка
 Экспресс-установка наиболее распространена и используется в 90 % всех случаев новой установки. Она была разработана для предоставления конфигурации, которая подходит для большинства распространенных сценариев клиентов.
 
 Предполагается следующее:
@@ -50,7 +50,7 @@ ms.locfileid: "60348286"
 ## <a name="custom"></a>Особые настройки
 Пользовательский тип установки предоставляет намного больше возможностей, чем экспресс. Его следует применять в тех случаях, где описанная в предыдущем разделе конфигурация для экспресс-установки не соответствует потребностям вашей организации.
 
-Используйте в следующих ситуациях:
+Используется, когда:
 
 - У вас нет доступа к учетной записи администратора предприятия для Active Directory.
 - У вас несколько лесов или вы планируется синхронизировать более одного леса в будущем.
@@ -74,5 +74,5 @@ ms.locfileid: "60348286"
 ## <a name="migrate-from-fim2010-or-mim2016"></a>Миграция с FIM2010 или MIM2016
 Если вы используете Forefront Identity Manager 2010 или Microsoft Identity Manager 2016 с соединителем Azure AD, то единственным вариантом является миграция. Выполните действия, описанные в разделе [Swing migration](how-to-upgrade-previous-version.md#swing-migration) (Обновление со сменой сервера). При выполнении этих действий замените все упоминания Azure AD Sync на FIM2010 или MIM2016.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 В зависимости от выбранного варианта используйте оглавление слева, чтобы найти статью с необходимым вам описанием действий.

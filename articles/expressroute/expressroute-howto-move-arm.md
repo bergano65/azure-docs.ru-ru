@@ -4,21 +4,20 @@ description: В этой статье описывается перемещен�
 services: expressroute
 author: charwen
 ms.service: expressroute
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 02/25/2019
 ms.author: charwen
-ms.openlocfilehash: d3014aae44b8d63be67cd0d31f996470aeda40df
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 5c4bbdde04176edf693fc58d172a7dcc250c495a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80616282"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84725007"
 ---
 # <a name="move-expressroute-circuits-from-classic-to-resource-manager-deployment-model-using-powershell"></a>Перемещение каналов ExpressRoute из классической модели развертывания в модель развертывания с помощью Resource Manager с использованием PowerShell
 
 Чтобы канал ExpressRoute можно было использовать в классической модели развертывания и в модели Resource Manager, необходимо переместить его в модель развертывания Resource Manager. Сведения о перемещении канала с помощью PowerShell содержатся в следующих разделах.
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 [!INCLUDE [updated-for-az](../../includes/hybrid-az-ps.md)]
 

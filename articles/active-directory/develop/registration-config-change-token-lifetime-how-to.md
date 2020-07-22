@@ -12,10 +12,9 @@ ms.date: 04/08/2019
 ms.author: ryanwi
 ms.custom: aaddev, seoapril2019
 ms.openlocfilehash: fc71ebe61fba8c1bdb6b7625b16a50d8995a581a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80883359"
 ---
 # <a name="how-to-change-the-token-lifetime-defaults-for-a-custom-developed-application"></a>Как изменить стандартное время существования токена для специально разработанного приложения
@@ -27,7 +26,7 @@ ms.locfileid: "80883359"
 
     Ниже приведен пример политики, в котором задается токен обновления максимального возраста с одним фактором. Создайте политику: ```New-AzureADPolicy -Definition @('{"TokenLifetimePolicy":{"Version":1, "MaxAgeSingleFactor":"until-revoked"}}') -DisplayName "OrganizationDefaultPolicyScenario" -IsOrganizationDefault $true -Type "TokenLifetimePolicy"```.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * См. в разделе [Настройка времени существования маркеров в Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-configurable-token-lifetimes) чтобы узнать, как настроить время существования маркера, выданного Azure AD, включая то, как задать время существования маркеров для всех приложений в вашей организации, для многопользовательского приложения или для конкретной службы. 
 * [Справочник по маркерам Azure AD](https://docs.microsoft.com/azure/active-directory/develop/active-directory-token-and-claims)

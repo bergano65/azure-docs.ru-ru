@@ -7,10 +7,9 @@ ms.date: 12/03/2018
 ms.author: asnegi
 ms.custom: mvc, devcenter
 ms.openlocfilehash: f26fe70afe7d9e2872f06ac6da7143556278b1b0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75497965"
 ---
 # <a name="mount-highly-available-service-fabric-reliable-disk-based-volume-in-a-service-fabric-mesh-application"></a>Подключение тома надежного диска высокой доступности Service Fabric в приложении "Сетка Azure Service Fabric" 
@@ -23,7 +22,7 @@ ms.locfileid: "75497965"
 
 `counterService` периодически считывает значение счетчика из файла, увеличивает его и записывает обратно в файл. Этот файл хранится в папке, подключенной к тому на надежном диске Service Fabric.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Для выполнения этой задачи можно использовать Azure Cloud Shell или локальный экземпляр Azure CLI. Чтобы использовать Azure CLI в рамках работы с этой статьей, убедитесь, что `az --version` возвращает по крайней мере версию `azure-cli (2.0.43)`.  Установите (или обновите) модуль расширения интерфейса командной строки службы "Сетка Azure Service Fabric", выполнив эти [инструкции](service-fabric-mesh-howto-setup-cli.md).
 
@@ -81,7 +80,7 @@ az mesh gateway show --resource-group myResourceGroup --name counterGateway
 az group delete --resource-group myResourceGroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Просмотрите пример приложения с надежным производительным диском Service Fabric на [сайте GitHub](https://github.com/Azure-Samples/service-fabric-mesh/tree/master/src/counter).
 - Узнайте больше о модели ресурсов Service Fabric из раздела [Introduction to Service Fabric Resource Model](service-fabric-mesh-service-fabric-resources.md) (Общие сведения о модели ресурсов Service Fabric).

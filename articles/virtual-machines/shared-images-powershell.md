@@ -3,17 +3,17 @@ title: Создание коллекции общих образов с помо
 description: Узнайте, как использовать Azure PowerShell для создания общей коллекции образов в Azure
 author: cynthn
 ms.service: virtual-machines
+ms.subservice: imaging
 ms.topic: how-to
 ms.workload: infrastructure
 ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: b7625903c4640fdb17eacd29822fe6203e075826
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
-ms.translationtype: MT
+ms.openlocfilehash: b6828571499631ae08b077a4b7e3120f599e5b8b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82796997"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84673757"
 ---
 # <a name="create-a-shared-image-gallery-with-azure-powershell"></a>Создание коллекции общих образов с помощью Azure PowerShell 
 
@@ -31,7 +31,7 @@ ms.locfileid: "82796997"
 [!INCLUDE [virtual-machines-common-shared-images-powershell](../../includes/virtual-machines-common-shared-images-powershell.md)]
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Создание образа из [виртуальной машины](image-version-vm-powershell.md), [управляемого образа](image-version-managed-image-powershell.md)или [образа в другой коллекции](image-version-another-gallery-powershell.md).
 
@@ -39,9 +39,9 @@ ms.locfileid: "82796997"
 
 Вы также можете создать ресурс коллекции общих образов с помощью шаблонов. Существует несколько шаблонов быстрого запуска Azure: 
 
-- [Создание Общей коллекции образов.](https://azure.microsoft.com/resources/templates/101-sig-create/)
-- [Создание определения образа в Общей коллекции образов](https://azure.microsoft.com/resources/templates/101-sig-image-definition-create/)
-- [Создание версии образа в Общей коллекции образов](https://azure.microsoft.com/resources/templates/101-sig-image-version-create/)
+- [Создание коллекции общих образов](https://azure.microsoft.com/resources/templates/101-sig-create/)
+- [Создание определения образа в коллекции общих образов](https://azure.microsoft.com/resources/templates/101-sig-image-definition-create/)
+- [Создание версии образа в коллекции общих образов](https://azure.microsoft.com/resources/templates/101-sig-image-version-create/)
 - [Создание виртуальной машины из версии образа](https://azure.microsoft.com/resources/templates/101-vm-from-sig/)
 
 

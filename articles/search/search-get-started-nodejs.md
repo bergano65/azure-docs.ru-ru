@@ -8,13 +8,13 @@ ms.author: heidist
 ms.devlang: nodejs
 ms.service: cognitive-search
 ms.topic: quickstart
-ms.date: 02/25/2020
-ms.openlocfilehash: 8761a8f6daf0e15a00dc989e77339fea9536b330
-ms.sourcegitcommit: c8a0fbfa74ef7d1fd4d5b2f88521c5b619eb25f8
+ms.date: 06/23/2020
+ms.openlocfilehash: bd64faf46f91c3b73d58f7c226748cd0ac083701
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82801286"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85562144"
 ---
 # <a name="quickstart-create-an-azure-cognitive-search-index-in-nodejs-using-rest-apis"></a>Краткое руководство. Создание индекса службы "Когнитивный поиск Azure" в Node.js с помощью REST API
 > [!div class="op_single_selector"]
@@ -280,7 +280,7 @@ class AzureSearchClient {
         // The query key is used for read-only requests and so can be distributed with less risk of abuse.
         this.queryKey = queryKey;
         this.indexName = indexName;
-        this.apiVersion = '2019-05-06';
+        this.apiVersion = '2020-06-30';
     }
 
     // All methods go inside class body here!
@@ -289,7 +289,7 @@ class AzureSearchClient {
 module.exports = AzureSearchClient;
 ```
 
-Первой задачей этого класса является создание URL-адресов, на которые будут отправляться запросы. Создайте эти URL-адреса с помощью методов экземпляра, которые используют данные конфигурации, переданные в конструктор класса. Обратите внимание, что создаваемый URL-адрес зависит от версии API и должен иметь аргумент, указывающий эту версию (в нашем приложении это `2019-05-06`). 
+Первой задачей этого класса является создание URL-адресов, на которые будут отправляться запросы. Создайте эти URL-адреса с помощью методов экземпляра, которые используют данные конфигурации, переданные в конструктор класса. Обратите внимание, что создаваемый URL-адрес зависит от версии API и должен иметь аргумент, указывающий эту версию (в нашем приложении это `2020-06-30`). 
 
 Первый из этих методов возвратит URL-адрес самого индекса. Добавьте следующий метод в тело класса:
 

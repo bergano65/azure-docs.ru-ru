@@ -13,10 +13,9 @@ ms.date: 07/16/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.openlocfilehash: 38e319efb100d326d55f6f821e7c903306a7c7d0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80991013"
 ---
 # <a name="a-web-api-that-calls-web-apis-code-configuration"></a>Веб-API, вызывающий веб-API: конфигурация кода
@@ -69,11 +68,11 @@ public static IServiceCollection AddProtectedApiCallsWebApis(this IServiceCollec
 Метод Аддаккаунттокачефромжвт () должен:
 
 - Создание экземпляра конфиденциального клиентского приложения библиотеки проверки подлинности Microsoft (MSAL).
-- Вызовите метод `AcquireTokenOnBehalf` . Этот вызов обменивается токеном носителя, который был получен клиентом для веб-API, по токену носителя для того же пользователя, но у него есть API, который вызывает нисходящий API.
+- Вызовите метод `AcquireTokenOnBehalf`. Этот вызов обменивается токеном носителя, который был получен клиентом для веб-API, по токену носителя для того же пользователя, но у него есть API, который вызывает нисходящий API.
 
 ### <a name="instantiate-a-confidential-client-application"></a>Создание экземпляра конфиденциального клиентского приложения
 
-Этот поток доступен только в конфиденциальном потоке клиента, поэтому защищенный веб-API предоставляет учетные данные клиента (секрет клиента или сертификата) [классу конфидентиалклиентаппликатионбуилдер](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.confidentialclientapplicationbuilder) с помощью `WithClientSecret` метода `WithCertificate` или.
+Этот поток доступен только в конфиденциальном потоке клиента, поэтому защищенный веб-API предоставляет учетные данные клиента (секрет клиента или сертификата) [классу конфидентиалклиентаппликатионбуилдер](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.confidentialclientapplicationbuilder) с помощью `WithClientSecret` `WithCertificate` метода или.
 
 ![Список методов Иконфидентиалклиентаппликатион](https://user-images.githubusercontent.com/13203188/55967244-3d8e1d00-5c7a-11e9-8285-a54b05597ec9.png)
 
@@ -100,7 +99,7 @@ app = ConfidentialClientApplicationBuilder.Create(config.ClientId)
 
 Чтобы выполнить вызов on-of (OBO), вызовите [метод аккуиретокенонбехалф](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.acquiretokenonbehalfofparameterbuilder) в `IConfidentialClientApplication` интерфейсе.
 
-`UserAssertion` Класс строится на основе токена носителя, полученного веб-API от собственных клиентов. Существует [два конструктора](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.clientcredential.-ctor?view=azure-dotnet):
+`UserAssertion`Класс строится на основе токена носителя, полученного веб-API от собственных клиентов. Существует [два конструктора](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.clientcredential.-ctor?view=azure-dotnet):
 * Один, принимающий токен носителя JSON Web Token (JWT)
 * Один, принимающий любое утверждение пользователя, другой вид маркера безопасности, тип которого затем указывается в дополнительном параметре с именем`assertionType`
 
@@ -145,7 +144,7 @@ private void AddAccountToCacheFromJwt(IEnumerable<string> scopes, JwtSecurityTok
 
 Поток "от имени" (OBO) используется для получения маркера для вызова подчиненного веб-API. В этом потоке веб-API получает маркер носителя с делегированными разрешениями из клиентского приложения, а затем обменивается этим маркером с другим маркером доступа для вызова подчиненного веб-API.
 
-Приведенный ниже код использует `SecurityContextHolder` в веб-API каркасную платформу для обеспечения безопасности, чтобы получить проверенный токен носителя. Затем она использует библиотеку Java MSAL для получения маркера для подчиненного API с помощью `acquireToken` вызова с `OnBehalfOfParameters`. MSAL кэширует токен таким образом, чтобы последующие вызовы API могли использовать `acquireTokenSilently` для получения кэшированного маркера.
+Приведенный ниже код использует `SecurityContextHolder` в веб-API каркасную платформу для обеспечения безопасности, чтобы получить проверенный токен носителя. Затем она использует библиотеку Java MSAL для получения маркера для подчиненного API с помощью `acquireToken` вызова с `OnBehalfOfParameters` . MSAL кэширует токен таким образом, чтобы последующие вызовы API могли использовать `acquireTokenSilently` для получения кэшированного маркера.
 
 ```Java
 @Component
@@ -218,13 +217,13 @@ class MsalAuthHelper {
 
 ---
 
-Вы также можете увидеть пример реализации потока OBO в [node. js и функциях Azure](https://github.com/Azure-Samples/ms-identity-nodejs-webapi-onbehalfof-azurefunctions/blob/master/MiddleTierAPI/MyHttpTrigger/index.js#L61).
+Вы также можете увидеть пример реализации OBO Flow в [Node.js и функциях Azure](https://github.com/Azure-Samples/ms-identity-nodejs-webapi-onbehalfof-azurefunctions/blob/master/MiddleTierAPI/MyHttpTrigger/index.js#L61).
 
 ## <a name="protocol"></a>Протокол
 
 Дополнительные сведения о протоколе OBO см. [в статье о платформе Microsoft Identity и OAuth 2,0 от имени потока](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Веб-API, вызывающий веб-API: получение маркера для приложения](scenario-web-api-call-api-acquire-token.md)

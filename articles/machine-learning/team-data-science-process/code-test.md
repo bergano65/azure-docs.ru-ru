@@ -12,10 +12,9 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=weig, previous-ms.author=weig
 ms.openlocfilehash: 9612114bb368898ccf31b2c8692869b84544b652
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76722069"
 ---
 # <a name="data-science-code-testing-on-azure-with-the-team-data-science-process-and-azure-devops-services"></a>Тестирование кода обработки и анализа данных в Azure с помощью командного процесса обработки и анализа данных и Azure DevOps Services
@@ -54,7 +53,7 @@ ms.locfileid: "76722069"
     
     ![Процесс создания проекта](./media/code-test/create_python_project_in_vs.PNG)
 
-    ![Обозреватель решений](./media/code-test/solution_explorer_in_vs.PNG)
+    ![обозреватель решений](./media/code-test/solution_explorer_in_vs.PNG)
 
 1. Передайте код проекта в репозиторий кода проекта Azure DevOps: 
 
@@ -112,7 +111,7 @@ ms.locfileid: "76722069"
 
 1. Настройте автоматическую сборку и тестирование в Azure DevOps:
 
-    a. В репозитории проекта выберите **Build and Release** (Сборка и выпуск), а затем щелкните **+Создать**, чтобы создать процесс сборки.
+    а. В репозитории проекта выберите **Build and Release** (Сборка и выпуск), а затем щелкните **+Создать**, чтобы создать процесс сборки.
 
     ![Выбранные параметры для запуска нового процесса сборки](./media/code-test/create_new_build.PNG)
 
@@ -158,4 +157,4 @@ ms.locfileid: "76722069"
 * [Командный процесс обработки и анализа данных](https://aka.ms/tdsp)
 * [Средства тестирования для Visual Studio](https://www.visualstudio.com/vs/features/testing-tools/)
 * [Ресурсы для тестирования в Azure DevOps](https://www.visualstudio.com/team-services/)
-* [Виртуальная машина для обработки и анализа данных](https://azure.microsoft.com/services/virtual-machines/data-science-virtual-machines/)
+* [Виртуальные машины для обработки и анализа данных](https://azure.microsoft.com/services/virtual-machines/data-science-virtual-machines/)

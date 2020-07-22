@@ -4,23 +4,23 @@ description: Узнайте, как создать виртуальную маш
 services: virtual-network
 documentationcenter: na
 author: KumudD
-manager: twooley
+manager: mtillman
 editor: ''
 tags: azure-resource-manager
 ms.assetid: 55bc21b0-2a45-4943-a5e7-8d785d0d015c
 ms.service: virtual-network
+ms.subservice: ip-services
 ms.devlang: azurecli
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/08/2018
 ms.author: kumud
-ms.openlocfilehash: 8e3e37347c8c23ccc9746bbb98ef6a822743848b
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
-ms.translationtype: MT
+ms.openlocfilehash: 110f5ab4f0912ae264eb1dc4b649a40cc40f4e12
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82790292"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84703095"
 ---
 # <a name="create-a-virtual-machine-with-a-static-public-ip-address-using-the-azure-cli"></a>Создание виртуальной машины со статическим общедоступным IP-адресом с помощью Azure CLI
 
@@ -77,7 +77,7 @@ az group delete --name myResourceGroup --yes
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения об [общедоступных IP-адресах в Azure](virtual-network-ip-addresses-overview-arm.md#public-ip-addresses).
-- Дополнительные сведения обо всех [параметрах общедоступных IP-адресов](virtual-network-public-ip-address.md#create-a-public-ip-address).
+- Дополнительные сведения об [общедоступных IP-адресах](virtual-network-ip-addresses-overview-arm.md#public-ip-addresses) в Azure
+- Дополнительные сведения о всех [параметрах общедоступного IP-адреса](virtual-network-public-ip-address.md#create-a-public-ip-address)
 - Дополнительные сведения о [частных IP-адресах](virtual-network-ip-addresses-overview-arm.md#private-ip-addresses) и назначении [статического частного IP-адреса](virtual-network-network-interface-addresses.md#add-ip-addresses) виртуальной машине Azure
 - Дополнительные сведения о создании виртуальных машин [Linux](../virtual-machines/windows/tutorial-manage-vm.md?toc=%2fazure%2fvirtual-network%2ftoc.json) и [Windows](../virtual-machines/windows/tutorial-manage-vm.md?toc=%2fazure%2fvirtual-network%2ftoc.json)

@@ -35,35 +35,63 @@
       href: security-baselines-overview.md
     - name: Базовые показатели безопасности Управления API
       href: ../../api-management/security-baseline.md
+    - name: Базовые уровень безопасности Шлюза приложений
+      href: ../../application-gateway/security-baseline.md
+    - name: Базовые показатели безопасности службы автоматизации
+      href: ../../automation/security-baseline.md
+    - name: Базовые средства безопасности Azure Backup
+      href: ../../backup/security-baseline.md
     - name: Базовая конфигурация безопасности для Кэша Azure для Redis
       href: ../../azure-cache-for-redis/security-baseline.md
-    - name: Базовые средства безопасности резервного копирования
-      href: ../../backup/security-baseline.md
+    - name: Базовые средства безопасности Azure Data Box
+      href: ../../databox/security-baseline.md
+    - name: Базовые средства безопасности Azure Data Explorer
+      href: /azure/data-explorer/security-baseline
+    - name: Базовые средства безопасности Фабрики данных Azure
+      href: ../../data-factory/security-baseline.md
+    - name: Базовые средства безопасности Базы данных Azure для MySQL
+      href: ../../mysql/security-baseline.md
+    - name: Базовые средства безопасности Базы данных Azure для MariaDB
+      href: ../../mariadb/security-baseline.md
+    - name: Базовые средства безопасности Базы данных Azure для PostgreSQL
+      href: ../../postgresql/security-baseline.md
+    - name: Базовые средства безопасности Azure Databricks
+      href: ../../azure-databricks/security-baseline.md
+    - name: Базовые средства безопасности Функций Azure
+      href: ../../azure-functions/security-baseline.md
+    - name: Базовые показатели безопасности Политики Azure
+      href: ../../governance/policy/concepts/azure-security-benchmark-baseline.md
+    - name: Базовые средства безопасности Azure Resource Graph
+      href: ../../governance/resource-graph/concepts/azure-security-benchmark-baseline.md
+    - name: Базовые средства безопасности Базы данных SQL Azure
+      href: ../../sql-database/security-baseline.md
+    - name: Базовые средства безопасности службы хранилища Azure
+      href: ../../storage/common/security-baseline.md
     - name: Базовый уровень безопасности пакетной службы
       href: ../../batch/security-baseline.md
+    - name: Базовые показатели безопасности Cognitive Services
+      href: ../../cognitive-services/security-baseline.md
+    - name: Базовые показатели системы безопасности для Экземпляров контейнеров
+      href: ../../container-instances/security-baseline.md
     - name: Базовая конфигурация безопасности для Реестра контейнеров
       href: ../../container-registry/security-baseline.md
     - name: "Базовая конфигурация безопасности для Cosmos\_DB"
       href: ../../cosmos-db/security-baseline.md
-    - name: Базовая конфигурация системы безопасности Data Explorer
-      href: /azure/data-explorer/security-baseline
-    - name: Базовые показатели безопасности Databricks
-      href: ../../azure-databricks/security-baseline.md
+    - name: Базовые уровень безопасности защищенного хранилища
+      href: ../fundamentals/customer-lockbox-security-baseline.md
     - name: Базовые показатели безопасности Центров событий
       href: ../../event-hubs/security-baseline.md
-    - name: Базовые показатели безопасности Функций
-      href: ../../azure-functions/security-baseline.md
+    - name: Базовые показатели безопасности ExpressRoute
+      href: ../../expressroute/security-baseline.md
     - name: Базовый уровень безопасности HDInsight
       href: ../../hdinsight/security-baseline.md
     - name: Базовый уровень безопасности Key Vault
       href: ../../key-vault/security-baseline.md
-    - name: Базовый уровень безопасности MariaDB
-      href: ../../mariadb/security-baseline.md
-    - name: Базовый уровень безопасности MySQL
-      href: ../../mysql/security-baseline.md
-    - name: Базовый уровень безопасности PostgreSQL
-      href: ../../postgresql/security-baseline.md
-    - name: Базовый уровень безопасности Базы данных SQL
-      href: ../../sql-database/security-baseline.md
-    - name: Базовые средства безопасности хранилища
-      href: ../../storage/common/security-baseline.md
+    - name: Базовые показатели безопасности Logic Apps
+      href: ../../logic-apps/security-baseline.md
+    - name: Базовые показатели безопасности Наблюдателя за сетями
+      href: ../../network-watcher/security-baseline.md
+    - name: Базовые уровень безопасности Stream Analytics
+      href: ../../stream-analytics/security-baseline.md
+    - name: Базовые показатели безопасности Synapse Analytics
+      href: ../../synapse-analytics/security-baseline.md

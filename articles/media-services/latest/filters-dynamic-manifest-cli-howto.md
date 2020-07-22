@@ -15,10 +15,9 @@ ms.date: 06/13/2019
 ms.author: juliako
 ms.custom: seodec18
 ms.openlocfilehash: 74516aa921e45917f327a193a1c972b021c9c8ff
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74896073"
 ---
 # <a name="creating-filters-with-cli"></a>Создание фильтров с помощью CLI 
@@ -104,7 +103,7 @@ az ams asset-filter create -a amsAccount -g resourceGroup -n filterName --asset-
 
 Можно указать список фильтров активов или учетных записей, которые будут применяться к указателю потоковой передачи. [Динамический упаковщик (конечная точка потоковой передачи)](dynamic-packaging-overview.md) применяет этот список фильтров вместе с тем, что ваш клиент указывает в URL-адресе. Это сочетание создает [динамический манифест](filters-dynamic-manifest-overview.md), основанный на фильтрах в URL-адресах и фильтрах, указанных при указателе потоковой передачи. Рекомендуется использовать эту функцию, если вы хотите применить фильтры, но не хотите предоставлять имена фильтров в URL-адресе.
 
-В следующем коде CLI показано, как создать указатель потоковой передачи и `filters`указать. Это необязательное свойство, которое принимает разделенный пробелами список имен фильтров ресурсов и/или имен фильтров учетных записей.
+В следующем коде CLI показано, как создать указатель потоковой передачи и указать `filters` . Это необязательное свойство, которое принимает разделенный пробелами список имен фильтров ресурсов и/или имен фильтров учетных записей.
 
 ```azurecli
 az ams streaming-locator create -a amsAccount -g resourceGroup -n streamingLocatorName \

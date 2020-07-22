@@ -4,14 +4,14 @@ description: В этой статье описывается, как оптим�
 author: dianaputnam
 ms.author: dianas
 ms.service: postgresql
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 5/6/2019
-ms.openlocfilehash: ac1dc43a2b89bc1cc748947ec08e6ada87edbfcb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 3f1fa0affb821b00d4f5529841533e854e634377
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "65066973"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86116188"
 ---
 # <a name="optimize-query-time-with-the-toast-table-storage-strategy"></a>Оптимизация времени выполнения запросов с помощью стратегии хранения таблицы TOAST 
 В этой статье описывается, как оптимизировать время выполнения запросов, применяя стратегию хранения таблицы TOAST.

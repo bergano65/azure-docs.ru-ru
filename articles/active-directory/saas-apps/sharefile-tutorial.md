@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 12/24/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 71d2fe97a4af07f48038ffd88de648247b56bb80
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 9c535b6610b569c4d3649f3d97428b2c97d0db91
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73160027"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86168190"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-citrix-sharefile"></a>Руководство. Интеграция Azure Active Directory с Citrix ShareFile
 
@@ -110,22 +110,17 @@ ms.locfileid: "73160027"
 
     b. В текстовом поле **Identifier (Entity ID)** (Идентификатор (ИД сущности)) введите URL-адрес в следующем формате.
 
-    | |
-    |---|
-    | `https://<tenant-name>.sharefile.com`|
-    | `https://<tenant-name>.sharefile.com/saml/info`|
-    | `https://<tenant-name>.sharefile1.com/saml/info`|
-    | `https://<tenant-name>.sharefile1.eu/saml/info`|
-    | `https://<tenant-name>.sharefile.eu/saml/info`|
-    | |
-    
+    - `https://<tenant-name>.sharefile.com`
+    - `https://<tenant-name>.sharefile.com/saml/info`
+    - `https://<tenant-name>.sharefile1.com/saml/info`
+    - `https://<tenant-name>.sharefile1.eu/saml/info`
+    - `https://<tenant-name>.sharefile.eu/saml/info`
+
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
     
-    | |
-    |---|
-    | `https://<tenant-name>.sharefile.com/saml/acs`|
-    | `https://<tenant-name>.sharefile.eu/saml/<URL path>`|
-    | `https://<tenant-name>.sharefile.com/saml/<URL path>`|
+    - `https://<tenant-name>.sharefile.com/saml/acs`
+    - `https://<tenant-name>.sharefile.eu/saml/<URL path>`
+    - `https://<tenant-name>.sharefile.com/saml/<URL path>`
 
     > [!NOTE]
     > Эти значения приведены для примера. Укажите вместо них фактические значения URL-адреса для входа, идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Citrix ShareFile](https://www.citrix.co.in/products/citrix-content-collaboration/support.html). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

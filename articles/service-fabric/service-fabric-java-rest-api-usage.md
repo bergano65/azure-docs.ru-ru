@@ -5,12 +5,12 @@ author: rapatchi
 ms.topic: conceptual
 ms.date: 11/27/2017
 ms.author: rapatchi
-ms.openlocfilehash: 0a243c1cd0ab0dcb93a1cc6169c89ba18606f346
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c093958b9a8c5a21cb6996db891705ec8c3d21ab
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75451670"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86246288"
 ---
 # <a name="azure-service-fabric-java-client-apis"></a>Клиентские API-интерфейсы Java в Azure Service Fabric
 
@@ -117,13 +117,12 @@ ms.locfileid: "75451670"
 Для каждого API имеется четыре метода перегрузки реализации. Если имеются необязательные параметры, вы увидите еще четыре дополнительных варианта (включая эти необязательные параметры). Рассмотрим для примера API ``removeReplica``.
  1. **public void removeReplica (строка nodeName, UUID partitionId, строка replicaId, логическое значение forceRemove, долгое время ожидания)**
     * Это синхронный вариант вызова API removeReplica.
- 2. **Public Сервицефутуре\<void> RemoveReplicaAsync (строка NODENAME, UUID PartitionId, строка replicaId, логическое ForceRemove, длинный тайм-аут,\<окончательный ServiceCallback void> ServiceCallback)**
+ 2. **public ServiceFuture\<Void> removeReplicaAsync (строка nodeName, UUID partitionId, строка replicaId, логическое значение forceRemove, долгое время ожидания, итоговый ServiceCallback \<Void> serviceCallback)**
     * Этот вариант вызова API можно применять, если необходимо использовать обратные вызовы и асинхронное программирование на основе событий в будущем.
- 3. **общедоступный\<наблюдаемый void> RemoveReplicaAsync (строка NODENAME, UUID PartitionId, строка replicaId)**
+ 3. **public Observable\<Void> removeReplicaAsync (строка nodeName, UUID partitionId, строка replicaId)**
     * Этот вариант вызова API можно применять, если необходимо использовать реактивное асинхронное программирование.
- 4. **Public наблюдаемый\<сервицереспонсе\<void>> ремоверепликависсервицереспонсеасинк (строка nodeName, UUID PartitionID, строка replicaId)**
+ 4. **общедоступный наблюдаемый \<ServiceResponse\<Void>> ремоверепликависсервицереспонсеасинк (строка nodeName, UUID PartitionID, строка replicaId)**
     * Этот вариант вызова API можно применять, если необходимо использовать реактивное асинхронное программирование и работать с ответом REST без форматирования.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* Дополнительные сведения см. в статье [REST API Service Fabric](https://docs.microsoft.com/rest/api/servicefabric/).
-
+* Дополнительные сведения см. в статье [REST API Service Fabric](/rest/api/servicefabric/).

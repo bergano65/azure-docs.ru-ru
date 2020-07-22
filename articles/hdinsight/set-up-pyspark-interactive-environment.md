@@ -6,25 +6,25 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
-ms.custom: seoapr2020
+ms.topic: how-to
+ms.custom: seoapr2020, tracking-python
 ms.date: 04/23/2020
-ms.openlocfilehash: 47f774f7b848e34aa7dc219ee4b08fb083cbd813
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: ea2bda905879f6bdc6cc515f43474ff570e881b4
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82188214"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86078890"
 ---
 # <a name="set-up-the-pyspark-interactive-environment-for-visual-studio-code"></a>Настройка интерактивной среды PySpark для Visual Studio Code
 
-Следующие шаги показывают, как настроить интерактивную среду PySpark в VS Code.
+Ниже описано, как настроить интерактивную среду PySpark в VSCode. Этот шаг предназначен только для пользователей, не являющихся пользователями Windows.
 
 Мы используем команду **python или pip** для сборки виртуального окружения в основной папке. Если вы хотите использовать другую версию, вам нужно вручную изменить версию по умолчанию команды **python или pip**. Дополнительные сведения см. в статье о команде [update-alternatives](https://linux.die.net/man/8/update-alternatives).
 
 1. Установите [Python](https://www.python.org/downloads/) и [PIP](https://pip.pypa.io/en/stable/installing/).
 
-   * Установите Python из [https://www.python.org/downloads/](https://www.python.org/downloads/).
+   * Установите Python из [https://www.python.org/downloads/](https://www.python.org/downloads/) . 
    * Установите PIP с [https://pip.pypa.io/en/stable/installing](https://pip.pypa.io/en/stable/installing/) (если он не установлен из установки Python).
    * Убедитесь, что Python и PIP установлены успешно с помощью следующих команд. (необязательно)
 
@@ -41,7 +41,7 @@ ms.locfileid: "82188214"
 
 ## <a name="other-packages"></a>другие пакеты.
 
-Если вы поступаете через сообщение об ошибке, установите необходимые пакеты, выполнив следующие команды:
+В Linux, если вы используете приведенное ниже сообщение об ошибке, установите необходимые пакеты, выполнив следующие две команды.
 
    ![Установка пакета libkrb5 для Python](./media/set-up-pyspark-interactive-environment/install-libkrb5-package.png)
 
@@ -53,9 +53,9 @@ sudo apt-get install libkrb5-dev
 sudo apt-get install python-dev
 ```
 
-Перезапустите VS Code, а затем снова перейдите к редактору сценариев, который работает на базе **интерактивной среды PySpark службы HDInsight**.
+Перезапустите VSCode, а затем вернитесь в редактор VSCode и выполните команду **Spark: PySPark Interactive** .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 ### <a name="demo"></a>Демонстрация
 

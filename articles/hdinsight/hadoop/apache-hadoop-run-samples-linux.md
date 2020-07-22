@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 12/12/2019
-ms.openlocfilehash: 58f7d99af638c8d03bbce46b7fcf8204aaca11d9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: cc0918f3d9739a214e682d7faa460b6cc519cb0b
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75435749"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86207847"
 ---
 # <a name="run-the-mapreduce-examples-included-in-hdinsight"></a>Выполнение примеров MapReduce, включенных в HDInsight
 
@@ -33,7 +33,7 @@ ms.locfileid: "75435749"
 
 В архиве содержатся следующие примеры:
 
-|Пример |Описание |
+|Образец |Описание |
 |---|---|
 |aggregatewordcount|Подсчитывает количество слов во входных файлах.|
 |aggregatewordhist|Выполняет вычисление гистограммы слов во входных файлах.|
@@ -107,10 +107,12 @@ ms.locfileid: "75435749"
 
     Эта команда сцепляет все выходные файлы, созданные заданием. Она отображает выходные данные в консоли. Результат будет аналогичен приведенному ниже:
 
-        zum     1
-        zur     1
-        zwanzig 1
-        zweite  1
+    ```output
+    zum     1
+    zur     1
+    zwanzig 1
+    zweite  1
+    ```
 
     Каждая строка соответствует одному слову и частоте его появления в исходных данных.
 
@@ -124,15 +126,17 @@ ms.locfileid: "75435749"
 
 Следующая задача — составление головоломки судоку, по правилам которой не допускается использование одного и того же числа в строке или столбце. В хранилище кластера HDInsight есть соответствующий пример. Он находится в `/usr/hdp/*/hadoop/src/hadoop-mapreduce-project/hadoop-mapreduce-examples/src/main/java/org/apache/hadoop/examples/dancing/puzzle1.dta` и содержит приведенный ниже текст.
 
-    8 5 ? 3 9 ? ? ? ?
-    ? ? 2 ? ? ? ? ? ?
-    ? ? 6 ? 1 ? ? ? 2
-    ? ? 4 ? ? 3 ? 5 9
-    ? ? 8 9 ? 1 4 ? ?
-    3 2 ? 4 ? ? 8 ? ?
-    9 ? ? ? 8 ? 5 ? ?
-    ? ? ? ? ? ? 2 ? ?
-    ? ? ? ? 4 5 ? 7 8
+```output
+8 5 ? 3 9 ? ? ? ?
+? ? 2 ? ? ? ? ? ?
+? ? 6 ? 1 ? ? ? 2
+? ? 4 ? ? 3 ? 5 9
+? ? 8 9 ? 1 4 ? ?
+3 2 ? 4 ? ? 8 ? ?
+9 ? ? ? 8 ? 5 ? ?
+? ? ? ? ? ? 2 ? ?
+? ? ? ? 4 5 ? 7 8
+```
 
 Чтобы обработать эти данные в примере судоку, используйте следующую команду.
 
@@ -142,15 +146,17 @@ yarn jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-mapreduce-examples.jar 
 
 Полученный текст должен выглядеть следующим образом.
 
-    8 5 1 3 9 2 6 4 7
-    4 3 2 6 7 8 1 9 5
-    7 9 6 5 1 4 3 8 2
-    6 1 4 8 2 3 7 5 9
-    5 7 8 9 6 1 4 2 3
-    3 2 9 4 5 7 8 1 6
-    9 4 7 2 8 6 5 3 1
-    1 8 5 7 3 9 2 6 4
-    2 6 3 1 4 5 9 7 8
+```output
+8 5 1 3 9 2 6 4 7
+4 3 2 6 7 8 1 9 5
+7 9 6 5 1 4 3 8 2
+6 1 4 8 2 3 7 5 9
+5 7 8 9 6 1 4 2 3
+3 2 9 4 5 7 8 1 6
+9 4 7 2 8 6 5 3 1
+1 8 5 7 3 9 2 6 4
+2 6 3 1 4 5 9 7 8
+```
 
 ## <a name="pi--example"></a>Пример "Пи" (π)
 

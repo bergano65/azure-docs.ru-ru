@@ -12,4 +12,4 @@ ms.lasthandoff: 04/28/2020
 ms.locfileid: "67185396"
 ---
 > [!NOTE]
-> Прежде чем приступить к работе с этим руководством, завершите учебник по [Raspberry Pi Online Simulator](../articles/iot-hub/iot-hub-raspberry-pi-web-simulator-get-started.md) или одно из учебников по устройствам. Например, [Raspberry Pi с Node. js](../articles/iot-hub/iot-hub-raspberry-pi-kit-node-get-started.md). В этих статьях вы настроили устройство Azure IoT и центр Интернета вещей, а также развернете пример приложения для запуска на устройстве. Приложение отправляет собранные с датчиков данные в Центр Интернета вещей.
+> До работы с этим руководством пройдите руководство по [онлайн-симулятору Raspberry Pi](../articles/iot-hub/iot-hub-raspberry-pi-web-simulator-get-started.md) или одно из руководство по устройствам, например [Raspberry Pi с Node.js](../articles/iot-hub/iot-hub-raspberry-pi-kit-node-get-started.md). В этих статьях описывается настройка устройства Интернета вещей Azure и Центра Интернета вещей и развертывание примера приложения для выполнения на устройстве. Приложение отправляет собранные с датчиков данные в Центр Интернета вещей.

@@ -4,16 +4,41 @@ description: Узнайте о новых и недавних обновлени
 ms.topic: overview
 ms.date: 04/19/2020
 ms.custom: mvc
-ms.openlocfilehash: ba85b0a4ed30320099388ccb48dd91ad6445efd5
-ms.sourcegitcommit: acb82fc770128234f2e9222939826e3ade3a2a28
+ms.openlocfilehash: 58c77dccd1e43ed497cd56b2831eb2ab914d8d5d
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81677247"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85556935"
 ---
 # <a name="whats-new-in-azure-migrate"></a>Новые возможности в службе "Миграция Azure"
 
 С помощью [службы "Миграция Azure"](migrate-services-overview.md) можно обнаруживать, оценивать и переносить локальные серверы, приложения и данные в облако Microsoft Azure. В этой статье описаны новые выпуски и функции службы "Миграция Azure".
+
+## <a name="update-june-2020"></a>Обновление (июнь 2020)
+
+- Теперь поддерживаются оценки для переноса локальных виртуальных машин VMware в [Решение Azure VMware (AVS)](https://go.microsoft.com/fwlink/?linkid=2132637). [Дополнительные сведения](how-to-create-azure-vmware-solution-assessment.md)
+- Поддержка нескольких учетных данных в модуле для обнаружения физических серверов.
+- Поддержка возможности входа в Azure из модуля для клиента, в котором настроено ограничение клиента.
+- Доступны новые версии модуля службы "Миграция Azure", которые приведены ниже.
+
+### <a name="azure-public-cloud"></a>Общедоступное облако Azure
+
+**Сценарий** | **Загрузить** | **SHA256**
+--- | --- | ---
+Hyper-V (8,93 ГБ) | [Последняя версия](https://aka.ms/migrate/appliance/hyperv) |  572be425ea0aca69a9aa8658c950bc319b2bdbeb93b440577264500091c846a1
+VMware (10,9 ГБ) | [Последняя версия](https://aka.ms/migrate/appliance/vmware) | cacbdaef927fe5477fa4e1f494fcb7203cbd6b6ce7402b79f234bc0fe69663dd
+Физическое (63,1 МБ) | [Последняя версия](https://go.microsoft.com/fwlink/?linkid=2105112) | 0a27adf13cc5755e4b23df0c05732c6ac08d1fe8850567cb57c9906fbc3b85a0
+
+
+### <a name="azure-government"></a>Azure для государственных организаций
+
+**Сценарий** | **Загрузить** | **SHA256**
+--- | --- | ---
+Hyper-V (63,1 МБ) | [Последняя версия](https://go.microsoft.com/fwlink/?linkid=2120200&clcid=0x409) |  2c5e73a1e5525d4fae468934408e43ab55ff397b7da200b92121972e683f9aa3
+VMware (63,1 ГБ) | [Последняя версия](https://go.microsoft.com/fwlink/?linkid=2120300&clcid=0x409 ) | 3d5822038646b81f458d89d706832c0a2c0e827bfa9b0a55cc478eaf2757a4de
+Физическое (63,1 МБ) | [Последняя версия](https://go.microsoft.com/fwlink/?linkid=2120100&clcid=0x409) | 93dfef131026e70acdfad2769cd208ff745ab96a96f013cdf3f9e1e61c9b37e1
+
 
 
 ## <a name="update-april-2020"></a>Обновление (апрель 2020 г.)
@@ -26,6 +51,7 @@ ms.locfileid: "81677247"
 - Просмотрите [список поддерживаемых регионов](migrate-support-matrix.md#supported-geographies-azure-government) для Azure для государственных организаций.
 - [Анализ зависимостей на основе агента](concepts-dependency-visualization.md#agent-based-analysis) не поддерживается в Azure для государственных организаций.
 - В Azure для государственных организаций поддерживаются такие функции в предварительной версии, как [анализ зависимостей без агента](concepts-dependency-visualization.md#agentless-analysis) и [обнаружение приложений](how-to-discover-applications.md).
+
 
 ## <a name="update-march-2020"></a>Обновление (март 2020 г.)
 

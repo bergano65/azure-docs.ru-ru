@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 04/02/2020
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 26646ad5ae42d2fa301a7f894084a78a64c73bd4
-ms.sourcegitcommit: d815163a1359f0df6ebfbfe985566d4951e38135
+ms.openlocfilehash: cd8771afdc9c4462faaff758ffdd073382f69f53
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82884674"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85550970"
 ---
 # <a name="blob-snapshots"></a>Моментальные снимки BLOB-объектов
 
@@ -25,7 +25,7 @@ ms.locfileid: "82884674"
 
 ## <a name="about-blob-snapshots"></a>О моментальных снимках BLOB-объектов
 
-[!INCLUDE [updated-for-az](../../../includes/storage-data-lake-gen2-support.md)]
+[!INCLUDE [storage-multi-protocol-access-preview](../../../includes/storage-multi-protocol-access-preview.md)]
 
 Моментальный снимок большого двоичного объекта идентичен объекту, на основе которого он создан. Единственное исключение: к URI большого двоичного объекта добавляется значение **DateTime**, которое указывает время создания снимка. Например, если страничный BLOB-объект имеет URI `http://storagesample.core.blob.windows.net/mydrives/myvhd`, то URI снимка будет иметь такой вид: `http://storagesample.core.blob.windows.net/mydrives/myvhd?snapshot=2011-03-09T01:42:34.9360000Z`.
 
@@ -89,7 +89,7 @@ VHD-файл используется для хранения текущей и�
 
 ![Ресурсы хранилища Azure](./media/snapshots-overview/storage-blob-snapshots-billing-scenario-4.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Создание моментального снимка BLOB-объекта и управление им в .NET](snapshots-manage-dotnet.md)
+- [Создание моментальных снимков больших двоичных объектов и управление ими в .NET](snapshots-manage-dotnet.md)
 - [Архивация неуправляемых дисков виртуальной машины Azure с помощью добавочных моментальных снимков](../../virtual-machines/windows/incremental-snapshots.md)

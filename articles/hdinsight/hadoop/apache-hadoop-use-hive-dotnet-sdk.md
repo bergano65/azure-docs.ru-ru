@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/24/2019
-ms.openlocfilehash: a9d71c8aebb9cc4a0adbd461aead6e2612bd13bd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f1927d44daf49d938d2c43ce9de02cb1dbfb735f
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75552497"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86207755"
 ---
 # <a name="run-apache-hive-queries-using-hdinsight-net-sdk"></a>Выполнение запросов Apache Hive с использованием пакета SDK .NET для HDInsight
 
@@ -43,9 +43,11 @@ ms.locfileid: "75552497"
 
 1. Введите следующую команду в окне консоли диспетчера пакетов NuGet:
 
-        Install-Package Microsoft.Azure.Management.HDInsight.Job
+    ```console
+    Install-Package Microsoft.Azure.Management.HDInsight.Job
+    ```
 
-1. Измените приведенный ниже код, чтобы инициализировать значения переменных: `ExistingClusterName, ExistingClusterUsername, ExistingClusterPassword,DefaultStorageAccountName,DefaultStorageAccountKey,DefaultStorageContainerName`. Затем используйте измененный код в качестве всего содержимого **Program.CS** в Visual Studio.
+1. Измените приведенный ниже код, чтобы инициализировать значения переменных: `ExistingClusterName, ExistingClusterUsername, ExistingClusterPassword,DefaultStorageAccountName,DefaultStorageAccountKey,DefaultStorageContainerName` . Затем используйте измененный код в качестве всего содержимого **Program.CS** в Visual Studio.
 
     ```csharp
     using System.Collections.Generic;

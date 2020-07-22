@@ -1,33 +1,26 @@
 ---
-title: Примеры шаблонов политики | Документация Майкрософт
-description: Примеры шаблонов службы "Политика Azure" для виртуальной сети.
-services: virtual-network
-documentationcenter: ''
-author: KumudD
-manager: twooley
-editor: ''
-tags: ''
-ms.assetid: ''
-ms.service: virtual-network
-ms.devlang: na
+title: Встроенные определения политик для виртуальной сети Azure
+description: Здесь приведены встроенные определения политик в Политике Azure для виртуальной сети Azure. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
+ms.date: 07/10/2020
 ms.topic: sample
-ms.tgt_pltfrm: ''
-ms.workload: ''
-ms.date: 05/05/2020
+author: KumudD
 ms.author: kumud
-ms.custom: mvc
-ms.openlocfilehash: 93d0138f336ffc7055daf9988658a6284af53188
-ms.sourcegitcommit: 11572a869ef8dbec8e7c721bc7744e2859b79962
+ms.service: virtual-network
+ms.custom: subject-policy-samples
+ms.openlocfilehash: a412b74b59854e5530bcf77cbeada00803803468
+ms.sourcegitcommit: 0b2367b4a9171cac4a706ae9f516e108e25db30c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82839136"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86276800"
 ---
-# <a name="azure-policy-sample-built-ins-for-virtual-network"></a>Примеры встроенных политик службы "Политика Azure" для виртуальной сети
+# <a name="azure-policy-built-in-definitions-for-azure-virtual-network"></a>Встроенные определения в Политике Azure для виртуальной сети Azure
 
-В таблице ниже указаны ссылки на примеры [Политики Azure](../governance/policy/overview.md). Эти примеры можно найти в [репозитории примеров службы "Политика Azure"](https://github.com/Azure/azure-policy).
+Эта страница представляет собой индекс встроенных определений политик в [Политике Azure](../governance/policy/overview.md) для виртуальной сети Azure. Дополнительные встроенные компоненты Политики Azure для других служб см. в статье [Встроенные определения Политики Azure](../governance/policy/samples/built-in-policies.md).
 
-## <a name="network"></a>Сеть
+Имя каждого встроенного определения политики связано с определением политики на портале Azure. Перейдите по ссылке в столбце **Версия**, чтобы просмотреть исходный код в [репозитории GitHub для службы "Политика Azure"](https://github.com/Azure/azure-policy).
+
+## <a name="azure-virtual-network"></a>Виртуальная сеть Azure
 
 [!INCLUDE [azure-policy-samples-policies-network](../../includes/policy/samples/bycat/policies-network.md)]
 
@@ -38,3 +31,9 @@ ms.locfileid: "82839136"
 ## <a name="general"></a>Общие сведения
 
 [!INCLUDE [azure-policy-samples-policies-general](../../includes/policy/samples/bycat/policies-general.md)]
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+- Ознакомьтесь со встроенными инициативами в [репозитории GitHub для Политики Azure](https://github.com/Azure/azure-policy).
+- Изучите статью о [структуре определения Политики Azure](../governance/policy/concepts/definition-structure.md).
+- Изучите [сведения о действии политик](../governance/policy/concepts/effects.md).

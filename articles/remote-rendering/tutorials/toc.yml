@@ -2,3 +2,5 @@
   href: unity/toc.yml
 - name: Машинный C++
   href: native-cpp/toc.yml
+- name: Моделирование
+  href: modeling/toc.yml

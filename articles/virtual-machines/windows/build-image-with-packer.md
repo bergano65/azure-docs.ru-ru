@@ -1,5 +1,5 @@
 ---
-title: Создание образов виртуальных машин Windows с помощью пакета Pack
+title: Создание образов виртуальных машин Windows с помощью Packer
 description: Сведения об использовании Packer для создания образов виртуальных машин Windows в Azure
 author: cynthn
 ms.service: virtual-machines-windows
@@ -8,25 +8,25 @@ ms.topic: article
 ms.workload: infrastructure
 ms.date: 02/22/2019
 ms.author: cynthn
-ms.openlocfilehash: f813551ed665628898bb219a611947c3026ac67c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 14b2e3df6d7ea3f72c1968cfed222a1b9b0d636d
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82084487"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86525863"
 ---
 # <a name="how-to-use-packer-to-create-windows-virtual-machine-images-in-azure"></a>Использование Packer для создания образов виртуальных машин Windows в Azure
 Каждая виртуальная машина в Azure создается из образа, который определяет дистрибутив Windows и версию операционной системы. Образы могут содержать предварительно установленные приложения и конфигурации. Azure Marketplace предоставляет большое количество образов Майкрософт и сторонних разработчиков для наиболее распространенных операционных систем и приложений. Кроме того, вы можете создать собственные настраиваемые образы, отвечающие конкретным потребностям. В этой статье описывается определение и создание пользовательских образов в Azure с использованием инструмента с открытым кодом [Packer](https://www.packer.io/).
 
-Последняя версия этой статьи была проведена на 2/21/2019 с помощью команды [AZ PowerShell Module](https://docs.microsoft.com/powershell/azure/install-az-ps) 1.3.0 и [Pack](https://www.packer.io/docs/install/index.html) версии 1.3.4.
+Последнее тестирование этой статьи выполнялось 21.02.2019 г. с помощью [модуля Az PowerShell](/powershell/azure/install-az-ps) версии 1.3.0 и [Packer](https://www.packer.io/docs/install) версии 1.3.4.
 
 > [!NOTE]
-> Azure теперь имеет службу, Azure Image Builder (Предварительная версия) для определения и создания собственных пользовательских образов. Построитель образов Azure создан на основе пакета Pack, поэтому вы можете даже использовать существующие сценарии подготовки оболочки упаковки. Чтобы приступить к работе с построителем образов Azure, см. статью [Создание виртуальной машины Windows с помощью Azure Image Builder](image-builder.md).
+> В Azure теперь есть служба "Конструктор образов Azure" (предварительная версия), которая используется для определения и создания собственных пользовательских образов. Так как Конструктор образов Azure создан на основе Packer, вы можете даже использовать имеющиеся скрипты подготовки оболочки Packer. Чтобы приступить к работе с Конструктором образов Azure, ознакомьтесь со статьей [Предварительный просмотр. Создание виртуальной машины Windows с помощью Конструктора образов Azure](image-builder.md).
 
 ## <a name="create-azure-resource-group"></a>Создание группы ресурсов Azure
 В процессе сборки исходной виртуальной машины Packer создает временные ресурсы Azure. Чтобы сохранить эту исходную виртуальную машину для использования в качестве образа, необходимо определить группу ресурсов. Выходные данные процесса сборки Packer хранятся в этой группе ресурсов.
 
-Создайте группу ресурсов с помощью командлета [New-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
+Создайте группу ресурсов с помощью командлета [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
 
 ```azurepowershell
 $rgName = "myResourceGroup"
@@ -37,7 +37,7 @@ New-AzResourceGroup -Name $rgName -Location $location
 ## <a name="create-azure-credentials"></a>Создание учетных данных Azure
 Packer выполняет проверку подлинности с помощью субъекта-службы Azure. Субъект-служба Azure является удостоверением безопасности, которое можно использовать с приложениями, службами и средствами автоматизации, такими как Packer. Вы можете определять разрешения на то, какие операции может выполнять субъект-служба в Azure, и управлять ими.
 
-Создайте субъект-службу с помощью командлета [New-AzADServicePrincipal](https://docs.microsoft.com/powershell/module/az.resources/new-azadserviceprincipal) и назначьте ей разрешения на создание ресурсов и управление ими с помощью [New-AzRoleAssignment](https://docs.microsoft.com/powershell/module/az.resources/new-azroleassignment). Значение для `-DisplayName` должно быть уникальным; Замените на собственное значение по мере необходимости.  
+Создайте субъект-службу с помощью командлета [New-AzADServicePrincipal](/powershell/module/az.resources/new-azadserviceprincipal) и назначьте ей разрешения на создание ресурсов и управление ими с помощью [New-AzRoleAssignment](/powershell/module/az.resources/new-azroleassignment). Значение для `-DisplayName` должно быть уникальным. При необходимости замените его собственным значением.  
 
 ```azurepowershell
 $sp = New-AzADServicePrincipal -DisplayName "PackerServicePrincipal"
@@ -46,7 +46,7 @@ $plainPassword = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR
 New-AzRoleAssignment -RoleDefinitionName Contributor -ServicePrincipalName $sp.ApplicationId
 ```
 
-Затем выводится пароль и идентификатор приложения.
+Затем выведите идентификатор приложения и пароль.
 
 ```powershell
 $plainPassword
@@ -54,7 +54,7 @@ $sp.ApplicationId
 ```
 
 
-Чтобы выполнить проверку подлинности в Azure, вам также необходимо получить идентификаторы вашего клиента и подписки Azure с помощью командлета [Get-AzSubscription](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription).
+Чтобы выполнить проверку подлинности в Azure, вам также необходимо получить идентификаторы вашего клиента и подписки Azure с помощью командлета [Get-AzSubscription](/powershell/module/az.accounts/get-azsubscription).
 
 ```powershell
 Get-AzSubscription
@@ -69,7 +69,7 @@ Get-AzSubscription
 | Параметр                           | Где можно получить |
 |-------------------------------------|----------------------------------------------------|
 | *client_id*                         | Просмотрите идентификатор субъекта-службы с помощью `$sp.applicationId` |
-| *client_secret*                     | Просмотреть автоматически созданный пароль с помощью`$plainPassword` |
+| *client_secret*                     | Просмотрите автоматически созданный пароль с помощью `$plainPassword` |
 | *tenant_id*                         | Выходные данные команды `$sub.TenantId` |
 | *subscription_id*                   | Выходные данные команды `$sub.SubscriptionId` |
 | *managed_image_resource_group_name* | Имя группы ресурсов, созданной на первом шаге |
@@ -105,12 +105,15 @@ Get-AzSubscription
     },
 
     "location": "East US",
-    "vm_size": "Standard_DS2_v2"
+    "vm_size": "Standard_D2_v2"
   }],
   "provisioners": [{
     "type": "powershell",
     "inline": [
       "Add-WindowsFeature Web-Server",
+      "while ((Get-Service RdAgent).Status -ne 'Running') { Start-Sleep -s 5 }",
+      "while ((Get-Service WindowsAzureTelemetryService).Status -ne 'Running') { Start-Sleep -s 5 }",
+      "while ((Get-Service WindowsAzureGuestAgent).Status -ne 'Running') { Start-Sleep -s 5 }",
       "& $env:SystemRoot\\System32\\Sysprep\\Sysprep.exe /oobe /generalize /quiet /quit",
       "while($true) { $imageState = Get-ItemProperty HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Setup\\State | Select ImageState; if($imageState.ImageState -ne 'IMAGE_STATE_GENERALIZE_RESEAL_TO_OOBE') { Write-Output $imageState.ImageState; Start-Sleep -s 10  } else { break } }"
     ]
@@ -120,11 +123,13 @@ Get-AzSubscription
 
 Этот шаблон создает виртуальную машину Windows Server 2016, устанавливает службы IIS, а затем подготавливает виртуальную машину с помощью средства Sysprep. Установка IIS показывает, как можно использовать средство подготовки PowerShell для выполнения дополнительных команд. В этом случае окончательный образ Packer включает в себя также установочные файлы и параметры необходимого программного обеспечения.
 
+Гостевой агент Windows участвует в процессе Sysprep. Чтобы виртуальную машину можно было сиспреп'ед, необходимо полностью установить агент. Чтобы убедиться, что это верно, перед выполнением sysprep.exe необходимо запустить все службы агента. В предыдущем фрагменте кода JSON показан один из способов сделать это в подокне подготовки PowerShell. Этот фрагмент необходим только в том случае, если виртуальная машина настроена для установки агента, что является значением по умолчанию.
+
 
 ## <a name="build-packer-image"></a>Создание образа Packer
-Если средство Packer еще не установлено на локальном компьютере, [следуйте инструкциям по его установке](https://www.packer.io/docs/install/index.html).
+Если средство Packer еще не установлено на локальном компьютере, [следуйте инструкциям по его установке](https://learn.hashicorp.com/packer/getting-started/install).
 
-Создайте образ, открыв командную строку и указав файл шаблона пакета следующим образом:
+Создайте образ, открыв командную строку и указав файл шаблона Packer следующим образом:
 
 ```
 ./packer build windows.json
@@ -208,7 +213,7 @@ ManagedImageLocation: eastus
 
 
 ## <a name="create-a-vm-from-the-packer-image"></a>Создание виртуальной машины на основе образа Packer
-Теперь вы можете создать виртуальную машину из образа с помощью командлета [New-AzVM](https://docs.microsoft.com/powershell/module/az.compute/new-azvm). Если они еще не существуют, создаются поддерживающие сетевые ресурсы. При появлении запроса введите имя пользователя с правами администратора и пароль. Этот пользователь будет создан на виртуальной машине. В следующем примере создается виртуальная машина с именем *myVM* из *образа mypackerimage*:
+Теперь вы можете создать виртуальную машину из образа с помощью командлета [New-AzVM](/powershell/module/az.compute/new-azvm). Если они еще не существуют, создаются поддерживающие сетевые ресурсы. При появлении запроса введите имя пользователя с правами администратора и пароль. Этот пользователь будет создан на виртуальной машине. В следующем примере создается виртуальная машина *myVM* из образа *myPackerImage*.
 
 ```powershell
 New-AzVm `
@@ -223,13 +228,13 @@ New-AzVm `
     -Image "myPackerImage"
 ```
 
-Если вы хотите создать виртуальные машины не в группе ресурсов или регионе, содержащем образ Packer, укажите идентификатор образа, а не его имя. Идентификатор образа можно получить, выполнив командлет [Get-AzImage](https://docs.microsoft.com/powershell/module/az.compute/Get-AzImage).
+Если вы хотите создать виртуальные машины не в группе ресурсов или регионе, содержащем образ Packer, укажите идентификатор образа, а не его имя. Идентификатор образа можно получить, выполнив командлет [Get-AzImage](/powershell/module/az.compute/get-azimage).
 
 Создание виртуальной машины из образа Packer занимает несколько минут.
 
 
 ## <a name="test-vm-and-webserver"></a>Тестирование виртуальной машины и веб-сервера
-Получите общедоступный IP-адрес своей виртуальной машины с помощью командлета [Get-AzPublicIPAddress](https://docs.microsoft.com/powershell/module/az.network/get-azpublicipaddress). Следующий пример позволяет получить IP-адрес для созданного ранее *myPublicIP*.
+Получите общедоступный IP-адрес своей виртуальной машины с помощью командлета [Get-AzPublicIPAddress](/powershell/module/az.network/get-azpublicipaddress). Следующий пример позволяет получить IP-адрес для созданного ранее *myPublicIP*.
 
 ```powershell
 Get-AzPublicIPAddress `
@@ -242,5 +247,5 @@ Get-AzPublicIPAddress `
 ![Сайт IIS по умолчанию](./media/build-image-with-packer/iis.png) 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
-Вы также можете использовать существующие скрипты подготовки пакета с помощью [Azure Image Builder](image-builder.md).
+## <a name="next-steps"></a>Дальнейшие действия
+С помощью [Конструктора образов Azure](image-builder.md) можно также использовать имеющиеся скрипты подготовки Packer.

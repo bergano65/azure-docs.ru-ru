@@ -8,10 +8,10 @@ ms.subservice: security-fundamentals
 ms.topic: article
 ms.date: 01/16/2019
 ms.openlocfilehash: 4548bf77c01194802c2e6203bcbf9fbd240370a2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81461656"
 ---
 # <a name="azure-service-fabric-security-best-practices"></a>Рекомендации по безопасности Azure Service Fabric
@@ -176,7 +176,7 @@ Service Fabric использует сертификаты X.509 для защи
 
 Платформа Azure Service Fabric поддерживает два типа управления доступом для клиентов, подключенных к [кластеру Service Fabric](../../service-fabric/service-fabric-cluster-creation-via-arm.md): администраторский и пользовательский. Администратор кластера может использовать управление доступом, чтобы ограничить доступ к определенным операциям в кластере для разных групп пользователей. Управление доступом повышает защищенность кластера.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Контрольный список для обеспечения безопасности Azure Service Fabric](service-fabric-checklist.md)
 - Настройка [среды разработки](../../service-fabric/service-fabric-get-started.md) Service Fabric.

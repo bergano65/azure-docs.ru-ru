@@ -13,16 +13,16 @@ ms.service: virtual-machines-windows
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 04/24/2020
+ms.date: 06/15/2020
 ms.author: radeltch
-ms.openlocfilehash: 4c86d7c84ba5d7692e010ad95f258b67aa7dcfac
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e17dcf02c920dc1a824a165fb3d667833267cac7
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82147637"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86507511"
 ---
-# <a name="deploy-a-sap-hana-scale-out-system-with-standby-node-on-azure-vms-by-using-azure-netapp-files-on-red-hat-enterprise-linux"></a>Развертывание SAP HANA масштабируемой системы с резервным узлом на виртуальных машинах Azure с помощью Azure NetApp Files на Red Hat Enterprise Linux 
+# <a name="deploy-a-sap-hana-scale-out-system-with-standby-node-on-azure-vms-by-using-azure-netapp-files-on-red-hat-enterprise-linux"></a>Развертывание горизонтально масштабируемой системы SAP HANA с резервным узлом на виртуальных машинах Azure с помощью Azure NetApp Files в Red Hat Enterprise Linux 
 
 [dbms-guide]:dbms-guide.md
 [deployment-guide]:deployment-guide.md
@@ -46,7 +46,7 @@ ms.locfileid: "82147637"
 [1900823]:https://launchpad.support.sap.com/#/notes/1900823
 [2292690]:https://launchpad.support.sap.com/#/notes/2292690
 [2455582]:https://launchpad.support.sap.com/#/notes/2455582
-[2593824]:https://launchpad.support.sap.com/#/notes/2455582
+[2593824]:https://launchpad.support.sap.com/#/notes/2593824
 [2009879]:https://launchpad.support.sap.com/#/notes/2009879
 
 [sap-swcenter]:https://support.sap.com/en/my-support/software-downloads.html
@@ -55,7 +55,7 @@ ms.locfileid: "82147637"
 [nfs-ha]:high-availability-guide-suse-nfs.md
 
 
-В этой статье описывается, как развернуть высокодоступную систему SAP HANA в конфигурации с горизонтальным масштабированием в режиме ожидания на виртуальных машинах Azure Red Hat Enterprise Linux, используя [Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-introduction/) для томов общего хранилища.  
+В этой статье описывается, как развернуть высокодоступную систему SAP HANA в конфигурации с горизонтальным масштабированием в режиме ожидания на виртуальных машинах Azure Red Hat Enterprise Linux, используя [Azure NetApp Files](../../../azure-netapp-files/azure-netapp-files-introduction.md) для томов общего хранилища.  
 
 В примерах конфигураций, команд установки и т. д. экземпляр HANA имеет значение **03** , а идентификатор системы Hana — **HN1**. Примеры основаны на HANA 2,0 SP4 и Red Hat Enterprise Linux для SAP 7,6. 
 
@@ -76,22 +76,22 @@ ms.locfileid: "82147637"
 * Примечание SAP [1999351]. содержит дополнительные сведения об устранении неполадок для расширения расширенного мониторинга Azure для SAP.
 * Примечание SAP [1900823]: содержит сведения о требованиях к хранилищу SAP HANA
 * [Вики-сайт сообщества SAP](https://wiki.scn.sap.com/wiki/display/HOME/SAPonLinuxNotes)содержит все необходимые примечания SAP для Linux.
-* [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению][planning-guide]
+* [SAP NetWeaver на виртуальных машинах Linux. Руководство по планированию и внедрению][planning-guide]
 * [Развертывание программного обеспечения SAP на виртуальных машинах Linux в Azure][deployment-guide]
-* [SAP NetWeaver на виртуальных машинах Windows. Руководство по развертыванию СУБД][dbms-guide]
+* [Общие сведения о развертывании СУБД на виртуальных машинах Azure для рабочих нагрузок SAP][dbms-guide]
 * Общая документация по RHEL
   * [Общие сведения о надстройке для обеспечения высокой доступности](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_overview/index)
   * [Администрирование надстройки для обеспечения высокой доступности](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_administration/index)
   * [Справочник по надстройке для обеспечения высокой доступности](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/high_availability_add-on_reference/index)
   * [Red Hat Enterprise Linux сетевого руководством](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/networking_guide)
-* Документация по RHEL, относящаяся к Azure:
-  * [Установка SAP HANA в Red Hat Enterprise Linux для использования в Microsoft Azure](https://access.redhat.com/solutions/3193782)
-* [NetApp приложений SAP на Microsoft Azure с помощью Azure NetApp Files][anf-sap-applications-azure]
+* Документация по RHEL для Azure:
+  * [Установка SAP HANA в Red Hat Enterprise Linux для использования в Microsoft Azure](https://access.redhat.com/public-cloud/microsoft-azure)
+* [Приложения NetApp SAP в Microsoft Azure. Использование Azure NetApp Files][anf-sap-applications-azure]
 
 
 ## <a name="overview"></a>Обзор
 
-Одним из способов достижения высокого уровня доступности HANA является Настройка автоматической отработки отказа узла. Чтобы настроить автоматическую отработку отказа узла, добавьте одну или несколько виртуальных машин в систему HANA и настройте их в качестве резервных узлов. При сбое активного узла происходит автоматический переход на резервный узел. В представленной конфигурации с виртуальными машинами Azure вы достигают автоматической отработки отказа с помощью [NFS на Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-introduction/).  
+Одним из способов достижения высокого уровня доступности HANA является Настройка автоматической отработки отказа узла. Чтобы настроить автоматическую отработку отказа узла, добавьте одну или несколько виртуальных машин в систему HANA и настройте их в качестве резервных узлов. При сбое активного узла происходит автоматический переход на резервный узел. В представленной конфигурации с виртуальными машинами Azure вы достигают автоматической отработки отказа с помощью [NFS на Azure NetApp Files](../../../azure-netapp-files/azure-netapp-files-introduction.md).  
 
 > [!NOTE]
 > Для резервного узла требуется доступ ко всем томам базы данных. Тома HANA должны быть подключены как тома NFSv4. Улучшенный механизм блокировки на основе аренды файлов в протоколе NFSv4 используется для `I/O` ограждения. 
@@ -106,7 +106,7 @@ ms.locfileid: "82147637"
 * Для связи с системой хранения данных
 * Для внутреннего обмена данными между узлами HANA
 
-Тома NetApp для Azure находятся в отдельной подсети, [делегированной Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-delegate-subnet).  
+Тома NetApp для Azure находятся в отдельной подсети, [делегированной Azure NetApp Files](../../../azure-netapp-files/azure-netapp-files-delegate-subnet.md).  
 
 Для этого примера конфигурации подсети:  
 
@@ -127,21 +127,21 @@ Azure NetApp Files доступен в нескольких [регионах Az
 
 ### <a name="deploy-azure-netapp-files-resources"></a>Развертывание ресурсов Azure NetApp Files  
 
-В следующих инструкциях предполагается, что вы уже развернули [виртуальную сеть Azure](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview). Azure NetApp Files ресурсы и виртуальные машины, на которых будут подключены Azure NetApp Files ресурсы, должны быть развернуты в одной виртуальной сети Azure или в одноранговых виртуальных сетях Azure.  
+В следующих инструкциях предполагается, что вы уже развернули [виртуальную сеть Azure](../../../virtual-network/virtual-networks-overview.md). Azure NetApp Files ресурсы и виртуальные машины, на которых будут подключены Azure NetApp Files ресурсы, должны быть развернуты в одной виртуальной сети Azure или в одноранговых виртуальных сетях Azure.  
 
-1. Если вы еще не развернули ресурсы, запросите подключение [к Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-register).  
+1. Если вы еще не развернули ресурсы, запросите подключение [к Azure NetApp Files](../../../azure-netapp-files/azure-netapp-files-register.md).  
 
-2. Создайте учетную запись NetApp в выбранном регионе Azure, следуя инструкциям в разделе [Создание учетной записи NetApp](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-create-netapp-account).  
+2. Создайте учетную запись NetApp в выбранном регионе Azure, следуя инструкциям в разделе [Создание учетной записи NetApp](../../../azure-netapp-files/azure-netapp-files-create-netapp-account.md).  
 
-3. Настройте пул емкости Azure NetApp Files, следуя инструкциям в разделе [Настройка пула емкости Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-set-up-capacity-pool).  
+3. Настройте пул емкости Azure NetApp Files, следуя инструкциям в разделе [Настройка пула емкости Azure NetApp Files](../../../azure-netapp-files/azure-netapp-files-set-up-capacity-pool.md).  
 
-   Архитектура HANA, представленная в этой статье, использует один пул емкости Azure NetApp Files на уровне *Ultra Service* . Для рабочих нагрузок HANA в Azure рекомендуется использовать [уровень обслуживания](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-service-levels)Azure NetApp Files *Ultra* или *Premium* .  
+   Архитектура HANA, представленная в этой статье, использует один пул емкости Azure NetApp Files на уровне *Ultra Service* . Для рабочих нагрузок HANA в Azure рекомендуется использовать [уровень обслуживания](../../../azure-netapp-files/azure-netapp-files-service-levels.md)Azure NetApp Files *Ultra* или *Premium* .  
 
-4. Делегируйте подсеть Azure NetApp Files, как описано в инструкциях в разделе [Делегирование подсети для Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-delegate-subnet).  
+4. Делегируйте подсеть Azure NetApp Files, как описано в инструкциях в разделе [Делегирование подсети для Azure NetApp Files](../../../azure-netapp-files/azure-netapp-files-delegate-subnet.md).  
 
-5. Разверните Azure NetApp Files тома, следуя инструкциям в разделе [Создание тома NFS для Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-create-volumes).  
+5. Разверните Azure NetApp Files тома, следуя инструкциям в разделе [Создание тома NFS для Azure NetApp Files](../../../azure-netapp-files/azure-netapp-files-create-volumes.md).  
 
-   При развертывании томов обязательно выберите версию **нфсв 4.1** . Разверните тома в указанной [подсети](https://docs.microsoft.com/rest/api/virtualnetwork/subnets)Azure NetApp Files. IP-адреса томов NetApp для Azure назначаются автоматически. 
+   При развертывании томов обязательно выберите версию **нфсв 4.1** . Разверните тома в выделенной [ подсети](/rest/api/virtualnetwork/subnets) Azure NetApp Files. IP-адреса томов Azure NetApp Files назначаются автоматически. 
    
    Помните, что ресурсы Azure NetApp Files и виртуальные машины Azure должны находиться в одной виртуальной сети Azure или в одноранговых виртуальных сетях Azure. Например, **HN1**-Data-Mnt00001, **HN1**-log-mnt00001 и т. д. — это имена томов и NFS://10.9.0.4/**HN1**-Data-mnt00001, NFS://10.9.0.4/**HN1**-log-mnt00001 и т. д. — это пути к файлам Azure NetApp Files.  
 
@@ -153,24 +153,24 @@ Azure NetApp Files доступен в нескольких [регионах Az
    
    В этом примере мы использовали отдельный том Azure NetApp Files для каждого тома HANA и данных журнала. Для более производительной конфигурации, оптимизированной для небольших или непродуктивных систем, можно разместить все подключения данных на одном томе, и все журналы подключаются к разным отдельным томам.  
 
-### <a name="important-considerations"></a>Важные сведения
+### <a name="important-considerations"></a>Важные замечания
 
 При создании Azure NetApp Files для SAP HANA горизонтального масштабирования с использованием подразделенных узлов следует учитывать следующие важные моменты.
 
 - Пул минимальных мощностей — 4 тебибитес (тиб).  
 - Минимальный размер тома — 100 гибибайтах (гиб).
-- Azure NetApp Files и все виртуальные машины, на которых будут подключаться Azure NetApp Filesные тома, должны находиться в одной виртуальной сети Azure или в [одноранговой виртуальной сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview) в том же регионе.  
+- Azure NetApp Files и все виртуальные машины, на которых будут подключаться Azure NetApp Filesные тома, должны находиться в одной виртуальной сети Azure или в [одноранговой виртуальной сети](../../../virtual-network/virtual-network-peering-overview.md) в том же регионе.  
 - Выбранная виртуальная сеть должна иметь подсеть, делегированную Azure NetApp Files.
-- Пропускная способность тома Azure NetApp Files является функцией квоты тома и уровня обслуживания, как описано в статье [об уровне обслуживания для Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-service-levels). При определении размера томов HANA Azure NetApp убедитесь, что полученная пропускная способность соответствует требованиям к системе HANA.  
-- С помощью [политики экспорта](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-configure-export-policy)Azure NetApp Files можно управлять разрешенными клиентами, типом доступа (чтение и запись, только чтение и т. д.). 
-- Функция Azure NetApp Files еще не поддерживает зоны. Сейчас эта функция не развернута во всех зонах доступности в регионе Azure. Учитывайте возможные последствия задержки в некоторых регионах Azure.  
+- Пропускная способность тома Azure NetApp Files является функцией квоты тома и уровня обслуживания, как описано в статье [об уровне обслуживания для Azure NetApp Files](../../../azure-netapp-files/azure-netapp-files-service-levels.md). При определении размера томов HANA Azure NetApp убедитесь, что полученная пропускная способность соответствует требованиям к системе HANA.  
+- С помощью [политики экспорта](../../../azure-netapp-files/azure-netapp-files-configure-export-policy.md)Azure NetApp Files можно управлять разрешенными клиентами, типом доступа (чтение и запись, только чтение и т. д.). 
+- Функция Azure NetApp Files еще не поддерживает зоны. Сейчас эта функция не развернута во всех зонах доступности в регионе Azure. Учитывайте возможную задержку в некоторых регионах Azure.  
 
 > [!IMPORTANT]
-> Для SAP HANA рабочих нагрузок низкая задержка очень важна. Поработайте с представителями корпорации Майкрософт, чтобы убедиться, что виртуальные машины и Azure NetApp Filesные тома развернуты в близком близком отношении.  
+> Для рабочих нагрузок SAP HANA низкий показатель задержки чрезвычайно важен. Пообщайтесь с представителями корпорации Майкрософт, чтобы убедиться, что виртуальные машины и тома Azure NetApp Files развернуты близко друг от друга.  
 
-### <a name="sizing-for-hana-database-on-azure-netapp-files"></a>Изменение размера базы данных HANA на Azure NetApp Files
+### <a name="sizing-for-hana-database-on-azure-netapp-files"></a>Выбор размера базы данных HANA в Azure NetApp Files
 
-Пропускная способность Azure NetApp Filesого тома — это функция размера тома и уровня обслуживания, как описано в статье [об уровне обслуживания для Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-service-levels). 
+Пропускная способность Azure NetApp Filesого тома — это функция размера тома и уровня обслуживания, как описано в статье [об уровне обслуживания для Azure NetApp Files](../../../azure-netapp-files/azure-netapp-files-service-levels.md). 
 
 При проектировании инфраструктуры для SAP в Azure необходимо учитывать некоторые минимальные требования к хранилищу SAP, которые переводятся в характеристики минимальной пропускной способности.
 
@@ -178,49 +178,49 @@ Azure NetApp Files доступен в нескольких [регионах Az
 - Прочтите действие не менее 400 МБ/с для/Hana/Data для размеров операций ввода-вывода 16 МБ и 64-МБ.  
 - Операция записи по крайней мере 250 МБ/с для/Hana/Data с размерами операций ввода-вывода 16 МБ и 64-МБ. 
 
-[Azure NetApp Files ограничения пропускной способности](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-service-levels) в 1 Тиб квоты тома:
+Ниже представлены [ограничения пропускной способности Azure NetApp Files](../../../azure-netapp-files/azure-netapp-files-service-levels.md) на 1 ТиБ квоты тома.
 - Уровень хранилища Premium-64 MiB/s  
 - Ultra Storage уровня — 128 MiB/с  
 
 Чтобы удовлетворить минимальные требования к пропускной способности SAP для данных и журналов, а также рекомендации для/Hana/Shared, рекомендуется использовать следующие размеры:
 
-| Том | Размер<br>Уровень хранилища Premium | Размер<br>Уровень Ultra Storage | Поддерживаемый протокол NFS |
+| Громкость | Размер<br>Хранилище класса "Premium" | Размер<br>Хранилище класса "Ультра" | Поддерживаемый протокол NFS |
 | --- | --- | --- | --- |
-| /Hana/log | 4 ТиБ | 2 ТиБ | Версия 4.1 |
-| hana/data; | 6,3 тиб | 3,2 тиб | Версия 4.1 |
-| /hana/shared | 1xRAM на 4 рабочих узла | 1xRAM на 4 рабочих узла | V3 или версия 4.1 |
+| /hana/log/ | 4 ТиБ | 2 ТиБ | Версия 4.1 |
+| hana/data; | 6.3 ТиБ | 3.2 ТиБ | Версия 4.1 |
+| /hana/shared | 1xRAM на 4 рабочих узла | 1xRAM на 4 рабочих узла | Версия 3 или версия 4.1 |
 
 Конфигурация SAP HANA для макета, представленного в этой статье с использованием Azure NetApp Files Ultra Storage уровня, будет выглядеть следующим образом:
 
-| Том | Размер<br>Уровень Ultra Storage | Поддерживаемый протокол NFS |
+| Громкость | Размер<br>Хранилище класса "Ультра" | Поддерживаемый протокол NFS |
 | --- | --- | --- |
-| /hana/log/mnt00001 | 2 ТиБ | Версия 4.1 |
-| /hana/log/mnt00002 | 2 ТиБ | Версия 4.1 |
-| /hana/data/mnt00001 | 3,2 тиб | Версия 4.1 |
-| /hana/data/mnt00002 | 3,2 тиб | Версия 4.1 |
-| /hana/shared | 2 ТиБ | V3 или версия 4.1 |
+| /hana/log/mnt00001 | 2 ТиБ | Версия 4.1 |
+| /hana/log/mnt00002 | 2 ТиБ | Версия 4.1 |
+| /hana/data/mnt00001 | 3.2 ТиБ | Версия 4.1 |
+| /hana/data/mnt00002 | 3.2 ТиБ | Версия 4.1 |
+| /hana/shared | 2 ТиБ | Версия 3 или версия 4.1 |
 
 > [!NOTE]
-> Azure NetApp Files рекомендации по выбору размера, указанные здесь, предназначены для удовлетворения минимальных требований, которые SAP рекомендует для поставщиков инфраструктуры. В реальных развертываниях клиентов и сценариях рабочей нагрузки эти размеры могут быть недостаточно. Используйте эти рекомендации в качестве отправной точки и адаптируйте их в зависимости от требований конкретной рабочей нагрузки.  
+> Azure NetApp Files рекомендации по выбору размера, указанные здесь, предназначены для удовлетворения минимальных требований, которые SAP рекомендует для поставщиков инфраструктуры. В реальных развертываниях клиентов и сценариях рабочей нагрузки эти размеры могут быть недостаточно. Поэтому примите эти рекомендации в качестве отправной точки и адаптируйтесь в соответствии с требованиями своей рабочей нагрузки.  
 
 > [!TIP]
 > Вы можете динамически изменять размер Azure NetApp Files томов без *отключения* томов, отключения виртуальных машин или завершения SAP HANA. Такой подход обеспечивает гибкость для удовлетворения ожидаемых и непредвиденных требований к пропускной способности приложения.
 
 ## <a name="deploy-linux-virtual-machines-via-the-azure-portal"></a>Развертывание виртуальных машин Linux с помощью портал Azure
 
-Сначала необходимо создать Azure NetApp Files тома. Затем выполните следующие действия.
-1. Создайте [подсети виртуальной сети Azure](https://docs.microsoft.com/azure/virtual-network/virtual-network-manage-subnet) в [виртуальной сети Azure](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview). 
+Сначала необходимо создать тома Azure NetApp Files. Затем выполните следующие действия.
+1. Создайте [подсети виртуальной сети Azure](../../../virtual-network/virtual-network-manage-subnet.md) в [виртуальной сети Azure](../../../virtual-network/virtual-networks-overview.md). 
 1. Разверните виртуальные машины. 
 1. Создайте дополнительные сетевые интерфейсы и Подключите сетевые интерфейсы к соответствующим виртуальным машинам.  
 
-   Каждая виртуальная машина имеет три сетевых интерфейса, которые соответствуют трем подсетям виртуальной сети Azure (`client` `storage` и `hana`). 
+   Каждая виртуальная машина имеет три сетевых интерфейса, которые соответствуют трем подсетям виртуальной сети Azure ( `client` `storage` и `hana` ). 
 
-   Дополнительные сведения см. [в статье Создание виртуальной машины Linux в Azure с несколькими сетевыми картами](https://docs.microsoft.com/azure/virtual-machines/linux/multiple-nics).  
+   Дополнительные сведения см. [в статье Создание виртуальной машины Linux в Azure с несколькими сетевыми картами](../../linux/multiple-nics.md).  
 
 > [!IMPORTANT]
-> Для SAP HANA рабочих нагрузок низкая задержка очень важна. Чтобы обеспечить низкую задержку, обратитесь к своему специалисту корпорации Майкрософт, чтобы убедиться, что виртуальные машины и Azure NetApp Filesные тома развернуты в близком близком отношении. При [адаптации новой SAP HANAной системы](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRxjSlHBUxkJBjmARn57skvdUQlJaV0ZBOE1PUkhOVk40WjZZQVJXRzI2RC4u) , которая использует SAP HANA Azure NetApp Files, отправьте необходимые сведения. 
+> Для рабочих нагрузок SAP HANA низкий показатель задержки чрезвычайно важен. Чтобы обеспечить низкую задержку, обратитесь к своему специалисту корпорации Майкрософт, чтобы убедиться, что виртуальные машины и Azure NetApp Filesные тома развернуты в близком близком отношении. При [адаптации новой SAP HANAной системы](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRxjSlHBUxkJBjmARn57skvdUQlJaV0ZBOE1PUkhOVk40WjZZQVJXRzI2RC4u) , которая использует SAP HANA Azure NetApp Files, отправьте необходимые сведения. 
  
-В следующих инструкциях предполагается, что вы уже создали группу ресурсов, виртуальную сеть Azure и три подсети виртуальной сети Azure: `client` `storage` и. `hana` При развертывании виртуальных машин выберите подсеть клиента, чтобы сетевой интерфейс клиента был основным интерфейсом на виртуальных машинах. Кроме того, необходимо настроить явный маршрут к Azure NetApp Files делегированной подсети через шлюз подсети хранилища. 
+В следующих инструкциях предполагается, что вы уже создали группу ресурсов, виртуальную сеть Azure и три подсети виртуальной сети Azure: `client` `storage` и `hana` . При развертывании виртуальных машин выберите подсеть клиента, чтобы сетевой интерфейс клиента был основным интерфейсом на виртуальных машинах. Кроме того, необходимо настроить явный маршрут к Azure NetApp Files делегированной подсети через шлюз подсети хранилища. 
 
 > [!IMPORTANT]
 > Убедитесь, что выбранная ОС является сертифицированной SAP для SAP HANA на конкретных типах виртуальных машин, которые вы используете. Список сертифицированных типов виртуальных машин и выпусков ОС для этих типов SAP HANA см. на веб-сайте [SAP HANA сертифицированные платформы IaaS](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure) . Щелкните сведения о списке типа виртуальной машины, чтобы получить полный список поддерживаемых SAP HANA выпусков ОС для этого типа.  
@@ -229,11 +229,11 @@ Azure NetApp Files доступен в нескольких [регионах Az
 
 2. Создайте три виртуальные машины (**hanadb1**, **hanadb2**, **hanadb3**), выполнив следующие действия.  
 
-   a. Используйте образ Red Hat Enterprise Linux в коллекции Azure, который поддерживается для SAP HANA. В этом примере мы использовали образ RHEL-SAP-HA 7,6.  
+   а. Используйте образ Red Hat Enterprise Linux в коллекции Azure, который поддерживается для SAP HANA. В этом примере мы использовали образ RHEL-SAP-HA 7,6.  
 
    b. Выберите группу доступности, созданную ранее для SAP HANA.  
 
-   c. Выберите подсеть виртуальной сети Azure для клиента. Выберите [Ускоренная сеть](https://docs.microsoft.com/azure/virtual-network/create-vm-accelerated-networking-cli).  
+   c. Выберите подсеть виртуальной сети Azure для клиента. Выберите [Ускоренная сеть](../../../virtual-network/create-vm-accelerated-networking-cli.md).  
 
    При развертывании виртуальных машин имя сетевого интерфейса создается автоматически. В этих инструкциях мы будем называть автоматически создаваемые сетевые интерфейсы, подключенные к подсети виртуальной сети Azure клиента, как **hanadb1-Client**, **hanadb2-Client**и **hanadb3-Client**. 
 
@@ -243,25 +243,25 @@ Azure NetApp Files доступен в нескольких [регионах Az
 
 5. Подключите вновь созданные виртуальные сетевые интерфейсы к соответствующим виртуальным машинам, выполнив следующие действия.  
 
-    a. Перейдите к виртуальной машине в [портал Azure](https://portal.azure.com/#home).  
+    а. Перейдите к виртуальной машине в [портал Azure](https://portal.azure.com/#home).  
 
     b. В левой области выберите **виртуальные машины**. Выполните фильтрацию по имени виртуальной машины (например, **hanadb1**), а затем выберите виртуальную машину.  
 
     c. В области **Обзор** выберите пункт **прерывать** , чтобы освободить виртуальную машину.  
 
-    d. Выберите **сеть**, а затем подключите сетевой интерфейс. В раскрывающемся списке **Подключить сетевой интерфейс** выберите уже созданные сетевые интерфейсы для подсетей `storage` и. `hana`  
+    d. Выберите **сеть**, а затем подключите сетевой интерфейс. В раскрывающемся списке **Подключить сетевой интерфейс** выберите уже созданные сетевые интерфейсы для `storage` `hana` подсетей и.  
     
-    д) Нажмите кнопку **Сохранить**. 
+    д) Щелкните **Сохранить**. 
  
     е) Повторите шаги с b по e для оставшихся виртуальных машин (в нашем примере это **hanadb2** и **hanadb3**).
  
-    ж. Оставить виртуальные машины в остановленном состоянии сейчас. Далее мы разберем функцию [ускорения сети](https://docs.microsoft.com/azure/virtual-network/create-vm-accelerated-networking-cli) для всех вновь подключенных сетевых интерфейсов.  
+    ж. Оставить виртуальные машины в остановленном состоянии сейчас. Далее мы разберем функцию [ускорения сети](../../../virtual-network/create-vm-accelerated-networking-cli.md) для всех вновь подключенных сетевых интерфейсов.  
 
-6. Включите ускоренную сеть для дополнительных сетевых интерфейсов для `storage` подсетей `hana` и, выполнив следующие действия.  
+6. Включите ускоренную сеть для дополнительных сетевых интерфейсов для `storage` `hana` подсетей и, выполнив следующие действия.  
 
-    a. Откройте [Azure Cloud Shell](https://azure.microsoft.com/features/cloud-shell/) в [портал Azure](https://portal.azure.com/#home).  
+    а. Откройте [Azure Cloud Shell](https://azure.microsoft.com/features/cloud-shell/) в [портал Azure](https://portal.azure.com/#home).  
 
-    b. Выполните следующие команды, чтобы включить ускоренную сеть для дополнительных сетевых интерфейсов, подключенных к подсетям `storage` и `hana` .  
+    b. Выполните следующие команды, чтобы включить ускоренную сеть для дополнительных сетевых интерфейсов, подключенных к `storage` `hana` подсетям и.  
 
     <pre><code>
     az network nic update --id /subscriptions/<b>your subscription</b>/resourceGroups/<b>your resource group</b>/providers/Microsoft.Network/networkInterfaces/<b>hanadb1-storage</b> --accelerated-networking true
@@ -276,7 +276,7 @@ Azure NetApp Files доступен в нескольких [регионах Az
 
 7. Запустите виртуальные машины, выполнив следующие действия.  
 
-    a. В левой области выберите **виртуальные машины**. Выполните фильтрацию по имени виртуальной машины (например, **hanadb1**), а затем выберите ее.  
+    а. В левой области выберите **виртуальные машины**. Выполните фильтрацию по имени виртуальной машины (например, **hanadb1**), а затем выберите ее.  
 
     b. В области **Обзор** выберите **Запуск**.  
 
@@ -290,7 +290,7 @@ Azure NetApp Files доступен в нескольких [регионах Az
 
 Настройте и подготовьте ОС, выполнив следующие действия.
 
-1. **[A]** сохраните файлы узлов на виртуальных машинах. Включить записи для всех подсетей. `/etc/hosts` Для этого примера были добавлены следующие записи.  
+1. **[A]** сохраните файлы узлов на виртуальных машинах. Включить записи для всех подсетей. Для этого примера были добавлены следующие записи `/etc/hosts` .  
 
     <pre><code>
     # Storage
@@ -309,8 +309,8 @@ Azure NetApp Files доступен в нескольких [регионах Az
 
 3. **[A]** добавьте сетевой маршрут, чтобы связь с Azure NetApp Files проходит через сетевой интерфейс хранилища.  
 
-   В этом примере будет использоваться `Networkmanager` для настройки дополнительного сетевого маршрута. В следующих инструкциях предполагается, что сетевой интерфейс `eth1`хранилища имеет значение.  
-   Сначала определите имя подключения для устройства `eth1`. В этом примере имя подключения для Device `eth1` имеет `Wired connection 1`значение.  
+   В этом примере будет использоваться `Networkmanager` для настройки дополнительного сетевого маршрута. В следующих инструкциях предполагается, что сетевой интерфейс хранилища имеет значение `eth1` .  
+   Сначала определите имя подключения для устройства `eth1` . В этом примере имя подключения для Device `eth1` имеет значение `Wired connection 1` .  
 
     <pre><code>
     # Execute as root
@@ -321,7 +321,7 @@ Azure NetApp Files доступен в нескольких [регионах Az
     #Wired connection 1  4b0789d1-6146-32eb-83a1-94d61f8d60a7  ethernet  eth1
     </code></pre>
 
-   Затем настройте дополнительный маршрут к Azure NetApp Files делегированной сети через `eth1`.  
+   Затем настройте дополнительный маршрут к Azure NetApp Files делегированной сети через `eth1` .  
 
     <pre><code>
     # Add the following route 
@@ -379,7 +379,7 @@ Azure NetApp Files доступен в нескольких [регионах Az
 
 6. **[A]** Настройка Red Hat для Hana.
 
-    Настройте RHEL, как описано в статье SAP Note [2292690], [2455582], <https://access.redhat.com/solutions/2447641> [2593824] и.
+    Настройте RHEL, как описано в статье SAP Note [2292690], [2455582], [2593824] и <https://access.redhat.com/solutions/2447641> .
 
     > [!NOTE]
     > При установке HANA 2,0 SP04 вам потребуется установить пакет `compat-sap-c++-7` , как описано в примечании SAP [2593824], прежде чем можно будет установить SAP HANA. 
@@ -413,10 +413,10 @@ Azure NetApp Files доступен в нескольких [регионах Az
     umount /mnt/tmp
     </code></pre>
 
-3. **[A]** проверьте параметр домена NFS. Убедитесь, что домен настроен в качестве домена Azure NetApp Files по умолчанию, т. **`defaultv4iddomain.com`** е. для сопоставления установлено значение **никто**.  
+3. **[A]** проверьте параметр домена NFS. Убедитесь, что домен настроен в качестве домена Azure NetApp Files по умолчанию, т. е. **`defaultv4iddomain.com`** , а для сопоставления установлено значение **Никто**.  
 
     > [!IMPORTANT]
-    > Убедитесь, что домен NFS в `/etc/idmapd.conf` виртуальной машине соответствует конфигурации домена по умолчанию на Azure NetApp Files:. **`defaultv4iddomain.com`** В случае несоответствия между конфигурацией домена на клиенте NFS (например, виртуальной машиной) и сервером NFS, т. е. конфигурацией Azure NetApp, разрешения для файлов на томах NetApp Azure, подключенных к виртуальным машинам, будут отображаться как `nobody`.  
+    > Обязательно укажите домен NFS в `/etc/idmapd.conf` виртуальной машине в соответствии с конфигурацией домена по умолчанию в Azure NetApp Files: **`defaultv4iddomain.com`** . В случае несоответствия между конфигурацией домена на клиенте NFS (т. е. виртуальной машине) и NFS-сервере (т. е. конфигурацией Azure NetApp) разрешения для файлов на томах NetApp в Azure, подключенных к виртуальным машинам, будут отображаться как `nobody`.  
 
     <pre><code>
     sudo cat /etc/idmapd.conf
@@ -428,7 +428,7 @@ Azure NetApp Files доступен в нескольких [регионах Az
     Nobody-Group = <b>nobody</b>
     </code></pre>
 
-4. **[A]** проверьте `nfs4_disable_idmapping`. Для него должно быть задано значение **Y**. Чтобы создать структуру каталогов, где `nfs4_disable_idmapping` находится, выполните команду mount. Вы не сможете вручную создать каталог в/СИС/модулес, так как доступ зарезервирован для ядра или драйверов.  
+4. **[A]** Проверьте параметр `nfs4_disable_idmapping`. Ему должно быть задано значение **Y**. Чтобы создать структуру каталогов, в которой находится параметр `nfs4_disable_idmapping`, выполните команду mount. Вы не сможете вручную создать каталог в /sys/modules, так как доступ зарезервирован для ядра или драйверов.  
 
     <pre><code>
     # Check nfs4_disable_idmapping 
@@ -442,7 +442,7 @@ Azure NetApp Files доступен в нескольких [регионах Az
     echo "options nfs nfs4_disable_idmapping=Y" >> /etc/modprobe.d/nfs.conf
     </code></pre>
 
-   Дополнительные сведения о том, как изменить `nfs4_disable_idmapping` параметр, https://access.redhat.com/solutions/1749883см. в разделе.
+   Дополнительные сведения о том, как изменить `nfs4_disable_idmapping` параметр, см. в разделе https://access.redhat.com/solutions/1749883 .
 
 6. **[A]** подключите общие Azure NetApp Files тома.  
 
@@ -514,7 +514,7 @@ Azure NetApp Files доступен в нескольких [регионах Az
 
 ### <a name="prepare-for-hana-installation"></a>Подготовка к установке HANA
 
-1. **[A]** перед установкой Hana задайте корневой пароль. После завершения установки можно отключить корневой пароль. Выполните команду `root` `passwd`AS.  
+1. **[A]** перед установкой Hana задайте корневой пароль. После завершения установки можно отключить корневой пароль. Выполните `root` команду AS `passwd` .  
 
 2. **[1]** убедитесь, что вы можете войти с помощью SSH в **hanadb2** и **hanadb3**без запроса пароля.  
 
@@ -548,7 +548,7 @@ Azure NetApp Files доступен в нескольких [регионах Az
 
 1. **[1]** установите SAP Hana, следуя инструкциям из руководства по [установке и обновлению SAP HANA 2,0](https://help.sap.com/viewer/2c1988d620e04368aa4103bf26f17727/2.0.04/en-US/7eb0167eb35e4e2885415205b8383584.html). В этом примере мы устанавливаем SAP HANA горизонтальное масштабирование с помощью главного, одного рабочего и одного резервного узла.  
 
-   a. Запустите программу **hdblcm** из каталога с установочным программным обеспечением Hana. Используйте `internal_network` параметр и передайте адресное пространство для подсети, используемое для обмена данными между узлами Hana.  
+   а. Запустите программу **hdblcm** из каталога с установочным программным обеспечением Hana. Используйте `internal_network` параметр и передайте адресное пространство для подсети, используемое для обмена данными между УЗЛАМИ Hana.  
 
     <pre><code>
     ./hdblcm --internal_network=10.9.2.0/26
@@ -587,9 +587,9 @@ Azure NetApp Files доступен в нескольких [регионах Az
      * **Чтобы продолжить (y/n)**: Проверьте сводку и, если все выглядит хорошо, введите **y** .
 
 
-2. **[1]** проверьте Global. ini  
+2. **[1]** проверьте global.ini  
 
-   Отобразите Global. ini и убедитесь, что конфигурация внутреннего SAP HANA взаимодействия между узлами. Проверьте раздел **связи** . Оно должно иметь адресное пространство для `hana` подсети и `listeninterface` должно иметь значение. `.internal` Проверьте раздел **internal_hostname_resolution** . Он должен иметь IP-адреса виртуальных машин HANA, принадлежащих к `hana` подсети.  
+   Отобразите global.ini и убедитесь, что конфигурация внутреннего SAP HANA взаимодействия между узлами выполнена. Проверьте раздел **связи** . Оно должно иметь адресное пространство для `hana` подсети и `listeninterface` должно иметь значение `.internal` . Проверьте раздел **internal_hostname_resolution** . Он должен иметь IP-адреса виртуальных машин HANA, принадлежащих к `hana` подсети.  
 
    <pre><code>
     sudo cat /usr/sap/<b>HN1</b>/SYS/global/hdb/custom/config/global.ini
@@ -604,7 +604,7 @@ Azure NetApp Files доступен в нескольких [регионах Az
     <b>10.9.2.6</b> = <b>hanadb3</b>
    </code></pre>
 
-3. **[1]** добавьте сопоставление узла, чтобы обеспечить использование IP-адресов клиента для связи с клиентами. Добавьте раздел `public_host_resolution`и добавьте соответствующие IP-адреса из подсети клиента.  
+3. **[1]** добавьте сопоставление узла, чтобы обеспечить использование IP-адресов клиента для связи с клиентами. Добавьте раздел `public_host_resolution` и добавьте соответствующие IP-адреса из подсети клиента.  
 
    <pre><code>
     sudo vi /usr/sap/HN1/SYS/global/hdb/custom/config/global.ini
@@ -712,14 +712,14 @@ Azure NetApp Files доступен в нескольких [регионах Az
 
    Дополнительные сведения см. [в статье NETAPP SAP Applications on Microsoft Azure using Azure NetApp Files][anf-sap-applications-azure]. 
 
-   Начиная с систем SAP HANA 2,0, параметры можно задать в `global.ini`. Дополнительные сведения см. в разделе SAP Note [1999930](https://launchpad.support.sap.com/#/notes/1999930).  
+   Начиная с систем SAP HANA 2,0, параметры можно задать в `global.ini` . Дополнительные сведения см. в разделе SAP Note [1999930](https://launchpad.support.sap.com/#/notes/1999930).  
    
    Для SAP HANA 1,0 Systems SPS12 и более ранних версий эти параметры можно задать во время установки, как описано в разделе SAP Note [2267798](https://launchpad.support.sap.com/#/notes/2267798).  
 
 7. Хранилище, используемое Azure NetApp Files, имеет ограничение размера файла, равное 16 терабайтам (ТБ). SAP HANA не является неявно осведомленностью об ограничении хранилища и не создает новый файл данных при достижении предельного размера файла в 16 ТБ. Так как SAP HANA пытается увеличить размер файла за пределами 16 ТБ, эта попытка приведет к ошибкам и, в конце концов, в случае сбоя сервера индекса. 
 
    > [!IMPORTANT]
-   > Чтобы SAP HANA не пытаться увеличивать файлы данных за [пределами 16 ТБ](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-resource-limits) подсистемы хранения, задайте следующие параметры в `global.ini`.  
+   > Чтобы SAP HANA не пытаться увеличивать файлы данных за [пределами 16 ТБ](../../../azure-netapp-files/azure-netapp-files-resource-limits.md) подсистемы хранения, задайте следующие параметры в `global.ini` .  
    > - datavolume_striping = true
    > - datavolume_striping_size_gb = 15000 дополнительные сведения см. в разделе SAP Note [2400005](https://launchpad.support.sap.com/#/notes/2400005).
    > Обратите внимание на Примечание SAP [2631285](https://launchpad.support.sap.com/#/notes/2631285). 
@@ -728,7 +728,7 @@ Azure NetApp Files доступен в нескольких [регионах Az
 
 1. Имитация сбоя узла на рабочем узле SAP HANA. Выполните следующие действия. 
 
-   a. Прежде чем имитировать сбой узла, выполните следующие команды в качестве **HN1**ADM, чтобы записать состояние среды:  
+   а. Прежде чем имитировать сбой узла, выполните следующие команды в качестве **HN1**ADM, чтобы записать состояние среды:  
 
    <pre><code>
     # Check the landscape status
@@ -780,11 +780,11 @@ Azure NetApp Files доступен в нескольких [регионах Az
    </code></pre>
 
    > [!IMPORTANT]
-   > При возникновении тревоги ядра не следует задерживаться SAP HANA отработки отказа, установив значение `kernel.panic` 20 секунд на *всех* виртуальных машинах Hana. Настройка выполняется в `/etc/sysctl`. Перезагрузите виртуальные машины, чтобы активировать изменение. Если это изменение не выполняется, отработка отказа может занять 10 или более минут, если на узле возникла авария ядра.  
+   > При возникновении тревоги ядра не следует задерживаться SAP HANA отработки отказа, установив значение `kernel.panic` 20 секунд на *всех* виртуальных машинах Hana. Настройка выполняется в `/etc/sysctl` . Перезагрузите виртуальные машины, чтобы активировать изменение. Если это изменение не выполняется, отработка отказа может занять 10 или более минут, если на узле возникла авария ядра.  
 
 2. Удалите сервер имен, выполнив следующие действия.
 
-   a. Перед тестированием Проверьте состояние среды, выполнив следующие команды в качестве **HN1**ADM:  
+   а. Перед тестированием Проверьте состояние среды, выполнив следующие команды в качестве **HN1**ADM:  
 
    <pre><code>
     #Landscape status 
@@ -921,9 +921,9 @@ Azure NetApp Files доступен в нескольких [регионах Az
     | hanadb3 | no     | ignore |          |        |         0 |         0 | default  | default  | master 3   | slave      | standby     | standby     | standby | standby | default | -       |
    </code></pre>
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению][planning-guide]
-* [Развертывание программного обеспечения SAP на виртуальных машинах Azure][deployment-guide]
-* [Развертывание СУБД виртуальных машин Azure для SAP][dbms-guide]
+* [Планирование и реализация виртуальных машин Azure для SAP][planning-guide]
+* [Развертывание виртуальных машин Azure для SAP NetWeaver][deployment-guide]
+* [SAP NetWeaver на виртуальных машинах Azure. Руководство по развертыванию СУБД SQL Server][dbms-guide]
 * Сведения о том, как установить высокий уровень доступности и спланировать аварийное восстановление SAP HANA на виртуальных машинах Azure, см. в статье [высокий уровень доступности SAP HANA на виртуальные машины Azure][sap-hana-ha].

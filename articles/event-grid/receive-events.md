@@ -1,19 +1,14 @@
 ---
 title: Получение событий из Сетки событий Azure в конечную точку HTTP
 description: Описано, как проверить конечную точку HTTP, затем проверить и десериализировать события из Сетки событий Azure
-services: event-grid
-author: banisadr
-manager: darosa
-ms.service: event-grid
 ms.topic: conceptual
-ms.date: 01/01/2019
-ms.author: babanisa
-ms.openlocfilehash: 7c363fd4e55fdd6fe04a099ac833a256bbfd2eb2
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.date: 07/07/2020
+ms.openlocfilehash: 460efc15c7b85821f422c9964eb246df883a849f
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83116974"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86108198"
 ---
 # <a name="receive-events-to-an-http-endpoint"></a>Получение событий через конечную точку HTTP
 

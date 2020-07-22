@@ -1,18 +1,16 @@
 ---
 title: Идет перемещение образов виртуальных машин в хранилище управляемых дисков в Azure Marketplace.
 description: Чтобы обеспечить более быстрое, надежное хранение и поддержку новых функций и возможностей Marketplace, мы перемещаем образы виртуальных машин Marketplace в управляемый дисковый накопитель.
-author: dsindona
-ms.author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/22/2019
-ms.openlocfilehash: 17b418ab82cc88b4368efe247b06c0c8bbb27453
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 3d64bb176f79a0c15c15e425df18a22c9c4f423e
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80285118"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86120625"
 ---
 # <a name="were-moving-virtual-machine-vm-images-on-azure-marketplace-to-managed-disk-storage"></a>Вы перемещаете образы виртуальных машин в Azure Marketplace в управляемый дисковый накопитель
 
@@ -24,7 +22,7 @@ ms.locfileid: "80285118"
 
 Если у вас возникнут вопросы, [свяжитесь с нами](https://support.microsoft.com/supportforbusiness/productselection?sapId=48734891-ee9a-5d77-bf29-82bf8d8111ff).
 
-## <a name="faqs"></a>Частые вопросы
+## <a name="faqs"></a>Часто задаваемые вопросы
 
 ### <a name="would-the-users-of-my-vm-images-experience-an-outage"></a>Будут ли пользователи виртуальных машин испытывать сбой?
 

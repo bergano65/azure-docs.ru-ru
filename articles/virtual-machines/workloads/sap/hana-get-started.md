@@ -16,20 +16,20 @@ ms.workload: infrastructure-services
 ms.date: 03/19/2020
 ms.author: juergent
 ms.openlocfilehash: e017e082472e7a4a2fab6a2845e52d3dc7acc460
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80123347"
 ---
 # <a name="installation-of-sap-hana-on-azure-virtual-machines"></a>Установка SAP HANA на виртуальных машинах Azure
-## <a name="introduction"></a>Введение
+## <a name="introduction"></a>Вступление
 Это руководством поможет вам указать нужные ресурсы для успешного развертывания HANA на виртуальных машинах Azure. В этом руководстве содержатся сведения о ресурсах, которые необходимо проверить перед установкой SAP HANA на виртуальной машине Azure. Итак, вы можете выполнить необходимые действия, чтобы закончиться с помощью поддерживаемой конфигурации SAP HANA на виртуальных машинах Azure.  
 
 > [!NOTE]
 > Это руководство описывает развертывание SAP HANA на виртуальных машинах Azure. Сведения о развертывании SAP HANA в крупных экземплярах HANA см. в [статье Установка и настройка SAP HANA (крупные экземпляры) в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-installation).
  
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 Кроме того, в этом руководство предполагается, что вы знакомы с:
 * SAP HANA и SAP NetWeaver и их локальная установка.
 * Установка и работа SAP HANA и экземпляров приложений SAP в Azure.
@@ -94,13 +94,13 @@ ms.locfileid: "80123347"
 
 ## <a name="additional-resources-for-sap-hana-backup"></a>Дополнительные ресурсы для резервного копирования SAP HANA
 Сведения о резервном копировании баз данных SAP HANA на виртуальных машинах Azure см. в следующих статьях:
-* [Руководство по резервному копированию SAP HANA на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-backup-guide)
+* [Инструкции по резервному копированию для SAP HANA на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-backup-guide)
 * [Резервное копирование SAP HANA в Azure на уровне файлов](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-backup-file-level)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь с документацией:
 
-- [Конфигурации инфраструктуры SAP HANA и работа с ней в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations)
+- [Конфигурации и операции инфраструктуры SAP HANA в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations)
 - [Конфигурации хранилища виртуальных машин SAP HANA в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations-storage)
 
 

@@ -7,17 +7,16 @@ documentationcenter: na
 author: steveesp
 ms.service: virtual-network
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/21/2017
 ms.author: steveesp
-ms.openlocfilehash: 80e8a5e5de1da2098d895e09b36fb209050743a0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 964b0bd543e887cce304d785d18a651f50bd4c45
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "60743089"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84708252"
 ---
 # <a name="bandwidththroughput-testing-ntttcp"></a>Проверка пропускной способности (NTTTCP)
 
@@ -63,7 +62,7 @@ ms.locfileid: "60743089"
 
 Разрешите трафик NTTTCP в брандмауэре Windows следующей командой.
 
-netsh advfirewall firewall add rule program=\<путь\>\\ntttcp.exe name="ntttcp" protocol=any dir=in action=allow enable=yes profile=ANY
+netsh advfirewall Firewall Добавление правила программа = \<PATH\> \\ntttcp.exe имя = "ntttcp" Protocol = любой dir = в действии = разрешить Enable = да Profile = Any
 
 Например, если вы скопировали ntttcp.exe в папку c:\\tools, то это будет следующая команда: 
 
@@ -132,13 +131,13 @@ ntttcp -s10.0.0.4 -t 300
 
 #### <a name="from-linux-to-windows"></a>Из Linux в Windows:
 
-> \<Windows получателя:
+Получатель \<Windows>:
 
 ``` bash
 ntttcp -r -m <2 x nr cores>,*,<Windows server IP>
 ```
 
-> \<отправителя Linux:
+Отправитель \<Linux>:
 
 ``` bash
 ntttcp -s -m <2 x nr cores>,*,<Windows server IP> -N -t 300
@@ -146,13 +145,13 @@ ntttcp -s -m <2 x nr cores>,*,<Windows server IP> -N -t 300
 
 #### <a name="from-windows-to-linux"></a>Из Windows в Linux:
 
-> \<получателя Linux:
+Получатель \<Linux>:
 
 ``` bash
 ntttcp -r -m <2 x nr cores>,*,<Linux server IP>
 ```
 
-> \<отправителя Windows:
+Отправитель \<Windows>:
 
 ``` bash
 ntttcp -s -m <2 x nr cores>,*,<Linux  server IP> -ns -t 300
@@ -165,7 +164,7 @@ ntttcp -s -m <2 x nr cores>,*,<Linux  server IP> -ns -t 300
 </Endpoints> 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * В зависимости от полученных результатов в вашем сценарии вполне может быть возможность [оптимизировать пропускную способность сети виртуальных машин](virtual-network-optimize-network-bandwidth.md).
 * Узнайте, как [выделяется пропускная способность для виртуальных машин](virtual-machine-network-throughput.md)
 * Дополнительные сведения см. в статье [Виртуальная сеть Azure: часто задаваемые вопросы](virtual-networks-faq.md).

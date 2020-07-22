@@ -3,12 +3,12 @@ title: Управление секретами приложения Service Fabr
 description: Узнайте, как защитить значения секретов в приложении Service Fabric (не зависимо от платформы).
 ms.topic: conceptual
 ms.date: 01/04/2019
-ms.openlocfilehash: 18090dd3e4046da2069e3035be4edb4d2f979204
-ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
+ms.openlocfilehash: af82a55d41c48eebcbcbd1581ec5096a89c49bea
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82583236"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86248124"
 ---
 # <a name="manage-encrypted-secrets-in-service-fabric-applications"></a>Управление зашифрованными секретами в приложениях Service Fabric
 В этом руководстве описаны шаги по управлению секретами в приложении Service Fabric. Секретом может считаться любая конфиденциальная информации, например строка подключения к хранилищу, пароль или другое значение, которое не должно обрабатываться в виде обычного текста.
@@ -45,7 +45,7 @@ ms.locfileid: "82583236"
 </CodePackage>
 ```
 
-Секреты также должны быть добавлены в приложение Service Fabric, указав сертификат в манифесте приложения. Добавьте элемент **секретсцертификате** в **ApplicationManifest. XML** и включите отпечаток требуемого сертификата.
+Секреты также должны быть добавлены в приложение Service Fabric, указав сертификат в манифесте приложения. Добавьте элемент **секретсцертификате** , чтобы **ApplicationManifest.xml** и включить отпечаток требуемого сертификата.
 
 ```xml
 <ApplicationManifest … >
@@ -99,7 +99,7 @@ ms.locfileid: "82583236"
 
 Теперь при создании экземпляра приложения можно указать значение в качестве *параметра приложения* . Для облегчения интеграции в процессе сборки создание экземпляра приложения можно выполнить с помощью сценария PowerShell или написать на языке C#.
 
-При использовании PowerShell параметр передается в команду `New-ServiceFabricApplication` в виде [хэш-таблицы](https://technet.microsoft.com/library/ee692803.aspx):
+При использовании PowerShell параметр передается в команду `New-ServiceFabricApplication` в виде [хэш-таблицы](/previous-versions/windows/it-pro/windows-powershell-1.0/ee692803(v=technet.10)):
 
 ```powershell
 New-ServiceFabricApplication -ApplicationName fabric:/MyApp -ApplicationTypeName MyAppType -ApplicationTypeVersion 1.0.0 -ApplicationParameter @{"MySecret" = "I6jCCAeYCAxgFhBXABFxzAt ... gNBRyeWFXl2VydmjZNwJIM="}

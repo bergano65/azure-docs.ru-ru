@@ -7,21 +7,25 @@ manager: nitinme
 services: cognitive-services
 ms.service: cognitive-services
 ms.subservice: personalizer
-ms.topic: conceptual
-ms.date: 04/23/2020
+ms.topic: overview
+ms.date: 06/10/2020
 ms.author: diberry
-ms.openlocfilehash: 0c52771573c1df6a7a0efefbf950e88e1f1728f7
-ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
+ms.openlocfilehash: 973a8b7eb8dad66568a5beb45adea9740dd0402a
+ms.sourcegitcommit: 537c539344ee44b07862f317d453267f2b7b2ca6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83800631"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84700640"
 ---
 # <a name="whats-new-in-personalizer"></a>Новые возможности в персонализации
 
 Узнайте о новых возможностях службы. Эти элементы могут включать заметки о выпуске, видео, записи в блоге и другие типы информации. Создайте закладку для этой страницы, чтобы получать последние сведения об обновлениях службы.
 
 ## <a name="release-notes"></a>Заметки о выпуске
+
+### <a name="june-2020"></a>Июнь 2020 г.
+
+* Новый учебник. [Использование персонализации в веб-приложении](tutorial-use-personalizer-web-app.md)
 
 ### <a name="may-2020---build-conference"></a>Май 2020-//Build Конференция
 
@@ -33,7 +37,7 @@ ms.locfileid: "83800631"
 
 * TLS 1.2 теперь применяется для всех HTTP-запросов к этой службе. Дополнительные сведения см. в статье [Безопасность в Azure Cognitive Services](../cognitive-services-security.md).
 
-### <a name="november-2019---ignite-conference"></a>Ноябрь 2019-Ignite Конференция
+### <a name="november-2019---ignite-conference"></a>Ноябрь 2019 г. — конференция Ignite
 
 * Персонализация является общедоступной (GA)
 * [Учебник](tutorial-use-azure-notebook-generate-loop-data.md) по записным книжкам Azure со всем жизненным циклом

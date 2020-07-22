@@ -8,15 +8,15 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 10/30/2019
+ms.date: 07/14/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 40e788099a159e1f60c0af02deccd7e3bef82744
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 4904cd95dc81aad959c88c1dfdb09416923046e6
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82181738"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86518187"
 ---
 # <a name="a-web-app-that-calls-web-apis-acquire-a-token-for-the-app"></a>Веб-приложение, вызывающее веб-API: получение маркера для приложения
 
@@ -45,11 +45,12 @@ public class HomeController : Controller
 }
 ```
 
-Эта `ITokenAcquisition` служба внедряется функцией ASP.NET с помощью внедрения зависимостей.
+Эта `ITokenAcquisition` Служба внедряется функцией ASP.NET с помощью внедрения зависимостей.
 
-Ниже приведен упрощенный код для действия `HomeController`, которое получает маркер для вызова Microsoft Graph:
+Ниже приведен упрощенный код для действия `HomeController` , которое получает маркер для вызова Microsoft Graph:
 
 ```csharp
+[AuthorizeForScopes(Scopes = new[] { "user.read" })]
 public async Task<IActionResult> Profile()
 {
  // Acquire the access token.
@@ -65,6 +66,8 @@ public async Task<IActionResult> Profile()
 
 Чтобы лучше понять код, необходимый для этого сценария, см. шаг 2[2-1 (вызовы веб-приложения Microsoft Graph](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/2-WebApp-graph-user/2-1-Call-MSGraph)) в учебнике [MS-Identity-aspnetcore-webapp-Tutorial](https://github.com/Azure-Samples/ms-identity-aspnetcore-webapp-tutorial) .
 
+`AuthorizeForScopes`Атрибут в верхней части действия контроллера (или страницы Razor, если используется шаблон Razor) предоставляется Microsoft. Identity. Web. Это гарантирует, что при необходимости пользователю будет предложено предоставить согласие.
+
 Существуют и другие сложные вариации, например:
 
 - Вызов нескольких интерфейсов API.
@@ -76,15 +79,45 @@ public async Task<IActionResult> Profile()
 
 Код для ASP.NET похож на код, показанный для ASP.NET Core:
 
-- Действие контроллера, защищенное атрибутом [авторизовать], извлекает идентификатор клиента и идентификатор пользователя для `ClaimsPrincipal` члена контроллера. (ASP.NET использует `HttpContext.User`.)
-- После этого он создает объект MSAL.NET `IConfidentialClientApplication` .
+- Действие контроллера, защищенное атрибутом [авторизовать], извлекает идентификатор клиента и идентификатор пользователя для `ClaimsPrincipal` члена контроллера. (ASP.NET использует `HttpContext.User` .)
+- После этого он создает `IConfidentialClientApplication` объект MSAL.NET.
 - Наконец, он вызывает `AcquireTokenSilent` метод конфиденциального клиентского приложения.
+- Если требуется взаимодействие, веб-приложению необходимо выполнить запрос пользователя (повторное вход) и запросить дополнительные утверждения.
+
+Следующий фрагмент кода извлекается из [HomeController. CS # L157-L192](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect/blob/257c8f96ec3ff875c351d1377b36403eed942a18/WebApp/Controllers/HomeController.cs#L157-L192) в образце кода [MS-Identity-ASPNET-webapp-openidconnect](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect) ASP.NET MVC:
+
+```C#
+public async Task<ActionResult> ReadMail()
+{
+    IConfidentialClientApplication app = MsalAppBuilder.BuildConfidentialClientApplication();
+    AuthenticationResult result = null;
+    var account = await app.GetAccountAsync(ClaimsPrincipal.Current.GetMsalAccountId());
+    string[] scopes = { "Mail.Read" };
+
+    try
+    {
+        // try to get token silently
+        result = await app.AcquireTokenSilent(scopes, account).ExecuteAsync().ConfigureAwait(false);
+    }
+    catch (MsalUiRequiredException)
+    {
+        ViewBag.Relogin = "true";
+        return View();
+    }
+
+    // More code here
+    return View();
+}
+```
+
+Дополнительные сведения см. в коде для [буилдконфидентиалклиентаппликатион ()](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect/blob/master/WebApp/Utils/MsalAppBuilder.cs) и [жетмсалаккаунтид](https://github.com/Azure-Samples/ms-identity-aspnet-webapp-openidconnect/blob/257c8f96ec3ff875c351d1377b36403eed942a18/WebApp/Utils/ClaimPrincipalExtension.cs#L38) в примере кода.
+
 
 # <a name="java"></a>[Java](#tab/java)
 
 В примере Java код, вызывающий API, находится в методе Жетусерсфромграф в [ауспажеконтроллер. Java # L62](https://github.com/Azure-Samples/ms-identity-java-webapp/blob/d55ee4ac0ce2c43378f2c99fd6e6856d41bdf144/src/main/java/com/microsoft/azure/msalwebsample/AuthPageController.java#L62).
 
-Метод пытается вызвать `getAuthResultBySilentFlow`. Если пользователь должен согласиться с дополнительными областями, код обрабатывает `MsalInteractionRequiredException` объект для вызова пользователю.
+Метод пытается вызвать `getAuthResultBySilentFlow` . Если пользователь должен согласиться с дополнительными областями, код обрабатывает `MsalInteractionRequiredException` объект для вызова пользователю.
 
 ```java
 @RequestMapping("/msal4jsample/graph/me")
@@ -163,7 +196,7 @@ def graphcall():
 
 ---
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Вызов веб-API](scenario-web-app-call-api-call-api.md)

@@ -16,10 +16,9 @@ ms.workload: na
 ms.date: 06/28/2018
 ms.author: terrylan
 ms.openlocfilehash: 7c0748e4ff1531649274834cb1e602c228f102e8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "68726688"
 ---
 # <a name="the-azure-production-network"></a>Рабочая сеть Azure
@@ -78,14 +77,14 @@ Azure реализует программные брандмауэры на ос
    - К брандмауэрам возможен доступ только с выбранных внутренних узлов. В этом случае они принимают пакеты только из перечисленного списка исходных IP-адресов, которые являются выделенными IP-адресами в сети Azure. Например, атака на корпоративную сеть может направлять запросы на эти адреса, но они будут заблокированы, если исходный адрес пакета не был одним из перечисленных в списке в сети Azure.
      - Маршрутизатор доступа по периметру блокирует исходящие пакеты, направленные на адрес, который находится внутри сети Azure, благодаря настроенным статическим маршрутам.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о действиях корпорации Майкрософт в сфере защиты инфраструктуры Azure приведены в следующих статьях:
 
 - [Объекты, локальная среда и физическая безопасность в Azure](physical-security.md)
 - [Доступность инфраструктуры Azure](infrastructure-availability.md)
 - [Компоненты и границы информационной системы Azure](infrastructure-components.md)
 - [Сетевая архитектура Azure](infrastructure-network.md)
-- [Функции безопасности базы данных SQL Azure](infrastructure-sql.md)
+- [Возможности безопасности Базы данных SQL Azure](infrastructure-sql.md)
 - [Операции и управление в рабочей среде Azure](infrastructure-operations.md)
 - [Мониторинг инфраструктуры Azure](infrastructure-monitoring.md)
 - [Целостность инфраструктуры Azure](infrastructure-integrity.md)

@@ -2,20 +2,18 @@
 title: Устранение неполадок с общими образами в Azure
 description: Подробные сведения об устранении неполадок c коллекциями общих образов.
 author: axayjo
-manager: gwallace
 ms.service: virtual-machines
 ms.subservice: imaging
-ms.topic: article
+ms.topic: troubleshooting
 ms.workload: infrastructure
 ms.date: 04/17/2020
 ms.author: akjosh
 ms.reviewer: cynthn
-ms.openlocfilehash: ac0a691c19e0a99471e8bfafedaa6d0332b293ce
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
-ms.translationtype: MT
+ms.openlocfilehash: 8285bc216b5b06a33d481dbca011e44e77df25de
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82796880"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84678789"
 ---
 # <a name="troubleshooting-shared-image-galleries"></a>Устранение неполадок c коллекциями общих образов
 

@@ -5,13 +5,12 @@ ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 11/15/2018
-ms.openlocfilehash: 7d94e53abbe8f4d2953729aa2363c3906ce94f74
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.date: 05/18/2018
+ms.openlocfilehash: 5fb9e48a6d6a0b95b61478a7877e9b46dd8963e9
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77670225"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83649398"
 ---
 # <a name="using-functions-in-azure-monitor-log-queries"></a>Использование функций в запросах журнала Azure Monitor
 
@@ -19,17 +18,14 @@ ms.locfileid: "77670225"
 
 ## <a name="create-a-function"></a>Создание функции
 
-Создайте функцию с Log Analytics в портал Azure, нажав кнопку **сохранить** , а затем указав сведения в следующей таблице.
+Создайте функцию с помощью Log Analytics на портале Azure. Для этого щелкните **Сохранить** и укажите сведения из указанной ниже таблицы.
 
 | Параметр | Описание |
 |:---|:---|
 | Имя           | Отображаемое имя для запроса в **обозревателе запросов**. |
-| Сохранить как        | Функция |
+| Сохранить как        | Компонент |
 | Псевдоним функции | Короткое имя функции в других запросах. Не может содержать пробелы и должно быть уникальным. |
 | Категория       | Категория для организации сохраненных запросов и функций в **обозревателе запросов**. |
-
-> [!NOTE]
-> Функция в Azure Monitor не может содержать другую функцию.
 
 
 
@@ -53,13 +49,13 @@ Update
 security_updates_last_day | where Title contains "SQL"
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь с дополнительными уроками о написании запросов журнала Azure Monitor.
 
-- [Операции со строками](string-operations.md)
-- [Операции с датой и временем](datetime-operations.md)
-- [Агрегатные функции](aggregations.md)
-- [Расширенные агрегатные функции](advanced-aggregations.md)
-- [JSON и структуры данных](json-data-structures.md)
-- [Соединения](joins.md)
-- [Диаграммы](charts.md)
+- [Работа со строками](string-operations.md)
+- [Работа со значениями даты и времени](datetime-operations.md)
+- [Статистические функции в запросах Log Analytics](aggregations.md)
+- [Расширенные статистические функции в запросах Azure Log Analytics](advanced-aggregations.md)
+- [Работа с JSON и структурами данных в запросах Log Analytics](json-data-structures.md)
+- [Joins](joins.md)
+- [Создание графиков](charts.md)

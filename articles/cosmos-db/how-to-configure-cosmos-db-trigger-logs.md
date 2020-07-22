@@ -3,19 +3,19 @@ title: Настройка и чтение журналов с помощью т�
 description: Узнайте, как предоставить журналы в конвейер ведения журнала "Функции Azure" при использовании активации функций Azure для Cosmos DB
 author: ealsur
 ms.service: cosmos-db
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 07/17/2019
 ms.author: maquaran
-ms.openlocfilehash: 5ff747b225f8984bcaafd80015e85a9f014bdb50
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 31c9f9d94acab7322cf11d084e4010f2defd6f3c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75441830"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85261704"
 ---
 # <a name="how-to-configure-and-read-the-logs-when-using-azure-functions-trigger-for-cosmos-db"></a>Процесс настройки и чтения журналов при использовании активации функций Azure для Cosmos DB
 
-В этой статье показано, как можно настроить среду "Функции Azure", чтобы отправить активацию функций Azure для журналов Azure Cosmos DB в настроенное [Monitor Azure Functions](../azure-functions/functions-monitoring.md).
+В этой статье описывается, как можно настроить среду функций Azure для отправки триггеров функций Azure для журналов Cosmos DB в настроенное [решение мониторинга](../azure-functions/functions-monitoring.md).
 
 ## <a name="included-logs"></a>Доступные журналы
 
@@ -50,7 +50,7 @@ traces
 | where customDimensions.Category == "Host.Triggers.CosmosDB"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Включение мониторинга](../azure-functions/functions-monitoring.md) в приложениях Функций Azure.
 * Узнайте, как выполнять [диагностику и устранять неполадки при использовании активации функций Azure для Cosmos DB](./troubleshoot-changefeed-functions.md).

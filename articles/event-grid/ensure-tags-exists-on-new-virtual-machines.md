@@ -2,20 +2,19 @@
 title: Интеграция службы автоматизации Azure со службой "Сетка событий Azure" | Документация Майкрософт
 description: Узнайте, как автоматически добавить тег при создании новой виртуальной машины и как отправить уведомление в Microsoft Teams.
 keywords: automation, runbook, teams, event grid, virtual machine, VM
-services: automation
+services: automation,event-grid
 author: eamonoreilly
-manager: ''
 ms.service: automation
 ms.topic: tutorial
 ms.workload: infrastructure-services
-ms.date: 05/10/2019
+ms.date: 07/07/2020
 ms.author: eamono
-ms.openlocfilehash: 9f99ce5862850c2453e9e72241fff77fe091616f
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 79f3d83417a99d40ea0d4bd101a89300bc85a393
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "65521426"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86114522"
 ---
 # <a name="tutorial-integrate-azure-automation-with-event-grid-and-microsoft-teams"></a>Руководство по Интеграция службы автоматизации Azure со службой "Сетка событий Azure" и Microsoft Teams
 

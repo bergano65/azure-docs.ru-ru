@@ -4,12 +4,12 @@ description: В этой статье содержатся общие сведе
 ms.topic: conceptual
 ms.date: 10/21/2019
 ms.custom: sfrev
-ms.openlocfilehash: 7a9f59e3e44d3302ac19c7a9e7e77beb51947ce4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 7ad0d4f6d92ba8d85383df281bd14681f43bb6d4
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81682645"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86258745"
 ---
 # <a name="service-fabric-application-resource-model"></a>Модель ресурсов приложения Service Fabric
 
@@ -50,13 +50,13 @@ ms.locfileid: "81682645"
 
 ### <a name="configure-your-storage-account"></a>Настройка учетной записи хранения
 
-После создания учетной записи хранения создайте контейнер больших двоичных объектов, в котором можно разместить приложения. В портал Azure перейдите в учетную запись хранения Azure, в которой нужно сохранить приложения. Выберите **BLOB-объекты** > **добавить контейнер**. 
+После создания учетной записи хранения создайте контейнер больших двоичных объектов, в котором можно разместить приложения. В портал Azure перейдите в учетную запись хранения Azure, в которой нужно сохранить приложения. Выберите **BLOB-объекты**  >  **добавить контейнер**. 
 
 Ресурсы в кластере можно защитить, задав для общего уровня доступа значение **частный**. Предоставить доступ можно несколькими способами:
 
 * Авторизуйте доступ к BLOB-объектам и очередям с помощью [Azure Active Directory](../storage/common/storage-auth-aad-app.md).
 * Предоставьте доступ к данным большого двоичного объекта и очереди Azure с помощью [RBAC в портал Azure](../storage/common/storage-auth-aad-rbac-portal.md).
-* Делегирование доступа с помощью [подписанного](https://docs.microsoft.com/rest/api/storageservices/delegate-access-with-shared-access-signature)URL-доступа.
+* Делегирование доступа с помощью [подписанного](/rest/api/storageservices/delegate-access-with-shared-access-signature)URL-доступа.
 
 Пример на следующем снимке экрана использует анонимный доступ на чтение для больших двоичных объектов.
 
@@ -71,7 +71,7 @@ ms.locfileid: "81682645"
 1. В Visual Studio щелкните правой кнопкой мыши проект **голосования** и выберите **пакет**.
 
    ![Приложение пакета][PackageApplication]  
-1. Перейдите в каталог *.\сервице-фабрик-дотнет-куиккстарт\вотинг\пкг\дебуг* . Заархивировать содержимое в файл с именем *голосование. zip*. Файл *ApplicationManifest. XML* должен находиться в корневом каталоге ZIP-файла.
+1. Перейдите в каталог *.\сервице-фабрик-дотнет-куиккстарт\вотинг\пкг\дебуг* . Заархивировать содержимое в файл с именем *Voting.zip*. Файл *ApplicationManifest.xml* должен находиться в корневом каталоге ZIP-файла.
 
    ![ZIP-приложение][ZipApplication]  
 1. Переименуйте файл, чтобы изменить расширение ZIP на *. sfpkg*.
@@ -84,10 +84,10 @@ ms.locfileid: "81682645"
 
 ### <a name="create-the-resource-manager-template"></a>Создание шаблона Resource Manager
 
-Пример приложения содержит [шаблоны Azure Resource Manager](https://github.com/Azure-Samples/service-fabric-dotnet-quickstart/tree/master/ARM) , которые можно использовать для развертывания приложения. Имена файлов шаблонов — *усерапп. JSON* и *усерапп. parameters. JSON*.
+Пример приложения содержит [шаблоны Azure Resource Manager](https://github.com/Azure-Samples/service-fabric-dotnet-quickstart/tree/master/ARM) , которые можно использовать для развертывания приложения. Имена файлов шаблонов *UserApp.jsв* и *UserApp.Parameters.js*.
 
 > [!NOTE]
-> Файл *усерапп. parameters. JSON* должен быть обновлен именем кластера.
+> *UserApp.Parameters.jsв* файле необходимо обновить именем кластера.
 >
 >
 
@@ -95,11 +95,11 @@ ms.locfileid: "81682645"
 | ---------------------- | ------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | clusterName            | Имя кластера, в который выполняется развертывание | SF-cluster123                                                |                                                              |
 | application            | Имя приложения                 | Голосовани                                                       |
-| applicationTypeName    | Имя типа приложения.           | VotingType                                                   | Должен соответствовать ApplicationManifest. XML                 |
-| applicationTypeVersion | Версия типа приложения         | 1.0.0                                                        | Должен соответствовать ApplicationManifest. XML                 |
+| applicationTypeName    | Имя типа приложения.           | VotingType                                                   | Должно соответствовать ApplicationManifest.xml                 |
+| applicationTypeVersion | Версия типа приложения         | 1.0.0                                                        | Должно соответствовать ApplicationManifest.xml                 |
 | serviceName            | Имя службы         | Голосование ~ VotingWeb                                             | Должен быть в формате ApplicationName ~ ServiceType            |
-| serviceTypeName        | Имя типа службы                | VotingWeb                                                    | Должен соответствовать ServiceManifest. XML                 |
-| апппаккажеурл          | URL-адрес хранилища больших двоичных объектов приложения     | HTTPS:\//servicefabricapps.BLOB.Core.Windows.NET/Apps/Voting.sfpkg | URL-адрес пакета приложения в хранилище BLOB-объектов (процедура для задания URL-адреса описывается далее в этой статье). |
+| serviceTypeName        | Имя типа службы                | VotingWeb                                                    | Должно соответствовать ServiceManifest.xml                 |
+| апппаккажеурл          | URL-адрес хранилища больших двоичных объектов приложения     | HTTPS: \/ /servicefabricapps.BLOB.Core.Windows.NET/Apps/Voting.sfpkg | URL-адрес пакета приложения в хранилище BLOB-объектов (процедура для задания URL-адреса описывается далее в этой статье). |
 
 ```json
 {
@@ -140,7 +140,7 @@ New-AzResourceGroupDeployment -ResourceGroupName "sf-cluster-rg" -TemplateParame
 
 Вы можете обновить приложение, которое уже развернуто в кластере Service Fabric, по одной из следующих причин:
 
-* В приложение добавляется новая служба. Определение службы необходимо добавить в файлы *сервице-манифест. XML* и *аппликатион-манифест. XML* при добавлении службы в приложение. Чтобы отразить новую версию приложения, необходимо также изменить версию типа приложения с 1.0.0 на 1.0.1 в [усерапп. parameters. JSON](https://github.com/Azure-Samples/service-fabric-dotnet-quickstart/blob/master/ARM/UserApp.Parameters.json):
+* В приложение добавляется новая служба. Определение службы необходимо добавить в *service-manifest.xml* и *application-manifest.xml* файлы при добавлении службы в приложение. Чтобы отразить новую версию приложения, необходимо также изменить версию типа приложения с 1.0.0 на 1.0.1 в [UserApp.Parameters.js](https://github.com/Azure-Samples/service-fabric-dotnet-quickstart/blob/master/ARM/UserApp.Parameters.json):
 
     ```json
     "applicationTypeVersion": {
@@ -154,7 +154,7 @@ New-AzResourceGroupDeployment -ResourceGroupName "sf-cluster-rg" -TemplateParame
     }
     ```
 
-* В приложение добавляется новая версия существующей службы. Примеры включают изменения кода приложения и обновления для версии и имени типа приложения. Для этого обновления обновите Усерапп. parameters. JSON следующим образом:
+* В приложение добавляется новая версия существующей службы. Примеры включают изменения кода приложения и обновления для версии и имени типа приложения. Для этого обновления обновите UserApp.Parameters.jsследующим образом:
 
     ```json
      "applicationTypeVersion": {
@@ -166,19 +166,19 @@ New-AzResourceGroupDeployment -ResourceGroupName "sf-cluster-rg" -TemplateParame
 
 Чтобы удалить приложение, которое было развернуто с помощью модели ресурсов приложения, в диспетчер ресурсов:
 
-1. Используйте командлет [Get-азресаурце](https://docs.microsoft.com/powershell/module/az.resources/get-azresource?view=azps-2.5.0) , чтобы получить идентификатор ресурса для приложения:
+1. Используйте командлет [Get-азресаурце](/powershell/module/az.resources/get-azresource?view=azps-2.5.0) , чтобы получить идентификатор ресурса для приложения:
 
     ```powershell
     Get-AzResource  -Name <String> | f1
     ```
 
-1. Удалите ресурсы приложения с помощью командлета [Remove-азресаурце](https://docs.microsoft.com/powershell/module/az.resources/remove-azresource?view=azps-2.5.0) :
+1. Удалите ресурсы приложения с помощью командлета [Remove-азресаурце](/powershell/module/az.resources/remove-azresource?view=azps-2.5.0) :
 
     ```powershell
     Remove-AzResource  -ResourceId <String> [-Force] [-ApiVersion <String>]
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Получение сведений о модели ресурсов приложения:
 

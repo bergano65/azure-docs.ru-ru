@@ -6,14 +6,14 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-table
 ms.devlang: dotnet
 ms.topic: quickstart
-ms.date: 05/21/2019
+ms.date: 05/28/2020
 ms.author: sngun
-ms.openlocfilehash: df26021a3718c17d72f0fdb25588487043918732
-ms.sourcegitcommit: 09a124d851fbbab7bc0b14efd6ef4e0275c7ee88
+ms.openlocfilehash: 2c9af8c0839b56d5512bb17776182b3515a7d544
+ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82084113"
+ms.lasthandoff: 06/20/2020
+ms.locfileid: "85115336"
 ---
 # <a name="quickstart-build-a-table-api-app-with-net-sdk-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения API таблиц с помощью пакета SDK .NET и Azure Cosmos DB 
 
@@ -66,15 +66,36 @@ ms.locfileid: "82084113"
    git clone https://github.com/Azure-Samples/azure-cosmos-table-dotnet-core-getting-started.git
    ```
 
-> ![СОВЕТ] Более подробное пошаговое руководство по аналогичному коду см. в статье с [примером API таблиц для Cosmos DB](table-storage-how-to-use-dotnet.md).
+> [!TIP]
+> Более подробное пошаговое руководство по аналогичному коду см. в статье с [примером API таблиц для Cosmos DB](table-storage-how-to-use-dotnet.md).
 
 ## <a name="open-the-sample-application-in-visual-studio"></a>Открытие примера приложения в Visual Studio
 
 1. В Visual Studio в меню **Файл** нажмите **Открыть** и выберите **проект или решение**. 
 
-   ![Открытие решения](media/create-table-dotnet/azure-cosmosdb-open-solution.png) 
+   :::image type="content" source="media/create-table-dotnet/azure-cosmosdb-open-solution.png" alt-text="Открытие решения"::: 
 
 2. Перейдите к папке, в которую вы клонировали пример приложения, и откройте файл TableStorage.sln.
+
+## <a name="review-the-code"></a>Просмотр кода
+
+Это необязательный шаг. Если вы хотите узнать, как создать в коде ресурсы базы данных, изучите приведенные ниже фрагменты кода. Если вас это не интересует, можете сразу переходить к разделу [Обновление строки подключения](#update-your-connection-string) в этом документе.
+
+* В следующем коде показано, как создать таблицу в службе хранилища Azure.
+
+  :::code language="csharp" source="~/azure-cosmosdb-dotnet-table/CosmosTableSamples/Common.cs" id="CreateTable":::
+
+* В следующем коде показано, как вставить данные в таблицу.
+
+  :::code language="csharp" source="~/azure-cosmosdb-dotnet-table/CosmosTableSamples/SamplesUtils.cs" id="InsertItem":::
+
+* В следующем коде показано, как выполнить запрос данных из таблицы.
+
+  :::code language="csharp" source="~/azure-cosmosdb-dotnet-table/CosmosTableSamples/SamplesUtils.cs" id="QueryData":::
+
+* В следующем коде показано, как удалить данные из таблицы.
+
+  :::code language="csharp" source="~/azure-cosmosdb-dotnet-table/CosmosTableSamples/SamplesUtils.cs" id="DeleteItem":::
 
 ## <a name="update-your-connection-string"></a>Обновление строки подключения
 
@@ -82,7 +103,7 @@ ms.locfileid: "82084113"
 
 1. На [портале Azure](https://portal.azure.com/) щелкните **Строка подключения**. Используйте кнопку копирования в правой части окна, чтобы скопировать **основную строку подключения**.
 
-   ![Просмотр и копирование основной строки подключения на панели строки подключения](./media/create-table-dotnet/connection-string.png)
+   :::image type="content" source="./media/create-table-dotnet/connection-string.png" alt-text="Просмотр и копирование основной строки подключения на панели строки подключения":::
 
 2. Откройте файл **Settings.json** в Visual Studio. 
 
@@ -102,25 +123,25 @@ ms.locfileid: "82084113"
 
 1. Правой кнопкой мыши щелкните проект **CosmosTableSamples** в **обозревателе решений** Visual Studio и выберите **Управление пакетами NuGet**. 
 
-   ![Управление пакетами NuGet](media/create-table-dotnet/azure-cosmosdb-manage-nuget.png)
+   :::image type="content" source="media/create-table-dotnet/azure-cosmosdb-manage-nuget.png" alt-text="Управление пакетами NuGet":::
 
 2. В поле **Обзор** NuGet введите Microsoft.Azure.Cosmos.Table. Это запрос для поиска клиентской библиотеки API таблицы Cosmos DB. Обратите внимание, что на данный момент эта библиотека доступна только для .NET Framework и .NET Standard. 
    
-   ![Вкладка "Обзор" NuGet](media/create-table-dotnet/azure-cosmosdb-nuget-browse.png)
+   :::image type="content" source="media/create-table-dotnet/azure-cosmosdb-nuget-browse.png" alt-text="Вкладка "Обзор" в NuGet":::
 
 3. Щелкните **Установить**, чтобы установить библиотеку **Microsoft.Azure.Cosmos.Table**. Установится пакет API таблицы Azure Cosmos DB и все зависимые компоненты.
 
 4. При выполнении всего приложения данные образца вставляются в сущность таблицы и удаляются в конце выполнения. Поэтому вы не увидите вставленные данные, если выполните образец целиком. Тем не менее, чтобы просмотреть данные, вы можете вставить некоторые точки останова. Откройте файл BasicSamples.cs и щелкните правой кнопкой мыши строку 52, нажмите **Точка останова** и выберите **Вставить точку останова**. Вставьте еще одну точку останова в строке 55.
 
-   ![Добавление точки останова](media/create-table-dotnet/azure-cosmosdb-breakpoint.png) 
+   :::image type="content" source="media/create-table-dotnet/azure-cosmosdb-breakpoint.png" alt-text="Добавление точки останова"::: 
 
 5. Нажмите клавишу F5 для запуска приложения. В окне консоли отобразится имя новой базы данных таблиц (в этом примере — demoa13b1) в Azure Cosmos DB. 
     
-   ![Вывод на консоль](media/create-table-dotnet/azure-cosmosdb-console.png)
+   :::image type="content" source="media/create-table-dotnet/azure-cosmosdb-console.png" alt-text="Выходные данные консоли":::
 
    Когда будет достигнута первая точка останова, вернитесь к обозревателю данных на портале Azure. Нажмите кнопку **Обновить**, разверните пример* таблицы и щелкните **Сущности**. На вкладке **Сущности** справа отобразится новая сущность, добавленная для Walter Harp. Обратите внимание, что для новой сущности указан номер телефона 425-555-0101.
 
-   ![Новая сущность](media/create-table-dotnet/azure-cosmosdb-entity.png)
+   :::image type="content" source="media/create-table-dotnet/azure-cosmosdb-entity.png" alt-text="Новая сущность":::
     
    Если возникнет ошибка с сообщением о том, что при запуске проекта файл Settings.json не удалось найти, эту ошибку можно устранить, добавив в настройки проекта следующую XML-запись. Щелкните правой кнопкой мыши CosmosTableSamples, выберите "Редактировать CosmosTableSamples.csproj" и добавьте следующий элемент itemGroup. 
 

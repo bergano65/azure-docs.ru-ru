@@ -1,7 +1,7 @@
 ---
-title: Миграция пакетов служб SSIS в управляемый экземпляр SQL
+title: Миграция пакетов служб SSIS в SQL Управляемый экземпляр
 titleSuffix: Azure Database Migration Service
-description: Узнайте, как перенести пакеты и проекты SQL Server Integration Services (SSIS) в управляемый экземпляр базы данных SQL Azure с помощью Azure Database Migration Service или Помощник по миграции данных.
+description: Узнайте, как перенести пакеты и проекты SQL Server Integration Services (SSIS) в Управляемый экземпляр SQL Azure с помощью Azure Database Migration Service или Помощник по миграции данных.
 services: database-migration
 author: pochiraju
 ms.author: rajpo
@@ -12,15 +12,15 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 02/20/2020
-ms.openlocfilehash: 97a466ab033a42016c0d82465d1f98e2dcae8080
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 13fcda03f3ccd0c28e1dce594c46b8c0d9449054
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80297184"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86086574"
 ---
-# <a name="migrate-sql-server-integration-services-packages-to-an-azure-sql-database-managed-instance"></a>Перенос пакетов SQL Server Integration Services в Управляемый экземпляр Базы данных SQL Azure
-Если вы используете SQL Server Integration Services (SSIS) и хотите перенести проекты или пакеты служб SSIS из исходной базы данных SSISDB, размещенной SQL Server, в целевую SSISDB, размещенную в управляемом экземпляре SQL Azure, можно использовать Azure Database Migration Service.
+# <a name="migrate-sql-server-integration-services-packages-to-an-azure-sql-managed-instance"></a>Перенос пакетов SQL Server Integration Services в Управляемый экземпляр SQL Azure
+Если вы используете SQL Server Integration Services (SSIS) и хотите перенести проекты или пакеты служб SSIS из исходной SSISDB, размещенной SQL Server, в целевую SSISDB, размещенную Управляемый экземпляр Azure SQL, можно использовать Azure Database Migration Service.
 
 Если используемая версия служб SSIS более ранняя, чем 2012, или вы используете типы хранилищ пакетов, отличные от SSISDB, перед переносом проектов или пакетов служб SSIS их необходимо преобразовать с помощью мастера преобразования Integration Services проектов, который также можно запустить из SSMS. Дополнительные сведения см. в статье [Преобразование проектов в модель развертывания проекта](https://docs.microsoft.com/sql/integration-services/packages/deploy-integration-services-ssis-projects-and-packages?view=sql-server-2017#convert).
 
@@ -33,23 +33,23 @@ ms.locfileid: "80297184"
 > * Оценка проектов и пакетов исходной SSIS.
 > * Перенос проектов и пакетов SSIS в Azure.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для выполнения этих действий вам потребуется следующее:
 
-* Чтобы создать виртуальная сеть Microsoft Azure для Azure Database Migration Service с помощью модели развертывания Azure Resource Manager, которая обеспечивает подключение типа "сеть — сеть" к локальным исходным серверам с помощью [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways). Дополнительные сведения см. в статье [сетевые топологии для миграции управляемого экземпляра базы данных SQL Azure с помощью Azure Database Migration Service]( https://aka.ms/dmsnetworkformi). Дополнительные сведения о создании виртуальной сети см. в [документации по виртуальной сети](https://docs.microsoft.com/azure/virtual-network/), особенно в кратком руководстве, где приведены пошаговые инструкции.
+* Чтобы создать виртуальная сеть Microsoft Azure для Azure Database Migration Service с помощью модели развертывания Azure Resource Manager, которая обеспечивает подключение типа "сеть — сеть" к локальным исходным серверам с помощью [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways). Дополнительные сведения см. в статье [сетевые топологии для миграции SQL управляемый экземпляр с помощью Azure Database Migration Service]( https://aka.ms/dmsnetworkformi). Дополнительные сведения о создании виртуальной сети см. в [документации по виртуальной сети](https://docs.microsoft.com/azure/virtual-network/), особенно в кратком руководстве, где приведены пошаговые инструкции.
 * Чтобы гарантировать, что правила группы безопасности сети виртуальной сети не блокируют следующие порты входящего трафика для Azure Database Migration Service: 443, 53, 9354, 445, 12000. Дополнительные сведения о фильтрации трафика NSG в виртуальной сети см. в статье [Фильтрация сетевого трафика с помощью групп безопасности сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-vnet-plan-design-arm).
 * Настройка [брандмауэра Windows для доступа к ядру базы данных источника](https://docs.microsoft.com/sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access?view=sql-server-2017).
 * Чтобы открыть брандмауэр Windows, чтобы разрешить Azure Database Migration Service доступ к исходному SQL Server, по умолчанию — TCP-порт 1433.
 * Если вы запустили несколько именованных экземпляров SQL Server, использующих динамические порты, вы можете включить службу обозревателя SQL и разрешить доступ к UDP-порту 1434 через брандмауэры. Это позволит службе Azure Database Migration Service подключиться к именованному экземпляру на исходном сервере.
 * Если перед исходными базами данных используется брандмауэр, его правила должны разрешать службе Azure Database Migration Service доступ к исходным базам данных для миграции и файлам SMB через порт 445.
-* Управляемый экземпляр базы данных SQL Azure для размещения SSISDB. Если необходимо создать его, следуйте указаниям в статье [создание управляемый экземпляр базы данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-get-started).
+* Управляемый экземпляр SQL для размещения SSISDB. Если необходимо создать его, следуйте указаниям в статье [создание управляемый экземпляр Azure SQL](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-get-started).
 * Чтобы гарантировать, что имена входа, используемые для подключения исходного SQL Server и целевого управляемого экземпляра, являются членами роли сервера sysadmin.
-* Чтобы убедиться, что службы SSIS подготовлены в службе "Фабрика данных Azure" (ADF), которая содержит Azure-SSIS Integration Runtime (IR) с целевой базой данных SSISDB, размещенной в управляемом экземпляре SQL Azure, (как описано в статье [Создание среды выполнения интеграции Azure SSIS в фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/create-azure-ssis-integration-runtime)).
+* Чтобы убедиться, что службы SSIS подготовлены в фабрике данных Azure (ADF), которая содержит Azure-SSIS Integration Runtime (IR) с целевой SSISDB, размещенной в Управляемый экземпляр SQL (как описано в статье [Создание среды выполнения интеграции Azure SSIS в фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/create-azure-ssis-integration-runtime)).
 
 ## <a name="assess-source-ssis-projectspackages"></a>Оценка проектов и пакетов исходной SSIS
 
-Хотя оценка исходного SSISDB еще не интегрирована в базу данных Помощник по миграции (DMA), проекты и пакеты служб SSIS будут оцениваться и проверяться при повторном развертывании на целевом сервере SSISDB, размещенном в управляемом экземпляре базы данных SQL Azure.
+Хотя оценка исходного SSISDB еще не интегрирована в базу данных Помощник по миграции (DMA), проекты и пакеты служб SSIS будут оцениваться и проверяться при повторном развертывании в целевом SSISDB, размещенном на Управляемый экземпляр SQL Azure.
 
 ## <a name="register-the-microsoftdatamigration-resource-provider"></a>Регистрация поставщика ресурсов Microsoft.DataMigration
 
@@ -61,7 +61,7 @@ ms.locfileid: "80297184"
 
     ![Отображение поставщиков ресурсов](media/how-to-migrate-ssis-packages-mi/portal-select-resource-provider.png)
 
-3. Найдите миграцию, а затем справа от **Microsoft. Migration**выберите **Register**.
+3. В поле поиска введите migration, а затем справа от **Microsoft.DataMigration** щелкните **Зарегистрировать**.
 
     ![Регистрация поставщика ресурсов](media/how-to-migrate-ssis-packages-mi/portal-register-resource-provider.png)
 
@@ -81,11 +81,11 @@ ms.locfileid: "80297184"
 
 5. Выберите существующую виртуальную сеть или создайте ее.
 
-    Виртуальная сеть предоставляет Azure Database Migration Service с доступом к исходному SQL Server и целевому управляемому экземпляру базы данных SQL Azure.
+    Виртуальная сеть предоставляет Azure Database Migration Service с доступом к исходным SQL Server и целевым Управляемый экземпляр Azure SQL.
 
     Дополнительные сведения о создании виртуальной сети в портал Azure см. в статье [Создание виртуальной сети с помощью портал Azure](https://aka.ms/DMSVnet).
 
-    Подробные сведения см. в статье [Сетевые топологии для переноса Управляемого экземпляра Базы данных Azure SQL с помощью Azure Database Migration Service](https://aka.ms/dmsnetworkformi).
+    Дополнительные сведения см. в статье [сетевые топологии для миграции управляемый экземпляр Azure SQL с помощью Azure Database Migration Service](https://aka.ms/dmsnetworkformi).
 
 6. Выберите ценовую категорию.
 
@@ -107,7 +107,7 @@ ms.locfileid: "80297184"
 
 3. Выберите **+ Новый проект миграции**.
 
-4. На экране **Новый проект миграции** укажите имя проекта, в текстовом поле **Тип исходного сервера** выберите **SQL Server**, в текстовом поле **тип целевого сервера** выберите **управляемый экземпляр базы данных SQL Azure**, а затем для параметра **выберите тип действия**выберите **Миграция пакетов служб SSIS**.
+4. На экране **Новый проект миграции** укажите имя проекта, в текстовом поле **Тип исходного сервера** выберите **SQL Server**, в текстовом поле **тип целевого сервера** выберите **управляемый экземпляр SQL Azure**, а затем в списке **выберите тип действия**выберите **Миграция пакетов служб SSIS**.
 
    ![Создание проекта DMS](media/how-to-migrate-ssis-packages-mi/dms-create-project2.png)
 
@@ -150,6 +150,6 @@ ms.locfileid: "80297184"
 
 * Выберите **Запустить миграцию**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * Просмотрите [руководство по миграции базы данных Майкрософт](https://datamigration.microsoft.com/).

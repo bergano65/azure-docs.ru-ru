@@ -2,23 +2,23 @@
 title: Планирование развертывания Azure Active Directory единого входа
 description: Справочные сведения по планированию, развертыванию и управлению SSO в Организации.
 services: active-directory
-author: jeevansd
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 05/22/2019
+ms.date: 06/10/2020
 ms.author: baselden
 ms.reviewer: jeedes
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
-ms.openlocfilehash: 4b5836ffe721aa3e329651c3709ce64344363728
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: 75e3f7fc98072957f571937a1627247cdc4a9e7e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83197874"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85374447"
 ---
 # <a name="plan-a-single-sign-on-deployment"></a>Планирование развертывания единого входа
 
@@ -163,7 +163,7 @@ Microsoft Cloud App Security (МКАС) — это решение брокера
 
 ### <a name="attribute-requirements"></a>Требования к атрибутам
 
-Существует предварительно настроенный набор атрибутов и сопоставлений атрибутов между объектами пользователей Azure AD и объектами пользователей приложения SaaS. Некоторые приложения управляют другими типами объектов, такими как группы. Спланируйте сопоставление атрибутов пользователей из Azure AD с приложением и [Настройте сопоставление атрибутов по умолчанию](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes) в соответствии с потребностями вашего бизнеса.
+Существует предварительно настроенный набор атрибутов и сопоставлений атрибутов между объектами пользователей Azure AD и каждого приложения SaaS. Некоторые приложения управляют другими типами объектов, такими как группы. Спланируйте сопоставление атрибутов пользователей из Azure AD с приложением и [Настройте сопоставление атрибутов по умолчанию](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes) в соответствии с потребностями вашего бизнеса.
 
 ### <a name="certificate-requirements"></a>Требования к сертификатам
 
@@ -194,8 +194,6 @@ Microsoft Cloud App Security (МКАС) — это решение брокера
    Если не удается найти приложение, см. [документацию по пользовательскому приложению](https://docs.microsoft.com/azure/active-directory/application-config-sso-how-to-configure-federated-sso-non-gallery). Это поможет вам добавить приложение, которое не находится в коллекции Azure AD.
 
    При необходимости можно использовать утверждения, выданные в токене SAML для корпоративного приложения, с помощью [документации по Microsoft](https://docs.microsoft.com/azure/active-directory/active-directory-claims-mapping). Убедитесь, что эта карта сопоставлена с тем, что вы ожидаете получить в ответе SAML для вашего приложения. При возникновении проблем во время настройки воспользуйтесь нашим руководством по [отладке интеграции единого входа](https://docs.microsoft.com/azure/active-directory/develop/active-directory-saml-debugging).
-
-Настраиваемое подключение приложений — это компонент лицензий Azure AD Premium P1 или P2.
 
 ### <a name="provide-sso-change-communications-to-end-users"></a>Предоставление пользователям связи изменения единого входа для конечных пользователей
 
@@ -237,11 +235,11 @@ Microsoft Cloud App Security (МКАС) — это решение брокера
 
 | Описания| Роли | Роль Azure AD (при необходимости) |
 |--------|-------|-----------------------------|
-| Администратор службы поддержки | Поддержка уровня 1 | Нет |
+| Администратор службы поддержки | Поддержка уровня 1 | Отсутствуют |
 | Администратор удостоверений | Настройка и отладка при проблемах, влияющих на Azure AD | Глобальный администратор |
-| Администратор приложения | Аттестация пользователей в приложении, Настройка для пользователей с разрешениями | Нет |
+| Администратор приложения | Аттестация пользователей в приложении, Настройка для пользователей с разрешениями | Отсутствуют |
 | Администраторы инфраструктуры | Владелец смены сертификата | Глобальный администратор |
-| Владелец или заинтересованный бизнес | Аттестация пользователей в приложении, Настройка для пользователей с разрешениями | Нет |
+| Владелец или заинтересованный бизнес | Аттестация пользователей в приложении, Настройка для пользователей с разрешениями | Отсутствуют |
 
 Для управления ролями рекомендуется использовать [Управление привилегированными пользователями](https://docs.microsoft.com/azure/active-directory/active-directory-privileged-identity-management-configure) (PIM), чтобы обеспечить дополнительный аудит, контроль и проверку доступа для пользователей с разрешениями каталога.
 
@@ -305,7 +303,7 @@ Microsoft Cloud App Security (МКАС) — это решение брокера
 
 - [Проблема с федеративным SSO для приложений, не перечисленных в коллекции приложений Azure](https://docs.microsoft.com/azure/active-directory/manage-apps/application-sign-in-problem-federated-sso-non-gallery)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Отладка единого входа на основе SAML](https://docs.microsoft.com/azure/active-directory/develop/active-directory-saml-debugging)
 

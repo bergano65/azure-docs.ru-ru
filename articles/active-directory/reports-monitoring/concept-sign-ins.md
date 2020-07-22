@@ -18,10 +18,10 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2910933e2c57a8bc80a220726462b02915c4a8eb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80246523"
 ---
 # <a name="sign-in-activity-reports-in-the-azure-active-directory-portal"></a>Отчеты о действиях входа на портале Azure Active Directory
@@ -30,16 +30,16 @@ ms.locfileid: "80246523"
 
 - **Действие** 
     - **События входа**. Информация об использовании управляемых приложений и действиях входа пользователей.
-    - **Журнал аудита журналы** - [аудита](concept-audit-logs.md) предоставляют сведения о действиях пользователей и управления группами, управляемых приложениях и действиях с каталогами.
+    - **Журналы аудита**  -  [Журналы аудита](concept-audit-logs.md) предоставляют сведения о действиях пользователей и управления группами, управляемых приложениях и действиях с каталогами.
 - **Безопасность** 
     - **Рискованные входы** . [рискованный вход](concept-risky-sign-ins.md) — это индикатор попытки входа, которая не является законным владельцем учетной записи пользователя.
     - **Пользователи, помеченные для риска** — [рискованный пользователь](concept-user-at-risk.md) является индикатором для учетной записи пользователя, которая могла быть скомпрометирована.
 
 В этой статье приводятся общие сведения о отчете о входе в систему.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
-### <a name="who-can-access-the-data"></a>Кто может получить доступ к данным?
+### <a name="who-can-access-the-data"></a>Кто имеет доступ к данным?
 
 * Пользователи в роли "администратор безопасности", "читатель безопасности", "Глобальный читатель" и "читатель отчетов"
 * Глобальные администраторы.
@@ -117,9 +117,9 @@ ms.locfileid: "80246523"
  
 **Состояние** — это состояние входа:
 
-- Успех
+- Успешно
 
-- Сбой
+- Failure
 
 - Маловероятно
 
@@ -132,7 +132,7 @@ ms.locfileid: "80246523"
 
 - Штат или провинция
 
-- Страна/регион
+- Страна или регион
 
 
 **Resource** — имя службы, используемой для входа.
@@ -153,7 +153,7 @@ ms.locfileid: "80246523"
 |Exchange ActiveSync| |Этот фильтр показывает все попытки входа в систему, в которых была предпринята попытка использования протокола EAS.|
 |Браузер|![службы "Функции Azure"](./media/concept-sign-ins/check.png)|Отображение всех попыток входа пользователей с помощью веб-браузеров|
 |Exchange ActiveSync| | Отображение всех попыток входа пользователей с клиентскими приложениями с помощью Exchange Актицесинк для подключения к Exchange Online|
-|Exchange Online PowerShell| |Используется для подключения к Exchange Online с помощью удаленной PowerShell. Если вы блокируете обычную проверку подлинности для Exchange Online PowerShell, для подключения необходимо использовать модуль Exchange Online PowerShell. Инструкции см. [в статье подключение к Exchange Online PowerShell с использованием многофакторной проверки подлинности](https://docs.microsoft.com/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/mfa-connect-to-exchange-online-powershell).|
+|Exchange Online PowerShell| |Используется для подключения к Exchange Online с помощью удаленной PowerShell. Если вы блокируете обычную проверку подлинности для Exchange Online PowerShell, для подключения необходимо использовать модуль Exchange Online PowerShell. Инструкции см. в статье [Подключение к PowerShell Exchange Online с помощью многофакторной проверки подлинности](https://docs.microsoft.com/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/mfa-connect-to-exchange-online-powershell).|
 |Веб-службы Exchange| |Программный интерфейс, используемый Outlook, Outlook для Mac и сторонние приложения.|
 |IMAP4| |Устаревший почтовый клиент, использующий IMAP для получения электронной почты.|
 |MAPI через HTTP| |Используется в Outlook 2010 и более поздних версиях.|
@@ -198,7 +198,7 @@ ms.locfileid: "80246523"
 
 Щелкните " **скачать** ", чтобы создать CSV-файл или формат JSON для последних 250 000 записей. Начните с [загрузки данных входа,](quickstart-download-sign-in-report.md) если вы хотите работать с ним за пределами портал Azure.  
 
-![Скачать](./media/concept-sign-ins/71.png "Скачать")
+![Загрузить](./media/concept-sign-ins/71.png "Скачать")
 
 > [!IMPORTANT]
 > На число записей, которые можно скачать, влияют особенности [политики хранения отчетов Azure Active Directory](reference-reports-data-retention.md).  
@@ -230,12 +230,12 @@ Azure AD и портал Azure предоставляют дополнитель
 
 Щелкнув элемент, вы получите более подробную информацию об операции входа:
 
-- Идентификатор пользователя.
-- User (Пользователь)
+- ИД пользователя
+- Пользователь
 - Имя пользователя
 - Идентификатор приложения
 - Приложение
-- "Клиент";
+- Клиент
 - Расположение
 - IP-адрес
 - Дата
@@ -279,7 +279,7 @@ Azure AD и портал Azure предоставляют дополнитель
 
 Вы также можете получить доступ к журналам действий Office 365 программным путем с помощью [API-интерфейсов управления office 365](https://docs.microsoft.com/office/office-365-management-api/office-365-management-apis-overview).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Коды ошибок в отчете о действиях входа](reference-sign-ins-error-codes.md)
 * [Политики хранения отчетов Azure Active Directory](reference-reports-data-retention.md)

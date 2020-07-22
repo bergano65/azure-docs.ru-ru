@@ -4,15 +4,14 @@ description: Классическая модель развертывания, �
 author: sowmyavenkat86
 ms.author: svenkat
 ms.date: 01/27/2020
-ms.topic: article
+ms.topic: how-to
 ms.service: azure-supportability
 ms.assetid: ce37c848-ddd9-46ab-978e-6a1445728a3b
-ms.openlocfilehash: a3d5106cafc1d3bfe77f3e42e85cedb668fc4fa0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: afdb8b2b677321239f240e74d49711195ac186c1
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76835633"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84763913"
 ---
 # <a name="classic-deployment-model"></a>Классическая модель развертывания
 
@@ -30,11 +29,11 @@ ms.locfileid: "76835633"
 
 Следуйте приведенным ниже инструкциям, чтобы создать запрос в службу поддержки, используя **справку и поддержку** в портал Azure.
 
-1. В меню [портал Azure](https://portal.azure.com) выберите пункт **Справка и поддержка**.
+1. В главном меню на [портале Azure](https://portal.azure.com) выберите **Справка + поддержка**.
 
    ![Выберите Справка и поддержка в портал Azure](./media/resource-manager-core-quotas-request/help-plus-support.png)
 
-1. Выберите **новый запрос в службу поддержки**.
+1. Выберите **Новый запрос в службу поддержки**.
 
    ![Создайте новый запрос в службу поддержки в портал Azure](./media/resource-manager-core-quotas-request/new-support-request.png)
 

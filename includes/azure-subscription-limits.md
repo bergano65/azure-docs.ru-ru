@@ -1,20 +1,7 @@
 ---
-title: Включить имя файла
-description: включить файл
-services: billing
-author: rothja
-ms.service: cost-management-billing
-ms.topic: include
-ms.date: 05/18/2018
-ms.author: jroth
-ms.custom: include file
-ms.openlocfilehash: f49d91a2dffbd02067efd82b88963b5cb6eaa8b4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76021270"
+ Title: включение описания файла: включить автора файла: росжа MS. Service: Azure-Resource-Manager MS. раздел: включить MS. Date: 05/18/2018 МС. Автор: жрос MS. Custom: включаемый файл
 ---
+
 | Ресурс | Ограничение по умолчанию | Максимальное ограничение |
 | --- | --- | --- |
 | Число виртуальных ЦП на [подписку](../articles/billing-buy-sign-up-azure-subscription.md)<sup>1</sup> |20 |10 000 |

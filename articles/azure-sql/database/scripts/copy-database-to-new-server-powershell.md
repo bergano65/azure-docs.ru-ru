@@ -1,0 +1,62 @@
+---
+title: PowerShell. Копирование базы данных на новый сервер
+description: Пример сценария Azure PowerShell для копирования базы данных на новый сервер
+services: sql-database
+ms.service: sql-database
+ms.subservice: data-movement
+ms.custom: sqldbrb=1
+ms.devlang: PowerShell
+ms.topic: sample
+author: stevestein
+ms.author: sstein
+ms.reviewer: carlrab
+ms.date: 03/12/2019
+ms.openlocfilehash: ae2a4ce3c8c1b3760dc83d01def9694b1d20fea0
+ms.sourcegitcommit: 1f48ad3c83467a6ffac4e23093ef288fea592eb5
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84196940"
+---
+# <a name="use-powershell-to-copy-a-database-to-a-new-server"></a>Копирование базы данных на новый сервер с помощью PowerShell
+[!INCLUDE[appliesto-sqldb](../../includes/appliesto-sqldb.md)]
+
+Этот пример сценария PowerShell Azure создает копию существующей базы данных в службе "База данных SQL Azure" на новом сервере.
+
+[!INCLUDE [quickstarts-free-trial-note](../../../../includes/quickstarts-free-trial-note.md)]
+[!INCLUDE [updated-for-az](../../../../includes/updated-for-az.md)]
+[!INCLUDE [cloud-shell-try-it.md](../../../../includes/cloud-shell-try-it.md)]
+
+Чтобы установить и использовать PowerShell локально, вам понадобится Az PowerShell 1.4.0 или последующей версии для работы с этим руководством. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
+
+## <a name="copy-a-database-to-a-new-server"></a>Копирование базы данных на новый сервер
+
+[!code-powershell-interactive[main](../../../../powershell_scripts/sql-database/copy-database-to-new-server/copy-database-to-new-server.ps1?highlight=20-23 "Copy database to new server")]
+
+## <a name="clean-up-deployment"></a>Очистка развертывания
+
+Используйте следующую команду, чтобы удалить группу ресурсов и все связанные с ней ресурсы.
+
+```powershell
+Remove-AzResourceGroup -ResourceGroupName $sourceresourcegroupname
+Remove-AzResourceGroup -ResourceGroupName $targetresourcegroupname
+```
+
+## <a name="script-explanation"></a>Описание скрипта
+
+Этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
+
+| Get-Help | Примечания |
+|---|---|
+| [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
+| [New-AzSqlServer](/powershell/module/az.sql/new-azsqlserver) | Создает сервер, на котором размещены базы данных и эластичные пулы. |
+| [New-AzSqlDatabase](/powershell/module/az.sql/new-azsqldatabase) | Создает базу данных или эластичный пул. |
+| [New-AzSqlDatabaseCopy](/powershell/module/az.sql/new-azsqldatabasecopy) | Создает копию базы данных с помощью моментального снимка на текущий момент времени. |
+| [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
+|||
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+Дополнительные сведения об Azure PowerShell см. в [этой документации](/powershell/azure/overview).
+
+Дополнительные примеры сценариев PowerShell для базы данных SQL Azure можно найти [здесь](../powershell-script-content-guide.md).

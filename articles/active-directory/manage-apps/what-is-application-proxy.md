@@ -2,23 +2,22 @@
 title: Публикация локальных приложений с помощью Azure AD Application Proxy
 description: Поймите, почему следует использовать Application Proxy для публикации локальных веб-приложений вовне для удаленных пользователей. Узнайте об архитектуре, соединителях, методах проверки подлинности и преимуществах безопасности Application Proxy.
 services: active-directory
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: overview
 ms.workload: identity
 ms.date: 05/31/2019
-ms.author: mimart
+ms.author: kenwith
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.custom: has-adal-ref
-ms.openlocfilehash: d38cf25bb3b7622a0d444e4a71a4d62aafc053b6
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: a5c9ba026819a542ccd0a7ae41316c0f1d325004
+ms.sourcegitcommit: 9bfd94307c21d5a0c08fe675b566b1f67d0c642d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83196450"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84976512"
 ---
 # <a name="using-azure-ad-application-proxy-to-publish-on-premises-apps-for-remote-users"></a>Использование Azure AD Application Proxy для публикации локальных приложений для удаленных пользователей
 
@@ -89,7 +88,7 @@ Application Proxy — это служба Azure AD, которую можно н
 * Веб-приложения
 * веб-API, предоставляемые для полнофункциональных приложений на различных устройствах;
 * приложения, размещаемые за шлюзом удаленных рабочих столов.
-* полнофункциональные клиентские приложения, интегрированные с библиотекой аутентификации Active Directory (ADAL).
+* полнофункциональные клиентские приложения, интегрированные с [библиотекой проверки подлинности Майкрософт (MSAL)](https://docs.microsoft.com/azure/active-directory/develop/v2-overview).
 
 Application Proxy работает с приложениями, использующими следующий собственный протокол аутентификации:
 

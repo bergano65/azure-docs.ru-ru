@@ -8,12 +8,12 @@ ms.service: cost-management-billing
 ms.topic: conceptual
 ms.date: 02/13/2020
 ms.author: banders
-ms.openlocfilehash: 5867c4ba7fa1447cbd5d40e15237ae50c24c7168
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: e3553515e2cbae007883ad75960aa1c6991926df
+ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77199268"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85254554"
 ---
 # <a name="understand-azure-reservation-usage-for-your-individual-subscription-with-pay-as-you-go-rates-subscription"></a>Общие сведения об использовании резервирования Azure для отдельной подписки с оплатой по мере использования
 
@@ -71,7 +71,7 @@ ms.locfileid: "77199268"
 
 ### <a name="statement-section-of-csv-file"></a>Раздел Statement (Выписка) в CSV-файле
 
-В качестве фильтра **использования зарезервированных экземпляров** следует использовать имя средства измерения, а затем выбрать требуемую **Категорию учета**. База данных Azure SQL или база данных Azure Cosmos. Вы должны увидеть примерно следующее:
+В качестве фильтра **использования зарезервированных экземпляров** следует использовать имя средства измерения, а затем выбрать требуемую **категорию учета** — База данных Azure SQL или Azure Cosmos DB. Вы должны увидеть примерно следующее:
 
 ![CSV-файл для резервной мощности Базы данных SQL](./media/understand-reserved-instance-usage/billing-payg-sql-db-reserved-capacity-csv-statements.png)
 
@@ -83,7 +83,7 @@ ms.locfileid: "77199268"
 
 ![CSV-файл для резервной мощности Базы данных SQL](./media/understand-reserved-instance-usage/billing-payg-sql-db-reserved-capacity-csv-details.png)
 
-1. **ReservationId** (Идентификатор резервирования) в поле **Additional Info** (Дополнительные сведения) — это резервирование Базы данных SQL Azure с получением резервной мощности, которое было применено к ресурсу Базы данных SQL.
+1. **ReservationId** (Идентификатор резервирования) в поле **Additional Info** (Дополнительные сведения) — это резервирование Базы данных SQL Azure с получением резервной мощности, которое было применено к ресурсу Базы данных SQL.
 2. **ConsumptionMeter** (Средство измерения потребления) представляет значение идентификатора средства измерения для ресурса Базы данных SQL.
 3. **Meter Id** (Идентификатор средства измерения) представляет собой показатель резервирования. Стоимость этого средства измерения — 0 долларов США. Для любого ресурса Базы данных SQL, подходящего для скидки на резервирование, в CSV-файле отображается этот идентификатор средства измерения.
 
@@ -97,7 +97,7 @@ ms.locfileid: "77199268"
 
 - [Основные сведения о резервировании в Azure](save-compute-costs-reservations.md)
 - [Предоплата виртуальных машин с помощью Azure Reserved Virtual Machine Instances](../../virtual-machines/windows/prepay-reserved-vm-instances.md)
-- [Предоплата вычислительных ресурсов Базы данных SQL Azure с получением резервной мощности](../../sql-database/sql-database-reserved-capacity.md)
+- [Предоплата вычислительных ресурсов Базы данных SQL Azure с получением резервной мощности](../../azure-sql/database/reserved-capacity-overview.md)
 - [Управление Azure Reserved VM Instances](manage-reserved-vm-instance.md)
 - [Сведения о применении скидки на зарезервированный экземпляр виртуальной машины](../manage/understand-vm-reservation-charges.md)
 - [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](understand-reserved-instance-usage-ea.md)

@@ -3,25 +3,25 @@ title: Сообщение об ошибке появится на страниц
 description: Как устранить проблемы с входом в систему Azure AD, когда приложение возвращает сообщение об ошибке.
 services: active-directory
 documentationcenter: ''
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.assetid: ''
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: troubleshooting
 ms.date: 07/11/2017
-ms.author: mimart
+ms.author: kenwith
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9b8d20b31e96973a492355f0515d0532deea0ac9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c826a679c1c64e113beb6b2cc5ffd29f82b55a3b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77185489"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84759544"
 ---
 # <a name="an-app-page-shows-an-error-message-after-the-user-signs-in"></a>Страница приложения отображает сообщение об ошибке после входа пользователя
 
@@ -60,9 +60,9 @@ ms.locfileid: "77185489"
 
    Чтобы добавить атрибут, выполните указанные ниже действия.
 
-   1. Нажмите кнопку **Добавить атрибут**. Введите **имя**и выберите **значение** из раскрывающегося списка.
+   1. Выберите **Добавить атрибут**. Введите **имя**и выберите **значение** из раскрывающегося списка.
 
-   1.  Щелкните **Сохранить**. Вы увидите новый атрибут в таблице.
+   1.  Нажмите кнопку **Сохранить**. Вы увидите новый атрибут в таблице.
 
 9. Сохраните конфигурацию.
 
@@ -163,5 +163,5 @@ Azure AD выбирает формат атрибута **NameID** (иденти
 
    В следующий раз, когда пользователь войдет в приложение, Azure AD подпишет токен SAML с помощью алгоритма SHA-1.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 [Отладка единого входа на основе SAML в приложения в Azure AD](https://azure.microsoft.com/documentation/articles/active-directory-saml-debugging).

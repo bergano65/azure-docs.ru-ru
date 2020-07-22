@@ -5,12 +5,12 @@ author: sideeksh
 manager: rochakm
 ms.topic: how-to
 ms.date: 11/27/2018
-ms.openlocfilehash: 29acd1b00d23e4f1c2f241027dadbbb406e5e049
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 7b4a622de142fd44b64015c8238f44dafc34ce72
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77190800"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86133702"
 ---
 # <a name="set-up-disaster-recovery-for-a-multi-tier-sap-netweaver-app-deployment"></a>Настройка аварийного восстановления для многоуровневого развертывания приложения SAP NetWeaver
 
@@ -24,13 +24,13 @@ ms.locfileid: "77190800"
 
 Для защиты развертывания приложений SAP NetWeaver можно использовать [Azure Site Recovery](site-recovery-overview.md). В этой статье рассматриваются рекомендации по защите трехуровневого развертывания SAP NetWeaver в Azure при репликации в другой центр обработки данных Azure с помощью Site Recovery. В этой статье описываются поддерживаемые сценарии и конфигурации, а также способы тестирования отработки отказа (детализации аварийного восстановления) и фактические отработки отказа.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем начать, необходимо знать, как выполнять следующие задачи:
 
-* [Репликация виртуальной машины в Azure](azure-to-azure-walkthrough-enable-replication.md).
-* [Проектирование сети для аварийного восстановления](site-recovery-azure-to-azure-networking-guidance.md)
-* [Выполнение тестовой отработки отказа в Azure](azure-to-azure-walkthrough-test-failover.md).
+* [Репликация виртуальной машины в Azure](./azure-to-azure-tutorial-enable-replication.md).
+* [Проектирование сети для аварийного восстановления](./azure-to-azure-about-networking.md)
+* [Выполнение тестовой отработки отказа в Azure](./azure-to-azure-tutorial-dr-drill.md).
 * [Выполнение отработки отказа в Azure](site-recovery-failover.md).
 * [Репликация контроллера домена](site-recovery-active-directory.md)
 * [Репликация экземпляра SQL Server](site-recovery-sql.md)
@@ -111,7 +111,7 @@ ms.locfileid: "77190800"
 
 ## <a name="replicate-virtual-machines"></a>Репликация виртуальных машин
 
-Чтобы начать, репликацию всех виртуальных машин приложений SAP в центре обработки данных аварийного восстановления Azure, следуйте указаниям в статье о [репликации виртуальных машин в Azure](azure-to-azure-walkthrough-enable-replication.md).
+Чтобы начать, репликацию всех виртуальных машин приложений SAP в центре обработки данных аварийного восстановления Azure, следуйте указаниям в статье о [репликации виртуальных машин в Azure](./azure-to-azure-tutorial-enable-replication.md).
 
 * Рекомендации по защите Active Directory и DNS см. [в статье защита Active Directory и DNS](site-recovery-active-directory.md).
 
@@ -119,7 +119,7 @@ ms.locfileid: "77190800"
 
 ## <a name="networking-configuration"></a>Конфигурация сети
 
-Если используется статический IP-адрес, вы можете указать нужный IP-адрес для виртуальной машины. Чтобы задать IP-адрес, перейдите в раздел >  **Параметры вычислений и**сети**Сетевая карта**.
+Если используется статический IP-адрес, вы можете указать нужный IP-адрес для виртуальной машины. Чтобы задать IP-адрес, перейдите в раздел **Параметры вычислений и**сети  >  **Сетевая карта**.
 
 ![Снимок экрана, показывающий, как установить частный IP-адрес в области карты сетевого интерфейса Site Recovery](./media/site-recovery-sap/sap-static-ip.png)
 
@@ -166,6 +166,6 @@ ms.locfileid: "77190800"
 
 Дополнительные сведения см. в статье [Отработка отказа в Site Recovery](site-recovery-failover.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше о создании решения аварийного восстановления для развертываний SAP NetWeaver с помощью Site Recovery. Ознакомьтесь с прилагаемой технической документацией [SAP NetWeaver: создание решения для аварийного восстановления с Site Recovery](https://aka.ms/asr_sap). В техническом документе рассматриваются рекомендации по различным архитектурам SAP. Вы можете просмотреть Поддерживаемые приложения и типы виртуальных машин для SAP в Azure. Существуют также параметры плана для тестирования решения аварийного восстановления.
 * Узнайте больше о [репликации других рабочих нагрузок](site-recovery-workload.md) с помощью Site Recovery.

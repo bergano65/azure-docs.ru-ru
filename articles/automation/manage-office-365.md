@@ -1,84 +1,81 @@
 ---
 title: Управление службами Office 365 с помощью службы автоматизации Azure
-description: Сведения о том, как использовать службу автоматизации Azure для управления службами подписки Office 365.
+description: В этой статье описывается, как управлять службами подписки Office 365 с помощью службы автоматизации Azure.
 services: automation
 ms.date: 04/01/2020
 ms.topic: conceptual
-ms.openlocfilehash: 9cb505ced907b143fbd6a5f4f30c818092005bb8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 91f5ac0c3adabf9880078d7a4d3703e2757cb97f
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80550426"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86185319"
 ---
-# <a name="manage-office-365-services-using-azure-automation"></a>Управление службами Office 365 с помощью службы автоматизации Azure
+# <a name="manage-office-365-services"></a>Управление службами Office 365
 
-Службу автоматизации Azure можно использовать для управления службами подписки Office 365 для таких продуктов, как Microsoft Word и Microsoft Outlook. Взаимодействие с Office 365 включается [Azure Active Directory (Azure AD)](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis). См. статью [Использование Azure AD в службе автоматизации Azure для проверки подлинности в Azure](automation-use-azure-ad.md).
-
->[!NOTE]
->Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Инструкции по установке модуля Az в гибридной рабочей роли Runbook см. в статье об [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0). Чтобы обновить модули в учетной записи службы автоматизации, см. руководство по [обновлению модулей Azure PowerShell в службе автоматизации Azure](automation-update-azure-modules.md).
+Службу автоматизации Azure можно использовать для управления службами подписки Office 365 для таких продуктов, как Microsoft Word и Microsoft Outlook. Взаимодействие с Office 365 выполняется через [Azure Active Directory (Azure AD)](../active-directory/fundamentals/active-directory-whatis.md). Сведения см. в статье [Использование Azure AD в службе автоматизации Azure для проверки подлинности в Azure](automation-use-azure-ad.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для управления службами подписки Office 365 в службе автоматизации Azure необходимо следующее.
+Для управления службами подписки Office 365 в службе автоматизации Azure вам потребуется следующее:
 
-* Подписка Azure. См. раздел [руководств по решениям подписки](https://docs.microsoft.com/azure/cloud-adoption-framework/decision-guides/subscriptions/).
-* Объект автоматизации в Azure для хранения учетных данных и модулей Runbook учетной записи пользователя. Ознакомьтесь с [введением в службу автоматизации Azure](https://docs.microsoft.com/azure/automation/automation-intro).
-* Azure AD. См. статью [Использование Azure AD в службе автоматизации Azure для проверки подлинности в Azure](automation-use-azure-ad.md).
-* Клиент Office 365 с учетной записью. См. раздел [Настройка клиента Office 365](https://docs.microsoft.com/sharepoint/dev/spfx/set-up-your-developer-tenant).
+* Подписка Azure. См. [Руководство по выбору модели подписки](/azure/cloud-adoption-framework/decision-guides/subscriptions/).
+* Объект службы автоматизации в Azure для хранения учетных данных учетной записи пользователя и последовательностей runbook. См. [Общие сведения о службе автоматизации Azure](./automation-intro.md).
+* Azure AD. Сведения см. в статье [Использование Azure AD в службе автоматизации Azure для проверки подлинности в Azure](automation-use-azure-ad.md).
+* Арендатор Office 365 и учетная запись. См. сведения в статье [Настройка клиента Office 365](/sharepoint/dev/spfx/set-up-your-developer-tenant).
 
-## <a name="installing-the-msonline-and-msonlineext-modules"></a>Установка модулей MSOnline и Мсонлиникст
+## <a name="install-the-msonline-and-msonlineext-modules"></a>Установка модулей MSOnline и MSOnlineExt
 
-Для использования Office 365 в службе автоматизации Azure требуется Microsoft Azure Active Directory для Windows PowerShell`MSOnline` (модуль). Вам также понадобится модуль [`MSOnlineExt`](https://www.powershellgallery.com/packages/MSOnlineExt/1.0.35), который упрощает управление Azure AD в средах с одним и несколькими клиентами. Установите модули, как описано в статье [Использование Azure AD в службе автоматизации Azure для проверки подлинности в Azure](automation-use-azure-ad.md).
+Чтобы использовать Office 365 в службе автоматизации Azure, требуется Microsoft Azure Active Directory для Windows PowerShell (модуль `MSOnline`). Кроме того, вам потребуется модуль [`MSOnlineExt`](https://www.powershellgallery.com/packages/MSOnlineExt/1.0.35), который упрощает управление Azure AD в средах с одним и несколькими арендаторами. Установка этих модулей описана в статье [Использование Azure AD в службе автоматизации Azure для проверки подлинности в Azure](automation-use-azure-ad.md).
 
 >[!NOTE]
->Чтобы использовать MSOnline PowerShell, необходимо быть членом Azure AD. Гостевые пользователи не могут использовать этот модуль.
+>Чтобы использовать MSOnline PowerShell, нужно быть членом Azure AD. Гостевые пользователи не могут использовать этот модуль.
 
-## <a name="creating-an-azure-automation-account"></a>Создание учетной записи службы автоматизации Azure
+## <a name="create-an-azure-automation-account"></a>Создание учетной записи службы автоматизации Azure
 
-Для выполнения действий, описанных в этой статье, требуется учетная запись в службе автоматизации Azure. См. раздел [Создание учетной записи службы автоматизации Azure](automation-quickstart-create-account.md).
+Чтобы выполнить описанные в этой статье действия, вам нужна учетная запись службы автоматизации Azure. Сведения см. в статье [Создание учетной записи службы автоматизации Azure.](automation-quickstart-create-account.md)
  
-## <a name="adding-msonline-and-msonlineext-as-assets"></a>Добавление MSOnline и Мсонлиникст в качестве ресурсов
+## <a name="add-msonline-and-msonlineext-as-assets"></a>Добавление модулей MSOnline и MSOnlineExt в качестве ресурсов
 
-Теперь добавьте установленные модули MSOnline и Мсонлиникст, чтобы включить функциональные возможности Office 365. См. статью [Управление модулями в службе автоматизации Azure](shared-resources/modules.md).
+Теперь добавьте установленные модули MSOnline и MSOnlineExt, чтобы включить возможности Office 365. Сведения см. в статье [Администрирование модулей в службе автоматизации Azure](shared-resources/modules.md).
 
-1. В портал Azure выберите **учетные записи службы автоматизации**.
-2. Выберите учетную запись службы автоматизации.
-3. В разделе **Общие ресурсы**выберите **коллекция модулей** .
-4. Выполните поиск по запросу MSOnline.
-5. Выберите модуль `MSOnline` PowerShell и нажмите кнопку **Импорт** , чтобы импортировать модуль как ресурс.
-6. Повторите шаги 4 и 5, чтобы указать и импортировать `MSOnlineExt` модуль. 
+1. На портале Azure выберите раздел **Учетные записи службы автоматизации**.
+2. Выберите нужную учетную запись службы автоматизации.
+3. Щелкните **Коллекция модулей** в разделе **Общие ресурсы**.
+4. Найдите MSOnline.
+5. Выберите модуль PowerShell `MSOnline` и щелкните **Импорт**, чтобы импортировать этот модуль в качестве ресурса.
+6. Повторите шаги 4 и 5, чтобы выбрать и импортировать модуль `MSOnlineExt`. 
 
-## <a name="creating-a-credential-asset-optional"></a>Создание ресурса учетных данных (необязательно)
+## <a name="create-a-credential-asset-optional"></a>Создание ресурса учетных данных (необязательно)
 
-Создать ресурс-контейнер учетных данных для пользователя с правами администратора Office 365, который имеет разрешения на выполнение скрипта, необязательно. Однако это может помочь предотвратить предоставление имен пользователей и паролей в сценариях PowerShell. Инструкции см. [в разделе Создание ресурса учетных данных](automation-use-azure-ad.md#creating-a-credential-asset).
+При необходимости вы можете создать ресурс учетных данных для пользователя с правами администратора Office 365, который имеет разрешения на выполнение скрипта. Это удобно для того, чтобы не предоставлять имена пользователей и пароли в скриптах PowerShell. Инструкции см. в разделе [Создание ресурса учетных данных](automation-use-azure-ad.md#create-a-credential-asset).
 
-## <a name="creating-an-office-365-service-account"></a>Создание учетной записи службы Office 365
+## <a name="create-an-office-365-service-account"></a>Создание учетной записи службы Office 365
 
-Для запуска служб подписки Office 365 требуется учетная запись службы Office 365 с разрешениями на выполнение необходимых действий. Можно использовать одну учетную запись глобального администратора, одну учетную запись для каждой службы или одну функцию или сценарий для выполнения. В любом случае учетной записи службы требуется сложный и безопасный пароль. См. раздел [Настройка Office 365 для бизнеса](https://docs.microsoft.com/microsoft-365/admin/setup/setup?view=o365-worldwide). 
+Для запуска служб подписки Office 365 требуется учетная запись службы Office 365 с разрешениями на выполнение необходимых действий. Вы можете использовать одну учетную запись глобального администратора, отдельную учетную запись для каждой службы либо создать одну функцию или скрипт для выполнения. В любом случае для учетной записи службы нужно создать сложный и безопасный пароль. Сведения см. в статье [Настройка Microsoft 365 для бизнеса](/microsoft-365/admin/setup/setup?view=o365-worldwide). 
 
-## <a name="connecting-to-the-azure-ad-online-service"></a>Подключение к веб-службе Azure AD
+## <a name="connect-to-the-azure-ad-online-service"></a>Подключение к интернет-службе AAD
 
 >[!NOTE]
 >Чтобы использовать командлеты модуля MSOnline, необходимо запустить их из Windows PowerShell. PowerShell Core не поддерживает эти командлеты.
 
-Вы можете использовать модуль MSOnline для подключения к Azure AD из подписки Office 365. Подключение использует имя пользователя и пароль Office 365 или использует многофакторную проверку подлинности (MFA). Подключиться можно с помощью портал Azure или командной строки Windows PowerShell (не требуется повышать уровень).
+Вы можете подключиться к Azure AD из подписки Office 365 с помощью модуля MSOnline. Такое подключение использует имя пользователя и пароль для Office 365 или многофакторную проверку подлинности (MFA). Подключиться можно с помощью портала Azure или из командной строки Windows PowerShell (не требуется повышать уровень).
 
-Ниже показан пример PowerShell. Командлет [Get-Credential](https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-credential?view=powershell-7) запрашивает учетные данные и сохраняет их в `Msolcred` переменной. Затем командлет [Connect-MsolService](https://docs.microsoft.com/powershell/module/msonline/connect-msolservice?view=azureadps-1.0) использует учетные данные для подключения к веб-службе Azure Directory. Если вы хотите подключиться к определенной среде Azure, используйте `AzureEnvironment` параметр.
+Ниже приведен пример для PowerShell. Командлет [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential?view=powershell-7) запрашивает учетные данные и сохраняет их в переменной `Msolcred`. Затем командлет [Connect-MsolService](/powershell/module/msonline/connect-msolservice?view=azureadps-1.0) применяет учетные данные для подключения к интернет-службе каталогов Azure. Если вы хотите подключиться к конкретной среде Azure, используйте параметр `AzureEnvironment`.
 
 ```powershell
 $Msolcred = Get-Credential
 Connect-MsolService -Credential $MsolCred -AzureEnvironment "AzureCloud"
 ```
 
-Если ошибки не появляются, подключение успешно установлено. Быстрая проверка заключается в запуске командлета Office 365, `Get-MsolUser`например, и просмотре результатов. При возникновении ошибок обратите внимание, что распространенная проблема — неверный пароль.
+Если ошибки не появляются, значит подключение успешно установлено. Это можно быстро проверить, запустив любой командлет Office 365, например `Get-MsolUser`, и просмотрев его результат. Если будут возникать ошибки, проверьте самую распространенную причину — неправильный пароль.
 
 >[!NOTE]
->Вы также можете использовать модуль AzureRM или AZ для подключения к Azure AD из подписки Office 365. Главный командлет подключения — [Connect-AzureAD](https://docs.microsoft.com/powershell/module/azuread/connect-azuread?view=azureadps-2.0). Этот командлет поддерживает `AzureEnvironmentName` параметр для конкретных сред Office 365.
+>Также для подключения к Azure AD из подписки Office 365 можно использовать модуль AzureRM или модуль Az. Основной командлет для подключения — [Connect-AzureAD](/powershell/module/azuread/connect-azuread?view=azureadps-2.0). Этот командлет поддерживает параметр `AzureEnvironmentName` для определенных сред Office 365.
 
-## <a name="creating-a-powershell-runbook-from-an-existing-script"></a>Создание модуля Runbook PowerShell из существующего скрипта
+## <a name="create-a-powershell-runbook-from-an-existing-script"></a>Создание runbook PowerShell из существующего скрипта
 
-Доступ к функциям Office 365 осуществляется из сценария PowerShell. Ниже приведен пример сценария для учетных данных `Office-Credentials` с именем пользователя. `admin@TenantOne.com` Он использует `Get-AutomationPSCredential` для импорта учетных данных Office 365.
+Доступ к возможностям Office 365 осуществляется из скрипта PowerShell. Ниже приведен пример скрипта для учетных данных с именем `Office-Credentials` и именем пользователя `admin@TenantOne.com`. Он применяет `Get-AutomationPSCredential` для импорта учетных данных Office 365.
 
 ```powershell
 $emailFromAddress = "admin@TenantOne.com" 
@@ -95,27 +92,26 @@ Send-MailMessage -Credential $credObject -From $emailFromAddress -To $emailToAdd
 $O365Licenses -SmtpServer $emailSMTPServer -UseSSL
 ```
 
-## <a name="running-the-script-in-a-runbook"></a>Выполнение скрипта в модуле Runbook
+## <a name="run-the-script-in-a-runbook"></a>Запуск скрипта в runbook
 
-Вы можете использовать скрипт в модуле Runbook службы автоматизации Azure. Например, мы будем использовать тип Runbook PowerShell.
+Вы можете применять скрипты в runbook службы автоматизации Azure. Мы продемонстрируем это на примере runbook для PowerShell.
 
-1. Создайте новый Runbook PowerShell. См. статью [Создание модуля Runbook службы автоматизации Azure](https://docs.microsoft.com/azure/automation/automation-quickstart-create-runbook).
-2. В учетной записи службы автоматизации выберите **модули Runbook** в разделе **Автоматизация процессов**.
-3. Выберите новый модуль Runbook и нажмите кнопку **изменить**.
-4. Скопируйте скрипт и вставьте его в текстовый редактор для модуля Runbook.
-5. Выберите **активы**, затем разверните **учетные данные** и убедитесь, что учетные данные Office 365 находятся там.
-6. Нажмите кнопку **Сохранить**.
-7. Выберите **область тестирования**, а затем нажмите кнопку **начать** , чтобы начать тестирование модуля Runbook. См. раздел [Управление модулями Runbook в службе автоматизации Azure](https://docs.microsoft.com/azure/automation/manage-runbooks).
+1. Создайте runbook PowerShell. Сведения см. в статье [Создание runbook службы автоматизации Azure](./automation-quickstart-create-runbook.md).
+2. В учетной записи службы автоматизации выберите **Runbook** в области **Автоматизация процессов**.
+3. Выберите runbook и щелкните **Правка**.
+4. Скопируйте скрипт и вставьте его в текстовый редактор для runbook.
+5. Выберите **Ресурсы**, а затем разверните раздел **Учетные данные** и убедитесь, что там есть учетные данные Office 365.
+6. Выберите команду **Сохранить**.
+7. Выберите **Область тестирования** и щелкните **Запустить**, чтобы начать тестирование runbook. Сведения см. в статье [Управление последовательностями runbook в службе автоматизации Azure](./manage-runbooks.md).
 8. После завершения тестирования выйдите из области тестирования.
 
-## <a name="publishing-and-scheduling-the-runbook"></a>Публикация и планирование модуля Runbook
+## <a name="publish-and-schedule-the-runbook"></a>Публикация runbook и создание расписания
 
-Сведения о публикации и планировании модуля Runbook см. [в статье Управление модулями Runbook в службе автоматизации Azure](https://docs.microsoft.com/azure/automation/manage-runbooks).
+Сведения о публикации runbook и создании расписания см. в статье [Управление последовательностями runbook в службе автоматизации Azure](./manage-runbooks.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Сведения о ресурсах учетных данных службы автоматизации можно найти в [ресурсах учетных данных в службе автоматизации Azure](shared-resources/credentials.md).
-* Сведения о работе с модулями автоматизации см. в статье [Управление модулями в службе автоматизации Azure](shared-resources/modules.md) .
-* Общие сведения об управлении Runbook см. [в статье Управление модулями Runbook в службе автоматизации Azure](https://docs.microsoft.com/azure/automation/manage-runbooks).
-* Дополнительные сведения о методах, которые можно использовать для запуска модуля Runbook в службе автоматизации Azure, см. в статье [Запуск модуля Runbook в службе автоматизации Azure](automation-starting-a-runbook.md).
-* Дополнительные сведения о PowerShell, включая Справочник по языку и обучающие модули, см. в документации по [PowerShell](https://docs.microsoft.com/powershell/scripting/overview).
+* Подробные сведения об использовании учетных данных см. в статье [Управление учетными данными в службе автоматизации Azure](shared-resources/credentials.md).
+* Дополнительные сведения о модулях можно найти в статье [Администрирование модулей в службе автоматизации Azure](shared-resources/modules.md).
+* При необходимости см. статью [Запуск runbook в службе автоматизации Azure](start-runbooks.md).
+* Дополнительные сведения о PowerShell см. в [документации по PowerShell](/powershell/scripting/overview).

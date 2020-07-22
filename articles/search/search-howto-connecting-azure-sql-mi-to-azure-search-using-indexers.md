@@ -9,10 +9,9 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: 65e483fd772e20daa73b465ea17dfa6ecde42233
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76964895"
 ---
 # <a name="configure-a-connection-from-an-azure-cognitive-search-indexer-to-sql-managed-instance"></a>Настройка подключения из индексатора Когнитивный поиск Azure к SQL Управляемый экземпляр
@@ -25,7 +24,7 @@ ms.locfileid: "76964895"
    ![Включение общедоступной конечной точки](media/search-howto-connecting-azure-sql-mi-to-azure-search-using-indexers/enable-public-endpoint.png "Включение общедоступной конечной точки")
 
 ## <a name="enable-azure-sql-managed-instance-public-endpoint"></a>Включение общедоступной конечной точки Azure SQL Управляемый экземпляр
-Вы также**можете включить**общедоступную конечную точку на существующем управляемый экземпляр SQL в разделе**открытая конечная точка** >  **безопасности** > **виртуальной сети** > .
+Вы также можете включить общедоступную конечную точку на существующем **Security**управляемый экземпляр SQL в разделе  >  **Virtual network**  >  **открытая конечная точка**безопасности виртуальной сети  >  **Enable**.
 
    ![Включение общедоступной конечной точки](media/search-howto-connecting-azure-sql-mi-to-azure-search-using-indexers/mi-vnet.png "Включение общедоступной конечной точки")
 
@@ -36,13 +35,13 @@ ms.locfileid: "76964895"
 
 > [!NOTE]
 > Индексаторы по-прежнему потребует настройки SQL Управляемый экземпляр с общедоступной конечной точкой для чтения данных.
-> Однако можно ограничить входящий доступ к этой общедоступной конечной точке, заменив текущее правило (`public_endpoint_inbound`) на два следующих правила:
+> Однако можно ограничить входящий доступ к этой общедоступной конечной точке, заменив текущее правило () на `public_endpoint_inbound` два следующих правила:
 >
-> * Разрешение входящего доступа из `AzureCognitiveSearch` [тега службы](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#available-service-tags) ("Source" = `AzureCognitiveSearch`, "Name" =) `cognitive_search_inbound`
+> * Разрешение входящего доступа из `AzureCognitiveSearch` [тега службы](https://docs.microsoft.com/azure/virtual-network/service-tags-overview#available-service-tags) ("Source" = `AzureCognitiveSearch` , "Name" = `cognitive_search_inbound` )
 >
-> * Разрешение входящего доступа с IP-адреса службы поиска, которую можно получить с помощью проверки связи с полным доменным именем (например, `<your-search-service-name>.search.windows.net`). ("SOURCE" = `IP address`, "Name" = `search_service_inbound`)
+> * Разрешение входящего доступа с IP-адреса службы поиска, которую можно получить с помощью проверки связи с полным доменным именем (например, `<your-search-service-name>.search.windows.net` ). ("SOURCE" = `IP address` , "Name" = `search_service_inbound` )
 >
-> Для каждого из этих двух правил задайте "порт" = `3342`, "протокол" = `TCP`, "назначение" = `Any`"действие" =`Allow`
+> Для каждого из этих двух правил задайте "порт" = `3342` , "протокол" = `TCP` , "назначение" = " `Any` действие" =`Allow`
 
 ## <a name="get-public-endpoint-connection-string"></a>Получение строки подключения общедоступной конечной точки
 Убедитесь, что используется строка подключения для **общедоступной конечной точки** (порт 3342, а не порт 1433).

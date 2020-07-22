@@ -2,13 +2,13 @@
 title: Руководство по Шаблоны — LUIS
 description: В этом учебнике вы примените шаблоны для улучшения прогнозирования намерений и сущностей, одновременно сокращая число примеров речевых фрагментов. Шаблон предоставляется в виде примера речевого фрагмента, который содержит синтаксис для идентификации сущностей и игнорируемый текст.
 ms.topic: tutorial
-ms.date: 05/07/2020
-ms.openlocfilehash: c9bbd521d49d669e8ebd18b29bda9f2add8f7739
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.date: 07/06/2020
+ms.openlocfilehash: 3ca8bb15d19b0fa0dd6b33d35a380c0b1b07abe0
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83592922"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86039506"
 ---
 # <a name="tutorial-add-common-pattern-template-utterance-formats-to-improve-predictions"></a>Руководство по Добавление шаблонов высказываний в стандартных форматах для улучшения прогнозирования
 
@@ -39,12 +39,10 @@ ms.locfileid: "83592922"
 
 Выполните указанные ниже действия.
 
-1.  Скачайте и сохраните [JSON-файл приложения](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/documentation-samples/tutorials/custom-domain-batchtest-HumanResources.json?raw=true).
+1.  Скачайте и сохраните [JSON-файл приложения](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/luis/apps/tutorial-fix-unsure-predictions.json?raw=true).
 
 1. Войдите на портал [LUIS](https://www.luis.ai) и выберите **Подписка** и **Ресурс для разработки**, чтобы просмотреть приложения, назначенные этому ресурсу для разработки.
-1. Импортируйте JSON-файл в новое приложение на [портале LUIS](https://www.luis.ai). На странице **Мои приложения** выберите пункт **+ New app for conversation** (Создать приложение для беседы), а затем выберите **Import as JSON** (Импортировать как JSON). Выберите файл, скачанный на предыдущем шаге.
-
-1. В разделе **Управление** на вкладке **Версии** выберите нужную активную версию и щелкните **Клонировать**. Присвойте клонированной версии имя `patterns`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. Так как имя версии используется в маршруте URL-адреса, оно не может содержать символы, которые недопустимы в URL-адресе.
+1. Импортируйте JSON-файл в новое приложение на [портале LUIS](https://www.luis.ai). На странице **Мои приложения** выберите пункт **+ New app for conversation** (Создать приложение для беседы), а затем выберите **Import as JSON** (Импортировать как JSON). Выберите файл, скачанный на предыдущем шаге, и присвойте приложению имя `Patterns tutorial`.
 
 ## <a name="create-new-intents-and-their-utterances"></a>Создание новых намерений и их высказываний
 
@@ -67,8 +65,6 @@ ms.locfileid: "83592922"
     |`Who is John W. Smith's manager?`|
     |`Who does Jill Jones directly report to?`|
     |`Who is Jill Jones supervisor?`|
-
-    Не беспокойтесь, если объект keyPhrase помечен в высказываниях намерения, а не сущности Employee. Оба они правильно прогнозированы в тестовой панели и в конечной точке.
 
 1. В левой области навигации выберите **Intents** (Намерения).
 
@@ -109,50 +105,50 @@ ms.locfileid: "83592922"
             "topIntent": "OrgChart-Manager",
             "intents": {
                 "OrgChart-Manager": {
-                    "score": 0.313054234
+                    "score": 0.326605469
                 },
                 "OrgChart-Reports": {
-                    "score": 0.2462688
+                    "score": 0.127583548
                 },
                 "EmployeeFeedback": {
-                    "score": 0.0488328524
-                },
-                "GetJobInformation": {
-                    "score": 0.0156933
+                    "score": 0.0299124215
                 },
                 "MoveEmployee": {
-                    "score": 0.011265873
+                    "score": 0.01159851
                 },
-                "Utilities.StartOver": {
-                    "score": 0.003065792
-                },
-                "Utilities.Stop": {
-                    "score": 0.00300148362
-                },
-                "Utilities.Cancel": {
-                    "score": 0.00271081156
-                },
-                "None": {
-                    "score": 0.00212835032
+                "GetJobInformation": {
+                    "score": 0.0104600191
                 },
                 "ApplyForJob": {
-                    "score": 0.0020669254
+                    "score": 0.007508645
                 },
-                "Utilities.Confirm": {
-                    "score": 0.00200891262
+                "Utilities.StartOver": {
+                    "score": 0.00359402061
+                },
+                "Utilities.Stop": {
+                    "score": 0.00336530479
                 },
                 "FindForm": {
-                    "score": 0.00194145238
+                    "score": 0.002653719
+                },
+                "Utilities.Cancel": {
+                    "score": 0.00263288687
+                },
+                "None": {
+                    "score": 0.00238638581
                 },
                 "Utilities.Help": {
-                    "score": 0.00182301877
+                    "score": 0.00226386427
+                },
+                "Utilities.Confirm": {
+                    "score": 0.00211663754
                 }
             },
             "entities": {
                 "keyPhrase": [
                     "boss of Jill Jones"
                 ],
-                "Employee": [
+                "EmployeeListEntity": [
                     [
                         "Employee-45612"
                     ]
@@ -171,9 +167,9 @@ ms.locfileid: "83592922"
                             ]
                         }
                     ],
-                    "Employee": [
+                    "EmployeeListEntity": [
                         {
-                            "type": "Employee",
+                            "type": "EmployeeListEntity",
                             "text": "Jill Jones",
                             "startIndex": 19,
                             "length": 10,
@@ -190,11 +186,7 @@ ms.locfileid: "83592922"
     }
     ```
 
-Результаты двух лучших намерений близки, но лучшее из них имеет не очень высокую оценку (чуть выше 60 %) и не сильно опережает следующее по вероятности намерение.
-
-Поскольку обучение LUIS не является каждый раз одинаковым (есть много вариантов), эти первые две оценки могут инвертироваться на следующем тренировочном цикле. В результате может быть возвращено неправильное намерение.
-
-Используйте шаблоны, чтобы сделать правильную оценку намерения значительно выше в процентах и выше от следующей самой высокой оценки.
+Спрогнозировано правильное намерение (`OrgChart-Manager`), но оценка не превышает 70 % и не намного опережает второе по вероятности намерение. Используйте шаблоны, чтобы сделать правильную оценку намерения значительно выше в процентах и выше от следующей самой высокой оценки.
 
 Не закрывайте это второе окно браузера. Вы продолжите работу с ним далее в руководстве.
 
@@ -206,16 +198,16 @@ ms.locfileid: "83592922"
 |`Who does Jill Jones report to?`|
 |`Who reports to Jill Jones?`|
 
-Эти высказывания слишком близки для определения контекстной уникальности каждого из них без использования большого числа примеров высказываний. Благодаря добавлению шаблона для намерения LUIS изучает шаблоны общих высказываний для намерения без использования слишком большого числа примеров высказываний.
+Эти речевые фрагменты слишком близки для определения контекстной уникальности каждого из них без использования _большого числа_ примеров речевых фрагментов. Благодаря добавлению шаблона для намерения LUIS изучает шаблоны общих речевых фрагментов для намерения без использования слишком большого числа примеров речевых фрагментов.
 
 К примерам шаблонов высказываний для этого намерения относятся:
 
 |Примеры высказываний шаблона|Синтаксическое значение|
 |--|--|
-|`Who does {Employee} report to[?]`|взаимозаменяемо `{Employee}`<br>игнорировать `[?]`|
-|`Who reports to {Employee}[?]`|взаимозаменяемо `{Employee}`<br>игнорировать `[?]`|
+|`Who does {EmployeeListEntity} report to[?]`|взаимозаменяемо `{EmployeeListEntity}`<br>игнорировать `[?]`|
+|`Who reports to {EmployeeListEntity}[?]`|взаимозаменяемо `{EmployeeListEntity}`<br>игнорировать `[?]`|
 
-Синтаксис `{Employee}` отмечает расположение сущности в высказывании шаблона, а также указывает, какая это сущность. Необязательный синтаксис `[?]` отмечает слова или [знаки препинания](luis-reference-application-settings.md#punctuation-normalization), которые являются необязательными. LUIS сопоставляет высказывание, игнорируя необязательный текст внутри скобок.
+Синтаксис `{EmployeeListEntity}` отмечает расположение сущности в высказывании шаблона, а также указывает, какая это сущность. Необязательный синтаксис `[?]` отмечает слова или [знаки препинания](luis-reference-application-settings.md#punctuation-normalization), которые являются необязательными. LUIS сопоставляет высказывание, игнорируя необязательный текст внутри скобок.
 
 Хотя этот синтаксис похож на регулярное выражение, он им не является. Поддерживается синтаксис только фигурной (`{}`) и квадратной (`[]`) скобок. Их можно вложить до двух уровней.
 
@@ -233,35 +225,35 @@ ms.locfileid: "83592922"
 
     |Высказывания шаблона|
     |:--|
-    |`Who is {Employee} the subordinate of[?]`|
-    |`Who does {Employee} report to[?]`|
-    |`Who is {Employee}['s] manager[?]`|
-    |`Who does {Employee} directly report to[?]`|
-    |`Who is {Employee}['s] supervisor[?]`|
-    |`Who is the boss of {Employee}[?]`|
+    |`Who is {EmployeeListEntity} the subordinate of[?]`|
+    |`Who does {EmployeeListEntity} report to[?]`|
+    |`Who is {EmployeeListEntity}['s] manager[?]`|
+    |`Who does {EmployeeListEntity} directly report to[?]`|
+    |`Who is {EmployeeListEntity}['s] supervisor[?]`|
+    |`Who is the boss of {EmployeeListEntity}[?]`|
 
-    Эти шаблоны речевого фрагмента включают сущность **Сотрудник** с нотацией фигурных скобок.
+    Эти шаблоны речевого фрагмента включают сущность **EmployeeListEntity** с нотацией фигурных скобок.
 
 1. Оставаясь на странице "Шаблоны", выберите намерение **OrgChart-Reports**, а затем введите следующие фразы шаблона.
 
     |Высказывания шаблона|
     |:--|
-    |`Who are {Employee}['s] subordinates[?]`|
-    |`Who reports to {Employee}[?]`|
-    |`Who does {Employee} manage[?]`|
-    |`Who are {Employee} direct reports[?]`|
-    |`Who does {Employee} supervise[?]`|
-    |`Who does {Employee} boss[?]`|
+    |`Who are {EmployeeListEntity}['s] subordinates[?]`|
+    |`Who reports to {EmployeeListEntity}[?]`|
+    |`Who does {EmployeeListEntity} manage[?]`|
+    |`Who are {EmployeeListEntity} direct reports[?]`|
+    |`Who does {EmployeeListEntity} supervise[?]`|
+    |`Who does {EmployeeListEntity} boss[?]`|
 
 ### <a name="query-endpoint-when-patterns-are-used"></a>Запрос конечной точки при использовании шаблонов
 
-Теперь, когда шаблоны добавлены в приложение, можно обучать, публиковать и запрашивать приложения в конечной точке среды выполнения прогноза.
+Теперь, когда шаблоны добавлены в приложение, можно обучать и публиковать приложения, а также обращаться к ним, в конечной точке среды выполнения прогноза.
 
 1. Щелкните **Обучить**. Когда обучение завершится, щелкните **Опубликовать** и выберите **Рабочий слот**, а затем щелкните **Готово**.
 
 1. Когда публикация завершится, вернитесь на вкладку браузера с URL-адресом конечной точки.
 
-1. Перейдите в конец URL-адреса в адресной строке и замените _YOUR_QUERY_HERE_ на: `Who is the boss of Jill Jones?`
+1. Перейдите в конец URL-адреса в адресной строке и убедитесь, что запрос `Who is the boss of Jill Jones?` не изменен, а затем отправьте URL-адрес для нового прогноза.
 
     ```json
     {
@@ -270,50 +262,50 @@ ms.locfileid: "83592922"
             "topIntent": "OrgChart-Manager",
             "intents": {
                 "OrgChart-Manager": {
-                    "score": 0.999997854
+                    "score": 0.999999046
                 },
                 "OrgChart-Reports": {
-                    "score": 6.13748343E-05
+                    "score": 3.237443E-05
                 },
                 "EmployeeFeedback": {
-                    "score": 8.052567E-06
+                    "score": 4.364242E-06
                 },
                 "GetJobInformation": {
-                    "score": 1.18197136E-06
+                    "score": 1.616159E-06
                 },
                 "MoveEmployee": {
-                    "score": 7.65549657E-07
-                },
-                "None": {
-                    "score": 3.975E-09
-                },
-                "Utilities.StartOver": {
-                    "score": 1.53E-09
-                },
-                "Utilities.Confirm": {
-                    "score": 1.38181822E-09
-                },
-                "Utilities.Help": {
-                    "score": 1.38181822E-09
-                },
-                "Utilities.Stop": {
-                    "score": 1.38181822E-09
-                },
-                "Utilities.Cancel": {
-                    "score": 1.25833333E-09
-                },
-                "FindForm": {
-                    "score": 1.15384613E-09
+                    "score": 7.575752E-07
                 },
                 "ApplyForJob": {
-                    "score": 5.26923061E-10
+                    "score": 5.234157E-07
+                },
+                "None": {
+                    "score": 3.3E-09
+                },
+                "Utilities.StartOver": {
+                    "score": 1.26E-09
+                },
+                "FindForm": {
+                    "score": 1.13636367E-09
+                },
+                "Utilities.Cancel": {
+                    "score": 1.13636367E-09
+                },
+                "Utilities.Confirm": {
+                    "score": 1.13636367E-09
+                },
+                "Utilities.Help": {
+                    "score": 1.13636367E-09
+                },
+                "Utilities.Stop": {
+                    "score": 1.13636367E-09
                 }
             },
             "entities": {
                 "keyPhrase": [
                     "boss of Jill Jones"
                 ],
-                "Employee": [
+                "EmployeeListEntity": [
                     [
                         "Employee-45612"
                     ]
@@ -332,9 +324,9 @@ ms.locfileid: "83592922"
                             ]
                         }
                     ],
-                    "Employee": [
+                    "EmployeeListEntity": [
                         {
-                            "type": "Employee",
+                            "type": "EmployeeListEntity",
                             "text": "Jill Jones",
                             "startIndex": 19,
                             "length": 10,
@@ -351,7 +343,7 @@ ms.locfileid: "83592922"
     }
     ```
 
-Прогнозирование намерений теперь выполняется значительно более уверенно, а оценка второго по вероятности намерения стала значительно ниже. Теперь эти два намерения не будут меняться местами при обучении.
+Прогнозирование намерений теперь значительно точнее, а оценка второго по вероятности намерения стала намного ниже. Теперь эти два намерения не будут меняться местами при обучении.
 
 ### <a name="working-with-optional-text-and-prebuilt-entities"></a>Работа с предварительно созданными сущностями и необязательным текстом
 
@@ -372,8 +364,8 @@ ms.locfileid: "83592922"
 
 |Блокировка с намерением|Примеры высказываний с предварительно созданными сущностями и необязательным текстом|
 |:--|:--|
-|OrgChart-Manager|`who was {Employee}['s] manager [[on]{datetimeV2}?]`|
-|OrgChart-Manager|`who is {Employee}['s] manager [[on]{datetimeV2}?]`|
+|OrgChart-Manager|`who was {EmployeeListEntity}['s] manager [[on]{datetimeV2}?]`|
+|OrgChart-Manager|`who is {EmployeeListEntity}['s] manager [[on]{datetimeV2}?]`|
 
 
 За счет использования синтаксиса с квадратными скобками (`[]`) этот необязательный текст легко добавить в высказывание шаблона и вложить вплоть до второго уровня (`[[]]`). Кроме того, вы можете добавить сущности или текст.
@@ -383,9 +375,10 @@ ms.locfileid: "83592922"
 
 **Вопрос. Почему предварительно созданная числовая часть шаблона высказывания March 3 не прогнозируется как число `3` и дата `March 3`?** В зависимости от контекста высказывание шаблона прогнозирует дату буквально (`March 3`) или абстрагировано (`in a month`). Дата может содержать число, но число не обязательно рассматривается как дата. Всегда используйте сущность, которая лучше всего представляет тип, который вы хотите вернуть в результатах прогнозирования JSON.
 
-**Вопрос. Как насчет плохо сформулированных высказываний, например `Who will {Employee}['s] manager be on March 3?`?** Грамматически разные временные глаголы, например глаголы с разделенными частями `will` и `be`, должны быть добавлены как новое высказывание шаблона. Имеющееся высказывание шаблона не сопоставит эти глаголы. Хотя намерение не изменилось, изменилась расстановка слов в высказывании. Это изменение влияет на прогноз в LUIS. Вы можете [группировать и (или)](#use-the-or-operator-and-groups) глаголы разных времен, чтобы объединять эти фразы.
+**Вопрос. Как насчет плохо сформулированных высказываний, например `Who will {EmployeeListEntity}['s] manager be on March 3?`?** Грамматически разные временные глаголы, например глаголы с разделенными частями `will` и `be`, должны быть добавлены как новое высказывание шаблона. Имеющееся высказывание шаблона не сопоставит эти глаголы. Хотя намерение не изменилось, изменилась расстановка слов в высказывании. Это изменение влияет на прогноз в LUIS. Вы можете [группировать и (или)](#use-the-or-operator-and-groups) глаголы разных времен, чтобы объединять эти фразы.
 
-**Помните: сначала находятся сущности, а затем сравнивается шаблон.**
+> [!CAUTION]
+> **Помните: сначала находятся сущности, а затем сравнивается шаблон.**
 
 ### <a name="add-new-pattern-template-utterances"></a>Добавление новых высказываний шаблона
 
@@ -393,9 +386,9 @@ ms.locfileid: "83592922"
 
     |Блокировка с намерением|Примеры высказываний с предварительно созданными сущностями и необязательным текстом|
     |--|--|
-    |OrgChart-Manager|`who was {Employee}['s] manager [[on]{datetimeV2}?]`|
-    |OrgChart-Manager|`who will be {Employee}['s] manager [[in]{datetimeV2}?]`|
-    |OrgChart-Manager|`who will be {Employee}['s] manager [[on]{datetimeV2}?]`|
+    |OrgChart-Manager|`who was {EmployeeListEntity}['s] manager [[on]{datetimeV2}?]`|
+    |OrgChart-Manager|`who will be {EmployeeListEntity}['s] manager [[in]{datetimeV2}?]`|
+    |OrgChart-Manager|`who will be {EmployeeListEntity}['s] manager [[on]{datetimeV2}?]`|
 
 2. Выберите **Обучение** на панели навигации, чтобы обучить приложение.
 
@@ -403,7 +396,7 @@ ms.locfileid: "83592922"
 
 4. Введите несколько тестовых высказываний, чтобы проверить сопоставление шаблона и достаточно ли высока оценка намерения.
 
-    Когда введете первое высказывание, выберите **Inspect** (Проверить), чтобы просмотреть все результаты прогнозирования. Каждая фраза должна иметь намерение **OrgChart Manager** и должна извлечь значения для объектов сотрудника и datetimeV2.
+    Когда введете первое высказывание, выберите **Inspect** (Проверить), чтобы просмотреть все результаты прогнозирования. Каждый речевой фрагмент должен иметь намерение **OrgChart Manager** и извлекать значения для сущностей `EmployeeListEntity` и `datetimeV2`.
 
     |Фраза|
     |--|
@@ -425,18 +418,21 @@ ms.locfileid: "83592922"
 
 Некоторые фразы из предыдущего шаблона очень похожи. Используйте синтаксис **групп**`()` и **OR**`|` для уменьшения числа шаблонов речевых фрагментов.
 
-Следующие 2 шаблона можно объединить в один с помощью синтаксиса группы `()` и OR `|`.
+Следующие два шаблона можно объединить в один с помощью синтаксиса групп (`()`) и синтаксиса OR (`|`).
 
 |Блокировка с намерением|Примеры высказываний с предварительно созданными сущностями и необязательным текстом|
 |--|--|
-|OrgChart-Manager|`who will be {Employee}['s] manager [[in]{datetimeV2}?]`|
-|OrgChart-Manager|`who will be {Employee}['s] manager [[on]{datetimeV2}?]`|
+|OrgChart-Manager|`who will be {EmployeeListEntity}['s] manager [[in]{datetimeV2}?]`|
+|OrgChart-Manager|`who will be {EmployeeListEntity}['s] manager [[on]{datetimeV2}?]`|
 
 Новый шаблон фразы будет выглядеть следующим образом.
 
-`who ( was | is | will be ) {Employee}['s] manager [([in]|[on]){datetimeV2}?]`.
+`who ( was | is | will be ) {EmployeeListEntity}['s] manager [([in]|[on]){datetimeV2}?]`.
 
 В нем используется **группа** вокруг необходимого времени глагола и возможный союз `in` и `on` с каналом **OR** между ними.
+
+> [!NOTE]
+> Когда используете символ _OR_ `|` (вертикальная черта) в примере шаблона, обязательно вставьте пробел перед этим символом и после него.
 
 1. На странице **Шаблоны** выберите фильтр **OrgChart-Manager**. Сократите список, выполнив поиск `manager`.
 
@@ -444,7 +440,7 @@ ms.locfileid: "83592922"
 
 1. Измените шаблонную фразу следующим образом.
 
-    `who ( was | is | will be ) {Employee}['s] manager [([in]|[on]){datetimeV2}?]`
+    `who ( was | is | will be ) {EmployeeListEntity}['s] manager [([in]|[on]){datetimeV2}?]`
 
 2. Выберите **Обучение** на панели навигации, чтобы обучить приложение.
 

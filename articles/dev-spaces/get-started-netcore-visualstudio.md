@@ -7,12 +7,12 @@ ms.date: 07/09/2018
 ms.topic: tutorial
 description: В этом руководстве описано, как использовать Azure Dev Spaces и Visual Studio для отладки и быстрого выполнения итерации приложения .NET Core в службе Azure Kubernetes
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
-ms.openlocfilehash: f3be10929a9a0df23529348f2c62e35f2ebaa850
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: ba90cbc8bc0267f1fba8c9495886bdc8ce2ac5e3
+ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75770719"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83995910"
 ---
 # <a name="create-a-kubernetes-dev-space-visual-studio-and-net-core-with-azure-dev-spaces"></a>Создание пространства разработки Kubernetes: Visual Studio и .NET Core в Azure Dev Spaces
 
@@ -26,31 +26,62 @@ ms.locfileid: "75770719"
 > [!Note]
 > **Если на каком-то этапе у вас возникли трудности**, см. раздел об [устранении неполадок](troubleshooting.md).
 
+## <a name="install-the-azure-cli"></a>Установка Azure CLI
+Для Azure Dev Spaces требуется минимальная настройка локального компьютера. Большая часть конфигурации среды разработки хранится в облаке и доступна для других пользователей. Начните со скачивания и запуска [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).
+
+### <a name="sign-in-to-azure-cli"></a>Вход в Azure CLI
+Войдите в Azure. В окне терминала введите следующую команду:
+
+```azurecli
+az login
+```
+
+> [!Note]
+> Если у вас нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free).
+
+#### <a name="if-you-have-multiple-azure-subscriptions"></a>Если у вас несколько подписок Azure...
+Можно просматривать свои подписки, выполнив следующую команду: 
+
+```azurecli
+az account list --output table
+```
+
+Найдите подписку со значением *True* для параметра *IsDefault*.
+Если это не та подписка, которую нужно использовать, вы можете изменить подписку по умолчанию:
+
+```azurecli
+az account set --subscription <subscription ID>
+```
 
 ## <a name="create-a-kubernetes-cluster-enabled-for-azure-dev-spaces"></a>Создание и включение кластера Kubernetes для Azure Dev Spaces
 
-1. Войдите на портал Azure по адресу https://portal.azure.com.
-1. Выберите **Создать ресурс**, выполните поиск **Kubernetes**, затем выберите **Kubernetes Service** (Служба Kubernetes)  > **Создать**.
+В командной строке создайте группу ресурсов в [регионе, который поддерживает Azure Dev Spaces][supported-regions].
 
-   Выполните следующие шаги под каждым заголовком формы *Создание кластера Kubernetes* и убедитесь, что выбранный вами [регион поддерживает Azure Dev Spaces][supported-regions].
+```azurecli
+az group create --name MyResourceGroup --location <region>
+```
 
-   - **Сведения о проекте**: выберите подписку Azure и создайте новую или выберите существующую группу ресурсов Azure.
-   - **CLUSTER DETAILS** (Сведения о кластере): введите имя, регион, версию и префикс DNS-имени для кластера AKS.
-   - **Масштаб**. Выберите размер виртуальной машины для узлов агента AKS и количество узлов. Если вы только начинаете работать с Azure Dev Spaces, одного узла будет достаточно, чтобы ознакомиться с функциями. После развертывания кластера вы сможете легко изменить количество узлов в любое время. Обратите внимание, что размер виртуальной машины невозможно изменить после создания кластера AKS. Но после развертывания кластера AKS можно легко создать новый кластер с виртуальными машинами большего размера и с помощью Dev Spaces выполнить повторное развертывание в большем кластере, если требуется масштабировать ресурсы.
+Чтобы создать кластер Kubernetes, выполните следующую команду:
 
-   ![Параметры конфигурации Kubernetes](media/common/Kubernetes-Create-Cluster-2.PNG)
+```azurecli
+az aks create -g MyResourceGroup -n MyAKS --location <region> --generate-ssh-keys
+```
 
+Создание кластера занимает несколько минут.
 
-   По завершении выберите **Next: Authentication** (Далее: аутентификация).
+### <a name="configure-your-aks-cluster-to-use-azure-dev-spaces"></a>Настройка кластера AKS для использования Azure Dev Spaces
 
-1. Выберите нужный параметр для управления доступом на основе ролей (RBAC). Служба Azure Dev Spaces поддерживает кластеры как с включенным, так и с отключенным механизмом RBAC.
+В окне командной строки Azure CLI введите приведенную ниже команду, используя группу ресурсов, в которую входит кластер AKS, и имя кластера AKS. Эта команда настраивает в кластере поддержку Azure Dev Spaces.
 
-    ![Параметр RBAC](media/common/k8s-RBAC.PNG)
-
-1. Выберите **Review + create** (Проверить и создать), а по завершении щелкните **Create** (Создать).
+   ```azurecli
+   az aks use-dev-spaces -g MyResourceGroup -n MyAKS
+   ```
+   
+> [!IMPORTANT]
+> Процесс настройки Azure Dev Spaces удалит пространство имен `azds` в кластере, если оно существует.
 
 ## <a name="get-the-visual-studio-tools"></a>Получение средств Visual Studio
-Установите последнюю версию [Visual Studio 2017](https://www.visualstudio.com/vs/). Для Visual Studio 2019 в Windows следует установить рабочую нагрузку для разработки в Azure. Для Visual Studio 2017 в Windows необходимо установить рабочую нагрузку для разработки приложений ASP.NET и веб-приложений, а также [Средства Visual Studio для Kubernetes](https://aka.ms/get-azds-visualstudio).
+Установите в Windows последнюю версию [Visual Studio 2019](https://www.visualstudio.com/vs/) с рабочей нагрузкой для разработки в Azure.
 
 ## <a name="create-a-web-app-running-in-a-container"></a>Создание веб-приложения для работы в контейнере
 

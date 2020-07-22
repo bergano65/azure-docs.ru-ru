@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 65167169248d83ebfec2c49c308673ec9315934e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: ab772bd9cb415045ef70cb4cf9a518791befb192
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77019763"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86507675"
 ---
 # <a name="migrating-data-to-azure-vmware-solution-by-using-azure-data-box"></a>Перенос данных в решение VMware для Azure с помощью Azure Data Box
 
@@ -38,7 +38,7 @@ ms.locfileid: "77019763"
 * Для миграции данных виртуальной машины для настройки сред разработки и тестирования.
 * Для переноса большого количества шаблонов виртуальных машин, ISO-файлов и дисков виртуальных машин.
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 * Проверьте предварительные требования и [порядок Data Box](../databox/data-box-deploy-ordered.md) с помощью портал Azure. В процессе заказа необходимо выбрать учетную запись хранения, которая включает хранилище BLOB-объектов. Получив устройство Data Box, подключите его к локальной сети и [Настройте устройство](../databox/data-box-deploy-set-up.md) с IP-адресом, который доступен из сети управления vSphere.
 
@@ -54,7 +54,7 @@ ms.locfileid: "77019763"
 
     ![Настройка клиентского доступа NFS 1](media/nfs-client-access.png)
 
-2. Введите IP-адрес узлов VMware ESXi и нажмите кнопку **Добавить**. Вы можете настроить доступ для всех узлов в кластере vSphere, повторив этот шаг. Нажмите кнопку **OK**.
+2. Введите IP-адрес узлов VMware ESXi и нажмите кнопку **Добавить**. Вы можете настроить доступ для всех узлов в кластере vSphere, повторив этот шаг. Щелкните **ОК**.
 
     ![Настройка клиентского доступа NFS 2](media/nfs-client-access2.png)
 > [!IMPORTANT]
@@ -64,8 +64,8 @@ ms.locfileid: "77019763"
 
 В следующей таблице приведен UNC-путь к общим папкам в Data Box и URL-адрес службы хранилища Azure, куда отправляются данные. Конечный URL-адрес службы хранилища Azure может быть производным от UNC-пути к общей папке.
  
-|                   |                                                            |
-|-------------------|--------------------------------------------------------------------------------|
+| Большие двоичные объекты и файлы | Путь и URL-адрес |
+|---------------- | ------------ |
 | Блочные BLOB-объекты Azure | <li>UNC-путь к общим папкам: `//<DeviceIPAddress>/<StorageAccountName_BlockBlob>/<ContainerName>/files/a.txt`</li><li>URL-адрес службы хранилища Azure: `https://<StorageAccountName>.blob.core.windows.net/<ContainerName>/files/a.txt`</li> |  
 | Страничные BLOB-объекты Azure  | <li>UNC-путь к общим папкам: `//<DeviceIPAddres>/<StorageAccountName_PageBlob>/<ContainerName>/files/a.txt`</li><li>URL-адрес службы хранилища Azure: `https://<StorageAccountName>.blob.core.windows.net/<ContainerName>/files/a.txt`</li>   |  
 | Файлы Azure       |<li>UNC-путь к общим папкам: `//<DeviceIPAddres>/<StorageAccountName_AzFile>/<ShareName>/files/a.txt`</li><li>URL-адрес службы хранилища Azure: `https://<StorageAccountName>.file.core.windows.net/<ShareName>/files/a.txt`</li>        |
@@ -91,7 +91,7 @@ ms.locfileid: "77019763"
 
    ![Добавление нового хранилища данных — версия NFS](media/databox-migration-add-datastore-nfs-version.png)
 
-5. На шаге 3 мастера укажите имя хранилища данных, путь и сервер. Для сервера можно использовать IP-адрес Data Box. Путь к папке будет иметь `/<StorageAccountName_BlockBlob>/<ContainerName>/` формат.
+5. На шаге 3 мастера укажите имя хранилища данных, путь и сервер. Для сервера можно использовать IP-адрес Data Box. Путь к папке будет иметь `/<StorageAccountName_BlockBlob>/<ContainerName>/` Формат.
 
    ![Добавление нового хранилища данных — конфигурация NFS](media/databox-migration-add-datastore-nfs-configuration.png)
 
@@ -133,7 +133,7 @@ ms.locfileid: "77019763"
 
 ### <a name="clone-a-virtual-machine-or-a-virtual-machine-template-to-the-data-box-datastore"></a>Клонирование виртуальной машины или шаблона виртуальной машины в хранилище данных Data Box
 
-1. Щелкните правой кнопкой мыши виртуальную машину или шаблон виртуальной машины, который необходимо клонировать. Выберите **клонировать** > **клон в виртуальную машину**.
+1. Щелкните правой кнопкой мыши виртуальную машину или шаблон виртуальной машины, который необходимо клонировать. Выберите **клонировать**  >  **клон в виртуальную машину**.
 
     ![Клон виртуальной машины](media/databox-migration-vm-clone.png)
 
@@ -227,12 +227,12 @@ ms.locfileid: "77019763"
 
 4. Установите [AzCopy на виртуальной машине Linux](../storage/common/storage-use-azcopy-v10.md).
 
-5. Скачайте данные из хранилища BLOB-объектов Azure на управляемый диск с помощью AzCopy.  Синтаксис команды: `azcopy copy "https://<storage-account-name>.blob.core.windows.net/<container-name>/*" "<local-directory-path>/"`.  Замените `<storage-account-name>` именем учетной записи хранения Azure и `<container-name>` контейнером, который содержит данные, скопированные с помощью Data Box.
+5. Скачайте данные из хранилища BLOB-объектов Azure на управляемый диск с помощью AzCopy.  Синтаксис команды: `azcopy copy "https://<storage-account-name>.blob.core.windows.net/<container-name>/*" "<local-directory-path>/"` .  Замените `<storage-account-name>` именем учетной записи хранения Azure и `<container-name>` контейнером, который содержит данные, скопированные с помощью Data Box.
 
 6. Установите NFS Server на виртуальной машине Linux:
 
-    - В дистрибутиве Ubuntu/Debian: `sudo apt install nfs-kernel-server`.
-    - В дистрибутиве Enterprise Linux: `sudo yum install nfs-utils`.
+    - В дистрибутиве Ubuntu/Debian: `sudo apt install nfs-kernel-server` .
+    - В дистрибутиве Enterprise Linux: `sudo yum install nfs-utils` .
 
 7. Измените разрешения папки на управляемом диске, куда были скопированы данные из хранилища BLOB-объектов Azure.  Измените разрешения для всех папок, которые требуется экспортировать в общую папку NFS.
 
@@ -241,7 +241,7 @@ ms.locfileid: "77019763"
     chown nfsnobody:nfsnobody /<folder>/<subfolder>
     ```
 
-8. Назначьте разрешения для IP-адресов клиента для доступа к общему ресурсу `/etc/exports` NFS, отредактировав файл.
+8. Назначьте разрешения для IP-адресов клиента для доступа к общему ресурсу NFS, отредактировав `/etc/exports` файл.
 
     ```bash
     sudo vi /etc/exports
@@ -279,7 +279,7 @@ ms.locfileid: "77019763"
 
    ![Добавление нового хранилища данных — версия NFS](media/databox-migration-add-datastore-nfs-version.png)
 
-5. На шаге 3 мастера укажите имя хранилища данных, путь и сервер.  Для сервера можно использовать IP-адрес виртуальной машины Linux.  Путь к папке будет иметь `/<folder>/<subfolder>/` формат.
+5. На шаге 3 мастера укажите имя хранилища данных, путь и сервер.  Для сервера можно использовать IP-адрес виртуальной машины Linux.  Путь к папке будет иметь `/<folder>/<subfolder>/` Формат.
 
    ![Добавление нового хранилища данных — конфигурация NFS](media/databox-migration-add-datastore-nfs-configuration.png)
 
@@ -327,7 +327,7 @@ ms.locfileid: "77019763"
     
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о [Data Box](../databox/data-box-overview.md).
 * Узнайте больше о различных вариантах [переноса рабочих нагрузок в частное облако](migrate-workloads.md).

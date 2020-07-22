@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/29/2019
 ms.author: jeedes
-ms.openlocfilehash: 2104768f8842910bf83239e86106d288d7ad9baf
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 850923940c60212ad99729b8dbd002d8f9083a0b
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67086343"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86167170"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zenqms"></a>Руководство. Интеграция Azure Active Directory с ZenQMS
 
@@ -115,11 +115,8 @@ ms.locfileid: "67086343"
 
     В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате:
 
-    | |
-    |-|-|
-    | `https://<INSTANCE>.zenqms.com/<ID>`|
-    | `https://<INSTANCE>.zenqms.com/<EMAIL DOMAIN>/`|
-    | |
+    - `https://<INSTANCE>.zenqms.com/<ID>`
+    - `https://<INSTANCE>.zenqms.com/<EMAIL DOMAIN>/`
 
     > [!NOTE]
     > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [группу поддержки клиентов ZenQMS](mailto:help@zenqms.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

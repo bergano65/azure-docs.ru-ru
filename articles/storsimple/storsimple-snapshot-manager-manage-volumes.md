@@ -9,17 +9,17 @@ editor: ''
 ms.assetid: 78896323-e57c-431e-bbe2-0cbde1cf43a2
 ms.service: storsimple
 ms.devlang: NA
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 04/18/2016
 ms.author: twooley
-ms.openlocfilehash: f09d4dd46a50f1794e51342a939b8919c5c523ef
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: b27cf605c978e15d81a43db3371a71b0ccc48c8d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79254655"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85508926"
 ---
 # <a name="use-storsimple-snapshot-manager-to-view-and-manage-volumes"></a>Просмотр томов и управление ими с помощью диспетчера моментальных снимков StorSimple
 ## <a name="overview"></a>Обзор
@@ -91,9 +91,9 @@ ms.locfileid: "79254655"
    
     ![Настройка столбцов](./media/storsimple-snapshot-manager-manage-volumes/HCS_SSM_View_volumes.png)
    
-   | Столбец на панели «Результаты» | Описание |
+   | Столбец на панели «Результаты» | Описание: |
    |:--- |:--- |
-   |  Имя |Столбец **Имя** содержит букву диска, назначенную каждому найденному тому. |
+   |  name |Столбец **Имя** содержит букву диска, назначенную каждому найденному тому. |
    |  Устройство |Столбец **Устройство** содержит IP-адрес устройства, подключенного к главному компьютеру. |
    |  Имя тома устройства |Столбец **Имя тома устройства** содержит имя тома устройства, которому принадлежит выбранный том. Это имя определено на портале Azure для этого же тома. |
    |  Пути доступа |Столбец **Пути доступа** отображает путь доступа к тому. Это буква диска или точка подключения, через которую можно получить доступ к тому на главном компьютере. |

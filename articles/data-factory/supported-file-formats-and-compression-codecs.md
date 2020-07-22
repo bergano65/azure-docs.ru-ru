@@ -1,22 +1,22 @@
 ---
-title: Поддерживаемые форматы файлов в фабрике данных Azure
-description: В этой статье описаны форматы файлов и коды сжатия, поддерживаемые соединителями на основе файлов в фабрике данных Azure.
+title: Поддерживаемые форматы файлов действием копирования в фабрике данных Azure
+description: В этом разделе описываются форматы файлов и коды сжатия, поддерживаемые действием копирования в фабрике данных Azure.
 author: linda33wj
 manager: shwang
 ms.reviewer: craigg
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 12/10/2019
+ms.date: 07/16/2020
 ms.author: jingwang
-ms.openlocfilehash: dbcfad3dd3db9f5c9431e07d85d77a77a10283c4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c044208699bf5bebb6383cfef00bf53b744369d0
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81419040"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86522451"
 ---
-# <a name="supported-file-formats-and-compression-codecs-in-azure-data-factory"></a>Поддерживаемые форматы файлов и кодеки сжатия в фабрике данных Azure
+# <a name="supported-file-formats-and-compression-codecs-by-copy-activity-in-azure-data-factory"></a>Поддерживаемые форматы файлов и кодеки сжатия для действия копирования в фабрике данных Azure
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 *Эта статья относится к следующим соединителям: [Amazon S3](connector-amazon-simple-storage-service.md), [большой двоичный объект Azure](connector-azure-blob-storage.md), [Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md), [Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md), [хранилище файлов Azure](connector-azure-file-storage.md), [Файловая система](connector-file-system.md), [FTP](connector-ftp.md), [облачное хранилище](connector-google-cloud-storage.md), [HDFS](connector-hdfs.md), [http](connector-http.md)и [SFTP](connector-sftp.md).*
@@ -27,15 +27,15 @@ ms.locfileid: "81419040"
 
 Кроме того, можно выполнять синтаксический анализ или создание файлов определенного формата. Например, можно выполнить следующие действия.
 
-* Копирование данных из локальной базы данных SQL Server и запись в Azure Data Lake Storage 2-го поколения в формате Parquet.
+* Копирование данных из базы данных SQL Server и запись в Azure Data Lake Storage 2-го поколения в формате Parquet.
 * Копирование файлов в текстовом формате (CSV) из локальной файловой системы и запись в хранилище BLOB-объектов Azure в формате Avro.
 * Скопируйте ZIP-файлы из локальной файловой системы, распакуйте их в оперативном режиме и запишите извлеченные файлы в Azure Data Lake Storage 2-го поколения.
 * Копирование данных в формате сжатого текста gzip (CSV) из хранилища BLOB-объектов Azure и их запись в базу данных SQL Azure.
 * Многие другие действия, требующие сериализации, десериализации или сжатия и распаковки.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. другие статьи о действиях копирования:
 
-- [Общие сведения о действии копирования](copy-activity-overview.md)
-- [Производительность действия копирования](copy-activity-performance.md)
+- [Действие копирования в фабрике данных Azure](copy-activity-overview.md)
+- [Руководство по настройке производительности действия копирования](copy-activity-performance.md)

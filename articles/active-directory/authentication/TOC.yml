@@ -36,6 +36,8 @@
       items:
         - name: Принципы работы MFA
           href: concept-mfa-howitworks.md
+        - name: Приглашения и время существования сеанса
+          href: concepts-azure-multi-factor-authentication-prompts-session-lifetime.md
         - name: Местонахождение данных
           href: concept-mfa-data-residency.md
         - name: Лицензии
@@ -80,6 +82,8 @@
           href: howto-mfa-userstates.md
         - name: Настройка поставщиков проверки подлинности
           href: concept-mfa-authprovider.md
+        - name: Использование паролей приложений
+          href: howto-mfa-app-passwords.md
         - name: Федерация Active Directory
           items:
             - name: Адаптер AD FS для Windows Server 2016
@@ -169,6 +173,8 @@
           href: howto-mfaserver-deploy-userportal.md
         - name: Веб-служба мобильного приложения
           href: howto-mfaserver-deploy-mobileapp.md
+        - name: Настройка параметров
+          href: howto-mfa-server-settings.md
         - name: Настройка высокой доступности
           href: howto-mfaserver-deploy-ha.md
         - name: Обновление сервера MFA
@@ -219,6 +225,8 @@
       href: 'https://azure.microsoft.com/resources/samples/?service=active-directory'
     - name: Командлеты Azure PowerShell
       href: /powershell/azure/overview
+    - name: "REST\_API Microsoft Graph, бета-версия"
+      href: /graph/api/resources/authenticationmethods-overview?view=graph-rest-beta
     - name: Ограничения службы
       href: ../users-groups-roles/directory-service-limits-restrictions.md
 - name: Ресурсы

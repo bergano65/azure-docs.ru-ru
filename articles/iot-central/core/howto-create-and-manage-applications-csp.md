@@ -9,10 +9,9 @@ ms.date: 08/23/2019
 ms.topic: how-to
 manager: philmea
 ms.openlocfilehash: 02481d5dcbaba15c9b17a27348207d9af64f3355
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80982044"
 ---
 # <a name="create-and-manage-an-azure-iot-central-application-from-the-csp-portal"></a>Создание приложения IoT Central Azure и управление им на портале CSP
@@ -65,7 +64,7 @@ URL-адрес приложения будет создан автоматиче
 
 Дополнительные сведения см. в [документации по Azure Active Directory](https://docs.microsoft.com/azure/active-directory/).
 
-## <a name="azure-subscription"></a>Подписка Azure
+## <a name="azure-subscription"></a>Подписка Azure.
 
 Подписка Azure позволяет создавать экземпляры служб Azure. Azure IoT Central автоматически обнаруживает все подписки Azure клиента, к которым у вас есть доступ, и отображает их в раскрывающемся списке на странице **Создание приложения**. Выберите подписку Azure, чтобы создать приложение Azure IoT Central.
 

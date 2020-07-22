@@ -7,10 +7,9 @@ ms.service: media-services
 ms.topic: reference
 ms.date: 04/20/2020
 ms.openlocfilehash: d1ad0cbe30ce20e61a31f0534a47fe031f6f257b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81727272"
 ---
 # <a name="api"></a>API #
@@ -19,7 +18,7 @@ ms.locfileid: "81727272"
 
 ## <a name="referencing-the-player"></a>Ссылка на проигрыватель ##
 
-Чтобы использовать функции API, необходим доступ к объекту Player. К счастью, ее легко получить. Необходимо только убедиться, что у тега Video есть идентификатор. Пример кода внедрения имеет идентификатор `vid1`. Если на одной странице есть несколько видеороликов, убедитесь, что каждый тег видео имеет уникальный идентификатор.
+Чтобы использовать функции API, необходим доступ к объекту Player. К счастью, ее легко получить. Необходимо только убедиться, что у тега Video есть идентификатор. Пример кода внедрения имеет идентификатор `vid1` . Если на одной странице есть несколько видеороликов, убедитесь, что каждый тег видео имеет уникальный идентификатор.
 
 `var myPlayer = amp('vid1');`
 
@@ -39,7 +38,7 @@ ms.locfileid: "81727272"
     });
 ```
 
-ИЛИ
+OR
 
 ```javacript
     var myPlayer = amp("vid_1", myOptions, function(){

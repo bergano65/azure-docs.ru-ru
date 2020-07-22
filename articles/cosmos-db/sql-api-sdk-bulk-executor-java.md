@@ -1,65 +1,66 @@
 ---
-title: 'Azure Cosmos DB: API Java для пакетного исполнителя, ресурсы & SDK'
+title: Azure Cosmos DB — API-интерфейс Java, пакет SDK и ресурсы для исполнителя массовых операций
 description: Сведения о пакете SDK и API Java массового исполнителя, включая даты выхода и прекращения использования, а также изменения, внесенные в каждую версию пакета SDK Java массового исполнителя в Azure Cosmos DB.
-author: milismsft
+author: anfeldma-ms
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: java
 ms.topic: reference
-ms.date: 11/21/2018
-ms.author: adrianmi
-ms.openlocfilehash: 0030f974a36dc80dc8c4112000aa5934126a2482
-ms.sourcegitcommit: 11572a869ef8dbec8e7c721bc7744e2859b79962
-ms.translationtype: MT
+ms.date: 05/11/2020
+ms.author: anfeldma
+ms.openlocfilehash: 766981d355c5f24e817ea5d626aefd0d0e9bed05
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82836450"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85392086"
 ---
-# <a name="java-bulk-executor-library-download-information"></a>Библиотека массового исполнителя Java — информация о скачивании
+# <a name="java-bulk-executor-library-download-information"></a>Библиотека Bulk Executor для Java: информация о скачивании
 
 > [!div class="op_single_selector"]
-> * [.NET](sql-api-sdk-dotnet.md)
-> * [Веб-канал изменений .NET](sql-api-sdk-dotnet-changefeed.md)
-> * [.NET Core](sql-api-sdk-dotnet-core.md)
+> * [Пакет SDK версии 3 для .NET](sql-api-sdk-dotnet-standard.md)
+> * [Пакет SDK для .NET версии 2](sql-api-sdk-dotnet.md)
+> * [Пакет SDK для .NET Core версии 2](sql-api-sdk-dotnet-core.md)
+> * [Пакет SDK для веб-канала изменений .NET версии 2](sql-api-sdk-dotnet-changefeed.md)
 > * [Node.js](sql-api-sdk-node.md)
-> * [Async Java](sql-api-sdk-async-java.md)
-> * [Java](sql-api-sdk-java.md)
+> * [Пакет SDK для Java версии 4](sql-api-sdk-java-v4.md)
+> * [Пакет SDK для Async Java версии 2](sql-api-sdk-async-java.md)
+> * [Пакет SDK для Sync Java версии 2](sql-api-sdk-java.md)
 > * [Python](sql-api-sdk-python.md)
-> * [REST](https://docs.microsoft.com/rest/api/cosmos-db/)
-> * [Поставщик ресурсов REST](https://docs.microsoft.com/rest/api/cosmos-db-resource-provider/)
+> * [REST](/rest/api/cosmos-db/)
+> * [Поставщик ресурсов REST](/rest/api/cosmos-db-resource-provider/)
 > * [SQL](sql-api-query-reference.md)
-> * [Групповой исполнитель — .NET](sql-api-sdk-bulk-executor-dot-net.md)
-> * [Групповой исполнитель — Java](sql-api-sdk-bulk-executor-java.md)
+> * [Групповой исполнитель — .NET v2](sql-api-sdk-bulk-executor-dot-net.md)
+> * [Исполнитель массовых операций — Java](sql-api-sdk-bulk-executor-java.md)
 
 | |  |
 |---|---|
-|**Описание**|Библиотека массового исполнителя позволяет клиентским приложениям выполнять массовые операции в учетных записях Azure Cosmos DB. Библиотека массового исполнителя предоставляет пространства имен BulkImport и BulkUpdate. Модуль BulkImport может оптимизировать массовый прием документов, обеспечивая использование максимального объема пропускной способности, подготовленной для коллекции. Модуль Булкупдате может выполнять массовые обновления существующих данных в контейнерах Cosmos для Azure в качестве исправлений.|
-|**Загрузка пакета SDK**|[Maven](https://search.maven.org/#search%7Cga%7C1%7Cdocumentdb-bulkexecutor)|
-|**Библиотека с массовым исполнителем в GitHub**|[GitHub](https://github.com/Azure/azure-cosmosdb-bulkexecutor-java-getting-started)|
+|**Описание**|Библиотека массового исполнителя позволяет клиентским приложениям выполнять массовые операции в учетных записях Azure Cosmos DB. Библиотека массового исполнителя предоставляет пространства имен BulkImport и BulkUpdate. Модуль BulkImport может оптимизировать массовый прием документов, обеспечивая использование максимального объема пропускной способности, подготовленной для коллекции. Модуль BulkUpdate позволяет выполнять массовое обновление существующих данных в контейнерах Azure Cosmos в виде исправлений.|
+|**Скачивание пакета SDK**|[Maven](https://search.maven.org/#search%7Cga%7C1%7Cdocumentdb-bulkexecutor)|
+|**Библиотека исполнителя массовых операций в GitHub**|[GitHub](https://github.com/Azure/azure-cosmosdb-bulkexecutor-java-getting-started)|
 | **Документация по API**| [Справочная документация по API Java](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.bulkexecutor)|
 |**Начало работы**|[Начало работы с пакетом SDK для Java для библиотеки массового исполнителя](bulk-executor-java.md)|
-|**Минимальная поддерживаемая среда выполнения**|[Пакет Java Development Kit (JDK) 7 +](/java/azure/jdk/?view=azure-java-stable)|
+|**Минимальная поддерживаемая среда выполнения**|[Пакет средств разработки Java (JDK) 7+](/java/azure/jdk/?view=azure-java-stable)|
 
 ## <a name="release-notes"></a>Заметки о выпуске
 
-### <a name="2100"></a><a name="2.10.0"/>2.10.0
+### <a name="2100"></a><a name="2.10.0"></a>2.10.0
 
-* Исправление для Документанализер. Java, чтобы правильно извлечь значения ключа вложенной секции из JSON.
+* Внесено исправление для DocumentAnalyzer.java, чтобы значения ключей вложенных разделов правильно извлекались из JSON.
 
-### <a name="294"></a><a name="2.9.4"/>2.9.4
+### <a name="294"></a><a name="2.9.4"></a>2.9.4
 
-* Добавление функциональных возможностей в операции Булкделете для повторного выполнения конкретных сбоев, а также получение списка сбоев для пользователя, который можно повторить.
+* Добавлены дополнительные функции BulkDelete для повторного выполнения операции в случае конкретных сбоев, а также для получения пользователем списка сбоев операций, которые можно повторить.
 
-### <a name="293"></a><a name="2.9.3"/>2.9.3
+### <a name="293"></a><a name="2.9.3"></a>2.9.3
 
-* Обновление для пакета SDK для Cosmos версии 2.4.7.
+* Обновление для пакета SDK для Cosmos версии 2.4.7.
 
-### <a name="292"></a><a name="2.9.2"/>2.9.2
+### <a name="292"></a><a name="2.9.2"></a>2.9.2
 
-* Исправьте значение "Мержеалл", чтобы продолжить работу с идентификатором и значением ключа секции, чтобы все обновляемые свойства документа, которые помещаются после "ID" и значения ключа секции, добавлялись в список обновленных элементов.
+* Исправлена работа функции mergeAll, чтобы продолжить выполнение операции на основе идентификатора и значения ключа раздела, чтобы все обновляемые свойства документа, которые расположены после id и значения ключа раздела, добавлялись в список обновленных элементов.
 
-### <a name="291"></a><a name="2.9.1"/>2.9.1
+### <a name="291"></a><a name="2.9.1"></a>2.9.1
 
-* Измените начальную степень параллелизма на 1 и добавьте журналы отладки для уменьшив.
+* Обновлена начальная степень параллелизма до значения 1 и добавлены журналы отладки для мини-пакета.
 
 

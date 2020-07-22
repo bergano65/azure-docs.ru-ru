@@ -6,17 +6,18 @@ author: linda33wj
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 12/10/2019
+ms.date: 07/08/2020
 ms.author: jingwang
 ms.reviewer: craigg
-ms.openlocfilehash: 623ee15c5071fdc7a36677481e98872b8c2bd562
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f22b4bec17abe95be2a17d3e0e3c41fab3483fe0
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81410411"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86224827"
 ---
 # <a name="azure-data-factory-connector-overview"></a>Обзор соединителя фабрики данных Azure
+
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 Фабрика данных Azure поддерживает следующие хранилища данных и форматы посредством копирования, потока данных, поиска, получения метаданных и удаления действий. Щелкните каждое хранилище данных, чтобы узнать о поддерживаемых возможностях и соответствующих конфигурациях.
@@ -25,11 +26,21 @@ ms.locfileid: "81410411"
 
 [!INCLUDE [Connector overview](../../includes/data-factory-v2-connector-overview.md)]
 
-## <a name="supported-file-formats"></a>Поддерживаемые форматы файлов
+## <a name="supported-file-formats"></a>Поддерживаемые типы файлов
 
-[!INCLUDE [data-factory-v2-file-formats](../../includes/data-factory-v2-file-formats.md)]
+Фабрика данных Azure поддерживает следующие форматы файлов. Дополнительные сведения о параметрах на основе форматирования см. в каждой статье.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+- [Формат Avro](format-avro.md)
+- [Двоичный формат](format-binary.md)
+- [Формат Common Data Model](format-common-data-model.md)
+- [Формат текста с разделителями](format-delimited-text.md)
+- [Разностный формат](format-delta.md)
+- [Формат Excel](format-excel.md)
+- [Формат JSON](format-json.md)
+- [Формат ORC](format-orc.md)
+- [Формат Parquet](format-parquet.md)
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Действие копирования](copy-activity-overview.md)
 - [Поток данных для сопоставления](concepts-data-flow-overview.md)

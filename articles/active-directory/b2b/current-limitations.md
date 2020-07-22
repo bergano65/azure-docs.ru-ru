@@ -11,12 +11,11 @@ author: msmimart
 manager: celestedg
 ms.reviewer: elisolMS
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ffee01488ecf658ce02a20a41252aca19288667c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 127f05298483dcf155000c2eda8f590fc069a1e9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79263365"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84337671"
 ---
 # <a name="limitations-of-azure-ad-b2b-collaboration"></a>Ограничения службы совместной работы Azure Active Directory B2B
 К службе совместной работы Azure Active Directory B2B применяются ограничения, описанные в этой статье.
@@ -34,12 +33,12 @@ ms.locfileid: "79263365"
 [Национальные облака](https://docs.microsoft.com/azure/active-directory/develop/authentication-national-cloud) — это физически изолированные экземпляры Azure. Совместная работа B2B не поддерживается в пределах национальных облаков. Например, если клиент Azure находится в общедоступном глобальном облаке, вы не сможете пригласить пользователя, чья учетная запись находится в национальном облаке. Для совместной работы с пользователем попросите его указать другой адрес электронной почты или создать для них учетную запись пользователя в каталоге.
 
 ## <a name="azure-us-government-clouds"></a>Облака Azure для государственных организаций США
-В облаке Azure для государственных организаций США служба совместной работы B2B поддерживается только между клиентами, которые находятся в облаке Azure для государственных организаций США и поддерживают службу совместной работы B2B. Если вы приглашаете пользователя в клиенте, который не входит в облако Azure для государственных организаций США или что еще не поддерживает службу совместной работы B2B, приглашение не будет выполнено или пользователь не сможет активировать приглашение. Дополнительные сведения о других ограничениях см. в разделе [варианты Azure Active Directory Premium P1 и P2](https://docs.microsoft.com/azure/azure-government/documentation-government-services-securityandidentity#azure-active-directory-premium-p1-and-p2).
+В облаке Azure для государственных организаций США служба совместной работы B2B поддерживается между клиентами, которые находятся в облаке Azure для государственных организаций США и поддерживают совместную работу B2B. Клиенты Azure для государственных организаций США, поддерживающие совместную работу B2B, также могут совместно работать с социальными пользователями с помощью учетных записей Майкрософт или Google. Если вы приглашаете пользователя за пределами этих групп (например, если пользователь находится в клиенте, который не входит в облако Azure для государственных организаций США или пока не поддерживает службу совместной работы B2B), приглашение не будет выполнено или пользователь не сможет активировать приглашение. Дополнительные сведения о других ограничениях см. в разделе [варианты Azure Active Directory Premium P1 и P2](https://docs.microsoft.com/azure/azure-government/documentation-government-services-securityandidentity#azure-active-directory-premium-p1-and-p2).
 
 ### <a name="how-can-i-tell-if-b2b-collaboration-is-available-in-my-azure-us-government-tenant"></a>Как узнать, доступна ли служба совместной работы B2B в моем клиенте Azure для государственных организаций США?
 Чтобы узнать, поддерживает ли облачный клиент Azure для государственных организаций совместной работы B2B, выполните следующие действия.
 
-1. В браузере перейдите по следующему URL-адресу, подставив имя клиента для * &lt;tenantname&gt;*:
+1. В браузере перейдите по следующему URL-адресу, подставив имя клиента для * &lt; tenantname &gt; *:
 
    `https://login.microsoftonline.com/<tenantname>/v2.0/.well-known/openid-configuration`
 
@@ -48,10 +47,9 @@ ms.locfileid: "79263365"
    - Если `"tenant_region_scope":"USGOV”` отображается, то поддерживается B2B.
    - Если `"tenant_region_scope":"USG"` отображается, то B2B не поддерживается.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Другие статьи о службе совместной работы Azure AD B2B перечислены ниже.
 
 - [Что такое служба совместной работы Azure AD B2B?](what-is-b2b.md)
 - [Делегирование приглашений для службы совместной работы Azure Active Directory B2B](delegate-invitations.md)
-

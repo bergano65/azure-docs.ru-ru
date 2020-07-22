@@ -2,15 +2,15 @@
 title: Слоты развертывания функций Azure
 description: Узнайте, как создавать и использовать слоты развертывания с помощью функций Azure.
 author: craigshoemaker
-ms.topic: reference
+ms.topic: conceptual
 ms.date: 04/15/2020
 ms.author: cshoe
-ms.openlocfilehash: 7cfbd533921ba4d1757e7415a3bb8f70aeb71251
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: f8abc670535f240d436e90c34f7245a3d176f517
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83122601"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86242786"
 ---
 # <a name="azure-functions-deployment-slots"></a>Слоты развертывания функций Azure
 
@@ -135,7 +135,7 @@ ms.locfileid: "83122601"
 
     :::image type="content" source="./media/functions-deployment-slots/functions-navigate-slots.png" alt-text="Поиск слотов в портал Azure." border="true":::
 
-1. Выберите команду **Удалить**.
+1. Нажмите кнопку **Удалить**.
 
     :::image type="content" source="./media/functions-deployment-slots/functions-delete-deployment-slot.png" alt-text="Удалите слот развертывания в портал Azure." border="true":::
 
@@ -151,8 +151,8 @@ ms.locfileid: "83122601"
 
 С помощью [Azure CLI](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest)можно автоматизировать следующие действия для слота:
 
-- [создания](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-create)
-- [delete](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-delete);
+- [create](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-create)
+- [delete](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-delete)
 - [list](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-list)
 - [позиции](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-swap)
 - [Автоматическая замена](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-auto-swap)

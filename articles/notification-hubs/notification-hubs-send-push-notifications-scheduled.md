@@ -18,10 +18,10 @@ ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
 ms.openlocfilehash: ef5eedaa903480ae670f9bc48d0af89744a99d22
-ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "71213000"
 ---
 # <a name="how-to-send-scheduled-notifications"></a>Практическое руководство. Отправка запланированных уведомлений
@@ -51,7 +51,7 @@ await hub.CancelNotificationAsync(scheduled.ScheduledNotificationId);
 Ознакомьтесь со следующими руководствами:
 
  - [Руководство. Отправка уведомлений в приложения универсальной платформы Windows с использованием Центров уведомлений Azure](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md)
- - [Отправка push-уведомлений на конкретные устройства](notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns.md)
+ - [Руководство по отправке push-уведомлений на конкретные устройства Android с помощью Центров уведомлений Azure и Google Cloud Messaging](notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns.md)
  - [Отправка локализованных push-уведомлений](notification-hubs-windows-store-dotnet-xplat-localized-wns-push-notification.md)
  - [Отправка push-уведомлений определенным пользователям](notification-hubs-aspnet-backend-windows-dotnet-wns-notification.md) 
  - [Отправка push-уведомлений на основе расположения](notification-hubs-push-bing-spatial-data-geofencing-notification.md)

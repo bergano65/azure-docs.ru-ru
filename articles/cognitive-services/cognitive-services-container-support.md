@@ -10,12 +10,12 @@ ms.service: cognitive-services
 ms.topic: article
 ms.date: 05/07/2020
 ms.author: aahi
-ms.openlocfilehash: f751aa947988544977f9baf2746191921c1aa9d4
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 69984f9dbd94bcdca2e272a5bdebbb7fc1464dae
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83590674"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86104420"
 ---
 # <a name="container-support-in-azure-cognitive-services"></a>Поддержка контейнеров в Azure Cognitive Services
 
@@ -63,6 +63,7 @@ Cognitive Services ресурсы доступны на [Microsoft Azure](https:
 | [Анализ текста][ta-containers-keyphrase] | F0, S | **Извлечение ключевых фраз** ([изображение](https://go.microsoft.com/fwlink/?linkid=2018757&clcid=0x409)) | Извлекает ключевые фразы для определения основных идей текста. Например, для входного текста "Еда была вкусной и персонал был замечательным" API вернет основные тезисы в записи: "еда" и "замечательный персонал". |
 | [Анализ текста][ta-containers-language] | F0, S | **Определение языка** ([изображение](https://go.microsoft.com/fwlink/?linkid=2018759&clcid=0x409)) | Решение может определить язык введенного текста (поддерживается более 120 языков) и сообщить один код языка для каждого документа, отправленного в запросе. Код языка сопряжен с показателем, указывающим степень оценки. |
 | [Анализ текста][ta-containers-sentiment] | F0, S | **Анализ тональности v3** ([изображение](https://go.microsoft.com/fwlink/?linkid=2018654&clcid=0x409)) | Анализирует необработанный текст на предмет положительной или отрицательной тональности. Эта версия анализа тональности возвращает метки тональности (например, *положительный* или *отрицательный*) для каждого документа и предложения внутри него. |
+| [Анализ текста][ta-containers-health] | F0, S | **Анализ текста для работоспособности** | Извлеките и пометка медицинских данных из неструктурированного текста клинической практике. |
 
 <!--
 |[Personalizer](https://go.microsoft.com/fwlink/?linkid=2083923&clcid=0x409) |F0, S0|**Personalizer** ([image](https://go.microsoft.com/fwlink/?linkid=2083928&clcid=0x409))|Azure Personalizer is a cloud-based API service that allows you to choose the best experience to show to your users, learning from their real-time behavior.|
@@ -130,4 +131,5 @@ Docker нужно настроить таким образом, чтобы ко�
 [ta-containers-keyphrase]: text-analytics/how-tos/text-analytics-how-to-install-containers.md?tabs=keyphrase
 [ta-containers-language]: text-analytics/how-tos/text-analytics-how-to-install-containers.md?tabs=language
 [ta-containers-sentiment]: text-analytics/how-tos/text-analytics-how-to-install-containers.md?tabs=sentiment
+[ta-containers-health]: text-analytics/how-tos/text-analytics-how-to-install-containers.md?tabs=health
 [request-access]: https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRyQZ7B8Cg2FEjpibPziwPcZUNlQ4SEVORFVLTjlBSzNLRlo0UzRRVVNPVy4u

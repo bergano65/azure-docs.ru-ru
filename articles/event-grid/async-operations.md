@@ -1,20 +1,16 @@
 ---
-title: Состояние асинхронных операций
-description: Описание действий по отслеживанию асинхронных операций в Azure. Приводятся значения для получения состояния длительной операции.
-services: event-grid
-author: spelluru
-ms.service: event-grid
+title: Состояние асинхронных операций в сетке событий
+description: Описывает, как отслеживанию асинхронных операций в службе "Сетка событий" в Azure. Приводятся значения для получения состояния длительной операции.
 ms.topic: conceptual
-ms.date: 04/30/2020
-ms.author: spelluru
-ms.openlocfilehash: fb3479271733ee218da8a842956f3a8996e07f61
-ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
+ms.date: 07/07/2020
+ms.openlocfilehash: 621490a9f56e88baaf343c1c2a072ab84aa7d3ef
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82892021"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86103336"
 ---
-# <a name="track-asynchronous-azure-operations"></a>Отслеживание асинхронных операций Azure
+# <a name="track-event-grid-asynchronous-azure-operations"></a>Мониторинг асинхронных операций Azure в службе "Сетка событий"
 Некоторые операции REST выполняются в Azure асинхронно, поскольку не могут быть быстро завершены. Из этой статьи вы узнаете, как отслеживать состояние асинхронных операций, используя возвращаемые в ответе значения.  
 
 ## <a name="status-codes-for-asynchronous-operations"></a>Коды состояния для асинхронных операций
@@ -76,7 +72,7 @@ response.Headers.GetValues("Azure-AsyncOperation").GetValue(0)
 Операции, которые создают, обновляют или удаляют ресурсы (PUT, PATCH, DELETE), обычно возвращают значение `provisioningState`. После завершения операции возвращается одно из следующих трех значений: 
 
 * Успешно
-* Failed
+* Ошибка
 * Отменено
 
 Любое другое значение означает, что операция еще выполняется. Поставщик ресурсов может возвращать настраиваемое значение, указывающее его состояние. Например, значение **Accepted** (Принято) может сигнализировать о том, что запрос успешно получен и выполняется.

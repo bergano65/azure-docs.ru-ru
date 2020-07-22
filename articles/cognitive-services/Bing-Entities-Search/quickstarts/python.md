@@ -8,20 +8,21 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-entity-search
 ms.topic: quickstart
-ms.date: 12/11/2019
+ms.date: 05/08/2020
 ms.author: aahi
-ms.openlocfilehash: 07b563308e80055d699d1cefeb3b2db71ffa4cd7
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.custom: tracking-python
+ms.openlocfilehash: c535683323428dadedeaefd5f76f4387569f9427
+ms.sourcegitcommit: 1de57529ab349341447d77a0717f6ced5335074e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75448617"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84604139"
 ---
 # <a name="quickstart-send-a-search-request-to-the-bing-entity-search-rest-api-using-python"></a>Краткое руководство. Отправка запросов для поиска в REST API Bing для поиска сущностей с помощью Python
 
 Из этого краткого руководства вы узнаете, как вызвать API Bing для поиска сущностей и просмотреть ответ в формате JSON. Это простое приложение Python отправляет запрос на поиск новостей к API и отображает ответ. Исходный код этого примера доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/python/Search/BingEntitySearchv7.py).
 
-Хотя это приложение создается на языке Python, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
+Это приложение создано на языке Python. Но API представляет собой веб-службу на основе REST, совместимую с большинством языков программирования.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -31,7 +32,7 @@ ms.locfileid: "75448617"
 
 ## <a name="create-and-initialize-the-application"></a>Создание и инициализация приложения
 
-1. Создайте файл Python в избранной интегрированной среде разработки или редакторе и добавьте следующие операции импорта. Создайте переменные для вашего ключа подписки, конечной точки, рынка и поискового запроса. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
+1. Создайте файл Python в избранной интегрированной среде разработки или редакторе и добавьте следующие операции импорта. Создайте переменные для вашего ключа подписки, конечной точки, рынка и поискового запроса. Вы можете использовать глобальную конечную точку, указанную в коде ниже, или конечную точку [личного поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), которая отображается на портале Azure для вашего ресурса.
 
     ```python
     import http.client, urllib.parse
@@ -52,21 +53,24 @@ ms.locfileid: "75448617"
 
 ## <a name="send-a-request-and-get-a-response"></a>Отправка запроса и получение ответа
 
-1. Создайте функцию `get_suggestions()`. Затем выполните следующие действия.
-   1. Добавьте ключ подписки в словарь, используя `Ocp-Apim-Subscription-Key` в качестве ключа.
-   2. Используйте `http.client.HTTPSConnection()`, чтобы создать клиентский объект HTTPS. Отправьте запрос `GET` с помощью `request()`, указав сведения о пути, параметрах и заголовке.
-   3. Сохраните ответ с помощью `getresponse()` и верните `response.read()`.
+1. Создайте функцию `get_suggestions()`. 
 
-      ```python
-      def get_suggestions ():
-       headers = {'Ocp-Apim-Subscription-Key': subscriptionKey}
-       conn = http.client.HTTPSConnection (host)
-       conn.request ("GET", path + params, None, headers)
-       response = conn.getresponse ()
-       return response.read()
-      ```
+2. В этой функции добавьте ключ подписки в словарь, используя `Ocp-Apim-Subscription-Key` в качестве ключа.
 
-2. Вызовите `get_suggestions()` и выведите ответ в формате JSON.
+3. Используйте `http.client.HTTPSConnection()`, чтобы создать клиентский объект HTTPS. Отправьте запрос `GET` с помощью `request()`, указав сведения о пути, параметрах и заголовке.
+
+4. Сохраните ответ с помощью `getresponse()` и верните `response.read()`.
+
+   ```python
+   def get_suggestions ():
+    headers = {'Ocp-Apim-Subscription-Key': subscriptionKey}
+    conn = http.client.HTTPSConnection (host)
+    conn.request ("GET", path + params, None, headers)
+    response = conn.getresponse ()
+    return response.read()
+   ```
+
+5. Вызовите `get_suggestions()` и выведите ответ в формате JSON.
 
     ```python
     result = get_suggestions ()
@@ -143,5 +147,5 @@ ms.locfileid: "75448617"
 > [!div class="nextstepaction"]
 > [Руководство по одностраничным веб-приложениям для наглядного поиска](../tutorial-bing-entities-search-single-page-app.md)
 
-* [What is Bing Entity Search API?](../search-the-web.md) (Что такое API Поиска сущностей Bing?)
-* [Справочник по API Bing для поиска сущностей](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference)
+* [Основные сведения об API Bing для поиска сущностей](../search-the-web.md)
+* [Справочник по API "Поиск сущностей Bing"](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference)

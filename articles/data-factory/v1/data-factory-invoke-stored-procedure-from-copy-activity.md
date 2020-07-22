@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: d05c2b03a0c498144f37c9b6205053120a596b09
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f687901601ba517a50710610d4c827524b8ec565
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74924095"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85320987"
 ---
 # <a name="invoke-stored-procedure-from-copy-activity-in-azure-data-factory"></a>Вызов хранимой процедуры из действия копирования в фабрике данных Azure
 > [!NOTE]
@@ -29,7 +29,7 @@ ms.locfileid: "74924095"
 В следующем примере показано, как вызвать хранимую процедуру в базе данных SQL Server из конвейера фабрики данных (действие копирования):  
 
 ## <a name="output-dataset-json"></a>Определение JSON выходного набора данных
-В определении JSON выходного набора данных задайте для свойства **type** значение **SqlServerTable**. При использовании с базой данных SQL Azure задайте для него значение **AzureSqlTable**. Значение свойства **tableName** должно соответствовать имени первого параметра хранимой процедуры.  
+В определении JSON выходного набора данных задайте для свойства **type** значение **SqlServerTable**. Задайте для него значение **AzureSqlTable** для использования с базой данных SQL Azure. Значение свойства **tableName** должно соответствовать имени первого параметра хранимой процедуры.  
 
 ```json
 {
@@ -90,7 +90,7 @@ CREATE TYPE [dbo].[MarketingType] AS TABLE(
 )
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 См. следующие статьи о соединителях, где есть полные примеры JSON: 
 
 - [База данных SQL Azure](data-factory-azure-sql-connector.md)

@@ -11,12 +11,11 @@ ms.topic: conceptual
 ms.date: 07/24/2019
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: e8328db12bde531c2e27936c09247611ff1a3583
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 29a82c1aed4ea79673b4019270a334eac722bc96
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78190149"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84295428"
 ---
 # <a name="application-types-that-can-be-used-in-active-directory-b2c"></a>Типы приложений, которые можно использовать в Active Directory B2C
 
@@ -119,9 +118,11 @@ Accept: application/json
 
 Многие приложения работают без вмешательства пользователя или содержат процессы, выполняющиеся на протяжении долгого времени. Им также требуется возможность доступа к защищенным ресурсам, таким как веб-API. Эти приложения могут выполнять проверку подлинности и получать маркеры, используя идентификатор приложения (а не делегированный идентификатор пользователя) с помощью потока учетных данных клиента OAuth 2.0. Клиентский учетный поток не совпадает с потоком on-behalf, а поток on-behalf не должен использоваться для аутентификации между серверами.
 
-Несмотря на то, что поток учетных данных клиентов в настоящее время не поддерживается Azure AD B2C, его можно настроить, используя Azure AD. Клиент Azure AD B2C разделяет некоторую функциональность с корпоративными клиентами Azure AD.  Поток учетных данных клиента поддерживается с помощью функциональности Azure AD клиента Azure AD B2C.
+Несмотря на то, что поток предоставления учетных данных клиента OAuth 2,0 не поддерживается напрямую службой проверки подлинности Azure AD B2C, можно настроить поток учетных данных клиента с помощью Azure AD и конечной точки/Token платформы идентификации Майкрософт для приложения в клиенте Azure AD B2C. Клиент Azure AD B2C разделяет некоторую функциональность с корпоративными клиентами Azure AD.
 
 Для установки учетного потока см. статью [Azure Active Directory v2.0 and the OAuth 2.0 client credentials flow](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-protocols-oauth-client-creds) (Azure Active Directory версии 2.0 и поток учетных данных клиента OAuth 2.0). Успешная аутентификация приводит к получению токена, отформатированного таким образом, что он может использоваться Azure AD, как описано в справочнике [Справочник по токенам в Azure AD](https://docs.microsoft.com/azure/active-directory/develop/active-directory-token-and-claims).
+
+Инструкции по регистрации приложения управления см. в статье [управление Azure AD B2C с помощью Microsoft Graph](microsoft-graph-get-started.md).
 
 #### <a name="web-api-chains-on-behalf-of-flow"></a>Цепочки веб-API (поток On-Behalf-Of)
 
@@ -140,6 +141,6 @@ Accept: application/json
 
 Чтобы удалить приложение, перейдите на [портал регистрации приложений](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) и удалите его. Приложения отображаются только для владельцев. Прав администратора клиента недостаточно.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте больше о встроенных политиках, предоставляемых [потоками пользователей в Azure Active Directory B2C](user-flow-overview.md).

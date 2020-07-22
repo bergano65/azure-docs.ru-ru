@@ -1,160 +1,191 @@
 ---
-title: Конфигурация DNS для частной конечной точки Azure
-description: Сведения о конфигурации DNS для частной конечной точки Azure
+title: Конфигурация DNS частной конечной точки Azure
+description: Сведения о конфигурации DNS частной конечной точки Azure
 services: private-link
 author: mblanco77
 ms.service: private-link
 ms.topic: conceptual
-ms.date: 04/14/2020
+ms.date: 06/18/2020
 ms.author: allensu
-ms.openlocfilehash: 7db02546b562f1b542080efdbda8968940655e95
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
-ms.translationtype: MT
+ms.openlocfilehash: d6417b3632e1aad0b942844a1470772e8f0197e2
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83121303"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85081083"
 ---
-# <a name="azure-private-endpoint-dns-configuration"></a>Конфигурация DNS для частной конечной точки Azure
+# <a name="azure-private-endpoint-dns-configuration"></a>Конфигурация DNS частной конечной точки Azure
 
 
-При подключении к ресурсу частной связи с использованием полного доменного имени (FQDN) в строке подключения необходимо правильно настроить параметры DNS, чтобы разрешить доступ к выделенному частному IP-адресу. Возможно, в существующих службах Azure уже есть конфигурация DNS, используемая при подключении через общедоступную конечную точку. Эту конфигурацию необходимо переопределить для подключения с помощью частной конечной точки. 
+Если вы подключаетесь к ресурсу Приватного канала, используя полное доменное имя (FQDN) в строке подключения, важно правильно настроить параметры DNS, чтобы разрешить доступ к выделенному частному IP-адресу. Возможно, существующие службы Microsoft Azure уже используют конфигурацию DNS для подключения через общедоступную конечную точку. Эту конфигурацию необходимо переопределить для подключения с помощью частной конечной точки. 
  
-Сетевой интерфейс, связанный с частной конечной точкой, содержит полный набор сведений, необходимых для настройки DNS, включая полное доменное имя и частные IP-адреса, выделенные для данного ресурса частной ссылки. 
+Сетевой интерфейс, связанный с частной конечной точкой, содержит полный набор сведений для настройки DNS, включая полное доменное имя и частные IP-адреса, выделенные для определенного ресурса Приватного канала. 
  
-Для настройки параметров DNS для частных конечных точек можно использовать следующие параметры. 
-- **Используйте файл узла (рекомендуется только для тестирования)**. Для переопределения DNS можно использовать файл узла на виртуальной машине.  
-- **Используйте частную зону DNS**. Для переопределения разрешения DNS для заданной закрытой конечной точки можно использовать [частные зоны DNS](../dns/private-dns-privatednszone.md) . Частная зона DNS может быть связана с вашей виртуальной сетью для разрешения конкретных доменов.
-- **Используйте сервер пересылки DNS (необязательно)**. Вы можете использовать сервер пересылки DNS для переопределения разрешения DNS для данного ресурса частной ссылки. Если [DNS-сервер](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md#name-resolution-that-uses-your-own-dns-server) размещен в виртуальной сети, можно создать правило пересылки DNS для использования частной зоны DNS, чтобы упростить настройку для всех ресурсов частной связи.
+Чтобы настраивать параметры DNS для частных конечных точек, можно использовать следующие варианты. 
+- **Использовать файл узла (рекомендуется только для тестирования).** Для переопределения DNS можно использовать файл узла на виртуальной машине.  
+- **Использовать частную зону DNS**. Чтобы переопределить разрешение DNS для определенной частной конечной точки, можно использовать [частные зоны DNS](../dns/private-dns-privatednszone.md). Частная зона DNS может быть связана с вашей виртуальной сетью для разрешения конкретных доменов.
+- **Использовать DNS-сервер пересылки (необязательно).** Чтобы переопределить разрешение DNS для определенного ресурса Приватного канала, можно использовать DNS-сервер пересылки. Если [DNS-сервер](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md#name-resolution-that-uses-your-own-dns-server) размещен в виртуальной сети, можно создать правило переадресации DNS, чтобы использовать частную зону DNS для упрощения настройки для всех ресурсов частной связи.
  
 > [!IMPORTANT]
-> Не рекомендуется переопределять зону, которая активно используется для разрешения общедоступных конечных точек. Подключения к ресурсам не смогут правильно разрешаться без пересылки DNS в общедоступную службу DNS. Чтобы избежать проблем, создайте другое доменное имя или выполните предлагаемое имя для каждой службы ниже. 
+> Для разрешения общедоступных конечных точек не рекомендуется переопределять зону, которая активно используется. Подключения к ресурсам не смогут правильно разрешаться без переадресации DNS в общедоступную службу DNS. Чтобы избежать проблем, создайте другое доменное имя или следуйте предлагаемому имени для каждой службы ниже. 
 
 ## <a name="azure-services-dns-zone-configuration"></a>Настройка зоны DNS служб Azure
-Службы Azure будут создавать каноническое имя DNS-записи (CNAME) на общедоступном DNS-сервере, чтобы перенаправить разрешение в предложенное имя частного домена. Разрешение можно переопределить с помощью частного IP-адреса закрытых конечных точек. 
+Службы Azure создадут каноническое имя DNS-записи (CNAME) в общедоступной службе DNS, чтобы перенаправить разрешение в предложенное имя частного домена. Разрешение можно переопределить с помощью частного IP-адреса частных конечных точек. 
  
-Приложениям не нужно изменять URL-адрес подключения. При попытке разрешить использование общедоступной службы DNS DNS-сервер теперь будет разрешаться в частные конечные точки. Этот процесс не влияет на существующие приложения. 
+Приложениям не нужно изменять URL-адрес подключения. При попытке разрешения с использованием общедоступной службы DNS сервер доменных имен теперь будет выполнять разрешение в частные конечные точки. Этот процесс не влияет на существующие приложения. 
 
-Для служб Azure используйте Рекомендуемые имена зон, как описано в следующей таблице.
+Для служб Azure используйте рекомендуемые имена зон, описанные в следующей таблице.
 
-| Тип ресурса частной ссылки/подресурс |Имя зоны Частная зона DNS | Имя зоны общедоступного DNS |
+| Тип ресурса частной ссылки/Подресурс |Имя Частной зоны DNS | Общедоступные серверы переадресации зоны DNS |
 |---|---|---|---|
-| База данных SQL (Microsoft. SQL/Servers)/SQL Server | privatelink.database.windows.net | database.windows.net |
-| Azure синапсе Analytics (Microsoft. SQL/Servers)/SQL Server  | privatelink.database.windows.net | database.windows.net |
-| Учетная запись хранения (Microsoft. Storage/storageAccounts)/BLOB (BLOB-объект, blob_secondary) | privatelink.blob.core.windows.net | blob.core.windows.net |
-| Учетная запись хранения (Microsoft. Storage/storageAccounts)/таблица (таблица, table_secondary) | privatelink.table.core.windows.net | table.core.windows.net |
-| Учетная запись хранения (Microsoft. Storage/storageAccounts)/очередь (очередь, queue_secondary) | privatelink.queue.core.windows.net | queue.core.windows.net |
-| Учетная запись хранения (Microsoft. Storage/storageAccounts)/File (File, file_secondary) | privatelink.file.core.windows.net | file.core.windows.net |
-| Учетная запись хранения (Microsoft. Storage/storageAccounts)/Web (Web, web_secondary) | privatelink.web.core.windows.net | web.core.windows.net |
-| Data Lake файловая система Gen2 (Microsoft. Storage/storageAccounts)/Data Lake файловая система Gen2 (DFS, dfs_secondary) | privatelink.dfs.core.windows.net | dfs.core.windows.net |
-| Azure Cosmos DB (Microsoft. Азурекосмосдб/databaseAccounts)/SQL | privatelink.documents.azure.com | documents.azure.com |
-| Azure Cosmos DB (Microsoft. Азурекосмосдб/databaseAccounts)/MongoDB | privatelink.mongo.cosmos.azure.com | mongo.cosmos.azure.com |
-| Azure Cosmos DB (Microsoft. Азурекосмосдб/databaseAccounts)/Cassandra | privatelink.cassandra.cosmos.azure.com | cassandra.cosmos.azure.com |
-| Azure Cosmos DB (Microsoft. Азурекосмосдб/databaseAccounts)/Gremlin | privatelink.gremlin.cosmos.azure.com | gremlin.cosmos.azure.com |
-| Azure Cosmos DB (Microsoft. Азурекосмосдб/databaseAccounts)/Table | privatelink.table.cosmos.azure.com | table.cosmos.azure.com |
-| База данных Azure для PostgreSQL — Single Server (Microsoft. Дбфорпостгрескл/Servers)/Постгресклсервер | privatelink.postgres.database.azure.com | postgres.database.azure.com |
-| База данных Azure для MySQL (Microsoft. Дбформискл/Servers)/mysqlServer | privatelink.mysql.database.azure.com | mysql.database.azure.com |
-| База данных Azure для MariaDB (Microsoft. Дбформариадб/Servers)/Мариадбсервер | privatelink.mariadb.database.azure.com | mariadb.database.azure.com |
-| Azure Key Vault (Microsoft. KeyVault/Vault)/хранилище | privatelink.vaultcore.azure.net | vault.azure.net |
-| Azure Kubernetes Service — API Kubernetes (Microsoft. ContainerService/Манажедклустерс)/Манажедклустер | привателинк. {Region}. azmk8s. IO | {Region}. azmk8s. IO |
-| Поиск Azure (Microsoft. Search/Сеарчсервицес)/Сеарчсервице | privatelink.search.windows.net | search.windows.net |
-| Реестр контейнеров Azure (Microsoft. ContainerRegistry/реестров)/Реестр | privatelink.azurecr.io | azurecr.io |
-| Конфигурация приложений Azure (Microsoft. Аппконфигуратион/Конфигуратионсторес)/configurationStore | privatelink.azconfig.io | azconfig.io |
-| Azure Backup (Microsoft. RecoveryServices/Vault)/хранилище | привателинк. {Region}. Backup. WindowsAzure. com | {Region}. Backup. WindowsAzure. com |
-| Концентратор событий Azure (Microsoft. EventHub/пространства имен)/пространство имен | privatelink.servicebus.windows.net | servicebus.windows.net. |
-| Служебная шина Azure (Microsoft. ServiceBus/пространства имен)/пространство имен | privatelink.servicebus.windows.net | servicebus.windows.net. |
-| Azure Relay (Microsoft. Relay/пространства имен)/пространство имен | privatelink.servicebus.windows.net | servicebus.windows.net. |
-| Служба "Сетка событий Azure" (Microsoft. EventGrid/темы)/раздел | privatelink.eventgrid.azure.net | eventgrid.azure.net |
-| Служба "Сетка событий Azure" (Microsoft. EventGrid/Domains)/domain | privatelink.eventgrid.azure.net | eventgrid.azure.net |
-| Веб-приложения Azure (Microsoft. Web/Sites)/site | privatelink.azurewebsites.net | azurewebsites.net; |
-| Машинное обучение Azure (Microsoft. Мачинелеарнингсервицес/рабочие области)/Рабочая область | privatelink.api.azureml.ms | api.azureml.ms |
+| Служба автоматизации Azure/(Microsoft. Automation/automationAccounts)/веб-перехватчик, Дскандхибридворкер | privatelink.azure-automation.net | azure-automation.net |
+| База данных SQL Azure (Microsoft.SQL/Servers)/SQL Server | privatelink.database.windows.net | database.windows.net |
+| Azure Synapse Analytics (Microsoft.SQL/servers)/SQL Server  | privatelink.database.windows.net | database.windows.net |
+| Учетная запись хранения (Microsoft.Storage/storageAccounts)/Большой двоичный объект (blob, blob_secondary) | privatelink.blob.core.windows.net | blob.core.windows.net |
+| Учетная запись хранения (Microsoft.Storage/storageAccounts)/Таблица (table, table_secondary) | privatelink.table.core.windows.net | table.core.windows.net |
+| Учетная запись хранения (Microsoft.Storage/storageAccounts)/Очередь (queue, queue_secondary) | privatelink.queue.core.windows.net | queue.core.windows.net |
+| Учетная запись хранения (Microsoft.Storage/storageAccounts)/Файл (file, file_secondary) | privatelink.file.core.windows.net | file.core.windows.net |
+| Учетная запись хранения (Microsoft.Storage/storageAccounts)/Сеть (web, web_secondary) | privatelink.web.core.windows.net | web.core.windows.net |
+| Файловая система Azure Data Lake 2-го поколения (Microsoft.Storage/storageAccounts)/Файловая система Data Lake 2-го поколения (dfs, dfs_secondary) | privatelink.dfs.core.windows.net | dfs.core.windows.net |
+| Azure Cosmos DB (Microsoft.AzureCosmosDB/databaseAccounts) / SQL | privatelink.documents.azure.com | documents.azure.com |
+| Azure Cosmos DB (Microsoft.AzureCosmosDB/databaseAccounts) / MongoDB | privatelink.mongo.cosmos.azure.com | mongo.cosmos.azure.com |
+| Azure Cosmos DB (Microsoft.AzureCosmosDB/databaseAccounts) / Cassandra | privatelink.cassandra.cosmos.azure.com | cassandra.cosmos.azure.com |
+| Azure Cosmos DB (Microsoft.AzureCosmosDB/databaseAccounts) / Gremlin | privatelink.gremlin.cosmos.azure.com | gremlin.cosmos.azure.com |
+| Azure Cosmos DB (Microsoft.AzureCosmosDB/databaseAccounts) / Таблица | privatelink.table.cosmos.azure.com | table.cosmos.azure.com |
+| База данных Azure для PostgreSQL — одиночный сервер (Microsoft.DBforPostgreSQL/servers) / postgresqlServer | privatelink.postgres.database.azure.com | postgres.database.azure.com |
+| База данных Azure для MySQL (Microsoft.DBforMySQL/servers) / mysqlServer | privatelink.mysql.database.azure.com | mysql.database.azure.com |
+| База данных Azure для MariaDB (Microsoft.DBforMariaDB/servers) / mariadbServer | privatelink.mariadb.database.azure.com | mariadb.database.azure.com |
+| Azure Key Vault (Microsoft.KeyVault/vaults) / vault | privatelink.vaultcore.azure.net | vault.azure.net <br> vaultcore.azure.net |
+| Azure Kubernetes Service — API Kubernetes (Microsoft. ContainerService/Манажедклустерс)/Управление | privatelink.{region}.azmk8s.io | {region}.azmk8s.io |
+| Поиск Azure (Microsoft.Search/searchServices) / searchService | privatelink.search.windows.net | search.windows.net |
+| Реестр контейнеров Azure (Microsoft.ContainerRegistry/registries) / реестр | privatelink.azurecr.io | azurecr.io |
+| Конфигурация приложений Azure (Microsoft.AppConfiguration/configurationStores) / configurationStore | privatelink.azconfig.io | azconfig.io |
+| Azure Backup (Microsoft.RecoveryServices/vaults) / хранилище | privatelink.{region}.backup.windowsazure.com | {region}.backup.windowsazure.com |
+| Центры событий Azure (Microsoft.EventHub/namespaces)/Пространство имен | privatelink.servicebus.windows.net | servicebus.windows.net. |
+| Служебная шина Azure (Microsoft.ServiceBus/namespaces) / пространство имен | privatelink.servicebus.windows.net | servicebus.windows.net. |
+| Центр Интернета вещей Azure (Microsoft. Devices/IotHubs)/iotHub | privatelink.azure-devices.net | azure-devices.net |
+| Azure Relay (Microsoft.Relay/namespaces) / пространство имен | privatelink.servicebus.windows.net | servicebus.windows.net. |
+| Сетка событий Azure (Microsoft.EventGrid/topics) / тема | privatelink.eventgrid.azure.net | eventgrid.azure.net |
+| Сетка событий Azure (Microsoft.EventGrid/domains) / домен | privatelink.eventgrid.azure.net | eventgrid.azure.net |
+| Веб-приложения Azure (Microsoft. Web/Sites) и сайты | privatelink.azurewebsites.net | azurewebsites.net; |
+| Машинное обучение Azure (Microsoft.MachineLearningServices/workspaces)/Рабочая область | privatelink.api.azureml.ms | api.azureml.ms |
+| Центр Интернета вещей (Microsoft. Devices/IotHubs)/IotHub | privatelink.azure-devices.net | azure-devices.net |
+| SignalR (Microsoft. Сигналрсервице/SignalR)/SignalR | privatelink.service.signalr.net | service.signalr.net |
+| Azure Monitor (Microsoft. Insights/Привателинкскопес)/азуремонитор | privatelink.monitor.azure.com | monitor.azure.com |
+| Cognitive Services (Microsoft. CognitiveServices/Accounts)/Account | privatelink.cognitiveservices.azure.com  | cognitiveservices.azure.com  |
 
  
+## <a name="dns-configuration-scenarios"></a>Сценарии настройки DNS
 
+Полное доменное имя служб автоматически разрешается в общедоступный IP-адрес. Чтобы выполнить разрешение в частный IP-адрес частной конечной точки, необходимо соответствующим образом изменить конфигурацию DNS.
 
-## <a name="dns-configuration-scenarios"></a>Сценарии конфигурации DNS
+DNS является критически важным компонентом, обеспечивающим правильную работу приложения за счет правильного разрешения IP-адреса частной конечной точки.
 
-Полное доменное имя служб автоматически разрешается в общедоступный IP-адрес, поэтому для разрешения на частный IP-адрес частной конечной точки необходимо соответствующим образом изменить конфигурацию DNS.
-
-DNS является критически важным компонентом, обеспечивающим правильную работу приложения, устраняя при этом правильный IP-адрес частной конечной точки.
-
-В зависимости от ваших предпочтений для встроенного разрешения DNS доступны следующие сценарии.
+Доступны следующие встроенные сценарии, связанные с разрешением DNS:
 
 - [Рабочие нагрузки виртуальных сетей без пользовательского DNS-сервера](#virtual-network-workloads-without-custom-dns-server)
-- [Локальные рабочие нагрузки с использованием DNS-сервера пересылки](#on-premises-workloads-using-a-dns-forwarder)
+- [Локальные рабочие нагрузки с использованием DNS-сервера переадресации](#on-premises-workloads-using-a-dns-forwarder)
+- [Рабочие нагрузки виртуальных сетей и локальные рабочие нагрузки с использованием DNS-сервера пересылки](#virtual-network-and-on-premises-workloads-using-a-dns-forwarder)
+
 
 ## <a name="virtual-network-workloads-without-custom-dns-server"></a>Рабочие нагрузки виртуальных сетей без пользовательского DNS-сервера
 
-Эта конфигурация подходит для рабочих нагрузок виртуальных сетей без пользовательского DNS-сервера. В этом сценарии клиент запрашивает IP-адрес частной конечной точки для предоставленного Azure DNS [168.63.129.16](../virtual-network/what-is-ip-address-168-63-129-16.md). Azure DNS будет отвечать за разрешение DNS для частных зон DNS.
-
+Эта конфигурация подходит для рабочих нагрузок виртуальных сетей без пользовательского DNS-сервера. В этом сценарии клиент запрашивает IP-адрес частной конечной точки для предоставленной Azure службы DNS [168.63.129.16](../virtual-network/what-is-ip-address-168-63-129-16.md). Azure DNS будет отвечать за разрешение DNS для частных зон DNS.
 
 > [!NOTE]
-> В этом сценарии используется база данных SQL Azure, рекомендуемая Частная зона DNSной зоной. Для других служб можно настроить модель, используя следующие справочные сведения о [конфигурации зоны DNS служб Azure](#azure-services-dns-zone-configuration).
+> В этом сценарии используется частная зона DNS, рекомендуемая Базой данных SQL Azure. Для других служб можно настроить эту модель, используя следующий ресурс: [Настройка зоны DNS служб Azure](#azure-services-dns-zone-configuration).
 
 Для правильной настройки необходимы следующие ресурсы:
 
-- Виртуальная сеть клиента
+- виртуальная сеть клиента;
 
-- Частная зона DNS зоны [privatelink.Database.Windows.NET](../dns/private-dns-privatednszone.md) с [типом записи A](../dns/dns-zones-records.md#record-types)
+- Частная зона DNS [privatelink.database.windows.net](../dns/private-dns-privatednszone.md) с [записью типа A](../dns/dns-zones-records.md#record-types);
 
-- Сведения о частной конечной точке (имя записи FQDN и частный IP-адрес)
+- сведения о частной конечной точке (имя записи FQDN и частный IP-адрес).
 
-На следующей схеме показана последовательность разрешения DNS из рабочих нагрузок виртуальной сети с использованием частной зоны DNS.
+На следующем снимке экрана показана последовательность разрешения DNS из рабочих нагрузок виртуальной сети с использованием частной зоны DNS.
 
 :::image type="content" source="media/private-endpoint-dns/single-vnet-azure-dns.png" alt-text="Одна виртуальная сеть и DNS, предоставляемые Azure":::
 
-Эту модель можно расширить на несколько одноранговых виртуальных сетей, связанных с одной частной конечной точкой. Это можно сделать, [добавив новые ссылки на виртуальную сеть](../dns/private-dns-virtual-network-links.md) в частную зону DNS для всех одноранговых виртуальных сетей.
+Эту модель можно расширить на несколько одноранговых виртуальных сетей, связанных с одной частной конечной точкой. Это можно сделать, [добавляя новые ссылки на виртуальные сети](../dns/private-dns-virtual-network-links.md) в частную зону DNS для всех одноранговых виртуальных сетей.
 
 > [!IMPORTANT]
->  Для этой конфигурации требуется одна частная зона DNS. при создании нескольких зон с одинаковым именем для разных виртуальных сетей потребуется выполнить операции вручную для слияния записей DNS.
+> Для этой конфигурации требуется одна частная зона DNS. При создании нескольких зон с одинаковым именем для разных виртуальных сетей потребуется выполнить операции объединения записей DNS вручную.
 
-В этом сценарии существует топология сети [hub &](https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/hub-spoke) с периферийными сетями, которые совместно используют общую конечную точку, а все периферийные виртуальные сети связаны с той же частной зоной DNS. 
+> [!IMPORTANT]
+> Если вы используете частную конечную точку в модели звездообразной топологии из другой подписки, задействуйте ту же частную зону DNS в концентраторе.
 
-:::image type="content" source="media/private-endpoint-dns/hub-and-spoke-azure-dns.png" alt-text="Концентраторы и резервные службы с DNS, предоставляемыми Azure":::
+В этом сценарии используется [звездообразная](https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/hub-spoke) топология сети с периферийными сетями, которые совместно используют общую частную конечную точку. Все периферийные виртуальные сети связаны с одной частной зоной DNS. 
 
-## <a name="on-premises-workloads-using-a-dns-forwarder"></a>Локальные рабочие нагрузки с использованием DNS-сервера пересылки
- 
-Чтобы локальные рабочие нагрузки могли разрешать полное доменное имя частной конечной точки в частный IP-адрес, необходимо использовать DNS-сервер пересылки, чтобы обеспечить разрешение [общедоступной зоны DNS](#azure-services-dns-zone-configuration) службы Azure, развернутой в Azure.
+:::image type="content" source="media/private-endpoint-dns/hub-and-spoke-azure-dns.png" alt-text="Модель звезда с DNS, предоставляемыми Azure":::
 
+## <a name="on-premises-workloads-using-a-dns-forwarder"></a>Локальные рабочие нагрузки с использованием DNS-сервера переадресации
 
-Следующий сценарий подходит для локальной сети, в которой есть сервер пересылки DNS в Azure, который, в свою очередь, отвечает за разрешение всех запросов DNS с помощью серверной пересылки на уровне сервера DNS, предоставленного Azure [168.63.129.16](../virtual-network/what-is-ip-address-168-63-129-16.md) 
+Чтобы локальные рабочие нагрузки разрешали полное доменное имя частной конечной точки в частный IP-адрес, необходимо использовать DNS-сервер пересылки, чтобы обеспечить разрешение [общедоступной зоны DNS](#azure-services-dns-zone-configuration) службы Azure в Azure.
+
+Следующий сценарий подходит для локальной сети с DNS-сервером пересылки в Azure, который отвечает за разрешение всех запросов DNS с помощью серверной пересылки в предоставленную Azure службу DNS [168.63.129.16](../virtual-network/what-is-ip-address-168-63-129-16.md). 
 
 > [!NOTE]
-> В этом сценарии используется база данных SQL Azure, рекомендуемая Частная зона DNSной зоной.Для других служб можно настроить модель, используя следующие справочные сведения о [конфигурации зоны DNS служб Azure](#azure-services-dns-zone-configuration).
+> В этом сценарии используется частная зона DNS, рекомендуемая Базой данных SQL Azure. Для других служб можно настроить эту модель, используя следующий ресурс:  [Конфигурации зоны DNS служб Azure](#azure-services-dns-zone-configuration).
 
 Для правильной настройки необходимы следующие ресурсы:
 
-- Локальная сеть
-- Виртуальная сеть [, подключенная к локальной среде](https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/)
-- DNS-сервер пересылки, развернутый в Azure 
-- Частная зона DNS зоны [privatelink.Database.Windows.NET](../dns/private-dns-privatednszone.md)   с [типом записи A](../dns/dns-zones-records.md#record-types)
-- Сведения о частной конечной точке (имя записи FQDN и частный IP-адрес)
+- локальная сеть;
+- виртуальная сеть,  [подключенная к локальной среде](https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/);
+- DNS-сервер переадресации, развернутый в Azure; 
+- Частные зоны DNS [privatelink.database.windows.net](../dns/private-dns-privatednszone.md) с [записью типа A](../dns/dns-zones-records.md#record-types);
+- сведения о частной конечной точке (имя записи FQDN и частный IP-адрес).
 
-На следующей схеме показана последовательность разрешения DNS из локальной сети, в которой используется сервер пересылки DNS, развернутый в Azure, где разрешение выполняется с помощью частной зоны DNS, связанной с виртуальной сетью.
+На следующей схеме показана последовательность разрешения DNS из локальной сети, в которой используется DNS-сервер пересылки, развернутый в Azure, где разрешение выполняется с помощью частной зоны DNS, [связанной с виртуальной сетью](../dns/private-dns-virtual-network-links.md).
 
 :::image type="content" source="media/private-endpoint-dns/on-premises-using-azure-dns.png" alt-text="Локальная среда с использованием Azure DNS":::
 
-Эту конфигурацию можно расширить для локальной сети, в которой уже имеется решение DNS. 
-Локальное решение DNS необходимо настроить для пересылки трафика DNS на Azure DNS через [Условный сервер пересылки](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md#name-resolution-that-uses-your-own-dns-server) , ссылающийся на DNS-сервер перенаправления, развернутый в Azure.
+Эту конфигурацию можно расширить для локальной сети, в которой уже есть решение DNS. 
+Локальное решение DNS необходимо настроить для переадресации трафика DNS в Azure DNS через [сервер условной пересылки](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md#name-resolution-that-uses-your-own-dns-server), ссылающийся на DNS-сервер пересылки, который развернут в Azure.
 
 > [!NOTE]
-> В этом сценарии используется база данных SQL Azure, рекомендуемая Частная зона DNSной зоной.Для других служб можно настроить модель, используя следующие справочные сведения о [конфигурации зоны DNS служб Azure](#azure-services-dns-zone-configuration).
+> В этом сценарии используется частная зона DNS, рекомендуемая Базой данных SQL Azure. Для других служб можно настроить эту модель, используя следующий ресурс:  [Конфигурации зоны DNS служб Azure](#azure-services-dns-zone-configuration).
 
 Для правильной настройки необходимы следующие ресурсы:
 
+- локальная сеть с настраиваемым решением DNS; 
+- виртуальная сеть,  [подключенная к локальной среде](https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/);
+- DNS-сервер переадресации, развернутый в Azure;
+- Частные зоны DNS [privatelink.database.windows.net](../dns/private-dns-privatednszone.md)  с [записью типа A](../dns/dns-zones-records.md#record-types);
+- сведения о частной конечной точке (имя записи FQDN и частный IP-адрес).
 
-- Локальная сеть с настраиваемым решением DNS 
-- Виртуальная сеть [, подключенная к локальной среде](https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/)
-- DNS-сервер пересылки, развернутый в Azure
-- Частная зона DNS зоны [privatelink.Database.Windows.NET](../dns/private-dns-privatednszone.md)    с [типом записи A](../dns/dns-zones-records.md#record-types)
-- Сведения о частной конечной точке (имя записи FQDN и частный IP-адрес)
-
-На следующей схеме показана последовательность разрешения DNS из локальной сети, которая условно перенаправляет трафик DNS в Azure, где разрешение выполняется с помощью частной зоны DNS, связанной с виртуальной сетью.
+На следующей схеме показана последовательность разрешения DNS из локальной сети, которая условно переадресует трафик DNS в Azure, где разрешение выполняется с помощью частной зоны DNS,  [связанной с виртуальной сетью](../dns/private-dns-virtual-network-links.md).
 
 > [!IMPORTANT]
-> Условная пересылка должна быть выполнена в [общедоступной зоне DNS](#azure-services-dns-zone-configuration)   , например:  `database.windows.net`   , вместо **привателинк**. Database.Windows.NET
+> Условную переадресацию следует выполнять для рекомендуемого [сервера пересылки общедоступной зоны DNS](#azure-services-dns-zone-configuration). Например: `database.windows.net` вместо **privatelink**.database.windows.net.
 
-:::image type="content" source="media/private-endpoint-dns/on-premises-forwarding-to-azure.png" alt-text="Локальная пересылка на Azure DNS":::
+:::image type="content" source="media/private-endpoint-dns/on-premises-forwarding-to-azure.png" alt-text="Локальная переадресация в Azure DNS":::
 
+## <a name="virtual-network-and-on-premises-workloads-using-a-dns-forwarder"></a>Рабочие нагрузки виртуальных сетей и локальные рабочие нагрузки с использованием DNS-сервера пересылки
+
+Общий подход для рабочих нагрузок, которым требуется доступ к частной конечной точке из виртуальных и локальных сетей, включает использование общего DNS-сервера пересылки, который обеспечивает разрешение для [общедоступной зоны DNS](#azure-services-dns-zone-configuration) службы Azure, развернутой в Azure.
+
+Приведенный ниже сценарий подходит для локальной сети, в которой используется DNS-сервер пересылки в Azure, и виртуальных сетей, которым требуется доступ к частной конечной точке, расположенной в общей сети концентратора.  
+
+Этот DNS-сервер пересылки отвечает за разрешение всех запросов DNS с помощью серверной пересылки в предоставленную Azure службу DNS [168.63.129.16](../virtual-network/what-is-ip-address-168-63-129-16.md).
+
+> [!IMPORTANT]
+> Для этой конфигурации требуется одна частная зона DNS. Все клиентские подключения из локальных и [пиринговых виртуальных сетей](../virtual-network/virtual-network-peering-overview.md) также должны использовать одну частную зону DNS.
+
+> [!NOTE]
+> В этом сценарии используется частная зона DNS, рекомендуемая Базой данных SQL Azure. Для других служб можно настроить эту модель, используя следующий ресурс:  [Конфигурации зоны DNS служб Azure](#azure-services-dns-zone-configuration).
+
+Для правильной настройки необходимы следующие ресурсы:
+
+- локальная сеть;
+- виртуальная сеть,  [подключенная к локальной среде](https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/);
+- [пиринговая виртуальная сеть;](../virtual-network/virtual-network-peering-overview.md) 
+- DNS-сервер переадресации, развернутый в Azure;
+- Частные зоны DNS [privatelink.database.windows.net](../dns/private-dns-privatednszone.md)  с [записью типа A](../dns/dns-zones-records.md#record-types);
+- сведения о частной конечной точке (имя записи FQDN и частный IP-адрес).
+
+На следующей схеме показана последовательность разрешения DNS из локальной и виртуальной сети, в которой используется DNS-сервер пересылки, развернутый в Azure, где разрешение выполняется с помощью частной зоны DNS,  [связанной с виртуальной сетью](../dns/private-dns-virtual-network-links.md).
+
+:::image type="content" source="media/private-endpoint-dns/hybrid-scenario.png" alt-text="Гибридный сценарий":::
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- [Сведения о частных конечных точках](private-endpoint-overview.md)
+- [Узнайте больше о частных конечных точках](private-endpoint-overview.md)

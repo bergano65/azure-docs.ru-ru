@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: overview
-ms.date: 02/14/2020
+ms.date: 06/15/2020
 ms.author: diberry
-ms.openlocfilehash: c0ee1abcb99e10d57d05945f45595e5bfd76fa28
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: 285f68b4f0d7284740867f83311135d6c3efa90f
+ms.sourcegitcommit: 6571e34e609785e82751f0b34f6237686470c1f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80155993"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84791220"
 ---
 # <a name="whats-new-in-qna-maker"></a>Новые возможности QnA Maker
 
@@ -24,6 +24,15 @@ ms.locfileid: "80155993"
 ## <a name="release-notes"></a>Заметки о выпуске
 
 Узнайте о новых возможностях QnA Maker.
+
+### <a name="june-2020"></a>Июнь 2020 г.
+
+* Обновлено руководство по [Power Virtual Agent](tutorials/integrate-with-power-virtual-assistant-fallback-topic.md), инструкции из которого теперь выполняются быстрее и проще.
+
+### <a name="may-2020"></a>Май 2020 г.
+
+* [Управление доступом на основе ролей (RBAC)](concepts/role-based-access-control.md)
+* [Редактирование форматированного текста](how-to/edit-knowledge-base.md#rich-text-editing-for-answer) (для ответов)
 
 ### <a name="march-2020"></a>Март 2020 г.
 

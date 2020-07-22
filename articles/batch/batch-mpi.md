@@ -1,15 +1,15 @@
 ---
-title: Использование задач с несколькими экземплярами для запуска приложений MPI
+title: Выполняйте приложения с интерфейсом передачи сообщений с помощью задач с несколькими экземплярами
 description: Узнайте, как выполнять приложения с интерфейсом передачи сообщений (MPI), используя тип задачи с несколькими экземплярами в пакетной службе Azure.
-ms.topic: article
+ms.topic: how-to
 ms.date: 03/13/2019
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 4502fc9632c2cb05d757459d07bcfe17ae96aea2
-ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
+ms.openlocfilehash: 66cedc4cdb7c55401b7dbbc892687d08f56eb875
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2020
-ms.locfileid: "82735272"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86147367"
 ---
 # <a name="use-multi-instance-tasks-to-run-message-passing-interface-mpi-applications-in-batch"></a>Использование задач с несколькими экземплярами для запуска приложений с интерфейсом передачи сообщений в пакетной службе
 
@@ -30,8 +30,8 @@ ms.locfileid: "82735272"
 1. Пакетная служба создает одну **основную** задачу и несколько **подзадач** на основе параметров использования нескольких экземпляров. Общее число задач (основная плюс все подзадачи) соответствует количеству **экземпляров** (вычислительных узлов), указанному в параметрах использования нескольких экземпляров.
 2. Пакетная служба назначает один из вычислительных узлов **главным** и планирует выполнение основной задачи на нем. Выполнение подзадач она планирует на остальных вычислительных узлах, выделенных для многоэкземплярной задачи, размещая по одной подзадаче на каждом узле.
 3. Основная задача и все подзадачи скачивают **общие файлы ресурсов**, указанные в параметрах использования нескольких экземпляров.
-4. Потом они выполняют **команду координации** , указанную в параметрах для множественных экземпляров. Команда координации обычно используется для подготовки узлов к выполнению задачи. Подготовка может включать в себя запуск фоновых служб (таких как [Microsoft MPI`smpd.exe`][msmpi_msdn]) и проверку готовности узлов к обработке сообщений, передаваемых между узлами.
-5. *После* того, как основная задача и все подзадачи успешно выполнят команду координации, основная задача выполнит **команду приложения** на главном узле. Команда приложения — это командная строка, указанная для многоэкземплярной задачи. Ее выполняет только основная задача. Например, вы можете запустить выполнение приложения с поддержкой MPI в решении на базе [MS-MPI][msmpi_msdn] с помощью команды `mpiexec.exe`.
+4. Потом они выполняют **команду координации** , указанную в параметрах для множественных экземпляров. Команда координации обычно используется для подготовки узлов к выполнению задачи. Подготовка может включать в себя запуск фоновых служб (таких как [Microsoft MPI][msmpi_msdn]`smpd.exe`) и проверку готовности узлов к обработке сообщений, передаваемых между узлами.
+5. *После* того, как основная задача и все подзадачи успешно выполнят команду координации, основная задача выполнит **команду приложения** на главном узле. Команда приложения — это командная строка, указанная для многоэкземплярной задачи. Ее выполняет только основная задача. Например, вы можете запустить выполнение приложения с поддержкой MPI в решении на базе [MS-MPI][msmpi_msdn]с помощью команды `mpiexec.exe`.
 
 > [!NOTE]
 > Хотя задача с несколькими экземплярами по функциональности отличается от остальных задач, она не относится к типу таких уникальных задач, как [StartTask][net_starttask] или [JobPreparationTask][net_jobprep]. Задача с несколькими экземплярами — это всего лишь стандартная задача пакетной службы ([CloudTask][net_task] в .NET пакетной службы) с настроенными параметрами нескольких экземпляров. В этой статье задача такого типа называется **задачей с несколькими экземплярами**.
@@ -39,7 +39,7 @@ ms.locfileid: "82735272"
 >
 
 ## <a name="requirements-for-multi-instance-tasks"></a>Требования к задачам с несколькими экземплярами
-При выполнении многоэкземплярной задачи требуется, чтобы в пуле был **включен обмен данными между узлами** и **отключено параллельное выполнение задач**. Чтобы отключить параллельное выполнение задач, задайте для свойства [CloudPool.MaxTasksPerComputeNode](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.cloudpool) значение 1.
+При выполнении многоэкземплярной задачи требуется, чтобы в пуле был **включен обмен данными между узлами** и **отключено параллельное выполнение задач**. Чтобы отключить параллельное выполнение задач, задайте для свойства [CloudPool.MaxTasksPerComputeNode](/dotnet/api/microsoft.azure.batch.cloudpool) значение 1.
 
 > [!NOTE]
 > Пакетная служба [ограничит](batch-quota-limit.md#pool-size-limits) размера пула, для которого включен обмен данными между узлами.
@@ -66,7 +66,7 @@ myCloudPool.MaxTasksPerComputeNode = 1;
 
 
 ### <a name="use-a-starttask-to-install-mpi"></a>Установка MPI с помощью StartTask
-Для выполнения приложений MPI с помощью задачи с несколькими экземплярами на вычислительных узлах в пуле сначала необходимо установить реализацию MPI (например, MS-MPI или Intel MPI). Это хорошая возможность воспользоваться задачей [StartTask][net_starttask], которая выполняется каждый раз при присоединении узла к пулу или его перезапуске. В этом фрагменте кода создается StartTask, указывающий пакет установки MS-MPI в качестве [файла ресурсов][net_resourcefile]. Командная строка задачи запуска выполняется после скачивания файла ресурсов на узел. В этом случае командная строка выполняет автоматическую установку MS-MPI.
+Для выполнения приложений MPI с помощью задачи с несколькими экземплярами на вычислительных узлах в пуле сначала необходимо установить реализацию MPI (например, MS-MPI или Intel MPI). Это хорошая возможность воспользоваться задачей [StartTask][net_starttask], которая выполняется каждый раз при присоединении узла к пулу или его перезапуске. В этом фрагменте кода создается задача StartTask, указывающая пакет установки MS-MPI в качестве [файла ресурсов][net_resourcefile]. Командная строка задачи запуска выполняется после скачивания файла ресурсов на узел. В этом случае командная строка выполняет автоматическую установку MS-MPI.
 
 ```csharp
 // Create a StartTask for the pool which we use for installing MS-MPI on
@@ -86,7 +86,7 @@ await myCloudPool.CommitAsync();
 ```
 
 ### <a name="remote-direct-memory-access-rdma"></a>Удаленный доступ к памяти (RDMA)
-Если для пула пакетной службы выбран [размер с поддержкой RDMA](../virtual-machines/windows/sizes-hpc.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json), например А9, то приложение MPI может воспользоваться преимуществами сети RDMA Azure с удаленным доступом к памяти, обеспечивающей высокую производительность и низкие задержки.
+Если для пула пакетной службы выбран [размер с поддержкой RDMA](../virtual-machines/sizes-hpc.md?toc=/azure/virtual-machines/windows/toc.json), например А9, то приложение MPI может воспользоваться преимуществами сети RDMA Azure с удаленным доступом к памяти, обеспечивающей высокую производительность и низкие задержки.
 
 Сведения о размерах, указанных в качестве "С поддержкой RDMA", см. в следующих статьях:
 
@@ -150,7 +150,7 @@ myMultiInstanceTask.MultiInstanceSettings = new MultiInstanceSettings(numberOfNo
 cmd /c start cmd /c ""%MSMPI_BIN%\smpd.exe"" -d
 ```
 
-Обратите внимание, что в этой команде координации используется `start` . Это необходимо, так как приложение `smpd.exe` не возвращается сразу после выполнения. Если не использовать команду [start][cmd_start], то команда координации не возвращается и поэтому выполнение команды приложения блокируется.
+Обратите внимание, что в этой команде координации используется `start` . Это необходимо, так как приложение `smpd.exe` не возвращается сразу после выполнения. Если не использовать команду [start][cmd_start], то команда координации не возвращается и выполнение команды приложения блокируется.
 
 ## <a name="application-command"></a>Команда приложения
 Если основная задача и все подзадачи выполнили команду координации, командную строку многоэкземплярной задачи выполняет *только*основная задача. Назовем эту командную строку **командой приложения** , чтобы отличать ее от команды координации.
@@ -178,7 +178,7 @@ cmd /c ""%MSMPI_BIN%\mpiexec.exe"" -c 1 -wdir %AZ_BATCH_TASK_SHARED_DIR% MyMPIAp
 * `AZ_BATCH_TASK_SHARED_DIR`
 * `AZ_BATCH_IS_CURRENT_NODE_MASTER`
 
-Полные сведения об этих и других переменных среды вычислительных узлов пакетной службы, включая их содержимое и видимость, доступны в разделе [Azure Batch compute node environment variables][msdn_env_var] (Переменные среды вычислительных узлов пакетной службы Azure).
+Полную информацию об этих и других переменных среды вычислительных узлов пакетной службы, включая их содержимое и видимость, доступны в разделе [Переменные среды вычислительных узлов][msdn_env_var].
 
 > [!TIP]
 > Фрагмент кода Linux MPI для пакетной службы содержит пример использования некоторых из этих переменных среды.
@@ -202,7 +202,7 @@ cmd /c ""%MSMPI_BIN%\mpiexec.exe"" -c 1 -wdir %AZ_BATCH_TASK_SHARED_DIR% MyMPIAp
 
 При удалении задачи с несколькими экземплярами пакетная служба удаляет основную задачу и все подзадачи. Все каталоги и файлы подзадач удаляются из вычислительных узлов также, как и при стандартной задаче.
 
-Свойства [TaskConstraints][net_taskconstraints] для задачи с несколькими экземплярами (включая [MaxTaskRetryCount][net_taskconstraint_maxretry], [MaxWallClockTime][net_taskconstraint_maxwallclock] и [RetentionTime][net_taskconstraint_retention]), обрабатываются как свойства для стандартной задачи и применяются к основной задаче и всем подзадачам. Но если изменить свойство [RetentionTime][net_taskconstraint_retention] после добавления задачи с несколькими экземплярами в задание, это изменение будет применено только к основной задаче. Для всех подзадач и дальше будет использоваться исходное значение свойства [RetentionTime][net_taskconstraint_retention].
+Свойства [TaskConstraints][net_taskconstraints] для задачи с несколькими экземплярами (включая [MaxTaskRetryCount][net_taskconstraint_maxretry], [MaxWallClockTime][net_taskconstraint_maxwallclock] и [RetentionTime][net_taskconstraint_retention]), обрабатываются как свойства для стандартной задачи и применяются к основной задаче и всем подзадачам. Однако при изменении свойства [RetentionTime][net_taskconstraint_retention] после добавления задачи с несколькими экземплярами в задание это изменение будет применено только к основной задаче. Для всех подзадач по-прежнему будет использоваться исходное значение свойства [RetentionTime][net_taskconstraint_retention].
 
 Если последняя задача является частью многоэкземплярной задачи, в списке последних задач вычислительного узла отображается идентификатор подзадачи.
 
@@ -257,10 +257,10 @@ await subtasks.ForEachAsync(async (subtask) =>
 В примере кода [MultiInstanceTasks][github_mpi] в GitHub демонстрируется использование задачи с несколькими экземплярами для запуска приложения [MS-MPI][msmpi_msdn] на вычислительных узлах пакетной службы. Чтобы запустить пример, следуйте указаниям, приведенным в разделах [Подготовка](#preparation) и [Выполнение](#execution).
 
 ### <a name="preparation"></a>Подготовка
-1. Выполните первые два шага в статье [How to compile and run a simple MS-MPI program][msmpi_howto] (Как скомпилировать и выполнить простую программу MS-MPI). Это поможет выполнить предварительные требования к следующему шагу.
-2. Создайте версию *Выпуск* примера программы MPI [MPIHelloWorld][helloworld_proj]. Это программа, которую будет выполнять на вычислительных узлах задача с несколькими экземплярами.
+1. Выполните первые два шага, описанных в статье [Как скомпилировать и выполнить простую программу MS-MPI][msmpi_howto]. Это поможет выполнить предварительные требования к следующему шагу.
+2. Создайте *готовую* сборку программы-примера MPI [MPIHelloWorld][helloworld_proj]. Это программа, которую будет выполнять на вычислительных узлах задача с несколькими экземплярами.
 3. Создайте ZIP-файл, содержащий файл `MPIHelloWorld.exe` (созданный на шаге 2) и `MSMpiSetup.exe` (скачанный на шаге 1). Вы отправите этот ZIP-файл как пакет приложения на следующем шаге.
-4. Используйте [портал Azure][portal] для создания [приложения](batch-application-packages.md) пакетной службы с именем MPIHelloWorld и укажите ZIP-файл, созданный на предыдущем шаге, в качестве версии 1.0 пакета приложения. Дополнительные сведения см. в разделе [Передача приложений и управление ими](batch-application-packages.md#upload-and-manage-applications).
+4. Используйте [портал Azure][portal] для создания [приложения](batch-application-packages.md) пакетной службы с именем "MPIHelloWorld" и укажите ZIP-файл, созданный на предыдущем шаге, в качестве версии 1.0 пакета приложения. Дополнительные сведения см. в разделе [Передача приложений и управление ими](batch-application-packages.md#upload-and-manage-applications).
 
 > [!TIP]
 > Создайте версию *Выпуск* файла `MPIHelloWorld.exe`, чтобы в пакет приложения не нужно было включать какие-либо дополнительные зависимости (например, `msvcp140d.dll` или `vcruntime140d.dll`).
@@ -268,13 +268,13 @@ await subtasks.ForEachAsync(async (subtask) =>
 >
 
 ### <a name="execution"></a>Выполнение
-1. Скачайте файл [azure-batch-samples][github_samples_zip] из GitHub.
+1. Скачайте файл [azure-batch-samples][github_samples_zip] с GitHub.
 2. Откройте **решение** MultiInstanceTasks в Visual Studio 2019. Файл решения `MultiInstanceTasks.sln` находится в следующем расположении:
 
     `azure-batch-samples\CSharp\ArticleProjects\MultiInstanceTasks\`
 3. Введите данные своей учетной записи пакетной службы и учетной записи хранения в `AccountSettings.settings` в проекте **Microsoft.Azure.Batch.Samples.Common**.
 4. **Создайте и запустите** решение MultiInstanceTasks, чтобы выполнить пример приложения MPI на вычислительных узлах в пуле пакетной службы.
-5. *Необязательно.* Используйте [портал Azure][portal] или [Batch Explorer][batch_labs], чтобы проверить пример пула, задания и задачи ("MultiInstanceSamplePool", "MultiInstanceSampleJob", "MultiInstanceSampleTask"), а затем удалить ресурсы.
+5. *Необязательно*: используйте [портал Azure][portal] или [Batch Explorer][batch_labs], чтобы изучить пример пула, задания и задачи ("MultiInstanceSamplePool", "MultiInstanceSampleJob", "MultiInstanceSampleTask") перед тем, как удалить ресурсы.
 
 > [!TIP]
 > Вы можете скачать [Visual Studio Community][visual_studio] бесплатно, если у вас нет Visual Studio.
@@ -317,49 +317,49 @@ Sample complete, hit ENTER to exit...
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* В блоге команды разработчиков для Microsoft HPC и пакетной службы Azure обсуждается [поддержка MPI для Linux в пакетной службе Azure][blog_mpi_linux] и предоставляются сведения об использовании [OpenFOAM][openfoam] с пакетной службой. Фрагменты кода Python для [примера OpenFOAM можно найти на сайте GitHub][github_mpi].
+* В блоге команды разработчиков для Microsoft HPC и пакетной службы Azure обсуждается [поддержка MPI для Linux в пакетной службе Azure][blog_mpi_linux] и предоставляются сведения об использовании [OpenFOAM][openfoam] с пакетной службой. Образцы кода Python для [примера OpenFOAM][github_mpi] можно найти на сайте GitHub.
 * Узнайте, как [создавать пулы на вычислительных узлах Linux](batch-linux-nodes.md) для использования в решениях MPI пакетной службы Azure.
 
 [helloworld_proj]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/ArticleProjects/MultiInstanceTasks/MPIHelloWorld
 
-[api_net]: https://msdn.microsoft.com/library/azure/mt348682.aspx
-[api_rest]: https://msdn.microsoft.com/library/azure/dn820158.aspx
+[api_net]: /dotnet/api/microsoft.azure.batch
+[api_rest]: /rest/api/batchservice/
 [batch_labs]: https://azure.github.io/BatchExplorer/
-[blog_mpi_linux]: https://blogs.technet.microsoft.com/windowshpc/2016/07/20/introducing-mpi-support-for-linux-on-azure-batch/
-[cmd_start]: https://technet.microsoft.com/library/cc770297.aspx
+[blog_mpi_linux]: /archive/blogs/windowshpc/introducing-mpi-support-for-linux-on-azure-batch
+[cmd_start]: /previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc770297(v=ws.11)
 [coord_cmd_example]: https://github.com/Azure/azure-batch-samples/blob/master/Python/Batch/article_samples/mpi/data/coordination-cmd
 [github_mpi]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/ArticleProjects/MultiInstanceTasks
 [github_samples]: https://github.com/Azure/azure-batch-samples
 [github_samples_zip]: https://github.com/Azure/azure-batch-samples/archive/master.zip
-[msdn_env_var]: https://msdn.microsoft.com/library/azure/mt743623.aspx
-[msmpi_msdn]: https://msdn.microsoft.com/library/bb524831.aspx
+[msdn_env_var]: ./batch-compute-node-environment-variables.md
+[msmpi_msdn]: /message-passing-interface/microsoft-mpi
 [msmpi_sdk]: https://go.microsoft.com/FWLink/p/?LinkID=389556
-[msmpi_howto]: https://blogs.technet.com/b/windowshpc/archive/2015/02/02/how-to-compile-and-run-a-simple-ms-mpi-program.aspx
+[msmpi_howto]: /archive/blogs/windowshpc/how-to-compile-and-run-a-simple-ms-mpi-program
 [openfoam]: http://www.openfoam.com/
 [visual_studio]: https://www.visualstudio.com/vs/community/
 
-[net_jobprep]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.jobpreparationtask.aspx
-[net_multiinstance_class]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.multiinstancesettings.aspx
-[net_multiinstance_prop]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudtask.multiinstancesettings.aspx
-[net_multiinsance_commonresfiles]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.multiinstancesettings.commonresourcefiles.aspx
-[net_multiinstance_coordcmdline]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.multiinstancesettings.coordinationcommandline.aspx
-[net_multiinstance_numinstances]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.multiinstancesettings.numberofinstances.aspx
-[net_pool]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudpool.aspx
-[net_pool_create]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.createpool.aspx
-[net_pool_starttask]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudpool.starttask.aspx
-[net_resourcefile]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.resourcefile.aspx
-[net_starttask]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.starttask.aspx
-[net_starttask_cmdline]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.starttask.commandline.aspx
-[net_task]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudtask.aspx
-[net_taskconstraints]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.taskconstraints.aspx
-[net_taskconstraint_maxretry]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.taskconstraints.maxtaskretrycount.aspx
-[net_taskconstraint_maxwallclock]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.taskconstraints.maxwallclocktime.aspx
-[net_taskconstraint_retention]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.taskconstraints.retentiontime.aspx
-[net_task_listsubtasks]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudtask.listsubtasks.aspx
-[net_task_listnodefiles]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudtask.listnodefiles.aspx
-[poolops_getnodefile]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.getnodefile.aspx
+[net_jobprep]: /dotnet/api/microsoft.azure.batch.jobpreparationtask
+[net_multiinstance_class]: /dotnet/api/microsoft.azure.batch.multiinstancesettings
+[net_multiinstance_prop]: /dotnet/api/microsoft.azure.batch.cloudtask
+[net_multiinsance_commonresfiles]: /dotnet/api/microsoft.azure.batch.multiinstancesettings
+[net_multiinstance_coordcmdline]: /dotnet/api/microsoft.azure.batch.multiinstancesettings
+[net_multiinstance_numinstances]: /dotnet/api/microsoft.azure.batch.multiinstancesettings
+[net_pool]: /dotnet/api/microsoft.azure.batch.cloudpool
+[net_pool_create]: /dotnet/api/microsoft.azure.batch.pooloperations
+[net_pool_starttask]: /dotnet/api/microsoft.azure.batch.cloudpool
+[net_resourcefile]: /dotnet/api/microsoft.azure.batch.resourcefile
+[net_starttask]: /dotnet/api/microsoft.azure.batch.starttask
+[net_starttask_cmdline]: /dotnet/api/microsoft.azure.batch.starttask
+[net_task]: /dotnet/api/microsoft.azure.batch.cloudtask
+[net_taskconstraints]: /dotnet/api/microsoft.azure.batch.taskconstraints
+[net_taskconstraint_maxretry]: /dotnet/api/microsoft.azure.batch.taskconstraints
+[net_taskconstraint_maxwallclock]: /dotnet/api/microsoft.azure.batch.taskconstraints
+[net_taskconstraint_retention]: /dotnet/api/microsoft.azure.batch.taskconstraints
+[net_task_listsubtasks]: /dotnet/api/microsoft.azure.batch.cloudtask
+[net_task_listnodefiles]: /dotnet/api/microsoft.azure.batch.cloudtask
+[poolops_getnodefile]: /dotnet/api/microsoft.azure.batch.pooloperations
 
 [portal]: https://portal.azure.com
-[rest_multiinstance]: https://msdn.microsoft.com/library/azure/mt637905.aspx
+[rest_multiinstance]: /previous-versions/azure/mt637905(v=azure.100)
 
 [1]: ./media/batch-mpi/batch_mpi_01.png "Общие сведения о нескольких экземплярах"

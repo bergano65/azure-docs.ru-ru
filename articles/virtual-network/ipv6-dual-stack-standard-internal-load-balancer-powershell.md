@@ -8,17 +8,16 @@ author: KumudD
 manager: mtillman
 ms.service: virtual-network
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/14/2019
 ms.author: kumud
-ms.openlocfilehash: fdf726fd31e8b92a04a1c136eb5cd7110e0c6d5a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 67bc7994d2628790e84d3b3752f894a36486ca86
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "72333369"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84707520"
 ---
 # <a name="deploy-an-ipv6-dual-stack-application-using-standard-internal-load-balancer-in-azure---powershell-preview"></a>Развертывание приложения с двумя стеками IPv6 с помощью стандартного внутреннего Load Balancer в Azure PowerShell (Предварительная версия)
 
@@ -38,15 +37,15 @@ ms.locfileid: "72333369"
 ```
 
 Изменения, которые делают предыдущую конфигурацию внутренней подсистемы балансировки нагрузки,:
-- `PrivateIpAddressVersion` Указывается как "IPv6"
-- `-PublicIpAddress` Аргумент был либо пропущен, либо заменен на `-PrivateIpAddress`. Обратите внимание, что частный адрес должен находиться в диапазоне IP-пространства подсети, в котором будет развернута внутренняя подсистема балансировки нагрузки. Если параметр static `-PrivateIpAddress` опущен, следующий бесплатный IPv6-адрес будет выбран из подсети, в которой развернута внутренняя подсистема балансировки нагрузки.
-- Подсеть с двойным стеком, в которой будет развернута внутренняя подсистема балансировки `-Subnet` нагрузки `-SubnetId` , указывается с помощью аргумента или.
+- `PrivateIpAddressVersion`Указывается как "IPv6"
+- `-PublicIpAddress`Аргумент был либо пропущен, либо заменен на `-PrivateIpAddress` . Обратите внимание, что частный адрес должен находиться в диапазоне IP-пространства подсети, в котором будет развернута внутренняя подсистема балансировки нагрузки. Если параметр static `-PrivateIpAddress` опущен, следующий бесплатный IPv6-адрес будет выбран из подсети, в которой развернута внутренняя подсистема балансировки нагрузки.
+- Подсеть с двойным стеком, в которой будет развернута внутренняя подсистема балансировки нагрузки, указывается с помощью `-Subnet` `-SubnetId` аргумента или.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать PowerShell локально, для работы с этой статьей требуется модуль Azure PowerShell версии 6.9.0 или более поздней. Выполните командлет `Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-Az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
+Чтобы установить и использовать PowerShell локально для работы с этой статьей, вам понадобится модуль Azure PowerShell 6.9.0 или более поздней версии. Выполните командлет `Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-Az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 Перед развертыванием приложения с двойным стеком в Azure необходимо настроить подписку для этой предварительной версии, используя следующие Azure PowerShell:
 
 Зарегистрируйтесь следующим образом:
@@ -76,7 +75,7 @@ $rg = New-AzResourceGroup `
 ```
 
 ## <a name="create-ipv4-and-ipv6-public-ip-addresses"></a>Создание общедоступных IP-адресов IPv4 и IPv6
-Для доступа к виртуальным машинам из Интернета требуются общедоступные IP-адреса IPv4 и IPv6 для виртуальных машин. Создайте общедоступные IP-адреса с помощью [New-азпублиЦипаддресс](/powershell/module/az.network/new-azpublicipaddress). В следующем примере создается общедоступный IP-адрес IPv4 и IPv6 с именем *RdpPublicIP_1* и *RdpPublicIP_2* в группе ресурсов *dsStd_ILB_RG* .
+Для доступа к виртуальным машинам из Интернета требуются общедоступные IP-адреса IPv4 и IPv6 для виртуальных машин. Создайте общедоступные IP-адреса с помощью командлета [New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress). В следующем примере создается общедоступный IP-адрес IPv4 и IPv6 с именем *RdpPublicIP_1* и *RdpPublicIP_2* в группе ресурсов *dsStd_ILB_RG* .
 
 ```azurepowershell
 $RdpPublicIP_1 = New-AzPublicIpAddress `

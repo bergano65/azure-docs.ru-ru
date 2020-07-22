@@ -9,18 +9,18 @@ ms.subservice: azuread-dev
 ms.workload: identity
 ms.tgt_pltfrm: ios
 ms.devlang: objective-c
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 09/24/2018
 ms.author: ryanwi
 ms.reviewer: brandwe
 ms.custom: aaddev
 ROBOTS: NOINDEX
-ms.openlocfilehash: 082cbb931c9dae60b39f9ee5323337bf051fb56d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 08b018082c753b9524cb12a72d637fe5458d9114
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80154786"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85383705"
 ---
 # <a name="how-to-enable-cross-app-sso-on-ios-using-adal"></a>Практическое руководство. Включение единого входа в нескольких приложениях iOS с помощью ADAL
 
@@ -35,11 +35,11 @@ ms.locfileid: "80154786"
 Это практическое руководство применяется к:
 
 * Azure Active Directory (Azure Active Directory).
-* Azure Active Directory B2C
+* Azure Active Directory B2C
 * Azure Active Directory B2B
 * Условный доступ к Azure Active Directory
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 В этих инструкциях предполагается, что вы знаете следующее.
 
@@ -230,7 +230,7 @@ URI перенаправления App3: `x-msauth-mytestiosapp://com.myapp.myte
 </plist>
 ```
 
-После включения назначения цепочки ключей в каждом из приложений и готовности к использованию единого входа сообщите пакету SDK удостоверений о цепочке ключей, используя следующий параметр в `ADAuthenticationSettings` следующем параметре:
+После включения назначения цепочки ключей в каждом из приложений и готовности к использованию единого входа сообщите пакету SDK удостоверений о цепочке ключей, используя следующий параметр в следующем параметре `ADAuthenticationSettings` :
 
 ```
 defaultKeychainSharingGroup=@"com.myapp.mycache";
@@ -309,7 +309,7 @@ ex: *msauth://code/x-msauth-mytestiosapp%3A%2F%2Fcom.myapp.mytestapp*
 
 #### <a name="step-4-add-a-configuration-parameter-to-your-app"></a>Шаг 4. Добавление параметра конфигурации в приложение
 
-ADAL использует –canOpenURL для проверки того, установлен ли брокер на устройстве. В iOS 9 Apple заблокированы схемы, которые может запрашивать приложение. Необходимо добавить "msauth" в раздел Лсаппликатионкуериессчемес `info.plist file`.
+ADAL использует –canOpenURL для проверки того, установлен ли брокер на устройстве. В iOS 9 Apple заблокированы схемы, которые может запрашивать приложение. Необходимо добавить "msauth" в раздел Лсаппликатионкуериессчемес `info.plist file` .
 
 ```
     <key>LSApplicationQueriesSchemes</key>
@@ -323,6 +323,6 @@ ADAL использует –canOpenURL для проверки того, уст
 
 Теперь пакет SDK для удостоверений будет автоматически предоставлять учетные данные в приложения и вызывать брокер, если он установлен на устройстве.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения см. в статье [Протокол единого входа SAML](../develop/single-sign-on-saml-protocol.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json).

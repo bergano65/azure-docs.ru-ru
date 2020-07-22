@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 07/18/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c0b1471abd7e057af919ed274547daf94d356c2b
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 397fe8c111870f4a1a6489e6502ff4365f80d1e3
+ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "70213606"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85799587"
 ---
 # <a name="tutorial-integrate-the-cloud-security-fabric-with-azure-active-directory"></a>Руководство по Интеграция Azure Active Directory с The Cloud Security Fabric
 
@@ -85,17 +85,17 @@ ms.locfileid: "70213606"
 
     а. В текстовом поле **URL-адрес для входа** введите URL-адрес:
 
-    | |
-    |--|
-    | `https://platform.cloudlock.com` |
-    | `https://app.cloudlock.com` |
+      ```http
+      https://platform.cloudlock.com
+      https://app.cloudlock.com
+      ```
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате:
 
-    | |
-    |--|
-    | `https://platform.cloudlock.com/gate/saml/sso/<subdomain>` |
-    | `https://app.cloudlock.com/gate/saml/sso/<subdomain>` |
+      ```http
+      https://platform.cloudlock.com/gate/saml/sso/<subdomain>
+      https://app.cloudlock.com/gate/saml/sso/<subdomain>
+      ```
 
     > [!NOTE]
     > Значение идентификатора приведено для примера и не является реальным. Вместо него нужно указать фактический идентификатор. Чтобы получить это значение, обратитесь в [службу поддержки The Cloud Security Fabric](mailto:support@cloudlock.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

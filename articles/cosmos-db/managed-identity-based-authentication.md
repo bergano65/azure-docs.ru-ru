@@ -3,16 +3,16 @@ title: Использование назначенного системой уп
 description: Узнайте, как настроить Azure Active Directory (Azure AD) управляемое удостоверение (управляемое удостоверение службы) для доступа к ключам из Azure Cosmos DB.
 author: j-patrick
 ms.service: cosmos-db
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/20/2020
 ms.author: justipat
 ms.reviewer: sngun
-ms.openlocfilehash: 8136ad7a1fe29bc3394e959c10aafc52988c0a23
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: dfce18674f382cb683fa74a1bed964e9f86d72c2
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81641231"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86206106"
 ---
 # <a name="use-system-assigned-managed-identities-to-access-azure-cosmos-db-data"></a>Использование управляемых системой удостоверений для доступа к данным Azure Cosmos DB
 
@@ -28,13 +28,13 @@ ms.locfileid: "81641231"
 
 1. В [портал Azure](https://portal.azure.com/)откройте панель **функций Azure** и перейдите к приложению функции. 
 
-1. Откройте вкладку > **удостоверение** **функции платформы**: 
+1. Откройте вкладку **Platform features**  >  **удостоверение** функции платформы: 
 
-   ![Снимок экрана, показывающий функции платформы и параметры идентификации для приложения функции.](./media/managed-identity-based-authentication/identity-tab-selection.png)
+   :::image type="content" source="./media/managed-identity-based-authentication/identity-tab-selection.png" alt-text="Снимок экрана, показывающий функции платформы и параметры идентификации для приложения функции.":::
 
 1. На вкладке **удостоверение** **включите** **состояние** удостоверения системы и нажмите кнопку **сохранить**. Панель **удостоверений** должна выглядеть следующим образом:  
 
-   ![Снимок экрана с состоянием удостоверения системы, установленным в значение ON.](./media/managed-identity-based-authentication/identity-tab-system-managed-on.png)
+   :::image type="content" source="./media/managed-identity-based-authentication/identity-tab-system-managed-on.png" alt-text="Снимок экрана с состоянием удостоверения системы, установленным в значение ON.":::
 
 ## <a name="grant-access-to-your-azure-cosmos-account"></a>Предоставление доступа к учетной записи Azure Cosmos
 
@@ -43,7 +43,7 @@ ms.locfileid: "81641231"
 |Встроенные роли  |Описание  |
 |---------|---------|
 |[Участник учетной записи DocumentDB](../role-based-access-control/built-in-roles.md#documentdb-account-contributor)|Может управлять учетными записями Azure Cosmos DB Позволяет получать ключи для чтения и записи. |
-|[Средство чтения учетных записей Cosmos DB](../role-based-access-control/built-in-roles.md#cosmos-db-account-reader-role)|Позволяет считывать данные учетных записей Azure Cosmos DB. Позволяет получать ключи чтения. |
+|[Роль читателя учетных записей Cosmos DB](../role-based-access-control/built-in-roles.md#cosmos-db-account-reader-role)|Позволяет считывать данные учетных записей Azure Cosmos DB. Позволяет получать ключи чтения. |
 
 > [!IMPORTANT]
 > Поддержка управления доступом на основе ролей в Azure Cosmos DB применяется только к операциям управления плоскостью. Операции с плоскостью данных защищаются с помощью главных ключей или маркеров ресурсов. Дополнительные сведения см. в статье [безопасный доступ к данным](secure-access-to-data.md) .
@@ -53,32 +53,46 @@ ms.locfileid: "81641231"
 
 В этом сценарии приложение-функция будет считывать температуру акуариум, а затем записывать эти данные в контейнер в Azure Cosmos DB. Так как приложение-функция должно записать данные, необходимо назначить роль **участника учетной записи DocumentDB** . 
 
+### <a name="assign-the-role-using-azure-portal"></a>Назначение роли с помощью портал Azure
+
 1. Войдите в портал Azure и перейдите к учетной записи Azure Cosmos DB. Откройте панель **управления доступом (IAM)** и перейдите на вкладку **назначения ролей** :
 
-   ![Снимок экрана, показывающий панель управления доступом и вкладку назначения ролей.](./media/managed-identity-based-authentication/cosmos-db-iam-tab.png)
+   :::image type="content" source="./media/managed-identity-based-authentication/cosmos-db-iam-tab.png" alt-text="Снимок экрана, показывающий панель управления доступом и вкладку назначения ролей.":::
 
-1. Выберите **+ Добавить** > **добавить назначение ролей**.
+1. Выберите **+ Добавить** > **Добавить назначение ролей**.
 
 1. Справа откроется панель **Добавление назначения ролей** .
 
-   ![Снимок экрана, показывающий панель "Добавление назначения ролей".](./media/managed-identity-based-authentication/cosmos-db-iam-tab-add-role-pane.png)
+   :::image type="content" source="./media/managed-identity-based-authentication/cosmos-db-iam-tab-add-role-pane.png" alt-text="Снимок экрана, показывающий панель "Добавление назначения ролей".":::
 
    * **Роль**: выбор **участника учетной записи DocumentDB**
    * **Назначение доступа к**: в подразделе **Выбор управляемого системой удостоверения** выберите **приложение-функция**.
    * **SELECT**: область будет заполнена всеми приложениями-функциями в подписке, которые имеют **управляемое удостоверение системы**. В этом случае выберите приложение функции **фиштанктемпературесервице** : 
 
-      ![Снимок экрана, на котором отображается панель "Добавление назначения ролей", заполненная примерами.](./media/managed-identity-based-authentication/cosmos-db-iam-tab-add-role-pane-filled.png)
+      :::image type="content" source="./media/managed-identity-based-authentication/cosmos-db-iam-tab-add-role-pane-filled.png" alt-text="Снимок экрана, на котором отображается панель "Добавление назначения ролей", заполненная примерами.":::
 
 1. После выбора приложения функции нажмите кнопку **сохранить**.
+
+### <a name="assign-the-role-using-azure-cli"></a>Назначение роли с помощью Azure CLI
+
+Чтобы назначить роль с помощью Azure CLI, используйте следующие команды:
+
+```azurecli-interactive
+$scope = az cosmosdb show --name '<Your_Azure_Cosmos_account_name>' --resource-group '<CosmosDB_Resource_Group>' --query id
+
+$principalId = az webapp identity show -n '<Your_Azure_Function_name>' -g '<Azure_Function_Resource_Group>' --query principalId
+
+az role assignment create --assignee $principalId --role "DocumentDB Account Contributor" --scope $scope
+```
 
 ## <a name="programmatically-access-the-azure-cosmos-db-keys"></a>Программный доступ к ключам Azure Cosmos DB
 
 Теперь у нас есть приложение-функция, которое имеет назначенное системой управляемое удостоверение с ролью **участника учетной записи DocumentDB** в Azure Cosmos DB разрешений. Следующий код приложения-функции получит ключи Azure Cosmos DB, создать объект Космосклиент, получить температуру акуариум, а затем сохранить его в Azure Cosmos DB.
 
-В этом примере для доступа к ключам учетной записи Azure Cosmos DB используется [API списка ключей](https://docs.microsoft.com/rest/api/cosmos-db-resource-provider/DatabaseAccounts/ListKeys) .
+В этом примере для доступа к ключам учетной записи Azure Cosmos DB используется [API списка ключей](/rest/api/cosmos-db-resource-provider/DatabaseAccounts/ListKeys) .
 
 > [!IMPORTANT] 
-> Если вы хотите [назначить роль читателя учетной записи Cosmos DB](#grant-access-to-your-azure-cosmos-account) , вам потребуется использовать [интерфейс API списка ключей только для чтения](https://docs.microsoft.com/rest/api/cosmos-db-resource-provider/DatabaseAccounts/ListReadOnlyKeys). Это приведет к заполнению только тех ключей, которые доступны только для чтения.
+> Если вы хотите [назначить роль читателя учетной записи Cosmos DB](#grant-access-to-your-azure-cosmos-account) , вам потребуется использовать [интерфейс API списка ключей только для чтения](/rest/api/cosmos-db-resource-provider/DatabaseAccounts/ListReadOnlyKeys). Это приведет к заполнению только тех ключей, которые доступны только для чтения.
 
 API списка ключей возвращает `DatabaseAccountListKeysResult` объект. Этот тип не определен в библиотеках C#. В следующем коде показана реализация этого класса:  
 
@@ -198,7 +212,7 @@ namespace Monitor
 
 Теперь вы готовы к [развертыванию приложения функции](../azure-functions/functions-create-first-function-vs-code.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * [Проверка подлинности на основе сертификатов с помощью Azure Cosmos DB и Azure Active Directory](certificate-based-authentication.md)
 * [Защита ключей Azure Cosmos DB с помощью Azure Key Vault](access-secrets-from-keyvault.md)

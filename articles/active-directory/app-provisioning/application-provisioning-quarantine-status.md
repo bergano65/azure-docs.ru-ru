@@ -2,21 +2,21 @@
 title: Состояние подготовки приложений в карантине | Документация Майкрософт
 description: Когда вы настроили приложение для автоматической подготовки пользователей, Узнайте, что такое состояние подготовки карантина, и как его очистить.
 services: active-directory
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: troubleshooting
 ms.date: 04/28/2020
-ms.author: mimart
+ms.author: kenwith
 ms.reviewer: arvinh
-ms.openlocfilehash: c1e0039133b7f9a7ae827e348640f6379b7f10ac
-ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
+ms.openlocfilehash: ac5b1f72e4c70e15ccb12ea41e5f080ca0b8a505
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82593936"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86203028"
 ---
 # <a name="application-provisioning-in-quarantine-status"></a>Подготовка приложений в карантинном состоянии
 
@@ -28,15 +28,17 @@ ms.locfileid: "82593936"
 
 Существует три способа проверить, находится ли приложение в карантине:
   
-- В портал Azure перейдите к **Azure Active Directory** > **корпоративные приложения** > &lt;&gt; > **Подготовка** *имени приложения*и просмотрите индикатор выполнения для сообщения карантина.   
+- В портал Azure перейдите к **Azure Active Directory**  >  **корпоративные приложения**  >  &lt; *Подготовка имени приложения* &gt;  >  **Provisioning** и просмотрите индикатор выполнения для сообщения карантина.   
 
   ![Строка состояния подготовки, показывающая состояние карантина](./media/application-provisioning-quarantine-status/progress-bar-quarantined.png)
 
-- В портал Azure перейдите к **Azure Active Directory** > **аудита журналы** > фильтр по **действию: карантин** и просмотрите историю карантина. Хотя в представлении на индикаторе выполнения, как описано выше, показано, находится ли подготовка в карантине, журналы аудита позволяют просматривать историю карантина для приложения. 
+- В портал Azure перейдите к **Azure Active Directory**  >  **аудита журналы** > фильтр по **действию: карантин** и просмотрите историю карантина. Хотя в представлении на индикаторе выполнения, как описано выше, показано, находится ли подготовка в карантине, журналы аудита позволяют просматривать историю карантина для приложения. 
 
 - Используйте Microsoft Graph запрос [Get синчронизатионжоб](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-get?view=graph-rest-beta&tabs=http) , чтобы программно получить состояние задания подготовки:
 
-        `GET https://graph.microsoft.com/beta/servicePrincipals/{id}/synchronization/jobs/{jobId}/`
+```microsoft-graph
+        GET https://graph.microsoft.com/beta/servicePrincipals/{id}/synchronization/jobs/{jobId}/
+```
 
 - Проверьте электронную почту. Когда приложение помещается в карантин, отправляется одноразовое уведомление по электронной почте. При изменении причины карантина отправляется обновленное сообщение электронной почты с новой причиной помещения в карантин. Если вы не видите сообщение электронной почты, сделайте следующее:
 
@@ -66,7 +68,7 @@ ms.locfileid: "82593936"
 
 - Проверьте параметры подготовки приложения, чтобы убедиться, что [введены действительные учетные данные администратора](../app-provisioning/configure-automatic-user-provisioning-portal.md#configuring-automatic-user-account-provisioning). Azure AD должна иметь возможность установить отношение доверия с целевым приложением. Убедитесь, что введены допустимые учетные данные, а учетная запись имеет необходимые разрешения.
 
-- Просмотрите [журналы подготовки](../reports-monitoring/concept-provisioning-logs.md) , чтобы исследовать ошибки, приводящие к возникновению ошибок в карантине, и устраните ошибку. Чтобы получить доступ к журналам подготовки в портал Azure, перейдите в раздел **действия** **Azure Active Directory** &gt; журналы подготовки **корпоративных приложений** &gt; **(Предварительная версия)** .
+- Просмотрите [журналы подготовки](../reports-monitoring/concept-provisioning-logs.md) , чтобы исследовать ошибки, приводящие к возникновению ошибок в карантине, и устраните ошибку. Чтобы получить доступ к журналам подготовки в портал Azure, перейдите в **Azure Active Directory** &gt; **Enterprise Apps** &gt; раздел **действия** Azure Active Directory **журналы подготовки корпоративных приложений (Предварительная версия)** .
 
 После устранения проблемы перезапустите задание подготовки. Некоторые изменения параметров подготовки приложения, такие как сопоставление атрибутов или фильтры области, автоматически перезапускают подготовку. В индикаторе выполнения на странице **подготовки** приложения отображается время последнего запуска подготовки. Если необходимо вручную перезапустить задание подготовки, используйте один из следующих методов.  
 
@@ -74,4 +76,9 @@ ms.locfileid: "82593936"
 
 - Используйте Microsoft Graph, чтобы [перезапустить задание подготовки](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-restart?view=graph-rest-beta&tabs=http). Вы получите полный контроль над перезапусками. Вы можете снять флажки (чтобы перезапустить счетчик депонирования, который начисляется в сторону состояния карантина), Очистить карантин (чтобы удалить приложение из карантина) или снять пределы. Используйте следующий запрос:
  
-       `POST /servicePrincipals/{id}/synchronization/jobs/{jobId}/restart`
+```microsoft-graph
+        POST /servicePrincipals/{id}/synchronization/jobs/{jobId}/restart
+```
+
+Замените "{ID}" значением идентификатора приложения и замените "{jobId}" [идентификатором задания синхронизации](https://docs.microsoft.com/graph/api/resources/synchronization-configure-with-directory-extension-attributes?view=graph-rest-beta&tabs=http#list-synchronization-jobs-in-the-context-of-the-service-principal). 
+

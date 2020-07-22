@@ -7,25 +7,24 @@ ms.date: 10/25/2019
 ms.author: jafreebe
 ms.reviewer: ushan
 ms.openlocfilehash: d5f175d887cec1d5b5e567d3f716e6492f4516dd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78246970"
 ---
 # <a name="deploy-a-custom-container-to-app-service-using-github-actions"></a>Развертывание пользовательского контейнера в службе приложений с помощью действий GitHub
 
-[Действия GitHub](https://help.github.com/en/articles/about-github-actions) дают возможность создавать автоматизированный рабочий процесс жизненного цикла разработки программного обеспечения. [Действие службы приложений Azure для контейнеров](https://github.com/Azure/webapps-container-deploy)позволяет автоматизировать рабочий процесс для развертывания приложений в качестве [пользовательских контейнеров в службе приложений](https://azure.microsoft.com/services/app-service/containers/) с помощью действий GitHub.
+[GitHub Actions](https://help.github.com/en/articles/about-github-actions) предоставляет гибкие возможности для создания автоматизированных рабочих процессов жизненного цикла разработки программного обеспечения. [Действие службы приложений Azure для контейнеров](https://github.com/Azure/webapps-container-deploy)позволяет автоматизировать рабочий процесс для развертывания приложений в качестве [пользовательских контейнеров в службе приложений](https://azure.microsoft.com/services/app-service/containers/) с помощью действий GitHub.
 
 > [!IMPORTANT]
-> Действия GitHub в настоящее время находятся в бета-версии. Сначала необходимо [зарегистрироваться, чтобы присоединиться к предварительной версии](https://github.com/features/actions) с помощью учетной записи GitHub.
+> GitHub Actions в настоящее время предоставляется в виде бета-версии. Сначала вам необходимо [зарегистрироваться для присоединения к предварительной версии](https://github.com/features/actions) с помощью учетной записи GitHub.
 > 
 
-Рабочий процесс определяется файлом YAML (. yml) в `/.github/workflows/` пути в репозитории. Это определение содержит различные шаги и параметры, составляющие рабочий процесс.
+Рабочий процесс определяется файлом YAML (.yml) по пути `/.github/workflows/` в вашем репозитории. Это определение содержит разные шаги и параметры рабочего процесса.
 
 Для рабочего процесса контейнера службы приложений Azure файл содержит три раздела:
 
-|Раздел  |Задачи  |
+|Section  |Задания  |
 |---------|---------|
 |**Аутентификация** | 1. Определите субъект-службу. <br /> 2. Создайте секрет GitHub. |
 |**Сборка** | 1. Настройте среду. <br /> 2. Создайте образ контейнера. |
@@ -33,7 +32,7 @@ ms.locfileid: "78246970"
 
 ## <a name="create-a-service-principal"></a>Создание субъекта-службы
 
-Вы можете создать [субъект-службу](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object) с помощью команды [AZ AD SP Create/for-RBAC](https://docs.microsoft.com/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac) в [Azure CLI](https://docs.microsoft.com/cli/azure/). Эту команду можно выполнить с помощью [Azure Cloud Shell](https://shell.azure.com/) в портал Azure или нажав кнопку **попробовать** .
+Вы можете создать [субъект-службу](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object) с помощью команды [az ad sp create-for-rbac](https://docs.microsoft.com/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac) в [Azure CLI](https://docs.microsoft.com/cli/azure/). Эту команду можно выполнить в [Azure Cloud Shell](https://shell.azure.com/) на портале Azure или с помощью кнопки **Попробовать**.
 
 ```azurecli-interactive
 az ad sp create-for-rbac --name "myApp" --role contributor \
@@ -56,13 +55,13 @@ az ad sp create-for-rbac --name "myApp" --role contributor \
 ```
 
 > [!IMPORTANT]
-> Всегда рекомендуется предоставлять минимальный доступ. Вы можете ограничить область в приведенной выше команде AZ CLI конкретным приложением службы приложений и реестром контейнеров Azure, в который отправляются образы контейнеров.
+> Рекомендуется всегда предоставлять минимальные разрешения доступа. Вы можете ограничить область в приведенной выше команде AZ CLI конкретным приложением службы приложений и реестром контейнеров Azure, в который отправляются образы контейнеров.
 
 ## <a name="configure-the-github-secret"></a>Настройка секрета GitHub
 
-В приведенном ниже примере используются учетные данные уровня пользователя, т. е. субъект-служба Azure для развертывания. Выполните действия по настройке секрета.
+В приведенном ниже примере используются учетные данные уровня пользователя, т. е. субъект-служба Azure для развертывания. Выполните следующие действия, чтобы настроить секрет:
 
-1. В [GitHub](https://github.com/)найдите репозиторий, выберите **параметры > секреты > добавить новый секрет**
+1. В [GitHub](https://github.com/) перейдите к репозиторию и выберите **Settings > Secrets > Add a new secret** (Параметры > Секреты > Добавить секрет).
 
 2. Вставьте содержимое приведенной ниже `az cli` команды в качестве значения переменной Secret. Например, `AZURE_CREDENTIALS`.
 
@@ -75,7 +74,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor \
     # Replace {subscription-id}, {resource-group} with the subscription, resource group details
     ```
 
-3. Теперь в файле рабочего процесса в ветви `.github/workflows/workflow.yml` укажите секрет в действии Azure для входа.
+3. Теперь в файле рабочего процесса в ветви укажите `.github/workflows/workflow.yml` секрет в действии Azure для входа.
 
 4. Аналогичным образом определите следующие дополнительные секреты для учетных данных реестра контейнеров и настройте их в действии входа DOCKER. 
 
@@ -123,15 +122,15 @@ jobs:
 
 Чтобы развернуть образ в пользовательском контейнере в службе приложений, используйте `azure/webapps-container-deploy@v1` действие. Это действие имеет пять параметров:
 
-| **Параметр**  | **Объяснение**  |
+| **Параметр**  | **Пояснение**  |
 |---------|---------|
-| **имя приложения** | Необходимости Имя приложения службы приложений | 
-| **имя слота** | Используемых Введите существующий слот, отличный от рабочего слота |
+| **app-name** | (Обязательный) Имя приложения Службы приложений. | 
+| **slot-name** | (Необязательный) Введите существующий слот вместо рабочего. |
 | **images** | Необходимости Укажите полное имя образа контейнера. Например, "myregistry.azurecr.io/nginx:latest" или "Python: 3.7.2-Alpine/". Для многоконтейнерного приложения можно указать несколько имен образов контейнеров (разделенных несколькими строками). |
 | **файл конфигурации** | Используемых Путь к файлу создания DOCKER. Должен быть полным путем или относительным по отношению к рабочему каталогу по умолчанию. Требуется для приложений с несколькими контейнерами. |
-| **контейнер — команда** | Используемых Введите команду запуска. Для ex Команда DotNet Run или DotNet filename. dll |
+| **контейнер — команда** | Используемых Введите команду запуска. Для ex Запуск DotNet или DotNet filename.dll |
 
-Ниже приведен пример рабочего процесса для сборки и развертывания приложения Node. js в пользовательском контейнере в службе приложений.
+Ниже приведен пример рабочего процесса для сборки и развертывания Node.js приложения в пользовательском контейнере в службе приложений.
 
 ```yaml
 on: [push]
@@ -171,21 +170,21 @@ jobs:
         az logout
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Наш набор действий, сгруппированных в различные репозитории в GitHub, можно найти в каждом из них, содержащих документацию и примеры, которые помогут вам использовать GitHub для непрерывной интеграции и развертывания приложений в Azure.
+Вы можете найти наш набор компонентов Actions, объединенных в разных репозитории, а также соответствующую документацию и примеры использования GitHub для CI/CD и развертыванию приложений в Azure на GitHub.
 
 - [Вход в Azure](https://github.com/Azure/login)
 
-- [Azure WebApp](https://github.com/Azure/webapps-deploy)
+- [Веб-приложение Azure](https://github.com/Azure/webapps-deploy)
 
-- [Azure WebApp для контейнеров](https://github.com/Azure/webapps-container-deploy)
+- [Веб-приложение Azure для контейнеров](https://github.com/Azure/webapps-container-deploy)
 
-- [Вход в DOCKER и выход из него](https://github.com/Azure/docker-login)
+- [Вход в Docker и выход из него](https://github.com/Azure/docker-login)
 
 - [События, инициирующие рабочие процессы](https://help.github.com/en/articles/events-that-trigger-workflows)
 
-- [Развертывание K8s](https://github.com/Azure/k8s-deploy)
+- [Развертывание Kubernetes](https://github.com/Azure/k8s-deploy)
 
 - [Начальные рабочие процессы CI](https://github.com/actions/starter-workflows)
 

@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/10/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d044a229764d0d6ce1d0f3b10b95d406ccd3dd5f
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 21428738873f60d2173df53f5b9f1d108ee5eff4
+ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77371449"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85798729"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-experience-cloud"></a>Руководство по интеграции единого входа Azure Active Directory с Experience Cloud
 
@@ -86,33 +86,32 @@ ms.locfileid: "77371449"
 
     а. В текстовом поле **Идентификатор** введите URL-адрес в таком формате:
     
-    |||
-    |-|-|
-    | `https://<cluster>.medallia.com/sso/<company>`|
-    | `https://<cluster>.medallia.ca/sso/<company>`|
-    | `https://<cluster>.medallia.eu/sso/<company>`|
-    | `https://<cluster>.medallia.au/sso/<company>`|
+    ```http
+    https://<cluster>.medallia.com/sso/<company>
+    https://<cluster>.medallia.ca/sso/<company>
+    https://<cluster>.medallia.eu/sso/<company>
+    https://<cluster>.medallia.au/sso/<company>
+    ```
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате:
 
-    |||
-    |-|-|
-    | `https://<cluster>.medallia.com/sso/<company>/logonSubmit.do`|
-    | `https://<cluster>.medallia.ca/sso/<company>/logonSubmit.do`|
-    | `https://<cluster>.medallia.eu/sso/<company>/logonSubmit.do`|
-    | `https://<cluster>.medallia.au/sso/<company>/logonSubmit.do`|
-
+    ```http
+    https://<cluster>.medallia.com/sso/<company>/logonSubmit.do
+    https://<cluster>.medallia.ca/sso/<company>/logonSubmit.do
+    https://<cluster>.medallia.eu/sso/<company>/logonSubmit.do
+    https://<cluster>.medallia.au/sso/<company>/logonSubmit.do
+    ```
 
 1. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в таком формате:
 
-    |||
-    |-|-|
-    | `https://<cluster>.medallia.com/sso/<company>`|
-    | `https://<cluster>.medallia.ca/sso/<company>`|
-    | `https://<cluster>.medallia.eu/sso/<company>`|
-    | `https://<cluster>.medallia.au/sso/<company>`|
+    ```http
+    https://<cluster>.medallia.com/sso/<company>
+    https://<cluster>.medallia.ca/sso/<company>
+    https://<cluster>.medallia.eu/sso/<company>
+    https://<cluster>.medallia.au/sso/<company>
+    ```
 
     > [!NOTE]
     > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Experience Cloud](mailto:support@medallia.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

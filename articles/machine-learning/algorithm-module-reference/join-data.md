@@ -10,10 +10,9 @@ author: likebupt
 ms.author: keli19
 ms.date: 11/19/2019
 ms.openlocfilehash: 38606f424e38fc68519181f485b5b698d0705d6a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79477584"
 ---
 # <a name="join-data"></a>Объединение данных
@@ -66,6 +65,6 @@ ms.locfileid: "79477584"
 
 1. Чтобы просмотреть результаты, щелкните правой кнопкой мыши **данные объединения** и выберите **визуализировать**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-См. [набор модулей, доступных](module-reference.md) для машинное обучение Azure. 
+Ознакомьтесь с [набором доступных модулей](module-reference.md) в службе Машинного обучения Azure. 

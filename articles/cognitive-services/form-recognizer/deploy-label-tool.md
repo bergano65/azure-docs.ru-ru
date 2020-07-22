@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: how-to
 ms.date: 04/14/2020
 ms.author: pafarley
-ms.openlocfilehash: 27afbafcadb4c482e97e1d003706e7d2712e63c9
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 3bb8f0e809ae1acbec1479c20e24c90fd81905d4
+ms.sourcegitcommit: 6fd28c1e5cf6872fb28691c7dd307a5e4bc71228
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82117273"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85212451"
 ---
 # <a name="deploy-the-sample-labeling-tool"></a>Развертывание примера средства создания меток
 
@@ -89,13 +89,13 @@ ms.locfileid: "82117273"
 
 ### <a name="azure-cli"></a>Azure CLI
 
-В качестве альтернативы использованию портал Azure можно создать ресурс с помощью Azure CLI. Прежде чем продолжить, необходимо установить [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Этот шаг можно пропустить, если вы уже работаете с Azure CLI. 
+В качестве альтернативы использованию портал Azure можно создать ресурс с помощью Azure CLI. Прежде чем продолжить, необходимо установить [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli). Этот шаг можно пропустить, если вы уже работаете с Azure CLI. 
 
 Есть несколько вещей, которые необходимо знать об этой команде:
 
 * `DNS_NAME_LABEL=aci-demo-$RANDOM`Создает случайное DNS-имя. 
 * В этом примере предполагается, что у вас есть группа ресурсов, которую можно использовать для создания ресурса. Замените `<resource_group_name>` допустимой группой ресурсов, связанной с вашей подпиской. 
-* Необходимо указать, где вы хотите создать ресурс. Замените `<region name>` на нужный регион для веб-приложения. 
+* Необходимо указать, где вы хотите создать ресурс. Замените на `<region name>` нужный регион для веб-приложения. 
 * Эта команда автоматически принимает условия лицензионного соглашения.
 
 В Azure CLI выполните следующую команду, чтобы создать ресурс веб-приложения для примера средства создания меток. 
@@ -123,6 +123,6 @@ az container create \
 
 Средство OCR с метками также доступно в виде проекта с открытым исходным кодом на сайте GitHub. Средство — это веб-приложение, созданное с помощью команды React + Redux и написанное в TypeScript. Чтобы узнать больше или внести свой вклад, см. статью [Средство маркировки документов OCR](https://github.com/microsoft/OCR-Form-Tools/blob/master/README.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Используйте краткое руководство [обучение с метками](./quickstarts/label-tool.md) , чтобы узнать, как использовать средство для ручной маркировки обучающих данных и выполнения контролируемого обучения.

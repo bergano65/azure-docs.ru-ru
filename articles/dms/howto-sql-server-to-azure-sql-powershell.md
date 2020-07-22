@@ -1,7 +1,7 @@
 ---
 title: 'PowerShell: миграция SQL Server в базу данных SQL'
 titleSuffix: Azure Database Migration Service
-description: Узнайте, как выполнить миграцию из локальной SQL Server в базу данных SQL Azure с помощью Azure PowerShell с Azure Database Migration Service.
+description: Узнайте, как перенести базу данных из SQL Server в базу данных SQL Azure с помощью Azure PowerShell с Azure Database Migration Service.
 services: database-migration
 author: pochiraju
 ms.author: rajpo
@@ -12,16 +12,16 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 02/20/2020
-ms.openlocfilehash: f63f79402b457017257f1762c6ddc7e04c0ee1af
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a092ec3d211ed3fafadd73c37b3e58c353b618d6
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77650696"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85253415"
 ---
-# <a name="migrate-sql-server-on-premises-to-azure-sql-database-using-azure-powershell"></a>Перенос данных из локального экземпляра SQL Server в Базу данных SQL Azure с помощью Azure PowerShell
+# <a name="migrate-a-sql-server-database-to-azure-sql-database-using-azure-powershell"></a>Перенос базы данных SQL Server в базу данных SQL Azure с помощью Azure PowerShell
 
-В этой статье выполняется перенос базы данных **Adventureworks2012**, восстановленной на локальном экземпляре SQL Server 2016 (или более поздней версии), в базу данных SQL Azure с помощью Microsoft Azure PowerShell. Вы можете выполнить перенос баз данных из локального экземпляра SQL Server в базу данных SQL Azure с помощью модуля `Az.DataMigration` в Microsoft Azure PowerShell.
+В этой статье вы перенесите базу данных **Adventureworks2012** , которая была восстановлена в локальный экземпляр SQL Server 2016 или более поздней версии, в базу данных SQL Azure с помощью Microsoft Azure PowerShell. Вы можете перенести базы данных из экземпляра SQL Server в базу данных SQL Azure с помощью `Az.DataMigration` модуля в Microsoft Azure PowerShell.
 
 Вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
@@ -38,7 +38,7 @@ ms.locfileid: "77650696"
 * [SQL Server 2016 или более поздней версии](https://www.microsoft.com/sql-server/sql-server-downloads) (любой выпуск).
 * При установке SQL Server Express включите протокол TCP/IP, который отключен по умолчанию. Для этого выполните инструкции в разделе [Использование диспетчера конфигурации SQL Server](https://docs.microsoft.com/sql/database-engine/configure-windows/enable-or-disable-a-server-network-protocol#SSMSProcedure) статьи "Включение или отключение сетевого протокола сервера".
 * [Настройте брандмауэр Windows для доступа к ядру СУБД](https://docs.microsoft.com/sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access).
-* Экземпляр Базы данных SQL Azure. Экземпляр базы данных SQL Azure можно создать, ознакомившись со сведениями в статье [Создание базы данных SQL Azure на портале Azure](https://docs.microsoft.com/azure/sql-database/sql-database-get-started-portal).
+* Экземпляр Базы данных SQL Azure. Экземпляр базы данных SQL Azure можно создать, следуя сведениям в статье [Создание базы данных в базе данных SQL Azure на портал Azure](https://docs.microsoft.com/azure/sql-database/sql-database-get-started-portal).
 * [Помощник по миграции данных](https://www.microsoft.com/download/details.aspx?id=53595) 3.3 или более поздней версии.
 * Чтобы создать виртуальная сеть Microsoft Azure с помощью модели развертывания Azure Resource Manager, которая предоставляет Azure Database Migration Service с подключением типа "сеть — сеть" к локальным исходным серверам с помощью [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways).
 * Чтобы выполнить оценку локальной базы данных и миграции схемы с помощью Помощник по миграции данных, как описано в статье [выполнение SQL Serverной оценки миграции](https://docs.microsoft.com/sql/dma/dma-assesssqlonprem) .
@@ -57,7 +57,7 @@ ms.locfileid: "77650696"
 
 Создайте группу ресурсов с помощью команды [New-азресаурцеграуп](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup) .
 
-В следующем примере создается группа ресурсов с именем *myResourceGroup* в регионе *EastUS*.
+В следующем примере создается группа ресурсов с именем *myResourceGroup* в регионе *EastUS* .
 
 ```powershell
 New-AzResourceGroup -ResourceGroupName myResourceGroup -Location EastUS
@@ -69,7 +69,7 @@ New-AzResourceGroup -ResourceGroupName myResourceGroup -Location EastUS
 
 * *Имя группы ресурсов Azure*. Вы можете использовать команду [New-азресаурцеграуп](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup) , чтобы создать группу ресурсов Azure, как показано выше, и указать ее имя в качестве параметра.
 * *Имя службы*. Строка, соответствующая требуемому уникальному имени службы для Azure Database Migration Service. 
-* *Расположение*. Указывает расположение службы. Укажите расположение центра обработки данных Azure, например западная часть США или Юго-Восточная Азия.
+* *Расположение.* Указывает расположение службы. Укажите расположение центра обработки данных Azure, например западная часть США или Юго-Восточная Азия.
 * *Номер SKU*. Этот параметр соответствует имени SKU DMS. Поддерживаемое сейчас имя Sku — *GeneralPurpose_4vCores*.
 * *VirtualSubnetId.* Для создания подсети можно использовать командлет [New-азвиртуалнетворксубнетконфиг](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetworksubnetconfig) . 
 
@@ -96,7 +96,7 @@ $service = New-AzDms -ResourceGroupName myResourceGroup `
 Объект сведений о подключении к базе данных можно создать, выполнив командлет `New-AzDmsConnInfo`. Для этого командлета требуются следующие параметры:
 
 * *ServerType*. Тип запрошенного подключения к базе данных, например SQL, Oracle или MySQL. Используйте SQL для SQL Server и SQL Azure.
-* *Источник данных*. Имя или IP-адрес экземпляра SQL Server или базы данных SQL Azure.
+* *Источник данных*. Имя или IP-адрес SQL Server экземпляра или базы данных SQL Azure.
 * *AuthType*. Тип проверки подлинности для подключения. Это может быть SqlAuthentication или WindowsAuthentication.
 * Параметр *TrustServerCertificate* задает значение, указывающее, будет ли шифроваться канал при проходе по цепочке сертификатов для проверки доверия. Значение может быть true или false.
 
@@ -109,7 +109,7 @@ $sourceConnInfo = New-AzDmsConnInfo -ServerType SQL `
   -TrustServerCertificate:$true
 ```
 
-В следующем примере показано создание сведений о подключении для сервера Базы данных SQL Azure с именем SQLAzureTarget с использованием проверки подлинности SQL.
+В следующем примере показано создание сведений о соединении для сервера с именем Склазуретаржет с использованием проверки подлинности SQL:
 
 ```powershell
 $targetConnInfo = New-AzDmsConnInfo -ServerType SQL `
@@ -254,6 +254,6 @@ if (($mytask.ProjectTask.Properties.State -eq "Running") -or ($mytask.ProjectTas
 Remove-AzDms -ResourceGroupName myResourceGroup -ServiceName MyDMS
 ```
 
-## <a name="next-step"></a>Дальнейшие действия
+## <a name="next-step"></a>Следующий шаг
 
 * Просмотрите [руководство по миграции базы данных Майкрософт](https://datamigration.microsoft.com/).

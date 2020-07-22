@@ -12,12 +12,12 @@ ms.date: 09/24/2019
 ms.author: marsma
 ms.reviewer: jmprieur, saeeda
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:iOS
-ms.openlocfilehash: 47485d8d9007a6cf6432b7bf401c7c1c34a9863a
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: bd17c20707c3bf1a153e9209cd7e2ec279de0501
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81536137"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85554057"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-ios-or-macos-app"></a>Краткое руководство. Вход пользователей и вызов Microsoft API Graph из приложения iOS или macOS
 
@@ -70,74 +70,50 @@ ms.locfileid: "81536137"
 >
 > > [!div id="appconfigured" class="alert alert-info"]
 > > ![Уже настроено](media/quickstart-v2-ios/green-check.png). Ваше приложение настроено с помощью этих атрибутов
-
-#### <a name="step-2-download-the-sample-project"></a>Шаг 2. Загрузка примера проекта
-
-- [Скачивание примера кода для iOS](https://github.com/Azure-Samples/active-directory-ios-swift-native-v2/archive/master.zip)
-- [Скачивание примера кода для macOS](https://github.com/Azure-Samples/active-directory-macOS-swift-native-v2/archive/master.zip)
+> 
+> #### <a name="step-2-download-the-sample-project"></a>Шаг 2. Загрузка примера проекта
+> > [!div id="autoupdate_ios" class="nextstepaction"]
+> > [Загрузка примера кода для iOS]()
+> 
+> > [!div id="autoupdate_macos" class="nextstepaction"]
+> > [Загрузка примера кода для macOS]()
+> [!div renderon="docs"]
+> #### <a name="step-2-download-the-sample-project"></a>Шаг 2. Загрузка примера проекта
+> 
+> - [Загрузка примера кода для iOS](https://github.com/Azure-Samples/active-directory-ios-swift-native-v2/archive/master.zip)
+> - [Загрузка примера кода для macOS](https://github.com/Azure-Samples/active-directory-macOS-swift-native-v2/archive/master.zip)
 
 #### <a name="step-3-install-dependencies"></a>Шаг 3. Установка зависимостей
 
 В окне терминала перейдите к папке со скачанным примером кода и выполните `pod install`, чтобы установить последнюю библиотеку MSAL.
 
-#### <a name="step-4-configure-your-project"></a>Шаг 4. Настройка проекта
-
-> [!div renderon="docs"]
-> Если вы выбрали вариант 1 выше, можно пропустить эти шаги.
-
 > [!div renderon="portal" class="sxs-lookup"]
-> 1. Извлеките ZIP-файл и откройте проект в XCode.
-> 1. Измените **ViewController.swift** и замените строку, начинающуюся с "let kClientID", следующим фрагментом кода. Не забудьте обновить значение `kClientID`, указав идентификатор клиента, который вы ранее сохранили при регистрации приложения на портале в этом кратком руководстве.
->    ```swift
->    let kClientID = "Enter_the_Application_Id_Here"
->    ```
-> 1. Измените **ViewController.swift** и замените строку, начинающуюся с let kAuthority, следующим фрагментом кода.
->    ```swift
->    let kAuthority = "Enter_the_Authority_Endpoint_Host_HereEnter_the_Tenant_Info_Here"
->    ```
-> 1. Измените **ViewController.swift** и замените строку, начинающуюся с let kGraphEndpoint, следующим фрагментом кода.
->    ```swift
->    let kGraphEndpoint = "Enter_the_MS_Graph_Endpoint_Host_Here"
->    ```
-> 1. Откройте параметры проекта. В разделе **Идентификатор** введите **идентификатор пакета**, введенный на портале.
-> 1. (Только для iOS) Щелкните **Info.plist**, а затем выберите **Открыть как** > **Исходный код**.
-> 1. (Только для iOS) В корневом узле словаря замените `CFBundleURLSchemes` на ***идентификатор пакета***, введенный на портале.
->
->    ```xml
->    <key>CFBundleURLTypes</key>
->    <array>
->       <dict>
->          <key>CFBundleURLSchemes</key>
->          <array>
->             <string>msauth.Enter_the_Bundle_Id_Here</string>
->          </array>
->       </dict>
->    </array>
->    ```
-> 1. Создайте и запустите приложение.
-> [!div class="sxs-lookup" renderon="portal"]
+> #### <a name="step-4-your-app-is-configured-and-ready-to-run"></a>Шаг 4. Приложение настроено и готово к запуску
+> Мы уже настроили для проекта нужные значения свойств приложения, и его можно запускать.
 > > [!NOTE]
 > > `Enter_the_Supported_Account_Info_Here`
-> [!div renderon="docs"]
 >
+> [!div renderon="docs"]
+>#### <a name="step-4-configure-your-project"></a>Шаг 4. Настройка проекта
+> Если вы выбрали вариант 1 выше, можно пропустить эти шаги.
 > 1. Извлеките ZIP-файл и откройте проект в XCode.
 > 1. Измените **ViewController.swift** и замените строку, начинающуюся с "let kClientID", следующим фрагментом кода. Не забудьте обновить значение `kClientID`, указав идентификатор клиента, который вы ранее сохранили при регистрации приложения на портале в этом кратком руководстве:
 >    ```swift
 >    let kClientID = "Enter_the_Application_Id_Here"
 >    ```
 > 1. Если вы создаете приложение для [национальных облаков Azure AD](https://docs.microsoft.com/graph/deployments#app-registration-and-token-service-root-endpoints), замените строку, начинающуюся с let kGraphEndpoint и let kAuthority соответствующими конечными точками. Для предоставления глобального доступа используйте значения по умолчанию:
->     ```objective-c
+>     ```swift
 >     let kGraphEndpoint = "https://graph.microsoft.com/"
 >     let kAuthority = "https://login.microsoftonline.com/common"
 >     ```
 > 1. См. описание [других конечных точек](https://docs.microsoft.com/graph/deployments#app-registration-and-token-service-root-endpoints). Например, чтобы выполнить процесс для Azure AD Germany, используйте следующее:
->     ```objective-c
+>     ```swift
 >     let kGraphEndpoint = "https://graph.microsoft.de/"
 >     let kAuthority = "https://login.microsoftonline.de/common"
 >     ```
 > 1. Откройте параметры проекта. В разделе **Идентификатор** введите **идентификатор пакета**, введенный на портале.
-> 1. (Только для iOS) Щелкните **Info.plist**, а затем выберите **Открыть как** > **Исходный код**.
-> 1. (Только для iOS) В корневом узле словаря замените `Enter_the_bundle_Id_Here` на ***идентификатор пакета***, использованный на портале.
+> 1. Щелкните **Info.plist**, а затем выберите **Открыть как** > **Исходный код**.
+> 1. В корневом узле словаря замените `Enter_the_bundle_Id_Here` на ***идентификатор пакета***, использованный на портале.
 >
 >    ```xml
 >    <key>CFBundleURLTypes</key>
@@ -197,7 +173,7 @@ let msalConfiguration = MSALPublicClientApplicationConfig(clientId: kClientID, r
 self.applicationContext = try MSALPublicClientApplication(configuration: msalConfiguration)
 ```
 
-> |Где: ||
+> |Где: | Описание |
 > |---------|---------|
 > | `clientId` | Идентификатор зарегистрированного приложения на *portal.azure.com* |
 > | `authority` | Конечная точка платформы удостоверений Майкрософт. В большинстве случаев это будет *https<span/>://login.microsoftonline.com/common* |
@@ -261,7 +237,7 @@ let parameters = MSALInteractiveTokenParameters(scopes: kScopes, webviewParamete
 self.applicationContext!.acquireToken(with: parameters) { (result, error) in /* Add your handling logic */}
 ```
 
-> |Где:||
+> |Где:| Описание |
 > |---------|---------|
 > | `scopes` | Содержит запрашиваемые области, то есть `[ "user.read" ]` для Microsoft Graph или `[ "<Application ID URL>/scope" ]` для пользовательских веб-API (`api://<Application ID>/access_as_user`). |
 
@@ -281,7 +257,7 @@ self.applicationContext!.getCurrentAccount(with: nil) { (currentAccount, previou
 }
 ```
 
-> |Где: ||
+> |Где: | Описание |
 > |---------|---------|
 > | `scopes` | Содержит запрашиваемые области, то есть `[ "user.read" ]` для Microsoft Graph или `[ "<Application ID URL>/scope" ]` для пользовательских веб-API (`api://<Application ID>/access_as_user`). |
 > | `account` | Учетная запись, для которой запрашивается токен. В этом кратком руководстве рассматривается приложение с одной учетной записью. Если вы хотите создать приложение с несколькими учетными записями, нужно определить логику для выбора учетной записи, которая будет использоваться для запросов токенов, с помощью `accountsFromDeviceForParameters:completionBlock:` и правильного идентификатора `accountIdentifier`. |

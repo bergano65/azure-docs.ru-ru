@@ -8,20 +8,20 @@ ms.service: storage
 ms.topic: how-to
 ms.date: 12/04/2019
 ms.author: tamram
-ms.reviewer: cbrooks
+ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: abe35f3193e2d7ff9a949ca7cd330cb58da2b78c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 25a38fc6f9607ef878ad3c5bf7074f5b63d5c121
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "74891974"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84808865"
 ---
 # <a name="use-azure-cli-to-assign-an-rbac-role-for-access-to-blob-and-queue-data"></a>Использование Azure CLI для назначения роли RBAC доступа к данным BLOB-объектов и очередей
 
 Azure Active Directory (Azure AD) разрешает права доступа к защищенным ресурсам с помощью [управления доступом на основе ролей (RBAC)](../../role-based-access-control/overview.md). Служба хранилища Azure определяет набор встроенных ролей RBAC, охватывающих общие наборы разрешений, используемых для доступа к данным BLOB-объектов или очередей.
 
-Когда роль RBAC назначается субъекту безопасности Azure AD, Azure предоставляет доступ к этим ресурсам для этого субъекта безопасности. Доступ может ограничиваться уровнем подписки, группой ресурсов, учетной записью хранения или отдельным контейнером или очередью. Субъект безопасности Azure AD может быть пользователем, группой, субъектом-службой приложения или [управляемым удостоверением для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md).
+Если субъекту безопасности назначена роль RBAC, Azure предоставляет этому субъекту безопасности доступ к соответствующим ресурсам. Доступ может ограничиваться уровнем подписки, группой ресурсов, учетной записью хранения или отдельным контейнером или очередью. Субъект безопасности Azure AD может быть пользователем, группой, субъектом-службой приложения или [управляемым удостоверением для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md).
 
 В этой статье описывается, как использовать Azure CLI для перечисления встроенных ролей RBAC и их назначения пользователям. Дополнительные сведения об использовании Azure CLI см. в разделе [интерфейс командной строки Azure (CLI)](https://docs.microsoft.com/cli/azure).
 

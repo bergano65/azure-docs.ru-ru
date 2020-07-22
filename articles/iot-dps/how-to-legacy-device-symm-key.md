@@ -9,10 +9,9 @@ ms.service: iot-dps
 services: iot-dps
 manager: philmea
 ms.openlocfilehash: 4d1a92f3ebf32d2270eb77ec9c79fe860ba090e1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75434716"
 ---
 # <a name="how-to-provision-legacy-devices-using-symmetric-keys"></a>Как подготовить устаревшие устройства с использованием симметричных ключей
@@ -41,7 +40,7 @@ ms.locfileid: "75434716"
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * Выполните процедуру, описанную в кратком руководстве по [настройке Службы подготовки устройств к добавлению в Центр Интернета вещей на портале Azure](./quick-setup-auto-provision.md).
 
@@ -283,7 +282,7 @@ Jsm0lyGpjaVYVP2g3FnmnmG9dI/9qU24wNoykUmermc=
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о повторной подготовке см. в статье [Основные понятия повторной инициализации устройств центра Интернета вещей](concepts-device-reprovision.md) . 
 * [Краткое руководство по подготовке имитированного устройства с использованием симметричных ключей](quick-create-simulated-device-symm-key.md)

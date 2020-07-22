@@ -7,10 +7,10 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 06/27/2019
 ms.openlocfilehash: b169a067f05de422b714e18a4d7ebb9c9e7f0428
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82133501"
 ---
 # <a name="azure-stream-analytics-feature-comparison"></a>Сравнение возможностей Azure Stream Analytics
@@ -23,11 +23,11 @@ ms.locfileid: "82133501"
 ## <a name="cloud-job-features"></a>Функции облачных заданий
 
 
-|Компонент  |Портал  |Visual Studio  |Visual Studio Code  |
+|Функция  |Портал  |Visual Studio  |Visual Studio Code  |
 |---------|---------|---------|---------|
 |Кроссплатформенные     |Mac</br>Linux</br>Windows         |Windows        |Mac</br>Linux</br>Windows          |
 |Создание скриптов     |Да         |Да         |Да         |
-|Скрипт IntelliSense     |Выделение синтаксиса         |Выделение синтаксиса</br>Завершение кода</br>Маркер ошибки         |Выделение синтаксиса</br>Завершение кода</br>Маркер ошибки         |
+|Скрипт IntelliSense     |Подсветка синтаксиса         |Подсветка синтаксиса</br>Завершение кода</br>Маркер ошибки         |Подсветка синтаксиса</br>Завершение кода</br>Маркер ошибки         |
 |Определение всех типов входов, выходов и конфигураций заданий     |Да         |Да         |Да         |
 |Система управления версиями     |Нет         |Да         |Да         |
 |Поддержка CI/CD     |Partial         |Да         |Да         |
@@ -53,7 +53,7 @@ ms.locfileid: "82133501"
 
 ## <a name="iot-edge-job-features"></a>Функции задания IoT Edge
 
-|Компонент  |Портал  |Visual Studio  |Visual Studio Code  |
+|Функция  |Портал  |Visual Studio  |Visual Studio Code  |
 |---------|---------|---------|---------|
 |Создание заданий     |Да         |Да         |Нет         |
 |Система управления версиями     |Нет         |Да         |Нет         |
@@ -63,12 +63,12 @@ ms.locfileid: "82133501"
 |Определяемая пользователем функция C#     |Нет         |Да         |Нет         |
 |Отправка заданий     |Да         |Да         |Нет         |
 |Вывод списка заданий и Просмотр сущностей заданий     |Да         |Да         |Нет         |
-|Просмотр метрик и схемы задания     |Да         |Частично         |нет         |
-|Просмотр ошибок времени выполнения задания     |Да         |Частично         |нет         |
+|Просмотр метрик и схемы задания     |Да         |Частично         |Нет         |
+|Просмотр ошибок времени выполнения задания     |Да         |Частично         |Нет         |
 |Поддержка CI/CD     |Нет         |Нет         |Нет         |
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Azure Stream Analytics в IoT Edge](stream-analytics-edge.md)
 * [Руководство. Написание определяемой пользователем функции C# для задания Azure Stream Analytics IoT Edge (Предварительная версия)](stream-analytics-edge-csharp-udf.md)

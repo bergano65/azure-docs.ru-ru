@@ -8,13 +8,13 @@ ms.author: heidist
 ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 11/04/2019
-ms.openlocfilehash: 37fc78971124240077a59d4ad99aa06cc408dbae
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 07/11/2020
+ms.openlocfilehash: cdf71f939d6e5e1ada0ba141dce3bcba9d7d9b01
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74533972"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86529800"
 ---
 # <a name="how-to-index-json-blobs-using-a-blob-indexer-in-azure-cognitive-search"></a>Индексация больших двоичных объектов JSON с помощью индексатора больших двоичных объектов в Azure Когнитивный поиск
 
@@ -22,7 +22,7 @@ ms.locfileid: "74533972"
 
 Вы можете использовать [портал](#json-indexer-portal), [REST API](#json-indexer-rest) или [пакет SDK для .NET](#json-indexer-dotnet) для индексирования содержимого JSON. Общие для всех подходов — документы JSON находятся в контейнере больших двоичных объектов в учетной записи хранения Azure. Рекомендации по отправке документов JSON из других платформ, не относящихся к Azure, см. [в статье Импорт данных в azure когнитивный Поиск](search-what-is-data-import.md).
 
-Большие двоичные объекты JSON в хранилище BLOB-объектов Azure обычно являются одним документом JSON ( `json`режимом анализа) или коллекцией сущностей JSON. Для коллекций большой двоичный объект может иметь **массив** элементов JSON правильного формата (режим анализа — `jsonArray`). Большие двоичные объекты также могут состоять из нескольких отдельных сущностей JSON, разделенных символом `jsonLines`новой строки (режимом анализа является). Параметр **parsingMode** в запросе определяет выходные структуры.
+Большие двоичные объекты JSON в хранилище BLOB-объектов Azure обычно являются одним документом JSON (режимом анализа `json` ) или коллекцией сущностей JSON. Для коллекций большой двоичный объект может иметь **массив** элементов JSON правильного формата (режим анализа — `jsonArray` ). Большие двоичные объекты также могут состоять из нескольких отдельных сущностей JSON, разделенных символом новой строки (режимом анализа является `jsonLines` ). Параметр **parsingMode** в запросе определяет выходные структуры.
 
 > [!NOTE]
 > Дополнительные сведения об индексировании нескольких поисковых документов из одного большого двоичного объекта см. в разделе [индексирование "один ко многим](search-howto-index-one-to-many-blobs.md)".
@@ -145,11 +145,12 @@ ms.locfileid: "74533972"
 
 ### <a name="2---create-a-data-source"></a>2. Создание источника данных
 
-Этот шаг предоставляет сведения о соединении с источником данных, используемые индексатором. Источник данных — это именованный объект в Когнитивный поиск Azure, сохраняющий сведения о соединении. Тип `azureblob`источника данных определяет, какие поведения извлечения данных вызываются индексатором. 
+Этот шаг предоставляет сведения о соединении с источником данных, используемые индексатором. Источник данных — это именованный объект в Когнитивный поиск Azure, сохраняющий сведения о соединении. Тип источника данных определяет, `azureblob` какие поведения извлечения данных вызываются индексатором. 
 
 Замените допустимые значения для имени службы, ключа администратора, учетной записи хранения и заполнители ключа учетной записи.
 
-    POST https://[service name].search.windows.net/datasources?api-version=2019-05-06
+```http
+    POST https://[service name].search.windows.net/datasources?api-version=2020-06-30
     Content-Type: application/json
     api-key: [admin key for Azure Cognitive Search]
 
@@ -159,6 +160,7 @@ ms.locfileid: "74533972"
         "credentials" : { "connectionString" : "DefaultEndpointsProtocol=https;AccountName=<account name>;AccountKey=<account key>;" },
         "container" : { "name" : "my-container", "query" : "optional, my-folder" }
     }   
+```
 
 ### <a name="3---create-a-target-search-index"></a>3. Создание целевого индекса поиска 
 
@@ -168,7 +170,8 @@ ms.locfileid: "74533972"
 
 В следующем примере показан запрос [Создать индекс](https://docs.microsoft.com/rest/api/searchservice/create-index). У индекса будет доступное для поиска поле `content` для хранения текста, извлеченного из больших двоичных объектов:   
 
-    POST https://[service name].search.windows.net/indexes?api-version=2019-05-06
+```http
+    POST https://[service name].search.windows.net/indexes?api-version=2020-06-30
     Content-Type: application/json
     api-key: [admin key for Azure Cognitive Search]
 
@@ -179,13 +182,15 @@ ms.locfileid: "74533972"
             { "name": "content", "type": "Edm.String", "searchable": true, "filterable": false, "sortable": false, "facetable": false }
           ]
     }
+```
 
 
 ### <a name="4---configure-and-run-the-indexer"></a>4. Настройка и запуск индексатора
 
 Как и в случае с индексом и источником данных, индексатор также является именованным объектом, который создается и повторно используется в службе Когнитивный поиск Azure. Полностью указанный запрос на создание индексатора может выглядеть следующим образом:
 
-    POST https://[service name].search.windows.net/indexers?api-version=2019-05-06
+```http
+    POST https://[service name].search.windows.net/indexers?api-version=2020-06-30
     Content-Type: application/json
     api-key: [admin key for Azure Cognitive Search]
 
@@ -196,10 +201,11 @@ ms.locfileid: "74533972"
       "schedule" : { "interval" : "PT2H" },
       "parameters" : { "configuration" : { "parsingMode" : "json" } }
     }
+```
 
 Конфигурация индексатора находится в тексте запроса. Для этого требуется источник данных и пустой целевой индекс, который уже существует в Когнитивный поиск Azure. 
 
-Расписание и параметры являются необязательными. Если опустить их, индексатор выполняется немедленно, используя `json` в качестве режима анализа.
+Расписание и параметры являются необязательными. Если опустить их, индексатор выполняется немедленно, используя в `json` качестве режима анализа.
 
 Этот конкретный индексатор не включает сопоставления полей. В определении индексатора можно оставить **сопоставления полей** , если свойства ИСХОДНОГО документа JSON соответствуют полям целевого индекса поиска. 
 
@@ -212,7 +218,8 @@ ms.locfileid: "74533972"
 
 Для всех индексаторов требуется объект источника данных, который предоставляет сведения о соединении с существующими данными. 
 
-    POST https://[service name].search.windows.net/datasources?api-version=2019-05-06
+```http
+    POST https://[service name].search.windows.net/datasources?api-version=2020-06-30
     Content-Type: application/json
     api-key: [admin key for Azure Cognitive Search]
 
@@ -222,13 +229,14 @@ ms.locfileid: "74533972"
         "credentials" : { "connectionString" : "DefaultEndpointsProtocol=https;AccountName=<account name>;AccountKey=<account key>;" },
         "container" : { "name" : "my-container", "query" : "optional, my-folder" }
     }  
-
+```
 
 ### <a name="index-request"></a>Запрос индекса
 
 Для всех индексаторов требуется целевой индекс, который получает данные. Текст запроса определяет схему индекса, состоящую из полей с атрибутами, поддерживающими требуемое поведение в индексе с возможностью поиска. При запуске индексатора этот индекс должен быть пустым. 
 
-    POST https://[service name].search.windows.net/indexes?api-version=2019-05-06
+```http
+    POST https://[service name].search.windows.net/indexes?api-version=2020-06-30
     Content-Type: application/json
     api-key: [admin key for Azure Cognitive Search]
 
@@ -239,7 +247,7 @@ ms.locfileid: "74533972"
             { "name": "content", "type": "Edm.String", "searchable": true, "filterable": false, "sortable": false, "facetable": false }
           ]
     }
-
+```
 
 ### <a name="indexer-request"></a>Запрос индексатора
 
@@ -247,7 +255,8 @@ ms.locfileid: "74533972"
 
 Создание индексатора в Azure Когнитивный поиск инициирует импорт данных. Он выполняется немедленно, а затем по расписанию, если вы предоставили его.
 
-    POST https://[service name].search.windows.net/indexers?api-version=2019-05-06
+```http
+    POST https://[service name].search.windows.net/indexers?api-version=2020-06-30
     Content-Type: application/json
     api-key: [admin key for Azure Cognitive Search]
 
@@ -263,7 +272,7 @@ ms.locfileid: "74533972"
         { "sourceFieldName" : "/article/tags", "targetFieldName" : "tags" }
         ]
     }
-
+```
 
 <a name="json-indexer-dotnet"></a>
 
@@ -288,7 +297,7 @@ ms.locfileid: "74533972"
 | `jsonArray` | Выберите этот режим, если большие двоичные объекты состоят из массивов JSON, и каждый элемент массива должен стать отдельным документом в Когнитивный поиск Azure. |
 |`jsonLines` | Выберите этот режим, если большие двоичные объекты состоят из нескольких сущностей JSON, разделенных новой строкой, и требуется, чтобы каждая сущность стала отдельным документом в Когнитивный поиск Azure. |
 
-Документ можно представить себе как отдельный элемент в результатах поиска. Если требуется, чтобы каждый элемент в массиве отображался в результатах поиска как независимый элемент, используйте параметр `jsonArray` или `jsonLines` соответствующим образом.
+Документ можно представить себе как отдельный элемент в результатах поиска. Если требуется, чтобы каждый элемент в массиве отображался в результатах поиска как независимый элемент, используйте `jsonArray` параметр или `jsonLines` соответствующим образом.
 
 В определении индексатора можно использовать [сопоставление полей](search-indexer-field-mappings.md) для выбора свойств исходного документа JSON, применяемых для заполнения целевого индекса поиска. В `jsonArray` режиме синтаксического анализа, если массив существует как свойство более низкого уровня, можно задать корневой каталог документа, указывающий, где массив помещается в большой двоичный объект.
 
@@ -302,6 +311,7 @@ ms.locfileid: "74533972"
 
 По умолчанию [индексатор BLOB-объектов когнитивный Поиск Azure](search-howto-indexing-azure-blob-storage.md) анализирует большие двоичные объекты JSON как один фрагмент текста. Часто требуется сохранить структуру документов JSON. Например, предположим, что в хранилище BLOB-объектов Azure имеется следующий документ JSON:
 
+```http
     {
         "article" : {
             "text" : "A hopefully useful article explaining how to parse JSON blobs",
@@ -309,6 +319,7 @@ ms.locfileid: "74533972"
             "tags" : [ "search", "storage", "howto" ]    
         }
     }
+```
 
 Индексатор больших двоичных объектов анализирует документ JSON в отдельный документ Azure Когнитивный поиск. Индексатор загружает индекс, сопоставляя значения text, datePublished и tags из источника с идентичными по названию и типу целевыми полями индекса.
 
@@ -320,15 +331,18 @@ ms.locfileid: "74533972"
 
 Кроме того, можно использовать параметр массива JSON. Этот параметр полезен, если большие двоичные *объекты содержат массив объектов JSON правильного формата*, и каждый элемент должен стать отдельным документом когнитивный Поиск Azure. Например, при наличии следующего большого двоичного объекта JSON можно заполнить индекс Azure Когнитивный поиск тремя отдельными документами, каждый из которых имеет поля "ID" и "Text".  
 
+```text
     [
         { "id" : "1", "text" : "example 1" },
         { "id" : "2", "text" : "example 2" },
         { "id" : "3", "text" : "example 3" }
     ]
+```
 
 Для массива JSON определение индексатора должно выглядеть, как в следующем примере. Обратите внимание, что параметр parsingMode указывает средство синтаксического анализа `jsonArray`. Указание правильного средства синтаксического анализа и ввод правильного ввода данных — единственные требования к массиву для индексирования больших двоичных объектов JSON.
 
-    POST https://[service name].search.windows.net/indexers?api-version=2019-05-06
+```http
+    POST https://[service name].search.windows.net/indexers?api-version=2020-06-30
     Content-Type: application/json
     api-key: [admin key]
 
@@ -339,14 +353,16 @@ ms.locfileid: "74533972"
       "schedule" : { "interval" : "PT2H" },
       "parameters" : { "configuration" : { "parsingMode" : "jsonArray" } }
     }
+```
 
 Снова отметим, что сопоставления полей необязательны. Если имеется индекс с полями с аналогичными именами id и text, индексатор больших двоичных объектов может определить правильное сопоставление без явного списка сопоставления полей.
 
 <a name="nested-json-arrays"></a>
 
 ## <a name="parse-nested-arrays"></a>Анализ вложенных массивов
-Для массивов JSON, имеющих вложенные элементы, можно `documentRoot` указать, чтобы указать многоуровневая структура. Например, если большой двоичный объект выглядит следующим образом:
+Для массивов JSON, имеющих вложенные элементы, можно указать, `documentRoot` чтобы указать многоуровневая структура. Например, если большой двоичный объект выглядит следующим образом:
 
+```http
     {
         "level1" : {
             "level2" : [
@@ -356,26 +372,32 @@ ms.locfileid: "74533972"
             ]
         }
     }
+```
 
 Используйте эту конфигурацию для индексации массива, содержащегося в свойстве `level2`:
 
+```http
     {
         "name" : "my-json-array-indexer",
         ... other indexer properties
         "parameters" : { "configuration" : { "parsingMode" : "jsonArray", "documentRoot" : "/level1/level2" } }
     }
+```
 
 ## <a name="parse-blobs-separated-by-newlines"></a>Анализ больших двоичных объектов, разделенных символами новой строки
 
 Если ваш большой двоичный объект содержит несколько сущностей JSON, разделенных новой строкой, и требуется, чтобы каждый элемент стал отдельным документом Когнитивный поиск Azure, можно выбрать параметр JSON Lines. Например, при наличии следующего большого двоичного объекта (в котором есть три различные сущности JSON) можно заполнить индекс Azure Когнитивный поиск тремя отдельными документами, каждый из которых имеет поля "ID" и "Text".
 
-    { "id" : "1", "text" : "example 1" }
-    { "id" : "2", "text" : "example 2" }
-    { "id" : "3", "text" : "example 3" }
+```text
+{ "id" : "1", "text" : "example 1" }
+{ "id" : "2", "text" : "example 2" }
+{ "id" : "3", "text" : "example 3" }
+```
 
 Для строк JSON определение индексатора должно выглядеть примерно так, как показано в следующем примере. Обратите внимание, что параметр parsingMode указывает средство синтаксического анализа `jsonLines`. 
 
-    POST https://[service name].search.windows.net/indexers?api-version=2019-05-06
+```http
+    POST https://[service name].search.windows.net/indexers?api-version=2020-06-30
     Content-Type: application/json
     api-key: [admin key]
 
@@ -386,6 +408,7 @@ ms.locfileid: "74533972"
       "schedule" : { "interval" : "PT2H" },
       "parameters" : { "configuration" : { "parsingMode" : "jsonLines" } }
     }
+```
 
 Опять же, обратите внимание, что сопоставления полей можно опустить, как в `jsonArray` режиме синтаксического анализа.
 
@@ -397,6 +420,7 @@ ms.locfileid: "74533972"
 
 Вернемся к нашему примеру документа JSON:
 
+```http
     {
         "article" : {
             "text" : "A hopefully useful article explaining how to parse JSON blobs",
@@ -404,27 +428,32 @@ ms.locfileid: "74533972"
             "tags" : [ "search", "storage", "howto" ]    
         }
     }
+```
 
 Допустим, что у вас есть индекс поиска со следующими полями: `text` типа `Edm.String`, `date` типа `Edm.DateTimeOffset` и `tags` типа `Collection(Edm.String)`. Обратите внимание на несоответствие между полем "datePublished" в источнике и полем `date` в индексе. Чтобы сопоставить JSON с необходимой формой, используйте следующие сопоставления полей:
 
+```http
     "fieldMappings" : [
         { "sourceFieldName" : "/article/text", "targetFieldName" : "text" },
         { "sourceFieldName" : "/article/datePublished", "targetFieldName" : "date" },
         { "sourceFieldName" : "/article/tags", "targetFieldName" : "tags" }
       ]
+```
 
 Имена полей источника в сопоставлениях задаются с помощью нотации [указателя JSON](https://tools.ietf.org/html/rfc6901) . Укажите косую черту (корень документа JSON) и путь до нужного свойства (на произвольном уровне вложенности), разделяя элементы пути косой чертой.
 
 Также можно ссылаться на отдельные элементы массива, используя отсчитываемый от нуля индекс. Например, чтобы выбрать первый элемент массива "tags" из приведенного выше примера, используйте следующее сопоставление полей:
 
+```http
     { "sourceFieldName" : "/article/tags/0", "targetFieldName" : "firstTag" }
+```
 
 > [!NOTE]
 > Если имя поля источника в пути сопоставления полей ссылается на свойство, которое не существует в JSON, это сопоставление пропускается без ошибки. Это необходимо для поддержки документов с разными схемами (что часто встречается на практике). Поскольку проверка на ошибки не выполняется, будьте внимательны и не допускайте опечаток в спецификации сопоставления полей.
 >
 >
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 + [Indexers in Azure Cognitive Search](search-indexer-overview.md) (Индексаторы в службе "Когнитивный поиск Azure")
 + [Индексирование хранилища BLOB-объектов Azure с помощью Azure Когнитивный поиск](search-howto-index-json-blobs.md)

@@ -15,6 +15,8 @@
           href: quickstart-create-server-database-azure-cli.md
         - name: "Создание базы данных с помощью команды az mysql up в Azure\_CLI"
           href: quickstart-create-server-up-azure-cli.md
+        - name: Создание базы данных с помощью Azure PowerShell
+          href: quickstart-create-postgresql-server-database-using-azure-powershell.md
         - name: Создание базы данных с помощью шаблона ARM
           href: quickstart-create-postgresql-server-database-using-arm-template.md
           displayName: deploy azure resource manager template
@@ -48,6 +50,8 @@
               href: tutorial-design-database-using-azure-portal.md
             - name: Azure CLI
               href: tutorial-design-database-using-azure-cli.md
+            - name: Azure PowerShell
+              href: tutorial-design-database-using-powershell.md
         - name: "2.\_Проектирование веб-приложения (Python)"
           href: ../app-service/containers/tutorial-python-postgresql-app.md
           maintainContext: true
@@ -108,7 +112,9 @@
               href: concepts-data-access-and-security-private-link.md
             - name: Шифрование данных
               href: concepts-data-encryption-postgresql.md
-            - name: Базовые средства безопасности
+            - name: Двойное шифрование инфраструктуры
+              href: concepts-infrastructure-double-encryption.md
+            - name: 'Базовые показатели безопасности, учитываемые решением для оценки безопасности Azure'
               href: security-baseline.md
         - name: Непрерывность бизнес-процессов
           items:
@@ -157,6 +163,10 @@
               href: concepts-read-replicas.md
             - name: Логическое декодирование
               href: concepts-logical.md
+        - name: Переключение между регионами
+          items:
+            - name: Портал Azure
+              href: howto-move-regions-portal.md
     - name: Гипермасштабирование (Citus)
       items:
         - name: Узлы
@@ -173,6 +183,8 @@
               href: concepts-hyperscale-firewall-rules.md
             - name: Настройка SSL
               href: concepts-hyperscale-ssl-connection-security.md
+            - name: 'Базовые показатели безопасности, учитываемые решением для оценки безопасности Azure'
+              href: postgresql-hyperscale-security-baseline.md
         - name: Непрерывность бизнес-процессов
           items:
             - name: Резервное копирование и восстановление
@@ -189,6 +201,8 @@
           items:
             - name: Варианты настройки
               href: concepts-hyperscale-configuration-options.md
+            - name: Предварительная оплата резервной мощности
+              href: concepts-hyperscale-reserved-pricing.md
 - name: Практические руководства
   items:
     - name: Отдельный сервер
@@ -227,6 +241,8 @@
               href: howto-restore-server-portal.md
             - name: Azure CLI
               href: howto-restore-server-cli.md
+            - name: Azure PowerShell
+              href: howto-restore-server-powershell.md
         - name: Перенос базы данных
           items:
             - name: Дамп и восстановление
@@ -235,18 +251,26 @@
               href: howto-migrate-using-export-and-import.md
             - name: Миграция с минимальным временем простоя
               href: howto-migrate-online.md
+        - name: Подключение приложений
+          items:
+            - name: Настройка TLS
+              href: howto-tls-configurations.md
         - name: Настройка параметров сервера
           items:
             - name: Портал Azure
               href: howto-configure-server-parameters-using-portal.md
             - name: Azure CLI
               href: howto-configure-server-parameters-using-cli.md
+            - name: Azure PowerShell
+              href: howto-configure-server-parameters-using-powershell.md
         - name: Автоматическое увеличение хранилища
           items:
             - name: Портал Azure
               href: howto-auto-grow-storage-portal.md
             - name: Azure CLI
               href: howto-auto-grow-storage-cli.md
+            - name: Azure PowerShell
+              href: howto-auto-grow-storage-powershell.md
         - name: Журналы доступа
           items:
             - name: Портал Azure
@@ -287,12 +311,18 @@
               href: howto-data-encryption-cli.md
             - name: Проверка шифрования данных
               href: howto-data-encryption-validation.md
+        - name: Двойное шифрование инфраструктуры
+          items:
+            - name: Настройка двойного шифрования инфраструктуры
+              href: howto-double-encryption.md
         - name: Перезапуск сервера
           items:
             - name: Портал Azure
               href: howto-restart-server-portal.md
             - name: Azure CLI
               href: howto-restart-server-cli.md
+            - name: Azure PowerShell
+              href: howto-restart-server-powershell.md
         - name: Запрет доступа к общедоступной сети
           items:
             - name: Портал Azure
@@ -303,6 +333,8 @@
               href: howto-read-replicas-portal.md
             - name: Управление репликами чтения с помощью Azure CLI и REST API
               href: howto-read-replicas-cli.md
+            - name: Управление репликами чтения Azure PowerShell
+              href: howto-read-replicas-powershell.md
     - name: Гипермасштабирование (Citus)
       items:
         - name: Создание пользователей

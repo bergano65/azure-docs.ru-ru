@@ -10,10 +10,9 @@ ms.topic: article
 ms.date: 12/14/2016
 ms.author: tagore
 ms.openlocfilehash: 094e08becf4f3a60c98d89bfae7e7c3a69b677f8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75386346"
 ---
 # <a name="enable-communication-for-role-instances-in-azure"></a>Включение обмена данными между экземплярами роли в Azure
@@ -365,7 +364,7 @@ namespace WorkerRole1
 
 Справочник по схеме XML для элементов, используемых выше, можно найти [здесь](/previous-versions/azure/reference/gg557551(v=azure.100)).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительная информация о [модели](cloud-services-model-and-package.md)облачной службы
 
 

@@ -10,10 +10,9 @@ ms.devlang: csharp
 ms.topic: conceptual
 ms.date: 08/08/2017
 ms.openlocfilehash: 02e814a9da320d688fe57edf3a3fe0640b8f5a47
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75976737"
 ---
 # <a name="create-an-iot-hub-using-azure-resource-manager-template-net"></a>Создание Центра Интернета вещей с помощью шаблона Azure Resource Manager (.NET)
@@ -30,7 +29,7 @@ ms.locfileid: "75976737"
 Для работы с этим учебником требуется:
 
 * приведенному.
-* Активная учетная запись Azure. <br/>Если у вас нет учетной записи, можно создать [бесплатную учетную запись][lnk-free-trial] всего за несколько минут.
+* Активная учетная запись Azure. <br/>Если ее нет, можно создать [бесплатную учетную запись][lnk-free-trial] всего за несколько минут.
 * [Учетная запись хранения Azure][lnk-storage-account], в которой можно хранить файлы шаблона Azure Resource Manager.
 * [Azure PowerShell 1.0][lnk-powershell-install] или более поздней версии.
 
@@ -184,7 +183,7 @@ ms.locfileid: "75976737"
 
 Теперь можно завершить приложение, вызвав метод **CreateIoTHub** , а затем собрать и запустить приложение.
 
-1. Добавьте в конец метода **Main** следующий код:
+1. Добавьте следующий код в конец метода **Main** :
 
     ```csharp
     CreateIoTHub(client);
@@ -200,7 +199,7 @@ ms.locfileid: "75976737"
 > [!NOTE]
 > В этом примере приложения добавляется стандартный Центр Интернета вещей S1, который подлежит оплате. Центр Интернета вещей можно удалить с помощью [портал Azure][lnk-azure-portal] или с помощью командлета PowerShell **Remove-азресаурце** по завершении работы.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 После развертывания Центра Интернета вещей с использованием шаблона Azure Resource Manager и программы на C# вас могут заинтересовать следующие статьи:
 
 * Ознакомьтесь с возможностями [REST API поставщика ресурсов Центра Интернета вещей][lnk-rest-api].

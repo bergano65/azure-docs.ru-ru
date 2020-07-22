@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 72326413d463d449d339b1f3fd241ba2c27b4b6b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f85645d8c77d2317807bb02a19a308070acb6007
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74112946"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86143553"
 ---
 # <a name="how-to-schedule-indexers-in-azure-cognitive-search"></a>Как планировать индексаторы в Azure Когнитивный поиск
 
@@ -68,7 +68,8 @@ ms.locfileid: "74112946"
 
 Расписание для индексатора можно определить с помощью REST API. Для этого включите свойство **Schedule** при создании или обновлении индексатора. В приведенном ниже примере показан запрос на размещение для обновления существующего индексатора.
 
-    PUT https://myservice.search.windows.net/indexers/myindexer?api-version=2019-05-06
+```http
+    PUT https://myservice.search.windows.net/indexers/myindexer?api-version=2020-06-30
     Content-Type: application/json
     api-key: admin-key
 
@@ -77,6 +78,7 @@ ms.locfileid: "74112946"
         "targetIndexName" : "target index name",
         "schedule" : { "interval" : "PT10M", "startTime" : "2015-01-01T00:00:00Z" }
     }
+```
 
 Параметр **interval** обязателен. Он указывает время между двумя последовательными запусками индексатора. Наименьшее допустимое значение — 5 минут, наибольшее — один день. Значение должно быть отформатировано как значение dayTimeDuration XSD (ограниченное подмножество значения [продолжительности ISO 8601](https://www.w3.org/TR/xmlschema11-2/#dayTimeDuration) ). Используется следующий шаблон: `P(nD)(T(nH)(nM))`. Примеры: `PT15M` для каждых 15 минут, `PT2H` для каждых 2 часов.
 

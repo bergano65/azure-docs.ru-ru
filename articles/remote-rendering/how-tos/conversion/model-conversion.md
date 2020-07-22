@@ -5,12 +5,12 @@ author: jakrams
 ms.author: jakras
 ms.date: 02/04/2020
 ms.topic: how-to
-ms.openlocfilehash: 135c58a665779ffaad8750ffe618bdbe38639b66
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: db05c7a5a45221485ecb62c2c90d56be52d5ef48
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80681497"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84808610"
 ---
 # <a name="convert-models"></a>Преобразование моделей
 
@@ -38,6 +38,11 @@ ms.locfileid: "80681497"
     - или, указав *подписанный URL-адрес (SAS)*.
 
 Все данные модели (ввод и вывод) хранятся в предоставленном пользователем хранилище BLOB-объектов Azure. Удаленная визуализация Azure обеспечивает полный контроль над управлением ресурсами.
+
+## <a name="pricing"></a>Цены
+
+Сведения о ценах на преобразование см. на странице [цен на удаленную визуализацию](https://azure.microsoft.com/pricing/details/remote-rendering) .
+
 
 ## <a name="conversion-parameters"></a>Параметры преобразования
 

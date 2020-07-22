@@ -10,14 +10,14 @@ manager: anandsub
 ms.topic: tutorial
 ms.custom: seo-dt-2019
 ms.date: 01/04/2018
-ms.openlocfilehash: 23accddcc468eb841eb7c217ec17a893db214cb6
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 18f72ff32b29ff5832c363601ed63280339079df
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81409467"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86083078"
 ---
-# <a name="transform-data-in-azure-virtual-network-using-hive-activity-in-azure-data-factory"></a>Преобразование данных в виртуальной сети Azure с помощью действия Hive в фабрике данных Azure
+# <a name="transform-data-in-azure-virtual-network-using-hive-activity-in-azure-data-factory-using-the-azure-portal"></a>Преобразование данных в виртуальной сети Azure с помощью действия Hive в фабрике данных Azure на портале Azure
 
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
@@ -34,7 +34,7 @@ ms.locfileid: "81409467"
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -83,7 +83,7 @@ ms.locfileid: "81409467"
  
    Имя фабрики данных Azure должно быть **глобально уникальным**. Если вы получите указанную ниже ошибку, введите другое имя фабрики данных (например, ваше_имя_MyAzureSsisDataFactory) и попробуйте создать фабрику данных снова. Ознакомьтесь со статьей [Фабрика данных Azure — правила именования](naming-rules.md), чтобы узнать правила именования для артефактов службы "Фабрика данных".
   
-       `Data factory name “MyAzureSsisDataFactory” is not available`
+    *Имя фабрики данных MyAzureSsisDataFactory недоступно.*
 3. Выберите **подписку** Azure, в рамках которой вы хотите создать фабрику данных. 
 4. Для **группы ресурсов** выполните одно из следующих действий.
      

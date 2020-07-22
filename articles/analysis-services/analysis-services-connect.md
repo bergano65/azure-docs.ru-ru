@@ -7,12 +7,13 @@ ms.topic: conceptual
 ms.date: 04/17/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: cc671629934d80b3e727ca69f9026f534d05e160
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.custom: references_regions
+ms.openlocfilehash: 170cf0081e6671451ece6dc2924ae7e418f520a2
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81676649"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86506780"
 ---
 # <a name="connecting-to-servers"></a>Подключение к серверам
 
@@ -20,7 +21,7 @@ ms.locfileid: "81676649"
 
 ## <a name="client-libraries"></a>Клиентские библиотеки
 
-[Получение последних версий клиентских библиотек](analysis-services-data-providers.md)
+[Получение последних версий клиентских библиотек](https://docs.microsoft.com/analysis-services/client-libraries?view=azure-analysis-services-current)
 
 Все подключения к серверу независимо от типа требуют обновленных клиентских библиотек AMO, ADOMD.NET и OLEDB для взаимодействия с сервером Analysis Services. Для SSMS, Visual Studio, Excel 2016 и более поздних версий и Power BI последние клиентские библиотеки устанавливаются или обновляются в ежемесячных выпусках. Однако в некоторых случаях последние версии могут отсутствовать в приложении. Например, такое возможно, если обновление откладывается политикой либо если обновление Office 365 производится по отложенному каналу.
 
@@ -45,7 +46,7 @@ ms.locfileid: "81676649"
 > [!NOTE]
 > Протокол для региона "Восточная часть США 2" — **aspaaseastus2**.
 
-## <a name="connection-string"></a>Строка подключения.
+## <a name="connection-string"></a>Строка подключения
 
 При подключении к службам Azure Analysis Services с помощью модели табличного объекта используйте следующие форматы строки подключения:
 
@@ -77,7 +78,7 @@ ms.locfileid: "81676649"
 Пользователи предыдущих версий Excel могут подключаться к серверу Azure Analysis Services с помощью файла подключения к данным Office (ODC). Дополнительные сведения см. в разделе [Создание файла подключения к данным Office (ODC-файла)](analysis-services-odc.md).
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Подключение к Excel](analysis-services-connect-excel.md)    
 [Подключение с помощью Power BI](analysis-services-connect-pbi.md)   

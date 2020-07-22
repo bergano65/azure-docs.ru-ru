@@ -8,19 +8,18 @@ ms.date: 12/02/2019
 ms.author: girobins
 ms.custom: query-reference
 ms.openlocfilehash: 6f41adbb726313ef095084d079dc7852736e0c06
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74870536"
 ---
 # <a name="system-functions-azure-cosmos-db"></a>Системные функции (Azure Cosmos DB)
 
  Cosmos DB предоставляет множество встроенных функций SQL. Ниже перечислены их категории.  
   
-|Группа функций|Описание|Операции|  
+|Группа функций|Описание:|Операции|  
 |--------------|-----------------|-----------------| 
-|[Функции массивов](sql-query-array-functions.md)|Функции массивов выполняют операцию над входным массивом и возвращают числовое, логическое значение либо массив. | [ARRAY_CONCAT](sql-query-array-concat.md), [ARRAY_CONTAINS](sql-query-array-contains.md), [ARRAY_LENGTH](sql-query-array-length.md), [ARRAY_SLICE](sql-query-array-slice.md) |
+|[Функции массива](sql-query-array-functions.md)|Функции массивов выполняют операцию над входным массивом и возвращают числовое, логическое значение либо массив. | [ARRAY_CONCAT](sql-query-array-concat.md), [ARRAY_CONTAINS](sql-query-array-contains.md), [ARRAY_LENGTH](sql-query-array-length.md), [ARRAY_SLICE](sql-query-array-slice.md) |
 |[Функции даты и времени](sql-query-date-time-functions.md)|Функции даты и времени позволяют получить текущую дату и время в формате UTC в двух формах. числовая метка времени, значение которой является эпохой UNIX в миллисекундах или в виде строки, которая соответствует формату ISO 8601. | [Жеткуррентдатетиме](sql-query-getcurrentdatetime.md), [жеткурренттиместамп](sql-query-getcurrenttimestamp.md) |
 |[Математические функции](sql-query-mathematical-functions.md)|Математические функции выполняют вычисление, которое обычно основано на входных значениях, предоставляемых в форме аргументов, и возвращают числовое значение. | [ABS](sql-query-abs.md), [Acos](sql-query-acos.md), [ASIN](sql-query-asin.md), [ATAN](sql-query-atan.md), [ATN2](sql-query-atn2.md), [Ceiling](sql-query-ceiling.md), [COS](sql-query-cos.md), [COT](sql-query-cot.md), [градусы](sql-query-degrees.md), [exp](sql-query-exp.md), [этаж](sql-query-floor.md), [Журнал](sql-query-log.md), [LOG10](sql-query-log10.md), [Pi](sql-query-pi.md), [Power](sql-query-power.md), [радианы](sql-query-radians.md), [Rand](sql-query-rand.md), [круглый](sql-query-round.md), [знак](sql-query-sign.md), [sin](sql-query-sin.md), [sqrt](sql-query-sqrt.md), [квадратный](sql-query-square.md), [Tan](sql-query-tan.md), [TRUNC](sql-query-trunc.md) |
 |[Пространственные функции](sql-query-spatial-functions.md)|Пространственные функции выполняют операцию над входным пространственным объектом и возвращают числовое или логическое значение. | [ST_DISTANCE](sql-query-st-distance.md), [ST_INTERSECTS](sql-query-st-intersects.md), [ST_ISVALID](sql-query-st-isvalid.md), [ST_ISVALIDDETAILED](sql-query-st-isvaliddetailed.md), [ST_WITHIN](sql-query-st-within.md) |
@@ -33,12 +32,12 @@ ms.locfileid: "74870536"
 
 ## <a name="built-in-versus-ansi-sql-functions"></a>Встроенные функции SQL и ANSI
 
-Основное различие между функциями Cosmos DB и ANSI SQL-функциями заключается в том, что функции Cosmos DB предназначены для работы с данными без схем и смешанными схемами. Например, если свойство отсутствует или имеет нечисловое значение, такое как `unknown`, элемент пропускается вместо возврата ошибки.
+Основное различие между функциями Cosmos DB и ANSI SQL-функциями заключается в том, что функции Cosmos DB предназначены для работы с данными без схем и смешанными схемами. Например, если свойство отсутствует или имеет нечисловое значение, такое как `unknown` , элемент пропускается вместо возврата ошибки.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Знакомство с Azure Cosmos DB](introduction.md)
-- [Функции массивов](sql-query-array-functions.md)
+- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
+- [Функции массива](sql-query-array-functions.md)
 - [Функции даты и времени](sql-query-date-time-functions.md)
 - [Математические функции](sql-query-mathematical-functions.md)
 - [Пространственные функции](sql-query-spatial-functions.md)

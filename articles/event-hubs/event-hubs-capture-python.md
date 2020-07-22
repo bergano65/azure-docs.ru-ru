@@ -1,25 +1,14 @@
 ---
 title: Краткое руководство. Чтение собранных данных из приложения Python (Центры событий Azure)
 description: Краткое руководство. Скрипты, в которых используется пакет SDK Azure Python для демонстрации функции "Сбор" службы "Центры событий".
-services: event-hubs
-documentationcenter: ''
-author: ShubhaVijayasarathy
-editor: ''
-ms.assetid: bdff820c-5b38-4054-a06a-d1de207f01f6
-ms.service: event-hubs
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: quickstart
-ms.custom: seodec18
-ms.date: 01/15/2020
-ms.author: shvija
-ms.openlocfilehash: 6c830cf871c2ae650bb61e8b3712a664e9e405d4
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.date: 06/23/2020
+ms.openlocfilehash: 8e6174970a6821f7541387f91b226cdebe555625
+ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77187290"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85323064"
 ---
 # <a name="quickstart-event-hubs-capture-walkthrough-python-azure-eventhub-version-1"></a>Краткое руководство. Пошаговое руководство. Использование функции "Сбор" в службе "Центры событий" с Python (azure-eventhub версии 1)
 
@@ -80,7 +69,7 @@ ms.locfileid: "77187290"
 
 1. Откройте предпочитаемый редактор Python, например [Visual Studio Code][Visual Studio Code].
 2. Создайте новый файл с именем *sender.py*. 
-3. Скопируйте приведенный ниже код в файл *sender.py*. Подставьте реальные значения следующих параметров Центра событий: \<namespace> (пространство имен), \<AccessKeyName> (имя ключа доступа), \<primary key value> (значение первичного ключа) и \<eventhub> (концентратор событий).
+3. Скопируйте приведенный ниже код в файл *sender.py*. Замените \<namespace>, \<AccessKeyName>, \<primary key value> и \<eventhub> на ваши значения для Центров событий.
    
    ```python
    import uuid
@@ -108,7 +97,7 @@ ms.locfileid: "77187290"
 Этот скрипт считывает собранные файлы и создает для каждого устройства отдельный файл, в который сохраняет данные по этому устройству.
 
 1. В редакторе Python создайте новый файл с именем *capturereader.py*. 
-2. Скопируйте приведенный ниже код и вставьте его в файл *capturereader.py*. Подставьте сохраненные ранее значения: \<storageaccount> (учетная запись хранения), \<storage account access key> (ключ доступа к учетной записи хранения) и \<storagecontainer> (контейнер хранения).
+2. Скопируйте приведенный ниже код и вставьте его в файл *capturereader.py*. Замените сохраненные значения для \<storageaccount>, \<storage account access key> и \<storagecontainer>.
    
    ```python
    import os

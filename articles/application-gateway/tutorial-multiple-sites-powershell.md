@@ -5,16 +5,16 @@ description: Узнайте, как создать шлюз приложений
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
-ms.topic: article
-ms.date: 11/14/2019
+ms.topic: how-to
+ms.date: 07/20/2020
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: e05d84e8e06dbe63a1bc8e8ae1d401f186baac77
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f6c6dd18ba57d83aa235f66285e7cb2ed42c1703
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80133058"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86525010"
 ---
 # <a name="create-an-application-gateway-that-hosts-multiple-web-sites-using-azure-powershell"></a>Создание шлюза приложений для размещения нескольких веб-сайтов с помощью Azure PowerShell
 
@@ -24,13 +24,13 @@ ms.locfileid: "80133058"
 
 > [!div class="checklist"]
 > * Настройка сети
-> * Создание шлюза приложений
+> * Создание Шлюза приложений
 > * Создание серверных прослушивателей
 > * Создание правил маршрутизации
 > * создание масштабируемых наборов виртуальных машин с внутренними пулами.
 > * создание записи CNAME в домене.
 
-![Пример маршрутизации нескольких сайтов](./media/tutorial-multiple-sites-powershell/scenario.png)
+:::image type="content" source="./media/tutorial-multiple-sites-powershell/scenario.png" alt-text="Шлюз приложений для нескольких сайтов":::
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -125,6 +125,10 @@ $poolSettings = New-AzApplicationGatewayBackendHttpSettings `
 Прослушиватели нужны для того, чтобы шлюз приложений правильно маршрутизировал трафик на внутренние пулы адресов. В этой статье вы создадите два прослушивателя для двух доменов. Прослушиватели создаются для доменов *contoso.com* и *Fabrikam.com* .
 
 Создайте первый прослушиватель, используя командлет [New-AzApplicationGatewayHttpListener](/powershell/module/az.network/new-azapplicationgatewayhttplistener) с конфигурацией внешнего интерфейса и интерфейсным портом, созданными ранее. Правило требуется для того, чтобы указать прослушивателю, какой внутренний пул использовать для входящего трафика. Создайте базовое правило *contosoRule* с помощью командлета [New-AzApplicationGatewayRequestRoutingRule](/powershell/module/az.network/new-azapplicationgatewayrequestroutingrule).
+
+>[!NOTE]
+> С помощью шлюза приложений или SKU WAF v2 можно также настроить до 5 имен узлов на прослушиватель, а в имени узла можно использовать подстановочные знаки. Дополнительные сведения см. [в разделе имена узлов с подстановочными знаками в прослушивателе](multiple-site-overview.md#wildcard-host-names-in-listener-preview) .
+>Чтобы использовать несколько имен узлов и подстановочных знаков в прослушивателе с помощью Azure PowerShell, необходимо использовать `-HostNames` вместо `-HostName` . При использовании имен узлов можно указать до 5 имен узлов в виде значений, разделенных запятыми. Например `-HostNames "*.contoso.com,*.fabrikam.com"`.
 
 ```azurepowershell-interactive
 $contosolistener = New-AzApplicationGatewayHttpListener `
@@ -300,6 +304,6 @@ Get-AzPublicIPAddress -ResourceGroupName myResourceGroupAG -Name myAGPublicIPAdd
 Remove-AzResourceGroup -Name myResourceGroupAG
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Создание шлюза приложений с правилами маршрутизации на основе URL-путей](./tutorial-url-route-powershell.md)

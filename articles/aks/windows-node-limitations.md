@@ -4,13 +4,13 @@ titleSuffix: Azure Kubernetes Service
 description: Сведения об известных ограничениях при запуске пулов узлов и рабочих нагрузок приложений Windows Server в службе Kubernetes Azure (AKS)
 services: container-service
 ms.topic: article
-ms.date: 12/18/2019
-ms.openlocfilehash: 935b049ce5e1951952b4af4e7df9574df764b6e8
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.date: 05/28/2020
+ms.openlocfilehash: a86d6f0fe942a72a96c504a61d5030624f161cd5
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82208012"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86507018"
 ---
 # <a name="current-limitations-for-windows-server-node-pools-and-application-workloads-in-azure-kubernetes-service-aks"></a>Текущие ограничения для пулов узлов Windows Server и рабочих нагрузок приложений в службе Kubernetes Azure (AKS)
 
@@ -20,7 +20,7 @@ ms.locfileid: "82208012"
 
 ## <a name="which-windows-operating-systems-are-supported"></a>Какие операционные системы Windows поддерживаются?
 
-AKS использует Windows Server 2019 в качестве версии ОС узла и поддерживает только изоляцию процессов. Образы контейнеров, созданные с использованием других версий Windows Server, не поддерживаются. [Совместимость версий контейнера Windows][windows-container-compat]
+AKS использует Windows Server 2019 в качестве версии ОС узла и поддерживает только изоляцию процессов. Образы контейнеров, созданные с использованием других версий Windows Server, не поддерживаются. [Совместимость версий контейнеров Windows][windows-container-compat]
 
 ## <a name="is-kubernetes-different-on-windows-and-linux"></a>Отличается ли Kubernetes в Windows и Linux?
 
@@ -44,7 +44,11 @@ Kubernetes является историческим, ориентированн
 
 ## <a name="what-network-plug-ins-are-supported"></a>Какие сетевые подключаемые модули поддерживаются?
 
-Кластеры AKS с пулами узлов Windows должны использовать модель сети Azure CNI (Advanced). Кубенет (базовая) сеть не поддерживается. Дополнительные сведения о различиях в сетевых моделях см. в разделе [Основные понятия сети для приложений в AKS][azure-network-models]. — Для модели сети Azure CNI требуется дополнительное планирование и рекомендации по управлению IP-адресами. Дополнительные сведения о планировании и реализации Azure CNI см. в статье [Настройка сети CNI для Azure в AKS][configure-azure-cni].
+Кластеры AKS с пулами узлов Windows должны использовать модель сети Azure CNI (Advanced). Кубенет (базовая) сеть не поддерживается. Дополнительные сведения о различиях в сетевых моделях см. в разделе [Основные понятия сети для приложений в AKS][azure-network-models]. Для использования модели сети Azure CNI требуется дополнительное планирование и рекомендации по управлению IP-адресами. Дополнительные сведения о планировании и реализации Azure CNI см. в статье [Настройка сети CNI для Azure в AKS][configure-azure-cni].
+
+## <a name="is-preserving-the-client-source-ip-supported"></a>Поддерживается ли сохранение исходного IP-адреса клиента?
+
+В настоящее время [Сохранение IP-адресов источника клиента][client-source-ip] не поддерживается для узлов Windows.
 
 ## <a name="can-i-change-the-max--of-pods-per-node"></a>Можно ли изменить максимальное значение. число модулей Pod на узел?
 
@@ -58,13 +62,26 @@ Kubernetes является историческим, ориентированн
 > Обновленный образ Windows Server будет использоваться только в том случае, если обновление кластера (обновление плоскости управления) было выполнено до обновления пула узлов.
 >
 
+## <a name="why-am-i-seeing-an-error-when-i-try-to-create-a-new-windows-agent-pool"></a>Почему при попытке создать новый пул агента Windows появляется сообщение об ошибке?
+
+Если вы создали кластер до февраля 2020 и никогда не выполняли никаких операций обновления кластера, кластер по-прежнему использует старый образ Windows. Возможно, вы обнаружили ошибку, похожую на:
+
+"Следующий список образов, на которые ссылается шаблон развертывания, не найден: Издатель: MicrosoftWindowsServer, предложение: WindowsServer, SKU: 2019-Datacenter-Core-смаллдиск-2004, версия: Последняя. https://docs.microsoft.com/azure/virtual-machines/windows/cli-ps-findimageИнструкции по поиску доступных образов см. в разделе.
+
+Чтобы устранить эту проблему, выполните следующие действия:
+
+1. Обновите [плоскость управления кластерами][upgrade-cluster-cp]. При этом будет обновлено предложение образа и издатель.
+1. Создайте новые Пулы агентов Windows.
+1. Перемещение модулей Windows Pod из существующих пулов агентов Windows в новые Пулы агентов Windows.
+1. Удалите старые Пулы агентов Windows.
+
 ## <a name="how-do-i-rotate-the-service-principal-for-my-windows-node-pool"></a>Разделы справки поворачивать субъект-службу для пула узлов Windows?
 
 Пулы узлов Windows не поддерживают смену субъекта-службы. Чтобы обновить субъект-службу, создайте пул узлов Windows и перенесите модули из старого пула в новый. После завершения этого действия удалите пул старых узлов.
 
 ## <a name="how-many-node-pools-can-i-create"></a>Сколько пулов узлов можно создать?
 
-Кластер AKS может иметь не более 10 пулов узлов. В этих пулах узлов может быть не более 1000 узлов. [Ограничения пула узлов][nodepool-limitations].
+Кластер AKS не может содержать больше 10 пулов узлов. В этих пулах узлов может быть не более 1000 узлов. [Ограничения пула узлов][nodepool-limitations].
 
 ## <a name="what-can-i-name-my-windows-node-pools"></a>Как можно присвоить имя пулам узлов Windows?
 
@@ -72,7 +89,7 @@ Kubernetes является историческим, ориентированн
 
 ## <a name="are-all-features-supported-with-windows-nodes"></a>Поддерживаются ли все функции узлов Windows?
 
-Политики сети и кубенет в настоящее время не поддерживаются для узлов Windows. 
+Политики сети и кубенет в настоящее время не поддерживаются для узлов Windows.
 
 ## <a name="can-i-run-ingress-controllers-on-windows-nodes"></a>Можно ли запускать контроллеры входящего трафика на узлах Windows?
 
@@ -88,13 +105,21 @@ Azure Dev Spaces в настоящее время доступно только 
 
 ## <a name="can-i-use-azure-monitor-for-containers-with-windows-nodes-and-containers"></a>Можно ли использовать Azure Monitor для контейнеров с узлами и контейнерами Windows?
 
-Да, вы можете, однако, Azure Monitor не собирает журналы (stdout) из контейнеров Windows. Вы по-прежнему можете присоединиться к потоку журналов stdout из контейнера Windows.
+Да, вы можете, однако, Azure Monitor в общедоступной предварительной версии для сбора журналов (stdout, stderr) и метрик из контейнеров Windows. Вы также можете присоединиться к динамическому потоку журналов stdout из контейнера Windows.
+
+## <a name="are-there-any-limitations-on-the-number-of-services-on-a-cluster-with-windows-nodes"></a>Существуют ли ограничения на количество служб в кластере с узлами Windows?
+
+Кластер с узлами Windows может иметь около 500 служб, прежде чем будет обнаружено нехватка портов.
+
+## <a name="can-i-use-the-kubernetes-web-dashboard-with-windows-containers"></a>Можно ли использовать веб-панель мониторинга Kubernetes с контейнерами Windows?
+
+Да, вы можете использовать [веб-панель мониторинга Kubernetes][kubernetes-dashboard] для доступа к информации о контейнерах Windows, но в настоящее время вы не сможете запустить *kubectl Exec* в работающем контейнере Windows непосредственно из веб-панели мониторинга Kubernetes. Дополнительные сведения о подключении к контейнеру Windows см. в [статье подключение с помощью RDP к Azure Kubernetes Service (AKS) узлы кластера Windows Server для обслуживания или устранения неполадок][windows-rdp].
 
 ## <a name="what-if-i-need-a-feature-which-is-not-supported"></a>Что делать, если мне нужна функция, которая не поддерживается?
 
 Мы работаем над тем, чтобы приложить все необходимые компоненты Windows в AKS, но если у вас возникают пробелы, проект [AKS-Engine][aks-engine] с открытым кодом предоставляет простой и полностью настраиваемый способ запуска Kubernetes в Azure, включая поддержку Windows. Обязательно ознакомьтесь с нашим планом функций, поступающих в [AKSную схему][aks-roadmap].
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы приступить к работе с контейнерами Windows Server в AKS, [Создайте пул узлов под управлением Windows Server в AKS][windows-node-cli].
 
@@ -112,7 +137,13 @@ Azure Dev Spaces в настоящее время доступно только 
 [windows-node-cli]: windows-container-cli.md
 [aks-support-policies]: support-policies.md
 [aks-faq]: faq.md
+[upgrade-cluster]: upgrade-cluster.md
+[upgrade-cluster-cp]: use-multiple-node-pools.md#upgrade-a-cluster-control-plane-with-multiple-node-pools
 [azure-outbound-traffic]: ../load-balancer/load-balancer-outbound-connections.md#defaultsnat
 [nodepool-limitations]: use-multiple-node-pools.md#limitations
 [windows-container-compat]: /virtualization/windowscontainers/deploy-containers/version-compatibility?tabs=windows-server-2019%2Cwindows-10-1909
 [maximum-number-of-pods]: configure-azure-cni.md#maximum-pods-per-node
+[azure-monitor]: ../azure-monitor/insights/container-insights-overview.md#what-does-azure-monitor-for-containers-provide
+[client-source-ip]: concepts-network.md#ingress-controllers
+[kubernetes-dashboard]: kubernetes-dashboard.md
+[windows-rdp]: rdp.md

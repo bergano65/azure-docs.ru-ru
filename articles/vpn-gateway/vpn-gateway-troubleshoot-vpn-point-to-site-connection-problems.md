@@ -8,12 +8,11 @@ ms.service: vpn-gateway
 ms.topic: troubleshooting
 ms.date: 03/26/2020
 ms.author: genli
-ms.openlocfilehash: 5a273ccad0d30ede3f0ed4ee532d61161074d304
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: b997942fd8d8a90b4bd395c2afa7d99b64a97ad8
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82188299"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86037755"
 ---
 # <a name="troubleshooting-azure-point-to-site-connection-problems"></a>Устранение неполадок подключения типа "точка — сеть" Azure
 
@@ -44,7 +43,7 @@ ms.locfileid: "82188299"
     | AzureClient.pfx  | Current User\Personal\Certificates |
     | Азурерут. cer    | Local Computer\Trusted Root Certification Authorities|
 
-3. Перейдите в каталог C:\Users\<имя_пользователя>\AppData\Roaming\Microsoft\Network\Connections\Cm\<GUID>, вручную установите сертификат (файл *.cer) в пользовательское хранилище и хранилище на компьютере.
+3. Перейдите по адресу C:\Users \<UserName> \аппдата\роаминг\микрософт\нетворк\коннектионс\км \<GUID> , вручную установите сертификат (CER-файл) в хранилище пользователя и компьютера.
 
 Дополнительные сведения о том, как установить сертификат клиента, см. в статье [Создание и экспорт сертификатов для подключений типа "точка — сеть" с помощью PowerShell в Windows 10](vpn-gateway-certificates-point-to-site.md).
 
@@ -75,7 +74,7 @@ IKEv2 поддерживается в Windows 10 и Server 2016. Однако д
    |---|---|---|---|
    | Windows Server 2016<br>Windows 10 версии 1607 | 17 января 2018 г. | [KB4057142](https://support.microsoft.com/help/4057142/windows-10-update-kb4057142) |
    | Windows 10 версии 1703 | 17 января 2018 г. | [KB4057144](https://support.microsoft.com/help/4057144/windows-10-update-kb4057144) |
-   | Windows 10 версии 1709 | 22 марта 2018 г. | [KB4089848](https://www.catalog.update.microsoft.com/search.aspx?q=kb4089848) |
+   | Windows 10 версии 1709 | 22 марта 2018 г. | [KB4089848](https://www.catalog.update.microsoft.com/search.aspx?q=kb4089848) |
    |  |  |  |  |
 
 2. Установите значение раздела реестра. Создайте или задайте `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RasMan\ IKEv2\DisableCertReqPayload` REG_DWORD ключа в реестре равным 1.
@@ -168,7 +167,7 @@ IKEv2 поддерживается в Windows 10 и Server 2016. Однако д
 1. Запустите mmc.exe.
 2. Добавьте оснастку **Сертификаты**.
 3. Выберите учетную запись **Компьютер** для локального компьютера.
-4. Щелкните правой кнопкой мыши узел **Доверенные корневые центры сертификации**. Щелкните **все —** > **Импорт**задач и перейдите к CER-файлу, извлеченному из пакета конфигурации VPN-клиента.
+4. Щелкните правой кнопкой мыши узел **Доверенные корневые центры сертификации**. Щелкните **все —**  >  **Импорт**задач и перейдите к CER-файлу, извлеченному из пакета конфигурации VPN-клиента.
 5. Перезагрузите компьютер. 
 6. Попробуйте установить VPN-клиент.
 
@@ -178,7 +177,7 @@ IKEv2 поддерживается в Windows 10 и Server 2016. Однако д
 
 При попытке сохранить изменения для VPN-шлюза на портале Azure появляется следующее сообщение об ошибке:
 
-**Не удалось сохранить &lt; *имя*&gt;шлюза шлюза виртуальной сети. Недопустимые &lt;данные для *идентификатора* &gt; сертификата сертификата.**
+**Не удалось сохранить &lt; *имя шлюза*шлюза виртуальной сети &gt; . Недопустимые данные для &lt; *идентификатора сертификата* сертификата &gt; .**
 
 ### <a name="cause"></a>Причина: 
 
@@ -188,24 +187,26 @@ IKEv2 поддерживается в Windows 10 и Server 2016. Однако д
 
 Убедитесь, что данные в сертификате не содержат недопустимых знаков, таких как разрывы строки (возврат каретки). Значение целиком должно находиться в одной длинной строке. Ниже приведен пример содержимого сертификата.
 
-    -----BEGIN CERTIFICATE-----
-    MIIC5zCCAc+gAwIBAgIQFSwsLuUrCIdHwI3hzJbdBjANBgkqhkiG9w0BAQsFADAW
-    MRQwEgYDVQQDDAtQMlNSb290Q2VydDAeFw0xNzA2MTUwMjU4NDZaFw0xODA2MTUw
-    MzE4NDZaMBYxFDASBgNVBAMMC1AyU1Jvb3RDZXJ0MIIBIjANBgkqhkiG9w0BAQEF
-    AAOCAQ8AMIIBCgKCAQEAz8QUCWCxxxTrxF5yc5uUpL/bzwC5zZ804ltB1NpPa/PI
-    sa5uwLw/YFb8XG/JCWxUJpUzS/kHUKFluqkY80U+fAmRmTEMq5wcaMhp3wRfeq+1
-    G9OPBNTyqpnHe+i54QAnj1DjsHXXNL4AL1N8/TSzYTm7dkiq+EAIyRRMrZlYwije
-    407ChxIp0stB84MtMShhyoSm2hgl+3zfwuaGXoJQwWiXh715kMHVTSj9zFechYd7
-    5OLltoRRDyyxsf0qweTFKIgFj13Hn/bq/UJG3AcyQNvlCv1HwQnXO+hckVBB29wE
-    sF8QSYk2MMGimPDYYt4ZM5tmYLxxxvGmrGhc+HWXzMeQIDAQABozEwLzAOBgNVHQ8B
-    Af8EBAMCAgQwHQYDVR0OBBYEFBE9zZWhQftVLBQNATC/LHLvMb0OMA0GCSqGSIb3
-    DQEBCwUAA4IBAQB7k0ySFUQu72sfj3BdNxrXSyOT4L2rADLhxxxiK0U6gHUF6eWz
-    /0h6y4mNkg3NgLT3j/WclqzHXZruhWAXSF+VbAGkwcKA99xGWOcUJ+vKVYL/kDja
-    gaZrxHlhTYVVmwn4F7DWhteFqhzZ89/W9Mv6p180AimF96qDU8Ez8t860HQaFkU6
-    2Nw9ZMsGkvLePZZi78yVBDCWMogBMhrRVXG/xQkBajgvL5syLwFBo2kWGdC+wyWY
-    U/Z+EK9UuHnn3Hkq/vXEzRVsYuaxchta0X2UNRzRq+o706l+iyLTpe6fnvW6ilOi
-    e8Jcej7mzunzyjz4chN0/WVF94MtxbUkLkqP
-    -----END CERTIFICATE-----
+```text
+-----BEGIN CERTIFICATE-----
+MIIC5zCCAc+gAwIBAgIQFSwsLuUrCIdHwI3hzJbdBjANBgkqhkiG9w0BAQsFADAW
+MRQwEgYDVQQDDAtQMlNSb290Q2VydDAeFw0xNzA2MTUwMjU4NDZaFw0xODA2MTUw
+MzE4NDZaMBYxFDASBgNVBAMMC1AyU1Jvb3RDZXJ0MIIBIjANBgkqhkiG9w0BAQEF
+AAOCAQ8AMIIBCgKCAQEAz8QUCWCxxxTrxF5yc5uUpL/bzwC5zZ804ltB1NpPa/PI
+sa5uwLw/YFb8XG/JCWxUJpUzS/kHUKFluqkY80U+fAmRmTEMq5wcaMhp3wRfeq+1
+G9OPBNTyqpnHe+i54QAnj1DjsHXXNL4AL1N8/TSzYTm7dkiq+EAIyRRMrZlYwije
+407ChxIp0stB84MtMShhyoSm2hgl+3zfwuaGXoJQwWiXh715kMHVTSj9zFechYd7
+5OLltoRRDyyxsf0qweTFKIgFj13Hn/bq/UJG3AcyQNvlCv1HwQnXO+hckVBB29wE
+sF8QSYk2MMGimPDYYt4ZM5tmYLxxxvGmrGhc+HWXzMeQIDAQABozEwLzAOBgNVHQ8B
+Af8EBAMCAgQwHQYDVR0OBBYEFBE9zZWhQftVLBQNATC/LHLvMb0OMA0GCSqGSIb3
+DQEBCwUAA4IBAQB7k0ySFUQu72sfj3BdNxrXSyOT4L2rADLhxxxiK0U6gHUF6eWz
+/0h6y4mNkg3NgLT3j/WclqzHXZruhWAXSF+VbAGkwcKA99xGWOcUJ+vKVYL/kDja
+gaZrxHlhTYVVmwn4F7DWhteFqhzZ89/W9Mv6p180AimF96qDU8Ez8t860HQaFkU6
+2Nw9ZMsGkvLePZZi78yVBDCWMogBMhrRVXG/xQkBajgvL5syLwFBo2kWGdC+wyWY
+U/Z+EK9UuHnn3Hkq/vXEzRVsYuaxchta0X2UNRzRq+o706l+iyLTpe6fnvW6ilOi
+e8Jcej7mzunzyjz4chN0/WVF94MtxbUkLkqP
+-----END CERTIFICATE-----
+```
 
 ## <a name="azure-portal-error-failed-to-save-the-vpn-gateway-and-the-resource-name-is-invalid"></a>Ошибка портала Azure: не удалось сохранить VPN-шлюз, так как имя ресурса является недопустимым
 
@@ -213,7 +214,7 @@ IKEv2 поддерживается в Windows 10 и Server 2016. Однако д
 
 При попытке сохранить изменения для VPN-шлюза на портале Azure появляется следующее сообщение об ошибке: 
 
-**Не удалось сохранить &lt; *имя*&gt;шлюза шлюза виртуальной сети. Недопустимое &lt; *имя ресурса имя сертификата, которое вы пытаетесь отправить* &gt; **.
+**Не удалось сохранить &lt; *имя шлюза*шлюза виртуальной сети &gt; . &lt; &gt; Недопустимое имя ресурса имя *сертификата, которое вы пытаетесь отправить* **.
 
 ### <a name="cause"></a>Причина:
 
@@ -261,7 +262,7 @@ VPN-клиент подключился к виртуальной сети Azure
 
 Чтобы обойти эту проблему, отключите кэширование учетных данных домена в следующем подразделе реестра: 
 
-    HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\DisableDomainCreds - Set the value to 1 
+`HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\DisableDomainCreds - Set the value to 1`
 
 
 ## <a name="cannot-find-the-point-to-site-vpn-connection-in-windows-after-reinstalling-the-vpn-client"></a>Не удается найти VPN-подключение типа "точка — сеть" в Windows после повторной установки VPN-клиента
@@ -272,7 +273,7 @@ VPN-клиент подключился к виртуальной сети Azure
 
 ### <a name="solution"></a>Решение
 
-Чтобы устранить эту проблему, удалите старые файлы конфигурации VPN-клиента из папки **C:\Users\<имя_пользователя>\AppData\Roaming\Microsoft\Network\Connections\<ИД_виртуальной_сети>**, а затем снова запустите установщик VPN-клиента.
+Чтобы устранить эту проблему, удалите старые файлы конфигурации VPN-клиента из **к:\усерс\усернаме\аппдата\роаминг\микрософт\нетворк\коннектионс \<VirtualNetworkId> **, а затем снова запустите установщик VPN-клиента.
 
 ## <a name="point-to-site-vpn-client-cannot-resolve-the-fqdn-of-the-resources-in-the-local-domain"></a>VPN-клиенту типа "точка — сеть" не удается разрешить полные доменные имена ресурсов в локальном домене
 
@@ -339,9 +340,9 @@ VPN-клиент типа "точка — сеть" обычно использ�
 4. Если Windows не удастся найти новый драйвер, его можно будет найти на веб-сайте изготовителя устройства и следовать представленным инструкциям.
 5. Перезагрузите компьютер и повторите попытку подключения.
 
-## <a name="vpn-client-error-dialing-vpn-connection-vpn-connection-name-status--vpn-platform-did-not-trigger-connection"></a>Ошибка VPN-клиента: набор VPN- <VPN Connection Name>подключения, состояние = платформа VPN не активировала подключение
+## <a name="vpn-client-error-dialing-vpn-connection-vpn-connection-name-status--vpn-platform-did-not-trigger-connection"></a>Ошибка VPN-клиента: набор VPN-подключения <VPN Connection Name> , состояние = платформа VPN не активировала подключение
 
-Кроме того, в Просмотр событий из Расклиент можно столкнуться со следующей ошибкой: " <User> пользователь набирает соединение с <VPN Connection Name> ошибкой. Код ошибки, возвращенный при сбое, — 1460. "
+Кроме того, в Просмотр событий из Расклиент можно столкнуться со следующей ошибкой: "пользователь <User> набирает соединение с <VPN Connection Name> ошибкой. Код ошибки, возвращенный при сбое, — 1460. "
 
 ### <a name="cause"></a>Причина:
 
@@ -370,7 +371,7 @@ VPN-клиент типа "точка — сеть" обычно использ�
 
 ### <a name="solution"></a>Решение
 
-Удалите старые файлы конфигурации VPN-клиента из папки **C:\Users\<имя_пользователя>\AppData\Roaming\Microsoft\Network\Connections\<ИД_виртуальной_сети>**, а затем снова запустите установщик VPN-клиента. 
+Удалите старые файлы конфигурации VPN-клиента из **к:\усерс\усернаме\аппдата\роаминг\микрософт\нетворк\коннектионс \<VirtualNetworkId> ** и снова запустите установщик VPN-клиента. 
 
 ## <a name="the-vpn-client-hibernates-or-sleep-after-some-time"></a>Через некоторое время VPN-клиент переходит в режим гибернации или спящий режим
 

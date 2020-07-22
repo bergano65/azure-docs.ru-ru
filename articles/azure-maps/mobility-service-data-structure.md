@@ -9,10 +9,10 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.openlocfilehash: 4dfc6793bba473c4046863937baa292dde7bf421
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80478702"
 ---
 # <a name="data-structures-in-azure-maps-mobility-service"></a>Структуры данных в службе Mobility Service Azure Maps
@@ -23,7 +23,7 @@ ms.locfileid: "80478702"
 
 Данные службы мобильности группируются по поддерживаемым областям метро. Области Metro не следуют границам города. В области Metro может содержаться несколько городов, заполненный город и окружающие города. На самом деле, страна или регион могут быть одной областью метро. 
 
-`metroID` — Это идентификатор области метро, который можно использовать для вызова [API получения сведений о области Metro](https://aka.ms/AzureMapsMobilityMetroAreaInfo). Используйте Azure Maps "" Get Metro "API для запроса типов транзитного склада, транзитных агентств, активных оповещений и дополнительных сведений о выбранном Metro. Вы также можете запросить поддерживаемые области Metro и Метроидс. Идентификаторы областей Metro могут изменяться.
+`metroID`— Это идентификатор области метро, который можно использовать для вызова [API получения сведений о области Metro](https://aka.ms/AzureMapsMobilityMetroAreaInfo). Используйте Azure Maps "" Get Metro "API для запроса типов транзитного склада, транзитных агентств, активных оповещений и дополнительных сведений о выбранном Metro. Вы также можете запросить поддерживаемые области Metro и Метроидс. Идентификаторы областей Metro могут изменяться.
 
 **Метроид:** 522 **Имя:** Сиэтл-Tacoma-Бельвью
 
@@ -52,7 +52,7 @@ ms.locfileid: "80478702"
 Для начала можно запросить группы строк с помощью [API получения транзитной строки](https://aka.ms/AzureMapsMobilityTransitLine).
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как запросить транзитные данные с помощью службы Mobility Service:
 

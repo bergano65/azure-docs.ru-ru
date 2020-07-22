@@ -5,13 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 01/15/2020
-ms.openlocfilehash: a82d2317314c79a82fe80c5a25afc950fb728815
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 07/17/2020
+ms.openlocfilehash: c677b0278d29c499d4369967c1c76132a1ae9d21
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76155202"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86519853"
 ---
 # <a name="azure-database-for-mysql-server-firewall-rules"></a>Правила брандмауэра сервера базы данных Azure для MySQL
 Брандмауэр запрещает любой доступ к серверу базы данных, пока вы не укажете компьютеры, у которых есть разрешение на доступ. Брандмауэр предоставляет доступ к серверу на основе исходного IP-адреса каждого запроса.
@@ -64,10 +64,14 @@ ms.locfileid: "76155202"
 
    * Получите статические IP-адреса для клиентских компьютеров, а затем добавьте IP-адреса как правила брандмауэра.
 
-* **IP-адрес сервера выглядит как общедоступный:** Подключения к серверу базы данных Azure для MySQL направляются через общедоступный шлюз Azure. Однако фактический IP-адрес сервера защищен брандмауэром. Дополнительные сведения см. в [статье Архитектура подключения](concepts-connectivity-architecture.md). 
+* **IP-адрес сервера выглядит как общедоступный:** Подключения к серверу базы данных Azure для MySQL направляются через общедоступный шлюз Azure. Однако фактический IP-адрес сервера защищен брандмауэром. Дополнительные сведения см. в статье об [архитектуре подключения](concepts-connectivity-architecture.md). 
+
+* **Не удается подключиться из ресурса Azure с разрешенным IP-адресом:** Проверьте, включена ли конечная точка службы **Microsoft. SQL** для подсети, из которой вы подключаетесь. Если **Microsoft. SQL** включен, то это означает, что для этой подсети нужно использовать только [правила конечной точки службы VNet](concepts-data-access-and-security-vnet.md) .
+
+   Например, если вы подключаетесь из виртуальной машины Azure в подсети с включенным **Microsoft. SQL** , но не имеет соответствующего правила виртуальной сети, может появиться следующее сообщение об ошибке:`FATAL: Client from Azure Virtual Networks is not allowed to access the server`
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание правил брандмауэра базы данных Azure для MySQL и управление ими с помощью портал Azure](./howto-manage-firewall-using-portal.md)
 * [Создание правил брандмауэра базы данных Azure для MySQL и управление ими с помощью Azure CLI](./howto-manage-firewall-using-cli.md)
-- [Конечные точки службы виртуальной сети в базе данных Azure для MySQL](./concepts-data-access-and-security-vnet.md)
+* [Конечные точки службы виртуальной сети в базе данных Azure для MySQL](./concepts-data-access-and-security-vnet.md)

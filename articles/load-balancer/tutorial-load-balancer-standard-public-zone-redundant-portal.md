@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 02/27/2019
 ms.author: allensu
 ms.custom: seodec18
-ms.openlocfilehash: f521cc68476e2f9df1cc8288cf41156da3851cd0
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: d9f16b612b508a6237c748bd135ff32618015b0b
+ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "78251876"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86057013"
 ---
 # <a name="tutorial-load-balance-vms-across-availability-zones-with-a-standard-load-balancer-using-the-azure-portal"></a>Руководство по Распределение нагрузки виртуальных машин в пределах зон доступности с помощью Load Balancer уровня "Стандартный" и портала Azure
 
@@ -78,9 +78,9 @@ ms.locfileid: "78251876"
 | **\<resource-group-name>**  | myResourceGroupLBAZ (Select existing resource group) |
 | **\<virtual-network-name>** | myVNet          |
 | **\<region-name>**          | Западная Европа      |
-| **\<IPv4-address-space>**   | 10.0.0.0\16          |
+| **\<IPv4-address-space>**   | 10.0.0.0/16          |
 | **\<subnet-name>**          | myBackendSubnet        |
-| **\<subnet-address-range>** | 10.0.0.0\24          |
+| **\<subnet-address-range>** | 10.0.0.0/24          |
 
 [!INCLUDE [virtual-networks-create-new](../../includes/virtual-networks-create-new.md)]
 
@@ -140,9 +140,6 @@ ms.locfileid: "78251876"
     - *myNetworkSecurityGroup* — для имени группы безопасности сети (брандмауэра).
 5. Щелкните **Отключено**, чтобы отключить диагностику загрузки.
 6. Нажмите кнопку **ОК**, просмотрите параметры на странице сводки и нажмите кнопку **Создать**.
-  
-   ![Создание виртуальной машины](./media/load-balancer-standard-public-availability-zones-portal/create-vm-standard-ip.png)
-
 7. Создайте вторую виртуальную машину с именем *VM2* в зоне 2 и третью виртуальную машину в зоне 3, настроив *myVnet* в качестве виртуальной сети, *myBackendSubnet* как подсеть и \**myNetworkSecurityGroup* как группу безопасности сети и выполнив шаги 1–6.
 
 ### <a name="install-iis-on-vms"></a>Установка служб IIS на виртуальные машины

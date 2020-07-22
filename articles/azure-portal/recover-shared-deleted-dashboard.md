@@ -5,23 +5,22 @@ services: azure-portal
 author: mgblythe
 ms.author: mblythe
 ms.date: 01/21/2020
-ms.topic: conceptual
+ms.topic: troubleshooting
 ms.service: azure-portal
 manager: mtillman
-ms.openlocfilehash: af0c72f0bc5dd8f3a3cbae7b82b1ac56447cbb08
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 7b3cc088a87731d2a118a4fe5183831e4d1bd6cc
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77133294"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84763981"
 ---
-# <a name="recover-a-deleted-dashboard-in-the-azure-portal"></a>Восстановление удаленной панели мониторинга в портал Azure
+# <a name="recover-a-deleted-dashboard-in-the-azure-portal"></a>Восстановление удаленной панели мониторинга на портале Azure
 
 Если вы находитесь в общедоступном облаке Azure и удалили _опубликованную_ информационную панель в портал Azure, вы можете восстановить эту панель мониторинга в течение 14 дней после удаления. Если вы находитесь в облаке Azure для государственных организаций или панель мониторинга не опубликована, вы не сможете восстановить ее, и вам потребуется перестроить ее. Дополнительные сведения о публикации панели мониторинга см. в статье [Публикация панели мониторинга](azure-portal-dashboard-share-access.md#publish-dashboard). Чтобы восстановить опубликованную панель мониторинга, выполните следующие действия.
 
 1. В меню портал Azure выберите **группы ресурсов**, а затем выберите группу ресурсов, в которой была опубликована панель мониторинга (по умолчанию она называется **панели мониторинга**).
 
-1. В разделе **Журнал действий**разверните операцию **удалить панель мониторинга** . Перейдите на вкладку **Журнал изменений** , а затем выберите ** \<удаленный\>ресурс**.
+1. В разделе **Журнал действий**разверните операцию **удалить панель мониторинга** . Перейдите на вкладку **Журнал изменений** , а затем выберите **\<deleted resource\>** .
 
     ![Снимок экрана вкладки "журнал изменений"](media/recover-shared-deleted-dashboard/change-history-tab.png)
 

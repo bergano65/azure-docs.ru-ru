@@ -5,27 +5,28 @@ author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.devlang: azurecli
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 4/13/2020
-ms.openlocfilehash: 75efdd8ed855fe78651fce5828aacb2384052ae5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: cc4a2e8c3de05a9df136e74a1e0d32956891a175
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81270542"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86118500"
 ---
-# <a name="configure-and-access-slow-query-logs-by-using-azure-cli"></a>Настройка и доступ к журналам запросов с высокой занесением с помощью Azure CLI
+# <a name="configure-and-access-azure-database-for-maria-db-slow-query-logs-by-using-azure-cli"></a>Настройка журналов запросов базы данных Azure для Марии и доступ к ним с помощью Azure CLI
+
 Вы можете скачать базу данных Azure для MariaDBных журналов запросов с помощью Azure CLI, служебной программы командной строки Azure.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
 - [База данных Azure для сервера MariaDB](quickstart-create-mariadb-server-database-using-azure-cli.md)
 - [Azure CLI](/cli/azure/install-azure-cli) или Azure Cloud Shell в браузере.
 
 ## <a name="configure-logging"></a>Настройка журнала
 Можно настроить на сервере доступ к журналу медленных запросов MySQL, выполнив следующие действия:
-1. Включите ведение журнала для запросов, задав для **параметра\_журнала\_скорости запроса** значение ON.
-2. Выберите место вывода журналов для использования **выходных данных журнала\_**. Чтобы отправить журналы в локальное хранилище и Azure Monitor журналы диагностики, выберите **файл**. Чтобы отправить журналы только в Azure Monitor журналы, выберите **нет** .
+1. Включите ведение журнала для запросов, задав для **параметра \_ \_ журнала скорости запроса** значение ON.
+2. Выберите место вывода журналов для использования ** \_ выходных данных журнала**. Чтобы отправить журналы в локальное хранилище и Azure Monitor журналы диагностики, выберите **файл**. Чтобы отправить журналы только в Azure Monitor журналы, выберите **нет** .
 3. Настройте другие параметры, такие как **long\_query\_time** и **log\_slow\_admin\_statements**.
 
 Ознакомьтесь со статьей [Настройка параметров конфигурации сервера с помощью Azure CLI](howto-configure-server-parameters-cli.md), чтобы узнать, как задать значение этих параметров с помощью Azure CLI.
@@ -54,5 +55,5 @@ az mariadb server-logs list --resource-group myresourcegroup --server mydemoserv
 az mariadb server-logs download --name mysql-slow-mydemoserver-2018110800.log --resource-group myresourcegroup --server mydemoserver
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Сведения о [очень низких журналах запросов в базе данных Azure для MariaDB](concepts-server-logs.md).

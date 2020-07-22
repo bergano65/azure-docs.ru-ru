@@ -1,0 +1,80 @@
+- name: Документация по Аналитике видеотрансляции в IoT Edge (предварительная версия)
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Общие сведения об Аналитике видеотрансляции в IoT Edge
+      href: overview.md
+    - name: Терминология
+      href: terminology.md
+    - name: Новые возможности
+      items:
+        - name: Заметки о выпуске
+          href: release-notes.md
+- name: Краткие руководства
+  items:
+    - name: Начало работы. Общие сведения об Аналитике видеотрансляции в IoT Edge
+      href: get-started-detect-motion-emit-events-quickstart.md
+    - name: Запись видео в Cлужбы мультимедиа при обнаружении движения
+      href: detect-motion-record-video-clips-media-services-quickstart.md
+    - name: Создание событий при обнаружении движения
+      href: detect-motion-emit-events-quickstart.md
+    - name: Запись видео на пограничные устройства при обнаружении движения
+      href: detect-motion-record-video-clips-edge-devices-quickstart.md
+    - name: Запуск Аналитики видеотрансляции с помощью собственной модели
+      href: use-your-model-quickstart.md
+- name: Учебники
+  items:
+    - name: Непрерывная запись видео
+      href: continuous-video-recording-tutorial.md
+    - name: Запись видео на основе событий
+      href: event-based-video-recording-tutorial.md
+    - name: 'Воспроизведение записей, сделанных в течение нескольких дней'
+      href: playback-multi-day-recordings-tutorial.md
+- name: Примеры
+  items:
+    - name: "Аналитика видеотрансляции в IoT Edge\_— примеры для C#"
+      href: 'https://github.com/Azure-Samples/live-video-analytics-iot-edge-csharp'
+- name: Основные понятия
+  items:
+    - name: Граф мультимедиа
+      href: media-graph-concept.md
+    - name: Запись видео
+      href: video-recording-concept.md
+    - name: Воспроизведение видео
+      href: video-playback-concept.md
+    - name: Сценарии
+      items:
+        - name: Непрерывная запись видео
+          href: continuous-video-recording-concept.md
+        - name: Запись видео на основе событий
+          href: event-based-video-recording-concept.md
+        - name: Аналитика видеотрансляции без записи видео
+          href: analyze-live-video-concept.md
+- name: Практические руководства
+  items:
+    - name: Создание пользовательской роли Azure Resource Manager
+      href: create-custom-azure-resource-manager-role-how-to.md
+    - name: Развертывание на устройстве IoT Edge
+      href: deploy-iot-edge-device.md
+    - name: Мониторинг и ведение журнала
+      href: monitoring-logging.md
+    - name: Воспроизведение записи
+      href: playback-recordings-how-to.md
+    - name: Управление политикой записи
+      href: manage-recording-policy-how-to.md
+    - name: Анализ видеотрансляции с помощью предпочитаемого средства ИИ
+      href: analyze-with-ai-your-choice-how-to.md
+    - name: Диагностика
+      href: troubleshoot-how-to.md
+- name: Справочник
+  items:
+    - name: Прямые методы
+      href: direct-methods.md
+    - name: Схема конфигурации двойника модуля
+      href: module-twin-configuration-schema.md
+    - name: Квоты и ограничения
+      href: quotas-limitations.md
+    - name: Часто задаваемые вопросы
+      href: faq.md
+    - name: Подготовка рабочей среды и рекомендации
+      href: production-readiness.md

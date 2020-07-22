@@ -12,10 +12,9 @@ ms.custom:
 - amqp
 - mqtt
 ms.openlocfilehash: ef31bd74c73aa081c32031b71392f69a1ca14f75
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81730907"
 ---
 # <a name="understand-the-azure-iot-edge-runtime-and-its-architecture"></a>Общие сведения о среде выполнения Azure IoT Edge и ее архитектуре
@@ -73,9 +72,9 @@ ms.locfileid: "81730907"
    await client.SetInputMessageHandlerAsync("input1", messageProcessor, userContext);
    ```
 
-Дополнительные сведения о классе модулеклиент и его методах связи см. в справочнике по API для вашего предпочтительного языка SDK: [C#](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.moduleclient?view=azure-dotnet), [C](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/iothub-module-client-h), [Python](https://docs.microsoft.com/python/api/azure-iot-device/azure.iot.device.iothubmoduleclient?view=azure-python), [Java](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.device.moduleclient?view=azure-java-stable)или [node. js](https://docs.microsoft.com/javascript/api/azure-iot-device/moduleclient?view=azure-node-latest).
+Дополнительные сведения о классе модулеклиент и его методах связи см. в справочнике по API для вашего предпочтительного языка SDK: [C#](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.moduleclient?view=azure-dotnet), [C](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/iothub-module-client-h), [Python](https://docs.microsoft.com/python/api/azure-iot-device/azure.iot.device.iothubmoduleclient?view=azure-python), [Java](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.device.moduleclient?view=azure-java-stable)или [Node.js](https://docs.microsoft.com/javascript/api/azure-iot-device/moduleclient?view=azure-node-latest).
 
-Разработчик решений отвечает за указание правил, определяющих, как центр IoT Edge передает сообщения между модулями. Правила маршрутизации определяются в облаке и передаются в IoT Edge Hub в своем модуле двойника. Тот же синтаксис для маршрутов Центра Интернета вещей используется при определении маршрутов между модулями в Azure IoT Edge. Дополнительные сведения см. в статьях о [развертывании модулей и установке маршрутов в IOT Edge](module-composition.md).
+Разработчик решений отвечает за указание правил, определяющих, как центр IoT Edge передает сообщения между модулями. Правила маршрутизации определяются в облаке и передаются в IoT Edge Hub в своем модуле двойника. Тот же синтаксис для маршрутов Центра Интернета вещей используется при определении маршрутов между модулями в Azure IoT Edge. Подробную информацию см. в статье [Сведения о развертывании модулей и настройке маршрутов в IoT Edge](module-composition.md).
 
 ![Маршруты между модулями проходят через центр IoT Edge](./media/iot-edge-runtime/module-endpoints-with-routes.png)
 
@@ -93,8 +92,8 @@ ms.locfileid: "81730907"
 
   * Downloading;
   * Запущен
-  * Unhealthy
-  * Failed
+  * Unhealthy;
+  * Ошибка
   * Остановлена
 
 * **restartPolicy**. То, как агент IoT Edge перезапускает модуль. Ниже перечислены возможные значения.
@@ -118,7 +117,7 @@ ms.locfileid: "81730907"
 * 406 — устройство IoT Edge работает в автономном режиме или не отправляет отчеты о состоянии.
 * 500 — в среде выполнения IoT Edge произошла ошибка.
 
-Дополнительные сведения см. в статьях о [развертывании модулей и установке маршрутов в IOT Edge](module-composition.md).
+Подробную информацию см. в статье [Сведения о развертывании модулей и настройке маршрутов в IoT Edge](module-composition.md).
 
 ### <a name="security"></a>Безопасность
 

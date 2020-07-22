@@ -1,24 +1,24 @@
 ---
 title: Встроенные определения политик для Когнитивного поиска Azure
 description: Здесь приведены встроенные определения политик в Политике Azure для Когнитивного поиска Azure. Эти встроенные определения политик предоставляют популярные подходы к управлению ресурсами Azure.
-ms.date: 05/13/2020
+ms.date: 07/10/2020
 ms.topic: sample
 author: HeidiSteen
 ms.author: heidist
 ms.service: search
 ms.custom: subject-policy-samples
-ms.openlocfilehash: fe8ed12f85dcd0dedbec5369ed9ad6dcf4e4628a
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 5e4a12af83fd81134b930103cd28377bf4185fa3
+ms.sourcegitcommit: 0b2367b4a9171cac4a706ae9f516e108e25db30c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83658961"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86274308"
 ---
-# <a name="azure-policy-built-in-policy-definitions-for-azure-cognitive-search"></a>Встроенные определения политик в Политике Azure для Когнитивного поиска Azure
+# <a name="azure-policy-built-in-definitions-for-azure-cognitive-search"></a>Встроенные определения в Политике Azure для Когнитивного поиска Azure
 
 Эта страница представляет собой индекс встроенных определений политик в [Политике Azure](../governance/policy/overview.md) для Когнитивного поиска Azure. Дополнительные встроенные компоненты Политики Azure для других служб см. в статье [Встроенные определения Политики Azure](../governance/policy/samples/built-in-policies.md).
 
-Имя каждого встроенного определения политики связано с определением политики на портале Azure. Перейдите по ссылке в столбце **GitHub**, чтобы просмотреть исходный код в [репозитории GitHub для службы "Политика Azure"](https://github.com/Azure/azure-policy).
+Имя каждого встроенного определения политики связано с определением политики на портале Azure. Перейдите по ссылке в столбце **Версия**, чтобы просмотреть исходный код в [репозитории GitHub для службы "Политика Azure"](https://github.com/Azure/azure-policy).
 
 ## <a name="azure-cognitive-search"></a>Когнитивный поиск Azure
 

@@ -7,12 +7,12 @@ ms.topic: sample
 ms.date: 01/04/2019
 ms.author: tomfitz
 ms.custom: mvc, fasttrack-edit
-ms.openlocfilehash: 2d77dcbd07a67e3ba50d70770515416b45fbc7a3
-ms.sourcegitcommit: 0450ed87a7e01bbe38b3a3aea2a21881f34f34dd
+ms.openlocfilehash: 2caaadd0da9d62128d04962fa1f2ff7eade907b0
+ms.sourcegitcommit: bf99428d2562a70f42b5a04021dde6ef26c3ec3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80637908"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85254435"
 ---
 # <a name="azure-resource-manager-templates-for-app-service"></a>Шаблоны Azure Resource Manager для Службы приложений
 
@@ -29,7 +29,6 @@ ms.locfileid: "80637908"
 | [Приложение с пользовательскими слотами развертывания](https://github.com/Azure/azure-quickstart-templates/tree/master/101-webapp-custom-deployment-slots)| Развертывает приложение Службы приложений с пользовательскими слотами развертывания или средами. |
 |**Настройка приложения**||
 | [Сертификат приложения из Key Vault](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-certificate-from-key-vault)| Позволяет развернуть сертификат приложения Службы приложений из секрета Azure Key Vault и использует его для привязки TLS/SSL. |
-| [Приложение с личным доменом](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-custom-domain)| Развертывает приложение Службы приложений с пользовательским именем узла. |
 | [Приложение с личным доменом и SSL](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-custom-domain-and-ssl)| Позволяет развернуть приложение Службы приложений с пользовательским именем узла и получает сертификат приложения из Key Vault для привязки TLS/SSL. |
 | [Приложение с расширением GoLang](https://github.com/Azure/azure-quickstart-templates/tree/master/101-webapp-with-golang)| Развертывает приложение Службы приложений с расширением сайта Golang. Вы сможете запускать веб-приложения, разработанные на Golang в Azure. |
 | [Приложения с Java 8 и Tomcat 8](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-java-tomcat)| Развертывает приложение Службы приложений с поддержкой Java 8 и Tomcat 8. Вы сможете запускать приложения Java в Azure. |
@@ -42,7 +41,7 @@ ms.locfileid: "80637908"
 |**Приложение с подключенными ресурсами**||
 | [Приложение с MySQL](https://github.com/Azure/azure-quickstart-templates/tree/master/101-webapp-managed-mysql)| Развертывает приложение Службы приложений в Windows со службой "База данных Azure для MySQL". |
 | [Приложение с PostgreSQL](https://github.com/Azure/azure-quickstart-templates/tree/master/101-webapp-managed-postgresql)| Развертывает приложение Службы приложений в Windows со службой "База данных Azure для PostgreSQL". |
-| [Приложение с базой данных SQL](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-sql-database)| Развертывает приложение Службы приложений и базу данных SQL с уровнем обслуживания "Базовый". |
+| [Приложение с базой данных в службе "База данных SQL Azure"](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-sql-database)| Развертывает приложение Службы приложений и базу данных в службе "База данных SQL Azure" с уровнем обслуживания "Базовый". |
 | [Приложение с подключением к хранилищу BLOB-объектов](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-blob-connection)| Развертывает приложение Службы приложений со строкой подключения к хранилищу BLOB-объектов Azure. Вы сможете использовать хранилище BLOB-объектов из приложения. |
 | [Приложение с кэшем Azure для Redis](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-with-redis-cache)| Развертывает приложение Службы приложений с кэшем Azure для Redis. |
 |**Среда службы приложений**||

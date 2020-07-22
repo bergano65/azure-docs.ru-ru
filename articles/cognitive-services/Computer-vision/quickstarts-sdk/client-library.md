@@ -8,19 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: quickstart
-ms.date: 03/12/2020
+ms.date: 06/29/2020
 ms.author: pafarley
+ms.custom: tracking-python
 zone_pivot_groups: programming-languages-set-one
-ms.openlocfilehash: 4ac9f4bcaed5400846bf94f7db6ea6c143c101d6
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: c08b733a3ecfaa3ce6204654cf01c1bac6f8bb20
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80133695"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85560208"
 ---
 # <a name="quickstart-use-the-computer-vision-client-library"></a>Краткое руководство. С помощью клиентской библиотеки службы "Компьютерное зрение" можно выполнять следующие операции:
 
-Начало работы с клиентской библиотекой службы "Компьютерное зрение". Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для выполнения базовых задач. Служба "Компьютерное зрение" предоставляет доступ к передовым алгоритмам обработки изображений и возврата данных
+Начало работы с клиентской библиотекой службы "Компьютерное зрение". Выполните приведенные здесь действия, чтобы установить пакет и протестировать пример кода для выполнения базовых задач. Служба "Компьютерное зрение" предоставляет доступ к передовым алгоритмам обработки изображений и возврата данных.
 
 С помощью клиентской библиотеки службы "Компьютерное зрение" можно выполнять следующие операции:
 

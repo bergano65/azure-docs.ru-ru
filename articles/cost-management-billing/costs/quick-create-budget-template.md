@@ -6,24 +6,30 @@ ms.author: banders
 tags: azure-resource-manager
 ms.service: cost-management-billing
 ms.topic: quickstart
-ms.date: 04/22/2020
+ms.date: 06/10/2020
 ms.custom: subject-armqs
-ms.openlocfilehash: de24895334ec4c864e6daae84a6aab47a47d7b9b
-ms.sourcegitcommit: 086d7c0cf812de709f6848a645edaf97a7324360
+ms.openlocfilehash: 5bff8e6057475701a2e78835fb5a950dcb8c8fcb
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82103639"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86252459"
 ---
-# <a name="quickstart-create-a-budget-with-an-azure-resource-manager-template"></a>Краткое руководство. Создание бюджета с помощью шаблона Azure Resource Manager
+# <a name="quickstart-create-a-budget-with-an-arm-template"></a>Краткое руководство. Создание бюджета с помощью шаблона ARM
 
-Бюджеты в службе "Управление затратами" помогают планировать и отслеживать отчетность на уровне организации. С бюджетами вы можете учитывать службы Azure, которые используете или на которые подписываетесь в течение определенного периода. Они помогают сообщать другим пользователям о своих расходах, чтобы эффективно управлять затратами и контролировать то, как они возрастают с течением времени. Когда созданные вами пороговые значения бюджета превышены, активируются уведомления. Ни один из ваших ресурсов не затронут а потребление не остановлено. Анализируя затраты, можно использовать бюджеты для их сравнения и отслеживания. В этом кратком руководстве описано, как создать бюджет с помощью шаблона Resource Manager.
+Бюджеты в службе "Управление затратами" помогают планировать и отслеживать отчетность на уровне организации. С бюджетами вы можете учитывать службы Azure, которые используете или на которые подписываетесь в течение определенного периода. Они помогают сообщать другим пользователям о своих расходах, чтобы эффективно управлять затратами и контролировать то, как они возрастают с течением времени. Когда созданные вами пороговые значения бюджета превышены, активируются уведомления. Ни один из ваших ресурсов не затронут а потребление не остановлено. Анализируя затраты, можно использовать бюджеты для их сравнения и отслеживания. В этом кратком руководстве описано, как создать бюджет с помощью шаблона Azure Resource Manager (шаблона ARM).
 
 [!INCLUDE [About Azure Resource Manager](../../../includes/resource-manager-quickstart-introduction.md)]
 
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fcreate-budget%2Fazuredeploy.json)
+
 ## <a name="prerequisites"></a>Предварительные требования
 
-Шаблон Azure Resource Manager поддерживает только подписки Azure для Соглашений Enterprise (EA). Другие типы подписок этот шаблон не поддерживает.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+
+Шаблон ARM поддерживает только подписки Azure для Соглашений Enterprise (EA). Другие типы подписок этот шаблон не поддерживает.
 
 А для создания и администрирования бюджетов требуется разрешение уровня участника. Вы можете создать отдельные бюджеты для подписок EA и групп ресурсов. Однако вы не можете создать бюджеты для учетных записей выставления счетов EA. Для подписок Azure EA вам необходимо иметь доступ на чтение для просмотра данных о бюджете.
 
@@ -43,7 +49,7 @@ ms.locfileid: "82103639"
 
 Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/create-budget).
 
-:::code language="json" source="~/quickstart-templates/create-budget/azuredeploy.json":::
+:::code language="json" source="~/quickstart-templates/create-budget/azuredeploy.json" range="1-146" highlight="110-139":::
 
 В этом шаблоне определяется один ресурс Azure.
 
@@ -53,7 +59,7 @@ ms.locfileid: "82103639"
 
 1. Выберите следующее изображение, чтобы войти на портал Azure и открыть шаблон. Шаблон создаст бюджет.
 
-   <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fcreate-budget%2Fazuredeploy.json"><img src="./media/quick-create-budget-template/deploy-to-azure.png" alt="deploy to azure"/></a>
+   [![Развертывание в Azure](../../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fcreate-budget%2Fazuredeploy.json)
 
 2. Введите или выберите следующие значения.
 
@@ -72,7 +78,7 @@ ms.locfileid: "82103639"
     * **Пороговое значение**. Введите пороговое значение для уведомлений. Уведомление отправляется, когда накопленная стоимость превысит пороговое значение. Это значение всегда выражается в процентах и должно находиться в диапазоне от 0 до 1000.
     * **Contact Emails** (Адреса электронной почты для связи). Введите список адресов электронной почты, на которые будет отправлено уведомление о превышении порогового значения для бюджета. Ожидается формат `["user1@domain.com","user2@domain.com"]`.
     * **Contact Roles** (Роли для связи). Введите список ролей для связи, которым будет отправлено уведомление о превышении порогового значения для бюджета. По умолчанию поддерживаются роли владельца, участника и читателя. Ожидается формат `["Owner","Contributor","Reader"]`.
-    * **Contact Groups** (Группы для связи). Введите список групп действий, в которые будет отправлено уведомление о превышении порогового значения для бюджета. Здесь принимается массив строк. Ожидается формат `["Action Group Name1","Action Group Name2"]`. Если вы не хотите использовать группы действий, введите значение `[]`.
+    * **Contact Groups** (Контакты для связи). Введите список идентификаторов ресурсов групп действий (в виде полного URI ресурса), в которые будет отправлено уведомление о превышении порогового значения для бюджета. Здесь принимается массив строк. Ожидается формат `["action group resource ID1","action group resource ID2"]`. Если вы не хотите использовать группы действий, введите значение `[]`.
     * **Resources Filter** (Фильтр ресурсов). Введите список фильтров для ресурсов. Ожидается формат `["Resource Filter Name1","Resource Filter Name2"]`. Если вы не хотите применять фильтр, введите значение `[]`. Если вы ввели фильтр ресурсов, обязательно укажите и значения **фильтров показателей**.
     * **Meters Filter** (Фильтр показателей). Введите список фильтров по показателям, который является обязательным для бюджетов с категорией **Потребление**. Ожидается формат `["Meter Filter Name1","Meter Filter Name2"]`. Если вы не указали **фильтр ресурсов**, введите значение `[]`.
     * **I agree to the terms and conditions state above** (Я принимаю указанные выше условия). Установите этот флажок.
@@ -97,6 +103,37 @@ az consumption budget list
 
 ```azurepowershell-interactive
 Get-AzConsumptionBudget
+```
+
+---
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Если бюджет вам больше не нужен, удалите его, используя один из описанных ниже способов.
+
+### <a name="azure-portal"></a>Портал Azure
+
+Перейдите в раздел **Управление затратами и выставление счетов**, выберите область выставления счетов, щелкните **Бюджеты**, выберите бюджет, а затем щелкните **Удалить бюджет**.
+
+### <a name="command-line"></a>Командная строка
+
+Бюджет можно удалить с помощью Azure CLI или Azure PowerShell.
+
+# <a name="cli"></a>[CLI](#tab/CLI)
+
+```azurecli-interactive
+echo "Enter the budget name:" &&
+read budgetName &&
+az consumption budget delete --budget-name $budgetName &&
+echo "Press [ENTER] to continue ..."
+```
+
+# <a name="powershell"></a>[PowerShell](#tab/PowerShell)
+
+```azurepowershell-interactive
+$budgetName = Read-Host -Prompt "Enter the budget name"
+Remove-AzConsumptionBudget -Name $budgetName
+Write-Host "Press [ENTER] to continue..."
 ```
 
 ---

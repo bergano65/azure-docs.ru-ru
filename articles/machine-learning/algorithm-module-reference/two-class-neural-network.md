@@ -10,15 +10,15 @@ author: likebupt
 ms.author: keli19
 ms.date: 04/22/2020
 ms.openlocfilehash: 4270e4c71cca28d43b1ecbaca1ec0f262251252b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82137609"
 ---
 # <a name="two-class-neural-network-module"></a>Модуль нейронной сети с двумя классами
 
-В этой статье описывается модуль в Машинное обучение Azure Designer (Предварительная версия).
+В этой статье описывается модуль в конструкторе Машинного обучения Azure (предварительная версия).
 
 Этот модуль применяется для создания модели нейронной сети, которая может использоваться для прогнозирования цели, имеющей только два значения.
 
@@ -99,6 +99,6 @@ ms.locfileid: "82137609"
 + Чтобы использовать модель для оценки, добавьте модуль **оценки модели** в конвейер.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-См. [набор модулей, доступных](module-reference.md) для машинное обучение Azure. 
+Ознакомьтесь с [набором доступных модулей](module-reference.md) в службе Машинного обучения Azure. 

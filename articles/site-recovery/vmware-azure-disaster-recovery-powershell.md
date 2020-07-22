@@ -7,18 +7,18 @@ ms.service: site-recovery
 ms.date: 01/10/2020
 ms.topic: conceptual
 ms.author: sutalasi
-ms.openlocfilehash: d2dfaab3d01ea29b0f9ecba1e9d748415bed2edc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: de25a3f9df04b09a7337dc889a688a171d98db28
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79257203"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86129908"
 ---
 # <a name="set-up-disaster-recovery-of-vmware-vms-to-azure-with-powershell"></a>Настройка аварийного восстановления виртуальных машин VMware в Azure с помощью PowerShell
 
 В этой статье описывается репликация и отработка отказа виртуальных машин VMware в Azure с помощью Azure PowerShell.
 
-Вы научитесь:
+Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > - Создание служб восстановления и указание контекста хранилища.
@@ -31,13 +31,13 @@ ms.locfileid: "79257203"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
-Перед началом:
+Перед началом работы
 
 - Вам должны быть понятны [архитектура и компоненты сценария](vmware-azure-architecture.md).
-- Ознакомьтесь с [требованиями к поддержке](site-recovery-support-matrix-to-azure.md) для всех компонентов.
-- У вас есть модуль `Az` Azure PowerShell. Если вам необходимо установить или обновить Azure PowerShell, ознакомьтесь с этим [руководством по установке и настройке Azure PowerShell](/powershell/azure/install-az-ps).
+- Ознакомьтесь с [требованиями к поддержке](./vmware-physical-azure-support-matrix.md) для всех компонентов.
+- У вас есть `Az` модуль Azure PowerShell. Если вам необходимо установить или обновить Azure PowerShell, ознакомьтесь с этим [руководством по установке и настройке Azure PowerShell](/powershell/azure/install-az-ps).
 
 ## <a name="log-into-azure"></a>Вход на портал Azure
 
@@ -105,7 +105,7 @@ Select-AzSubscription -SubscriptionName "ASR Test Subscription"
 Задайте контекст хранилища с помощью командлета Set-ASRVaultContext. После этого последующие операции Azure Site Recovery в сеансе PowerShell будут выполняться в контексте выбранного хранилища.
 
 > [!TIP]
-> Модуль Azure Site Recovery PowerShell (az. RecoveryServices Module) поставляется с простым использованием псевдонимов для большинства командлетов. Командлеты в модуле принимают форму * \<операции>-**азрековерисервицесаср**\<Object>* и имеют эквивалентные псевдонимы, которые принимают форму * \<>-**ASR**\<Object>*. Можно заменить псевдонимы командлетов для простоты использования.
+> Модуль Azure Site Recovery PowerShell (az. RecoveryServices Module) поставляется с простым использованием псевдонимов для большинства командлетов. Командлеты в модуле принимают форму * \<Operation> - **азрековерисервицесаср** \<Object> * и имеют эквивалентные псевдонимы, которые принимают форму * \<Operation> - **ASR** \<Object> *. Можно заменить псевдонимы командлетов для простоты использования.
 
 В следующем примере данные хранилища из переменной $vault используется для указания контекста хранилища для сеанса PowerShell.
 
@@ -353,9 +353,9 @@ $ReplicationStdStorageAccount= New-AzStorageAccount -ResourceGroupName "VMwareDR
 
 |Виртуальная машина  |Сервер обработки        |Учетная запись хранения              |Учетная запись хранения журналов  |Политика           |Учетная запись для установки службы Mobility Service|Целевая группа ресурсов  | Целевая виртуальная сеть  |Целевая подсеть  |
 |-----------------|----------------------|-----------------------------|---------------------|-----------------|-----------------------------------------|-----------------------|-------------------------|---------------|
-|CentOSVM1       |ConfigurationServer   |Недоступно| logstorageaccount1                 |ReplicationPolicy|LinuxAccount                             |VMwareDRToAzurePs      |ASR-vnet                 |Subnet-1       |
+|CentOSVM1       |ConfigurationServer   |Н/Д| logstorageaccount1                 |ReplicationPolicy|LinuxAccount                             |VMwareDRToAzurePs      |ASR-vnet                 |Subnet-1       |
 |Win2K12VM1       |ScaleOut-ProcessServer|premiumstorageaccount1       |logstorageaccount1   |ReplicationPolicy|WindowsAccount                           |VMwareDRToAzurePs      |ASR-vnet                 |Subnet-1       |   
-|CentOSVM2       |ConfigurationServer   |replicationstdstorageaccount1| Недоступно                 |ReplicationPolicy|LinuxAccount                             |VMwareDRToAzurePs      |ASR-vnet                 |Subnet-1       |   
+|CentOSVM2       |ConfigurationServer   |replicationstdstorageaccount1| Н/Д                 |ReplicationPolicy|LinuxAccount                             |VMwareDRToAzurePs      |ASR-vnet                 |Subnet-1       |   
 
 
 ```azurepowershell
@@ -496,5 +496,5 @@ Errors           : {}
 
 2. После успешной отработки отказа можно зафиксировать эту операцию и настроить обратную репликацию из Azure в локальное расположение VMware.
 
-## <a name="next-steps"></a>Дальнейшие шаги
-Узнайте, как автоматизировать дополнительные задачи с помощью [справочника по Azure Site Recovery PowerShell](https://docs.microsoft.com/powershell/module/Az.RecoveryServices).
+## <a name="next-steps"></a>Дальнейшие действия
+Узнайте, как автоматизировать дополнительные задачи с помощью [справочника по Azure Site Recovery PowerShell](/powershell/module/Az.RecoveryServices).

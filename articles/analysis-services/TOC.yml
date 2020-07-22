@@ -30,9 +30,9 @@
     - name: Автоматизация с помощью субъектов-служб
       href: analysis-services-service-principal.md
     - name: Клиентские библиотеки
-      href: analysis-services-data-providers.md
+      href: 'https://docs.microsoft.com/analysis-services/client-libraries?view=azure-analysis-services-current'
     - name: Уровень совместимости
-      href: 'https://docs.microsoft.com/analysis-services/tabular-models/compatibility-level-for-tabular-models-in-analysis-services'
+      href: 'https://docs.microsoft.com/analysis-services/tabular-models/compatibility-level-for-tabular-models-in-analysis-services?view=azure-analysis-services-current'
     - name: Подключение к локальным источникам данных
       href: analysis-services-gateway.md
     - name: Подключение к серверам
@@ -71,6 +71,8 @@
           href: ../active-directory/develop/howto-authenticate-service-principal-powershell.md
         - name: Добавление субъекта-службы к роли администратора сервера
           href: analysis-services-addservprinc-admins.md
+        - name: Переключение между регионами
+          href: move-between-regions.md
     - name: Модель
       items:
         - name: Табличное моделирование
@@ -120,11 +122,9 @@
     - name: Примеры
       href: analysis-services-samples.md
     - name: Блог команды разработчиков Analysis Services
-      href: 'https://blogs.msdn.microsoft.com/analysisservices/'
-    - name: Страница с вопросами об Azure Analysis Services (раздел вопросов и ответов на сайте Майкрософт)
-      href: 'https://docs.microsoft.com/answers/topics/azure-analysis-services.html'
-    - name: Стратегия развития Azure
-      href: 'https://azure.microsoft.com/roadmap/?category=intelligence-analytics'
+      href: 'https://powerbi.microsoft.com/blog/category/analysis-services/'
+    - name: Обновления Azure
+      href: 'https://azure.microsoft.com/updates/?query=Analysis%20Services'
     - name: Состояние Azure
       href: 'https://azure.microsoft.com/status/'
     - name: Отзывы

@@ -4,16 +4,16 @@ description: В этом руководстве вы узнаете, как со
 ms.topic: tutorial
 ms.date: 07/10/2019
 ms.custom: mvc
-ms.openlocfilehash: cbfae89ffa446ca3915129fd9add2701ac21d837
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: dc869dce536449a901826db3b0d964bf17abbbec
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75465468"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86257114"
 ---
-# <a name="tutorial-create-and-deploy-an-application-with-an-aspnet-core-web-api-front-end-service-and-a-stateful-back-end-service"></a>Руководство по созданию и развертыванию приложения с интерфейсной службой веб-API ASP.NET Core и серверной службой с отслеживанием состояния
+# <a name="tutorial-create-and-deploy-an-application-with-an-aspnet-core-web-api-front-end-service-and-a-stateful-back-end-service"></a>Руководство по Создание и развертывание приложения с интерфейсной службой веб-API ASP.NET Core и серверной службой с отслеживанием состояния
 
-Это руководство представляет первую часть цикла.  Здесь описывается, как создать приложение Azure Service Fabric с интерфейсной службой веб-API ASP.NET Core и серверной службой с отслеживанием состояния для хранения данных. После завершения этого руководства вы получите приложение для голосования с клиентской частью в виде веб-приложения ASP.NET Core, которое сохраняет результаты голосования во внутренней службе с отслеживанием состояния в кластере. Если вы не хотите вручную создавать приложение для голосования, вы можете [скачать исходный код](https://github.com/Azure-Samples/service-fabric-dotnet-quickstart/) для завершенного приложения и сразу перейти к [описанию примера приложения для голосования](#walkthrough_anchor).  При желании вы можете просмотреть [видео-инструкцию](https://channel9.msdn.com/Events/Connect/2017/E100) к этому руководству.
+Это руководство представляет первую часть цикла.  Здесь описывается, как создать приложение Azure Service Fabric с интерфейсной службой веб-API ASP.NET Core и серверной службой с отслеживанием состояния для хранения данных. После завершения этого руководства вы получите приложение для голосования с клиентской частью в виде веб-приложения ASP.NET Core, которое сохраняет результаты голосования во внутренней службе с отслеживанием состояния в кластере. Для работы с этой серией руководств требуется компьютер разработчика Windows. Если вы не хотите вручную создавать приложение для голосования, вы можете [скачать исходный код](https://github.com/Azure-Samples/service-fabric-dotnet-quickstart/) для завершенного приложения и сразу перейти к [описанию примера приложения для голосования](#walkthrough_anchor).  При желании вы можете просмотреть [видео-инструкцию](https://channel9.msdn.com/Events/Connect/2017/E100) к этому руководству.
 
 ![AngularJS + интерфейсная служба API ASP.NET Core, подключенная к серверной службе с отслеживанием состояния в Service Fabric](./media/service-fabric-tutorial-create-dotnet-app/application-diagram.png)
 
@@ -32,7 +32,7 @@ ms.locfileid: "75465468"
 > * [Настройка CI/CD с помощью Azure Pipelines](service-fabric-tutorial-deploy-app-with-cicd-vsts.md)
 > * [Настройка мониторинга и диагностики приложения](service-fabric-tutorial-monitoring-aspnet.md)
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
@@ -41,7 +41,7 @@ ms.locfileid: "75465468"
 
 ## <a name="create-an-aspnet-web-api-service-as-a-reliable-service"></a>Создание службы веб-API ASP.NET как надежной службы
 
-Сначала создайте веб-интерфейс приложения для голосования с помощью ASP.NET Core. ASP.NET Core — это простое кросс-платформенное средство для разработки веб-страниц, позволяющее создавать современные пользовательские веб-интерфейсы и интерфейсы веб-API. Чтобы получить полное представление об интеграции ASP.NET Core с Service Fabric, мы настоятельно рекомендуем ознакомиться со статьей [ASP.NET Core в Service Fabric Reliable Services](service-fabric-reliable-services-communication-aspnetcore.md). А пока можете воспользоваться этим руководством, чтобы быстро приступить к работе. Дополнительные сведения об ASP.NET Core см. в [документации по ASP.NET Core](https://docs.microsoft.com/aspnet/core/).
+Сначала создайте веб-интерфейс приложения для голосования с помощью ASP.NET Core. ASP.NET Core — это простое кросс-платформенное средство для разработки веб-страниц, позволяющее создавать современные пользовательские веб-интерфейсы и интерфейсы веб-API. Чтобы получить полное представление об интеграции ASP.NET Core с Service Fabric, мы настоятельно рекомендуем ознакомиться со статьей [ASP.NET Core в Service Fabric Reliable Services](service-fabric-reliable-services-communication-aspnetcore.md). А пока можете воспользоваться этим руководством, чтобы быстро приступить к работе. Дополнительные сведения об ASP.NET Core см. в [документации по ASP.NET Core](/aspnet/core/).
 
 1. Запустите Visual Studio от имени **администратора**.
 

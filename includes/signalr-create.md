@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 04/17/2018
 ms.author: wesmc
 ms.custom: include file
-ms.openlocfilehash: 39bff26baea622e6c0ed524ca68c3c8bae4e770d
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: ba46d4dbe90b696398ed4c78383e127861c1a066
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "76021255"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86050341"
 ---
 1. Чтобы создать ресурс службы SignalR Azure, сначала войдите на [портал Azure](https://portal.azure.com). Щелкните **+ Создать ресурс** в левом верхнем углу страницы. В текстовом поле **Поиск в Marketplace** введите **Служба SignalR**.
 
@@ -36,4 +36,4 @@ ms.locfileid: "76021255"
 
     Строка подключения должна иметь следующий вид:
     
-        Endpoint=<service_endpoint>;AccessKey=<access_key>;
+    `Endpoint=<service_endpoint>;AccessKey=<access_key>;`

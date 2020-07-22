@@ -2,19 +2,19 @@
 title: Машинное обучение и ИИ с применением ONNX в SQL Azure для пограничных вычислений (предварительная версия)
 description: Машинное обучение в SQL Azure для пограничных вычислений (предварительная версия) поддерживает модели в формате Open Neural Network Exchange (ONNX). ONNX — это открытый формат, который можно использовать для обмена моделями между различными платформами и инструментами машинного обучения.
 keywords: Развертывание SQL для пограничных вычислений
-services: sql-database-edge
-ms.service: sql-database-edge
-ms.subservice: ''
+services: sql-edge
+ms.service: sql-edge
+ms.subservice: machine-learning
 ms.topic: conceptual
 author: dphansen
 ms.author: davidph
 ms.date: 05/19/2020
-ms.openlocfilehash: 12c1294a804c2063d405c5ec08440865283d51d3
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
-ms.translationtype: HT
+ms.openlocfilehash: 2db6c728ac35c6fc2f1fee1a602725371e448104
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83594593"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85368062"
 ---
 # <a name="machine-learning-and-ai-with-onnx-in-sql-edge-preview"></a>Машинное обучение и ИИ с применением ONNX в SQL для пограничных вычислений (предварительная версия)
 

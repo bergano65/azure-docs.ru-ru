@@ -6,14 +6,14 @@ ms.author: govindk
 ms.reviewer: sngun
 ms.service: cosmos-db
 ms.subservice: cosmosdb-cassandra
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 09/24/2018
-ms.openlocfilehash: 4fbb86f4fbda9b8e521f7465bb8bb3d18602ca13
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 5db5cc515e2fbecfaeb58b9e1c02dd0bc6eda375
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "60894192"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86503359"
 ---
 # <a name="aggregate-operations-on-azure-cosmos-db-cassandra-api-tables-from-spark"></a>Статистические операции для таблиц API Cassandra для Azure Cosmos DB из Spark 
 
@@ -76,8 +76,8 @@ booksDF.write
 sc.cassandraTable("books_ks", "books").count
 ```
 
-**Проверки**
-```
+**Выходные данные:**
+```bash
 res48: Long = 5
 ```
 
@@ -142,7 +142,7 @@ select count(*) from books_vw;
 sc.cassandraTable("books_ks", "books").select("book_price").as((c: Double) => c).mean
 ```
 
-**Проверки**
+**Выходные данные:**
 ```
 res24: Double = 16.016000175476073
 ```
@@ -159,7 +159,7 @@ spark
   .show
 ```
 
-**Проверки**
+**Выходные данные:**
 ```
 +------------------+
 |   avg(book_price)|
@@ -173,7 +173,7 @@ spark
 ```sql
 select avg(book_price) from books_vw;
 ```
-**Проверки**
+**Выходные данные:**
 ```
 16.016000175476073
 ```
@@ -186,7 +186,7 @@ select avg(book_price) from books_vw;
 sc.cassandraTable("books_ks", "books").select("book_price").as((c: Float) => c).min
 ```
 
-**Проверки**
+**Выходные данные:**
 ```
 res31: Float = 11.33
 ```
@@ -203,7 +203,7 @@ spark
   .show
 ```
 
-**Проверки**
+**Выходные данные:**
 ```
 +---------------+
 |min(book_price)|
@@ -218,7 +218,7 @@ spark
 select min(book_price) from books_vw;
 ```
 
-**Проверки**
+**Выходные данные:**
 ```
 11.33
 ```
@@ -243,7 +243,7 @@ spark
   .show
 ```
 
-**Проверки**
+**Выходные данные:**
 ```
 +---------------+
 |max(book_price)|
@@ -257,7 +257,7 @@ spark
 ```sql
 select max(book_price) from books_vw;
 ```
-**Проверки**
+**Выходные данные:**
 ```
 22.45
 ```
@@ -270,7 +270,7 @@ select max(book_price) from books_vw;
 sc.cassandraTable("books_ks", "books").select("book_price").as((c: Float) => c).sum
 ```
 
-**Проверки**
+**Выходные данные:**
 ```
 res46: Double = 80.08000087738037
 ```
@@ -286,7 +286,7 @@ spark
   .agg(sum("book_price"))
   .show
 ```
-**Проверки**
+**Выходные данные:**
 ```
 +-----------------+
 |  sum(book_price)|
@@ -301,7 +301,7 @@ spark
 select sum(book_price) from books_vw;
 ```
 
-**Проверки**
+**Выходные данные:**
 ```
 80.08000087738037
 ```
@@ -315,7 +315,7 @@ val readCalcTopRDD = sc.cassandraTable("books_ks", "books").select("book_name","
 readCalcTopRDD.zipWithIndex.filter(_._2 < 3).collect.foreach(println)
 //delivers the first top n items without collecting the rdd to the driver.
 ```
-**Проверки**
+**Выходные данные:**
 ```
 (CassandraRow{book_name: A sign of four, book_price: 22.45},0)
 (CassandraRow{book_name: The adventures of Sherlock Holmes, book_price: 19.83},1)
@@ -341,7 +341,7 @@ readBooksDF.explain
 readBooksDF.show
 ```
 
-**Проверки**
+**Выходные данные:**
 ```
 == Physical Plan ==
 TakeOrderedAndProject(limit=3, orderBy=[book_price#1840 DESC NULLS LAST], output=[book_name#1839,book_price#1840])

@@ -5,12 +5,11 @@ author: jakrams
 ms.author: jakras
 ms.date: 04/22/2020
 ms.topic: troubleshooting
-ms.openlocfilehash: 8c471687579dfe30b913197c6f080a450f5f3449
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 082148ecfd4332abb42f96afcd94032d428069ce
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82107450"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84782523"
 ---
 # <a name="azure-remote-rendering-support-options"></a>Варианты поддержки для удаленной подготовки к просмотру Azure
 
@@ -24,7 +23,7 @@ ms.locfileid: "82107450"
 
     ![портал Azure справки и поддержки](media/portal-help.png)
 
-1. Выберите **новый запрос в службу поддержки**.
+1. Выберите **Новый запрос в службу поддержки**.
 
     ![портал Azure новый запрос в службу поддержки](media/portal-new-request.png)
 
@@ -53,6 +52,11 @@ ms.locfileid: "82107450"
 
 Чтобы предоставить отзыв, поделиться идеями или предложением для удаленной подготовки к просмотру Azure или проголосовать за идеи, отправленные другими пользователями, посетите [Форум обратной связи по удаленному отображению Azure](https://feedback.azure.com/forums/928696-azure-remote-rendering).
 
+
+## <a name="microsoft-qa"></a>Майкрософт: вопросы и ответы
+
+Чтобы получить быстрые и заслуживающие доверия ответы на свои технические вопросы по продуктам от инженеров Майкрософт, специалистов Azure Most Valuable Professional (MVP) или нашего сообщества экспертов, воспользуйтесь [разделом вопросов и ответов на сайте Майкрософт](https://docs.microsoft.com/answers/topics/azure-remote-rendering.html), который является предпочтительной площадкой для получения поддержки от сообщества.
+
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-* [Устранение неполадок](troubleshoot.md)
+* [Устранение проблем](troubleshoot.md)

@@ -7,18 +7,18 @@ documentationcenter: na
 author: asudbring
 ms.service: load-balancer
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.custom: seodec18
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/19/2019
 ms.author: allensu
-ms.openlocfilehash: 5c50186692438be5d0922cd329c28e665310e5c2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 82c203322f1a417fa006c5228d957c178a706b3a
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77023537"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85961019"
 ---
 # <a name="configure-the-distribution-mode-for-azure-load-balancer"></a>Настройка режима распределения для Azure Load Balancer
 
@@ -66,7 +66,7 @@ ms.locfileid: "77023537"
 1. Войдите в портал Azure и выберите группу ресурсов, содержащую подсистему балансировки нагрузки, которую вы хотите изменить, щелкнув **группы ресурсов**.
 2. На экране "Обзор балансировщика нагрузки" щелкните **правила балансировки нагрузки** в разделе **Параметры**.
 3. На экране правила балансировки нагрузки щелкните правило балансировки нагрузки, которое необходимо изменить в режиме распространения.
-4. В правиле режим распределения изменяется путем изменения раскрывающегося списка **сохраняемость сеанса** .  Доступны следующие варианты:
+4. В правиле режим распределения изменяется путем изменения раскрывающегося списка **сохраняемость сеанса** .  Доступны следующие параметры.
     
     * **Нет (на основе хэша)** . указывает, что последовательные запросы от одного клиента могут обрабатываться любой виртуальной машиной.
     * **IP-адрес клиента (сопоставление ИСХОДНОГО IP-адреса 2 — кортеж)** . указывает, что последовательные запросы с одного и того же IP-адресов клиента будут обрабатываться одной и той же виртуальной машиной.
@@ -94,25 +94,27 @@ Get-AzureVM -ServiceName mySvc -Name MyVM1 | Add-AzureEndpoint -Name HttpIn -Pro
 
 Получите конфигурацию режима распределения балансировщика нагрузки для конечной точки с помощью этих параметров:
 
-    PS C:\> Get-AzureVM –ServiceName MyService –Name MyVM | Get-AzureEndpoint
+```azurepowershell
+PS C:\> Get-AzureVM –ServiceName MyService –Name MyVM | Get-AzureEndpoint
 
-    VERBOSE: 6:43:50 PM - Completed Operation: Get Deployment
-    LBSetName : MyLoadBalancedSet
-    LocalPort : 80
-    Name : HTTP
-    Port : 80
-    Protocol : tcp
-    Vip : 65.52.xxx.xxx
-    ProbePath :
-    ProbePort : 80
-    ProbeProtocol : tcp
-    ProbeIntervalInSeconds : 15
-    ProbeTimeoutInSeconds : 31
-    EnableDirectServerReturn : False
-    Acl : {}
-    InternalLoadBalancerName :
-    IdleTimeoutInMinutes : 15
-    LoadBalancerDistribution : sourceIP
+VERBOSE: 6:43:50 PM - Completed Operation: Get Deployment
+LBSetName : MyLoadBalancedSet
+LocalPort : 80
+Name : HTTP
+Port : 80
+Protocol : tcp
+Vip : 65.52.xxx.xxx
+ProbePath :
+ProbePort : 80
+ProbeProtocol : tcp
+ProbeIntervalInSeconds : 15
+ProbeTimeoutInSeconds : 31
+EnableDirectServerReturn : False
+Acl : {}
+InternalLoadBalancerName :
+IdleTimeoutInMinutes : 15
+LoadBalancerDistribution : sourceIP
+```
 
 Если `LoadBalancerDistribution` элемент отсутствует, Azure Load Balancer использует алгоритм с пятью кортежами по умолчанию.
 
@@ -158,40 +160,46 @@ Set-AzureLoadBalancedEndpoint -ServiceName MyService -LBSetName LBSet1 -Protocol
 
 #### <a name="request"></a>Запрос
 
-    POST https://management.core.windows.net/<subscription-id>/services/hostedservices/<cloudservice-name>/deployments/<deployment-name>?comp=UpdateLbSet   x-ms-version: 2014-09-01
-    Content-Type: application/xml
+```http
+POST https://management.core.windows.net/<subscription-id>/services/hostedservices/<cloudservice-name>/deployments/<deployment-name>?comp=UpdateLbSet   x-ms-version: 2014-09-01
+Content-Type: application/xml
+```
 
-    <LoadBalancedEndpointList xmlns="http://schemas.microsoft.com/windowsazure" xmlns:i="https://www.w3.org/2001/XMLSchema-instance">
-      <InputEndpoint>
+```xml
+<LoadBalancedEndpointList xmlns="http://schemas.microsoft.com/windowsazure" xmlns:i="https://www.w3.org/2001/XMLSchema-instance">
+    <InputEndpoint>
         <LoadBalancedEndpointSetName> endpoint-set-name </LoadBalancedEndpointSetName>
         <LocalPort> local-port-number </LocalPort>
         <Port> external-port-number </Port>
         <LoadBalancerProbe>
-          <Port> port-assigned-to-probe </Port>
-          <Protocol> probe-protocol </Protocol>
-          <IntervalInSeconds> interval-of-probe </IntervalInSeconds>
-          <TimeoutInSeconds> timeout-for-probe </TimeoutInSeconds>
+            <Port> port-assigned-to-probe </Port>
+            <Protocol> probe-protocol </Protocol>
+            <IntervalInSeconds> interval-of-probe </IntervalInSeconds>
+            <TimeoutInSeconds> timeout-for-probe </TimeoutInSeconds>
         </LoadBalancerProbe>
         <Protocol> endpoint-protocol </Protocol>
         <EnableDirectServerReturn> enable-direct-server-return </EnableDirectServerReturn>
         <IdleTimeoutInMinutes>idle-time-out</IdleTimeoutInMinutes>
         <LoadBalancerDistribution>sourceIP</LoadBalancerDistribution>
-      </InputEndpoint>
-    </LoadBalancedEndpointList>
+    </InputEndpoint>
+</LoadBalancedEndpointList>
+```
 
-Как было описано выше, установите `LoadBalancerDistribution` для элемента значение sourceIP для сходства двух кортежей, sourceIPProtocol для сходства с тремя кортежями или None для отсутствия сходства (сходство с пятью кортежами).
+Как было описано выше, установите для `LoadBalancerDistribution` элемента значение sourceIP для сходства двух кортежей, sourceIPProtocol для сходства с тремя кортежями или None для отсутствия сходства (сходство с пятью кортежами).
 
 #### <a name="response"></a>Ответ
 
-    HTTP/1.1 202 Accepted
-    Cache-Control: no-cache
-    Content-Length: 0
-    Server: 1.0.6198.146 (rd_rdfe_stable.141015-1306) Microsoft-HTTPAPI/2.0
-    x-ms-servedbyregion: ussouth2
-    x-ms-request-id: 9c7bda3e67c621a6b57096323069f7af
-    Date: Thu, 16 Oct 2014 22:49:21 GMT
+```http
+HTTP/1.1 202 Accepted
+Cache-Control: no-cache
+Content-Length: 0
+Server: 1.0.6198.146 (rd_rdfe_stable.141015-1306) Microsoft-HTTPAPI/2.0
+x-ms-servedbyregion: ussouth2
+x-ms-request-id: 9c7bda3e67c621a6b57096323069f7af
+Date: Thu, 16 Oct 2014 22:49:21 GMT
+```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обзор внутренней подсистемы балансировки нагрузки](load-balancer-internal-overview.md)
 * [Создание балансировщика нагрузки для Интернета в Resource Manager с помощью PowerShell](quickstart-create-standard-load-balancer-powershell.md)

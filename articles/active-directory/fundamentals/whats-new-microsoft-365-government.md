@@ -14,10 +14,9 @@ ms.date: 05/07/2019
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 48a7e5e810e509a97b6010218532f6e7dff0b73f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77425550"
 ---
 # <a name="whats-new-for-azure-active-directory-in-microsoft-365-government"></a>Новые возможности Azure Active Directory в Microsoft 365 государственных организаций
@@ -34,9 +33,9 @@ ms.locfileid: "77425550"
 
 ## <a name="changes-to-the-initial-domain-name"></a>Изменение исходного доменного имени
 
-Во время начальной регистрации вашей организации для службы Microsoft 365 государственных организаций вам было предложено выбрать доменное имя организации `<your-domain-name>.onmicrosoft.com`. Если у вас уже есть имя домена с суффиксом. com, ничего не изменится.
+Во время начальной регистрации вашей организации для службы Microsoft 365 государственных организаций вам было предложено выбрать доменное имя организации `<your-domain-name>.onmicrosoft.com` . Если у вас уже есть имя домена с суффиксом. com, ничего не изменится.
 
-Однако если вы регистрируетесь для использования новой службы Microsoft 365 правительственных учреждений, вам будет предложено выбрать доменное имя с помощью `.us` суффикса. Итак, это будет `<your-domain-name>.onmicrosoft.us`.
+Однако если вы регистрируетесь для использования новой службы Microsoft 365 правительственных учреждений, вам будет предложено выбрать доменное имя с помощью `.us` суффикса. Итак, это будет `<your-domain-name>.onmicrosoft.us` .
 
 >[!Note]
 >Это изменение не относится к клиентам, которые управляются поставщиками облачных служб (CSP).
@@ -51,7 +50,7 @@ ms.locfileid: "77425550"
 
 В следующей таблице показаны конечные точки для всех клиентов.
 
-| Имя | Сведения о конечной точке |
+| name | Сведения о конечной точке |
 |------|------------------|
 | Порталы |Microsoft Azure для государственных организаций:https://portal.azure.us<p>Microsoft 365 правительственные учреждения — GCC High:https://portal.office365.us<p>Microsoft 365 правительственные учреждения — DoD:https://portal.apps.mil |
 | Конечная точка центра Azure Active Directory | https://login.microsoftonline.us |

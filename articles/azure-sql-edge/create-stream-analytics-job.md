@@ -1,56 +1,56 @@
 ---
-title: Создание задания потоковой передачи T-SQL в SQL Azure для пограничных вычислений (предварительная версия)
-description: Сведения о создании заданий Stream Analytics в SQL Azure для пограничных вычислений (предварительная версия)
+title: Создание задания потоковой передачи T-SQL в Azure SQL (Предварительная версия)
+description: Узнайте, как создавать задания Stream Analytics в Azure SQL (Предварительная версия).
 keywords: ''
-services: sql-database-edge
-ms.service: sql-database-edge
+services: sql-edge
+ms.service: sql-edge
 ms.topic: conceptual
 author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 05/19/2020
-ms.openlocfilehash: 5e0043ebba1a317dcc6798d6be74aac051d97012
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
-ms.translationtype: HT
+ms.openlocfilehash: 2e1f98cffd17d0a8823cc5849830667fcdad1212
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83595393"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86515229"
 ---
-# <a name="create-stream-analytics-job-in-azure-sql-edge-preview"></a>Создание задания Stream Analytics в SQL Azure для пограничных вычислений (предварительная версия) 
+# <a name="create-an-azure-stream-analytics-job-in-azure-sql-edge-preview"></a>Создание задания Azure Stream Analytics в Azure SQL (Предварительная версия) 
 
-Эта статья содержит сведения о создании задания потоковой передачи T-SQL в SQL Azure для пограничных вычислений (предварительная версия) Чтобы создать задание потоковой передачи в SQL Server, необходимо выполнить следующие действия.
+В этой статье объясняется, как создать задание потоковой передачи T-SQL в Azure SQL (Предварительная версия). Вы создаете входные и выходные объекты внешнего потока, а затем определяете запрос задания потоковой передачи в ходе создания задания потоковой передачи.
 
-1. Создайте входные и выходные объекты внешнего потока.
-2. Определите запрос задания потоковой передачи в ходе создания задания потоковой передачи.
+> [!NOTE]
+> Чтобы включить функцию потоковой передачи T-SQL в Azure SQL, включите в качестве параметра запуска TF 11515 или выполните команду [DBCC TRACEON]( https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-traceon-transact-sql) . Дополнительные сведения о том, как включить флаги трассировки с помощью файла MSSQL. conf, см. в разделе [Настройка с помощью файла MSSQL. conf](configure.md#configure-by-using-an-mssqlconf-file).
 
-## <a name="configure-an-external-stream-input-and-output-object"></a>Настройка входного и выходного объекта внешнего потока
+## <a name="configure-the-external-stream-input-and-output-objects"></a>Настройка входных и выходных объектов внешнего потока
 
-Потоковая передача T-SQL использует функциональные возможности внешнего источника данных SQL Server для определения источников данных, связанных с входными и выходными данными внешнего потока задания потоковой передачи. Далее перечислены команды T-SQL, необходимые для создания входного или выходного объекта внешнего потока.
+Потоковая передача T-SQL использует функциональность внешнего источника данных SQL Server для определения источников данных, связанных с входными и выходными данными внешнего потока для задания потоковой передачи. Используйте следующие команды T-SQL для создания внешнего потока входного или выходного объекта.
 
-[CREATE EXTERNAL FILE FORMAT (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-external-file-format-transact-sql)
+- [CREATE EXTERNAL FILE FORMAT (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-external-file-format-transact-sql)
 
-[CREATE EXTERNAL DATA SOURCE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-external-data-source-transact-sql)
+- [CREATE EXTERNAL DATA SOURCE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-external-data-source-transact-sql)
 
-[CREATE EXTERNAL STREAM (Transact-SQL)](#example-create-an-external-stream-object-sql-database)
+- [CREATE EXTERNAL STREAM (Transact-SQL)](#example-create-an-external-stream-object-to-azure-sql-database)
 
-Кроме того, если в качестве потока вывода используется SQL Edge (или SQL Server, Azure SQL), то для определения учетных данных для доступа к базе данных SQL требуется выполнить команду T-SQL [CREATE DATABASE SCOPED CREDENTIAL (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-database-scoped-credential-transact-sql).
+Кроме того, если Azure SQL ребро, SQL Server или база данных SQL Azure используется в качестве выходного потока, необходимо [создать учетные данные для базы данных с областью действия (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-database-scoped-credential-transact-sql). Эта команда T-SQL определяет учетные данные для доступа к базе данных.
 
-### <a name="supported-input-and-output-stream-data-sources"></a>Поддерживаемые источники данных входного потока и потока вывода
+### <a name="supported-input-and-output-stream-data-sources"></a>Поддерживаемые источники данных входного и выходного потока
 
 В настоящее время SQL Azure для пограничных вычислений поддерживает только следующие источники данных в качестве входных потоков и потоков вывода.
 
 | Тип источника данных | Входные данные | Выходные данные | Описание |
 |------------------|-------|--------|------------------|
-| Концентратор Azure IoT Edge | Да | Да | Источник данных для чтения и записи потоковых данных в концентратор Azure IoT Edge. Дополнительные сведения см. в разделе [Концентратор IoT Edge](https://docs.microsoft.com/azure/iot-edge/iot-edge-runtime#iot-edge-hub).|
-| База данных SQL | Нет | Да | Соединение с источником данных для записи потоковых данных в Базу данных SQL. База данных SQL может быть локальной Базой данных SQL, удаленной базой данных SQL Server или Базой данных SQL Azure.|
-| хранилище BLOB-объектов Azure | Нет | Да | Источник данных для записи данных в большой двоичный объект в учетной записи хранения Azure. |
-| Kafka | Да | Нет | Источник данных для чтения потоковых данных из раздела Kafka. Этот адаптер сейчас доступен только для версии Intel или AMD SQL Azure для пограничных вычислений и недоступен для SQL Azure для пограничных вычислений версии ARM64.|
+| Центр Azure IoT Edge | Y | Y | Источник данных для чтения и записи потоковых данных в центр Azure IoT Edge. Дополнительные сведения см. в разделе [центр IOT Edge](https://docs.microsoft.com/azure/iot-edge/iot-edge-runtime#iot-edge-hub).|
+| База данных SQL | N | Д | Соединение с источником данных для записи потоковых данных в Базу данных SQL. База данных может быть локальной базой данных в Azure SQL или удаленной базой данных в SQL Server или базе данных SQL Azure.|
+| Хранилище BLOB-объектов Azure | N | Да | Источник данных для записи данных в большой двоичный объект в учетной записи хранения Azure. |
+| Kafka | Да | N | Источник данных для чтения потоковых данных из раздела Kafka. Этот адаптер сейчас доступен только для версий Intel или AMD Azure SQL. Она недоступна для ARM64 версии Azure SQL.|
 
-### <a name="example-create-an-external-stream-inputoutput-object-for-azure-iot-edge-hub"></a>Пример Создание внешнего потока входных и выходных объектов для концентратора Azure IoT Edge
+### <a name="example-create-an-external-stream-inputoutput-object-for-azure-iot-edge-hub"></a>Пример. Создание внешнего потока входного или выходного объекта для центра Azure IoT Edge
 
-В приведенном ниже примере создается объект внешнего потока для концентратора Edge. Чтобы создать источник входных и выходных данных внешнего потока для концентратора Azure IoT Edge, сначала необходимо создать формат внешнего файла для SQL, чтобы понять, какие данные будут доступны для чтения и записи.
+В следующем примере создается объект внешнего потока для Azure IoT Edge концентратора. Чтобы создать источник входных или выходных данных внешнего потока для центра Azure IoT Edge, сначала необходимо создать формат внешнего файла для макета данных, которые считываются или записываются.
 
-1. Создайте формат внешнего файла в формате JSON.
+1. Создайте формат внешнего файла для типа JSON.
 
     ```sql
     Create External file format InputFileFormat
@@ -60,7 +60,7 @@ ms.locfileid: "83595393"
     go
     ```
 
-2. Создайте внешний источник данных для концентратора IoT Edge. Приведенный ниже скрипт T-SQL создает соединение источника данных с концентратором Edge, работающем на том же узле docker, что и SQL для пограничных вычислений.
+2. Создайте внешний источник данных для центра Azure IoT Edge. Следующий скрипт T-SQL создает подключение к источнику данных к концентратору IoT Edge, который работает на том же узле DOCKER, что и Azure SQL.
 
     ```sql
     CREATE EXTERNAL DATA SOURCE EdgeHubInput WITH (
@@ -69,7 +69,7 @@ ms.locfileid: "83595393"
     go
     ```
 
-3. Создайте объект внешнего потока для концентратора IoT Edge. Приведенный ниже скрипт T-SQL создает объект потока для концентратора Edge. В случае с объектом потока концентратора Edge параметр LOCATION представляет собой имя раздела или канала Edge, в котором выполняется операция считывания или записи.
+3. Создайте объект внешнего потока для концентратора Azure IoT Edge. Следующий скрипт T-SQL создает объект потока для концентратора IoT Edge. В случае с объектом потока концентратора IoT Edge параметр LOCATION — это имя раздела центра IoT Edge или канала, который считывается или записывается в.
 
     ```sql
     CREATE EXTERNAL STREAM MyTempSensors WITH (
@@ -82,9 +82,9 @@ ms.locfileid: "83595393"
     go
     ```
 
-### <a name="example-create-an-external-stream-object-sql-database"></a>Пример Создание объекта внешнего потока Базы данных SQL
+### <a name="example-create-an-external-stream-object-to-azure-sql-database"></a>Пример. Создание объекта внешнего потока для базы данных SQL Azure
 
-В приведенном ниже примере создается объект внешнего потока для локальной базы данных SQL Server. 
+В следующем примере создается объект внешнего потока для локальной базы данных в Azure SQL. 
 
 1. Создайте главный ключ в базе данных. Это необходимо для шифрования секрета учетных данных.
 
@@ -92,7 +92,7 @@ ms.locfileid: "83595393"
     CREATE MASTER KEY ENCRYPTION BY PASSWORD = '<<Strong_Password_For_Master_Key_Encryption>>';
     ```
 
-2. Создайте учетные данные в области базы данных для доступа к источнику SQL Server. В следующем примере создаются учетные данные для внешнего источника данных с IDENTITY = username и SECRET = password.
+2. Создайте учетные данные уровня базы данных для доступа к источнику SQL Server. В следующем примере создаются учетные данные для внешнего источника данных с ИДЕНТИФИКАТОРом = username, а SECRET — Password.
 
     ```sql
     CREATE DATABASE SCOPED CREDENTIAL SQLCredential
@@ -102,9 +102,9 @@ ms.locfileid: "83595393"
 
 3. Создайте внешний источник данных с помощью инструкции CREATE EXTERNAL DATA SOURCE. Следующий пример:
 
-    * Создает внешний источник данных LocalSQLOutput.
-    * Определяет внешний источник данных (LOCATION = <vendor>://<server>[:<port>]). В примере он указывает на локальный экземпляр SQL Server.
-    * Наконец, в примере используются учетные данные, созданные ранее.
+    * Создает внешний источник данных с именем *локалсклаутпут*.
+    * Определяет внешний источник данных (LOCATION = <vendor>://<server>[:<port>]). В этом примере он указывает на локальный экземпляр Azure SQL ребр.
+    * Использует учетные данные, созданные ранее.
 
     ```sql
     CREATE EXTERNAL DATA SOURCE LocalSQLOutput WITH (
@@ -114,7 +114,7 @@ ms.locfileid: "83595393"
     go
     ```
 
-4. Создайте объект внешнего потока. В приведенном ниже примере создается объект внешнего потока, указывающий на таблицу *dbo.TemperatureMeasurements* в базе данных *MySQLDatabase*.
+4. Создайте объект внешнего потока. В следующем примере создается объект внешнего потока, указывающий на таблицу *dbo. Температуремеасурементс*в *мисклдатабасе*базы данных.
 
     ```sql
     CREATE EXTERNAL STREAM TemperatureMeasurements WITH (
@@ -127,19 +127,19 @@ ms.locfileid: "83595393"
 
 ## <a name="create-the-streaming-job-and-the-streaming-queries"></a>Создание задания потоковой передачи и потоковых запросов
 
-Чтобы определить потоковые запросы и создать задание потоковой передачи, используйте системную хранимую процедуру **sys.sp_create_streaming_job**. Хранимая процедура **sp_create_streaming_job** принимает два параметра.
+Используйте `sys.sp_create_streaming_job` системную хранимую процедуру для определения потоковых запросов и создания задания потоковой передачи. `sp_create_streaming_job`Хранимая процедура принимает следующие параметры:
 
-- job_name — имя задания потоковой передачи. Имена заданий потоковой передачи уникальны в пределах экземпляра.
-- Оператор — оператор потокового запроса на [основе языка запросов Stream Analytics](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference?).
+- `job_name`: Имя задания потоковой передачи. Имена заданий потоковой передачи уникальны в пределах экземпляра.
+- `statement`: Stream Analytics инструкции запросов потоковой передачи на основе [языка запросов](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference?).
 
-В приведенном ниже примере создается простое задание потоковой передачи с одним запросом потоковой передачи. Этот запрос считывает входные данные из концентратора Edge и выполняет запись в *dbo.TemperatureMeasurements* базы данных.
+В следующем примере создается простое задание потоковой передачи с одним запросом потоковой передачи. Этот запрос считывает входные данные из центра IoT Edge и выполняет запись `dbo.TemperatureMeasurements` в базу данных.
 
 ```sql
 EXEC sys.sp_create_streaming_job @name=N'StreamingJob1',
 @statement= N'Select * INTO TemperatureMeasurements from MyEdgeHubInput'
 ```
 
-В приведенном ниже примере создается более сложное потоковое задание с несколькими различными запросами, включая запрос, который использует встроенную функцию AnomalyDetection_ChangePoint для выявления аномалий в данных о температуре.
+В следующем примере создается более сложная потоковая работа с несколькими разными запросами. Эти запросы включают в себя одну, которая использует встроенную `AnomalyDetection_ChangePoint` функцию для обнаружения аномалий в данных температуры.
 
 ```sql
 EXEC sys.sp_create_streaming_job @name=N'StreamingJob2', @statement=
@@ -153,7 +153,7 @@ SELECT
 Timestamp as [Time],
 [Temperature] As [Temperature],
 GetRecordPropertyValue(AnomalyDetection_ChangePoint(Temperature, 80, 1200) OVER(LIMIT DURATION(minute, 20)), ''Score'') as ChangePointScore,
-GetRecordPropertyValue(AnomalyDetection_ChangePoint(Temperature, 80, 1200) OVER(LIMIT DURATION(minute, 20)), ''IsAnomaly'') as IsChangePointAnomaly,
+GetRecordPropertyValue(AnomalyDetection_ChangePoint(Temperature, 80, 1200) OVER(LIMIT DURATION(minute, 20)), ''IsAnomaly'') as IsChangePointAnomaly
 INTO TemperatureAnomalies FROM MyEdgeHubInput2;
 '
 go
@@ -161,28 +161,28 @@ go
 
 ## <a name="start-stop-drop-and-monitor-streaming-jobs"></a>Запуск, завершение, удаление и отслеживание заданий потоковой передачи
 
-Чтобы запустить задание потоковой передачи в SQL Server, выполните хранимую процедуру **sys.sp_start_streaming_job**. Хранимая процедура требует запуска того же самого потокового задания, что и входные данные.
+Чтобы запустить задание потоковой передачи в Azure SQL ребро, выполните `sys.sp_start_streaming_job` хранимую процедуру. Хранимая процедура требует, чтобы имя запуска задания потоковой передачи было запущено в качестве входных данных.
 
 ```sql
 exec sys.sp_start_streaming_job @name=N'StreamingJob1'
 go
 ```
 
-Чтобы завершить задание потоковой передачи в SQL Server, выполните хранимую процедуру **sys.sp_stop_streaming_job**. Хранимая процедура требует остановки того же самого потокового задания, что и входные данные.
+Чтобы прерывать задание потоковой передачи, выполните `sys.sp_stop_streaming_job` хранимую процедуру. Хранимая процедура требует, чтобы имя задания потоковой передачи было приостановлено в качестве входных данных.
 
 ```sql
 exec sys.sp_stop_streaming_job @name=N'StreamingJob1'
 go
 ```
 
-Чтобы прервать (удалить) задание потоковой передачи в SQL Server, выполните хранимую процедуру **sys.sp_drop_streaming_job**. Хранимая процедура требует прерывания того же самого потокового задания, что и входные данные.
+Чтобы удалить (или удалить) задание потоковой передачи, выполните `sys.sp_drop_streaming_job` хранимую процедуру. Хранимая процедура требует, чтобы имя задания потоковой передачи было удалено в качестве входных данных.
 
 ```sql
 exec sys.sp_drop_streaming_job @name=N'StreamingJob1'
 go
 ```
 
-Чтобы получить состояние текущего задания потоковой передачи в SQL Server, выполните хранимую процедуру **sys.sp_get_streaming_job**. Для хранимой процедуры требуется удалить то же потоковое задание, что и для ввода и вывода имени и текущего состояния потокового задания.
+Чтобы получить текущее состояние задания потоковой передачи, выполните `sys.sp_get_streaming_job` хранимую процедуру. Хранимая процедура требует, чтобы имя задания потоковой передачи было удалено в качестве входных данных. Он выводит имя и текущее состояние задания потоковой передачи.
 
 ```sql
 exec sys.sp_get_streaming_job @name=N'StreamingJob1'
@@ -195,7 +195,7 @@ exec sys.sp_get_streaming_job @name=N'StreamingJob1'
 )
 ```
 
-Задание потоковой передачи может иметь одно из следующих состояний.
+Задание потоковой передачи может иметь одно из следующих состояний:
 
 | Состояние | Описание |
 |--------| ------------|
@@ -203,11 +203,11 @@ exec sys.sp_get_streaming_job @name=N'StreamingJob1'
 | Запуск | Задание потоковой передачи запускается. |
 | Бездействие | Задание потоковой передачи выполняется, но входные данные для обработки отсутствуют. |
 | Обработка | Задание потоковой передачи выполняется, и входные данные обрабатываются. Это свидетельствует о работоспособности задания потоковой передачи. |
-| Деградация | Задание потоковой передачи выполняется, но при обработке входных данных произошли устранимые ошибки сериализации или десериализации ввода-вывода. Входное задание продолжит выполняться, но входные данные, вызывающие ошибки, будут удаляться. |
+| Деградация | Задание потоковой передачи выполняется, но при обработке входных данных возникли неустранимые ошибки. Входное задание продолжит выполняться, но входные данные, вызывающие ошибки, будут удаляться. |
 | Остановлена | Выполнение задания потоковой передачи остановлено. |
-| Ошибка | Сбой задания потоковой передачи. Обычно это указывает на неустранимую ошибку при обработке. |
+| Failed | Сбой задания потоковой передачи. Обычно это указывает на неустранимую ошибку при обработке. |
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Представления каталога потоковой передачи (Transact-SQL)](streaming-catalog-views.md) 
-- [Создание внешнего потока (Transact-SQL)](create-external-stream-transact-sql.md)
+- [Создание внешнего потока](create-external-stream-transact-sql.md)

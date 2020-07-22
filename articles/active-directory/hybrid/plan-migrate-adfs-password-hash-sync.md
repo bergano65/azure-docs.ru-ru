@@ -7,17 +7,17 @@ manager: daveba
 ms.reviewer: martincoetzer
 ms.service: active-directory
 ms.workload: identity
-ms.topic: article
-ms.date: 05/31/2019
+ms.topic: conceptual
+ms.date: 05/29/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b621c9cbc35d0e9956f6648d870102affd84c24f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 6fe9fe10b66aa6eb5fcdaafbf8e0132918e9645c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76028396"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85356685"
 ---
 # <a name="migrate-from-federation-to-password-hash-synchronization-for-azure-active-directory"></a>Переход с федеративной аутентификации на синхронизацию хэша паролей для Azure Active Directory
 
@@ -25,10 +25,14 @@ ms.locfileid: "76028396"
 
 > [!NOTE]
 > Для изменения метода проверки подлинности требуется планирование, тестирование и потенциальное время простоя. [Промежуточное развертывание](how-to-connect-staged-rollout.md) предоставляет альтернативный способ тестирования и постепенного перехода с Федерации на облачную проверку подлинности с помощью синхронизации хэшей паролей.
+>
+> Если вы планируете использовать поэтапное развертывание, не забудьте отключить поэтапный выпуск после того, как вы закончите вырезание.  Дополнительные сведения см. [в статье переход к облачной проверке подлинности с помощью промежуточного развертывания](how-to-connect-staged-rollout.md) .
+
 
 ## <a name="prerequisites-for-migrating-to-password-hash-synchronization"></a>Предварительные требования для перехода на синхронизацию хэша паролей
 
 Ниже описаны предварительные требования, необходимые для перехода с использования AD FS на синхронизацию хэша паролей.
+
 
 ### <a name="update-azure-ad-connect"></a>Обновление Azure AD Connect
 
@@ -136,7 +140,7 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
 
 Перед преобразованием федеративных удостоверений в управляемые внимательно изучите сведения о текущем использовании служб AD FS для Azure AD, Office 365 и других приложений (отношения доверия проверяющих сторон). В частности, рассмотрите описанные в приведенной ниже таблице сценарии.
 
-| Если | То |
+| If | Следующее действие |
 |-|-|
 | Вы планируете продолжить использование AD FS с другими приложениями (не считая Azure AD и Office 365). | После преобразования доменов вы будете использовать одновременно AD FS и Azure AD. Необходимо учитывать взаимодействие с пользователем. В некоторых случаях пользователям потребуется дважды пройти проверку подлинности: один раз — для входа в Azure AD (после чего они смогут использовать единый вход в другие приложения, такие как Office 365), а второй раз — для входа в приложение, которое сохраняет отношения доверия проверяющей стороны с AD FS. |
 | Экземпляр AD FS поддерживает большое количество настроек и использует параметры из файла onload.js (возможно, вы изменяли в нем параметры входа в систему, чтобы пользователи могли ввести имя пользователя только в формате **SamAccountName** вместо формата имени участника-пользователя; или ваша организация использует на странице входа фирменную символику и оформление). Файл onload.js невозможно дублировать в Azure AD. | Прежде чем продолжать работу, проверьте, можно ли в Azure AD обеспечить соответствие вашим текущим требованиям к настройке. Дополнительные сведения и рекомендации см. в разделах о фирменной символике AD FS и настройке параметров AD FS.|
@@ -168,7 +172,7 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
 
 Дополнительные сведения см. в статье [Практическое руководство. Планирование реализации гибридного присоединения к Azure Active Directory](https://docs.microsoft.com/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup).
 
-#### <a name="branding"></a>Фирменная символика
+#### <a name="branding"></a>Branding
 
 Если в вашей организации [настроены страницы входа AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/ad-fs-user-sign-in-customization) для отображения соответствующих сведений, рекомендуем аналогичным образом [настроить страницы входа Azure AD](https://docs.microsoft.com/azure/active-directory/customize-branding).
 
@@ -264,7 +268,7 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
 
 Чтобы устройства использовали эффективный единый вход, необходимо добавить URL-адрес Azure AD в параметры зоны интрасети пользователей с помощью групповой политики Active Directory.
 
-По умолчанию веб-браузеры автоматически вычисляют соответствующую зону (Интернет или интрасеть) по URL-адресу. Например, **HTTP\/\/: contoso/** сопоставляется с зоной интрасети и **http:\/\/Intranet.contoso.com** сопоставляется с зоной Интернета (так как URL-адрес содержит точку). Браузеры отправляют билеты Kerberos в облачную конечную точку (например, на URL-адрес Azure AD), только если ее URL-адрес добавлен явным образом в зону интрасети в браузере.
+По умолчанию веб-браузеры автоматически вычисляют соответствующую зону (Интернет или интрасеть) по URL-адресу. Например, **http: \/ \/ contoso/** сопоставляется с зоной интрасети и **http: \/ \/ Intranet.contoso.com** сопоставляется с зоной Интернета (так как URL-адрес содержит точку). Браузеры отправляют билеты Kerberos в облачную конечную точку (например, на URL-адрес Azure AD), только если ее URL-адрес добавлен явным образом в зону интрасети в браузере.
 
 Выполните соответствующие действия, чтобы [развернуть](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-sso-quick-start) необходимые изменения на устройствах.
 
@@ -314,7 +318,7 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
    > [!IMPORTANT]
    > На этом этапе все федеративные домены будут переведены на управляемую аутентификацию. В качестве метода аутентификации будет использоваться синхронизация хэша паролей.
 
-7. На портале Azure AD выберите **Azure Active Directory** > **Azure AD Connect**.
+7. На портале Azure AD выберите **Azure Active Directory**  >  **Azure AD Connect**.
 8. Проверьте настройку следующих параметров:
    * Для параметра **Федерация** должно быть установлено значение **Отключено**.
    * Для параметра **Эффективный единый вход** должно быть установлено значение **Включено**.
@@ -336,9 +340,9 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
 3. На странице **Подключение к Azure AD** введите имя пользователя и пароль глобального администратора.
 4. На странице **входа пользователей** нажмите кнопку **Синхронизация хэша паролей**. Выберите **Включить единый вход** и щелкните **Далее**.
 
-   Перед включением синхронизации хэшей паролей: ![снимок экрана, на котором отображается параметр не настраивать на странице входа пользователя.](media/plan-migrate-adfs-password-hash-sync/migrating-adfs-to-phs_image12.png)<br />
+   Перед включением синхронизации хэшей паролей: ![ снимок экрана, на котором отображается параметр не настраивать на странице входа пользователя.](media/plan-migrate-adfs-password-hash-sync/migrating-adfs-to-phs_image12.png)<br />
 
-   После включения синхронизации хэшей паролей: ![снимок экрана, на котором показаны новые параметры на странице входа пользователя](media/plan-migrate-adfs-password-hash-sync/migrating-adfs-to-phs_image13.png)<br />
+   После включения синхронизации хэшей паролей: ![ снимок экрана, на котором показаны новые параметры на странице входа пользователя](media/plan-migrate-adfs-password-hash-sync/migrating-adfs-to-phs_image13.png)<br />
    
    > [!NOTE]
    > Начиная с Azure AD Connect версии 1.1.880.0 флажок **Эффективный единый вход** установлен по умолчанию.
@@ -383,7 +387,7 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
    Set-MsolDomainAuthentication -Authentication Managed -DomainName <domain name>
    ```
 
-3. На портале Azure AD выберите **Azure Active Directory** > **Azure AD Connect**.
+3. На портале Azure AD выберите **Azure Active Directory**  >  **Azure AD Connect**.
 4. Убедитесь, что домен преобразован в управляемый, выполнив следующую команду:
 
    ``` PowerShell
@@ -401,7 +405,7 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
 Чтобы протестировать синхронизацию хэша паролей:
 
 1. Откройте Internet Explorer в режиме InPrivate, чтобы служба эффективного единого входа не выполнила вход автоматически.
-2. Перейдите на страницу входа в Office 365 ([https://portal.office.com](https://portal.office.com/)).
+2. Перейдите на страницу входа в Office 365 ( [https://portal.office.com](https://portal.office.com/) ).
 3. Введите имя участника-пользователя и щелкните **Далее**. Это должно быть имя участника-пользователя того гибридного пользователя, который был синхронизирован с локального экземпляра Active Directory и ранее использовал федеративную проверку подлинности. Откроется страница для ввода имени пользователя и пароля:
 
    ![Снимок экрана со страницей входа для ввода имени пользователя](media/plan-migrate-adfs-password-hash-sync/migrating-adfs-to-phs_image18.png)
@@ -472,7 +476,7 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
 
 Дополнительные сведения см. в разделе о [смене ключе расшифровки Kerberos компьютерной учетной записи AZUREADSSOACC](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-sso-faq).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Изучите [принципы проектирования для Azure AD Connect](plan-connect-design-concepts.md).
 * Выберите [подходящую проверку подлинности](https://docs.microsoft.com/azure/security/fundamentals/choose-ad-authn).

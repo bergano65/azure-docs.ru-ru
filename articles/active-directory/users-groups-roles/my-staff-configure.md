@@ -5,7 +5,7 @@ services: active-directory
 documentationcenter: ''
 author: curtand
 manager: daveba
-ms.topic: article
+ms.topic: how-to
 ms.service: active-directory
 ms.subservice: user-help
 ms.workload: identity
@@ -13,12 +13,12 @@ ms.date: 05/08/2020
 ms.author: curtand
 ms.reviewer: sahenry
 ms.custom: oldportal;it-pro;
-ms.openlocfilehash: 791f2e9bf825bb0a1d1ce555c9fbd879106213df
-ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
+ms.openlocfilehash: dc4e71f4283d78c2b241441810a8c1313f002152
+ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82995823"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85850909"
 ---
 # <a name="manage-your-users-with-my-staff-preview"></a>Управляйте своими пользователями с помощью моих сотрудников (Предварительная версия)
 
@@ -26,35 +26,35 @@ ms.locfileid: "82995823"
 
 Перед настройкой сотрудников Организации рекомендуется ознакомиться с этой документацией, а также с [пользовательской документацией](../user-help/my-staff-team-manager.md) , чтобы убедиться в том, что вы понимаете функциональные возможности и влияние этой функции на пользователей. Пользовательскую документацию можно использовать для обучения и подготовки пользователей к новым интерфейсам и обеспечения успешного развертывания.
 
-Проверка подлинности на основе SMS для пользователей — это общедоступная Предварительная версия функции Azure Active Directory. Дополнительные сведения о предварительных версиях см. в разделе Дополнительные [условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)
+Аутентификация через SMS — это общедоступная предварительная версия функции Azure Active Directory. См. подробные сведения о [Дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)
 
 ## <a name="how-my-staff-works"></a>Как работает мой персонал
 
 Мои сотрудники основаны на административных единицах (Au), которые являются контейнерами ресурсов, которые можно использовать для ограничения области административного управления назначением ролей. В моем отделе используется для определения подмножества пользователей организации, таких как магазин или отдел. Например, руководитель группы может быть назначен роли, область которой составляет один или несколько единиц управления. В приведенном ниже примере пользователю была предоставлена административная роль проверки подлинности, а три уровня управления — область действия роли. Дополнительные сведения об административных единицах см. [в статье Управление административными единицами в Azure Active Directory](directory-administrative-units.md).
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
-Для работы с этой статьей необходимы следующие ресурсы и привилегии:
+Для работы с этой статьей требуются следующие ресурсы и разрешения:
 
 * Активная подписка Azure.
 
   * Если у вас еще нет подписки Azure, [создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* Клиент Azure Active Directory, связанный с подпиской.
+* Клиент Azure Active Directory должен быть связан с вашей подпиской.
 
   * Если потребуется, [создайте клиент Azure Active Directory](../fundamentals/sign-up-organization.md) или [свяжите подписку Azure со своей учетной записью](../fundamentals/active-directory-how-subscriptions-associated-directory.md).
 * Для включения проверки подлинности на основе SMS требуются права *глобального администратора* в клиенте Azure AD.
-* Каждый пользователь, включенный в политике метода проверки подлинности текстовых сообщений, должен иметь лицензию, даже если они не используют ее. Каждый включенный пользователь должен иметь одну из следующих лицензий Azure AD или Microsoft 365:
+* Каждый пользователь, который подключен к политике метода аутентификации через SMS, должен иметь лицензию, даже если он ее не использует. Каждый включенный пользователь должен иметь одну из следующих лицензий Azure AD или Microsoft 365:
 
-  * [Azure AD Premium (P1 или P2)](https://azure.microsoft.com/pricing/details/active-directory/)
-  * [Microsoft 365 (M365) F1 или F3](https://www.microsoft.com/licensing/news/m365-firstline-workers)
-  * [Enterprise Mobility + Security (EMS) E3](https://www.microsoft.com/microsoft-365/enterprise-mobility-security/compare-plans-and-pricing) или в [Microsoft 365 (M365) E3 или](https://www.microsoft.com/microsoft-365/compare-microsoft-365-enterprise-plans) в.
+  * [Azure AD Premium P1 или P2](https://azure.microsoft.com/pricing/details/active-directory/)
+  * [Microsoft 365 (M365) F1 или F3](https://www.microsoft.com/licensing/news/m365-firstline-workers)
+  * [Enterprise Mobility + Security (EMS) E3 или E5](https://www.microsoft.com/microsoft-365/enterprise-mobility-security/compare-plans-and-pricing) или [Microsoft 365 (M365) E3 или E5](https://www.microsoft.com/microsoft-365/compare-microsoft-365-enterprise-plans)
 
 ## <a name="how-to-enable-my-staff"></a>Включение персонала
 
 После настройки Au можно применить эту область к пользователям, обращающимся к моим сотрудникам. Только пользователи, которым назначена административная роль, могут получить доступ к моему персоналу. Чтобы включить моего персонала, выполните следующие действия.
 
 1. Войдите в портал Azure в качестве администратора пользователей.
-2. Перейдите к **Azure Active Directory** > **Параметры** > пользователя предварительный**Просмотр** > пользовательских функций**Управление параметрами просмотра пользовательских компонентов**.
+2. Перейдите к **Azure Active Directory**  >  **Параметры пользователя**  >  Предварительный**Просмотр пользовательских**функций  >  **Управление параметрами просмотра пользовательских компонентов**.
 3. В разделе **Администраторы могут получить доступ к моим сотрудникам**можно выбрать включение для всех пользователей, выбранных пользователей или отсутствие доступа пользователей.
 
 > [!Note]
@@ -71,23 +71,24 @@ ms.locfileid: "82995823"
 1. Установите [командлеты PowerShell Microsoft Graph Beta](https://github.com/microsoftgraph/msgraph-sdk-powershell/blob/dev/samples/0-InstallModule.ps1).
 1. Выполните следующие команды:
 
-        Connect-Graph -Scopes "Directory.AccessAsUser.All"
-        New-MgServicePrincipal -DisplayName "My Staff" -AppId "ba9ff945-a723-4ab5-a977-bd8c9044fe61"
-
+   ```powershell
+   Connect-Graph -Scopes "Directory.AccessAsUser.All"
+   New-MgServicePrincipal -DisplayName "My Staff" -AppId "ba9ff945-a723-4ab5-a977-bd8c9044fe61"
+   ```
 1. Создайте политику условного доступа, которая применяется к облачному приложению My Staff.
 
     ![Создание политики условного доступа для приложения "Мои сотрудники"](media/my-staff-configure/conditional-access.png)
 
 ## <a name="using-my-staff"></a>Использование моего персонала
 
-Когда пользователь переходит к моему персоналу, он показывает имена [административных единиц](directory-administrative-units.md) , для которых у них есть административные разрешения. В [пользовательской документации "Мои сотрудники](../user-help/my-staff-team-manager.md)" мы используем термин "расположение" для ссылки на административные единицы. Если разрешения администратора не имеют области AU, то разрешения применяются в Организации. После включения сотрудников пользователи, которым назначена административная роль, могут получить к ним доступ с помощью [https://mystaff.microsoft.com](https://mystaff.microsoft.com). Они могут выбрать AU для просмотра пользователей в этом AU и выбрать пользователя, чтобы открыть свой профиль.
+Когда пользователь переходит к моему персоналу, он показывает имена [административных единиц](directory-administrative-units.md) , для которых у них есть административные разрешения. В [пользовательской документации "Мои сотрудники](../user-help/my-staff-team-manager.md)" мы используем термин "расположение" для ссылки на административные единицы. Если разрешения администратора не имеют области AU, то разрешения применяются в Организации. После включения сотрудников пользователи, которым назначена административная роль, могут получить к ним доступ с помощью [https://mystaff.microsoft.com](https://mystaff.microsoft.com) . Они могут выбрать AU для просмотра пользователей в этом AU и выбрать пользователя, чтобы открыть свой профиль.
 
 ## <a name="reset-a-users-password"></a>Сброс пароля пользователя
 
 Следующие роли имеют разрешение на сброс пароля пользователя:
 
 - [Администратор проверки подлинности](directory-assign-admin-roles.md#authentication-administrator)
-- [Администратор привилегированной проверки подлинности](directory-assign-admin-roles.md#privileged-authentication-administrator)
+- [Привилегированный администратор проверки подлинности](directory-assign-admin-roles.md#privileged-authentication-administrator)
 - [Глобальный администратор](directory-assign-admin-roles.md#global-administrator--company-administrator)
 - [администратор службы технической поддержки;](directory-assign-admin-roles.md#helpdesk-administrator)
 - [Администратор пользователей](directory-assign-admin-roles.md#user-administrator)
@@ -115,10 +116,10 @@ ms.locfileid: "82995823"
 Для управления номером телефона пользователя необходимо назначить одну из следующих ролей:
 
 - [Администратор проверки подлинности](directory-assign-admin-roles.md#authentication-administrator)
-- [Администратор привилегированной проверки подлинности](directory-assign-admin-roles.md#privileged-authentication-administrator)
+- [Привилегированный администратор проверки подлинности](directory-assign-admin-roles.md#privileged-authentication-administrator)
 - [Глобальный администратор](directory-assign-admin-roles.md#global-administrator--company-administrator)
 
-## <a name="search"></a>Поиск
+## <a name="search"></a>Найти
 
 С помощью панели поиска в моем персонале вы можете выполнять поиск по Au и пользователям в Организации. Можно выполнять поиск по всем Австралия и пользователям в Организации, но вы можете вносить изменения только для тех пользователей, которые находятся в AU, для которых предоставлены разрешения администратора.
 
@@ -128,7 +129,7 @@ ms.locfileid: "82995823"
 
 Вы можете просматривать журналы аудита для действий, выполненных в моем персонале на портале Azure Active Directory. Если журнал аудита был создан действием, выполненным в моем персонале, вы увидите, что это указано в разделе Дополнительные сведения в событии аудита.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-[My Staff user documentation](../user-help/my-staff-team-manager.md)
-[Документация по административным единицам](directory-administrative-units.md) документации по моим сотрудникам
+[Моя документация](../user-help/my-staff-team-manager.md) 
+ для пользователя [Документация по административным единицам](directory-administrative-units.md)

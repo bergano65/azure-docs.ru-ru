@@ -11,12 +11,12 @@ ms.custom: mvc, seo-javascript-september2019
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: d7cd437f597fc34fe83904715fc2e459dfe4550f
-ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
+ms.openlocfilehash: cd696b6aba96b06a7b84722d61eb40bbfa15c0ff
+ms.sourcegitcommit: 0a5bb9622ee6a20d96db07cc6dd45d8e23d5554a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80875583"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84447940"
 ---
 # <a name="tutorial-enable-authentication-in-a-single-page-application-with-azure-ad-b2c"></a>Руководство по Включение аутентификации в одностраничном приложении с помощью Azure AD B2C
 
@@ -51,28 +51,28 @@ ms.locfileid: "80875583"
 
 При прохождении второго учебника для выполнения предварительных условий вы зарегистрировали веб-приложение в Azure AD B2C. Для обеспечения взаимодействия с примером из этого руководства необходимо добавить URL ответа (также называется URI перенаправления) в регистрацию приложения.
 
-Для обновления приложения можно использовать текущий интерфейс **Приложения** или новый объединенный интерфейс **Регистрация приложений (предварительная версия)** . [См. дополнительные сведения о новом интерфейсе](https://aka.ms/b2cappregintro).
+Чтобы обновить приложение в клиенте Azure AD B2C, можно использовать новый унифицированный интерфейс **Регистрация приложений** или устаревший интерфейс **Приложения (прежняя версия)** . [См. дополнительные сведения о новом интерфейсе](https://aka.ms/b2cappregtraining).
 
-#### <a name="applications"></a>[Приложения](#tab/applications/)
-
-1. Войдите на [портал Azure](https://portal.azure.com).
-1. Убедитесь, что используете каталог с клиентом Azure AD B2C, выбрав фильтр **Каталог и подписка** в меню вверху и каталог с вашим клиентом.
-1. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
-1. Щелкните пункт **Приложения**, а затем выберите приложение *webapp1*.
-1. В разделе **URL-адрес ответа** добавьте `http://localhost:6420`.
-1. Щелкните **Сохранить**.
-1. На странице свойств запишите **идентификатор приложения**. Идентификатор приложения будет использован на более позднем этапе, когда вы обновите код в одностраничном веб-приложении.
-
-#### <a name="app-registrations-preview"></a>[Регистрация приложений (предварительная версия)](#tab/app-reg-preview/)
+#### <a name="app-registrations"></a>[Регистрация приложений](#tab/app-reg-ga/)
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 1. Выберите фильтр **Каталог и подписка** в верхнем меню, а затем выберите каталог, содержащий клиент Azure AD B2C.
 1. В меню слева выберите **Azure AD B2C**. Либо щелкните **Все службы**, а затем найдите и выберите **Azure AD B2C**
-1. Выберите **Регистрация приложений (предварительная версия)** , щелкните вкладку **Собственные приложения**, а затем выберите приложение *webapp1*.
-1. Выберите **Проверка подлинности**, а затем — **Попробовать новый пользовательский интерфейс** (если этот параметр показан).
-1. В разделе **Интернет** выберите ссылку **Добавление URI**, введите `http://localhost:6420`, а затем нажмите кнопку **Сохранить**.
+1. Выберите **Регистрация приложений**, щелкните вкладку **Собственные приложения**, а затем выберите приложение *webapp1*.
+1. В разделе **Интернет** выберите ссылку **Добавление URI**, введите `http://localhost:6420`.
+1. В разделе **Неявное предоставление разрешения** установите флажки для пунктов **Маркеры доступа** и **Маркеры идентификации** и нажмите **Сохранить**.
 1. Щелкните **Обзор**.
 1. Запишите значение параметра **Идентификатор приложения (клиент)** для использования на более позднем этапе при обновлении кода в одностраничном веб-приложении.
+
+#### <a name="applications-legacy"></a>[Приложения (прежняя версия)](#tab/applications-legacy/)
+
+1. Войдите на [портал Azure](https://portal.azure.com).
+1. Убедитесь, что используете каталог с клиентом Azure AD B2C, выбрав фильтр **Каталог и подписка** в меню вверху и каталог с вашим клиентом.
+1. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
+1. Щелкните пункт **Приложения (прежняя версия)** , а затем выберите приложение *webapp1*.
+1. В разделе **URL-адрес ответа** добавьте `http://localhost:6420`.
+1. Щелкните **Сохранить**.
+1. На странице свойств запишите **идентификатор приложения**. Идентификатор приложения будет использован на более позднем этапе, когда вы обновите код в одностраничном веб-приложении.
 
 * * *
 
@@ -98,14 +98,22 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-
     ```javascript
     const msalConfig = {
         auth: {
-            clientId: "00000000-0000-0000-0000-000000000000", // Replace this value with your Application (client) ID
-            authority: "https://your-b2c-tenant.b2clogin.com/your-b2c-tenant.onmicrosoft.com/B2C_1_signupsignin1", // Update with your tenant and user flow names
-            validateAuthority: false
+          clientId: "00000000-0000-0000-0000-000000000000", // Replace this value with your Application (client) ID
+          authority: b2cPolicies.authorities.signUpSignIn.authority,
+          validateAuthority: false
         },
         cache: {
-            cacheLocation: "localStorage",
-            storeAuthStateInCookie: true
+          cacheLocation: "localStorage",
+          storeAuthStateInCookie: true
         }
+    };
+
+    const loginRequest = {
+       scopes: ["openid", "profile"],
+    };
+
+    const tokenRequest = {
+      scopes: apiConfig.b2cScopes // i.e. ["https://fabrikamb2c.onmicrosoft.com/helloapi/demo.read"]
     };
     ```
 

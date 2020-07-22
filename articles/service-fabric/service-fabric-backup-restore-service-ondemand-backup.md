@@ -5,21 +5,21 @@ author: aagup
 ms.topic: conceptual
 ms.date: 10/30/2018
 ms.author: aagup
-ms.openlocfilehash: d5eada62bec49fe771373671e9438d2786d6b165
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 04d8bb4a9f8157a229751d073e8d351f5448fa68
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75458423"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86247903"
 ---
 # <a name="on-demand-backup-in-azure-service-fabric"></a>Резервное копирование по запросу в Azure Service Fabric
 
 Можно создать резервную копию данных Reliable Services с отслеживанием состояния и данных Reliable Actors на случай аварии или потери данных.
 
-Azure Service Fabric предоставляет функции для [периодического резервного копирования данных](service-fabric-backuprestoreservice-quickstart-azurecluster.md) и резервного копирования данных по мере необходимости. Резервное копирование по запросу полезно, так как оно защищает от/_повреждения данных_ _потери данных_из-за запланированных изменений в базовой службе или ее среде.
+Azure Service Fabric предоставляет функции для [периодического резервного копирования данных](service-fabric-backuprestoreservice-quickstart-azurecluster.md) и резервного копирования данных по мере необходимости. Резервное копирование по запросу полезно, так как оно _data loss_защищает от / _повреждения данных_ потери данных из-за запланированных изменений в базовой службе или ее среде.
 
 Функции резервного копирования по запросу позволяют записать сведения о состоянии служб перед любой выполняющейся вручную операцией, которая относится к этой службе или к ее среде. Например, когда вы вносите изменения в двоичные файлы службы при ее обновлении или переходе на более раннюю версию. В этом случае резервное копирование по запросу защищает данные от повреждения из-за ошибок в коде приложения.
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 - Установите модуль Microsoft. ServiceFabric. PowerShell. http [в предварительной версии] для выполнения вызовов конфигурации.
 
@@ -56,7 +56,7 @@ Backup-SFPartition -PartitionId '974bd92a-b395-4631-8a7f-53bd4ae9cf22'
 
 #### <a name="rest-call-using-powershell"></a>Вызов функции RESTful с помощью PowerShell
 
-Используйте API [BackupPartition](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-backuppartition), чтобы инициировать резервное копирование по запросу для идентификатора секции `974bd92a-b395-4631-8a7f-53bd4ae9cf22`.
+Используйте API [BackupPartition](/rest/api/servicefabric/sfclient-api-backuppartition), чтобы инициировать резервное копирование по запросу для идентификатора секции `974bd92a-b395-4631-8a7f-53bd4ae9cf22`.
 
 ```powershell
 $url = "https://mysfcluster.southcentralus.cloudapp.azure.com:19080/Partitions/974bd92a-b395-4631-8a7f-53bd4ae9cf22/$/Backup?api-version=6.4"
@@ -64,7 +64,7 @@ $url = "https://mysfcluster.southcentralus.cloudapp.azure.com:19080/Partitions/9
 Invoke-WebRequest -Uri $url -Method Post -ContentType 'application/json' -CertificateThumbprint '1b7ebe2174649c45474a4819dafae956712c31d3'
 ```
 
-Используйте API [GetBackupProgress](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-getpartitionbackupprogress), чтобы включить отслеживание для [хода резервного копирования по запросу](service-fabric-backup-restore-service-ondemand-backup.md#tracking-on-demand-backup-progress).
+Используйте API [GetBackupProgress](/rest/api/servicefabric/sfclient-api-getpartitionbackupprogress), чтобы включить отслеживание для [хода резервного копирования по запросу](service-fabric-backup-restore-service-ondemand-backup.md#tracking-on-demand-backup-progress).
 
 ### <a name="on-demand-backup-to-specified-storage"></a>Резервное копирование по запросу в указанное хранилище
 
@@ -81,7 +81,7 @@ Backup-SFPartition -PartitionId '974bd92a-b395-4631-8a7f-53bd4ae9cf22' -AzureBlo
 
 #### <a name="rest-call-using-powershell"></a>Вызов функции RESTful с помощью PowerShell
 
-Используйте API [BackupPartition](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-backuppartition), чтобы инициировать резервное копирование по запросу для идентификатора секции `974bd92a-b395-4631-8a7f-53bd4ae9cf22`. Включите следующие сведения о Службе хранилища Azure:
+Используйте API [BackupPartition](/rest/api/servicefabric/sfclient-api-backuppartition), чтобы инициировать резервное копирование по запросу для идентификатора секции `974bd92a-b395-4631-8a7f-53bd4ae9cf22`. Включите следующие сведения о Службе хранилища Azure:
 
 ```powershell
 $StorageInfo = @{
@@ -100,7 +100,7 @@ $url = "https://mysfcluster.southcentralus.cloudapp.azure.com:19080/Partitions/9
 Invoke-WebRequest -Uri $url -Method Post -Body $body -ContentType 'application/json' -CertificateThumbprint '1b7ebe2174649c45474a4819dafae956712c31d3'
 ```
 
-Можно настроить отслеживание для [хода резервного копирования по запросу](service-fabric-backup-restore-service-ondemand-backup.md#tracking-on-demand-backup-progress) с помощью API [GetBackupProgress](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-getpartitionbackupprogress).
+Можно настроить отслеживание для [хода резервного копирования по запросу](service-fabric-backup-restore-service-ondemand-backup.md#tracking-on-demand-backup-progress) с помощью API [GetBackupProgress](/rest/api/servicefabric/sfclient-api-getpartitionbackupprogress).
 
 ### <a name="using-service-fabric-explorer"></a>Использование Service Fabric Explorer
 Убедитесь, что в параметрах Service Fabric Explorer включен расширенный режим.
@@ -170,7 +170,7 @@ $backupResponse
     LsnOfLastBackupRecord   : 0
     FailureError            : @{Code=FABRIC_E_BACKUPCOPIER_UNEXPECTED_ERROR; Message=An error occurred during this operation.  Please check the trace logs for more details.}
     ```
-  - **Время ожидания**: время _ожидания_ резервного копирования указывает, что резервное копирование состояния секции не удалось создать в течение заданного времени. Время ожидания по умолчанию составляет 10 минут. В этом случае инициируйте новый запрос на резервное копирование с увеличенным значением [BackupTimeout](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-backuppartition#backuptimeout).
+  - **Время ожидания**: время _ожидания_ резервного копирования указывает, что резервное копирование состояния секции не удалось создать в течение заданного времени. Время ожидания по умолчанию составляет 10 минут. В этом случае инициируйте новый запрос на резервное копирование с увеличенным значением [BackupTimeout](/rest/api/servicefabric/sfclient-api-backuppartition#backuptimeout).
     ```
     BackupState             : Timeout
     TimeStampUtc            : 0001-01-01T00:00:00Z
@@ -184,7 +184,7 @@ $backupResponse
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Основные сведения о настройке периодического резервного копирования](./service-fabric-backuprestoreservice-configure-periodic-backup.md)
-- [Справочник по REST API BackupRestore](https://docs.microsoft.com/rest/api/servicefabric/sfclient-index-backuprestore)
+- [Справочник по REST API BackupRestore](/rest/api/servicefabric/sfclient-index-backuprestore)
 
 [0]: ./media/service-fabric-backuprestoreservice/trigger-partition-backup.png
 [1]: ./media/service-fabric-backuprestoreservice/trigger-backup-fileshare.png

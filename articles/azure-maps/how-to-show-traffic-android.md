@@ -8,24 +8,24 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: e5611eeb08ac370e12cf452d57a87e449fbd80da
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 92e111a6e76dbe285dd8cc7a93ce75f556142565
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80335376"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86540151"
 ---
 # <a name="show-traffic-data-on-the-map-using-azure-maps-android-sdk"></a>Отображение данных трафика на карте с помощью Azure Maps пакет SDK для Android
 
 Данные потока и инциденты — это два типа данных трафика, которые могут отображаться на карте. В этом руководство показано, как отобразить оба типа данных трафика. Данные инцидентов состоят из данных на основе точек и строк для таких вещей, как конструкции, замыкания на пути и всякое. Данные о потоке показывают метрики потока трафика в дороге.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
-Перед отображением трафика на карте необходимо [сделать учетную запись Azure](quick-demo-map-app.md#create-an-account-with-azure-maps)и [получить ключ подписки](quick-demo-map-app.md#get-the-primary-key-for-your-account). Затем необходимо установить [Azure Maps пакет SDK для Android](https://docs.microsoft.com/azure/azure-maps/how-to-use-android-map-control-library) и загрузить карту.
+Перед отображением трафика на карте необходимо [сделать учетную запись Azure](quick-demo-map-app.md#create-an-azure-maps-account)и [получить ключ подписки](quick-demo-map-app.md#get-the-primary-key-for-your-account). Затем необходимо установить [Azure Maps пакет SDK для Android](https://docs.microsoft.com/azure/azure-maps/how-to-use-android-map-control-library) и загрузить карту.
 
-## <a name="incidents-traffic-data"></a>Данные трафика инцидентов 
+## <a name="incidents-traffic-data"></a>Данные трафика инцидентов
 
-Вам потребуется импортировать следующие библиотеки для вызова `setTraffic` и: `incidents`
+Вам потребуется импортировать следующие библиотеки для вызова `setTraffic` и `incidents` :
 
 ```java
 import static com.microsoft.com.azure.maps.mapcontrol.options.TrafficOptions.incidents;
@@ -44,16 +44,16 @@ protected void onCreate(Bundle savedInstanceState) {
 
 ## <a name="flow-traffic-data"></a>Потоковая передача данных
 
-Сначала необходимо импортировать следующие библиотеки для вызова `setTraffic` и: `flow`
+Сначала необходимо импортировать следующие библиотеки для вызова `setTraffic` и `flow` :
 
 ```java
 import com.microsoft.azure.maps.mapcontrol.options.TrafficFlow;
 import static com.microsoft.azure.maps.mapcontrol.options.TrafficOptions.flow;
 ```
 
-Используйте следующий фрагмент кода для задания данных потока трафика. Аналогично коду в предыдущем разделе, мы передаем возвращаемое значение `flow` метода `setTraffic` методу. В `flow`можно передать четыре значения, и каждое значение будет `flow` возвращать соответствующее значение. Возвращаемое значение `flow` будет передано в качестве аргумента в `setTraffic`. Следующие четыре значения приведены в следующей таблице:
+Используйте следующий фрагмент кода для задания данных потока трафика. Аналогично коду в предыдущем разделе, мы передаем возвращаемое значение метода методу `flow` `setTraffic` . В можно передать четыре значения `flow` , и каждое значение будет `flow` возвращать соответствующее значение. Возвращаемое значение `flow` будет передано в качестве аргумента в `setTraffic` . Следующие четыре значения приведены в следующей таблице:
 
-| | |
+|Значение потока | Описание|
 | :-- | :-- |
 | Траффикфлов. NONE | Не отображает данные трафика на карте |
 | Траффикфлов. RELATIVE | Показывает данные трафика, относящиеся к скорости произвольного потока в дороге |
@@ -73,7 +73,7 @@ protected void onCreate(Bundle savedInstanceState) {
 
 Чтобы получить инциденты для определенного компонента, можно использовать приведенный ниже код. При нажатии на эту функцию логика кода проверяет наличие инцидентов и создает сообщение об инциденте. В нижней части экрана появится сообщение с подробными сведениями.
 
-1. Во-первых, необходимо изменить **Макет res > > activity_main. XML**, чтобы он выглядел так, как показано ниже. Вы можете заменить `mapcontrol_centerLat`, `mapcontrol_centerLng`и `mapcontrol_zoom` нужными значениями. Помните, что уровень масштаба — это значение в диапазоне от 0 до 22. На уровне масштабирования 0 весь мир занимает одну плитку.
+1. Сначала необходимо изменить **разметку res > > activity_main.xml**, чтобы она выглядела так, как показано ниже. Вы можете заменить `mapcontrol_centerLat` , `mapcontrol_centerLng` и `mapcontrol_zoom` нужными значениями. Помните, что уровень масштаба — это значение в диапазоне от 0 до 22. На уровне масштабирования 0 весь мир занимает одну плитку.
 
    ```XML
    <?xml version="1.0" encoding="utf-8"?>
@@ -221,7 +221,7 @@ protected void onCreate(Bundle savedInstanceState) {
    }
    ```
 
-3. После включения приведенного выше кода в приложение вы сможете выбрать функцию и просмотреть подробные сведения о событиях трафика. В зависимости от широты, долготы и значений масштаба, используемых в файле **activity_main. XML** , вы увидите результаты, аналогичные приведенным на следующем рисунке:
+3. После включения приведенного выше кода в приложение вы сможете выбрать функцию и просмотреть подробные сведения о событиях трафика. В зависимости от широты, долготы и значений масштаба, используемых в файле **activity_main.xml** , вы увидите результаты, аналогичные следующему изображению:
 
    <center>
 
@@ -229,7 +229,7 @@ protected void onCreate(Bundle savedInstanceState) {
 
    </center>
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы узнать, как добавить дополнительные данные на карту, ознакомьтесь со следующими руководствами.
 

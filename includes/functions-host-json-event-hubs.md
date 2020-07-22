@@ -5,13 +5,13 @@ ms.topic: include
 ms.date: 09/04/2018
 ms.author: glenga
 ms.openlocfilehash: 2604a1608f21d7239db755027e15b8198fb3f9f2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81791711"
 ---
-### <a name="functions-2x-and-higher"></a>Функции 2. x и более поздних версий
+### <a name="functions-2x-and-higher"></a>Функции 2.x и более поздних версий
 
 ```json
 {
@@ -28,14 +28,14 @@ ms.locfileid: "81791711"
 }  
 ```
 
-|Свойство  |По умолчанию | Описание |
+|Свойство.  |По умолчанию | Описание |
 |---------|---------|---------|
 |maxBatchSize|10|Максимальное число событий, получаемых в цикле получения.|
-|prefetchCount|300|Счетчик предварительной выборки по умолчанию, используемый `EventProcessorHost`базовым объектом.|
+|prefetchCount|300|Счетчик предварительной выборки по умолчанию, используемый базовым объектом `EventProcessorHost` .|
 |batchCheckpointFrequency|1|Количество пакетов событий, которые необходимо обработать перед созданием контрольной точки курсора EventHub.|
 
 > [!NOTE]
-> Ссылки на Host. JSON в функциях Azure 2. x и более поздних версий см. в [справочнике по Host. JSON для функций Azure](../articles/azure-functions/functions-host-json.md).
+> Справочные сведения о host.jsв функциях Azure 2. x и более поздних версий см. в разделе [host.jsпо Справочнику по функциям Azure](../articles/azure-functions/functions-host-json.md).
 
 ### <a name="functions-1x"></a>Функции 1.x
 
@@ -49,12 +49,12 @@ ms.locfileid: "81791711"
 }
 ```
 
-|Свойство  |По умолчанию | Описание |
+|Свойство.  |По умолчанию | Описание |
 |---------|---------|---------| 
 |maxBatchSize|64|Максимальное число событий, получаемых в цикле получения.|
-|prefetchCount|н/д|Предварительная выборка по умолчанию, которая будет использоваться базовым `EventProcessorHost`объектом.| 
+|prefetchCount|н/д|Предварительная выборка по умолчанию, которая будет использоваться базовым объектом `EventProcessorHost` .| 
 |batchCheckpointFrequency|1|Количество пакетов событий, которые необходимо обработать перед созданием контрольной точки курсора EventHub.| 
 
 > [!NOTE]
-> Ссылку на Host. JSON в функциях Azure 1. x см. в [справочнике по Host. JSON для функций Azure 1. x](../articles/azure-functions/functions-host-json-v1.md).
+> Справочные сведения о host.jsв функциях Azure 1. x см. в разделе [host.jsпо Справочнику по функциям Azure 1. x](../articles/azure-functions/functions-host-json-v1.md).
 

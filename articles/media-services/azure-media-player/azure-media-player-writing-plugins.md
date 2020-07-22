@@ -7,10 +7,9 @@ ms.service: media-services
 ms.topic: how-to
 ms.date: 04/20/2020
 ms.openlocfilehash: 7902dfdf81d8e44921a5218d56effc90f433f02d
-ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82857409"
 ---
 # <a name="writing-plugins-for-azure-media-player"></a>Создание подключаемых модулей для Проигрыватель мультимедиа Azure #
@@ -35,7 +34,7 @@ ms.locfileid: "82857409"
 
 Код можно писать непосредственно на HTML-странице внутри `<script>` тегов или во внешнем файле JavaScript. Если вы выполняете Последнее действие, не забудьте включить файл JavaScript в `<head>` страницу HTML *после* скрипта amp.
 
-Пример
+Пример.
 
 ```javascript
     <!--*****START OF Azure Media Player Scripts*****-->

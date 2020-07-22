@@ -5,16 +5,16 @@ services: synapse-analytics
 author: matt1883
 ms.service: synapse-analytics
 ms.topic: how-to
-ms.subservice: ''
+ms.subservice: security
 ms.date: 04/15/2020
 ms.author: mahi
 ms.reviewer: jrasnick
-ms.openlocfilehash: d02cd12552b3664dd7acaae0142fc939ee57f5f6
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
-ms.translationtype: HT
+ms.openlocfilehash: 1a8023a700e83892fae9a16bb2bfbe2a2eb0b307
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83591987"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85193419"
 ---
 # <a name="secure-your-synapse-workspace-preview"></a>Защита рабочей области Synapse (предварительная версия)
 
@@ -130,7 +130,7 @@ ms.locfileid: "83591987"
 
 ## <a name="step-8-network-security"></a>Шаг 8. Безопасность сети
 
-Для настройки брандмауэра рабочей области, виртуальной сети и [Приватного канала](../../sql-database/sql-database-private-endpoint-overview.md).
+Для настройки брандмауэра рабочей области, виртуальной сети и [Приватного канала](../../azure-sql/database/private-endpoint-overview.md).
 
 ## <a name="step-9-completion"></a>Шаг 9. Completion
 

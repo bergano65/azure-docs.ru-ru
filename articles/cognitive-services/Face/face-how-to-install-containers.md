@@ -9,16 +9,19 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: conceptual
-ms.date: 04/01/2020
+ms.date: 07/16/2020
 ms.author: aahi
-ms.openlocfilehash: 611ab503dfea44e8287e95cf607ce6af3b447d1f
-ms.sourcegitcommit: fc0431755effdc4da9a716f908298e34530b1238
+ms.openlocfilehash: a74b77ac59ece98f1a64839fd5000f4ab5d638f7
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83815797"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86497885"
 ---
 # <a name="install-and-run-face-containers-preview"></a>Установка и запуск контейнеров лиц (Предварительная версия)
+
+> [!IMPORTANT]
+> Достигнут предел для пользователей контейнера лиц. Сейчас мы не принимаем новые приложения для контейнера лиц.
 
 Лицо Cognitive Services Azure предоставляет стандартизированный контейнер Linux для DOCKER, который обнаруживает людей в образах. Он также определяет атрибуты, которые включают ориентиры для лиц, такие как нос и глаза, пол, возраст и другие функции, прогнозируемые с точки зрения машинного лица. Кроме обнаружения, лицо может проверить, совпадают ли два лица в одном или разных изображениях с помощью оценки достоверности. Кроме того, лицо может сравнить лица с базой данных, чтобы узнать, существует ли уже похожий или аналогичный лицом. Он также может организовывать схожие лица в группы с помощью общих визуальных характеристик.
 
@@ -36,12 +39,6 @@ ms.locfileid: "83815797"
 
 [!INCLUDE [Gathering required container parameters](../containers/includes/container-gathering-required-parameters.md)]
 
-## <a name="request-access-to-the-private-container-registry"></a>Запрос доступа к частному реестру контейнеров
-
-Заполните [форму запроса](https://aka.ms/cognitivegate) и отправьте ее, чтобы запросить доступ к контейнеру. 
-
-[!INCLUDE [Request access to private container registry](../../../includes/cognitive-services-containers-request-access.md)]
-
 ### <a name="the-host-computer"></a>Главный компьютер
 
 [!INCLUDE [Host Computer requirements](../../../includes/cognitive-services-containers-host-computer.md)]
@@ -50,7 +47,7 @@ ms.locfileid: "83815797"
 
 В следующей таблице описаны минимальные и Рекомендуемые ядра ЦП и память, выделяемые для каждого контейнера службы лиц.
 
-| Контейнер | Минимальные | Рекомендуется | Транзакций в секунду<br>(Минимум, максимум)|
+| Контейнер | Минимальные | Рекомендуемая | Транзакций в секунду<br>(Минимум, максимум)|
 |-----------|---------|-------------|--|
 |Распознавание лиц | 1 ядро, 2 ГБ памяти | 1 ядро, 4 ГБ памяти |10, 20|
 
@@ -96,7 +93,7 @@ Billing={ENDPOINT_URI} \
 ApiKey={API_KEY}
 ```
 
-Эта команда:
+Команда:
 
 * Запускает контейнер лицевой стороны из образа контейнера.
 * Выделяется одно ядро ЦП и 4 ГБ памяти.
@@ -113,7 +110,7 @@ ApiKey={API_KEY}
 
 ## <a name="query-the-containers-prediction-endpoint"></a>Запрос конечной точки прогнозирования контейнера
 
-Контейнер предоставляет API запроса конечной точки прогнозирования на основе REST. 
+Контейнер предоставляет интерфейсы REST API конечной точки прогнозирования запросов. 
 
 Используйте узел `http://localhost:5000` для API контейнера.
 
@@ -144,7 +141,7 @@ ApiKey={API_KEY}
 
 [!INCLUDE [Discoverability of more container information](../../../includes/cognitive-services-containers-discoverability.md)]
 
-## <a name="summary"></a>Сводка
+## <a name="summary"></a>Итоги
 
 В этой статье вы узнали основные понятия и рабочий процесс по скачиванию, установке и запуску контейнеров службы лиц. В разделе "Сводка" сделайте следующее.
 

@@ -9,16 +9,15 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 02/11/2020
-ms.openlocfilehash: 56d8cad05a42da8de680ade487dddee9a97aab3a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 361199bd380b126ec41fb8a5587a2ebd78cd6f24
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80364173"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84447617"
 ---
-# <a name="score-model-module"></a>Модуль "Оценка модели"
+# <a name="score-model"></a>Оценка модели
 
-В этой статье описывается модуль в Машинное обучение Azure Designer (Предварительная версия).
+В этой статье описывается модуль в конструкторе Машинного обучения Azure (предварительная версия).
 
 Этот модуль используется для создания прогнозов с помощью обученной модели классификации или регрессии.
 
@@ -50,6 +49,6 @@ ms.locfileid: "80364173"
 
 Обычно Оценка используется для возврата выходных данных в составе прогнозной веб-службы. Дополнительные сведения см. в [этом руководстве](https://docs.microsoft.com/azure/machine-learning/tutorial-designer-automobile-price-deploy) по развертыванию конечной точки в режиме реального времени на основе конвейера в конструкторе машинное обучение Azure.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-См. [набор модулей, доступных](module-reference.md) для машинное обучение Azure. 
+Ознакомьтесь с [набором доступных модулей](module-reference.md) в службе Машинного обучения Azure. 

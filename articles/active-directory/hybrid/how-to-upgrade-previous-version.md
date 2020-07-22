@@ -9,19 +9,19 @@ editor: ''
 ms.assetid: 31f084d8-2b89-478c-9079-76cf92e6618f
 ms.service: active-directory
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: Identity
 ms.date: 04/08/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2a3e7373a8b0354a3d08debf944f2f77f1609382
-ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
+ms.openlocfilehash: 7a14249f28da15f04a214c2a1cb4bd415fb59ce9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "60347755"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85356633"
 ---
 # <a name="azure-ad-connect-upgrade-from-a-previous-version-to-the-latest"></a>Azure AD Connect: обновление до последней версии
 В этой статье описываются различные варианты обновления установленного экземпляра Azure Active Directory (Azure AD) Connect до последней версии. Мы рекомендуем устанавливать все новые выпуски Azure AD Connect. Действия, описанные в разделе [Обновление со сменой сервера](#swing-migration), можно также использовать при значительных изменениях конфигурации.
@@ -104,7 +104,7 @@ ms.locfileid: "60347755"
 
 Возможны ситуации, при которых не нужно выполнять эти переопределения сразу же после обновления. Например, у вас есть много синхронизируемых объектов и вы хотите выполнить эти шаги синхронизации после рабочих часов. Чтобы удалить эти переопределения, сделайте следующее:
 
-1. Во время обновления **снимите** флажок **Запустить синхронизацию сразу после завершения настройки**. Это отключит планировщик синхронизации и предотвратит автоматическое выполнение цикла синхронизации, прежде чем переопределения будут удалены.
+1. Во время обновления **снимите флажок** **запустить процесс синхронизации после завершения настройки**. Это отключит планировщик синхронизации и предотвратит автоматическое выполнение цикла синхронизации, прежде чем переопределения будут удалены.
 
    ![DisableFullSyncAfterUpgrade](./media/how-to-upgrade-previous-version/disablefullsync01.png)
 
@@ -167,5 +167,5 @@ At line:1 char:1
 
 
 
-## <a name="next-steps"></a>Следующие шаги
-Дополнительные сведения об интеграции локальных удостоверений см. в статье [Подключение Active Directory к Azure Active Directory](whatis-hybrid-identity.md).
+## <a name="next-steps"></a>Дальнейшие шаги
+Дополнительные сведения об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

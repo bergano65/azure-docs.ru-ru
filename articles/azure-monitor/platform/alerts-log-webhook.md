@@ -7,12 +7,11 @@ services: monitoring
 ms.topic: conceptual
 ms.date: 06/25/2019
 ms.subservice: alerts
-ms.openlocfilehash: 7b1956ad2bf9bf38ba9edc4c7234078557564071
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 6c9bacfc4354351cbbf2eb735414ff3334cd7d0a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77667709"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84323677"
 ---
 # <a name="webhook-actions-for-log-alert-rules"></a>Действия веб-перехватчика для правил оповещений журнала
 При [создании оповещения журнала в Azure](alerts-log.md)можно [настроить его с помощью групп действий](action-groups.md) для выполнения одного или нескольких действий. В этой статье описаны различные действия веб-перехватчика, а также показано, как настроить пользовательский интерфейс, основанный на JSON.
@@ -26,7 +25,7 @@ ms.locfileid: "77667709"
 
 Для выполнения действий webhook требуются свойства, приведенные в таблице ниже.
 
-| Свойство | Описание: |
+| Свойство. | Описание: |
 |:--- |:--- |
 | **URL-адрес Webhook** |URL-адрес действия webhook. |
 | **Настраиваемые полезные данные JSON** |Пользовательские полезные данные для отправки с веб-перехватчиком, если этот параметр выбран во время создания предупреждения. Дополнительные сведения см. в разделе [Управление оповещениями журнала](alerts-log.md).|
@@ -44,19 +43,23 @@ ms.locfileid: "77667709"
 | *AlertThresholdOperator* |#thresholdoperator |Оператор threshold для правила генерации оповещений, которое использует больше или меньше. |
 | *AlertThresholdValue* |#thresholdvalue |Значение порога для правила генерации оповещений. |
 | *линктосеарчресултс* |#linktosearchresults |Ссылка на портал аналитики, который возвращает записи из запроса, создавшего предупреждение. |
+| *линктосеарчресултсапи* |#linktosearchresultsapi |Ссылка на API аналитики, который возвращает записи из запроса, создавшего предупреждение. |
+| *линктофилтередсеарчресултсуи* |#linktofilteredsearchresultsui |Ссылка на портал аналитики, который возвращает записи из запроса, отфильтрованного по значениям измерений, создавшего предупреждение. |
+| *линктофилтередсеарчресултсапи* |#linktofilteredsearchresultsapi |Ссылка на API аналитики, который возвращает записи из запроса, отфильтрованного по значениям измерений, создавшего предупреждение. |
 | *ResultCount* |#searchresultcount |Число записей в результатах поиска. |
 | *Время окончания интервала поиска* |#searchintervalendtimeutc |Время окончания запроса в формате UTC с форматом mm/дд/гггг чч: мм: сс AM/PM. |
 | *Интервал поиска* |#searchinterval |Временное окно для правила генерации оповещений с форматом чч: мм: СС. |
 | *Время начала интервала поиска* |#searchintervalstarttimeutc |Время начала запроса в формате UTC с форматом mm/дд/гггг чч: мм: сс AM/PM. 
 | *SearchQuery* |#searchquery |Запрос поиска журналов, используемый правилом генерации оповещений. |
-| *SearchResults* |"IncludeSearchResults": true|Записи, возвращаемые запросом в виде таблицы JSON, ограничиваются первыми записями 1 000, если "IncludeSearchResults": true добавляется в определение пользовательского веб-перехватчика JSON в качестве свойства верхнего уровня. |
+| *SearchResults* |"IncludeSearchResults": true|Записи, возвращаемые запросом в виде таблицы JSON, ограничены первыми записями 1 000. "IncludeSearchResults": значение true добавляется в определение пользовательского веб-перехватчика JSON в качестве свойства верхнего уровня. |
+| *Станд* |"Инклудедименсионс": true|Сочетания значений измерений, которые активируют предупреждение как раздел JSON. "Инклудедименсионс": значение true добавляется в определение пользовательского веб-перехватчика JSON в качестве свойства верхнего уровня. |
 | *Тип оповещения*| #alerttype | Тип правила оповещения журнала, настроенного как [измерение метрик](alerts-unified-log.md#metric-measurement-alert-rules) или [Количество результатов](alerts-unified-log.md#number-of-results-alert-rules).|
 | *WorkspaceID* |#workspaceid |Идентификатор рабочей области Log Analytics. |
 | *Идентификатор приложения* |#applicationid |Идентификатор приложения Application Insights. |
 | *Идентификатор подписки* |#subscriptionid |ИДЕНТИФИКАТОР используемой подписки Azure. 
 
 > [!NOTE]
-> *Линктосеарчресултс* передает такие параметры, как *SearchQuery*, *интервал поиска StartTime*и *время окончания интервала поиска* в URL-адресе портал Azure для просмотра в разделе аналитики. Портал Azure имеет ограничение размера URI, равное приблизительно 2 000 символам. Портал *не* будет открывать ссылки, содержащиеся в оповещениях, если значения параметров превышают предел. Вы можете вручную ввести сведения для просмотра результатов на портале аналитики. Чтобы получить результаты программными средствами, можно использовать [REST API Application Insights Analytics](https://dev.applicationinsights.io/documentation/Using-the-API) или [log Analytics REST API](/rest/api/loganalytics/) . 
+> Предоставленные ссылки передают параметры, такие как *SearchQuery*, *интервал поиска StartTime*и *время окончания интервала поиска* , в URL-адресе портал Azure или API.
 
 Например, можно указать следующие пользовательские полезные данные, содержащие один параметр — *text*. Служба, которую вызывает этот веб-перехватчик, требует этот параметр.
 
@@ -88,9 +91,9 @@ ms.locfileid: "77667709"
 
 ```json
 {
-    "SubscriptionId":"12345a-1234b-123c-123d-12345678e",
-    "AlertRuleName":"AcmeRule",
-    "SearchQuery":"Perf | where ObjectName == \"Processor\" and CounterName == \"% Processor Time\" | summarize AggregatedValue = avg(CounterValue) by bin(TimeGenerated, 5m), Computer",
+    "SubscriptionId": "12345a-1234b-123c-123d-12345678e",
+    "AlertRuleName": "AcmeRule",
+    "SearchQuery": "Perf | where ObjectName == \"Processor\" and CounterName == \"% Processor Time\" | summarize AggregatedValue = avg(CounterValue) by bin(TimeGenerated, 5m), Computer",
     "SearchIntervalStartTimeUtc": "2018-03-26T08:10:40Z",
     "SearchIntervalEndtimeUtc": "2018-03-26T09:10:40Z",
     "AlertThresholdOperator": "Greater Than",
@@ -98,28 +101,56 @@ ms.locfileid: "77667709"
     "ResultCount": 2,
     "SearchIntervalInSeconds": 3600,
     "LinkToSearchResults": "https://portal.azure.com/#Analyticsblade/search/index?_timeInterval.intervalEnd=2018-03-26T09%3a10%3a40.0000000Z&_timeInterval.intervalDuration=3600&q=Usage",
+    "LinkToFilteredSearchResultsUI": "https://portal.azure.com/#Analyticsblade/search/index?_timeInterval.intervalEnd=2018-03-26T09%3a10%3a40.0000000Z&_timeInterval.intervalDuration=3600&q=Usage",
+    "LinkToSearchResultsAPI": "https://api.loganalytics.io/v1/workspaces/workspaceID/query?query=Heartbeat&timespan=2020-05-07T18%3a11%3a51.0000000Z%2f2020-05-07T18%3a16%3a51.0000000Z",
+    "LinkToFilteredSearchResultsAPI": "https://api.loganalytics.io/v1/workspaces/workspaceID/query?query=Heartbeat&timespan=2020-05-07T18%3a11%3a51.0000000Z%2f2020-05-07T18%3a16%3a51.0000000Z",
     "Description": "log alert rule",
     "Severity": "Warning",
-    "SearchResult":
+    "AffectedConfigurationItems": [
+        "INC-Gen2Alert"
+    ],
+    "Dimensions": [
         {
-        "tables":[
-                    {"name":"PrimaryResult","columns":
-                        [
-                        {"name":"$table","type":"string"},
-                        {"name":"Id","type":"string"},
-                        {"name":"TimeGenerated","type":"datetime"}
-                        ],
-                    "rows":
-                        [
-                            ["Fabrikam","33446677a","2018-02-02T15:03:12.18Z"],
-                            ["Contoso","33445566b","2018-02-02T15:16:53.932Z"]
-                        ]
+            "name": "Computer",
+            "value": "INC-Gen2Alert"
+        }
+    ],
+    "SearchResult": {
+        "tables": [
+            {
+                "name": "PrimaryResult",
+                "columns": [
+                    {
+                        "name": "$table",
+                        "type": "string"
+                    },
+                    {
+                        "name": "Computer",
+                        "type": "string"
+                    },
+                    {
+                        "name": "TimeGenerated",
+                        "type": "datetime"
                     }
+                ],
+                "rows": [
+                    [
+                        "Fabrikam",
+                        "33446677a",
+                        "2018-02-02T15:03:12.18Z"
+                    ],
+                    [
+                        "Contoso",
+                        "33445566b",
+                        "2018-02-02T15:16:53.932Z"
+                    ]
                 ]
-        },
-    "WorkspaceId":"12345a-1234b-123c-123d-12345678e",
+            }
+        ]
+    },
+    "WorkspaceId": "12345a-1234b-123c-123d-12345678e",
     "AlertType": "Metric measurement"
- }
+}
  ```
 
 > [!NOTE]
@@ -131,39 +162,64 @@ ms.locfileid: "77667709"
     
 ```json
 {
-    "schemaId":"Microsoft.Insights/LogAlert","data":
-    { 
-    "SubscriptionId":"12345a-1234b-123c-123d-12345678e",
-    "AlertRuleName":"AcmeRule",
-    "SearchQuery":"requests | where resultCode == \"500\"",
-    "SearchIntervalStartTimeUtc": "2018-03-26T08:10:40Z",
-    "SearchIntervalEndtimeUtc": "2018-03-26T09:10:40Z",
-    "AlertThresholdOperator": "Greater Than",
-    "AlertThresholdValue": 0,
-    "ResultCount": 2,
-    "SearchIntervalInSeconds": 3600,
-    "LinkToSearchResults": "https://portal.azure.com/AnalyticsBlade/subscriptions/12345a-1234b-123c-123d-12345678e/?query=search+*+&timeInterval.intervalEnd=2018-03-26T09%3a10%3a40.0000000Z&_timeInterval.intervalDuration=3600&q=Usage",
-    "Description": null,
-    "Severity": "3",
-    "SearchResult":
-        {
-        "tables":[
-                    {"name":"PrimaryResult","columns":
+    "schemaId": "Microsoft.Insights/LogAlert",
+    "data": {
+        "SubscriptionId": "12345a-1234b-123c-123d-12345678e",
+        "AlertRuleName": "AcmeRule",
+        "SearchQuery": "requests | where resultCode == \"500\" | summarize AggregatedValue = Count by bin(Timestamp, 5m), IP",
+        "SearchIntervalStartTimeUtc": "2018-03-26T08:10:40Z",
+        "SearchIntervalEndtimeUtc": "2018-03-26T09:10:40Z",
+        "AlertThresholdOperator": "Greater Than",
+        "AlertThresholdValue": 0,
+        "ResultCount": 2,
+        "SearchIntervalInSeconds": 3600,
+        "LinkToSearchResults": "https://portal.azure.com/AnalyticsBlade/subscriptions/12345a-1234b-123c-123d-12345678e/?query=search+*+&timeInterval.intervalEnd=2018-03-26T09%3a10%3a40.0000000Z&_timeInterval.intervalDuration=3600&q=Usage",
+        "LinkToFilteredSearchResultsUI": "https://portal.azure.com/AnalyticsBlade/subscriptions/12345a-1234b-123c-123d-12345678e/?query=search+*+&timeInterval.intervalEnd=2018-03-26T09%3a10%3a40.0000000Z&_timeInterval.intervalDuration=3600&q=Usage",
+        "LinkToSearchResultsAPI": "https://api.applicationinsights.io/v1/apps/0MyAppId0/metrics/requests/count",
+        "LinkToFilteredSearchResultsAPI": "https://api.applicationinsights.io/v1/apps/0MyAppId0/metrics/requests/count",
+        "Description": null,
+        "Severity": "3",
+        "Dimensions": [
+            {
+                "name": "IP",
+                "value": "1.1.1.1"
+            }
+        ],
+        "SearchResult": {
+            "tables": [
+                {
+                    "name": "PrimaryResult",
+                    "columns": [
+                        {
+                            "name": "$table",
+                            "type": "string"
+                        },
+                        {
+                            "name": "Id",
+                            "type": "string"
+                        },
+                        {
+                            "name": "Timestamp",
+                            "type": "datetime"
+                        }
+                    ],
+                    "rows": [
                         [
-                        {"name":"$table","type":"string"},
-                        {"name":"Id","type":"string"},
-                        {"name":"TimeGenerated","type":"datetime"}
+                            "Fabrikam",
+                            "33446677a",
+                            "2018-02-02T15:03:12.18Z"
                         ],
-                    "rows":
                         [
-                            ["Fabrikam","33446677a","2018-02-02T15:03:12.18Z"],
-                            ["Contoso","33445566b","2018-02-02T15:16:53.932Z"]
+                            "Contoso",
+                            "33445566b",
+                            "2018-02-02T15:16:53.932Z"
                         ]
-                    }
-                ]
+                    ]
+                }
+            ]
         },
-    "ApplicationId": "123123f0-01d3-12ab-123f-abc1ab01c0a1",
-    "AlertType": "Number of results"
+        "ApplicationId": "123123f0-01d3-12ab-123f-abc1ab01c0a1",
+        "AlertType": "Metric measurement"
     }
 }
 ```

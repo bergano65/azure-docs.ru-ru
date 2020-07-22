@@ -7,12 +7,13 @@ ms.date: 3/30/2020
 ms.service: key-vault
 ms.subservice: keys
 ms.topic: quickstart
-ms.openlocfilehash: 663d219e73d8b3de001e02d465016f45974855bb
-ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
+ms.custom: tracking-python
+ms.openlocfilehash: 5335d629ef6778cbab7273200652c19998c9c19d
+ms.sourcegitcommit: 398fecceba133d90aa8f6f1f2af58899f613d1e3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82982264"
+ms.lasthandoff: 06/21/2020
+ms.locfileid: "85125182"
 ---
 # <a name="quickstart-azure-key-vault-client-library-for-python"></a>Краткое руководство. Использование клиентской библиотеки Azure Key Vault для Python
 
@@ -26,7 +27,7 @@ ms.locfileid: "82982264"
 - Упрощение и автоматизация задач, связанных с TLS- и SSL-сертификатами.
 - Используйте модули HSM, отвечающие стандартам FIPS 140-2 уровня 2.
 
-[Справочная документация по API](/python/api/overview/azure/key-vault?view=azure-python) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/keyvault) | [Пакет (Python Package Index)](https://pypi.org/project/azure-keyvault/)
+[Справочная документация по API](/python/api/overview/azure/keyvault-keys-readme?view=azure-python) | [Исходный код библиотеки](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/keyvault) | [Пакет (Python Package Index)](https://pypi.org/project/azure-keyvault/)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -69,12 +70,12 @@ az keyvault create --name <your-unique-keyvault-name> -g "myResourceGroup"
 
 Самый простой способ проверить подлинность облачного приложения NET — с помощью управляемых удостоверений. Дополнительные сведения см. в статье [Provide Key Vault authentication with a managed identity](../general/managed-identity.md) (Предоставление проверки подлинности Key Vault с помощью управляемого удостоверения). 
 
-Однако для простоты в рамках этого краткого руководства создается классическое приложение, требующее использования субъекта-службы и политики управления доступом. Для участника службы требуется уникальное имя в формате http://&lt;уникальное_имя_субъекта-службы&gt;.
+Однако для простоты в рамках этого краткого руководства создается классическое приложение, требующее использования субъекта-службы и политики управления доступом. Для субъекта-службы требуется уникальное имя в формате http://&lt;уникальное_имя_субъекта-службы&gt;.
 
 Создайте субъект-службу с помощью команды Azure CLI [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac):
 
 ```azurecli
-az ad sp create-for-rbac -n "http://&lt;my-unique-service-principle-name&gt;" --sdk-auth
+az ad sp create-for-rbac -n "http://&lt;my-unique-service-principal-name&gt;" --sdk-auth
 ```
 
 Эта операция возвращает ряд пар "ключ — значение". 

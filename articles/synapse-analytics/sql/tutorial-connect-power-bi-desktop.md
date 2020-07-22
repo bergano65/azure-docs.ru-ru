@@ -1,22 +1,22 @@
 ---
-title: Руководство по подключению SQL по запросу (предварительной версии) к Power BI Desktop и созданию отчета
-description: В этом учебнике описано, как подключить SQL по запросу (предварительной версии) в Azure Synapse Analytics к Power BI Desktop и создать демонстрационный отчет на основе представления.
+title: Руководство по подключению SQL по запросу к Power BI Desktop и созданию отчета
+description: В этом руководстве описано, как подключить SQL по запросу в Azure Synapse Analytics к Power BI Desktop и создать демонстрационный отчет на основе представления.
 services: synapse analytics
 author: azaricstefan
 ms.service: synapse-analytics
 ms.topic: tutorial
-ms.subservice: ''
-ms.date: 04/15/2020
+ms.subservice: sql
+ms.date: 05/20/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: 1bdf2d0e3613af7eec339194d6d8a446be83f365
-ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
+ms.openlocfilehash: 2f4a1ab6dc2f5cb8576931ea5fc1da85f5597624
+ms.sourcegitcommit: 6fd28c1e5cf6872fb28691c7dd307a5e4bc71228
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82692406"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85213233"
 ---
-# <a name="tutorial-use-sql-on-demand-preview-with-power-bi-desktop--create-a-report"></a>Руководство по Использование SQL по запросу (предварительная версия) с Power BI Desktop и создание отчета
+# <a name="tutorial-use-sql-on-demand-with-power-bi-desktop--create-a-report"></a>Руководство по использованию SQL по запросу с Power BI Desktop и созданию отчета
 
 В этом руководстве описано следующее:
 
@@ -29,10 +29,14 @@ ms.locfileid: "82692406"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим учебником вам потребуется следующее программное обеспечение:
+Для работы с данным руководством вам потребуется:
+
+- [Power BI Desktop](https://powerbi.microsoft.com/downloads/) — требуется для визуализации данных и создания отчета.
+- [Рабочая область Azure Synapse](https://docs.microsoft.com/azure/synapse-analytics/quickstart-synapse-studio) — требуется для создания базы данных, внешнего источника данных и представления.
+
+Необязательное действие:
 
 - инструмент SQL-запросов, например [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio) или [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms).
-- [Power BI Desktop](https://powerbi.microsoft.com/downloads/).
 
 Значения для следующих параметров:
 
@@ -51,10 +55,7 @@ ms.locfileid: "82692406"
 
 ```sql
 -- Drop database if it exists
-IF EXISTS (SELECT * FROM sys.databases WHERE name = 'Demo')
-BEGIN
-    DROP DATABASE Demo
-END;
+DROP DATABASE IF EXISTS Demo
 GO
 
 -- Create new database
@@ -62,23 +63,16 @@ CREATE DATABASE [Demo];
 GO
 ```
 
-## <a name="2---create-credential"></a>2\. Создание учетных данных
+## <a name="2---create-data-source"></a>2\. Создание источника данных
 
-Учетные данные необходимы для доступа службы SQL по запросу к файлам в хранилище. Создайте учетные данные для учетной записи хранения, расположенной в том же регионе, что и конечная точка. Хотя SQL по запросу может получать доступ к учетным записям хранения из разных регионов, хранилище и конечная точка, принадлежащие к одному региону, обеспечивают лучшую производительность.
+Источник данных необходим для доступа службы SQL по запросу к файлам в хранилище. Создайте источник данных для учетной записи хранения, расположенной в том же регионе, что и конечная точка. Хотя SQL по запросу может получать доступ к учетным записям хранения из разных регионов, хранилище и конечная точка, принадлежащие к одному региону, обеспечивают лучшую производительность.
 
-Создайте учетные данные, выполнив следующий скрипт T-SQL:
+Создайте источник данных, выполнив следующий скрипт T-SQL:
 
 ```sql
-IF EXISTS (SELECT * FROM sys.credentials WHERE name = 'https://azureopendatastorage.blob.core.windows.net/censusdatacontainer')
-DROP CREDENTIAL [https://azureopendatastorage.blob.core.windows.net/censusdatacontainer];
-GO
-
--- Create credentials for Census Data container which resides in a azure open data storage account
--- There is no secret. We are using public storage account which doesn't need a secret.
-CREATE CREDENTIAL [https://azureopendatastorage.blob.core.windows.net/censusdatacontainer]
-WITH IDENTITY='SHARED ACCESS SIGNATURE',
-SECRET = '';
-GO
+-- There is no credential in data surce. We are using public storage account which doesn't need a secret.
+CREATE EXTERNAL DATA SOURCE AzureOpenData
+WITH ( LOCATION = 'https://azureopendatastorage.blob.core.windows.net/')
 ```
 
 ## <a name="3---prepare-view"></a>3\. Подготовка представления
@@ -96,7 +90,8 @@ SELECT
     *
 FROM
     OPENROWSET(
-        BULK 'https://azureopendatastorage.blob.core.windows.net/censusdatacontainer/release/us_population_county/year=20*/*.parquet',
+        BULK 'censusdatacontainer/release/us_population_county/year=20*/*.parquet',
+        DATA_SOURCE = 'AzureOpenData',
         FORMAT='PARQUET'
     ) AS uspv;
 ```
@@ -163,7 +158,7 @@ FROM
 1. Удалите учетные данные для учетной записи хранения:
 
    ```sql
-   DROP CREDENTIAL [https://azureopendatastorage.blob.core.windows.net/censusdatacontainer];
+   DROP EXTENAL DATA SOURCE AzureOpenData
    ```
 
 2. Удалите представление:

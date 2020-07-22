@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 04/11/2019
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:JavaScript
-ms.openlocfilehash: 91a4d10269975152cc62f3f5dc33238a8f6f2e11
-ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
+ms.openlocfilehash: 047e03c4fa5916119036c5e539674dc48a6c77aa
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82890522"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85554017"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-a-javascript-spa"></a>Краткое руководство. Вход пользователей и получение маркера доступа в SPA JavaScript
 
@@ -92,7 +92,7 @@ ms.locfileid: "82890522"
 >  const msalConfig = {
 >    auth: {
 >      clientId: "Enter_the_Application_Id_Here",
->      authority: "Enter_the_Cloud_Instance_Id_Here_OR_Enter_the_Tenant_Info_Here",
+>      authority: "Enter_the_Cloud_Instance_Id_Here/Enter_the_Tenant_Info_Here",
 >      redirectUri: "Enter_the_Redirect_Uri_Here",
 >    },
 >    cache: {
@@ -110,9 +110,9 @@ ms.locfileid: "82890522"
 > [!div renderon="docs"]
 >
 > Где:
-> - *\<Enter_the_Application_Id_Here>*  — **Идентификатор приложения (клиент)** для зарегистрированного приложения.
-> - *\<Enter_the_Cloud_Instance_Id_Here>*  — экземпляр облака Azure. Для основного или глобального облака Azure просто введите *https://login.microsoftonline.com* . Сведения для **национальных** облаков (например, Китая) см. в [этой статье](https://docs.microsoft.com/azure/active-directory/develop/authentication-national-cloud).
-> - *\<Enter_the_Tenant_info_here>* присваивается одно из следующих значений:
+> - *\<Enter_the_Application_Id_Here>*  — это **идентификатор приложения (клиента)** для зарегистрированного приложения.
+> - *\<Enter_the_Cloud_Instance_Id_Here>* представляет экземпляр облака Azure. Для основного или глобального облака Azure просто введите *https://login.microsoftonline.com* . Сведения для **национальных** облаков (например, Китая) см. в [этой статье](https://docs.microsoft.com/azure/active-directory/develop/authentication-national-cloud).
+> - *\<Enter_the_Tenant_info_here>* может иметь несколько значений:
 >    - Если приложение поддерживает *учетные записи только в этом каталоге организации*, замените это значение **идентификатором клиента** или **именем клиента** (например, *contoso.microsoft.com*).
 >    - Если ваше приложение поддерживает *учетные записи в любом каталоге организации*, замените это значение на **organizations**.
 >    - Если приложение поддерживает *учетные записи в любом каталоге организации и личные учетные записи Майкрософт*, замените это значение на **common**. Чтобы ограничить поддержку только *личными учетными записями Майкрософт*, замените это значение на **consumers**.
@@ -130,8 +130,8 @@ ms.locfileid: "82890522"
 > ```javascript
 >   // Add here the endpoints for MS Graph API services you would like to use.
 >   const graphConfig = {
->     graphMeEndpoint: "Enter_the_Graph_Endpoint_Herev1.0/me",
->     graphMailEndpoint: "Enter_the_Graph_Endpoint_Herev1.0/me/messages"
+>     graphMeEndpoint: "Enter_the_Graph_Endpoint_Here/v1.0/me",
+>     graphMailEndpoint: "Enter_the_Graph_Endpoint_Here/v1.0/me/messages"
 >   };
 >
 >   // Add here scopes for access token to be used at MS Graph API endpoints.
@@ -144,7 +144,7 @@ ms.locfileid: "82890522"
 > [!div renderon="docs"]
 >
 > Где:
-> - *\<Enter_the_Graph_Endpoint_Here>*  — это конечная точка, для которой будут выполняться вызовы API. Для основной или глобальной службы API Microsoft Graph просто введите `https://graph.microsoft.com`. Дополнительные сведения см. в статье [Национальные облачные развертывания](https://docs.microsoft.com/graph/deployments).
+> - *\<Enter_the_Graph_Endpoint_Here>* обозначает конечную точку, к которой будут направляться вызовы API. Для основной или глобальной службы API Microsoft Graph просто введите `https://graph.microsoft.com`. Дополнительные сведения см. в статье [Национальные облачные развертывания](https://docs.microsoft.com/graph/deployments).
 >
 > #### <a name="step-4-run-the-project"></a>Шаг 4. Запуск проекта
 
@@ -204,7 +204,7 @@ npm install msal
 const myMSALObj = new Msal.UserAgentApplication(msalConfig);
 ```
 
-> |Where  |  |
+> |Where  | Описание |
 > |---------|---------|
 > |`clientId`     | Идентификатор приложения, зарегистрированного на портале Azure.|
 > |`authority`    | (Необязательно.) Это URL-адрес центра сертификации, предназначенный для поддержки типов учетных записей, как описано выше в разделе конфигурации. По умолчанию центром является `https://login.microsoftonline.com/common`. |
@@ -232,7 +232,7 @@ myMSALObj.loginPopup(loginRequest)
 });
 ```
 
-> |Where  |  |
+> |Where  | Описание |
 > |---------|---------|
 > | `scopes`   | (Необязательно.) Содержит области, для которых запрашивается согласие пользователя во время входа в систему. Например, `[ "user.read" ]` для Microsoft Graph или `[ "<Application ID URL>/scope" ]` для пользовательских веб-API (то есть `api://<Application ID>/access_as_user`). |
 
@@ -262,7 +262,7 @@ myMSALObj.acquireTokenSilent(tokenRequest)
     });
 ```
 
-> |Where  |  |
+> |Where  | Описание |
 > |---------|---------|
 > | `scopes`   | Содержит запрашиваемые области, которые должны быть возвращены в маркере доступа для API. Например, `[ "mail.read" ]` для Microsoft Graph или `[ "<Application ID URL>/scope" ]` для пользовательских веб-API (то есть `api://<Application ID>/access_as_user`).|
 

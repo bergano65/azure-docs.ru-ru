@@ -5,12 +5,12 @@ author: srrengar
 ms.topic: conceptual
 ms.date: 11/21/2018
 ms.author: srrengar
-ms.openlocfilehash: 0819ca02d088aeb9ada5de1269467f70242bbcca
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c2114f5392da788bb440589e69e704a148731e02
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75609916"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86258617"
 ---
 # <a name="performance-monitoring-with-the-windows-azure-diagnostics-extension"></a>Мониторинг производительности с помощью расширения для Диагностики Azure для Windows
 
@@ -193,5 +193,5 @@ ms.locfileid: "75609916"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Собирайте данные дополнительных счетчиков производительности для кластера. Список счетчиков, данные которых следует собирать, см. в статье [Метрики производительности](service-fabric-diagnostics-event-generation-perf.md).
-* [Используйте мониторинг и систему диагностики с виртуальной машиной Windows и шаблонами Azure Resource Manager](../virtual-machines/windows/extensions-diagnostics-template.md), чтобы внести изменения в раздел `WadCfg`, включая настройку дополнительных учетных записей хранения для отправки данных диагностики.
-* Посетите [Построитель WadCfg](https://azure.github.io/azure-diagnostics-tools/config-builder/) , чтобы создать шаблон с нуля и убедиться в правильности синтаксиса. (https://azure.github.io/azure-diagnostics-tools/config-builder/) чтобы создать шаблон с нуля и убедиться в правильности синтаксиса.
+* [Используйте мониторинг и систему диагностики с виртуальной машиной Windows и шаблонами Azure Resource Manager](../virtual-machines/extensions/diagnostics-template.md), чтобы внести изменения в раздел `WadCfg`, включая настройку дополнительных учетных записей хранения для отправки данных диагностики.
+* Посетите [Построитель WadCfg](https://azure.github.io/azure-diagnostics-tools/config-builder/) , чтобы создать шаблон с нуля и убедиться в правильности синтаксиса. ( https://azure.github.io/azure-diagnostics-tools/config-builder/) чтобы создать шаблон с нуля и убедиться в правильности синтаксиса.

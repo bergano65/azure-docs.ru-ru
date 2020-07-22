@@ -5,15 +5,15 @@ description: Установите безопасное подключение м
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/04/2020
 ms.author: cherylmc
-ms.openlocfilehash: 013ebc2a1343c8eab3d477023e36660c93fa6da5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 33f35dc2a8224f496e040b66b2b92bc4c2ec4682
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79244489"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84984850"
 ---
 # <a name="configure-a-point-to-site-vpn-connection-to-a-vnet-using-native-azure-certificate-authentication-azure-portal"></a>Настройка VPN-подключения типа "точка — сеть" к виртуальной сети с помощью собственной аутентификации Azure Certificate: портал Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "79244489"
 
 ![Схема соединения компьютера с виртуальной сетью Azure через подключение типа "точка — сеть"](./media/vpn-gateway-howto-point-to-site-resource-manager-portal/p2snativeportal.png)
 
-## <a name="architecture"></a>Architecture
+## <a name="architecture"></a>Архитектура
 
 Для собственной аутентификации Azure на основе сертификата при подключениях "точка — сеть" необходимы следующие компоненты, которые можно настроить в этом руководстве:
 
@@ -105,7 +105,7 @@ ms.locfileid: "79244489"
 
 В качестве **типа проверки подлинности**выберите **сертификат Azure**.
 
-  ![Authentication type (Тип проверки подлинности)](./media/vpn-gateway-howto-point-to-site-resource-manager-portal/authentication-type.png "Укажите тип проверки подлинности")
+  ![Тип проверки подлинности](./media/vpn-gateway-howto-point-to-site-resource-manager-portal/authentication-type.png "Укажите тип проверки подлинности")
 
 ## <a name="7-upload-the-root-certificate-public-certificate-data"></a><a name="uploadfile"></a>7. Отправка данных открытого сертификата корневого сертификата
 
@@ -159,7 +159,7 @@ ms.locfileid: "79244489"
 
 ### <a name="to-connect-from-a-mac-vpn-client"></a>Подключение из VPN-клиента для Mac
 
-В диалоговом окне сеть найдите профиль клиента, который вы хотите использовать, укажите параметры из [файл vpnsettings. XML](point-to-site-vpn-client-configuration-azure-cert.md#installmac)и нажмите кнопку **подключить**.
+В диалоговом окне сеть найдите профиль клиента, который вы хотите использовать, укажите параметры из [VpnSettings.xml](point-to-site-vpn-client-configuration-azure-cert.md#installmac)и нажмите кнопку **подключить**.
 
 Ознакомьтесь с подробными инструкциями в разделе [Установка Mac (OS X)](https://docs.microsoft.com/azure/vpn-gateway/point-to-site-vpn-client-configuration-azure-cert#installmac). Если у вас возникают неполадки подключения, убедитесь, что шлюз виртуальной сети не использует SKU "Базовый". SKU "Базовый" не поддерживается для клиентов Mac.
 
@@ -227,7 +227,7 @@ ms.locfileid: "79244489"
 
 [!INCLUDE [Point-to-Site FAQ](../../includes/vpn-gateway-faq-p2s-azurecert-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 Установив подключение, можно добавить виртуальные машины в виртуальные сети. Дополнительные сведения о виртуальных машинах см. [здесь](https://docs.microsoft.com/azure/). Дополнительные сведения о сетях и виртуальных машинах см. в статье [Azure и Linux: обзор сетей виртуальных машин](../virtual-machines/linux/azure-vm-network-overview.md).
 
 Дополнительные сведения см. в руководстве по [устранению неполадок подключения типа "точка — сеть" в Azure](vpn-gateway-troubleshoot-vpn-point-to-site-connection-problems.md).

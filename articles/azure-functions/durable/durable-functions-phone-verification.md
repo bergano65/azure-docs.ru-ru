@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
 ms.openlocfilehash: 4e0f71369bc02fdce5625d9c74e1d52264ed86be
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80335750"
 ---
 # <a name="human-interaction-in-durable-functions---phone-verification-sample"></a>Участие пользователя в устойчивых функциях. Пример проверки номера телефона
@@ -45,7 +45,7 @@ ms.locfileid: "80335750"
 [!code-csharp[Main](~/samples-durable-functions/samples/precompiled/PhoneVerification.cs?range=17-70)]
 
 > [!NOTE]
-> Сперва это может показаться неочевидным, но эта функция оркестратора полностью детерминированная. Он детерминирован, так как `CurrentUtcDateTime` свойство используется для вычисления времени окончания срока действия таймера и возвращает одно и то же значение при каждом воспроизведении на этом этапе в коде Orchestrator. Такое поведение важно для того, чтобы обеспечить одинаковый `winner` результат каждого повторяющегося вызова. `Task.WhenAny`
+> Сперва это может показаться неочевидным, но эта функция оркестратора полностью детерминированная. Он детерминирован, так как `CurrentUtcDateTime` свойство используется для вычисления времени окончания срока действия таймера и возвращает одно и то же значение при каждом воспроизведении на этом этапе в коде Orchestrator. Такое поведение важно для того, чтобы обеспечить одинаковый `winner` результат каждого повторяющегося вызова `Task.WhenAny` .
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -58,7 +58,7 @@ ms.locfileid: "80335750"
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/E4_SmsPhoneVerification/index.js)]
 
 > [!NOTE]
-> Сперва это может показаться неочевидным, но эта функция оркестратора полностью детерминированная. Он детерминирован, так как `currentUtcDateTime` свойство используется для вычисления времени окончания срока действия таймера и возвращает одно и то же значение при каждом воспроизведении на этом этапе в коде Orchestrator. Такое поведение важно для того, чтобы обеспечить одинаковый `winner` результат каждого повторяющегося вызова. `context.df.Task.any`
+> Сперва это может показаться неочевидным, но эта функция оркестратора полностью детерминированная. Он детерминирован, так как `currentUtcDateTime` свойство используется для вычисления времени окончания срока действия таймера и возвращает одно и то же значение при каждом воспроизведении на этом этапе в коде Orchestrator. Такое поведение важно для того, чтобы обеспечить одинаковый `winner` результат каждого повторяющегося вызова `context.df.Task.any` .
 
 ---
 
@@ -83,7 +83,7 @@ ms.locfileid: "80335750"
 [!code-csharp[Main](~/samples-durable-functions/samples/precompiled/PhoneVerification.cs?range=72-89)]
 
 > [!NOTE]
-> Для запуска примера кода необходимо установить `Microsoft.Azure.WebJobs.Extensions.Twilio` пакет NuGet.
+> Для `Microsoft.Azure.WebJobs.Extensions.Twilio` запуска примера кода необходимо установить пакет NuGet.
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -120,7 +120,7 @@ Location: http://{host}/runtime/webhooks/durabletask/instances/741c65651d4c40cea
 
 Функция оркестратора получает указанный номер телефона и немедленно отправляет на него SMS-сообщение со случайно сгенерированным 4-значным кодом проверки, например *2168*. Функция ожидает ответ в течение 90 секунд.
 
-Чтобы ответить на код, можно использовать [ `RaiseEventAsync` `raiseEvent` (.NET) или (JavaScript)](durable-functions-instance-management.md) в другой функции или вызвать веб-перехватчик HTTP Post **sendEventUrl** , указанный выше в ответе 202 выше, заменив `{eventName}` именем события: `SmsChallengeResponse`
+Чтобы ответить на код, можно использовать [ `RaiseEventAsync` (.NET) или `raiseEvent` (JavaScript)](durable-functions-instance-management.md) в другой функции или вызвать веб-перехватчик HTTP Post **sendEventUrl** , указанный выше в ответе 202 выше, заменив `{eventName}` именем события `SmsChallengeResponse` :
 
 ```
 POST http://{host}/runtime/webhooks/durabletask/instances/741c65651d4c40cea29acdd5bb47baf1/raiseEvent/SmsChallengeResponse?taskHub=DurableFunctionsHub&connection=Storage&code={systemKey}
@@ -154,7 +154,7 @@ Content-Length: 145
 {"runtimeStatus":"Completed","input":"+1425XXXXXXX","output":false,"createdTime":"2017-06-29T19:20:49Z","lastUpdatedTime":"2017-06-29T19:22:23Z"}
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом примере демонстрируются некоторые расширенные возможности Устойчивые функции, особенно `WaitForExternalEvent` и `CreateTimer` API. Вы узнали, как их можно использовать совместно с `Task.WaitAny`, чтобы реализовать надежную систему времени ожидания, которая часто полезна для взаимодействия с реальными людьми. Дополнительные сведения об использовании устойчивых функций см. в серии статей, где подробно рассматриваются определенные темы.
 

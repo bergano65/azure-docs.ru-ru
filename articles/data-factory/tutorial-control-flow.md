@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 9/27/2019
-ms.openlocfilehash: 77fa8f72d4d4d929d15859fde71f112de1ddd14e
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 0330e72ad74726f97bfdfd78ef8d5f9b24a5d172
+ms.sourcegitcommit: 374e47efb65f0ae510ad6c24a82e8abb5b57029e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81418734"
+ms.lasthandoff: 06/28/2020
+ms.locfileid: "85513308"
 ---
 # <a name="branching-and-chaining-activities-in-a-data-factory-pipeline"></a>Ветвления и создание цепочки действий в конвейере фабрики данных
 
@@ -48,13 +48,13 @@ ms.locfileid: "81418734"
 
 * Учетная запись хранения Azure. В этом руководстве в качестве источника будет использоваться хранилище BLOB-объектов. Если у вас нет учетной записи хранения Azure, ознакомьтесь с разделом [Создание учетной записи хранения](../storage/common/storage-account-create.md).
 * Обозреватель хранилищ Azure Сведения об установке этого инструмента см. раздел [Обозреватель службы хранилища Azure](https://storageexplorer.com/).
-* База данных SQL Azure. Вы используете базу данных как хранилище данных-приемник. Если у вас нет базы данных SQL Azure, см. статью [Создание базы данных SQL Azure](../sql-database/sql-database-get-started-portal.md).
+* База данных SQL Azure. Вы используете базу данных как хранилище данных-приемник. Если у вас нет базы данных в службе "База данных SQL Azure", воспользуйтесь кратким руководством [Создание отдельной базы данных в Базе данных SQL Azure](../azure-sql/database/single-database-create-quickstart.md).
 * приведенному. В этой статье используется Visual Studio 2019.
 * Пакет Azure SDK для .NET. Загрузите и установите пакет [Azure SDK для .NET](https://azure.microsoft.com/downloads/).
 
 Список регионов Azure, в которых в настоящее время доступна Фабрика Данных, см. в статье [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/). Хранилища данных и вычислительные мощности могут находиться в других регионах. Это могут быть как хранилища Azure, так базы данных SQL Azure. В качестве средства вычислений может быть HDInsight, используемый Фабрикой Данных.
 
-Создайте приложение, как описано в разделе [Создание приложения Azure Active Directory](../active-directory/develop/howto-create-service-principal-portal.md#create-an-azure-active-directory-application). Назначьте приложению роль **Участник**, следуя указаниям в той же статье. Вам потребуются несколько значений для последующих частей этого руководства, такие как **Application (client) ID** (Идентификатор приложения (клиента)) и **Directory (tenant) ID** (Идентификатор каталога (клиента)).
+Создайте приложение, как описано в разделе [Создание приложения Azure Active Directory](../active-directory/develop/howto-create-service-principal-portal.md#register-an-application-with-azure-ad-and-create-a-service-principal). Назначьте приложению роль **Участник**, следуя указаниям в той же статье. Вам потребуются несколько значений для последующих частей этого руководства, такие как **Application (client) ID** (Идентификатор приложения (клиента)) и **Directory (tenant) ID** (Идентификатор каталога (клиента)).
 
 ### <a name="create-a-blob-table"></a>Создание таблицы больших двоичных объектов
 

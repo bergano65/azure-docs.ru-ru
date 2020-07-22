@@ -9,12 +9,11 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: pafarley
-ms.openlocfilehash: 9342d87318eb6a5248c75d2333fb5e2a4cbef8f4
-ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
-ms.translationtype: MT
+ms.openlocfilehash: c6780d952b9ce6ea58fc6c8a2509a4526add7149
+ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83873293"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86028253"
 ---
 # <a name="build-a-training-data-set-for-a-custom-model"></a>Создание набора обучающих данных для пользовательской модели
 
@@ -26,7 +25,7 @@ ms.locfileid: "83873293"
 
 ## <a name="training-data-tips"></a>Советы по обучению данных
 
-Важно использовать набор данных, оптимизированный для обучения. Используйте следующие советы, чтобы получить лучшие результаты операции [обучения пользовательской модели](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/TrainCustomModelAsync) .
+Важно использовать набор данных, оптимизированный для обучения. Используйте следующие советы, чтобы получить лучшие результаты операции [обучения пользовательской модели](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/TrainCustomModelAsync) .
 
 * По возможности используйте текстовый PDF-документ вместо документов на основе изображений. Проверенные документы PDF обрабатываются как изображения.
 * Для заполненных форм используйте примеры с заполненными полями.
@@ -44,11 +43,11 @@ ms.locfileid: "83873293"
 
 После объединения набора документов формы, которые будут использоваться для обучения, необходимо передать их в контейнер хранилища BLOB-объектов Azure. Если вы не умеете создавать учетную запись хранения Azure с контейнером, [для портал Azure см. Краткое руководство по службе хранилища Azure](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal).
 
-Если вы хотите использовать данные, помеченные вручную, вам также потребуется передать файлы *. labels. JSON* и *. OCR. JSON* , соответствующие учебным документам. Чтобы создать эти файлы, можно использовать [Образец средства создания меток](./quickstarts/label-tool.md) (или собственный пользовательский интерфейс).
+Если вы хотите использовать данные, помеченные вручную, вам также потребуется передать *.labels.js* и *.ocr.js* файлы, соответствующие учебным документам. Чтобы создать эти файлы, можно использовать [Образец средства создания меток](./quickstarts/label-tool.md) (или собственный пользовательский интерфейс).
 
 ### <a name="organize-your-data-in-subfolders-optional"></a>Упорядочение данных во вложенных папках (необязательно)
 
-По умолчанию API для [обучения настраиваемой модели](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/TrainCustomModelAsync) будет использовать только документы форм, расположенные в корне контейнера хранилища. Однако вы можете обучить данные во вложенных папках, если указать их в вызове API. Как правило, тело вызова функции [обучения пользовательской модели](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/TrainCustomModelAsync) имеет следующий формат, где `<SAS URL>` — URL-адрес подписи общего доступа к контейнеру:
+По умолчанию API для [обучения настраиваемой модели](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/TrainCustomModelAsync) будет использовать только документы форм, расположенные в корне контейнера хранилища. Однако вы можете обучить данные во вложенных папках, если указать их в вызове API. Как правило, тело вызова функции [обучения пользовательской модели](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/TrainCustomModelAsync) имеет следующий формат, где `<SAS URL>` — URL-адрес подписи общего доступа к контейнеру:
 
 ```json
 {
@@ -69,7 +68,7 @@ ms.locfileid: "83873293"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы узнали, как создать набор обучающих данных, выполните инструкции из краткого руководства по обучению настраиваемой модели распознавателя форм и начните использовать ее в своих формах.
 

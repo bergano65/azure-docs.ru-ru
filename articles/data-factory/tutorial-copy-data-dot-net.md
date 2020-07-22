@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.date: 11/08/2019
 ms.author: jingwang
-ms.openlocfilehash: a835e67b1091a55c832955d8dac8615289a6d99e
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: b2293c0dd74903921abb58037afd8eb5db3659d9
+ms.sourcegitcommit: 374e47efb65f0ae510ad6c24a82e8abb5b57029e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81418702"
+ms.lasthandoff: 06/28/2020
+ms.locfileid: "85513261"
 ---
 # <a name="copy-data-from-azure-blob-to-azure-sql-database-using-azure-data-factory"></a>Копирование данных из хранилища BLOB-объектов Azure в Базу данных SQL Azure с помощью фабрики данных Azure
 
@@ -41,10 +41,10 @@ ms.locfileid: "81418702"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * *Учетная запись хранения Azure.* В этом руководстве в качестве *источника* будет использоваться хранилище BLOB-объектов. Если у вас нет учетной записи хранения Azure, см. инструкции по [созданию учетной записи хранения общего назначения](../storage/common/storage-account-create.md).
-* *База данных SQL Azure*. Используйте базу данных как хранилище данных-*приемник*. Если у вас нет базы данных SQL Azure, см. статью [Создание базы данных SQL Azure](../sql-database/sql-database-single-database-get-started.md).
+* *База данных SQL Azure*. Используйте базу данных как хранилище данных-*приемник*. Если у вас нет базы данных в службе "База данных SQL Azure", воспользуйтесь кратким руководством [Создание отдельной базы данных в Базе данных SQL Azure](../azure-sql/database/single-database-create-quickstart.md).
 * *Visual Studio*. В этом пошаговом руководстве используется Visual Studio 2019.
 * *[Пакет Azure SDK для .NET](/dotnet/azure/dotnet-tools)* .
-* *Приложение Azure Active Directory*. Если у вас нет приложения Azure Active Directory, см. раздел [о создании такого приложения](../active-directory/develop/howto-create-service-principal-portal.md#create-an-azure-active-directory-application) из [руководства по созданию приложения AAD с помощью портала](../active-directory/develop/howto-create-service-principal-portal.md). Скопируйте следующие значения для использования на следующих шагах: **идентификатор приложения (клиента)** , **ключ проверки подлинности** и **идентификатор каталога (арендатора)** . Назначьте приложению роль **Участник**, следуя указаниям в той же статье.
+* *Приложение Azure Active Directory*. Если у вас нет приложения Azure Active Directory, см. раздел [о создании такого приложения](../active-directory/develop/howto-create-service-principal-portal.md#register-an-application-with-azure-ad-and-create-a-service-principal) из [руководства по созданию приложения AAD с помощью портала](../active-directory/develop/howto-create-service-principal-portal.md). Скопируйте следующие значения для использования на следующих шагах: **идентификатор приложения (клиента)** , **ключ проверки подлинности** и **идентификатор каталога (арендатора)** . Назначьте приложению роль **Участник**, следуя указаниям в той же статье.
 
 ### <a name="create-a-blob-and-a-sql-table"></a>Создание большого двоичного объекта и таблицы SQL
 
@@ -81,7 +81,7 @@ ms.locfileid: "81418702"
     CREATE CLUSTERED INDEX IX_emp_ID ON dbo.emp (ID);
     ```
 
-2. Предоставьте службам Azure доступ к серверу SQL Server. Убедитесь, что доступ к службам Azure разрешен для вашего сервера Azure SQL Server, чтобы служба "Фабрика данных" могла записывать на него данные. Чтобы проверить и при необходимости включить этот параметр, сделайте следующее.
+2. Предоставьте службам Azure доступ к базе данных SQL. Убедитесь, что доступ к службам Azure разрешен для вашего сервера, чтобы служба "Фабрика данных" могла записывать данные в базу данных SQL. Чтобы проверить и при необходимости включить этот параметр, сделайте следующее.
 
     1. Перейдите на [портал Azure](https://portal.azure.com) для управления сервером SQL Server. Выполните поиск по фразе **Серверы SQL** и выберите этот вариант.
 

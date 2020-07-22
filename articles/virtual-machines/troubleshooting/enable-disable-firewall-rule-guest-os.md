@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: azurecli
 ms.date: 11/22/2018
 ms.author: delhan
-ms.openlocfilehash: e93dbd085ce99b8d555d6b9bb04e7eb6f60de0ee
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f9484b81622e208077f0659975f42f46d90d2137
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80422898"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86232242"
 ---
 # <a name="enable-or-disable-a-firewall-rule-on-an-azure-vm-guest-os"></a>Включение или отключение правила брандмауэра в гостевой ОС на виртуальной машине Azure
 
@@ -51,7 +51,7 @@ ms.locfileid: "80422898"
 
 2.  Отправьте этот скрипт в Azure с помощью функции [расширения пользовательских скриптов](../extensions/custom-script-windows.md). 
 
-#### <a name="mitigation-2-remote-powershell"></a>Решение 2. Удаленный сеанс PowerShell
+#### <a name="mitigation-2-remote-powershell"></a>Решение 2. Удаленный сеанс PowerShell
 
 Если виртуальная машина подключена к сети и к ней есть доступ с другой виртуальной машины в той же виртуальной сети, проблемы можно устранить с помощью второй виртуальной машины.
 
@@ -73,7 +73,7 @@ ms.locfileid: "80422898"
         exit
         ```
 
-#### <a name="mitigation-3-pstools-commands"></a>Решение 3. Команды PSTools
+#### <a name="mitigation-3-pstools-commands"></a>Решение 3. Команды PSTools
 
 Если виртуальная машина подключена к сети и к ней есть доступ с другой виртуальной машины в той же виртуальной сети, проблемы можно устранить с помощью второй виртуальной машины.
 
@@ -93,11 +93,11 @@ ms.locfileid: "80422898"
         netsh advfirewall firewall set rule dir=in name="Remote Desktop - User Mode (TCP-In)" new enable=no
         ```
 
-#### <a name="mitigation-4-remote-registry"></a>Решение 4. Удаленный реестр
+#### <a name="mitigation-4-remote-registry"></a>Решение 4. Удаленный реестр
 
 Если виртуальная машина подключена к сети и к ней есть доступ с другой виртуальной машины в той же виртуальной сети, можно применить [удаленный реестр](https://support.microsoft.com/help/314837/how-to-manage-remote-access-to-the-registry) на второй виртуальной машине.
 
-1.  На виртуальной машине для устранения неполадок запустите редактор реестра (regedit. exe) и выберите **файл** > **Подключить сетевой реестр**.
+1.  На виртуальной машине для устранения неполадок запустите редактор реестра (regedit.exe), а затем выберите **файл**  >  **Подключить сетевой реестр**.
 
 2.  Откройте ветвь \SYSTEM *целевого компьютера*и укажите следующие значения:
 
@@ -107,7 +107,7 @@ ms.locfileid: "80422898"
     
         Измените **Active=FALSE** на **Active=TRUE** в следующей строке:
 
-        **v 22E | Действие = разрешить | Активный = TRUE | Dir = in | Протокол = 6 | Профиль = домен | Профиль = частный | Профиль = общедоступный | Лпорт = 3389 | Приложение =%SystemRoot%\system32\svchost.exe | SVC = TermService | Name =\@фиреваллапи. dll,-28775 | Desc =\@фиреваллапи. dll,-28756 | Ембедкткст =\@фиреваллапи. dll,-28752 |**
+        `v2.22|Action=Allow|Active=TRUE|Dir=In|Protocol=6|Profile=Domain|Profile=Private|Profile=Public|LPort=3389|App=%SystemRoot%\system32\svchost.exe|Svc=termservice|Name=\@FirewallAPI.dll,-28775|Desc=\@FirewallAPI.dll,-28756|EmbedCtxt=\@FirewallAPI.dll,-28752|`
     
     * Чтобы отключить правило, откройте следующий параметр реестра:
     
@@ -115,7 +115,7 @@ ms.locfileid: "80422898"
 
         Измените **Active=TRUE** на **Active=FALSE**:
         
-        **v 22E | Действие = разрешить | Активный = FALSE | Dir = in | Протокол = 6 | Профиль = домен | Профиль = частный | Профиль = общедоступный | Лпорт = 3389 | Приложение =%SystemRoot%\system32\svchost.exe | SVC = TermService | Name =\@фиреваллапи. dll,-28775 | Desc =\@фиреваллапи. dll,-28756 | Ембедкткст =\@фиреваллапи. dll,-28752 |**
+        `v2.22|Action=Allow|Active=FALSE|Dir=In|Protocol=6|Profile=Domain|Profile=Private|Profile=Public|LPort=3389|App=%SystemRoot%\system32\svchost.exe|Svc=termservice|Name=\@FirewallAPI.dll,-28775|Desc=\@FirewallAPI.dll,-28756|EmbedCtxt=\@FirewallAPI.dll,-28752|`
 
 3.  Чтобы применить эти изменения, перезапустите виртуальную машину.
 
@@ -135,7 +135,7 @@ ms.locfileid: "80422898"
 
 5.  На виртуальной машине для устранения неполадок откройте редактор реестра (regedit.exe).
 
-6.  Выделите ключ **HKEY_LOCAL_MACHINE** , а затем в меню выберите **файл** > **Загрузить куст** .
+6.  Выделите ключ **HKEY_LOCAL_MACHINE** , а затем в меню выберите **файл**  >  **Загрузить куст** .
 
     ![Regedit](./media/enable-or-disable-firewall-rule-guest-os/load-registry-hive.png)
 
@@ -154,7 +154,7 @@ ms.locfileid: "80422898"
         
         Измените здесь **Active=FALSE** на **Active=TRUE**.
         
-        **v 22E | Действие = разрешить | Активный = TRUE | Dir = in | Протокол = 6 | Профиль = домен | Профиль = частный | Профиль = общедоступный | Лпорт = 3389 | Приложение =%SystemRoot%\system32\svchost.exe | SVC = TermService | Name =\@фиреваллапи. dll,-28775 | Desc =\@фиреваллапи. dll,-28756 | Ембедкткст =\@фиреваллапи. dll,-28752 |**
+        `v2.22|Action=Allow|Active=TRUE|Dir=In|Protocol=6|Profile=Domain|Profile=Private|Profile=Public|LPort=3389|App=%SystemRoot%\system32\svchost.exe|Svc=termservice|Name=\@FirewallAPI.dll,-28775|Desc=\@FirewallAPI.dll,-28756|EmbedCtxt=\@FirewallAPI.dll,-28752|`
 
     3.  Чтобы отключить правило, откройте следующий раздел реестра:
 
@@ -162,9 +162,9 @@ ms.locfileid: "80422898"
 
         Измените **Active=TRUE** на **Active=FALSE**.
         
-        **v 22E | Действие = разрешить | Активный = FALSE | Dir = in | Протокол = 6 | Профиль = домен | Профиль = частный | Профиль = общедоступный | Лпорт = 3389 | Приложение =%SystemRoot%\system32\svchost.exe | SVC = TermService | Name =\@фиреваллапи. dll,-28775 | Desc =\@фиреваллапи. dll,-28756 | Ембедкткст =\@фиреваллапи. dll,-28752 |**
+        `v2.22|Action=Allow|Active=FALSE|Dir=In|Protocol=6|Profile=Domain|Profile=Private|Profile=Public|LPort=3389|App=%SystemRoot%\system32\svchost.exe|Svc=termservice|Name=\@FirewallAPI.dll,-28775|Desc=\@FirewallAPI.dll,-28756|EmbedCtxt=\@FirewallAPI.dll,-28752|`
 
-9.  Выделите **BROKENSYSTEM**, а затем в меню выберите **файл** > **Выгрузить куст Hive** .
+9.  Выделите **BROKENSYSTEM**, а затем в меню выберите **файл**  >  **Выгрузить куст Hive** .
 
 10. [Отсоедините системный диск и повторно создайте виртуальную машину](troubleshoot-recovery-disks-portal-windows.md).
 

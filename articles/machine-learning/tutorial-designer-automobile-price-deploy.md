@@ -1,5 +1,5 @@
 ---
-title: Руководство по развертыванию модели машинного обучения с помощью конструктора
+title: Руководство по развертыванию моделей машинного обучения с помощью конструктора (предварительная версия)
 titleSuffix: Azure Machine Learning
 description: Сведения о том, как создавать решения для прогнозной аналитики в конструкторе Машинного обучения Azure (предварительная версия). Обучение, оценка и развертывание модели машинного обучения с помощью модулей перетаскивания.
 author: peterclu
@@ -8,13 +8,14 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
-ms.date: 11/04/2019
-ms.openlocfilehash: c3ca37fd47b6551a95f9a491053ec7863acd1eeb
-ms.sourcegitcommit: 0553a8b2f255184d544ab231b231f45caf7bbbb0
+ms.date: 06/28/2020
+ms.custom: designer
+ms.openlocfilehash: 1d0cd074f6e4ad836bc5102f3f6edc61b75215e4
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80389398"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86199964"
 ---
 # <a name="tutorial-deploy-a-machine-learning-model-with-the-designer-preview"></a>Руководство по развертыванию модели машинного обучения с помощью конструктора (предварительная версия)
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-enterprise-sku.md)]
@@ -39,7 +40,7 @@ ms.locfileid: "80389398"
 
 1. Над холстом конвейера выберите **Create inference pipeline (Создать конвейер вывода)**  > **Real-time inference pipeline (Конвейер вывода в режиме реального времени)** .
 
-    ![Снимок экрана, на котором показано, где найти кнопку для создания конвейера](./media/tutorial-designer-automobile-price-deploy/tutorial2-create-inference-pipeline.png)
+    :::image type="content" source="./media/tutorial-designer-automobile-price-deploy/tutorial2-create-inference-pipeline.png"alt-text="Снимок экрана, на котором показано, где найти кнопку для создания конвейера":::
 
     Теперь этот конвейер будет выглядеть следующим образом: 
 
@@ -71,7 +72,7 @@ ms.locfileid: "80389398"
 1. В ленте навигации выберите **Inference Clusters** (Кластеры вывода)  >  **+ Создать**.
 
     ![Снимок экрана, показывающий, как переходить в новую область кластера вывода](./media/tutorial-designer-automobile-price-deploy/new-inference-cluster.png)
-
+   
 1. В области кластера вывода настройте новую службу Kubernetes.
 
 1. Введите *aks-compute* в поле **Имя вычислений**.
@@ -95,8 +96,8 @@ ms.locfileid: "80389398"
 1. Выберите созданный кластер AKS.
 
 1. Выберите **Развернуть**.
-
-    ![Снимок экрана, показывающий, как настроить новую конечную точку для прогнозирования в реальном времени](./media/tutorial-designer-automobile-price-deploy/setup-endpoint.png)
+    
+    :::image type="content" source="./media/tutorial-designer-automobile-price-deploy/setup-endpoint.png"alt-text="Снимок экрана, показывающий, как настроить новую конечную точку для прогнозирования в реальном времени":::
 
     После завершения развертывания в приложении на основе холста появится уведомление об успешном выполнении. Это может занять несколько минут.
 

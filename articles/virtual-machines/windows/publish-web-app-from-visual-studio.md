@@ -11,17 +11,17 @@ ms.topic: how-to
 ms.date: 11/03/2017
 ms.author: ghogen
 ms.openlocfilehash: d864230ff524f6c008f9f05c16505cd9d0e9f229
-ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82583352"
 ---
 # <a name="publish-an-aspnet-web-app-to-an-azure-vm-from-visual-studio"></a>Публикация веб-приложения ASP.NET на виртуальную машину Azure из Visual Studio
 
 В этом документе описывается публикация веб-приложения ASP.NET на виртуальной машине Azure с помощью функции публикации **виртуальные машины Microsoft Azure** в Visual Studio 2019.  
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 Чтобы использовать Visual Studio для публикации проекта ASP.NET на виртуальную машину Azure, ее необходимо правильно настроить.
 
 - Компьютер должен быть настроен для запуска веб-приложения ASP.NET и установки WebDeploy. Дополнительные сведения см. в статье [Создание виртуальной машины ASP.NET с помощью WebDeploy](https://github.com/aspnet/Tooling/blob/AspNetVMs/docs/create-asp-net-vm-with-webdeploy.md).
@@ -65,7 +65,7 @@ ms.locfileid: "82583352"
 
 10. Просмотрите окно вывода, чтобы проверить ход выполнения публикации.
 
-    ![Окно вывода]
+    ![Окно выходных данных]
 
 11. При успешной публикации запустится браузер и откроется URL-адрес нового опубликованного сайта.
 
@@ -122,7 +122,7 @@ ms.locfileid: "82583352"
 [Средство выбора виртуальной машины Azure]: ../../../includes/media/publish-web-app-from-visual-studio/ChooseVM-SelectVM.png
 [Вход в WebDeploy]: ../../../includes/media/publish-web-app-from-visual-studio/WebDeployLogin.png
 [Ошибка сертификата]: ../../../includes/media/publish-web-app-from-visual-studio/CertificateError.png
-[окно вывода]: ../../../includes/media/publish-web-app-from-visual-studio/OutputWindow.png
+[Окно выходных данных]: ../../../includes/media/publish-web-app-from-visual-studio/OutputWindow.png
 [Страница публикации — кнопка "Опубликовать"]: ../../../includes/media/publish-web-app-from-visual-studio/PublishPagePublishButton.png
 [Страница публикации — кнопка "Параметры..."]: ../../../includes/media/publish-web-app-from-visual-studio/PublishPageSettingsButton.png
 [Параметры публикации — страница подключения]: ../../../includes/media/publish-web-app-from-visual-studio/PublishSettingsConnectionPage.png

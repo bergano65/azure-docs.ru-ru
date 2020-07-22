@@ -10,15 +10,14 @@ author: likebupt
 ms.author: keli19
 ms.date: 02/22/2020
 ms.openlocfilehash: a740c81aa165e221bca19987c7b3c62da56b0402
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79477533"
 ---
 # <a name="normalize-data-module"></a>Нормализация модуля данных
 
-В этой статье описывается модуль в Машинное обучение Azure Designer (Предварительная версия).
+В этой статье описывается модуль в конструкторе Машинного обучения Azure (предварительная версия).
 
 Используйте этот модуль для преобразования набора данных с помощью *нормализации*.
 
@@ -107,6 +106,6 @@ ms.locfileid: "79477533"
     Затем можно загрузить сохраненные преобразования из группы **преобразования** левой панели навигации и применить ее к набору данных с той же схемой с помощью функции [Применить преобразование](apply-transformation.md).  
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-См. [набор модулей, доступных](module-reference.md) для машинное обучение Azure. 
+Ознакомьтесь с [набором доступных модулей](module-reference.md) в службе Машинного обучения Azure. 

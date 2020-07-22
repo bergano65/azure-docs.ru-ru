@@ -10,12 +10,12 @@ ms.subservice: face-api
 ms.topic: quickstart
 ms.date: 04/14/2020
 ms.author: pafarley
-ms.openlocfilehash: b88959d1dd936df0315d7365513ab0c0c5b7df17
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 2ca95731cc2d85675545591d8ef38e461484c6e9
+ms.sourcegitcommit: bf8c447dada2b4c8af017ba7ca8bfd80f943d508
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81402941"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85368028"
 ---
 # <a name="quickstart-detect-faces-in-an-image-using-the-face-rest-api-and-nodejs"></a>Краткое руководство. Обнаружение лиц на изображении с помощью REST API и Node.js
 
@@ -25,70 +25,82 @@ ms.locfileid: "81402941"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Ключ подписки на службу "Распознавание лиц". Вы можете получить ключ бесплатной пробной подписки на странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api). Или следуйте инструкциям в руководстве по [созданию учетной записи Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account), чтобы получить подписку на службу "Распознавание лиц" и свой ключ.
+* Подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services/).
+* Получив подписку Azure, перейдите к <a href="https://portal.azure.com/#create/Microsoft.CognitiveServicesFace"  title="Создание ресурса Распознавания лиц"  target="_blank">созданию ресурса Распознавания лиц<span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку. После развертывания щелкните **Перейти к ресурсам**.
+    * Для подключения приложения к API Распознавания лиц потребуется ключ и конечная точка из созданного ресурса. Ключ и конечная точка будут вставлены в приведенный ниже код в кратком руководстве.
+    * Используйте бесплатную ценовую категорию (`F0`), чтобы опробовать службу, а затем выполните обновление до платного уровня для рабочей среды.
 - Редактор кода, например [Visual Studio Code](https://code.visualstudio.com/download).
 
 ## <a name="set-up-the-node-environment"></a>Настройка среды Node
 
-В папке, где вы хотите создать проект, создайте файл *facedetection.js*. Затем установите в этот проект модуль `requests`. Он позволит вашим скриптам отправлять HTTP-запросы.
+В папке, где вы хотите создать проект, создайте файл *facedetection.js*. Затем установите в этот проект модуль `axios`. Он позволит вашим скриптам отправлять HTTP-запросы.
 
 ```shell
-npm install request --save
+npm install axios --save
 ```
 
 ## <a name="write-the-nodejs-script"></a>Запись скрипта Node.js
 
-Вставьте следующий код в *facedetection.js*. Эти поля указывают, как подключиться к службе распознавания лиц и где получить входные данные. Вам нужно будет обновить поле `subscriptionKey`, указав значение вашего ключа подписки, и изменить строку `uriBase`, добавив в нее требуемую строку конечной точки. Вам может потребоваться изменить поле `imageUrl`, чтобы указать свое входное изображение.
+Вставьте следующий код в *facedetection.js*. Эти поля указывают, как подключиться к службе распознавания лиц и где получить входные данные. [Создайте переменные среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account?tabs=multiservice%2Cwindows#configure-an-environment-variable-for-authentication) и добавьте к ним свой ключ подписки и конечную точку Распознавания лиц. Вам может потребоваться изменить поле `imageUrl`, чтобы указать свое входное изображение.
 
 [!INCLUDE [subdomains-note](../../../../includes/cognitive-services-custom-subdomains-note.md)]
 
 ```javascript
 'use strict';
 
-const request = require('request');
+const axios = require('axios').default;
 
-// Replace <Subscription Key> with your valid subscription key.
-const subscriptionKey = '<Subscription Key>';
+// Add a valid subscription key and endpoint to your environment variables.
+let subscriptionKey = process.env['FACE_SUBSCRIPTION_KEY']
+let endpoint = process.env['FACE_ENDPOINT'] + '/face/v1.0/detect'
 
-// You must use the same location in your REST call as you used to get your
-// subscription keys. For example, if you got your subscription keys from
-// westus, replace "westcentralus" in the URL below with "westus".
-const uriBase = 'https://<My Endpoint String>.com/face/v1.0/detect';
-
-const imageUrl =
-    'https://upload.wikimedia.org/wikipedia/commons/3/37/Dagestani_man_and_woman.jpg';
+// Optionally, replace with your own image URL (for example a .jpg or .png URL).
+let imageUrl = 'https://raw.githubusercontent.com/Azure-Samples/cognitive-services-sample-data-files/master/ComputerVision/Images/faces.jpg'
 ```
 
 Затем добавьте следующий код, чтобы вызвать API распознавания лиц и получить данные об атрибутах лиц из входного изображения. Поле `returnFaceAttributes` определяет атрибуты лица, которые нужно получить. Вы можете изменить эту строку в зависимости от предполагаемого использования.
 
 
 ```javascript
-// Request parameters.
-const params = {
-    'returnFaceId': 'true',
-    'returnFaceLandmarks': 'false',
-    'returnFaceAttributes': 'age,gender,headPose,smile,facialHair,glasses,' +
-        'emotion,hair,makeup,occlusion,accessories,blur,exposure,noise'
-};
-
-const options = {
-    uri: uriBase,
-    qs: params,
-    body: '{"url": ' + '"' + imageUrl + '"}',
-    headers: {
-        'Content-Type': 'application/json',
-        'Ocp-Apim-Subscription-Key' : subscriptionKey
-    }
-};
-
-request.post(options, (error, response, body) => {
-  if (error) {
-    console.log('Error: ', error);
-    return;
-  }
-  let jsonResponse = JSON.stringify(JSON.parse(body), null, '  ');
-  console.log('JSON Response\n');
-  console.log(jsonResponse);
+// Send a POST request
+axios({
+    method: 'post',
+    url: endpoint,
+    params : {
+        returnFaceId: true,
+        returnFaceLandmarks: false,
+        returnFaceAttributes: 'age,gender,headPose,smile,facialHair,glasses,emotion,hair,makeup,occlusion,accessories,blur,exposure,noise'
+    },
+    data: {
+        url: imageUrl,
+    },
+    headers: { 'Ocp-Apim-Subscription-Key': subscriptionKey }
+}).then(function (response) {
+    console.log('Status text: ' + response.status)
+    console.log('Status text: ' + response.statusText)
+    console.log()
+    //console.log(response.data)
+    response.data.forEach((face) => {
+      console.log('Face ID: ' + face.faceId)
+      console.log('Face rectangle: ' + face.faceRectangle.top + ', ' + face.faceRectangle.left + ', ' + face.faceRectangle.width + ', ' + face.faceRectangle.height)
+      console.log('Smile: ' + face.faceAttributes.smile)
+      console.log('Head pose: ' + JSON.stringify(face.faceAttributes.headPose))
+      console.log('Gender: ' + face.faceAttributes.gender)
+      console.log('Age: ' + face.faceAttributes.age)
+      console.log('Facial hair: ' + JSON.stringify(face.faceAttributes.facialHair))
+      console.log('Glasses: ' + face.faceAttributes.glasses)
+      console.log('Smile: ' + face.faceAttributes.smile)
+      console.log('Emotion: ' + JSON.stringify(face.faceAttributes.emotion))
+      console.log('Blur: ' + JSON.stringify(face.faceAttributes.blur))
+      console.log('Exposure: ' + JSON.stringify(face.faceAttributes.exposure))
+      console.log('Noise: ' + JSON.stringify(face.faceAttributes.noise))
+      console.log('Makeup: ' + JSON.stringify(face.faceAttributes.makeup))
+      console.log('Accessories: ' + JSON.stringify(face.faceAttributes.accessories))
+      console.log('Hair: ' + JSON.stringify(face.faceAttributes.hair))
+      console.log()
+    });
+}).catch(function (error) {
+    console.log(error)
 });
 ```
 
@@ -100,7 +112,7 @@ request.post(options, (error, response, body) => {
 node facedetection.js
 ```
 
-В окне консоли должна появиться информация о лицах в виде данных JSON. Пример:
+Ниже приведены полные данные JSON из `response.data`. Пример:
 
 ```json
 [

@@ -3,24 +3,24 @@ title: Настройка частных IP-адресов для виртуал
 description: Узнайте, как настроить частные IP-адреса для виртуальных машин с помощью интерфейса командной строки (CLI) Azure.
 services: virtual-network
 documentationcenter: na
-author: KumudD
-manager: twooley
+author: asudbring
+manager: KumudD
 editor: ''
 tags: azure-resource-manager
 ms.assetid: 40b03a1a-ea00-454c-b716-7574cea49ac0
 ms.service: virtual-network
+ms.subservice: ip-services
 ms.devlang: azurecli
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/16/2017
-ms.author: kumud
-ms.openlocfilehash: f4643aae0b28861f4ddb99d8dace749e62f930b8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.author: allensu
+ms.openlocfilehash: c34ab73422d8dd41feb9da542ed63fdba060fe3f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78199484"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84708167"
 ---
 # <a name="configure-private-ip-addresses-for-a-virtual-machine-using-the-azure-cli"></a>Настройка частных IP-адресов для виртуальной машины с помощью Azure CLI
 
@@ -38,38 +38,7 @@ ms.locfileid: "78199484"
 
 1. Установите и настройте последнюю версию [Azure CLI](/cli/azure/install-azure-cli) (если вы еще этого не сделали), а затем войдите с использованием учетной записи Azure, выполнив команду [az login](/cli/azure/reference-index).
 
-2. Создайте общедоступный IP-адрес для виртуальной машины с помощью команды [az network public-ip create](/cli/azure/network/public-ip). В списке, который откроется после выполнения команды, будут указаны используемые параметры.
-
-    > [!NOTE]
-    > Возможно, вам понадобится использовать разные значения для аргументов на этих и последующих шагах в зависимости от среды.
-
-    ```azurecli
-    az network public-ip create \
-    --name TestPIP \
-    --resource-group TestRG \
-    --location centralus \
-    --allocation-method Static
-    ```
-
-    Ожидаемые выходные данные:
-
-   ```json
-   {
-        "publicIp": {
-            "idleTimeoutInMinutes": 4,
-            "ipAddress": "52.176.43.167",
-            "provisioningState": "Succeeded",
-            "publicIPAllocationMethod": "Static",
-            "resourceGuid": "79e8baa3-33ce-466a-846c-37af3c721ce1"
-        }
-    }
-    ```
-
-   * `--resource-group` — имя группы ресурсов, в которой будет создан общедоступный IP-адрес.
-   * `--name` —имя общедоступного IP-адреса.
-   * `--location` — регион Azure, в котором будет создан общедоступный IP-адрес.
-
-3. Выполните команду [az network nic create](/cli/azure/network/nic), чтобы создать сетевую карту со статическим частным IP-адресом. В списке, который откроется после выполнения команды, будут указаны используемые параметры. 
+2. Выполните команду [az network nic create](/cli/azure/network/nic), чтобы создать сетевую карту со статическим частным IP-адресом. В списке, который откроется после выполнения команды, будут указаны используемые параметры. 
    
     ```azurecli
     az network nic create \
@@ -121,7 +90,7 @@ ms.locfileid: "78199484"
     * `--vnet-name`: имя виртуальной сети, в которой будет создана сетевая карта.
     * `--subnet`: имя подсети для создания сетевой карты.
 
-4. Выполните команду [azure vm create](/cli/azure/vm/nic), чтобы создать виртуальную машину с созданными ранее общедоступным IP-адресом и сетевой картой. В списке, который откроется после выполнения команды, будут указаны используемые параметры.
+3. Выполните команду [azure vm create](/cli/azure/vm/nic), чтобы создать виртуальную машину с созданными ранее общедоступным IP-адресом и сетевой картой. В списке, который откроется после выполнения команды, будут указаны используемые параметры.
    
     ```azurecli
     az vm create \

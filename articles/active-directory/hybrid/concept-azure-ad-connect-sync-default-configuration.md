@@ -17,10 +17,9 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c2886b842aab81732beec0fdd7957aab8e2b4f5e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76548872"
 ---
 # <a name="azure-ad-connect-sync-understanding-the-default-configuration"></a>Службы синхронизации Azure AD Connect: рекомендации по изменению конфигурации по умолчанию
@@ -148,7 +147,7 @@ ms.locfileid: "76548872"
 
 Правило синхронизации имеет четыре раздела конфигурации: описание, преобразование, правила объединения и фильтр области действия.
 
-#### <a name="description"></a>Описание
+#### <a name="description"></a>Описание:
 Первый раздел содержит основные сведения, такие как имя и описание.
 
 ![Вкладка "Описание" в редакторе правил синхронизации](./media/concept-azure-ad-connect-sync-default-configuration/syncruledescription.png)
@@ -229,7 +228,7 @@ NULL
 | Поступление из AD — пользователь Exchange |Правило существует, только если обнаружена платформа Exchange. Передает все атрибуты инфраструктуры Exchange. |
 | Поступление из AD — пользователь Lync |Правило существует, только если обнаружена платформа Lync. Передает все атрибуты инфраструктуры Lync. |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о модели конфигурации, см. в статье о [принципах декларативной подготовки](concept-azure-ad-connect-sync-declarative-provisioning.md).
 * Дополнительные сведения о языке выражений см. в статье [Служба синхронизации Azure AD Connect: общие сведения о выражениях декларативной подготовки](concept-azure-ad-connect-sync-declarative-provisioning-expressions.md).
 * Дополнительные сведения о принципах работы стандартной конфигурации см. в статье [Службы синхронизации Azure AD Connect: изменение конфигурации по умолчанию](concept-azure-ad-connect-sync-user-and-contacts.md).
@@ -237,6 +236,6 @@ NULL
 
 **Обзорные статьи**
 
-* [Службы синхронизации Azure AD Connect: общие сведений о синхронизации и ее настройка](how-to-connect-sync-whatis.md)
-* [Интеграция локальных удостоверений с Azure Active Directory.](whatis-hybrid-identity.md)
+* [Синхронизация Azure AD Connect: общие сведений о синхронизации и ее настройка](how-to-connect-sync-whatis.md)
+* [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md)
 

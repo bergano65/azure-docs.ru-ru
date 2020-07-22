@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/07/2019
 ms.author: allensu
-ms.openlocfilehash: 0a54416a70a8561edfad5915944100e0ce686bbf
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 2192531aec7800314c6748740262f8746da0c4fc
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75771263"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85956378"
 ---
 # <a name="multiple-frontends-for-azure-load-balancer"></a>Несколько внешних интерфейсов для Azure Load Balancer
 
@@ -69,7 +69,7 @@ Azure Load Balancer позволяет сочетать оба типа прав
 
 Полное сопоставление в Azure Load Balancer теперь выглядит следующим образом:
 
-| Правило | Интерфейсный IP-адрес | protocol | порт | Назначение | порт |
+| Правило | Интерфейсный IP-адрес | protocol | порт | Destination | порт |
 | --- | --- | --- | --- | --- | --- |
 | ![правило зеленого интерфейса](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) 1 |65.52.0.1 |TCP |80 |Выделенный IP-адрес (DIP) |80 |
 | ![правило сиреневого интерфейса](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) 2 |65.52.0.2 |TCP |80 |Выделенный IP-адрес (DIP) |81 |
@@ -102,20 +102,31 @@ Azure Load Balancer обеспечивает гибкость, позволяя 
 
 Чтобы получить список имен интерфейсов на виртуальной машине, введите следующую команду:
 
-    netsh interface show interface 
+```console
+netsh interface show interface 
+```
 
 Для сетевого адаптера виртуальной машины (под управлением Azure) введите следующую команду:
 
-    netsh interface ipv4 set interface “interfacename” weakhostreceive=enabled
-   (замените InterfaceName именем этого интерфейса)
+```console
+netsh interface ipv4 set interface “interfacename” weakhostreceive=enabled
+```
+
+(замените InterfaceName именем этого интерфейса)
 
 Для каждого добавленного интерфейса замыкания на себя повторите следующие команды:
 
-    netsh interface ipv4 set interface “interfacename” weakhostreceive=enabled 
-   (замените InterfaceName на имя этого интерфейса замыкания на себя)
-     
-    netsh interface ipv4 set interface “interfacename” weakhostsend=enabled 
-   (замените InterfaceName на имя этого интерфейса замыкания на себя)
+```console
+netsh interface ipv4 set interface “interfacename” weakhostreceive=enabled 
+```
+
+(замените InterfaceName на имя этого интерфейса замыкания на себя)
+
+```console
+netsh interface ipv4 set interface “interfacename” weakhostsend=enabled 
+```
+
+(замените InterfaceName на имя этого интерфейса замыкания на себя)
 
 > [!IMPORTANT]
 > Настройка интерфейсов замыкания на себя выполняется в гостевой ОС. Эта настройка не выполняется и не управляется Azure. Без данной настройки правила не будут функционировать. Определения проб работоспособности используют выделенный IP-адрес (DIP) виртуальной машины, а не интерфейс замыкания на себя, представляющий интерфейс с прямым ответом от сервера. Поэтому служба должна предоставить на порте DIP ответы проб, которые отражают состояние службы, предлагаемое на интерфейсе замыкания на себя, представляющем интерфейс с прямым ответом от сервера.
@@ -137,7 +148,7 @@ Azure Load Balancer обеспечивает гибкость, позволяя 
 
 Следующая таблица демонстрирует полное сопоставление в балансировщике нагрузки:
 
-| Правило | Интерфейсный IP-адрес | protocol | порт | Назначение | порт |
+| Правило | Интерфейсный IP-адрес | protocol | порт | Destination | порт |
 | --- | --- | --- | --- | --- | --- |
 | ![правило зеленого интерфейса](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) 1 |65.52.0.1 |TCP |80 |такое, как у внешнего интерфейса (65.52.0.1) |такое, как у внешнего интерфейса (80) |
 | ![правило сиреневого интерфейса](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) 2 |65.52.0.2 |TCP |80 |такое, как у внешнего интерфейса (65.52.0.2) |такое, как у внешнего интерфейса (80) |
@@ -146,7 +157,7 @@ Azure Load Balancer обеспечивает гибкость, позволяя 
 
 Обратите внимание, что в этом примере не изменяется конечный порт. Несмотря на то, что этот сценарий использует плавающий IP-адрес, Azure Load Balancer также поддерживает определение правила, которое перезаписывает внутренний конечный порт и делает его отличным от интерфейсного конечного порта.
 
-Тип правил с плавающим IP-адресом лежит в основе нескольких шаблонов конфигураций балансировщика нагрузки. Одним из примеров, доступных в данный момент, является конфигурация [SQL AlwaysOn with Multiple Listeners](../virtual-machines/windows/sql/virtual-machines-windows-portal-sql-ps-alwayson-int-listener.md) (SQL AlwaysOn с несколькими прослушивателями). В будущем мы опишем больше сценариев.
+Тип правил с плавающим IP-адресом лежит в основе нескольких шаблонов конфигураций балансировщика нагрузки. Одним из примеров, доступных в данный момент, является конфигурация [SQL AlwaysOn with Multiple Listeners](../azure-sql/virtual-machines/windows/availability-group-listener-powershell-configure.md) (SQL AlwaysOn с несколькими прослушивателями). В будущем мы опишем больше сценариев.
 
 ## <a name="limitations"></a>Ограничения
 
@@ -155,6 +166,6 @@ Azure Load Balancer обеспечивает гибкость, позволяя 
 * Общедоступные IP-адреса оказывают влияние на выставление счетов. Дополнительные сведения см. в статье [Цены на IP-адреса](https://azure.microsoft.com/pricing/details/ip-addresses/).
 * Действуют ограничения подписки. Дополнительные сведения см. в разделе [Ограничения определенных служб](../azure-resource-manager/management/azure-subscription-service-limits.md#networking-limits).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Просмотрите статью [Исходящие подключения в Azure](load-balancer-outbound-connections.md), чтобы понять, как влияют несколько внешних интерфейсов на поведение исходящих подключений.

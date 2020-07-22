@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
-ms.custom: hdinsightactive,hdiseo17may2017,seoapr2020
+ms.topic: how-to
+ms.custom: hdinsightactive,hdiseo17may2017,seoapr2020, tracking-python
 ms.date: 04/27/2020
-ms.openlocfilehash: 48bd53160c3d2e76dccd1f22723c30c2c7e00d7a
-ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
+ms.openlocfilehash: fc5b4843d54c4edd8f0a29393fb6b41468d6a595
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82559937"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86084602"
 ---
 # <a name="use-apache-spark-mllib-to-build-a-machine-learning-application-and-analyze-a-dataset"></a>Использование Apache Spark MLlib для создания приложения машинного обучения и анализа набора данных
 
@@ -38,7 +38,7 @@ MLlib — это основная библиотека Spark, которая п�
 
 ## <a name="predictive-analysis-example-on-food-inspection-data"></a>Пример прогнозного анализа на основе данных контроля качества пищевых продуктов
 
-В этом примере используется Spark для прогнозного анализа данных об осмотре пищи (**Food_Inspections1. csv**). Данные, полученные по [городу портала данных в Чикаго](https://data.cityofchicago.org/). Этот набор данных содержит сведения об исследованиях установки продуктов, проведенных в Чикаго. Включая сведения о каждом установлении, обнаруженные нарушения (если они есть) и результаты проверки. CSV-файл данных уже доступен в учетной записи хранения, связанной с кластером **/HdiSamples/HdiSamples/FoodInspectionData/Food_Inspections1.csv**.
+В этом примере используется Spark для прогнозного анализа данных контроля пищи (**Food_Inspections1.csv**). Данные, полученные по [городу портала данных в Чикаго](https://data.cityofchicago.org/). Этот набор данных содержит сведения об исследованиях установки продуктов, проведенных в Чикаго. Включая сведения о каждом установлении, обнаруженные нарушения (если они есть) и результаты проверки. CSV-файл данных уже доступен в учетной записи хранения, связанной с кластером **/HdiSamples/HdiSamples/FoodInspectionData/Food_Inspections1.csv**.
 
 В следующих разделах описаны шаги по разработке модели, которая позволит узнать, что нужно, чтобы пройти контроль качества пищевых продуктов.
 
@@ -84,7 +84,7 @@ MLlib — это основная библиотека Spark, которая п�
     inspections.take(1)
     ```
 
-    Результаты:
+    Результат.
 
     ```
     [['413707',
@@ -129,7 +129,7 @@ MLlib — это основная библиотека Spark, которая п�
     df.show(5)
     ```
 
-    Результаты:
+    Результат.
 
     ```
     +------+--------------------+-------+--------------------+
@@ -153,7 +153,7 @@ MLlib — это основная библиотека Spark, которая п�
     df.select('results').distinct().show()
     ```
 
-    Результаты:
+    Результат.
 
     ```
     +--------------------+
@@ -176,7 +176,7 @@ MLlib — это основная библиотека Spark, которая п�
 
     Волшебное слово `%%sql`, за которым следует `-o countResultsdf`, гарантирует, что вывод запроса сохраняется локально на сервере Jupyter (обычно это головной узел кластера). Выходные данные сохраняются в кадре данных [Pandas](https://pandas.pydata.org/) с именем **countResultsdf**. Дополнительные сведения о команде magic `%%sql`, а также других командах magic, доступных в ядре PySpark, приведены в статье [Ядра для записной книжки Jupyter в кластерах Apache Spark в Azure HDInsight](apache-spark-jupyter-notebook-kernels.md#parameters-supported-with-the-sql-magic).
 
-    Результаты:
+    Результат.
 
     ![Результат SQL-запроса](./media/apache-spark-machine-learning-mllib-ipython/spark-machine-learning-query-output.png "Результат SQL-запроса")
 
@@ -227,7 +227,7 @@ MLlib — это основная библиотека Spark, которая п�
     labeledData.take(1)
     ```
 
-    Результаты:
+    Результат.
 
     ```
     [Row(label=0.0, violations=u"41. PREMISES MAINTAINED FREE OF LITTER, UNNECESSARY ARTICLES, CLEANING  EQUIPMENT PROPERLY STORED - Comments: All parts of the food establishment and all parts of the property used in connection with the operation of the establishment shall be kept neat and clean and should not produce any offensive odors.  REMOVE MATTRESS FROM SMALL DUMPSTER. | 35. WALLS, CEILINGS, ATTACHED EQUIPMENT CONSTRUCTED PER CODE: GOOD REPAIR, SURFACES CLEAN AND DUST-LESS CLEANING METHODS - Comments: The walls and ceilings shall be in good repair and easily cleaned.  REPAIR MISALIGNED DOORS AND DOOR NEAR ELEVATOR.  DETAIL CLEAN BLACK MOLD LIKE SUBSTANCE FROM WALLS BY BOTH DISH MACHINES.  REPAIR OR REMOVE BASEBOARD UNDER DISH MACHINE (LEFT REAR KITCHEN). SEAL ALL GAPS.  REPLACE MILK CRATES USED IN WALK IN COOLERS AND STORAGE AREAS WITH PROPER SHELVING AT LEAST 6' OFF THE FLOOR.  | 38. VENTILATION: ROOMS AND EQUIPMENT VENTED AS REQUIRED: PLUMBING: INSTALLED AND MAINTAINED - Comments: The flow of air discharged from kitchen fans shall always be through a duct to a point above the roofline.  REPAIR BROKEN VENTILATION IN MEN'S AND WOMEN'S WASHROOMS NEXT TO DINING AREA. | 32. FOOD AND NON-FOOD CONTACT SURFACES PROPERLY DESIGNED, CONSTRUCTED AND MAINTAINED - Comments: All food and non-food contact equipment and utensils shall be smooth, easily cleanable, and durable, and shall be in good repair.  REPAIR DAMAGED PLUG ON LEFT SIDE OF 2 COMPARTMENT SINK.  REPAIR SELF CLOSER ON BOTTOM LEFT DOOR OF 4 DOOR PREP UNIT NEXT TO OFFICE.")]
@@ -349,7 +349,7 @@ model = pipeline.fit(labeledData)
     plt.axis('equal')
     ```
 
-    Должны выводиться следующие данные:
+    Вы должны увидеть следующий результат.
 
     ![Выходные данные приложения машинного обучения Spark — процентные доли непройденных проверок пищи.](./media/apache-spark-machine-learning-mllib-ipython/spark-machine-learning-result-output-2.png "Выходные данные результатов машинного обучения Spark")
 
@@ -361,6 +361,6 @@ model = pipeline.fit(labeledData)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Обзор: Apache Spark в Azure HDInsight](apache-spark-overview.md)
+* [Обзор: Spark в Azure HDInsight](apache-spark-overview.md)
 * [Анализ журналов веб-сайтов с помощью Apache Spark в HDInsight](apache-spark-custom-library-website-log-analysis.md)
 * [Microsoft Cognitive Toolkit модели глубокого обучения с помощью Azure HDInsight](apache-spark-microsoft-cognitive-toolkit.md)

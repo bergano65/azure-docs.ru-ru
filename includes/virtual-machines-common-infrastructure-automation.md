@@ -4,12 +4,12 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 04/11/2019
 ms.author: cynthn
-ms.openlocfilehash: a2083de1ddf400b368815877725d3b8dd446156b
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
+ms.openlocfilehash: 3733989ad6eed113e37c87eb7da6748cec10e34d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82844560"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84485766"
 ---
 Средства автоматизации, как правило, позволяют быстро и согласованно создавать виртуальные машины Azure в нужном масштабе, а также управлять ими. Существует множество средств и решений, которые помогают полностью автоматизировать жизненный цикл развертывания и администрирования инфраструктуры Azure. В этой статье приведены сведения о некоторых средствах автоматизации инфраструктуры Azure. Обычно их используют с такими целями:
 
@@ -100,7 +100,7 @@ ms.locfileid: "82844560"
 
 Вы узнаете, как выполнять следующие задачи:
 
-- [Установка и настройка Terraform для подготовки виртуальных машин и другой инфраструктуры в Azure](/azure/developer/terraform/install-configure)
+- [Установка и настройка Terraform для подготовки виртуальных машин и другой инфраструктуры в Azure](/azure/developer/terraform/getting-started-cloud-shell)
 - [Создание базовой инфраструктуры в Azure с помощью Terraform](/azure/developer/terraform/create-linux-virtual-machine-with-infrastructure)
 
 
@@ -119,7 +119,7 @@ ms.locfileid: "82844560"
 ## <a name="azure-devops-services"></a>Azure DevOps Services
 [Azure DevOps Services](https://www.visualstudio.com/team-services/) — это набор средств, позволяющих отслеживать код и предоставлять к нему общий доступ, использовать автоматизированные сборки и создавать конвейеры непрерывной интеграции и разработки (CI/CD). Azure DevOps Services интегрируется с Visual Studio и другими редакторами, что упрощает его использование. Кроме того, этот набор средств позволяет создавать и настраивать виртуальные машины Azure, а затем развертывать код на них.
 
-См. также:
+Дополнительные сведения:
 
 - [Azure DevOps Services](https://docs.microsoft.com/azure/devops/user-guide/index?view=vsts).
 

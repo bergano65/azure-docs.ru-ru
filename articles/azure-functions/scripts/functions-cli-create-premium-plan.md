@@ -4,12 +4,12 @@ description: Создание приложения-функции в масшт�
 ms.service: azure-functions
 ms.topic: sample
 ms.date: 11/23/2019
-ms.openlocfilehash: dd31dbadce4f0a55853607504b4322277784f27f
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 3587e5b5e46867ff3abe97b3593c9732be3afa22
+ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74534591"
+ms.lasthandoff: 06/20/2020
+ms.locfileid: "85117256"
 ---
 # <a name="create-a-function-app-in-a-premium-plan---azure-cli"></a>Создание приложения-функции в плане "Премиум" с помощью Azure CLI
 
@@ -37,7 +37,7 @@ ms.locfileid: "74534591"
 |---|---|
 | [az group create](/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az storage account create](/cli/azure/storage/account#az-storage-account-create) | Создает учетную запись хранения Azure. |
-| [az functionapp plan create](/cli/azure/functionapp/plan#az-functionapp-plan-create) | Создает план "Премиум". |
+| [az functionapp plan create](/cli/azure/functionapp/plan#az-functionapp-plan-create) | Создает план "Премиум" в [определенном номере SKU](../functions-premium-plan.md#available-instance-skus). |
 | [az functionapp create](/cli/azure/functionapp#az-functionapp-create) | Создает приложение-функцию в плане службы приложений. |
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -95,6 +95,10 @@
           href: batch-management-dotnet.md
         - name: Анализ затрат и бюджеты
           href: budget.md
+        - name: Использование частных конечных точек с учетными записями пакетной службы
+          href: private-connectivity.md
+        - name: 'Настройка ключей, управляемых клиентом'
+          href: batch-customer-managed-key.md
     - name: "Аутентификация с помощью Azure\_AD"
       items:
         - name: Azure AD и пакетная служба
@@ -129,6 +133,10 @@
           href: batch-custom-images.md
         - name: Создание пула в виртуальной сети
           href: batch-virtual-network.md
+        - name: Создание пула с общедоступными IP-адресами
+          href: create-pool-public-ip.md
+        - name: Создание пула без общедоступных IP-адресов
+          href: batch-pool-no-public-ip-address.md
         - name: Подключение виртуальной файловой системы
           href: virtual-file-mount.md
         - name: Подключение файлового ресурса Azure
@@ -264,13 +272,13 @@
     - name: 'Пакетная служба: отзывы'
       href: 'https://feedback.azure.com/forums/269742-batch'
     - name: Страница с вопросами о пакетной службе (раздел вопросов и ответов на сайте Майкрософт)
-      href: 'https://docs.microsoft.com/answers/topics/azure-batch.html'
+      href: /answers/topics/azure-batch.html
     - name: Batch Shipyard
       href: 'https://github.com/Azure/batch-shipyard'
     - name: Блог
-      href: 'https://blogs.technet.microsoft.com/windowshpc/'
+      href: /archive/blogs/windowshpc/
     - name: HPC в Azure
-      href: 'https://docs.microsoft.com/azure/architecture/topics/high-performance-computing/'
+      href: /azure/architecture/topics/high-performance-computing/
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/batch/'
     - name: Калькулятор цен

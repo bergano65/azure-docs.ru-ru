@@ -8,36 +8,42 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-custom-search
 ms.topic: quickstart
-ms.date: 03/24/2020
+ms.date: 05/08/2020
 ms.author: aahi
-ms.openlocfilehash: 7ea8b272871e681bd9caacf8cf1a84eb91d8849d
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: e1084c1962db3c04b951245361da80bee098329a
+ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80238907"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83199821"
 ---
 # <a name="quickstart-call-your-bing-custom-search-endpoint-using-c"></a>Краткое руководство. Вызов конечной точки службы "Пользовательский поиск Bing" с помощью C# 
 
-Сведения из этого краткого руководства помогут вам приступить к созданию запросов результатов поиска из экземпляра "Пользовательский поиск Bing". Хотя это приложение создается на языке C#, API пользовательского поиска Bing представляет собой веб-службу RESTful, совместимую с большинством языков. Исходный код для этого шаблона можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/dotnet/Search/BingCustomSearchv7.cs).
+Узнайте, как запрашивать результаты поиска из экземпляра Пользовательского поиска Bing. Хотя это приложение написано на C#, API Пользовательского поиска Bing представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код этого примера доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/dotnet/Search/BingCustomSearchv7.cs).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Экземпляр службы "Пользовательский поиск Bing". См. [Краткое руководство. Создание первого экземпляра службы "Пользовательский поиск Bing"](quick-start.md), чтобы получить дополнительные сведения.
-- Microsoft [.NET Core](https://www.microsoft.com/net/download/core)
+- Экземпляр службы "Пользовательский поиск Bing". Дополнительные сведения см. в [кратком руководстве Создание первого экземпляра Пользовательского поиска Bing](quick-start.md).
+- [Microsoft .NET Core](https://www.microsoft.com/net/download/core).
 - Любой выпуск [Visual Studio 2019 или более поздней версии](https://www.visualstudio.com/downloads/).
 - Если вы используете Linux или MacOS, это приложение можно запустить с помощью [Mono](https://www.mono-project.com/).
-- Пакет NuGet [Пользовательского поиска Bing](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Search.CustomSearch/1.2.0). 
-    - В **обозревателе решений** Visual Studio щелкните правой кнопкой мыши проект и выберите пункт **Manage NuGet Packages** (Управление пакетами NuGet) в меню. Установите пакет `Microsoft.Azure.CognitiveServices.Search.CustomSearch`. При установке пакета NuGet для пользовательского поиска также будут установлены следующие сборки:
-        - Microsoft.Rest.ClientRuntime
-        - Microsoft.Rest.ClientRuntime.Azure
-        - Newtonsoft.Json.
+- Пакет NuGet [Пользовательского поиска Bing](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Search.CustomSearch/2.0.0). 
+
+   Чтобы установить этот пакет в Visual Studio, сделайте следующее: 
+     1. В **Обозревателе решений** щелкните проект правой кнопкой мыши и выберите **Управление пакетами NuGet**. 
+     2. Найдите и выберите *Microsoft.Azure.CognitiveServices.Search.CustomSearch*, а затем установите этот пакет.
+
+   При установке пакета NuGet Пользовательского поиска Bing Visual Studio также устанавливает следующие пакеты:
+     - **Microsoft.Rest.ClientRuntime**
+     - **Microsoft.Rest.ClientRuntime.Azure**
+     - **Newtonsoft.Json**
+
 
 [!INCLUDE [cognitive-services-bing-custom-search-prerequisites](../../../includes/cognitive-services-bing-custom-search-signup-requirements.md)]
 
 ## <a name="create-and-initialize-the-application"></a>Создание и инициализация приложения
 
-1. Создайте в Visual Studio новое консольное приложение C#. Добавьте в проект следующие пакеты.
+1. Создайте в Visual Studio новое консольное приложение C#. Затем добавьте в проект следующие пакеты.
 
     ```csharp
     using System;
@@ -46,7 +52,7 @@ ms.locfileid: "80238907"
     using Newtonsoft.Json;
     ```
 
-2. Создайте следующие классы для хранения результатов поиска, возвращаемых API пользовательского поиска Bing.
+2. Создайте следующие классы для хранения результатов поиска, возвращаемых API Пользовательского поиска Bing.
 
     ```csharp
     public class BingCustomSearchResponse {        
@@ -70,7 +76,7 @@ ms.locfileid: "80238907"
     }
     ```
 
-3. В основном методе проекта создайте переменные для своего ключа подписки API пользовательского поиска Bing, идентификатор настраиваемой конфигурации экземпляра поиска и условия поиска.
+3. В основном методе проекта создайте следующие переменные для своего ключа подписки API Пользовательского поиска Bing, идентификатора настраиваемой конфигурации экземпляра поиска и условия поиска.
 
     ```csharp
     var subscriptionKey = "YOUR-SUBSCRIPTION-KEY";
@@ -78,7 +84,7 @@ ms.locfileid: "80238907"
     var searchTerm = args.Length > 0 ? args[0]:"microsoft";
     ```
 
-4. Создайте URL-адрес запроса, добавив условие поиска к параметру запроса `q=` и идентификатор пользовательской конфигурации экземпляра поиска к `customconfig=`. Разделяйте параметры символом `&`. В качестве `url` может быть глобальная конечная точка, приведенная ниже, или конечная точка [пользовательского поддомена](../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемая на портале Azure для вашего ресурса.
+4. Создайте URL-адрес запроса, добавив условие поиска к параметру запроса `q=` и идентификатор пользовательской конфигурации экземпляра поиска к параметру `customconfig=`. Разделите параметры символом `&`. Для значения переменной `url` можно использовать глобальную конечную точку в следующем коде или конечную точку [личного поддомена](../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемую на портале Azure для вашего ресурса.
 
     ```csharp
     var url = "https://api.cognitive.microsoft.com/bingcustomsearch/v7.0/search?" +
@@ -102,9 +108,9 @@ ms.locfileid: "80238907"
     var responseContent = httpResponseMessage.Content.ReadAsStringAsync().Result;
     BingCustomSearchResponse response = JsonConvert.DeserializeObject<BingCustomSearchResponse>(responseContent);
     ```
-   ## <a name="process-and-view-the-results"></a>Обработка и просмотр результатов
+## <a name="process-and-view-the-results"></a>Обработка и просмотр результатов
 
-3. Выполните итерацию по объекту ответа, чтобы отобразить информацию о каждом результате поиска, включая его имя, URL-адрес и дату последнего просмотра веб-страницы.
+- Выполните итерацию по объекту ответа, чтобы отобразить информацию о каждом результате поиска, включая его имя, URL-адрес и дату последнего просмотра веб-страницы.
 
     ```csharp
     for(int i = 0; i < response.webPages.value.Length; i++) {                

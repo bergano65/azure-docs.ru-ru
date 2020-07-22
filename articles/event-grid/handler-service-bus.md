@@ -1,18 +1,14 @@
 ---
 title: Очереди и разделы служебной шины в качестве обработчиков событий для событий службы "Сетка событий Azure"
 description: В статье показано, как использовать очереди и разделы служебной шины в качестве обработчиков событий для событий службы "Сетка событий Azure".
-services: event-grid
-author: spelluru
-ms.service: event-grid
 ms.topic: conceptual
-ms.date: 05/11/2020
-ms.author: spelluru
-ms.openlocfilehash: 201d3203d845ce84207d103750709fe2ff93f022
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
-ms.translationtype: HT
+ms.date: 07/07/2020
+ms.openlocfilehash: c573f7ee088fe1d88f832623891377d4fd50bd4b
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83596323"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86105699"
 ---
 # <a name="service-bus-queues-and-topics-as-event-handlers-for-azure-event-grid-events"></a>Очереди и разделы служебной шины в качестве обработчиков событий для событий службы "Сетка событий Azure"
 Обработчик событий — это место, куда отправляются события. Обработчик выполняет последующую обработку полученного события. Некоторые службы Azure автоматически настроены для обработки событий. Одна из них — это **Служебная шина Azure**. 
@@ -69,6 +65,97 @@ az eventgrid event-subscription create \
 При отправке события в очередь или раздел служебной шины в виде сообщения в брокере, свойство `messageid` такого сообщения является **идентификатором события**.
 
 Идентификатор события останется неизменным в случае повторной доставки события, чтобы вы могли избежать дублирования доставок, включив **поиск повторяющихся данных** в сущности служебной шины. Рекомендуется установить длительность поиска повторяющихся данных в сущности служебной шины равной сроку жизни события или максимальному периоду времени между повторами, в зависимости от того, какое из этих значений больше.
+
+## <a name="rest-examples-for-put"></a>Примеры REST (для PUT)
+
+### <a name="service-bus-queue"></a>Очередь служебной шины
+
+```json
+{
+    "properties": 
+    {
+        "destination": 
+        {
+            "endpointType": "ServiceBusQueue",
+            "properties": 
+            {
+                "resourceId": "/subscriptions/<AZURE SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP NAME>/providers/Microsoft.ServiceBus/namespaces/<SERVICE BUS NAMESPACE NAME>/queues/<SERVICE BUS QUEUE NAME>"
+            }
+        },
+        "eventDeliverySchema": "EventGridSchema"
+    }
+}
+```
+
+### <a name="service-bus-queue---delivery-with-managed-identity"></a>Очередь служебной шины — доставка с использованием управляемого удостоверения
+
+```json
+{
+    "properties": {
+        "deliveryWithResourceIdentity": 
+        {
+            "identity": 
+            {
+                "type": "SystemAssigned"
+            },
+            "destination": 
+            {
+                "endpointType": "ServiceBusQueue",
+                "properties": 
+                {
+                    "resourceId": "/subscriptions/<AZURE SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP NAME>/providers/Microsoft.ServiceBus/namespaces/<SERVICE BUS NAMESPACE NAME>/queues/<SERVICE BUS QUEUE NAME>"
+                }
+            }
+        },
+        "eventDeliverySchema": "EventGridSchema"
+    }
+}
+```
+
+### <a name="service-bus-topic"></a>Раздел служебной шины
+
+```json
+{
+    "properties": 
+    {
+        "destination": 
+        {
+            "endpointType": "ServiceBusTopic",
+            "properties": 
+            {
+                "resourceId": "/subscriptions/<AZURE SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP NAME>/providers/Microsoft.ServiceBus/namespaces/<SERVICE BUS NAMESPACE NAME>/topics/<SERVICE BUS TOPIC NAME>"
+            }
+        },
+        "eventDeliverySchema": "EventGridSchema"
+    }
+}
+```
+
+### <a name="service-bus-topic---delivery-with-managed-identity"></a>Раздел служебной шины — доставка с использованием управляемого удостоверения
+
+```json
+{
+    "properties": 
+    {
+        "deliveryWithResourceIdentity": 
+        {
+            "identity": 
+            {
+                "type": "SystemAssigned"
+            },
+            "destination": 
+            {
+                "endpointType": "ServiceBusTopic",
+                "properties": 
+                {
+                    "resourceId": "/subscriptions/<AZURE SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP NAME>/providers/Microsoft.ServiceBus/namespaces/<SERVICE BUS NAMESPACE NAME>/topics/<SERVICE BUS TOPIC NAME>"
+                }
+            }
+        },
+        "eventDeliverySchema": "EventGridSchema"
+    }
+}
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 См. список поддерживаемых обработчиков событий в статье [Обработчики событий](event-handlers.md). 

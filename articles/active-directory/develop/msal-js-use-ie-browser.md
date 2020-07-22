@@ -1,7 +1,7 @@
 ---
-title: Проблемы в Internet Explorer (MSAL. js) | Службы
+title: Проблемы в Internet Explorer (MSAL.js) | Службы
 titleSuffix: Microsoft identity platform
-description: Используйте библиотеку проверки подлинности Майкрософт для JavaScript (MSAL. js) с браузером Internet Explorer.
+description: Используйте библиотеку проверки подлинности Майкрософт для JavaScript (MSAL.js) с браузером Internet Explorer.
 services: active-directory
 author: navyasric
 manager: CelesteDG
@@ -14,18 +14,17 @@ ms.author: nacanuma
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.openlocfilehash: c4f3c4153e1404a5576427be7ef218f5a669387e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76695863"
 ---
-# <a name="known-issues-on-internet-explorer-and-microsoft-edge-browsers-msaljs"></a>Известные проблемы в Internet Explorer и браузерах Microsoft ребр (MSAL. js)
+# <a name="known-issues-on-internet-explorer-and-microsoft-edge-browsers-msaljs"></a>Известные проблемы с браузерами Internet Explorer и Microsoft Edge browsers (MSAL.js)
 
-Библиотека проверки подлинности Microsoft для JavaScript (MSAL. js) создается для [JavaScript ES5](https://fr.wikipedia.org/wiki/ECMAScript#ECMAScript_Edition_5_.28ES5.29) , чтобы его можно было запускать в Internet Explorer. Однако есть несколько моментов, которые следует иметь в курсе.
+Библиотека проверки подлинности Microsoft для JavaScript (MSAL.js) создается для [JavaScript ES5](https://fr.wikipedia.org/wiki/ECMAScript#ECMAScript_Edition_5_.28ES5.29) , чтобы его можно было запускать в Internet Explorer. Однако есть несколько моментов, которые следует иметь в курсе.
 
 ## <a name="run-an-app-in-internet-explorer"></a>Запуск приложения в Internet Explorer
-Если вы планируете использовать MSAL. js в приложениях, которые могут запускаться в Internet Explorer, перед обращением к скрипту MSAL. js необходимо добавить ссылку на заполняющий обещание.
+Если вы планируете использовать MSAL.js в приложениях, которые могут запускаться в Internet Explorer, необходимо добавить ссылку на Fill Promise, прежде чем ссылаться на скрипт MSAL.js.
 
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.4/bluebird.min.js" class="pre"></script>
@@ -39,9 +38,9 @@ ms.locfileid: "76695863"
 Развертывание приложения в рабочей среде (например, в веб-приложениях Azure) обычно работает нормально, если конечные пользователи приняли всплывающие окна. Мы тестировали его с помощью Internet Explorer 11.
 
 ### <a name="running-locally"></a>Локальное выполнение
-Если вы хотите выполнять и отлаживать локально приложение, работающее в Internet Explorer, необходимо учитывать следующие моменты (предположим, что вы хотите запустить приложение как *http://localhost:1234*):
+Если вы хотите выполнять и отлаживать локально приложение, работающее в Internet Explorer, необходимо учитывать следующие моменты (предположим, что вы хотите запустить приложение как *http://localhost:1234* ):
 
-- Internet Explorer имеет механизм безопасности с именем "защищенный режим", который предотвращает неправильную работу MSAL. js. После входа в систему эту страницу можно перенаправить на http://localhost:1234/null.
+- Internet Explorer имеет механизм безопасности с именем "защищенный режим", который предотвращает неправильное функционирование MSAL.js. После входа в систему эту страницу можно перенаправить на http://localhost:1234/null .
 
 - Чтобы запустить и выполнить отладку приложения локально, необходимо отключить этот "защищенный режим". Для этого:
 
@@ -51,7 +50,7 @@ ms.locfileid: "76695863"
     1. Перезапустите Internet Explorer.
     1. Запуск и отладка приложения.
 
-По завершении восстановите параметры безопасности Internet Explorer.  Выберите **Параметры** -> **Параметры** -> браузера**Безопасность** -> **Сбросить все зоны на уровень по умолчанию**.
+По завершении восстановите параметры безопасности Internet Explorer.  Выберите **Параметры**  ->  **Параметры браузера**  ->  **Безопасность**  ->  **Сбросить все зоны на уровень по умолчанию**.
 
-## <a name="next-steps"></a>Дальнейшие действия
-Дополнительные сведения об [известных проблемах при использовании MSAL. js в Internet Explorer](msal-js-use-ie-browser.md).
+## <a name="next-steps"></a>Дальнейшие шаги
+Дополнительные сведения об [известных проблемах при использовании MSAL.js в Internet Explorer](msal-js-use-ie-browser.md).

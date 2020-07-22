@@ -6,14 +6,14 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 07/26/2019
-ms.openlocfilehash: 1fdee9a5d90fc065e198d880f9d0dea10804b881
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a9e6e8276733eeed88561ed39a6702aec76286a4
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75972646"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85317774"
 ---
-# <a name="create-azure-resource-manager-templates-to-automate-deployment-for-azure-logic-apps"></a>Создание шаблонов Azure Resource Manager для автоматизации развертывания Azure Logic Apps
+# <a name="create-azure-resource-manager-templates-to-automate-deployment-for-azure-logic-apps"></a>Создание шаблонов Azure Resource Manager для автоматизации развертываний для Azure Logic Apps
 
 Чтобы помочь вам автоматизировать создание и развертывание приложения логики, в этой статье описываются способы создания [шаблона Azure Resource Manager](../azure-resource-manager/management/overview.md) для приложения логики. Общие сведения о структуре и синтаксисе шаблона, содержащего определение рабочего процесса и другие ресурсы, необходимые для развертывания, см. в разделе [Обзор: Автоматизация развертывания для приложений логики с помощью шаблонов Azure Resource Manager](logic-apps-azure-resource-manager-templates-overview.md).
 
@@ -104,13 +104,13 @@ PS> Get-ParameterTemplate -TemplateFile $filename | Out-File '<parameters-file-n
 PS> Get-ParameterTemplate -TemplateFile $filename -KeyVault Static | Out-File $fileNameParameter
 ```
 
-| Параметры | Обязательный | Описание |
+| Параметры | Обязательное значение | Описание |
 |------------|----------|-------------|
 | TemplateFile | Да | Путь к файлу шаблона |
 | Хранилище ключей | Нет | Перечисление, описывающее способ управления возможными значениями хранилища ключей. Значение по умолчанию — `None`. |
 ||||
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Развертывание шаблонов приложений логики](../logic-apps/logic-apps-deploy-azure-resource-manager-templates.md)

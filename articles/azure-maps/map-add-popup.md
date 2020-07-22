@@ -10,10 +10,9 @@ services: azure-maps
 manager: ''
 ms.custom: codepen
 ms.openlocfilehash: d7ca2f07e4568257baf72f2f298631b86f776c2a
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "83119261"
 ---
 # <a name="add-a-popup-to-the-map"></a>Добавление всплывающего окна на карту
@@ -76,7 +75,7 @@ map.events.add('mouseleave', symbolLayer, function (){
 });
 ```
 
-Ниже приведен полный пример выполнения кода описанной выше функциональности.
+Ниже приведен полный и выполняемый пример этой функциональности.
 
 <br/>
 
@@ -279,7 +278,7 @@ var popup = new atlas.Popup({
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> [Контекстное меню](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.popup)
+> [Popup](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.popup)
 
 > [!div class="nextstepaction"]
 > [PopupOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.popupoptions)

@@ -14,12 +14,12 @@ ms.devlang: nodejs
 ms.topic: article
 ms.date: 08/17/2016
 ms.author: routlaw
-ms.openlocfilehash: 8621dde43ff38cee15feb1d30b6ea80ab681c855
-ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
+ms.openlocfilehash: 7e78a8dfdf902c4c2548e0521a79d67716987791
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82594786"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85832089"
 ---
 # <a name="using-nodejs-modules-with-azure-applications"></a>Использование модулей Node.js с приложениями Azure
 Этот документ содержит указания по использованию модулей Node.js с приложениями, размещенными в Azure. В нем описывается, как обеспечить использование конкретной версии модуля приложением и использовать собственные модули в Azure.
@@ -32,8 +32,8 @@ ms.locfileid: "82594786"
 
 > [!NOTE]
 > В данной статье не рассматриваются виртуальные машины Azure, так как процедура развертывания на виртуальной машине зависит от операционной системы, размещенной в этой виртуальной машине.
-> 
-> 
+>
+>
 
 ## <a name="nodejs-modules"></a>Модули Node.js
 Модули — это загружаемые пакеты JavaScript, предоставляющие вашему приложению определенные функциональные возможности. Модули обычно устанавливаются с помощью программы командной строки **npm**, однако некоторые из них (например, HTTP-модуль) предоставляются в составе основного пакета Node.js.
@@ -63,12 +63,12 @@ ms.locfileid: "82594786"
 
 > [!NOTE]
 > Если при развертывании приложения в службе приложений Azure ваш файл <b>package.json</b> ссылается на собственный модуль, то может отобразиться ошибка, аналогичная той, что возникает при публикации приложения с помощью Git:
-> 
+>
 > npm ERR! module-name@0.6.0 install: 'node-gyp configure build'
-> 
+>
 > npm ERR! 'cmd "/c" "node-gyp configure build"' failed with 1
-> 
-> 
+>
+>
 
 ### <a name="using-a-npm-shrinkwrapjson-file"></a>Использование файла npm-shrinkwrap.json
 Файл **npm-shrinkwrap.json** представляет собой попытку устранения ограничений управления версиями модуля для файла **package.json**. Хотя файл **package.json** содержит только версии модулей верхнего уровня, файл **npm-shrinkwrap.json** содержит требования к версиям для всей цепочки зависимостей модулей.
@@ -77,17 +77,17 @@ ms.locfileid: "82594786"
 
 > [!NOTE]
 > Если при развертывании приложения в службе приложений Azure ваш файл <b>npm-shrinkwrap.json</b> ссылается на собственный модуль, то может отобразиться ошибка, аналогичная той, что возникает при публикации приложения с помощью Git:
-> 
+>
 > npm ERR! module-name@0.6.0 install: 'node-gyp configure build'
-> 
+>
 > npm ERR! 'cmd "/c" "node-gyp configure build"' failed with 1
-> 
-> 
+>
+>
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы научились использовать модули Node.js с Azure, узнайте, как [указать версию Node.js](https://github.com/squillace/nodejs-microservice), [создать и развернуть веб-приложение Node.js](app-service/app-service-web-get-started-nodejs.md) и [использовать интерфейс командной строки Azure для Mac и Linux](https://azure.microsoft.com/blog/using-windows-azure-with-the-command-line-tools-for-mac-and-linux/).
 
-Дополнительную информацию см. в [центре разработчиков Node.js](/azure/javascript/).
+Дополнительную информацию см. в [центре разработчиков Node.js](/azure/developer/javascript/).
 
 [specify the Node.js version]: nodejs-specify-node-version-azure-apps.md
 [How to use the Azure Command-Line Interface for Mac and Linux]:cli-install-nodejs.md

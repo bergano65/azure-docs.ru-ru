@@ -9,11 +9,10 @@ ms.workload: infrastructure
 ms.date: 06/07/2018
 ms.author: cynthn
 ms.openlocfilehash: ecbff4beadd9d10a8489c89cc322c0bb67ec5f40
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79267187"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84706687"
 ---
 # <a name="how-to-create-a-linux-virtual-machine-in-azure-with-multiple-network-interface-cards"></a>Как создать виртуальную машину Linux в Azure с несколькими сетевыми картами
 
@@ -169,7 +168,7 @@ az vm start --resource-group myResourceGroup --name myVM
 
 Вы можете прочитать дополнительные сведения о [создании нескольких экземпляров с помощью объекта *copy*](../../resource-group-create-multiple.md). 
 
-Можно также использовать, `copyIndex()` чтобы добавить номер к имени ресурса, которое позволяет создавать `myNic1`, `myNic2`и т. д. Ниже приведен пример добавления значения индекса:
+Можно также использовать, `copyIndex()` чтобы добавить номер к имени ресурса, которое позволяет создавать `myNic1` , `myNic2` и т. д. Ниже приведен пример добавления значения индекса:
 
 ```json
 "name": "[concat('myNic', copyIndex())]", 

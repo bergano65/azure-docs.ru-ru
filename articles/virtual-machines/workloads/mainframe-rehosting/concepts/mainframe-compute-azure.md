@@ -7,10 +7,9 @@ ms.date: 04/02/2019
 ms.topic: article
 ms.service: multiple
 ms.openlocfilehash: 97f354d0a313d58c671366dd0e5f485504823e13
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76288937"
 ---
 # <a name="move-mainframe-compute-to-azure"></a>Перемещение вычислений мэйнфреймов в Azure
@@ -112,7 +111,7 @@ CF позволяет вычисленным кластерам совместн
 
 ![Развертывание с высоким уровнем доступности, поддерживающее аварийное восстановление](media/mainframe-compute-dr.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Миграция мэйнфреймов](/azure/architecture/cloud-adoption/infrastructure/mainframe-migration/overview)
 - [Повторное размещение мэйнфреймов на виртуальных машинах Azure](/azure/virtual-machines/workloads/mainframe-rehosting/overview)

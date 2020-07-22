@@ -5,10 +5,9 @@ ms.subservice: ''
 ms.topic: conceptual
 ms.date: 11/06/2017
 ms.openlocfilehash: 142e3e19c13710963d239a75bc237b63713c29cc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77672214"
 ---
 # <a name="monitor-your-azure-services-in-grafana"></a>Мониторинг служб Azure в Grafana
@@ -42,7 +41,7 @@ ms.locfileid: "77672214"
 
 ## <a name="sign-in-to-grafana"></a>Вход в Grafana
 
-1. Используя IP-адрес сервера, откройте страницу входа *http://\<IP-адрес\>:3000* или *\<DNSName>\:3000* в браузере. Хотя по умолчанию используется порт 3000, обратите внимание, что вы можете выбрать другой порт во время установки. Должна отобразиться созданная страница входа для сервера Grafana.
+1. Используя IP-адрес сервера, откройте страницу входа в *http:// \<IP address\> : 3000* или * \<DNSName> \: 3000* в браузере. Хотя по умолчанию используется порт 3000, обратите внимание, что вы можете выбрать другой порт во время установки. Должна отобразиться созданная страница входа для сервера Grafana.
 
     ![Экран входа в Grafana](./media/grafana-plugin/grafana-login-screen.png)
 

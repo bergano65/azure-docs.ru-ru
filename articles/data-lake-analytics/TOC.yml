@@ -151,7 +151,7 @@
       href: /rest/api/datalakeanalytics/
     - name: Шаблон Resource Manager
       href: /azure/templates/microsoft.datalakeanalytics/allversions
-    - name: CLI
+    - name: Azure CLI
       href: 'https://docs.microsoft.com/cli/azure/dla'
 - name: Ресурсы
   items:

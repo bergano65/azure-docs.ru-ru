@@ -1,0 +1,118 @@
+- name: Azure API для FHIR
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Обзор Azure API для FHIR
+      href: overview.md
+- name: Краткие руководства
+  expanded: true
+  items:
+    - name: "Развертывание Azure API для FHIR\_— портал"
+      href: fhir-paas-portal-quickstart.md
+    - name: "Развертывание Azure API для FHIR\_— PowerShell"
+      href: fhir-paas-powershell-quickstart.md
+    - name: "Развертывание Azure API для FHIR\_— CLI"
+      href: fhir-paas-cli-quickstart.md
+    - name: "Развертывание FHIR Server для Azure\_— портал"
+      href: fhir-oss-portal-quickstart.md
+    - name: "Развертывание FHIR Server для Azure\_— PowerShell"
+      href: fhir-oss-powershell-quickstart.md
+    - name: "Развертывание FHIR Server для Azure\_— CLI"
+      href: fhir-oss-cli-quickstart.md
+    - name: "Развертывание соединителя IoT\_— портал"
+      href: iot-fhir-portal-quickstart.md
+- name: Учебники
+  expanded: false
+  items:
+    - name: Развертывание приложения JavaScript
+      expanded: false
+      items:
+        - name: 1. Начальная установка и развертывание FHIR
+          href: tutorial-web-app-fhir-server.md
+        - name: 2. Регистрация общедоступного клиентского приложения
+          href: tutorial-web-app-public-app-reg.md
+        - name: 3. Настройка теста с помощью Postman
+          href: tutorial-web-app-test-postman.md
+        - name: 4. Создание веб-приложения
+          href: tutorial-web-app-write-web-app.md
+    - name: Получение доступа к API FHIR с помощью Postman
+      href: access-fhir-postman-tutorial.md
+    - name: Использование прокси-сервера SMART on FHIR
+      href: use-smart-on-fhir-proxy.md
+    - name: Прием данных с устройств Интернета вещей
+      expanded: false
+      items:
+        - name: Получение данных устройства через Центр Интернета вещей Azure
+          href: device-data-through-iot-hub.md
+- name: Примеры
+  items:
+    - name: Встроенные политики службы "Политика Azure"
+      displayName: 'samples, policies, definitions'
+      href: ./policy-samples.md
+- name: Практические руководства
+  expanded: false
+  items:
+    - name: Регистрация приложений
+      expanded: false
+      items:
+        - name: Общие сведения о регистрации приложений для Azure API для FHIR
+          href: fhir-app-registration.md
+        - name: Приложение-ресурс
+          href: register-resource-azure-ad-client-app.md
+        - name: Конфиденциальное клиентское приложение
+          href: register-confidential-azure-ad-client-app.md
+        - name: Общедоступное клиентское приложение
+          href: register-public-azure-ad-client-app.md
+        - name: Клиентское приложение службы
+          href: register-service-azure-ad-client-app.md
+    - name: Настройка параметров
+      expanded: false
+      items:
+        - name: Настройка дополнительных параметров Azure API для FHIR
+          href: azure-api-for-fhir-additional-settings.md
+        - name: Настройка RBAC в Azure
+          href: configure-azure-rbac.md
+        - name: Настройка RBAC в локальной среде
+          href: configure-local-rbac.md
+        - name: Настройка параметров базы данных
+          href: configure-database.md
+        - name: Настройка CORS
+          href: configure-cross-origin-resource-sharing.md
+        - name: Настройка экспорта
+          href: configure-export-data.md
+    - name: Поиск идентификаторов объектов удостоверений
+      href: find-identity-object-ids.md
+    - name: Включение ведения журнала диагностики в Azure API для FHIR®
+      href: enable-diagnostic-logging.md
+    - name: "Получение маркера для Azure API для FHIR\_— CLI"
+      href: get-healthcare-apis-access-token-cli.md
+    - name: Устранение неполадок с соединителем IoT
+      href: iot-troubleshoot-guide.md
+- name: Основные понятия
+  expanded: false
+  items:
+    - name: "Общие сведения об Azure\_AD и Azure API для FHIR"
+      href: azure-ad-hcapi.md
+    - name: Проверка маркера доступа
+      href: azure-ad-hcapi-token-validation.md
+    - name: Использование настраиваемых заголовков HTTP для добавления данных в журналы аудита
+      href: use-custom-headers.md
+    - name: Принципы работы соединителя IoT
+      expanded: false
+      items:
+        - name: Поток данных соединителя IoT
+          href: iot-data-flow.md
+        - name: Шаблоны сопоставления для соединителя IoT
+          href: iot-mapping-templates.md
+- name: Ресурсы
+  items:
+    - name: ВОПРОСЫ И ОТВЕТЫ
+      href: fhir-faq.md
+    - name: Поддерживаемые функции
+      href: fhir-features-supported.md
+    - name: '"Партнерская экосистема"'
+      href: partner-ecosystem.md
+- name: Справочник
+  items:
+    - name: Azure CLI
+      href: /cli/azure/ext/healthcareapis/healthcareapis

@@ -8,21 +8,22 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: quickstart
-ms.date: 02/10/2020
+ms.date: 05/26/2020
 ms.author: erhopf
+ms.custom: tracking-python
 zone_pivot_groups: programming-languages-set-one
-ms.openlocfilehash: ca53abdecfdabb4a49bb45880c0f6c4856b3ed1a
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 31d316635211d56207b2d612997938c2baaff02f
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83586560"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86144212"
 ---
 # <a name="quickstart-use-the-translator-to-transliterate-text"></a>Краткое руководство. Транслитерация текста с помощью Переводчика
 
 Из этого краткого руководства вы узнаете, как транслитерировать (преобразовать) текст из одного алфавита в другой с помощью REST API Переводчика. В приведенном примере японский текст транслитерируется в текст на латинице.
 
-Для работы с этим кратким руководством требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с ресурсом Переводчика. Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](https://azure.microsoft.com/try/cognitive-services/), чтобы получить ключ подписки.
+Для работы с этим кратким руководством требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с ресурсом Переводчика.
 
 ::: zone pivot="programming-language-csharp"
 [!INCLUDE [C# quickstart](includes/transliterate-csharp.md)]

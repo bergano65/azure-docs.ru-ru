@@ -8,32 +8,32 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-custom-search
 ms.topic: quickstart
-ms.date: 03/24/2020
+ms.date: 05/08/2020
 ms.author: aahi
-ms.openlocfilehash: 02c86e5a4c1a04b98ebba73653980e8e5e00f645
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: 292b94e56d988a1126db83e2f8ce40bbb0af6f42
+ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80238889"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83873245"
 ---
 # <a name="quickstart-call-your-bing-custom-search-endpoint-using-java"></a>Краткое руководство. Вызов конечной точки службы "Пользовательский поиск Bing" с помощью Java
 
-Сведения из этого краткого руководства помогут вам приступить к созданию запросов результатов поиска из экземпляра "Пользовательский поиск Bing". Хотя это приложение создается на языке Java, API пользовательского поиска Bing представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код этого примера доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/java/Search/BingCustomSearchv7.java).
+Узнайте, как запрашивать результаты поиска из экземпляра Пользовательского поиска Bing. Хотя это приложение написано на Java, API Пользовательского поиска Bing представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код этого примера доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/java/Search/BingCustomSearchv7.java).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Экземпляр службы "Пользовательский поиск Bing". См. [Краткое руководство. Создание первого экземпляра службы "Пользовательский поиск Bing"](quick-start.md), чтобы получить дополнительные сведения.
+- Экземпляр службы "Пользовательский поиск Bing". Дополнительные сведения см. в [кратком руководстве Создание первого экземпляра Пользовательского поиска Bing](quick-start.md).
 
-- Последняя версия [комплекта разработчика Java](https://www.oracle.com/technetwork/java/javase/downloads/index.html)  
+- Последняя версия [комплекта SDK для Java](https://www.oracle.com/technetwork/java/javase/downloads/index.html).
 
-- [Библиотека Gson](https://github.com/google/gson).
+- [Библиотека Gson.](https://github.com/google/gson)
 
 [!INCLUDE [cognitive-services-bing-custom-search-prerequisites](../../../includes/cognitive-services-bing-custom-search-signup-requirements.md)]
 
 ## <a name="create-and-initialize-the-application"></a>Создание и инициализация приложения
 
-1. Создайте проект Java в любой интегрированной среде разработки или редакторе, а затем импортируйте в него следующие библиотеки.
+1. Создайте проект Java в любой интегрированной среде разработки или редакторе, а затем импортируйте в него следующие библиотеки:
 
     ```java
     import java.io.InputStream;
@@ -50,7 +50,7 @@ ms.locfileid: "80238889"
     import com.google.gson.JsonParser;
     ```
 
-2. Создайте класс с именем `CustomSrchJava` и переменные для ключа подписки, конечной точки пользовательского поиска и идентификатора настраиваемой конфигурации экземпляра пользовательского поиска. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
+2. Создайте класс `CustomSrchJava` и переменные для ключа подписки, конечной точки пользовательского поиска и идентификатора настраиваемой конфигурации экземпляра пользовательского поиска. Вы можете использовать глобальную конечную точку, указанную в коде ниже, или конечную точку [личного поддомена](../../cognitive-services/cognitive-services-custom-subdomains.md), которая отображается на портале Azure для вашего ресурса.
     ```java
     public class CustomSrchJava {
         static String host = "https://api.cognitive.microsoft.com";
@@ -63,8 +63,8 @@ ms.locfileid: "80238889"
 
 3. Создайте еще один класс с именем `SearchResults`, который будет содержать ответ из экземпляра службы "Пользовательский поиск Bing".
 
-    ```csharp
-    class SearchResults{
+    ```java
+    class SearchResults {
         HashMap<String, String> relevantHeaders;
         String jsonResponse;
         SearchResults(HashMap<String, String> headers, String json) {
@@ -120,7 +120,7 @@ ms.locfileid: "80238889"
         }
     ```
 
-3. В методе main приложения вызовите `SearchWeb()` с применением условия поиска. 
+3. Выведите на экран ответ JSON.
 
     ```java
     System.out.println("\nJSON Response:\n");

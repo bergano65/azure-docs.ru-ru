@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 07/16/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d7ac085beaa85a7ddf3a6c3bfc61820e8e5a63ea
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: b8f5ff42597a457a8849e424e041f1677c28b383
+ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "68496569"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85608965"
 ---
 # <a name="tutorial-integrate-amazon-business-with-azure-active-directory"></a>Руководство по интеграция Amazon Business с Azure Active Directory
 
@@ -85,26 +85,24 @@ ms.locfileid: "68496569"
 
     1. В текстовое поле **Идентификатор (сущности)** введите URL-адрес в следующем формате:
     
-       | | |
+       | URL-адрес | Регион |
        |-|-|
-       | `https://www.amazon.com`|
-       | `https://www.amazon.co.jp`|
-       | `https://www.amazon.de`|
+       | `https://www.amazon.com`| Северная Америка |
+       | `https://www.amazon.co.jp`| Восточная Азия |
+       | `https://www.amazon.de`| Европа |
 
     1. В текстовом поле **URL-адрес ответа** введите URL-адрес в одном из таких форматов:
     
-       | | |
+       | URL-адрес | Регион |
        |-|-|
-       | `https://www.amazon.com/bb/feature/sso/action/3p_redirect?idpid={idpid}`|
-       | `https://www.amazon.co.jp/bb/feature/sso/action/3p_redirect?idpid={idpid}`|
-       | `https://www.amazon.de/bb/feature/sso/action/3p_redirect?idpid={idpid}`|
+       | `https://www.amazon.com/bb/feature/sso/action/3p_redirect?idpid={idpid}`| Северная Америка |
+       | `https://www.amazon.co.jp/bb/feature/sso/action/3p_redirect?idpid={idpid}`| Восточная Азия |
+       | `https://www.amazon.de/bb/feature/sso/action/3p_redirect?idpid={idpid}`| Европа |
 
        > [!NOTE]
        > Значение URL-адреса ответа приведено для примера. Вместо него нужно указать фактический URL-адрес ответа. Вы получите значение `<idpid>` из раздела конфигурации единого входа Amazon Business, как описано далее в учебнике. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-1. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
-
-    В текстовом поле **URL-адрес входа** введите URL-адрес: `https://www.amazon.com/`.
+1. Если вам нужно настроить приложение в режиме, инициированном **поставщиком служб**, добавьте полный URL-адрес, указанный в конфигурации Amazon Business, в поле **URL-адрес для входа** в разделе **Задать дополнительные URL-адреса**.
 
 1. На следующем снимке экрана показан список атрибутов по умолчанию. Измените атрибуты, щелкнув значок **Изменить** в разделе **User Attributes & Claims** (Утверждения и атрибуты пользователя).
 
@@ -153,6 +151,9 @@ ms.locfileid: "68496569"
 1. В мастере **настройки единого входа** выберите поставщика в соответствии с требованиями организации и нажмите кнопку **Next** (Далее).
 
     ![Группа по умолчанию](media/amazon-business-tutorial/default-group1.png)
+    
+    > [!NOTE]
+    > Microsoft ADFS есть в списке параметров. Но эта система не поддерживает единый вход Azure AD.
 
 1. В мастере **значений по умолчанию для новой учетной записи пользователя** выберите **Default Group** (Группа по умолчанию), а затем — **Default Buying Role** (Роль покупателя по умолчанию) в соответствии с ролью пользователя в организации и нажмите кнопку **Next** (Далее).
 
@@ -197,7 +198,12 @@ ms.locfileid: "68496569"
 1. Наконец, в разделе **SSO Connection details** (Сведения о подключении единого входа) **состояние** отображается как **Активно**.
 
     ![Соединение](media/amazon-business-tutorial/sso-connection5.png)
-
+    
+    > [!NOTE]
+    > Если вам нужно настроить приложение в режиме, инициированном **поставщиком служб** выполните описанное ниже действие. Вставьте URL-адрес для входа с представленного выше снимка экрана в текстовое поле **URL-адрес для входа** в разделе **Задать дополнительные URL-адреса** на портале Azure. Используйте следующий формат:
+    >
+    > `https://www.amazon.<TLD>/bb/feature/sso/action/start?domain_hint=<uniqueid>`
+    
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
 В этом разделе описано, как на портале Azure создать тестового пользователя с именем B.Simon.

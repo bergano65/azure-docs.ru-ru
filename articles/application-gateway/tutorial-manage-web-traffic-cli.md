@@ -4,15 +4,15 @@ description: Узнайте, как создать шлюз приложений
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
-ms.topic: article
+ms.topic: how-to
 ms.date: 07/20/2019
 ms.author: victorh
-ms.openlocfilehash: 3064def2eac0aaee5c04f7ab736cf539ae372cb4
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
+ms.openlocfilehash: d4a72017b1ec86f10a746a9530a1ff9a2742fa20
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "68359889"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84806280"
 ---
 # <a name="manage-web-traffic-with-an-application-gateway-using-the-azure-cli"></a>Управление веб-трафиком с помощью шлюза приложений и Azure CLI
 
@@ -71,7 +71,7 @@ az network public-ip create \
 
 ## <a name="create-an-application-gateway"></a>Создание шлюза приложений
 
-Чтобы создать шлюз приложений с именем *myAppGateway*, выполните команду [AZ Network Application-Gateway Create](/cli/azure/network/application-gateway) . При создании шлюза приложений с помощью Azure CLI укажите такие сведения о конфигурации, как емкость, номер SKU и параметры HTTP. Шлюз приложений назначается подсети *myAGSubnet* и адресу *myPublicIPAddressddress*, созданным ранее. 
+Выполните команду [az network application-gateway create](/cli/azure/network/application-gateway), чтобы создать шлюз приложений *myAppGateway*. При создании шлюза приложений с помощью Azure CLI укажите такие сведения о конфигурации, как емкость, номер SKU и параметры HTTP. Шлюз приложений назначается подсети *myAGSubnet* и адресу *myPublicIPAddressddress*, созданным ранее. 
 
 ```azurecli-interactive
 az network application-gateway create \
@@ -153,6 +153,6 @@ az network public-ip show \
 az group delete --name myResourceGroupAG --location eastus
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Ограничение веб-трафика с помощью брандмауэра веб-приложения](./tutorial-restrict-web-traffic-cli.md)

@@ -1,25 +1,17 @@
 ---
 title: Создание пространства имен служебной шины Azure с помощью шаблона
 description: Используйте шаблон Azure Resource Manager для создания пространства имен для обмена сообщениями служебной шины
-services: service-bus-messaging
 documentationcenter: .net
 author: spelluru
-manager: timlt
-editor: ''
-ms.assetid: dc0d6482-6344-4cef-8644-d4573639f5e4
-ms.service: service-bus-messaging
-ms.devlang: tbd
 ms.topic: article
 ms.tgt_pltfrm: dotnet
-ms.workload: na
-ms.date: 06/21/2019
+ms.date: 06/23/2020
 ms.author: spelluru
-ms.openlocfilehash: 5febdd63ab6f854ca3244f8449f6f715a75e735f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 6bcbdbb72f3d26522790b769a8185138c1207a98
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76264481"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85336837"
 ---
 # <a name="create-a-service-bus-namespace-by-using-an-azure-resource-manager-template"></a>Создание пространства имен служебной шины с помощью шаблона Azure Resource Manager
 
@@ -99,7 +91,7 @@ Remove-AzResourceGroup -ResourceGroupName $resourceGroupName
 Write-Host "Press [ENTER] to continue ..."
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье вы создали пространство имен служебной шины. Ознакомьтесь с другими краткими руководствами, чтобы узнать, как создавать очереди, разделы и подписки и использовать их.
 

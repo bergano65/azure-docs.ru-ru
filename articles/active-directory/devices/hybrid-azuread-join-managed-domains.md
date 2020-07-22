@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bcd00972c2da0d3d5dafe76a8619e0f0ccaedc19
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 2f3ea5f1810b5ca80e096b19e1dcf230e21eabcc
+ms.sourcegitcommit: 01cd19edb099d654198a6930cebd61cae9cb685b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79222991"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85317636"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-join-for-managed-domains"></a>Руководство по Настройка гибридного присоединения к Azure Active Directory для управляемых доменов
 
@@ -30,7 +30,7 @@ ms.locfileid: "79222991"
 
 В этой статье рассматривается гибридное присоединение к Azure AD.
 
-Размещение устройств в Azure AD позволяет увеличить эффективность работы пользователей благодаря выполнению единого входа для облачных и локальных ресурсов. В то же время вы можете защитить доступ к облачным и локальным ресурсам с помощью [условного доступа](../active-directory-conditional-access-azure-portal.md).
+Размещение устройств в Azure AD позволяет увеличить эффективность работы пользователей благодаря выполнению единого входа для облачных и локальных ресурсов. В то же время вы можете защитить доступ к облачным и локальным ресурсам с помощью [условного доступа](../conditional-access/howto-conditional-access-policy-compliant-device.md).
 
 Вы можете развернуть управляемую среду, используя [синхронизацию хэша паролей](../hybrid/whatis-phs.md) или [сквозную аутентификацию](../hybrid/how-to-connect-pta.md) с [простым единым входом](../hybrid/how-to-connect-sso.md). В этих сценариях не требуется настраивать сервер федерации для проверки подлинности.
 
@@ -70,9 +70,9 @@ ms.locfileid: "79222991"
 - `https://device.login.microsoftonline.com`
 - `https://autologon.microsoftazuread-sso.com` (если вы используете или планируете использовать простой единый вход).
 
-Если вашей организации требуется доступ к Интернету через исходящий прокси-сервер, рекомендуется [реализовать автоматическое обнаружение веб-прокси (WPAD)](https://docs.microsoft.com/previous-versions/tn-archive/cc995261(v%3dtechnet.10)), чтобы обеспечить регистрацию устройств в Azure AD на компьютерах Windows 10. Если возникли проблемы при настройке и управлении WPAD, см. статью об устранении неполадок с автоматическим обнаружением [здесь](/previous-versions/tn-archive/cc302643(v=technet.10)).
+Если вашей организации требуется доступ к Интернету через исходящий прокси-сервер, вы можете [реализовать автоматическое обнаружение веб-прокси (WPAD)](https://docs.microsoft.com/previous-versions/tn-archive/cc995261(v%3dtechnet.10)), чтобы обеспечить регистрацию устройств в Azure AD на компьютерах Windows 10. Если возникли проблемы при настройке и управлении WPAD, см. статью об устранении неполадок с автоматическим обнаружением [здесь](/previous-versions/tn-archive/cc302643(v=technet.10)). На устройствах с ОС Windows 10 версии ниже 1709 WPAD является единственным доступным вариантом, позволяющим настроить прокси-сервер для работы с гибридным присоединением к Azure AD. 
 
-Если вы не используете WPAD, параметры прокси-сервера можно настроить на компьютере, начиная с Windows 10 версии 1709. Дополнительные сведения см. в статье [Развертывание параметров прокси-сервера WinHTTP с помощью объекта групповой политики](https://blogs.technet.microsoft.com/netgeeks/2018/06/19/winhttp-proxy-settings-deployed-by-gpo/).
+Если вы не используете WPAD, параметры прокси-сервера WinHTTP можно настроить на компьютере с Windows 10 версии не ниже 1709. Дополнительные сведения см. в статье [Развертывание параметров прокси-сервера WinHTTP с помощью объекта групповой политики](https://blogs.technet.microsoft.com/netgeeks/2018/06/19/winhttp-proxy-settings-deployed-by-gpo/).
 
 > [!NOTE]
 > Если вы настроите параметры прокси-сервера на компьютере с помощью параметров WinHTTP, любые компьютеры, которым не удается подключиться к настроенному прокси-серверу, не смогут подключиться к Интернету.
@@ -159,6 +159,24 @@ ms.locfileid: "79222991"
 
 ## <a name="verify-the-registration"></a>Проверка регистрации
 
+Ниже приведены три способа определения и проверки состояния устройства.
+
+### <a name="locally-on-the-device"></a>Локально на устройстве
+
+1. Откройте Windows PowerShell.
+2. Введите `dsregcmd /status`.
+3. Убедитесь, что для **AzureAdJoined** и **DomainJoined** установлено значение **YES** (Да).
+4. Вы можете использовать **DeviceId** и сравнить состояние службы с помощью портала Azure или PowerShell.
+
+### <a name="using-the-azure-portal"></a>Использование портала Azure
+
+1. Перейдите на страницу устройства по [прямой ссылке](https://portal.azure.com/#blade/Microsoft_AAD_IAM/DevicesMenuBlade/Devices).
+2. См. сведения о том, как найти устройство, в статье [Управление удостоверениями устройств с помощью портала Azure](https://docs.microsoft.com/azure/active-directory/devices/device-management-azure-portal#locate-devices).
+3. Если для столбца **Зарегистрировано** отображается состояние **Ожидается**, это значит, что гибридное присоединение к Azure AD не завершено.
+4. Если для столбца **Зарегистрировано** отображается **дата и время**, это значит, что гибридное присоединение к Azure AD завершено.
+
+### <a name="using-powershell"></a>Использование PowerShell
+
 Проверьте состояние регистрации устройства в клиенте Azure с помощью **[Get-MsolDevice](/powershell/msonline/v1/get-msoldevice)** . Этот командлет применяется в [модуле PowerShell для Azure Active Directory](/powershell/azure/install-msonlinev1?view=azureadps-2.0).
 
 Когда вы используете командлет **Get-MSolDevice**, чтобы получить сведения о службе:
@@ -167,17 +185,43 @@ ms.locfileid: "79222991"
 - У параметра **DeviceTrustType** должно быть значение **Domain Joined**. Этот параметр является эквивалентным состоянию **Гибридные устройства, присоединенные к Azure AD** на странице **Устройства** на портале Azure AD.
 - Для устройств, которые используются при условном доступе, у параметра **Enabled** должно быть значение **True**, а у **DeviceTrustLevel** — **Managed**.
 
-Чтобы проверить сведения о службе, сделайте следующее:
-
 1. Откройте Windows PowerShell от имени администратора.
-1. Введите `Connect-MsolService`, чтобы подключится к своему клиенту Azure.  
-1. Введите `get-msoldevice -deviceId <deviceId>`.
-1. Убедитесь, что параметр **Включено** имеет значение **True**.
+2. Введите `Connect-MsolService`, чтобы подключится к своему клиенту Azure.
+
+#### <a name="count-all-hybrid-azure-ad-joined-devices-excluding-pending-state"></a>Число всех устройств с гибридным присоединением к Azure AD, кроме тех, для которых отображается состояние **Ожидается**
+
+```azurepowershell
+(Get-MsolDevice -All -IncludeSystemManagedDevices | where {($_.DeviceTrustType -eq 'Domain Joined') -and (([string]($_.AlternativeSecurityIds)).StartsWith("X509:"))}).count
+```
+
+#### <a name="count-all-hybrid-azure-ad-joined-devices-with-pending-state"></a>Число всех устройств с гибридным присоединением к Azure AD с отображаемым состоянием **Ожидается**
+
+```azurepowershell
+(Get-MsolDevice -All -IncludeSystemManagedDevices | where {($_.DeviceTrustType -eq 'Domain Joined') -and (-not([string]($_.AlternativeSecurityIds)).StartsWith("X509:"))}).count
+```
+
+#### <a name="list-all-hybrid-azure-ad-joined-devices"></a>Перечисление всех устройств с гибридным присоединением к Azure AD
+
+```azurepowershell
+Get-MsolDevice -All -IncludeSystemManagedDevices | where {($_.DeviceTrustType -eq 'Domain Joined') -and (([string]($_.AlternativeSecurityIds)).StartsWith("X509:"))}
+```
+
+#### <a name="list-all-hybrid-azure-ad-joined-devices-with-pending-state"></a>Перечисление всех гибридных устройств с гибридным присоединением к Azure AD с отображаемым состоянием **Ожидается**
+
+```azurepowershell
+Get-MsolDevice -All -IncludeSystemManagedDevices | where {($_.DeviceTrustType -eq 'Domain Joined') -and (-not([string]($_.AlternativeSecurityIds)).StartsWith("X509:"))}
+```
+
+#### <a name="list-details-of-a-single-device"></a>Вывод сведений об одном устройстве.
+
+1. Введите `get-msoldevice -deviceId <deviceId>` (это идентификатор **DeviceId**, полученный локально на устройстве).
+2. Убедитесь, что параметр **Включено** имеет значение **True**.
 
 ## <a name="troubleshoot-your-implementation"></a>Устранение неполадок реализации
 
 Если возникают проблемы с настройкой гибридного присоединения к Azure AD для устройств Windows, присоединенных к домену, ознакомьтесь со следующими статьями:
 
+- [Устранение неполадок с устройствами с помощью команды dsregcmd](https://docs.microsoft.com/azure/active-directory/devices/troubleshoot-device-dsregcmd)
 - [Устранение неполадок на устройствах с гибридным присоединением к Azure Active Directory](troubleshoot-hybrid-join-windows-current.md)
 - [Устранение неполадок на устройствах нижнего уровня с гибридным присоединением к Azure Active Directory](troubleshoot-hybrid-join-windows-legacy.md)
 

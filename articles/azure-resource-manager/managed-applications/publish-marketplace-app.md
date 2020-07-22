@@ -5,12 +5,12 @@ author: tfitzmac
 ms.topic: tutorial
 ms.date: 07/17/2019
 ms.author: tomfitz
-ms.openlocfilehash: a42ee5d6f7f40d391acb743ef85f671f25804749
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: dcd036f09982cba8271ed6057a167eb7440303a9
+ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79473002"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86054497"
 ---
 # <a name="tutorial-publish-azure-managed-applications-in-the-marketplace"></a>Руководство по публикации управляемых приложений Azure в Marketplace
 
@@ -172,6 +172,6 @@ SKU — это наименьшая единица предложения, до�
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Сведения о том, что происходит после нажатия кнопки **Опубликовать**, см. в [этой статье](../../marketplace/cloud-partner-portal/azure-applications/cpp-publish-offer.md).
+* Сведения о том, что происходит после нажатия кнопки **Опубликовать**, см. в [этой статье](../../marketplace/partner-center-portal/create-new-azure-apps-offer.md).
 * Общие сведения об управляемых приложениях Azure см. в разделе [Обзор управляемых приложений Azure](overview.md).
 * Сведения о публикации управляемых приложений в каталоге услуг см. в разделе [Создание и публикация управляемого приложения Azure](publish-service-catalog-app.md).

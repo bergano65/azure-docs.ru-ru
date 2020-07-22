@@ -10,18 +10,18 @@ ms.date: 02/14/2020
 ms.subservice: language-understanding
 ms.topic: include
 ms.author: diberry
-ms.openlocfilehash: 192d3d1a7bd792779b068a9c0c7ac34c7bee1c80
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: cbb79c6c7467306bbc202d317684a5c62835d53c
+ms.sourcegitcommit: dfa5f7f7d2881a37572160a70bac8ed1e03990ad
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80117035"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85374884"
 ---
 Если приложения должны быть созданы другими людьми, необходимо добавить соответствующие адреса электронной почты в ресурс создания портал Azure.
 
-Если вы являетесь **владельцем или администратором подписки Azure**, вы можете добавить участника к ресурсу.
+Если вы являетесь владельцем или администратором подписки Azure, вы можете добавить участника к ресурсу.
 
-Если вы **не являетесь владельцем или администратором подписки Azure**, ваша учетная запись Azure должна иметь `Microsoft.Authorization/roleAssignments/write` разрешения.
+Если вы не являетесь владельцем подписки Azure или ее администратором, ваша учетная запись Azure должна иметь `Microsoft.Authorization/roleAssignments/write` разрешения.
 
 Если у вас возникли проблемы с этим назначением роли, ознакомьтесь с:
 

@@ -6,17 +6,17 @@ author: billmath
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
-ms.topic: overview
-ms.date: 03/04/2020
+ms.topic: tutorial
+ms.date: 05/19/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aba42e6bd9b11e47d793219c0ff06b9177d609f5
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: fd9eff90f144909b9746e85a9c42aae2fdf02ed6
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "78298825"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86146812"
 ---
 # <a name="pilot-cloud-provisioning-for-an-existing-synced-ad-forest"></a>Пилотная подготовка облака для существующего синхронизированного леса AD 
 
@@ -164,19 +164,19 @@ ms.locfileid: "78298825"
  1. Войдите на портал Azure.
  2. В меню **Azure Active Directory**
  3. Щелкните **Azure AD Connect**.
- 4. Выберите **Управление подготовкой (предварительная версия)** 
- ![](media/how-to-configure/manage1.png).</br>
- 5.  Щелкните **Новая конфигурация**
- ![](media/tutorial-single-forest/configure1.png).</br>
+ 4. Щелкните ссылку **Управление подготовкой (предварительная версия)** 
+ ![Снимок экрана со ссылкой "Управление подготовкой (предварительная версия)".](media/how-to-configure/manage1.png)</br>
+ 5.  Выберите элемент **Новая конфигурация**
+ ![Снимок экрана "Подготовка Azure AD (предварительная версия)" с выделенной ссылкой "Новая конфигурация".](media/tutorial-single-forest/configure1.png)</br>
  6.  На экране конфигурации перейдите к разделу **Сообщение электронной почты с уведомлением**, переместите селектор в положение **Включить** и щелкните **Сохранить**.
- ![](media/tutorial-single-forest/configure2.png)</br>
+ ![Снимок экрана "Настройка" с указанным адресом электронной почты для уведомлений и переключателем, установленным в положение "Включить".](media/tutorial-single-forest/configure2.png)</br>
  7. В разделе **Настройка** выберите **Все пользователи**, чтобы изменить область действия правила конфигурации.
- ![](media/how-to-configure/scope2.png)</br>
+ ![Снимок экрана настройки: рядом с параметром "Пользователи в области" выделен элемент "Все пользователи"](media/how-to-configure/scope2.png)</br>
  8. Справа измените область, включив в нее только что созданное подразделение: "OU=CPUsers,DC=contoso,DC=com".
- ![](media/tutorial-existing-forest/scope2.png)</br>
+ ![Снимок экрана: раздел "Пользователи в области", в котором показано, что область изменена на только что созданное подразделение](media/tutorial-existing-forest/scope2.png)</br>
  9.  Щелкните **Готово** и **Сохранить**.
  10. Теперь область будет включать одно подразделение. 
- ![](media/tutorial-existing-forest/scope3.png)</br>
+ ![Снимок экрана настройки: рядом с параметром "Пользователи в области" выделен элемент "1 подразделение"](media/tutorial-existing-forest/scope3.png)</br>
  
 
 ## <a name="verify-users-are-provisioned-by-cloud-provisioning"></a>Проверка подготовки пользователей с помощью подготовки облака
@@ -199,7 +199,9 @@ ms.locfileid: "78298825"
 3.  Выполните `Start-ADSyncSyncCycle`.  Нажмите клавишу ВВОД.  
 
 >[!NOTE] 
->Если вы используете собственный настраиваемый планировщик для синхронизации AAD Connect, включите его. 
+>Если вы используете собственный настраиваемый планировщик для синхронизации Azure AD Connect, включите его. 
+
+После включения планировщика Azure AD Connect будет прерывать экспорт любых изменений в объектах с `cloudNoFlow=true` в метавселенной, если не будет обновлен какой-либо атрибут ссылки (например, manager). Если для объекта выполнено обновление ссылочного атрибута, Azure AD Connect будет игнорировать сигнал `cloudNoFlow` и экспортировать все обновления для объекта.
 
 ## <a name="something-went-wrong"></a>Если что-то пошло не так
 Если пилотный проект не работает должным образом, вы можете вернуться к настройке службы синхронизации Azure AD Connect, выполнив следующие шаги.

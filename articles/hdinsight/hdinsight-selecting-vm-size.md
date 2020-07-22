@@ -10,10 +10,9 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 10/09/2019
 ms.openlocfilehash: a21e8d6c76c93b3084619c09f6a7664a25c1929c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "73682204"
 ---
 # <a name="selecting-the-right-vm-size-for-your-azure-hdinsight-cluster"></a>Выбор правильного размера виртуальной машины для кластера Azure HDInsight
@@ -55,13 +54,13 @@ ms.locfileid: "73682204"
 
 | Тип кластера | Версия | Рабочий узел | Головной узел | Узел Zookeeper |
 |---|---|---|---|---|
-| Spark | All | F4 и выше | нет | нет |
-| Hadoop | All | F4 и выше | нет | нет |
-| Kafka | All | F4 и выше | нет | нет |
-| HBase | All | F4 и выше | нет | нет |
-| LLAP | disabled | нет | нет | нет |
-| Storm | disabled | нет | нет | нет |
-| Служба "Машинное обучение" | ТОЛЬКО HDI 3,6 | F4 и выше | нет | нет |
+| Spark | Все | F4 и выше | Нет | Нет |
+| Hadoop | Все | F4 и выше | Нет | Нет |
+| Kafka | Все | F4 и выше | Нет | Нет |
+| HBase | Все | F4 и выше | Нет | Нет |
+| LLAP | disabled | Нет | Нет | Нет |
+| Storm | disabled | Нет | Нет | Нет |
+| Служба "Машинное обучение" | ТОЛЬКО HDI 3,6 | F4 и выше | Нет | Нет |
 
 Спецификации каждого номера SKU серии F см. в статье [размеры виртуальных машин серии](https://azure.microsoft.com/blog/f-series-vm-size/)f.
 
@@ -71,7 +70,7 @@ ms.locfileid: "73682204"
 
 Дополнительные сведения о тестировании производительности для номеров SKU и кластеров виртуальных машин см. [в статье Планирование емкости кластера в Azure HDInsight ](hdinsight-capacity-planning.md#choose-the-vm-size-and-type).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Поддерживаемые конфигурации узла в Azure HDInsight](hdinsight-supported-node-configuration.md)
+- [Поддерживаемые конфигурации узлов Azure HDInsight](hdinsight-supported-node-configuration.md)
 - [Размеры виртуальных машин Linux в Azure](../virtual-machines/linux/sizes.md)

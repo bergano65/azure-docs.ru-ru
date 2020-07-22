@@ -12,10 +12,9 @@ manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 79ebf543a3880a4f2c8ee8c0d706c268ef3f08d2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79263651"
 ---
 # <a name="troubleshoot-on-premises-azure-ad-password-protection"></a>Устранение неполадок: Локальная защита паролей Azure AD
@@ -50,9 +49,9 @@ ms.locfileid: "79263651"
 
 1. Убедитесь, что лес и все прокси-серверы зарегистрированы в одном клиенте Azure.
 
-   Это требование можно проверить, запустив `Get-AzureADPasswordProtectionProxy` командлеты `Get-AzureADPasswordProtectionDCAgent` и PowerShell, а затем сравните `AzureTenant` свойство каждого возвращенного элемента. Для правильной работы сообщаемое имя клиента должно быть одинаковым для всех агентов контроллера домена и прокси-серверов.
+   Это требование можно проверить, запустив `Get-AzureADPasswordProtectionProxy` `Get-AzureADPasswordProtectionDCAgent` командлеты и PowerShell, а затем сравните `AzureTenant` свойство каждого возвращенного элемента. Для правильной работы сообщаемое имя клиента должно быть одинаковым для всех агентов контроллера домена и прокси-серверов.
 
-   Если условие несоответствия регистрации клиента Azure существует, эту проблему можно устранить, запустив командлеты `Register-AzureADPasswordProtectionProxy` и (или `Register-AzureADPasswordProtectionForest` ) PowerShell по мере необходимости, чтобы использовать учетные данные из одного и того же клиента Azure для всех регистраций.
+   Если условие несоответствия регистрации клиента Azure существует, эту проблему можно устранить, запустив `Register-AzureADPasswordProtectionProxy` командлеты и (или `Register-AzureADPasswordProtectionForest` ) PowerShell по мере необходимости, чтобы использовать учетные данные из одного и того же клиента Azure для всех регистраций.
 
 ## <a name="dc-agent-is-unable-to-encrypt-or-decrypt-password-policy-files"></a>Агенту контроллера домена не удалось зашифровать или расшифровать файлы политики паролей
 
@@ -94,7 +93,7 @@ ms.locfileid: "79263651"
 
 1. В действительности алгоритм проверки пароля может работать должным образом. Узнайте [, как оцениваются пароли](concept-password-ban-bad.md#how-are-passwords-evaluated).
 
-## <a name="ntdsutilexe-fails-to-set-a-weak-dsrm-password"></a>Программе Ntdsutil. exe не удается установить надежный пароль DSRM
+## <a name="ntdsutilexe-fails-to-set-a-weak-dsrm-password"></a>Ntdsutil.exe не удалось задать надежный пароль DSRM
 
 Active Directory всегда будет проверять новый пароль режима восстановления служб каталогов, чтобы убедиться, что он соответствует требованиям к сложности паролей домена. Эта проверка также вызывает библиотеки DLL фильтрации паролей, такие как защита паролей Azure AD. Если новый пароль DSRM отклоняется, появляется следующее сообщение об ошибке:
 
@@ -187,7 +186,7 @@ PS C:\> $LatestAzureADPasswordProtectionVersion = "1.2.125.0"
 PS C:\> Get-AzureADPasswordProtectionDCAgent | Where-Object {$_.SoftwareVersion -lt $LatestAzureADPasswordProtectionVersion}
 ```
 
-По для прокси-сервера защиты паролей Azure AD не ограничено по времени в любой версии. Корпорация Майкрософт по-прежнему рекомендует обновлять контроллеры домена и прокси-сервера до последних версий по мере их выпуска. `Get-AzureADPasswordProtectionProxy` Командлет можно использовать для поиска агентов прокси-сервера, требующих обновления, аналогично приведенному выше примеру для агентов контроллеров домена.
+По для прокси-сервера защиты паролей Azure AD не ограничено по времени в любой версии. Корпорация Майкрософт по-прежнему рекомендует обновлять контроллеры домена и прокси-сервера до последних версий по мере их выпуска. `Get-AzureADPasswordProtectionProxy`Командлет можно использовать для поиска агентов прокси-сервера, требующих обновления, аналогично приведенному выше примеру для агентов контроллеров домена.
 
 Дополнительные сведения о конкретных процедурах обновления см. в статье [обновление агента контроллера домена](howto-password-ban-bad-on-premises-deploy.md#upgrading-the-dc-agent) и [Обновление службы прокси-сервера](howto-password-ban-bad-on-premises-deploy.md#upgrading-the-proxy-service) .
 
@@ -247,7 +246,7 @@ PS C:\> Get-AzureADPasswordProtectionDCAgent | Where-Object {$_.SoftwareVersion 
 
    Этот путь будет другим, если общий ресурс sysvol настроен в нестандартном местоположении.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Часто задаваемые вопросы о функции защиты паролей Azure AD](howto-password-ban-bad-on-premises-faq.md)
 

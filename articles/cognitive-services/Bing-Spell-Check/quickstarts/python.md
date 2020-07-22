@@ -8,18 +8,21 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-spell-check
 ms.topic: quickstart
-ms.date: 12/16/2019
+ms.date: 05/21/2020
 ms.author: aahi
-ms.openlocfilehash: 6b0977628f7c3d971804d8597f42425608028081
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.custom: tracking-python
+ms.openlocfilehash: 65994313549c1744da58c5d63a70e803777f7f53
+ms.sourcegitcommit: 1de57529ab349341447d77a0717f6ced5335074e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75448456"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84611092"
 ---
 # <a name="quickstart-check-spelling-with-the-bing-spell-check-rest-api-and-python"></a>Краткое руководство. Проверка орфографии с помощью REST API проверки орфографии Bing и Python
 
-В этом кратком руководстве показано, как отправить первый вызов к REST API "Проверка орфографии Bing". Это простое приложение Python отправляет запрос к API и возвращает список предлагаемых исправлений. Хотя это приложение создается на языке Python, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код этого приложения доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/python/Search/BingEntitySearchv7.py).
+В этом кратком руководстве показано, как отправить первый вызов к REST API "Проверка орфографии Bing". Это простое приложение Python отправляет запрос к API и возвращает список предлагаемых исправлений. 
+
+Это приложение создано на языке Python. Но API представляет собой веб-службу на основе REST, совместимую с большинством языков программирования. Исходный код этого приложения доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/python/Search/BingEntitySearchv7.py).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -29,14 +32,14 @@ ms.locfileid: "75448456"
 
 ## <a name="initialize-the-application"></a>Инициализация приложения
 
-1. Создайте файл Python в избранной интегрированной среде разработки или редакторе и добавьте следующую инструкцию для импорта.
+1. Создайте файл Python в любой интегрированной среде разработки или редакторе и добавьте следующие инструкции импорта:
 
    ```python
    import requests
    import json
    ```
 
-2. Создайте переменные для текста, орфографию которого необходимо проверить, ключ подписки и конечную точку Проверки орфографии Bing. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
+2. Создайте переменные для текста, орфографию которого необходимо проверить, ключ подписки и конечную точку Проверки орфографии Bing. Вы можете использовать глобальную конечную точку, указанную в коде ниже, или конечную точку [личного поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), которая отображается на портале Azure для вашего ресурса.
 
     ```python
     api_key = "<ENTER-KEY-HERE>"
@@ -52,8 +55,12 @@ ms.locfileid: "75448456"
     data = {'text': example_text}
     ```
 
-2. Добавьте к запросу параметры. Добавьте код рынка после `mkt=`. Код рынка определяет страну, из которой выполняется запрос. Кроме того, добавьте режим проверки орфографии после `&mode=`. Можно указать режим `proof` (выявляет большинство орфографических и грамматических ошибок) или `spell` (выявляет большинство орфографических ошибок, но не так много грамматических ошибок).
+2. Добавьте к запросу параметры: 
 
+   1. Назначьте код рынка для параметра `mkt` с помощью оператора `=`. Код рынка — это код страны или региона, из которого выполняется запрос. 
+
+   1. Добавьте параметр `mode` с оператором `&` и назначьте режим проверки орфографии. Можно указать режим `proof` (выявляет большинство орфографических и грамматических ошибок) или `spell` (выявляет большинство орфографических ошибок, но не так много грамматических ошибок). 
+ 
     ```python
     params = {
         'mkt':'en-us',
@@ -88,7 +95,7 @@ ms.locfileid: "75448456"
 
 ## <a name="run-the-application"></a>Выполнение приложения
 
-При использовании командной строки выполните приведенные ниже команды для запуска приложения.
+При использовании командной строки выполните приведенные ниже команды для запуска приложения:
 
 ```bash
 python <FILE_NAME>.py
@@ -142,4 +149,4 @@ python <FILE_NAME>.py
 > [Создание одностраничного веб-приложения](../tutorials/spellcheck.md)
 
 - [Что такое API проверки орфографии Bing?](../overview.md)
-- [Справочник по API Проверки орфографии Bing версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-spell-check-api-v7-reference)
+- [Справочник по API "Проверка орфографии Bing" версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-spell-check-api-v7-reference)

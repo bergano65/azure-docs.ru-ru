@@ -8,18 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-spell-check
 ms.topic: quickstart
-ms.date: 12/16/2019
+ms.date: 05/21/2020
 ms.author: aahi
-ms.openlocfilehash: 816f2692a71d5d4281248405cc84102cfa881f66
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: 44dc3f16128913f76369ad645a32e91f38272546
+ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75382886"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83869866"
 ---
 # <a name="quickstart-check-spelling-with-the-bing-spell-check-rest-api-and-php"></a>Краткое руководство. Проверка орфографии с REST API "Проверка орфографии Bing" и PHP
 
-В этом кратком руководстве показано, как отправить первый вызов к REST API "Проверка орфографии Bing". Это простое приложение PHP отправляет запрос к API и возвращает список предлагаемых исправлений. Хотя это приложение создается на языке PHP, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
+В этом кратком руководстве показано, как отправить первый вызов к REST API "Проверка орфографии Bing". Это простое приложение PHP отправляет запрос к API и возвращает список предлагаемых исправлений. 
+
+Хотя это приложение написано на PHP, API представляет собой веб-службу на основе REST, совместимую с большинством языков программирования.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -28,12 +30,12 @@ ms.locfileid: "75382886"
 [!INCLUDE [cognitive-services-bing-spell-check-signup-requirements](../../../../includes/cognitive-services-bing-spell-check-signup-requirements.md)]
 
 
-## <a name="get-spell-check-results"></a>Получение результатов проверки орфографии
+## <a name="get-bing-spell-check-rest-api-results"></a>Получение результатов REST API "Проверка орфографии Bing"
 
 1. Создайте проект PHP в используемой вами интегрированной среде разработки.
 2. Добавьте указанный ниже код.
 3. Замените значение `subscriptionKey` ключом доступа, допустимым для подписки.
-4. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
+4. Вы можете использовать глобальную конечную точку, указанную в коде ниже, или конечную точку [личного поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), которая отображается на портале Azure для вашего ресурса.
 5. Запустите программу.
     
     ```php
@@ -143,4 +145,4 @@ ms.locfileid: "75382886"
 > [Создание одностраничного веб-приложения](../tutorials/spellcheck.md)
 
 - [Что такое API проверки орфографии Bing?](../overview.md)
-- [Справочник по API Проверки орфографии Bing версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-spell-check-api-v7-reference)
+- [Справочник по API "Проверка орфографии Bing" версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-spell-check-api-v7-reference)

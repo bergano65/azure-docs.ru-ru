@@ -6,12 +6,12 @@ services: container-service
 ms.topic: quickstart
 ms.date: 01/21/2020
 ms.custom: mvc, seo-javascript-october2019
-ms.openlocfilehash: e4ac5a953b5d88d0074c3cfb7f1bd45331577238
-ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
+ms.openlocfilehash: 4ed4f69ea3c994d9d1cc71e26e35b8d2b6021982
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81392801"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86251425"
 ---
 # <a name="quickstart-deploy-an-azure-kubernetes-service-aks-cluster-using-the-azure-portal"></a>Краткое руководство. Развертывание кластера Службы Azure Kubernetes (AKS) с помощью портала Azure
 
@@ -47,7 +47,7 @@ ms.locfileid: "81392801"
 
 4. На странице **Масштаб** оставьте значения по умолчанию. В нижней части экрана щелкните **Next: Authentication** (Далее: аутентификация).
     > [!CAUTION]
-    > При создании новых субъектов-служб AAD может потребоваться несколько минут на их распространение и запуск, а также поиск субъектом-службой ошибок и сбоев проверки на портале Azure. Если таковые будут обнаружены, см.[эту статью](troubleshooting.md#im-receiving-errors-that-my-service-principal-was-not-found-when-i-try-to-create-a-new-cluster-without-passing-in-an-existing-one) для их устранения.
+    > При создании новых субъектов-служб AAD может потребоваться несколько минут на их распространение и запуск, а также поиск субъектом-службой ошибок и сбоев проверки на портале Azure. Если таковые будут обнаружены, см.[эту статью](troubleshooting.md#received-an-error-saying-my-service-principal-wasnt-found-or-is-invalid-when-i-try-to-create-a-new-cluster) для их устранения.
 
 5. На странице **Аутентификация** настройте следующие параметры.
     - Создайте новый субъект-службу, оставив в поле **Субъект-служба** значение **Субъект-служба по умолчанию (новый)** . Можно также выбрать *Настроить субъект-службу*, чтобы использовать существующий субъект-службу. При использовании существующего имени субъекта-службы необходимо указать для него идентификатор клиента и секрет.
@@ -232,7 +232,7 @@ azure-vote-front   LoadBalancer   10.0.37.27   52.179.23.131   80:30572/TCP   2m
 
 1. В разделе **Отслеживание** в левой части окна выберите **Аналитика**.
 1. В верхней части выберите **+Добавить фильтр**.
-1. Выберите *Пространство имен* как свойство, а затем — элемент *\<All but kube-system\>* (Все, кроме kube-system).
+1. Выберите *Пространство имен* как свойство, а затем — *\<All but kube-system\>* .
 1. Выберите **Контейнеры** для просмотра.
 
 Отобразятся представления контейнеров *azure-vote-back* и *azure-vote-front*, как показано ниже:
@@ -280,11 +280,11 @@ az aks delete --resource-group myResourceGroup --name myAKSCluster --no-wait
 [kubernetes-concepts]: concepts-clusters-workloads.md
 [az-aks-get-credentials]: /cli/azure/aks?view=azure-cli-latest#az-aks-get-credentials
 [az-aks-delete]: /cli/azure/aks#az-aks-delete
-[aks-monitor]: ../monitoring/monitoring-container-health.md
+[aks-monitor]: ../azure-monitor/insights/container-insights-overview.md
 [aks-network]: ./concepts-network.md
 [aks-tutorial]: ./tutorial-kubernetes-prepare-app.md
 [http-routing]: ./http-application-routing.md
 [sp-delete]: kubernetes-service-principal.md#additional-considerations
-[azure-dev-spaces]: https://docs.microsoft.com/azure/dev-spaces/
+[azure-dev-spaces]: ../dev-spaces/index.yml
 [kubernetes-deployment]: concepts-clusters-workloads.md#deployments-and-yaml-manifests
 [kubernetes-service]: concepts-network.md#services

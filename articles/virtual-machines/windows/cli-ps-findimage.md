@@ -1,28 +1,26 @@
 ---
-title: Выбор образов виртуальных машин Windows в Azure
+title: Поиск и использование образов Azure Marketplace
 description: Вы можете использовать Azure PowerShell для определения издателя, предложения, номера SKU и версии для образов виртуальных машин из Marketplace.
 author: cynthn
-ms.service: virtual-machines-windows
+ms.service: virtual-machines
 ms.subservice: imaging
 ms.topic: article
-ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 01/25/2019
 ms.author: cynthn
-ms.openlocfilehash: 46a2badbbe957f6a8a6af7f5a40633ea24cadcd4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d2d37e20ada2d1128f04d2df822da996338e0e6e
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82083371"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86500877"
 ---
-# <a name="find-windows-vm-images-in-the-azure-marketplace-with-azure-powershell"></a>Поиск образов виртуальных машин Windows в Azure Marketplace с помощью Azure PowerShell
+# <a name="find-and-use-vm-images-in-the-azure-marketplace-with-azure-powershell"></a>Поиск и использование образов виртуальных машин в Azure Marketplace с помощью Azure PowerShell
 
-В этой статье описывается, как с помощью Azure PowerShell находить образы виртуальных машин в Azure Marketplace. При создании виртуальной машины программными средствами с помощью PowerShell, шаблонов Resource Manager или других средств вы можете указать образ в Marketplace.
+В этой статье описывается, как с помощью Azure PowerShell находить образы виртуальных машин в Azure Marketplace. После этого можно указать образ Marketplace при создании виртуальной машины.
 
 Вы также можете просмотреть доступные образы и предложения в онлайн-магазине [Microsoft Azure Marketplace](https://azuremarketplace.microsoft.com/), на [портале Azure](https://portal.azure.com) или с помощью [Azure CLI](../linux/cli-ps-findimage.md). 
 
- 
 
 [!INCLUDE [virtual-machines-common-image-terms](../../../includes/virtual-machines-common-image-terms.md)]
 
@@ -46,13 +44,13 @@ ms.locfileid: "82083371"
 
 ## <a name="navigate-the-images"></a>Переход к образам
 
-Один из способов поиска образа в расположении основан на запуске командлетов [Get-AzVMImagePublisher](https://docs.microsoft.com/powershell/module/az.compute/get-azvmimagepublisher), [Get-AzVMImageOffer](https://docs.microsoft.com/powershell/module/az.compute/get-azvmimageoffer) и [Get-AzVMImageSku](https://docs.microsoft.com/powershell/module/az.compute/get-azvmimagesku) по порядку.
+Один из способов поиска образа в расположении основан на запуске командлетов [Get-AzVMImagePublisher](/powershell/module/az.compute/get-azvmimagepublisher), [Get-AzVMImageOffer](/powershell/module/az.compute/get-azvmimageoffer) и [Get-AzVMImageSku](/powershell/module/az.compute/get-azvmimagesku) по порядку.
 
 1. Получить список издателей образов.
 2. Получить список предложений нужного издателя.
 3. Получить список номеров SKU для требуемого предложения.
 
-Затем, чтобы отобразить версии для развертывания, выполните команду [Get-AzVMImage](https://docs.microsoft.com/powershell/module/az.compute/get-azvmimage) для выбранного SKU.
+Затем, чтобы отобразить версии для развертывания, выполните команду [Get-AzVMImage](/powershell/module/az.compute/get-azvmimage) для выбранного SKU.
 
 1. Отобразите список издателей:
 
@@ -170,7 +168,7 @@ $skuName="2019-Datacenter"
 Get-AzVMImage -Location $locName -PublisherName $pubName -Offer $offerName -Sku $skuName | Select Version
 ```
 
-Теперь выбранного издателя, предложение, номер SKU и версию можно объединить в URN (значения, разделенные ":"). Передайте этот URN с параметром `--image` при создании виртуальной машины с помощью командлета [New-AzVM](https://docs.microsoft.com/powershell/module/az.compute/new-azvm). При необходимости вы можете заменить номер версии в URN словом "latest" (последняя), чтобы получить последнюю версию образа.
+Теперь выбранного издателя, предложение, номер SKU и версию можно объединить в URN (значения, разделенные ":"). Передайте этот URN с параметром `--image` при создании виртуальной машины с помощью командлета [New-AzVM](/powershell/module/az.compute/new-azvm). При необходимости вы можете заменить номер версии в URN словом "latest" (последняя), чтобы получить последнюю версию образа.
 
 При развертывании виртуальной машины с помощью шаблона Resource Manager установите отдельные параметры образа в свойствах `imageReference`. Ознакомьтесь со статьей о [справочнике по шаблонам](/azure/templates/microsoft.compute/virtualmachines).
 
@@ -206,7 +204,7 @@ DataDiskImages   : []
 
 ```
 
-В приведенном ниже примере показана аналогичная команда для образа *виртуальной машины для обработки и анализа данных — Windows 2016* , которая `name`имеет `product`следующие `PurchasePlan` свойства `publisher`:, и. Некоторые образы также имеют свойство `promotion code`. Ознакомьтесь со следующими разделами для развертывания этого образа, чтобы принять условия соглашения и включить программное развертывание.
+В приведенном ниже примере показана аналогичная команда для образа *виртуальной машины для обработки и анализа данных — Windows 2016* , которая имеет следующие `PurchasePlan` Свойства: `name` , `product` и `publisher` . Некоторые образы также имеют свойство `promotion code`. Ознакомьтесь со следующими разделами для развертывания этого образа, чтобы принять условия соглашения и включить программное развертывание.
 
 ```powershell
 Get-AzVMImage -Location "westus" -PublisherName "microsoft-ads" -Offer "windows-data-science-vm" -Skus "windows2016" -Version "0.2.02"
@@ -237,7 +235,7 @@ DataDiskImages   : []
 
 ### <a name="accept-the-terms"></a>Принятие условий
 
-Чтобы просмотреть условия лицензии, используйте командлет [Get-AzMarketplaceterms](https://docs.microsoft.com/powershell/module/az.marketplaceordering/get-azmarketplaceterms) и передайте параметры плана приобретения. В выходных данных содержится ссылка на условия для образа в Marketplace, которая показывает, были ли эти условия приняты раннее. Обязательно используйте только строчные буквы в значениях параметров.
+Чтобы просмотреть условия лицензии, используйте командлет [Get-AzMarketplaceterms](/powershell/module/az.marketplaceordering/get-azmarketplaceterms) и передайте параметры плана приобретения. В выходных данных содержится ссылка на условия для образа в Marketplace, которая показывает, были ли эти условия приняты раннее. Обязательно используйте только строчные буквы в значениях параметров.
 
 ```powershell
 Get-AzMarketplaceterms -Publisher "microsoft-ads" -Product "windows-data-science-vm" -Name "windows2016"
@@ -256,7 +254,7 @@ Accepted          : False
 Signdate          : 1/25/2019 7:43:00 PM
 ```
 
-Чтобы принять или отклонить условия, используйте командлет [Set-AzMarketplaceterms](https://docs.microsoft.com/powershell/module/az.marketplaceordering/set-azmarketplaceterms). Необходимо принять условия соглашения для каждой подписки в образе. Обязательно используйте только строчные буквы в значениях параметров. 
+Чтобы принять или отклонить условия, используйте командлет [Set-AzMarketplaceterms](/powershell/module/az.marketplaceordering/set-azmarketplaceterms). Необходимо принять условия соглашения для каждой подписки в образе. Обязательно используйте только строчные буквы в значениях параметров. 
 
 ```powershell
 $agreementTerms=Get-AzMarketplaceterms -Publisher "microsoft-ads" -Product "windows-data-science-vm" -Name "windows2016"
@@ -280,7 +278,7 @@ Signdate          : 2/23/2018 7:49:31 PM
 
 ### <a name="deploy-using-purchase-plan-parameters"></a>Развертывание с помощью параметров плана приобретения
 
-После принятия условий для образа виртуальную машину можно развернуть в подписке. В следующем фрагменте показано, как использовать командлет [Set-AzVMPlan](https://docs.microsoft.com/powershell/module/az.compute/set-azvmplan), чтобы задать сведения о плане Marketplace для объекта виртуальной машины. Для завершения сценария по созданию параметров сети для виртуальной машины и завершения развертывания см. статью [Примеры PowerShell для виртуальной машины Azure](powershell-samples.md).
+После принятия условий для образа виртуальную машину можно развернуть в подписке. В следующем фрагменте показано, как использовать командлет [Set-AzVMPlan](/powershell/module/az.compute/set-azvmplan), чтобы задать сведения о плане Marketplace для объекта виртуальной машины. Для завершения сценария по созданию параметров сети для виртуальной машины и завершения развертывания см. статью [Примеры PowerShell для виртуальной машины Azure](powershell-samples.md).
 
 ```powershell
 ...
@@ -314,11 +312,8 @@ $vmConfig = Set-AzVMSourceImage -VM $vmConfig -PublisherName $publisherName -Off
 ```
 Затем нужно передать конфигурацию виртуальной машины (вместе с объектами конфигурации сети) командлету `New-AzVM`.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Инструкции по быстрому созданию виртуальной машины с помощью командлета `New-AzVM` на основе полученных данных образа см. в статье [Создание виртуальной машины Windows с помощью PowerShell](quick-create-powershell.md).
 
-
-См. пример сценария PowerShell для [создания полностью настроенной виртуальной машины](../scripts/virtual-machines-windows-powershell-sample-create-vm.md).
-
-
+Дополнительные сведения об использовании образов Azure Marketplace для создания пользовательских образов в общей коллекции образов см. в статье [предоставление сведений о плане покупки Azure Marketplace при создании образов](../marketplace-images.md).

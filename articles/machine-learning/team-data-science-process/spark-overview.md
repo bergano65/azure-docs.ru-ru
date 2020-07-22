@@ -11,12 +11,11 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 64caa1228cd073358bef496721c22b17554031d3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 3aa33efa9aa416ad1dfefd2fe957ce04b2b14432
+ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82189289"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86027466"
 ---
 # <a name="overview-of-data-science-using-spark-on-azure-hdinsight"></a>Общие сведения об обработке и анализе данных с помощью платформы Spark в Azure HDInsight
 
@@ -35,7 +34,7 @@ ms.locfileid: "82189289"
 Эти записные книжки должны выполняться в ядре PySpark на сервере записной книжки Jupyter:
 
 - [pySpark-machine-learning-data-science-spark-data-exploration-modeling.ipynb](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/Spark/pySpark/Spark1.6/pySpark-machine-learning-data-science-spark-data-exploration-modeling.ipynb). Содержит сведения о том, как выполнять просмотр данных, моделирование и оценку с использованием нескольких различных алгоритмов.
-- [pySpark-machine-learning-data-science-spark-advanced-data-exploration-modeling.ipynb](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/Spark/pySpark/Spark1.6/pySpark-machine-learning-data-science-spark-advanced-data-exploration-modeling.ipynb). Содержит разделы в записной книжке №1 и варианты моделей с использованием настройки гиперпараметров и перекрестной проверки.
+- [pySpark-machine-learning-data-science-spark-advanced-data-exploration-modeling.ipynb.](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/Spark/pySpark/Spark1.6/pySpark-machine-learning-data-science-spark-advanced-data-exploration-modeling.ipynb) Содержит разделы в записной книжке 1 и варианты моделей с использованием настройки гиперпараметров и перекрестной проверки.
 - [pySpark-machine-learning-data-science-spark-model-consumption.ipynb](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/Spark/pySpark/Spark1.6/pySpark-machine-learning-data-science-spark-model-consumption.ipynb). Показывает, как применять сохраненную модель в кластерах HDInsight с помощью Python.
 
 ### <a name="spark-20-notebooks"></a>Записные книжки для Spark 2.0
@@ -65,7 +64,7 @@ ms.locfileid: "82189289"
 
 Руководство по применению модели Spark 2.0 и использованию моделей для оценки вы найдете в [этом документе для Spark 1.6](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/Spark/pySpark/Spark1.6/pySpark-machine-learning-data-science-spark-model-consumption.ipynb), который содержит пример с описанием выполняемых шагов. Чтобы использовать этот пример в Spark 2,0, замените файл кода Python [этим файлом](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/Spark/Python/Spark2.0_ConsumeRFCV_NYCReg.py).
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Предварительные условия
 
 Описанные ниже процедуры относятся к Spark 1.6. Для Spark 2.0 используйте записные книжки, описанные ранее.
 
@@ -93,20 +92,31 @@ ms.locfileid: "82189289"
 
 1. В CSV-файлах "trip_data" содержатся сведения о поездках, например количество пассажиров, места посадки и высадки, продолжительность и дальность поездки. Вот несколько примеров записей:
 
-        medallion,hack_license,vendor_id,rate_code,store_and_fwd_flag,pickup_datetime,dropoff_datetime,passenger_count,trip_time_in_secs,trip_distance,pickup_longitude,pickup_latitude,dropoff_longitude,dropoff_latitude
-        89D227B655E5C82AECF13C3F540D4CF4,BA96DE419E711691B9445D6A6307C170,CMT,1,N,2013-01-01 15:11:48,2013-01-01 15:18:10,4,382,1.00,-73.978165,40.757977,-73.989838,40.751171
-        0BD7C8F5BA12B88E0B67BED28BEA73D8,9FD8F69F0804BDB5549F40E9DA1BE472,CMT,1,N,2013-01-06 00:18:35,2013-01-06 00:22:54,1,259,1.50,-74.006683,40.731781,-73.994499,40.75066
-        0BD7C8F5BA12B88E0B67BED28BEA73D8,9FD8F69F0804BDB5549F40E9DA1BE472,CMT,1,N,2013-01-05 18:49:41,2013-01-05 18:54:23,1,282,1.10,-74.004707,40.73777,-74.009834,40.726002
-        DFD2202EE08F7A8DC9A57B02ACB81FE2,51EE87E3205C985EF8431D850C786310,CMT,1,N,2013-01-07 23:54:15,2013-01-07 23:58:20,2,244,.70,-73.974602,40.759945,-73.984734,40.759388
-        DFD2202EE08F7A8DC9A57B02ACB81FE2,51EE87E3205C985EF8431D850C786310,CMT,1,N,2013-01-07 23:25:03,2013-01-07 23:34:24,1,560,2.10,-73.97625,40.748528,-74.002586,40.747868
+   `medallion,hack_license,vendor_id,rate_code,store_and_fwd_flag,pickup_datetime,dropoff_datetime,passenger_count,trip_time_in_secs,trip_distance,pickup_longitude,pickup_latitude,dropoff_longitude,dropoff_latitude`
+
+   `89D227B655E5C82AECF13C3F540D4CF4,BA96DE419E711691B9445D6A6307C170,CMT,1,N,2013-01-01 15:11:48,2013-01-01 15:18:10,4,382,1.00,-73.978165,40.757977,-73.989838,40.751171`
+
+   `0BD7C8F5BA12B88E0B67BED28BEA73D8,9FD8F69F0804BDB5549F40E9DA1BE472,CMT,1,N,2013-01-06 00:18:35,2013-01-06 00:22:54,1,259,1.50,-74.006683,40.731781,-73.994499,40.75066`
+
+   `0BD7C8F5BA12B88E0B67BED28BEA73D8,9FD8F69F0804BDB5549F40E9DA1BE472,CMT,1,N,2013-01-05 18:49:41,2013-01-05 18:54:23,1,282,1.10,-74.004707,40.73777,-74.009834,40.726002`
+
+   `DFD2202EE08F7A8DC9A57B02ACB81FE2,51EE87E3205C985EF8431D850C786310,CMT,1,N,2013-01-07 23:54:15,2013-01-07 23:58:20,2,244,.70,-73.974602,40.759945,-73.984734,40.759388`
+
+   `DFD2202EE08F7A8DC9A57B02ACB81FE2,51EE87E3205C985EF8431D850C786310,CMT,1,N,2013-01-07 23:25:03,2013-01-07 23:34:24,1,560,2.10,-73.97625,40.748528,-74.002586,40.747868`
+
 2. В CSV-файлах trip_fare содержатся сведения о плате за каждую поездку, например тип оплаты, стоимость поездки, добавочная стоимость и налоги, чаевые и специальные тарифы, а также общая сумма оплаты. Вот несколько примеров записей:
 
-        medallion, hack_license, vendor_id, pickup_datetime, payment_type, fare_amount, surcharge, mta_tax, tip_amount, tolls_amount, total_amount
-        89D227B655E5C82AECF13C3F540D4CF4,BA96DE419E711691B9445D6A6307C170,CMT,2013-01-01 15:11:48,CSH,6.5,0,0.5,0,0,7
-        0BD7C8F5BA12B88E0B67BED28BEA73D8,9FD8F69F0804BDB5549F40E9DA1BE472,CMT,2013-01-06 00:18:35,CSH,6,0.5,0.5,0,0,7
-        0BD7C8F5BA12B88E0B67BED28BEA73D8,9FD8F69F0804BDB5549F40E9DA1BE472,CMT,2013-01-05 18:49:41,CSH,5.5,1,0.5,0,0,7
-        DFD2202EE08F7A8DC9A57B02ACB81FE2,51EE87E3205C985EF8431D850C786310,CMT,2013-01-07 23:54:15,CSH,5,0.5,0.5,0,0,6
-        DFD2202EE08F7A8DC9A57B02ACB81FE2,51EE87E3205C985EF8431D850C786310,CMT,2013-01-07 23:25:03,CSH,9.5,0.5,0.5,0,0,10.5
+   `medallion, hack_license, vendor_id, pickup_datetime, payment_type, fare_amount, surcharge, mta_tax, tip_amount, tolls_amount, total_amount`
+
+   `89D227B655E5C82AECF13C3F540D4CF4,BA96DE419E711691B9445D6A6307C170,CMT,2013-01-01 15:11:48,CSH,6.5,0,0.5,0,0,7`
+
+   `0BD7C8F5BA12B88E0B67BED28BEA73D8,9FD8F69F0804BDB5549F40E9DA1BE472,CMT,2013-01-06 00:18:35,CSH,6,0.5,0.5,0,0,7`
+
+   `0BD7C8F5BA12B88E0B67BED28BEA73D8,9FD8F69F0804BDB5549F40E9DA1BE472,CMT,2013-01-05 18:49:41,CSH,5.5,1,0.5,0,0,7`
+
+   `DFD2202EE08F7A8DC9A57B02ACB81FE2,51EE87E3205C985EF8431D850C786310,CMT,2013-01-07 23:54:15,CSH,5,0.5,0.5,0,0,6`
+
+   `DFD2202EE08F7A8DC9A57B02ACB81FE2,51EE87E3205C985EF8431D850C786310,CMT,2013-01-07 23:25:03,CSH,9.5,0.5,0.5,0,0,10.5`
 
 Мы взяли 0,1 % этой информации и объединили CSV-файлы trip\_data и trip\_fare в единый набор данных, который в этом руководстве будем использовать в качестве входного набора данных. Уникальный ключ для объединения trip\_data и trip\_fare состоит из полей medallion, hack\_licence и pickup\_datetime. Каждая запись набора данных содержит следующие атрибуты, представляющие поездку на такси в Нью-Йорке:
 
@@ -141,11 +151,11 @@ ms.locfileid: "82189289"
 | tip_class |Класс чаевых (0: 0 долларов, 1: 0–5 долларов, 2: 6–10 долларов, 3: 11–20 долларов, 4: >20 долларов) |
 
 ## <a name="execute-code-from-a-jupyter-notebook-on-the-spark-cluster"></a>Выполнение кода из записной книжки Jupyter в кластере Spark
-Записную книжку Jupyter можно запустить с портала Azure. Найдите кластер Spark на панели мониторинга и щелкните его, чтобы войти на страницу управления кластером. Чтобы открыть записную книжку, связанную с кластером Spark, щелкните **панели мониторинга** -> кластера**Jupyter Notebook**.
+Записную книжку Jupyter можно запустить с портала Azure. Найдите кластер Spark на панели мониторинга и щелкните его, чтобы войти на страницу управления кластером. Чтобы открыть записную книжку, связанную с кластером Spark, щелкните **панели мониторинга кластера**  ->  **Jupyter Notebook**.
 
 ![Панели мониторинга кластера](./media/spark-overview/spark-jupyter-on-portal.png)
 
-Кроме того, можно перейти ***`https://CLUSTERNAME.azurehdinsight.net/jupyter`*** к записным книжкам Jupyter. Замените в этом URL-адресе фрагмент CLUSTERNAME именем вашего кластера. Для доступа к записным книжкам необходим пароль к учетной записи администратора.
+Кроме того, можно перейти к ***`https://CLUSTERNAME.azurehdinsight.net/jupyter`*** записным книжкам Jupyter. Замените в этом URL-адресе фрагмент CLUSTERNAME именем вашего кластера. Для доступа к записным книжкам необходим пароль к учетной записи администратора.
 
 ![Просмотр записных книжек Jupyter](./media/spark-overview/spark-jupyter-notebook.png)
 
@@ -164,7 +174,7 @@ ms.locfileid: "82189289"
 
 * просмотреть код, щелкнув записную книжку;
 * выполнить отдельную ячейку, нажав клавиши **SHIFT+ВВОД**;
-* Запустите всю записную книжку, щелкнув **элемент** -> **выполнить**.
+* Запустите всю записную книжку, щелкнув **элемент**  ->  **выполнить**.
 * использовать автоматическую визуализацию запросов.
 
 > [!TIP]
@@ -174,12 +184,12 @@ ms.locfileid: "82189289"
 
 ![Кривая ROC логистической регрессии для универсального подхода](./media/spark-overview/pyspark-jupyter-autovisualization.png)
 
-## <a name="whats-next"></a>Что дальше?
+## <a name="whats-next"></a>Дальнейшие действия
 Теперь, когда вы настроили кластер HDInsight Spark и отправили записные книжки Jupyter, все готово для работы со статьями, посвященными этим трем записным книжкам PySpark. В них рассказывается, как исследовать данные, а также как создавать и использовать модели. С помощью записной книжки по расширенному исследованию и моделированию данных можно более подробно ознакомиться с тем, как использовать перекрестную проверку, перебор гиперпараметров и оценку модели.
 
 **Исследование и моделирование данных с помощью Spark**. Исследуйте набор данных, а затем создайте, оцените и проанализируйте модели машинного обучения, выполнив инструкции из статьи, посвященной [созданию моделей двоичной классификации и регрессии для данных с помощью набора средств Spark MLlib](spark-data-exploration-modeling.md).
 
 **Использование модели**. Дополнительные сведения об оценке моделей классификации и регрессии, созданных в этой статье, см. в статье [Оценка моделей машинного обучения, созданных с помощью Spark](spark-model-consumption.md).
 
-**Перекрестная проверка и очистка параметров**. Дополнительные сведения о том, как можно обучить модели с помощью перекрестной проверки и вычистки параметров Hyper-Parameter, см. в статье [расширенное исследование данных и моделирование с использованием Spark](spark-advanced-data-exploration-modeling.md) .
+**Перекрестная проверка и перебор гиперпараметров.** Сведения об обучении моделей с помощью перекрестной проверки и перебора гиперпараметров см. в статье [Расширенное исследование и моделирование данных с помощью Spark](spark-advanced-data-exploration-modeling.md).
 

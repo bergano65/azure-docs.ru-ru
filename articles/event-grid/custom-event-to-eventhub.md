@@ -1,20 +1,14 @@
 ---
 title: Краткое руководство. Отправка настраиваемых событий в гибридное подключение — Сетка событий Azure, Azure CLI
 description: Краткое руководство. Используйте службу "Сетка событий Azure" и Azure CLI, чтобы иметь возможность публиковать темы и подписываться на эти события. Концентратор событий используется для конечной точки.
-services: event-grid
-keywords: ''
-author: spelluru
-ms.author: spelluru
-ms.date: 11/05/2019
+ms.date: 07/07/2020
 ms.topic: quickstart
-ms.service: event-grid
-ms.custom: seodec18
-ms.openlocfilehash: 832c4e453befc9e54051c968e0c364d22afd2bc2
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 77268dde90959298c76813fb146e972ecfa3685d
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "73721422"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86104101"
 ---
 # <a name="quickstart-route-custom-events-to-azure-event-hubs-with-azure-cli-and-event-grid"></a>Краткое руководство. Перенаправление пользовательских событий в Центры событий Azure с помощью Azure CLI и службы "Сетка событий"
 

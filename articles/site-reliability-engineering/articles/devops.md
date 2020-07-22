@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 04/22/2020
 ms.author: dnb
 ms.openlocfilehash: e917c609b484b1a58377fea2f6cdd75dde30ca6c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82196417"
 ---
 # <a name="frequently-asked-questions-whats-the-relationship-between-sre-and-devops"></a>Часто задаваемые вопросы: что такое отношение между выполняются и DevOps?
@@ -78,6 +78,6 @@ _Книга надежности сайта_ (упомянутая в нашем
 
 Мы надеемся, что в предыдущих ответах мы предложим понять, как перекрываются два практических опыта, и, когда они не перекрываются, как они могут быть дополнены фокусом. Организации с установленной практикой DevOps могут поэкспериментировать с методиками выполняются на небольшом масштабе (например, попытаться выполнить Слис и SLO) без необходимости зафиксироваться в создании выполняются позиций или команд. Это довольно распространенный шаблон внедрения выполняются.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Хотите узнать больше о проектировании надежности сайта или DevOps? Ознакомьтесь с сайтом по обеспечению [надежности сайта](../index.yml) и [центром ресурсов Azure DevOps](https://docs.microsoft.com/azure/devops/learn/).

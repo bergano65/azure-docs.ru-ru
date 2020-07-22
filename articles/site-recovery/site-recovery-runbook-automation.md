@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 09/18/2019
 ms.author: rajanaki
-ms.openlocfilehash: ecfe993a137ca63c84438870ec54ac1e6d6707da
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 25290a66da3d5c8325513b2bea6d27d12ca7da70
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79257489"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86134804"
 ---
 # <a name="add-azure-automation-runbooks-to-recovery-plans"></a>Добавление модулей Runbook службы автоматизации Azure в планы восстановления
 
@@ -56,6 +56,9 @@ ms.locfileid: "79257489"
 | CloudServiceName |Имя облачной службы Azure, в которой создана виртуальная машина. |
 | RoleName |Имя виртуальной машины Azure. |
 | RecoveryPointId|Метка времени восстановления виртуальной машины. |
+
+>[!Note]
+>Значение переменной "FailoverDirection" будет равно "Примаритосекондари" в случае отработки отказа и "Секондаритопримари" в случае восстановления размещения.
 
 Ниже приведен пример того, как выглядит переменная контекста.
 
@@ -117,7 +120,7 @@ $vmMap = $RecoveryPlanContext.VmMap
 
     ![Нажмите кнопку "Настроить"](media/site-recovery-runbook-automation-new/custom-rp.png)
 
-2. Нажмите кнопку с многоточием (...) рядом с **группой 1: начать** > **Добавление действия после**.
+2. Нажмите кнопку с многоточием (...) рядом с **группой 1: начать**  >  **Добавление действия после**.
 3. В поле **действие при вставке**убедитесь, что выбран параметр **Скрипт** , и укажите имя скрипта (**Hello World**).
 4. Укажите учетную запись службы автоматизации и выберите Runbook. Нажмите кнопку **ОК**, чтобы сохранить этот сценарий. Сценарий будет добавлен в группу **Группа 1: последующие действия**.
 
@@ -126,7 +129,7 @@ $vmMap = $RecoveryPlanContext.VmMap
 
 С помощью внешних переменных можно использовать один скрипт Runbook в нескольких планах восстановления. 
 
-- [Переменные службы автоматизации Azure](../automation/automation-variables.md) используются для хранения параметров для запуска плана восстановления.
+- [Переменные службы автоматизации Azure](../automation/shared-resources/variables.md) используются для хранения параметров для запуска плана восстановления.
 - Если перед именем переменной вы укажете имя плана восстановления, для каждого плана восстановления будут созданы собственные переменные, которые можно использовать в качестве параметров.
 - Эти параметры можно изменять, чтобы управлять работой скрипта, не изменяя его содержимое, однако принцип работы сценария будет изменен.
 
@@ -196,7 +199,7 @@ $vmMap = $RecoveryPlanContext.VmMap
 - Например, точка восстановления SharePoint имеет два внешних интерфейса, а простые бизнес-приложения — только один.
 - В этом сценарии нельзя создавать отдельные переменные для каждого плана восстановления.
 
-В следующем примере мы создадим [сложную переменную](https://docs.microsoft.com/powershell/module/servicemanagement/azure/set-azureautomationvariable) в учетной записи службы автоматизации Azure.
+В следующем примере мы создадим [сложную переменную](/powershell/module/servicemanagement/azure/set-azureautomationvariable) в учетной записи службы автоматизации Azure.
 
 Для этого нужно указать несколько значений с помощью Azure PowerShell.
 
@@ -259,11 +262,8 @@ $vmMap = $RecoveryPlanContext.VmMap
 > [!VIDEO https://channel9.msdn.com/Series/Azure-Site-Recovery/One-click-failover-of-a-2-tier-WordPress-application-using-Azure-Site-Recovery/player]
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Сведения об [учетной записи запуска от имени службы автоматизации Azure](../automation/automation-create-runas-account.md)
+- Сведения об [учетной записи запуска от имени службы автоматизации Azure](../automation/manage-runas-account.md)
 - Ознакомьтесь с [примерами сценариев службы автоматизации Azure](https://gallery.technet.microsoft.com/scriptcenter/site/search?f%5B0%5D.Type=User&f%5B0%5D.Value=SC%20Automation%20Product%20Team&f%5B0%5D.Text=SC%20Automation%20Product%20Team).
 - Дополнительные [сведения](site-recovery-failover.md) о выполнении отработки отказа.
-
-
-

@@ -3,16 +3,16 @@ title: Анализ затрат на Azure с помощью приложени
 description: В этой статье объясняется, как установить и использовать приложение Power BI Azure Cost Management.
 author: bandersmsft
 ms.author: banders
-ms.date: 04/15/2020
+ms.date: 06/16/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.reviewer: benshy
-ms.openlocfilehash: 050df590827b94888c44826ac6391ff79ada1cfc
-ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
+ms.openlocfilehash: 53340c72a6456b24b52cff6d7eda9d4a34db6564
+ms.sourcegitcommit: e3c28affcee2423dc94f3f8daceb7d54f8ac36fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81461605"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84888206"
 ---
 # <a name="analyze-cost-with-the-azure-cost-management-power-bi-app-for-enterprise-agreements-ea"></a>Анализ затрат с помощью приложения Power BI Azure Cost Management для Соглашений Enterprise (EA)
 
@@ -127,6 +127,27 @@ ms.locfileid: "81461605"
 ## <a name="troubleshoot-problems"></a>Устранение неполадок
 
 Если у вас возникли проблемы с приложением Power BI, возможно, вам помогут следующие сведения по устранению неполадок.
+
+### <a name="error-processing-the-data-in-the-dataset"></a>Ошибка обработки данных в наборе данных
+
+Может появиться такое сообщение об ошибке:
+
+```
+There was an error when processing the data in the dataset.
+Data source error: {"error":{"code":"ModelRefresh_ShortMessage_ProcessingError","pbi.error":{"code":"ModelRefresh_ShortMessage_ProcessingError","parameters":{},"details":[{"code":"Message","detail":{"type":1,"value":"We cannot convert the value \"Required Field: 'Enr...\" to type List."}}],"exceptionCulprit":1}}} Table: <TableName>.
+```
+
+Вместо `<TableName>` отображается имя таблицы.
+
+#### <a name="cause"></a>Причина
+
+При подключении к Управлению затратами было изменено значение **области** по умолчанию `Enrollment Number`.
+
+#### <a name="solution"></a>Решение
+
+Повторно подключитесь к Управлению затратами и задайте для **области** значение `Enrollment Number`. Не указывайте номер регистрации своей организации. Вместо него введите `Enrollment Number` точно так же, как показано на следующем изображении:
+
+![Ввод сведений о регистрации EA](./media/analyze-cost-data-azure-cost-management-power-bi-template-app/ea-number.png)  
 
 ### <a name="budgetamount-error"></a>Ошибка BudgetAmount
 

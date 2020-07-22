@@ -1,5 +1,5 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл
 services: machine-learning
 author: nibaccam
@@ -17,4 +17,4 @@ ms.lasthandoff: 04/28/2020
 ms.locfileid: "75536854"
 ---
 >[!Important]
-> Функциональные возможности в этом студии https://ml.azure.com **доступны только из корпоративных рабочих областей**. [Дополнительные сведения о выпусках и обновлении](../articles/machine-learning/overview-what-is-azure-ml.md#sku).
+> Функциональные возможности в этой студии https://ml.azure.com **доступны только из корпоративных рабочих областей**. [Дополнительные сведения о выпусках и обновлении](../articles/machine-learning/overview-what-is-azure-ml.md#sku).

@@ -7,16 +7,16 @@ author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 12/13/2018
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 2c351f8a95110a32c53c68c5eb6095918578bc5b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c159e78d0aa065b53b1164e01309e770302fb1ad
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78189180"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85389026"
 ---
 # <a name="configure-password-change-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка смены пароля в настраиваемых политиках в Azure Active Directory B2C
 
@@ -24,7 +24,7 @@ ms.locfileid: "78189180"
 
 В Azure Active Directory B2C (Azure AD B2C) можно разрешить пользователям, вошедшим в локальную учетную запись, изменить пароль, не подтверждая их подлинность по проверке по электронной почте. Если время сеанса истекает, когда пользователь входит в поток смены пароля, такому пользователю предлагается выполнить вход еще раз. В этой статье рассказывается о настройке смены пароля в [настраиваемых политиках](custom-policy-overview.md). Также можно настроить [самостоятельный сброс пароля](user-flow-self-service-password-reset.md) в последовательностях пользователей.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](custom-policy-get-started.md).
 
@@ -32,7 +32,7 @@ ms.locfileid: "78189180"
 
 1. Откройте файл *TrustframeworkExtensions.xml* и добавьте элемент **ClaimType** с идентификатором `oldPassword` в элемент [ClaimsSchema](claimsschema.md):
 
-    ```XML
+    ```xml
     <BuildingBlocks>
       <ClaimsSchema>
         <ClaimType Id="oldPassword">
@@ -47,7 +47,7 @@ ms.locfileid: "78189180"
 
 2. Элемент [ClaimsProvider](claimsproviders.md) содержит технический профиль, с помощью которого выполняется проверка подлинности пользователя. Добавьте следующие поставщики утверждений в элемент **ClaimsProviders**.
 
-    ```XML
+    ```xml
     <ClaimsProviders>
       <ClaimsProvider>
         <DisplayName>Local Account SignIn</DisplayName>
@@ -125,7 +125,7 @@ ms.locfileid: "78189180"
 
 3. Элемент [UserJourney](userjourneys.md) определяет путь взаимодействия пользователя с приложением. Добавьте элемент **UserJourneys**, если он не существует. Присвойте **UserJourney** идентификатор `PasswordChange`.
 
-    ```XML
+    ```xml
     <UserJourneys>
       <UserJourney Id="PasswordChange">
         <OrchestrationSteps>
@@ -180,6 +180,6 @@ ms.locfileid: "78189180"
 2. В разделе **Приложение** выберите зарегистрированное ранее приложение. Чтобы маркер отображался, **URL-адрес ответа** должен быть следующим: `https://jwt.ms`.
 3. Щелкните **Запустить сейчас**. Выполните вход с помощью ранее созданной учетной записи. Теперь вы сможете изменять пароль.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения см. в разделе [Настройка сложности пароля в настраиваемых политиках в Azure Active Directory B2C](custom-policy-password-complexity.md).

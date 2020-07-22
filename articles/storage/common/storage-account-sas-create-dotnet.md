@@ -5,17 +5,16 @@ description: Узнайте, как создать подписанный URL-а
 services: storage
 author: tamram
 ms.service: storage
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 08/06/2019
 ms.author: tamram
-ms.reviewer: cbrooks
+ms.reviewer: dineshm
 ms.subservice: common
-ms.openlocfilehash: 9da27cef7bafa94715a42db86fc5a5675a049eb1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 75f4a3c835a843e824c2ac0b437843cd91824bfa
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79137875"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85512720"
 ---
 # <a name="create-an-account-sas-with-net"></a>Создание SAS учетной записи с помощью .NET
 
@@ -95,7 +94,7 @@ static void UseAccountSAS(string sasToken)
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Предоставление ограниченного доступа к ресурсам службы хранилища Azure с помощью подписанных URL-адресов (SAS)](storage-sas-overview.md)
 - [Create an account SAS](/rest/api/storageservices/create-account-sas) (Создание SAS на уровне учетной записи)

@@ -3,12 +3,12 @@ title: Экспорт из Azure Application Insights с помощью Stream A
 description: Stream Analytics может непрерывно преобразовывать, фильтровать и маршрутизировать данные, экспортируемые из Application Insights.
 ms.topic: conceptual
 ms.date: 01/08/2019
-ms.openlocfilehash: 15d1efa3a632024429d41f27fc23c569cd85bec2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 70f952dcd6f8d942ac272afed58a7fe0f47d8a6e
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81536885"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86539964"
 ---
 # <a name="use-stream-analytics-to-process-exported-data-from-application-insights"></a>Обработка данных, экспортированных из Application Insights, при помощи Stream Analytics
 [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/) — идеальное средство для обработки данных, [экспортированных из Application Insights](export-telemetry.md). Stream Analytics может извлекать данные из различных источников. Это средство может преобразовывать и фильтровать данные и затем отправлять их в различные приемники.
@@ -58,9 +58,9 @@ ms.locfileid: "81536885"
 1. Пусть данные накопятся. Предоставьте пользователям возможность поработать с приложением на протяжении некоторого времени. После получения данных телеметрии в [обозревателе метрик](../../azure-monitor/platform/metrics-charts.md) отобразятся статистические диаграммы, а в разделе [поиска по журналу диагностики](../../azure-monitor/app/diagnostic-search.md) — отдельные события. 
    
     Данные также будут экспортированы в хранилище. 
-2. Проверьте экспортированные данные. В Visual Studio откройте меню **"Вид" или "Обозреватель облака"** и выберите элемент "Azure" или "Хранилище". (Если этой команды нет в меню, установите пакет SDK Azure: откройте диалоговое окно "Создание проекта", разверните узел "Visual C#/облако" и выберите "Получить Microsoft Azure SDK для .NET".)
+2. Проверьте экспортированные данные. В Visual Studio откройте меню **"Вид" или "Обозреватель облака"** и выберите элемент "Azure" или "Хранилище". Если эти пункты меню не отображаются, установите пакет SDK для Azure. Откройте диалоговое окно "Новый проект" и выберите Visual C# / Cloud / Get Microsoft Azure SDK for .NET. (Visual C# / Облако / Получить пакет Microsoft Azure SDK для .NET.)
    
-    ![](./media/export-stream-analytics/04-data.png)
+    ![Снимок экрана, показывающий, как задать типы событий, которые требуется просмотреть.](./media/export-stream-analytics/04-data.png)
    
     Запишите общую часть имени пути, которое образовано от имени приложения и ключа инструментирования. 
 
@@ -69,33 +69,33 @@ ms.locfileid: "81536885"
 ## <a name="create-an-azure-stream-analytics-instance"></a>Создание экземпляра Azure Stream Analytics
 На [портале Azure](https://portal.azure.com/) выберите службу Azure Stream Analytics и создайте новое задание Stream Analytics:
 
-![](./media/export-stream-analytics/SA001.png)
+![Снимок экрана, на котором показана Главная страница для создания Stream Analytics задания в портал Azure.](./media/export-stream-analytics/SA001.png)
 
-![](./media/export-stream-analytics/SA002.png)
+![Снимок экрана, на котором отображаются сведения, необходимые при создании нового задания Stream Analytics.](./media/export-stream-analytics/SA002.png)
 
 Создав новое задание, выберите **Перейти к ресурсу**.
 
-![](./media/export-stream-analytics/SA003.png)
+![Снимок экрана, на котором показано сообщение, полученное при успешном развертывании нового задания Stream Analytics.](./media/export-stream-analytics/SA003.png)
 
 ### <a name="add-a-new-input"></a>Добавление новых входных данных
 
-![](./media/export-stream-analytics/SA004.png)
+![Снимок экрана, показывающий, как добавить входные данные в задание Stream Analytics.](./media/export-stream-analytics/SA004.png)
 
 Задайте расположение для приема входных данных из большого двоичного объекта непрерывного экспорта:
 
-![](./media/export-stream-analytics/SA0005.png)
+![Снимок экрана, показывающий настройку задания Stream Analytics для получения входных данных из большого двоичного объекта непрерывного экспорта.](./media/export-stream-analytics/SA0005.png)
 
 Теперь потребуется первичный ключ доступа из вашей учетной записи хранения, указанной ранее. Задайте его в качестве ключа учетной записи хранения.
 
 ### <a name="set-path-prefix-pattern"></a>Установка шаблона префикса пути
 
-**Не забудьте задать формат даты гггг-мм-дд (с тире).**
+**Задайте в поле "Формат даты" значение в формате ГГГГ-ММ-ДД (с дефисами).**
 
 Шаблон префикса пути указывает, где Stream Analytics находит входные файлы в хранилище. Вам необходимо настроить это поле в соответствии с тем, как функция непрерывного экспорта сохраняет данные. Задайте следующее значение:
 
-    webapplication27_12345678123412341234123456789abcdef0/PageViews/{date}/{time}
+`webapplication27_12345678123412341234123456789abcdef0/PageViews/{date}/{time}`
 
-В этом примере:
+В данном примере:
 
 * `webapplication27` — имя ресурса Application Insights ( **только строчные буквы**).
 * `1234...` — ключ инструментирования ресурса Application Insights с **удаленными дефисами**. 
@@ -107,9 +107,9 @@ ms.locfileid: "81536885"
 > 
 
 ## <a name="add-new-output"></a>Добавление новых выходных данных
-Теперь выберите свое задание > **выходные данные** > **добавить**.
+Теперь выберите свое задание и последовательно нажмите элементы **Выходные данные** > **Добавить**.
 
-![](./media/export-stream-analytics/SA006.png)
+![Снимок экрана, на котором показано, как выбрать Stream Analytics задание для добавления новых выходных данных.](./media/export-stream-analytics/SA006.png)
 
 
 ![Выбор нового канала и элементов "Выходные данные", "Добавить", "Power BI".](./media/export-stream-analytics/SA010.png)
@@ -125,57 +125,54 @@ ms.locfileid: "81536885"
 Вставьте следующий запрос.
 
 ```SQL
-
-    SELECT
-      flat.ArrayValue.name,
-      count(*)
-    INTO
-      [pbi-output]
-    FROM
-      [export-input] A
-    OUTER APPLY GetElements(A.[event]) as flat
-    GROUP BY TumblingWindow(minute, 1), flat.ArrayValue.name
+SELECT
+  flat.ArrayValue.name,
+  count(*)
+INTO
+  [pbi-output]
+FROM
+  [export-input] A
+OUTER APPLY GetElements(A.[event]) as flat
+GROUP BY TumblingWindow(minute, 1), flat.ArrayValue.name
 ```
 
 * export-input — это псевдоним, присвоенный входным данным потока.
 * pbi-output — это определенный псевдоним выходных данных.
-* Мы используем [OUTER APPLY GetElements](https://docs.microsoft.com/stream-analytics-query/apply-azure-stream-analytics), так как имя события находится во вложенном массиве JSON. Затем элемент Select выбирает имя события, а также количество экземпляров с этим именем за определенный период времени. Предложение [Group By](https://docs.microsoft.com/stream-analytics-query/group-by-azure-stream-analytics) группирует элементы по периодам времени в одну минуту.
+* Мы используем [OUTER APPLY GetElements](/stream-analytics-query/apply-azure-stream-analytics), так как имя события находится во вложенном массиве JSON. Затем элемент Select выбирает имя события, а также количество экземпляров с этим именем за определенный период времени. Предложение [Group By](/stream-analytics-query/group-by-azure-stream-analytics) группирует элементы по периодам времени в одну минуту.
 
 ### <a name="query-to-display-metric-values"></a>Запрос для отображения значений метрики
+
 ```SQL
-
-    SELECT
-      A.context.data.eventtime,
-      avg(CASE WHEN flat.arrayvalue.myMetric.value IS NULL THEN 0 ELSE  flat.arrayvalue.myMetric.value END) as myValue
-    INTO
-      [pbi-output]
-    FROM
-      [export-input] A
-    OUTER APPLY GetElements(A.context.custom.metrics) as flat
-    GROUP BY TumblingWindow(minute, 1), A.context.data.eventtime
-
-``` 
+SELECT
+  A.context.data.eventtime,
+  avg(CASE WHEN flat.arrayvalue.myMetric.value IS NULL THEN 0 ELSE  flat.arrayvalue.myMetric.value END) as myValue
+INTO
+  [pbi-output]
+FROM
+  [export-input] A
+OUTER APPLY GetElements(A.context.custom.metrics) as flat
+GROUP BY TumblingWindow(minute, 1), A.context.data.eventtime
+```
 
 * Этот запрос позволяет получить время события и значение метрики по телеметрии метрики. Значения метрик находятся в массиве, поэтому мы используем шаблон OUTER APPLY GetElements для извлечения строк. myMetric — это имя метрики. 
 
 ### <a name="query-to-include-values-of-dimension-properties"></a>Запрос для добавления значений свойств измерения
+
 ```SQL
-
-    WITH flat AS (
-    SELECT
-      MySource.context.data.eventTime as eventTime,
-      InstanceId = MyDimension.ArrayValue.InstanceId.value,
-      BusinessUnitId = MyDimension.ArrayValue.BusinessUnitId.value
-    FROM MySource
-    OUTER APPLY GetArrayElements(MySource.context.custom.dimensions) MyDimension
-    )
-    SELECT
-     eventTime,
-     InstanceId,
-     BusinessUnitId
-    INTO AIOutput
-    FROM flat
-
+WITH flat AS (
+SELECT
+  MySource.context.data.eventTime as eventTime,
+  InstanceId = MyDimension.ArrayValue.InstanceId.value,
+  BusinessUnitId = MyDimension.ArrayValue.BusinessUnitId.value
+FROM MySource
+OUTER APPLY GetArrayElements(MySource.context.custom.dimensions) MyDimension
+)
+SELECT
+  eventTime,
+  InstanceId,
+  BusinessUnitId
+INTO AIOutput
+FROM flat
 ```
 
 * Этот запрос включает в себя значения свойств измерения вне зависимости от того, соответствует ли конкретному измерению фиксированный индекс в массиве.
@@ -211,8 +208,7 @@ ms.locfileid: "81536885"
 > 
 > 
 
-## <a name="next-steps"></a>Дальнейшие шаги
-* [Непрерывный экспорт](export-telemetry.md)
+## <a name="next-steps"></a>Дальнейшие действия
+* [непрерывный экспорт.](export-telemetry.md)
 * [Подробный справочник по модели данных типов и значений свойств.](export-data-model.md)
 * [Application Insights](../../azure-monitor/app/app-insights-overview.md)
-

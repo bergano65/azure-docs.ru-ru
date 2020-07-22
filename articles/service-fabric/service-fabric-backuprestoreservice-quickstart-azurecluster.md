@@ -5,12 +5,12 @@ author: hrushib
 ms.topic: conceptual
 ms.date: 5/24/2019
 ms.author: hrushib
-ms.openlocfilehash: f56fcb7d1dde700d954c3b55bcf8cd7759893521
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 9a99a936b3e6cf53c30c0264b70046008dab283c
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79259010"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86261259"
 ---
 # <a name="periodic-backup-and-restore-in-an-azure-service-fabric-cluster"></a>Периодическое резервное копирование и восстановление в кластере Azure Service Fabric
 > [!div class="op_single_selector"]
@@ -45,7 +45,7 @@ Service Fabric предоставляет набор API для использо
 - Временная остановка резервного копирования.
 - Управление хранением резервных копий (предстоящих).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 * Service Fabric кластер с структурой версии 6,4 или более поздней. Инструкции по созданию кластера Service Fabric с помощью шаблона ресурсов Azure см. в [этой статье](service-fabric-cluster-creation-via-arm.md).
 * Сертификат X.509 для шифрования секретов, необходимых для подключения к хранилищу резервных копий. Сведения о получении или создании сертификата X.509 см. в статье [Создание кластера Service Fabric в Azure с помощью Azure Resource Manager](service-fabric-cluster-creation-via-arm.md).
 * Надежное приложения Service Fabric с отслеживанием состояния, созданное с помощью пакета SDK Service Fabric версии 3.0 или выше. Для приложений, предназначенных для .NET Core 2,0, приложение должно быть создано с помощью Service Fabric пакета SDK версии 3,1 или более поздней.
@@ -68,7 +68,7 @@ Service Fabric предоставляет набор API для использо
 
 ### <a name="using-azure-portal"></a>Использование портала Azure
 
-Флажок `Include backup restore service` включить в разделе `+ Show optional settings` на `Cluster Configuration` вкладке.
+Флажок включить в `Include backup restore service` разделе `+ Show optional settings` на `Cluster Configuration` вкладке.
 
 ![Включение службы восстановления резервных копий с помощью портала][1]
 
@@ -76,7 +76,7 @@ Service Fabric предоставляет набор API для использо
 ### <a name="using-azure-resource-manager-template"></a>Использование шаблона Azure Resource Manager
 Сначала необходимо включить _службу резервного копирования и восстановления_ в кластере. Получите шаблон для кластера, который требуется развернуть. Вы можете использовать [примеры шаблонов](https://github.com/Azure/azure-quickstart-templates/tree/master/service-fabric-secure-cluster-5-node-1-nodetype) или создать шаблон Resource Manager. Включите _службу резервного копирования и восстановления_ следующим образом:
 
-1. Убедитесь, что `apiversion` **`2018-02-01`** для `Microsoft.ServiceFabric/clusters` ресурса задано значение, а в противном случае обновите его, как показано в следующем фрагменте кода:
+1. Убедитесь, что `apiversion` для ресурса задано значение, а в противном **`2018-02-01`** `Microsoft.ServiceFabric/clusters` случае обновите его, как показано в следующем фрагменте кода:
 
     ```json
     {
@@ -302,9 +302,9 @@ FailureError            :
 - Командлеты PowerShell Service Fabric находятся в режиме предварительного просмотра.
 - Отсутствие поддержки кластеров Service Fabric в Linux.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Основные сведения о настройке периодического резервного копирования](./service-fabric-backuprestoreservice-configure-periodic-backup.md)
-- [Backup restore REST API reference](https://docs.microsoft.com/rest/api/servicefabric/sfclient-index-backuprestore) (Справочник по REST API службы резервного копирования и восстановления)
+- [Backup restore REST API reference](/rest/api/servicefabric/sfclient-index-backuprestore) (Справочник по REST API службы резервного копирования и восстановления)
 
 [0]: ./media/service-fabric-backuprestoreservice/partition-backedup-health-event-azure.png
 [1]: ./media/service-fabric-backuprestoreservice/enable-backup-restore-service-with-portal.png

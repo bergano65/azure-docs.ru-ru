@@ -7,16 +7,16 @@ author: diberry
 manager: nitinme
 ms.custom: seodec18
 ms.subservice: language-understanding
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/17/2020
 ms.author: diberry
 ms.service: cognitive-services
-ms.openlocfilehash: f282bb0a80226afeb314aac4e8669634327f81d2
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: fe1c157d6847366a59739cd5128987127d01da94
+ms.sourcegitcommit: 61d850bc7f01c6fafee85bda726d89ab2ee733ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83654062"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84344430"
 ---
 # <a name="add-intents-to-determine-user-intention-of-utterances"></a>Добавление намерений для определения намерения пользователя для фраз
 
@@ -26,7 +26,7 @@ ms.locfileid: "83654062"
 
 ## <a name="add-an-intent-to-your-app"></a>Добавление цели в приложение
 
-1. Войдите на [портал Luis](https://www.luis.ai)и выберите свою **подписку** и ресурс для **разработки** , чтобы просмотреть приложения, назначенные этому ресурсу для разработки.
+1. Войдите на портал [LUIS](https://www.luis.ai) и выберите **Подписка** и **Ресурс для разработки**, чтобы просмотреть приложения, назначенные этому ресурсу для разработки.
 1. Откройте приложение, выбрав его имя на странице " **Мои приложения** ".
 1. На странице **"** выборки" выберите **+ создать**.
 1. В диалоговом окне **Создание нового намерения** введите имя цели, например `ModifyOrder` , и нажмите кнопку **Готово**.
@@ -81,6 +81,6 @@ ms.locfileid: "83654062"
 
 После добавления, изменения или удаления намерений выполните [обучение](luis-how-to-train.md) и [публикацию](luis-how-to-publish-app.md) приложения, чтобы применить изменения к запросам конечной точки. Не обучить после каждого отдельного изменения. Обучить после группы изменений.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о добавлении [примеров высказываний](luis-how-to-add-example-utterances.md) с сущностями.

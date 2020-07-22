@@ -4,18 +4,19 @@ description: Дополнительные сведения о функции SQL
 author: ginamr
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 09/13/2019
+ms.date: 07/09/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: b816c63da56025fe6e9cbaece2cde5dcd01585d4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 9c35f83ce7a9a478f706e9ed560d884d9bf5e508
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "71351008"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86261292"
 ---
 # <a name="getcurrenttimestamp-azure-cosmos-db"></a>Жеткурренттиместамп (Azure Cosmos DB)
- Возвращает число миллисекунд, прошедших с 00:00:00 четверг, 1 января 1970. 
+
+ Возвращает число миллисекунд, прошедших с 00:00:00 четверг, 1 января 1970.
   
 ## <a name="syntax"></a>Синтаксис
   
@@ -53,4 +54,4 @@ SELECT GetCurrentTimestamp() AS currentUtcTimestamp
 
 - [Функции даты и времени Azure Cosmos DB](sql-query-date-time-functions.md)
 - [Системные функции Azure Cosmos DB](sql-query-system-functions.md)
-- [Знакомство с Azure Cosmos DB](introduction.md)
+- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)

@@ -1,18 +1,18 @@
 ---
 title: Общие сведения о создании приложения Power BI — Microsoft AppSource
 description: В этой статье описаны общие действия по публикации Power BI приложения для Microsoft AppSource. Также предоставляются технические и бизнес-требования, которым должно соответствовать приложение Power BI для публикации в коммерческом магазине.
-author: anbene
-ms.author: mingshen
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
+author: anbene
+ms.author: mingshen
 ms.date: 04/02/2020
-ms.openlocfilehash: c40ea07fc4224052aa2474ebd61ef7838ba2cedf
-ms.sourcegitcommit: 11572a869ef8dbec8e7c721bc7744e2859b79962
+ms.openlocfilehash: 9bf02fe6552b47070d4f79c4c497830ac2bfad84
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82837844"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86121781"
 ---
 # <a name="power-bi-app-creation-overview"></a>Общие сведения о создании приложения Power BI
 
@@ -20,11 +20,11 @@ ms.locfileid: "82837844"
 
 ## <a name="publishing-benefits"></a>Преимущества публикации
 
-Преимущества публикации на коммерческом рынке:
+Преимущества публикации на коммерческой платформе:
 
-- Повышение уровня компании с помощью торговой марки Майкрософт.
-- Возможно достижение более чем 100 000 000 пользователей Office 365 и Dynamics 365 в AppSource и более чем в 200 000 организациях через Azure Marketplace.
-- Получайте высококачественные интересы из этих рынков.
+- Продвижение вашей компании за счет использования бренда Майкрософт.
+- Возможность достичь более чем 100 миллионов пользователей Office 365 и Dynamics 365 в AppSource, а также более чем 200 000 организаций с помощью Azure Marketplace.
+- Получение высококачественных потенциальных клиентов на этих коммерческих платформах.
 - Попросите своих служб, продвигаемых группами «Майкрософт» и «телепродажи».
 
 ## <a name="overview"></a>Обзор
@@ -66,16 +66,16 @@ ms.locfileid: "82837844"
 2. Создание и тестирование приложения в Power BI.
 3. Когда вы получаете веб-адрес установки приложения, добавьте его на страницу **технической настройки** в центре партнеров.
 
-После создания и тестирования приложения в Power BI сохраните веб-адрес установки приложения, так как он понадобится для [создания Power BI предложения приложения](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-power-bi-app-offer).
+После создания и тестирования приложения в Power BI сохраните веб-адрес установки приложения, так как он понадобится для [создания Power BI предложения приложения](create-power-bi-app-offer.md).
 
 ### <a name="business-requirements"></a>Бизнес-требования
 
 Бизнес-требования включают в себя процедурные, договорные и юридические обязательства. Необходимо сделать следующее:
 
-- Быть зарегистрированным издателем коммерческого рынка. Если вы не зарегистрировались, выполните действия, описанные в разделе [Станьте коммерческим издателем Marketplace](https://docs.microsoft.com/azure/marketplace/become-publisher).
+- Быть зарегистрированным издателем коммерческого рынка. Если вы не зарегистрировались, выполните действия, описанные в статье [создание коммерческой учетной записи Marketplace в центре партнеров](create-account.md).
 - Укажите содержимое, удовлетворяющее критериям предложения, которые будут перечислены в AppSource. Дополнительные сведения см [. в разделе приложение для перечисления в AppSource. Вот как это](https://appsource.microsoft.com/blogs/have-an-app-to-list-on-appsource-here-s-how)делать.
 - Примите условия и следуйте [заявлению о конфиденциальности Майкрософт](https://privacy.microsoft.com/privacystatement).
 
 ## <a name="next-step"></a>Следующий шаг
 
-- [Создание предложения Power BI приложения в центре партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-power-bi-app-offer)
+- [Создание предложения Power BI приложения в центре партнеров](create-power-bi-app-offer.md)

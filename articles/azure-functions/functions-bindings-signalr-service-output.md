@@ -6,10 +6,9 @@ ms.topic: reference
 ms.date: 02/20/2020
 ms.author: cshoe
 ms.openlocfilehash: d3ba9183cdea752c3e69a41770b6a5319a4a601d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77530254"
 ---
 # <a name="signalr-service-output-binding-for-azure-functions"></a>Выходная привязка службы SignalR для функций Azure
@@ -21,7 +20,7 @@ ms.locfileid: "77530254"
 
 Выходная привязка также позволяет управлять группами.
 
-Дополнительные сведения об установке и сведениях о конфигурации см. в [обзоре](functions-bindings-signalr-service.md).
+Сведения об установке и настройке см. в [этой обзорной статье](functions-bindings-signalr-service.md).
 
 ## <a name="broadcast-to-all-clients"></a>Широковещательная передача для всех клиентов
 
@@ -425,7 +424,7 @@ public SignalRMessage sendMessage(
 
 ## <a name="group-management"></a>Управление группами
 
-Служба SignalR позволяет добавлять пользователей в группы. Затем сообщения могут быть отправлены в группу. `SignalR` Выходную привязку можно использовать для управления членством пользователя в группе.
+Служба SignalR позволяет добавлять пользователей в группы. Затем сообщения могут быть отправлены в группу. `SignalR`Выходную привязку можно использовать для управления членством пользователя в группе.
 
 # <a name="c"></a>[C#](#tab/csharp)
 
@@ -484,7 +483,7 @@ public static Task RemoveFromGroup(
 
 В следующем примере пользователь добавляется в группу.
 
-Пример *Function. JSON*
+Пример *function.jsв*
 
 ```json
 {
@@ -522,7 +521,7 @@ public static Task Run(
 
 В следующем примере пользователь удаляется из группы.
 
-Пример *Function. JSON*
+Пример *function.jsв*
 
 ```json
 {
@@ -565,7 +564,7 @@ public static Task Run(
 
 В следующем примере пользователь добавляется в группу.
 
-Пример *Function. JSON*
+Пример *function.jsв*
 
 ```json
 {
@@ -593,7 +592,7 @@ module.exports = async function (context, req) {
 
 В следующем примере пользователь удаляется из группы.
 
-Пример *Function. JSON*
+Пример *function.jsв*
 
 ```json
 {
@@ -623,7 +622,7 @@ module.exports = async function (context, req) {
 
 В следующем примере пользователь добавляется в группу.
 
-Пример *Function. JSON*
+Пример *function.jsв*
 
 ```json
 {
@@ -650,7 +649,7 @@ def main(req: func.HttpRequest, action: func.Out[str]) -> func.HttpResponse:
 
 В следующем примере пользователь удаляется из группы.
 
-Пример *Function. JSON*
+Пример *function.jsв*
 
 ```json
 {
@@ -725,26 +724,26 @@ public SignalRGroupAction removeFromGroup(
 
 ### <a name="signalrconnectioninfo"></a>SignalRConnectionInfo
 
-В следующей таблице описаны свойства конфигурации привязки, заданные в файле *Function. JSON* и `SignalRConnectionInfo` атрибуте.
+В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `SignalRConnectionInfo`.
 
 |свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
 |**type**| н/д | Нужно задать значение `signalRConnectionInfo`.|
-|**двух**| н/д | Нужно задать значение `in`.|
-|**name**| н/д | Имя переменной, используемой в коде функции для объекта сведений о подключении. |
+|**direction**| н/д | Нужно задать значение `in`.|
+|**name**| Недоступно | Имя переменной, используемой в коде функции для объекта сведений о подключении. |
 |**hubName**|**HubName**| В качестве значения следует указать имя центра SignalR, для которого создаются сведения о подключении.|
 |**userId**|**UserId**| Необязательно: значение утверждения идентификатора пользователя, которое следует задать в маркере доступа. |
 |**коннектионстрингсеттинг**|**ConnectionStringSetting**| Имя параметра приложения, который содержит строку подключения службы SignalR (по умолчанию — AzureSignalRConnectionString) |
 
 ### <a name="signalr"></a>SignalR
 
-В следующей таблице описаны свойства конфигурации привязки, заданные в файле *Function. JSON* и `SignalR` атрибуте.
+В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `SignalR`.
 
 |свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
 |**type**| н/д | Нужно задать значение `signalR`.|
-|**двух**| н/д | Нужно задать значение `out`.|
-|**name**| н/д | Имя переменной, используемой в коде функции для объекта сведений о подключении. |
+|**direction**| н/д | Нужно задать значение `out`.|
+|**name**| Недоступно | Имя переменной, используемой в коде функции для объекта сведений о подключении. |
 |**hubName**|**HubName**| В качестве значения следует указать имя центра SignalR, для которого создаются сведения о подключении.|
 |**коннектионстрингсеттинг**|**ConnectionStringSetting**| Имя параметра приложения, который содержит строку подключения службы SignalR (по умолчанию — AzureSignalRConnectionString) |
 

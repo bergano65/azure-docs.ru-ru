@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 09/28/2018
 ms.author: genli
-ms.openlocfilehash: beb1562738699bbcede58d8214e69342abbb7c93
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 30b4386c223240217096550330c0920ad9ab6871
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79266940"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86132923"
 ---
 # <a name="windows-shows-blue-screen-error-when-booting-an-azure-vm"></a>Отображение ошибки "синий экран" при загрузке виртуальной машины Azure под управлением Windows
 В этой статье описываются ошибки "синий экран", которые могут возникнуть при загрузке виртуальной машины Windows в Microsoft Azure. Представляем шаги, которые помогут вам при сборе данных для запроса в службу поддержки. 
@@ -91,12 +91,14 @@ ms.locfileid: "79266940"
     1. Убедитесь, что на диске достаточно места для выделения объема памяти, соответствующего объему ОЗУ, который зависит от выбираемого вами размера для виртуальной машины.
     2. Если места недостаточно или используется виртуальная машина большого размера (серии G, GS или E), то можно затем изменить расположение создания этого файла и указать любой другой диск данных, который присоединен к виртуальной машине. Для этого необходимо изменить следующий раздел.
 
-            reg load HKLM\BROKENSYSTEM F:\windows\system32\config\SYSTEM.hiv
+    ```config-reg
+    reg load HKLM\BROKENSYSTEM F:\windows\system32\config\SYSTEM.hiv
 
-            REG ADD "HKLM\BROKENSYSTEM\ControlSet001\Control\CrashControl" /v DumpFile /t REG_EXPAND_SZ /d "<DRIVE LETTER OF YOUR DATA DISK>:\MEMORY.DMP" /f
-            REG ADD "HKLM\BROKENSYSTEM\ControlSet002\Control\CrashControl" /v DumpFile /t REG_EXPAND_SZ /d "<DRIVE LETTER OF YOUR DATA DISK>:\MEMORY.DMP" /f
+    REG ADD "HKLM\BROKENSYSTEM\ControlSet001\Control\CrashControl" /v DumpFile /t REG_EXPAND_SZ /d "<DRIVE LETTER OF YOUR DATA DISK>:\MEMORY.DMP" /f
+    REG ADD "HKLM\BROKENSYSTEM\ControlSet002\Control\CrashControl" /v DumpFile /t REG_EXPAND_SZ /d "<DRIVE LETTER OF YOUR DATA DISK>:\MEMORY.DMP" /f
 
-            reg unload HKLM\BROKENSYSTEM
+    reg unload HKLM\BROKENSYSTEM
+    ```
 
 3. [Отсоедините диск ОС и снова подключите его к необходимой виртуальной машине](../windows/troubleshoot-recovery-disks-portal.md).
 4. Запустите виртуальную машину, чтобы воспроизвести проблему. Затем файл дампа будет создан.

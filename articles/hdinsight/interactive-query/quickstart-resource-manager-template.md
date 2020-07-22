@@ -8,38 +8,41 @@ ms.service: hdinsight
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 03/13/2020
-ms.openlocfilehash: 74b1c25c8bab11c0b2a72510fd419df239e2c23a
-ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
+ms.openlocfilehash: 5d8d9ba6d3152435382d180fe32dd78e62e5fd63
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81603582"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86087594"
 ---
-# <a name="quickstart-create-interactive-query-cluster-in-azure-hdinsight-using-resource-manager-template"></a>Краткое руководство. Создание кластера Interactive Query в Azure HDInsight с помощью шаблонов Resource Manager
+# <a name="quickstart-create-interactive-query-cluster-in-azure-hdinsight-using-arm-template"></a>Краткое руководство. Создание кластера Interactive Query в Azure HDInsight с помощью шаблона ARM
 
-В этом кратком руководстве вы используете шаблон Azure Resource Manager, чтобы создать кластер [Interactive Query](./apache-interactive-query-get-started.md) в Azure HDInsight. Interactive Query (также называется Apache Hive LLAP или [Low Latency Analytical Processing](https://cwiki.apache.org/confluence/display/Hive/LLAP)) — это [тип кластера](../hdinsight-hadoop-provision-linux-clusters.md#cluster-type) Azure HDInsight.
+В рамках этого краткого руководства вы используете шаблон Azure Resource Manager (ARM), чтобы создать кластер [Interactive Query](./apache-interactive-query-get-started.md) в Azure HDInsight. Interactive Query (также называется Apache Hive LLAP или [Low Latency Analytical Processing](https://cwiki.apache.org/confluence/display/Hive/LLAP)) — это [тип кластера](../hdinsight-hadoop-provision-linux-clusters.md#cluster-type) Azure HDInsight.
 
 [!INCLUDE [About Azure Resource Manager](../../../includes/resource-manager-quickstart-introduction.md)]
 
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-interactive-hive%2Fazuredeploy.json)
+
+## <a name="prerequisites"></a>Предварительные требования
+
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="create-an-interactive-query-cluster"></a>Создание кластера Interactive Query
+## <a name="review-the-template"></a>Изучение шаблона
 
-### <a name="review-the-template"></a>Изучение шаблона
+Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-hdinsight-interactive-hive/).
 
-Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-interactive-hive).
-
-:::code language="json" source="~/quickstart-templates/101-hdinsight-interactive-hive/azuredeploy.json" range="1-158":::
-
+:::code language="json" source="~/quickstart-templates/101-hdinsight-interactive-hive/azuredeploy.json" range="1-158" highlight="49-82":::
 
 В шаблоне определено два ресурса Azure:
 
-* С помощью [Microsoft.Storage/storageAccounts](https://docs.microsoft.com/azure/templates/microsoft.storage/storageaccounts) создается учетная запись хранения Azure.
-* С помощью [Microsoft.HDInsight/cluster](https://docs.microsoft.com/azure/templates/microsoft.hdinsight/clusters) создается кластер HDInsight.
+* С помощью [Microsoft.Storage/storageAccounts](/azure/templates/microsoft.storage/storageaccounts) создается учетная запись хранения Azure.
+* С помощью [Microsoft.HDInsight/cluster](/azure/templates/microsoft.hdinsight/clusters) создается кластер HDInsight.
 
 ### <a name="deploy-the-template"></a>Развертывание шаблона
 
-1. Нажмите кнопку **Развертывание в Azure** ниже, чтобы войти в Azure и открыть шаблон Resource Manager.
+1. Нажмите кнопку **Развертывание в Azure** ниже, чтобы войти в Azure и открыть шаблон ARM.
 
     [![Развертывание в Azure](../../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-interactive-hive%2Fazuredeploy.json)
 
@@ -76,7 +79,7 @@ ms.locfileid: "81603582"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого краткого руководства вы узнали, как создать в HDInsight кластер Interactive Query с помощью шаблона Resource Manager. В следующей статье вы узнаете, как использовать Apache Zeppelin для выполнения запросов Apache Hive.
+Из этого краткого руководства вы узнали, как создать в HDInsight кластер Interactive Query с помощью шаблона ARM. В следующей статье вы узнаете, как использовать Apache Zeppelin для выполнения запросов Apache Hive.
 
 > [!div class="nextstepaction"]
 > [Выполнение запросов Apache Hive в Azure HDInsight с помощью Apache Zeppelin](./hdinsight-connect-hive-zeppelin.md)

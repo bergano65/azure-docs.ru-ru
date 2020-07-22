@@ -5,12 +5,11 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/03/2020
 ms.topic: article
-ms.openlocfilehash: 8573a88d5371bbde07a541c789f52e6c44f1e279
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 9754636063e29592595ee57d09164ae1134341a1
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81411127"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84300612"
 ---
 # <a name="system-requirements"></a>Требования к системе
 
@@ -69,6 +68,9 @@ ms.locfileid: "81411127"
 Необходимо установить следующее программное обеспечение:
 
 * Последняя версия **Visual Studio 2019** [(Загрузка)](https://visualstudio.microsoft.com/vs/older-downloads/)
+* [Средства Visual Studio для службы "Смешанная реальность"](https://docs.microsoft.com/windows/mixed-reality/install-the-tools). В частности, обязательно установить следующие *рабочие нагрузки*:
+  * **Разработка классических приложений на C++** .
+  * **Разработка приложений универсальной платформы Windows (UWP)**
 * **Windows SDK 10.0.18362.0** [(Загрузка)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * **Git** [(Загрузка)](https://git-scm.com/downloads)
 * Необязательно. для просмотра видеопотока с сервера на настольном компьютере необходимы **расширения HEVC Video** [(ссылка Microsoft Store)](https://www.microsoft.com/p/hevc-video-extensions/9nmzlz57r3t7).

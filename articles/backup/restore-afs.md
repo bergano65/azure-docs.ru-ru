@@ -3,16 +3,16 @@ title: Восстановление файловых ресурсов Azure
 description: Узнайте, как использовать портал Azure для восстановления всей общей папки или отдельных файлов из точки восстановления, созданной Azure Backup.
 ms.topic: conceptual
 ms.date: 01/12/2020
-ms.openlocfilehash: 5668328637ae9b5a5dd3db02085a7f15de2a2456
-ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
+ms.openlocfilehash: f0e232fcde12a0c035afa139e3043bfa52fbe714
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82980668"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86503648"
 ---
 # <a name="restore-azure-file-shares"></a>Восстановление файловых ресурсов Azure
 
-В этой статье объясняется, как использовать портал Azure для восстановления всей общей папки или отдельных файлов из точки восстановления, созданной [Azure Backup](https://docs.microsoft.com/azure/backup/backup-overview).
+В этой статье объясняется, как использовать портал Azure для восстановления всей общей папки или отдельных файлов из точки восстановления, созданной [Azure Backup](./backup-overview.md).
 
 В этой статье вы узнаете, как выполнять следующие задачи.
 

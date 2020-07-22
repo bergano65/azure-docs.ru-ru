@@ -4,10 +4,9 @@ description: Аналитические запросы можно просмат
 ms.topic: conceptual
 ms.date: 08/10/2018
 ms.openlocfilehash: 0e17ca6e07ec76f0a7a1cb04f7aa13619fb9970c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77664003"
 ---
 # <a name="feed-power-bi-from-application-insights"></a>Использование данных Application Insights в Power BI
@@ -36,7 +35,7 @@ ms.locfileid: "77664003"
 3. В меню **Export** (Экспорт) выберите пункт **Power BI (M)**. Сохраните текстовый файл.
    
     ![Снимок экрана Analytics, на котором выделено меню "Экспорт"](./media/export-power-bi/analytics-export-power-bi.png)
-4. В Power BI Desktop выберите **получить данные** > **пустой запрос**. Затем в редакторе запросов в разделе **Вид**выберите **Расширенный редактор**.
+4. В Power BI Desktop выберите **получить данные**  >  **пустой запрос**. Затем в редакторе запросов в разделе **Вид**выберите **Расширенный редактор**.
 
     Вставьте экспортированный сценарий на языке M в расширенный редактор.
 
@@ -61,7 +60,7 @@ ms.locfileid: "77664003"
 
    ![Снимок экрана с кнопкой Power BI](./media/export-power-bi/button.png)
 
-3. В Power BI Desktop выберите **получить данные** > **пустой запрос**. Затем в редакторе запросов в разделе **Вид**выберите **Расширенный редактор**.
+3. В Power BI Desktop выберите **получить данные**  >  **пустой запрос**. Затем в редакторе запросов в разделе **Вид**выберите **Расширенный редактор**.
 
    ![Снимок экрана Power BI Desktop, на котором выделена кнопка "Пустой запрос"](./media/export-power-bi/blankquery.png)
 
@@ -98,8 +97,8 @@ ms.locfileid: "77664003"
 
 1. Создайте [ключ API](https://dev.applicationinsights.io/documentation/Authorization/API-key-and-App-ID).
 2. Обновите сценарий Power BI на языке M, экспортированный из Analytics, заменив URL-адрес Azure Resource Manager интерфейсом API Application Insights.
-   * Заменить **https:\//Management.Azure.com/Subscriptions/...**
-   * с, **https:\//API.applicationinsights.IO/Beta/Apps/...**
+   * Заменить **https: \/ /Management.Azure.com/Subscriptions/...**
+   * с, **https: \/ /API.applicationinsights.IO/Beta/Apps/...**
 3. Наконец, измените учетные данные на базовые и используйте свой ключ API.
 
 **Существующий скрипт**

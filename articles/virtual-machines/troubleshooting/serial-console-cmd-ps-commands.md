@@ -14,10 +14,9 @@ ms.workload: infrastructure-services
 ms.date: 08/14/2018
 ms.author: alsin
 ms.openlocfilehash: 493340764f507c4fa364a5000f65cc232630b243
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77167030"
 ---
 # <a name="windows-commands---cmd-and-powershell"></a>Команды Windows — CMD и PowerShell
@@ -70,13 +69,13 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="start-service"></a>Запуск службы
 `net start termservice`
 
-или диспетчер конфигурации служб
+или
 
 `sc start termservice`
 ### <a name="stop-service"></a>Остановка службы
 `net stop termservice`
 
-или диспетчер конфигурации служб
+или
 
 `sc stop termservice`
 ## <a name="manage-networking-features"></a>Управление компонентами сети
@@ -210,11 +209,11 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="show-os-version"></a>Отображение версии ОС
 `ver`
 
-или диспетчер конфигурации служб
+или
 
 `wmic os get caption,version,buildnumber /format:list`
 
-или диспетчер конфигурации служб
+или
 
 `systeminfo  find /i "os name"`
 
@@ -222,7 +221,7 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="view-os-install-date"></a>Отображение даты установки ОС
 `systeminfo | find /i "original"`
 
-или диспетчер конфигурации служб
+или
 
 `wmic os get installdate`
 ### <a name="view-last-boot-time"></a>Отображение времени последней загрузки
@@ -230,7 +229,7 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="view-time-zone"></a>Отображение часового пояса
 `systeminfo | find /i "time zone"`
 
-или диспетчер конфигурации служб
+или
 
 `wmic timezone get caption,standardname /format:list`
 ### <a name="restart-windows"></a>Перезапуск Windows
@@ -295,7 +294,7 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="show-nic-properties"></a>Отображение свойств сетевого адаптера
 `get-netadapter | where {$_.ifdesc.startswith('Microsoft Hyper-V Network Adapter')} |  format-list status,name,ifdesc,macadDresS,driverversion,MediaConNectState,MediaDuplexState`
 
-или диспетчер конфигурации служб
+или
 
 `get-wmiobject win32_networkadapter -filter "servicename='netvsc'" |  format-list netenabled,name,macaddress`
 
@@ -305,7 +304,7 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="enable-nic"></a>Включение сетевого адаптера
 `get-netadapter | where {$_.ifdesc.startswith('Microsoft Hyper-V Network Adapter')} | enable-netadapter`
 
-или диспетчер конфигурации служб
+или
 
 `(get-wmiobject win32_networkadapter -filter "servicename='netvsc'").enable()`
 
@@ -320,9 +319,9 @@ SAC позволяет подключаться к вашей операцион
 `test-netconnection`
 
 > [!NOTE]
-> Командлет Write-Progress может не работать с этой командой. Чтобы отключить индикатор выполнения, можно использовать `$ProgressPreference = "SilentlyContinue"` PowerShell в качестве меры по устранению рисков.
+> Командлет Write-Progress может не работать с этой командой. Чтобы отключить индикатор выполнения, можно использовать PowerShell в качестве меры по устранению рисков `$ProgressPreference = "SilentlyContinue"` .
 
-или диспетчер конфигурации служб
+или
 
 `get-wmiobject Win32_PingStatus -Filter 'Address="8.8.8.8"' | format-table -autosize IPV4Address,ReplySize,ResponseTime`
 
@@ -330,7 +329,7 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="port-ping"></a>Проверка связи с портом
 `test-netconnection -ComputerName bing.com -Port 80`
 
-или диспетчер конфигурации служб
+или
 
 `(new-object Net.Sockets.TcpClient).BeginConnect('bing.com','80',$null,$null).AsyncWaitHandle.WaitOne(300)`
 
@@ -338,7 +337,7 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="test-dns-name-resolution"></a>Тестирование разрешений DNS-имен
 `resolve-dnsname bing.com`
 
-или диспетчер конфигурации служб
+или
 
 `[System.Net.Dns]::GetHostAddresses('bing.com')`
 
@@ -348,7 +347,7 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="show-windows-firewall-rule-by-port"></a>Отображение правила брандмауэра Windows по номеру порта
 `get-netfirewallportfilter | where {$_.localport -eq 3389} | foreach {Get-NetFirewallRule -Name $_.InstanceId} | format-list Name,Enabled,Profile,Direction,Action`
 
-или диспетчер конфигурации служб
+или
 
 `(new-object -ComObject hnetcfg.fwpolicy2).rules | where {$_.localports -eq 3389 -and $_.direction -eq 1} | format-table Name,Enabled`
 
@@ -363,7 +362,7 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="verify-user-account-is-enabled"></a>Проверка включения учетной записи пользователя
 `(get-localuser | where {$_.SID -like "S-1-5-21-*-500"}).Enabled`
 
-или диспетчер конфигурации служб
+или
 
 `(get-wmiobject Win32_UserAccount -Namespace "root\cimv2" -Filter "SID like 'S-1-5-%-500'").Disabled`
 
@@ -377,7 +376,7 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="view-user-account-properties"></a>Просмотр свойств учетной записи пользователя
 `get-localuser | where {$_.SID -like "S-1-5-21-*-500"} | format-list *`
 
-или диспетчер конфигурации служб
+или
 
 `get-wmiobject Win32_UserAccount -Namespace "root\cimv2" -Filter "SID like 'S-1-5-%-500'" |  format-list Name,Disabled,Status,Lockout,Description,SID`
 
@@ -480,4 +479,4 @@ SAC позволяет подключаться к вашей операцион
 ## <a name="next-steps"></a>Дальнейшие шаги
 * Страницу основной документации по работе с последовательной консолью Windows см. [здесь](serial-console-windows.md).
 * Последовательная консоль также доступна для виртуальных машин [Linux](serial-console-linux.md).
-* Дополнительные сведения о [диагностике загрузки](boot-diagnostics.md).
+* См. дополнительные сведения в статье [Устранение неполадок виртуальных машин Windows в Azure с использованием диагностики загрузки](boot-diagnostics.md).

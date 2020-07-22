@@ -6,12 +6,12 @@ ms.topic: quickstart
 ms.date: 01/29/2019
 ms.author: suhuruli
 ms.custom: mvc, devcenter, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: fc615149b092aebfdde767fb3b716fb897bfd551
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 833b8fff65de7e7fdfc36565e91d18a1644723d1
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77121506"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86254322"
 ---
 # <a name="quickstart--deploy-a-java-app-to-azure-service-fabric-on-linux"></a>Краткое руководство.  Развертывание приложения Java в Azure Service Fabric в Linux
 
@@ -21,9 +21,9 @@ Azure Service Fabric — это платформа распределенных 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- [Среда Java](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-linux#set-up-java-development) и [Yeoman](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-linux#set-up-yeoman-generators-for-containers-and-guest-executables).
-- [Eclipse Neon версии 4.6 или новее](https://www.eclipse.org/downloads/packages/) и [подключаемый модуль Eclipse для Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-linux#install-the-eclipse-plug-in-optional).
-- [Пакет SDK и интерфейс командной строки (CLI) для Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-linux#installation-methods).
+- [Среда Java](./service-fabric-get-started-linux.md#set-up-java-development) и [Yeoman](./service-fabric-get-started-linux.md#set-up-yeoman-generators-for-containers-and-guest-executables).
+- [Eclipse Neon версии 4.6 или новее](https://www.eclipse.org/downloads/packages/) и [подключаемый модуль Eclipse для Service Fabric](./service-fabric-get-started-linux.md#install-the-eclipse-plug-in-optional).
+- [Пакет SDK и интерфейс командной строки (CLI) для Service Fabric](./service-fabric-get-started-linux.md#installation-methods).
 - [Git](https://git-scm.com/downloads);
 
 ## <a name="download-the-sample"></a>Скачивание примера приложения

@@ -10,12 +10,12 @@ ms.subservice: bing-visual-search
 ms.topic: conceptual
 ms.date: 04/04/2019
 ms.author: scottwhi
-ms.openlocfilehash: b6bc323f4e8deaf975c292f92d862b1fbe0e2714
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: a11bf408f06b5c4e621f0af1f71f23c335dc2069
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "60510128"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86512645"
 ---
 # <a name="default-insights-tag"></a>Тег аналитических сведений по умолчанию
 
@@ -168,7 +168,7 @@ ms.locfileid: "60510128"
 
 ## <a name="moresizes-insight"></a>Аналитические сведения MoreSizes
 
-Моресизес Insights определяет число размеров (большего или меньшего) изображения, которое обнаруживает Bing в Интернете (см. `availableSizesCount` поле):
+Моресизес Insights определяет число размеров (большего или меньшего) изображения, которое обнаруживает Bing в Интернете (см `availableSizesCount` . поле):
 
 ```json
       {
@@ -421,8 +421,16 @@ ms.locfileid: "60510128"
       }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с [примерами использования Bing Insights](bing-insights-usage.md) , чтобы увидеть, как Bing может отображать визуальную аналитику.
 
-Чтобы быстро приступить к работе с первым запросом, см. Краткие руководства: [C#](quickstarts/csharp.md) | [Java](quickstarts/java.md) | [node. js](quickstarts/nodejs.md) | [Python](quickstarts/python.md).
+Сведения о том, как быстро создать первый запрос, см. в кратких руководствах по
+
+* [C#](quickstarts/csharp.md)
+
+* [Java](quickstarts/java.md)
+
+* [Node.js](quickstarts/nodejs.md)
+
+* [Python](quickstarts/python.md).

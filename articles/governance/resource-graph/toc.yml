@@ -4,25 +4,43 @@
   items:
     - name: Что такое Azure Resource Graph?
       displayName: 'Resource Manager, query language, rbac, permissions'
-      href: overview.md
+      href: ./overview.md
 - name: Краткие руководства
   expanded: true
   items:
-    - name: "Выполнение запроса\_— Azure CLI"
+    - name: Выполнение первого запроса с помощью портала
       displayName: 'portal, resource, graph, explorer'
-      href: first-query-portal.md
+      href: ./first-query-portal.md
     - name: Выполнение первого запроса с помощью Azure CLI
       displayName: 'extension, docker'
-      href: first-query-azurecli.md
-    - name: Выполнение первого запроса с помощью PowerShell
+      href: ./first-query-azurecli.md
+    - name: Выполнение первого запроса с помощью Azure PowerShell
       displayName: 'module, docker, Az.ResourceGraph'
-      href: first-query-powershell.md
+      href: ./first-query-powershell.md
+    - name: Выполнение первого запроса с помощью .NET
+      displayName: 'core, auth, dotnet'
+      href: ./first-query-dotnet.md
+    - name: Выполнение первого запроса с помощью Go
+      displayName: 'package, sdk, golang'
+      href: ./first-query-go.md
+    - name: Выполнение первого запроса с помощью JavaScript
+      displayName: 'library, node, arm-resourcegraph'
+      href: ./first-query-javascript.md
     - name: "Выполнение первого запроса\_— Python"
       displayName: 'library, azure-mgmt, cli'
-      href: first-query-python.md
+      href: ./first-query-python.md
+    - name: Выполнение первого запроса (Ruby)
+      displayName: 'gem, azure-mgmt'
+      href: ./first-query-ruby.md
+    - name: Выполнение первого запроса с помощью REST
+      displayName: 'armclient, postman'
+      href: ./first-query-rest-api.md
+    - name: "Создание общего запроса с помощью Azure\_CLI"
+      displayName: 'extension, docker, queries'
+      href: ./shared-query-azure-cli.md
     - name: Развертывание общего запроса с помощью шаблона ARM
       displayName: 'resource manager, queries'
-      href: shared-query-template.md
+      href: ./shared-query-template.md
 - name: Учебники
   items:
     - name: Создание запроса и предоставление общего доступа к нему на портале Azure
@@ -50,6 +68,10 @@
     - name: Руководство по регулируемым запросам
       displayName: 'pagination, batching, throttling, parallel'
       href: ./concepts/guidance-for-throttled-requests.md
+    - name: Безопасность
+      items:
+        - name: 'Базовые показатели безопасности, учитываемые решением для оценки безопасности Azure'
+          href: ./concepts/azure-security-benchmark-baseline.md
 - name: Практические руководства
   items:
     - name: Получение данных об изменении ресурса
@@ -74,7 +96,7 @@
       href: /java/api/overview/azure/resourcegraph/management?view=azure-java-stable
     - name: Azure SDK для Java (Maven)
       href: 'https://search.maven.org/artifact/com.microsoft.azure.resourcegraph.v2019_04_01/azure-mgmt-resourcegraph/1.0.0-beta/jar'
-    - name: SDK Azure для Node
+    - name: Пакет Azure SDK для JavaScript
       href: /javascript/api/@azure/arm-resourcegraph
     - name: SDK Azure для Python
       href: /python/api/azure-mgmt-resourcegraph/azure.mgmt.resourcegraph

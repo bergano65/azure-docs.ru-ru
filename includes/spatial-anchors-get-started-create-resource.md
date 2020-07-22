@@ -4,12 +4,12 @@ ms.service: azure-spatial-anchors
 ms.topic: include
 ms.date: 12/13/2018
 ms.author: crtreasu
-ms.openlocfilehash: 32f4545a45eda8acddd7c93cc4917dbadca9ad4d
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: b2b3ca886359a0b4c906b89ed76f57486fc2c368
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67135047"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83638987"
 ---
 ## <a name="create-a-spatial-anchors-resource"></a>Создание ресурса Пространственных привязок
 
@@ -41,6 +41,10 @@ ms.locfileid: "67135047"
 Теперь можно просмотреть свойства ресурса. Скопируйте значение **идентификатора учетной записи** ресурса в текстовый редактор, так как оно понадобится позднее.
 
    ![Свойства ресурса](./media/spatial-anchors-get-started-create-resource/view-resource-properties.png)
+
+Скопируйте также значение **домена учетной записи** ресурса в текстовый редактор, так как оно понадобится позднее.
+
+   ![Домен учетной записи](./media/spatial-anchors-get-started-create-resource/view-resource-domain.png)
 
 В меню **Параметры** выберите **Ключ**. Скопируйте значение **первичного ключа** в текстовый редактор. Это значение `Account Key`. Он понадобится вам позднее.
 

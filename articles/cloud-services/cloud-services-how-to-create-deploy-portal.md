@@ -9,10 +9,9 @@ ms.topic: article
 ms.date: 05/18/2017
 ms.author: tagore
 ms.openlocfilehash: 63cf864a3f3b92728ad613ac45542bdbce2c9858
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80811337"
 ---
 # <a name="how-to-create-and-deploy-a-cloud-service"></a>Создание и развертывание облачной службы
@@ -48,7 +47,7 @@ ms.locfileid: "80811337"
 
 Чтобы создать облачную службу с развертыванием веб-ролей или рабочих ролей, необходимо [создать соответствующий пакет службы](cloud-services-model-and-package.md#servicepackagecspkg).
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 * Если пакет SDK для Azure не установлен, щелкните **Install Azure SDK** (Установить пакет Azure SDK). Откроется [страница загрузок Azure](https://azure.microsoft.com/downloads/), откуда можно скачать пакет SDK для языка, выбранного для разработки кода приложения. (Также это можно сделать позднее.)
 * Для экземпляров роли с сертификатами создайте сертификаты. В облачных службах используется PFX-файл с закрытым ключом. Сертификаты можно отправить в Azure при создании или развертывании облачной службы.
 
@@ -59,7 +58,7 @@ ms.locfileid: "80811337"
     ![Публикация облачной службы](media/cloud-services-how-to-create-deploy-portal/create-cloud-service.png)
 3. В новой области **облачной службы** введите **DNS-имя**.
 4. Создайте новую **группу ресурсов** или выберите существующую.
-5. Выберите **Расположение**.
+5. Выберите **расположение**.
 6. Щелкните **Пакет**. Благодаря этому действию откроется область **Отправить пакет**. Заполните обязательные поля. Если какая-либо из ролей содержит отдельный экземпляр, убедитесь, что установлен флажок **Развернуть, даже если одна или несколько ролей содержат отдельный экземпляр** .
 7. Убедитесь, что установлен флажок **Запустить развертывание** .
 8. Нажмите кнопку **ОК**. После этого область **Отправить пакет** закроется.
@@ -88,7 +87,7 @@ ms.locfileid: "80811337"
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 * [Общая настройка облачной службы](cloud-services-how-to-configure-portal.md).
-* Настройка [пользовательского имени домена](cloud-services-custom-domain-name-portal.md).
+* Настройте [имя пользовательского домена](cloud-services-custom-domain-name-portal.md).
 * [Управляйте облачной службой](cloud-services-how-to-manage-portal.md).
 * Настройте [сертификаты TLS/SSL](cloud-services-configure-ssl-certificate-portal.md).
 

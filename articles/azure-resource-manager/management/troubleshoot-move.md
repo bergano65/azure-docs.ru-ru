@@ -3,12 +3,12 @@ title: Устранение ошибок при перемещении
 description: Перемещайте ресурсы в новую группу ресурсов или новую подписку с помощью Azure Resource Manager.
 ms.topic: conceptual
 ms.date: 08/27/2019
-ms.openlocfilehash: 5a65f7daa0f5e3b1c8c6ddfdbecc0ff7d53e5afd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 60e4ffb2b79fcce85fa4b316e68e191eb14f8bf0
+ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75891274"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86055100"
 ---
 # <a name="troubleshoot-moving-azure-resources-to-new-resource-group-or-subscription"></a>Устранение неполадок с перемещением ресурсов в новую группу ресурсов или подписку
 
@@ -18,8 +18,8 @@ ms.locfileid: "75891274"
 
 Если вы действительно хотите обновить подписку Azure (например, переключиться с бесплатного уровня до уровня с оплатой по мере использования), необходимо преобразовать вашу подписку.
 
-* Сведения о том, как перейти с бесплатной пробной версии или подписки Azure Microsoft Imagine на подписку с оплатой по мере использования, см. [здесь](../../billing/billing-upgrade-azure-subscription.md).
-* Сведения о том, как перейти с подписки с оплатой по мере использования на другое предложение, см. [здесь](../../billing/billing-how-to-switch-azure-offer.md).
+* Чтобы обновить бесплатную пробную версию, см. статью [Обновление бесплатной пробной версии или Microsoft Imagine подписки Azure на оплату по мере](../../cost-management-billing/manage/upgrade-azure-subscription.md)использования.
+* Чтобы изменить учетную запись с оплатой по мере использования, см. статью [изменение подписки Azure с оплатой по мере использования на другое предложение](../../cost-management-billing/manage/switch-azure-offer.md).
 
 Если вам не удается перейти на другую подписку, [создайте запрос на поддержку Azure](../../azure-portal/supportability/how-to-create-azure-support-request.md). Выберите тип проблемы **Управление подпиской**.
 
@@ -30,7 +30,7 @@ ms.locfileid: "75891274"
 * [Службы приложений](./move-limitations/app-service-move-limitations.md)
 * [Azure DevOps Services](/azure/devops/organizations/billing/change-azure-subscription?toc=/azure/azure-resource-manager/toc.json)
 * [Классическая модель развертывания](./move-limitations/classic-model-move-limitations.md)
-* [Сетевое взаимодействие](./move-limitations/networking-move-limitations.md)
+* [Сеть](./move-limitations/networking-move-limitations.md)
 * [Службы восстановления](../../backup/backup-azure-move-recovery-services-vault.md?toc=/azure/azure-resource-manager/toc.json)
 * [Виртуальные машины](./move-limitations/virtual-machines-move-limitations.md)
 
@@ -46,6 +46,6 @@ ms.locfileid: "75891274"
 
 При возникновении этой ошибки у вас есть два варианта. Либо переместите ресурсы в группу ресурсов без виртуальной сети, либо [обратитесь в службу поддержки](../../azure-portal/supportability/how-to-create-azure-support-request.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Команды для перемещения ресурсов см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](move-resource-group-and-subscription.md).

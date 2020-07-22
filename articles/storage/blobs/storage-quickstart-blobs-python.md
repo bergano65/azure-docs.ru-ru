@@ -7,12 +7,13 @@ ms.date: 01/24/2020
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.openlocfilehash: 8daf7380e859cd2f9b5890c716f7b7d95e6c3fe4
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.custom: tracking-python
+ms.openlocfilehash: c24b934af17dab4f263de504da81d5ccd22d7fb9
+ms.sourcegitcommit: 9bfd94307c21d5a0c08fe675b566b1f67d0c642d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80061338"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84975319"
 ---
 # <a name="quickstart-manage-blobs-with-python-v12-sdk"></a>Краткое руководство. Управление большими двоичными объектами с помощью пакета SDK для Python версии 12
 
@@ -289,5 +290,5 @@ Done
 > [!div class="nextstepaction"]
 > [Примеры для пакета SDK хранилища BLOB-объектов Azure версии 12 для Python](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-blob/samples)
 
-* Чтобы узнать больше, ознакомьтесь с [пакетом SDK Azure для Python](https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/storage/azure-storage-blob/README.md).
+* Чтобы узнать больше, ознакомьтесь с [клиентскими библиотеками службы хранилища Azure для Python](/azure/developer/python/sdk/storage/overview?view=storage-py-v12).
 * Учебники, примеры, краткие руководства и другую документацию можно найти на странице [Azure для разработчиков Python](/azure/python/).

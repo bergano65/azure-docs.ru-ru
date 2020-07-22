@@ -4,16 +4,16 @@ description: Сведения о том, как создать пул узлов
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 741bd94b290560bdc850cbf7bc24ec57104d8a66
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
+ms.openlocfilehash: b4472baa51bb0b8806c7ad617c0fc1001c800ff0
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82613860"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86256855"
 ---
 # <a name="tutorial-create-a-host-pool-by-using-the-azure-marketplace"></a>Руководство по Создание пула узлов с использованием Azure Marketplace
 
@@ -154,7 +154,7 @@ Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
 
 Поддерживаемые клиенты:
 
-* [клиент удаленного рабочего стола для Windows 7 и Windows 10](../connect-windows-7-and-10.md);
+* [клиент удаленного рабочего стола для Windows 7 и Windows 10](connect-windows-7-10-2019.md);
 * [веб-клиент Виртуального рабочего стола Windows](connect-web-2019.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
@@ -162,4 +162,4 @@ Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com"
 Вы создали пул узлов и назначили пользователей для доступа к рабочему столу. Пул узлов можно заполнить программами RemoteApp. Дополнительные сведения о том, как управлять приложениями в Виртуальном рабочем столе Windows, см. в данном учебнике:
 
 > [!div class="nextstepaction"]
-> [Управление группами приложений](../manage-app-groups.md)
+> [Управление группами приложений](manage-app-groups-2019.md)

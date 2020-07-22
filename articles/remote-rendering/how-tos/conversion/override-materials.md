@@ -6,10 +6,9 @@ ms.author: flborn
 ms.date: 02/13/2020
 ms.topic: how-to
 ms.openlocfilehash: 90653db4c572877a728964851a99beebf2e823a4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80681484"
 ---
 # <a name="override-materials-during-model-conversion"></a>Переопределение материалов во время преобразования модели
@@ -38,7 +37,7 @@ ms.locfileid: "80681484"
 ]
 ```
 
-`box_materials_override.json` Файл помещается во входной контейнер, а добавляется `ConversionSettings.json` рядом `box.fbx`с параметром, который указывает преобразованию, где найти файл переопределения (см. раздел [Настройка преобразования модели](configure-model-conversion.md)):
+`box_materials_override.json`Файл помещается во входной контейнер, а `ConversionSettings.json` добавляется рядом с параметром `box.fbx` , который указывает преобразованию, где найти файл переопределения (см. раздел [Настройка преобразования модели](configure-model-conversion.md)):
 
 ```json
 {
@@ -52,7 +51,7 @@ ms.locfileid: "80681484"
 
 Модель [цветового материала](../../overview/features/color-materials.md) описывает постоянно затененную поверхность, которая не зависит от освещения.
 Это полезно для ресурсов, выполняемых алгоритмами Фотограмметри, например.
-В файлах переопределения материалов можно объявить материал как цветный материал, задав для `unlit` `true`значение.
+В файлах переопределения материалов можно объявить материал как цветный материал, задав `unlit` для значение `true` .
 
 ```json
 [
@@ -86,7 +85,7 @@ ms.locfileid: "80681484"
 
 ## <a name="json-schema"></a>Схема JSON
 
-Полная схема JSON для файлов материалов указана здесь. За исключением `unlit` и `ignoreTextureMaps`, доступные свойства являются подмножеством свойств, описанных в разделах модели [цветового материала](../../overview/features/color-materials.md) и [PBR Material](../../overview/features/pbr-materials.md) .
+Полная схема JSON для файлов материалов указана здесь. За исключением `unlit` и `ignoreTextureMaps` , доступные свойства являются подмножеством свойств, описанных в разделах модели [цветового материала](../../overview/features/color-materials.md) и [PBR Material](../../overview/features/pbr-materials.md) .
 
 ```json
 {

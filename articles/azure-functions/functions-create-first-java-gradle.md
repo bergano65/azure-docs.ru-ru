@@ -5,12 +5,11 @@ author: KarlErickson
 ms.author: karler
 ms.topic: how-to
 ms.date: 04/08/2020
-ms.openlocfilehash: 34aab24bf39e387715cfa5783b801d45ed488750
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: a366a199338539ba8e599bd5f406838f4e7bd21c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81732729"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "83996655"
 ---
 # <a name="use-java-and-gradle-to-create-and-publish-a-function-to-azure"></a>Использование Java и Gradle для создания и публикации функции в Azure
 
@@ -60,7 +59,7 @@ azurefunctions {
 Откройте в текстовом редакторе новый файл Function.java из папки *src/main/java* и изучите созданный код. Этот код содержит [активируемую по HTTP-запросу](functions-bindings-http-webhook.md) функцию, которая возвращает текст запроса. 
 
 > [!div class="nextstepaction"]
-> [У меня есть проблема](https://www.research.net/r/javae2e?tutorial=functions-maven-quickstart&step=generate-project)
+> [У меня есть проблема](https://www.research.net/r/javae2e?tutorial=functions-create-first-java-gradle&step=generate-project)
 
 ## <a name="run-the-function-locally"></a>Локальное выполнение функции
 
@@ -93,14 +92,16 @@ curl -w "\n" http://localhost:7071/api/HttpExample --data AzureFunctions
 Ожидаемые выходные данные следующие:
 
 <pre>
-Hello AzureFunctions!
+Hello, AzureFunctions
 </pre>
 
-[Ключ функции](functions-bindings-http-webhook-trigger.md#authorization-keys) при локальном выполнении не требуется.  
+> [!NOTE]
+> Если задать для authLevel значение `FUNCTION` или `ADMIN` , [ключ функции](functions-bindings-http-webhook-trigger.md#authorization-keys) не требуется при локальном запуске.  
+
 Используйте `Ctrl+C` в терминале, чтобы остановить код функции.
 
 > [!div class="nextstepaction"]
-> [У меня есть проблема](https://www.research.net/r/javae2e?tutorial=functions-maven-quickstart&step=local-run)
+> [У меня есть проблема](https://www.research.net/r/javae2e?tutorial=functions-create-first-java-gradle&step=local-run)
 
 ## <a name="deploy-the-function-to-azure"></a>Развертывание функции для Azure
 
@@ -128,10 +129,10 @@ gradle azureFunctionsDeploy
 
 Развертывание также упаковывает файлы проекта и развертывает их в новом приложении-функции [из ZIP-файла](functions-deployment-technologies.md#zip-deploy) с включенным режимом выполнения из пакета.
 
-Так как опубликованный нами триггер HTTP использует `authLevel = AuthorizationLevel.FUNCTION`, вам нужно получить ключ функции для вызова конечной точки функции по протоколу HTTP. Ключ функции проще всего получить на [портале Azure].
+Триггер authLevel для HTTP в образце проекта — это `ANONYMOUS` , который пропустит проверку подлинности. Однако при использовании других authLevel, таких как `FUNCTION` или `ADMIN` , необходимо получить ключ функции для вызова конечной точки функции по протоколу HTTP. Ключ функции проще всего получить на [портале Azure].
 
 > [!div class="nextstepaction"]
-> [У меня есть проблема](https://www.research.net/r/javae2e?tutorial=functions-maven-quickstart&step=deploy)
+> [У меня есть проблема](https://www.research.net/r/javae2e?tutorial=functions-create-first-java-gradle&step=deploy)
 
 ## <a name="get-the-http-trigger-url"></a>Получение URL-адреса триггера HTTP
 
@@ -139,9 +140,9 @@ gradle azureFunctionsDeploy
 
 1. Перейдите на [портал Azure], войдите в систему, введите _имя приложения-функции_ в поле **Поиск** в верхней части страницы и нажмите клавишу ВВОД.
  
-1. В приложении-функции разверните **Функции (только для чтения)**, выберите созданную функцию и нажмите ** </> Получить URL-адрес функции** в правом верхнем углу. 
+1. В приложении-функции выберите **функции**, выберите функцию, а затем щелкните **</> получить URL-адрес функции** в правом верхнем углу. 
 
-    ![Копирование URL-адреса функции с портала Azure](./media/functions-create-java-maven/get-function-url-portal.png)
+    :::image type="content" source="./media/functions-create-first-java-gradle/get-function-url-portal.png" alt-text="Копирование URL-адреса функции с портала Azure":::
 
 1. Выберите вариант **по умолчанию (функциональная клавиша)** и нажмите **Копировать**. 
 
@@ -152,17 +153,17 @@ gradle azureFunctionsDeploy
 Чтобы проверить работу приложения-функции в Azure с помощью `cURL`, замените URL из приведенного ниже примера реальным URL-адресом, который вы скопировали с портала.
 
 ```console
-curl -w "\n" https://fabrikam-functions-20190929094703749.azurewebsites.net/api/HttpExample?code=zYRohsTwBlZ68YF.... --data AzureFunctions
+curl -w "\n" http://azure-functions-sample-demo.azurewebsites.net/api/HttpExample --data AzureFunctions
 ```
 
 Это действие отправляет запрос POST в конечную точку функции с добавлением `AzureFunctions` в текст запроса. Вы увидите следующий ответ:
 
 <pre>
-Hello AzureFunctions!
+Hello, AzureFunctions
 </pre>
 
 > [!div class="nextstepaction"]
-> [У меня есть проблема](https://www.research.net/r/javae2e?tutorial=functions-maven-quickstart&step=verify-deployment)
+> [У меня есть проблема](https://www.research.net/r/javae2e?tutorial=functions-create-first-java-gradle&step=verify-deployment)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

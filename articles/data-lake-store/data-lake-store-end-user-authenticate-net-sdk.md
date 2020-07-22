@@ -3,15 +3,15 @@ title: Аутентификация пользователей — .NET с Data 
 description: Узнайте, как реализовать проверку подлинности пользователей в Azure Data Lake Storage 1-го поколения с помощью Azure Active Directory и .NET SDK
 author: twooley
 ms.service: data-lake-store
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: 37507f686ad2cf3fc66087b89ae77242ec79afdd
-ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
+ms.openlocfilehash: 12f6e0fd34de96677693b7f0d159c7cf9032ca1b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82688157"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85511287"
 ---
 # <a name="end-user-authentication-with-azure-data-lake-storage-gen1-using-net-sdk"></a>Проверка подлинности пользователей в Azure Data Lake Storage 1-го поколения с помощью .NET SDK
 > [!div class="op_single_selector"]
@@ -69,7 +69,7 @@ ms.locfileid: "82688157"
 ## <a name="end-user-authentication"></a>Проверка подлинности конечных пользователей
 Добавьте следующий фрагмент кода в клиентское приложение .NET. Замените значения заполнителей значениями, полученными в собственном приложении Azure AD (перечислено как предварительное условие). Этот фрагмент кода позволяет выполнять аутентификацию приложения **интерактивно** с помощью Data Lake Storage 1-го поколения. Это значит, что вам будет предложено ввести учетные данные Azure.
 
-Для удобства использования в следующем фрагменте кода для идентификатора клиента и URI перенаправления используются значения по умолчанию, которые действительны для любой подписки Azure. В следующем фрагменте кода нужно указать только значение для идентификатора клиента. См. инструкции по [получению идентификатор клиента](../active-directory/develop/howto-create-service-principal-portal.md#get-values-for-signing-in).
+Для удобства использования в следующем фрагменте кода для идентификатора клиента и URI перенаправления используются значения по умолчанию, которые действительны для любой подписки Azure. В следующем фрагменте кода нужно указать только значение для идентификатора клиента. См. инструкции по [получению идентификатор клиента](../active-directory/develop/howto-create-service-principal-portal.md#get-tenant-and-app-id-values-for-signing-in).
     
 - Замените функцию Main() следующим кодом:
 
@@ -96,7 +96,7 @@ ms.locfileid: "82688157"
 * Если вы не хотите использовать свой домен Azure AD и идентификатор клиента приложения, необходимо создать собственное приложение Azure AD и использовать идентификатор клиента Azure AD, идентификатор клиента и URI перенаправления этого приложения. Инструкции см. в статье [Создание приложения Active Directory для проверки подлинности пользователей в Data Lake Storage 1-го поколения](data-lake-store-end-user-authenticate-using-active-directory.md).
 
   
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 В этой статье вы узнали, как использовать проверку подлинности пользователей, чтобы реализовать проверку подлинности в Data Lake Storage 1-го поколения с помощью .NET SDK. Дополнительные сведения об использовании пакета .NET SDK для работы с Azure Data Lake Storage 1-го поколения см. в следующих статьях.
 
 * [Операции управления учетными записями в Data Lake Storage 1-го поколения c использованием пакета SDK для .NET](data-lake-store-get-started-net-sdk.md)

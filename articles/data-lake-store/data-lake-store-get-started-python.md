@@ -3,15 +3,16 @@ title: Управление учетной записью Azure Data Lake Storag
 description: Узнайте, как использовать пакет SDK для Python для Azure Data Lake Storage 1-го поколения операций управления учетными записями.
 author: twooley
 ms.service: data-lake-store
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: a0c27c4b6d906a0892735697a8e90f87da6edf9c
-ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
+ms.custom: tracking-python
+ms.openlocfilehash: e72873f01a68a9c5c7fcd44086464bb850836715
+ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82692105"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85985919"
 ---
 # <a name="account-management-operations-on-azure-data-lake-storage-gen1-using-python"></a>Операции управления учетными записями в Azure Data Lake Storage 1-го поколения c использованием Python
 > [!div class="op_single_selector"]
@@ -41,7 +42,7 @@ ms.locfileid: "82692105"
 
 Чтобы установить модули, используйте следующие команды.
 
-```
+```console
 pip install azure-mgmt-resource
 pip install azure-mgmt-datalake-store
 pip install azure-datalake-store
@@ -53,7 +54,7 @@ pip install azure-datalake-store
 
 2. Чтобы импортировать необходимые модули, добавьте следующий фрагмент кода.
 
-    ```
+    ```python
     ## Use this only for Azure AD service-to-service authentication
     from azure.common.credentials import ServicePrincipalCredentials
 
@@ -91,43 +92,49 @@ pip install azure-datalake-store
 
 Приведенный ниже фрагмент кода сначала создает клиент учетной записи Data Lake Storage 1-го поколения. Затем он использует объект клиента для создания учетной записи Data Lake Storage 1-го поколения. И наконец, он создает объект клиента файловой системы.
 
-    ## Declare variables
-    subscriptionId = 'FILL-IN-HERE'
-    adlsAccountName = 'FILL-IN-HERE'
-    resourceGroup = 'FILL-IN-HERE'
-    location = 'eastus2'
+```python
+## Declare variables
+subscriptionId = 'FILL-IN-HERE'
+adlsAccountName = 'FILL-IN-HERE'
+resourceGroup = 'FILL-IN-HERE'
+location = 'eastus2'
 
-    ## Create Data Lake Storage Gen1 account management client object
-    adlsAcctClient = DataLakeStoreAccountManagementClient(armCreds, subscriptionId)
+## Create Data Lake Storage Gen1 account management client object
+adlsAcctClient = DataLakeStoreAccountManagementClient(armCreds, subscriptionId)
 
-    ## Create a Data Lake Storage Gen1 account
-    adlsAcctResult = adlsAcctClient.account.create(
-        resourceGroup,
-        adlsAccountName,
-        DataLakeStoreAccount(
-            location=location
-        )
-    ).wait()
+## Create a Data Lake Storage Gen1 account
+adlsAcctResult = adlsAcctClient.account.create(
+    resourceGroup,
+    adlsAccountName,
+    DataLakeStoreAccount(
+        location=location
+    )
+).wait()
+```
 
     
 ## <a name="list-the-data-lake-storage-gen1-accounts"></a>Перечисление учетных записей Data Lake Storage 1-го поколения
 
-    ## List the existing Data Lake Storage Gen1 accounts
-    result_list_response = adlsAcctClient.account.list()
-    result_list = list(result_list_response)
-    for items in result_list:
-        print(items)
+```python
+## List the existing Data Lake Storage Gen1 accounts
+result_list_response = adlsAcctClient.account.list()
+result_list = list(result_list_response)
+for items in result_list:
+    print(items)
+```
 
 ## <a name="delete-the-data-lake-storage-gen1-account"></a>Удаление учетной записи Data Lake Storage 1-го поколения
 
-    ## Delete an existing Data Lake Storage Gen1 account
-    adlsAcctClient.account.delete(adlsAccountName)
+```python
+## Delete an existing Data Lake Storage Gen1 account
+adlsAcctClient.account.delete(adlsAccountName)
+```
     
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Операции файловой системы в Data Lake Storage 1-го поколения c использованием Python](data-lake-store-data-operations-python.md).
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 * [Справочник по azure-datalake-store для Python. Файловая система](https://docs.microsoft.com/python/api/azure-datalake-store/azure.datalake.store.core)
 * [Приложения больших данных с открытым исходным кодом, которые работают с Azure Data Lake Storage Gen1](data-lake-store-compatible-oss-other-applications.md)

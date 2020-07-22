@@ -8,10 +8,9 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 02/14/2020
 ms.openlocfilehash: 99bd1ac156b12a5be7b8c5c17eb5b568b7070a25
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77463223"
 ---
 # <a name="ldap-sync-in-ranger-and-apache-ambari-in-azure-hdinsight"></a>Синхронизация LDAP в Ranger и Apache Ambari в Azure HDInsight
@@ -33,9 +32,9 @@ Ambari и Ranger не имеют общего доступа к пользова
 
 ## <a name="ambari-user-sync-and-configuration"></a>Синхронизация и Настройка пользователей Ambari
 
-С головных узлов задание `/opt/startup_scripts/start_ambari_ldap_sync.py`cron выполняется каждый час, чтобы запланировать синхронизацию пользователей. Задание cron вызывает API-интерфейсы Ambari для выполнения синхронизации. Сценарий отправляет список пользователей и групп для синхронизации (так как пользователи могут не принадлежать к указанным группам, оба указываются по отдельности). Ambari синхронизирует sAMAccountName как имя пользователя и всех членов группы, транзитно.
+С головных узлов задание cron выполняется `/opt/startup_scripts/start_ambari_ldap_sync.py` каждый час, чтобы запланировать синхронизацию пользователей. Задание cron вызывает API-интерфейсы Ambari для выполнения синхронизации. Сценарий отправляет список пользователей и групп для синхронизации (так как пользователи могут не принадлежать к указанным группам, оба указываются по отдельности). Ambari синхронизирует sAMAccountName как имя пользователя и всех членов группы, транзитно.
 
-Журналы должны быть в `/var/log/ambari-server/ambari-server.log`. Дополнительные сведения см. в статье [Настройка уровня ведения журнала Ambari](https://docs.cloudera.com/HDPDocuments/Ambari-latest/administering-ambari/content/amb_configure_ambari_logging_level.html).
+Журналы должны быть в `/var/log/ambari-server/ambari-server.log` . Дополнительные сведения см. в статье [Настройка уровня ведения журнала Ambari](https://docs.cloudera.com/HDPDocuments/Ambari-latest/administering-ambari/content/amb_configure_ambari_logging_level.html).
 
 В кластерах Data Lake для создания домашних папок для синхронизированных пользователей и их настройки в качестве владельцев домашних папок используется обработчик записи после создания пользователя. Если пользователь не синхронизирован с Ambari правильным образом, пользователь может столкнуться со сбоями при доступе к промежуточным и временным папкам.
 
@@ -64,16 +63,16 @@ Ranger поддерживает параметр синхронизации гр
 
 ### <a name="update-ranger-sync-filter"></a>Обновление фильтра синхронизации Ranger
 
-Фильтр LDAP можно найти в пользовательском интерфейсе Ambari в разделе конфигурации Ranger User-Sync. Существующий фильтр будет иметь вид `(|(userPrincipalName=bob@contoso.com)(userPrincipalName=hdiwatchdog-core01@CONTOSO.ONMICROSOFT.COM)(memberOf:1.2.840.113556.1.4.1941:=CN=hadoopgroup,OU=AADDC Users,DC=contoso,DC=onmicrosoft,DC=com))`. Убедитесь, что в конце добавлен предикат, и проверьте фильтр с помощью `net ads` команды поиска или LDP. exe или что-то подобное.
+Фильтр LDAP можно найти в пользовательском интерфейсе Ambari в разделе конфигурации Ranger User-Sync. Существующий фильтр будет иметь вид `(|(userPrincipalName=bob@contoso.com)(userPrincipalName=hdiwatchdog-core01@CONTOSO.ONMICROSOFT.COM)(memberOf:1.2.840.113556.1.4.1941:=CN=hadoopgroup,OU=AADDC Users,DC=contoso,DC=onmicrosoft,DC=com))` . Убедитесь, что в конце добавлен предикат, и проверьте фильтр, используя `net ads` команду поиска или ldp.exe или что-то подобное.
 
 ## <a name="ranger-user-sync-logs"></a>Журналы синхронизации пользователей Ranger
 
-Синхронизация пользователей Ranger может происходить из любой из головных узлах. Журналы находятся в `/var/log/ranger/usersync/usersync.log`. Чтобы увеличить уровень детализации журналов, выполните следующие действия.
+Синхронизация пользователей Ranger может происходить из любой из головных узлах. Журналы находятся в `/var/log/ranger/usersync/usersync.log` . Чтобы увеличить уровень детализации журналов, выполните следующие действия.
 
 1. Войдите в Ambari.
 1. Перейдите к разделу конфигурации Ranger.
 1. Перейдите к разделу Advanced **усерсинк-log4j** .
-1. Измените уровень `log4j.rootLogger` на `DEBUG` на (после изменения он должен выглядеть как `log4j.rootLogger = DEBUG,logFile,FilterLog`).
+1. Измените `log4j.rootLogger` уровень на на `DEBUG` (после изменения он должен выглядеть как `log4j.rootLogger = DEBUG,logFile,FilterLog` ).
 1. Сохраните конфигурацию и перезапустите Ranger.
 
 ## <a name="next-steps"></a>Дальнейшие шаги

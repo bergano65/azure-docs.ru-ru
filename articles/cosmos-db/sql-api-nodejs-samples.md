@@ -7,20 +7,19 @@ ms.subservice: cosmosdb-sql
 ms.topic: sample
 ms.date: 08/23/2019
 ms.author: dech
-ms.openlocfilehash: 4ac3d74cb76a936cc88261a2fedf16764e8ae52f
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 89fc13f7391a3bd270730a6e95e0132305e04b68
+ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "76718299"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83683836"
 ---
 # <a name="nodejs-examples-to-manage-data-in-azure-cosmos-db"></a>Примеры Node.js для управления данными в Azure Cosmos DB
 
 > [!div class="op_single_selector"]
 > * [Примеры пакета SDK для .NET версии 2](sql-api-dotnet-samples.md)
 > * [Примеры пакета SDK для .NET версии 3](sql-api-dotnet-v3sdk-samples.md)
-> * [Примеры Java](sql-api-java-samples.md)
-> * [Примеры Async Java](sql-api-async-java-samples.md)
+> * [Примеры для пакета SDK Java версии 4](sql-api-java-sdk-samples.md)
 > * [Примеры Node.js](sql-api-nodejs-samples.md)
 > * [Примеры Python](sql-api-python-samples.md)
 > * [Коллекция примеров кода Azure](https://azure.microsoft.com/resources/samples/?sort=0&service=cosmos-db)
@@ -36,7 +35,7 @@ ms.locfileid: "76718299"
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-- Вы можете [активировать преимущества подписчика Visual Studio](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)— каждый месяц ваша подписка Visual Studio предоставляет вам кредиты, которые можно использовать для оплаты служб Azure.
+- Вы можете [активировать преимущества подписчика Visual Studio](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio): в вашей подписке Visual Studio каждый месяц зачисляются деньги на счет, которые можно использовать для оплаты служб Azure.
 
 [!INCLUDE [cosmos-db-emulator-docdb-api](../../includes/cosmos-db-emulator-docdb-api.md)]
 

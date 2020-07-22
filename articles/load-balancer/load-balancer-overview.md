@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 1/14/2020
 ms.author: allensu
-ms.openlocfilehash: 1bc18788019c3ec97e06e3b01e823a0ba53541b8
-ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
+ms.openlocfilehash: 08f7554ed9648df8b225fe9f205ee13b0f693c44
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2020
-ms.locfileid: "82734762"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86170570"
 ---
 # <a name="what-is-azure-load-balancer"></a>Что такое Azure Load Balancer?
 
@@ -44,7 +44,7 @@ C помощью Load Balancer (цен. категория "Стандартны
 
 Ниже перечислены основные сценарии, которые можно выполнить с помощью подсистемы Load Balancer (цен. категория "Стандартный").
 
-- Балансировка нагрузки **[внутреннего](https://docs.microsoft.com/azure/load-balancer/tutorial-load-balancer-standard-manage-portal)** и **[внешнего](https://docs.microsoft.com/azure/load-balancer/tutorial-load-balancer-standard-internal-portal)** трафика на виртуальных машинах Azure.
+- Балансировка нагрузки **[внутреннего](https://docs.microsoft.com/azure/load-balancer/tutorial-load-balancer-standard-internal-portal)** и **[внешнего](https://docs.microsoft.com/azure/load-balancer/tutorial-load-balancer-standard-manage-portal)** трафика на виртуальных машинах Azure.
 
 - Повышение доступности за счет распределения ресурсов **[в пределах зон](https://docs.microsoft.com/azure/load-balancer/tutorial-load-balancer-standard-public-zonal-portal)** и **[между](https://docs.microsoft.com/azure/load-balancer/tutorial-load-balancer-standard-public-zone-redundant-portal)** ними.
 
@@ -67,7 +67,7 @@ C помощью Load Balancer (цен. категория "Стандартны
 ### <a name="secure-by-default"></a><a name="securebydefault"></a>Обеспечение безопасности по умолчанию
 
 Load Balancer (цен. категория "Стандартный") построен на основе модели безопасности сети с нулевым доверием. Load Balancer (цен. категория "Стандартный") защищен по умолчанию и является частью вашей виртуальной сети. Это виртуальная сеть является частной и изолированной сетью.  Это означает, что Load Balancer (цен. категории "Стандартный") и стандартные общедоступные IP-адреса будут закрыты для входящих потоков, если их не открыть с помощью групп безопасности сети. Группы безопасности сети используются для явного разрешения допустимого трафика.  Если у вас нет NSG в подсети или сетевого интерфейса ресурса виртуальной машины, трафик не может достичь этого ресурса. Дополнительные сведения о группах безопасности сети и способах их применения в вашем сценарии см. в статье [Фильтрация сетевого трафика с помощью групп безопасности сети](../virtual-network/security-overview.md).
-В Load Balancer (цен. категория "Базовый") по умолчанию открыт доступ к Интернету.
+В Load Balancer (цен. категория "Базовый") по умолчанию открыт доступ к Интернету. Кроме того, Load Balancer не хранит данные клиента.
 
 ## <a name="pricing-and-sla"></a>Цены и соглашение об уровне обслуживания
 

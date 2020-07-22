@@ -1,19 +1,19 @@
 ---
 title: Включение автоматического создания разделов в Apache Kafka — Azure HDInsight
-description: Узнайте, как настроить автоматическое создание разделов в Apache Kafka в HDInsight. Можно настроить Kafka, задав для `auto.create.topics.enable` параметра значение true через Ambari. Или во время создания кластера с помощью PowerShell или шаблонов диспетчер ресурсов.
+description: Узнайте, как настроить автоматическое создание разделов в Apache Kafka в HDInsight. Можно настроить Kafka, задав для параметра значение `auto.create.topics.enable` true через Ambari. Или во время создания кластера с помощью PowerShell или шаблонов диспетчер ресурсов.
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/28/2020
-ms.openlocfilehash: 88dc3e4d761f9b4df63dfa07a24298398f7b0187
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 829f91452725615af4d444426e25ffad62d6ab6d
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82231277"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86087512"
 ---
 # <a name="how-to-configure-apache-kafka-on-hdinsight-to-automatically-create-topics"></a>Настройка автоматического создания разделов в Apache Kafka в HDInsight
 
@@ -29,7 +29,7 @@ ms.locfileid: "82231277"
 
     ![Изображение страницы портала с выбранной панелью мониторинга кластера](./media/apache-kafka-auto-create-topics/azure-portal-cluster-dashboard-ambari.png)
 
-    Когда появится запрос, пройдите проверку подлинности, используя учетные данные (администратора) входа для кластера. Вместо этого можно подключиться к Амабри напрямую из `https://CLUSTERNAME.azurehdinsight.net/` расположения, `CLUSTERNAME` где — это имя кластера Kafka.
+    Когда появится запрос, пройдите проверку подлинности, используя учетные данные (администратора) входа для кластера. Вместо этого можно подключиться к Амабри напрямую из `https://CLUSTERNAME.azurehdinsight.net/` расположения, где `CLUSTERNAME` — это имя кластера Kafka.
 
 1. В списке в левой части страницы выберите службу Kafka.
 
@@ -45,7 +45,7 @@ ms.locfileid: "82231277"
 
     Этот параметр фильтрует список свойств и отображает `auto.create.topics.enable` параметр.
 
-1. Измените значение `auto.create.topics.enable` на `true`, а затем выберите **сохранить**. Добавьте заметку, а затем нажмите кнопку **сохранить** еще раз.
+1. Измените значение `auto.create.topics.enable` на `true` , а затем выберите **сохранить**. Добавьте заметку, а затем нажмите кнопку **сохранить** еще раз.
 
     ![Изображение ввода значения для параметра auto.create.topics.enable](./media/apache-kafka-auto-create-topics/auto-create-topics-enable.png)
 
@@ -75,9 +75,9 @@ ms.locfileid: "82231277"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Next Steps
 
 Из этого документа вы узнали, как включить автоматическое создание разделов для Apache Kafka в HDInsight. Дополнительные сведения о работе с Kafka вы можете получить по следующим ссылкам.
 
-* [Анализ журналов Apache Kafka](apache-kafka-log-analytics-operations-management.md)
+* [Анализ журналов для Apache Kafka в HDInsight](apache-kafka-log-analytics-operations-management.md)
 * [Репликация данных между кластерами Apache Kafka](apache-kafka-mirroring.md)

@@ -7,14 +7,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: quickstart
-ms.date: 01/27/2020
+ms.date: 05/27/2020
 ms.author: pafarley
-ms.openlocfilehash: 2224ec64712ff9d1745231f39a1521ae941304ff
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.custom: tracking-python
+ms.openlocfilehash: e4018561d8537194b0ce710fcf85573072f58d23
+ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77118772"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86028079"
 ---
 # <a name="quickstart-extract-receipt-data-using-the-form-recognizer-rest-api-with-python"></a>Краткое руководство. Извлечение данных квитанции с помощью REST API Распознавателя документов и Python
 
@@ -26,7 +27,10 @@ ms.locfileid: "77118772"
 
 Для работы с этим кратким руководством требуется следующее:
 - Среда [Python](https://www.python.org/downloads/), если вы хотите выполнить этот пример кода локально.
-- URL-адрес изображения квитанции. Вы можете использовать [пример изображения](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/curl/form-recognizer/contoso-allinone.jpg?raw=true) при изучении этого краткого руководства.
+- URL-адрес изображения квитанции. Вы можете использовать [пример изображения](https://raw.githubusercontent.com/Azure-Samples/cognitive-services-REST-api-samples/master/curl/form-recognizer/contoso-allinone.jpg) при изучении этого краткого руководства.
+
+> [!NOTE]
+> В этом кратком руководстве используются квитанции на удаленных носителях, доступ к которым осуществляется по URL-адресу. Если вы хотите использовать локальные файлы, ознакомьтесь со [справочной документацией](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeReceiptAsync).
 
 ## <a name="create-a-form-recognizer-resource"></a>Создание ресурса Распознавателя документов
 
@@ -34,14 +38,14 @@ ms.locfileid: "77118772"
 
 ## <a name="analyze-a-receipt"></a>Анализ квитанции
 
-Для начала анализа квитанции запустите API **[анализа](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/AnalyzeReceiptAsync)** , используя приведенный ниже сценарий Python. Перед выполнением сценария внесите следующие изменения:
+Для начала анализа квитанции запустите API **[анализа](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeReceiptAsync)** , используя приведенный ниже сценарий Python. Перед выполнением сценария внесите следующие изменения:
 
 1. Замените `<Endpoint>` конечной точкой, полученной из подписки Распознавателя документов.
 1. Замените `<your receipt URL>` на URL-адрес изображения квитанции.
 1. Замените `<subscription key>` ключом подписки, скопированным на предыдущем шаге.
 
     ```python
-    ########### Python Form Recognizer Async Layout #############
+    ########### Python Form Recognizer Async Receipt #############
 
     import json
     import time
@@ -50,7 +54,7 @@ ms.locfileid: "77118772"
     # Endpoint URL
     endpoint = r"<Endpoint>"
     apim_key = "<subscription key>"
-    post_url = endpoint + "/formrecognizer/v2.0-preview/prebuilt/receipt/analyze"
+    post_url = endpoint + "/formrecognizer/v2.0/prebuilt/receipt/analyze"
     source = r"<path to your receipt>"
     
     headers = {
@@ -85,12 +89,12 @@ ms.locfileid: "77118772"
 Вы получите ответ, включающий заголовок `202 (Success)`**Operation-Location**, который сценарий выведет в окно консоли. Этот заголовок содержит идентификатор операции, который можно использовать для запроса состояния асинхронной операции и получения результатов. В следующем примере значения строка после `operations/` является идентификатором операции.
 
 ```console
-https://cognitiveservice/formrecognizer/v2.0-preview/prebuilt/receipt/operations/54f0b076-4e38-43e5-81bd-b85b8835fdfb
+https://cognitiveservice/formrecognizer/v2.0/prebuilt/receipt/operations/54f0b076-4e38-43e5-81bd-b85b8835fdfb
 ```
 
 ## <a name="get-the-receipt-results"></a>Получение результатов анализа данных квитанции
 
-После вызова API **анализа квитанции** вызовите API **[получения результатов анализа квитанции](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/GetAnalyzeReceiptResult)** , чтобы узнать о состоянии операции и извлеченных данных. Добавьте следующий код в нижнюю часть сценария Python. При этом в новом вызове API используется значение идентификатора операции. Этот сценарий вызывает API с регулярными интервалами, пока не станут доступны результаты. Мы рекомендуем установить интервал одну секунду или более.
+После вызова API **анализа квитанции** вызовите API **[получения результатов анализа квитанции](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/GetAnalyzeReceiptResult)** , чтобы узнать о состоянии операции и извлеченных данных. Добавьте следующий код в нижнюю часть сценария Python. При этом в новом вызове API используется значение идентификатора операции. Этот сценарий вызывает API с регулярными интервалами, пока не станут доступны результаты. Мы рекомендуем установить интервал одну секунду или более.
 
 ```python
 n_tries = 10
@@ -101,11 +105,11 @@ while n_try < n_tries:
         resp = get(url = get_url, headers = {"Ocp-Apim-Subscription-Key": apim_key})
         resp_json = json.loads(resp.text)
         if resp.status_code != 200:
-            print("GET Layout results failed:\n%s" % resp_json)
+            print("GET Receipt results failed:\n%s" % resp_json)
             quit()
         status = resp_json["status"]
         if status == "succeeded":
-            print("Layout Analysis succeeded:\n%s" % resp_json)
+            print("Receipt Analysis succeeded:\n%s" % resp_json)
             quit()
         if status == "failed":
             print("Analysis failed:\n%s" % resp_json)
@@ -462,4 +466,4 @@ while n_try < n_tries:
 В этом кратком руководстве для извлечения содержания с изображений квитанции используется REST API Распознавателя документов и Python. Для более подробного изучения API Распознавателя документов см. справочную документацию.
 
 > [!div class="nextstepaction"]
-> [Справочная документация по REST API](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/AnalyzeReceiptAsync)
+> [Справочная документация по REST API](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeReceiptAsync)

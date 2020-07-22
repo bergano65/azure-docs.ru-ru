@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/18/2019
-ms.openlocfilehash: cc67acca11e7e0f24dc0597dcd19672a38a7bf28
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 19c40f2a7609d556448641e78fdeffe83e8660b1
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75495746"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86083956"
 ---
 # <a name="use-multiple-hdinsight-clusters-with-an-azure-data-lake-storage-account"></a>Использование нескольких кластеров HDInsight с учетной записью Azure Data Lake Storage
 
@@ -44,14 +44,14 @@ Data Lake Storage поддерживает неограниченное про
 - **Субъект-служба** — субъект-служба Azure Active Directory (AAD), связанная с учетной записью.
 - **FINGRP** — группа пользователей, созданная в AAD и содержащая пользователей из финансовой организации.
 
-Инструкции по созданию приложения AAD (при создании которого также создается субъект-служба) см. в разделе [Создание приложения AAD](../active-directory/develop/howto-create-service-principal-portal.md#create-an-azure-active-directory-application). Инструкции по созданию группы пользователей в AAD см. в разделе [Управление группами в Azure Active Directory](../active-directory/fundamentals/active-directory-groups-create-azure-portal.md).
+Инструкции по созданию приложения AAD (при создании которого также создается субъект-служба) см. в разделе [Создание приложения AAD](../active-directory/develop/howto-create-service-principal-portal.md#register-an-application-with-azure-ad-and-create-a-service-principal). Инструкции по созданию группы пользователей в AAD см. в разделе [Управление группами в Azure Active Directory](../active-directory/fundamentals/active-directory-groups-create-azure-portal.md).
 
 Необходимо учесть следующие основные моменты.
 
 - **Перед** использованием учетной записи хранения для кластеров администратору Data Lake Storage необходимо создать и подготовить двухуровневую структуру папок (**/clusters/finance/**) с соответствующими разрешениями. Эта структура не создается автоматически при создании кластеров.
 - В приведенном выше примере рекомендуется установить **FINGRP** в качестве группы-владельца **/clusters/finance** и установить для FINGRP разрешения **r-x** для всей структуры папок начиная с корневой папки. Это позволит участникам группы FINGRP перемещаться по всей структуре папок начиная с корневой папки.
 - В том случае, когда различные субъекты-службы AAD могут создавать кластеры в каталоге **/clusters/finance**, бит sticky (установленный для папки **finance**) гарантирует, что папки, созданные одним субъектом-службой, не могут быть удалены другими субъектами-службами.
-- После того как структура папок и разрешения установлены, процесс создания кластера HDInsight создает место хранения кластера в папке **/Clusters/Finance**/. Например, в качестве расположения для кластера с именем fincluster01 может использоваться папка **/clusters/finance/fincluster01**. В таблице ниже показаны владельцы и разрешения для папок, созданных для кластера HDInsight.
+- После того как структура папок и разрешения установлены, процесс создания кластера HDInsight создает место хранения, определенное в кластере, в разделе **/Clusters/Finance/**. Например, в качестве расположения для кластера с именем fincluster01 может использоваться папка **/clusters/finance/fincluster01**. В таблице ниже показаны владельцы и разрешения для папок, созданных для кластера HDInsight.
 
     |Папка  |Разрешения  |владельца  |группы владельцев  | Именованный пользователь | Разрешения именованного пользователя | Именованная группа | Разрешения именованной группы |
     |---------|---------|---------|---------|---------|---------|---------|---------|
@@ -79,7 +79,9 @@ Data Lake Storage поддерживает неограниченное про
 
 Эти параметры влияют на один из вариантов использования HDInsight, который описан в разделе [YARN 247](https://hwxmonarch.atlassian.net/browse/YARN-247). Отправка задания может завершиться сбоем со следующим сообщением об ошибке:
 
-    Resource XXXX is not publicly accessible and as such cannot be part of the public cache.
+```output
+Resource XXXX is not publicly accessible and as such cannot be part of the public cache.
+```
 
 Как указано в статье YARN JIRA, ссылка на которую приведена выше, при локализации общедоступных ресурсов средство локализации проверяет, что все запрошенные ресурсы действительно являются общедоступными, анализируя их разрешения в удаленной файловой системе. Все LocalResource, которые не соответствуют этому условию, отклоняются для локализации. Проверка разрешений включает проверку доступа к файлу на чтение для остальных пользователей. При размещении кластеров HDInsight на Azure Data Lake этот сценарий не работает, так как Azure Data Lake запрещает доступ к "другим" на уровне корневой папки.
 
@@ -90,4 +92,4 @@ Data Lake Storage поддерживает неограниченное про
 ## <a name="see-also"></a>См. также
 
 - [Краткое руководство по установке кластеров в HDInsight](../storage/data-lake-storage/quickstart-create-connect-hdi-cluster.md)
-- [Использование Azure Data Lake Storage 2-го поколения с кластерами Azure HDInsight](hdinsight-hadoop-use-data-lake-storage-gen2.md)
+- [Использование Azure Data Lake Storage Gen2 с кластерами Azure HDInsight](hdinsight-hadoop-use-data-lake-storage-gen2.md)

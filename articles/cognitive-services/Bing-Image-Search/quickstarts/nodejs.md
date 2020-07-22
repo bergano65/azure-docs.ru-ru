@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство. Поиск изображений с помощью REST API Bing для поиска изображений и Node.js
 titleSuffix: Azure Cognitive Services
-description: В этом кратком руководстве описано, как отправлять запросы в REST API "Поиск изображений Bing" с помощью JavaScript и получать ответ в формате JSON.
+description: Узнайте, как отправлять запросы в REST API Поиска изображений Bing с помощью JavaScript и получать ответы в формате JSON.
 services: cognitive-services
 documentationcenter: ''
 author: aahill
@@ -9,19 +9,19 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-image-search
 ms.topic: quickstart
-ms.date: 03/31/2020
+ms.date: 05/08/2020
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 15757d606a846a2951bc5c15d8d5ef0dbfd7a2a1
-ms.sourcegitcommit: efefce53f1b75e5d90e27d3fd3719e146983a780
+ms.openlocfilehash: 2c411a0c8ba838bdac8c0e487e5dcc54db522311
+ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80478590"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85603406"
 ---
 # <a name="quickstart-search-for-images-using-the-bing-image-search-rest-api-and-nodejs"></a>Краткое руководство. Поиск изображений с помощью REST API Bing для поиска изображений и Node.js
 
-В этом кратком руководстве описано, как отправлять поисковые запросы к API Поиска изображений Bing. Это приложение на JavaScript отправляет поисковый запрос к API и отображает URL-адрес первого возвращенного в результатах изображения. Хотя это приложение создается на языке JavaScript, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
+Узнайте, как отправлять поисковые запросы к API Поиска изображений Bing. Это приложение на JavaScript отправляет поисковый запрос к API и отображает URL-адрес первого возвращенного в результатах изображения. Хотя приложение написано на JavaScript, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
 Исходный код, используемый в данном примере, вместе с дополнительной обработкой ошибок и аннотациями можно получить на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/nodejs/Search/BingImageSearchv7Quickstart.js).
 
@@ -29,22 +29,22 @@ ms.locfileid: "80478590"
 
 * Последняя версия [Node.js](https://nodejs.org/en/download/).
 
-* [Библиотека запросов JavaScript](https://github.com/request/request)  
+* [Библиотека запросов JavaScript.](https://github.com/request/request)
 
 [!INCLUDE [cognitive-services-bing-image-search-signup-requirements](../../../../includes/cognitive-services-bing-image-search-signup-requirements.md)]
 
-См. также [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/).
+См. сведения о [ценах на Cognitive Services (API Поиска Bing)](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/).
 
 ## <a name="create-and-initialize-the-application"></a>Создание и инициализация приложения
 
-1. Создайте файл JavaScript в избранной интегрированной среде разработки или редакторе и установите степень строгости, а также требования к HTTPS.
+1. Создайте файл JavaScript в используемых вами интегрированной среде разработки или редакторе, а также укажите степень строгости и требования к HTTPS.
 
     ```javascript
     'use strict';
     let https = require('https');
     ```
 
-2. Создайте переменные для конечной точки API, пути поиска изображения API, ключа подписки, а также условия поиска. В качестве `host` может быть глобальная конечная точка, приведенная ниже, или конечная точка [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемая на портале Azure для вашего ресурса.
+2. Создайте переменные для конечной точки API, пути поиска изображения API, ключа подписки, а также условия поиска. Для `host` можно использовать глобальную конечную точку в следующем коде или конечную точку [личного поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемую на портале Azure для вашего ресурса.
 
     ```javascript
     let subscriptionKey = 'enter key here';
@@ -55,7 +55,7 @@ ms.locfileid: "80478590"
 
 ## <a name="construct-the-search-request-and-query"></a>Создание поискового запроса и запроса
 
-1. Используйте переменные из последнего шага для форматирования искомого URL-адреса для запроса API. Поисковый термин нужно зашифровать в URL-адресе, прежде чем отправлять его в API.
+1. Используйте переменные из последнего шага для форматирования искомого URL-адреса для запроса API. Закодируйте поисковый запрос с использованием URL-адреса, прежде чем отправлять его в API.
 
     ```javascript
     let request_params = {
@@ -68,7 +68,7 @@ ms.locfileid: "80478590"
     };
     ```
 
-2. Используйте библиотеку запроса для отправки запроса к API. `response_handler` определится в следующем разделе.
+2. Используйте библиотеку запроса для отправки запроса к API. 
     ```javascript
     let req = https.request(request_params, response_handler);
     req.end();
@@ -76,32 +76,34 @@ ms.locfileid: "80478590"
 
 ## <a name="handle-and-parse-the-response"></a>Обработка и анализ ответа
 
-1. Определите функцию с именем `response_handler`, принимающую HTTP-вызов `response` как параметр. Выполните следующие действия в этой функции:
+1. Определите функцию с именем `response_handler`, принимающую HTTP-вызов `response` как параметр. 
 
-    1. Определите переменную для хранения текста ответа JSON.  
-        ```javascript
-        let response_handler = function (response) {
-            let body = '';
-        };
-        ```
+2. В этой функции определите переменную для хранения текста ответа в формате JSON. 
 
-    2. Сохраните текст ответа при вызове флага **data**.
-        ```javascript
-        response.on('data', function (d) {
-            body += d;
-        });
-        ```
+    ```javascript
+    let response_handler = function (response) {
+        let body = '';
+    };
+    ```
 
-    3. При возврате флага **end** переводится в сигнальное получите первый результат из ответа JSON. Выведите URL-адрес для первого изображения, а также общее число возвращенных изображений.
+3. Сохраните текст ответа при вызове флага `data`.
 
-        ```javascript
-        response.on('end', function () {
-            let firstImageResult = imageResults.value[0];
-            console.log(`Image result count: ${imageResults.value.length}`);
-            console.log(`First image thumbnail url: ${firstImageResult.thumbnailUrl}`);
-            console.log(`First image web search url: ${firstImageResult.webSearchUrl}`);
-         });
-        ```
+    ```javascript
+    response.on('data', function (d) {
+        body += d;
+    });
+    ```
+
+4. Когда флаг `end` будет обработан, получите первый результат из ответа в формате JSON. Выведите URL-адрес для первого изображения, а также общее число возвращенных изображений.
+
+    ```javascript
+    response.on('end', function () {
+        let firstImageResult = imageResults.value[0];
+        console.log(`Image result count: ${imageResults.value.length}`);
+        console.log(`First image thumbnail url: ${firstImageResult.thumbnailUrl}`);
+        console.log(`First image web search url: ${firstImageResult.webSearchUrl}`);
+     });
+    ```
 
 ## <a name="example-json-response"></a>Пример ответа в формате JSON
 
@@ -158,9 +160,8 @@ ms.locfileid: "80478590"
 
 ## <a name="see-also"></a>См. также раздел
 
-* [Что такое API Bing для поиска изображений?](https://docs.microsoft.com/azure/cognitive-services/bing-image-search/overview)  
-* [Попробуйте API Bing для поиска изображений](https://azure.microsoft.com/services/cognitive-services/bing-image-search-api/) 
-* [Сведения о ценах](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/) на API-интерфейсы Поиска Bing. 
-* [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=bing-image-search-api)  
-* [Документация по службам Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services)
+* [Знакомство с API Bing для поиска изображений](https://docs.microsoft.com/azure/cognitive-services/bing-image-search/overview)  
+* [Попробуйте API Bing для поиска изображений](https://azure.microsoft.com/services/cognitive-services/bing-image-search-api/)
+* [Узнайте о ценах на интерфейсы API Поиска Bing](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/) 
+* [Просмотрите документацию по Cognitive Services](https://docs.microsoft.com/azure/cognitive-services)
 * [Справочник по API Bing для поиска изображений](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference)

@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 7652ab72fb972230d98913c2d7e2601737982532
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e3f158bb4e8208d00fdfbc44b4afaf067183b6d2
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74924345"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86087322"
 ---
 # <a name="move-data-from-on-premises-hdfs-using-azure-data-factory"></a>Перемещение данных из локальной системы HDFS с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Выберите используемую версию службы "Фабрика данных":"]
@@ -64,13 +64,13 @@ ms.locfileid: "74924345"
 ## <a name="linked-service-properties"></a>Свойства связанной службы
 Связанная служба привязывает хранилище данных к фабрике данных. Для связи локальной системы HDFS с фабрикой данных следует создать связанную службу типа **Hdfs**. В следующей таблице содержится описание элементов JSON, которые относятся к связанной службе HDFS.
 
-| Свойство | Описание | Обязательный |
+| Свойство. | Описание | Обязательно |
 | --- | --- | --- |
 | type |Для свойства Type необходимо задать значение **HDFS** . |Да |
 | url |URL-адрес в HDFS |Да |
-| authenticationType |Anonymous или Windows. <br><br> Чтобы использовать **проверку подлинности Kerberos** для соединителя HDFS, обратитесь к [этому разделу](#use-kerberos-authentication-for-hdfs-connector) , чтобы настроить локальную среду соответствующим образом. |Да |
+| authenticationType |Anonymous или Windows. <br><br> Чтобы использовать **аутентификацию Kerberos** для соединителя HDFS, настройте локальную среду, как описано [здесь](#use-kerberos-authentication-for-hdfs-connector). |Да |
 | userName |Имя пользователя для проверки подлинности Windows. Для проверки подлинности Kerberos укажите `<username>@<domain>.com`. |Да (для проверки подлинности Windows) |
-| пароль |Пароль для проверки подлинности Windows. |Да (для проверки подлинности Windows) |
+| password |Пароль для проверки подлинности Windows. |Да (для проверки подлинности Windows) |
 | gatewayName |Имя шлюза, который следует использовать службе фабрики данных для подключения к локальной системе HDFS. |Да |
 | encryptedCredential |[New-аздатафакторенкриптвалуе](https://docs.microsoft.com/powershell/module/az.datafactory/new-azdatafactoryencryptvalue) выходные данные учетных данных доступа. |Нет |
 
@@ -117,13 +117,13 @@ ms.locfileid: "74924345"
 
 Раздел **typeProperties** отличается для каждого типа набора данных и предоставляет сведения о расположении данных в хранилище данных. Раздел typeProperties набора данных типа **FileShare** (который включает набор данных HDFS) содержит следующие свойства.
 
-| Свойство | Описание | Обязательный |
+| Свойство. | Описание | Обязательное значение |
 | --- | --- | --- |
-| folderPath |Путь к папке, Например, `myfolder`.<br/><br/>Чтобы указать специальные знаки в строке, используйте escape-знак "\". Например, для "папка\вложенная_папка" укажите "папка\\\\вложенная_папка", а для "d:\пример_папки" укажите "d:\\\\пример_папки".<br/><br/>Вы можете использовать это свойство вместе с параметром **partitionBy**, чтобы в путях к папкам учитывались дата и время начала и окончания среза. |Да |
-| fileName |Укажите имя файла в свойстве **folderPath**, если требуется создать таблицу, ссылающуюся на конкретный файл в папке. Если этому свойству не присвоить значение, таблица будет указывать на все файлы в папке.<br/><br/>Если свойство fileName не указано для выходного набора данных, то имя созданного файла будет иметь следующий формат: <br/><br/>`Data.<Guid>.txt`(например: Data. 0a405f8a-93ff-4c6f-b3be-f69616f1df7a. txt |Нет |
+| folderPath |Путь к папке, Пример: `myfolder`<br/><br/>Чтобы указать специальные знаки в строке, используйте escape-знак "\". Например, для "папка\вложенная_папка" укажите "папка\\\\вложенная_папка", а для "d:\пример_папки" укажите "d:\\\\пример_папки".<br/><br/>Вы можете использовать это свойство вместе с параметром **partitionBy**, чтобы в путях к папкам учитывались дата и время начала и окончания среза. |Да |
+| fileName |Укажите имя файла в свойстве **folderPath**, если требуется создать таблицу, ссылающуюся на конкретный файл в папке. Если этому свойству не присвоить значение, таблица будет указывать на все файлы в папке.<br/><br/>Если свойство fileName не указано для выходного набора данных, то имя созданного файла будет иметь следующий формат: <br/><br/>`Data.<Guid>.txt`(например: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt |Нет |
 | partitionedBy |Чтобы указать для временного ряда данных динамические путь к папке и имя файла, используйте свойство partitionedBy. Например, путь к папке (folderPath) каждый час будет другим. |Нет |
-| format | Поддерживаются следующие типы формата: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat**, **ParquetFormat**. Свойству **type** в разделе format необходимо присвоить одно из этих значений. Дополнительные сведения см. в разделах о [текстовом формате](data-factory-supported-file-and-compression-formats.md#text-format), [формате Json](data-factory-supported-file-and-compression-formats.md#json-format), [формате Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [формате Orc](data-factory-supported-file-and-compression-formats.md#orc-format) и [ формате Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format). <br><br> Если нужно **скопировать файлы "как есть** " между файловыми хранилищами (двоичное копирование), пропустите раздел Format в определениях входного и выходного наборов данных. |Нет |
-| compression | Укажите тип и уровень сжатия данных. Поддерживаются следующие типы: **gzip**, **Deflate**, **bzip2**и **ZipDeflate**. Поддерживаемые уровни: **оптимальный** и **самый быстрый**. Узнайте больше о [форматах файлов и сжатия данных в фабрике данных Azure](data-factory-supported-file-and-compression-formats.md#compression-support). |Нет |
+| format | Поддерживаются следующие типы формата: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat**, **ParquetFormat**. Свойству **type** в разделе format необходимо присвоить одно из этих значений. Дополнительные сведения см. в разделах о [текстовом формате](data-factory-supported-file-and-compression-formats.md#text-format), [формате Json](data-factory-supported-file-and-compression-formats.md#json-format), [формате Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [формате Orc](data-factory-supported-file-and-compression-formats.md#orc-format) и [ формате Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format). <br><br> Если требуется скопировать файлы между файловыми хранилищами **как есть** (двоичное копирование), можно пропустить раздел форматирования в определениях входного и выходного наборов данных. |Нет |
+| compression | Укажите тип и уровень сжатия данных. Поддерживаемые типы: **GZip**, **Deflate**, **BZip2** и **ZipDeflate**. Поддерживаемые уровни: **Оптимальный** и **Самый быстрый**. Узнайте больше о [форматах файлов и сжатия данных в фабрике данных Azure](data-factory-supported-file-and-compression-formats.md#compression-support). |Нет |
 
 > [!NOTE]
 > Свойства filename и fileFilter нельзя использовать одновременно.
@@ -168,7 +168,7 @@ ms.locfileid: "74924345"
 
 **FileSystemSource** поддерживает следующие свойства:
 
-| Свойство | Описание | Допустимые значения | Обязательный |
+| Свойство. | Описание | Допустимые значения | Обязательно |
 | --- | --- | --- | --- |
 | recursive |Указывает, следует ли читать данные рекурсивно из вложенных папок или только из указанной папки. |True, False (по умолчанию) |Нет |
 
@@ -351,7 +351,7 @@ ms.locfileid: "74924345"
 ## <a name="use-kerberos-authentication-for-hdfs-connector"></a>Использование аутентификации Kerberos для соединителя HDFS
 Есть два способа настроить локальную среду для использования аутентификации Kerberos в соединителе HDFS. Вы можете применить тот, который соответствует вашему сценарию.
 * Вариант 1. [Присоединение компьютера шлюза в области Kerberos](#kerberos-join-realm)
-* Вариант 2. [Включение взаимного доверия между доменом Windows и областью Kerberos](#kerberos-mutual-trust)
+* Вариант 2. [Активация взаимного доверия между доменом Windows и областью Kerberos](#kerberos-mutual-trust).
 
 ### <a name="option-1-join-gateway-machine-in-kerberos-realm"></a><a name="kerberos-join-realm"></a>Способ 1. Присоединение компьютера шлюза к области Kerberos
 
@@ -367,95 +367,107 @@ ms.locfileid: "74924345"
 
     Компьютер должен быть настроен как член рабочей группы, так как области Kerberos отличаются от доменов Windows. Для этого нужно настроить область Kerberos и добавить сервер центра распространения ключей, как описано ниже. При необходимости замените *REALM.COM* значением своей соответствующей области.
 
-            C:> Ksetup /setdomain REALM.COM
-            C:> Ksetup /addkdc REALM.COM <your_kdc_server_address>
+    ```cmd
+    C:> Ksetup /setdomain REALM.COM
+    C:> Ksetup /addkdc REALM.COM <your_kdc_server_address>
+    ```
 
     **Перезапустите** компьютер после выполнения этих двух команд.
 
 2.  Проверьте конфигурацию с помощью команды **Ksetup**. Результат должен выглядеть примерно так:
 
-            C:> Ksetup
-            default realm = REALM.COM (external)
-            REALM.com:
-                kdc = <your_kdc_server_address>
+    ```cmd
+    C:> Ksetup
+    default realm = REALM.COM (external)
+    REALM.com:
+        kdc = <your_kdc_server_address>
+        ```
 
-**Настройка фабрики данных Azure**
+**In Azure Data Factory:**
 
-* Настройте соединитель HDFS на использование **аутентификации Windows**, указав имя участника Kerberos и пароль для подключения к источнику данных HDFS. Проверьте сведения о конфигурации — [свойства связанной службы HDFS](#linked-service-properties).
+* Configure the HDFS connector using **Windows authentication** together with your Kerberos principal name and password to connect to the HDFS data source. Check [HDFS Linked Service properties](#linked-service-properties) section on configuration details.
 
-### <a name="option-2-enable-mutual-trust-between-windows-domain-and-kerberos-realm"></a><a name="kerberos-mutual-trust"></a>Вариант 2. Активация взаимного доверия между доменом Windows и областью Kerberos
+### <a name="kerberos-mutual-trust"></a>Option 2: Enable mutual trust between Windows domain and Kerberos realm
 
-#### <a name="requirement"></a>Условие
-*   Компьютер шлюза должен быть присоединен к домену Windows.
-*   Требуется разрешение на обновление параметров контроллера домена.
+#### Requirement:
+*   The gateway machine must join a Windows domain.
+*   You need permission to update the domain controller's settings.
 
-#### <a name="how-to-configure"></a>Порядок настройки:
+#### How to configure:
 
 > [!NOTE]
-> При необходимости замените REALM.COM и AD.COM значениями своей соответствующей области и контроллера домена в следующем руководстве.
+> Replace REALM.COM and AD.COM in the following tutorial with your own respective realm and domain controller as needed.
 
-**Настройка на сервере центра распространения ключей**
+**On KDC server:**
 
-1. Измените конфигурацию центра распространения ключей в файле **krb5.conf**, чтобы создать отношения доверия с доменом Windows, как указано ниже в шаблоне конфигурации. По умолчанию файл конфигурации содержится в папке **/etc/krb5.conf**.
+1. Edit the KDC configuration in **krb5.conf** file to let KDC trust Windows Domain referring to the following configuration template. By default, the configuration is located at **/etc/krb5.conf**.
 
-           [logging]
-            default = FILE:/var/log/krb5libs.log
-            kdc = FILE:/var/log/krb5kdc.log
-            admin_server = FILE:/var/log/kadmind.log
+   ```config
+   [logging]
+   default = FILE:/var/log/krb5libs.log
+   kdc = FILE:/var/log/krb5kdc.log
+   admin_server = FILE:/var/log/kadmind.log
 
-           [libdefaults]
-            default_realm = REALM.COM
-            dns_lookup_realm = false
-            dns_lookup_kdc = false
-            ticket_lifetime = 24h
-            renew_lifetime = 7d
-            forwardable = true
+   [libdefaults]
+   default_realm = REALM.COM
+   dns_lookup_realm = false
+   dns_lookup_kdc = false
+   ticket_lifetime = 24h
+   renew_lifetime = 7d
+   forwardable = true
 
-           [realms]
-            REALM.COM = {
-             kdc = node.REALM.COM
-             admin_server = node.REALM.COM
-            }
-           AD.COM = {
-            kdc = windc.ad.com
-            admin_server = windc.ad.com
-           }
+   [realms]
+   REALM.COM = {
+       kdc = node.REALM.COM
+       admin_server = node.REALM.COM
+   }
+   AD.COM = {
+   kdc = windc.ad.com
+   admin_server = windc.ad.com
+   }
 
-           [domain_realm]
-            .REALM.COM = REALM.COM
-            REALM.COM = REALM.COM
-            .ad.com = AD.COM
-            ad.com = AD.COM
+   [domain_realm]
+   .REALM.COM = REALM.COM
+   REALM.COM = REALM.COM
+   .ad.com = AD.COM
+   ad.com = AD.COM
 
-           [capaths]
-            AD.COM = {
-             REALM.COM = .
-            }
+   [capaths]
+   AD.COM = {
+       REALM.COM = .
+   }
+   ```
 
    **Перезапустите** службу KDC после настройки.
 
-2. Подготовьте участника с именем **KRBTGT/realm.\@com AD.com** в KDC-сервере с помощью следующей команды:
+2. Подготовьте субъект-службу с именем **krbtgt/REALM.COM\@AD.COM** на сервере центра распространения ключей, используя следующую команду.
 
-           Kadmin> addprinc krbtgt/REALM.COM@AD.COM
+   ```cmd
+   Kadmin> addprinc krbtgt/REALM.COM@AD.COM
+   ```
 
 3. В файле **hadoop.security.auth_to_local** добавьте к конфигурации HDFS правило `RULE:[1:$1@$0](.*\@AD.COM)s/\@.*//`.
 
 **Настройка на контроллере домена**
 
-1.  Выполните следующие команды **Ksetup** , чтобы добавить запись в область:
+1.  Выполните следующие команды **Ksetup**, чтобы добавить запись области.
 
-            C:> Ksetup /addkdc REALM.COM <your_kdc_server_address>
-            C:> ksetup /addhosttorealmmap HDFS-service-FQDN REALM.COM
+    ```cmd
+    C:> Ksetup /addkdc REALM.COM <your_kdc_server_address>
+    C:> ksetup /addhosttorealmmap HDFS-service-FQDN REALM.COM
+    ```
 
-2.  Установите доверительные отношения между доменом Windows и областью Kerberos. [password] — это пароль для основного сервера **KRBTGT/realm. COM\@AD.com**.
+2.  Установите доверительные отношения между доменом Windows и областью Kerberos. [password] представляет собой пароль для субъекта **krbtgt/REALM.COM\@AD.COM**.
 
-            C:> netdom trust REALM.COM /Domain: AD.COM /add /realm /passwordt:[password]
+    ```cmd
+    C:> netdom trust REALM.COM /Domain: AD.COM /add /realm /passwordt:[password]
+    ```
 
 3.  Выберите алгоритм шифрования, используемый в Kerberos.
 
     1. Последовательно выберите "Диспетчер серверов" > "Управление групповой политикой" > "Домен" > "Объекты групповой политики" > "Групповая политика по умолчанию или действующая групповая политика", затем нажмите "Редактировать".
 
-    2. Откроется всплывающее окно **редактора управления групповой политикой**. Последовательно выберите "Конфигурация компьютера" > "Политики" > "Параметры Windows" > "Параметры безопасности" > "Локальные политики" > "Параметры безопасности". Затем щелкните **Сетевая безопасность: настройка типов шифрования, разрешенных Kerberos**.
+    2. Откроется всплывающее окно **редактора "Управление групповыми политиками"** . Последовательно выберите "Конфигурация компьютера" > "Политики" > "Параметры Windows" > "Параметры безопасности" > "Локальные политики" > "Параметры безопасности". Затем щелкните **Сетевая безопасность: настройка типов шифрования, разрешенных Kerberos**.
 
     3. Выберите алгоритм шифрования, который вы хотите использовать при подключении к центру распространения ключей. Обычно можно просто выбрать все доступные параметры.
 
@@ -463,13 +475,15 @@ ms.locfileid: "74924345"
 
     4. С помощью команды **Ksetup** задайте алгоритм шифрования, который будет использоваться для этой области.
 
-                C:> ksetup /SetEncTypeAttr REALM.COM DES-CBC-CRC DES-CBC-MD5 RC4-HMAC-MD5 AES128-CTS-HMAC-SHA1-96 AES256-CTS-HMAC-SHA1-96
+       ```cmd
+       C:> ksetup /SetEncTypeAttr REALM.COM DES-CBC-CRC DES-CBC-MD5 RC4-HMAC-MD5 AES128-CTS-HMAC-SHA1-96 AES256-CTS-HMAC-SHA1-96
+       ```
 
 4.  Создайте сопоставление между субъектом Kerberos и учетной записью домена, чтобы использовать субъект Kerberos в домене Windows.
 
     1. Щелкните "Средства администрирования" и выберите **Пользователи и компьютеры Active Directory**.
 
-    2. Настройте дополнительные функции, щелкнув **Просмотр** > **дополнительных функций**.
+    2. Настройте расширенные функции, щелкнув **Просмотр** > **Расширенные функции**.
 
     3. Найдите учетную запись, для которой нужно создать сопоставление, и щелкните ее правой кнопкой мыши, чтобы открыть **Сопоставление имен** > **Имена Kerberos**.
 
@@ -481,8 +495,10 @@ ms.locfileid: "74924345"
 
 * Выполните следующие команды **Ksetup**, чтобы добавить запись области.
 
-            C:> Ksetup /addkdc REALM.COM <your_kdc_server_address>
-            C:> ksetup /addhosttorealmmap HDFS-service-FQDN REALM.COM
+   ```cmd
+   C:> Ksetup /addkdc REALM.COM <your_kdc_server_address>
+   C:> ksetup /addhosttorealmmap HDFS-service-FQDN REALM.COM
+   ```
 
 **Настройка фабрики данных Azure**
 

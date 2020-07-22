@@ -10,12 +10,12 @@ ms.service: virtual-machines
 ms.topic: troubleshooting
 ms.date: 10/31/2018
 ms.author: delhan
-ms.openlocfilehash: fe2427d008b49daa6222ca981994f0dc2fbea355
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 092d3893c3cc5473debf8f7d51f393751cfd82bf
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79476592"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86526825"
 ---
 # <a name="how-to-use-boot-diagnostics-to-troubleshoot-virtual-machines-in-azure"></a>Как устранять неполадки виртуальных машин в Azure с помощью диагностики загрузки
 
@@ -96,5 +96,4 @@ ms.locfileid: "79476592"
 
 ### <a name="enable-boot-diagnostics-using-the-azure-cli"></a>Включение диагностики загрузки с помощью Azure CLI
 
-Чтобы включить диагностику загрузки на существующей виртуальной машине Azure, вы можете воспользоваться Azure CLI. Дополнительные сведения см. в статье [az vm boot-diagnostics](
-https://docs.microsoft.com/cli/azure/vm/boot-diagnostics?view=azure-cli-latest).
+Чтобы включить диагностику загрузки на существующей виртуальной машине Azure, вы можете воспользоваться Azure CLI. Дополнительные сведения см. в статье [az vm boot-diagnostics](/cli/azure/vm/boot-diagnostics?view=azure-cli-latest).

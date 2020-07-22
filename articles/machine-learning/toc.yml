@@ -6,7 +6,7 @@
     - name: Что такое служба "Машинное обучение Microsoft Azure"?
       displayName: 'AML, services, overview, introduction'
       href: overview-what-is-azure-ml.md
-    - name: Сравнение Машинного обучения Azure и Студии
+    - name: Сравнение службы "Машинное обучение Azure" и Студии машинного обучения (классической)
       displayName: 'AML, Studio, designer'
       href: compare-azure-ml-to-studio-classic.md
     - name: Архитектура и термины
@@ -67,15 +67,18 @@
         - name: Создание первого эксперимента ML (R)
           href: tutorial-1st-r-experiment.md
     - name: Интерфейс командной строки для Машинного обучения
-      href: tutorial-train-deploy-model-cli.md
+      items:
+        - name: Обучение и развертывание с помощью CLI
+          href: tutorial-train-deploy-model-cli.md
+        - name: Создание рабочих областей с помощью шаблона ARM
+          displayName: Resource Manager
+          href: tutorial-resource-manager-workspace.md
     - name: Visual Studio Code
       items:
         - name: Установка расширения службы "Машинное обучение Azure"
           href: tutorial-setup-vscode-extension.md
         - name: Обучение и развертывание модели классификации изображений TensorFlow
           href: tutorial-train-deploy-image-classification-model-vscode.md
-    - name: Создание рабочей области с помощью шаблона Resource Manager
-      href: tutorial-resource-manager-workspace.md
 - name: Примеры
   items:
     - name: Jupyter Notebook
@@ -90,6 +93,8 @@
       href: /azure/open-datasets/samples?context=azure/machine-learning/context/ml-context
 - name: Основные понятия
   items:
+    - name: Выпуски Enterprise и Basic
+      href: concept-editions.md
     - name: Планирование затрат и управление ими
       href: concept-plan-manage-cost.md
     - name: Конструктор (перетаскивание ML)
@@ -125,6 +130,8 @@
           href: concept-data.md
         - name: Прием данных
           href: concept-data-ingestion.md
+        - name: Обработка данных
+          href: concept-optimize-data-processing.md
     - name: Обучение модели
       displayName: 'run config, estimator, machine learning pipeline, ml pipeline, train model'
       href: concept-train-machine-learning-model.md
@@ -143,7 +150,7 @@
       href: concept-ml-pipelines.md
     - name: Готовность к работе и безопасность в масштабах предприятия
       items:
-        - name: Корпоративная безопасность
+        - name: Системы безопасности и управления корпоративного уровня
           items:
             - name: Общие сведения об обеспечении безопасности на уровне предприятия
               displayName: authorization authentication encryption aad azure active directory
@@ -157,14 +164,17 @@
               displayName: private endpoint
               href: how-to-configure-private-link.md
             - name: Защита веб-служб с помощью TLS
-              href: how-to-secure-web-service.md
               displayName: ssl
+              href: how-to-secure-web-service.md
             - name: "Использование удостоверений Azure\_AD в развертываниях AKS"
               href: how-to-use-azure-ad-identity.md
             - name: Повторное создание ключей доступа к хранилищу
               href: how-to-change-storage-access-key.md
             - name: Использование Брандмауэра Azure
               href: how-to-access-azureml-behind-firewall.md
+            - name: Написание безопасного кода
+              href: concept-secure-code-best-practice.md
+              displayName: security threat
         - name: Настройка проверки подлинности
           displayName: 'authentication, auth, oauth'
           href: how-to-setup-authentication.md
@@ -267,19 +277,16 @@
               href: how-to-differential-privacy.md
     - name: Обучение моделей
       items:
+        - name: Настройка сред обучения
+          displayName: 'run config, compute target, dsvm, Data Science Virtual Machine, local, cluster, ACI, container instance, Databricks, data lake, lake, HDI, HDInsight'
+          href: how-to-set-up-training-targets.md
         - name: Использование средств оценки для машинного обучения
           items:
             - name: Создание средств оценки при обучении модели
               href: how-to-train-ml-models.md
-            - name: Настройка сред обучения
-              displayName: 'run config, compute target, dsvm, Data Science Virtual Machine, local, cluster, ACI, container instance, Databricks, data lake, lake, HDI, HDInsight'
-              href: how-to-set-up-training-targets.md
             - name: Настройка гиперпараметров
               displayName: parameter
               href: how-to-tune-hyperparameters.md
-            - name: Использование Key Vault при обучении
-              displayName: secrets keyvault
-              href: how-to-use-secrets-in-runs.md
         - name: Scikit-learn
           href: how-to-train-scikit-learn.md
         - name: TensorFlow
@@ -288,18 +295,36 @@
           href: how-to-train-keras.md
         - name: PyTorch
           href: how-to-train-pytorch.md
+        - name: Отслеживание и мониторинг обучения
+          items:
+            - name: 'Запуск, мониторинг и отмена выполнения'
+              displayName: 'cancel, fail, status, child run'
+              href: how-to-manage-runs.md
+            - name: Запись метрик для учебных запусков
+              href: how-to-track-experiments.md
+            - name: Отслеживание экспериментов с помощью потока ML
+              displayName: 'log, monitor, metrics, Databricks'
+              href: how-to-use-mlflow.md
+            - name: Визуализация выполняется с помощью TensorBoard
+              displayName: 'log, monitor, metrics'
+              href: how-to-monitor-tensorboard.md
+        - name: Анализ и описание моделей
+          displayName: interpretability
+          items:
+            - name: Интерпретация моделей машинного обучения
+              displayName: 'SDK, interpret, explain, explanability, interpretability'
+              href: how-to-machine-learning-interpretability-aml.md
+            - name: Описание автоматизированных моделей машинного обучения
+              displayName: 'SDK, interpret, interpret, explain, explanability, interpretability, automated ML, automl, auto ml'
+              href: how-to-machine-learning-interpretability-automl.md
+        - name: Оценка и устранение необъективности модели
+          href: how-to-machine-learning-fairness-aml.md
+        - name: Использование Key Vault при обучении
+          displayName: secrets keyvault
+          href: how-to-use-secrets-in-runs.md
         - name: Обучение с подкреплением
           href: how-to-use-reinforcement-learning.md
-    - name: Анализ и описание моделей
-      displayName: interpretability
-      items:
-        - name: Интерпретация моделей машинного обучения
-          displayName: 'SDK, interpret, explain, explanability, interpretability'
-          href: how-to-machine-learning-interpretability-aml.md
-        - name: Описание автоматизированных моделей машинного обучения
-          displayName: 'SDK, interpret, interpret, explain, explanability, interpretability, automated ML, automl, auto ml'
-          href: how-to-machine-learning-interpretability-automl.md
-    - name: Автоматизация машинного обучения
+    - name: Автоматическое машинное обучение
       displayName: 'automl, auto ml'
       items:
         - name: Использование автоматического машинного обучения (Python)
@@ -310,30 +335,20 @@
         - name: Использование удаленных целевых объектов вычислений
           displayName: automl automated auto ml
           href: how-to-auto-train-remote.md
-        - name: Определение задач машинного обучения
-          displayName: 'machine learning, task type'
-          href: how-to-define-task-type.md
         - name: Автоматическое обучение прогнозной модели
           displayName: time series
           href: how-to-auto-train-forecast.md
+        - name: Разделение данных и перекрестная проверка (Python)
+          displayName: 'automl, feature engineering, feature importance'
+          href: how-to-configure-cross-validation-data-splits.md
+        - name: Конструирование признаков в автоматизированном ML (Python)
+          displayName: 'automl, feature engineering, feature importance'
+          href: how-to-configure-auto-features.md
         - name: Использование автоматизированного машинного обучения в конвейерах машинного обучения (Python)
           displayName: machine learning automl
           href: how-to-use-automlstep-in-pipelines.md
         - name: Общие сведения о диаграммах и метриках
           href: how-to-understand-automated-ml.md
-    - name: Отслеживание и мониторинг экспериментов
-      items:
-        - name: 'Запуск, мониторинг и отмена выполнения'
-          displayName: 'cancel, fail, status, child run'
-          href: how-to-manage-runs.md
-        - name: Запись метрик для учебных запусков
-          href: how-to-track-experiments.md
-        - name: Отслеживание экспериментов с помощью потока ML
-          displayName: 'log, monitor, metrics, Databricks'
-          href: how-to-use-mlflow.md
-        - name: Визуализация выполняется с помощью TensorBoard
-          displayName: 'log, monitor, metrics'
-          href: how-to-monitor-tensorboard.md
     - name: Развертывание и обслуживание моделей
       items:
         - name: Где и как развернуть
@@ -357,6 +372,8 @@
             - name: Функции Azure
               displayName: functions app
               href: how-to-deploy-functions.md
+            - name: Когнитивный поиск Azure
+              href: how-to-deploy-model-cognitive-search.md
             - name: устройство Azure IoT Edge.
               href: /azure/iot-edge/tutorial-deploy-machine-learning?context=azure/machine-learning/context/ml-context
             - name: Вывод ППВМ
@@ -398,7 +415,6 @@
           displayName: designer
           href: how-to-debug-pipelines.md
         - name: Отладка конвейеров в Application Insights
-          displayname: 'pipelines, log, monitor'
           href: how-to-debug-pipelines-application-insights.md
         - name: Данные преобразования конструктора
           displayName: pipeline
@@ -427,6 +443,9 @@
     - name: Управление квотами ресурсов
       displayName: limits
       href: how-to-manage-quotas.md
+    - name: Управление ресурсами в VS Code
+      displayName: 'vscode,resources'
+      href: how-to-manage-resources-vscode.md
     - name: Экспорт и удаление данных
       displayName: GDPR
       href: how-to-export-delete-data.md
@@ -449,8 +468,6 @@
     - name: Справочник по модулям конструктора
       displayName: 'module, reference, algorithm, studio'
       href: algorithm-module-reference/module-reference.md
-    - name: Машинное обучение в масштабе
-      href: /azure/architecture/data-guide/big-data/machine-learning-at-scale
     - name: Справочник по мониторингу данных
       href: monitor-resource-reference.md
     - name: Справочник по конвейеру машинного обучения YAML
@@ -470,7 +487,7 @@
       displayName: 'bugs, errors, troubleshoot'
       href: resource-known-issues.md
     - name: Форум пользователей
-      href: 'https://aka.ms/aml-forum-service'
+      href: 'https://docs.microsoft.com/answers/topics/azure-machine-learning.html'
     - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-machine-learning-service'
     - name: Сравнить наши продукты Машинного обучения
@@ -481,3 +498,6 @@
     - name: Функции специальных возможностей в конструкторе
       displayName: 'accessibility, designer, visual interface, screen reader, keyboard shortcuts'
       href: designer-accessibility.md
+    - name: Курируемые среды
+      displayName: 'environments, curated environments'
+      href: resource-curated-environments.md

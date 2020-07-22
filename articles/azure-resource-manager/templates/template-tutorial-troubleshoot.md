@@ -5,12 +5,12 @@ author: mumian
 ms.date: 01/15/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 737e8a247a232278db73de716647fc5bb890fe39
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 68ddb5c07ffac2aad4e2dafd16301fa29f391797
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82185002"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86119350"
 ---
 # <a name="tutorial-troubleshoot-arm-template-deployments"></a>Руководство по устранению неполадок при развертывании шаблонов ARM
 
@@ -37,7 +37,7 @@ ms.locfileid: "82185002"
 
 Для работы с этой статьей необходимо иметь следующее.
 
-- Visual Studio Code с расширением средств Resource Manager. См. сведения об [использовании Visual Studio Code для создания шаблонов Resource Manager](use-vs-code-to-create-template.md).
+- Visual Studio Code с расширением средств Resource Manager. См. [Краткое руководство. Создание шаблонов Azure Resource Manager c помощью Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
 
 ## <a name="create-a-problematic-template"></a>Создание проблемного шаблона
 

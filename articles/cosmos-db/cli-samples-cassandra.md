@@ -4,21 +4,21 @@ description: Примеры Azure CLI для API Cassandra в Azure Cosmos DB
 author: markjbrown
 ms.service: cosmos-db
 ms.subservice: cosmosdb-cassandra
-ms.topic: sample
-ms.date: 9/25/2019
+ms.topic: how-to
+ms.date: 06/03/2020
 ms.author: mjbrown
-ms.openlocfilehash: 8edeb6b0c64057f892fa8af4ed1680d5371805a1
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 093d8cdd97f28a419788070e674d80aad595f46a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "71274981"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85556316"
 ---
 # <a name="azure-cli-samples-for-azure-cosmos-db-cassandra-api"></a>Примеры Azure CLI для API Cassandra в Azure Cosmos DB
 
 В следующей таблице содержатся ссылки на примеры скриптов Azure CLI для API Cassandra в Azure Cosmos DB. Страницы справки для всех команд интерфейса командной строки Azure Cosmos DB доступны в [справочнике по Azure CLI](/cli/azure/cosmosdb). Все примеры сценариев Azure Cosmos DB CLI можно найти в [этом репозитории на сайте GitHub](https://github.com/Azure-Samples/azure-cli-samples/tree/master/cosmosdb).
 
-| |  |
+|Задача | Описание |
 |---|---|
 | [Создание учетной записи Azure Cosmos, пространства ключей и таблицы](scripts/cli/cassandra/create.md?toc=%2fcli%2fazure%2ftoc.json)| Создает учетную запись Azure Cosmos DB, пространство ключей и таблицу для API Cassandra. |
 | [Изменение пропускной способности](scripts/cli/cassandra/throughput.md?toc=%2fcli%2fazure%2ftoc.json) | Обновляет ЕЗ/с для пространства ключей и таблицы.|
@@ -27,4 +27,5 @@ ms.locfileid: "71274981"
 | [Защита с помощью брандмауэра IP](scripts/cli/common/ipfirewall.md?toc=%2fcli%2fazure%2ftoc.json)| Создает учетную запись Cosmos с настроенным брандмауэром для IP-адресов.|
 | [Защита новой учетной записи с помощью конечных точек службы](scripts/cli/common/service-endpoints.md?toc=%2fcli%2fazure%2ftoc.json)| Создает учетную запись Cosmos и обеспечивает безопасность с помощью конечных точек службы.|
 | [Защита имеющейся учетной записи с помощью конечных точек службы](scripts/cli/common/service-endpoints-ignore-missing-vnet.md?toc=%2fcli%2fazure%2ftoc.json)| Обновляет учетную запись Cosmos для защиты с помощью конечных точек службы после настройки подсети.|
+| [Блокировка ресурсов от удаления](scripts/cli/cassandra/lock.md?toc=%2fcli%2fazure%2ftoc.json)| Запрет на удаление ресурсов с помощью блокировок ресурсов.|
 |||

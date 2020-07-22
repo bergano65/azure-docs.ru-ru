@@ -6,17 +6,17 @@ author: kevinvngo
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
-ms.subservice: ''
+ms.subservice: sql-dw
 ms.date: 04/17/2018
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: f3d6d0c1f71e2262e943998cdc08717291903365
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: b1063d4a74fa1360cfb0804266a46b97be508e97
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80743822"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86495658"
 ---
 # <a name="powershell--rest-apis-for-azure-synapse-analytics-sql-pool"></a>PowerShell & интерфейсы API-интерфейсов для службы Azure синапсе Analytics для пула SQL
 
@@ -76,18 +76,18 @@ $resultDatabase = $database | Resume-AzSqlDatabase
 * [Get-AzSqlDatabase](/powershell/module/az.sql/get-azsqldatabase?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json)
 * [Get-AzSqlDeletedDatabaseBackup](/powershell/module/az.sql/get-azsqldeleteddatabasebackup?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json)
 * [Get-Азсклдатабасересторепоинт](/powershell/module/az.sql/get-azsqldatabaserestorepoint?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json)
-* [New-Азсклдатабасе](/powershell/module/az.sql/new-azsqldatabase?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json)
+* [New-AzSqlDatabase](/powershell/module/az.sql/new-azsqldatabase?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json)
 * [Remove-AzSqlDatabase](/powershell/module/az.sql/remove-azsqldatabase?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json)
-* [Restore-Азсклдатабасе]/повершелл/модуле/аз.скл/Ресторе-азсклдатабасе? TOC =/Азуре/синапсе-Аналитикс/скл-Дата-варехаусе/ток.жсон&BC =/Azure/Synapse-Analytics/SQL-Data-Warehouse/Breadcrumb/TOC.JSON)
+* [Restore-AzSqlDatabase](/powershell/module/az.sql/restore-azsqldatabase?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json)
 * [Resume-Азсклдатабасе](/powershell/module/az.sql/resume-azsqldatabase?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json)
 * [Set-AzSqlDatabase](/powershell/module/az.sql/set-azsqldatabase?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json)
 * [Suspend-Азсклдатабасе](/powershell/module/az.sql/suspend-azsqldatabase?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные примеры PowerShell см. в указанных далее документах.
 
 * [Создание хранилища данных с помощью PowerShell](create-data-warehouse-powershell.md)
 * [Восстановление базы данных](sql-data-warehouse-restore-points.md)
 
-Другие задачи, которые можно автоматизировать с помощью PowerShell, см. в разделе [командлеты базы данных SQL Azure]/повершелл/модуле/аз.скл? TOC =/Азуре/синапсе-Аналитикс/скл-Дата-варехаусе/ток.жсон&BC =/Azure/Synapse-Analytics/SQL-Data-Warehouse/Breadcrumb/TOC.JSON). Не все командлеты базы данных SQL Azure поддерживаются для хранилища данных аналитики Azure синапсе. Список задач, которые можно автоматизировать с помощью службы "другие", см. в статье [операции с базой данных SQL Azure](/rest/api/sql/?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
+Сведения о других задачах, которые можно автоматизировать с помощью PowerShell, см. в статье [командлеты базы данных SQL Azure](/powershell/module/az.sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). Не все командлеты базы данных SQL Azure поддерживаются для хранилища данных аналитики Azure синапсе. Список задач, которые можно автоматизировать с помощью службы "другие", см. в статье [операции с базой данных SQL Azure](/rest/api/sql/?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).

@@ -9,16 +9,16 @@ ms.service: cognitive-search
 ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: bb0cd191ba7e5939c55d11b484ed7a2c422f8c6d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 81159b1d19c4c5d46b223158df3ba2c81665c7d7
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "72793027"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86171913"
 ---
 # <a name="upgrade-to-azure-search-net-sdk-version-5"></a>Обновление до пакета SDK .NET для поиска Azure версии 5
 
-Если вы используете версию 4.0-preview [пакета SDK .NET для службы поиска Azure](https://aka.ms/search-sdk) или более раннюю версию, то сведения в этой статье помогут вам обновить приложение для использования версии 5.
+Если вы используете версию 4,0-Preview или более раннюю версию [пакета SDK для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/search), эта статья поможет вам обновить приложение для использования версии 5.
 
 Более общее пошаговое руководство по пакету SDK, включая примеры, см. в разделе [Использование службы поиска Azure в приложении .NET](search-howto-dotnet-sdk.md).
 
@@ -48,7 +48,9 @@ ms.locfileid: "72793027"
 
 В противном случае отобразится сообщение об ошибке сборки следующего вида.
 
-    The name 'SuggesterSearchMode' does not exist in the current context
+```output
+The name 'SuggesterSearchMode' does not exist in the current context
+```
 
 Далее необходимо устранить эту ошибку сборки. Сведения о причинах ошибки и способах ее устранения см. в разделе [Критические изменения в версии 5](#ListOfChanges).
 

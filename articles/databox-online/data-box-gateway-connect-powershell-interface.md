@@ -5,21 +5,21 @@ services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: gateway
-ms.topic: article
+ms.topic: how-to
 ms.date: 08/02/2019
 ms.author: alkohli
-ms.openlocfilehash: 2413e53e9613aaa1140b083cb24fe709eb1b067d
-ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
+ms.openlocfilehash: c071d372ba90d29806fd8a44909e2c803a8d3fa4
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82561785"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84339286"
 ---
 # <a name="manage-an-azure-data-box-gateway-device-via-windows-powershell"></a>Управление устройством Шлюз Azure Data Box с помощью Windows PowerShell
 
 Шлюз Azure Data Box решение позволяет передавать данные по сети в Azure. В этой статье описаны некоторые задачи по настройке и управлению для устройства Шлюз Data Box. Для управления устройством можно использовать портал Azure, локальный веб-интерфейс или интерфейс Windows PowerShell.
 
-В этой статье рассматриваются задачи, выполняемые с помощью интерфейса PowerShell. 
+В этой статье рассматриваются задачи, выполняемые с помощью интерфейса PowerShell.
 
 Эта статья содержит следующие процедуры.
 

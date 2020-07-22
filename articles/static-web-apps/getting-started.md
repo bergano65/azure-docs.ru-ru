@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: quickstart
 ms.date: 05/08/2020
 ms.author: cshoe
-ms.openlocfilehash: 14fd237b6437c15ede2da7c0694004f6c22736cc
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 72a76fb513dc6eb008fcf1d1e19ffc33e713cfdc
+ms.sourcegitcommit: 223cea58a527270fe60f5e2235f4146aea27af32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83599135"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84259258"
 ---
 # <a name="quickstart-building-your-first-static-web-app"></a>Краткое руководство. Создание первого статического веб-приложения
 
@@ -31,25 +31,25 @@ ms.locfileid: "83599135"
 
 # <a name="angular"></a>[Angular](#tab/angular)
 
-- Перейдите в следующее расположение, чтобы создать новый репозиторий:
+- Чтобы создать репозиторий, войдите в учетную запись GitHub и перейдите в следующее расположение:
   - https://github.com/staticwebdev/angular-basic/generate
 - Присвойте репозиторию имя **my-first-static-web-app**
 
 # <a name="react"></a>[React](#tab/react)
 
-- Перейдите в следующее расположение, чтобы создать новый репозиторий:
+- Чтобы создать репозиторий, войдите в учетную запись GitHub и перейдите в следующее расположение:
   - https://github.com/staticwebdev/react-basic/generate
 - Присвойте репозиторию имя **my-first-static-web-app**
 
 # <a name="vue"></a>[Vue](#tab/vue)
 
-- Перейдите в следующее расположение, чтобы создать новый репозиторий:
+- Чтобы создать репозиторий, войдите в учетную запись GitHub и перейдите в следующее расположение:
   - https://github.com/staticwebdev/vue-basic/generate
 - Присвойте репозиторию имя **my-first-static-web-app**
 
 # <a name="no-framework"></a>[Без платформы](#tab/vanilla-javascript)
 
-- Перейдите в следующее расположение, чтобы создать новый репозиторий:
+- Чтобы создать репозиторий, войдите в учетную запись GitHub и перейдите в следующее расположение:
   - https://github.com/staticwebdev/vanilla-basic/generate
 - Присвойте репозиторию имя **my-first-static-web-app**
 
@@ -81,7 +81,7 @@ ms.locfileid: "83599135"
 - Выберите _подписку Azure_.
 - Выберите или создайте _группу ресурсов_.
 - Назовите приложение **my-first-static-web-app**.
-  - Допустимые символы: `a-z` (без учета регистра), `0-9`и `_`.
+  - Допустимые символы: `a-z` (без учета регистра), `0-9`и `-`.
 - Выберите ближайший к вам _регион_.
 - Выберите **Бесплатный** в поле _Номер SKU_.
 - Нажмите кнопку **Войти по учетным данным GitHub** и выполните проверку подлинности с помощью GitHub.
@@ -130,6 +130,8 @@ ms.locfileid: "83599135"
 Нажмите кнопку **Просмотр и создание**.
 
 :::image type="content" source="media/getting-started/review-create.png" alt-text="Кнопка "Просмотр и создание"":::
+
+Чтобы изменить эти значения после создания приложения, поправьте [файл рабочего процесса](github-actions-workflow.md).
 
 ### <a name="review--create"></a>Отзыв и создание
 

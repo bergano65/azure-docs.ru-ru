@@ -9,10 +9,10 @@ ms.date: 07/15/2019
 ms.author: tamram
 ms.custom: include file
 ms.openlocfilehash: 39b61c78cbd0333183c80234256d6041a109d846
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "68249912"
 ---
 Идентификатор ресурса Azure AD указывает аудиторию, для которой выдаваемый маркер можно использовать для предоставления доступа к ресурсу Azure. В случае с хранилищем Azure идентификатор ресурса может быть указан отдельно для одной учетной записи хранения или может применяться к любой учетной записи хранения. В следующей таблице описаны значения, которые можно указать для идентификатора ресурса.

@@ -1,0 +1,98 @@
+---
+title: Руководство по созданию рабочей области машинного обучения Azure с помощью шаблона Resource Manager
+description: В этом учебнике вы с помощью шаблона Azure Resource Manager быстро развернете рабочую область Azure для машинного обучения.
+services: machine-learning
+author: lobrien
+ms.author: laobri
+ms.custom: subject-armqs
+ms.date: 05/26/2020
+ms.service: machine-learning
+ms.subservice: core
+ms.topic: tutorial
+ms.openlocfilehash: 098d82e6521a4a355ac31809937b589f984816f2
+ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86027177"
+---
+# <a name="tutorial-deploy-an-azure-machine-learning-workspace-using-an-arm-template"></a>Руководство по Развертывание рабочей области Машинного обучения Azure с помощью шаблона ARM
+
+[!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
+
+В этом руководстве показано, как создать рабочую область Машинного обучения Azure с помощью шаблона Azure Resource Manager (ARM). Рабочие области машинного обучения Azure упорядочивают все ресурсы машинного обучения — от контрольных наборов данных до развернутых моделей. Рабочие области — это централизованное место для совместной работы с коллегами по созданию, запуску и просмотру экспериментов, управлению вычислительными ресурсами для обучения и получения выводов, а также по мониторингу и управлению версиями развернутых моделей.
+
+[!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
+
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-machine-learning-create%2Fazuredeploy.json)
+
+## <a name="prerequisites"></a>Предварительные требования
+
+* Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/services/machine-learning/), прежде чем начинать работу.
+
+* Чтобы выполнять приведенные в этом документе команды CLI в **локальной среде**, вам потребуется [Azure CLI](/cli/azure/install-azure-cli).
+
+## <a name="review-the-template"></a>Изучение шаблона
+
+Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-machine-learning-create/).
+
+:::code language="json" source="~/quickstart-templates/101-machine-learning-create/azuredeploy.json" range="1-258" highlight="224-254":::
+
+В шаблоне определены следующие ресурсы:
+
+* [Microsoft.MachineLearningServices/workspaces](/azure/templates/microsoft.machinelearningservices/workspaces). Создайте рабочую область машинного обучения Azure. В этом шаблоне расположение и имя — это параметры, которые пользователь может передать или интерактивно ввести.
+
+## <a name="deploy-the-template"></a>Развертывание шаблона
+
+Чтобы воспользоваться шаблоном в Azure CLI, войдите в систему и выберите свою подписку (см. статью [Вход с помощью Azure CLI](/cli/azure/authenticate-azure-cli)). Далее выполните:
+
+```azurecli-interactive
+read -p "Enter a project name that is used for generating resource names:" projectName &&
+read -p "Enter the location (i.e. centralus):" location &&
+templateUri="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-machine-learning-create/azuredeploy.json" &&
+resourceGroupName="${projectName}rg" &&
+workspaceName="${projectName}ws" &&
+az group create --name $resourceGroupName --location "$location" &&
+az deployment group create --resource-group $resourceGroupName --template-uri $templateUri --parameters workspaceName=$workspaceName location=$location &&
+echo "Press [ENTER] to continue ..." &&
+read
+```
+
+Перед выполнением приведенной выше команды укажите следующее:
+
+1. Имя проекта, которое станет основой для имен создаваемой группы ресурсов и рабочей области Машинного обучения Azure.
+1. Расположение Azure, в котором вы хотите выполнить развертывание.
+
+## <a name="review-deployed-resources"></a>Просмотр развернутых ресурсов
+
+Чтобы просмотреть рабочую область машинного обучения Azure, сделайте следующее:
+
+1. Перейдите к https://portal.azure.com.
+1. Войдите.
+1. Выберите только что созданную рабочую область.
+
+Вы увидите домашнюю страницу службы "Машинное обучение Azure".
+
+:::image type="content" source="media/tutorial-resource-manager-workspace/workspace-home.png" alt-text="Снимок экрана рабочей области машинного обучения Azure":::
+
+Чтобы просмотреть все ресурсы, связанные с развертыванием, щелкните имя рабочей области в виде ссылки в левом верхнем углу экрана (`my_templated_ws` на снимке экрана выше). Эта ссылка ведет к группе ресурсов на портале Azure. Группа ресурсов называется `{projectName}rg`, а рабочая область — `{projectName}ws`.
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Если эта рабочая область вам не нужна, удалите ее. Так как она связана с другими ресурсами, например с учетной записью хранения, вы, вероятно, захотите удалить всю созданную группу ресурсов. Группу ресурсов можно удалить с помощью портала. Для этого нажмите кнопку **Удалить** и подтвердите удаление. Группу ресурсов можно удалить также с помощью CLI.
+
+```azurecli-interactive
+echo "Enter the Resource Group name:" &&
+read resourceGroupName &&
+az group delete --name $resourceGroupName &&
+echo "Press [ENTER] to continue ..."
+```
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+В ходе работы с этим руководством вы создали рабочую область Машинного обучения Azure с помощью шаблона ARM. Если вы хотите продолжить изучение Машинного обучения Azure, перейдите к следующему руководству.
+
+> [!div class="nextstepaction"]
+> [Руководство. Начало работы по созданию эксперимента машинного обучения с помощью пакета SDK для Python](tutorial-1st-experiment-sdk-setup.md)

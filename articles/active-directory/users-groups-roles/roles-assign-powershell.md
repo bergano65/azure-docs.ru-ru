@@ -7,18 +7,17 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
-ms.topic: article
+ms.topic: how-to
 ms.date: 04/29/2020
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bfcb00f56a3cc6f71729fbeaf317ce9447e120ed
-ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
-ms.translationtype: MT
+ms.openlocfilehash: 2180451a1d0c377af1e6c3e7377e64d9cb62ef8c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82582608"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84732061"
 ---
 # <a name="assign-custom-roles-with-resource-scope-using-powershell-in-azure-active-directory"></a>Назначение пользовательских ролей с областью действия ресурса с помощью PowerShell в Azure Active Directory
 
@@ -32,13 +31,13 @@ ms.locfileid: "82582608"
 
 ## <a name="prepare-powershell"></a>Подготовка PowerShell
 
-Установите модуль Azure AD PowerShell из [коллекция PowerShell](https://www.powershellgallery.com/packages/AzureADPreview/2.0.0.17). Затем импортируйте модуль предварительной версии Azure AD PowerShell с помощью следующей команды:
+Установите модуль Azure AD PowerShell из [коллекция PowerShell](https://www.powershellgallery.com/packages/AzureADPreview/2.0.0.17). Импортируйте модуль Azure AD PowerShell (предварительная версия) с помощью следующей команды:
 
 ``` PowerShell
 import-module azureadpreview
 ```
 
-Чтобы убедиться, что модуль готов к использованию, сопоставьте версию, возвращенную следующей командой, указанному ниже.
+Чтобы убедиться в готовности модуля к использованию, сопоставьте версию, возвращенную следующей командой, с указанной здесь.
 
 ``` PowerShell
 get-module azureadpreview
@@ -52,7 +51,7 @@ get-module azureadpreview
 ## <a name="assign-a-role-to-a-user-or-service-principal-with-resource-scope"></a>Назначение роли пользователю или субъекту-службе с областью действия ресурса
 
 1. Откройте модуль PowerShell для предварительной версии Azure AD.
-1. Выполните вход, выполнив команду `Connect-AzureAD`.
+1. Выполните вход, выполнив команду `Connect-AzureAD` .
 1. Создайте новую роль, используя следующий сценарий PowerShell.
 
 ``` PowerShell
@@ -160,7 +159,7 @@ Get-AzureADMSRoleAssignment -Filter "roleDefinitionId eq '355aed8a-864b-4e2b-b22
 Remove-AzureADMSRoleAssignment -Id 'qiho4WOb9UKKgng_LbPV7tvKaKRCD61PkJeKMh7Y458-1'
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Поделитесь с нами на [форуме по административным ролям Azure AD](https://feedback.azure.com/forums/169401-azure-active-directory?category_id=166032).
 - Дополнительные сведения о ролях и назначениях ролей администратора Azure AD см. в статье [назначение ролей администратора](directory-assign-admin-roles.md).

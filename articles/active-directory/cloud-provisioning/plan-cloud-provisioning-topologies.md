@@ -12,10 +12,9 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 386af46bbee623d37bc914d2ee9130c914c6c885
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77620870"
 ---
 # <a name="azure-ad-connect-cloud-provisioning-supported-topologies-and-scenarios"></a>Azure AD Connect поддерживаемые топологии и сценарии для подготовки облака
@@ -50,7 +49,7 @@ ms.locfileid: "77620870"
 Этот сценарий аналогичен сценарию с несколькими лесами, однако в нем используется существующая Azure AD Connect среда, а затем идет перенос в новый лес с помощью Azure AD Connect подготовки облачных ресурсов.  Пример этого сценария см. в разделе [учебник. существующий лес с одним клиентом Azure AD.](tutorial-existing-forest.md)
 
 ## <a name="piloting-azure-ad-connect-cloud-provisioning-in-an-existing-hybrid-ad-forest"></a>Пилотное развертывание Azure AD Connect подготовки облака в существующем гибридном лесу AD
-![Топология для одного леса и одного клиента](media/plan-cloud-provisioning-topologies/migrate.png) . сценарий пилотного развертывания включает в себя как Azure AD Connect, так Azure AD Connect подготовку облачных ресурсов в одном лесу, а также соответствующим образом расставить пользователей и группы. Примечание. объект должен находиться в области только одного из средств. 
+![Топология для одного леса и одного клиента. ](media/plan-cloud-provisioning-topologies/migrate.png) сценарий пилотного развертывания включает в себя как Azure AD Connect, так Azure AD Connect подготовку облачных ресурсов в одном лесу, а также соответствующим образом расставить пользователей и группы. Примечание. объект должен находиться в области только одного из средств. 
 
 Пример этого сценария см [. в статье пилотная Azure AD Connect подготовка облака в существующем синхронизированном лесу AD.](tutorial-pilot-aadc-aadccp.md)
 

@@ -6,17 +6,17 @@ author: anumjs
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
-ms.subservice: ''
+ms.subservice: sql-dw
 ms.date: 08/29/2018
 ms.author: anjangsh
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 6fa8bd42eb067124ab6ea1db77e2f3d6fba79638
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: fab00848f6541f6f6eb386168c5bae76e822856a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80745211"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85205226"
 ---
 # <a name="restore-an-existing-sql-pool"></a>Восстановление существующего пула SQL
 
@@ -24,9 +24,9 @@ ms.locfileid: "80745211"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-**Проверьте ресурсы DTU.** Каждый пул размещается на сервере SQL Server (например, myserver.database.windows.net), который имеет квоту DTU по умолчанию. Убедитесь, что SQL Server имеет достаточное количество оставшихся квот DTU для восстанавливаемой базы данных. Чтобы узнать, как вычислить необходимое количество DTU или запросить дополнительные единицы DTU, ознакомьтесь с разделом [Создание запроса в службу поддержки для хранилища данных SQL](sql-data-warehouse-get-started-create-support-ticket.md).
+**Проверьте ресурсы DTU.** Каждый пул размещается на [логическом сервере SQL](../../azure-sql/database/logical-servers.md) Server (например, MyServer.Database.Windows.NET), который имеет квоту DTU по умолчанию. Убедитесь, что на сервере достаточное количество оставшихся квот DTU для восстанавливаемой базы данных. Чтобы узнать, как вычислить необходимое количество DTU или запросить дополнительные единицы DTU, ознакомьтесь с разделом [Создание запроса в службу поддержки для хранилища данных SQL](sql-data-warehouse-get-started-create-support-ticket.md).
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 1. Не забудьте [установить Azure PowerShell](/powershell/azure/overview?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
 2. Наличие существующей точки восстановления, из которой необходимо выполнить восстановление. Если вы хотите создать новое восстановление, см. [руководство по созданию новой точки восстановления, определенной пользователем](sql-data-warehouse-restore-points.md).
@@ -46,19 +46,20 @@ ms.locfileid: "80745211"
 5. Выберите нужные точки восстановления с помощью свойства RestorePointCreationDate.
 
 6. Восстановите пул SQL до нужной точки восстановления с помощью командлета PowerShell [RESTORE-азсклдатабасе](/powershell/module/az.sql/restore-azsqldatabase?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) .
-        1. Чтобы восстановить пул SQL на другой логический сервер, необходимо указать другое имя логического сервера.  Этот логический сервер также может находиться в другой группе ресурсов и регионе.
-        2. Чтобы выполнить восстановление в другую подписку, используйте кнопку "Переместить", чтобы переместить логический сервер в другую подписку.
+
+    1. Чтобы восстановить пул SQL на другой сервер, необходимо указать другое имя сервера.  Этот сервер также может находиться в другой группе ресурсов и регионе.
+    2. Чтобы выполнить восстановление в другую подписку, используйте кнопку "Переместить", чтобы переместить сервер в другую подписку.
 
 7. Убедитесь, что восстановленный пул SQL находится в оперативном режиме.
 
-8. После завершения восстановления можно настроить восстановленный пул SQL, выполнив [настройку базы данных после восстановления](../../sql-database/sql-database-disaster-recovery.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json#configure-your-database-after-recovery).
+8. После завершения восстановления можно настроить восстановленный пул SQL, выполнив [настройку базы данных после восстановления](../../azure-sql/database/disaster-recovery-guidance.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json#configure-your-database-after-recovery).
 
 ```Powershell
 
 $SubscriptionName="<YourSubscriptionName>"
 $ResourceGroupName="<YourResourceGroupName>"
 $ServerName="<YourServerNameWithoutURLSuffixSeeNote>"  # Without database.windows.net
-#$TargetResourceGroupName="<YourTargetResourceGroupName>" # uncomment to restore to a different logical server.
+#$TargetResourceGroupName="<YourTargetResourceGroupName>" # uncomment to restore to a different server.
 #$TargetServerName="<YourtargetServerNameWithoutURLSuffixSeeNote>"  
 $DatabaseName="<YourDatabaseName>"
 $NewDatabaseName="<YourDatabaseName>"
@@ -79,7 +80,7 @@ $PointInTime="<RestorePointCreationDate>"
 # Restore database from a restore point
 $RestoredDatabase = Restore-AzSqlDatabase –FromPointInTimeBackup –PointInTime $PointInTime -ResourceGroupName $Database.ResourceGroupName -ServerName $Database.ServerName -TargetDatabaseName $NewDatabaseName –ResourceId $Database.ResourceID
 
-# Use the following command to restore to a different logical server
+# Use the following command to restore to a different server
 #$RestoredDatabase = Restore-AzSqlDatabase –FromPointInTimeBackup –PointInTime $PointInTime -ResourceGroupName $Database.ResourceTargetGroupName -ServerName $TargetServerName -TargetDatabaseName $NewDatabaseName –ResourceId $Database.ResourceID
 
 # Verify the status of restored database
@@ -95,11 +96,11 @@ $RestoredDatabase.status
 
     ![ Обзор восстановления](./media/sql-data-warehouse-restore-active-paused-dw/restoring-01.png)
 
-4. Выберите **Точки автоматического восстановления** или **Определенные пользователем точки восстановления**. Если у пула SQL нет точек автоматического восстановления, подождите несколько часов или создайте определенную пользователем точку восстановления перед восстановлением. Для определяемых пользователем точек восстановления выберите существующую или создайте новую. Для **сервера**можно выбрать логический сервер в другой группе ресурсов и регионе или создать новый. После ввода всех параметров щелкните **Проверка и восстановление**.
+4. Выберите **Точки автоматического восстановления** или **Определенные пользователем точки восстановления**. Если у пула SQL нет точек автоматического восстановления, подождите несколько часов или создайте определенную пользователем точку восстановления перед восстановлением. Для определяемых пользователем точек восстановления выберите существующую или создайте новую. Для **сервера**можно выбрать сервер в другой группе ресурсов и регионе или создать новый. После ввода всех параметров щелкните **Проверка и восстановление**.
 
     ![Точки автоматического восстановления](./media/sql-data-warehouse-restore-active-paused-dw/restoring-11.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 - [Восстановление удаленного пула SQL](sql-data-warehouse-restore-deleted-dw.md)
 - [Восстановление из пула SQL с географическим резервным копированием](sql-data-warehouse-restore-from-geo-backup.md)

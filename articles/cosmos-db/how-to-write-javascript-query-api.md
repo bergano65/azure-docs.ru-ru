@@ -3,15 +3,15 @@ title: Запись хранимых процедур и триггеров с �
 description: Узнайте, как записывать хранимые процедуры и триггеры с помощью API запросов JavaScript в Azure Cosmos DB
 author: timsander1
 ms.service: cosmos-db
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/07/2020
 ms.author: tisande
-ms.openlocfilehash: bc92a1276232506d291e367f74a9dcf8d58d7e07
-ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
+ms.openlocfilehash: 620b05b306622a0102a4fd932c013bdb9574c35c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82982332"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85262860"
 ---
 # <a name="how-to-write-stored-procedures-and-triggers-in-azure-cosmos-db-by-using-the-javascript-query-api"></a>Как записывать хранимые процедуры и триггеры в Azure Cosmos DB с помощью API запросов JavaScript
 
@@ -78,7 +78,7 @@ function insertDocumentAndUpdateMetadata(item) {
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сведения о хранимых процедурах, триггерах и определяемых пользователем функциях в Azure Cosmos DB см. по следующим ссылкам:
 

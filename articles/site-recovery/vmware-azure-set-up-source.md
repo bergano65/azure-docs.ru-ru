@@ -8,18 +8,18 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 04/14/2019
 ms.author: ramamill
-ms.openlocfilehash: ff01aed92669acb193ff149ea9298550134f42a3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 095e837043e6322cf85aeaa732f5bcbf7c0fa098
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79257060"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86135380"
 ---
 # <a name="set-up-the-source-environment-for-vmware-to-azure-replication"></a>Настройка исходного окружения для репликации из VMware в Azure
 
 В этой статье описано, как настроить исходное локальное окружение для репликации виртуальных машин VMware в Azure. Эта статья содержит инструкции по выбору сценария репликации, настройке локального компьютера в качестве сервера конфигурации Site Recovery и автоматическому обнаружению локальных виртуальных машин.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что вы:
 
@@ -31,13 +31,13 @@ ms.locfileid: "79257060"
 
 1. В колонке **Хранилища служб восстановления** выберите имя хранилища. В этом сценарии мы используем имя **ContosoVMVault**.
 2. В разделе **Приступая к работе** выберите Site Recovery. Затем выберите **Подготовка инфраструктуры**.
-3. В списке **Цель** > защиты,**где находятся ваши компьютеры**, выберите **локальный**.
-4. В списке **где вы хотите реплицировать компьютеры**, выберите **Azure**.
-5. В разделе **Are your machines virtualized** (Ваши компьютеры виртуализированы?) выберите **Yes, with VMware vSphere Hypervisor** (Да, с помощью гипервизора VMware vSphere). Затем нажмите кнопку **OK**.
+3. Выберите **Protection goal** (Цель защиты)  > **Where are your machines located** (Где находятся компьютеры?), а затем — **On-premises** (Локально).
+4. В разделе **Куда следует реплицировать компьютеры?** выберите **To Azure** (В Azure).
+5. В разделе **Are your machines virtualized** (Ваши компьютеры виртуализированы?) выберите **Yes, with VMware vSphere Hypervisor** (Да, с помощью гипервизора VMware vSphere). Нажмите кнопку **ОК**.
 
 ## <a name="set-up-the-configuration-server"></a>Настройка сервера конфигурации
 
-Вы можете настроить сервер конфигурации в качестве локальной виртуальной машины VMware с помощью шаблона Open Virtualization Application (OVA). Ознакомьтесь с [дополнительными сведениями](concepts-vmware-to-azure-architecture.md) о компонентах, которые будут установлены на виртуальной машине VMware.
+Вы можете настроить сервер конфигурации в качестве локальной виртуальной машины VMware с помощью шаблона Open Virtualization Application (OVA). Ознакомьтесь с [дополнительными сведениями](./vmware-azure-architecture.md) о компонентах, которые будут установлены на виртуальной машине VMware.
 
 1. Изучите дополнительные сведения о [необходимых компонентах](vmware-azure-deploy-configuration-server.md#prerequisites) для развертывания сервера конфигурации.
 2. [Проверьте значения емкости](vmware-azure-deploy-configuration-server.md#sizing-and-capacity-requirements) для развертывания.
@@ -84,5 +84,5 @@ ms.locfileid: "79257060"
 7. Azure Site Recovery каталог установки сервера обработки с балансировкой нагрузки, например: C:\Program Files (x86) \Microsoft Azure Site Recovery
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Настройка целевой среды](./vmware-azure-set-up-target.md) 

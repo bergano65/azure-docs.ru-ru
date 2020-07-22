@@ -4,14 +4,14 @@ description: Сведения о настройке масштабируемог
 author: asudbring
 ms.author: allensu
 ms.service: load-balancer
-ms.topic: article
+ms.topic: how-to
 ms.date: 03/25/2020
-ms.openlocfilehash: a7f44a21dd404c556d6f3d8444fa70583cd71c57
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 2d734e5242ff2a250d332de78cfa3b7f017a3fff
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80349737"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84809467"
 ---
 # <a name="configure-a-virtual-machine-scale-set-with-an-existing-azure-load-balancer-using-the-azure-cli"></a>Настройка масштабируемого набора виртуальных машин с использованием существующего Azure Load Balancer с помощью Azure CLI
 
@@ -85,6 +85,6 @@ az vmss create \
 
 В этой статье вы развернули масштабируемый набор виртуальных машин с существующим Azure Load Balancer.  Дополнительные сведения о масштабируемых наборах виртуальных машин и подсистеме балансировки нагрузки см. в следующих статьях:
 
-- [Что такое Azure Load Balancer?](load-balancer-overview.md)
-- [Что такое наборы масштабирования виртуальных машин?](../virtual-machine-scale-sets/overview.md)
+- [Что такое Azure Load Balancer](load-balancer-overview.md)
+- [Что такое масштабируемый набор виртуальных машин?](../virtual-machine-scale-sets/overview.md)
                                 

@@ -6,10 +6,10 @@ ms.topic: conceptual
 description: Узнайте, как настроить Azure Dev Spaces для использования пользовательского контроллера входящих данных NGINX и настройки HTTPS с помощью этого контроллера входящего трафика.
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
 ms.openlocfilehash: 0fe9fec263b72ac06839b58fdc5b0142a724718c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80155453"
 ---
 # <a name="use-a-custom-nginx-ingress-controller-and-configure-https"></a>Использование пользовательского контроллера входящих данных NGINX и настройка HTTPS
@@ -47,7 +47,7 @@ aks-nodepool1-12345678-vmssfedcba   Ready    agent   13m    v1.14.1
 helm repo add stable https://kubernetes-charts.storage.googleapis.com/
 ```
 
-Создайте пространство имен Kubernetes для контроллера входящих данных NGINX и установите его с помощью `helm`.
+Создайте пространство имен Kubernetes для контроллера входящих данных NGINX и установите его с помощью `helm` .
 
 ```console
 kubectl create ns nginx
@@ -55,7 +55,7 @@ helm install nginx stable/nginx-ingress --namespace nginx --version 1.27.0
 ```
 
 > [!NOTE]
-> В приведенном выше примере создается общедоступная конечная точка для контроллера входящего трафика. Если вместо этого необходимо использовать частную конечную точку для контроллера входящего трафика, добавьте параметр *--Set Controller. Service. Annotations. Service\\. Beta\\. kubernetes\\. IO/Azure — Load-балансировщик — внутренний параметр "= true"* для команды *установки Helm* . Пример:
+> В приведенном выше примере создается общедоступная конечная точка для контроллера входящего трафика. Если вместо этого необходимо использовать частную конечную точку для контроллера входящего трафика, добавьте параметр *--Set Controller. Service. Annotations. Service \\ . Beta \\ . kubernetes \\ . IO/Azure — Load-балансировщик — внутренний параметр "= true"* для команды *установки Helm* . Пример:
 > ```console
 > helm install nginx stable/nginx-ingress --namespace nginx --set controller.service.annotations."service\.beta\.kubernetes\.io/azure-load-balancer-internal"=true --version 1.27.0
 > ```
@@ -123,13 +123,13 @@ gateway:
 
 Сохраните изменения и закройте файл.
 
-Создайте пространство *разработки* с помощью примера приложения, используя `azds space select`.
+Создайте пространство *разработки* с помощью примера приложения, используя `azds space select` .
 
 ```console
 azds space select -n dev -y
 ```
 
-Разверните пример приложения с помощью `helm install`.
+Разверните пример приложения с помощью `helm install` .
 
 ```console
 helm install bikesharingsampleapp . --dependency-update --namespace dev --atomic
@@ -137,13 +137,13 @@ helm install bikesharingsampleapp . --dependency-update --namespace dev --atomic
 
 В приведенном выше примере пример приложения развертывается в пространстве имен *dev* .
 
-Отображение URL-адресов для доступа к образцу `azds list-uris`приложения с помощью.
+Отображение URL-адресов для доступа к образцу приложения с помощью `azds list-uris` .
 
 ```console
 azds list-uris
 ```
 
-В приведенных ниже выходных данных показаны примеры `azds list-uris`URL-адресов из.
+В приведенных ниже выходных данных показаны примеры URL-адресов из `azds list-uris` .
 
 ```console
 Uri                                                  Status
@@ -164,7 +164,7 @@ azds space select -n dev/azureuser1 -y
 azds list-uris
 ```
 
-В приведенных ниже выходных данных показаны примеры `azds list-uris` URL-адресов из для доступа к образцу приложения в дочерней области разработки *azureuser1* .
+В приведенных ниже выходных данных показаны примеры URL-адресов из `azds list-uris` для доступа к образцу приложения в дочерней области разработки *azureuser1* .
 
 ```console
 Uri                                                  Status
@@ -173,7 +173,7 @@ http://azureuser1.s.dev.bikesharingweb.nginx.MY_CUSTOM_DOMAIN/  Available
 http://azureuser1.s.dev.gateway.nginx.MY_CUSTOM_DOMAIN/         Available
 ```
 
-Перейдите к службе *бикешарингвеб* в пространстве дочернего пространства разработки *azureuser1* , открыв общедоступный `azds list-uris` URL-адрес из команды. В приведенном выше примере общедоступный URL-адрес службы *бикешарингвеб* в пространстве дочернего разработчика `http://azureuser1.s.dev.bikesharingweb.nginx.MY_CUSTOM_DOMAIN/` *azureuser1* —.
+Перейдите к службе *бикешарингвеб* в пространстве дочернего пространства разработки *azureuser1* , открыв общедоступный URL-адрес из `azds list-uris` команды. В приведенном выше примере общедоступный URL-адрес службы *бикешарингвеб* в пространстве дочернего разработчика *azureuser1* — `http://azureuser1.s.dev.bikesharingweb.nginx.MY_CUSTOM_DOMAIN/` .
 
 ## <a name="configure-the-nginx-ingress-controller-to-use-https"></a>Настройка контроллера входящего трафика NGINX для использования протокола HTTPS
 
@@ -209,7 +209,7 @@ spec:
 > [!NOTE]
 > Для тестирования также существует [промежуточный сервер][letsencrypt-staging-issuer] , который можно использовать для *клустериссуер*.
 
-Используйте `kubectl` для применения `letsencrypt-clusterissuer.yaml`.
+Используйте `kubectl` для применения `letsencrypt-clusterissuer.yaml` .
 
 ```console
 kubectl apply -f letsencrypt-clusterissuer.yaml --namespace nginx
@@ -246,7 +246,7 @@ gateway:
       secretName: dev-gateway-secret
 ```
 
-Обновите пример приложения с `helm`помощью:
+Обновите пример приложения с помощью `helm` :
 
 ```console
 helm upgrade bikesharingsampleapp . --namespace dev --atomic
@@ -276,7 +276,7 @@ Mixed Content: The page at 'https://azureuser1.s.dev.bikesharingweb.nginx.MY_CUS
 ...
 ```
 
-Обновите [бикешарингвеб/Package. JSON][package-json] с зависимостью для пакета *URL-адреса* .
+Обновление [бикешарингвеб/package.json][package-json] с зависимостью от пакета *URL-адреса* .
 
 ```json
 {
@@ -288,7 +288,7 @@ Mixed Content: The page at 'https://azureuser1.s.dev.bikesharingweb.nginx.MY_CUS
 ...
 ```
 
-Обновите метод *жетапихостасинк* в [бикешарингвеб/lib/helps. js][helpers-js] , чтобы использовать HTTPS:
+Обновите метод *жетапихостасинк* в [бикешарингвеб/lib/helpers.js][helpers-js] , чтобы использовать HTTPS:
 
 ```javascript
 ...

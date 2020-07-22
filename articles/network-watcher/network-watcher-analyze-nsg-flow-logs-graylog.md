@@ -9,17 +9,17 @@ tags: azure-resource-manager
 ms.assetid: ''
 ms.service: network-watcher
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/19/2017
 ms.author: damendo
-ms.openlocfilehash: 1e597a81967a8fb6be2959d53e65ad01135e5e25
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 7a4aa4cc545d6941f144ce0657ede7199d4f8f57
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76842909"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86497120"
 ---
 # <a name="manage-and-analyze-network-security-group-flow-logs-in-azure-using-network-watcher-and-graylog"></a>Анализ журналов потоков для групп безопасности сети и управление ими в Azure с помощью Наблюдателя за сетями и Graylog
 
@@ -190,7 +190,7 @@ sudo ./logstash-plugin install logstash-input-azureblob
 
    Сразу после активации входа сведения о нем отобразятся в разделе **Local inputs** (Локальные входы), как показано на следующем изображении.
 
-   ![](./media/network-watcher-analyze-nsg-flow-logs-graylog/local-inputs.png)
+   ![Снимок экрана, на котором показан раздел локальных входных данных, содержащий входные данные, которые вы запустили.](./media/network-watcher-analyze-nsg-flow-logs-graylog/local-inputs.png)
 
    Просмотрите [документацию](https://docs.graylog.org/en/2.2/pages/sending_data.html#what-are-graylog-message-inputs) с дополнительными сведениями о входах для сообщений Graylog.
 
@@ -244,6 +244,6 @@ sudo ./logstash-plugin install logstash-input-azureblob
 
 Интеграция Наблюдателя за сетями с Graylog обеспечивает удобное централизованное управление журналами потоков для групп безопасности сети и позволяет визуализировать данные журналов. Graylog располагает рядом мощных возможностей, таких как потоки данных и предупреждения. Они помогают в управлении журналами потоков и анализе сетевого трафика. Мы завершили настройку системы Graylog и подключили ее к Azure. Теперь можно приступать к изучению ее функций.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в статье  [Визуализация журналов потоков для групп безопасности сети с помощью Power BI](network-watcher-visualize-nsg-flow-logs-power-bi.md).

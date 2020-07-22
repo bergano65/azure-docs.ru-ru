@@ -5,15 +5,15 @@ author: omidm1
 ms.author: omidm
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/04/2019
-ms.openlocfilehash: 93880269edd72477f3aa85b2dbdc9d9f3ec8ef25
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 17dcaee4f9cd4d889e585394362695ab31f0d012
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75435888"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86079740"
 ---
 # <a name="manage-hdinsight-clusters-with-enterprise-security-package"></a>Управление кластерами HDInsight с помощью корпоративного пакета безопасности
 
@@ -54,7 +54,7 @@ ms.locfileid: "75435888"
 |Apache Hadoop|Hive — интерактивные задания и запросы  |<ul><li>[Beeline](#beeline)</li><li>[Представление Hive](../hadoop/apache-hadoop-use-hive-ambari-view.md)</li><li>[ODBC/JDBC – Power BI](../hadoop/apache-hadoop-connect-hive-power-bi.md)</li><li>[Инструменты Visual Studio](../hadoop/apache-hadoop-visual-studio-tools-get-started.md)</li></ul>|
 |Apache Spark|Интерактивные задания и запросы, интерактивные задания PySpark|<ul><li>[Beeline](#beeline)</li><li>[Zeppelin с Livy](../spark/apache-spark-zeppelin-notebook.md)</li><li>[Представление Hive](../hadoop/apache-hadoop-use-hive-ambari-view.md)</li><li>[ODBC/JDBC – Power BI](../hadoop/apache-hadoop-connect-hive-power-bi.md)</li><li>[Инструменты Visual Studio](../hadoop/apache-hadoop-visual-studio-tools-get-started.md)</li></ul>|
 |Apache Spark|Сценарии пакетной службы — отправка Spark, PySpark|<ul><li>[Livy](../spark/apache-spark-livy-rest-interface.md)</li></ul>|
-|Интерактивный запрос (LLAP)|Interactive (Интерактивные)|<ul><li>[Beeline](#beeline)</li><li>[Представление Hive](../hadoop/apache-hadoop-use-hive-ambari-view.md)</li><li>[ODBC/JDBC – Power BI](../hadoop/apache-hadoop-connect-hive-power-bi.md)</li><li>[Инструменты Visual Studio](../hadoop/apache-hadoop-visual-studio-tools-get-started.md)</li></ul>|
+|Интерактивный запрос (LLAP)|Интерактивно|<ul><li>[Beeline](#beeline)</li><li>[Представление Hive](../hadoop/apache-hadoop-use-hive-ambari-view.md)</li><li>[ODBC/JDBC – Power BI](../hadoop/apache-hadoop-connect-hive-power-bi.md)</li><li>[Инструменты Visual Studio](../hadoop/apache-hadoop-visual-studio-tools-get-started.md)</li></ul>|
 |Любой|Установка пользовательского приложения|<ul><li>[Элемент "Действия скрипта"](../hdinsight-hadoop-customize-cluster-linux.md)</li></ul>|
 
    > [!NOTE]  
@@ -87,7 +87,7 @@ Connection string: -u 'jdbc:hive2://<headnode-FQDN>:10001/;transportMode=http'
 
 При создании кластера HDInsight без ESP в нем создаются две учетные записи пользователя:
 
-- **Администратор Ambari**: эта учетная запись называется также *Пользователь Hadoop* или *Пользователь HTTP*. Эту учетную запись можно использовать для входа в Ambari по `https://CLUSTERNAME.azurehdinsight.net`адресу. Его также можно использовать для выполнения запросов к представлениям Ambari, выполнения заданий через внешние средства (например, PowerShell, Templeton, Visual Studio) и проверки подлинности с помощью драйвера Hive ODBC и средств бизнес-аналитики (например, Excel, Power BI или Tableau).
+- **Администратор Ambari**: эта учетная запись называется также *Пользователь Hadoop* или *Пользователь HTTP*. Эту учетную запись можно использовать для входа в Ambari по адресу `https://CLUSTERNAME.azurehdinsight.net` . Его также можно использовать для выполнения запросов к представлениям Ambari, выполнения заданий через внешние средства (например, PowerShell, Templeton, Visual Studio) и проверки подлинности с помощью драйвера Hive ODBC и средств бизнес-аналитики (например, Excel, Power BI или Tableau).
 
 В кластере HDInsight с корпоративным пакетом безопасности, кроме администратора Ambari, создаются еще три пользователя.
 
@@ -171,7 +171,7 @@ Connection string: -u 'jdbc:hive2://<headnode-FQDN>:10001/;transportMode=http'
 2. В меню слева выберите **роли**.
 3. Выберите **Добавить пользователя** или **Добавить группу** , чтобы назначить пользователей и группы различным ролям.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 - Описание настройки кластера HDInsight с Корпоративным пакетом безопасности см. в статье [Настройка кластера HDInsight с Корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory](apache-domain-joined-configure.md).
 - Описание настройки политик Hive и выполнения запросов Hive см. в статье [Настройка политик Apache Hive в HDInsight с Корпоративным пакетом безопасности](apache-domain-joined-run-hive.md).

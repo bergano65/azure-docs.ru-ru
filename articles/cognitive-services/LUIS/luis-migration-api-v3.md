@@ -1,15 +1,15 @@
 ---
 title: Изменения конечной точки прогнозирования в API V3
 description: Интерфейсы API для конечной точки прогнозирования запросов изменились. В этом руководство вы узнаете, как выполнить миграцию на конечные точки API версии 3.
-ms.topic: conceptual
-ms.date: 05/15/2020
+ms.topic: how-to
+ms.date: 06/30/2020
 ms.author: diberry
-ms.openlocfilehash: 84afcbcd348c3fd91014096877de2315722b53a0
-ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
+ms.openlocfilehash: d3d8f4d77793390484c64b03393fb528dfa643b7
+ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83849337"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85610886"
 ---
 # <a name="prediction-endpoint-changes-for-v3"></a>Изменения конечной точки прогнозирования для v3
 
@@ -86,17 +86,7 @@ API-интерфейс прогнозирования версии 2 не буд
 
 ### <a name="query-string-changes"></a>Изменения строки запроса
 
-API V3 имеет разные параметры строки запроса.
-
-|Имя параметра|Тип|Версия|По умолчанию|Назначение|
-|--|--|--|--|--|
-|`log`|Логическое|V2 & V3|false|Сохранить запрос в файле журнала. Значение по умолчанию — false.|
-|`query`|строка|Только версия 3|Нет значения по умолчанию — оно требуется в запросе GET.|**В версии 2**utterance для прогнозирования находится в `q` параметре. <br><br>**В версии 3**функции передаются в `query` параметре.|
-|`show-all-intents`|Логическое|Только версия 3|false|Возврат всех целей с соответствующим показателем в объекте **PREDICTION.** Fors. Объекты возвращаются в виде объектов в родительском `intents` объекте. Это позволяет программному доступу без необходимости находить цель в массиве: `prediction.intents.give` . В версии 2 они были возвращены в массиве. |
-|`verbose`|Логическое|V2 & V3|false|**В версии 2**, если задано значение true, возвращаются все прогнозируемые намерения. Если требуются все прогнозируемые намерения, используйте параметр v3 параметра `show-all-intents` .<br><br>**В версии 3**этот параметр предоставляет только метаданные сущности "прогнозирование сущностей".  |
-|`timezoneOffset`|строка|V2|-|Часовой пояс, применяемый к сущностям datetimeV2.|
-|`datetimeReference`|строка|V3|-|[Часовой пояс](luis-concept-data-alteration.md#change-time-zone-of-prebuilt-datetimev2-entity) , применяемый к сущностям datetimeV2. Заменяет `timezoneOffset` из v2.|
-
+[!INCLUDE [V3 query params](./includes/v3-prediction-query-params.md)]
 
 ### <a name="v3-post-body"></a>V3 тело сообщения
 
@@ -114,8 +104,8 @@ API V3 имеет разные параметры строки запроса.
 
 |Свойство|Тип|Версия|По умолчанию|Назначение|
 |--|--|--|--|--|
-|`dynamicLists`|array|Только версия 3|Не требуется.|[Динамические списки](schema-change-prediction-runtime.md#dynamic-lists-passed-in-at-prediction-time) позволяют расширить существующую подготовленную и опубликованную сущность списка, уже находящиеся в приложении Luis.|
-|`externalEntities`|array|Только версия 3|Не требуется.|[Внешние сущности](schema-change-prediction-runtime.md#external-entities-passed-in-at-prediction-time) предоставляют приложению Luis возможность определять и отмечать сущности во время выполнения, которые можно использовать в качестве функций для существующих сущностей. |
+|`dynamicLists`|массиве|Только версия 3|Не требуется.|[Динамические списки](schema-change-prediction-runtime.md#dynamic-lists-passed-in-at-prediction-time) позволяют расширить существующую подготовленную и опубликованную сущность списка, уже находящиеся в приложении Luis.|
+|`externalEntities`|массиве|Только версия 3|Не требуется.|[Внешние сущности](schema-change-prediction-runtime.md#external-entities-passed-in-at-prediction-time) предоставляют приложению Luis возможность определять и отмечать сущности во время выполнения, которые можно использовать в качестве функций для существующих сущностей. |
 |`options.datetimeReference`|строка|Только версия 3|Нет значения по умолчанию|Используется для определения [смещения datetimeV2](luis-concept-data-alteration.md#change-time-zone-of-prebuilt-datetimev2-entity). Формат для Датетимереференце — [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601).|
 |`options.preferExternalEntities`|Логическое|Только версия 3|false|Указывает, используется ли [внешняя сущность пользователя (с тем же именем, что и существующая сущность)](schema-change-prediction-runtime.md#override-existing-model-predictions) , или существующая сущность в модели используется для прогнозирования. |
 |`query`|строка|Только версия 3|Обязательный элемент.|**В версии 2**utterance для прогнозирования находится в `q` параметре. <br><br>**В версии 3**функции передаются в `query` параметре.|

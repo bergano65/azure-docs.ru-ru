@@ -1,15 +1,15 @@
 ---
-title: Параллельное выполнение задач для оптимизации ресурсов вычислений
+title: Параллельное выполнение задач для оптимизации вычислительных ресурсов
 description: Вы можете увеличить эффективность и снизить стоимость, используя меньшее количество вычислительных узлов. Это возможно благодаря параллельному выполнению задач на каждом узле в пуле пакетной службы Azure.
-ms.topic: article
+ms.topic: how-to
 ms.date: 04/17/2019
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 180294e7da95392e5c6c8055e53cea1ad3b4c7a6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 1b13f7f276740cd4f37e8d4c4ba1f2967d919ccf
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82116763"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85961580"
 ---
 # <a name="run-tasks-concurrently-to-maximize-usage-of-batch-compute-nodes"></a>Параллельное выполнение задач для эффективного использования вычислительных узлов пакетной службы 
 
@@ -30,7 +30,7 @@ ms.locfileid: "82116763"
 ## <a name="enable-parallel-task-execution"></a>Включение параллельного выполнения задач
 Настройка параллельного выполнения задач для вычислительных узлов выполняется на уровне пула. С помощью библиотеки .NET пакетной службы задайте свойство [CloudPool.MaxTasksPerComputeNode][maxtasks_net] при создании пула. Если вы используете REST API пакетной службы, включите элемент [maxTasksPerNode][rest_addpool] в текст запроса при создании пула.
 
-Пакетная служба Azure позволяет устанавливать задачи на каждом узле вплоть до (4X) количества основных узлов. Например, если для пула настроены узлы размера "Большой" (четыре ядра), для параметра `maxTasksPerNode` можно задать значение 16. Однако независимо от того, сколько ядер имеет узел, у вас не может быть более 256 задач для каждого узла. Сведения о количестве ядер для каждого узла см. в статье [Размеры для облачных служб](../cloud-services/cloud-services-sizes-specs.md). Дополнительные сведения об ограничениях службы см. в статье [Квоты и ограничения пакетной службы Azure](batch-quota-limit.md).
+Пакетная служба Azure позволяет задать для каждого узла количество задач, в 4 раза превышающее количество ядер. Например, если для пула настроены узлы размера "Большой" (четыре ядра), для параметра `maxTasksPerNode` можно задать значение 16. Но независимо от того, сколько ядер имеет узел, количество задач на каждом узле не может превышать 256. Сведения о количестве ядер для каждого узла см. в статье [Размеры для облачных служб](../cloud-services/cloud-services-sizes-specs.md). Дополнительные сведения об ограничениях службы см. в статье [Квоты и ограничения пакетной службы Azure](batch-quota-limit.md).
 
 > [!TIP]
 > Обязательно учитывайте значение параметра `maxTasksPerNode` при создании [формулы автомасштабирования][enable_autoscaling] для пула. Например, если в формуле учитывается параметр `$RunningTasks`, изменение количества задач существенно повлияет на результат ее применения. Дополнительные сведения см. в статье [Автоматическое масштабирование вычислительных узлов в пуле пакетной службы Azure](batch-automatic-scaling.md).
@@ -42,10 +42,10 @@ ms.locfileid: "82116763"
 
 С помощью свойства [CloudPool.TaskSchedulingPolicy][task_schedule] можно указать, что задачи должны назначаться ("распространяться") равномерно по всем узлам в кластере. Или можно указать, что перед переходом к следующему узлу необходимо назначить максимальное количество задач текущему узлу ("упаковка").
 
-Чтобы понять важность этой функции, давайте рассмотрим пул из предыдущего примера. Он состоит из узлов размера [Standard_Standard\_D14](../cloud-services/cloud-services-sizes-specs.md), для которых параметр [CloudPool.MaxTasksPerComputeNode][maxtasks_net] имеет значение 16. Если в свойстве [CloudPool.TaskSchedulingPolicy][task_schedule] для параметра [ComputeNodeFillType][fill_type] будет указано значение *Pack*, то на каждом узле все 16 ядер будут задействованы по максимуму. При этом [автомасштабируемый пул](batch-automatic-scaling.md) будет исключать неиспользуемые узлы (для которых не назначены задачи). Это снизит использование ресурсов и расходы на них.
+Чтобы понять важность этой функции, давайте рассмотрим пул из предыдущего примера. Он состоит из узлов размера [Standard\_D14](../cloud-services/cloud-services-sizes-specs.md), для которых параметр [CloudPool.MaxTasksPerComputeNode][maxtasks_net] имеет значение 16. Если в свойстве [CloudPool.TaskSchedulingPolicy][task_schedule] для параметра [ComputeNodeFillType][fill_type] будет указано значение *Pack*, то на каждом узле все 16 ядер будут задействованы по максимуму. При этом [автомасштабируемый пул](batch-automatic-scaling.md) будет исключать неиспользуемые узлы (для которых не назначены задачи). Это снизит использование ресурсов и расходы на них.
 
 ## <a name="batch-net-example"></a>Пример использования компонента .NET пакетной службы
-Этот фрагмент кода API [.NET пакетной службы][api_net] отображает запрос на создание пула с четырьмя узлами и максимальным количеством задач на каждый узел, равным четырем. Он задает политику планирования задач, при которой каждому узлу назначается максимальное количество задач перед переходом к следующему узлу пула. Дополнительные сведения о добавлении пулов с использованием API .NET пакетной службы см. в описании метода [BatchClient.PoolOperations.CreatePool][poolcreate_net].
+Этот фрагмент кода API [.NET пакетной службы][api_net] представляет собой запрос на создание пула с четырьмя узлами и максимальным количеством задач на каждый узел, равным четырем. Он задает политику планирования задач, при которой каждому узлу назначается максимальное количество задач перед переходом к следующему узлу пула. Дополнительные сведения о добавлении пулов с использованием API .NET пакетной службы см. в описании метода [BatchClient.PoolOperations.CreatePool][poolcreate_net].
 
 ```csharp
 CloudPool pool =
@@ -113,21 +113,21 @@ Duration: 00:08:48.2423500
 >
 >
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 ### <a name="batch-explorer-heat-map"></a>Тепловая карта обозревателя пакетной службы
 [Batch Explorer][batch_labs] — это бесплатный автономный клиентский инструмент с множеством функций для создания, отладки и мониторинга приложений пакетной службы Azure. Batch Explorer содержит компонент *тепловой карты*, который предоставляет визуализацию выполнения задач. Используйте этот компонент при выполнении примера приложения [ParallelTasks][parallel_tasks_sample], чтобы наглядно представить параллельное выполнение задач на каждом узле.
 
 
-[api_net]: https://msdn.microsoft.com/library/azure/mt348682.aspx
-[api_rest]: https://msdn.microsoft.com/library/azure/dn820158.aspx
+[api_net]: /dotnet/api/microsoft.azure.batch
+[api_rest]: /rest/api/batchservice/
 [batch_labs]: https://azure.github.io/BatchExplorer/
-[cloudpool]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudpool.aspx
-[enable_autoscaling]: https://msdn.microsoft.com/library/azure/dn820173.aspx
-[fill_type]: https://msdn.microsoft.com/library/microsoft.azure.batch.common.computenodefilltype.aspx
+[cloudpool]: /dotnet/api/microsoft.azure.batch.cloudpool
+[enable_autoscaling]: /rest/api/batchservice/pool/enableautoscale
+[fill_type]: /dotnet/api/microsoft.azure.batch.common.computenodefilltype
 [github_samples]: https://github.com/Azure/azure-batch-samples
-[maxtasks_net]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudpool.maxtaskspercomputenode.aspx
-[rest_addpool]: https://msdn.microsoft.com/library/azure/dn820174.aspx
+[maxtasks_net]: /dotnet/api/microsoft.azure.batch.cloudpool
+[rest_addpool]: /rest/api/batchservice/pool/add
 [parallel_tasks_sample]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/ArticleProjects/ParallelTasks
-[poolcreate_net]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.pooloperations.createpool.aspx
-[task_schedule]: https://msdn.microsoft.com/library/microsoft.azure.batch.cloudpool.taskschedulingpolicy.aspx
+[poolcreate_net]: /dotnet/api/microsoft.azure.batch.pooloperations
+[task_schedule]: /dotnet/api/microsoft.azure.batch.cloudpool
 

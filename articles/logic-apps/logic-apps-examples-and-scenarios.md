@@ -6,16 +6,15 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 02/28/2020
-ms.openlocfilehash: ad5cc696892764ce68d4714ead98b8afd9c37669
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 786655f8e8ee7e21f2615361b0bb1ea336ccb479
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82144158"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84190735"
 ---
 # <a name="common-scenarios-examples-tutorials-and-walkthroughs-for-azure-logic-apps"></a>Распространенные сценарии, примеры, учебники и пошаговые руководства для Azure Logic Apps
 
-[Azure Logic Apps](../logic-apps/logic-apps-overview.md) помогает управлять и интегрировать различные службы, предоставляя [сотни готовых соединителей](../connectors/apis-list.md), от локальных SQL Server или SAP до Azure Cognitive Services. Служба Logic Apps работает без серверов, поэтому вам не нужно заботиться об экземплярах и масштабировании. Достаточно определить рабочий процесс с триггером и действия для него. Базовая платформа обеспечивает масштабирование, доступность и производительность. Logic Apps особенно полезен для случаев использования и сценариев, в которых необходимо координировать действия в нескольких системах и службах.
+[Azure Logic Apps](../logic-apps/logic-apps-overview.md) помогает координировать и интегрировать различные службы, предоставляя [сотни готовых соединителей](../connectors/apis-list.md), начиная от SQL Server или от SAP до Azure Cognitive Services. Служба Logic Apps работает без серверов, поэтому вам не нужно заботиться об экземплярах и масштабировании. Достаточно определить рабочий процесс с триггером и действия для него. Базовая платформа обеспечивает масштабирование, доступность и производительность. Logic Apps особенно полезен для случаев использования и сценариев, в которых необходимо координировать действия в нескольких системах и службах.
 
 Для получения сведений о возможностях и шаблонах, поддерживаемых Azure Logic Apps, в этой статье описываются общие начальные точки, примеры и сценарии.
 
@@ -39,7 +38,7 @@ ms.locfileid: "82144158"
   * Триггер **при получении сообщения электронной почты** позволяет приложению логики проверять наличие нового сообщения электронной почты от любого поставщика почты, поддерживаемого Logic Apps, например [Office 365 Outlook](../connectors/connectors-create-api-office365-outlook.md), [Gmail](https://docs.microsoft.com/connectors/gmail/), [Outlook.com](https://docs.microsoft.com/connectors/outlook/)и т. д.
 
     > [!IMPORTANT]
-    > Если вы хотите использовать соединитель Gmail, только бизнес-учетные записи G-Suite могут использовать этот соединитель без ограничений в приложениях логики. Если у вас есть учетная запись потребителя Gmail, вы можете использовать этот соединитель только с конкретными утвержденными Google службами или [создать клиентское приложение Google для проверки подлинности с помощью соединителя Gmail](https://docs.microsoft.com/connectors/gmail/#authentication-and-bring-your-own-application). Дополнительные сведения см. [в разделе политики безопасности и конфиденциальности данных для соединителей Google в Azure Logic Apps](../connectors/connectors-google-data-security-privacy-policy.md).
+    > Только учетные записи для бизнеса G-Suite могут использовать соединитель Gmail без ограничений в приложениях логики. Если у вас есть учетная запись потребителя Gmail, вы можете использовать этот соединитель только с определенными утвержденными Google службами. Кроме того, вы можете [создать клиентское приложение Google, которое будет использоваться для проверки подлинности в соединителе Gmail](https://docs.microsoft.com/connectors/gmail/#authentication-and-bring-your-own-application). Дополнительные сведения см. в статье [Политики безопасности и конфиденциальности данных для соединителей Google в Azure Logic Apps](../connectors/connectors-google-data-security-privacy-policy.md).
 
     Дополнительные сведения см. в следующих статьях:<p>
 
@@ -86,7 +85,7 @@ ms.locfileid: "82144158"
 Для корпоративных решений интеграции и эффективного взаимодействия между организациями можно создавать автоматизированные масштабируемые рабочие процессы для этих сценариев с помощью Пакет интеграции Enterprise (EIP) с Azure Logic Apps. Хотя организации используют разные протоколы и форматы, они могут обмениваться сообщениями в электронном формате. EIP преобразует различные форматы в формат, в котором системы Организации могут обрабатывать и поддерживать стандартные отраслевые протоколы, включая AS2, X12, EDIFACT и RosettaNet. Чтобы создать эти решения, создайте учетную запись интеграции, которая представляет собой отдельный ресурс Azure, предоставляющий защищенный, масштабируемый и управляемый контейнер для артефактов, которые вы определяете и используете в рабочих процессах приложения логики. Например, артефакты включают торговые партнеры, соглашения, карты, схемы, сертификаты и конфигурации пакетной службы.
 
 * [Обзор. решения для интеграции B2B Enterprise с Azure Logic Apps и Пакет интеграции Enterprise](../logic-apps/logic-apps-enterprise-integration-overview.md)
-* [Создание учетных записей интеграции для интеграции B2B Enterprise в Azure Logic Apps и управление ими](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md)
+* [Создание корпоративных учетных записей интеграции и управление ими для корпоративных интеграций B2B в Azure Logic Apps.](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md)
 
 ## <a name="access-azure-virtual-network-resources"></a>Доступ к ресурсам виртуальной сети Azure
 
@@ -103,7 +102,7 @@ ms.locfileid: "82144158"
 
 * [Краткое руководство. Создание автоматизированных задач, процессов и рабочих процессов с помощью Azure Logic Apps — Visual Studio](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md)
 * [Обзор: Автоматизация развертывания приложений логики](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md)
-* [Создание шаблонов Azure Resource Manager для автоматизации развертывания Azure Logic Apps](../logic-apps/logic-apps-create-azure-resource-manager-templates.md)
+* [Создание шаблонов Azure Resource Manager для автоматизации развертываний для Azure Logic Apps](../logic-apps/logic-apps-create-azure-resource-manager-templates.md)
 * [Развертывание шаблонов Azure Resource Manager для Azure Logic Apps](../logic-apps/logic-apps-deploy-azure-resource-manager-templates.md)
 * [Пример. подключение к очередям служебной шины Azure из Azure Logic Apps и развертывание с помощью Azure Pipelines в Azure DevOps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/connect-to-azure-service-bus-queues-from-azure-logic-apps-and-deploy-with-azure-devops-pipelines/)
 * [Пример. подключение к учетным записям хранения Azure из Azure Logic Apps и развертывание с помощью Azure Pipelines в Azure DevOps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/connect-to-azure-storage-accounts-from-azure-logic-apps-and-deploy-with-azure-devops-pipelines/)
@@ -119,17 +118,17 @@ ms.locfileid: "82144158"
 
 ### <a name="monitor"></a>Монитор
 
-* [Мониторинг состояния выполнения, Просмотр журнала триггеров и Настройка оповещений для Azure Logic Apps](../logic-apps/monitor-logic-apps.md)
+* [Отслеживание состояния выполнения, просмотр журнала триггеров и настройка оповещений для Azure Logic Apps](../logic-apps/monitor-logic-apps.md)
 * [Настройка журналов Azure Monitor и получение диагностических данных для Azure Logic Apps](../logic-apps/monitor-logic-apps-log-analytics.md)
-* [Настройка журналов Azure Monitor и получение диагностических данных для сообщений B2B в Azure Logic Apps](../logic-apps/monitor-b2b-messages-log-analytics.md)
+* [Настройка журналов Azure Monitor и сбор диагностических данных для сообщений B2B в Azure Logic Apps](../logic-apps/monitor-b2b-messages-log-analytics.md)
 * [Просмотр и создание запросов для мониторинга и отслеживания в журналах Azure Monitor для Azure Logic Apps](../logic-apps/create-monitoring-tracking-queries.md)
 
 ## <a name="handle-content-types-conversions-and-transformations"></a>Работа с типами содержимого, преобразованиями и преобразованиями
 
 Можно использовать и преобразовывать различные типы содержимого с помощью многих функций, написанных на [языке определения рабочего процесса](https://aka.ms/logicappsdocs) Azure Logic Apps. Например, можно осуществлять взаимное преобразование строк, JSON и XML с помощью выражений рабочего процесса `@json()` и `@xml()`. Обработчик Logic Apps сохраняет типы содержимого, чтобы обеспечить передачу содержимого между службами без потерь.
 
-* [Обрабатывайте типы содержимого в Azure Logic Apps](../logic-apps/logic-apps-content-type.md), например `application/`, `application/octet-stream`, и`multipart/formdata`
-* [Справочное руководство по использованию функций в выражениях для Azure Logic Apps и автоматизации Powering](../logic-apps/workflow-definition-language-functions-reference.md)
+* [Обрабатывайте типы содержимого в Azure Logic Apps](../logic-apps/logic-apps-content-type.md), например `application/` ,, `application/octet-stream` и`multipart/formdata`
+* [Справочное руководство по использованию функций в выражениях для Azure Logic Apps и Power Automate](../logic-apps/workflow-definition-language-functions-reference.md)
 * [Схема языка определения рабочих процессов в Azure Logic Apps](../logic-apps/logic-apps-workflow-definition-language.md)
 
 ## <a name="other-integrations-and-capabilities"></a>Прочие возможности интеграции и функции
@@ -141,7 +140,7 @@ Azure Logic Apps интегрируется со многими службами
 * [Руководство. Создание информационной панели для потоковой передачи Customer Insights с помощью Azure Logic Apps и функций Azure](../logic-apps/logic-apps-scenario-social-serverless.md)
 * [Руководство. Создание функции, которая интегрируется с Azure Logic Apps и Azure Cognitive Services для анализа записей Twitter тональности](../azure-functions/functions-twitter-email.md)
 * [Руководство. Создание информационной панели социального страхования на основе искусственного интеллекта с помощью Power BI и Azure Logic Apps](https://aka.ms/logicappsdemo)
-* [Руководство. Мониторинг изменений виртуальной машины с помощью службы "Сетка событий Azure" и Logic Apps](../event-grid/monitor-virtual-machine-changes-event-grid-logic-app.md)
+* [Руководство. Отслеживание изменений виртуальной машины с помощью Azure Logic Apps и службы "Сетка событий Azure"](../event-grid/monitor-virtual-machine-changes-event-grid-logic-app.md)
 * [Руководство по удаленному мониторингу и отправке уведомлений в Центре Интернета вещей с помощью службы Azure Logic Apps, обеспечивающей подключение между Центром Интернета вещей и почтовым ящиком](../iot-hub/iot-hub-monitoring-notifications-with-azure-logic-apps.md)
 * [Блог. вызов служб SOAP с помощью Azure Logic Apps](https://blogs.msdn.microsoft.com/logicapps/2016/04/07/using-soap-services-with-logic-apps/)
 

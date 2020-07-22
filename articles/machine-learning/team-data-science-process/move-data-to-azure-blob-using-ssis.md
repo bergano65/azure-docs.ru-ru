@@ -11,12 +11,11 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 77bfd9d5bcae7bedd673354e32464d5f59bdc9b4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: ad87272749011c81c1040825da3f3c53858a55bd
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76720877"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85322868"
 ---
 # <a name="move-data-to-or-from-azure-blob-storage-using-ssis-connectors"></a>Перемещение данных в хранилище BLOB-объектов Azure и из него с помощью соединителей SSIS
 [Пакет дополнительных компонентов SQL Server Integration Services для Azure](https://msdn.microsoft.com/library/mt146770.aspx) содержит компоненты для подключения к Azure, передачи данных между Azure и локальными источниками данных, а также для обработки данных, хранящихся в Azure.
@@ -27,7 +26,7 @@ ms.locfileid: "76720877"
 
 Примеры использования этих ресурсов Azure приведены в пошаговых руководствах по [SQL](sql-walkthrough.md) и [HDInsight](hive-walkthrough.md) .
 
-Сведения о канонических сценариях, в рамках которых службы SSIS используются для выполнения бизнес-задач, часто встречающихся в сценариях интеграции гибридных данных, см. в записи блога [Doing more with SQL Server Integration Services Feature Pack for Azure](https://blogs.msdn.com/b/ssis/archive/2015/06/25/doing-more-with-sql-server-integration-services-feature-pack-for-azure.aspx) (Повышенная эффективность при использовании пакета дополнительных компонентов SQL Server Integration Services для Azure).
+Сведения о канонических сценариях, в рамках которых службы SSIS используются для выполнения бизнес-задач, часто встречающихся в сценариях интеграции гибридных данных, см. в записи блога [Doing more with SQL Server Integration Services Feature Pack for Azure](https://techcommunity.microsoft.com/t5/sql-server-integration-services/doing-more-with-sql-server-integration-services-feature-pack-for/ba-p/388238) (Повышенная эффективность при использовании пакета дополнительных компонентов SQL Server Integration Services для Azure).
 
 > [!NOTE]
 > Полное описание базовых принципов использования хранилища BLOB-объектов Azure см. в статьях [Приступая к работе с хранилищем BLOB-объектов Azure с помощью .NET](../../storage/blobs/storage-dotnet-how-to-use-blobs.md) и [Основные понятия службы BLOB-объектов](https://msdn.microsoft.com/library/azure/dd179376.aspx).
@@ -64,7 +63,7 @@ ms.locfileid: "76720877"
 
 Ниже описаны параметры, используемые задачей.
 
-| Поле | Описание |
+| Поле | Описание: |
 | --- | --- |
 | **AzureStorageConnection** |Указывает существующий диспетчер подключений службы хранилища Azure или создает новый, который ссылается на учетную запись хранения Azure, указывающую на место размещения файлов большого двоичного объекта. |
 | **BlobContainer** |Указывает имя контейнера больших двоичных объектов, который содержит отправленные файлы в виде больших двоичных объектов. |

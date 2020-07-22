@@ -5,10 +5,9 @@ ms.topic: article
 ms.date: 01/23/2019
 ms.custom: seodec18, H1Hack27Feb2017
 ms.openlocfilehash: 6751a04c3c1bfe826334161704c20c1ba2e5a6d2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74456355"
 ---
 # <a name="push-your-first-image-to-a-private-docker-container-registry-using-the-docker-cli"></a>Отправка первого образа в частный реестр контейнеров Docker с помощью интерфейса командной строки Docker
@@ -17,10 +16,10 @@ ms.locfileid: "74456355"
 
 Выполняя следующие действия, вы скачаете официальный [образ Nginx](https://store.docker.com/images/nginx) из общедоступного реестра Docker Hub, поместите его в частный реестр контейнеров Azure, отправите его в свой реестр, а затем извлечете его от туда.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * **Реестр контейнеров Azure** . Создайте реестр контейнеров в подписке Azure. Это можно сделать на [портале Azure](container-registry-get-started-portal.md) или с помощью [Azure CLI](container-registry-get-started-azure-cli.md).
-* **Docker CLI**. Также необходим локально установленный модуль Docker. Docker предоставляет пакеты, которые позволяют быстро настроить Docker в любой системе: [macOS][docker-mac], [Windows][docker-windows] или [Linux][docker-linux].
+* **Docker CLI**. Также необходим локально установленный модуль Docker. Docker предоставляет пакеты, которые позволяют быстро настроить Docker в системе под управлением [macOS][docker-mac], [Windows][docker-windows] или [Linux][docker-linux].
 
 ## <a name="log-in-to-a-registry"></a>Вход в раздел реестра
 
@@ -117,13 +116,13 @@ docker rmi myregistry.azurecr.io/samples/nginx
 az acr repository delete --name myregistry --image samples/nginx:latest
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы знаете основы, можно приступать к использованию реестра. Например, можно развернуть образы контейнера из реестра в следующие службы:
 
 * [Служба Azure Kubernetes (AKS)](../aks/tutorial-kubernetes-prepare-app.md)
 * [Экземпляры контейнеров Azure](../container-instances/container-instances-tutorial-prepare-app.md);
-* [Service Fabric.](../service-fabric/service-fabric-tutorial-create-container-images.md)
+* [Service Fabric](../service-fabric/service-fabric-tutorial-create-container-images.md)
 
 При необходимости установите [расширение Docker для Visual Studio Code](https://code.visualstudio.com/docs/azure/docker) и расширение [учетной записи Azure](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account) для работы со своими реестрами контейнеров Azure. Извлекайте и отправляйте образы в реестр контейнеров Azure или запускайте Задачи ACR в Visual Studio Code.
 

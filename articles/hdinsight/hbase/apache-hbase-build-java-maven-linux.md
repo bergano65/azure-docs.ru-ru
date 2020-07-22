@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive,seodec18
 ms.date: 12/24/2019
-ms.openlocfilehash: 3e9b23ce450e45dfedcee8b20e09b1c2b52b6e68
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 6f367f7fb6201a62c7fb47e0c593d04d41e0b378
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75495785"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86079519"
 ---
 # <a name="build-java-applications-for-apache-hbase"></a>Создание приложений Java для Apache HBase
 
@@ -21,7 +21,7 @@ ms.locfileid: "75495785"
 
 В этом руководстве для создания и сборки проекта используется [Apache Maven](https://maven.apache.org/). Maven — это инструмент для управления и повышения обозримости проектов программного обеспечения, позволяющий создавать ПО, документацию и отчеты для проектов Java.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * Кластер Apache HBase в HDInsight. См. статью [Начало работы с Apache HBase](./apache-hbase-tutorial-get-started-linux.md).
 
@@ -57,13 +57,13 @@ cd C:\HDI
     mkdir conf
     ```
 
-    Эта команда создает каталог с именем `hbaseapp` в текущем расположении, содержащий базовый проект Maven. Вторая команда изменяет рабочий каталог на `hbaseapp`. Третья команда создает новый каталог, `conf`который будет использоваться позже. Каталог `hbaseapp` содержит следующие элементы:
+    Эта команда создает каталог с именем `hbaseapp` в текущем расположении, содержащий базовый проект Maven. Вторая команда изменяет рабочий каталог на `hbaseapp` . Третья команда создает новый каталог, `conf` который будет использоваться позже. Каталог `hbaseapp` содержит следующие элементы:
 
     * `pom.xml`: Объектная модель проекта ([POM](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html)) содержит сведения и сведения о конфигурации, используемые для построения проекта.
     * `src\main\java\com\microsoft\examples` содержит код приложения;
     * `src\test\java\com\microsoft\examples` содержит тесты для приложения.
 
-2. Удалите созданный код примера. Удалите созданные файлы `AppTest.java`тестов и приложений, а затем `App.java` введите приведенные ниже команды.
+2. Удалите созданный код примера. Удалите созданные файлы тестов и приложений `AppTest.java` , а затем `App.java` введите приведенные ниже команды.
 
     ```cmd
     DEL src\main\java\com\microsoft\examples\App.java
@@ -80,7 +80,7 @@ notepad pom.xml
 
 ### <a name="add-dependencies"></a>Добавление зависимостей
 
-В `pom.xml`добавьте в `<dependencies>` раздел следующий текст:
+В `pom.xml` добавьте в раздел следующий текст `<dependencies>` :
 
 ```xml
 <dependency>
@@ -103,7 +103,7 @@ notepad pom.xml
 | Версия кластера HDInsight | Используемая версия Apache HBase |
 | --- | --- |
 | 3.6 | 1.1.2 |
-| 4,0 | 2.0.0 |
+| 4.0 | 2.0.0 |
 
 Дополнительные сведения о версиях и компонентах HDInsight см. в статье [Что представляют собой различные компоненты Apache Hadoop, доступные в HDInsight?](../hdinsight-component-versioning.md)
 
@@ -111,7 +111,7 @@ notepad pom.xml
 
 Подключаемые модули Maven позволяют настроить этапы сборки проекта. Этот раздел используется для добавления подключаемых модулей, ресурсов и других параметров конфигурации сборки.
 
-Добавьте в `pom.xml` файл следующий код, а затем сохраните и закройте файл. Эти строки должны находиться в файле внутри тегов `<project>...</project>` (например, между тегами `</dependencies>` и `</project>`).
+Добавьте в файл следующий код `pom.xml` , а затем сохраните и закройте файл. Эти строки должны находиться в файле внутри тегов `<project>...</project>` (например, между тегами `</dependencies>` и `</project>`).
 
 ```xml
 <build>
@@ -179,7 +179,7 @@ scp sshuser@CLUSTERNAME-ssh.azurehdinsight.net:/etc/hbase/conf/hbase-site.xml ./
 
 ### <a name="implement-a-createtable-class"></a>Реализация класса CreateTable
 
-Введите следующую команду, чтобы создать и открыть новый файл `CreateTable.java`. Выберите **Да** в командной строке, чтобы создать новый файл.
+Введите следующую команду, чтобы создать и открыть новый файл `CreateTable.java` . Выберите **Да** в командной строке, чтобы создать новый файл.
 
 ```cmd
 notepad src\main\java\com\microsoft\examples\CreateTable.java
@@ -257,11 +257,11 @@ public class CreateTable {
 }
 ```
 
-Этот код представляет собой `CreateTable` класс, который создает таблицу с именем `people` и заполняет ее некоторыми предопределенными пользователями.
+Этот код представляет `CreateTable` собой класс, который создает таблицу с именем `people` и заполняет ее некоторыми предопределенными пользователями.
 
 ### <a name="implement-a-searchbyemail-class"></a>Реализация класса SearchByEmail
 
-Введите следующую команду, чтобы создать и открыть новый файл `SearchByEmail.java`. Выберите **Да** в командной строке, чтобы создать новый файл.
+Введите следующую команду, чтобы создать и открыть новый файл `SearchByEmail.java` . Выберите **Да** в командной строке, чтобы создать новый файл.
 
 ```cmd
 notepad src\main\java\com\microsoft\examples\SearchByEmail.java
@@ -342,11 +342,11 @@ public class SearchByEmail {
 }
 ```
 
-`SearchByEmail` Класс может использоваться для запроса строк по адресу электронной почты. При использовании класса можно задавать либо строку, либо регулярное выражение, так как используется фильтр регулярных выражений.
+`SearchByEmail`Класс может использоваться для запроса строк по адресу электронной почты. При использовании класса можно задавать либо строку, либо регулярное выражение, так как используется фильтр регулярных выражений.
 
 ### <a name="implement-a-deletetable-class"></a>Реализация класса DeleteTable
 
-Введите следующую команду, чтобы создать и открыть новый файл `DeleteTable.java`. Выберите **Да** в командной строке, чтобы создать новый файл.
+Введите следующую команду, чтобы создать и открыть новый файл `DeleteTable.java` . Выберите **Да** в командной строке, чтобы создать новый файл.
 
 ```cmd
 notepad src\main\java\com\microsoft\examples\DeleteTable.java
@@ -376,7 +376,7 @@ public class DeleteTable {
 }
 ```
 
-`DeleteTable` Класс очищает таблицы HBase, созданные в этом примере, отключая и удаляя таблицу, созданную `CreateTable` классом.
+`DeleteTable`Класс очищает таблицы HBase, созданные в этом примере, отключая и удаляя таблицу, созданную `CreateTable` классом.
 
 ## <a name="build-and-package-the-application"></a>Сборка и создание пакета приложения
 
@@ -425,12 +425,14 @@ public class DeleteTable {
 
     Вы получите следующие результаты:
 
-        Franklin Holtz - ID: 2
-        Franklin Holtz - franklin@contoso.com - ID: 2
-        Rae Schroeder - ID: 4
-        Rae Schroeder - rae@contoso.com - ID: 4
-        Gabriela Ingram - ID: 6
-        Gabriela Ingram - gabriela@contoso.com - ID: 6
+    ```console
+    Franklin Holtz - ID: 2
+    Franklin Holtz - franklin@contoso.com - ID: 2
+    Rae Schroeder - ID: 4
+    Rae Schroeder - rae@contoso.com - ID: 4
+    Gabriela Ingram - ID: 6
+    Gabriela Ingram - gabriela@contoso.com - ID: 6
+    ```
 
 5. Чтобы удалить таблицу, используйте следующую команду:
 
@@ -442,7 +444,7 @@ public class DeleteTable {
 
 В следующих шагах используется [модуль Azure PowerShell AZ](https://docs.microsoft.com/powershell/azure/new-azureps-module-az) для передачи JAR-файла в хранилище по умолчанию для кластера Apache HBase. Затем командлеты HDInsight используются для удаленного запуска примеров.
 
-1. После установки и настройки модуля AZ создайте файл с именем `hbase-runner.psm1`. В качестве содержимого файла добавьте следующий текст:
+1. После установки и настройки модуля AZ создайте файл с именем `hbase-runner.psm1` . В качестве содержимого файла добавьте следующий текст:
 
    ```powershell
     <#
@@ -684,12 +686,14 @@ public class DeleteTable {
 
     Будет использован класс `SearchByEmail` для поиска всех строк, у которых значение семейства столбцов `contactinformation` и столбца `email` содержит строку `contoso.com`. Вы получите следующие результаты:
 
-          Franklin Holtz - ID: 2
-          Franklin Holtz - franklin@contoso.com - ID: 2
-          Rae Schroeder - ID: 4
-          Rae Schroeder - rae@contoso.com - ID: 4
-          Gabriela Ingram - ID: 6
-          Gabriela Ingram - gabriela@contoso.com - ID: 6
+    ```output
+    Franklin Holtz - ID: 2
+    Franklin Holtz - franklin@contoso.com - ID: 2
+    Rae Schroeder - ID: 4
+    Rae Schroeder - rae@contoso.com - ID: 4
+    Gabriela Ingram - ID: 6
+    Gabriela Ingram - gabriela@contoso.com - ID: 6
+    ```
 
     Использование **fabrikam.com** для значения `-emailRegex` вернет список пользователей, у которых имеется строка **fabrikam.com** в поле электронного адреса. В качестве поискового запроса также можно использовать регулярные выражения. Например, **^r** возвращает адреса электронной почты, начинающиеся с буквы r.
 
@@ -703,6 +707,6 @@ public class DeleteTable {
 
 Используйте параметр `-showErr` для просмотра стандартной ошибки (STDERR), выдаваемой при выполнении задания.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 [Узнайте, как использовать SQLLine с Apache HBase.](apache-hbase-query-with-phoenix.md)

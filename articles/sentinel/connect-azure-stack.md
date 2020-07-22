@@ -13,10 +13,9 @@ ms.workload: na
 ms.date: 09/23/2019
 ms.author: yelevin
 ms.openlocfilehash: a8213bd57936f95870324950204dbd6c1473739a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77588524"
 ---
 # <a name="connect-azure-stack-virtual-machines-to-azure-sentinel"></a>Подключение Azure Stack виртуальных машин к Azure Sentinel
@@ -36,7 +35,7 @@ ms.locfileid: "77588524"
 
 1. На новой вкладке браузера Войдите на [портал Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-use-portal#access-the-portal).
 2. Перейдите на страницу **виртуальные машины** , выберите виртуальную машину, которую необходимо защитить с помощью Azure Sentinel. Сведения о том, как создать виртуальную машину на Azure Stack, см. в статье Создание виртуальной машины [Windows Server с помощью портала Azure Stack](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-quick-windows-portal) или [Создание виртуальной машины сервера Linux с помощью портала Azure Stack](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-quick-linux-portal).
-3. Выберите **расширения**. Появится список расширений виртуальных машин, которые установлены на этой виртуальной машине.
+3. Выберите **Расширения**. Появится список расширений виртуальных машин, которые установлены на этой виртуальной машине.
 4. Щелкните вкладку **Добавить** . Откроется колонка меню **новый ресурс** , в которой будет показан список доступных расширений виртуальной машины. 
 5. Выберите расширение **управления Azure Monitor, обновление и настройка** и нажмите кнопку **создать**. Откроется окно **Установка расширения** конфигурации.
 

@@ -14,10 +14,9 @@ ms.topic: article
 ms.date: 05/04/2016
 ms.author: mimckitt
 ms.openlocfilehash: df1f5e1c21c28fa8c1fcdef6b2278fb92014a3b1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81272565"
 ---
 # <a name="how-to-make-a-phone-call-using-twilio-in-a-web-role-on-azure"></a>Осуществление телефонных звонков с использованием Twilio в веб-роли Azure
@@ -28,7 +27,7 @@ ms.locfileid: "81272565"
 ## <a name="prerequisites"></a><a name="twilio-prereqs"></a>Предварительные требования
 Чтобы использовать код, представленный в этом разделе, выполните следующие действия:
 
-1. Получите учетную запись Twilio и маркер проверки подлинности из [консоли Twilio][twilio_console]. Чтобы приступить к работе с Twilio, зарегистрируйтесь [https://www.twilio.com/try-twilio][try_twilio]по адресу. Вы можете оценить цены по [https://www.twilio.com/pricing][twilio_pricing]адресу. Дополнительные сведения об API, предоставляемом Twilio, см [https://www.twilio.com/voice/api][twilio_api]. в разделе.
+1. Получите учетную запись Twilio и маркер проверки подлинности из [консоли Twilio][twilio_console]. Чтобы приступить к работе с Twilio, зарегистрируйтесь по адресу [https://www.twilio.com/try-twilio][try_twilio] . Вы можете оценить цены по адресу [https://www.twilio.com/pricing][twilio_pricing] . Дополнительные сведения об API, предоставляемом Twilio, см [https://www.twilio.com/voice/api][twilio_api] . в разделе.
 2. Добавьте *библиотеку Twilio .NET* в свою веб-роль. См. раздел **Добавление библиотек Twilio в проект веб-роли**далее в этом разделе.
 
 Для этого вам потребуется знание процесса, позволяющего создать базовую [веб-роль в Azure][azure_webroles_get_started].
@@ -147,17 +146,17 @@ namespace WebRole1
 
 ![Ответ на звонок Azure с использованием службы Twilio и ASP.NET][twilio_dotnet_basic_form_output]
 
-Дополнительные сведения о TwiML можно найти по адресу [https://www.twilio.com/docs/api/twiml][twiml]. Дополнительные сведения о &lt;скажите&gt; и других командах Twilio можно найти по адресу [https://www.twilio.com/docs/api/twiml/say][twilio_say].
+Дополнительные сведения о TwiML можно найти по адресу [https://www.twilio.com/docs/api/twiml][twiml] . Дополнительные сведения о &lt; скажите &gt; и других командах Twilio можно найти по адресу [https://www.twilio.com/docs/api/twiml/say][twilio_say] .
 
 ## <a name="next-steps"></a><a id="nextsteps"></a>Следующие шаги
 В этом коде демонстрируются базовые функциональные возможности службы Twilio в веб-роли ASP.NET в Azure. Возможно, перед развертыванием в рабочей среде Azure потребуется добавить в него дополнительные обработчики ошибок и другие функции. Пример:
 
 * Вместо веб-формы для хранения номеров телефона и текста звонков вы можете использовать хранилище BLOB-объектов Azure или экземпляр Базы данных SQL Azure. Дополнительные сведения об использовании больших двоичных объектов в Azure см. в статье [Приступая к работе с хранилищем BLOB-объектов Azure с помощью .NET][howto_blob_storage_dotnet]. Дополнительные сведения об использовании Базы данных SQL см. в статье [База данных SQL Azure: подключение и запрос данных с помощью .NET (C#)][howto_sql_azure_dotnet].
 * С помощью `RoleEnvironment.getConfigurationSettings` вы можете извлечь идентификатор учетной записи Twilio и маркер проверки подлинности из параметров конфигурации развертывания, не прописывая их в форме в виде фиксированных значений. Дополнительные сведения о классе `RoleEnvironment` см. в статье [Microsoft.WindowsAzure.ServiceRuntime Namespace][azure_runtime_ref_dotnet] (Пространство имен Microsoft.WindowsAzure.ServiceRuntime).
-* Ознакомьтесь с рекомендациями по безопасности [https://www.twilio.com/docs/security][twilio_docs_security]Twilio по адресу.
-* Дополнительные сведения о Twilio см [https://www.twilio.com/docs][twilio_docs]. по адресу.
+* Ознакомьтесь с рекомендациями по безопасности Twilio по адресу [https://www.twilio.com/docs/security][twilio_docs_security] .
+* Дополнительные сведения о Twilio см. по адресу [https://www.twilio.com/docs][twilio_docs] .
 
-## <a name="see-also"></a><a name="seealso"></a>См. также
+## <a name="see-also"></a><a name="seealso"></a> См. также
 * [Использование Twilio для поддержки голосовых вызовов и SMS в Azure](twilio-dotnet-how-to-use-for-voice-sms.md)
 
 [twilio_console]: https://www.twilio.com/console

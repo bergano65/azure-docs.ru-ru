@@ -16,6 +16,8 @@
       href: quickstart-migrate-local-jupyter-notebook.md
     - name: Использование настраиваемой среды
       href: quickstart-create-jupyter-notebook-project-environment.md
+    - name: Экспорт проекта
+      href: quickstart-export-jupyter-notebook-project.md
 - name: Учебники
   items:
     - name: Создание и запуск записной книжки

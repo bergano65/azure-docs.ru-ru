@@ -11,12 +11,12 @@ ms.workload: integration
 ms.topic: article
 ms.date: 04/20/2020
 ms.author: apimpm
-ms.openlocfilehash: 6edb639cacc48e8b59c458bcf0ac9c9c5e07b030
-ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
+ms.openlocfilehash: 93c686fb2688a7a8ae71d8156e6e5c7915d6c604
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82203576"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86205765"
 ---
 # <a name="upgrade-and-scale-an-azure-api-management-instance"></a>Обновление и масштабирование экземпляра управления API Azure  
 
@@ -29,7 +29,7 @@ ms.locfileid: "82203576"
 >[!NOTE]
 >В [этой статье](https://azure.microsoft.com/pricing/details/api-management/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) представлены примерные данные о производительности единиц для каждого уровня. Чтобы получить более точные сведения, изучите приближенный к реальному сценарий использования API. См. статью о [емкости экземпляра службы Azure "Управление API"](api-management-capacity.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнить шаги из этой статьи, понадобится следующее:
 
@@ -80,7 +80,8 @@ ms.locfileid: "82203576"
 При масштабировании от или до уровня разработчика будет просто. В противном случае время простоя отсутствует. 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Развертывание экземпляра службы управления Azure API в различных регионах Azure](api-management-howto-deploy-multi-region.md)
 - [Автоматическое масштабирование экземпляра службы управления API Azure](api-management-howto-autoscale.md)
+- [Оптимизируйте и сохраняйте расходы на облачные технологии](https://docs.microsoft.com/azure/cost-management-billing/costs/quick-acm-cost-analysis?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)

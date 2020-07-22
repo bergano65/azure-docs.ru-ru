@@ -1,22 +1,23 @@
 ---
-title: Входная привязка Azure Cosmos DB для функций 2. x
+title: Входная привязка Azure Cosmos DB для функций 2. x и более поздних версий
 description: Узнайте, как использовать входную привязку Azure Cosmos DB в функциях Azure.
 author: craigshoemaker
 ms.topic: reference
 ms.date: 02/24/2020
 ms.author: cshoe
-ms.openlocfilehash: eabcf40e28927919215979ccc46fa029d19adbfe
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.custom: tracking-python
+ms.openlocfilehash: 5e41f5d2189cce19dab3e0b48943ef0568ddedb8
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78943421"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85807015"
 ---
-# <a name="azure-cosmos-db-input-binding-for-azure-functions-2x"></a>Azure Cosmos DB входную привязку для функций Azure 2. x
+# <a name="azure-cosmos-db-input-binding-for-azure-functions-2x-and-higher"></a>Azure Cosmos DB входную привязку для функций Azure 2. x и более поздних версий
 
 Входная привязка Azure Cosmos DB извлекает один или несколько документов из Azure Cosmos DB и передает их входному параметру функции через API SQL. Идентификатор документа или параметры запроса можно определить по триггеру, который вызывает функцию.
 
-Дополнительные сведения об установке и сведениях о конфигурации см. в [обзоре](./functions-bindings-cosmosdb-v2.md).
+Сведения об установке и настройке см. в [этой обзорной статье](./functions-bindings-cosmosdb-v2.md).
 
 > [!NOTE]
 > Если коллекция [секционирована](../cosmos-db/partition-data.md#logical-partitions), операции уточняющего запроса необходимо также указать значение ключа секции.
@@ -53,7 +54,7 @@ namespace CosmosDBSamplesV2
 
 ### <a name="queue-trigger-look-up-id-from-json"></a>Триггер очереди, поисковый идентификатор из JSON 
 
-В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая получает один документ. Функция активируется сообщением из очереди, который содержит объект JSON. Триггер очереди анализирует JSON в объект типа `ToDoItemLookup`, который содержит идентификатор и значение ключа секции для поиска. Этот идентификатор и значение ключа секции используются для получения `ToDoItem` документа из указанной базы данных и коллекции.
+В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая получает один документ. Функция активируется сообщением из очереди, который содержит объект JSON. Триггер очереди анализирует JSON в объект типа `ToDoItemLookup` , который содержит идентификатор и значение ключа секции для поиска. Этот идентификатор и значение ключа секции используются для получения `ToDoItem` документа из указанной базы данных и коллекции.
 
 ```cs
 namespace CosmosDBSamplesV2
@@ -860,7 +861,7 @@ module.exports = function (context, req, toDoItem) {
       "name": "toDoItem",
       "databaseName": "ToDoItems",
       "collectionName": "Items",
-      "connection": "CosmosDBConnection",
+      "connectionStringSetting": "CosmosDBConnection",
       "direction": "in",
       "Id": "{id}",
       "PartitionKey": "{partitionKeyValue}"
@@ -1017,7 +1018,6 @@ def main(queuemsg: func.QueueMessage, documents: func.DocumentList) -> func.Docu
       "PartitionKey": "{Query.partitionKeyValue}"
     }
   ],
-  "disabled": true,
   "scriptFile": "__init__.py"
 }
 ```
@@ -1261,7 +1261,7 @@ public class DocByIdFromQueryStringPojo {
 
 ### <a name="http-trigger-look-up-id-from-route-data"></a>Триггер HTTP, поисковый идентификатор из данных маршрута
 
-В следующем примере показана функция Java, которая получает один документ. Функция активируется HTTP-запросом, который использует параметр Route для указания идентификатора и значения ключа секции для поиска. Этот идентификатор и значение ключа секции используются для получения документа из указанной базы данных и коллекции, возвращая его в виде ```Optional<String>```.
+В следующем примере показана функция Java, которая получает один документ. Функция активируется HTTP-запросом, который использует параметр Route для указания идентификатора и значения ключа секции для поиска. Этот идентификатор и значение ключа секции используются для получения документа из указанной базы данных и коллекции, возвращая его в виде ```Optional<String>``` .
 
 ```java
 public class DocByIdFromRoute {
@@ -1356,7 +1356,7 @@ public class DocByIdFromRouteSqlQuery {
 
 ### <a name="http-trigger-get-multiple-docs-from-route-data-using-sqlquery"></a>Триггер HTTP, получение нескольких документов из данных маршрута, используется SqlQuery
 
-В следующем примере показана функция Java, которая получает несколько документов. Функция активируется HTTP-запросом, использующим параметр ```desc``` маршрута, чтобы указать строку для поиска в ```description``` поле. Поисковый запрос используется для получения коллекции документов из указанной базы данных и коллекции. При этом результирующий набор преобразуется в ```ToDoItem[]``` и передается функции в качестве аргумента.
+В следующем примере показана функция Java, которая получает несколько документов. Функция активируется HTTP-запросом, использующим параметр маршрута, ```desc``` чтобы указать строку для поиска в ```description``` поле. Поисковый запрос используется для получения коллекции документов из указанной базы данных и коллекции. При этом результирующий набор преобразуется в ```ToDoItem[]``` и передается функции в качестве аргумента.
 
 ```java
 public class DocsFromRouteSqlQuery {
@@ -1408,35 +1408,35 @@ public class DocsFromRouteSqlQuery {
 
 # <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
-Атрибуты не поддерживаются скриптом C#.
+В скрипте C# атрибуты не поддерживаются.
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-Атрибуты не поддерживаются в JavaScript.
+В JavaScript атрибуты не поддерживаются.
 
 # <a name="python"></a>[Python](#tab/python)
 
-Атрибуты не поддерживаются в Python.
+В Python атрибуты не поддерживаются.
 
 # <a name="java"></a>[Java](#tab/java)
 
-В [библиотеке времени выполнения функций Java](https://docs.microsoft.com/java/api/overview/azure/functions/runtime)используйте `@CosmosDBOutput` заметку для параметров, которые записываются в Cosmos DB. Параметр аннотации должен иметь `OutputBinding<T>`тип, где `T` является либо собственным типом Java, либо POJO.
+В [библиотеке времени выполнения функций Java](https://docs.microsoft.com/java/api/overview/azure/functions/runtime)используйте `@CosmosDBOutput` заметку для параметров, которые записываются в Cosmos DB. Параметр аннотации должен иметь тип `OutputBinding<T>` , где `T` является либо собственным типом Java, либо POJO.
 
 ---
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 
-В следующей таблице описаны свойства конфигурации привязки, заданные в файле *Function. JSON* и `CosmosDB` атрибуте.
+В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `CosmosDB`.
 
 |свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
 |**type**     | н/д | Нужно задать значение `cosmosDB`.        |
-|**двух**     | н/д | Нужно задать значение `in`.         |
-|**name**     | н/д | Имя параметра привязки, представляющего документ в функции.  |
+|**direction**     | н/д | Нужно задать значение `in`.         |
+|**name**     | Недоступно | Имя параметра привязки, представляющего документ в функции.  |
 |**Имя** |**DatabaseName** |База данных, содержащая документ.        |
 |**collectionName** |**CollectionName** | Имя коллекции, содержащей документ. |
-|**идентификатор**    | **Id** | Идентификатор документа, который нужно получить. Это свойство поддерживает [выражения привязок](./functions-bindings-expressions-patterns.md). Не задавайте свойства `id` и **sqlQuery** . Если не задать ни одного из них, извлекается вся коллекция. |
-|**sqlQuery**  |**SqlQuery**  | SQL-запрос к Azure Cosmos DB, используемый для извлечения нескольких документов. Свойство поддерживает привязки времени выполнения, как показано в примере: `SELECT * FROM c where c.departmentId = {departmentId}`. Не устанавливайте `id` и свойства `sqlQuery` , и. Если не задать ни одного из них, извлекается вся коллекция.|
+|**идентификатор**    | **Id** | Идентификатор документа, который нужно получить. Это свойство поддерживает [выражения привязок](./functions-bindings-expressions-patterns.md). Не задавайте `id` Свойства и **sqlQuery** . Если не задать ни одного из них, извлекается вся коллекция. |
+|**sqlQuery**  |**SqlQuery**  | SQL-запрос к Azure Cosmos DB, используемый для извлечения нескольких документов. Свойство поддерживает привязки времени выполнения, как показано в примере: `SELECT * FROM c where c.departmentId = {departmentId}`. Не устанавливайте `id` и свойства, и `sqlQuery` . Если не задать ни одного из них, извлекается вся коллекция.|
 |**коннектионстрингсеттинг**     |**ConnectionStringSetting**|Имя параметра приложения, содержащего строку подключения к Azure Cosmos DB. |
 |**partitionKey**|**PartitionKey**|Задает значение ключа секции для поиска. Может включать параметры привязки. Он необходим для уточняющих запросов в [секционированных](../cosmos-db/partition-data.md#logical-partitions) коллекциях.|
 |**preferredLocations**| **PreferredLocations**| Используемых Определяет предпочтительные расположения (регионы) для геореплицированных учетных записей базы данных в службе Azure Cosmos DB. Значения должны быть разделены запятыми. Например, "Восточная часть США, Юго-Центральный регион США, Северная Европа". |

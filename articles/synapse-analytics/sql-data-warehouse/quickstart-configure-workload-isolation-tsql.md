@@ -6,17 +6,17 @@ author: ronortloff
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: quickstart
-ms.subservice: ''
+ms.subservice: sql-dw
 ms.date: 04/27/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 99c64e703158c40c2cc110a18be7b8c8d3800ff0
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 9132c9609961053e7f60344dc387b2a8d01bd6b9
+ms.sourcegitcommit: 6fd28c1e5cf6872fb28691c7dd307a5e4bc71228
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82207808"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85212995"
 ---
 # <a name="quickstart-configure-workload-isolation-using-t-sql"></a>Краткое руководство. Настройка изоляции рабочих нагрузок с помощью T-SQL
 
@@ -25,11 +25,11 @@ ms.locfileid: "82207808"
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
 > [!NOTE]
-> Создание экземпляра SQL Analytics в Azure Synapse Analytics может повлечь дополнительные расходы.  Дополнительные сведения см. на странице [цен на Azure Synapse Analytics](https://azure.microsoft.com/pricing/details/sql-data-warehouse/).
+> Создание экземпляра SQL Synapse в Azure Synapse Analytics может повлечь дополнительные расходы.  Дополнительные сведения см. на странице [цен на Azure Synapse Analytics](https://azure.microsoft.com/pricing/details/sql-data-warehouse/).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-В этом кратком руководстве предполагается, что у вас уже есть экземпляр SQL Analytics в Azure Synapse и права доступа к системе управления базой данных. Если его требуется создать, используйте инструкции из раздела [Создание хранилища данных SQL Azure на портале Azure и отправка запросов к этому хранилищу данных](create-data-warehouse-portal.md), чтобы создать хранилище данных **mySampleDataWarehouse**.
+В этом кратком руководстве предполагается, что у вас уже есть экземпляр Synapse SQL в Azure Synapse и права доступа к системе управления базой данных. Если его требуется создать, используйте инструкции из раздела [Создание хранилища данных SQL Azure на портале Azure и отправка запросов к этому хранилищу данных](create-data-warehouse-portal.md), чтобы создать хранилище данных **mySampleDataWarehouse**.
 
 ## <a name="create-login-for-dataloads"></a>Создание имени для входа для DataLoads
 

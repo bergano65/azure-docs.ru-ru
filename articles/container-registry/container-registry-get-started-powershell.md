@@ -4,12 +4,12 @@ description: Быстрый способ изучить создание час�
 ms.topic: quickstart
 ms.date: 01/22/2019
 ms.custom: seodec18, mvc
-ms.openlocfilehash: 872b2a29444e5278db34ce44741e2ca90d885702
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: ed0790f79ef4a83f42519ce6f89ee36f54558f4b
+ms.sourcegitcommit: 4ac596f284a239a9b3d8ed42f89ed546290f4128
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "74456373"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84752161"
 ---
 # <a name="quickstart-create-a-private-container-registry-using-azure-powershell"></a>Краткое руководство. Создание частного реестра контейнеров Docker с помощью Azure PowerShell
 
@@ -51,7 +51,7 @@ New-AzResourceGroup -Name myResourceGroup -Location EastUS
 $registry = New-AzContainerRegistry -ResourceGroupName "myResourceGroup" -Name "myContainerRegistry007" -EnableAdminUser -Sku Basic
 ```
 
-В этом кратком руководстве описано, как создать реестр ценовой категории *Базовый*. Это оптимальный (недорогой) вариант для разработчиков, которые знакомятся с Реестром контейнеров Azure. Дополнительные сведения об уровнях служб см. в статье [Номера SKU реестра контейнеров][container-registry-skus].
+В этом кратком руководстве описано, как создать реестр ценовой категории *Базовый*. Это оптимальный (недорогой) вариант для разработчиков, которые знакомятся с Реестром контейнеров Azure. Дополнительные сведения об уровнях служб см. в статье [Уровни служб реестра контейнеров][container-registry-skus].
 
 ## <a name="log-in-to-registry"></a>Вход в раздел реестра
 
@@ -86,7 +86,10 @@ Remove-AzResourceGroup -Name myResourceGroup
 С помощью этого краткого руководства вы создали Реестр контейнеров Azure с использованием Azure PowerShell, отправили образ контейнера в него, а затем извлекли этот образ оттуда и запустили его. Чтобы продолжить работу с Реестром контейнеров Azure, перейдите к следующим руководствам.
 
 > [!div class="nextstepaction"]
-> [Руководства по использованию Реестра контейнеров Azure][container-registry-tutorial-quick-task]
+> [Руководства по использованию Реестра контейнеров Azure][container-registry-tutorial-prepare-registry]
+
+> [!div class="nextstepaction"]
+> [Руководство. Создание и развертывание образов контейнера в облаке с помощью службы "Задачи Реестра контейнеров Azure"][container-registry-tutorial-quick-task]
 
 <!-- LINKS - external -->
 [docker-linux]: https://docs.docker.com/engine/installation/#supported-platforms
@@ -105,3 +108,4 @@ Remove-AzResourceGroup -Name myResourceGroup
 [Remove-AzResourceGroup]: /powershell/module/az.resources/remove-azresourcegroup
 [container-registry-tutorial-quick-task]: container-registry-tutorial-quick-task.md
 [container-registry-skus]: container-registry-skus.md
+[container-registry-tutorial-prepare-registry]: container-registry-tutorial-prepare-registry.md

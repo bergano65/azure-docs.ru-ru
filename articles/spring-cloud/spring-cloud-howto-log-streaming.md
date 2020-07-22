@@ -7,10 +7,9 @@ ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 01/14/2019
 ms.openlocfilehash: fc208a3542528fb4554a365a02e13c2da3055cf2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78192206"
 ---
 # <a name="stream-azure-spring-cloud-app-logs-in-real-time"></a>Потоковая передача журналов приложения в Azure Spring Cloud в реальном времени
@@ -22,7 +21,7 @@ Azure Веснного облака позволяет выполнять пот
 * Экземпляр **Azure веснного облака** с выполняющимся приложением, например [пружинное приложение Cloud](./spring-cloud-quickstart-launch-app-cli.md).
 
 > [!NOTE]
->  Расширение интерфейса командной строки ASC обновляется с версии 0.2.0 до 0.2.1. Это изменение влияет на синтаксис команды для потоковой передачи журнала: `az spring-cloud app log tail`, который заменяется на `az spring-cloud app logs`:. Команда: `az spring-cloud app log tail` будет нерекомендуемой в будущих выпусках. Если вы используете версию 0.2.0, можно выполнить обновление до 0.2.1. Сначала удалите старую версию с помощью команды: `az extension remove -n spring-cloud`.  Затем установите 0.2.1 с помощью команды: `az extension add -n spring-cloud`.
+>  Расширение интерфейса командной строки ASC обновляется с версии 0.2.0 до 0.2.1. Это изменение влияет на синтаксис команды для потоковой передачи журнала: `az spring-cloud app log tail` , который заменяется на: `az spring-cloud app logs` . Команда: `az spring-cloud app log tail` будет нерекомендуемой в будущих выпусках. Если вы используете версию 0.2.0, можно выполнить обновление до 0.2.1. Сначала удалите старую версию с помощью команды: `az extension remove -n spring-cloud` .  Затем установите 0.2.1 с помощью команды: `az extension add -n spring-cloud` .
 
 ## <a name="use-cli-to-tail-logs"></a>Использование интерфейса командной строки для заключительного фрагмента журналов
 
@@ -50,7 +49,7 @@ az spring-cloud app logs -n auth-service
 ```
 
 ### <a name="tail-log-for-app-with-multiple-instances"></a>Заключительный фрагмент журнала для приложения с несколькими экземплярами
-Если для приложения существует несколько экземпляров `auth-service`, журнал экземпляра можно просмотреть с помощью `-i/--instance` параметра. 
+Если для приложения существует несколько экземпляров `auth-service` , журнал экземпляра можно просмотреть с помощью `-i/--instance` параметра. 
 
 Сначала можно получить имена экземпляров приложения с помощью следующей команды.
 

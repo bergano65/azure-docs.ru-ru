@@ -12,19 +12,20 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 01/08/2020
-ms.openlocfilehash: 8d538deca610fd9981d401d28b6bea1c31c6d4c8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 20ca7f1d9c8322fe9a4d5dd784768bdaaf7cd0d7
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80298869"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85314936"
 ---
-# <a name="tutorial-migrate-rds-sql-server-to-azure-sql-database-or-an-azure-sql-database-managed-instance-online-using-dms"></a>Руководство. Миграция SQL Server RDS в базу данных SQL Azure или управляемый экземпляр базы данных SQL Azure в сети с помощью DMS
-Azure Database Migration Service можно использовать для переноса баз данных из экземпляра SQL Server RDS в [Базу данных SQL Azure](https://docs.microsoft.com/azure/sql-database/) или [Управляемый экземпляр Базы данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-index) с минимальным временем простоя в работе приложений. В этом учебнике выполняется перенос базы данных **Adventureworks2012**, восстановленной в экземпляре SQL Server RDS версии SQL Server 2012 (или более поздней), в Базу данных SQL Azure или Управляемый экземпляр Базы данных SQL Azure с помощью Azure Database Migration Service.
+# <a name="tutorial-migrate-rds-sql-server-to-azure-sql-database-or-an-azure-sql-managed-instance-online-using-dms"></a>Руководство по переносу SQL Server RDS в базу данных SQL Azure или Azure SQL Управляемый экземпляр Online с помощью DMS
 
-В этом руководстве описано следующее:
+Вы можете использовать Azure Database Migration Service для переноса баз данных из экземпляра RDS SQL Server в [базу данных SQL Azure](https://docs.microsoft.com/azure/sql-database/) или [управляемый экземпляр Azure SQL](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-index) с минимальным временем простоя. В этом руководстве вы перенесете базу данных **Adventureworks2012** , восстановленную в экземпляре RDS SQL Server SQL Server 2012 (или более поздней версии), в базу данных sql или управляемый экземпляр SQL с помощью Azure Database Migration Service.
+
+В этом руководстве вы узнаете, как:
 > [!div class="checklist"]
-> * создание экземпляра Базы данных SQL Azure или Управляемого экземпляра Базы данных SQL Azure; 
+> * Создание базы данных в базе данных SQL Azure или Управляемый экземпляр SQL. 
 > * перенос примера схемы с помощью помощника по миграции данных;
 > * создание экземпляра Azure Database Migration Service;
 > * создание проекта миграции с помощью Azure Database Migration Service;
@@ -40,19 +41,16 @@ Azure Database Migration Service можно использовать для пе
 
 [!INCLUDE [online-offline](../../includes/database-migration-service-offline-online.md)]
 
-В этой статье описывается перенос данных из SQL Server RDS в Базу данных SQL Azure или Управляемый экземпляр Базы данных SQL Azure по сети.
+В этой статье описывается оперативная миграция из RDS SQL Server в базу данных SQL или Управляемый экземпляр SQL.
 
 ## <a name="prerequisites"></a>Предварительные требования
+
 Для работы с этим руководством вам потребуется следующее:
 
 * Создайте [базу данных SQL Server RDS](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.CreatingConnecting.SQLServer.html).
-* Создайте экземпляр Базы данных SQL Azure, следуя инструкциям из статьи [Quickstart: Create a single database in Azure SQL Database using the Azure portal](https://docs.microsoft.com/azure/sql-database/sql-database-get-started-portal) (Краткое руководство. Создание отдельной базы данных в Базе данных SQL с помощью портала Azure).
-
-    > [!NOTE]
-    > Если вы переносите данные в Управляемый экземпляр Базы данных SQL Azure, следуйте инструкциям из статьи [Краткое руководство. Создание Управляемого экземпляра Базы данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-get-started) и создайте пустую базу данных с названием **AdventureWorks2012**. 
- 
+* [Создайте базу данных в базе данных SQL Azure на портал Azure](https://docs.microsoft.com/azure/sql-database/sql-database-get-started-portal) или [Создайте базу данных в управляемый экземпляр SQL](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-get-started), а затем создайте пустую базу данных с именем **AdventureWorks2012**. 
 * Скачайте и установите [Помощник по миграции данных](https://www.microsoft.com/download/details.aspx?id=53595) (DMA) версии 3.3 или более поздней.
-* Создайте виртуальная сеть Microsoft Azure для Azure Database Migration Service с помощью модели развертывания Azure Resource Manager. При переходе на управляемый экземпляр базы данных SQL Azure необходимо создать экземпляр DMS в той же виртуальной сети, которая используется для управляемого экземпляра базы данных SQL Azure, но в другой подсети.  Кроме того, если для DMS используется другая виртуальная сеть, необходимо создать пиринг между двумя виртуальными сетями. Дополнительные сведения о создании виртуальной сети см. в [документации по виртуальной сети](https://docs.microsoft.com/azure/virtual-network/), особенно в кратком руководстве, где приведены пошаговые инструкции.
+* Создайте виртуальная сеть Microsoft Azure для Azure Database Migration Service с помощью модели развертывания Azure Resource Manager. Если выполняется миграция на Управляемый экземпляр SQL, создайте экземпляр DMS в той же виртуальной сети, которая используется для Управляемый экземпляр SQL, но в другой подсети.  Кроме того, если для DMS используется другая виртуальная сеть, необходимо создать пиринг между двумя виртуальными сетями. Дополнительные сведения о создании виртуальной сети см. в [документации по виртуальной сети](https://docs.microsoft.com/azure/virtual-network/), особенно в кратком руководстве, где приведены пошаговые инструкции.
 
     > [!NOTE]
     > При установке виртуальной сети с помощью ExpressRoute с пирингом сети в корпорацию Майкрософт добавьте следующие [конечные точки](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview) службы в подсеть, в которой будет подготовлена служба:
@@ -66,9 +64,9 @@ Azure Database Migration Service можно использовать для пе
 * Убедитесь, что правила группы безопасности сети виртуальной сети не блокируют следующие порты входящих подключений для Azure Database Migration Service: 443, 53, 9354, 445, 12000. Дополнительные сведения о фильтрации трафика NSG в виртуальной сети см. в статье [Фильтрация сетевого трафика с помощью групп безопасности сети](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg).
 * Настройте [брандмауэр Windows для доступа к ядру СУБД](https://docs.microsoft.com/sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access).
 * Откройте брандмауэр Windows, чтобы предоставить Azure Database Migration Service доступ к исходному серверу SQL Server. По умолчанию это TCP-порт 1433.
-* Создайте [правило брандмауэра](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure) уровня сервера для сервера Базы данных SQL Azure, чтобы предоставить службе Azure Database Migration Service доступ к целевым базам данных. Укажите диапазон подсети виртуальной сети, используемый для Azure Database Migration Service.
+* Для базы данных SQL создайте [правило брандмауэра](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure) на уровне сервера, чтобы разрешить Azure Database Migration Service доступ к целевой базе данных. Укажите диапазон подсети виртуальной сети, используемый для Azure Database Migration Service.
 * Убедитесь, что учетные данные, используемые для подключения к исходному экземпляру SQL Server RDS, принадлежат учетной записи с ролью сервера Processadmin и ролью базы данных db_owner во всех базах данных, которые необходимо перенести.
-* Если вы переносите данные в Управляемый экземпляр Базы данных SQL Azure, убедитесь, что учетные данные, используемые для подключения к целевому экземпляру Базы данных SQL Azure, имеют разрешения CONTROL DATABASE в целевых базах данных SQL Azure и роль системного администратора.
+* Убедитесь, что учетные данные, используемые для подключения к целевой базе данных, имеют разрешение CONTROL DATABASE на целевую базу данных в базе данных SQL и член роли sysadmin при миграции в базу данных в SQL Управляемый экземпляр.
 * Требуемая версия исходного сервера SQL Server RDS — SQL Server 2012 и выше. См. дополнительные сведения о том, как [определить версию, выпуск и уровень обновления системы SQL Server и ее компонентов](https://support.microsoft.com/help/321185/how-to-determine-the-version-edition-and-update-level-of-sql-server-an).
 * Включите отслеживание измененных данных (CDC) в базе данных SQL Server RDS и во всех пользовательских таблицах, выбранных для переноса.
     > [!NOTE]
@@ -87,26 +85,31 @@ Azure Database Migration Service можно использовать для пе
     @supports_net_changes = 1 --for PK table 1, non PK tables 0
     GO
     ```
-* Отключите триггеры в целевой базе данных SQL Azure.
+* Отключите триггеры базы данных в целевой базе данных.
     > [!NOTE]
-    > Триггеры в целевой базе данных SQL Azure можно найти с помощью следующего запроса:
+    > Триггеры базы данных в целевой базе данных можно найти с помощью следующего запроса:
     ```
     Use <Database name>
+    go
     select * from sys.triggers
     DISABLE TRIGGER (Transact-SQL)
     ```
     Дополнительные сведения см. в статье [DISABLE TRIGGER (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/disable-trigger-transact-sql?view=sql-server-2017).
 
 ## <a name="migrate-the-sample-schema"></a>Перенос примера схемы
-Для переноса схемы в Базу данных SQL Azure используйте Помощник по миграции данных.
+Используйте DMA для переноса схемы.
 
 > [!NOTE]
-> Прежде чем создавать проект миграции в Помощнике по миграции данных, убедитесь, что База данных SQL Azure уже подготовлена, как описано выше. В рамках этого руководства для базы данных SQL Azure используется имя **AdventureWorks2012**, но вы можете назвать ее иначе.
+> Перед созданием проекта миграции в DMA убедитесь, что вы уже подготовили базу данных в базе данных SQL или Управляемый экземпляр SQL, как упоминалось в предварительных требованиях. В рамках этого руководства предполагается, что имя базы данных **AdventureWorks2012**, но вы можете указать любое имя.
 
-Чтобы перенести схему **AdventureWorks2012** в Базу данных SQL Azure, выполните следующие действия:
+Чтобы перенести схему **AdventureWorks2012** , выполните следующие действия.
 
 1. В Помощнике по миграции данных щелкните значок New (+) (Создать (+)), а затем в разделе **Project type** (Тип проекта) выберите **Migration** (Миграция).
 2. Укажите имя проекта в текстовом поле **Source server type** (Тип исходного сервера), выберите **SQL Server**, а затем в текстовом поле **Target server type** (Тип целевого сервера) выберите **База данных SQL Azure**.
+
+    > [!NOTE]
+    > В качестве типа целевого сервера выберите **база данных SQL Azure** для миграции в базу данных SQL Azure, а также в SQL управляемый экземпляр.
+
 3. В разделе **Migration Scope** (Область переноса) выберите **Schema only** (Только схема).
 
     После выполнения предыдущих действий интерфейс Помощника по миграции данных должен выглядеть, как показано на следующем рисунке:
@@ -118,11 +121,11 @@ Azure Database Migration Service можно использовать для пе
 
     ![Сведения о подключении к источнику в помощнике по миграции данных](media/tutorial-rds-sql-to-azure-sql-and-managed-instance/dma-source-connect.png)
 
-6. В разделе **Подключиться к целевому серверу** выберите **Далее**, укажите сведения о подключении к целевому объекту для базы данных SQL Azure, щелкните **Подключить**, а затем выберите базу данных **AdventureWorksAzure**, предварительно подготовленную в Базе данных SQL Azure.
+6. Нажмите кнопку **Далее**, в разделе **Подключение к целевому серверу**укажите сведения о целевом подключении для базы данных в базе данных SQL или управляемый экземпляр SQL, нажмите кнопку **подключить**, а затем выберите базу данных **адвентуреворксазуре** , которую вы предварительно подготовили.
 
     ![Сведения о подключении к целевому объекту в помощнике по миграции данных](media/tutorial-rds-sql-to-azure-sql-and-managed-instance/dma-target-connect.png)
 
-7. Выберите **Далее**, чтобы перейти на экран **Выбор объектов**, на котором можно указать объекты схемы в базе данных **AdventureWorks2012**, которую нужно развернуть в Базе данных SQL Azure.
+7. Нажмите кнопку **Далее** , чтобы перейти к экрану **Выбор объектов** , на котором можно указать объекты схемы в базе данных **AdventureWorks2012** , которые необходимо развернуть.
 
     По умолчанию выбраны все объекты.
 
@@ -132,7 +135,7 @@ Azure Database Migration Service можно использовать для пе
 
     ![Скрипт схемы](media/tutorial-rds-sql-to-azure-sql-and-managed-instance/dma-schema-script.png)
 
-9. Выберите **Deploy schema** (Развернуть схему), чтобы развернуть схему в Базе данных SQL Azure, а затем проверьте целевой сервер на наличие аномалий.
+9. Выберите **развернуть схему** , чтобы развернуть схему, а затем после развертывания схемы проверьте целевое значение на наличие аномалий.
 
     ![Развертывание схемы](media/tutorial-rds-sql-to-azure-sql-and-managed-instance/dma-schema-deploy.png)
 
@@ -146,7 +149,7 @@ Azure Database Migration Service можно использовать для пе
 
     ![Отображение поставщиков ресурсов](media/tutorial-sql-server-to-azure-sql-online/portal-select-resource-provider.png)
 
-3. Найдите миграцию, а затем справа от **Microsoft. Migration**выберите **Register**.
+3. В поле поиска введите migration, а затем справа от **Microsoft.DataMigration** щелкните **Зарегистрировать**.
 
     ![Регистрация поставщика ресурсов](media/tutorial-rds-sql-to-azure-sql-and-managed-instance/portal-register-resource-provider.png)    
 
@@ -166,7 +169,7 @@ Azure Database Migration Service можно использовать для пе
 
 5. Выберите существующую виртуальную сеть или создайте новую.
 
-    Виртуальная сеть предоставляет Azure Database Migration Service с доступом к исходным SQL Server и целевому экземпляру базы данных SQL Azure.
+    Виртуальная сеть предоставляет Azure Database Migration Service с доступом к исходной SQL Server и целевой базе данных SQL или Управляемый экземпляр SQL.
 
     Дополнительные сведения о создании виртуальной сети в портал Azure см. в статье [Создание виртуальной сети с помощью портал Azure](https://aka.ms/DMSVnet).
 
@@ -194,7 +197,7 @@ Azure Database Migration Service можно использовать для пе
 4. На экране **New migration project** (Новый проект миграции) задайте имя проекта, в текстовом поле **Source server type** (Тип исходного сервера) выберите **AWS RDS для SQL Server**, а в текстовом поле **Target server type** (Тип целевого сервера) — **База данных SQL Azure**.
 
     > [!NOTE]
-    > В качестве типа целевого сервера выберите **База данных SQL Azure**, чтобы выполнить миграцию в отдельную Базу данных SQL Azure и Управляемый экземпляр Базы данных SQL.
+    > В качестве типа целевого сервера выберите **база данных SQL Azure** для миграции в базу данных SQL, а также в SQL управляемый экземпляр.
 
 5. В разделе **Выбор типа действия** выберите **Перенос данных в сети**.
 
@@ -206,7 +209,7 @@ Azure Database Migration Service можно использовать для пе
     > [!NOTE]
     > Кроме того, вы можете выбрать **Создать только проект**, чтобы создать проект миграции для отложенного выполнения.
 
-6. Щелкните **Сохранить**.
+6. Нажмите кнопку **Сохранить**.
 
 7. Выберите **Создать и выполнить действие**, чтобы создать проект и выполнить действие миграции.
 
@@ -229,7 +232,7 @@ Azure Database Migration Service можно использовать для пе
 
 ## <a name="specify-target-details"></a>Указание сведений о цели
 
-1. Выберите **Сохранить**, а затем на экране **Данные целевого объекта** укажите сведения о подключении для целевого сервера Базы данных SQL Azure — предварительно подготовленной базы данных SQL Azure, где была развернута схема **AdventureWorks2012** с использованием Помощника по миграции данных.
+1. Нажмите кнопку **сохранить**, а затем на экране **сведения о целевом объекте миграции** укажите сведения о подключении для целевой базы данных в Azure.
 
     ![Выбор цели](media/tutorial-rds-sql-to-azure-sql-and-managed-instance/dms-select-target3.png)
 
@@ -241,13 +244,13 @@ Azure Database Migration Service можно использовать для пе
 
 3. На экране **Выбрать таблицы** выберите **Сохранить**, разверните список таблиц и просмотрите список затронутых полей.
 
-    Azure Database Migration Service автоматически выбирает все пустые исходные таблицы в целевом экземпляре Базы данных SQL. Чтобы повторно перенести таблицы, уже содержащие данные, необходимо явным образом выбрать их на этом экране.
+    Azure Database Migration Service автоматически выбирает все пустые исходные таблицы, существующие в целевой базе данных. Чтобы повторно перенести таблицы, уже содержащие данные, необходимо явным образом выбрать их на этом экране.
 
     ![Выбор таблиц](media/tutorial-rds-sql-to-azure-sql-and-managed-instance/dms-configure-setting-activity4.png)
 
 4. Установите перечисленные ниже **расширенные параметры миграции по сети** и нажмите кнопку **Сохранить**.
 
-    | Параметр | Описание |
+    | Параметр | Описание: |
     | ------------- | ------------- |
     | **Максимальное число параллельно загружаемых таблиц** | Определяет, сколько таблиц служба DMS обрабатывает параллельно во время миграции. Значение по умолчанию — 5, но можно установить другое значение, которое будет оптимально соответствовать особым требованиям, определенным на этапе тестовых миграций (если такие проводились). |
     | **При усечении исходной таблицы** | Определяет, усекает ли служба DMS целевую таблицу во время миграции. Этот параметр может быть полезен, если таблицы усекаются во время миграции. |
@@ -285,13 +288,13 @@ Azure Database Migration Service можно использовать для пе
 
 2. Обязательно остановите все входящие транзакции в исходную базу данных. Подождите, пока в счетчике **Ожидающие изменения** появится значение **0**.
 3. Выберите **Подтвердить**, а затем — **Применить**.
-4. Когда состояние миграции базы данных изменится на **Завершено**, подключите свои приложения к новой целевой базе данных SQL Azure.
+4. Когда состояние переноса базы данных изменится на **завершено**, Подключите свои приложения к новой целевой базе данных.
 
     ![Состояние действия — завершено](media/tutorial-rds-sql-to-azure-sql-and-managed-instance/dms-activity-completed.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* Дополнительные сведения об известных проблемах и ограничениях при миграции по сети в Базу данных SQL Azure см. в [этой статье](known-issues-azure-sql-online.md).
-* См. дополнительные сведения о [службе Azure Database Migration Service](https://docs.microsoft.com/azure/dms/dms-overview).
-* Дополнительные сведения о службе "База данных SQL Azure" см. в [этой статье](https://docs.microsoft.com/azure/sql-database/sql-database-technical-overview).
-* Дополнительные сведения об Управляемых экземплярах Базы данных SQL Azure см. в [этой статье](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-index).
+* Сведения об известных проблемах и ограничениях при выполнении оперативной миграции в Azure см. в статье [Известные проблемы и решения для оперативной миграции](known-issues-azure-sql-online.md).
+* Дополнительные сведения о Database Migration Service см. в статье [что такое Database Migration Service?](https://docs.microsoft.com/azure/dms/dms-overview).
+* Дополнительные сведения о базе данных SQL см. в статье [что такое служба базы данных SQL?](https://docs.microsoft.com/azure/sql-database/sql-database-technical-overview).
+* Сведения об управляемых экземплярах SQL см. в статье [что такое sql управляемый экземпляр](https://docs.microsoft.com/azure/azure-sql/managed-instance/sql-managed-instance-paas-overview).

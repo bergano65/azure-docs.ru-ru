@@ -12,10 +12,9 @@ ms.workload: infrastructure-services
 ms.date: 04/26/2017
 ms.author: damendo
 ms.openlocfilehash: 18619cc0f7a21a39d0802575c484c68c5fa1a624
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76840763"
 ---
 # <a name="introduction-to-effective-security-rules-view-in-azure-network-watcher"></a>Общие сведения о действующем представлении правил безопасности в наблюдателе за сетями Azure
@@ -32,7 +31,7 @@ ms.locfileid: "76840763"
 
 ![Детализация][2]
 
-### <a name="next-steps"></a>Дальнейшие действия
+### <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте, как выполнять аудит параметров группы безопасности сети, ознакомившись с разделом [Automate NSG auditing with Azure Network Watcher Security group view](network-watcher-nsg-auditing-powershell.md) (Автоматизация аудита NSG с помощью представления групп безопасности Наблюдателя за сетями Azure).
 

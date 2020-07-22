@@ -2,22 +2,21 @@
 title: Управление согласия для приложений и оценка запросов на согласие в Azure AD
 description: Узнайте, как управлять запросами на согласие, когда согласие пользователя отключено или ограничено, и как оценить запрос согласия администратора на уровне клиента для приложения.
 services: active-directory
-author: psignoret
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 12/27/2019
-ms.author: mimart
+ms.author: kenwith
 ms.reviewer: phsignor
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0451fe18629a572c9b49f14924bfa50293f42a2b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 5a725eefd678720f2d9b8763277b02452819155b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77367851"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84763199"
 ---
 # <a name="managing-consent-to-applications-and-evaluating-consent-requests"></a>Управление согласия для приложений и оценка запросов на согласие
 
@@ -116,6 +115,6 @@ ms.locfileid: "77367851"
 
 [Настройка согласия конечных пользователей для приложений](configure-user-consent.md)
 
-[Разрешения и согласие на платформе Microsoft Identity](../develop/active-directory-v2-scopes.md)
+[Разрешения и согласие для платформы удостоверений Майкрософт](../develop/active-directory-v2-scopes.md)
 
-[Azure AD на StackOverflow](https://stackoverflow.com/questions/tagged/azure-active-directory)
+[Azure AD в StackOverflow](https://stackoverflow.com/questions/tagged/azure-active-directory)

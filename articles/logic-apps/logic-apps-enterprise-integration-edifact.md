@@ -9,10 +9,10 @@ ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 04/22/2020
 ms.openlocfilehash: c9d80ccac311b02d8734663d99a37804f8280771
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82115539"
 ---
 # <a name="exchange-edifact-messages-for-b2b-enterprise-integration-in-azure-logic-apps-with-enterprise-integration-pack"></a>Обмен сообщениями EDIFACT для интеграции с предприятием B2B в Azure Logic Apps с помощью Пакета интеграции Enterprise
@@ -254,8 +254,8 @@ ms.locfileid: "82115539"
 Дополнительные технические сведения об этом соединителе, такие как действия и ограничения, описанные в файле Swagger соединителя, см. на [странице справочника по соединителю](https://docs.microsoft.com/connectors/edifact/).
 
 > [!NOTE]
-> Для приложений логики в [среде службы интеграции (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md)эта версия этого соединителя использует [ограничения сообщений B2B для интегрированной среды сценариев](../logic-apps/logic-apps-limits-and-config.md#b2b-protocol-limits).
+> Для приложений логики в [среде службы интеграции (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md) эта помеченная как ISE версия соединителя [использует ограничения сообщений B2B для ISE](../logic-apps/logic-apps-limits-and-config.md#b2b-protocol-limits).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * См. дополнительные сведения о других [соединителях Logic Apps](../connectors/apis-list.md).

@@ -10,12 +10,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 03/12/2018
 ms.author: damaerte
-ms.openlocfilehash: 58d795a5aee79e4149864a79a923ce34950b31d6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 3001e814a5f31725bfc78385d2435bbb0e971d40
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79458075"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86513026"
 ---
 # <a name="quickstart-for-bash-in-azure-cloud-shell"></a>Краткое руководство по Bash в Azure Cloud Shell
 
@@ -26,7 +26,7 @@ ms.locfileid: "79458075"
 
 ## <a name="start-cloud-shell"></a>Запуск Cloud Shell
 1. Запустите **Cloud Shell** в верхней области навигации портал Azure. <br>
-![](media/quickstart/shell-icon.png)
+![Снимок экрана, показывающий, как запустить Azure Cloud Shell в портал Azure.](media/quickstart/shell-icon.png)
 
 2. Выберите подписку для создания учетной записи хранения и общей папки для службы файлов Microsoft Azure.
 3. Нажмите кнопку "Создать хранилище".
@@ -36,7 +36,7 @@ ms.locfileid: "79458075"
 
 ### <a name="select-the-bash-environment"></a>Выбор среды Bash
 Убедитесь, что в раскрывающемся списке сред в левой части окна оболочки отображается пункт `Bash`. <br>
-![](media/quickstart/env-selector.png)
+![Снимок экрана, показывающий, как выбрать среду bash для Azure Cloud Shell.](media/quickstart/env-selector.png)
 
 ### <a name="set-your-subscription"></a>Настройка подписки
 1. Выведите список подписок, к которым у вас есть доступ.
@@ -44,10 +44,11 @@ ms.locfileid: "79458075"
    az account list
    ```
 
-2. Задайте предпочитаемую подписку: <br>
-```azurecli-interactive
-az account set --subscription 'my-subscription-name'
-```
+2. Задайте предпочитаемую подписку:
+
+   ```azurecli-interactive
+   az account set --subscription 'my-subscription-name'
+   ```
 
 > [!TIP]
 > Подписка будет сохранена для последующих сеансов в файле `/home/<user>/.azure/azureProfile.json`.
@@ -73,7 +74,7 @@ az vm create -n myVM -g MyRG --image UbuntuLTS --generate-ssh-keys
 ### <a name="ssh-into-your-linux-vm"></a>SSH-подключение к виртуальной машине Linux
 1. Найдите имя виртуальной машины на панели поиска портала Azure.
 2. Щелкните "Подключиться", чтобы получить имя и общедоступный IP-адрес виртуальной машины. <br>
-   ![](media/quickstart/sshcmd-copy.png)
+   ![Снимок экрана, показывающий, как подключиться к Linux V с помощью S H.](media/quickstart/sshcmd-copy.png)
 
 3. Подключитесь к виртуальной машине по протоколу SSH с помощью команды `ssh`.
    ```
@@ -81,7 +82,7 @@ az vm create -n myVM -g MyRG --image UbuntuLTS --generate-ssh-keys
    ```
 
 После установки SSH-подключения отобразится строка приветствия Ubuntu. <br>
-![](media/quickstart/ubuntu-welcome.png)
+![Снимок экрана, показывающий инициализацию Ubuntu и приветствие после установки подключения S H.](media/quickstart/ubuntu-welcome.png)
 
 ## <a name="cleaning-up"></a>Очистка. 
 1. Закройте сеанс SSH.
@@ -94,7 +95,7 @@ az vm create -n myVM -g MyRG --image UbuntuLTS --generate-ssh-keys
    az group delete -n MyRG
    ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Дополнительные сведения о сохранении файлов для Bash в Cloud Shell.](persisting-shell-storage.md) <br>
 [Справочник команд Azure CLI](https://docs.microsoft.com/cli/azure/) <br>
 [Общие сведения о службе файлов Azure](../storage/files/storage-files-introduction.md) <br>

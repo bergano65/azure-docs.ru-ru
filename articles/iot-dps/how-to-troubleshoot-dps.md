@@ -9,10 +9,9 @@ ms.topic: conceptual
 ms.date: 09/09/2019
 ms.author: xujing
 ms.openlocfilehash: 3cbab09c6b50abb590cfe9f2720713a8fa547aa7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75646478"
 ---
 # <a name="troubleshooting-with-azure-iot-hub-device-provisioning-service"></a>Устранение неполадок с помощью службы подготовки устройств для центра Интернета вещей Azure
@@ -58,7 +57,7 @@ ms.locfileid: "75646478"
 
 5. Включите сбор нужных журналов.
 
-    | Имя журнала | Описание |
+    | Имя журнала | Описание: |
     |-------|------------|
     | DeviceOperations | Журналы, связанные с событиями подключения устройства |
     | ServiceOperations | Журналы событий, связанные с использованием пакета SDK для службы (например, создание или обновление групп регистрации)|
@@ -69,7 +68,7 @@ ms.locfileid: "75646478"
 
 8. Нажмите кнопку **выполнить** , чтобы просмотреть последние события.
 
-9. При наличии результатов `OperationName`найдите, `ResultType`, `ResultSignature`и `ResultDescription` (сообщение об ошибке), чтобы получить более подробные сведения об ошибке.
+9. При наличии результатов найдите `OperationName` , `ResultType` , `ResultSignature` и `ResultDescription` (сообщение об ошибке), чтобы получить более подробные сведения об ошибке.
 
 
 ## <a name="common-error-codes"></a>Коды распространенных ошибок
@@ -82,4 +81,4 @@ ms.locfileid: "75646478"
 | 404 | Экземпляр службы подготовки устройств или ресурс (например, регистрация) не существует. |404 — не найдено |
 | 412 | ETag в запросе не совпадает с ETag существующего ресурса согласно RFC7232). | 412. предусловие не выполнено |
 | 429 | Операции регулируется службой. Конкретные ограничения службы см. в разделе [ограничения службы подготовки устройств](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#iot-hub-device-provisioning-service-limits)к добавлению в центр Интернета вещей. | 429. слишком много запросов |
-| 500 | Произошла внутренняя ошибка. | 500 Internal Server Error (внутренняя ошибка сервера)|
+| 500 | Внутренняя ошибка. | 500 Internal Server Error (внутренняя ошибка сервера)|

@@ -10,13 +10,13 @@ ms.subservice: team-data-science-process
 ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
-ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: 93ec5e740ac6acf9420a9d980092ed772ac1618e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.custom: seodec18, tracking-python, previous-author=deguhath, previous-ms.author=deguhath
+ms.openlocfilehash: 486b89e5c93de7444758638ad36743ff2f0bcb37
+ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76720985"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86026344"
 ---
 # <a name="access-datasets-with-python-using-the-azure-machine-learning-python-client-library"></a>Доступ к наборам данных через Python с помощью клиентской библиотеки Python для машинного обучения Azure
 Предварительная версия клиентской библиотеки Python для машинного обучения Microsoft Azure может обеспечить безопасный доступ к наборам данных машинного обучения Azure из локальной среды Python. Она также позволяет создавать наборы данных и управлять ими в рабочей области.
@@ -40,21 +40,26 @@ ms.locfileid: "76720985"
 * python-dateutil
 * pandas
 
-Мы рекомендуем использовать дистрибутив Python, например [Anaconda](http://continuum.io/downloads#all) или [Canopy](https://store.enthought.com/downloads/), который поставляется с Python, IPython и тремя устанавливаемыми пакетами, перечисленными выше. Хотя использование IPython не является обязательным, это отличная среда для интерактивного управления данными и их визуализации.
+Мы рекомендуем использовать дистрибутив Python, например [Anaconda](https://www.anaconda.com/) или [Canopy](https://store.enthought.com/downloads/), который поставляется с Python, IPython и тремя устанавливаемыми пакетами, перечисленными выше. Хотя использование IPython не является обязательным, это отличная среда для интерактивного управления данными и их визуализации.
 
 ### <a name="how-to-install-the-azure-machine-learning-python-client-library"></a><a name="installation"></a>Как установить клиентскую библиотеку Python для Машинного обучения Azure
 Установите клиентскую библиотеку Машинное обучение Azure Python, чтобы выполнить задачи, описанные в этом разделе. Эта библиотека доступна из [индекса пакета Python](https://pypi.python.org/pypi/azureml). Чтобы установить ее в своей среде Python, выполните следующую команду в локальной среде Python:
 
-    pip install azureml
+```console
+pip install azureml
+```
 
 Кроме того, можно скачать и установить из источников на сайте [GitHub](https://github.com/Azure/Azure-MachineLearning-ClientLibrary-Python).
 
-    python setup.py install
+```console
+python setup.py install
+```
 
 Если на компьютере установлено приложение git, вы можете использовать команду pip для установки непосредственно из репозитория git:
 
-    pip install git+https://github.com/Azure/Azure-MachineLearning-ClientLibrary-Python.git
-
+```console
+pip install git+https://github.com/Azure/Azure-MachineLearning-ClientLibrary-Python.git
+```
 
 ## <a name="use-code-snippets-to-access-datasets"></a><a name="datasetAccess"></a>Использование фрагментов кода для доступа к наборам данных
 Клиентская библиотека Python обеспечивает программный доступ к существующим наборам данных от экспериментов, которые были выполнены.
@@ -143,98 +148,119 @@ ms.locfileid: "76720985"
 ### <a name="workspace"></a>Рабочая область
 Рабочая область — это точка входа для клиентской библиотеки Python. Укажите `Workspace` класс с идентификатором рабочей области и маркером авторизации, чтобы создать экземпляр:
 
-    ws = Workspace(workspace_id='4c29e1adeba2e5a7cbeb0e4f4adfb4df',
-                   authorization_token='f4f3ade2c6aefdb1afb043cd8bcf3daf')
-
+```python
+ws = Workspace(workspace_id='4c29e1adeba2e5a7cbeb0e4f4adfb4df',
+               authorization_token='f4f3ade2c6aefdb1afb043cd8bcf3daf')
+```
 
 ### <a name="enumerate-datasets"></a>Перечисление наборов данных
 Для перечисления всех наборов данных в заданной рабочей области:
 
-    for ds in ws.datasets:
-        print(ds.name)
+```python
+for ds in ws.datasets:
+    print(ds.name)
+```
 
 Для перечисления только созданных пользователями наборов данных:
 
-    for ds in ws.user_datasets:
-        print(ds.name)
+```python
+for ds in ws.user_datasets:
+    print(ds.name)
+```
 
 Для перечисления только примеров наборов данных:
 
-    for ds in ws.example_datasets:
-        print(ds.name)
+```python
+for ds in ws.example_datasets:
+    print(ds.name)
+```
 
 Можно обратиться к набору данных по имени (с учетом регистра):
 
-    ds = ws.datasets['my dataset name']
+```python
+ds = ws.datasets['my dataset name']
+```
 
 Или по индексу:
 
-    ds = ws.datasets[0]
-
+```python
+ds = ws.datasets[0]
+```
 
 ### <a name="metadata"></a>Метаданные
 Кроме содержимого в наборах данных имеются метаданные. (Промежуточные наборы данных являются исключением из этого правила и не имеют метаданных.)
 
 Некоторые значения метаданных назначаются пользователем во время создания:
 
-    print(ds.name)
-    print(ds.description)
-    print(ds.family_id)
-    print(ds.data_type_id)
+* `print(ds.name)`
+* `print(ds.description)`
+* `print(ds.family_id)`
+* `print(ds.data_type_id)`
 
 Другие значения назначаются Машинным обучением Azure:
 
-    print(ds.id)
-    print(ds.created_date)
-    print(ds.size)
+* `print(ds.id)`
+* `print(ds.created_date)`
+* `print(ds.size)`
 
 Дополнительную информацию о доступных метаданных см. в описании класса `SourceDataset`.
 
 ### <a name="read-contents"></a>Чтение содержимого
 Фрагменты кода, предоставляемые Машинное обучение Studio (классическая модель), автоматически загружают и десериализует набор данных в объект Pandas. Это выполняется методом `to_dataframe` :
 
-    frame = ds.to_dataframe()
+```python
+frame = ds.to_dataframe()
+```
 
 Если вы предпочитаете скачать необработанные данные и выполнить десериализацию вручную, это возможно. На данный момент это единственная возможность для таких форматов, как «ARFF», которые клиентская библиотека Python не может десериализовать.
 
 Для считывания содержимого в виде текста:
 
-    text_data = ds.read_as_text()
+```python
+text_data = ds.read_as_text()
+```
 
 Для считывания содержимого в виде двоичного файла:
 
-    binary_data = ds.read_as_binary()
+```python
+binary_data = ds.read_as_binary()
+```
 
 Можно также просто открыть поток содержимого:
 
-    with ds.open() as file:
-        binary_data_chunk = file.read(1000)
-
+```python
+with ds.open() as file:
+    binary_data_chunk = file.read(1000)
+```
 
 ### <a name="create-a-new-dataset"></a>Создание нового набора данных
 Клиентская библиотека Python позволяет передавать наборы данных из программы Python. Эти наборы данных затем станут доступными для использования в вашей рабочей области.
 
 Для данных в формате Pandas DataFrame используйте следующий код:
 
-    from azureml import DataTypeIds
+```python
+from azureml import DataTypeIds
 
-    dataset = ws.datasets.add_from_dataframe(
-        dataframe=frame,
-        data_type_id=DataTypeIds.GenericCSV,
-        name='my new dataset',
-        description='my description'
-    )
+dataset = ws.datasets.add_from_dataframe(
+    dataframe=frame,
+    data_type_id=DataTypeIds.GenericCSV,
+    name='my new dataset',
+    description='my description'
+)
+```
 
 Если данные уже сериализованы, можно использовать:
 
-    from azureml import DataTypeIds
+```python
+from azureml import DataTypeIds
 
-    dataset = ws.datasets.add_from_raw_data(
-        raw_data=raw_data,
-        data_type_id=DataTypeIds.GenericCSV,
-        name='my new dataset',
-        description='my description'
-    )
+dataset = ws.datasets.add_from_raw_data(
+    raw_data=raw_data,
+    data_type_id=DataTypeIds.GenericCSV,
+    name='my new dataset',
+    description='my description'
+)
+```
 
 Клиентская библиотека Python может сериализовать объекты Pandas DataFrame в следующие форматы (константы для них находятся в классе `azureml.DataTypeIds`):
 
@@ -249,66 +275,76 @@ ms.locfileid: "76720985"
 
 Чтобы обновить существующий набор данных, сначала необходимо получить ссылку на существующий набор данных:
 
-    dataset = ws.datasets['existing dataset']
+```python
+dataset = ws.datasets['existing dataset']
 
-    print(dataset.data_type_id) # 'GenericCSV'
-    print(dataset.name)         # 'existing dataset'
-    print(dataset.description)  # 'data up to jan 2015'
+print(dataset.data_type_id) # 'GenericCSV'
+print(dataset.name)         # 'existing dataset'
+print(dataset.description)  # 'data up to jan 2015'
+```
 
 Затем используйте `update_from_dataframe` для сериализации и замены содержимого набора данных в Azure:
 
-    dataset = ws.datasets['existing dataset']
+```python
+dataset = ws.datasets['existing dataset']
 
-    dataset.update_from_dataframe(frame2)
+dataset.update_from_dataframe(frame2)
 
-    print(dataset.data_type_id) # 'GenericCSV'
-    print(dataset.name)         # 'existing dataset'
-    print(dataset.description)  # 'data up to jan 2015'
+print(dataset.data_type_id) # 'GenericCSV'
+print(dataset.name)         # 'existing dataset'
+print(dataset.description)  # 'data up to jan 2015'
+```
 
 Если вы хотите сериализовать данные в другой формат, укажите значение необязательного параметра `data_type_id`.
 
-    from azureml import DataTypeIds
+```python
+from azureml import DataTypeIds
 
-    dataset = ws.datasets['existing dataset']
+dataset = ws.datasets['existing dataset']
 
-    dataset.update_from_dataframe(
-        dataframe=frame2,
-        data_type_id=DataTypeIds.GenericTSV,
-    )
+dataset.update_from_dataframe(
+    dataframe=frame2,
+    data_type_id=DataTypeIds.GenericTSV,
+)
 
-    print(dataset.data_type_id) # 'GenericTSV'
-    print(dataset.name)         # 'existing dataset'
-    print(dataset.description)  # 'data up to jan 2015'
+print(dataset.data_type_id) # 'GenericTSV'
+print(dataset.name)         # 'existing dataset'
+print(dataset.description)  # 'data up to jan 2015'
+```
 
 При необходимости можно задать новое описание, указав значение для параметра `description` .
 
-    dataset = ws.datasets['existing dataset']
+```python
+dataset = ws.datasets['existing dataset']
 
-    dataset.update_from_dataframe(
-        dataframe=frame2,
-        description='data up to feb 2015',
-    )
+dataset.update_from_dataframe(
+    dataframe=frame2,
+    description='data up to feb 2015',
+)
 
-    print(dataset.data_type_id) # 'GenericCSV'
-    print(dataset.name)         # 'existing dataset'
-    print(dataset.description)  # 'data up to feb 2015'
+print(dataset.data_type_id) # 'GenericCSV'
+print(dataset.name)         # 'existing dataset'
+print(dataset.description)  # 'data up to feb 2015'
+```
 
 Кроме того, при необходимости можно задать новое имя, указав значение для параметра `name` . Теперь вы сможете извлекать набор данных только с помощью нового имени. Следующий код обновляет данные, имя и описание.
 
-    dataset = ws.datasets['existing dataset']
+```python
+dataset = ws.datasets['existing dataset']
 
-    dataset.update_from_dataframe(
-        dataframe=frame2,
-        name='existing dataset v2',
-        description='data up to feb 2015',
-    )
+dataset.update_from_dataframe(
+    dataframe=frame2,
+    name='existing dataset v2',
+    description='data up to feb 2015',
+)
 
-    print(dataset.data_type_id)                    # 'GenericCSV'
-    print(dataset.name)                            # 'existing dataset v2'
-    print(dataset.description)                     # 'data up to feb 2015'
+print(dataset.data_type_id)                    # 'GenericCSV'
+print(dataset.name)                            # 'existing dataset v2'
+print(dataset.description)                     # 'data up to feb 2015'
 
-    print(ws.datasets['existing dataset v2'].name) # 'existing dataset v2'
-    print(ws.datasets['existing dataset'].name)    # IndexError
+print(ws.datasets['existing dataset v2'].name) # 'existing dataset v2'
+print(ws.datasets['existing dataset'].name)    # IndexError
+```
 
 Параметры `data_type_id`, `name` и `description` являются необязательными, и по умолчанию используются их предыдущие значения. Параметр `dataframe` всегда является обязательным.
 

@@ -4,14 +4,14 @@ description: Узнайте, как настраивать реплики чте
 author: ajlam
 ms.author: andrela
 ms.service: mysql
-ms.topic: conceptual
-ms.date: 4/29/2020
-ms.openlocfilehash: 9ac85299311c1fd233988c6472d6325934dd42dd
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
+ms.topic: how-to
+ms.date: 6/10/2020
+ms.openlocfilehash: f6d24ba0d31020b82669947189da180348f2a46b
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82614542"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86108011"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mysql-using-powershell"></a>Создание реплик чтения и управление ими в базе данных Azure для MySQL с помощью PowerShell
 
@@ -21,7 +21,7 @@ ms.locfileid: "82614542"
 
 Вы можете создавать реплики чтения и управлять ими с помощью PowerShell.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
 
@@ -29,8 +29,8 @@ ms.locfileid: "82614542"
 - [Сервер базы данных Azure для MySQL](quickstart-create-mysql-server-database-using-azure-powershell.md)
 
 > [!IMPORTANT]
-> Пока модуль PowerShell AZ. MySql находится на этапе предварительной версии, его необходимо установить отдельно от модуля AZ PowerShell с помощью следующей команды: `Install-Module -Name Az.MySql -AllowPrerelease`.
-> Как только модуль PowerShell AZ. MySql станет общедоступным, он становится частью будущих выпусков AZ PowerShell и доступен с помощью встроенных в Azure Cloud Shell.
+> Так как модуль PowerShell Az.MySql предоставляется в режиме предварительной версии, его нужно установить отдельно от модуля Az с помощью команды `Install-Module -Name Az.MySql -AllowPrerelease`.
+> Как только модуль PowerShell Az.MySql станет общедоступным, он будет включен в один из будущих выпусков Az PowerShell и встроен в Azure Cloud Shell.
 
 Если вы решили использовать PowerShell локально, подключитесь к учетной записи Azure с помощью командлета [Connect-азаккаунт](/powershell/module/az.accounts/Connect-AzAccount) .
 
@@ -40,6 +40,9 @@ ms.locfileid: "82614542"
 > Функция создания реплики чтения доступна только для серверов базы данных Azure для MySQL в ценовой категории "Общее назначение" или "Оптимизированная для операций в памяти". Убедитесь, что главный сервер находится в одной из этих ценовых категорий.
 
 ### <a name="create-a-read-replica"></a>Создание реплики чтения
+
+> [!IMPORTANT]
+> При создании реплики для главного сервера, у которого отсутствуют реплики, этот сервер сначала перезапускается для подготовки к репликации. Это необходимо учесть, то есть выполнять такие операции в период низкой нагрузки.
 
 Чтобы создать сервер реплики чтения, выполните следующую команду:
 
@@ -53,7 +56,7 @@ Get-AzMySqlServer -Name mydemoserver -ResourceGroupName myresourcegroup |
 | Параметр | Пример значения | Описание  |
 | --- | --- | --- |
 | ResourceGroupName |  myresourcegroup |  Группа ресурсов, в которой создается сервер реплики.  |
-| Название | mydemoreplicaserver | Имя нового сервера реплики, который создается. |
+| Имя | mydemoreplicaserver | Имя нового сервера реплики, который создается. |
 
 Чтобы создать реплику чтения между регионами, используйте параметр **Location** . В следующем примере создается реплика в регионе " **Западная часть США** ".
 
@@ -62,7 +65,7 @@ Get-AzMySqlServer -Name mrdemoserver -ResourceGroupName myresourcegroup |
   New-AzMySqlServerReplica -Name mydemoreplicaserver -ResourceGroupName myresourcegroup -Location westus
 ```
 
-Дополнительные сведения о том, в каких регионах можно создать реплику, см. в [статье чтение основных сведений о репликах](concepts-read-replicas.md).
+Дополнительные сведения о том, в каких регионах можно создать реплику, см. в статье [об основных понятиях реплики чтения](concepts-read-replicas.md).
 
 По умолчанию реплики чтения создаются с той же конфигурацией сервера, что и у главного, если не указан параметр **SKU** .
 

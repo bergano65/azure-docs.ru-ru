@@ -1,6 +1,6 @@
 ---
-title: Обзор сообщества служб мультимедиа Azure v3
-description: На этой странице сообщества служб мультимедиа Azure обсуждаются различные способы задать вопросы, отправить отзыв и получить обновления о службах мультимедиа.
+title: Обзор сообщества Служб мультимедиа Azure версии 3
+description: На этой странице сообщества Служб мультимедиа Azure рассказывается, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
 services: media-services
 documentationcenter: ''
 author: juliako
@@ -13,16 +13,15 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 01/22/2020
 ms.author: juliako
-ms.openlocfilehash: 70d366551dc3130d2a1bdac6108e3b3de95976d9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: ab775e8d93111f7494d2bf321216e2725c438fc8
+ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76545931"
+ms.lasthandoff: 05/25/2020
+ms.locfileid: "83828506"
 ---
-# <a name="azure-media-services-v3-community"></a>Сообщество служб мультимедиа Azure v3  
+# <a name="azure-media-services-v3-community"></a>Сообщество Служб мультимедиа Azure версии 3  
 
-На этой странице сообщества служб мультимедиа Azure обсуждаются различные способы задать вопросы, отправить отзыв и получить обновления о службах мультимедиа.
+На этой странице сообщества Служб мультимедиа Azure рассказывается, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
 
 ## <a name="provide-feedback-and-make-suggestions"></a>Отзывы и предложения
 
@@ -32,7 +31,7 @@ ms.locfileid: "76545931"
 
 ### <a name="twitter"></a>Twitter
 
-Вы можете использовать маркер [@MSFTAzureMedia](https://twitter.com/MSFTAzureMedia) Twitter, чтобы связаться с нами или следовать обновлениям в Twitter. Используйте маркер [@AzureSupport](https://twitter.com/azuresupport) Twitter для запроса поддержки в Twitter.  
+Вы можете использовать имя пользователя Twitter [@MSFTAzureMedia](https://twitter.com/MSFTAzureMedia) для связи с нами и отслеживания новостей в Twitter. Используйте дескриптор [@AzureSupport](https://twitter.com/azuresupport) для запроса поддержки в Twitter.  
 
 ### <a name="online-forums"></a>Интернет-форумы
 
@@ -40,12 +39,12 @@ ms.locfileid: "76545931"
 
 Сейчас MSDN —это основной форум сообщества разработчиков Служб мультимедиа.
 
-[![MSDN](./media/media-services-community/msdn.png)](https://social.msdn.microsoft.com/forums/azure/home?forum=MediaServices) 
+[![MSDN](./media/media-services-community/msdn.png)](https://docs.microsoft.com/answers/topics/azure-media-services.html) 
 
 Команда разработчиков также отслеживает вопросы с тегом "azure-media-services" на сайте Stack Overflow.
 
 [![StackOverflow](./media/media-services-community/stack-overflow.png)](https://stackoverflow.com/questions/tagged/azure-media-services) 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-[Общие сведения о службах мультимедиа Azure](media-services-overview.md)
+[Общие сведения о Службах мультимедиа Azure](media-services-overview.md)

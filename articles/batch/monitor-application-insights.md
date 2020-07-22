@@ -1,14 +1,13 @@
 ---
-title: Мониторинг пакета с помощью Azure Application Insights
+title: Мониторинг пакетной службы с помощью Azure Application Insights
 description: Узнайте, как инструментировать приложение .NET пакетной службы Azure с помощью библиотеки Azure Application Insights.
-ms.topic: article
+ms.topic: how-to
 ms.date: 04/05/2018
-ms.openlocfilehash: ca8cde9b1838239a79ebca4efe43d9e619f80f12
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: b6817ad1303e6039ebfe5fe5ae6101b9bc192eb4
+ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82115471"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83723618"
 ---
 # <a name="monitor-and-debug-an-azure-batch-net-application-with-application-insights"></a>Мониторинг и отладка приложения .NET пакетной службы Azure с помощью Application Insights
 
@@ -280,7 +279,7 @@ for (int i = 1; i <= topNWordsConfiguration.NumberOfTasks; i++)
 Настраиваемые метрики также являются полезным средством на портале. Например, можно отобразить среднее время, затраченное на каждом вычислительном узле для загрузки необходимого текстового файла, который он обрабатывал.
 
 Создание примера диаграммы
-1. В Application Insights ресурсе щелкните **Обозреватель метрик** > **Добавить диаграмму**.
+1. В ресурсе Application Insights щелкните **Обозреватель метрик** > **Добавить диаграмму**.
 2. Нажмите кнопку **Изменить** на добавленной диаграмме.
 2. Обновите сведения диаграммы следующим образом:
    * Для параметра **Тип диаграммы** задайте значение **Сетка**.
@@ -333,7 +332,7 @@ pool.StartTask = new StartTask()
 Из-за особенностей крупномасштабных приложений пакетной службы Azure, работающих в рабочей среде, для управления затратами может потребоваться ограничить объем данных, собираемых Application Insights. Сведения о механизмах, с помощью которых этого можно добиться, см. в статье [Выборка в Application Insights](../azure-monitor/app/sampling.md).
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения об [Application Insights](../azure-monitor/app/app-insights-overview.md).
 
 * Для поддержки Application Insights на других языках ознакомьтесь с [документацией по языкам, платформам и интеграции](../azure-monitor/app/platforms.md).

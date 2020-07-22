@@ -8,12 +8,12 @@ ms.author: jehollan
 ms.reviewer: estfan, logicappspm
 ms.topic: article
 ms.date: 03/15/2018
-ms.openlocfilehash: e300bf9c9aa0acf0bed6426eb73f690f9a38bd74
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 2fae7d2526e6c95efe83ca8fa742a6d92457b897
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75980425"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86520755"
 ---
 # <a name="create-a-streaming-customer-insights-dashboard-with-azure-logic-apps-and-azure-functions"></a>Создание панели мониторинга потоковой передачи сведений о клиентах с помощью Функций Azure и Azure Logic Apps.
 
@@ -22,7 +22,7 @@ Azure предлагает средства [Бессерверные прило
 Для этого решения вы используете такие ключевые компоненты Azure для бессерверных приложений: [Функции Azure](https://azure.microsoft.com/services/functions/) и [Azure Logic Apps](https://azure.microsoft.com/services/logic-apps/).
 Azure Logic Apps представляет беcсерверный обработчик рабочего процесса в облаке, поэтому вы можете создавать оркестрации бессерверных компонентов и подключаться к более чем 200 службам и API. Функции Azure предоставляют беcсерверные вычисления в облаке. В этом решении Функции Azure используются для пометки пользовательских твитов на основе предопределенных ключевых слов.
 
-В этом случае вы создаете приложение логики, которое запускает поиск отзывов клиентов. К некоторым соединителям, которые помогают реагировать на отзывы от клиентов, относятся Outlook.com, Office 365, Survey Monkey, Twitter и [HTTP-запрос из веб-формы](https://blogs.msdn.microsoft.com/logicapps/2017/01/30/calling-a-logic-app-from-an-html-form/). Рабочий процесс, который вы создаете, отслеживает хэштег в Twitter.
+В этом случае вы создаете приложение логики, которое запускает поиск отзывов клиентов. К некоторым соединителям, которые помогают реагировать на отзывы от клиентов, относятся Outlook.com, Office 365, Survey Monkey, Twitter и [HTTP-запрос из веб-формы](/archive/blogs/logicapps/calling-a-logic-app-from-an-html-form). Рабочий процесс, который вы создаете, отслеживает хэштег в Twitter.
 
 Вы можете [создать все решение в Visual Studio](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md) и [развернуть решение с помощью шаблона Azure Resource Manager](../logic-apps/logic-apps-deploy-azure-resource-manager-templates.md). Пошаговые инструкции по созданию этого решения см. [в этом видео Channel 9](https://aka.ms/logicappsdemo). 
 
@@ -67,7 +67,7 @@ Azure Logic Apps представляет беcсерверный обработ
 
 ## <a name="process-data-with-azure-functions"></a>Обработка данных с помощью Функций Azure
 
-Перед созданием функции создайте приложение-функцию в вашей подписке Azure. Кроме того, чтобы ваше приложение логики могло непосредственно вызывать функцию, она должна иметь привязку триггера HTTP, например, используйте шаблон **HttpTrigger**. Узнайте, [как создать свое первое приложение-функцию и функцию на портале Azure](../azure-functions/functions-create-first-azure-function-azure-portal.md).
+Перед созданием функции создайте приложение-функцию в вашей подписке Azure. Кроме того, чтобы ваше приложение логики могло непосредственно вызывать функцию, она должна иметь привязку триггера HTTP, например, используйте шаблон **HttpTrigger**. Узнайте, [как создать свое первое приложение-функцию и функцию на портале Azure](../azure-functions/functions-create-first-azure-function.md).
 
 Для этого сценария используйте текст твита в качестве текста запроса для вашей функции Azure. В коде функции задайте логику, определяющую, что содержит текст твита: ключевое слово или фразу. Используйте простую или сложную функцию в зависимости от реализуемого сценария.
 В конце функции верните в приложение логики ответ с данными, например, простое логическое значение, такое как `containsKeyword`, или cоставной объект.
@@ -108,7 +108,7 @@ Azure Logic Apps представляет беcсерверный обработ
 
 Пример шаблона развертывания с функцией Azure можно найти в [репозитории шаблонов быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/101-function-app-create-dynamic).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Распространенные сценарии, примеры, учебники и пошаговые руководства для Azure Logic Apps](logic-apps-examples-and-scenarios.md)
 

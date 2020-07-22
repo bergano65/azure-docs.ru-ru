@@ -15,16 +15,16 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.openlocfilehash: 03b9995eab503ac1fcd4615882419dde31d4f8bf
-ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "64869453"
 ---
 # <a name="upload-files-into-a-media-services-account-using-net"></a>Передача файлов в учетную запись служб мультимедиа с помощью .NET 
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с последней версией [служб мультимедиа v3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
 
 В службах мультимедиа цифровые файлы отправляются (или принимаются) в актив. Сущность **Asset** может содержать видео, аудио, изображения, коллекции эскизов, текстовые дорожки и файлы скрытых субтитров (а также метаданные этих файлов).  После передачи файлов содержимое будет безопасно сохранено в облаке для дальнейшей обработки и потоковой передачи.
 
@@ -34,10 +34,10 @@ ms.locfileid: "64869453"
 
 Действительны следующие условия.
  
- * Службы мультимедиа используют значение свойства IAssetFile.Name при создании URL-адресов для потоковой передачи содержимого (например, http://{AMSAccount}. Origin. mediaservices. Windows. NET/{GUID}/{IAssetFile. Name}/streamingParameters.) По этой причине процентное кодирование запрещено. Значение свойства **Name** не может содержать следующие [символы, зарезервированные в кодировке](https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters):! * ' ();: @ &= + $,/?% # [] ". Кроме того, может использоваться только один знак "." для расширения имени файла.
+ * Службы мультимедиа используют значение свойства IAssetFile.Name при создании URL-адресов для потоковой передачи содержимого (например, http://{AMSAccount}. Origin. mediaservices. Windows. NET/{GUID}/{IAssetFile. Name}/streamingParameters.) По этой причине процентное кодирование запрещено. Значение свойства **Name** не может содержать такие [зарезервированные знаки, используемые для кодировки URL-адресов](https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters): !*'();:@&=+$,/?%#[]". Кроме того, может использоваться только один знак "." для расширения имени файла.
 * Длина имени не должна превышать 260 знаков.
 * Существует ограничение на максимальный размер файла, который могут обработать службы мультимедиа. Подробные сведения об этих ограничениях см. [здесь](media-services-quotas-and-limitations.md).
-* Действует ограничение в 1 000 000 записей для разных политик AMS (например, для политики Locator или ContentKeyAuthorizationPolicy). Следует указывать один и тот же идентификатор политики, если вы используете те же дни, разрешения доступа и т. д. Например, политики для указателей, которые должны оставаться на месте в течение длительного времени (не политики передачи). Дополнительные сведения см. в [этой](media-services-dotnet-manage-entities.md#limit-access-policies) статье.
+* Действует ограничение в 1 000 000 записей для разных политик AMS (например, для политики Locator или ContentKeyAuthorizationPolicy). Следует указывать один и тот же идентификатор политики, если вы используете те же дни, разрешения доступа и т. д. Например, политики для указателей, которые должны оставаться на месте в течение длительного времени (не политики передачи). Дополнительные сведения см. в [этой статье](media-services-dotnet-manage-entities.md#limit-access-policies).
 
 При создании ресурсов можно указать следующие параметры шифрования:
 
@@ -88,7 +88,7 @@ ms.locfileid: "64869453"
 ## <a name="upload-multiple-files-with-media-services-net-sdk"></a>Передача нескольких файлов с помощью пакета SDK служб мультимедиа для .NET
 В следующем примере кода показано, как создать актив и отправить несколько файлов.
 
-Код делает следующее:
+Этот код выполняет следующее:
 
 * Создает пустой ресурс, используя метод CreateEmptyAsset, определенный на предыдущем шаге.
 * Создает экземпляр **AccessPolicy** , определяющий разрешения и длительность доступа к ресурсу.
@@ -299,7 +299,7 @@ ms.locfileid: "64869453"
     var asset = UploadFile(@"C:\VideoFiles\BigBuckBunny.mp4", AssetCreationOptions.StorageEncrypted);
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь можно закодировать отправленные ресурсы. Дополнительную информацию см. в статье, посвященной [кодированию ресурсов](media-services-portal-encode.md).
 
@@ -308,10 +308,10 @@ ms.locfileid: "64869453"
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="next-step"></a>Далее
+## <a name="next-step"></a>Следующий шаг
 Передав ресурс в Службы мультимедиа, перейдите к статье [Получение экземпляра процессора мультимедиа][How to Get a Media Processor].
 
 [How to Get a Media Processor]: media-services-get-media-processor.md

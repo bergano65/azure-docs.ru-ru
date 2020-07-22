@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 04/26/2020
 ms.author: eamono
 ms.openlocfilehash: 6034d1327d263eda49881af5eedf94ae06495128
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "83122278"
 ---
 # <a name="managing-hybrid-environments-with-powershell-in-azure-functions-and-app-service-hybrid-connections"></a>Управление гибридными средами с помощью PowerShell в функциях Azure и гибридные подключения службы приложений
@@ -82,7 +81,7 @@ cmd.exe /C $Cmd
 
     | Параметр      | Рекомендуемое значение  | Описание |
     | ------------ | ---------------- | ----------- |
-    | **[Application Insights](../azure-functions/functions-monitoring.md)** | По умолчанию | Создает ресурс Application Insights с таким же *именем приложения* в ближайшем поддерживаемом регионе. Развернув этот параметр или выбрав **создать**, можно изменить имя Application Insights или выбрать другой регион в [Azure geography](https://azure.microsoft.com/global-infrastructure/geographies/) , где вы хотите хранить данные. |
+    | **[Application Insights](../azure-functions/functions-monitoring.md)** | По умолчанию | Создает ресурс Application Insights с таким же *именем приложения* в ближайшем поддерживаемом регионе. Развернув этот параметр или выбрав **Создать новый**, можно изменить имя Application Insights или выбрать другое расположение в [географическом регионе Azure](https://azure.microsoft.com/global-infrastructure/geographies/), где будут хранится данные. |
 
     :::image type="content" source="./media/functions-hybrid-powershell/function-app-create-monitoring.png" alt-text="Создайте функцию мониторинга приложений." border="true":::
 
@@ -90,7 +89,7 @@ cmd.exe /C $Cmd
 
 1. Проверьте параметры на странице **Просмотр и создание**, после чего выберите **Создать** для подготовки и развертывания приложения-функции.
 
-1. Щелкните значок **уведомления** в правом верхнем углу портала и просмотрите сообщение об **успешности развертывания** .
+1. Выберите значок **Уведомления** в правом верхнем углу портала. Вы должны увидеть сообщение **Развертывание выполнено**.
 
 1. Выберите **Перейти к ресурсу** для просмотра нового приложения-функции. Можно также установить флажок **Закрепить на панели мониторинга**. Это упростит возвращение к этому ресурсу приложения-функции из панели мониторинга.
 
@@ -118,7 +117,7 @@ cmd.exe /C $Cmd
     | **Порт конечной точки** | 5986 |
     | **Пространство имен servicebus** | Создать |
     | **Расположение** | Выберите доступное расположение |
-    | **имя**; | контосоповершеллхибрид | 
+    | **Name** | контосоповершеллхибрид | 
 
 1. Нажмите кнопку **ОК** , чтобы создать гибридное подключение.
 
@@ -213,7 +212,7 @@ cmd.exe /C $Cmd
                    -SessionOption (New-PSSessionOption -SkipCACheck)
     ```
 
-1. Щелкните **Сохранить**.
+1. Нажмите кнопку **Сохранить**.
 
     :::image type="content" source="./media/functions-hybrid-powershell/save-http-function.png" alt-text="Измените код PowerShell и сохраните функцию триггера HTTP." border="true":::
 
@@ -298,7 +297,7 @@ Invoke-Command -ComputerName $HybridEndpoint `
 
 [Виртуальные сети](./functions-create-vnet.md) Azure также можно использовать для подключения к локальной среде с помощью функций Azure.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"] 
 > [Дополнительные сведения о работе с функциями PowerShell](functions-reference-powershell.md)

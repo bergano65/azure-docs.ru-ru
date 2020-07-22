@@ -13,19 +13,19 @@ ms.topic: article
 ms.date: 03/31/2020
 ms.author: apimpm
 ms.openlocfilehash: 2870a654faad4e760a9d022488cb2c4c406cbeab
-ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82203137"
 ---
 # <a name="provision-a-self-hosted-gateway-in-azure-api-management"></a>Предоставление автономного шлюза в службе управления API Azure
 
 Подготовка ресурса шлюза в экземпляре службы управления API Azure является необходимым условием для развертывания самостоятельно размещенного шлюза. В этой статье рассматриваются действия по подготовке ресурса шлюза в оснастке управления API.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
-Выполните следующие действия в кратком руководстве по [созданию экземпляра службы управления API Azure](get-started-create-service-instance.md) .
+Выполните инструкции из краткого руководства [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md)
 
 [!INCLUDE [api-management-navigate-to-instance.md](../../includes/api-management-navigate-to-instance.md)]
 
@@ -46,7 +46,7 @@ ms.locfileid: "82203137"
 
 Теперь ресурс шлюза был подготовлен в экземпляре управления API. Вы можете перейти к развертыванию шлюза.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о самостоятельно размещенном шлюзе см. в статье [Обзор самостоятельного размещения шлюза в службе управления API Azure](self-hosted-gateway-overview.md) .
 * Дополнительные сведения о [развертывании автономного шлюза в Kubernetes](how-to-deploy-self-hosted-gateway-kubernetes.md)

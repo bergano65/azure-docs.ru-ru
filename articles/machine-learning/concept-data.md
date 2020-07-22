@@ -10,12 +10,12 @@ ms.reviewer: nibaccam
 author: nibaccam
 ms.author: nibaccam
 ms.date: 04/24/2020
-ms.openlocfilehash: e41d00a31a0065e2923259cbb0bb36986cbb2ec8
-ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
-ms.translationtype: MT
+ms.custom: tracking-python
+ms.openlocfilehash: 15cf4aa6adda26991e76ec8a5e7378766fe2a21f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82995073"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84552643"
 ---
 # <a name="secure-data-access-in-azure-machine-learning"></a>Защита доступа к данным в Машинное обучение Azure
 
@@ -58,7 +58,7 @@ ms.locfileid: "82995073"
 + Контейнер больших двоичных объектов Azure
 + Общая папка Azure
 + Azure Data Lake
-+ Azure Data Lake 2-го поколения
++ Azure Data Lake 2-го поколения
 + База данных SQL Azure
 + База данных Azure для PostgreSQL
 + Файловая система Databricks
@@ -111,7 +111,7 @@ ms.locfileid: "82995073"
 
 Дополнительные сведения о способах обнаружения и оповещения о смещении данных для новых данных в наборе данных см. в статье [Создание монитора набора данных](how-to-monitor-datasets.md) .
 
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Дальнейшие шаги 
 
 + Создайте набор данных в Машинное обучение Azure Studio или с помощью пакета SDK для Python, [выполнив следующие действия.](how-to-create-register-datasets.md)
 + Испытайте примеры обучения наборов данных с помощью [примеров записных книжек](https://aka.ms/dataset-tutorial).

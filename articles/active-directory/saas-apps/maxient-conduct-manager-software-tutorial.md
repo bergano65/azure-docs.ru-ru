@@ -16,20 +16,20 @@ ms.topic: tutorial
 ms.date: 12/18/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c1a657a7d57b3e725b0ae92b5110935c0aecf73f
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 09399f59e61ded49fef5a2388900b7b478111119
+ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75533037"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83847214"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-maxient-conduct-manager-software"></a>Руководство по Интеграция единого входа Azure Active Directory с Maxient Conduct Manager Software
 
 В этом руководстве описано, как интегрировать Maxient Conduct Manager Software с Azure Active Directory (AAD). Интеграция Maxient Conduct Manager Software с Azure AD обеспечивает следующие возможности.
 
-* С помощью Azure AD можно контролировать доступ к Maxient Conduct Manager Software.
+* Использование Azure AD для проверки подлинности пользователей в Maxient Conduct Manager Software.
 * Автоматический вход пользователей в Maxient Conduct Manager Software с учетными записями AAD.
-* Централизованное управление учетными записями через портал Azure.
+
 
 Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
@@ -42,8 +42,7 @@ ms.locfileid: "75533037"
 
 ## <a name="scenario-description"></a>Описание сценария
 
-В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
-
+В этом руководстве показано, как настроить Azure AD для использования с Maxient Conduct Manager Software.
 
 
 * Maxient Conduct Manager Software поддерживает единый вход, инициированный **поставщиком услуг и поставщиком удостоверений**.
@@ -65,16 +64,13 @@ ms.locfileid: "75533037"
 
 ## <a name="configure-and-test-azure-ad-single-sign-on-for-maxient-conduct-manager-software"></a>Настройка и проверка единого входа Azure AD для Maxient Conduct Manager Software
 
-Настройте и проверьте единый вход Azure AD в Maxient Conduct Manager Software с помощью тестового пользователя **B.Simon**. Для обеспечения работы единого входа необходимо установить связь между пользователем AAD и соответствующим пользователем в Maxient Conduct Manager Software.
+Настройте и проверьте единый вход Azure AD в Maxient Conduct Manager Software. Чтобы обеспечить работу единого входа, необходимо установить подключение между Azure AD и Maxient Conduct Manager Software.
 
 Чтобы настроить и проверить единый вход Azure AD в Maxient Conduct Manager Software, выполните действия в следующих стандартных блоках.
 
-1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
-    1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с помощью пользователя B.Simon.
-    1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить пользователю B.Simon использовать единый вход Azure AD.
-1. **[Настройка единого входа в Maxient Conduct Manager Software](#configure-maxient-conduct-manager-software-sso)** требуется, чтобы определить параметры единого входа на стороне приложения.
-    1. **[Создание тестового пользователя Maxient Conduct Manager Software](#create-maxient-conduct-manager-software-test-user)** нужно для того, чтобы в Maxient Conduct Manager Software существовал пользователь B.Simon, связанный с одноименным пользователем в AAD.
-1. **[Проверка единого входа](#test-sso)** позволяет убедиться в правильности конфигурации.
+1. **[Настройте единый вход Azure AD](#configure-azure-ad-sso)** , чтобы пользователи могли проходить проверку подлинности в Maxient Conduct Manager Software.
+    1. **[Предоставьте всем пользователям возможность использовать Maxient](#assign-all-users-to-be-able-to-authenticate-for-the-maxient-conduct-manager-software)** , чтобы все пользователи в вашем учреждении могли проходить проверку подлинности.
+1. **[Протестируйте настройку Azure AD для использования в Maxient](#test-with-maxient)** , чтобы проверить работу конфигурации и правильность выпускаемых атрибутов.
 
 ## <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
@@ -93,27 +89,15 @@ ms.locfileid: "75533037"
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://cm.maxient.com/<SCHOOLCODE>`.
 
     > [!NOTE]
-    > Это значение приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, обратитесь в [службу поддержки клиентов Maxient Conduct Manager Software](mailto:support@maxient.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Это значение приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Обратитесь к специалисту по реализации или представителю группы поддержки Maxient, чтобы получить это значение.
 
-1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений** и сохранить его на компьютере.
+1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений** и сохранить его на компьютере.  Вам потребуется предоставить специалисту по реализации или представителю группы поддержки Maxient этот URL-адрес.
 
     ![Ссылка для скачивания сертификата](common/copy-metadataurl.png)
 
-### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+### <a name="assign-all-users-to-be-able-to-authenticate-for-the-maxient-conduct-manager-software"></a>Назначение всем пользователям возможности выполнять проверку подлинности в Maxient Conduct Manager Software
 
-В этом разделе описано, как на портале Azure создать тестового пользователя с именем B.Simon.
-
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
-1. В верхней части экрана выберите **Новый пользователь**.
-1. В разделе **Свойства пользователя** выполните следующие действия.
-   1. В поле **Имя** введите `B.Simon`.  
-   1. В поле **Имя пользователя** введите username@companydomain.extension. Например, `B.Simon@contoso.com`.
-   1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
-   1. Нажмите кнопку **Создать**.
-
-### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
-
-В этом разделе описано, как включить единый вход Azure для пользователя B.Simon, предоставив этому пользователю доступ к Maxient Conduct Manager Software.
+В этом разделе показано, как предоставить всем учетным записям доступ для проверки подлинности с помощью системы Azure в Maxient Conduct Manager Software.  Важно отметить, что этот шаг является **ОБЯЗАТЕЛЬНЫМ** для корректной работы Maxient.  Maxient использует систему Azure AD для *проверки подлинности* пользователей. *Проверка подлинности* пользователей выполняется в системе Maxient для конкретной функции, которую они пытаются выполнить. Maxient не использует атрибуты из вашего каталога для принятия таких решений.
 
 1. На портале Azure выберите **Корпоративные приложения**, а затем — **Все приложения**.
 1. В списке приложений выберите **Maxient Conduct Manager Software**.
@@ -125,24 +109,12 @@ ms.locfileid: "75533037"
 
     ![Ссылка "Добавить пользователя"](common/add-assign-user.png)
 
-1. В диалоговом окне **Пользователи и группы** выберите **B.Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
-1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
-1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+1. В диалоговом окне **Пользователи и группы** выберите всех пользователей (или соответствующие группы) и **назначьте** им возможность выполнять проверку подлинности в Maxient.
 
-## <a name="configure-maxient-conduct-manager-software-sso"></a>Настройка единого входа на стороне Maxient Conduct Manager Software
+## <a name="test-with-maxient"></a>Тестирование в Maxient 
 
-Чтобы настроить единый вход на стороне **Maxient Conduct Manager Software**, отправьте [группе поддержки Maxient Conduct Manager Software](mailto:support@maxient.com)**URL-адрес метаданных федерации приложений**. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
-
-### <a name="create-maxient-conduct-manager-software-test-user"></a>Создание тестового пользователя в Maxient Conduct Manager Software
-
-В этом разделе описано, как создать пользователя B.Simon в приложении Maxient Conduct Manager Software. Обратитесь к  [группе поддержки Maxient Conduct Manager Software](mailto:support@maxient.com), чтобы добавить пользователей в Maxient Conduct Manager Software. Перед использованием единого входа необходимо создать и активировать пользователей.
-
-## <a name="test-sso"></a>Проверка единого входа 
-
-В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
-
-Щелкнув плитку "Maxient Conduct Manager Software" на Панели доступа вы автоматически войдете в приложение Maxient Conduct Manager Software, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
-
+Если специалист по реализации или представитель группы поддержки Maxient еще не создал запрос в службу поддержки, отправьте электронное письмо на адрес [support@maxient.com](mailto:support@maxient.com) с темой "Campus Based Authentication/Azure Setup — \<\<название учебного заведения\>\>". В тексте сообщения укажите **URL-адрес метаданных федерации приложений**. Сотрудник Maxient отправит в ответе тестовую ссылку, чтобы проверить правильность выпускаемых атрибутов.  
+    
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
 - [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)

@@ -7,12 +7,12 @@ ms.custom: subject-cost-optimization
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 02/02/2020
-ms.openlocfilehash: cf259dfa0b00393cf0fee259b199527569ba1792
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 42421f745759d9aee75b285c3fbc6ea7217ba5c0
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77152590"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85112707"
 ---
 # <a name="plan-and-manage-costs-for-azure-cosmos-db"></a>Планирование и управление затратами для Azure Cosmos DB
 
@@ -30,7 +30,7 @@ ms.locfileid: "77152590"
 
 На следующем снимке экрана показана пропускная способность и оценка затрат с помощью калькулятора емкости:
 
-![Оценка затрат в калькуляторе Azure Cosmos DBной емкости](./media/plan-manage-costs/capacity-calculator-cost-estimate.png)
+:::image type="content" source="./media/plan-manage-costs/capacity-calculator-cost-estimate.png" alt-text="Оценка затрат в калькуляторе Azure Cosmos DBной емкости":::
 
 ## <a name="review-estimated-costs-from-the-azure-portal"></a>Ознакомьтесь с оценочными затратами портал Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "77152590"
 1. Создание нового контейнера, например контейнера графа.
 1. Введите пропускную способность, необходимую для рабочей нагрузки, например 400 единиц запросов в секунду. После ввода значения пропускной способности можно увидеть оценку цены, как показано на следующем снимке экрана:
 
-   ![Оценка затрат в портал Azure](./media/plan-manage-costs/cost-estimate-portal.png)
+   :::image type="content" source="./media/plan-manage-costs/cost-estimate-portal.png" alt-text="Оценка затрат в портал Azure":::
 
 Если у вашей подписки Azure есть предельная сумма расходов, Azure не позволит вам тратить деньги на сумму кредита. При создании и использовании ресурсов Azure используются ваши кредиты. При достижении лимита кредита развернутые ресурсы отключаются в оставшейся части этого расчетного периода. Вы не можете изменить лимит кредита, но можете удалить его. Дополнительные сведения об ограничениях расходов см. в статье [предельная сумма расходов в Azure](../billing/billing-spending-limit.md).
 
@@ -63,7 +63,7 @@ ms.locfileid: "77152590"
 
 1. Чтобы уменьшить затраты на одну службу, например Azure Cosmos DB, щелкните **Добавить фильтр** , а затем выберите **имя службы**. Затем выберите **Azure Cosmos DB** из списка. Ниже приведен пример, показывающий затраты только на Azure Cosmos DB:
  
-   ![Мониторинг затрат с помощью панели "анализ затрат"](./media/plan-manage-costs/cost-analysis-pane.png)
+   :::image type="content" source="./media/plan-manage-costs/cost-analysis-pane.png" alt-text="Мониторинг затрат с помощью панели "анализ затрат"":::
 
 В предыдущем примере отображаются текущие затраты на Azure Cosmos DB для месяца февраля. Диаграммы также содержат Azure Cosmos DB затраты по расположению и группе ресурсов.
 

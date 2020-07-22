@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/14/2018
 ms.author: hrasheed
-ms.openlocfilehash: e64bf253a73df3a2f8170109dc1dfb9a59613733
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 2cee60a71f6f19e09194dc689f95999bb11faad3
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "64685324"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86086472"
 ---
 # <a name="publish-an-hdinsight-application-in-the-azure-marketplace"></a>Публикация приложения HDInsight в Azure Marketplace
 Вы можете установить приложения Azure HDInsight в кластере HDInsight под управлением Linux. В этой статье описано, как опубликовать приложение HDInsight в Azure Marketplace. Общие сведения о публикации в Azure Marketplace см. в статье [Публикация предложения и управление им в Azure Marketplace](../marketplace/marketplace-publishers-guide.md).
@@ -91,12 +91,12 @@ ms.locfileid: "64685324"
 3. Введите заголовок и нажмите **Create a new solution template** (Создать шаблон решения).
 4. Щелкните **Create Dev Center account and join the Azure program** (Создать учетную запись центра разработчиков и присоединиться к программе Azure), чтобы зарегистрировать свою компанию, если вы еще этого не сделали.  Дополнительные сведения см. в статье [Создание учетной записи разработчика Майкрософт](../marketplace/marketplace-publishers-guide.md).
 5. Выберите **Define some Topologies to get Started** (Определить некоторые топологии и начать работу). Шаблон решения служит родительским элементом для всех своих топологий. В одном шаблоне предложений или решения можно определить сразу несколько топологий. Когда предложение переходит к стадии промежуточного развертывания, вместе с ним отправляются все его топологии. 
-6. Введите имя топологии, а затем выберите **+**.
-7. Введите новую версию, а затем выберите **+**.
+6. Введите имя топологии, а затем выберите **+** .
+7. Введите новую версию, а затем выберите **+** .
 8. Отправьте ZIP-файл, созданный при создании пакета приложения.  
 9. Выберите **Request Certification** (Запросить сертификацию). Команда сертификации Майкрософт проверяет файлы и выполняет сертификацию топологии.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 * Инструкции по [установке приложений HDInsight](hdinsight-apps-install-applications.md) в кластерах.
 * Инструкции по [установке пользовательских приложений HDInsight](hdinsight-apps-install-custom-applications.md) и развертывании в HDInsight неопубликованного приложения HDInsight.
 * Инструкции по [настройке кластеров HDInsight под управлением Linux с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md) и добавлению других приложений. 

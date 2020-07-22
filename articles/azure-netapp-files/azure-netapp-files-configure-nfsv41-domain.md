@@ -10,15 +10,15 @@ ms.service: azure-netapp-files
 ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 11/08/2019
 ms.author: b-juche
-ms.openlocfilehash: 77178a23206eadae941794c92b8dd99fe2ca1e05
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: dda911add42568e76160e4233502a1f4f550520d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "73906290"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85483726"
 ---
 # <a name="configure-nfsv41-default-domain-for-azure-netapp-files"></a>Настройка домена по умолчанию NFSv4.1 для Azure NetApp Files
 
@@ -26,16 +26,16 @@ ms.locfileid: "73906290"
 
 ## <a name="default-behavior-of-usergroup-mapping"></a>Поведение по умолчанию при сопоставлении пользователей и групп
 
-Корневое сопоставление по умолчанию `nobody` имеет значение User, так как для домена `localdomain`NFSv4 задан параметр. При подключении тома Azure NetApp Files Нфсв 4.1 в качестве привилегированного пользователя вы увидите разрешения для файлов следующим образом:  
+Корневое сопоставление по умолчанию `nobody` имеет значение User, так как для домена NFSv4 задан параметр `localdomain` . При подключении тома Azure NetApp Files Нфсв 4.1 в качестве привилегированного пользователя вы увидите разрешения для файлов следующим образом:  
 
 ![Поведение по умолчанию сопоставления пользователей и групп для Нфсв 4.1](../media/azure-netapp-files/azure-netapp-files-nfsv41-default-behavior-user-group-mapping.png)
 
-Как показано в приведенном выше примере, пользователь `file1` должен быть `root`, но по умолчанию `nobody` сопоставлен с ним.  В этой статье показано, как задать для `file1` `root`пользователя значение.  
+Как показано в приведенном выше примере, пользователь `file1` должен быть `root` , но по умолчанию сопоставлен с ним `nobody` .  В этой статье показано, как задать `file1` для пользователя значение `root` .  
 
 ## <a name="steps"></a>Шаги 
 
 1. Измените `/etc/idmapd.conf` файл на клиенте NFS.   
-    Раскомментируйте строку `#Domain` (т. е. Удалите `#` из строки) и измените значение `localdomain` на. `defaultv4iddomain.com` 
+    Раскомментируйте строку `#Domain` (т. е. Удалите `#` из строки) и измените значение `localdomain` на `defaultv4iddomain.com` . 
 
     Начальная конфигурация: 
     
@@ -47,7 +47,7 @@ ms.locfileid: "73906290"
 
 2. Отключите все подключенные в данный момент тома NFS.
 3. Обновите файл `/etc/idmapd.conf`.
-4. Перезапустите `rpcbind` службу на узле (`service rpcbind restart`) или просто перезагрузите узел.
+4. Перезапустите `rpcbind` службу на узле ( `service rpcbind restart` ) или просто перезагрузите узел.
 5. При необходимости подключите тома NFS.   
 
     См. раздел [подключение или отключение тома для виртуальных машин Windows или Linux](azure-netapp-files-mount-unmount-volumes-for-virtual-machines.md). 
@@ -56,13 +56,13 @@ ms.locfileid: "73906290"
 
 ![Результирующая конфигурация для Нфсв 4.1](../media/azure-netapp-files/azure-netapp-files-nfsv41-resulting-config.png)
 
-Как показано в примере, пользователь или группа теперь изменились с `nobody` на. `root`
+Как показано в примере, пользователь или группа теперь изменились с `nobody` на `root` .
 
 ## <a name="behavior-of-other-non-root-users-and-groups"></a>Поведение других (не корневых) пользователей и групп
 
 Azure NetApp Files поддерживает локальных пользователей (пользователей, созданных локально на узле), имеющих разрешения, связанные с файлами или папками в томах Нфсв 4.1. Однако служба в настоящее время не поддерживает сопоставление пользователей и групп между несколькими узлами. Таким образом, пользователи, созданные на одном узле, по умолчанию не сопоставляются с пользователями, созданными на другом узле. 
 
-В следующем примере `Host1` имеются три учетные записи тестовых пользователей (`testuser01`, `testuser02`, `testuser03`): 
+В следующем примере `Host1` имеются три учетные записи тестовых пользователей ( `testuser01` , `testuser02` , `testuser03` ): 
 
 ![Результирующая конфигурация для Нфсв 4.1](../media/azure-netapp-files/azure-netapp-files-nfsv41-host1-users.png)
 

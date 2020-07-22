@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 04/16/2020
-ms.openlocfilehash: 0c7791d43ffbbc13ab151362c5c3026ebbdb0d34
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e8619bd7159bbbd418548a5e014dd92f7b9c9e84
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81531022"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86086387"
 ---
 # <a name="create-virtual-networks-for-azure-hdinsight-clusters"></a>Создание виртуальных сетей для кластеров Azure HDInsight
 
@@ -50,7 +50,7 @@ ms.locfileid: "81531022"
 > [!IMPORTANT]  
 > Измените IP-адреса для `hdirule1` и `hdirule2` в этом примере в соответствии с используемым регионом Azure. Эти сведения можно найти по [IP-адресам управления HDInsight](hdinsight-management-ip-addresses.md).
 
-```powershell
+```azurepowershell
 $vnetName = "Replace with your virtual network name"
 $resourceGroupName = "Replace with the resource group the virtual network is in"
 $subnetName = "Replace with the name of the subnet that you plan to use for HDInsight"
@@ -153,7 +153,7 @@ $vnet | Set-AzVirtualNetwork
 
 В этом примере показано, как добавить правила, чтобы разрешить входящий трафик на требуемые IP-адреса. Он не содержит правила ограничения входящего доступа из других источников. В следующем коде показано, как включить доступ по протоколу SSH из Интернета:
 
-```powershell
+```azurepowershell
 Get-AzNetworkSecurityGroup -Name hdisecure -ResourceGroupName RESOURCEGROUP |
 Add-AzNetworkSecurityRuleConfig -Name "SSH" -Description "SSH" -Protocol "*" -SourcePortRange "*" -DestinationPortRange "22" -SourceAddressPrefix "*" -DestinationAddressPrefix "VirtualNetwork" -Access Allow -Priority 306 -Direction Inbound
 ```
@@ -162,7 +162,7 @@ Add-AzNetworkSecurityRuleConfig -Name "SSH" -Description "SSH" -Protocol "*" -So
 
 Ниже приведен порядок действий по созданию виртуальной сети, которая ограничивает входящий трафик, но разрешает трафик с IP-адресов, требуемых для HDInsight.
 
-1. Используйте следующую команду, чтобы создать новую группу безопасности сети с именем `hdisecure`. Замените `RESOURCEGROUP` группой ресурсов, которая содержит виртуальную сеть Azure. Замените `LOCATION` на расположение (регион), в котором была создана группа.
+1. Используйте следующую команду, чтобы создать новую группу безопасности сети с именем `hdisecure`. Замените `RESOURCEGROUP` группой ресурсов, которая содержит виртуальную сеть Azure. Замените на `LOCATION` расположение (регион), в котором была создана группа.
 
     ```azurecli
     az network nsg create -g RESOURCEGROUP -n hdisecure -l LOCATION
@@ -192,9 +192,11 @@ Add-AzNetworkSecurityRuleConfig -Name "SSH" -Description "SSH" -Protocol "*" -So
 
     Эта команда возвращает значение следующего вида:
 
-        "/subscriptions/SUBSCRIPTIONID/resourceGroups/RESOURCEGROUP/providers/Microsoft.Network/networkSecurityGroups/hdisecure"
+    ```output
+    "/subscriptions/SUBSCRIPTIONID/resourceGroups/RESOURCEGROUP/providers/Microsoft.Network/networkSecurityGroups/hdisecure"
+    ```
 
-4. Используйте следующую команду, чтобы применить группу безопасности сети к подсети. Замените значения `GUID` и `RESOURCEGROUP` значениями, возвращенными из предыдущего шага. Замените `VNETNAME` и `SUBNETNAME` именем виртуальной сети и именем подсети, которую вы хотите создать.
+4. Используйте следующую команду, чтобы применить группу безопасности сети к подсети. Замените `GUID` значения и `RESOURCEGROUP` значениями, возвращенными из предыдущего шага. Замените `VNETNAME` и `SUBNETNAME` именем виртуальной сети и именем подсети, которую вы хотите создать.
 
     ```azurecli
     az network vnet subnet update -g RESOURCEGROUP --vnet-name VNETNAME --name SUBNETNAME --set networkSecurityGroup.id="/subscriptions/GUID/resourceGroups/RESOURCEGROUP/providers/Microsoft.Network/networkSecurityGroups/hdisecure"
@@ -228,7 +230,7 @@ az network nsg rule create -g RESOURCEGROUP --nsg-name hdisecure -n ssh --protoc
 
     Замените `RESOURCEGROUP` именем группы ресурсов, содержащей виртуальную сеть, а затем введите команду:
 
-    ```powershell
+    ```azurepowershell
     $NICs = Get-AzNetworkInterface -ResourceGroupName "RESOURCEGROUP"
     $NICs[0].DnsSettings.InternalDomainNameSuffix
     ```
@@ -310,7 +312,7 @@ az network nsg rule create -g RESOURCEGROUP --nsg-name hdisecure -n ssh --protoc
 
     Замените `RESOURCEGROUP` именем группы ресурсов, содержащей виртуальную сеть, а затем введите команду:
 
-    ```powershell
+    ```azurepowershell
     $NICs = Get-AzNetworkInterface -ResourceGroupName "RESOURCEGROUP"
     $NICs[0].DnsSettings.InternalDomainNameSuffix
     ```
@@ -368,7 +370,7 @@ az network nsg rule create -g RESOURCEGROUP --nsg-name hdisecure -n ssh --protoc
 
 После выполнения этих действий можно подключаться к ресурсам в виртуальной сети, используя полные доменные имена (FQDN). Теперь можно установить HDInsight в виртуальной сети.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * Полный пример настройки HDInsight для подключения к локальной сети см. в статье [Подключение hdinsight к локальной сети](./connect-on-premises-network.md).
 * Сведения о настройке кластеров Apache HBase в виртуальных сетях Azure см. [в статье Создание кластеров Apache HBase в HDInsight в виртуальной сети Azure](hbase/apache-hbase-provision-vnet.md).
@@ -377,4 +379,4 @@ az network nsg rule create -g RESOURCEGROUP --nsg-name hdisecure -n ssh --protoc
 
 * Дополнительные сведения о группах безопасности сети см. в статье [Фильтрация сетевого трафика с помощью групп безопасности сети](../virtual-network/security-overview.md).
 
-* Дополнительные сведения об определяемых пользователем маршрутах см. в разделе [определяемые пользователем маршруты и IP-пересылка](../virtual-network/virtual-networks-udr-overview.md).
+* Дополнительные сведения о пользовательских маршрутах см. в статье [User-defined routes and IP forwarding](../virtual-network/virtual-networks-udr-overview.md) (Определяемые пользователем маршруты и IP-пересылка).

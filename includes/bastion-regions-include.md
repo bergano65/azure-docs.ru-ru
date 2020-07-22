@@ -5,15 +5,15 @@ services: bastion
 author: cherylmc
 ms.service: bastion
 ms.topic: include
-ms.date: 03/05/2020
+ms.date: 07/16/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 5190804180612e885b226f9b00d82b8d2f528a8a
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
-ms.translationtype: HT
+ms.openlocfilehash: a924cb42ce1c5fccde3d49fa8f9c2d402997df52
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "78668794"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86544753"
 ---
 >[!NOTE]
 >Мы работаем над поддержкой дополнительных регионов. При добавлении региона он заносится в этот список.
@@ -35,6 +35,8 @@ ms.locfileid: "78668794"
 * Центральная Франция
 * Северная Европа
 * Восточная Норвегия;
+* Западная Норвегия
+* Северная Швейцария
 * южная часть Соединенного Королевства
 * западная часть Соединенного Королевства
 * Западная Европа
@@ -49,6 +51,7 @@ ms.locfileid: "78668794"
 * Республика Корея, центральный регион
 * Республика Корея, южный регион
 * Юго-Восточная Азия
+* Центральная Индия
 * Западная Индия
 
 **Ближний Восток и Африка:**
@@ -62,3 +65,6 @@ ms.locfileid: "78668794"
 * US Gov (Айова)
 * US Gov (Техас)
 * US Gov (Вирджиния)
+
+**Azure для Китая**
+* Северный Китай 2

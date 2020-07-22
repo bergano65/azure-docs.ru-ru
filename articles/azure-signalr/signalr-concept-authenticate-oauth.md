@@ -1,17 +1,17 @@
 ---
-title: Инструкции по проверке подлинности клиентов службы Azure SignalR
-description: Узнайте, как реализовать собственную проверку подлинности и интегрировать ее со службой Azure SignalR Service, выполнив пример E2E.
+title: Руководство по аутентификации клиентов Службы Azure SignalR
+description: Узнайте, как реализовать собственную аутентификацию и интегрировать ее в службу Azure SignalR на примере e2e.
 author: sffamily
 ms.service: signalr
 ms.topic: conceptual
 ms.date: 11/13/2019
 ms.author: zhshang
-ms.openlocfilehash: 5608d71c4a91c9b46b8ed7de13c9d4c06a3f195f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: cb99a0690e1d07f058572b188ae0b76995f48504
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82194607"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85961801"
 ---
 # <a name="azure-signalr-service-authentication"></a>Аутентификация в Службе Azure SignalR
 
@@ -45,16 +45,16 @@ ms.locfileid: "82194607"
 Для работы с этим руководством необходимо следующее:
 
 * Учетная запись, созданная в [GitHub](https://github.com/)
-* [Git](https://git-scm.com/)
-* [Пакет SDK для .NET Core](https://www.microsoft.com/net/download/windows)
-* [Azure Cloud Shell настроено](https://docs.microsoft.com/azure/cloud-shell/quickstart)
+* [Git](https://git-scm.com/);
+* [Базовый пакет SDK для .NET](https://www.microsoft.com/net/download/windows)
+* [Настроенный Azure Cloud Shell.](https://docs.microsoft.com/azure/cloud-shell/quickstart)
 * Скачанный или клонированный репозиторий [примеров AzureSignalR](https://github.com/aspnet/AzureSignalR-samples), доступный в репозитории GitHub.
 
 ## <a name="create-an-oauth-app"></a>Создание приложения OAuth
 
 1. Откройте веб-браузер, перейдите к `https://github.com` и войдите в свою учетную запись.
 
-2. Для учетной записи перейдите в раздел **Параметры** > параметры**разработчика** и щелкните **зарегистрировать новое приложение**или **создать приложение OAuth** в разделе *приложения OAuth*.
+2. В учетной записи перейдите к **Параметрам** > **Параметрам разработчика** и щелкните **Регистрация нового приложения** или **New OAuth App** (Создать приложение OAuth) в разделе *OAuth Apps* (Приложения OAuth).
 
 3. Для нового приложения OAuth используйте следующие параметры, а затем щелкните **Регистрация приложения**.
 
@@ -62,13 +62,15 @@ ms.locfileid: "82194607"
     | ------------ | --------------- | ----------- |
     | имя приложения; | *Чат SignalR Azure* | Скорее всего, пользователи GitHub смогут распознать и довериться приложению, с которым они проходят аутентификацию.   |
     | URL-адрес домашней страницы | `http://localhost:5000/home` | |
-    | Описание приложения | *Пример разговора в чате с помощью службы Azure SignalR с проверкой подлинности GitHub* | Полезное описание приложения, которое поможет пользователям приложения распознать содержимое используемой аутентификации. |
+    | Описание приложения | *Пример использования службы Azure SignalR в комнате чата с помощью аутентификации GitHub* | Полезное описание приложения, которое поможет пользователям приложения распознать содержимое используемой аутентификации. |
     | URL-адрес обратного вызова проверки подлинности | `http://localhost:5000/signin-github` | Этот параметр является самым важным параметром для приложения OAuth. Он является URL-адресом обратного вызова, который GitHub возвращает пользователю, после успешной аутентификации. В этом руководстве по умолчанию необходимо использовать URL-адрес обратного вызова для пакета *AspNet.Security.OAuth.GitHub*, */signin-github*.  |
 
 4. После завершения регистрации нового приложения OAuth добавьте *Идентификатор клиента* и *Секрет клиента* в менеджер секретов с помощью следующих команд. Замените *Your_GitHub_Client_Id* и *Your_GitHub_Client_Secret* на значения из собственного приложения OAuth.
 
-        dotnet user-secrets set GitHubClientId Your_GitHub_Client_Id
-        dotnet user-secrets set GitHubClientSecret Your_GitHub_Client_Secret
+    ```dotnetcli
+    dotnet user-secrets set GitHubClientId Your_GitHub_Client_Id
+    dotnet user-secrets set GitHubClientSecret Your_GitHub_Client_Secret
+    ```
 
 ## <a name="implement-the-oauth-flow"></a>Реализация потока OAuth
 
@@ -76,9 +78,11 @@ ms.locfileid: "82194607"
 
 1. Добавьте ссылку на последние пакеты *Microsoft.AspNetCore.Authentication.Cookies* и *AspNet.Security.OAuth.GitHub* восстановите все пакеты.
 
-        dotnet add package Microsoft.AspNetCore.Authentication.Cookies -v 2.1.0-rc1-30656
-        dotnet add package AspNet.Security.OAuth.GitHub -v 2.0.0-rc2-final
-        dotnet restore
+    ```dotnetcli
+    dotnet add package Microsoft.AspNetCore.Authentication.Cookies -v 2.1.0-rc1-30656
+    dotnet add package AspNet.Security.OAuth.GitHub -v 2.0.0-rc2-final
+    dotnet restore
+    ```
 
 1. Откройте файл *Startup.cs* и добавьте инструкцию `using` для следующего пространства имен:
 
@@ -345,19 +349,25 @@ ms.locfileid: "82194607"
 
 2. Создавайте приложение с помощью .NET Core CLI, выполните следующую команду в оболочке командной строки:
 
-        dotnet build
+    ```dotnetcli
+    dotnet build
+    ```
 
 3. После того как создание завершится, чтобы запустить веб-приложение локально, выполните следующую команду:
 
-        dotnet run
+    ```dotnetcli
+    dotnet run
+    ```
 
     По умолчанию приложение будет размещаться локально, используя порт 5000.
 
-        E:\Testing\chattest>dotnet run
-        Hosting environment: Production
-        Content root path: E:\Testing\chattest
-        Now listening on: http://localhost:5000
-        Application started. Press Ctrl+C to shut down.
+    ```output
+    E:\Testing\chattest>dotnet run
+    Hosting environment: Production
+    Content root path: E:\Testing\chattest
+    Now listening on: http://localhost:5000
+                    Application started. Press Ctrl+C to shut down.
+    ```
 
 4. Запустите окно браузера и перейдите к `http://localhost:5000`. Чтобы войти с помощью GitHub, щелкните **эту** ссылку вверху.
 
@@ -377,7 +387,7 @@ ms.locfileid: "82194607"
 
 ## <a name="deploy-the-app-to-azure"></a>Развертывание приложения в Azure
 
-В этом разделе вы будете использовать интерфейс командной строки Azure (CLI) из Azure Cloud Shell для создания нового веб-приложения в [службе приложений Azure](https://docs.microsoft.com/azure/app-service/) для размещения приложения ASP.NET в Azure. Веб-приложение будет настроено на использование развертывания локальной системы Git. Также веб-приложение будет настроено с помощью строки соединения SignalR, секретов приложения OAuth GitHub и пользователя развертывания.
+Из этого раздела вы узнаете, как использовать интерфейс командной строки Azure (CLI) из Azure Cloud Shell, чтобы создать новое веб-приложение в [Службе приложений Azure](https://docs.microsoft.com/azure/app-service/) для размещения приложения ASP.NET в Azure. Веб-приложение будет настроено на использование развертывания локальной системы Git. Также веб-приложение будет настроено с помощью строки соединения SignalR, секретов приложения OAuth GitHub и пользователя развертывания.
 
 В этом разделе используется расширение *signalr* для Azure CLI. Выполните следующую команду, чтобы установить расширение *signalr* для Azure:
 
@@ -539,7 +549,7 @@ az webapp deployment source config-local-git --name $WebAppName \
 
 И наконец, для завершения процесса выполните обновление **URL-адреса домашней страницы** и **URL-адреса обратного вызова авторизации** приложения OAuth GitHub, чтобы указать новое размещенное приложение.
 
-1. Откройте [https://github.com](https://github.com) в браузере и перейдите к **параметрам** > учетной записи параметры**разработчика** > **OAuth приложения**.
+1. В браузере откройте [https://github.com](https://github.com) и в учетной записи перейдите к элементам **Параметры** > **Параметры разработчика** > **Oauth Apps** (Приложения OAuth).
 
 2. Щелкните приложение аутентификации и обновите **URL-адрес домашней страницы** и **URL-адрес обратного вызова авторизации**, как показано ниже.
 
@@ -563,7 +573,7 @@ az webapp deployment source config-local-git --name $WebAppName \
 
 Войдите на [портал Azure](https://portal.azure.com) и щелкните **Группы ресурсов**.
 
-В текстовом поле **Фильтровать по имени...** введите имя группы ресурсов. В инструкциях в этой статье использовалась группа ресурсов с именем *SignalRTestResources*. В своей группе ресурсов в списке результатов щелкните **...**, а затем **Удалить группу ресурсов**.
+Введите имя группы ресурсов в текстовое поле **Фильтровать по имени...** . В инструкциях в этой статье использовалась группа ресурсов с именем *SignalRTestResources*. В своей группе ресурсов в списке результатов щелкните **...** , а затем **Удалить группу ресурсов**.
 
 ![DELETE](./media/signalr-concept-authenticate-oauth/signalr-delete-resource-group.png)
 

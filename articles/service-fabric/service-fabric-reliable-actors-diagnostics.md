@@ -5,20 +5,20 @@ author: abhishekram
 ms.topic: conceptual
 ms.date: 10/26/2017
 ms.author: abhisram
-ms.openlocfilehash: e6e9fb66368461e0d3ebdd2709f4ced0e796bea5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a38a11d9cf062cd0a45890d43afe9b2530b2b7bb
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79282332"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86258462"
 ---
 # <a name="diagnostics-and-performance-monitoring-for-reliable-actors"></a>Диагностика и мониторинг производительности в Reliable Actors
-В среде выполнения субъектов Reliable Actors предусмотрены события [EventSource](https://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource.aspx) и [счетчики производительности](https://msdn.microsoft.com/library/system.diagnostics.performancecounter.aspx). содержащие полезную информацию о работоспособности среды выполнения и помогающие устранять неполадки и контролировать производительность.
+В среде выполнения субъектов Reliable Actors предусмотрены события [EventSource](/dotnet/api/system.diagnostics.tracing.eventsource?view=netcore-3.1) и [счетчики производительности](/dotnet/api/system.diagnostics.performancecounter?view=dotnet-plat-ext-3.1). содержащие полезную информацию о работоспособности среды выполнения и помогающие устранять неполадки и контролировать производительность.
 
 ## <a name="eventsource-events"></a>События EventSource
 Имя поставщика EventSource для среды выполнения Reliable Actors — Microsoft-ServiceFabric-Actors. События из этого источника отображаются в окне [Diagnostics Events](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md#view-service-fabric-system-events-in-visual-studio) (События диагностики) при [отладке приложения субъекта в Visual Studio](service-fabric-debugging-your-application.md).
 
-Для сбора и просмотра событий EventSource вы можете использовать такие инструменты и технологии, как [PerfView](https://www.microsoft.com/download/details.aspx?id=28567), [диагностика Azure](../cloud-services/cloud-services-dotnet-diagnostics.md), [семантическое ведение журналов](https://msdn.microsoft.com/library/dn774980.aspx) и [библиотеки Microsoft TraceEvent](https://www.nuget.org/packages/Microsoft.Diagnostics.Tracing.TraceEvent).
+Для сбора и просмотра событий EventSource вы можете использовать такие инструменты и технологии, как [PerfView](https://www.microsoft.com/download/details.aspx?id=28567), [диагностика Azure](../cloud-services/cloud-services-dotnet-diagnostics.md), [семантическое ведение журналов](/previous-versions/msp-n-p/dn774980(v=pandp.10)) и [библиотеки Microsoft TraceEvent](https://www.nuget.org/packages/Microsoft.Diagnostics.Tracing.TraceEvent).
 
 ### <a name="keywords"></a>Ключевые слова
 Все события EventSource надежных субъектов связаны с одним или несколькими ключевыми словами. Это позволяет фильтровать собранные события. Определены указанные ниже биты ключевых слов.
@@ -40,7 +40,7 @@ ms.locfileid: "79282332"
 
 В каждой категории предусмотрен как минимум один счетчик.
 
-Для сбора и просмотра данных счетчиков производительности можно использовать [системный монитор Windows](https://technet.microsoft.com/library/cc749249.aspx) , доступный по умолчанию в операционной системе Windows. [Диагностика Azure](../cloud-services/cloud-services-dotnet-diagnostics.md) , в свою очередь, позволяет не только собирать данные счетчиков производительности, но и загружать их в таблицы Azure.
+Для сбора и просмотра данных счетчиков производительности можно использовать [системный монитор Windows](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc749249(v=ws.11)) , доступный по умолчанию в операционной системе Windows. [Диагностика Azure](../cloud-services/cloud-services-dotnet-diagnostics.md) , в свою очередь, позволяет не только собирать данные счетчиков производительности, но и загружать их в таблицы Azure.
 
 ### <a name="performance-counter-instance-names"></a>Имена экземпляров счетчиков производительности
 В кластере, содержащем большое количество служб или секций служб субъектов, находится большое количество экземпляров счетчиков производительности субъектов. Имя экземпляра счетчика производительности помогает определить конкретную [секцию](service-fabric-reliable-actors-platform.md#service-fabric-partition-concepts-for-actors) и метод субъекта (если применимо), с которыми связан экземпляр.
@@ -50,7 +50,7 @@ ms.locfileid: "79282332"
 
 `ServiceFabricPartitionID_ActorsRuntimeInternalID`
 
-*ServiceFabricPartitionID* — это строковое представление идентификатора секции Service Fabric, с которым связан экземпляр счетчика производительности. ИДЕНТИФИКАТОРом секции является GUID, и его строковое представление создается с помощью [`Guid.ToString`](https://msdn.microsoft.com/library/97af8hh4.aspx) метода с описателем формата "D".
+*ServiceFabricPartitionID* — это строковое представление идентификатора секции Service Fabric, с которым связан экземпляр счетчика производительности. ИДЕНТИФИКАТОРом секции является GUID, и его строковое представление создается с помощью [`Guid.ToString`](/dotnet/api/system.guid.tostring?view=netcore-3.1#System_Guid_ToString_System_String_) метода с описателем формата "D".
 
 *ActorRuntimeInternalID* — это строковое представление 64-разрядного целого числа. Оно создается средой выполнения субъектов Service Fabric для внутреннего использования. В имя экземпляра счетчика производительности оно включается для того, чтобы обеспечить его уникальность и избежать конфликтов с именами других экземпляров счетчиков производительности. Пользователям не следует пытаться интерпретировать эту часть имени экземпляра счетчика производительности.
 
@@ -69,7 +69,7 @@ ms.locfileid: "79282332"
 
 *ActorsRuntimeMethodId* — это строковое представление 32-разрядного целого числа. Оно создается средой выполнения субъектов Service Fabric для внутреннего использования. В имя экземпляра счетчика производительности оно включается для того, чтобы обеспечить его уникальность и избежать конфликтов с именами других экземпляров счетчиков производительности. Пользователям не следует пытаться интерпретировать эту часть имени экземпляра счетчика производительности.
 
-*ServiceFabricPartitionID* — это строковое представление идентификатора секции Service Fabric, с которым связан экземпляр счетчика производительности. ИДЕНТИФИКАТОРом секции является GUID, и его строковое представление создается с помощью [`Guid.ToString`](https://msdn.microsoft.com/library/97af8hh4.aspx) метода с описателем формата "D".
+*ServiceFabricPartitionID* — это строковое представление идентификатора секции Service Fabric, с которым связан экземпляр счетчика производительности. ИДЕНТИФИКАТОРом секции является GUID, и его строковое представление создается с помощью [`Guid.ToString`](/dotnet/api/system.guid.tostring?view=netcore-3.1#System_Guid_ToString_System_String_) метода с описателем формата "D".
 
 *ActorRuntimeInternalID* — это строковое представление 64-разрядного целого числа. Оно создается средой выполнения субъектов Service Fabric для внутреннего использования. В имя экземпляра счетчика производительности оно включается для того, чтобы обеспечить его уникальность и избежать конфликтов с именами других экземпляров счетчиков производительности. Пользователям не следует пытаться интерпретировать эту часть имени экземпляра счетчика производительности.
 
@@ -83,7 +83,7 @@ ms.locfileid: "79282332"
 ### <a name="actor-method-events-and-performance-counters"></a>События и счетчики производительности методов субъектов
 Среда выполнения Reliable Actors генерирует следующие события, связанные с [методами субъектов](service-fabric-reliable-actors-introduction.md).
 
-| Имя события | Код события | Level | Ключевое слово | Описание |
+| Имя события. | Идентификатор события | Уровень | Ключевое слово | Описание |
 | --- | --- | --- | --- | --- |
 | ActorMethodStart |7 |Подробный |0x2 |Среда выполнения субъектов готовится к вызову метода субъекта. |
 | ActorMethodStop |8 |Подробный |0x2 |Выполнение метода субъекта завершено. Это значит, что асинхронный метод субъекта, вызванный средой выполнения, вернулся и задача, возвращенная методом субъекта, завершена. |
@@ -100,7 +100,7 @@ ms.locfileid: "79282332"
 ### <a name="concurrency-events-and-performance-counters"></a>События и счетчики производительности для параллелизма
 Среда выполнения Reliable Actors генерирует следующие события, связанные с [параллелизмом](service-fabric-reliable-actors-introduction.md#concurrency).
 
-| Имя события | Код события | Level | Ключевое слово | Описание |
+| Имя события. | Идентификатор события | Уровень | Ключевое слово | Описание |
 | --- | --- | --- | --- | --- |
 | ActorMethodCallsWaitingForLock |12 |Подробный |0x8 |Это событие записывается в начале каждой новой очереди для субъекта. Оно содержит количество вызовов субъекта, ожидающих получение блокировки субъекта, обеспечивающей "поочередный" параллелизм. |
 
@@ -115,7 +115,7 @@ ms.locfileid: "79282332"
 ### <a name="actor-state-management-events-and-performance-counters"></a>События и счетчики производительности управления состоянием субъектов
 Среда выполнения Reliable Actors генерирует следующие события, связанные с [управлением состояниями субъектов](service-fabric-reliable-actors-state-management.md).
 
-| Имя события | Код события | Level | Ключевое слово | Описание |
+| Имя события. | Идентификатор события | Уровень | Ключевое слово | Описание |
 | --- | --- | --- | --- | --- |
 | ActorSaveStateStart |10 |Подробный |0x4 |Среда выполнения субъектов готовится к сохранению состояния субъекта. |
 | ActorSaveStateStop |11 |Подробный |0x4 |Среда выполнения субъектов завершила сохранение состояния субъекта. |
@@ -130,18 +130,18 @@ ms.locfileid: "79282332"
 ### <a name="events-related-to-actor-replicas"></a>События, связанные с репликами субъектов
 Среда выполнения Reliable Actors создает следующие события, связанные с [репликами субъектов](service-fabric-reliable-actors-platform.md#service-fabric-partition-concepts-for-actors).
 
-| Имя события | Код события | Level | Ключевое слово | Описание |
+| Имя события. | Идентификатор события | Уровень | Ключевое слово | Описание |
 | --- | --- | --- | --- | --- |
-| ReplicaChangeRoleToPrimary |1 |Informational |0x1 |Роль реплики субъекта стала основной. Это означает, что субъекты для этой секции будут создаваться в этой реплике. |
-| ReplicaChangeRoleFromPrimary |2 |Informational |0x1 |Роль реплики субъекта стала неосновной. Это означает, что в этой реплике больше нельзя создавать субъекты для этой секции. Новые запросы не будут доставляться субъектам, уже созданным в этой реплике. После выполнения всех незавершенных запросов субъекты уничтожаются. |
+| ReplicaChangeRoleToPrimary |1 |Информационное |0x1 |Роль реплики субъекта стала основной. Это означает, что субъекты для этой секции будут создаваться в этой реплике. |
+| ReplicaChangeRoleFromPrimary |2 |Информационное |0x1 |Роль реплики субъекта стала неосновной. Это означает, что в этой реплике больше нельзя создавать субъекты для этой секции. Новые запросы не будут доставляться субъектам, уже созданным в этой реплике. После выполнения всех незавершенных запросов субъекты уничтожаются. |
 
 ### <a name="actor-activation-and-deactivation-events-and-performance-counters"></a>События активации и деактивации субъектов и счетчики производительности
 Среда выполнения Reliable Actors генерирует следующие события, связанные с [активацией и деактивацией субъектов](service-fabric-reliable-actors-lifecycle.md).
 
-| Имя события | Код события | Level | Ключевое слово | Описание |
+| Имя события. | Идентификатор события | Уровень | Ключевое слово | Описание |
 | --- | --- | --- | --- | --- |
 | ActorActivated |5 |Informational |0x1 |Субъект активирован. |
-| ActorDeactivated |6 |Informational |0x1 |Субъект отключен. |
+| ActorDeactivated |6 |Информационное |0x1 |Субъект отключен. |
 
 Среда выполнения Reliable Actors публикует следующие счетчики производительности, связанные с активацией и деактивацией субъектов.
 
@@ -159,8 +159,8 @@ ms.locfileid: "79282332"
 | Субъект Service Fabric |Среднее время десериализации запроса (мс) |Время десериализации сообщения запроса субъекта при получении его службой (мс) |
 | Субъект Service Fabric |Среднее время сериализации ответа (мс) |Время сериализации ответного сообщения субъекта в службе до отправки ответа клиенту (мс) |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Использование платформы Service Fabric надежными субъектами](service-fabric-reliable-actors-platform.md)
-* [Справочная документация по API субъектов](https://msdn.microsoft.com/library/azure/dn971626.aspx)
+* [Справочная документация по API субъектов](/previous-versions/azure/dn971626(v=azure.100))
 * [Образец кода](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started)
-* [Поставщики EventSource в PerfView](https://blogs.msdn.microsoft.com/vancem/2012/07/09/introduction-tutorial-logging-etw-events-in-c-system-diagnostics-tracing-eventsource/)
+* [Поставщики EventSource в PerfView](/archive/blogs/vancem/introduction-tutorial-logging-etw-events-in-c-system-diagnostics-tracing-eventsource)

@@ -11,12 +11,12 @@ metadata:
   author: markingmyname
   ms.author: maghan
   ms.date: 10/02/2019
-  ms.openlocfilehash: 5e7c778eb3d5de197044cb51e35875399908d205
-  ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+  ms.openlocfilehash: fa9decd8a0b7424d040cab9dcd46b919bb4d7df5
+  ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 05/19/2020
-  ms.locfileid: "83657233"
+  ms.lasthandoff: 06/20/2020
+  ms.locfileid: "85116236"
 landingContent:
 - title: Сведения о Фабрике данных Azure
   linkLists:
@@ -75,9 +75,9 @@ landingContent:
     - text: Копирование локальных данных в облако
       url: /azure/data-factory/tutorial-hybrid-copy-data-tool
     - text: Копирование данных в пакетном режиме
-      url: /azure/data-factory/
+      url: /azure/data-factory/tutorial-bulk-copy-portal
     - text: Копирование данных с приращением
-      url: /azure/data-factory/tutorial-create-azure-ssis-runtime-portal
+      url: /azure/data-factory/tutorial-incremental-copy-overview
     - text: Загрузка ADLS 2-го поколения
       url: /azure/data-factory/load-azure-data-lake-storage-gen2
     - text: Загрузка Хранилища данных SQL
@@ -108,7 +108,7 @@ landingContent:
   linkLists:
   - linkListType: overview
     links:
-    - text: Перенос пакетов Integration Services в управляемый экземпляр Базы данных SQL Azure
+    - text: Перенос пакетов Integration Services в Управляемый экземпляр SQL Azure
       url: /azure/data-factory/scenario-ssis-migration-ssisdb-mi
   - linkListType: tutorial
     links:

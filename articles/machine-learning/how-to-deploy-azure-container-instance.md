@@ -5,17 +5,17 @@ description: Узнайте, как развернуть модели Машин
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: how-to
 ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
-ms.date: 12/27/2019
-ms.openlocfilehash: d460112394d7c7b7d2da4e8af41c0085b67226ec
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 06/12/2020
+ms.openlocfilehash: 44c197b7d9935a7b0631c6cbcd96fde783c2fffe
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80475472"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86087271"
 ---
 # <a name="deploy-a-model-to-azure-container-instances"></a>Развертывание веб-служб в Экземплярах контейнеров Azure.
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -27,7 +27,7 @@ ms.locfileid: "80475472"
 
 Сведения о доступности квот и регионов для ACI см. в статье о [квотах и доступности регионов для экземпляров контейнеров Azure](https://docs.microsoft.com/azure/container-instances/container-instances-quotas) .
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Рабочая область машинного обучения Azure. Дополнительные сведения см. в статье [создание машинное обучение Azure рабочей области](how-to-manage-workspace.md).
 
@@ -43,11 +43,15 @@ ms.locfileid: "80475472"
 
     Дополнительные сведения об установке этих переменных см. в разделе [как и где развертываются модели](how-to-deploy-and-where.md).
 
-- В фрагментах кода __CLI__ в этой статье предполагается, что вы `inferenceconfig.json` создали документ. Дополнительные сведения о создании этого документа см. в разделе [как и где развертываются модели](how-to-deploy-and-where.md).
+- В фрагментах кода __CLI__ в этой статье предполагается, что вы создали `inferenceconfig.json` документ. Дополнительные сведения о создании этого документа см. в разделе [как и где развертываются модели](how-to-deploy-and-where.md).
 
 ## <a name="deploy-to-aci"></a>Развертывание в ACI
 
 Чтобы развернуть модель в службе "экземпляры контейнеров Azure", создайте __конфигурацию развертывания__ , которая описывает требуемые ресурсы вычислений. Например, число ядер и память. Также необходима __Конфигурация вывода__, описывающая среду, необходимую для размещения модели и веб-службы. Дополнительные сведения о создании конфигурации вывода см. в разделе [как и где развертываются модели](how-to-deploy-and-where.md).
+
+> [!NOTE]
+> * ACI подходит только для небольших моделей <размер 1 ГБ. 
+> * Мы рекомендуем использовать один узел AKS для разработки и тестирования больших моделей.
 
 ### <a name="using-the-sdk"></a>Использование пакета SDK
 
@@ -69,7 +73,7 @@ print(service.state)
 
 ### <a name="using-the-cli"></a>Использование интерфейса командной строки
 
-Для развертывания с помощью интерфейса командной строки используйте следующую команду. Замените `mymodel:1` на имя и версию зарегистрированной модели. Замените `myservice` именем для предоставления этой службе:
+Для развертывания с помощью интерфейса командной строки используйте следующую команду. Замените на `mymodel:1` имя и версию зарегистрированной модели. Замените `myservice` именем для предоставления этой службе:
 
 ```azurecli-interactive
 az ml model deploy -m mymodel:1 -n myservice -ic inferenceconfig.json -dc deploymentconfig.json
@@ -90,11 +94,11 @@ az ml model deploy -m mymodel:1 -n myservice -ic inferenceconfig.json -dc deploy
 
 [!INCLUDE [aml-update-web-service](../../includes/machine-learning-update-web-service.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 * [Развертывание модели с помощью пользовательского образа DOCKER](how-to-deploy-custom-docker-image.md)
 * [Устранение неполадок развертывания](how-to-troubleshoot-deployment.md)
-* [Использование TLS для защиты веб-службы с помощью Машинное обучение Azure](how-to-secure-web-service.md)
+* [Использование TLS для защиты веб-службы с помощью Машинного обучения Azure](how-to-secure-web-service.md).
 * [Использование модели Машинного обучения Azure, развернутой в качестве веб-службы](how-to-consume-web-service.md)
 * [Мониторинг моделей Машинное обучение Azure с помощью Application Insights](how-to-enable-app-insights.md)
 * [Сбор данных для моделей в рабочей среде](how-to-enable-data-collection.md)

@@ -11,23 +11,25 @@ ms.topic: quickstart
 ms.date: 04/14/2020
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: a1354bc74d13e02e5e0982a8f5d98b01fab67b4b
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: 355a450cbdcf44d79cf73904e3b932afb62b7f55
+ms.sourcegitcommit: 55b2bbbd47809b98c50709256885998af8b7d0c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81404777"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84987249"
 ---
 # <a name="quickstart-generate-a-thumbnail-using-the-computer-vision-rest-api-and-java"></a>Краткое руководство. Создание эскиза с помощью REST API "Компьютерное зрение" и Java
 
 В этом кратком руководстве описано, как создать эскиз изображения с помощью REST API Компьютерного зрения. Вы можете указать нужную высоту и ширину. При этом пропорции могут отличаться от пропорций исходного изображения. API компьютерного зрения использует интеллектуальную обрезку для идентификации интересующей области и создания координат обрезки для этой области.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/ai/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=cognitive-services), прежде чем начинать работу.
-
 ## <a name="prerequisites"></a>Предварительные требования
 
-- У вас должна быть установлена платформа [Java&trade;, комплект разработчика Java, выпуск "Стандартный" версии 7 или 8](https://aka.ms/azure-jdks) (JDK 7 или 8).
-- У вас должен быть ключ подписки для Компьютерного зрения. На странице [Try Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=computer-vision) (Пробная версия Cognitive Services) можно получить ключ бесплатной пробной версии. Или следуйте инструкциям из статьи [Create a Cognitive Services account](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) (Создание учетной записи Cognitive Services), чтобы получить подписку Content Moderator и свой ключ. Затем [создайте переменные среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для строки ключа и конечной точки службы с именами `COMPUTER_VISION_SUBSCRIPTION_KEY` и `COMPUTER_VISION_ENDPOINT` соответственно.
+* подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services/).
+* Платформа [Java&trade;, комплект SDK, выпуск "Стандартный" версии 7 или 8](https://aka.ms/azure-jdks) (JDK 7 или 8).
+* Получив подписку Azure, <a href="https://portal.azure.com/#create/Microsoft.CognitiveServicesComputerVision"  title="создайте ресурс Компьютерного зрения"  target="_blank">create a Computer Vision resource <span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку. После развертывания щелкните **Перейти к ресурсам**.
+    * Для подключения приложения к API Компьютерного зрения потребуется ключ и конечная точка из созданного ресурса. Ключ и конечная точка будут вставлены в приведенный ниже код в кратком руководстве.
+    * Используйте бесплатную ценовую категорию (`F0`), чтобы опробовать службу, а затем выполните обновление до платного уровня для рабочей среды.
+* [Создайте переменные среды](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account#configure-an-environment-variable-for-authentication) для ключа и URL-адреса конечной точки с именами `COMPUTER_VISION_SUBSCRIPTION_KEY` и `COMPUTER_VISION_ENDPOINT` соответственно.
 
 ## <a name="create-and-run-the-sample-application"></a>Создание и запуск примера приложения
 
@@ -35,56 +37,61 @@ ms.locfileid: "81404777"
 
 1. Создайте проект Java в используемой вами интегрированной среде разработки или редакторе. Если этот параметр доступен, создайте проект Java из шаблона приложения командной строки.
 1. Импортируйте следующие библиотеки в свой проект Java. Если вы используете Maven — его координаты предоставляются для каждой библиотеки.
-   - [HTTP-клиент Apache](https://hc.apache.org/downloads.cgi) (org.apache.httpcomponents:httpclient:4.5.5)
-   - [HTTP-ядро Apache](https://hc.apache.org/downloads.cgi) (org.apache.httpcomponents:httpcore:4.4.9)
+   - [HTTP-клиент Apache](https://hc.apache.org/downloads.cgi) (org.apache.httpcomponents:httpclient:4.5.X)
+   - [HTTP-ядро Apache](https://hc.apache.org/downloads.cgi) (org.apache.httpcomponents:httpcore:4.4.X)
    - [Библиотека JSON](https://github.com/stleary/JSON-java) (org.json:json:20180130)
-1. Добавьте следующие операторы `import` в файл, содержащий общий класс `Main` для вашего проекта.  
+1. Добавьте к классу main следующие инструкции `import`: 
 
    ```java
-   import java.awt.*;
-   import javax.swing.*;
-   import java.net.URI;
-   import java.io.InputStream;
-   import javax.imageio.ImageIO;
-   import java.awt.image.BufferedImage;
-   import org.apache.http.HttpEntity;
-   import org.apache.http.HttpResponse;
-   import org.apache.http.client.methods.HttpPost;
-   import org.apache.http.entity.StringEntity;
-   import org.apache.http.client.utils.URIBuilder;
-   import org.apache.http.impl.client.CloseableHttpClient;
-   import org.apache.http.impl.client.HttpClientBuilder;
-   import org.apache.http.util.EntityUtils;
-   import org.json.JSONObject;
+    import java.awt.*;
+    import javax.swing.*;
+    import java.net.URI;
+    import java.io.InputStream;
+    import javax.imageio.ImageIO;
+    import java.awt.image.BufferedImage;
+    import org.apache.http.HttpEntity;
+    import org.apache.http.HttpResponse;
+    import org.apache.http.client.methods.HttpPost;
+    import org.apache.http.entity.StringEntity;
+    import org.apache.http.client.utils.URIBuilder;
+    import org.apache.http.impl.client.CloseableHttpClient;
+    import org.apache.http.impl.client.HttpClientBuilder;
+    import org.apache.http.util.EntityUtils;
+    import org.json.JSONObject;
    ```
 
-1. Замените открытый класс `Main` следующим кодом.
-1. При необходимости замените значение `imageToAnalyze` URL-адресом другого изображения, для которого вы хотите создать эскиз.
+1. Вставьте оставшуюся часть приведенного ниже примера кода под инструкциями import (при необходимости измените имя класса).
+1. Добавьте в переменные среды ключ и конечную точку подписки службы "Компьютерное зрение".
+1. (Необязательно) Замените значение `imageToAnalyze` URL-адресом своего изображения.
 1. Сохраните, а затем создайте проект Java.
-1. Если вы используете интегрированную среду разработки, запустите `Main`. В противном случае откройте окно командной строки и затем используйте команду `java` для выполнения скомпилированного класса. Например, `java Main`.
+1. Если вы используете интегрированную среду разработки, запустите `GenerateThumbnail`. В противном случае выполните из командной строки приведенные ниже команды.
 
 ```java
-// This sample uses the following libraries:
-//  - Apache HTTP client (org.apache.httpcomponents:httpclient:4.5.5)
-//  - Apache HTTP core (org.apache.httpcomponents:httpccore:4.4.9)
-//  - JSON library (org.json:json:20180130).
+/**
+ * This sample uses the following libraries (create a "lib" folder to place them in): 
+ * Apache HTTP client:
+ * org.apache.httpcomponents:httpclient:4.5.X 
+ * Apache HTTP core:
+ * org.apache.httpcomponents:httpccore:4.4.X 
+ * JSON library:
+ * org.json:json:20180130
+ *
+ * To build/run from the command line: 
+ *     javac GenerateThumbnail.java -cp .;lib\*
+ *     java -cp .;lib\* GenerateThumbnail
+ */
 
+public class GenerateThumbnail {
 
-public class Main {
-    // **********************************************
-    // *** Update or verify the following values. ***
-    // **********************************************
-
-    // Add your Computer Vision subscription key and endpoint to your environment variables.
-    // After setting, close and then re-open your command shell or project for the changes to take effect.
-    String subscriptionKey = System.getenv("COMPUTER_VISION_SUBSCRIPTION_KEY");
-    String endpoint = ("COMPUTER_VISION_ENDPOINT");
-
-    private static final String uriBase = endpoint + 
-            "vision/v2.1/generateThumbnail";
-
-    private static final String imageToAnalyze =
-        "https://upload.wikimedia.org/wikipedia/commons/9/94/Bloodhound_Puppy.jpg";
+    // Add your Computer Vision subscription key and endpoint to your environment
+    // variables. Then, close and then re-open your command shell or project for the
+    // changes to take effect.
+    private static String subscriptionKey = System.getenv("COMPUTER_VISION_SUBSCRIPTION_KEY");
+    private static String endpoint = System.getenv("COMPUTER_VISION_ENDPOINT");
+    // The endpoint path
+    private static final String uriBase = endpoint + "vision/v3.0/generateThumbnail";
+    // It's optional if you'd like to use your own image instead of this one.
+    private static final String imageToAnalyze = "https://upload.wikimedia.org/wikipedia/commons/9/94/Bloodhound_Puppy.jpg";
 
     public static void main(String[] args) {
         CloseableHttpClient httpClient = HttpClientBuilder.create().build();
@@ -106,13 +113,14 @@ public class Main {
             request.setHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
 
             // Request body.
-            StringEntity requestEntity =
-                    new StringEntity("{\"url\":\"" + imageToAnalyze + "\"}");
+            StringEntity requestEntity = new StringEntity("{\"url\":\"" + imageToAnalyze + "\"}");
             request.setEntity(requestEntity);
 
             // Call the REST API method and get the response entity.
             HttpResponse response = httpClient.execute(request);
             HttpEntity entity = response.getEntity();
+
+            System.out.println("status" + response.getStatusLine().getStatusCode());
 
             // Check for success.
             if (response.getStatusLine().getStatusCode() == 200) {
@@ -128,11 +136,12 @@ public class Main {
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
+            e.printStackTrace();
         }
     }
 
     // Displays the given input stream as an image.
-    private static void displayImage(InputStream inputStream) {
+    public static void displayImage(InputStream inputStream) {
         try {
             BufferedImage bufferedImage = ImageIO.read(inputStream);
 

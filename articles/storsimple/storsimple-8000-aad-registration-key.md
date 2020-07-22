@@ -7,10 +7,9 @@ ms.topic: conceptual
 ms.date: 01/23/2018
 ms.author: alkohli
 ms.openlocfilehash: b16132c24d35ee2c9902fa2b21c44416d8376b4d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77470910"
 ---
 # <a name="use-the-new-authentication-for-your-storsimple"></a>Использование нового режима аутентификации для StorSimple
@@ -39,10 +38,10 @@ ms.locfileid: "77470910"
 
 Если вы используете StorSimple серии 8000, убедитесь, что в правила брандмауэра включен следующий URL-адрес:
 
-| Шаблон URL-адреса                         | Облако | Компонент или функция         |
+| Шаблон URL-адреса                         | Cloud | Компонент или функция         |
 |------------------------------------|-------|----------------------------------|
 | `https://login.windows.net`        | Azure Public |Служба аутентификации AAD      |
-| `https://login.microsoftonline.us` | US Government |Служба аутентификации AAD      |
+| `https://login.microsoftonline.us` | US (США) |Служба аутентификации AAD      |
 
 Полный список шаблонов URL-адресов для устройств StorSimple серии 8000 см. в разделе [Шаблоны URL-адресов для правил брандмауэра](storsimple-8000-system-requirements.md#url-patterns-for-firewall-rules).
 

@@ -8,10 +8,10 @@ ms.topic: article
 ms.custom: mvc
 ms.date: 04/29/2020
 ms.openlocfilehash: 62807ef25fe6ee70844e72c90751eb383d0ece7c
-ms.sourcegitcommit: acc558d79d665c8d6a5f9e1689211da623ded90a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82598442"
 ---
 # <a name="manage-logic-apps-with-visual-studio"></a>Управление приложениями логики в Visual Studio
@@ -47,7 +47,7 @@ ms.locfileid: "82598442"
 
     * [Visual Studio 2019](https://aka.ms/download-azure-logic-apps-tools-visual-studio-2019)
 
-    * [Visual Studio 2017](https://aka.ms/download-azure-logic-apps-tools-visual-studio-2017)
+    * [Visual Studio 2017](https://aka.ms/download-azure-logic-apps-tools-visual-studio-2017)
 
     * [Visual Studio 2015](https://aka.ms/download-azure-logic-apps-tools-visual-studio-2015)
 
@@ -92,7 +92,7 @@ ms.locfileid: "82598442"
 
    ![Открытие развернутого приложения логики с портала Azure](./media/manage-logic-apps-with-visual-studio/open-logic-app-in-editor.png)
 
-   После открытия приложения логики в конструкторе Logic Apps в нижней части конструктора можно выбрать **представление кода** , чтобы можно было просмотреть структуру определения базового приложения логики. Если вы хотите создать шаблон развертывания для приложения логики, узнайте о [загрузке шаблона Azure Resource Manager](#download-logic-app) для этого приложения. Узнайте больше о [шаблонах Resource Manager](../azure-resource-manager/templates/overview.md).
+   После открытия приложения логики в конструкторе Logic Apps в нижней части конструктора можно выбрать **представление кода** , чтобы можно было просмотреть структуру определения базового приложения логики. Если вы хотите создать шаблон развертывания для приложения логики, узнайте о [загрузке шаблона Azure Resource Manager](#download-logic-app) для этого приложения. Дополнительные сведения о [шаблонах диспетчер ресурсов](../azure-resource-manager/templates/overview.md).
 
 <a name="download-logic-app"></a>
 
@@ -125,7 +125,7 @@ ms.locfileid: "82598442"
 
 1. В Visual Studio откройте проект группы ресурсов Azure, содержащий приложение логики.
 
-1. В обозреватель решений откройте контекстное меню **<Logic-App-name>. JSON** и выберите **Открыть в конструкторе приложений логики**. (Клавиатура: Ctrl + L)
+1. В обозреватель решений откройте контекстное меню **<Logic-App-Name # C1.js** и выберите **Открыть в конструкторе приложений логики**. (Клавиатура: Ctrl + L)
 
    ![Открытие JSON файла приложения логики с помощью конструктора приложений логики](./media/manage-logic-apps-with-visual-studio/open-logic-app-designer.png)
 
@@ -160,7 +160,7 @@ ms.locfileid: "82598442"
 
 1. В Visual Studio откройте проект группы ресурсов Azure, содержащий приложение логики.
 
-1. В обозреватель решений откройте контекстное меню `<logic-app-name>.json` файла и выберите **Открыть в конструкторе приложений логики**. (Клавиатура: Ctrl + L)
+1. В обозреватель решений откройте `<logic-app-name>.json` контекстное меню файла и выберите **Открыть в конструкторе приложений логики**. (Клавиатура: Ctrl + L)
 
    ![Открытие JSON файла приложения логики с помощью конструктора приложений логики](./media/manage-logic-apps-with-visual-studio/open-logic-app-designer.png)
 

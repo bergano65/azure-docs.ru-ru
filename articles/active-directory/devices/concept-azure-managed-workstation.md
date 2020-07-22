@@ -12,10 +12,9 @@ manager: daveba
 ms.reviewer: frasim
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 05a3a8cf14a591dd3037175e4eed5b5bd8d3096c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78672661"
 ---
 # <a name="understand-secure-azure-managed-workstations"></a>Общие сведения о защищенных рабочих станциях под управлением Azure
@@ -124,6 +123,6 @@ ms.locfileid: "78672661"
    * [Требования к сетевым подключениям Intune](/intune/network-bandwidth-use)
    * [Требования к сетевым подключениям ATP](/azure-advanced-threat-protection/configure-proxy)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Развертывание защищенной рабочей станции под управлением Azure](howto-azure-managed-workstation.md).

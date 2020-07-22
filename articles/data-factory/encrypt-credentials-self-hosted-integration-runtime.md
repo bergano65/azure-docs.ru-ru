@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 01/15/2018
 ms.author: abnarain
 ms.openlocfilehash: cd775c5a3bf367600a4537a9409a9bb8f902f588
-ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82628986"
 ---
 # <a name="encrypt-credentials-for-on-premises-data-stores-in-azure-data-factory"></a>Шифрование учетных данных для локальных хранилищ данных в фабрике данных Azure
@@ -50,7 +50,7 @@ ms.locfileid: "82628986"
 ```
 
 ## <a name="encrypt-credentials"></a>Шифрование учетных данных
-Чтобы зашифровать конфиденциальные данные из полезных данных JSON в локальной среде выполнения интеграции, выполните команду **New-AzDataFactoryV2LinkedServiceEncryptedCredential**и передайте полезные данные JSON. Этот командлет гарантирует, что учетные данные шифруются с помощью API защиты данных и сохраняются локально на узле локальной среда выполнения интеграции. Выходные данные выходных данных, содержащие зашифрованную ссылку на учетные данные, можно перенаправить в другой JSON-файл (в данном случае "encryptedLinkedService. JSON").
+Чтобы зашифровать конфиденциальные данные из полезных данных JSON в локальной среде выполнения интеграции, выполните команду **New-AzDataFactoryV2LinkedServiceEncryptedCredential**и передайте полезные данные JSON. Этот командлет гарантирует, что учетные данные шифруются с помощью API защиты данных и сохраняются локально на узле локальной среда выполнения интеграции. Выходные данные выходных данных, содержащие зашифрованную ссылку на учетные данные, можно перенаправить в другой JSON-файл (в данном случае "encryptedLinkedService.json").
 
 ```powershell
 New-AzDataFactoryV2LinkedServiceEncryptedCredential -DataFactoryName $dataFactoryName -ResourceGroupName $ResourceGroupName -Name "SqlServerLinkedService" -DefinitionFile ".\SQLServerLinkedService.json" > encryptedSQLServerLinkedService.json

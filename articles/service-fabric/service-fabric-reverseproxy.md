@@ -5,12 +5,12 @@ author: BharatNarasimman
 ms.topic: conceptual
 ms.date: 11/03/2017
 ms.author: bharatn
-ms.openlocfilehash: 4fa4c6e46dd786b833087f892d995e85b5d2ea47
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 2d9ebf77862f7b9b019507613e269126501abfd8
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79282228"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86244928"
 ---
 # <a name="reverse-proxy-in-azure-service-fabric"></a>Обратный прокси-сервер в Azure Service Fabric
 Обратный прокси-сервер, встроенный в Azure Service Fabric, помогает микрослужбам, работающим в кластере Service Fabric, обнаруживать другие службы с конечными точками HTTP и взаимодействовать с этими службами.
@@ -78,7 +78,7 @@ http(s)://<Cluster FQDN | internal IP>:Port/<ServiceInstanceName>/<Suffix path>?
 * **TargetReplicaSelector.** Данный параметр определяет, каким образом должна быть выбрана целевая реплика или экземпляр.
   * Если целевая служба является службой с отслеживанием состояния, то параметр TargetReplicaSelector может иметь значение PrimaryReplica, RandomSecondaryReplica или RandomReplica. Если этот параметр не указан, по умолчанию используется значение PrimaryReplica.
   * Если целевая служба является службой без отслеживания состояния, обратный прокси-сервер выбирает случайный экземпляр раздела службы, к которому направляется запрос.
-* **Timeout.** Время ожидания HTTP-запроса к службе, созданного обратным прокси-сервером от имени клиентского запроса. Значение по умолчанию — 60 секунд. Этот параметр является необязательным.
+* **Timeout.** Время ожидания HTTP-запроса к службе, созданного обратным прокси-сервером от имени клиентского запроса. Значение по умолчанию — 120 секунд. Этот параметр является необязательным.
 
 ### <a name="example-usage"></a>Пример использования
 Для примера рассмотрим службу *fabric:/MyApp/MyService*, которая открывает прослушиватель HTTP по приведенному ниже URL-адресу.
@@ -117,9 +117,9 @@ http://10.0.0.5:10592/3f0d39ad-924b-4233-b4a7-02617c6308a6-130834621071472715/
 
 Тем не менее реплики или экземпляры службы могут совместно использовать хост-процесс и даже порт при размещении на веб-сервере на основе http.sys, включая:
 
-* [System.Net.HttpListener;](https://msdn.microsoft.com/library/system.net.httplistener%28v=vs.110%29.aspx)
+* [System.Net.HttpListener;](/dotnet/api/system.net.httplistener?view=netcore-3.1)
 * [ASP.NET Core WebListener;](https://docs.asp.net/latest/fundamentals/servers.html#weblistener)
-* [Katana.](https://www.nuget.org/packages/Microsoft.AspNet.WebApi.OwinSelfHost/)
+* [Katana](https://www.nuget.org/packages/Microsoft.AspNet.WebApi.OwinSelfHost/)
 
 В этом случае вполне вероятно, что веб-сервер доступен в хост-процессе и отвечает на запросы, но разрешенный экземпляр или реплика службы больше не доступна на узле. В этом случае шлюз получит от веб-сервера ответ "HTTP 404". Таким образом, ответ "HTTP 404" может иметь два различных значения:
 
@@ -149,13 +149,13 @@ http://10.0.0.5:10592/3f0d39ad-924b-4233-b4a7-02617c6308a6-130834621071472715/
 
 Службам Service Fabric, выполняющимся в контейнерах Docker Compose, требуется особая конфигурация http: или https: в *разделе Ports* файла docker-compose.yml. Дополнительные сведения см. в разделе [Поддержка развертывания Docker Compose в Azure Service Fabric (предварительная версия)](service-fabric-docker-compose.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Установка и настройка обратного прокси-сервера в кластере](service-fabric-reverseproxy-setup.md)
 * [Подключение к защищенной службе с помощью обратного прокси-сервера](service-fabric-reverseproxy-configure-secure-communication.md)
 * [Диагностика событий обратного прокси-сервера](service-fabric-reverse-proxy-diagnostics.md)
 * Пример обмена данными по протоколу HTTP между службами представлен в [примере проекта на сайте GitHub](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started).
 * [Удаленное взаимодействие службы с Reliable Services](service-fabric-reliable-services-communication-remoting.md)
-* [Начало работы со службами веб-API Microsoft Azure Service Fabric с саморазмещением OWIN](service-fabric-reliable-services-communication-webapi.md)
+* [Начало работы со службами веб-API Microsoft Azure Service Fabric с саморазмещением OWIN](./service-fabric-reliable-services-communication-aspnetcore.md)
 * [Коммуникационный стек WCF для надежных служб](service-fabric-reliable-services-communication-wcf.md)
 
 [0]: ./media/service-fabric-reverseproxy/external-communication.png

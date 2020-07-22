@@ -59,8 +59,6 @@
           href: ./hdinsight-selecting-vm-size.md
         - name: Планирование ресурсов кластера
           href: ./hdinsight-capacity-planning.md
-        - name: Запрос на увеличение квоты ядра ЦП
-          href: ./quota-increase-request.md
         - name: Рекомендации по управлению кластерами
           href: ./cluster-management-best-practices.md
         - name: Доступность и надежность
@@ -169,6 +167,8 @@
                   href: ./optimize-hive-ambari.md
                 - name: Optimize Apache Pig
                   href: ./optimize-pig-ambari.md
+            - name: Перезапуск узлов кластера
+              href: ./cluster-reboot-vm.md
             - name: Использование REST API Apache Ambari
               href: ./hdinsight-hadoop-manage-ambari-rest-api.md
             - name: Удаление кластера
@@ -221,10 +221,6 @@
               href: ./hadoop/apache-hadoop-visual-studio-tools-get-started.md
             - name: "Использование средств Spark и Hive для VS\_Code"
               href: ./hdinsight-for-vscode.md
-            - name: Использование средств HDInsight для IntelliJ с песочницей Hortonworks
-              href: ./hadoop/hdinsight-tools-for-intellij-with-hortonworks-sandbox.md
-            - name: Использование инструментов Data Lake с песочницей Hortonworks
-              href: ./hdinsight-hadoop-emulator-visual-studio.md
         - name: Наблюдение
           items:
             - name: Использование журналов Azure Monitor
@@ -239,6 +235,8 @@
               href: ./cluster-availability-monitor-logs.md
         - name: Диагностика
           items:
+            - name: Запрос на увеличение квоты ядра ЦП
+              href: ./quota-increase-request.md
             - name: 'Устранение неполадок, связанных с действиями скрипта'
               href: ./troubleshoot-script-action.md
             - name: Сбои при создании ресурсов
@@ -414,7 +412,7 @@
               items:
                 - name: Использование с Data Lake Storage
                   href: ./spark/apache-spark-use-with-data-lake-store.md
-                - name: Подключение к базе данных SQL Azure
+                - name: Подключение к Базе данных SQL Azure
                   href: ./spark/apache-spark-connect-to-sql-database.md
                 - name: Реализация лямбда-архитектуры с использованием Apache Spark и Cosmos DB
                   href: ../cosmos-db/lambda-architecture.md
@@ -430,8 +428,6 @@
               href: ./spark/apache-spark-troubleshoot-job-fails-noclassdeffounderror.md
             - name: "Не удается выполнить задание Apache Spark\_— InvalidClassException"
               href: ./spark/apache-spark-troubleshoot-job-fails-invalidclassexception.md
-            - name: "Медленное выполнение заданий Apache Spark\_— listStatus"
-              href: ./spark/apache-spark-troubleshoot-job-slowness-liststatus.md
             - name: "Медленное выполнение заданий Apache Spark\_— контейнер хранилища"
               href: ./spark/apache-spark-troubleshoot-job-slowness-container.md
             - name: Исключение IllegalArgumentException
@@ -501,7 +497,7 @@
                   href: ./hadoop/apache-hadoop-run-samples-linux.md
                 - name: Запуск пользовательских программ Apache Hadoop MapReduce
                   href: ./hadoop/apache-hadoop-run-custom-programs.md
-                - name: 'Разработка программ MapReduce для потоковой передачи на C#'
+                - name: Разработка программ MapReduce для потоковой передачи на C#
                   href: ./hadoop/apache-hadoop-dotnet-csharp-mapreduce-streaming.md
                 - name: Разработка программ Java MapReduce
                   href: ./hadoop/apache-hadoop-develop-deploy-java-mapreduce-linux.md
@@ -725,8 +721,6 @@
               href: ./hbase/hbase-troubleshoot-pegged-cpu-region-server.md
             - name: Истечение времени ожидания при выполнении команды hbase hbck
               href: ./hbase/hbase-troubleshoot-timeouts-hbase-hbck.md
-            - name: Устранение неполадок с Apache HBase
-              href: ./hbase/apache-troubleshoot-hbase.md
             - name: "REST API для отправки запросов в Apache\_HBase"
               href: ./hbase/troubleshoot-rest-api.md
 - name: Интерактивный запрос
@@ -758,7 +752,7 @@
           items:
             - name: Обработка и анализ документов JSON
               href: ./hadoop/using-json-in-hive.md
-            - name: 'Использование определяемых пользователем функций C#'
+            - name: Использование определяемых пользователем функций C#
               href: ./hadoop/apache-hadoop-hive-pig-udf-dotnet-csharp.md
             - name: Использование Python с Apache Hive и Apache Pig
               href: ./hadoop/python-udf-hdinsight.md
@@ -772,6 +766,8 @@
               href: ./hadoop/hdinsight-use-hive.md
             - name: Использование представления Apache Hive
               href: ./hadoop/apache-hadoop-use-hive-ambari-view.md
+            - name: Подключение к Apache Beeline
+              href: ./hadoop/connect-install-beeline.md
             - name: Использование Apache Hive Beeline
               href: ./hadoop/apache-hadoop-use-hive-beeline.md
             - name: Использование Grafana
@@ -891,7 +887,7 @@
                   href: ./storm/apache-storm-develop-java-topology.md
                 - name: Разработка топологий с помощью Python
                   href: ./storm/apache-storm-develop-python-topology.md
-                - name: 'Разработка топологий с помощью C#'
+                - name: Разработка топологий с помощью C#
                   href: ./storm/apache-storm-develop-csharp-visual-studio-topology.md
                 - name: Руководство по программированию для SCP.NET
                   href: ./storm/apache-storm-scp-programming-guide.md
@@ -899,7 +895,7 @@
                   href: ./storm/apache-storm-example-topology.md
             - name: Конвейеры потоковой передачи
               items:
-                - name: 'Концентратор событий и Apache Storm (C# и Java)'
+                - name: Концентратор событий и Apache Storm (C# и Java)
                   href: ./storm/apache-storm-develop-csharp-event-hub-topology.md
         - name: Управление
           items:

@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 04/19/2019
 ms.author: alkohli
 ms.openlocfilehash: 71e0ebf7d7851ae65a6fba67a1695d755fd98bb1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "61436500"
 ---
 # <a name="azure-data-box-blob-storage-requirements"></a>Требования к хранилищу BLOB-объектов Azure Data Box
@@ -57,7 +57,7 @@ Azure Data Box версии 1.8 и более поздние
 |--------------------|--------------------------------------------|--------|---------------------------------|
 |    .NET                |    9.2.0                                           |    Пакет NuGet: https://www.nuget.org/packages/WindowsAzure.Storage/9.2.0    <br>Выпуск GitHub: https://github.com/Azure/azure-storage-net/releases/tag/v9.2.0                                                                                                                                                                                               |    Файл app.config                 |
 |    Java                |    7.0.0                                           |    Пакет Maven: https://mvnrepository.com/artifact/com.microsoft.azure/azure-storage/6.1.0   <br>Выпуск GitHub: https://github.com/Azure/azure-storage-java/releases/tag/v7.0.0                                                                                                                                                                              |    Настройка строки подключения         |
-|    Node.js             |    2.8.3                                           |    Ссылка на NPM https://www.npmjs.com/package/azure-storage : (Run `npm install azure-storage@2.7.0`:)   <br>Выпуск GitHub: https://github.com/Azure/azure-storage-node/releases/tag/v2.8.3                                                                                                                                                                        |    Объявление экземпляра службы    |
+|    Node.js             |    2.8.3                                           |    Ссылка на NPM: https://www.npmjs.com/package/azure-storage (Run: `npm install azure-storage@2.7.0` )   <br>Выпуск GitHub: https://github.com/Azure/azure-storage-node/releases/tag/v2.8.3                                                                                                                                                                        |    Объявление экземпляра службы    |
 |    C++                 |    5.2.0                                           |    Пакет NuGet: https://www.nuget.org/packages/wastorage.v140/5.2.0   <br>Выпуск GitHub: https://github.com/Azure/azure-storage-cpp/releases/tag/v5.2.0                                                                                                                                                                                                     |    Настройка строки подключения         |
 |    PHP                 |    1.2.0                                           |    Выпуск GitHub:<br>Общая версия: https://github.com/Azure/azure-storage-php/releases/tag/v1.2.0-common   <br>Большой двоичный объект: https://github.com/Azure/azure-storage-php/releases/tag/v1.2.0-blob      <br>Установка через компоновщик (дополнительные сведения см. ниже)                                                                                                             |    Настройка строки подключения         |
 |    Python              |    1.1.0                                           |    Выпуск GitHub:<br>Общая версия: https://github.com/Azure/azure-storage-python/releases/tag/v1.0.0-common <br>Большой двоичный объект: https://github.com/Azure/azure-storage-python/releases/tag/v1.1.0-blob                                                                                                                                                                          |    Объявление экземпляра службы    |
@@ -83,7 +83,7 @@ Azure Data Box версии 1.8 и более поздние
 
 ### <a name="endpoint-declaration"></a>Объявление конечной точки
 
-Конечная точка хранилища BLOB-объектов службы Azure Data Box содержит две части: имя региона и домен Data Box. В пакете SDK для хранилища BLOB-объектов Data Box конечная `\<serial no. of the device>.microsoftdatabox.com`точка по умолчанию —.  Дополнительные сведения о конечной точке службы BLOB-объектов см. в статье [Руководство. Копирование данных в хранилище BLOB-объектов Azure Data Box с помощью REST API](data-box-deploy-copy-data-via-rest.md).
+Конечная точка хранилища BLOB-объектов службы Azure Data Box содержит две части: имя региона и домен Data Box. В пакете SDK для хранилища BLOB-объектов Data Box конечная точка по умолчанию — `\<serial no. of the device>.microsoftdatabox.com` .  Дополнительные сведения о конечной точке службы BLOB-объектов см. в статье [Руководство. Копирование данных в хранилище BLOB-объектов Azure Data Box с помощью REST API](data-box-deploy-copy-data-via-rest.md).
  
 ## <a name="examples"></a>Примеры
 

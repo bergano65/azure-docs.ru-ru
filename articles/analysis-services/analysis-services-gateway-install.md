@@ -8,10 +8,9 @@ ms.date: 01/17/2020
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: f6218b32fb9574adf62384d2a6ee5a62f3788de8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77062155"
 ---
 # <a name="install-and-configure-an-on-premises-data-gateway"></a>Установка и настройка локального шлюза данных
@@ -48,7 +47,7 @@ ms.locfileid: "77062155"
 
  [Скачайте шлюз](https://go.microsoft.com/fwlink/?LinkId=820925&clcid=0x409).
 
-## <a name="install"></a><a name="install"></a>Установить
+## <a name="install"></a><a name="install"></a>Установка
 
 1. Запустите программу установки.
 
@@ -67,20 +66,20 @@ ms.locfileid: "77062155"
    > [!NOTE]
    > При входе с использованием учетной записи домена она сопоставляется с учетной записью организации в Azure AD. Учетная запись вашей организации используется как администратор шлюза.
 
-## <a name="register"></a><a name="register"></a>Зарегистрировать
+## <a name="register"></a><a name="register"></a>Регистрация
 
 Чтобы создать ресурс шлюза в Azure, необходимо зарегистрировать локальный экземпляр, установленный с помощью облачной службы шлюза. 
 
 1.  Выберите **Регистрация нового шлюза на этом компьютере**.
 
-    ![Зарегистрировать](media/analysis-services-gateway-install/aas-gateway-register-new.png)
+    ![Регистрация](media/analysis-services-gateway-install/aas-gateway-register-new.png)
 
 2. Введите имя и ключ восстановления для шлюза. По умолчанию шлюз использует регион, установленный по умолчанию для вашей подписки. Если вам необходим другой регион, выберите **Смена региона**.
 
     > [!IMPORTANT]
     > Сохраните ключ восстановления в безопасном месте. Ключ восстановления требуется для перехвата, переноса или восстановления шлюза. 
 
-   ![Зарегистрировать](media/analysis-services-gateway-install/aas-gateway-register-name.png)
+   ![Регистрация](media/analysis-services-gateway-install/aas-gateway-register-name.png)
 
 
 ## <a name="create-an-azure-gateway-resource"></a><a name="create-resource"></a>Создание ресурса шлюза Azure
@@ -125,7 +124,7 @@ ms.locfileid: "77062155"
 
     ![Подключение сервера к ресурсу шлюза успешно выполнено](media/analysis-services-gateway-install/aas-gateway-connect-success.png)
 
-Вот и все. Если необходимо открывать порты или устранять неполадки, требуется извлечь [локальный шлюз данных](analysis-services-gateway.md).
+Готово! Если необходимо открывать порты или устранять неполадки, требуется извлечь [локальный шлюз данных](analysis-services-gateway.md).
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 

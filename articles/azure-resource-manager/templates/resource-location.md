@@ -3,12 +3,11 @@ title: Расположение ресурса шаблона
 description: Описывает, как задать расположение ресурса в шаблоне Azure Resource Manager.
 ms.topic: conceptual
 ms.date: 09/04/2019
-ms.openlocfilehash: a8324dac1232eecd5624e5f1dc0e6656295c0a10
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: e0bf0ac79c7e304a61561808dc2290ceb4a379e6
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80156435"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84672686"
 ---
 # <a name="set-resource-location-in-arm-template"></a>Задание расположения ресурса в шаблоне ARM
 
@@ -38,13 +37,13 @@ az provider show \
 
 ## <a name="use-location-parameter"></a>Использовать параметр location
 
-Чтобы обеспечить гибкость при развертывании шаблона, используйте параметр, чтобы указать расположение ресурсов. Задайте для `resourceGroup().location`параметра значение по умолчанию.
+Чтобы обеспечить гибкость при развертывании шаблона, используйте параметр, чтобы указать расположение ресурсов. Задайте для параметра значение по умолчанию `resourceGroup().location` .
 
 В следующем примере показана учетная запись хранения, которая развертывается в расположении, указанном как параметр:
 
 ```json
 {
-  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
     "storageAccountType": {

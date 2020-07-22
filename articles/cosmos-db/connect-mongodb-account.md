@@ -5,15 +5,15 @@ author: timsander1
 ms.author: tisande
 ms.service: cosmos-db
 ms.subservice: cosmosdb-mongo
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/19/2020
 ms.reviewer: sngun
-ms.openlocfilehash: cba16d79b6506f9809a76f0128938a68afd15c92
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 0a25301bac125cd95b975a5ba1fc0cce47b56abd
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80617052"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85954100"
 ---
 # <a name="connect-a-mongodb-application-to-azure-cosmos-db"></a>Подключение приложения MongoDB к Azure Cosmos DB
 
@@ -24,7 +24,7 @@ ms.locfileid: "80617052"
 - [Метод "Быстрый запуск"](#get-the-mongodb-connection-string-by-using-the-quick-start) для использования с драйверами .NET, Node.js, Java, Python или MongoDB.
 - [Пользовательский метод строки соединения](#get-the-mongodb-connection-string-to-customize)для использования с другими драйверами
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 - Учетная запись Azure. Если у вас нет учетной записи, вы можете создать [бесплатную учетную запись Azure](https://azure.microsoft.com/free/).
 - Учетная запись Cosmos. Инструкции см. в статье о [создании веб-приложения с помощью API Azure Cosmos DB для MongoDB и пакета SDK для .NET](create-mongodb-dotnet.md).
@@ -37,7 +37,7 @@ ms.locfileid: "80617052"
 4. Выберите платформу (**.NET**, **Node.js**, **оболочка MongoDB**, **Java**, **Python**). Если соответствующего драйвера или средства нет в списке, не беспокойтесь, мы постоянно добавляем дополнительные фрагменты кода для подключения. Оставьте в конце статьи свои комментарии о том, что, по вашему мнению, нужно добавить. Дополнительные сведения о том, как создавать собственное подключение, см.в разделе [Получение строки подключения MongoDB для настройки](#get-the-mongodb-connection-string-to-customize).
 5. Скопируйте и вставьте фрагмент кода в приложение MongoDB.
 
-    ![Колонка "Быстрый запуск"](./media/connect-mongodb-account/QuickStartBlade.png)
+    :::image type="content" source="./media/connect-mongodb-account/QuickStartBlade.png" alt-text="Колонка "Быстрый запуск"":::
 
 ## <a name="get-the-mongodb-connection-string-to-customize"></a> Получение строки подключения MongoDB для настройки
 
@@ -46,18 +46,16 @@ ms.locfileid: "80617052"
 3. На левой панели в колонке учетной записи щелкните **Строка подключения**.
 4. Откроется колонка **Строка подключения**. Она содержит все необходимые сведения для подключения к учетной записи с помощью драйвера для MongoDB, включая автоматически сформированную строку подключения.
 
-   [![Колонка](./media/connect-mongodb-account/ConnectionStringBlade.png) строки подключения](./media/connect-mongodb-account/ConnectionStringBlade.png#lightbox)
+   :::image type="content" source="./media/connect-mongodb-account/ConnectionStringBlade.png" alt-text="Колонка "Строка подключения"" lightbox= "./media/connect-mongodb-account/ConnectionStringBlade.png" :::
 
 ## <a name="connection-string-requirements"></a>Требования к строке подключения
 
 > [!Important]
-> В Azure Cosmos DB строгие требования к безопасности и стандарты. Для учетных записей Azure Cosmos DB требуется проверка подлинности и безопасная связь через *TLS*. 
->
->
+> В Azure Cosmos DB строгие требования к безопасности и стандарты. Для учетных записей Azure Cosmos DB требуется проверка подлинности и безопасная связь через *TLS*.
 
 Azure Cosmos DB поддерживает стандартный формат URI строки подключения MongoDB с несколькими особыми требованиями: Azure Cosmos DB учетных записей требуется проверка подлинности и безопасная связь через TLS. В этом случае строка подключения имеет следующий вид:
 
-    mongodb://username:password@host:port/[database]?ssl=true
+`mongodb://username:password@host:port/[database]?ssl=true`
 
 Значения для этой строки можно найти в колонке **Строка подключения**, как показано выше:
 
@@ -70,7 +68,7 @@ Azure Cosmos DB поддерживает стандартный формат URI
 
 Рассмотрим в качестве примера учетную запись, сведения о которой приведены выше в колонке **Строка подключения**. Допустимая строка подключения:
 
-    mongodb://contoso123:0Fc3IolnL12312asdfawejunASDF@asdfYXX2t8a97kghVcUzcDv98hawelufhawefafnoQRGwNj2nMPL1Y9qsIr9Srdw==@contoso123.documents.azure.com:10255/mydatabase?ssl=true
+`mongodb://contoso123:0Fc3IolnL12312asdfawejunASDF@asdfYXX2t8a97kghVcUzcDv98hawelufhawefafnoQRGwNj2nMPL1Y9qsIr9Srdw==@contoso123.documents.azure.com:10255/mydatabase?ssl=true`
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

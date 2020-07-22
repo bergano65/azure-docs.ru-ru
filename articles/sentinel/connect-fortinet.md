@@ -1,6 +1,6 @@
 ---
 title: Подключение данных Fortinet к Azure Sentinel | Документация Майкрософт
-description: Узнайте, как подключить данные Fortinet к Azure Sentinel.
+description: Подключите устройство Fortinet к Sentinel Azure для просмотра панелей мониторинга, создания пользовательских оповещений и улучшения расследования. 
 services: sentinel
 documentationcenter: na
 author: yelevin
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/30/2019
 ms.author: yelevin
-ms.openlocfilehash: aabc95fcb8d3b32b89bb83f4f6892c3d40b03417
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 8aa8599cbaab6af00d7b4122b94c9e24870881f3
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77588201"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86511336"
 ---
 # <a name="connect-fortinet-to-azure-sentinel"></a>Подключение Fortinet к Azure Sentinel
 
@@ -36,12 +36,14 @@ ms.locfileid: "77588201"
 
 1. Откройте интерфейс командной строки на устройстве Fortinet и выполните следующие команды:
 
-        config log syslogd setting
-        set format cef
-        set port 514
-        set server <ip_address_of_Receiver>
-        set status enable
-        end
+    ```console
+    config log syslogd setting
+    set format cef
+    set port 514
+    set server <ip_address_of_Receiver>
+    set status enable
+    end
+    ```
 
     - Замените **IP-адрес** сервера IP-адресом агента.
     - Задайте для **порта системного журнала** значение **514** или порт, установленный на агенте.
@@ -50,15 +52,15 @@ ms.locfileid: "77588201"
    > [!NOTE] 
    > Для получения дополнительных сведений перейдите в [библиотеку документов Fortinet](https://aka.ms/asi-syslog-fortinet-fortinetdocumentlibrary). Выберите свою **версию и воспользуйтесь** **справочной ссылкой и сообщением журнала**.
 
-1. Чтобы использовать соответствующую схему в Azure Monitor Log Analytics для событий Fortinet, выполните поиск по `CommonSecurityLog`запросу.
+1. Чтобы использовать соответствующую схему в Azure Monitor Log Analytics для событий Fortinet, выполните поиск по запросу `CommonSecurityLog` .
 
-1. Перейдите к [шагу 3. Проверка подключения](connect-cef-verify.md).
+1. Перейдите к процедуре [Шаг 3. Проверка подключения](connect-cef-verify.md).
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Из этой статьи вы узнали, как подключить устройства Fortinet к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
-- [Используйте книги](tutorial-monitor-your-data.md) для отслеживания данных.
+- [Используйте книги](tutorial-monitor-your-data.md) для мониторинга данных.
 
 

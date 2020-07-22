@@ -1,20 +1,20 @@
 ---
-title: Схема ресурса на основе рабочей области Azure Monitor Application Insights
+title: Схема ресурсов на основе рабочей области Azure Monitor Application Insights
 description: Сведения о новой структуре и схеме таблицы для Azure Monitor Application Insights ресурсов на основе рабочих областей.
 ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 05/09/2020
-ms.openlocfilehash: 21f387a87224615ea6afbdce620c56e3ad2cc6ea
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: 3175e43a841334719de80f44a226b1c7b87690d9
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83210545"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86540117"
 ---
 # <a name="workspace-based-resource-changes-preview"></a>Изменения ресурсов на основе рабочей области (Предварительная версия)
 
-До появления [Application Insights ресурсов на основе рабочей области](create-workspace-resource.md)Application Insights данные хранились отдельно от других данных журнала в Azure Monitor. Они основаны на обозреватель данных Azure и используют один и тот же язык запросов Kusto (ККЛ). Это описано в разделе [журналы в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/data-platform-logs).
+До появления [Application Insights ресурсов на основе рабочей области](create-workspace-resource.md)Application Insights данные хранились отдельно от других данных журнала в Azure Monitor. Они основаны на обозреватель данных Azure и используют один и тот же язык запросов Kusto (ККЛ). Это описано в разделе [журналы в Azure Monitor](../platform/data-platform-logs.md).
 
 Данные ресурсов Application Insights на основе рабочих областей хранятся в Log Analytics рабочей области с другими данными мониторинга и данными приложений. Это упрощает настройку, позволяя более легко анализировать данные в нескольких решениях и использовать возможности рабочих областей.
 
@@ -43,7 +43,7 @@ ms.locfileid: "83210545"
 
 Устаревшая таблица: доступность
 
-|ApplicationInsights|Type|LogAnalytics|Type|
+|ApplicationInsights|Тип|LogAnalytics|Тип|
 |:---|:---|:---|:---|
 |appId|строка|\_ResourceGUID|строка|
 |application_Version|строка|AppVersion|строка|
@@ -65,10 +65,10 @@ ms.locfileid: "83210545"
 |iKey|строка|IKey|строка|
 |itemCount|INT|ItemCount|INT|
 |itemId|строка|\_ItemId|строка|
-|itemType|строка|Type|Строка|
+|itemType|строка|Тип|Строка|
 |location|строка|Расположение|строка|
-|сообщение|строка|Сообщение|строка|
-|name|строка|Имя|строка|
+|message|строка|Сообщение|строка|
+|name|строка|Название|строка|
 |operation_Id|строка|Операции|строка|
 |operation_Name|строка|OperationName|строка|
 |operation_ParentId|строка|оператионпарентид|строка|
@@ -87,7 +87,7 @@ ms.locfileid: "83210545"
 
 Устаревшая таблица: Бровсертимингс
 
-|ApplicationInsights|Type|LogAnalytics|Type|
+|ApplicationInsights|Тип|LogAnalytics|Тип|
 |:---|:---|:---|:---|
 |appId|строка|\_ResourceGUID|строка|
 |application_Version|строка|AppVersion|строка|
@@ -131,7 +131,7 @@ ms.locfileid: "83210545"
 
 Устаревшая таблица: зависимости
 
-|ApplicationInsights|Type|LogAnalytics|Type|
+|ApplicationInsights|Тип|LogAnalytics|Тип|
 |:---|:---|:---|:---|
 |appId|строка|\_ResourceGUID|строка|
 |application_Version|строка|AppVersion|строка|
@@ -154,8 +154,8 @@ ms.locfileid: "83210545"
 |iKey|строка|IKey|строка|
 |itemCount|INT|ItemCount|INT|
 |itemId|строка|\_ItemId|строка|
-|itemType|строка|Type|Строка|
-|name|строка|Имя|строка|
+|itemType|строка|Тип|Строка|
+|name|строка|Название|строка|
 |operation_Id|строка|Операции|строка|
 |operation_Name|строка|OperationName|строка|
 |operation_ParentId|строка|оператионпарентид|строка|
@@ -165,7 +165,7 @@ ms.locfileid: "83210545"
 |sdkVersion|строка|SdkVersion|строка|
 |session_Id|строка|SessionId|строка|
 |Успешное завершение|строка|Успешно|Bool|
-|target|строка|Назначение|строка|
+|target|строка|целевого объекта|строка|
 |TIMESTAMP|DATETIME|TimeGenerated|DATETIME|
 |type|строка|DependencyType|строка|
 |user_AccountId|строка|UserAccountId|строка|
@@ -176,7 +176,7 @@ ms.locfileid: "83210545"
 
 Устаревшая таблица: customEvents
 
-|ApplicationInsights|Type|LogAnalytics|Type|
+|ApplicationInsights|Тип|LogAnalytics|Тип|
 |:---|:---|:---|:---|
 |appId|строка|\_ResourceGUID|строка|
 |application_Version|строка|AppVersion|строка|
@@ -197,7 +197,7 @@ ms.locfileid: "83210545"
 |itemCount|INT|ItemCount|INT|
 |itemId|строка|\_ItemId|строка|
 |itemType|строка|Тип|строка|
-|name|строка|Имя|строка|
+|name|строка|Название|строка|
 |operation_Id|строка|Операции|строка|
 |operation_Name|строка|OperationName|строка|
 |operation_ParentId|строка|оператионпарентид|строка|
@@ -213,7 +213,7 @@ ms.locfileid: "83210545"
 
 Устаревшая таблица: customMetrics
 
-|ApplicationInsights|Type|LogAnalytics|Type|
+|ApplicationInsights|Тип|LogAnalytics|Тип|
 |:---|:---|:---|:---|
 |appId|строка|\_ResourceGUID|строка|
 |application_Version|строка|AppVersion|строка|
@@ -232,7 +232,7 @@ ms.locfileid: "83210545"
 |iKey|строка|IKey|строка|
 |itemId|строка|\_ItemId|строка|
 |itemType|строка|Тип|строка|
-|name|строка|Имя|строка|
+|name|строка|Название|строка|
 |operation_Id|строка|Операции|строка|
 |operation_Name|строка|OperationName|строка|
 |operation_ParentId|строка|оператионпарентид|строка|
@@ -243,7 +243,7 @@ ms.locfileid: "83210545"
 |user_AccountId|строка|UserAccountId|строка|
 |user_AuthenticatedId|строка|усераусентикатедид|строка|
 |user_Id|строка|UserId|строка|
-|значение|real|удален||
+|value|real|удален||
 |валуекаунт|INT|валуекаунт|INT|
 |валуемакс|real|валуемакс|real|
 |валуемин|real|валуемин|real|
@@ -254,7 +254,7 @@ ms.locfileid: "83210545"
 
 Устаревшая таблица: pageViews
 
-|ApplicationInsights|Type|LogAnalytics|Type|
+|ApplicationInsights|Тип|LogAnalytics|Тип|
 |:---|:---|:---|:---|
 |appId|строка|\_ResourceGUID|строка|
 |application_Version|строка|AppVersion|строка|
@@ -276,8 +276,8 @@ ms.locfileid: "83210545"
 |iKey|строка|IKey|строка|
 |itemCount|INT|ItemCount|INT|
 |itemId|строка|\_ItemId|строка|
-|itemType|строка|Type|Строка|
-|name|строка|Имя|строка|
+|itemType|строка|Тип|Строка|
+|name|строка|Название|строка|
 |operation_Id|строка|Операции|строка|
 |operation_Name|строка|OperationName|строка|
 |operation_ParentId|строка|оператионпарентид|строка|
@@ -295,7 +295,7 @@ ms.locfileid: "83210545"
 
 Устаревшая таблица: performanceCounters
 
-|ApplicationInsights|Type|LogAnalytics|Type|
+|ApplicationInsights|Тип|LogAnalytics|Тип|
 |:---|:---|:---|:---|
 |appId|строка|\_ResourceGUID|строка|
 |application_Version|строка|AppVersion|строка|
@@ -317,7 +317,7 @@ ms.locfileid: "83210545"
 |экземпляр|строка|Экземпляр|строка|
 |itemId|строка|\_ItemId|строка|
 |itemType|строка|Тип|строка|
-|name|строка|Имя|строка|
+|name|строка|Название|строка|
 |operation_Id|строка|Операции|строка|
 |operation_Name|строка|OperationName|строка|
 |operation_ParentId|строка|оператионпарентид|строка|
@@ -328,13 +328,13 @@ ms.locfileid: "83210545"
 |user_AccountId|строка|UserAccountId|строка|
 |user_AuthenticatedId|строка|усераусентикатедид|строка|
 |user_Id|строка|UserId|строка|
-|значение|real|Значение|real|
+|value|real|Значение|real|
 
 ### <a name="apprequests"></a>аппрекуестс
 
 Устаревшая таблица: запросы
 
-|ApplicationInsights|Type|LogAnalytics|Type|
+|ApplicationInsights|Тип|LogAnalytics|Тип|
 |:---|:---|:---|:---|
 |appId|строка|\_ResourceGUID|строка|
 |application_Version|строка|AppVersion|строка|
@@ -356,7 +356,7 @@ ms.locfileid: "83210545"
 |iKey|строка|IKey|строка|
 |itemCount|INT|ItemCount|INT|
 |itemId|строка|\_ItemId|строка|
-|itemType|строка|Type|Строка|
+|itemType|строка|Тип|Строка|
 |name|строка|Имя|Строка|
 |operation_Id|строка|Операции|строка|
 |operation_Name|строка|OperationName|строка|
@@ -366,7 +366,7 @@ ms.locfileid: "83210545"
 |resultCode|строка|ResultCode|Строка|
 |sdkVersion|строка|SdkVersion|строка|
 |session_Id|строка|SessionId|строка|
-|источник|string|Источник|Строка|
+|source|строка|Источник|Строка|
 |Успешное завершение|строка|Успешно|Bool|
 |TIMESTAMP|DATETIME|TimeGenerated|DATETIME|
 |url|строка|Url|Строка|
@@ -378,12 +378,12 @@ ms.locfileid: "83210545"
 
 Устаревшая таблица: исключения
 
-|ApplicationInsights|Type|LogAnalytics|Type|
+|ApplicationInsights|Тип|LogAnalytics|Тип|
 |:---|:---|:---|:---|
 |appId|строка|\_ResourceGUID|строка|
 |application_Version|строка|AppVersion|строка|
 |appName|строка|\_ResourceId|строка|
-|сборка|строка|Assembly|строка|
+|сборка|строка|Сборка|строка|
 |client_Browser|строка|ClientBrowser|строка|
 |client_City|строка|клиентЦити|строка|
 |client_CountryOrRegion|строка|клиенткаунтрйоррегион|строка|
@@ -396,7 +396,7 @@ ms.locfileid: "83210545"
 |cloud_RoleName|строка|аппроленаме|строка|
 |customDimensions|Динамический|Свойства|Динамический|
 |кустоммеасурементс|Динамический|Измерения|Динамический|
-|подробности|Динамический|Подробности|Динамический|
+|подробности|Динамический|Сведения|Динамический|
 |handledAt|строка|хандледат|строка|
 |iKey|строка|IKey|строка|
 |иннермостассембли|строка|иннермостассембли|строка|
@@ -406,7 +406,7 @@ ms.locfileid: "83210545"
 |itemCount|INT|ItemCount|INT|
 |itemId|строка|\_ItemId|строка|
 |itemType|строка|Тип|строка|
-|сообщение|строка|Сообщение|строка|
+|message|строка|Сообщение|строка|
 |method|строка|Метод|строка|
 |operation_Id|строка|Операции|строка|
 |operation_Name|строка|OperationName|строка|
@@ -430,7 +430,7 @@ ms.locfileid: "83210545"
 
 Устаревшая таблица: трассировки
 
-|ApplicationInsights|Type|LogAnalytics|Type|
+|ApplicationInsights|Тип|LogAnalytics|Тип|
 |:---|:---|:---|:---|
 |appId|строка|\_ResourceGUID|строка|
 |application_Version|строка|AppVersion|строка|
@@ -451,7 +451,7 @@ ms.locfileid: "83210545"
 |itemCount|INT|ItemCount|INT|
 |itemId|строка|\_ItemId|строка|
 |itemType|строка|Тип|строка|
-|сообщение|строка|Сообщение|строка|
+|message|строка|Сообщение|строка|
 |operation_Id|строка|Операции|строка|
 |operation_Name|строка|OperationName|строка|
 |operation_ParentId|строка|оператионпарентид|строка|
@@ -466,5 +466,5 @@ ms.locfileid: "83210545"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Просмотр метрик](../../azure-monitor/platform/metrics-charts.md)
-* [Написание запросов аналитики](../../azure-monitor/app/analytics.md)
+* [Изучение метрик](../../azure-monitor/platform/metrics-charts.md)
+* [Написание запросов аналитики](../log-query/log-query-overview.md)

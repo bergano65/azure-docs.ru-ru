@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/05/2019
-ms.openlocfilehash: a005b6cec811b8a584123dc4c8abab77766961e0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 217be627f81406f671118d5290cd5f67f52c01d2
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79274779"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86112118"
 ---
 # <a name="computer-groups-in-azure-monitor-log-queries"></a>Группы компьютеров в Azure Monitor запросы журналов
 Группы компьютеров в Azure Monitor позволяют выносить [запросы журналов](../log-query/log-query-overview.md) для определенного набора компьютеров.  Каждая группа заполняется компьютерами с помощью определяемого запроса или при импорте групп из разных источников.  Если в запрос к журналам включена группа, в результатах возвращаются только те записи, которые относятся к компьютерам в этой группе.
@@ -34,7 +34,9 @@ ms.locfileid: "79274779"
 
 Для группы можно применить любой запрос, но он должен возвращать набор компьютеров без повторов (используйте для этого `distinct Computer`).  Ниже приведен типичный пример запроса, который можно использовать как группу компьютеров.
 
-    Heartbeat | where Computer contains "srv" | distinct Computer
+```kusto
+Heartbeat | where Computer contains "srv" | distinct Computer
+```
 
 Ниже приведены инструкции по созданию группы компьютеров с помощью поиска по журналам на портале Azure.
 
@@ -94,31 +96,33 @@ ms.locfileid: "79274779"
 ## <a name="using-a-computer-group-in-a-log-query"></a>Использование группы компьютеров в запросе к журналам
 Группу компьютеров, созданную с помощью запроса к журналам, можно использовать в запросах, применяя ее псевдоним как функцию. Вот типичный синтаксис для этого:
 
-  `Table | where Computer in (ComputerGroup)`
+```kusto
+Table | where Computer in (ComputerGroup)`
+```
 
 Например, следующий запрос возвращает записи UpdateSummary только для тех компьютеров, которые входят в группу компьютеров mycomputergroup.
- 
-  `UpdateSummary | where Computer in (mycomputergroup)`
 
+```kusto
+UpdateSummary | where Computer in (mycomputergroup)`
+```
 
 Импортированные группы компьютеров и их включенные компьютеры хранятся в таблице **ComputerGroup**.  Например, следующий запрос вернет список компьютеров в группе компьютеров домена из Active Directory. 
 
-  `ComputerGroup | where GroupSource == "ActiveDirectory" and Group == "Domain Computers" | distinct Computer`
+```kusto
+ComputerGroup | where GroupSource == "ActiveDirectory" and Group == "Domain Computers" | distinct Computer
+```
 
 Следующий запрос вернет записи UpdateSummary только для компьютеров из группы компьютеров домена.
 
-  ```
-  let ADComputers = ComputerGroup | where GroupSource == "ActiveDirectory" and Group == "Domain Computers" | distinct Computer;
+```kusto
+let ADComputers = ComputerGroup | where GroupSource == "ActiveDirectory" and Group == "Domain Computers" | distinct Computer;
   UpdateSummary | where Computer in (ADComputers)
-  ```
-
-
-
+```
 
 ## <a name="computer-group-records"></a>Записи группы компьютеров
 Запись создается в рабочей области Log Analytics для каждого членства в группе компьютеров, создаваемого в Active Directory или WSUS.  Записи о производительности имеют тип **ComputerGroup**. Их свойства описаны в таблице ниже.  Для групп компьютеров, созданных с помощью запроса к журналам, записи не создаются.
 
-| Свойство | Описание: |
+| Свойство | Описание |
 |:--- |:--- |
 | `Type` |*ComputerGroup* |
 | `SourceSystem` |*SourceSystem* |
@@ -127,9 +131,9 @@ ms.locfileid: "79274779"
 | `GroupFullName` |Полный путь к группе, включая источник и имя источника. |
 | `GroupSource` |Источник, из которого получена группа. <br><br>ActiveDirectory<br>WSUS<br>WSUSClientTargeting |
 | `GroupSourceName` |Имя источника, из которого получена группа.  Для Active Directory это имя домена. |
-| `ManagementGroupName` |Имя группы управления для агентов SCOM.  Для других агентов это AOI-\<идентификатор_рабочей_области\>. |
+| `ManagementGroupName` |Имя группы управления для агентов SCOM.  Для других агентов это AOI-\<workspace ID\>. |
 | `TimeGenerated` |Дата и время создания или изменения группы компьютеров. |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше о [запросах журнала](../log-query/log-query-overview.md), которые можно применять для анализа данных, собираемых из источников данных и решений.  
 

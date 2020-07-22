@@ -4,27 +4,26 @@ description: Развертывание средства управления д
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: d9aea1f56b742d87df769a3206f15024afdf87b3
-ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
-ms.translationtype: MT
+ms.openlocfilehash: 0ae3bb87bfee681aa518a4dfef064677ffa97119
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82983097"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85513401"
 ---
 # <a name="deploy-a-management-tool-with-powershell"></a>Развертывание средства управления с помощью PowerShell
 
 >[!IMPORTANT]
->Это содержимое относится к выпуску 2019, который не поддерживает Azure Resource Manager объекты виртуальных рабочих столов Windows.
+>Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows.
 
 В этой статье показано, как развернуть средство управления с помощью PowerShell.
 
-## <a name="important-considerations"></a>Важные замечания
+## <a name="important-considerations"></a>Важные сведения
 
-Каждой подписке клиента Azure Active Directory (Azure AD) требуется отдельное развертывание средства управления. Это средство не поддерживает сценарии Azure AD "бизнес — бизнес" (B2B). 
+Каждой подписке клиента Azure Active Directory (Azure AD) требуется отдельное развертывание средства управления. Это средство не поддерживает сценарии Azure AD "бизнес — бизнес" (B2B).
 
 Это средство управления является примером. Майкрософт предоставит важные обновления безопасности и исправления. [Исходный код доступен в GitHub](https://github.com/Azure/RDS-Templates/tree/master/wvd-templates/wvd-management-ux/deploy). Независимо от того, являетесь ли Вы клиентом или партнером, мы рекомендуем вам настроить это средство в соответствии с потребностями бизнеса.
 
@@ -40,7 +39,7 @@ ms.locfileid: "82983097"
 Перед развертыванием средства управления потребуется пользователь Azure Active Directory (Azure AD), чтобы создать регистрацию приложения и развернуть пользовательский интерфейс управления. Этот пользователь должен:
 
 - получить разрешение на создание ресурсов в своей подписке Azure;
-- получить разрешение на создание приложения Azure AD. Чтобы проверить, есть ли у пользователя необходимые разрешения, выполните действия, перечисленные в разделе [Необходимые разрешения](../../active-directory/develop/howto-create-service-principal-portal.md#required-permissions).
+- получить разрешение на создание приложения Azure AD. Чтобы проверить, есть ли у пользователя необходимые разрешения, выполните действия, перечисленные в разделе [Необходимые разрешения](../../active-directory/develop/howto-create-service-principal-portal.md#permissions-required-for-registering-an-app).
 
 После развертывания и настройки средства управления рекомендуется попросить пользователя запустить пользовательский интерфейс управления, чтобы убедиться в том, что все работает. Пользователю, запускающему пользовательский интерфейс управления, должна быть назначена роль, которая позволяет просматривать или изменять клиент виртуальных рабочих столов Windows.
 
@@ -93,7 +92,7 @@ Get-AzSubscription -SubscriptionId $subscriptionId | Select-AzSubscription
 ## <a name="deploy-the-management-tool"></a>Развертывание средства управления
 
 Выполните следующие команды PowerShell, чтобы развернуть средство управления и связать его с только что созданным субъектом-службой.
-     
+
 ```powershell
 $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
 $location = Read-Host -Prompt "Enter the location (i.e. centralus)"
@@ -120,7 +119,7 @@ New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName `
 ```powershell
 $webApp = Get-AzWebApp -ResourceGroupName $resourceGroupName -Name $appName
 $redirectUri = "https://" + $webApp.DefaultHostName + "/"
-Get-AzureADApplication -All $true | where { $_.AppId -match $servicePrincipalCredentials.UserName } | Set-AzureADApplication -ReplyUrls $redirectUri  
+Get-AzureADApplication -All $true | where { $_.AppId -match $servicePrincipalCredentials.UserName } | Set-AzureADApplication -ReplyUrls $redirectUri
 ```
 
 Теперь, когда вы добавили URI перенаправления, вам потребуется обновить URL-адрес API, чтобы средство управления могла взаимодействовать со службой внутренней службы API.
@@ -143,12 +142,12 @@ Get-AzureADApplication -All $true | where { $_.AppId -match $servicePrincipalCre
 2. На панели поиска в верхней части портал Azure найдите **Регистрация приложений** и выберите элемент в разделе **службы**.
 3. Выберите **все приложения** и найдите уникальное имя приложения, указанное для сценария PowerShell в окне [Создание Azure Active Directory регистрации приложения](#create-an-azure-active-directory-app-registration).
 4. На панели в левой части браузера выберите **Проверка подлинности** и убедитесь, что универсальный код ресурса (URI) перенаправления совпадает с URL-адресом приложения для средства управления, как показано на следующем рисунке.
-   
-   [![Страница проверки подлинности с указанным URI](../media/management-ui-redirect-uri-inline.png) перенаправления](../media/management-ui-redirect-uri-expanded.png#lightbox)
+
+   [![Страница проверки подлинности с указанным URI ](../media/management-ui-redirect-uri-inline.png) перенаправления](../media/management-ui-redirect-uri-expanded.png#lightbox)
 
 5. На панели слева выберите **разрешения API** , чтобы подтвердить добавление разрешений. Если вы являетесь глобальным администратором, нажмите кнопку **предоставить согласие администратора `tenantname` для** , а затем следуйте указаниям в диалоговом окне запрос на предоставление согласия администратора для вашей организации.
-    
-    [![Страница](../media/management-ui-permissions-inline.png) разрешений API](../media/management-ui-permissions-expanded.png#lightbox)
+
+    [![Страница ](../media/management-ui-permissions-inline.png) разрешений API](../media/management-ui-permissions-expanded.png#lightbox)
 
 Теперь можно приступить к использованию средства управления.
 
@@ -158,20 +157,20 @@ Get-AzureADApplication -All $true | where { $_.AppId -match $servicePrincipalCre
 
 1. Откройте URL веб-приложения в веб-браузере. Если вы не помните URL-адрес, вы можете войти в Azure, найти службу приложений, развернутую для средства управления, а затем выбрать URL-адрес.
 2. Войдите в систему, используя свои учетные данные для Виртуального рабочего стола Windows.
-   
+
    > [!NOTE]
    > Если вы не предоставите согласие администратора во время настройки средства управления, каждый пользователь, вошедший в систему, должен предоставить собственное согласие пользователя для использования этого средства.
 
 3. При появлении запроса на выбор группы клиентов выберите **группу клиентов по умолчанию** из раскрывающегося списка.
 4. После выбора **Default Tenant Group** (Группа клиентов по умолчанию) в левой части окна должно появиться меню. В этом меню найдите и выберите имя группы клиентов.
-   
+
    > [!NOTE]
    > Если у вас есть настраиваемая группа клиентов, введите имя вручную вместо выбора из раскрывающегося списка.
 
-## <a name="report-issues"></a>Сообщить о проблеме
+## <a name="report-issues"></a>Сообщение о проблемах
 
 Если у вас возникли проблемы со средством управления или другими средствами Виртуального рабочего стола Windows, следуйте указаниям в [шаблонах Azure Resource Manager для службы удаленных рабочих столов](https://github.com/Azure/RDS-Templates/blob/master/README.md), чтобы сообщить о них в GitHub.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы научились развертывать средство управления и подключаться к нему, ознакомьтесь со сведениями об использовании Работоспособности служб Azure для мониторинга проблем служб и рекомендаций по работоспособности. Дополнительные сведения см. в руководстве [Настройка оповещений служб](set-up-service-alerts-2019.md).

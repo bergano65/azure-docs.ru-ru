@@ -3,16 +3,16 @@ title: Настройка VPN-подключения "точка — сеть" 
 description: Сведения о настройке VPN-подключения "точка — сеть" (P2S) в Linux для использования с Файлами Azure
 author: roygara
 ms.service: storage
-ms.topic: overview
+ms.topic: how-to
 ms.date: 10/19/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: cfff05ed52258ee448d83a521b99dca7d356a0f9
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
-ms.translationtype: HT
+ms.openlocfilehash: 685373203da14a6aa83c608d90d6416ab2b30ae4
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80061048"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85515308"
 ---
 # <a name="configure-a-point-to-site-p2s-vpn-on-linux-for-use-with-azure-files"></a>Настройка VPN-подключения "точка — сеть" (P2S) в Linux для использования с Файлами Azure
 Вы можете использовать VPN-подключение "точка — сеть" (P2S) для подключения файловых ресурсов Azure по протоколу SMB вне Azure, не открывая порт 445. VPN-подключение "точка — сеть" — это VPN-подключение между Azure и отдельным клиентом. Чтобы использовать VPN-подключение P2S к службе "Файлы Azure", необходимо настроить это подключение для каждого клиента, которому требуется подключиться. Если у вас много клиентов, которым требуется подключение к общим файловым ресурсам Azure из локальной сети, вместо подключения "точка — сеть" для каждого клиента можно использовать VPN-подключение "сеть — сеть" (S2S). Дополнительные сведения см. в статье [Настройка VPN-подключения "сеть — сеть" для использования с Файлами Azure](storage-files-configure-s2s-vpn.md).
@@ -117,7 +117,9 @@ openssl pkcs12 -in "clientCert.pem" -inkey "clientKey.pem" -certfile rootCert.pe
 Не забудьте заменить `<desired-vpn-name-here>` именем, которое вы хотели бы использовать для этих ресурсов.
 
 > [!Note]  
-> Развертывание шлюза виртуальной сети Azure может длиться до 45 минут. При развертывании этого ресурса этот скрипт Bash будет заблокирован для завершения развертывания. Это ожидаемое поведение.
+> Развертывание шлюза виртуальной сети Azure может длиться до 45 минут. При развертывании этого ресурса этот скрипт Bash будет заблокирован для завершения развертывания.
+>
+> Подключения P2S IKEv2/Опенвпн не поддерживаются для SKU " **базовый** ". Этот скрипт использует SKU **VpnGw1** для шлюза виртуальной сети соответствующим образом.
 
 ```bash
 vpnName="<desired-vpn-name-here>"
@@ -210,5 +212,5 @@ sudo mount -t cifs $smbPath $mntPath -o vers=3.0,username=$storageAccountName,pa
 
 ## <a name="see-also"></a>См. также раздел
 - [Рекомендации по работе с сетями службы "Файлы Azure"](storage-files-networking-overview.md)
-- [Настройка VPN-подключения "точка — сеть" (P2S) в Windows для использования с Файлами Azure](storage-files-configure-p2s-vpn-windows.md)
+- [Настройка VPN-подключения "точка — сеть" (P2S) в Windows для использования с файлами Azure](storage-files-configure-p2s-vpn-windows.md)
 - [Настройка VPN-подключения "сеть — сеть" (S2S) для использования с Файлами Azure](storage-files-configure-s2s-vpn.md)

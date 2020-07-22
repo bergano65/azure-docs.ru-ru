@@ -12,10 +12,9 @@ ms.topic: conceptual
 ms.date: 06/28/2019
 ms.author: ryanwi
 ms.openlocfilehash: 5f7035472ae408987a14f06492a762b56fa657b8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76697614"
 ---
 # <a name="how-to-recognize-differences-between-delegated-and-application-permissions"></a>Как понять разницу между делегированными разрешениями и разрешениями приложения
@@ -26,5 +25,5 @@ ms.locfileid: "76697614"
 - Пошаговые инструкции по [настройке запросов разрешений для клиентского приложения](quickstart-configure-app-access-web-apis.md)
 - Вы можете ознакомиться с более подробными сведениями о том, как приложения-ресурсы предоставляют [области](developer-glossary.md#scopes) и [роли приложения](developer-glossary.md#roles) клиентским приложениям, которые на портале Azure называются делегированными разрешениями и разрешениями приложения, соответственно. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 [StackOverflow в AzureAD](https://stackoverflow.com/questions/tagged/azure-active-directory)

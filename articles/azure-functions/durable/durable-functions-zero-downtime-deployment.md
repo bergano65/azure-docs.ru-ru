@@ -5,12 +5,13 @@ author: tsushi
 ms.topic: conceptual
 ms.date: 10/10/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 8e12d58c0077084c181d111b0b017665b74b9157
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.custom: fasttrack-edit
+ms.openlocfilehash: 45f87898f7da432e5bdd09061e74c33a1a8fe41b
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74231258"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86165708"
 ---
 # <a name="zero-downtime-deployment-for-durable-functions"></a>Развертывание без простоя для Устойчивые функции
 
@@ -19,9 +20,6 @@ ms.locfileid: "74231258"
 Чтобы предотвратить эти сбои, у вас есть два варианта: 
 - Отложите развертывание до завершения всех выполняющихся экземпляров оркестрации.
 - Убедитесь, что все выполняющиеся экземпляры оркестрации используют существующие версии функций. 
-
-> [!NOTE]
-> В этой статье приводятся рекомендации для приложений функций, предназначенных для Устойчивые функции 1. x. Она не была обновлена для учета изменений, появившихся в Устойчивые функции 2. x. Дополнительные сведения о различиях между версиями расширений см. в разделе [устойчивые функции Versions](durable-functions-versions.md).
 
 На следующей диаграмме сравниваются три основные стратегии для реализации развертывания без простоя для Устойчивые функции: 
 
@@ -54,17 +52,17 @@ ms.locfileid: "74231258"
 
 1. Для каждого слота задайте [параметру приложения AzureWebJobsStorage](../functions-app-settings.md#azurewebjobsstorage) строку подключения общей учетной записи хранения. Эта строка подключения учетной записи хранения используется средой выполнения функций Azure. Эта учетная запись используется средой выполнения функций Azure и управляет ключами функции.
 
-1. Для каждого слота создайте новый параметр приложения, например `DurableManagementStorage`. Задайте в качестве значения строку подключения различных учетных записей хранения. Эти учетные записи хранения используются расширением Устойчивые функции для [надежного выполнения](durable-functions-checkpointing-and-replay.md). Используйте отдельную учетную запись хранения для каждого слота. Не отмечайте этот параметр как параметр слота развертывания.
+1. Для каждого слота создайте новый параметр приложения, например `DurableManagementStorage` . Задайте в качестве значения строку подключения различных учетных записей хранения. Эти учетные записи хранения используются расширением Устойчивые функции для [надежного выполнения](durable-functions-checkpointing-and-replay.md). Используйте отдельную учетную запись хранения для каждого слота. Не отмечайте этот параметр как параметр слота развертывания.
 
-1. В [разделе durableTask файла host. JSON](durable-functions-bindings.md#hostjson-settings)приложения функции укажите `azureStorageConnectionStringName` в качестве имени параметра приложения, созданного на шаге 3.
+1. Вhost.jsфайла в приложении функции в [разделе durableTask](durable-functions-bindings.md#hostjson-settings)укажите в `azureStorageConnectionStringName` качестве имени параметра приложения, созданного на шаге 3.
 
 На следующей схеме показана описанная конфигурация слотов развертывания и учетных записей хранения. В этом случае возможный сценарий предварительного развертывания версии 2 приложения-функции выполняется в рабочем слоте, а версия 1 остается в промежуточном слоте.
 
 ![Слоты развертывания и учетные записи хранения](media/durable-functions-zero-downtime-deployment/deployment-slot.png)
 
-### <a name="hostjson-examples"></a>Примеры Host. JSON
+### <a name="hostjson-examples"></a>host.jsпримеры
 
-Следующие фрагменты JSON являются примерами параметра строки подключения в файле *Host. JSON* .
+Следующие фрагменты JSON являются примерами параметра строки подключения в *host.js* в файле.
 
 #### <a name="functions-20"></a>Функции 2,0
 
@@ -97,7 +95,7 @@ ms.locfileid: "74231258"
 [FunctionName("StatusCheck")]
 public static async Task<IActionResult> StatusCheck(
     [HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequestMessage req,
-    [OrchestrationClient] DurableOrchestrationClient client,
+    [DurableClient] IDurableOrchestrationClient client,
     ILogger log)
 {
     var runtimeStatus = new List<OrchestrationRuntimeStatus>();
@@ -105,8 +103,8 @@ public static async Task<IActionResult> StatusCheck(
     runtimeStatus.Add(OrchestrationRuntimeStatus.Pending);
     runtimeStatus.Add(OrchestrationRuntimeStatus.Running);
 
-    var status = await client.GetStatusAsync(new DateTime(2015,10,10), null, runtimeStatus);
-    return (ActionResult) new OkObjectResult(new Status() {HasRunning = (status.Count != 0)});
+    var result = await client.ListInstancesAsync(new OrchestrationStatusQueryCondition() { RuntimeStatus = runtimeStatus }, CancellationToken.None);
+    return (ActionResult)new OkObjectResult(new { HasRunning = result.DurableOrchestrationState.Any() });
 }
 ```
 
@@ -164,7 +162,7 @@ Azure Pipelines проверяет приложение функции на вы
 
 ### <a name="tracking-store-settings"></a>Параметры хранилища отслеживания
 
-Каждое приложение функции должно использовать отдельные очереди планирования, возможно, в отдельных учетных записях хранения. Если вы хотите запросить все экземпляры оркестрации во всех версиях приложения, вы можете совместно использовать таблицы экземпляров и журналов в приложениях функций. Вы можете предоставить общий доступ к таблицам, настроив параметры `trackingStoreConnectionStringName` и `trackingStoreNamePrefix` в файле [параметров Host. JSON](durable-functions-bindings.md#host-json) , чтобы они использовали одни и те же значения.
+Каждое приложение функции должно использовать отдельные очереди планирования, возможно, в отдельных учетных записях хранения. Если вы хотите запросить все экземпляры оркестрации во всех версиях приложения, вы можете совместно использовать таблицы экземпляров и журналов в приложениях функций. Вы можете предоставить общий доступ к таблицам, настроив `trackingStoreConnectionStringName` `trackingStoreNamePrefix` Параметры и в файле [host.json Settings](durable-functions-bindings.md#host-json) , чтобы они использовали одинаковые значения.
 
 Дополнительные сведения см. в статье [Управление экземплярами в устойчивые функции в Azure](durable-functions-instance-management.md).
 

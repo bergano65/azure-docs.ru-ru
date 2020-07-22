@@ -9,10 +9,10 @@ services: iot-accelerators
 ms.date: 10/10/2018
 ms.topic: conceptual
 ms.openlocfilehash: 34222f396ed3c43932371aa9f64a459bb2a5dd0e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "61443017"
 ---
 # <a name="import-an-iot-edge-package-into-your-remote-monitoring-solution-accelerator"></a>Импорт пакета IoT Edge в акселератор решения для удаленного мониторинга
@@ -33,7 +33,7 @@ ms.locfileid: "61443017"
 
 1. Щелкните развертывание с нужной конфигурацией. Отобразится страница **Сведения о развертывании**: ![Сведения о развертывании IoT Edge](media/iot-accelerators-remote-monitoring-import-edge-package/deploymentdetails.png)
 
-1. Щелкните **скачать IOT Edge манифест**: ![скачать манифест развертывания](media/iot-accelerators-remote-monitoring-import-edge-package/download.png)
+1. Щелкните **скачать IOT Edge манифест**: ![ скачать манифест развертывания](media/iot-accelerators-remote-monitoring-import-edge-package/download.png)
 
 1. Сохраните JSON-файл как локальный файл с именем **deploymentmanifest.json**.
 

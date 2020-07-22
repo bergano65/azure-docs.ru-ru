@@ -2,19 +2,18 @@
 title: Развертывание SQL Azure для пограничных вычислений (предварительная версия) с помощью портала Azure
 description: Сведения о том, как развертывать SQL Azure для пограничных вычислений (предварительная версия) с помощью портала Azure
 keywords: Развертывание SQL для пограничных вычислений
-services: sql-database-edge
-ms.service: sql-database-edge
+services: sql-edge
+ms.service: sql-edge
 ms.topic: conceptual
 author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 05/19/2020
-ms.openlocfilehash: 7dfc7b680c6b7d6b2a3641b25c0f82665143bde1
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
-ms.translationtype: HT
+ms.openlocfilehash: 43359b66ba747dba7b3294d022a2c1aa2a3e624c
+ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83594673"
+ms.lasthandoff: 05/31/2020
+ms.locfileid: "84233245"
 ---
 # <a name="deploy-azure-sql-edge-preview"></a>Развертывание SQL Azure для пограничных вычислений (предварительная версия) 
 
@@ -119,4 +118,4 @@ Azure Marketplace — это интернет-магазин приложени
 ## <a name="next-steps"></a>Next Steps
 
 - [Машинное обучение и искусственный интеллект с использованием ONNX в SQL для пограничных вычислений](onnx-overview.md)
-- Создание комплексного решения для Интернета вещей с использованием SQL для пограничных вычислений на основе IoT Edge.
+- [Создание комплексного решения для Интернета вещей с использованием SQL для пограничных вычислений на основе IoT Edge](tutorial-deploy-azure-resources.md).

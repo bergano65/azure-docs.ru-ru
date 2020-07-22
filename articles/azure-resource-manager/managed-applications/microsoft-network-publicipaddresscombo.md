@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 06/28/2018
 ms.author: tomfitz
 ms.openlocfilehash: 0393673663df8f3ca580ff34e16bee910b955f8d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75651921"
 ---
 # <a name="microsoftnetworkpublicipaddresscombo-ui-element"></a>Элемент пользовательского интерфейса Microsoft.Network.PublicIpAddressCombo
@@ -80,10 +79,10 @@ ms.locfileid: "75651921"
 }
 ```
 
-- Если `options.hideNone` параметр имеет значение **true**, `newOrExistingOrNone` то параметр будет иметь только **новое** или **существующее**.
+- Если параметр `options.hideNone` имеет значение **true**, `newOrExistingOrNone` то параметр будет иметь только **новое** или **существующее**.
 - Если `options.hideDomainNameLabel` задано **значение true**, `domainNameLabel` то значение не объявлено.
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Комментарии
 
 - Если для параметра `constraints.required.domainNameLabel` задано значение **true**, пользователю необходимо указать метку доменного имени при создании общедоступного IP-адреса. Имеющиеся общедоступные IP-адреса без метки недоступны для выбора.
 - Если для параметра `options.hideNone` задано значение **true**, значение **Нет** для общедоступного IP-адреса будет скрыто. Значение по умолчанию — **false**.
@@ -91,7 +90,7 @@ ms.locfileid: "75651921"
 - Если для параметра `options.hideExisting` задано значение true, пользователь не сможет выбрать имеющийся общедоступный IP-адрес. Значение по умолчанию — **false**.
 - В качестве значения параметра `zone` можно указать общедоступные IP-адреса указанной зоны или отказоустойчивые в зоне общедоступные IP-адреса.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Общие сведения о создании определений пользовательского интерфейса см. в статье [Начало работы с CreateUiDefinition](create-uidefinition-overview.md).
 * Дополнительные сведения об общих свойствах элементов пользовательского интерфейса см. в статье [Элементы CreateUiDefinition](create-uidefinition-elements.md).

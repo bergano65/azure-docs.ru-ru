@@ -7,19 +7,20 @@ documentationcenter: na
 author: asudbring
 manager: KumudD
 ms.service: virtual-network
+ms.subservice: nat
 Customer intent: As an IT administrator, I want to learn more about how to design virtual networks with NAT gateway resources.
 ms.devlang: na
-ms.topic: overview
+ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/27/2020
 ms.author: allensu
-ms.openlocfilehash: 6bb53539c105cda99c842b6b0fa236f0e18a85ea
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
-ms.translationtype: HT
+ms.openlocfilehash: 0b025b3e017c8a7702b411e9d91cbdf22f915aba
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82182486"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85549630"
 ---
 # <a name="designing-virtual-networks-with-nat-gateway-resources"></a>Проектирование виртуальных сетей с использованием ресурсов шлюза преобразования сетевых адресов (NAT)
 
@@ -324,8 +325,7 @@ SNAT сопоставляет частные адреса с одним или �
 - Ведение журнала потоков NSG не поддерживается при использовании NAT.
 - NAT не распространяется на несколько виртуальных сетей.
 
-
-## <a name="feedback"></a>Отзывы
+## <a name="suggestions"></a>Предложения
 
 Нам важно знать, как можно улучшить эту услугу. Вам не хватает какой-либо возможности? Поделитесь своими идеями на странице [UserVoice](https://aka.ms/natuservoice).
 

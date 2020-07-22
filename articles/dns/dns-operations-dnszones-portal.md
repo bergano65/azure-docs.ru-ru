@@ -4,20 +4,18 @@ description: Зонами DNS можно управлять с помощью п
 services: dns
 documentationcenter: na
 author: rohinkoul
-manager: timlt
 ms.service: dns
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/18/2017
 ms.author: rohink
-ms.openlocfilehash: 002f210048c18c6dd99dfb5981bacce8666ee563
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 9b6cac64d2e3def673f6d7c27e80bd64eead9e97
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76936788"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84689169"
 ---
 # <a name="how-to-manage-dns-zones-in-the-azure-portal"></a>Как управлять зонами DNS с помощью портала Azure
 
@@ -41,7 +39,7 @@ ms.locfileid: "76936788"
 
    | **Параметр** | **Значение** | **Сведения** |
    |---|---|---|
-   |**Имя**|contoso.com|Имя зоны DNS.|
+   |**Name**|contoso.com|Имя зоны DNS.|
    |**Подписка**|[Ваша подписка]|Выберите подписку для создания зоны DNS.|
    |**Группа ресурсов**|**Создать:** contosoDNSRG|Создайте группу ресурсов. Имя группы ресурсов должно быть уникальным в пределах выбранной подписки. Дополнительные сведения о группах ресурсов см. в статье Обзор [Диспетчер ресурсов](../azure-resource-manager/management/overview.md?toc=%2fazure%2fdns%2ftoc.json#resource-groups) .|
    |**Расположение**|западная часть США||
@@ -51,7 +49,7 @@ ms.locfileid: "76936788"
 
 ## <a name="list-dns-zones"></a>Перечисление зон DNS
 
-В портал Azure перейдите к разделу **больше служб** > **Сетевые подключения** > **зоны DNS**. Каждая зона DNS является отдельным ресурсом. В этом представлении отображаются такие сведения, как число наборов записей и серверы имен. Столбец **ИМЕНА СЕРВЕРОВ** не отображается в представлении по умолчанию. Чтобы добавить его, щелкните **Столбцы**, выберите **Имена серверов**, а затем нажмите **Готово**.
+В портал Azure перейдите к разделу **больше служб**  >  **Сетевые подключения**  >  **зоны DNS**. Каждая зона DNS является отдельным ресурсом. В этом представлении отображаются такие сведения, как число наборов записей и серверы имен. Столбец **ИМЕНА СЕРВЕРОВ** не отображается в представлении по умолчанию. Чтобы добавить его, щелкните **Столбцы**, выберите **Имена серверов**, а затем нажмите **Готово**.
 
 ![Перечисление зон DNS](./media/dns-operations-dnszones-portal/listzones.png)
 

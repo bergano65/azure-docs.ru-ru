@@ -6,17 +6,17 @@ author: XiaoyuMSFT
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
-ms.subservice: ''
+ms.subservice: sql-dw
 ms.date: 04/17/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 0d65ea9b684439cab384bbaa09fcdef1302b6bcf
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 772e4253244f5e13a60f155549d5f5513695e5fa
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80743862"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85200755"
 ---
 # <a name="connect-to-azure-synapse-analytics-with-sql-server-management-studio-ssms"></a>Подключение к Azure синапсе Analytics с помощью SQL Server Management Studio (SSMS)
 
@@ -34,14 +34,14 @@ ms.locfileid: "80743862"
 
 Для работы с этим руководством необходимы указанные ниже компоненты.
 
-* Существующий пул SQL. Сведения о его создании см. в статье [Создание пула SQL Azure](create-data-warehouse-portal.md).
+* Пул SQL. Сведения о его создании см. в статье [Создание пула SQL Azure](create-data-warehouse-portal.md).
 * Установленный SQL Server Management Studio (SSMS). [Скачайте SSMS](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) бесплатно, если у вас его еще нет.
 * Полное имя сервера SQL Server. Чтобы найти эти сведения, см. раздел [Подключение к пулу SQL](sql-data-warehouse-connect-overview.md).
 
 ## <a name="1-connect-to-your-sql-pool"></a>1. подключение к пулу SQL
 
 1. Откройте SSMS.
-2. Откройте обозреватель объектов, выбрав **файл** > **подключить обозреватель объектов**.
+2. Откройте обозреватель объектов, выбрав **файл**  >  **подключить обозреватель объектов**.
 
     ![Обозреватель объектов SQL Server](./media/sql-data-warehouse-query-ssms/connect-object-explorer.png)
 3. Заполните поля в окне «Подключение к серверу».
@@ -56,7 +56,7 @@ ms.locfileid: "80743862"
 
    ![Обзор AdventureWorksDW](./media/sql-data-warehouse-query-ssms/explore-tables.png)
 
-## <a name="2-run-a-sample-query"></a>2. Запуск примера запроса
+## <a name="2-run-a-sample-query"></a>2. Запуск пробного запроса
 
 Теперь, когда мы подключились к базе данных, давайте напишем запрос.
 
@@ -70,7 +70,7 @@ ms.locfileid: "80743862"
    SELECT COUNT(*) FROM dbo.FactInternetSales;
    ```
 
-4. Выполните запрос, щелкнув `Execute` или воспользовавшись следующим сочетанием клавиш `F5`:.
+4. Выполните запрос, щелкнув `Execute` или воспользовавшись следующим сочетанием клавиш: `F5` .
 
    ![Выполнение запроса](./media/sql-data-warehouse-query-ssms/execute-query.png)
 5. Просмотрите результаты запроса. В этом примере таблица FactInternetSales содержит 60 398 строк.
@@ -79,4 +79,4 @@ ms.locfileid: "80743862"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь, когда вы можете подключаться к базе данных и отправлять запросы, попробуйте [визуализировать данные с помощью Power BI](sql-data-warehouse-get-started-visualize-with-power-bi.md). Сведения о настройке среды для проверки подлинности Azure Active Directory см. в разделе [Аутентификация в пуле SQL](sql-data-warehouse-authentication.md).
+Теперь, когда вы можете подключаться к базе данных и отправлять запросы, попробуйте [визуализировать данные с помощью Power BI](sql-data-warehouse-get-started-visualize-with-power-bi.md). Сведения о том, как настроить аутентификацию Azure Active Directory в своей среде, см. в статье [Аутентификация в Azure синапсе Analytics](sql-data-warehouse-authentication.md).

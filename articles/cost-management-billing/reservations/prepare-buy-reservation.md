@@ -7,12 +7,12 @@ ms.service: cost-management-billing
 ms.topic: conceptual
 ms.date: 05/04/2020
 ms.author: banders
-ms.openlocfilehash: 6b01253d12b67c327bc67416ca569ccb7ee469ae
-ms.sourcegitcommit: 31236e3de7f1933be246d1bfeb9a517644eacd61
+ms.openlocfilehash: 609ca56419ed14f3cf4e449e9b906a75a4ff20ab
+ms.sourcegitcommit: 374d1533ea2f2d9d3f8b6e6a8e65c6a5cd4aea47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82780646"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85807787"
 ---
 # <a name="buy-a-reservation"></a>Покупка резервирования
 
@@ -72,7 +72,7 @@ ms.locfileid: "82780646"
 - [Выделенный узел](../../virtual-machines/prepay-dedicated-hosts-reserved-instances.md)
 - [Планы программного обеспечения](../../virtual-machines/linux/prepay-suse-software-charges.md)
 - [Память](../../storage/blobs/storage-blob-reserved-capacity.md)
-- [База данных SQL](../../sql-database/sql-database-reserved-capacity.md)
+- [База данных SQL](../../azure-sql/database/reserved-capacity-overview.md)
 - [База данных Azure для PostgreSQL](../../postgresql/concept-reserved-pricing.md)
 - [База данных Azure для MySQL](../../mysql/concept-reserved-pricing.md)
 - [База данных Azure для MariaDB](../../mariadb/concept-reserved-pricing.md)
@@ -85,7 +85,7 @@ ms.locfileid: "82780646"
 
 При резервировании в рамках Клиентского соглашения Майкрософт сумма ежемесячного платежа может отличаться в зависимости от рыночного курса вашей местной валюты на текущий месяц.
 
-Ежемесячные платежи недоступны для таких ресурсов: Databricks, резервирования SUSE Linux, планы Red Hat и Azure Red Hat OpenShift для вычислений.
+Ежемесячные платежи недоступны для таких ресурсов: Databricks, резервирования SUSE Linux, планы Red Hat и лицензии Azure Red Hat OpenShift.
 
 ### <a name="view-payments-made"></a>Просмотр произведенных платежей
 

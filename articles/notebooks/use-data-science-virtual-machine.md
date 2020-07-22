@@ -6,21 +6,21 @@ manager: andneil
 ms.author: getroyer
 ms.topic: how-to
 ms.date: 06/13/2019
-ms.openlocfilehash: b4da63b7b2a6da4316215b85a09ca7420745251c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 291f1ac093568f50ad6146b70fa1ef69263b7b5b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78898405"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85830318"
 ---
 # <a name="use-azure-data-science-virtual-machines"></a>Использование виртуальных машин Azure для обработки и анализа данных
+
+[!INCLUDE [notebooks-status](../../includes/notebooks-status.md)]
 
 По умолчанию проекты выполняются на **свободном уровне вычислений** , который ОГРАНИЧЕН 4 ГБ памяти и 1 ГБ данных для предотвращения нарушения. Вы можете обойти эти ограничения, используя другую виртуальную машину, подготовленную в подписке Azure. Для этой цели лучше выбрать виртуальную машину Azure для обработки и анализа данных (DSVM), используя образ **виртуальной машины для Linux (Ubuntu) для обработки и анализа данных** . Такой DSVM предварительно настроен на все необходимое для записных книжек Azure и автоматически отображается в раскрывающемся списке **Запуск** в записных книжках Azure.
 
 > [!Note]
 > Записные книжки Azure поддерживаются только в Dsvm, созданном с помощью образа Ubuntu в Linux. Записные книжки не поддерживаются в образах Windows 2012, Windows 2016 или Linux CentOS.
-
-[!INCLUDE [notebooks-status](../../includes/notebooks-status.md)]
 
 ## <a name="create-a-dsvm-instance"></a>Создание экземпляра DSVM
 

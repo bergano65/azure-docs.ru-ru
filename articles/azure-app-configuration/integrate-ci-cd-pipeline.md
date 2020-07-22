@@ -7,12 +7,12 @@ ms.service: azure-app-configuration
 ms.topic: tutorial
 ms.date: 01/30/2020
 ms.author: lcozzens
-ms.openlocfilehash: 4b1b9e2360f4ae1cf428133006ed08327b10cdef
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
+ms.openlocfilehash: 47af78e562329a7221dcba865fc7304543a282df
+ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82790768"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85856756"
 ---
 # <a name="integrate-with-a-cicd-pipeline"></a>Интеграция с конвейером CI/CD
 
@@ -32,7 +32,7 @@ ms.locfileid: "82790768"
 
 Вы можете выполнять шаги в этом учебнике с помощью любого редактора кода. [Visual Studio Code](https://code.visualstudio.com/) является отличным вариантом, который доступен на платформах Windows, macOS и Linux.
 
-### <a name="prerequisites"></a>предварительные требования
+### <a name="prerequisites"></a>Предварительные требования
 
 Если сборка выполняется локально, скачайте и установите [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest), если этот компонент отсутствует.
 
@@ -69,23 +69,33 @@ ms.locfileid: "82790768"
 1. Задайте переменную среды с именем **ConnectionString** и укажите для нее ключ доступа к хранилищу службы "Конфигурация приложений". 
     Если вы используете командную строку Windows, выполните следующую команду и перезапустите командную строку, чтобы изменения вступили в силу:
 
-        setx ConnectionString "connection-string-of-your-app-configuration-store"
+    ```console
+     setx ConnectionString "connection-string-of-your-app-configuration-store"
+    ```
 
     Если вы используете Windows PowerShell, выполните следующую команду:
 
-        $Env:ConnectionString = "connection-string-of-your-app-configuration-store"
+    ```powershell
+     $Env:ConnectionString = "connection-string-of-your-app-configuration-store"
+    ```
 
     Если вы используете macOS или Linux, выполните следующую команду:
 
-        export ConnectionString='connection-string-of-your-app-configuration-store'
+    ```console
+     export ConnectionString='connection-string-of-your-app-configuration-store'
+    ```
 
 2. Чтобы создать приложение с помощью .NET Core CLI, выполните следующую команду в оболочке командной строки:
 
-        dotnet build
+    ```console
+     dotnet build
+    ```
 
 3. Когда создание завершится, запустите веб-приложение локально с помощью следующей команды:
 
-        dotnet run
+    ```console
+     dotnet run
+    ```
 
 4. Откройте окно браузера и перейдите по адресу `http://localhost:5000`, который является URL-адресом по умолчанию для веб-приложения, размещенного локально.
 

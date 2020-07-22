@@ -8,11 +8,10 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 02/27/2020
 ms.openlocfilehash: 397e455c8b6a1097e2a32473036e1acd2bbdf2eb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79267356"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84704188"
 ---
 # <a name="understand-and-adjust-streaming-units"></a>Обзор и настройка единиц потоковой передачи
 
@@ -86,7 +85,7 @@ ms.locfileid: "79267356"
    GROUP BY  clusterid, tumblingwindow (minutes, 5)
    ```
 
-Чтобы устранить проблемы, вызванные большим количеством элементов в предыдущем запросе, можно отправить события в концентратор событий, секционированные по `clusterid`, и выполнить масштабирование запроса, разрешив системе обрабатывать каждую входную секцию отдельно с помощью **Partition,** как показано в следующем примере:
+Чтобы устранить проблемы, вызванные большим количеством элементов в предыдущем запросе, можно отправить события в концентратор событий, секционированные по `clusterid` , и выполнить масштабирование запроса, разрешив системе обрабатывать каждую входную секцию отдельно с помощью **Partition,** как показано в следующем примере:
 
    ```sql
    SELECT count(*) 

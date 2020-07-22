@@ -4,16 +4,15 @@ description: Используйте Обозреватель службы хра
 author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 01/23/2019
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: fca9fa8a964c6c9d69ffbb3036bd4774e0d1bd34
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 4e8b99d4a9c48692551e3aba06aba1a3db385e60
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79255552"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84466057"
 ---
 # <a name="use-azure-storage-explorer-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2"></a>Использование Обозреватель службы хранилища Azure для управления каталогами, файлами и списками ACL в Azure Data Lake Storage 2-го поколения
 
@@ -23,14 +22,14 @@ ms.locfileid: "79255552"
 
 > [!div class="checklist"]
 > * Подписка Azure. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-> * Учетная запись хранения, в которой включено иерархическое пространство имен (HNS). Чтобы создать его [, выполните следующие](data-lake-storage-quickstart-create-account.md) инструкции.
+> * В учетной записи хранения включено иерархическое пространство имен. Выполните [эти](data-lake-storage-quickstart-create-account.md) инструкции, чтобы создать учетную запись.
 > * Обозреватель службы хранилища Azure, установленные на локальном компьютере. Чтобы установить Обозреватель службы хранилища Azure для Windows, Macintosh или Linux, см. раздел [Обозреватель хранилищ Azure](https://azure.microsoft.com/features/storage-explorer/).
 
 ## <a name="sign-in-to-storage-explorer"></a>Вход в Обозреватель службы хранилища
 
 При первом запуске Обозревателя службы хранилища Microsoft Azure появляется окно **подключения**. Хотя Обозреватель службы хранилища предоставляет несколько способов подключения к учетным записям хранения, в настоящее время поддерживается только один из способов управления ACL.
 
-|Задача|Назначение|
+|Задача|Цель|
 |---|---|
 |Добавление учетной записи Azure | Перенаправляет вас на страницу входа организации для аутентификации в Azure. В настоящее время это единственный поддерживаемый метод проверки подлинности, если вы хотите задавать списки ACL и управлять ими.|
 |Создание строки подключения или URI подписанного URL-адреса | Можно использовать для прямого доступа к контейнеру или учетной записи хранения с токеном SAS или общей строкой подключения. |

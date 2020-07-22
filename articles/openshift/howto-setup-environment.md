@@ -8,10 +8,9 @@ ms.date: 11/04/2019
 ms.topic: conceptual
 ms.service: container-service
 ms.openlocfilehash: e7396ce9fbed46688d59b582f246e5454d063fb3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79477040"
 ---
 # <a name="set-up-your-azure-red-hat-openshift-dev-environment"></a>Настройка среды разработки Azure Red Hat OpenShift
@@ -19,7 +18,7 @@ ms.locfileid: "79477040"
 Для сборки и запуска Microsoft Azure приложений OpenShift Red Hat необходимо:
 
 * Установите версию 2.0.65 (или более позднюю) Azure CLI (или используйте Azure Cloud Shell).
-* Зарегистрируйтесь для доступа `AROGA` к функции и связанным поставщикам ресурсов.
+* Зарегистрируйтесь для `AROGA` доступа к функции и связанным поставщикам ресурсов.
 * Создайте клиент Azure Active Directory (Azure AD).
 * Создайте объект приложения Azure AD.
 * Создайте пользователя Azure AD.
@@ -34,7 +33,7 @@ ms.locfileid: "79477040"
 az --version
 ```
 
-Первая строка выходных данных будет иметь версию CLI, например `azure-cli (2.0.65)`.
+Первая строка выходных данных будет иметь версию CLI, например `azure-cli (2.0.65)` .
 
 Ниже приведены инструкции по [установке Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) , если требуется новая установка или обновление.
 
@@ -42,7 +41,7 @@ az --version
 
 ## <a name="register-providers-and-features"></a>Регистрация поставщиков и компонентов
 
-`Microsoft.ContainerService AROGA` `Microsoft.Solutions`Компонент `Microsoft.Compute` `Microsoft.KeyVault` ,,, и `Microsoft.Network` поставщики должны быть зарегистрированы в своей подписке вручную перед развертыванием первого кластера Azure Red Hat OpenShift. `Microsoft.Storage`
+Компонент,,, `Microsoft.ContainerService AROGA` `Microsoft.Solutions` `Microsoft.Compute` `Microsoft.Storage` `Microsoft.KeyVault` и `Microsoft.Network` поставщики должны быть зарегистрированы в своей подписке вручную перед развертыванием первого кластера Azure Red Hat OpenShift.
 
 Чтобы зарегистрировать эти поставщики и компоненты вручную, используйте следующие инструкции оболочки bash, если вы установили интерфейс командной строки или в сеансе Azure Cloud Shell (bash) в портал Azure:
 

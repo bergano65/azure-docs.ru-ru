@@ -9,10 +9,9 @@ ms.topic: conceptual
 ms.date: 04/06/2020
 ms.author: banders
 ms.openlocfilehash: a527b75d376f05ab6190187b7a03d6da775055ab
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81759290"
 ---
 # <a name="prepay-for-azure-software-plans"></a>Предварительная оплата планов программного обеспечения Azure
@@ -66,11 +65,11 @@ ms.locfileid: "81759290"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Сведения об управлении резервированием см. в разделе [Управление зарезервированными экземплярами в Azure](../../cost-management-billing/reservations/manage-reserved-vm-instance.md).
+Сведения об управлении резервированием см. в статье [Управление резервированиями Azure](../../cost-management-billing/reservations/manage-reserved-vm-instance.md).
 
 Дополнительные сведения см. в следующих статьях:
 
-- [Что такое резервирование Azure?](../../cost-management-billing/reservations/save-compute-costs-reservations.md)
+- [Основные сведения о резервировании в Azure](../../cost-management-billing/reservations/save-compute-costs-reservations.md)
 - [Управление резервированиями в Azure](../../cost-management-billing/reservations/manage-reserved-vm-instance.md)
 - [Understand how the SUSE Linux Enterprise software plan discount is applied](../../cost-management-billing/reservations/understand-suse-reservation-charges.md) (Общие сведения о применении скидок на программное обеспечение SUSE Linux Enterprise)
 - [Общие сведения об использовании резервирования Azure для подписки с оплатой по мере использования](../../cost-management-billing/reservations/understand-reserved-instance-usage.md)

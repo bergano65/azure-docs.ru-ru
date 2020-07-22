@@ -10,18 +10,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.subservice: compliance
-ms.date: 10/26/2019
+ms.date: 06/18/2020
 ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 51e37ad006da5042291614c773f242b5a1f3be97
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 02f44543f78789284e7b8d39471d1346ca7b8e74
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77120195"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85078378"
 ---
 # <a name="delegate-access-governance-to-catalog-creators-in-azure-ad-entitlement-management"></a>Делегирование управления доступом к авторам каталогов в управлении назначением Azure AD
 
@@ -39,7 +38,7 @@ ms.locfileid: "77120195"
 
 1. В меню слева в разделе " **Управление** назначением" щелкните " **Параметры**".
 
-1. Щелкните **Правка**.
+1. Нажмите кнопку **Изменить**.
 
     ![Параметры для добавления создателей каталога](./media/entitlement-management-delegate-catalog/settings-delegate.png)
 
@@ -47,7 +46,7 @@ ms.locfileid: "77120195"
 
 1. Нажмите кнопку **Выбрать**.
 
-1. Выберите команду **Сохранить**.
+1. Нажмите кнопку **Сохранить**.
 
 ## <a name="allow-delegated-roles-to-access-the-azure-portal"></a>Разрешить делегированным ролям доступ к портал Azure
 
@@ -63,7 +62,7 @@ ms.locfileid: "77120195"
 
     ![Параметры пользователя Azure AD — портал администрирования](./media/entitlement-management-delegate-catalog/user-settings.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Создание каталога ресурсов и управление им](entitlement-management-catalog-create.md)
 - [Делегирование управления доступом для доступа к диспетчерам пакетов](entitlement-management-delegate-managers.md)

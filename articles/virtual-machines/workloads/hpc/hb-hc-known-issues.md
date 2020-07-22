@@ -12,12 +12,12 @@ ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 05/07/2019
 ms.author: amverma
-ms.openlocfilehash: 8d4b57fb2fee3849e102868c86fe3cab465fc70d
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
+ms.openlocfilehash: e85ae50321b9aa034f6a6d2cadcc329a24dafa62
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "67707782"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86500024"
 ---
 # <a name="known-issues-with-hb-series-and-hc-series-vms"></a>Известные проблемы с виртуальными машинами серий HB и HC
 
@@ -53,7 +53,7 @@ sed -i 's/GSS_USE_PROXY="yes"/GSS_USE_PROXY="no"/g' /etc/sysconfig/nfs
 
 ![Снимок экрана командной строки](./media/known-issues/cache-cleaning-1.png)
 
-При `numactl -H` использовании будет показано, какие NUMAnode памяти буферизованы (возможно, все). В Linux пользователи могут очищать кэши тремя способами, чтобы вернуть буферную или кэшированную память в "Free". Необходимо быть корневым или иметь разрешения sudo.
+`numactl -H`При использовании будет показано, какие NUMAnode памяти буферизованы (возможно, все). В Linux пользователи могут очищать кэши тремя способами, чтобы вернуть буферную или кэшированную память в "Free". Необходимо быть корневым или иметь разрешения sudo.
 
 ```console
 echo 1 > /proc/sys/vm/drop_caches [frees page-cache]
@@ -87,6 +87,6 @@ echo 3 > /proc/sys/vm/drop_caches [cleans page-cache and slab objects]
 
 Это предупреждение можно игнорировать. Это связано с известным ограничением низкоуровневой оболочки Azure, которое будет решаться с течением времени.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Подробнее о [высокопроизводительных вычислениях](https://docs.microsoft.com/azure/architecture/topics/high-performance-computing/) в Azure.
+Подробнее о [высокопроизводительных вычислениях](/azure/architecture/topics/high-performance-computing/) в Azure.

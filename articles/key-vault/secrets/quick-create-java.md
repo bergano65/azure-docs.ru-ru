@@ -7,12 +7,12 @@ ms.date: 10/20/2019
 ms.service: key-vault
 ms.subservice: secrets
 ms.topic: quickstart
-ms.openlocfilehash: 6351a3d27806d791e478999d04922b961949c46a
-ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
+ms.openlocfilehash: 16248cd276b63e9570221626ec32d1d4723c4ebd
+ms.sourcegitcommit: 398fecceba133d90aa8f6f1f2af58899f613d1e3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82982842"
+ms.lasthandoff: 06/21/2020
+ms.locfileid: "85125606"
 ---
 # <a name="quickstart-azure-key-vault-client-library-for-java"></a>Краткое руководство. Клиентская библиотека Azure Key Vault для Java
 
@@ -116,12 +116,12 @@ az keyvault create --name <your-unique-keyvault-name> -g "myResourceGroup"
 
 Самый простой способ проверить подлинность облачного приложения — с помощью управляемых удостоверений. Дополнительные сведения см. в статье [Provide Key Vault authentication with a managed identity](../general/managed-identity.md) (Предоставление проверки подлинности Key Vault с помощью управляемого удостоверения).
 
-Однако для простоты в рамках этого краткого руководства создается классическое приложение, требующее использования субъекта-службы и политики управления доступом. Для участника службы требуется уникальное имя в формате http://&lt;уникальное_имя_субъекта-службы&gt;.
+Однако для простоты в рамках этого краткого руководства создается классическое приложение, требующее использования субъекта-службы и политики управления доступом. Для субъекта-службы требуется уникальное имя в формате http://&lt;уникальное_имя_субъекта-службы&gt;.
 
 Создайте субъект-службу с помощью команды Azure CLI [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac):
 
 ```azurecli
-az ad sp create-for-rbac -n "http://&lt;my-unique-service-principle-name&gt;" --sdk-auth
+az ad sp create-for-rbac -n "http://&lt;my-unique-service-principal-name&gt;" --sdk-auth
 ```
 
 Эта операция возвращает ряд пар "ключ — значение". 

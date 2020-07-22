@@ -7,14 +7,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: quickstart
-ms.date: 01/27/2020
+ms.date: 05/27/2020
 ms.author: pafarley
-ms.openlocfilehash: 66668f46595c22426984a02c489297e962d061d0
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.custom: tracking-python
+ms.openlocfilehash: 64f5eefa465c3f7fc9e7c0040ca64797a806bc6e
+ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77118085"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86028037"
 ---
 # <a name="quickstart-train-a-form-recognizer-model-and-extract-form-data-by-using-the-rest-api-with-python"></a>Краткое руководство. Обучение модели Распознавателя документов и извлечение данных из форм с помощью REST API и Python
 
@@ -28,6 +29,10 @@ ms.locfileid: "77118085"
 - Среда [Python](https://www.python.org/downloads/), если вы хотите выполнить этот пример кода локально.
 - Минимум пять документов одного типа. Вы будете использовать эти данные для обучения модели. У форм могут быть разные типы файлов, но типы документов должны быть одинаковыми. Для работы с этим кратким руководством вы можете использовать [пример набора данных](https://go.microsoft.com/fwlink/?linkid=2090451). Передайте файлы для обучения в корневой каталог контейнера хранилища BLOB-объектов в учетной записи хранения Azure.
 
+> [!NOTE]
+> В этом кратком руководстве используются удаленные документы, доступ к которым осуществляется по URL-адресу. Если вы хотите использовать локальные файлы, ознакомьтесь со [справочной документацией](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/TrainCustomModelAsync).
+
+
 ## <a name="create-a-form-recognizer-resource"></a>Создание ресурса Распознавателя документов
 
 [!INCLUDE [create resource](../includes/create-resource.md)]
@@ -39,7 +44,7 @@ ms.locfileid: "77118085"
 > [!NOTE]
 > Используя функцию помеченных данных, можно заранее пометить вручную некоторые или все данные для обучения. Это более сложный процесс, но его результатом является лучшая обученная модель. Дополнительные сведения см. в разделе об [обучении с использованием меток](../overview.md#train-with-labels).
 
-Чтобы обучить модель Распознавателя документов с помощью документов в контейнере больших двоичных объектов Azure, вызовите API-интерфейс **[обучения пользовательской модели](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/TrainCustomModelAsync)** , выполнив следующий код Python. Перед выполнением команды внесите следующие изменения:
+Чтобы обучить модель Распознавателя документов с помощью документов в контейнере больших двоичных объектов Azure, вызовите API-интерфейс **[обучения пользовательской модели](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/TrainCustomModelAsync)** , выполнив следующий код Python. Перед выполнением команды внесите следующие изменения:
 
 1. Замените `<SAS URL>` подписанным URL-адресом контейнера хранилища BLOB-объектов Azure. Чтобы получить подписанный URL-адрес, откройте Обозреватель службы хранилища Microsoft Azure, щелкните контейнер правой кнопкой мыши и выберите **Get shared access signature** (Получить подписанный URL-адрес). Убедитесь, что разрешение на **чтение** и разрешение **списка** установлены и нажмите кнопку **Создать**. Затем скопируйте значение в разделе **URL-адрес**. Оно должно быть в таком формате: `https://<storage account>.blob.core.windows.net/<container name>?<SAS value>`.
 1. Замените `<subscription key>` ключом подписки, скопированным на предыдущем шаге.
@@ -54,7 +59,7 @@ ms.locfileid: "77118085"
     
     # Endpoint URL
     endpoint = r"<endpoint>"
-    post_url = endpoint + r"/formrecognizer/v2.0-preview/custom/models"
+    post_url = endpoint + r"/formrecognizer/v2.0/custom/models"
     source = r"<SAS URL>"
     prefix = "<Blob folder name>"
     includeSubFolders = False
@@ -66,7 +71,7 @@ ms.locfileid: "77118085"
         'Ocp-Apim-Subscription-Key': '<subsription key>',
     }
     
-    body =  {
+    body =     {
         "source": source,
         "sourceFilter": {
             "prefix": prefix,
@@ -456,4 +461,4 @@ print("Train operation did not complete within the allocated time.")
 В этом руководстве для обучения модели и ее запуска в примере используется REST API Распознавателя документов и Python. Для более подробного изучения API Распознавателя документов см. справочную документацию.
 
 > [!div class="nextstepaction"]
-> [Справочная документация по REST API](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/AnalyzeWithCustomForm)
+> [Справочная документация по REST API](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeWithCustomForm)

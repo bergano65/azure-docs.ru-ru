@@ -7,10 +7,9 @@ ms.topic: conceptual
 ms.date: 10/30/2019
 ms.author: chlound
 ms.openlocfilehash: 78bc629598c0635b7760285d0507b7a85a4ab551
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79127010"
 ---
 # <a name="refresh-with-logic-apps"></a>Обновление с помощью Logic Apps
@@ -19,7 +18,7 @@ ms.locfileid: "79127010"
 
 Дополнительные сведения об использовании API-интерфейсов RESTFUL с Azure Analysis Services см. в разделе [асинхронное обновление с помощью REST API](analysis-services-async-refresh.md).
 
-## <a name="authentication"></a>Проверка подлинности
+## <a name="authentication"></a>Аутентификация
 
 Все вызовы должны пройти проверку подлинности с помощью допустимого маркера Azure Active Directory (OAuth 2).  В примерах, приведенных в этой статье, для проверки подлинности в Azure Analysis Services используется субъект-служба (SPN). Дополнительные сведения см. в статье [Создание субъекта-службы с помощью портал Azure](../active-directory/develop/howto-create-service-principal-portal.md).
 
@@ -62,20 +61,20 @@ ms.locfileid: "79127010"
 
 Настройте действие HTTP следующим образом:
 
-|Свойство  |Значение  |
+|Свойство.  |Значение  |
 |---------|---------|
 |**Метод**     |POST         |
-|**URI**     | https://*/серверс/* имя*сервера консультантов*/Моделс/*имя базы данных*/рефрешес <br /> <br /> Пример: https:\//westus.asazure.Windows.NET/Servers/MyServer/Models/AdventureWorks/refreshes|
+|**URI**     | https://*/серверс/* имя*сервера консультантов*/Моделс/*имя базы данных*/рефрешес <br /> <br /> Пример: https: \/ /westus.asazure.Windows.NET/Servers/MyServer/Models/AdventureWorks/refreshes|
 |**Заголовки**     |   Content-Type, Application/JSON <br /> <br />  ![Заголовки](./media/analysis-services-async-refresh-logic-app/6.png)    |
-|**Организм**     |   Дополнительные сведения о создании текста запроса см. в разделе [асинхронное обновление с помощью REST API-POST/рефрешес](analysis-services-async-refresh.md#post-refreshes). |
+|**Текст**     |   Дополнительные сведения о создании текста запроса см. в разделе [асинхронное обновление с помощью REST API-POST/рефрешес](analysis-services-async-refresh.md#post-refreshes). |
 |**Аутентификация**     |Active Directory OAuth         |
-|**Клиентом**     |Заполните Azure Active Directory TenantId         |
-|**Компиляцию**     |HTTPS://*. asazure. Windows. NET         |
+|**Клиент**     |Заполните Azure Active Directory TenantId         |
+|**Аудитория**     |HTTPS://*. asazure. Windows. NET         |
 |**Идентификатор клиента**     |Введите имя участника-службы ClientID         |
 |**Тип учетных данных**     |Секрет         |
-|**Владел**     |Введите секретное имя субъекта-службы         |
+|**Секрет**     |Введите секретное имя субъекта-службы         |
 
-Пример:
+Пример.
 
 ![Завершенное действие HTTP](./media/analysis-services-async-refresh-logic-app/7.png)
 

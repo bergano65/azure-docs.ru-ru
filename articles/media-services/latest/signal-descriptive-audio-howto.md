@@ -13,10 +13,10 @@ ms.custom: ''
 ms.date: 09/25/2019
 ms.author: juliako
 ms.openlocfilehash: 0d8f88e6c2fe273efa969278146de67ba18eaecf
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "72392193"
 ---
 # <a name="signal-descriptive-audio-tracks"></a>Сигнальные звуковые дорожки сигнала
@@ -48,7 +48,7 @@ ms.locfileid: "72392193"
 
 [!code-csharp[Main](../../../media-services-v3-dotnet-tutorials/AMSV3Tutorials/UploadEncodeAndStreamFiles/Program.cs#CreateInputAsset)]
 
-Если необходимо передать имя созданного входного ресурса другим методам, обязательно используйте `Name` свойство объекта Asset, возвращенного из `CreateInputAssetAsync`, например inputAsset.Name. 
+Если необходимо передать имя созданного входного ресурса другим методам, обязательно используйте `Name` свойство объекта Asset, возвращенного из `CreateInputAssetAsync` , например inputAsset.Name. 
 
 ## <a name="create-an-output-asset-to-store-the-result-of-the-encoding-job"></a>Создание выходного ресурса для сохранения результата задания кодирования
 
@@ -56,9 +56,9 @@ ms.locfileid: "72392193"
 
 [!code-csharp[Main](../../../media-services-v3-dotnet-tutorials/AMSV3Tutorials/UploadEncodeAndStreamFiles/Program.cs#CreateOutputAsset)]
 
-Если необходимо передать имя созданного выходного ресурса другим методам, обязательно используйте `Name` свойство объекта Asset, возвращенного из `CreateIOutputAssetAsync`, например outputAsset.Name. 
+Если необходимо передать имя созданного выходного ресурса другим методам, обязательно используйте `Name` свойство объекта Asset, возвращенного из `CreateIOutputAssetAsync` , например outputAsset.Name. 
 
-В случае использования этой статьи передайте `outputAsset.Name` значение в функции `SubmitJobAsync` и. `UploadAudioIntoOutputAsset`
+В случае использования этой статьи передайте значение в `outputAsset.Name` `SubmitJobAsync` `UploadAudioIntoOutputAsset` функции и.
 
 ## <a name="create-a-transform-and-a-job-that-encodes-the-uploaded-file"></a>Создание преобразования и задания, которое кодирует отправленный файл
 

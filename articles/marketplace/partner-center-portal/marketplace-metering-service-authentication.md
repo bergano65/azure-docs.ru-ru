@@ -1,84 +1,82 @@
 ---
-title: Стратегии проверки подлинности службы измерения Marketplace | Azure Marketplace
-description: Стратегии проверки подлинности службы контроля использования, поддерживаемые в Azure Marketplace.
-author: qianw211
-ms.author: dsindona
+title: Стратегии проверки подлинности службы контроля Marketplace | Azure Marketplace
+description: Стратегии проверки подлинности службы контроля, поддерживаемые в Azure Marketplace.
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
-ms.date: 05/03/2020
-ms.openlocfilehash: 31b9d4d57e38adcd079082a4f32770c4cbc8fbb3
-ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
+ms.date: 05/21/2020
+ms.openlocfilehash: e24dcdc2de94fe73f6bb83dcc03bbd1139503784
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2020
-ms.locfileid: "82736205"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86120761"
 ---
-# <a name="marketplace-metering-service-authentication-strategies"></a>Стратегии проверки подлинности службы измерения Marketplace
+# <a name="marketplace-metering-service-authentication-strategies"></a>Стратегии проверки подлинности службы контроля Marketplace
 
-Служба измерения Azure Marketplace поддерживает две стратегии проверки подлинности:
+Служба контроля Marketplace поддерживает две стратегии проверки подлинности:
 
-* [Маркер безопасности Azure AD](https://docs.microsoft.com/azure/active-directory/develop/access-tokens)
-* [управляемые удостоверения](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) 
+* [Маркер безопасности Azure AD](../../active-directory/develop/access-tokens.md).
+* [Управляемые удостоверения](../../active-directory/managed-identities-azure-resources/overview.md) 
 
-Мы объясним, когда и как использовать различные стратегии проверки подлинности для безопасной отправки пользовательских счетчиков с помощью службы измерения Marketplace.
+Мы объясним, когда и как использовать различные стратегии проверки подлинности для безопасной отправки настраиваемых счетчиков с помощью службы контроля Marketplace.
 
-## <a name="using-the-azure-ad-security-token"></a>Использование маркера безопасности Azure AD
+## <a name="using-the-azure-ad-security-token"></a>Использование маркера безопасности Azure AD
 
-Применимые типы предложений: SaaS и приложения Azure с типом плана управляемого приложения.  
+Применимые типы предложений — это SaaS и приложения Azure с типом плана управляемого приложения.  
 
-Отправка пользовательских счетчиков с помощью предопределенного фиксированного идентификатора приложения для проверки подлинности.
+Отправьте пользовательские счетчики, используя предопределенный фиксированный идентификатор приложения Azure AD для проверки подлинности.
 
-Для предложений SaaS Azure AD является единственным доступным вариантом.
+Для предложений SaaS это единственный доступный вариант. Это обязательный шаг для публикации любого предложения SaaS, как описано в разделе [Регистрация приложения SaaS](./pc-saas-registration.md).
 
-Для приложений Azure с управляемым планом приложений следует использовать эту стратегию в следующих случаях.
+Для приложений Azure с планом управляемого приложения эту стратегию следует использовать в следующих случаях.
 
-* У вас уже есть механизм взаимодействия с серверными службами и вы хотите расширить этот механизм для создания пользовательских счетчиков из Центральной службы.
-* У вас есть сложная логика пользовательских измерительных приборов.  Запустите эту логику в центральном расположении, а не на ресурсах управляемого приложения.
+* У вас уже есть механизм взаимодействия с серверными службами и вы хотите расширить этот механизм для выдачи настраиваемых счетчиков из центральной службы.
+* У вас есть сложная логика настраиваемых счетчиков.  Запустите эту логику в центральном расположении, а не на ресурсах управляемого приложения.
 
-После регистрации приложения можно программно запросить маркер безопасности Azure AD. Издатель должен использовать этот маркер и выполнить запрос на его разрешение.
+После регистрации приложения можно программным способом запросить маркер безопасности Azure AD. Ожидается, что издатель будет использовать этот токен и отправит запрос на его разрешение.
 
-Дополнительные сведения об этих токенах см. в разделе [Azure Active Directory доступа к маркерам](https://docs.microsoft.com/azure/active-directory/develop/access-tokens).
+Дополнительные сведения об этих маркерах см. в статье [Маркеры доступа в Azure Active Directory](../../active-directory/develop/access-tokens.md).
 
 ### <a name="get-a-token-based-on-the-azure-ad-app"></a>Получение токена для приложения Azure AD
 
 #### <a name="http-method"></a>Метод HTTP
 
-**Поместить**
+**POST**
 
-#### <a name="request-url"></a>*Request URL (URL-адрес запроса)*
+#### <a name="request-url"></a>*Request URL* (URL-адрес запроса)
 
 **`https://login.microsoftonline.com/*{tenantId}*/oauth2/token`**
 
-#### <a name="uri-parameter"></a>*Параметр универсального кода ресурса (URI)*
+#### <a name="uri-parameter"></a>*Параметр универсального кода ресурса*
 
-|  **Имя параметра** |  **Обязательное**  |  **Описание**          |
+|  **Имя параметра** |  **Обязательно**  |  **Описание**          |
 |  ------------------ |--------------- | ------------------------  |
-|  `tenantId`         |   True         | Идентификатор клиента зарегистрированного приложения Azure AD.   |
+|  `tenantId`         |   True         | Идентификатор клиента для зарегистрированного приложения Azure AD.   |
 | | | |
 
 #### <a name="request-header"></a>*Заголовок запроса*
 
-|  **Имя заголовка**    |  **Обязательное**  |  **Описание**          |
+|  **Имя заголовка**    |  **Обязательно**  |  **Описание**          |
 |  ------------------ |--------------- | ------------------------  |
-|  `Content-Type`     |   True         | Связанный с этим запросом тип содержимого. Значение по умолчанию — `application/x-www-form-urlencoded`.  |
+|  `Content-Type`     |   True         | Связанный с этим запросом тип содержимого. Значение по умолчанию — `application/x-www-form-urlencoded`.  |
 | | | |
 
 #### <a name="request-body"></a>*Текст запроса*
 
-|  **Имя свойства**  |  **Обязательное**  |  **Описание**          |
+|  **Имя свойства**  |  **Обязательно**  |  **Описание**          |
 |  ------------------ |--------------- | ------------------------  |
-|  `Grant_type`       |   True         | Тип предоставления разрешения. Значение по умолчанию — `client_credentials`. |
+|  `Grant_type`       |   True         | Тип предоставления разрешения. Используйте `client_credentials`. |
 |  `Client_id`        |   True         | Идентификатор клиента или приложения, связанный с приложением Azure AD.|
-|  `client_secret`    |   True         | Пароль, связанный с приложением Azure AD.  |
-|  `Resource`         |   True         | Целевой ресурс, для которого запрашивается токен. Значение по умолчанию — `20e940b3-4c77-4b0b-9a53-9e16a1b010a7`.  |
+|  `client_secret`    |   True         | Секрет, связанный с приложением Azure AD.  |
+|  `Resource`         |   True         | Целевой ресурс, для которого запрашивается токен. Используйте `20e940b3-4c77-4b0b-9a53-9e16a1b010a7`. |
 | | | |
 
 #### <a name="response"></a>*Ответ*
 
 |  **имя**;    |  **Тип**  |  **Описание**          |
 |  ------------------ |--------------- | ----------------------  |
-|  `200 OK`     |   `TokenResponse`    | Запрос прошел.  |
+|  `200 OK`     |   `TokenResponse`    | Запрос успешно выполнен.  |
 | | | |
 
 #### <a name="tokenresponse"></a>*TokenResponse*
@@ -97,28 +95,28 @@ ms.locfileid: "82736205"
   }
 ```
 
-## <a name="using-the-azure-managed-identities-token"></a>Использование токена удостоверений, управляемых Azure
+## <a name="using-the-azure-managed-identities-token"></a>Использование маркера удостоверений, управляемых Azure
 
-Применимый тип предложения — это приложения Azure с типом плана управляемого приложения.
+Применимый тип предложений: приложения Azure с планом управляемого приложения.
 
-При использовании этого подхода удостоверение развернутых ресурсов будет проходить проверку подлинности для отправки пользовательских событий использования счетчиков.  Вы можете внедрить код, который порождает использование в пределах развертывания.
+Это позволит использовать удостоверение развернутых ресурсов для проверки подлинности для отправки событий использования настраиваемых счетчиков.  Вы можете внедрить код, который порождает использование в пределах развертывания.
 
 >[!Note]
->Издатель должен убедиться, что ресурсы, порождаемые использование, заблокированы, поэтому они не будут изменены.
+>Издателю следует убедиться в том, что ресурсы, порождаемые использованием, заблокированы, чтобы их нельзя было изменить.
 
-Управляемое приложение может содержать ресурсы различных типов — от виртуальных машин до функций Azure.  Дополнительные сведения о проверке подлинности с помощью управляемых удостоверений для различных служб см. [в статье Использование управляемых удостоверений для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview#how-can-i-use-managed-identities-for-azure-resources).
+Управляемое приложение может содержать ресурсы различных типов — от виртуальных машин до Функций Azure.  Дополнительные сведения о проверке подлинности с помощью управляемых удостоверений для различных служб см. в статье [Использование управляемых удостоверений для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md#how-can-i-use-managed-identities-for-azure-resources).
 
-Например, выполните следующие действия для проверки подлинности с помощью виртуальной машины Windows.
+Например, выполните указанные ниже действия для проверки подлинности с помощью виртуальной машины Windows.
 
-1. Убедитесь, что управляемое удостоверение настроено с помощью одного из методов:
-    * [портал Azure пользовательский интерфейс](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm)
-    * [CLI](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm)
-    * [PowerShell](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-powershell-windows-vm)
-    * [Шаблон Azure Resource Manager](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-template-windows-vm)
-    * [REST](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-rest-vm#system-assigned-managed-identity)
-    * [Пакеты Azure SDK](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-sdk-windows-vm)
+1. Убедитесь, что управляемое удостоверение настроено с помощью одного из следующих методов:
+    * [Пользовательский интерфейс портала Azure](../../active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm.md)
+    * [CLI](../../active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm.md)
+    * [PowerShell](../../active-directory/managed-identities-azure-resources/qs-configure-powershell-windows-vm.md)
+    * [Шаблон Azure Resource Manager](../../active-directory/managed-identities-azure-resources/qs-configure-template-windows-vm.md)
+    * [Остальные](../../active-directory/managed-identities-azure-resources/qs-configure-rest-vm.md#system-assigned-managed-identity))
+    * [Пакеты SDK для Azure](../../active-directory/managed-identities-azure-resources/qs-configure-sdk-windows-vm.md)
 
-1. Получите маркер доступа для идентификатора приложения службы измерения Marketplace (`20e940b3-4c77-4b0b-9a53-9e16a1b010a7`), используя удостоверение системы, RDP для виртуальной машины, откройте консоль PowerShell и выполните следующую команду.
+1. Получите маркер доступа для идентификатора приложения службы контроля Marketplace (`20e940b3-4c77-4b0b-9a53-9e16a1b010a7`), используя системное удостоверение, RDP для виртуальной машины, откройте консоль PowerShell и выполните следующую команду.
 
     ```powershell
     # curl is an alias to Web-Invoke PowerShell command
@@ -129,7 +127,7 @@ ms.locfileid: "82736205"
     $Headers.Add("Authorization","$($Token.token_type) "+ " " + "$($Token.access_token)")
     ```
 
-1. Получить идентификатор управляемого приложения из текущего свойства группы ресурсов "ManagedBy"
+1. Получить идентификатор управляемого приложения из свойства "ManagedBy" текущей группы ресурсов.
 
     ```powershell
     # Get subscription and resource group
@@ -141,18 +139,19 @@ ms.locfileid: "82736205"
     $managedappId = $resourceGroupInfo.managedBy 
     ```
 
-1. Служба измерения Marketplace должна сообщать об использовании в `resourceID`и `resourceUsageId` в случае управляемого приложения.
+1. Служба контроля Marketplace должна сообщать об использовании на `resourceID` и `resourceUsageId` в случае управляемого приложения.
 
     ```powershell
     # Get resourceUsageId from the managed app
-    $managedAppUrl = "https://management.azure.com/subscriptions/" + $metadata.compute.subscriptionId + "/resourceGroups/" + $metadata.compute.resourceGroupName + "/providers/Microsoft.Solutions/applications/" + $managedappId + "\?api-version=2019-07-01"
+    $managedAppUrl = "https://management.azure.com" + $managedappId + "\?api-version=2019-07-01"
     $ManagedApp = curl $managedAppUrl -H $Headers | Select-Object -Expand Content | ConvertFrom-Json
     # Use this resource ID to emit usage 
     $resourceUsageId = $ManagedApp.properties.billingDetails.resourceUsageId
     ```
 
-1. Использование [API службы измерения Marketplace](https://review.docs.microsoft.com/azure/marketplace/partner-center-portal/marketplace-metering-service-apis?branch=pr-en-us-101847) для выпуска использования.
+1. Используйте [API службы контроля Marketplace](./marketplace-metering-service-apis.md) для порождения использования.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание предложения приложения Azure](./create-new-azure-apps-offer.md)
+* [Создание предложения SaaS, предназначенного для t](./offer-creation-checklist.md)

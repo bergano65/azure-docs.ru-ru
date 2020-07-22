@@ -6,22 +6,22 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 12/04/2019
+ms.date: 07/16/2020
 ms.author: tamram
-ms.reviewer: cbrooks
+ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: 1413035c879198cf333aeeb5d8fe993162939172
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a67981e2919854b80479ccc1c27ecf97469eebce
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75460579"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86518693"
 ---
 # <a name="use-powershell-to-assign-an-rbac-role-for-access-to-blob-and-queue-data"></a>Назначение роли RBAC доступа к данным большого двоичного объекта и очереди с помощью PowerShell
 
 Azure Active Directory (Azure AD) разрешает права доступа к защищенным ресурсам с помощью [управления доступом на основе ролей (RBAC)](../../role-based-access-control/overview.md). Служба хранилища Azure определяет набор встроенных ролей RBAC, которые охватывают общие наборы разрешений, используемые для доступа к контейнерам или очередям.
 
-Когда роль RBAC назначается субъекту безопасности Azure AD, Azure предоставляет доступ к этим ресурсам для этого субъекта безопасности. Доступ может ограничиваться уровнем подписки, группой ресурсов, учетной записью хранения или отдельным контейнером или очередью. Субъект безопасности Azure AD может быть пользователем, группой, субъектом-службой приложения или [управляемым удостоверением для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md).
+Если субъекту безопасности назначена роль RBAC, Azure предоставляет этому субъекту безопасности доступ к соответствующим ресурсам. Доступ может ограничиваться уровнем подписки, группой ресурсов, учетной записью хранения или отдельным контейнером или очередью. Субъект безопасности Azure AD может быть пользователем, группой, субъектом-службой приложения или [управляемым удостоверением для ресурсов Azure](../../active-directory/managed-identities-azure-resources/overview.md).
 
 В этой статье описывается, как использовать Azure PowerShell для перечисления встроенных ролей RBAC и их назначения пользователям. Дополнительные сведения об использовании Azure PowerShell см. в разделе [обзор Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview).
 

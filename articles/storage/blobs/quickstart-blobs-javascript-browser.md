@@ -7,12 +7,12 @@ ms.date: 04/18/2020
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.openlocfilehash: 4d486b8ffc921a5ca2f38bef912ba6dc46ecec40
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: af76025317436f7046b857731e4c8af9b504201f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83634086"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85833423"
 ---
 <!-- Customer intent: As a web application developer I want to interface with Azure Blob storage entirely on the client so that I can build a SPA application that is able to upload and delete files on blob storage. -->
 
@@ -234,7 +234,7 @@ npm install -g parcel-bundler
 Чтобы настроить расширение отладчика для Visual Studio Code, сделайте следующее:
 
 1. Щелкните элементы **Выполнить > Добавить конфигурацию**.
-2. Выберите **Edge**, **Chrome** или **Firefox** в зависимости от того, какое расширение вы ранее установили в разделе [предварительных требований](#prerequisites).
+2. Выберите **Microsoft Edge**, **Chrome** или **Firefox** в зависимости от того, какое расширение вы ранее установили в разделе [предварительных требований](#prerequisites).
 
 При добавлении конфигурации создается файл *launch.json*, который открывается в редакторе. Измените файл *launch.json*, присвоив параметру `url` значение `http://localhost:1234/index.html`, как показано ниже.
 
@@ -285,7 +285,7 @@ parcel index.html
 #### <a name="step-4---delete-the-container"></a>Шаг 4. Удаление контейнера
 
 1. В веб-приложении выберите элемент **Delete container** (Удалить контейнер). В строке состояния будет указано, что контейнер успешно удален.
-2. На портале Azure выберите ссылку **\<имя_учетной_записи\> | Контейнеры** слева в верхней части области портала.
+2. На портале Azure выберите ссылку **\<account-name\> | Контейнеры** вверху слева.
 3. Выберите **Обновить**. Новый контейнер исчезнет.
 4. Закройте веб-приложение.
 
@@ -302,7 +302,7 @@ parcel index.html
 Учебники, примеры, краткие руководства и другую документацию можно найти по следующим ссылкам:
 
 > [!div class="nextstepaction"]
-> [Документация по работе с Azure для JavaScript](/azure/javascript/).
+> [Документация по работе с Azure для JavaScript](/azure/developer/javascript/).
 
 * Дополнительные сведения см в документации по [клиентской библиотеке Хранилища Blob-объектов Azure для JavaScript](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/storage/storage-blob).
 * Дополнительные примеры приложений для хранилища Blob-объектов Azure версии 12 для JavaScript собраны [здесь](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-blob/samples).

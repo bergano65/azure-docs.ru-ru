@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: site-recovery
 ms.date: 12/03/2018
 ms.author: rajanaki
-ms.openlocfilehash: 1d94935db542a0e64754ab8769996fe906f88b46
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: eb08ea2e13c4879941b9651cac056ff41ae13052
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "73954401"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86130827"
 ---
 # <a name="upgrade-windows-server-serversystem-center-2012-r2-vmm-to-windows-servervmm-2016"></a>Обновление Windows Server Server/System Center 2012 R2 VMM до Windows Server или VMM 2016 
 
@@ -42,10 +42,10 @@ ms.locfileid: "73954401"
 
 - Если вы используете System Center 2012 R2 VMM, 
 
-    - Проверьте сведения о базе данных в VMM:**Параметры** ->  **консоли** -> VMM**Общее** -> **Подключение к базе данных**
+    - Проверьте сведения о базе данных в VMM: параметры **консоли VMM**  ->  **settings**  ->  **Общее**  ->  **Подключение к базе данных**
     - Проверьте учетные записи служб, которые используются для службы агента System Center Virtual Machine Manager
     - Убедитесь, что у вас есть резервная копия базы данных VMM.
-    - Запишите имя базы данных задействованных в репликации серверов SCVMM. Это можно сделать, перейдя к -> **параметрам** ->  **консоли VMM****Общее** -> **Подключение к базе данных** .
+    - Запишите имя базы данных задействованных в репликации серверов SCVMM. Это можно сделать, перейдя к параметрам **консоли VMM**  ->  **Settings**  ->  **Общее**  ->  **Подключение к базе данных** .
     - Запишите идентификаторы VMM: первичного сервера 2012 R2 и сервера восстановления VMM. Идентификатор VMM можно найти в ключе реестра "HKLM:\SOFTWARE\Microsoft\Microsoft System Center Virtual Machine Manager Server\Setup".
     - Убедитесь, что новые службы SCVMM, которые вы добавляете в кластер, имеют прежние имена. 
 
@@ -54,18 +54,18 @@ ms.locfileid: "73954401"
   > При обновлении SCVMM 2012 R2 в разделе "Распределенное управление ключами", выберите **хранить ключи шифрования в Active Directory**. Тщательно выбирайте параметры для учетной записи службы и распределенного управления ключами. Исходя из вашего выбора, зашифрованные данные, такие как пароли в шаблонах, могут быть недоступны после обновления и могут повлиять на репликацию с помощью Azure Site Recovery.
 
 > [!IMPORTANT]
-> Дополнительные сведения о SCVMM см. в разделе [Предварительные требования](https://docs.microsoft.com/system-center/vmm/upgrade-vmm?view=sc-vmm-2016#requirements-and-limitations)
+> Дополнительные сведения о SCVMM см. в разделе [Предварительные требования](/system-center/vmm/upgrade-vmm?view=sc-vmm-2016#requirements-and-limitations)
 
 ## <a name="windows-server-2012-r2-hosts-which-arent-managed-by-scvmm"></a>Узлы Windows Server 2012 R2, которые не управляются SCVMM 
-Действия, описанные ниже, относятся к конфигурации пользователя из [узлов Hyper-V в Azure](https://docs.microsoft.com/azure/site-recovery/hyper-v-azure-architecture), применяемой в соответствии с этим [руководством](https://docs.microsoft.com/azure/site-recovery/hyper-v-prepare-on-premises-tutorial).
+Действия, описанные ниже, относятся к конфигурации пользователя из [узлов Hyper-V в Azure](./hyper-v-azure-architecture.md), применяемой в соответствии с этим [руководством](./hyper-v-prepare-on-premises-tutorial.md).
 
 > [!WARNING]
 > Как уже упоминалось в предварительных условиях, эти шаги применимы только к сценарию кластерной среды, но не к автономной конфигурации узла Hyper-V.
 
-1. Выполните инструкции по использованию [последовательного обновления кластера](https://docs.microsoft.com/windows-server/failover-clustering/cluster-operating-system-rolling-upgrade#cluster-os-rolling-upgrade-process). для выполнения последовательного обновления кластера.
+1. Выполните инструкции по использованию [последовательного обновления кластера](/windows-server/failover-clustering/cluster-operating-system-rolling-upgrade#cluster-os-rolling-upgrade-process). для выполнения последовательного обновления кластера.
 2. Удалите ссылку на узел Windows Server 2012 R2 из Azure Site Recovery для каждого нового узла Windows Server 2016, представленного в кластере, выполнив шаги, упомянутые [здесь]. Это должен быть узел, выбранный для завершения задачи и отключения от кластера.
 3. Когда команда *Update-VMVersion* будет выполнена для всех виртуальных машин, эти обновления будут завершены. 
-4. Выполните действия, указанные [здесь](https://docs.microsoft.com/azure/site-recovery/hyper-v-azure-tutorial#set-up-the-source-environment), чтобы зарегистрировать новый узел Windows Server 2016 для Azure Site Recovery. Обратите внимание, что Hyper-V уже активирован на сайте, и вам просто нужно зарегистрировать новый узел в кластере. 
+4. Выполните действия, указанные [здесь](./hyper-v-azure-tutorial.md#set-up-the-source-environment), чтобы зарегистрировать новый узел Windows Server 2016 для Azure Site Recovery. Обратите внимание, что Hyper-V уже активирован на сайте, и вам просто нужно зарегистрировать новый узел в кластере. 
 5.  Перейдите на портал Azure и проверьте состояние репликации в службах восстановления.
 
 ## <a name="upgrade-windows-server-2012-r2-hosts-managed-by-stand-alone-scvmm-2012-r2-server"></a>Обновление узлов Windows Server 2012 R2, которые управляются автономным сервером SCVMM 2012 R2
@@ -74,17 +74,17 @@ ms.locfileid: "73954401"
 **Обновите автономную службу SCVMM 2012 R2 до SCVMM 2016**
 
 1.  Чтобы удалить поставщик ASR, в Панели управления выберите "Программы -> Программы и компоненты ->Microsoft Azure Site Recovery" и нажмите "Удалить"
-2. [Сохраните базу данных SCVMM и обновите операционную систему](https://docs.microsoft.com/system-center/vmm/upgrade-vmm?view=sc-vmm-2016#back-up-and-upgrade-the-operating-system)
+2. [Сохраните базу данных SCVMM и обновите операционную систему](/system-center/vmm/upgrade-vmm?view=sc-vmm-2016#back-up-and-upgrade-the-operating-system)
 3. В разделе **Установка и удаление программ** выберите **VMM** > **Удаление**. b. Щелкните **Удалить компоненты**, а затем выберите **Сервер управления и консоль VMM**. c. В разделе **Параметры базы данных** выберите **Сохранить базу данных**. d. Просмотрите итоги и нажмите кнопку **Удалить**.
 
-4. [Установка VMM 2016](https://docs.microsoft.com/system-center/vmm/upgrade-vmm?view=sc-vmm-2016#install-vmm-2016)
+4. [Установка VMM 2016](/system-center/vmm/upgrade-vmm?view=sc-vmm-2016#install-vmm-2016)
 5. Запустите SCVMM и проверьте состояние каждого узла на вкладке **структуры** . чтобы получить Последнее состояние, нажмите кнопку " **Обновить** ". Должно отобразиться состояние "Требует внимания". 
 17. Установите последнюю версию [Microsoft Azure Site Recovery Provider](https://aka.ms/downloaddra) на сервер SCVMM.
 16. Установите последнюю версию агента [Microsoft Azure Recovery Service (MARS)](https://aka.ms/latestmarsagent) на каждом узле кластера. Обновите, чтобы убедиться, что SCVMM успешно может запрашивать узлы.
 
 **Обновите Windows Server 2012 R2 до Windows Server 2016**
 
-1. Для выполнения последовательного обновления кластера выполните действия, описанные [здесь](https://docs.microsoft.com/windows-server/failover-clustering/cluster-operating-system-rolling-upgrade#cluster-os-rolling-upgrade-process). 
+1. Для выполнения последовательного обновления кластера выполните действия, описанные [здесь](/windows-server/failover-clustering/cluster-operating-system-rolling-upgrade#cluster-os-rolling-upgrade-process). 
 2. После добавления нового узла в кластер, обновите его из консоли SCVMM для установки агента VMM на обновленный узел.
 3. Выполните обновление версии виртуальной машины с помощью команды *Update-VMVersion*. 
 4.  Перейдите на портал Azure и проверьте состояние репликации виртуальных машин в хранилище служб восстановления. 
@@ -95,7 +95,7 @@ ms.locfileid: "73954401"
 **Обновление SCVMM 2012 R2 до SCVMM 2016**
 
 1.  Чтобы удалить поставщик ASR, в Панели управления выберите "Программы -> Программы и компоненты ->Microsoft Azure Site Recovery" и нажмите "Удалить"
-2. В зависимости от выбранного режима обновления, выполните шаги, описанные [здесь](https://docs.microsoft.com/system-center/vmm/upgrade-vmm?view=sc-vmm-2016#upgrade-a-standalone-vmm-server).
+2. В зависимости от выбранного режима обновления, выполните шаги, описанные [здесь](/system-center/vmm/upgrade-vmm?view=sc-vmm-2016#upgrade-a-standalone-vmm-server).
 3. Запустите консоль SCVMM и проверьте состояние каждого узла на вкладке **структуры** . Нажмите кнопку " **Обновить** ", чтобы получить самое последнее состояние. Должно отобразиться состояние "Требует внимания".
 4. Установите последнюю версию [Microsoft Azure Site Recovery Provider](https://aka.ms/downloaddra) на сервер SCVMM.
 5. Обновите последнюю версию [агента Microsoft Azure Recovery Service (MARS)](https://aka.ms/latestmarsagent) на каждом узле кластера. Обновите, чтобы убедиться, что SCVMM успешно может запрашивать узлы.
@@ -103,7 +103,7 @@ ms.locfileid: "73954401"
 
 **Обновите Windows Server 2012 R2 до Windows Server 2016**
 
-1. Для выполнения последовательного обновления кластера выполните действия, описанные [здесь](https://docs.microsoft.com/windows-server/failover-clustering/cluster-operating-system-rolling-upgrade#cluster-os-rolling-upgrade-process).
+1. Для выполнения последовательного обновления кластера выполните действия, описанные [здесь](/windows-server/failover-clustering/cluster-operating-system-rolling-upgrade#cluster-os-rolling-upgrade-process).
 2. После добавления нового узла в кластер, обновите его из консоли SCVMM для установки агента VMM на обновленный узел.
 3. Выполните обновление версии виртуальной машины с помощью команды *Update-VMVersion*. 
 4.  Перейдите на портал Azure и проверьте состояние репликации виртуальных машин в хранилище служб восстановления. 

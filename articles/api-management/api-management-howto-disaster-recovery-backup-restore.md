@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 02/03/2020
 ms.author: apimpm
-ms.openlocfilehash: e74d7dcf8764d167e0080c9d7cca5573bd69ef1d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 4c6f4bbae180184c13041863a85e2a7025f06a6e
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81261012"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86250470"
 ---
 # <a name="how-to-implement-disaster-recovery-using-service-backup-and-restore-in-azure-api-management"></a>Реализация аварийного восстановления с помощью функций резервного копирования и восстановления службы в Azure API Management
 
@@ -68,7 +68,7 @@ ms.locfileid: "81261012"
 4. Введите имя приложения.
 5. Выберите тип приложения **Машинный код**.
 6. Введите в поле **URI перенаправления** любой URL-адрес, например `http://resources`. Это поле является обязательным, но введенное значение впоследствии не используется. Установите флажок, чтобы сохранить приложение.
-7. Нажмите кнопку **Создать**.
+7. Нажмите **Создать**.
 
 ### <a name="add-an-application"></a>Добавление приложения
 
@@ -115,7 +115,7 @@ namespace GetTokenResourceManagerRequests
 
 Замените `{tenant id}`, `{application id}` и `{redirect uri}`, следуя приведенным инструкциям.
 
-1. Замените `{tenant id}` идентификатором клиента для созданного приложения Azure Active Directory. Чтобы получить доступ к идентификатору, щелкните **Регистрация приложений** -> **конечные точки**.
+1. Замените `{tenant id}` идентификатором клиента для созданного приложения Azure Active Directory. Чтобы получить доступ к идентификатору, щелкните **Регистрация приложений**  ->  **конечные точки**.
 
     ![Конечные точки][api-management-endpoint]
 
@@ -147,7 +147,7 @@ request.Headers.Add(HttpRequestHeader.Authorization, "Bearer " + token);
 POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/backup?api-version={api-version}
 ```
 
-Где:
+Здесь:
 
 -   `subscriptionId` — идентификатор подписки, содержащей службу управления API, для которой вы пытаетесь выполнить резервное копирование;
 -   `resourceGroupName` — имя группы ресурсов службы управления API Azure
@@ -191,7 +191,7 @@ POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/
 POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/restore?api-version={api-version}
 ```
 
-Где:
+Здесь:
 
 -   `subscriptionId` — идентификатор подписки, включающей в себя службу управления API, которую нужно восстановить из резервной копии;
 -   `resourceGroupName` — имя группы ресурсов, включающей в себя службу управления API Azure, в которую нужно восстановить резервную копию;
@@ -223,18 +223,18 @@ POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/
 > [!NOTE]
 > Операции резервного копирования и восстановления также можно выполнять с помощью команд PowerShell [_BACKUP-азапиманажемент_](/powershell/module/az.apimanagement/backup-azapimanagement) и [_RESTORE-азапиманажемент_](/powershell/module/az.apimanagement/restore-azapimanagement) соответственно.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы ознакомиться с другими способами резервного копирования и восстановления, ознакомьтесь со следующими ресурсами.
 
 -   [Репликация учетных записей управления API Azure](https://www.returngis.net/en/2015/06/replicate-azure-api-management-accounts/)
 -   [Automating API Management Backup and Restore with Logic Apps](https://github.com/Azure/api-management-samples/tree/master/tutorials/automating-apim-backup-restore-with-logic-apps) (Автоматизация управления API резервного копирования и восстановления с помощью Logic Apps)
--   [Управление API Azure. Резервное копирование и восстановление конфигурации](https://blogs.msdn.com/b/stuartleeks/archive/2015/04/29/azure-api-management-backing-up-and-restoring-configuration.aspx)
-    _подход, который подробно Стюарт, не соответствует официальному руководству, но интересно._
+-   [Управление API Azure: резервное копирование и восстановление конфигурации](https://blogs.msdn.com/b/stuartleeks/archive/2015/04/29/azure-api-management-backing-up-and-restoring-configuration.aspx) 
+     _Подход, описанный в Стюарт, не соответствует официальному руководству, но интересно._
 
 [backup an api management service]: #step1
 [restore an api management service]: #step2
-[azure api management rest api]: https://docs.microsoft.com/rest/api/apimanagement/apimanagementrest/api-management-rest
+[azure api management rest api]: /rest/api/apimanagement/apimanagementrest/api-management-rest
 [api-management-add-aad-application]: ./media/api-management-howto-disaster-recovery-backup-restore/api-management-add-aad-application.png
 [api-management-aad-permissions]: ./media/api-management-howto-disaster-recovery-backup-restore/api-management-aad-permissions.png
 [api-management-aad-permissions-add]: ./media/api-management-howto-disaster-recovery-backup-restore/api-management-aad-permissions-add.png

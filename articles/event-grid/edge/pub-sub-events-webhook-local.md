@@ -5,16 +5,14 @@ author: VidyaKukke
 manager: rajarv
 ms.author: vkukke
 ms.reviewer: spelluru
-ms.date: 10/29/2019
+ms.date: 07/08/2020
 ms.topic: article
-ms.service: event-grid
-services: event-grid
-ms.openlocfilehash: ba82b1bea4753cd51e275a78b248247032d79a01
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 2a7cc864366bd9a35c96dd453c0dc68f77d8abd9
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79281006"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86171454"
 ---
 # <a name="tutorial-publish-subscribe-to-events-locally"></a>Учебник. Публикация, подписка на события локально
 
@@ -23,7 +21,7 @@ ms.locfileid: "79281006"
 > [!NOTE]
 > Сведения о разделах и подписках службы "Сетка событий Azure" см. в разделе [Основные понятия сетки событий](concepts.md).
 
-## <a name="prerequisites"></a>Предварительные условия 
+## <a name="prerequisites"></a>Обязательные условия 
 Для выполнения шагов, описанных в данном учебнике, потребуется следующее.
 
 * **Подписка Azure** . Создайте [бесплатную учетную запись](https://azure.microsoft.com/free) , если она еще не создана. 
@@ -39,7 +37,7 @@ ms.locfileid: "79281006"
 
 ### <a name="select-your-iot-edge-device"></a>Выберите устройство IoT Edge
 
-1. Войдите на [портал Azure](https://portal.azure.com)
+1. Войдите на [портал Azure](https://portal.azure.com).
 1. Перейдите в Центр Интернета вещей.
 1. Выберите **IOT Edge** в меню в разделе **Автоматическое управление устройствами** . 
 1. Щелкните идентификатор целевого устройства в списке устройств.
@@ -77,7 +75,7 @@ ms.locfileid: "79281006"
           }
         }
     ```    
- 1. Щелкните **Сохранить**.
+ 1. Нажмите кнопку **Сохранить**
  1. Перейдите к следующему разделу, чтобы добавить модуль подписчика службы "Сетка событий Azure", прежде чем развертывать их вместе.
 
     >[!IMPORTANT]
@@ -99,7 +97,7 @@ ms.locfileid: "79281006"
    * **Имя**: подписчик
    * **URI изображения**:`mcr.microsoft.com/azure-event-grid/iotedge-samplesubscriber:latest`
    * **Параметры создания контейнера**: нет
-1. Щелкните **Сохранить**.
+1. Нажмите кнопку **Сохранить**
 1. Нажмите кнопку " **Далее** ", чтобы перейти к разделу "маршруты"
 
  ### <a name="setup-routes"></a>Настройка маршрутов
@@ -118,7 +116,7 @@ ms.locfileid: "79281006"
 
 Как издатель события, необходимо создать раздел «Сетка событий». В службе "Сетка событий Azure" раздел ссылается на конечную точку, в которой издатели могут отсылать события.
 
-1. Создайте раздел. JSON со следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md).
+1. Создайте topic.jsсо следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md).
 
     ```json
         {
@@ -129,7 +127,7 @@ ms.locfileid: "79281006"
         }
     ```
 
-1. Выполните следующую команду, чтобы создать раздел "Сетка событий". Убедитесь, что отображается код состояния HTTP `200 OK`.
+1. Выполните следующую команду, чтобы создать раздел "Сетка событий". Убедитесь, что отображается код состояния HTTP `200 OK` .
 
     ```sh
     curl -k -H "Content-Type: application/json" -X PUT -g -d @topic.json https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic1?api-version=2019-01-01-preview
@@ -141,7 +139,7 @@ ms.locfileid: "79281006"
     curl -k -H "Content-Type: application/json" -X GET -g https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic1?api-version=2019-01-01-preview
     ```
 
-   Образец вывода:
+   Пример результатов выполнения:
 
    ```json
         [
@@ -163,7 +161,7 @@ ms.locfileid: "79281006"
 
 [!INCLUDE [event-grid-deploy-iot-edge](../../../includes/event-grid-edge-persist-event-subscriptions.md)]
 
-1. Создайте объект Subscription. JSON со следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md) .
+1. Создайте subscription.jsсо следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md) .
 
     ```json
         {
@@ -180,7 +178,7 @@ ms.locfileid: "79281006"
 
     >[!NOTE]
     > Свойство **endpointType** указывает, что подписчик является веб- **перехватчиком**.  **EndpointUrl** указывает URL-адрес, по которому подписчик прослушивает события. Этот URL-адрес соответствует образцу подписчика Azure, который вы развернули ранее.
-2. Выполните следующую команду, чтобы создать подписку для раздела. Убедитесь, что отображается код состояния HTTP `200 OK`.
+2. Выполните следующую команду, чтобы создать подписку для раздела. Убедитесь, что отображается код состояния HTTP `200 OK` .
 
     ```sh
     curl -k -H "Content-Type: application/json" -X PUT -g -d @subscription.json https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic1/eventSubscriptions/sampleSubscription1?api-version=2019-01-01-preview
@@ -191,7 +189,7 @@ ms.locfileid: "79281006"
     curl -k -H "Content-Type: application/json" -X GET -g https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic1/eventSubscriptions/sampleSubscription1?api-version=2019-01-01-preview
     ```
 
-    Образец вывода:
+    Пример результатов выполнения:
 
    ```json
         {
@@ -212,7 +210,7 @@ ms.locfileid: "79281006"
 
 ## <a name="publish-an-event"></a>Публикация события
 
-1. Создайте Event. JSON со следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md).
+1. Создайте event.jsсо следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md).
 
     ```json
         [
@@ -252,7 +250,7 @@ ms.locfileid: "79281006"
     sudo docker logs subscriber
     ```
 
-    Образец вывода:
+    Пример результатов выполнения:
 
     ```sh
         Received Event:
@@ -281,7 +279,7 @@ ms.locfileid: "79281006"
 * Удалите модуль подписчика с устройства IoT Edge.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этом руководстве вы создали раздел, подписку и опубликованные события сетки событий. Теперь, когда вы знакомы с основными шагами, ознакомьтесь со следующими статьями: 
 
 - Сведения об устранении неполадок с использованием службы "Сетка событий Azure" на IoT Edge см. в разделе [руководство по устранению неполадок](troubleshoot.md).

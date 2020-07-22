@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 08/18/2017
 ms.author: masnider
 ms.openlocfilehash: 5306439184561e8dec8303a7b149f51d6c2f6e08
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75551868"
 ---
 # <a name="availability-of-service-fabric-services"></a>Доступность служб структуры служб
@@ -31,7 +30,7 @@ ms.locfileid: "75551868"
 
 Такое представление о том, что реплика может быть первичной или активной вторичной, известно как *роль реплики*. Эти реплики описаны далее в статье [Реплики и экземпляры](service-fabric-concepts-replica-lifecycle.md). 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о понятиях Service Fabric см. в следующих статьях:
 
 - [Масштабирование служб Service Fabric](service-fabric-concepts-scalability.md)

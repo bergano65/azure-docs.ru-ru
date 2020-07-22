@@ -5,15 +5,14 @@ services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: edge
-ms.topic: article
+ms.topic: how-to
 ms.date: 03/22/2019
 ms.author: alkohli
-ms.openlocfilehash: a21828413b8d8750827fafa077002863439f8643
-ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
-ms.translationtype: MT
+ms.openlocfilehash: 9e5361c1082424a76699affee653b4b9fc798116
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82569593"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84339763"
 ---
 # <a name="use-the-azure-portal-to-manage-bandwidth-schedules-on-your-azure-stack-edge"></a>Использование портал Azure для управления расписаниями пропускной способности на Azure Stackной границе  
 
@@ -44,7 +43,7 @@ ms.locfileid: "82569593"
    2. Если расписание должно выполняться целый день, вы можете выбрать параметр **Весь день**.
    3. **Скорость пропускной способности** — это значение пропускной способности в Мбит/с, которое используется устройством в операциях с облаком (скачивание и передача). Укажите в этом поле число от 20 до 1 000 000 007.
    4. Установите флажок в поле **Неограниченная пропускная способность**, чтобы избежать регулирования передачи и скачивания данных.
-   5. Нажмите **Добавить**.
+   5. Выберите **Добавить**.
 
       ![Добавление расписания](media/azure-stack-edge-manage-bandwidth-schedules/add-schedule-2.png)
 
@@ -82,6 +81,6 @@ ms.locfileid: "82569593"
 3. После удаления расписания список расписаний обновится.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Сведения об управлении общими папками см. [здесь](azure-stack-edge-manage-shares.md).

@@ -3,17 +3,17 @@ title: Поддержка Хранилища таблиц в Azure Cosmos DB
 description: Узнайте об особенностях взаимодействия API таблиц Azure Cosmos DB и таблиц службы хранилища Azure при использовании одной и той же модели данных таблиц и операций
 ms.service: cosmos-db
 ms.subservice: cosmosdb-table
-ms.topic: overview
-ms.date: 12/02/2019
+ms.topic: how-to
+ms.date: 05/21/2020
 author: sakash279
 ms.author: akshanka
 ms.reviewer: sngun
-ms.openlocfilehash: 65cc378ab5b6fd7d2ed724f56a68bdf989ced48c
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
-ms.translationtype: HT
+ms.openlocfilehash: 28c58251d9a30b3bae9d958c32c4d6a71f86aaae
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82611727"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85263217"
 ---
 # <a name="developing-with-azure-cosmos-db-table-api-and-azure-table-storage"></a>Разработка с использованием API таблиц Azure Cosmos DB и хранилища таблиц Azure
 
@@ -40,7 +40,7 @@ API таблиц Azure Cosmos DB и хранилище таблиц Azure исп
 
 Хранилище таблиц Azure содержит следующие пакеты SDK для разработки.
 
-- [Пакет SDK WindowsAzure.Storage .NET](https://www.nuget.org/packages/WindowsAzure.Storage/). Эта библиотека позволяет работать с хранилищем службы таблиц.
+- Библиотеки [Microsoft.Azure.Storage.Blob](https://www.nuget.org/packages/Microsoft.Azure.Storage.Blob/), [Microsoft.Azure.Storage.File](https://www.nuget.org/packages/Microsoft.Azure.Storage.File/), [Microsoft.Azure.Storage.Queue](https://www.nuget.org/packages/Microsoft.Azure.Storage.Queue/) и [Microsoft.Azure.Storage.Common](https://www.nuget.org/packages/Microsoft.Azure.Storage.Common/) позволяют взаимодействовать со службой Хранилища таблиц Azure. Если вы используете API таблиц в Azure Cosmos DB, можно использовать вместо них библиотеку [Microsoft.Azure.CosmosDB.Table](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.Table/).
 - [Пакет SDK для Python](https://github.com/Azure/azure-cosmos-table-python). Пакет SDK таблиц Azure Cosmos DB для Python поддерживает Хранилище таблиц, так как Хранилище таблиц Azure и API таблиц Cosmos DB совместно используют одни и те же функции и компоненты. Поэтому, чтобы упростить разработку, мы рекомендуем использовать именно этот пакет SDK.
 - [Пакет SDK службы хранилища Azure для Java](https://github.com/azure/azure-storage-java). Этот пакет SDK хранилища Azure предоставляет клиентскую библиотеку Java для использования хранилища таблиц Azure.
 - [Пакет SDK для Node.js](https://github.com/Azure/azure-storage-node). Этот пакет SDK содержит пакет Node.js и совместимую клиентскую библиотеку JavaScript для использования службы хранилища таблиц.

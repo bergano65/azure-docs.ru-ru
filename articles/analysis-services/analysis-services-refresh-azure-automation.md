@@ -6,31 +6,27 @@ ms.service: analysis-services
 ms.topic: conceptual
 ms.date: 05/07/2020
 ms.author: chlound
-ms.openlocfilehash: bbbc2863e06b4602a4175d46bbe21414041583ba
-ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
+ms.openlocfilehash: c3c9827814b7d638745761dbb5f3c7d2e581491b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82926567"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85389978"
 ---
 # <a name="refresh-with-azure-automation"></a>Обновление с помощью службы автоматизации Azure
 
 С помощью службы автоматизации Azure и модулей Runbook PowerShell можно выполнять автоматические операции обновления данных в табличных моделях анализа Azure.  
 
-В примере в этой статье используются [модули PowerShell SQLServer](https://docs.microsoft.com/powershell/module/sqlserver/?view=sqlserver-ps).
-
-Пример модуля Runbook PowerShell, демонстрирующий обновление модели, приведен далее в этой статье.  
+В примере в этой статье используется [модуль SQLServer PowerShell](https://docs.microsoft.com/powershell/module/sqlserver/?view=sqlserver-ps). Пример модуля Runbook PowerShell, демонстрирующий обновление модели, приведен далее в этой статье.  
 
 ## <a name="authentication"></a>Аутентификация
 
-Все вызовы должны пройти проверку подлинности с помощью допустимого маркера Azure Active Directory (OAuth 2).  В примере, приведенном в этой статье, для проверки подлинности в Azure Analysis Services используется субъект-служба (SPN).
-
-Дополнительные сведения о создании субъекта-службы см. в разделе [Создание субъекта-службы с помощью портал Azure](../active-directory/develop/howto-create-service-principal-portal.md).
+Все вызовы должны пройти проверку подлинности с помощью допустимого маркера Azure Active Directory (OAuth 2).  В примере, приведенном в этой статье, для проверки подлинности в Azure Analysis Services используется субъект-служба (SPN). Дополнительные сведения см. в статье [Создание субъекта-службы с помощью портал Azure](../active-directory/develop/howto-create-service-principal-portal.md).
 
 ## <a name="prerequisites"></a>Предварительные условия
 
 > [!IMPORTANT]
-> В следующем примере предполагается, что Azure Analysis Services брандмауэр отключен. Если брандмауэр включен, общедоступный IP-адрес инициатора запроса необходимо будет список разрешений в брандмауэре.
+> В следующем примере предполагается, что Azure Analysis Services брандмауэр отключен. Если включен брандмауэр, общедоступный IP-адрес инициатора запроса должен быть включен в правило брандмауэра.
 
 ### <a name="install-sqlserver-modules-from-powershell-gallery"></a>Установка модулей SqlServer из коллекции PowerShell.
 
@@ -68,7 +64,7 @@ ms.locfileid: "82926567"
 
     ![Импортировать модуль Runbook](./media/analysis-services-refresh-azure-automation/8.png)
 
-4. Найдите файл **РЕФРЕШ-модел. ps1** , укажите **имя** и **Описание**, а затем нажмите кнопку **создать**.
+4. Найдите файл **Refresh-Model.ps1** , укажите **имя** и **Описание**, а затем нажмите кнопку **создать**.
 
     ![Импортировать модуль Runbook](./media/analysis-services-refresh-azure-automation/9.png)
 
@@ -101,7 +97,7 @@ ms.locfileid: "82926567"
  
     ![Создать расписание](./media/analysis-services-refresh-azure-automation/14.png)
 
-2. Щелкните **Расписание** > **создать новое расписание**, а затем введите сведения.
+2. Щелкните **Расписание**  >  **создать новое расписание**, а затем введите сведения.
 
     ![Настройка расписания](./media/analysis-services-refresh-azure-automation/15.png)
 
@@ -144,10 +140,10 @@ ms.locfileid: "82926567"
 **Текст** — это документ JSON, который должен содержать следующие свойства:
 
 
-|Свойство  |Значение  |
+|Свойство.  |Значение  |
 |---------|---------|
 |**аналисиссервицесдатабасе**     |Имя базы данных Azure Analysis Services <br/> Пример: AdventureWorksDB         |
-|**аналисиссервицессервер**     |Имя сервера Azure Analysis Services. <br/> Пример: https:\//westus.asazure.Windows.NET/Servers/MyServer/Models/AdventureWorks/         |
+|**аналисиссервицессервер**     |Имя сервера Azure Analysis Services. <br/> Пример: https: \/ /westus.asazure.Windows.NET/Servers/MyServer/Models/AdventureWorks/         |
 |**датабасерефрештипе**     |Тип выполняемого обновления. <br/> Пример: Full         |
 
 Пример текста JSON:
@@ -175,7 +171,7 @@ ms.locfileid: "82926567"
 >
 >Дополнительные сведения о настройке гибридных рабочих ролей службы автоматизации Azure см. в статье [Установка гибридной рабочей роли Runbook](../automation/automation-hybrid-runbook-worker.md#hybrid-runbook-worker-installation).
 
-После настройки гибридной рабочей роли создайте веб-перехватчик, как описано в разделе [Использование фабрики данных](#consume-with-data-factory).  Единственное отличие заключается в том, что при настройке веб-перехватчика необходимо выбрать параметр **запускать в** > **гибридной рабочей роли** .
+После настройки гибридной рабочей роли создайте веб-перехватчик, как описано в разделе [Использование фабрики данных](#consume-with-data-factory).  Единственное отличие заключается в том, что при настройке веб-перехватчика необходимо выбрать параметр **запускать в**  >  **гибридной рабочей роли** .
 
 Пример веб-перехватчика с использованием гибридной рабочей роли:
 
@@ -224,7 +220,7 @@ else
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Примеры](analysis-services-samples.md)  
 [REST API](https://docs.microsoft.com/rest/api/analysisservices/servers)

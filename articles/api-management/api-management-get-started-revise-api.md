@@ -14,15 +14,15 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.date: 11/04/2019
 ms.author: apimpm
-ms.openlocfilehash: c91d42f3445bb2ffc02366e6cb9ae49ec2db1be4
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 7a4655b20fabcc72e02037de05dd0ef7c4671e52
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75442747"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86254917"
 ---
 # <a name="use-revisions-to-make-non-breaking-changes-safely"></a>Безопасное внесение некритических изменений с помощью редакций
-Когда готовый к работе API начинают использовать разработчики, следует осторожно вносить изменения в этот API, чтобы не нарушить работу вызывающих его сторон. Полезно также сообщать разработчикам о внесенных изменениях. Для этого можно использовать **редакции** в службе управления API Azure. Дополнительные сведения см. в статьях [Versions & revisions](https://blogs.msdn.microsoft.com/apimanagement/2017/09/14/versions-revisions/) (Версии и редакции) и [API Versioning with Azure API Management](https://blogs.msdn.microsoft.com/apimanagement/2017/09/13/api-versioning-with-azure-api-management/) (Управление версиями API с помощью службы управления API Azure).
+Когда готовый к работе API начинают использовать разработчики, следует осторожно вносить изменения в этот API, чтобы не нарушить работу вызывающих его сторон. Полезно также сообщать разработчикам о внесенных изменениях. Для этого можно использовать **редакции** в службе управления API Azure. Дополнительные сведения см. в статьях [Versions & revisions](https://azure.microsoft.com/blog/versions-revisions/) (Версии и редакции) и [API Versioning with Azure API Management](https://azure.microsoft.com/blog/api-versioning-with-azure-api-management/) (Управление версиями API с помощью службы управления API Azure).
 
 В этом руководстве описано следующее:
 

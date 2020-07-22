@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: mayg
-ms.openlocfilehash: b1f3ffa6fc90fc0cab0217d1b71907342f2dbd0d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 01c2f61dcf024e8c9dbbd5b2ee11a479b3c16305
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79281955"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86130287"
 ---
 # <a name="set-up-public-ip-addresses-after-failover"></a>Настройка общедоступных IP-адресов после отработки отказа
 
@@ -48,12 +48,12 @@ ms.locfileid: "79281955"
 2. [Отработка отказа из Azure в Azure](../site-recovery/concepts-traffic-manager-with-site-recovery.md#azure-to-azure-failover) с помощью диспетчера трафика. 
 
 Конфигурация выглядит следующим образом:
-- Создайте [профиль диспетчера трафика](../traffic-manager/traffic-manager-create-profile.md).
+- Создайте [профиль диспетчера трафика](../traffic-manager/quickstart-create-traffic-manager-profile.md).
 - Используя метод маршрутизации **по приоритету**, создайте две конечные точки — **первичную** в качестве источника и **отказоустойчивую** для Azure. **Первичной** присваивается приоритет 1, а **отказоустойчивой** — приоритет 2.
 - **Первичная** конечная точка может быть [Azure](../traffic-manager/traffic-manager-endpoint-types.md#azure-endpoints) или [внешней](../traffic-manager/traffic-manager-endpoint-types.md#external-endpoints) в зависимости от расположения исходной среды (внутри или за пределами Azure).
 - Таким образом, **отказоустойчивая** конечная точка создается как конечная точка **Azure**. Используйте **статический общедоступный IP-адрес**, так как это будет внешняя конечная точка для диспетчера трафика при аварийном событии.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения см. в статье [Диспетчер трафика Microsoft Azure и Azure Site Recovery](../site-recovery/concepts-traffic-manager-with-site-recovery.md).
 - См. сведения в статье [Методы маршрутизации диспетчера трафика](../traffic-manager/traffic-manager-routing-methods.md).
 - См. сведения в статье [Создание плана восстановления с помощью Site Recovery](site-recovery-create-recovery-plans.md).

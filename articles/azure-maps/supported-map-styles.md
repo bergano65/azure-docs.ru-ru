@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 2eafe3c16a89723d55ec52fde785e9ec69e45e0c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 3db8ae98302ad6df7355ce03f5a33b5d21f1ea09
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80334040"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86242106"
 ---
 # <a name="azure-maps-supported-map-styles"></a>Стили карт, поддерживаемые в службе Azure Maps
 Служба Azure Maps поддерживает несколько различных встроенных стилей карт, как описано ниже.
@@ -28,18 +28,19 @@ ms.locfileid: "80334040"
 * [Плитка карты](https://docs.microsoft.com/rest/api/maps/render/getmaptile)
 * Элемент управления картой веб-пакета SDK
 * Элемент управления картой Android
+* визуальный элемент Power BI;
 
 ## <a name="blank-and-blank_accessible"></a>пусто и blank_accessible
 
 **Пустые** и **blank_accessible** стили карт предоставляют пустой холст для визуализации данных. Стиль **blank_accessible** будет по-прежнему предоставлять обновления средства чтения с экрана сведениями о расположении, даже если базовая схема не отображается.
 
 > [!Note]
-> В веб-пакете SDK можно изменить цвет фона на карте, установив стиль CSS `background-color` для элемента Map div.
+> В веб-пакете SDK можно изменить цвет фона на карте, установив `background-color` стиль CSS для элемента Map div.
 
 **Применимые API:**
 * Элемент управления картой веб-пакета SDK
 
-## <a name="satellite"></a>спутник 
+## <a name="satellite"></a>satellite 
 Стиль **спутник** представляет собой комбинацию спутниковых и аэроснимков.
 
 ![стиль карты вспомогательных плиток](./media/supported-map-styles/satellite.png)
@@ -48,6 +49,7 @@ ms.locfileid: "80334040"
 * [Фрагмент спутниковой карты](https://docs.microsoft.com/rest/api/maps/render/getmapimagerytilepreview)
 * Элемент управления картой веб-пакета SDK
 * Элемент управления картой Android
+* визуальный элемент Power BI;
 
 ## <a name="satellite_road_labels"></a>satellite_road_labels
 Этот стиль карты представляет собой гибрид дорог и ярлыков, наложенных поверх спутниковых и аэроснимков.
@@ -57,6 +59,7 @@ ms.locfileid: "80334040"
 **Применимые API:**
 * Элемент управления картой веб-пакета SDK
 * Элемент управления картой Android
+* визуальный элемент Power BI;
 
 ## <a name="grayscale_dark"></a>grayscale_dark
 **Темно-серый** — это темная версия стиля дорожной карты.
@@ -68,6 +71,7 @@ ms.locfileid: "80334040"
 * [Плитка карты](https://docs.microsoft.com/rest/api/maps/render/getmaptile)
 * Элемент управления картой веб-пакета SDK 
 * Элемент управления картой Android
+* визуальный элемент Power BI;
 
 
 ## <a name="grayscale_light"></a>grayscale_light
@@ -78,6 +82,7 @@ ms.locfileid: "80334040"
 **Применимые API:**
 * Элемент управления картой веб-пакета SDK
 * Элемент управления картой Android
+* визуальный элемент Power BI;
 
 
 ## <a name="night"></a>ночь
@@ -88,6 +93,7 @@ ms.locfileid: "80334040"
 **Применимые API:**
 * Элемент управления картой веб-пакета SDK
 * Элемент управления картой Android
+* визуальный элемент Power BI;
 
 ## <a name="road_shaded_relief"></a>road_shaded_relief
 **road shaded relief** — это основной стиль Azure Maps, дополненный рельефами Земли.
@@ -98,6 +104,7 @@ ms.locfileid: "80334040"
 * [Плитка карты](https://docs.microsoft.com/rest/api/maps/render/getmaptile)
 * Элемент управления картой веб-пакета SDK
 * Элемент управления картой Android
+* визуальный элемент Power BI;
 
 ## <a name="high_contrast_dark"></a>high_contrast_dark
 
@@ -107,8 +114,9 @@ ms.locfileid: "80334040"
 
 **Применимые API:**
 * Элемент управления картой веб-пакета SDK
+* визуальный элемент Power BI;
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как задать стиль схемы в Azure Maps.
 

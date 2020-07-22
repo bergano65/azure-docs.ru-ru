@@ -5,12 +5,12 @@ author: peterpogorski
 ms.topic: conceptual
 ms.date: 01/23/2019
 ms.author: pepogors
-ms.openlocfilehash: 1c044d5fd973d3c577088a887f2fac413d2ab79d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c381c6e7d692eda32fea2033779bacddafc267bb
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75551834"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86253683"
 ---
 # <a name="infrastructure-as-code"></a>Инфраструктура как код
 
@@ -44,7 +44,7 @@ New-AzResourceGroupDeployment -Name $ResourceGroupName -TemplateFile $Template -
 
 ## <a name="azure-service-fabric-resources"></a>Ресурсы Azure Service Fabric
 
-Вы можете развертывать приложения и службы в кластере Service Fabric с помощью Azure Resource Manager. Дополнительные сведения см. в статье [Управление приложениями и службами как ресурсами Azure Resource Manager](https://docs.microsoft.com/azure/service-fabric/service-fabric-application-arm-resource). Ниже приведены рекомендуемые ресурсы приложения Service Fabric, которые следует добавить в список ресурсов шаблона Resource Manager.
+Вы можете развертывать приложения и службы в кластере Service Fabric с помощью Azure Resource Manager. Дополнительные сведения см. в статье [Управление приложениями и службами как ресурсами Azure Resource Manager](./service-fabric-application-arm-resource.md). Ниже приведены рекомендуемые ресурсы приложения Service Fabric, которые следует добавить в список ресурсов шаблона Resource Manager.
 
 ```json
 {
@@ -73,7 +73,7 @@ New-AzResourceGroupDeployment -Name $ResourceGroupName -TemplateFile $Template -
 }
 ```
 
-Чтобы развернуть приложение с помощью Azure Resource Manager, сначала необходимо [создать пакет приложения Service Fabric sfpkg](https://docs.microsoft.com/azure/service-fabric/service-fabric-package-apps#create-an-sfpkg). В следующем сценарии Python приведен пример создания sfpkg:
+Чтобы развернуть приложение с помощью Azure Resource Manager, сначала необходимо [создать пакет приложения Service Fabric sfpkg](./service-fabric-package-apps.md#create-an-sfpkg). В следующем сценарии Python приведен пример создания sfpkg:
 
 ```python
 # Create SFPKG that needs to be uploaded to Azure Storage Blob Container
@@ -91,7 +91,7 @@ microservices_sfpkg.close()
 ```
 
 ## <a name="azure-virtual-machine-operating-system-automatic-upgrade-configuration"></a>Конфигурация автоматического обновления операционной системы виртуальной машины Azure 
-Обновление виртуальных машин — это операция, инициированная пользователем, поэтому рекомендуется использовать [масштабируемый набор виртуальных машин автоматическое обновление операционной системы](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade) для Azure Service Fabric кластеры управления обновлениями узла. Приложение для управления исправлениями — это альтернативное решение, которое предназначено для размещения за пределами Azure, хотя ВЕХ можно использовать в Azure, и издержки на размещение ВЕХ в Azure являются распространенной причиной для автоматического обновления операционной системы виртуальной машины через ВЕХ. Ниже приведены свойства шаблона "вычисление масштабируемого набора виртуальных машин" диспетчер ресурсов для включения автоматического обновления ОС.
+Обновление виртуальных машин — это операция, инициированная пользователем, поэтому рекомендуется использовать [масштабируемый набор виртуальных машин автоматическое обновление операционной системы](../virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade.md) для Azure Service Fabric кластеры управления обновлениями узла. Приложение для управления исправлениями — это альтернативное решение, которое предназначено для размещения за пределами Azure, хотя ВЕХ можно использовать в Azure, и издержки на размещение ВЕХ в Azure являются распространенной причиной для автоматического обновления операционной системы виртуальной машины через ВЕХ. Ниже приведены свойства шаблона "вычисление масштабируемого набора виртуальных машин" диспетчер ресурсов для включения автоматического обновления ОС.
 
 ```json
 "upgradePolicy": {

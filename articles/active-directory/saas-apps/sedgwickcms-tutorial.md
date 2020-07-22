@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/10/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 94012a6830e59658562ed3e7485dad698f74974f
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 155222dcbc3fed33ba4f9098986e3fb4f74a3dc3
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67091118"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86168785"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sedgwick-cms"></a>Руководство по интеграции Azure Active Directory с Sedgwick CMS
 
@@ -108,17 +108,13 @@ ms.locfileid: "67091118"
 
     а. В текстовом поле **Идентификатор** введите URL-адрес в таком формате:
 
-    | |
-    |--|
-    | `expresspreview.sedgwickcms.net/voe/sso` |
-    | `claimlookup.com/Voe/sso` |
+    - `expresspreview.sedgwickcms.net/voe/sso`
+    - `claimlookup.com/Voe/sso`
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате:
 
-    | |
-    |--|
-    | `https://<subdomain>.sedgwickcms.net/voe/sso` |
-    | `https://claimlookup.com/Voe/sso` |
+    - `https://<subdomain>.sedgwickcms.net/voe/sso`
+    - `https://claimlookup.com/Voe/sso`
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Sedgwick CMS](https://www.sedgwick.com/help). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

@@ -1,6 +1,6 @@
 ---
-title: Пример CLI. Восстановление резервной копии базы данных SQL Azure
-description: Пример скрипта Azure CLI для восстановления базы данных SQL Azure до более ранней точки во времени из автоматически создаваемых резервных копий
+title: 'Azure CLI: Восстановление резервной копии'
+description: Пример скрипта Azure CLI для восстановления базы данных в службе "База данных SQL Azure" до более раннего момента времени из автоматически создаваемых резервных копий.
 services: sql-database
 ms.service: sql-database
 ms.subservice: operations
@@ -11,16 +11,16 @@ author: mashamsft
 ms.author: mathoma
 ms.reviewer: carlrab
 ms.date: 03/27/2019
-ms.openlocfilehash: efb73bc04e3c79740651fecdd98258b8101f84b1
-ms.sourcegitcommit: 318d1bafa70510ea6cdcfa1c3d698b843385c0f6
+ms.openlocfilehash: c33191097afc54189df1099a2d13f606e1516e54
+ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83774273"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84022630"
 ---
-# <a name="use-cli-to-restore-an-azure-sql-single-database-to-an-earlier-point-in-time"></a>Восстановление отдельной базы данных SQL Azure до более ранней точки во времени с помощью CLI
+# <a name="use-cli-to-restore-a-single-database-in-azure-sql-database-to-an-earlier-point-in-time"></a>Восстановление отдельной базы данных в службе "База данных SQL Azure" до более раннего момента времени с помощью CLI
 
-Этот пример скрипта Azure CLI восстанавливает базу данных Azure SQL до определенной точки во времени.  
+Этот пример скрипта Azure CLI восстанавливает отдельную базу данных в службе "База данных Azure SQL" до определенного момента времени.  
 
 Если вы решили установить и использовать интерфейс командной строки локально, для работы с этой статьей вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI]( /cli/azure/install-azure-cli).
 
@@ -60,4 +60,4 @@ az group delete --name $resource
 
 Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 
-Дополнительные примеры сценариев интерфейса командной строки для Базы данных SQL Azure см. в [документации по Базе данных SQL](../sql-database-cli-samples.md).
+Дополнительные примеры сценариев интерфейса командной строки для Базы данных SQL Azure см. в [документации по Базе данных SQL](../../azure-sql/database/az-cli-script-samples-content-guide.md).

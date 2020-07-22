@@ -5,17 +5,17 @@ description: Узнайте, как запускать скрипты обуче
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: how-to
 ms.author: maxluk
 author: maxluk
 ms.date: 08/20/2019
 ms.custom: seodec18
-ms.openlocfilehash: 2bbd81f3858aa78b9e0e2d610c0fdb0a67816c8e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 9cc7c70f6db31568f671a0172c569f912cb677c3
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78228308"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86146683"
 ---
 # <a name="build-a-tensorflow-deep-learning-model-at-scale-with-azure-machine-learning"></a>Создание модели глубокого обучения TensorFlow в масштабе с помощью Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -26,20 +26,20 @@ ms.locfileid: "78228308"
 
 Дополнительные сведения о [глубоком обучении и машинном обучении](concept-deep-learning-vs-machine-learning.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 Запустите этот код в любой из этих сред:
 
- - Машинное обучение Azure вычислительных экземпляров — Загрузка или установка не требуется
+ - Вычислительная операция Машинного обучения Azure — загрузка или установка не требуется
 
-     - Выполните инструкции из [учебника Настройка среды и рабочей области](tutorial-1st-experiment-sdk-setup.md) , чтобы создать выделенный сервер записной книжки, предварительно загруженный с помощью пакета SDK и примера репозитория.
+     - Пройдите [руководство по настройке среды и рабочей области](tutorial-1st-experiment-sdk-setup.md), чтобы создать выделенный сервер записных книжек, предварительно загруженный с пакетом SDK и репозиторием с примером.
     - В папке примеры глубокого обучения на сервере записной книжки найдите готовую и развернутую записную книжку, перейдя в этот каталог: **практические советы по использованию azureml > машинного обучения ML-frameworks > tensorflow > deployment > поезд-i Parameter-Настройка-Deploy-with-tensorflow** . 
  
  - Собственный сервер Jupyter Notebook
 
     - [Установите пакет SDK для машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py).
     - [Создайте файл конфигурации рабочей области](how-to-configure-environment.md#workspace).
-    - [Скачайте примеры файлов](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/ml-frameworks/tensorflow/deployment/train-hyperparameter-tune-deploy-with-tensorflow) `mnist-tf.py` скриптов и`utils.py`
+    - [Загрузка примеров файлов скриптов](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/ml-frameworks/tensorflow/deployment/train-hyperparameter-tune-deploy-with-tensorflow) `mnist-tf.py` перетаскивани`utils.py`
      
     Вы также можете найти завершенную [Jupyter Notebook версию](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/ml-frameworks/tensorflow/deployment/train-hyperparameter-tune-deploy-with-tensorflow/train-hyperparameter-tune-deploy-with-tensorflow.ipynb) этого руководства на странице примеров GitHub. Записная книжка включает в себя развернутые разделы, охватывающие интеллектуальные настройки, развертывание моделей и мини-приложения записных книжек.
 
@@ -67,7 +67,7 @@ from azureml.train.dnn import TensorFlow
 
 ### <a name="initialize-a-workspace"></a>Инициализация рабочей области
 
-[Машинное обучение Azure Рабочая область](concept-workspace.md) — это ресурс верхнего уровня для службы. Он обеспечивает централизованное расположение для работы со всеми создаваемыми артефактами. В пакете SDK для Python можно получить доступ к артефактам рабочей области, [`workspace`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py) создав объект.
+[Машинное обучение Azure Рабочая область](concept-workspace.md) — это ресурс верхнего уровня для службы. Она предоставляет централизованное расположение для работы со всеми создаваемыми артефактами. В пакете SDK для Python можно получить доступ к артефактам рабочей области, создав [`workspace`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py) объект.
 
 Создайте объект рабочей области из `config.json` файла, созданного в [разделе Предварительные требования](#prerequisites).
 
@@ -140,9 +140,14 @@ except ComputeTargetException:
 
 Средство [оценки TensorFlow](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.tensorflow?view=azure-ml-py) предоставляет простой способ запуска задания обучения TensorFlow на целевом объекте вычислений.
 
-Оценщик TensorFlow реализуется через универсальный [`estimator`](https://docs.microsoft.com//python/api/azureml-train-core/azureml.train.estimator.estimator?view=azure-ml-py) класс, который можно использовать для поддержки любой платформы. Дополнительные сведения о учебных моделях с помощью универсального средства оценки см. в статье [обучение моделей с машинное обучение Azure помощью средства оценки](how-to-train-ml-models.md) .
+Оценщик TensorFlow реализуется через универсальный [`estimator`](https://docs.microsoft.com//python/api/azureml-train-core/azureml.train.estimator.estimator?view=azure-ml-py) класс, который можно использовать для поддержки любой платформы. Дополнительные сведения об обучении моделей с помощью универсального оценщика см. в разделе [Обучение моделей с помощью оценщика Машинного обучения Azure](how-to-train-ml-models.md).
 
-Если для выполнения сценария обучения требуются дополнительные пакеты PIP или conda, можно установить пакеты в полученном образе DOCKER, передав их имена с помощью аргументов `pip_packages` и. `conda_packages`
+Если для выполнения сценария обучения требуются дополнительные пакеты PIP или conda, можно установить пакеты в полученном образе DOCKER, передав их имена с помощью `pip_packages` `conda_packages` аргументов и.
+
+
+> [!WARNING]
+> Машинное обучение Azure запускает скрипты обучения, копируя весь исходный каталог. Если у вас есть конфиденциальные данные, которые не нужно передавать, используйте [файл. Ignore](how-to-save-write-experiment-files.md#storage-limits-of-experiment-snapshots) или не включайте его в исходный каталог. Вместо этого получите доступ к данным с помощью [хранилища](https://docs.microsoft.com/python/api/azureml-core/azureml.data?view=azure-ml-py)данных.
+
 
 ```python
 script_params = {
@@ -164,9 +169,9 @@ est = TensorFlow(source_directory=script_folder,
 > [!TIP]
 > В класс средства оценки Tensorflow добавлена поддержка **Tensorflow 2,0** . Дополнительные сведения см. в [записи блога](https://azure.microsoft.com/blog/tensorflow-2-0-on-azure-fine-tuning-bert-for-question-tagging/).
 
-Дополнительные сведения о настройке среды Python см. в статье [создание сред для обучения и развертывания и управление ими](how-to-use-environments.md). 
+Дополнительные сведения о настройке среды Python см. на [этой странице](how-to-use-environments.md). 
 
-## <a name="submit-a-run"></a>Отправка запуска
+## <a name="submit-a-run"></a>Отправка запроса на выполнение
 
 [Объект Run](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run%28class%29?view=azure-ml-py) предоставляет интерфейс для журнала выполнения во время выполнения задания и после его завершения.
 
@@ -187,7 +192,7 @@ run.wait_for_completion(show_output=True)
 
 ## <a name="register-or-download-a-model"></a>Регистрация или скачивание модели
 
-После обучения модели ее можно зарегистрировать в рабочей области. Регистрация модели позволяет хранить и отменять версии моделей в рабочей области, чтобы упростить [Управление моделями и их развертывание](concept-model-management-and-deployment.md). При указании параметров `model_framework`, `model_framework_version`и `resource_configuration`, развертывание модели без кода станет доступным. Это позволяет напрямую развернуть модель в качестве веб-службы из зарегистрированной модели, а `ResourceConfiguration` объект определяет ресурс вычислений для веб-службы.
+После обучения модели ее можно зарегистрировать в рабочей области. Регистрация модели позволяет хранить и редактировать версии моделей в рабочей области для упрощения [развертывания и управления моделями](concept-model-management-and-deployment.md). При указании параметров `model_framework` , `model_framework_version` и `resource_configuration` , развертывание модели без кода станет доступным. Это позволяет напрямую развернуть модель в качестве веб-службы из зарегистрированной модели, а `ResourceConfiguration` объект определяет ресурс вычислений для веб-службы.
 
 ```Python
 from azureml.core import Model
@@ -200,7 +205,7 @@ model = run.register_model(model_name='tf-dnn-mnist',
                            resource_configuration=ResourceConfiguration(cpu=1, memory_in_gb=0.5))
 ```
 
-Вы также можете скачать локальную копию модели с помощью объекта Run. В сценарии `mnist-tf.py`обучения объект TensorFlow хранителя сохраняет модель в локальной папке (локальную для целевого объекта вычислений). Для скачивания копии можно использовать объект Run.
+Вы также можете скачать локальную копию модели с помощью объекта Run. В сценарии обучения `mnist-tf.py` объект TensorFlow хранителя сохраняет модель в локальной папке (локальную для целевого объекта вычислений). Для скачивания копии можно использовать объект Run.
 
 ```Python
 # Create a model folder in the current directory
@@ -215,7 +220,7 @@ for f in run.get_file_names():
 
 ## <a name="distributed-training"></a>Распределенное обучение
 
-[`TensorFlow`](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.tensorflow?view=azure-ml-py) Оценщик также поддерживает распределенное обучение между кластерами ЦП и GPU. Вы можете легко выполнять распределенные задания TensorFlow, а Машинное обучение Azure будет управлять согласованием.
+[`TensorFlow`](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.tensorflow?view=azure-ml-py)Оценщик также поддерживает распределенное обучение между кластерами ЦП и GPU. Вы можете легко выполнять распределенные задания TensorFlow, а Машинное обучение Azure будет управлять согласованием.
 
 Служба машинного обучения Azure поддерживает два метода распределенного обучения в TensorFlow.
 
@@ -274,7 +279,7 @@ run = exp.submit(tf_est)
 
 #### <a name="define-cluster-specifications-in-tf_config"></a>Определение спецификаций кластера в "TF_CONFIG"
 
-Также требуются сетевые адреса и порты кластера для [`tf.train.ClusterSpec`](https://www.tensorflow.org/api_docs/python/tf/train/ClusterSpec), поэтому машинное обучение Azure задает переменную `TF_CONFIG` среды.
+Также требуются сетевые адреса и порты кластера для [`tf.train.ClusterSpec`](https://www.tensorflow.org/api_docs/python/tf/train/ClusterSpec) , поэтому машинное обучение Azure задает `TF_CONFIG` переменную среды.
 
 Переменная среды `TF_CONFIG` представляет собой строку JSON. Ниже приведен пример переменной для сервера параметров.
 
@@ -289,9 +294,9 @@ TF_CONFIG='{
 }'
 ```
 
-Для API высокого уровня [`tf.estimator`](https://www.tensorflow.org/api_docs/python/tf/estimator) TensorFlow TensorFlow анализирует `TF_CONFIG` переменную и создает спецификацию кластера.
+Для API высокого уровня TensorFlow [`tf.estimator`](https://www.tensorflow.org/api_docs/python/tf/estimator) TensorFlow анализирует `TF_CONFIG` переменную и создает спецификацию кластера.
 
-Для обучения с помощью API-интерфейсов TensorFlow нижних уровней можно `TF_CONFIG` проанализировать переменную и создать в коде для `tf.train.ClusterSpec` обучения.
+Для обучения с помощью API-интерфейсов TensorFlow нижних уровней можно проанализировать `TF_CONFIG` переменную и создать `tf.train.ClusterSpec` в коде для обучения.
 
 ```Python
 import os, json
@@ -311,7 +316,7 @@ cluster_spec = tf.train.ClusterSpec(cluster)
 
 ## <a name="preview-no-code-model-deployment"></a>Образца Развертывание модели без кода
 
-Вместо традиционного маршрута развертывания можно также использовать функцию развертывания без кода (Предварительная версия) для Tensorflow. Зарегистрировав модель, как показано выше с помощью параметров `model_framework`, `model_framework_version`и `resource_configuration` , можно просто использовать `deploy()` статическую функцию для развертывания модели.
+Вместо традиционного маршрута развертывания можно также использовать функцию развертывания без кода (Предварительная версия) для Tensorflow. Зарегистрировав модель, как показано выше с помощью `model_framework` параметров, `model_framework_version` и `resource_configuration` , можно просто использовать `deploy()` статическую функцию для развертывания модели.
 
 ```python
 service = Model.deploy(ws, "tensorflow-web-service", [model])
@@ -319,7 +324,7 @@ service = Model.deploy(ws, "tensorflow-web-service", [model])
 
 Полное [Описание процесса](how-to-deploy-and-where.md) развертывания в машинное обучение Azure более подробно.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы обучили и зарегистрировали модель TensorFlow и узнали о вариантах развертывания. Дополнительные сведения о Машинное обучение Azure см. в других статьях.
 

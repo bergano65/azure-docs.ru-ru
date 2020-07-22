@@ -4,14 +4,14 @@ description: В этой статье объясняется, как зашиф�
 author: mamccrea
 ms.author: mamccrea
 ms.service: stream-analytics
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/05/2020
-ms.openlocfilehash: 8d201beb2ff4aba815749b12a506d2292779cb82
-ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
+ms.openlocfilehash: 637ac97d1e054599ec297344ff0c5fff600c8487
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82857289"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86045354"
 ---
 # <a name="data-protection-in-azure-stream-analytics"></a>Защита данных в Azure Stream Analytics 
 
@@ -36,7 +36,7 @@ Stream Analytics автоматически применяет оптималь�
 
 1. Щелкните **Создать ресурс** в верхнем левом углу окна портала Azure. 
 
-1. Выберите **Analytics** > **Stream Analytics задание** из списка результатов. 
+1. Выберите **Analytics**   >  **Stream Analytics задание**   из списка результатов. 
 
 1. Заполните страницу задания Stream Analytics, указав необходимые сведения, такие как имя, регион и масштаб. 
 

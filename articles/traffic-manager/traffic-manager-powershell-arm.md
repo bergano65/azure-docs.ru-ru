@@ -6,17 +6,17 @@ documentationcenter: na
 author: rohinkoul
 ms.service: traffic-manager
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/16/2017
 ms.author: rohink
-ms.openlocfilehash: 7886764a69eefa68be071a801bea65ae995fbdc3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: af19586807bf676f1f449f7402b364a054721eec
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76938499"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86187597"
 ---
 # <a name="using-powershell-to-manage-traffic-manager"></a>Использование PowerShell для управления диспетчером трафика
 
@@ -30,7 +30,7 @@ Azure Resource Manager представляет собой предпочтит�
 
 Каждый профиль диспетчера трафика представлен ресурсом типа TrafficManagerProfiles. На уровне API REST каждый профиль имеет следующий URI:
 
-    https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Network/trafficManagerProfiles/{profile-name}?api-version={api-version}
+`https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Network/trafficManagerProfiles/{profile-name}?api-version={api-version}`
 
 ## <a name="setting-up-azure-powershell"></a>Настройка Azure PowerShell
 
@@ -321,7 +321,7 @@ Remove-AzTrafficManagerProfile -TrafficManagerProfile $TmProfile [-Force]
 Get-AzTrafficManagerProfile -Name MyProfile -ResourceGroupName MyRG | Remove-AzTrafficManagerProfile [-Force]
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Мониторинг диспетчера трафика](traffic-manager-monitoring.md)
 

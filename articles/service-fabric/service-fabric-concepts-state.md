@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 08/18/2017
 ms.author: masnider
 ms.openlocfilehash: 9acd3031d1071d1822791b333976aaf76161600f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75614576"
 ---
 # <a name="service-state"></a>Состояние службы
@@ -26,7 +25,7 @@ ms.locfileid: "75614576"
 
 Состояние может также размещаться вместе с кодом, который манипулирует этим состоянием. Как правило, службы с отслеживанием состояния в Service Fabric создаются на основе этой модели. Service Fabric предоставляет инфраструктуру, которая гарантирует высокий уровень доступности, согласованность и устойчивость этого состояния, а также простое масштабирование служб, создаваемых на основе этой модели.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о понятиях Service Fabric см. в следующих статьях:
 
 * [Доступность служб структуры служб](service-fabric-availability-services.md)

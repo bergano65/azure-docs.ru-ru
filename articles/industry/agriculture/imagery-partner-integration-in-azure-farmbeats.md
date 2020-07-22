@@ -7,10 +7,10 @@ ms.date: 11/04/2019
 ms.author: v-umha
 ms.custom: has-adal-ref
 ms.openlocfilehash: 430907f43fb40f0ee24505bdc366a98a49f23b47
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82613291"
 ---
 # <a name="imagery-partner-integration"></a>Интеграция с партнерскими решениями для получения снимков
@@ -41,13 +41,13 @@ ms.locfileid: "82613291"
 
 API-интерфейсы содержат техническую документацию по Swagger. Дополнительные сведения об API и соответствующих запросах или ответах см. в разделе [Swagger](https://aka.ms/FarmBeatsDatahubSwagger).
 
-## <a name="authentication"></a>Аутентификация
+## <a name="authentication"></a>Проверка подлинности
 
-Фармбеатс использует [Active Directory](https://docs.microsoft.com/azure/app-service/overview-authentication-authorization) Microsoft Azure (Azure AD). Служба приложений Azure предоставляет встроенную поддержку проверки подлинности и авторизации. 
+Фармбеатс использует [Active Directory](https://docs.microsoft.com/azure/app-service/overview-authentication-authorization) Microsoft Azure (Azure AD).  Служба приложений Azure предоставляет встроенную поддержку проверки подлинности и авторизации в службе приложений. 
 
 Дополнительные сведения об Azure AD см. в [этой статье](https://docs.microsoft.com/azure/app-service/overview-authentication-authorization).   
 
-Фармбеатс Датахуб использует проверку подлинности носителя, для которой требуются следующие учетные данные:
+FarmBeats Datahub использует проверку подлинности носителя, для которой требуются следующие учетные данные:
 
 - Идентификатор клиента
 - Секрет клиента
@@ -85,15 +85,15 @@ token_response = context.acquire_token_for_client(SCOPE)
 access_token = token_response.get('access_token')
 ```
 
-## <a name="http-request-headers"></a>Заголовки HTTP-запросов
+## <a name="http-request-headers"></a>Заголовки запросов HTTP
 
-Ниже приведены наиболее распространенные заголовки запросов, которые необходимо указать при вызове API в Фармбеатс Датахуб.
+Ниже приведены наиболее распространенные заголовки запросов, которые необходимо указать при вызове API к FarmBeats Datahub.
 
-**Заголовок** | **Описание и пример**
+**Верхняя часть** | **Описание и пример**
 --- | ---
-Content-Type  | Формат запроса (Content-Type: Application/<format>). Для API-интерфейсов Фармбеатс Датахуб используется формат JSON. Content-Type: application/json
-Авторизация | Указывает маркер доступа, необходимый для выполнения вызова API. Авторизация: носитель <доступ — токен>
-Принять  | Формат ответа. Для API-интерфейсов Фармбеатс Датахуб используется формат JSON. Принять: приложение/JSON
+Content-Type  | Формат запроса (Content-Type: application/<format>). Для API-интерфейсов FarmBeats Datahub используется формат JSON. Content-Type: application/json
+Авторизация | Указывает маркер доступа, необходимый для выполнения вызова API. Авторизация: Bearer <маркер доступа>
+Принять  | Формат ответа. Для API-интерфейсов FarmBeats Datahub используется формат JSON. Accept: application/json
 
 
 ## <a name="api-requests"></a>Запросы API
@@ -105,7 +105,7 @@ Content-Type  | Формат запроса (Content-Type: Application/<format>)
 - URI ресурса (для запроса, отправки данных, обновления или удаления).
 - Один или несколько заголовков HTTP-запроса.
 
-При необходимости можно включить параметры запроса на вызов GET для фильтрации, ограничить размер и отсортировать данные в ответах.
+При необходимости в вызовы GET можно включить параметры запроса для фильтрации, ограничения размера и сортировки данных в ответах.
 
 Следующий пример запроса — получение списка устройств:
 
@@ -115,9 +115,9 @@ curl -X GET "https://microsoft-farmbeats.azurewebsites.net/Device" -H
 "Authorization: Bearer <Access-Token>”
 ```
 
-Для большинства вызовов GET, POST и постановки требуется текст запроса JSON.
+Для большинства вызовов GET, POST и PUT требуется текст запроса JSON.
 
-Следующий пример запроса — создание устройства. Этот пример содержит входной JSON с текстом запроса.
+Следующий пример запроса предназначен для создания устройства. Этот пример содержит входной JSON с текстом запроса.
 
 
 ```bash
@@ -130,7 +130,7 @@ curl -X POST "https://microsoft-farmbeats.azurewebsites.net/Device" -H
 
 ## <a name="data-format"></a>Формат данных
 
-JSON является стандартным форматом данных, не зависящим от языка, предоставляющим простое текстовое представление произвольных структур данных. Дополнительные сведения см. в разделе [JSON org](https://JSON.org).
+JSON является стандартным не зависящим от языка форматом данных, предоставляющим простое текстовое представление произвольных структур данных. Дополнительные сведения см. в разделе [JSON org](https://JSON.org).
 
 ## <a name="ingest-imagery-into-farmbeats"></a>Прием изображений в Фармбеатс
 

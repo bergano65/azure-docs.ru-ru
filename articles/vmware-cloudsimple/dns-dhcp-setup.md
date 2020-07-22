@@ -9,15 +9,14 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: ef1266b783034cf18dc2b3ea4be5ebc01bc12c70
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77024693"
 ---
 # <a name="set-up-dns-and-dhcp-applications-and-workloads-in-your-cloudsimple-private-cloud"></a>Настройка приложений и рабочих нагрузок DNS и DHCP в частном облаке Клаудсимпле
 
-Приложениям и рабочим нагрузкам, выполняемым в среде частного облака, требуется разрешение имен и службы DHCP для назначения адресов и поиска по IP-адресам.  Для предоставления этих служб требуется правильная инфраструктура DHCP и DNS.  Вы можете настроить виртуальную машину для предоставления этих служб в среде частного облака.  
+Приложениям и рабочим нагрузкам, выполняемым в среде частного облака, требуется разрешение имен и службы DHCP для назначения адресов и поиска по IP-адресам.  Для предоставления этих служб требуется определенная инфраструктура DHCP и DNS.  Вы можете настроить виртуальную машину для предоставления этих служб в среде частного облака.  
 
 ## <a name="prerequisites"></a>Предварительные условия
 

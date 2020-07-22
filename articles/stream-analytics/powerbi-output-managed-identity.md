@@ -4,14 +4,14 @@ description: В этой статье описывается, как испол�
 author: cedarbaum
 ms.author: sacedarb
 ms.service: stream-analytics
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 3/10/2020
-ms.openlocfilehash: 31a5195038ef25acadc08e2acbedf8471b25833c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 647ab275fb7f34ee9721e4f085df0d22048fc04d
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81261420"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86044249"
 ---
 # <a name="use-managed-identity-to-authenticate-your-azure-stream-analytics-job-to-power-bi"></a>Используйте управляемое удостоверение для проверки подлинности задания Azure Stream Analytics для Power BI
 
@@ -172,7 +172,7 @@ Azure Resource Manager позволяет полностью автоматиз�
 
 ### <a name="use-the-power-bi-powershell-cmdlets"></a>Использование командлетов PowerShell Power BI
 
-1. Установите командлеты `MicrosoftPowerBIMgmt` PowerShell Power BI.
+1. Установите `MicrosoftPowerBIMgmt` командлеты PowerShell Power BI.
 
    > [!Important]
    > Убедитесь, что вы используете командлеты версии 1.0.821 или более поздней.

@@ -8,35 +8,37 @@ ms.service: analysis-services
 ms.topic: quickstart
 ms.date: 04/14/2020
 ms.custom: subject-armqs
-ms.openlocfilehash: 6f0d5f084c5cd48abf399e351c627d64951ce719
-ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
+ms.openlocfilehash: 4dd7906ed32faa630ba074cb29e7987a64205cb5
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83697447"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86042107"
 ---
-# <a name="quickstart-create-a-server---azure-resource-manager-template"></a>Краткое руководство. Создание сервера с помощью шаблона Azure Resource Manager
+# <a name="quickstart-create-a-server---arm-template"></a>Краткое руководство. Создание сервера — шаблон ARM
 
-В этом кратком руководстве описывается создание ресурса сервера Analysis Services в подписке Azure с помощью шаблона Resource Manager.
+В этом кратком руководстве показано, как создать ресурс сервера Analysis Services в подписке Azure с помощью шаблона Azure Resource Manager (шаблона ARM).
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
+
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-analysis-services-create%2Fazuredeploy.json)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 * **Подписка Azure**: Откройте ссылку на [бесплатную пробную версию Azure](https://azure.microsoft.com/offers/ms-azr-0044p/), чтобы создать учетную запись.
 * **Azure Active Directory**. Ваша подписка должна быть связана с клиентом Azure Active Directory. И необходимо войти в Azure с учетной записью в этом Azure Active Directory. Дополнительные сведения см. в руководстве по [аутентификации и настройке пользовательских разрешений](analysis-services-manage-users.md).
 
-## <a name="create-a-server"></a>Создание сервера
-
-### <a name="review-the-template"></a>Изучение шаблона
+## <a name="review-the-template"></a>Изучение шаблона
 
 Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-analysis-services-create/).
 
 :::code language="json" source="~/quickstart-templates/101-analysis-services-create/azuredeploy.json" range="1-79" highlight="63-78":::
 
-В шаблоне определяется один ресурс [Microsoft.AnalysisServices/Servers](https://docs.microsoft.com/azure/templates/microsoft.analysisservices/2017-08-01/servers) с правилом брандмауэра. 
+В шаблоне определяется один ресурс [Microsoft.AnalysisServices/Servers](/azure/templates/microsoft.analysisservices/servers) с правилом брандмауэра.
 
-### <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="deploy-the-template"></a>Развертывание шаблона
 
 1. Выберите следующую ссылку "Развертывание в Azure", чтобы войти на портал Azure и открыть шаблон. Шаблон используется для создания ресурса сервера Analysis Services и указания обязательных и дополнительных свойств.
 
@@ -60,7 +62,7 @@ ms.locfileid: "83697447"
 
 3. Щелкните **Приобрести**. После успешного развертывания сервера вы получите уведомление:
 
-   ![Шаблон Resource Manager: уведомление о развертывании на портале](./media/analysis-services-create-template/notification.png)
+   ![Шаблон ARM, уведомление о развертывании на портале](./media/analysis-services-create-template/notification.png)
 
 ## <a name="validate-the-deployment"></a>Проверка развертывания
 
@@ -101,7 +103,8 @@ Write-Host "Press [ENTER] to continue..."
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом кратком руководстве вы использовали шаблон Azure Resource Manager, чтобы создать группу ресурсов и ресурс Azure Analysis Services Server. После создания ресурса сервера с помощью шаблона рассмотрите следующие материалы:
+В этом кратком руководстве показано, как создать группу ресурсов и ресурс сервера Azure Analysis Services с помощью шаблона ARM. Создав ресурс сервера с помощью шаблона, ознакомьтесь со следующими материалами:
+
 - [Краткое руководство. Создание сервера с помощью PowerShell](analysis-services-create-powershell.md)
 - [Добавление примера модели с портала](analysis-services-create-sample-model.md)
 - [Настройка ролей администратора и пользователя сервера](tutorials/analysis-services-tutorial-roles.md)

@@ -2,23 +2,23 @@
 title: Удаленный доступ к локальным приложениям — Azure AD Application Proxy
 description: Azure Active Directory Application Proxy обеспечивает безопасный удаленный доступ к веб-приложениям, размещенным в локальной среде. Выполнив единый вход в AAD, пользователи получают доступ к облачным и локальным приложениям через внешний URL-адрес или внутренний портал приложений. Среди прочего, Application Proxy поддерживает удаленный доступ и единый вход для приложений "Удаленный рабочий стол", SharePoint, Teams, Tableau, Qlik и бизнес-приложений (LOB).
 services: active-directory
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 05/09/2019
-ms.author: mimart
+ms.author: kenwith
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
-ms.openlocfilehash: 24e18f5b1766f0dde5e677ac40d24edd5597a20d
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
+ms.openlocfilehash: 84cd6f9d7612cc6cf5829c03c398dd65a6eec412
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82609958"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85318034"
 ---
 # <a name="remote-access-to-on-premises-applications-through-azure-active-directorys-application-proxy"></a>Удаленный доступ к локально размещенным приложениям через Azure Active Directory Application Proxy.
 
@@ -40,8 +40,8 @@ Application Proxy поддерживает:
 * веб-приложения, использующие [встроенную проверку подлинности Windows](application-proxy-configure-single-sign-on-with-kcd.md);
 * веб-приложения, использующие доступ на основе форм или [заголовков](application-proxy-configure-single-sign-on-with-ping-access.md);
 * веб-API, предоставляемые для полнофункциональных приложений на различных устройствах;
-* приложения, размещаемые за [шлюзом удаленных рабочих столов](application-proxy-integrate-with-remote-desktop-services.md).
-* полнофункциональные клиентские приложения, интегрированные с библиотекой аутентификации Active Directory (ADAL).
+* Приложения, размещенные за [шлюзом удаленный рабочий стол](application-proxy-integrate-with-remote-desktop-services.md)
+* полнофункциональные клиентские приложения, интегрированные с библиотекой проверки подлинности Майкрософт (MSAL).
 
 Application Proxy поддерживает единый вход. Дополнительные сведения о поддерживаемых методах см. в статье [о выборе метода единого входа](what-is-single-sign-on.md#choosing-a-single-sign-on-method).
 
@@ -60,7 +60,7 @@ Application Proxy поддерживает единый вход. Дополни
 5. Соединитель отправляет запрос локальному приложению.
 6. Ответ отправляется пользователю через службу и соединитель Application Proxy.
 
-| Компонент | Описание |
+| Компонент | Описание: |
 | --------- | ----------- |
 | Конечная точка  | Конечной точкой называется URL-адрес или [пользовательский портал](end-user-experiences.md). Пользователи за пределами вашей сети могут получить доступ к приложениям, используя внешний URL-адрес. Пользователи в вашей сети могут получить доступ к приложениям, используя URL-адрес или пользовательский портал. При переходе к одной из этих конечных точек пользователи проходят аутентификацию в Azure AD и через соединитель направляются к локальному приложению.|
 | Azure AD | Azure AD выполняет проверку подлинности с помощью каталога клиентом, хранящегося в облаке. |
@@ -69,7 +69,6 @@ Application Proxy поддерживает единый вход. Дополни
 | Active Directory | Active Directory работает локально и выполняет аутентификацию доменных учетных записей. Если настроен единый вход, соединитель взаимодействует со службой Active Directory для выполнения дополнительной аутентификации.
 | Локальное приложение | Когда весь этот процесс завершится, пользователь получает доступ к локальному приложению.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Чтобы приступить к использованию прокси приложения, см. раздел [учебник. Добавление локального приложения для удаленного доступа через прокси приложения](application-proxy-add-on-premises-application.md).
 
-Последние новости и обновления вы найдете в [блоге, посвященном Application Proxy](https://blogs.technet.com/b/applicationproxyblog/).

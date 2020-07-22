@@ -11,15 +11,14 @@ ms.service: azure-cdn
 ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.date: 01/23/2017
 ms.author: mazha
-ms.openlocfilehash: 169de21b6dbdafaaeff64e315daa104f3b6faadd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 89adc283fa9d6edc49536cb9459a479710c94435
+ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74278105"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85921167"
 ---
 # <a name="using-azure-cdn-with-cors"></a>Использование Azure CDN с CORS
 ## <a name="what-is-cors"></a>Что такое CORS?
@@ -30,7 +29,7 @@ CORS (общий доступ к ресурсам независимо от ис
 
 ### <a name="for-simple-requests"></a>Простые запросы
 
-1. Браузер отправляет запрос CORS с дополнительным заголовком HTTP-запроса **Origin**. Значение этого заголовка является источником, обслужившим родительскую страницу, который определяется как сочетание *протокола, * *домена* и *порта*.  Когда страница из HTTPS\://www.contoso.com пытается получить доступ к данным пользователя в источнике Fabrikam.com, в Fabrikam.com будет отправлен следующий заголовок запроса:
+1. Браузер отправляет запрос CORS с дополнительным заголовком HTTP-запроса **Origin**. Значение этого заголовка является источником, обслужившим родительскую страницу, который определяется как сочетание *протокола, * *домена* и *порта*.  Когда страница из HTTPS \: //www.contoso.com пытается получить доступ к данным пользователя в источнике Fabrikam.com, в Fabrikam.com будет отправлен следующий заголовок запроса:
 
    `Origin: https://www.contoso.com`
 
@@ -82,7 +81,9 @@ CORS в Azure CDN будет работать автоматически без 
 #### <a name="one-regular-expression-with-all-valid-origins"></a>Одно регулярное выражение со всеми допустимыми источниками
 В этом случае создается регулярное выражение, которое включает все источники, которые вы хотите разрешить: 
 
-    https?:\/\/(www\.contoso\.com|contoso\.com|www\.microsoft\.com|microsoft.com\.com)$
+```http
+https?:\/\/(www\.contoso\.com|contoso\.com|www\.microsoft\.com|microsoft.com\.com)$
+```
 
 > [!TIP]
 > В **Azure CDN уровня "Премиум" от Verizon** в качестве основного механизма регулярных выражений используются [совместимые с Perl регулярные выражения](https://pcre.org/).  Для проверки регулярного выражения можно использовать такие ресурсы, как [Regular Expressions 101](https://regex101.com/).  Обратите внимание, что символ "/" в регулярных выражениях является допустимым и экранировать его необязательно. Однако его все же рекомендуется экранировать, и некоторые средства проверки регулярных выражений ожидают, что он будет экранирован.

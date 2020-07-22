@@ -9,13 +9,13 @@ ms.topic: tutorial
 author: sdgilley
 ms.author: sgilley
 ms.date: 03/18/2020
-ms.custom: seodec18
-ms.openlocfilehash: bcc9e748cb5f88084b9cd3254654f9dc0fbc8aa1
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.custom: seodec18, tracking-python
+ms.openlocfilehash: 3cdd39ea9581384e7dd37ed67c641849f2696e1c
+ms.sourcegitcommit: 964af22b530263bb17fff94fd859321d37745d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82115573"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84558336"
 ---
 # <a name="tutorial-train-image-classification-models-with-mnist-data-and-scikit-learn"></a>Руководство по обучению моделей классификации изображений с использованием данных MNIST и Scikit-learn 
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -107,7 +107,7 @@ exp = Experiment(workspace=ws, name=experiment_name)
 
 Использование Вычислительной среды Машинного обучения Azure (управляемой службы) позволяет специалистам по обработке и анализу данных обучать модели машинного обучения в кластерах виртуальных машин Azure. Часто используются виртуальные машины с поддержкой GPU. В этом руководстве описано, как создать Вычислительную среду Машинного обучения Azure в качестве среды обучения. Вы предоставите код Python для запуска на этой ВМ позже в учебнике. 
 
-Приведенный ниже код создаст вычислительные кластеры, если они еще не существуют в вашей рабочей области.
+Приведенный ниже код создаст вычислительные кластеры, если они еще не существуют в вашей рабочей области. Он настраивает кластер, который будет масштабироваться до 0, когда не используется, и может масштабироваться до 4 узлов. 
 
  **Создание целевого объекта вычислений занимает около пяти минут.** Если вычислительный ресурс уже находится в рабочей области, код сразу применяет ее, пропуская процесс создания.
 

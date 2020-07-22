@@ -1,20 +1,17 @@
 ---
 title: Краткое руководство. Создание очереди Служебной шины Azure с помощью Azure CLI | Документация Майкрософт
 description: Из этого краткого руководства вы узнаете, как с помощью Azure CLI создать очередь Служебной шины Azure. Затем вы отправите сообщения в очередь и получите сообщения из нее, используя пример приложения Java.
-services: service-bus-messaging
 author: spelluru
-manager: timlt
-ms.service: service-bus-messaging
 ms.devlang: java
 ms.topic: quickstart
-ms.date: 04/10/2019
+ms.date: 06/23/2020
 ms.author: spelluru
-ms.openlocfilehash: e34599b12b8b0c487c6813038951b051d1eaf425
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: ed09a72fd5eed72e7a07fefed53bf010a543b658
+ms.sourcegitcommit: 61d92af1d24510c0cc80afb1aebdc46180997c69
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "66400264"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85337403"
 ---
 # <a name="quickstart-use-the-azure-cli-to-create-a-service-bus-queue"></a>Краткое руководство. Создание очереди служебной шины с помощью Azure CLI
 В этом кратком руководстве объясняется, как отправлять и принимать сообщения через Служебную шину с помощью Azure CLI и библиотеки Java для Служебной шины. И наконец, если вас интересует более подробная техническая информация, изучите [это описание](#understand-the-sample-code) ключевых элементов нашего примера кода.

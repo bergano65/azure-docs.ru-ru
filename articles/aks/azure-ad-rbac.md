@@ -5,12 +5,12 @@ description: Узнайте, как использовать членство в
 services: container-service
 ms.topic: article
 ms.date: 04/16/2019
-ms.openlocfilehash: ad195085c049776bf0db418c57f2c72830f1adff
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: bb48e4f72506a69969cae39810640d23d771bde3
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80803575"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86106090"
 ---
 # <a name="control-access-to-cluster-resources-using-role-based-access-control-and-azure-active-directory-identities-in-azure-kubernetes-service"></a>Управление доступом к ресурсам кластера с помощью управления доступом на основе ролей и удостоверений Azure Active Directory в службе Azure Kubernetes
 
@@ -18,11 +18,11 @@ ms.locfileid: "80803575"
 
 В этой статье показано, как использовать членство в группах Azure AD для управления доступом к пространствам имен и ресурсам кластера с помощью Kubernetes RBAC в кластере AKS. Примеры групп и пользователей создаются в Azure AD, а затем роли и Ролебиндингс создаются в кластере AKS, чтобы предоставить соответствующие разрешения на создание и просмотр ресурсов.
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 В этой статье предполагается, что у вас уже есть кластер AKS с поддержкой интеграции с Azure AD. Если вам нужен кластер AKS, см. статью [интеграция Azure Active Directory с AKS][azure-ad-aks-cli].
 
-Требуется Azure CLI версии 2.0.61 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][install-azure-cli].
+Необходимо установить и настроить Azure CLI версии 2.0.61 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][install-azure-cli].
 
 ## <a name="create-demo-groups-in-azure-ad"></a>Создание демонстрационных групп в Azure AD
 
@@ -60,7 +60,7 @@ az role assignment create \
 ```
 
 > [!TIP]
-> Если появляется сообщение об ошибке `Principal 35bfec9328bd4d8d9b54dea6dac57b82 does not exist in the directory a5443dcd-cd0e-494d-a387-3039b419f0d5.`, например, подождите несколько секунд, пока идентификатор объекта группы Azure AD будет передан через каталог, а затем повторите `az role assignment create` команду.
+> Если появляется сообщение об ошибке `Principal 35bfec9328bd4d8d9b54dea6dac57b82 does not exist in the directory a5443dcd-cd0e-494d-a387-3039b419f0d5.` , например, подождите несколько секунд, пока идентификатор объекта группы Azure AD будет передан через каталог, а затем повторите `az role assignment create` команду.
 
 Создайте второй пример группы, такой как для Срес с именем *опссре*:
 
@@ -83,7 +83,7 @@ az role assignment create \
 
 Создайте первую учетную запись пользователя в Azure AD с помощью команды [AZ AD user Create][az-ad-user-create] .
 
-В следующем примере создается пользователь с отображаемым именем *AKS dev* и именем участника-пользователя (UPN) `aksdev@contoso.com`. Обновите UPN, включив в него проверенный домен для вашего клиента Azure AD (замените *contoso.com* своим доменом) и предоставьте собственные защищенные `--password` учетные данные:
+В следующем примере создается пользователь с отображаемым именем *AKS dev* и именем участника-пользователя (UPN) `aksdev@contoso.com` . Обновите UPN, включив в него проверенный домен для вашего клиента Azure AD (замените *contoso.com* своим доменом) и предоставьте собственные защищенные `--password` учетные данные:
 
 ```azurecli-interactive
 AKSDEV_ID=$(az ad user create \
@@ -99,7 +99,7 @@ AKSDEV_ID=$(az ad user create \
 az ad group member add --group appdev --member-id $AKSDEV_ID
 ```
 
-Создайте вторую учетную запись пользователя. В следующем примере создается пользователь с отображаемым именем *AKS выполняются* и именем участника-пользователя (UPN) `akssre@contoso.com`. Опять же, обновите имя участника-пользователя, включив в него проверенный домен для вашего клиента Azure AD (замените *contoso.com* своим доменом) и `--password` предоставьте собственные защищенные учетные данные:
+Создайте вторую учетную запись пользователя. В следующем примере создается пользователь с отображаемым именем *AKS выполняются* и именем участника-пользователя (UPN) `akssre@contoso.com` . Опять же, обновите имя участника-пользователя, включив в него проверенный домен для вашего клиента Azure AD (замените *contoso.com* своим доменом) и предоставьте собственные защищенные `--password` учетные данные:
 
 ```azurecli-interactive
 # Create a user for the SRE role
@@ -388,7 +388,7 @@ az ad group delete --group appdev
 az ad group delete --group opssre
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о защите кластеров Kubernetes см. в разделе [параметры доступа и удостоверений для AKS][rbac-authorization].
 
@@ -410,5 +410,5 @@ az ad group delete --group opssre
 [az-ad-user-create]: /cli/azure/ad/user#az-ad-user-create
 [az-ad-group-member-add]: /cli/azure/ad/group/member#az-ad-group-member-add
 [az-ad-group-show]: /cli/azure/ad/group#az-ad-group-show
-[rbac-authorization]: concepts-identity.md#role-based-access-controls-rbac
+[rbac-authorization]: concepts-identity.md#kubernetes-role-based-access-controls-rbac
 [operator-best-practices-identity]: operator-best-practices-identity.md

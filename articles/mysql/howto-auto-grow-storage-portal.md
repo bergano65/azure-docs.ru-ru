@@ -4,14 +4,14 @@ description: В этой статье описывается, как включ�
 author: ambhatna
 ms.author: ambhatna
 ms.service: mysql
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 3/18/2020
-ms.openlocfilehash: ddbcb0143a4f84d9e0f3dc2fedf780fca6637692
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 2c028bff80856f7edcb34688ffa5c3320a66ccc9
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80062516"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86112618"
 ---
 # <a name="auto-grow-storage-in-azure-database-for-mysql-using-the-azure-portal"></a>Автоматическое увеличение объема хранилища в базе данных Azure для MySQL с помощью портал Azure
 В этой статье описывается, как можно настроить расширение хранилища базы данных Azure для MySQL, не влияя на рабочую нагрузку.

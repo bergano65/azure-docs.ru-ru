@@ -12,12 +12,12 @@ ms.date: 03/12/2020
 ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev, identityplatformtop40, fasttrack-edit
-ms.openlocfilehash: 0e2247e94b20846f19c2ed26c96a5dc53972e770
-ms.sourcegitcommit: d187fe0143d7dbaf8d775150453bd3c188087411
+ms.openlocfilehash: 19c94a4807b8958fa8b1ec46ccae660c7cbe92de
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80883819"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86256702"
 ---
 # <a name="quickstart-set-up-a-tenant"></a>Краткое руководство. Настройка клиента
 
@@ -34,7 +34,7 @@ ms.locfileid: "80883819"
 * Рабочие и учебные (учетные записи Azure AD) или учетные записи Майкрософт (например, outlook.com и live.com)
 * Учетные записи социальных сетей и локальные учетные записи (Azure AD B2C)
 
-Это краткое руководство разбивается на два сценария, в зависимости от типа приложения, которое вы хотите создать. Если вам нужна дополнительная помощь в выборе типа удостоверения, взгляните на [общие сведения о платформе удостоверений Майкрософт](about-microsoft-identity-platform.md).
+Это краткое руководство разбивается на два сценария, в зависимости от типа приложения, которое вы хотите создать.
 
 ## <a name="work-and-school-accounts-or-personal-microsoft-accounts"></a>Рабочие и учебные учетные записи или личные учетные записи Майкрософт
 
@@ -59,7 +59,7 @@ ms.locfileid: "80883819"
 Если у вас нет клиента Azure AD или вы хотите создать клиент для разработки, см. [это краткое руководство](https://portal.azure.com/#create/Microsoft.AzureActiveDirectory) или используйте [процедуру создания каталога](../fundamentals/active-directory-access-create-new-tenant.md). Вы должны будете предоставить следующие сведения, чтобы создать клиент:
 
 - **Название организации**
-- **Исходный домен** — он будет частью *.onmicrosoft.com. Вы сможете настроить домен позже.
+- **Исходный домен** — он будет частью *.onmicrosoft.com. Вы сможете настроить домен позже.
 - **Страна или регион**
 
 > [!NOTE]
@@ -73,4 +73,4 @@ ms.locfileid: "80883819"
 
 * [Зарегистрируйте приложение](quickstart-register-app.md) и выполните интеграцию с платформой идентификации Майкрософт. 
 * Ознакомьтесь с [основами аутентификации](authentication-scenarios.md).
-* См. сведения о том, как [подписки Azure связаны с арендатором Azure AD](../fundamentals/active-directory-how-subscriptions-associated-directory.md).
+* Для получения сведений о том, как подписки Azure связаны с клиентом Azure AD см. статью [Привязка или добавление подписки Azure к клиенту Azure Active Directory](../fundamentals/active-directory-how-subscriptions-associated-directory.md).

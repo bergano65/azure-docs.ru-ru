@@ -9,10 +9,10 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.openlocfilehash: 094dc9fd01ec71f378a173a2b4fa64cc672d7c97
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80334558"
 ---
 # <a name="add-controls-to-a-map"></a>Добавление элементов управления на карту
@@ -30,7 +30,7 @@ map.controls.add(new atlas.control.ZoomControl(), {
 });
 ```
 
-Ниже приведен полный пример выполнения кода описанной выше функциональности.
+Ниже приведен полный и выполняемый пример этой функциональности.
 
 <br/>
 
@@ -48,7 +48,7 @@ map.controls.add(new atlas.control.PitchControl(), {
 });
 ```
 
-Ниже приведен полный пример выполнения кода описанной выше функциональности.
+Ниже приведен полный и выполняемый пример этой функциональности.
 
 <br/>
 
@@ -66,7 +66,7 @@ map.controls.add(new atlas.control.Compass(), {
 });
 ```
 
-Ниже приведен полный пример выполнения кода описанной выше функциональности.
+Ниже приведен полный и выполняемый пример этой функциональности.
 
 <br/>
 
@@ -104,12 +104,12 @@ map.controls.add([
 <br/>
 
 <iframe height="700" style="width: 100%;" scrolling="no" title="Параметры элемента управления навигацией" src="//codepen.io/azuremaps/embed/LwBZMx/?height=700&theme-id=0&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-См. раздел <a href='https://codepen.io/azuremaps/pen/LwBZMx/'>Параметры навигации по управлению</a> пером<a href='https://codepen.io/azuremaps'>@azuremaps</a>с помощью Azure Maps () в <a href='https://codepen.io'>CodePen</a>.
+См. раздел <a href='https://codepen.io/azuremaps/pen/LwBZMx/'>Параметры навигации по управлению</a> пером с помощью Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-Если необходимо создать настраиваемые элементы управления навигацией, создайте класс, который расширяется из `atlas.Control` класса, или Создайте HTML-элемент и поместите его над элементом div Map. Этот элемент управления пользовательского интерфейса вызывает функцию `setCamera` Maps для перемещения карты. 
+Если необходимо создать настраиваемые элементы управления навигацией, создайте класс, который расширяется из `atlas.Control` класса, или Создайте HTML-элемент и поместите его над элементом div Map. Этот элемент управления пользовательского интерфейса вызывает `setCamera` функцию Maps для перемещения карты. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
@@ -140,5 +140,5 @@ map.controls.add([
 > [Добавление слоя многоугольников](map-add-shape.md)
 
 > [!div class="nextstepaction"]
-> [Добавить пузырьковый слой](map-add-bubble-layer.md)
+> [Добавление слоя пузырьков](map-add-bubble-layer.md)
 

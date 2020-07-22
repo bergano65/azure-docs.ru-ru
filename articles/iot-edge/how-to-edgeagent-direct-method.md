@@ -10,10 +10,10 @@ ms.reviewer: veyalla
 ms.service: iot-edge
 services: iot-edge
 ms.openlocfilehash: 57b9d46918414cef9e8cbcffb941b98c98f985ff
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80240348"
 ---
 # <a name="communicate-with-edgeagent-using-built-in-direct-methods"></a>Обмен данными с edgeAgent с помощью встроенных прямых методов
@@ -34,7 +34,7 @@ ms.locfileid: "80240348"
 az iot hub invoke-module-method --method-name 'ping' -n <hub name> -d <device name> -m '$edgeAgent'
 ```
 
-В портал Azure вызовите метод с именем `ping` метода и пустой полезной `{}`нагрузкой JSON.
+В портал Azure вызовите метод с именем метода `ping` и пустой полезной нагрузкой JSON `{}` .
 
 ![Вызов прямого метода "ping" в портал Azure](./media/how-to-edgeagent-direct-method/ping-direct-method.png)
 
@@ -58,7 +58,7 @@ az iot hub invoke-module-method --method-name 'RestartModule' -n <hub name> -d <
 '
 ```
 
-В портал Azure вызовите метод с именем `RestartModule` метода и следующими полезными данными JSON:
+В портал Azure вызовите метод с именем метода `RestartModule` и следующими полезными данными JSON:
 
 ```json
 {
@@ -77,6 +77,6 @@ az iot hub invoke-module-method --method-name 'RestartModule' -n <hub name> -d <
 * [Жеттаскстатус](https://github.com/Azure/iotedge/blob/master/doc/built-in-logs-pull.md#gettaskstatus): Проверьте состояние запроса на отправку журналов.
 * [Logs: получение](https://github.com/Azure/iotedge/blob/master/doc/built-in-logs-pull.md#getlogs)журналов модулей, встроенных в ответ прямого метода.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Свойства двойников модулей агента IoT Edge и центра IoT Edge](module-edgeagent-edgehub.md)

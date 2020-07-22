@@ -3,15 +3,15 @@ title: Настройка срока жизни в Azure Cosmos DB и управ
 description: Узнайте, как настроить срок жизни для контейнера и элемента в Azure Cosmos DB, а затем управлять им.
 author: anfeldma-ms
 ms.service: cosmos-db
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/27/2020
 ms.author: anfeldma
-ms.openlocfilehash: 11f5615d44cef4b6717dc9fe2004a64cf2f800ba
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: bbddcb8627c78544d603e1ea3ca33bc410419da1
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83124131"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85263628"
 ---
 # <a name="configure-time-to-live-in-azure-cosmos-db"></a>Настройка срока жизни в Azure Cosmos DB
 
@@ -31,10 +31,10 @@ ms.locfileid: "83124131"
 
    * Откройте окно **Scale & Settings** (Параметры масштабирования).
    * В разделе **Параметры** найдите **Срок жизни**.
-   * Выберите **вкл. (нет значения по умолчанию)** или выберите параметр **вкл** . и задайте значение TTL.
-   * Чтобы сохранить изменения, нажмите кнопку **Сохранить**.
+   * Выберите **Включен (по умолчанию)** или **Включен** и задайте значение срока жизни.
+   * Щелкните **Сохранить** , чтобы сохранить изменения.
 
-   ![Настройка срока жизни на портале Azure](./media/how-to-time-to-live/how-to-time-to-live-portal.png)
+   :::image type="content" source="./media/how-to-time-to-live/how-to-time-to-live-portal.png" alt-text="Настройка срока жизни на портале Azure":::
 
 * Если параметр DefaultTimeToLive имеет значение "null", значит параметр срока жизни отключен.
 * Если параметр DefaultTimeToLive имеет значение "-1", параметр срока жизни включен (без значения по умолчанию).
@@ -51,9 +51,9 @@ ms.locfileid: "83124131"
 
 ### <a name="net-sdk"></a><a id="dotnet-enable-noexpiry"></a>ПАКЕТ SDK ДЛЯ .NET
 
-# <a name="net-sdk-v2"></a>[ПАКЕТ SDK ДЛЯ .NET ВЕРСИИ 2](#tab/dotnetv2)
+# <a name="net-sdk-v2"></a>[Пакет SDK для .NET версии 2](#tab/dotnetv2)
 
-Пакет SDK для .NET версии 2 (Microsoft. Azure. DocumentDB)
+Пакет SDK для .NET версии 2 (Microsoft.Azure.DocУментдб)
 
 ```csharp
 // Create a new container with TTL enabled and without any expiration value
@@ -67,7 +67,7 @@ DocumentCollection ttlEnabledCollection = await client.CreateDocumentCollectionA
     collectionDefinition);
 ```
 
-# <a name="net-sdk-v3"></a>[ПАКЕТ SDK ДЛЯ .NET V3](#tab/dotnetv3)
+# <a name="net-sdk-v3"></a>[Пакет SDK для .NET версии 3](#tab/dotnetv3)
 
 Пакет SDK для .NET v3 (Microsoft. Azure. Cosmos)
 
@@ -86,7 +86,7 @@ await client.GetDatabase("database").CreateContainerAsync(new ContainerPropertie
 
 # <a name="java-sdk-v4"></a>[Пакет SDK для Java v4](#tab/javav4)
 
-Пакет SDK для Java V4 (Maven com. Azure:: Azure-Cosmos)
+Пакет SDK для Java версии 4 (Maven com.azure::azure-cosmos)
 
 ```java
 CosmosAsyncContainer container;
@@ -117,9 +117,9 @@ container = database.createContainerIfNotExists(containerProperties, 400).block(
 
 ### <a name="net-sdk"></a><a id="dotnet-enable-withexpiry"></a>ПАКЕТ SDK ДЛЯ .NET
 
-# <a name="net-sdk-v2"></a>[ПАКЕТ SDK ДЛЯ .NET ВЕРСИИ 2](#tab/dotnetv2)
+# <a name="net-sdk-v2"></a>[Пакет SDK для .NET версии 2](#tab/dotnetv2)
 
-Пакет SDK для .NET версии 2 (Microsoft. Azure. DocumentDB)
+Пакет SDK для .NET версии 2 (Microsoft.Azure.DocУментдб)
 
 ```csharp
 // Create a new container with TTL enabled and a 90 day expiration
@@ -133,7 +133,7 @@ DocumentCollection ttlEnabledCollection = await client.CreateDocumentCollectionA
     collectionDefinition;
 ```
 
-# <a name="net-sdk-v3"></a>[ПАКЕТ SDK ДЛЯ .NET V3](#tab/dotnetv3)
+# <a name="net-sdk-v3"></a>[Пакет SDK для .NET версии 3](#tab/dotnetv3)
 
 Пакет SDK для .NET v3 (Microsoft. Azure. Cosmos)
 
@@ -152,7 +152,7 @@ await client.GetDatabase("database").CreateContainerAsync(new ContainerPropertie
 
 # <a name="java-sdk-v4"></a>[Пакет SDK для Java v4](#tab/javav4)
 
-Пакет SDK для Java V4 (Maven com. Azure:: Azure-Cosmos)
+Пакет SDK для Java версии 4 (Maven com.azure::azure-cosmos)
 
 ```java
 CosmosAsyncContainer container;
@@ -215,8 +215,8 @@ async function createcontainerWithTTL(db: Database, containerDefinition: Contain
 
    * Откройте окно **Scale & Settings** (Параметры масштабирования).
    * В разделе **Параметры** найдите **Срок жизни**.
-   * Выберите **Включен (по умолчанию)** или **Включен** и задайте значение срока жизни. 
-   * Чтобы сохранить изменения, нажмите кнопку **Сохранить**.
+   * Выберите **вкл. (нет значения по умолчанию)** **, а затем** установите значение TTL. 
+   * Щелкните **Сохранить** , чтобы сохранить изменения.
 
 5. Затем перейдите к элементу, для которого нужно установить срок жизни, добавьте свойство `ttl` и выберите **Обновить**. 
 
@@ -272,7 +272,7 @@ const itemDefinition = {
 
 # <a name="java-sdk-v4"></a>[Пакет SDK для Java v4](#tab/javav4)
 
-Пакет SDK для Java V4 (Maven com. Azure:: Azure-Cosmos)
+Пакет SDK для Java версии 4 (Maven com.azure::azure-cosmos)
 
 ```java
 // Include a property that serializes to "ttl" in JSON
@@ -351,9 +351,9 @@ SalesOrder salesOrder = new SalesOrder(
 
 ### <a name="net-sdk"></a><a id="dotnet-extend-ttl-item"></a>ПАКЕТ SDK ДЛЯ .NET
 
-# <a name="net-sdk-v2"></a>[ПАКЕТ SDK ДЛЯ .NET ВЕРСИИ 2](#tab/dotnetv2)
+# <a name="net-sdk-v2"></a>[Пакет SDK для .NET версии 2](#tab/dotnetv2)
 
-Пакет SDK для .NET версии 2 (Microsoft. Azure. DocumentDB)
+Пакет SDK для .NET версии 2 (Microsoft.Azure.DocУментдб)
 
 ```csharp
 // This examples leverages the Sales Order class above.
@@ -367,7 +367,7 @@ readDocument.ttl = 60 * 30 * 30; // update time to live
 response = await client.ReplaceDocumentAsync(readDocument);
 ```
 
-# <a name="net-sdk-v3"></a>[ПАКЕТ SDK ДЛЯ .NET V3](#tab/dotnetv3)
+# <a name="net-sdk-v3"></a>[Пакет SDK для .NET версии 3](#tab/dotnetv3)
 
 Пакет SDK для .NET v3 (Microsoft. Azure. Cosmos)
 
@@ -385,7 +385,7 @@ await client.GetContainer("database", "container").ReplaceItemAsync(itemResponse
 
 # <a name="java-sdk-v4"></a>[Пакет SDK для Java v4](#tab/javav4)
 
-Пакет SDK для Java V4 (Maven com. Azure:: Azure-Cosmos)
+Пакет SDK для Java версии 4 (Maven com.azure::azure-cosmos)
 
 ```java
 // This examples leverages the Sales Order class above.
@@ -425,9 +425,9 @@ container.getItem("SO05", new PartitionKey("CO18009186470")).read()
 
 ### <a name="net-sdk"></a><a id="dotnet-turn-off-ttl-item"></a>ПАКЕТ SDK ДЛЯ .NET
 
-# <a name="net-sdk-v2"></a>[ПАКЕТ SDK ДЛЯ .NET ВЕРСИИ 2](#tab/dotnetv2)
+# <a name="net-sdk-v2"></a>[Пакет SDK для .NET версии 2](#tab/dotnetv2)
 
-Пакет SDK для .NET версии 2 (Microsoft. Azure. DocumentDB)
+Пакет SDK для .NET версии 2 (Microsoft.Azure.DocУментдб)
 
 ```csharp
 // This examples leverages the Sales Order class above.
@@ -442,7 +442,7 @@ readDocument.ttl = null; // inherit the default TTL of the container
 response = await client.ReplaceDocumentAsync(readDocument);
 ```
 
-# <a name="net-sdk-v3"></a>[ПАКЕТ SDK ДЛЯ .NET V3](#tab/dotnetv3)
+# <a name="net-sdk-v3"></a>[Пакет SDK для .NET версии 3](#tab/dotnetv3)
 
 Пакет SDK для .NET v3 (Microsoft. Azure. Cosmos)
 
@@ -460,7 +460,7 @@ await client.GetContainer("database", "container").ReplaceItemAsync(itemResponse
 
 # <a name="java-sdk-v4"></a>[Пакет SDK для Java v4](#tab/javav4)
 
-Пакет SDK для Java V4 (Maven com. Azure:: Azure-Cosmos)
+Пакет SDK для Java версии 4 (Maven com.azure::azure-cosmos)
 
 ```java
 // This examples leverages the Sales Order class above.
@@ -500,9 +500,9 @@ container.getItem("SO05", new PartitionKey("CO18009186470")).read()
 
 ### <a name="net-sdk"></a><a id="dotnet-disable-ttl"></a>ПАКЕТ SDK ДЛЯ .NET
 
-# <a name="net-sdk-v2"></a>[ПАКЕТ SDK ДЛЯ .NET ВЕРСИИ 2](#tab/dotnetv2)
+# <a name="net-sdk-v2"></a>[Пакет SDK для .NET версии 2](#tab/dotnetv2)
 
-Пакет SDK для .NET версии 2 (Microsoft. Azure. DocumentDB)
+Пакет SDK для .NET версии 2 (Microsoft.Azure.DocУментдб)
 
 ```csharp
 // Get the container, update DefaultTimeToLive to null
@@ -512,7 +512,7 @@ collection.DefaultTimeToLive = null;
 await client.ReplaceDocumentCollectionAsync(collection);
 ```
 
-# <a name="net-sdk-v3"></a>[ПАКЕТ SDK ДЛЯ .NET V3](#tab/dotnetv3)
+# <a name="net-sdk-v3"></a>[Пакет SDK для .NET версии 3](#tab/dotnetv3)
 
 Пакет SDK для .NET v3 (Microsoft. Azure. Cosmos)
 
@@ -529,7 +529,7 @@ await client.GetContainer("database", "container").ReplaceContainerAsync(contain
 
 # <a name="java-sdk-v4"></a>[Пакет SDK для Java v4](#tab/javav4)
 
-Пакет SDK для Java V4 (Maven com. Azure:: Azure-Cosmos)
+Пакет SDK для Java версии 4 (Maven com.azure::azure-cosmos)
 
 ```java
 CosmosContainerProperties containerProperties = new CosmosContainerProperties("myContainer", "/myPartitionKey");
@@ -555,7 +555,7 @@ container = database.createContainerIfNotExists(containerProperties, 400).block(
 ```
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о сроке жизни см. в следующей статье:
 

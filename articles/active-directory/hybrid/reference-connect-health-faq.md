@@ -17,10 +17,10 @@ ms.date: 07/18/2017
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f0c6484f46731e0ff2d16d00cb0038202511d193
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80331074"
 ---
 # <a name="azure-ad-connect-health-frequently-asked-questions"></a>Часто задаваемые вопросы об Azure AD Connect Health
@@ -37,9 +37,9 @@ ms.locfileid: "80331074"
 
 |Роль| Версия операционной системы|
 |--|--|
-|Службы федерации Active Directory (AD FS)| <ul> <li> Windows Server 2008 R2 </li><li> Windows Server 2012  </li> <li>Windows Server 2012 R2 </li> <li> Windows Server 2016  </li> </ul>|
-|Azure AD Connect | Версия 1.0.9125 или более поздняя|
-|Доменные службы Active Directory (AD DS)| <ul> <li> Windows Server 2008 R2 </li><li> Windows Server 2012  </li> <li>Windows Server 2012 R2 </li> <li> Windows Server 2016  </li> </ul>|
+|Службы федерации Active Directory (AD FS)| <ul> <li> Windows Server 2008 R2 </li><li> Windows Server 2012  </li> <li>Windows Server 2012 R2 </li> <li> Windows Server 2016  </li> </ul>|
+|Azure AD Connect. | Версия 1.0.9125 или более поздняя|
+|Доменные службы Active Directory (AD DS)| <ul> <li> Windows Server 2008 R2 </li><li> Windows Server 2012  </li> <li>Windows Server 2012 R2 </li> <li> Windows Server 2016  </li> </ul>|
 
 Обратите внимание, что функции, предоставляемые службой, могут отличаться в зависимости от роли и операционной системы. Другими словами, не для всех версий операционной системы могут быть доступны все возможности. Ознакомьтесь с описанием функций, чтобы получить дополнительные сведения.
 
@@ -107,7 +107,7 @@ Azure AD Connect Health не поддерживается в облаке для
 
 Если необходимо настроить прокси-сервер во время регистрации агента, следует заранее изменить параметры прокси-сервера для Internet Explorer.
 
-1. Откройте Internet Explorer > **Параметры** > **Интернет свойства** > **подключения** > параметры**локальной сети**.
+1. Откройте Internet Explorer > **Параметры**  >  **Интернет свойства**  >  **подключения**параметры  >  **локальной сети**.
 2. Установите флажок **использовать прокси-сервер для локальной сети**.
 3. Выберите **Дополнительно**, если для HTTP и HTTPS используются различные порты прокси-сервера.
 

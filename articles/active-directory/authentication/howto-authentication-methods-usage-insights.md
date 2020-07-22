@@ -12,10 +12,9 @@ manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 053b052abf6f23c385dc7447639aa40b6c2c58a1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81680182"
 ---
 # <a name="authentication-methods-usage--insights-preview"></a>Использование методов проверки подлинности & Insights (Предварительная версия)
@@ -38,12 +37,12 @@ ms.locfileid: "81680182"
 Для доступа к использованию и анализу методов проверки подлинности:
 
 1. Перейдите на [портал Azure](https://portal.azure.com).
-1. Перейдите к **Azure Active Directory** > использование**сброса** > пароля **& аналитика**.
+1. Перейдите к **Azure Active Directory**  >  использование**сброса пароля**  >  **& аналитика**.
 1. Из просмотра **регистрации** или **использования** можно открыть предварительно отфильтрованные отчеты для фильтрации в соответствии с вашими потребностями.
 
 ![Общие сведения об использовании & Insights](./media/howto-authentication-methods-usage-insights/usage-insights-overview.png)
 
-Чтобы получить доступ к & подробным сведениям об использовании [https://portal.azure.com/#blade/Microsoft_AAD_IAM/AuthMethodsOverviewBlade](https://portal.azure.com/#blade/Microsoft_AAD_IAM/AuthMethodsOverviewBlade), перейдите по адресу. По этой ссылке вы сможете открыть обзор регистрации.
+Чтобы получить доступ к & подробным сведениям об использовании, перейдите по адресу [https://portal.azure.com/#blade/Microsoft_AAD_IAM/AuthMethodsOverviewBlade](https://portal.azure.com/#blade/Microsoft_AAD_IAM/AuthMethodsOverviewBlade) . По этой ссылке вы сможете открыть обзор регистрации.
 
 Плитки зарегистрированные пользователи, пользователи с поддержкой и пользователи могут отображать следующие данные регистрации для пользователей:
 
@@ -65,7 +64,7 @@ ms.locfileid: "81680182"
 
 В отчете сведения о регистрации отображаются следующие сведения для каждого пользователя:
 
-- Имя
+- name
 - Имя пользователя
 - Состояние регистрации (все, зарегистрировано, не зарегистрировано)
 - Включенное состояние (все, включено, не включено)
@@ -80,7 +79,7 @@ ms.locfileid: "81680182"
 
 В отчете о сбросе отображаются события регистрации и сброса за последние 30 дней, включая:
 
-- Имя
+- name
 - Имя пользователя
 - Функция (все, регистрация, сброс)
 - Метод проверки подлинности (уведомление приложения, код приложения, телефонный звонок, вызов Office, SMS, электронная почта, контрольные вопросы)

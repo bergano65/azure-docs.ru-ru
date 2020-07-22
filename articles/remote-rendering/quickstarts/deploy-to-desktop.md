@@ -5,12 +5,12 @@ author: christophermanthei
 ms.author: chmant
 ms.date: 03/20/2020
 ms.topic: quickstart
-ms.openlocfilehash: 95993a54d321c9581d35f12b56d60e4ea052e505
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: dc566d2702fb24ef551e4900bed7b828d2597383
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81415724"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85557071"
 ---
 # <a name="quickstart-deploy-unity-sample-to-desktop"></a>Краткое руководство. Развертывание примера Unity на рабочем столе
 
@@ -38,7 +38,7 @@ ms.locfileid: "81415724"
 1. Слева выберите **Player** (Проигрыватель).
 1. Перейдите на вкладку с **параметрами универсальной платформы Windows**.
 1. Разверните меню **XR Settings** (Параметры XR).
-1. Отключите параметр **Virtual Reality Supported** (Поддержка виртуальной реальности).
+1. Снимите флажок **Virtual Reality Supported** (Поддержка виртуальной реальности).
     ![Параметры проигрывателя](./media/unity-disable-xr.png)
 1. Над меню *XR Settings* (Параметры XR) разверните меню **Publishing Settings** (Параметры публикации).
 1. В разделе **Supported Device Families** (Поддерживаемые семейства устройств) должен быть установлен флажок **Desktop** (Компьютер).
@@ -46,7 +46,7 @@ ms.locfileid: "81415724"
 ## <a name="build-the-sample-project"></a>Сборка примера проекта
 
 1. Откройте *File > Build Settings* (Файл > Параметры сборки).
-1. Для параметра *Platform* (Платформа) выберите **Universal Windows Platform** (Универсальная платформа Windows).
+1. Для параметра *Platform* (Платформа) укажите **Universal Windows Platform** (Универсальная платформа Windows). Поддерживается также вариант **PC Standalone** (Автономный компьютер), но здесь мы его не используем (см. [ограничения платформы](../reference/limits.md#platform-limitations)).
 1. Для параметра *Target Device* (Целевое устройство) выберите **PC** (ПК).
 1. Для параметра *Architecture* (Архитектура) выберите **x86**.
 1. Для параметра *Build Type* (Тип сборки) выберите **D3D Project** (Проект D3D).
@@ -55,12 +55,12 @@ ms.locfileid: "81415724"
 1. При нажатии **Build** (Сборка) или Build And Run (Сборка и запуск) вам будет предложено выбрать папку, в которой будет храниться решение.
 1. Откройте созданный файл **QuickStart.sln** в Visual Studio.
 1. Измените конфигурацию на **Выпуск** и **x86**.
-1. Для отладчика выберите режим **Локальный компьютер**.
+1. Для отладчика выберите режим **Local Machine** (Локальный компьютер).
   ![Конфигурация решения](./media/unity-deploy-config-pc.png)
 1. Выполните сборку решения (клавиша F7).
 
 > [!WARNING]
-> Необходимо выбрать **x86**, так как архитектура **x64** сейчас не поддерживается (см.[ограничения платформы](../reference/limits.md#platform-limitations)).
+> Необходимо выбрать **x86**, так как архитектура **UWP/x64** сейчас не поддерживается (см.[ограничения платформы](../reference/limits.md#platform-limitations)).
 
 ## <a name="launch-the-sample-project"></a>Запуск примера проекта
 

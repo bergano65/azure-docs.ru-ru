@@ -9,10 +9,9 @@ ms.topic: troubleshooting
 ms.date: 01/30/2020
 ms.author: jlian
 ms.openlocfilehash: 66461b23432a3e8b7ae4ad1fdc078fba9ca05646
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76960767"
 ---
 # <a name="412002-devicemessagelocklost"></a>412002 DeviceMessageLockLost
@@ -23,9 +22,9 @@ ms.locfileid: "76960767"
 
 При попытке отправить сообщение из облака на устройство происходит сбой запроса с ошибкой **412002 девицемессажелокклост**.
 
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 
-Когда устройство получает сообщение, переданное из облака на устройство, из очереди (например, с помощью [`ReceiveAsync()`](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.deviceclient.receiveasync?view=azure-dotnet)), сообщение блокируется центром Интернета вещей на время ожидания блокировки, равное одной минуте. Если устройство пытается завершить сообщение по истечении времени ожидания блокировки, центр Интернета вещей создает это исключение.
+Когда устройство получает сообщение, переданное из облака на устройство, из очереди (например, с помощью [`ReceiveAsync()`](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.deviceclient.receiveasync?view=azure-dotnet) ), сообщение блокируется центром Интернета вещей на время ожидания блокировки, равное одной минуте. Если устройство пытается завершить сообщение по истечении времени ожидания блокировки, центр Интернета вещей создает это исключение.
 
 ## <a name="solution"></a>Решение
 

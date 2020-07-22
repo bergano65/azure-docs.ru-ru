@@ -5,13 +5,13 @@ ms.subservice: logs
 ms.topic: conceptual
 author: mgoedtel
 ms.author: magoedte
-ms.date: 07/22/2019
-ms.openlocfilehash: 171f897f6e110e8f759281c139addab477ecede3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 07/06/2020
+ms.openlocfilehash: 14fa6859a16dc173e75091983abee717bf813220
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77664700"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86499027"
 ---
 # <a name="container-monitoring-solution-in-azure-monitor"></a>Решение для мониторинга контейнеров в Azure Monitor
 
@@ -26,8 +26,8 @@ ms.locfileid: "77664700"
 - Docker Swarm
 - DC/OS
 - Kubernetes
-- Service Fabric.
-- Red Hat OpenShift.
+- Service Fabric
+- Red Hat OpenShift
 
 Если вы развернули контейнеры в [Azure Service Fabric](../../service-fabric/service-fabric-overview.md), рекомендуется включить [решение Service Fabric](../../service-fabric/service-fabric-diagnostics-oms-setup.md) и это решение, включив мониторинг событий кластера. Перед включением решения Service Fabric ознакомьтесь [с разрешениями Service Fabric](../../service-fabric/service-fabric-diagnostics-event-analysis-oms.md) , чтобы понять, что оно предоставляет и как его использовать.
 
@@ -45,7 +45,7 @@ ms.locfileid: "77664700"
 
 В следующей таблице показано, как система управления DOCKER и отслеживание операционной системы поддерживают инвентаризацию контейнеров, производительность и журналы с Azure Monitor.   
 
-| | ACS | Linux | Windows | Контейнер<br>Список | Образ —<br>Список | Узел<br>Список | Контейнер<br>Тестирование | Контейнер<br>событие | событие<br>Журнал | Контейнер<br>Журнал |
+|Оркестрации DOCKER | ACS | Linux | Windows | Контейнер<br>Inventory (Товары) | Образ —<br>Inventory (Товары) | Узел<br>Inventory (Товары) | Контейнер<br>Производительность | Контейнер<br>Событие | Событие<br>Журнал | Контейнер<br>Журнал |
 |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
 | Kubernetes | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; | &#8226; |
 | Mesosphere<br>DC/OS | &#8226; | &#8226; | | &#8226; | &#8226; | &#8226; | &#8226;| &#8226; | &#8226; | &#8226; |
@@ -65,7 +65,7 @@ ms.locfileid: "77664700"
 - Ubuntu 14.04 LTS и 16.04 LTS
 - CoreOS (стабильный выпуск);
 - Amazon Linux 2016.09.0;
-- openSUSE 13.2
+- openSUSE 13.2
 - openSUSE LEAP 42.2
 - CentOS 7.2 и 7.3
 - SLES 12
@@ -105,18 +105,18 @@ ms.locfileid: "77664700"
        - Ознакомьтесь с разделом [Настройка агента Log Analytics в Linux для Kubernetes](#configure-a-log-analytics-linux-agent-for-kubernetes).
        - См. дополнительные сведения о [настройке агента Log Analytics в Windows для Kubernetes](#configure-a-log-analytics-windows-agent-for-kubernetes).
        - Ознакомьтесь с разделом "Использование Helm для развертывания агента Log Analytics в Kubernetes для Linux".
-     - Если у вас есть кластер DC/OS службы контейнеров Azure, дополнительные сведения см. в статье [мониторинг кластера DC/OS службы контейнеров Azure с Azure Monitor](../../container-service/dcos-swarm/container-service-monitoring-oms.md).
+     - Если у вас есть кластер DC/OS службы контейнеров Azure, дополнительные сведения см. в статье [мониторинг кластера DC/OS службы контейнеров Azure с Azure Monitor](/previous-versions/azure/container-service/dcos-swarm/container-service-monitoring-oms).
      - При наличии среды режима Docker Swarm ознакомьтесь с разделом "Настройка агента Log Analytics для Docker Swarm".
      - При наличии кластера Service Fabric см. Дополнительные сведения в [контейнерах Monitor с Azure Monitor](../../service-fabric/service-fabric-diagnostics-oms-containers.md).
 
-Дополнительные сведения о том, как установить и настроить модули Docker на компьютерах под управлением Windows, см. в [этой статье](https://docs.microsoft.com/virtualization/windowscontainers/manage-docker/configure-docker-daemon).
+Дополнительные сведения о том, как установить и настроить модули Docker на компьютерах под управлением Windows, см. в [этой статье](/virtualization/windowscontainers/manage-docker/configure-docker-daemon).
 
 > [!IMPORTANT]
 > Docker необходимо запустить **перед** установкой [агента Log Analytics для Linux](../../azure-monitor/learn/quick-collect-linux-computer.md) на узлах контейнера. Если вы уже установили агент перед установкой Docker, то необходимо переустановить агент Log Analytics для Linux. Дополнительные сведения о Docker см. на [веб-сайте Docker](https://www.docker.com).
 
 ### <a name="install-and-configure-linux-container-hosts"></a>Установка и настройка узлов контейнера Linux
 
-После установки Docker используйте приведенные ниже параметры узла контейнера, чтобы настроить агент для использования с Docker. Сначала необходимо получить идентификатор и ключ рабочей области Log Analytics, которые можно найти на портале Azure. В рабочей области щелкните **быстрое начало** > **Компьютеры** , чтобы просмотреть **идентификатор рабочей области** и **первичный ключ**.  Скопируйте их и вставьте в любой удобный для вас редактор.
+После установки Docker используйте приведенные ниже параметры узла контейнера, чтобы настроить агент для использования с Docker. Сначала необходимо получить идентификатор и ключ рабочей области Log Analytics, которые можно найти на портале Azure. В рабочей области щелкните **быстрое начало**  >  **Компьютеры** , чтобы просмотреть **идентификатор рабочей области** и **первичный ключ**.  Скопируйте их и вставьте в любой удобный для вас редактор.
 
 **Для всех узлов контейнера Linux, за исключением CoreOS:**
 
@@ -505,7 +505,7 @@ dockerd --register-service -H npipe:// -H 0.0.0.0:2375
 Start-Service docker
 ```
 
-Дополнительные сведения о настройке управляющей программы Docker, используемой в контейнерах Windows, см. в статье [Подсистема Docker в Windows](https://docs.microsoft.com/virtualization/windowscontainers/manage-docker/configure-docker-daemon).
+Дополнительные сведения о настройке управляющей программы Docker, используемой в контейнерах Windows, см. в статье [Подсистема Docker в Windows](/virtualization/windowscontainers/manage-docker/configure-docker-daemon).
 
 #### <a name="install-windows-agents"></a>Установка агентов Windows
 
@@ -618,7 +618,6 @@ Log Analytics добавляет к контейнеру пометку **Сбо
 - **KubeEvents_CL** — этот тип используется для просмотра событий Kubernetes.
 - **KubePodInventory_CL** — этот тип используется, если необходимо получить сведения об иерархии кластера.
 
-
 ### <a name="to-query-logs-for-container-data"></a>Запрос журналов для данных контейнера
 
 * Выберите образ, в котором недавно произошел сбой, и найдите журнал ошибок для этого образа. Сначала найдите имя контейнера, в котором выполняется этот образ, выполнив поиск в журнале **ContainerInventory**. Например, выполните поиск по запросу `ContainerInventory | where Image == "ubuntu" and ContainerState == "Failed"`  
@@ -628,7 +627,7 @@ Log Analytics добавляет к контейнеру пометку **Сбо
 
 ## <a name="example-log-queries"></a>Примеры запросов к журналам
 
-При создании запросов часто бывает полезно начать с одного-двух примеров, внося затем в них изменения в соответствии с конкретной средой. Сначала можно поэкспериментировать с областью **Sample Queries** (Примеры запросов), чтобы научиться создавать более сложные запросы.
+При создании запросов часто бывает полезно начать с одного-двух примеров, внося затем в них изменения в соответствии с конкретной средой. В качестве отправной точки можно поэкспериментировать с областью **примеры запросов** в правой части страницы решения, чтобы упростить создание более сложных запросов.
 
 ![Запросы по контейнерам](./media/containers/containers-queries.png)
 
@@ -638,6 +637,6 @@ Log Analytics добавляет к контейнеру пометку **Сбо
 
 Создав запрос, который вы считаете полезным, сохраните его, щелкнув **Избранное** в верхней части страницы поиска по журналам. Позднее вы сможете легко открыть его на странице **Моя панель мониторинга**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Журналы запросов](../log-query/log-query-overview.md) для просмотра подробных записей данных контейнера.

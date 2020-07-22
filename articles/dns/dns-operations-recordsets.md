@@ -4,27 +4,25 @@ description: Управляйте наборами записей и запис�
 services: dns
 documentationcenter: na
 author: rohinkoul
-manager: timlt
-ms.assetid: 7136a373-0682-471c-9c28-9e00d2add9c2
 ms.service: dns
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.custom: H1Hack27Feb2017
 ms.workload: infrastructure-services
 ms.date: 12/21/2016
 ms.author: rohink
-ms.openlocfilehash: b9244d9b2bdc9cb20195bbc103c0b1eb48a9de63
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 07776e0361b8221cf3aca9f06c66478aa6127f53
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76932531"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84701772"
 ---
 # <a name="manage-dns-records-and-recordsets-in-azure-dns-using-azure-powershell"></a>Управление записями и наборами записей DNS в службе DNS Azure с помощью Azure PowerShell
 
 > [!div class="op_single_selector"]
-> * [Портал Azure](dns-operations-recordsets-portal.md)
+> * [портале Azure](dns-operations-recordsets-portal.md)
 > * [Классический интерфейс командной строки Azure](dns-operations-recordsets-cli-nodejs.md)
 > * [Azure CLI](dns-operations-recordsets-cli.md)
 > * [PowerShell](dns-operations-recordsets.md)
@@ -392,7 +390,7 @@ Get-AzDnsRecordSet -Name www -RecordType A -ZoneName "contoso.com" -ResourceGrou
 
 Дополнительные сведения об элементах `-Confirm` и `$ConfirmPreference` см. в статье о [привилегированных переменных](/powershell/module/microsoft.powershell.core/about/about_preference_variables).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 См. дополнительные сведения о [зонах и записях в Azure DNS](dns-zones-records.md).
 <br>

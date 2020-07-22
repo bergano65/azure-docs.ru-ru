@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/08/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d0b407f29e4dda532ef12019f8d0a2a273832987
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: a62bdc0f23f6769dca9914381a81674e470e695d
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "67595242"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86167782"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-teamworkcom"></a>Руководство по интеграции Azure Active Directory с Teamwork.com
 
@@ -110,10 +110,8 @@ ms.locfileid: "67595242"
 
     b. В текстовое поле **Идентификатор (сущности)** введите URL-адрес:
 
-    | | |
-    |-|-|
-    | `https://teamwork.com/saml`|
-    | `https://eu.teamwork.com/saml`|
+    - `https://teamwork.com/saml`
+    - `https://eu.teamwork.com/saml`
 
     > [!NOTE]
     > Значение URL-адреса входа приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, обратитесь к [группе поддержки Teamwork.com](mailto:support@teamwork.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

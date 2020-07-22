@@ -5,13 +5,13 @@ ms.service: stream-analytics
 author: su-jie
 ms.author: sujie
 ms.date: 4/11/2020
-ms.topic: conceptual
-ms.openlocfilehash: 25ece3174cd65df9c665888d913cf6b9029904b1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.topic: how-to
+ms.openlocfilehash: df6e7435d072cc88e82f3dc9a323a5b21145c432
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81394401"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86037262"
 ---
 # <a name="intellisense-in-azure-stream-analytics-tools-for-visual-studio-code"></a>IntelliSense в средствах Azure Stream Analytics для Visual Studio Code
 
@@ -23,7 +23,7 @@ ms.locfileid: "81394401"
 
 Функции IntelliSense в Stream Analytics средствах для VS Code на основе языковой службы. Языковая служба анализирует исходный код и предоставляет интеллектуальные завершения кода на основе семантики языка. Если языковая служба знает о возможных завершениях выполнения, при вводе появляется предложение IntelliSense. Если продолжить ввод, список членов, таких как переменные и методы, фильтруется, добавляя только те элементы, которые содержат введенные символы. При нажатии клавиш `Tab` или `Enter` IntelliSense вставляет выбранный элемент.
 
-Вы можете активировать IntelliSense в любом окне редактора, введя символ триггера, например символ `.`точки.
+Вы можете активировать IntelliSense в любом окне редактора, введя символ триггера, например символ точки `.` .
 
 ![Автозавершение IntelliSense](./media/vs-code-intellisense/auto-completion.gif)
 
@@ -34,13 +34,12 @@ ms.locfileid: "81394401"
 
 Stream Analytics средства для VS Code IntelliSense предлагает различные типы завершения, включая предложения языка сервера, фрагменты кода и простые текстовые автозавершения на основе слов.
 
-|       |         |       |
-| ----- | ------- | ----- |
-| Ключевые слова | `keyword`
+|Completion     |  Type       |
+| ----- | ------- |
+| Keywords | `keyword`
 | Функции | `build-in function`, `user defined function`  |
 | Имя набора данных| `input`, `output`, `intermediate result set`|
 | Имя столбца набора данных|`input`, `intermediate result set`|
-|
 
 #### <a name="name-completion"></a>Завершение имени
 

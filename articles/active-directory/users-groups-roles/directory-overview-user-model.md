@@ -1,12 +1,12 @@
 ---
-title: Общие сведения о пользователях, группах, лицензировании и ролях — Azure AD | Документация Майкрософт
+title: Пользователи, группы, лицензирование и роли в Azure Active Directory
 description: Связь между пользователями и назначенными лицензиями, ролями администратора, членством в группе в Azure Active Directory
 keywords: ''
 author: curtand
 manager: daveba
 ms.author: curtand
 ms.reviewer: vincesm
-ms.date: 11/08/2019
+ms.date: 06/16/2020
 ms.topic: overview
 ms.service: active-directory
 ms.subservice: users-groups-roles
@@ -14,14 +14,14 @@ ms.workload: identity
 services: active-directory
 ms.custom: it-pro;seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8052bb44df6d29e17304763051fa2099009b9701
-ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
+ms.openlocfilehash: 89c96da30411705bf33b1c63f79a9beef11962a1
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82583018"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86223828"
 ---
-# <a name="users-groups-licensing-and-roles-for-large-organizations"></a>Пользователи, группы, лицензирование и роли для крупных организаций
+# <a name="what-is-enterprise-user-management"></a>Управление корпоративными пользователями
 
 В этой статье рассматривается роль администратора Azure AD для связи между важнейшими задачами [управления удостоверениями](/azure/active-directory/fundamentals/identity-fundamentals?context=azure/active-directory/users-groups-roles/context/ugr-context) для пользователей с точки зрения их групп, лицензий, развернутых корпоративных приложений и ролей администратора. По мере роста организации вы можете использовать группы Azure AD и роли администратора, чтобы:
 

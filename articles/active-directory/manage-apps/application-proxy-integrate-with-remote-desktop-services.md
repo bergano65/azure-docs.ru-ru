@@ -3,25 +3,24 @@ title: Публикация удаленного рабочего стола с 
 description: Основные сведения о соединителях прокси приложения Azure AD.
 services: active-directory
 documentationcenter: ''
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/23/2019
-ms.author: mimart
+ms.author: kenwith
 ms.custom: it-pro
 ms.reviewer: harshja
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d6ca64e2de5734c567173fc735776074f4c87fbc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 34f3dcd607a7417932912528167a1120dbfd9b4f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "67108465"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84764525"
 ---
 # <a name="publish-remote-desktop-with-azure-ad-application-proxy"></a>Публикация удаленного рабочего стола с помощью прокси приложения Azure AD
 
@@ -44,7 +43,7 @@ ms.locfileid: "67108465"
 >[!TIP]
 >Если вы еще не разворачивали RDS или хотите получить дополнительные сведения, прежде чем начать, узнайте, как [незаметно для пользователя развернуть RDS с помощью Azure Resource Manager и Azure Marketplace](https://technet.microsoft.com/windows-server-docs/compute/remote-desktop-services/rds-in-azure).
 
-## <a name="requirements"></a>Требования
+## <a name="requirements"></a>Requirements (Требования)
 
 - Используйте клиент, отличный от веб-клиента удаленного рабочего стола, так как он не поддерживает Application Proxy.
 
@@ -75,7 +74,7 @@ ms.locfileid: "67108465"
 3. Для параметра единого входа для приложения оставьте значение **Единый вход Azure AD отключен**. Пользователи будут один раз проходить аутентификацию в Azure AD и еще один раз — на веб-сайте удаленных рабочих столов, но смогут использовать единый вход на шлюз удаленных рабочих столов.
 4. Выберите **Azure Active Directory**, а затем — **Регистрация приложений**. Выберите приложение из списка.
 5. В разделе **Управление**выберите **фирменная символика**.
-6. Обновите поле **URL-адрес домашней страницы** , чтобы указать конечную точку веб `https://\<rdhost\>.com/RDWeb`-сайта удаленных рабочих столов (например,).
+6. Обновите поле **URL-адрес домашней страницы** , чтобы указать конечную точку веб-сайта удаленных рабочих столов (например `https://\<rdhost\>.com/RDWeb` ,).
 
 ### <a name="direct-rds-traffic-to-application-proxy"></a>Направление трафика RDS в прокси приложения
 
@@ -91,7 +90,7 @@ ms.locfileid: "67108465"
 
    ![Экран свойств развертывания RDS](./media/application-proxy-integrate-with-remote-desktop-services/rds-deployment-properties.png)
 
-8. Выполните эту команду для каждой коллекции. Замените * \<йоурколлектионнаме\> * *и \<проксифронтендурл\> * собственными сведениями. Эта команда включает единый вход между веб-сайтом удаленных рабочих столов и шлюзом удаленных рабочих столов и оптимизирует производительность.
+8. Выполните эту команду для каждой коллекции. Замените *\<yourcollectionname\>* и *\<proxyfrontendurl\>* собственными сведениями. Эта команда включает единый вход между веб-сайтом удаленных рабочих столов и шлюзом удаленных рабочих столов и оптимизирует производительность.
 
    ```
    Set-RDSessionCollectionConfiguration -CollectionName "<yourcollectionname>" -CustomRdpProperty "pre-authentication server address:s:<proxyfrontendurl>`nrequire pre-authentication:i:1"
@@ -135,7 +134,7 @@ ms.locfileid: "67108465"
 1. В разделе [Публикация конечной точки узла удаленных рабочих столов](#publish-the-rd-host-endpoint) (шаг 1) в качестве метода предварительной аутентификации выберите **Сквозной режим**.
 2. В разделе [Направление трафика RDS в прокси приложения](#direct-rds-traffic-to-application-proxy) полностью пропустите шаг 8.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Настройка удаленного доступа к SharePoint с помощью прокси приложения Azure AD](application-proxy-integrate-with-sharepoint-server.md)  
 [Вопросы безопасности при удаленном доступе к приложениям через прокси приложения Azure AD](application-proxy-security.md)

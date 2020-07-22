@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 08/24/2017
 ms.author: briz
 ms.openlocfilehash: bdc55af23568b5785a831e81f352400c728c902e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "60400988"
 ---
 # <a name="overview-of-device-management-with-iot-hub"></a>Общие сведения об управлении устройствами с помощью Центра Интернета вещей
@@ -68,7 +68,7 @@ ms.locfileid: "60400988"
     * [Массовое управление удостоверениями устройств](iot-hub-bulk-identity-mgmt.md)
     * [Использование свойств двойникаа устройства](tutorial-device-twins.md)
     * [Рекомендации по настройке устройств в рамках решения Интернета вещей](iot-hub-configuration-best-practices.md)
-    * [Служба подготовки устройств к добавлению в Центр Интернета вещей Azure](https://azure.microsoft.com/documentation/services/iot-dps)
+    * [Служба подготовки устройств для Центра Интернета вещей Azure](https://azure.microsoft.com/documentation/services/iot-dps)
 
 * **Настройка.** Этот этап позволяет упростить массовое изменение конфигурации и обновление встроенного ПО на устройствах с сохранением работоспособности и безопасности. Эти операции управления устройствами выполняются в пакетном режиме с использованием требуемых свойств или прямых методов и трансляции заданий.
   
@@ -115,7 +115,7 @@ ms.locfileid: "60400988"
   
     ![Рисунок шаблона отчетов о ходе выполнения и состоянии управления устройства](./media/iot-hub-device-management-overview/report-progress-pattern.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 С помощью возможностей, шаблонов и библиотек кода, которые предоставляет Центр Интернета вещей для управления устройствами, можно создавать приложения Интернета вещей, отвечающие требованиям корпоративного оператора устройств Интернета вещей на каждом этапе жизненного цикла устройства.
 

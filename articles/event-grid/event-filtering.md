@@ -1,18 +1,14 @@
 ---
 title: Фильтрация событий для службы "Сетка событий Azure"
 description: В статье описывается, как фильтровать события при создании подписки на службу "Сетка событий Azure".
-services: event-grid
-author: spelluru
-ms.service: event-grid
 ms.topic: conceptual
-ms.date: 04/28/2020
-ms.author: spelluru
-ms.openlocfilehash: 0f503b21d5a7d0fdfbee79354c198775789c0b91
-ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
+ms.date: 07/07/2020
+ms.openlocfilehash: 837209d4197c271598155776b8d171a705e1f454
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82888781"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86120098"
 ---
 # <a name="understand-event-filtering-for-event-grid-subscriptions"></a>Общие сведения о фильтрации событий для подписок на службу "Сетка событий Azure"
 
@@ -121,7 +117,7 @@ ms.locfileid: "82888781"
 
 Все сравнения строк **не** учитывают регистр.
 
-### <a name="key"></a>Key
+### <a name="key"></a>Ключ
 
 Для событий в схеме "Сетка событий" используются следующие значения для ключа:
 
@@ -148,17 +144,17 @@ ms.locfileid: "82888781"
 
 * number
 * строка
-* boolean
+* Логическое
 * массиве
 
 ### <a name="limitations"></a>Ограничения
 
 Расширенная фильтрация имеет такие ограничения:
 
-* пять расширенных фильтров на каждую подписку сетки событий;
+* 5 дополнительных фильтров и 25 значений фильтров по всем подпискам на одну подписку на сетку событий
 * 512 знаков для значения строки;
 * пять значений для операторов **in** и **not in**;
-* Ключи с ** `.` символом (точкой)** . Пример: `http://schemas.microsoft.com/claims/authnclassreference` или `john.doe@contoso.com`. В настоящее время escape-символы в ключах не поддерживаются. 
+* Ключи с символом ** `.` (точкой)** . Пример: `http://schemas.microsoft.com/claims/authnclassreference` или `john.doe@contoso.com`. В настоящее время escape-символы в ключах не поддерживаются. 
 
 Один ключ можно использовать в нескольких фильтрах.
 

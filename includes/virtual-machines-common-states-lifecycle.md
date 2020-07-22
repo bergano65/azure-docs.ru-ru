@@ -9,10 +9,10 @@ ms.date: 08/09/2018
 ms.author: vashan, cynthn, rajsqr
 ms.custom: include file
 ms.openlocfilehash: 57f557a812ec5e4eea75b76ca1394ca360a85d30
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "67185226"
 ---
 Виртуальные машины Azure проходят различные состояния, которые могут быть отнесены к состояниям *подготовки* и состояниям *включения*. Цель этой статьи — описать эти состояния и показать, когда клиентам будет выставлен счет, например, за использование экземпляра. 
@@ -29,7 +29,7 @@ ms.locfileid: "67185226"
 <table>
 <tr>
 <th>
-Состояние
+Область
 </th>
 <th>
 Описание
@@ -210,7 +210,7 @@ ms.locfileid: "67185226"
 </tr>
 <tr>
 <td width="162">
-<p><b>Саму</b></p>
+<p><b>Удаление</b></p>
 </td>
 <td width="366">
 <code>"statuses": [<br>

@@ -7,10 +7,9 @@ ms.topic: conceptual
 ms.date: 05/17/2019
 ms.author: mjbrown
 ms.openlocfilehash: f8c98915ad3b682af00492acc7bc51672ec874a8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74870740"
 ---
 # <a name="scalar-expressions-in-azure-cosmos-db-sql-queries"></a>Скалярные выражения в запросах SQL Azure Cosmos DB
@@ -97,7 +96,7 @@ ms.locfileid: "74870740"
   
    Представляет значение указанного имени параметра. Имена параметров должны начинаться с одного символа \@.  
   
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Комментарии
   
   При вызове встроенной или определяемой пользователем скалярной функции необходимо определить все аргументы. Если любой из аргументов не определен, функция не будет вызвана, и значение не будет определено.  
   
@@ -141,6 +140,6 @@ ms.locfileid: "74870740"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Знакомство с Azure Cosmos DB](introduction.md)
+- [Знакомство со службой Azure Cosmos DB. API DocumentDB](introduction.md)
 - [Примеры .NET для Azure Cosmos DB](https://github.com/Azure/azure-cosmos-dotnet-v3)
 - [Вложенные запросы](sql-query-subquery.md)

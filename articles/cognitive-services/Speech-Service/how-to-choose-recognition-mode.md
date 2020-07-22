@@ -9,14 +9,14 @@ ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.author: dapine
+ms.author: trbye
 zone_pivot_groups: programming-languages-set-two-with-js
-ms.openlocfilehash: 0c0c57c27689da7df23285c9740665f811f71fd5
-ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
+ms.openlocfilehash: ed2c59a92f348812afac3e39719d3814f0720621
+ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82977572"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86023046"
 ---
 # <a name="choose-a-speech-recognition-mode"></a>Выбор режима распознавания речи
 
@@ -67,7 +67,7 @@ result = speech_recognizer.recognize_once()
 
 ::: zone pivot="programming-language-javascript"
 
-Дополнительные сведения об использовании `recognizeOnceAsync` функции см. в документации по [пакету SDK для распознавания речи JavaScript](https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/speechrecognizer?view=azure-node-latest#recognizeonceasync--e--speechrecognitionresult-----void---e--string-----void-).
+Дополнительные сведения об использовании `recognizeOnceAsync` функции см. в документации по [РЕЧЕВому пакету SDK для JavaScript](https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/speechrecognizer?view=azure-node-latest#recognizeonceasync--e--speechrecognitionresult-----void---e--string-----void-).
 
 ```JavaScript
 recognizer.recognizeOnceAsync((result)=>{}, (error)=>{}));
@@ -236,7 +236,7 @@ SpeechConfig.enable_dictation()
 
 ::: zone pivot="programming-language-javascript"
 
-Дополнительные сведения об использовании `enableDictation` функции см. в документации по [пакету SDK для распознавания речи JavaScript](https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/speechconfig?view=azure-node-latest#enabledictation--).
+Дополнительные сведения об использовании `enableDictation` функции см. в документации по [РЕЧЕВому пакету SDK для JavaScript](https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/speechconfig?view=azure-node-latest#enabledictation--).
 
 ```JavaScript
 // Enable diction
@@ -251,7 +251,7 @@ speechConfig.enableDictation();
 
 ::: zone-end
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Ознакомьтесь с дополнительными примерами пакета SDK для речи на сайте GitHub](https://aka.ms/csspeech/samples)

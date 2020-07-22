@@ -7,12 +7,12 @@ ms.date: 03/12/2020
 ms.service: key-vault
 ms.subservice: secrets
 ms.topic: quickstart
-ms.openlocfilehash: 355ca9b5a96367bbe84fb8abf998f13032dc004a
-ms.sourcegitcommit: 90d2d95f2ae972046b1cb13d9956d6668756a02e
+ms.openlocfilehash: 57832060fee9010f21eeb77723cf6058f169a4ee
+ms.sourcegitcommit: 398fecceba133d90aa8f6f1f2af58899f613d1e3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83402518"
+ms.lasthandoff: 06/21/2020
+ms.locfileid: "85125538"
 ---
 # <a name="quickstart-azure-key-vault-client-library-for-net-sdk-v4"></a>Краткое руководство. Использование клиентской библиотеки Azure Key Vault для .NET (пакет SDK версии 4)
 
@@ -97,12 +97,12 @@ New-AzKeyVault -Name <your-unique-keyvault-name> -ResourceGroupName myResourceGr
 
 Самый простой способ проверить подлинность облачного приложения NET — с помощью управляемых удостоверений. Дополнительные сведения см. в статье [Provide Key Vault authentication with a managed identity](../general/managed-identity.md) (Предоставление проверки подлинности Key Vault с помощью управляемого удостоверения). 
 
-Но для простоты с помощью этого краткого руководства создается консольное приложение .NET, для которого требуется использовать субъект-службу и политику управления доступом. Для участника службы требуется уникальное имя в формате http://&lt;уникальное_имя_субъекта-службы&gt;.
+Но для простоты с помощью этого краткого руководства создается консольное приложение .NET, для которого требуется использовать субъект-службу и политику управления доступом. Для субъекта-службы требуется уникальное имя в формате http://&lt;уникальное_имя_субъекта-службы&gt;.
 
 Создайте субъект-службу с помощью команды Azure CLI [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac):
 
 ```azurecli
-az ad sp create-for-rbac -n "http://&lt;my-unique-service-principle-name&gt;" --sdk-auth
+az ad sp create-for-rbac -n "http://&lt;my-unique-service-principal-name&gt;" --sdk-auth
 ```
 
 Эта операция возвращает ряд пар "ключ — значение". 
@@ -125,7 +125,7 @@ az ad sp create-for-rbac -n "http://&lt;my-unique-service-principle-name&gt;" --
 
 ```azurepowershell
 # Create a new service principal
-$spn = New-AzADServicePrincipal -DisplayName "http://&lt;my-unique-service-principle-name&gt;"
+$spn = New-AzADServicePrincipal -DisplayName "http://&lt;my-unique-service-principal-name&gt;"
 
 # Get the tenant ID and subscription ID of the service principal
 $tenantId = (Get-AzContext).Tenant.Id
@@ -200,7 +200,7 @@ KEY_VAULT_NAME=<your-key-vault-name>
 
 ### <a name="authenticate-and-create-a-client"></a>Аутентификация и создание клиента
 
-Аутентификация в хранилище ключей и создание клиента хранилища ключей зависят от переменных среды, приведенных на шаге [настройки переменные среды](#set-environmental-variables) выше. Имя хранилища ключей расширяется до универсального кода ресурса (URI) хранилища ключей в формате "https://\<имя_хранилища_ключей\>.vault.azure.net".
+Аутентификация в хранилище ключей и создание клиента хранилища ключей зависят от переменных среды, приведенных на шаге [настройки переменные среды](#set-environmental-variables) выше. Имя хранилища ключей расширяется до URI хранилища ключей в формате https://\<your-key-vault-name\>.vault.azure.net. Для проверки подлинности в хранилище ключей в следующем примере кода используется функция [DefaultAzureCredential()](/dotnet/api/azure.identity.defaultazurecredential?view=azure-dotnet), которая считывает переменные среды для получение маркера доступа. 
 
 [!code-csharp[Directives](~/samples-key-vault-dotnet-quickstart/key-vault-console-app/Program.cs?name=authenticate)]
 
@@ -247,6 +247,26 @@ az keyvault secret show --vault-name <your-unique-keyvault-name> --name mySecret
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Если ресурсы больше не нужны, вы можете использовать интерфейс командной строки Azure или Azure PowerShell, чтобы удалить хранилище ключей и соответствующую группу ресурсов.
+
+### <a name="delete-a-key-vault"></a>Удаление хранилища ключей
+```azurecli
+az keyvault delete --name <your-unique-keyvault-name>
+```
+
+```powershell
+Remove-AzKeyVault -VaultName <your-unique-keyvault-name>
+```
+
+### <a name="purge-a-key-vault"></a>Очистка хранилища ключей
+```azurecli
+az keyvault purge --location eastus --name <your-unique-keyvault-name>
+```
+
+```powershell
+Remove-AzKeyVault -VaultName <your-unique-keyvault-name> -InRemovedState -Location eastus
+```
+
+### <a name="delete-a-resource-group"></a>Удаление группы ресурсов
 
 ```azurecli
 az group delete -g "myResourceGroup"

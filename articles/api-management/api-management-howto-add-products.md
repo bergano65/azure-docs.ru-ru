@@ -13,12 +13,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.date: 08/10/2018
 ms.author: apimpm
-ms.openlocfilehash: 686d6e2ff01fd4d8283350ab8097e1f73c914af0
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: d90b212286b555bf5b858990fd5dcb062348be8d
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81261002"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86254730"
 ---
 # <a name="create-and-publish-a-product"></a>создавать и публиковать продукт;  
 
@@ -85,7 +85,7 @@ ms.locfileid: "81261002"
 4. Выберите API и нажмите кнопку **Выбрать**.
 
 > [!TIP]
-> Подписку пользователя на *продукт* с индивидуальными ключами подписки можно создать или обновить [с помощью REST API](https://docs.microsoft.com/rest/api/apimanagement/2019-12-01/subscription/createorupdate) или команды PowerShell.
+> Подписку пользователя на *продукт* с индивидуальными ключами подписки можно создать или обновить [с помощью REST API](/rest/api/apimanagement/2019-12-01/subscription/createorupdate) или команды PowerShell.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

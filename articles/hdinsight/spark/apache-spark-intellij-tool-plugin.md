@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 04/13/2020
-ms.openlocfilehash: a3884fdfbbc215c305053d8615d690880f4026ea
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 370ac9528b023f01aaff5e5a7ec62785a02bb4bd
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81314144"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86085350"
 ---
 # <a name="use-azure-toolkit-for-intellij-to-create-apache-spark-applications-for-hdinsight-cluster"></a>Использование Azure Toolkit for IntelliJ для создания приложений Apache Spark для кластера HDInsight
 
@@ -98,7 +98,7 @@ ms.locfileid: "81314144"
 
 9. Добавьте исходный код приложения, выполнив следующие действия.
 
-    a. В Project перейдите к папке **MyApp** > **src** > **Main** > **Scala**.  
+    а. В Project перейдите к папке **MyApp**  >  **src**  >  **Main**  >  **Scala**.  
 
     b. Щелкните правой кнопкой мыши папку **scala**, а затем выберите **New** (Новый) > **Scala Class** (Класс Scala).
 
@@ -205,7 +205,7 @@ ms.locfileid: "81314144"
         |Link Resource Type (Связать тип ресурса)|Из раскрывающегося списка выберите **Livy Service** (Служба Livy).|
         |Livy Endpoint (Конечная точка Livy)| Введите конечную точку Livy|
         |Имя кластера,| Введите имя кластера.|
-        |Yarn Endpoint (Конечная точка Yarn)|Необязательный параметр.|
+        |Yarn Endpoint (Конечная точка Yarn)|Необязательный элемент.|
         |тип проверки подлинности;| Оставьте значение **Basic Authentication** (Обычная аутентификация)|
         |Имя пользователя| Введите имя пользователя кластера. Значение по умолчанию — admin.|
         |Пароль| Введите пароль для этого имени пользователя.|
@@ -238,7 +238,7 @@ ms.locfileid: "81314144"
     |Select an Artifact to submit (Выбор артефакта для запуска)|Оставьте параметр по умолчанию.|
     |Имя главного класса|значение по умолчанию — имя главного класса из выбранного файла. Класс можно изменить, нажав кнопку с многоточием ( **...** ) и выбрав другой класс.|
     |Job configurations (Конфигурация заданий)|Можно изменить ключи и значения по умолчанию, или. Дополнительные сведения см. в статье [Apache Livy REST API](https://livy.incubator.apache.org/docs/latest/rest-api.html).|
-    |Аргументы командной строки|При необходимости можно ввести аргументы для основного класса, разделив их пробелом.|
+    |аргументов командной строки;|При необходимости можно ввести аргументы для основного класса, разделив их пробелом.|
     |Referenced Jars (Ссылки на JAR-файлы) и Referenced Files (Ссылки на файлы)|можно ввести пути к используемым JAR и файлам, если они есть. Вы можете также просматривать файлы в виртуальной файловой системе Azure, которая сейчас поддерживает только кластер ADLS 2 поколения. Дополнительные сведения см. в [Apache Spark конфигурации](https://spark.apache.org/docs/latest/configuration.html#runtime-environment).  Ознакомьтесь также со статьей [Краткое руководство. Использование Обозревателя службы хранилища Azure для создания большого двоичного объекта в хранилище объекта](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-storage-explorer).|
     |Job Upload Storage (Хранилище обновлений заданий)|Разверните раздел, чтобы отобразить дополнительные параметры.|
     |Тип хранения|Из раскрывающегося списка выберите **Use Azure Blob to upload** (Для передачи использовать большой двоичный объект Azure).|
@@ -262,7 +262,7 @@ ms.locfileid: "81314144"
 
 ### <a name="access-the-job-view"></a>Доступ к представлению задания
 
-1. В Azure Explorer перейдите к **HDInsight** > \<> > **задания**кластера.
+1. В Azure Explorer перейдите к **HDInsight**  >  \<Your Cluster>  >  **заданиям**HDInsight.
 
     ![Узел представления задания IntelliJ Azure Explorer](./media/apache-spark-intellij-tool-plugin/intellij-job-view-node.png)
 
@@ -450,15 +450,15 @@ ms.locfileid: "81314144"
 
 2. На корневом уровне — это элемент **module** , такой как следующий текст:
 
-        ```
-        <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
-        ```
+    ```xml
+    <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+    ```
 
    Измените элемент, добавив `UniqueKey="HDInsightTool"` таким образом, чтобы элемент **module** выглядел как следующий текст:
 
-        ```
-        <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4" UniqueKey="HDInsightTool">
-        ```
+    ```xml
+    <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4" UniqueKey="HDInsightTool">
+    ```
 
 3. Сохраните изменения. Ваше приложение станет совместимым с набором средств Azure для IntelliJ. Это можно проверить, правой кнопкой мыши щелкнув имя проекта в структуре проекта. Во всплывающем меню должен появиться пункт **Submit Spark Application to HDInsight** (Отправить приложение Spark в HDInsight).
 
@@ -478,7 +478,7 @@ ms.locfileid: "81314144"
 
 ![портал Azure удаляет кластер HDInsight](./media/apache-spark-intellij-tool-plugin/hdinsight-azure-portal-delete-cluster.png "Удаление кластера HDInsight")
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 В этой статье вы узнали, как использовать подключаемый модуль Azure Toolkit for IntelliJ для разработки Apache Spark приложений, написанных на [Scala](https://www.scala-lang.org/). Затем передавали их в кластер HDInsight Spark непосредственно из интегрированной среды разработки (IDE) IntelliJ. Теперь переходите к следующей статье, в которой объясняется, как перенести зарегистрированные в Apache Spark данные в средство бизнес-аналитики, например в Power BI.
 

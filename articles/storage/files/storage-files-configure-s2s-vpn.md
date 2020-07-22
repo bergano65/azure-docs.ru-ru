@@ -3,16 +3,16 @@ title: Настройка VPN-подключения "сеть — сеть" (S
 description: Сведения о настройке VPN-подключения "сеть — сеть" (S2S) для использования с Файлами Azure
 author: roygara
 ms.service: storage
-ms.topic: overview
+ms.topic: how-to
 ms.date: 10/19/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: ae3d38d92990d7a1af4146c25b017286ebd29352
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
-ms.translationtype: HT
+ms.openlocfilehash: 4d1d0f9e2a86da8213a9662b68c791a117dcc7fb
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80061038"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85515331"
 ---
 # <a name="configure-a-site-to-site-vpn-for-use-with-azure-files"></a>Настройка VPN-подключения "сеть — сеть" для использования с Файлами Azure
 Вы можете использовать VPN-подключение "сеть — сеть" (S2S) для подключения файловых ресурсов Azure по протоколу SMB в локальной сети, не открывая порт 445. VPN-подключение "сеть — сеть" можно настроить с помощью [VPN-шлюза Azure](../../vpn-gateway/vpn-gateway-about-vpngateways.md), который является ресурсом Azure, предлагающим службы VPN, и развертывается в группе ресурсов вместе с учетными записями хранения или другими ресурсами Azure.

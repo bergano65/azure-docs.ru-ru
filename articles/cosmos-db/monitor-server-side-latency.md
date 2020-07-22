@@ -2,16 +2,16 @@
 title: Мониторинг задержки на стороне сервера для операций в Azure Cosmos DB
 description: Узнайте, как отслеживать задержку сервера для операций в учетной записи Azure Cosmos DB или контейнере. Владельцы учетной записи Azure Cosmos DB могут понимать проблемы задержки на стороне сервера с учетными записями Azure Cosmos.
 ms.service: cosmos-db
-ms.topic: conceptual
+ms.topic: how-to
 author: kanshiG
 ms.author: govindk
 ms.date: 04/07/2020
-ms.openlocfilehash: 0f1e6d07afb3b7b4d26081bc9e34ac257b280d0f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 5be2365fb5850c3f45b320d66c114fb791b22c3e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81113925"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85262707"
 ---
 # <a name="how-to-monitor-the-server-side-latency-for-operations-in-an-azure-cosmos-db-container-or-account"></a>Мониторинг задержки на стороне сервера для операций в контейнере Azure Cosmos DB или учетной записи
 
@@ -31,15 +31,15 @@ Azure Monitor для Azure Cosmos DB предоставляет представ
 
 1. Выберите **монитор** на панели навигации слева и щелкните **метрики**.
 
-   ![Панель "метрики" в Azure Monitor](./media/monitor-server-side-latency/monitor-metrics-blade.png)
+   :::image type="content" source="./media/monitor-server-side-latency/monitor-metrics-blade.png" alt-text="Область метрик в Azure Monitor":::
 
-1. В области **метрики** > **выберите ресурс** > выберите нужную **подписку**и **группу ресурсов**. Для параметра **тип ресурса**выберите **учетные записи Azure Cosmos DB**, выберите одну из существующих учетных записей Azure Cosmos и нажмите кнопку **Применить**.
+1. В области **Метрики** щелкните **Выбрать ресурс** и выберите требуемые **подписку** и **группу ресурсов**. В поле **Тип ресурса** выберите **Учетные записи Azure Cosmos DB**, выберите одну из существующих учетных записей Azure Cosmos и нажмите кнопку **Применить**.
    
-   ![Выберите учетную запись Azure Cosmos DB для просмотра метрик](./media/monitor-server-side-latency/select-cosmos-db-account.png)
+   :::image type="content" source="./media/monitor-server-side-latency/select-cosmos-db-account.png" alt-text="Выберите учетную запись Azure Cosmos DB для просмотра метрик":::
 
-1. Затем выберите метрику **задержки на стороне сервера** в списке доступных метрик. Подробные сведения обо всех доступных метриках в этом списке см. в статье [метрики по категориям](monitor-cosmos-db-reference.md) . В этом примере мы выбираем **задержку на стороне сервера** и **AVG** в качестве значения статистической обработки. В дополнение к этим сведениям можно также выбрать **диапазон времени** и **степень гранулярности времени** метрик. В поле максимум можно просмотреть метрики за последние 30 дней.  После применения фильтра на основе фильтра отобразится диаграмма. Вы видите задержку на стороне сервера в минуту за выбранный период.  
+1. Затем выберите метрику **задержки на стороне сервера** в списке доступных метрик. Подробные сведения о всех доступных метриках в списке см. в статье с [перечнем метрик по категориям](monitor-cosmos-db-reference.md). В этом примере мы выбираем **задержку на стороне сервера** и **AVG** в качестве значения статистической обработки. Помимо этих сведений, можно также выбрать **диапазон времени** и **степень детализации времени** для метрик. Вы можете просмотреть метрики максимум за последние 30 дней.  После применения фильтра отображается диаграмма на его основе. Вы видите задержку на стороне сервера в минуту за выбранный период.  
 
-   ![Выберите метрику задержки на стороне сервера в портал Azure](./media/monitor-server-side-latency/server-side-latency-metric.png)
+   :::image type="content" source="./media/monitor-server-side-latency/server-side-latency-metric.png" alt-text="Выберите метрику задержки на стороне сервера в портал Azure":::
 
 ## <a name="filters-for-server-side-latency"></a>Фильтры задержки на стороне сервера
 
@@ -49,7 +49,7 @@ Azure Monitor для Azure Cosmos DB предоставляет представ
 
 Метрики **задержки на стороне сервера** для каждой операции отображаются, как показано на следующем рисунке:
 
-![Фильтры для метрик задержки на стороне сервера](./media/monitor-server-side-latency/server-side-latency-filters.png)
+:::image type="content" source="./media/monitor-server-side-latency/server-side-latency-filters.png" alt-text="Фильтры для метрик задержки на стороне сервера":::
 
 Метрики также можно сгруппировать с помощью параметра **Применить разделение** .  
 

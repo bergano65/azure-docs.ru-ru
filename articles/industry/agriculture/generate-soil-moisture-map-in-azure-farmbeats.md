@@ -6,10 +6,9 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: v-umha
 ms.openlocfilehash: a2115e9c1601c86cce8857c10baf12b91cc2b997
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75482573"
 ---
 # <a name="generate-soil-moisture-heatmap"></a>Создать почвы влажность тепловой карты
@@ -51,7 +50,7 @@ ms.locfileid: "75482573"
 После связывания учетной записи датчика с Azure Фармбеатс необходимо назначить почвы влажность Sensors для интересующей фермы.
 
 1.  На домашней странице в меню выберите пункт **фермы** , откроется страница список **ферм** .
-2.  Выберите **мифарм** > **Add Devices (добавить устройства**).
+2.  Выберите **мифарм**  >  **Add Devices (добавить устройства**).
 3.  Откроется окно **Add Devices (Добавление устройств** ). Выберите любое устройство, связанное с датчиками почвы влажность для фермы.
 
     ![Проект FarmBeats](./media/get-sensor-data-from-sensor-partner/add-devices-1.png)
@@ -81,7 +80,7 @@ ms.locfileid: "75482573"
 
 ### <a name="download-the-soil-moisture-heatmap"></a>Скачайте почвы влажность тепловой карты
 
-Выполните указанные ниже действия.
+Выполните следующие шаги.
 
 1. На странице **задания** проверьте **состояние** задания, созданного в последней процедуре.
 2. Когда состояние задания отобразится **удачно**, выберите **Maps (карты** ) в меню.
@@ -91,6 +90,6 @@ ms.locfileid: "75482573"
 
     ![Проект FarmBeats](./media/get-sensor-data-from-sensor-partner/download-soil-moisture-map-1.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы успешно создали почвы влажность тепловой карты, Узнайте, как [создавать расположение датчиков](generate-maps-in-azure-farmbeats.md#sensor-placement-map) и получать [исторические данные телеметрии](ingest-historical-telemetry-data-in-azure-farmbeats.md). 

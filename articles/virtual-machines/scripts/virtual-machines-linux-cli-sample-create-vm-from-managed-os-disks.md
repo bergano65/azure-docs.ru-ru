@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 05/10/2017
 ms.author: ramankum
 ms.custom: mvc
-ms.openlocfilehash: 1616466619c7c7627106c09de703d02a7c40d248
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 83f0ea094c26a1ff664ef27729731b77d987e7ec
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75458406"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86501506"
 ---
 # <a name="create-a-virtual-machine-using-an-existing-managed-os-disk-with-cli"></a>Создание виртуальной машины с помощью существующего управляемого диска ОС с использованием CLI
 
@@ -52,10 +52,10 @@ az group delete --name myResourceGroup
 
 | Get-Help | Примечания |
 |---|---|
-| [az disk show](https://docs.microsoft.com/cli/azure/disk) | Получает свойства управляемого диска, используя имя диска и имя группы ресурсов. Свойство идентификатора используется для подключения управляемого диска к новой виртуальной машине. |
-| [az vm create](https://docs.microsoft.com/cli/azure/vm) | Создает виртуальную машину с помощью управляемого диска ОС. |
+| [az disk show](/cli/azure/disk) | Получает свойства управляемого диска, используя имя диска и имя группы ресурсов. Свойство идентификатора используется для подключения управляемого диска к новой виртуальной машине. |
+| [az vm create](/cli/azure/vm) | Создает виртуальную машину с помощью управляемого диска ОС. |
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
+Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 
 Дополнительные примеры скриптов интерфейса командной строки для виртуальных машин см. в [документации по виртуальным машинам Azure под управлением Linux](../linux/cli-samples.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).

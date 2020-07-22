@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 11/20/2019
-ms.openlocfilehash: 73a2a612a4eeb4a59f12abf0660fffb092f0547f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 8bb5f69bc43a6af27aa71d4cf1fe054d693cc085
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74327209"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86201231"
 ---
 # <a name="use-a-java-udf-with-apache-hive-in-hdinsight"></a>Использование определяемых пользователем функций Java с Apache Hive в HDInsight
 
@@ -50,7 +50,7 @@ cd C:\HDI
     mvn archetype:generate -DgroupId=com.microsoft.examples -DartifactId=ExampleUDF -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
     ```
 
-    Эта команда создает каталог с именем `exampleudf`, который содержит проект Maven.
+    Эта команда создает каталог с именем `exampleudf` , который содержит проект Maven.
 
 2. После создания проекта удалите `exampleudf/src/test` каталог, созданный как часть проекта, введя следующую команду:
 
@@ -144,7 +144,7 @@ cd C:\HDI
 
     После внесения изменений сохраните файл.
 
-4. Введите следующую команду, чтобы создать и открыть новый файл `ExampleUDF.java`:
+4. Введите следующую команду, чтобы создать и открыть новый файл `ExampleUDF.java` :
 
     ```cmd
     notepad src/main/java/com/microsoft/examples/ExampleUDF.java
@@ -181,7 +181,7 @@ cd C:\HDI
 
 ## <a name="build-and-install-the-udf"></a>Создание и установка определяемой пользователем функции
 
-В приведенных ниже командах `sshuser` замените фактическим именем пользователя, если оно отличается. Замените `mycluster` фактическим именем кластера.
+В приведенных ниже командах замените `sshuser` фактическим именем пользователя, если оно отличается. Замените `mycluster` фактическим именем кластера.
 
 1. Скомпилируйте и упакуйте определяемую пользователем функцию, введя следующую команду:
 
@@ -234,26 +234,30 @@ cd C:\HDI
 
     Этот запрос выбирает состояние из таблицы, преобразует строку в нижний регистр, а затем отображает их вместе с неизмененным именем. Выходные данные выглядят следующим образом:
 
-        +---------------+---------------+--+
-        |  exampleudf   |     state     |
-        +---------------+---------------+--+
-        | california    | California    |
-        | pennsylvania  | Pennsylvania  |
-        | pennsylvania  | Pennsylvania  |
-        | pennsylvania  | Pennsylvania  |
-        | colorado      | Colorado      |
-        | colorado      | Colorado      |
-        | colorado      | Colorado      |
-        | utah          | Utah          |
-        | utah          | Utah          |
-        | colorado      | Colorado      |
-        +---------------+---------------+--+
+    ```output
+    +---------------+---------------+--+
+    |  exampleudf   |     state     |
+    +---------------+---------------+--+
+    | california    | California    |
+    | pennsylvania  | Pennsylvania  |
+    | pennsylvania  | Pennsylvania  |
+    | pennsylvania  | Pennsylvania  |
+    | colorado      | Colorado      |
+    | colorado      | Colorado      |
+    | colorado      | Colorado      |
+    | utah          | Utah          |
+    | utah          | Utah          |
+    | colorado      | Colorado      |
+    +---------------+---------------+--+
+    ```
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
 При выполнении задания Hive может возникнуть ошибка, аналогичная приведенной ниже:
 
-    Caused by: org.apache.hadoop.hive.ql.metadata.HiveException: [Error 20001]: An error occurred while reading or writing to your custom script. It may have crashed with an error.
+```output
+Caused by: org.apache.hadoop.hive.ql.metadata.HiveException: [Error 20001]: An error occurred while reading or writing to your custom script. It may have crashed with an error.
+```
 
 Эта проблема может быть вызвана символами окончания строк в файле Python. Многие редакторы Windows по умолчанию используют символы CRLF, но в приложениях Linux обычно ожидается использование символа LF.
 

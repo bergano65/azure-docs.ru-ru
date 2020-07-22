@@ -5,14 +5,14 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 01/24/2020
-ms.openlocfilehash: 7165bab96d037f6782bc9aa6767cadd9b35f058c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: de32f2a3a45a883f9da860b159eaa7f7b9368518
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76764587"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86085435"
 ---
 # <a name="azure-hdinsight-accelerated-writes-for-apache-hbase"></a>Azure HDInsight Accelerated Writes for Apache HBase (Ускорение операций записи Azure HDInsight для Apache HBase)
 

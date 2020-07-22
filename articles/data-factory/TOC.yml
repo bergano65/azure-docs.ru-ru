@@ -23,8 +23,11 @@
       href: quickstart-create-data-factory-python.md
     - name: Создание фабрики данных с помощью REST
       href: quickstart-create-data-factory-rest-api.md
-    - name: Создание фабрики данных с помощью шаблона Resource Manager
+    - name: Создание фабрики данных с помощью шаблона ARM
+      displayName: Resource Manager
       href: quickstart-create-data-factory-resource-manager-template.md
+    - name: Безопасность. Включение шифрования на базе управляемых клиентом ключей
+      href: enable-customer-managed-key.md
     - name: Создание потока данных
       href: data-flow-create.md
 - name: Учебники
@@ -39,7 +42,7 @@
               href: tutorial-copy-data-portal.md
             - name: .NET
               href: tutorial-copy-data-dot-net.md
-        - name: Из локальной базы данных SQL Server в хранилище BLOB-объектов Azure
+        - name: Из базы данных SQL Server в хранилище BLOB-объектов Azure
           items:
             - name: Средство копирования данных
               href: tutorial-hybrid-copy-data-tool.md
@@ -76,7 +79,7 @@
                   href: tutorial-incremental-copy-portal.md
                 - name: Azure PowerShell
                   href: tutorial-incremental-copy-powershell.md
-            - name: "Из нескольких локальных таблиц SQL\_Server"
+            - name: Из нескольких таблиц баз данных SQL Server
               items:
                 - name: Пользовательский интерфейс
                   href: tutorial-incremental-copy-multiple-tables-portal.md
@@ -88,10 +91,16 @@
                   href: tutorial-incremental-copy-change-tracking-feature-portal.md
                 - name: Azure PowerShell
                   href: tutorial-incremental-copy-change-tracking-feature-powershell.md
+            - name: Использование CDC в управляемом экземпляре SQL Azure
+              items:
+                - name: Пользовательский интерфейс
+                  href: tutorial-incremental-copy-change-data-capture-feature-portal.md
             - name: Новые файлы по дате последнего изменения
               href: tutorial-incremental-copy-lastmodified-copy-data-tool.md
             - name: 'Новые файлы на основе имен файлов, секционированных по времени'
               href: tutorial-incremental-copy-partitioned-file-name-copy-data-tool.md
+        - name: Создание конвейера копирования с использованием управляемой виртуальной сети и частных конечных точек
+          href: tutorial-copy-data-portal-private.md
     - name: Преобразование данных
       items:
         - name: Преобразование данных с помощью сопоставления потоков данных
@@ -120,6 +129,8 @@
                   href: tutorial-transform-data-hive-virtual-network-portal.md
                 - name: Azure PowerShell
                   href: tutorial-transform-data-hive-virtual-network.md
+        - name: Создание конвейера потока данных для сопоставления с использованием управляемой виртуальной сети и частных конечных точек
+          href: tutorial-data-flow-private.md
     - name: Поток управления
       items:
         - name: Пользовательский интерфейс
@@ -156,6 +167,12 @@
       href: concepts-pipeline-execution-triggers.md
     - name: Среда выполнения интеграции
       href: concepts-integration-runtime.md
+    - name: Управляемая виртуальная сеть
+      href: managed-virtual-network-private-endpoint.md
+    - name: Безопасность
+      items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
     - name: Потоки данных
       items:
         - name: Преобразование данных с помощью сопоставления потоков данных
@@ -194,6 +211,8 @@
       items:
         - name: Визуальная разработка фабрик данных
           href: author-visually.md
+        - name: Центр управления
+          href: author-management-hub.md
         - name: Система управления версиями
           href: source-control.md
         - name: Непрерывная интеграция и поставка
@@ -236,8 +255,8 @@
           href: connector-azure-file-storage.md
         - name: База данных SQL Azure
           href: connector-azure-sql-database.md
-        - name: Управляемый экземпляр Базы данных SQL Azure
-          href: connector-azure-sql-database-managed-instance.md
+        - name: Управляемый экземпляр SQL Azure
+          href: connector-azure-sql-managed-instance.md
         - name: "Azure Synapse Analytics (прежнее название\_— Хранилище данных SQL)"
           href: connector-azure-sql-data-warehouse.md
         - name: Хранилище таблиц Azure
@@ -246,6 +265,8 @@
           href: format-binary.md
         - name: Cassandra
           href: connector-cassandra.md
+        - name: Формат Common Data Model
+          href: format-common-data-model.md
         - name: Common Data Service для приложений
           href: connector-dynamics-crm-office-365.md
         - name: Concur
@@ -256,6 +277,8 @@
           href: connector-db2.md
         - name: Формат текста с разделителями
           href: format-delimited-text.md
+        - name: Формат изменений
+          href: format-delta.md
         - name: Drill
           href: connector-drill.md
         - name: "Dynamics\_365"
@@ -264,10 +287,14 @@
           href: connector-dynamics-ax.md
         - name: Dynamics CRM
           href: connector-dynamics-crm-office-365.md
+        - name: Формат Excel
+          href: format-excel.md
         - name: Файловая система
           href: connector-file-system.md
         - name: FTP
           href: connector-ftp.md
+        - name: GitHub
+          href: connector-github.md
         - name: Google AdWords
           href: connector-google-adwords.md
         - name: Google BigQuery
@@ -370,6 +397,8 @@
           href: connector-sharepoint-online-list.md
         - name: Shopify
           href: connector-shopify.md
+        - name: Snowflake
+          href: connector-snowflake.md
         - name: Spark
           href: connector-spark.md
         - name: "SQL\_Server"
@@ -386,6 +415,8 @@
           href: connector-web-table.md
         - name: Xero
           href: connector-xero.md
+        - name: Формат XML
+          href: format-xml.md
         - name: Zoho
           href: connector-zoho.md
     - name: Перенос данных
@@ -447,12 +478,12 @@
           href: transform-data-using-spark.md
         - name: Действие потоковой передачи HDInsight
           href: transform-data-using-hadoop-streaming.md
-        - name: Действие выполнения пакета в службе Машинного обучения
-          href: transform-data-using-machine-learning.md
-        - name: Действие обновления ресурса в службе Машинного обучения
-          href: update-machine-learning-models.md
         - name: Действия выполнения конвейера в Машинном обучении
           href: transform-data-machine-learning-service.md
+        - name: Действие выполнения пакета в Студии машинного обучения (классическая)
+          href: transform-data-using-machine-learning.md
+        - name: Действие обновления ресурса в Студии машинного обучения (классическая)
+          href: update-machine-learning-models.md
         - name: Действие хранимой процедуры
           href: transform-data-using-stored-procedure.md
         - name: Связанные службы вычислений
@@ -556,19 +587,21 @@
         - name: Управляемое удостоверение для Фабрики данных
           href: data-factory-service-identity.md
         - name: Шифрование на базе управляемых клиентом ключей
-          href: quickstart-enable-customer-managed-key.md
+          href: enable-customer-managed-key.md
     - name: Отслеживание и управление
       items:
         - name: Визуальный мониторинг
           href: monitor-visually.md
         - name: Мониторинг с помощью Azure Monitor
           href: monitor-using-azure-monitor.md
+        - name: Мониторинг SSIS с помощью Azure Monitor
+          href: monitor-using-azure-monitor.md#monitor-ssis-operations-with-azure-monitor
         - name: Мониторинг с помощью пакетов SDK
           href: monitor-programmatically.md
         - name: Мониторинг среды выполнения интеграции
           href: monitor-integration-runtime.md
         - name: Мониторинг Azure-SSIS Integration Runtime
-          href: 'monitor-integration-runtime.md#azure-ssis-integration-runtime'
+          href: monitor-integration-runtime.md#azure-ssis-integration-runtime
         - name: Повторная настройка Azure-SSIS Integration Runtime
           href: manage-azure-ssis-integration-runtime.md
         - name: Копирование или клонирование фабрики данных
@@ -605,6 +638,10 @@
           href: self-hosted-integration-runtime-proxy-ssis.md
         - name: Включение аутентификации Azure AD для Azure-SSIS IR
           href: enable-aad-authentication-azure-ssis-ir.md
+        - name: Подключение к данным с проверкой подлинности Windows
+          href: ssis-azure-connect-with-windows-auth.md
+        - name: Сохранение файлов и подключение к общим папкам
+          href: ssis-azure-files-file-shares.md
         - name: Настройка выпуска Enterprise Edition для Azure-SSIS IR
           href: how-to-configure-azure-ssis-ir-enterprise-edition.md
         - name: Встроенные и предварительно установленные компоненты в Azure-SSIS IR
@@ -623,6 +660,8 @@
           href: how-to-use-sql-managed-instance-with-ir.md
         - name: Перенос заданий SSIS с использованием SSMS
           href: how-to-migrate-ssis-job-ssms.md
+        - name: Управление пакетами с помощью хранилища пакетов Azure-SSIS IR
+          href: azure-ssis-integration-runtime-package-store.md
     - name: Создание триггеров
       items:
         - name: Создание триггера на основе событий
@@ -633,6 +672,32 @@
           href: how-to-create-tumbling-window-trigger.md
         - name: 'Создание зависимости триггера, который запускает конвейер в "переворачивающемся" окне'
           href: tumbling-window-trigger-dependency.md
+    - name: Сценарии
+      items:
+        - name: Перенос данных для озера данных и EDW
+          items:
+            - name: Преимущества Фабрики данных Azure
+              href: data-migration-guidance-overview.md
+            - name: "Перенос данных из AWS\_S3 в Azure"
+              href: data-migration-guidance-s3-azure-storage.md
+            - name: Перенос данных из локального кластера Hadoop в Azure
+              href: data-migration-guidance-hdfs-azure-storage.md
+            - name: Перенос данных с локального сервера Netezza в Azure
+              href: data-migration-guidance-netezza-azure-sqldw.md
+        - name: Преобразование с помощью функции сопоставления потоков данных
+          items:
+            - name: Обработка текстовых файлов с фиксированной шириной
+              href: how-to-fixed-width.md
+            - name: Обработка строк ошибок
+              href: how-to-data-flow-error-rows.md
+            - name: Перенос из Базы данных SQL Azure в Azure Cosmos DB
+              href: how-to-sqldb-to-cosmosdb.md
+        - name: Перенос рабочих нагрузок SSIS из локальных систем
+          items:
+            - name: Обзор переноса рабочих нагрузок SSIS
+              href: scenario-ssis-migration-overview.md
+            - name: Перенос базы данных Integration Services в Управляемый экземпляр SQL Azure
+              href: scenario-ssis-migration-ssisdb-mi.md
     - name: Шаблоны
       items:
         - name: Общие сведения о шаблонах
@@ -673,32 +738,8 @@
           href: ssis-integration-runtime-management-troubleshoot.md
         - name: "Выполнение пакетов в Azure-SSIS\_IR"
           href: ssis-integration-runtime-ssis-activity-faq.md
-- name: Сценарии
-  items:
-    - name: Перенос данных для озера данных и EDW
-      items:
-        - name: Преимущества Фабрики данных Azure
-          href: data-migration-guidance-overview.md
-        - name: "Перенос данных из AWS\_S3 в Azure"
-          href: data-migration-guidance-s3-azure-storage.md
-        - name: Перенос данных из локального кластера Hadoop в Azure
-          href: data-migration-guidance-hdfs-azure-storage.md
-        - name: Перенос данных с локального сервера Netezza в Azure
-          href: data-migration-guidance-netezza-azure-sqldw.md
-    - name: Преобразование с помощью функции сопоставления потоков данных
-      items:
-        - name: Обработка текстовых файлов с фиксированной шириной
-          href: how-to-fixed-width.md
-        - name: Обработка строк ошибок
-          href: how-to-data-flow-error-rows.md
-        - name: Миграция из Базы данных SQL Azure в CosmosDB
-          href: how-to-sqldb-to-cosmosdb.md
-    - name: Перенос рабочих нагрузок SSIS из локальных систем
-      items:
-        - name: Обзор переноса рабочих нагрузок SSIS
-          href: scenario-ssis-migration-overview.md
-        - name: Перенос базы данных SSIS в управляемый экземпляр Базы данных SQL Azure
-          href: scenario-ssis-migration-ssisdb-mi.md
+        - name: "Диагностика подключений в Azure-SSIS\_IR"
+          href: ssis-integration-runtime-diagnose-connectivity-faq.md
 - name: Справочник
   items:
     - name: Скрипт потока данных

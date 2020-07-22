@@ -4,10 +4,9 @@ description: Используйте API-интерфейсы FabricClient для
 ms.topic: conceptual
 ms.date: 01/19/2018
 ms.openlocfilehash: 25b874d1be8ab50d8076ff8fe9423c8cc0187512
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75376976"
 ---
 # <a name="deploy-and-remove-applications-using-fabricclient"></a>Развертывание и удаление приложений с помощью FabricClient
@@ -44,7 +43,7 @@ FabricClient fabricClient = new FabricClient();
 ```
 
 ## <a name="upload-the-application-package"></a>Загрузка пакета приложения
-Предположим, вы собрали и упаковали в Visual Studio приложение с именем *MyApplication*. По умолчанию имя типа приложения отображается в файле ApplicationManifest.xml как MyApplicationType.  Пакет приложения, содержащий необходимый манифест приложения, манифесты служб, пакеты кода, конфигурации и данных, находится в *\&C:\Users lt; имя_пользователя&gt;\Documents\Visual Studio 2019 \ Projects\MyApplication\MyApplication\pkg\Debug*.
+Предположим, вы собрали и упаковали в Visual Studio приложение с именем *MyApplication*. По умолчанию имя типа приложения отображается в файле ApplicationManifest.xml как MyApplicationType.  Пакет приложения, содержащий необходимый манифест приложения, манифесты служб, пакеты кода, конфигурации и данных, находится в *C:\Users \& lt; имя_пользователя &gt; \Documents\Visual Studio 2019 \ Projects\MyApplication\MyApplication\pkg\Debug*.
 
 Отправка пакета приложения означает, что он помещается в расположение, доступное внутренним компонентам Service Fabric. Service Fabric проверяет пакет приложения во время его регистрации. Однако если вы хотите проверить пакет приложения локально (то есть перед отправкой), используйте командлет [Test-ServiceFabricApplicationPackage](/powershell/module/servicefabric/test-servicefabricapplicationpackage?view=azureservicefabricps) .
 
@@ -320,7 +319,7 @@ static void Main(string[] args)
 
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 [Обновление приложения Service Fabric](service-fabric-application-upgrade.md)
 
 [Общие сведения о работоспособности Service Fabric](service-fabric-health-introduction.md)

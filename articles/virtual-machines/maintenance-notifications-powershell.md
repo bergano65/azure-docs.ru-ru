@@ -4,15 +4,14 @@ description: Просмотр уведомлений об обслуживани
 author: shants123
 ms.service: virtual-machines
 ms.workload: infrastructure-services
-ms.topic: article
+ms.topic: how-to
 ms.date: 11/19/2019
 ms.author: shants
-ms.openlocfilehash: b23c210d7c8a9f1d42e6e1b46e0f7f81bda857b2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 79ef649502af8962253121ea18804966b1fa043e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77916088"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84677939"
 ---
 # <a name="handling-planned-maintenance-using-powershell"></a>Обработка планового обслуживания с помощью PowerShell
 
@@ -29,7 +28,7 @@ Get-AzVM -ResourceGroupName myResourceGroup -Name myVM -Status
 
 В разделе MaintenanceRedeployStatus возвращаются следующие свойства: 
 
-| Значение | Описание   |
+| Значение | Описание:   |
 |-------|---------------|
 | IsCustomerInitiatedMaintenanceAllowed | Указывает, можно ли сейчас запустить обслуживание на виртуальной машине |
 | PreMaintenanceWindowStartTime         | Начало периода самообслуживания, когда можно инициировать обслуживание на виртуальной машине |

@@ -5,10 +5,9 @@ ms.topic: conceptual
 ms.date: 03/15/2019
 ms.reviewer: sdash
 ms.openlocfilehash: 7c5c9173704535b1e34ffde5867bd512e3e02ed8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80989533"
 ---
 # <a name="application-map-triage-distributed-applications"></a>Схема приложений: рассмотрение распределенных приложений
@@ -39,7 +38,7 @@ ms.locfileid: "80989533"
 
 Щелкните любой компонент, чтобы просмотреть соответствующие данные аналитики и перейти к интерфейсу для рассмотрения производительности и сбоев этого компонента.
 
-![Всплывающий элемент](media/app-map/application-map-002.png)
+![Flyout](media/app-map/application-map-002.png)
 
 ### <a name="investigate-failures"></a>Анализ сбоев
 
@@ -112,7 +111,7 @@ namespace CustomInitializer.Telemetry
 
 **Приложения ASP.NET: Загрузка инициализатора в активную Телеметриконфигуратион**
 
-В файле ApplicationInsights. config:
+В ApplicationInsights.config:
 
 ```xml
     <ApplicationInsights>
@@ -138,11 +137,11 @@ namespace CustomInitializer.Telemetry
 ```
 
 > [!NOTE]
-> Добавление инициализатора `ApplicationInsights.config` с помощью `TelemetryConfiguration.Active` или using недопустимо для приложений ASP.NET Core. 
+> Добавление инициализатора с помощью `ApplicationInsights.config` или использование `TelemetryConfiguration.Active` недопустимо для приложений ASP.NET Core. 
 
 **ASP.NET Core приложения: Загрузка инициализатора в Телеметриконфигуратион**
 
-Для [ASP.NET Core](asp-net-core.md#adding-telemetryinitializers) приложений Добавление нового `TelemetryInitializer` выполняется путем добавления его в контейнер внедрения зависимостей, как показано ниже. Это делается в `ConfigureServices` методе `Startup.cs` класса.
+В приложениях [ASP.NET Core](asp-net-core.md#adding-telemetryinitializers) добавление нового `TelemetryInitializer` выполняется путем его добавления в контейнер внедрения зависимостей, как показано ниже. Это делается в методе `ConfigureServices` класса `Startup.cs`.
 
 ```csharp
  using Microsoft.ApplicationInsights.Extensibility;
@@ -169,9 +168,9 @@ namespace CustomInitializer.Telemetry
 }
 ```
 
-Вы также можете задать имя роли облака с помощью переменной ```APPLICATIONINSIGHTS_ROLE_NAME```среды.
+Вы также можете задать имя роли облака с помощью переменной среды ```APPLICATIONINSIGHTS_ROLE_NAME``` .
 
-**Пакет SDK для Java**
+**пакет SDK для Java**
 
 Если вы используете пакет SDK, начиная с Application Insights пакета SDK 2.5.0 для Java, можно указать имя облачной роли, добавив `<RoleName>` в `ApplicationInsights.xml` файл, например
 
@@ -229,7 +228,7 @@ appInsights.addTelemetryInitializer((envelope) => {
 
 ![Снимок экрана со схемой приложения](media/app-map/cloud-rolename.png)
 
-В схеме приложения выше каждое из имен в зеленом окне является значениями имени облачной роли для различных аспектов этого конкретного распределенного приложения. Итак, для этого приложения его роли состоят из `Authentication`: `acmefrontend`, `Inventory Management`,, `Payment Processing Worker Role`а. 
+В схеме приложения выше каждое из имен в зеленом окне является значениями имени облачной роли для различных аспектов этого конкретного распределенного приложения. Итак, для этого приложения его роли состоят из: `Authentication` , `acmefrontend` , `Inventory Management` , а `Payment Processing Worker Role` . 
 
 В случае этого приложения каждое из этих имен облачных ролей также представляет отдельный уникальный Application Insights ресурс с собственными ключами инструментирования. Поскольку владелец этого приложения имеет доступ к каждому из четырех разнородных Application Insightsных ресурсов, схема приложения может объединить карту базовых связей.
 
@@ -255,15 +254,15 @@ appInsights.addTelemetryInitializer((envelope) => {
 
 Если схема приложений не работает должным образом, попробуйте сделать следующее:
 
-### <a name="general"></a>Общие
+### <a name="general"></a>Общие сведения
 
 1. Убедитесь, что вы используете официально поддерживаемый пакет SDK. Неподдерживаемые пакеты SDK и пакеты SDK сообщества могут не поддерживать корреляцию.
 
-    Список поддерживаемых пакетов SDK см. в этой [статье](https://docs.microsoft.com/azure/application-insights/app-insights-platforms).
+    Список поддерживаемых пакетов SDK см. в этой [статье](https://docs.microsoft.com/azure/application-insights/app-insights-platforms) .
 
 2. Обновите все компоненты до последней версии пакета SDK.
 
-3. При использовании Функций Azure с C# выполните обновление до [Функций версии 2](https://docs.microsoft.com/azure/azure-functions/functions-versions).
+3. Если вы используете функции Azure с C#, обновите до [функций версии 2](https://docs.microsoft.com/azure/azure-functions/functions-versions).
 
 4. Подтвердите правильность настройки [имени облачной роли](#set-cloud-role-name) .
 

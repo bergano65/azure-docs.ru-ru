@@ -3,15 +3,15 @@ title: Копирование данных из больших двоичных 
 description: Использование средства AdlCopy для копирования данных из больших двоичных объектов хранилища Azure в Azure Data Lake Storage 1-го поколения
 author: twooley
 ms.service: data-lake-store
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: ad408df140be49da2e50ef810285dd850e9da6a1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 84ee65b05af4393f49696875bda41df39e283d5d
+ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75638875"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85980095"
 ---
 # <a name="copy-data-from-azure-storage-blobs-to-azure-data-lake-storage-gen1"></a>Копирование данных из больших двоичных объектов службы хранилища Azure в Azure Data Lake Storage 1-го поколения
 
@@ -31,7 +31,7 @@ Data Lake Storage 1-го поколения предоставляет прог�
 * **Автономный**, при котором для выполнения задачи используются ресурсы Data Lake Storage 1-го поколения.
 * **С помощью учетной записи аналитики озера данных**, при котором для выполнения операции копирования используются единицы, назначенные учетной записи аналитики озера данных. Этот вариант можно использовать, если вы хотите, чтобы задачи копирования выполнялись предсказуемым образом.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Перед началом работы с этой статьей необходимо иметь следующее:
 
@@ -45,7 +45,9 @@ Data Lake Storage 1-го поколения предоставляет прог�
 
 Используйте следующий синтаксис для работы со средством AdlCopy
 
-    AdlCopy /Source <Blob or Data Lake Storage Gen1 source> /Dest <Data Lake Storage Gen1 destination> /SourceKey <Key for Blob account> /Account <Data Lake Analytics account> /Units <Number of Analytics units> /Pattern
+```console
+AdlCopy /Source <Blob or Data Lake Storage Gen1 source> /Dest <Data Lake Storage Gen1 destination> /SourceKey <Key for Blob account> /Account <Data Lake Analytics account> /Units <Number of Analytics units> /Pattern
+```
 
 Параметры синтаксиса описаны ниже:
 
@@ -55,40 +57,50 @@ Data Lake Storage 1-го поколения предоставляет прог�
 | Dest |Указывает целевое назначение Data Lake Storage 1-го поколения для копирования. |
 | SourceKey |Указывает ключ доступа к хранилищу для источника — хранилища больших двоичных объектов Azure. Это необходимо только в том случае, если источником является контейнер больших двоичных объектов или сам большой двоичный объект. |
 | Учетная запись |**Необязательно**. Используйте этот вариант, если хотите, чтобы для запуска задания копирования использовалась учетная запись аналитики озера данных Azure. Если при запуске средства указан параметр /Account, но не указана учетная запись аналитики озера данных Azure, то для запуска задания AdlCopy использует учетную запись по умолчанию. Кроме того, при использовании этого параметра необходимо добавить источник (хранилище больших двоичных объектов Azure) и место назначения (Azure Data Lake Storage 1-го поколения) в качестве источников данных для вашей учетной записи Data Lake Analytics. |
-| Единицы измерения |Указывает количество единиц аналитики озера данных, которые будут использоваться для задания копирования. Этот параметр является обязательным, если вы указываете учетную запись аналитики озера данных с помощью параметра **/Account** . |
-| Модель |Определяет шаблон регулярного выражения, который указывает, какие именно большие двоичные объекты и файлы нужно копировать. В AdlCopy используется сопоставление с учетом регистра. Если шаблон не указан, то для копирования всех элементов используется шаблон по умолчанию. Задание нескольких шаблонов не поддерживается. |
+| единиц(ы) |Указывает количество единиц аналитики озера данных, которые будут использоваться для задания копирования. Этот параметр является обязательным, если вы указываете учетную запись аналитики озера данных с помощью параметра **/Account** . |
+| Шаблон |Определяет шаблон регулярного выражения, который указывает, какие именно большие двоичные объекты и файлы нужно копировать. В AdlCopy используется сопоставление с учетом регистра. Если шаблон не указан, то для копирования всех элементов используется шаблон по умолчанию. Задание нескольких шаблонов не поддерживается. |
 
 ## <a name="use-adlcopy-as-standalone-to-copy-data-from-an-azure-storage-blob"></a>Использование AdlCopy (автономно) для копирования данных из большого двоичного объекта службы хранилища Azure
 
 1. Откройте командную строку и перейдите в каталог, в который установлено средство AdlCopy, обычно `%HOMEPATH%\Documents\adlcopy`.
 1. Выполните следующую команду, чтобы скопировать заданный большой двоичный объект из контейнера-источника в папку Data Lake Storage 1-го поколения:
 
-        AdlCopy /source https://<source_account>.blob.core.windows.net/<source_container>/<blob name> /dest swebhdfs://<dest_adlsg1_account>.azuredatalakestore.net/<dest_folder>/ /sourcekey <storage_account_key_for_storage_container>
+    ```console
+    AdlCopy /source https://<source_account>.blob.core.windows.net/<source_container>/<blob name> /dest swebhdfs://<dest_adlsg1_account>.azuredatalakestore.net/<dest_folder>/ /sourcekey <storage_account_key_for_storage_container>
+    ```
 
     Пример:
 
-        AdlCopy /source https://mystorage.blob.core.windows.net/mycluster/HdiSamples/HdiSamples/WebsiteLogSampleData/SampleLog/909f2b.log /dest swebhdfs://mydatalakestorage.azuredatalakestore.net/mynewfolder/ /sourcekey uJUfvD6cEvhfLoBae2yyQf8t9/BpbWZ4XoYj4kAS5Jf40pZaMNf0q6a8yqTxktwVgRED4vPHeh/50iS9atS5LQ==
+    ```console
+    AdlCopy /source https://mystorage.blob.core.windows.net/mycluster/HdiSamples/HdiSamples/WebsiteLogSampleData/SampleLog/909f2b.log /dest swebhdfs://mydatalakestorage.azuredatalakestore.net/mynewfolder/ /sourcekey uJUfvD6cEvhfLoBae2yyQf8t9/BpbWZ4XoYj4kAS5Jf40pZaMNf0q6a8yqTxktwVgRED4vPHeh/50iS9atS5LQ==
+    ```
 
     >[!NOTE]
     >В приведенном выше синтаксисе указывается файл, который будет скопирован в папку в учетной записи Data Lake Storage 1-го поколения. Инструмент AdlCopy создает папку, если указанного имени папки не существует.
 
     Вам будет предложено ввести учетные данные для подписки Azure, в которой расположена учетная запись Data Lake Storage 1-го поколения. Вы увидите результат, аналогичный приведенному ниже:
 
-        Initializing Copy.
-        Copy Started.
-        100% data copied.
-        Finishing Copy.
-        Copy Completed. 1 file copied.
+    ```output
+    Initializing Copy.
+    Copy Started.
+    100% data copied.
+    Finishing Copy.
+    Copy Completed. 1 file copied.
+    ```
 
 1. Кроме того, можно скопировать все большие двоичные объекты из одного контейнера в учетную запись Data Lake Storage 1-го поколения, используя следующую команду:
 
-        AdlCopy /source https://<source_account>.blob.core.windows.net/<source_container>/ /dest swebhdfs://<dest_adlsg1_account>.azuredatalakestore.net/<dest_folder>/ /sourcekey <storage_account_key_for_storage_container>        
+    ```console
+    AdlCopy /source https://<source_account>.blob.core.windows.net/<source_container>/ /dest swebhdfs://<dest_adlsg1_account>.azuredatalakestore.net/<dest_folder>/ /sourcekey <storage_account_key_for_storage_container>  
+    ```      
 
     Пример:
 
-        AdlCopy /Source https://mystorage.blob.core.windows.net/mycluster/example/data/gutenberg/ /dest adl://mydatalakestorage.azuredatalakestore.net/mynewfolder/ /sourcekey uJUfvD6cEvhfLoBae2yyQf8t9/BpbWZ4XoYj4kAS5Jf40pZaMNf0q6a8yqTxktwVgRED4vPHeh/50iS9atS5LQ==
+    ```console
+    AdlCopy /Source https://mystorage.blob.core.windows.net/mycluster/example/data/gutenberg/ /dest adl://mydatalakestorage.azuredatalakestore.net/mynewfolder/ /sourcekey uJUfvD6cEvhfLoBae2yyQf8t9/BpbWZ4XoYj4kAS5Jf40pZaMNf0q6a8yqTxktwVgRED4vPHeh/50iS9atS5LQ==
+    ```
 
-### <a name="performance-considerations"></a>Вопросы производительности
+### <a name="performance-considerations"></a>Особенности производительности
 
 При копировании из учетной записи хранения BLOB-объектов Azure может выполняться регулирование во время копирования на стороне хранилища BLOB-объектов. Это может снизить производительность задания копирования. Дополнительные сведения об ограничениях хранилища BLOB-объектов Azure см. в статье [Подписка Azure, границы, квоты и ограничения службы](../azure-resource-manager/management/azure-subscription-service-limits.md).
 
@@ -99,11 +111,15 @@ Data Lake Storage 1-го поколения предоставляет прог�
 1. Откройте командную строку и перейдите в каталог, в который установлено средство AdlCopy, обычно `%HOMEPATH%\Documents\adlcopy`.
 1. Чтобы скопировать определенный файл из одной учетной записи Data Lake Storage 1-го поколения в другую, выполните следующую команду.
 
-        AdlCopy /Source adl://<source_adlsg1_account>.azuredatalakestore.net/<path_to_file> /dest adl://<dest_adlsg1_account>.azuredatalakestore.net/<path>/
+    ```console
+    AdlCopy /Source adl://<source_adlsg1_account>.azuredatalakestore.net/<path_to_file> /dest adl://<dest_adlsg1_account>.azuredatalakestore.net/<path>/
+    ```
 
     Пример:
 
-        AdlCopy /Source adl://mydatastorage.azuredatalakestore.net/mynewfolder/909f2b.log /dest adl://mynewdatalakestorage.azuredatalakestore.net/mynewfolder/
+    ```console
+    AdlCopy /Source adl://mydatastorage.azuredatalakestore.net/mynewfolder/909f2b.log /dest adl://mynewdatalakestorage.azuredatalakestore.net/mynewfolder/
+    ```
 
    > [!NOTE]
    > Приведенный выше синтаксис указывает файл, который будет скопирован в папку в целевой учетной записи Data Lake Storage 1-го поколения. Инструмент AdlCopy создает папку, если указанного имени папки не существует.
@@ -112,16 +128,20 @@ Data Lake Storage 1-го поколения предоставляет прог�
 
     Вам будет предложено ввести учетные данные для подписки Azure, в которой расположена учетная запись Data Lake Storage 1-го поколения. Вы увидите результат, аналогичный приведенному ниже:
 
-        Initializing Copy.
-        Copy Started.|
-        100% data copied.
-        Finishing Copy.
-        Copy Completed. 1 file copied.
+    ```output
+    Initializing Copy.
+    Copy Started.|
+    100% data copied.
+    Finishing Copy.
+    Copy Completed. 1 file copied.
+    ```
 1. Следующая команда копирует все файлы из указанной папки в исходной учетной записи Data Lake Storage 1-го поколения в папку в целевой учетной записи Data Lake Storage 1-го поколения.
 
-        AdlCopy /Source adl://mydatastorage.azuredatalakestore.net/mynewfolder/ /dest adl://mynewdatalakestorage.azuredatalakestore.net/mynewfolder/
+    ```console
+    AdlCopy /Source adl://mydatastorage.azuredatalakestore.net/mynewfolder/ /dest adl://mynewdatalakestorage.azuredatalakestore.net/mynewfolder/
+    ```
 
-### <a name="performance-considerations"></a>Вопросы производительности
+### <a name="performance-considerations"></a>Особенности производительности
 
 При использовании AdlCopy в качестве автономного средства копия выполняется на общих ресурсах, управляемых Azure. Производительность в этой среде зависит от системной нагрузки и доступных ресурсов. Этот режим лучше всего применять для небольших передач, выполняемых при необходимости. При использовании AdlCopy в качестве автономного инструмента параметры не требуют настройки.
 
@@ -138,17 +158,23 @@ Data Lake Storage 1-го поколения предоставляет прог�
 
 Выполните следующую команду, чтобы скопировать данные из большого двоичного объекта службы хранилища Azure в учетную запись Data Lake Storage 1-го поколения, используя учетную запись Data Lake Analytics:
 
-    AdlCopy /source https://<source_account>.blob.core.windows.net/<source_container>/<blob name> /dest swebhdfs://<dest_adlsg1_account>.azuredatalakestore.net/<dest_folder>/ /sourcekey <storage_account_key_for_storage_container> /Account <data_lake_analytics_account> /Units <number_of_data_lake_analytics_units_to_be_used>
+```console
+AdlCopy /source https://<source_account>.blob.core.windows.net/<source_container>/<blob name> /dest swebhdfs://<dest_adlsg1_account>.azuredatalakestore.net/<dest_folder>/ /sourcekey <storage_account_key_for_storage_container> /Account <data_lake_analytics_account> /Units <number_of_data_lake_analytics_units_to_be_used>
+```
 
 Пример:
 
-    AdlCopy /Source https://mystorage.blob.core.windows.net/mycluster/example/data/gutenberg/ /dest swebhdfs://mydatalakestorage.azuredatalakestore.net/mynewfolder/ /sourcekey uJUfvD6cEvhfLoBae2yyQf8t9/BpbWZ4XoYj4kAS5Jf40pZaMNf0q6a8yqTxktwVgRED4vPHeh/50iS9atS5LQ== /Account mydatalakeanalyticaccount /Units 2
+```console
+AdlCopy /Source https://mystorage.blob.core.windows.net/mycluster/example/data/gutenberg/ /dest swebhdfs://mydatalakestorage.azuredatalakestore.net/mynewfolder/ /sourcekey uJUfvD6cEvhfLoBae2yyQf8t9/BpbWZ4XoYj4kAS5Jf40pZaMNf0q6a8yqTxktwVgRED4vPHeh/50iS9atS5LQ== /Account mydatalakeanalyticaccount /Units 2
+```
 
 Точно также выполните следующую команду, чтобы скопировать все файлы из указанной папки в исходной учетной записи Data Lake Storage 1-го поколения в папку в целевой учетной записи Data Lake Storage 1-го поколения с помощью учетной записи Data Lake Analytics.
 
-    AdlCopy /Source adl://mysourcedatalakestorage.azuredatalakestore.net/mynewfolder/ /dest adl://mydestdatastorage.azuredatalakestore.net/mynewfolder/ /Account mydatalakeanalyticaccount /Units 2
+```console
+AdlCopy /Source adl://mysourcedatalakestorage.azuredatalakestore.net/mynewfolder/ /dest adl://mydestdatastorage.azuredatalakestore.net/mynewfolder/ /Account mydatalakeanalyticaccount /Units 2
+```
 
-### <a name="performance-considerations"></a>Вопросы производительности
+### <a name="performance-considerations"></a>Особенности производительности
 
 При копировании данных в диапазоне терабайт применение AdlCopy с учетной записью Azure Data Lake Analytics обеспечивает более высокую и более предсказуемую производительность. Параметр, который необходимо настроить, — это количество единиц Azure Data Lake Analytics для задания копирования. Увеличение числа единиц повысит производительность задания копирования. Каждый копируемый файл может использовать не более одной единицы. Если указать количество единиц, превышающее количество копируемых файлов, то это не приведет к повышению производительности.
 
@@ -159,11 +185,15 @@ Data Lake Storage 1-го поколения предоставляет прог�
 1. Откройте командную строку и перейдите в каталог, в который установлено средство AdlCopy, обычно `%HOMEPATH%\Documents\adlcopy`.
 1. Выполните следующую команду, чтобы скопировать все файлы с расширением CSV из указанного большого двоичного объекта из исходного контейнера в папку Data Lake Storage 1-го поколения:
 
-        AdlCopy /source https://<source_account>.blob.core.windows.net/<source_container>/<blob name> /dest swebhdfs://<dest_adlsg1_account>.azuredatalakestore.net/<dest_folder>/ /sourcekey <storage_account_key_for_storage_container> /Pattern *.csv
+    ```console
+    AdlCopy /source https://<source_account>.blob.core.windows.net/<source_container>/<blob name> /dest swebhdfs://<dest_adlsg1_account>.azuredatalakestore.net/<dest_folder>/ /sourcekey <storage_account_key_for_storage_container> /Pattern *.csv
+    ```
 
     Пример:
 
-        AdlCopy /source https://mystorage.blob.core.windows.net/mycluster/HdiSamples/HdiSamples/FoodInspectionData/ /dest adl://mydatalakestorage.azuredatalakestore.net/mynewfolder/ /sourcekey uJUfvD6cEvhfLoBae2yyQf8t9/BpbWZ4XoYj4kAS5Jf40pZaMNf0q6a8yqTxktwVgRED4vPHeh/50iS9atS5LQ== /Pattern *.csv
+    ```console
+    AdlCopy /source https://mystorage.blob.core.windows.net/mycluster/HdiSamples/HdiSamples/FoodInspectionData/ /dest adl://mydatalakestorage.azuredatalakestore.net/mynewfolder/ /sourcekey uJUfvD6cEvhfLoBae2yyQf8t9/BpbWZ4XoYj4kAS5Jf40pZaMNf0q6a8yqTxktwVgRED4vPHeh/50iS9atS5LQ== /Pattern *.csv
+    ```
 
 ## <a name="billing"></a>Выставление счетов
 
@@ -182,7 +212,7 @@ AdlCopy поддерживает копирование данных, содер
 
 * 1.0.13 — при копировании данных в одну и ту же учетную запись Azure Data Lake Storage 1-го поколения в нескольких командах adlcopy больше не требуется повторно вводить свои учетные данные для каждого запуска. Теперь Adlcopy будет кэшировать эти данные в нескольких запусках.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)
 * [Начало работы с Azure Data Lake Analytics с помощью портала Azure](../data-lake-analytics/data-lake-analytics-get-started-portal.md)

@@ -6,10 +6,10 @@ ms.topic: include
 ms.date: 11/05/2019
 ms.author: alkohli
 ms.openlocfilehash: 16647b6a13e64073ab570d36a8a380d0e36bd855
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "73800073"
 ---
 - Не копируйте файлы непосредственно в созданные общие ресурсы. Необходимо создать папку в общей папке, а затем скопировать в нее файлы.

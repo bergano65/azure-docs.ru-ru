@@ -6,10 +6,9 @@ ms.topic: reference
 ms.date: 02/14/2020
 ms.author: cshoe
 ms.openlocfilehash: 29b5e9c7673b4a730a41bf7cf2b1c4a2a86209ed
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77462111"
 ---
 # <a name="azure-functions-http-triggers-and-bindings-overview"></a>Общие сведения о триггерах и привязках HTTP в функциях Azure
@@ -19,17 +18,17 @@ ms.locfileid: "77462111"
 | Действие | Type |
 |---------|---------|
 | Выполнение функции из HTTP-запроса | [Триггер](./functions-bindings-http-webhook-trigger.md) |
-| Возврат HTTP-ответа из функции |[Выходная привязка](./functions-bindings-http-webhook-output.md) |
+| Выходные привязки HTTP для Функций Azure |[Выходная привязка](./functions-bindings-http-webhook-output.md) |
 
 Код в этой статье по умолчанию использует синтаксис .NET Core, используемый в функциях версии 2. x и более поздних. Сведения о синтаксисе версии 1.x см. на странице с [соответствующими шаблонами функций](https://github.com/Azure/azure-functions-templates/tree/v1.x/Functions.Templates/Templates).
 
 ## <a name="add-to-your-functions-app"></a>Добавление в приложение функций
 
-### <a name="functions-2x-and-higher"></a>Функции 2. x и более поздних версий
+### <a name="functions-2x-and-higher"></a>Функции 2.x и более поздних версий
 
 Для работы с триггером и привязками требуется ссылка на соответствующий пакет. Пакет NuGet используется для библиотек классов .NET, в то время как набор расширений используется для всех других типов приложений.
 
-| Язык                                        | Добавить по...                                   | Remarks 
+| Язык                                        | Добавить по...                                   | Комментарии 
 |-------------------------------------------------|---------------------------------------------|-------------|
 | C#                                              | Установка [пакета NuGet], версия 3. x | |
 | Скрипт C#, Java, JavaScript, Python, PowerShell | Регистрация [пакета расширений]          | [Расширение "инструменты Azure](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack) " рекомендуется использовать с Visual Studio Code. |
@@ -48,4 +47,4 @@ ms.locfileid: "77462111"
 ## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Выполнение функции из HTTP-запроса](./functions-bindings-http-webhook-trigger.md)
-- [Возврат HTTP-ответа из функции](./functions-bindings-http-webhook-output.md)
+- [Выходные привязки HTTP для Функций Azure](./functions-bindings-http-webhook-output.md)

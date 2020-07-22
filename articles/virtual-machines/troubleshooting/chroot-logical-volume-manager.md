@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 11/24/2019
 ms.author: vilibert
-ms.openlocfilehash: 20d710f717a9dff26f46ac7a201a9b694f3fbe84
-ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
+ms.openlocfilehash: c0041a835c02263f23c5cdc6f839756edfb070c1
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "74684133"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86526883"
 ---
 # <a name="troubleshooting-a-linux-vm-when-there-is-no-access-to-the-azure-serial-console-and-the-disk-layout-is-using-lvm-logical-volume-manager"></a>Устранение неполадок в виртуальной машине Linux при отсутствии доступа к последовательной консоли Azure и разметке диска с использованием LVM (Диспетчер логических томов)
 
@@ -29,7 +29,7 @@ ms.locfileid: "74684133"
 
 Создание моментального снимка затронутой виртуальной машины. 
 
-Затем моментальный снимок будет подключен **к виртуальной машине** . Следуйте инструкциям в [разделе](https://docs.microsoft.com/azure/virtual-machines/linux/snapshot-copy-managed-disk#use-azure-portal) создание **моментального снимка**.
+Затем моментальный снимок будет подключен **к виртуальной машине** . Следуйте инструкциям в [разделе](../linux/snapshot-copy-managed-disk.md#use-azure-portal) создание **моментального снимка**.
 
 ## <a name="create-a-rescue-vm"></a>Создание виртуальной машины для аварийного создания
 Обычно рекомендуется использовать виртуальную машину с такой же или аналогичной версией операционной системы. Используйте тот же **регион** и **группу ресурсов** затронутой виртуальной машины.
@@ -143,7 +143,7 @@ mount  /dev/mapper/rootvg-usrlv /rescue/usr
 Команды можно использовать для установки, удаления и обновления программного обеспечения. Устраните неполадки виртуальных машин, чтобы устранить ошибки.
 
 
-Выполните команду лсблк, а/Рескуе — Now/,/Рескуе/Бут —/Boot ![чрутед](./media/chroot-logical-volume-manager/chrooted.png)
+Выполните команду лсблк, а/Рескуе — Now/,/Рескуе/Бут —/Boot ![ чрутед](./media/chroot-logical-volume-manager/chrooted.png)
 
 ## <a name="perform-fixes"></a>Выполнение исправлений
 
@@ -171,13 +171,13 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 Команда **grep** перечисляет ядра, о которых имеет значение **GRUB. cfg** .
 ![Ядра](./media/chroot-logical-volume-manager/kernels.png)
 
-**grub2-едитенв** отображает, какой ядро будет загружаться при следующей загрузке ![ядра по умолчанию](./media/chroot-logical-volume-manager/kernel-default.png)
+**grub2-едитенв** отображает, какой ядро будет загружаться при следующей загрузке ![ ядра по умолчанию](./media/chroot-logical-volume-manager/kernel-default.png)
 
-**grub2-Set-Default** используется для изменения другого набора grub2 ядра ![.](./media/chroot-logical-volume-manager/grub2-set-default.png)
+**grub2-Set-Default** используется для изменения другого ![ набора grub2 ядра.](./media/chroot-logical-volume-manager/grub2-set-default.png)
 
-**grub2-едитенв** отображает, какой ядро будет загружаться при следующей загрузке ![нового ядра.](./media/chroot-logical-volume-manager/kernel-new.png)
+**grub2-едитенв** отображает, какой ядро будет загружаться при следующей загрузке ![ нового ядра.](./media/chroot-logical-volume-manager/kernel-new.png)
 
-**grub2-mkconfig** перестраивает GRUB. cfg с использованием требуемых ![версий grub2 mkconfig](./media/chroot-logical-volume-manager/grub2-mkconfig.png)
+**grub2-mkconfig** перестраивает GRUB. cfg с использованием требуемых версий ![ grub2 mkconfig](./media/chroot-logical-volume-manager/grub2-mkconfig.png)
 
 
 
@@ -204,12 +204,12 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 
 ![Дополнительно](./media/chroot-logical-volume-manager/rpm-kernel.png)
 
-При необходимости удалите или обновите расширение **ядра**
-![.](./media/chroot-logical-volume-manager/rpm-remove-kernel.png)
+При необходимости удалите или обновите **kernel** 
+ ![ расширение ядра.](./media/chroot-logical-volume-manager/rpm-remove-kernel.png)
 
 
 ### <a name="example-3---enable-serial-console"></a>Пример 3. Включение последовательной консоли
-Если доступ к последовательной консоли Azure невозможен, проверьте параметры конфигурации GRUB для виртуальной машины Linux и исправьте их. Подробные сведения можно найти [в этом документе](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/serial-console-grub-proactive-configuration) .
+Если доступ к последовательной консоли Azure невозможен, проверьте параметры конфигурации GRUB для виртуальной машины Linux и исправьте их. Подробные сведения можно найти [в этом документе](./serial-console-grub-proactive-configuration.md) .
 
 ### <a name="example-4---kernel-loading-with-problematic-lvm-swap-volume"></a>Пример 4. Загрузка ядра с проблематичным LVM томом
 
@@ -252,15 +252,15 @@ umount /rescue
 
 Отключите диск от виртуальной машины и выполните переключение диска.
 
-Выберите виртуальную машину на **дисках** портала и выберите **отсоединить**
-![диск.](./media/chroot-logical-volume-manager/detach-disk.png) 
+Выберите виртуальную машину на **дисках** портала и выберите **отсоединить** 
+ ![ диск.](./media/chroot-logical-volume-manager/detach-disk.png) 
 
-Сохранить изменения ![сохранить отсоединение](./media/chroot-logical-volume-manager/save-detach.png) 
+Сохранить изменения ![ сохранить отсоединение](./media/chroot-logical-volume-manager/save-detach.png) 
 
 Теперь диск станет доступным и будет заменен исходным диском ОС затронутой виртуальной машины.
 
-Перейдите в портал Azure к виртуальной машине, на которой выполняется сбой, и выберите **диски** -> **Переключить**
-![диск подкачки ОС.](./media/chroot-logical-volume-manager/swap-disk.png) 
+Перейдите в портал Azure к виртуальной машине, на которой выполняется сбой, и выберите **диски**  ->  **Переключить**диск 
+ ![ подкачки ОС.](./media/chroot-logical-volume-manager/swap-disk.png) 
 
 Заполните поля **выберите диск** — это диск моментальных снимков, который просто отсоединился на предыдущем шаге. Также требуется имя виртуальной машины затронутой виртуальной машины, а затем нажмите кнопку **ОК** .
 
@@ -272,6 +272,6 @@ umount /rescue
 ## <a name="next-steps"></a>Дальнейшие действия
 Кроме того, вы можете узнать больше о:
 
- [Последовательная консоль Azure]( https://docs.microsoft.com/azure/virtual-machines/troubleshooting/serial-console-linux)
+ [Серийная консоль Azure]( https://docs.microsoft.com/azure/virtual-machines/troubleshooting/serial-console-linux)
 
-[Однопользовательский режим](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/serial-console-grub-single-user-mode)
+[Однопользовательский режим](./serial-console-grub-single-user-mode.md)

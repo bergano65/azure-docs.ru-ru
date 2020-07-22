@@ -13,10 +13,9 @@ ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: hirsin
 ms.openlocfilehash: 41ea41b4d7c181dad9246653a68c329387ac5381
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80884687"
 ---
 # <a name="microsoft-identity-platform-authentication-protocols"></a>Протоколы проверки подлинности платформы Microsoft Identity
@@ -35,5 +34,5 @@ ms.locfileid: "80884687"
 
 ## <a name="see-also"></a>См. также
 
-* [Обзор платформы идентификации Майкрософт](v2-overview.md)
+* [Общие сведения о платформе удостоверений Майкрософт](v2-overview.md)
 * [Примеры кода Active Directory](sample-v2-code.md)

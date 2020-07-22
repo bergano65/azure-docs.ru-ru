@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 04/11/2019
 ms.author: rogara
 ms.custom: include file
-ms.openlocfilehash: 5fc106bfd97e8decd47ac7d43383907dcbbbda9c
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
+ms.openlocfilehash: e1cc3bac56e659b9a020880a26fd3d539f987503
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82792991"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86544457"
 ---
 ## <a name="2-assign-access-permissions-to-an-identity"></a>2. Назначение разрешений на доступ удостоверению
 
@@ -39,7 +39,7 @@ ms.locfileid: "82792991"
 Чтобы назначить роль RBAC удостоверению Azure AD, используйте [портал Azure](https://portal.azure.com)выполните следующие действия.
 
 1. В портал Azure перейдите к общей папке или [Создайте общую папку](../articles/storage/files/storage-how-to-create-file-share.md).
-2. Выберите **Управление доступом (IAM)**.
+2. Выберите **Управление доступом (IAM)** .
 3. Выберите **добавить назначение роли**
 4. В колонке **Добавление назначения роли** выберите подходящую встроенную роль (средство чтения общих ресурсов SMB для данных файлов хранилища, участника общего ресурса SMB данных файлов хранилища) из списка **ролей** . Оставьте значение параметра **назначить доступ** в параметре по умолчанию: **пользователь, группа или субъект-служба Azure AD**. Выберите целевое удостоверение Azure AD по имени или адресу электронной почты.
 5. Нажмите кнопку **сохранить** , чтобы завершить операцию назначения роли.
@@ -92,7 +92,16 @@ az role assignment create --role "<role-name>" --assignee <user-principal-name> 
 Используйте команду Windows **net use** для подключения файлового ресурса Azure. Не забудьте заменить значения заполнителей в следующем примере собственными значениями. Дополнительные сведения о подключении общих файловых ресурсов см. [в статье использование файлового ресурса Azure с Windows](../articles/storage/files/storage-how-to-use-files-windows.md). 
 
 ```
-net use <desired-drive-letter>: \\<storage-account-name>.file.core.windows.net\<share-name> /user:Azure\<storage-account-name> <storage-account-key>
+$connectTestResult = Test-NetConnection -ComputerName <storage-account-name>.file.core.windows.net -Port 445
+if ($connectTestResult.TcpTestSucceeded)
+{
+ net use <desired-drive letter>: \\<storage-account-name>.file.core.windows.net\<fileshare-name>
+} 
+else 
+{
+ Write-Error -Message "Unable to reach the Azure storage account via port 445. Check to make sure your organization or ISP is not blocking port 445, or use Azure P2S VPN, Azure S2S VPN, or Express Route to tunnel SMB traffic over a different port."
+}
+
 ```
 
 Если при подключении к службе файлов Azure возникают проблемы, обратитесь к [средству устранения неполадок, опубликованному для ошибок подключения к службе файлов Azure в Windows](https://gallery.technet.microsoft.com/Troubleshooting-tool-for-a9fa1fe5). Мы также предоставляем [рекомендации](https://docs.microsoft.com/azure/storage/files/storage-files-faq#on-premises-access) по обойти сценарии, когда порт 445 заблокирован. 
@@ -130,5 +139,13 @@ icacls <mounted-drive-letter>: /grant <user-email>:(f)
 Используйте следующую команду, чтобы подключить файловый ресурс Azure. Не забудьте заменить значения заполнителей собственными значениями. Так как вы прошли проверку подлинности, вам не нужно указывать ключ учетной записи хранения, локальный AD DS учетные данные или учетные данные AD DS Azure. Возможности единого входа поддерживаются для проверки подлинности с помощью локального AD DS или Azure AD DS. Если у вас возникли проблемы при подключении с учетными данными AD DS, см. инструкции по [устранению неполадок с файлами Azure в Windows](https://docs.microsoft.com/azure/storage/files/storage-troubleshoot-windows-file-connection-problems) .
 
 ```
-net use <desired-drive-letter>: \\<storage-account-name>.file.core.windows.net\<share-name>
+$connectTestResult = Test-NetConnection -ComputerName <storage-account-name>.file.core.windows.net -Port 445
+if ($connectTestResult.TcpTestSucceeded)
+{
+ net use <desired-drive letter>: \\<storage-account-name>.file.core.windows.net\<fileshare-name>
+} 
+else 
+{
+ Write-Error -Message "Unable to reach the Azure storage account via port 445. Check to make sure your organization or ISP is not blocking port 445, or use Azure P2S VPN, Azure S2S VPN, or Express Route to tunnel SMB traffic over a different port."
+}
 ```

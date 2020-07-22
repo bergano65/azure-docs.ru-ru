@@ -5,19 +5,22 @@ author: mamccrea
 services: synapse-analytics
 ms.service: synapse-analytics
 ms.topic: conceptual
-ms.date: 04/15/2020
+ms.subservice: spark
+ms.date: 05/01/2020
 ms.author: mamccrea
 ms.reviewer: jrasnick
-ms.openlocfilehash: 3882352c7e1d484818a58d7bd4410cbd66bd6637
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
-ms.translationtype: HT
+ms.openlocfilehash: f71d231f01f2f19bd63fb9ec8c32b98fcb3e9aee
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83587805"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85194728"
 ---
 # <a name="use-net-for-apache-spark-with-azure-synapse-analytics"></a>Использование .NET для Apache Spark с помощью Azure Synapse Analytics
 
-[.NET для Apache Spark](https://dot.net/spark) — это бесплатная открытая кроссплатформенная поддержка .NET для Spark. .NET для Apache Spark предоставляет привязки .NET для Spark, которые позволяют использовать API Spark на языках C# и F# . .NET для Apache Spark позволит вам создавать и выполнять определяемые пользователем функции для Spark на основе .NET. Интерфейсы API .NET для Spark предоставляют доступ ко всем аспектам Spark для анализа данных, включая Spark SQL и структурированную потоковую передачу.
+[.NET для Apache Spark](https://dot.net/spark) обеспечивает бесплатную открытую кроссплатформенную поддержку .NET для Spark. 
+
+.NET для Apache Spark предоставляет привязки .NET для Spark, которые позволяют использовать API Spark на языках C# и F# . .NET для Apache Spark позволит вам создавать и выполнять определяемые пользователем функции для Spark, написанные на .NET. Интерфейсы API .NET для Spark предоставляют доступ ко всем аспектам Spark DataFrames для анализа данных, включая Spark SQL, Delta Lake и структурированную потоковую передачу.
 
 Вы можете анализировать данные в .NET для Apache Spark с использованием определений пакетных заданий Spark или интерактивных записных книжек Azure Synapse Analytics. Из этой статьи вы узнаете, как работать с .NET для Apache Spark в Azure Synapse Analytics с помощью обоих методов.
 
@@ -31,16 +34,10 @@ ms.locfileid: "83587805"
 
    ```dotnetcli
    cd mySparkApp
-   dotnet publish -c Release -f netcoreapp3.0 -r ubuntu.16.04-x64
+   dotnet publish -c Release -f netcoreapp3.1 -r ubuntu.16.04-x64
    ```
 
    **В Linux:**
-
-### <a name="net-for-apache-spark-in-azure-synapse-analytics-notebooks"></a>.NET для Apache Spark в записных книжках Azure Synapse Analytics
-
-При создании записной книжки вы можете выбрать ядро языка, на котором будете выражать бизнес-логику. Поддерживаются ядра для нескольких языков, включая C#.
-
-Чтобы использовать .NET для Apache Spark в записной книжке Azure Synapse Analytics, выберите ядро **.NET Spark (C#)** и подключите записную книжку к существующему пулу Spark.
 
    ```bash
    zip -r publish.zip
@@ -50,7 +47,7 @@ ms.locfileid: "83587805"
 
 Записные книжки предоставляют отличный способ создания прототипов конвейеров и сценариев .NET для Apache Spark. Вы можете быстро и эффективно начать работу с данными, анализировать их, фильтровать, отображать и визуализировать. Специалисты по инжинирингу, обработке и анализу данных, бизнес-аналитики и специалисты по машинному обучению могут совместно работать над общим интерактивным документом. Вы немедленно получите результаты исследования данных и сможете визуализировать их прямо в той же записной книжке.
 
-### <a name="how-to-use-notebooks"></a>Как использовать записные книжки
+### <a name="how-to-use-net-for-apache-spark-notebooks"></a>Использование .NET для записных книжек Apache Spark
 
 При создании записной книжки вы можете выбрать ядро языка, на котором будете выражать бизнес-логику. Поддерживаются ядра для нескольких языков, включая C#.
 
@@ -58,7 +55,7 @@ ms.locfileid: "83587805"
 
 Записная книжка .NET Spark основана на интерактивном интерфейсе .NET и в стандартной конфигурации поддерживает все интерактивные возможности C#, в том числе .NET для Spark, а также имеет заранее определенную переменную сеанса Spark `spark`.
 
-### <a name="sparknet-c-kernel-features"></a>Особенности ядра C# Spark.NET
+### <a name="net-for-apache-spark-c-kernel-features"></a>.NET для функций ядра C# в Apache Spark
 
 При использовании .NET для Apache Spark в записной книжке Azure Synapse Analytics доступны следующие возможности.
 

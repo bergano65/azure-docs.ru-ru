@@ -5,18 +5,18 @@ author: peterpogorski
 ms.topic: conceptual
 ms.date: 01/23/2019
 ms.author: pepogors
-ms.openlocfilehash: de2a74ad2d61de18d2150b72be3251e5b5583f2e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 853e53d32f87f81e5db587de2654f83037930da7
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75551800"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86261134"
 ---
 # <a name="networking"></a>Сеть
 
 При создании кластеров Azure Service Fabric и управлении ими вы обеспечиваете сетевое подключение для узлов и приложений. Сетевые ресурсы включают в себя диапазоны IP-адресов, виртуальные сети, подсистемы балансировки нагрузки и группы безопасности сети. В этой статье вы узнаете рекомендации по работе с этими ресурсами.
 
-Изучите [шаблоны сетей Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-patterns-networking) , чтобы узнать, как создавать кластеры, использующие следующие функции: существующую виртуальную сеть или подсеть, статический общедоступный IP-адрес, подсистему балансировки нагрузки только для внутреннего использования или внутреннюю и внешнюю подсистемы балансировки нагрузки.
+Изучите [шаблоны сетей Azure Service Fabric](./service-fabric-patterns-networking.md) , чтобы узнать, как создавать кластеры, использующие следующие функции: существующую виртуальную сеть или подсеть, статический общедоступный IP-адрес, подсистему балансировки нагрузки только для внутреннего использования или внутреннюю и внешнюю подсистемы балансировки нагрузки.
 
 ## <a name="infrastructure-networking"></a>Сеть инфраструктуры
 Увеличьте производительность виртуальной машины с помощью ускорения работы в сети, объявив свойство enableAcceleratedNetworking в шаблоне Resource Manager. В следующем фрагменте кода представлено свойство NetworkInterfaceConfigurations масштабируемого набора виртуальных машин, позволяющее ускорить работу в сети.
@@ -37,33 +37,33 @@ ms.locfileid: "75551800"
   }
 ]
 ```
-Кластер Service Fabric можно подготовить с ускоренной работой в сети в [Linux](https://docs.microsoft.com/azure/virtual-network/create-vm-accelerated-networking-cli) и [Windows](https://docs.microsoft.com/azure/virtual-network/create-vm-accelerated-networking-powershell).
+Кластер Service Fabric можно подготовить с ускоренной работой в сети в [Linux](../virtual-network/create-vm-accelerated-networking-cli.md) и [Windows](../virtual-network/create-vm-accelerated-networking-powershell.md).
 
 Ускоренная сеть поддерживается для номеров SKU серии виртуальных машин Azure: D/DSv2, D/DSv3, E/ESv3, F/FS, серия fsv2 и MS/MMS. Ускоренная работа в сети успешно опробована с помощью номера SKU Standard_DS8_v3 23.01.2019 в кластере Service Fabric на платформе Windows и номера SKU Standard_DS12_v2 29.01.2019 в кластере Service Fabric на платформе Linux.
 
-Чтобы включить ускоренную работу в сети в имеющемся кластере Service Fabric, следует [масштабировать кластер Service Fabric путем добавления масштабируемого набора виртуальных машин](https://docs.microsoft.com/azure/service-fabric/virtual-machine-scale-set-scale-node-type-scale-out). Затем вы сможете выполнить следующие действия:
+Чтобы включить ускоренную работу в сети в имеющемся кластере Service Fabric, следует [масштабировать кластер Service Fabric путем добавления масштабируемого набора виртуальных машин](./virtual-machine-scale-set-scale-node-type-scale-out.md). Затем вы сможете выполнить следующие действия:
 1. Подготовить NodeType с поддержкой ускоренной работы в сети.
 2. Перенести службы и их состояния в подготовленный NodeType с поддержкой ускоренной работы в сети.
 
-Масштабирование инфраструктуры требуется для включения ускоренной работы в сети в имеющемся кластере. Включение ускоренной работы в сети приведет к простою, так как все виртуальные машины в группе доступности следует [остановить и освободить, прежде чем включить ускорение на любой имеющейся сетевой карте](https://docs.microsoft.com/azure/virtual-network/create-vm-accelerated-networking-cli#enable-accelerated-networking-on-existing-vms).
+Масштабирование инфраструктуры требуется для включения ускоренной работы в сети в имеющемся кластере. Включение ускоренной работы в сети приведет к простою, так как все виртуальные машины в группе доступности следует [остановить и освободить, прежде чем включить ускорение на любой имеющейся сетевой карте](../virtual-network/create-vm-accelerated-networking-cli.md#enable-accelerated-networking-on-existing-vms).
 
 ## <a name="cluster-networking"></a>Сеть кластера
 
-* Кластеры Service Fabric можно развернуть в имеющейся виртуальной сети, выполнив действия, описанные в статье [Схемы сетевых подключений Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-patterns-networking).
+* Кластеры Service Fabric можно развернуть в имеющейся виртуальной сети, выполнив действия, описанные в статье [Схемы сетевых подключений Service Fabric](./service-fabric-patterns-networking.md).
 
-* Группы безопасности сети (NSG) рекомендуются для типов узлов, которые ограничивают входящий и исходящий трафик в своем кластере. Убедитесь, что в NSG открыты необходимые порты. Например: ![Service Fabric правила NSG][NSGSetup]
+* Группы безопасности сети (NSG) рекомендуются для типов узлов, которые ограничивают входящий и исходящий трафик в своем кластере. Убедитесь, что в NSG открыты необходимые порты. Например: ![ Service Fabric правила NSG][NSGSetup]
 
-* Основной тип узла, который содержит системные службы Service Fabric, не должен предоставляться через внешний балансировщик нагрузки и может предоставляться с помощью [внутреннего](https://docs.microsoft.com/azure/service-fabric/service-fabric-patterns-networking#internal-only-load-balancer).
+* Основной тип узла, который содержит системные службы Service Fabric, не должен предоставляться через внешний балансировщик нагрузки и может предоставляться с помощью [внутреннего](./service-fabric-patterns-networking.md#internal-only-load-balancer).
 
-* Используйте [статический общедоступный IP-адрес](https://docs.microsoft.com/azure/service-fabric/service-fabric-patterns-networking#static-public-ip-address-1) для кластера.
+* Используйте [статический общедоступный IP-адрес](./service-fabric-patterns-networking.md#static-public-ip-address-1) для кластера.
 
 ## <a name="application-networking"></a>Сеть для приложений
 
-* Для запуска рабочих нагрузок контейнера Windows используйте [режим открытой сети](https://docs.microsoft.com/azure/service-fabric/service-fabric-networking-modes#set-up-open-networking-mode), чтобы упростить взаимодействие между службами.
+* Для запуска рабочих нагрузок контейнера Windows используйте [режим открытой сети](./service-fabric-networking-modes.md#set-up-open-networking-mode), чтобы упростить взаимодействие между службами.
 
-* Используйте обратный прокси-сервер, например [Traefik](https://docs.traefik.io/v1.6/configuration/backends/servicefabric/) или [обратный прокси-сервер Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-reverseproxy), чтобы предоставить распространенные порты для приложений, например 80 или 443.
+* Используйте обратный прокси-сервер, например [Traefik](https://docs.traefik.io/v1.6/configuration/backends/servicefabric/) или [обратный прокси-сервер Service Fabric](./service-fabric-reverseproxy.md), чтобы предоставить распространенные порты для приложений, например 80 или 443.
 
-* Для контейнеров Windows, размещенных на компьютерах Air гаппед, которые не могут получать базовые уровни из облачного хранилища Azure, переопределяйте поведение внешнего слоя с помощью флага [--allow-нераспространяемый-артефакты](https://docs.microsoft.com/virtualization/windowscontainers/about/faq#how-do-i-make-my-container-images-available-on-air-gapped-machines) в управляющей программе DOCKER.
+* Для контейнеров Windows, размещенных на компьютерах Air гаппед, которые не могут получать базовые уровни из облачного хранилища Azure, переопределяйте поведение внешнего слоя с помощью флага [--allow-нераспространяемый-артефакты](/virtualization/windowscontainers/about/faq#how-do-i-make-my-container-images-available-on-air-gapped-machines) в управляющей программе DOCKER.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

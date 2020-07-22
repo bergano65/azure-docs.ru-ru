@@ -3,16 +3,16 @@ title: Перенос данных в учетную запись Azure Cosmos D
 description: Узнайте, как использовать Стриим для переноса данных из базы данных Oracle в учетную запись Azure Cosmos DB API SQL.
 author: SnehaGunda
 ms.service: cosmos-db
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 07/22/2019
 ms.author: sngun
 ms.reviewer: sngun
-ms.openlocfilehash: 36ba9e2d3385184f32876a6d067b58f7c21a90bd
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
+ms.openlocfilehash: 5ce805fb302264a0c3907c006983f9d939a2908e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "71003285"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85262078"
 ---
 # <a name="migrate-data-to-azure-cosmos-db-sql-api-account-using-striim"></a>Перенос данных в учетную запись Azure Cosmos DB API SQL с помощью Стриим
  
@@ -20,7 +20,7 @@ ms.locfileid: "71003285"
 
 В этой статье показано, как использовать Стриим для переноса данных из **базы данных Oracle** в **учетную запись Azure Cosmos DB API SQL**.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * Если у вас еще нет [подписки Azure](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing), создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начать работу.
 
@@ -32,15 +32,15 @@ ms.locfileid: "71003285"
 
 1. Выберите **создать ресурс** и выполните поиск по запросу **Стриим** в Azure Marketplace. Выберите первый вариант и **Создайте**.
 
-   ![Найти элемент Стриим Marketplace](./media/cosmosdb-sql-api-migrate-data-striim/striim-azure-marketplace.png)
+   :::image type="content" source="./media/cosmosdb-sql-api-migrate-data-striim/striim-azure-marketplace.png" alt-text="Найти элемент Стриим Marketplace":::
 
 1. Затем введите свойства конфигурации для экземпляра Стриим. Среда Стриим развертывается на виртуальной машине. В области **Основные сведения** введите **имя пользователя виртуальной машины**, **пароль виртуальной** машины (этот пароль используется для подключения к виртуальной машине по протоколу SSH). Выберите **подписку**, **группу ресурсов**и **сведения о расположении** , где вы хотите развернуть Стриим. После завершения нажмите кнопку **ОК**.
 
-   ![Настройка основных параметров для Стриим](./media/cosmosdb-sql-api-migrate-data-striim/striim-configure-basic-settings.png)
+   :::image type="content" source="./media/cosmosdb-sql-api-migrate-data-striim/striim-configure-basic-settings.png" alt-text="Настройка основных параметров для Стриим":::
 
 1. В области **Параметры кластера Стриим** выберите тип развертывания Стриим и размер виртуальной машины.
 
-   |Параметр | Значение | Описание |
+   |Параметр | Значение | Описание: |
    | ---| ---| ---|
    |Тип развертывания Стриим |Автономный | Стриим может выполняться в **автономном** или **кластерном** типах развертывания. В автономном режиме сервер Стриим будет развернут на одной виртуальной машине. в зависимости от объема данных можно выбрать размер виртуальных машин. В режиме кластера будет развернут сервер Стриим на двух или более виртуальных машинах с выбранным размером. Кластерные среды с более чем 2 узлами обеспечивают автоматическую высокую доступность и отработку отказа.</br></br> В этом учебнике можно выбрать автономный параметр. Используйте виртуальную машину размера "Standard_F4s" по умолчанию.  | 
    | Имя кластера Стриим|    <Striim_cluster_Name>|  Имя кластера Стриим.|
@@ -50,7 +50,7 @@ ms.locfileid: "71003285"
 
 1. В области **параметры доступа Стриим** настройте **общедоступный IP-адрес** (выберите значения по умолчанию), **доменное имя для Стриим**, **пароль администратора** , который вы хотите использовать для входа в пользовательский интерфейс Стриим. Настройте ВИРТУАЛЬную сеть и подсети (выберите значения по умолчанию). После заполнения сведений нажмите кнопку **ОК** , чтобы продолжить.
 
-   ![Параметры доступа Стриим](./media/cosmosdb-sql-api-migrate-data-striim/striim-access-settings.png)
+   :::image type="content" source="./media/cosmosdb-sql-api-migrate-data-striim/striim-access-settings.png" alt-text="Параметры доступа Стриим":::
 
 1. Azure будет проверять развертывание и убедиться в том, что все выглядит хорошо. выполнение проверки занимает несколько минут. После завершения проверки нажмите кнопку **ОК**.
   
@@ -70,7 +70,7 @@ ms.locfileid: "71003285"
 
 1. Перейдите в область **Обозреватель данных** в учетной записи Azure Cosmos. Выберите **создать контейнер** , чтобы создать новый контейнер. Предположим, что выполняется перенос *продуктов* и данных *заказов* из базы данных Oracle в Azure Cosmos DB. Создайте новую базу данных с именем **стриимдемо** и контейнером с именем **Orders**. Подготавливаете контейнер с помощью **1000 RUS** (в этом примере используется 1000 RUS, но для рабочей нагрузки следует использовать оценку пропускной способности) и **/ORDER_ID** в качестве ключа секции. Эти значения будут различаться в зависимости от исходных данных. 
 
-   ![Создание учетной записи API SQL](./media/cosmosdb-sql-api-migrate-data-striim/create-sql-api-account.png)
+   :::image type="content" source="./media/cosmosdb-sql-api-migrate-data-striim/create-sql-api-account.png" alt-text="Создание учетной записи API SQL":::
 
 ## <a name="configure-oracle-to-azure-cosmos-db-data-flow"></a>Настройка Oracle для Azure Cosmos DB потока данных
 
@@ -78,11 +78,11 @@ ms.locfileid: "71003285"
 
 1. Перейдите к экземпляру Стриим, развернутому в портал Azure. Нажмите кнопку **подключить** в верхней строке меню и на вкладке **SSH** скопируйте URL-адрес в поле **Вход с помощью локальной учетной записи виртуальной машины** .
 
-   ![Получение URL-адреса SSH](./media/cosmosdb-sql-api-migrate-data-striim/get-ssh-url.png)
+   :::image type="content" source="./media/cosmosdb-sql-api-migrate-data-striim/get-ssh-url.png" alt-text="Получение URL-адреса SSH":::
 
 1. Откройте новое окно терминала и выполните команду SSH, скопированную из портал Azure. В этой статье используется терминал в MacOS. Вы можете выполнить аналогичные инструкции с помощью выводимых инструкций или другого клиента SSH на компьютере Windows. При появлении запроса введите **Да** , чтобы продолжить, и введите **пароль** , заданный для виртуальной машины на предыдущем шаге.
 
-   ![Подключение к виртуальной машине Стриим](./media/cosmosdb-sql-api-migrate-data-striim/striim-vm-connect.png)
+   :::image type="content" source="./media/cosmosdb-sql-api-migrate-data-striim/striim-vm-connect.png" alt-text="Подключение к виртуальной машине Стриим":::
 
 1. Теперь откройте новую вкладку терминала, чтобы скопировать ранее загруженный файл **ojdbc8. jar** . Используйте следующую команду SCP для копирования JAR-файла с локального компьютера в папку tmp экземпляра Стриим, работающего в Azure:
 
@@ -91,7 +91,7 @@ ms.locfileid: "71003285"
    scp ojdbc8.jar striimdemo@striimdemo.westus.cloudapp.azure.com:/tmp
    ```
 
-   ![Скопируйте JAR-файл с компьютера Location в Стриим.](./media/cosmosdb-sql-api-migrate-data-striim/copy-jar-file.png)
+   :::image type="content" source="./media/cosmosdb-sql-api-migrate-data-striim/copy-jar-file.png" alt-text="Скопируйте JAR-файл с компьютера Location в Стриим.":::
 
 1. Затем вернитесь к окну, где вы выполнили подключение SSH к экземпляру Стриим и выполните вход как sudo. Переместите файл **ojdbc8. jar** из каталога **/tmp** в каталог **lib** экземпляра Стриим с помощью следующих команд:
 
@@ -102,7 +102,7 @@ ms.locfileid: "71003285"
    chmod +x ojdbc8.jar
    ```
 
-   ![Перемещение JAR-файла в папку lib](./media/cosmosdb-sql-api-migrate-data-striim/move-jar-file.png)
+   :::image type="content" source="./media/cosmosdb-sql-api-migrate-data-striim/move-jar-file.png" alt-text="Перемещение JAR-файла в папку lib":::
 
 
 1. В том же окне терминала перезапустите сервер Стриим, выполнив следующие команды:
@@ -122,39 +122,39 @@ ms.locfileid: "71003285"
 
 1. Теперь вернитесь в Azure и скопируйте общедоступный IP-адрес виртуальной машины Стриим. 
 
-   ![Копировать IP-адрес виртуальной машины Стриим](./media/cosmosdb-sql-api-migrate-data-striim/copy-public-ip-address.png)
+   :::image type="content" source="./media/cosmosdb-sql-api-migrate-data-striim/copy-public-ip-address.png" alt-text="Копировать IP-адрес виртуальной машины Стриим":::
 
 1. Чтобы перейти к веб-ИНТЕРФЕЙСу Стриим, откройте новую вкладку в браузере и скопируйте общедоступный IP-адрес, за которым следует: 9080. Войдите, используя имя **администратора** , а также пароль администратора, указанный в портал Azure.
 
-   ![Вход в Стриим](./media/cosmosdb-sql-api-migrate-data-striim/striim-login-ui.png)
+   :::image type="content" source="./media/cosmosdb-sql-api-migrate-data-striim/striim-login-ui.png" alt-text="Вход в Стриим":::
 
 1. Теперь вы приступили к домашней странице Стриим. Существует три различные панели: **панели мониторинга**, **приложения**и **саурцепревиев**. Панель панели мониторинга позволяет перемещать данные в режиме реального времени и визуализировать их. Панель приложения содержит конвейеры потоковых данных или потоки данных. В правой части страницы находится Саурцепревиев, где можно просмотреть данные перед их перемещением.
 
 1. Выберите область **приложения** . Сейчас мы рассмотрим эту панель. Существует множество примеров приложений, которые можно использовать для изучения Стриим, однако в этой статье вы создадите свой собственный. Нажмите кнопку **Добавить приложение** в правом верхнем углу.
 
-   ![Добавление приложения Стриим](./media/cosmosdb-sql-api-migrate-data-striim/add-striim-app.png)
+   :::image type="content" source="./media/cosmosdb-sql-api-migrate-data-striim/add-striim-app.png" alt-text="Добавление приложения Стриим":::
 
 1. Существует несколько различных способов создания Стриим приложений. Выберите **начать с шаблона** , чтобы начать с существующего шаблона.
 
-   ![Запуск приложения с помощью шаблона](./media/cosmosdb-sql-api-migrate-data-striim/start-with-template.png)
+   :::image type="content" source="./media/cosmosdb-sql-api-migrate-data-striim/start-with-template.png" alt-text="Запуск приложения с помощью шаблона":::
 
 1. В поле **Поиск шаблонов** введите "Cosmos" и выберите **target: Azure Cosmos DB** а затем выберите **Oracle CDC для Azure Cosmos DB**.
 
-   ![Выберите Oracle CDC для Cosmos DB](./media/cosmosdb-sql-api-migrate-data-striim/oracle-cdc-cosmosdb.png)
+   :::image type="content" source="./media/cosmosdb-sql-api-migrate-data-striim/oracle-cdc-cosmosdb.png" alt-text="Выберите Oracle CDC для Cosmos DB":::
 
 1. На следующей странице Назовите свое приложение. Можно указать имя, например **оратокосмосдб** , а затем нажать кнопку **сохранить**.
 
 1. Затем введите конфигурацию источника исходного экземпляра Oracle. Введите значение для **имени источника**. Имя источника — это просто соглашение об именовании для приложения Стриим. можно использовать нечто вроде **src_onPremOracle**. Введите значения в полях **URL-адрес**исходного параметра, **имя пользователя**, **пароль**и выберите **поступающие** в качестве читателя для чтения данных из Oracle. Нажмите кнопку **Далее**, чтобы продолжить.
 
-   ![Настройка параметров источника](./media/cosmosdb-sql-api-migrate-data-striim/configure-source-parameters.png)
+   :::image type="content" source="./media/cosmosdb-sql-api-migrate-data-striim/configure-source-parameters.png" alt-text="Настройка параметров источника":::
 
 1. Стриим проверит вашу среду и убедитесь, что она может подключиться к исходному экземпляру Oracle, иметь правильные права доступа и этот CDC настроен правильно. После проверки всех значений нажмите кнопку **Далее**.
 
-   ![Проверка исходных параметров](./media/cosmosdb-sql-api-migrate-data-striim/validate-source-parameters.png)
+   :::image type="content" source="./media/cosmosdb-sql-api-migrate-data-striim/validate-source-parameters.png" alt-text="Проверка исходных параметров":::
 
 1. Выберите таблицы из базы данных Oracle, которые вы хотите перенести. Например, выберите таблицу Заказы и нажмите кнопку **Далее**. 
 
-   ![Выбор исходных таблиц](./media/cosmosdb-sql-api-migrate-data-striim/select-source-tables.png)
+   :::image type="content" source="./media/cosmosdb-sql-api-migrate-data-striim/select-source-tables.png" alt-text="Выбор исходных таблиц":::
 
 1. После выбора исходной таблицы можно выполнять более сложные операции, такие как сопоставление и фильтрация. В этом случае вы просто создадите реплику исходной таблицы в Azure Cosmos DB. Итак, нажмите кнопку **Далее** , чтобы настроить целевой объект.
 
@@ -168,34 +168,34 @@ ms.locfileid: "71003285"
 
    Нажмите кнопку **сохранить** и **Далее**.
 
-   ![Настройка параметров цели](./media/cosmosdb-sql-api-migrate-data-striim/configure-target-parameters.png)
+   :::image type="content" source="./media/cosmosdb-sql-api-migrate-data-striim/configure-target-parameters.png" alt-text="Настройка параметров цели":::
 
 
 1. Затем вы приступите к конструктору Flow, где можно перетаскивать соединители Box для создания приложений потоковой передачи. В этот момент изменения последовательности не будут внесены. Итак, разверните приложение, нажав кнопку **развернуть приложение** .
  
-   ![Развертывание приложения](./media/cosmosdb-sql-api-migrate-data-striim/deploy-app.png)
+   :::image type="content" source="./media/cosmosdb-sql-api-migrate-data-striim/deploy-app.png" alt-text="Развертывание приложения":::
 
 1. В окне Развертывание можно указать, следует ли запускать определенные части приложения в определенных частях топологии развертывания. Так как мы выполняем в простой топологии развертывания с помощью Azure, мы будем использовать параметр по умолчанию.
 
-   ![Использовать параметр по умолчанию](./media/cosmosdb-sql-api-migrate-data-striim/deploy-using-default-option.png)
+   :::image type="content" source="./media/cosmosdb-sql-api-migrate-data-striim/deploy-using-default-option.png" alt-text="Использовать параметр по умолчанию":::
 
 1. После развертывания можно просмотреть поток для просмотра данных, передаваемых по. Щелкните значок **волна** и проводим рядом с ним. Нажмите кнопку **Развернутая** в верхней строке меню и выберите **запустить приложение**.
 
-   ![Запуск приложения](./media/cosmosdb-sql-api-migrate-data-striim/start-app.png)
+   :::image type="content" source="./media/cosmosdb-sql-api-migrate-data-striim/start-app.png" alt-text="Запуск приложения":::
 
 1. С помощью средства чтения **CDC (отслеживания измененных данных)** Стриим выберет только новые изменения в базе данных. При наличии данных, передаваемых через исходные таблицы, вы увидите их. Однако, поскольку это демонстрационная таблица, источник не подключен ни к одному приложению. При использовании образца генератора данных можно вставить цепочку событий в базу данных Oracle.
 
 1. Вы увидите данные, передаваемые через платформу Стриим. Стриим также берет все метаданные, связанные с таблицей, что полезно для отслеживания данных и обеспечения того, что распространители данных должны быть в правильном целевом объекте.
 
-   ![Настройка конвейера CDC](./media/cosmosdb-sql-api-migrate-data-striim/configure-cdc-pipeline.png)
+   :::image type="content" source="./media/cosmosdb-sql-api-migrate-data-striim/configure-cdc-pipeline.png" alt-text="Настройка конвейера CDC":::
 
 1. Наконец, давайте выполним вход в Azure и перейду к своей учетной записи Azure Cosmos. Обновите обозреватель данных, и вы увидите, что данные получены.  
 
-   ![Проверка перенесенных данных в Azure](./media/cosmosdb-sql-api-migrate-data-striim/portal-validate-results.png)
+   :::image type="content" source="./media/cosmosdb-sql-api-migrate-data-striim/portal-validate-results.png" alt-text="Проверка перенесенных данных в Azure":::
 
 С помощью решения Стриим в Azure можно непрерывно переносить данные в Azure Cosmos DB из различных источников, таких как Oracle, Cassandra, MongoDB и других, для Azure Cosmos DB. Дополнительные сведения см. на [веб-сайте Стриим](https://www.striim.com/), [Загрузите бесплатную 30-дневную пробную версию Стриим](https://go2.striim.com/download-free-trial)и в случае возникновения проблем при настройке пути миграции с помощью Стриим отправьте [запрос в службу поддержки.](https://go2.striim.com/request-support-striim)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Сведения о переносе данных в Azure Cosmos DB API SQL см. в статье [Перенос данных в учетную запись API Cassandra с помощью Стриим](cosmosdb-cassandra-api-migrate-data-striim.md) .
 

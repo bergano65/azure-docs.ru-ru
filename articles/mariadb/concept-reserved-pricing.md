@@ -7,10 +7,10 @@ ms.service: mariadb
 ms.topic: conceptual
 ms.date: 05/20/2020
 ms.openlocfilehash: 47ddad70b4764fedefb50b93de2b7f078cf9fd27
-ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82732909"
 ---
 # <a name="prepay-for-azure-database-for-mariadb-compute-resources-with-reserved-capacity"></a>Предоплата за базу данных Azure для MariaDB. Вычисление ресурсов с зарезервированной емкостью
@@ -38,7 +38,7 @@ ms.locfileid: "82732909"
 ## <a name="buy-azure-database-for-mariadb-reserved-capacity"></a>Купить зарезервированную емкость базы данных Azure для MariaDB
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
-2. Выберите **все службы** > **резервирования**.
+2. Выберите **Все службы** > **Резервирование**.
 3.  Выберите **Добавить** , а затем на панели резервирования покупки выберите **база данных Azure для MariaDB** , чтобы приобрести новое резервирование для баз данных MariaDB.
 4.  Заполните поля, необходимые для заполнения полей. Существующие или новые базы данных, соответствующие выбранным атрибутам, будут получать зарезервированную скидку емкости. Фактическое число серверов базы данных Azure для MariaDB, которые получают скидку, зависит от выбранной области и количества.
 
@@ -60,7 +60,7 @@ ms.locfileid: "82732909"
 
 ## <a name="cancel-exchange-or-refund-reservations"></a>Отмена, обмен резервирования, возмещение средств за резервирование
 
-Вы можете отменить и обменять резервирования, а также вернуть вложенные в резервирование средства, но при этом применяются определенные ограничения. Дополнительные сведения см. в статье [самостоятельная служба Exchange и возмещение для резервирования Azure](https://docs.microsoft.com/azure/billing/billing-azure-reservations-self-service-exchange-and-refund).
+Вы можете отменить и обменять резервирования, а также вернуть вложенные в резервирование средства, но при этом применяются определенные ограничения. Дополнительные сведения см. в статье [Self-service exchanges and refunds for Azure Reservations](https://docs.microsoft.com/azure/billing/billing-azure-reservations-self-service-exchange-and-refund) (Самостоятельное выполнение обмена и возмещения средств для резервирований Azure).
 
 ## <a name="vcore-size-flexibility"></a>Гибкость размеров для виртуального ядра
 

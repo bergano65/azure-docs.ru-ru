@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 02/20/2020
-ms.openlocfilehash: 3eef7476a729c7b83290b9d8d86ba06524bed72b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 4421ad4260ff8eada87cdebc031d09922860324f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80297099"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84196332"
 ---
 # <a name="troubleshoot-dms-errors-when-connecting-to-source-databases"></a>Troubleshoot DMS errors when connecting to source databases (Устранение ошибок DMS при подключении к базам данных-источникам)
 
@@ -30,9 +30,9 @@ ms.locfileid: "80297099"
 | Ошибка         | Сведения о причинах и устранении неполадок |
 | ------------- | ------------- |
 | Сбой подключения SQL. При подключении к SQL Server произошла ошибка, связанная с сетью или с определенным экземпляром. Сервер не найден или недоступен. Убедитесь, что имя экземпляра указано правильно и что SQL Server настроено для разрешения удаленных подключений.<br> | Эта ошибка возникает, если службе не удается разместить исходный сервер. Сведения о том, как устранить эту ошибку, см. в статье [Ошибка при подключении к источнику SQL Server при использовании динамического порта или именованного экземпляра](https://docs.microsoft.com/azure/dms/known-issues-troubleshooting-dms#error-connecting-to-source-sql-server-when-using-dynamic-port-or-named-instance). |
-| **Ошибка 53** -не удалось подключиться к SQL. (Кроме того, для кодов ошибок 1, 2, 5, 53, 233, 258, 1225, 11001)<br><br> | Эта ошибка возникает, если службе не удается подключиться к исходному серверу. Чтобы устранить эту ошибку, ознакомьтесь со следующими ресурсами и повторите попытку. <br><br>  [Интерактивное пользовательское по для устранения проблемы с подключением](https://support.microsoft.com/help/4009936/solving-connectivity-errors-to-sql-server)<br><br> [Предварительные требования для переноса SQL Server в Базу данных SQL Azure](https://docs.microsoft.com/azure/dms/pre-reqs#prerequisites-for-migrating-sql-server-to-azure-sql-database) <br><br> [Необходимые условия для миграции SQL Server в управляемый экземпляр базы данных SQL Azure](https://docs.microsoft.com/azure/dms/pre-reqs#prerequisites-for-migrating-sql-server-to-an-azure-sql-database-managed-instance) |
+| **Ошибка 53** -не удалось подключиться к SQL. (Кроме того, для кодов ошибок 1, 2, 5, 53, 233, 258, 1225, 11001)<br><br> | Эта ошибка возникает, если службе не удается подключиться к исходному серверу. Чтобы устранить эту ошибку, ознакомьтесь со следующими ресурсами и повторите попытку. <br><br>  [Интерактивное пользовательское по для устранения проблемы с подключением](https://support.microsoft.com/help/4009936/solving-connectivity-errors-to-sql-server)<br><br> [Предварительные требования для переноса SQL Server в Базу данных SQL Azure](https://docs.microsoft.com/azure/dms/pre-reqs#prerequisites-for-migrating-sql-server-to-azure-sql-database) <br><br> [Необходимые условия для миграции SQL Server в Управляемый экземпляр SQL Azure](https://docs.microsoft.com/azure/dms/pre-reqs#prerequisites-for-migrating-sql-server-to-an-azure-sql-database-managed-instance) |
 | **Ошибка 18456** — ошибка входа.<br> | Эта ошибка возникает, если службе не удается подключиться к базе данных-источнику с помощью предоставленных учетных данных T-SQL. Чтобы устранить эту ошибку, проверьте указанные учетные данные. Можно также обратиться к [MSSQLSERVER_18456](https://docs.microsoft.com/sql/relational-databases/errors-events/mssqlserver-18456-database-engine-error?view=sql-server-2017) или к документам по устранению неполадок, перечисленным в заметке ниже этой таблицы, и повторить попытку. |
-| Указано неправильно сформированное{0}значение AccountName "". Для AccountName требуется формат имя_домена \ имя_пользователя.<br> | Эта ошибка возникает, если пользователь выбирает проверку подлинности Windows, но предоставляет имя пользователя в недопустимом формате. Чтобы устранить эту ошибку, предоставьте имя пользователя в правильном формате для проверки подлинности Windows или выберите **Проверка подлинности SQL**. |
+| Указано неправильно сформированное значение AccountName " {0} ". Для AccountName требуется формат имя_домена \ имя_пользователя.<br> | Эта ошибка возникает, если пользователь выбирает проверку подлинности Windows, но предоставляет имя пользователя в недопустимом формате. Чтобы устранить эту ошибку, предоставьте имя пользователя в правильном формате для проверки подлинности Windows или выберите **Проверка подлинности SQL**. |
 
 ## <a name="aws-rds-mysql"></a>AWS RDS MySQL
 
@@ -89,7 +89,7 @@ ms.locfileid: "80297099"
 * [Известные проблемы и ограничения миграции при оперативной миграции в базу данных Azure для MySQL](https://docs.microsoft.com/azure/dms/known-issues-azure-mysql-online)
 * [Известные проблемы и ограничения миграции при оперативной миграции в базу данных Azure для PostgreSQL](https://docs.microsoft.com/azure/dms/known-issues-azure-postgresql-online)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Просмотрите статью [Azure Database Migration Service PowerShell](https://docs.microsoft.com/powershell/module/azurerm.datamigration/?view=azurermps-6.13.0#data_migration).
 * Ознакомьтесь со статьей [Настройка параметров сервера в базе данных Azure для MySQL с помощью портал Azure](https://docs.microsoft.com/azure/mysql/howto-server-parameters).

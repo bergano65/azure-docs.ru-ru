@@ -30,9 +30,9 @@
     - name: Использование REST API
       items:
         - name: Получение сведений о намерении
-          href: luis-get-started-get-intent-from-rest.md
+          href: luis-get-started-rest-get-intent.md
         - name: Изменение модели
-          href: get-started-get-model-rest-apis.md
+          href: luis-get-started-rest-get-model.md
 - name: Учебники
   items:
     - name: Создание делимого приложения
@@ -52,7 +52,7 @@
           href: luis-tutorial-pattern.md
     - name: Использование с ботом
       items:
-        - name: 'Использование C#'
+        - name: Использование C#
           href: luis-csharp-tutorial-bf-v4.md
           displayName: 'bot framework, framework, sdk, abs'
         - name: Использование Node.js
@@ -60,6 +60,8 @@
           href: luis-nodejs-tutorial-bf-v4.md
 - name: Основные понятия
   items:
+    - name: Искусственный интеллект
+      href: artificial-intelligence.md
     - name: Жизненный цикл разработки
       href: luis-concept-app-iteration.md
     - name: Планирование приложения
@@ -103,9 +105,6 @@
           href: luis-concept-test.md
         - name: Пакетное тестирование
           href: luis-concept-batch-test.md
-    - name: Ключи разработки и среды выполнения
-      displayName: 'shared, transfer, ownership, author, access, import'
-      href: luis-concept-keys.md
     - name: Управление данными
       items:
         - name: Изменение данных
@@ -125,6 +124,14 @@
         - name: Стратегии разработки
           href: luis-concept-enterprise.md
           displayName: import
+    - name: Применение методик DevOps в LUIS
+      items:
+        - name: Управление исходным кодом и стратегии создания ветвей для LUIS
+          href: luis-concept-devops-sourcecontrol.md
+        - name: Тестирование для DevOps
+          href: luis-concept-devops-testing.md
+        - name: Рабочие процессы CI/CD
+          href: luis-concept-devops-automation.md
 - name: Практические руководства
   items:
     - name: Запуск нового приложения
@@ -186,11 +193,7 @@
         - name: Миграция из составного объекта
           href: migrate-from-composite-entity.md
         - name: Миграция на ресурс для разработки
-          items:
-            - name: Обзор
-              href: luis-migration-authoring.md
-            - name: Как осуществить переход
-              href: luis-migration-authoring-steps.md
+          href: luis-migration-authoring.md
         - name: "Переход на API версии\_3"
           href: luis-migration-api-v3.md
     - name: Управление приложением
@@ -201,11 +204,7 @@
         - name: Параметры приложения и версии
           href: how-to-application-settings-portal.md
         - name: Миграция на ресурс для разработки
-          items:
-            - name: Обзор
-              href: luis-migration-authoring.md
-            - name: Как осуществить переход
-              href: luis-migration-authoring-steps.md
+          href: luis-migration-authoring.md
         - name: Авторы и участники
           displayName: 'access, transfer, AAD, tenant, Azure AD, consent, RBAC, admin, role-based access control, ownership, import'
           href: luis-how-to-collaborate.md
@@ -226,6 +225,12 @@
           href: luis-migration-api-v3.md
         - name: Миграция в API версии 2
           href: luis-migration-api-v1-to-v2.md
+    - name: Использование REST API
+      items:
+        - name: Получение сведений о намерении
+          href: luis-get-started-get-intent-from-rest.md
+        - name: Изменение модели
+          href: get-started-get-model-rest-apis.md
     - name: Использование контейнеров
       items:
         - name: Установка и запуск контейнеров
@@ -238,11 +243,13 @@
         - name: Ограничения контейнеров
           href: luis-container-limitations.md
           displayName: 'phrase list recommendations, multi-language, translator, locale, language, English, Chinese, French, German, Italian, Korean, Portuguese, Spanish, Turkish, Keigo, subculture, dictation, speech, Bing Spell Check, foreign words, Hybrid languages, Tokenization, space, special character, compound words, tokens'
+    - name: Использование DevOps
+      href: luis-how-to-devops-with-github.md
     - name: Связанные службы
       items:
         - name: Служба Azure Bot
           href: 'https://dev.botframework.com/'
-        - name: 'Пакет SDK для Bot Builder 4.x для C#'
+        - name: Пакет SDK для Bot Builder 4.x для C#
           href: 'https://github.com/Microsoft/botbuilder-dotnet'
         - name: QnA Maker
           href: 'https://qnamaker.ai/'
@@ -284,7 +291,7 @@
               href: luis-reference-response-codes.md
         - name: Пакеты SDK
           items:
-            - name: 'C#'
+            - name: C#
               items:
                 - name: "NuGet\_— разработка"
                   href: 'https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.LUIS.Authoring/'

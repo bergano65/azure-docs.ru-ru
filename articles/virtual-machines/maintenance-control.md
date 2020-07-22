@@ -3,16 +3,15 @@ title: Общие сведения об управлении обслужива�
 description: Узнайте, как управлять применением обслуживания к виртуальным машинам Azure с помощью управления обслуживанием.
 author: cynthn
 ms.service: virtual-machines
-ms.topic: article
+ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 04/22/2020
 ms.author: cynthn
-ms.openlocfilehash: 4c5e30d0607db2d529ae41ebab6dc82e925ff2a8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 950f4cfda73b40db0de8ba035868573cda1a5017
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82139203"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84675805"
 ---
 # <a name="managing-platform-updates-with-maintenance-control"></a>Управление обновлениями платформы с помощью управления обслуживанием 
 

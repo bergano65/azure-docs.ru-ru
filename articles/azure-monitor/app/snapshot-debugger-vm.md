@@ -7,10 +7,9 @@ ms.author: bfung
 ms.date: 03/07/2019
 ms.reviewer: mbullwin
 ms.openlocfilehash: 194a2da23c8fb405c492df8f6ee173cc97fde4ec
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77671353"
 ---
 # <a name="enable-snapshot-debugger-for-net-apps-in-azure-service-fabric-cloud-service-and-virtual-machines"></a>Включение Snapshot Debugger для приложений .NET в Service Fabric, облачной службе и виртуальных машинах Azure
@@ -25,7 +24,7 @@ ms.locfileid: "77671353"
 
 2. Добавьте в приложение пакет NuGet [Microsoft.ApplicationInsights.SnapshotCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector).
 
-3. При необходимости вы настроили конфигурацию Snapshot Debugger, добавленную в [ApplicationInsights. config](../../azure-monitor/app/configuration-with-applicationinsights-config.md). Конфигурация Snapshot Debugger по умолчанию в основном пуста, и все параметры являются необязательными. Ниже приведен пример, в котором показана конфигурация, эквивалентная конфигурации по умолчанию.
+3. При необходимости настроил конфигурацию Snapshot Debugger, добавленную в [ApplicationInsights.config](../../azure-monitor/app/configuration-with-applicationinsights-config.md). Конфигурация Snapshot Debugger по умолчанию в основном пуста, и все параметры являются необязательными. Ниже приведен пример, в котором показана конфигурация, эквивалентная конфигурации по умолчанию.
 
     ```xml
     <TelemetryProcessors>
@@ -72,18 +71,18 @@ ms.locfileid: "77671353"
 2. Добавьте в приложение пакет NuGet [Microsoft.ApplicationInsights.SnapshotCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector).
 
 3. Чтобы добавить и настроить обработчик телеметрии сборщика моментальных снимков, измените класс `Startup` своего приложения.
-    1. Если используется пакет NuGet [Microsoft. ApplicationInsights. SnapshotCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector) версии 1.3.5 или выше, добавьте следующие операторы using в `Startup.cs`.
+    1. Если используется пакет NuGet [Microsoft. ApplicationInsights. SnapshotCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector) версии 1.3.5 или выше, добавьте следующие операторы using в `Startup.cs` .
 
        ```csharp
             using Microsoft.ApplicationInsights.SnapshotCollector;
        ```
 
-       Добавьте следующий элемент в конец метода ConfigureServices в `Startup` классе в. `Startup.cs`
+       Добавьте следующий элемент в конец метода ConfigureServices в `Startup` классе в `Startup.cs` .
 
        ```csharp
             services.AddSnapshotCollector((configuration) => Configuration.Bind(nameof(SnapshotCollectorConfiguration), configuration));
        ```
-    2. Если используется пакет NuGet [Microsoft. ApplicationInsights. SnapshotCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector) версии 1.3.4 или ниже, добавьте следующие операторы using в `Startup.cs`.
+    2. Если используется пакет NuGet [Microsoft. ApplicationInsights. SnapshotCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector) версии 1.3.4 или ниже, добавьте следующие операторы using в `Startup.cs` .
 
        ```csharp
        using Microsoft.ApplicationInsights.SnapshotCollector;
@@ -129,7 +128,7 @@ ms.locfileid: "77671353"
        }
        ```
 
-4. При необходимости настроили конфигурацию Snapshot Debugger, добавив раздел Снапшотколлекторконфигуратион в appSettings. JSON. Все параметры в конфигурации Snapshot Debugger являются необязательными. Ниже приведен пример, в котором показана конфигурация, эквивалентная конфигурации по умолчанию.
+4. При необходимости настроили конфигурацию Snapshot Debugger, добавив раздел Снапшотколлекторконфигуратион в appsettings.js. Все параметры в конфигурации Snapshot Debugger являются необязательными. Ниже приведен пример, в котором показана конфигурация, эквивалентная конфигурации по умолчанию.
 
    ```json
    {

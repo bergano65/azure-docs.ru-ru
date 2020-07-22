@@ -4,12 +4,12 @@ description: Быстрая настройка аварийного восста
 ms.topic: quickstart
 ms.date: 03/27/2020
 ms.custom: mvc
-ms.openlocfilehash: e26c2a1f24a88dc979f4ec68de65afc618740c00
-ms.sourcegitcommit: 2ec4b3d0bad7dc0071400c2a2264399e4fe34897
+ms.openlocfilehash: 8681ccaac30402927005e5e8802d7da2bddc2c5c
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80371880"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86135714"
 ---
 # <a name="quickstart-set-up-disaster-recovery-to-a-secondary-azure-region-for-an-azure-vm"></a>Краткое руководство. Настройка аварийного восстановления виртуальной машины Azure в дополнительный регион Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "80371880"
 Для работы с этим руководством вам потребуется подписка Azure и виртуальная машина.
 
 - Если у вас нет учетной записи Azure с активной подпиской, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- Рекомендуется использовать виртуальную машину с объемом ОЗУ не менее 1 ГБ. [Ознакомьтесь с дополнительными сведениями](/azure/virtual-machines/windows/quick-create-portal) о том, как создать виртуальную машину.
+- Рекомендуется использовать виртуальную машину с объемом ОЗУ не менее 1 ГБ. [Ознакомьтесь с дополнительными сведениями](../virtual-machines/windows/quick-create-portal.md) о том, как создать виртуальную машину.
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 

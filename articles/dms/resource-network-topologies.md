@@ -1,7 +1,7 @@
 ---
-title: Сетевые топологии для миграций управляемого экземпляра SQL
+title: Сетевые топологии для миграций SQL Управляемый экземпляр
 titleSuffix: Azure Database Migration Service
-description: Изучите исходную и целевую конфигурации миграции управляемого экземпляра базы данных SQL Azure с помощью Azure Database Migration Service.
+description: Изучите исходную и целевую конфигурации миграции Azure SQL Управляемый экземпляр с помощью Azure Database Migration Service.
 services: database-migration
 author: pochiraju
 ms.author: rajpo
@@ -12,50 +12,49 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 01/08/2020
-ms.openlocfilehash: 48485b7ba0f846afa737454b092a6c1ee986b737
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 31dfae60b1967e221e294195f66bb7fe59a15e64
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78254959"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84187521"
 ---
-# <a name="network-topologies-for-azure-sql-db-managed-instance-migrations-using-azure-database-migration-service"></a>Сетевые топологии для баз данных SQL Azure Управляемый экземпляр миграции с помощью Azure Database Migration Service
+# <a name="network-topologies-for-azure-sql-managed-instance-migrations-using-azure-database-migration-service"></a>Сетевые топологии для миграции Управляемый экземпляр Azure SQL с помощью Azure Database Migration Service
 
-В этой статье рассматриваются различные сетевые топологии, с которыми может работать Azure Database Migration Service, чтобы обеспечить комплексную миграцию с локальных серверов SQL Server на Управляемый экземпляр Базы данных SQL Azure.
+В этой статье обсуждаются различные сетевые топологии, с которыми Azure Database Migration Service может работать для обеспечения полной миграции с серверов SQL Server на Управляемый экземпляр SQL Azure.
 
-## <a name="azure-sql-database-managed-instance-configured-for-hybrid-workloads"></a>Управляемый экземпляр Базы данных SQL Azure, настроенный для гибридных рабочих нагрузок 
+## <a name="azure-sql-managed-instance-configured-for-hybrid-workloads"></a>Управляемый экземпляр Azure SQL, настроенные для гибридных рабочих нагрузок 
 
-Используйте эту топологию, если Управляемый экземпляр Базы данных SQL Azure подключен к локальной сети. Такой подход упрощает сетевую маршрутизацию и максимально повышает пропускную способность во время миграции.
+Используйте эту топологию, если Управляемый экземпляр Azure SQL подключена к локальной сети. Такой подход упрощает сетевую маршрутизацию и максимально повышает пропускную способность во время миграции.
 
 ![Сетевая топология для гибридных рабочих нагрузок](media/resource-network-topologies/hybrid-workloads.png)
 
-**Requirements**
+**Требования**
 
-- В этом сценарии управляемый экземпляр базы данных SQL Azure и экземпляр Azure Database Migration Service создаются в одном виртуальная сеть Microsoft Azure, но они используют разные подсети.  
+- В этом сценарии Управляемый экземпляр SQL и экземпляр Azure Database Migration Service создаются в одном виртуальная сеть Microsoft Azure, но они используют разные подсети.  
 - Виртуальная сеть, используемая в этом сценарии, также подключается к локальной сети с помощью [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways).
 
-## <a name="azure-sql-database-managed-instance-isolated-from-the-on-premises-network"></a>Управляемый экземпляр Базы данных SQL Azure, изолированный от локальной сети
+## <a name="sql-managed-instance-isolated-from-the-on-premises-network"></a>Управляемый экземпляр SQL изолированы от локальной сети
 
 Используйте эту сетевую топологию, если в вашей среде нужно применить один или несколько из следующих сценариев:
 
-- Управляемый экземпляр базы данных SQL Azure изолирован от локального подключения, но ваш экземпляр Azure Database Migration Service подключен к локальной сети.
-- Если применяются политики управления доступом на основе ролей (RBAC) и необходимо ограничить доступ пользователей к той же подписке, где размещается управляемый экземпляр базы данных SQL Azure.
-- Виртуальные сети, используемые для Управляемый экземпляр Базы данных SQL Azure и Azure Database Migration Service, находятся в разных подписках.
+- Управляемый экземпляр SQL изолированы от локальных подключений, но ваш экземпляр Azure Database Migration Service подключен к локальной сети.
+- Если применяются политики управления доступом на основе ролей (RBAC) и необходимо ограничить доступ пользователей к той же подписке, где размещается Управляемый экземпляр SQL.
+- Виртуальные сети, используемые для Управляемый экземпляр SQL и Azure Database Migration Service, находятся в разных подписках.
 
 ![Сетевая топология для Управляемого экземпляра Базы данных SQL Azure, изолированного от локальной сети](media/resource-network-topologies/mi-isolated-workload.png)
 
-**Requirements**
+**Требования**
 
-- Виртуальная сеть, которая Azure Database Migration Service используется для этого сценария, также должна быть подключена к локальной сети с помощью (https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN-подключения](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways)).
-- Настройте [пиринг сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview) виртуальной сети между виртуальной сетью, используемой для управляемого экземпляра базы данных SQL Azure и Azure Database Migration Service.
+- Виртуальная сеть, которая Azure Database Migration Service используется для этого сценария, также должна быть подключена к локальной сети с помощью ( https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN-подключения](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways)).
+- Настройте [пиринг сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview) виртуальной сети между виртуальной сетью, используемой для SQL Управляемый экземпляр и Azure Database Migration Service.
 
 ## <a name="cloud-to-cloud-migrations-shared-virtual-network"></a>Миграция из облака в облако: общая виртуальная сеть
 
-Используйте эту топологию, если исходный SQL Server размещается на виртуальной машине Azure и использует ту же виртуальную сеть с управляемым экземпляром базы данных SQL Azure и Azure Database Migration Service.
+Используйте эту топологию, если исходный SQL Server размещается на виртуальной машине Azure и использует ту же виртуальную сеть с SQL Управляемый экземпляр и Azure Database Migration Service.
 
 ![Топология сети для миграции из облака в облако с помощью общей виртуальной сети](media/resource-network-topologies/cloud-to-cloud.png)
 
-**Requirements**
+**Требования**
 
 - Дополнительных требований нет.
 
@@ -63,15 +62,15 @@ ms.locfileid: "78254959"
 
 Используйте эту сетевую топологию, если в вашей среде нужно применить один или несколько из следующих сценариев:
 
-- Управляемый экземпляр базы данных SQL Azure подготавливается в изолированной виртуальной сети.
-- Если применяются политики управления доступом на основе ролей (RBAC) и необходимо ограничить доступ пользователей к той же подписке, где размещается управляемый экземпляр базы данных SQL Azure.
-- Виртуальные сети, используемые для Управляемый экземпляр Базы данных SQL Azure и Azure Database Migration Service, находятся в разных подписках.
+- Управляемый экземпляр SQL подготавливается в изолированной виртуальной сети.
+- Если применяются политики управления доступом на основе ролей (RBAC) и необходимо ограничить доступ пользователей к той же подписке, где размещается Управляемый экземпляр SQL.
+- Виртуальные сети, используемые для SQL Управляемый экземпляр и Azure Database Migration Service, находятся в разных подписках.
 
 ![Топология сети для миграции из облака в облако с помощью изолированной виртуальной сети](media/resource-network-topologies/cloud-to-cloud-isolated.png)
 
-**Requirements**
+**Требования**
 
-- Настройте [пиринг сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview) виртуальной сети между виртуальной сетью, используемой для управляемого экземпляра базы данных SQL Azure и Azure Database Migration Service.
+- Настройте [пиринг сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview) виртуальной сети между виртуальной сетью, используемой для SQL Управляемый экземпляр и Azure Database Migration Service.
 
 ## <a name="inbound-security-rules"></a>Правила безопасности для входящего трафика
 
@@ -92,7 +91,7 @@ ms.locfileid: "78254959"
 
 ## <a name="see-also"></a>См. также
 
-- [Перенос SQL Server в Управляемый экземпляр Базы данных SQL Azure](https://docs.microsoft.com/azure/dms/tutorial-sql-server-to-managed-instance)
+- [Миграция SQL Server в SQL Управляемый экземпляр](https://docs.microsoft.com/azure/dms/tutorial-sql-server-to-managed-instance)
 - [Общие сведения о предварительных требованиях для использования Azure Database Migration Service](https://docs.microsoft.com/azure/dms/pre-reqs)
 - [Создание виртуальной сети с помощью портала Azure](https://docs.microsoft.com/azure/virtual-network/quick-create-portal)
 

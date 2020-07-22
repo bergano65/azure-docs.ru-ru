@@ -7,16 +7,16 @@ author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: reference
 ms.date: 09/26/2019
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: a438363b054361420222804dffac7973470e82e7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e5184698cab1874f327173fb30cf527feee48cad
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78183607"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85384980"
 ---
 # <a name="manage-threats-to-resources-and-data-in-azure-active-directory-b2c"></a>Управление угрозами ресурсов и данными в Azure Active Directory B2C
 
@@ -49,7 +49,7 @@ Azure AD B2C использует сложную стратегию для бл�
 
 ## <a name="view-locked-out-accounts"></a>Просмотр учетных записей блокировки
 
-Чтобы получить сведения об заблокированных учетных записях, можно проверить [отчет о действиях при входе](../active-directory/reports-monitoring/reference-sign-ins-error-codes.md)Active Directory. В разделе **состояние**выберите **сбой**. Неудачные попытки входа с **кодом ошибки входа** `50053` укажите заблокированную учетную запись:
+Чтобы получить сведения об заблокированных учетных записях, можно проверить [отчет о действиях при входе](../active-directory/reports-monitoring/reference-sign-ins-error-codes.md)Active Directory. В разделе **состояние**выберите **сбой**. Неудачные попытки входа с **кодом ошибки входа** `50053` Укажите заблокированную учетную запись:
 
 ![Раздел отчета о входе в Azure AD с заблокированной учетной записью](./media/threat-management/portal-01-locked-account.png)
 

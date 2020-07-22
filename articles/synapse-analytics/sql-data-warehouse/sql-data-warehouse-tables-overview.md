@@ -6,17 +6,16 @@ author: XiaoyuMSFT
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
-ms.subservice: ''
+ms.subservice: sql-dw
 ms.date: 03/15/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 2802c62acef0d78f8cfa7dd7f06bc34d8eecca4c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: f4cf9e2d02030021d3092629731fcd8b77566907
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80742621"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85213947"
 ---
 # <a name="design-tables-in-synapse-sql-pool"></a>Разработка таблиц в пуле синапсе SQL
 
@@ -47,7 +46,7 @@ CREATE SCHEMA wwi;
 | Таблица WideWorldImportersDW  | Тип таблицы | Пул SQL |
 |:-----|:-----|:------|:-----|
 | Город | Измерение | wwi.DimCity |
-| Порядок | Факты | wwi.FactOrder |
+| Номер | Факты | wwi.FactOrder |
 
 ## <a name="table-persistence"></a>Сохраняемость таблицы
 
@@ -107,7 +106,7 @@ CREATE TABLE MyTable (col1 int, col2 int );
 |:---------------|:--------------------|
 | Факты           | Используйте хэш-распределение с кластеризованным индексом columnstore. Производительность улучшается, когда две хэш-таблицы объединены по одному столбцу распределения. |
 | Измерение      | Используйте репликацию для небольших таблиц. Если таблицы слишком велики для хранения на каждом вычислительном узле, используйте хэш-распределение. |
-| Поэтапное создание        | Используйте циклический перебор для промежуточных таблиц. Загрузка с помощью инструкции CTAS выполняется быстро. Когда данные помещается в промежуточную таблицу, используйте инструкцию INSERT... Выберите, чтобы переместить данные в рабочие таблицы. |
+| Промежуточный        | Используйте циклический перебор для промежуточных таблиц. Загрузка с помощью инструкции CTAS выполняется быстро. Когда данные помещается в промежуточную таблицу, используйте инструкцию INSERT... Выберите, чтобы переместить данные в рабочие таблицы. |
 
 ## <a name="table-partitions"></a>Разделы таблицы
 
@@ -144,7 +143,7 @@ ALTER TABLE SalesFact_DailyFinalLoad SWITCH PARTITION 256 TO SalesFact PARTITION
 
 Вы можете создать пустую таблицу. Вы также можете создать и заполнить таблицу результатами инструкции Select. Ниже приведены команды T-SQL для создания таблицы.
 
-| Инструкция Т-SQL | Описание |
+| Инструкция Т-SQL | Описание: |
 |:----------------|:------------|
 | [CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) | Создает пустую таблицу, определив все столбцы и параметры таблицы. |
 | [CREATE EXTERNAL TABLE](/sql/t-sql/statements/create-external-table-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) | Создает внешнюю таблицу. Определение таблицы хранится в пуле SQL. Данные таблицы хранятся в хранилище BLOB-объектов Azure или в Azure Data Lake Store. |
@@ -164,7 +163,7 @@ ALTER TABLE SalesFact_DailyFinalLoad SWITCH PARTITION 256 TO SalesFact PARTITION
 - Внешний ключ, проверка [ограничений таблицы](/sql/t-sql/statements/alter-table-table-constraint-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
 - [Вычисляемые столбцы](/sql/t-sql/statements/alter-table-computed-column-definition-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
 - [Индексированные представления](/sql/relational-databases/views/create-indexed-views?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
-- [Виртуализирован](/sql/t-sql/statements/create-sequence-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
+- [Sequence](/sql/t-sql/statements/create-sequence-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
 - [Разреженные столбцы](/sql/relational-databases/tables/use-sparse-columns?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
 - Суррогатные ключи (реализация посредством [удостоверения](sql-data-warehouse-tables-identity.md));
 - [Синонимы](/sql/t-sql/statements/create-synonym-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)

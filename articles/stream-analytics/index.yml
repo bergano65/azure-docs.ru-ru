@@ -1,21 +1,21 @@
 ### YamlMime:Landing
 title: Документация по Azure Stream Analytics
-summary: Azure Stream Analytics — это полностью управляемая служба аналитики в режиме реального времени, предназначенная для анализа и обработки быстро перемещаемых потоков данных, которые можно использовать для активации предупреждений и действий. Узнайте, как использовать Azure Stream Analytics, ознакомившись с нашими шаблонами быстрого запуска, примерами и руководствами.
+summary: Azure Stream Analytics — это полностью управляемая служба аналитики в реальном времени, предназначенная для анализа и обработки быстро перемещаемых потоков данных, которые можно использовать для получения полезных сведений, создания отчетов или активации предупреждений и действий. Узнайте, как использовать Azure Stream Analytics, ознакомившись с нашими шаблонами быстрого запуска, примерами и руководствами.
 metadata:
   title: Документация по Azure Stream Analytics
-  description: Azure Stream Analytics — это полностью управляемая служба аналитики в режиме реального времени, предназначенная для анализа и обработки быстро перемещаемых потоков данных, которые можно использовать для активации предупреждений и действий. Узнайте, как использовать Azure Stream Analytics, ознакомившись с нашими шаблонами быстрого запуска, примерами и руководствами.
+  description: Azure Stream Analytics — это полностью управляемая служба аналитики в реальном времени, предназначенная для анализа и обработки быстро перемещаемых потоков данных, которые можно использовать для получения полезных сведений, создания отчетов или активации предупреждений и действий. Узнайте, как использовать Azure Stream Analytics, ознакомившись с нашими шаблонами быстрого запуска, примерами и руководствами.
   services: service
   ms.service: stream-analytics
   ms.topic: landing-page
   author: mamccrea
   ms.author: mamccrea
   ms.date: 09/16/2019
-  ms.openlocfilehash: 757c60487e4c4c7fedca4824cd40e86cbd9ca465
-  ms.sourcegitcommit: edccc241bc40b8b08f009baf29a5580bf53e220c
+  ms.openlocfilehash: 2ef6663ce3ebf21227635fff763d45391281c955
+  ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 04/24/2020
-  ms.locfileid: "82130953"
+  ms.lasthandoff: 07/08/2020
+  ms.locfileid: "86119656"
 landingContent:
 - title: Сведения об Azure Stream Analytics
   linkLists:

@@ -3,12 +3,12 @@ title: Модель данных Azure Application Insights | Документа
 description: Описание свойств, экспортируемых с помощью непрерывного экспорта в формате JSON и используемых в качестве фильтров.
 ms.topic: conceptual
 ms.date: 01/08/2019
-ms.openlocfilehash: 9891bea1d52c61197fa32fa5c0764df5450b563c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 1577e56960edcb1941c5d7b73ef44c514706d4e3
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81536851"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86110255"
 ---
 # <a name="application-insights-export-data-model"></a>Экспорт модели данных Application Insights
 В этой таблице перечислены свойства телеметрии, отправляемой из различных пакетов SDK для [Application Insights](../../azure-monitor/app/app-insights-overview.md) на портал.
@@ -21,91 +21,93 @@ ms.locfileid: "81536851"
 * Продолжительность времени указана в десятых долях микросекунды, поэтому 10 000 000 = 1 с.
 * Значения даты и времени в формате UTC указаны в формате ISO `yyyy-MM-DDThh:mm:ss.sssZ`
 
-
 ## <a name="example"></a>Пример
-    // A server report about an HTTP request
+
+```json
+// A server report about an HTTP request
+{
+  "request": [
     {
-    "request": [
-      {
-        "urlData": { // derived from 'url'
-          "host": "contoso.org",
-          "base": "/",
-          "hashTag": ""
-        },
-        "responseCode": 200, // Sent to client
-        "success": true, // Default == responseCode<400
-        // Request id becomes the operation id of child events
-        "id": "fCOhCdCnZ9I=",  
-        "name": "GET Home/Index",
-        "count": 1, // 100% / sampling rate
-        "durationMetric": {
-          "value": 1046804.0, // 10000000 == 1 second
-          // Currently the following fields are redundant:
-          "count": 1.0,
-          "min": 1046804.0,
-          "max": 1046804.0,
-          "stdDev": 0.0,
-          "sampledValue": 1046804.0
-        },
-        "url": "/"
-      }
-    ],
-    "internal": {
-      "data": {
-        "id": "7f156650-ef4c-11e5-8453-3f984b167d05",
-        "documentVersion": "1.61"
-      }
+      "urlData": { // derived from 'url'
+        "host": "contoso.org",
+        "base": "/",
+        "hashTag": ""
+      },
+      "responseCode": 200, // Sent to client
+      "success": true, // Default == responseCode<400
+      // Request id becomes the operation id of child events
+      "id": "fCOhCdCnZ9I=",  
+      "name": "GET Home/Index",
+      "count": 1, // 100% / sampling rate
+      "durationMetric": {
+        "value": 1046804.0, // 10000000 == 1 second
+        // Currently the following fields are redundant:
+        "count": 1.0,
+        "min": 1046804.0,
+        "max": 1046804.0,
+        "stdDev": 0.0,
+        "sampledValue": 1046804.0
+      },
+      "url": "/"
+    }
+  ],
+  "internal": {
+    "data": {
+      "id": "7f156650-ef4c-11e5-8453-3f984b167d05",
+      "documentVersion": "1.61"
+    }
+  },
+  "context": {
+    "device": { // client browser
+      "type": "PC",
+      "screenResolution": { },
+      "roleInstance": "WFWEB14B.fabrikam.net"
     },
-    "context": {
-      "device": { // client browser
-        "type": "PC",
-        "screenResolution": { },
-        "roleInstance": "WFWEB14B.fabrikam.net"
-      },
-      "application": { },
-      "location": { // derived from client ip
-        "continent": "North America",
-        "country": "United States",
-        // last octagon is anonymized to 0 at portal:
-        "clientip": "168.62.177.0",
-        "province": "",
-        "city": ""
-      },
-      "data": {
-        "isSynthetic": true, // we identified source as a bot
-        // percentage of generated data sent to portal:
-        "samplingRate": 100.0,
-        "eventTime": "2016-03-21T10:05:45.7334717Z" // UTC
-      },
-      "user": {
-        "isAuthenticated": false,
-        "anonId": "us-tx-sn1-azr", // bot agent id
-        "anonAcquisitionDate": "0001-01-01T00:00:00Z",
-        "authAcquisitionDate": "0001-01-01T00:00:00Z",
-        "accountAcquisitionDate": "0001-01-01T00:00:00Z"
-      },
-      "operation": {
-        "id": "fCOhCdCnZ9I=",
-        "parentId": "fCOhCdCnZ9I=",
-        "name": "GET Home/Index"
-      },
-      "cloud": { },
-      "serverDevice": { },
-      "custom": { // set by custom fields of track calls
-        "dimensions": [ ],
-        "metrics": [ ]
-      },
-      "session": {
-        "id": "65504c10-44a6-489e-b9dc-94184eb00d86",
-        "isFirst": true
-      }
+    "application": { },
+    "location": { // derived from client ip
+      "continent": "North America",
+      "country": "United States",
+      // last octagon is anonymized to 0 at portal:
+      "clientip": "168.62.177.0",
+      "province": "",
+      "city": ""
+    },
+    "data": {
+      "isSynthetic": true, // we identified source as a bot
+      // percentage of generated data sent to portal:
+      "samplingRate": 100.0,
+      "eventTime": "2016-03-21T10:05:45.7334717Z" // UTC
+    },
+    "user": {
+      "isAuthenticated": false,
+      "anonId": "us-tx-sn1-azr", // bot agent id
+      "anonAcquisitionDate": "0001-01-01T00:00:00Z",
+      "authAcquisitionDate": "0001-01-01T00:00:00Z",
+      "accountAcquisitionDate": "0001-01-01T00:00:00Z"
+    },
+    "operation": {
+      "id": "fCOhCdCnZ9I=",
+      "parentId": "fCOhCdCnZ9I=",
+      "name": "GET Home/Index"
+    },
+    "cloud": { },
+    "serverDevice": { },
+    "custom": { // set by custom fields of track calls
+      "dimensions": [ ],
+      "metrics": [ ]
+    },
+    "session": {
+      "id": "65504c10-44a6-489e-b9dc-94184eb00d86",
+      "isFirst": true
     }
   }
+}
+```
 
 ## <a name="context"></a>Контекст
 Для каждого типа данных телеметрии приведен пример с разделом контекста. Не все эти поля передаются со всеми точками данных.
 
-| Path | Тип | Примечания |
+| Путь | Тип | Примечания |
 | --- | --- | --- |
 | context.custom.dimensions [0] |объект [ ] |Набор пар "ключ — значение", заданный параметром пользовательских свойств. Максимальная длина ключа — 100, максимальная длина значения —1024. Более 100 уникальных значений. Свойства можно использовать для поиска, но не для сегментации. Максимальное количество — 200 ключей на ключ ikey. |
 | context.custom.metrics [0] |объект [ ] |Набор пар "ключ — значение", заданный параметром пользовательских измерений и метриками TrackMetric. Максимальная длина ключа — 100. Значения могут быть числовыми. |
@@ -128,12 +130,12 @@ ms.locfileid: "81536851"
 | context.device.screenResolution |строка | |
 | context.device.type |строка |ПК, браузер… |
 | context.location |object |Производное от `clientip`. |
-| context.location.city |строка |Производный `clientip`от, если известен |
+| context.location.city |строка |Производный от `clientip` , если известен |
 | context.location.clientip |строка |Последний восьмиугольник анонимизирован и имеет значение 0. |
 | context.location.continent |строка | |
 | context.location.country |строка | |
 | context.location.province |строка |Страна или область |
-| context.operation.id |строка |Элементы, имеющие одинаковые `operation id` , отображаются на портале как связанные элементы. Обычно `request id`. |
+| context.operation.id |строка |Элементы, имеющие одинаковые, отображаются на `operation id` портале как связанные элементы. Обычно `request id` . |
 | context.operation.name |строка |URL-адрес или имя запроса |
 | context.operation.parentId |строка |Разрешает использование вложенных связанных элементов. |
 | context.session.id |строка |`Id`группы операций из одного источника. 30-минутный период без операций указывает на завершение сеанса. |
@@ -152,7 +154,7 @@ ms.locfileid: "81536851"
 ## <a name="events"></a>События
 Пользовательские события, создаваемые элементом [TrackEvent()](../../azure-monitor/app/api-custom-events-metrics.md#trackevent).
 
-| Path | Тип | Примечания |
+| Путь | Тип | Примечания |
 | --- | --- | --- |
 | event [0] count |Целое число |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 = &gt; 25 %. |
 | event [0] name |строка |Имя события.  Максимальная длина: 250 |
@@ -163,7 +165,7 @@ ms.locfileid: "81536851"
 ## <a name="exceptions"></a>Исключения
 Отправляются сведения об [исключениях](../../azure-monitor/app/asp-net-exceptions.md) на сервере и в браузере.
 
-| Path | Тип | Примечания |
+| Путь | Тип | Примечания |
 | --- | --- | --- |
 | basicException [0] assembly |строка | |
 | basicException [0] count |Целое число |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 = &gt; 25 %. |
@@ -192,7 +194,7 @@ ms.locfileid: "81536851"
 ## <a name="trace-messages"></a>Сообщения трассировки
 Отправитель: [TrackTrace](../../azure-monitor/app/api-custom-events-metrics.md#tracktrace) и [адаптеры ведения журналов](../../azure-monitor/app/asp-net-trace-logs.md).
 
-| Path | Тип | Примечания |
+| Путь | Тип | Примечания |
 | --- | --- | --- |
 | message [0] loggerName |строка | |
 | message [0] parameters |строка | |
@@ -202,7 +204,7 @@ ms.locfileid: "81536851"
 ## <a name="remote-dependency"></a>Удаленная зависимость
 Отправитель: TrackDependency. Используется для создания отчетов о производительности и использовании [вызовов к зависимостям](../../azure-monitor/app/asp-net-dependencies.md) на сервере, а также вызовов AJAX в браузере.
 
-| Path | Тип | Примечания |
+| Путь | Тип | Примечания |
 | --- | --- | --- |
 | remoteDependency [0] async |Логическое | |
 | remoteDependency [0] baseName |строка | |
@@ -223,7 +225,7 @@ ms.locfileid: "81536851"
 ## <a name="requests"></a>Requests
 Отправитель: [TrackRequest](../../azure-monitor/app/api-custom-events-metrics.md#trackrequest). Используется стандартными модулями для создания отчетов о времени отклика сервера (измеряется на сервере).
 
-| Path | Тип | Примечания |
+| Путь | Тип | Примечания |
 | --- | --- | --- |
 | request [0] count |Целое число |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например: 4 =&gt; 25 %. |
 | request [0] durationMetric.value |number |Время от поступления запроса до отклика. 1e7 = 1 с. |
@@ -241,7 +243,7 @@ ms.locfileid: "81536851"
 
 Контекстные значения показывают версию клиентской ОС и версию браузера.
 
-| Path | Тип | Примечания |
+| Путь | Тип | Примечания |
 | --- | --- | --- |
 | clientPerformance [0] clientProcess.value |Целое число |Время от завершения получения HTML до отображения страницы. |
 | clientPerformance [0] name |строка | |
@@ -258,7 +260,7 @@ ms.locfileid: "81536851"
 ## <a name="page-views"></a>Просмотры страницы
 Отправитель: trackPageView() или [stopTrackPage](../../azure-monitor/app/api-custom-events-metrics.md#page-views)
 
-| Path | Тип | Примечания |
+| Путь | Тип | Примечания |
 | --- | --- | --- |
 | view [0] count |Целое число |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 = &gt; 25 %. |
 | view [0] durationMetric.value |Целое число |При необходимости значение можно указать в методе trackPageView() или с помощью метода start/stopTrackPage(). Не совпадает со значениями clientPerformance. |
@@ -271,7 +273,7 @@ ms.locfileid: "81536851"
 ## <a name="availability"></a>Доступность
 Это свойство создает отчеты о [веб-тестах на доступность](../../azure-monitor/app/monitor-web-app-availability.md).
 
-| Path | Тип | Примечания |
+| Путь | Тип | Примечания |
 | --- | --- | --- |
 | availability [0] availabilityMetric.name |строка |availability |
 | availability [0] availabilityMetric.value |number |1,0 или 0,0. |
@@ -294,55 +296,61 @@ ms.locfileid: "81536851"
 
 Пример:
 
-    {
-     "metric": [ ],
-     "context": {
-     ...
-     "custom": {
-        "dimensions": [
-          { "ProcessId": "4068" }
-        ],
-        "metrics": [
-          {
-            "dispatchRate": {
-              "value": 0.001295,
-              "count": 1.0,
-              "min": 0.001295,
-              "max": 0.001295,
-              "stdDev": 0.0,
-              "sampledValue": 0.001295,
-              "sum": 0.001295
-            }
+```json
+{
+  "metric": [ ],
+  "context": {
+  ...
+    "custom": {
+      "dimensions": [
+        { "ProcessId": "4068" }
+      ],
+      "metrics": [
+        {
+          "dispatchRate": {
+            "value": 0.001295,
+            "count": 1.0,
+            "min": 0.001295,
+            "max": 0.001295,
+            "stdDev": 0.0,
+            "sampledValue": 0.001295,
+            "sum": 0.001295
           }
-         } ] }
+        }
+      ]  
     }
+  }
+}
+```
 
 ## <a name="about-metric-values"></a>О значениях метрик
 Значения метрик (как в отчетах, так и в других элементах) сообщаются в рамках стандартной структуры объекта. Пример:
 
-      "durationMetric": {
-        "name": "contoso.org",
-        "type": "Aggregation",
-        "value": 468.71603053650279,
-        "count": 1.0,
-        "min": 468.71603053650279,
-        "max": 468.71603053650279,
-        "stdDev": 0.0,
-        "sampledValue": 468.71603053650279
-      }
+```json
+"durationMetric": {
+  "name": "contoso.org",
+  "type": "Aggregation",
+  "value": 468.71603053650279,
+  "count": 1.0,
+  "min": 468.71603053650279,
+  "max": 468.71603053650279,
+  "stdDev": 0.0,
+  "sampledValue": 468.71603053650279
+}
+```
 
 Сейчас (хотя это может измениться в будущем) во всех значениях, включенных в отчеты стандартных модулей SDK, полезными являются только поля `name` и `value`, а также `count==1`. Они будут отличаться, только если вы напишете собственный вызов TrackMetric, указав другие параметры.
 
 Другие поля нужны для того, чтобы разрешить статистическое вычисление метрик в пакете SDK, тем самым снизив нагрузку (в виде трафика) на портал. Например, перед отправкой каждого отчета с метриками вы можете получить среднее значение для нескольких последовательных показаний. Затем вы можете рассчитать минимальное и максимальное значение, а также стандартное отклонение и агрегированное значение (сумму или среднее), а затем указать в счетчике количество показаний, представленных в отчете.
 
-В таблицах выше мы опустили редко используемые поля count, min, max, stdDev и sampledValue.
+В приведенных выше таблицах пропущены редко используемые поля Count, min, Max, stdDev и Сампледвалуе.
 
 Вместо предварительного статистического вычисления метрик вы можете использовать [выборки](../../azure-monitor/app/sampling.md) , чтобы сократить объем данных телеметрии.
 
 ### <a name="durations"></a>Длительность
 За исключением оговоренных случаев, показатели длительности представлены в десятых долях микросекунды, то есть 10 000 000,0 — это 1 с.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 * [Application Insights](../../azure-monitor/app/app-insights-overview.md)
 * [Непрерывный экспорт](export-telemetry.md)
 * [Примеры кода](export-telemetry.md#code-samples)

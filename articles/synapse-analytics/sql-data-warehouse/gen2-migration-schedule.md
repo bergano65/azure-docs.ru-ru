@@ -9,14 +9,15 @@ manager: craigg
 ms.assetid: 04b05dea-c066-44a0-9751-0774eb84c689
 ms.service: synapse-analytics
 ms.topic: article
+ms.subservice: sql-dw
 ms.date: 01/21/2020
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 6f2af826473bfd13f8100796a540d41cbedbb037
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 71219abaf6493d6dce03f05ad0e61fb71bff1745
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80631564"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85207725"
 ---
 # <a name="upgrade-your-sql-pool-to-gen2"></a>Обновление пула SQL до Gen2
 
@@ -33,7 +34,7 @@ ms.locfileid: "80631564"
 
 | **Регион** | **Низкий уровень 2-ого поколения доступен** | **Начало автоматических обновлений** |
 |:--- |:--- |:--- |
-| Восточная Канада |1 июня 2020 г. |1 июля 2020 г. |
+| Восточная Канада |1 июня 2020 г. |1 июля 2020 г. |
 | Восточный Китай |\* |\* |
 | Северный Китай |\* |\* |
 | Центральная Германия |\* |\* |
@@ -78,7 +79,7 @@ ms.locfileid: "80631564"
 
 **Вопрос. выполняет ли Gen2 стоимость так же, как Gen1?**
 
-- Ответ. Да.
+- A. Да.
 
 **Вопрос. как обновления будут влиять на мои сценарии автоматизации?**
 
@@ -117,7 +118,7 @@ ms.locfileid: "80631564"
 
 **Вопрос. поддерживает ли Gen2 периоды обслуживания?**
 
-- Ответ. Да.
+- A. Да.
 
 **Вопрос. можно ли создать новый экземпляр Gen1 после обновления региона?**
 

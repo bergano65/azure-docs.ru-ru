@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: 6854400f2152a5952a7b24dbd860d7ad4bfc943d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e5523b7c39763fb53d0847b79c70d5ab8b9d3b52
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76774920"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86169329"
 ---
 # <a name="how-to-encode-an-asset-by-using-media-encoder-standard"></a>Как закодировать ресурс с помощью Media Encoder Standard
 > [!div class="op_single_selector"]
@@ -44,7 +44,7 @@ ms.locfileid: "76774920"
 
 Если выходной ресурс зашифрован в хранилище, необходимо настроить политику доставки ресурсов. Дополнительные сведения см. в разделе [Настройка политики доставки ресурсов](media-services-rest-configure-asset-delivery-policy.md).
 
-## <a name="considerations"></a>Рекомендации
+## <a name="considerations"></a>Особенности
 
 При доступе к сущностям в службах мультимедиа необходимо задать определенные поля и значения заголовков в HTTP-запросах. Дополнительную информацию см. в статье [Обзор интерфейса REST API служб мультимедиа](media-services-rest-how-to-use.md).
 
@@ -69,30 +69,36 @@ ms.locfileid: "76774920"
 
 Запрос:
 
-    POST https://media.windows.net/API/Jobs HTTP/1.1
-    Content-Type: application/json;odata=verbose
-    Accept: application/json;odata=verbose
-    DataServiceVersion: 3.0
-    MaxDataServiceVersion: 3.0
-    x-ms-version: 2.19
-        Authorization: Bearer <ENCODED JWT TOKEN> 
-        x-ms-client-request-id: 00000000-0000-0000-0000-000000000000
-        Host: media.windows.net
+```console
+POST https://media.windows.net/API/Jobs HTTP/1.1
+Content-Type: application/json;odata=verbose
+Accept: application/json;odata=verbose
+DataServiceVersion: 3.0
+MaxDataServiceVersion: 3.0
+x-ms-version: 2.19
+    Authorization: Bearer <ENCODED JWT TOKEN> 
+    x-ms-client-request-id: 00000000-0000-0000-0000-000000000000
+    Host: media.windows.net
 
-    {"Name" : "NewTestJob", "InputMediaAssets" : [{"__metadata" : {"uri" : "https://media.windows.net/api/Assets('nb%3Acid%3AUUID%3Aaab7f15b-3136-4ddf-9962-e9ecb28fb9d2')"}}],  "Tasks" : [{"Configuration" : "Adaptive Streaming", "MediaProcessorId" : "nb:mpid:UUID:ff4df607-d419-42f0-bc17-a481b1331e56",  "TaskBody" : "<?xml version=\"1.0\" encoding=\"utf-8\"?><taskBody><inputAsset>JobInputAsset(0)</inputAsset><outputAsset>JobOutputAsset(0)</outputAsset></taskBody>"}]}
+{"Name" : "NewTestJob", "InputMediaAssets" : [{"__metadata" : {"uri" : "https://media.windows.net/api/Assets('nb%3Acid%3AUUID%3Aaab7f15b-3136-4ddf-9962-e9ecb28fb9d2')"}}],  "Tasks" : [{"Configuration" : "Adaptive Streaming", "MediaProcessorId" : "nb:mpid:UUID:ff4df607-d419-42f0-bc17-a481b1331e56",  "TaskBody" : "<?xml version=\"1.0\" encoding=\"utf-8\"?><taskBody><inputAsset>JobInputAsset(0)</inputAsset><outputAsset>JobOutputAsset(0)</outputAsset></taskBody>"}]}
+```
 
 Ответ:
 
-    HTTP/1.1 201 Created
+```console
+HTTP/1.1 201 Created
 
-    . . .
+. . .
+```
 
 ### <a name="set-the-output-assets-name"></a>Задание имени выходного актива
 В следующем примере показано, как установить атрибут assetName:
 
-    { "TaskBody" : "<?xml version=\"1.0\" encoding=\"utf-8\"?><taskBody><inputAsset>JobInputAsset(0)</inputAsset><outputAsset assetName=\"CustomOutputAssetName\">JobOutputAsset(0)</outputAsset></taskBody>"}
+```console
+{ "TaskBody" : "<?xml version=\"1.0\" encoding=\"utf-8\"?><taskBody><inputAsset>JobInputAsset(0)</inputAsset><outputAsset assetName=\"CustomOutputAssetName\">JobOutputAsset(0)</outputAsset></taskBody>"}`
+```
 
-## <a name="considerations"></a>Рекомендации
+## <a name="considerations"></a>Особенности
 * Чтобы определить количество входных или выходных ресурсов, используемых задачей, в свойствах TaskBody необходимо использовать XML-литерал. В статье о задаче приведено определение схемы XML.
 * В определении TaskBody каждое внутреннее значение `<inputAsset>` и `<outputAsset>` необходимо установить как JobInputAsset(value) или JobOutputAsset(value).
 * В задаче может содержаться несколько выходных ресурсов. Значение JobOutputAsset(x) может использоваться только один раз в качестве выходных данных задачи в задании.
@@ -111,40 +117,41 @@ ms.locfileid: "76774920"
 >
 >
 
-    POST https://media.windows.net/api/Jobs HTTP/1.1
-    Content-Type: application/json;odata=verbose
-    Accept: application/json;odata=verbose
-    DataServiceVersion: 3.0
-    MaxDataServiceVersion: 3.0
-    x-ms-version: 2.19
-    Authorization: Bearer <ENCODED JWT TOKEN> 
-    x-ms-client-request-id: 00000000-0000-0000-0000-000000000000
+```console
+POST https://media.windows.net/api/Jobs HTTP/1.1
+Content-Type: application/json;odata=verbose
+Accept: application/json;odata=verbose
+DataServiceVersion: 3.0
+MaxDataServiceVersion: 3.0
+x-ms-version: 2.19
+Authorization: Bearer <ENCODED JWT TOKEN> 
+x-ms-client-request-id: 00000000-0000-0000-0000-000000000000
 
-    {  
-       "Name":"NewTestJob",
-       "InputMediaAssets":[  
-          {  
-             "__metadata":{  
-                "uri":"https://testrest.cloudapp.net/api/Assets('nb%3Acid%3AUUID%3A910ffdc1-2e25-4b17-8a42-61ffd4b8914c')"
-             }
-          }
-       ],
-       "Tasks":[  
-          {  
-             "Configuration":"H264 Adaptive Bitrate MP4 Set 720p",
-             "MediaProcessorId":"nb:mpid:UUID:ff4df607-d419-42f0-bc17-a481b1331e56",
-             "TaskBody":"<?xml version=\"1.0\" encoding=\"utf-8\"?><taskBody><inputAsset>JobInputAsset(0)</inputAsset><outputAsset>JobOutputAsset(0)</outputAsset></taskBody>"
-          },
-          {  
-             "Configuration":"H264 Smooth Streaming 720p",
-             "MediaProcessorId":"nb:mpid:UUID:ff4df607-d419-42f0-bc17-a481b1331e56",
-             "TaskBody":"<?xml version=\"1.0\" encoding=\"utf-16\"?><taskBody><inputAsset>JobOutputAsset(0)</inputAsset><outputAsset>JobOutputAsset(1)</outputAsset></taskBody>"
-          }
-       ]
-    }
+{  
+   "Name":"NewTestJob",
+   "InputMediaAssets":[  
+      {  
+         "__metadata":{  
+            "uri":"https://testrest.cloudapp.net/api/Assets('nb%3Acid%3AUUID%3A910ffdc1-2e25-4b17-8a42-61ffd4b8914c')"
+         }
+      }
+   ],
+   "Tasks":[  
+      {  
+         "Configuration":"H264 Adaptive Bitrate MP4 Set 720p",
+         "MediaProcessorId":"nb:mpid:UUID:ff4df607-d419-42f0-bc17-a481b1331e56",
+         "TaskBody":"<?xml version=\"1.0\" encoding=\"utf-8\"?><taskBody><inputAsset>JobInputAsset(0)</inputAsset><outputAsset>JobOutputAsset(0)</outputAsset></taskBody>"
+      },
+      {  
+         "Configuration":"H264 Smooth Streaming 720p",
+         "MediaProcessorId":"nb:mpid:UUID:ff4df607-d419-42f0-bc17-a481b1331e56",
+         "TaskBody":"<?xml version=\"1.0\" encoding=\"utf-16\"?><taskBody><inputAsset>JobOutputAsset(0)</inputAsset><outputAsset>JobOutputAsset(1)</outputAsset></taskBody>"
+      }
+   ]
+}
+```
 
-
-### <a name="considerations"></a>Рекомендации
+### <a name="considerations"></a>Особенности
 Чтобы включить создание цепных задач:
 
 * в задании должно быть по крайней мере две задачи;
@@ -153,62 +160,63 @@ ms.locfileid: "76774920"
 ## <a name="use-odata-batch-processing"></a>Использование пакетной обработки OData
 В следующем примере показано, как использовать пакетную обработку OData для создания задания и задач. Чтобы узнать больше о пакетной обработке, ознакомьтесь с [пакетной обработкой посредством протокола OData](https://www.odata.org/documentation/odata-version-3-0/batch-processing/).
 
-    POST https://media.windows.net/api/$batch HTTP/1.1
-    DataServiceVersion: 1.0;NetFx
-    MaxDataServiceVersion: 3.0;NetFx
-    Content-Type: multipart/mixed; boundary=batch_a01a5ec4-ba0f-4536-84b5-66c5a5a6d34e
-    Accept: multipart/mixed
-    Accept-Charset: UTF-8
-    Authorization: Bearer <ENCODED JWT TOKEN> 
-    x-ms-version: 2.19
-    x-ms-client-request-id: 00000000-0000-0000-0000-000000000000
-    Host: media.windows.net
+```console
+POST https://media.windows.net/api/$batch HTTP/1.1
+DataServiceVersion: 1.0;NetFx
+MaxDataServiceVersion: 3.0;NetFx
+Content-Type: multipart/mixed; boundary=batch_a01a5ec4-ba0f-4536-84b5-66c5a5a6d34e
+Accept: multipart/mixed
+Accept-Charset: UTF-8
+Authorization: Bearer <ENCODED JWT TOKEN> 
+x-ms-version: 2.19
+x-ms-client-request-id: 00000000-0000-0000-0000-000000000000
+Host: media.windows.net
 
 
-    --batch_a01a5ec4-ba0f-4536-84b5-66c5a5a6d34e
-    Content-Type: multipart/mixed; boundary=changeset_122fb0a4-cd80-4958-820f-346309967e4d
+--batch_a01a5ec4-ba0f-4536-84b5-66c5a5a6d34e
+Content-Type: multipart/mixed; boundary=changeset_122fb0a4-cd80-4958-820f-346309967e4d
 
-    --changeset_122fb0a4-cd80-4958-820f-346309967e4d
-    Content-Type: application/http
-    Content-Transfer-Encoding: binary
+--changeset_122fb0a4-cd80-4958-820f-346309967e4d
+Content-Type: application/http
+Content-Transfer-Encoding: binary
 
-    POST https://media.windows.net/api/Jobs HTTP/1.1
-    Content-ID: 1
-    Content-Type: application/json
-    Accept: application/json
-    DataServiceVersion: 3.0
-    MaxDataServiceVersion: 3.0
-    Accept-Charset: UTF-8
-    Authorization: Bearer <ENCODED JWT TOKEN> 
-    x-ms-version: 2.19
-    x-ms-client-request-id: 00000000-0000-0000-0000-000000000000
+POST https://media.windows.net/api/Jobs HTTP/1.1
+Content-ID: 1
+Content-Type: application/json
+Accept: application/json
+DataServiceVersion: 3.0
+MaxDataServiceVersion: 3.0
+Accept-Charset: UTF-8
+Authorization: Bearer <ENCODED JWT TOKEN> 
+x-ms-version: 2.19
+x-ms-client-request-id: 00000000-0000-0000-0000-000000000000
 
-    {"Name" : "NewTestJob", "InputMediaAssets@odata.bind":["https://media.windows.net/api/Assets('nb%3Acid%3AUUID%3A2a22445d-1500-80c6-4b34-f1e5190d33c6')"]}
+{"Name" : "NewTestJob", "InputMediaAssets@odata.bind":["https://media.windows.net/api/Assets('nb%3Acid%3AUUID%3A2a22445d-1500-80c6-4b34-f1e5190d33c6')"]}
 
-    --changeset_122fb0a4-cd80-4958-820f-346309967e4d
-    Content-Type: application/http
-    Content-Transfer-Encoding: binary
+--changeset_122fb0a4-cd80-4958-820f-346309967e4d
+Content-Type: application/http
+Content-Transfer-Encoding: binary
 
-    POST https://media.windows.net/api/$1/Tasks HTTP/1.1
-    Content-ID: 2
-    Content-Type: application/json;odata=verbose
-    Accept: application/json;odata=verbose
-    DataServiceVersion: 3.0
-    MaxDataServiceVersion: 3.0
-    Accept-Charset: UTF-8
-    Authorization: Bearer <ENCODED JWT TOKEN> 
-    x-ms-version: 2.19
-    x-ms-client-request-id: 00000000-0000-0000-0000-000000000000
+POST https://media.windows.net/api/$1/Tasks HTTP/1.1
+Content-ID: 2
+Content-Type: application/json;odata=verbose
+Accept: application/json;odata=verbose
+DataServiceVersion: 3.0
+MaxDataServiceVersion: 3.0
+Accept-Charset: UTF-8
+Authorization: Bearer <ENCODED JWT TOKEN> 
+x-ms-version: 2.19
+x-ms-client-request-id: 00000000-0000-0000-0000-000000000000
 
-    {  
-       "Configuration":"H264 Adaptive Bitrate MP4 Set 720p",
-       "MediaProcessorId":"nb:mpid:UUID:ff4df607-d419-42f0-bc17-a481b1331e56",
-       "TaskBody":"<?xml version=\"1.0\" encoding=\"utf-8\"?><taskBody><inputAsset>JobInputAsset(0)</inputAsset><outputAsset assetName=\"Custom output name\">JobOutputAsset(0)</outputAsset></taskBody>"
-    }
+{  
+   "Configuration":"H264 Adaptive Bitrate MP4 Set 720p",
+   "MediaProcessorId":"nb:mpid:UUID:ff4df607-d419-42f0-bc17-a481b1331e56",
+   "TaskBody":"<?xml version=\"1.0\" encoding=\"utf-8\"?><taskBody><inputAsset>JobInputAsset(0)</inputAsset><outputAsset assetName=\"Custom output name\">JobOutputAsset(0)</outputAsset></taskBody>"
+}
 
-    --changeset_122fb0a4-cd80-4958-820f-346309967e4d--
-    --batch_a01a5ec4-ba0f-4536-84b5-66c5a5a6d34e--
-
+--changeset_122fb0a4-cd80-4958-820f-346309967e4d--
+--batch_a01a5ec4-ba0f-4536-84b5-66c5a5a6d34e--
+```
 
 
 ## <a name="create-a-job-by-using-a-jobtemplate"></a>Создание задания с помощью сущности JobTemplate
@@ -216,18 +224,19 @@ ms.locfileid: "76774920"
 
 В следующем примере показано, как создать сущность JobTemplate, определив сущность TaskTemplate внутренними средствами. Сущность TaskTemplate кодирует файл ресурса, используя в качестве обработчика мультимедиа Media Encoder Standard. Но также можно использовать и другие обработчики.
 
-    POST https://media.windows.net/API/JobTemplates HTTP/1.1
-    Content-Type: application/json;odata=verbose
-    Accept: application/json;odata=verbose
-    DataServiceVersion: 3.0
-    MaxDataServiceVersion: 3.0
-    x-ms-version: 2.19
-    Authorization: Bearer <ENCODED JWT TOKEN> 
-    Host: media.windows.net
+```console
+POST https://media.windows.net/API/JobTemplates HTTP/1.1
+Content-Type: application/json;odata=verbose
+Accept: application/json;odata=verbose
+DataServiceVersion: 3.0
+MaxDataServiceVersion: 3.0
+x-ms-version: 2.19
+Authorization: Bearer <ENCODED JWT TOKEN> 
+Host: media.windows.net
 
 
-    {"Name" : "NewJobTemplate25", "JobTemplateBody" : "<?xml version=\"1.0\" encoding=\"utf-8\"?><jobTemplate><taskBody taskTemplateId=\"nb:ttid:UUID:071370A3-E63E-4E81-A099-AD66BCAC3789\"><inputAsset>JobInputAsset(0)</inputAsset><outputAsset>JobOutputAsset(0)</outputAsset></taskBody></jobTemplate>", "TaskTemplates" : [{"Id" : "nb:ttid:UUID:071370A3-E63E-4E81-A099-AD66BCAC3789", "Configuration" : "H264 Smooth Streaming 720p", "MediaProcessorId" : "nb:mpid:UUID:ff4df607-d419-42f0-bc17-a481b1331e56", "Name" : "SampleTaskTemplate2", "NumberofInputAssets" : 1, "NumberofOutputAssets" : 1}] }
-
+{"Name" : "NewJobTemplate25", "JobTemplateBody" : "<?xml version=\"1.0\" encoding=\"utf-8\"?><jobTemplate><taskBody taskTemplateId=\"nb:ttid:UUID:071370A3-E63E-4E81-A099-AD66BCAC3789\"><inputAsset>JobInputAsset(0)</inputAsset><outputAsset>JobOutputAsset(0)</outputAsset></taskBody></jobTemplate>", "TaskTemplates" : [{"Id" : "nb:ttid:UUID:071370A3-E63E-4E81-A099-AD66BCAC3789", "Configuration" : "H264 Smooth Streaming 720p", "MediaProcessorId" : "nb:mpid:UUID:ff4df607-d419-42f0-bc17-a481b1331e56", "Name" : "SampleTaskTemplate2", "NumberofInputAssets" : 1, "NumberofOutputAssets" : 1}] }
+```
 
 > [!NOTE]
 > В отличие от других сущностей служб мультимедиа вы должны определить новый идентификатор GUID для каждой сущности TaskTemplate и указать его в тексте запроса в taskTemplateId и свойстве Id. Схема идентификации содержимого должна соответствовать схеме, описанной в статье "Идентификация сущностей служб мультимедиа Azure". Кроме того, сущности JobTemplates нельзя обновлять. Вместо этого необходимо создавать новые сущности с необходимыми изменениями.
@@ -236,31 +245,35 @@ ms.locfileid: "76774920"
 
 При успешном выполнении возвращается следующий ответ:
 
-    HTTP/1.1 201 Created
+```console
+HTTP/1.1 201 Created
 
-    . . .
-
+. . .
+```
 
 В следующем примере показано, как создать задание, которое ссылается на идентификатор JobTemplate.
 
-    POST https://media.windows.net/API/Jobs HTTP/1.1
-    Content-Type: application/json;odata=verbose
-    Accept: application/json;odata=verbose
-    DataServiceVersion: 3.0
-    MaxDataServiceVersion: 3.0
-    x-ms-version: 2.19
-    Authorization: Bearer <ENCODED JWT TOKEN> 
-    Host: media.windows.net
+```console
+POST https://media.windows.net/API/Jobs HTTP/1.1
+Content-Type: application/json;odata=verbose
+Accept: application/json;odata=verbose
+DataServiceVersion: 3.0
+MaxDataServiceVersion: 3.0
+x-ms-version: 2.19
+Authorization: Bearer <ENCODED JWT TOKEN> 
+Host: media.windows.net
 
 
-    {"Name" : "NewTestJob", "InputMediaAssets" : [{"__metadata" : {"uri" : "https://media.windows.net/api/Assets('nb%3Acid%3AUUID%3A3f1fe4a2-68f5-4190-9557-cd45beccef92')"}}], "TemplateId" : "nb:jtid:UUID:15e6e5e6-ac85-084e-9dc2-db3645fbf0aa"}
-
+{"Name" : "NewTestJob", "InputMediaAssets" : [{"__metadata" : {"uri" : "https://media.windows.net/api/Assets('nb%3Acid%3AUUID%3A3f1fe4a2-68f5-4190-9557-cd45beccef92')"}}], "TemplateId" : "nb:jtid:UUID:15e6e5e6-ac85-084e-9dc2-db3645fbf0aa"}
+```
 
 При успешном выполнении возвращается следующий ответ:
 
-    HTTP/1.1 201 Created
+```console
+HTTP/1.1 201 Created
 
-    . . .
+. . .
+```
 
 
 ## <a name="advanced-encoding-features-to-explore"></a>Функции расширенного кодирования для ознакомления
@@ -273,10 +286,10 @@ ms.locfileid: "76774920"
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы узнали, как создать задание для кодирования ресурса, ознакомьтесь со статьей [Практическое руководство. Проверка хода выполнения задания](media-services-rest-check-job-progress.md).
 
 ## <a name="see-also"></a>См. также

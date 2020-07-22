@@ -1,15 +1,15 @@
 ---
-author: sptramer
 ms.topic: include
 ms.date: 01/30/2019
-ms.service: azure-powershell
-ms.author: sttramer
-ms.openlocfilehash: 85a78200fa5c2b90908de6ac0de8723b20ffe56b
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
-ms.translationtype: HT
+author: mikefrobbins
+ms.author: mirobb
+manager: barbkess
+ms.openlocfilehash: e59fea8b1a615abc9ab00646d5a0b37974348352
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "76263984"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85378458"
 ---
 Для этого примера требуется Azure PowerShell Az 1.0 или более поздней версии. Запустите `Get-Module -ListAvailable Az` для просмотра установленных версий. Если необходимо выполнить установку, см. статью об [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). 
 

@@ -7,23 +7,22 @@ documentationcenter: virtual-network
 author: RDhillon
 ms.service: virtual-network
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: virtual-network
 ms.workload: infrastructure
 ms.date: 02/21/2020
 ms.author: rdhillon
-ms.openlocfilehash: d26fd2fec5f9d5ab8e9d82ff2c6bd83b11c72e99
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: bdf0e87c92a55d0dbb5bbe34334a6de4580cb350
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77651274"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84708184"
 ---
 # <a name="create-change-or-delete-service-endpoint-policy-using-the-azure-portal"></a>Создание, изменение или удаление политик конечной точки службы с помощью портала Azure
 
 Политики конечной точки службы позволяют фильтровать трафик виртуальной сети, передаваемый к ресурсам Azure, с помощью конечных точек службы. Если вы не работали с политиками конечной точки службы, ознакомьтесь с [обзором политик конечной точки службы](virtual-network-service-endpoint-policies-overview.md), чтобы получить дополнительные сведения.
 
- В этом руководстве описано следующее:
+ В этом руководстве вы узнаете, как:
 
 > [!div class="checklist"]
 > * Создание политики конечной точки службы.

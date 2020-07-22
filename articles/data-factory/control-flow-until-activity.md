@@ -12,10 +12,10 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.openlocfilehash: 63873a4f8301d3cb20488b02b32200f476922276
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81417952"
 ---
 # <a name="until-activity-in-azure-data-factory"></a>Действие Until в фабрике данных Azure
@@ -53,7 +53,7 @@ ms.locfileid: "81417952"
 
 ## <a name="type-properties"></a>Свойства типа
 
-Свойство | Описание | Допустимые значения | Обязательный
+Свойство | Описание | Допустимые значения | Обязательно
 -------- | ----------- | -------------- | --------
 name | Имя действия `Until`. | Строка | Да
 type | Необходимо задать **Until**. | Строка | Да
@@ -287,7 +287,7 @@ while ($True) {
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь с другими действиями потока управления, которые поддерживаются фабрикой данных: 
 
 - [Действие условия If](control-flow-if-condition-activity.md)

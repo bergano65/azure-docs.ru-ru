@@ -8,12 +8,12 @@ ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/15/2020
-ms.openlocfilehash: fc69761a05ea381d39d58d5ebf0046e0d9874961
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.custom: tracking-python
+ms.openlocfilehash: 7945b3b0aeba7f5135665f4413d304eb225ac749
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77210471"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84604700"
 ---
 # <a name="example-create-a-custom-skill-using-python"></a>Пример. Создание пользовательского навыка с помощью Python
 
@@ -30,8 +30,8 @@ ms.locfileid: "77210471"
   + [Python 3,75](https://www.python.org/downloads/release/python-375/)
   + [Visual Studio Code](https://code.visualstudio.com/)
   + [Расширение Python для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-  + [Azure Functions Core Tools](https://docs.microsoft.com/azure/azure-functions/functions-run-local#v2)
-  + [Расширение "Функции Azure" для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions)
+  + [Основные инструменты службы "Функции Azure"](https://docs.microsoft.com/azure/azure-functions/functions-run-local#v2)
+  + [Расширение функций Azure для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions)
 
 ## <a name="create-an-azure-function"></a>Создание функции Azure
 
@@ -57,7 +57,7 @@ ms.locfileid: "77210471"
 
 Редактор Visual Studio Code создаст проект приложения-функции в новой рабочей области. Проект будет содержать файлы конфигурации [host.json](../azure-functions/functions-host-json.md) и [local.settings.json](../azure-functions/functions-run-local.md#local-settings-file), а также файлы проекта для указанного языка. 
 
-Новая функция, активируемая HTTP, также создается в папке **конкатенации** проекта приложения-функции. Внутри него будет файл с именем «\_\_init__. Корректировка» с этим содержимым:
+Новая функция, активируемая HTTP, также создается в папке **конкатенации** проекта приложения-функции. Внутри него будет файл с именем « \_ \_ init__. Корректировка» с этим содержимым:
 
 ```py
 import logging

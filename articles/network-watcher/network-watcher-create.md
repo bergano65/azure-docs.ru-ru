@@ -7,17 +7,17 @@ author: damendo
 ms.assetid: b1314119-0b87-4f4d-b44c-2c4d0547fb76
 ms.service: network-watcher
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
-ms.openlocfilehash: 77812a3765a027152c957f6dbb7c9b3811a2278f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 6b7453a0100233896e3d01769897ed224a0b2618
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77191175"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84737552"
 ---
 # <a name="create-an-azure-network-watcher-instance"></a>Создание экземпляра Наблюдателя за сетями Azure
 
@@ -49,7 +49,7 @@ az provider register -n Microsoft.Network
 
 ## <a name="create-a-network-watcher-in-the-portal"></a>Создание Наблюдателя за сетями на портале
 
-Последовательно выберите **все службы** > **сеть** > **наблюдатель за сетями**. Можно выбрать все подписки, для которых необходимо включить Наблюдатель за сетями. Это действие создаст экземпляр Наблюдателя за сетями в каждом регионе, который доступен.
+Последовательно выберите **все службы**  >  **сеть**  >  **наблюдатель за сетями**. Можно выбрать все подписки, для которых необходимо включить Наблюдатель за сетями. Это действие создаст экземпляр Наблюдателя за сетями в каждом регионе, который доступен.
 
 ![Создание Наблюдателя за сетями](./media/network-watcher-create/figure1.png)
 
@@ -103,7 +103,7 @@ armclient put "https://management.azure.com/subscriptions/${subscriptionId}/reso
 
 ## <a name="delete-a-network-watcher-in-the-portal"></a>Удаление наблюдателя за сетями на портале
 
-Последовательно выберите **все службы** > **сеть** > **наблюдатель за сетями**.
+Последовательно выберите **все службы**  >  **сеть**  >  **наблюдатель за сетями**.
 
 Перейдите на вкладку Обзор, если она еще не установлена. В раскрывающемся списке выберите подписку, для которой нужно отключить наблюдатель за сетями.
 Разверните список регионов для выбранной подписки, щелкнув стрелку. Для любого из этих данных используйте три точки справа для доступа к контекстному меню.

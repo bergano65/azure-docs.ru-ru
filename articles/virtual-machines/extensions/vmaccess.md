@@ -16,11 +16,10 @@ ms.topic: article
 ms.date: 05/10/2018
 ms.author: akjosh
 ms.openlocfilehash: bd9dc05a84a4ee54fce40e6c88e87ac90bfee8a5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79250365"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84707605"
 ---
 # <a name="manage-administrative-users-ssh-and-check-or-repair-disks-on-linux-vms-using-the-vmaccess-extension-with-the-azure-cli"></a>Управление пользователями с правами администратора, SSH и проверка или восстановление дисков на виртуальных машинах Linux с помощью расширения VMAccess и Azure CLI
 ## <a name="overview"></a>Обзор
@@ -31,7 +30,7 @@ ms.locfileid: "79250365"
 > [!NOTE]
 > Если вы с помощью VMAccess сбрасываете пароль виртуальной машины после установки расширения входа в AAD, это расширение необходимо повторно запустить, чтобы повторно активировать его на виртуальной машине.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 ### <a name="operating-system"></a>Операционная система
 
 Расширение VMAccess можно выполнять с использованием следующих дистрибутивов Linux.
@@ -247,7 +246,7 @@ az vm extension set \
 ```
 ## <a name="troubleshoot-and-support"></a>Устранение неполадок и поддержка
 
-### <a name="troubleshoot"></a>Устранение неполадок
+### <a name="troubleshoot"></a>Диагностика
 
 Данные о состоянии развертывания расширения можно получить на портале Azure, а также использовав Azure CLI. Чтобы просмотреть состояние развертывания расширений для определенной виртуальной машины, выполните следующую команду в Azure CLI.
 
@@ -257,4 +256,4 @@ az vm extension list --resource-group myResourceGroup --vm-name myVM -o table
 
 ### <a name="support"></a>Поддержка
 
-Если вам нужна дополнительная помощь в любой момент в этой статье, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и выберите получить поддержку. Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
+Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните "Получить поддержку". Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).

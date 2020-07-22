@@ -4,12 +4,12 @@ description: Подключение к сети службы "Блокчейн A
 ms.date: 09/12/2019
 ms.topic: quickstart
 ms.reviewer: janders
-ms.openlocfilehash: c0bad9efde44ce53f6b0656af3ac4af32ffe051d
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: abb2479b81d4811b311d27fb0be9900f2827e939
+ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "79205109"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85920574"
 ---
 # <a name="quickstart-use-metamask-to-connect-and-deploy-a-smart-contract"></a>Краткое руководство. Подключение и развертывание смарт-контрактов с использованием MetaMask
 
@@ -128,9 +128,9 @@ Remix — это среда разработки на языке Solidity, за
 
 В области отладки Remix отображаются сведения о транзакциях с блокчейном.
 
-    ![Debug history](./media/connect-metamask/debug.png)
+![Журнал отладки](./media/connect-metamask/debug.png)
 
-    You can see the **simple** contract creation, transaction for **simple.add**, and call to **simple.get**.
+Здесь отображаются данные о создании контракта **simple**, а также о транзакции для **simple.add** и вызове **simple.get**.
 
 Чтобы просмотреть журнал транзакций в MetaMask, откройте расширение браузера MetaMask и найдите в разделе **Журнал** журнал развернутых контрактов и транзакций.
 

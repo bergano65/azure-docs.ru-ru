@@ -1,15 +1,15 @@
 ---
-title: Расширенное использование AuthN и Аусо
+title: Расширенное использование AuthN/AuthZ
 description: Научитесь настраивать функцию проверки подлинности и авторизации в службе приложений для различных сценариев, а также получать утверждения пользователей и различные токены.
 ms.topic: article
-ms.date: 10/24/2019
+ms.date: 07/08/2020
 ms.custom: seodec18
-ms.openlocfilehash: d57b196bf95ebdf31bc459ad4b9d718fd32ca495
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 5b217bb1052a16ded205ac216878945fb960d32d
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79280837"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86205578"
 ---
 # <a name="advanced-usage-of-authentication-and-authorization-in-azure-app-service"></a>Расширенное использование проверки подлинности и авторизации в Службе приложений Azure
 
@@ -24,6 +24,7 @@ ms.locfileid: "79280837"
 * [Настройка приложения для использования имени входа Google](configure-authentication-provider-google.md)
 * [Настройка приложения для использования входа по учетной записи Майкрософт](configure-authentication-provider-microsoft.md)
 * [Настройка приложения для использования имени входа Twitter](configure-authentication-provider-twitter.md)
+* [Настройка приложения для входа с помощью поставщика OpenID Connect Connect (Предварительная версия)](configure-authentication-provider-openid-connect.md)
 
 ## <a name="use-multiple-sign-in-providers"></a>Использование нескольких поставщиков входа
 
@@ -33,9 +34,9 @@ ms.locfileid: "79280837"
 
 В раскрывающемся списке **Action to take when request is not authenticated** (Предпринимаемое действие, если проверка подлинности для запроса не выполнена) выберите **Разрешить анонимные запросы (нет действия)**.
 
-На странице входа, на панели навигации или в любом другом расположении приложения добавьте ссылку входа для каждого включенного поставщика (`/.auth/login/<provider>`). Пример:
+На странице входа, на панели навигации или в любом другом расположении приложения добавьте ссылку входа для каждого включенного поставщика (`/.auth/login/<provider>`). Пример.
 
-```HTML
+```html
 <a href="/.auth/login/aad">Log in with Azure AD</a>
 <a href="/.auth/login/microsoftaccount">Log in with Microsoft Account</a>
 <a href="/.auth/login/facebook">Log in with Facebook</a>
@@ -47,7 +48,7 @@ ms.locfileid: "79280837"
 
 Чтобы перенаправить пользователя после входа по пользовательскому URL-адресу, используйте параметр строки запроса `post_login_redirect_url` (не следует путать с URI перенаправления в конфигурации поставщика удостоверений). Например, чтобы перенаправить пользователя к `/Home/Index` после входа в систему, используйте следующий код HTML:
 
-```HTML
+```html
 <a href="/.auth/login/<provider>?post_login_redirect_url=/Home/Index">Log in</a>
 ```
 
@@ -55,7 +56,7 @@ ms.locfileid: "79280837"
 
 При входе с помощью клиента приложение входит в систему поставщика вручную, а затем отправляет токен проверки подлинности службе приложений для проверки (см. [Поток проверки подлинности](overview-authentication-authorization.md#authentication-flow)). Эта проверка сама по себе не предоставляет вам доступ к требуемым ресурсам приложения, но успешная проверка даст вам токен сеанса, который вы можете использовать для доступа к ресурсам приложений. 
 
-Чтобы проверить токен поставщика, для приложения службы приложений сначала нужно настроить требуемый поставщик. Получив токен проверки подлинности у своего поставщика, во время выполнения отправьте токен по адресу `/.auth/login/<provider>` для проверки. Пример: 
+Чтобы проверить токен поставщика, для приложения службы приложений сначала нужно настроить требуемый поставщик. Получив токен проверки подлинности у своего поставщика, во время выполнения отправьте токен по адресу `/.auth/login/<provider>` для проверки. Пример. 
 
 ```
 POST https://<appname>.azurewebsites.net/.auth/login/aad HTTP/1.1
@@ -66,7 +67,7 @@ Content-Type: application/json
 
 Формат токена незначительно отличается в соответствии с поставщиком. Дополнительные сведения см. в таблице, приведенной ниже.
 
-| Значение поставщика | Требуется в тексте запроса | Комментарии |
+| Значение поставщика | Требуется в тексте запроса | Примечания |
 |-|-|-|
 | `aad` | `{"access_token":"<access_token>"}` | |
 | `microsoftaccount` | `{"access_token":"<token>"}` | Свойство `expires_in` необязательное. <br/>При запросе маркера из служб Live всегда запрашиваются области `wl.basic`. |
@@ -86,7 +87,7 @@ Content-Type: application/json
 }
 ```
 
-Получив этот токен сеанса, вы можете получить доступ к защищенным ресурсам приложений, добавив заголовок `X-ZUMO-AUTH` к HTTP-запросам. Пример: 
+Получив этот токен сеанса, вы можете получить доступ к защищенным ресурсам приложений, добавив заголовок `X-ZUMO-AUTH` к HTTP-запросам. Пример. 
 
 ```
 GET https://<appname>.azurewebsites.net/api/products/1
@@ -103,11 +104,11 @@ X-ZUMO-AUTH: <authenticationToken_value>
 
 Здесь представлена ссылка для простого выхода на веб-странице:
 
-```HTML
+```html
 <a href="/.auth/logout">Sign out</a>
 ```
 
-После успешного выхода клиент по умолчанию перенаправляется на URL-адрес `/.auth/logout/done`. Можно изменить страницу перенаправления после выхода, добавив параметр запроса `post_logout_redirect_uri`. Пример:
+После успешного выхода клиент по умолчанию перенаправляется на URL-адрес `/.auth/logout/done`. Можно изменить страницу перенаправления после выхода, добавив параметр запроса `post_logout_redirect_uri`. Пример.
 
 ```
 GET /.auth/logout?post_logout_redirect_uri=/index.html
@@ -176,9 +177,9 @@ az webapp config appsettings set --name <app_name> --resource-group <group_name>
 - **Учетная запись Майкрософт**. [Настраивая параметры проверки подлинности учетной записи Майкрософт](configure-authentication-provider-microsoft.md), выберите область `wl.offline_access`.
 - **Azure Active Directory**. В [https://resources.azure.com](https://resources.azure.com) сделайте следующее:
     1. В верхней части страницы выберите **Read/Write** (Чтение и запись).
-    2. В браузере слева перейдите **к элементу** > **_\<подписки подписки\_имя_** > **resourceGroups** > **_\<группа\_\_ресурсов имя>_**  >  **поставщики** > **Microsoft. Web** > **Sites** > **_\<имя приложения\_>_**  >  **config** > **authsettings**. 
-    3. Щелкните **Правка**.
-    4. Измените следующее свойство. Замените _ \<идентификатор\_приложения>_ Azure Active Directory идентификатором приложения службы, к которой требуется получить доступ.
+    2. В левом браузере перейдите к разделу **подписки** > * *_ \<subscription\_name_** > **resourceGroups** > * *_* * \<resource\_group\_name> _ **поставщики**>  >  **Microsoft. Web**  >  **Sites** > * *_ \<app\_name> _ * * > **config**  >  **authsettings**. 
+    3. Нажмите кнопку **Изменить**.
+    4. Измените следующее свойство. Замените _\<app\_id>_ Azure Active Directory идентификатором приложения службы, к которой требуется получить доступ.
 
         ```json
         "additionalLoginParams": ["response_type=code id_token", "resource=<app_id>"]
@@ -190,7 +191,7 @@ az webapp config appsettings set --name <app_name> --resource-group <group_name>
 
 Чтобы обновить маркер доступа в любое время, просто вызовите `/.auth/refresh` его на любом языке. В следующем фрагменте кода jQuery используется для обновления токенов доступа из клиента JavaScript.
 
-```JavaScript
+```javascript
 function refreshTokens() {
   let refreshUrl = "/.auth/refresh";
   $.ajax(refreshUrl) .done(function() {
@@ -221,17 +222,17 @@ az webapp auth update --resource-group <group_name> --name <app_name> --token-re
 
 ## <a name="limit-the-domain-of-sign-in-accounts"></a>Ограничение домена учетных записей для входа
 
-Учетные записи Майкрософт и Azure Active Directory позволяют выполнять вход из нескольких доменов. Например, учетная запись Майкрософт позволяет выполнять вход с помощью учетных записей _outlook.com_, _live.com_ и _hotmail.com_. Azure AD позволяет любому числу пользовательских доменов для учетных записей входа. Тем не менее, вам может потребоваться ускорить работу пользователей с собственной фирменной страницей входа в Azure AD (например, `contoso.com`). Чтобы предложить доменное имя учетных записей входа, выполните следующие действия.
+Учетные записи Майкрософт и Azure Active Directory позволяют выполнять вход из нескольких доменов. Например, учетная запись Майкрософт позволяет выполнять вход с помощью учетных записей _outlook.com_, _live.com_ и _hotmail.com_. Azure AD позволяет любому числу пользовательских доменов для учетных записей входа. Тем не менее, вам может потребоваться ускорить работу пользователей с собственной фирменной страницей входа в Azure AD (например, `contoso.com` ). Чтобы предложить доменное имя учетных записей входа, выполните следующие действия.
 
-В [https://resources.azure.com](https://resources.azure.com) **перейдите к** > разделу**_\<подписка\_подписки имя_** > **resourceGroups** >   > **_\_группа\_имя>поставщики Microsoft. Web Sites имя приложения>config authsettings.\< _****Microsoft.Web** > **sites** >  > **authsettings** **providers** **config****_\<\_ _**  >  >  
+В [https://resources.azure.com](https://resources.azure.com) перейдите к разделу **подписки** > * *_ \<subscription\_name_** > **resourceGroups** > * *_* * \<resource\_group\_name> _ **поставщики**>  >  **Microsoft. Web**  >  **Sites** > * *_ \<app\_name> _ * * > **config**  >  **authsettings**. 
 
-Щелкните **Edit** (Изменить), измените следующее свойство и выберите **Put**. Не забудьте заменить _ \<доменное\_имя>именем_ нужного домена.
+Щелкните **Edit** (Изменить), измените следующее свойство и выберите **Put**. Не забудьте заменить _\<domain\_name>_ требуемым доменом.
 
 ```json
 "additionalLoginParams": ["domain_hint=<domain_name>"]
 ```
 
-Этот параметр добавляет параметр строки `domain_hint` запроса к URL-адресу перенаправления имени входа. 
+Этот параметр добавляет `domain_hint` параметр строки запроса к URL-адресу перенаправления имени входа. 
 
 > [!IMPORTANT]
 > Клиент может удалить `domain_hint` параметр после получения URL-адреса перенаправления, а затем войти в другой домен. Поэтому хотя эта функция удобна, она не является функцией безопасности.
@@ -247,13 +248,13 @@ az webapp auth update --resource-group <group_name> --name <app_name> --token-re
 
 ### <a name="server-level-windows-apps-only"></a>Уровень сервера (только для приложений Windows)
 
-Для любого приложения Windows можно определить поведение авторизации веб-сервера IIS, изменив файл *Web. config* . Приложения Linux не используют IIS и не могут быть настроены с помощью *Web. config*.
+Для любого приложения Windows можно определить поведение авторизации веб-сервера IIS, изменив файл *Web.config* . Приложения Linux не используют IIS и не могут быть настроены с помощью *Web.config*.
 
 1. Перейдите на страницу `https://<app-name>.scm.azurewebsites.net/DebugConsole`.
 
-1. В обозревателе браузера файлов службы приложений перейдите на *сайт Site/wwwroot*. Если файл *Web. config* не существует, создайте его, выбрав **+**  > " **создать**". 
+1. В обозревателе браузера файлов службы приложений перейдите на *сайт Site/wwwroot*. Если *Web.config* не существует, создайте его, выбрав **+**  >  **создать файл**. 
 
-1. Выберите карандаш для *файла Web. config* , чтобы изменить его. Добавьте следующий код конфигурации и нажмите кнопку **сохранить**. Если *файл Web. config* уже существует, просто добавьте `<authorization>` элемент со всеми элементами. Добавьте учетные записи, которые требуется разрешить, `<allow>` в элементе.
+1. Выберите карандаш для *Web.config* , чтобы изменить его. Добавьте следующий код конфигурации и нажмите кнопку **сохранить**. Если *Web.config* уже существует, просто добавьте `<authorization>` элемент со всеми элементами. Добавьте учетные записи, которые требуется разрешить, в `<allow>` элементе.
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -269,7 +270,7 @@ az webapp auth update --resource-group <group_name> --name <app_name> --token-re
 
 ### <a name="identity-provider-level"></a>Уровень поставщика удостоверений
 
-Поставщик удостоверений может предоставить некоторую проверку подлинности с помощью ключа. Пример:
+Поставщик удостоверений может предоставить некоторую проверку подлинности с помощью ключа. Пример.
 
 - Для [службы приложений Azure](configure-authentication-provider-aad.md)вы можете [управлять доступом на уровне предприятия](../active-directory/manage-apps/what-is-access-management.md) непосредственно в Azure AD. Инструкции см. [в разделе Удаление доступа пользователя к приложению](../active-directory/manage-apps/methods-for-removing-user-access.md).
 - Для [Google](configure-authentication-provider-google.md), проектов Google API, входящих в [организацию](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy#organizations) , можно настроить разрешение доступа только для пользователей в вашей организации (см. [страницу поддержки **OAuth 2,0** в Google](https://support.google.com/cloud/answer/6158849?hl=en)).
@@ -278,8 +279,197 @@ az webapp auth update --resource-group <group_name> --name <app_name> --token-re
 
 Если любой из других уровней не обеспечивает необходимую авторизацию или если ваша платформа или поставщик удостоверений не поддерживается, необходимо написать пользовательский код для авторизации пользователей на основе [утверждений пользователей](#access-user-claims).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="configure-using-a-file-preview"></a><a name="config-file"> </a>Настройка с помощью файла (Предварительная версия)
+
+При необходимости можно настроить параметры проверки подлинности с помощью файла, предоставленного вашим развертыванием. Это может потребоваться для некоторых возможностей предварительной версии проверки подлинности и авторизации службы приложений.
+
+> [!IMPORTANT]
+> Помните, что полезные данные приложения и, следовательно, могут перемещаться между средами, как и с [слотами](./deploy-staging-slots.md). Вполне вероятно, что для каждого слота будет закреплена другая регистрация приложения, и в таких случаях следует продолжить использовать стандартный метод настройки вместо использования файла конфигурации.
+
+### <a name="enabling-file-based-configuration"></a>Включение конфигурации на основе файлов
+
+> [!CAUTION]
+> Во время предварительной версии включение настройки на основе файлов приведет к отключению управления функцией проверки подлинности и авторизации службы приложений с помощью некоторых клиентов, таких как портал Azure, Azure CLI и Azure PowerShell.
+
+1. Создайте новый JSON-файл для конфигурации в корне проекта (развернутый в D:\home\site\wwwroot в приложении для Интернета или функции). Укажите требуемую конфигурацию в соответствии с [файловой ссылкой на файловую конфигурацию](#configuration-file-reference). При изменении существующей конфигурации Azure Resource Manager убедитесь, что свойства, захваченные в коллекции, переведены в `authsettings` файл конфигурации.
+
+2. Измените существующую конфигурацию, которая захватывается в [Azure Resource Manager](../azure-resource-manager/management/overview.md) API в разделе `Microsoft.Web/sites/<siteName>/config/authsettings` . Чтобы изменить это, можно использовать [шаблон Azure Resource Manager](../azure-resource-manager/templates/overview.md) или средство, например [Обозреватель ресурсов Azure](https://resources.azure.com/). В коллекции authsettings необходимо задать три свойства (и, возможно, удалить другие):
+
+    1.  Значение `enabled` "true"
+    2.  Значение `isAuthFromFile` "true"
+    3.  Задайте `authFilePath` в качестве имени файла (например, "auth.js").
+
+После внесения этого обновления конфигурации содержимое файла будет использоваться для определения поведения проверки подлинности и авторизации службы приложений для этого сайта. Если вы хотите вернуться к Azure Resource Managerной конфигурации, это можно сделать, задав значение `isAuthFromFile` "false".
+
+### <a name="configuration-file-reference"></a>Ссылка на файл конфигурации
+
+Все секреты, на которые будет ссылаться файл конфигурации, должны храниться в виде [параметров приложения](./configure-common.md#configure-app-settings). Вы можете назвать все нужные параметры. Просто убедитесь, что ссылки из файла конфигурации используют одни и те же ключи.
+
+Ниже перечислены возможные варианты конфигурации в файле.
+
+```json
+{
+    "platform": {
+        "enabled": <true|false>
+    },
+    "globalValidation": {
+        "requireAuthentication": <true|false>,
+        "unauthenticatedClientAction": "RedirectToLoginPage|AllowAnonymous|Return401|Return403",
+        "redirectToProvider": "<default provider alias>",
+        "excludedPaths": [
+            "/path1",
+            "/path2"
+        ]
+    },
+    "identityProviders": {
+        "azureActiveDirectory": {
+            "enabled": <true|false>,
+            "registration": {
+                "openIdIssuer": "<issuer url>",
+                "clientId": "<app id>",
+                "clientSecretSettingName": "APP_SETTING_CONTAINING_AAD_SECRET",
+            },
+            "login": {
+                "loginParameters": [
+                    "paramName1=value1",
+                    "paramName2=value2"
+                ]
+            },
+            "validation": {
+                "allowedAudiences": [
+                    "audience1",
+                    "audience2"
+                ]
+            }
+        },
+        "facebook": {
+            "enabled": <true|false>,
+            "registration": {
+                "appId": "<app id>",
+                "appSecretSettingName": "APP_SETTING_CONTAINING_FACEBOOK_SECRET"
+            },
+            "graphApiVersion": "v3.3",
+            "login": {
+                "scopes": [
+                    "profile",
+                    "email"
+                ]
+            },
+        },
+        "gitHub": {
+            "enabled": <true|false>,
+            "registration": {
+                "clientId": "<client id>",
+                "clientSecretSettingName": "APP_SETTING_CONTAINING_GITHUB_SECRET"
+            },
+            "login": {
+                "scopes": [
+                    "profile",
+                    "email"
+                ]
+            }
+        },
+        "google": {
+            "enabled": true,
+            "registration": {
+                "clientId": "<client id>",
+                "clientSecretSettingName": "APP_SETTING_CONTAINING_GOOGLE_SECRET"
+            },
+            "login": {
+                "scopes": [
+                    "profile",
+                    "email"
+                ]
+            },
+            "validation": {
+                "allowedAudiences": [
+                    "audience1",
+                    "audience2"
+                ]
+            }
+        },
+        "twitter": {
+            "enabled": <true|false>,
+            "registration": {
+                "consumerKey": "<consumer key>",
+                "consumerSecretSettingName": "APP_SETTING_CONTAINING TWITTER_CONSUMER_SECRET"
+            }
+        },
+        "openIdConnectProviders": {
+            "provider name": {
+                "enabled": <true|false>,
+                "registration": {
+                    "clientId": "<client id>",
+                    "clientCredential": {
+                        "secretSettingName": "<name of app setting containing client secret>"
+                    },
+                    "openIdConnectConfiguration": {
+                        "authorizationEndpoint": "<url specifying authorization endpoint>",
+                        "tokenEndpoint": "<url specifying token endpoint>",
+                        "issuer": "<url specifying issuer>",
+                        "certificationUri": "<url specifying jwks endpoint>",
+                        "wellKnownOpenIdConfiguration": "<url specifying .well-known/open-id-configuration endpoint - if this property is set, the other properties of this object are ignored, and authorizationEndpoint, tokenEndpoint, issuer, and certificationUri are set to the corresponding values listed at this endpoint>"
+                    }
+                },
+                "login": {
+                    "nameClaimType": "<name of claim containing name>",
+                    "loginScopes": [
+                        "profile",
+                        "email"
+                    ],
+                    "loginParameterNames": [
+                        "paramName1=value1",
+                        "paramName2=value2"
+                    ],
+                }
+            },
+            //...
+        },
+        "login": {
+            "routes": {
+                "logoutEndpoint": "<logout endpoint>"
+            },
+            "tokenStore": {
+                "enabled": <true|false>,
+                "tokenRefreshExtensionHours": "<double>",
+                "fileSystem": {
+                    "directory": "<directory to store the tokens in if using a file system token store (default)>"
+                },
+                "azureBlobStorage": {
+                    "sasUrlSettingName": "<app setting name containing the sas url for the Azure Blob Storage if opting to use that for a token store>"
+                }
+            },
+            "preserveUrlFragmentsForLogins": <true|false>,
+            "allowedExternalRedirectUrls": [
+                "https://uri1.azurewebsites.net/",
+                "https://uri2.azurewebsites.net/"
+            ],
+            "cookieExpiration": {
+                "convention": "FixedTime|IdentityProviderDerived",
+                "timeToExpiration": "<timespan>"
+            },
+            "nonce": {
+                "validateNonce": <true|false>,
+                "nonceExpirationInterval": "<timespan>"
+            }
+        },
+        "httpSettings": {
+            "requireHttps": <true|false>,
+            "routes": {
+                "apiPrefix": "<api prefix>"
+            },
+            "forwardProxy": {
+                "convention": "NoProxy|Standard|Custom",
+                "customHostHeaderName": "<host header value>",
+                "customProtoHeaderName": "<proto header value>"
+            }
+        }
+    }
+}
+```
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Руководство. Проверка подлинности и авторизация пользователей (Windows)](app-service-web-tutorial-auth-aad.md)
-> [руководство по проверке подлинности и авторизации пользователей (Linux)](containers/tutorial-auth-aad.md)
+> [Руководство. сквозная проверка подлинности и авторизация пользователей (Windows)](app-service-web-tutorial-auth-aad.md) 
+>  [Руководство. сквозная проверка подлинности и авторизация пользователей (Linux)](containers/tutorial-auth-aad.md)

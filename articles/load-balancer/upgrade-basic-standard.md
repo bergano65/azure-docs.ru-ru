@@ -4,15 +4,15 @@ description: В этой статье показано, как обновить 
 services: load-balancer
 author: irenehua
 ms.service: load-balancer
-ms.topic: article
+ms.topic: how-to
 ms.date: 01/23/2020
 ms.author: irenehua
-ms.openlocfilehash: f1c85c98b9ea0dcaa6498622a0667bffba080401
-ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
+ms.openlocfilehash: 66c56ae6730043022a0d8bf3c94f7c6ce14d9852
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82858389"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84809341"
 ---
 # <a name="upgrade-azure-public-load-balancer"></a>Обновление общедоступных Load Balancer Azure
 [Azure Load Balancer (цен. Категория "Стандартный")](load-balancer-overview.md) предлагает широкий набор функций и высокий уровень доступности через избыточность зоны. Дополнительные сведения о Load Balancer SKU см. в разделе [Таблица сравнения](https://docs.microsoft.com/azure/load-balancer/skus#skus).
@@ -49,7 +49,7 @@ ms.locfileid: "82858389"
 * Если вы не установили модули Azure az или не хотите удалять модули Azure AZ, лучшим вариантом будет использование `Install-Script` параметра для запуска сценария.
 * Если вам нужно разместить модули Azure AZ, лучше скачать сценарий и запустить его напрямую.
 
-Чтобы определить, установлены ли модули Azure AZ, запустите `Get-InstalledModule -Name az`. Если вы не видите ни одного установленного модуля AZ, то можете использовать `Install-Script` метод.
+Чтобы определить, установлены ли модули Azure AZ, запустите `Get-InstalledModule -Name az` . Если вы не видите ни одного установленного модуля AZ, то можете использовать `Install-Script` метод.
 
 ### <a name="install-using-the-install-script-method"></a>Установка с помощью метода Install-Script
 
@@ -103,7 +103,7 @@ ms.locfileid: "82858389"
    
     1. Выберите внутренний пул, соответствующий внутреннему пулу базового Load Balancer, выберите следующее значение: 
       - **Виртуальная машина**: раскрывающийся список и выберите виртуальные машины из соответствующего серверного пула базовых Load Balancer.
-    1. Щелкните **Сохранить**.
+    1. Нажмите кнопку **Сохранить**.
     >[!NOTE]
     >Для виртуальных машин, имеющих общедоступные IP-адреса, необходимо сначала создать стандартные, но не гарантируют, что IP-адрес не гарантируется. Отменяйте связь между виртуальными машинами и свяжите их с новыми стандартными IP-адресами. Затем вы сможете выполнить инструкции по добавлению виртуальных машин в серверный пул Load Balancer (цен. категория "Стандартный"). 
 
@@ -128,7 +128,7 @@ ms.locfileid: "82858389"
 
 ### <a name="i-ran-into-some-issues-with-using-this-script-how-can-i-get-help"></a>При использовании этого сценария возникли проблемы. Как получить помощь?
   
-Вы можете отправить сообщение электронной почты slbupgradesupport@microsoft.com, открыть обращение в службу поддержки Azure или выполнить оба действия.
+Вы можете отправить сообщение электронной почты slbupgradesupport@microsoft.com , открыть обращение в службу поддержки Azure или выполнить оба действия.
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 

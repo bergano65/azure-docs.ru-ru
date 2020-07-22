@@ -1,16 +1,16 @@
 ---
-title: Использование возможностей отрисовки
-description: Как использовать возможности пакетной подготовки Azure. Попробуйте использовать приложение Batch Explorer, либо напрямую, либо вызываемое из подключаемого модуля клиентского приложения.
+title: Использование возможностей рендеринга
+description: Узнайте, как использовать возможности рендеринга пакетной службы Azure. Опробуйте приложение Batch Explorer напрямую либо через вызов из подключаемого модуля клиентского приложения.
 author: mscurrell
 ms.author: markscu
 ms.date: 03/05/2020
-ms.topic: conceptual
-ms.openlocfilehash: 6dd7d73d2b04f6e076794ee63d0a546170782fce
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.topic: how-to
+ms.openlocfilehash: 262431cfcc906b6df1054aaa7dc2b9573c3b8833
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82115641"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85965252"
 ---
 # <a name="using-azure-batch-rendering"></a>Использование службы рендеринга пакетной службы Azure
 
@@ -19,8 +19,8 @@ ms.locfileid: "82115641"
 * Интерфейсы API:
   * Напишите код на основе любого из API пакетной службы.  Разработчики могут интегрировать возможности пакетной службы Azure в существующие облачные и локальные приложения или рабочие процессы.
 * Средства командной строки.
-  * Использование пакетной службы можно закодировать в скрипты [командной строки Azure](https://docs.microsoft.com/cli/azure/) или [PowerShell](https://docs.microsoft.com/powershell/azure/overview).
-  * В частности, [поддержка шаблонов CLI для пакетной службы](https://docs.microsoft.com/azure/batch/batch-cli-templates) значительно упрощает создание пулов и отправку заданий.
+  * Использование пакетной службы можно закодировать в скрипты [командной строки Azure](/cli/azure/) или [PowerShell](/powershell/azure/overview).
+  * В частности, [поддержка шаблонов CLI для пакетной службы](./batch-cli-templates.md) значительно упрощает создание пулов и отправку заданий.
 * Пользовательский интерфейс Batch Explorer
   * [Batch Explorer](https://github.com/Azure/BatchLabs) — это кроссплатформенный клиентский инструмент, который поддерживает администрирование и мониторинг учетных записей пакетной службы.
   * Для каждого приложения для рендеринга предоставляются несколько шаблонов пулов и заданий, с помощью которых можно легко создавать пулы и отправлять задания.  Список этих шаблонов отображается в интерфейсе пользователя для приложения, а файлы шаблонов можно получить на GitHub.
@@ -32,7 +32,7 @@ ms.locfileid: "82115641"
 
 ## <a name="using-batch-explorer"></a>Использование Batch Explorer
 
-Пошаговое руководство по рендерингу с помощью Batch Explorer см. в [этом руководстве](https://docs.microsoft.com/azure/batch/tutorial-rendering-batchexplorer-blender).
+Пошаговое руководство по рендерингу с помощью Batch Explorer см. в [этом руководстве](./tutorial-rendering-batchexplorer-blender.md).
 
 ### <a name="download-and-install"></a>Скачивание и установка
 
@@ -46,24 +46,24 @@ ms.locfileid: "82115641"
 
 Доступны шаблоны для всех приложений, которые присутствуют в представленных в Marketplace образах виртуальных машин для рендеринга.  Для каждого приложения существует несколько шаблонов, включая шаблоны для пулов ресурсов ЦП и графического процессора под управлением ОС Windows и Linux; шаблоны заданий для полноэкранного или фрагментированного рендеринга Blender, а также для распределенного рендеринга V-Ray. Набор стандартных шаблонов будет постепенно расширяться с включением новых возможностей пакетной службы, таких как автоматическое масштабирование пула.
 
-Также вы можете создать пользовательские шаблоны с нуля или путем изменения стандартных шаблонов. Пользовательские шаблоны можно использовать, выбрав элемент "Локальные шаблоны" в разделе "Галерея" Batch Explorer.
+Также вы можете создать пользовательские шаблоны с нуля или путем изменения стандартных шаблонов. Чтобы создать пользовательский шаблон, выберите элемент "Локальные шаблоны" в разделе "Коллекции" Batch Explorer.
 
 ### <a name="file-system-and-data-movement"></a>Файловая система и перемещение данных
 
-Раздел "Data" в Batch Explorer позволяет копировать файлы между локальной файловой системой и учетными записями хранения Azure.
+В разделе "Данные" Batch Explorer можно копировать файлы между локальной файловой системой и учетными записями хранения Azure.
 
 ## <a name="client-application-plug-ins"></a>Подключаемые модули клиентского приложения
 
 Для некоторых клиентских приложений доступны подключаемые модули.  Эти подключаемые модули позволяют создавать пулы и задания непосредственно из приложения или через обозреватель пакетной службы.
 
-* [Наложение 2,79](https://github.com/Azure/azure-batch-rendering/tree/master/plugins/blender)
-* [Смешение 2.8 и более поздних версий](https://github.com/Azure/azure-batch-rendering/tree/master/plugins/blender28)
+* [Blender 2.79](https://github.com/Azure/azure-batch-rendering/tree/master/plugins/blender)
+* [Blender 2.8 и более старших версий](https://github.com/Azure/azure-batch-rendering/tree/master/plugins/blender28)
 * [Autodesk 3ds Max](https://github.com/Azure/azure-batch-rendering/tree/master/plugins/3ds-max)
 * [Autodesk Maya](https://github.com/Azure/azure-batch-maya)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Примеры с применением рендеринга пакетной службы вы найдете в следующих руководствах:
 
-* [Рендеринг с использованием Azure CLI](https://docs.microsoft.com/azure/batch/tutorial-rendering-cli);
-* [Рендеринг с использованием Batch Explorer](https://docs.microsoft.com/azure/batch/tutorial-rendering-batchexplorer-blender)
+* [Рендеринг с использованием Azure CLI](./tutorial-rendering-cli.md);
+* [Рендеринг с использованием Batch Explorer](./tutorial-rendering-batchexplorer-blender.md).

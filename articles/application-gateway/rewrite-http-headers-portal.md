@@ -4,16 +4,16 @@ description: Узнайте, как использовать портал Azure 
 services: application-gateway
 author: abshamsft
 ms.service: application-gateway
-ms.topic: article
+ms.topic: how-to
 ms.date: 11/13/2019
 ms.author: absha
 ms.custom: mvc
-ms.openlocfilehash: b90736b3ed1c1f69488fde4a386cf215d751c362
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 4626d40acc9ae84e7fcc5da16add0de7ffe6ffcc
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74012857"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84807897"
 ---
 # <a name="rewrite-http-request-and-response-headers-with-azure-application-gateway---azure-portal"></a>Перезапись заголовков HTTP-запроса и ответа с помощью шлюза приложений Azure — портал Azure
 
@@ -99,9 +99,9 @@ ms.locfileid: "74012857"
 
    - В списке **оператор** выберите **равно (=)**.
 
-   - Введите шаблон регулярного выражения. В этом примере мы будем использовать шаблон `(https?):\/\/.*azurewebsites\.net(.*)$`.
+   - Введите шаблон регулярного выражения. В этом примере мы будем использовать шаблон `(https?):\/\/.*azurewebsites\.net(.*)$` .
 
-   - Щелкните **ОК**.
+   - Нажмите кнопку **ОК**.
 
      ![Настройка условия If](media/rewrite-http-headers-portal/condition.png)
 
@@ -115,9 +115,9 @@ ms.locfileid: "74012857"
 
    - В списке **общий заголовок** выберите **Расположение**.
 
-   - Введите значение заголовка. В этом примере мы будем использовать `{http_resp_Location_1}://contoso.com{http_resp_Location_2}` в качестве значения заголовка. Это значение заменит *azurewebsites.NET* на *contoso.com* в заголовке Location.
+   - Введите значение заголовка. В этом примере мы будем использовать в `{http_resp_Location_1}://contoso.com{http_resp_Location_2}` качестве значения заголовка. Это значение заменит *azurewebsites.NET* на *contoso.com* в заголовке Location.
 
-   - Щелкните **ОК**.
+   - Нажмите кнопку **ОК**.
 
      ![Добавление действия](media/rewrite-http-headers-portal/action.png)
 
@@ -129,6 +129,6 @@ ms.locfileid: "74012857"
 
    ![Представление перезаписи набора](media/rewrite-http-headers-portal/rewrite-set-list.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о том, как настроить некоторые распространенные варианты использования, см. в статье [Общие сценарии перезаписи заголовков](https://docs.microsoft.com/azure/application-gateway/rewrite-http-headers).

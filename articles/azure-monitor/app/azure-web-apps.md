@@ -3,19 +3,19 @@ title: Мониторинг производительности служб пр
 description: Мониторинг производительности приложений для служб приложений Azure. Загрузка диаграммы и время отклика, сведения о зависимостях и Настройка оповещений о производительности.
 ms.topic: conceptual
 ms.date: 12/11/2019
-ms.openlocfilehash: 0f4d4dedab30839db56cb47ac7ac103413f2d4be
-ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
+ms.openlocfilehash: 574aefa4d554be7b0027c921289d8d15cffb8e49
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2020
-ms.locfileid: "82733470"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86169941"
 ---
 # <a name="monitor-azure-app-service-performance"></a>Мониторинг производительности Службы приложений Azure
 
 Включение мониторинга для веб-приложений на основе ASP.NET и ASP.NET Core, работающих в [службах приложений Azure](https://docs.microsoft.com/azure/app-service/) , стало еще проще, чем когда бы то ни было. В то время как раньше требовалось вручную установить расширение сайта, в образ службы приложений теперь по умолчанию встроено Последнее расширение или агент. В этой статье описано, как включить мониторинг Application Insights, а также приводятся предварительные рекомендации по автоматизации процесса для крупномасштабных развертываний.
 
 > [!NOTE]
-> Добавление расширения Application Insights сайта вручную с помощью > **расширений** **средств разработки**является устаревшим. Этот метод установки расширения был зависеть от ручных обновлений для каждой новой версии. Последний стабильный выпуск расширения теперь [предварительно установлен](https://github.com/projectkudu/kudu/wiki/Azure-Site-Extensions) в составе образа службы приложений. Файлы находятся в и автоматически `d:\Program Files (x86)\SiteExtensions\ApplicationInsightsAgent` обновляются в каждом стабильном выпуске. Если вы выполните инструкции на основе агента, чтобы включить наблюдение ниже, оно автоматически удалит устаревшее расширение.
+> Добавление расширения Application Insights сайта вручную с помощью **расширений средств разработки**  >  **Extensions** является устаревшим. Этот метод установки расширения был зависеть от ручных обновлений для каждой новой версии. Последний стабильный выпуск расширения теперь [предварительно установлен](https://github.com/projectkudu/kudu/wiki/Azure-Site-Extensions) в составе образа службы приложений. Файлы находятся в `d:\Program Files (x86)\SiteExtensions\ApplicationInsightsAgent` и автоматически обновляются в каждом стабильном выпуске. Если вы выполните инструкции на основе агента, чтобы включить наблюдение ниже, оно автоматически удалит устаревшее расширение.
 
 ## <a name="enable-application-insights"></a>Включение Application Insights
 
@@ -58,7 +58,7 @@ ms.locfileid: "82733470"
  
  Ниже приведена сводка данных, собираемых для каждого маршрута.
         
-|  | Коллекция .NET Basic | Рекомендуемая коллекция для .NET |
+| Данные | Коллекция .NET Basic | Рекомендуемая коллекция для .NET |
 | --- | --- | --- |
 | Добавляет тенденции использования ЦП, памяти и операций ввода-вывода. |Да |Да |
 | Собирает тенденции использования и обеспечивает сопоставление от результатов доступности до транзакций. | Да |Да |
@@ -66,9 +66,9 @@ ms.locfileid: "82733470"
 | Улучшает точность метрик APM под нагрузкой при использовании выборки. | Да |Да |
 | Сопоставляет микрослужбы в пределах границ запросов или зависимостей. | Нет (только возможности APM с одним экземпляром) |Да |
 
-3. Чтобы настроить такие параметры, как выборка, которые можно было бы контролировать с помощью файла applicationinsights. config, теперь можно взаимодействовать с теми же параметрами через параметры приложения с соответствующим префиксом. 
+3. Чтобы настроить такие параметры, как выборка, которые можно было бы контролировать с помощью файла applicationinsights.config теперь можно взаимодействовать с теми же параметрами через параметры приложения с соответствующим префиксом. 
 
-    * Например, чтобы изменить начальную долю выборки, можно создать параметр приложения: `MicrosoftAppInsights_AdaptiveSamplingTelemetryProcessor_InitialSamplingPercentage` и значение. `100`
+    * Например, чтобы изменить начальную долю выборки, можно создать параметр приложения: `MicrosoftAppInsights_AdaptiveSamplingTelemetryProcessor_InitialSamplingPercentage` и значение `100` .
 
     * Список поддерживаемых параметров обработчика данных телеметрии адаптивной выборки можно найти в [коде](https://github.com/microsoft/ApplicationInsights-dotnet/blob/master/BASE/Test/ServerTelemetryChannel.Test/TelemetryChannel.Tests/AdaptiveSamplingTelemetryProcessorTest.cs) и [связанной документации](https://docs.microsoft.com/azure/azure-monitor/app/sampling).
 
@@ -95,7 +95,7 @@ ms.locfileid: "82733470"
 
 # <a name="nodejs"></a>[Node.js](#tab/nodejs)
 
-В веб-приложении службы приложений в разделе **Параметры** > **выберите Application Insights** > **включить**. Мониторинг на основе агента Node. js в настоящее время находится на этапе предварительной версии.
+В веб-приложении службы приложений в разделе **Параметры**  >  **выберите Application Insights**  >  **включить**. Мониторинг на основе агентов Node.js в настоящее время находится на этапе предварительной версии.
 
 # <a name="java"></a>[Java](#tab/java)
 
@@ -132,7 +132,7 @@ ms.locfileid: "82733470"
 
 Если по какой-либо причине вы хотели бы отключить наблюдение на стороне клиента:
 
-* Выберите **Параметры** > **Параметры приложения**
+* Выберите **Параметры**  >  **Параметры приложения**
    * В разделе Параметры приложения добавьте новое имя и **значение** **параметра приложения** :
 
      безымян`APPINSIGHTS_JAVASCRIPT_ENABLED`
@@ -145,7 +145,7 @@ ms.locfileid: "82733470"
 
 # <a name="nodejs"></a>[Node.js](#tab/nodejs)
 
-Чтобы включить наблюдение на стороне клиента для приложения Node. js, необходимо [вручную добавить пакет SDK JavaScript на стороне клиента в приложение](https://docs.microsoft.com/azure/azure-monitor/app/javascript).
+Чтобы включить мониторинг на стороне клиента для Node.js приложения, необходимо [вручную добавить клиентский пакет SDK JavaScript в приложение](https://docs.microsoft.com/azure/azure-monitor/app/javascript).
 
 # <a name="java"></a>[Java](#tab/java)
 
@@ -165,12 +165,12 @@ ms.locfileid: "82733470"
 
 ### <a name="application-settings-definitions"></a>Определения параметров приложения
 
-|Имя параметра приложения |  Определение | Применение |
+|Имя параметра приложения |  Определение | Значение |
 |-----------------|:------------|-------------:|
 |ApplicationInsightsAgent_EXTENSION_VERSION | Главное расширение, которое управляет мониторингом среды выполнения. | `~2` |
 |XDT_MicrosoftApplicationInsights_Mode |  В режиме по умолчанию для обеспечения оптимальной производительности включены только функции, обеспечивающие их работу. | `default` или `recommended`. |
-|InstrumentationEngine_EXTENSION_VERSION | Определяет, будет ли включен модуль `InstrumentationEngine` двоичной перезаписи. Этот параметр оказывает влияние на производительность и влияет на время холодного запуска и запуска. | `~1` |
-|XDT_MicrosoftApplicationInsights_BaseExtensions | Определяет, будет ли записываться текст таблицы SQL & Azure вместе с вызовами зависимостей. Предупреждение о производительности: время холодного запуска приложения будет затронуто. Для `InstrumentationEngine`этого параметра требуется. | `~1` |
+|InstrumentationEngine_EXTENSION_VERSION | Определяет, будет ли включен модуль двоичной перезаписи `InstrumentationEngine` . Этот параметр оказывает влияние на производительность и влияет на время холодного запуска и запуска. | `~1` |
+|XDT_MicrosoftApplicationInsights_BaseExtensions | Определяет, будет ли записываться текст таблицы SQL & Azure вместе с вызовами зависимостей. Предупреждение о производительности: время холодного запуска приложения будет затронуто. Для этого параметра требуется `InstrumentationEngine` . | `~1` |
 
 ### <a name="app-service-application-settings-with-azure-resource-manager"></a>Параметры приложения службы приложений с Azure Resource Manager
 
@@ -355,35 +355,35 @@ $app = Set-AzWebApp -AppSettings $newAppSettings -ResourceGroupName $app.Resourc
 > [!NOTE]
 > Приложения Java поддерживаются только в службах приложений Azure с помощью инструментирования вручную на основе пакета SDK, поэтому приведенные ниже действия не применимы к этим сценариям.
 
-1. Убедитесь, что приложение отслеживается через `ApplicationInsightsAgent`.
-    * Убедитесь, `ApplicationInsightsAgent_EXTENSION_VERSION` что для параметра приложения задано значение "~ 2".
+1. Убедитесь, что приложение отслеживается через `ApplicationInsightsAgent` .
+    * Убедитесь, что `ApplicationInsightsAgent_EXTENSION_VERSION` для параметра приложения задано значение "~ 2".
 2. Убедитесь, что приложение соответствует требованиям, которые необходимо отслеживать.
     * Перейдите по адресу `https://yoursitename.scm.azurewebsites.net/ApplicationInsights`.
 
-    ![Снимок экрана https://yoursitename.scm.azurewebsites/applicationinsights со страницей результатов](./media/azure-web-apps/app-insights-sdk-status.png)
+    ![Снимок экрана со https://yoursitename.scm.azurewebsites/applicationinsights страницей результатов](./media/azure-web-apps/app-insights-sdk-status.png)
 
-    * Убедитесь, что `Application Insights Extension Status``Pre-Installed Site Extension, version 2.8.12.1527, is running.`
+    * Убедитесь `Application Insights Extension Status` , что`Pre-Installed Site Extension, version 2.8.12.1527, is running.`
         * Если она не запущена, следуйте инструкциям по [включению мониторинга Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/azure-web-apps#enable-application-insights)
 
     * Убедитесь, что источник состояния существует и выглядит следующим образом:`Status source D:\home\LogFiles\ApplicationInsights\status\status_RD0003FF0317B6_4248_1.json`
         * Если такое же значение отсутствует, это означает, что приложение в данный момент не выполняется или не поддерживается. Чтобы убедиться, что приложение выполняется, попробуйте вручную посетить конечные точки URL-адреса приложения или приложения, что позволит получить доступ к сведениям о среде выполнения.
 
     * Убедитесь, `IKeyExists` что`true`
-        * Если это так `false`, добавьте `APPINSIGHTS_INSTRUMENTATIONKEY` в `APPLICATIONINSIGHTS_CONNECTION_STRING` параметры приложения и с идентификатором GUID iKey.
+        * Если это так `false` , добавьте `APPINSIGHTS_INSTRUMENTATIONKEY` в `APPLICATIONINSIGHTS_CONNECTION_STRING` Параметры приложения и с идентификатором GUID iKey.
 
-    * Убедитесь в отсутствии записей для `AppAlreadyInstrumented`, `AppContainsDiagnosticSourceAssembly`и. `AppContainsAspNetTelemetryCorrelationAssembly`
-        * Если любая из этих записей существует, удалите из приложения следующие пакеты: `Microsoft.ApplicationInsights`, `System.Diagnostics.DiagnosticSource`и. `Microsoft.AspNet.TelemetryCorrelation`
+    * Убедитесь в отсутствии записей для `AppAlreadyInstrumented` , `AppContainsDiagnosticSourceAssembly` и `AppContainsAspNetTelemetryCorrelationAssembly` .
+        * Если любая из этих записей существует, удалите из приложения следующие пакеты: `Microsoft.ApplicationInsights` , `System.Diagnostics.DiagnosticSource` и `Microsoft.AspNet.TelemetryCorrelation` .
 
 В таблице ниже приведено более подробное описание этих значений, их основных причин и Рекомендуемые исправления.
 
-|Значение проблемы|Объяснение|Fix
+|Значение проблемы|Пояснение|Исправление
 |---- |----|---|
-| `AppAlreadyInstrumented:true` | Это значение указывает, что расширение обнаружило, что некоторые аспекты пакета SDK уже имеются в приложении и будут отключаться. Это может быть вызвано ссылкой на `System.Diagnostics.DiagnosticSource`, или `Microsoft.AspNet.TelemetryCorrelation``Microsoft.ApplicationInsights`  | Удалите ссылки. Некоторые из этих ссылок добавляются по умолчанию из определенных шаблонов Visual Studio, а в более ранних версиях Visual Studio могут `Microsoft.ApplicationInsights`быть добавлены ссылки на.
+| `AppAlreadyInstrumented:true` | Это значение указывает, что расширение обнаружило, что некоторые аспекты пакета SDK уже имеются в приложении и будут отключаться. Это может быть вызвано ссылкой на `System.Diagnostics.DiagnosticSource` , `Microsoft.AspNet.TelemetryCorrelation` или`Microsoft.ApplicationInsights`  | Удалите ссылки. Некоторые из этих ссылок добавляются по умолчанию из определенных шаблонов Visual Studio, а в более ранних версиях Visual Studio могут быть добавлены ссылки на `Microsoft.ApplicationInsights` .
 |`AppAlreadyInstrumented:true` | Если приложение предназначено для .NET Core 2,1 или 2,2, а ссылается на [Microsoft. AspNetCore. ALL](https://www.nuget.org/packages/Microsoft.AspNetCore.All) meta-Package, то оно переносится в Application Insights, а расширение будет отключаться. | Клиентам в .NET Core 2.1, 2.2 [рекомендуется](https://github.com/aspnet/Announcements/issues/287) использовать вместо него мета-пакет Microsoft. AspNetCore. app.|
 |`AppAlreadyInstrumented:true` | Это значение также может быть вызвано наличием указанных выше библиотек DLL в папке приложения из предыдущего развертывания. | Очистите папку приложения, чтобы убедиться, что эти библиотеки DLL удалены. Проверьте каталог Bin локального приложения и каталог wwwroot в службе приложений. (Чтобы проверить каталог wwwroot веб-приложения службы приложений: Advanced Tools (KUDU) > консоль отладки > CMD > хоме\сите\ввврут).
-|`AppContainsAspNetTelemetryCorrelationAssembly: true` | Это значение указывает, что расширение обнаружило `Microsoft.AspNet.TelemetryCorrelation` ссылки на приложение и будет отключаться. | Удаление ссылки.
-|`AppContainsDiagnosticSourceAssembly**:true`|Это значение указывает, что расширение обнаружило `System.Diagnostics.DiagnosticSource` ссылки на приложение и будет отключаться.| Удаление ссылки.
-|`IKeyExists:false`|Это значение указывает, что ключ инструментирования отсутствует в AppSetting, `APPINSIGHTS_INSTRUMENTATIONKEY`. Возможные причины. возможно, значения были случайно удалены, забыли установить значения в скрипте автоматизации и т. д. | Убедитесь, что параметр есть в параметрах приложения службы приложений.
+|`AppContainsAspNetTelemetryCorrelationAssembly: true` | Это значение указывает, что расширение обнаружило ссылки на `Microsoft.AspNet.TelemetryCorrelation` приложение и будет отключаться. | Удаление ссылки.
+|`AppContainsDiagnosticSourceAssembly**:true`|Это значение указывает, что расширение обнаружило ссылки на `System.Diagnostics.DiagnosticSource` приложение и будет отключаться.| Удаление ссылки.
+|`IKeyExists:false`|Это значение указывает, что ключ инструментирования отсутствует в AppSetting, `APPINSIGHTS_INSTRUMENTATIONKEY` . Возможные причины. возможно, значения были случайно удалены, забыли установить значения в скрипте автоматизации и т. д. | Убедитесь, что параметр есть в параметрах приложения службы приложений.
 
 ### <a name="appinsights_javascript_enabled-and-urlcompression-is-not-supported"></a>APPINSIGHTS_JAVASCRIPT_ENABLED и urlCompression не поддерживаются
 

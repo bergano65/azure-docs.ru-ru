@@ -10,13 +10,12 @@ ms.topic: conceptual
 ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
-ms.custom: aaddev
-ms.openlocfilehash: ead39343cca9943ba55d66509bd9917402efb8cf
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.custom: aaddev, tracking-python
+ms.openlocfilehash: 921015d6aa7acd840a4a231a899217daafe3525b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81868972"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84558548"
 ---
 # <a name="daemon-app-that-calls-web-apis---code-configuration"></a>Управляющее приложение, вызывающее веб-API — конфигурация кода
 
@@ -38,7 +37,7 @@ ms.locfileid: "81868972"
 
 Поэтому центр, указанный в конфигурации приложения, должен быть клиентом (указав идентификатор клиента или доменное имя, связанное с вашей организацией).
 
-Если вы являетесь независимым поставщиком программного обеспечения и хотите предоставить многоклиентское средство `organizations`, вы можете использовать. Но помните, что вы также должны объяснить своим заказчикам, как предоставить согласие администратора. Дополнительные сведения см. в разделе [запрос согласия для всего клиента](v2-permissions-and-consent.md#requesting-consent-for-an-entire-tenant). Кроме того, сейчас существует ограничение в MSAL: `organizations` разрешено только в том случае, если учетные данные клиента являются секретом приложения (а не сертификатом).
+Если вы являетесь независимым поставщиком программного обеспечения и хотите предоставить многоклиентское средство, вы можете использовать `organizations` . Но помните, что вы также должны объяснить своим заказчикам, как предоставить согласие администратора. Дополнительные сведения см. в разделе [запрос согласия для всего клиента](v2-permissions-and-consent.md#requesting-consent-for-an-entire-tenant). Кроме того, сейчас существует ограничение в MSAL: `organizations` разрешено только в том случае, если учетные данные клиента являются секретом приложения (а не сертификатом).
 
 ## <a name="configure-and-instantiate-the-application"></a>Настройка и создание экземпляра приложения
 
@@ -57,7 +56,7 @@ ms.locfileid: "81868972"
 
 # <a name="net"></a>[.NET](#tab/dotnet)
 
-[appSettings. JSON](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/master/1-Call-MSGraph/daemon-console/appsettings.json) из примера [консольной управляющей программы .NET Core](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) .
+В примере [консоли .NET Core](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2) [appsettings.json](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/blob/master/1-Call-MSGraph/daemon-console/appsettings.json) .
 
 ```json
 {
@@ -69,11 +68,11 @@ ms.locfileid: "81868972"
 }
 ```
 
-Вы предоставляете `ClientSecret` либо `CertificateName`. Эти параметры являются эксклюзивными.
+Вы предоставляете либо `ClientSecret` `CertificateName` . Эти параметры являются эксклюзивными.
 
 # <a name="python"></a>[Python](#tab/python)
 
-При создании конфиденциального клиента с секретами клиента файл [Parameters. JSON](https://github.com/Azure-Samples/ms-identity-python-daemon/blob/master/1-Call-MsGraph-WithSecret/parameters.json) в образце [управляющей программы Python](https://github.com/Azure-Samples/ms-identity-python-daemon) выглядит следующим образом:
+При создании конфиденциального клиента с секретами клиента [parameters.js](https://github.com/Azure-Samples/ms-identity-python-daemon/blob/master/1-Call-MsGraph-WithSecret/parameters.json) в файле конфигурации в образце [управляющей программы Python](https://github.com/Azure-Samples/ms-identity-python-daemon) выглядит следующим образом:
 
 ```Json
 {
@@ -85,7 +84,7 @@ ms.locfileid: "81868972"
 }
 ```
 
-При создании конфиденциального клиента с сертификатами файл [Parameters. JSON](https://github.com/Azure-Samples/ms-identity-python-daemon/blob/master/2-Call-MsGraph-WithCertificate/parameters.json) в образце [управляющей программы Python](https://github.com/Azure-Samples/ms-identity-python-daemon) выглядит следующим образом:
+При создании конфиденциального клиента с сертификатами [parameters.js](https://github.com/Azure-Samples/ms-identity-python-daemon/blob/master/2-Call-MsGraph-WithCertificate/parameters.json) в файле конфигурации в образце [управляющей программы Python](https://github.com/Azure-Samples/ms-identity-python-daemon) выглядит следующим образом:
 
 ```Json
 {
@@ -239,7 +238,7 @@ ConfidentialClientApplication cca =
                 .build();
 ```
 
-или диспетчер конфигурации служб
+или
 
 ```Java
 PrivateKey key = getPrivateKey(); /* RSA private key to sign the assertion */
@@ -267,7 +266,7 @@ MSAL.NET имеет два метода для предоставления по
 - `.WithClientAssertion()`
 - `.WithClientClaims()`
 
-При использовании `WithClientAssertion`необходимо предоставить подписанный JWT. Этот расширенный сценарий подробно описан в [проверочных утверждениях клиента](msal-net-client-assertions.md).
+При использовании необходимо `WithClientAssertion` предоставить подписанный JWT. Этот расширенный сценарий подробно описан в [проверочных утверждениях клиента](msal-net-client-assertions.md).
 
 ```csharp
 string signedClientAssertion = ComputeAssertion();
@@ -276,7 +275,7 @@ app = ConfidentialClientApplicationBuilder.Create(config.ClientId)
                                           .Build();
 ```
 
-При использовании `WithClientClaims`MSAL.NET создает подписанное утверждение, которое содержит утверждения, ожидаемые Azure AD, а также дополнительные клиентские утверждения, которые требуется отправить.
+При использовании `WithClientClaims` MSAL.NET создает подписанное утверждение, которое содержит утверждения, ожидаемые Azure AD, а также дополнительные клиентские утверждения, которые требуется отправить.
 В этом коде показано, как это сделать:
 
 ```csharp
@@ -293,7 +292,7 @@ app = ConfidentialClientApplicationBuilder.Create(config.ClientId)
 
 # <a name="python"></a>[Python](#tab/python)
 
-В MSAL Python можно предоставить клиентские заявки с помощью утверждений, которые будут подписаны этим `ConfidentialClientApplication`закрытым ключом.
+В MSAL Python можно предоставить клиентские заявки с помощью утверждений, которые будут подписаны этим `ConfidentialClientApplication` закрытым ключом.
 
 ```Python
 config = json.load(open(sys.argv[1]))

@@ -10,13 +10,13 @@ author: trevorbye
 ms.author: trbye
 ms.reviewer: laobri
 ms.date: 03/11/2020
-ms.custom: contperfq4
-ms.openlocfilehash: 5b6b58cb205c769feeed011c0a2ba2ec569d667a
-ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
+ms.custom: contperfq4, tracking-python
+ms.openlocfilehash: de1d548be7f426f42b369ae7607bd6f798b42317
+ms.sourcegitcommit: 4042aa8c67afd72823fc412f19c356f2ba0ab554
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82857764"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85296174"
 ---
 # <a name="tutorial-build-an-azure-machine-learning-pipeline-for-batch-scoring"></a>Руководство по Создание конвейеров Машинного обучения Azure для пакетной оценки
 
@@ -45,23 +45,25 @@ ms.locfileid: "82857764"
 * Если у вас еще нет рабочей области Машинного обучения Azure или виртуальной машины записной книжки, выполните инструкции, приведенные в [первой части руководства по установке](tutorial-1st-experiment-sdk-setup.md).
 * Завершив настройку, используйте тот же сервер записных книжек, чтобы открыть записную книжку *tutorials/machine-learning-pipelines-advanced/tutorial-pipeline-batch-scoring-classification.ipynb*.
 
-Если вы хотите открыть руководство по установке в собственной [локальной среде](how-to-configure-environment.md#local), доступ к нему можно получить на [GitHub](https://github.com/Azure/MachineLearningNotebooks/tree/master/tutorials). Выполните команду `pip install azureml-sdk[notebooks] azureml-pipeline-core azureml-contrib-pipeline-steps pandas requests`, чтобы получить необходимые пакеты.
+Если вы хотите открыть руководство по установке в собственной [локальной среде](how-to-configure-environment.md#local), доступ к нему можно получить на [GitHub](https://github.com/Azure/MachineLearningNotebooks/tree/master/tutorials). Выполните команду `pip install azureml-sdk[notebooks] azureml-pipeline-core azureml-pipeline-steps pandas requests`, чтобы получить необходимые пакеты.
 
 ## <a name="configure-workspace-and-create-a-datastore"></a>Настройка рабочей области и создание хранилища данных
 
 В имеющейся рабочей области Машинного обучения Azure создайте объект.
-
-- Класс [workspace](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py) принимает сведения о подписке и ресурсах Azure. Он также создает облачный ресурс, который можно использовать для мониторинга и отслеживания работы модели. 
-- `Workspace.from_config()` считывает файл `config.json` и загружает сведения о проверке подлинности в объект с именем `ws`. Объект `ws` используется в коде в рамках этого руководства.
 
 ```python
 from azureml.core import Workspace
 ws = Workspace.from_config()
 ```
 
+> [!IMPORTANT]
+> Этот фрагмент кода ищет конфигурацию рабочей области в текущем или родительском каталоге. Дополнительные сведения о создании рабочей области см. в статье [Создание рабочих областей машинного обучения Azure и управление ими](how-to-manage-workspace.md). Дополнительные сведения о сохранении конфигурации в файле см. в разделе [Создание файла конфигурации рабочей области](how-to-configure-environment.md#workspace).
+
 ## <a name="create-a-datastore-for-sample-images"></a>Создание хранилища данных для образцов изображений
 
 В учетной записи `pipelinedata` извлеките образец общедоступных данных вычисления ImageNet из общедоступного контейнера больших двоичных объектов `sampledata`. Выполните вызов `register_azure_blob_container()`, чтобы предоставить рабочей области `images_datastore` доступ к данным. Затем задайте хранилище данных рабочей области по умолчанию в качестве выходного. Используйте выходное хранилище данных для оценки выходных данных в конвейере.
+
+Дополнительные сведения о доступе к данным см. в [этом разделе](https://docs.microsoft.com/azure/machine-learning/how-to-access-data#python-sdk).
 
 ```python
 from azureml.core.datastore import Datastore
@@ -93,7 +95,7 @@ from azureml.core.dataset import Dataset
 from azureml.pipeline.core import PipelineData
 
 input_images = Dataset.File.from_files((batchscore_blob, "batchscoring/images/"))
-label_ds = Dataset.File.from_files((batchscore_blob, "batchscoring/labels/*.txt"))
+label_ds = Dataset.File.from_files((batchscore_blob, "batchscoring/labels/"))
 output_dir = PipelineData(name="scores", 
                           datastore=def_data_store, 
                           output_path_on_compute="batchscoring/results")
@@ -168,7 +170,7 @@ except ComputeTargetException:
 Сценарий `batch_scoring.py` принимает приведенные ниже параметры, которые передаются из класса `ParallelRunStep`, который вы создадите позже:
 
 - `--model_name`: Имя используемой модели.
-- `--labels_name`: Имя объекта `Dataset`, содержащего файл `labels.txt`.
+- `--labels_dir`: Расположение файла `labels.txt`.
 
 Инфраструктура конвейеров использует класс `ArgumentParser` для передачи параметров в шаги конвейера. Например, в следующем коде первый аргумент `--model_name` получает идентификатор свойства `model_name`. В функции `init()` для доступа к этому свойству используется `Model.get_model_path(args.model_name)`.
 
@@ -196,9 +198,10 @@ image_size = 299
 num_channel = 3
 
 
-def get_class_label_dict():
+def get_class_label_dict(labels_dir):
     label = []
-    proto_as_ascii_lines = tf.gfile.GFile("labels.txt").readlines()
+    labels_path = os.path.join(labels_dir, 'labels.txt')
+    proto_as_ascii_lines = tf.gfile.GFile(labels_path).readlines()
     for l in proto_as_ascii_lines:
         label.append(l.rstrip())
     return label
@@ -209,14 +212,10 @@ def init():
 
     parser = argparse.ArgumentParser(description="Start a tensorflow model serving")
     parser.add_argument('--model_name', dest="model_name", required=True)
-    parser.add_argument('--labels_name', dest="labels_name", required=True)
+    parser.add_argument('--labels_dir', dest="labels_dir", required=True)
     args, _ = parser.parse_known_args()
 
-    workspace = Run.get_context(allow_offline=False).experiment.workspace
-    label_ds = Dataset.get_by_name(workspace=workspace, name=args.labels_name)
-    label_ds.download(target_path='.', overwrite=True)
-
-    label_dict = get_class_label_dict()
+    label_dict = get_class_label_dict(args.labels_dir)
     classes_num = len(label_dict)
 
     with slim.arg_scope(inception_v3.inception_v3_arg_scope()):
@@ -263,14 +262,15 @@ def run(mini_batch):
 
 ## <a name="build-the-pipeline"></a>Создание конвейера
 
-Перед запуском конвейера создайте объект, который определяет среду Python и создает зависимости, необходимые скрипту `batch_scoring.py`. Основной зависимостью является TensorFlow, но кроме нее установите `azureml-defaults` для фоновых процессов. Создайте объект `RunConfiguration` с помощью зависимостей. Кроме того, следует указать поддержку Docker и Docker-GPU.
+Перед запуском конвейера создайте объект, который определяет среду Python и создает зависимости, необходимые скрипту `batch_scoring.py`. Основной зависимостью является TensorFlow, но кроме нее установите `azureml-core` и `azureml-dataprep[fuse]`, требуемые для ParallelRunStep. Кроме того, следует указать поддержку Docker и Docker-GPU.
 
 ```python
 from azureml.core import Environment
 from azureml.core.conda_dependencies import CondaDependencies
 from azureml.core.runconfig import DEFAULT_GPU_IMAGE
 
-cd = CondaDependencies.create(pip_packages=["tensorflow-gpu==1.13.1", "azureml-defaults"])
+cd = CondaDependencies.create(pip_packages=["tensorflow-gpu==1.15.2",
+                                            "azureml-core", "azureml-dataprep[fuse]"])
 env = Environment(name="parallelenv")
 env.python.conda_dependencies = cd
 env.docker.base_image = DEFAULT_GPU_IMAGE
@@ -281,12 +281,12 @@ env.docker.base_image = DEFAULT_GPU_IMAGE
 Создайте шаг конвейера, используя сценарий, конфигурацию среды и параметры. Укажите целевой объект вычислений, уже подключенный к вашей рабочей области.
 
 ```python
-from azureml.contrib.pipeline.steps import ParallelRunConfig
+from azureml.pipeline.steps import ParallelRunConfig
 
 parallel_run_config = ParallelRunConfig(
     environment=env,
     entry_script="batch_scoring.py",
-    source_directory=".",
+    source_directory="scripts",
     output_action="append_row",
     mini_batch_size="20",
     error_threshold=1,
@@ -310,15 +310,20 @@ parallel_run_config = ParallelRunConfig(
 Ссылка на объект в массиве `outputs` становится доступной в качестве *входных данных* для последующего шага конвейера в сценариях с несколькими шагами.
 
 ```python
-from azureml.contrib.pipeline.steps import ParallelRunStep
+from azureml.pipeline.steps import ParallelRunStep
+from datetime import datetime
+
+parallel_step_name = "batchscoring-" + datetime.now().strftime("%Y%m%d%H%M")
+
+label_config = label_ds.as_named_input("labels_input")
 
 batch_score_step = ParallelRunStep(
-    name="parallel-step-test",
+    name=parallel_step_name,
     inputs=[input_images.as_named_input("input_images")],
     output=output_dir,
-    models=[model],
     arguments=["--model_name", "inception",
-               "--labels_name", "label_ds"],
+               "--labels_dir", label_config],
+    side_inputs=[label_config],
     parallel_run_config=parallel_run_config,
     allow_reuse=False
 )
@@ -330,7 +335,7 @@ batch_score_step = ParallelRunStep(
 
 Теперь запустите конвейер. Сначала создайте объект `Pipeline` с помощью ссылки на вашу рабочую область и созданный шаг конвейера. Параметр `steps` является массивом шагов. В этом случае для пакетной оценки выполняется только один шаг. Чтобы создать конвейеры с несколькими шагами, разместите шаги по порядку в этом массиве.
 
-Затем используйте функцию `Experiment.submit()`, чтобы передать конвейер для выполнения. Кроме того, укажите пользовательский параметр `param_batch_size`. Функция `wait_for_completion` выводит журналы во время процесса сборки конвейера. В журналах можно просмотреть текущий ход выполнения.
+Затем используйте функцию `Experiment.submit()`, чтобы передать конвейер для выполнения. Функция `wait_for_completion` выводит журналы во время процесса сборки конвейера. В журналах можно просмотреть текущий ход выполнения.
 
 > [!IMPORTANT]
 > Первый запуск конвейера занимает примерно *15 минут*. Необходимо скачать все зависимости, создать образ Docker и подготовить и создать среду Python. Повторный запуск конвейера занимает значительно меньше времени, так как эти ресурсы используются повторно, а не создаются. Однако общее время запуска для конвейера зависит от рабочей нагрузки ваших скриптов и процессов, выполняемых в каждом шаге конвейера.
@@ -394,7 +399,7 @@ auth_header = interactive_auth.get_authentication_header()
 
 Получите URL-адрес REST из свойства `endpoint` объекта опубликованного конвейера. Кроме того, URL-адрес REST можно найти в рабочей области в студии машинного обучения Azure. 
 
-Создайте запрос HTTP POST к конечной точке. Укажите заголовок проверки подлинности в запросе. Добавьте объект полезных данных JSON с именем эксперимента и параметром размера пакета. Как уже говорилось ранее в руководстве, `param_batch_size` передается в ваш скрипт `batch_scoring.py`, потому что вы определили его как объект `PipelineParameter` в конфигурации шага.
+Создайте запрос HTTP POST к конечной точке. Укажите заголовок проверки подлинности в запросе. Добавьте объект полезных данных JSON с именем эксперимента.
 
 Выполните запрос на активацию запуска. Включите код для доступа к ключу `Id` из словаря ответов, чтобы получить значение идентификатора запуска.
 
@@ -405,7 +410,7 @@ rest_endpoint = published_pipeline.endpoint
 response = requests.post(rest_endpoint, 
                          headers=auth_header, 
                          json={"ExperimentName": "batch_scoring",
-                               "ParameterAssignments": {"param_batch_size": 50}})
+                               "ParameterAssignments": {"process_count_per_node": 6}})
 run_id = response.json()["Id"]
 ```
 

@@ -16,10 +16,10 @@ ms.date: 03/18/2019
 ms.author: juliako
 ms.reviewer: anilmur
 ms.openlocfilehash: 259e32d55f25c4a146b7ff358eb503763dd5fab2
-ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "69016588"
 ---
 # <a name="encode-an-asset-with-media-encoder-standard-using-net"></a>Кодирование ресурса-контейнера с помощью Media Encoder Standard и .NET  
@@ -70,7 +70,7 @@ Media Encoder Standard настраивается с помощью одной �
 
 #### <a name="create-and-configure-a-visual-studio-project"></a>Создание и настройка проекта Visual Studio
 
-Настройте среду разработки и заполните файл App. config сведениями о соединении, как описано в разделе [Разработка служб мультимедиа с помощью .NET](media-services-dotnet-how-to-use.md). 
+Настройте среду разработки и заполните файл app.config данными о соединении, как описано в разделе [Разработка служб мультимедиа с помощью .NET](media-services-dotnet-how-to-use.md). 
 
 #### <a name="example"></a>Пример 
 
@@ -206,10 +206,10 @@ namespace MediaEncoderStandardSample
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="next-steps"></a>Следующие шаги
-[Создание эскиза с помощью Media Encoder Standard с использованием](media-services-dotnet-generate-thumbnail-with-mes.md)
-[службы мультимедиа .NET общие сведения о кодировке](media-services-encode-asset.md)
+## <a name="next-steps"></a>Дальнейшие действия
+[Создание эскиза с помощью Media Encoder Standard с .NET](media-services-dotnet-generate-thumbnail-with-mes.md) 
+ [Общие сведения о кодировке служб мультимедиа](media-services-encode-asset.md)
 

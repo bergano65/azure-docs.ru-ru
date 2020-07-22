@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 11/18/2019
-ms.openlocfilehash: 04faafca0811e60ded47d1e91a82054a1c1cdb25
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 0a2e69a220f6752e5f0392c345b02967e2e76beb
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74406169"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86203474"
 ---
 # <a name="use-apache-spark-structured-streaming-with-apache-kafka-and-azure-cosmos-db"></a>Использование структурированной потоковой передачи Apache Spark с Apache Kafka в Azure Cosmos DB
 
@@ -47,7 +47,7 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
     <img src="./media/apache-kafka-spark-structured-streaming-cosmosdb/resource-manager-deploy.png" alt="Deploy to Azure"/>
     </a>
 
-    Шаблон Azure Resource Manager находится в репозитории GitHub для этого проекта ([https://github.com/Azure-Samples/hdinsight-spark-scala-kafka-cosmosdb](https://github.com/Azure-Samples/hdinsight-spark-scala-kafka-cosmosdb)).
+    Шаблон Azure Resource Manager находится в репозитории GitHub для этого проекта ( [https://github.com/Azure-Samples/hdinsight-spark-scala-kafka-cosmosdb](https://github.com/Azure-Samples/hdinsight-spark-scala-kafka-cosmosdb) ).
 
     Этот шаблон создает следующие ресурсы:
 
@@ -64,7 +64,7 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
 
 1. Используйте следующие сведения, чтобы заполнить раздел **Настраиваемое развертывание**:
 
-    |Свойство |Значение |
+    |Свойство. |Значение |
     |---|---|
     |Подписка|Выберите подписку Azure.|
     |Группа ресурсов|Создайте новую группу или выберите существующую. Эта группа содержит кластер HDInsight.|
@@ -128,7 +128,7 @@ az cosmosdb keys list --name $name --resource-group $resourceGroupName --type ke
 
 ## <a name="get-the-notebooks"></a>Получение записных книжек
 
-Код для примера, описанного в этом документе, доступен по [https://github.com/Azure-Samples/hdinsight-spark-scala-kafka-cosmosdb](https://github.com/Azure-Samples/hdinsight-spark-scala-kafka-cosmosdb)адресу.
+Код для примера, описанного в этом документе, доступен по адресу [https://github.com/Azure-Samples/hdinsight-spark-scala-kafka-cosmosdb](https://github.com/Azure-Samples/hdinsight-spark-scala-kafka-cosmosdb) .
 
 ## <a name="upload-the-notebooks"></a>Отправка записных книжек
 
@@ -136,7 +136,9 @@ az cosmosdb keys list --name $name --resource-group $resourceGroupName --type ke
 
 1. В веб-браузере подключитесь к записной книжке Jupyter в вашем кластере Spark. В следующем URL-адресе замените `CLUSTERNAME` именем вашего кластера __Spark__:
 
-        https://CLUSTERNAME.azurehdinsight.net/jupyter
+    ```http
+    https://CLUSTERNAME.azurehdinsight.net/jupyter
+    ```
 
     При появлении запроса введите имя администратора кластера и пароль, которые использовались при создании кластера.
 

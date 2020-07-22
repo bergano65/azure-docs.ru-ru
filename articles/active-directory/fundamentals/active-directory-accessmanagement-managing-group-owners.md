@@ -7,17 +7,16 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: fundamentals
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 09/11/2018
 ms.author: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f83a48ad13fe4ae217319b2aa85adf976aa6a7ae
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: dd5fc389ccb52c4a5eeec0e0f544a17b011333a3
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77149853"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85604528"
 ---
 # <a name="add-or-remove-group-owners-in-azure-active-directory"></a>Добавление или удаление владельцев группы в Azure Active Directory
 Группы Azure Active Directory (Azure AD) управляются владельцами группы. Владельцы групп могут быть пользователями или субъектами-службами и могут управлять группой, включая членство. Назначать владельцев групп могут только существующие владельцы групп или администраторы групп. Владельцы группы не должны быть участниками группы.
@@ -60,13 +59,13 @@ ms.locfileid: "77149853"
 
     После удаления владельца вернитесь на страницу **Владельцы** — имя будет удалено из списка владельцев.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - [Управление доступом к ресурсам с помощью групп Azure Active Directory](active-directory-manage-groups.md)
 
 - [Настройка параметров групп с помощью командлетов Azure Active Directory](../users-groups-roles/groups-settings-cmdlets.md)
 
 - [Использование групп для назначения доступа к интегрированному приложению SaaS](../users-groups-roles/groups-saasapps.md)
 
-- [Интеграция локальных удостоверений с Azure Active Directory.](../hybrid/whatis-hybrid-identity.md)
+- [Интеграция локальных удостоверений с Azure Active Directory](../hybrid/whatis-hybrid-identity.md)
 
 - [Настройка параметров групп с помощью командлетов Azure Active Directory](../users-groups-roles/groups-settings-v2-cmdlets.md)

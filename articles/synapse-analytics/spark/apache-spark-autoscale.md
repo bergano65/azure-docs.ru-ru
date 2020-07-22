@@ -7,13 +7,14 @@ ms.reviewer: euang
 services: synapse-analytics
 ms.service: synapse-analytics
 ms.topic: conceptual
+ms.subservice: spark
 ms.date: 03/31/2020
-ms.openlocfilehash: be7ac79b9429d2fc72c3b6bc2b6d92666b089dfb
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
-ms.translationtype: HT
+ms.openlocfilehash: 86e9b7425c8c75495a17b66af710d2c55e6e59ca
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83591970"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85194286"
 ---
 # <a name="automatically-scale-azure-synapse-analytics-apache-spark-pools"></a>Автоматическое масштабирование пулов Apache Spark в Azure Synapse Analytics
 
@@ -74,4 +75,4 @@ ms.locfileid: "83591970"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Краткое руководство по настройке нового пула Spark: [Создание пула Spark](..\quickstart-create-apache-spark-pool.md)
+Краткое руководство по настройке нового пула Spark: [Создание пула Spark](../quickstart-create-apache-spark-pool-portal.md)

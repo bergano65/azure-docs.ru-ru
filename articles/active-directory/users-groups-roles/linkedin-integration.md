@@ -7,18 +7,17 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
-ms.topic: article
+ms.topic: how-to
 ms.date: 11/08/2019
 ms.author: curtand
 ms.reviewer: beengen
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: faa80bf09113786e35a6ce98157f18639e30d210
-ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
-ms.translationtype: MT
+ms.openlocfilehash: 1c5058e24ee0817ebcc6c5761f7b9e22d1a14203
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82582646"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84727200"
 ---
 # <a name="integrate-linkedin-account-connections-in-azure-active-directory"></a>Интеграция подключений учетных записей LinkedIn в Azure Active Directory
 
@@ -91,17 +90,17 @@ ms.locfileid: "82582646"
 1. Скачайте [файлы административных шаблонов Office 2016 (ADMX/ADML)](https://www.microsoft.com/download/details.aspx?id=49030).
 1. Извлеките файлы **ADMX** и скопируйте их в центральное хранилище.
 1. Откройте "Управление групповой политикой".
-1. Создайте объект Групповая политика со следующим параметром: **Конфигурация** > пользователя**Административные шаблоны** > **Microsoft Office 2016** > **различные** > **функции показа LinkedIn в приложениях Office**.
+1. Создайте объект Групповая политика со следующим параметром: **Конфигурация пользователя**  >  **Административные шаблоны**  >  **Microsoft Office 2016**  >  **различные**  >  **функции показа LinkedIn в приложениях Office**.
 1. Выберите **Включено** или **Отключено**.
   
-   Состояние | Действие
+   Область | Действие
    ------ | ------
    **Enabled** | Параметр **Show LinkedIn features in Office applications** (Показывать функции LinkedIn в приложениях Office) в Office 2016 включен. Пользователи в вашей организации могут использовать функции LinkedIn в приложениях Office 2016.
    **Отключено** | Параметр **Show LinkedIn features in Office applications** (Показывать функции LinkedIn в приложениях Office) в Office 2016 отключен, и пользователи не могут изменить это. Пользователи в вашей организации не могут использовать функции LinkedIn в приложениях Office 2016.
 
 Эта групповая политика касается только приложений Office 2016 для локальных компьютеров. Если пользователи отключают LinkedIn в приложениях Office 2016, они по-прежнему смогут просматривать функции LinkedIn в Office 365.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Согласие пользователя и общий доступ к данным для LinkedIn](linkedin-user-consent.md)
 

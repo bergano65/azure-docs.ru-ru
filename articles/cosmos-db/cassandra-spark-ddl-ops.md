@@ -6,14 +6,14 @@ ms.author: govindk
 ms.reviewer: sngun
 ms.service: cosmos-db
 ms.subservice: cosmosdb-cassandra
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 09/24/2018
-ms.openlocfilehash: c0df05eff5dc84ef24e1ed5afcaf705d99f447ef
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 30cac5894998ca2bb9c37217820e1000ed97ba5d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77622577"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85260571"
 ---
 # <a name="ddl-operations-in-azure-cosmos-db-cassandra-api-from-spark"></a>Операции DDL в API Cassandra для Azure Cosmos DB из Spark
 
@@ -144,5 +144,5 @@ DESCRIBE tables;
 * [Операции чтения](cassandra-spark-read-ops.md)  
 * [Операции upsert](cassandra-spark-upsert-ops.md)  
 * [Операции удаления](cassandra-spark-delete-ops.md)  
-* [Операции агрегирования](cassandra-spark-aggregation-ops.md)  
+* [Операции агрегатных вычислений](cassandra-spark-aggregation-ops.md)  
 * [Операции копирования таблиц](cassandra-spark-table-copy-ops.md)  

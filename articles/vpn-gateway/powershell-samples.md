@@ -7,18 +7,18 @@ ms.service: vpn-gateway
 ms.topic: sample
 ms.date: 01/10/2020
 ms.author: cherylmc
-ms.openlocfilehash: 7510b0243db25752a61d3711c88a250b7ae3b576
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: fcae37da3ef9c5b2b7633db1dd16cec247a782af
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75867236"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86203831"
 ---
 # <a name="azure-powershell-samples-for-vpn-gateway"></a>Примеры Azure PowerShell для VPN-шлюза
 
 В таблице ниже приведены ссылки на скрипты Azure PowerShell.
 
-| | |
+| Скрипт | Описание |
 |----|----|
 | [Создание VPN-шлюза](./scripts/vpn-gateway-sample-create-vpn-gateway-powershell.md) | Создание VPN-шлюза на основе маршрутов |
 | [Создание VPN-шлюза и конфигурации "точка — сеть" с помощью RADIUS](./scripts/vpn-gateway-sample-point-to-site-radius-authentication-powershell.md) | Создание VPN-шлюз на основе маршрутов и конфигурации "точка — сеть" с использованием аутентификации на основе имени пользователя или пароля RADIUS. |

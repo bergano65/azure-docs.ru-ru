@@ -1,6 +1,6 @@
 ---
-title: Служба Azure Front Door | Документация Майкрософт
-description: В статье представлен обзор службы Azure Front Door. Узнайте, подходит ли она для балансировки нагрузки трафика пользователя для вашего приложения.
+title: Azure Front Door
+description: В этой статье приведен актуальный список последних изменений, внесенных в переднюю дверцу Azure.
 services: frontdoor
 documentationcenter: ''
 author: megan-beatty
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 4/30/2020
 ms.author: mebeatty
-ms.openlocfilehash: 009891d16d3acf5db2e344bcc2c917ecee9eed5b
-ms.sourcegitcommit: eaec2e7482fc05f0cac8597665bfceb94f7e390f
+ms.openlocfilehash: d00ed607322205daefd80c111b83483524c4a742
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82515849"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85321526"
 ---
 # <a name="whats-new-in-azure-front-door"></a>Новые возможности в Azure Front Door
 
@@ -32,6 +32,7 @@ ms.locfileid: "82515849"
 
 |Компонент  |Описание  |Дата добавления  |
 |---------|---------|---------|
+| Обработчик правил, общедоступный | Настройка обработки HTTP-запросов в пограничной среде. Дополнительные сведения см. в [обзоре обработчика правил](front-door-rules-engine.md). |июнь 2020 г. |
 | Обработчик правил (предварительная версия) | Настройка обработки HTTP-запросов в пограничной среде. Дополнительные сведения см. в [обзоре обработчика правил](front-door-rules-engine.md). |Апрель 2020 г. |
 
 

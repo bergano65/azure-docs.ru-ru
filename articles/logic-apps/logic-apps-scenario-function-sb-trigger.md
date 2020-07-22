@@ -7,10 +7,9 @@ ms.reviewer: jehollan, klam, logicappspm
 ms.topic: article
 ms.date: 11/08/2019
 ms.openlocfilehash: afd2735bae2a79ad942c347219019ef200b61070
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75428707"
 ---
 # <a name="call-or-trigger-logic-apps-by-using-azure-functions-and-azure-service-bus"></a>Вызов или Активация приложений логики с помощью функций Azure и служебной шины Azure
@@ -25,7 +24,7 @@ ms.locfileid: "75428707"
 
 * Приложение-функция Azure, которое является контейнером для функций Azure. Если у вас нет приложения-функции, [сначала создайте приложение-функцию](../azure-functions/functions-create-first-azure-function.md)и убедитесь, что в качестве стека среды выполнения выбрано .NET.
 
-* Основные сведения о [создании приложений логики](../logic-apps/quickstart-create-first-logic-app-workflow.md)
+* Базовые знания [создания приложений логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
 ## <a name="create-logic-app"></a>Создание приложения логики
 
@@ -113,7 +112,7 @@ ms.locfileid: "75428707"
 
      ![Выбор шаблона для существующего приложения функции](./media/logic-apps-scenario-function-sb-trigger/legacy-add-queue-trigger-template.png)
 
-1. В области **триггер очереди служебной шины Azure** укажите имя для триггера и настройте подключение служебной **шины** для очереди, в которой используется прослушиватель пакета SDK `OnMessageReceive()` служебной шины Azure, и нажмите кнопку **создать**.
+1. В области **триггер очереди служебной шины Azure** укажите имя для триггера и настройте подключение служебной **шины** для очереди, в которой используется прослушиватель пакета SDK служебной шины Azure `OnMessageReceive()` , и нажмите кнопку **создать**.
 
 1. Напишите базовую функцию для вызова ранее созданной конечной точки приложения логики, используя сообщение очереди в качестве триггера. Прежде чем писать функцию, ознакомьтесь со следующими соображениями.
 
@@ -148,6 +147,6 @@ ms.locfileid: "75428707"
 
    Приложение логики должно активироваться сразу же, как только функция получит это сообщение.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Вызов, активация или вложение рабочих процессов с помощью конечных точек HTTP](../logic-apps/logic-apps-http-endpoint.md)

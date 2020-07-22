@@ -13,19 +13,19 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 06/12/2018
 ms.author: robreed
-ms.openlocfilehash: 2f04b5ecb2019a77bbb38e97c3869cc0a9447955
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a33d74c01771c2b60ac8667a1494ebe80271a8ac
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79250625"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86494791"
 ---
 # <a name="dsc-extension-for-linux-microsoftostcextensionsdscforlinux"></a>Расширение DSC для Linux (Microsoft. OSTCExtensions. Дскфорлинукс)
 
 Настройка требуемого состояния (DSC) — это платформа управления, которую можно использовать для управления инфраструктурой ИТ и разработки с помощью конфигурации в виде кода.
 
 > [!NOTE]
-> Расширение DSC для Linux и [Azure Monitor расширение виртуальной машины для Linux](/azure/virtual-machines/extensions/oms-linux) в настоящее время представляют конфликт и не поддерживаются в параллельной конфигурации. Не используйте эти два решения на одной виртуальной машине.
+> Расширение DSC для Linux и [Azure Monitor расширение виртуальной машины для Linux](./oms-linux.md) в настоящее время представляют конфликт и не поддерживаются в параллельной конфигурации. Не используйте эти два решения на одной виртуальной машине.
 
 Расширение Дскфорлинукс публикуется и поддерживается корпорацией Майкрософт. Оно устанавливает агенты OMI и DSC на виртуальных машинах Azure. Расширение DSC также может выполнять следующие действия:
 
@@ -38,11 +38,11 @@ ms.locfileid: "79250625"
 
  
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="operating-system"></a>Операционная система
 
-Расширение DSC для Linux поддерживает все [дистрибутивы Linux, рекомендованные для Azure](/azure/virtual-machines/linux/endorsed-distros), за исключением следующих.
+Расширение DSC для Linux поддерживает все [дистрибутивы Linux, рекомендованные для Azure](../linux/endorsed-distros.md), за исключением следующих.
 
 | Distribution | Версия |
 |---|---|
@@ -287,9 +287,9 @@ $publicConfig = '{
 ## <a name="azure-cli-deployment"></a>Развертывание с помощью Azure CLI
 
 ### <a name="use-azure-cliazure-cli"></a>Использование [Azure CLI] [Azure-CLI]
-Перед развертыванием расширения Дскфорлинукс настройте `public.json` и `protected.json` в соответствии с различными сценариями в разделе 3.
+Перед развертыванием расширения Дскфорлинукс настройте `public.json` и в соответствии с `protected.json` различными сценариями в разделе 3.
 
-#### <a name="classic"></a>Классический
+#### <a name="classic"></a>Классическая
 
 [!INCLUDE [classic-vm-deprecation](../../../includes/classic-vm-deprecation.md)]
 
@@ -327,7 +327,7 @@ DSCForLinux Microsoft.OSTCExtensions <version> \
 
 ### <a name="use-azure-powershellazure-powershell"></a>Использование [Azure PowerShell] [Azure-PowerShell]
 
-#### <a name="classic"></a>Классический
+#### <a name="classic"></a>Классическая
 
 Вы можете войти в учетную запись Azure в режиме управления службами Azure, выполнив команду:
 
@@ -410,9 +410,9 @@ Set-AzVMExtension -ResourceGroupName $rgName -VMName $vmName -Location $location
 
 ## <a name="troubleshoot-and-support"></a>Устранение неполадок и поддержка
 
-### <a name="troubleshoot"></a>Устранение неполадок
+### <a name="troubleshoot"></a>Диагностика
 
-Данные о состоянии развертываний расширений можно получить из портал Azure и с помощью Azure CLI. Чтобы просмотреть состояние развертывания расширений для данной виртуальной машины, выполните следующую команду с помощью Azure CLI.
+Данные о состоянии развертывания расширения можно получить на портале Azure, а также с помощью Azure CLI. Чтобы просмотреть состояние развертывания расширений для данной виртуальной машины, выполните следующую команду с помощью Azure CLI.
 
 ```azurecli
 az vm extension list --resource-group myResourceGroup --vm-name myVM -o table
@@ -431,7 +431,7 @@ az vm extension list --resource-group myResourceGroup --vm-name myVM -o table
 
 ### <a name="support"></a>Поддержка
 
-Если вам нужна дополнительная помощь в любой момент в этой статье, обратитесь к экспертам по Azure на [форумах MSDN Azure и Stack overflow](https://azure.microsoft.com/support/community/). Кроме того, можно зафайлировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/)и выберите **получить поддержку**. Сведения об использовании службы поддержки Azure см. в статье [часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
+Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, обратитесь к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/community/). Кроме того, можно зафайлировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/)и выберите **получить поддержку**. Сведения об использовании службы поддержки Azure см. в статье [часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о расширениях виртуальных машин см. в обзоре [расширений и компонентов виртуальной машины для Linux](features-linux.md).

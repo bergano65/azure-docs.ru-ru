@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 02/23/2017
 ms.author: rclaus
-ms.openlocfilehash: 765794076c389f199fba0d6078754c82e7280c69
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 0d48930d7a9aa1742c26ff85aecdd197b93ab126
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81459412"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86501081"
 ---
 # <a name="load-balance-traffic-between-highly-available-virtual-machines"></a>Балансировка нагрузки для трафика между высокодоступными виртуальными машинами
 
@@ -47,22 +47,22 @@ az group delete --name myResourceGroup --yes
 
 | Get-Help | Примечания |
 |---|---|
-| [az group create](https://docs.microsoft.com/cli/azure/group) | Создает группу ресурсов, в которой хранятся все ресурсы. |
-| [az network vnet create](https://docs.microsoft.com/cli/azure/network/vnet) | Создает виртуальную сеть и подсеть Azure. |
-| [az network public-ip create](https://docs.microsoft.com/cli/azure/network/public-ip) | Создает общедоступный IP-адрес со статическим IP-адресом и связанным DNS-именем. |
-| [az network lb create](https://docs.microsoft.com/cli/azure/network/lb) | Создает балансировщик сетевой нагрузки Azure. |
-| [az network lb probe create](https://docs.microsoft.com/cli/azure/network/lb/probe) | Создает пробу балансировщика сетевой нагрузки. Она используется для отслеживания каждой виртуальной машины в наборе балансировщика сетевой нагрузки. Если любая виртуальная машина становится недоступной, к ней не направляется трафик. |
-| [az network lb rule create](https://docs.microsoft.com/cli/azure/network/lb/rule) | Создает правило балансировщика сетевой нагрузки. В этом примере создается правило для порта 80. Так как трафик HTTP поступает в балансировщик сетевой нагрузки, он перенаправляется на порт 80 одной из виртуальных машин в наборе балансировщика сетевой нагрузки. |
-| [az network lb inbound-nat-rule create](https://docs.microsoft.com/cli/azure/network/lb/inbound-nat-rule) | Создает правило преобразования сетевых адресов (NAT) балансировщика сетевой нагрузки.  Правила NAT сопоставляют порт балансировщика сетевой нагрузки с портом виртуальной машины. В этом примере создается правило NAT для SSH-трафика на каждой виртуальной машине в наборе балансировщика сетевой нагрузки.  |
-| [az network nsg create](https://docs.microsoft.com/cli/azure/network/nsg) | Создает группу безопасности сети (NSG), которая выполняет роль периметра безопасности между Интернетом и виртуальной машиной. |
-| [az network nsg rule create](https://docs.microsoft.com/cli/azure/network/nsg/rule) | Создает правило NSG, разрешающее входящий трафик. В этом примере открывается порт 22 для трафика SSH. |
-| [az network nic create](https://docs.microsoft.com/cli/azure/network/nic) | Создает виртуальную сетевую карту и подключает ее к виртуальной сети, подсети и группе безопасности сети. |
-| [az vm availability-set create](https://docs.microsoft.com/cli/azure/network/lb/rule) | Создает группу доступности. Группы доступности обеспечивают непрерывную работу приложения, распределяя виртуальные машины по физическим ресурсам. Таким образом, в случае сбоя он не затронет весь набор ресурсов. |
-| [az vm create](https://docs.microsoft.com/cli/azure/vm/availability-set) | Создает виртуальную машину и подключает ее к сетевой карте, виртуальной сети, подсети и группе безопасности сети. Эта команда также указывает образ виртуальной машины, который будет использоваться, и учетные данные администратора.  |
-| [az group delete](https://docs.microsoft.com/cli/azure/vm/extension) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
+| [az group create](/cli/azure/group) | Создает группу ресурсов, в которой хранятся все ресурсы. |
+| [az network vnet create](/cli/azure/network/vnet) | Создает виртуальную сеть и подсеть Azure. |
+| [az network public-ip create](/cli/azure/network/public-ip) | Создает общедоступный IP-адрес со статическим IP-адресом и связанным DNS-именем. |
+| [az network lb create](/cli/azure/network/lb) | Создает балансировщик сетевой нагрузки Azure. |
+| [az network lb probe create](/cli/azure/network/lb/probe) | Создает пробу балансировщика сетевой нагрузки. Она используется для отслеживания каждой виртуальной машины в наборе балансировщика сетевой нагрузки. Если любая виртуальная машина становится недоступной, к ней не направляется трафик. |
+| [az network lb rule create](/cli/azure/network/lb/rule) | Создает правило балансировщика сетевой нагрузки. В этом примере создается правило для порта 80. Так как трафик HTTP поступает в балансировщик сетевой нагрузки, он перенаправляется на порт 80 одной из виртуальных машин в наборе балансировщика сетевой нагрузки. |
+| [az network lb inbound-nat-rule create](/cli/azure/network/lb/inbound-nat-rule) | Создает правило преобразования сетевых адресов (NAT) балансировщика сетевой нагрузки.  Правила NAT сопоставляют порт балансировщика сетевой нагрузки с портом виртуальной машины. В этом примере создается правило NAT для SSH-трафика на каждой виртуальной машине в наборе балансировщика сетевой нагрузки.  |
+| [az network nsg create](/cli/azure/network/nsg) | Создает группу безопасности сети (NSG), которая выполняет роль периметра безопасности между Интернетом и виртуальной машиной. |
+| [az network nsg rule create](/cli/azure/network/nsg/rule) | Создает правило NSG, разрешающее входящий трафик. В этом примере открывается порт 22 для трафика SSH. |
+| [az network nic create](/cli/azure/network/nic) | Создает виртуальную сетевую карту и подключает ее к виртуальной сети, подсети и группе безопасности сети. |
+| [az vm availability-set create](/cli/azure/network/lb/rule) | Создает группу доступности. Группы доступности обеспечивают непрерывную работу приложения, распределяя виртуальные машины по физическим ресурсам. Таким образом, в случае сбоя он не затронет весь набор ресурсов. |
+| [az vm create](/cli/azure/vm/availability-set) | Создает виртуальную машину и подключает ее к сетевой карте, виртуальной сети, подсети и группе безопасности сети. Эта команда также указывает образ виртуальной машины, который будет использоваться, и учетные данные администратора.  |
+| [az group delete](/cli/azure/vm/extension) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
+Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
 
 Дополнительные примеры скриптов интерфейса командной строки для виртуальных машин см. в [документации по виртуальным машинам Azure под управлением Windows](../windows/cli-samples.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).

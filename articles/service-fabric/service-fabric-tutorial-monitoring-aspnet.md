@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 07/10/2019
 ms.author: dekapur
 ms.custom: mvc
-ms.openlocfilehash: 6ce2e5a71d48942642ee01d8d2cc75a232abf259
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: f06387ea317029f5648ab0884cea80262e8640a2
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82159955"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86245013"
 ---
 # <a name="tutorial-monitor-and-diagnose-an-aspnet-core-application-on-service-fabric-using-application-insights"></a>Руководство по Мониторинг и диагностика приложения ASP.NET Core в Service Fabric с помощью Application Insights
 
@@ -102,7 +102,7 @@ Application Insights — это платформа для управления �
     ![Пакет SDK ИИ для Nuget](./media/service-fabric-tutorial-monitoring-aspnet/ai-sdk-nuget-new.png)
 5. Нажмите кнопку **ОК** в появившемся диалоговом окне *Просмотр изменений* и примите *условия лицензионного соглашения*. Добавление пакета NuGet в службы будет завершено.
 6. Теперь нужно настроить инициализатор телеметрии в двух службах. Для этого откройте файлы *VotingWeb.cs* и *VotingData.cs*. Выполните в них следующие два действия.
-    1. Добавьте следующие две инструкции *using* в начало каждого файла *\<имя_службы>.cs* после уже имеющихся инструкций *using*:
+    1. Добавьте следующие две инструкции *using* в начало каждого файла *\<ServiceName>.cs* после уже имеющихся инструкций *using*:
 
     ```csharp
     using Microsoft.ApplicationInsights.Extensibility;
@@ -268,4 +268,4 @@ public async Task<IActionResult> Delete(string name)
 
 * [Дальнейшее изучение данных мониторинга и диагностики в Service Fabric](service-fabric-diagnostics-overview.md)
 * [Анализ событий Service Fabric с помощью Application Insights](service-fabric-diagnostics-event-analysis-appinsights.md)
-* Чтобы узнать больше об Application Insights, ознакомьтесь с [документацией по Application Insights](https://docs.microsoft.com/azure/application-insights/).
+* Чтобы узнать больше об Application Insights, ознакомьтесь с [документацией по Application Insights](/azure/application-insights/).

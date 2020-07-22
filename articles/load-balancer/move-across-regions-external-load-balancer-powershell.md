@@ -3,21 +3,21 @@ title: Перемещение внешних Load Balancer Azure в другой
 description: Используйте шаблон Azure Resource Manager, чтобы переместить внешние Load Balancer Azure из одного региона Azure в другой с помощью Azure PowerShell.
 author: asudbring
 ms.service: load-balancer
-ms.topic: article
+ms.topic: how-to
 ms.date: 09/17/2019
 ms.author: allensu
-ms.openlocfilehash: a24eb4608e7630d5b613751fa2120361eccd7672
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: be1971c9184d0b2b406b669ae9d1ea61598b201f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75644823"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84809425"
 ---
 # <a name="move-azure-external-load-balancer-to-another-region-using-azure-powershell"></a>Перемещение внешних Load Balancer Azure в другой регион с помощью Azure PowerShell
 
 Существуют различные сценарии, в которых необходимо переместить имеющуюся внешнюю подсистему балансировки нагрузки из одного региона в другой. Например, может потребоваться создать внешнюю подсистему балансировки нагрузки с той же конфигурацией для тестирования. При планировании аварийного восстановления может также потребоваться переместить внешнюю подсистему балансировки нагрузки в другой регион.
 
-Внешние подсистемы балансировки нагрузки Azure невозможно переместить из одного региона в другой. Однако можно использовать шаблон Azure Resource Manager для экспорта существующей конфигурации и общедоступного IP-адреса внешней подсистемы балансировки нагрузки.  Затем можно разместить ресурс в другом регионе, экспортировав подсистему балансировки нагрузки и общедоступный IP-адрес в шаблон, изменив параметры в соответствии с регионом назначения, а затем развернув шаблоны в новом регионе.  Дополнительные сведения о диспетчер ресурсов и шаблонах см. [в статье экспорт групп ресурсов в шаблоны](https://docs.microsoft.com/azure/azure-resource-manager/manage-resource-groups-powershell#export-resource-groups-to-templates) .
+Внешние подсистемы балансировки нагрузки Azure невозможно переместить из одного региона в другой. Однако можно использовать шаблон Azure Resource Manager для экспорта существующей конфигурации и общедоступного IP-адреса внешней подсистемы балансировки нагрузки.  Затем можно разместить ресурс в другом регионе, экспортировав подсистему балансировки нагрузки и общедоступный IP-адрес в шаблон, изменив параметры в соответствии с регионом назначения, а затем развернув шаблоны в новом регионе.  Дополнительные сведения о Resource Manager и шаблонах см. в разделе [Экспорт групп ресурсов в шаблоны](https://docs.microsoft.com/azure/azure-resource-manager/manage-resource-groups-powershell#export-resource-groups-to-templates)
 
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -43,12 +43,12 @@ ms.locfileid: "75644823"
 
 ### <a name="export-the-public-ip-template-and-deploy-from-azure-powershell"></a>Экспорт шаблона общедоступного IP-адреса и развертывание из Azure PowerShell
 
-1. Войдите в подписку Azure с помощью команды [Connect-азаккаунт](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount?view=azps-2.5.0) и следуйте инструкциям на экране.
+1. С помощью команды [Connect-AzAccount](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount?view=azps-2.5.0) войдите в подписку Azure и следуйте инструкциям на экране:
     
     ```azurepowershell-interactive
     Connect-AzAccount
     ```
-2. Получите идентификатор ресурса общедоступного IP-адреса, который необходимо переместить в целевой регион, и поместите его в переменную с помощью команды [Get-азпублиЦипаддресс](https://docs.microsoft.com/powershell/module/az.network/get-azpublicipaddress?view=azps-2.6.0):
+2. Получите идентификатор ресурса общедоступного IP-адреса, который необходимо переместить в целевой регион, и включите его в переменную с помощью команды [Get-AzPublicIPAddress](https://docs.microsoft.com/powershell/module/az.network/get-azpublicipaddress?view=azps-2.6.0):
 
     ```azurepowershell-interactive
     $sourcePubIPID = (Get-AzPublicIPaddress -Name <source-public-ip-name> -ResourceGroupName <source-resource-group-name>).Id
@@ -60,13 +60,13 @@ ms.locfileid: "75644823"
    Export-AzResourceGroup -ResourceGroupName <source-resource-group-name> -Resource $sourceVNETID -IncludeParameterDefaultValue
    ```
 
-4. Скачанный файл будет называться именем группы ресурсов, из которой был экспортирован ресурс.  Выберите файл, который был экспортирован из команды с именем ** \<Resource-Group-Name>. JSON** , и откройте ее в любом редакторе:
+4. Скачанный файл будет называться именем группы ресурсов, из которой был экспортирован ресурс.  Выберите файл, экспортированный из команды, с именем **\<resource-group-name>.json**, и откройте его в любом редакторе:
    
    ```azurepowershell
    notepad.exe <source-resource-group-name>.json
    ```
 
-5. Чтобы изменить параметр имени общедоступного IP-адреса, измените значение свойства **DefaultValue** исходного общедоступного IP-адреса на имя целевого общедоступного IP-адреса, а затем убедитесь, что оно находится в кавычках:
+5. Чтобы изменить параметр имени общедоступного IP-адреса, измените значение свойства **defaultValue** имени исходного общедоступного IP-адреса на имя целевого общедоступного IP-адреса и убедитесь, что имя указано в кавычках:
     
     ```json
         {
@@ -81,7 +81,7 @@ ms.locfileid: "75644823"
 
     ```
 
-6. Чтобы изменить целевой регион, в который будет перемещен общедоступный IP-адрес, измените свойство **Location** в разделе ресурсы:
+6. Чтобы изменить целевой регион, в который будет перемещен общедоступный IP-адрес, измените свойство **location** в разделе ресурсов:
 
     ```json
             "resources": [
@@ -107,16 +107,16 @@ ms.locfileid: "75644823"
              ]             
     ```
   
-7. Чтобы получить коды расположения регионов, можно использовать командлет Azure PowerShell [Get-азлокатион](https://docs.microsoft.com/powershell/module/az.resources/get-azlocation?view=azps-1.8.0) , выполнив следующую команду:
+7. Чтобы получить коды расположения регионов, можно использовать командлет Azure PowerShell [Get-AzLocation](https://docs.microsoft.com/powershell/module/az.resources/get-azlocation?view=azps-1.8.0), выполнив следующую команду:
 
     ```azurepowershell-interactive
 
     Get-AzLocation | format-table
     
     ```
-8. Кроме того, можно изменить другие параметры в шаблоне, если вы выбираете и являются необязательными в зависимости от ваших требований:
+8. Кроме того, при необходимости можно изменить другие параметры в шаблоне:
 
-    * **SKU** . Вы можете изменить номер SKU общедоступного IP-адреса в конфигурации с Standard на Basic или Basic на Standard, изменив свойство**имя** **SKU** > в файле ** \<Resource-Group-Name>. JSON** :
+    * **SKU** — вы можете изменить номер SKU общедоступного IP-адреса в конфигурации с уровня "Стандартный" на "Базовый" и наоборот, изменив значение свойства **sku** > **name** в файле **\<resource-group-name>.json**:
 
          ```json
             "resources": [
@@ -131,9 +131,9 @@ ms.locfileid: "75644823"
                     },
          ```
 
-         Дополнительные сведения о различиях между общедоступными IP-адресами уровня "базовый" и "Стандартный" см. [в статье Создание, изменение или удаление общедоступного адреса](https://docs.microsoft.com/azure/virtual-network/virtual-network-public-ip-address).
+         Дополнительные сведения о различиях между общедоступными IP-адресами уровня "Базовый" и "Стандартный" см. в разделе [Создание, изменение или удаление общедоступного IP-адреса](https://docs.microsoft.com/azure/virtual-network/virtual-network-public-ip-address).
 
-    * **Метод выделения общедоступного IP-адреса** и **время ожидания простоя** . Вы можете изменить оба этих параметра в шаблоне, изменив свойство **публиЦипаллокатионмесод** с **dynamic** на **static** или **static** на **dynamic**. Время ожидания простоя можно изменить, изменив свойство **идлетимеаутинминутес** на желаемое значение.  Значение по умолчанию — **4**:
+    * **Метод выделения общедоступного IP-адреса** и **Время ожидания простоя**. Вы можете изменить оба этих параметра в шаблоне, изменив свойство **PublicIPAllocationMethod** со значения **Dynamic** на значение **Static** или со значения **Static** на значение **Dynamic**. Время ожидания при простое можно изменить, изменив свойство **IdleTimeoutInMinutes** на требуемый объем.  Значение по умолчанию — **4**:
 
          ```json
          "resources": [
@@ -158,17 +158,17 @@ ms.locfileid: "75644823"
                 }            
          ```
 
-        Дополнительные сведения о методах выделения и значениях времени ожидания простоя см. в разделе [Создание, изменение или удаление общедоступного IP-адреса](https://docs.microsoft.com/azure/virtual-network/virtual-network-public-ip-address).
+        Дополнительные сведения о методах выделения и значениях времени ожидания при простое см. в разделе [Создание, изменение или удаление общедоступного IP-адреса](https://docs.microsoft.com/azure/virtual-network/virtual-network-public-ip-address).
 
 
-9. Сохраните файл ** \<Resource-Group-Name>. JSON** .
+9. Сохраните файл **\<resource-group-name>.json**.
 
-10. Создайте группу ресурсов в целевом регионе для развертывания целевого общедоступного IP-адреса с помощью [New-азресаурцеграуп](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup?view=azps-2.6.0).
+10. Создайте группу ресурсов в целевом регионе для развертывания целевого общедоступного IP-адреса с помощью команды [New-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup?view=azps-2.6.0).
     
     ```azurepowershell-interactive
     New-AzResourceGroup -Name <target-resource-group-name> -location <target-region>
     ```
-11. Разверните измененный ** \<файл Resource-Group-Name>. JSON** в группе ресурсов, созданной на предыдущем шаге, с помощью команды [New-азресаурцеграупдеплоймент](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroupdeployment?view=azps-2.6.0).
+11. Разверните измененный файл **\<resource-group-name>.json** в группе ресурсов, созданной на предыдущем шаге, с помощью команды [New-AzResourceGroupDeployment](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroupdeployment?view=azps-2.6.0):
 
     ```azurepowershell-interactive
 
@@ -176,7 +176,7 @@ ms.locfileid: "75644823"
     
     ```
 
-12. Чтобы проверить, созданы ли ресурсы в целевом регионе, используйте [Get-азресаурцеграуп](https://docs.microsoft.com/powershell/module/az.resources/get-azresourcegroup?view=azps-2.6.0) и [Get-азпублиЦипаддресс](https://docs.microsoft.com/powershell/module/az.network/get-azpublicipaddress?view=azps-2.6.0):
+12. Чтобы проверить, созданы ли ресурсы в целевом регионе, используйте команду [Get-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/get-azresourcegroup?view=azps-2.6.0) и [Get-AzPublicIPAddress](https://docs.microsoft.com/powershell/module/az.network/get-azpublicipaddress?view=azps-2.6.0):
     
     ```azurepowershell-interactive
 
@@ -192,7 +192,7 @@ ms.locfileid: "75644823"
 
 ### <a name="export-the-external-load-balancer-template-and-deploy-from-azure-powershell"></a>Экспорт шаблона внешней подсистемы балансировки нагрузки и развертывание из Azure PowerShell
 
-1. Войдите в подписку Azure с помощью команды [Connect-азаккаунт](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount?view=azps-2.5.0) и следуйте инструкциям на экране.
+1. С помощью команды [Connect-AzAccount](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount?view=azps-2.5.0) войдите в подписку Azure и следуйте инструкциям на экране:
     
     ```azurepowershell-interactive
     Connect-AzAccount
@@ -209,7 +209,7 @@ ms.locfileid: "75644823"
    ```azurepowershell-interactive
    Export-AzResourceGroup -ResourceGroupName <source-resource-group-name> -Resource $sourceExtLBID -IncludeParameterDefaultValue
    ```
-4. Скачанный файл будет называться именем группы ресурсов, из которой был экспортирован ресурс.  Выберите файл, который был экспортирован из команды с именем ** \<Resource-Group-Name>. JSON** , и откройте ее в любом редакторе:
+4. Скачанный файл будет называться именем группы ресурсов, из которой был экспортирован ресурс.  Выберите файл, экспортированный из команды, с именем **\<resource-group-name>.json**, и откройте его в любом редакторе:
    
    ```azurepowershell
    notepad.exe <source-resource-group-name>.json
@@ -232,7 +232,7 @@ ms.locfileid: "75644823"
 
     ```
 
-6.  Чтобы изменить значение целевого общедоступного IP-адреса, который был перемещен выше, сначала необходимо получить идентификатор ресурса, а затем скопировать и вставить его в файл ** \<Resource-Group-Name>. JSON** .  Чтобы получить идентификатор, используйте команду [Get-азпублиЦипаддресс](https://docs.microsoft.com/powershell/module/az.network/get-azpublicipaddress?view=azps-2.6.0):
+6.  Чтобы изменить значение целевого общедоступного IP-адреса, который был перемещен выше, сначала необходимо получить идентификатор ресурса, а затем скопировать и вставить его в ** \<resource-group-name> JSON** -файл.  Чтобы получить идентификатор, используйте команду [Get-азпублиЦипаддресс](https://docs.microsoft.com/powershell/module/az.network/get-azpublicipaddress?view=azps-2.6.0):
 
     ```azurepowershell-interactive
     $targetPubIPID = (Get-AzPublicIPaddress -Name <target-public-ip-name> -ResourceGroupName <target-resource-group-name>).Id
@@ -244,7 +244,7 @@ ms.locfileid: "75644823"
     /subscriptions/7668d659-17fc-4ffd-85ba-9de61fe977e8/resourceGroups/myResourceGroupLB-Move/providers/Microsoft.Network/publicIPAddresses/myPubIP-in-move
     ```
 
-7.  В файле ** \<Resource-Group-Name>. JSON** вставьте **идентификатор ресурса** из переменной вместо **DefaultValue** во втором параметре внешнего идентификатора общедоступного IP-адреса. Убедитесь, что путь заключен в кавычки:
+7.  В ** \<resource-group-name> JSON** -файле вставьте **идентификатор ресурса** из переменной вместо **DEFAULTVALUE** во второй параметр для внешнего идентификатора public IP, чтобы заключить путь в кавычки:
 
     ```json
             "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
@@ -261,7 +261,7 @@ ms.locfileid: "75644823"
 
     ```
 
-8.  Если вы настроили исходящие правила NAT и исходящего трафика для балансировщика нагрузки, в этом файле будет указана третья запись для внешнего идентификатора исходящего общедоступного IP-адреса.  Повторите описанные выше действия в **целевом регионе** , чтобы получить идентификатор исходящего общедоступного IP-адреса и вставить эту запись в файл ** \<Resource-Group-Name>. JSON** :
+8.  Если вы настроили исходящие правила NAT и исходящего трафика для балансировщика нагрузки, в этом файле будет указана третья запись для внешнего идентификатора исходящего общедоступного IP-адреса.  Повторите описанные выше действия в **целевом регионе** , чтобы получить идентификатор исходящего общедоступного iP-адреса и вставить эту запись в ** \<resource-group-name> JSON** -файл:
 
     ```json
             "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
@@ -282,7 +282,7 @@ ms.locfileid: "75644823"
         },
     ```
 
-10. Чтобы изменить целевой регион, в который будет перемещена конфигурация внешней подсистемы балансировки нагрузки, измените свойство **Location** в разделе **ресурсы** в файле ** \<Resource-Group-Name>. JSON** :
+10. Чтобы изменить целевой регион, в который будет перемещена конфигурация внешней подсистемы балансировки нагрузки, измените свойство **Location** в разделе **ресурсы** в файле ** \<resource-group-name> . JSON** :
 
     ```json
         "resources": [
@@ -297,16 +297,16 @@ ms.locfileid: "75644823"
                 },
     ```
 
-11. Чтобы получить коды расположения регионов, можно использовать командлет Azure PowerShell [Get-азлокатион](https://docs.microsoft.com/powershell/module/az.resources/get-azlocation?view=azps-1.8.0) , выполнив следующую команду:
+11. Чтобы получить коды расположения регионов, можно использовать командлет Azure PowerShell [Get-AzLocation](https://docs.microsoft.com/powershell/module/az.resources/get-azlocation?view=azps-1.8.0), выполнив следующую команду:
 
     ```azurepowershell-interactive
 
     Get-AzLocation | format-table
     
     ```
-12. Кроме того, можно изменить другие параметры в шаблоне, если вы выбираете и являются необязательными в зависимости от ваших требований:
+12. Кроме того, при необходимости можно изменить другие параметры в шаблоне:
     
-    * **SKU** . номер SKU внешней подсистемы балансировки нагрузки можно изменить в конфигурации с Standard на Basic или Basic на Standard, изменив свойство**имя** **SKU** > в файле ** \<Resource-Group-Name>. JSON** .
+    * **SKU** . номер SKU внешней подсистемы балансировки нагрузки можно изменить в конфигурации с Standard на Basic или Basic на Standard, изменив **sku**  >  свойство**имя** SKU в ** \<resource-group-name> JSON** -файле:
 
         ```json
         "resources": [
@@ -322,7 +322,7 @@ ms.locfileid: "75644823"
         ```
       Дополнительные сведения о различиях между подсистемами балансировки нагрузки уровня "базовый" и "Стандартный" см. в статье [обзор Load Balancer (цен. Категория "Стандартный") Azure](https://docs.microsoft.com/azure/load-balancer/load-balancer-standard-overview) .
 
-    * **Правила балансировки нагрузки** . в конфигурацию можно добавить или удалить правила балансировки нагрузки, добавив или удалив записи в разделе **лоадбаланЦингрулес** файла ** \<Resource-Group-Name>. JSON** .
+    * **Правила балансировки нагрузки** . в конфигурацию можно добавить или удалить правила балансировки нагрузки, добавив или удалив записи в разделе **лоадбаланЦингрулес** ** \<resource-group-name> JSON** -файла:
 
         ```json
         "loadBalancingRules": [
@@ -354,7 +354,7 @@ ms.locfileid: "75644823"
         ```
        Дополнительные сведения о правилах балансировки нагрузки см [. в разделе что такое Azure Load Balancer?](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview)
 
-    * **Пробы** . Вы можете добавить или удалить пробу для балансировщика нагрузки в конфигурации, добавив или удалив записи в разделе **зонды** файла ** \<Resource-Group-Name>. JSON** :
+    * **Пробы** . Вы можете добавить или удалить пробу для балансировщика нагрузки в конфигурации, добавив или удалив записи в разделе **зонды** ** \<resource-group-name> JSON** -файла:
 
         ```json
         "probes": [
@@ -374,7 +374,7 @@ ms.locfileid: "75644823"
         ```
        Дополнительные сведения о Azure Load Balancer зондах работоспособности см. в разделе [проверки работоспособности Load Balancer](https://docs.microsoft.com/azure/load-balancer/load-balancer-custom-probe-overview) .
 
-    * **Правила NAT для входящего трафика** . Вы можете добавить или удалить правила NAT для входящего трафика для подсистемы балансировки нагрузки, добавив или удалив записи в разделе **inboundNatRules** файла ** \<Resource-Group-Name>. JSON** .
+    * **Правила NAT для входящего трафика** . Вы можете добавить или удалить правила NAT для входящего трафика для подсистемы балансировки нагрузки, добавив или удалив записи в разделе **inboundNatRules** ** \<resource-group-name> JSON** -файла:
 
         ```json
         "inboundNatRules": [
@@ -396,7 +396,7 @@ ms.locfileid: "75644823"
                     }
                 ]
         ```
-        Чтобы завершить добавление или удаление правила NAT для входящего трафика, оно должно присутствовать или удалено в качестве свойства **типа** в конце файла ** \<Resource-Group-Name>. JSON** :
+        Чтобы завершить добавление или удаление правила NAT для входящего трафика, оно должно присутствовать или удалено в качестве свойства **типа** в конце ** \<resource-group-name> JSON** -файла:
 
         ```json
         {
@@ -422,7 +422,7 @@ ms.locfileid: "75644823"
         ```
         Дополнительные сведения о правилах NAT для входящего трафика см. в разделе [что такое Azure Load Balancer?](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview)
 
-    * **Исходящие правила** . в конфигурации можно добавить или удалить правила исходящего трафика, изменив свойство **аутбаундрулес** в файле ** \<Resource-Group-Name>. JSON** :
+    * **Правила исходящего трафика** . Вы можете добавить или удалить правила исходящего трафика в конфигурации, изменив свойство **аутбаундрулес** в ** \<resource-group-name> JSON** -файле:
 
         ```json
         "outboundRules": [
@@ -450,14 +450,14 @@ ms.locfileid: "75644823"
 
          Дополнительные сведения о правилах исходящих подключений см. в разделе [Load Balancer правила исходящего трафика](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-rules-overview) .
 
-13. Сохраните файл ** \<Resource-Group-Name>. JSON** .
+13. Сохраните файл **\<resource-group-name>.json**.
     
 10. Создайте или группу ресурсов в целевом регионе для развертывания целевой внешней подсистемы балансировки нагрузки с помощью [New-азресаурцеграуп](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup?view=azps-2.6.0). Существующую группу ресурсов, приведенную выше, можно также использовать повторно в рамках этого процесса:
     
     ```azurepowershell-interactive
     New-AzResourceGroup -Name <target-resource-group-name> -location <target-region>
     ```
-11. Разверните измененный ** \<файл Resource-Group-Name>. JSON** в группе ресурсов, созданной на предыдущем шаге, с помощью команды [New-азресаурцеграупдеплоймент](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroupdeployment?view=azps-2.6.0).
+11. Разверните измененный файл **\<resource-group-name>.json** в группе ресурсов, созданной на предыдущем шаге, с помощью команды [New-AzResourceGroupDeployment](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroupdeployment?view=azps-2.6.0):
 
     ```azurepowershell-interactive
 
@@ -481,7 +481,7 @@ ms.locfileid: "75644823"
 
 ## <a name="discard"></a>Игнорировать 
 
-Если после развертывания вы хотите начать или отклонить общедоступный IP-адрес и подсистему балансировки нагрузки в целевом объекте, удалите группу ресурсов, созданную в целевом объекте, и перемещенный общедоступный IP-адрес и подсистема балансировки нагрузки будут удалены.  Чтобы удалить группу ресурсов, используйте команду [Remove-азресаурцеграуп](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup?view=azps-2.6.0):
+Если после развертывания вы хотите начать или отклонить общедоступный IP-адрес и подсистему балансировки нагрузки в целевом объекте, удалите группу ресурсов, созданную в целевом объекте, и перемещенный общедоступный IP-адрес и подсистема балансировки нагрузки будут удалены.  Чтобы удалить группу ресурсов, используйте команду [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup?view=azps-2.6.0):
 
 ```azurepowershell-interactive
 
@@ -508,9 +508,9 @@ Remove-AzPublicIpAddress -Name <public-ip> -ResourceGroupName <resource-group-na
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-В этом руководстве вы переместили группу безопасности сети Azure из одного региона в другой и очистили исходные ресурсы.  Дополнительные сведения о перемещении ресурсов между регионами и аварийным восстановлением в Azure см. по следующим ссылке:
+В этом руководстве вы переместили группу безопасности сети Azure из одного региона в другой и очистили исходные ресурсы.  Дополнительные сведения о перемещении ресурсов между регионами и аварийном восстановлении в Azure см. по следующей ссылке:
 
 
 - [Перемещение ресурсов в новую группу ресурсов или подписку](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-move-resources)

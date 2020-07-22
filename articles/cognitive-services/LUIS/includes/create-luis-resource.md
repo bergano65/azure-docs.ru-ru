@@ -10,7 +10,7 @@ ms.date: 04/07/2020
 ms.author: aahi
 ms.openlocfilehash: ebfe7e80577b163218a7bc501fa4e3e9b206fd62
 ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/08/2020
 ms.locfileid: "80879222"

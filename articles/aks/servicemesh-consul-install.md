@@ -1,17 +1,17 @@
 ---
-title: Установка Consul в службе Kubernetes Azure (AKS)
+title: Установка Consul в Службе Azure Kubernetes (AKS)
 description: Узнайте, как установить и использовать Consul для создания сетки службы в кластере службы Kubernetes Azure (AKS).
 author: dstrebel
 ms.topic: article
 ms.date: 10/09/2019
 ms.author: dastrebe
 zone_pivot_groups: client-operating-system
-ms.openlocfilehash: 1601ab6d81b888fd2247e95f22c58e1fc91df698
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 2f47ded22209a9d53510c7d0a2f8270096161354
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78273739"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86244142"
 ---
 # <a name="install-and-use-consul-in-azure-kubernetes-service-aks"></a>Установка и использование Consul в службе Kubernetes Azure (AKS)
 
@@ -20,9 +20,9 @@ ms.locfileid: "78273739"
 В этой статье показано, как установить Consul. Компоненты Consul устанавливаются в кластер Kubernetes на AKS.
 
 > [!NOTE]
-> Эти инструкции ссылаются на версию `1.6.0`Consul и используют по меньшей мере `2.14.2`Helm версию.
+> Эти инструкции ссылаются на версию Consul `1.6.0` и используют по меньшей мере Helm версию `2.14.2` .
 >
-> Выпуски Consul `1.6.x` могут выполняться для версий `1.13+`Kubernetes. Дополнительные версии Consul можно найти в [выпусках GitHub-Consul][consul-github-releases] , а сведения о каждой из выпусков см. в [заметках о выпуске Consul][consul-release-notes].
+> `1.6.x`Выпуски Consul могут выполняться для версий Kubernetes `1.13+` . Дополнительные версии Consul можно найти в [выпусках GitHub-Consul][consul-github-releases] , а сведения о каждой из выпусков см. в [заметках о выпуске Consul][consul-release-notes].
 
 Вы узнаете, как выполнять следующие задачи:
 
@@ -31,9 +31,9 @@ ms.locfileid: "78273739"
 > * Проверка установки Consul
 > * Удаление Consul из AKS
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
-В действиях, описанных в этой статье, предполагается, что вы создали `1.13` кластер AKS (Kubernetes и выше, с включенным RBAC `kubectl` ) и установили подключение к кластеру. Дополнительные сведения см. в [кратком руководстве по AKS][aks-quickstart]. Убедитесь, что кластер содержит по крайней мере 3 узла в пуле узлов Linux.
+В действиях, описанных в этой статье, предполагается, что вы создали кластер AKS (Kubernetes `1.13` и выше, с включенным RBAC) и установили `kubectl` Подключение к кластеру. Дополнительные сведения см. в [кратком руководстве по AKS][aks-quickstart]. Убедитесь, что кластер содержит по крайней мере 3 узла в пуле узлов Linux.
 
 Вам потребуется [Helm][helm] , чтобы выполнить эти инструкции и установить Consul. Рекомендуется правильно установить и настроить последнюю стабильную версию в кластере. Если вам нужна помощь с установкой Helm, см. [руководство по установке AKS Helm][helm-install]. Все Consul Pod также должны быть запланированы для запуска на узлах Linux.
 
@@ -41,7 +41,7 @@ ms.locfileid: "78273739"
 
 ### <a name="install-the-consul-components-on-aks"></a>Установка компонентов Consul на AKS
 
-Начнем с загрузки версии `v0.10.0` диаграммы Consul Helm. Эта версия диаграммы включает версию `1.6.0`Consul.
+Начнем с загрузки версии `v0.10.0` диаграммы Consul Helm. Эта версия диаграммы включает версию Consul `1.6.0` .
 
 ::: zone pivot="client-operating-system-linux"
 
@@ -94,7 +94,7 @@ ms.locfileid: "78273739"
 
 ::: zone-end
 
-`Consul` Helm диаграмма развертывает несколько объектов. Список можно просмотреть на основе выходных данных `helm install` команды выше. Для завершения развертывания компонентов Consul в зависимости от среды кластера может потребоваться около 3 минут.
+`Consul`Helm диаграмма развертывает несколько объектов. Список можно просмотреть на основе выходных данных `helm install` команды выше. Для завершения развертывания компонентов Consul в зависимости от среды кластера может потребоваться около 3 минут.
 
 На этом этапе вы развернули Consul в кластере AKS. Чтобы убедиться в успешном развертывании Consul, перейдем к следующему разделу, чтобы проверить установку Consul.
 
@@ -128,7 +128,7 @@ consul-consul-sync-catalog-d846b79c-8ssr8                         1/1     Runnin
 consul-consul-tz2t5                                               1/1     Running   0          3m9s   10.240.0.12   aks-linux-92468653-vmss000000   <none>           <none>
 ```
 
-Все модули Pod должны отображать состояние `Running`. Если группы pod имеют другое состояние, подождите пару минут, чтобы отобразилось нужное. Если для групп pod отображаются проблемы, выполните команду [describe pod][kubectl-describe], чтобы просмотреть выходные данные и состояние.
+Все модули Pod должны отображать состояние `Running` . Если группы pod имеют другое состояние, подождите пару минут, чтобы отобразилось нужное. Если для групп pod отображаются проблемы, выполните команду [describe pod][kubectl-describe], чтобы просмотреть выходные данные и состояние.
 
 ## <a name="accessing-the-consul-ui"></a>Доступ к пользовательскому интерфейсу Consul
 
@@ -138,7 +138,7 @@ consul-consul-tz2t5                                               1/1     Runnin
 kubectl port-forward -n consul svc/consul-consul-ui 8080:80
 ```
 
-Теперь можно открыть браузер и указать `http://localhost:8080/ui` , чтобы открыть пользовательский интерфейс Consul. При открытии пользовательского интерфейса вы должны увидеть следующее:
+Теперь можно открыть браузер и указать, чтобы `http://localhost:8080/ui` открыть пользовательский интерфейс Consul. При открытии пользовательского интерфейса вы должны увидеть следующее:
 
 ![Пользовательский интерфейс Consul](./media/servicemesh/consul/consul-ui.png)
 
@@ -149,14 +149,14 @@ kubectl port-forward -n consul svc/consul-consul-ui 8080:80
 
 ### <a name="remove-consul-components-and-namespace"></a>Удалить компоненты и пространство имен Consul
 
-Чтобы удалить Consul из кластера AKS, используйте следующие команды. `helm delete` Команда `consul` удалит диаграмму, и `kubectl delete namespace` команда удалит `consul` пространство имен.
+Чтобы удалить Consul из кластера AKS, используйте следующие команды. Команда удалит `helm delete` `consul` диаграмму, и `kubectl delete namespace` команда удалит `consul` пространство имен.
 
 ```console
 helm delete --purge consul
 kubectl delete namespace consul
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об установке и параметрах конфигурации для Consul см. в следующих официальных статьях по Consul:
 
@@ -166,6 +166,8 @@ kubectl delete namespace consul
 Кроме того, можно выполнять дополнительные сценарии, используя:
 
 - [Пример приложения Consul][consul-app-example]
+- [Эталонная архитектура Consul Kubernetes][consul-reference]
+- [Consul сетчатые шлюзы][consul-mesh-gateways]
 
 <!-- LINKS - external -->
 [Hashicorp]: https://hashicorp.com
@@ -177,15 +179,17 @@ kubectl delete namespace consul
 [consul-github-releases]: https://github.com/hashicorp/consul/releases
 [consul-release-notes]: https://github.com/hashicorp/consul/blob/master/CHANGELOG.md
 [consul-install-download]: https://www.consul.io/downloads.html
-[consul-install-k8]: https://www.consul.io/docs/platform/k8s/run.html
+[consul-install-k8]: https://learn.hashicorp.com/consul/kubernetes/kubernetes-deployment-guide
 [consul-install-helm-options]: https://www.consul.io/docs/platform/k8s/helm.html#configuration-values-
-[consul-app-example]: https://github.com/hashicorp/demo-consul-101/tree/master/k8s
-[install-wsl]: https://docs.microsoft.com/windows/wsl/install-win10
+[consul-mesh-gateways]: https://learn.hashicorp.com/consul/kubernetes/mesh-gateways
+[consul-reference]: https://learn.hashicorp.com/consul/kubernetes/kubernetes-reference
+[consul-app-example]: https://learn.hashicorp.com/consul?track=gs-consul-service-mesh#gs-consul-service-mesh
+[install-wsl]: /windows/wsl/install-win10
 
 [kubectl-get]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get
 [kubectl-describe]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#describe
 [kubectl-port-forward]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#port-forward
-[kubernetes-node-selectors]: https://docs.microsoft.com/azure/aks/concepts-clusters-workloads#node-selectors
+[kubernetes-node-selectors]: ./concepts-clusters-workloads.md#node-selectors
 
 <!-- LINKS - internal -->
 [aks-quickstart]: ./kubernetes-walkthrough.md

@@ -1,6 +1,6 @@
 ---
 title: Устранение неполадок виртуального рабочего стола Windows удаленный рабочий стол Client — Azure
-description: Устранение проблем при настройке клиентских подключений в среде клиента виртуальных рабочих столов Windows.
+description: Сведения об устранении проблем при настройке клиентских подключений в среде клиента Виртуального рабочего стола Windows.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
@@ -9,10 +9,9 @@ ms.date: 03/31/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: 76348a0aee48cc6d768e8233e376f266eca31917
-ms.sourcegitcommit: ac4a365a6c6ffa6b6a5fbca1b8f17fde87b4c05e
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "83006000"
 ---
 # <a name="troubleshoot-the-remote-desktop-client"></a>Устранение неполадок клиента удаленный рабочий стол
@@ -86,8 +85,8 @@ nslookup rdweb.wvd.microsoft.com
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Общие сведения об устранении неполадок с виртуальным рабочим столом Windows и сведениями о эскалации см. в разделе [Обзор устранения неполадок, обратная связь и поддержка](troubleshoot-set-up-overview.md).
-- Сведения об устранении неполадок при создании среды виртуальных рабочих столов Windows и пула узлов в среде виртуальных рабочих столов Windows см. в статье [Создание пула среды и узла](troubleshoot-set-up-issues.md).
-- Сведения об устранении неполадок при настройке виртуальной машины в виртуальном рабочем столе Windows см. в разделе [Конфигурация виртуальной машины узла сеанса](troubleshoot-vm-configuration.md).
-- Сведения об устранении неполадок при использовании PowerShell с виртуальным рабочим столом Windows см. в статье [Windows Virtual Desktop PowerShell](troubleshoot-powershell.md).
-- Руководство по устранению неполадок см. в разделе [учебник. Устранение неполадок диспетчер ресурсов развертываний шаблонов](../azure-resource-manager/templates/template-tutorial-troubleshoot.md).
+- Общие сведения об устранении неполадок с Виртуальным рабочим столом Windows и о путях эскалации см. в статье [Общие сведения об устранении неисправностей, отзывы и поддержка](troubleshoot-set-up-overview.md).
+- Инструкции по устранению неполадок при создании среды Виртуального рабочего стола Windows и пула узлов в среде Виртуального рабочего стола Windows см. в [этой статье](troubleshoot-set-up-issues.md).
+- Инструкции по устранению неполадок при настройке виртуальной машины через Виртуальный рабочий стол Windows см. в статье [Конфигурация виртуальной машины узла сеанса](troubleshoot-vm-configuration.md).
+- Инструкции по устранению неполадок при использовании PowerShell через Виртуальный рабочий стол Windows см. в статье [Виртуальный рабочий стол Windows — PowerShell](troubleshoot-powershell.md).
+- Сведения об устранении неполадок см. в статье [Tutorial: Troubleshoot Resource Manager template deployments](../azure-resource-manager/templates/template-tutorial-troubleshoot.md) (Руководство. Устранение неполадок развертывания шаблонов Resource Manager)

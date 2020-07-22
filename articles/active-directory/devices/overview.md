@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ba0630474224c34eb96429cd7592028362e03381
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 7c25d5ee7ed730747317ea52286174968eb0e2fd
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82024444"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86103710"
 ---
 # <a name="what-is-a-device-identity"></a>Что такое удостоверение устройства?
 
@@ -45,7 +45,7 @@ ms.locfileid: "82024444"
 - **Присоединение к Azure AD**
    - Устройства, которые присоединены к Azure AD, принадлежат организации и входят в систему с учетной записью Azure AD, принадлежащей той же организации. Они существуют только в облаке.
       - Windows 10 
-      - Windows Server 2019 (основные серверные компоненты не поддерживаются)
+      - [Виртуальные машины Windows Server 2019, работающие в Azure] (./howto-vm-sign-in-azure-ad-windows.md) (Server Core не поддерживается)
 - **присоединен к гибридному Azure AD**.
    - Устройства, которые присоединены к Azure AD с помощью гибридного присоединения, принадлежат организации и входят в систему с учетной записью Azure AD, принадлежащей той же организации. Они существуют в облаке и в локальной среде.
       - Windows 7, 8.1 или 10

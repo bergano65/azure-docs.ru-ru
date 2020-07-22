@@ -5,21 +5,20 @@ description: Использование веб-служб машинного о�
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
-ms.topic: conceptual
+ms.topic: how-to
 author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 02/01/2018
-ms.openlocfilehash: e30103589c1baf9a165839cd041ff511a119c5ff
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 8565e3c62ea1b74879f2e127abed772576563886
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79204381"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85211329"
 ---
 # <a name="excel-add-in-for-azure-machine-learning-studio-classic-web-services"></a>Надстройка Excel для веб-служб Машинное обучение Azure Studio (классическая модель)
 
-[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 Excel упрощает непосредственный вызов веб-служб без необходимости написания какого-либо кода.
 
 ## <a name="steps-to-use-an-existing-web-service-in-the-workbook"></a>Использование существующей веб-службы в книге Excel
@@ -84,4 +83,4 @@ Excel упрощает непосредственный вызов веб-слу
 ## <a name="sharing-your-workbook"></a>Предоставление общего доступа к книге
 Во время сохранения книги также сохраняются ключи API (или первичные ключи) для веб-служб, которые вы добавили. Это означает, что доступ к книге следует предоставлять только тем лицам, которым вы доверяете.
 
-Любые вопросы можно задать ниже в разделе комментариев или на нашем [форуме](https://go.microsoft.com/fwlink/?LinkID=403669&clcid=0x409).
+Любые вопросы можно задать ниже в разделе комментариев или на нашем [форуме](https://docs.microsoft.com/answers/topics/azure-machine-learning.html).

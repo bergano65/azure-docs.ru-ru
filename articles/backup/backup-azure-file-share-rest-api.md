@@ -4,11 +4,10 @@ description: Узнайте, как использовать REST API для р�
 ms.topic: conceptual
 ms.date: 02/16/2020
 ms.openlocfilehash: 2cf385830ec1be17cb62432e6ef9cba7d82a9db1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79248103"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84710615"
 ---
 # <a name="backup-azure-file-share-using-azure-backup-via-rest-api"></a>Резервное копирование файлового ресурса Azure с помощью Azure Backup через API-интерфейс.
 
@@ -38,7 +37,7 @@ ms.locfileid: "79248103"
 POST https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{vaultresourceGroupname}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/refreshContainers?api-version=2016-12-01&$filter={$filter}
 ```
 
-URI Post имеет `{subscriptionId}`параметры, `{vaultName}` `{vaultresourceGroupName}`, и `{fabricName}` . В нашем примере значения для различных параметров будут выглядеть следующим образом:
+URI Post имеет `{subscriptionId}` Параметры, `{vaultName}` , `{vaultresourceGroupName}` и `{fabricName}` . В нашем примере значения для различных параметров будут выглядеть следующим образом:
 
 - `{fabricName}`является *Azure*
 
@@ -467,7 +466,7 @@ POST https://management.azure.com/subscriptions/00000000-0000-0000-0000-00000000
 
 Чтобы активировать резервное копирование по запросу, используйте компоненты текста запроса.
 
-| Имя       | Type                       | Описание                       |
+| Имя       | Type                       | Описание:                       |
 | ---------- | -------------------------- | --------------------------------- |
 | Элемент Property | азурефилешаребаккупрекуес | Свойства Баккупрекуестресаурце |
 

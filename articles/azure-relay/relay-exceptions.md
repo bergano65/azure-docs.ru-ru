@@ -1,25 +1,14 @@
 ---
 title: Исключения ретранслятора Azure и способы их разрешения | Документация Майкрософт
 description: Список исключений ретранслятора Azure и предлагаемые действия по их разрешению.
-services: service-bus-relay
-documentationcenter: na
-author: spelluru
-manager: timlt
-editor: ''
-ms.assetid: 5f9dd02c-cce0-43b3-8eb8-744f0c27f38c
-ms.service: service-bus-relay
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 12/20/2017
-ms.author: spelluru
-ms.openlocfilehash: fe8f057443b978e70e7cdd2591affd455fefdca8
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.date: 06/23/2020
+ms.openlocfilehash: 0bc8a399173331525d62b25929f65ad189ed219b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83210873"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85316874"
 ---
 # <a name="azure-relay-exceptions"></a>Исключения ретранслятора Azure
 
@@ -73,7 +62,7 @@ ms.locfileid: "83210873"
 *   слишком маленькое значение [OpenTimeout](https://msdn.microsoft.com/library/wcf.opentimeout.aspx) (вплоть до доли секунды);
 * неотвечающие локальные прослушиватели ретрансляции (или проблемы, связанные с тем, что правила брандмауэра запрещают прослушивателям принимать новые клиентские подключения) и значение [OpenTimeout](https://msdn.microsoft.com/library/wcf.opentimeout.aspx) меньше 20 секунд.
 
-Пример
+Пример.
 
 ```
 'System.TimeoutException’: The operation did not complete within the allotted timeout of 00:00:10.
@@ -90,7 +79,7 @@ The time allotted to this operation may have been a portion of a longer timeout.
 
     Иногда в службе ретранслятора могут происходить задержки при обработке запросов. Например, это может произойти в период интенсивной нагрузки сети. В этом случае можно настроить повторную попытку выполнения операции через некоторое время до ее успешного завершения. Если же операцию по-прежнему не удается выполнить после нескольких попыток, посетите [сайт состояния служб Azure](https://azure.microsoft.com/status/), чтобы получить сведения об известных простоях служб.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Часто задаваемые вопросы о ретрансляторе Azure](relay-faq.md)
 * [Создание пространства имен ретранслятора](relay-create-namespace-portal.md)
 * [Приступая к работе с гибридными подключениями к ретранслятору](relay-hybrid-connections-dotnet-get-started.md)

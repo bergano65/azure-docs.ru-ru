@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 04/16/2019
 ms.author: mbaldwin
 ms.openlocfilehash: cd6602f68b63e2c236e7f3905d33b88fbda36ed2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81429867"
 ---
 # <a name="security-controls-for-azure-key-vault"></a>Элементы управления безопасностью для Azure Key Vault
@@ -62,6 +62,6 @@ ms.locfileid: "81429867"
 | Элементы управления доступом в плоскости управления | Да | Управление доступом на основе ролей Azure Active Directory (RBAC) |
 | Элементы управления доступом в плоскости данных (на каждом уровне обслуживания) | Да | Политика доступа к Key Vault |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [встроенных средствах управления безопасностью в службах Azure](../../security/fundamentals/security-controls.md).

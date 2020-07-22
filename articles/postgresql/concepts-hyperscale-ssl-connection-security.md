@@ -8,10 +8,10 @@ ms.subservice: hyperscale-citus
 ms.topic: conceptual
 ms.date: 03/30/2020
 ms.openlocfilehash: 791eed9419375c7245488b8ec61a1c5481be382e
-ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82580565"
 ---
 # <a name="configure-tls-in-azure-database-for-postgresql---hyperscale-citus"></a>Настройка TLS в базе данных Azure для PostgreSQL — масштабирование (Цитус)
@@ -26,17 +26,17 @@ ms.locfileid: "82580565"
 Некоторые платформы приложений, использующие PostgreSQL для своих служб баз данных, по умолчанию не включают TLS во время установки. Если сервер PostgreSQL применяет TLS-подключения, но приложение не настроено для TLS, приложение может не подключиться к серверу базы данных. Чтобы узнать, как включить TLS, ознакомьтесь с документацией по приложению.
 
 ## <a name="applications-that-require-certificate-verification-for-tls-connectivity"></a>Приложения, для которых требуется проверка сертификата для подключения TLS
-В некоторых случаях для безопасного подключения приложениям требуется локальный файл сертификата, созданный из файла сертификата (CER-файла) доверенного центра сертификации. Сертификат для подключения к базе данных Azure для PostgreSQL-Scale (Цитус) находится в папке https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem. Скачайте файл сертификата и сохраните его в предпочтительном расположении.
+В некоторых случаях для безопасного подключения приложениям требуется локальный файл сертификата, созданный из файла сертификата (CER-файла) доверенного центра сертификации. Сертификат для подключения к базе данных Azure для PostgreSQL-Scale (Цитус) находится в папке https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem . Скачайте файл сертификата и сохраните его в предпочтительном расположении.
 
 ### <a name="connect-using-psql"></a>Подключение с помощью psql
-В следующем примере показано, как подключиться к узлу координатора Цитус с помощью служебной программы командной строки psql. Используйте параметр `sslmode=verify-full` строки подключения для принудительной проверки сертификата TLS. Передайте путь к файлу локального сертификата `sslrootcert` параметру.
+В следующем примере показано, как подключиться к узлу координатора Цитус с помощью служебной программы командной строки psql. Используйте `sslmode=verify-full` параметр строки подключения для принудительной проверки сертификата TLS. Передайте путь к файлу локального сертификата `sslrootcert` параметру.
 
 Ниже приведен пример строки подключения psql.
 ```
 psql "sslmode=verify-full sslrootcert=DigiCertGlobalRootCA.crt.pem host=mydemoserver.postgres.database.azure.com dbname=citus user=citus password=your_pass"
 ```
 > [!TIP]
-> Убедитесь, что значение, передаваемое в `sslrootcert` , соответствует пути к файлу сохраненного сертификата.
+> Убедитесь, что значение, передаваемое в, `sslrootcert` соответствует пути к файлу сохраненного сертификата.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Повысьте безопасность с помощью [правил брандмауэра в базе данных Azure для PostgreSQL-Scale (Цитус)](concepts-hyperscale-firewall-rules.md).

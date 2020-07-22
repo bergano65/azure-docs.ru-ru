@@ -5,12 +5,12 @@ author: jeffj6123
 ms.topic: reference
 ms.date: 1/16/2020
 ms.author: jejarry
-ms.openlocfilehash: 3e398ff8a1a0a28fd9d0650a7c9d18ba04817d33
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 9b6766137dd88a5a780dcca7b6eab7c6c3f9bbf4
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76906017"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86260392"
 ---
 # <a name="sfctl-mesh-gateway"></a>sfctl mesh gateway
 Получение и удаление ресурсов mesh gateway.
@@ -19,9 +19,9 @@ ms.locfileid: "76906017"
 
 |Команда|Описание|
 | --- | --- |
-| "Удалить" | Удаляет ресурс шлюза. |
+| delete | Удаляет ресурс шлюза. |
 | list | Отображает список всех ресурсов шлюза. |
-| показать | Возвращает ресурс шлюза вместе с заданным именем. |
+| show | Возвращает ресурс шлюза вместе с заданным именем. |
 
 ## <a name="sfctl-mesh-gateway-delete"></a>sfctl mesh gateway delete
 Удаляет ресурс шлюза.
@@ -81,6 +81,6 @@ ms.locfileid: "76906017"
 | --verbose | Повышение уровня детализации журнала. Чтобы включить полные журналы отладки, используйте параметр --debug. |
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Настройте](service-fabric-cli.md) Service Fabric CLI.
-- Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).
+- Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](./scripts/sfctl-upgrade-application.md).

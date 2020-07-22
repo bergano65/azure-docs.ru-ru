@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/14/2020
-ms.openlocfilehash: a7e6a3a299df8112fe4fbcf457516894c1766b8c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 75394768cc41d3ca73398c2691b9ec0feb8c17f8
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79249091"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86202568"
 ---
 # <a name="overview-of-azure-monitor-agents"></a>Общие сведения об агентах Azure Monitor
 
@@ -29,22 +29,22 @@ ms.locfileid: "79249091"
 
 ### <a name="windows-agents"></a>Агенты Windows
 
-| | Диагностика<br>расширение (WAD) | Log Analytics<br>агент | Зависимость<br>агент |
+| | Диагностика<br>расширение (WAD) | Log Analytics<br>агент | Зависимость<br>агент |
 |:---|:---|:---|:---|
-| Поддерживаемые среды | Azure | Azure<br>Другое облако<br>В локальной среде | Azure<br>Другое облако<br>В локальной среде | 
-| Требования к агентам  | None | None | Требуется агент Log Analytics |
-| Собираемые данные | журналы событий;<br>ETW-события<br>Производительность<br>Журналы на основе файлов<br>Журналы IIS<br>Журналы приложений .NET<br>Аварийные дампы<br>Журналы диагностики агента | журналы событий;<br>Производительность<IIS logs><br>Журналы на основе файлов<br>Полезные сведения и решения<br>Другие службы | Сведения о процессе и зависимости<br>Метрики сетевого подключения |
-| Отправленные данные | Хранилище Azure<br>Метрики Azure Monitor<br>Концентратор событий | Журналы Azure Monitor | Журналы Azure Monitor |
+| **Поддерживаемые среды** | Azure | Azure<br>Другое облако<br>В локальной среде | Azure<br>Другое облако<br>Локальная среда | 
+| **Требования к агентам**  | Отсутствуют | Отсутствуют | Требуется агент Log Analytics |
+| **Собираемые данные** | журналы событий;<br>ETW-события<br>Производительность<br>Файловые журналы<br>Журналы IIS<br>Журналы приложений .NET<br>Аварийные дампы<br>Журналы диагностики агента | журналы событий;<br>Производительность<IIS logs><br>Файловые журналы<br>Полезные сведения и решения<br>другие службы. | Сведения о процессе и зависимости<br>Метрики сетевого подключения |
+| **Отправленные данные** | Служба хранилища Azure<br>Метрики Azure Monitor<br>Концентратор событий | Журналы Azure Monitor | Журналы Azure Monitor |
 
 
 ### <a name="linux-agents"></a>Агенты Linux
 
-| | Диагностика<br>расширение (LAD) | Telegraf<br>агент | Log Analytics<br>агент | Зависимость<br>агент |
+| | Диагностика<br>расширение (LAD) | Telegraf<br>агент | Log Analytics<br>агент | Зависимость<br>агент |
 |:---|:---|:---|:---|:---|
-| Поддерживаемые среды | Azure | Azure<br>Другое облако<br>В локальной среде | Azure<br>Другое облако<br>В локальной среде | Azure<br>Другое облако<br>В локальной среде |
-| Требования к агентам  | None | None | None | Требуется агент Log Analytics |
-| Собираемые данные | Системный журнал<br>Производительность | Производительность | Системный журнал<br>Производительность| Сведения о процессе и зависимости<br>Метрики сетевого подключения |
-| Отправленные данные | Хранилище Azure<br>Концентратор событий | Метрики Azure Monitor | Журналы Azure Monitor | Журналы Azure Monitor |
+| **Поддерживаемые среды** | Azure | Azure<br>Другое облако<br>В локальной среде | Azure<br>Другое облако<br>В локальной среде | Azure<br>Другое облако<br>Локальная среда |
+| **Требования к агентам**  | Отсутствуют | Отсутствуют | Отсутствуют | Требуется агент Log Analytics |
+| **Собираемые данные** | Системный журнал<br>Производительность | Производительность | Системный журнал<br>Производительность| Сведения о процессе и зависимости<br>Метрики сетевого подключения |
+| **Отправленные данные** | Служба хранилища Azure<br>Концентратор событий | Метрики Azure Monitor | Журналы Azure Monitor | Журналы Azure Monitor |
 
 ## <a name="log-analytics-agent"></a>Агент Log Analytics
 
@@ -113,10 +113,10 @@ ms.locfileid: "79249091"
 Расширение Log Analytics для [Windows](../../virtual-machines/extensions/oms-windows.md) и [Linux](../../virtual-machines/extensions/oms-linux.md) установите агент log Analytics на виртуальных машинах Azure. Расширение зависимостей Azure Monitor для [Windows](../../virtual-machines/extensions/agent-dependency-windows.md) и [Linux](../../virtual-machines/extensions/agent-dependency-linux.md) устанавливает агент зависимостей на виртуальных машинах Azure. Это те же агенты, описанные выше, но позволяющие управлять ими с помощью [расширений виртуальной машины](../../virtual-machines/extensions/overview.md). При возможности для установки агентов и управления ими следует использовать расширения.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о каждом из агентов см. в следующих статьях:
 
 - [Общие сведения об агенте Log Analytics](log-analytics-agent.md)
-- [Общие сведения о расширении система диагностики Azure](diagnostics-extension-overview.md)
+- [Обзор расширения "Диагностика Azure"](diagnostics-extension-overview.md)
 - [Сбор пользовательских метрик для виртуальной машины Linux с помощью агента Telegraf InfluxData](collect-custom-metrics-linux-telegraf.md)

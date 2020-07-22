@@ -15,12 +15,11 @@ ms.workload: infrastructure
 ms.date: 07/12/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 90de49ae3137735683bae6a18b5f7c8951b021ae
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 5a7343bcf6ba4388beda118b242fa47d13baaa89
+ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75645877"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84022596"
 ---
 # <a name="sap-maxdb-livecache-and-content-server-deployment-on-azure-vms"></a>Развертывание SAP MaxDB, liveCache и сервера содержимого на виртуальных машинах Azure
 
@@ -281,9 +280,9 @@ ms.locfileid: "75645877"
 [virtual-machines-sizes-windows]:../../windows/sizes.md
 [virtual-machines-windows-classic-ps-sql-alwayson-availability-groups]:./../../windows/sqlclassic/virtual-machines-windows-classic-ps-sql-alwayson-availability-groups.md
 [virtual-machines-windows-classic-ps-sql-int-listener]:./../../windows/sqlclassic/virtual-machines-windows-classic-ps-sql-int-listener.md
-[virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions]:./../../windows/sql/virtual-machines-windows-sql-high-availability-dr.md
-[virtual-machines-sql-server-infrastructure-services]:./../../windows/sql/virtual-machines-windows-sql-server-iaas-overview.md
-[virtual-machines-sql-server-performance-best-practices]:./../../windows/sql/virtual-machines-windows-sql-performance.md
+[virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions]:../../../azure-sql/virtual-machines/windows/business-continuity-high-availability-disaster-recovery-hadr-overview.md
+[virtual-machines-sql-server-infrastructure-services]:../../../azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md
+[virtual-machines-sql-server-performance-best-practices]:../../../azure-sql/virtual-machines/windows/performance-guidelines-best-practices.md
 [virtual-machines-upload-image-windows-resource-manager]:../../virtual-machines-windows-upload-image.md
 [virtual-machines-windows-tutorial]:../../virtual-machines-windows-hero-tutorial.md
 [virtual-machines-workload-template-sql-alwayson]:https://azure.microsoft.com/resources/templates/sql-server-2014-alwayson-existing-vnet-and-ad/
@@ -319,7 +318,7 @@ ms.locfileid: "75645877"
 ### <a name="supported-microsoft-windows-versions-and-azure-vm-types-for-sap-maxdb-dbms"></a>Поддерживаемые версии Microsoft Windows и типы виртуальных машин Azure для СУБД SAP MaxDB
 Сведения о поддерживаемых версиях Microsoft Windows для СУБД SAP MaxDB в Azure, см. по следующим ссылкам:
 
-* [матрица доступности продуктов SAP;][sap-pam]
+* [Матрица доступности продуктов SAP][sap-pam].
 * примечание к SAP [1928533]
 
 Мы настоятельно рекомендуем использовать последнюю версию операционной системы Microsoft Windows — Microsoft Windows 2016.
@@ -338,7 +337,7 @@ ms.locfileid: "75645877"
 
 Вкратце повторим рекомендации.
 
-* При использовании учетных записей хранения Azure настройте учетную запись хранения Azure, в которой будут храниться тома данных и журналов (файлы данных и файлы журналов) SAP MaxDB, в качестве **локально избыточного хранилища (LRS)**, как описано в разделе [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md).
+* При использовании учетных записей хранения Azure настройте учетную запись хранения Azure, в которой будут храниться тома данных и журналов (файлы данных и файлы журналов) SAP MaxDB, в качестве **локально избыточного хранилища (LRS)** , как описано в разделе [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md).
 * Разделите пути ввода-вывода для томов данных (файлов данных) и томов журналов (файлов журналов) SAP MaxDB. Это означает, что тома данных (файлы данных) SAP MaxDB должны быть установлены на один логический диск, а тома журналов (файлы журналов) SAP MaxDB — на другой логический диск.
 * Правильно настройте тип кэширования для каждого диска. Настройки кэширования зависят от того, будут ли храниться в большом двоичном объекте тома данных или журналов SAP MaxDB (файлы данных или файлы журналов), а также от класса службы хранилища Azure (Standard или Premium), как описано в разделе [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md).
 * Если текущего количества операций ввода-вывода в секунду для каждого диска достаточно, все тома данных можно хранить на одном подключенном диске, а все тома журналов базы данных — на другом.
@@ -348,7 +347,7 @@ ms.locfileid: "75645877"
 ![Эталонная конфигурация виртуальной машины Azure IaaS для СУБД SAP MaxDB](./media/dbms_maxdb_deployment_guide/Simple_disk_structure_maxdb.PNG)
 
 
-#### <a name="backup-and-restore"></a><a name="23c78d3b-ca5a-4e72-8a24-645d141a3f5d"></a>Резервное копирование и восстановление
+#### <a name="backup-and-restore"></a><a name="23c78d3b-ca5a-4e72-8a24-645d141a3f5d"></a>Архивация и восстановление
 При развертывании SAP MaxDB в Azure методику резервного копирования необходимо пересмотреть. Даже если система не используется для производственных задач, необходимо периодически производить резервное копирование базы данных SAP, размещенной в SAP MaxDB. Так как в службе хранилища Azure хранятся три образа, резервное копирование представляется менее важным в контексте защиты системы от сбоев хранилища и более важных эксплуатационных и административных сбоев. Основная причина соблюдения надлежащего плана резервного копирования и восстановления следующая. Благодаря возможности восстанавливать состояние на определенный момент времени вы можете исправлять логические или пользовательские ошибки. Следовательно, резервные копии используются для восстановления состояния базы данных на определенный момент времени или для создания другой системы в Azure путем копирования существующей базы данных. 
 
 Архивация и восстановление базы данных в Azure работает так же, как и в локальных системах. Поэтому вы можете использовать стандартные инструменты архивации и восстановления SAP MaxDB, описанные в одном из перечисленных в примечании к SAP [767598] документов по SAP MaxDB. 
@@ -370,8 +369,8 @@ ms.locfileid: "75645877"
 
 Сведения о распределении тома между несколькими дисками см. выше в разделе [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md). 
 
-#### <a name="other-considerations"></a><a name="f77c1436-9ad8-44fb-a331-8671342de818"></a>Другие замечания
-Все остальные общие вопросы, такие как группы доступности Azure и мониторинг SAP, изложенные в разделе [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md),  также применяются к развертываниям виртуальных машин в базе данных SAP MaxDB 
+#### <a name="other-considerations"></a><a name="f77c1436-9ad8-44fb-a331-8671342de818"></a>Дополнительные рекомендации
+Все остальные общие вопросы, такие как группы доступности Azure и мониторинг SAP, изложенные в разделе [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md),  также применяются к развертываниям виртуальных машин в базе данных SAP MaxDB
 Другие параметры SAP MaxDB прозрачны для виртуальных машин Azure и описаны в различных документах, перечисленных в примечании к SAP [767598], а также в следующих примечаниях к SAP:
 
 * [826037] 
@@ -385,7 +384,7 @@ ms.locfileid: "75645877"
 ### <a name="supported-microsoft-windows-versions-and-azure-vm-types-for-sap-livecache-dbms"></a>Поддерживаемые версии Microsoft Windows и типы виртуальных машин Azure для СУБД SAP liveCache
 Сведения о поддерживаемых версиях Microsoft Windows для СУБД SAP liveCache в Azure, см. по следующим ссылкам:
 
-* [матрица доступности продуктов SAP;][sap-pam]
+* [Матрица доступности продуктов SAP][sap-pam].
 * примечание к SAP [1928533]
 
 Мы настоятельно рекомендуем использовать последнюю версию операционной системы Microsoft Windows Server. 
@@ -421,18 +420,18 @@ ms.locfileid: "75645877"
 ### <a name="sap-content-server-version-support-for-azure-vms"></a>Поддерживаемые версии сервера содержимого SAP для виртуальных машин Azure
 В настоящее время SAP поддерживает:
 
-* **сервер содержимого SAP** версии **6.50 (и более поздние)**;
+* **сервер содержимого SAP** версии **6.50 (и более поздние)** ;
 * **SAP MaxDB версии 7.9;**
 * **службы Microsoft IIS версии 8.0 (и более поздние версии).**
 
 Мы настоятельно рекомендуем использовать последнюю версию сервера содержимого SAP, а также самую последнюю версию **служб Microsoft IIS**. 
 
-Узнать последние версии SAP Content Server и служб Microsoft IIS можно в [матрице доступности продуктов SAP][sap-pam].
+Узнать последние версии SAP Content Server и служб Microsoft IIS можно из [матрицы доступности продуктов SAP][sap-pam].
 
 ### <a name="supported-microsoft-windows-and-azure-vm-types-for-sap-content-server"></a>Поддерживаемые версии Microsoft Windows и типы виртуальных машин Azure для сервера содержимого SAP
 Сведения о поддерживаемых версиях Microsoft Windows для сервера содержимого SAP в Azure см. по следующим ссылкам:
 
-* [матрица доступности продуктов SAP;][sap-pam]
+* [Матрица доступности продуктов SAP][sap-pam].
 * примечание к SAP [1928533]
 
 Мы настоятельно рекомендуется использовать последнюю версию Microsoft Windows Server.
@@ -467,7 +466,7 @@ ms.locfileid: "75645877"
 
 Если вы настраиваете сервер содержимого SAP для хранения файлов в файловой системе, резервное копировании и восстановление выполняется вручную для всей файловой структуры, в которой хранятся документы. Как и в случае с резервным копированием и восстановлением SAP MaxDB, для целей резервного копирования мы рекомендуем выделить отдельный том диска. 
 
-#### <a name="other"></a>Другой
+#### <a name="other"></a>Другие
 Другие параметры сервера содержимого SAP прозрачны для виртуальных машин Azure и описаны в различных документах и примечаниях SAP:
 
 * <https://service.sap.com/contentserver> 

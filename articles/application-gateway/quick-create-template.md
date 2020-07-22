@@ -6,19 +6,19 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: quickstart
-ms.date: 03/23/2020
+ms.date: 05/28/2020
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: cce3ef20a93c6d7a24bfa312501d2f8cc8ed9273
-ms.sourcegitcommit: 5e49f45571aeb1232a3e0bd44725cc17c06d1452
+ms.openlocfilehash: 963f728db55f587f7ae72aec702a099882cf401a
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81604899"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86249382"
 ---
-# <a name="quickstart-direct-web-traffic-with-azure-application-gateway---resource-manager-template"></a>Краткое руководство. Направление веб-трафика с помощью Шлюза приложений Azure с использованием шаблона Resource Manager
+# <a name="quickstart-direct-web-traffic-with-azure-application-gateway---arm-template"></a>Краткое руководство. Направление веб-трафика с помощью Шлюза приложений Azure и шаблона ARM
 
-В рамках этого краткого руководства с помощью шаблона Resource Manager вы создадите Шлюз приложений Azure. Затем вы проверите шлюз приложений, чтобы убедиться, что он правильно работает.
+В этом кратком руководстве показано, как с помощью шаблона Azure Resource Manager (шаблона ARM) создать Шлюз приложений Azure. Затем вы проверите шлюз приложений, чтобы убедиться, что он правильно работает.
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
@@ -26,17 +26,19 @@ ms.locfileid: "81604899"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fag-docs-qs%2Fazuredeploy.json)
+
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) бесплатно.
 
-## <a name="create-an-application-gateway"></a>Создание шлюза приложений
+## <a name="review-the-template"></a>Изучение шаблона
 
 Чтобы упростить работу, в этом шаблоне используется несложная настройка с открытым интерфейсным IP-адресом, базовый прослушиватель для размещения одного сайта в шлюзе приложений, базовое правило маршрутизации запросов и две виртуальные машины в серверном пуле.
 
-### <a name="review-the-template"></a>Изучение шаблона
-
-Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates/blob/master/ag-docs-qs/azuredeploy.json).
+Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/ag-docs-qs/).
 
 :::code language="json" source="~/quickstart-templates/ag-docs-qs/azuredeploy.json" range="001-343" highlight="197-297":::
 
@@ -50,17 +52,18 @@ ms.locfileid: "81604899"
 - [**Microsoft.Network/networkInterfaces**](/azure/templates/microsoft.network/networkinterfaces): два для виртуальных машин;
 - [**Microsoft.Compute/virtualMachine/extensions**](/azure/templates/microsoft.compute/virtualmachines/extensions): для настройки IIS и веб-страниц.
 
+## <a name="deploy-the-template"></a>Развертывание шаблона
 
-### <a name="deploy-the-template"></a>Развертывание шаблона
-
-Развертывание шаблона Resource Manager в Azure:
+Разверните шаблон ARM в Azure:
 
 1. Выберите элемент **Развертывание в Azure**, чтобы войти в Azure и открыть шаблон. С помощью шаблона будут созданы шлюз приложений, сетевая инфраструктура и две виртуальные машины в серверном пуле, где запущены службы IIS.
 
    [![Развертывание в Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fag-docs-qs%2Fazuredeploy.json)
 
 2. Выберите или создайте группу ресурсов, затем введите имя пользователя и пароль администратора виртуальной машины.
-3. Установите флажок **Я принимаю указанные выше условия** и нажмите кнопку **Приобрести**. Для развертывания может потребоваться 20 минут или более.
+3. Выберите **Review + Create** (Просмотр и создание), а затем выберите **Создать**.
+
+   Для развертывания может потребоваться 20 минут или более.
 
 ## <a name="validate-the-deployment"></a>Проверка развертывания
 

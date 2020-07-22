@@ -8,10 +8,9 @@ ms.topic: conceptual
 ms.date: 01/15/2019
 ms.author: robinsh
 ms.openlocfilehash: ff738e56226f7cbb720a754573a9d8607e0e3247
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "73890467"
 ---
 # <a name="iot-hub-device-streams-preview"></a>Потоки устройств Центра Интернета вещей (предварительная версия)
@@ -82,7 +81,7 @@ ms.locfileid: "73890467"
 
 !["Конечные точки потока устройства"](./media/iot-hub-device-streams-overview/device-stream-in-portal.png)
 
-Кроме того, сведения о конечных точках можно получить с помощью Azure CLI в разделе свойств концентратора, `property.hostname` в `property.deviceStreams` частности, и ключи.
+Кроме того, сведения о конечных точках можно получить с помощью Azure CLI в разделе свойств концентратора, в частности, `property.hostname` и `property.deviceStreams` ключи.
 
 ```azurecli-interactive
 az iot hub devicestream show --name <YourIoTHubName>
@@ -106,7 +105,7 @@ az iot hub devicestream show --name <YourIoTHubName>
 
 Как упоминалось в начале этой статьи, устройство создает исходящее подключение к конечной точке потоковой передачи центра Интернета вещей во время процесса запуска потоков устройств. Ваши брандмауэры устройства или сети должны разрешать исходящие подключения к шлюзу потоковой передачи через порт 443 (обратите внимание, что обмен данными осуществляется через подключение WebSocket, зашифрованное с помощью протокола TLS).
 
-Имя узла конечной точки потоковой передачи устройства можно найти на портале Центра Интернета вещей Azure на вкладке Обзор ![. "конечные точки потока устройства"](./media/iot-hub-device-streams-overview/device-stream-in-portal.png)
+Имя узла конечной точки потоковой передачи устройства можно найти на портале Центра Интернета вещей Azure на вкладке Обзор ![ . Конечные точки потока устройства "](./media/iot-hub-device-streams-overview/device-stream-in-portal.png)
 
 Кроме того, эти сведения можно найти с помощью Azure CLI:
 
@@ -168,7 +167,7 @@ az iot hub devicestream show --name <YourIoTHubName>
 
 * [Служба и служебная программа C#](quickstart-device-streams-echo-csharp.md)
 
-* [Программа службы Node. js](quickstart-device-streams-echo-nodejs.md)
+* [Служебная программаNode.js](quickstart-device-streams-echo-nodejs.md)
 
 * [Программа для устройства C](quickstart-device-streams-echo-c.md)
 
@@ -204,11 +203,11 @@ az iot hub devicestream show --name <YourIoTHubName>
 
 * [Служба и служебная программа C#](quickstart-device-streams-proxy-csharp.md)
 
-* [Программа службы Node. js](quickstart-device-streams-proxy-nodejs.md)
+* [Служебная программаNode.js](quickstart-device-streams-proxy-nodejs.md)
 
 * [Программа для устройства C](quickstart-device-streams-proxy-c.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Используйте приведенные ниже ссылки для получения дополнительных сведений о потоках устройств.
 

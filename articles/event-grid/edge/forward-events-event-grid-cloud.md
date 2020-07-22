@@ -5,16 +5,14 @@ author: VidyaKukke
 manager: rajarv
 ms.author: vkukke
 ms.reviewer: spelluru
-ms.date: 10/29/2019
+ms.date: 07/08/2020
 ms.topic: article
-ms.service: event-grid
-services: event-grid
-ms.openlocfilehash: 7184fb5c45ce41de2bd63b55fb67cbd9ba6361e3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: bfe150a45c70bc5bed18f8e929c9567905cd38f5
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76844723"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86171607"
 ---
 # <a name="tutorial-forward-events-to-event-grid-cloud"></a>Учебник. Пересылка событий в облако сетки событий
 
@@ -25,7 +23,7 @@ ms.locfileid: "76844723"
 
  Для работы с этим руководством необходимо иметь представление о концепциях службы "Сетка событий" в [пограничных](concepts.md) и [Azure](../concepts.md). Дополнительные типы назначения см. в разделе [обработчики событий](event-handlers.md). 
 
-## <a name="prerequisites"></a>Предварительные условия 
+## <a name="prerequisites"></a>Предварительные требования 
 Для выполнения шагов, описанных в данном учебнике, потребуется следующее.
 
 * **Подписка Azure** . Создайте [бесплатную учетную запись](https://azure.microsoft.com/free) , если она еще не создана. 
@@ -34,7 +32,7 @@ ms.locfileid: "76844723"
 [!INCLUDE [event-grid-deploy-iot-edge](../../../includes/event-grid-deploy-iot-edge.md)] 
 ## <a name="create-event-grid-topic-and-subscription-in-cloud"></a>Создание раздела и подписки в сетке событий в облаке
 
-Создайте раздел и подписку на сетку событий в облаке, следуя [этим руководствам](../custom-event-quickstart-portal.md). Запишите и, и `topicName` из вновь созданного раздела, который будет использоваться далее в этом руководстве. `topicURL` `sasKey`
+Создайте раздел и подписку на сетку событий в облаке, следуя [этим руководствам](../custom-event-quickstart-portal.md). Запишите `topicURL` `sasKey` и, и `topicName` из вновь созданного раздела, который будет использоваться далее в этом руководстве.
 
 Например, если вы создали раздел с именем `testegcloudtopic` в западной части США, то значения будут выглядеть примерно следующим образом:
 
@@ -44,7 +42,7 @@ ms.locfileid: "76844723"
 
 ## <a name="create-event-grid-topic-at-the-edge"></a>Создать раздел сетки событий на границе
 
-1. Создайте topic3. JSON со следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md) .
+1. Создайте topic3.jsсо следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md) .
 
     ```json
         {
@@ -65,7 +63,7 @@ ms.locfileid: "76844723"
     curl -k -H "Content-Type: application/json" -X GET -g https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic3?api-version=2019-01-01-preview
     ```
 
-   Образец вывода:
+   Пример результатов выполнения:
 
    ```json
         [
@@ -85,7 +83,7 @@ ms.locfileid: "76844723"
 
 [!INCLUDE [event-grid-deploy-iot-edge](../../../includes/event-grid-edge-persist-event-subscriptions.md)]
 
-1. Создайте subscription3. JSON со следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md) .
+1. Создайте subscription3.jsсо следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md) .
 
    ```json
         {
@@ -105,7 +103,7 @@ ms.locfileid: "76844723"
    >[!NOTE]
    > **EndpointUrl** указывает, что URL-адрес раздела сетки событий в облаке. **Саскэй** относится к разделу "облачная таблица событий". Значение в **топикнаме** будет использоваться для отметки всех исходящих событий на сетку событий. Это может быть полезно при публикации в предметной области сетки событий. Дополнительные сведения о домене "Сетка событий" см. в разделе [домены событий](../event-domains.md) .
 
-    Например, примененная к объекту директива
+    Например,
   
     ```json
         {
@@ -134,7 +132,7 @@ ms.locfileid: "76844723"
     curl -k -H "Content-Type: application/json" -X GET -g https://<your-edge-device-public-ip-here>:4438/topics/sampleTopic3/eventSubscriptions/sampleSubscription3?api-version=2019-01-01-preview
     ```
 
-    Образец вывода:
+    Пример результатов выполнения:
 
     ```json
          {
@@ -157,7 +155,7 @@ ms.locfileid: "76844723"
 
 ## <a name="publish-an-event-at-the-edge"></a>Опубликовать событие на границе
 
-1. Создайте event3. JSON со следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md) .
+1. Создайте event3.jsсо следующим содержимым. Дополнительные сведения о полезных данных см. в [документации по API](api.md) .
 
     ```json
         [
@@ -195,7 +193,7 @@ ms.locfileid: "76844723"
 
 * Удалите раздел и подписки, созданные в облаке (сетка событий Azure).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы опубликовали событие в службе "Сетка событий" в облаке Azure. Теперь, когда вы знакомы с основными шагами для пересылки в сетку событий в облаке, сделайте следующее:
 

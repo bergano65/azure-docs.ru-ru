@@ -9,17 +9,17 @@ ms.date: 07/31/2019
 ms.topic: conceptual
 ms.author: raynew
 ms.openlocfilehash: 66ce267581d4748ea51a3dcbd7caa61907115cc1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82131157"
 ---
 # <a name="common-questions-about-site-recovery-monitoring"></a>Распространенные вопросы о мониторинге Site Recovery
 
 В этой статье содержатся ответы на распространенные вопросы о мониторинге [Site Recovery](site-recovery-overview.md)Azure, использовании встроенного мониторинга Site Recovery и Azure Monitor (log Analytics).
 
-## <a name="general"></a>Общие
+## <a name="general"></a>Общие сведения
 
 ### <a name="how-is-the-rpo-value-logged-different-from-the-latest-available-recovery-point"></a>Как регистрируется значение RPO, отличающееся от последней доступной точки восстановления?
 
@@ -69,7 +69,7 @@ Site Recovery использует многоэтапный асинхронны
 Обычно размер журнала составляет 15-20 КБ. 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о мониторинге с помощью [Site Recovery встроенного мониторинга](site-recovery-monitor-and-troubleshoot.md)или [Azure Monitor](monitor-log-analytics.md).
 

@@ -1,64 +1,69 @@
 ---
-title: Отладка и устранение неполадок Параллелрунстеп
+title: Отладка и устранение неполадок ParallelRunStep
 titleSuffix: Azure Machine Learning
-description: Отладка и устранение неполадок Параллелрунстеп в конвейерах машинного обучения в пакете SDK Машинное обучение Azure для Python. Изучите распространенные ошибки для разработки с помощью конвейеров и советы по отладке сценариев до и во время удаленного выполнения.
+description: Отладка и устранение неполадок ParallelRunStep в конвейерах машинного обучения в пакете SDK решения "Машинное обучение Azure" для Python. Изучите распространенные ошибки для разработки с помощью конвейеров и рекомендации по отладке сценариев до и во время удаленного выполнения.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: conceptual
-ms.reviewer: trbye, jmartens, larryfr, vaidyas
+ms.topic: troubleshooting
+ms.reviewer: trbye, jmartens, larryfr, vaidyas, laobri
 ms.author: trmccorm
 author: tmccrmck
-ms.date: 01/15/2020
-ms.openlocfilehash: ca50d70965d5edc4e31606e542ddf163fe3b0741
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 07/06/2020
+ms.openlocfilehash: 870563a1a27ee00c2f14935e5200f722136011a1
+ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76122968"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86027007"
 ---
-# <a name="debug-and-troubleshoot-parallelrunstep"></a>Отладка и устранение неполадок Параллелрунстеп
+# <a name="debug-and-troubleshoot-parallelrunstep"></a>Отладка и устранение неполадок ParallelRunStep
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
-Из этой статьи вы узнаете, как выполнять отладку и устранение неполадок класса [параллелрунстеп](https://docs.microsoft.com/python/api/azureml-contrib-pipeline-steps/azureml.contrib.pipeline.steps.parallel_run_step.parallelrunstep?view=azure-ml-py) из [пакета SDK машинное обучение Azure](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py).
+Из этой статьи вы узнаете, как выполнять отладку и устранение неполадок класса [ParallelRunStep](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.parallel_run_step.parallelrunstep?view=azure-ml-py) из [пакета SDL решения "Машинное обучение Azure"](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py).
 
-## <a name="testing-scripts-locally"></a>Локальное тестирование скриптов
+## <a name="testing-scripts-locally"></a>Локальное тестирование сценариев
 
-См. [раздел тестирование скриптов в локальной](how-to-debug-pipelines.md#testing-scripts-locally) среде для конвейеров машинного обучения. Ваш Параллелрунстеп выполняется как шаг в конвейерах машинного обучения, поэтому один и тот же ответ применяется к обоим.
+См. раздел [Локальное тестирование сценариев](how-to-debug-pipelines.md#testing-scripts-locally) для конвейеров машинного обучения. Ваш класс ParallelRunStep выполняется как этап в конвейерах машинного обучения, поэтому в обоих случаях применимы одни и те же решения.
 
-## <a name="debugging-scripts-from-remote-context"></a>Отладка скриптов из удаленного контекста
+## <a name="debugging-scripts-from-remote-context"></a>Отладка сценариев из удаленного контекста
 
-Переход от отладки скрипта оценки локально для отладки скрипта оценки в фактическом конвейере может оказаться сложной задачей. Сведения о поиске журналов на портале см. в [разделе конвейеры машинного обучения статьи об отладке скриптов из удаленного контекста](how-to-debug-pipelines.md#debugging-scripts-from-remote-context). Сведения в этом разделе также применяются к выполнению параллельных шагов.
+Переход от локальной отладки сценария оценки к отладке сценария оценки в фактическом конвейере может оказаться сложной задачей. Сведения о поиске журналов на портале см. в разделе о [конвейерах машинного обучения для сценариев отладки из удаленного контента](how-to-debug-pipelines.md#debugging-scripts-from-remote-context). Сведения в этом разделе также применимы к классу ParallelRunStep.
 
-Например, файл `70_driver_log.txt` журнала содержит сведения об контроллере, который запускает код шага параллельного выполнения.
+Например, файл журнала `70_driver_log.txt` содержит сведения о контроллере, который запускает код ParallelRunStep.
 
-Из-за распределенной природы задач параллельного выполнения существуют журналы из нескольких разных источников. Однако создаются два консолидированных файла, которые предоставляют сведения высокого уровня:
+Из-за того, что задания ParallelRunStep имеют распределенный характер, журналы могут поступать из нескольких разных источников. Однако создается два консолидированных файла, которые предоставляют общие сведения.
 
-- `~/logs/overview.txt`: Этот файл содержит общие сведения о количестве мини-пакетов (которые также называются задачами), созданных до сих пор и количества мини-пакетов, обработанных на данный момент. На этом конце отображается результат задания. Если задание завершилось с ошибкой, отобразится сообщение об ошибке, где можно начать устранение неполадок.
+- `~/logs/overview.txt`: Этот файл содержит общие сведения о количестве мини-пакетов (т. н. задач), созданных до этого момента, и количестве мини-пакетов, обработанных на данный момент. В этом случае отображается результат задачи. Если задание завершилось с ошибкой, отобразится сообщение об ошибке, а также рекомендации по началу устранения неполадок.
 
-- `~/logs/sys/master.txt`: Этот файл предоставляет главный узел (также известный как Orchestrator) в представлении выполняемого задания. Включает создание задач, мониторинг хода выполнения, результат выполнения.
+- `~/logs/sys/master.txt`: В этом файле доступно представление главного узла (т. н. оркестратор) выполняемого задания. Включает создание задач, мониторинг хода выполнения, результат выполнения.
 
-Журналы, созданные на основе скрипта записи с использованием Ентрискрипт. Logger и инструкций Print, будут найдены в следующих файлах:
+Журналы, созданные на основе начального сценария с помощью вспомогательного метода EntryScript и операторов Print, находятся следующих файлах:
 
-- `~/logs/user/<ip_address>/Process-*.txt`: Этот файл содержит журналы, записанные из entry_script с помощью Ентрискрипт. Logger. Он также содержит инструкцию PRINT (stdout) от entry_script.
+- `~/logs/user/<ip_address>/<node_name>.log.txt`: Эти файлы являются журналами, записанными из entry_script с помощью вспомогательного приложения Ентрискрипт. Также содержит оператор print (stdout) из entry_script.
 
-Если вам необходимо полное понимание того, как каждый узел выполняет скрипт оценки, просмотрите отдельные журналы процесса для каждого узла. Журналы процесса можно найти в `sys/worker` папке, сгруппированной по рабочим узлам:
+Следующие признаки позволяют быстро распознать ошибки в сценарии.
 
-- `~/logs/sys/worker/<ip_address>/Process-*.txt`: Этот файл содержит подробные сведения о каждом мини-пакете по мере его выбора или завершения рабочими процессами. Для каждого мини-пакета в этот файл входят:
+- `~/logs/user/error.txt`: Этот файл попытается обобщить ошибки в сценарии.
 
-    - IP-адрес и идентификатор процесса рабочего процесса. 
-    - Общее число элементов, число успешно обработанных элементов и число невыполненных элементов.
-    - Время начала, длительность, время обработки и время выполнения метода.
+Дополнительные сведения об ошибках в сценарии:
 
-Также можно найти сведения об использовании ресурсов процессами для каждого работника. Эти сведения находятся в формате CSV и находятся в папке `~/logs/sys/perf/<ip_address>/`. Для одного узла файлы заданий будут доступны в разделе `~logs/sys/perf`. Например, при проверке использования ресурсов просмотрите следующие файлы:
+- `~/logs/user/error/`: Содержит все возникшие ошибки и полные трассировки стека, упорядоченные по узлам.
 
-- `Process-*.csv`: Использование ресурсов для рабочего процесса. 
-- `sys.csv`: Журнал каждого узла.
+Если необходимо в полной мере оценить, как сценарий оценки выполняется на каждом из узлов, просмотрите отдельные журналы процесса для каждого узла. Журналы процесса можно найти в папке `sys/node`. Они сгруппированы по рабочим узлам:
 
-### <a name="how-do-i-log-from-my-user-script-from-a-remote-context"></a>Разделы справки журнал из удаленного контекста из пользовательского скрипта?
-Вы можете получить средство ведения журнала из Ентрискрипт, как показано в приведенном ниже примере кода, чтобы журналы отображались в папке **журналы/пользователь** на портале.
+- `~/logs/sys/node/<node_name>.txt`: Этот файл содержит подробные сведения о каждом мини-пакете по мере его комплектации или завершения рабочими процессами. Для каждого мини-пакета этот файл содержит:
 
-**Пример входного скрипта с использованием средства ведения журнала:**
+    - IP-адрес и идентификатор рабочего процесса. 
+    - Общее число элементов, число успешно обработанных элементов и число элементов, обработка которых завершилась сбоем.
+    - Время начала, продолжительность, время обработки и время выполнения метода.
+
+Здесь также приведены сведения об использовании ресурсов процессами для каждой рабочей роли. Эти сведения доступны в файле CSV по адресу `~/logs/sys/perf/overview.csv`. Сведения о каждом процессе доступны в разделе `~logs/sys/processes.csv` .
+
+### <a name="how-do-i-log-from-my-user-script-from-a-remote-context"></a>Ведение журнала из пользовательского сценария в удаленном контексте
+Можно получить средство ведения журнала из EntryScript, как показано в приведенном ниже примере кода, чтобы журналы отображались в папке **logs/user** на портале.
+
+**Пример начального сценария с использованием средства ведения журнала:**
 ```python
 from entry_script import EntryScript
 
@@ -80,21 +85,34 @@ def run(mini_batch):
     return mini_batch
 ```
 
-### <a name="how-could-i-pass-a-side-input-such-as-a-file-or-files-containing-a-lookup-table-to-all-my-workers"></a>Как передать входные данные на стороне, такие как, файл или файлы, содержащие таблицу подстановки, всем моим рабочим работникам?
+### <a name="how-could-i-pass-a-side-input-such-as-a-file-or-files-containing-a-lookup-table-to-all-my-workers"></a>Передача всем рабочим ролям сторонних входных данных, таких как файлы, содержащие таблицу подстановки.
 
-Создайте объект [DataSet](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py) , содержащий побочный ввод и зарегистрируйтесь в рабочей области. После этого к нему можно получить доступ в скрипте определения (например, в методе init ()) следующим образом:
+Создайте [набор данных](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py), который содержит сторонние входные данные, и зарегистрируйте его в рабочей области. Передайте его в параметр `side_input` вашего `ParallelRunStep`. Кроме того, можно добавить путь в раздел, `arguments` чтобы легко получить доступ к подключенному пути.
 
 ```python
-from azureml.core.run import Run
-from azureml.core.dataset import Dataset
-
-ws = Run.get_context().experiment.workspace
-lookup_ds = Dataset.get_by_name(ws, "<registered-name>")
-lookup_ds.download(target_path='.', overwrite=True)
+label_config = label_ds.as_named_input("labels_input")
+batch_score_step = ParallelRunStep(
+    name=parallel_step_name,
+    inputs=[input_images.as_named_input("input_images")],
+    output=output_dir,
+    arguments=["--labels_dir", label_config],
+    side_inputs=[label_config],
+    parallel_run_config=parallel_run_config,
+)
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+После этого доступ к нему можно будет получить в сценарии вывода (например, в методе init ()) следующим образом:
 
-* Дополнительные сведения о пакете [azureml-от участников сообщества-конвейер-Step](https://docs.microsoft.com/python/api/azureml-contrib-pipeline-steps/azureml.contrib.pipeline.steps?view=azure-ml-py) и [документации](https://docs.microsoft.com/python/api/azureml-contrib-pipeline-steps/azureml.contrib.pipeline.steps.parallelrunstep?view=azure-ml-py) по классу параллелрунстеп см. в справочнике по пакету SDK.
+```python
+parser = argparse.ArgumentParser()
+parser.add_argument('--labels_dir', dest="labels_dir", required=True)
+args, _ = parser.parse_known_args()
 
-* Ознакомьтесь с [дополнительным руководством](tutorial-pipeline-batch-scoring-classification.md) по использованию конвейеров с шагом параллельного выполнения.
+labels_path = args.labels_dir
+```
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+* Сведения о пакете [azureml-Pipeline-пошаговые инструкции](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps?view=azure-ml-py) см. в справочнике по пакету SDK. Просмотрите справочную [документацию](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.parallelrunstep?view=azure-ml-py) по классу параллелрунстеп.
+
+* Ознакомьтесь с [дополнительным руководством](tutorial-pipeline-batch-scoring-classification.md) по использованию конвейеров с параллелрунстеп. В этом руководстве показано, как передать другой файл в качестве побочного входа. 

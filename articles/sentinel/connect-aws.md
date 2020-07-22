@@ -1,6 +1,6 @@
 ---
 title: Подключение AWS Клаудтраил к Azure Sentinel | Документация Майкрософт
-description: Узнайте, как подключить данные AWS Клаудтраил к Azure Sentinel.
+description: Используйте соединитель AWS, чтобы делегировать доступ к журналам ресурсов AWS с помощью маркеров Azure, создавая доверительные отношения между AWS Клаудтраил и Sentinel.
 services: sentinel
 documentationcenter: na
 author: yelevin
@@ -9,21 +9,24 @@ editor: ''
 ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/30/2019
+ms.date: 05/27/2020
 ms.author: yelevin
-ms.openlocfilehash: 5cbef1f31ea7088d4fab4888f5630af1b765a910
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f8d296e62be9571bdedd5acf40d5547bae8c864e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77588660"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85564576"
 ---
 # <a name="connect-azure-sentinel-to-aws-cloudtrail"></a>Подключение Sentinel Azure к AWS Клаудтраил
 
 Используйте соединитель AWS для потоковой передачи всех событий AWS Клаудтраил в Azure Sentinel. Этот процесс подключения делегирует доступ для маркеров Azure к журналам ресурсов AWS, создавая доверительные отношения между AWS Клаудтраил и Sentinel. Это выполняется в AWS путем создания роли, которая предоставляет разрешение на метку Azure для доступа к журналам AWS.
+
+> [!NOTE]
+> AWS Клаудтраил имеет [встроенные ограничения](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html) в своем API лукупевентс. Он позволяет не более двух транзакций в секунду (TPS) на каждую учетную запись, и каждый запрос может возвращать не более 50 записей. Следовательно, если один клиент постоянно создает более 100 записей в одну секунду в одном регионе, невыполненные работы и задержки при приеме данных будут возникать.
 
 ## <a name="prerequisites"></a>Предварительные условия
 
@@ -32,7 +35,7 @@ ms.locfileid: "77588660"
 > [!NOTE]
 > Azure Sentinel собирает события Клаудтраил из всех регионов. Не рекомендуется выполнять потоковую передачу событий из одного региона в другой.
 
-## <a name="connect-aws"></a>Подключение AWS 
+## <a name="connect-aws"></a>Подключение к AWS 
 
 
 1. В поле Sentinel Azure выберите **соединители данных** , а затем щелкните строку **Amazon Web Services** в таблице и в области AWS справа щелкните **открыть страницу соединителя**.
@@ -83,5 +86,5 @@ ms.locfileid: "77588660"
 В этом документе вы узнали, как подключить AWS Клаудтраил к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats-built-in.md).
-- [Используйте книги](tutorial-monitor-your-data.md) для отслеживания данных.
+- [Используйте книги](tutorial-monitor-your-data.md) для мониторинга данных.
 

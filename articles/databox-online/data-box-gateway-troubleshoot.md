@@ -5,25 +5,26 @@ services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: gateway
-ms.topic: article
+ms.topic: troubleshooting
 ms.date: 03/20/2019
 ms.author: alkohli
-ms.openlocfilehash: b452362744d7fbf655ea043127a15f5173d04e4c
-ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
+ms.openlocfilehash: 9688df6c27717cc74c874c75a9df0b47ffd24853
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82562463"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85564022"
 ---
-# <a name="troubleshoot-your-azure-data-box-gateway-issues"></a>Устранение неполадок в Шлюзе Azure Data Box 
+# <a name="troubleshoot-your-azure-data-box-gateway-issues"></a>Устранение неполадок в Шлюзе Azure Data Box
 
-В этой статье описывается устранение неполадок в Шлюзе Azure Data Box. Вы узнаете, как выполнять следующие задачи:
+В этой статье описывается устранение неполадок в Шлюзе Azure Data Box.
+Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
+>
 > * Запуск диагностики
 > * Сбор пакета поддержки
 > * Использование журналов для устранения неполадок.
-
 
 ## <a name="run-diagnostics"></a>Запуск диагностики
 
@@ -106,6 +107,6 @@ ms.locfileid: "82562463"
     |    16002           |    RefreshWorkNeededException                              |    Не удалось обновить этот файл, так как он отправлен не полностью.                                                                                                                                                                          | 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения об [известных проблемах в этом выпуске](data-box-gateway-release-notes.md).

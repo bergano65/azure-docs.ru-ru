@@ -3,15 +3,14 @@ title: Аудит операций Azure Cosmos DB плоскости управ
 description: Узнайте, как выполнять аудит операций плоскости управления, таких как добавление региона, пропускная способность обновления, переход на другой ресурс, Добавление виртуальной сети и т. д. в Azure Cosmos DB
 author: SnehaGunda
 ms.service: cosmos-db
-ms.topic: conceptual
-ms.date: 04/23/2020
+ms.topic: how-to
+ms.date: 06/25/2020
 ms.author: sngun
-ms.openlocfilehash: a5df7866f7897109dbd7a0ea8a52b857ab671875
-ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
-ms.translationtype: MT
+ms.openlocfilehash: 4c9f02784507ee893b6396fef4ed34a87610166d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2020
-ms.locfileid: "82735357"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85414196"
 ---
 # <a name="how-to-audit-azure-cosmos-db-control-plane-operations"></a>Аудит операций Azure Cosmos DB плоскости управления
 
@@ -43,7 +42,7 @@ ms.locfileid: "82735357"
 
 Чтобы включить ведение журнала для операций плоскости управления, выполните следующие действия.
 
-1. Войдите в [портал Azure](https://portal.azure.com) и перейдите к своей учетной записи Azure Cosmos.
+1. Войдите на [портал Azure](https://portal.azure.com) и перейдите в учетную запись Azure Cosmos.
 
 1. Откройте область **параметры диагностики** и укажите **имя** создаваемых журналов.
 
@@ -51,7 +50,7 @@ ms.locfileid: "82735357"
 
 Кроме того, можно хранить журналы в учетной записи хранения или потоке в концентраторе событий. В этой статье показано, как отправлять журналы в log Analytics, а затем запрашивать их. После включения для того, чтобы журналы диагностики вступили в силу, потребуется несколько минут. Все операции плоскости управления, выполненные после этой точки, могут быть отслеживанием. На следующем снимке экрана показано, как включить журналы плоскости управления.
 
-![Включить ведение журнала запросов плоскости управления](./media/audit-control-plane-logs/enable-control-plane-requests-logs.png)
+:::image type="content" source="./media/audit-control-plane-logs/enable-control-plane-requests-logs.png" alt-text="Включить ведение журнала запросов плоскости управления":::
 
 ## <a name="view-the-control-plane-operations"></a>Просмотр операций плоскости управления
 
@@ -69,17 +68,17 @@ ms.locfileid: "82735357"
 
 На следующих снимках экрана записываются журналы при изменении уровня согласованности для учетной записи Azure Cosmos.
 
-![Журналы управляющей плоскости при добавлении виртуальной сети](./media/audit-control-plane-logs/add-ip-filter-logs.png)
+:::image type="content" source="./media/audit-control-plane-logs/add-ip-filter-logs.png" alt-text="Журналы управляющей плоскости при добавлении виртуальной сети":::
 
-На следующих снимках экрана записываются журналы при обновлении пропускной способности таблицы Cassandra:
+На следующих снимках экрана записываются журналы при создании пространства ключей или таблицы учетной записи Cassandra, а также при обновлении пропускной способности. Журналы плоскости управления для операций создания и обновления базы данных и контейнер регистрируются отдельно, как показано на снимке экрана ниже.
 
-![Журналы плоскости управления при обновлении пропускной способности](./media/audit-control-plane-logs/throughput-update-logs.png)
+:::image type="content" source="./media/audit-control-plane-logs/throughput-update-logs.png" alt-text="Журналы плоскости управления при обновлении пропускной способности":::
 
 ## <a name="identify-the-identity-associated-to-a-specific-operation"></a>Идентификация удостоверения, связанного с определенной операцией
 
 Если вы хотите выполнить отладку дальше, можно найти конкретную операцию в **журнале действий** с помощью идентификатора действия или метки времени операции. Отметка времени используется для некоторых диспетчер ресурсов клиентов, где идентификатор действия не передается явным образом. Журнал действий содержит подробные сведения об удостоверении, с помощью которого была инициирована операция. На следующем снимке экрана показано, как использовать идентификатор действия и найти связанные с ним операции в журнале действий:
 
-![Использование идентификатора действия и поиск операций](./media/audit-control-plane-logs/find-operations-with-activity-id.png)
+:::image type="content" source="./media/audit-control-plane-logs/find-operations-with-activity-id.png" alt-text="Использование идентификатора действия и поиск операций":::
 
 ## <a name="control-plane-operations-for-azure-cosmos-account"></a>Операции плоскости управления для учетной записи Azure Cosmos
 
@@ -101,30 +100,39 @@ ms.locfileid: "82735357"
 
 Ниже перечислены операции плоскости управления, доступные на уровне базы данных и контейнера. Эти операции доступны в виде метрик в Azure Monitor.
 
+* База данных SQL создана
 * База данных SQL обновлена
-* Контейнер SQL обновлен
 * Пропускная способность базы данных SQL обновлена
-* Пропускная способность контейнера SQL обновлена
 * База данных SQL удалена
+* Создан контейнер SQL
+* Контейнер SQL обновлен
+* Пропускная способность контейнера SQL обновлена
 * Контейнер SQL удален
+* Cassandra пространства ключей создан
 * Cassandra пространства ключей обновлен
-* Таблица Cassandra обновлена
 * Пропускная способность Cassandra пространства ключей обновлена
-* Пропускная способность таблицы Cassandra обновлена
 * Cassandra пространства ключей удален
+* Создана таблица Cassandra
+* Таблица Cassandra обновлена
+* Пропускная способность таблицы Cassandra обновлена
 * Таблица Cassandra удалена
+* Создана база данных Gremlin
 * База данных Gremlin обновлена
-* Граф Gremlin обновлен
 * Пропускная способность базы данных Gremlin обновлена
-* Пропускная способность графа Gremlin обновлена
 * База данных Gremlin удалена
+* Создан граф Gremlin
+* Граф Gremlin обновлен
+* Пропускная способность графа Gremlin обновлена
 * Граф Gremlin удален
+* Создана база данных Mongo
 * База данных Mongo обновлена
-* Коллекция Mongo обновлена
 * Пропускная способность базы данных Mongo обновлена
-* Пропускная способность коллекции Mongo обновлена
 * База данных Mongo удалена
+* Создана коллекция Mongo
+* Коллекция Mongo обновлена
+* Пропускная способность коллекции Mongo обновлена
 * Коллекция Mongo удалена
+* Создана таблица AzureTable
 * Таблица AzureTable обновлена
 * Пропускная способность таблицы AzureTable обновлена
 * Таблица AzureTable удалена
@@ -144,14 +152,15 @@ ms.locfileid: "82735357"
 
 Для операций, зависящих от API, операция имеет имя в следующем формате:
 
-* Типа API + Апикиндресаурцетипе + OperationType + начало и завершение
-* Типа API + Апикиндресаурцетипе + "пропускная способность" + operationType + запуск/завершение
+* Типа API + Апикиндресаурцетипе + OperationType
+* Типа API + Апикиндресаурцетипе + "пропускная способность" + operationType
 
 **Пример** 
 
-* Кассандракэйспацесупдатестарт, Кассандракэйспацесупдатекомплете
-* Кассандракэйспацессраугхпутупдатестарт, Кассандракэйспацессраугхпутупдатекомплете
-* Склконтаинерсупдатестарт, Склконтаинерсупдатекомплете
+* кассандракэйспацескреате
+* кассандракэйспацесупдате
+* кассандракэйспацессраугхпутупдате
+* склконтаинерсупдате
 
 Свойство *ресаурцедетаилс* содержит весь текст ресурса как полезные данные запроса и содержит все свойства, запрошенные для обновления
 
@@ -161,17 +170,31 @@ ms.locfileid: "82735357"
 
 ```kusto
 AzureDiagnostics 
-| where Category =="ControlPlaneRequests"
-| where  OperationName startswith "SqlContainersUpdateStart"
+| where Category startswith "ControlPlane"
+| where OperationName contains "Update"
+| project httpstatusCode_s, statusCode_s, OperationName, resourceDetails_s, activityId_g
 ```
 
 ```kusto
 AzureDiagnostics 
 | where Category =="ControlPlaneRequests"
-| where  OperationName startswith "SqlContainersThroughputUpdateStart"
+| where TimeGenerated >= todatetime('2020-05-14T17:37:09.563Z')
+| project TimeGenerated, OperationName, apiKind_s, apiKindResourceType_s, operationType_s, resourceDetails_s
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+```kusto
+AzureDiagnostics 
+| where Category =="ControlPlaneRequests"
+| where  OperationName startswith "SqlContainersUpdate"
+```
 
-* [Просмотр Azure Monitor для Azure Cosmos DB](../azure-monitor/insights/cosmosdb-insights-overview.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json)
+```kusto
+AzureDiagnostics 
+| where Category =="ControlPlaneRequests"
+| where  OperationName startswith "SqlContainersThroughputUpdate"
+```
+
+## <a name="next-steps"></a>Дальнейшие шаги
+
+* [Изучите Azure Monitor для Azure Cosmos DB](../azure-monitor/insights/cosmosdb-insights-overview.md?toc=/azure/cosmos-db/toc.json&bc=/azure/cosmos-db/breadcrumb/toc.json)
 * [Monitor and debug with metrics in Azure Cosmos DB](use-metrics.md) (Мониторинг и отладка с помощью метрик в Azure Cosmos DB)

@@ -10,12 +10,12 @@ ms.date: 12/26/2018
 ms.author: jopapa
 ms.custom: seodec18
 ms.reviewer: sngun
-ms.openlocfilehash: 103545225b15a74d8c2ea0be5e88caa18f3c31cc
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: de9e7fd605a1d53d1078523c77cd33065c03ca85
+ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82184781"
+ms.lasthandoff: 06/20/2020
+ms.locfileid: "85118973"
 ---
 # <a name="create-an-angular-app-with-azure-cosmos-dbs-api-for-mongodb---add-crud-functions-to-the-app"></a>Создание приложения Angular с помощью API Azure Cosmos DB для MongoDB. Добавление функций CRUD в приложение
 
@@ -40,7 +40,7 @@ ms.locfileid: "82184781"
 
     Вы увидите, что строка 7 файла routes.js вызывает функцию `getHeroes` в строке 5 файла **hero.service.js**.  Необходимо создать такие же пары для функций Post, Put и Delete. 
 
-    ![Файлы routes.js и hero.service.js в Visual Studio Code](./media/tutorial-develop-mongodb-nodejs-part6/routes-heroservicejs.png)
+    :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part6/routes-heroservicejs.png" alt-text="Файлы routes.js и hero.service.js в Visual Studio Code":::
     
     Начнем с написания кода для службы hero. 
 
@@ -88,11 +88,11 @@ ms.locfileid: "82184781"
 
 6. Теперь вернитесь в браузер и откройте вкладку с параметрами сети в инструментах разработчика. На большинстве компьютеров эта вкладка открывается нажатием клавиши F12. Перейдите по адресу `http://localhost:3000` для просмотра вызовов по сети.
 
-    ![Вкладка с параметрами сети в браузере Chrome с отображением действий в сети](./media/tutorial-develop-mongodb-nodejs-part6/add-new-hero.png)
+    :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part6/add-new-hero.png" alt-text="Вкладка с параметрами сети в браузере Chrome с отображением действий в сети":::
 
 7. Добавьте новый элемент hero, нажав кнопку **Add New Hero** (Добавить героя). Введите идентификатор 999, имя Fred и фразу Hello. Затем нажмите кнопку **Save** (Сохранить). На вкладке с параметрами сети вы увидите, отправленный запрос POST для нового элемента hero. 
 
-    ![Вкладка с сетевыми параметрами в браузере Chrome с отображением функций Get и Post в сети](./media/tutorial-develop-mongodb-nodejs-part6/post-new-hero.png)
+    :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part6/post-new-hero.png" alt-text="Вкладка с параметрами сети в браузере Chrome с отображением функций Get и Post в сети":::
 
     Теперь добавим в приложение функции Put и Delete.
 
@@ -177,11 +177,11 @@ ms.locfileid: "82184781"
 
     Теперь выберите идентификатор на вкладке с параметрами сети, чтобы отобразить полезные данные. Вы увидите в полезных данных, что фраза героя поменялась на "Bye".
 
-    ![Приложение Heroes (Герои) на вкладке с параметрами сети с отображением полезных данных](./media/tutorial-develop-mongodb-nodejs-part6/put-hero-function.png) 
+    :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part6/put-hero-function.png" alt-text="Приложение Heroes на вкладке с параметрами сети с отображением полезных данных"::: 
 
     Вы можете удалить из пользовательского интерфейса один элемент hero, чтобы узнать, сколько времени занимает операция удаления. Попробуйте нажать кнопку Delete (Удалить) рядом с героем Fred.
 
-    ![Приложение Heroes (Герои) на вкладке с параметрами сети с отображением времени выполнения функций](./media/tutorial-develop-mongodb-nodejs-part6/times.png) 
+    :::image type="content" source="./media/tutorial-develop-mongodb-nodejs-part6/times.png" alt-text="Приложение Heroes на вкладке с параметрами сети с отображением времени выполнения функций"::: 
 
     Если обновить страницу, на вкладке с параметрами сети отобразится время, требуемое для получения элементов hero. Хотя эти операции выполняются быстро, многое зависит от расположения данных в мире и вашей возможности выполнять георепликацию в ближайшую к пользователям область. Дополнительные сведения о георепликации см. в следующем руководстве, которое скоро появится.
 

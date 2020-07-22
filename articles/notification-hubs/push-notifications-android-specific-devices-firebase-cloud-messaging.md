@@ -17,12 +17,12 @@ ms.date: 04/30/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 04/30/2019
-ms.openlocfilehash: b7ee3afc2e8b9958a868c8c117262d2017c9b600
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 273827e68a81e87dcff15760f0b400b2d5ce8723
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80126877"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86220870"
 ---
 # <a name="tutorial-send-notifications-to-specific-devices-using-notification-hubs-and-google-firebase-cloud-messaging"></a>Руководство по Отправка push-уведомлений на конкретные устройства с помощью Центров уведомлений и Google Firebase Cloud Messaging
 
@@ -117,7 +117,7 @@ ms.locfileid: "80126877"
 
     Графическая структура файла `main_activity.xml` должна выглядеть следующим образом:
 
-    ![][A1]
+    ![Снимок экрана: эмулятор с графической структурой файла XML основного действия][A1]
 3. Создайте класс `Notifications` в том же пакете, в котором существует класс `MainActivity`.
 
     ```java

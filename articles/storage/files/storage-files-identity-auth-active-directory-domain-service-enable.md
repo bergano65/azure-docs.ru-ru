@@ -3,16 +3,16 @@ title: Использование доменных служб Azure AD для а
 description: Узнайте, как включить проверку подлинности на основе удостоверений через протокол SMB для службы файлов Azure с помощью доменных служб Azure Active Directory. Затем присоединенные к домену виртуальные машины Windows могут получить доступ к файловым ресурсам Azure с помощью учетных данных Azure AD.
 author: roygara
 ms.service: storage
-ms.topic: conceptual
-ms.date: 02/21/2020
+ms.topic: how-to
+ms.date: 04/21/2020
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: cb173bcbf7cd163dca16c211d45018e0fe056edd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 2d9f7eccae6b87923b52119ded90ced5e4206d7b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80666849"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85510386"
 ---
 # <a name="enable-azure-active-directory-domain-services-authentication-on-azure-files"></a>Включение проверки подлинности доменных служб Azure Active Directory в службе файлов Azure
 
@@ -22,6 +22,7 @@ ms.locfileid: "80666849"
 
 > [!NOTE]
 > Служба файлов Azure поддерживает проверку подлинности Kerberos с помощью AD DS Azure с шифрованием RC4-HMAC. Шифрование AES Kerberos пока не поддерживается.
+> Служба файлов Azure поддерживает аутентификацию Azure AD DS с полной синхронизацией с Azure AD. Если вы включили синхронизацию с заданной областью в Azure AD DS что синхронизирует только ограниченный набор удостоверений из Azure AD, проверка подлинности и авторизация не поддерживается.
 
 ## <a name="prerequisites"></a>Предварительные условия
 
@@ -54,6 +55,10 @@ ms.locfileid: "80666849"
 1.  **Проверьте сетевое подключение службы файлов Azure путем подключения файловых ресурсов Azure с использованием ключа учетной записи хранения.**
 
     Чтобы убедиться, что ваша виртуальная машина и файловый ресурс настроены правильно, попробуйте установить общий доступ к файлу с помощью ключа учетной записи хранения. Дополнительные сведения см. в статье [Использование общей папки Azure в Windows](storage-how-to-use-files-windows.md).
+
+## <a name="regional-availability"></a>Доступность по регионам
+
+Проверка подлинности файлов Azure с помощью Azure AD DS доступна во [всех общедоступных регионах Azure](https://azure.microsoft.com/global-infrastructure/locations/).
 
 ## <a name="overview-of-the-workflow"></a>Обзор рабочего процесса
 
@@ -119,7 +124,7 @@ Set-AzStorageAccount -ResourceGroupName "<resource-group-name>" `
 
 Чтобы включить проверку подлинности Azure AD по протоколу SMB с Azure CLI, установите последнюю версию CLI (2.0.70 или более поздней версии). Дополнительные сведения об установке Azure CLI см. [в разделе установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 
-Чтобы создать новую учетную запись хранения, вызовите команду[AZ Storage Account Create](https://docs.microsoft.com/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-create)и `--enable-files-aadds` задайте для свойства **значение true**. В следующем примере не забудьте заменить значения заполнителей собственными значениями. (Если использовался предыдущий модуль предварительного просмотра, параметром для включения функции является **File-AAD**.)
+Чтобы создать новую учетную запись хранения, вызовите команду [AZ Storage Account Create](https://docs.microsoft.com/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-create)и задайте `--enable-files-aadds` для свойства **значение true**. В следующем примере не забудьте заменить значения заполнителей собственными значениями. (Если использовался предыдущий модуль предварительного просмотра, параметром для включения функции является **File-AAD**.)
 
 ```azurecli-interactive
 # Create a new storage account
@@ -142,4 +147,4 @@ az storage account update -n <storage-account-name> -g <resource-group-name> --e
 Дополнительные сведения о службе файлов Azure и использовании Azure AD через SMB см. в следующих ресурсах:
 
 - [Обзор поддержки проверки подлинности на основе удостоверений в службе файлов Azure для доступа по протоколу SMB](storage-files-active-directory-overview.md)
-- [Вопросы и ответы](storage-files-faq.md)
+- [Часто задаваемые вопросы](storage-files-faq.md)

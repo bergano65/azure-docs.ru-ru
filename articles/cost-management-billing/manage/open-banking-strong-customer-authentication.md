@@ -8,16 +8,16 @@ ms.service: cost-management-billing
 ms.topic: conceptual
 ms.date: 02/10/2020
 ms.author: banders
-ms.openlocfilehash: 1c4522bed191ef4142cc603bf0e1d22f086111ee
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 847e9b692ddbd7880c37d1068d61447dcccb9c80
+ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77200594"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83747151"
 ---
 # <a name="open-banking-psd2-and-strong-customer-authentication-sca-for-azure-customers"></a>Откройте банковские службы (PSD2) и надежную проверку подлинности клиентов (SCA) для клиентов Azure
 
-С 14 сентября 2019 года банки 31 страны [Европейской экономической зоны](https://en.wikipedia.org/wiki/European_Economic_Area) обязаны проверять личность лица, совершающего покупку через Интернет, прежде чем будет произведена оплата. Эта проверка требует многофакторной проверки подлинности, чтобы обеспечить безопасность и защиту Интернет-покупок. В некоторых странах сроки выполнения этого требования о проверке будут перенесены на более поздний срок. Дополнительные сведения см. в статье [Часто задаваемые вопросы о PSD2](https://support.microsoft.com/en-us/help/4517854?preview).
+С 14 сентября 2019 года банки 31-й страны [Европейской экономической зоны](https://en.wikipedia.org/wiki/European_Economic_Area) обязаны проверять личность лица, совершающего покупку через Интернет, прежде чем будет произведена оплата. Эта проверка требует многофакторной проверки подлинности, чтобы обеспечить безопасность и защиту Интернет-покупок. В некоторых странах и регионах сроки выполнения этого требования о проверке перенесены на более поздний срок. Дополнительные сведения см. в статье [Часто задаваемые вопросы о PSD2](https://support.microsoft.com/en-us/help/4517854?preview).
 
 ## <a name="what-psd2-means-for-azure-customers"></a>Что значит PSD2 для клиентов Azure
 

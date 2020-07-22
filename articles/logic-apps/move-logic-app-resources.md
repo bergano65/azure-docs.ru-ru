@@ -1,17 +1,17 @@
 ---
-title: Перенос приложений логики в подписки, группы ресурсов или регионы
+title: Перемещение приложений логики по подпискам, группам ресурсов или регионам
 description: Миграция приложений логики или учетных записей интеграции в другие подписки Azure, группы ресурсов или расположения (регионы)
 services: logic-apps
 ms.suite: integration
-ms.reviewer: klam, logicappspm
+ms.reviewer: logicappspm
 ms.topic: conceptual
 ms.date: 04/06/2020
-ms.openlocfilehash: 065bbc62d65d7e91728b10cd9f95b2e73ea03abc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d420f244b0d1e5ccf9a7aaa78c10f613cdbad38f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80878737"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85564272"
 ---
 # <a name="move-logic-app-resources-to-other-azure-resource-groups-regions-or-subscriptions"></a>Перемещение ресурсов приложения логики в другие группы ресурсов, регионы или подписки Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "80878737"
 
 * [Среду службы интеграции (ISE)](connect-virtual-network-vnet-isolated-environment-overview.md) можно переместить только в другую группу ресурсов, которая существует в том же регионе Azure или в подписке Azure. Невозможно переместить интегрированную среду сценариев в группу ресурсов, которая существует в другом регионе Azure или в подписке Azure. Кроме того, после такого перемещения необходимо обновить все ссылки на интегрированную среду сценариев в рабочих процессах приложения логики, учетных записях интеграции, подключениях и т. д.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * Та же подписка Azure, которая использовалась для создания приложения логики или учетной записи интеграции, которую вы хотите переместить.
 
@@ -108,6 +108,6 @@ ms.locfileid: "80878737"
 
 1. Откройте и измените шаблон, чтобы параметризовать необходимые значения для развертывания.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Перемещение ресурсов Azure в новые группы ресурсов или подписки](../azure-resource-manager/management/move-resource-group-and-subscription.md)

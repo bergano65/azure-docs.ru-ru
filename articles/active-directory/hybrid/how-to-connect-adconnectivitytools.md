@@ -6,17 +6,17 @@ author: billmath
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 4/25/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cd5340cd8c802df4ffbe0207b5401d2fee4e207e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d7eed3e06ab42671d9674ad3893a88dfe9817e22
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "64571118"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85360186"
 ---
 # <a name="troubleshoot-azure-ad-connectivity-with-the-adconnectivitytool-powershell-module"></a>Устранение неполадок с подключением к Azure AD с помощью модуля PowerShell Адконнективититул
 
@@ -47,7 +47,7 @@ ms.locfileid: "64571118"
 
 Что происходит на самом деле: Azure AD Connect вызывает функцию `Start-NetworkConnectivityDiagnosisTools`.  Эта функция вызывается в том случае, если проверка учетных данных не пройдена из-за проблемы с сетевым подключением.
 
-Наконец, каждый раз, когда этот инструмент вызывается с помощью мастера, создается подробный файл журнала. Журнал находится в папке **\<к:\програмдата\аадконнект\адконнективититул-Дата>-\<время>. log**
+Наконец, каждый раз, когда этот инструмент вызывается с помощью мастера, создается подробный файл журнала. Журнал находится в **к:\програмдата\аадконнект\адконнективититул- \<date> - \<time> . log**
 
 ## <a name="adconnectivitytools-post-installation"></a>Использование ADConnectivityTools после установки
 После установки Azure AD Connect можно использовать любую из функций в модуле PowerShell ADConnectivityTools.  
@@ -73,9 +73,9 @@ ms.locfileid: "64571118"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Next Steps
 - [Azure AD Connect: учетные записи и разрешения](reference-connect-accounts-permissions.md)
-- [Экспресс установки](how-to-connect-install-express.md)
+- [Приступая к работе с Azure AD Connect с использованием стандартных параметров](how-to-connect-install-express.md)
 - [Выборочная установка Azure AD Connect](how-to-connect-install-custom.md)
 - [Справочник по ADConnectivityTools](reference-connect-adconnectivitytools.md)
 

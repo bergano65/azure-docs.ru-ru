@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.openlocfilehash: 8278d9f2129ab8b213cf1b561f4b82b56dffc8da
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82131038"
 ---
 # <a name="create-and-provision-a-simulated-iot-edge-device-with-a-virtual-tpm-on-windows"></a>Создание и инициализация имитации устройства IoT Edge с помощью виртуального доверенного платформенного модуля в Windows
@@ -31,7 +31,7 @@ ms.locfileid: "82131038"
 > [!TIP]
 > В этой статье описывается тестирование автоматической подготовки с помощью аттестации TPM на виртуальных устройствах, но многие из них применяются и при использовании физического аппаратного обеспечения TPM.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * Компьютер для разработки Windows. В этой статье используется Windows 10.
 * Действующий Центр Интернета вещей.
@@ -65,7 +65,7 @@ ms.locfileid: "82131038"
 
 Руководства по использованию виртуальных устройств и отдельной регистрации:
 
-* [В](../iot-dps/quick-create-simulated-device.md)
+* [C](../iot-dps/quick-create-simulated-device.md)
 * [Java](../iot-dps/quick-create-simulated-device-tpm-java.md)
 * [C#](../iot-dps/quick-create-simulated-device-tpm-csharp.md)
 * [Node.js](../iot-dps/quick-create-simulated-device-tpm-node.md)
@@ -131,6 +131,6 @@ Get-Service iotedge
 iotedge list
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Процесс регистрации Службы подготовки устройств к добавлению в Центр Интернета вещей позволяет задать идентификатор устройства и теги двойников устройств параллельно с подготовкой нового устройства. Эти значения можно использовать для указания отдельных устройств или групп устройств с помощью автоматического управления устройствами. См. дополнительные сведения о развертывании и мониторинге модулей IoT Edge с поддержкой масштабирования с помощью [портала Azure](how-to-deploy-at-scale.md) или [Azure CLI](how-to-deploy-cli-at-scale.md).

@@ -1,20 +1,21 @@
 ---
-title: Использование образов общих виртуальных машин для создания масштабируемого набора в Azure
+title: Использование образов общих виртуальных машин для создания масштабируемого набора в Azure CLI
 description: Узнайте, как с помощью Azure CLI создать общие образы виртуальных машин для развертывания масштабируемых наборов виртуальных машин в Azure.
 author: axayjo
 tags: azure-resource-manager
 ms.service: virtual-machine-scale-sets
+ms.subservice: imaging
 ms.topic: conceptual
 ms.date: 05/06/2019
 ms.author: akjosh
 ms.reviewer: cynthn
 ms.custom: ''
-ms.openlocfilehash: 30a376755bf0041d5d6f5cb289f5aecd1a734dc5
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
+ms.openlocfilehash: cdcd11b6bd9c773e8018ee303564fff6abd098a6
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82792808"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86494910"
 ---
 # <a name="create-and-use-shared-images-for-virtual-machine-scale-sets-with-the-azure-cli-20"></a>Создание и использование общих образов для масштабируемых наборов виртуальных машин с помощью Azure CLI 2.0
 

@@ -3,12 +3,11 @@ title: Функции шаблонов — развертывание
 description: Описывает функции, используемые в шаблоне Azure Resource Manager для получения сведений о развертывании.
 ms.topic: conceptual
 ms.date: 04/27/2020
-ms.openlocfilehash: a52b4eae9df4ad3fdf9e481ee0a40aac48f6665b
-ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
-ms.translationtype: MT
+ms.openlocfilehash: e8240c05cba82d5563c4b327ecbc65a9c358720f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82203800"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84677820"
 ---
 # <a name="deployment-functions-for-arm-templates"></a>Функции развертывания для шаблонов ARM
 
@@ -16,8 +15,8 @@ ms.locfileid: "82203800"
 
 * [развертывания](#deployment)
 * [PXE](#environment)
-* [Вход](#parameters)
-* [среды](#variables)
+* [parameters](#parameters)
+* [variables](#variables)
 
 Сведения о получении значений из ресурсов, групп ресурсов или подписки см. в разделе [Функции для работы с ресурсами](template-functions-resource.md).
 
@@ -103,15 +102,15 @@ ms.locfileid: "82203800"
 }
 ```
 
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>Комментарии
 
 Вы можете использовать deployment() для ссылки на другой шаблон в зависимости от URI родительского шаблона.
 
 ```json
-"variables": {  
-    "sharedTemplateUrl": "[uri(deployment().properties.templateLink.uri, 'shared-resources.json')]"  
+"variables": {
+    "sharedTemplateUrl": "[uri(deployment().properties.templateLink.uri, 'shared-resources.json')]"
 }
-```  
+```
 
 Если вы повторно развертываете шаблон из журнала развертывания на портале, шаблон развернется в виде локального файла. Свойство `templateLink` не возвращается в функции развертывания. Если в шаблоне применяется `templateLink` для ссылки на другой шаблон, не используйте портал для повторного развертывания. Вместо этого используйте команды, с помощью которых вы развернули исходный шаблон.
 
@@ -121,7 +120,7 @@ ms.locfileid: "82203800"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "resources": [],
     "outputs": {
@@ -140,7 +139,7 @@ ms.locfileid: "82203800"
   "name": "deployment",
   "properties": {
     "template": {
-      "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+      "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
       "contentVersion": "1.0.0.0",
       "resources": [],
       "outputs": {
@@ -264,7 +263,7 @@ ms.locfileid: "82203800"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание |
 |:--- |:--- |:--- |:--- |
 | parameterName |Да |строка |Имя параметра, который требуется вернуть. |
 
@@ -272,12 +271,12 @@ ms.locfileid: "82203800"
 
 Значение указанного параметра.
 
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>Комментарии
 
 Как правило, параметры используются, чтобы задать значения ресурсов. В следующем примере значению параметра задается имя веб-сайта, переданное во время развертывания.
 
 ```json
-"parameters": { 
+"parameters": {
   "siteName": {
       "type": "string"
   }
@@ -298,7 +297,7 @@ ms.locfileid: "82203800"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "stringParameter": {
@@ -351,7 +350,7 @@ ms.locfileid: "82203800"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | stringOutput | Строка | вариант 1 |
 | intOutput | Int | 1 |
@@ -369,7 +368,7 @@ ms.locfileid: "82203800"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | Type | Описание |
+| Параметр | Обязательно | type | Описание: |
 |:--- |:--- |:--- |:--- |
 | variableName |Да |Строка |Имя переменной, которую необходимо вернуть. |
 
@@ -377,7 +376,7 @@ ms.locfileid: "82203800"
 
 Значение указанной переменной.
 
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>Комментарии
 
 Как правило, переменные используются, чтобы упростить шаблон за счет создания сложных значений (единожды). В примере ниже создается уникальное имя для учетной записи хранения.
 
@@ -407,7 +406,7 @@ ms.locfileid: "82203800"
 
 ```json
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {},
     "variables": {
@@ -443,7 +442,7 @@ ms.locfileid: "82203800"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| Имя | Тип | Значение |
+| Имя | Type | Значение |
 | ---- | ---- | ----- |
 | exampleOutput1 | Строка | myVariable |
 | exampleOutput2 | Массив | [1, 2, 3, 4] |

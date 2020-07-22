@@ -6,19 +6,18 @@ ms.author: lazinnat
 author: lazinnat
 ms.date: 07/11/2019
 ms.openlocfilehash: 2bc0017d71e159ac490041494bcf37db035ef421
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75651466"
 ---
 # <a name="reference-deployment-template-artifact"></a>Ссылка: артефакт шаблона развертывания
 
-Эта статья представляет собой справочник по артефакту *mainTemplate. JSON* в управляемых приложениях Azure. Дополнительные сведения о создании шаблона развертывания см. в разделе [шаблоны Azure Resource Manager](../templates/template-syntax.md).
+Эта статья содержит справочник по *mainTemplate.js* артефакту в управляемых приложениях Azure. Дополнительные сведения о создании шаблона развертывания см. в разделе [шаблоны Azure Resource Manager](../templates/template-syntax.md).
 
 ## <a name="deployment-template"></a>Шаблон развертывания
 
-В следующем JSON показан пример файла *mainTemplate. JSON* для управляемых приложений Azure:
+В следующем примере JSON показан пример *mainTemplate.js* файла для управляемых приложений Azure:
 
 ```json
 {
@@ -187,7 +186,7 @@ ms.locfileid: "75651466"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Учебник. Создание управляемого приложения с настраиваемыми действиями и ресурсами](tutorial-create-managed-app-with-custom-provider.md)
 - [Ссылка: артефакт элементов пользовательского интерфейса](reference-createuidefinition-artifact.md)

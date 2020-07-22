@@ -8,11 +8,10 @@ ms.topic: conceptual
 ms.date: 09/18/2019
 ms.author: cherylmc
 ms.openlocfilehash: 375d2f9d3b455c0495c69f2b23d62b1ab6522710
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79280889"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84710462"
 ---
 # <a name="expressroute-connectivity-models"></a>Модели подключения ExpressRoute
 Вы можете создать между локальной сетью и облаком Майкрософт подключение трех разных типов: [совместное размещение в Cloud Exchange](#CloudExchange), [Ethernet-подключение типа "точка — точка"](#Ethernet) и [подключение типа "любой к любому" (IPVPN)](#IPVPN). Поставщики услуг подключения могут предлагать одну или несколько моделей подключения. Обратитесь к поставщику услуг подключения и подберите наиболее подходящую вам модель.

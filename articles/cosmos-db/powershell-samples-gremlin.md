@@ -3,15 +3,15 @@ title: Примеры Azure PowerShell для Azure Cosmos DB. API Gremlin
 description: Получение примеров Azure PowerShell для выполнения разных типичных задач в учетных записях API Gremlin Azure Cosmos DB
 author: markjbrown
 ms.service: cosmos-db
-ms.topic: sample
-ms.date: 05/13/2020
+ms.topic: how-to
+ms.date: 06/12/2020
 ms.author: mjbrown
-ms.openlocfilehash: 175e527e46bc15b894f7beec7c6c95d56e8c6d17
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 62036a507061a956febb1eb63e6607abcce7467c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83649737"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85563880"
 ---
 # <a name="azure-powershell-samples-for-azure-cosmos-db-gremlin-api"></a>Примеры Azure PowerShell для Azure Cosmos DB с API Gremlin
 
@@ -20,7 +20,7 @@ ms.locfileid: "83649737"
 > [!NOTE]
 > В примерах используются командлеты управления [Az.CosmosDB](https://docs.microsoft.com/powershell/module/az.cosmosdb). Регулярно проверяйте наличие обновлений для `Az.CosmosDB`.
 
-| | |
+|Задача | Описание |
 |---|---|
 |[Создание учетной записи, базы данных и графа](scripts/powershell/gremlin/ps-gremlin-create.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создание учетной записи Azure Cosmos, базы данных и графа. |
 |[Получение списка либо возврат баз данных или графов](scripts/powershell/gremlin/ps-gremlin-list-get.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Получение списка либо возврат баз данных или графов. |
@@ -30,4 +30,5 @@ ms.locfileid: "83649737"
 |[Изменение приоритета отработки отказа или запуск отработки отказа](scripts/powershell/common/ps-account-failover-priority-update.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Изменяет приоритет региональной отработки отказа для учетной записи Azure Cosmos или позволяет вручную запустить отработку отказа. |
 |[Ключи или строки подключения учетной записи](scripts/powershell/common/ps-account-keys-connection-strings.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Получает первичный и вторичный ключи, строки подключения или воссоздает ключ учетной записи для учетной записи Azure Cosmos. |
 |[Создание учетной записи Cosmos с правилами брандмауэра для IP-адресов](scripts/powershell/common/ps-account-firewall-create.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создает учетную запись Azure Cosmos с активными правилами брандмауэра для IP-адресов. |
+|[Блокировка ресурсов от удаления](scripts/powershell/gremlin/powershell-gremlin-lock.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Запрет на удаление ресурсов с помощью блокировок ресурсов. |
 |||

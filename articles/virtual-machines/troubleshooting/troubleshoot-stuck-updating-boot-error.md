@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/09/2018
 ms.author: genli
-ms.openlocfilehash: 8a47131cb4f19cce1664eafa50c67ab1a1171e67
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a41c1f634c030106dd6936676010fea32da8d436
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77919436"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86084024"
 ---
 # <a name="azure-vm-startup-is-stuck-at-windows-update"></a>Зависание виртуальной машины при запуске во время обновления Windows
 
@@ -48,14 +48,19 @@ ms.locfileid: "77919436"
 
 4. Откройте командную строку с повышенными привилегиями (Запуск от имени администратора). Выполните следующую команду, чтобы получить список пакетов обновления, которые находятся на прилагаемом диске ОС:
 
-        dism /image:<Attached OS disk>:\ /get-packages > c:\temp\Patch_level.txt
+    ```console
+    dism /image:<Attached OS disk>:\ /get-packages > c:\temp\Patch_level.txt
+    ```
 
     Например, если подключенный диск ОС является диском F, выполните следующую команду:
 
-        dism /image:F:\ /get-packages > c:\temp\Patch_level.txt
+    ```console
+    dism /image:F:\ /get-packages > c:\temp\Patch_level.txt
+    ```
+
 5. Откройте файл C:\temp\Patch_level.txt, а затем прочтите его снизу вверх. Найдите обновление, которое находится в состоянии **ожидания установки** или **ожидания удаления**.  Ниже приведен пример состояния обновления.
 
-     ```
+    ```
     Package Identity : Package_for_RollupFix~31bf3856ad364e35~amd64~~17134.345.1.5
     State : Install Pending
     Release Type : Security Update
@@ -66,7 +71,7 @@ ms.locfileid: "77919436"
     ```
     dism /Image:<Attached OS disk>:\ /Remove-Package /PackageName:<PACKAGE NAME TO DELETE>
     ```
-    Пример: 
+    Пример. 
 
     ```
     dism /Image:F:\ /Remove-Package /PackageName:Package_for_RollupFix~31bf3856ad364e35~amd64~~17134.345.1.5

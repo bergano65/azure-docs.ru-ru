@@ -5,15 +5,15 @@ description: В этой статье показано, как настроит�
 services: load-balancer
 author: asudbring
 ms.service: load-balancer
-ms.topic: article
+ms.topic: how-to
 ms.date: 09/24/2019
 ms.author: allensu
-ms.openlocfilehash: 5fd68f4559420ca688b3f4d6f6d66ee52db5191e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: bd429ee5fc5564c55e6a9c758e1c53e821060f0e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74225441"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84809527"
 ---
 # <a name="configure-load-balancing-and-outbound-rules-in-standard-load-balancer-by-using-azure-powershell"></a>Настройка балансировки нагрузки и правил исходящего трафика в Load Balancer (цен. категория "Стандартный") с помощью Azure PowerShell
 
@@ -160,7 +160,7 @@ New-AzLoadBalancer -Name lb -Sku Standard -ResourceGroupName myresourcegroupoutb
   Remove-AzResourceGroup -Name myresourcegroupoutbound
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 В этой статье вы создали стандартную подсистему балансировки нагрузки, настроенную для входящих и исходящих правил трафика балансировщика нагрузки, и настроили проверку работоспособности для виртуальных машин в пуле серверной части. 
 
 Чтобы узнать больше, перейдите к [руководствам для Azure Load Balancer](tutorial-load-balancer-standard-public-zone-redundant-portal.md).

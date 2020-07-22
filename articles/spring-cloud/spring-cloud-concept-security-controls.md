@@ -6,14 +6,14 @@ ms.author: brendm
 ms.service: spring-cloud
 ms.topic: conceptual
 ms.date: 04/23/2020
-ms.openlocfilehash: 5b459ef57d0e8a22ce1cd53f56c44d31e53c7c93
-ms.sourcegitcommit: 3abadafcff7f28a83a3462b7630ee3d1e3189a0e
+ms.openlocfilehash: 8d002fae52fec1fafb2ad8e63bd8e3b779a1537c
+ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82594990"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85984829"
 ---
-# <a name="security-controls-for-azure-spring-cloud-service"></a>Средства управления безопасностью для облачной службы Azure весны
+# <a name="security-controls-for-azure-spring-cloud-service"></a>Средства управления безопасностью для службы Azure Spring Cloud
 Средства управления безопасностью встроены в облачную службу Azure весны.
 
 Управление безопасностью — это качество или функция службы Azure, которая предоставляет службе возможность предотвращать, обнаруживать и отвечать на уязвимости системы безопасности.  Для каждого элемента управления используется *значение Yes* или *No* , чтобы указать, используется ли в настоящее время служба.  Для элемента управления, который неприменим к службе, используется *N/A* . 
@@ -26,3 +26,8 @@ ms.locfileid: "82594990"
 | Временное шифрование | Да | Общедоступные конечные точки пользовательского приложения по умолчанию используют HTTPS для входящего трафика. |  |
 | Вызовы API в зашифрованном виде | Да | Вызовы управления для настройки облачной службы Azure весны выполняются через вызовы Azure Resource Manager по протоколу HTTPS. | [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/) |
 
+**Управление безопасностью доступа к сети**
+
+| Управление безопасностью | Да/нет | Примечания | Документация |
+|:-------------|:-------|:-------------------------------|:----------------------|
+| Тег службы | Да | Используйте тег службы **азуреспрингклауд** , чтобы определить исходящие элементы управления доступом к сети в [группах безопасности сети](https://docs.microsoft.com/azure/virtual-network/security-overview#security-rules) или [брандмауэре Azure](https://docs.microsoft.com/azure/firewall/service-tags), чтобы разрешить трафик в облачные приложения Azure весны.<br><br>*Примечание.* Сейчас только новый экземпляр облачной службы Azure весны, созданный после 2020/07/07, поддерживает тег службы **азуреспрингклауд** . | [Теги служб](https://docs.microsoft.com/azure/virtual-network/service-tags-overview) |

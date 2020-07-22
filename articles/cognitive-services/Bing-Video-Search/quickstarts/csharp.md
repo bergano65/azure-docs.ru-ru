@@ -8,18 +8,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-video-search
 ms.topic: quickstart
-ms.date: 12/09/2019
+ms.date: 05/22/2020
 ms.author: aahi
-ms.openlocfilehash: 28c900adadf7d942c9e331e7b77a369db64acf55
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: d9d69d4550a5cd4a162795261b7ab3d8b59b7297
+ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75382707"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83848946"
 ---
 # <a name="quickstart-search-for-videos-using-the-bing-video-search-rest-api-and-c"></a>Краткое руководство. Поиск видео с помощью REST API Поиска видео Bing и C#
 
-Из этого краткого руководства вы узнаете, как сделать первый вызов API Bing для поиска видео и просмотреть результаты поиска в ответе JSON. Это простое приложение C# отправляет HTTP-запрос для поиска видео к API и выводит ответ. Хотя это приложение создается на языке C#, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
+Используйте это краткое руководство, чтобы выполнить вызов API Поиска видео Bing. Это простое приложение C# отправляет HTTP-запрос для поиска видео к API и выводит ответ в формате JSON. Хотя это приложение написано на C#, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
 Исходный код, используемый в данном примере, вместе с дополнительной обработкой ошибок, функциями и аннотациями кода можно получить на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/dotnet/Search/BingVideoSearchv7.cs).
 
@@ -32,7 +32,7 @@ ms.locfileid: "75382707"
 
 ## <a name="create-and-initialize-a-project"></a>Создание и инициализация проекта
 
-1. Создайте консольное решение в Visual Studio. Затем добавьте следующие пространства имен в основной файл кода.
+1. Создайте консольное решение в Visual Studio. Затем добавьте следующие пространства имен в основной файл кода:
 
     ```csharp
     using System;
@@ -42,7 +42,7 @@ ms.locfileid: "75382707"
     using System.Collections.Generic;
     ```
 
-2. Добавьте переменные для вашего ключа подписки, конечной точки и условия поиска. В качестве `uriBase` может быть глобальная конечная точка, приведенная ниже, или конечная точка [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемая на портале Azure для вашего ресурса.
+2. Добавьте переменные для вашего ключа подписки, конечной точки и условия поиска. Для значения `uriBase` вы можете использовать глобальную конечную точку, указанную в коде ниже, или конечную точку [личного поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), которая отображается на портале Azure для вашего ресурса.
 
     ```csharp
     const string accessKey = "enter your key here";
@@ -50,26 +50,27 @@ ms.locfileid: "75382707"
     const string searchTerm = "kittens";
     ```
 
-### <a name="create-a-struct-to-format-the-bing-video-search-api-response"></a>Создание структуры для форматирования ответа API Поиска видео Bing
+## <a name="create-a-struct-to-format-the-bing-video-search-api-response"></a>Создание структуры для форматирования ответа API Поиска видео Bing
 
-1. Определите структуру `SearchResult`, которая будет содержать результаты поиска изображения и сведения о заголовке JSON.
+Определите структуру `SearchResult`, которая будет содержать результаты поиска изображения и сведения о заголовке JSON.
 
-    ```csharp
-    struct SearchResult
-        {
-            public String jsonResult;
-            public Dictionary<String, String> relevantHeaders;
-        }
-    ```
+```csharp
+struct SearchResult
+    {
+        public String jsonResult;
+        public Dictionary<String, String> relevantHeaders;
+    }
+```
 
 ## <a name="create-and-handle-a-video-search-request"></a>Создание и обработка запроса на поиск видео
 
-Создайте метод `BingVideoSearch` для выполнения вызовов к API и установите структуру `SearchResult`, созданную ранее, в качестве возвращаемого типа. В методе выполните следующие действия.
+1. Создайте метод `BingVideoSearch` для выполнения вызовов к API и определите структуру `SearchResult`, созданную ранее, в качестве возвращаемого типа. 
 
-1. Создайте URI для поискового запроса. Обратите внимание, что строку с поисковым запросом toSearch нужно преобразовать перед добавлением к строке.
+   Добавьте код в этот метод, выполнив следующие действия.
 
-    ```csharp
-    
+1. Создайте URI для поискового запроса. Отформатируйте условие поиска `toSearch`, прежде чем добавлять его в строку.
+
+    ```csharp    
     static SearchResult BingVideoSearch(string toSearch){
     
         var uriQuery = uriBase + "?q=" + Uri.EscapeDataString(toSearch);
@@ -105,7 +106,7 @@ ms.locfileid: "75382707"
     return searchResult;
     ```
 
-2. После этого можете вывести ответ.
+2. Выполните вывод ответа.
 
     ```csharp
     Console.WriteLine(result.jsonResult);

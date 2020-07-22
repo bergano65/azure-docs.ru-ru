@@ -4,10 +4,9 @@ description: Просмотрите и отфильтруйте рекоменд
 ms.topic: article
 ms.date: 04/03/2019
 ms.openlocfilehash: 10d7b16864f8e449dc51e870c5ff9f20d8c0dc87
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75422375"
 ---
 # <a name="view-azure-advisor-recommendations-that-matter-to-you"></a>Ознакомьтесь с рекомендациями помощника по Azure, которые важны для вас
@@ -83,7 +82,7 @@ ms.locfileid: "75422375"
  
      ![Меню фильтрации Advisor](./media/view-recommendations/activate-postponed-2.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье объясняется, как можно просмотреть рекомендации, которые важны для вас в помощнике по Azure. Дополнительные сведения о Помощнике см. в таких разделах. 
 

@@ -21,6 +21,8 @@
       href: front-door-tutorial-geo-filtering.md
     - name: Настройка обработчика правил
       href: front-door-tutorial-rules-engine.md
+    - name: Добавление заголовков безопасности с помощью обработчика правил
+      href: front-door-security-headers.md
     - name: Брандмауэр веб-приложения и Front Door
       href: front-door-waf.md
 - name: Примеры

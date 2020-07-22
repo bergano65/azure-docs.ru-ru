@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 02/24/2017
 ms.author: mimckitt
 ms.openlocfilehash: 9ae486ee522982b116af58cfb7cbfbca66a7ef4a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81458749"
 ---
 # <a name="how-to-set-up-key-vault-for-virtual-machines-with-the-azure-cli"></a>Настройка Key Vault для виртуальных машин с помощью интерфейса командной строки Azure
@@ -52,5 +52,5 @@ az keyvault update -n myKeyVault -g myResourceGroup --set properties.enabledForD
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Сведения о других параметрах, которые можно настроить при создании Key Vault с помощью шаблонов, см. в разделе [Create a Key Vault](https://azure.microsoft.com/documentation/templates/101-key-vault-create/) (Создание Key Vault).

@@ -6,13 +6,12 @@ ms.author: mhopkins
 ms.date: 08/21/2019
 ms.service: storage
 ms.subservice: common
-ms.topic: conceptual
-ms.openlocfilehash: 997aa9d96f2f52331865fd15d97443d74bb8bc1f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.topic: how-to
+ms.openlocfilehash: eb13dbb7e4cfbbb1b2ea42ea1753e7615df03a7d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80398017"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85512171"
 ---
 # <a name="use-the-azure-storage-emulator-for-development-and-testing"></a>Использование эмулятора хранения Azure для разработки и тестирования
 
@@ -175,16 +174,16 @@ http://127.0.0.1:10000/devstoreaccount1/sascontainer?sv=2012-02-12&se=2015-07-08
 
 `AzureStorageEmulator.exe [start] [stop] [status] [clear] [init] [help]`
 
-### <a name="options"></a>Элемент Options
+### <a name="options"></a>Параметры
 
 Чтобы просмотреть список параметров, в командной строке введите `/help` .
 
-| Параметр | Описание | Get-Help | Аргументы |
+| Параметр | Описание: | Команда | Аргументы |
 | --- | --- | --- | --- |
 | **Start** |Запускает эмулятор хранения. |`AzureStorageEmulator.exe start [-inprocess]` |*-Reprocess*: Запуск эмулятора в текущем процессе вместо создания нового процесса. |
 | **Остановить** |Останавливает эмулятор хранения. |`AzureStorageEmulator.exe stop` | |
 | **Состояние** |Печатает состояние эмулятора хранения. |`AzureStorageEmulator.exe status` | |
-| **Открытым** |Очищает данные во всех службах, указанных в командной строке. |`AzureStorageEmulator.exe clear [blob] [table] [queue] [all]` |*blob*: удаляет данные о больших двоичных объектах. <br/>*queue*: удаляет данные об очередях. <br/>*table*: удаляет данные о таблицах. <br/>*all*: удаляет все данные во всех службах. |
+| **Очистить** |Очищает данные во всех службах, указанных в командной строке. |`AzureStorageEmulator.exe clear [blob] [table] [queue] [all]` |*blob*: удаляет данные о больших двоичных объектах. <br/>*queue*: удаляет данные об очередях. <br/>*table*: удаляет данные о таблицах. <br/>*all*: удаляет все данные во всех службах. |
 | **Init** |Выполняет однократную инициализацию для настройки эмулятора. |<code>AzureStorageEmulator.exe init [-server serverName] [-sqlinstance instanceName] [-forcecreate&#124;-skipcreate] [-reserveports&#124;-unreserveports] [-inprocess]</code> |*-server serverName\instanceName*: указывает сервер для размещения экземпляра SQL. <br/>*-sqlinstance имя_экземпляра*: указывает имя экземпляра SQL, используемого на сервере по умолчанию. <br/>*-forcecreate*: принудительно создает базу данных SQL, даже если она уже существует. <br/>*-skipcreate*: пропускает создание базы данных SQL. Имеет приоритет над -forcecreate.<br/>*-reserveports*: пытается зарезервировать порты HTTP, связанные со службами.<br/>*-unreserveports*: пытается отменить резервирование портов HTTP, связанных со службами. Имеет приоритет над -reserveports.<br/>*-inprocess*: выполняет инициализацию в текущем процессе вместо порождения нового процесса. При изменении резервирований портов нужно запустить текущий процесс с повышенными привилегиями. |
 
 ## <a name="differences-between-the-storage-emulator-and-azure-storage"></a>Различия между эмулятором хранения и службой хранилища Azure
@@ -315,7 +314,7 @@ http://127.0.0.1:10000/devstoreaccount1/sascontainer?sv=2012-02-12&se=2015-07-08
 
 ### <a name="version-31"></a>Версия 3.1
 
-* Теперь геоизбыточное хранилище с доступом для чтения (RA-GRS) поддерживается и в эмуляторе хранения. Интерфейсы `Get Blob Service Stats`API `Get Queue Service Stats`, и `Get Table Service Stats` поддерживаются для вторичной учетной записи и всегда возвращают значение элемента ответа ластсинктиме как текущее время в соответствии с базовой базой данных SQL. Для программного доступа к вторичному расположению с помощью эмулятора хранения используйте клиентскую библиотеку хранилища для .NET 3.2 или более поздней версии. Подробнее см. в справочнике по клиентской библиотеке хранилища Microsoft Azure для .NET.
+* Теперь геоизбыточное хранилище с доступом для чтения (RA-GRS) поддерживается и в эмуляторе хранения. `Get Blob Service Stats` `Get Queue Service Stats` Интерфейсы API, и `Get Table Service Stats` поддерживаются для вторичной учетной записи и всегда возвращают значение элемента ответа ластсинктиме как текущее время в соответствии с базовой базой данных SQL. Для программного доступа к вторичному расположению с помощью эмулятора хранения используйте клиентскую библиотеку хранилища для .NET 3.2 или более поздней версии. Подробнее см. в справочнике по клиентской библиотеке хранилища Microsoft Azure для .NET.
 
 ### <a name="version-30"></a>Версия 3.0
 

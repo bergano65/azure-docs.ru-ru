@@ -6,10 +6,9 @@ ms.author: flborn
 ms.date: 02/11/2020
 ms.topic: how-to
 ms.openlocfilehash: fd510f90887353d7486908ee076d5308db72c59d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81687071"
 ---
 # <a name="get-service-access-tokens"></a>Получение маркеров доступа к службе
@@ -24,7 +23,7 @@ ms.locfileid: "81687071"
 
 ## <a name="token-service-rest-api"></a>REST API службы маркеров
 
-Для создания маркеров доступа *Служба маркеров безопасности* предоставляет один REST API. URL-адрес для службы STS-обслуживания — HTTPS\/:/STS.mixedreality.Azure.com.
+Для создания маркеров доступа *Служба маркеров безопасности* предоставляет один REST API. URL-адрес для службы STS-обслуживания — HTTPS: \/ /STS.mixedreality.Azure.com.
 
 ### <a name="get-token-request"></a>Запрос "получение токена"
 
@@ -44,7 +43,7 @@ ms.locfileid: "81687071"
 |-----------|:-----------|:-----------|
 | 200 | AccessToken: строка | Успех |
 
-| Заголовок | Назначение |
+| Заголовок | Цель |
 |--------|:------|
 | MS-КП | Это значение можно использовать для трассировки вызова в службе |
 

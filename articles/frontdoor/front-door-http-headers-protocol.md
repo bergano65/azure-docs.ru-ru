@@ -12,10 +12,9 @@ ms.workload: infrastructure-services
 ms.date: 09/10/2018
 ms.author: sharadag
 ms.openlocfilehash: bb1de5d51afd01cf0aa519f12aa3665bee804efd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79471682"
 ---
 # <a name="protocol-support-for-http-headers-in-azure-front-door"></a>Поддержка протокола для заголовков HTTP в передней дверце Azure
@@ -55,7 +54,7 @@ ms.locfileid: "79471682"
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Создание передней дверцы](quickstart-create-front-door.md)
+- [Создание профиля Front Door](quickstart-create-front-door.md)
 - [Принцип работы передней дверцы](front-door-routing-architecture.md)
 
 <!--Image references-->

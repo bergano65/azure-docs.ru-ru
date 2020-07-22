@@ -6,23 +6,23 @@ ms.topic: article
 ms.date: 02/19/2020
 ms.author: pabouwer
 zone_pivot_groups: client-operating-system
-ms.openlocfilehash: d1d02cb42a86023e5c341daab678c39f22f75dda
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 5d47bb7f1f9c1ce39239d6f6ee5826a60ce1741a
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80877700"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86244177"
 ---
 # <a name="install-and-use-istio-in-azure-kubernetes-service-aks"></a>Установка и использование Istio в Службе Azure Kubernetes (AKS)
 
 Сетка [Istio][istio-github] — это решение с открытым исходным кодом, которое предоставляет набор ключевых функций для микрослужб в кластере Kubernetes, включая управление трафиком, удостоверения служб и защиту служб, а также применение политик и возможность мониторинга. См. дополнительные сведения об [Istio][istio-docs-concepts].
 
-В этой статье описано, как установить Istio. Двоичный `istioctl` файл клиента Istio устанавливается на клиентский компьютер, а компоненты Istio устанавливаются в кластер KUBERNETES на AKS.
+В этой статье описано, как установить Istio. `istioctl`Двоичный файл клиента Istio устанавливается на клиентский компьютер, а компоненты Istio устанавливаются в кластер Kubernetes на AKS.
 
 > [!NOTE]
-> Приведенные ниже инструкции ссылаются на `1.4.0`версию Istio.
+> Приведенные ниже инструкции ссылаются на версию Istio `1.4.0` .
 >
-> Выпуски Istio `1.4.x` были протестированы группой Istio по сравнению с `1.13`версиями `1.14`Kubernetes `1.15`,,. Дополнительные версии Istio можно найти в разделе [GitHub-Istio][istio-github-releases], сведения о каждой из выпусков в [Istio News][istio-release-notes] и поддерживаемых версиях Kubernetes в [Istio общие вопросы и ответы][istio-faq].
+> `1.4.x`Выпуски Istio были протестированы группой Istio по сравнению с версиями Kubernetes `1.13` , `1.14` , `1.15` . Дополнительные версии Istio можно найти в разделе [GitHub-Istio][istio-github-releases], сведения о каждой из выпусков в [Istio News][istio-release-notes] и поддерживаемых версиях Kubernetes в [Istio общие вопросы и ответы][istio-faq].
 
 Вы узнаете, как выполнять следующие задачи:
 
@@ -33,9 +33,9 @@ ms.locfileid: "80877700"
 > * Доступ к надстройкам
 > * Удаление Istio из AKS
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
-В действиях, описанных в этой статье, предполагается, что вы создали `1.13` кластер AKS (Kubernetes и выше, с включенным RBAC `kubectl` ) и установили подключение к кластеру. Дополнительные сведения см. в [кратком руководстве по AKS][aks-quickstart].
+В действиях, описанных в этой статье, предполагается, что вы создали кластер AKS (Kubernetes `1.13` и выше, с включенным RBAC) и установили `kubectl` Подключение к кластеру. Дополнительные сведения см. в [кратком руководстве по AKS][aks-quickstart].
 
 Убедитесь, что вы прочитали документацию по [производительности и масштабируемости Istio](https://istio.io/docs/concepts/performance-and-scalability/) , чтобы понять требования к дополнительным ресурсам для запуска Istio в кластере AKS. Требования к основному и оперативной памяти будут зависеть от конкретной рабочей нагрузки. Выберите подходящее количество узлов и размер виртуальной машины для настройки.
 
@@ -63,7 +63,7 @@ ms.locfileid: "80877700"
 
 Мы будем устанавливать [Grafana][grafana] и [киали][kiali] в рамках нашей Istio установки. Grafana предоставляет панели мониторинга для аналитики и мониторинга, а Киали — панель мониторинга сетки служб. В нашей установке каждому из этих компонентов требуются учетные данные, которые должны быть предоставлены в качестве [секрета][kubernetes-secrets].
 
-Прежде чем можно будет установить компоненты Istio, необходимо создать секреты для Grafana и Киали. Эти секреты должны быть установлены в `istio-system` пространство имен, которое будет использоваться Istio, поэтому необходимо также создать пространство имен. Необходимо использовать `--save-config` параметр при создании пространства имен с помощью `kubectl create` , чтобы установщик Istio мог работать `kubectl apply` с этим объектом в будущем.
+Прежде чем можно будет установить компоненты Istio, необходимо создать секреты для Grafana и Киали. Эти секреты должны быть установлены в `istio-system` пространство имен, которое будет использоваться Istio, поэтому необходимо также создать пространство имен. Необходимо использовать `--save-config` параметр при создании пространства имен с помощью, `kubectl create` чтобы установщик Istio мог работать `kubectl apply` с этим объектом в будущем.
 
 ```console
 kubectl create namespace istio-system --save-config
@@ -91,7 +91,7 @@ kubectl create namespace istio-system --save-config
 
 Теперь, когда мы успешно создали секреты Grafana и Киали в нашем кластере AKS, пришло время установить компоненты Istio. 
 
-Подход к установке [Helm][helm] для Istio будет устаревшим в будущем. Новый подход к установке для Istio использует двоичный `istioctl` файл клиента, [профили конфигурации Istio][istio-configuration-profiles], а также новую [спецификацию и API-интерфейс Istio плоскости управления][istio-control-plane]. Этот новый подход мы будем использовать для установки Istio.
+Подход к установке [Helm][helm] для Istio будет устаревшим в будущем. Новый подход к установке для Istio использует `istioctl` двоичный файл клиента, [профили конфигурации Istio][istio-configuration-profiles], а также новую [спецификацию и API-интерфейс Istio плоскости управления][istio-control-plane]. Этот новый подход мы будем использовать для установки Istio.
 
 > [!NOTE]
 > Istio в настоящее время необходимо запланировать запуск на узлах Linux. Если в кластере есть узлы Windows Server, необходимо убедиться, что Istio Pods планируется запускать только на узлах Linux. Мы будем использовать [селекторы узлов][kubernetes-node-selectors] , чтобы убедиться, что для модулей Pod запланированы правильные узлы.
@@ -134,7 +134,7 @@ spec:
       enabled: true
 ```
 
-Установите istio с помощью `istioctl apply` команды и приведенного `istio.aks.yaml` выше файла спецификации плоскости управления istio следующим образом:
+Установите istio с помощью `istioctl apply` команды и приведенного выше `istio.aks.yaml` файла спецификации плоскости управления istio следующим образом:
 
 ```console
 istioctl manifest apply -f istio.aks.yaml --logtostderr --set installPackagePath=./install/kubernetes/operator/charts
@@ -248,7 +248,7 @@ kubectl get svc --namespace istio-system --output wide
 В следующем примере выходных данных показаны службы, которые должны быть запущены:
 
 - Службы `istio-*`
-- `jaeger-*`, `tracing`и `zipkin` службы трассировки надстроек
+- `jaeger-*`, `tracing` и `zipkin` службы трассировки надстроек
 - `prometheus`Служба дополнительных метрик
 - `grafana`служба панели мониторинга надстроек и мониторинга
 - `kiali`служба панели мониторинга для сетки дополнительных служб
@@ -282,10 +282,10 @@ kubectl get pods --namespace istio-system
 
 В следующем примере выходных данных представлены запущенные группы pod:
 
-- `istio-*` модули Pod
-- модуль `prometheus-*` метрик для надстройки
-- модуль `grafana-*` мониторинга надстроек и наблюдения за надстройками
-- модуль `kiali` панели мониторинга для сетки службы надстройки
+- модули Pod `istio-*`
+- `prometheus-*`модуль метрик для надстройки
+- `grafana-*`модуль мониторинга надстроек и наблюдения за надстройками
+- `kiali`модуль панели мониторинга для сетки службы надстройки
 
 ```console
 NAME                                          READY   STATUS    RESTARTS   AGE
@@ -302,13 +302,13 @@ kiali-59b7fd7f68-92zrh                        1/1     Running   0          95s
 prometheus-7c7cf9dbd6-rjxcv                   1/1     Running   0          94s
 ```
 
-Все модули Pod должны отображать состояние `Running`. Если группы pod имеют другое состояние, подождите пару минут, чтобы отобразилось нужное. Если для групп pod отображаются проблемы, выполните команду [describe pod][kubectl-describe], чтобы просмотреть выходные данные и состояние.
+Все модули Pod должны отображать состояние `Running` . Если группы pod имеют другое состояние, подождите пару минут, чтобы отобразилось нужное. Если для групп pod отображаются проблемы, выполните команду [describe pod][kubectl-describe], чтобы просмотреть выходные данные и состояние.
 
 ## <a name="accessing-the-add-ons"></a>Доступ к надстройкам
 
 В нашей установке Istio были установлены некоторые надстройки, обеспечивающие дополнительные функциональные возможности. Веб-приложения для надстроек **не** предоставляются публично через внешний IP-адрес. 
 
-Чтобы получить доступ к пользовательским интерфейсам надстройки, `istioctl dashboard` используйте команду. Эта команда использует [kubectl порт][kubectl-port-forward] и случайный порт для создания безопасного подключения между клиентским компьютером и соответствующим модулем-модулем в кластере AKS. После этого будет автоматически открыто веб-приложение надстройки в браузере по умолчанию.
+Чтобы получить доступ к пользовательским интерфейсам надстройки, используйте `istioctl dashboard` команду. Эта команда использует [kubectl порт][kubectl-port-forward] и случайный порт для создания безопасного подключения между клиентским компьютером и соответствующим модулем-модулем в кластере AKS. После этого будет автоматически открыто веб-приложение надстройки в браузере по умолчанию.
 
 Мы добавили дополнительный уровень безопасности для Grafana и Киали, указав учетные данные для них ранее в этой статье.
 
@@ -359,7 +359,7 @@ istioctl dashboard envoy <pod-name>.<namespace>
 
 ### <a name="remove-istio-components-and-namespace"></a>Удалить компоненты и пространство имен Istio
 
-Чтобы удалить Istio из кластера AKS, используйте `istioctl manifest generate` команду с файлом спецификации управляющей плоскости `istio.aks.yaml` Istio. Будет создан развернутый манифест, по `kubectl delete` которому мы будем передавать все установленные компоненты и `istio-system` пространство имен.
+Чтобы удалить Istio из кластера AKS, используйте `istioctl manifest generate` команду с `istio.aks.yaml` файлом спецификации управляющей плоскости Istio. Будет создан развернутый манифест, по которому мы будем передавать `kubectl delete` все установленные компоненты и `istio-system` пространство имен.
 
 ```console
 istioctl manifest generate -f istio.aks.yaml -o istio-components-aks --logtostderr --set installPackagePath=./install/kubernetes/operator/charts 
@@ -389,7 +389,7 @@ kubectl delete -f istio-components-aks -R
 
 ::: zone-end
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В следующей документации описывается, как можно использовать Istio для обеспечения интеллектуальной маршрутизации для развертывания ранний выпуска.
 
@@ -428,12 +428,12 @@ kubectl delete -f istio-components-aks -R
 [istio-feature-sds]: https://istio.io/docs/tasks/traffic-management/ingress/secure-ingress-sds/
 [istio-feature-cni]: https://istio.io/docs/setup/additional-setup/cni/
 
-[install-wsl]: https://docs.microsoft.com/windows/wsl/install-win10
+[install-wsl]: /windows/wsl/install-win10
 
 [kubernetes-feature-sa-projected-volume]: https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#service-account-token-volume-projection
 [kubernetes-crd]: https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#customresourcedefinitions
 [kubernetes-secrets]: https://kubernetes.io/docs/concepts/configuration/secret/
-[kubernetes-node-selectors]: https://docs.microsoft.com/azure/aks/concepts-clusters-workloads#node-selectors
+[kubernetes-node-selectors]: ./concepts-clusters-workloads.md#node-selectors
 [kubectl-get]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get
 [kubectl-describe]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#describe
 [kubectl-port-forward]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#port-forward
@@ -444,7 +444,7 @@ kubectl delete -f istio-components-aks -R
 [kiali]: https://www.kiali.io/
 [envoy]: https://www.envoyproxy.io/
 
-[app-insights]: https://docs.microsoft.com/azure/azure-monitor/app/kubernetes
+[app-insights]: ../azure-monitor/app/kubernetes.md
 
 <!-- LINKS - internal -->
 [aks-quickstart]: ./kubernetes-walkthrough.md

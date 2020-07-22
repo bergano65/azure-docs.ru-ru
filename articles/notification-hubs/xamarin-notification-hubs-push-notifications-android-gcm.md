@@ -17,12 +17,12 @@ ms.date: 08/01/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 08/01/2019
-ms.openlocfilehash: 0e4354fa7466efcf27f430bbce7edb30bb9a304c
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 5f1d12081591b180acca8ee35ecc5a5bf202211e
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "72387655"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86223947"
 ---
 # <a name="tutorial-send-push-notifications-to-xamarinandroid-apps-using-notification-hubs"></a>Руководство по Отправка push-уведомлений в приложения Xamarin.Android с помощью Центров уведомлений
 
@@ -60,7 +60,7 @@ ms.locfileid: "72387655"
 2. Введите **ключ сервера**, записанный c консоли Google Firebase.
 3. На панели инструментов щелкните **Сохранить**.
 
-    ![](./media/notification-hubs-android-get-started/notification-hubs-gcm-api.png)
+    ![Снимок экрана: концентратор уведомлений на портале Azure с выделенным и обведенным красным параметром Google (GCM/FCM)](./media/notification-hubs-android-get-started/notification-hubs-gcm-api.png)
 
 Концентратор уведомлений настроен для работы с GCM. Также у вас есть строки подключения, с помощью которых вы можете зарегистрировать приложение для получения уведомлений и отправки push-уведомлений.
 
@@ -248,7 +248,7 @@ ms.locfileid: "72387655"
     public class MyFirebaseMessagingService : FirebaseMessagingService
     ```
 
-18. Добавьте в файл `MyFirebaseMessagingService.cs` следующий код для обработки полученных сообщений. 
+18. Добавьте в класс `MyFirebaseMessagingService` следующий код для обработки полученных сообщений. 
 
     ```csharp
         const string TAG = "MyFirebaseMsgService";
@@ -292,7 +292,7 @@ ms.locfileid: "72387655"
         }
     ```
 
-19. Добавьте в класс MyFirebaseMessagingService следующие методы, чтобы получить маркер регистрации FCM и отправить его в экземпляр Центров уведомлений (концентратор). 
+19. Добавьте в класс MyFirebaseMessagingService следующие методы (прямо под кодом, добавленным в предыдущем шаге), чтобы получить маркер регистрации FCM и отправить его в экземпляр Центров уведомлений (концентратор). 
 
     ```csharp
         public override void OnNewToken(string token)

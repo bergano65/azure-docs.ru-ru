@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 09/27/2019
 ms.author: mlottner
 ms.openlocfilehash: fe117cf8d05ba3392b71858acf94d1fc88c1a527
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81311564"
 ---
 # <a name="pricing-and-associated-costs"></a>Цены и связанные затраты
@@ -54,7 +54,7 @@ ms.locfileid: "81311564"
 
 В следующей таблице приводится сводка связанных затрат и последствий каждого из них.
 
-|     | Использование | Добавление примечаний |
+|     | Использование | Комментировать |
 | --- | --- | --- |
 | **Хранилище Log Analytics** |  |
 | Рекомендации и оповещения для устройств| Рекомендации по безопасности и предупреждения, созданные службой | Не является обязательным |
@@ -73,7 +73,7 @@ ms.locfileid: "81311564"
 | | Подробные сведения об исследовании [предупреждений](concept-security-alerts.md) и [рекомендаций](concept-recommendations.md) недоступны |
 |
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 - Доступ к [необработанным данным безопасности](how-to-security-data-access.md)
 - [Исследование устройства](how-to-investigate-device.md)

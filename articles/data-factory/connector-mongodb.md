@@ -12,14 +12,14 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 08/12/2019
-ms.openlocfilehash: 3b6476b794d2e1b2e9a36aa26f35c247641d44e8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: eba63ff500aad4538f5b30f11bac168cf14816c0
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81418156"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84558167"
 ---
 # <a name="copy-data-from-mongodb-using-azure-data-factory"></a>Копирование данных из MongoDB с помощью фабрики данных Azure
+
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 В этой статье описывается, как с помощью действия копирования в фабрике данных Azure копировать данные из базы данных MongoDB. Это продолжение [статьи об обзоре действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
@@ -33,7 +33,7 @@ ms.locfileid: "81418156"
 
 В частности, этот соединитель MongoDB поддерживает **версии до 3.4 включительно**.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [data-factory-v2-integration-runtime-requirements](../../includes/data-factory-v2-integration-runtime-requirements.md)]
 
@@ -47,12 +47,12 @@ ms.locfileid: "81418156"
 
 Для связанной службы MongoDB поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательный |
+| Свойство. | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type |Для свойства Type необходимо задать значение **MongoDbV2** . |Да |
-| connectionString |Укажите строку подключения MongoDB, например `mongodb://[username:password@]host[:port][/[database][?options]]`. Дополнительные сведения см. в [руководстве MongoDB по строке подключения](https://docs.mongodb.com/manual/reference/connection-string/). <br/><br /> Можно также добавить пароль в Azure Key Vault и `password` извлечь конфигурацию из строки подключения. Дополнительные сведения см. в разделе [хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md) . |Да |
+| connectionString |Укажите строку подключения MongoDB, например `mongodb://[username:password@]host[:port][/[database][?options]]`. Дополнительные сведения см. в [руководстве MongoDB по строке подключения](https://docs.mongodb.com/manual/reference/connection-string/). <br/><br /> Можно также добавить пароль в Azure Key Vault и извлечь  `password`   конфигурацию из строки подключения. Дополнительные сведения см. в разделе [хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md) . |Да |
 | База данных | Имя базы данных, к которой нужно получить доступ. | Да |
-| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Дополнительные сведения см. в разделе " [Предварительные требования](#prerequisites) ". Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет |
+| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Дополнительные сведения см. в разделе [Предварительные требования](#prerequisites). Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет |
 
 **Пример.**
 
@@ -77,12 +77,12 @@ ms.locfileid: "81418156"
 
 Полный список разделов и свойств, используемых для определения наборов данных, приведен в статье [Наборы данных и связанные службы в фабрике данных Azure](concepts-datasets-linked-services.md). Набор данных MongoDB поддерживает следующие свойства.
 
-| Свойство | Описание | Обязательный |
+| Свойство. | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Свойство Type набора данных должно иметь значение **MongoDbV2Collection** . | Да |
 | collectionName |Имя коллекции в базе данных MongoDB |Да |
 
-**Пример.**
+**Пример**.
 
 ```json
 {
@@ -107,9 +107,9 @@ ms.locfileid: "81418156"
 
 ### <a name="mongodb-as-source"></a>MongoDB в качестве источника
 
-В разделе **источник** действия копирования поддерживаются следующие свойства.
+В разделе **source** действия копирования поддерживаются следующие свойства:
 
-| Свойство | Описание | Обязательный |
+| Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Свойство Type источника действия копирования должно иметь значение **MongoDbV2Source** . | Да |
 | фильтр | Задает фильтр выбора с помощью операторов запросов. Чтобы получить все документы в коллекции, не указывайте этот параметр или передайте пустой документ ({}). | Нет |
@@ -168,5 +168,5 @@ ms.locfileid: "81418156"
 
 Инструкции по копированию данных из MongoDB в табличный приемник см. в разделе о [сопоставлении схем](copy-activity-schema-and-type-mapping.md#schema-mapping).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

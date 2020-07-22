@@ -8,22 +8,22 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 91d3dd2eee6f771df23b72eae7a33122c42f1690
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: fd2e5a4d057e1074c6cce0f374846bc9e0a64950
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81869333"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86525098"
 ---
 # <a name="access-the-vmware-solution-by-cloudsimple-portal-from-the-azure-portal"></a>Доступ к решению VMware с помощью портала Клаудсимпле из портал Azure
 
 Единый вход поддерживается для доступа к порталу Клаудсимпле. После входа в портал Azure вы можете получить доступ к порталу Клаудсимпле, не войдя в систему повторно. При первом обращении к порталу Клаудсимпле вам будет предложено авторизовать приложение [авторизации службы клаудсимпле](#consent-to-cloudsimple-service-authorization-application) .  Авторизация является однократным действием.
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
-Пользователи со встроенными ролями **владельца** и **участника** могут получить доступ к порталу клаудсимпле.  Роли должны быть настроены в группе ресурсов, в которой развернута служба Клаудсимпле.  Роли также можно настроить в объекте службы Клаудсимпле.  Дополнительные сведения о проверке роли см. в статье [Просмотр назначений ролей](https://docs.microsoft.com/azure/role-based-access-control/check-access) . Только пользователи со встроенными ролями **владельца** и **участника** могут получить доступ к порталу клаудсимпле.  Роли должны быть настроены в подписке.  Дополнительные сведения о проверке роли см. в статье [Просмотр назначений ролей](https://docs.microsoft.com/azure/role-based-access-control/check-access) .
+Пользователи со встроенными ролями **владельца** и **участника** могут получить доступ к порталу клаудсимпле.  Роли должны быть настроены в группе ресурсов, в которой развернута служба Клаудсимпле.  Роли также можно настроить в объекте службы Клаудсимпле.  Дополнительные сведения о проверке роли см. в статье [Просмотр назначений ролей](../role-based-access-control/check-access.md) . Только пользователи со встроенными ролями **владельца** и **участника** могут получить доступ к порталу клаудсимпле.  Роли должны быть настроены в подписке.  Дополнительные сведения о проверке роли см. в статье [Просмотр назначений ролей](../role-based-access-control/check-access.md) .
 
-При использовании настраиваемых ролей роль должна иметь одну из следующих операций в ```Actions```.  Дополнительные сведения о пользовательских ролях см. в статье [пользовательские роли для ресурсов Azure](https://docs.microsoft.com/azure/role-based-access-control/custom-roles).  Если какая-либо из операций является частью ```NotActions```, пользователь не может получить доступ к порталу клаудсимпле.
+При использовании настраиваемых ролей роль должна иметь одну из следующих операций в ```Actions``` .  Дополнительные сведения о пользовательских ролях см. в статье [пользовательские роли для ресурсов Azure](../role-based-access-control/custom-roles.md).  Если какая-либо из операций является частью ```NotActions``` , пользователь не может получить доступ к порталу клаудсимпле.
 
 ```
 Microsoft.VMwareCloudSimple/*
@@ -38,7 +38,7 @@ Microsoft.VMwareCloudSimple/dedicatedCloudServices/*/write
 
 ## <a name="access-the-cloudsimple-portal"></a>Доступ к порталу CloudSimple
 
-1. Выбор пункта **Все службы**.
+1. Выберите элемент **Все службы**.
 
 2. Выполните поиск по запросу **Клаудсимпле Services**.
 
@@ -69,7 +69,7 @@ Microsoft.VMwareCloudSimple/dedicatedCloudServices/*/write
 
 ![Согласие на авторизацию службы Клаудсимпле — требуются администраторы](media/cloudsimple-azure-consent-requires-administrator.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Узнайте, как [создать частное облако](https://docs.microsoft.com/azure/vmware-cloudsimple/create-private-cloud/)
+* Узнайте, как [создать частное облако](./create-private-cloud.md)
 * Узнайте, как [настроить среду частного облака](quickstart-create-private-cloud.md)

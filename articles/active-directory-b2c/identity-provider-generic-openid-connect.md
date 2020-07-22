@@ -7,16 +7,16 @@ author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 08/08/2019
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: c72abf79f0a420309ebe229673be9439fd99b74c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 8b71a7b8ab29e8083a5f119a41ef6de312518301
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78188262"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85388278"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-openid-connect-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с помощью OpenID Connect через Azure Active Directory B2C
 
@@ -24,14 +24,14 @@ ms.locfileid: "78188262"
 
 ## <a name="add-the-identity-provider"></a>Добавление поставщика удостоверений
 
-1. Войдите в [портал Azure](https://portal.azure.com/) как глобальный администратор клиента Azure AD B2C.
+1. Войдите на [портал Azure](https://portal.azure.com/) с правами глобального администратора клиента Azure AD B2C.
 1. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C, щелкнув фильтр **каталогов и подписок** в верхнем меню и выбрав Каталог, содержащий ваш клиент.
 1. Выберите **Все службы** в левом верхнем углу окна портала Azure, найдите службу **Azure AD B2C** и выберите ее.
 1. Выберите **поставщики удостоверений**, а затем выберите **Новый поставщик OpenID Connect Connect**.
 
 ## <a name="configure-the-identity-provider"></a>Настройка поставщика удостоверений
 
-Каждый поставщик удостоверений OpenID Connect Connect описывает документ метаданных, который содержит большую часть сведений, необходимых для выполнения входа. Сюда входят такие сведения, как используемые URL-адреса и расположение открытых ключей подписывания службы. Документ метаданных OpenID Connect всегда находится в конечной точке, которая заканчивается на `.well-known\openid-configuration`. Для поставщика удостоверений OpenID Connect, которого требуется добавить, введите его URL-адрес метаданных.
+Каждый поставщик удостоверений OpenID Connect Connect описывает документ метаданных, который содержит большую часть сведений, необходимых для выполнения входа. Сюда входят такие сведения, как используемые URL-адреса и расположение открытых ключей подписывания службы. Документ метаданных OpenID Connect всегда находится в конечной точке, которая заканчивается на `.well-known/openid-configuration`. Для поставщика удостоверений OpenID Connect, которого требуется добавить, введите его URL-адрес метаданных.
 
 ## <a name="client-id-and-secret"></a>Идентификатор клиента и секрет
 

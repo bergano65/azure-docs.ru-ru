@@ -6,10 +6,9 @@ ms.topic: article
 ms.date: 10/09/2019
 ms.author: pabouwer
 ms.openlocfilehash: eca49a3fac1ea0398ebe1d05bde20fbca3c81232
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77594317"
 ---
 # <a name="about-service-meshes"></a>О сетчатых службах
@@ -38,7 +37,7 @@ ms.locfileid: "77594317"
 
 ![Стандартная архитектура сетки служб](media/servicemesh/typical-architecture.png)
 
-## <a name="capabilities"></a>Возможности
+## <a name="capabilities"></a>Характеристики
 
 Каждая из сеток служб имеет естественное соответствие и сосредоточена на поддержке конкретных сценариев, но обычно большинство из них будет реализовывать ряд, если не все, из следующих возможностей.
 
@@ -67,7 +66,7 @@ ms.locfileid: "77594317"
 - **Поддерживаемые COMPUTE** -Kubernetes, виртуальные машины
 - Шлюзы с **несколькими кластерами** , Федерация
 
-## <a name="selection-criteria"></a>Критерии выбора
+## <a name="selection-criteria"></a>Условия выбора
 
 Прежде чем выбрать сеть службы, убедитесь, что вы понимаете требования и причины установки сети службы. Попробуйте задать следующие вопросы.
 

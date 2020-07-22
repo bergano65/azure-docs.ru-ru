@@ -1,19 +1,19 @@
 ---
 title: Руководство по масштабированию приложения в Azure Spring Cloud | Документация Майкрософт
-description: В этом учебнике описано, как масштабировать приложение в Azure Spring Cloud на портале Azure.
+description: Сведения о том, как масштабировать приложение в Azure Spring Cloud на портале Azure.
 ms.service: spring-cloud
 ms.topic: tutorial
 ms.author: brendm
 author: bmitchell287
 ms.date: 10/06/2019
-ms.openlocfilehash: f08a3b5d0a03b0e898457bbb783dd5031c4b0f27
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: ca889e48510ec20b4823c6ec5e4e0149d5aaaa62
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "76277478"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141881"
 ---
-# <a name="scale-an-application-in-azure-spring-cloud"></a>масштабированию приложения в Azure Spring Cloud
+# <a name="tutorial-scale-an-application-in-azure-spring-cloud"></a>Руководство по масштабированию приложения в Azure Spring Cloud
 
 В этом руководстве описано, как масштабировать любое приложение для микрослужб с помощью панели мониторинга Azure Spring Cloud на портале Azure.
 
@@ -23,10 +23,10 @@ ms.locfileid: "76277478"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим учебником необходимы указанные ниже компоненты.
+Для выполнения этих процедур требуется:
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
-* Развернутый экземпляр службы Azure Spring Cloud.  Чтобы приступить к работе, следуйте инструкциям статьи [Краткое руководство. Запуск приложения Java Spring с помощью Azure CLI](spring-cloud-quickstart-launch-app-cli.md).
+* Развернутый экземпляр службы Azure Spring Cloud.  Чтобы приступить к работе, следуйте инструкциям из статьи [Краткое руководство. Запуск приложения Java Spring с помощью Azure CLI](spring-cloud-quickstart-launch-app-cli.md).
 * По крайней мере одно приложение, ранее созданное в этом экземпляре службы.
 
 ## <a name="navigate-to-the-scale-page-in-the-azure-portal"></a>Переход на страницу масштабирования на портале Azure
@@ -59,9 +59,12 @@ ms.locfileid: "76277478"
 
 Через несколько секунд внесенные изменения отобразятся на странице **Обзор** с дополнительными сведениями на вкладке **Экземпляры приложения**. В процессе масштабирования не требуется вносить изменения в код или выполнять повторное развертывание.
 
+## <a name="upgrade-to-the-standard-tier"></a>Повышение ценовой категории до уровня "Стандартный"
+Если вы используете уровень "Базовый" и одно или несколькими таких [ограничений](spring-cloud-quotas.md) препятствуют вашей работе, можете перейти на уровень "Стандартный". Для этого перейдите в меню "Ценовая категория", выберите столбец уровня "Стандартный" и нажмите кнопку **Обновить**.
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как вручную масштабировать приложения Azure Spring Cloud. Чтобы узнать, как выполнять мониторинг приложения, перейдите к следующему руководству.
+Из этого руководства вы узнали, как вручную масштабировать приложения Azure Spring Cloud. Чтобы узнать, как выполнять мониторинг приложения путем настройки оповещений, перейдите к следующему руководству.
 
 > [!div class="nextstepaction"]
-> [Сведения о мониторинге приложения](spring-cloud-tutorial-distributed-tracing.md)
+> [Как настроить оповещения](spring-cloud-tutorial-alerts-action-groups.md)

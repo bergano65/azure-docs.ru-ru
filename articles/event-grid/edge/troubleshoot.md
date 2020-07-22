@@ -5,16 +5,14 @@ author: VidyaKukke
 manager: rajarv
 ms.author: vkukke
 ms.reviewer: spelluru
-ms.date: 10/24/2019
+ms.date: 07/08/2020
 ms.topic: article
-ms.service: event-grid
-services: event-grid
-ms.openlocfilehash: 95181d0eb23d5956b2c6af52c77f85714b107345
-ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
+ms.openlocfilehash: 0196522618d4b61f615f7cc6faeacbe9a8c7c5b4
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "73100158"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86171352"
 ---
 # <a name="common-issues"></a>Распространенные проблемы
 
@@ -42,7 +40,7 @@ sudo docker logs eventgridmodule
 
 * При обмене данными между модулями убедитесь, что вы выполняете вызов через порт **4438** , а имя модуля соответствует развернутому. 
 
-  Например, если модуль сетки событий был развернут с именем **евентгридмодуле** , URL-адрес должен иметь **https://eventgridmodule:4438**значение. Убедитесь, что регистр и номер порта указаны правильно.
+  Например, если модуль сетки событий был развернут с именем **евентгридмодуле** , URL-адрес должен иметь значение **https://eventgridmodule:4438** . Убедитесь, что регистр и номер порта указаны правильно.
     
 * Если это из модуля Интернета вещей, убедитесь, что порт сетки событий сопоставлен с хост-компьютером во время развертывания, например
 
@@ -64,7 +62,7 @@ sudo docker logs eventgridmodule
 
 * При обмене данными между модулями убедитесь, что вы выполняете вызов через порт **5888** , а имя модуля соответствует развернутому. 
 
-  Например, если модуль сетки событий был развернут с именем **евентгридмодуле** , URL-адрес должен иметь **http://eventgridmodule:5888**значение. Убедитесь, что регистр и номер порта указаны правильно.
+  Например, если модуль сетки событий был развернут с именем **евентгридмодуле** , URL-адрес должен иметь значение **http://eventgridmodule:5888** . Убедитесь, что регистр и номер порта указаны правильно.
     
 * Если это из модуля Интернета вещей, убедитесь, что порт сетки событий сопоставлен с хост-компьютером во время развертывания, например
 
@@ -108,4 +106,4 @@ sudo docker logs eventgridmodule
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Сообщите о проблемах, предложениях с использованием сетки событий для IoT Edge [https://github.com/Azure/event-grid-iot-edge/issues](https://github.com/Azure/event-grid-iot-edge/issues)по адресу.
+Сообщите о проблемах, предложениях с использованием сетки событий для IoT Edge по адресу [https://github.com/Azure/event-grid-iot-edge/issues](https://github.com/Azure/event-grid-iot-edge/issues) .

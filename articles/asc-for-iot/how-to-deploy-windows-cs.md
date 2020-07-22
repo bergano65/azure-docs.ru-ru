@@ -16,10 +16,9 @@ ms.workload: na
 ms.date: 07/23/2019
 ms.author: mlottner
 ms.openlocfilehash: 4d7d2f0a423a50f85160a856480eaa973be7e2b0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81537616"
 ---
 # <a name="deploy-an-azure-security-center-for-iot-c-based-security-agent-for-windows"></a>Развертывание агента безопасности Центра безопасности Azure для Интернета вещей на основе C# для Windows
@@ -29,12 +28,12 @@ ms.locfileid: "81537616"
 Из этого руководства вы узнаете, как выполнить следующие задачи:
 
 > [!div class="checklist"]
-> * Установить
+> * Установка
 > * Проверка развертывания
 > * Удаление агента
-> * Устранение неполадок
+> * Диагностика
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Сведения о других платформах и разновидностях агентов см. в разделе Выбор подходящего [агента безопасности](how-to-deploy-agent.md).
 
@@ -104,7 +103,7 @@ ms.locfileid: "81537616"
 
 Чтобы включить ведение журнала, сделайте следующее:
 
-1. Откройте файл конфигурации (General. config) для редактирования с помощью стандартного редактора файлов.
+1. Откройте файл конфигурации (General.config) для редактирования с помощью стандартного редактора файлов.
 
 1. Измените следующие значения:
 
@@ -126,7 +125,7 @@ ms.locfileid: "81537616"
      Restart-Service "ASC IoT Agent"
      ```
 
-   или диспетчер конфигурации служб
+   или
 
     **CMD**
 

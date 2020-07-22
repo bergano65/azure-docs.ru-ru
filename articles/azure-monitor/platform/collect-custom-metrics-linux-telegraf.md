@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: ancav
 ms.subservice: metrics
-ms.openlocfilehash: 06c344130156ae5f72f6e65baa519c11adff2bae
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 57eb005109b97a423f9218ee6a47ce5bb06c3853
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82186447"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86505352"
 ---
 # <a name="collect-custom-metrics-for-a-linux-vm-with-the-influxdata-telegraf-agent"></a>Сбор пользовательских метрик для виртуальной машины Linux с помощью агента Telegraf InfluxData
 
@@ -25,7 +25,7 @@ Azure Monitor позволяет собирать пользовательски
  ![Обзор агента Telegraph](./media/collect-custom-metrics-linux-telegraf/telegraf-agent-overview.png)
 
 > [!NOTE]  
-> Пользовательские метрики не поддерживаются во всех регионах. Поддерживаемые регионы перечислены [здесь](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-custom-overview#supported-regions)
+> Пользовательские метрики не поддерживаются во всех регионах. Поддерживаемые регионы перечислены [здесь](./metrics-custom-overview.md#supported-regions)
 
 ## <a name="send-custom-metrics"></a>Отправка пользовательских метрик 
 
@@ -44,7 +44,7 @@ Azure Monitor позволяет собирать пользовательски
 1. Укажите имя виртуальной машины, например **мителеграфвм**.  
 1. Сохраните тип диска **SSD**. Затем укажите **имя пользователя**, например **azureuser**. 
 1. В качестве **типа проверки подлинности**выберите **пароль**. Затем введите пароль, который будет использоваться позже для SSH в этой виртуальной машине. 
-1. Выберите **Создание новой группы ресурсов**. Затем укажите имя, например **myResourceGroup**. Выберите свое **Расположение**. Нажмите кнопку **ОК**. 
+1. Выберите **Создание новой группы ресурсов**. Затем укажите имя, например **myResourceGroup**. Выберите свое **Расположение**. Затем нажмите кнопку **OK**. 
 
     ![Создание виртуальной машины Ubuntu.](./media/collect-custom-metrics-linux-telegraf/create-vm.png)
 
@@ -52,7 +52,7 @@ Azure Monitor позволяет собирать пользовательски
 
     ![Обзор агента Telegraph. Размер виртуальной машины](./media/collect-custom-metrics-linux-telegraf/vm-size.png)
 
-1. На странице **Параметры** в**группе** >  **Сетевая** > безопасность**выберите общедоступные входящие порты**, выберите **http** и **SSH (22)**. Сохраните остальные значения по умолчанию и нажмите кнопку **ОК**. 
+1. На странице **Параметры** в группе **Сетевая**  >  **Безопасность**  >  **выберите общедоступные входящие порты**, выберите **http** и **SSH (22)**. Сохраните остальные значения по умолчанию и нажмите кнопку **ОК**. 
 
 1. На странице сводной информации выберите **Создать**, чтобы начать развертывание виртуальной машины. 
 
@@ -137,6 +137,3 @@ sudo systemctl start telegraf
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о настраиваемых метриках см. в [этой статье](metrics-custom-overview.md).
-
-
-

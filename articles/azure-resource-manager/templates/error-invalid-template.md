@@ -1,14 +1,14 @@
 ---
-title: Недопустимые ошибки шаблона
-description: Описывает, как устранить ошибки недопустимых шаблонов при развертывании шаблонов Azure Resource Manager.
+title: Ошибки, связанные с недопустимым шаблоном
+description: Статья о том, как устранять ошибки, связанные с недопустимым шаблоном, при развертывании шаблонов Azure Resource Manager.
 ms.topic: troubleshooting
-ms.date: 03/08/2018
-ms.openlocfilehash: 65cd69d67933d117b51f37b587b276aec2bd635a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 05/22/2020
+ms.openlocfilehash: a3589f42f707240272a411a985adefd5e6c5539c
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76154063"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86118891"
 ---
 # <a name="resolve-errors-for-invalid-template"></a>Устранение ошибок, связанных с недопустимым шаблоном
 
@@ -25,11 +25,11 @@ Message=<varies>
 
 Сообщение об ошибке зависит от типа ошибки.
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Эта ошибка может появиться в результате ошибок нескольких различных типов. Как правило, это синтаксические или структурные ошибки в шаблоне.
 
-<a id="syntax-error" />
+<a id="syntax-error"></a>
 
 ## <a name="solution-1---syntax-error"></a>Решение 1 — синтаксическая ошибка
 
@@ -48,9 +48,9 @@ Message=Deployment template validation failed
 
 Если вы не укажете соответствующий синтаксис, шаблон создаст значение, которое не будет соответствовать ожидаемому.
 
-При получении сообщения об ошибке такого типа тщательно проверьте синтаксис выражения. Рекомендуется использовать редактор JSON, например [Visual Studio](create-visual-studio-deployment-project.md) или [Visual Studio Code](use-vs-code-to-create-template.md), в котором отображаются предупреждения о синтаксических ошибках.
+При получении сообщения об ошибке такого типа тщательно проверьте синтаксис выражения. Рекомендуется использовать редактор JSON, например [Visual Studio](create-visual-studio-deployment-project.md) или [Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md), в котором отображаются предупреждения о синтаксических ошибках.
 
-<a id="incorrect-segment-lengths" />
+<a id="incorrect-segment-lengths"></a>
 
 ## <a name="solution-2---incorrect-segment-lengths"></a>Решение 2 — неправильная длина сегментов
 
@@ -111,7 +111,7 @@ for type {resource-type} has incorrect segment lengths.
 }
 ```
 
-<a id="parameter-not-valid" />
+<a id="parameter-not-valid"></a>
 
 ## <a name="solution-3---parameter-is-not-valid"></a>Решение 3 — недопустимый параметр
 
@@ -126,13 +126,13 @@ part of the allowed values
 
 Внимательно проверьте допустимые значения в шаблоне и укажите одно из них во время развертывания. Дополнительные сведения о допустимых значениях параметров см. в статье [Раздел параметров в шаблонах Azure Resource Manager](template-syntax.md#parameters).
 
-<a id="too-many-resource-groups" />
+<a id="too-many-resource-groups"></a>
 
 ## <a name="solution-4---too-many-target-resource-groups"></a>Решение 4 — слишком много целевых групп ресурсов
 
-Если вы указали более пяти целевых групп ресурсов в одном развертывании, поступает это сообщение об ошибке. Рекомендуем консолидировать группы ресурсов в развертывании или развернуть некоторые шаблоны как отдельные развертывания. Дополнительные сведения см. в разделе [Развертывание ресурсов Azure в нескольких подписках или группах ресурсов](cross-resource-group-deployment.md).
+Эта ошибка могла возникать у вас в предыдущих развертываниях, так как для одного развертывания существовало ограничение в пять целевых групп ресурсов. В мае 2020 г. это ограничение было увеличено до 800 групп ресурсов. Дополнительные сведения см. в разделе [Развертывание ресурсов Azure в нескольких подписках или группах ресурсов](cross-resource-group-deployment.md).
 
-<a id="circular-dependency" />
+<a id="circular-dependency"></a>
 
 ## <a name="solution-5---circular-dependency-detected"></a>Решение 5 — обнаружена циклическая зависимость
 

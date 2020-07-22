@@ -7,13 +7,13 @@ author: luiscabrer
 ms.author: luisca
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 11/04/2019
-ms.openlocfilehash: 98ea416305f080850d85498f74693eb2d45b0944
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 06/17/2020
+ms.openlocfilehash: f713eb71d375a3388c4b238656355595354b9806
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77162350"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84982022"
 ---
 #   <a name="text-merge-cognitive-skill"></a>Когнитивный навык объединения текста
 
@@ -31,8 +31,8 @@ Microsoft.Skills.Text.MergeSkill
 
 | Имя параметра     | Описание |
 |--------------------|-------------|
-| insertPreTag  | Строка, которая должна быть включена перед каждой вставкой. Значение по умолчанию — `" "`. Чтобы исключить пробел, задайте значение `""`.  |
-| insertPostTag | Строка, которая должна быть включена после каждой вставки. Значение по умолчанию — `" "`. Чтобы исключить пробел, задайте значение `""`.  |
+| `insertPreTag`    | Строка, которая должна быть включена перед каждой вставкой. Значение по умолчанию — `" "`. Чтобы исключить пробел, задайте значение `""`.  |
+| `insertPostTag`   | Строка, которая должна быть включена после каждой вставки. Значение по умолчанию — `" "`. Чтобы исключить пробел, задайте значение `""`.  |
 
 
 ##  <a name="sample-input"></a>Пример ввода
@@ -108,18 +108,22 @@ Microsoft.Skills.Text.MergeSkill
       "insertPostTag": " ",
       "inputs": [
         {
-          "name":"text", "source": "/document/content"
+          "name":"text", 
+          "source": "/document/content"
         },
         {
-          "name": "itemsToInsert", "source": "/document/normalized_images/*/text"
+          "name": "itemsToInsert", 
+          "source": "/document/normalized_images/*/text"
         },
         {
-          "name":"offsets", "source": "/document/normalized_images/*/contentOffset" 
+          "name":"offsets", 
+          "source": "/document/normalized_images/*/contentOffset" 
         }
       ],
       "outputs": [
         {
-          "name": "mergedText", "targetName" : "merged_text"
+          "name": "mergedText", 
+          "targetName" : "merged_text"
         }
       ]
     }
@@ -140,7 +144,7 @@ Microsoft.Skills.Text.MergeSkill
 }
 ```
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 + [Встроенные навыки](cognitive-search-predefined-skills.md)
 + [Определение набора навыков](cognitive-search-defining-skillset.md)

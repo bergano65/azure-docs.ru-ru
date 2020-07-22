@@ -5,12 +5,12 @@ author: dkkapur
 ms.author: dekapur
 ms.date: 12/12/2018
 ms.topic: conceptual
-ms.openlocfilehash: a674047722d4deca02d8f4d38a0826e479065037
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 1040218795b824728e144697247bb070e164da22
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79259205"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86248282"
 ---
 # <a name="set-up-your-windows-development-environment-to-build-service-fabric-mesh-apps"></a>Чтобы создавать приложения Сетки Service Fabric, настройте среду разработки Windows
 
@@ -36,7 +36,7 @@ ms.locfileid: "79259205"
 Для развертывания Service Fabric приложений сетки требуется Visual Studio 2017 или более поздней версии. [Его версия должна быть не ниже 15.6.0][download-visual-studio] и включать следующие рабочие нагрузки.
 
 * ASP.NET и веб-разработка.
-* Разработка в Azure
+* разработка Azure.
 
 ## <a name="install-docker"></a>Установка Docker
 
@@ -58,7 +58,7 @@ ms.locfileid: "79259205"
 Install-WindowsFeature -Name Hyper-V -IncludeManagementTools
 ```
 
-Перезагрузите компьютер.
+Перезапустите компьютер.
 
 Чтобы установить Docker, запустите PowerShell как администратор и выполните следующую команду.
 
@@ -109,13 +109,13 @@ Install-WindowsFeature Containers
 
 Теперь можно приступать к созданию приложений Сетки Service Fabric.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с руководством [Tutorial: Create, debug, and deploy a multi-service web application to Service Fabric Mesh](service-fabric-mesh-tutorial-create-dotnetcore.md) (Руководство. Создание, отладка и развертывание многосервисного веб-приложения в Сетке Service Fabric).
 
 Найдите ответы на [часто задаваемые вопросы и способы решения известных проблем](service-fabric-mesh-faq.md).
 
-[azure-cli-install]: https://docs.microsoft.com/cli/azure/install-azure-cli
+[azure-cli-install]: /cli/azure/install-azure-cli
 [download-docker]: https://store.docker.com/editions/community/docker-ce-desktop-windows
 [download-docker-server]: https://docs.docker.com/install/windows/docker-ee/
 [download-runtime]: https://aka.ms/sfruntime

@@ -4,17 +4,15 @@ description: Настройте протоколы API, предоставляе
 author: VidyaKukke
 manager: rajarv
 ms.author: vkukke
-ms.reviewer: ''
-ms.date: 10/03/2019
+ms.reviewer: spelluru
+ms.date: 07/08/2020
 ms.topic: article
-ms.service: event-grid
-services: event-grid
-ms.openlocfilehash: 908bc941ee7379de067621e10adf5fd6ee6df559
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 801a320fbd66b4b8a46757ba90881da54b2721de
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76841816"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86171726"
 ---
 # <a name="configure-event-grid-api-protocols"></a>Настройка протоколов API сетки событий
 
@@ -23,7 +21,7 @@ ms.locfileid: "76841816"
 | Протокол | Порт | Описание |
 | ---------------- | ------------ | ------------ |
 | HTTP | 5888 | Отключено по умолчанию. Используется только во время тестирования. Не подходит для рабочих нагрузок.
-| HTTPS | 4438 | По умолчанию
+| HTTPS | 4438 | Значение по умолчанию
 
 Все возможные конфигурации см. в разделе руководств по [безопасности и проверке подлинности](security-authentication.md) .
 

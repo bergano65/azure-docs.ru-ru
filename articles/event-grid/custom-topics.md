@@ -1,18 +1,14 @@
 ---
 title: Пользовательские разделы в службе "Сетка событий Azure"
 description: Описание пользовательских разделов в службе "Сетка событий Azure".
-services: event-grid
-author: spelluru
-ms.service: event-grid
 ms.topic: conceptual
-ms.date: 03/16/2020
-ms.author: spelluru
-ms.openlocfilehash: 166a48d74d32c8b0a3a59310e693ea96ada29116
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 07/07/2020
+ms.openlocfilehash: 8f48824989c8ec51b766385188ad99e9e59cf621
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81394362"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86113791"
 ---
 # <a name="custom-topics-in-azure-event-grid"></a>Пользовательские разделы в службе "Сетка событий Azure"
 В разделе сетки событий представлена конечная точка, в которой источник отправляет события. Издатель создает раздел сетки событий и решает, сколько разделов нужно источнику событий: один или несколько. Раздел используется для коллекции связанных событий. Чтобы реагировать на события определенных типов, подписчикам следует решить, на какие из разделов подписаться.
@@ -72,7 +68,7 @@ ms.locfileid: "81394362"
 | [Шаблон Resource Manager для создания пользовательского раздела и конечной точки веб-перехватчика](https://github.com/Azure/azure-quickstart-templates/tree/master/101-event-grid) | Шаблон Resource Manager, который создает пользовательский раздел и подписку для этого раздела. Он отправляет события в веб-перехватчик. |
 | [Шаблон Resource Manager для создания пользовательского раздела и конечной точки Центров событий](https://github.com/Azure/azure-quickstart-templates/tree/master/101-event-grid-event-hubs-handler)| Шаблон Resource Manager, который создает подписку для пользовательского раздела. Он отправляет события в Центры событий Azure. |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 См. следующие статьи: 
 
 - [Системные разделы](system-topics.md)

@@ -4,15 +4,15 @@ description: Эта статья поможет подключить шлюз в
 services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/19/2020
 ms.author: cherylmc
-ms.openlocfilehash: 688183bc07aa14d5e5df182d7de0897cec93f0b9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: ca5880f76ffd3a85d4b3cec8e01f58ae5c024a58
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80066237"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84749696"
 ---
 # <a name="connect-a-vpn-gateway-virtual-network-gateway-to-virtual-wan"></a>Подключение VPN-шлюза (шлюза виртуальной сети) к виртуальной глобальной сети
 
@@ -20,7 +20,7 @@ ms.locfileid: "80066237"
 
 Чтобы свести к сведению возможную путаницу между двумя компонентами, мы предложим шлюзу имя компонента, на который мы ссылаетесь. Например, шлюз виртуальной сети VPN-шлюза и VPN-шлюз виртуальной глобальной сети.
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 Прежде чем начать, создайте следующие ресурсы:
 
@@ -118,7 +118,7 @@ BGP ASN не может иметь значение 65515. 66515 будет ис
 3. Щелкните **ОК** для создания подключения.
 4. Подключение можно просмотреть на странице **подключения** шлюза виртуальной сети.
 
-   ![Соединен](./media/connect-virtual-network-gateway-vwan/connect.png "подключение")
+   ![Соединение](./media/connect-virtual-network-gateway-vwan/connect.png "соединение")
 5. Повторите предыдущие шаги, чтобы создать второе подключение. Для второго подключения выберите другой созданный шлюз локальной сети.
 
 ## <a name="6-test-connections"></a><a name="test"></a>6. Проверка соединений

@@ -5,22 +5,22 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: conditional-access
 ms.topic: conceptual
-ms.date: 03/25/2020
+ms.date: 07/02/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 20b699f0672b49dd2f947e0cf00d0ffcef7961e6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: fbf4d7b9f622ff590eee401544bf62655fd8d096
+ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80295309"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86024389"
 ---
 # <a name="common-conditional-access-policies"></a>Распространенные политики условного доступа
 
-[Параметры безопасности по умолчанию](../fundamentals/concept-fundamentals-security-defaults.md) прекрасно подходят для некоторых организаций, но многие организации требуют большей гибкости, чем они предлагают. Например, многим требуется возможность исключить из политик условного доступа, требующих многофакторную проверку подлинности, определенные учетные записи, такие как учетные записи для аварийного доступа или администрирования с разделением. Для этих организаций распространенные политики, упоминаемые в этой статье, могут быть использованы.
+[Параметры безопасности по умолчанию](../fundamentals/concept-fundamentals-security-defaults.md) прекрасно подходят для некоторых организаций, но многие организации требуют большей гибкости, чем они предлагают. Например, многим организациям требуется возможность исключить из политик условного доступа, требующих многофакторную проверку подлинности, определенные учетные записи, такие как учетные записи для аварийного доступа или администрирования с разделением. Для этих организаций распространенные политики, упоминаемые в этой статье, могут быть использованы.
 
 ![Политики условного доступа в портал Azure](./media/concept-conditional-access-policy-common/conditional-access-policies-azure-ad-listing.png)
 
@@ -38,13 +38,14 @@ ms.locfileid: "80295309"
 * [Требовать MFA для управления Azure](howto-conditional-access-policy-azure-management.md)\*
 * [Требовать MFA для всех пользователей](howto-conditional-access-policy-all-users-mfa.md)\*
 
-\*При совместной настройке эти четыре политики будут имитировать функции, включенные [по умолчанию безопасности](../fundamentals/concept-fundamentals-security-defaults.md).
+\*Эти четыре политики при совместной настройке, функции имитации, включенные [по умолчанию безопасности](../fundamentals/concept-fundamentals-security-defaults.md).
 
 ## <a name="additional-policies"></a>Дополнительные политики
 
-* [Условный доступ на основе рисков (требуется Azure AD Premium P2)](howto-conditional-access-policy-risk.md)
+* [Условный доступ на основе риска входа (требуется Azure AD Premium P2)](howto-conditional-access-policy-risk.md)
+* [Условный доступ пользователя на основе рисков (требуется Azure AD Premium P2)](howto-conditional-access-policy-risk-user.md)
 * [Запрос на доверенное расположение для регистрации MFA](howto-conditional-access-policy-registration.md)
-* [Блокирование доступа по расположению](howto-conditional-access-policy-location.md)
+* [Блокировать доступ по расположению](howto-conditional-access-policy-location.md)
 * [Требование использовать соответствующее устройство](howto-conditional-access-policy-compliant-device.md)
 * [Блокировать доступ, за исключением конкретных приложений](howto-conditional-access-policy-block-access.md)
 

@@ -8,17 +8,17 @@ manager: twooley
 ms.assetid: ''
 ms.service: storsimple
 ms.devlang: NA
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 04/19/2019
 ms.author: alkohli
-ms.openlocfilehash: b46e9ee8fc3e14981a01cc2425a8ce55d06c5a9a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 5d656fd8757580b8ce96acf168e92fc847d400ca
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "65150742"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85514068"
 ---
 # <a name="migrate-data-from-storsimple-5000-7000-series-to-azure-file-sync"></a>Перенос данных с устройств StorSimple серий 5000–7000 в службу "Синхронизация файлов Azure"
 
@@ -45,7 +45,7 @@ ms.locfileid: "65150742"
 4. Устройство StorSimple предоставляет основное оборудование. Однако при применении файлов Azure и службы "Синхронизация файлов Azure" вы используете свое локальное оборудование Windows Server как локальный кэш. Вы должны убедиться, что емкости вашего локального хранилища достаточно для хранения выбранного набора данных. Дополнительные сведения о распределении по уровням и установке целевого показателя требуемого свободного пространства см. в статье [Развертывание Синхронизации файлов Azure](https://docs.microsoft.com/azure/storage/files/storage-sync-files-deployment-guide?tabs=portal). 
 5. На странице [Цены на файлы Azure](https://azure.microsoft.com/pricing/details/storage/files/) просмотрите цену на службу "Синхронизация файлов Azure", так как она зависит от устройства StorSimple. AFS не поддерживает дедупликацию и сжатие, как StorSimple.
 
-## <a name="migration-prerequisites"></a>Предварительные требования к миграции
+## <a name="migration-prerequisites"></a>Предварительные требования для миграции
 
 Здесь вы найдете предварительные требования к миграции для устройства серии 5000 или 7000 для Синхронизация файлов Azure. Прежде чем начать, убедитесь, что у вас есть:
 
@@ -100,7 +100,7 @@ ms.locfileid: "65150742"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если AFS вам не подходит, узнайте, как [перенести данные с устройства StorSimple серий 5000–7000 на устройство серии 8000](storsimple-8000-migrate-from-5000-7000.md).
 

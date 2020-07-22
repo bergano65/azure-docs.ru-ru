@@ -1,36 +1,35 @@
 ---
-title: Назначение ролей администратора Azure AD с помощью Microsoft Graph API | Документация Майкрософт
-description: Назначение и удаление ролей администратора Azure AD с помощью API Graph в Azure Active Directory
+title: Назначение ролей администратора Azure AD с помощью API Microsoft Graph | Документация Майкрософт
+description: Назначение и удаление ролей администратора Azure AD с помощью API Graph в Azure Active Directory
 services: active-directory
 author: curtand
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
-ms.topic: article
+ms.topic: how-to
 ms.date: 04/29/2020
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4c93c8e354c7c02c6a085c2baa8fd664faaf1f64
-ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
-ms.translationtype: MT
+ms.openlocfilehash: 44299a55424f9b0338ee49d2742aeedf16db22e8
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82582629"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84732095"
 ---
-# <a name="assign-custom-admin-roles-using-the-microsoft-graph-api-in-azure-active-directory"></a>Назначение пользовательских ролей администратора с помощью Microsoft Graph API в Azure Active Directory 
+# <a name="assign-custom-admin-roles-using-the-microsoft-graph-api-in-azure-active-directory"></a>Назначение специальных ролей администратора с помощью API Microsoft Graph в Azure Active Directory 
 
-Способ назначения ролей учетным записям пользователей можно автоматизировать с помощью API Microsoft Graph. В этой статье рассматриваются операции POST, GET и DELETE в roleAssignments.
+Вы можете автоматизировать процесс назначения ролей учетным записям пользователей с помощью API Microsoft Graph. В этой статье рассматриваются операции POST, GET и DELETE назначения ролей.
 
 ## <a name="required-permissions"></a>Необходимые разрешения
 
-Подключитесь к Организации Azure AD с помощью учетной записи глобального администратора или администратора привилегированных удостоверений, чтобы назначить или удалить роли.
+Подключитесь к своей организации Azure AD с использованием учетной записи глобального администратора или администратора привилегированных пользователей для назначения или удаления ролей.
 
-## <a name="post-operations-on-roleassignment"></a>Операции POST в RoleAssignment
+## <a name="post-operations-on-roleassignment"></a>Операции POST в назначении ролей
 
-HTTP-запрос на создание назначения роли между пользователем и определением роли.
+HTTP-запрос для создания назначения ролей между пользователем и определением роли.
 
 POST
 
@@ -45,7 +44,7 @@ Content-type: application/json
 {
     "principalId":"ab2e1023-bddc-4038-9ac1-ad4843e7e539",
     "roleDefinitionId":"194ae4cb-b126-40b2-bd5b-6091b380977d",
-    "resourceScopes":["/"]
+    "resourceScopes":"/"
 }
 ```
 
@@ -55,7 +54,7 @@ Content-type: application/json
 HTTP/1.1 201 Created
 ```
 
-HTTP-запрос на создание назначения роли, в котором не существует субъект или определение роли
+HTTP-запрос на создание назначения ролей, когда субъект или определение роли не существует.
 
 POST
 
@@ -69,7 +68,7 @@ https://graph.microsoft.com/beta/roleManagement/directory/roleAssignments
 {
     "principalId":" 2142743c-a5b3-4983-8486-4532ccba12869",
     "roleDefinitionId":"194ae4cb-b126-40b2-bd5b-6091b380977d",
-    "resourceScopes":["/"]
+    "resourceScopes":"/"
 }
 ```
 
@@ -79,10 +78,10 @@ https://graph.microsoft.com/beta/roleManagement/directory/roleAssignments
 HTTP/1.1 404 Not Found
 ```
 
-HTTP-запрос на создание одного назначения роли с областью действия для встроенного определения роли.
+HTTP-запрос на создание назначения ролей в области одного ресурса во встроенном определении роли.
 
 > [!NOTE] 
-> В настоящее время встроенные роли имеют ограничение, где их можно ограничить только областью "/" всей организации или областью "/Ау/*". Область одного ресурса не работает для встроенных ролей, но работает для пользовательских ролей.
+> На сегодняшний момент встроенные роли имеют ограничение — они могут назначаться только в области "/" в масштабах организации или в области "/AU/*". Назначение в области одного ресурса не работает со встроенными ролями, но работает с пользовательскими ролями.
 
 POST
 
@@ -96,7 +95,7 @@ https://graph.microsoft.com/beta/roleManagement/directory/roleAssignments
 {
     "principalId":"ab2e1023-bddc-4038-9ac1-ad4843e7e539",
     "roleDefinitionId":"194ae4cb-b126-40b2-bd5b-6091b380977d",
-    "resourceScopes":["/ab2e1023-bddc-4038-9ac1-ad4843e7e539"]
+    "resourceScopes":"/ab2e1023-bddc-4038-9ac1-ad4843e7e539"
 }
 ```
 
@@ -124,9 +123,9 @@ HTTP/1.1 400 Bad Request
 }
 ```
 
-## <a name="get-operations-on-roleassignment"></a>ПОЛУЧЕНИЕ операций в RoleAssignment
+## <a name="get-operations-on-roleassignment"></a>Операции GET в назначении ролей
 
-HTTP-запрос на получение назначения роли для данного участника
+HTTP-запрос для получения назначения ролей для указанного субъекта.
 
 GET
 
@@ -142,17 +141,17 @@ HTTP/1.1 200 OK
     "id":"mhxJMipY4UanIzy2yE-r7JIiSDKQoTVJrLE9etXyrY0-1"
     "principalId":"ab2e1023-bddc-4038-9ac1-ad4843e7e539",
     "roleDefinitionId":"10dae51f-b6af-4016-8d66-8c2a99b929b3",
-    "resourceScopes":["/"]
+    "resourceScopes":"/"
 } ,
 {
     "id":"CtRxNqwabEKgwaOCHr2CGJIiSDKQoTVJrLE9etXyrY0-1"
     "principalId":"ab2e1023-bddc-4038-9ac1-ad4843e7e539",
     "roleDefinitionId":"3671d40a-1aac-426c-a0c1-a3821ebd8218",
-    "resourceScopes":["/"]
+    "resourceScopes":"/"
 }
 ```
 
-HTTP-запрос на получение назначения роли для заданного определения роли.
+HTTP-запрос для получения назначения ролей для указанного определения роли.
 
 GET
 
@@ -168,11 +167,11 @@ HTTP/1.1 200 OK
     "id":"CtRxNqwabEKgwaOCHr2CGJIiSDKQoTVJrLE9etXyrY0-1"
     "principalId":"ab2e1023-bddc-4038-9ac1-ad4843e7e539",
     "roleDefinitionId":"3671d40a-1aac-426c-a0c1-a3821ebd8218",
-    "resourceScopes":["/"]
+    "resourceScopes":"/"
 }
 ```
 
-HTTP-запрос на получение назначения роли по ИДЕНТИФИКАТОРу.
+HTTP-запрос для получения назначения по идентификатору.
 
 GET
 
@@ -188,13 +187,13 @@ HTTP/1.1 200 OK
     "id":"mhxJMipY4UanIzy2yE-r7JIiSDKQoTVJrLE9etXyrY0-1",
     "principalId":"ab2e1023-bddc-4038-9ac1-ad4843e7e539",
     "roleDefinitionId":"10dae51f-b6af-4016-8d66-8c2a99b929b3",
-    "resourceScopes":["/"]
+    "resourceScopes":"/"
 }
 ```
 
-## <a name="delete-operations-on-roleassignment"></a>Удаление операций с RoleAssignment
+## <a name="delete-operations-on-roleassignment"></a>Операции DELETE в назначении ролей
 
-HTTP-запрос на удаление назначения роли между пользователем и определением роли.
+HTTP-запрос для удаления назначения ролей между пользователем и определением роли.
 
 DELETE
 
@@ -207,7 +206,7 @@ GET https://graph.microsoft.com/beta/roleManagement/directory/roleAssignments/lA
 HTTP/1.1 204 No Content
 ```
 
-HTTP-запрос на удаление назначения роли, которое больше не существует
+HTTP-запрос на удаление назначения ролей, которое больше не существует.
 
 DELETE
 
@@ -221,7 +220,7 @@ GET https://graph.microsoft.com/beta/roleManagement/directory/roleAssignments/lA
 HTTP/1.1 404 Not Found
 ```
 
-HTTP-запрос на удаление назначения роли между самои встроенным определением роли
+HTTP-запрос для удаления назначения ролей между собой и определением роли.
 
 DELETE
 

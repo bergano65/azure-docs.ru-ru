@@ -1,37 +1,37 @@
 ---
-title: Добавление настраиваемых атрибутов для потоков пользователя Azure AD
+title: Добавление настраиваемых атрибутов для самостоятельной регистрации потоков в Azure AD
 description: Узнайте, как настроить атрибуты для потоков пользователей самостоятельной регистрации.
 services: active-directory
 author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.subservice: B2B
-ms.topic: conceptual
-ms.date: 05/19/2020
+ms.topic: how-to
+ms.date: 06/16/2020
 ms.author: mimart
+ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1f187cc47d9c64c8257cc097734fa41e10629f1c
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
-ms.translationtype: HT
+ms.openlocfilehash: a186b682a3a506f0f373776dd66e6592bc6036ad
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83594713"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85551158"
 ---
 # <a name="define-custom-attributes-for-user-flows-preview"></a>Определение настраиваемых атрибутов для потоков пользователя (предварительная версия)
-|     |
-| --- |
-| Функция настраиваемых атрибутов пользователя — это функция, которая предоставляется в общедоступной предварительной версии в Azure Active Directory. См. подробные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).|
-|     |
+
+> [!NOTE]
+> Функция настраиваемых атрибутов пользователя — это функция, которая предоставляется в общедоступной предварительной версии в Azure Active Directory. См. подробные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Для каждого приложения могут существовать различные требования к информации, которую необходимо получить во время регистрации. Azure AD поставляется со встроенным набором информации, сохраняемой в атрибутах, например "Given Name", "Surname", "City" и "Postal Code". С помощью Azure AD можно расширить набор атрибутов, хранящихся в гостевой учетной записи, когда внешний пользователь подписывается через пользовательский поток.
 
-Вы можете создать настраиваемые атрибуты на портале Azure и использовать их в потоке самообслуживания пользователей для самостоятельной регистрации. Эти атрибуты можно также считывать и записывать с помощью [Microsoft API Graph](https://docs.microsoft.com/azure/active-directory-b2c/manage-user-accounts-graph-api). Microsoft Graph API поддерживает создание и обновление пользователя с помощью атрибутов расширения. Атрибуты расширений в API Graph именуются по соглашению `extension_<Application-client-id>_attributename`. Пример:
+Вы можете создать настраиваемые атрибуты на портале Azure и использовать их в потоке самообслуживания пользователей для самостоятельной регистрации. Эти атрибуты можно также считывать и записывать с помощью [Microsoft API Graph](https://docs.microsoft.com/azure/active-directory-b2c/manage-user-accounts-graph-api). Microsoft Graph API поддерживает создание и обновление пользователя с помощью атрибутов расширения. Атрибуты расширений в API Graph именуются по соглашению `extension_<extensions-app-id>_attributename`. Пример:
 
 ```JSON
 "extension_831374b3bd5041bfaa54263ec9e050fc_loyaltyNumber": "212342"
 ```
 
-Вы можете найти `<Application-client-id>` на странице **Регистрация приложений**, рядом с **Идентификатор приложения (клиент)** . Этот идентификатор относится к вашему клиенту.
+`<extensions-app-id>`Относится только к вашему клиенту. Чтобы найти этот идентификатор, перейдите в раздел Azure Active Directory > Регистрация приложений > все приложения. Найдите приложение, которое начинается с AAD-Extensions-App, и выберите его. На странице Обзор приложения Обратите внимание на идентификатор приложения (клиента).
 
 ## <a name="create-a-custom-attribute"></a>Создание настраиваемого атрибута
 
@@ -55,7 +55,7 @@ ms.locfileid: "83594713"
 
 Теперь настраиваемый атрибут доступен в списке атрибутов пользователя и может использоваться в ваших потоках пользователей. Пользовательский атрибут создается только при первом использовании в любом потоке пользователя, но не при добавлении в список атрибутов пользователя.
 
-После создания нового пользователя с помощью пользовательского потока, использующего только что созданный настраиваемый атрибут, объект можно запросить в [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer). Теперь вы увидите **ShoeSize** в списке атрибутов, собираемых в процессе регистрации, а также в токене, возвращаемом в приложение. Сведения о том, как включить эти утверждения в маркер, отправляемый обратно в приложение, см. в разделе [Настройка дополнительных утверждений для расширения каталога](https://docs.microsoft.com/azure/active-directory/develop/active-directory-optional-claims#configuring-directory-extension-optional-claims)
+После создания нового пользователя с помощью пользовательского потока, использующего только что созданный настраиваемый атрибут, объект можно запросить в [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer). Теперь в списке атрибутов, собираемых во время регистрации в объекте пользователя, должно отобразиться **ShoeSize** . Вы можете вызвать API Graph из приложения, чтобы получить данные из этого атрибута после добавления в объект User.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -8,8 +8,6 @@
   items:
     - name: Обеспечение принятия условий использования
       href: require-tou.md
-    - name: Блокировка доступа при обнаружении риска для безопасности сеанса
-      href: app-sign-in-risk.md
 - name: Учебники
   items:
     - name: Требование многофакторной идентификации Azure
@@ -49,8 +47,6 @@
       href: controls.md
     - name: Перенос классической политики
       href: policy-migration.md
-    - name: Базовые политики защиты
-      href: concept-baseline-protection.md
 - name: Практические руководства
   expanded: true
   items:
@@ -68,8 +64,10 @@
           href: howto-conditional-access-policy-azure-management.md
         - name: Обязательная многофакторная проверка подлинности для всех пользователей
           href: howto-conditional-access-policy-all-users-mfa.md
-        - name: Условный доступ на основе рисков
+        - name: Условный доступ на основе рисков при входе
           href: howto-conditional-access-policy-risk.md
+        - name: Условный доступ на основе рисков пользователей
+          href: howto-conditional-access-policy-risk-user.md
         - name: Безопасная регистрация сведений для защиты
           href: howto-conditional-access-policy-registration.md
         - name: Блокирование доступа по расположению
@@ -104,6 +102,18 @@
           href: troubleshoot-conditional-access-what-if.md
         - name: ВОПРОСЫ И ОТВЕТЫ
           href: faqs.md
+- name: Справочник
+  items:
+    - name: API-интерфейсы Graph (бета-версия)
+      items:
+        - name: API conditionalAccessPolicy
+          href: /graph/api/resources/conditionalaccesspolicy?view=graph-rest-beta
+        - name: API namedLocation
+          href: /graph/api/resources/namedlocation?view=graph-rest-beta
+        - name: API countryNamedLocation
+          href: /graph/api/resources/countrynamedlocation?view=graph-rest-beta
+        - name: API ipNamedLocation
+          href: /graph/api/resources/ipnamedlocation?view=graph-rest-beta
 - name: Ресурсы
   items:
     - name: Форум отзывов и предложений по Azure

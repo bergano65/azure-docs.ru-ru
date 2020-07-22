@@ -123,6 +123,8 @@
     - name: Планирование и реализация SAP NetWeaver в Azure
       href: planning-guide.md
       items:
+        - name: Типы Службы хранилища Azure для рабочей нагрузки SAP
+          href: planning-guide-storage.md
         - name: Поддерживаемые сценарии использования рабочей нагрузки SAP в виртуальных машинах Azure
           href: sap-planning-supported-configurations.md
         - name: 'Программное обеспечение SAP, поддерживаемое для развертываний Azure'
@@ -230,7 +232,7 @@
             - name: Использование RHEL с несколькими ИД безопасности Pacemaker для экземпляра ASCS
               href: high-availability-guide-rhel-multi-sid.md
     - name: Использование Azure Site Recovery для аварийного восстановления SAP
-      href: '../../../site-recovery/site-recovery-workload.md#protect-sap'
+      href: ../../../site-recovery/site-recovery-workload.md#protect-sap
     - name: Группа размещения близкого взаимодействия Azure для оптимизации сетевой задержки с использованием приложений SAP
       href: sap-proximity-placement-scenarios.md
 - name: Интеграция AAD с приложением для управления удостоверениями SAP и единый вход
@@ -259,6 +261,18 @@
       href: 'https://docs.microsoft.com/power-bi/desktop-sap-bw-connector'
     - name: Возможность интеграции данных SAP HANA и Business Warehouse в Фабрике данных Azure
       href: 'https://azure.microsoft.com/blog/azure-data-factory-offer-sap-hana-and-business-warehouse-data-integration'
+- name: Azure Monitor для решений SAP
+  items:
+    - name: Общие сведения об Azure Monitor для решений SAP
+      href: azure-monitor-overview.md
+    - name: Поставщики Azure Monitor для решений SAP
+      href: azure-monitor-providers.md
+    - name: 'Вопросы и ответы, касающиеся Azure Monitor для решений SAP'
+      href: azure-monitor-faq.md
+- name: Справочник
+  items:
+    - name: Azure CLI
+      href: /cli/azure/ext/sap-hana/hanainstance
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure

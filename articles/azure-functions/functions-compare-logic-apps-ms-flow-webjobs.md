@@ -4,12 +4,12 @@ description: 'Сравнение облачных служб Майкрософ�
 ms.topic: overview
 ms.date: 04/09/2018
 ms.custom: mvc
-ms.openlocfilehash: 40293056a73fd88e9ad6b3922aebfe0ba71f07dd
-ms.sourcegitcommit: 2d7910337e66bbf4bd8ad47390c625f13551510b
+ms.openlocfilehash: 9d7531fac9610b357adb37d28f5d5e90a7e4b108
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80878142"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86169873"
 ---
 # <a name="choose-the-right-integration-and-automation-services-in-azure"></a>Выбор правильных служб интеграции и автоматизации в Azure
 
@@ -78,13 +78,13 @@ Power Automate и Logic Apps спроектированы в рамках под
 
 |  | Функции | Компонент "Веб-задания" с пакетом SDK для веб-заданий |
 | --- | --- | --- |
-|[Бессерверная модель приложения](https://azure.microsoft.com/solutions/serverless/) с [автоматическим масштабированием](functions-scale.md#how-the-consumption-and-premium-plans-work)|✔||
-|[Разработка и тестирование в браузере](functions-create-first-azure-function.md) |✔||
-|[Оплата по мере пользования](functions-scale.md#consumption-plan)|✔||
-|[Интеграция с Logic Apps](functions-twitter-email.md)|✔||
-| События триггера |[Таймер](functions-bindings-timer.md)<br>[Очереди и большие двоичные объекты службы хранилища Azure](functions-bindings-storage-blob.md)<br>[Очереди и разделы служебной шины Azure](functions-bindings-service-bus.md)<br>[Azure Cosmos DB](functions-bindings-cosmosdb.md)<br>[Центры событий Azure](functions-bindings-event-hubs.md)<br>[HTTP или веб-перехватчик (GitHub, Slack)](functions-bindings-http-webhook.md)<br>[Сетка событий Azure](functions-bindings-event-grid.md)|[Таймер](functions-bindings-timer.md)<br>[Очереди и большие двоичные объекты службы хранилища Azure](functions-bindings-storage-blob.md)<br>[Очереди и разделы служебной шины Azure](functions-bindings-service-bus.md)<br>[Azure Cosmos DB](functions-bindings-cosmosdb.md)<br>[Центры событий Azure](functions-bindings-event-hubs.md)<br>[Файловая система](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions/Extensions/Files/FileTriggerAttribute.cs)|
-| Поддерживаемые языки  |C#<br>F#<br>JavaScript<br>Java<br>Python<br>PowerShell |C#<sup>1</sup>|
-|Диспетчеры пакетов|NPM и NuGet|NuGet<sup>2</sup>|
+|**[Бессерверная модель приложения](https://azure.microsoft.com/solutions/serverless/) с [автоматическим масштабированием](functions-scale.md#how-the-consumption-and-premium-plans-work)**|✔||
+|**[Разработка и тестирование в браузере](functions-create-first-azure-function.md)** |✔||
+|**[Оплата по мере использования](functions-scale.md#consumption-plan)**|✔||
+|**[Интеграция с Logic Apps](functions-twitter-email.md)**|✔||
+| **События триггера** |[Таймер](functions-bindings-timer.md)<br>[Очереди и большие двоичные объекты службы хранилища Azure](functions-bindings-storage-blob.md)<br>[Очереди и разделы служебной шины Azure](functions-bindings-service-bus.md)<br>[Azure Cosmos DB](functions-bindings-cosmosdb.md)<br>[Центры событий Azure](functions-bindings-event-hubs.md)<br>[HTTP или веб-перехватчик (GitHub, Slack)](functions-bindings-http-webhook.md)<br>[Сетка событий Azure](functions-bindings-event-grid.md)|[Таймер](functions-bindings-timer.md)<br>[Очереди и большие двоичные объекты службы хранилища Azure](functions-bindings-storage-blob.md)<br>[Очереди и разделы служебной шины Azure](functions-bindings-service-bus.md)<br>[Azure Cosmos DB](functions-bindings-cosmosdb.md)<br>[Центры событий Azure](functions-bindings-event-hubs.md)<br>[Файловая система](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions/Extensions/Files/FileTriggerAttribute.cs)|
+| **Поддерживаемые языки**  |C#<br>F#<br>JavaScript<br>Java<br>Python<br>PowerShell |C#<sup>1</sup>|
+|**Диспетчеры пакетов**|NPM и NuGet|NuGet<sup>2</sup>|
 
 <sup>1</sup> Компонент "Веб-задания" (без пакета SDK для веб-заданий) поддерживает C#, Java, JavaScript, Bash, CMD-файлы, BAT-файлы, PowerShell, PHP, TypeScript, Python и т. д. Это не полный список. Веб-задания могут выполнять любые программы или скрипты, выполняемые в песочнице службы приложений.
 

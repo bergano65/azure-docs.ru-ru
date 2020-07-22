@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 5355e43ca6ac075e76a76ceb51be135cf4b62b0a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e040f42db195760cf40f6dbdf651826b544b65a4
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77564029"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86507579"
 ---
 # <a name="set-up-vcenter-identity-sources-to-use-active-directory"></a>Настройка источников удостоверений vCenter для использования Active Directory
 
@@ -53,14 +53,14 @@ VMware vCenter поддерживает различные источники у
 
 | **Параметр** | **Описание** |
 |------------|-----------------|
-| **Имя** | Имя источника удостоверений. |
+| **имя**; | Имя источника удостоверений. |
 | **Базовое DN для пользователей** | Базовое различающееся имя для пользователей. |
 | **Доменное имя** | Полное доменное имя домена, например example.com. В этом текстовом поле не следует указывать IP-адрес. |
 | **Псевдоним домена** | NetBIOS-имя домена. Если используются проверки подлинности SSPI, добавьте NetBIOS-имя домена Active Directory в качестве псевдонима источника удостоверений. |
 | **Базовое DN для групп** | Базовое различающееся имя для групп. |
-| **URL-адрес основного сервера** | Сервер LDAP основного контроллера домена для домена.<br><br>Используйте формат `ldap://hostname:port` или `ldaps://hostname:port`. Порт обычно 389 для подключений LDAP и 636 для подключений LDAPs. Для Active Directory развертываний нескольких контроллеров домена порт обычно 3268 для LDAP и 3269 для LDAPs.<br><br>Сертификат, устанавливающий отношение доверия для конечной точки LDAPS сервера Active Directory, необходим при использовании `ldaps://` в первичном или вторичном URL-адресе LDAP. |
+| **URL-адрес основного сервера** | Сервер LDAP основного контроллера домена для домена.<br><br>Используйте формат  `ldap://hostname:port`   или  `ldaps://hostname:port` . Порт обычно 389 для подключений LDAP и 636 для подключений LDAPs. Для Active Directory развертываний нескольких контроллеров домена порт обычно 3268 для LDAP и 3269 для LDAPs.<br><br>Сертификат, устанавливающий отношение доверия для конечной точки LDAPs сервера Active Directory, необходим при использовании  `ldaps://`   в первичном или вторичном URL-адресе LDAP. |
 | **URL-адрес вторичного сервера** | Адрес LDAP-сервера вторичного контроллера домена, который используется для отработки отказа. |
-| **Выберите сертификат** | Если вы хотите использовать LDAPS с сервером Active Directory LDAP или источником удостоверений сервера OpenLDAP, то после ввода `ldaps://` в текстовом поле URL-адрес появится кнопка выбрать сертификат. Дополнительный URL-адрес не требуется. |
+| **Выберите сертификат** | Если вы хотите использовать LDAPs с сервером Active Directory LDAP или источником удостоверений сервера OpenLDAP, то после ввода  `ldaps://`   в текстовом поле URL-адрес появится кнопка выбрать сертификат. Дополнительный URL-адрес не требуется. |
 | **Имя пользователя** | Идентификатор пользователя в домене, который имеет минимальный доступ только для чтения к базовому DN для пользователей и групп. |
 | **Пароль** | Пароль пользователя, заданного параметром username. |
 
@@ -80,7 +80,7 @@ VMware vCenter поддерживает различные источники у
 * Одна или несколько виртуальных машин под управлением Microsoft Windows Server для использования в качестве контроллеров домена для нового леса Active Directory и домена.
 * Одна или несколько виртуальных машин, на которых запущена служба DNS, для разрешения имен.
 
-Подробные инструкции см. [в статье Установка нового леса Active Directory Windows Server 2012](https://docs.microsoft.com/windows-server/identity/ad-ds/deploy/install-a-new-windows-server-2012-active-directory-forest--level-200-) .
+Подробные инструкции см. [в статье Установка нового леса Active Directory Windows Server 2012](/windows-server/identity/ad-ds/deploy/install-a-new-windows-server-2012-active-directory-forest--level-200-) .
 
 > [!TIP]
 > Для обеспечения высокой доступности служб рекомендуется настроить несколько контроллеров домена и DNS-серверов.
@@ -94,7 +94,7 @@ VMware vCenter поддерживает различные источники у
 * VPN-подключение типа "сеть — сеть" к расположению леса Active Directory.
 * DNS-сервер для разрешения имени существующего леса Active Directory.
 
-Подробные инструкции см. [в разделе Установка нового дочернего или доменного домена Windows Server 2012 Active Directory](https://docs.microsoft.com/windows-server/identity/ad-ds/deploy/install-a-new-windows-server-2012-active-directory-child-or-tree-domain--level-200-) .
+Подробные инструкции см. [в разделе Установка нового дочернего или доменного домена Windows Server 2012 Active Directory](/windows-server/identity/ad-ds/deploy/install-a-new-windows-server-2012-active-directory-child-or-tree-domain--level-200-) .
 
 После настройки домена Active Directory можно [Добавить источник удостоверений в vCenter](#add-an-identity-source-on-vcenter) для нового Active Directory.
 

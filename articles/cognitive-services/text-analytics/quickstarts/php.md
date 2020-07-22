@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство по использованию PHP для вызова API анализа текста
+title: Краткое руководство. Вызов API анализа текста с использованием PHP
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как получить информацию и примеры кода, которые помогут вам приступить к работе с API "Анализ текста" в Azure Cognitive Services.
 services: cognitive-services
@@ -8,23 +8,23 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: quickstart
-ms.date: 12/17/2019
+ms.date: 07/10/2020
 ms.author: aahi
-ms.openlocfilehash: a74cdb79da668cdba44c051c7b7eada3ace8abe4
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: 4627cc83de70f596ae4917d0449f785a33bf720f
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75378591"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86261355"
 ---
-# <a name="quickstart-using-php-to-call-the-text-analytics-cognitive-service"></a>Краткое руководство по использованию PHP для вызова API анализа текста Cognitive Services
+# <a name="quickstart-using-php-to-call-the-text-analytics-cognitive-service"></a>Краткое руководство. Использование PHP для вызова API анализа текста Cognitive Services
 <a name="HOLTop"></a>
 
 В этой статье содержатся сведения о том, как [распознавать язык](#Detect), [анализировать тональность](#SentimentAnalysis), [извлекать ключевые фразы](#KeyPhraseExtraction) и [идентифицировать связанные сущности](#Entities), используя  [API анализа текста](//go.microsoft.com/fwlink/?LinkID=759711) и PHP.
 
 [!INCLUDE [text-analytics-api-references](../includes/text-analytics-api-references.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [cognitive-services-text-analytics-signup-requirements](../../../../includes/cognitive-services-text-analytics-signup-requirements.md)]
 
@@ -50,7 +50,7 @@ API распознавания языка определяет язык текс
 $subscription_key = "<paste-your-text-analytics-key-here>";
 $endpoint = "<paste-your-text-analytics-endpoint-here>";
 
-$path = '/text/analytics/v2.1/languages';
+$path = '/text/analytics/v3.0/languages';
 
 function DetectLanguage ($host, $path, $key, $data) {
 
@@ -94,46 +94,39 @@ echo json_encode (json_decode ($result), JSON_PRETTY_PRINT);
 Успешный ответ возвращается в формате JSON, как показано в примере ниже. 
 
 ```json
-
 {
-   "documents": [
-      {
-         "id": "1",
-         "detectedLanguages": [
-            {
-               "name": "English",
-               "iso6391Name": "en",
-               "score": 1.0
-            }
-         ]
-      },
-      {
-         "id": "2",
-         "detectedLanguages": [
-            {
-               "name": "Spanish",
-               "iso6391Name": "es",
-               "score": 1.0
-            }
-         ]
-      },
-      {
-         "id": "3",
-         "detectedLanguages": [
-            {
-               "name": "Chinese_Simplified",
-               "iso6391Name": "zh_chs",
-               "score": 1.0
-            }
-         ]
-      }
-   ],
-   "errors": [
-
-   ]
+    "documents": [
+        {
+            "id": "1",
+            "detectedLanguage": {
+                "name": "English",
+                "iso6391Name": "en",
+                "confidenceScore": 1.0
+            },
+            "warnings": []
+        },
+        {
+            "id": "2",
+            "detectedLanguage": {
+                "name": "Spanish",
+                "iso6391Name": "es",
+                "confidenceScore": 1.0
+            },
+            "warnings": []
+        },
+        {
+            "id": "3",
+            "detectedLanguage": {
+                "name": "Chinese_Simplified",
+                "iso6391Name": "zh_chs",
+                "confidenceScore": 1.0
+            },
+            "warnings": []
+        }
+    ],
+    "errors": [],
+    "modelVersion": "2019-10-01"
 }
-
-
 ```
 <a name="SentimentAnalysis"></a>
 
@@ -157,7 +150,7 @@ API анализа тональности определяет тонально�
 $subscription_key = "<paste-your-text-analytics-key-here>";
 $endpoint = "<paste-your-text-analytics-endpoint-here>";
 
-$path = '/text/analytics/v2.1/sentiment';
+$path = '/text/analytics/v3.0/sentiment';
 
 function GetSentiment ($host, $path, $key, $data) {
     // Make sure all text is UTF-8 encoded.
@@ -208,17 +201,56 @@ echo json_encode (json_decode ($result), JSON_PRETTY_PRINT);
 
 ```json
 {
-   "documents": [
-      {
-         "score": 0.99984133243560791,
-         "id": "1"
-      },
-      {
-         "score": 0.024017512798309326,
-         "id": "2"
-      },
-   ],
-   "errors": [   ]
+    "documents": [
+        {
+            "id": "1",
+            "sentiment": "positive",
+            "confidenceScores": {
+                "positive": 1.0,
+                "neutral": 0.0,
+                "negative": 0.0
+            },
+            "sentences": [
+                {
+                    "sentiment": "positive",
+                    "confidenceScores": {
+                        "positive": 1.0,
+                        "neutral": 0.0,
+                        "negative": 0.0
+                    },
+                    "offset": 0,
+                    "length": 102,
+                    "text": "I really enjoy the new XBox One S. It has a clean look, it has 4K/HDR resolution and it is affordable."
+                }
+            ],
+            "warnings": []
+        },
+        {
+            "id": "2",
+            "sentiment": "negative",
+            "confidenceScores": {
+                "positive": 0.02,
+                "neutral": 0.05,
+                "negative": 0.93
+            },
+            "sentences": [
+                {
+                    "sentiment": "negative",
+                    "confidenceScores": {
+                        "positive": 0.02,
+                        "neutral": 0.05,
+                        "negative": 0.93
+                    },
+                    "offset": 0,
+                    "length": 92,
+                    "text": "Este ha sido un dia terrible, llegué tarde al trabajo debido a un accidente automobilistico."
+                }
+            ],
+            "warnings": []
+        }
+    ],
+    "errors": [],
+    "modelVersion": "2020-04-01"
 }
 ```
 
@@ -242,7 +274,7 @@ API извлечения ключевых фраз извлекает ключе
 $subscription_key = "<paste-your-text-analytics-key-here>";
 $endpoint = "<paste-your-text-analytics-endpoint-here>";
 
-$path = '/text/analytics/v2.1/keyPhrases';
+$path = '/text/analytics/v3.0/keyPhrases';
 
 function GetKeyPhrases ($host, $path, $key, $data) {
 
@@ -287,37 +319,41 @@ echo json_encode (json_decode ($result), JSON_PRETTY_PRINT);
 
 ```json
 {
-   "documents": [
-      {
-         "keyPhrases": [
-            "HDR resolution",
-            "new XBox",
-            "clean look"
-         ],
-         "id": "1"
-      },
-      {
-         "keyPhrases": [
-            "Carlos",
-            "notificacion",
-            "algun problema",
-            "telefono movil"
-         ],
-         "id": "2"
-      },
-      {
-         "keyPhrases": [
-            "new hotel",
-            "Grand Hotel",
-            "review",
-            "center of Seattle",
-            "classiest decor",
-            "stars"
-         ],
-         "id": "3"
-      }
-   ],
-   "errors": [  ]
+    "documents": [
+        {
+            "id": "1",
+            "keyPhrases": [
+                "HDR resolution",
+                "new XBox",
+                "clean look"
+            ],
+            "warnings": []
+        },
+        {
+            "id": "2",
+            "keyPhrases": [
+                "Carlos",
+                "notificacion",
+                "algun problema",
+                "telefono movil"
+            ],
+            "warnings": []
+        },
+        {
+            "id": "3",
+            "keyPhrases": [
+                "new hotel",
+                "Grand Hotel",
+                "review",
+                "center of Seattle",
+                "classiest decor",
+                "stars"
+            ],
+            "warnings": []
+        }
+    ],
+    "errors": [],
+    "modelVersion": "2019-10-01"
 }
 ```
 
@@ -342,12 +378,12 @@ API сущностей определяет известные сущности 
 $subscription_key = "<paste-your-text-analytics-key-here>";
 $endpoint = "<paste-your-text-analytics-endpoint-here>";
 
-$path = '/text/analytics/v2.1/entities';
+$path = '/text/analytics/v3.0/entities/recognition/general';
 
 function GetEntities ($host, $path, $key, $data) {
 
     $headers = "Content-type: text/json\r\n" .
-        "Content-Length: " . Length($data) . "\r\n" .
+        "Content-Length: " . strlen($data) . "\r\n" .
         "Ocp-Apim-Subscription-Key: $key\r\n";
     $data = json_encode ($data);
 
@@ -384,47 +420,31 @@ echo json_encode (json_decode ($result), JSON_PRETTY_PRINT);
 Успешный ответ возвращается в формате JSON, как показано в примере ниже. 
 
 ```json
-{  
-   "documents":[  
-      {  
-         "id":"1",
-         "entities":[  
-            {  
-               "name":"Microsoft",
-               "matches":[  
-                  {  
-                     "wikipediaScore":0.20872054383103444,
-                     "entityTypeScore":0.99996185302734375,
-                     "text":"Microsoft",
-                     "offset":0,
-                     "length":9
-                  }
-               ],
-               "wikipediaLanguage":"en",
-               "wikipediaId":"Microsoft",
-               "wikipediaUrl":"https://en.wikipedia.org/wiki/Microsoft",
-               "bingId":"a093e9b9-90f5-a3d5-c4b8-5855e1b01f85",
-               "type":"Organization"
-            },
-            {  
-               "name":"Technology company",
-               "matches":[  
-                  {  
-                     "wikipediaScore":0.82123868042800585,
-                     "text":"It company",
-                     "offset":16,
-                     "length":10
-                  }
-               ],
-               "wikipediaLanguage":"en",
-               "wikipediaId":"Technology company",
-               "wikipediaUrl":"https://en.wikipedia.org/wiki/Technology_company",
-               "bingId":"bc30426e-22ae-7a35-f24b-454722a47d8f"
-            }
-         ]
-      }
-   ],
-    "errors":[]
+{
+    "documents": [
+        {
+            "id": "1",
+            "entities": [
+                {
+                    "text": "Microsoft",
+                    "category": "Organization",
+                    "offset": 0,
+                    "length": 9,
+                    "confidenceScore": 0.86
+                },
+                {
+                    "text": "IT",
+                    "category": "Skill",
+                    "offset": 16,
+                    "length": 2,
+                    "confidenceScore": 0.8
+                }
+            ],
+            "warnings": []
+        }
+    ],
+    "errors": [],
+    "modelVersion": "2020-04-01"
 }
 ```
 

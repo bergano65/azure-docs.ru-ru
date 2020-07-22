@@ -4,15 +4,15 @@ description: Эта страница содержит сведения о мон
 services: expressroute
 author: mialdrid
 ms.service: expressroute
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 08/22/2019
 ms.author: cherylmc
-ms.openlocfilehash: 268a7e7c94285d3c4fdcb0c5fb91b685c09b58c8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 6622a6e9f6865dbbafa145d6773440599b0c2777
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75436914"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84738912"
 ---
 # <a name="expressroute-monitoring-metrics-and-alerts"></a>Мониторинг, метрики и оповещения в ExpressRoute
 
@@ -35,12 +35,12 @@ ms.locfileid: "75436914"
 |Доступность BGP|Доступность|<ui><li> Одноранговый (основной или дополнительный маршрутизатор ExpressRoute)</ui></li><ui><li> Тип пиринга</ui></li>|ExpressRoute|
 |BitsInPerSecond|Трафик|<ui><li> Тип пиринга (ExpressRoute)</ui></li><ui><li>Ссылка (с ExpressRoute Direct)</ui></li>| <li> ExpressRoute</li><li>ExpressRoute Direct|
 |BitsOutPerSecond|Трафик| <ui><li>Тип пиринга (ExpressRoute)</ui></li><ui><li> Ссылка (с ExpressRoute Direct) | <ui><li>ExpressRoute<ui><li>Непосредственный ExpressRoute</ui></li> |
-|глобалреачбитсинперсеконд|Трафик|<ui><li>Скэйная цепь (ключ службы)</ui></li>|Global Reach|
-|глобалреачбитсаутперсеконд|Трафик|<ui><li>Скэйная цепь (ключ службы)</ui></li>|Global Reach|
-|админстате|Физическое подключение|Ссылка|ExpressRoute Direct|
-|линепротокол|Физическое подключение|Ссылка|ExpressRoute Direct|
-|ркслигхтлевел|Физическое подключение|<ui><li>Ссылку</ui></li><ui><li>Lane</ui></li>|ExpressRoute Direct|
-|ткслигхтлевел|Физическое подключение|<ui><li>Ссылку</ui></li><ui><li>Lane</ui></li>|ExpressRoute Direct|
+|GlobalReachBitsInPerSecond|Трафик|<ui><li>Скэйная цепь (ключ службы)</ui></li>|Global Reach|
+|GlobalReachBitsOutPerSecond|Трафик|<ui><li>Скэйная цепь (ключ службы)</ui></li>|Global Reach|
+|AdminState|Физическое подключение|Ссылка|ExpressRoute Direct|
+|LineProtocol|Физическое подключение|Ссылка|ExpressRoute Direct|
+|RxLightLevel|Физическое подключение|<ui><li>Ссылка</ui></li><ui><li>Lane</ui></li>|ExpressRoute Direct|
+|TxLightLevel|Физическое подключение|<ui><li>Ссылка</ui></li><ui><li>Lane</ui></li>|ExpressRoute Direct|
 >[!NOTE]
 >Использование *глобалглобалреачбитсинперсеконд* и *глобалглобалреачбитсаутперсеконд* будет видимым, только если установлено хотя бы одно Global REACH соединение.
 >
@@ -134,7 +134,7 @@ ms.locfileid: "75436914"
 
   ![другое](./media/expressroute-monitoring-metrics-alerts/alertshowto6activitylog.jpg)
   
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Настройте подключение ExpressRoute.
   

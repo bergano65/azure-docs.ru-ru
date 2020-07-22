@@ -1,18 +1,18 @@
 ---
 title: Мониторинг изменений делегирования в управляющем клиенте
 description: Узнайте, как отслеживать действия делегирования от клиентов клиентов до управляющего клиента.
-ms.date: 03/30/2020
-ms.topic: conceptual
-ms.openlocfilehash: a4593b34311eca34e4fb68926a3820899ab3f324
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 07/10/2020
+ms.topic: how-to
+ms.openlocfilehash: 63b19f56538f060a158fd665a9bef3bf43a9d087
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81458817"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86252289"
 ---
 # <a name="monitor-delegation-changes-in-your-managing-tenant"></a>Мониторинг изменений делегирования в управляющем клиенте
 
-Как поставщик услуг, вы можете захотеть знать, когда клиентские подписки или группы ресурсов делегируются клиенту через [Управление делегированными ресурсами Azure](../concepts/azure-delegated-resource-management.md)или когда удаляются ранее делегированные ресурсы.
+Как поставщик услуг, вы можете захотеть знать, когда клиентские подписки или группы ресурсов делегируются клиенту через [Azure лигхсаусе](../overview.md)или когда удаляются ранее делегированные ресурсы.
 
 В управлении клиентом [Журнал действий Azure](../../azure-monitor/platform/platform-logs-overview.md) отслеживает действия делегирования на уровне клиента. Это зарегистрированное действие включает все добавленные или удаленные делегирования из всех клиентов.
 
@@ -44,7 +44,7 @@ ms.locfileid: "81458817"
 
 - [Создайте новую учетную запись субъекта-службы](../../active-directory/develop/howto-create-service-principal-portal.md) , которая будет использоваться только для этой функции, вместо того, чтобы назначать эту роль существующему субъекту-службе, используемому для другой автоматизации.
 - Убедитесь, что этот субъект-служба не имеет доступа к каким-либо делегированным ресурсам клиента.
-- [Используйте сертификат для проверки подлинности](../../active-directory/develop/howto-create-service-principal-portal.md#certificates-and-secrets) и [безопасного хранения в Azure Key Vault](../../key-vault/general/best-practices.md).
+- [Используйте сертификат для проверки подлинности](../../active-directory/develop/howto-create-service-principal-portal.md#upload-a-certificate-or-create-a-secret-for-signing-in) и [безопасного хранения в Azure Key Vault](../../key-vault/general/best-practices.md).
 - Ограничьте число пользователей, имеющих доступ к действиям от имени субъекта-службы.
 
 Используйте один из следующих методов для создания назначений корневой области.
@@ -73,7 +73,7 @@ az role assignment create --assignee 00000000-0000-0000-0000-000000000000 --role
 
 После создания новой учетной записи субъекта-службы с наблюдением за доступом к корневой области управляемого клиента вы можете использовать его для запроса и создания отчетов о действиях делегирования в клиенте. 
 
-[Этот Azure PowerShell сценарий](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/tools/monitor-delegation-changes) можно использовать для запроса последнего 1-дневного действия и отчетов по любому добавленному или удаленному делегированию (или неудачным попыткам). Он запрашивает данные [журнала действий клиента](https://docs.microsoft.com/rest/api/monitor/TenantActivityLogs/List) , затем конструирует следующие значения, чтобы сообщить о добавлении или удалении делегирований.
+[Этот Azure PowerShell сценарий](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/tools/monitor-delegation-changes) можно использовать для запроса последнего 1-дневного действия и отчетов по любому добавленному или удаленному делегированию (или неудачным попыткам). Он запрашивает данные [журнала действий клиента](/rest/api/monitor/TenantActivityLogs/List) , затем конструирует следующие значения, чтобы сообщить о добавлении или удалении делегирований.
 
 - **Делегатедресаурцеид**: идентификатор делегированной подписки или группы ресурсов.
 - **Кустомертенантид**: идентификатор клиента клиента.
@@ -91,7 +91,7 @@ az role assignment create --assignee 00000000-0000-0000-0000-000000000000 --role
 ```azurepowershell-interactive
 # Log in first with Connect-AzAccount if you're not using Cloud Shell
 
-# Azure Lighthouse: Query Tenant Activity Log for registered/unregistered delegations for the past 1 day
+# Azure Lighthouse: Query Tenant Activity Log for registered/unregistered delegations for the last 1 day
 
 $GetDate = (Get-Date).AddDays((-1))
 
@@ -106,57 +106,61 @@ $profileClient = [Microsoft.Azure.Commands.ResourceManager.Common.RMProfileClien
 $token = $profileClient.AcquireAccessToken($currentContext.Tenant.Id)
 
 $listOperations = @{
-    Uri = "https://management.azure.com/providers/microsoft.insights/eventtypes/management/values?api-version=2015-04-01&`$filter=eventTimestamp ge '$($dateFormatForQuery)'"
+    Uri     = "https://management.azure.com/providers/microsoft.insights/eventtypes/management/values?api-version=2015-04-01&`$filter=eventTimestamp ge '$($dateFormatForQuery)'"
     Headers = @{
-        Authorization = "Bearer $($token.AccessToken)"
+        Authorization  = "Bearer $($token.AccessToken)"
         'Content-Type' = 'application/json'
     }
-    Method = 'GET'
+    Method  = 'GET'
 }
 $list = Invoke-RestMethod @listOperations
-$showOperations = $list.value
 
-if ($showOperations.operationName.value -eq "Microsoft.Resources/tenants/register/action")
-{
-    $registerOutputs  = $showOperations | Where-Object -FilterScript {$_.eventName.value -eq "EndRequest" -and $_.resourceType.value -and $_.operationName.value -eq "Microsoft.Resources/tenants/register/action"}
-    foreach ($registerOutput in $registerOutputs)
-    {
+# First link can be empty - and point to a next link (or potentially multiple pages)
+# While you get more data - continue fetching and add result
+while($list.nextLink){
+    $list2 = Invoke-RestMethod $list.nextLink -Headers $listOperations.Headers -Method Get
+    $data+=$list2.value;
+    $list.nextLink = $list2.nextlink;
+}
+
+$showOperations = $data;
+
+if ($showOperations.operationName.value -eq "Microsoft.Resources/tenants/register/action") {
+    $registerOutputs = $showOperations | Where-Object -FilterScript { $_.eventName.value -eq "EndRequest" -and $_.resourceType.value -and $_.operationName.value -eq "Microsoft.Resources/tenants/register/action" }
+    foreach ($registerOutput in $registerOutputs) {
+        $eventDescription = $registerOutput.description | ConvertFrom-Json;
     $registerOutputdata = [pscustomobject]@{
-        Event = "An Azure customer has delegated resources to your tenant";
-        DelegatedResourceId = $registerOutput.description |%{$_.split('"')[11]};
-        CustomerTenantId = $registerOutput.description |%{$_.split('"')[7]};
-        CustomerSubscriptionId = $registerOutput.subscriptionId;
+        Event                    = "An Azure customer has registered delegated resources to your Azure tenant";
+        DelegatedResourceId      = $eventDescription.delegationResourceId; 
+        CustomerTenantId         = $eventDescription.subscriptionTenantId;
+        CustomerSubscriptionId   = $eventDescription.subscriptionId;
         CustomerDelegationStatus = $registerOutput.status.value;
-        EventTimeStamp = $registerOutput.eventTimestamp;
+        EventTimeStamp           = $registerOutput.eventTimestamp;
         }
         $registerOutputdata | Format-List
     }
 }
-if ($showOperations.operationName.value -eq "Microsoft.Resources/tenants/unregister/action") 
-{
-    $unregisterOutputs  = $showOperations | Where-Object -FilterScript {$_.eventName.value -eq "EndRequest" -and $_.resourceType.value -and $_.operationName.value -eq "Microsoft.Resources/tenants/unregister/action"}
-    foreach ($unregisterOutput in $unregisterOutputs)
-    {
+if ($showOperations.operationName.value -eq "Microsoft.Resources/tenants/unregister/action") {
+    $unregisterOutputs = $showOperations | Where-Object -FilterScript { $_.eventName.value -eq "EndRequest" -and $_.resourceType.value -and $_.operationName.value -eq "Microsoft.Resources/tenants/unregister/action" }
+    foreach ($unregisterOutput in $unregisterOutputs) {
+        $eventDescription = $registerOutput.description | ConvertFrom-Json;
     $unregisterOutputdata = [pscustomobject]@{
-        Event = "An Azure customer has removed delegated resources from your tenant";
-        DelegatedResourceId = $unregisterOutput.description |%{$_.split('"')[11]};
-        CustomerTenantId = $unregisterOutput.description |%{$_.split('"')[7]};
-        CustomerSubscriptionId = $unregisterOutput.subscriptionId;
+        Event                    = "An Azure customer has unregistered delegated resources from your Azure tenant";
+        DelegatedResourceId      = $eventDescription.delegationResourceId;
+        CustomerTenantId         = $eventDescription.subscriptionTenantId;
+        CustomerSubscriptionId   = $eventDescription.subscriptionId;
         CustomerDelegationStatus = $unregisterOutput.status.value;
-        EventTimeStamp = $unregisterOutput.eventTimestamp;
+        EventTimeStamp           = $unregisterOutput.eventTimestamp;
         }
         $unregisterOutputdata | Format-List
     }
 }
-else 
-{
-    Write-Output "No new delegation changes."
-}   
-
-
+else {
+    Write-Output "No new delegation events for tenant: $($currentContext.Tenant.TenantId)"
+}
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Узнайте, как подключить клиентов к [управлению делегированными ресурсами Azure](../concepts/azure-delegated-resource-management.md).
+- Узнайте, как подключить клиентов к [Azure лигхсаусе](../concepts/azure-delegated-resource-management.md).
 - Сведения о [Azure Monitor](../../azure-monitor/index.yml) и [журнале действий Azure](../../azure-monitor/platform/platform-logs-overview.md).

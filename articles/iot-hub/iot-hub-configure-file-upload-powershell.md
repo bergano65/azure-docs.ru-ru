@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 08/08/2017
 ms.author: robinsh
 ms.openlocfilehash: c8fc0393e0961b46fbb8031d735f27e9ad785031
-ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "60318466"
 ---
 # <a name="configure-iot-hub-file-uploads-using-powershell"></a>Настройка отправки файлов в Центре Интернета вещей с помощью PowerShell
@@ -25,7 +25,7 @@ ms.locfileid: "60318466"
 
 Для работы с этим учебником требуется:
 
-* Активная учетная запись Azure. Если у вас нет учетной записи, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
+* Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
 
 * [Azure PowerShell командлетов](https://docs.microsoft.com/powershell/azure/install-Az-ps).
 
@@ -123,14 +123,14 @@ Set-AzIotHub `
     -FileUploadNotificationMaxDeliveryCount 10
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о возможностях Центра Интернета вещей, касающихся отправки файлов, см. в разделе об [отправке файлов с устройства](iot-hub-devguide-file-upload.md).
 
 Дополнительные сведения об управлении Центром Интернета вещей в Azure см. по следующим ссылкам:
 
 * [Массовое управление удостоверениями устройств Центра Интернета вещей](iot-hub-bulk-identity-mgmt.md)
-* [Метрики Центра Интернета вещей](iot-hub-metrics.md)
+* [Общие сведения о метриках Центра Интернета вещей](iot-hub-metrics.md)
 * [Мониторинг операций](iot-hub-operations-monitoring.md)
 
 Для дальнейшего изучения возможностей Центра Интернета вещей см. следующие статьи:

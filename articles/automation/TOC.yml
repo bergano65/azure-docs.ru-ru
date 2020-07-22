@@ -41,6 +41,10 @@
       href: automation-runbook-types.md
     - name: "PowerShell\_DSC"
       href: /powershell/scripting/dsc/overview/overview
+    - name: Безопасность
+      items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
     - name: Безопасность данных
       items:
         - name: Шифрование защищенных ресурсов
@@ -59,8 +63,12 @@
           href: automation-config-aws-account.md
         - name: "Настройка проверки подлинности с помощью Azure\_AD"
           href: automation-use-azure-ad.md
+        - name: 'Управление записью DNS, используемой Службой автоматизации'
+          href: how-to/automation-region-dns-records.md
         - name: Управление учетной записью запуска от имени в службе автоматизации
           href: manage-runas-account.md
+        - name: Частное подключение к учетной записи службы автоматизации
+          href: how-to/private-link-security.md
         - name: Управление разрешениями ролей и безопасностью
           href: automation-role-based-access-control.md
         - name: Перемещение учетной записи службы автоматизации в другую подписку
@@ -282,7 +290,7 @@
         - name: Интеграция со службой "Сетка событий" и Microsoft Teams
           href: ../event-grid/ensure-tags-exists-on-new-virtual-machines.md
         - name: Автоматизация запуска и остановки Azure-SSIS IR
-          href: '../data-factory/how-to-schedule-azure-ssis-integration-runtime.md#create-and-schedule-azure-automation-runbook-that-startsstops-azure-ssis-ir'
+          href: ../data-factory/how-to-schedule-azure-ssis-integration-runtime.md#create-and-schedule-azure-automation-runbook-that-startsstops-azure-ssis-ir
 - name: Справочник
   items:
     - name: Azure PowerShell Az
@@ -300,7 +308,7 @@
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/?category=management-tools&query=automation'
     - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
-      href: 'https://docs.microsoft.com/en-us/answers/topics/azure-automation.html'
+      href: /answers/topics/azure-automation.html
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/automation/'
     - name: Калькулятор цен

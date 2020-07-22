@@ -1,14 +1,14 @@
 ---
 title: Руководство по Создание определения пользовательской политики
 description: В рамках этого учебника вы создадите определение пользовательской политики для Политики Azure, чтобы применять пользовательские бизнес-правила для ресурсов Azure.
-ms.date: 11/25/2019
+ms.date: 06/16/2020
 ms.topic: tutorial
-ms.openlocfilehash: 7a1eb8abcfbf7513b4620f66c0a7fdbd288f8705
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 5eee969257f5cf640ce82fbda9877974207c87af
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82190713"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86044623"
 ---
 # <a name="tutorial-create-a-custom-policy-definition"></a>Руководство по Создание определения пользовательской политики
 
@@ -53,7 +53,7 @@ ms.locfileid: "82190713"
 Есть много способов определить свойства ресурса Azure. В этом руководстве мы рассмотрим каждый из них:
 
 - Расширение Политики Azure для VS Code
-- Шаблоны Resource Manager
+- Шаблоны Azure Resource Manager (шаблоны ARM)
   - экспорт существующего ресурса;
   - процедура создания;
   - шаблоны быстрого запуска (GitHub);
@@ -64,16 +64,16 @@ ms.locfileid: "82190713"
 
 [Расширение VS Code](../how-to/extension-for-vscode.md#search-for-and-view-resources) можно использовать для просмотра ресурсов в среде и свойств Resource Manager для каждого ресурса.
 
-### <a name="resource-manager-templates"></a>Шаблоны Resource Manager
+### <a name="arm-templates"></a>Шаблоны ARM
 
-Существует несколько способов просмотреть [шаблон Resource Manager](../../../azure-resource-manager/templates/template-tutorial-create-encrypted-storage-accounts.md), чтобы узнать свойство, которым мы хотим управлять.
+Существует несколько способов просмотреть [шаблон Resource Manager](../../../azure-resource-manager/templates/template-tutorial-use-template-reference.md), чтобы узнать свойство, которым мы хотим управлять.
 
 #### <a name="existing-resource-in-the-portal"></a>Существующий ресурс на портале
 
 Простейший способ узнать свойства ресурса — изучить существующий ресурс аналогичного типа. Ресурсы, которые уже настроены на соответствие политике, также подойдут для этой цели.
 Откроем страницу **Экспорт шаблона** такого ресурса (раздел **Параметры** на портале Azure).
 
-:::image type="content" source="../media/create-custom-policy-definition/export-template.png" alt-text="Страница "Экспорт шаблона" в существующем ресурсе" border="false":::
+:::image type="content" source="../media/create-custom-policy-definition/export-template.png" alt-text="Страница Экспорт шаблона в существующем ресурсе" border="false":::
 
 Если открыть эту страницу для учетной записи хранения, отобразится примерно такой шаблон:
 
@@ -144,12 +144,11 @@ ms.locfileid: "82190713"
 
 #### <a name="quickstart-templates-on-github"></a>Шаблоны быстрого запуска на GitHub
 
-В разделе [шаблонов быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates) на сайте GitHub доступны сотни шаблонов Resource Manager для различных ресурсов. Эти шаблоны обеспечивают отличный способ отыскать требуемое свойство ресурса. Некоторые свойства могут только казаться требуемыми, а в действительности отвечать за что-нибудь другое.
+В разделе [шаблонов быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates) на сайте GitHub доступны сотни шаблонов ARM для различных ресурсов. Эти шаблоны обеспечивают отличный способ отыскать требуемое свойство ресурса. Некоторые свойства могут только казаться требуемыми, а в действительности отвечать за что-нибудь другое.
 
 #### <a name="resource-reference-docs"></a>Справочная документация по ресурсам
 
-Чтобы убедиться в том, что **supportsHttpsTrafficOnly** — это требуемое нам свойство, сверьтесь со справочником по шаблонам Resource Manager для [ресурса учетной записи хранения](/azure/templates/microsoft.storage/2018-07-01/storageaccounts) у поставщика хранилища.
-Объект свойств содержит список допустимых параметров. Перейдя по ссылке [StorageAccountPropertiesCreateParameters-object](/azure/templates/microsoft.storage/2018-07-01/storageaccounts#storageaccountpropertiescreateparameters-object), можно просмотреть таблицу допустимых свойств. Свойство **supportsHttpsTrafficOnly** там присутствует, а его описание подтверждает, что это то свойство, которое нам требуется для обеспечения соответствия бизнес-требованиям.
+Чтобы убедиться в том, что **supportsHttpsTrafficOnly** — это требуемое нам свойство, сверьтесь со справочником по шаблонам ARM для [ресурса учетной записи хранения](/azure/templates/microsoft.storage/2018-07-01/storageaccounts) у поставщика хранилища. Объект свойств содержит список допустимых параметров. Перейдя по ссылке [StorageAccountPropertiesCreateParameters-object](/azure/templates/microsoft.storage/2018-07-01/storageaccounts#storageaccountpropertiescreateparameters-object), можно просмотреть таблицу допустимых свойств. Свойство **supportsHttpsTrafficOnly** там присутствует, а его описание подтверждает, что это то свойство, которое нам требуется для обеспечения соответствия бизнес-требованиям.
 
 ### <a name="azure-resource-explorer"></a>Обозреватель ресурсов Azure
 
@@ -171,6 +170,9 @@ ms.locfileid: "82190713"
 ### <a name="get-aliases-in-vs-code-extension"></a>Получение псевдонимов в расширении VS Code
 
 Расширение Политики Azure для расширения VS Code позволяет легко просматривать ресурсы и [обнаруживать псевдонимы](../how-to/extension-for-vscode.md#discover-aliases-for-resource-properties).
+
+> [!NOTE]
+> Расширение VS Code предоставляет только свойства режима диспетчера ресурсов и не отображает свойств [режима поставщика ресурсов](../concepts/definition-structure.md#mode).
 
 ### <a name="azure-cli"></a>Azure CLI
 
@@ -216,7 +218,7 @@ az graph query -q "Resources | where type=~'microsoft.storage/storageaccounts' |
 Search-AzGraph -Query "Resources | where type=~'microsoft.storage/storageaccounts' | limit 1"
 ```
 
-Результат похож на тот, который был получен нами с использованием шаблонов Resource Manager и обозревателя ресурсов Azure. Однако результаты Azure Resource Graph могут включать сведения о [псевдониме](../concepts/definition-structure.md#aliases), _проецируя_ массив _псевдонимов_:
+Результат похож на тот, который был получен нами с использованием шаблонов ARM и обозревателя ресурсов Azure. Однако результаты Azure Resource Graph могут включать сведения о [псевдониме](../concepts/definition-structure.md#aliases), _проецируя_ массив _псевдонимов_:
 
 ```kusto
 Resources

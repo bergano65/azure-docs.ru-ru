@@ -1,20 +1,20 @@
 ---
 title: Включение ведения журнала в Машинное обучение Azure
 description: Узнайте, как включить ведение журнала в Машинное обучение Azure с помощью пакета ведения журнала Python по умолчанию, а также с помощью функций, характерных для пакета SDK.
-ms.author: trbye
-author: trevorbye
+ms.author: larryfr
+author: BlackMist
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: conceptual
-ms.reviewer: trbye
+ms.topic: how-to
 ms.date: 03/05/2020
-ms.openlocfilehash: 73b9ae6bc3c15526bfdafd74330c7b86286631b1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.custom: tracking-python
+ms.openlocfilehash: c8f9923f9a5c4954fbc4682f464100b18eb469eb
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78396137"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86536204"
 ---
 # <a name="enable-logging-in-azure-machine-learning"></a>Включение ведения журнала в Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -27,7 +27,7 @@ ms.locfileid: "78396137"
 > * как включить ведение журнала для развернутых моделей:
 > * как задать параметры `logging` в Python.
 
-[Создайте рабочую область машинное обучение Azure](how-to-manage-workspace.md). Для получения дополнительных сведений о пакете SDK воспользуйтесь [руководством](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py) .
+[Создайте рабочую область Машинного обучения Azure](how-to-manage-workspace.md). Для получения дополнительных сведений о пакете SDK воспользуйтесь [руководством](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py) .
 
 ## <a name="training-models-and-compute-target-logging"></a>Ведение журнала для обучаемых моделей и целевых объектов вычислений
 
@@ -112,6 +112,6 @@ import logging
 logging.basicConfig(level=logging.DEBUG)
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Мониторинг и сбор данных из конечных точек веб-службы Машинного обучения](how-to-enable-app-insights.md)

@@ -1,23 +1,24 @@
 ---
-title: Привязки служебной шины Azure для службы "Функции Azure"
+title: Триггер служебной шины Azure для функций Azure
 description: Научитесь запускать функцию Azure при создании сообщений служебной шины Azure.
 author: craigshoemaker
 ms.assetid: daedacf0-6546-4355-a65c-50873e74f66b
 ms.topic: reference
 ms.date: 02/19/2020
 ms.author: cshoe
-ms.openlocfilehash: b5e7f1b70aca50b4e42d056beb0b17795430091c
-ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
+ms.custom: tracking-python
+ms.openlocfilehash: ee4961c6c1bb8cafe25ec2c84affdf0f1789e9f2
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82690708"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85603032"
 ---
 # <a name="azure-service-bus-trigger-for-azure-functions"></a>Триггер служебной шины Azure для функций Azure
 
 Используйте триггер служебной шины для ответа на сообщения из очереди или раздела служебной шины. Начиная с версии Extension 3.1.0 можно активировать в очереди или разделе с поддержкой сеанса.
 
-Дополнительные сведения об установке и сведениях о конфигурации см. в [обзоре](functions-bindings-service-bus-output.md).
+Сведения об установке и настройке см. в [этой обзорной статье](functions-bindings-service-bus-output.md).
 
 ## <a name="example"></a>Пример
 
@@ -119,7 +120,7 @@ module.exports = function(context, myQueueItem) {
 
 В следующем примере показано, как считать сообщение очереди служебной шины с помощью триггера.
 
-Привязка служебной шины определяется в *Function. JSON* , где *тип* имеет значение `serviceBusTrigger`.
+Привязка служебной шины определяется в *function.js* , где *тип* имеет значение `serviceBusTrigger` .
 
 ```json
 {
@@ -136,7 +137,7 @@ module.exports = function(context, myQueueItem) {
 }
 ```
 
-Код в `func.ServiceBusMessage` * _ \_init_\_. Корректировка* объявляет параметр как, который позволяет считывать сообщение очереди в функции.
+Код в * _ \_ init_ \_ . Корректировка* объявляет параметр как `func.ServiceBusMessage` , который позволяет считывать сообщение очереди в функции.
 
 ```python
 import azure.functions as func
@@ -222,7 +223,7 @@ def main(msg: func.ServiceBusMessage):
   }
   ```
 
-  Так как `Connection` свойство не определено, функции ищет параметр приложения с именем `AzureWebJobsServiceBus`, который является именем по умолчанию для строки подключения служебной шины. Можно также задать `Connection` свойство, чтобы указать имя параметра приложения, содержащего строку подключения служебной шины, которая будет использоваться, как показано в следующем примере:
+  Так как `Connection` свойство не определено, функции ищет параметр приложения с именем `AzureWebJobsServiceBus` , который является именем по умолчанию для строки подключения служебной шины. Можно также задать свойство, `Connection` чтобы указать имя параметра приложения, содержащего строку подключения служебной шины, которая будет использоваться, как показано в следующем примере:
 
   ```csharp
   [FunctionName("ServiceBusQueueTriggerCSharp")]                    
@@ -264,39 +265,39 @@ def main(msg: func.ServiceBusMessage):
 
 # <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
-Атрибуты не поддерживаются скриптом C#.
+В скрипте C# атрибуты не поддерживаются.
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-Атрибуты не поддерживаются в JavaScript.
+В JavaScript атрибуты не поддерживаются.
 
 # <a name="python"></a>[Python](#tab/python)
 
-Атрибуты не поддерживаются в Python.
+В Python атрибуты не поддерживаются.
 
 # <a name="java"></a>[Java](#tab/java)
 
-`ServiceBusQueueTrigger` Заметка позволяет создать функцию, которая выполняется при создании сообщения очереди служебной шины. Доступные параметры конфигурации включают имя очереди и имя строки подключения.
+`ServiceBusQueueTrigger`Заметка позволяет создать функцию, которая выполняется при создании сообщения очереди служебной шины. Доступные параметры конфигурации включают имя очереди и имя строки подключения.
 
-`ServiceBusTopicTrigger` Заметка позволяет назначить раздел и подписку, чтобы указать, какие данные активирует функция.
+`ServiceBusTopicTrigger`Заметка позволяет назначить раздел и подписку, чтобы указать, какие данные активирует функция.
 
 Дополнительные сведения см. в [примере](#example) триггера.
 
 ---
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 
-В следующей таблице описаны свойства конфигурации привязки, заданные в файле *Function. JSON* и `ServiceBusTrigger` атрибуте.
+В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `ServiceBusTrigger`.
 
 |свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
 |**type** | н/д | Для этого свойства нужно задать значение "serviceBusTrigger". Это свойство задается автоматически при создании триггера на портале Azure.|
-|**двух** | н/д | Для этого свойства необходимо задать значение "in". Это свойство задается автоматически при создании триггера на портале Azure. |
-|**name** | н/д | Имя переменной, представляющей сообщение очереди или раздела в коде функции. |
+|**direction** | н/д | Для этого свойства необходимо задать значение "in". Это свойство задается автоматически при создании триггера на портале Azure. |
+|**name** | Недоступно | Имя переменной, представляющей сообщение очереди или раздела в коде функции. |
 |**queueName**|**QueueName**|Имя очереди для отслеживания.  Задается только в том случае, если отслеживается очередь, но не раздел.
 |**topicName**|**топикнаме**|Имя отслеживаемого раздела. Задается только в том случае, если отслеживается раздел, но не очередь.|
 |**subscriptionName**|**SubscriptionName**|Имя отслеживаемой подписки. Задается только в том случае, если отслеживается раздел, но не очередь.|
-|**connection**;|**Соединен**|Имя параметра приложения, содержащего строку подключения к служебной шине, используемую для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задано значение `connection` "мисервицебус", среда выполнения функций ищет параметр приложения с именем "азуревебжобсмисервицебус". Если оставить строку `connection` пустой, то среда выполнения службы "Функции" будет использовать строку подключения к служебной шине по умолчанию для параметра приложения AzureWebJobsServiceBus.<br><br>Чтобы получить строку подключения, следуйте инструкциям, указанным в разделе [Получение учетных данных управления](../service-bus-messaging/service-bus-quickstart-portal.md#get-the-connection-string). Строка подключения указывается для пространства имен служебной шины, и она не должна ограничиваться определенной очередью или разделом. |
+|**connection**;|**Соединение**|Имя параметра приложения, содержащего строку подключения к служебной шине, используемую для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задано значение `connection` "мисервицебус", среда выполнения функций ищет параметр приложения с именем "азуревебжобсмисервицебус". Если оставить строку `connection` пустой, то среда выполнения службы "Функции" будет использовать строку подключения к служебной шине по умолчанию для параметра приложения AzureWebJobsServiceBus.<br><br>Чтобы получить строку подключения, следуйте инструкциям, указанным в разделе [Получение учетных данных управления](../service-bus-messaging/service-bus-quickstart-portal.md#get-the-connection-string). Строка подключения указывается для пространства имен служебной шины, и она не должна ограничиваться определенной очередью или разделом. |
 |**accessRights**|**Доступ**|Права доступа для строки подключения. Доступные значения: `manage` и `listen`. Значение по умолчанию — `manage`. Это означает, что у свойства `connection` есть разрешение на **управление**. При использовании строки подключения без разрешения на **управление** задайте для свойства `accessRights` значение "listen". В противном случае выполнение операций, для которых требуются права на управление, в среде выполнения Функций Azure может завершиться ошибкой. В функциях Azure версии 2. x и более поздних это свойство недоступно, поскольку последняя версия пакета SDK служебной шины не поддерживает операции управления.|
 |**иссессионсенаблед**|**иссессионсенаблед**|`true`При подключении к очереди или подписке с [поддержкой сеансов](../service-bus-messaging/message-sessions.md) . `false`в противном случае — значение по умолчанию.|
 
@@ -311,9 +312,10 @@ def main(msg: func.ServiceBusMessage):
 * `string`. Если сообщение является текстом.
 * `byte[]`. Используется для двоичных данных.
 * Пользовательский тип. Если сообщение содержит JSON, то служба "Функции Azure" пытается выполнить десериализацию данных JSON.
-* `BrokeredMessage`— Возвращает десериализованное сообщение с помощью метода [BrokeredMessage. @ Body\<T> ()](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.getbody?view=azure-dotnet#Microsoft_ServiceBus_Messaging_BrokeredMessage_GetBody__1) .
+* `BrokeredMessage`— Возвращает десериализованное сообщение с помощью метода [BrokeredMessage. @ Body \<T> ()](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.getbody?view=azure-dotnet#Microsoft_ServiceBus_Messaging_BrokeredMessage_GetBody__1) .
+* [`MessageReceiver`](https://docs.microsoft.com/dotnet/api/microsoft.azure.servicebus.core.messagereceiver?view=azure-dotnet)— Используется для получения и подтверждения сообщений из контейнера сообщений (требуется, если параметр [`autoComplete`](functions-bindings-service-bus-output.md#hostjson-settings) имеет значение `false` ).
 
-Эти типы параметров предназначены для функций Azure версии 1. x; для 2. x и более поздних [`Message`](https://docs.microsoft.com/dotnet/api/microsoft.azure.servicebus.message) версий используйте `BrokeredMessage`вместо.
+Эти типы параметров предназначены для функций Azure версии 1. x; для 2. x и более поздних версий используйте [`Message`](https://docs.microsoft.com/dotnet/api/microsoft.azure.servicebus.message) вместо `BrokeredMessage` .
 
 # <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
@@ -322,21 +324,21 @@ def main(msg: func.ServiceBusMessage):
 * `string`. Если сообщение является текстом.
 * `byte[]`. Используется для двоичных данных.
 * Пользовательский тип. Если сообщение содержит JSON, то служба "Функции Azure" пытается выполнить десериализацию данных JSON.
-* `BrokeredMessage`— Возвращает десериализованное сообщение с помощью метода [BrokeredMessage. @ Body\<T> ()](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.getbody?view=azure-dotnet#Microsoft_ServiceBus_Messaging_BrokeredMessage_GetBody__1) .
+* `BrokeredMessage`— Возвращает десериализованное сообщение с помощью метода [BrokeredMessage. @ Body \<T> ()](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.getbody?view=azure-dotnet#Microsoft_ServiceBus_Messaging_BrokeredMessage_GetBody__1) .
 
-Эти параметры предназначены для функций Azure версии 1. x; для 2. x и более поздних [`Message`](https://docs.microsoft.com/dotnet/api/microsoft.azure.servicebus.message) версий используйте `BrokeredMessage`вместо.
+Эти параметры предназначены для функций Azure версии 1. x; для 2. x и более поздних версий используйте [`Message`](https://docs.microsoft.com/dotnet/api/microsoft.azure.servicebus.message) вместо `BrokeredMessage` .
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
-Доступ к сообщению очереди или раздела с `context.bindings.<name from function.json>`помощью. Сообщение служебной шины передается в функцию в качестве строки или объекта JSON.
+Доступ к сообщению очереди или раздела с помощью `context.bindings.<name from function.json>` . Сообщение служебной шины передается в функцию в качестве строки или объекта JSON.
 
 # <a name="python"></a>[Python](#tab/python)
 
-Сообщение очереди доступно функции через параметр, типизированный как `func.ServiceBusMessage`. Сообщение служебной шины передается в функцию в качестве строки или объекта JSON.
+Сообщение очереди доступно функции через параметр, типизированный как `func.ServiceBusMessage` . Сообщение служебной шины передается в функцию в качестве строки или объекта JSON.
 
 # <a name="java"></a>[Java](#tab/java)
 
-Входящее сообщение служебной шины доступно через параметр `ServiceBusQueueMessage` или. `ServiceBusTopicMessage`
+Входящее сообщение служебной шины доступно через `ServiceBusQueueMessage` `ServiceBusTopicMessage` параметр или.
 
 Дополнительные [сведения см. в примере](#example).
 
@@ -356,7 +358,7 @@ def main(msg: func.ServiceBusMessage):
 
 Триггер служебной шины предоставляет несколько [свойств метаданных](./functions-bindings-expressions-patterns.md#trigger-metadata). Эти свойства можно использовать как часть выражений привязки в других привязках или как параметры в коде. Эти свойства являются членами класса [Message](/dotnet/api/microsoft.azure.servicebus.message?view=azure-dotnet) .
 
-|Свойство|Type|Описание|
+|Свойство.|Type|Описание:|
 |--------|----|-----------|
 |`ContentType`|`string`|Идентификатор типа содержимого, используемый отправителем и получателем для логики конкретного приложения.|
 |`CorrelationId`|`string`|Идентификатор корреляции.|
@@ -375,6 +377,6 @@ def main(msg: func.ServiceBusMessage):
 
 См. [примеры кода](#example), в которых используются эти свойства, в предыдущих разделах этой статьи.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Отправка сообщений служебной шины Azure из функций Azure (Выходная привязка)](./functions-bindings-service-bus-output.md)

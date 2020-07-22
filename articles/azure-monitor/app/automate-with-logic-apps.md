@@ -4,10 +4,9 @@ description: Узнайте, как можно быстро автоматизи
 ms.topic: conceptual
 ms.date: 03/11/2019
 ms.openlocfilehash: 4a0944e661932d86fac75f78c4faf5be751806c5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79473172"
 ---
 # <a name="automate-application-insights-processes-by-using-logic-apps"></a>Автоматизация процессов Application Insights с помощью Logic Apps
@@ -95,7 +94,7 @@ ms.locfileid: "79473172"
 
 1. В окне **Отправка сообщения электронной почты** выполните следующие действия:
 
-   a. Введите адрес электронной почты получателя.
+   а. Введите адрес электронной почты получателя.
 
    b. Введите тему сообщения.
 
@@ -109,7 +108,7 @@ ms.locfileid: "79473172"
 
 1. В меню динамического содержимого выполните следующее.
 
-    a. Выберите **Имя вложения**.
+    а. Выберите **Имя вложения**.
 
     b. Выберите **Содержимое вложения**.
     

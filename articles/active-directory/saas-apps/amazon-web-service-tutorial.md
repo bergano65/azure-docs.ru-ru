@@ -12,15 +12,15 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 01/31/2020
+ms.date: 04/20/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 40fd8217285643aa7d706d194d7f78ba0634dd32
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 75b6ba110264ae3826093222e9cd3c4073bc17f0
+ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80048961"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83683597"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-amazon-web-services-aws"></a>Руководство по Интеграция единого входа Azure Active Directory с Amazon Web Services (AWS)
 
@@ -110,6 +110,18 @@ ms.locfileid: "80048961"
 1. Если вы настраиваете более одного экземпляра, укажите значение идентификатора. Для второго и последующих экземпляров используйте следующий формат (включая знак **#** ), чтобы указать уникальное значение имени субъекта-службы.
 
     `https://signin.aws.amazon.com/saml#2`
+
+1. Приложение AWS ожидает проверочные утверждения SAML в определенном формате, а значит вам нужно добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию.
+
+    ![Изображение](common/default-attributes.png)
+
+1. В дополнение к описанному выше приложение AWS ожидает несколько дополнительных атрибутов в ответе SAML, как показано ниже. Эти атрибуты также заранее заполнены, но вы можете изменить их в соответствии со своими требованиями.
+    
+    | Имя  | Атрибут источника  | Пространство имен |
+    | --------------- | --------------- | --------------- |
+    | RoleSessionName | user.userprincipalname | `https://aws.amazon.com/SAML/Attributes` |
+    | Роль            | user.assignedroles |  `https://aws.amazon.com/SAML/Attributes` |
+    | SessionDuration             | "Укажите значение от 900 секунд (15 минут) до 43 200 секунд (12 часов)." |  `https://aws.amazon.com/SAML/Attributes` |
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите элемент **XML метаданных федерации** и выберите **Скачать**, чтобы скачать сертификат и сохранить его на компьютере.
 

@@ -4,14 +4,14 @@ description: Система защиты от угроз обнаруживае�
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 5/6/2019
-ms.openlocfilehash: 8b7f52ea318432e97a450a54526f6481b14139c9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d94170ade3de7e7fc128fe85437db59822694add
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74776149"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86117820"
 ---
 # <a name="advanced-threat-protection-for-azure-database-for-postgresql---single-server"></a>Расширенная защита от угроз для базы данных Azure для PostgreSQL — один сервер
 
@@ -27,7 +27,7 @@ ms.locfileid: "74776149"
 > Эта функция доступна во всех регионах Azure, где База данных Azure для PostgreSQL развернута для серверов общего назначения и серверов, оптимизированных для операций в памяти.
 
 ## <a name="set-up-threat-detection"></a>Настройка обнаружения угроз
-1. Запустите портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
+1. Запустите портал Azure по адресу [https://portal.azure.com](https://portal.azure.com) .
 2. Перейдите на страницу настройки сервера Базы данных Azure для PostgreSQL, который требуется защитить. В параметрах безопасности выберите **Расширенная защита от угроз (предварительная версия)**.
 3. На странице настройки **Расширенная защита от угроз (предварительная версия)** сделайте следующее:
 
@@ -62,5 +62,5 @@ ms.locfileid: "74776149"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения о [центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro)
+* Узнайте больше о [центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro).
 * Дополнительные сведения о ценах см. на [странице цен на Базу данных Azure для PostgreSQL](https://azure.microsoft.com/pricing/details/postgresql/).  

@@ -3,18 +3,18 @@ title: Аварийное увеличение объема исключений
 description: Мониторинг исключений приложений с помощью интеллектуального обнаружения в Azure Application Insights для необычных шаблонов на томе исключения.
 ms.topic: conceptual
 ms.date: 12/08/2017
-ms.openlocfilehash: a08fae4774a8afb9959f55ea3196cd1a45c33439
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 00b7a28a51f91c969b41d2ab85b611f6dde51396
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77671772"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86499432"
 ---
 # <a name="abnormal-rise-in-exception-volume-preview"></a>Чрезмерное увеличение числа исключений (предварительная версия)
 
 Application Insights автоматически анализирует исключения, порождаемые в приложении, и может предупредить вас о нестандартных шаблонах в данных телеметрии исключений.
 
-Для этого компонента не требуется особая настройка — только [настройка отчетов об исключениях](https://docs.microsoft.com/azure/application-insights/app-insights-asp-net-exceptions#set-up-exception-reporting) для приложения. Он работает, когда приложение создает достаточно данных телеметрии исключений.
+Для этого компонента не требуется особая настройка — только [настройка отчетов об исключениях](./asp-net-exceptions.md#set-up-exception-reporting) для приложения. Он работает, когда приложение создает достаточно данных телеметрии исключений.
 
 ## <a name="when-would-i-get-this-type-of-smart-detection-notification"></a>Когда я буду получать уведомления интеллектуального обнаружения такого типа?
 Уведомление этого типа можно получить, если приложение демонстрирует чрезмерное увеличение числа исключений определенного типа в течение дня по сравнению с базовыми показателями, вычисленными за предыдущую неделю.

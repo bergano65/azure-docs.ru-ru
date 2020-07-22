@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
 ms.workload: identity
-ms.date: 08/30/2019
+ms.date: 06/16/2020
 ms.author: jmprieur
 ms.reviewer: oldalton
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 1251049add8c9d3c71b6ba13aff24e086613e84b
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 0f712dbee6218ce8e012639b82a3a2ee7c177bb3
+ms.sourcegitcommit: 34eb5e4d303800d3b31b00b361523ccd9eeff0ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81450961"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84904768"
 ---
 # <a name="sign-in-users-and-call-the-microsoft-graph-from-an-ios-or-macos-app"></a>Вход пользователей и вызов Microsoft Graph из приложения iOS или macOS
 
@@ -48,7 +48,7 @@ ms.locfileid: "81450961"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Для сборки приложения из этого руководства требуется XCode версии 11.x или более поздней. Скачать XCode можно с [сайта iTunes](https://geo.itunes.apple.com/us/app/xcode/id497799835?mt=12 "URL-адрес скачивания XCode").
+- Для сборки приложения из этого руководства требуется XCode версии 11.x или более поздней. Скачать XCode можно в [Mac App Store](https://geo.itunes.apple.com/us/app/xcode/id497799835?mt=12 "URL-адрес скачивания XCode").
 - Библиотека проверки подлинности Майкрософт ([MSAL.framework](https://github.com/AzureAD/microsoft-authentication-library-for-objc)). Вы можете использовать диспетчер зависимостей или добавить библиотеку вручную. В инструкциях ниже описано как это сделать.
 
 В рамках этого руководства будет создан проект. Если вместо этого вы хотите скачать готовое руководство, скачайте код:
@@ -150,6 +150,12 @@ var currentAccount: MSALAccount?
 ```
 
 Единственное значение выше, которое необходимо изменить, — это значение, присваиваемое `kClientID` в качестве [идентификатора приложения](https://docs.microsoft.com/azure/active-directory/develop/developer-glossary#application-id-client-id). Это значение является частью данных конфигурации MSAL, сохраненного на шаге в начале этого руководства для регистрации приложения на портале Azure.
+
+## <a name="configure-xcode-project-settings"></a>Настройка параметров проекта Xcode
+
+Добавьте новую группу цепочки ключей в раздел **Подписывание и возможности** для проекта. Группа цепочки ключей должна иметь значение `com.microsoft.adalcache` в iOS и `com.microsoft.identity.universalstorage` в macOS.
+
+![Пользовательский интерфейс Xcode с правильной настройкой группы цепочки ключей](../../../includes/media/active-directory-develop-guidedsetup-ios-introduction/iosintro-keychainShare.png)
 
 ## <a name="for-ios-only-configure-url-schemes"></a>(Только для iOS) Настройка схем URL-адресов
 
@@ -620,7 +626,7 @@ func acquireTokenInteractively() {
 
 | ключ заголовка    | value                 |
 | ------------- | --------------------- |
-| Авторизация | Bearer \<маркер доступа> |
+| Авторизация | Маркер носителя \<access-token> |
 
 Добавьте в класс `ViewController` приведенный ниже код.
 

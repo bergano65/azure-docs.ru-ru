@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 03/05/2020
 ms.author: apimpm
-ms.openlocfilehash: af7c995c11322a538dd9e27a905f1ddbc723e8ab
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 345b4950e25f48eb1a48c5e583908d0f771771ba
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79244099"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86206249"
 ---
 # <a name="access-and-customize-developer-portal"></a>Доступ и Настройка портала разработчика
 
@@ -36,9 +36,9 @@ ms.locfileid: "79244099"
 
 ![Портал разработчика управления API — режим администратора](media/api-management-howto-developer-portal-customize/cover.png)
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
-- Выполните следующие действия в кратком руководстве по [созданию экземпляра службы управления API Azure](get-started-create-service-instance.md) .
+- Выполните инструкции из краткого руководства [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md)
 - Импортируйте и опубликуйте экземпляр службы управления API Azure. Дополнительные сведения см. в разделе [Импорт и публикация](import-and-publish.md) .
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
@@ -68,7 +68,7 @@ ms.locfileid: "79244099"
 
 Макеты определяют, как отображаются страницы. Например, в содержимом по умолчанию есть два макета — один — для домашней страницы, другой — для всех остальных страниц.
 
-Макет применяется к странице путем сопоставления его шаблона URL-адреса со страницей. Например, макет с шаблоном URL-адреса `/wiki/*` будет применяться ко всем страницам с `/wiki/` сегментом в URL-адресе: `/wiki/getting-started`, `/wiki/styles`и т. д.
+Макет применяется к странице путем сопоставления его шаблона URL-адреса со страницей. Например, макет с шаблоном URL-адреса `/wiki/*` будет применяться ко всем страницам с `/wiki/` сегментом в URL-адресе: `/wiki/getting-started` , `/wiki/styles` и т. д.
 
 На рисунке выше содержимое, принадлежащее макету, помечается синим цветом, а страница помечается красным цветом. Разделы меню помечаются соответственно.
 
@@ -91,9 +91,9 @@ ms.locfileid: "79244099"
 Прежде чем сделать портал доступным для посетителей, следует персонализировать автоматически созданное содержимое. К рекомендуемым изменениям относятся макеты, стили и содержимое домашней страницы.
 
 > [!NOTE]
-> Из-за соображений интеграции следующие страницы нельзя удалить или переместить под другим URL-адресом `/404`: `/500`, `/captcha`, `/change-password`, `/config.json`, `/confirm/invitation`, `/confirm-v2/identities/basic/signup`, `/confirm-v2/password`, `/internal-status-0123456789abcdef`, `/publish`, `/signin`, `/signin-sso`, `/signup`,.
+> Из-за соображений интеграции следующие страницы нельзя удалить или переместить под другим URL-адресом: `/404` , `/500` ,,,, `/captcha` `/change-password` `/config.json` `/confirm/invitation` , `/confirm-v2/identities/basic/signup` ,,,,, `/confirm-v2/password` `/internal-status-0123456789abcdef` `/publish` `/signin` `/signin-sso` , `/signup` .
 
-### <a name="home-page"></a>Главная страница
+### <a name="home-page"></a>Домашняя страница
 
 **Домашняя** страница по умолчанию заполнена фиктивным содержимым. Можно либо удалить все разделы с содержимым, либо удержать структуру и скорректировать элементы по одному. Замените созданный текст и изображения собственными и убедитесь, что ссылки указывают на нужные расположения.
 
@@ -124,13 +124,14 @@ ms.locfileid: "79244099"
 
 ## <a name="visit-the-published-portal"></a>Посетите опубликованный портал
 
-После публикации портала к нему можно обращаться по тому же URL-адресу, что и на панели администрирования `https://contoso-api.developer.azure-api.net`, например. Просматривайте его в отдельном сеансе браузера (режим просмотра режиме инкогнито/Private) в качестве внешнего посетителя.
+После публикации портала к нему можно обращаться по тому же URL-адресу, что и на панели администрирования, например `https://contoso-api.developer.azure-api.net` . Просматривайте его в отдельном сеансе браузера (режим просмотра режиме инкогнито/Private) в качестве внешнего посетителя.
 
 ## <a name="apply-the-cors-policy-on-apis"></a>Применение политики CORS для API
 
 Необходимо включить CORS (общий доступ к ресурсам между источниками) в API, чтобы посетители портала протестируют API через встроенную интерактивную консоль. Дополнительные сведения см. в [этой статье документации](api-management-howto-developer-portal.md#cors) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
+- [Оптимизируйте и сохраняйте расходы на облачные технологии](https://docs.microsoft.com/azure/cost-management-billing/costs/quick-acm-cost-analysis?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)
 
 Дополнительные сведения о портале разработчика:
 

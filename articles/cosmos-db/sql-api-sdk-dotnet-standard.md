@@ -1,43 +1,43 @@
 ---
-title: 'Azure Cosmos DB: API-.NET Standard SQL, ресурсы & SDK'
-description: Узнайте все об API SQL и пакете SDK для .NET, включая даты выпуска, даты выбытия и изменения, внесенные в каждую версию пакета SDK для .NET Azure Cosmos DB.
-author: deborahc
+title: Azure Cosmos DB — API, пакет SDK и ресурсы для SQL .NET Standard
+description: Сведения об API SQL и пакетах SDK для .NET, в том числе даты выхода, даты снятия с учета и изменения, внесенные в каждую версию пакета SDK для .NET для Azure Cosmos DB.
+author: anfeldma-ms
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: dotnet
 ms.topic: reference
-ms.date: 07/12/2019
-ms.author: dech
-ms.openlocfilehash: 7471544e920266c8d23ccc18f4370bbdf66c11a2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.date: 05/11/2020
+ms.author: anfeldma
+ms.openlocfilehash: 78e0e1cbd66a943c8f893d8f51821587a70a6a7d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74707288"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85392035"
 ---
-# <a name="azure-cosmos-db-net-standard-sdk-for-sql-api-download-and-release-notes"></a>Пакет SDK для Azure Cosmos DB .NET Standard для API SQL: Загрузка и заметки о выпуске
+# <a name="azure-cosmos-db-net-sdk-v3-for-sql-api-download-and-release-notes"></a>Azure Cosmos DB пакета SDK для .NET v3 для API SQL: Загрузка и заметки о выпуске
 > [!div class="op_single_selector"]
-> * [.NET Standard](sql-api-sdk-dotnet-standard.md)
-> * [.NET](sql-api-sdk-dotnet.md)
-> * [Веб-канал изменений .NET](sql-api-sdk-dotnet-changefeed.md)
-> * [.NET Core](sql-api-sdk-dotnet-core.md)
+> * [Пакет SDK версии 3 для .NET](sql-api-sdk-dotnet-standard.md)
+> * [Пакет SDK для .NET версии 2](sql-api-sdk-dotnet.md)
+> * [Пакет SDK для .NET Core версии 2](sql-api-sdk-dotnet-core.md)
+> * [Пакет SDK для веб-канала изменений .NET версии 2](sql-api-sdk-dotnet-changefeed.md)
 > * [Node.js](sql-api-sdk-node.md)
-> * [Async Java](sql-api-sdk-async-java.md)
-> * [Java](sql-api-sdk-java.md)
+> * [Пакет SDK для Java версии 4](sql-api-sdk-java-v4.md)
+> * [Пакет SDK для Async Java версии 2](sql-api-sdk-async-java.md)
+> * [Пакет SDK для Sync Java версии 2](sql-api-sdk-java.md)
 > * [Python](sql-api-sdk-python.md)
-> * [REST](https://docs.microsoft.com/rest/api/cosmos-db/)
-> * [Поставщик ресурсов REST](https://docs.microsoft.com/rest/api/cosmos-db-resource-provider/)
+> * [REST](/rest/api/cosmos-db/)
+> * [Поставщик ресурсов REST](/rest/api/cosmos-db-resource-provider/)
 > * [SQL](sql-api-query-reference.md)
-> * [Групповой исполнитель — .NET](sql-api-sdk-bulk-executor-dot-net.md)
-> * [Групповой исполнитель — Java](sql-api-sdk-bulk-executor-java.md)
+> * [Групповой исполнитель — .NET v2](sql-api-sdk-bulk-executor-dot-net.md)
+> * [Исполнитель массовых операций — Java](sql-api-sdk-bulk-executor-java.md)
 
 | |  |
 |---|---|
-|**Загрузка пакета SDK**|[NuGet](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/)|
+|**Скачивание пакета SDK**|[NuGet](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/)|
 |**Документация по API**|[Справочная документация по API .NET](/dotnet/api/overview/azure/cosmosdb?view=azure-dotnet)|
-|**Примеры**|[Примеры кода .NET](https://github.com/Azure/azure-cosmos-dotnet-v3/tree/master/Microsoft.Azure.Cosmos.Samples/Usage)|
+|**Примеры**|[Примеры кода для .NET](https://github.com/Azure/azure-cosmos-dotnet-v3/tree/master/Microsoft.Azure.Cosmos.Samples/Usage)|
 |**Начало работы**|[Azure Cosmos DB. Приступая к работе с API DocumentDB](sql-api-get-started.md)|
-|**Руководство по веб-приложениям**|[Разработка веб-приложений с помощью Azure Cosmos DB](sql-api-dotnet-application.md)|
+|**Учебник по веб-приложениям**|[Руководство по ASP.NET MVC. Разработка веб-приложений в Azure Cosmos DB](sql-api-dotnet-application.md)|
 |**Текущая поддерживаемая платформа**|[Microsoft .NET Standard 2.0](/dotnet/standard/net-standard)|
 
 [!INCLUDE[Release notes](~/samples-cosmosdb-dotnet-v3/changelog.md)]
@@ -45,5 +45,5 @@ ms.locfileid: "74707288"
 ## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 [!INCLUDE [cosmos-db-sdk-faq](../../includes/cosmos-db-sdk-faq.md)]
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 Дополнительные сведения о Cosmos DB см. на странице службы [Microsoft Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/). 

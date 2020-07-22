@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 01/23/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 8c5de43ed29856451ad67e02a426b07cc34a0d54
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 3dc9d62141a63574a6796982542cb1491108eedc
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80422416"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86259862"
 ---
 # <a name="linux-support"></a>Поддержка Linux
 
@@ -38,7 +38,7 @@ ms.locfileid: "80422416"
 
 Пакет SDK совместим с большинством операционных систем на базе Ubuntu 18,04 или более поздней версии. Если у вас есть другой дистрибутив Linux, мы можем с вами помочь вам понять, как лучше поддерживать ваши потребности.
 
-### <a name="feature-support"></a>Поддержка компонентов и функций
+### <a name="feature-support"></a>Поддерживаемые компоненты
 
 Пакет SDK поддерживает несколько подключений к рабочему столу и удаленным сеансам приложений. Поддерживаются следующие перенаправления:
 
@@ -65,11 +65,11 @@ ms.locfileid: "80422416"
 1. Создание и развертывание среды виртуальных рабочих столов Windows для тестирования или использования в рабочей среде.
 2. Протестируйте доступные клиенты от сторонних производителей, чтобы ознакомиться с возможностями работы с виртуальными рабочими столами Windows.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Ознакомьтесь с документацией по следующим клиентам:
 
-- [Клиент Удаленного рабочего стола](connect-windows-7-and-10.md)
+- [Клиент Удаленного рабочего стола](connect-windows-7-10.md)
 - [Веб-клиент](connect-web.md)
 - [Клиент Android](connect-android.md)
 - [Клиент macOS](connect-macos.md)

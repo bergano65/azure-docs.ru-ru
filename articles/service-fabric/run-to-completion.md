@@ -5,12 +5,12 @@ author: shsha-msft
 ms.topic: conceptual
 ms.date: 03/11/2020
 ms.author: shsha
-ms.openlocfilehash: adf4b11412aa752144d4ed4fef06d2de1d76598d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 6f2f6aa4380fcf6909957118bf682275350ce68c
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81431297"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86261205"
 ---
 # <a name="runtocompletion"></a>RunToCompletion
 
@@ -22,7 +22,7 @@ ms.locfileid: "81431297"
 > Семантика Рунтокомплетион в настоящее время не поддерживается для служб, написанных с помощью модели программирования [Reliable Services][reliable-services-link] .
  
 ## <a name="runtocompletion-semantics-and-specification"></a>Семантика и спецификация Рунтокомплетион
-Семантику Рунтокомплетион можно указать как **ExecutionPolicy** при [импорте ServiceManifest][application-and-service-manifests-link]. Указанная политика наследуется всеми содержащиеся, составляющими ServiceManifest. В следующем фрагменте кода ApplicationManifest. XML приведен пример.
+Семантику Рунтокомплетион можно указать как **ExecutionPolicy** при [импорте ServiceManifest][application-and-service-manifests-link]. Указанная политика наследуется всеми содержащиеся, составляющими ServiceManifest. В следующем фрагменте кода ApplicationManifest.xml приведен пример.
 
 ```xml
 <ServiceManifestImport>
@@ -45,9 +45,9 @@ ms.locfileid: "81431297"
 > [!IMPORTANT]
 > В следующем примере предполагается знание создания [приложений контейнера Windows с помощью Service Fabric и DOCKER][containers-getting-started-link].
 >
-> Этот пример ссылается на mcr.microsoft.com/windows/nanoserver:1809. Контейнеры Windows Server совместимы не со всеми версиями ОС узла. Дополнительные сведения см. в разделе [Совместимость версий контейнеров Windows](https://docs.microsoft.com/virtualization/windowscontainers/deploy-containers/version-compatibility).
+> Этот пример ссылается на mcr.microsoft.com/windows/nanoserver:1809. Контейнеры Windows Server совместимы не со всеми версиями ОС узла. Дополнительные сведения см. в разделе [Совместимость версий контейнеров Windows](/virtualization/windowscontainers/deploy-containers/version-compatibility).
 
-В следующем ServiceManifest. XML описывается ServicePackage, состоящий из двух содержащиеся, которые представляют контейнеры. *RunToCompletionCodePackage1* просто записывает сообщение в **stdout** и завершает работу. *RunToCompletionCodePackage2* проверяет связь с адресом замыкания на себя через некоторое время, а затем завершается кодом выхода **0**, **1** или **2**.
+В следующем ServiceManifest.xml описывается ServicePackage, состоящий из двух содержащиеся, которые представляют контейнеры. *RunToCompletionCodePackage1* просто записывает сообщение в **stdout** и завершает работу. *RunToCompletionCodePackage2* проверяет связь с адресом замыкания на себя через некоторое время, а затем завершается кодом выхода **0**, **1** или **2**.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -78,7 +78,7 @@ ms.locfileid: "81431297"
 </ServiceManifest>
 ```
 
-В следующем ApplicationManifest. XML описывается приложение на основе файла ServiceManifest. XML, описанного выше. Он указывает **рунтокомплетион** **ExecutionPolicy** для *виндовсрунтокомплетионсервицепаккаже* с политикой перезапуска **onFailure**. После активации *виндовсрунтокомплетионсервицепаккаже*будет запущено его составное содержащиеся. *RunToCompletionCodePackage1* должен успешно выйти при первой активации. Однако *RunToCompletionCodePackage2* может завершиться неудачно **(ненулевой код выхода)**. в этом случае он будет перезапущен, так как политика перезапуска находится в **onFailure**.
+В следующем ApplicationManifest.xml описывается приложение, основанное на ServiceManifest.xml, описанном выше. Он указывает **рунтокомплетион** **ExecutionPolicy** для *виндовсрунтокомплетионсервицепаккаже* с политикой перезапуска **onFailure**. После активации *виндовсрунтокомплетионсервицепаккаже*будет запущено его составное содержащиеся. *RunToCompletionCodePackage1* должен успешно выйти при первой активации. Однако *RunToCompletionCodePackage2* может завершиться неудачно **(ненулевой код выхода)**. в этом случае он будет перезапущен, так как политика перезапуска находится в **onFailure**.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -112,7 +112,7 @@ ms.locfileid: "81431297"
 * Сценарии обновления для приложений с семантикой Рунтокомплетион не допускаются. При необходимости пользователи должны удалять и повторно создавать такие приложения.
 * События отработки отказа могут привести к повторному выполнению содержащиеся после успешного завершения, на том же узле или на других узлах кластера. Примерами событий отработки отказа являются перезапуски узлов и обновление среды выполнения Service Fabric на узле.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в следующих статьях.
 
@@ -129,8 +129,7 @@ ms.locfileid: "81431297"
 [application-and-service-manifests-link]: service-fabric-application-and-service-manifests.md
 [setup-entry-point-link]: service-fabric-run-script-at-service-startup.md
 [deployed-service-package-working-with-link]: service-fabric-hosting-model.md#work-with-a-deployed-service-package
-[deployed-code-package-link]: https://docs.microsoft.com/powershell/module/servicefabric/get-servicefabricdeployedcodepackage
-[deployed-service-package-link]: https://docs.microsoft.com/powershell/module/servicefabric/get-servicefabricdeployedservicePackage
-[fabric-client-link]: https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient
-[deployed-service-package-fabricclient-link]: https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.queryclient.getdeployedservicepackagelistasync
-
+[deployed-code-package-link]: /powershell/module/servicefabric/get-servicefabricdeployedcodepackage
+[deployed-service-package-link]: /powershell/module/servicefabric/get-servicefabricdeployedservicepackage
+[fabric-client-link]: /dotnet/api/system.fabric.fabricclient
+[deployed-service-package-fabricclient-link]: /dotnet/api/system.fabric.fabricclient.queryclient.getdeployedservicepackagelistasync

@@ -7,12 +7,12 @@ ms.service: cache
 ms.topic: tutorial
 ms.custom: mvc
 ms.date: 03/30/2018
-ms.openlocfilehash: e8b8feff0b66aa0b48c88b43049594003b20e5c0
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 177aa42991612d8ce2e899576599aafc43015c58
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75411943"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86082783"
 ---
 # <a name="tutorial-create-a-cache-aside-leaderboard-on-aspnet"></a>Руководство по Создание списка лидеров с применением шаблона "Кэш на стороне" в ASP.NET
 
@@ -642,9 +642,9 @@ ms.locfileid: "75411943"
 
 ## <a name="publish-and-run-in-azure"></a>Публикация и выполнение в Azure
 
-### <a name="provision-a-sql-azure-database-for-the-app"></a>Подготовка базы данных SQL Azure для приложения
+### <a name="provision-a-database-for-the-app"></a>Подготовка базы данных для приложения
 
-В этом разделе выполняется подготовка новой базы данных SQL Azure для приложения, которая будет использоваться во время размещения в Azure.
+В этом разделе выполняется подготовка новой базы данных SQL, которую приложение будет использовать при размещении в Azure.
 
 1. На [портале Azure](https://portal.azure.com/) в верхнем левом углу щелкните **Создать ресурс**.
 
@@ -680,8 +680,8 @@ ms.locfileid: "75411943"
 
     | Заполнитель | Рекомендуемое значение |
     | --- | --- |
-    | *{your_username}* | Используйте **имя входа администратора сервера** базы данных, который вы только что создали. |
-    | *{your_password}* | Используйте пароль сервера базы данных, который вы только что создали. |
+    | *{your_username}* | Используйте **имя входа администратора сервера** для сервера, который вы только что создали. |
+    | *{your_password}* | Используйте пароль для сервера, который вы только что создали. |
 
     Если добавить имя пользователя и пароль как параметр приложения, они не будут включены в коде. Такой подход позволяет защитить эти учетные данные.
 

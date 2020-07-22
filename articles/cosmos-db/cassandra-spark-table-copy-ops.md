@@ -6,14 +6,14 @@ ms.author: govindk
 ms.reviewer: sngun
 ms.service: cosmos-db
 ms.subservice: cosmosdb-cassandra
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 09/24/2018
-ms.openlocfilehash: 32714e216e59565c787f92bf1e8da62957bc7233
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e680182a4d1ba64a954d8d03aef5e9331bec0341
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75445630"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85257471"
 ---
 # <a name="table-copy-operations-on-azure-cosmos-db-cassandra-api-from-spark"></a>Операции копирования табличных данных в API Cassandra для Azure Cosmos DB из Spark
 
@@ -144,7 +144,7 @@ readBooksDF: org.apache.spark.sql.DataFrame = [book_id: string, book_author: str
 newBooksDF: org.apache.spark.sql.DataFrame = [book_id: string, book_author: string ... 3 more fields]
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
  * Начните с [создания учетной записи API Cassandra, базы данных и таблицы](create-cassandra-api-account-java.md) с помощью приложения Java.
  * [Загрузите демонстрационные данные в таблицу API Cassandra](cassandra-api-load-data.md) с помощью приложения Java.

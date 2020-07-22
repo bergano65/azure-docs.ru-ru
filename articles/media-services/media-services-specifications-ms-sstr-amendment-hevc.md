@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/19/2019
 ms.author: johndeu
-ms.openlocfilehash: be4009d418f2f8f3dff755e2e990efee593f070b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 30ca3bb86426b144fa6cbf5c63888d9546919ebf
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76514227"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85954697"
 ---
 # <a name="smooth-streaming-protocol-ms-sstr-amendment-for-hevc"></a>Поправка к протоколу Smooth Streaming (MS-SSTR) для HEVC 
 
@@ -242,10 +242,12 @@ ms.locfileid: "76514227"
 > 
 >   Синтаксис полей, определенный в этом разделе и указанный в ABNF [[RFC5234]](https://go.microsoft.com/fwlink/?LinkId=123096), выглядит, как показано ниже:
 
-    FileType = MajorBrand MinorVersion CompatibleBrands
-    MajorBrand = STRING_UINT32
-    MinorVersion = STRING_UINT32
-    CompatibleBrands = "ccff" "iso8" 0\*(STRING_UINT32)
+```properties
+FileType = MajorBrand MinorVersion CompatibleBrands
+MajorBrand = STRING_UINT32
+MinorVersion = STRING_UINT32
+CompatibleBrands = "ccff" "iso8" 0\*(STRING_UINT32)
+```
 
 **Примечание**. Марки совместимости ccff и iso8 указывают, что фрагменты соответствуют общему формату файла контейнера, общему шифрованию [ISO/IEC 23001-7] и четвертому выпуску спецификации [ISO/IEC 14496-12] о формате базового медиафайла ISO.
 
@@ -281,21 +283,25 @@ ms.locfileid: "76514227"
 > * **MajorVersion**
 > * **MinorVersion**
 > * **Временной**
-> * **Duration**
+> * **Длительность**
 > * **IsLive**
 > * **LookaheadCount**
 > * **DVRWindowLength**
 > 
 >   В презентациях, содержащих потоки HEVC, ДОЛЖНЫ быть заданы следующие значения:
 
-    MajorVersion = 2
-    MinorVersion = 2
+```properties
+MajorVersion = 2
+MinorVersion = 2
+```
 
 >   LookaheadCount = 0. (Примечание. Поля устарели.)
 > 
 >   В презентациях также ДОЛЖНО быть задано следующее:
 
-    TimeScale = 90000
+```properties
+TimeScale = 90000
+```
 
 >   Коллекция потоков — коллекция элементов данных описания потока, как указано в разделе *3.1.1.1.2*.
 > 
@@ -385,7 +391,7 @@ ms.locfileid: "76514227"
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
 [image1]: ./media/media-services-fmp4-live-ingest-overview/media-services-image1.png

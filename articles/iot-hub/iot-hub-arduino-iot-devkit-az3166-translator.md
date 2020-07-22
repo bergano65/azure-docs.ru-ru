@@ -9,10 +9,9 @@ ms.tgt_pltfrm: arduino
 ms.date: 12/19/2018
 ms.author: liydu
 ms.openlocfilehash: 8e840a1ae7161ea3e7b370889a1f0fb648ca120e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "73953356"
 ---
 # <a name="use-iot-devkit-az3166-with-azure-functions-and-cognitive-services-to-make-a-language-translator"></a>Использование IoT DevKit AZ3166 с Функциями Azure и Cognitive Services для создания переводчика
@@ -39,14 +38,14 @@ ms.locfileid: "73953356"
 
 1. Убедитесь, что плата IoT DevKit **не подключена** к компьютеру. Сначала запустите VS Code, а затем подключите плату DevKit к компьютеру.
 
-1. Щелкните `F1` , чтобы открыть палитру команд, введите и выберите **Azure IOT Device Workbench: Open examples...** Затем выберите **IOT DevKit** в качестве доски.
+1. Щелкните `F1`, чтобы открыть палитру команд, затем введите и выберите **Azure IoT Device Workbench. Открыть примеры...** Затем выберите **IoT DevKit** в качестве платы.
 
 1. На странице с примерами IoT Workbench найдите **DevKit Translator** (Переводчик DevKit) и щелкните **Open Sample** (Открыть пример). Затем выберите путь по умолчанию, чтобы загрузить пример кода.
   ![Открытие примера](media/iot-hub-arduino-iot-devkit-az3166-translator/open-sample.png)
 
 ## <a name="use-speech-service-with-azure-functions"></a>Использование службы распознавания речи с функциями Azure
 
-1. В VS Code щелкните `F1`, введите и выберите **Azure IOT Device Workbench: подготавливать службы Azure.**.. ![Предоставление служб Azure](media/iot-hub-arduino-iot-devkit-az3166-translator/provision.png)
+1. В VS Code щелкните `F1` , введите и выберите **Azure IOT Device Workbench: подготавливать службы Azure.** ![ .. Предоставление служб Azure](media/iot-hub-arduino-iot-devkit-az3166-translator/provision.png)
 
 1. Выполните действия, чтобы завершить подготовку к работе Центра Интернета вещей Azure и функций Azure.
    ![Процедура подготовки](media/iot-hub-arduino-iot-devkit-az3166-translator/provision-steps.png)
@@ -65,7 +64,7 @@ ms.locfileid: "73953356"
    const string deviceName = "";
    ```
 
-1. Щелкните `F1`, введите и выберите **Azure IOT Device Workbench: развертывание в Azure.**.. Если VS Code запрашивает подтверждение повторного развертывания, нажмите кнопку **Да**.
+1. Щелкните `F1` , введите и выберите **Azure IOT Device Workbench: развертывание в Azure.**.. Если VS Code запрашивает подтверждение повторного развертывания, нажмите кнопку **Да**.
    ![Предупреждение о развертывании](media/iot-hub-arduino-iot-devkit-az3166-translator/deploy-warning.png)
 
 1. Убедитесь, что развертывание прошло успешно.
@@ -90,13 +89,13 @@ ms.locfileid: "73953356"
 
    ![Режим настройки DevKit](media/iot-hub-arduino-iot-devkit-az3166-translator/devkit-configuration-mode.png)
 
-1. Щелкните `F1`, введите и выберите **Azure IOT Device Workbench: Настройка параметров устройства... > конфигурация строка подключения устройства**. Выберите **строку подключения к устройству Центра Интернета вещей**, чтобы настроить ее для DevKit.
+1. Щелкните `F1` , введите и выберите **Azure IOT Device Workbench: Настройка параметров устройства... > конфигурация строка подключения устройства**. Выберите **строку подключения к устройству Центра Интернета вещей**, чтобы настроить ее для DevKit.
    ![Настройка строки подключения](media/iot-hub-arduino-iot-devkit-az3166-translator/configure-connection-string.png)
 
 1. После успешного завершения вы увидите уведомление.
    ![Настройка строки подключения выполнена](media/iot-hub-arduino-iot-devkit-az3166-translator/configure-connection-string-success.png)
 
-1. Щелкните `F1` еще раз, введите и выберите **Azure IOT Device Workbench: отправить код устройства**. Будет запущена компиляция, затем код будет отправлен на устройство DevKit.
+1. Снова щелкните `F1`, введите и выберите **Azure IoT Device Workbench. Отправка кода устройства**. Будет запущена компиляция, затем код будет отправлен на устройство DevKit.
    ![Отправка устройства](media/iot-hub-arduino-iot-devkit-az3166-translator/device-upload.png)
 
 ## <a name="test-the-project"></a>Тестирование проекта

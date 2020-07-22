@@ -8,17 +8,17 @@ author: damendo
 ms.assetid: aeffbf3d-fd19-4d61-831d-a7114f7534f9
 ms.service: network-watcher
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
-ms.openlocfilehash: 835b3a69e779b536961110b674ae67f4e8c13ce0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 632a1eb7b7ac53bd3d7df3f2722d6e53277c7926
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76845056"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84738759"
 ---
 # <a name="diagnose-on-premises-connectivity-via-vpn-gateways"></a>Диагностика локальных подключений через VPN-шлюзы
 
@@ -93,7 +93,7 @@ Error: On-premises device rejected Quick Mode settings. Check values.
 | ConnectionsNotConnected | Ни одно из подключений не установлено. Это всего лишь предупреждение.| Да|
 | GatewayCPUUsageExceeded | Текущее использование ЦП шлюза превышает 95 %. | Да |
 
-### <a name="connection"></a>Соединение
+### <a name="connection"></a>Подключение
 
 | Тип ошибки | Причина | Журнал|
 |---|---|---|
@@ -106,7 +106,7 @@ Error: On-premises device rejected Quick Mode settings. Check values.
 | ConnectionIsMarkedDisconnected | Подключение отмечено как "разъединенное". |Нет|
 | ConnectionNotConfiguredOnGateway | Для базовой службы не настроено подключение. | Да |
 | ConnectionMarkedStandby | Базовая служба помечена как ждущая.| Да|
-| Проверка подлинности | Несоответствие предварительного ключа. | Да|
+| Аутентификация | Несоответствие предварительного ключа. | Да|
 | PeerReachability | Одноранговый шлюз недоступен. | Да|
 | IkePolicyMismatch | У однорангового шлюза имеются политики IKE, которые не поддерживаются в Azure. | Да|
 | WfpParse Error | Ошибка при анализе журнала WFP. |Да|

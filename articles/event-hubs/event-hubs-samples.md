@@ -1,29 +1,17 @@
 ---
 title: Примеры кодов для Центров событий Azure | Документация Майкрософт
 description: В этой статье приведен список примеров кодов для Центров событий Azure, доступных на сайте GitHub.
-services: event-hubs
-documentationcenter: na
-author: ShubhaVijayasarathy
-manager: timlt
-editor: ''
-ms.assetid: ''
-ms.service: event-hubs
-ms.custom: seodec18
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 01/15/2020
-ms.author: shvija
-ms.openlocfilehash: da950c2219d3faf679953690d207372b64913ba8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 06/23/2020
+ms.openlocfilehash: b6d7a40e399482af0ad3a501918a7e3307d724c5
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77162064"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86512305"
 ---
 # <a name="git-repositories-with-samples-for-azure-event-hubs"></a>Репозитории Git с примерами кодов для Центров событий Azure 
-Примеры концентраторов событий можно найти на [GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples). В примерах продемонстрированы основные функции [Центров событий Azure](/azure/event-hubs/). В этой статье приведены категории примеров с описаниями и ссылками.
+Примеры концентраторов событий можно найти на [GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples). В примерах продемонстрированы основные функции [Центров событий Azure](./index.yml). В этой статье приведены категории примеров с описаниями и ссылками.
 
 ## <a name="net-samples"></a>Примеры для .NET
 
@@ -66,9 +54,9 @@ ms.locfileid: "77162064"
 ## <a name="apache-kafka-samples"></a>Примеры для Apache Kafka
 Примеры использования функции "Центры событий для Apache Kafka" можно найти в репозитории GitHub [azure-event-hubs-for-kafka](https://github.com/Azure/azure-event-hubs-for-kafka).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Чтобы узнать больше о Центрах событий, обратитесь к следующим статьям:
 
-- [Общие сведения о Центрах событий](event-hubs-what-is-event-hubs.md)
+- [Общие сведения о Центрах событий](./event-hubs-about.md)
 - [Функции Центров событий](event-hubs-features.md)
-- [Центры событий: часто задаваемые вопросы](event-hubs-faq.md)
+- [Часто задаваемые вопросы о Центрах событий](event-hubs-faq.md)

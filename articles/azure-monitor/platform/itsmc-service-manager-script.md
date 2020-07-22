@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 01/23/2018
-ms.openlocfilehash: decb674c2b55b93a81169c540ee04713bdf2799e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: bb21bcefa0f9fb6f691ebfb578177c64543c1403
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80054859"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85549656"
 ---
 # <a name="create-service-manager-web-app-using-the-automated-script"></a>Создание веб-приложения Service Manager с помощью автоматизированного скрипта
 
@@ -26,7 +26,7 @@ ms.locfileid: "80054859"
 - префикс имени сайта для веб-приложения;
 - пространство имен ServiceBus.
 
-Скрипт создает веб-приложение, используя имя, которое вы указали (с несколькими дополнительными строками, обеспечивающими его уникальность). Он создаст **URL-адрес веб-приложения**, **идентификатор** и **секрет клиента**.
+Скрипт создает веб-приложение, используя имя, которое вы указали (с несколькими дополнительными строками, обеспечивающими его уникальность). При этом создается **URL-адрес приложения**, **идентификатор клиента**и **секрет клиента**.
 
 Сохраните эти значения. Вы сможете их использовать при создании подключения с помощью Соединителя управления ИТ-услугами.
 
@@ -314,6 +314,8 @@ Write-Host "URI:"  $azureSite
 if(!$err)
 {
     Write-Host "ServiceBus Namespace:"  $serviceName  
-}```
-## Next steps
-[Configure the Hybrid connection](../../azure-monitor/platform/itsmc-connections.md#configure-the-hybrid-connection).
+}
+```
+
+## <a name="next-steps"></a>Дальнейшие шаги
+[Настройте гибридное подключение](../../azure-monitor/platform/itsmc-connections.md#configure-the-hybrid-connection).

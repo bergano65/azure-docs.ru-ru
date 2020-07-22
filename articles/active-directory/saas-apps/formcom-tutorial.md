@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
-ms.openlocfilehash: aa6585b981626d3752f2383db20f8e149a2ed007
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 17dc6ef4b1c86e0ae0301783c2c524062e85fb5a
+ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "73156115"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85799283"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-formcom"></a>Руководство по интеграции Azure Active Directory с Form.com
 
@@ -111,10 +111,10 @@ ms.locfileid: "73156115"
 
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате:
     
-    | |
-    |--|
-    | `https://<subdomain>.wa-form.com/Member/UserAccount/SAML2.action` |
-    | `https://<subdomain>.form.com/Member/UserAccount/SAML2.action` |
+    ```http
+    https://<subdomain>.wa-form.com/Member/UserAccount/SAML2.action
+    https://<subdomain>.form.com/Member/UserAccount/SAML2.action
+    ```
 
     > [!NOTE]
     > Эти значения приведены для примера. Укажите вместо них фактические значения URL-адреса для входа, идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Form.com](https://form.com/about/company/contact-us/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

@@ -5,10 +5,9 @@ ms.topic: conceptual
 ms.date: 04/25/2017
 ms.reviewer: sergkanz
 ms.openlocfilehash: bd8b2581f7642f6825aaf0d1b51c8e94d4333d33
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77671890"
 ---
 # <a name="event-telemetry-application-insights-data-model"></a>Телеметрия событий: модель данных Application Insights
@@ -17,7 +16,7 @@ ms.locfileid: "77671890"
 
 Семантически события могут как коррелировать, так и не коррелировать с запросами. Однако при правильном использовании телеметрия событий важнее, чем запросы или трассировки. События представляют бизнес-данные телеметрии и должны быть предметом отдельной, менее агрессивной [выборки](../../azure-monitor/app/api-filtering-sampling.md).
 
-## <a name="name"></a>Имя
+## <a name="name"></a>name
 
 Имя события. Чтобы обеспечить правильную группировку и значимость метрик, настройте в приложении создание небольшого количества имен отдельных событий. Например, не используйте отдельное имя для каждого созданного экземпляра события.
 

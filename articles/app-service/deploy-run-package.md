@@ -4,10 +4,9 @@ description: Развертывание ZIP-пакета приложения с
 ms.topic: article
 ms.date: 01/14/2020
 ms.openlocfilehash: 5cc909d79b3f5ea2b4c6a3da12bc7250addbe00c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77920728"
 ---
 # <a name="run-your-app-in-azure-app-service-directly-from-a-zip-package"></a>Запуск приложения в службе приложений Azure непосредственно из ZIP-пакета
@@ -31,7 +30,7 @@ ms.locfileid: "77920728"
 
 ## <a name="enable-running-from-package"></a>Включить Запуск из пакета
 
-Параметр `WEBSITE_RUN_FROM_PACKAGE` приложения включает запуск из пакета. Чтобы задать его, выполните следующую команду с Azure CLI.
+`WEBSITE_RUN_FROM_PACKAGE`Параметр приложения включает запуск из пакета. Чтобы задать его, выполните следующую команду с Azure CLI.
 
 ```azurecli-interactive
 az webapp config appsettings set --resource-group <group-name> --name <app-name> --settings WEBSITE_RUN_FROM_PACKAGE="1"
@@ -47,15 +46,15 @@ az webapp config appsettings set --resource-group <group-name> --name <app-name>
 az webapp deployment source config-zip --resource-group <group-name> --name <app-name> --src <filename>.zip
 ```
 
-Так как `WEBSITE_RUN_FROM_PACKAGE` параметр приложения задан, эта команда не извлекает содержимое пакета в каталог *D:\home\site\wwwroot* приложения. Вместо этого он передает ZIP-файл "как есть" в *д:\хоме\дата\ситепаккажес*и создает *packagename. txt* в том же каталоге, который содержит имя пакета zip для загрузки во время выполнения. При отправке ZIP-пакета другим способом (например, [FTP](deploy-ftp.md)) необходимо вручную создать каталог *д:\хоме\дата\ситепаккажес* и файл *packagename. txt* .
+Так как `WEBSITE_RUN_FROM_PACKAGE` параметр приложения задан, эта команда не извлекает содержимое пакета в каталог *D:\home\site\wwwroot* приложения. Вместо этого он передает ZIP-файл "как есть" в *д:\хоме\дата\ситепаккажес*и создает *packagename.txt* в том же каталоге, который содержит имя ZIP-пакета для загрузки во время выполнения. При отправке ZIP-пакета другим способом (например, [FTP](deploy-ftp.md)) необходимо создать каталог *д:\хоме\дата\ситепаккажес* и файл *packagename.txt* вручную.
 
-Команда также перезапускает приложение. Так `WEBSITE_RUN_FROM_PACKAGE` как параметр задан, служба приложений подключает отправленный пакет как каталог *wwwroot* только для чтения и запускает приложение непосредственно из этого подключенного каталога.
+Команда также перезапускает приложение. Так как параметр задан `WEBSITE_RUN_FROM_PACKAGE` , служба приложений подключает отправленный пакет как каталог *wwwroot* только для чтения и запускает приложение непосредственно из этого подключенного каталога.
 
 ## <a name="run-from-external-url-instead"></a>Запустить из внешнего URL-адреса
 
 Вы также можете запустить пакет из внешнего URL-адреса, например хранилища больших двоичных объектов Azure. Можно использовать [Обозреватель службы хранилища Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md) для передачи файлов пакета в учетную запись хранения больших двоичных объектов. Для безопасного доступа к пакету среда выполнения службы приложений должна использовать частный контейнер хранилища с [подписанным URL-адресом (SAS)](../vs-azure-tools-storage-manage-with-storage-explorer.md#generate-a-sas-in-storage-explorer) . 
 
-Когда вы отправите файл в хранилище BLOB-объектов и получите для него URL для SAS, `WEBSITE_RUN_FROM_PACKAGE` задайте для параметра приложения URL-адрес. В следующем примере он выполняется с помощью Azure CLI:
+Когда вы отправите файл в хранилище BLOB-объектов и получите для него URL для SAS, задайте `WEBSITE_RUN_FROM_PACKAGE` для параметра приложения URL-адрес. В следующем примере он выполняется с помощью Azure CLI:
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings WEBSITE_RUN_FROM_PACKAGE="https://myblobstorage.blob.core.windows.net/content/SampleCoreMVCApp.zip?st=2018-02-13T09%3A48%3A00Z&se=2044-06-14T09%3A48%3A00Z&sp=rl&sv=2017-04-17&sr=b&sig=bNrVrEFzRHQB17GFJ7boEanetyJ9DGwBSV8OM3Mdh%2FM%3D"
@@ -65,10 +64,10 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
-- Выполнение непосредственно из пакета делает `wwwroot` его доступным только для чтения. При попытке записи файлов в этот каталог приложение получит сообщение об ошибке.
+- Выполнение непосредственно из пакета делает его `wwwroot` доступным только для чтения. При попытке записи файлов в этот каталог приложение получит сообщение об ошибке.
 - Форматы TAR и GZIP не поддерживаются.
 - Эта функция несовместима с [локальным кэшем](overview-local-cache.md).
-- Для повышения производительности холодного запуска используйте параметр local ZIP (`WEBSITE_RUN_FROM_PACKAGE`= 1).
+- Для повышения производительности холодного запуска используйте параметр local ZIP ( `WEBSITE_RUN_FROM_PACKAGE` = 1).
 
 ## <a name="more-resources"></a>Дополнительные ресурсы
 

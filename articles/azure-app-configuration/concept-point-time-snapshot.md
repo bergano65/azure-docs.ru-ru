@@ -9,10 +9,9 @@ ms.service: azure-app-configuration
 ms.topic: conceptual
 ms.date: 02/20/2020
 ms.openlocfilehash: 1e2a4f7a7bc5db1b6a49f085821f7fa2bde54229
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77523668"
 ---
 # <a name="point-in-time-snapshot"></a>Моментальный снимок на определенный момент времени
@@ -21,7 +20,7 @@ ms.locfileid: "77523668"
 
 ## <a name="key-value-retrieval"></a>Получение пары "ключ — значение"
 
-Можно использовать Azure PowerShell для получения значений прежних ключей.  Используйте `az appconfig revision list`, добавив соответствующие параметры для получения необходимых значений.  Укажите экземпляр конфигурации приложения Azure, указав имя хранилища (`--name {app-config-store-name}`) или с помощью строки подключения (`--connection-string {your-connection-string}`). Ограничьте вывод, указав конкретный момент времени (`--datetime`) и указав максимальное число возвращаемых элементов (`--top`).
+Можно использовать Azure PowerShell для получения значений прежних ключей.  Используйте `az appconfig revision list` , добавив соответствующие параметры для получения необходимых значений.  Укажите экземпляр конфигурации приложения Azure, указав имя хранилища ( `--name {app-config-store-name}` ) или с помощью строки подключения ( `--connection-string {your-connection-string}` ). Ограничьте вывод, указав конкретный момент времени ( `--datetime` ) и указав максимальное число возвращаемых элементов ( `--top` ).
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -31,13 +30,13 @@ ms.locfileid: "77523668"
 az appconfig revision list --name {your-app-config-store-name}.
 ```
 
-Получение всех записанных изменений для ключа `environment` и меток `test` и `prod`.
+Получение всех записанных изменений для ключа `environment` и меток `test` и `prod` .
 
 ```azurepowershell
 az appconfig revision list --name {your-app-config-store-name} --key environment --label test,prod
 ```
 
-Получение всех записанных изменений в иерархическом пространстве `environment:prod`ключа.
+Получение всех записанных изменений в иерархическом пространстве ключа `environment:prod` .
 
 ```azurepowershell
 az appconfig revision list --name {your-app-config-store-name} --key environment:prod:* 
@@ -49,7 +48,7 @@ az appconfig revision list --name {your-app-config-store-name} --key environment
 az appconfig revision list --connection-string {your-app-config-connection-string} --key color --datetime "2019-05-01T11:24:12Z" 
 ```
 
-Извлеките последние 10 записанных изменений в значения ключа и возвратите только значения для `key`метки времени `label`, и `last-modified` .
+Извлеките последние 10 записанных изменений в значения ключа и возвратите только значения для `key` `label` метки времени, и `last-modified` .
 
 ```azurepowershell
 az appconfig revision list --name {your-app-config-store-name} --top 10 --fields key,label,last-modified

@@ -1,22 +1,23 @@
 ---
 title: Руководство по Руководство по настройке глобального распределения Azure Cosmos DB с помощью API SQL
-description: Руководство по настройке глобального распределения Azure Cosmos DB с помощью API SQL с .Net, Java, Python и другими пакетами SDK
+description: Руководство по настройке глобального распределения Azure Cosmos DB с помощью API SQL с .NET, Java, Python и другими пакетами SDK
 author: markjbrown
 ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: tutorial
 ms.date: 11/05/2019
 ms.reviewer: sngun
-ms.openlocfilehash: 177973cf766a6215453f3062c0fb206961649272
-ms.sourcegitcommit: fab450a18a600d72b583ecfbe6c5e53afd43408c
+ms.custom: tracking-python
+ms.openlocfilehash: 15f5ac1da6d24feceed3a9106b990ae31e3571e3
+ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80295521"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85851613"
 ---
 # <a name="tutorial-set-up-azure-cosmos-db-global-distribution-using-the-sql-api"></a>Руководство по Настройка глобального распределения Azure Cosmos DB с помощью API SQL
 
-В этой статье показано, как настроить глобальное распределение базы данных Azure Cosmos DB и подключиться к ней с помощью API SQL на портале Azure.
+В этой статье показано, как настроить глобальное распределение базы данных Azure Cosmos DB и подключиться к ней с помощью API SQL на портале Azure.
 
 В этой статье рассматриваются следующие задачи: 
 
@@ -28,7 +29,7 @@ ms.locfileid: "80295521"
 [!INCLUDE [cosmos-db-tutorial-global-distribution-portal](../../includes/cosmos-db-tutorial-global-distribution-portal.md)]
 
 
-## <a name="connecting-to-a-preferred-region-using-the-sql-api"></a>Подключение к предпочтительному региону с помощью API SQL
+## <a name="connecting-to-a-preferred-region-using-the-sql-api"></a><a id="preferred-locations"></a> Подключение к предпочтительному региону с помощью API SQL
 
 Чтобы воспользоваться преимуществами [глобального распределения](distribute-data-globally.md), клиентские приложения могут указать упорядоченный список предпочитаемых регионов, который будет использоваться для операций с документами. Это можно сделать, настроив политику подключения. Для операций записи и чтения с помощью пакета SDK для SQL выбирается наиболее оптимальная конечная точка на основании текущих данных о региональной доступности и списка предпочтений, указанного в конфигурации учетной записи Azure Cosmos DB.
 
@@ -103,68 +104,69 @@ const client = new CosmosClient{ endpoint, key, connectionPolicy: { preferredLoc
 В коде ниже показано, как задать требуемое расположение с помощью пакета SDK для Python.
 
 ```python
-
 connectionPolicy = documents.ConnectionPolicy()
 connectionPolicy.PreferredLocations = ['West US', 'East US', 'North Europe']
 client = cosmos_client.CosmosClient(ENDPOINT, {'masterKey': MASTER_KEY}, connectionPolicy)
 
 ```
 
-## <a name="java-v2-sdk"></a>Пакет SDK для Java версии 2
+## <a name="java-v4-sdk"></a><a id="java4-preferred-locations"></a> Пакет SDK для Java версии 4
 
 В коде ниже показано, как задать требуемое расположение с помощью пакета SDK для Java.
 
-```java
-ConnectionPolicy policy = new ConnectionPolicy();
-policy.setUsingMultipleWriteLocations(true);
-policy.setPreferredLocations(Arrays.asList("East US", "West US", "Canada Central"));
-AsyncDocumentClient client =
-        new AsyncDocumentClient.Builder()
-                .withMasterKeyOrResourceToken(this.accountKey)
-                .withServiceEndpoint(this.accountEndpoint)
-                .withConnectionPolicy(policy)
-                .build();
-```
+# <a name="async"></a>[Асинхронный режим](#tab/api-async)
+
+   Асинхронный API [пакета SDK для Java версии 4](sql-api-sdk-java-v4.md) (Maven [com.azure::azure-cosmos](https://mvnrepository.com/artifact/com.azure/azure-cosmos))
+
+   [!code-java[](~/azure-cosmos-java-sql-api-samples/src/main/java/com/azure/cosmos/examples/documentationsnippets/async/SampleDocumentationSnippetsAsync.java?name=TutorialGlobalDistributionPreferredLocationAsync)]
+
+# <a name="sync"></a>[Синхронизация](#tab/api-sync)
+
+   Синхронный API [пакета SDK для Java версии 4](sql-api-sdk-java-v4.md) (Maven [com.azure::azure-cosmos](https://mvnrepository.com/artifact/com.azure/azure-cosmos))
+
+   [!code-java[](~/azure-cosmos-java-sql-api-samples/src/main/java/com/azure/cosmos/examples/documentationsnippets/sync/SampleDocumentationSnippets.java?name=TutorialGlobalDistributionPreferredLocationSync)]
+
+--- 
 
 ## <a name="rest"></a>REST
-После того, как учетная запись базы данных станет доступной в нескольких регионах, клиенты смогут запрашивать ее доступность с помощью запроса GET к следующему универсальному коду ресурса (URI).
 
-    https://{databaseaccount}.documents.azure.com/
+После того, как учетная запись базы данных станет доступной в нескольких регионах, клиенты смогут запрашивать ее доступность с помощью запроса GET к универсальному коду ресурса (URI) `https://{databaseaccount}.documents.azure.com/`.
 
 Служба вернет список регионов и соответствующих универсальных кодов ресурса (URI) конечных точек Azure Cosmos DB для реплик. В ответе будет указан текущий регион записи. Затем клиент сможет выбрать подходящую конечную точку для всех последующих запросов REST API следующим образом.
 
 Пример ответа
 
-    {
-        "_dbs": "//dbs/",
-        "media": "//media/",
-        "writableLocations": [
-            {
-                "Name": "West US",
-                "DatabaseAccountEndpoint": "https://globaldbexample-westus.documents.azure.com:443/"
-            }
-        ],
-        "readableLocations": [
-            {
-                "Name": "East US",
-                "DatabaseAccountEndpoint": "https://globaldbexample-eastus.documents.azure.com:443/"
-            }
-        ],
-        "MaxMediaStorageUsageInMB": 2048,
-        "MediaStorageUsageInMB": 0,
-        "ConsistencyPolicy": {
-            "defaultConsistencyLevel": "Session",
-            "maxStalenessPrefix": 100,
-            "maxIntervalInSeconds": 5
-        },
-        "addresses": "//addresses/",
-        "id": "globaldbexample",
-        "_rid": "globaldbexample.documents.azure.com",
-        "_self": "",
-        "_ts": 0,
-        "_etag": null
-    }
-
+```json
+{
+    "_dbs": "//dbs/",
+    "media": "//media/",
+    "writableLocations": [
+        {
+            "Name": "West US",
+            "DatabaseAccountEndpoint": "https://globaldbexample-westus.documents.azure.com:443/"
+        }
+    ],
+    "readableLocations": [
+        {
+            "Name": "East US",
+            "DatabaseAccountEndpoint": "https://globaldbexample-eastus.documents.azure.com:443/"
+        }
+    ],
+    "MaxMediaStorageUsageInMB": 2048,
+    "MediaStorageUsageInMB": 0,
+    "ConsistencyPolicy": {
+        "defaultConsistencyLevel": "Session",
+        "maxStalenessPrefix": 100,
+        "maxIntervalInSeconds": 5
+    },
+    "addresses": "//addresses/",
+    "id": "globaldbexample",
+    "_rid": "globaldbexample.documents.azure.com",
+    "_self": "",
+    "_ts": 0,
+    "_etag": null
+}
+```
 
 * Все запросы PUT, POST и DELETE должны направляться на указанный универсальный код ресурса (URI) записи.
 * Все запросы GET и другие запросы только для чтения могут направляться к любой конечной точке на выбор клиента.

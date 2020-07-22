@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 description: включить файл
 services: expressroute
 author: cherylmc
@@ -8,19 +8,19 @@ ms.topic: include
 ms.date: 12/13/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: ff5a42150140035105298802a7ce8b4d0e25959c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 446a3b786686d96f68d2d0a09d00a75e176a7661
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75436937"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86218080"
 ---
 Azure Cloud Shell можно использовать для выполнения большинства командлетов PowerShell и команд CLI вместо установки Azure PowerShell или CLI локально. Azure Cloud Shell — это бесплатная интерактивная оболочка с предварительно установленными инструментами Azure, которая настроена для использования с вашей учетной записью.
 Для выполнения кода из этой статьи в Azure Cloud Shell откройте сеанс Cloud Shell, скопируйте блок кода с помощью кнопки **Копировать** и вставьте его в сеанс Cloud Shell, нажав клавиши __CTRL+SHIFT+V__ в Windows и Linux или __CMD+SHIFT+V__ в macOS. Вставленный текст не выполняется автоматически, нажмите клавишу **Ввод** , чтобы выполнить код.
 
 Cloud Shell можно запустить разными способами:
 
-|  |   |
+| Параметр | Ссылка |
 |-----------------------------------------------|---|
 | Нажмите кнопку **Попробовать** в правом верхнем углу блока с кодом. | ![Cloud Shell в этой статье](./media/vpn-gateway-cloud-shell-powershell/cloud-shell-powershell-try-it.png) |
 | Откройте Cloud Shell в браузере. | [![https://shell.azure.com/powershell](./media/vpn-gateway-cloud-shell-powershell/launchcloudshell.png)](https://shell.azure.com/powershell) |

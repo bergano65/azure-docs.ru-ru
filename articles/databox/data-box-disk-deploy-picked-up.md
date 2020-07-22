@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 05/08/2020
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 6b165df42da35077c7ef252291d8e1514bb3b1b0
-ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
+ms.openlocfilehash: 07c86ca016d3e38359cbe8ba61d67f109c42edb0
+ms.sourcegitcommit: 51977b63624dfd3b4f22fb9fe68761d26eed6824
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82995995"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84944973"
 ---
 ::: zone target="docs"
 
@@ -49,7 +49,7 @@ ms.locfileid: "82995995"
     - Для упаковки дисков мы рекомендуем использовать надежную воздушно-пузырчатую пленку.
     - Убедитесь, что содержимое плотно и без зазоров упаковано в коробке.
 
-Дальнейшие действия зависят от того, в каком регионе вы возвращаете устройство. Инструкции для США, Канады, Европейского союза (ЕС), Австралии и стран Азии отличаются.
+Дальнейшие действия зависят от того, в каком регионе вы возвращаете устройство. Инструкции для США, Канады, Европейского союза (ЕС), Австралии и стран и регионов Азии отличаются.
 
 ### <a name="in-us-or-canada"></a>[США и Канада](#tab/in-us-or-canada)
 
@@ -142,10 +142,10 @@ ms.locfileid: "82995995"
     To: kadcustcare@singpost.com
     Subject: Microsoft Azure Pick-up - XZ00001234567 
     Body: 
-     a. Requestor name
-     b. Requestor contact number
-     c. Requestor collection address
-     d. Preferred collection date
+     a.    Requestor name
+     b.    Requestor contact number
+     c.    Requestor collection address
+     d.    Preferred collection date
     ```
 
    > [!NOTE]
@@ -159,7 +159,7 @@ ms.locfileid: "82995995"
 
 ### <a name="in-self-managed"></a>[Cамостоятельное управление](#tab/in-selfmanaged)
 
-Если вы используете Диск Data Box в Японии, Сингапуре, Корее и Западной Европе и выбрали параметр самостоятельного управления отгрузкой во время создания заказа, следуйте этим инструкциям. 
+Если вы используете Диск Data Box в Японии, Сингапуре, Корее, Западной Европе или Индии и выбрали параметр самостоятельного управления отгрузкой во время создания заказа, следуйте этим инструкциям. 
 
 1. Перейдите к колонке **Обзор** для заказа на портале Azure. Выполните инструкции, отображаемые при выборе параметра **Расписание вывоза**. Вы увидите код авторизации, который используется во время доставки заказа.
 
@@ -167,7 +167,7 @@ ms.locfileid: "82995995"
 
     ```
     To: adbops@microsoft.com
-    Subject: Request for Azure Data Box Disk drop-off for order: ‘orderName’
+    Subject: Request for Azure Data Box Disk drop-off for order: 'orderName'
     Body: 
      a. Order name
      b. Contact name of the person dropping off. You will need to display a Government approved ID during the drop off.

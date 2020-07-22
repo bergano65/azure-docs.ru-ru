@@ -7,18 +7,18 @@ manager: CelesteDG
 ms.service: active-directory
 ms.subservice: azuread-dev
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 01/21/2019
 ms.author: ryanwi
 ms.reviewer: jlu
 ms.custom: aaddev
 ROBOTS: NOINDEX
-ms.openlocfilehash: ff0ce05b13fea8409475e3415c5d810d7c79769a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 7bb572e9e22519491290e54417f5ca350d6c0b5c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80154871"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85383723"
 ---
 # <a name="how-to-reactivate-disabled-access-control-service-namespaces"></a>Практическое руководство. Повторная активация отключенных пространств имен службы контроля доступа
 
@@ -124,6 +124,6 @@ ms.locfileid: "80154871"
 - Если вы столкнетесь с какими-либо проблемами после выполнения инструкций из этого пошагового руководства, обратитесь в [службу поддержки Azure](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview).
 - Свяжитесь с нами по адресу acsfeedback@microsoft.com, если у вас есть вопросы или предложения, связанные с прекращением поддержки ACS.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Просмотрите сведения о прекращении поддержки ACS в статье [Руководство. Перенос из службы контроля доступа Azure](active-directory-acs-migration.md).

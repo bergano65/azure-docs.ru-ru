@@ -10,12 +10,12 @@ ms.reviewer: nibaccam
 author: nibaccam
 ms.author: nibaccam
 ms.date: 02/26/2020
-ms.openlocfilehash: 475c4fd6b34996c83035c4f7ef93b9fa02ded11f
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
-ms.translationtype: MT
+ms.custom: tracking-python
+ms.openlocfilehash: 48393ac14805c60ac12df9256f915721ee928758
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82789867"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84552845"
 ---
 # <a name="data-ingestion-options-for-azure-machine-learning-workflows"></a>Параметры приема данных для рабочих процессов Машинное обучение Azure
 
@@ -57,7 +57,7 @@ ms.locfileid: "82789867"
     
 Узнайте, как создать конвейер приема данных для Машинное обучение с помощью [фабрики данных Azure](how-to-data-ingest-adf.md).
 
-## <a name="azure-machine-learning-python-sdk"></a>Пакет SDK для Машинное обучение Azure Python 
+## <a name="azure-machine-learning-python-sdk"></a>Пакет SDK Python для Машинного обучения Azure 
 
 С помощью [пакета SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml)можно включить задачи приема данных в машинное обучение Azure шаге [конвейера](how-to-create-your-first-pipeline.md) .
 
@@ -73,7 +73,7 @@ ms.locfileid: "82789867"
 
 ![Прием данных в конвейере Azure и пакете SDK](media/concept-data-ingestion/data-ingest-option-two.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Следуйте приведенным ниже статьям.
 * [Создание конвейера приема данных с помощью фабрики данных Azure](how-to-data-ingest-adf.md)

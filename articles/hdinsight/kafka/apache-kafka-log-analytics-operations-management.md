@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 02/17/2020
-ms.openlocfilehash: 3f8ff3cbc24f6e3a7e0eccf1b18e01941c9584b9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 593d6861ee5913fffb25bfdea4829e1b1ce6ddc6
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77471186"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86087407"
 ---
 # <a name="analyze-logs-for-apache-kafka-on-hdinsight"></a>Анализ журналов для Apache Kafka в HDInsight
 
@@ -23,7 +23,7 @@ ms.locfileid: "77471186"
 
 ## <a name="logs-location"></a>Расположение журналов
 
-Журналы Apache Kafka в кластере находятся в `/var/log/kafka`папке. Журналы Kafka не сохраняются и не сохраняются в течение жизненного цикла кластера, независимо от того, используются ли управляемые диски. В следующей таблице показаны доступные журналы.
+Журналы Apache Kafka в кластере находятся в папке `/var/log/kafka` . Журналы Kafka не сохраняются и не сохраняются в течение жизненного цикла кластера, независимо от того, используются ли управляемые диски. В следующей таблице показаны доступные журналы.
 
 |Журнал |Описание |
 |---|---|
@@ -52,7 +52,7 @@ ms.locfileid: "77471186"
 
 2. В меню слева в разделе **Общие**выберите **журналы**. Здесь можно выполнять поиск данных, собранных из Kafka. Введите запрос в окне запроса и нажмите кнопку **выполнить**. Ниже приведены некоторые примеры поисковых запросов:
 
-* Использование дискового пространства: 
+* Использование диска:
 
     ```kusto
     Perf
@@ -84,7 +84,7 @@ ms.locfileid: "77471186"
     | summarize AggregatedValue = avg(kafka_BrokerTopicMetrics_BytesInPerSec_Count_value_d) by bin(TimeGenerated, 1h)
     ```
 
-* Исходящих байт в секунду: ( `your_kafka_cluster_name` замените именем кластера.)
+* Исходящих байт в секунду: (замените `your_kafka_cluster_name` именем кластера.)
 
     ```kusto
     metrics_kafka_CL 
@@ -102,7 +102,7 @@ ms.locfileid: "77471186"
 
     ![Использование ЦП в службе log Analytics для Apache Kafka](./media/apache-kafka-log-analytics-operations-management/apache-kafka-cpu-usage.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Azure Monitor см. в статьях [обзор Azure Monitor](../../log-analytics/log-analytics-get-started.md)и [запрос Azure Monitor журналов для мониторинга кластеров HDInsight](../hdinsight-hadoop-oms-log-analytics-use-queries.md).
 

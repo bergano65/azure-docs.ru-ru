@@ -1,26 +1,26 @@
 ---
-title: Определения схемы предупреждений в Azure Monitor
-description: Основные сведения об общих определениях схемы предупреждений для Azure Monitor
+title: Определения схемы оповещений в Azure Monitor
+description: Основные сведения об определениях общей схемы оповещений для Azure Monitor
 author: ofirmanor
 ms.topic: conceptual
 ms.subservice: alerts
 ms.date: 03/14/2019
-ms.openlocfilehash: 62b2738324f4c728cd4b5959c04c93649c156afb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 951894bcd047d93809b41f47213ad670823a27e0
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81114447"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85445378"
 ---
 # <a name="common-alert-schema-definitions"></a>Определения общей схемы оповещений
 
-В этой статье описаны [Общие определения схемы предупреждений](https://aka.ms/commonAlertSchemaDocs) для Azure Monitor, в том числе для веб-перехватчиков, Azure Logic Apps, функций Azure и модулей Runbook службы автоматизации Azure. 
+В этой статье описываются [определения общей схемы оповещений](https://aka.ms/commonAlertSchemaDocs) для Azure Monitor, которые применяются для веб-перехватчиков, Azure Logic Apps, Функций Azure и последовательностей runbook службы автоматизации Azure. 
 
-Любой экземпляр предупреждения описывает ресурс, который был затронут, и причину предупреждения. Эти экземпляры описаны в общей схеме в следующих разделах:
-* **Essentials**: набор стандартизованных полей, общих для всех типов оповещений, описывающих ресурс, на котором включено оповещение, а также дополнительные общие метаданные предупреждений (например, серьезность или описание). 
-* **Контекст предупреждения**: набор полей, описывающих причину предупреждения, с полями, которые зависят от типа оповещения. Например, оповещение метрики включает такие поля, как имя метрики и значение метрики в контексте предупреждения, в то время как оповещение журнала действий содержит сведения о событии, создавшем предупреждение. 
+Любой экземпляр оповещения описывает затронутый ресурс и причину оповещения. Эти экземпляры описываются в следующих разделах, посвященных общей схеме.
+* **Основные компоненты.** Набор стандартизованных полей, общих для всех типов оповещений, которые описывают ресурс, для которого создано оповещение, и включают некоторые общие метаданные (например, уровень серьезности и описание). 
+* **Контекст оповещения.** Набор полей, которые описывают причину оповещения с полями и которые зависят от типа оповещения. Например, оповещение метрики содержит поля для имени и значения метрики в контексте оповещения, а оповещение журнала действий предоставляет сведения о событии, создавшем предупреждение. 
 
-**Примеры полезных данных оповещений**
+**Примеры полезных данных оповещения**
 ```json
 {
   "schemaId": "azureMonitorCommonAlertSchema",
@@ -73,19 +73,19 @@ ms.locfileid: "81114447"
 
 | Поле | Описание|
 |:---|:---|
-| alertId | Идентификатор GUID, однозначно определяющий экземпляр предупреждения. |
-| alertRule | Имя правила генерации оповещений, создавшего экземпляр предупреждения. |
-| Severity | Серьезность предупреждения. Возможные значения: Sev0, Sev1, Sev2, Sev3 или Sev4. |
-| сигналтипе | Определяет сигнал, на котором было определено правило генерации оповещений. Возможные значения: метрика, журнал или журнал действий. |
-| мониторкондитион | Когда выдается предупреждение, условие монитора предупреждения устанавливается в состояние " **запущено**". Когда основное условие, вызвавшее срабатывание предупреждения, очищается, условие монитора устанавливается в значение " **разрешено**".   |
-| мониторингсервице | Служба мониторинга или решение, создавшее оповещение. Поля для контекста предупреждения определяются службой мониторинга. |
-| алерттаржетидс | Список идентификаторов Azure Resource Manager, которые затрагивают целевые объекты предупреждения. Для предупреждения журнала, определенного в Log Analytics рабочей области или экземпляре Application Insights, это соответствующая рабочая область или приложение. |
-| оригиналертид | Идентификатор экземпляра предупреждения, сформированный службой мониторинга, создавшей его. |
-| фиреддатетиме | Дата и время запуска экземпляра предупреждения в формате UTC. |
-| ресолведдатетиме | Дата и время, когда состояние монитора для экземпляра предупреждения задано как **разрешенное** в формате UTC. В настоящее время применимо только для оповещений метрик.|
-| description | Описание, определенное в правиле генерации оповещений. |
-|ессентиалсверсион| Номер версии для раздела Essentials.|
-|алертконтекстверсион | Номер версии для `alertContext` раздела. |
+| alertId | Идентификатор GUID, уникальным образом определяющий экземпляр оповещения. |
+| alertRule | Имя правила генерации оповещений, которое создало этот экземпляр оповещения. |
+| Severity | Уровень серьезности оповещения. Возможные значения: Sev0, Sev1, Sev2, Sev3 или Sev4. |
+| signalType | Определяет сигнал, для которого было определено это правило генерации оповещений. Возможные значения: Metric, Log или Activity Log. |
+| monitorCondition | Когда срабатывает оповещение, для монитора оповещения устанавливается состояние **Активировано**. Когда устраняется базовое условие, которое вызвало оповещение, для монитора устанавливается состояние **Устранено**.   |
+| monitoringService | Служба или решение мониторинга, создавшее это оповещение. Поля для контекста оповещения определяются службой мониторинга. |
+| alertTargetIds | Список идентификаторов Azure Resource Manager, которые представляют затронутые оповещением объекты. Для оповещения журнала, определенного в рабочей области Log Analytics или экземпляре Application Insights, это соответствующая рабочая область или приложение. |
+| originAlertId | Идентификатор экземпляра оповещения в том виде, в каком его создала служба мониторинга. |
+| firedDateTime | Дата и время создания экземпляра оповещения в формате UTC. |
+| resolvedDateTime | Дата и время установки состояния монитора **Устранено** для экземпляра оповещения в формате UTC. В настоящее время это применимо только к оповещениям метрик.|
+| description | Описание, предоставленное в правиле генерации оповещений. |
+|essentialsVersion| Номер версии для раздела основных сведений.|
+|alertContextVersion | Номер версии для раздела `alertContext`. |
 
 **Примеры значений**
 ```json
@@ -149,72 +149,81 @@ ms.locfileid: "81114447"
 ### <a name="log-alerts"></a>Оповещения журналов
 
 > [!NOTE]
-> Для оповещений журнала, которые имеют определенную тему электронной почты и (или) полезные данные JSON, при включении общей схемы будет возвращена тема сообщения электронной почты или схема полезных данных, описанная ниже. Оповещения с включенной общей схемой имеют ограничение верхнего размера 256 КБ на предупреждение. Результаты поиска не внедряются в полезные данные оповещений журнала, если они приводят к тому, что размер предупреждения пересекает это пороговое значение. Это можно определить, установив флаг `IncludeSearchResults`. Если результаты поиска не включаются, следует использовать поисковый запрос в сочетании с [API log Analytics](https://docs.microsoft.com/rest/api/loganalytics/query/get). 
+> Для оповещений журнала, в которых определена пользовательская тема электронного сообщения или полезные данные JSON, включение общей схемы возвращает тему электронного сообщения или схему полезных данных, как показано ниже. Максимальный размер оповещений, для которых включена общая схема, ограничен 256 КБ. Результаты поиска не внедряются в полезные данные оповещений журнала, если их внедрение приведет к превышению этого значения. Вы можете проверить это условие, установив флаг `IncludeSearchResults`. Если результаты поиска не включаются, используйте поисковый запрос в сочетании с [API Log Analytics](https://docs.microsoft.com/rest/api/loganalytics/dataaccess/query/get). 
 
 #### <a name="monitoringservice--log-analytics"></a>`monitoringService` = `Log Analytics`
 
 **Примеры значений**
 ```json
 {
-  "alertContext": {
-    "SearchQuery": "search * \n| where Type == \"Heartbeat\" \n| where Category == \"Direct Agent\" \n| where TimeGenerated > ago(30m) ",
-    "SearchIntervalStartTimeUtc": "3/22/2019 1:36:31 PM",
-    "SearchIntervalEndtimeUtc": "3/22/2019 1:51:31 PM",
-    "ResultCount": 2,
-    "LinkToSearchResults": "https://portal.azure.com#@72f988bf-86f1-41af-91ab-2d7cd011db47/blade/Microsoft_OperationsManagementSuite_Workspace/AnalyticsBlade/initiator/AnalyticsShareLinkToQuery/isQueryEditorVisible/true/scope/%7B%22resources%22%3A%5B%7B%22resourceId%22%3A%22%2Fsubscriptions%<subscription ID>%2FresourceGroups%2Fpipelinealertrg%2Fproviders%2FMicrosoft.OperationalInsights%2Fworkspaces%2FINC-OmsAlertRunner%22%7D%5D%7D/query/search%20%2A%20%0A%7C%20where%20Type%20%3D%3D%20%22Heartbeat%22%20%0A%7C%20where%20Category%20%3D%3D%20%22Direct%20Agent%22%20%0A%7C%20where%20TimeGenerated%20%3E%20%28datetime%282019-03-22T13%3A51%3A31.0000000%29%20-%2030m%29%20%20/isQuerybase64Compressed/false/timespanInIsoFormat/2019-03-22T13%3a36%3a31.0000000Z%2f2019-03-22T13%3a51%3a31.0000000Z",
-    "SeverityDescription": "Warning",
-    "WorkspaceId": "2a1f50a7-ef97-420c-9d14-938e77c2a929",
-    "SearchIntervalDurationMin": "15",
-    "AffectedConfigurationItems": [
-      "INC-Gen2Alert"
-    ],
-    "SearchIntervalInMinutes": "15",
-    "Threshold": 10000,
-    "Operator": "Less Than",
-    "SearchResults": {
-      "tables": [
-        {
-          "name": "PrimaryResult",
-          "columns": [
+    "alertContext": {
+        "SearchQuery": "Perf | where ObjectName == \"Processor\" and CounterName == \"% Processor Time\" | summarize AggregatedValue = avg(CounterValue) by bin(TimeGenerated, 5m), Computer",
+        "SearchIntervalStartTimeUtc": "3/22/2019 1:36:31 PM",
+        "SearchIntervalEndtimeUtc": "3/22/2019 1:51:31 PM",
+        "ResultCount": 2,
+        "LinkToSearchResults": "https://portal.azure.com/#Analyticsblade/search/index?_timeInterval.intervalEnd=2018-03-26T09%3a10%3a40.0000000Z&_timeInterval.intervalDuration=3600&q=Usage",
+        "LinkToFilteredSearchResultsUI": "https://portal.azure.com/#Analyticsblade/search/index?_timeInterval.intervalEnd=2018-03-26T09%3a10%3a40.0000000Z&_timeInterval.intervalDuration=3600&q=Usage",
+        "LinkToSearchResultsAPI": "https://api.loganalytics.io/v1/workspaces/workspaceID/query?query=Heartbeat&timespan=2020-05-07T18%3a11%3a51.0000000Z%2f2020-05-07T18%3a16%3a51.0000000Z",
+        "LinkToFilteredSearchResultsAPI": "https://api.loganalytics.io/v1/workspaces/workspaceID/query?query=Heartbeat&timespan=2020-05-07T18%3a11%3a51.0000000Z%2f2020-05-07T18%3a16%3a51.0000000Z",
+        "SeverityDescription": "Warning",
+        "WorkspaceId": "12345a-1234b-123c-123d-12345678e",
+        "SearchIntervalDurationMin": "15",
+        "AffectedConfigurationItems": [
+            "INC-Gen2Alert"
+        ],
+        "SearchIntervalInMinutes": "15",
+        "Threshold": 10000,
+        "Operator": "Less Than",
+        "Dimensions": [
             {
-              "name": "$table",
-              "type": "string"
-            },
-            {
-              "name": "Id",
-              "type": "string"
-            },
-            {
-              "name": "TimeGenerated",
-              "type": "datetime"
+                "name": "Computer",
+                "value": "INC-Gen2Alert"
             }
-          ],
-          "rows": [
-            [
-              "Fabrikam",
-              "33446677a",
-              "2018-02-02T15:03:12.18Z"
-            ],
-            [
-              "Contoso",
-              "33445566b",
-              "2018-02-02T15:16:53.932Z"
+        ],
+        "SearchResults": {
+            "tables": [
+                {
+                    "name": "PrimaryResult",
+                    "columns": [
+                        {
+                            "name": "$table",
+                            "type": "string"
+                        },
+                        {
+                            "name": "Computer",
+                            "type": "string"
+                        },
+                        {
+                            "name": "TimeGenerated",
+                            "type": "datetime"
+                        }
+                    ],
+                    "rows": [
+                        [
+                            "Fabrikam",
+                            "33446677a",
+                            "2018-02-02T15:03:12.18Z"
+                        ],
+                        [
+                            "Contoso",
+                            "33445566b",
+                            "2018-02-02T15:16:53.932Z"
+                        ]
+                    ]
+                }
             ]
-          ]
-        }
-      ],
-      "dataSources": [
-        {
-          "resourceId": "/subscriptions/a5ea27e2-7482-49ba-90b3-60e7496dd873/resourcegroups/nrt-tip-kc/providers/microsoft.operationalinsights/workspaces/nrt-tip-kc",
-          "tables": [
-            "Heartbeat"
-          ]
-        }
-      ]
-    },
+        },
+        "dataSources": [
+            {
+                "resourceId": "/subscriptions/a5ea55e2-7482-49ba-90b3-60e7496dd873/resourcegroups/test/providers/microsoft.operationalinsights/workspaces/test",
+                "tables": [
+                    "Heartbeat"
+                ]
+            }
+        ]
     "IncludeSearchResults": "True",
-    "AlertType": "Number of results"
-  }
+    "AlertType": "Metric measurement"
+    }
 }
 ```
 
@@ -223,61 +232,70 @@ ms.locfileid: "81114447"
 **Примеры значений**
 ```json
 {
-  "alertContext": {
-    "SearchQuery": "search *",
-    "SearchIntervalStartTimeUtc": "3/22/2019 1:36:33 PM",
-    "SearchIntervalEndtimeUtc": "3/22/2019 1:51:33 PM",
-    "ResultCount": 2,
-    "LinkToSearchResults": "https://portal.azure.com#@72f988bf-86f1-41af-91ab-2d7cd011db47/blade/Microsoft_OperationsManagementSuite_Workspace/AnalyticsBlade/initiator/AnalyticsShareLinkToQuery/isQueryEditorVisible/true/scope/%7B%22resources%22%3A%5B%7B%22resourceId%22%3A%22%2Fsubscriptions%<subscription ID>%2FresourceGroups%2FPipeLineAlertRG%2Fproviders%2Fmicrosoft.insights%2Fcomponents%2FWEU-AIRunner%22%7D%5D%7D/query/search%20%2A/isQuerybase64Compressed/false/timespanInIsoFormat/2019-03-22T13%3a36%3a33.0000000Z%2f2019-03-22T13%3a51%3a33.0000000Z",
-    "SearchIntervalDurationMin": "15",
-    "SearchIntervalInMinutes": "15",
-    "Threshold": 10000,
-    "Operator": "Less Than",
-    "ApplicationId": "8e20151d-75b2-4d66-b965-153fb69d65a6",
-    "SearchResults": {
-      "tables": [
-        {
-          "name": "PrimaryResult",
-          "columns": [
+    "alertContext": {
+        "SearchQuery": "requests | where resultCode == \"500\" | summarize AggregatedValue = Count by bin(Timestamp, 5m), IP",
+        "SearchIntervalStartTimeUtc": "3/22/2019 1:36:33 PM",
+        "SearchIntervalEndtimeUtc": "3/22/2019 1:51:33 PM",
+        "ResultCount": 2,
+        "LinkToSearchResults": "https://portal.azure.com/AnalyticsBlade/subscriptions/12345a-1234b-123c-123d-12345678e/?query=search+*+&timeInterval.intervalEnd=2018-03-26T09%3a10%3a40.0000000Z&_timeInterval.intervalDuration=3600&q=Usage",
+        "LinkToFilteredSearchResultsUI": "https://portal.azure.com/AnalyticsBlade/subscriptions/12345a-1234b-123c-123d-12345678e/?query=search+*+&timeInterval.intervalEnd=2018-03-26T09%3a10%3a40.0000000Z&_timeInterval.intervalDuration=3600&q=Usage",
+        "LinkToSearchResultsAPI": "https://api.applicationinsights.io/v1/apps/0MyAppId0/metrics/requests/count",
+        "LinkToFilteredSearchResultsAPI": "https://api.applicationinsights.io/v1/apps/0MyAppId0/metrics/requests/count",
+        "SearchIntervalDurationMin": "15",
+        "SearchIntervalInMinutes": "15",
+        "Threshold": 10000,
+        "Operator": "Less Than",
+        "ApplicationId": "8e20151d-75b2-4d66-b965-153fb69d65a6",
+        "Dimensions": [
             {
-              "name": "$table",
-              "type": "string"
-            },
-            {
-              "name": "Id",
-              "type": "string"
-            },
-            {
-              "name": "TimeGenerated",
-              "type": "datetime"
+                "name": "IP",
+                "value": "1.1.1.1"
             }
-          ],
-          "rows": [
-            [
-              "Fabrikam",
-              "33446677a",
-              "2018-02-02T15:03:12.18Z"
+        ],
+        "SearchResults": {
+            "tables": [
+                {
+                    "name": "PrimaryResult",
+                    "columns": [
+                        {
+                            "name": "$table",
+                            "type": "string"
+                        },
+                        {
+                            "name": "Id",
+                            "type": "string"
+                        },
+                        {
+                            "name": "Timestamp",
+                            "type": "datetime"
+                        }
+                    ],
+                    "rows": [
+                        [
+                            "Fabrikam",
+                            "33446677a",
+                            "2018-02-02T15:03:12.18Z"
+                        ],
+                        [
+                            "Contoso",
+                            "33445566b",
+                            "2018-02-02T15:16:53.932Z"
+                        ]
+                    ]
+                }
             ],
-            [
-              "Contoso",
-              "33445566b",
-              "2018-02-02T15:16:53.932Z"
+            "dataSources": [
+                {
+                    "resourceId": "/subscriptions/a5ea27e2-7482-49ba-90b3-52e7496dd873/resourcegroups/test/providers/microsoft.operationalinsights/workspaces/test",
+                    "tables": [
+                        "Heartbeat"
+                    ]
+                }
             ]
-          ]
-        }
-      ],
-      "dataSources": [
-        {
-          "resourceId": "/subscriptions/a5ea27e2-7482-49ba-90b3-60e7496dd873/resourcegroups/nrt-tip-kc/providers/microsoft.operationalinsights/workspaces/nrt-tip-kc",
-          "tables": [
-            "Heartbeat"
-          ]
-        }
-      ]
-    },
-    "IncludeSearchResults": "True",
-    "AlertType": "Number of results"
-  }
+        },
+        "IncludeSearchResults": "True",
+        "AlertType": "Metric measurement"
+    }
 }
 ```
 
@@ -479,8 +497,8 @@ ms.locfileid: "81114447"
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения о [схеме общих предупреждений](https://aka.ms/commonAlertSchemaDocs).
-- Узнайте [, как создать приложение логики, которое использует общую схему оповещений для обработки всех ваших оповещений](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-common-schema-integrations). 
+- См. сведения об [общей схеме оповещений](https://aka.ms/commonAlertSchemaDocs).
+- Узнайте, как [создать приложение логики, которое использует общую схему оповещений для обработки всех оповещений](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-common-schema-integrations). 
 

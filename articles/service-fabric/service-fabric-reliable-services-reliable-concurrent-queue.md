@@ -3,15 +3,15 @@ title: Надежная параллельная очередь в Azure Service
 description: ReliableConcurrentQueue — это очередь с высокой пропускной способностью, которая позволяет параллельно ставить в очередь и выводить на нее очереди.
 ms.topic: conceptual
 ms.date: 5/1/2017
-ms.openlocfilehash: a7115db8259fde0e87e53557ecef730f8e82d2fd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 423ef3d1898176d7c25c596ad186a9c000108aa4
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75462726"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86257440"
 ---
 # <a name="introduction-to-reliableconcurrentqueue-in-azure-service-fabric"></a>Введение в надежные параллельные очереди в Azure Service Fabric
-Надежная параллельная очередь — это асинхронная, транзакционная и реплицируемая очередь, которая обладает высокой степенью параллелизма при операциях постановки в очередь и вывода из нее. Она предназначена для обеспечения высокой пропускной способности и низкой задержки. Она ослабляет строгое упорядочение FIFO, гарантируемое [надежной очередью](https://msdn.microsoft.com/library/azure/dn971527.aspx), и вместо этого обеспечивает упорядочение наилучшим возможным образом.
+Надежная параллельная очередь — это асинхронная, транзакционная и реплицируемая очередь, которая обладает высокой степенью параллелизма при операциях постановки в очередь и вывода из нее. Она предназначена для обеспечения высокой пропускной способности и низкой задержки. Она ослабляет строгое упорядочение FIFO, гарантируемое [надежной очередью](/dotnet/api/microsoft.servicefabric.data.collections.ireliablequeue-1?view=azure-dotnet#microsoft_servicefabric_data_collections_ireliablequeue_1), и вместо этого обеспечивает упорядочение наилучшим возможным образом.
 
 ## <a name="apis"></a>Программные интерфейсы
 
@@ -21,11 +21,11 @@ ms.locfileid: "75462726"
 | bool TryDequeue(out T result)  | Task< ConditionalValue < T > > TryDequeueAsync(ITransaction tx)  |
 | int Count()                    | long Count()                                                     |
 
-## <a name="comparison-with-reliable-queue"></a>Сравнение с [надежной очередью](https://msdn.microsoft.com/library/azure/dn971527.aspx)
+## <a name="comparison-with-reliable-queue"></a>Сравнение с [надежной очередью](/dotnet/api/microsoft.servicefabric.data.collections.ireliablequeue-1?view=azure-dotnet#microsoft_servicefabric_data_collections_ireliablequeue_1)
 
-Надежная параллельная очередь предлагается в качестве альтернативы [надежной очереди](https://msdn.microsoft.com/library/azure/dn971527.aspx). Ее следует использовать в случаях, когда строгое упорядочение FIFO не требуется, так как модель FIFO требует уменьшения степени параллелизма.  [Надежная очередь](https://msdn.microsoft.com/library/azure/dn971527.aspx) использует блокировки для принудительного упорядочивания FIFO, разрешая ставить в очередь и выводить из нее одновременно максимум одну транзакцию за раз. Для сравнения надежная параллельная очередь снижает ограничения упорядочивания и позволяет чередовать операции постановки в очередь и вывода из нее любому количеству параллельных транзакций. Так обеспечивается упорядочивание наилучшим возможным образом, однако относительный порядок двух значений в надежной параллельной очереди не гарантируется.
+Надежная параллельная очередь предлагается в качестве альтернативы [надежной очереди](/dotnet/api/microsoft.servicefabric.data.collections.ireliablequeue-1?view=azure-dotnet#microsoft_servicefabric_data_collections_ireliablequeue_1). Ее следует использовать в случаях, когда строгое упорядочение FIFO не требуется, так как модель FIFO требует уменьшения степени параллелизма.  [Надежная очередь](/dotnet/api/microsoft.servicefabric.data.collections.ireliablequeue-1?view=azure-dotnet#microsoft_servicefabric_data_collections_ireliablequeue_1) использует блокировки для принудительного упорядочивания FIFO, разрешая ставить в очередь и выводить из нее одновременно максимум одну транзакцию за раз. Для сравнения надежная параллельная очередь снижает ограничения упорядочивания и позволяет чередовать операции постановки в очередь и вывода из нее любому количеству параллельных транзакций. Так обеспечивается упорядочивание наилучшим возможным образом, однако относительный порядок двух значений в надежной параллельной очереди не гарантируется.
 
-Надежная параллельная очередь обеспечивает высокую пропускную способность и более низкую задержку, чем [надежная очередь](https://msdn.microsoft.com/library/azure/dn971527.aspx), во всех случаях, когда имеется несколько параллельных транзакций, выполняющих постановку в очередь и вывод из нее.
+Надежная параллельная очередь обеспечивает высокую пропускную способность и более низкую задержку, чем [надежная очередь](/dotnet/api/microsoft.servicefabric.data.collections.ireliablequeue-1?view=azure-dotnet#microsoft_servicefabric_data_collections_ireliablequeue_1), во всех случаях, когда имеется несколько параллельных транзакций, выполняющих постановку в очередь и вывод из нее.
 
 Пример использования надежной параллельной очереди — это сценарий с [очередью сообщений](https://en.wikipedia.org/wiki/Message_queue). В этом сценарии один или несколько отправителей создают и добавляют элементы в очередь и один или несколько получателей извлекают сообщения из очереди и обрабатывают их. Несколько отправителей и получателей могут работать независимо, используя параллельные транзакции для обработки очередей.
 
@@ -338,6 +338,6 @@ using (var txn = this.StateManager.CreateTransaction())
 * [Уведомления Reliable Services](service-fabric-reliable-services-notifications.md)
 * [Reliable Services резервного копирования и восстановления (аварийное восстановление)](service-fabric-reliable-services-backup-restore.md)
 * [Конфигурация диспетчера надежных состояний](service-fabric-reliable-services-configuration.md)
-* [начало работы с Service Fabric служб веб-API](service-fabric-reliable-services-communication-webapi.md)
-* [Дополнительные возможности использования модели программирования надежных служб](service-fabric-reliable-services-advanced-usage.md)
-* [Справочник разработчика по надежным коллекциям](https://msdn.microsoft.com/library/azure/microsoft.servicefabric.data.collections.aspx)
+* [начало работы с Service Fabric служб веб-API](./service-fabric-reliable-services-communication-aspnetcore.md)
+* [Дополнительные возможности использования модели программирования надежных служб](./service-fabric-reliable-services-lifecycle.md)
+* [Справочник разработчика по надежным коллекциям](/dotnet/api/microsoft.servicefabric.data.collections?view=azure-dotnet#microsoft_servicefabric_data_collections)

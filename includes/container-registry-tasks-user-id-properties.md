@@ -1,5 +1,5 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл
 services: container-registry
 author: dlepow
@@ -15,7 +15,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 04/28/2020
 ms.locfileid: "68642089"
 ---
-В выходных данных команды в `identity` разделе показано, что в задаче `UserAssigned` задано удостоверение типа.
+В выходных данных команды в разделе `identity` показано, что в задаче задано удостоверение типа `UserAssigned`:
 
 ```console
 [...]

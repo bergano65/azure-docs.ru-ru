@@ -1,26 +1,26 @@
 ---
-title: Проверка подлинности служб пакетной службы Azure с помощью Azure Active Directory
+title: Проверка подлинности пакетной службы Azure с помощью Azure Active Directory
 description: Пакетная служба поддерживает Azure AD для аутентификации из пакетной службы. Узнайте, как пройти проверку подлинности одним из двух способов.
-ms.topic: article
+ms.topic: how-to
 ms.date: 01/28/2020
 ms.custom: has-adal-ref
-ms.openlocfilehash: 3fa1aa2bb7389200fe5e5a80598686143344d636
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
+ms.openlocfilehash: a8601c69c37e973118a7ec9521070864caffb101
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82608478"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86170315"
 ---
 # <a name="authenticate-batch-service-solutions-with-active-directory"></a>Аутентификация решений пакетной службы с помощью Active Directory
 
-Пакетная служба Azure поддерживает аутентификацию [Azure Active Directory][aad_about] (Azure AD). Azure AD — многопользовательский облачный каталог и служба управления удостоверениями корпорации Майкрософт. Инфраструктура Azure использует Azure AD для аутентификации клиентов, администраторов служб и пользователей организации.
+Пакетная служба Azure поддерживает проверку подлинности [Azure Active Directory][aad_about] (Azure AD). Azure AD — многопользовательский облачный каталог и служба управления удостоверениями корпорации Майкрософт. Инфраструктура Azure использует Azure AD для аутентификации клиентов, администраторов служб и пользователей организации.
 
 Процесс аутентификации Azure AD в пакетной службе Azure можно выполнить двумя способами:
 
 - Аутентификация пользователя, взаимодействующего с приложением, с использованием **встроенной аутентификации**. Приложение, использующее встроенную аутентификацию, собирает учетные данные пользователя и использует их для аутентификации доступа к ресурсам пакетной службы.
 - Аутентификация автоматического приложения с использованием **субъекта-службы**. Субъект-служба определяет политику и разрешения приложения, чтобы представить приложение при получении доступа к ресурсам в среде выполнения.
 
-Дополнительные сведения о службе Azure AD см. в [документации по Azure Active Directory](https://docs.microsoft.com/azure/active-directory/).
+Дополнительные сведения о службе Azure AD см. в [документации по Azure Active Directory](../active-directory/index.yml).
 
 ## <a name="endpoints-for-authentication"></a>Конечные точки аутентификации
 
@@ -43,7 +43,7 @@ ms.locfileid: "82608478"
 >
 >
 
-Дополнительные сведения о конечных точках Azure AD см. в статье [Сценарии аутентификации в Azure Active Directory][aad_auth_scenarios].
+Дополнительные сведения о конечных точках Azure AD см. в статье [Сценарии аутентификации в Azure Active Directory][aad_auth_scenarios].
 
 ### <a name="batch-resource-endpoint"></a>Конечная точка ресурса пакетной службы
 
@@ -63,7 +63,7 @@ ms.locfileid: "82608478"
 
 ![Регистрация приложения пакетной службы в Azure AD](./media/batch-aad-auth/app-registration-data-plane.png)
 
-Дополнительные сведения о регистрации приложения в Azure AD см. в статье [Сценарии аутентификации в Azure Active Directory](../active-directory/develop/authentication-scenarios.md).
+Дополнительные сведения о регистрации приложения в Azure AD см. в статье [Сценарии аутентификации в Azure Active Directory](../active-directory/develop/authentication-vs-authorization.md).
 
 ## <a name="get-the-tenant-id-for-your-active-directory"></a>Получение идентификатора клиента для Active Directory
 
@@ -86,15 +86,15 @@ ms.locfileid: "82608478"
 
     ![Поиск имени приложения](./media/batch-aad-auth/search-app-registration.png)
 
-1. Выберите приложение и щелкните **разрешения API**.
-1. В разделе **разрешения API** выберите **Добавить разрешение**.
+1. Выберите приложение, а затем выберите **Разрешения API**.
+1. В разделе **Разрешения API** щелкните **Добавить разрешение**.
 1. В разделе **Выбор API** найдите API пакетной службы. Продолжайте поиск для каждой из этих строк, пока не найдете API:
-    1. **пакетная служба Microsoft Azure**
+    1. **Microsoft Azure Batch**
     1. **ddbf3205-c6bd-46ae-8127-60eb93363864** — это идентификатор API пакетной службы.
-1. Найдя API пакетной службы, выберите его и нажмите **кнопку Выбрать**.
-1. На странице **Выбор разрешений**установите флажок для **доступа к пакетной службе Azure** и нажмите кнопку **Добавить разрешения**.
+1. Выберите найденный API пакетной службы и нажмите **Выбрать**.
+1. В разделе **Выбор разрешений** установите флажок **Access Azure Batch Service** (Доступ к пакетной службе Azure) и выберите **Добавить разрешения**.
 
-В разделе **разрешений API** теперь показано, что приложение Azure AD имеет доступ как к Microsoft Graph, так и к API пакетной службы. Разрешения предоставляются Microsoft Graph автоматически при первой регистрации приложения в Azure AD.
+Теперь в окне **Разрешения API** указано, что приложение Azure AD имеет доступ и к Microsoft Graph, и к API пакетной службы. Разрешения Microsoft Graph предоставляются автоматически во время первой регистрации приложения в Azure AD.
 
 ![Предоставление разрешений API](./media/batch-aad-auth/required-permissions-data-plane.png)
 
@@ -102,33 +102,33 @@ ms.locfileid: "82608478"
 
 Чтобы выполнить аутентификацию приложения, которое выполняется автоматически, необходимо использовать субъект-службу. После регистрации приложения выполните приведенные ниже действия на портале Azure, чтобы настроить субъект-службу.
 
-1. Запросите секрет для своего приложения.
+1. Запросите секрет для приложения.
 1. Назначьте приложению управление доступом на основе ролей (RBAC).
 
 ### <a name="request-a-secret-for-your-application"></a>Запрос секрета для приложения
 
-Когда приложение проходит проверку подлинности с помощью субъекта-службы, оно отправляет идентификатор приложения и секрет в Azure AD. Вам необходимо создать и скопировать секретный ключ, чтобы использовать его из кода.
+При выполнении проверки подлинности с помощью субъекта-службы приложение отправляет в Azure AD идентификатор приложения и секрет. Вам необходимо создать и скопировать секретный ключ, чтобы использовать его из кода.
 
 На портале Azure сделайте следующее:
 
 1. На портале Azure на панели навигации слева выберите **Все службы**. Выберите **Регистрация приложений**.
-1. Выберите приложение в списке регистраций приложений.
-1. Выберите приложение, а затем выберите **сертификаты & секреты**. В разделе **секреты клиента** выберите **новый секрет клиента**.
-1. Чтобы создать секрет, введите описание секрета. Затем выберите срок действия секрета в один год, два года или без истечения срока действия.
-1. Выберите **Добавить** , чтобы создать и отобразить секрет. Скопируйте значение секрета в надежное место, так как вы не сможете снова получить доступ к нему после выхода из страницы.
+1. Выберите свое приложение из списка приложений.
+1. Выберите приложение, а затем выберите **Сертификаты и секреты**. В разделе **Секреты клиента** выберите **Новый секрет клиента**.
+1. Чтобы создать секрет, введите описание секрета. Затем выберите срок действия секрета (один год, два года или бессрочно).
+1. Выберите **Добавить**, чтобы создать и отобразить секрет. Скопируйте значение секрета в безопасное место, так как у вас больше не будет доступа к нему после закрытия страницы.
 
     ![Создание секретного ключа](./media/batch-aad-auth/secret-key.png)
 
 ### <a name="assign-rbac-to-your-application"></a>Назначение RBAC приложению
 
-Для проверки подлинности с помощью субъекта-службы необходимо назначить для приложения RBAC. Выполните следующие действия.
+Чтобы выполнить проверку подлинности с использованием субъекта-службы, вам необходимо назначить приложению RBAC. Выполните следующие действия.
 
 1. На портале Azure перейдите к учетной записи пакетной службы, используемой приложением.
-1. В разделе **Параметры** учетной записи пакетной службы выберите **Управление доступом (IAM)**.
+1. В разделе **Параметры** учетной записи пакетной службы выберите **Управление доступом (IAM)** .
 1. Выберите вкладку **Назначения ролей**.
-1. Выберите **добавить назначение ролей**.
+1. Выберите **Добавить назначение ролей**.
 1. В раскрывающемся списке **Роль** выберите роль приложения — *Участник* или *Читатель*. Дополнительные сведения об этих ролях см. в статье [Начало работы с управлением доступом на основе ролей на портале Azure](../role-based-access-control/overview.md).
-1. В поле **Выбрать** введите имя приложения. Выберите приложение из списка, а затем нажмите кнопку **сохранить**.
+1. В поле **Выбрать** введите имя приложения. Выберите свое приложение в списке, а затем нажмите **Сохранить**.
 
 После этого приложение с назначенной ролью RBAC должно появиться в параметрах контроля доступа.
 
@@ -136,28 +136,28 @@ ms.locfileid: "82608478"
 
 ### <a name="assign-a-custom-role"></a>Назначение настраиваемой роли
 
-Пользовательская роль предоставляет детализированное разрешение пользователю на отправку заданий, задач и т. д. Это дает возможность запретить пользователям выполнять операции, влияющие на стоимость, например создание пулов или изменение узлов.
+Настраиваемая роль предоставляет детализированное разрешение пользователю на отправку заданий, задач и т. д. Это дает возможность запретить пользователям выполнять операции, влияющие на стоимость, такие как создание пулов или изменение узлов.
 
-Пользовательскую роль можно использовать для предоставления разрешений пользователю Azure AD, группе или субъекту-службе для следующих операций RBAC:
+Настраиваемую роль можно использовать для предоставления разрешений пользователю Azure AD, группе или субъекту-службе для следующих операций RBAC.
 
 - Microsoft.Batch/batchAccounts/pools/write
 - Microsoft.Batch/batchAccounts/pools/delete
 - Microsoft.Batch/batchAccounts/pools/read
-- Microsoft. Batch/Батчаккаунтс/Жобсчедулес/запись
-- Microsoft. Batch/Батчаккаунтс/Жобсчедулес/удаление
-- Microsoft. Batch/Батчаккаунтс/Жобсчедулес/чтение
-- Microsoft. Batch/Батчаккаунтс/задания/запись
-- Microsoft. Batch/Батчаккаунтс/задания/Удаление
-- Microsoft. Batch/Батчаккаунтс/задания/чтение
+- Microsoft.Batch/batchAccounts/jobSchedules/write
+- Microsoft.Batch/batchAccounts/jobSchedules/delete
+- Microsoft.Batch/batchAccounts/jobSchedules/read
+- Microsoft.Batch/batchAccounts/jobs/write
+- Microsoft.Batch/batchAccounts/jobs/delete
+- Microsoft.Batch/batchAccounts/jobs/read
 - Microsoft.Batch/batchAccounts/certificates/write
 - Microsoft.Batch/batchAccounts/certificates/delete
 - Microsoft.Batch/batchAccounts/certificates/read
-- Microsoft. Batch/Батчаккаунтс/Read (для любой операции чтения)
-- Microsoft. Batch/Батчаккаунтс/listKeys/действие (для любой операции)
+- Microsoft.Batch/batchAccounts/read (для любой операции чтения)
+- Microsoft.Batch/batchAccounts/listKeys/action (для любой операции)
 
-Пользовательские роли предназначены для пользователей, прошедших проверку подлинности в Azure AD, а не учетных данных учетной записи пакетной службы (общий ключ). Обратите внимание, что учетная запись пакетной службы предоставляет полный доступ к учетной записи пакетной службы. Также обратите внимание, что для заданий, использующих автопул, требуются разрешения уровня пула.
+Настраиваемые роли предназначены для пользователей, прошедших проверку подлинности в Azure AD, а не для учетных данных учетной записи пакетной службы (общий ключ). Обратите внимание, что учетные данные учетной записи пакетной службы предоставляют полный доступ к учетной записи пакетной службы. Также обратите внимание, что для заданий, использующих автопул, требуются разрешения уровня пула.
 
-Ниже приведен пример пользовательского определения роли.
+Вот пример определения настраиваемой роли.
 
 ```json
 {
@@ -193,7 +193,7 @@ ms.locfileid: "82608478"
 }
 ```
 
-Общие сведения о создании настраиваемой роли см. в статье [пользовательские роли для ресурсов Azure](../role-based-access-control/custom-roles.md).
+Дополнительные сведения о создании настраиваемой роли см. в статье [Настраиваемые роли в Azure](../role-based-access-control/custom-roles.md).
 
 ### <a name="get-the-tenant-id-for-your-azure-active-directory"></a>Получение идентификатора клиента для Azure Active Directory
 
@@ -213,11 +213,11 @@ ms.locfileid: "82608478"
 > Срок действия маркера проверки подлинности Azure AD истекает через час. При использовании долговременного объекта **BatchClient** мы советуем получать маркер из ADAL при каждом запросе, чтобы у вас всегда был допустимый маркер.
 >
 >
-> Чтобы достичь этого в .NET, напишите метод, который получает маркер из Azure AD, и передайте этот метод в качестве делегата в объект **BatchTokenCredentials**. Чтобы гарантировать предоставление допустимого маркера, при каждом запросе к пакетной службе вызывается метод делегата. По умолчанию ADAL кэширует маркеры, поэтому новый маркер извлекается из Azure AD только при необходимости. Дополнительные сведения о маркерах в Azure AD см. в статье [Сценарии аутентификации в Azure Active Directory][aad_auth_scenarios].
+> Чтобы достичь этого в .NET, напишите метод, который получает маркер из Azure AD, и передайте этот метод в качестве делегата в объект **BatchTokenCredentials**. Чтобы гарантировать предоставление допустимого маркера, при каждом запросе к пакетной службе вызывается метод делегата. По умолчанию ADAL кэширует маркеры, поэтому новый маркер извлекается из Azure AD только при необходимости. Дополнительные сведения о маркерах в Azure AD см. в статье [Сценарии проверки подлинности в Azure Active Directory][aad_auth_scenarios].
 >
 >
 
-### <a name="code-example-using-azure-ad-integrated-authentication-with-batch-net"></a>Пример кода. Использование встроенной аутентификации Azure AD с библиотекой .NET для пакетной службы
+### <a name="code-example-using-azure-ad-integrated-authentication-with-batch-net"></a>Пример кода: Использование встроенной аутентификации Azure AD с библиотекой .NET для пакетной службы
 
 Чтобы выполнить аутентификацию с использованием встроенной аутентификации из библиотеки .NET для пакетной службы, укажите ссылку на пакет [.NET для пакетной службы Azure](https://www.nuget.org/packages/Microsoft.Azure.Batch/) и пакет [библиотеки ADAL](https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory/).
 
@@ -290,7 +290,7 @@ public static async Task PerformBatchOperations()
 }
 ```
 
-### <a name="code-example-using-an-azure-ad-service-principal-with-batch-net"></a>Пример кода. Использование субъекта-службы Azure AD с библиотекой .NET для пакетной службы
+### <a name="code-example-using-an-azure-ad-service-principal-with-batch-net"></a>Пример кода: Использование субъекта-службы Azure AD с библиотекой .NET для пакетной службы
 
 Чтобы выполнить аутентификацию с использованием субъекта-службы из библиотеки .NET для пакетной службы, укажите ссылки на пакет [.NET для пакетной службы Azure](https://www.nuget.org/packages/Azure.Batch/) и пакет [библиотеки ADAL](https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory/).
 
@@ -358,7 +358,7 @@ public static async Task PerformBatchOperations()
 }
 ```
 
-### <a name="code-example-using-an-azure-ad-service-principal-with-batch-python"></a>Пример кода. Использование субъекта-службы Azure AD с библиотекой Python для пакетной службы
+### <a name="code-example-using-an-azure-ad-service-principal-with-batch-python"></a>Пример кода: Использование субъекта-службы Azure AD с библиотекой Python для пакетной службы
 
 Чтобы выполнить аутентификацию с использованием субъекта-службы из библиотеки Python для пакетной службы, установите модули [azure-batch](https://pypi.org/project/azure-batch/) и [azure-common](https://pypi.org/project/azure-common/) и укажите ссылки на них.
 
@@ -413,13 +413,13 @@ credentials = ServicePrincipalCredentials(
 ```python
     batch_client = BatchServiceClient(
     credentials,
-    base_url=BATCH_ACCOUNT_URL
+    batch_url=BATCH_ACCOUNT_URL
 )
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения о службе Azure AD см. в [документации по Azure Active Directory](https://docs.microsoft.com/azure/active-directory/). Подробные примеры, показывающие, как использовать ADAL, доступны в библиотеке [примеров кода Azure](https://azure.microsoft.com/resources/samples/?service=active-directory).
+- Дополнительные сведения о службе Azure AD см. в [документации по Azure Active Directory](../active-directory/index.yml). Подробные примеры, показывающие, как использовать ADAL, доступны в библиотеке [примеров кода Azure](https://azure.microsoft.com/resources/samples/?service=active-directory).
 
 - Дополнительные сведения о субъекте-службе см. в статье [Объекты приложения и субъекта-службы в Azure Active Directory](../active-directory/develop/app-objects-and-service-principals.md). Дополнительные сведения о создании субъекта-службы с помощью портала Azure см. в статье [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../active-directory/develop/howto-create-service-principal-portal.md). Вы также можете создать субъект-службу с помощью PowerShell или Azure CLI.
 
@@ -427,8 +427,8 @@ credentials = ServicePrincipalCredentials(
 
 - Пример Python для создания клиента пакетной службы, подлинность которого проверяется с помощью маркера Azure AD, см. в примере [Deploying Azure Batch Custom Image with a Python Script](https://github.com/azurebigcompute/recipes/blob/master/Azure%20Batch/CustomImages/CustomImagePython.md) (Развертывание пользовательского образа пакетной службы Azure с помощью скрипта Python).
 
-[aad_about]:../active-directory/fundamentals/active-directory-whatis.md "Что такое Azure Active Directory?"
-[aad_adal]: ../active-directory/active-directory-authentication-libraries.md
-[aad_auth_scenarios]: ../active-directory/active-directory-authentication-scenarios.md "Сценарии проверки подлинности в Azure AD"
-[aad_integrate]: ../active-directory/active-directory-integrating-applications.md "Интеграция приложений с Azure Active Directory"
+[aad_about]: ../active-directory/fundamentals/active-directory-whatis.md "Что такое Microsoft Azure Active Directory?"
+[aad_adal]: ../active-directory/azuread-dev/active-directory-authentication-libraries.md
+[aad_auth_scenarios]: ../active-directory/develop/authentication-vs-authorization.md "Сценарии аутентификации в Azure Active Directory"
+[aad_integrate]: ../active-directory/develop/quickstart-register-app.md "Интеграция приложений с Azure Active Directory"
 [azure_portal]: https://portal.azure.com

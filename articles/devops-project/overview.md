@@ -15,15 +15,15 @@ ms.workload: ''
 ms.date: 03/24/2020
 ms.author: mlearned
 ms.openlocfilehash: 99a1fdb8caff9953041c996d0f5581318ce11c66
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82233692"
 ---
 # <a name="overview-of-azure-devops-starter"></a>Обзор Azure DevOps Starter
 
- Azure DevOps Starter позволяет легко начать работу в Azure. Она позволяет запустить любое приложение в выбранной службе Azure, выполнив всего несколько действий на портале Azure. 
+ Служба Azure DevOps Starter позволяет быстро приступить к работе с Azure. Она позволяет запустить любое приложение в выбранной службе Azure, выполнив всего несколько действий на портале Azure. 
 
  DevOps Starter настраивает все необходимое для разработки, развертывания и мониторинга приложения. Панель мониторинга DevOps Starter можно использовать для наблюдения за фиксацией кода, сборками и развертываниями из одного представления в портал Azure.
 

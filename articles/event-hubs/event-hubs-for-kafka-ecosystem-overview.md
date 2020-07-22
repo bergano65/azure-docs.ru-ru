@@ -1,21 +1,14 @@
 ---
 title: Использование концентратора событий из приложения Apache Kafka — Центры событий Azure | Документация Майкрософт
 description: В этой статье содержатся сведения о поддержке Apache Kafka в службе "Центры событий Azure".
-services: event-hubs
-documentationcenter: .net
-author: ShubhaVijayasarathy
-manager: timlt
-ms.service: event-hubs
 ms.topic: article
-ms.custom: seodec18
-ms.date: 02/12/2020
-ms.author: shvija
-ms.openlocfilehash: 91e2d70bab8c1be4b3e5b400ce21122eccb1e9eb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 06/23/2020
+ms.openlocfilehash: 733623895176bb3b573c2efcbda8a40b9e2d87c0
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80811374"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85320534"
 ---
 # <a name="use-azure-event-hubs-from-apache-kafka-applications"></a>Использование Центров событий Azure из приложений Apache Kafka
 Центры событий предоставляют конечную точку Kafka, которую существующие приложения на основе Kafka могут использовать в качестве альтернативы запуска собственного кластера Kafka. Центры событий поддерживают [Apache Kafka 1.0](https://kafka.apache.org/documentation/) и более новые версии протокола и работают с имеющимися приложениями Kafka, в том числе с MirrorMaker.  
@@ -34,7 +27,7 @@ ms.locfileid: "80811374"
 | --- | --- |
 | Кластер | Пространство имен |
 | Раздел | Концентратор событий |
-| Секция | Секция|
+| Partition (Раздел) | Partition (Раздел)|
 | Группа потребителей | Группа потребителей |
 | Offset | Offset|
 
@@ -88,7 +81,7 @@ sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule require
 
 *   идемпотентный производитель;
 *   Транзакция
-*   сжатие;
+*   Сжатие
 *   хранение на основе размера;
 *   сжатие журнала;
 *   добавлений секций в существующий раздел;

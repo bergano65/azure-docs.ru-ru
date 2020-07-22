@@ -13,10 +13,9 @@ ms.topic: troubleshooting
 ms.date: 01/21/2020
 ms.custom: seodec18
 ms.openlocfilehash: 2812b535c7aef7987db7106bfa6b07e15a1b61c7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81263392"
 ---
 # <a name="monitor-and-mitigate-throttling-to-reduce-latency-in-azure-time-series-insights"></a>Отслеживание и уменьшение регулирования для сокращения задержек в службе "Аналитика временных рядов Azure"
@@ -32,7 +31,7 @@ ms.locfileid: "81263392"
 - Если вы передали в источник событий большой объем архивных данных (службе "Аналитика временных рядов" потребуется некоторое время, чтобы восстановить актуальность).
 - Если вы добавили новые сведения о телеметрии, что увеличило размер событий. Максимально допустимый размер пакета — 32 КБ; пакеты данных размером более 32 КБ усекаются.
 
-## <a name="video"></a>Видеоролик
+## <a name="video"></a>Видео
 
 ### <a name="learn-about-time-series-insights-data-ingress-behavior-and-how-to-plan-for-itbr"></a>Дополнительные сведения о поведении данных для аналитики временных рядов и способах их планирования.</br>
 
@@ -46,7 +45,7 @@ ms.locfileid: "81263392"
 
    [![Добавление оповещения в среду службы "аналитика временных рядов"](media/environment-mitigate-latency/mitigate-latency-add-alert.png)](media/environment-mitigate-latency/mitigate-latency-add-alert.png#lightbox)
 
-1. Выберите **+ Новое правило генерации оповещений**. После этого отобразится панель **Создание правила** . Выберите **Добавить** в поле **условие**.
+1. Выберите **Новое правило генерации оповещений**. После этого отобразится панель **Создание правила** . Выберите **Добавить** в поле **условие**.
 
    [![Добавить Панель предупреждений](media/environment-mitigate-latency/mitigate-latency-add-pane.png)](media/environment-mitigate-latency/mitigate-latency-add-pane.png#lightbox)
 

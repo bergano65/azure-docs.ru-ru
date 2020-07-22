@@ -8,12 +8,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: e5e0a970df680df43a7bd303636b3d81bda3e141
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 1a0bac96c3daa0d81786b1a3facf6ccd328cd579
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82085711"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86076765"
 ---
 # <a name="azure-disk-encryption-sample-scripts"></a>Примеры скриптов шифрования дисков Azure 
 
@@ -41,7 +41,7 @@ Get-AzKeyVaultSecret -VaultName $KeyVaultName | where {$_.Tags.ContainsKey('Disk
 
 В следующей таблице показано, какие параметры могут использоваться в сценарии PowerShell: 
 
-|Параметр|Описание|Обязательное?|
+|Параметр|Описание:|Обязательное?|
 |------|------|------|
 |$resourceGroupName| Имя группы ресурсов, к которой принадлежит хранилище ключей.  При отсутствии группы ресурсов с таким именем — она будет создана.| True|
 |$keyVaultName|Имя хранилища ключей, в котором будут размещаться ключи шифрования. При отсутствии хранилища ключей с таким именем — оно будет создано.| True|
@@ -69,29 +69,37 @@ Get-AzKeyVaultSecret -VaultName $KeyVaultName | where {$_.Tags.ContainsKey('Disk
 В следующем разделе приведены инструкции по подготовке предварительно зашифрованного виртуального жесткого диска Windows к развертыванию в качестве зашифрованного виртуального жесткого диска в IaaS Azure. Используйте эти сведения, чтобы подготовить и загрузить новую виртуальную машину Windows (VHD) в Azure Site Recovery Azure или Azure. Дополнительные сведения о подготовке и отправке виртуального жесткого диска см. в статье [Отправка универсального диска VHD и создание виртуальных машин с его помощью в Azure](upload-generalized-managed.md).
 
 ### <a name="update-group-policy-to-allow-non-tpm-for-os-protection"></a>Обновление групповой политики с целью разрешить защиту ОС без TPM
-Настройте параметр групповой политики BitLocker, который называется **Шифрование дисков BitLocker**. Для этого выберите **Политика локального компьютера** > **Конфигурация компьютера** > **Административные шаблоны** > **Компоненты Windows**. Измените этот параметр > на **диски операционной системы**,**требующие дополнительной проверки подлинности при запуске** > ,**Разрешить BitLocker без совместимого доверенного платформенного модуля**, как показано на следующем рисунке:
+Настройте параметр групповой политики BitLocker, который называется **Шифрование дисков BitLocker**. Для этого выберите **Политика локального компьютера** > **Конфигурация компьютера** > **Административные шаблоны** > **Компоненты Windows**. Измените этот параметр на **диски операционной системы**,  >  **требующие дополнительной проверки подлинности при запуске**  >  ,**Разрешить BitLocker без совместимого доверенного платформенного модуля**, как показано на следующем рисунке:
 
 ![Антивредоносное ПО Майкрософт в Azure](../media/disk-encryption/disk-encryption-fig8.png)
 
 ### <a name="install-bitlocker-feature-components"></a>Установка компонентов BitLocker
 Для Windows Server 2012 или более поздней версии используйте следующую команду.
 
-    dism /online /Enable-Feature /all /FeatureName:BitLocker /quiet /norestart
+```console
+dism /online /Enable-Feature /all /FeatureName:BitLocker /quiet /norestart
+```
 
 Для Windows Server 2008 R2 используйте следующую команду.
 
-    ServerManagerCmd -install BitLockers
+```console
+ServerManagerCmd -install BitLockers
+```
 
 ### <a name="prepare-the-os-volume-for-bitlocker-by-using-bdehdcfg"></a>Подготовка тома операционной системы для BitLocker с помощью `bdehdcfg`
 Чтобы сжать раздел операционной системы и подготовить компьютер к использованию BitLocker, запустите компонент [bdehdcfg](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-basic-deployment).
 
-    bdehdcfg -target c: shrink -quiet 
+```console
+bdehdcfg -target c: shrink -quiet 
+```
 
 ### <a name="protect-the-os-volume-by-using-bitlocker"></a>Защита тома операционной системы с помощью BitLocker
 Используйте [`manage-bde`](https://technet.microsoft.com/library/ff829849.aspx) команду, чтобы включить шифрование загрузочного тома с помощью внешнего предохранителя ключа. Можно также поместить внешний ключ (BEK-файл) на внешний диск или том. Шифрование будет включено для системного или загрузочного тома после перезагрузки.
 
-    manage-bde -on %systemdrive% -sk [ExternalDriveOrVolume]
-    reboot
+```console
+manage-bde -on %systemdrive% -sk [ExternalDriveOrVolume]
+reboot
+```
 
 > [!NOTE]
 > Чтобы получить внешний ключ с использованием BitLocker, подготовьте виртуальную машину с отдельным виртуальным жестким диском для данных и ресурсов.

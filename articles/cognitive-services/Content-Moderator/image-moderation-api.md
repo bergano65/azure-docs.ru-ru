@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 04/14/2020
 ms.author: pafarley
-ms.openlocfilehash: dd6228ea50968c98c5ba151b8af9a0c2fa829582
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: fe76e32bfd9b1734f3c84a400f897b7af7e3168b
+ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83684068"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85801001"
 ---
 # <a name="learn-image-moderation-concepts"></a>Изучение концепций модерации изображений
 
@@ -25,14 +25,16 @@ ms.locfileid: "83684068"
 
 Операция **Evaluate** возвращает показатель достоверности в диапазоне от 0 до 1. Она также возвращает двоичное значение (True или False). Эти значения предсказывают, есть ли на изображении содержимое для взрослых или непристойного характера. Передав на API проверяемое изображение (файл или URL-адрес), вы получите ответ со следующими сведениями.
 
-    "ImageModeration": {
-      .............
-      "adultClassificationScore": 0.019196987152099609,
-      "isImageAdultClassified": false,
-      "racyClassificationScore": 0.032390203326940536,
-      "isImageRacyClassified": false,
-      ............
-      ],
+```json
+"ImageModeration": {
+    .............
+    "adultClassificationScore": 0.019196987152099609,
+    "isImageAdultClassified": false,
+    "racyClassificationScore": 0.032390203326940536,
+    "isImageRacyClassified": false,
+    ............
+    ],
+```
 
 > [!NOTE]
 > 
@@ -51,18 +53,19 @@ ms.locfileid: "83684068"
 
 Пример извлечения:
 
-    "TextDetection": {
-      "status": {
+```json
+"TextDetection": {
+    "status": {
         "code": 3000.0,
         "description": "OK",
         "exception": null
-      },
-      .........
-      "language": "eng",
-      "text": "IF WE DID \r\nALL \r\nTHE THINGS \r\nWE ARE \r\nCAPABLE \r\nOF DOING, \r\nWE WOULD \r\nLITERALLY \r\nASTOUND \r\nOURSELVE \r\n",
-      "candidates": []
     },
-
+    .........
+    "language": "eng",
+    "text": "IF WE DID \r\nALL \r\nTHE THINGS \r\nWE ARE \r\nCAPABLE \r\nOF DOING, \r\nWE WOULD \r\nLITERALLY \r\nASTOUND \r\nOURSELVE \r\n",
+    "candidates": []
+},
+```
 
 ## <a name="detecting-faces"></a>Распознавание лиц
 
@@ -75,29 +78,30 @@ ms.locfileid: "83684068"
 
 Пример извлечения:
 
-
-    "FaceDetection": {
-       ......
-      "result": true,
-      "count": 2,
-      "advancedInfo": [
-      .....
-      ],
-      "faces": [
+```json
+"FaceDetection": {
+    ......
+    "result": true,
+    "count": 2,
+    "advancedInfo": [
+        .....
+    ],
+    "faces": [
         {
-          "bottom": 598,
-          "left": 44,
-          "right": 268,
-          "top": 374
+            "bottom": 598,
+            "left": 44,
+            "right": 268,
+            "top": 374
         },
         {
-          "bottom": 620,
-          "left": 308,
-          "right": 532,
-          "top": 396
+            "bottom": 620,
+            "left": 308,
+            "right": 532,
+            "top": 396
         }
-      ]
-    }
+    ]
+}
+```
 
 ## <a name="creating-and-managing-custom-lists"></a>Создание пользовательских списков и управление ими
 
@@ -124,7 +128,8 @@ Content Moderator предоставляет полнофункциональн�
 
 Пример извлечения:
 
-    {
+```json
+{
     ..............,
     "IsMatch": true,
     "Matches": [
@@ -137,7 +142,8 @@ Content Moderator предоставляет полнофункциональн�
         }
     ],
     ....
-    }
+}
+```
 
 ## <a name="review-tool"></a>Средство проверки
 
@@ -145,6 +151,6 @@ Content Moderator предоставляет полнофункциональн�
 
 ![Проверка изображений модераторами-пользователями](images/moderation-reviews-quickstart-dotnet.PNG)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Проверьте в работе [консоль API для списков изображений](try-image-api.md) и примеры кода для REST API. Ознакомьтесь также с [обзорами, рабочими процессами и заданиями](./review-api.md) , чтобы узнать, как настроить отзывы пользователей.

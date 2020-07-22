@@ -1,25 +1,13 @@
 ---
 title: Управление ресурсами служебной шины Azure с помощью PowerShell | Документация Майкрософт
 description: В этой статье объясняется, как использовать модуль Azure PowerShell для создания сущностей служебной шины и управления ими (пространства имен, очереди, разделы, подписки).
-services: service-bus-messaging
-documentationcenter: .NET
-author: axisc
-manager: timlt
-editor: spelluru
-ms.assetid: ''
-ms.service: service-bus-messaging
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 01/24/2020
-ms.author: aschhab
-ms.openlocfilehash: 8605e269f09e4fedf7a61817a3634e75081593ca
-ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
-ms.translationtype: MT
+ms.date: 06/23/2020
+ms.openlocfilehash: 7ff79d8cf2aac09a0b8d2f04ade0b3d1d9b2e74e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82890242"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85341749"
 ---
 # <a name="use-powershell-to-manage-service-bus-resources"></a>Управление ресурсами служебной шины с помощью модуля PowerShell
 
@@ -37,7 +25,7 @@ Microsoft Azure PowerShell — это среда сценариев, котор
 * Компьютер с Azure PowerShell. Инструкции см. в статье [Приступая к работе с командлетами Azure PowerShell](/powershell/azure/get-started-azureps).
 * Общее представление о сценариях PowerShell, пакетах NuGet и платформе .NET Framework.
 
-## <a name="get-started"></a>Приступая к работе
+## <a name="get-started"></a>Начало работы
 
 Сначала мы используем PowerShell для входа в учетную запись Azure и подписку Azure. Выполните инструкции, приведенные в статье [Приступая к работе с командлетами Azure PowerShell](/powershell/azure/get-started-azureps), чтобы войти в учетную запись Azure, а также получить и просмотреть ресурсы в подписке Azure.
 
@@ -162,7 +150,7 @@ Set-AzServiceBusQueue -ResourceGroup $ResGrpName -NamespaceName $Namespace -Queu
 
 Можно использовать [модуль PowerShell для служебной шины](/powershell/module/az.servicebus) для подготовки других сущностей, таких как разделы и подписки. Эти командлеты синтаксически аналогичны командлетам создания очередей, показанным в предыдущем разделе.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - С полной документацией по модулю Resource Manager PowerShell для служебной шины можно ознакомиться [здесь](/powershell/module/az.servicebus). На этой странице перечислены все доступные командлеты.
 - Дополнительные сведения об использовании шаблонов Azure Resource Manager см. в статье [Создание ресурсов служебной шины с использованием шаблонов Azure Resource Manager](service-bus-resource-manager-overview.md).

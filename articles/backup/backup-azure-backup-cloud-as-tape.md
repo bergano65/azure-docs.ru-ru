@@ -3,12 +3,12 @@ title: Как заменить ленточную инфраструктуру
 description: Узнайте, как Azure Backup предоставляет семантику, аналогичную ленте, которая позволяет выполнять резервное копирование и восстановление данных в Azure.
 ms.topic: conceptual
 ms.date: 04/30/2017
-ms.openlocfilehash: aeda1cefc84d425855c40b793f8334936541e63f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 71bfa86611b3a63fa6a28f60f80608b394cab5a3
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77425108"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86514192"
 ---
 # <a name="move-your-long-term-storage-from-tape-to-the-azure-cloud"></a>Перенос долгосрочного хранения данных с магнитной ленты в облако Azure
 
@@ -66,9 +66,9 @@ ms.locfileid: "77425108"
 
 ![Изменить](./media/backup-azure-backup-cloud-as-tape/modify.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о службе архивации Azure см. в статьях:
 
-* [Общие сведения о службе архивации Azure](backup-introduction-to-azure-backup.md)
-* [Знакомство со службой архивации Azure](backup-try-azure-backup-in-10-mins.md)
+* [Общие сведения о службе архивации Azure](./backup-overview.md)
+* [Знакомство со службой архивации Azure](./backup-windows-with-mars-agent.md)

@@ -5,14 +5,14 @@ author: mamccrea
 ms.author: mamccrea
 ms.reviewer: mamccrea
 ms.service: stream-analytics
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 12/04/2018
-ms.openlocfilehash: 328ca7cd2c6f76095c8334ae6fdb4aa75fbb867d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: ed11488f397704be782a092d6cdc6463449cc71e
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80292004"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86039081"
 ---
 # <a name="implement-cicd-for-stream-analytics-on-iot-edge-using-apis"></a>Реализация CI/CD для Stream Analytics на IoT Edge с использованием API
 
@@ -55,7 +55,7 @@ echo $response
  
 Чтобы создать задание Stream Analytics, вызовите метод PUT с помощью API-интерфейса Stream Analytics.
 
-|Метод|Request URL (URL-адрес запроса)|
+|Метод|URL-адрес запроса|
 |------|-----------|
 |ОТПРАВКА|`https://management.azure.com/subscriptions/{\**subscription-id**}/resourcegroups/{**resource-group-name**}/providers/Microsoft.StreamAnalytics/streamingjobs/{**job-name**}?api-version=2017-04-01-preview`|
  
@@ -142,7 +142,7 @@ curl -u { <username:password> } -H "Content-Type: application/json" -X { <method
  
 Чтобы опубликовать задание Stream Analytics в IoT Edge, вызовите метод POST с помощью API-интерфейса Edge Package Publish.
 
-|Метод|Request URL (URL-адрес запроса)|
+|Метод|URL-адрес запроса|
 |------|-----------|
 |POST|`https://management.azure.com/subscriptions/{\**subscriptionid**}/resourceGroups/{**resourcegroupname**}/providers/Microsoft.StreamAnalytics/streamingjobs/{**jobname**}/publishedgepackage?api-version=2017-04-01-preview`|
 

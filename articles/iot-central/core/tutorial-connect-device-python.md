@@ -7,12 +7,13 @@ ms.date: 03/24/2020
 ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: d6c44c81db78fa76eeaf4b7181cca34fb8e81523
-ms.sourcegitcommit: 31e9f369e5ff4dd4dda6cf05edf71046b33164d3
+ms.custom: tracking-python
+ms.openlocfilehash: 98aa452e8b0b5cf04edd319298c2b35e6097148e
+ms.sourcegitcommit: f684589322633f1a0fafb627a03498b148b0d521
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81758183"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85971068"
 ---
 # <a name="tutorial-create-and-connect-a-client-application-to-your-azure-iot-central-application-python"></a>Руководство по Создание клиентского приложения и его подключение к приложению Azure IoT Central (Python)
 
@@ -216,29 +217,29 @@ ms.locfileid: "81758183"
 1. Добавьте следующие функции в функцию `main` для обработки обновлений свойств, отправляемых из приложения IoT Central:
 
     ```python
-        async def name_setting(value, version):
-          await asyncio.sleep(1)
-          print(f'Setting name value {value} - {version}')
-          await device_client.patch_twin_reported_properties({'name' : {'value': value['value'], 'status': 'completed', 'desiredVersion': version}})
+      async def name_setting(value, version):
+        await asyncio.sleep(1)
+        print(f'Setting name value {value} - {version}')
+        await device_client.patch_twin_reported_properties({'name' : {'value': value['value'], 'status': 'completed', 'desiredVersion': version}})
 
-        async def brightness_setting(value, version):
-          await asyncio.sleep(5)
-          print(f'Setting brightness value {value} - {version}')
-          await device_client.patch_twin_reported_properties({'brightness' : {'value': value['value'], 'status': 'completed', 'desiredVersion': version}})
+      async def brightness_setting(value, version):
+        await asyncio.sleep(5)
+        print(f'Setting brightness value {value} - {version}')
+        await device_client.patch_twin_reported_properties({'brightness' : {'value': value['value'], 'status': 'completed', 'desiredVersion': version}})
 
-        settings = {
-          'name': name_setting,
-          'brightness': brightness_setting
-        }
+      settings = {
+        'name': name_setting,
+        'brightness': brightness_setting
+      }
 
-        # define behavior for receiving a twin patch
-        async def twin_patch_listener():
-          while True:
-            patch = await device_client.receive_twin_desired_properties_patch() # blocking
-            to_update = patch.keys() & settings.keys()
-            await asyncio.gather(
-              *[settings[setting](patch[setting], patch['$version']) for setting in to_update]
-            )
+      # define behavior for receiving a twin patch
+      async def twin_patch_listener():
+        while True:
+          patch = await device_client.receive_twin_desired_properties_patch() # blocking
+          to_update = patch.keys() & settings.keys()
+          await asyncio.gather(
+            *[settings[setting](patch[setting], patch['$version']) for setting in to_update]
+          )
     ```
 
     Когда оператор задает доступное для записи свойство в приложении IoT Central, приложение использует требуемое свойство двойника устройства для отправки значения на устройство. Затем устройство отправляет ответ, используя передаваемое свойство двойника устройства. Когда IoT Central получает значение передаваемого свойства, состояние в представлении свойства меняется на **синхронизировано**.
@@ -305,10 +306,11 @@ python3 environmental_sensor.py
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь, когда вы как разработчик устройства узнали о принципах создания устройств с помощью Node.js, ознакомьтесь со следующими руководствами:
+Теперь, когда вы как разработчик устройства узнали о принципах создания устройств с помощью Python, ознакомьтесь со следующими руководствами:
 
-- Узнайте, как [подключить реальное устройство MXChip IoT DevKit к приложению Azure IoT Central](./howto-connect-devkit.md).
-- Узнайте о [регистрации устройств с помощью IoT Central и безопасном подключении устройств к Azure IoT Central](./concepts-get-connected.md).
+* Узнайте, как [подключить реальное устройство MXChip IoT DevKit к приложению Azure IoT Central](./howto-connect-devkit.md).
+* Прочитайте статью [Что такое шаблоны устройств?](./concepts-device-templates.md), чтобы узнать больше о роли шаблонов устройств при реализации кода устройства.
+* Узнайте о [регистрации устройств с помощью IoT Central и безопасном подключении устройств к Azure IoT Central](./concepts-get-connected.md).
 
 Если вы хотите продолжать работу с набором руководств по IoT Central, чтобы узнать больше о создании решении IoT Central, ознакомьтесь со следующим руководством:
 

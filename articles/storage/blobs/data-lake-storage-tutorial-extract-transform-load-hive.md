@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 11/19/2019
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: c9ed675dc970b093f6407d15b3db2ac2668c626b
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: b247a72b5d7db9892c6a2a763b7b71dc5f972d95
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74327559"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86045303"
 ---
 # <a name="tutorial-extract-transform-and-load-data-by-using-azure-hdinsight"></a>Руководство по Извлечение, преобразование и загрузка данных с помощью Azure HDInsight
 
@@ -24,7 +24,7 @@ ms.locfileid: "74327559"
 > [!div class="checklist"]
 > * Извлечение и отправка данных в кластер HDInsight.
 > * Преобразование данных с помощью Apache Hive.
-> * Загрузка данных в базу данных SQL Azure с помощью Sqoop.
+> * Загрузка данных в Базу данных SQL Azure с помощью Sqoop.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
@@ -38,7 +38,7 @@ ms.locfileid: "74327559"
 
     См. [Краткое руководство. Начало работы с Apache Hadoop и Apache Hive в Azure HDInsight с помощью портала Azure](https://docs.microsoft.com/azure/hdinsight/hadoop/apache-hadoop-linux-create-cluster-get-started-portal).
 
-* **База данных SQL Azure**. Вы используете базу данных SQL Azure в качестве конечного хранилища данных. Если у вас нет базы данных SQL, см. сведения в статье [Создание базы данных SQL Azure на портале Azure](../../sql-database/sql-database-get-started.md).
+* **База данных SQL Azure**. Вы используете Базу данных SQL Azure в качестве целевого хранилища данных. Если у вас нет базы данных в Базе данных SQL, вы можете создать ее, выполнив инструкции из статьи [Краткое руководство. Создание отдельной базы данных в Базе данных SQL Azure](../../sql-database/sql-database-get-started.md).
 
 * **Azure CLI.** Если вы не установили интерфейс командной строки Azure, обратитесь к разделу [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 
@@ -224,7 +224,7 @@ ms.locfileid: "74327559"
 
 ## <a name="create-a-sql-database-table"></a>Создание таблицы базы данных SQL
 
-Вам требуется указать имя сервера из базы данных SQL для этой операции. Выполните следующие действия, чтобы найти имя вашего сервера.
+Вам требуется указать имя сервера из Базы данных SQL для этой операции. Выполните следующие действия, чтобы найти имя вашего сервера.
 
 1. Перейдите на [портал Azure](https://portal.azure.com).
 
@@ -244,12 +244,12 @@ ms.locfileid: "74327559"
    sudo apt-get --assume-yes install freetds-dev freetds-bin
    ```
 
-6. После завершения установки используйте следующую команду для подключения к серверу Базы данных SQL.
+6. После завершения установки используйте следующую команду для подключения к Базе данных SQL.
 
    ```bash
    TDSVER=8.0 tsql -H '<server-name>.database.windows.net' -U '<admin-login>' -p 1433 -D '<database-name>'
     ```
-   * Замените заполнитель `<server-name>` именем сервера Базы данных SQL.
+   * Замените заполнитель `<server-name>` именем логического сервера SQL Server.
 
    * Замените заполнитель `<admin-login>` именем для входа администратора для Базы данных SQL.
 
@@ -300,7 +300,7 @@ ms.locfileid: "74327559"
 
 ## <a name="export-and-load-the-data"></a>Экспорт и загрузка данных
 
-В предыдущих разделах вы скопировали преобразованные данные в расположение `abfs://<container-name>@<storage-account-name>.dfs.core.windows.net/tutorials/flightdelays/output`. В этом разделе вы с помощью Sqoop экспортируете данные из папки `abfs://<container-name>@<storage-account-name>.dfs.core.windows.net/tutorials/flightdelays/output` в созданную в базе данных SQL Azure таблицу.
+В предыдущих разделах вы скопировали преобразованные данные в расположение `abfs://<container-name>@<storage-account-name>.dfs.core.windows.net/tutorials/flightdelays/output`. В этом разделе вы с помощью Sqoop экспортируете данные из папки `abfs://<container-name>@<storage-account-name>.dfs.core.windows.net/tutorials/flightdelays/output` в созданную в Базе данных SQL Azure таблицу.
 
 1. Чтобы проверить, видно ли в Sqoop базу данных SQL, используйте следующую команду:
 

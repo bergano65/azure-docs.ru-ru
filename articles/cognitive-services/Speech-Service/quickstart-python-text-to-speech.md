@@ -10,12 +10,13 @@ ms.subservice: speech-service
 ms.topic: how-to
 ms.date: 04/13/2020
 ms.author: trbye
-ms.openlocfilehash: 171fdb033cba422d8ba580da3ab54db88ca20872
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.custom: tracking-python
+ms.openlocfilehash: 525417bd83a1d30479fd3effbce690ed04d9af73
+ms.sourcegitcommit: 1de57529ab349341447d77a0717f6ced5335074e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81400830"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84608012"
 ---
 # <a name="convert-text-to-speech-using-python"></a>Преобразование текста в речь с использованием Python
 

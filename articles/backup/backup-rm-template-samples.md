@@ -4,18 +4,18 @@ description: Шаблоны Azure Resource Manager для хранилищ Сл�
 ms.topic: sample
 ms.date: 01/31/2019
 ms.custom: mvc
-ms.openlocfilehash: 3c05f345c6c5df5d0350c75e52381c24b0609501
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 09962a37f36621950189e9446099c349de9430bb
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "74172177"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86170995"
 ---
 # <a name="azure-resource-manager-templates-for-azure-backup"></a>Шаблоны Azure Resource Manager для Azure Backup
 
 В приведенной ниже таблице представлены ссылки на шаблоны Azure Resource Manager для хранилищ служб восстановления и функций Azure Backup. Сведения о синтаксисе и свойствах JSON см. в статье о [типах ресурсов Microsoft.RecoveryServices](/azure/templates/microsoft.recoveryservices/allversions).
 
-|   |   |
+| Шаблон | Описание |
 |---|---|
 |**Хранилище служб восстановления** | |
 | [создание хранилища служб восстановления](https://github.com/Azure/azure-quickstart-templates/tree/master/101-recovery-services-vault-create);| Создайте хранилище служб восстановления, Хранилище можно использовать для Azure Backup и Azure Site Recovery. |

@@ -9,14 +9,14 @@ ms.assetid: 2575A80C-FC74-4631-AE5D-8101CF2591D3
 ms.service: cognitive-services
 ms.subservice: bing-web-search
 ms.topic: tutorial
-ms.date: 12/19/2019
+ms.date: 06/24/2020
 ms.author: aahi
-ms.openlocfilehash: 1c8e0bb136fddeb84dc991e63a761378b38cc470
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: 272a10e211e99e200b82807b188d828a9ece42d8
+ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "75382333"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85609441"
 ---
 # <a name="build-a-console-app-search-client-in-c"></a>Создание клиента поиска в виде консольного приложения на C#
 
@@ -27,12 +27,13 @@ ms.locfileid: "75382333"
 - выполнение простого запроса к API Bing для поиска в Интернете;
 - отображение результатов запроса в порядке приоритета.
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством вам потребуется следующее:
 
-- приведенному. [Скачайте и установите бесплатную среду Visual Studio 2017 Community Edition](https://www.visualstudio.com/downloads/), если у вас ее еще нет.
-- Ключ подписки для API Bing для поиска в Интернете. Если у вас его нет, [зарегистрируйтесь, чтобы воспользоваться бесплатной пробной версией](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api).
+* подписка Azure — [создайте бесплатную учетную запись](https://azure.microsoft.com/free/cognitive-services/).
+* Получив подписку Azure, <a href="https://portal.azure.com/#create/Microsoft.CognitiveServicesBingSearch-v7"  title="создайте ресурс Поиска Bing"  target="_blank">Create a Bing Search resource <span class="docon docon-navigate-external x-hidden-focus"></span></a> на портале Azure, чтобы получить ключ и конечную точку. После развертывания щелкните **Перейти к ресурсам**.
+* [Интегрированная среда разработки Visual Studio](https://www.visualstudio.com/downloads/).
 
 ## <a name="create-a-new-console-app-project"></a>Создание проекта консольного приложения
 
@@ -42,14 +43,14 @@ ms.locfileid: "75382333"
 
 Присвойте приложению имя **MyConsoleSearchApp** и нажмите кнопку **ОК**.
 
-## <a name="add-the-jsonnet-nuget-package-to-the-project"></a>Добавление в проект пакета NuGet для Json.NET
+## <a name="add-the-jsonnet-nuget-package-to-the-project"></a>Добавление в проект пакета NuGet для JSON.NET
 
 Json.NET позволяет работать с ответами JSON, которые возвращает API. Добавьте в проект этот пакет NuGet.
 
 - В **обозревателе решений** щелкните проект правой кнопкой мыши и выберите пункт **Управление пакетами NuGet...** .
 - На вкладке **Обзор** выполните поиск по `Newtonsoft.Json`. Выберите последнюю версию и щелкните **Установить**.
 - Нажмите кнопку **ОК** в окне **Просмотреть изменения**.
-- Закройте вкладку Visual Studio с именем **NuGet: MyConsoleSearchApp**.
+- Закройте вкладку Visual Studio **NuGet: MyConsoleSearchApp**.
 
 ## <a name="add-a-reference-to-systemweb"></a>Добавление ссылки на System.Web
 
@@ -223,9 +224,9 @@ static void RunQueryAndDisplayResults(string userQuery)
 
 Объект JSON `rankingResponse` (подробнее описан в [документации](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#rankingresponse)) предоставляет правильный порядок отображения для результатов поиска. Он содержит одну или несколько следующих групп с учетом приоритета:
 
-- `pole`. Результаты поиска, которые должны отображаться наиболее заметным образом (например, над основной частью и боковой панелью).
-- `mainline`. Результаты поиска для отображения в основной части.
-- `sidebar`. Результаты поиска для отображения на боковой панели. Если боковая панель отсутствует, эти результаты отображаются под основной частью.
+- `pole`: Результаты поиска, которые должны отображаться наиболее заметным образом (например, над основной частью и боковой панелью).
+- `mainline`: Результаты поиска для отображения в основном поле.
+- `sidebar`: Результаты поиска для отображения на боковой панели. Если боковая панель отсутствует, эти результаты отображаются под основной частью.
 
 JSON с ранжированным ответом может содержать одну или несколько этих групп.
 

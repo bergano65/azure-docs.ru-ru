@@ -1,23 +1,14 @@
 ---
 title: Руководство по Использование службы "Сетка событий Azure" для автоматического изменения размера переданных изображений
 description: Руководство по Служба "Сетка событий Azure" может быть активирована при передаче больших двоичных объектов в службу хранилища Azure. Это можно использовать для отправки файлов изображений, которые передаются в службу хранилища Azure, в другие службы, например службу "Функции Azure", для изменения размера и других улучшений.
-services: event-grid, functions
-author: spelluru
-manager: jpconnoc
-editor: ''
-ms.service: event-grid
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
-ms.date: 04/01/2020
-ms.author: spelluru
-ms.custom: mvc
-ms.openlocfilehash: 1d1da88d1e7eaf06ebf71da999ef8fb25c7cf066
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.date: 07/07/2020
+ms.openlocfilehash: 19dfffdcee0fb95ae867b1b26fa51e702658445d
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81482199"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86105818"
 ---
 # <a name="tutorial-automate-resizing-uploaded-images-using-event-grid"></a>Руководство по Автоматическое изменение размера переданных изображений с помощью службы "Сетка событий"
 
@@ -62,7 +53,11 @@ ms.locfileid: "81482199"
 
 Зарегистрируйте поставщик ресурсов службы "Сетка событий" в подписке, если вы еще не сделали это.
 
-```azurecli-interactive
+```bash
+az provider register --namespace Microsoft.EventGrid
+```
+
+```powershell
 az provider register --namespace Microsoft.EventGrid
 ```
 
@@ -72,17 +67,43 @@ az provider register --namespace Microsoft.EventGrid
 
 1. Задайте переменную для хранения имени группы ресурсов, созданную при работе с предыдущим руководством.
 
-    ```azurecli-interactive
+    ```bash
     resourceGroupName="myResourceGroup"
     ```
-2. Задайте переменную имени новой учетной записи хранения, которая требуется для приложения-функции Azure.
-    ```azurecli-interactive
+
+    ```powershell
+    $resourceGroupName="myResourceGroup"
+    ```
+
+1. Задайте переменную, в которой будет храниться расположение создаваемых ресурсов. 
+
+    ```bash
+    location="eastus"
+    ```
+
+    ```powershell
+    $location="eastus"
+    ```
+
+1. Задайте переменную имени новой учетной записи хранения, которая требуется для приложения-функции Azure.
+
+    ```bash
     functionstorage="<name of the storage account to be used by the function>"
     ```
-3. Создайте учетную запись хранения для функции Azure.
 
-    ```azurecli-interactive
-    az storage account create --name $functionstorage --location southeastasia \
+    ```powershell
+    $functionstorage="<name of the storage account to be used by the function>"
+    ```
+
+1. Создайте учетную запись хранения для функции Azure.
+
+    ```bash
+    az storage account create --name $functionstorage --location $location \
+    --resource-group $resourceGroupName --sku Standard_LRS --kind StorageV2
+    ```
+
+    ```powershell
+    az storage account create --name $functionstorage --location $location `
     --resource-group $resourceGroupName --sku Standard_LRS --kind StorageV2
     ```
 
@@ -94,14 +115,25 @@ az provider register --namespace Microsoft.EventGrid
 
 1. Укажите имя для создаваемого приложения-функции.
 
-    ```azurecli-interactive
+    ```bash
     functionapp="<name of the function app>"
     ```
-2. Создайте функцию Azure.
 
-    ```azurecli-interactive
+    ```powershell
+    $functionapp="<name of the function app>"
+    ```
+
+1. Создайте функцию Azure.
+
+    ```bash
     az functionapp create --name $functionapp --storage-account $functionstorage \
-      --resource-group $resourceGroupName --consumption-plan-location southeastasia \
+      --resource-group $resourceGroupName --consumption-plan-location $location \
+      --functions-version 2
+    ```
+
+    ```powershell
+    az functionapp create --name $functionapp --storage-account $functionstorage `
+      --resource-group $resourceGroupName --consumption-plan-location $location `
       --functions-version 2
     ```
 
@@ -113,8 +145,7 @@ az provider register --namespace Microsoft.EventGrid
 
 # <a name="net-v12-sdk"></a>[\.NET (пакет SDK версии 12)](#tab/dotnet)
 
-```azurecli-interactive
-blobStorageAccount="<name of the Blob storage account you created in the previous tutorial>"
+```bash
 storageConnectionString=$(az storage account show-connection-string --resource-group $resourceGroupName \
   --name $blobStorageAccount --query connectionString --output tsv)
 
@@ -123,11 +154,18 @@ az functionapp config appsettings set --name $functionapp --resource-group $reso
   THUMBNAIL_WIDTH=100 FUNCTIONS_EXTENSION_VERSION=~2
 ```
 
+```powershell
+$storageConnectionString=$(az storage account show-connection-string --resource-group $resourceGroupName `
+  --name $blobStorageAccount --query connectionString --output tsv)
+
+az functionapp config appsettings set --name $functionapp --resource-group $resourceGroupName `
+  --settings AzureWebJobsStorage=$storageConnectionString THUMBNAIL_CONTAINER_NAME=thumbnails `
+  THUMBNAIL_WIDTH=100 FUNCTIONS_EXTENSION_VERSION=~2
+```
+
 # <a name="nodejs-v10-sdk"></a>[Пакет SDK для Node.js версии 10](#tab/nodejsv10)
 
-```azurecli-interactive
-blobStorageAccount="<name of the Blob storage account you created in the previous tutorial>"
-
+```bash
 blobStorageAccountKey=$(az storage account keys list -g $resourceGroupName \
   -n $blobStorageAccount --query [0].value --output tsv)
 
@@ -138,6 +176,20 @@ az functionapp config appsettings set --name $functionapp --resource-group $reso
   --settings FUNCTIONS_EXTENSION_VERSION=~2 BLOB_CONTAINER_NAME=thumbnails \
   AZURE_STORAGE_ACCOUNT_NAME=$blobStorageAccount \
   AZURE_STORAGE_ACCOUNT_ACCESS_KEY=$blobStorageAccountKey \
+  AZURE_STORAGE_CONNECTION_STRING=$storageConnectionString
+```
+
+```powershell
+$blobStorageAccountKey=$(az storage account keys list -g $resourceGroupName `
+  -n $blobStorageAccount --query [0].value --output tsv)
+
+$storageConnectionString=$(az storage account show-connection-string --resource-group $resourceGroupName `
+  --name $blobStorageAccount --query connectionString --output tsv)
+
+az functionapp config appsettings set --name $functionapp --resource-group $resourceGroupName `
+  --settings FUNCTIONS_EXTENSION_VERSION=~2 BLOB_CONTAINER_NAME=thumbnails `
+  AZURE_STORAGE_ACCOUNT_NAME=$blobStorageAccount `
+  AZURE_STORAGE_ACCOUNT_ACCESS_KEY=$blobStorageAccountKey `
   AZURE_STORAGE_CONNECTION_STRING=$storageConnectionString
 ```
 
@@ -153,9 +205,15 @@ az functionapp config appsettings set --name $functionapp --resource-group $reso
 
 Пример функции изменения размера на C# см. на [GitHub](https://github.com/Azure-Samples/function-image-upload-resize). Разверните этот код в приложение-функцию с помощью команды [az functionapp deployment source config](/cli/azure/functionapp/deployment/source).
 
-```azurecli-interactive
+```bash
 az functionapp deployment source config --name $functionapp --resource-group $resourceGroupName \
   --branch master --manual-integration \
+  --repo-url https://github.com/Azure-Samples/function-image-upload-resize
+```
+
+```powershell
+az functionapp deployment source config --name $functionapp --resource-group $resourceGroupName `
+  --branch master --manual-integration `
   --repo-url https://github.com/Azure-Samples/function-image-upload-resize
 ```
 
@@ -163,11 +221,18 @@ az functionapp deployment source config --name $functionapp --resource-group $re
 
 Пример функции изменения размера на Node.js можно найти в [GitHub](https://github.com/Azure-Samples/storage-blob-resize-function-node-v10). Разверните этот проект кода функции в приложение-функцию с помощью команды [az functionapp deployment source config](/cli/azure/functionapp/deployment/source).
 
-```azurecli-interactive
+```bash
 az functionapp deployment source config --name $functionapp \
   --resource-group $resourceGroupName --branch master --manual-integration \
   --repo-url https://github.com/Azure-Samples/storage-blob-resize-function-node-v10
 ```
+
+```powershell
+az functionapp deployment source config --name $functionapp `
+  --resource-group $resourceGroupName --branch master --manual-integration `
+  --repo-url https://github.com/Azure-Samples/storage-blob-resize-function-node-v10
+```
+
 ---
 
 Функция изменения размера образа активируется HTTP-запросом, отправленным из службы "Сетка событий". Вы указываете этой службе, что хотите получать эти уведомления по URL-адресу функции, создав подписку на события. В этом руководстве вы подписываетесь на события, созданные большим двоичным объектом.
@@ -192,15 +257,15 @@ az functionapp deployment source config --name $functionapp \
 
 Подписка на событие определяет, какие создаваемые поставщиком события необходимо отправлять в конкретную конечную точку. В данном случае конечная точка предоставляется функцией. Чтобы создать подписку на событие, которая отправляет уведомления в функцию, выполните следующие действия на портале Azure:
 
-1. На [портале Azure](https://portal.azure.com) выберите **Все службы** в меню слева и щелкните **Приложения-функции**.
+1. На [портале Azure](https://portal.azure.com)в верхней части страницы выполните поиск `Function App` и щелкните требуемый результат. Затем выберите только что созданное приложение-функцию. Щелкните элемент **Функции** и выберите функцию **Эскиз**.
 
-    ![Переход к приложениям-функциям на портале Azure](./media/resize-images-on-storage-blob-upload-event/portal-find-functions.png)
+    :::image type="content" source="media/resize-images-on-storage-blob-upload-event/choose-thumbnail-function.png" alt-text="Выбор функции Эскиз на портале":::
 
-2. Разверните приложение-функцию, выберите функцию **Эскиз** и щелкните **Добавить подписку Сетки событий**.
+1.  Щелкните элемент **Интеграция**. Затем последовательно выберите элементы **Триггер сетки событий** и **Создание подписки для Сетки событий**.
 
-    ![Переход к параметру добавления подписки Сетки событий на портале Azure](./media/resize-images-on-storage-blob-upload-event/add-event-subscription.png)
+    :::image type="content" source="./media/resize-images-on-storage-blob-upload-event/add-event-subscription.png" alt-text="Переход к параметру добавления подписки Сетки событий на портале Azure" :::
 
-3. Задайте значения параметров подписки на событие, указанные в таблице.
+1. Задайте значения параметров подписки на событие, указанные в таблице.
     
     ![Создание подписки на событие из функции на портале Azure](./media/resize-images-on-storage-blob-upload-event/event-subscription-create.png)
 
@@ -211,17 +276,18 @@ az functionapp deployment source config --name $functionapp \
     | **Подписка** | Ваша подписка Azure. | По умолчанию должна быть выбрана ваша текущая подписка Azure. |
     | **Группа ресурсов** | myResourceGroup | Щелкните **Использовать существующую** и выберите группу ресурсов, используемую в этом руководстве. |
     | **Ресурс** | Учетная запись хранения больших двоичных объектов | Выберите учетную запись хранения BLOB-объектов, созданную вами. |
+    | **Имя системного раздела** | imagestoragesystopic | Введите имя системного раздела. См. [общие сведения о системных разделах](system-topics.md). |    
     | **Типы событий** | Blob created | Снимите флажки всех типов, кроме **Blob created** (Большой двоичный объект создан). Только события типа `Microsoft.Storage.BlobCreated` будут передаваться в функцию. |
     | **Тип конечной точки** | autogenerated | Предварительно определен как **Функции Azure**. |
     | **Конечная точка** | autogenerated | Имя функции. В нашем примере это функция **Эскиз**. |
 
-4. Перейдите на вкладку **Фильтры** и выполните следующие действия:
+1. Перейдите на вкладку **Фильтры** и выполните следующие действия:
     1. Выберите параметр **Включить фильтрацию тем**.
-    2. Для **Тема начинается с** укажите следующее значение: **/blobServices/default/containers/images/blobs/** .
+    1. Для **Тема начинается с** укажите следующее значение: **/blobServices/default/containers/images/blobs/** .
 
         ![Выбор фильтра для подписки на событие](./media/resize-images-on-storage-blob-upload-event/event-subscription-filter.png)
 
-5. Нажмите кнопку **Создать**, чтобы добавить подписку на событие. Будет создана подписка на событие, которая вызывает функцию `Thumbnail` при добавлении большого двоичного объекта в контейнер `images`. Эта функция изменяет размер изображений и добавляет их в контейнер `thumbnails`.
+1. Нажмите кнопку **Создать**, чтобы добавить подписку на событие. Будет создана подписка на событие, которая вызывает функцию `Thumbnail` при добавлении большого двоичного объекта в контейнер `images`. Эта функция изменяет размер изображений и добавляет их в контейнер `thumbnails`.
 
 Теперь, когда внутренние службы настроены, следует проверить функциональные возможности изменения размера изображений в примере веб-приложения.
 

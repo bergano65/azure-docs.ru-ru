@@ -6,12 +6,12 @@ ms.devlang: azurecli
 ms.topic: sample
 ms.date: 10/25/2017
 ms.author: tomfitz
-ms.openlocfilehash: f4d5a0036ba44f7e0054db7ce820b91b0de629b8
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 63182eb382e96f47c1c90dc5d212e064d0945ba7
+ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75648971"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86056095"
 ---
 # <a name="create-a-managed-application-definition-with-azure-cli"></a>Создание определения управляемого приложения с помощью Azure CLI
 
@@ -33,10 +33,10 @@ ms.locfileid: "75648971"
 
 | Get-Help | Примечания |
 |---|---|
-| [az managedapp definition create](https://docs.microsoft.com/cli/azure/managedapp/definition#az-managedapp-definition-create) | Позволяет создать определение управляемого приложения. Укажите пакет с необходимыми файлами. |
+| [az managedapp definition create](/cli/azure/managedapp/definition#az-managedapp-definition-create) | Позволяет создать определение управляемого приложения. Укажите пакет с необходимыми файлами. |
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Общие сведения об управляемых приложениях Azure см. в [этой статье](../overview.md).
-* Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
+* Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).

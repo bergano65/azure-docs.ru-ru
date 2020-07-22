@@ -7,18 +7,17 @@ documentationcenter: na
 author: asudbring
 ms.service: load-balancer
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.custom: seodec18
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/01/2019
 ms.author: allensu
-ms.openlocfilehash: 7230b0c2b80137b068bbeacf43ab2133491a69b0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 2b326c6c58b4685b6e73d0f9a641a2f90807d705
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74225469"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84803749"
 ---
 # <a name="configure-load-balancing-and-outbound-rules-in-standard-load-balancer-using-azure-cli"></a>Настройка правил балансировки нагрузки и правил для исходящего трафика в Load Balancer (цен. категория "Стандартный") с использованием Azure CLI
 
@@ -118,7 +117,7 @@ ms.locfileid: "74225469"
 
 ### <a name="create-health-probe"></a>Создание пробы работоспособности
 
-Проба работоспособности проверяет все экземпляры виртуальной машины, чтобы убедиться, что они могут отправлять сетевой трафик. Экземпляр виртуальной машины с неудачной пробой удаляется из балансировщика нагрузки, пока не перейдет в оперативный режим и проба не определит его работоспособность. Создайте пробу работоспособности с помощью команды [AZ Network фунтов зонда Create](https://docs.microsoft.com/cli/azure/network/lb/probe?view=azure-cli-latest) , чтобы отслеживать работоспособность виртуальных машин. 
+Проба работоспособности проверяет все экземпляры виртуальной машины, чтобы убедиться, что они могут отправлять сетевой трафик. Экземпляр виртуальной машины с неудачной пробой удаляется из балансировщика нагрузки, пока не перейдет в оперативный режим и проба не определит его работоспособность. Создайте зонд работоспособности с помощью команды [az network lb probe create](https://docs.microsoft.com/cli/azure/network/lb/probe?view=azure-cli-latest), чтобы отслеживать работоспособность виртуальных машин. 
 
 ```azurecli-interactive
   az network lb probe create \

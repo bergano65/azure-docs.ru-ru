@@ -2,15 +2,15 @@
 title: Справочник разработчика скриптов C# по функциям Azure
 description: Узнайте, как разрабатывать функции Azure с помощью скрипта C#.
 author: craigshoemaker
-ms.topic: reference
+ms.topic: conceptual
 ms.date: 12/12/2017
 ms.author: cshoe
-ms.openlocfilehash: a5497300f6b0cbf3a073681bac41adc583d869ef
-ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
+ms.openlocfilehash: 177e9fcd872c594fbfb5f29077235113c6342860
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2020
-ms.locfileid: "82733402"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86506153"
 ---
 # <a name="azure-functions-c-script-csx-developer-reference"></a>Справочник разработчика скрипта C# (CSX) по решению "Функции Azure"
 
@@ -24,7 +24,7 @@ ms.locfileid: "82733402"
 
 ## <a name="how-csx-works"></a>Как работает формат CSX
 
-Взаимодействие сценариев C# для функций Azure основано на [пакете SDK веб-заданий Azure](https://github.com/Azure/azure-webjobs-sdk/wiki/Introduction). Данные поступают в функцию C# через аргументы метода. Имена аргументов указываются в файле `function.json`. Есть предварительно определенные имена для доступа к таким объектам, как средство ведения журнала функций и маркеры отмены.
+Интерфейс скрипта C# для решения "Функции Azure" основан на [пакете SDK для веб-заданий Azure](https://github.com/Azure/azure-webjobs-sdk/wiki/Introduction). Данные поступают в функцию C# через аргументы метода. Имена аргументов указываются в файле `function.json`. Есть предварительно определенные имена для доступа к таким объектам, как средство ведения журнала функций и маркеры отмены.
 
 Формат *CSX* позволяет писать меньше стандартного кода и сосредоточиться на написании только функции C#. а затем вместо помещения всего кода в пространство имен и класс просто определите метод `Run`. Как обычно, укажите ссылки на необходимые сборки и пространства имен в начале файла,
 
@@ -51,7 +51,7 @@ FunctionsProject
 
 Существует общий файл [host.json](functions-host-json.md), который можно использовать для настройки приложения-функции. У каждой функции есть собственный файл кода (.csx) и файлом конфигурации привязки (function.json).
 
-Расширения привязки, необходимые в [версии 2. x и более поздних версиях](functions-versions.md) среды выполнения функций, определяются `extensions.csproj` в файле с фактическими файлами библиотеки в `bin` папке. При локальной разработке необходимо [зарегистрировать расширения привязки](./functions-bindings-register.md#extension-bundles). При разработке функций на портале Azure эта регистрация выполняется автоматически.
+Расширения привязки, необходимые в [версии 2.x и более поздних](functions-versions.md) среды выполнения функций, определены в файле `extensions.csproj` с фактическими файлами библиотеки в папке `bin`. При локальной разработке необходимо [зарегистрировать расширения привязки](./functions-bindings-register.md#extension-bundles). При разработке функций на портале Azure эта регистрация выполняется автоматически.
 
 ## <a name="binding-to-arguments"></a>Привязка к аргументам
 
@@ -224,7 +224,7 @@ public class Order
 
 ## <a name="writing-multiple-output-values"></a>Написание нескольких значений выходных данных
 
-Для записи нескольких значений в выходную привязку или успешного вызова функции может не привести к передаче в выходную привязку, используйте типы [`ICollector`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/ICollector.cs) или. [`IAsyncCollector`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/IAsyncCollector.cs) Эти типы представляют собой доступные только для записи коллекции, записываемые в выходную привязку по завершении метода.
+Чтобы записать несколько значений в привязку для вывода или если после успешного вызова функции не возвращается значение для передачи в привязку для вывода, используйте типы [`ICollector`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/ICollector.cs) или [`IAsyncCollector`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/IAsyncCollector.cs). Эти типы представляют собой доступные только для записи коллекции, записываемые в выходную привязку по завершении метода.
 
 В следующем примере записываются несколько сообщений очереди в ту же очередь с помощью `ICollector`:
 
@@ -236,9 +236,9 @@ public static void Run(ICollector<string> myQueue, ILogger log)
 }
 ```
 
-## <a name="logging"></a>Ведение журнала
+## <a name="logging"></a>Logging
 
-Для записи выходных данных в потоковые журналы в C# включите аргумент с типом [ILogger](https://docs.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger). Рекомендуем присвоить ему имя `log`. Не используйте `Console.Write` в Функциях Azure.
+Для записи выходных данных в потоковые журналы в C# включите аргумент с типом [ILogger](/dotnet/api/microsoft.extensions.logging.ilogger). Рекомендуем присвоить ему имя `log`. Не используйте `Console.Write` в Функциях Azure.
 
 ```csharp
 public static void Run(string myBlob, ILogger log)
@@ -250,9 +250,9 @@ public static void Run(string myBlob, ILogger log)
 > [!NOTE]
 > Сведения о новой платформе ведения журналов, которую можно использовать вместо `TraceWriter`, см. в разделе [Запись журналов в функциях C#](functions-monitoring.md#write-logs-in-c-functions) статьи **Мониторинг Функций Azure**.
 
-## <a name="async"></a>Async
+## <a name="async"></a>Асинхронный режим
 
-Чтобы сделать функцию [асинхронной](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/async/), используйте ключевое слово `async` и верните объект `Task`.
+Чтобы сделать функцию [асинхронной](/dotnet/csharp/programming-guide/concepts/async/), используйте ключевое слово `async` и верните объект `Task`.
 
 ```csharp
 public async static Task ProcessQueueMessageAsync(
@@ -370,7 +370,7 @@ public static Task<HttpResponseMessage> Run(HttpRequestMessage req, ILogger log)
 Каталог, содержащий файл сценария функции, автоматически отслеживает изменения в сборках. Чтобы отслеживать изменения сборки в других каталогах, добавьте их в список `watchDirectories` в [host.json](functions-host-json.md).
 
 ## <a name="using-nuget-packages"></a>Использование пакетов NuGet
-Чтобы использовать пакеты NuGet в функции C# 2. x и более поздних версий, отправьте файл *Function. proj* в папку функции в файловой системе приложения-функции. Ниже приведен пример файла *function.proj*, который добавляет ссылку на *Microsoft.ProjectOxford.Face* версии *1.1.0*.
+Чтобы использовать пакеты NuGet в функции C# версии 2.x и более поздних, отправьте файл *function.proj* в папку соответствующей функции в файловой системе приложения-функции. Ниже приведен пример файла *function.proj*, который добавляет ссылку на *Microsoft.ProjectOxford.Face* версии *1.1.0*.
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -387,9 +387,9 @@ public static Task<HttpResponseMessage> Run(HttpRequestMessage req, ILogger log)
 Чтобы использовать настраиваемые веб-каналы NuGet, укажите веб-канал в файле *Nuget.Config* в корне приложения-функции. Дополнительные сведения см. в статье [Configuring NuGet behavior](/nuget/consume-packages/configuring-nuget-behavior) (Настройка поведения NuGet).
 
 > [!NOTE]
-> В функциях C# версии 1. x ссылки на пакеты NuGet указываются в файле *Project. JSON* вместо файла *Function. proj* .
+> В функциях C# версии 1.x ссылки на пакеты NuGet указываются в файле *project.json*, а не *function.proj*.
 
-Для функций 1. x используйте вместо него файл *Project. JSON* . Ниже приведен пример файла *Project. JSON* .
+Для функций 1.x используйте вместо этого файл *project.json*. Ниже приведен пример файла *project.json*:
 
 ```json
 {
@@ -403,11 +403,11 @@ public static Task<HttpResponseMessage> Run(HttpRequestMessage req, ILogger log)
 }
 ```
 
-### <a name="using-a-functionproj-file"></a>Использование файла Function. proj
+### <a name="using-a-functionproj-file"></a>Использование файла function.proj
 
 1. Откройте функцию на портале Azure. На вкладке "Журналы" отображаются выходные данные установки пакета.
-2. Чтобы передать файл *Function. proj* , используйте один из методов, описанных в статье [как обновить файлы приложения-функции](functions-reference.md#fileupdate) в справочнике разработчика по функциям Azure.
-3. После отправки файла *Function. proj* вы увидите в журнале потоковой передачи функции выходные данные, как в следующем примере:
+2. Чтобы отправить файл *function.proj*, используйте один из методов, описанных в разделе [Как обновить файлы приложения-функции](functions-reference.md#fileupdate) статьи "Руководство для разработчиков по Функциям Azure".
+3. После отправки файла *function.proj* в потоковом журнале функции отобразятся выходные данные, как в следующем примере:
 
 ```
 2018-12-14T22:00:48.658 [Information] Restoring packages.
@@ -459,7 +459,7 @@ using (var output = await binder.BindAsync<T>(new BindingTypeAttribute(...)))
 }
 ```
 
-где `BindingTypeAttribute` — атрибут .NET, определяющий пользовательскую привязку, а `T` — входной или выходной тип, поддерживаемый этим типом привязки. `T` не может быть параметром типа `out` (например, `out JObject`). Например, выходная привязка таблицы мобильных приложений поддерживает [шесть выходных типов](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.MobileApps/MobileTableAttribute.cs#L17-L22), но можно использовать только [\<ICollector T>](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/ICollector.cs) или [`IAsyncCollector<T>`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/IAsyncCollector.cs) для `T`.
+где `BindingTypeAttribute` — атрибут .NET, определяющий пользовательскую привязку, а `T` — входной или выходной тип, поддерживаемый этим типом привязки. `T` не может быть параметром типа `out` (например, `out JObject`). Например, выходная привязка таблицы мобильных приложений поддерживает [шесть выходных типов](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.MobileApps/MobileTableAttribute.cs#L17-L22), но можно использовать только [ICollector \<T> ](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/ICollector.cs) или [`IAsyncCollector<T>`](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/IAsyncCollector.cs) для `T` .
 
 ### <a name="single-attribute-example"></a>Пример с одним атрибутом
 
@@ -506,7 +506,7 @@ public static async Task Run(string input, Binder binder)
 В следующей таблице перечислены атрибуты .NET для каждого типа привязки и пакеты, в которых они определены.
 
 > [!div class="mx-codeBreakAll"]
-> | Привязка | Атрибут | Ссылка, которую нужно добавить |
+> | Привязка | attribute | Ссылка, которую нужно добавить |
 > |------|------|------|
 > | Cosmos DB | [`Microsoft.Azure.WebJobs.DocumentDBAttribute`](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.CosmosDB/CosmosDBAttribute.cs) | `#r "Microsoft.Azure.WebJobs.Extensions.CosmosDB"` |
 > | Центры событий | [`Microsoft.Azure.WebJobs.ServiceBus.EventHubAttribute`](https://github.com/Azure/azure-webjobs-sdk/blob/v2.x/src/Microsoft.Azure.WebJobs.ServiceBus/EventHubs/EventHubAttribute.cs), [`Microsoft.Azure.WebJobs.ServiceBusAccountAttribute`](https://github.com/Azure/azure-webjobs-sdk/blob/b798412ad74ba97cf2d85487ae8479f277bdd85c/test/Microsoft.Azure.WebJobs.ServiceBus.UnitTests/ServiceBusAccountTests.cs) | `#r "Microsoft.Azure.Jobs.ServiceBus"` |

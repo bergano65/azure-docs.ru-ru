@@ -5,12 +5,12 @@ author: jeffj6123
 ms.topic: reference
 ms.date: 1/16/2020
 ms.author: jejarry
-ms.openlocfilehash: a64aaca97c9df61d795c82d64e6048d6f9ae032f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 349f70c32ea4ebb4559f053d5ef05b4b37b6480f
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76906074"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86260369"
 ---
 # <a name="sfctl-is"></a>sfctl is
 Запрос службы инфраструктуры и отправка команд для нее.
@@ -19,7 +19,7 @@ ms.locfileid: "76906074"
 
 |Команда|Описание|
 | --- | --- |
-| command | Вызывает команду администрирования для заданного экземпляра службы инфраструктуры. |
+| . | Вызывает команду администрирования для заданного экземпляра службы инфраструктуры. |
 | query | Вызывает запрос только для чтения к заданному экземпляру службы инфраструктуры. |
 
 ## <a name="sfctl-is-command"></a>sfctl is command
@@ -69,6 +69,6 @@ ms.locfileid: "76906074"
 | --verbose | Повышение уровня детализации журнала. Чтобы включить полные журналы отладки, используйте параметр --debug. |
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Настройте](service-fabric-cli.md) Service Fabric CLI.
-- Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](/azure/service-fabric/scripts/sfctl-upgrade-application).
+- Узнайте, как использовать интерфейс командной строки Service Fabric, с помощью [примеров сценариев](./scripts/sfctl-upgrade-application.md).

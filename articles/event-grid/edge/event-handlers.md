@@ -1,19 +1,14 @@
 ---
 title: Обработчики событий и назначения — Служба "Сетка событий Azure" IoT Edge | Документация Майкрософт
 description: Обработчики событий и назначения в сетке событий на границе
-author: banisadr
-ms.author: babanisa
-ms.reviewer: spelluru
-ms.date: 01/09/2020
+ms.date: 07/08/2020
 ms.topic: article
-ms.service: event-grid
-services: event-grid
-ms.openlocfilehash: 35bf5af90aa5f0456aa8d68f0e4e8aaacc6cf84f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 18e2b944f60ebdf8a1b0c60ba446a13df13134c5
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76849751"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86171590"
 ---
 # <a name="event-handlers-and-destinations-in-event-grid-on-edge"></a>Обработчики событий и назначения в сетке событий на границе
 
@@ -23,7 +18,7 @@ ms.locfileid: "76849751"
 
 ## <a name="webhook"></a>Веб-перехватчика
 
-Чтобы опубликовать данные `endpointType` в конечной точке веб-перехватчика, `WebHook` задайте для значение и укажите:
+Чтобы опубликовать данные в конечной точке веб-перехватчика, задайте `endpointType` для значение `WebHook` и укажите:
 
 * endpointUrl: URL-адрес конечной точки веб-перехватчика
 
@@ -40,9 +35,9 @@ ms.locfileid: "76849751"
         }
     ```
 
-## <a name="azure-event-grid"></a>Сетка событий Azure
+## <a name="azure-event-grid"></a>Сетка событий Azure.
 
-Чтобы опубликовать в облачной конечной точке службы "Сетка событий Azure `endpointType` " `eventGrid` , задайте для значение и укажите:
+Чтобы опубликовать в облачной конечной точке службы "Сетка событий Azure", задайте `endpointType` для значение `eventGrid` и укажите:
 
 * endpointUrl: URL-адрес раздела сетки событий в облаке
 * Саскэй: ключ SAS раздела сетки событий
@@ -65,7 +60,7 @@ ms.locfileid: "76849751"
 
 ## <a name="iot-edge-hub"></a>Центр IoT Edge
 
-Чтобы опубликовать в модуле концентратора ребра, задайте `endpointType` для `edgeHub` значение и укажите:
+Чтобы опубликовать в модуле концентратора ребра, задайте `endpointType` для значение `edgeHub` и укажите:
 
 * outputName: выходные данные, на которых модуль сетки событий будет маршрутизировать события, соответствующие этой подписке, в edgeHub. Например, события, соответствующие указанной ниже подписке, будут записаны в/messages/modules/eventgridmodule/outputs/sampleSub4..
 
@@ -84,7 +79,7 @@ ms.locfileid: "76849751"
 
 ## <a name="event-hubs"></a>Центры событий
 
-Чтобы опубликовать в концентраторе событий, задайте `endpointType` для `eventHub` значение и укажите:
+Чтобы опубликовать в концентраторе событий, задайте `endpointType` для значение `eventHub` и укажите:
 
 * connectionString: строка подключения для определенного концентратора событий, созданного с помощью политики общего доступа.
 
@@ -106,7 +101,7 @@ ms.locfileid: "76849751"
 
 ## <a name="service-bus-queues"></a>Очереди служебной шины
 
-Чтобы опубликовать в очереди служебной шины, задайте `endpointType` для `serviceBusQueue` значение и укажите:
+Чтобы опубликовать в очереди служебной шины, задайте `endpointType` для значение `serviceBusQueue` и укажите:
 
 * connectionString: строка подключения для конкретной очереди служебной шины, созданной с помощью политики общего доступа.
 
@@ -128,7 +123,7 @@ ms.locfileid: "76849751"
 
 ## <a name="service-bus-topics"></a>Разделы шины обслуживания
 
-Чтобы опубликовать данные `endpointType` в разделе служебной шины, задайте для `serviceBusTopic` значение и укажите:
+Чтобы опубликовать данные в разделе служебной шины, задайте `endpointType` для значение `serviceBusTopic` и укажите:
 
 * connectionString: строка подключения для конкретного раздела служебной шины, созданного с помощью политики общего доступа.
 
@@ -150,7 +145,7 @@ ms.locfileid: "76849751"
 
 ## <a name="storage-queues"></a>Очереди службы хранилища
 
-Чтобы опубликовать в очереди хранилища, задайте `endpointType` для `storageQueue` значение и укажите:
+Чтобы опубликовать в очереди хранилища, задайте для значение `endpointType` `storageQueue` и укажите:
 
 * queueName: имя очереди хранилища, в которую выполняется публикация.
 * connectionString: строка подключения для учетной записи хранения, в которой находится очередь хранилища.

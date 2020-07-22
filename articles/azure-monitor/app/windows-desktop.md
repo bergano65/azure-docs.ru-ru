@@ -2,22 +2,22 @@
 title: Мониторинг использования и производительности классических приложений для Windows
 description: Анализ использования и производительности классического приложения для Windows с помощью Application Insights.
 ms.topic: conceptual
-ms.date: 10/29/2019
-ms.openlocfilehash: eb9e0fc480098478a3a68265ac85e0d5450e27fe
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 06/11/2020
+ms.openlocfilehash: ddb602536e1b8bbc987c4ba366e2007163c814ec
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81537395"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86499194"
 ---
 # <a name="monitoring-usage-and-performance-in-classic-windows-desktop-apps"></a>Мониторинг использования и производительности в классических приложениях для Windows
 
 Все приложения, размещенные на локальном компьютере, в Azure и в других облаках могут воспользоваться преимуществами Application Insights. Все, что нужно — это [разрешить обмен данными](../../azure-monitor/app/ip-addresses.md) со службой Application Insights. Для мониторинга приложений универсальной платформы Windows (UWP) мы рекомендуем использовать [Центр приложений Visual Studio](../../azure-monitor/learn/mobile-center-quickstart.md).
 
 ## <a name="to-send-telemetry-to-application-insights-from-a-classic-windows-application"></a>Отправка данных телеметрии в Application Insights из классического приложения для Windows
-1. В [портал Azure](https://portal.azure.com) [Создайте ресурс Application Insights](../../azure-monitor/app/create-new-resource.md ). Для параметра типа приложения выберите приложение ASP.NET.
-2. Сделайте копию ключа инструментирования. Найдите ключ в раскрывающемся списке "Основные компоненты" нового ресурса, который вы только что создали. 
-3. В Visual Studio измените пакеты NuGet вашего проекта приложения и добавьте Microsoft.ApplicationInsights.WindowsServer. (Выберите Microsoft.ApplicationInsights, если нужен чистый API без модулей сбора стандартной телеметрии.)
+1. На [портале Azure](https://portal.azure.com)[создайте ресурс Application Insights](../../azure-monitor/app/create-new-resource.md ). 
+2. Сделайте копию ключа инструментирования.
+3. В Visual Studio измените пакеты NuGet вашего проекта приложения и добавьте Microsoft.ApplicationInsights.WindowsServer. (Или выберите Microsoft. ApplicationInsights, если нужен только базовый API, без стандартных модулей сбора данных телеметрии.)
 4. Задайте ключ инструментирования в коде.
    
     `TelemetryConfiguration.Active.InstrumentationKey = "` *ваш ключ* `";`
@@ -31,6 +31,7 @@ ms.locfileid: "81537395"
 6. Запустите приложение и просмотрите данные телеметрии в ресурсе, созданном в портал Azure.
 
 ## <a name="example-code"></a><a name="telemetry"></a>Пример кода
+
 ```csharp
 using Microsoft.ApplicationInsights;
 
@@ -70,7 +71,11 @@ using Microsoft.ApplicationInsights;
 
 ## <a name="override-storage-of-computer-name"></a>Переопределить хранилище имени компьютера
 
-По умолчанию этот пакет SDK будет выполнять сбор и хранение имени компьютера, порожденного системой телеметрии. Чтобы переопределить коллекцию, необходимо использовать инициализатор телеметрии:
+По умолчанию этот пакет SDK будет выполнять сбор и хранение имени компьютера, порожденного системой телеметрии.
+
+Имя компьютера используется Application Insights ценовой категории ["устаревший корпоративный" (на узел)](./pricing.md#legacy-enterprise-per-node-pricing-tier) для внутренних целей выставления счетов. По умолчанию, если для переопределения используется инициализатор телеметрии `telemetry.Context.Cloud.RoleInstance` , будет отправлено отдельное свойство, `ai.internal.nodeName` которое по-прежнему будет содержать значение имени компьютера. Это значение не будет храниться в Application Insights телеметрии, но используется для внутренних целей при приеме, чтобы обеспечить обратную совместимость с устаревшей моделью выставления счетов на основе узлов.
+
+Если вы используете [ценовую категорию устаревшего предприятия (на узел)](./pricing.md#legacy-enterprise-per-node-pricing-tier) и просто переопределите хранилище имени компьютера, используйте инициализатор телеметрии:
 
 **Напишите пользовательский TelemetryInitializer, как показано ниже.**
 
@@ -84,15 +89,17 @@ namespace CustomInitializer.Telemetry
     {
         public void Initialize(ITelemetry telemetry)
         {
-            if (string.IsNullOrEmpty(telemetry.Context.Cloud.RoleName))
+            if (string.IsNullOrEmpty(telemetry.Context.Cloud.RoleInstance))
             {
-                //set custom role name here, you can pass an empty string if needed.
+                // Set custom role name here. Providing an empty string will result
+                // in the computer name still be sent via this property.
                   telemetry.Context.Cloud.RoleInstance = "Custom RoleInstance";
             }
         }
     }
 }
 ```
+
 Создайте экземпляр инициализатора в `Program.cs` `Main()` приведенном ниже методе, указав ключ инструментирования:
 
 ```csharp
@@ -103,12 +110,72 @@ namespace CustomInitializer.Telemetry
         {
             TelemetryConfiguration.Active.InstrumentationKey = "{Instrumentation-key-here}";
             TelemetryConfiguration.Active.TelemetryInitializers.Add(new MyTelemetryInitializer());
+            //...
         }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="override-transmission-of-computer-name"></a>Переопределить передачу имени компьютера
+
+Если вы не используете [ценовую категорию "устаревший корпоративный" (на уровне узла)](./pricing.md#legacy-enterprise-per-node-pricing-tier) и хотите полностью предотвратить отправку данных телеметрии, содержащих имя компьютера, необходимо использовать обработчик данных телеметрии.
+
+### <a name="telemetry-processor"></a>Обработчик данных телеметрии
+
+```csharp
+using Microsoft.ApplicationInsights.Channel;
+using Microsoft.ApplicationInsights.Extensibility;
+
+
+namespace WindowsFormsApp2
+{
+    public class CustomTelemetryProcessor : ITelemetryProcessor
+    {
+        private readonly ITelemetryProcessor _next;
+
+        public CustomTelemetryProcessor(ITelemetryProcessor next)
+        {
+            _next = next;
+        }
+
+        public void Process(ITelemetry item)
+        {
+            if (item != null)
+            {
+                item.Context.Cloud.RoleInstance = string.Empty;
+            }
+
+            _next.Process(item);
+        }
+    }
+}
+```
+
+Создайте экземпляр обработчика данных телеметрии в `Program.cs` `Main()` приведенном ниже методе, указав ключ инструментирования:
+
+```csharp
+using Microsoft.ApplicationInsights.Extensibility;
+
+namespace WindowsFormsApp2
+{
+    static class Program
+    {
+        static void Main()
+        {
+            TelemetryConfiguration.Active.InstrumentationKey = "{Instrumentation-key-here}";
+            var builder = TelemetryConfiguration.Active.DefaultTelemetrySink.TelemetryProcessorChainBuilder;
+            builder.Use((next) => new CustomTelemetryProcessor(next));
+            builder.Build();
+            //...
+        }
+    }
+}
+
+```
+
+> [!NOTE]
+> Хотя вы можете использовать обработчик данных телеметрии, как описано выше, даже если вы используете [ценовую категорию устаревшего предприятия (на узел)](./pricing.md#legacy-enterprise-per-node-pricing-tier), это приведет к потенциальной оплате из-за невозможности правильного различения узлов для каждого узла.
+
+## <a name="next-steps"></a>Дальнейшие действия
 * [Создание панели мониторинга](../../azure-monitor/app/overview-dashboard.md)
 * [Поиск по журналу диагностики](../../azure-monitor/app/diagnostic-search.md)
-* [Просмотр метрик](../../azure-monitor/platform/metrics-charts.md)
-* [Написание запросов аналитики](../../azure-monitor/app/analytics.md)
-
+* [Изучение метрик](../../azure-monitor/platform/metrics-charts.md)
+* [Написание запросов аналитики](../log-query/log-query-overview.md)

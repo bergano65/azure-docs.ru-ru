@@ -16,14 +16,14 @@ ms.date: 01/04/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: 7d88f57fe92b9da62cc9f90d64bdec4c27642fb0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e3c64155053517205ab006673bb8f400325ad3c4
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76263750"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86219969"
 ---
-# <a name="templates"></a>Шаблоны
+# <a name="notification-hubs-templates"></a>Шаблоны центров уведомлений
 
 Шаблоны позволяют клиентскому приложению определять точный формат уведомлений, которые оно будет получать. С помощью шаблонов приложение получает несколько преимуществ, включая следующие:
 
@@ -62,7 +62,7 @@ ms.locfileid: "76263750"
 
 На следующем рисунке показан этот процесс.
 
-![](./media/notification-hubs-templates/notification-hubs-hello.png)
+![Схема, демонстрирующая процесс использования шаблонов на разных платформах](./media/notification-hubs-templates/notification-hubs-hello.png)
 
 Шаблон для регистрации клиентского приложения iOS выглядит следующим образом:
 
@@ -121,7 +121,7 @@ ms.locfileid: "76263750"
 
 С помощью этого шаблона серверная часть отправляет только одно сообщение без необходимости хранить персональные параметры для пользователей приложения. На следующем рисунке показана схема работы.
 
-![](./media/notification-hubs-templates/notification-hubs-registration-specific.png)
+![Схема, показывающая, как серверная часть отправляет только одно сообщение на каждую платформу.](./media/notification-hubs-templates/notification-hubs-registration-specific.png)
 
 ## <a name="how-to-register-templates"></a>Регистрация шаблонов
 

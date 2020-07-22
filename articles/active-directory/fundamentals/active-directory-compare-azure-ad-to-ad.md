@@ -12,10 +12,9 @@ ms.subservice: fundamentals
 ms.date: 02/26/2020
 ms.author: martinco
 ms.openlocfilehash: 5075ae57df6a7306f0c860690931c846e52c2a89
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78926898"
 ---
 # <a name="compare-active-directory-to-azure-active-directory"></a>Сравнить Active Directory с Azure Active Directory
@@ -37,18 +36,18 @@ Azure AD применяет этот подход к следующему уро
 | **Приложения**|||
 | Приложения инфраструктуры|Active Directory формирует базу для многих локальных компонентов инфраструктуры, например DNS, DHCP, IPSec, Wi-Fi, NPS и VPN-доступ|В новом облачном мире Azure AD — это новая плоскость управления для доступа к приложениям и управления сетью. При проверке подлинности пользователей[, условный доступ (CA)](https://docs.microsoft.com/azure/active-directory/conditional-access/overview), будет управлять тем, какие пользователи будут иметь доступ к приложениям в соответствии с требуемыми условиями.|
 | Традиционные и устаревшие приложения| Большинство локальных приложений используют протокол LDAP, встроенную проверку подлинности Windows (NTLM и Kerberos) или проверку подлинности на основе заголовка для управления доступом пользователей.| Azure AD может предоставлять доступ к этим типам локальных приложений с помощью агентов [прокси приложения Azure AD](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy) , выполняющихся локально. С помощью этого метода Azure AD может выполнять проверку подлинности Active Directory локальных пользователей с помощью Kerberos при переносе или необходимости совместного использования с устаревшими приложениями. |
-| Приложения SaaS|Active Directory не поддерживает приложения SaaS изначально и требует наличия системы Федерации, например AD FS.|Приложения SaaS, поддерживающие OAuth2, SAML и WS\* -Authentication, можно интегрировать, чтобы использовать Azure AD для проверки подлинности. |
+| Приложения SaaS|Active Directory не поддерживает приложения SaaS изначально и требует наличия системы Федерации, например AD FS.|Приложения SaaS, поддерживающие OAuth2, SAML и WS- \* authentication, можно интегрировать, чтобы использовать Azure AD для проверки подлинности. |
 | Бизнес-приложения с современной проверкой подлинности|Организации могут использовать AD FS с Active Directory для поддержки бизнес-приложений, для которых требуется современная проверка подлинности.| БИЗНЕС-приложения, для которых требуется современная проверка подлинности, можно настроить для использования Azure AD для проверки подлинности. |
 | Службы среднего уровня и управляющей программы|Службы, работающие в локальных средах, обычно используют учетные записи службы AD или групповые управляемые учетные записи служб (gMSA) для запуска. Затем эти приложения будут наследовать разрешения учетной записи службы.| Azure AD предоставляет [управляемые удостоверения](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/index) для выполнения других рабочих нагрузок в облаке. Жизненный цикл этих удостоверений управляется Azure AD и привязан к поставщику ресурсов и не может использоваться в других целях для получения доступа к программы трояны.|
 | **Устройства**|||
-| Мобильный|Active Directory изначально не поддерживает мобильные устройства без решений сторонних производителей.| Решение для управления мобильными устройствами Майкрософт, Microsoft Intune, интегрировано с Azure AD. Microsoft Intune предоставляет системе удостоверений сведения о состоянии устройства, которые необходимо оценить во время проверки подлинности. |
+| Мобильные службы|Active Directory изначально не поддерживает мобильные устройства без решений сторонних производителей.| Решение для управления мобильными устройствами Майкрософт, Microsoft Intune, интегрировано с Azure AD. Microsoft Intune предоставляет системе удостоверений сведения о состоянии устройства, которые необходимо оценить во время проверки подлинности. |
 | Настольные системы Windows|Active Directory предоставляет возможность присоединять к домену устройства Windows для управления ими с помощью групповая политика, System Center Configuration Manager или других сторонних решений.|Устройства Windows можно [присоединить к Azure AD](https://docs.microsoft.com/azure/active-directory/devices/). Условный доступ может проверять, присоединен ли устройство к Azure AD в рамках процесса проверки подлинности. Устройствам Windows также можно управлять с помощью [Microsoft Intune](https://docs.microsoft.com/intune/what-is-intune). В этом случае условный доступ будет расдумать, является ли устройство жалобой (например, последние исправления безопасности и сигнатуры вирусов) перед предоставлением доступа к приложениям.|
 | Серверы Windows| Active Directory предоставляет надежные возможности управления для локальных серверов Windows с помощью групповая политика или других решений по управлению.| Виртуальным машинам Windows Server в Azure можно управлять с помощью [доменных служб Azure AD](https://docs.microsoft.com/azure/active-directory-domain-services/). [Управляемые удостоверения](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/index) могут использоваться, когда виртуальным машинам требуется доступ к системному каталогу удостоверений или ресурсам.|
 | Рабочие нагрузки Linux и UNIX|Active Directory не поддерживает встроенные решения сторонних разработчиков, хотя компьютеры Linux можно настроить для проверки подлинности с помощью Active Directory в качестве области Kerberos.|Виртуальные машины Linux и UNIX могут использовать [управляемые удостоверения](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/index) для доступа к системе удостоверений или ресурсам. В некоторых организациях эти рабочие нагрузки переносятся в облачные контейнерные технологии, которые также могут использовать управляемые удостоверения.|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- [Что такое Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis)
+- [Что такое Microsoft Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis)
 - [Сравнение самостоятельно управляемых доменных служб Active Directory, Azure Active Directory и управляемых доменных служб Azure Active Directory.](https://docs.microsoft.com/azure/active-directory-domain-services/compare-identity-solutions)
 - [Часто задаваемые вопросы об Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-faq)
 - [Новые возможности Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/whats-new)

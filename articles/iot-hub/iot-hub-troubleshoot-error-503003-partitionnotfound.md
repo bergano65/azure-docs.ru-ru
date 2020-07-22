@@ -9,10 +9,9 @@ ms.topic: troubleshooting
 ms.date: 01/30/2020
 ms.author: jlian
 ms.openlocfilehash: 438476171597c44dcc54d85bf1140f0a52bb2e58
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76960663"
 ---
 # <a name="503003-partitionnotfound"></a>503003 PartitionNotFound
@@ -23,7 +22,7 @@ ms.locfileid: "76960663"
 
 Запросы в центр Интернета вещей завершаются ошибкой **503003 партитионнотфаунд**.
 
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 
 Эта ошибка является внутренней для центра Интернета вещей и, вероятно, является временной. См. статью [ошибка внутреннего сервера центра Интернета вещей](iot-hub-troubleshoot-error-500xxx-internal-errors.md#cause).
 

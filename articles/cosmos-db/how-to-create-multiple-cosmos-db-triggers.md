@@ -3,21 +3,21 @@ title: Создание нескольких независимых тригге
 description: Из этой статьи вы узнаете, как настроить несколько независимых активаций функций Azure для Cosmos DB, чтобы создать архитектуры на основе событий.
 author: ealsur
 ms.service: cosmos-db
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 07/17/2019
 ms.author: maquaran
-ms.openlocfilehash: 32b680acdee29bf97a0e132fee93d5fee3377245
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 695513bb572f5931ee1f0fa54a330cfa0574fc21
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77604944"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85261602"
 ---
 # <a name="create-multiple-azure-functions-triggers-for-cosmos-db"></a>Создание несколько активаций функций Azure для Cosmos DB
 
 В этой статье описывается, как настроить несколько активаций функций Azure для Cosmos DB, чтобы работать в параллельном режиме и независимого реагирования на изменения.
 
-![Бессерверные функции на основе событий, которые работают с активацией функций Azure для Cosmos DB и совместно используют контейнер аренды](./media/change-feed-functions/multi-trigger.png)
+:::image type="content" source="./media/change-feed-functions/multi-trigger.png" alt-text="Бессерверные функции на основе событий, которые работают с активацией функций Azure для Cosmos DB и совместно используют контейнер аренды" border="false":::
 
 ## <a name="event-based-architecture-requirements"></a>Требования к архитектуре на основе событий
 

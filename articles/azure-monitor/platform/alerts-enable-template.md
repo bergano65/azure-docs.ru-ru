@@ -6,12 +6,12 @@ ms.author: robb
 ms.topic: conceptual
 ms.date: 03/09/2020
 ms.subservice: alerts
-ms.openlocfilehash: 5a868167f80aaa735e4fbeab32fd1d308dd6da1f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: fef975c9822cd44b94074874621e1c87a60ed27d
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81114433"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86505454"
 ---
 # <a name="create-a-classic-metric-alert-with-a-resource-manager-template"></a>Создание классического оповещения метрики с помощью шаблона Resource Manager
 > [!WARNING]
@@ -176,7 +176,7 @@ ms.locfileid: "81114433"
 }
 ```
 
-Описание схемы и свойств правила генерации оповещений [доступно здесь](https://msdn.microsoft.com/library/azure/dn933805.aspx).
+Описание схемы и свойств правила генерации оповещений [доступно здесь](/rest/api/monitor/alertrules).
 
 ## <a name="resource-manager-template-for-a-resource-with-a-classic-metric-alert"></a>Шаблон Resource Manager для ресурса с классическим оповещением на основе метрик
 Оповещение в шаблоне Resource Manager чаще всего используется, чтобы создать оповещение при создании ресурса. Например, может потребоваться задавать правило "Загрузка ЦП > 80 %" при каждом развертывании виртуальной машины. Для этого следует добавить в массив ресурсов для шаблона виртуальной машины правило генерации оповещений в качестве ресурса, а также добавить зависимость с помощью свойства `dependsOn` , указав в нем идентификатор ресурса виртуальной машины. Ниже приведен полный пример, который создает виртуальную машину Windows и добавляет оповещение, которое уведомляет администраторов подписки, когда загрузка ЦП превышает 80 %.
@@ -398,8 +398,7 @@ ms.locfileid: "81114433"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Next Steps
 * [Узнайте больше об оповещениях](alerts-overview.md)
 * [Добавьте параметры диагностики](../../azure-monitor/platform/diagnostic-settings-template.md) в шаблон Resource Manager.
 * Синтаксис и свойства JSON см. в справочнике по шаблонам [Microsoft.Insights/metricAlerts](/azure/templates/microsoft.insights/alertrules).
-

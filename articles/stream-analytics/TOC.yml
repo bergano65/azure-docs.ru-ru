@@ -13,7 +13,10 @@
       items:
         - name: Портал Azure
           href: stream-analytics-quick-create-portal.md
+        - name: Azure CLI
+          href: quick-create-azure-cli.md
         - name: Шаблон ARM
+          displayName: Resource Manager
           href: quick-create-azure-resource-manager.md
         - name: PowerShell
           href: stream-analytics-quick-create-powershell.md
@@ -29,7 +32,7 @@
       href: stream-analytics-with-azure-functions.md
     - name: 3. Развертывание с использованием CI/CD в Azure Pipelines
       href: stream-analytics-tools-visual-studio-cicd-vsts.md
-    - name: '4. Выполнение определяемой пользователем функции C#'
+    - name: 4. Выполнение определяемой пользователем функции C#
       href: stream-analytics-edge-csharp-udf.md
     - name: 5. Создание пользовательского десериализатора .NET
       href: custom-deserializer.md
@@ -48,6 +51,10 @@
       href: feature-comparison.md
     - name: Разработка в локальной среде
       href: develop-locally.md
+    - name: Безопасность
+      items:
+        - name: Базовые средства безопасности
+          href: security-baseline.md
     - name: Типы входных данных для задания
       items:
         - name: Общие сведения о входных данных
@@ -77,10 +84,12 @@
           href: stream-analytics-javascript-user-defined-functions.md
         - name: UDA JavaScript
           href: stream-analytics-javascript-user-defined-aggregates.md
-        - name: 'Определяемая пользователем функция C#'
+        - name: Определяемая пользователем функция C#
           href: stream-analytics-edge-csharp-udf-methods.md
         - name: Определяемая пользователем функция в машинном обучении
           href: machine-learning-udf.md
+        - name: Отладка определяемых пользователем функций
+          href: debug-user-defined-functions.md
     - name: Оптимизация задания Stream Analytics
       items:
         - name: Обзор и настройка единиц потоковой передачи
@@ -114,6 +123,8 @@
   items:
     - name: Управление
       items:
+        - name: Задания автомасштабирования
+          href: stream-analytics-autoscale.md
         - name: Обновление учетных данных
           href: stream-analytics-login-credentials-inputs-outputs.md
         - name: Настройка политик упорядочения событий
@@ -221,6 +232,8 @@
           href: visual-studio-code-local-run.md
         - name: Локальное тестирование с использованием фактических данных
           href: visual-studio-code-local-run-live-input.md
+        - name: Отладка запросов с использованием схемы заданий
+          href: debug-locally-using-job-diagram-vs-code.md
         - name: Настройка конвейера CI/CD
           href: setup-cicd-vs-code.md
         - name: Обзор заданий
@@ -611,6 +624,8 @@
       href: /rest/api/streamanalytics
     - name: Шаблон Resource Manager
       href: /azure/templates/microsoft.streamanalytics/allversions
+    - name: Azure CLI
+      href: /cli/azure/ext/stream-analytics/stream-analytics
 - name: Ресурсы
   items:
     - name: Предварительные версии Stream Analytics

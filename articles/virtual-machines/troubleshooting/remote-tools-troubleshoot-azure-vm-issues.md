@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: azurecli
 ms.date: 01/11/2018
 ms.author: delhan
-ms.openlocfilehash: d29b2b7c2b9194f20afe4c74d117847f0e343b12
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 5abb509f1753c65554bd74ababe9acca4103c15a
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80422607"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86509092"
 ---
 # <a name="use-remote-tools-to-troubleshoot-azure-vm-issues"></a>Использование инструментов удаленного управления для устранения неполадок виртуальной машины Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "80422607"
 
 ## <a name="remote-cmd"></a>Удаленный сеанс командной строки
 
-Скачайте [PsExec](https://docs.microsoft.com/sysinternals/downloads/psexec). Подключитесь к виртуальной машине с помощью следующей команды.
+Скачайте [PsExec](/sysinternals/downloads/psexec). Подключитесь к виртуальной машине с помощью следующей команды.
 
 ```cmd
 psexec \\<computer>-u user -s cmd
@@ -39,7 +39,7 @@ psexec \\<computer>-u user -s cmd
 
 >[!NOTE]
 >* Команда должна выполняться на компьютере, который находится в той же виртуальной сети.
->* Для замены \<> компьютера можно использовать DIP или hostname.
+>* Вместо \<computer> можно указать DIP-адрес или имя узла.
 >* Параметр -s гарантирует, что команда вызывается с помощью системной учетной записи (с разрешениями администратора).
 >* PsExec использует TCP-порты 135 и 445. В результате два порта должны быть открыты в брандмауэре.
 
@@ -212,9 +212,9 @@ Invoke-Command -ComputerName "<<COMPUTERNAME>" -ScriptBlock {"<<SCRIPT BLOCK>>"}
 >
 >Для виртуальных машин RDFE необходима конечная точка с частным портом (5986) и общедоступным портом. Также необходимо открыть общедоступный порт на NSG.
 
-1. Из другой виртуальной машины в той же виртуальной сети откройте редактор реестра (regedit. exe).
+1. На другой виртуальной машине в той же виртуальной сети откройте редактор реестра (regedit.exe).
 
-2. Выберите **файл** > **Подключить сетевой реестр**.
+2. Выберите **файл**  >  **Подключить сетевой реестр**.
 
    ![Редактор реестра](./media/remote-tools-troubleshoot-azure-vm-issues/remote-registry.png) 
 
@@ -249,11 +249,9 @@ Invoke-Command -ComputerName "<<COMPUTERNAME>" -ScriptBlock {"<<SCRIPT BLOCK>>"}
 
 5. Внесите необходимые изменения в службы.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения о командлете Enter-PSSession см. в разделе [Enter-PSSession](https://technet.microsoft.com/library/hh849707.aspx).
-- Дополнительные сведения о расширении пользовательских скриптов для Windows с помощью классической модели развертывания см. в разделе [расширение пользовательских скриптов для Windows](../extensions/custom-script-classic.md).
+- Дополнительные сведения о командлете Enter-PSSession см. в разделе [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-5.1).
+- Дополнительные сведения о расширении пользовательских скриптов для Windows с помощью классической модели развертывания см. в разделе [расширение пользовательских скриптов для Windows](../extensions/custom-script-windows.md).
 - PsExec является частью [набора PSTools](https://download.sysinternals.com/files/PSTools.zip).
-- Дополнительные сведения о пакете PSTools см. в разделе [PsTools](https://docs.microsoft.com/sysinternals/downloads/pstools).
-
-
+- Дополнительные сведения о пакете PSTools см. в разделе [PsTools](/sysinternals/downloads/pstools).

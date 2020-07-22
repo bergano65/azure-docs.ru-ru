@@ -5,16 +5,16 @@ services: synapse-analytics
 author: saveenr
 ms.service: synapse-analytics
 ms.topic: overview
-ms.subservice: ''
+ms.subservice: overview
 ms.date: 04/15/2020
 ms.author: saveenr
 ms.reviewer: jrasnick
-ms.openlocfilehash: 5c458b1c04a7f3be1a43d725591426e619286b7d
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 96bb624472aa2053599765d5bfedeb96339d0973
+ms.sourcegitcommit: 374d1533ea2f2d9d3f8b6e6a8e65c6a5cd4aea47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83587887"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85808052"
 ---
 # <a name="what-is-azure-synapse-analytics-workspaces-preview"></a>Что такое Azure Synapse Analytics (предварительная версия рабочих областей)?
 
@@ -63,7 +63,7 @@ Azure Synapse устраняет традиционные технологиче
 
 Azure Synapse поставляется с тем же механизмом интеграции данных и процессом взаимодействия с пользователем, что и Фабрика данных Azure. Это позволяет создавать многофункциональные конвейеры данных без использования отдельной подсистемы оркестрации:
 
-* Перемещение данных между Synapse и более чем 85 локальными источниками данных.
+* Перемещение данных между Azure Synapse и более чем 90 локальными источниками данных.
 * Управление записными книжками, конвейерами, заданиями Spark, сценариями SQL, хранимыми процедурами.
 * Извлечение, преобразование и загрузка без кода с помощью действий потока данных.
 
@@ -87,6 +87,6 @@ Azure Synapse предоставляет предприятиям единый �
 
 * [Создание рабочей области](quickstart-create-workspace.md)
 * [Использование Synapse Studio](quickstart-synapse-studio.md)
-* [Создание пула SQL](quickstart-create-sql-pool.md)
+* [Создание пула SQL](quickstart-create-sql-pool-portal.md)
 * [Использование службы SQL по запросу](quickstart-sql-on-demand.md)
-* [Создание пула Apache Spark](quickstart-create-apache-spark-pool.md)
+* [Создание пула Apache Spark](quickstart-create-apache-spark-pool-portal.md)

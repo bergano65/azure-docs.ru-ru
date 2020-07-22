@@ -7,17 +7,17 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 04/22/2019
 ms.author: cherylmc
-ms.openlocfilehash: debc5d91478d0a5c3cc16c7b09f5713ba09b467e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 37c8b760ada12bd8f54c78ac6a0ea228d113b6c2
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74080098"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86536992"
 ---
 # <a name="expressroute-qos-requirements"></a>Требования к качеству обслуживания для ExpressRoute
 В Skype для бизнеса имеются различные рабочие нагрузки, требующие дифференцированного подхода к качеству обслуживания. Если вы планируете использовать голосовые службы с помощью ExpressRoute, то необходимо соблюдать указанные ниже требования.
 
-![](./media/expressroute-qos/expressroute-qos.png)
+![Схема, на которой показаны службы Voice, идущие через ExpressRoute.](./media/expressroute-qos/expressroute-qos.png)
 
 > [!NOTE]
 > Требования к качеству обслуживания применяются только к пирингу Майкрософт. Значения DSCP в сетевом трафике, полученном через общедоступный или частный пиринг Azure, будут сброшены до "0". 
@@ -28,10 +28,10 @@ ms.locfileid: "74080098"
 
 | **Класс трафика** | **Обработка (пометки DSCP)** | **Рабочие нагрузки Microsoft Teams и Skype для бизнеса** |
 | --- | --- | --- |
-| **Счета** |EF (46) |Skype, Microsoft Teams или Lync Voice |
-| **Interactive (Интерактивные)** |AF41 (34) |Видео, VBSS |
+| **Голосовая связь** |EF (46) |Skype, Microsoft Teams или Lync Voice |
+| **Интерактивный** |AF41 (34) |Видео, VBSS |
 | |AF21 (18) |Совместный доступ к приложениям | 
-| **Параметры** |AF11 (10) |Передача файлов |
+| **Default** |AF11 (10) |Передача файлов |
 | |CS0 (0) |Другие варианты |
 
 * Вам необходимо классифицировать рабочие нагрузки и пометить правильные значения DSCP. Следуйте указанным [здесь](https://docs.microsoft.com/SkypeForBusiness/manage/network-management/qos/configuring-port-ranges-for-your-skype-clients#configure-quality-of-service-policies-for-clients-running-on-windows-10) инструкциям по настройке пометок DSCP в сети.

@@ -9,10 +9,10 @@ services: iot-accelerators
 ms.date: 10/02/2018
 ms.topic: conceptual
 ms.openlocfilehash: c90f4166bf88a8df18a93e84903c93461b904d2c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82187268"
 ---
 # <a name="add-a-custom-page-to-the-remote-monitoring-solution-accelerator-web-ui"></a>Добавление пользовательской страницы в веб-интерфейс акселератора решения для удаленного мониторинга
@@ -28,7 +28,7 @@ ms.locfileid: "82187268"
 
 Чтобы выполнить действия, описанные в этом руководстве, необходимо установить следующее ПО на локальный компьютер разработки:
 
-- [Git](https://git-scm.com/downloads)
+- [Git](https://git-scm.com/downloads);
 - [Node.js](https://nodejs.org/download/)
 
 ## <a name="prepare-a-local-development-environment-for-the-ui"></a>Подготовка локальной среды разработки для пользовательского интерфейса
@@ -187,10 +187,10 @@ npm start
     REACT_APP_BASE_SERVICE_URL=https://{your solution name}.azurewebsites.net/
     ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из статьи вы узнали о ресурсах, которые могут помочь вам при настройке пользовательского веб-интерфейса в акселераторе решения для удаленного мониторинга.
 
 Вы определили страницу. Теперь необходимо [добавить пользовательскую службу в веб-интерфейс акселератора решения для удаленного мониторинга](iot-accelerators-remote-monitoring-customize-service.md), которая извлекает данные для отображения в пользовательском интерфейсе.
 
-Более подробные сведения об акселераторе решения для удаленного мониторинга см. в [этой статье](iot-accelerators-remote-monitoring-sample-walkthrough.md).
+Дополнительные сведения об ускорителе решений для удаленного мониторинга см. в разделе [архитектура удаленного мониторинга](iot-accelerators-remote-monitoring-sample-walkthrough.md).

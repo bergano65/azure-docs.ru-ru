@@ -9,10 +9,9 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: a3eed033ba6a1a6f9237116a53ec7751ae906fe4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77025356"
 ---
 # <a name="ensure-application-high-availability-when-running-in-vmware-on-azure"></a>Обеспечение высокой доступности приложений при работе в VMware в Azure
@@ -26,7 +25,7 @@ ms.locfileid: "77025356"
 | Сбой сетевого адаптера | YES | Избыточный сетевой адаптер, Быстрая замена сбойного узла
 | Сбой питания узла | YES | Избыточный источник питания |  |  |
 | Сбой узла ESXi | YES | Быстрая замена сбойного узла | [Высокая доступность VMware vSphere](https://www.vmware.com/products/vsphere/high-availability.html) |  |  |
-| Сбой виртуальной машины | YES | [Балансировщики нагрузки](load-balancers.md)  | [Высокая доступность VMware vSphere](https://www.vmware.com/products/vsphere/high-availability.html) | Azure Load Balancer для виртуальных машин VMware без отслеживания состояния |
+| Сбой виртуальной машины | YES | [Подсистемы балансировки нагрузки](load-balancers.md)  | [Высокая доступность VMware vSphere](https://www.vmware.com/products/vsphere/high-availability.html) | Azure Load Balancer для виртуальных машин VMware без отслеживания состояния |
 | Сбой порта конечного коммутатора | YES | Избыточная сетевая карта |  |  |
 | Сбой конечного параметра | YES | Избыточные конечные коммутаторы |  |  |
 | Сбой в стойке | YES | Группы размещения |  |  |
@@ -47,7 +46,7 @@ ms.locfileid: "77025356"
 
 ## <a name="availability-zones"></a>Зоны доступности
 
-Зоны доступности — это высокодоступное предложение, защищающее приложения и данные от сбоев центров обработки данных. Зоны доступности — это специальные физические расположения в регионе Azure. Каждая зона состоит из одного или нескольких центров обработки данных, оснащенных независимыми системами электроснабжения, охлаждения и сетевого взаимодействия. У каждого региона есть одна зона доступности. Дополнительные сведения см. [в статье что такое зоны доступности в Azure?](../availability-zones/az-overview.md).
+Зоны доступности являются предложением, обеспечивающим высокий уровень доступности и защищающим приложения и данные от сбоев центров обработки данных. Зоны доступности — это специальные физические расположения в регионе Azure. Каждая зона состоит из одного или нескольких центров обработки данных, оснащенных независимыми системами электроснабжения, охлаждения и сетевого взаимодействия. У каждого региона есть одна зона доступности. Дополнительные сведения см. [в статье что такое зоны доступности в Azure?](../availability-zones/az-overview.md).
 
 ## <a name="redundant-azure-expressroute-circuits"></a>Избыточные каналы ExpressRoute Azure
 

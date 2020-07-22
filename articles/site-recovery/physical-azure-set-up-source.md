@@ -8,18 +8,18 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 07/03/2019
 ms.author: ramamill
-ms.openlocfilehash: 902c14211e91a1500c6b50cd790b347e337c4f70
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d2cc3627222bcd8de5a5cb1b5c83b04c5d4ef880
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79257879"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86130193"
 ---
 # <a name="set-up-the-configuration-server-for-disaster-recovery-of-physical-servers-to-azure"></a>Настройка сервера конфигурации для аварийного восстановления физических серверов в Azure
 
 В этой статье приведены сведения о настройке локальной среды для запуска репликации физических серверов под управлением Windows или Linux в Azure.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что у вас уже имеется:
 - Хранилище служб восстановления в [портал Azure](https://portal.azure.com "Портал Azure").
@@ -36,7 +36,7 @@ ms.locfileid: "79257879"
 ## <a name="choose-your-protection-goals"></a>Выбор целевых объектов для защиты
 
 1. На портале Azure откройте колонку **Хранилища служб восстановления** и выберите свое хранилище.
-2. В меню **ресурсов** хранилища выберите **Начало работы** > **Site Recovery** > **Шаг 1. Подготовка инфраструктуры** > **цель защиты**.
+2. В меню **ресурсов** хранилища выберите **Начало работы**  >  **Site Recovery**  >  **Шаг 1. Подготовка инфраструктуры**  >  **цель защиты**.
 
     ![Выбор цели](./media/physical-azure-set-up-source/choose-goals.png)
 3. На странице **Цель защиты** выберите **To Azure** (В Azure), а затем — **Без виртуализации или иное**. Нажмите кнопку **ОК**.
@@ -58,7 +58,7 @@ ms.locfileid: "79257879"
 #### <a name="run-azure-site-recovery-unified-setup"></a>Выполнение единой установки Azure Site Recovery
 
 > [!TIP]
-> Если системное время на компьютере отличается от местного более чем на 5 минут, то регистрация сервера конфигурации завершится сбоем. Синхронизируйте системные часы с [сервером времени](https://technet.microsoft.com/windows-server-docs/identity/ad-ds/get-started/windows-time-service/windows-time-service) перед началом установки.
+> Если системное время на компьютере отличается от местного более чем на 5 минут, то регистрация сервера конфигурации завершится сбоем. Синхронизируйте системные часы с [сервером времени](/windows-server/networking/windows-time-service/windows-time-service-top) перед началом установки.
 
 [!INCLUDE [site-recovery-add-configuration-server](../../includes/site-recovery-add-configuration-server.md)]
 
@@ -71,6 +71,6 @@ ms.locfileid: "79257879"
 [!INCLUDE [site-recovery-vmware-to-azure-install-register-issues](../../includes/site-recovery-vmware-to-azure-install-register-issues.md)]
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Следующий этап заключается в [настройке целевой среды](physical-azure-set-up-target.md) в Azure.

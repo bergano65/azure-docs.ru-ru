@@ -1,22 +1,22 @@
 ---
 title: Краткое руководство. Преобразование речи в текст в службе "Речь"
 titleSuffix: Azure Cognitive Services
-description: В этом кратком руководстве рассматривается использование пакета SDK службы речи для интерактивного перевода речи с одного языка на другой.
+description: В этом кратком руководстве показано, как использовать пакет SDK службы "Речь" для интерактивного перевода речи с одного языка на другой.
 services: cognitive-services
 author: trevorbye
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 02/10/2020
+ms.date: 06/25/2020
 ms.author: trbye
 zone_pivot_groups: programming-languages-set-two-with-js-spx
-ms.openlocfilehash: c6fff4ca8a28f8980e10c82393b77994d0ef9bdb
-ms.sourcegitcommit: 958f086136f10903c44c92463845b9f3a6a5275f
+ms.openlocfilehash: 52cc56e8cb09456050daed7ae8aa10817a93a292
+ms.sourcegitcommit: b56226271541e1393a4b85d23c07fd495a4f644d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83715034"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85391355"
 ---
 # <a name="quickstart-translate-speech-to-text"></a>Краткое руководство. Преобразование речи в текст
 

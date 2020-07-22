@@ -1,37 +1,31 @@
 ---
-title: Использование шаблонов Azure Resource Manager для подключения Управление обновлениями | Документация Майкрософт
-description: Вы можете использовать шаблон Azure Resource Manager для подключения решения Управление обновлениями службы автоматизации Azure.
+title: Включение Управления обновлениями с помощью шаблона Azure Resource Manager | Документация Майкрософт
+description: В этой статье описывается, как использовать шаблон Azure Resource Manager для включения Управления обновлениями.
 ms.service: automation
 ms.subservice: update-management
 ms.topic: conceptual
 author: mgoedtel
 ms.author: magoedte
-ms.date: 04/24/2020
-ms.openlocfilehash: dd8706c1e95e6b1e4ca4a38d4a336f6186464696
-ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
+ms.date: 06/10/2020
+ms.openlocfilehash: ad9029b44ffb0c98bad58bbf012eb19d084d5446
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82872203"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86185761"
 ---
-# <a name="onboard-update-management-solution-using-azure-resource-manager-template"></a>Подключение Управление обновленияминого решения с помощью шаблона Azure Resource Manager
+# <a name="enable-update-management-using-azure-resource-manager-template"></a>Включение Управления обновлениями с помощью шаблона Azure Resource Manager
 
-Вы можете использовать [шаблоны Azure Resource Manager](../azure-resource-manager/templates/template-syntax.md) , чтобы включить решение Управление обновлениями службы автоматизации Azure в группе ресурсов. В этой статье представлен пример шаблона, который автоматизирует следующие задачи:
+Для включения Управления обновлениями службы автоматизации Azure в группе ресурсов можно использовать [шаблоны Azure Resource Manager](../azure-resource-manager/templates/template-syntax.md). В этой статье приводится пример шаблона, который автоматизирует выполнение следующих задач:
 
-* Создание рабочей области Log Analytics Azure Monitor.
-* Создание учетной записи службы автоматизации Azure.
-* Связывание учетной записи службы автоматизации с рабочей областью Log Analytics, если она еще не связана.
-* Подключение решения Управление обновлениями службы автоматизации Azure.
+* создание рабочей области Log Analytics в Azure Monitor;
+* создание учетной записи службы автоматизации Azure;
+* связывание учетной записи службы автоматизации с рабочей областью Log Analytics, если такая связь отсутствует;
+* включение Управления обновлениями.
 
-Шаблон не автоматизирует подключение одной или нескольких виртуальных машин Azure или других.
+Этот шаблон не позволяет автоматизировать включение Управление обновлениями на одной или нескольких виртуальных машинах Azure или не в Azure.
 
-Если у вас уже есть рабочая область Log Analytics и учетная запись службы автоматизации, развернутая в поддерживаемом регионе в вашей подписке, они не будут связаны. В рабочей области еще не развернуто решение Управление обновлениями. Использование этого шаблона позволяет успешно создать ссылку и развернуть решение Управление обновлениями. 
-
->[!NOTE]
->Пользователь **нксаутоматион** , встроенный в состав Управление обновлениями в Linux, выполняет только подписанные модули Runbook.
-
->[!NOTE]
->Эта статья была изменена и теперь содержит сведения о новом модуле Az для Azure PowerShell. Вы по-прежнему можете использовать модуль AzureRM, исправления ошибок для которого будут продолжать выпускаться как минимум до декабря 2020 г. Дополнительные сведения о совместимости модуля Az с AzureRM см. в статье [Introducing the new Azure PowerShell Az module](https://docs.microsoft.com/powershell/azure/new-azureps-module-az?view=azps-3.5.0) (Знакомство с новым модулем Az для Azure PowerShell). Инструкции по установке модуля Az в гибридной рабочей роли Runbook см. в статье об [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azps-3.5.0). Чтобы обновить модули в учетной записи службы автоматизации, см. руководство по [обновлению модулей Azure PowerShell в службе автоматизации Azure](automation-update-azure-modules.md).
+Если у вас уже есть рабочая область Log Analytics и учетная запись службы автоматизации, развернутая в поддерживаемом регионе в вашей подписке, они не связаны между собой. Использование этого шаблона позволяет успешно создавать ссылку и развертывать Управление обновлениями.
 
 ## <a name="api-versions"></a>Версии API
 
@@ -39,44 +33,44 @@ ms.locfileid: "82872203"
 
 | Ресурс | Тип ресурса | Версия API |
 |:---|:---|:---|
-| Рабочая область | workspaces | 2017-03-15-preview |
-| Учетная запись службы автоматизации | служба автоматизации | 2015-10-31 | 
+| Рабочая область | workspaces | 2020-03-01 — предварительная версия |
+| Учетная запись службы автоматизации | служба автоматизации | 2018-06-30 | 
 | Решение | solutions | 2015-11-01-preview |
 
-## <a name="before-using-the-template"></a>Перед использованием шаблона
+## <a name="before-using-the-template"></a>Перед применением шаблона
 
-Если вы решили установить и использовать PowerShell локально, для работы с этой статьей требуется модуль Azure PowerShell AZ. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если необходимо выполнить обновление, см. статью об [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если вы используете PowerShell локально, вам также потребуется выполнить команду [Connect-азаккаунт](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount?view=azps-3.7.0) , чтобы создать подключение к Azure. При использовании Azure PowerShell развертывание использует [New-азресаурцеграупдеплоймент](/powershell/module/az.resources/new-azresourcegroupdeployment).
+Чтобы установить и использовать PowerShell локально для выполнения задач из этой статьи, вам понадобится модуль Az Azure PowerShell. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если необходимо выполнить обновление, см. статью об [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount?view=azps-3.7.0), чтобы создать подключение к Azure. В Azure PowerShell развертывание использует [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment).
 
-Если вы решили установить и использовать CLI локально, для работы с этой статьей требуется Azure CLI версии 2.1.0 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). При использовании Azure CLI в этом развертывании используется команду [AZ Group Deployment Create](https://docs.microsoft.com/cli/azure/group/deployment?view=azure-cli-latest#az-group-deployment-create). 
+Если вы решили установить и использовать интерфейс командной строки локально, для работы с этой статьей вам понадобится Azure CLI 2.1.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest). При работе с Azure CLI это развертывание использует [az group deployment create](/cli/azure/group/deployment?view=azure-cli-latest#az-group-deployment-create). 
 
-Шаблон JSON настроен для запроса:
+Во время работы с шаблоном JSON вам нужно будет ввести следующие сведения:
 
-* Имя рабочей области
-* Регион, в котором создается рабочая область
-* Имя учетной записи службы автоматизации
-* Регион, в котором создается учетная запись
+* имя рабочей области;
+* Регион, в котором создается рабочая область.
+* , Чтобы включить разрешения для ресурсов или рабочих областей.
+* Имя учетной записи службы автоматизации.
+* Регион, в котором создается учетная запись.
 
-Шаблон JSON задает значение по умолчанию для других параметров, которые, скорее всего, будут использоваться для стандартной конфигурации в вашей среде. Шаблон можно сохранить в учетной записи хранения Azure для общего доступа в Организации. Дополнительные сведения о работе с шаблонами см. [в статье Развертывание ресурсов с помощью шаблонов диспетчер ресурсов и Azure CLI](../azure-resource-manager/templates/deploy-cli.md).
+Шаблон в формате JSON указывает значения по умолчанию для других параметров, которые в вашей среде скорее всего будут использоваться в стандартной конфигурации. Шаблон можно сохранить в учетной записи хранения Azure для совместного использования в пределах организации. Дополнительную информацию о работе с шаблонами см. в руководстве [Развертывание ресурсов с помощью шаблонов ARM и Azure CLI](../azure-resource-manager/templates/deploy-cli.md).
 
-Для следующих параметров в шаблоне задано значение по умолчанию для рабочей области Log Analytics:
+Следующие параметры в шаблоне получают стандартное значение для рабочей области Log Analytics:
 
 * sku — по умолчанию используется новый тарифный план с платой за гигабайт, выпущенный в апреле 2018 года.
-* срок хранения данных — по умолчанию — 30 дней.
-* резервирование емкости — по умолчанию — 100 ГБ
+* Срок хранения данных — 30 дней по умолчанию.
 
 >[!WARNING]
 >При создании или настройке рабочей области Log Analytics в подписке, использующей модель ценообразования от апреля 2018 года, доступна только ценовая категория **PerGB2018**.
 >
 
-Шаблон JSON определяет значения по умолчанию для других параметров, которые, скорее всего, будут использоваться в качестве стандартной конфигурации в вашей среде. Шаблон можно сохранить в учетной записи хранения Azure для общего доступа в Организации. Дополнительные сведения о работе с шаблонами см. [в статье Развертывание ресурсов с помощью шаблонов диспетчер ресурсов и Azure CLI](../azure-resource-manager/templates/deploy-cli.md).
+Шаблон в формате JSON указывает значения по умолчанию для других параметров, которые, скорее всего, будут использоваться в качестве стандартной конфигурации в вашей среде. Шаблон можно сохранить в учетной записи хранения Azure для совместного использования в пределах организации. Дополнительную информацию о работе с шаблонами см. в руководстве [Развертывание ресурсов с помощью шаблонов ARM и Azure CLI](../azure-resource-manager/templates/deploy-cli.md).
 
-Если вы не знакомы со службой автоматизации Azure и Azure Monitor, важно понимать следующие сведения о конфигурации, чтобы избежать ошибок при попытке создать, настроить и использовать Log Analytics рабочую область, связанную с новой учетной записью службы автоматизации.
+Если вы не работали со службой автоматизации Azure и Azure Monitor, вам нужно ознакомиться с указанными ниже сведениями о конфигурации, чтобы избежать ошибок при попытке создать, настроить и использовать рабочую область Log Analytics, связанную с новой учетной записью службы автоматизации.
 
-* Ознакомьтесь с [дополнительными сведениями](../azure-monitor/platform/template-workspace-configuration.md#create-a-log-analytics-workspace) , чтобы полностью понять параметры конфигурации рабочей области, такие как режим управления доступом, ценовая категория, срок хранения и уровень резервирования емкости.
+* Просмотрите [дополнительные сведения](../azure-monitor/platform/template-workspace-configuration.md#create-a-log-analytics-workspace), чтобы узнать о вариантах конфигурации рабочей области, таких как режим управления доступом, ценовая категория, период удержания и уровень резервирования мощности.
 
-* Так как для связывания рабочей области с Log Analytics и учетной записью службы автоматизации в подписке поддерживаются только определенные регионы, проверьте [сопоставления рабочей области](how-to/region-mappings.md) , чтобы указать поддерживаемые регионы в строке или файле параметров.
+* Так как для связывания рабочей области с Log Analytics и учетной записью службы автоматизации в подписке поддерживаются только определенные регионы, проверьте [сопоставления рабочих областей](how-to/region-mappings.md), чтобы указать поддерживаемые регионы в строке или файле параметров.
 
-* Если вы не знакомы с Azure Monitor журналами и еще не развернули рабочую область, ознакомьтесь с руководством по [проектированию рабочей области](../azure-monitor/platform/design-logs-deployment.md) , чтобы узнать об управлении доступом, и Узнайте о стратегиях реализации, которые мы рекомендуем использовать для вашей организации.
+* Если вы не работали с журналами Azure Monitor и еще не развертывали рабочую область, ознакомьтесь с рекомендациями по [проектированию рабочей области](../azure-monitor/platform/design-logs-deployment.md), чтобы узнать о механизмах управления доступом и стратегиях реализации, которые мы рекомендуем использовать в вашей организации.
 
 ## <a name="deploy-template"></a>Развертывание шаблона
 
@@ -117,18 +111,17 @@ ms.locfileid: "82872203"
                 "description": "Number of days of retention. Workspaces in the legacy Free pricing tier can only have 7 days."
             }
         },
-        "immediatePurgeDataOn30Days": {
-            "type": "bool",
-            "defaultValue": "[bool('false')]",
-            "metadata": {
-                "description": "If set to true when changing retention to 30 days, older data will be immediately deleted. Use this with extreme caution. This only applies when retention is being set to 30 days."
-            }
-        },
         "location": {
             "type": "string",
             "metadata": {
                 "description": "Specifies the location in which to create the workspace."
             }
+        },
+        "resourcePermissions": {
+              "type": "bool",
+              "metadata": {
+                "description": "true to use resource or workspace permissions. false to require workspace permissions."
+              }
         },
         "automationAccountName": {
             "type": "string",
@@ -153,13 +146,11 @@ ms.locfileid: "82872203"
         {
         "type": "Microsoft.OperationalInsights/workspaces",
             "name": "[parameters('workspaceName')]",
-            "apiVersion": "2017-03-15-preview",
+            "apiVersion": "2020-03-01-preview",
             "location": "[parameters('location')]",
             "properties": {
                 "sku": {
-                    "Name": "[parameters('sku')]",
-                    "name": "CapacityReservation",
-                    "capacityReservationLevel": 100
+                    "name": "[parameters('sku')]",
                 },
                 "retentionInDays": "[parameters('dataRetention')]",
                 "features": {
@@ -171,7 +162,7 @@ ms.locfileid: "82872203"
             "resources": [
                 {
                     "apiVersion": "2015-11-01-preview",
-                    "location": "[resourceGroup().location]",
+                    "location": "[parameters('location')]",
                     "name": "[variables('Updates').name]",
                     "type": "Microsoft.OperationsManagement/solutions",
                     "id": "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', resourceGroup().name, '/providers/Microsoft.OperationsManagement/solutions/', variables('Updates').name)]",
@@ -192,7 +183,7 @@ ms.locfileid: "82872203"
         },
         {
             "type": "Microsoft.Automation/automationAccounts",
-            "apiVersion": "2015-01-01-preview",
+            "apiVersion": "2018-06-30",
             "name": "[parameters('automationAccountName')]",
             "location": "[parameters('automationAccountLocation')]",
             "dependsOn": [],
@@ -204,10 +195,10 @@ ms.locfileid: "82872203"
             },
         },
         {
-            "apiVersion": "2015-11-01-preview",
+            "apiVersion": "2020-03-01-preview",
             "type": "Microsoft.OperationalInsights/workspaces/linkedServices",
             "name": "[concat(parameters('workspaceName'), '/' , 'Automation')]",
-            "location": "[resourceGroup().location]",
+            "location": "[parameters('location')]",
             "dependsOn": [
                 "[concat('Microsoft.OperationalInsights/workspaces/', parameters('workspaceName'))]",
                 "[concat('Microsoft.Automation/automationAccounts/', parameters('automationAccountName'))]"
@@ -220,11 +211,11 @@ ms.locfileid: "82872203"
     }
     ```
 
-2. Отредактируйте шаблон с учетом ваших требований. Вместо передачи параметров в виде встроенных значений рекомендуется создать [файл параметров Диспетчер ресурсов](../azure-resource-manager/templates/parameter-files.md) .
+2. Отредактируйте шаблон с учетом ваших требований. Вместо встраивания параметров в строку запуска попробуйте создать [файл параметров Resource Manager](../azure-resource-manager/templates/parameter-files.md).
 
-3. Сохраните этот файл в локальную папку как **деплойумсолутионтемплате. JSON**.
+3. Сохраните этот файл с именем **deployUMSolutiontemplate.json** в локальной папке.
 
-4. Теперь вы можете развернуть этот шаблон. Можно использовать либо PowerShell, либо Azure CLI. При появлении запроса на ввод имени рабочей области и учетной записи службы автоматизации укажите имя, которое глобально уникально для всех подписок Azure.
+4. Теперь вы можете развернуть этот шаблон. Это можно сделать с помощью PowerShell или Azure CLI. При появлении запроса на ввод имени рабочей области и учетной записи службы автоматизации укажите имя, глобально уникальное во всех подписках Azure.
 
     **PowerShell**
 
@@ -244,10 +235,8 @@ ms.locfileid: "82872203"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь, когда вы развернули Управление обновлениями решение, вы можете включить виртуальные машины для управления, проверить оценки обновлений и развернуть обновления, чтобы привести их в соответствие.
+* Дополнительные сведения об использовании Управления обновлениями для виртуальных машин см. в статье [Управление обновлениями и исправлениями для виртуальных машин Azure](automation-tutorial-update-management.md).
 
-- Из [учетной записи службы автоматизации Azure](automation-onboard-solutions-from-automation-account.md) для одной или нескольких компьютеров Azure и вручную для компьютеров, не относящихся к Azure.
+* Если рабочая область Log Analytics вам больше не нужна, выполните инструкции из статьи [Отмена связи рабочей области с учетной записью службы автоматизации для Управления обновлениями](automation-unlink-workspace-update-management.md).
 
-- Для одной виртуальной машины Azure со страницы виртуальной машины в портал Azure. Этот сценарий доступен для виртуальных машин [Linux](../virtual-machines/linux/tutorial-config-management.md#enable-update-management) и [Windows](../virtual-machines/windows/tutorial-config-management.md#enable-update-management) .
-
-- Для [нескольких виртуальных машин Azure](manage-update-multi.md) , выбрав их на странице **виртуальные машины** в портал Azure. 
+* Дополнительные сведения см. в статье [Удаление виртуальной машины из Управления обновлениями](automation-remove-vms-from-update-management.md).

@@ -1,22 +1,22 @@
 ---
-title: Подключение и запрос синапсе SQL с помощью Visual Studio и SSDT
-description: Используйте Visual Studio для запроса пула SQL с помощью Azure синапсе Analytics.
+title: Отправка запросов и подключение к Synapse SQL с помощью Visual Studio и SSDT
+description: Используйте Visual Studio для отправки запросов к пулу SQL с помощью Azure Synapse Analytics.
 services: synapse analytics
 author: azaricstefan
 ms.service: synapse-analytics
 ms.topic: conceptual
-ms.subservice: ''
+ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick
-ms.openlocfilehash: 3a8839609856bda5304712405ec57accb4afb095
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: 3f98a9d6dd79ba1da1a3be1e9e187ed4e8eca8ee
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83201678"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85962992"
 ---
-# <a name="connect-to-synapse-sql-with-visual-studio-and-ssdt"></a>Подключение к синапсе SQL с помощью Visual Studio и SSDT
+# <a name="connect-to-synapse-sql-with-visual-studio-and-ssdt"></a>Подключение к Synapse SQL с помощью Visual Studio и SSDT
 > [!div class="op_single_selector"]
 > * [Azure Data Studio](get-started-azure-data-studio.md)
 > * [Power BI](get-started-power-bi-professional.md)
@@ -26,21 +26,21 @@ ms.locfileid: "83201678"
 > 
 > 
 
-Используйте Visual Studio для запроса пула SQL с помощью Azure синапсе Analytics. Этот метод использует расширение SQL Server Data Tools (SSDT) в Visual Studio 2019. 
+Используйте Visual Studio для отправки запросов к пулу SQL с помощью Azure Synapse Analytics. В этом методе используется расширение SQL Server Data Tools (SSDT) в Visual Studio 2019. 
 
 > [!NOTE]
-> SQL по запросу (Предварительная версия) не поддерживается SSDT.
+> SQL по запросу (предварительная версия) не поддерживается SSDT.
 
 ## <a name="prerequisites"></a>Предварительные требования
-Для работы с этим руководством необходимо иметь следующие компоненты:
+Для работы с этим учебником необходимы следующие компоненты.
 
-* Существующий пул SQL. Если у вас ее нет, см. раздел [Создание пула SQL](../sql-data-warehouse/create-data-warehouse-portal.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) для выполнения этого предварительного требования.
-* Расширение SSDT для Visual Studio. Если у вас есть Visual Studio, этот компонент, вероятно, уже имеется. Инструкции по установке и доступные варианты установки см. в статье [Установка Visual Studio 2015 и SSDT для хранилища данных SQL](../sql-data-warehouse/sql-data-warehouse-install-visual-studio.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
-* Полное имя сервера SQL Server. Чтобы найти это, см. раздел [Подключение к пулу SQL](connect-overview.md).
+* Пул SQL. Если у вас его нет, [создайте пул SQL](../sql-data-warehouse/create-data-warehouse-portal.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
+* Расширение SSDT для Visual Studio. Скорее всего, этот компонент у вас уже есть, если на вашем компьютере установлено приложение Visual Studio. Инструкции по установке и доступные варианты установки приведены в статье [Начало работы с Visual Studio 2019](../sql-data-warehouse/sql-data-warehouse-install-visual-studio.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
+* Полное имя сервера SQL Server. Чтобы узнать имя сервера, ознакомьтесь с разделом [Подключение к Synapse SQL](connect-overview.md).
 
-## <a name="1-connect-to-sql-pool"></a>1. подключение к пулу SQL
-1. Запустите Visual Studio 2019.
-2. Откройте обозреватель объектов SQL Server. Для этого выберите **Просмотреть**  >  **Обозреватель объектов SQL Server**.
+## <a name="1-connect-to-sql-pool"></a>1. Подключение к пулу SQL
+1. Откройте Visual Studio 2019.
+2. Откройте обозреватель объектов SQL Server, выбрав **Вид** > **Обозреватель объектов SQL Server**.
    
     ![Обозреватель объектов SQL Server](./media/get-started-visual-studio/open-ssdt.png)
 3. Щелкните значок **Добавить SQL Server** .
@@ -51,15 +51,15 @@ ms.locfileid: "83201678"
     ![Подключение к серверу](./media/get-started-visual-studio/connection-dialog.png)
    
    * **Имя сервера**: Введите найденное **имя сервера** .
-   * **Проверка**подлинности: выберите **SQL Server аутентификацию** или **Active Directory встроенную проверку подлинности**:
+   * **Аутентификация**. Выберите **Проверка подлинности SQL Server** или **Встроенная проверка подлинности Active Directory**.
    * **Имя пользователя** и **пароль**. Если вы выбрали проверку подлинности SQL Server, введите имя пользователя и пароль.
    * Нажмите кнопку **Соединить**.
 5. Чтобы исследовать данные, разверните сервер Azure SQL Server. Вы можете просмотреть базы данных, связанные с сервером. Разверните AdventureWorksDW, чтобы просмотреть таблицы в образце базы данных.
    
     ![Обзор AdventureWorksDW](./media/get-started-visual-studio/explore-sample.png)
 
-## <a name="2-run-a-sample-query"></a>2. Запуск примера запроса
-Теперь, когда установлено соединение с базой данных, необходимо написать запрос.
+## <a name="2-run-a-sample-query"></a>2. Запуск пробного запроса
+Теперь, когда вы подключились к базе данных, следует написать запрос.
 
 1. Щелкните правой кнопкой мыши базу данных в обозревателе объектов SQL Server.
 2. Выберите **Создать запрос**. Откроется новое окно запроса.
@@ -70,7 +70,7 @@ ms.locfileid: "83201678"
     ```sql
     SELECT COUNT(*) FROM dbo.FactInternetSales;
     ```
-4. Выполните запрос. Для этого щелкните зеленую стрелку или воспользуйтесь сочетанием клавиш `CTRL`+`SHIFT`+`E`.
+4. Запустите запрос, щелкнув зеленую стрелку или нажав клавиши `CTRL`+`SHIFT`+`E`.
    
     ![Выполнение запроса](./media/get-started-visual-studio/run-query.png)
 5. Просмотрите результаты запроса. В этом примере таблица FactInternetSales содержит 60 398 строк.
@@ -79,5 +79,5 @@ ms.locfileid: "83201678"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы можете подключаться к базе данных и отправлять запросы, попробуйте [визуализировать данные с помощью Power BI](get-started-power-bi-professional.md).
-Сведения о настройке среды для проверки подлинности Azure Active Directory см. в разделе [Аутентификация в пуле SQL](../sql-data-warehouse/sql-data-warehouse-authentication.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
+Сведения о том, как настроить аутентификацию Azure Active Directory в своей среде, см. в статье [Аутентификация в Azure синапсе Analytics](../sql-data-warehouse/sql-data-warehouse-authentication.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json).
  

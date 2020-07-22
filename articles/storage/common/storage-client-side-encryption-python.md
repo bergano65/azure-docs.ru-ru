@@ -9,14 +9,14 @@ ms.devlang: python
 ms.topic: how-to
 ms.date: 12/04/2019
 ms.author: tamram
-ms.reviewer: cbrooks
+ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: 16e66cd762b86b27dc6703542ca7261b2300a33b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 511166e156591562b2120b58cc420f3fccd1d8c4
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "74895372"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84804905"
 ---
 # <a name="client-side-encryption-with-python"></a>Шифрование на стороне клиента с помощью Python
 
@@ -244,6 +244,6 @@ encrypted_property_1 = EntityProperty(EdmType.STRING, value, encrypt=True)
 ## <a name="encryption-and-performance"></a>Шифрование и производительность
 Обратите внимание, что шифрование результатов анализа данных хранилища отрицательно влияет на производительность. Ключ содержимого и ключ IV необходимо создать, само содержимое — зашифровать, а дополнительные метаданные — отформатировать и передать. Эти издержки зависят от объема шифруемых данных. Мы рекомендуем клиентам всегда тестировать свои приложения для повышения производительности во время разработки.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Скачайте [клиентскую библиотеку службы хранилища Azure для пакета PyPi Java](https://pypi.python.org/pypi/azure-storage)
 * Скачайте [клиентскую библиотеку службы хранилища Azure для исходного кода Python с портала GitHub](https://github.com/Azure/azure-storage-python)

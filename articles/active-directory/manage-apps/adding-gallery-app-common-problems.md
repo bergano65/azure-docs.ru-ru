@@ -3,24 +3,24 @@ title: Проблема при добавлении приложения из к
 description: Узнайте, какие проблемы чаще всего возникают при добавлении приложений из коллекции Azure AD, и как их можно устранить.
 services: active-directory
 documentationcenter: ''
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.assetid: ''
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: troubleshooting
 ms.date: 09/11/2018
-ms.author: mimart
+ms.author: kenwith
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b2b42880f99f3e87d75854166047896860f9eb14
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e4387a3ca02297311cd9ab025c315ca3324cbbbe
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "65784430"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84760411"
 ---
 # <a name="problem-adding-an-azure-ad-gallery-application"></a>Проблема при добавлении приложения из коллекции Azure AD
 
@@ -99,7 +99,7 @@ ms.locfileid: "65784430"
 
 - **UPN** — пользователь, который выполнил операцию.
 
-  -   Пример: **тперкинс\@f128.info**
+  -   Пример: **тперкинс \@ f128.info**
 
 - **Идентификатор клиента** — уникальный идентификатор клиента, к которому относится пользователь, выполнивший операцию.
 
@@ -125,7 +125,7 @@ ms.locfileid: "65784430"
 
 -   **Подробные сведения** — подробное описание результата операции.
 
-    -   Пример: **внутренний URL `https://bing.com/` -адрес является недопустимым, так как он уже используется**
+    -   Пример: **внутренний URL-адрес `https://bing.com/` является недопустимым, так как он уже используется**
 
 -   **Скопировать ошибку** — щелкните **значок копирования** справа от текстового поля **Скопировать ошибку**, чтобы скопировать в буфер обмена все подробности уведомления, которые можно будет передать в службу поддержки или группу продукта. 
 -   инженер

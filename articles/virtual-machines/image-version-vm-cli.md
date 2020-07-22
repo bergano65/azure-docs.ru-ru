@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 05/01/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: f53a6b63c744b0e3e41f7ad22270cd842da57674
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
+ms.openlocfilehash: 92660063a5699855b9ae2d745136327cf8bf287a
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82796581"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86494706"
 ---
 # <a name="create-an-image-version-from-a-vm-in-azure-using-the-azure-cli"></a>Создание версии образа из виртуальной машины в Azure с помощью Azure CLI
 
@@ -35,13 +35,13 @@ ms.locfileid: "82796581"
 
 ## <a name="get-information-about-the-vm"></a>Получение информации о виртуальной машине
 
-Вы можете просмотреть список виртуальных машин, доступных с помощью команды [AZ VM List](/cli/azure/vm#az-vm-list). 
+Список доступных виртуальных машин можно просмотреть с помощью команды [az vm list](/cli/azure/vm#az-vm-list). 
 
 ```azurecli-interactive
 az vm list --output table
 ```
 
-Зная имя виртуальной машины и группу ресурсов, в которой она находится, получите идентификатор виртуальной машины с помощью команды [AZ VM Get-instance-View](/cli/azure/vm#az-vm-get-instance-view). 
+Когда вы узнаете имя виртуальной машины и группу ресурсов, в которой она находится, получите идентификатор виртуальной машины с помощью команды [az vm get-instance-view](/cli/azure/vm#az-vm-get-instance-view). 
 
 ```azurecli-interactive
 az vm get-instance-view -g MyResourceGroup -n MyVm --query id
@@ -50,17 +50,17 @@ az vm get-instance-view -g MyResourceGroup -n MyVm --query id
 
 ## <a name="create-an-image-definition"></a>Создание определения образа
 
-Определения образов создают логическую группировку для изображений. Они используются для управления сведениями о версиях образов, созданных в них. 
+Образы можно объединять в логические группы с помощью определений образов. Определения образов используются для управления сведениями о версиях созданных в них образов. 
 
-Имена определений образов могут состоять из букв верхнего или нижнего регистра, цифр, точек, тире и точек. 
+В имени определения образа можно использовать прописные и строчные буквы, цифры, точки и дефисы. 
 
-Убедитесь, что определение образа имеет правильный тип. Если вы обобщенно используете виртуальную машину (с помощью Sysprep для Windows или waagent-unготовить для Linux), то следует создать обобщенное определение образа с `--os-state generalized`помощью. Если вы хотите использовать виртуальную машину без удаления существующих учетных записей пользователей, создайте специализированное определение `--os-state specialized`образа с помощью.
+Убедитесь, что используется определение образа подходящего типа. Если вы сделали виртуальную машину универсальной (с помощью Sysprep для Windows или waagent -deprovision для Linux), создайте универсальное определение образа с помощью `--os-state generalized`. Если вы хотите использовать виртуальную машину без удаления существующих учетных записей пользователей, создайте специализированное определение образа с помощью `--os-state specialized`.
 
-Дополнительные сведения о значениях, которые можно указать для определения изображения, см. в разделе [определения изображений](https://docs.microsoft.com/azure/virtual-machines/linux/shared-image-galleries#image-definitions).
+Дополнительные сведения о значениях, которые можно указать для определения образа, см. в разделе [Определения образов](./linux/shared-image-galleries.md#image-definitions).
 
-Создайте определение образа в коллекции, выполнив команду [AZ SIG Image-Definition Create](/cli/azure/sig/image-definition#az-sig-image-definition-create).
+Создайте в коллекции определение образа, используя команду [az sig image-definition create](/cli/azure/sig/image-definition#az-sig-image-definition-create).
 
-В этом примере определение образа называется *мимажедефинитион*и предназначено для [специализированного](https://docs.microsoft.com/azure/virtual-machines/linux/shared-image-galleries#generalized-and-specialized-images) образа ОС Linux. Чтобы создать определение для образов с помощью ОС Windows, используйте `--os-type Windows`. 
+В этом примере определение образа имеет имя *myImageDefinition* и предназначено для [специализированного](./linux/shared-image-galleries.md#generalized-and-specialized-images) образа ОС Linux. Чтобы создать определение для образов с помощью ОС Windows, используйте `--os-type Windows`. 
 
 ```azurecli-interactive 
 az sig image-definition create \
@@ -77,13 +77,13 @@ az sig image-definition create \
 
 ## <a name="create-the-image-version"></a>Создание версии образа
 
-Создайте версию образа на основе виртуальной машины с помощью команды [AZ Image Gallery Create-Image-Version](/cli/azure/sig/image-version#az-sig-image-version-create).  
+Создайте версию образа на основе виртуальной машины, используя команду [az image gallery create-image-version](/cli/azure/sig/image-version#az-sig-image-version-create).  
 
-Допустимыми знаками для имени версии образа являются цифры и точки. Числа должны быть в диапазоне 32-битного целого числа. Формат: *majorversion*. *Minorversion*. *Исправление*.
+Допустимыми знаками для имени версии образа являются цифры и точки. Числа должны быть в диапазоне 32-битного целого числа. Формат: *основной номер версии*.*дополнительный номер версии*.*исправление*.
 
-В этом примере версия нашего образа — *1.0.0* , и мы создадим 2 реплики в регионе " *Западная Центральная часть США* ", 1 реплику в *юго-центральном регионе США* и 1 РЕПЛИКу в регионе " *Восточная часть США 2* " с использованием хранилища, избыточного в пределах зоны. Регионы репликации должны включать в себя регион, в котором находится исходная виртуальная машина.
+В нашем примере для образа указана версия *1.0.0*, и мы собираемся создать 2 реплики в регионе *центрально-западная часть США*, 1 реплику в регионе *центрально-южная часть США* и 1 реплику в регионе *восточная часть США 2* для создания хранилища, избыточного между зонами. В числе регионов репликации должен быть регион, в котором находится исходная виртуальная машина.
 
-Замените значение `--managed-image` в этом примере идентификатором виртуальной машины из предыдущего шага.
+Замените значение параметра `--managed-image` в этом примере на идентификатор вашей виртуальной машины из предыдущего шага.
 
 ```azurecli-interactive 
 az sig image-version create \
@@ -99,9 +99,11 @@ az sig image-version create \
 > [!NOTE]
 > Прежде чем использовать тот же управляемый образ для создания другой версии образа, необходимо дождаться завершения сборки и репликации версии образа.
 >
-> Вы также можете сохранить образ в хранилище `--storage-account-type  premium_lrs`премиун, добавив хранилище или [избыточное в зону](https://docs.microsoft.com/azure/storage/common/storage-redundancy-zrs) , добавив `--storage-account-type  standard_zrs` его при создании версии образа.
+> Вы также можете сохранить образ в хранилище класса Premium, добавив `--storage-account-type  premium_lrs`, или [хранилище, избыточное между зонами](../storage/common/storage-redundancy.md), добавив `--storage-account-type  standard_zrs` при создании версии образа.
 >
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Создайте виртуальную машину из [обобщенного образа](vm-generalized-image-version-cli.md) , используя Azure CLI.
+
+Сведения о том, как предоставить сведения о плане покупки, см. в разделе [предоставление сведений о плане покупки Azure Marketplace при создании образов](marketplace-images.md).

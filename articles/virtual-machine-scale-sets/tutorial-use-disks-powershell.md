@@ -9,12 +9,12 @@ ms.subservice: disks
 ms.date: 03/27/2018
 ms.reviewer: mimckitt
 ms.custom: mimckitt
-ms.openlocfilehash: 5c82f087505c1634dd621252935c4017687340b2
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: b3b57cd2a2e5d5502f3865eddcdddfac67460dc7
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83198244"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86495042"
 ---
 # <a name="tutorial-create-and-use-disks-with-virtual-machine-scale-set-with-azure-powershell"></a>Руководство. Создание и использование дисков с масштабируемым набором виртуальных машин с помощью Azure PowerShell
 
@@ -44,12 +44,12 @@ ms.locfileid: "83198244"
 ### <a name="temporary-disk-sizes"></a>Размеры временных дисков
 | Тип | Распространенные размеры | Максимальный размер временного диска (ГБ) |
 |----|----|----|
-| [Универсальные](../virtual-machines/windows/sizes-general.md) | Серии A, B и D | 1600 |
-| [Оптимизированные для вычислений](../virtual-machines/windows/sizes-compute.md) | Серия F | 576 |
-| [Оптимизированные для памяти](../virtual-machines/windows/sizes-memory.md) | Серии D, E, G и M | 6144 |
-| [Оптимизированные для хранилища](../virtual-machines/windows/sizes-storage.md) | Серия L | 5630 |
-| [GPU](../virtual-machines/windows/sizes-gpu.md) | Серия N | 1440 |
-| [Высокопроизводительные](../virtual-machines/windows/sizes-hpc.md) | Серии A и H | 2000 |
+| [Универсальные](../virtual-machines/sizes-general.md) | Серии A, B и D | 1600 |
+| [Оптимизированные для вычислений](../virtual-machines/sizes-compute.md) | Серия F | 576 |
+| [Оптимизированные для памяти](../virtual-machines/sizes-memory.md) | Серии D, E, G и M | 6144 |
+| [Оптимизированные для хранилища](../virtual-machines/sizes-storage.md) | Серия L | 5630 |
+| [GPU](../virtual-machines/sizes-gpu.md) | Серия N | 1440 |
+| [Высокопроизводительные](../virtual-machines/sizes-hpc.md) | Серии A и H | 2000 |
 
 
 ## <a name="azure-data-disks"></a>Диски данных Azure
@@ -58,12 +58,12 @@ ms.locfileid: "83198244"
 ### <a name="max-data-disks-per-vm"></a>Максимальное число дисков данных на виртуальную машину
 | Тип | Распространенные размеры | Максимальное число дисков данных на виртуальную машину |
 |----|----|----|
-| [Универсальные](../virtual-machines/windows/sizes-general.md) | Серии A, B и D | 64 |
-| [Оптимизированные для вычислений](../virtual-machines/windows/sizes-compute.md) | Серия F | 64 |
-| [Оптимизированные для памяти](../virtual-machines/windows/sizes-memory.md) | Серии D, E, G и M | 64 |
-| [Оптимизированные для хранилища](../virtual-machines/windows/sizes-storage.md) | Серия L | 64 |
-| [GPU](../virtual-machines/windows/sizes-gpu.md) | Серия N | 64 |
-| [Высокопроизводительные](../virtual-machines/windows/sizes-hpc.md) | Серии A и H | 64 |
+| [Универсальные](../virtual-machines/sizes-general.md) | Серии A, B и D | 64 |
+| [Оптимизированные для вычислений](../virtual-machines/sizes-compute.md) | Серия F | 64 |
+| [Оптимизированные для памяти](../virtual-machines/sizes-memory.md) | Серии D, E, G и M | 64 |
+| [Оптимизированные для хранилища](../virtual-machines/sizes-storage.md) | Серия L | 64 |
+| [GPU](../virtual-machines/sizes-gpu.md) | Серия N | 64 |
+| [Высокопроизводительные](../virtual-machines/sizes-hpc.md) | Серии A и H | 64 |
 
 
 ## <a name="vm-disk-types"></a>Типы дисков виртуальной машины
@@ -135,7 +135,7 @@ Update-AzVmss `
 ## <a name="prepare-the-data-disks"></a>Подготовка дисков данных
 Диски, которые создаются и подключаются к экземплярам виртуальных машин в масштабируемом наборе, являются дисками в формате RAW. Прежде чем использовать диски для данных и приложений, их необходимо подготовить. Чтобы подготовить диски, создайте раздел и файловую систему и подключите их.
 
-Чтобы автоматизировать процесс на нескольких экземплярах виртуальных машин в масштабируемом наборе, можно использовать расширение пользовательских скриптов Azure. Это расширение может выполнять скрипты локально на каждом экземпляре виртуальной машины, например, чтобы подготовить подключенные диски данных. Дополнительные сведения см. в статье [Расширение Custom Script в ОС Windows](../virtual-machines/windows/extensions-customscript.md).
+Чтобы автоматизировать процесс на нескольких экземплярах виртуальных машин в масштабируемом наборе, можно использовать расширение пользовательских скриптов Azure. Это расширение может выполнять скрипты локально на каждом экземпляре виртуальной машины, например, чтобы подготовить подключенные диски данных. Дополнительные сведения см. в статье [Расширение Custom Script в ОС Windows](../virtual-machines/extensions/custom-script-windows.md).
 
 
 В следующем примере на каждом экземпляре виртуальной машины выполняется скрипт из примера репозитория GitHub с помощью командлета [Add-AzVmssExtension](/powershell/module/az.compute/Add-AzVmssExtension), который подготавливает все подключенные диски данных в формате RAW.

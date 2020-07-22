@@ -6,17 +6,17 @@ documentationcenter: na
 author: damendo
 ms.service: network-watcher
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/13/2017
 ms.author: damendo
-ms.openlocfilehash: 47d927f9f17580767526ec6683e819256fc5e994
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: ffbf37730d5064edcd067c3383fe18c342a2b053
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77619915"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84738504"
 ---
 # <a name="read-nsg-flow-logs"></a>Чтение журналов потоков NSG
 
@@ -31,7 +31,7 @@ ms.locfileid: "77619915"
 
 В следующем сценарии используется пример журнала потоков, хранящийся в учетной записи хранения. Вы узнаете, как выборочно просматривать последние события в журналах потоков NSG. В этой статье вы будете использовать PowerShell, однако описанные здесь концепции не ограничиваются одним языком программирования и применимы для всех языков, которые поддерживаются интерфейсами API службы хранилища Azure.
 
-## <a name="setup"></a>Настройка
+## <a name="setup"></a>Установка
 
 Прежде чем мы начнем работу, вам необходимо включить журналы потоков для одной или нескольких групп безопасности сети в вашей учетной записи. Инструкции по включению журналов потоков для групп безопасности сети есть в статье [Introduction to flow logging for Network Security Groups](network-watcher-nsg-flow-logging-overview.md) (Введение в журналы потоков для групп безопасности сети).
 

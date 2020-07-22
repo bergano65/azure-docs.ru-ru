@@ -4,15 +4,16 @@ description: В этой статье объясняется принцип ра
 author: RonyMSFT
 ms.service: synapse-analytics
 ms.topic: overview
+ms.subservice: security
 ms.date: 04/15/2020
 ms.author: ronytho
 ms.reviewer: jrasnick
-ms.openlocfilehash: 162d96244b01f8c5e1acf224475aadb9508f0aa5
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: b46ce6f6164479853bc762cb1ca45d67f7f80930
+ms.sourcegitcommit: 3988965cc52a30fc5fed0794a89db15212ab23d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81419488"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85194371"
 ---
 # <a name="azure-synapse-analytics-managed-virtual-network-preview"></a>Управляемая виртуальная сеть Azure Synapse Analytics (предварительная версия)
 
@@ -40,6 +41,8 @@ ms.locfileid: "81419488"
 
 ## <a name="create-an-azure-synapse-workspace-with-a-managed-workspace-vnet"></a>Создание рабочей области Azure Synapse с управляемой виртуальной сетью
 
+Зарегистрируйте поставщик сетевых ресурсов, если вы еще этого не сделали. Регистрация поставщика ресурсов настраивает подписку для работы с поставщиком ресурсов. В процессе *регистрации* выберите значение [Microsoft.Network](https://docs.microsoft.com/azure/azure-resource-manager/management/resource-providers-and-types) из списка поставщиков ресурсов.
+
 Чтобы создать рабочую область Azure Synapse, у которой есть связанная с ней управляемая виртуальная сеть, выберите вкладку **Security + networking** (Безопасность и сеть) на портале Azure и установите флажок **Enable managed virtual network** (Включить управляемую виртуальную сеть).
 
 Если флажок не установлен, виртуальная сеть не будет связана с рабочей областью.
@@ -50,7 +53,7 @@ ms.locfileid: "81419488"
 ![Включение управляемой виртуальной сети рабочей области](./media/synapse-workspace-managed-vnet/enable-managed-vnet-1.png)
 
 >[!NOTE]
->В будущем весь исходящий трафик из управляемой виртуальной сети рабочей области будет блокироваться. Рекомендуется подключаться ко всем источникам данных с помощью управляемых частных конечных точек.
+>В будущем весь исходящий трафик из управляемой виртуальной сети рабочей области, не проходящий через управляемые частные конечные точки, будет блокироваться. Мы рекомендуем создать управляемые частные конечные точки для подключения ко всем источникам данных Azure за пределами рабочей области. 
 
 Вы можете проверить, связана ли рабочая область Azure Synapse с управляемой виртуальной сетью, выбрав **Обзор** на портале Azure.
 

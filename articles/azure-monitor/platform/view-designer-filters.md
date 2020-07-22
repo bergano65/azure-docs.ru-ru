@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 06/22/2018
-ms.openlocfilehash: b4840ed30eb1f6dc8d6e6cef47da17807f9644d5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 4f4b914fe5851df0928df9ccc41ca3b20c5d3469
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77658580"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85955961"
 ---
 # <a name="filters-in-azure-monitor-views"></a>Фильтры в представлениях Azure Monitor
 **Фильтр** в [представлении Azure Monitor](view-designer.md) позволяет пользователям фильтровать данные в представлении по значению определенного свойства, не изменяя само представление.  Например, можно разрешить пользователям представления фильтровать это представление, чтобы просматривать данные только с определенного компьютера или набора компьютеров.  Можно создать несколько фильтров в одном представлении, чтобы разрешить пользователям выполнять фильтрацию по нескольким свойствам.  В этой статье описывается, как использовать фильтр и добавить его в настраиваемое представление.
@@ -21,7 +21,7 @@ ms.locfileid: "77658580"
 
 ![Пример фильтра](media/view-designer-filters/filters-example-time.png)
 
-Нажмите кнопку **+** , чтобы добавить фильтр с помощью настраиваемых фильтров, определенных для представления. Выберите значение для фильтра в раскрывающемся списке или введите его самостоятельно. Продолжайте добавлять фильтры, щелкая **+**. 
+Нажмите кнопку, **+** чтобы добавить фильтр с помощью настраиваемых фильтров, определенных для представления. Выберите значение для фильтра в раскрывающемся списке или введите его самостоятельно. Продолжайте добавлять фильтры, щелкая **+** . 
 
 
 ![Пример фильтра](media/view-designer-filters/filters-example-custom.png)
@@ -37,7 +37,7 @@ ms.locfileid: "77658580"
 
 В следующей таблице описаны параметры фильтра.
 
-| Параметр | Описание |
+| Параметр | Описание: |
 |:---|:---|
 | Имя поля | Имя поля, используемого для фильтрации.  Это поле должно соответствовать полю суммирования в **запросе значений**. |
 | Запрос значений | Запрос, выполняемый для заполнения раскрывающегося списка фильтров для пользователя.  Для предоставления уникальных значений конкретному полю этот запрос должен использовать либо [Сводные данные](/azure/kusto/query/summarizeoperator) , либо [DISTINCT](/azure/kusto/query/distinctoperator) . оно должно совпадать с **именем поля**.  Можно использовать оператор [sort](/azure/kusto/query/sortoperator) для сортировки значений, отображаемых для пользователя. |
@@ -50,8 +50,8 @@ ms.locfileid: "77658580"
 | Имя поля | Запрос значений | Тег |
 |:--|:--|:--|
 | Компьютер   | Heartbeat &#124; distinct Computer &#124; sort by Computer asc | Компьютеры |
-| EventLevelName | Event &#124; distinct EventLevelName | Severity |
-| SeverityLevel | Syslog &#124; distinct SeverityLevel | Severity |
+| EventLevelName | Event &#124; distinct EventLevelName | Серьезность |
+| SeverityLevel | Syslog &#124; distinct SeverityLevel | Серьезность |
 | SvcChangeType | ConfigurationChange &#124; distinct svcChangeType | ChangeType |
 
 
@@ -61,15 +61,19 @@ ms.locfileid: "77658580"
 
 Для использования значения фильтра в запросе используется приведенный ниже синтаксис. 
 
-    where ${filter name}  
+`where ${filter name}`  
 
 Например, если представление содержит запрос, возвращающий события и использующий фильтр « _Компьютеры_», можно использовать следующий запрос.
 
-    Event | where ${Computers} | summarize count() by EventLevelName
+```kusto
+Event | where ${Computers} | summarize count() by EventLevelName
+```
 
 Если вы добавили еще один фильтр, Severity, то можете использовать следующий запрос для применения обоих фильтров.
 
-    Event | where ${Computers} | where ${Severity} | summarize count() by EventLevelName
+```kusto
+Event | where ${Computers} | where ${Severity} | summarize count() by EventLevelName
+```
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 * Узнайте больше об [элементах визуализации](view-designer-parts.md), которые можно добавить в представление.

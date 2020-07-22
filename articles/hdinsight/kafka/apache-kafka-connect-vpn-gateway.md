@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
-ms.custom: hdinsightactive
+ms.topic: how-to
+ms.custom: hdinsightactive, tracking-python
 ms.date: 03/04/2020
-ms.openlocfilehash: 36ff0d5f1fc96b2013555d37a869ebf629a22be7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 62034ec84f454e4d726348a1c71b492f8aa598b6
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79272127"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86087441"
 ---
 # <a name="connect-to-apache-kafka-on-hdinsight-through-an-azure-virtual-network"></a>Подключение к Apache Kafka в HDInsight с помощью виртуальной сети Azure
 
@@ -252,7 +252,7 @@ HDInsight не разрешает прямое подключение к Kafka �
 
 3. Чтобы просмотреть конфигурацию Kafka, выберите пункт __Configs__ (Конфигурации) в верхней части окна.
 
-    ![Настройка служб Apache Ambari Services](./media/apache-kafka-connect-vpn-gateway/select-kafka-config1.png)
+    ![Настройка служб Apache Ambari](./media/apache-kafka-connect-vpn-gateway/select-kafka-config1.png)
 
 4. Чтобы найти конфигурацию __kafka-env__, введите `kafka-env` в поле __фильтра__ в правом верхнем углу.
 
@@ -274,7 +274,7 @@ HDInsight не разрешает прямое подключение к Kafka �
 
 8. Нажмите кнопку __Save__ (Сохранить), чтобы сохранить изменения в конфигурации. Введите текст, описывающий изменения. После сохранения изменений нажмите кнопку __ОК__.
 
-    ![Конфигурация сохранения для Apache Ambari](./media/apache-kafka-connect-vpn-gateway/save-configuration-button.png)
+    ![Настройка сохранения Apache Ambari](./media/apache-kafka-connect-vpn-gateway/save-configuration-button.png)
 
 9. Для предотвращения ошибок при перезапуске Kafka нажмите кнопку __Service Actions__ (Действия со службой) и выберите __Turn On Maintenance Mode__ (Включить режим обслуживания). Чтобы завершить эту операцию, нажмите кнопку "ОК".
 
@@ -366,7 +366,7 @@ HDInsight не разрешает прямое подключение к Kafka �
 
     * Если вы включили __разрешение имен через пользовательский DNS-сервер__, замените записи `kafka_broker` полным доменным именем рабочих узлов.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительные сведения об использовании HDInsight с виртуальной сетью см. в документе [Планирование развертывания виртуальной сети для кластеров Azure HDInsight](../hdinsight-plan-virtual-network-deployment.md) .
 

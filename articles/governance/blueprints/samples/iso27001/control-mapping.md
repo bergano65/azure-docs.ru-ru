@@ -3,12 +3,12 @@ title: Элементы управления примера схемы ISO 2700
 description: Сопоставление элементов управления на примере схемы ISO 27001 Каждый элемент управления сопоставляется с одной или несколькими политиками Azure, которые помогают выполнять оценку.
 ms.date: 01/13/2020
 ms.topic: sample
-ms.openlocfilehash: 501884491dbef85cdf8a29cb5fdcef44a68235a9
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 013a871b52a9e81d7051c3b148c258cecc139070
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75920569"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86044674"
 ---
 # <a name="control-mapping-of-the-iso-27001-blueprint-sample"></a>Сопоставление элементов управления с помощью примера схемы ISO 27001
 
@@ -28,7 +28,7 @@ ms.locfileid: "75920569"
 
 ## <a name="a821-classification-of-information"></a>A.8.2.1. Сведения о классификации данных
 
-[Служба оценки уязвимости SQL](https://docs.microsoft.com/azure/sql-database/sql-vulnerability-assessment) Azure помогает обнаруживать конфиденциальные данные в базах данных пользователя и дает рекомендации по классификации этих данных. В этой схеме назначается определение [Политики Azure](../../../policy/overview.md) для аудита на предмет того, устранены ли уязвимости, обнаруженные в ходе проверки в службе оценки уязвимостей SQL.
+[Служба оценки уязвимости SQL](../../../../azure-sql/database/sql-vulnerability-assessment.md) Azure помогает обнаруживать конфиденциальные данные в базах данных пользователя и дает рекомендации по классификации этих данных. В этой схеме назначается определение [Политики Azure](../../../policy/overview.md) для аудита на предмет того, устранены ли уязвимости, обнаруженные в ходе проверки в службе оценки уязвимостей SQL.
 
 - \[Предварительная версия.\] Мониторинг результатов оценки уязвимостей SQL в Центре безопасности Azure
 

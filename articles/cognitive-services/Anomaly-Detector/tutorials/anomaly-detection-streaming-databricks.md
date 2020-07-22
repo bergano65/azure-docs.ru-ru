@@ -11,12 +11,12 @@ ms.subservice: anomaly-detector
 ms.topic: tutorial
 ms.date: 03/05/2020
 ms.author: aahi
-ms.openlocfilehash: e0df0773daf8f9be21ac70d8390013adfd93483a
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: b8263e0445f7997469ba9165decbaccfa9ed2d6e
+ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "78402669"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86027853"
 ---
 # <a name="tutorial-anomaly-detection-on-streaming-data-using-azure-databricks"></a>Руководство по Обнаружение аномалий при потоковой передаче данных с помощью Azure Databricks
 
@@ -41,7 +41,7 @@ ms.locfileid: "78402669"
 
 > [!Note]
 > * В этом учебнике представлен подход к реализации рекомендуемой [архитектуры решения](https://azure.microsoft.com/solutions/architecture/anomaly-detector-process/) для API Детектора аномалий.
-> * Для выполнения действий, описанных в этом руководста, будет не достаточно ключа бесплатной пробной версии для API "Детектор аномалий" или Azure Databricks. 
+> * Для выполнения действий, описанных в этом руководстве, будет не достаточно подписки уровня "Бесплатный" (`F0`) для API "Детектор аномалий" или Azure Databricks. 
 
 Создайте [подписку Azure](https://azure.microsoft.com/free/), если у вас ее нет.
 
@@ -300,6 +300,7 @@ pool.shutdown()
 
 Чтобы запустить записную книжку, нажмите клавиши **SHIFT+ВВОД**. Вывод должен выглядеть также, как показано в следующем фрагменте кода. Каждое событие в выходных данных представляет собой комбинацию метки времени создания и количества отметок "Нравится", передающихся в Центры событий.
 
+```output
     Sent event: {"timestamp":"2019-04-24T09:39:40.000Z","favorite":0}
 
     Sent event: {"timestamp":"2019-04-24T09:38:48.000Z","favorite":1}
@@ -318,6 +319,7 @@ pool.shutdown()
 
     ...
     ...
+```
 
 ## <a name="read-tweets-from-event-hubs"></a>Чтение твитов из Центров событий.
 
@@ -423,16 +425,18 @@ object AnomalyDetector extends Serializable {
 
 Чтобы запустить записную книжку, нажмите клавиши **SHIFT+ВВОД**. Вывод должен выглядеть также, как показано в следующем фрагменте кода.
 
-    import java.io.{BufferedReader, DataOutputStream, InputStreamReader}
-    import java.net.URL
-    import java.sql.Timestamp
-    import com.google.gson.{Gson, GsonBuilder, JsonParser}
-    import javax.net.ssl.HttpsURLConnection
-    defined class Point
-    defined class Series
-    defined class AnomalySingleResponse
-    defined class AnomalyBatchResponse
-    defined object AnomalyDetector
+```scala
+import java.io.{BufferedReader, DataOutputStream, InputStreamReader}
+import java.net.URL
+import java.sql.Timestamp
+import com.google.gson.{Gson, GsonBuilder, JsonParser}
+import javax.net.ssl.HttpsURLConnection
+defined class Point
+defined class Series
+defined class AnomalySingleResponse
+defined class AnomalyBatchResponse
+defined object AnomalyDetector
+```
 
 Затем подготовьте статистическую функцию для использования в дальнейшем.
 ```scala
@@ -495,11 +499,13 @@ class AnomalyDetectorAggregationFunction extends UserDefinedAggregateFunction {
 
 Чтобы запустить записную книжку, нажмите клавиши **SHIFT+ВВОД**. Вывод должен выглядеть также, как показано в следующем фрагменте кода.
 
-    import org.apache.spark.sql.Row
-    import org.apache.spark.sql.expressions.{MutableAggregationBuffer, UserDefinedAggregateFunction}
-    import org.apache.spark.sql.types.{StructType, TimestampType, FloatType, MapType, BooleanType, DataType}
-    import scala.collection.immutable.ListMap
-    defined class AnomalyDetectorAggregationFunction
+```scala
+import org.apache.spark.sql.Row
+import org.apache.spark.sql.expressions.{MutableAggregationBuffer, UserDefinedAggregateFunction}
+import org.apache.spark.sql.types.{StructType, TimestampType, FloatType, MapType, BooleanType, DataType}
+import scala.collection.immutable.ListMap
+defined class AnomalyDetectorAggregationFunction
+```
 
 Затем загрузите данные из концентратора событий для обнаружения аномалий. Замените заполнители значениями созданных ранее Центров событий Azure.
 

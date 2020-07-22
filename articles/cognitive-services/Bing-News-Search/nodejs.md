@@ -8,42 +8,41 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-news-search
 ms.topic: quickstart
-ms.date: 12/12/2019
+ms.date: 05/22/2020
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 42ac6cac972374dbd1db42b75742212046d2ce3e
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: 24dd1e719b9eb401038d47c4d1c42139258f36f9
+ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75383138"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83872052"
 ---
 # <a name="quickstart-perform-a-news-search-using-nodejs-and-the-bing-news-search-rest-api"></a>Краткое руководство. Поиск новостей с помощью Node.js и REST API Bing для поиска новостей
 
-Используйте это краткое руководство, чтобы вызвать API Bing для поиска изображений и получить ответ в формате JSON. Это простое приложение JavaScript отправляет поисковый запрос к API и отображает необработанные результаты.
+Используйте это краткое руководство, чтобы выполнить вызов к API Поиска новостей Bing. Это простое приложение JavaScript отправляет поисковый запрос к API и отображает ответ в формате JSON.
 
-Хотя это приложение создается на языке JavaScript и выполняется на языке Node.js, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
+Хотя приложение написано на JavaScript и выполняется на Node.js, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
 Исходный код этого примера доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/nodejs/Search/BingNewsSearchv7.js).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Последняя версия [Node.js](https://nodejs.org/en/download/).
-
-* [Библиотека запросов JavaScript](https://github.com/request/request)
+* [Библиотека запросов JavaScript.](https://github.com/request/request)
 
 [!INCLUDE [cognitive-services-bing-news-search-signup-requirements](../../../includes/cognitive-services-bing-news-search-signup-requirements.md)]
 
 ## <a name="create-and-initialize-the-application"></a>Создание и инициализация приложения
 
-1. Создайте файл JavaScript в избранной интегрированной среде разработки или редакторе и установите степень строгости, а также требования к HTTPS.
+1. Создайте файл JavaScript в используемых вами интегрированной среде разработки или редакторе, а также укажите степень строгости и требования к HTTPS.
 
     ```javascript
     'use strict';
     let https = require('https');
     ```
 
-2. Создайте переменные для конечной точки API, пути поиска изображения API, ключа подписки, а также условия поиска. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса. 
+2. Создайте переменные для конечной точки API, пути к API Поиска новостей, ключа подписки, а также условия поиска. Вы можете использовать глобальную конечную точку, указанную в коде ниже, или конечную точку [личного поддомена](../../cognitive-services/cognitive-services-custom-subdomains.md), которая отображается на портале Azure для вашего ресурса. 
 
     ```javascript
     let subscriptionKey = 'enter key here';
@@ -54,38 +53,42 @@ ms.locfileid: "75383138"
 
 ## <a name="handle-and-parse-the-response"></a>Обработка и анализ ответа
 
-1. Определите функцию с именем `response_handler`, принимающую HTTP-вызов `response` как параметр. Выполните следующие действия в этой функции:
+1. Определите функцию с именем `response_handler`, принимающую HTTP-вызов `response` как параметр. 
 
-    1. Определите переменную для хранения текста ответа JSON.  
-        ```javascript
-        let response_handler = function (response) {
-            let body = '';
-        };
-        ```
+   Добавьте код в эту функцию, выполнив следующие действия.
 
-    2. Сохраните текст ответа при вызове флага **data**.
-        ```javascript
-        response.on('data', function (d) {
-            body += d;
-        });
-        ```
+2. Определите переменную для хранения текста ответа JSON.  
 
-    3. При активации флага **end** можно просмотреть код JSON и заголовки.
+    ```javascript
+    let response_handler = function (response) {
+        let body = '';
+    };
+    ```
 
-        ```javascript
-        response.on('end', function () {
-            console.log('\nRelevant Headers:\n');
-            for (var header in response.headers)
-                // header keys are lower-cased by Node.js
-                if (header.startsWith("bingapis-") || header.startsWith("x-msedge-"))
-                     console.log(header + ": " + response.headers[header]);
-            body = JSON.stringify(JSON.parse(body), null, '  ');
-            console.log('\nJSON Response:\n');
-            console.log(body);
-         });
-        ```
+3. Сохраните текст ответа при вызове флага `data`.
 
-## <a name="json-response"></a>Ответ в формате JSON
+    ```javascript
+    response.on('data', function (d) {
+        body += d;
+    });
+    ```
+
+3. При активации флага `end` можно просмотреть код JSON и заголовки.
+
+    ```javascript
+    response.on('end', function () {
+        console.log('\nRelevant Headers:\n');
+        for (var header in response.headers)
+            // header keys are lower-cased by Node.js
+            if (header.startsWith("bingapis-") || header.startsWith("x-msedge-"))
+                 console.log(header + ": " + response.headers[header]);
+        body = JSON.stringify(JSON.parse(body), null, '  ');
+        console.log('\nJSON Response:\n');
+        console.log(body);
+     });
+    ```
+
+## <a name="example-json-response"></a>Пример ответа в формате JSON
 
 Успешный ответ возвращается в формате JSON, как показано в примере ниже. 
 

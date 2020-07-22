@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 10/31/2018
 ms.author: dekapur
 ms.custom: mvc, devcenter
-ms.openlocfilehash: c36d45919ae8a17026fc91f8e9040f3bb11d3eb0
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 586641d721d0c29bcd6d7b42fc8ca9141df96c66
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75494958"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86261317"
 ---
 # <a name="tutorial-debug-a-service-fabric-mesh-application-running-in-your-local-development-cluster"></a>Руководство по отладке приложения Сетки Service Fabric, выполняющегося в локальном кластере разработки.
 
@@ -77,7 +77,7 @@ git clone https://github.com/azure-samples/service-fabric-mesh
 
 Если обнаружилось, что  **локальный кластер Service Fabric не работает**, убедитесь, что диспетчер локального кластера Service Fabric запущен. Для этого на панели задач щелкните правой кнопкой мыши соответствующий значок, затем нажмите **Запустить Локальный кластер**. После запуска службы возвращайтесь к Visual Studio и нажмите клавишу **F5**.
 
-Если при запуске приложения появится ошибка **404**, это может значить, что переменные среды в **service.yaml** неправильные. Убедитесь, что `ApiHostPort`и `ToDoServiceName` установлены соответственно инструкциям из руководства по [созданию переменных среды](https://docs.microsoft.com/azure/service-fabric-mesh/service-fabric-mesh-tutorial-create-dotnetcore#create-environment-variables).
+Если при запуске приложения появится ошибка **404**, это может значить, что переменные среды в **service.yaml** неправильные. Убедитесь, что `ApiHostPort`и `ToDoServiceName` установлены соответственно инструкциям из руководства по [созданию переменных среды](./service-fabric-mesh-tutorial-create-dotnetcore.md#create-environment-variables).
 
 Если возникают ошибки сборки в **service.yaml**, убедитесь, что для задания отступов строки используются пробелы, а не символы табуляции. Кроме того, теперь необходимо создать приложение, используя английский языковой стандарт.
 

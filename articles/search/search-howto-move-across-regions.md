@@ -10,10 +10,10 @@ ms.topic: how-to
 ms.custom: subject-moving-resources
 ms.date: 03/24/2020
 ms.openlocfilehash: 00f16d11f7a9cd276772eda5e91d6e117ada8c9f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80246309"
 ---
 # <a name="move-your-azure-cognitive-search-service-to-another-azure-region"></a>Перемещение службы Когнитивный поиск Azure в другой регион Azure
@@ -43,7 +43,7 @@ ms.locfileid: "80246309"
 
 1. Удалите старую службу после того, как новая служба будет полностью протестирована и работоспособна.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Следующие ссылки помогут вам получить дополнительные сведения при выполнении описанных выше действий.
 
@@ -51,7 +51,7 @@ ms.locfileid: "80246309"
 + [Выбор уровня](search-sku-tier.md)
 + [Создание службы поиска](search-create-service-portal.md)
 + [Загрузить документы поиска](search-what-is-data-import.md)
-+ [Включить ведение журнала](search-monitor-logs.md)
++ [Включение ведения журналов](search-monitor-logs.md)
 
 
 <!-- To move your Azure Cognitive Service account from one region to another, you will create an export template to move your subscription(s). After moving your subscription, you will need to move your data and recreate your service.

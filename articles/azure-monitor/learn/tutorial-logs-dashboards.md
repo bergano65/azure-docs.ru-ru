@@ -5,14 +5,14 @@ ms.subservice: logs
 ms.topic: tutorial
 author: bwren
 ms.author: bwren
-ms.date: 06/19/2019
+ms.date: 05/28/2020
 ms.custom: mvc
-ms.openlocfilehash: 76ba79561df4a75004369d24c4c6af82de9b1cfc
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 7bc2da2043c6607cfff62ff524be88efb79c6f18
+ms.sourcegitcommit: 2721b8d1ffe203226829958bee5c52699e1d2116
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "77661538"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84148265"
 ---
 # <a name="create-and-share-dashboards-of-log-analytics-data"></a>Создание панелей мониторинга данных Log Analytics и предоставление общего доступа к ним
 
@@ -36,6 +36,14 @@ ms.locfileid: "77661538"
 
 Здесь можно собрать самые нужные операционные данные для ИТ-специалистов из всех ресурсов Azure, в том числе данные телеметрии из Azure Log Analytics.  Прежде чем приступать к визуализации запросов к журналам, необходимо создать панель мониторинга и предоставить к ней общий доступ.  Затем можно сосредоточиться на примере запроса к журналу производительности, который будет визуализирован в виде графика, и добавить его на панель мониторинга.  
 
+> [!NOTE]
+> Панели мониторинга Azure поддерживают следующие типы диаграмм с помощью запросов журналов:
+> - areachart (диаграмма с областями);
+> - columnchart (гистограмма);
+> - piechart (круговая диаграмма, отображается на панели мониторинга в виде кольца);
+> - scatterchart (точечная диаграмма);
+> - timechart
+
 Чтобы создать панель мониторинга, нажмите кнопку **Создать панель мониторинга** возле имени текущей панели мониторинга.
 
 ![Создание панели мониторинга на портале Azure](media/tutorial-logs-dashboards/log-analytics-create-dashboard-01.png)
@@ -53,7 +61,7 @@ ms.locfileid: "77661538"
 
 Откройте службу Log Analytics в разделе **Журналы** в меню Azure Monitor. Она начинается с нового пустого запроса.
 
-![главная страница](media/tutorial-logs-dashboards/homepage.png)
+![Главная страница](media/tutorial-logs-dashboards/homepage.png)
 
 Введите указанный ниже запрос на возврат записей использования процессора (для компьютеров с Windows и Linux), сгруппированных по компьютерам и времени создания и представленных на визуальной диаграмме: Щелкните **Запуск** для выполнения запроса и просмотра соответствующей диаграммы.
 

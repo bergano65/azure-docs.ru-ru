@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 10/09/2018
 ms.author: mikhegn
 ms.openlocfilehash: 4e96a732cffd70b0a5c24e7ebafe214297a72720
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75644636"
 ---
 # <a name="how-to-parameterize-configuration-files-in-service-fabric"></a>Как параметризовать файлы конфигурации в Service Fabric
@@ -20,7 +19,7 @@ ms.locfileid: "75644636"
 
 В этом примере с помощью параметров в развертывании приложения переопределяется значение конфигурации.
 
-1. Откройте файл * \<MyService> \паккажерут\конфиг\сеттингс.ксмл* в проекте службы.
+1. Откройте файл * \<MyService>\PackageRoot\Config\Settings.xml* в проекте службы.
 1. Задайте имя и значение параметра конфигурации, например кэш размером 25, добавив следующий XML:
 
    ```xml
@@ -30,7 +29,7 @@ ms.locfileid: "75644636"
    ```
 
 1. Сохраните и закройте файл.
-1. Откройте файл * \<MyApplication> \аппликатионпаккажерут\аппликатионманифест.ксмл* .
+1. Откройте файл * \<MyApplication>\ApplicationPackageRoot\ApplicationManifest.xml* .
 1. В файле ApplicationManifest.xml объявите параметр и значение по умолчанию в элементе `Parameters`.  Рекомендуется задавать имя параметра с содержанием имени службы (например, "MyService").
 
    ```xml
@@ -38,7 +37,7 @@ ms.locfileid: "75644636"
       <Parameter Name="MyService_CacheSize" DefaultValue="80" />
     </Parameters>
    ```
-1. В `ServiceManifestImport` разделе файла ApplicationManifest. xml добавьте элемент `ConfigOverrides` и `ConfigOverride` , ссылающийся на пакет конфигурации, раздел и параметр.
+1. В `ServiceManifestImport` разделе файла ApplicationManifest.xml добавьте `ConfigOverrides` `ConfigOverride` элемент и, ссылающийся на пакет конфигурации, раздел и параметр.
 
    ```xml
     <ConfigOverrides>
@@ -57,5 +56,5 @@ ms.locfileid: "75644636"
 >
 >
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Сведения о других возможностях управления приложениями, доступными в Visual Studio, см. в статье [Использование Visual Studio для упрощения создания приложений Service Fabric и управления ими](service-fabric-manage-application-in-visual-studio.md).

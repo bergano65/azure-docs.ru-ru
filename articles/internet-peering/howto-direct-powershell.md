@@ -5,15 +5,14 @@ description: Создание или изменение прямого пири�
 services: internet-peering
 author: prmitiki
 ms.service: internet-peering
-ms.topic: article
+ms.topic: how-to
 ms.date: 11/27/2019
 ms.author: prmitiki
-ms.openlocfilehash: 7639499aaef8d479c2552849b2124e709c46fd36
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 076332ac61359bc793615c2f7c9ea0e22c667bcd
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81680781"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84700303"
 ---
 # <a name="create-or-modify-a-direct-peering-by-using-powershell"></a>Создание или изменение прямого пиринга с помощью PowerShell
 
@@ -21,14 +20,14 @@ ms.locfileid: "81680781"
 
 При желании вы можете выполнить это пошаговое руководством с помощью [портала](howto-direct-portal.md)Azure.
 
-## <a name="before-you-begin"></a>Подготовка к работе
-* Прежде чем начать настройку, ознакомьтесь с [предварительными требованиями](prerequisites.md) и [пошаговым руководством по непосредственному пирингу](walkthrough-direct-all.md) .
+## <a name="before-you-begin"></a>Перед началом
+* Прежде чем начать настройку, изучите [предварительные требования](prerequisites.md) и [пошаговое руководство по прямому пирингу](walkthrough-direct-all.md).
 * Если у вас уже есть прямые пиринга с Майкрософт, которые не преобразованы в ресурсы Azure, см. статью [Преобразование устаревшего прямого пиринга в ресурс Azure с помощью PowerShell](howto-legacy-direct-powershell.md).
 
 ### <a name="work-with-azure-powershell"></a>Работа с Azure PowerShell
 [!INCLUDE [CloudShell](./includes/cloudshell-powershell-about.md)]
 
-## <a name="create-and-provision-a-direct-peering"></a>Создание и предоставление прямого пиринга
+## <a name="create-and-provision-a-direct-peering"></a>Создание прямого пиринга и его подготовка к работе
 
 ### <a name="sign-in-to-your-azure-account-and-select-your-subscription"></a>Войдите в учетную запись Azure и выберите подписку.
 [!INCLUDE [Account](./includes/account-powershell.md)]
@@ -45,10 +44,10 @@ ms.locfileid: "81680781"
 ## <a name="modify-a-direct-peering"></a><a name="modify"></a>Изменение прямого пиринга
 [!INCLUDE [peering-direct-modify](./includes/direct-powershell-modify.md)]
 
-## <a name="deprovision-a-direct-peering"></a><a name="delete"></a>Отменить подготовку прямого пиринга
+## <a name="deprovision-a-direct-peering"></a><a name="delete"></a>Отзыв прямого пиринга
 [!INCLUDE [peering-direct-delete](./includes/delete.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание или изменение пиринга Exchange с помощью PowerShell](howto-exchange-powershell.md)
 * [Преобразование устаревшего пиринга Exchange в ресурс Azure с помощью PowerShell](howto-legacy-exchange-powershell.md)
@@ -60,4 +59,4 @@ ms.locfileid: "81680781"
 Get-Help Get-AzPeering -detailed
 ```
 
-Дополнительные сведения см. в разделе [часто задаваемые вопросы об пиринга через Интернет](faqs.md).
+Дополнительные сведения см. в статье [Часто задаваемые вопросы об интернет-пиринге](faqs.md).

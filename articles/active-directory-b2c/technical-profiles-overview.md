@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 03/20/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 125d89301e9d2cc3fc863bffb9b9e6c41e0c129e
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 16fdc38d6235ddd0f72c7a35a3d71973ce01a4be
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82229941"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85203220"
 ---
 # <a name="about-technical-profiles-in-azure-active-directory-b2c-custom-policies"></a>Технические профили в пользовательских политиках Azure Active Directory B2C
 
@@ -49,7 +49,7 @@ ms.locfileid: "82229941"
 Все типы технических профилей созданы в рамках одной концепции. Вы отправляете входящие утверждения, выполняете их преобразование и обмениваетесь данными с настроенной службой, например поставщиком удостоверений, REST API или службами каталогов Azure AD. После завершения процесса технический профиль возвращает выходные утверждения и может выполнять преобразование выходных утверждений. Ниже показана схема обработки трансформаций и сопоставлений, на которые ссылается технический профиль. Независимо от того, с какой службой взаимодействует технический профиль, после преобразования исходящие утверждения технического профиля сразу же сохраняются в хранилище утверждений.
 
 ![Схема, иллюстрирующая поток технического профиля](./media/technical-profiles-overview/technical-profile-idp-saml-flow.png)
- 
+
 1. **Управление сеансами единого входа (SSO)** — восстанавливает состояние сеанса технического профиля с помощью [управления сеансами единого входа](custom-policy-reference-sso.md).
 1. **Преобразование входящих утверждений** . утверждения входных данных всех [преобразований входящих заявок](claimstransformations.md) выбираются из контейнера утверждений.  Исходящие утверждения посте преобразования входящих утверждений могут использоваться как входящие утверждения в дальнейших операциях преобразования.
 1. **Входные утверждения** — утверждения выбираются из контейнера утверждений и используются для технического профиля. Например, [технический профиль с самостоятельным подтверждением](self-asserted-technical-profile.md) использует входящие утверждения для предварительного заполнения исходящих утверждений, предоставляемых пользователем. Технический профиль REST API использует входящие утверждения для отправки входящих параметров в конечную точку REST API. Azure Active Directory использует входящее утверждение в качестве уникального идентификатора для чтения, обновления или удаления учетной записи.
@@ -66,11 +66,11 @@ ms.locfileid: "82229941"
 
 ## <a name="technical-profile-inclusion"></a>Включение технического профиля
 
-Технический профиль может включать еще один технический профиль для изменения параметров или добавления новых функциональных возможностей.  `IncludeTechnicalProfile` Элемент является ссылкой на базовый технический профиль, от которого наследуется технический профиль. Ограничение на количество уровней отсутствует.
+Технический профиль может включать еще один технический профиль для изменения параметров или добавления новых функциональных возможностей.  `IncludeTechnicalProfile`Элемент является ссылкой на базовый технический профиль, от которого наследуется технический профиль. Ограничение на количество уровней отсутствует.
 
-Например технический профиль **AAD-UserReadUsingAlternativeSecurityId-NoError** включает **AAD-UserReadUsingAlternativeSecurityId**. Этот технический профиль задает для `RaiseErrorIfClaimsPrincipalDoesNotExist` `true`элемента метаданных значение и вызывает ошибку, если учетная запись социальных сетей не существует в каталоге. **AAD-усерреадусингалтернативесекуритид-Error** переопределяет это поведение и отключает это сообщение об ошибке.
+Например технический профиль **AAD-UserReadUsingAlternativeSecurityId-NoError** включает **AAD-UserReadUsingAlternativeSecurityId**. Этот технический профиль задает `RaiseErrorIfClaimsPrincipalDoesNotExist` для элемента метаданных значение `true` и вызывает ошибку, если учетная запись социальных сетей не существует в каталоге. **AAD-усерреадусингалтернативесекуритид-Error** переопределяет это поведение и отключает это сообщение об ошибке.
 
-```XML
+```xml
 <TechnicalProfile Id="AAD-UserReadUsingAlternativeSecurityId-NoError">
   <Metadata>
     <Item Key="RaiseErrorIfClaimsPrincipalDoesNotExist">false</Item>
@@ -81,7 +81,7 @@ ms.locfileid: "82229941"
 
 **AAD-UserReadUsingAlternativeSecurityId** включает технический профиль `AAD-Common`.
 
-```XML
+```xml
 <TechnicalProfile Id="AAD-UserReadUsingAlternativeSecurityId">
   <Metadata>
     <Item Key="Operation">Read</Item>
@@ -105,7 +105,7 @@ ms.locfileid: "82229941"
 
 Как **AAD-усерреадусингалтернативесекуритид-Error** , так и **AAD-усерреадусингалтернативесекуритид** не указывают требуемый элемент **протокола** , так как он указан в техническом профиле **AAD-Common** .
 
-```XML
+```xml
 <TechnicalProfile Id="AAD-Common">
   <DisplayName>Azure Active Directory</DisplayName>
   <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.AzureActiveDirectoryProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />

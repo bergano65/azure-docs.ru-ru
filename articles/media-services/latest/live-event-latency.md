@@ -13,12 +13,12 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 04/22/2019
 ms.author: juliako
-ms.openlocfilehash: a82a0644fac099b568ab86ea213b98cd8e7d5c22
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 720931cf9f955f63075e3881b6b9f2e884bd3a76
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78199654"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86232463"
 ---
 # <a name="live-event-low-latency-settings"></a>Параметры низкой задержки в динамических событиях
 
@@ -27,7 +27,7 @@ ms.locfileid: "78199654"
 Чтобы использовать новую функцию **LowLatency**, настройте для параметра **StreamOptionsFlag** значение **LowLatency** в **LiveEvent**. При создании [LiveOutput](https://docs.microsoft.com/rest/api/media/liveoutputs) для воспроизведения HLS задайте для [LiveOutput.Hls.fragmentsPerTsSegment](https://docs.microsoft.com/rest/api/media/liveoutputs/create#hls) значение 1. После запуска потока можно использовать [проигрыватель мультимедиа Azure](https://ampdemo.azureedge.net/) (демонстрационная страница amp) и задать параметры воспроизведения для использования профиля эвристики с низкой задержкой.
 
 > [!NOTE]
-> В настоящее время Ловлатенци Хеуристикпрофиле в Проигрыватель мультимедиа Azure предназначен для воспроизведения потоков в протоколе MPEG-ТИРЕ с помощью формата CSF или КМАФ (например, `format=mdp-time-csf` или `format=mdp-time-cmaf`). 
+> В настоящее время Ловлатенци Хеуристикпрофиле в Проигрыватель мультимедиа Azure предназначен для воспроизведения потоков в протоколе MPEG-ТИРЕ с помощью формата CSF или КМАФ (например, `format=mdp-time-csf` или `format=mdp-time-cmaf` ). 
 
 В следующем примере .NET показано, как задать **LowLatency** в **LiveEvent**:
 
@@ -62,20 +62,20 @@ LiveEvent liveEvent = new LiveEvent(
 
 ||Включена двухсекундная GOP с малой задержкой|Включена односекундная GOP с малой задержкой|
 |---|---|---|
-|DASH в AMP|10 с|8 с|
-|HLS на собственном проигрывателе iOS|14 с|10 с|
+|**DASH в AMP**|10 с|8 с|
+|**HLS на собственном проигрывателе iOS**|14 с|10 с|
 
 ### <a name="live-encoding"></a>Кодирование в реальном времени
 
 ||Включена двухсекундная GOP с малой задержкой|Включена односекундная GOP с малой задержкой|
 |---|---|---|
-|DASH в AMP|14 с|10 с|
-|HLS на собственном проигрывателе iOS|18 с|13 с|
+|**DASH в AMP**|14 с|10 с|
+|**HLS на собственном проигрывателе iOS**|18 с|13 с|
 
 > [!NOTE]
 > Значение сквозной задержки может зависеть от условий локальной сети или наличия уровня кэширования CDN. Следует протестировать используемые конфигурации.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения о потоковой трансляции](live-streaming-overview.md)
 - [Руководство по потоковой трансляции](stream-live-tutorial-with-api.md)

@@ -11,10 +11,9 @@ ms.author: sgilley
 ms.custom: seodec18
 ms.date: 03/22/2019
 ms.openlocfilehash: 91f1f69db7f3faa9e1bbdae7966716c974a4dfa5
-ms.sourcegitcommit: a6d477eb3cb9faebb15ed1bf7334ed0611c72053
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82930290"
 ---
 # <a name="copy-other-peoples-work-to-do-data-science"></a>Копирование работы других пользователей для обработки и анализа данных
@@ -90,6 +89,6 @@ ms.locfileid: "82930290"
 
 Обязательно ознакомьтесь с другими видеоматериалами, приведенными в подСтудия машинного обучения Microsoft Azure (классическая модель обработки данных для начинающих).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Попробуйте первый эксперимент по обработке и анализу данных с помощью Машинное обучение Azure Studio (классическая модель)](create-experiment.md)
 * [Ознакомьтесь с введением в машинное обучение в Microsoft Azure.](/azure/machine-learning/overview-what-is-azure-ml)

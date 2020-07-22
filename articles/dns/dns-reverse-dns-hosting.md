@@ -3,16 +3,15 @@ title: Размещение зон обратного просмотра DNS в 
 description: Узнайте, как использовать Azure DNS, чтобы разместить зоны обратного просмотра DNS для диапазонов IP-адресов
 author: rohinkoul
 ms.service: dns
-ms.topic: conceptual
+ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 05/29/2017
 ms.author: rohink
-ms.openlocfilehash: 78fc3428274be5e1998abe9189bea996f15e278c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: d6fabd58baf8fb3dc30c2468efd5bdc8179d5f95
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79454267"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84709204"
 ---
 # <a name="host-reverse-dns-lookup-zones-in-azure-dns"></a>Размещение зон обратного просмотра DNS в Azure DNS
 
@@ -240,7 +239,7 @@ azure network dns record-set list MyResourceGroup 0.0.0.0.c.d.b.a.8.b.d.0.1.0.0.
 az network dns record-set list -g MyResourceGroup -z 0.0.0.0.c.d.b.a.8.b.d.0.1.0.0.2.ip6.arpa
 ```
 
-## <a name="faq"></a>часто задаваемые вопросы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 
 ### <a name="can-i-host-reverse-dns-lookup-zones-for-my-isp-assigned-ip-blocks-on-azure-dns"></a>Можно ли разместить зоны обратного просмотра DNS для блоков IP-адресов, назначенных поставщиком услуг Интернета, в DNS Azure?
 

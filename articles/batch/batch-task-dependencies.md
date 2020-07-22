@@ -1,24 +1,24 @@
 ---
-title: Создание зависимостей задач для выполнения задач в пакетной службе Azure
+title: Создание зависимостей задач для выполнения задач
 description: Создание задач, которые зависят от выполнения других задач, для обработки по модели MapReduce и аналогичных рабочих нагрузок больших данных в пакетной службе Azure.
-ms.topic: article
+ms.topic: how-to
 ms.date: 05/22/2017
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 9b3bc37a3d004f077e2e780d096b7bb2a8e5f773
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 4aad67b4537befd251798aac7601bc4efcc276f2
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82116491"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85965235"
 ---
 # <a name="create-task-dependencies-to-run-tasks-that-depend-on-other-tasks"></a>Создание зависимостей для выполнения задач, которые зависят от других задач
 
 Можно определить зависимости задач, чтобы запускать задачу или набор задач только после завершения родительской задачи. Ниже описано несколько ситуаций, в которых удобно использовать зависимости задач. Их можно использовать для:
 
-* рабочих нагрузок MapReduce в облаке;
-* заданий, задачи обработки данных которых можно представить в виде направленного ациклического графа (DAG);
-* подготовительных и последующих процессов отрисовки, в которых каждая задача должна быть выполнена прежде, чем начнется выполнение следующей задачи;
-* любых других заданий, в которых подчиненные задачи зависят от выходных данных вышестоящих задач.
+- рабочих нагрузок MapReduce в облаке;
+- заданий, задачи обработки данных которых можно представить в виде направленного ациклического графа (DAG);
+- подготовительных и последующих процессов отрисовки, в которых каждая задача должна быть выполнена прежде, чем начнется выполнение следующей задачи;
+- любых других заданий, в которых подчиненные задачи зависят от выходных данных вышестоящих задач.
 
 Зависимости задач пакетной службы позволяют создавать задачи, планируемые для выполнения на вычислительных узлах после завершения одной или нескольких родительских задач. Например, можно создать задание, которое отрисовывает каждый кадр трехмерного фильма с помощью отдельных параллельных задач. Конечная задача, "задача слияния", объединяет отрисованные кадры в готовый фильм только после успешной отрисовки всех кадров.
 
@@ -27,10 +27,12 @@ ms.locfileid: "82116491"
 Можно создавать задачи, которые зависят от других задач по схеме "один к одному" или "один ко многим". Можно также создать зависимость от диапазона, при которой задача зависит от завершения группы задач, идентификаторы которых находятся в пределах определенного диапазона. Вы можете объединить эти три основные сценария, чтобы создать связь "многие ко многим".
 
 ## <a name="task-dependencies-with-batch-net"></a>Зависимости задач .NET пакетной службы
+
 В этой статье рассматривается настройка зависимостей задач с помощью библиотеки [.NET пакетной службы][net_msdn]. Сначала в этой статье описывается, как [включить зависимость задачи](#enable-task-dependencies) в заданиях, а потом рассматривается, как [настроить задачу с зависимостями](#create-dependent-tasks). Мы также опишем, как указать действие зависимости, запускающее зависимые задачи при сбое родительской задачи. Напоследок рассматриваются поддерживаемые пакетной службой [сценарии использования зависимостей](#dependency-scenarios) .
 
 ## <a name="enable-task-dependencies"></a>Включение зависимостей задач
-Чтобы использовать зависимости задач в приложении пакетной службы, сначала необходимо настроить задание для использования зависимостей задач. В .NET пакетной службы включите зависимости задач в классе [CloudJob][net_cloudjob], задав для свойства [UsesTaskDependencies][net_usestaskdependencies] значение `true`.
+
+Чтобы использовать зависимости задач в приложении пакетной службы, сначала необходимо настроить задание для использования зависимостей задач. В .NET пакетной службы включите зависимости задач в классе [CloudJob][net_cloudjob], задав для свойства [UserTaskDependencies][net_usestaskdependencies] значение `true`.
 
 ```csharp
 CloudJob unboundJob = batchClient.JobOperations.CreateJob( "job001",
@@ -43,7 +45,8 @@ unboundJob.UsesTaskDependencies = true;
 Приведенный выше фрагмент кода batchClient представляет собой экземпляр класса [BatchClient][net_batchclient].
 
 ## <a name="create-dependent-tasks"></a>Создание зависимости задач
-Чтобы создать задачу, зависящую от выполнения одной или нескольких родительских задач, можно указать, что эта задача "зависит" от других задач. В .NET пакетной службы укажите свойство [CloudTask][net_cloudtask].[DependsOn][net_dependson] с помощью экземпляра класса [TaskDependencies][net_taskdependencies].
+
+Чтобы создать задачу, зависящую от выполнения одной или нескольких родительских задач, можно указать, что эта задача "зависит" от других задач. В .NET пакетной службы укажите свойство [CloudTask][net_cloudtask].[DepensOn.][net_dependson] с помощью экземпляра класса [TaskDependencies][net_taskdependencies].
 
 ```csharp
 // Task 'Flowers' depends on completion of both 'Rain' and 'Sun'
@@ -57,14 +60,13 @@ new CloudTask("Flowers", "cmd.exe /c echo Flowers")
 Этот фрагмент кода создает зависимую задачу с идентификатором задачи Flowers. Задача Flowers зависит от задач Rain и Sun. Выполнение задачи Flowers будет запланировано на вычислительном узле только после успешного завершения задач Rain и Sun.
 
 > [!NOTE]
-> По умолчанию задача считается успешно выполненной, когда она находится в состоянии **Выполнено** и ее **код выхода** равен `0`. В .NET пакетной службы это означает, что значение свойства [CloudTask][net_cloudtask].[State][net_taskstate] — `Completed`, а значение свойства [TaskExecutionInformation][net_taskexecutioninformation].[ExitCode][net_exitcode] класса CloudTask — `0`. Чтобы изменить эти значения, см. раздел [Действия зависимостей](#dependency-actions).
-> 
-> 
+> По умолчанию задача считается успешно выполненной, когда она находится в состоянии **Выполнено** и ее **код выхода** равен `0`. В .NET пакетной службы это означает, что значение свойства [CloudTask][net_cloudtask].[State][net_taskstate]равно `Completed`, а значение свойства СloudTask [TaskExecutionInformation][net_taskexecutioninformation].[ExitCode][net_exitcode] равно `0`. Чтобы изменить эти значения, см. раздел [Действия зависимостей](#dependency-actions).
 
 ## <a name="dependency-scenarios"></a>сценарии использования зависимостей
+
 Есть три основных сценария зависимостей задач, которые можно использовать в пакетной службе Azure: "один к одному", "один ко многим" и зависимость диапазона идентификаторов задач. Их можно объединить, чтобы получить четвертый сценарий — "многие ко многим".
 
-| Сценарий&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Пример |  |
+| Сценарий&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Пример | Иллюстрация |
 |:---:| --- | --- |
 |  [Один к одному](#one-to-one) |Задача *taskB* зависит от задачи *taskA*. <p/> Выполнение задачи *taskB* не начнется, пока задача *taskA* не будет успешно выполнена. |![Схема: зависимость задач один к одному][1] |
 |  [«Один ко многим»](#one-to-many) |Задача *taskC* зависит от задач *taskA* и *taskB*. <p/> Выполнение задачи *taskC* не начнется, пока задачи *taskA* и *taskB* не будут успешно выполнены). |![Схема: зависимость задач один ко многим][2] |
@@ -76,7 +78,8 @@ new CloudTask("Flowers", "cmd.exe /c echo Flowers")
 > В примерах в этом разделе зависимая задача выполняется только после успешного завершения родительской задачи. Это поведение по умолчанию для зависимой задачи. Можно запустить зависимую задачу после сбоя родительской задачи, указав действие зависимости, чтобы переопределить поведение по умолчанию. Дополнительные сведения см. в разделе [Действия зависимостей](#dependency-actions).
 
 ### <a name="one-to-one"></a>Один к одному
-При взаимосвязи "один к одному" задача зависит от успешного выполнения одной родительской задачи. Чтобы создать зависимость, укажите один идентификатор задачи в статическом методе [TaskDependencies][net_taskdependencies].[OnId][net_onid] при заполнении свойства [DependsOn][net_dependson] элемента [CloudTask][net_cloudtask].
+
+При взаимосвязи "один к одному" задача зависит от успешного выполнения одной родительской задачи. Чтобы создать зависимость, укажите один идентификатор задачи в статическом методе [TaskDependencies][net_taskdependencies].[OnId][net_onid] при заполнении свойств [DependsOn][net_dependson] элемента [CloudTask][net_cloudtask].
 
 ```csharp
 // Task 'taskA' doesn't depend on any other tasks
@@ -90,6 +93,7 @@ new CloudTask("taskB", "cmd.exe /c echo taskB")
 ```
 
 ### <a name="one-to-many"></a>Один ко многим
+
 При взаимосвязи "один ко многим" задача зависит от успешного выполнения нескольких родительских задач. Чтобы создать зависимость, укажите набор идентификаторов задач в статическом методе [TaskDependencies][net_taskdependencies].[OnIds][net_onids] при заполнении свойства [DependsOn][net_dependson] элемента [CloudTask][net_cloudtask].
 
 ```csharp
@@ -106,17 +110,16 @@ new CloudTask("Flowers", "cmd.exe /c echo Flowers")
 ``` 
 
 ### <a name="task-id-range"></a>Диапазон идентификаторов задач
+
 При зависимости от диапазона родительских задач задача зависит от выполнения задач, идентификаторы которых находятся в указанном диапазоне.
 Чтобы создать зависимость, укажите первый и последний идентификаторы задач в статическом методе [TaskDependencies][net_taskdependencies].[OnIdRange][net_onidrange] при заполнении свойства [DependsOn][net_dependson] элемента [CloudTask][net_cloudtask].
 
 > [!IMPORTANT]
 > Если для зависимостей используются диапазоны идентификаторов задач, для диапазона будут выбираться только задачи с идентификаторами, представляющими целые числа. То есть для диапазона `1..10` будут выбраны задачи `3` и `7`, а не `5flamingoes`. 
-> 
+>
 > При оценке зависимостей диапазона нули в начале идентификаторов не учитываются. Поэтому задачи с идентификаторами строк `4`, `04` и `004` попадут *в пределы* диапазона, и все они будут рассматриваться как задача `4`. Любая из этих задач, которая завершится первой, выполнит условие зависимости.
-> 
+>
 > Каждая задача в диапазоне должна выполнить условие зависимости, завершившись успешно или сбоем, который сопоставлен с действием зависимости со значением **Satisfy**. Дополнительные сведения см. в разделе [Действия зависимостей](#dependency-actions).
->
->
 
 ```csharp
 // Tasks 1, 2, and 3 don't depend on any other tasks. Because
@@ -193,38 +196,37 @@ new CloudTask("B", "cmd.exe /c echo B")
 ```
 
 ## <a name="code-sample"></a>Пример кода
-[TaskDependencies][github_taskdependencies] — это один из [примеров кода пакетной службы Azure][github_samples] на портале GitHub. Это решение Visual Studio демонстрирует следующее:
+
+[TaskDependencies][github_taskdependencies] — это один из примеров кода пакетной службы [Azure][github_samples] на портале GitHub. Это решение Visual Studio демонстрирует следующее:
 
 - как включить зависимость задачи для задания;
 - как создать задачи, которые зависят от других задач;
 - как выполнить эти задачи в пуле вычислительных узлов.
 
-## <a name="next-steps"></a>Дальнейшие шаги
-### <a name="application-deployment"></a>Развертывание приложений
-Функция [пакетов приложения](batch-application-packages.md) в пакетной службе дает возможность очень легко развернуть приложения, которые задачи выполняют на вычислительных узлах, и управлять их версиями.
+## <a name="next-steps"></a>Дальнейшие действия
 
-### <a name="installing-applications-and-staging-data"></a>Установка приложений и промежуточных данных
-Ознакомьтесь с публикацией [Installing applications and staging data on Batch compute nodes][forum_post] (Установка приложений и промежуточное размещение данных на вычислительных узлах пакетной службы) на форуме по пакетной службе Azure. Из нее вы узнаете о различных способах подготовки узлов для выполнения задач. Эта публикация написана одним из участников команды разработчиков пакетной службы Azure, и она дает хорошее базовое понимание разных способов копирования приложений, входных данных для задач и других файлов на вычислительные узлы.
+- Функция [пакетов приложения](batch-application-packages.md) в пакетной службе дает возможность очень легко развернуть приложения, которые задачи выполняют на вычислительных узлах, и управлять их версиями.
+- Ознакомьтесь с публикацией [Installing applications and staging data on Batch compute nodes][forum_post] (Установка приложений и промежуточное размещение данных на вычислительных узлах пакетной службы) на форуме по пакетной службе Azure. Из нее вы узнаете о различных способах подготовки узлов для выполнения задач. Эта публикация написана одним из участников команды разработчиков пакетной службы Azure, и она дает хорошее базовое понимание разных способов копирования приложений, входных данных для задач и других файлов на вычислительные узлы.
 
 [forum_post]: https://social.msdn.microsoft.com/Forums/en-US/87b19671-1bdf-427a-972c-2af7e5ba82d9/installing-applications-and-staging-data-on-batch-compute-nodes?forum=azurebatch
 [github_taskdependencies]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/ArticleProjects/TaskDependencies
 [github_samples]: https://github.com/Azure/azure-batch-samples
-[net_batchclient]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.batchclient.aspx
-[net_cloudjob]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudjob.aspx
-[net_cloudtask]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudtask.aspx
-[net_dependson]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudtask.dependson.aspx
-[net_exitcode]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.taskexecutioninformation.exitcode.aspx
-[net_exitconditions]: https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.exitconditions
-[net_exitoptions]: https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.exitoptions
-[net_dependencyaction]: https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.exitoptions
-[net_msdn]: https://msdn.microsoft.com/library/azure/mt348682.aspx
-[net_onid]: https://msdn.microsoft.com/library/microsoft.azure.batch.taskdependencies.onid.aspx
-[net_onids]: https://msdn.microsoft.com/library/microsoft.azure.batch.taskdependencies.onids.aspx
-[net_onidrange]: https://msdn.microsoft.com/library/microsoft.azure.batch.taskdependencies.onidrange.aspx
-[net_taskexecutioninformation]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.taskexecutioninformation.aspx
-[net_taskstate]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.common.taskstate.aspx
-[net_usestaskdependencies]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudjob.usestaskdependencies.aspx
-[net_taskdependencies]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.taskdependencies.aspx
+[net_batchclient]: /dotnet/api/microsoft.azure.batch.batchclient
+[net_cloudjob]: /dotnet/api/microsoft.azure.batch.cloudjob
+[net_cloudtask]: /dotnet/api/microsoft.azure.batch.cloudtask
+[net_dependson]: /dotnet/api/microsoft.azure.batch.cloudtask
+[net_exitcode]: /dotnet/api/microsoft.azure.batch.taskexecutioninformation
+[net_exitconditions]: /dotnet/api/microsoft.azure.batch.exitconditions
+[net_exitoptions]: /dotnet/api/microsoft.azure.batch.exitoptions
+[net_dependencyaction]: /dotnet/api/microsoft.azure.batch.exitoptions
+[net_msdn]: /dotnet/api/microsoft.azure.batch
+[net_onid]: /dotnet/api/microsoft.azure.batch.taskdependencies
+[net_onids]: /dotnet/api/microsoft.azure.batch.taskdependencies
+[net_onidrange]: /dotnet/api/microsoft.azure.batch.taskdependencies
+[net_taskexecutioninformation]: /dotnet/api/microsoft.azure.batch.taskexecutioninformation
+[net_taskstate]: /dotnet/api/microsoft.azure.batch.common.taskstate
+[net_usestaskdependencies]: /dotnet/api/microsoft.azure.batch.cloudjob
+[net_taskdependencies]: /dotnet/api/microsoft.azure.batch.taskdependencies
 
 [1]: ./media/batch-task-dependency/01_one_to_one.png "Схема: зависимость один к одному"
 [2]: ./media/batch-task-dependency/02_one_to_many.png "Схема: зависимость один ко многим"

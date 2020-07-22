@@ -5,21 +5,21 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/27/2019
-ms.openlocfilehash: 302ba583f11b15be98832316b1ea05c7f9be931f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: cfc68b144eac16681f162b3574a82351397ed37c
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75530669"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86086863"
 ---
 # <a name="example-apache-storm-topologies-and-components-for-apache-storm-on-hdinsight"></a>Примеры топологий и компонентов для Apache Storm в HDInsight
 
 Ниже приведен список примеров для [Apache Storm](https://storm.apache.org/), разработанных и созданных корпорацией Майкрософт в HDInsight. Эти примеры охватывают целый ряд тем: от создания простейших топологий на C# и Java до использования таких служб Azure, как Центры событий, Cosmos DB, База данных SQL, [Apache HBase](https://hbase.apache.org/) в HDInsight и служба хранилища Azure. Некоторые примеры также демонстрируют использование средств, не относящихся к Azure, и даже технологий, не связанных с корпорацией Майкрософт, таких как SignalR и Socket.IO.
 
-| Описание | Что демонстрирует | Язык или платформа |
+| Описание: | Что демонстрирует | Язык или платформа |
 |:--- |:--- |:--- |
 | [Запись в Azure Data Lake Storage из Apache Storm](apache-storm-write-data-lake-store.md) |Запись в Azure Data Lake Storage |Java |
 | [Источник воронки и сита концентратора событий](https://github.com/apache/storm/tree/master/external/storm-eventhubs) |Источник воронки и сита концентратора событий |Java |
@@ -42,7 +42,7 @@ ms.locfileid: "75530669"
 
 Пример компонентов Python с топологией Flux см. [в статье Использование Python с Apache Storm в HDInsight](apache-storm-develop-python-topology.md) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Учебник: создание и мониторинг топологии Apache Storm в Azure HDInsight](./apache-storm-quickstart.md)
 * [Развертывание и администрирование топологии Apache Storm в с помощью Apache Storm в HDInsight][6eb0d3b8]

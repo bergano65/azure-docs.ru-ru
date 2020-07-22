@@ -5,19 +5,16 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: conceptual
-ms.date: 04/06/2020
+ms.date: 06/23/2020
 ms.author: victorh
-ms.openlocfilehash: e0638cbccd5e3bc282dbdd7d3b5918e29081a12b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 7bfa1ae5bd0f2ffe92fb37494f9fe589e1b2040e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80757160"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85565543"
 ---
-# <a name="ip-groups-preview-in-azure-firewall"></a>IP-группы (Предварительная версия) в брандмауэре Azure
-
-> [!IMPORTANT]
-> Эта общедоступная предварительная версия предоставляется без соглашения об уровне обслуживания и не должна использоваться для производственных рабочих нагрузок. Некоторые функции могут не поддерживаться, иметь ограничения и быть доступными не во всех расположениях Azure. См. [дополнительные условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+# <a name="ip-groups-in-azure-firewall"></a>IP-группы в брандмауэре Azure
 
 Группы IP-адресов позволяют группировать IP-адреса и управлять ими в правилах брандмауэра Azure следующими способами.
 
@@ -40,7 +37,7 @@ IP-группы можно повторно использовать в прав
 
 ## <a name="create-an-ip-group"></a>Создание группы IP-адресов
 
-Группу IP-адресов можно создать с помощью портал Azure, Azure CLI или REST API. Дополнительные сведения см. в разделе [Создание IP-группы (Предварительная версия)](create-ip-group.md).
+Группу IP-адресов можно создать с помощью портал Azure, Azure CLI или REST API. Дополнительные сведения см. в разделе [Создание IP-группы](create-ip-group.md).
 
 ## <a name="browse-ip-groups"></a>Обзор IP-групп
 1. На панели поиска портал Azure введите **IP-группы** и выберите их. Можно просмотреть список IP-групп или нажать кнопку **Добавить** , чтобы создать новую группу IP-адресов.
@@ -64,9 +61,6 @@ IP-группы можно повторно использовать в прав
 ## <a name="use-an-ip-group"></a>Использование IP-группы
 
 Теперь можно выбрать **IP-группу** в качестве **типа источника** или **назначения** для IP-адресов при создании правил брандмауэра Azure ДНаТ, приложения или сети.
-
-> [!NOTE]
-> В политике брандмауэра IP-группы не поддерживаются. В настоящее время он поддерживается только традиционными правилами брандмауэра.
 
 ![IP-группы в брандмауэре](media/ip-groups/fw-ipgroup.png)
 
@@ -128,4 +122,4 @@ IP-группы доступны во всех регионах общедост
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-- См. дополнительные сведения о [развертывании и настройке Брандмауэра Azure](tutorial-firewall-deploy-portal.md).
+- Узнайте, как [развернуть и настроить брандмауэр Azure](tutorial-firewall-deploy-portal.md).

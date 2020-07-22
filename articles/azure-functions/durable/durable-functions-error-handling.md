@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.date: 11/02/2019
 ms.author: azfuncdf
 ms.openlocfilehash: 447b3dcf5040835f5a853beff68bde794ece51f5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79277860"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85847308"
 ---
 # <a name="handling-errors-in-durable-functions-azure-functions"></a>Обработка ошибок в устойчивых функциях (Функции Azure)
 
@@ -17,7 +17,7 @@ ms.locfileid: "79277860"
 
 ## <a name="errors-in-activity-functions"></a>Ошибки в функциях действий
 
-Любое исключение, которое вызывается в функции действия, передается обратно в функцию Orchestrator и выдается `FunctionFailedException`как. Вы можете написать код для обработки и компенсации ошибок, соответствующий вашим потребностям в функции оркестратора.
+Любое исключение, которое вызывается в функции действия, передается обратно в функцию Orchestrator и выдается как `FunctionFailedException` . Вы можете написать код для обработки и компенсации ошибок, соответствующий вашим потребностям в функции оркестратора.
 
 Например, рассмотрим следующую функцию оркестратора, которая перемещает средства с одного счета на другой:
 
@@ -60,7 +60,7 @@ public static async Task Run([OrchestrationTrigger] IDurableOrchestrationContext
 ```
 
 > [!NOTE]
-> Предыдущие примеры C# предназначены для Устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо. `IDurableOrchestrationContext` Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
+> Предыдущие примеры C# предназначены для Устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо `IDurableOrchestrationContext` . Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -123,7 +123,7 @@ public static async Task Run([OrchestrationTrigger] IDurableOrchestrationContext
 ```
 
 > [!NOTE]
-> Предыдущие примеры C# предназначены для Устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо. `IDurableOrchestrationContext` Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
+> Предыдущие примеры C# предназначены для Устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо `IDurableOrchestrationContext` . Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -189,7 +189,7 @@ public static async Task<bool> Run([OrchestrationTrigger] IDurableOrchestrationC
 ```
 
 > [!NOTE]
-> Предыдущие примеры C# предназначены для Устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо. `IDurableOrchestrationContext` Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
+> Предыдущие примеры C# предназначены для Устойчивые функции 2. x. Для Устойчивые функции 1. x необходимо использовать `DurableOrchestrationContext` вместо `IDurableOrchestrationContext` . Дополнительные сведения о различиях между версиями см. в статье [устойчивые функции версии](durable-functions-versions.md) .
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -220,7 +220,7 @@ module.exports = df.orchestrator(function*(context) {
 > [!NOTE]
 > Этот механизм фактически не прекращает текущее выполнение функции действия. Вместо этого он просто позволяет функции оркестратора игнорировать результат и двигаться дальше. Дополнительные сведения см. в документации по [таймерам](durable-functions-timers.md#usage-for-timeout).
 
-## <a name="unhandled-exceptions"></a>Необработанные исключения
+## <a name="unhandled-exceptions"></a>необработанных исключений.
 
 Если функция оркестратора завершается сбоем с необработанным исключением, сведения об этом исключении регистрируются в журнале, и экземпляр завершает работу с состоянием `Failed`.
 

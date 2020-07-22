@@ -12,10 +12,9 @@ ms.custom:
 - amqp
 - mqtt
 ms.openlocfilehash: 5cc8bae0f0245f5c4b45ca0cd446582b04788c21
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81758758"
 ---
 # <a name="403004-devicemaximumqueuedepthexceeded"></a>403004 DeviceMaximumQueueDepthExceeded
@@ -26,11 +25,11 @@ ms.locfileid: "81758758"
 
 При попытке отправить сообщение из облака на устройство происходит сбой запроса с ошибкой **403004** или **девицемаксимумкуеуедепсексцеедед**.
 
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 
 Основная причина заключается в том, что количество сообщений, поставленных в очередь для устройства, превышает [ограничение очереди (50)](./iot-hub-devguide-quotas-throttling.md#other-limits).
 
-Наиболее вероятной причиной этого является то, что вы используете протокол HTTPS для получения сообщения, что ведет к непрерывному опросу с помощью `ReceiveAsync`, что приводит к регулированию запроса центром Интернета вещей.
+Наиболее вероятной причиной этого является то, что вы используете протокол HTTPS для получения сообщения, что ведет к непрерывному опросу с помощью `ReceiveAsync` , что приводит к регулированию запроса центром Интернета вещей.
 
 ## <a name="solution"></a>Решение
 

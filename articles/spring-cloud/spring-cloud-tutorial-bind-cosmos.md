@@ -1,17 +1,17 @@
 ---
-title: Учебник. Привязывание Azure Cosmos DB к приложению Azure Spring Cloud
-description: В этом учебнике описано, как привязать Azure Cosmos DB к приложению Azure Spring Cloud
+title: Привязывание Azure Cosmos DB к приложению Azure Spring Cloud
+description: Узнайте как привязать Azure Cosmos DB к приложению Azure Spring Cloud
 author: bmitchell287
 ms.service: spring-cloud
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 10/06/2019
 ms.author: brendm
-ms.openlocfilehash: 1566b6ab59e858217adcf6818e1d62f851f37eb1
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 083c67184c6b039303b29119261a6967306a1447
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "76277563"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86142217"
 ---
 # <a name="bind-an-azure-cosmos-db-database-to-your-azure-spring-cloud-application"></a>Привязывание базы данных Azure Cosmos DB к приложению Azure Spring Cloud
 
@@ -105,7 +105,4 @@ Azure Cosmos DB имеет пять различных типов API, подд�
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом учебнике описывается, как привязать приложение Azure Spring Cloud к базе данных Azure Cosmos DB. Чтобы узнать, как привязать приложение к Кэшу Azure для Redis, перейдите к следующему учебнику.
-
-> [!div class="nextstepaction"]
-> [Учебник по настройке привязки к Кэшу Azure для Redis](spring-cloud-tutorial-bind-redis.md)
+Из этой статьи вы узнали, как привязать приложение Azure Spring Cloud к базе данных Azure Cosmos DB. Дополнительные сведения о привязке служб к приложению см. в статье [Привязка к Кэшу Azure для Redis](spring-cloud-tutorial-bind-redis.md).

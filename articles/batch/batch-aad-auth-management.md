@@ -1,37 +1,37 @@
 ---
-title: Использование Azure Active Directory для проверки подлинности решений по управлению пакетной службой
-description: Изучите использование Azure Active Directory для проверки подлинности в приложениях, использующих библиотеку .NET для управления пакетной службой.
-ms.topic: article
+title: Аутентификация решений по управлению пакетной службой с помощью Azure Active Directory
+description: Узнайте больше о выполнении аутентификации в приложениях, применяющих библиотеку .NET для управления пакетной службой, с помощью Azure Active Directory.
+ms.topic: how-to
 ms.date: 04/27/2017
 ms.custom: has-adal-ref
-ms.openlocfilehash: 7ca32e5f9ff32d635d7f662c74dea5534e3dd072
-ms.sourcegitcommit: 50ef5c2798da04cf746181fbfa3253fca366feaa
+ms.openlocfilehash: 829a742c144f2bba39f1ca392e80db25640d4dee
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82608461"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86141967"
 ---
 # <a name="authenticate-batch-management-solutions-with-active-directory"></a>Аутентификация решений по управлению пакетной службой с помощью Active Directory
 
-Аутентификация приложений, вызывающих службу управления пакетной службой Azure, выполняется с помощью [Azure Active Directory][aad_about] (Azure AD). Azure AD — многопользовательский облачный каталог и служба управления удостоверениями корпорации Майкрософт. Инфраструктура Azure уже использует Azure AD для проверки подлинности клиентов, администраторов служб и пользователей организации.
+Аутентификация приложений, вызывающих службу управления пакетной службой Azure, выполняется с помощью [Azure Active Directory](../active-directory/fundamentals/active-directory-whatis.md) (Azure AD). Azure AD — это облачный каталог и служба управления удостоверениями, основанная на нескольких клиентах Майкрософт. Инфраструктура Azure уже использует Azure AD для проверки подлинности клиентов, администраторов служб и пользователей организации.
 
-Библиотека .NET для управления пакетной службой предоставляет типы для работы с учетными записями пакетной службы, ключами учетной записи, приложениями и пакетами приложений. Данная библиотека является клиентом поставщика ресурсов Azure и используется совместно с [Azure Resource Manager][resman_overview] для программного управления этими ресурсами. Служба Azure AD необходима для аутентификации запросов, выполненных с помощью любого клиента поставщика ресурсов Azure, а также библиотеки .NET для управления пакетной службой и [Azure Resource Manager][resman_overview].
+Библиотека .NET для управления пакетной службой предоставляет типы для работы с учетными записями пакетной службы, ключами учетной записи, приложениями и пакетами приложений. Данная библиотека является клиентом поставщика ресурсов Azure и используется совместно с [Azure Resource Manager](../azure-resource-manager/management/overview.md) для программного управления этими ресурсами. Служба Azure AD необходима для аутентификации запросов, выполненных с помощью любого клиента поставщика ресурсов Azure, а также библиотеки .NET для управления пакетной службой и Azure Resource Manager.
 
-В этой статье рассматривается выполнение аутентификации в приложениях, применяющих библиотеку .NET для управления пакетной службой, с помощью Azure AD. Мы покажем, как использовать Azure AD для аутентификации администратора или соадминистратора подписки с помощью встроенной аутентификации. Чтобы изучить использование Azure AD с библиотекой .NET для управления пакетной службой, мы используем пример проекта [AccountManagement][acct_mgmt_sample], который доступен на сайте GitHub.
+В этой статье рассматривается выполнение аутентификации в приложениях, применяющих библиотеку .NET для управления пакетной службой, с помощью Azure AD. Мы покажем, как использовать Azure AD для аутентификации администратора или соадминистратора подписки с помощью встроенной аутентификации. Чтобы изучить использование Azure AD с библиотекой .NET для управления пакетной службой, мы используем пример проекта [AccountManagement](https://github.com/Azure/azure-batch-samples/tree/master/CSharp/AccountManagement), который доступен на сайте GitHub.
 
 Дополнительные сведения об использовании библиотеки .NET для управления пакетной службой и примера AccountManagement см. в статье [Управление учетными записями и квотами пакетной службы с помощью клиентской библиотеки .NET для управления пакетной службой](batch-management-dotnet.md).
 
 ## <a name="register-your-application-with-azure-ad"></a>Регистрация приложения в Azure AD
 
-[Библиотека проверки подлинности Azure Active Directory][aad_adal] (ADAL) предоставляет программный интерфейс Azure AD для использования в приложениях. Чтобы вызвать ADAL в приложении, необходимо зарегистрировать приложение в клиенте Azure AD. При регистрации приложения в клиенте Azure AD нужно предоставить Azure AD сведения о приложении, включая его имя. После этого служба Azure AD предоставит идентификатор приложения, позволяющий связать с ней приложение во время выполнения. Дополнительные сведения об идентификаторе приложения см. в статье [Объекты приложения и субъекта-службы в Azure Active Directory](../active-directory/develop/app-objects-and-service-principals.md).
+[Библиотека проверки Подлинности Azure Active Directory](../active-directory/azuread-dev/active-directory-authentication-libraries.md) (ADAL) предоставляет программный интерфейс Azure AD для использования в приложениях. Чтобы вызвать ADAL в приложении, необходимо зарегистрировать приложение в клиенте Azure AD. При регистрации приложения в клиенте Azure AD нужно предоставить Azure AD сведения о приложении, включая его имя. После этого служба Azure AD предоставит идентификатор приложения, позволяющий связать с ней приложение во время выполнения. Дополнительные сведения об идентификаторе приложения см. в статье [Объекты приложения и субъекта-службы в Azure Active Directory](../active-directory/develop/app-objects-and-service-principals.md).
 
-Чтобы зарегистрировать пример приложения AccountManagement, выполните инструкции, приведенные в разделе [Добавление приложения](../active-directory/develop/quickstart-register-app.md) статьи [Интеграция приложений с Azure Active Directory][aad_integrate]. Укажите в качестве типа приложения **собственное клиентское приложение**. `urn:ietf:wg:oauth:2.0:oob` — это стандартный отраслевой универсальный код ресурса (URI) OAuth 2.0, используемый в качестве **URI перенаправления**. Тем не менее в качестве **URI перенаправления** можно указать любой допустимый универсальный код ресурса (URI) (например, `http://myaccountmanagementsample`). Реальную конечную точку указывать необязательно.
+Чтобы зарегистрировать пример приложения AccountManagement, выполните инструкции, приведенные в разделе [Добавление приложения](../active-directory/develop/quickstart-register-app.md) статьи [Интеграция приложений с Azure Active Directory](../active-directory/develop/quickstart-register-app.md). Укажите в качестве типа приложения **собственное клиентское приложение**. `urn:ietf:wg:oauth:2.0:oob` — это стандартный отраслевой универсальный код ресурса (URI) OAuth 2.0, используемый в качестве **URI перенаправления**. Однако можно указать любой допустимый универсальный код ресурса (например, `http://myaccountmanagementsample` ) для **URI перенаправления**, так как он не обязательно должен быть реальной конечной точкой.
 
-![](./media/batch-aad-auth-management/app-registration-management-plane.png)
+![Добавление приложения](./media/batch-aad-auth-management/app-registration-management-plane.png)
 
 После завершения процесса регистрации отобразится указанный для вашего приложения идентификатор приложения и объекта (субъекта-службы).
 
-![](./media/batch-aad-auth-management/app-registration-client-id.png)
+![Процесс регистрации завершен](./media/batch-aad-auth-management/app-registration-client-id.png)
 
 ## <a name="grant-the-azure-resource-manager-api-access-to-your-application"></a>Предоставление доступа API Azure Resource Manager к приложению
 
@@ -83,7 +83,7 @@ private const string ResourceUri = "https://management.core.windows.net/";
 // Specify the unique identifier (the "Client ID") for your application. This is required so that your
 // native client application (i.e. this sample) can access the Microsoft Graph API. For information
 // about registering an application in Azure Active Directory, please see "Register an application with the Microsoft identity platform" here:
-// https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app
+// https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app
 private const string ClientId = "<application-id>";
 ```
 Скопируйте также URI перенаправления, который вы указали во время процесса регистрации. URI перенаправления, указанный в коде, должен соответствовать URI перенаправления, который был указан при регистрации приложения.
@@ -114,17 +114,7 @@ AuthenticationResult authResult = authContext.AcquireToken(ResourceUri,
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о выполнении [примера приложения AccountManagement][acct_mgmt_sample] см. в статье [Управление учетными записями и квотами пакетной службы с помощью клиентской библиотеки .NET для управления пакетной службой](batch-management-dotnet.md).
-
-Дополнительные сведения о службе Azure AD см. в [документации по Azure Active Directory](https://docs.microsoft.com/azure/active-directory/). Подробные примеры, показывающие, как использовать ADAL, доступны в библиотеке [примеров кода Azure](https://azure.microsoft.com/resources/samples/?service=active-directory).
-
-Дополнительные сведения об аутентификации приложений пакетной службы с помощью Azure AD см. в статье [Аутентификация решений пакетной службы с помощью Active Directory](batch-aad-auth.md).
-
-
-[aad_about]:../active-directory/fundamentals/active-directory-whatis.md "Что такое Azure Active Directory?"
-[aad_adal]: ../active-directory/active-directory-authentication-libraries.md
-[aad_auth_scenarios]:../active-directory/develop/authentication-scenarios.md "Сценарии проверки подлинности в Azure AD"
-[aad_integrate]: ../active-directory/active-directory-integrating-applications.md "Интеграция приложений с Azure Active Directory"
-[acct_mgmt_sample]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/AccountManagement
-[azure_portal]: https://portal.azure.com
-[resman_overview]: ../azure-resource-manager/management/overview.md
+- Дополнительные сведения о выполнении [примера приложения AccountManagement](https://github.com/Azure/azure-batch-samples/tree/master/CSharp/AccountManagement) см. в статье [Управление учетными записями и квотами пакетной службы с помощью клиентской библиотеки .NET для управления пакетной службой](batch-management-dotnet.md).
+- Дополнительные сведения о службе Azure AD см. в [документации по Azure Active Directory](../active-directory/index.yml).
+- Подробные примеры, показывающие, как использовать ADAL, доступны в библиотеке [примеров кода Azure](https://azure.microsoft.com/resources/samples/?service=active-directory).
+- Дополнительные сведения об аутентификации приложений пакетной службы с помощью Azure AD см. в статье [Аутентификация решений пакетной службы с помощью Active Directory](batch-aad-auth.md).

@@ -8,14 +8,14 @@ ms.service: storage
 ms.topic: how-to
 ms.date: 12/30/2019
 ms.author: tamram
-ms.reviewer: cbrooks
+ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: 373b939ac63f31ccaf6a9f01fac92920e19074ed
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 80ca5b63a91da31a5b226a589e15fb202eabd4ad
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75553453"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84805780"
 ---
 # <a name="run-powershell-commands-with-azure-ad-credentials-to-access-blob-or-queue-data"></a>Выполнение команд PowerShell с учетными данными Azure AD для доступа к данным BLOB-объектов или очередей
 
@@ -33,7 +33,7 @@ ms.locfileid: "75553453"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-Чтобы использовать Azure PowerShell для входа и выполнения последующих операций в службе хранилища Azure с помощью учетных данных Azure AD, создайте контекст хранилища для ссылки на учетную запись хранения `-UseConnectedAccount` и включите параметр.
+Чтобы использовать Azure PowerShell для входа и выполнения последующих операций в службе хранилища Azure с помощью учетных данных Azure AD, создайте контекст хранилища для ссылки на учетную запись хранения и включите `-UseConnectedAccount` параметр.
 
 В следующем примере показано, как создать контейнер в новой учетной записи хранения из Azure PowerShell с помощью учетных данных Azure AD. Не забудьте заменить значения заполнителей в угловых скобках собственными значениями.
 
@@ -68,7 +68,7 @@ ms.locfileid: "75553453"
     $ctx = New-AzStorageContext -StorageAccountName "<storage-account>" -UseConnectedAccount
     ```
 
-1. Перед созданием контейнера назначьте себе роль [участника данных BLOB-объекта хранилища](../../role-based-access-control/built-in-roles.md#storage-blob-data-contributor) . Несмотря на то, что вы являетесь владельцем учетной записи, вам нужны явные разрешения на выполнение операций с данными с учетной записью хранения. Дополнительные сведения о назначении ролей RBAC см. [в разделе Предоставление доступа к данным BLOB-объектов и очередей Azure с помощью RBAC в портал Azure](storage-auth-aad-rbac.md).
+1. Прежде чем создавать контейнер, назначьте себе роль [Участник данных в хранилище BLOB-объектов](../../role-based-access-control/built-in-roles.md#storage-blob-data-contributor). Несмотря на то, что вы являетесь владельцем учетной записи, вам нужны явные разрешения на выполнение операций с данными с учетной записью хранения. Дополнительные сведения о назначении ролей RBAC см. [в разделе Предоставление доступа к данным BLOB-объектов и очередей Azure с помощью RBAC в портал Azure](storage-auth-aad-rbac.md).
 
     > [!IMPORTANT]
     > Назначений ролей RBAC может потребоваться несколько минут для распространения.
@@ -80,7 +80,7 @@ ms.locfileid: "75553453"
     New-AzStorageContainer -Name $containerName -Context $ctx
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Назначение роли RBAC доступа к данным большого двоичного объекта и очереди с помощью PowerShell](storage-auth-aad-rbac-powershell.md)
 - [Авторизация доступа к данным BLOB-объектов и очередей с помощью управляемых удостоверений для ресурсов Azure](storage-auth-aad-msi.md)

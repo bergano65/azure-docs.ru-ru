@@ -9,15 +9,14 @@ ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 04/27/2017
 ms.openlocfilehash: ad50cbb423f8c60f1caad159bc1a20cf96ed98aa
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74792543"
 ---
 # <a name="handle-edifact-documents-with-unh25-segments-in-azure-logic-apps"></a>Обработка документов EDIFACT с помощью сегментов UNH 2.5 в Azure Logic Apps
 
-Если в документе EDIFACT существует сегмент UNH 2.5, для поиска в схеме используется сегмент. Например, в этом примере сообщения EDIFACT поле UNH `EAN008`:
+Если в документе EDIFACT существует сегмент UNH 2.5, для поиска в схеме используется сегмент. Например, в этом примере сообщения EDIFACT поле UNH `EAN008` :
 
 `UNH+SSDD1+ORDERS:D:03B:UN:EAN008`
 
@@ -29,7 +28,7 @@ ms.locfileid: "74792543"
 
 ## <a name="update-the-schema"></a>Обновление схемы
 
-Чтобы обработать сообщение, необходимо развернуть схему с именем корневого узла UNH 2.5. Например, корневым именем схемы для образца поля UNH является `EFACT_D03B_ORDERS_EAN008`. Для каждой `D03B_ORDERS` из которых имеется другой сегмент UNH 2.5, необходимо развернуть отдельную схему.
+Чтобы обработать сообщение, необходимо развернуть схему с именем корневого узла UNH 2.5. Например, корневым именем схемы для образца поля UNH является `EFACT_D03B_ORDERS_EAN008` . Для каждой `D03B_ORDERS` из которых имеется другой сегмент UNH 2.5, необходимо развернуть отдельную схему.
 
 ## <a name="add-schema-to-edifact-agreement"></a>Добавить схему в соглашение EDIFACT
 
@@ -43,7 +42,7 @@ ms.locfileid: "74792543"
 
 1. Настройте схему в параметрах получения соглашения EDIFACT.
 
-1. Выберите соглашение EDIFACT и выберите **изменить как JSON**. Добавьте значение UNH 2.5 в `schemaReferences` раздел соглашения о получении:
+1. Выберите соглашение EDIFACT и выберите **изменить как JSON**. Добавьте значение UNH 2.5 в раздел соглашения о получении `schemaReferences` :
 
    ![Добавление UNH 2.5 к соглашению о получении](./media/logic-apps-enterprise-integration-edifact_inputfile_unh2.5/image1.png)
 
@@ -59,10 +58,10 @@ ms.locfileid: "74792543"
 
 1. Выберите соглашение EDIFACT и щелкните **Редактирование в качестве JSON**.  Добавьте значение UNH2.5 в **schemaReferences** для соглашения отправки.
 
-1. Выберите соглашение EDIFACT и выберите **изменить как JSON**. Добавьте значение UNH 2.5 в `schemaReferences` раздел с соглашением об отправке:
+1. Выберите соглашение EDIFACT и выберите **изменить как JSON**. Добавьте значение UNH 2.5 в раздел с соглашением об отправке `schemaReferences` :
 
    ![Добавление UNH 2.5 в соглашение об отправке](./media/logic-apps-enterprise-integration-edifact_inputfile_unh2.5/image2.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о [соглашениях для учетных записей интеграции](../logic-apps/logic-apps-enterprise-integration-agreements.md)

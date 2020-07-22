@@ -1,5 +1,5 @@
 ---
-title: Аутентификация Azure AD & национальными облаками | Службы
+title: Проверка подлинности с помощью Azure AD и национальные облака | Azure
 titleSuffix: Microsoft identity platform
 description: Узнайте о конечных точках для регистрации и проверки подлинности приложений в национальных облаках.
 services: active-directory
@@ -12,31 +12,30 @@ ms.workload: identity
 ms.date: 08/28/2019
 ms.author: negoe
 ms.reviewer: negoe,celested
-ms.custom: aaddev
-ms.openlocfilehash: 20a053369149dc29d6485c49bb091a75bb9fb591
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.custom: aaddev,references_regions
+ms.openlocfilehash: 20a158aac6a03dfe0bd8929de9fa66ea215aa29c
+ms.sourcegitcommit: 1f48ad3c83467a6ffac4e23093ef288fea592eb5
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79263001"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84194118"
 ---
 # <a name="national-clouds"></a>Национальные облака
 
 Национальные облака — это физически изолированные экземпляры Azure. Эти регионы Azure призваны обеспечить соблюдение требований по размещению и независимости данных, а также законодательных требований в пределах географических границ.
 
-Включая глобальное облако, Azure Active Directory (Azure AD) развертывается в следующих национальных облаках:  
+Кроме глобального облака, Azure Active Directory (Azure AD) развертывается в следующих национальных облаках:  
 
 - Azure для государственных организаций
 - Azure для Германии
 - Azure China 21Vianet
 
-Национальные облака являются уникальными и представляют собой отдельную среду из глобальной среды Azure. Важно помнить о ключевых различиях при разработке приложения для этих сред. Отличия включают регистрацию приложений, получение маркеров и настройку конечных точек.
+Национальные облака являются уникальными и отличаются от глобального Azure средой. Важно помнить о ключевых различиях при разработке приложений для этих сред. Отличия наблюдаются в регистрации приложений, получении маркеров и настройке конечных точек.
 
 ## <a name="app-registration-endpoints"></a>Конечные точки регистрации приложений
 
-Для каждого из национальных облаков существует отдельный портал Azure. Для интеграции приложений с платформой Microsoft Identity в национальном облаке необходимо зарегистрировать приложение отдельно в каждом портал Azure, характерном для конкретной среды.
+Для каждого национального облака существует отдельный портал Azure. Чтобы интегрировать приложения с платформой удостоверений Microsoft в национальном облаке, необходимо зарегистрировать каждое приложение отдельно на соответствующем портале Azure в зависимости от среды.
 
-В следующей таблице перечислены базовые URL-адреса для конечных точек Azure AD, используемых для регистрации приложения для каждого национального облака.
+В следующей таблице перечислены базовые URL-адреса конечных точек Azure AD, используемых для регистрации приложения в каждом из национальных облаков.
 
 | Национальное облако | Конечная точка портала Azure AD |
 |----------------|--------------------------|
@@ -49,7 +48,7 @@ ms.locfileid: "79263001"
 
 Все национальные облака проводят проверку подлинности пользователей в каждой среде отдельно и имеют отдельные конечные точки для проверки подлинности.
 
-В следующей таблице перечислены базовые URL-адреса для конечных точек Azure AD, используемых для получения маркеров для каждого национального облака.
+В следующей таблице перечислены базовые URL-адреса конечных точек Azure AD для получения маркеров для каждого национального облака.
 
 | Национальное облако | Конечная точка проверки подлинности Azure AD |
 |----------------|-------------------------|
@@ -58,21 +57,21 @@ ms.locfileid: "79263001"
 | Azure AD для Китая через 21Vianet | `https://login.chinacloudapi.cn` |
 | Azure AD (глобальная служба)| `https://login.microsoftonline.com` |
 
-Вы можете сформировать запросы к конечным точкам авторизации или маркера Azure AD, используя соответствующий базовый URL-адрес для конкретного региона. Например, для Azure для Германии:
+Запросы к конечным точкам Azure AD для авторизации или получения маркеров проверки подлинности можно составлять, используя базовый URL-адрес соответствующего региона. Например, для Azure для Германии:
 
-  - стандартная конечная точка авторизации — `https://login.microsoftonline.de/common/oauth2/authorize`;
-  - стандартная конечная точка токена — `https://login.microsoftonline.de/common/oauth2/token`.
+  - стандартная конечная точка авторизации — `https://login.microsoftonline.de/common/oauth2/v2.0/authorize`;
+  - стандартная конечная точка токена — `https://login.microsoftonline.de/common/oauth2/v2.0/token`.
 
-Для приложений с одним клиентом замените "Common" в предыдущих URL-адресах на идентификатор клиента или имя. Например, `https://login.microsoftonline.de/contoso.com`.
+В приложениях с одним клиентом замените общее в указанных выше URL-адресах идентификатором или именем клиента. Например, `https://login.microsoftonline.de/contoso.com`.
 
 ## <a name="microsoft-graph-api"></a>API Microsoft Graph
 
-Чтобы узнать, как вызывать интерфейсы API Microsoft Graph в национальной облачной среде, перейдите в раздел [Microsoft Graph в облачных развертываниях в облаке](https://developer.microsoft.com/graph/docs/concepts/deployments).
+Сведения о процедуре вызова API Microsoft Graph в среде национального облака см. в разделе [Развертывание Microsoft Graph в национальном облаке](https://developer.microsoft.com/graph/docs/concepts/deployments).
 
 > [!IMPORTANT]
-> Некоторые службы и функции, которые находятся в определенных регионах глобальной службы, могут быть недоступны во всех национальных облаках. Чтобы узнать, какие службы доступны, перейдите к разделу [продукты, доступные по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=all&regions=usgov-non-regional,us-dod-central,us-dod-east,usgov-arizona,usgov-iowa,usgov-texas,usgov-virginia,china-non-regional,china-east,china-east-2,china-north,china-north-2,germany-non-regional,germany-central,germany-northeast).
+> Некоторые функции и службы, существующие в отдельных регионах глобальной службы, могут быть недоступными для всех национальных облаков Azure. Узнать, какие службы доступны, можно в разделе [Доступные продукты по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=all&regions=usgov-non-regional,us-dod-central,us-dod-east,usgov-arizona,usgov-iowa,usgov-texas,usgov-virginia,china-non-regional,china-east,china-east-2,china-north,china-north-2,germany-non-regional,germany-central,germany-northeast).
 
-Чтобы узнать, как создать приложение с помощью платформы Microsoft Identity, следуйте указаниям в [руководстве по библиотеке проверки подлинности Майкрософт (MSAL)](msal-national-cloud.md). В частности, это приложение будет входить в систему пользователя и получить маркер доступа для вызова API Microsoft Graph.
+Чтобы узнать, как создать приложение, используя платформу удостоверений Microsoft, изучите [учебник по библиотеке проверки подлинности Microsoft (MSAL)](msal-national-cloud.md). В частности, приложение авторизует пользователя и получает маркер доступа для вызова API Microsoft Graph.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -81,4 +80,4 @@ ms.locfileid: "79263001"
 - [Azure для государственных организаций](https://docs.microsoft.com/azure/azure-government/)
 - [Azure China 21Vianet](https://docs.microsoft.com/azure/china/)
 - [Azure для Германии](https://docs.microsoft.com/azure/germany/)
-- [Основы проверки подлинности Azure AD](authentication-scenarios.md)
+- [Проверка подлинности Azure AD — основы](authentication-scenarios.md)

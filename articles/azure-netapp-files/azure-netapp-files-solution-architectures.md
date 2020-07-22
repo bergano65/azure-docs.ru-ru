@@ -12,55 +12,116 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 04/22/2020
+ms.date: 07/06/2020
 ms.author: b-juche
-ms.openlocfilehash: a26e403671a2f69eeb785d92fa0c1d37a19e3ac5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 23ec482de740cc1ac8800a5de1c0e3be1f055df7
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82085082"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86045490"
 ---
 # <a name="solution-architectures-using-azure-netapp-files"></a>Архитектура решений, использующих Azure NetApp Files
 В этой статье содержатся ссылки на рекомендации, которые помогут вам понять архитектуру решения для использования Azure NetApp Files.  
 
-## <a name="azure-high-performance-computing-hpc-solutions"></a>Решения для высокопроизводительных вычислений Azure (HPC)
+На следующей диаграмме перечислены категории архитектур решений, которые Azure NetApp Files предлагает:
 
-* [Запуск программного обеспечения моделирования молекулярного в Azure](https://docs.microsoft.com/azure/architecture/example-scenario/infrastructure/reservoir-simulation)
-* [Выполнение рабочих нагрузок MPI с помощью пакетной службы Azure и Azure NetApp Files](https://azure.microsoft.com/resources/run-mpi-workloads-with-azure-batch-and-azure-netapp-files/)
+![Категории архитектуры решения](../media/azure-netapp-files/solution-architecture-categories.png)
 
-## <a name="azure-kubernetes-service-aks-solutions"></a>Решения Azure Kubernetes Service (AKS)
+## <a name="linux-oss-apps-and-database-solutions"></a>ОС Linux и решения для баз данных
 
-* [Интеграция Azure NetApp Files с AKS](https://github.com/andyzhangx/demo/tree/master/linux/nfs)
-* [Интеграция Azure NetApp Files со службой Kubernetes Azure](https://docs.microsoft.com/azure/aks/azure-netapp-files)
+В этом разделе содержатся ссылки на решения для приложений и баз данных ОС Linux. 
 
-## <a name="oracle-database-solutions"></a>Решения для баз данных Oracle
+### <a name="oracle"></a>Oracle;
 
 * [Рекомендации по развертыванию Oracle в Azure с помощью Azure NetApp Files](https://www.netapp.com/us/media/tr-4780.pdf)
 * [Образы виртуальных машин Oracle и их развертывание на Microsoft Azure: параметры конфигурации общего хранилища](https://docs.microsoft.com/azure/virtual-machines/workloads/oracle/oracle-vm-solutions#shared-storage-configuration-options)
-* [Преимущества использования Azure NetApp Files с Oracle Database](https://docs.microsoft.com/azure/azure-netapp-files/solutions-benefits-azure-netapp-files-oracle-database)
+* [Преимущества использования Azure NetApp Files с Oracle Database](solutions-benefits-azure-netapp-files-oracle-database.md)
 
-## <a name="sap-application-solutions"></a>Решения SAP для приложений 
+## <a name="windows-apps-and-sql-server-solutions"></a>Приложения Windows и решения SQL Server
+
+В этом разделе содержатся ссылки на приложения Windows и SQL Server решения.
+
+### <a name="file-sharing-and-global-file-caching"></a>Общий доступ к файлам и глобальное кэширование файлов
+
+* [Развертывание Talon/Azure NetApp Files](https://youtu.be/91LKb1qsLIM)
+
+### <a name="sql-server"></a>SQL Server
+
+* [Развертывание SQL Server через SMB с Azure NetApp Files](https://www.youtube.com/watch?v=x7udfcYbibs)
+* [Развертывание отказоустойчивого кластера SQL Server Always-on по протоколу SMB с Azure NetApp Files](https://www.youtube.com/watch?v=zuNJ5E07e8Q)
+* [Развертывание групп доступности Always-On с помощью Azure NetApp Files](https://www.youtube.com/watch?v=y3VQmzzeyvc)
+
+## <a name="sap-on-azure-solutions"></a>Решения SAP в Azure
+
+В этом разделе содержатся ссылки на решения SAP в Azure. 
+
+### <a name="generic-sap-and-sap-netweaver"></a>Универсальные SAP и SAP NetWeaver 
 
 * [Приложения SAP на Microsoft Azure с помощью Azure NetApp Files](https://www.netapp.com/us/media/tr-4746.pdf)
-* [Конфигурации хранилища виртуальных машин SAP HANA в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations-storage)
-* [Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure на SUSE Linux Enterprise Server с Azure NetApp Files для приложений SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-netapp-files)
+* [Обеспечение высокого уровня доступности виртуальных машин Azure для SAP NetWeaver на SUSE Linux Enterprise Server с помощью Azure NetApp Files для приложений SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-netapp-files)
 * [Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure на Red Hat Enterprise Linux с Azure NetApp Files для приложений SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-rhel-netapp-files)
-* [Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure на Red Hat Enterprise Linux для многоид безопасности приложений SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-rhel-multi-sid)
 * [Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure в Windows с Azure NetApp Files (SMB) для приложений SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-windows-netapp-files-smb)
+* [Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure на Red Hat Enterprise Linux для многоид безопасности приложений SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-rhel-multi-sid)
+
+### <a name="sap-hana"></a>SAP HANA 
+
+* [Конфигурации хранилища виртуальных машин SAP HANA в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations-storage)
 * [SAP HANA горизонтальное масштабирование с помощью резервного узла на виртуальных машинах Azure с Azure NetApp Files на SUSE Linux Enterprise Server](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-scale-out-standby-netapp-files-suse)
-* [SAP HANA горизонтального масштабирования с резервным узлом на виртуальных машинах Azure с Azure NetApp Files в RedHat Enterprise Linux](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-scale-out-standby-netapp-files-rhel)
+* [SAP HANA горизонтальное масштабирование с помощью резервного узла на виртуальных машинах Azure с Azure NetApp Files на Red Hat Enterprise Linux](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-scale-out-standby-netapp-files-rhel)
+
+### <a name="sap-tech-community-and-blog-posts"></a>Технические сообщества SAP и записи в блоге 
+
 * [Azure NetApp Files — резервное копирование SAP HANA в секундах](https://blog.netapp.com/azure-netapp-files-sap-hana-backup-in-seconds/)
-* [Azure NetApp Files — восстановление базы данных HANA из резервной копии моментальных снимков](https://blog.netapp.com/azure-netapp-files-backup-sap-hana/)
+* [Azure NetApp Files — восстановление базы данных HANA из резервной копии моментальных снимков](https://blog.netapp.com/azure-netapp-files-backup-sap-hana)
 * [Azure NetApp Files — SAP HANA разгрузка резервной копии с синхронизацией в облаке](https://blog.netapp.com/azure-netapp-files-sap-hana)
 * [Ускорение копирования SAP HANA системы с помощью Azure NetApp Files](https://blog.netapp.com/sap-hana-faster-using-azure-netapp-files/)
-* [Облачные тома ONTAP и Azure NetApp Files: упрощена миграция SAP HANA системы](https://blog.netapp.com/cloud-volumes-ontap-and-azure-netapp-files-sap-hana-system-migration-made-easy/) 
+* [Облачные тома ONTAP и Azure NetApp Files: упрощена миграция SAP HANA системы](https://blog.netapp.com/cloud-volumes-ontap-and-azure-netapp-files-sap-hana-system-migration-made-easy/)
 
-## <a name="global-file-caching-solutions"></a>Решения для глобального кэширования файлов
+## <a name="virtual-desktop-infrastructure-solutions"></a>Решения инфраструктуры виртуальных рабочих столов
 
-* [Глобально распределенный общий доступ к файлам в корпоративной среде с помощью Azure NetApp Files и Talon FAST™](https://www.talonstorage.com/products/azure-netapp-files)
+В этом разделе содержатся ссылки на решения инфраструктуры виртуальных рабочих столов.
 
-## <a name="windows-virtual-desktopvdi-solutions"></a>Виртуальные рабочие столы Windows и решения VDI
+### <a name="windows-virtual-desktop"></a>Виртуальный рабочий стол Windows
 
+* [Варианты хранения для контейнеров профилей Фслогикс в виртуальном рабочем столе Windows](https://docs.microsoft.com/azure/virtual-desktop/store-fslogix-profile#azure-platform-details)
 * [Создание контейнера профиля Фслогикс для пула узлов с помощью Azure NetApp Files](https://docs.microsoft.com/azure/virtual-desktop/create-fslogix-profile-container)
 
+## <a name="hpc-solutions"></a>Высокопроизводительные решения
+
+В этом разделе содержатся ссылки на решения для высокопроизводительных вычислений (HPC). 
+
+### <a name="generic-hpc"></a>Универсальный HPC
+
+* [Azure NetApp Files: максимально эффективное получение из облачного хранилища](https://cloud.netapp.com/hubfs/Resources/ANF%20PERFORMANCE%20TESTING%20IN%20TEMPLATE.pdf)
+* [Выполнение рабочих нагрузок MPI с помощью пакетной службы Azure и Azure NetApp Files](https://azure.microsoft.com/resources/run-mpi-workloads-with-azure-batch-and-azure-netapp-files/)
+* [Циклическое облако Azure: среды Циклеклауд HPC на Azure NetApp Files](https://docs.microsoft.com/azure/cyclecloud/overview)
+
+### <a name="oil-and-gas"></a>нефть и газ;
+
+* [Высокопроизводительные вычислительные системы (HPC): топливо и газ в Azure](https://techcommunity.microsoft.com/t5/azure-global/high-performance-computing-hpc-oil-and-gas-in-azure/ba-p/824926)
+* [Запуск программного обеспечения моделирования молекулярного в Azure](https://docs.microsoft.com/azure/architecture/example-scenario/infrastructure/reservoir-simulation)
+
+### <a name="electronic-design-automation-eda"></a>Автоматизация разработки электронных макетов (EDA)
+
+* [Преимущества использования Azure NetApp Files для автоматизации работы с электронными макетами](solutions-benefits-azure-netapp-files-electronic-design-automation.md)
+* [Azure Циклеклауд: EDA HPC Lab с Azure NetApp Files](https://github.com/Azure/cyclecloud-hands-on-labs/blob/master/EDA/README.md)
+
+### <a name="analytics"></a>Аналитика
+
+* [Azure NetApp Files: Новая Общая файловая система, используемая в сетке SAS на Microsoft Azure](https://communities.sas.com/t5/Architecture/Azure-NetApp-Files-A-new-shared-file-system-to-use-with-SAS-Grid/m-p/606978)
+
+## <a name="azure-platform-services-solutions"></a>Решения для служб платформы Azure
+
+В этом разделе приводятся решения для служб платформы Azure. 
+
+### <a name="azure-kubernetes-services-and-kubernetes"></a>Azure Kubernetes Services и Kubernetes
+
+* [Интеграция Azure NetApp Files со службой Kubernetes Azure](https://docs.microsoft.com/azure/aks/azure-netapp-files)
+* [Kubernetes производительность в Azure с помощью Azure NetApp Files](https://cloud.netapp.com/blog/ma-anf-blg-configure-kubernetes-openshift)
+* [Trident — Orchestrator Storage для контейнеров](https://netapp-trident.readthedocs.io/en/stable-v20.04/kubernetes/operations/tasks/backends/anf.html)
+
+### <a name="azure-batch"></a>Пакетная служба Azure
+
+* [Выполнение рабочих нагрузок MPI с помощью пакетной службы Azure и Azure NetApp Files](https://azure.microsoft.com/resources/run-mpi-workloads-with-azure-batch-and-azure-netapp-files/)
+ 

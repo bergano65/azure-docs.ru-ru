@@ -7,12 +7,12 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 02/02/2020
-ms.openlocfilehash: ce58aae3b1db1f0f338d353025d4f277aeb6944f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: b9f41a99f6cf21574c3c26950d5c9f048d85a468
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77137492"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86539522"
 ---
 # <a name="unify-multiple-azure-monitor-application-insights-resources"></a>Объединение нескольких ресурсов Azure Monitor Application Insights 
 В этой статье описывается, как запрашивать и просматривать все данные журнала Application Insights в одном месте, даже если они находятся в разных подписках Azure, в качестве замены нерекомендуемых Соединитель Application Insights. Количество Application Insights ресурсов, которые можно включить в один запрос, ограничено 100.
@@ -57,7 +57,7 @@ applicationsScoping
 ![Пример результатов по нескольким запросам](media/unify-app-resource-data/app-insights-query-results.png)
 
 >[!NOTE]
->[Запрос между разными ресурсами](../log-query/cross-workspace-query.md) в оповещениях журнала поддерживается в новом API [правил запросов по расписанию](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules). По умолчанию Azure Monitor использует [устаревшие API оповещения Log Analytics](../platform/api-alerts.md) для создания любого нового правила генерации оповещений на портале Azure, пока вы не переключаетесь с [устаревших API оповещений журнала](../platform/alerts-log-api-switch.md#process-of-switching-from-legacy-log-alerts-api). После переключения новый API используется по умолчанию для новых правил генерации оповещений на портале Azure и позволяет создавать правила генерации оповещений журнала запроса между разными ресурсами. Вы можете создать правила генерации оповещений журнала [запросов между разными ресурсами](../log-query/cross-workspace-query.md), не переключаясь, с помощью [шаблона ARM для API правил запросов по расписанию](../platform/alerts-log.md#log-alert-with-cross-resource-query-using-azure-resource-template), но этим правилом оповещения можно управлять с помощью [API правил запросов по расписанию](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules), а не с помощью портала Azure.
+>[Запрос между разными ресурсами](../log-query/cross-workspace-query.md) в оповещениях журнала поддерживается в новом API [правил запросов по расписанию](/rest/api/monitor/scheduledqueryrules). По умолчанию Azure Monitor использует [устаревшие API оповещения Log Analytics](../platform/api-alerts.md) для создания любого нового правила генерации оповещений на портале Azure, пока вы не переключаетесь с [устаревших API оповещений журнала](../platform/alerts-log-api-switch.md#process-of-switching-from-legacy-log-alerts-api). После переключения новый API используется по умолчанию для новых правил генерации оповещений на портале Azure и позволяет создавать правила генерации оповещений журнала запроса между разными ресурсами. Вы можете создать правила генерации оповещений журнала [запросов между разными ресурсами](../log-query/cross-workspace-query.md), не переключаясь, с помощью [шаблона ARM для API правил запросов по расписанию](../platform/alerts-log.md#log-alert-with-cross-resource-query-using-azure-resource-template), но этим правилом оповещения можно управлять с помощью [API правил запросов по расписанию](/rest/api/monitor/scheduledqueryrules), а не с помощью портала Azure.
 
 ## <a name="application-insights-and-log-analytics-workspace-schema-differences"></a>Различия схем рабочей области Application Insights и Log Analytics
 В следующей таблице показаны различия схем Log Analytics и Application Insights.  
@@ -70,7 +70,7 @@ applicationsScoping
 | ApplicationTypeVersion | application_Version |
 | AvailabilityCount | itemCount |
 | AvailabilityDuration | длительность |
-| AvailabilityMessage | сообщение |
+| AvailabilityMessage | message |
 | AvailabilityRunLocation | location |
 | AvailabilityTestId | идентификатор |
 | AvailabilityTestName | name |
@@ -87,11 +87,11 @@ applicationsScoping
 | DeviceType | client_Type | 
 | ExceptionCount | itemCount | 
 | ExceptionHandledAt | handledAt |
-| ExceptionMessage | сообщение | 
+| ExceptionMessage | message | 
 | ExceptionType | type |
 | OperationID | operation_id |
 | OperationName | operation_Name | 
-| ОС | client_OS | 
+| OS | client_OS | 
 | PageViewCount | itemCount |
 | PageViewDuration | длительность | 
 | PageViewName | name | 
@@ -110,6 +110,6 @@ applicationsScoping
 | URL-адрес | url |
 | UserAccountId | user_AccountId |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Используйте [поиск по журналам](../../azure-monitor/log-query/log-query-overview.md), чтобы просматривать подробные сведения о приложениях Application Insights.

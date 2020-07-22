@@ -6,10 +6,10 @@ ms.topic: article
 ms.date: 01/02/2020
 ms.author: msangapu
 ms.openlocfilehash: 9a5a38ea32d927f50fb9ddbebe3e1c3533e6fcc0
-ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82625329"
 ---
 # <a name="serve-content-from-azure-storage-in-app-service-on-linux"></a>Обработка содержимого из службы хранилища Azure в Службе приложений на платформе Linux
@@ -20,7 +20,7 @@ ms.locfileid: "82625329"
 
 В этом руководство показано, как подключить службу хранилища Azure к службе приложений на платформе Linux. К преимуществам относятся защищенное содержимое, переносимость содержимого, постоянное хранилище, доступ к нескольким приложениям и несколько методов передачи.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - [Azure CLI](/cli/azure/install-azure-cli) (2.0.46 или более поздней версии).
 - Существующая [служба приложений в приложении Linux](https://docs.microsoft.com/azure/app-service/containers/).
@@ -68,9 +68,9 @@ az webapp config storage-account list --resource-group <resource_group> --name <
 
 ## <a name="use-azure-storage-in-docker-compose"></a>Использование службы хранилища Azure в Docker Compose
 
-Службу хранилища Azure можно подключить с помощью многоконтейнерных приложений, используя пользовательский идентификатор. Чтобы просмотреть имя настраиваемого идентификатора, выполните команду [`az webapp config storage-account list --name <app_name> --resource-group <resource_group>`](/cli/azure/webapp/config/storage-account?view=azure-cli-latest#az-webapp-config-storage-account-list).
+Службу хранилища Azure можно подключить с помощью многоконтейнерных приложений, используя пользовательский идентификатор. Чтобы просмотреть имя настраиваемого идентификатора, выполните команду [`az webapp config storage-account list --name <app_name> --resource-group <resource_group>`](/cli/azure/webapp/config/storage-account?view=azure-cli-latest#az-webapp-config-storage-account-list) .
 
-В файле *DOCKER-Compose. yml* сопоставьте `volumes` параметр с `custom-id`. Пример:
+В файле *DOCKER-Compose. yml* сопоставьте `volumes` параметр с `custom-id` . Пример:
 
 ```yaml
 wordpress:

@@ -9,10 +9,9 @@ ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: alkohli
 ms.openlocfilehash: 59cce6d89bc863ad489a8ed37c7f284d3085c775
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "79117266"
 ---
 # <a name="azure-data-box-disk-security-and-data-protection"></a>Безопасность работы Диска Azure Data Box и защита данных
@@ -70,13 +69,13 @@ ms.locfileid: "79117266"
 
 - **Сведения о заказе**. После создания заказа адрес доставки, электронная почта, контактная информация пользователей хранятся на портале Azure. Сохраненная информация включает следующее.
 
-  - имя контактного лица;
-  - Номер телефона
-  - Электронная почта
+  - Имя контактного лица
+  - номер телефона.
+  - Адрес электронной почты
   - Адрес по улице
   - Город
   - почтовый индекс;
-  - Состояние
+  - Область
   - страна, область, край, округ, регион;
   - идентификатор диска;
   - номер счета перевозчика;
@@ -89,7 +88,7 @@ ms.locfileid: "79117266"
 Дополнительные сведения см. в политике конфиденциальности Майкрософт в [центре управления безопасностью](https://www.microsoft.com/trustcenter).
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Знакомство с [требованиями диска Data Box](data-box-disk-system-requirements.md).
 - Объяснение [ограничений диска Data Box](data-box-disk-limits.md).

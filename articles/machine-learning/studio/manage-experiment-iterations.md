@@ -5,21 +5,18 @@ description: Управление запусками экспериментов 
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
-ms.topic: conceptual
+ms.topic: how-to
 author: likebupt
 ms.author: keli19
 ms.custom: seodec18
 ms.date: 03/20/2017
-ms.openlocfilehash: d2ace48ff1b2027a95aef2100540edc10aebb4cc
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
-ms.translationtype: MT
+ms.openlocfilehash: 0e6d4312850dc16b76e248c9bbceacd8b5311d5a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82208420"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84687401"
 ---
 # <a name="manage-experiment-runs-in-azure-machine-learning-studio-classic"></a>Управление запусками экспериментов в Машинное обучение Azure Studio (классическая модель)
-
-[!INCLUDE [Notebook deprecation notice](../../../includes/aml-studio-notebook-notice.md)]
 
 Разработка модели прогнозной аналитики идет по итерациям — по мере изменения разных функций и параметров экспериментов выполняется сведение результатов, пока не будет получена обученная эффективная модель. Ключ к этому процессу — отслеживание различных итераций параметров и конфигураций эксперимента.
 
@@ -42,7 +39,7 @@ ms.locfileid: "82208420"
 
 | Значение скорости обучения | Время начала выполнения |
 | --- | --- |
-| 0,1 |11.9.2014, 16:18:58 |
+| 0.1 |11.9.2014, 16:18:58 |
 | 0,2 |11.9.2014, 16:24:33 |
 | 0,4 |11.9.2014, 16:28:36 |
 | 0,5 |11.9.2014, 16:33:31 |

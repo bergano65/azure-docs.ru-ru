@@ -3,12 +3,12 @@ title: Создание ресурса Azure Application Insights | Докуме
 description: Вручную настройте мониторинг Application Insights для нового работающего приложения.
 ms.topic: conceptual
 ms.date: 12/02/2019
-ms.openlocfilehash: 4d8979469ca83dfd6b81aab10191e8fbf36104ff
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: cb47453140c7659ca2f5e6da2e40d9d78405f8e7
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83200663"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86517099"
 ---
 # <a name="create-an-application-insights-resource"></a>Создание ресурса Application Insights
 
@@ -24,15 +24,15 @@ Azure Application Insights отображает данные о приложен
 
 ![Щелкните знак "+" в левом верхнем углу. Выберите Средства для разработчиков, за которым следует Application Insights](./media/create-new-resource/new-app-insights.png)
 
-   | "Настройки"        |  Значение           | Описание  |
+   | Настройки        |  Значение           | Описание  |
    | ------------- |:-------------|:-----|
    | **имя**;      | `Unique value` | Имя, идентифицирующее отслеживаемое приложение. |
    | **Группа ресурсов**     | `myResourceGroup`      | Имя новой или существующей группы ресурсов для размещения данных App Insights. |
-   | **Регион** | `East US` | Выберите расположение рядом с вами или рядом с ним, где размещено ваше приложение. |
-   | **Режим ресурсов** | `Classic` или `Workspace-based` | Ресурсы на основе рабочей области в настоящее время доступны в общедоступной предварительной версии и позволяют отправить данные телеметрии Application Insights в общую рабочую область Log Analytics. Дополнительные сведения см. в [статье о ресурсах на основе рабочей области](create-workspace-resource.md).
+   | **Регион** | `East US` | Выберите ближайшее к вам расположение или расположение рядом с местом размещения приложения. |
+   | **Режим ресурсов** | `Classic` либо `Workspace-based` | Ресурсы на основе рабочей области в настоящее время доступны в общедоступной предварительной версии и позволяют отправить данные телеметрии Application Insights в общую рабочую область Log Analytics. Дополнительные сведения см. в [статье о ресурсах на основе рабочей области](create-workspace-resource.md).
 
 > [!NOTE]
-> Хотя одно и то же имя ресурса можно использовать в разных группах ресурсов, может быть полезно использовать глобально уникальное имя. Это может быть полезно, если планируется [выполнять запросы перекрестных запросов](https://docs.microsoft.com/azure/azure-monitor/log-query/cross-workspace-query#identifying-an-application) , так как это упрощает необходимый синтаксис.
+> Хотя одно и то же имя ресурса можно использовать в разных группах ресурсов, может быть полезно использовать глобально уникальное имя. Это может быть полезно, если планируется [выполнять запросы перекрестных запросов](../log-query/cross-workspace-query.md#identifying-an-application) , так как это упрощает необходимый синтаксис.
 
 Введите соответствующие значения в обязательные поля, а затем выберите **проверить и создать**.
 
@@ -93,19 +93,19 @@ SamplingPercentage :
 TenantId           : {subid}
 ```
 
-Полную документацию по PowerShell для этого командлета и Узнайте, как получить ключ инструментирования, см. в [документации к Azure PowerShell](https://docs.microsoft.com/powershell/module/az.applicationinsights/new-azapplicationinsights?view=azps-2.5.0).
+Полную документацию по PowerShell для этого командлета и Узнайте, как получить ключ инструментирования, см. в [документации к Azure PowerShell](/powershell/module/az.applicationinsights/new-azapplicationinsights?view=azps-2.5.0).
 
 ### <a name="azure-cli-preview"></a>Azure CLI (Предварительная версия)
 
-Чтобы получить доступ к командам предварительной версии Application Insights Azure CLI, сначала необходимо выполнить следующие действия.
+Чтобы получить доступ к командам Azure CLI для предварительной версии Application Insights, сначала необходимо выполнить следующее.
 
 ```azurecli
  az extension add -n application-insights
 ```
 
-Если не выполнить `az extension add` команду, появится сообщение об ошибке, в котором будет указано следующее:`az : ERROR: az monitor: 'app-insights' is not in the 'az monitor' command group. See 'az monitor --help'.`
+Если не выполнить команду `az extension add`, появится сообщение об ошибке, в котором будет указано следующее: `az : ERROR: az monitor: 'app-insights' is not in the 'az monitor' command group. See 'az monitor --help'.`
 
-Теперь можно выполнить следующие действия, чтобы создать ресурс Application Insights:
+Теперь можно выполнить следующие действия, чтобы создать ресурс Application Insights.
 
 ```azurecli
 az monitor app-insights component create --app
@@ -150,12 +150,12 @@ az monitor app-insights component create --app demoApp --location eastus --kind 
 }
 ```
 
-Полный Azure CLI документации по этой команде и сведения о получении ключа инструментирования см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure/ext/application-insights/monitor/app-insights/component?view=azure-cli-latest#ext-application-insights-az-monitor-app-insights-component-create).
+Полный Azure CLI документации по этой команде и сведения о получении ключа инструментирования см. в [документации по Azure CLI](/cli/azure/ext/application-insights/monitor/app-insights/component?view=azure-cli-latest#ext-application-insights-az-monitor-app-insights-component-create).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Поиск по журналу диагностики](../../azure-monitor/app/diagnostic-search.md)
-* [Просмотр метрик](../../azure-monitor/platform/metrics-charts.md)
-* [Написание запросов аналитики](../../azure-monitor/app/analytics.md)
+* [Изучение метрик](../../azure-monitor/platform/metrics-charts.md)
+* [Написание запросов аналитики](../log-query/log-query-overview.md)
 
 <!--Link references-->
 

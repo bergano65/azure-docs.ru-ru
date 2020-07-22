@@ -15,10 +15,9 @@ ms.workload: na
 ms.date: 12/30/2019
 ms.author: yelevin
 ms.openlocfilehash: cc784afe5db64ccc4aad13fae7a2fa748e4befa3
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77587997"
 ---
 # <a name="connect-zscaler-internet-access-to-azure-sentinel"></a>Подключение Zscaler Internet Access к Azure Sentinel
@@ -43,14 +42,14 @@ ms.locfileid: "77587997"
    > Это решение поддерживает syslog RFC 3164 или RFC 5424.
 
 
-1. Чтобы использовать соответствующую схему в Log Analytics для событий CEF, выполните поиск по `CommonSecurityLog`запросу.
-1. Перейдите к [шагу 3. Проверка подключения](connect-cef-verify.md).
+1. Чтобы использовать соответствующую схему в Log Analytics для событий CEF, выполните поиск по запросу `CommonSecurityLog` .
+1. Перейдите к процедуре [Шаг 3. Проверка подключения](connect-cef-verify.md).
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этом документе вы узнали, как подключить Zscaler Internet Access к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Узнайте, как приступить к [обнаружению угроз с помощью Azure Sentinel](tutorial-detect-threats.md).
-- [Используйте книги](tutorial-monitor-your-data.md) для отслеживания данных.
+- [Используйте книги](tutorial-monitor-your-data.md) для мониторинга данных.
 
 

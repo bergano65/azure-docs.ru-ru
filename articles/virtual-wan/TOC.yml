@@ -36,20 +36,40 @@
           href: virtual-wan-locations-partners.md
         - name: Рекомендации по автоматизации для партнеров
           href: virtual-wan-configure-automation-providers.md
-    - name: Политики IPsec
-      href: virtual-wan-ipsec.md
+    - name: Основные сведения о ценах
+      href: pricing-concepts.md
+    - name: Маршрутизация
+      items:
+        - name: Сведения о маршрутизации виртуальных концентраторов
+          href: about-virtual-hub-routing.md
+        - name: Сценарии
+          items:
+            - name: Подключение "любой к любому"
+              href: scenario-any-to-any.md
+            - name: Изоляция виртуальных сетей
+              href: scenario-isolate-vnets.md
+            - name: Изоляция виртуальных сетей (пользовательская)
+              href: scenario-isolate-vnets-custom.md
+            - name: Виртуальные сети с общими службами
+              href: scenario-shared-services-vnet.md
+            - name: Маршрутизация через NVA
+              href: scenario-route-through-nva.md
+            - name: Пользовательская маршрутизация через NVA (предварительная версия)
+              href: scenario-route-through-nvas-custom.md
+            - name: "Брандмауэр Azure\_— внутренний концентратор (предварительная версия)"
+              href: scenario-route-between-hubs-firewall.md
+            - name: "Брандмауэр Azure\_— пользовательская конфигурация"
+              href: scenario-route-between-vnets-firewall.md
+    - name: "Подключение типа сайт\_— сайт"
+      items:
+        - name: Политики IPsec
+          href: virtual-wan-ipsec.md
+        - name: "Несколько линий связи от поставщика услуг Интернета\_— выбор пути передачи данных Azure"
+          href: path-selection-multiple-links.md
 - name: Практические руководства
   items:
-    - name: Подключение шлюза виртуальной сети к Виртуальной глобальной сети
-      href: connect-virtual-network-gateway-vwan.md
-    - name: Настройка глобального пиринга виртуальных сетей
-      href: global-peering-vnet.md
     - name: Обновление номера SKU Виртуальной глобальной сети
       href: upgrade-virtual-wan.md
-    - name: Настройка пользовательской политики IPsec
-      href: virtual-wan-custom-ipsec-portal.md
-    - name: Установка Брандмауэра Azure в концентраторе
-      href: howto-firewall.md
     - name: ExpressRoute
       items:
         - name: Создание подключения ExpressRoute
@@ -60,6 +80,10 @@
       items:
         - name: Создание подключения "сеть — сеть"
           href: virtual-wan-site-to-site-portal.md
+        - name: Подключение шлюза виртуальной сети к Виртуальной глобальной сети
+          href: connect-virtual-network-gateway-vwan.md
+        - name: Настройка пользовательской политики IPsec
+          href: virtual-wan-custom-ipsec-portal.md
     - name: "Пользовательские VPN-подключения (точка\_— сеть)"
       items:
         - name: Создание пользовательского VPN-подключения
@@ -86,26 +110,30 @@
           href: openvpn-azure-ad-client.md
         - name: "Настройка проверка подлинности Azure\_AD в нескольких приложениях"
           href: openvpn-azure-ad-tenant-multi-app.md
-        - name: Установка Брандмауэра Azure в концентраторе
-          href: howto-firewall.md
     - name: Маршрутизация
       items:
-        - name: Маршрутизация трафика из виртуального концентратора в виртуальный сетевой модуль
-          items:
-            - name: Портал Azure
-              href: virtual-wan-route-table-portal.md
-            - name: Azure PowerShell
-              href: virtual-wan-route-table.md
+        - name: Настройка маршрутизации для виртуального концентратора
+          href: how-to-virtual-hub-routing.md
         - name: Просмотр фактических маршрутов виртуального концентратора
           href: effective-routes-virtual-hub.md
+        - name: Маршрутизация трафика из виртуального концентратора в виртуальный сетевой модуль (прежние версии)
+          items:
+            - name: Портал Azure
+              href: virtual-wan-route-table-nva-portal.md
+            - name: Azure PowerShell
+              href: virtual-wan-route-table-nva.md
     - name: Безопасность
       items:
         - name: Установка Брандмауэра Azure в концентраторе
           href: howto-firewall.md
+    - name: Наблюдение
+      items:
+        - name: Журналы и метрики
+          href: logs-metrics.md
 - name: Справочник
   items:
     - name: Azure PowerShell
-      href: '/powershell/module/az.network#networking'
+      href: /powershell/module/az.network#networking
     - name: REST
       href: /rest/api/azure
     - name: Azure CLI

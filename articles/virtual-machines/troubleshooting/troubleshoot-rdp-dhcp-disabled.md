@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 11/13/2018
 ms.author: genli
-ms.openlocfilehash: 2c5b0556554d280e57b2df51875e1b057b5fb4a8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 278d976f044deb8a7387763306cf07f8b6b55d90
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75749894"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86087798"
 ---
 #  <a name="cannot-rdp-to-azure-virtual-machines-because-the-dhcp-client-service-is-disabled"></a>Не удается подключиться по протоколу удаленного рабочего стола к виртуальным машинам Azure из-за того, что отключена служба DHCP-клиента
 
@@ -40,7 +40,9 @@ ms.locfileid: "75749894"
 
 Для виртуальных машин Resource Manager можно получить журналы для событий 7022 через последовательную консоль доступа, выполнив следующую команду:
 
-    wevtutil qe system /c:1 /f:text /q:"Event[System[Provider[@Name='Service Control Manager'] and EventID=7022 and TimeCreated[timediff(@SystemTime) <= 86400000]]]" | more
+```console
+wevtutil qe system /c:1 /f:text /q:"Event[System[Provider[@Name='Service Control Manager'] and EventID=7022 and TimeCreated[timediff(@SystemTime) <= 86400000]]]" | more
+```
 
 Для классических виртуальных машин придется переключиться в автономный режим и собрать журналы вручную.
 
@@ -63,19 +65,26 @@ ms.locfileid: "75749894"
 ). Если последовательная консоль на нужной виртуальной машине не включена, ознакомьтесь со сведениями о том, как [сбросить сетевой интерфейс](reset-network-interface.md).
 2. Проверьте, отключен ли протокол DHCP в сетевом интерфейсе:
 
-        sc query DHCP
+    ```console
+    sc query DHCP
+    ```
+
 3. Если служба DHCP остановлена, попробуйте запустить эту службу
 
-        sc start DHCP
+    ```console
+    sc start DHCP
+    ```
 
 4. Запросите службу еще раз, чтобы убедиться, что она успешно запущена.
 
-        sc query DHCP
+    ```console
+    sc query DHCP
+    ```
 
     Попробуйте подключиться к виртуальной машине и убедитесь, что проблема устранена.
 5. Если служба не запускается, используйте одно из следующих решений в зависимости от полученного сообщения об ошибке:
 
-    | Ошибка  |  Решение |
+    | Error  |  Решение |
     |---|---|
     | 5 — ACCESS DENIED  | Перейдите к разделу [Служба DHCP-клиента остановлена из-за ошибки отказа в доступе](#dhcp-client-service-is-stopped-because-of-an-access-denied-error).  |
     |1053 — ERROR_SERVICE_REQUEST_TIMEOUT   | Перейдите к разделу [Происходит сбой службы DHCP-клиента или она зависает](#dhcp-client-service-crashes-or-hangs).  |
@@ -157,23 +166,38 @@ ms.locfileid: "75749894"
 
 1. Поскольку эта проблема возникает при изменении стартовой учетной записи для службы, восстановите для нее стандартную учетную запись:
 
-        sc config DHCP obj= 'NT Authority\Localservice'
+    ```console
+    sc config DHCP obj= 'NT Authority\Localservice'
+    ```
+
 2. Запустите службу:
 
-        sc start DHCP
+    ```console
+    sc start DHCP
+    ```
+
 3. Попробуйте подключиться к виртуальной машине с помощью удаленного рабочего стола.
 
 #### <a name="dhcp-client-service-crashes-or-hangs"></a>Происходит сбой службы DHCP-клиента или она зависает
 
 1. Если служба зависла в состоянии **Запуск** или**Остановка**, попробуйте остановить эту службу:
 
-        sc stop DHCP
+    ```console
+    sc stop DHCP
+    ```
+
 2. Изолируйте службу в собственном контейнере svchost.
 
-        sc config DHCP type= own
+    ```console
+    sc config DHCP type= own
+    ```
+
 3. Запустите службу:
 
-        sc start DHCP
+    ```console
+    sc start DHCP
+    ```
+
 4. Если служба по-прежнему не запускается, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
 
 ### <a name="repair-the-vm-offline"></a>Автономное восстановление виртуальной машины
@@ -200,6 +224,6 @@ ms.locfileid: "75749894"
 
 4. [Отключение диска операционной системы и повторное создание виртуальной машины](../windows/troubleshoot-recovery-disks-portal.md). Затем проверьте, устранена ли проблема.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Если вам все еще нужна помощь, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), которая поможет устранить проблему.

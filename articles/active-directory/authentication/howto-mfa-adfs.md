@@ -11,12 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e5949fdce9d591a9c02c5c6c4fb2f1dde94c45d2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 9dac17c8592530c06dd761914e7f556b35c3674b
+ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80654018"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86202984"
 ---
 # <a name="securing-cloud-resources-with-azure-multi-factor-authentication-and-ad-fs"></a>Защита облачных ресурсов с помощью Многофакторной идентификации Azure и AD FS
 
@@ -42,7 +42,7 @@ ms.locfileid: "80654018"
 
 6. Укажите имя правила. 
 7. Выберите **Ссылки на методы проверки подлинности** в качестве типа входящего утверждения.
-8. Выберите **передавать все значения утверждений**.
+8. Щелкните **Пройти по всем значениям утверждений**.
     ![Мастер добавления правила преобразования утверждений](./media/howto-mfa-adfs/configurewizard.png)
 9. Нажмите кнопку **Готово**. Закройте консоль управления AD FS.
 
@@ -59,9 +59,9 @@ ms.locfileid: "80654018"
 1. Откройте оснастку управления AD FS.
 2. В левой части выберите **Отношения доверия проверяющей стороны**.
 3. Щелкните правой кнопкой мыши **Microsoft Office 365** и выберите пункт **изменить правила утверждений...** 
-   Консоль служб ADFS — изменение правил ![утверждений](./media/howto-mfa-adfs/trustedip1.png)
+    ![ Консоль служб ADFS — изменение правил утверждений](./media/howto-mfa-adfs/trustedip1.png)
 4. В правилах преобразования выдачи нажмите кнопку **Добавить правило.** 
-    ![](./media/howto-mfa-adfs/trustedip2.png)
+    ![ Добавление правила утверждения](./media/howto-mfa-adfs/trustedip2.png)
 5. В мастере добавления правила преобразования утверждения выберите **Проход через входящее утверждение или его фильтрация** в раскрывающемся списке и нажмите кнопку **Далее**.
    ![Мастер добавления правила преобразования утверждений](./media/howto-mfa-adfs/trustedip3.png)
 6. В поле рядом с именем правила утверждения укажите имя правила. Пример: InsideCorpNet.
@@ -73,12 +73,15 @@ ms.locfileid: "80654018"
 11. В поле "Имя правила утверждения" введите *Не затрагивать пользователей, вошедших в систему*.
 12. В поле "Настраиваемое правило " введите следующее:
 
+```ad-fs-claim-rule
         c:[Type == "http://schemas.microsoft.com/2014/03/psso"]
             => issue(claim = c);
-    ![Создание настраиваемого утверждения для предотвращения входа пользователей](./media/howto-mfa-adfs/trustedip5.png)
+    ![Create custom claim to keep users signed in](./media/howto-mfa-adfs/trustedip5.png)
+```
+
 13. Нажмите кнопку **Готово**.
 14. Нажмите кнопку **Применить**.
-15. Нажмите кнопку **ОК**.
+15. Нажмите кнопку **Ок**.
 16. Откройте оснастку управления AD FS.
 
 ### <a name="configure-azure-multi-factor-authentication-trusted-ips-with-federated-users"></a>Настройка Многофакторной идентификации с доверенными IP-адресами в Azure для федеративных пользователей
@@ -86,7 +89,7 @@ ms.locfileid: "80654018"
 Теперь, когда утверждения добавлены, можно настроить надежные IP-адреса.
 
 1. Войдите на [портал Azure](https://portal.azure.com).
-2. Выберите **Azure Active Directory** > **Безопасность** > **Условный доступ** > **именованные расположения**.
+2. Выберите **Azure Active Directory**  >  **Безопасность**  >  **Условный доступ**  >  **именованные расположения**.
 3. В колонке **Условный доступ — именованные расположения** выберите **настроить надежные IP-адреса MFA** .
 
    ![Условный доступ Azure AD именованные расположения Настройка надежных IP-адресов MFA](./media/howto-mfa-adfs/trustedip6.png)

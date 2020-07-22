@@ -15,11 +15,10 @@ ms.date: 03/19/2019
 ms.author: juliako
 ms.reviewer: anilmur
 ms.openlocfilehash: 87cd7c63939331190530a46071a6b4c40480562f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79269761"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84705106"
 ---
 # <a name="media-encoder-premium-workflow-formats-and-codecs"></a>Форматы и кодеки рабочего процесса Premium Media Encoder
 
@@ -139,12 +138,12 @@ ms.locfileid: "79269761"
 
 ## <a name="need-help"></a>Требуется помощь?
 
-Вы можете отправить запрос в службу поддержки, перейдя к [новому запросу в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest) .
+Вы можете открыть запрос в службу поддержки, перейдя к разделу [нового запроса на техническую поддержку](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest)
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

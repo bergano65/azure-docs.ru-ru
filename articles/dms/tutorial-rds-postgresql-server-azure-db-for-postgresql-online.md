@@ -13,17 +13,16 @@ ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 04/11/2020
 ms.openlocfilehash: be6f0cd734d31f43557b49f8e9314e925b383899
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81113947"
 ---
 # <a name="tutorial-migrate-rds-postgresql-to-azure-db-for-postgresql-online-using-dms"></a>Руководство. Миграция RDS PostgreSQL в базу данных Azure для PostgreSQL Online с помощью DMS
 
 С помощью службы Azure Database Migration Service базы данных из экземпляра RDS PostgreSQL можно перенести в [Базу данных Azure для PostgreSQL](https://docs.microsoft.com/azure/postgresql/), не отключая базу данных-источник от сети. Другими словами, миграцию можно выполнить с минимальным временем простоя для приложения. В этом руководстве выполняется миграция примера базы данных **Прокат DVD** из экземпляра RDS PostgreSQL 9.6 в Базу данных Azure для PostgreSQL с помощью действия сетевой миграции в Azure Database Migration Service.
 
-В этом руководстве описано следующее:
+В этом руководстве вы узнаете, как:
 > [!div class="checklist"]
 >
 > * перенос примера схемы с помощью служебной программы pg_dump;
@@ -154,7 +153,7 @@ ms.locfileid: "81113947"
 
     ![Отображение поставщиков ресурсов](media/tutorial-rds-postgresql-server-azure-db-for-postgresql-online/portal-select-resource-provider.png)
 
-3. Найдите миграцию, а затем справа от **Microsoft. Migration**выберите **Register**.
+3. В поле поиска введите migration, а затем справа от **Microsoft.DataMigration** щелкните **Зарегистрировать**.
 
     ![Регистрация поставщика ресурсов](media/tutorial-rds-postgresql-server-azure-db-for-postgresql-online/portal-register-resource-provider.png)
 
@@ -204,7 +203,7 @@ ms.locfileid: "81113947"
     > [!NOTE]
     > Кроме того, вы можете выбрать **Создать только проект**, чтобы создать проект миграции для отложенного выполнения.
 
-5. Щелкните **Сохранить**.
+5. Нажмите кнопку **Сохранить**.
 
 6. Выберите **Создать и выполнить действие**, чтобы создать проект и выполнить действие миграции.
 
@@ -267,7 +266,7 @@ ms.locfileid: "81113947"
 
 Оперативная миграция локального экземпляра RDS PostgreSQL в базу данных Azure для PostgreSQL теперь завершена.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * См. дополнительные сведения о [службе Azure Database Migration Service](https://docs.microsoft.com/azure/dms/dms-overview).
 * Общие сведения о Базе данных Azure для PostgreSQL см. в статье [Что такое база данных Azure для PostgreSQL](https://docs.microsoft.com/azure/postgresql/overview).

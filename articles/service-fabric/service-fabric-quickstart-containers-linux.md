@@ -5,12 +5,12 @@ ms.topic: quickstart
 ms.date: 07/22/2019
 ms.author: suhuruli
 ms.custom: mvc
-ms.openlocfilehash: eb0a83d0110002cc32998af4083d06cf6e86e16a
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: d765168ea2eddaf42715536b5da67f15bb8a8cee
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "75372692"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86258548"
 ---
 # <a name="quickstart-deploy-linux-containers-to-service-fabric"></a>Краткое руководство. Развертывание контейнеров Linux в Service Fabric
 
@@ -20,7 +20,7 @@ Azure Service Fabric — это платформа распределенных 
 
 ![Веб-страница приложения для голосования][quickstartpic]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим кратким руководством сделайте следующее:
 
@@ -108,7 +108,7 @@ Service Fabric предоставляет ряд средств, которые 
     ./install.sh
     ```
 
-3. Откройте веб-браузер и перейдите в конечную точку Service Fabric Explorer для кластера. Конечная точка имеет следующий формат: **https://\<URL-адрес_кластера_Service_Fabric_Azure>:19080/Explorer**, например, `https://containertestcluster.eastus.cloudapp.azure.com:19080/Explorer`. </br>
+3. Откройте веб-браузер и перейдите в конечную точку Service Fabric Explorer для кластера. Конечная точка имеет формат **https://\<my-azure-service-fabric-cluster-url>:19080/Explorer** (например, `https://containertestcluster.eastus.cloudapp.azure.com:19080/Explorer`). </br>
 
 4. Разверните узел **Приложения**, чтобы увидеть запись для типа приложения голосования и созданный вами экземпляр.
 
@@ -179,9 +179,9 @@ az group delete --name $ResourceGroupName
 ```
 
 По завершении работы с кластером можно удалить сертификат из хранилища сертификатов. Пример:
-- В Windows: используйте [оснастку MMC для сертификатов](https://docs.microsoft.com/dotnet/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in). При добавлении оснастки не забудьте выбрать **свою учетную запись пользователя**. Перейдите в папку `Certificates - Current User\Personal\Certificates` и удалите сертификат.
-- В Mac: используйте приложение цепочки ключей.
-- В Ubuntu: выполните шаги, которые вы использовали для просмотра сертификатов, и удалите сертификат.
+- В Windows: Используйте [оснастку MMC для сертификатов](/dotnet/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in). При добавлении оснастки не забудьте выбрать **свою учетную запись пользователя**. Перейдите в папку `Certificates - Current User\Personal\Certificates` и удалите сертификат.
+- Для компьютеров Mac. Используйте приложение цепочки ключей.
+- В Ubuntu: Выполните шаги, которые вы использовали для просмотра сертификатов, и удалите сертификат.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

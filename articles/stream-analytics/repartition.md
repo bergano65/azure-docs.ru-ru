@@ -8,10 +8,9 @@ ms.date: 09/19/2019
 ms.topic: conceptual
 ms.custom: mvc
 ms.openlocfilehash: c70cfb6c1626908a2ba4e707a890f6dc7481c51a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75732388"
 ---
 # <a name="use-repartitioning-to-optimize-processing-with-azure-stream-analytics"></a>Использование повторного секционирования для оптимизации обработки с помощью Azure Stream Analytics
@@ -67,7 +66,7 @@ SELECT * INTO [output] FROM [input] PARTITION BY DeviceID INTO 10
 Дополнительные сведения см. в статье [Вывод данных Azure Stream Analytics в базу данных SQL Azure](stream-analytics-sql-output-perf.md).
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Приступая к работе с Azure Stream Analytics: выявление мошенничества в режиме реального времени](stream-analytics-introduction.md)
 * [Использование параллелизации запросов в Azure Stream Analytics](stream-analytics-parallelization.md)

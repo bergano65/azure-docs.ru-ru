@@ -5,12 +5,12 @@ author: dkkapur
 ms.topic: conceptual
 ms.date: 11/02/2017
 ms.author: dekapur
-ms.openlocfilehash: f9bee35ee8e82070b4cf601139b471562ba5e10b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 9fa8b0970d198f9801c7661b9555db17cdf67b3c
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75934205"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86258720"
 ---
 # <a name="add-or-remove-nodes-to-a-standalone-service-fabric-cluster-running-on-windows-server"></a>Добавление узлов в автономный кластер Service Fabric под управлением Windows Server или удаление узлов из него
 После [создания автономного кластера Service Fabric на компьютерах под управлением Windows Server](service-fabric-cluster-creation-for-windows-server.md) потребности (бизнес-потребности) компании могут измениться, и вам нужно будет добавить или удалить несколько узлов в кластере. В данной статье содержатся детальные инструкции по выполнению этой задачи. Обратите внимание, что добавление и удаление узлов в кластерах локальной разработки не поддерживается.
@@ -139,8 +139,7 @@ ms.locfileid: "75934205"
 Замену основных узлов следует выполнять последовательно, вместо того чтобы удалять, а затем добавлять их массово.
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Параметры конфигурации для автономного кластера Windows](service-fabric-cluster-manifest.md)
-* [Защита автономного кластера в Windows с помощью сертификатов X509](service-fabric-windows-cluster-x509-security.md)
-* [Create a three node standalone Service Fabric cluster with Azure virtual machines running Windows Server (Создание автономного кластера Service Fabric с тремя узлами на виртуальных машинах Azure под управлением Windows)](service-fabric-cluster-creation-with-windows-azure-vms.md)
-
+* [Защита автономного кластера под управлением Windows с помощью сертификатов](service-fabric-windows-cluster-x509-security.md)
+* [Create a three node standalone Service Fabric cluster with Azure virtual machines running Windows Server (Создание автономного кластера Service Fabric с тремя узлами на виртуальных машинах Azure под управлением Windows)](./service-fabric-cluster-creation-via-arm.md)

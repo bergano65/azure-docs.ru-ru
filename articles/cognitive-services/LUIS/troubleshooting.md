@@ -1,15 +1,15 @@
 ---
 title: Часто задаваемые вопросы — LUIS
 description: В этой статье приведены ответы на часто задаваемые вопросы о службе "Распознавание речи" (LUIS).
-ms.topic: conceptual
+ms.topic: troubleshooting
 ms.date: 05/06/2020
 ms.author: diberry
-ms.openlocfilehash: 79cee94a0f04cb89aa65f65cde63e48b6f078d2c
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: b45f3c43e70502b2734696a66d2a497c2213d1b9
+ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83835008"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86054854"
 ---
 # <a name="language-understanding-frequently-asked-questions-faq"></a>Часто задаваемые вопросы о службе "Распознавание речи"
 
@@ -43,7 +43,7 @@ ms.locfileid: "83835008"
 Ознакомьтесь с руководством [Исправление орфографических ошибок с помощью API Bing для проверки орфографии](luis-tutorial-bing-spellcheck.md). Служба LUIS применяет ограничения, накладываемые API Bing для проверки орфографии версии 7.
 
 ### <a name="how-do-i-edit-my-luis-app-programmatically"></a>Как изменить приложение LUIS программным способом?
-Чтобы изменить приложение LUIS программным способом, используйте [API разработки](https://go.microsoft.com/fwlink/?linkid=2092087). Примеры вызова API разработки см. в статьях [Руководство по добавлению фраз в приложение с использованием Node.js](./get-started-get-model-rest-apis.md) и [Создание приложения LUIS программным способом с помощью Node.js](./luis-tutorial-node-import-utterances-csv.md). Для применения API разработки необходимо использовать [ключ разработки](luis-concept-keys.md#azure-resources-for-luis), а не ключ конечной точки. Программный способ разработки позволяет осуществлять до 1 000 000 звонков в месяц и пять транзакций в секунду. Дополнительные сведения об используемых с LUIS ключах см. в статье [Keys in LUIS](./luis-concept-keys.md) (Ключи в LUIS).
+Чтобы изменить приложение LUIS программным способом, используйте [API разработки](https://go.microsoft.com/fwlink/?linkid=2092087). Примеры вызова API разработки см. в статьях [Руководство по добавлению фраз в приложение с использованием Node.js](./get-started-get-model-rest-apis.md) и [Создание приложения LUIS программным способом с помощью Node.js](./luis-tutorial-node-import-utterances-csv.md). Для применения API разработки необходимо использовать [ключ разработки](luis-how-to-azure-subscription.md#azure-resources-for-luis), а не ключ конечной точки. Программный способ разработки позволяет осуществлять до 1 000 000 звонков в месяц и пять транзакций в секунду. Дополнительные сведения об используемых с LUIS ключах см. в статье [Keys in LUIS](./luis-how-to-azure-subscription.md) (Ключи в LUIS).
 
 ### <a name="where-is-the-pattern-feature-that-provided-regular-expression-matching"></a>Где находится компонент "Шаблон", который сопоставляется с предоставленным регулярным выражением?
 Сейчас не рекомендуется использовать предыдущий компонент **Шаблон**, замененный компонентом **[Шаблоны](luis-concept-patterns.md)**.
@@ -123,7 +123,7 @@ ms.locfileid: "83835008"
 LUIS [помечает](luis-glossary.md#token) высказывание на основе [языка и региональных параметров](luis-language-support.md#tokenization). Исходное и помеченное значения можно использовать для [извлечения данных](luis-concept-data-extraction.md#tokenized-entity-returned).
 
 ### <a name="how-do-i-create-and-assign-a-luis-endpoint-key"></a>Как создать и назначить ключ конечной точки LUIS?
-[Создайте ключ конечной точки](luis-how-to-azure-subscription.md) в Azure для уровня вашей [службы](https://azure.microsoft.com/pricing/details/cognitive-services/language-understanding-intelligent-services/). [Назначьте ключ](luis-how-to-azure-subscription.md) на странице **[ресурсов Azure](luis-how-to-azure-subscription.md)** . Это действие можно выполнить с помощью любого API. Затем необходимо изменить HTTP-запрос к конечной точке, чтобы [использовать новый ключ конечной точки](luis-concept-keys.md).
+[Создайте ключ конечной точки](luis-how-to-azure-subscription.md) в Azure для уровня вашей [службы](https://azure.microsoft.com/pricing/details/cognitive-services/language-understanding-intelligent-services/). [Назначьте ключ](luis-how-to-azure-subscription.md) на странице **[ресурсов Azure](luis-how-to-azure-subscription.md)** . Это действие можно выполнить с помощью любого API. Затем необходимо изменить HTTP-запрос к конечной точке, чтобы [использовать новый ключ конечной точки](luis-how-to-azure-subscription.md).
 
 ### <a name="how-do-i-interpret-luis-scores"></a>Как интерпретировать оценки LUIS?
 В системе должно использоваться намерение с самой высокой оценкой, независимо от его значения. Например, оценка ниже 0,5 (меньше 50%) не означает, что данные LUIS имеют низкую степень достоверности. Предоставление дополнительных обучающих данных поможет увеличить [показатель](luis-concept-prediction-score.md) наиболее вероятной цели.
@@ -144,10 +144,10 @@ Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Na
 ```
 
 ### <a name="my-luis-app-was-working-yesterday-but-today-im-getting-403-errors-i-didnt-change-the-app-how-do-i-fix-it"></a>Вчера приложение LUIS работало, но сейчас отображаются ошибки 403. Я не изменял приложение. Как ее исправить?
-Выполните эти [инструкции](#how-do-i-create-and-assign-a-luis-endpoint-key) , чтобы создать ключ КОНЕЧНОЙ точки Luis и назначить его приложению. Затем необходимо изменить HTTP-запрос клиентского приложения на конечную точку, чтобы [использовать новый ключ конечной точки](luis-concept-keys.md). Если вы создали новый ресурс в другом регионе, измените регион запроса клиента HTTP.
+Выполните эти [инструкции](#how-do-i-create-and-assign-a-luis-endpoint-key) , чтобы создать ключ КОНЕЧНОЙ точки Luis и назначить его приложению. Затем необходимо изменить HTTP-запрос клиентского приложения на конечную точку, чтобы [использовать новый ключ конечной точки](luis-how-to-azure-subscription.md). Если вы создали новый ресурс в другом регионе, измените регион запроса клиента HTTP.
 
 ### <a name="how-do-i-secure-my-luis-endpoint"></a>Как включить защиту конечной точки LUIS?
-Сведения об этом можно просмотреть в разделе [Защита конечной точки](luis-concept-keys.md#securing-the-endpoint).
+Сведения об этом можно просмотреть в разделе [Защита конечной точки](luis-how-to-azure-subscription.md#securing-the-endpoint).
 
 ## <a name="working-within-luis-limits"></a>Работа в пределах ограничений LUIS
 
@@ -206,7 +206,7 @@ Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Na
 
 ### <a name="how-do-i-know-what-key-i-need-where-i-get-it-and-what-i-do-with-it"></a>Как я узнаю, какой ключ мне нужен, где его получить и что мне с ним делать?
 
-Сведения о различиях между ключом разработки и ключом среды выполнения прогнозирования см. [в разделе Создание и прогнозирование запросов в ключах конечных точек в Luis](luis-concept-keys.md) .
+Сведения о различиях между ключом разработки и ключом среды выполнения прогнозирования см. [в разделе Создание и прогнозирование запросов в ключах конечных точек в Luis](luis-how-to-azure-subscription.md) .
 
 ### <a name="i-got-an-error-about-being-out-of-quota-how-do-i-fix-it"></a>Я получил ошибку с сообщением об отсутствии квоты. Как ее исправить?
 
@@ -329,7 +329,7 @@ Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Na
 
 * [Как использовать службу Azure Conversational AI для масштабирования вашего бизнеса для следующего поколения](https://www.youtube.com/watch?v=_k97jd-csuk&feature=youtu.be)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительную информацию о LUIS см. в следующих ресурсах:
 * [Вопросы Stack Overflow, помеченные LUIS](https://stackoverflow.com/questions/tagged/luis)

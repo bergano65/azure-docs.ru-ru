@@ -1,16 +1,16 @@
 ---
 title: Поиск и устранение неполадок с помощью отчетов о работоспособности системы
 description: Содержит описание отчетов о работоспособности, отправляемых компонентами Azure Service Fabric, и их использовании для устранения неполадок с кластерами и приложениями.
-author: oanapl
+author: georgewallace
 ms.topic: conceptual
 ms.date: 2/28/2018
-ms.author: oanapl
-ms.openlocfilehash: a76ae803b1283ce50d2f4e259943ce5ffcf0274c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.author: gwallace
+ms.openlocfilehash: 8e60ac5065c2f9543a641daf4f62299c00c61fc8
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79282020"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86260193"
 ---
 # <a name="use-system-health-reports-to-troubleshoot"></a>Устранение неполадок с помощью отчетов о работоспособности системы
 Компоненты Azure Service Fabric предоставляют готовые системные отчеты о работоспособности для всех сущностей в кластере. В [хранилище данных о работоспособности](service-fabric-health-introduction.md#health-store) сущности создаются и удаляются на основании отчетов системы. Кроме того, эти сущности упорядочиваются в иерархию с учетом взаимодействия между ними.
@@ -48,7 +48,7 @@ ms.locfileid: "79282020"
 * **Свойство**: начинается с **окружения** и включает сведения об узле.
 * **Дальнейшие действия:** выясните, почему теряется окружение (например, проверьте связь между узлами кластера).
 
-### <a name="rebuild"></a>Перестроить
+### <a name="rebuild"></a>Перестроение
 
 Служба "Диспетчер отработки отказов" (FM) управляет сведениями об узлах кластера. Если диспетчер отработки отказов теряет свои данные и переходит к потере данных, он не может гарантировать наличие актуальных сведений об узлах кластера. В этом случае система проходит через перестройку и System.FM собирает данные со всех узлов в кластере, чтобы перестроить состояние. Иногда из-за проблем с сетью или узлами при перестроении могут возникнуть сбои или приостановка процесса. Это же может произойти со службой мастера диспетчера отработки отказов (FMM). Мастер диспетчера отработки отказов — это системная служба без учета состояния, отслеживающая расположение всех диспетчеров отработки отказов в кластере. Мастер диспетчера отработки отказов — это всегда узел с идентификатором, наиболее близким к 0. При удалении этого узла активируется перестройка.
 **System.FM** или **System.FMM** помечают возникновение одного из предыдущих условий с помощью отчета об ошибке. Перестроение может зависнуть на одном из двух этапов.
@@ -74,17 +74,17 @@ ms.locfileid: "79282020"
 * **Дальнейшие действия**. Если это предупреждение отображается в кластере, следуйте приведенным ниже инструкциям по устранению неполадки. для кластера, работающего Service Fabric версии 6,5 или более поздней: для кластера Service Fabric в Azure после отключения начального узла Service Fabric попытается автоматически изменить его на узел, не являющийся начальным. Чтобы сделать это, убедитесь, что число узлов, не являющихся начальными, в типе первичного узла больше или равно числу начальных узлов. При необходимости добавьте дополнительные узлы в тип первичного узла, чтобы добиться этого.
 В зависимости от состояния кластера для устранения проблемы может потребоваться некоторое время. После этого отчет о предупреждениях будет автоматически сброшен.
 
-Для Service Fabric автономного кластера, чтобы очистить отчет о предупреждениях, все начальные узлы должны стать работоспособными. В зависимости от того, почему начальные узлы являются неработоспособными, необходимо выполнить различные действия. Если начальный узел не работает, пользователи должны вернуть этот узел в исходное состояние. Если начальный узел удален или неизвестен, этот начальный узел необходимо [удалить из кластера](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-windows-server-add-remove-nodes).
+Для Service Fabric автономного кластера, чтобы очистить отчет о предупреждениях, все начальные узлы должны стать работоспособными. В зависимости от того, почему начальные узлы являются неработоспособными, необходимо выполнить различные действия. Если начальный узел не работает, пользователи должны вернуть этот узел в исходное состояние. Если начальный узел удален или неизвестен, этот начальный узел необходимо [удалить из кластера](./service-fabric-cluster-windows-server-add-remove-nodes.md).
 Отчет о предупреждениях автоматически удаляется, когда все начальные узлы становятся работоспособными.
 
 Для кластера под управлением Service Fabric версии более 6,5: в этом случае отчет о предупреждениях необходимо очистить вручную. **Прежде чем очищать отчет, пользователи должны убедиться в работоспособности всех начальных узлов**: если начальный узел не работает, пользователи должны вернуть этот узел в исходное состояние. Если начальный узел удален или неизвестен, этот начальный узел необходимо удалить из кластера.
-После того как все начальные узлы станут работоспособными, используйте следующую команду из PowerShell, чтобы [очистить отчет о предупреждениях](https://docs.microsoft.com/powershell/module/servicefabric/send-servicefabricclusterhealthreport):
+После того как все начальные узлы станут работоспособными, используйте следующую команду из PowerShell, чтобы [очистить отчет о предупреждениях](/powershell/module/servicefabric/send-servicefabricclusterhealthreport):
 
 ```powershell
 PS C:\> Send-ServiceFabricClusterHealthReport -SourceId "System.FM" -HealthProperty "SeedNodeStatus" -HealthState OK
 
 ## Node system health reports
-System.FM, which represents the Failover Manager service, is the authority that manages information about cluster nodes. Each node should have one report from System.FM showing its state. The node entities are removed when the node state is removed. For more information, see [RemoveNodeStateAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.clustermanagementclient.removenodestateasync).
+System.FM, which represents the Failover Manager service, is the authority that manages information about cluster nodes. Each node should have one report from System.FM showing its state. The node entities are removed when the node state is removed. For more information, see [RemoveNodeStateAsync](/dotnet/api/system.fabric.fabricclient.clustermanagementclient.removenodestateasync).
 
 ### Node up/down
 System.FM reports as OK when the node joins the ring (it's up and running). It reports an error when the node departs the ring (it's down, either for upgrading or simply because it has failed). The health hierarchy built by the health store acts on deployed entities in correlation with System.FM node reports. It considers the node a virtual parent of all deployed entities. The deployed entities on that node are exposed through queries if the node is reported as up by System.FM, with the same instance as the instance associated with the entities. When System.FM reports that the node is down or restarted, as a new instance, the health store automatically cleans up the deployed entities that can exist only on the down node or on the previous instance of the node.
@@ -639,30 +639,30 @@ HealthEvents          :
 
 Свойство и текст указывают, какие API привели к блокировке. Дальнейшие действия отличаются и зависят от программных интерфейсов, вызвавших блокировку. Любой API в *IStatefulServiceReplica* или *IStatelessServiceInstance* обычно является ошибкой в коде службы. В следующем разделе описано, как эти преобразования относятся к [модели Reliable Services](service-fabric-reliable-services-lifecycle.md).
 
-- **IStatefulServiceReplica. Open**: это предупреждение означает, что вызов `CreateServiceInstanceListeners`, `ICommunicationListener.OpenAsync`или, если он переопределен, `OnOpenAsync` будет остановлен.
+- **IStatefulServiceReplica. Open**: это предупреждение означает, что вызов `CreateServiceInstanceListeners` , `ICommunicationListener.OpenAsync` или, если он переопределен, `OnOpenAsync` будет остановлен.
 
 - **IStatefulServiceReplica.Close** и **IStatefulServiceReplica.Abort**. Наиболее распространенный случай — когда служба не учитывает маркер отмены, передаваемый в `RunAsync`. Возможна также блокировка `ICommunicationListener.CloseAsync` или `OnCloseAsync` (в случае переопределения).
 
 - **IStatefulServiceReplica.ChangeRole(S)** и **IStatefulServiceReplica.ChangeRole(N)**. Наиболее распространенный случай — когда служба не учитывает маркер отмены, передаваемый в `RunAsync`. В этом сценарии лучшим решением будет перезапуск реплики.
 
-- **IStatefulServiceReplica. ChangeRole (P)**. наиболее распространенным случаем является то, что служба не вернула задачу `RunAsync`из.
+- **IStatefulServiceReplica. ChangeRole (P)**. наиболее распространенным случаем является то, что служба не вернула задачу из `RunAsync` .
 
-Другие вызовы API, которые могут быть задержаны, находятся в интерфейсе **IReplicator** . Пример:
+Другие вызовы API, которые могут быть задержаны, находятся в интерфейсе **IReplicator** . Например:
 
 - **IReplicator.CatchupReplicaSet**. Это предупреждение означает одну из следующих ситуаций: недостаточно реплик (это можно определить, посмотрев состояние реплик в секции или отчет о работоспособности System.FM для заблокированной перенастройки); реплики не подтверждают операции. С помощью командлета PowerShell `Get-ServiceFabricDeployedReplicaDetail` можно узнать ход выполнения всех реплик. Проблема связана с репликами, у которых значение `LastAppliedReplicationSequenceNumber` ниже значения `CommittedSequenceNumber` первичной реплики.
 
-- **IReplicator. BuildReplica (\<удаленный replicaId>)**: это предупреждение указывает на проблему в процессе сборки. Ознакомьтесь с [жизненным циклом реплики](service-fabric-concepts-replica-lifecycle.md). Проблема может быть вызвана неправильной настройкой адреса репликатора. Дополнительные сведения см. в разделах [Настройка надежных служб с отслеживанием состояния](service-fabric-reliable-services-configuration.md) и [Указание ресурсов в манифесте служб](service-fabric-service-manifest-resources.md). Также возможно наличие проблемы на удаленном узле.
+- **IReplicator.BuildReplica (\<Remote ReplicaId>)**. Это предупреждение указывает на проблему в процессе сборки. Ознакомьтесь с [жизненным циклом реплики](service-fabric-concepts-replica-lifecycle.md). Проблема может быть вызвана неправильной настройкой адреса репликатора. Дополнительные сведения см. в разделах [Настройка надежных служб с отслеживанием состояния](service-fabric-reliable-services-configuration.md) и [Указание ресурсов в манифесте служб](service-fabric-service-manifest-resources.md). Также возможно наличие проблемы на удаленном узле.
 
 ### <a name="replicator-system-health-reports"></a>Системные отчеты о работоспособности репликатора
-**Переполнение очереди репликации:**
-**System. репликатор** сообщает о том, что очередь репликации заполнена. На сервере-источнике это обычно происходит, так как одна или несколько вторичных реплик выполняются слишком медленно для подтверждения операций. На сервере-получателе это обычно происходит, если служба медленно применяет операции. Предупреждение удаляется при очистке очереди.
+**Переполнение очереди репликации:** 
+ **System. репликатор** сообщает о предупреждении при заполнении очереди репликации. На сервере-источнике это обычно происходит, так как одна или несколько вторичных реплик выполняются слишком медленно для подтверждения операций. На сервере-получателе это обычно происходит, если служба медленно применяет операции. Предупреждение удаляется при очистке очереди.
 
 * **SourceId**: System.Replicator.
 * **Свойство**: **PrimaryReplicationQueueStatus** или **SecondaryReplicationQueueStatus**, в зависимости от роли реплики.
 * **Дальнейшие действия.** Если отчет находится на сервере-источнике, проверьте подключение между узлами в кластере. Если все подключения находятся в работоспособном состоянии, возможно, по крайней мере одна первичная реплика с высокой задержкой диска применяет операции. Если отчет находится на вторичной реплике, сначала проверьте использование диска и производительность на узле, а затем исходящее соединение из медленного узла к первичной реплике.
 
-**RemoteReplicatorConnectionStatus:**
-**System. репликатор** в первичной реплике сообщает о том, что подключение к дополнительному (удаленному) репликатору неработоспособно. Адрес удаленного репликатора можно посмотреть в сообщении отчетов. Это упрощает определение ложных конфигураций и сетевых проблем между репликаторами.
+**RemoteReplicatorConnectionStatus:** 
+ **System. репликатор** в первичной реплике сообщает о том, что подключение к дополнительному (удаленному) репликатору неработоспособно. Адрес удаленного репликатора можно посмотреть в сообщении отчетов. Это упрощает определение ложных конфигураций и сетевых проблем между репликаторами.
 
 * **SourceId**: System.Replicator.
 * **Свойство:****RemoteReplicatorConnectionStatus**.
@@ -675,7 +675,7 @@ HealthEvents          :
 * **Свойство**: **PrimaryReplicationQueueStatus** или **SecondaryReplicationQueueStatus**, в зависимости от роли реплики.
 
 ### <a name="slow-naming-operations"></a>Медленные операции именования
-**System.NamingService** сообщает о работоспособности первичной реплики, когда операция именования длится больше допустимого. Примеры операций именования — [CreateServiceAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.servicemanagementclient.createserviceasync) и [DeleteServiceAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.servicemanagementclient.deleteserviceasync). Дополнительные методы можно найти в статьях, посвященных FabricClient (например, в статье о [методах управления службами](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.servicemanagementclient) или [методах управления свойствами](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.propertymanagementclient)).
+**System.NamingService** сообщает о работоспособности первичной реплики, когда операция именования длится больше допустимого. Примеры операций именования — [CreateServiceAsync](/dotnet/api/system.fabric.fabricclient.servicemanagementclient.createserviceasync) и [DeleteServiceAsync](/dotnet/api/system.fabric.fabricclient.servicemanagementclient.deleteserviceasync). Дополнительные методы можно найти в статьях, посвященных FabricClient (например, в статье о [методах управления службами](/dotnet/api/system.fabric.fabricclient.servicemanagementclient) или [методах управления свойствами](/dotnet/api/system.fabric.fabricclient.propertymanagementclient)).
 
 > [!NOTE]
 > Служба именования присваивает имена служб определенному расположению в кластере, позволяя пользователям управлять именами и свойствами служб. Это секционированная материализованная служба Service Fabric. Одна из секций представляет имя *Authority Owner*, содержащее метаданные о всех именах и службах Service Fabric. Имена Service Fabric сопоставляются с разными секциями, называемыми секциями *Name Owner*. Таким образом, служба является расширяемой. Узнайте больше о [службе именования](service-fabric-architecture.md).
@@ -773,7 +773,7 @@ HealthEvents                       :
                                      Transitions           : Error->Ok = 7/14/2017 4:55:14 PM, LastWarning = 1/1/0001 12:00:00 AM
 ```
 
-### <a name="download"></a>Скачать
+### <a name="download"></a>Загрузка
 System.Hosting сообщает об ошибке, если скачивание пакета приложения завершается сбоем.
 
 * **SourceId**: System.Hosting.
@@ -851,7 +851,7 @@ HealthEvents               :
                              Transitions           : Error->Ok = 7/14/2017 4:55:14 PM, LastWarning = 1/1/0001 12:00:00 AM
 ```
 
-### <a name="download"></a>Скачать
+### <a name="download"></a>Загрузка
 System.Hosting сообщает об ошибке при скачивании пакета службы.
 
 * **SourceId**: System.Hosting.
@@ -872,7 +872,7 @@ System.Hosting сообщает о предупреждении, если емк
 * **Свойство:****ResourceGovernance**.
 * **Дальнейшие действия.** Предпочтительный способ решения этой проблемы — изменение манифеста кластера, чтобы включить автоматическое обнаружение доступных ресурсов. Другой способ — обновление манифеста кластера, путем указания правильных значений емкости узла для этих метрик.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Просмотр отчетов о работоспособности Service Fabric](service-fabric-view-entities-aggregated-health.md)
 
 * [Проверка работоспособности службы и оповещение о проблемах](service-fabric-diagnostics-how-to-report-and-check-service-health.md)
@@ -880,4 +880,3 @@ System.Hosting сообщает о предупреждении, если емк
 * [Мониторинг и диагностика состояния служб в локальной среде разработки](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md)
 
 * [Обновление приложения Service Fabric](service-fabric-application-upgrade.md)
-

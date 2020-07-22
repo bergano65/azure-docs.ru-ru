@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
 ms.openlocfilehash: 760bb5b62e9bba9b7a83f99760f7fe5d8c399dfb
-ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "67185238"
 ---
 1. В диспетчере отказоустойчивости кластеров разверните **Роли** и выделите свою группу доступности.  
@@ -31,7 +31,7 @@ ms.locfileid: "67185238"
 
 8. Запустите SQL Server Management Studio и подключитесь к основной реплике.
 
-9. Выберите > **группы** >  **доступности AlwaysOn высокая доступность** > **аваилабилитиграупнаме прослушиватели группы доступности**.**\>\<**  
+9. Перейдите в раздел "группы доступности с **высокой доступностью AlwaysOn**"  >  **Availability Groups**  >  **\<AvailabilityGroupName\>**  >  **Availability Group Listeners**.  
     Теперь должно отобразиться имя прослушивателя, созданного в диспетчере отказоустойчивости кластеров.
 
 10. Щелкните правой кнопкой мыши имя прослушивателя и выберите **Свойства**.

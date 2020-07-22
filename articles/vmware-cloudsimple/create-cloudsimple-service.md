@@ -9,17 +9,16 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 8648f2c9cc0175050d4b7642f5235d47159ecfaf
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77024829"
 ---
 # <a name="create-the-azure-vmware-solution-by-cloudsimple-service"></a>Создание решения Azure VMware с помощью службы Клаудсимпле
 
 Чтобы приступить к работе с решением VMware для Azure с помощью Клаудсимпле, создайте решение Azure VMware с помощью службы Клаудсимпле в портал Azure.
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 Выделите блок/28 CIDR для подсети шлюза. Для каждой службы Клаудсимпле требуется подсеть шлюза, которая является уникальной для региона, в котором она создана. Подсеть шлюза используется для сетевых служб пограничной сети и требует блока/28 CIDR. Адресное пространство подсети шлюза должно быть уникальным. Она не должна перекрываться с сетью, которая взаимодействует с средой Клаудсимпле. Сети, взаимодействующие с Клаудсимпле, включают в себя локальные сети и виртуальные сети Azure.
 

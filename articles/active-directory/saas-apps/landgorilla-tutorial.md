@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 08/07/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e7c2f9b076d831f4d851a964ababb64930a7c7f8
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 452f06e1294fad64547e0b04003ae06f80c1d9f4
+ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "68879992"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85799808"
 ---
 # <a name="tutorial-integrate-land-gorilla-with-azure-active-directory"></a>Руководство по Интеграция Land Gorilla с Azure Active Directory
 
@@ -84,20 +84,19 @@ ms.locfileid: "68879992"
 
     а. В текстовом поле **Идентификатор** введите URL-адрес в одном из следующих форматов:
 
-    | | |
-    |-|-|
-    | `https://<customer domain>.landgorilla.com/`|
-    | `https://www.<customer domain>.landgorilla.com`|
-    | | |
+      ```http
+      https://<customer domain>.landgorilla.com/
+      https://www.<customer domain>.landgorilla.com
+      ```
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в одном из следующих форматов:
 
-    | | |
-    |-|-|
-    | `https://<customer domain>.landgorilla.com/simplesaml/module.php/core/authenticate.php`|
-    | `https://www.<customer domain>.landgorilla.com/simplesaml/module.php/core/authenticate.php`|
-    | `https://<customer domain>.landgorilla.com/simplesaml/module.php/saml/sp/saml2-acs.php/default-sp`|
-    | `https://www.<customer domain>.landgorilla.com/simplesaml/module.php/saml/sp/saml2-acs.php/default-sp`|
+      ```http
+      https://<customer domain>.landgorilla.com/simplesaml/module.php/core/authenticate.php
+      https://www.<customer domain>.landgorilla.com/simplesaml/module.php/core/authenticate.php
+      https://<customer domain>.landgorilla.com/simplesaml/module.php/saml/sp/saml2-acs.php/default-sp
+      https://www.<customer domain>.landgorilla.com/simplesaml/module.php/saml/sp/saml2-acs.php/default-sp
+      ```
 
     > [!NOTE]
     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Мы рекомендуем использовать уникальное значение строки идентификатора. Чтобы получить эти значения, обратитесь в [службу поддержки Land Gorilla Client](https://www.landgorilla.com/support/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.

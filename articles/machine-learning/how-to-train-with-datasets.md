@@ -5,18 +5,18 @@ description: Узнайте, как использовать наборы дан
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: how-to
 ms.author: sihhu
 author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 04/20/2020
-ms.openlocfilehash: cd72ce9fed7f821807b8604f68068c64a38293e3
-ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
-ms.translationtype: MT
+ms.custom: tracking-python
+ms.openlocfilehash: a9b9faed111e6126bfdb30e4237a988afd947823
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82996665"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84560141"
 ---
 # <a name="train-with-datasets-in-azure-machine-learning"></a>Обучение с наборами данных в Машинное обучение Azure
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -25,7 +25,7 @@ ms.locfileid: "82996665"
 
 Машинное обучение Azure наборы данных обеспечивают простую интеграцию с Машинное обучение Azure обучающими продуктами, такими как [скриптрун](https://docs.microsoft.com/python/api/azureml-core/azureml.core.scriptrun?view=azure-ml-py), [оценщик](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.estimator?view=azure-ml-py) [, а также](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.hyperdrive?view=azure-ml-py) [конвейеры и машинное обучение Azure](how-to-create-your-first-pipeline.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Чтобы создать и обучить наборы данных, вам потребуется:
 
@@ -42,7 +42,7 @@ ms.locfileid: "82996665"
 
 Вы можете получить доступ к существующему Табулардатасет из обучающего скрипта эксперимента в рабочей области и загрузить этот набор данных в кадр Pandas для дальнейшего изучения в локальной среде.
 
-В следующем коде [`get_context()`]() метод в [`Run`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run.run?view=azure-ml-py) классе используется для доступа к существующему входному табулардатасет, `titanic`в скрипте обучения. Затем использует [`to_pandas_dataframe()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset#to-pandas-dataframe-on-error--null---out-of-range-datetime--null--) метод для загрузки этого набора данных в кадр данных Pandas для дальнейшего изучения и подготовки перед обучением.
+В следующем коде [`get_context()`]() метод в [`Run`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run.run?view=azure-ml-py) классе используется для доступа к существующему входному табулардатасет, `titanic` в скрипте обучения. Затем использует [`to_pandas_dataframe()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset#to-pandas-dataframe-on-error--null---out-of-range-datetime--null--) метод для загрузки этого набора данных в кадр данных Pandas для дальнейшего изучения и подготовки перед обучением.
 
 > [!Note]
 > Если исходный источник данных содержит NaN, пустые строки или пустые значения, то при использовании to_pandas_dataframe () эти значения заменяются значением *null* . 
@@ -85,11 +85,11 @@ titanic_ds = Dataset.Tabular.from_delimited_files(path=web_path)
 
 Объект средства [оценки](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.estimator.estimator?view=azure-ml-py) используется для отправки запуска эксперимента. Машинное обучение Azure содержит предварительно настроенные средства оценки для распространенных платформ машинного обучения, а также универсальный механизм оценки.
 
-Этот код создает универсальный объект `est`средства оценки, который указывает
+Этот код создает универсальный объект средства оценки, `est` который указывает
 
 * Каталог скрипта для скриптов. Все файлы в этом каталоге передаются в узел кластера для выполнения.
 * Сценарий обучения, *train_titanic. Корректировка*.
-* Входной набор данных для обучения, `titanic_ds`. `as_named_input()`требуется, чтобы на входной набор данных можно было ссылаться по назначенному имени `titanic` в скрипте обучения. 
+* Входной набор данных для обучения, `titanic_ds` . `as_named_input()`требуется, чтобы на входной набор данных можно было ссылаться по назначенному имени `titanic` в скрипте обучения. 
 * Целевой объект вычислений для эксперимента.
 * Определение окружения для эксперимента.
 
@@ -132,7 +132,7 @@ mnist_ds = Dataset.File.from_files(path = web_paths)
 
 Рекомендуется передавать набор данных в качестве аргумента при подключении. Помимо передачи набора данных с помощью `inputs` параметра в средстве оценки, можно также передать набор данных с помощью `script_params` и получить путь к данным (точка подключения) в обучающем скрипте через аргументы. Таким образом вы сможете использовать один и тот же сценарий обучения для локальной отладки и удаленного обучения на любой облачной платформе.
 
-Объект средства оценки [SKLearn](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.sklearn.sklearn?view=azure-ml-py) используется для отправки экспериментов scikit-учиться. После отправки выполнения файлы данных, на `mnist` которые ссылается набор данных, будут подключены к целевому объекту вычислений. Узнайте больше о обучении с помощью средства [оценки SKlearn](how-to-train-scikit-learn.md).
+Объект средства оценки [SKLearn](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.sklearn.sklearn?view=azure-ml-py) используется для отправки экспериментов scikit-учиться. После отправки выполнения файлы данных, на которые ссылается `mnist` набор данных, будут подключены к целевому объекту вычислений. Узнайте больше о обучении с помощью средства [оценки SKlearn](how-to-train-scikit-learn.md).
 
 ```Python
 from azureml.train.sklearn import SKLearn
@@ -221,7 +221,7 @@ print (mounted_path)
 
 В этой статье демонстрируются и развертываются [записные книжки набора данных](https://aka.ms/dataset-tutorial) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Автоматическое обучение моделей машинного обучения](how-to-auto-train-remote.md) с помощью табулардатасетс.
 

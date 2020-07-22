@@ -4,13 +4,13 @@ titleSuffix: Azure Kubernetes Service
 description: Сведения об установке и настройке контроллера входящего трафика NGINX для внутренней частной сети в кластере Службы Azure Kubernetes (AKS).
 services: container-service
 ms.topic: article
-ms.date: 04/27/2020
-ms.openlocfilehash: 749c9904244dd702e41a63e0266c5ff6b1344261
-ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
+ms.date: 07/02/2020
+ms.openlocfilehash: eecf34c6ad622c374e6f43670972279e297662a9
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82561953"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86251592"
 ---
 # <a name="create-an-ingress-controller-to-an-internal-virtual-network-in-azure-kubernetes-service-aks"></a>Создание контроллера входящего трафика для внутренней виртуальной сети в Службе Azure Kubernetes (AKS)
 
@@ -53,11 +53,14 @@ controller:
 > В следующем примере создается пространство имен Kubernetes для входящих ресурсов с именем входящие *-Basic*. При необходимости укажите пространство имен для своей среды. Если в кластере AKS не включен RBAC, добавьте `--set rbac.create=false` к командам Helm.
 
 > [!TIP]
-> Если вы хотите включить [Сохранение IP-адреса источника клиента][client-source-ip] для запросов к контейнерам в кластере, `--set controller.service.externalTrafficPolicy=Local` добавьте команду Helm install. Исходный IP-адрес клиента хранится в заголовке запроса в разделе *X-forwardd-for*. При использовании контроллера входящего трафика с включенным сохранением IP-адресов источника клиента передача TLS не будет работать.
+> Если вы хотите включить [Сохранение IP-адреса источника клиента][client-source-ip] для запросов к контейнерам в кластере, добавьте `--set controller.service.externalTrafficPolicy=Local` команду Helm install. Исходный IP-адрес клиента хранится в заголовке запроса в разделе *X-forwardd-for*. При использовании контроллера входящего трафика с включенным сохранением IP-адресов источника клиента передача TLS не будет работать.
 
 ```console
 # Create a namespace for your ingress resources
 kubectl create namespace ingress-basic
+
+# Add the official stable repository
+helm repo add stable https://kubernetes-charts.storage.googleapis.com/
 
 # Use Helm to deploy an NGINX ingress controller
 helm install nginx-ingress stable/nginx-ingress \
@@ -68,7 +71,13 @@ helm install nginx-ingress stable/nginx-ingress \
     --set defaultBackend.nodeSelector."beta\.kubernetes\.io/os"=linux
 ```
 
-При создании службы распределения нагрузки Kubernetes для контроллера входящего трафика NGINX назначается внутренний IP-адрес, как показано в следующем примере выходных данных.
+При создании службы балансировщика нагрузки Kubernetes для контроллера входящих данных NGINX внутренний IP-адрес назначается. Чтобы получить общедоступный IP-адрес, используйте команду `kubectl get service`.
+
+```console
+kubectl get service -l app=nginx-ingress --namespace ingress-basic
+```
+
+Назначение IP-адреса службе занимает несколько минут, как показано в следующем примере выходных данных:
 
 ```
 $ kubectl get service -l app=nginx-ingress --namespace ingress-basic
@@ -160,7 +169,7 @@ spec:
     app: ingress-demo
 ```
 
-Запустите два демонстрационных приложения с `kubectl apply`помощью:
+Запустите два демонстрационных приложения с помощью `kubectl apply` :
 
 ```console
 kubectl apply -f aks-helloworld.yaml --namespace ingress-basic
@@ -201,6 +210,12 @@ spec:
 
 Создайте ресурс входящего трафика, используя команду `kubectl apply -f hello-world-ingress.yaml`.
 
+```console
+kubectl apply -f hello-world-ingress.yaml
+```
+
+В следующем примере выходных данных показано, что создан ресурс входящих.
+
 ```
 $ kubectl apply -f hello-world-ingress.yaml
 
@@ -221,7 +236,7 @@ kubectl run -it --rm aks-ingress-test --image=debian --namespace ingress-basic
 apt-get update && apt-get install -y curl
 ```
 
-Теперь получите доступ к адресу входящего контроллера Kubernetes с помощью `curl`, например *http://10.240.0.42*. Укажите свой внутренний IP-адрес, указанный при развертывании контроллера входящего трафика на первом шаге, описанном в этой статье.
+Теперь получите доступ к адресу входящего контроллера Kubernetes с помощью `curl` , например *http://10.240.0.42* . Укажите свой внутренний IP-адрес, указанный при развертывании контроллера входящего трафика на первом шаге, описанном в этой статье.
 
 ```console
 curl -L http://10.240.0.42
@@ -267,7 +282,13 @@ kubectl delete namespace ingress-basic
 
 ### <a name="delete-resources-individually"></a>Удаление ресурсов по отдельности
 
-Кроме того, более детализированный подход заключается в удалении отдельных созданных ресурсов. Выведите список выпусков `helm list` Helm с помощью команды. Найдите диаграммы *nginx-ingress* и *aks-helloworld*, как показано в следующем примере выходных данных.
+Кроме того, более детализированный подход заключается в удалении отдельных созданных ресурсов. Выведите список выпусков Helm с помощью `helm list` команды. 
+
+```console
+helm list --namespace ingress-basic
+```
+
+Найдите диаграммы *nginx-ingress* и *aks-helloworld*, как показано в следующем примере выходных данных.
 
 ```
 $ helm list --namespace ingress-basic
@@ -276,7 +297,13 @@ NAME                    NAMESPACE       REVISION        UPDATED                 
 nginx-ingress           ingress-basic   1               2020-01-06 19:55:46.358275 -0600 CST    deployed        nginx-ingress-1.27.1    0.26.1  
 ```
 
-Удалите выпуски с `helm uninstall` помощью команды. В следующем примере удаляется NGINX входящее развертывание.
+Удалите выпуски с помощью `helm uninstall` команды.
+
+```console
+helm uninstall nginx-ingress --namespace ingress-basic
+```
+
+В следующем примере удаляется NGINX входящее развертывание.
 
 ```
 $ helm uninstall nginx-ingress --namespace ingress-basic
@@ -319,7 +346,7 @@ kubectl delete namespace ingress-basic
 
 <!-- LINKS - external -->
 [helm]: https://helm.sh/
-[helm-cli]: https://docs.microsoft.com/azure/aks/kubernetes-helm
+[helm-cli]: ./kubernetes-helm.md
 [nginx-ingress]: https://github.com/kubernetes/ingress-nginx
 
 <!-- LINKS - internal -->

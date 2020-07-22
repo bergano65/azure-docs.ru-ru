@@ -3,12 +3,12 @@ title: Пример сценария Azure CLI. Выполнение пакет�
 description: Этот сценарий создает задание пакетной службы и добавляет в него ряд задач. Он также демонстрирует, как отслеживать задание и его задачи.
 ms.topic: sample
 ms.date: 12/12/2019
-ms.openlocfilehash: ce3c06b4631095df54371ca2417dc45d493a437d
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: eefc6cfdc01ddf4b8fe05b3b52360994e5763013
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83681842"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85957284"
 ---
 # <a name="cli-example-run-a-job-and-tasks-with-azure-batch"></a>Пример CLI. Выполнение задания и задач с использованием пакетной службы Azure
 
@@ -39,12 +39,12 @@ az group delete --name myResourceGroup
 | [az group create](/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az batch account create](/cli/azure/batch/account#az-batch-account-create) | Создает учетную запись пакетной службы. |
 | [az batch account login](/cli/azure/batch/account#az-batch-account-login) | Выполняет проверку подлинности с помощью указанной учетной записи пакетной службы для дальнейшего взаимодействия с интерфейсом командной строки.  |
-| [az batch pool create](https://docs.microsoft.com/cli/azure/batch/pool#az-batch-pool-create) | Создает пул вычислительных узлов.  |
-| [az batch job create](https://docs.microsoft.com/cli/azure/batch/job#az-batch-job-create) | Создает задание пакетной службы.  |
-| [az batch task create](https://docs.microsoft.com/cli/azure/batch/task#az-batch-task-create) | Добавляет задачу в указанное задание пакетной службы.  |
-| [az batch job set](https://docs.microsoft.com/cli/azure/batch/job#az-batch-job-set) | Обновляет свойства задания пакетной службы.  |
-| [az batch job show](https://docs.microsoft.com/cli/azure/batch/job#az-batch-job-show) | Получает сведения об указанном задании пакетной службы.  |
-| [az batch task show](https://docs.microsoft.com/cli/azure/batch/task#az-batch-task-show) | Получает сведения о задаче из указанного задания пакетной службы.  |
+| [az batch pool create](/cli/azure/batch/pool#az-batch-pool-create) | Создает пул вычислительных узлов.  |
+| [az batch job create](/cli/azure/batch/job#az-batch-job-create) | Создает задание пакетной службы.  |
+| [az batch task create](/cli/azure/batch/task#az-batch-task-create) | Добавляет задачу в указанное задание пакетной службы.  |
+| [az batch job set](/cli/azure/batch/job#az-batch-job-set) | Обновляет свойства задания пакетной службы.  |
+| [az batch job show](/cli/azure/batch/job#az-batch-job-show) | Получает сведения об указанном задании пакетной службы.  |
+| [az batch task show](/cli/azure/batch/task#az-batch-task-show) | Получает сведения о задаче из указанного задания пакетной службы.  |
 | [az group delete](/cli/azure/group#az-group-delete) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -1,17 +1,17 @@
 ---
 title: Управление уровнями согласованности в Azure Cosmos DB
 description: Узнайте, как настраивать уровни согласованности и управлять ими в Azure Cosmos DB с помощью портал Azure, пакета SDK для .NET, пакета SDK для Java и различных других пакетов SDK.
-author: markjbrown
+author: anfeldma-ms
 ms.service: cosmos-db
-ms.topic: conceptual
-ms.date: 04/24/2020
-ms.author: mjbrown
-ms.openlocfilehash: 28266471fb1e440a45e412ee889e0706cfc2ce49
-ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
+ms.topic: how-to
+ms.date: 06/10/2020
+ms.author: anfeldma
+ms.openlocfilehash: e6f63807eeea32a7cce7e028dab5e16114bf9643
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82870097"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85261568"
 ---
 # <a name="manage-consistency-levels-in-azure-cosmos-db"></a>Управление уровнями согласованности в Azure Cosmos DB
 
@@ -27,7 +27,7 @@ ms.locfileid: "82870097"
 
 Чтобы просмотреть или изменить уровень согласованности по умолчанию, войдите на портал Azure. Найдите учетную запись Azure Cosmos DB и откройте область **Согласованность по умолчанию**. Выберите требуемый уровень согласованности в качестве нового значения по умолчанию, а затем выберите **Сохранить**. На портале Azure также представлена визуализация разных уровней согласованности на основе музыкальных нот. 
 
-![Меню согласованности на портале Azure](./media/how-to-manage-consistency/consistency-settings.png)
+:::image type="content" source="./media/how-to-manage-consistency/consistency-settings.png" alt-text="Меню согласованности на портале Azure":::
 
 # <a name="cli"></a>[CLI](#tab/cli)
 
@@ -66,7 +66,7 @@ Update-AzCosmosDBAccount -ResourceGroupName $resourceGroupName `
 
 ### <a name="net-sdk"></a><a id="override-default-consistency-dotnet"></a>Пакет SDK для .NET
 
-# <a name="net-sdk-v2"></a>[ПАКЕТ SDK ДЛЯ .NET ВЕРСИИ 2](#tab/dotnetv2)
+# <a name="net-sdk-v2"></a>[Пакет SDK для .NET версии 2](#tab/dotnetv2)
 
 ```csharp
 // Override consistency at the client level
@@ -78,7 +78,7 @@ RequestOptions requestOptions = new RequestOptions { ConsistencyLevel = Consiste
 var response = await client.CreateDocumentAsync(collectionUri, document, requestOptions);
 ```
 
-# <a name="net-sdk-v3"></a>[ПАКЕТ SDK ДЛЯ .NET V3](#tab/dotnetv3)
+# <a name="net-sdk-v3"></a>[Пакет SDK для .NET версии 3](#tab/dotnetv3)
 
 ```csharp
 // Override consistency at the request level via request options
@@ -92,9 +92,27 @@ var response = await client.GetContainer(databaseName, containerName)
 ```
 ---
 
-### <a name="java-sdk"></a><a id="override-default-consistency-java"></a>Пакет SDK для Java
+### <a name="java-v4-sdk"></a><a id="override-default-consistency-javav4"></a> Пакет SDK для Java версии 4
 
-# <a name="java-async-sdk"></a>[Пакет SDK для Java Async](#tab/javaasync)
+# <a name="async"></a>[Асинхронный режим](#tab/api-async)
+
+   Асинхронный API пакета SDK для Java версии 4 (Maven com.azure::azure-cosmos)
+
+   [!code-java[](~/azure-cosmos-java-sql-api-samples/src/main/java/com/azure/cosmos/examples/documentationsnippets/async/SampleDocumentationSnippetsAsync.java?name=ManageConsistencyAsync)]
+
+# <a name="sync"></a>[Синхронизация](#tab/api-sync)
+
+   Синхронный API пакета SDK для Java версии 4 (Maven com.azure::azure-cosmos)
+
+   [!code-java[](~/azure-cosmos-java-sql-api-samples/src/main/java/com/azure/cosmos/examples/documentationsnippets/sync/SampleDocumentationSnippets.java?name=ManageConsistencySync)]
+
+--- 
+
+### <a name="java-v2-sdks"></a><a id="override-default-consistency-javav2"></a>Пакеты SDK для Java v2
+
+# <a name="async"></a>[Асинхронный режим](#tab/api-async)
+
+Асинхронный пакет SDK для Java v2 (Maven com. Microsoft. Azure:: Azure-cosmosdb)
 
 ```java
 // Override consistency at the client level
@@ -108,7 +126,9 @@ AsyncDocumentClient client =
                 .withConnectionPolicy(policy).build();
 ```
 
-# <a name="java-sync-sdk"></a>[Пакет SDK для синхронизации Java](#tab/javasync)
+# <a name="sync"></a>[Синхронизация](#tab/api-sync)
+
+Синхронизация пакета SDK для Java v2 (Maven com. Microsoft. Azure:: Azure-documentdb)
 
 ```java
 // Override consistency at the client level
@@ -147,7 +167,7 @@ client = cosmos_client.CosmosClient(self.account_endpoint, {
 
 ### <a name="net-sdk"></a><a id="utilize-session-tokens-dotnet"></a>Пакет SDK для .NET
 
-# <a name="net-sdk-v2"></a>[ПАКЕТ SDK ДЛЯ .NET ВЕРСИИ 2](#tab/dotnetv2)
+# <a name="net-sdk-v2"></a>[Пакет SDK для .NET версии 2](#tab/dotnetv2)
 
 ```csharp
 var response = await client.ReadDocumentAsync(
@@ -160,7 +180,7 @@ var response = await client.ReadDocumentAsync(
                 UriFactory.CreateDocumentUri(databaseName, collectionName, "SalesOrder1"), options);
 ```
 
-# <a name="net-sdk-v3"></a>[ПАКЕТ SDK ДЛЯ .NET V3](#tab/dotnetv3)
+# <a name="net-sdk-v3"></a>[Пакет SDK для .NET версии 3](#tab/dotnetv3)
 
 ```csharp
 Container container = client.GetContainer(databaseName, collectionName);
@@ -173,9 +193,27 @@ ItemResponse<SalesOrder> response = await container.ReadItemAsync<SalesOrder>(sa
 ```
 ---
 
-### <a name="java-sdk"></a><a id="utilize-session-tokens-java"></a>Пакет SDK для Java
+### <a name="java-v4-sdk"></a><a id="override-default-consistency-javav4"></a> Пакет SDK для Java версии 4
 
-# <a name="java-async-sdk"></a>[Пакет SDK для Java Async](#tab/javaasync)
+# <a name="async"></a>[Асинхронный режим](#tab/api-async)
+
+   Асинхронный API пакета SDK для Java версии 4 (Maven com.azure::azure-cosmos)
+
+   [!code-java[](~/azure-cosmos-java-sql-api-samples/src/main/java/com/azure/cosmos/examples/documentationsnippets/async/SampleDocumentationSnippetsAsync.java?name=ManageConsistencySessionAsync)]
+
+# <a name="sync"></a>[Синхронизация](#tab/api-sync)
+
+   Синхронный API пакета SDK для Java версии 4 (Maven com.azure::azure-cosmos)
+
+   [!code-java[](~/azure-cosmos-java-sql-api-samples/src/main/java/com/azure/cosmos/examples/documentationsnippets/sync/SampleDocumentationSnippets.java?name=ManageConsistencySessionSync)]
+
+--- 
+
+### <a name="java-v2-sdks"></a><a id="utilize-session-tokens-javav2"></a>Пакеты SDK для Java v2
+
+# <a name="async"></a>[Асинхронный режим](#tab/api-async)
+
+Асинхронный пакет SDK для Java v2 (Maven com. Microsoft. Azure:: Azure-cosmosdb)
 
 ```java
 // Get session token from response
@@ -197,7 +235,9 @@ requestOptions.setSessionToken(sessionToken);
 Observable<ResourceResponse<Document>> readObservable = client.readDocument(document.getSelfLink(), options);
 ```
 
-# <a name="java-sync-sdk"></a>[Пакет SDK для синхронизации Java](#tab/javasync)
+# <a name="sync"></a>[Синхронизация](#tab/api-sync)
+
+Синхронизация пакета SDK для Java v2 (Maven com. Microsoft. Azure:: Azure-documentdb)
 
 ```java
 // Get session token from response
@@ -240,9 +280,9 @@ item = client.ReadItem(doc_link, options)
 
 Насколько итоговая согласованность является итоговой? В среднем мы можем предложить границы устаревания с учетом журнала версий и времени. Метрика [**Probabilistically Bounded Staleness (PBS)**](https://pbs.cs.berkeley.edu/) (Вероятностное ограниченное устаревание) пытается количественно оценить вероятность устаревания и отображает полученные результаты. Чтобы просмотреть метрику PBS, перейдите к учетной записи Azure Cosmos DB на портале Azure. Откройте панель **метрики** и перейдите на вкладку **согласованность** . Просмотрите граф с именем **вероятность строго согласованных операций чтения на основе рабочей нагрузки (см. PBS)**.
 
-![График PBS на портале Azure](./media/how-to-manage-consistency/pbs-metric.png)
+:::image type="content" source="./media/how-to-manage-consistency/pbs-metric.png" alt-text="График PBS на портале Azure":::
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте больше о том, как управлять конфликтами данных, или перейдите к следующей ключевой концепции в Azure Cosmos DB. См. следующие статьи:
 

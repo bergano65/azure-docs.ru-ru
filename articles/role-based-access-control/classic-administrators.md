@@ -8,18 +8,17 @@ manager: mtillman
 ms.assetid: ''
 ms.service: role-based-access-control
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 01/22/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: cacdeee4512c512b058be96c4fe3a829c2933f06
-ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
-ms.translationtype: MT
+ms.openlocfilehash: 298ec15700537f2368ef33ead267e85f5f22bfd7
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2020
-ms.locfileid: "82734864"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84791798"
 ---
 # <a name="azure-classic-subscription-administrators"></a>Классические администраторы подписок Azure
 
@@ -38,17 +37,17 @@ ms.locfileid: "82734864"
 
     Соадминистраторов можно назначать только в области подписки.
 
-1. Щелкните **Управление доступом (IAM)**.
+1. Щелкните **Управление доступом (IAM)** .
 
 1. Щелкните вкладку **Классические администраторы**.
 
     ![Снимок экрана с открытым разделом "Классические администраторы"](./media/classic-administrators/classic-administrators.png)
 
-1. Нажмите кнопку **Добавить** > **Добавить соадминистратора** , чтобы открыть область добавление соадминистраторов.
+1. Нажмите кнопку **Добавить**  >  **Добавить соадминистратора** , чтобы открыть область добавление соадминистраторов.
 
     Если команда "Добавить соадминистратора" неактивна, значит у вас нет нужных разрешений.
 
-1. Выберите пользователя, которого вы хотите добавить, и щелкните **Добавить**.
+1. Выберите пользователя, которого нужно добавить, и нажмите кнопку **Добавить**.
 
     ![Снимок экрана, на котором показаны элементы для добавления соадминистратора](./media/classic-administrators/add-coadmin.png)
 
@@ -83,7 +82,7 @@ ms.locfileid: "82734864"
 
 1. Откройте раздел [Подписки](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade) и выберите нужную подписку.
 
-1. Щелкните **Управление доступом (IAM)**.
+1. Щелкните **Управление доступом (IAM)** .
 
 1. Щелкните вкладку **Классические администраторы**.
 
@@ -125,10 +124,10 @@ ms.locfileid: "82734864"
 
 | Учетная запись администратора учетной записи | Может ли администратор службы изменить другой учетная запись Майкрософт? | Может ли администратор службы изменить учетную запись Azure AD в том же каталоге? | Может ли администратор службы изменить учетную запись Azure AD в другом каталоге? |
 | --- | --- | --- | --- |
-| Учетная запись Майкрософт | Да | нет | нет |
-| учетная запись Azure AD; | Да | Да | нет |
+| Учетная запись Майкрософт | Да | Нет | Нет |
+| Учетная запись Azure AD | Да | Да | Нет |
 
-Если администратор учетной записи является учетной записью Azure AD, можно изменить ее администратора на учетную запись Azure AD в том же каталоге, но не в другом каталоге. Например, abby@contoso.com может изменить администратора службы на bob@contoso.com, но не сможет изменить администратора службы до john@notcontoso.com тех пор, john@notcontoso.com пока в каталоге contoso.com не будет присутствия.
+Если администратор учетной записи является учетной записью Azure AD, можно изменить ее администратора на учетную запись Azure AD в том же каталоге, но не в другом каталоге. Например, abby@contoso.com может изменить администратора службы на bob@contoso.com , но не сможет изменить администратора службы до john@notcontoso.com тех пор, пока john@notcontoso.com в каталоге contoso.com не будет присутствия.
 
 Дополнительные сведения об учетных записях Майкрософт и учетных записях Azure AD см. в разделе [что такое Azure Active Directory?](../active-directory/fundamentals/active-directory-whatis.md).
 
@@ -148,8 +147,8 @@ ms.locfileid: "82734864"
 
     ![Снимок экрана с отображением администратора учетной записи](./media/classic-administrators/account-admin.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* [О разных ролях](../role-based-access-control/rbac-and-directory-admin-roles.md)
-* [Добавление или удаление назначений ролей Azure с помощью портал Azure](../role-based-access-control/role-assignments-portal.md)
+* [Общие сведения о различных ролях](../role-based-access-control/rbac-and-directory-admin-roles.md)
+* [Добавление и удаление назначений ролей Azure с помощью портала Azure](../role-based-access-control/role-assignments-portal.md)
 * [Добавление или изменение администраторов подписки Azure](../cost-management-billing/manage/add-change-subscription-administrator.md)

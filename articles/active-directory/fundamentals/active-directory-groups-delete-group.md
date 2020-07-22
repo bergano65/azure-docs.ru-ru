@@ -7,18 +7,17 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: fundamentals
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 08/29/2018
 ms.author: ajburnle
 ms.reviewer: krbain
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bdba55e0655a13e65e403f5da73fcb69db5dbca5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: cf309c10dc5924374d8c3a191f6fd11cceb2ac49
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "68561916"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85604290"
 ---
 # <a name="delete-a-group-using-azure-active-directory"></a>Удаление группы с помощью Azure Active Directory
 Удаление группы в Azure Active Directory (Azure AD) может потребоваться по разным причинам. Вот наиболее распространенные из них:
@@ -44,7 +43,7 @@ ms.locfileid: "68561916"
 
     ![Страница "Обзор MDM policy — East" с выделенной командой "Удалить"](media/active-directory-groups-delete-group/group-overview-blade.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Если вы по ошибке удалили группу, ее можно создать заново. Дополнительные сведения см. в статье [Как создать простую группу и добавить в нее участников](active-directory-groups-create-azure-portal.md).
 

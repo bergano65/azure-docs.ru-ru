@@ -5,108 +5,103 @@ services: static-web-apps
 author: manekinekko
 ms.service: static-web-apps
 ms.topic: how-to
-ms.date: 05/08/2020
+ms.date: 05/29/2020
 ms.author: wachegha
-ms.openlocfilehash: a6aee5c8049e03a43c547f419f6c6646617e651c
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
-ms.translationtype: HT
+ms.openlocfilehash: fd4f57350e97ad38c2c78aec29b1e51d775e8a02
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83596153"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86104118"
 ---
 # <a name="add-an-api-to-azure-static-web-apps-preview-with-azure-functions"></a>Добавление API в предварительную версию Статистического веб-приложения Azure с помощью Функций Azure
 
 Вы можете добавить бессерверные API в Статические веб-приложения Azure с помощью интеграции с Функциями Azure. В этой статье показано, как добавить и развернуть API на сайте Статических веб-приложений Azure.
 
-Сведения о защите маршрутов API см. в [руководстве по маршрутизации](routes.md).
-
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Учетная запись Azure с активной подпиской. [Создайте учетную запись](https://azure.microsoft.com/free) бесплатно.
+- Учетная запись Azure с активной подпиской.
+  - Если у вас нет учетной записи, вы можете [создать ее бесплатно](https://azure.microsoft.com/free).
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Расширение "Функции Azure"](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) для Visual Studio Code.
 - Расширение [Live Server Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
+- [Node.js](https://nodejs.org/download/) для локального запуска приложения API
 
-## <a name="create-a-git-repository"></a>Создание репозитория Git 
+## <a name="create-a-git-repository"></a>Создание репозитория Git
 
 В следующих шагах показано, как создать репозиторий и клонировать файлы на компьютер.
 
-1. Перейдите к https://github.com/staticwebdev/vanilla-basic/generate, чтобы создать репозиторий.
+1. Убедитесь, что вы вошли в GitHub и, перейдите к, чтобы https://github.com/staticwebdev/vanilla-basic/generate создать новый репозиторий.
 1. В поле _Имя репозитория_ введите **my-vanilla-api**.
 1. Щелкните **Create repository from template** (Создание репозитория из шаблона).
 
    :::image type="content" source="media/add-api/create-repository.png" alt-text="Создание репозитория из vanilla-basic":::
 
-После создания проекта можно использовать Visual Studio Code для клонирования репозитория Git.
+После создания проекта скопируйте URL-адрес в браузере для нового репозитория. Этот URL-адрес используется в Visual Studio Code для клонирования репозитория Git.
 
 1. Нажмите клавишу **F1**, чтобы открыть команду в палитре команд.
 1. Вставьте URL-адрес в запрос _Git: Clone_ и нажмите клавишу **ВВОД**.
 
    :::image type="content" source="media/add-api/vscode-git-0.png" alt-text="Клонирование проекта GitHub с помощью Visual Studio Code":::
 
-   :::image type="content" source="media/add-api/github-clone-url.png" alt-text="Клонирование проекта GitHub с помощью Visual Studio Code":::
+    Следуйте инструкциям на экране, чтобы выбрать расположение репозитория для клонирования проекта.
 
+## <a name="create-the-api"></a>Создание API
 
-## <a name="create-your-local-project"></a>Создание локального проекта
-
-В этом разделе вы используете Visual Studio Code. чтобы создать локальный проект Функций Azure. Позже вы опубликуете приложение-функцию в Azure.
+Далее вы создадите проект функций Azure в качестве API приложения. 
 
 1. В проекте _my-vanilla-api_ создайте вложенную папку с именем **api**.
-
-   > [!NOTE]
-   > Вы можете присвоить этой папке любое имя. В этом примере используется `api`. 
-
-2. Нажмите клавишу **F1**, чтобы отобразить палитру команд.
-3. Введите **Azure Functions: Create New Project…** (Функции Azure: Создать новый проект…).
-4. Нажмите клавишу **ВВОД**.
-5. Щелкните **Обзор**.
-6. Выберите папку **api** в качестве каталога для рабочей области проекта.
-7. Щелкните **Выбрать**.
+1. Нажмите клавишу **F1**, чтобы отобразить палитру команд.
+1. Введите **Azure Functions: Create New Project…** (Функции Azure: Создать новый проект…).
+1. Нажмите клавишу **ВВОД**.
+1. Щелкните **Обзор**.
+1. Выберите папку **api** в качестве каталога для рабочей области проекта.
+1. Щелкните **Выбрать**.
 
    :::image type="content" source="media/add-api/create-azure-functions-vscode-1.png" alt-text="Создание Функций Azure с помощью Visual Studio Code":::
 
-8. Введите следующие сведения по соответствующим запросам:
+1. Введите следующие сведения по соответствующим запросам:
 
-    - _Выберите язык для проекта приложения-функции_: выберите **JavaScript**.
+    - _Выбор языка_: выбор **JavaScript**
     - _Выберите шаблон для первой функции вашего проекта_. Выберите **триггер HTTP**.
-    - _Укажите имя функции_. Введите **GetMessage**.
+    - _Укажите имя функции_: введите- **сообщение**
     - _Уровень авторизации_: выберите **Анонимный**, что позволит любому пользователю вызывать конечную точку функции.
         - Дополнительные сведения об уровнях авторизации см. в разделе [Ключи авторизации](../azure-functions/functions-bindings-http-webhook-trigger.md#authorization-keys).
 
-9. Используя эти сведения, Visual Studio Code создает проект функций Azure с триггером HTTP.
-    - Файлы локального проекта можно просмотреть в окне проводника Visual Studio Code.
-    - Дополнительные сведения см. в разделе [Generated project files](https://docs.microsoft.com/azure/azure-functions/functions-develop-vs-code#generated-project-files) (Созданные файлы проекта).
+Visual Studio Code создает проект функций Azure с функцией, активируемой HTTP.
 
-10. Теперь приложение должно иметь структуру проекта, аналогичную приведенному ниже примеру.
+Теперь приложение имеет структуру проекта, аналогичную приведенной ниже.
 
-    ```files
-    ├── api
-    │   ├── GetMessage
-    │   │   ├── function.json
-    │   │   ├── index.js
-    │   │   └── sample.dat
-    │   ├── host.json
-    │   ├── local.settings.json
-    │   ├── package.json
-    │   └── proxies.json
-    ├── index.html
-    ├── readme.md
-    └── styles.css
-    ```
+```files
+├── api
+│   ├── GetMessage
+│   │   ├── function.json
+│   │   ├── index.js
+│   │   └── sample.dat
+│   ├── host.json
+│   ├── local.settings.json
+│   ├── package.json
+│   └── proxies.json
+├── index.html
+├── readme.md
+└── styles.css
+```
 
-11. Затем обновите функцию `GetMessage` в разделе _api/GetMessage/index.js_ с помощью следующего кода.
+Далее вы измените `GetMessage` функцию, чтобы она возвращала сообщение на внешний интерфейс.
 
-    ```JavaScript
+1. Обновите `GetMessage` функцию в разделе _API/-message/index.js_ следующим кодом.
+
+    ```javascript
     module.exports = async function (context, req) {
       context.res = {
-        body: { 
-          text: "Hello from the API" 
+        body: {
+          text: "Hello from the API"
         }
       };
     };
     ```
 
-12. Обновите конфигурацию `GetMessage` в разделе `api/GetMessage/function.json` с помощью следующих параметров.
+1. Обновите конфигурацию `GetMessage` в разделе `api/GetMessage/function.json` с помощью следующих параметров.
 
     ```json
     {
@@ -129,41 +124,43 @@ ms.locfileid: "83596153"
       ]
     }
     ```
-    
+
 В указанных выше параметрах конечная точка API:
 
-- запускается с помощью HTTP-запроса к функции;
+- Активируется при выполнении HTTP-запроса к функции
 - доступна для всех запросов независимо от состояния проверки подлинности;
 - предоставляется через маршрут _/api/message_.
 
-## <a name="run-the-function-locally"></a>Локальное выполнение функции
+## <a name="run-the-api-locally"></a>Запуск API в локальной среде
 
 Visual Studio Code интегрируется с [Azure Functions Core Tools](https://docs.microsoft.com/azure/azure-functions/functions-run-local), чтобы перед публикацией в Azure можно было запустить этот проект на локальном компьютере разработки.
 
-1. Выполните функцию, нажав клавишу **F5**, чтобы запустить приложение-функцию. Выходные данные Core Tools отобразятся на панели _Терминал_.
+> [!TIP]
+> Прежде чем продолжать, убедитесь, что все ресурсы, перечисленные в разделе [Предварительные требования](#prerequisites) , установлены.
 
-2. Если вы еще не установили Azure Functions Core Tools, выберите в запросе **Установить**.
+1. Запустите функцию, нажав клавишу **F5** , чтобы запустить приложение "функции".
 
-    При установке Core Tools приложение запускается на панели _Терминал_. В качестве части выходных данных можно увидеть конечную точку URL-адреса функции, активированной с помощью HTTP, которая выполняется локально.
+1. Если вы еще не установили Azure Functions Core Tools, выберите в запросе **Установить**.
+
+    Основные инструменты показывают выходные данные работающего приложения на панели _терминала_ . В качестве части выходных данных можно увидеть конечную точку URL-адреса функции, активированной с помощью HTTP, которая выполняется локально.
 
     :::image type="content" source="media/add-api/create-azure-functions-vscode-2.png" alt-text="Создание Функций Azure с помощью Visual Studio Code":::
 
-3. Запустив Core Tools, перейдите по указанному далее URL-адресу, чтобы выполнить запрос `GET`.
+1. При запуске основных средств перейдите по следующему URL-адресу, чтобы убедиться, что API работает правильно: <http://localhost:7071/api/message> .
 
-   <http://localhost:7071/api/message>
-
-   Возвращается ответ, который в браузере выглядит следующим образом:
+   Ответ в браузере должен выглядеть следующим образом:
 
    :::image type="content" source="media/add-api/create-azure-functions-vscode-3.png" alt-text="Создание Функций Azure с помощью Visual Studio Code":::
 
-Убедившись, что функция выполняется правильно, можно вызвать API из приложения JavaScript.
+1. Нажмите клавиши **SHIFT + F5** , чтобы прерывать сеанс отладки.
 
 ### <a name="call-the-api-from-the-application"></a>Вызов API из приложения
 
+При развертывании в Azure запросы к API автоматически направляются в приложение функций для запросов, отправленных в `api` маршрут. Работая локально, необходимо настроить параметры приложения для запросов прокси-сервера к локальному API.
+
 [!INCLUDE [static-web-apps-local-proxy](../../includes/static-web-apps-local-proxy.md)]
 
-
-#### <a name="update-files-to-access-the-api"></a>Обновление файлов для доступа к API
+#### <a name="update-html-files-to-access-the-api"></a>Обновление HTML-файлов для доступа к API
 
 1. Теперь обновите содержимое файла _index.html_ следующим кодом, чтобы получить текст из функции API и отобразить его на экране:
 
@@ -181,7 +178,7 @@ Visual Studio Code интегрируется с [Azure Functions Core Tools](ht
    <body>
      <main>
        <h1>Vanilla JavaScript App</h1>
-       <p>Loading message from the API: <b id="name">...</b></p>
+       <p>Loading content from the API: <b id="name">...</b></p>
      </main>
 
      <script>
@@ -195,14 +192,18 @@ Visual Studio Code интегрируется с [Azure Functions Core Tools](ht
    </html>
    ```
 
-   Запустив Core Tools, используйте расширение [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) Visual Studio Code, чтобы обслуживать файл _index.html_ и открыть его в браузере. 
+1. Нажмите клавишу **F5** , чтобы запустить проект API.
 
-2. Нажмите клавишу **F1** и выберите **Live Server: Open with Live Server** (Live Server: открыть с помощью Live Server).
+1. Нажмите клавишу **F1** и выберите **Live Server: Open with Live Server** (Live Server: открыть с помощью Live Server).
+
+    Теперь сообщение API должно отобразиться на веб-странице.
 
    :::image type="content" source="media/add-api/create-azure-functions-vscode-4.png" alt-text="Создание Функций Azure с помощью Visual Studio Code":::
 
    > [!NOTE]
    > Для обслуживания файла `index.html` можно использовать другие серверы HTTP или прокси-серверы. Доступ к `index.html` из `file:///` не будет работать.
+
+1. Нажмите клавиши **SHIFT + F5** , чтобы закрыть проект API.
 
 ### <a name="commit-and-push-your-changes-to-github"></a>Фиксация и отправка изменений в GitHub
 
@@ -210,18 +211,20 @@ Visual Studio Code интегрируется с [Azure Functions Core Tools](ht
 
 1. Нажмите клавишу **F1**, чтобы отобразить палитру команд.
 1. Введите **Git: Commit All** (Git: зафиксировать все).
-1. Добавьте сообщение фиксации.
-1. Введите **Git: push** (Git: отправка).
+1. Добавление сообщения о фиксации и нажатие клавиши **Ввод**
+1. Нажмите клавишу **F1**
+1. Введите в **Git: Push** и нажмите клавишу **Ввод**
 
-## <a name="create-a-static-web-app"></a>Создание Статического веб-приложения
-
-:::image type="content" source="media/add-api/create-static-app-on-azure-portal-1.png" alt-text="Создание статического приложения на портале Azure — экран 1":::
+## <a name="create-a-static-web-app"></a>Создание статического веб-приложения
 
 1. Перейдите на [портал Azure](https://portal.azure.com).
 1. Щелкните **Создать ресурс**.
-1. Выполните поиск по запросу **Статические веб-приложения**.
-1. Выберите **Статические веб-приложения (предварительная версия)** .
+1. Поиск **статического веб-приложения**
+1. Щелкните **статическое веб-приложение (Предварительная версия)** .
 1. Нажмите кнопку **Создать**.
+
+Затем добавьте параметры для конкретного приложения.
+
 1. Выберите _подписку Azure_.
 1. Выберите или создайте _группу ресурсов_.
 1. Присвойте приложению имя **my-vanilla-api**.
@@ -231,46 +234,27 @@ Visual Studio Code интегрируется с [Azure Functions Core Tools](ht
 1. Выберите предпочитаемую _Организацию_.
 1. Выберите **my-vanilla-api** из раскрывающегося списка _Репозиторий_.
 1. Выберите **master** в раскрывающемся списке _Ветвь_.
-1. Нажмите кнопку **Next: Build >** (Далее: сборка >) для изменения конфигурации сборки.
-
-:::image type="content" source="media/add-api/create-static-app-on-azure-portal-2.png" alt-text="Создание статического приложения на портале Azure — экран 2":::
+1. Нажмите кнопку **Next: Build >** (Далее: сборка >) для изменения конфигурации сборки.
 
 Теперь добавьте следующие сведения о сборке.
 
-1. Введите **./** для _расположения приложения_.
-
+1. Введите **/** для _расположения приложения_.
 1. Введите **api** в поле _Расположение API_.
-
-   Это имя папки API, созданной на предыдущем шаге.
-   
 1. Удалите значение по умолчанию в _расположении артефакта приложения_, оставив поле пустым.
-
 1. Щелкните **Review + create** (Просмотреть и создать).
-
-| Параметр | Описание             | Обязательно |
-| -------- | ----------------------- |
-|  Расположение приложения | Расположение исходного кода статического приложения | Да |
-|  Расположение API | Расположение серверной части API. Указывает на корневую папку проекта приложения Функций Azure. | нет |
-|  Расположение артефакта приложения | Расположение выходной папки сборки. Некоторые интерфейсные платформы JavaScript имеют шаг сборки, в котором рабочие файлы помещены в папку. Этот параметр указывает на выходную папку сборки. | нет |
-
-:::image type="content" source="media/add-api/create-static-app-on-azure-portal-3.png" alt-text="Создание статического приложения на портале Azure — экран 3":::
-
 1. Нажмите кнопку **Создать**.
-1. Дождитесь завершения развертывания (это может занять пару минут).
-1. Перейдите на страницу `https://github.com/<YOUR_GITHUB_ACCOUNT>/my-vanilla-api/actions?query=workflow%3A"Azure+Pages+CI%2FCD"`.
-1. Убедитесь, что сборка выполнена успешно.
 
-:::image type="content" source="media/add-api/github-workflow-0.png" alt-text="Рабочий процесс GitHub":::
+    После нажатия кнопки _создать_ Azure выполняет две задачи. Сначала создаются базовые облачные службы для поддержки приложения. Затем начнется создание и развертывание приложения в фоновом процессе.
 
-Развернутый API будет доступен по адресу `https://<STATIC_APP_NAME>.azurestaticapps.net/api/<FUNCTION_OR_ROUTE_NAME>`.
+1. Нажмите кнопку **Перейти к ресурсу** , чтобы перейти на страницу _обзора_ веб-приложения.
 
-:::image type="content" source="media/add-api/github-workflow-1.png" alt-text="Рабочий процесс GitHub":::
+    Так как приложение строится в фоновом режиме, можно щелкнуть баннер, содержащий ссылку, чтобы просмотреть состояние сборки.
 
-URL-адрес приложения можно также найти на портале Azure:
+    :::image type="content" source="media/add-api/github-action-flag.png" alt-text="Рабочий процесс GitHub":::
 
-:::image type="content" source="media/add-api/static-app-url-from-portal.png" alt-text="Доступ к URL-адресу статического приложения на портале Azure":::
+1. После завершения развертывания подразделение может переходить к веб-приложению, щелкнув ссылку _URL-адрес_ , показанную на странице _Обзор_ .
 
-Кроме того, вы можете напрямую получить доступ к Статическому веб-приложению Azure по адресу `https://<STATIC_APP_NAME>.azurestaticapps.net` и проверить результат в браузере.
+    :::image type="content" source="media/add-api/static-app-url-from-portal.png" alt-text="Доступ к URL-адресу статического приложения на портале Azure":::
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -278,13 +262,12 @@ URL-адрес приложения можно также найти на пор
 
 1. Перейдите на [портал Azure](https://portal.azure.com).
 1. В верхней строке поиска введите **Группы ресурсов**.
-1. Щелкните **Группы ресурсов**. 
+1. Щелкните **Группы ресурсов**.
 1. Выберите **MyResourceGroup**.
 1. На странице _myResourceGroup_ убедитесь, что перечислены те ресурсы, которые нужно удалить.
 1. Выберите **Удалить**.
 1. Введите **myResourceGroup** в текстовое поле.
 1. Выберите команду **Удалить**.
-
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

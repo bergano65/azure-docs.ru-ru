@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 6bc29c098bcf7ef1d1a2e2532a00c95f0ec7e927
-ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
+ms.openlocfilehash: 3c5e22c14d0df46ddac9a503f43df8d54c3c93d5
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2020
-ms.locfileid: "61244235"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85964759"
 ---
 # <a name="how-to-generate-thumbnails-using-media-encoder-standard-with-net"></a>Создание эскизов с помощью Media Encoder Standard c использованием .NET 
 
@@ -408,9 +408,12 @@ Media Encoder Standard можно использовать для создани
 * Создание задания кодирования.
 * Получение ссылки на стандартный кодировщик мультимедиа.
 * Загрузка предопределенного кода [XML](media-services-dotnet-generate-thumbnail-with-mes.md#xml) или [JSON](media-services-dotnet-generate-thumbnail-with-mes.md#json), содержащего предопределенную кодировку, а также сведения, необходимые для создания эскизов. Вы можете сохранить этот [XML](media-services-dotnet-generate-thumbnail-with-mes.md#xml)- или [JSON](media-services-dotnet-generate-thumbnail-with-mes.md#json)-код в файл и использовать указанный ниже код для загрузки файла.
-  
-        // Load the XML (or JSON) from the local file.
-        string configuration = File.ReadAllText(fileName);  
+
+    ```csharp
+    // Load the XML (or JSON) from the local file.
+    string configuration = File.ReadAllText(fileName);  
+    ```
+
 * Добавление одной задачи кодирования в задание. 
 * Указание входного ресурса-контейнера для кодирования.
 * Создание выходного ресурса-контейнера с закодированным ресурсом.
@@ -545,7 +548,7 @@ namespace EncodeAndGenerateThumbnails
 }
 ```
 
-## <a name="considerations"></a>Рекомендации
+## <a name="considerations"></a>Особенности
 Действительны следующие условия.
 
 * Использование явных меток времени для элементов Start, Step или Range предполагает, что входные данные составляют не менее одной минуты.
@@ -561,14 +564,14 @@ namespace EncodeAndGenerateThumbnails
   * По умолчанию Start:{Best}
 * Для атрибута Image должен быть указан формат выходных данных: Jpg/Png/BmpFormat. Если он присутствует, Media Encoder Standard сопоставляет JpgVideo с JpgFormat и т. д. OutputFormat представляет новый макрос, связанный с кодеком изображений: {Index}, который необходимо указывать для форматов вывода изображений (один и только один раз).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Вы можете проверить [ход выполнения задания](media-services-check-job-progress.md), пока задание кодировки находится в ожидании.
 
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="see-also"></a>См. также

@@ -1,18 +1,18 @@
 ---
 title: Коды штата и провинции для совместной продажи в Azure Marketplace
 description: Получите доступные коды штата и провинций при предоставлении контактных сведений на странице предложения совместной продажи в Azure Marketplace.
-author: dsindona
-ms.author: dsindona
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
+author: palanis-MSFT
+ms.author: palanis
 ms.date: 04/01/2020
-ms.openlocfilehash: a39cb5f49c9f038f567b7f3322b5962bc1dc9fc8
-ms.sourcegitcommit: 3beb067d5dc3d8895971b1bc18304e004b8a19b3
+ms.openlocfilehash: 7dd28ab23894988a1ee193f2f8d72cb83b7aafe8
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82744699"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86120523"
 ---
 # <a name="co-sell-state-and-province-codes-in-azure-marketplace"></a>Коды штата и провинции для совместной продажи в Azure Marketplace
 
@@ -31,7 +31,7 @@ ms.locfileid: "82744699"
 | Коннектикут                         | US-CT     |
 | Delaware                            | US-DE     |
 | Флорида                             | US-FL     |
-| Джорджия                             | US-GA     |
+| Грузия                             | US-GA     |
 | Гавайи                              | US-HI     |
 | Idaho                               | US-ID     |
 | Иллинойс                            | US-IL     |
@@ -75,7 +75,7 @@ ms.locfileid: "82744699"
 | Округ Колумбия                | US-DC     |
 | Американское Самоа                      | US-AS     |
 | Гуам                                | US-GU     |
-| Северные Марианские острова            | US-MP     |
+| Северные Марианские о-ва            | US-MP     |
 | Пуэрто-Рико                         | US-PR     |
 | Внешние малые острова США | US-UM    |
 | Виргинские острова, США                 | US-VI    |

@@ -1,6 +1,6 @@
 ---
-title: Развертывание концентраторов уведомлений и управление ими с помощью PowerShell
-description: Создание концентраторов уведомлений и управление ими с помощью PowerShell для автоматизации
+title: Развертывание Центров уведомлений и управление ими с помощью PowerShell
+description: Создание Центров уведомлений и управление ими с помощью PowerShell в целях автоматизации
 services: notification-hubs
 documentationcenter: ''
 author: sethmanheim
@@ -16,12 +16,12 @@ ms.date: 01/04/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: e6334659d41ba201cfdde190ccc9bfa0d58009e3
-ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
+ms.openlocfilehash: d45b98f291a7524dac2927fc74c5dc52400209f5
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82891202"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86529987"
 ---
 # <a name="deploy-and-manage-notification-hubs-using-powershell"></a>Развертывание центров уведомлений и управление ими с помощью PowerShell
 
@@ -32,7 +32,7 @@ ms.locfileid: "82891202"
 - Создание центра уведомлений
 - Настройка учетных данных
 
-Если необходимо создать новое пространство имен служебной шины для ваших центров уведомлений, см. статью [Управление служебной шиной с помощью PowerShell](../service-bus-messaging/service-bus-powershell-how-to-provision.md).
+Если необходимо создать новое пространство имен служебной шины для ваших центров уведомлений, см. статью [Управление служебной шиной с помощью PowerShell](../service-bus-messaging/service-bus-manage-with-ps.md).
 
 Управление центрами уведомлений не поддерживается напрямую с помощью командлетов, включенных в Azure PowerShell. Лучше всего для PowerShell указать сборку Microsoft.Azure.NotificationHubs.dll. Сборка входит в состав [пакета NuGet для центров уведомлений Microsoft Azure](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/).
 
@@ -97,7 +97,7 @@ Write-Output "NamespaceManager object for the [$Namespace] namespace has been su
 1. `$Namespace`: присвойте имя пространству имен, в котором нужно создать центр уведомлений.
 2. `$Path`: присвойте путь к имени нового центра уведомлений.  Например, MyHub.
 3. `$WnsPackageSid`: присвойте идентификатор безопасности пакета своему приложению для Windows из [Центра разработки для Windows](https://developer.microsoft.com/en-us/windows).
-4. `$WnsSecretkey`: присвойте значение секретного ключа для своего приложения Windows из [Центра разработки для Windows](https://developer.microsoft.com/en-us/windows).
+4. `$WnsSecretkey`: присвойте значение секретного ключа своему приложению для Windows из [Центра разработки для Windows](https://developer.microsoft.com/en-us/windows).
 
 Эти переменные используются для подключения к пространству имен и создания нового центра уведомлений, настроенного для обработки уведомлений от служб уведомлений Windows (WNS) с использованием учетных данных WNS для приложения для Windows. Сведения о получении идентификатора безопасности пакета и секретного ключа см. в статье [Начало работы с Центрами уведомлений для приложений универсальной платформы Windows](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md).
 
@@ -148,9 +148,9 @@ else
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Управление служебной шиной с помощью PowerShell](../service-bus-messaging/service-bus-powershell-how-to-provision.md)
-- [Как создать запросы, разделы и подписки Service Bus с помощью сценария PowerShell](https://docs.microsoft.com/archive/blogs/paolos/how-to-create-service-bus-queues-topics-and-subscriptions-using-a-powershell-script)
-- [Как создать пространство имен и концентратор событий служебной шины с помощью сценария PowerShell](https://docs.microsoft.com/archive/blogs/paolos/how-to-create-a-service-bus-namespace-and-an-event-hub-using-a-powershell-script)
+- [Управление служебной шиной с помощью PowerShell](../service-bus-messaging/service-bus-manage-with-ps.md)
+- [Как создать запросы, разделы и подписки Service Bus с помощью сценария PowerShell](/archive/blogs/paolos/how-to-create-service-bus-queues-topics-and-subscriptions-using-a-powershell-script)
+- [Как создать пространство имен и концентратор событий служебной шины с помощью сценария PowerShell](/archive/blogs/paolos/how-to-create-a-service-bus-namespace-and-an-event-hub-using-a-powershell-script)
 
 Некоторые готовые сценарии доступны для скачивания:
 
@@ -158,9 +158,9 @@ else
 
 [Как приобрести Azure]: https://azure.microsoft.com/pricing/purchase-options/
 [Предложения для участников]: https://azure.microsoft.com/pricing/member-offers/
-[Бесплатная пробная версия]: https://azure.microsoft.com/pricing/free-trial/
+[Создайте бесплатную учетную запись Azure уже сегодня]: https://azure.microsoft.com/pricing/free-trial/
 [Установка и настройка Azure PowerShell]: /powershell/azureps-cmdlets-docs
-[API .NET для центров уведомлений]: https://docs.microsoft.com/dotnet/api/overview/azure/notification-hubs?view=azure-dotnet
-[Get-AzureSBNamespace]: https://docs.microsoft.com/powershell/module/servicemanagement/azure/get-azuresbnamespace
-[New-AzureSBNamespace]: https://docs.microsoft.com/powershell/module/servicemanagement/azure/new-azuresbnamespace
-[Get-AzureSBAuthorizationRule]: https://docs.microsoft.com/powershell/module/servicemanagement/azure/get-azuresbauthorizationrule
+[API .NET для центров уведомлений]: /dotnet/api/overview/azure/notification-hubs?view=azure-dotnet
+[Get-AzureSBNamespace]: /powershell/module/servicemanagement/azure/get-azuresbnamespace
+[New-AzureSBNamespace]: /powershell/module/servicemanagement/azure/new-azuresbnamespace
+[Get-AzureSBAuthorizationRule]: /powershell/module/servicemanagement/azure/get-azuresbauthorizationrule

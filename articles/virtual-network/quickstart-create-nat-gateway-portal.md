@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Создание шлюза NAT — портал Azure
+title: Руководство по Создание шлюза NAT — портал Azure
 titlesuffix: Azure Virtual Network NAT
 description: В этом кратком руководстве показано, как создать шлюз NAT с помощью портала Azure.
 services: virtual-network
@@ -8,22 +8,23 @@ author: asudbring
 manager: KumudD
 Customer intent: I want to create a NAT gateway for outbound connectivity for my virtual network.
 ms.service: virtual-network
+ms.subservice: nat
 ms.devlang: na
 ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/24/2020
 ms.author: allensu
-ms.openlocfilehash: 1ff13d8ef0ca4c6cf499c3245d3ef14370283075
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 5010dc08b695a0376ace5dde935c63caf0c39633
+ms.sourcegitcommit: 537c539344ee44b07862f317d453267f2b7b2ca6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80066391"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84711414"
 ---
-# <a name="quickstart-create-a-nat-gateway-using-the-azure-portal"></a>Краткое руководство. Создание шлюза NAT с помощью портала Azure
+# <a name="tutorial-create-a-nat-gateway-using-the-azure-portal"></a>Руководство по Создание шлюза NAT с помощью портала Azure
 
-В этом кратком руководстве показано, как использовать услугу преобразования сетевых адресов (NAT) в виртуальной сети Azure. Вы узнаете, как создать шлюз NAT для обеспечения исходящего подключения в виртуальных машинах в Azure. 
+В этом руководстве показано, как использовать службу "NAT виртуальных сетей Azure". Вы узнаете, как создать шлюз NAT для обеспечения исходящего подключения в виртуальных машинах в Azure. 
 
 При желании эти действия можно выполнить, используя [Azure CLI](quickstart-create-nat-gateway-cli.md) или [Azure PowerShell](quickstart-create-nat-gateway-powershell.md) вместо портала либо развернув [шаблон ARM](quickstart-create-nat-gateway-powershell.md).
 

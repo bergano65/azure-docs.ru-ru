@@ -1,32 +1,32 @@
 ---
-title: Руководство по развертыванию группы с несколькими контейнерами — шаблон
-description: В этом руководстве описано, как развернуть группу контейнеров с несколькими контейнерами в службе "экземпляры контейнеров Azure" с помощью шаблона Azure Resource Manager с Azure CLI.
+title: Руководство. Развертывание многоконтейнерной группы с помощью шаблона
+description: Из этого руководства вы узнаете, как развернуть группу контейнеров с несколькими контейнерами в службе "Экземпляры контейнеров Azure" с помощью шаблона Azure Resource Manager и Azure CLI.
 ms.topic: article
-ms.date: 04/03/2019
+ms.date: 07/02/2020
 ms.custom: mvc
-ms.openlocfilehash: d2b4e20520cad28c5d62118f6c9d10fcc43ac89e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: cb085112c6e6458d897f52f19988e6301d4ae6e8
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74533625"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86259578"
 ---
-# <a name="tutorial-deploy-a-multi-container-group-using-a-resource-manager-template"></a>Руководство. Развертывание группы с несколькими контейнерами с помощью шаблона диспетчер ресурсов
+# <a name="tutorial-deploy-a-multi-container-group-using-a-resource-manager-template"></a>Руководство по развертыванию многоконтейнерной группы с использованием шаблона Resource Manager
 
 > [!div class="op_single_selector"]
 > * [YAML](container-instances-multi-container-yaml.md)
 > * [Resource Manager](container-instances-multi-container-group.md)
 
-Служба "Экземпляры контейнеров Azure" поддерживает развертывание нескольких контейнеров в одном узле с использованием [группы контейнеров](container-instances-container-groups.md). Группа контейнеров полезна при создании приложения расширения для ведения журнала, мониторинга или любой другой конфигурации, где службе требуется второй присоединенный процесс.
+Служба "Экземпляры контейнеров Azure" поддерживает развертывание нескольких контейнеров в одном узле с использованием [группы контейнеров](container-instances-container-groups.md). Группу контейнеров удобно использовать при создании сопроводительного приложения для ведения журнала, мониторинга или любой другой задачи, для которой службе требуется дополнительный связанный процесс.
 
-В этом руководстве описано, как выполнить простую конфигурацию расширения с двумя контейнерами, развернув шаблон Azure Resource Manager с помощью Azure CLI. Вы научитесь:
+В этом руководстве объясняется, как выполнить простую настройку сопроводительного приложения с двумя контейнерами, развернув шаблон Azure Resource Manager с помощью Azure CLI. Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * Настройка шаблона группы с несколькими контейнерами
+> * Настройка шаблона для многоконтейнерной группы.
 > * Развертывание группы контейнеров
-> * Просмотр журналов контейнеров
+> * Просмотр журналов контейнеров.
 
-Шаблон диспетчер ресурсов можно легко адаптировать для сценариев, когда необходимо развернуть дополнительные ресурсы службы Azure (например, общую папку Azure или виртуальную сеть) с группой контейнеров. 
+Шаблон Resource Manager можно легко адаптировать под такие сценарии, в которых нужно развернуть дополнительные ресурсы служб Azure (например, общую папку Azure или виртуальную сеть) в группе контейнеров. 
 
 > [!NOTE]
 > Многоконтенерные группы сейчас ограничены контейнерами Linux. 
@@ -37,7 +37,7 @@ ms.locfileid: "74533625"
 
 ## <a name="configure-a-template"></a>Настройка шаблона
 
-Начните с копирования следующего JSON-файла в новый файл с `azuredeploy.json`именем. В Azure Cloud Shell можно использовать Visual Studio Code для создания файла в рабочем каталоге:
+Для начала скопируйте следующий код JSON в новый файл с именем `azuredeploy.json`. В Azure Cloud Shell для создания файла в рабочей папке можно применить Visual Studio Code.
 
 ```
 code azuredeploy.json
@@ -68,7 +68,7 @@ code azuredeploy.json
     {
       "name": "[parameters('containerGroupName')]",
       "type": "Microsoft.ContainerInstance/containerGroups",
-      "apiVersion": "2018-10-01",
+      "apiVersion": "2019-12-01",
       "location": "[resourceGroup().location]",
       "properties": {
         "containers": [
@@ -111,11 +111,11 @@ code azuredeploy.json
           "ports": [
             {
               "protocol": "tcp",
-              "port": "80"
+              "port": 80
             },
             {
                 "protocol": "tcp",
-                "port": "8080"
+                "port": 8080
             }
           ]
         }
@@ -131,7 +131,7 @@ code azuredeploy.json
 }
 ```
 
-Чтобы использовать частный реестр образов контейнеров, добавьте объект в документ JSON в следующем формате: Пример реализации этой конфигурации см. в [справочнике по шаблонам Resource Manager для экземпляров контейнеров Azure][template-reference].
+Чтобы использовать частный реестр образов контейнеров, добавьте объект в документ JSON в следующем формате: Пример реализации такой конфигурации см. в [справочнике по шаблонам Resource Manager для службы "Экземпляры контейнеров Azure"][template-reference].
 
 ```JSON
 "imageRegistryCredentials": [
@@ -151,17 +151,17 @@ code azuredeploy.json
 az group create --name myResourceGroup --location eastus
 ```
 
-Разверните шаблон с помощью команды [az group deployment create][az-group-deployment-create].
+Разверните шаблон с помощью команды [AZ Deployment Group Create][az-deployment-group-create] .
 
 ```azurecli-interactive
-az group deployment create --resource-group myResourceGroup --template-file azuredeploy.json
+az deployment group create --resource-group myResourceGroup --template-file azuredeploy.json
 ```
 
 В течение нескольких секунд вы должны получить исходный ответ Azure.
 
 ## <a name="view-deployment-state"></a>Просмотр состояния развертывания
 
-Чтобы просмотреть состояние развертывания, используйте команду [az container show][az-container-show] ниже.
+Чтобы просмотреть состояние развертывания, используйте следующую команду [az container show][az-container-show].
 
 ```azurecli-interactive
 az container show --resource-group myResourceGroup --name myContainerGroup --output table
@@ -177,7 +177,7 @@ myContainerGroup  danlep0318r      Running   mcr.microsoft.com/azuredocs/aci-tut
 
 ## <a name="view-container-logs"></a>Просмотр журналов контейнеров
 
-Просмотрите выходные данные журнала контейнера с помощью команды [az container logs][az-container-logs]. Аргумент `--container-name` определяет контейнер, из которого извлекаются журналы. В этом примере указан `aci-tutorial-app` контейнер.
+Просмотрите выходные данные журнала контейнера с помощью команды [az container logs][az-container-logs]. Аргумент `--container-name` определяет контейнер, из которого извлекаются журналы. В этом примере указывается контейнер `aci-tutorial-app`.
 
 ```azurecli-interactive
 az container logs --resource-group myResourceGroup --name myContainerGroup --container-name aci-tutorial-app
@@ -187,12 +187,12 @@ az container logs --resource-group myResourceGroup --name myContainerGroup --con
 
 ```bash
 listening on port 80
-::1 - - [21/Mar/2019:23:17:48 +0000] "HEAD / HTTP/1.1" 200 1663 "-" "curl/7.54.0"
-::1 - - [21/Mar/2019:23:17:51 +0000] "HEAD / HTTP/1.1" 200 1663 "-" "curl/7.54.0"
-::1 - - [21/Mar/2019:23:17:54 +0000] "HEAD / HTTP/1.1" 200 1663 "-" "curl/7.54.0"
+::1 - - [02/Jul/2020:23:17:48 +0000] "HEAD / HTTP/1.1" 200 1663 "-" "curl/7.54.0"
+::1 - - [02/Jul/2020:23:17:51 +0000] "HEAD / HTTP/1.1" 200 1663 "-" "curl/7.54.0"
+::1 - - [02/Jul/2020:23:17:54 +0000] "HEAD / HTTP/1.1" 200 1663 "-" "curl/7.54.0"
 ```
 
-Чтобы просмотреть журналы для контейнера расширения, выполните аналогичную команду, указав `aci-tutorial-sidecar` контейнер.
+Чтобы просмотреть журналы для сопроводительного контейнера, выполните аналогичную команду с именем контейнера `aci-tutorial-sidecar`.
 
 ```azurecli-interactive
 az container logs --resource-group myResourceGroup --name myContainerGroup --container-name aci-tutorial-sidecar
@@ -201,7 +201,7 @@ az container logs --resource-group myResourceGroup --name myContainerGroup --con
 Выходные данные:
 
 ```bash
-Every 3s: curl -I http://localhost                          2019-03-21 20:36:41
+Every 3s: curl -I http://localhost                          2020-07-02 20:36:41
 
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
@@ -214,24 +214,24 @@ Last-Modified: Wed, 29 Nov 2017 06:40:40 GMT
 ETag: W/"67f-16006818640"
 Content-Type: text/html; charset=UTF-8
 Content-Length: 1663
-Date: Thu, 21 Mar 2019 20:36:41 GMT
+Date: Thu, 02 Jul 2020 20:36:41 GMT
 Connection: keep-alive
 ```
 
-Как видите, сопроводительное приложение периодически выполняет HTTP-запрос к основному веб-приложению через локальную сеть группы, чтобы убедиться, что оно работает. Этот пример расширения можно расширить, чтобы активировать оповещение, если он получил код HTTP-ответа, `200 OK`отличный от.
+Как видите, сопроводительное приложение периодически выполняет HTTP-запрос к основному веб-приложению через локальную сеть группы, чтобы убедиться, что оно работает. Пример сопроводительного приложения можно расширить, реализовав активацию оповещения при получении кода ответа HTTP, который отличается от `200 OK`.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве вы использовали шаблон Azure Resource Manager для развертывания группы с несколькими контейнерами в службе "экземпляры контейнеров Azure". Вы ознакомились с выполнением следующих задач:
+Из этого руководства вы узнали, как с помощью шаблона Azure Resource Manager развернуть многоконтейнерную группу в службе "Экземпляры контейнеров Azure". Вы ознакомились с выполнением следующих задач:
 
 > [!div class="checklist"]
-> * Настройка шаблона группы с несколькими контейнерами
+> * Настройка шаблона для многоконтейнерной группы.
 > * Развертывание группы контейнеров
-> * Просмотр журналов контейнеров
+> * Просмотр журналов контейнеров.
 
-Дополнительные примеры шаблонов см. в статье [шаблоны Azure Resource Manager для службы "экземпляры контейнеров Azure](container-instances-samples-rm.md)".
+Дополнительные примеры шаблонов см. в статье [Шаблоны Azure Resource Manager для службы "Экземпляры контейнеров Azure"](container-instances-samples-rm.md).
 
-Группу с несколькими контейнерами также можно указать с помощью [файла YAML](container-instances-multi-container-yaml.md). Из-за более краткой природы формата YAML развертывание с помощью файла YAML является хорошим выбором, если развертывание включает только экземпляры контейнеров.
+Вы также можете определить многоконтейнерную группу с использованием [YAML-файла](container-instances-multi-container-yaml.md). YAML-файл имеет более сжатый формат, поэтому такой вариант больше подойдет для развертываний, которые включают только экземпляры контейнеров.
 
 
 <!-- LINKS - Internal -->
@@ -239,5 +239,5 @@ Connection: keep-alive
 [az-container-logs]: /cli/azure/container#az-container-logs
 [az-container-show]: /cli/azure/container#az-container-show
 [az-group-create]: /cli/azure/group#az-group-create
-[az-group-deployment-create]: /cli/azure/group/deployment#az-group-deployment-create
-[template-reference]: https://docs.microsoft.com/azure/templates/microsoft.containerinstance/containergroups
+[az-deployment-group-create]: /cli/azure/deployment/group#az-deployment-group-create
+[template-reference]: /azure/templates/microsoft.containerinstance/containergroups

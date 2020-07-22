@@ -1,23 +1,14 @@
 ---
 title: Краткое руководство. Отправка пользовательских событий при помощи службы "Сетка событий" и Azure CLI
 description: Краткое руководство по использованию Сетки событий Azure и Azure CLI для публикации пользовательских разделов и подписывания на события, связанные с этими разделами. События обрабатываются в веб-приложении.
-services: event-grid
-keywords: ''
-author: spelluru
-ms.author: spelluru
-ms.date: 11/05/2019
+ms.date: 07/07/2020
 ms.topic: quickstart
-ms.service: event-grid
-ms.custom:
-- seodec18
-- seo-javascript-september2019
-- seo-python-october2019
-ms.openlocfilehash: 4dbf3d2be04403d7cafac4ef9d4305c368da68b1
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: ecf7e753df4f6fb3de6095ba295a07fd57b458cf
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83743071"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86101738"
 ---
 # <a name="quickstart-route-custom-events-to-web-endpoint-with-azure-cli-and-event-grid"></a>Краткое руководство. Перенаправление пользовательских событий в конечную веб-точку с помощью Azure CLI и службы "Сетка событий"
 

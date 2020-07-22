@@ -5,14 +5,14 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 12/23/2019
-ms.openlocfilehash: 43875b87d26f144b85454077fd3c044c820132bf
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 3e724e6336163a092c9b4385324b1aa037295bb6
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75494989"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86081763"
 ---
 # <a name="improve-performance-of-apache-spark-workloads-using-azure-hdinsight-io-cache"></a>Повышение производительности Apache Spark рабочих нагрузок с помощью кэша ввода-вывода Azure HDInsight
 
@@ -67,7 +67,7 @@ IO Cache для Azure HDInsight по умолчанию отключен в пр
 
 1. Выберите **Сохранить** в правом верхнем углу.
 
-1. Выберите **перезапустить** > **все затронутые**.
+1. Выберите **перезапустить**  >  **все затронутые**.
 
     ![Apache Ambari перезапускает все затронутые](./media/apache-spark-improve-performance-iocache/ambariui-restart-all-affected.png "Перезапустить все затронутые")
 
@@ -75,6 +75,6 @@ IO Cache для Azure HDInsight по умолчанию отключен в пр
 
 Если это не сработает, отключите кэш ввода-вывода.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Дополнительная информация об IO Cache, в том числе о сравнительных тестах производительности, приведена в [этой записи блога](https://azure.microsoft.com/blog/apache-spark-speedup-with-hdinsight-io-cache/)

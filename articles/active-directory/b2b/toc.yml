@@ -23,6 +23,8 @@
           href: b2b-tutorial-require-mfa.md
     - name: Примеры
       items:
+        - name: Примеры для самостоятельной регистрации
+          href: code-samples-self-service-sign-up.md
         - name: Примеры кода и сценариев Azure PowerShell
           href: code-samples.md
     - name: Основные понятия
@@ -52,6 +54,8 @@
           href: identity-providers.md
         - name: Потоки для самостоятельной регистрации пользователей (предварительная версия)
           href: self-service-sign-up-overview.md
+        - name: Соединители API для самостоятельной регистрации (предварительная версия)
+          href: api-connectors-overview.md
         - name: "Управление правами Azure\_AD"
           href: self-service-portal.md
         - name: Текущие ограничения
@@ -95,6 +99,10 @@
               href: user-flow-add-custom-attributes.md
             - name: Настройка языка для потока пользователя
               href: user-flow-customize-language.md
+            - name: Добавление соединителя API
+              href: self-service-sign-up-add-api-connector.md
+            - name: Добавление пользовательской системы утверждения
+              href: self-service-sign-up-add-approvals.md
         - name: Управление гостевыми учетными записями
           items:
             - name: Добавление в роль B2B-пользователя
@@ -125,8 +133,8 @@
       items:
         - name: ВОПРОСЫ И ОТВЕТЫ
           href: faq.md
-        - name: Получение технической поддержки для B2B
-          href: get-support.md
+        - name: Получение поддержки
+          href: 'https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-troubleshooting-support-howto'
         - name: Форум отзывов и предложений по Azure
           href: 'https://feedback.azure.com/forums/169401-azure-active-directory'
         - name: Стратегия развития Azure

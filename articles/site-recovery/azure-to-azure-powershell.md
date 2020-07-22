@@ -8,10 +8,9 @@ ms.topic: article
 ms.date: 3/29/2019
 ms.author: sutalasi
 ms.openlocfilehash: 583511194fb100add1d5fc4ea9c06a869cf652b5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77212279"
 ---
 # <a name="set-up-disaster-recovery-for-azure-virtual-machines-using-azure-powershell"></a>Настройка аварийного восстановления для виртуальных машин Azure с помощью Azure PowerShell
@@ -38,10 +37,10 @@ ms.locfileid: "77212279"
 
 ## <a name="prerequisites"></a>Предварительные условия
 
-Перед началом:
+Перед началом работы
 - Вам должны быть понятны [архитектура и компоненты сценария](azure-to-azure-architecture.md).
 - Ознакомьтесь с [требованиями к поддержке](azure-to-azure-support-matrix.md) для всех компонентов.
-- У вас есть модуль `Az` Azure PowerShell. Если вам необходимо установить или обновить Azure PowerShell, ознакомьтесь с этим [руководством по установке и настройке Azure PowerShell](/powershell/azure/install-az-ps).
+- У вас есть `Az` модуль Azure PowerShell. Если вам необходимо установить или обновить Azure PowerShell, ознакомьтесь с этим [руководством по установке и настройке Azure PowerShell](/powershell/azure/install-az-ps).
 
 ## <a name="sign-in-to-your-microsoft-azure-subscription"></a>Вход в подписку Microsoft Azure
 
@@ -51,7 +50,7 @@ ms.locfileid: "77212279"
 Connect-AzAccount
 ```
 
-Выберите подписку Azure. Используйте командлет `Get-AzSubscription` , чтобы получить список подписок Azure, к которым у вас есть доступ. Выберите подписку Azure для работы с помощью `Set-AzContext` командлета.
+Выберите подписку Azure. Используйте `Get-AzSubscription` командлет, чтобы получить список подписок Azure, к которым у вас есть доступ. Выберите подписку Azure для работы с помощью `Set-AzContext` командлета.
 
 ```azurepowershell
 Set-AzContext -SubscriptionId "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
@@ -59,7 +58,7 @@ Set-AzContext -SubscriptionId "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 
 ## <a name="get-details-of-the-virtual-machine-to-be-replicated"></a>Получение сведений о реплицируемой виртуальной машине
 
-В этой статье виртуальная машина в регионе "Восточная часть США" реплицируется и восстанавливается в регионе "Западная часть США 2". Виртуальная машина, для которой выполняется репликация, имеет диск операционной системы и один диск данных. В примере используется имя виртуальной машины `AzureDemoVM`.
+В этой статье виртуальная машина в регионе "Восточная часть США" реплицируется и восстанавливается в регионе "Западная часть США 2". Виртуальная машина, для которой выполняется репликация, имеет диск операционной системы и один диск данных. В примере используется имя виртуальной машины `AzureDemoVM` .
 
 ```azurepowershell
 # Get details of the virtual machine
@@ -170,7 +169,7 @@ Set-AzRecoveryServicesAsrVaultContext -Vault $vault
 - Можно создать только один объект структуры для каждого региона.
 - Если была ранее включена репликация Site Recovery для виртуальной машины на портале Azure, Site Recovery автоматически создает объект структуры. Если в регионе уже существует объект структуры, новый создать не удастся.
 
-Прежде чем начать, изучите, что операции Site Recovery выполняются асинхронно. При запуске операции отправляется задание Azure Site Recovery и возвращается объект отслеживания задания. Используйте объект отслеживания заданий, чтобы получить Последнее состояние задания (`Get-AzRecoveryServicesAsrJob`), а также для наблюдения за состоянием операции.
+Прежде чем начать, изучите, что операции Site Recovery выполняются асинхронно. При запуске операции отправляется задание Azure Site Recovery и возвращается объект отслеживания задания. Используйте объект отслеживания заданий, чтобы получить Последнее состояние задания ( `Get-AzRecoveryServicesAsrJob` ), а также для наблюдения за состоянием операции.
 
 ```azurepowershell
 #Create Primary ASR fabric
@@ -603,7 +602,7 @@ Errors           : {}
 
 ## <a name="reprotect-and-fail-back-to-the-source-region"></a>Повторное включение защиты и возвращение к исходному региону
 
-После отработки отказа, когда вы будете готовы вернуться к исходному региону, запустите обратную репликацию для защищенного `Update-AzRecoveryServicesAsrProtectionDirection` элемента репликации с помощью командлета.
+После отработки отказа, когда вы будете готовы вернуться к исходному региону, запустите обратную репликацию для защищенного элемента репликации с помощью `Update-AzRecoveryServicesAsrProtectionDirection` командлета.
 
 ```azurepowershell
 #Create Cache storage account for replication logs in the primary region

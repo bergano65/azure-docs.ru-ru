@@ -6,25 +6,25 @@ ms.topic: article
 ms.date: 03/12/2020
 author: sabbour
 ms.author: asabbour
-keywords: АТО, openshift, AZ АТО, Red Hat, CLI
+keywords: aro, openshift, az aro, red hat, cli
 ms.custom: mvc
 ms.openlocfilehash: 6b6248aac35c22b9ffd2cd95df41e84986356259
-ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82205317"
 ---
 # <a name="configure-azure-active-directory-authentication-for-an-azure-red-hat-openshift-4-cluster-portal"></a>Настройка проверки подлинности Azure Active Directory для кластера Azure Red Hat OpenShift 4 (портал)
 
-Если вы решили установить и использовать CLI локально, для работы с этим руководством вам потребуется Azure CLI версии 2.0.75 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.0.75 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 
 ## <a name="before-you-begin"></a>Перед началом
 
 Создайте **URL-адрес обратного вызова OAuth** кластера и запишите его. Не забудьте заменить **АТО-RG** именем группы ресурсов, а **АТО-Cluster —** именем кластера.
 
 > [!NOTE]
-> `AAD` Раздел в URL-адресе обратного вызова OAuth должен соответствовать имени поставщика удостоверений OAuth, которое будет настроено позже.
+> `AAD`Раздел в URL-адресе обратного вызова OAuth должен соответствовать имени поставщика удостоверений OAuth, которое будет настроено позже.
 
 ```azurecli-interactive
 domain=$(az aro show -g aro-rg -n aro-cluster --query clusterProfile.domain -o tsv)
@@ -58,7 +58,7 @@ echo "OAuth callback URL: https://oauth-openshift.apps.$domain.$location.aroapp.
 * изменить поведение определенных утверждений в токенах, возвращаемых Azure AD;
 * добавлять пользовательские утверждения для приложения и обращаться к ним.
 
-Мы настроим OpenShift на использование `email` утверждения и вернемся `upn` к установке предпочтительного имени пользователя, ДОбавив в `upn` маркер идентификации, возвращенный Azure Active Directory.
+Мы настроим OpenShift на использование `email` утверждения и вернемся к `upn` установке предпочтительного имени пользователя, добавив в `upn` маркер идентификации, возвращенный Azure Active Directory.
 
 Перейдите в раздел **Конфигурация маркера (Предварительная версия)** и щелкните **добавить необязательное утверждение**. Выберите **идентификатор** , а затем проверьте **адрес электронной почты** и утверждения **имени участника-пользователя** .
 
@@ -72,7 +72,7 @@ echo "OAuth callback URL: https://oauth-openshift.apps.$domain.$location.aroapp.
 
 ## <a name="configure-openshift-openid-authentication"></a>Настройка проверки подлинности OpenShift OpenID Connect
 
-Получите `kubeadmin` учетные данные. Выполните следующую команду, чтобы найти пароль для `kubeadmin` пользователя.
+Получите `kubeadmin` учетные данные. Выполните следующую команду, чтобы найти пароль для пользователя `kubeadmin`.
 
 ```azurecli-interactive
 az aro list-credentials \
@@ -80,7 +80,7 @@ az aro list-credentials \
   --resource-group aro-rg
 ```
 
-В следующем примере выходных данных показано, что пароль будет `kubeadminPassword`находиться в.
+В следующем примере вывода показано, что пароль будет находиться в `kubeadminPassword`.
 
 ```json
 {
@@ -89,7 +89,7 @@ az aro list-credentials \
 }
 ```
 
-URL-адрес консоли кластера можно найти, выполнив следующую команду, которая будет выглядеть следующим образом:`https://console-openshift-console.apps.<random>.<region>.aroapp.io/`
+URL-адрес консоли кластера можно найти, выполнив следующую команду, которая будет выглядеть вот так: `https://console-openshift-console.apps.<random>.<region>.aroapp.io/`
 
 ```azurecli-interactive
  az aro show \
@@ -98,14 +98,14 @@ URL-адрес консоли кластера можно найти, выпол
     --query "consoleProfile.url" -o tsv
 ```
 
-Запустите URL-адрес консоли в браузере и войдите в систему `kubeadmin` , используя учетные данные.
+Перейдите по URL-адресу консоли в браузере и войдите с помощью учетных данных `kubeadmin`.
 
 Перейдите в меню **Администрирование**, щелкните **Параметры кластера**и выберите вкладку **Глобальная конфигурация** . Прокрутите экран, чтобы выбрать **OAuth**.
 
 Прокрутите вниз, чтобы выбрать **Добавить** в разделе **поставщики удостоверений** , и выберите **OpenID Connect Connect**.
 ![Выберите OpenID Connect Connect в раскрывающемся списке поставщиков удостоверений.](media/aro4-oauth-idpdrop.png)
 
-Заполните имя именем **AAD**, **идентификатором клиента** в качестве **идентификатора приложения** и **секретом клиента**. **URL-адрес издателя** имеет такой формат: `https://login.microsoftonline.com/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`. Замените заполнитель ИДЕНТИФИКАТОРом клиента, полученным ранее.
+Заполните имя именем **AAD**, **идентификатором клиента** в качестве **идентификатора приложения** и **секретом клиента**. **URL-адрес издателя** имеет такой формат: `https://login.microsoftonline.com/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` . Замените заполнитель ИДЕНТИФИКАТОРом клиента, полученным ранее.
 
 ![Сведения о заполнении OAuth](media/aro4-oauth-idp-1.png)
 

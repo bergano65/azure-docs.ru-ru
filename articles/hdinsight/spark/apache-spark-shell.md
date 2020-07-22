@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 02/10/2020
-ms.openlocfilehash: f8737f645df2aefbf9ce544199f0cc45ce6a3d60
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 84298c9073f00f0388a9bcb7405369d7c60bcce1
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77162809"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86081185"
 ---
 # <a name="run-apache-spark-from-the-spark-shell"></a>Запуск Apache Spark из оболочки Spark
 
@@ -21,7 +21,7 @@ ms.locfileid: "77162809"
 
 ## <a name="run-an-apache-spark-shell"></a>Запуск оболочки Apache Spark
 
-1. Используйте [команду SSH](../hdinsight-hadoop-linux-use-ssh-unix.md) для подключения к кластеру. Измените приведенную ниже команду, заменив ИМЯ_КЛАСТЕРА именем кластера, а затем введите следующую команду:
+1. С помощью команды [ssh command](../hdinsight-hadoop-linux-use-ssh-unix.md) подключитесь к кластеру. Измените приведенную ниже команду, заменив CLUSTERNAME именем своего кластера, а затем введите команду:
 
     ```cmd
     ssh sshuser@CLUSTERNAME-ssh.azurehdinsight.net
@@ -59,7 +59,7 @@ ms.locfileid: "77162809"
     textFile.filter(textFile.value.contains("apple")).show()
     ```
 
-1. Запросите CSV-файл. Обратите внимание, что язык `spark-shell` ниже `pyspark`работает для и.
+1. Запросите CSV-файл. Обратите внимание, что язык ниже работает для `spark-shell` и `pyspark` .
 
     ```scala
     spark.read.csv("/HdiSamples/HdiSamples/SensorSampleData/building/building.csv").show()
@@ -105,9 +105,9 @@ ms.locfileid: "77162809"
 
 ## <a name="important-shell-parameters"></a>Важные параметры оболочки
 
-Команда оболочки Spark (`spark-shell`или `pyspark`) поддерживает множество параметров командной строки. Чтобы просмотреть полный список параметров, запустите оболочку Spark с параметром `--help`. Некоторые из этих параметров могут применяться только к `spark-submit`, для которых оболочка Spark заносится в оболочку.
+Команда оболочки Spark ( `spark-shell` или `pyspark` ) поддерживает множество параметров командной строки. Чтобы просмотреть полный список параметров, запустите оболочку Spark с параметром `--help`. Некоторые из этих параметров могут применяться только к `spark-submit` , для которых оболочка Spark заносится в оболочку.
 
-| switch | description | пример |
+| Параметр | description | пример |
 | --- | --- | --- |
 | --master MASTER_URL | Позволяет задать основной URL-адрес. В HDInsight всегда используется значение `yarn`. | `--master yarn`|
 | --jars JAR_LIST | Список разделенных запятыми локальных JAR-файлов, которые добавляются в пути к классам драйвера и исполнителя. В HDInsight этот список состоит из путей к файловой системе по умолчанию в службе хранилища Azure или в Data Lake Storage. | `--jars /path/to/examples.jar` |

@@ -8,21 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-video-search
 ms.topic: quickstart
-ms.date: 12/09/2019
+ms.date: 05/22/2020
 ms.author: aahi
-ms.openlocfilehash: 357cc85991ac88aef4fd0958e2bc776373f56dc8
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: c43abc6c87b88e9fc4a15d4ca5d5506389a8a81a
+ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75448362"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83849626"
 ---
 # <a name="quickstart-search-for-videos-using-the-bing-video-search-rest-api-and-php"></a>Краткое руководство. Поиск видео с помощью REST API Bing для поиска видео и PHP
 
-Из этого краткого руководства вы узнаете, как сделать первый вызов API Bing для поиска видео и просмотреть результаты поиска в ответе JSON. Это простое приложение JavaScript отправляет HTTP-запрос для поиска видео к API и выводит ответ. Хотя это приложение создается на языке JavaScript и использует язык Node.js, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
-Этот пример кода должен выполняться в PHP 5.6.
+Используйте это краткое руководство, чтобы выполнить вызов API Поиска видео Bing. Это простое приложение PHP отправляет HTTP-запрос для поиска видео к API и выводит ответ в формате JSON. Этот пример кода должен выполняться в PHP 5.6.
 
-Технические сведения об API-интерфейсах см. в [справочнике по API](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference).
+Хотя это приложение написано на PHP, API представляет собой веб-службу на основе REST, совместимую с большинством языков программирования.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -34,10 +33,10 @@ ms.locfileid: "75448362"
 
 [API Bing для поиска видео](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference) возвращает результаты поиска видео из поисковой системы Bing.
 
-1. Убедитесь, что в `php.ini` включена поддержка безопасного HTTP-подключения, как описано в комментарии к коду.
+1. Включите поддержку безопасного HTTP-подключения в файле `php.ini`, раскомментировав строку `;extension=php_openssl.dll`, как описано в приведенном ниже коде.
 2. Создайте проект PHP в используемой вами интегрированной среде разработки или редакторе.
 3. Добавьте указанный ниже код.
-4. Замените значение `$accessKey` ключом доступа, допустимым для подписки. В качестве `$endpoint` может быть глобальная конечная точка, приведенная ниже, или конечная точка [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемая на портале Azure для вашего ресурса.
+4. Замените значение `$accessKey` ключом доступа, допустимым для подписки. Для значения `$endpoint` вы можете использовать глобальную конечную точку, указанную в коде ниже, или конечную точку [личного поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), которая отображается на портале Azure для вашего ресурса.
 5. Запустите программу.
 
 ```php

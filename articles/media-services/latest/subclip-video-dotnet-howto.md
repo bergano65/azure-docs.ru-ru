@@ -14,19 +14,19 @@ ms.topic: article
 ms.date: 06/09/2019
 ms.author: juliako
 ms.openlocfilehash: 3d584ee742aa93cdecf4b04d942afb2ed83a7357
-ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "67305039"
 ---
 # <a name="subclip-a-video-when-encoding-with-media-services---net"></a>Подрезать видео при кодировании с помощью служб мультимедиа — .NET
 
-Вы можете обрезать или подрезать видео при его кодировании с помощью [задания](https://docs.microsoft.com/rest/api/media/jobs). Эта функция работает с любым [преобразованием](https://docs.microsoft.com/rest/api/media/transforms) , построенным с помощью предустановок [буилтинстандарденкодерпресет](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#builtinstandardencoderpreset) или [стандарденкодерпресет](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#standardencoderpreset) .
+Вы можете обрезать или подрезать видео при его кодировании с помощью [задания](https://docs.microsoft.com/rest/api/media/jobs). Эта функция работает с любыми [преобразованиями](https://docs.microsoft.com/rest/api/media/transforms), созданными с помощью предустановок [BuiltInStandardEncoderPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#builtinstandardencoderpreset) или [StandardEncoderPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#standardencoderpreset).
 
 В следующем примере кода C# создается задание, которое обрезает видео в ресурсе при отправке задания кодирования. 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнить действия, описанные в этом разделе, необходимо сделать следующее:
 
@@ -89,6 +89,6 @@ private static async Task<Job> JobWithBuiltInStandardEncoderWithSingleClipAsync(
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Кодирование с помощью пользовательского преобразования](customize-encoder-presets-how-to.md) 

@@ -9,10 +9,9 @@ ms.topic: conceptual
 ms.date: 11/19/2019
 ms.author: kgremban
 ms.openlocfilehash: 23fbbd87230ea0a0147dc9d90c77729f4d531e98
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76511150"
 ---
 # <a name="connect-modbus-tcp-devices-through-an-iot-edge-device-gateway"></a>Подключение устройств Modbus TCP через шлюз устройств IoT Edge
@@ -33,7 +32,7 @@ ms.locfileid: "76511150"
 
 ## <a name="prepare-a-modbus-container"></a>Подготовка контейнера Modbus
 
-Если вы хотите протестировать функции шлюза Modbus, корпорация Майкрософт предлагает использовать пример модуля. Вы можете получить доступ к модулю из Azure Marketplace, [Modbus](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft_iot.edge-modbus?tab=Overview)или с помощью URI образа `mcr.microsoft.com/azureiotedge/modbus:1.0`.
+Если вы хотите протестировать функции шлюза Modbus, корпорация Майкрософт предлагает использовать пример модуля. Вы можете получить доступ к модулю из Azure Marketplace, [Modbus](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft_iot.edge-modbus?tab=Overview)или с помощью URI образа `mcr.microsoft.com/azureiotedge/modbus:1.0` .
 
 Если вы хотите создать собственный модуль и настроить его для своей среды, в проекте GitHub можно найти [модуль Modbus для Azure IoT Edge](https://github.com/Azure/iot-edge-modbus) с открытым кодом. Следуйте инструкциям в этом проекте, чтобы создать образ контейнера. Чтобы создать образ контейнера, см. статью [Разработка модулей C# в Visual Studio](how-to-visual-studio-develop-csharp-module.md) или [разработка модулей в Visual Studio Code](how-to-vs-code-develop-module.md). В этих статьях содержатся инструкции по созданию новых модулей и публикации образов контейнеров в реестре.
 
@@ -54,11 +53,11 @@ ms.locfileid: "76511150"
    3. Модуль автоматически настраивается для центра Интернета вещей и отображается в списке модулей IoT Edge. Маршруты также настраиваются автоматически. Выберите **Review + create** (Просмотреть и создать).
    4. Проверьте манифест развертывания и нажмите кнопку **создать**.
 
-5. Выберите Модуль Modbus, в `ModbusTCPModule`списке и перейдите на вкладку **двойника Settings (параметры модуля** ). Обязательный JSON для модуля, двойника требуемые свойства, заполняется автоматически.
+5. Выберите Модуль Modbus, `ModbusTCPModule` в списке и перейдите на вкладку **двойника Settings (параметры модуля** ). Обязательный JSON для модуля, двойника требуемые свойства, заполняется автоматически.
 
 6. Найдите свойство **славеконнектион** в JSON и присвойте ему значение IPv4-адреса устройства MODBUS.
 
-7. Выберите **Обновить**.
+7. Нажмите кнопку **Обновить**.
 
 8. Выберите **Проверка + создать**, просмотрите развертывание, а затем выберите **создать**.
 

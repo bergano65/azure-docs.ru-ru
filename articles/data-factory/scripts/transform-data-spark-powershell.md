@@ -11,10 +11,9 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/12/2017
 ms.openlocfilehash: c09d0532b845472d0ccaac1ad57e3772630bb5c9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74932063"
 ---
 # <a name="powershell-script---transform-data-in-cloud-using-azure-data-factory"></a>Сценарий PowerShell. Преобразование данных в облаке с помощью фабрики данных Azure
@@ -26,7 +25,7 @@ ms.locfileid: "74932063"
 [!INCLUDE [sample-powershell-install](../../../includes/sample-powershell-install-no-ssh-az.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
-* **Учетная запись хранения Azure**. Создайте входной файл и сценарий Python и передайте их в службу хранилища Azure. Выходные данные программы Spark хранятся в этой учетной записи хранения. Кластер Spark по запросу использует ту же учетную запись хранения, что и его основное хранилище.  
+* **Учетная запись хранения Azure.** Создайте входной файл и сценарий Python и передайте их в службу хранилища Azure. Выходные данные программы Spark хранятся в этой учетной записи хранения. Кластер Spark по запросу использует ту же учетную запись хранения, что и его основное хранилище.  
 
 ### <a name="upload-python-script-to-your-blob-storage-account"></a>Отправка скрипта Python в учетную запись хранилища BLOB-объектов
 1. Создайте файл Python с именем **WordCount_Spark. копировать** со следующим содержимым: 
@@ -54,7 +53,7 @@ ms.locfileid: "74932063"
     if __name__ == "__main__":
         main()
     ```
-2. Замените ** &lt;storageAccountName&gt; ** именем вашей учетной записи хранения Azure. Затем сохраните файл. 
+2. Замените ** &lt; storageAccountName &gt; ** именем вашей учетной записи хранения Azure. Затем сохраните файл. 
 3. В хранилище BLOB-объектов Azure создайте контейнер с именем **adftutorial**, если он не существует. 
 4. Создайте папку с именем **spark**.
 5. Создайте вложенную папку с именем **script** в папке **spark**. 

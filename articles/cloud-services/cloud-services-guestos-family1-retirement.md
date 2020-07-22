@@ -9,12 +9,11 @@ ms.service: cloud-services
 ms.topic: article
 ms.date: 5/21/2017
 ms.author: raiye
-ms.openlocfilehash: ae2df6f47d99fc5d452a6d3ea70f2dd2e4e7416b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 0e60a8a563819b38bbe67a0b532c6dcada6821b7
+ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "68359583"
+ms.lasthandoff: 05/25/2020
+ms.locfileid: "83835637"
 ---
 # <a name="guest-os-family-1-retirement-notice"></a>Уведомление о прекращении использования семейства версий 1 гостевой ОС
 О прекращении использования семейства версий 1 операционной системы было впервые объявлено 1 июня 2013 г.
@@ -23,7 +22,7 @@ ms.locfileid: "68359583"
 
 **3 ноября 2014 г.** Закончилась расширенная поддержка и полностью прекращено использование семейства версий 1 гостевой ОС. Будут затронуты все службы, использующие семейство версий 1. Эти службы могут быть остановлены в любом момент. Не гарантируется, что службы будут работать далее, если самостоятельно не обновить их вручную.
 
-С дополнительными вопросами обращайтесь на [форумы облачных служб](https://social.msdn.microsoft.com/Forums/home?forum=windowsazuredevelopment&filter=alltypes&sort=lastpostdesc) или в [службу поддержки Azure](https://azure.microsoft.com/support/options/).
+С дополнительными вопросами обращайтесь на [Страницу вопросов об облачных службах (раздел вопросов и ответов на сайте Майкрософт)](https://docs.microsoft.com/answers/topics/azure-cloud-services.html) или в [службу поддержки Azure](https://azure.microsoft.com/support/options/).
 
 ## <a name="are-you-affected"></a>Влияет ли это на вас?
 Это влияет на ваши облачные службы в одном из следующих случаев:
@@ -67,5 +66,5 @@ foreach($subscription in Get-AzureSubscription) {
 ## <a name="extended-support-for-guest-os-family-1-ended-nov-3-2014"></a>Расширенная поддержка семейства версий 1 гостевой ОС окончена 3 ноября 2014 г.
 Облачные службы в семействе версий 1 гостевой ОС более не поддерживаются. Переходите от использования операционной системы семейства 1 к ОС другого семейства, чтобы избежать прерывания работы службы.  
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Просмотрите последние [выпуски гостевой ОС](cloud-services-guestos-update-matrix.md).

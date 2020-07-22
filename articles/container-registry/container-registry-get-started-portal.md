@@ -2,14 +2,14 @@
 title: Краткое руководство. Создание реестра на портале
 description: Быстрый способ изучить создание частного реестра Docker в Реестре контейнеров Azure на портале Azure.
 ms.topic: quickstart
-ms.date: 03/03/2020
+ms.date: 06/11/2020
 ms.custom: seodec18, mvc
-ms.openlocfilehash: 6fe6358655f50ab783b4017efa8ee1db351cd018
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 82f9a6b02832b718d5b4e7b662c590f1992af595
+ms.sourcegitcommit: 4ac596f284a239a9b3d8ed42f89ed546290f4128
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "79409294"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84752866"
 ---
 # <a name="quickstart-create-a-private-container-registry-using-the-azure-portal"></a>Краткое руководство. Создание частного реестра контейнеров с помощью портала Azure
 
@@ -27,28 +27,28 @@ ms.locfileid: "79409294"
 
 Последовательно выберите **Создать ресурс** > **Контейнеры** > **Реестр контейнеров**.
 
-![Создание реестра контейнеров на портале Azure][qs-portal-01]
+:::image type="content" source="media/container-registry-get-started-portal/qs-portal-01.png" alt-text="Переход к реестру контейнеров на портале":::
 
-На вкладке **Основные сведения** введите значения в поле **Группа ресурсов** и **Имя реестра**. Имя реестра должно быть уникальным в пределах Azure и содержать от 5 до 50 буквенно-цифровых символов. В целях этого руководства создайте группу ресурсов в регионе `West US` в расположении с именем `myResourceGroup`. Для **SKU** задайте значение "Базовый". 
+На вкладке **Основные сведения** введите значения в поле **Группа ресурсов** и **Имя реестра**. Имя реестра должно быть уникальным в пределах Azure и содержать от 5 до 50 буквенно-цифровых символов. В целях этого руководства создайте группу ресурсов в регионе `West US` в расположении с именем `myResourceGroup`. Для **SKU** задайте значение "Базовый".
 
-![Создание реестра контейнеров на портале Azure][qs-portal-03]
+:::image type="content" source="media/container-registry-get-started-portal/qs-portal-03.png" alt-text="Создание реестра контейнеров на портале":::
 
 Примите значения по умолчанию для остальных параметров. Щелкните **Просмотр и создание**. Проверив параметры, нажмите кнопку **Создать**.
 
-В этом кратком руководстве описано, как создать реестр ценовой категории *Базовый*. Это оптимальный (недорогой) вариант для разработчиков, которые знакомятся с Реестром контейнеров Azure. Дополнительные сведения об уровнях служб см. в статье [Номера SKU реестра контейнеров][container-registry-skus].
+В этом кратком руководстве описано, как создать реестр ценовой категории *Базовый*. Это оптимальный (недорогой) вариант для разработчиков, которые знакомятся с Реестром контейнеров Azure. Дополнительные сведения об уровнях служб (SKU) см. в статье [Уровни служб реестра контейнеров][container-registry-skus].
 
 Когда появится сообщение **Развертывание прошло успешно**, выберите реестр контейнеров на портале. 
 
-![Страница обзора реестра контейнеров на портале Azure][qs-portal-05]
+:::image type="content" source="media/container-registry-get-started-portal/qs-portal-05.png" alt-text="Страница обзора реестра контейнеров на портале":::
 
 Запишите значение **сервера входа**. Это значение используется в следующих шагах при отправке и извлечении изображения с помощью Docker.
 
 ## <a name="log-in-to-registry"></a>Вход в раздел реестра
 
-Перед отправкой и извлечением образов контейнеров необходимо войти в экземпляр ACR. Откройте командную оболочку в операционной системе и используйте команду [az acr login][az-acr-login] в Azure CLI. (При входе в систему укажите только имя реестра. Не добавляйте суффикс "azurecr.io".)
+Перед отправкой и извлечением образов контейнеров необходимо войти в экземпляр реестра. [Войдите в Azure CLI][get-started-with-azure-cli] на локальном компьютере, а затем выполните команду [az acr login][az-acr-login]. (При входе с помощью Azure CLI укажите только имя реестра. Не добавляйте суффикс "azurecr.io".)
 
 ```azurecli
-az acr login --name <acrName>
+az acr login --name <registry-name>
 ```
 
 По завершении команда возвращает `Login Succeeded`. 
@@ -57,34 +57,30 @@ az acr login --name <acrName>
 
 ## <a name="list-container-images"></a>Список образов контейнеров
 
-Чтобы вывести список образов в вашем реестре, перейдите в реестр на портале и выберите **Репозитории**, а затем выберите репозиторий, созданный с помощью `docker push`.
+Чтобы вывести список образов в вашем реестре, перейдите в реестр на портале и выберите **Репозитории**, а затем выберите репозиторий **hello-world**, созданный с помощью `docker push`.
 
-В этом примере мы выбираем репозиторий **hello-world** и видим образ с тегом `v1` в разделе **Теги**.
+:::image type="content" source="media/container-registry-get-started-portal/qs-portal-09.png" alt-text="Список образов контейнеров на портале":::
 
-![Список образов контейнеров на портале Azure][qs-portal-09]
+Выбрав репозиторий **hello-world**, вы увидите образ с тегом `v1` в разделе **Теги**.
 
 [!INCLUDE [container-registry-quickstart-docker-pull](../../includes/container-registry-quickstart-docker-pull.md)]
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Чтобы очистить ресурсы, перейдите к группе ресурсов **myResourceGroup** на портале. После загрузки группы ресурсов щелкните пункт **Удалить группу ресурсов** для удаления группы ресурсов, реестра контейнеров и сохраненных образов контейнеров.
+Чтобы очистить ресурсы, перейдите к группе ресурсов **myResourceGroup** на портале. После загрузки группы ресурсов щелкните пункт **Удалить группу ресурсов**, чтобы удалить группу ресурсов, реестр контейнеров и сохраненные образы контейнеров.
 
-![Удаление группы ресурсов на портале Azure][qs-portal-08]
+:::image type="content" source="media/container-registry-get-started-portal/qs-portal-08.png" alt-text="Удаление группы ресурсов на портале":::
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 С помощью этого краткого руководства вы создали Реестр контейнеров Azure с использованием портала Azure, отправили образ контейнера, а затем извлекли этот образ оттуда и запустили его. Чтобы продолжить работу с Реестром контейнеров Azure, перейдите к следующим руководствам.
 
 > [!div class="nextstepaction"]
-> [Руководства по использованию Реестра контейнеров Azure][container-registry-tutorial-quick-task]
+> [Руководства по использованию Реестра контейнеров Azure][container-registry-tutorial-prepare-registry]
 
-<!-- IMAGES -->
-[qs-portal-01]: ./media/container-registry-get-started-portal/qs-portal-01.png
-[qs-portal-02]: ./media/container-registry-get-started-portal/qs-portal-02.png
-[qs-portal-03]: ./media/container-registry-get-started-portal/qs-portal-03.png
-[qs-portal-05]: ./media/container-registry-get-started-portal/qs-portal-05.png
-[qs-portal-08]: ./media/container-registry-get-started-portal/qs-portal-08.png
-[qs-portal-09]: ./media/container-registry-get-started-portal/qs-portal-09.png
+> [!div class="nextstepaction"]
+> [Руководство. Создание и развертывание образов контейнера в облаке с помощью службы "Задачи Реестра контейнеров Azure"][container-registry-tutorial-quick-task]
 
 <!-- LINKS - external -->
 [docker-linux]: https://docs.docker.com/engine/installation/#supported-platforms
@@ -97,7 +93,9 @@ az acr login --name <acrName>
 [docker-windows]: https://docs.docker.com/docker-for-windows/
 
 <!-- LINKS - internal -->
-[container-registry-tutorial-quick-task]: container-registry-tutorial-quick-task.md
+[container-registry-tutorial-prepare-registry]: container-registry-tutorial-prepare-registry.md
 [container-registry-skus]: container-registry-skus.md
 [azure-cli]: /cli/azure/install-azure-cli
+[get-started-with-azure-cli]: /cli/azure/get-started-with-azure-cli
 [az-acr-login]: /cli/azure/acr#az-acr-login
+[container-registry-tutorial-quick-task]: container-registry-tutorial-quick-task.md

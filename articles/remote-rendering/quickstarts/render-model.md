@@ -5,20 +5,20 @@ author: florianborn71
 ms.author: flborn
 ms.date: 01/23/2020
 ms.topic: quickstart
-ms.openlocfilehash: b0af45ba4a6b1ca7f9e751af082ff0db80776ec0
-ms.sourcegitcommit: 642a297b1c279454df792ca21fdaa9513b5c2f8b
+ms.openlocfilehash: 62669457f73ba78186614433fb6d10cc4dc01089
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80677689"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85565507"
 ---
 # <a name="quickstart-render-a-model-with-unity"></a>Краткое руководство. Отрисовка модели с помощью Unity
 
 В этом кратком руководстве описано, как запустить пример Unity, который удаленно выполняет отрисовку встроенной модели с помощью службы "Удаленная отрисовка Azure" (ARR).
 
-Мы не будем углубляться в детали о самом API-интерфейсе ARR или о том, как настроить новый проект Unity. Эти темы рассматриваются в [учебнике по настройке проекта Unity с нуля](../tutorials/unity/project-setup.md).
+Мы не будем углубляться в детали о самом API-интерфейсе ARR или о том, как настроить новый проект Unity. Эти темы рассматриваются в [учебнике по просмотру моделей удаленной отрисовки](../tutorials/unity/view-remote-models/view-remote-models.md).
 
-В этом кратком руководстве описано следующее:
+Из этого руководства вы узнаете, как выполнить следующие задачи:
 > [!div class="checklist"]
 >
 >* настройка локальной среды разработки;
@@ -33,6 +33,9 @@ ms.locfileid: "80677689"
 
 * Windows SDK 10.0.18362.0 [(скачать)](https://developer.microsoft.com/windows/downloads/windows-10-sdk).
 * Последняя версия Visual Studio 2019 [(скачать)](https://visualstudio.microsoft.com/vs/older-downloads/).
+* [Средства Visual Studio для службы "Смешанная реальность"](https://docs.microsoft.com/windows/mixed-reality/install-the-tools). В частности, обязательно установить следующие *рабочие нагрузки*:
+  * **Разработка классических приложений на C++** .
+  * **Разработка приложений для универсальной платформы Windows (UWP)** .
 * GIT [(скачать)](https://git-scm.com/downloads).
 * Unity 2019.3.1 [(скачать)](https://unity3d.com/get-unity/download).
   * Установите следующие модули в Unity:
@@ -66,7 +69,7 @@ git clone https://github.com/Azure/azure-remote-rendering
 
 1. В обозревателе ресурсов Unity перейдите к папке *Scenes* (Сцены) и откройте сцену **Quickstart** (Быстрый запуск).
 1. В разделе *Hierarchy* (Иерархия) выберите игровой объект **RemoteRendering**.
-1. В разделе *Inspector* (Инспектор) введите [учетные данные учетной записи](../how-tos/create-an-account.md).
+1. В разделе *Inspector* (Инспектор) введите [учетные данные учетной записи](../how-tos/create-an-account.md). Если у вас нет учетной записи, [создайте ее](../how-tos/create-an-account.md).
 
 ![Сведения об учетной записи ARR](./media/arr-sample-account-info.png)
 

@@ -1,5 +1,5 @@
 ---
-title: Включить имя файла
+title: включить файл
 description: включить файл
 services: event-grid
 author: tfitzmac
@@ -28,9 +28,9 @@ ms.locfileid: "66814722"
 
 При локальной установке:
 
-1. [Установите Azure CLI](/cli/azure/install-azure-cli). Убедитесь, что у вас установлена последняя версия, путем проверки `az --version`.
+1. [Установка Azure CLI](/cli/azure/install-azure-cli). С помощью `az --version` проверьте, что установлена последняя версия.
 1. Удалите предыдущие версии расширения `az extension remove -n eventgrid`.
-1. Установите `eventgrid` расширение с помощью`az extension add -n eventgrid`
+1. Установка расширения `eventgrid` с помощью `az extension add -n eventgrid`
 
 ### <a name="install-module-for-powershell"></a>Установка модуля для PowerShell
 

@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 02/26/2020
 ms.topic: how-to
-ms.openlocfilehash: 86ffe47c009f9e0ae121ffc6ab57bff8fb73210f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 3704d1a418baeec18c3303b8203a0185790cbcc7
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80681185"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85564313"
 ---
 # <a name="install-the-remote-rendering-package-for-unity"></a>Установка пакета Удаленной отрисовки для Unity
 
@@ -22,7 +22,8 @@ ms.locfileid: "80681185"
 Этот пакет содержит весь API C#, а также все двоичные файлы подключаемого модуля, необходимые для использования удаленной отрисовки Azure с Unity.
 В следующей схеме именования Unity для пакетов пакет называется **com. Microsoft. Azure. Remote-Rendering**.
 
-Пакет не является частью [репозитория примеров arr](https://github.com/Azure/azure-remote-rendering)и недоступен из внутреннего реестра пакетов Unity. Чтобы добавить его в проект, необходимо вручную изменить `manifest.md` файл проекта, добавив в него следующее:
+Пакет не является частью [репозитория примеров arr](https://github.com/Azure/azure-remote-rendering)и недоступен из внутреннего реестра пакетов Unity. Чтобы добавить его в проект, необходимо вручную изменить файл проекта, `manifest.md` добавив в него следующее:
+
 ```json
 {
   "scopedRegistries": [
@@ -33,21 +34,22 @@ ms.locfileid: "80681185"
     }
    ],
   "dependencies": {
-    "com.microsoft.azure.remote-rendering": "0.1.11",
+    "com.microsoft.azure.remote-rendering": "0.1.31",
     ...existing dependencies...
   }
 }
 ```
+
 После добавления этого можно использовать диспетчер пакетов Unity, чтобы убедиться в наличии последней версии.
-Более полные инструкции приведены в руководстве по [настройке проекта Unity с нуля](../../tutorials/unity/project-setup.md).
+Более полные инструкции приведены в руководстве по [просмотру удаленных моделей](../../tutorials/unity/view-remote-models/view-remote-models.md).
 
 ## <a name="unity-render-pipelines"></a>Конвейеры отрисовки Unity
 
-Удаленная визуализация работает как с **универсальным конвейером отрисовки** , так и с **стандартным конвейером отрисовки**. По соображениям производительности рекомендуется использовать универсальный конвейер отрисовки.
+Удаленная визуализация работает как с, так **:::no-loc text="Universal render pipeline":::** и с **:::no-loc text="Standard render pipeline":::** . По соображениям производительности рекомендуется использовать универсальный конвейер отрисовки.
 
-Для использования **универсального конвейера отрисовки**его пакет должен быть установлен в Unity. Это можно сделать в пользовательском интерфейсе **диспетчера пакетов** ( **Universal RP**, версии 7.2.1 или более новой) или с помощью `Packages/manifest.json` файла, как описано в руководстве по [установке проекта Unity](../../tutorials/unity/project-setup.md#configure-the-projects-manifest).
+Чтобы использовать **:::no-loc text="Universal render pipeline":::** , его пакет должен быть установлен в Unity. Это можно сделать в пользовательском интерфейсе **диспетчера пакетов** ( **Universal RP**, версии 7.3.1 или более новой) или с помощью `Packages/manifest.json` файла, как описано в [руководстве по установке проекта Unity](../../tutorials/unity/view-remote-models/view-remote-models.md#include-the-azure-remote-rendering-package).
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Игровые объекты и компоненты Unity](objects-components.md)
-* [Руководство. Настройка проекта Unity с нуля](../../tutorials/unity/project-setup.md)
+* [Учебник. Просмотр удаленных моделей](../../tutorials/unity/view-remote-models/view-remote-models.md)

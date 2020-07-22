@@ -7,11 +7,11 @@ author: mayurigupta13
 ms.topic: conceptual
 ms.author: mayg
 ms.openlocfilehash: ce389f9281b02662f87353f00c9bca92cdf86937
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79257580"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85847904"
 ---
 # <a name="manage-site-recovery-access-with-role-based-access-control-rbac"></a>Управление доступом к Site Recovery с помощью управления доступом на основе ролей (RBAC)
 
@@ -43,11 +43,11 @@ Azure Site Recovery предоставляет 3 встроенные роли �
 
 | **Тип ресурса** | **Модель развертывания** | **Разрешение** |
 | --- | --- | --- |
-| Службы вычислений | Resource Manager | Microsoft.Compute/availabilitySets/read |
+| Вычисления | Resource Manager | Microsoft.Compute/availabilitySets/read |
 |  |  | Microsoft.Compute/virtualMachines/read |
 |  |  | Microsoft.Compute/virtualMachines/write |
 |  |  | Microsoft.Compute/virtualMachines/delete |
-|  | Классический | Microsoft.ClassicCompute/domainNames/read |
+|  | Классическая | Microsoft.ClassicCompute/domainNames/read |
 |  |  | Microsoft.ClassicCompute/domainNames/write |
 |  |  | Microsoft.ClassicCompute/domainNames/delete |
 |  |  | Microsoft.ClassicCompute/virtualMachines/read |
@@ -60,11 +60,11 @@ Azure Site Recovery предоставляет 3 встроенные роли �
 |  |  | Microsoft.Network/virtualNetworks/read |
 |  |  | Microsoft.Network/virtualNetworks/subnets/read |
 |  |  | Microsoft.Network/virtualNetworks/subnets/join/action |
-|  | Классический | Microsoft.ClassicNetwork/virtualNetworks/read |
+|  | Классическая | Microsoft.ClassicNetwork/virtualNetworks/read |
 |  |  | Microsoft.ClassicNetwork/virtualNetworks/join/action |
 | Память | Resource Manager | Microsoft.Storage/storageAccounts/read |
 |  |  | Microsoft.Storage/storageAccounts/listkeys/action |
-|  | Классический | Microsoft.ClassicStorage/storageAccounts/read |
+|  | Классическая | Microsoft.ClassicStorage/storageAccounts/read |
 |  |  | Microsoft.ClassicStorage/storageAccounts/listKeys/action |
 | Группа ресурсов | Resource Manager | Microsoft.Resources/deployments/* |
 |  |  | Microsoft.Resources/subscriptions/resourceGroups/read |

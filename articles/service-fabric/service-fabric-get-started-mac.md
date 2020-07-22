@@ -6,10 +6,10 @@ ms.topic: conceptual
 ms.date: 11/17/2017
 ms.author: suhuruli
 ms.openlocfilehash: c7e2d556c4fb8bebc0b75bdf9d4c209c27f86971
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82193400"
 ---
 # <a name="set-up-your-development-environment-on-mac-os-x"></a>Настройка среды разработки для Mac OS X
@@ -48,7 +48,7 @@ ms.locfileid: "82193400"
     
     >[!NOTE]
     >
-    >Рекомендуется изменить управляющую программу непосредственно в DOCKER, так как расположение файла Daemon. JSON может отличаться от компьютера к компьютеру. Например, ~/Library/Containers/com.docker.docker/Data/database/com.docker.driver.amd64-linux/etc/docker/daemon.json.
+    >Рекомендуется изменить управляющую программу непосредственно в DOCKER, так как расположение daemon.jsв файле может отличаться от компьютера к компьютеру. Например, ~/Library/Containers/com.docker.docker/Data/database/com.docker.driver.amd64-linux/etc/docker/daemon.json.
     >
 
     >[!TIP]
@@ -76,7 +76,7 @@ ms.locfileid: "82193400"
     >Например, добавленный элемент `RUN apt-get install nodejs -y` разрешает поддержку приложений `nodejs` в качестве гостевых исполняемых файлов.
     
     >[!TIP]
-    > По умолчанию вы получите образ с последней версией Service Fabric. Конкретные редакции см. на странице [центра DOCKER](https://hub.docker.com/r/microsoft/service-fabric-onebox/) .
+    > По умолчанию вы получите образ с последней версией Service Fabric. Сведения о конкретной версии см. на странице [Docker Hub](https://hub.docker.com/r/microsoft/service-fabric-onebox/).
 
 3. Чтобы создать образ для многократного использования на основе файла `Dockerfile`, откройте терминал и с помощью команды `cd` перейдите в каталог, в котором хранится `Dockerfile`. Затем выполните следующий код:
 

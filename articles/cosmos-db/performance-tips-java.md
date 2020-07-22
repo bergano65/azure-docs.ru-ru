@@ -1,42 +1,43 @@
 ---
-title: Советы по повышению производительности Azure Cosmos DB синхронизации пакета SDK для Java версии 2
-description: Сведения о параметрах конфигурации клиента для повышения производительности базы данных Azure Cosmos для синхронизации пакета SDK для Java версии 2
+title: Советы по повышению производительности для Azure Cosmos DB с пакетом SDK для Sync Java версии 2
+description: Узнайте, как повысить производительность базы данных Azure Cosmos DB с пакетом SDK для Sync Java версии 2
 author: anfeldma-ms
 ms.service: cosmos-db
 ms.devlang: java
-ms.topic: conceptual
-ms.date: 05/08/2020
+ms.topic: how-to
+ms.date: 05/11/2020
 ms.author: anfeldma
-ms.openlocfilehash: 9475fce054356606c09947721019a264143a716b
-ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
+ms.openlocfilehash: cb42ac4e59d8e9d8c3e0c24eb24a810a5797c277
+ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82982519"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85850110"
 ---
-# <a name="performance-tips-for-azure-cosmos-db-sync-java-sdk-v2"></a>Советы по повышению производительности Azure Cosmos DB синхронизации пакета SDK для Java версии 2
+# <a name="performance-tips-for-azure-cosmos-db-sync-java-sdk-v2"></a>Советы по повышению производительности для Azure Cosmos DB с пакетом SDK для Sync Java версии 2
 
 > [!div class="op_single_selector"]
-> * [Пакет SDK для Java v4](performance-tips-java-sdk-v4-sql.md)
+> * [Пакет SDK для Java версии 4](performance-tips-java-sdk-v4-sql.md)
 > * [Пакет SDK для Async Java версии 2](performance-tips-async-java.md)
 > * [Пакет SDK для Sync Java версии 2](performance-tips-java.md)
-> * [.NET](performance-tips.md)
+> * [Пакет SDK версии 3 для .NET](performance-tips-dotnet-sdk-v3-sql.md)
+> * [Пакет SDK для .NET версии 2](performance-tips.md)
 > 
 
 > [!IMPORTANT]  
-> Это *не* самый последний пакет SDK для Java для Azure Cosmos DB! Рассмотрите возможность использования Azure Cosmos DB пакета SDK для Java версии 4 для вашего проекта. Чтобы выполнить обновление, следуйте инструкциям из руководств по [переходу на Azure Cosmos DB пакета SDK для Java версии 4](migrate-java-v4-sdk.md) и [реактора VS рксжава](https://github.com/Azure-Samples/azure-cosmos-java-sql-api-samples/blob/master/reactor-rxjava-guide.md) . 
+> Это *не* последняя версия пакета SDK для Java для Azure Cosmos DB! Необходимо обновить проект до [Azure Cosmos DB с пакетом SDK для Java версии 4](sql-api-sdk-java-v4.md), а затем ознакомиться с [руководством по повышению производительности](performance-tips-java-sdk-v4-sql.md) Azure Cosmos DB с пакетом SDK для Java версии 4. Следуйте инструкциям в руководстве по [переходу на Azure Cosmos DB с пакетом SDK для Java версии 4](migrate-java-v4-sdk.md) и руководстве [Reactor и RxJava](https://github.com/Azure-Samples/azure-cosmos-java-sql-api-samples/blob/master/reactor-rxjava-guide.md). 
 > 
-> Эти советы по повышению производительности предназначены только для Azure Cosmos DB синхронизации пакета SDK для Java версии 2. Дополнительные сведения см. в [заметках о Выпуске](sql-api-sdk-java.md) Azure Cosmos DB Sync SDK v2 и в [репозитории Maven](https://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb) .
+> Эти советы по повышению производительности предназначены только для Azure Cosmos DB с пакетом SDK для Sync Java версии 2. Ознакомьтесь с [заметками о выпуске](sql-api-sdk-java.md) и [репозиторием Maven](https://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb) для Azure Cosmos DB с пакетом SDK для Sync Java версии 2.
 >
 
-Azure Cosmos DB — быстрая и гибкая распределенная база данных, которая легко масштабируется с гарантированной задержкой и пропускной способностью. Для масштабирования базы данных с помощью Azure Cosmos DB не нужно вносить в архитектуру существенные изменения или писать сложный код. Для увеличения или уменьшения масштаба достаточно выполнить один вызов API. Дополнительные сведения см. в разделах [о подготовке пропускной способности контейнера](how-to-provision-container-throughput.md) и [о подготовке пропускной способности базы данных](how-to-provision-database-throughput.md). Однако, поскольку доступ к Azure Cosmos DB осуществляется через сетевые вызовы, существуют оптимизации на стороне клиента, которые можно использовать для достижения пиковой производительности при использовании [Azure Cosmos DB синхронизации пакета SDK для Java версии 2](documentdb-sdk-java.md).
+Azure Cosmos DB — быстрая и гибкая распределенная база данных, которая легко масштабируется с гарантированной задержкой и пропускной способностью. Для масштабирования базы данных с помощью Azure Cosmos DB не нужно вносить в архитектуру существенные изменения или писать сложный код. Для увеличения или уменьшения масштаба достаточно выполнить один вызов API. Дополнительные сведения см. в разделах [о подготовке пропускной способности контейнера](how-to-provision-container-throughput.md) и [о подготовке пропускной способности базы данных](how-to-provision-database-throughput.md). Но так как для доступа к Azure Cosmos DB выполняются сетевые вызовы, то некоторая оптимизация на стороне клиента поможет повысить производительность при работе с [Azure Cosmos DB с пакетом SDK для Sync Java версии 2](documentdb-sdk-java.md).
 
 Чтобы повысить производительность базы данных, рассмотрите следующие варианты.
 
 ## <a name="networking"></a>Сеть
 <a id="direct-connection"></a>
 
-1. **Режим подключения: использование DirectHttps**
+1. **Режим подключения: используйте DirectHttps**
 
     Режим подключения к Azure Cosmos DB серьезно влияет на производительность, в частности на задержку на стороне клиента. Важнейший параметр для настройки политики подключения ([ConnectionPolicy](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.connectionpolicy)) на стороне клиента — это [ConnectionMode](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.connectionmode).  Этот параметр может принимать одно из двух значений:
 
@@ -45,11 +46,11 @@ Azure Cosmos DB — быстрая и гибкая распределенная 
 
       Режим шлюза поддерживается на всех платформах SDK, поэтому он установлен по умолчанию.  Так как в режиме шлюза используется стандартный порт HTTPS и одна конечная точка, он будет правильным выбором для приложений, запущенных в корпоративных сетях со строгими ограничениями брандмауэра. Но режим шлюза не обеспечивает максимальную производительность, поскольку задействует дополнительный сетевой узел при каждой операции чтения или записи данных в Azure Cosmos DB. Режим прямого подключения позволит повысить производительность. 
 
-      Azure Cosmos DB Sync SDK версии 2 для Java использует протокол HTTPS в качестве транспортного протокола. Протокол HTTPS использует протокол TLS для начальной проверки подлинности и шифрования трафика. При использовании Azure Cosmos DB Sync SDK версии 2 для Java необходимо открыть только HTTPS порт 443. 
+      Azure Cosmos DB с пакетом SDK для Sync Java версии 2 использует HTTPS в качестве транспортного протокола. HTTPS использует TLS для первоначальной аутентификации и шифрования трафика. При работе с Azure Cosmos DB с пакетом SDK для Sync Java версии 2 нужно открыть только стандартный порт HTTPS 443. 
 
       Режим подключения настраивается с помощью параметра ConnectionPolicy во время создания экземпляра DocumentClient. 
 
-    ### <a name="sync-java-sdk-v2-maven-commicrosoftazureazure-documentdb"></a><a id="syncjava2-connectionpolicy"></a>Синхронизация пакета SDK для Java версии 2 (Maven com. Microsoft. Azure:: Azure-documentdb)
+    ### <a name="sync-java-sdk-v2-maven-commicrosoftazureazure-documentdb"></a><a id="syncjava2-connectionpolicy"></a>Пакет SDK для Sync Java версии 2 (Maven com.microsoft.azure::azure-documentdb)
 
       ```Java
       public ConnectionPolicy getConnectionPolicy() {
@@ -63,33 +64,33 @@ Azure Cosmos DB — быстрая и гибкая распределенная 
       DocumentClient client = new DocumentClient(HOST, MASTER_KEY, connectionPolicy, null);
       ```
 
-      ![Пример политики подключения Azure Cosmos DB](./media/performance-tips-java/connection-policy.png)
+      :::image type="content" source="./media/performance-tips-java/connection-policy.png" alt-text="Пример политики подключения Azure Cosmos DB" border="false":::
 
    <a id="same-region"></a>
-2. **Совместное размещение клиентов в одном регионе Azure для повышения производительности**
+2. **Повышение производительности за счет размещения клиентов в одном регионе Azure**
 
-    По возможности разместите все приложения, вызывающие Azure Cosmos DB, в том же регионе, что и база данных Azure Cosmos. Для приблизительного сравнения: вызовы к Azure Cosmos DB в пределах региона выполняются в течение 1–2 мс, но задержка между восточным и западным побережьем США превышает 50 мс. Значение задержки может отличаться в зависимости от выбранного маршрута при передаче запроса от клиента к границе центра обработки данных Azure. Минимальная возможная задержка достигается при размещении клиентского приложения в том же регионе Azure, в котором предоставляется конечная точка Azure Cosmos DB. Список доступных регионов см. на странице [Регионы Azure](https://azure.microsoft.com/regions/#services).
+    Если это возможно, размещайте приложения, выполняющие вызовы к Azure Cosmos DB, в том же регионе, в котором находится база данных Azure Cosmos. Для приблизительного сравнения: вызовы к Azure Cosmos DB в пределах региона выполняются в течение 1–2 мс, но задержка между восточным и западным побережьем США превышает 50 мс. Значение задержки может отличаться в зависимости от выбранного маршрута при передаче запроса от клиента к границе центра обработки данных Azure. Минимальная возможная задержка достигается при размещении клиентского приложения в том же регионе Azure, в котором предоставляется конечная точка Azure Cosmos DB. Список доступных регионов см. на странице [Регионы Azure](https://azure.microsoft.com/regions/#services).
 
-    ![Пример политики подключения Azure Cosmos DB](./media/performance-tips/same-region.png)
+    :::image type="content" source="./media/performance-tips/same-region.png" alt-text="Пример политики подключения Azure Cosmos DB" border="false":::
    
 ## <a name="sdk-usage"></a>Использование пакета SDK
 1. **Установка последней версии пакета SDK**
 
     Пакеты SDK для Azure Cosmos DB постоянно улучшаются, чтобы обеспечивать самую высокую производительность. Сведения об улучшениях в последней версии пакета SDK см. в статье о [пакете SDK для Azure Cosmos DB](documentdb-sdk-java.md).
-2. **Использование одноэлементного Azure Cosmos DB клиента в течение времени существования приложения**
+2. **Используйте один и тот же клиент Azure Cosmos DB в течение всего жизненного цикла приложения.**
 
-    Каждый экземпляр [DocumentClient](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.documentclient) является потокобезопасным и выполняет эффективное управление подключениями и кэширование адресов при работе в режиме прямого взаимодействия. Чтобы реализовать возможность управления подключениями и оптимизировать производительность, рекомендуется использовать один экземпляр DocumentClient для каждого домена в течение жизненного цикла приложения.
+    Каждый экземпляр [DocumentClient](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.documentclient) в режиме прямого подключения является потокобезопасным, эффективно управляет подключениями и кэширует адреса. Чтобы реализовать возможность управления подключениями и оптимизировать производительность, рекомендуется использовать один экземпляр DocumentClient для каждого домена в течение жизненного цикла приложения.
 
    <a id="max-connection"></a>
 3. **При использовании режима шлюза увеличьте размер пула (MaxPoolSize) для каждого узла.**
 
-    В режиме шлюза Azure Cosmos DB выполняет запросы через HTTPS или REST, а значит на них распространяется стандартное ограничение на количество подключений к одному имени узла или IP-адресу. Возможно, стоит увеличить это значение (до 200–1000), чтобы клиентская библиотека могла использовать несколько одновременных подключений к Azure Cosmos DB. В Azure Cosmos DB Sync SDK версии 2 для Java значение по умолчанию для [ConnectionPolicy. жетмакспулсизе](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.connectionpolicy.getmaxpoolsize) равно 100. Используйте [setMaxPoolSize]( https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.connectionpolicy.setmaxpoolsize), чтобы изменить это значение.
+    В режиме шлюза Azure Cosmos DB выполняет запросы через HTTPS или REST, а значит на них распространяется стандартное ограничение на количество подключений к одному имени узла или IP-адресу. Возможно, стоит увеличить это значение (до 200–1000), чтобы клиентская библиотека могла использовать несколько одновременных подключений к Azure Cosmos DB. В Azure Cosmos DB с пакетом SDK для Sync Java версии 2 для параметра [ConnectionPolicy.getMaxPoolSize](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.connectionpolicy.getmaxpoolsize) по умолчанию установлено значение 100. Используйте [setMaxPoolSize]( https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.connectionpolicy.setmaxpoolsize), чтобы изменить это значение.
 
 4. **Настройка параллельных запросов для секционированных коллекций**
 
-    Azure Cosmos DB Sync SDK Java версии 1.9.0 и выше поддерживают параллельные запросы, позволяющие параллельно запрашивать секционированную коллекцию. Дополнительные сведения см. в [примерах кода](https://github.com/Azure/azure-documentdb-java/tree/master/documentdb-examples/src/test/java/com/microsoft/azure/documentdb/examples) для работы с пакетами SDK. Параллельные запросы предназначены для сокращения задержки при обработке запросов и улучшения пропускной способности посредством их последовательных аналогов.
+    В Azure Cosmos DB с пакетом SDK для Sync Java версии 1.9.0 и выше поддерживаются параллельные запросы, позволяющие обращаться к секционированным коллекциям в параллельном режиме. Дополнительные сведения см. в [примерах кода](https://github.com/Azure/azure-documentdb-java/tree/master/documentdb-examples/src/test/java/com/microsoft/azure/documentdb/examples) для работы с пакетами SDK. Параллельные запросы предназначены для сокращения задержки при обработке запросов и улучшения пропускной способности посредством их последовательных аналогов.
 
-    (а) ***Применение setMaxDegreeOfParallelism.\:*** Параллельный режим запросов позволяет одновременно обращаться к нескольким секциям. Однако данные из каждой секционированной коллекции извлекаются в рамках запроса последовательно. Таким образом, используйте [setMaxDegreeOfParallelism](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.feedoptions.setmaxdegreeofparallelism) , чтобы задать количество секций с максимальной вероятностью достижения наиболее возможного запроса, при условии, что все остальные системные условия остаются прежними. Если вы не знаете количество секций, просто используйте высокое значение для setMaxDegreeOfParallelism. Система автоматически выберет минимальное из двух значений: количество секций или число, указанное пользователем. 
+    (а) ***Применение setMaxDegreeOfParallelism.\:*** Параллельный режим запросов позволяет одновременно обращаться к нескольким секциям. Однако данные из каждой секционированной коллекции извлекаются в рамках запроса последовательно. С помощью [setMaxDegreeOfParallelism](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.feedoptions.setmaxdegreeofparallelism) установите значение, соответствующее количеству секций, что обеспечит максимальную вероятность высокой производительности запроса при сохранении всех остальных параметров системы. Если вы не знаете количество секций, просто используйте высокое значение для setMaxDegreeOfParallelism. Система автоматически выберет минимальное из двух значений: количество секций или число, указанное пользователем. 
 
     Следует отметить, что параллельные запросы обеспечивают больше преимуществ, если данные равномерно распределены во всех секциях по отношению к запросу. Если коллекция секционируется таким образом, что все или большинство данных, возвращаемых запросом, содержатся в нескольких секциях (в худшем случае в одной), это негативно скажется на производительности запроса.
 
@@ -99,9 +100,9 @@ Azure Cosmos DB — быстрая и гибкая распределенная 
 
 5. **Применение интервала задержки getRetryAfterInMilliseconds.**
 
-    Во время проверки производительности следует увеличивать нагрузку до тех пор, пока регулирование не будет выполняться при небольшой частоте запросов. При регулировании клиентское приложение должно реализовать интервал частоты повтора для частоты повтора сервера. Это гарантирует, что время ожидания между повторными попытками будет минимальным. Поддержка политики повтора включена в версию 1.8.0 и выше из [пакета SDK Java для Azure Cosmos DB Sync](documentdb-sdk-java.md). Дополнительные сведения см. в статье о методе [getRetryAfterInMilliseconds](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.documentclientexception.getretryafterinmilliseconds).
+    Во время проверки производительности следует увеличивать нагрузку до тех пор, пока регулирование не будет выполняться при небольшой частоте запросов. При регулировании клиентское приложение должно реализовать интервал частоты повтора для частоты повтора сервера. Это гарантирует, что время ожидания между повторными попытками будет минимальным. Политика повторов реализована в версии 1.8.0 и более поздних версиях [Azure Cosmos DB с пакетом SDK для Sync Java](documentdb-sdk-java.md). Дополнительные сведения см. в статье о методе [getRetryAfterInMilliseconds](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.documentclientexception.getretryafterinmilliseconds).
 
-6. **Развертывание рабочей нагрузки клиента**
+6. **Горизонтальное увеличение масштаба рабочей нагрузки клиента**
 
     При проверке с высокой пропускной способностью (более 50 000 единиц запроса в секунду) клиентское приложение может стать узким местом из-за того, что на компьютере будут достигнуты максимальные уровни использования ЦП и сети. Если вы достигли этой точки, то можете повысить производительность Azure Cosmos DB, развернув клиентские приложения на нескольких серверах.
 
@@ -112,20 +113,20 @@ Azure Cosmos DB — быстрая и гибкая распределенная 
    <a id="tune-page-size"></a>
 8. **Оптимизация производительности посредством настройки размера страницы для запросов и каналов чтения**
 
-    При выполнении неполного считывания документов с помощью функции чтения канала (например, [readDocuments](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.documentclient.readdocuments)) или при ВЫдаче SQL-запроса результаты возвращаются в сегментированном виде, если результирующий набор слишком велик. По умолчанию результаты возвращаются в пакетах (не более 100 элементов и не более 1 МБ в каждом пакете).
+    Если при массовом чтении документов с помощью функции чтения канала (например [readDocuments](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.documentclient.readdocuments)) или обработке запроса SQL будет получен слишком большой набор результатов, такие результаты возвращаются частями. По умолчанию результаты возвращаются в пакетах (не более 100 элементов и не более 1 МБ в каждом пакете).
 
-    Чтобы снизить количество сетевых взаимодействий, необходимых для получения всех нужных результатов, попробуйте увеличить размер страницы до 1000 с помощью заголовка запроса [x-ms-max-item-count](https://docs.microsoft.com/rest/api/cosmos-db/common-cosmosdb-rest-request-headers). Чтобы отобразить только некоторые результаты, например, когда пользовательский интерфейс или приложение API возвращает только десять результатов за раз, размер страницы можно уменьшить до 10. Это позволит снизить пропускную способность, используемую на операции чтения и на выполнение запросов.
+    Чтобы снизить количество сетевых взаимодействий, необходимых для получения всех нужных результатов, попробуйте увеличить размер страницы до 1000 с помощью заголовка запроса [x-ms-max-item-count](/rest/api/cosmos-db/common-cosmosdb-rest-request-headers). Чтобы отобразить только некоторые результаты, например, когда пользовательский интерфейс или приложение API возвращает только десять результатов за раз, размер страницы можно уменьшить до 10. Это позволит снизить пропускную способность, используемую на операции чтения и на выполнение запросов.
 
     Размер страницы также можно изменить с помощью [метода setPageSize](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.feedoptionsbase.setpagesize).
 
 ## <a name="indexing-policy"></a>Политика индексации
  
-1. **Исключить неиспользуемые пути из индексирования для ускорения операций записи**
+1. **Увеличение скорости выполнения операций записи посредством исключения неиспользуемых путей из индексирования**
 
-    Политика индексирования Azure Cosmos DB позволяет указать, какие пути документов следует включить в индексирование или исключить из него, используя пути индексирования ([includedpaths](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.indexingpolicy.setincludedpaths) и [excludedpaths](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.indexingpolicy.setexcludedpaths)). Возможность управления путями индексирования позволяет оптимизировать производительность записи и снизить затраты на хранение индекса для сценариев с заранее определенными шаблонами запросов. Это связано с тем, что затраты на индексирование непосредственно зависят от количества уникальных путей индексирования.  Например, в следующем коде показано, как исключить весь раздел (поддерево) документов из индексирования с помощью подстановочного знака "*".
+    Политика индексирования Azure Cosmos DB позволяет добавлять к индексированию или исключать из индексирования определенные пути к документам, используя механизм Indexing Paths ([IndexingPolicy.IncludedPaths](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.indexingpolicy.setincludedpaths) и [IndexingPolicy.ExcludedPaths](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.indexingpolicy.setexcludedpaths)). Возможность управления путями индексирования позволяет оптимизировать производительность записи и снизить затраты на хранение индекса для сценариев с заранее определенными шаблонами запросов. Это связано с тем, что затраты на индексирование непосредственно зависят от количества уникальных путей индексирования.  Например, в коде ниже показано, как с помощью оператора подстановочного знака "*" исключить из индексации целый раздел документов (поддерево).
 
 
-    ### <a name="sync-java-sdk-v2-maven-commicrosoftazureazure-documentdb"></a><a id="syncjava2-indexing"></a>Синхронизация пакета SDK для Java версии 2 (Maven com. Microsoft. Azure:: Azure-documentdb)
+    ### <a name="sync-java-sdk-v2-maven-commicrosoftazureazure-documentdb"></a><a id="syncjava2-indexing"></a>Пакет SDK для Sync Java версии 2 (Maven com.microsoft.azure::azure-documentdb)
 
     ```Java
     Index numberIndex = Index.Range(DataType.Number);
@@ -150,10 +151,10 @@ Azure Cosmos DB — быстрая и гибкая распределенная 
 
     Сложность запроса влияет на количество единиц запроса, потребляемых операцией. Количество предикатов и их характер, количество определяемых пользователем функций и размер набора исходных данных — все это влияет на плату за операции запроса.
 
-    Чтобы измерить издержки любой операции (создания, обновления или удаления), просмотрите заголовок [x-MS-Request-расход](https://docs.microsoft.com/rest/api/cosmos-db/common-cosmosdb-rest-response-headers) (или эквивалентное свойство RequestCharge в [\<ResourceResponse t>](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.resourceresponse) или [FeedResponse\<T>](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.feedresponse) для измерения количества единиц запросов, потребляемых этими операциями.
+    Чтобы оценить расходы на любую операцию (создание, обновление или удаление), проверьте значение заголовка [x-ms-request-charge](/rest/api/cosmos-db/common-cosmosdb-rest-response-headers) (или аналогичного свойства RequestCharge на вкладке [ResourceResponse\<T>](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.resourceresponse) или [FeedResponse\<T>](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.feedresponse)). Это значение содержит число единиц запроса, потребляемых соответствующей операцией.
 
 
-    ### <a name="sync-java-sdk-v2-maven-commicrosoftazureazure-documentdb"></a><a id="syncjava2-requestcharge"></a>Синхронизация пакета SDK для Java версии 2 (Maven com. Microsoft. Azure:: Azure-documentdb)
+    ### <a name="sync-java-sdk-v2-maven-commicrosoftazureazure-documentdb"></a><a id="syncjava2-requestcharge"></a>Пакет SDK для Sync Java версии 2 (Maven com.microsoft.azure::azure-documentdb)
 
     ```Java
     ResourceResponse<Document> response = client.createDocument(collectionLink, documentDefinition, null, false);
@@ -165,15 +166,16 @@ Azure Cosmos DB — быстрая и гибкая распределенная 
    <a id="429"></a>
 1. **Обработка ограничения скорости / слишком высокая частота запросов**
 
-    Выполнение запроса, который превышает лимит зарезервированной пропускной способности для учетной записи, не приводит к снижению производительности сервера, так как пользователь не сможет превысить это зарезервированное значение. Сервер будет завершать запрос с помощью ошибкой requestratetoolarge (код состояния HTTP 429) и вернуть заголовок [x-MS-Retry-After-MS](https://docs.microsoft.com/rest/api/cosmos-db/common-cosmosdb-rest-response-headers) , указывающий время ожидания (в миллисекундах), по истечении которого пользователь должен подождать, прежде чем повторить попытку запроса.
-
+    Выполнение запроса, который превышает лимит зарезервированной пропускной способности для учетной записи, не приводит к снижению производительности сервера, так как пользователь не сможет превысить это зарезервированное значение. Сервер заранее завершит запрос с ошибкой RequestRateTooLarge (код состояния HTTP: 429) и вернет в заголовке [x-x-ms-retry-after-ms](/rest/api/cosmos-db/common-cosmosdb-rest-response-headers) время (в миллисекундах), спустя которое можно повторно выполнить этот запрос.
+    
+    ```xml
         HTTP Status 429,
         Status Line: RequestRateTooLarge
         x-ms-retry-after-ms :100
-
+    ```
     Пакеты SDK перехватят этот ответ, обработают заголовок retry-after, указанный сервером, и отправят запрос повторно. Если к вашей учетной записи параллельно имеет доступ только один клиент, следующая попытка будет успешной.
 
-    При наличии более чем одного клиента, постоянно работающего над частотой запросов, число повторных попыток по умолчанию, установленное на уровне 9, может быть недостаточным. в этом случае клиент выдает приложению исключение [DocumentClientException](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.documentclientexception) с кодом состояния 429. Число повторных попыток по умолчанию можно изменить с помощью [retryoptions](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.connectionpolicy.setretryoptions) в экземпляре [ConnectionPolicy](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.connectionpolicy) . По умолчанию в случае превышения заданного счетчика повторов исключение DocumentClientException с кодом состояния 429 возвращается через 30 секунд (совокупное время ожидания). Это происходит, даже если текущее значение количества повторных попыток (по умолчанию (9) или определенное пользователем) меньше максимального значения.
+    По умолчанию количество повторных попыток отправки запроса составляет 9 (это значение задается клиентом). Если к вашей учетной записи имеют доступ несколько клиентов и они выполняют запросы одновременно, этого значения может быть недостаточно. В этом случае клиент выдаст для приложения исключение [DocumentClientException](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.documentclientexception) с кодом состояния 429. Число повторных попыток по умолчанию можно переопределить в свойстве [RetryOptions](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.connectionpolicy.setretryoptions) экземпляра [ConnectionPolicy](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.connectionpolicy). По умолчанию в случае превышения заданного счетчика повторов исключение DocumentClientException с кодом состояния 429 возвращается через 30 секунд (совокупное время ожидания). Это происходит, даже если текущее значение количества повторных попыток (по умолчанию (9) или определенное пользователем) меньше максимального значения.
 
     Хотя автоматическая процедура отправки повторного запроса позволяет улучшить устойчивость приложений и повысить удобство работы с ними, она может снизить производительность, что, в свою очередь, станет причиной появления более длительных задержек.  Если настройка производительности повлияла на регулирование сервера и стала причиной автоматической отправки запросов пакетом SDK, это может стать причиной появления пиков задержек на стороне клиента. Чтобы избежать пиков задержек во время настройки производительности, проверьте расход ресурсов на каждую операцию и убедитесь, что значение частоты запросов не превышено. Дополнительные сведения см. в статье [Единицы запросов в DocumentDB](request-units.md).
 3. **Использование меньших документов для более высокой пропускной способности**

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: include
 ms.date: 04/04/2020
 ms.author: travisw
-ms.openlocfilehash: 8a1dd07fd567f41c2b406aabccd0421b5a6983af
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: fbfc6bf9c50257c2683522913503bf9b29450d94
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80671846"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86226400"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -95,7 +95,7 @@ ms.locfileid: "80671846"
 
 Теперь текстовая и графическая версии пользовательского интерфейса должны выглядеть следующим образом:
 
-![](~/articles/cognitive-services/speech-service/media/sdk/qs-java-android-assistant-designer-ui.png)
+![Снимок экрана с пользовательским интерфейсом для взаимодействия с ботом](~/articles/cognitive-services/speech-service/media/sdk/qs-java-android-assistant-designer-ui.png)
 
 ## <a name="add-sample-code"></a>Добавление примеров кода
 

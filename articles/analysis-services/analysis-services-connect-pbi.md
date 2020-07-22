@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 03/30/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 6205c4189abfefc2ee9c4a273ebfd6773ea609b6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f79ff9af1272ca908c7a5ba35fbaa1e8bb87fc50
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80411360"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86506717"
 ---
 # <a name="connect-with-power-bi"></a>Подключение с помощью Power BI
 
@@ -25,7 +25,7 @@ ms.locfileid: "80411360"
   
 ## <a name="connect-in-power-bi-desktop"></a>Подключение в Power BI Desktop
 
-1. В Power BI Desktop щелкните **получить данные** > **Azure** > **Azure Analysis Services база данных**Azure.
+1. В Power BI Desktop щелкните **получить данные**  >  **Azure**  >  **Azure Analysis Services база данных**Azure.
 
 2. В поле **Сервер** укажите имя сервера. Обязательно включите полный URL-адрес, например asazure://westcentralus.asazure.windows.net/advworks.
 
@@ -37,6 +37,9 @@ ms.locfileid: "80411360"
 
 5. При отображении запроса введите свои учетные данные. 
 
+   > [!NOTE]
+   > Учетные записи одноразового секретного кода (OTP) не поддерживаются. 
+
 6. В разделе **Навигатор** разверните узел сервера и выберите модель или перспективу, к которой нужно подключиться. Затем нажмите **Подключиться**. Щелкнув модель или перспективу, можно отобразить все объекты для этого представления.
 
     Модель открывается в Power BI Desktop с пустым отчетом в представлении "Отчет". Список "Поля" содержит все нескрытые объекты модели. Состояние подключения отображается в правом нижнем углу.
@@ -46,7 +49,7 @@ ms.locfileid: "80411360"
 1. Создайте файл Power BI Desktop с возможностью активного подключения к нужной модели на сервере.
 2. В [Power BI](https://powerbi.microsoft.com) выберите **Get Data (Получить данные)** > **Файлы**, а затем найдите и выберите PBIX-файл.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 [Подключение к Azure Analysis Services](analysis-services-connect.md)   
-[Клиентские библиотеки](analysis-services-data-providers.md)
+[Клиентские библиотеки](https://docs.microsoft.com/analysis-services/client-libraries?view=azure-analysis-services-current)
 

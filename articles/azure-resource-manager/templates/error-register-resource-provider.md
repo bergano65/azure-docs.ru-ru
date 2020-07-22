@@ -4,11 +4,10 @@ description: В этой статье описывается, как устра�
 ms.topic: troubleshooting
 ms.date: 02/15/2019
 ms.openlocfilehash: a9182be53cc91240a62ab201efc53d674f7cf427
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79273778"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84706564"
 ---
 # <a name="resolve-errors-for-resource-provider-registration"></a>Устранение ошибок регистрации поставщика ресурсов
 
@@ -42,7 +41,7 @@ Code: AuthorizationFailed
 Message: The client '<identifier>' with object id '<identifier>' does not have authorization to perform action 'Microsoft.Compute/virtualMachines/read' over scope ...
 ```
 
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 
 Эти ошибки возникают по одной из следующих причин:
 
@@ -105,7 +104,7 @@ az provider show -n Microsoft.Web --query "resourceTypes[?resourceType=='sites']
 
    ![Выбор всех служб](./media/error-register-resource-provider/select-all-services.png)
 
-1. Выберите **подписки**.
+1. Выберите **Подписки**.
 
    ![Выбор пункта "Подписки"](./media/error-register-resource-provider/select-subscriptions.png)
 

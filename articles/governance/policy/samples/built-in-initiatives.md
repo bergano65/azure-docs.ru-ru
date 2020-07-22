@@ -1,15 +1,15 @@
 ---
 title: Список инициатив встроенных политик
 description: 'Список инициатив встроенных политик для Политики Azure в следующих категориях: "Соответствие нормативным требованиям", "Гостевая конфигурация" и другие.'
-ms.date: 05/13/2020
+ms.date: 07/10/2020
 ms.topic: sample
 ms.custom: generated
-ms.openlocfilehash: 969b1849628616bf42951e1ff7fdf2f507cf0abe
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 23286e136a5b74a922c25af2e83a5019b387d64a
+ms.sourcegitcommit: 0b2367b4a9171cac4a706ae9f516e108e25db30c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83639443"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86276895"
 ---
 # <a name="azure-policy-built-in-initiative-definitions"></a>Определения встроенных инициатив в Политике Azure
 
@@ -17,9 +17,17 @@ ms.locfileid: "83639443"
 
 Имя каждой из встроенных инициатив связано с источником определения инициативы в [репозитории GitHub для Политики Azure](https://github.com/Azure/azure-policy). Встроенные инициативы группируются по свойству **category** (категория) в **метаданных**. Перейти к определенной **категории** можно с помощью меню в правой части страницы. Или нажмите <kbd>CTRL</kbd>-<kbd>F</kbd>, чтобы использовать функцию поиска в браузере.
 
+## <a name="cosmos-db"></a>Cosmos DB
+
+[!INCLUDE [azure-policy-samples-policysets-cosmos-db](../../../../includes/policy/samples/bycat/policysets-cosmos-db.md)]
+
 ## <a name="guest-configuration"></a>Гостевая конфигурация
 
 [!INCLUDE [azure-policy-samples-policysets-guest-configuration](../../../../includes/policy/samples/bycat/policysets-guest-configuration.md)]
+
+## <a name="kubernetes"></a>Kubernetes
+
+[!INCLUDE [azure-policy-samples-policysets-kubernetes](../../../../includes/policy/samples/bycat/policysets-kubernetes.md)]
 
 ## <a name="monitoring"></a>Наблюдение
 

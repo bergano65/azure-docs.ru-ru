@@ -8,12 +8,12 @@ ms.topic: tutorial
 description: В этом руководстве описано, как использовать Azure Dev Spaces и Visual Studio Code для отладки и быстрого выполнения итерации приложения Java в службе Azure Kubernetes.
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
 manager: gwallace
-ms.openlocfilehash: c71471d1a89188a065bafef2c5b6372aeff35851
-ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
+ms.openlocfilehash: 5616e92d64854d145c30aa3fd32bf61d65ca4221
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80240536"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86224321"
 ---
 # <a name="create-a-kubernetes-dev-space-visual-studio-code-and-java-with-azure-dev-spaces"></a>Создание пространства разработки Kubernetes: Использование Visual Studio Code и Java в Azure Dev Spaces
 
@@ -171,7 +171,7 @@ Azure Dev Spaces — это не просто среда выполнения к
 
 В этом разделе используется VS Code для прямой отладки контейнера, работающего в Azure. Также вы узнаете, как быстрее вносить изменения, выполнять тестирование и запуск.
 
-![](media/common/edit-refresh-see.png)
+![Схема с циклом "Изменение кода", "Обновление контейнера", "См. обновление".](media/common/edit-refresh-see.png)
 
 > [!Note]
 > **Если на каком-то этапе у вас возникли трудности**, см. статью [Устранение неполадок](troubleshooting.md) или оставьте комментарий на этой странице.
@@ -183,13 +183,13 @@ Azure Dev Spaces — это не просто среда выполнения к
 
 В папку `.vscode` будет добавлена конфигурация отладки для Azure Dev Spaces. Не следует путать эту команду с командой `azds prep`, которая позволяет настроить проект для развертывания.
 
-![](media/common/command-palette.png)
+![Снимок экрана с параметром Azure Dev Spaces в палитре команд VS Code](media/common/command-palette.png)
 
 ### <a name="select-the-azds-debug-configuration"></a>Выбор конфигурации отладки AZDS
 1. Чтобы открыть представление отладки, щелкните значок "Отладка" на **панели действия** сбоку VS Code.
 1. Выберите **Launch Java Program (AZDS)** (Запустить программу на Java (AZDS)) как активную конфигурацию отладки.
 
-![](media/get-started-java/debug-configuration.png)
+![Снимок экрана функции отладки VS Code с параметром "Запустить программу Java", выделенным красным цветом.](media/get-started-java/debug-configuration.png)
 
 > [!Note]
 > Если вы не видите никаких команд Azure Dev Spaces на палитре команд, убедитесь, что вы установили расширение VS Code для Azure Dev Spaces. Убедитесь, что рабочая область, которую вы открыли в VS Code, — это папка, содержащая файл `azds.yaml`.
@@ -202,7 +202,7 @@ Azure Dev Spaces — это не просто среда выполнения к
 > [!Tip]
 > Строка состояния VS Code станет оранжевой. Это указывает на то, что отладчик подключен. Кроме того, появится интерактивный URL-адрес, который можно использовать для открытия приложения.
 
-![](media/common/vscode-status-bar-url.png)
+![Снимок экрана строки состояния VS Code после того, как ее цвет был изменен на оранжевый.](media/common/vscode-status-bar-url.png)
 
 Установите точку останова в файле кода на стороне сервера, например в функции `greeting()` в исходном файле `src/main/java/com/ms/sample/webfrontend/Application.java`. Обновление страницы браузера инициирует срабатывание точки останова.
 
@@ -220,7 +220,7 @@ public String greeting()
 
 Сохраните файл и в области **действий отладки** нажмите кнопку **Restart** (Обновить).
 
-![](media/common/debug-action-refresh.png)
+![Снимок экрана панели действий отладки VS Code с параметром перезапуска, выделенным красным цветом.](media/common/debug-action-refresh.png)
 
 Вместо того, чтобы перестраивать и повторно развертывать новый образ контейнера при каждой правке кода, что часто занимает много времени, Azure Dev Spaces пошагово перекомпилирует код в существующем контейнере, чтобы ускорить цикл редактирования и отладки.
 

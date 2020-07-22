@@ -5,12 +5,12 @@ author: cgillum
 ms.topic: overview
 ms.date: 12/17/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 4f45ac40e7df865bdb4722d086325096c377cd59
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 496b315e23beeb97d08befca13e05c4797268f36
+ms.sourcegitcommit: 61d92af1d24510c0cc80afb1aebdc46180997c69
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80877548"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85341560"
 ---
 # <a name="entity-functions"></a>Функции сущностей
 
@@ -18,7 +18,7 @@ ms.locfileid: "80877548"
 Сущности предоставляют средства для масштабирования приложений путем распределения задач между несколькими сущностями сравнительно небольших размеров.
 
 > [!NOTE]
-> Функции сущностей и связанные функции доступны только в Устойчивых функциях версии 2.0 и более поздних версиях.
+> Функции сущностей и связанные функции доступны только в Устойчивых функциях версии 2.0 и более поздних версиях. В настоящее время они поддерживаются в .NET и JavaScript.
 
 ## <a name="general-concepts"></a>Общие концепции
 

@@ -3,8 +3,8 @@ title: Общие сведения о сценарии аварийного во
 description: Сценарий аварийного восстановления базы данных Oracle Database 12c в среде Azure
 services: virtual-machines-linux
 documentationcenter: virtual-machines
-author: BorisB2015
-manager: gwallace
+author: rgardler
+manager: ''
 editor: ''
 tags: azure-resource-manager
 ms.assetid: ''
@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
-ms.author: borisb
-ms.openlocfilehash: adf4c54d4f43f806ae985f7c1523303cf574b4c1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.author: rogardle
+ms.openlocfilehash: e519010f902e99a3118485b3c8bc57cd47188a1f
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81687462"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86224559"
 ---
 # <a name="disaster-recovery-for-an-oracle-database-12c-database-in-an-azure-environment"></a>Аварийное восстановление базы данных Oracle Database 12c в среде Azure.
 
@@ -95,7 +95,7 @@ ms.locfileid: "81687462"
 
 ![Снимок экрана страницы топологии аварийного восстановления](./media/oracle-disaster-recovery/oracle_topology_03.png)
 
-## <a name="additional-reading"></a>Дополнительные материалы
+## <a name="additional-reading"></a>Дополнительные материалы для чтения
 
 - [Design and implement an Oracle database in Azure](oracle-design.md) (Разработка базы данных Oracle и ее реализация в Azure)
 - [Настройка Oracle Data Guard](configure-oracle-dataguard.md)
@@ -103,7 +103,7 @@ ms.locfileid: "81687462"
 - [Создание резервных копий и восстановление базы данных Oracle Database 12c на виртуальной машине Linux в Azure](oracle-backup-recovery.md)
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Изучите [руководство по созданию высокодоступных виртуальных машин](../../linux/create-cli-complete.md).
 - [Изучите примеры развертывания виртуальных машин с помощью интерфейса командной строки](../../linux/cli-samples.md).

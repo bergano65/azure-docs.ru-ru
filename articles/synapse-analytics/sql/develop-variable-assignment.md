@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick
-ms.openlocfilehash: b2a596b71ee7e5f58e01d5bc10b330f6f54a69d2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 91e251c8274ad85fcb0b3a65a3bdbcc660ceba00
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81428671"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85101002"
 ---
 # <a name="assigning-variables-with-synapse-sql"></a>Назначение переменных с помощью синапсе SQL
 
@@ -22,7 +22,7 @@ ms.locfileid: "81428671"
 
 ## <a name="setting-variables-with-declare"></a>Задание переменных с помощью DECLARE
 
-Переменные в синапсе SQL задаются с `DECLARE` помощью инструкции или `SET` инструкции. Инициализация переменных с помощью DECLARE является одним из наиболее гибких способов установки значения переменной в синапсе SQL.
+Переменные в синапсе SQL задаются с помощью `DECLARE` инструкции или `SET` инструкции. Инициализация переменных с помощью DECLARE является одним из наиболее гибких способов установки значения переменной в синапсе SQL.
 
 ```sql
 DECLARE @v  int = 0
@@ -37,7 +37,7 @@ DECLARE @v  INT = (SELECT TOP 1 c_customer_sk FROM Customer where c_last_name = 
 ;
 ```
 
-Нельзя инициализировать и использовать переменную в одной и той же инструкции DECLARE. Для иллюстрации следующий пример не допускается, так как *@p1* инициализируется и используется в одной и той же инструкции DECLARE. Следующий пример приводит к возникновению ошибки.
+Нельзя инициализировать и использовать переменную в одной и той же инструкции DECLARE. Следующий пример не допускается, так как * \@ P1* инициализирован и используется в одной и той же инструкции DECLARE. Следующий пример приводит к возникновению ошибки.
 
 ```sql
 DECLARE @p1 int = 0

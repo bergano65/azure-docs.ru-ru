@@ -4,12 +4,12 @@ description: В этом руководстве представлены общ�
 ms.topic: tutorial
 ms.date: 07/22/2019
 ms.custom: mvc
-ms.openlocfilehash: 11485d22abcf0b8e1eb13d8123ff21c7fe0079f8
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 992d720d86fc2e7fedd8e7fd4b559220ff3c0512
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75614151"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86260364"
 ---
 # <a name="tutorial-deploy-an-application-with-cicd-to-a-service-fabric-cluster"></a>Руководство по Развертывание приложения с непрерывной интеграцией и развертыванием в кластере Service Fabric
 
@@ -39,7 +39,7 @@ ms.locfileid: "75614151"
 * [Установите Visual Studio 2019](https://www.visualstudio.com/), а также рабочие нагрузки **Разработка для Azure** и **ASP.NET и разработка веб-приложений**.
 * [Установите пакет SDK для Service Fabric](service-fabric-get-started.md)
 * Создайте кластер Service Fabric с Windows, например с помощью [этого руководства](service-fabric-tutorial-create-vnet-and-windows-cluster.md).
-* Создание [организации Azure DevOps](https://docs.microsoft.com/azure/devops/organizations/accounts/create-organization-msa-or-work-student). Это позволяет создать проект в Azure DevOps и использовать Azure Pipelines.
+* Создание [организации Azure DevOps](/azure/devops/organizations/accounts/create-organization-msa-or-work-student). Это позволяет создать проект в Azure DevOps и использовать Azure Pipelines.
 
 ## <a name="download-the-voting-sample-application"></a>Скачивание примера приложения для голосования
 

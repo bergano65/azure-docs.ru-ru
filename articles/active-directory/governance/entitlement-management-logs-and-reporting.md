@@ -1,6 +1,6 @@
 ---
-title: Архивация & отчета с помощью Azure Monitor Azure AD "Управление назначениями"
-description: Узнайте, как архивировать журналы и создавать отчеты с Azure Monitor в Azure Active Directory управлении назначением.
+title: Архивация и отчетность с помощью Azure Monitor — управление правами Azure AD
+description: Узнайте, как архивировать журналы и создавать отчеты с помощью Azure Monitor в управлении правами Azure Active Directory.
 services: active-directory
 documentationCenter: ''
 author: barclayn
@@ -10,136 +10,135 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.subservice: compliance
-ms.date: 04/14/2020
+ms.date: 06/17/2020
 ms.author: barclayn
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d59a508d03730a51e793a5e30e2c99a91af77ce8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 4756ced858210f86bb8e979705db99a563441490
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81380196"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85078189"
 ---
-# <a name="archive-logs-and-reporting-on-azure-ad-entitlement-management-in-azure-monitor"></a>Журналы архивации и отчетность по управлению назначениями Azure AD в Azure Monitor
+# <a name="archive-logs-and-reporting-on-azure-ad-entitlement-management-in-azure-monitor"></a>Архивируйте журналы и создавайте отчеты в управлении правами Azure AD в Azure Monitor
 
-Azure AD хранит события аудита в течение до 30 дней в журнале аудита. Однако вы можете хранить данные аудита дольше стандартного срока хранения, описанного в разделе [как долго данные отчетов хранятся в Azure AD](../reports-monitoring/reference-reports-data-retention.md), путем их маршрутизации в учетную запись хранения Azure или с помощью Azure Monitor. Затем можно использовать книги и пользовательские запросы и отчеты для этих данных.
+Azure AD хранит события аудита в журнале аудита до 30 дней. При этом, вы можете хранить данные аудита дольше указанных по умолчанию сроков хранения, указанных в статье [Как долго Azure AD хранит данные отчетов?](../reports-monitoring/reference-reports-data-retention.md), отправив их в учетную запись службы хранилища Azure или используя Azure Monitor. Затем вы можете использовать книги и пользовательские запросы и отчеты для этих данных.
 
 
-## <a name="configure-azure-ad-to-use-azure-monitor"></a>Настройка Azure AD для использования Azure Monitor
-Прежде чем использовать Azure Monitor книги, необходимо настроить Azure AD для отправки копии журналов аудита в Azure Monitor.
+## <a name="configure-azure-ad-to-use-azure-monitor"></a>Настройка Azure AD для использования Azure Monitor
+Прежде чем использовать книги Azure Monitor, необходимо настроить Azure AD для отправки копий журналов аудита в Azure Monitor.
 
-Для архивации журналов аудита Azure AD требуется Azure Monitor в подписке Azure. Дополнительные сведения о предварительных требованиях и предполагаемых затратах на использование Azure Monitor в [журналах действий Azure AD можно узнать в Azure Monitor](../reports-monitoring/concept-activity-logs-azure-monitor.md).
+Для архивации журналов аудита Azure AD требуется, чтобы у вас был Azure Monitor в подписке Azure. Дополнительные сведения о необходимых условиях и ожидаемых затратах на использование Azure Monitor см. в статье [Журналы действий Azure AD в Azure Monitor](../reports-monitoring/concept-activity-logs-azure-monitor.md).
 
-**Предварительная роль**: глобальный администратор
+**Требуемая роль**: глобальный администратор.
 
-1. Войдите в портал Azure в качестве пользователя, который является глобальным администратором. Убедитесь, что у вас есть доступ к группе ресурсов, содержащей рабочую область Azure Monitor.
+1. Войдите на портал Azure как глобальный администратор. Убедитесь, что у вас есть доступ к группе ресурсов, в которой содержится рабочая область Azure Monitor.
  
-1. Выберите **Azure Active Directory** щелкните **параметры диагностики** в разделе Мониторинг в меню навигации слева. Проверьте, уже существует ли параметр для отправки журналов аудита в эту рабочую область.
+1. Выберите **Azure Active Directory** затем щелкните **Параметры диагностики** в разделе "Мониторинг" в меню навигации слева. Проверьте, существует ли уже параметр для отправки журналов аудита в эту рабочую область.
 
-1. Если параметр еще не задан, щелкните **Добавить параметр диагностики**. Используйте инструкции в статье [Интеграция журналов Azure AD с Azure Monitor журналами](../reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md#send-logs-to-azure-monitor) для отправки журнала аудита Azure AD в рабочую область Azure Monitor.
+1. Если этого параметра еще нет, щелкните **Добавить параметр диагностики**. Используйте инструкции из статьи [Интеграция журналов Azure AD с Azure Monitor журналами](../reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md#send-logs-to-azure-monitor) для отправки журнала аудита Azure AD в рабочую область Azure Monitor.
 
     ![Панель параметров диагностики](./media/entitlement-management-logs-and-reporting/audit-log-diagnostics-settings.png)
 
 
-1. После отправки журнала в Azure Monitor выберите **log Analytics рабочие области**и выберите рабочую область, содержащую журналы аудита Azure AD.
+1. После того как журнал отправлен в Azure Monitor, выберите **Рабочие области Log Analytics**, и выберите рабочую область в которой содержатся журналы аудита Azure AD.
 
-1. Выберите **использование и предполагаемые затраты** и щелкните **хранение данных**. Измените значение ползунка на число дней, в течение которых данные должны соответствовать требованиям аудита.
+1. Выберите **Использование и ожидаемые затраты** и щелкните **Хранение данных**. С помощью ползунка выберите количество дней, в течение которых будут храниться данные, чтобы они соответствовали требованиям аудита.
 
-    ![Панель "Log Analytics рабочих областей"](./media/entitlement-management-logs-and-reporting/log-analytics-workspaces.png)
+    ![Панель рабочих областей Log Analytics](./media/entitlement-management-logs-and-reporting/log-analytics-workspaces.png)
 
-1. Позже, чтобы увидеть диапазон дат, хранящихся в рабочей области, можно использовать книгу *архивный диапазон дат журнала* :  
+1. Позже, чтобы увидеть диапазон дат, хранящихся в рабочей области, можно использовать книгу *Диапазон дат архивного журнала*:  
     
-    1. Выберите **Azure Active Directory** щелкните **книги**. 
+    1. Выберите **Azure Active Directory** и нажмите кнопку **Книги**. 
     
-    1. Разверните раздел **Azure Active Directory устранение неполадок**и щелкните **заархивированный диапазон дат журнала**. 
+    1. Разверните раздел **Устранение неполадок Azure Active Directory**  и выберите **Диапазон дат архивного журнала**. 
 
 
-## <a name="view-events-for-an-access-package"></a>Просмотр событий для пакета Access  
+## <a name="view-events-for-an-access-package"></a>Просмотр событий для пакета доступа  
 
-Чтобы просмотреть события для пакета Access, необходимо иметь доступ к базовой рабочей области Azure Monitor (Дополнительные сведения см. [в разделе Управление доступом к данным и рабочим областям журнала в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/manage-access#manage-access-using-azure-permissions) ) и в одной из следующих ролей. 
+Чтобы просмотреть события для пакета доступа, необходимо иметь доступ к базовой рабочей области Azure Monitor (Дополнительные сведения см. в статье [Управление доступом к данным журнала и рабочим областям в Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/platform/manage-access#manage-access-using-azure-permissions)) и в одной из следующих ролей: 
 
-- Глобальный администратор  
-- Администратор безопасности.  
+- Глобальный администратор.  
+- администратор безопасности;  
 - Читатель сведений о безопасности  
-- Средство чтения отчетов  
+- Средство просмотра отчетов  
 - администратор приложений;  
 
-Для просмотра событий используйте следующую процедуру. 
+Чтобы просматривать события, используйте следующую процедуру: 
 
-1. В портал Azure выберите **Azure Active Directory** а затем щелкните **книги**. Если у вас есть только одна подписка, перейдите к шагу 3. 
+1. На портале Azure выберите **Azure Active Directory**, а затем нажмите кнопку **Книги**. Если у вас только одна подписка, переходите к 3 шагу: 
 
-1. Если у вас несколько подписок, выберите подписку, содержащую рабочую область.  
+1. Если у вас несколько подписок, выберите ту, в которой есть рабочая область.  
 
-1. Выберите книгу с именем *доступ к пакету*. 
+1. Выберите книгу, которая называется *Действие пакета для доступа*. 
 
-1. В этой книге выберите диапазон времени (измените значение на **все** , если не уверены) и выберите идентификатор пакета доступа из раскрывающегося списка всех пакетов доступа, которые имели действие в течение этого диапазона времени. Отобразятся события, связанные с пакетом доступа, который был выполнен в течение выбранного интервала времени.  
+1. В этой книге выберите диапазон времени (измените значение на **Все**, если не уверены), и выберите идентификатор пакета доступа из раскрывающегося списка всех пакетов доступа, в которых была активность в течении этого интервала времени. Отобразятся события, связанные с пакетом доступа, который появлялся в течении выбранного интервала времени.  
 
     ![Просмотр событий пакета доступа](./media/entitlement-management-logs-and-reporting/view-events-access-package.png) 
 
-    Каждая строка включает время, доступ к идентификатору пакета, имя операции, идентификатор объекта UPN и отображаемое имя пользователя, запустившего операцию.  Дополнительные сведения содержатся в JSON.   
+    Каждая строка включает время, доступ к идентификатору пакета, имя операции, идентификатор объекта, имя субъекта-пользователя и отображаемое имя пользователя, запустившего операцию.  Дополнительные сведения содержатся в нотации объектов JavaScript   
 
 
-## <a name="create-custom-azure-monitor-queries-using-the-azure-portal"></a>Создание пользовательских запросов Azure Monitor с помощью портал Azure
-Вы можете создавать собственные запросы к событиям аудита Azure AD, включая события управления назначениями.  
+## <a name="create-custom-azure-monitor-queries-using-the-azure-portal"></a>Создавайте пользовательские запросы Azure Monitor с помощью портала Azure
+Вы можете создавать собственные запросы к событиям аудита Azure AD, включая события управления правами.  
 
-1. В Azure Active Directory портал Azure щелкните **журналы** в разделе Мониторинг в левом меню навигации, чтобы создать страницу запроса.
+1. В Azure Active Directory портала Azure щелкните **Журналы** в разделе Мониторинг в левом меню навигации, чтобы создать новую страницу запроса.
 
-1. Рабочая область должна отображаться в левом верхнем углу страницы запроса. Если у вас несколько Azure Monitor рабочих областей, а Рабочая область, которую вы используете для хранения событий аудита Azure AD, не отображается, нажмите кнопку **выбрать область**. Затем выберите подходящую подписку и рабочую область.
+1. Ваша рабочая область должна отображаться в левом верхнем углу страницы запроса. Если у вас несколько рабочих областей Azure Monitor, а рабочая область, которую вы используете для хранения событий аудита Azure AD, не отображается, нажмите **Выбрать область**. Затем выберите нужную подписку и рабочую область.
 
-1. Затем в текстовом поле запрос удалите строку "Search *" и замените ее следующим запросом:
+1. Затем в текстовом поле запроса удалите строку "search *" и замените ее следующим запросом:
 
     ```
     AuditLogs | where Category == "EntitlementManagement"
     ```
 
-1. Нажмите кнопку **Запуск**. 
+1. Затем нажмите **Запуск**. 
 
-    ![Нажмите кнопку выполнить, чтобы запустить запрос.](./media/entitlement-management-logs-and-reporting/run-query.png)
+    ![Для запуска запроса, нажмите кнопку "Запуск".](./media/entitlement-management-logs-and-reporting/run-query.png)
 
-В таблице отображаются события журнала аудита для управления назначением за последний час по умолчанию. Вы можете изменить параметр "диапазон времени", чтобы просмотреть старые события. Однако при изменении этого параметра будут показаны только те события, которые произошли после настройки Azure AD для отправки событий в Azure Monitor.
+В таблице будут отображаться события журнала аудита для управления правами за последний час по умолчанию. Вы можете изменить параметр "Диапазон времени", чтобы просмотреть старые события. Однако при изменении этого параметра будут показаны только те события, которые произошли после того как Azure AD настроили для отправки событий в Azure Monitor.
 
-Если вы хотите получить сведения о самых старых и новых событиях аудита, хранящихся в Azure Monitor, используйте следующий запрос:
+Если вы хотите получить сведения о самых старых и новых событиях аудита, которые хранятся в Azure Monitor, используйте следующий запрос:
 
 ```
 AuditLogs | where TimeGenerated > ago(3653d) | summarize OldestAuditEvent=min(TimeGenerated), NewestAuditEvent=max(TimeGenerated) by Type
 ```
 
-Дополнительные сведения о столбцах, которые хранятся для событий аудита в Azure Monitor, см. [в разделе Интерпретация схемы журналов аудита Azure AD в Azure Monitor](../reports-monitoring/reference-azure-monitor-audit-log-schema.md).
+Дополнительные сведения о столбцах, которые хранятся для событий аудита в Azure Monitor, см. в статье [Интерпретации схемы журналов аудита Azure AD в Azure Monitor](../reports-monitoring/reference-azure-monitor-audit-log-schema.md).
 
 ## <a name="create-custom-azure-monitor-queries-using-azure-powershell"></a>Создание пользовательских запросов Azure Monitor с помощью Azure PowerShell
 
-Вы можете получить доступ к журналам через PowerShell после настройки Azure AD для отправки журналов в Azure Monitor. Затем отправляйте запросы из скриптов или из командной строки PowerShell без необходимости быть глобальным администратором в клиенте. 
+Вы можете получить доступ к журналам через PowerShell после того, как настроите Azure AD для отправки журналов в Azure Monitor. После этого вы можете отправлять запросы из скриптов или из командной строки PowerShell без необходимости быть глобальным администратором в клиенте. 
 
-### <a name="ensure-the-user-or-service-principal-has-the-correct-role-assignment"></a>Убедитесь, что пользователь или субъект-служба имеет правильное назначение ролей.
+### <a name="ensure-the-user-or-service-principal-has-the-correct-role-assignment"></a>Убедитесь, что пользователь или субъект-служба имеют правильное назначение ролей.
 
-Убедитесь, что пользователь или субъект-служба, которые будут проходить проверку подлинности в Azure AD, находятся в соответствующей роли Azure в Log Analytics рабочей области. Параметры роли могут быть Log Analytics читатель или участник Log Analytics. Если вы уже используете одну из этих ролей, перейдите к ней, чтобы [получить идентификатор log Analytics с одной подпиской Azure](#retrieve-log-analytics-id-with-one-azure-subscription).
+Убедитесь, что пользователь или субъект-служба, которые будут проходить аутентификацию в Azure AD, находятся в соответствующей роли Azure в рабочей области Log Analytics. Роли могут быть либо читатель Log Analytics или участник Log Analytics. Если вы уже используете одну из этих ролей, перейдите к [Получить идентификатор Log Analytics с помощью одной подписки Azure](#retrieve-log-analytics-id-with-one-azure-subscription).
 
-Чтобы задать назначение ролей и создать запрос, выполните следующие действия.
+Чтобы задать назначение ролей и создать запрос, выполните следующие действия:
 
-1. В портал Azure выберите [рабочую область log Analytics](https://portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.OperationalInsights%2Fworkspaces
+1. На портале Azure перейдите в [рабочую область Log Analytics](https://portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.OperationalInsights%2Fworkspaces
 ).
 
-1. Выберите **Управление доступом (IAM)**.
+1. Выберите **Управление доступом (IAM)** .
 
-1. Затем нажмите кнопку **Добавить** , чтобы добавить назначение роли.
+1. Щелкните **Добавить**, чтобы добавить назначение ролей.
 
     ![Добавление назначения роли](./media/entitlement-management-logs-and-reporting/workspace-set-role-assignment.png)
 
 ### <a name="install-azure-powershell-module"></a>Установите модуль Azure PowerShell.
 
-Получив соответствующее назначение роли, запустите PowerShell и [установите модуль Azure PowerShell](/powershell/azure/install-az-ps?view=azps-3.3.0) (если вы этого еще не сделали), введя:
+Получив необходимое назначение ролей, запустите PowerShell и [установите модуль Azure PowerShell](/powershell/azure/install-az-ps?view=azps-3.3.0) (если вы еще этого не сделали), введя:
 
 ```azurepowershell
 install-module -Name az -allowClobber -Scope CurrentUser
 ```
     
-Теперь вы можете пройти проверку подлинности в Azure AD и получить идентификатор Log Analytics рабочей области, к которой выполняется запрос.
+Теперь вы можете пройти аутентификацию в Azure AD и получить идентификатор рабочей области Log Analytics на которую выполняется запрос.
 
-### <a name="retrieve-log-analytics-id-with-one-azure-subscription"></a>Получение идентификатора Log Analytics с одной подпиской Azure
-Если у вас есть только одна подписка Azure и одна Log Analytics Рабочая область, введите следующую команду для проверки подлинности в Azure AD, подключитесь к этой подписке и получите эту рабочую область:
+### <a name="retrieve-log-analytics-id-with-one-azure-subscription"></a>Получите идентификатора Log Analytics с одной подпиской Azure
+Если у вас есть только одна подписка Azure и одна рабочая область Log Analytics, введите следующую команду для аутентификации в Azure AD, подключитесь к этой подписке и получите рабочую область:
  
 ```azurepowershell
 Connect-AzAccount
@@ -148,9 +147,9 @@ $wks = Get-AzOperationalInsightsWorkspace
  
 ### <a name="retrieve-log-analytics-id-with-multiple-azure-subscriptions"></a>Получение идентификатора Log Analytics с несколькими подписками Azure
 
- [Get-азоператионалинсигхтсворкспаце](/powershell/module/Az.OperationalInsights/Get-AzOperationalInsightsWorkspace) работает в одной подписке за раз. Таким образом, если у вас несколько подписок Azure, необходимо подключиться к той, у которой есть рабочая область Log Analytics с журналами Azure AD. 
+ Командлет [Get-AzOperationalInsightsWorkspace](/powershell/module/Az.OperationalInsights/Get-AzOperationalInsightsWorkspace) работает в одной подписке за раз. Таким образом, если у вас несколько подписок Azure, вам необходимо подключиться к той, у которой есть рабочая область Log Analytics с журналами Azure AD. 
  
- Следующие командлеты выводят список подписок и находят идентификатор подписки с рабочей областью Log Analytics:
+ Следующие командлеты выводят список подписок и находят идентификатор подписки у которой есть рабочая область Log Analytics:
  
 ```azurepowershell
 Connect-AzAccount
@@ -158,21 +157,21 @@ $subs = Get-AzSubscription
 $subs | ft
 ```
  
-Вы можете повторно пройти проверку подлинности и связать сеанс PowerShell с этой подпиской с помощью `Connect-AzAccount –Subscription $subs[0].id`команды, такой как. Дополнительные сведения о проверке подлинности в Azure с помощью PowerShell, в том числе в неинтерактивном режиме, см. в разделе [Вход с использованием Azure PowerShell](/powershell/azure/authenticate-azureps?view=azps-3.3.0&viewFallbackFrom=azps-2.5.0
+Вы можете повторно пройти аутентификацию и связать сеанс PowerShell с этой подпиской с помощью команды, например `Connect-AzAccount –Subscription $subs[0].id`. Дополнительные сведения о аутентификации в Azure с помощью PowerShell, в том числе в неинтерактивном режиме, см. в разделе [Войти используя Azure PowerShell](/powershell/azure/authenticate-azureps?view=azps-3.3.0&viewFallbackFrom=azps-2.5.0
 ).
 
-Если в этой подписке имеется несколько Log Analytics рабочих областей, командлет [Get-азоператионалинсигхтсворкспаце](/powershell/module/Az.OperationalInsights/Get-AzOperationalInsightsWorkspace) возвращает список рабочих областей. Затем можно найти тот, у которого есть журналы Azure AD. `CustomerId` Поле, возвращаемое этим командлетом, совпадает со значением "идентификатор рабочей области", отображаемым в портал Azure в обзоре рабочей области log Analytics.
+Если в этой подписке имеется несколько рабочих областей Log Analytics, командлет [Get-AzOperationalInsightsWorkspace](/powershell/module/Az.OperationalInsights/Get-AzOperationalInsightsWorkspace) возвращает список рабочих областей. Затем вы можете найти тот, у которого есть журналы Azure AD. `CustomerId`Поле, возвращаемое этим командлетом, совпадает со значением "идентификатор рабочей области", отображаемым в портал Azure в обзоре рабочей области Log Analytics.
  
 ```powershell
 $wks = Get-AzOperationalInsightsWorkspace
 $wks | ft CustomerId, Name
 ```
 
-### <a name="send-the-query-to-the-log-analytics-workspace"></a>Отправка запроса в рабочую область Log Analytics
-Наконец, после определения рабочей области можно использовать [командлет Invoke-азоператионалинсигхтскуери](/powershell/module/az.operationalinsights/Invoke-AzOperationalInsightsQuery?view=azps-3.3.0
-) , чтобы отправить запрос Kusto в эту рабочую область. Эти запросы написаны на [языке запросов Kusto](https://docs.microsoft.com/azure/kusto/query/).
+### <a name="send-the-query-to-the-log-analytics-workspace"></a>Отправьте запрос в рабочую область Log Analytics
+Наконец, после определения рабочей области можно использовать [Invoke-AzOperationalInsightsQuery](/powershell/module/az.operationalinsights/Invoke-AzOperationalInsightsQuery?view=azps-3.3.0
+), чтобы отправить запрос Kusto в эту рабочую область. Эти запросы написаны на [языке запросов Kusto](https://docs.microsoft.com/azure/kusto/query/).
  
-Например, можно получить диапазон дат записей событий аудита из рабочей области Log Analytics, используя командлеты PowerShell для отправки запроса, например:
+Например, можно получить диапазон дат записей событий аудита из рабочей области Log Analytics, используя командлеты PowerShell для отправки запроса:
  
 ```powershell
 $aQuery = "AuditLogs | where TimeGenerated > ago(3653d) | summarize OldestAuditEvent=min(TimeGenerated), NewestAuditEvent=max(TimeGenerated) by Type"
@@ -180,7 +179,7 @@ $aResponse = Invoke-AzOperationalInsightsQuery -WorkspaceId $wks[0].CustomerId -
 $aResponse.Results |ft
 ```
 
-Вы также можете получать события управления назначением с помощью запроса, например:
+Вы также можете получать события управления правами с помощью запроса, например:
 
 ```azurepowershell
 $bQuery = 'AuditLogs | where Category == "EntitlementManagement"'
@@ -189,5 +188,5 @@ $bResponse.Results |ft
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия:
-- [Создание интерактивных отчетов с книгами Azure Monitor](../../azure-monitor/app/usage-workbooks.md) 
+- [Создавайте интерактивные отчеты с книгами Azure Monitor](../../azure-monitor/platform/workbooks-overview.md) 
 

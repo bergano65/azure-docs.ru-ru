@@ -5,18 +5,17 @@ description: Узнайте, как лучше использовать свои
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: how-to
 ms.author: sihhu
 author: MayMSFT
 ms.reviewer: nibaccam
 ms.date: 03/09/2020
-ms.custom: ''
-ms.openlocfilehash: 5bd4436fc63fb570f052606ab557dbcf243cf5e7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.custom: tracking-python
+ms.openlocfilehash: e0b2d7abb378a6717eb4444882ede54debdb5968
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80476853"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84555629"
 ---
 # <a name="version-and-track-datasets-in-experiments"></a>Версии и отслеживание наборов данных в экспериментах
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -52,7 +51,7 @@ ms.locfileid: "80476853"
 
 ### <a name="register-a-dataset-version"></a>Регистрация версии набора данных
 
-Следующий код регистрирует новую версию `titanic_ds` набора данных, присвоив `create_new_version` параметру значение. `True` Если в рабочей области нет `titanic_ds` уже зарегистрированного набора данных, код создает новый набор данных с именем `titanic_ds` и устанавливает для его версии значение 1.
+Следующий код регистрирует новую версию `titanic_ds` набора данных, присвоив `create_new_version` параметру значение `True` . Если в `titanic_ds` рабочей области нет уже зарегистрированного набора данных, код создает новый набор данных с именем `titanic_ds` и устанавливает для его версии значение 1.
 
 ```Python
 titanic_ds = titanic_ds.register(workspace = workspace,
@@ -156,9 +155,9 @@ prep_step = PythonScriptStep(script_name="prepare.py",
 
 ## <a name="track-datasets-in-experiments"></a>Отслеживание наборов данных в экспериментах
 
-Для каждого Машинное обучение эксперимента можно легко отслеживать наборы данных, используемые в качестве входных данных, с `Run` помощью объекта эксперимента.
+Для каждого Машинное обучение эксперимента можно легко отслеживать наборы данных, используемые в качестве входных данных, с помощью объекта эксперимента `Run` .
 
-В следующем коде [`get_details()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run.run?view=azure-ml-py#get-details--) метод используется для мониторинга того, какие входные наборы данных использовались при выполнении эксперимента:
+В следующем коде метод используется [`get_details()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run.run?view=azure-ml-py#get-details--) для мониторинга того, какие входные наборы данных использовались при выполнении эксперимента:
 
 ```Python
 # get input datasets
@@ -169,9 +168,9 @@ input_dataset = inputs[0]['dataset']
 input_dataset.to_path()
 ```
 
-Можно также найти `input_datasets` эксперименты с помощью https://ml.azure.com/. 
+Можно также найти `input_datasets` эксперименты с помощью https://ml.azure.com/ . 
 
-На следующем рисунке показано, где найти входной набор данных эксперимента в Машинное обучение Azure Studio. В этом примере перейдите в область **эксперименты** и откройте вкладку **свойства** для конкретного запуска эксперимента `keras-mnist`.
+На следующем рисунке показано, где найти входной набор данных эксперимента в Машинное обучение Azure Studio. В этом примере перейдите в область **эксперименты** и откройте вкладку **свойства** для конкретного запуска эксперимента `keras-mnist` .
 
 ![Входные наборы данных](./media/how-to-version-track-datasets/input-datasets.png)
 
@@ -183,7 +182,7 @@ model = run.register_model(model_name='keras-mlp-mnist',
                            datasets =[('training data',train_dataset)])
 ```
 
-После регистрации можно просмотреть список моделей, зарегистрированных в наборе данных, с помощью Python или перейдите по https://ml.azure.com/адресу.
+После регистрации можно просмотреть список моделей, зарегистрированных в наборе данных, с помощью Python или перейдите по адресу https://ml.azure.com/ .
 
 Следующее представление находится на панели **наборы данных** в разделе **активы**. Выберите набор данных и перейдите на вкладку **модели** для списка моделей, зарегистрированных в наборе данных. 
 

@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 05/14/2018
 ms.author: hrasheed
 ms.openlocfilehash: 36a77d49b507d3d0158d1b4b492d0141350de50f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80240643"
 ---
 # <a name="manage-apache-hadoop-clusters-in-hdinsight-by-using-net-sdk"></a>Управление кластерами Apache Hadoop в HDInsight с помощью пакета SDK для .NET
@@ -21,7 +21,7 @@ ms.locfileid: "80240643"
 
 Научитесь управлять кластерами HDInsight с помощью [пакета SDK для HDInsight.NET](https://docs.microsoft.com/dotnet/api/overview/azure/hdinsight).
 
-**Предварительные требования**
+**Предварительные условия**
 
 Перед началом работы с этой статьей необходимо иметь следующее:
 
@@ -266,7 +266,7 @@ foreach (var key in results.Configuration.Keys)
 
 Ознакомьтесь со статьей [Отправка данных в HDInsight][hdinsight-upload-data].
 
-## <a name="see-also"></a>См. также:
+## <a name="see-also"></a>См. также
 
 * [Справочная документация к пакету SDK для HDInsight .NET](https://docs.microsoft.com/dotnet/api/overview/azure/hdinsight)
 * [Управление кластерами Apache Hadoop в HDInsight с помощью портала Azure](hdinsight-administer-use-portal-linux.md)

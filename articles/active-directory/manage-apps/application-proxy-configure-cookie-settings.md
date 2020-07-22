@@ -2,22 +2,21 @@
 title: Параметры файла cookie прокси приложения (Azure Active Directory) | Документация Майкрософт
 description: Azure Active Directory (Azure AD) имеет файлы cookie доступа и сеанса для доступа к локальным приложениям через прокси-сервер приложения. В этой статье вы узнаете, как использовать и настраивать параметры файлов cookie.
 services: active-directory
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 01/16/2019
-ms.author: mimart
+ms.author: kenwith
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bcedb24a0efdbabaaef150fc3d5aff07d210ce23
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 656841fc8e62e81318ffd568069c0664192b1747
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79481370"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84764899"
 ---
 # <a name="cookie-settings-for-accessing-on-premises-applications-in-azure-active-directory"></a>Параметры файлов cookie для доступа к локальным приложениям в Azure Active Directory
 
@@ -49,7 +48,7 @@ Azure Active Directory (Azure AD) имеет файлы cookie доступа и
 Чтобы задать параметры файла cookie с помощью портала Azure:
 
 1. Войдите на [портал Azure](https://portal.azure.com). 
-2. Перейдите в раздел **Azure Active Directory** > **корпоративные приложения** > **все приложения**.
+2. Перейдите в раздел **Azure Active Directory**   >  **корпоративные приложения**   >  **все приложения**.
 3. Выберите приложение, для которого необходимо включить параметр файла cookie.
 4. Выберите **Прокси приложения**.
 5. В разделе **Дополнительные параметры** установите параметр файла cookie как **Да** или **Нет**.
@@ -65,7 +64,7 @@ Get-AzureADApplicationProxyApplication -ObjectId <ObjectId> | fl *
 
 ## <a name="set-cookie-settings---powershell"></a>Настройка параметров файлов cookie — PowerShell
 
-В приведенных ниже командах ```<ObjectId>``` PowerShell является ObjectID приложения. 
+В приведенных ниже командах PowerShell ```<ObjectId>``` является ObjectID приложения. 
 
 **Файл cookie только для HTTP** 
 

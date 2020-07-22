@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/28/2020
-ms.openlocfilehash: c5f01a00d70869882d3d3398607ecfebbfd54417
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: a9f050bb25873e4b6ede234c800b00f2c34085d3
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82209083"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86085282"
 ---
 # <a name="ports-used-by-apache-hadoop-services-on-hdinsight"></a>Порты, используемые службами Apache Hadoop в HDInsight
 
@@ -55,11 +55,11 @@ HDInsight реализуется несколькими виртуальными
 | Storm |443 |HTTPS |Storm |Веб-интерфейс Storm. Дополнительные сведения см. в статье [Развертывание и администрирование топологий Apache Storm в Azure HDInsight](storm/apache-storm-deploy-monitor-topology-linux.md) |
 | Прокси-сервер Kafka RESTful |443 |HTTPS |Kafka |REST API Kafka. См. статью [взаимодействие с кластерами Apache Kafka в Azure HDInsight с помощью прокси-сервера RESTful](kafka/rest-proxy.md) . |
 
-### <a name="authentication"></a>Проверка подлинности
+### <a name="authentication"></a>Аутентификация
 
 Все общедоступные службы в Интернете должны проходить проверку подлинности.
 
-| Порт | Учетные данные |
+| Port | Учетные данные |
 | --- | --- |
 | 22 или 23 |Учетные данные пользователя SSH, указанные при создании кластера. |
 | 443 |Имя для входа (по умолчанию — admin) и пароль, указанные при создании кластера. |
@@ -74,12 +74,12 @@ HDInsight реализуется несколькими виртуальными
 
 ### <a name="ambari"></a>Ambari
 
-| Служба | Узлы | Порт | URL-адрес | Протокол |
+| Служба | Узлы | Port | URL-адрес | Протокол |
 | --- | --- | --- | --- | --- |
 | Веб-интерфейс Ambari | Головные узлы | 8080 | / | HTTP |
 | Ambari REST API | Головные узлы | 8080 | /api/v1 | HTTP |
 
-Примеры
+Примеры:
 
 * Ambari REST API: `curl -u admin "http://10.0.0.11:8080/api/v1/clusters"`
 
@@ -168,6 +168,6 @@ HDInsight реализуется несколькими виртуальными
 | Сервер Livy | Головные узлы | 8998 | HTTP | &nbsp; | Служба для запуска инструкций, заданий и приложений |
 | Записная книжка Jupyter | Головные узлы | 8001 | HTTP | &nbsp; | Веб-сайт записных книжек Jupyter |
 
-Примеры
+Примеры:
 
 * Livy: `curl -u admin -G "http://10.0.0.11:8998/"`. В этом примере `10.0.0.11` — IP-адрес головного узла, на котором размещена служба Livy.

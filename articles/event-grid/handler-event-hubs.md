@@ -1,18 +1,14 @@
 ---
 title: Использование концентратора событий как обработчика событий Сетки событий Azure
 description: Узнайте, как можно использовать концентраторы событий в качестве обработчиков событий Сетки событий Azure.
-services: event-grid
-author: spelluru
-ms.service: event-grid
 ms.topic: conceptual
-ms.date: 05/11/2020
-ms.author: spelluru
-ms.openlocfilehash: c9ce4e7da51005dcb06c9df420d80f4d2c7b93e9
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
-ms.translationtype: HT
+ms.date: 07/07/2020
+ms.openlocfilehash: fa8fdd66eb153f6a972753eb359261100f19cd15
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83596023"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86105835"
 ---
 # <a name="event-hub-as-an-event-handler-for-azure-event-grid-events"></a>Использование концентратора событий как обработчика событий Сетки событий Azure
 Обработчик событий — это место, куда отправляются события. Обработчик выполняет действие для обработки события. Некоторые службы Azure автоматически настроены для обработки событий. Одна из них — это **Центры событий Azure**. 
@@ -39,6 +35,52 @@ ms.locfileid: "83596023"
 | aeg-data-version | <p>Версия данных события.</p><p>Пример 1.</p><p>Для **схемы событий Сетки событий** это свойство представляет версию данных, а для **схемы событий облака** оно не используется.</p> |
 | aeg-output-event-id | Идентификатор события Сетки событий. |
 
+## <a name="rest-examples-for-put"></a>Примеры REST (для PUT)
+
+
+### <a name="event-hub"></a>Концентратор событий
+
+```json
+{
+    "properties": 
+    {
+        "destination": 
+        {
+            "endpointType": "EventHub",
+            "properties": 
+            {
+                "resourceId": "/subscriptions/<AZURE SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP NAME>/providers/Microsoft.EventHub/namespaces/<EVENT HUBS NAMESPACE NAME>/eventhubs/<EVENT HUB NAME>"
+            }
+        },
+        "eventDeliverySchema": "EventGridSchema"
+    }
+}
+```
+
+### <a name="event-hub---delivery-with-managed-identity"></a>Концентратор событий — доставка с использованием управляемого удостоверения
+
+```json
+{
+    "properties": {
+        "deliveryWithResourceIdentity": 
+        {
+            "identity": 
+            {
+                "type": "SystemAssigned"
+            },
+            "destination": 
+            {
+                "endpointType": "EventHub",
+                "properties": 
+                {
+                    "resourceId": "/subscriptions/<AZURE SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP NAME>/providers/Microsoft.EventHub/namespaces/<EVENT HUBS NAMESPACE NAME>/eventhubs/<EVENT HUB NAME>"
+                }
+            }
+        },
+        "eventDeliverySchema": "EventGridSchema"
+    }
+}
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 См. список поддерживаемых обработчиков событий в статье [Обработчики событий](event-handlers.md). 

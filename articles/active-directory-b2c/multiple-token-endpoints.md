@@ -7,16 +7,16 @@ author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 07/31/2019
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 5daf88e746ea803f345c79bd31d656f2615b6754
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 5528607b0559dad246262748c83c9d359ee2144e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78184100"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85385745"
 ---
 # <a name="migrate-an-owin-based-web-api-to-b2clogincom"></a>Перенос веб-API на основе OWIN в b2clogin.com
 
@@ -27,9 +27,9 @@ ms.locfileid: "78184100"
 В следующих разделах представлен пример включения нескольких издателей в веб-интерфейсе API, который использует компоненты по промежуточного слоя [Microsoft OWIN][katana] (Katana). Хотя примеры кода специфичны для по промежуточного слоя Microsoft OWIN, общий метод должен быть применим к другим библиотекам OWIN.
 
 > [!NOTE]
-> Эта статья предназначена для Azure AD B2C клиентов с развернутыми интерфейсами API и приложениями `login.microsoftonline.com` , которые ссылаются и которые хотят перейти на `b2clogin.com` рекомендуемую конечную точку. Если вы настраиваете новое приложение, используйте [b2clogin.com](b2clogin.md) в качестве направленного.
+> Эта статья предназначена для Azure AD B2C клиентов с развернутыми интерфейсами API и приложениями, которые ссылаются `login.microsoftonline.com` и которые хотят перейти на рекомендуемую `b2clogin.com` конечную точку. Если вы настраиваете новое приложение, используйте [b2clogin.com](b2clogin.md) в качестве направленного.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Перед продолжением действий, описанных в этой статье, необходимо выполнить следующие Azure AD B2C ресурсы.
 
@@ -46,9 +46,9 @@ ms.locfileid: "78184100"
 1. Выберите существующую политику, например *B2C_1_signupsignin1*, а затем выберите пункт **запустить поток пользователя** .
 1. Под заголовком **Запуск потока пользователя** в верхней части страницы выберите гиперссылку, чтобы открыть конечную точку обнаружения OpenID Connect Connect для этого потока пользователя.
 
-    ![Ссылка на известный URI на странице "Запуск" портал Azure](media/multi-token-endpoints/portal-01-policy-link.png)
+    ![Ссылка на известный URI на странице "Запустить сейчас" на портале Azure](media/multi-token-endpoints/portal-01-policy-link.png)
 
-1. На странице, которая открывается в браузере, запишите `issuer` значение, например:
+1. На странице, которая открывается в браузере, запишите значение `issuer`, например:
 
     `https://your-b2c-tenant.b2clogin.com/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/v2.0/`
 
@@ -73,11 +73,11 @@ https://your-b2c-tenant.b2clogin.com/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/v2.0/
 1. Запишите `issuer` значение
 1. Выполните шаги 4-6 для другого домена, например *Login.microsoftonline.com*
 
-## <a name="get-the-sample-code"></a>Получение кода примера
+## <a name="get-the-sample-code"></a>Получение примера кода
 
 Теперь, когда у вас есть оба URI конечной точки маркера, необходимо обновить код, чтобы указать, что обе конечные точки являются действительными поставщиками. Чтобы проанализировать пример, скачайте или клонировать пример приложения, а затем обновите пример для поддержки обеих конечных точек в качестве действительных поставщиков.
 
-Скачайте архив: [Active-Directory-B2C-DotNet-webapp-and-webapi-Master. zip.][sample-archive]
+Скачайте архив: [active-directory-b2c-dotnet-webapp-and-webapi-master.zip][sample-archive]
 
 ```
 git clone https://github.com/Azure-Samples/active-directory-b2c-dotnet-webapp-and-webapi.git
@@ -88,11 +88,11 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-dotnet-webapp-an
 В этом разделе вы обновите код, чтобы указать, что обе конечные точки поставщика маркеров являются допустимыми.
 
 1. Открытие решения **B2C-WebAPI-DotNet. sln** в Visual Studio
-1. В проекте **TaskService** откройте файл *TaskService\\\\App_Start * * Startup.auth.CS** * в редакторе.
-1. Добавьте следующую `using` директиву в начало файла:
+1. В проекте **TaskService** откройте файл *TaskService \\ App_Start * * \\ Startup.auth.CS** * в редакторе.
+1. Добавьте следующую директиву `using` в начало файла.
 
     `using System.Collections.Generic;`
-1. Добавьте [`ValidIssuers`][validissuers] свойство в [`TokenValidationParameters`][tokenvalidationparameters] определение и укажите оба URI, записанные в предыдущем разделе:
+1. Добавьте [`ValidIssuers`][validissuers] свойство в [`TokenValidationParameters`][tokenvalidationparameters] Определение и укажите оба URI, записанные в предыдущем разделе:
 
     ```csharp
     TokenValidationParameters tvps = new TokenValidationParameters
@@ -123,11 +123,11 @@ app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions
 
 Теперь, когда оба URI поддерживаются веб-API, вам потребуется обновить веб-приложение, чтобы оно получало маркеры от конечной точки b2clogin.com.
 
-Например, можно настроить пример веб-приложения для использования новой конечной точки, изменив `ida:AadInstance` значение в файле *TaskWebApp\\* * Web. config** проекта **TaskWebApp** .
+Например, можно настроить пример веб-приложения для использования новой конечной точки, изменив `ida:AadInstance` значение в файле *TaskWebApp \\ * * Web.config** * проекта **TaskWebApp** .
 
-Измените `ida:AadInstance` значение в *файле Web. config* TaskWebApp, чтобы оно ссылалось на `{your-b2c-tenant-name}.b2clogin.com` , а `login.microsoftonline.com`не на.
+Измените `ida:AadInstance` значение в *Web.config* TaskWebApp, чтобы оно ссылалось `{your-b2c-tenant-name}.b2clogin.com` вместо `login.microsoftonline.com` .
 
-Перед следующей операцией.
+До:
 
 ```xml
 <!-- Old value -->
@@ -143,9 +143,9 @@ app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions
 
 Когда строки конечной точки создаются во время выполнения веб-приложения, конечные точки на основе b2clogin.com используются при запросе токенов.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-В этой статье представлен метод настройки веб-API, реализующий по промежуточного слоя Microsoft OWIN (Katana), для приема маркеров из нескольких конечных точек поставщика. Как вы можете заметить, в файлах *Web. config* для проектов TaskService и TaskWebApp есть несколько других строк, которые необходимо изменить, если требуется собрать и запустить эти проекты для собственного клиента. Вы можете соответствующим образом изменить проекты, если вы хотите увидеть их в действии, но полное пошаговое руководство выходит за рамки этой статьи.
+В этой статье представлен метод настройки веб-API, реализующий по промежуточного слоя Microsoft OWIN (Katana), для приема маркеров из нескольких конечных точек поставщика. Как вы могли заметить, в файлах *Web.Config* и в проектах TaskService и TaskWebApp есть несколько других строк, которые необходимо изменить, если требуется собрать и запустить эти проекты для собственного клиента. Вы можете соответствующим образом изменить проекты, если вы хотите увидеть их в действии, но полное пошаговое руководство выходит за рамки этой статьи.
 
 Дополнительные сведения о различных типах маркеров безопасности, порожденных Azure AD B2C, см. [в разделе Обзор маркеров в Azure Active Directory B2C](tokens-overview.md).
 

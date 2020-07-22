@@ -17,10 +17,10 @@ ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
 ms.openlocfilehash: a8614156be5d516d16aff698b604cf0e661d7311
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "72385657"
 ---
 # <a name="tutorial-send-localized-push-notifications-to-ios-using-azure-notification-hubs"></a>Руководство. Отправка локализованных push-уведомлений в iOS с помощью центров уведомлений Azure
@@ -82,7 +82,7 @@ ms.locfileid: "72385657"
 
 В этом разделе вы измените приложение Breaking News, созданное в разделе [Использование концентраторов уведомлений для передачи экстренных новостей] для отправки локализованных экстренных новостей с помощью шаблонов.
 
-`MainStoryboard_iPhone.storyboard`В добавьте сегментированный элемент управления на трех языках: Английский, французский и мандаринский диалект.
+В `MainStoryboard_iPhone.storyboard` добавьте сегментированный элемент управления на трех языках: Английский, французский и мандаринский диалект.
 
 ![Создание раскадровки пользовательского интерфейса для iOS][13]
 
@@ -92,7 +92,7 @@ ms.locfileid: "72385657"
 
 ## <a name="build-the-ios-app"></a>Выполнение сборки приложения iOS
 
-1. `Notification.h`В добавьте `retrieveLocale` метод и измените методы Store и Subscribe, как показано в следующем коде:
+1. В `Notification.h` добавьте `retrieveLocale` метод и измените методы Store и Subscribe, как показано в следующем коде:
 
     ```objc
     - (void) storeCategoriesAndSubscribeWithLocale:(int) locale categories:(NSSet*) categories completion: (void (^)(NSError* error))completion;

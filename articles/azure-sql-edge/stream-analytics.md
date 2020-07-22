@@ -2,19 +2,19 @@
 title: Использование заданий Azure Stream Analytics для пограничных устройств в SQL Azure для пограничных вычислений (предварительная версия)
 description: Сведения об использовании заданий Stream Analytics в SQL Azure для пограничных вычислений (предварительная версия)
 keywords: SQL для пограничных вычислений, Stream Analytics
-services: sql-database-edge
-ms.service: sql-database-edge
+services: sql-edge
+ms.service: sql-edge
 ms.topic: conceptual
 author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 05/19/2020
-ms.openlocfilehash: 3b57cb8cae80381a6c2cd88358dd9284ba56c919
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
-ms.translationtype: HT
+ms.openlocfilehash: e323c56f22c3a7d32bda5afe03a3462d3263f0d0
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83594523"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85254078"
 ---
 # <a name="using-azure-stream-analytics-jobs-with-sql-edge"></a>Использование заданий Azure Stream Analytics в SQL для пограничных вычислений
 
@@ -52,7 +52,7 @@ Azure SQL для пограничных вычислений включает с
     |Поле      | Описание |
     |---------------|-------------|
     |Псевдоним выходных данных | Имя псевдонима для выхода.|
-    |База данных | Имя базы данных SQL. Здесь должно быть допустимое имя базы данных, реально существующей в экземпляре SQL для пограничных вычислений.|
+    |База данных | Имя базы данных. Здесь должно быть допустимое имя базы данных, реально существующей в экземпляре SQL для пограничных вычислений.|
     |Имя сервера | Имя (или IP-адрес) и номер порта для экземпляра SQL. Для развертывания SQL для пограничных вычислений можно указать в качестве имени сервера значение **tcp:.,1433**.|
     |Имя пользователя | Учетная запись входа в SQL, которая предоставляет права на чтение и запись данных в базе данных, которую вы указали ранее.|
     |Пароль | Пароль для учетной записи входа SQL, которую вы указали ранее.|

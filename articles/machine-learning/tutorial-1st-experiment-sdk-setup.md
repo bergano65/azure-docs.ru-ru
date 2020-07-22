@@ -1,6 +1,6 @@
 ---
-title: Руководство по Создание первого эксперимента ML
-titleSuffix: Azure Machine Learning
+title: Руководство по проведению эксперимента в записных книжках Jupyter (Python)
+titleSuffix: Machine Learning - Azure
 description: В этом учебнике описано начало работы с пакетом SDK Машинного обучения Azure для Python, запущенным в Записных книжках Jupyter.  В части 1 вы создадите рабочую область, в которой вы будете управлять экспериментами и моделями машинного обучения.
 services: machine-learning
 ms.service: machine-learning
@@ -10,12 +10,13 @@ author: trevorbye
 ms.author: trbye
 ms.reviewer: trbye
 ms.date: 02/10/2020
-ms.openlocfilehash: 3177de6816dd690514620098e79db844077fbaf6
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.custom: tracking-python
+ms.openlocfilehash: c0df2459b09eca472c833be2865232c0247210dd
+ms.sourcegitcommit: e04a66514b21019f117a4ddb23f22c7c016da126
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83655447"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85106602"
 ---
 # <a name="tutorial-get-started-creating-your-first-ml-experiment-with-the-python-sdk"></a>Руководство по Начало работы по созданию эксперимента Машинного обучения с помощью пакета SDK для Python
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]

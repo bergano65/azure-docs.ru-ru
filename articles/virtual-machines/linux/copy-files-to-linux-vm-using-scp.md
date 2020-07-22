@@ -4,16 +4,16 @@ description: Безопасное перемещение файлов на ви�
 author: cynthn
 ms.service: virtual-machines-linux
 ms.workload: infrastructure
-ms.topic: article
+ms.topic: how-to
 ms.date: 07/12/2017
 ms.author: cynthn
 ms.subservice: disks
-ms.openlocfilehash: a0837790b70de42073338bf085ee0f3976b866f6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f56118750fc980c249c88b796728f4ecb2641a88
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78969601"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86510962"
 ---
 # <a name="move-files-to-and-from-a-linux-vm-using-scp"></a>Перемещение файлов на виртуальную машину Linux и с нее с помощью SCP
 
@@ -65,8 +65,8 @@ scp ~/.azure/config azureuser@myserver.eastus.cloudapp.com:/home/azureuser/confi
 scp -r azureuser@myserver.eastus.cloudapp.com:/home/azureuser/logs/. /tmp/
 ```
 
-`-r` Флаг указывает scpу рекурсивно копировать файлы и каталоги из каталога, указанного в команде.  Обратите также внимание, что синтаксис для командной строки аналогичен синтаксису команды копирования `cp`.
+`-r`Флаг указывает scpу рекурсивно копировать файлы и каталоги из каталога, указанного в команде.  Обратите также внимание, что синтаксис для командной строки аналогичен синтаксису команды копирования `cp`.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Управление пользователями, SSH и проверка или восстановление дисков в виртуальных машинах Azure с помощью расширения VMAccess](using-vmaccess-extension.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+* [Управление пользователями, SSH и проверка или восстановление дисков в виртуальных машинах Azure с помощью расширения VMAccess](../extensions/vmaccess.md?toc=/azure/virtual-machines/linux/toc.json)

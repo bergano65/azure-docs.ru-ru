@@ -7,10 +7,10 @@ ms.date: 03/30/2020
 ms.topic: article
 ms.service: multiple
 ms.openlocfilehash: 62d3f7cc75a887605cdd3c19ac2e45990e541d5e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80410983"
 ---
 # <a name="micro-focus-devtest-environments-on-azure"></a>Среда разработки и тестирования Micro Focus в Azure
@@ -24,7 +24,7 @@ Micro Focus предлагает разработку и тестировани�
 > [!NOTE]
 > Ожидается в ближайшее время: инструкции по настройке [Micro Focus Enterprise Server 5,0](https://techcommunity.microsoft.com/t5/azurecat/micro-focus-enterprise-server-5-0-quick-start-template-on-azure/ba-p/1160110) на виртуальных машинах Azure.
 
-**Дальнейшие действия**
+**Следующие шаги**
 
 - [Установка Micro Focus Enterprise Server 4,0 и Enterprise Developer 4,0 в Azure](./set-up-micro-focus-azure.md)
 - [Настройка Micro Focus CICS Банкдемо для Micro Focus Enterprise Developer 4,0 в Azure](./demo.md)

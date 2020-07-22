@@ -1,14 +1,14 @@
 ---
 title: Перенос баз знаний с помощью QnA Maker
 description: Чтобы перенести базу знаний, необходимо экспортировать одну базы знаний, а затем импортировать ее в другую базу знаний.
-ms.topic: article
+ms.topic: how-to
 ms.date: 03/25/2020
-ms.openlocfilehash: 13e5e79bf4eaf6ec59e41b3e12aa1bb23f2c1578
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: e2d6c1795b816d3b7ac046ea4055402b9107e20b
+ms.sourcegitcommit: 61d850bc7f01c6fafee85bda726d89ab2ee733ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80258096"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84343094"
 ---
 # <a name="migrate-a-knowledge-base-using-export-import"></a>Миграция базы знаний с помощью экспорта и импорта
 
@@ -52,7 +52,7 @@ ms.locfileid: "80258096"
 
 Процесс миграции программным путем можно получить с помощью следующих интерфейсов API:
 
-**Экспорт**
+**Экспортировать**
 
 * [Скачать API базы знаний](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/download)
 
@@ -67,7 +67,7 @@ ms.locfileid: "80258096"
 
 Возможность переноса журналов чатов не предусмотрена, так как новая база знаний использует для хранения журналов чатов Application Insights.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Редактирование базы знаний](../How-To/edit-knowledge-base.md)

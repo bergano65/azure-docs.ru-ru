@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 61d7a11df499e6b740adb45968721b6a9bb1af22
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 6bb3cfa7266688ac8973bd3838d0d03e9efe8d50
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76988606"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86242310"
 ---
 # <a name="add-a-tile-layer-to-a-map"></a>Добавление слоя фрагментов на карту
 
@@ -24,7 +24,7 @@ ms.locfileid: "76988606"
 
 * X, Y, Zoom Notation-X — это столбец, Y — это расположение плитки в сетке плиток, а в записи масштаба — значение, основанное на уровне масштаба.
 * Нотация куадкэй. объединяет сведения о x, y и масштабе в одно строковое значение. Это строковое значение превращается в уникальный идентификатор для одной плитки.
-* Ограничивающий прямоугольник — укажите изображение в формате координат ограничивающего прямоугольника: `{west},{south},{east},{north}`. Этот формат обычно используется [службами веб-сопоставления (WMS)](https://www.opengeospatial.org/standards/wms).
+* Ограничивающий прямоугольник — укажите изображение в формате координат ограничивающего прямоугольника: `{west},{south},{east},{north}` . Этот формат обычно используется [службами веб-сопоставления (WMS)](https://www.opengeospatial.org/standards/wms).
 
 > [!TIP]
 > Класс [TileLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.tilelayer?view=azure-iot-typescript-latest) — отличный способ визуализировать большие объемы данных на карте. Можно не только создать мозаичный слой из изображения, но и векторные данные также можно визуализировать как мозаичный слой. При отрисовке векторных данных в виде мозаичного слоя элементу управления картой необходимо загрузить только плитки, размер которых меньше размера файла, чем представленные в них векторные данные. Этот метод обычно используется для визуализации миллионов строк данных на карте.
@@ -36,7 +36,8 @@ URL-адрес плитки, переданный в мозаичный слой
 * `{z}` — уровень увеличения фрагмента. Также нужны `{x}` и `{y}`.
 * `{quadkey}` — идентификатор quadkey на основе соглашения об именовании системы фрагментов Bing Maps.
 * `{bbox-epsg-3857}` — строка ограничивающего прямоугольника в формате `{west},{south},{east},{north}` в системе пространственных ссылок 3857 EPSG.
-* `{subdomain}`— Заполнитель для значений поддомена, если он указан `subdomain` , будет добавлен.
+* `{subdomain}`— Заполнитель для значений поддомена, если он указан, `subdomain` будет добавлен.
+* `{azMapsDomain}`— Заполнитель для согласования домена и проверки подлинности запросов плитки с теми же значениями, которые используются картой.
 
 ## <a name="add-a-tile-layer"></a>Добавление слоя фрагментов
 
@@ -52,7 +53,7 @@ map.layers.add(new atlas.layer.TileLayer({
 }), 'labels');
 ```
 
-Ниже приведен полный пример выполнения кода описанной выше функциональности.
+Ниже приведен полный и выполняемый пример этой функциональности.
 
 <br/>
 
@@ -68,7 +69,7 @@ map.layers.add(new atlas.layer.TileLayer({
 <iframe height='700' scrolling='no' title='Параметры слоя фрагментов' src='//codepen.io/azuremaps/embed/xQeRWX/?height=700&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода <a href='https://codepen.io/azuremaps/pen/xQeRWX/'>Параметры слоя фрагментов</a> Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) в <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 

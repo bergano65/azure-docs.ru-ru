@@ -11,10 +11,9 @@ ms.topic: article
 ms.date: 11/13/2019
 ms.author: juliako
 ms.openlocfilehash: 89d0254fc758834c437f347e6ecb7bcafc1fe467
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74185995"
 ---
 # <a name="live-stream-analysis-with-video-indexer"></a>Интерактивный анализ потоков с помощью индексатора видео
@@ -41,6 +40,6 @@ ms.locfileid: "74185995"
 
 Полный код и пошаговое руководств по развертыванию результатов можно найти в [проекте GitHub для Live Media Analytics с помощью индексатора видео](https://aka.ms/livestreamanalysis). 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Общие сведения об Индексаторе видео](video-indexer-overview.md)

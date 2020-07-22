@@ -5,20 +5,20 @@ author: mamccrea
 ms.author: mamccrea
 ms.reviewer: mamccrea
 ms.service: stream-analytics
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 11/26/2019
-ms.openlocfilehash: 0755131f7d8071e37eadc1339ebc5e122725fa71
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a40f92e88d2d8e5ca253446b9c67ad30df538a5b
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75426241"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86043433"
 ---
 # <a name="process-real-time-iot-data-streams-with-azure-stream-analytics"></a>Обработка потоков данных IoT в режиме реального времени с помощью Azure Stream Analytics
 
 Из этой статьи вы узнаете, как создать логику обработки потоков для сбора данных с устройств "Интернет вещей" (IoT). Вы используете реальный вариант использования "Интернет вещей" (IoT), чтобы продемонстрировать, как быстро и появился создать решение.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * Создайте бесплатную [подписку Azure](https://azure.microsoft.com/pricing/free-trial/).
 * Скачайте пример запроса и файлы данных с сайта [GitHub](https://aka.ms/azure-stream-analytics-get-started-iot).
@@ -57,8 +57,8 @@ ms.locfileid: "75426241"
 ## <a name="create-an-azure-stream-analytics-query"></a>Создание запроса Azure Stream Analytics
 Следующий шаг после создания задания — написание запроса. Вы можете проверить запросы к образцу данных, не подключив в задание входные или выходные данные.
 
-Скачайте [HelloWorldASA-InputStream. JSON](https://github.com/Azure/azure-stream-analytics/blob/master/Samples/GettingStarted/HelloWorldASA-InputStream.json
-) с сайта GitHub. Затем перейдите к заданию Azure Stream Analytics в портал Azure.
+Скачайте [HelloWorldASA-InputStream.jsна](https://github.com/Azure/azure-stream-analytics/blob/master/Samples/GettingStarted/HelloWorldASA-InputStream.json
+) сайте GitHub. Затем перейдите к заданию Azure Stream Analytics в портал Azure.
 
 Выберите **запрос** в разделе **топология задания** в меню слева. Затем выберите **отправить образец входных данных**. Отправьте `HelloWorldASA-InputStream.json` файл и нажмите кнопку **ОК**.
 

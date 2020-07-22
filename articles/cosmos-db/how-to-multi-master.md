@@ -3,15 +3,16 @@ title: Настройка нескольких источников в Azure Cos
 description: Узнайте, как настроить несколько хозяев для приложений с помощью разных пакетов SDK в Azure Cosmos DB.
 author: markjbrown
 ms.service: cosmos-db
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 12/02/2019
 ms.author: mjbrown
-ms.openlocfilehash: 654baed649093add2aa62f4ba81bf6ce7c3e0df5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.custom: tracking-python
+ms.openlocfilehash: a07ab3f65fcdeacf37626ad05d0b95ac3f4e7e64
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74873647"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85263674"
 ---
 # <a name="configure-multi-master-in-your-applications-that-use-azure-cosmos-db"></a>Настройка нескольких источников в приложениях, использующих Azure Cosmos DB
 
@@ -20,7 +21,7 @@ ms.locfileid: "74873647"
 > [!Note]
 > Учетные записи Cosmos, изначально настроенные для записи в один регион, можно без какого-либо простоя настроить для записи в несколько регионов (т. е. для использования архитектуры "несколько источников"). Дополнительные сведения см. в разделе [Настройка нескольких регионов записи](how-to-manage-database-account.md#configure-multiple-write-regions).
 
-## <a name="net-sdk-v2"></a><a id="netv2"></a>Пакет SDK для .NET версии 2
+## <a name="net-sdk-v2"></a><a id="netv2"></a>Пакет SDK для .NET версии 2
 
 Чтобы включить несколько источников в приложении, задайте для параметра `UseMultipleWriteLocations` значение `true`. Кроме того, задайте для `SetCurrentLocation` регион, в котором развернуто приложение и реплицируется Azure Cosmos DB:
 
@@ -34,7 +35,7 @@ ConnectionPolicy policy = new ConnectionPolicy
 policy.SetCurrentLocation("West US 2");
 ```
 
-## <a name="net-sdk-v3"></a><a id="netv3"></a>Пакет SDK для .NET v3
+## <a name="net-sdk-v3"></a><a id="netv3"></a>Пакет SDK версии 3 для .NET
 
 Чтобы включить несколько источников в своем приложении, задайте для параметра `ApplicationRegion` регион, в котором развернуто приложение и реплицируется Cosmos DB:
 
@@ -55,9 +56,27 @@ CosmosClientBuilder cosmosClientBuilder = new CosmosClientBuilder("<connection-s
 CosmosClient client = cosmosClientBuilder.Build();
 ```
 
-## <a name="java-async-sdk"></a><a id="java"></a>Пакет SDK для Java (асинхронная модель)
+## <a name="java-v4-sdk"></a><a id="java4-multi-master"></a> Пакет SDK для Java версии 4
 
-Чтобы включить несколько источников в своем приложении, настройте параметр `policy.setUsingMultipleWriteLocations(true)` и задайте для параметра `policy.setPreferredLocations` регион, в котором развертывается приложение и реплицируется Cosmos DB:
+Чтобы включить несколько хозяев в приложении, вызовите `.multipleWriteRegionsEnabled(true)` и `.preferredRegions(preferredRegions)` в построителе клиентов, где — это элемент, `preferredRegions` `List` содержащий один элемент, то есть регион, в котором развертывается приложение и где Cosmos DB реплицируется:
+
+# <a name="async"></a>[Асинхронный режим](#tab/api-async)
+
+   Асинхронный API [пакета SDK для Java версии 4](sql-api-sdk-java-v4.md) (Maven [com.azure::azure-cosmos](https://mvnrepository.com/artifact/com.azure/azure-cosmos))
+
+   [!code-java[](~/azure-cosmos-java-sql-api-samples/src/main/java/com/azure/cosmos/examples/documentationsnippets/async/SampleDocumentationSnippetsAsync.java?name=ConfigureMultimasterAsync)]
+
+# <a name="sync"></a>[Синхронизация](#tab/api-sync)
+
+   Синхронный API [пакета SDK для Java версии 4](sql-api-sdk-java-v4.md) (Maven [com.azure::azure-cosmos](https://mvnrepository.com/artifact/com.azure/azure-cosmos))
+
+   [!code-java[](~/azure-cosmos-java-sql-api-samples/src/main/java/com/azure/cosmos/examples/documentationsnippets/sync/SampleDocumentationSnippets.java?name=ConfigureMultimasterSync)]
+
+--- 
+
+## <a name="async-java-v2-sdk"></a><a id="java2-milti-master"></a>Асинхронный пакет SDK для Java v2
+
+Пакет SDK для Java v2 использовал Maven [com. Microsoft. Azure:: Azure-cosmosdb](https://mvnrepository.com/artifact/com.microsoft.azure/azure-cosmosdb). Чтобы включить несколько источников в своем приложении, настройте параметр `policy.setUsingMultipleWriteLocations(true)` и задайте для параметра `policy.setPreferredLocations` регион, в котором развертывается приложение и реплицируется Cosmos DB:
 
 ```java
 ConnectionPolicy policy = new ConnectionPolicy();
@@ -102,7 +121,7 @@ client = cosmos_client.CosmosClient(self.account_endpoint, {
                                     'masterKey': self.account_key}, connection_policy, documents.ConsistencyLevel.Session)
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Ознакомьтесь со следующими статьями:
 

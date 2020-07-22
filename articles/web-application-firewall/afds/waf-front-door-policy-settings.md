@@ -8,10 +8,9 @@ services: web-application-firewall
 ms.date: 08/21/2019
 ms.author: victorh
 ms.openlocfilehash: 08b21ccd7f7958f00546583f680ecb8cde4a20c8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75932620"
 ---
 # <a name="policy-settings-for-web-application-firewall-on-azure-front-door"></a>Параметры политики для брандмауэра веб-приложения на передней дверце Azure
@@ -51,5 +50,5 @@ ms.locfileid: "75932620"
 Необходимо определить универсальный код ресурса (URI) для перенаправления запросов, если для любого из правил, содержащихся в политике WAF, выбрано действие **перенаправления** . Этот URI перенаправления должен быть допустимым сайтом HTTP (S) и после настройки. все запросы, соответствующие правилам с действием "перенаправление", будут перенаправляться на указанный сайт.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Узнайте, как определить [пользовательские ответы](waf-front-door-configure-custom-response-code.md) WAF

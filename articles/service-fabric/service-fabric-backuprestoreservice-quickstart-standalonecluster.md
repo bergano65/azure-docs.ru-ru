@@ -5,12 +5,12 @@ author: hrushib
 ms.topic: conceptual
 ms.date: 5/24/2019
 ms.author: hrushib
-ms.openlocfilehash: 938cbbde9f53c52350ef64715f6c61c4aa961057
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 07a6260c176165af5ced5ce275b9e4b365707d77
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75526249"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86261236"
 ---
 # <a name="periodic-backup-and-restore-in-a-standalone-service-fabric"></a>Периодическое резервное копирование и восстановление в автономной Service Fabric
 > [!div class="op_single_selector"]
@@ -44,7 +44,7 @@ Service Fabric предоставляет набор API для использо
 - Временная остановка резервного копирования.
 - Управление хранением резервных копий (предстоящих).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 * Service Fabric кластер с структурой версии 6,4 или более поздней. См. дополнительные сведения о [скачивании требуемого пакета](service-fabric-cluster-creation-for-windows-server.md).
 * Сертификат X.509 для шифрования секретов, необходимых для подключения к хранилищу резервных копий. Ознакомьтесь со [статьей](service-fabric-windows-cluster-x509-security.md) о том, как получить или создать самозаверяющий сертификат X.509.
 
@@ -288,7 +288,7 @@ FailureError            :
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - [Основные сведения о настройке периодического резервного копирования](./service-fabric-backuprestoreservice-configure-periodic-backup.md)
-- [Backup restore REST API reference](https://docs.microsoft.com/rest/api/servicefabric/sfclient-index-backuprestore) (Справочник по REST API службы резервного копирования и восстановления)
+- [Backup restore REST API reference](/rest/api/servicefabric/sfclient-index-backuprestore) (Справочник по REST API службы резервного копирования и восстановления)
 
 [0]: ./media/service-fabric-backuprestoreservice/partition-backedup-health-event.png
 [3]: ./media/service-fabric-backuprestoreservice/enable-app-backup.png

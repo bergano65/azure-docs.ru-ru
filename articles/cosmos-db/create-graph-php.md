@@ -8,12 +8,12 @@ ms.devlang: php
 ms.topic: quickstart
 ms.date: 01/05/2019
 ms.author: lbosq
-ms.openlocfilehash: e38f3e2029bdc8dc8c13ce330e37053d491317f3
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 4a979fd4b3947be62f77bbd6d7c046c6af78466c
+ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "68736648"
+ms.lasthandoff: 06/20/2020
+ms.locfileid: "85118310"
 ---
 # <a name="quickstart-create-a-graph-database-in-azure-cosmos-db-using-php-and-the-azure-portal"></a>Краткое руководство. Создание графовой базы данных в Azure Cosmos DB с помощью PHP и портала Azure
 
@@ -106,7 +106,8 @@ Azure Cosmos DB — это глобально распределенная мн
 
     Скопируйте первую часть значения URI.
 
-    ![Просмотр и копирование ключа доступа на портале Azure, страница "Ключи"](./media/create-graph-php/keys.png)
+    :::image type="content" source="./media/create-graph-php/keys.png" alt-text="Просмотр и копирование ключа доступа на портале Azure, страница "Ключи"":::
+
 2. Откройте файл `connect.php` и в строке 8 вставьте значение URI вместо `your_server_address`.
 
     Код инициализации для объекта подключения теперь должен выглядеть примерно так:
@@ -192,15 +193,15 @@ Azure Cosmos DB — это глобально распределенная мн
 
 1. Щелкните **Обозреватель данных**, затем разверните **sample-graph**, щелкните **Граф** и нажмите кнопку **Применить фильтр**. 
 
-   ![Создание документов в обозревателе данных на портале Azure](./media/create-graph-php/azure-cosmosdb-data-explorer-expanded.png)
+   :::image type="content" source="./media/create-graph-php/azure-cosmosdb-data-explorer-expanded.png" alt-text="Создание документов в обозревателе данных на портале Azure":::
 
 2. В списке **результатов** обратите внимание на новых пользователей, добавленных в граф. Выберите пользователя **ben**. Вы увидите, что он связан с пользователем robin. Здесь можно перетаскивать вершины мышью, увеличивать или уменьшать масштаб колесиком мыши, а также увеличивать размер графа с помощью двойной стрелки. 
 
-   ![Новые вершины в графе в обозревателе данных на портале Azure](./media/create-graph-php/azure-cosmosdb-graph-explorer-new.png)
+   :::image type="content" source="./media/create-graph-php/azure-cosmosdb-graph-explorer-new.png" alt-text="Новые вершины в графе в обозревателе данных на портале Azure":::
 
 3. Давайте добавим несколько новых пользователей. Нажмите кнопку **New Vertex** (Создать вершину), чтобы добавить данные в граф.
 
-   ![Создание документов в обозревателе данных на портале Azure](./media/create-graph-php/azure-cosmosdb-data-explorer-new-vertex.png)
+   :::image type="content" source="./media/create-graph-php/azure-cosmosdb-data-explorer-new-vertex.png" alt-text="Создание документов в обозревателе данных на портале Azure":::
 
 4. Введите метку *person*.
 
@@ -237,15 +238,15 @@ Azure Cosmos DB — это глобально распределенная мн
 
 12. Теперь вы можете соединить пользователей rakesh и ashley. Выберите в списке **Результаты** пользователя **ashley**, а затем нажмите кнопку редактирования рядом с разделом **Целевые объекты** в нижнем правом углу. Чтобы отобразить область **Свойства**, может потребоваться развернуть окно.
 
-    ![Изменение целевого объекта вершины в графе](./media/create-graph-php/azure-cosmosdb-data-explorer-edit-target.png)
+    :::image type="content" source="./media/create-graph-php/azure-cosmosdb-data-explorer-edit-target.png" alt-text="Изменение целевого объекта вершины в графе":::
 
 13. В поле **Целевой объект** введите *rakesh*, затем в поле **Граничная метка** введите слово *знает* и щелкните значок галочки.
 
-    ![Создание связи между пользователями ashley и rakesh в обозревателе данных](./media/create-graph-php/azure-cosmosdb-data-explorer-set-target.png)
+    :::image type="content" source="./media/create-graph-php/azure-cosmosdb-data-explorer-set-target.png" alt-text="Добавление связи между пользователями ashley и rakesh в обозревателе данных":::
 
 14. Теперь выберите пользователя **rakesh** в списке результатов. Вы увидите, что пользователи ashley и rakesh связаны. 
 
-    ![Две вершины, связанные в обозревателе данных](./media/create-graph-php/azure-cosmosdb-graph-explorer.png)
+    :::image type="content" source="./media/create-graph-php/azure-cosmosdb-graph-explorer.png" alt-text="Две вершины, связанные в обозревателе данных":::
 
     На этом часть краткого руководства, посвященная созданию ресурсов, завершена. Вы можете дополнить граф новыми вершинами, а также изменить существующие вершины или запросы. Теперь давайте изучим метрики, которые предоставляет Azure Cosmos DB, а затем очистим все ресурсы. 
 

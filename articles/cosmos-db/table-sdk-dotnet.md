@@ -8,12 +8,11 @@ ms.subservice: cosmosdb-table
 ms.devlang: dotnet
 ms.topic: reference
 ms.date: 08/17/2018
-ms.openlocfilehash: 9356ab0aec375a046a8f200838df296b2cf74bce
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 419c3f21c8606bb16112fd18cfe141655fd7b868
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80984986"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84168154"
 ---
 # <a name="azure-cosmos-db-table-net-api-download-and-release-notes"></a>API таблицы .NET для базы данных Azure Cosmos DB. Скачивание и заметки о выпуске
 
@@ -26,7 +25,7 @@ ms.locfileid: "80984986"
 
 |   |   |
 |---|---|
-|**Загрузка пакета SDK**|[NuGet](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.Table)|
+|**Скачивание пакета SDK**|[NuGet](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.Table)|
 |**Краткое руководство**|[Azure Cosmos DB: Build a .NET application using the Table API](create-table-dotnet.md) (Создание приложения .NET с помощью API таблицы Azure Cosmos DB)|
 |**Руководство**|[Разработка с помощью API таблицы базы данных Azure Cosmos DB на языке .NET](tutorial-develop-table-dotnet.md)|
 |**Текущая поддерживаемая платформа**|[Microsoft .NET Framework 4.5.1](https://www.microsoft.com/en-us/download/details.aspx?id=40779)|
@@ -39,40 +38,40 @@ ms.locfileid: "80984986"
 
 ## <a name="release-notes"></a>Заметки о выпуске
 
-### <a name="212"></a><a name="2.1.2"/>2.1.2
+### <a name="212"></a><a name="2.1.2"></a>2.1.2
 
-* Исправления ошибок
+* Исправленные ошибки
 
-### <a name="210"></a><a name="2.1.0"/>2.1.0
+### <a name="210"></a><a name="2.1.0"></a>2.1.0
 
-* Исправления ошибок
+* Исправленные ошибки
 
-### <a name="200"></a><a name="2.0.0"/>2.0.0
+### <a name="200"></a><a name="2.0.0"></a>2.0.0
 
 * Добавлена поддержка для операций записи в нескольких регионах
 * Исправлены основные зависимости пакетов NuGet в Microsoft.Azure.DocumentDB, Microsoft.OData.Core, Microsoft.OData.Edm, Microsoft.Spatial.
 
-### <a name="113"></a><a name="1.1.3"/>1.1.3
+### <a name="113"></a><a name="1.1.3"></a>1.1.3
 
 * Исправлены зависимости пакетов NuGet от Microsoft.Azure.Storage.Common и Microsoft.Azure.DocumentDB.
 * Исправление ошибок в сериализации таблиц при настройке JsonConvert.DefaultSettings.
 
-### <a name="111"></a><a name="1.1.1"/>1.1.1
+### <a name="111"></a><a name="1.1.1"></a>1.1.1
 
 * Добавлена проверка тегов сущности неправильного формата в режиме прямого подключения.
 * Исправлена ошибка, связанная с запросом LINQ, в режиме шлюза.
 * Синхронные API теперь запускаются в пуле потоков с помощью SynchronizationContext.
 
-### <a name="110"></a><a name="1.1.0"/>1.1.0
+### <a name="110"></a><a name="1.1.0"></a>1.1.0
 
 * Добавлены TableRequestOptions TableQueryMaxItemCount, TableQueryEnableScan, TableQueryMaxDegreeOfParallelism и TableQueryContinuationTokenLimitInKb
 * Исправления ошибок
 
-### <a name="100"></a><a name="1.0.0"/>1.0.0
+### <a name="100"></a><a name="1.0.0"></a>1.0.0
 
 * Выпуск общедоступной версии
 
-### <a name="090-preview"></a><a name="0.1.0-preview"/>0.9.0 (предварительная версия)
+### <a name="090-preview"></a><a name="0.1.0-preview"></a>0.9.0 (предварительная версия)
 
 * Первоначальный выпуск предварительной версии
 
@@ -80,7 +79,7 @@ ms.locfileid: "80984986"
 
 Корпорация Майкрософт отправляет уведомление минимум за **12 месяцев** до вывода пакета SDK из эксплуатации, чтобы обеспечить более плавный переход на новую или поддерживаемую версию.
 
-`Microsoft.Azure.CosmosDB.Table` Библиотека в настоящее время доступна только для .NET Framework и находится в режиме обслуживания и скоро будет считаться устаревшей. Новые функции и возможности и оптимизации добавляются только в библиотеку .NET Standard [Microsoft. Azure. Cosmos. Table](https://www.nuget.org/packages/Microsoft.Azure.Cosmos.Table), поэтому рекомендуется выполнить обновление до [Microsoft. Azure. Cosmos. Table](https://www.nuget.org/packages/Microsoft.Azure.Cosmos.Table).
+`Microsoft.Azure.CosmosDB.Table`Библиотека в настоящее время доступна только для .NET Framework и находится в режиме обслуживания и скоро будет считаться устаревшей. Новые функции и возможности и оптимизации добавляются только в библиотеку .NET Standard [Microsoft. Azure. Cosmos. Table](https://www.nuget.org/packages/Microsoft.Azure.Cosmos.Table), поэтому рекомендуется выполнить обновление до [Microsoft. Azure. Cosmos. Table](https://www.nuget.org/packages/Microsoft.Azure.Cosmos.Table).
 
 Пакет предварительной версии [WindowsAzure. Storage-PremiumTable](https://www.nuget.org/packages/WindowsAzure.Storage-PremiumTable/0.1.0-preview) является устаревшим. Поддержка пакета SDK WindowsAzure.Storage PremiumTable будет прекращена 15 ноября 2018 г. С этого времени запросы к устаревшему пакету SDK будут запрещены. 
 
@@ -90,7 +89,7 @@ ms.locfileid: "80984986"
 | Версия | Дата выпуска | Дата вывода |
 | --- | --- | --- |
 | [2.1.2](#2.1.2) |16 сентября 2019 г.| |
-| [2.1.0](#2.1.0) |22 января 2019 г.|01 апреля, 2020 |
+| [2.1.0](#2.1.0) |22 января 2019 г.|01 апреля 2020 г. |
 | [2.0.0](#2.0.0) |26 сентября 2018 г.|01 марта 2020 г. |
 | [1.1.3](#1.1.3) |17 июля 2018 г.|01 декабря 2019 г. |
 | [1.1.1](#1.1.1) |26 марта 2018 г.|01 декабря 2019 г. |
@@ -118,10 +117,10 @@ Unable to resolve dependency 'Microsoft.Azure.Storage.Common'. Source(s) used: '
     
 * Используя предпочитаемый инструмент управления пакетами NuGet, сначала установите пакет Microsoft.Azure.Storage.Common, а потом — Microsoft.Azure.CosmosDB.Table.
 
-## <a name="faq"></a>часто задаваемые вопросы
+## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
 
 [!INCLUDE [cosmos-db-sdk-faq](../../includes/cosmos-db-sdk-faq.md)]
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 
 Дополнительные сведения об API таблицы для базы данных Azure Cosmos DB см. в [этой статье](table-introduction.md). 

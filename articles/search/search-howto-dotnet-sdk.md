@@ -9,16 +9,16 @@ ms.devlang: dotnet
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: b31a4e40c1e9095499faf265673ab4213ad6bde0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 929241d7bc5db5476bab84d00fde90d4db55aedc
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79283073"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86146908"
 ---
 # <a name="how-to-use-azure-cognitive-search-from-a-net-application"></a>Использование Когнитивный поиск Azure из приложения .NET
 
-Эта статья представляет собой пошаговое руководство по началу работы с [пакетом SDK Azure когнитивный Поиск .NET](https://aka.ms/search-sdk). Пакет SDK для .NET можно использовать для реализации расширенных возможностей поиска в приложении с помощью Azure Когнитивный поиск.
+Эта статья представляет собой пошаговое руководство по началу работы с [пакетом SDK Azure когнитивный Поиск .NET](https://docs.microsoft.com/dotnet/api/overview/azure/search). Пакет SDK для .NET можно использовать для реализации расширенных возможностей поиска в приложении с помощью Azure Когнитивный поиск.
 
 ## <a name="whats-in-the-azure-cognitive-search-sdk"></a>Что такое Azure Когнитивный поиск SDK
 Пакет SDK содержит клиентские библиотеки, позволяющие управлять индексами, источниками данных, индексаторами и картами синонимов, а также отправлять документы, управлять ими и выполнять запросы, не вникая в детали HTTP и JSON. Эти клиентские библиотеки распределяются как пакеты NuGet.
@@ -28,7 +28,7 @@ ms.locfileid: "79283073"
 Ниже перечислены другие пакеты NuGet в пакете SDK.
  
   - `Microsoft.Azure.Search.Data`: Используйте этот пакет, если вы разрабатываете приложение .NET с помощью Azure Когнитивный поиск и вам нужно только запрашивать или обновлять документы в индексах. Если требуется также создавать или обновлять индексы, карты синонимов и другие ресурсы уровня службы, используйте пакет `Microsoft.Azure.Search`.
-  - `Microsoft.Azure.Search.Service`: Используйте этот пакет, если вы разрабатываете автоматизацию в .NET для управления индексами Azure Когнитивный поиск, сопоставлениями синонимов, индексаторами, источниками данных или другими ресурсами уровня службы. Если требуется только запрашивать и обновлять документы в индексах, используйте пакет `Microsoft.Azure.Search.Data`. Если вам нужны все функции Когнитивный поиск Azure, используйте вместо этого `Microsoft.Azure.Search` пакет.
+  - `Microsoft.Azure.Search.Service`: Используйте этот пакет, если вы разрабатываете автоматизацию в .NET для управления индексами Azure Когнитивный поиск, сопоставлениями синонимов, индексаторами, источниками данных или другими ресурсами уровня службы. Если требуется только запрашивать и обновлять документы в индексах, используйте пакет `Microsoft.Azure.Search.Data`. Если вам нужны все функции Когнитивный поиск Azure, используйте `Microsoft.Azure.Search` вместо этого пакет.
   - `Microsoft.Azure.Search.Common`: Общие типы, необходимые для библиотек Azure Когнитивный поиск .NET. Этот пакет не требуется использовать непосредственно в приложении. Он предназначен только для использования в качестве зависимости.
 
 Различные клиентские библиотеки определяют такие классы, как `Index`, `Field` и `Document`, а также такие операции, как `Indexes.Create` и `Documents.Search` в классах `SearchServiceClient` и `SearchIndexClient`. Эти классы упорядочены в следующие подразделы:
@@ -38,7 +38,7 @@ ms.locfileid: "79283073"
 
 Если вы хотите оставить отзыв о будущем обновлении пакета SDK, ознакомьтесь со [страницей отзывов](https://feedback.azure.com/forums/263029-azure-search/) или создайте вопрос на сайте [GitHub](https://github.com/azure/azure-sdk-for-net/issues) и приведем название "Azure когнитивный Поиск" в названии проблемы.
 
-Пакет SDK для .NET поддерживает `2019-05-06` версию [REST API когнитивный Поиск Azure](https://docs.microsoft.com/rest/api/searchservice/). Эта версия включает поддержку [сложных типов](search-howto-complex-data-types.md), [обогащения AI](cognitive-search-concept-intro.md), [автозаполнения](https://docs.microsoft.com/rest/api/searchservice/autocomplete)и [режима синтаксического анализа Жсонлинес](search-howto-index-json-blobs.md) при индексировании больших двоичных объектов Azure. 
+Версия пакета SDK для .NET предназначена `2019-05-06` для [REST API когнитивный Поиск Azure](https://docs.microsoft.com/rest/api/searchservice/). Эта версия включает поддержку [сложных типов](search-howto-complex-data-types.md), [обогащения AI](cognitive-search-concept-intro.md), [автозаполнения](https://docs.microsoft.com/rest/api/searchservice/autocomplete)и [режима синтаксического анализа Жсонлинес](search-howto-index-json-blobs.md) при индексировании больших двоичных объектов Azure. 
 
 Этот пакет SDK не поддерживает такие [операции управления](https://docs.microsoft.com/rest/api/searchmanagement/), как создание и масштабирование служб поиска или управление ключами API. Если вам нужно управлять ресурсами поиска из приложения .NET, можно использовать [пакет SDK для управления Azure когнитивный Поиск .NET](https://aka.ms/search-mgmt-sdk).
 
@@ -128,14 +128,14 @@ Console.WriteLine("{0}", "Creating index...\n");
 CreateIndex(indexName, serviceClient);
 ```
 
-Затем необходимо заполнить индекс. Чтобы заполнить индекс, нам потребуется `SearchIndexClient`. Его можно получить двумя способами: создать его самостоятельно или вызвать метод `Indexes.GetClient` в `SearchServiceClient`. Для удобства мы используем второй способ.
+Затем необходимо заполнить индекс. Чтобы заполнить индекс, нам потребуется `SearchIndexClient` . Его можно получить двумя способами: создать его самостоятельно или вызвать метод `Indexes.GetClient` в `SearchServiceClient`. Для удобства мы используем второй способ.
 
 ```csharp
 ISearchIndexClient indexClient = serviceClient.Indexes.GetClient(indexName);
 ```
 
 > [!NOTE]
-> В типичном приложении поиска Управление индексами и заполнение может обрабатываться отдельным компонентом из поисковых запросов. `Indexes.GetClient`удобно использовать для заполнения индекса, так как он позволяет избежать дополнительных `SearchCredentials`проблем. Это достигается благодаря передачи ключа администратора, который использовался для создания `SearchServiceClient`, в новый элемент `SearchIndexClient`. Однако в части приложения, выполняющей запросы, лучше создать `SearchIndexClient` напрямую, чтобы можно было передать ключ запроса, который позволяет только считывать данные вместо ключа администратора. Это согласуется с принципом наименьших прав доступа и поможет сделать приложение более безопасным. Дополнительные сведения о ключах администраторов и запросов см. [здесь](https://docs.microsoft.com/rest/api/searchservice/#authentication-and-authorization).
+> В типичном приложении поиска Управление индексами и заполнение может обрабатываться отдельным компонентом из поисковых запросов. `Indexes.GetClient`удобно использовать для заполнения индекса, так как он позволяет избежать дополнительных проблем `SearchCredentials` . Это достигается благодаря передачи ключа администратора, который использовался для создания `SearchServiceClient`, в новый элемент `SearchIndexClient`. Однако в части приложения, выполняющей запросы, лучше создать `SearchIndexClient` напрямую, чтобы можно было передать ключ запроса, который позволяет только считывать данные вместо ключа администратора. Это согласуется с принципом наименьших прав доступа и поможет сделать приложение более безопасным. Дополнительные сведения о ключах администраторов и запросов см. [здесь](https://docs.microsoft.com/rest/api/searchservice/#authentication-and-authorization).
 > 
 > 
 
@@ -171,53 +171,56 @@ private static SearchIndexClient CreateSearchIndexClient(string indexName, IConf
 
 Если запустить это приложение с допустимым именем службы и ключами API, выходные данные должны выглядеть, как в следующем примере: (некоторые выходные данные консоли были заменены на "..." в целях иллюстрации.)
 
-    Deleting index...
+```output
 
-    Creating index...
+Deleting index...
 
-    Uploading documents...
+Creating index...
 
-    Waiting for documents to be indexed...
+Uploading documents...
 
-    Search the entire index for the term 'motel' and return only the HotelName field:
+Waiting for documents to be indexed...
 
-    Name: Secret Point Motel
+Search the entire index for the term 'motel' and return only the HotelName field:
 
-    Name: Twin Dome Motel
+Name: Secret Point Motel
 
-
-    Apply a filter to the index to find hotels with a room cheaper than $100 per night, and return the hotelId and description:
-
-    HotelId: 1
-    Description: The hotel is ideally located on the main commercial artery of the city in the heart of New York. A few minutes away is Times Square and the historic centre of the city, as well as other places of interest that make New York one of America's most attractive and cosmopolitan cities.
-
-    HotelId: 2
-    Description: The hotel is situated in a  nineteenth century plaza, which has been expanded and renovated to the highest architectural standards to create a modern, functional and first-class hotel in which art and unique historical elements coexist with the most modern comforts.
+Name: Twin Dome Motel
 
 
-    Search the entire index, order by a specific field (lastRenovationDate) in descending order, take the top two results, and show only hotelName and lastRenovationDate:
+Apply a filter to the index to find hotels with a room cheaper than $100 per night, and return the hotelId and description:
 
-    Name: Triple Landscape Hotel
-    Last renovated on: 9/20/2015 12:00:00 AM +00:00
+HotelId: 1
+Description: The hotel is ideally located on the main commercial artery of the city in the heart of New York. A few minutes away is Times Square and the historic centre of the city, as well as other places of interest that make New York one of America's most attractive and cosmopolitan cities.
 
-    Name: Twin Dome Motel
-    Last renovated on: 2/18/1979 12:00:00 AM +00:00
+HotelId: 2
+Description: The hotel is situated in a  nineteenth century plaza, which has been expanded and renovated to the highest architectural standards to create a modern, functional and first-class hotel in which art and unique historical elements coexist with the most modern comforts.
 
 
-    Search the hotel names for the term 'hotel':
+Search the entire index, order by a specific field (lastRenovationDate) in descending order, take the top two results, and show only hotelName and lastRenovationDate:
 
-    HotelId: 3
-    Name: Triple Landscape Hotel
-    ...
+Name: Triple Landscape Hotel
+Last renovated on: 9/20/2015 12:00:00 AM +00:00
 
-    Complete.  Press any key to end application... 
+Name: Twin Dome Motel
+Last renovated on: 2/18/1979 12:00:00 AM +00:00
+
+
+Search the hotel names for the term 'hotel':
+
+HotelId: 3
+Name: Triple Landscape Hotel
+...
+
+Complete.  Press any key to end application... 
+```
 
 Полный исходный код приложения представлен в конце этой статьи.
 
 Далее мы подробнее рассмотрим каждый из методов, вызываемых элементом `Main`.
 
 ### <a name="creating-an-index"></a>Создание индекса
-После создания удаляет `SearchServiceClient`индекс `Main` гостиниц, если он уже существует. Удаление выполняется с помощью следующего метода:
+После создания `SearchServiceClient` `Main` удаляет индекс гостиниц, если он уже существует. Удаление выполняется с помощью следующего метода:
 
 ```csharp
 private static void DeleteIndexIfExists(string indexName, SearchServiceClient serviceClient)
@@ -377,19 +380,19 @@ private static void UploadDocuments(ISearchIndexClient indexClient)
 }
 ```
 
-Этот метод состоит из четырех частей. Первый создает массив из трех `Hotel` объектов, каждый из которых имеет `Room` 3 объекта, которые будут служить входными данными для отправки в индекс. Эти данные жестко запрограммированы для простоты. В вашем приложении данные скорее всего будут поступать из внешнего источника, например базы данных SQL.
+Этот метод состоит из четырех частей. Первый создает массив из трех `Hotel` объектов, каждый из которых имеет 3 `Room` объекта, которые будут служить входными данными для отправки в индекс. Эти данные жестко запрограммированы для простоты. В вашем приложении данные скорее всего будут поступать из внешнего источника, например базы данных SQL.
 
 Вторая часть создает `IndexBatch` , содержащий документы. Вы указываете операцию, которую необходимо применить к пакету во время его создания, в данном случае путем вызова метода `IndexBatch.Upload`. Затем пакет отправляется в индекс Когнитивный поиск Azure по `Documents.Index` методу.
 
 > [!NOTE]
-> В этом примере мы просто отправляем документы. Если требуется внести изменения в существующие документы или удалить документы, можно создать пакеты, вызвав методы `IndexBatch.Merge`, `IndexBatch.MergeOrUpload` или `IndexBatch.Delete`. Можно также смешивать различные операции в одном пакете, вызывая метод `IndexBatch.New`, который принимает коллекцию `IndexAction` объектов, каждый из которых сообщает когнитивный Поиск Azure выполнить определенную операцию над документом. Можно создать каждый `IndexAction` с отдельной операцией, вызвав соответствующий метод, например `IndexAction.Merge`, `IndexAction.Upload` и т. д.
+> В этом примере мы просто отправляем документы. Если требуется внести изменения в существующие документы или удалить документы, можно создать пакеты, вызвав методы `IndexBatch.Merge`, `IndexBatch.MergeOrUpload` или `IndexBatch.Delete`. Можно также смешивать различные операции в одном пакете, вызывая метод `IndexBatch.New` , который принимает коллекцию `IndexAction` объектов, каждый из которых сообщает когнитивный Поиск Azure выполнить определенную операцию над документом. Можно создать каждый `IndexAction` с отдельной операцией, вызвав соответствующий метод, например `IndexAction.Merge`, `IndexAction.Upload` и т. д.
 > 
 > 
 
-Третья часть метода — это блок catch, который обрабатывает важные ошибки индексирования. Если службе Когнитивный поиск Azure не удается индексировать некоторые документы в пакете, `IndexBatchException` создается исключение. `Documents.Index` Это исключение может произойти при индексировании документов, пока служба находится в режиме высокой нагрузки. **Настоятельно рекомендуется явно обрабатывать этот случай в коде.**  Вы можете задержать и повторить попытку индексирования соответствующих документов либо занести ошибку в журнал и продолжить работу, как в нашем примере, а также выполнить другие действия в зависимости от требований вашего приложения к целостности данных.
+Третья часть метода — это блок catch, который обрабатывает важные ошибки индексирования. Если службе Когнитивный поиск Azure не удается индексировать некоторые документы в пакете, создается `IndexBatchException` исключение `Documents.Index` . Это исключение может произойти при индексировании документов, пока служба находится в режиме высокой нагрузки. **Настоятельно рекомендуется явно обрабатывать этот случай в коде.**  Вы можете задержать и повторить попытку индексирования соответствующих документов либо занести ошибку в журнал и продолжить работу, как в нашем примере, а также выполнить другие действия в зависимости от требований вашего приложения к целостности данных.
 
 > [!NOTE]
-> [`FindFailedActionsToRetry`](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.indexbatchexception.findfailedactionstoretry) Метод можно использовать для создания нового пакета, содержащего только действия, которые завершились сбоем в предыдущем вызове метода `Index`. На сайте [StackOverflow](https://stackoverflow.com/questions/40012885/azure-search-net-sdk-how-to-use-findfailedactionstoretry) опубликовано обсуждение правил его использования.
+> Метод можно использовать [`FindFailedActionsToRetry`](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.indexbatchexception.findfailedactionstoretry) для создания нового пакета, содержащего только действия, которые завершились сбоем в предыдущем вызове метода `Index` . На сайте [StackOverflow](https://stackoverflow.com/questions/40012885/azure-search-net-sdk-how-to-use-findfailedactionstoretry) опубликовано обсуждение правил его использования.
 >
 >
 
@@ -398,7 +401,7 @@ private static void UploadDocuments(ISearchIndexClient indexClient)
 <a name="how-dotnet-handles-documents"></a>
 
 #### <a name="how-the-net-sdk-handles-documents"></a>Обработка документов пакетом SDK для .NET
-Возможно, вас интересует, как пакет SDK Azure Когнитивный поиск для .NET может отправлять экземпляры определяемого пользователем класса, например `Hotel` в индекс. Чтобы ответить на этот вопрос, рассмотрим класс `Hotel` :
+Возможно, вас интересует, как пакет SDK Azure Когнитивный поиск для .NET может отправлять экземпляры определяемого пользователем класса, например в `Hotel` индекс. Чтобы ответить на этот вопрос, рассмотрим класс `Hotel` :
 
 ```csharp
 using System;
@@ -462,9 +465,9 @@ public partial class Hotel
 > 
 > 
 
-Второе, что нужно отметить, — это каждое свойство, дополненное атрибутами `IsSearchable`, `Key`такими как `Analyzer` `IsFilterable`,, и. Эти атрибуты сопоставляются непосредственно с [соответствующими атрибутами полей в индексе Azure когнитивный Поиск](/rest/api/searchservice/create-index). `FieldBuilder` Класс использует эти свойства для создания определений полей для индекса.
+Второе, что нужно отметить, — это каждое свойство, дополненное атрибутами, такими как `IsFilterable` ,, `IsSearchable` `Key` и `Analyzer` . Эти атрибуты сопоставляются непосредственно с [соответствующими атрибутами полей в индексе Azure когнитивный Поиск](/rest/api/searchservice/create-index). `FieldBuilder`Класс использует эти свойства для создания определений полей для индекса.
 
-Третьим важным моментом для `Hotel` класса являются типы данных общих свойств. Типы .NET этих свойств сопоставляются с эквивалентными типами полей в определении индекса. Например, свойство строки `Category` сопоставляется с полем `category`, которое имеет тип `Edm.String`. Существуют аналогичные сопоставления типов `bool?`между, `Edm.Boolean` `DateTimeOffset?`, и `Edm.DateTimeOffset` т. д. Конкретные правила сопоставления типов описаны в описании `Documents.Get` метода в [справочнике по пакету SDK для Azure когнитивный Поиск .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.documentsoperationsextensions.get). Хотя класс `FieldBuilder` выполняет это сопоставление, этот механизм полезно понимать на случай, если вам понадобится устранять неполадки, связанные с сериализацией.
+Третьим важным моментом для `Hotel` класса являются типы данных общих свойств. Типы .NET этих свойств сопоставляются с эквивалентными типами полей в определении индекса. Например, свойство строки `Category` сопоставляется с полем `category`, которое имеет тип `Edm.String`. Существуют аналогичные сопоставления типов между,, `bool?` `Edm.Boolean` `DateTimeOffset?` и `Edm.DateTimeOffset` т. д. Конкретные правила сопоставления типов описаны в описании `Documents.Get` метода в [справочнике по пакету SDK для Azure когнитивный Поиск .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.documentsoperationsextensions.get). Хотя класс `FieldBuilder` выполняет это сопоставление, этот механизм полезно понимать на случай, если вам понадобится устранять неполадки, связанные с сериализацией.
 
 Возможно, вы заметите `SmokingAllowed` свойство?
 
@@ -473,11 +476,11 @@ public partial class Hotel
 public bool? SmokingAllowed => (Rooms != null) ? Array.Exists(Rooms, element => element.SmokingAllowed == true) : (bool?)null;
 ```
 
-`JsonIgnore` Атрибут в этом свойстве указывает, `FieldBuilder` что не следует сериализовать его в индекс в качестве поля.  Это отличный способ создания вычисляемых свойств на стороне клиента, которые можно использовать в качестве вспомогательных функций в приложении.  В этом случае `SmokingAllowed` свойство отражает, разрешено ли `Room` в `Rooms` коллекции Курение.  Если все имеют значение false, это означает, что вся Гостиницы не допускает Курение.
+`JsonIgnore`Атрибут в этом свойстве указывает, что `FieldBuilder` не следует сериализовать его в индекс в качестве поля.  Это отличный способ создания вычисляемых свойств на стороне клиента, которые можно использовать в качестве вспомогательных функций в приложении.  В этом случае `SmokingAllowed` свойство отражает, `Room` `Rooms` разрешено ли в коллекции Курение.  Если все имеют значение false, это означает, что вся Гостиницы не допускает Курение.
 
-Некоторые свойства, такие `Address` как `Rooms` и, являются экземплярами классов .NET.  Эти свойства представляют более сложные структуры данных, и в результате для них требуются поля со [сложным типом данных](https://docs.microsoft.com/azure/search/search-howto-complex-data-types) в индексе.
+Некоторые свойства, такие как `Address` и `Rooms` , являются экземплярами классов .NET.  Эти свойства представляют более сложные структуры данных, и в результате для них требуются поля со [сложным типом данных](https://docs.microsoft.com/azure/search/search-howto-complex-data-types) в индексе.
 
-`Address` Свойство представляет набор из нескольких значений в `Address` классе, определенный ниже:
+`Address`Свойство представляет набор из нескольких значений в `Address` классе, определенный ниже:
 
 ```csharp
 using System;
@@ -509,7 +512,7 @@ namespace AzureSearch.SDKHowTo
 
 Этот класс содержит стандартные значения, используемые для описания адресов в США или Канаде. Такие типы можно использовать для группирования логических полей в индексе.
 
-`Rooms` Свойство представляет массив `Room` объектов:
+`Rooms`Свойство представляет массив `Room` объектов:
 
 ```csharp
 using System;
@@ -556,24 +559,26 @@ namespace AzureSearch.SDKHowTo
 Эта возможность использовать собственные классы для взаимодействия с документами в индексе работает в обоих направлениях. Кроме того, можно получить результаты поиска, чтобы пакет SDK автоматически десериализовать их по своему усмотрению, как будет показано в следующем разделе.
 
 > [!NOTE]
-> Пакет SDK Azure Когнитивный поиск .NET также поддерживает динамически типизированные документы с помощью `Document` класса, который представляет собой сопоставление ключей и значений имен полей со значениями полей. Это полезно в тех случаях, когда во время разработки вам неизвестна схема индекса или привязка к конкретным классам моделей нецелесообразна. Все методы пакета SDK, связанные с документами, имеют перегрузки, работающие с классом `Document`, а также строго типизированные перегрузки, принимающие параметр универсального типа. Пример кода в данном руководстве содержит только перегрузки второго типа. Класс наследует от `Dictionary<string, object>`. [ `Document` ](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.document)
+> Пакет SDK Azure Когнитивный поиск .NET также поддерживает динамически типизированные документы с помощью `Document` класса, который представляет собой сопоставление ключей и значений имен полей со значениями полей. Это полезно в тех случаях, когда во время разработки вам неизвестна схема индекса или привязка к конкретным классам моделей нецелесообразна. Все методы пакета SDK, связанные с документами, имеют перегрузки, работающие с классом `Document`, а также строго типизированные перегрузки, принимающие параметр универсального типа. Пример кода в данном руководстве содержит только перегрузки второго типа. [ `Document` Класс](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.document) наследует от `Dictionary<string, object>` .
 > 
 >
 
 **Почему следует использовать типы данных, допускающие значение NULL**
 
-При проектировании собственных классов модели для соотнесения с индексом Когнитивный поиск Azure рекомендуется объявлять свойства типов значений, таких `bool` как и `int` , для допускающих значения NULL (например `bool?` , вместо `bool`). При использовании ненулевого свойства необходимо **гарантировать** , что документы в индексе не будут содержать значение NULL для соответствующего поля. Ни пакет SDK, ни служба Когнитивный поиск Azure не помогут обеспечить это.
+При проектировании собственных классов модели для соотнесения с индексом Когнитивный поиск Azure рекомендуется объявлять свойства типов значений, таких как `bool` и, `int` для допускающих значения NULL (например, `bool?` вместо `bool` ). При использовании ненулевого свойства необходимо **гарантировать** , что документы в индексе не будут содержать значение NULL для соответствующего поля. Ни пакет SDK, ни служба Когнитивный поиск Azure не помогут обеспечить это.
 
 Это не просто гипотетическое соображение. Представьте себе ситуацию, когда вы добавляете новое поле в существующий индекс с типом `Edm.Int32`. После обновления определения индекса все документы будут иметь значение NULL для этого нового поля (так как все типы допускают значения NULL в Azure Когнитивный поиск). Если затем для этого поля вы используете класс модели со свойством `int`, не допускающим нулевое значение, при попытке получения документов вы получите `JsonSerializationException` следующим образом:
 
-    Error converting value {null} to type 'System.Int32'. Path 'IntValue'.
+```output
+Error converting value {null} to type 'System.Int32'. Path 'IntValue'.
+```
 
 По этой причине по-прежнему рекомендуется использовать типы, допускающие значения NULL, в классах модели.
 
 <a name="JsonDotNet"></a>
 
 #### <a name="custom-serialization-with-jsonnet"></a>Пользовательская сериализация с помощью JSON.NET
-Пакет SDK использует JSON.NET для сериализации и десериализации документов. При необходимости можно настроить сериализацию и десериализацию, определив собственные `JsonConverter` или. `IContractResolver` Дополнительные сведения см. в [документации по JSON.NET](https://www.newtonsoft.com/json/help/html/Introduction.htm). Это может быть полезно, если вы хотите адаптировать существующий класс модели из приложения для использования с Azure Когнитивный поиск и другими более сложными сценариями. Например, с помощью пользовательской сериализации можно делать следующее.
+Пакет SDK использует JSON.NET для сериализации и десериализации документов. При необходимости можно настроить сериализацию и десериализацию, определив собственные `JsonConverter` или `IContractResolver` . Дополнительные сведения см. в [документации по JSON.NET](https://www.newtonsoft.com/json/help/html/Introduction.htm). Это может быть полезно, если вы хотите адаптировать существующий класс модели из приложения для использования с Azure Когнитивный поиск и другими более сложными сценариями. Например, с помощью пользовательской сериализации можно делать следующее.
 
 * Включить или исключить определенные свойства класса модели с сохранением в виде поля документа.
 * Реализовать сопоставление между именами свойств в коде и именами полей в индексе.
@@ -680,9 +685,11 @@ WriteDocuments(results);
 
 В этом случае мы ищем по всему индексу слово «Motel» в любом поле с возможностью поиска, и мы хотим получить только названия гостиниц, как указано в `Select` параметре. Результаты приведены ниже.
 
-    Name: Secret Point Motel
+```output
+Name: Secret Point Motel
 
-    Name: Twin Dome Motel
+Name: Twin Dome Motel
+```
 
 Следующий запрос является чуть более интересным.  Мы хотим найти все гостиницы, у которых есть комната со ставкой менее $100 и возвращающие только идентификатор отеля и описание:
 
@@ -703,11 +710,13 @@ WriteDocuments(results);
 
 Вот результат выполнения этого запроса:
 
-    HotelId: 1
-    Description: The hotel is ideally located on the main commercial artery of the city in the heart of New York...
+```output
+HotelId: 1
+Description: The hotel is ideally located on the main commercial artery of the city in the heart of New York...
 
-    HotelId: 2
-    Description: The hotel is situated in a nineteenth century plaza, which has been expanded and renovated to...
+HotelId: 2
+Description: The hotel is situated in a nineteenth century plaza, which has been expanded and renovated to...
+```
 
 Теперь нам нужно найти две гостиницы с самым свежим ремонтом и отобразить для них название и дату ремонта. Ниже приведен код: 
 
@@ -729,8 +738,10 @@ WriteDocuments(results);
 
 Результаты приведены ниже.
 
-    Name: Fancy Stay        Last renovated on: 6/27/2010 12:00:00 AM +00:00
-    Name: Roach Motel       Last renovated on: 4/28/1982 12:00:00 AM +00:00
+```output
+Name: Fancy Stay        Last renovated on: 6/27/2010 12:00:00 AM +00:00
+Name: Roach Motel       Last renovated on: 4/28/1982 12:00:00 AM +00:00
+```
 
 Наконец, мы хотим найти все названия гостиниц, соответствующие слову «Гостиница»:
 
@@ -746,13 +757,15 @@ WriteDocuments(results);
 
 Ниже представлены результаты этого запроса. Они включают все поля, так как мы не указали свойство `Select`:
 
+```output
     HotelId: 3
     Name: Triple Landscape Hotel
     ...
+```
 
 На этом руководство заканчивается, но вам не стоит останавливаться. * * Дальнейшие действия предоставляют дополнительные ресурсы для изучения Когнитивный поиск Azure.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Изучите справочную информацию о [пакете SDK для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search) и [REST API](https://docs.microsoft.com/rest/api/searchservice/).
 * Изучите [соглашения о наименовании](https://docs.microsoft.com/rest/api/searchservice/Naming-rules) , чтобы узнать правила именования различных объектов.
 * Проверьте [Поддерживаемые типы данных](https://docs.microsoft.com/rest/api/searchservice/Supported-data-types) в Azure когнитивный Поиск.

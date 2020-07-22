@@ -1,21 +1,29 @@
 ---
 title: Список определений встроенных политик
 description: Список определений встроенных политик для Политики Azure. К категориям относятся теги, соответствие нормативным требованиям, Key Vault, Kubernetes, гостевая конфигурация и многое другое.
-ms.date: 04/26/2020
+ms.date: 07/10/2020
 ms.topic: sample
 ms.custom: generated
-ms.openlocfilehash: 47105fdbc2bc48d43aa5539613854c82ce4ffbd6
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 1db053744a68e34fc3995916605be75a49887f01
+ms.sourcegitcommit: 0b2367b4a9171cac4a706ae9f516e108e25db30c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82191214"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86277346"
 ---
 # <a name="azure-policy-built-in-policy-definitions"></a>Определения встроенных политик в Политике Azure
 
 Эта страница представляет собой индекс определений встроенных политик в Политике Azure.
 
 Имя каждой из встроенных политик связано с определением политики на портале Azure. Чтобы просмотреть исходный репозиторий [GitHub для службы "Политика Azure"](https://github.com/Azure/azure-policy), перейдите по ссылке в столбце **Источник**. Встроенные инициативы группируются по свойству **category** (категория) в **метаданных**. Перейти к определенной **категории** можно с помощью меню в правой части страницы. Или нажмите <kbd>CTRL</kbd>-<kbd>F</kbd>, чтобы использовать функцию поиска в браузере.
+
+## <a name="api-for-fhir"></a>API для FHIR
+
+[!INCLUDE [azure-policy-samples-policies-api-for-fhir](../../../../includes/policy/samples/bycat/policies-api-for-fhir.md)]
+
+## <a name="api-management"></a>Управление API
+
+[!INCLUDE [azure-policy-samples-policies-api-management](../../../../includes/policy/samples/bycat/policies-api-management.md)]
 
 ## <a name="app-configuration"></a>Конфигурация приложений
 
@@ -45,6 +53,10 @@ ms.locfileid: "82191214"
 
 [!INCLUDE [azure-policy-samples-policies-cache](../../../../includes/policy/samples/bycat/policies-cache.md)]
 
+## <a name="cognitive-services"></a>Cognitive Services
+
+[!INCLUDE [azure-policy-samples-policies-cognitive-services](../../../../includes/policy/samples/bycat/policies-cognitive-services.md)]
+
 ## <a name="compute"></a>Службы вычислений
 
 [!INCLUDE [azure-policy-samples-policies-compute](../../../../includes/policy/samples/bycat/policies-compute.md)]
@@ -64,6 +76,10 @@ ms.locfileid: "82191214"
 ## <a name="data-lake"></a>Data Lake
 
 [!INCLUDE [azure-policy-samples-policies-data-lake](../../../../includes/policy/samples/bycat/policies-data-lake.md)]
+
+## <a name="event-grid"></a>Сетка событий Azure
+
+[!INCLUDE [azure-policy-samples-policies-event-grid](../../../../includes/policy/samples/bycat/policies-event-grid.md)]
 
 ## <a name="event-hub"></a>Концентратор событий
 
@@ -89,10 +105,6 @@ ms.locfileid: "82191214"
 
 [!INCLUDE [azure-policy-samples-policies-kubernetes](../../../../includes/policy/samples/bycat/policies-kubernetes.md)]
 
-## <a name="kubernetes-service"></a>Служба Kubernetes
-
-[!INCLUDE [azure-policy-samples-policies-kubernetes-service](../../../../includes/policy/samples/bycat/policies-kubernetes-service.md)]
-
 ## <a name="lighthouse"></a>Lighthouse
 
 [!INCLUDE [azure-policy-samples-policies-lighthouse](../../../../includes/policy/samples/bycat/policies-lighthouse.md)]
@@ -100,6 +112,10 @@ ms.locfileid: "82191214"
 ## <a name="logic-apps"></a>Logic Apps
 
 [!INCLUDE [azure-policy-samples-policies-logic-apps](../../../../includes/policy/samples/bycat/policies-logic-apps.md)]
+
+## <a name="machine-learning"></a>Машинное обучение
+
+[!INCLUDE [azure-policy-samples-policies-machine-learning](../../../../includes/policy/samples/bycat/policies-machine-learning.md)]
 
 ## <a name="managed-application"></a>Управляемое приложение
 
@@ -129,6 +145,10 @@ ms.locfileid: "82191214"
 
 [!INCLUDE [azure-policy-samples-policies-service-fabric](../../../../includes/policy/samples/bycat/policies-service-fabric.md)]
 
+## <a name="signalr"></a>SignalR
+
+[!INCLUDE [azure-policy-samples-policies-signalr](../../../../includes/policy/samples/bycat/policies-signalr.md)]
+
 ## <a name="sql"></a>SQL
 
 [!INCLUDE [azure-policy-samples-policies-sql](../../../../includes/policy/samples/bycat/policies-sql.md)]
@@ -144,6 +164,10 @@ ms.locfileid: "82191214"
 ## <a name="tags"></a>Теги
 
 [!INCLUDE [azure-policy-samples-policies-tags](../../../../includes/policy/samples/bycat/policies-tags.md)]
+
+## <a name="vm-image-builder"></a>Средство создания образа виртуальной машины
+
+[!INCLUDE [azure-policy-samples-policies-vm-image-builder](../../../../includes/policy/samples/bycat/policies-vm-image-builder.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

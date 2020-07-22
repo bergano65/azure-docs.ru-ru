@@ -8,21 +8,20 @@ ms.workload: infrastructure-services
 ms.date: 10/30/2019
 ms.author: cynthn
 ms.openlocfilehash: f89b28e7a3c29e45efa2796788e27325c01d7098
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81759250"
 ---
 # <a name="deploy-vms-to-proximity-placement-groups-using-azure-cli"></a>Развертывание виртуальных машин в группах размещения с помощью Azure CLI
 
 Чтобы виртуальные машины максимально близки к максимально возможной задержке, следует развернуть их в [группе размещения](co-location.md#proximity-placement-groups)с учетом расположения.
 
-Группа размещения с учетом расположения — это логическая группировка, используемая для того, чтобы ресурсы вычислений Azure физически размещались близко друг к другу. Группы размещения с учетом расположения удобны для рабочих нагрузок, где требуется низкая задержка.
+Группа размещения близкого взаимодействия — это логическая группировка, используемая для того, чтобы ресурсы вычислений Azure физически размещались близко друг к другу. Группа размещения близкого взаимодействия удобны для рабочих нагрузок, где требуется низкая задержка.
 
 
 ## <a name="create-the-proximity-placement-group"></a>Создание группы размещения с учетом расположения
-Создайте группу размещения с учетом [`az ppg create`](/cli/azure/ppg#az-ppg-create)расположения с помощью. 
+Создайте группу размещения с учетом расположения с помощью [`az ppg create`](/cli/azure/ppg#az-ppg-create) . 
 
 ```azurecli-interactive
 az group create --name myPPGGroup --location westus
@@ -33,7 +32,7 @@ az ppg create \
    -t standard 
 ```
 
-## <a name="list-proximity-placement-groups"></a>Список групп размещения с учетом расположения
+## <a name="list-proximity-placement-groups"></a>Перечисление групп размещения близкого взаимодействия
 
 Список всех групп размещения с учетом расположения можно вывести с помощью команды [AZ ППГ List](/cli/azure/ppg#az-ppg-list).
 
@@ -63,7 +62,7 @@ az ppg show --name myppg --resource-group myppggroup --query "virtualMachines"
 ```
 
 ## <a name="availability-sets"></a>Группы доступности
-Вы также можете создать группу доступности в группе размещения с близкой назначением. Используйте тот же `--ppg` параметр, выполнив команду [AZ VM Availability-Set Create](/cli/azure/vm/availability-set#az-vm-availability-set-create) , чтобы создать группу доступности, а все виртуальные машины в группе доступности также будут созданы в той же группы размещения близости.
+Вы также можете создать группу доступности в группе размещения с близкой назначением. Используйте тот же параметр, выполнив команду `--ppg` [AZ VM Availability-Set Create](/cli/azure/vm/availability-set#az-vm-availability-set-create) , чтобы создать группу доступности, а все виртуальные машины в группе доступности также будут созданы в той же группы размещения близости.
 
 ## <a name="scale-sets"></a>Масштабируемые наборы
 

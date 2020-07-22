@@ -2,19 +2,17 @@
 title: Включить имя файла
 description: включить файл
 documentationcenter: partner-center-commercial-marketplace
-author: qianw211
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: include
-ms.date: 10/09/2019
-ms.author: dsindona
+ms.date: 06/01/2020
 ms.custom: include file
-ms.openlocfilehash: f79b25c98ae2e764f607fc5a12bc311ed0edacae
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 38f97f8f3397eb1737c2414f5bbbccf99503711e
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80286189"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86121896"
 ---
 Напрямую Подключайтесь к клиентам, перечисляя свое предложение в Marketplace и применяя систему управления отношениями с клиентами (CRM), чтобы вы могли получить контактную информацию клиента сразу после того, как клиент выражает интерес или развертывает продукт.
 
@@ -22,7 +20,6 @@ ms.locfileid: "80286189"
 
 Центр партнеров поддерживает следующие системы CRM для управления интересами. Выберите ссылку на инструкции по настройке.
 
-- [BLOB-объект Azure](../commercial-marketplace-lead-management-instructions-azure-blob.md) . Укажите адрес электронной почты, имя контейнера и строку подключения к учетной записи хранения. 
 - [Таблица Azure](../commercial-marketplace-lead-management-instructions-azure-table.md) . Укажите адрес электронной почты и строку подключения к учетной записи хранения. 
 - [Dynamics CRM Online](../commercial-marketplace-lead-management-instructions-dynamics.md) — укажите контактную почту, URL-адрес и режим проверки подлинности (Office 365 или Azure Active Directory).
 - [Конечная точка HTTPS](../commercial-marketplace-lead-management-instructions-https.md) — укажите контактную почту и URL-адрес КОНЕЧНОЙ точки HTTPS. 

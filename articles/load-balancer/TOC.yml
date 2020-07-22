@@ -4,6 +4,8 @@
   items:
     - name: Что такое Azure Load Balancer?
       href: load-balancer-overview.md
+    - name: Новые возможности
+      href: whats-new.md
     - name: Часто задаваемые вопросы
       href: load-balancer-faqs.md
 - name: Краткое руководство
@@ -12,18 +14,21 @@
       href: quickstart-load-balancer-standard-public-portal.md
     - name: "Создание подсистемы балансировки нагрузки\_— Azure\_CLI"
       href: quickstart-load-balancer-standard-public-cli.md
-    - name: "Создание подсистемы балансировки нагрузки\_— PowerShell"
+    - name: "Создание подсистемы балансировки нагрузки\_— Azure PowerShell"
       href: quickstart-create-standard-load-balancer-powershell.md
     - name: Создание подсистемы балансировки нагрузки (шаблон ARM)
-      displayName: Resource Manager
       href: quickstart-load-balancer-standard-public-template.md
+    - name: "Создание внутренней подсистемы балансировки нагрузки\_— портал"
+      href: tutorial-load-balancer-standard-internal-portal.md
+    - name: "Создание внутренней подсистемы балансировки нагрузки\_— Azure\_CLI"
+      href: load-balancer-get-started-ilb-arm-cli.md
+    - name: "Создание внутренней подсистемы балансировки нагрузки\_— Azure PowerShell"
+      href: load-balancer-get-started-ilb-arm-ps.md
+    - name: "Создание внутренней подсистемы балансировки нагрузки\_— шаблон ARM"
+      href: load-balancer-get-started-ilb-arm-template.md
   expanded: true
 - name: Учебники
   items:
-    - name: Балансировка интернет-трафика на виртуальных машинах
-      href: tutorial-load-balancer-standard-manage-portal.md
-    - name: Балансировка внутреннего трафика на виртуальных машинах
-      href: tutorial-load-balancer-standard-internal-portal.md
     - name: Распределение нагрузки виртуальных машин в пределах зон доступности
       href: tutorial-load-balancer-standard-public-zone-redundant-portal.md
     - name: Балансировка нагрузки виртуальных машин в пределах определенной зоны доступности
@@ -60,14 +65,14 @@
       href: load-balancer-multivip-overview.md
     - name: Исходящие подключения
       href: load-balancer-outbound-connections.md
-    - name: Правила для исходящего трафика
-      href: load-balancer-outbound-rules-overview.md
     - name: Сброс подключений TCP во время ожидания в режиме простоя
       href: load-balancer-tcp-reset.md
     - name: Azure Load Balancer ценовой категории "Стандартный" и зоны доступности
       href: load-balancer-standard-availability-zones.md
     - name: Встроенные средства управления безопасностью
       href: load-balancer-security-controls.md
+    - name: Управление серверным пулом
+      href: backend-pool-management.md
 - name: Практическое руководство
   items:
     - name: Масштабируемые наборы виртуальных машин
@@ -78,17 +83,17 @@
           href: configure-vm-scale-set-powershell.md
         - name: "Использование с существующим решением Azure Load Balancer\_— CLI"
           href: configure-vm-scale-set-cli.md
-    - name: Обновление Load Balancer с ценовой категории "Базовый" до ценовой категории "Стандартный"
+    - name: Переход с Load Balancer ценовой категории "Базовый" на категорию "Стандартный"
       items:
         - name: Обновление общедоступной версии Load Balancer ценовой категории "Базовый"
           href: upgrade-basic-standard.md
-        - name: Обновление Load Balancer (внутренняя подсистема балансировки нагрузки) ценовой категории "Базовый" без исходящего подключения
+        - name: Обновление внутренней подсистемы балансировки нагрузки без исходящего подключения
           href: upgrade-basicInternal-standard.md
-        - name: Обновление Load Balancer (внутренняя подсистема балансировки нагрузки) ценовой категории "Базовый" с исходящим подключением
+        - name: Обновление внутренней подсистемы балансировки нагрузки с исходящим подключением
           href: upgrade-InternalBasic-To-PublicStandard.md
     - name: Настройка правил для исходящего трафика
       items:
-        - name: Портал Azure
+        - name: Портал
           href: configure-load-balancer-outbound-portal.md
         - name: Azure CLI
           href: configure-load-balancer-outbound-cli.md
@@ -103,44 +108,36 @@
         - name: Шаблон Azure Resource Manager
           href: 'https://docs.microsoft.com/azure/virtual-network/ipv6-configure-standard-load-balancer-template-json'
           displayName: ARM
-    - name: Настройка внутренней службы Azure Load Balancer
-      items:
-        - name: Azure CLI
-          href: load-balancer-get-started-ilb-arm-cli.md
-        - name: Azure PowerShell
-          href: load-balancer-get-started-ilb-arm-ps.md
-        - name: Шаблон Azure Resource Manager
-          href: load-balancer-get-started-ilb-arm-template.md
-          displayName: ARM
     - name: Настройка времени ожидания простоя TCP для Load Balancer
       href: load-balancer-tcp-idle-timeout.md
     - name: Настройка режима распространения для Load Balancer
       href: load-balancer-distribution-mode.md
     - name: Использование конфигураций с несколькими IP-адресами
-      href: load-balancer-multiple-ip.md
       items:
+        - name: Портал
+          href: load-balancer-multiple-ip.md
         - name: Azure CLI
           href: load-balancer-multiple-ip-cli.md
         - name: Azure PowerShell
           href: load-balancer-multiple-ip-powershell.md
-    - name: Настройка высокодоступных портов для внутренней службы Azure Load Balancer
-      href: load-balancer-configure-ha-ports.md
     - name: Перемещение между регионами
       items:
-        - name: "Внешний балансировщик нагрузки\_— портал"
+        - name: "Общедоступная подсистема балансировки нагрузки\_— портал"
           href: move-across-regions-external-load-balancer-portal.md
-        - name: "Внешний балансировщик нагрузки\_— PowerShell"
+        - name: "Общедоступная подсистема балансировки нагрузки\_— PowerShell"
           href: move-across-regions-external-load-balancer-powershell.md
-        - name: "Внутренний балансировщик нагрузки\_— портал"
+        - name: "Общедоступная подсистема балансировки нагрузки\_— портал"
           href: move-across-regions-internal-load-balancer-portal.md
         - name: "Внутренний балансировщик нагрузки\_— PowerShell"
           href: move-across-regions-internal-load-balancer-powershell.md
-    - name: Диагностика
-      items:
-        - name: Устранение неполадок Azure Load Balancer
-          href: load-balancer-troubleshoot.md
-        - name: Устранение стандартных ошибок развертывания
-          href: load-balancer-common-deployment-errors.md
+- name: Диагностика
+  items:
+    - name: Устранение неполадок Azure Load Balancer
+      href: load-balancer-troubleshoot.md
+    - name: Устранение стандартных ошибок развертывания
+      href: load-balancer-common-deployment-errors.md
+    - name: Устранение распространенных проблем с исходящим подключением
+      href: troubleshoot-outbound-connection.md
 - name: Справочник
   items:
     - name: Примеры кода
@@ -154,11 +151,11 @@
     - name: Java
       href: /java/api/com.microsoft.azure.management.network
     - name: Node.js
-      href: 'http://azure.github.io/azure-sdk-for-node/azure-arm-network/latest/LoadBalancers.html'
+      href: /javascript/api/@azure/arm-network/loadbalancers
     - name: Ruby
       href: 'https://www.rubydoc.info/gems/azure_mgmt_network/Azure/Network/Mgmt/V2020_03_01/LoadBalancers'
     - name: Python
-      href: 'http://azure-sdk-for-python.readthedocs.io/en/latest/ref/azure.mgmt.network.operations.html#azure.mgmt.network.operations.LoadBalancersOperations'
+      href: /python/api/azure-mgmt-network/azure.mgmt.network.v2019_02_01.operations.loadbalancersoperations
     - name: REST
       href: 'https://msdn.microsoft.com/library/azure/mt163651.aspx'
     - name: Шаблон Resource Manager

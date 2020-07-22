@@ -3,19 +3,19 @@ title: Ограничения и квоты. Пользовательская с
 titleSuffix: Azure Cognitive Services
 description: В этой статье описываются различные типы лицензионных ключей, а также ограничения и квоты для Пользовательская служба визуального распознавания.
 services: cognitive-services
-author: anrothMSFT
+author: PatrickFarley
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: custom-vision
 ms.topic: conceptual
 ms.date: 03/25/2019
-ms.author: anroth
-ms.openlocfilehash: 5f481ebf219eea8ae31e9802144bbf771a24e8b8
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.author: pafarley
+ms.openlocfilehash: 089d5dbb1eece2904f104dfecb3de8adec052dfc
+ms.sourcegitcommit: b56226271541e1393a4b85d23c07fd495a4f644d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79081783"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85391746"
 ---
 # <a name="limits-and-quotas"></a>Ограничения и квоты
 

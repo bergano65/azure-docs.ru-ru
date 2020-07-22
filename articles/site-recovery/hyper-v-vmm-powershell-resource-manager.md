@@ -7,12 +7,12 @@ manager: rochakm
 ms.topic: article
 ms.date: 1/10/2020
 ms.author: sutalasi
-ms.openlocfilehash: deef7bfdbc28d744cb81da59d3ffc13a1abee54d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d7a2d21dcd8c9474bdf068d7940e497333f35115
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77048613"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86130217"
 ---
 # <a name="set-up-disaster-recovery-of-hyper-v-vms-to-a-secondary-site-by-using-powershell-resource-manager"></a>Настройка аварийного восстановления виртуальных машин Hyper-V на дополнительный сайт с помощью PowerShell (Resource Manager)
 
@@ -20,12 +20,12 @@ ms.locfileid: "77048613"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Ознакомьтесь с [архитектурой и компонентами сценария](hyper-v-vmm-architecture.md).
-- Ознакомьтесь с [требованиями к поддержке](site-recovery-support-matrix-to-sec-site.md) для всех компонентов.
-- Убедитесь, что серверы Virtual Machine Manager и узлы Hyper-V соответствуют [требованиям поддержки](site-recovery-support-matrix-to-sec-site.md).
-- Убедитесь, что виртуальные машины, которые следует реплицировать, соответствуют [требованиям поддержки реплицируемых машин](site-recovery-support-matrix-to-sec-site.md).
+- Ознакомьтесь с [требованиями к поддержке](./vmware-physical-secondary-support-matrix.md) для всех компонентов.
+- Убедитесь, что серверы Virtual Machine Manager и узлы Hyper-V соответствуют [требованиям поддержки](./vmware-physical-secondary-support-matrix.md).
+- Убедитесь, что виртуальные машины, которые следует реплицировать, соответствуют [требованиям поддержки реплицируемых машин](./vmware-physical-secondary-support-matrix.md).
 
 ## <a name="prepare-for-network-mapping"></a>Подготовка к сопоставлению сетей
 
@@ -37,10 +37,10 @@ ms.locfileid: "77048613"
 
 Подготовьте Virtual Machine Manager следующим образом:
 
-- Убедитесь, что на исходном и целевом серверах Virtual Machine Manager имеются [логические сети Virtual Machine Manager](https://docs.microsoft.com/system-center/vmm/network-logical).
+- Убедитесь, что на исходном и целевом серверах Virtual Machine Manager имеются [логические сети Virtual Machine Manager](/system-center/vmm/network-logical).
   - Логическая сеть на исходном сервере должна быть связана с исходным облаком, в котором находятся узлы Hyper-V.
   - Логическая сеть на целевом сервере должна быть связана с целевым облаком.
-- Убедитесь, что на исходном и целевом серверах Virtual Machine Manager имеются [виртуальные сети виртуальной машины](https://docs.microsoft.com/system-center/vmm/network-virtual). Сети виртуальных машин должны быть связаны с логической сетью в каждом расположении.
+- Убедитесь, что на исходном и целевом серверах Virtual Machine Manager имеются [виртуальные сети виртуальной машины](/system-center/vmm/network-virtual). Сети виртуальных машин должны быть связаны с логической сетью в каждом расположении.
 - Подключите виртуальные машины на исходных узлах Hyper-V к исходной сети виртуальных машин.
 
 ## <a name="prepare-for-powershell"></a>Подготовка для работы с PowerShell
@@ -210,7 +210,7 @@ ms.locfileid: "77048613"
 
 ##  <a name="configure-network-mapping"></a>Настройка сетевого сопоставления
 
-1. Используйте эту команду, чтобы получить серверы для текущего хранилища. Команда сохраняет Site Recovery серверы в переменной `$Servers` массива.
+1. Используйте эту команду, чтобы получить серверы для текущего хранилища. Команда сохраняет Site Recovery серверы в `$Servers` переменной массива.
 
    ```azurepowershell
    $Servers = Get-AzRecoveryServicesAsrFabric
@@ -227,7 +227,7 @@ ms.locfileid: "77048613"
    > [!NOTE]
    > Исходный сервер Virtual Machine Manager может быть первым или вторым в массиве серверов. Проверьте имена серверов Virtual Machine Manager и получите сети соответствующим образом.
 
-1. Этот командлет создает сопоставление между основной сетью и сетью восстановления. Он указывает основную сеть в качестве первого элемента `$PrimaryNetworks`. В нем указывается сеть восстановления в качестве первого элемента `$RecoveryNetworks`.
+1. Этот командлет создает сопоставление между основной сетью и сетью восстановления. Он указывает основную сеть в качестве первого элемента `$PrimaryNetworks` . В нем указывается сеть восстановления в качестве первого элемента `$RecoveryNetworks` .
 
    ```azurepowershell
    New-AzRecoveryServicesAsrNetworkMapping -PrimaryNetwork $PrimaryNetworks[0] -RecoveryNetwork $RecoveryNetworks[0]
@@ -259,9 +259,9 @@ ms.locfileid: "77048613"
 > Если вы хотите выполнить репликацию на управляемые диски с поддержкой CMK в Azure, выполните следующие действия с помощью команды AZ PowerShell 3.3.0/назад:
 >
 > 1. Включение отработки отказа на управляемые диски путем обновления свойств виртуальной машины
-> 1. Используйте командлет `Get-AzRecoveryServicesAsrReplicationProtectedItem` , чтобы получить идентификатор диска для каждого диска защищенного элемента.
+> 1. Используйте `Get-AzRecoveryServicesAsrReplicationProtectedItem` командлет, чтобы получить идентификатор диска для каждого диска защищенного элемента.
 > 1. Создайте объект Dictionary с помощью `New-Object "System.Collections.Generic.Dictionary``2[System.String,System.String]"` командлета, который будет содержать сопоставление идентификатора диска с набором шифрования диска. Эти наборы шифрования дисков должны быть предварительно созданы в целевом регионе.
-> 1. Обновите свойства виртуальной машины `Set-AzRecoveryServicesAsrReplicationProtectedItem` с помощью командлета, передав объект Dictionary в параметре **дискидтодискенкриптионсетмап** .
+> 1. Обновите свойства виртуальной машины с помощью `Set-AzRecoveryServicesAsrReplicationProtectedItem` командлета, передав объект Dictionary в параметре **дискидтодискенкриптионсетмап** .
 
 ## <a name="run-a-test-failover"></a>Запуск тестовой отработки отказа
 
@@ -359,6 +359,6 @@ if($isJobLeftForProcessing)
 }While($isJobLeftForProcessing)
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Узнайте больше](/powershell/module/az.recoveryservices) об использовании командлетов PowerShell Resource Manager для службы Site Recovery.

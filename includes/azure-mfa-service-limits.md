@@ -1,19 +1,19 @@
 ---
 author: rothja
-ms.service: cost-management-billing
+ms.service: active-directory
 ms.topic: include
 ms.date: 11/09/2018
 ms.author: jroth
-ms.openlocfilehash: df237cdbb8944928641f2dbea2117bbef7ba9165
-ms.sourcegitcommit: 6a4fbc5ccf7cca9486fe881c069c321017628f20
+ms.openlocfilehash: 57c64173ee3f307feb7bd879098f41505f5c5e32
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "74224330"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85839000"
 ---
 | Ресурс | Ограничение по умолчанию | Максимальное ограничение |
 | --- | --- | --- |
-| Максимальное количество доверенных IP-адресов или</a> диапазонов на подписку |0 |50 |
+| Максимальное количество доверенных IP-адресов или диапазонов </a> на подписку |0 |50 |
 | Запомнить мои устройства, число дней |14 |60 |
 | Максимальное число паролей приложений |0 |Без ограничений |
 | Количество **X** попыток в рамках вызова MFA |1 |99 |

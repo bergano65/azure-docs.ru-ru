@@ -19,8 +19,6 @@
       href: terminology.md
     - name: Роли и требования
       href: concepts-roles-permissions.md
-    - name: Аварийное восстановление
-      href: disaster-recovery.md
 - name: Примеры
   items:
     - name: Примеры кода
@@ -43,6 +41,10 @@
       href: how-to-delete-invitation.md
     - name: Отмена подписки на общую папку
       href: how-to-revoke-share-subscription.md
+    - name: Безопасность
+      href: security.md
+    - name: Аварийное восстановление
+      href: disaster-recovery.md
 - name: Справочник
   items:
     - name: .NET
@@ -51,6 +53,8 @@
       href: 'https://docs.microsoft.com/powershell/module/az.datashare/?view=azps-2.6.0'
     - name: REST API
       href: /rest/api/datashare
+    - name: Azure CLI
+      href: azure-cli-references-for-data-share.md
 - name: Ресурсы
   items:
     - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)

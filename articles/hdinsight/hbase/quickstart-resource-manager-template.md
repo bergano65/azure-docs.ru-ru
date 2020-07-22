@@ -8,38 +8,41 @@ ms.service: hdinsight
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 03/12/2020
-ms.openlocfilehash: 395078b9a973b6255685feb6a858daed7667207a
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: c772345b9cf5d6e4fafdcd951f65bd8c796ab839
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81605443"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86082154"
 ---
-# <a name="quickstart-create-apache-hbase-cluster-in-azure-hdinsight-using-resource-manager-template"></a>Краткое руководство. Создание кластера Apache HBase в Azure HDInsight с помощью шаблонов Resource Manager
+# <a name="quickstart-create-apache-hbase-cluster-in-azure-hdinsight-using-arm-template"></a>Краткое руководство. Создание кластера Apache HBase в Azure HDInsight с помощью шаблона ARM
 
-Из этого краткого руководства вы узнаете, как с помощью шаблона Azure Resource Manager создать кластер [Apache HBase](./apache-hbase-overview.md) в Azure HDInsight. HBase — это база данных NoSQL с открытым кодом, созданная на основе Apache Hadoop по типу [Google BigTable](https://cloud.google.com/bigtable/).
+Из этого краткого руководства вы узнаете, как с помощью шаблона Azure Resource Manager (ARM) создать кластер [Apache HBase](./apache-hbase-overview.md) в Azure HDInsight. HBase — это база данных NoSQL с открытым кодом, созданная на основе Apache Hadoop по типу [Google BigTable](https://cloud.google.com/bigtable/).
 
 [!INCLUDE [About Azure Resource Manager](../../../includes/resource-manager-quickstart-introduction.md)]
 
+Если среда соответствует предварительным требованиям и вы знакомы с использованием шаблонов ARM, нажмите кнопку **Развертывание в Azure**. Шаблон откроется на портале Azure.
+
+[![Развертывание в Azure](../../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-hbase-linux%2Fazuredeploy.json)
+
+## <a name="prerequisites"></a>Предварительные требования
+
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="create-an-apache-hbase-cluster"></a>Создание кластера Apache HBase
+## <a name="review-the-template"></a>Изучение шаблона
 
-### <a name="review-the-template"></a>Изучение шаблона
+Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://azure.microsoft.com/resources/templates/101-hdinsight-hbase-linux/).
 
-Шаблон, используемый в этом кратком руководстве, взят из [шаблонов быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-hbase-linux).
-
-:::code language="json" source="~/quickstart-templates/101-hdinsight-hbase-linux/azuredeploy.json" range="1-145":::
-
+:::code language="json" source="~/quickstart-templates/101-hdinsight-hbase-linux/azuredeploy.json" range="1-199" highlight="103-136":::
 
 В шаблоне определено два ресурса Azure:
 
-* С помощью [Microsoft.Storage/storageAccounts](https://docs.microsoft.com/azure/templates/microsoft.storage/storageaccounts) создается учетная запись хранения Azure.
-* С помощью [Microsoft.HDInsight/cluster](https://docs.microsoft.com/azure/templates/microsoft.hdinsight/clusters) создается кластер HDInsight.
+* С помощью [Microsoft.Storage/storageAccounts](/azure/templates/microsoft.storage/storageaccounts) создается учетная запись хранения Azure.
+* С помощью [Microsoft.HDInsight/cluster](/azure/templates/microsoft.hdinsight/clusters) создается кластер HDInsight.
 
-### <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="deploy-the-template"></a>Развертывание шаблона
 
-1. Нажмите кнопку **Развертывание в Azure** ниже, чтобы войти в Azure и открыть шаблон Resource Manager.
+1. Нажмите кнопку **Развертывание в Azure** ниже, чтобы войти в Azure и открыть шаблон ARM.
 
     [![Развертывание в Azure](../../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-hbase-linux%2Fazuredeploy.json)
 
@@ -76,7 +79,7 @@ ms.locfileid: "81605443"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого краткого руководства вы узнали, как создать в HDInsight кластер Apache HBase с помощью шаблона Resource Manager. В следующей статье вы узнаете, как запросить HBase в HDInsight с помощью оболочки HBase.
+В этом кратком руководстве показано, как создать в HDInsight кластер Apache HBase с помощью шаблона ARM. В следующей статье вы узнаете, как запросить HBase в HDInsight с помощью оболочки HBase.
 
 > [!div class="nextstepaction"]
 > [Краткое руководство. Выполнение запросов Apache HBase в Azure HDInsight с помощью HBase Shell](./query-hbase-with-hbase-shell.md)

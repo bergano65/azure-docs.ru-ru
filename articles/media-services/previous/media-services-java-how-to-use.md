@@ -14,26 +14,26 @@ ms.devlang: java
 ms.topic: conceptual
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: fedec6ea764394d36f5b4d7c883f7cb9f9520a29
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 3adbb9471cc501861b65efd0321b3b4f72b07aea
+ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "64869027"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86057863"
 ---
 # <a name="get-started-with-the-java-client-sdk-for-azure-media-services"></a>Начало работы с клиентским пакетом SDK для Java для служб мультимедиа Azure  
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с последней версией [служб мультимедиа v3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
 
 В этом руководстве описано, как реализовать простую службу доставки видео с помощью служб мультимедиа Azure и клиентского пакета SDK для Java.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Ниже перечислены необходимые условия для выполнения действий, описанных в этом учебнике.
 
-* Учетная запись Azure. Дополнительные сведения см. в статье [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).
-* Учетная запись служб мультимедиа. Сведения о создании учетной записи служб мультимедиа см. в разделе [Создание учетной записи служб мультимедиа](media-services-portal-create-account.md).
+* Учетная запись Azure. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).
+* Учетная запись служб мультимедиа. Инструкции по созданию учетной записи служб мультимедиа см. в статье [Создание учетной записи служб мультимедиа Azure с помощью портала Azure](media-services-portal-create-account.md).
 * Текущая версия [пакета SDK для Java для служб мультимедиа Azure](https://mvnrepository.com/artifact/com.microsoft.azure/azure-media/latest).
 
 ## <a name="how-to-import-the-azure-media-services-java-client-sdk-package"></a>Практическое руководство. Импорт клиентского пакета SDK для Java для служб мультимедиа Azure
@@ -42,7 +42,7 @@ ms.locfileid: "64869027"
 
 Например, если вы используете средство сборки `gradle`, добавьте в файл `build.gradle` следующие зависимости:
 
-    compile group: 'com.microsoft.azure', name: 'azure-media', version: '0.9.8'
+`compile group: 'com.microsoft.azure', name: 'azure-media', version: '0.9.8'`
 
 >[!IMPORTANT]
 >С выпуска пакета `azure-media` версии `0.9.8` для аутентификации пакет SDK поддерживает службу Azure Active Directory и не поддерживает службу контроля доступа Azure. Мы рекомендуем как можно быстрее перейти на использование модели аутентификации Azure AD. Дополнительные сведения о переходе см. в статье [Доступ к API служб мультимедиа Azure с помощью аутентификации Azure AD](media-services-use-aad-auth-to-access-ams-api.md).
@@ -53,7 +53,7 @@ ms.locfileid: "64869027"
 ## <a name="how-to-use-azure-media-services-with-java"></a>Практическое руководство. Использование служб мультимедиа Azure с Java
 
 >[!NOTE]
->При создании учетной записи служб мультимедиа конечная точка потоковой передачи **по умолчанию** добавляется в учетную запись в **остановленном** состоянии. Чтобы начать потоковую передачу содержимого и воспользоваться функциями динамической упаковки и динамического шифрования, конечная точка потоковой передачи, из которой необходимо выполнять потоковую передачу содержимого, должна находиться в состоянии **Выполняется**.
+>При создании учетной записи служб мультимедиа конечная точка потоковой передачи **по умолчанию** добавляется в учетную запись в **остановленном** состоянии. Чтобы начать потоковую передачу содержимого и воспользоваться динамической упаковкой и динамическим шифрованием, конечная точка потоковой передачи, из которой необходимо выполнять потоковую передачу содержимого, должна находиться в состоянии **Выполняется**.
 
 В следующем коде демонстрируется создание ресурса-контейнера, передача файла мультимедиа в него, выполнение задания с задачей преобразования ресурса-контейнера и создание указателя для потоковой передачи вашего видео.
 
@@ -307,7 +307,7 @@ ms.locfileid: "64869027"
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы

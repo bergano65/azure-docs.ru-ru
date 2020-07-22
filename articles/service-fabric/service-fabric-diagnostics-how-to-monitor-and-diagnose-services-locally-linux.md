@@ -3,12 +3,12 @@ title: Отладка приложений Service Fabric Azure в Linux
 description: Сведения о мониторинге и диагностике служб Service Fabric на локальном компьютере разработчика под управлением Linux.
 ms.topic: conceptual
 ms.date: 2/23/2018
-ms.openlocfilehash: fa8c4053a348c539c2e9e7a87d002d0fcf4a4d52
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 6f637721d24045f5ca3386ffc31775d469e88537
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80991336"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86247563"
 ---
 # <a name="monitor-and-diagnose-services-in-a-local-linux-machine-development-setup"></a>Мониторинг и диагностика служб в локальной настройке разработки машин Linux
 
@@ -24,7 +24,7 @@ ms.locfileid: "80991336"
 
 ## <a name="debugging-service-fabric-java-applications"></a>Отладка приложений Java в Service Fabric
 
-Для приложений Java доступно [несколько платформ ведения журналов](https://en.wikipedia.org/wiki/Java_logging_framework) . Так `java.util.logging` как является параметром по умолчанию JRE, он также используется для [примеров кода в GitHub](https://github.com/Azure-Samples/service-fabric-java-getting-started). Далее в этой статье описывается настройка платформы `java.util.logging` .
+Для приложений Java доступно [несколько платформ ведения журналов](https://en.wikipedia.org/wiki/Java_logging_framework) . Так как `java.util.logging` является параметром по умолчанию JRE, он также используется для [примеров кода в GitHub](https://github.com/Azure-Samples/service-fabric-java-getting-started). Далее в этой статье описывается настройка платформы `java.util.logging` .
 
 С помощью java.util.logging журналы приложения можно перенаправлять в память, потоки вывода, файлы консоли или сокеты. Для каждого из этих вариантов существуют обработчики по умолчанию, входящие в состав платформы. Чтобы настроить обработчик файлов для приложения, который будет перенаправлять все журналы в локальный файл, можно создать файл `app.properties`.
 
@@ -130,6 +130,6 @@ public static TextWriter Out = Console.Out;
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Код трассировки, добавленный в приложение, также можно использовать для диагностики приложения в кластере Azure. Ознакомьтесь с этими статьями, в которых рассматриваются различные варианты инструментов и описывается, как их настроить.
-* [Сбор журналов с помощью системы диагностики Azure](service-fabric-diagnostics-how-to-setup-lad.md)
+* [Сбор журналов с помощью системы диагностики Azure](./service-fabric-diagnostics-event-aggregation-lad.md)

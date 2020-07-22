@@ -10,6 +10,14 @@
       href: overview-iot-central-developer.md
     - name: Последние обновления
       items:
+        - name: "Новые и обновленные функции (июнь 2020\_г.)"
+          href: 'https://azure.microsoft.com/en-us/updates/azure-iot-central-feature-updates-june-2020/'
+        - name: "Обновления документации и пользовательского интерфейса (июнь 2020\_г.)"
+          href: 'https://azure.microsoft.com/en-us/updates/azure-iot-central-ui-documenation-updates-june-2020/'
+        - name: "Обновления заданий и метрик (май 2020\_г.)"
+          href: 'https://azure.microsoft.com/updates/azure-iot-central-jobs-and-metrics-feature-updates-may-2020/'
+        - name: "Обновления для панели мониторинга за май 2020\_г."
+          href: 'https://azure.microsoft.com/updates/azure-iot-central-may-2020-dashboard-updates/'
         - name: "Новые функции в версии за апрель 2020\_г."
           href: 'https://azure.microsoft.com/updates/azure-iot-central-april-2020-new-features/'
         - name: "Обновления за апрель 2020\_г."
@@ -57,6 +65,8 @@
       href: concepts-architecture.md
     - name: Что представляют собой шаблоны приложений?
       href: concepts-app-templates.md
+    - name: Что представляют собой шаблоны устройств?
+      href: concepts-device-templates.md
     - name: Взаимодействие устройств
       href: concepts-get-connected.md
     - name: Подключение устройств IoT Edge
@@ -87,8 +97,6 @@
           href: howto-manage-devices.md
         - name: Настройка правил
           href: howto-configure-rules.md
-        - name: Использование рабочих процессов для интеграции с другими службами
-          href: howto-configure-rules-advanced.md
         - name: Анализ данных устройства
           href: howto-create-analytics.md
         - name: Добавление плиток на панель мониторинга
@@ -103,12 +111,16 @@
           href: howto-export-data.md
         - name: Создание действий веб-перехватчиков на основе правил
           href: howto-create-webhooks.md
+        - name: Использование рабочих процессов для интеграции с другими службами
+          href: howto-configure-rules-advanced.md
         - name: Подключение групп действий Azure Monitor на основе правил
           href: howto-use-action-groups.md
         - name: Создание настраиваемых правил
           href: howto-create-custom-rules.md
         - name: Создание пользовательских решений аналитики с помощью Databricks
           href: howto-create-custom-analytics.md
+        - name: Визуализация данных в Power BI
+          href: howto-connect-powerbi.md
     - name: Администрирование
       items:
         - name: Управление приложением
@@ -123,6 +135,10 @@
               href: howto-customize-ui.md
             - name: Экспорт приложения
               href: howto-use-app-templates.md
+            - name: Мониторинг работоспособности приложений
+              href: howto-monitor-application-health.md
+            - name: Сведения о приложении
+              href: howto-get-app-info.md
         - name: Управление с помощью других решений
           items:
             - name: Управление с помощью портала Azure
@@ -141,6 +157,10 @@
               href: howto-manage-preferences.md
             - name: Переключение чата в реальном времени
               href: howto-show-hide-chat.md
+- name: Справочник
+  items:
+    - name: Azure CLI
+      href: /cli/azure/azure-cli-reference-for-IoT
 - name: Ресурсы
   items:
     - name: Возможности получения поддержки и справки
@@ -176,9 +196,9 @@
     - name: Пакеты SDK для Центра Интернета вещей Azure
       items:
         - name: Пакеты SDK для служб IoT
-          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks'
+          href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks
         - name: Пакеты SDK для устройств Интернета вещей
-          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks'
+          href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks
     - name: Справочник по API для IoT Central
       href: 'https://docs.microsoft.com/rest/api/iotcentral/'
     - name: Запросы данных клиентов

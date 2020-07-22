@@ -12,12 +12,11 @@ ms.reviewer: douglasl
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 04/09/2020
-ms.openlocfilehash: 795247cd0d6adfd27115b73c1d0de02e6810d670
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
-ms.translationtype: MT
+ms.openlocfilehash: e1b70e0e3eb54253972afded1bd37363d1a868e7
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83201142"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84195713"
 ---
 # <a name="configure-the-azure-ssis-integration-runtime-with-sql-database-geo-replication-and-failover"></a>Настройка среды выполнения интеграции Azure SSIS с георепликацией и отработкой отказа базы данных SQL
 
@@ -29,11 +28,11 @@ ms.locfileid: "83201142"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="azure-ssis-ir-failover-with-a-sql-database-managed-instance"></a>Azure-SSIS IR отработки отказа с помощью управляемого экземпляра базы данных SQL
+## <a name="azure-ssis-ir-failover-with-a-sql-managed-instance"></a>Azure-SSIS IR отработки отказа с помощью Управляемый экземпляр SQL
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Предварительные условия
 
-Управляемый экземпляр базы данных SQL Azure использует *главный ключ базы данных (DMK)* , чтобы защитить данные, учетные данные и сведения о соединении, хранящиеся в базе данных. Чтобы включить автоматическую расшифровку DMK, копия ключа шифруется с помощью *главного ключа сервера (SMK)*. 
+Управляемый экземпляр Azure SQL использует *главный ключ базы данных (DMK)* , чтобы защитить данные, учетные данные и сведения о соединении, хранящиеся в базе данных. Чтобы включить автоматическую расшифровку DMK, копия ключа шифруется с помощью *главного ключа сервера (SMK)*. 
 
 SMK не реплицируется в группе отработки отказа. После отработки отказа необходимо добавить пароль как на первичном, так и на вторичном экземплярах для расшифровки DMK.
 
@@ -43,7 +42,7 @@ SMK не реплицируется в группе отработки отка�
     ALTER MASTER KEY ADD ENCRYPTION BY PASSWORD = 'password'
     ```
 
-2. Создайте группу отработки отказа в управляемом экземпляре базы данных SQL Azure.
+2. Создайте группу отработки отказа на Управляемый экземпляр SQL.
 
 3. Запустите **sp_control_dbmasterkey_password** на дополнительном экземпляре, используя новый пароль шифрования.
 
@@ -87,27 +86,27 @@ SMK не реплицируется в группе отработки отка�
 2. Измените Azure-SSIS IR, указав сведения о новом регионе, конечной точке и виртуальной сети для вторичного экземпляра.
 
     ```powershell
-    Set-AzDataFactoryV2IntegrationRuntime -Location "new region" `
-                -CatalogServerEndpoint "Azure SQL Database server endpoint" `
-                -CatalogAdminCredential "Azure SQL Database server admin credentials" `
-                -VNetId "new VNet" `
-                -Subnet "new subnet" `
-                -SetupScriptContainerSasUri "new custom setup SAS URI"
-    ```
+      Set-AzDataFactoryV2IntegrationRuntime -Location "new region" `
+                    -CatalogServerEndpoint "Azure SQL Database endpoint" `
+                    -CatalogAdminCredential "Azure SQL Database admin credentials" `
+                    -VNetId "new VNet" `
+                    -Subnet "new subnet" `
+                    -SetupScriptContainerSasUri "new custom setup SAS URI"
+        ```
 
-3. Перезапустите Azure-SSIS IR.
+3. Restart the Azure-SSIS IR.
 
-### <a name="scenario-3-azure-ssis-ir-is-pointing-to-a-public-endpoint-of-a-sql-database-managed-instance"></a>Сценарий 3. Azure-SSIS IR указывает на общедоступную конечную точку управляемого экземпляра базы данных SQL
+### Scenario 3: Azure-SSIS IR is pointing to a public endpoint of a SQL Managed Instance
 
-Этот сценарий подходит, если Azure-SSIS IR указывает на общедоступную конечную точку управляемого экземпляра базы данных SQL Azure и не присоединяется к виртуальной сети. Единственное отличие от сценария 2 в том, что вам не нужно изменять сведения о виртуальной сети для Azure-SSIS IR после отработки отказа.
+This scenario is suitable if the Azure-SSIS IR is pointing to a public endpoint of a Azure SQL Managed Instance and it doesn't join to a virtual network. The only difference from scenario 2 is that you don't need to edit virtual network information for the Azure-SSIS IR after failover.
 
-#### <a name="solution"></a>Решение
+#### Solution
 
-В случае отработки отказа выполните следующие действия.
+When failover occurs, take the following steps:
 
-1. Останавливает Azure-SSIS IR в основном регионе.
+1. Stop the Azure-SSIS IR in the primary region.
 
-2. Измените Azure-SSIS IR, указав новый регион и сведения о конечной точке для вторичного экземпляра.
+2. Edit the Azure-SSIS IR with the new region and endpoint information for the secondary instance.
 
     ```powershell
     Set-AzDataFactoryV2IntegrationRuntime -Location "new region" `
@@ -131,13 +130,13 @@ SMK не реплицируется в группе отработки отка�
 
 1. Останавливает Azure-SSIS IR в основном регионе.
 
-2. Выполните хранимую процедуру для обновления метаданных в SSISDB, чтобы принимать подключения от ** \< new_data_factory_name \> ** и ** \< new_integration_runtime_name \> **.
+2. Выполните хранимую процедуру для обновления метаданных в SSISDB, чтобы принимать подключения от **\<new_data_factory_name\>** и **\<new_integration_runtime_name\>** .
    
     ```sql
     EXEC [catalog].[failover_integration_runtime] @data_factory_name='<new_data_factory_name>', @integration_runtime_name='<new_integration_runtime_name>'
     ```
 
-3. Создайте новую фабрику данных с именем ** \< new_data_factory_name \> ** в новом регионе.
+3. Создайте новую фабрику данных с именем **\<new_data_factory_name\>** в новом регионе.
 
     ```powershell
     Set-AzDataFactoryV2 -ResourceGroupName "new resource group name" `
@@ -147,7 +146,7 @@ SMK не реплицируется в группе отработки отка�
     
     Дополнительные сведения об этой команде PowerShell см. в статье [Создание фабрики данных Azure с помощью PowerShell](quickstart-create-data-factory-powershell.md).
 
-4. Создайте новый Azure-SSIS IR с именем ** \< new_integration_runtime_name \> ** в новом регионе с помощью Azure PowerShell.
+4. Создайте новый Azure-SSIS IR с именем **\<new_integration_runtime_name\>** в новом регионе с помощью Azure PowerShell.
 
     ```powershell
     Set-AzDataFactoryV2IntegrationRuntime -ResourceGroupName "new resource group name" `
@@ -202,12 +201,12 @@ SMK не реплицируется в группе отработки отка�
 2. Измените Azure-SSIS IR, указав сведения о новом регионе, конечной точке и виртуальной сети для вторичного экземпляра.
 
     ```powershell
-    Set-AzDataFactoryV2IntegrationRuntime -Location "new region" `
-                    -CatalogServerEndpoint "Azure SQL Database server endpoint" `
-                    -CatalogAdminCredential "Azure SQL Database server admin credentials" `
-                    -VNetId "new VNet" `
-                    -Subnet "new subnet" `
-                    -SetupScriptContainerSasUri "new custom setup SAS URI"
+      Set-AzDataFactoryV2IntegrationRuntime -Location "new region" `
+                        -CatalogServerEndpoint "Azure SQL Database endpoint" `
+                        -CatalogAdminCredential "Azure SQL Database admin credentials" `
+                        -VNetId "new VNet" `
+                        -Subnet "new subnet" `
+                        -SetupScriptContainerSasUri "new custom setup SAS URI"
     ```
 
 3. Перезапустите Azure-SSIS IR.
@@ -225,13 +224,13 @@ SMK не реплицируется в группе отработки отка�
 
 1. Останавливает Azure-SSIS IR в основном регионе.
 
-2. Выполните хранимую процедуру для обновления метаданных в SSISDB, чтобы принимать подключения от ** \< new_data_factory_name \> ** и ** \< new_integration_runtime_name \> **.
+2. Выполните хранимую процедуру для обновления метаданных в SSISDB, чтобы принимать подключения от **\<new_data_factory_name\>** и **\<new_integration_runtime_name\>** .
    
     ```sql
     EXEC [catalog].[failover_integration_runtime] @data_factory_name='<new_data_factory_name>', @integration_runtime_name='<new_integration_runtime_name>'
     ```
 
-3. Создайте новую фабрику данных с именем ** \< new_data_factory_name \> ** в новом регионе.
+3. Создайте новую фабрику данных с именем **\<new_data_factory_name\>** в новом регионе.
 
     ```powershell
     Set-AzDataFactoryV2 -ResourceGroupName "new resource group name" `
@@ -241,7 +240,7 @@ SMK не реплицируется в группе отработки отка�
     
     Дополнительные сведения об этой команде PowerShell см. в статье [Создание фабрики данных Azure с помощью PowerShell](quickstart-create-data-factory-powershell.md).
 
-4. Создайте новый Azure-SSIS IR с именем ** \< new_integration_runtime_name \> ** в новом регионе с помощью Azure PowerShell.
+4. Создайте новый Azure-SSIS IR с именем **\<new_integration_runtime_name\>** в новом регионе с помощью Azure PowerShell.
 
     ```powershell
     Set-AzDataFactoryV2IntegrationRuntime -ResourceGroupName "new resource group name" `
@@ -264,7 +263,7 @@ SMK не реплицируется в группе отработки отка�
     Дополнительные сведения об этой команде PowerShell см. [в статье Создание среды выполнения интеграции Azure SSIS в фабрике данных Azure](create-azure-ssis-integration-runtime.md).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Ознакомьтесь со следующими параметрами конфигурации для среды выполнения интеграции Azure-SSIS:
 

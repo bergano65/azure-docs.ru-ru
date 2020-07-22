@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: anilmur
 ms.reviewer: juliako
-ms.openlocfilehash: 059816284e39c65bb772bd02f066d73da624722f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 87348899a70d45fbfbce805bf2169f9f5e4e3f3e
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "74887770"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85956769"
 ---
 # <a name="crop-videos-with-media-encoder-standard"></a>Обрезка видео с помощью Media Encoder Standard  
 
@@ -43,89 +43,91 @@ ms.locfileid: "74887770"
 5. На стадии кодирования необходимо создать три уровня с разрешениями 1440 x 1080, 960 x 720 и 480 x 360 соответственно.
 
 ### <a name="json-preset"></a>Предустановка JSON
+
+```json
+{
+  "Version": 1.0,
+  "Sources": [
     {
-      "Version": 1.0,
-      "Sources": [
-        {
-          "Streams": [],
-          "Filters": {
-            "Crop": {
-                "X": 240,
-                "Y": 0,
-                "Width": 1440,
-                "Height": 1080
-            }
-          },
-          "Pad": true
+      "Streams": [],
+      "Filters": {
+        "Crop": {
+          "X": 240,
+          "Y": 0,
+          "Width": 1440,
+          "Height": 1080
         }
-      ],
-      "Codecs": [
+      },
+      "Pad": true
+    }
+  ],
+  "Codecs": [
+    {
+      "KeyFrameInterval": "00:00:02",
+      "H264Layers": [
         {
-          "KeyFrameInterval": "00:00:02",
-          "H264Layers": [
-            {
-              "Profile": "Auto",
-              "Level": "auto",
-              "Bitrate": 3400,
-              "MaxBitrate": 3400,
-              "BufferWindow": "00:00:05",
-              "Width": 1440,
-              "Height": 1080,
-              "BFrames": 3,
-              "ReferenceFrames": 3,
-              "AdaptiveBFrame": true,
-              "Type": "H264Layer",
-              "FrameRate": "0/1"
-            },
-            {
-              "Profile": "Auto",
-              "Level": "auto",
-              "Bitrate": 2250,
-              "MaxBitrate": 2250,
-              "BufferWindow": "00:00:05",
-              "Width": 960,
-              "Height": 720,
-              "BFrames": 3,
-              "ReferenceFrames": 3,
-              "AdaptiveBFrame": true,
-              "Type": "H264Layer",
-              "FrameRate": "0/1"
-            },
-            {
-              "Profile": "Auto",
-              "Level": "auto",
-              "Bitrate": 1250,
-              "MaxBitrate": 1250,
-              "BufferWindow": "00:00:05",
-              "Width": 480,
-              "Height": 360,
-              "BFrames": 3,
-              "ReferenceFrames": 3,
-              "AdaptiveBFrame": true,
-              "Type": "H264Layer",
-              "FrameRate": "0/1"
-            }
-          ],
-          "Type": "H264Video"
+          "Profile": "Auto",
+          "Level": "auto",
+          "Bitrate": 3400,
+          "MaxBitrate": 3400,
+          "BufferWindow": "00:00:05",
+          "Width": 1440,
+          "Height": 1080,
+          "BFrames": 3,
+          "ReferenceFrames": 3,
+          "AdaptiveBFrame": true,
+          "Type": "H264Layer",
+          "FrameRate": "0/1"
         },
         {
-          "Profile": "AACLC",
-          "Channels": 2,
-          "SamplingRate": 48000,
-          "Bitrate": 128,
-          "Type": "AACAudio"
+          "Profile": "Auto",
+          "Level": "auto",
+          "Bitrate": 2250,
+          "MaxBitrate": 2250,
+          "BufferWindow": "00:00:05",
+          "Width": 960,
+          "Height": 720,
+          "BFrames": 3,
+          "ReferenceFrames": 3,
+          "AdaptiveBFrame": true,
+          "Type": "H264Layer",
+          "FrameRate": "0/1"
+        },
+        {
+          "Profile": "Auto",
+          "Level": "auto",
+          "Bitrate": 1250,
+          "MaxBitrate": 1250,
+          "BufferWindow": "00:00:05",
+          "Width": 480,
+          "Height": 360,
+          "BFrames": 3,
+          "ReferenceFrames": 3,
+          "AdaptiveBFrame": true,
+          "Type": "H264Layer",
+          "FrameRate": "0/1"
         }
       ],
-      "Outputs": [
-        {
-          "FileName": "{Basename}_{Width}x{Height}_{VideoBitrate}.mp4",
-          "Format": {
-            "Type": "MP4Format"
-          }
-        }
-      ]
+      "Type": "H264Video"
+    },
+    {
+      "Profile": "AACLC",
+      "Channels": 2,
+      "SamplingRate": 48000,
+      "Bitrate": 128,
+      "Type": "AACAudio"
     }
-
+  ],
+  "Outputs": [
+    {
+      "FileName": "{Basename}_{Width}x{Height}_{VideoBitrate}.mp4",
+      "Format": {
+        "Type": "MP4Format"
+      }
+    }
+  ]
+}
+```
 
 ## <a name="restrictions-on-cropping"></a>Ограничения при обрезке
 Обрезка должна выполняться вручную. Вам потребуется загрузить входное видео в подходящее средство редактирования, которое позволит выбрать интересующие вас кадры, навести курсор на определение смещений для прямоугольника обрезки, чтобы определить предустановку кодирования, настроенную для этого конкретного видео, и т. д. Эта функция не предназначена для следующих целей: автоматическое обнаружение и удаление черных леттербокс/пилларбокс границ во входном видео.

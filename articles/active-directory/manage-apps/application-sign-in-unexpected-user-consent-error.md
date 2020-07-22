@@ -3,25 +3,24 @@ title: Непредвиденная ошибка при предоставлен
 description: Здесь описаны ошибки, возникающие при предоставлении согласия для приложения, и способы их устранения.
 services: active-directory
 documentationcenter: ''
-author: msmimart
-manager: CelesteDG
+author: kenwith
+manager: celestedg
 ms.assetid: ''
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: troubleshooting
 ms.date: 07/11/2017
-ms.author: mimart
+ms.author: kenwith
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ea14e02920cf7ba6c5e0a7b415cb92137c915576
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: e2a7709cf0522727257025b2dddc495b20fe8448
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80519702"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84763760"
 ---
 # <a name="unexpected-error-when-performing-consent-to-an-application"></a>Непредвиденная ошибка при предоставлении согласия для приложения
 
@@ -33,7 +32,7 @@ ms.locfileid: "80519702"
 
 ## <a name="requesting-not-authorized-permissions-error"></a>Ошибка при запросе неавторизованных разрешений
 * **AADSTS90093:** &lt;clientAppDisplayName&gt; is requesting one or more permissions that you are not authorized to grant. Contact an administrator, who can consent to this application on your behalf. ("clientAppDisplayName" запрашивает одно или несколько разрешений, которые вы не имеете права предоставлять. Обратитесь к администратору, который может дать согласие для этого приложения от вашего имени.)
-* **AADSTS90094:** &lt;клиентаппдисплайнаме&gt; требуется разрешение на доступ к ресурсам в вашей организации, которые может предоставить только администратор. Попросите администратора предоставить разрешение этому приложению, прежде чем его использовать.
+* **AADSTS90094:** &lt;clientAppDisplayName&gt; требуются разрешения на доступ к ресурсам в вашей организации, которые может предоставить только администратор. Попросите администратора предоставить разрешение для этого приложения, прежде чем его можно будет использовать.
 
 Эта ошибка возникает, когда пользователь, не являющийся администратором организации, пытается использовать приложение, которому нужны разрешения, предоставляемые лишь администратором. Администратор может устранить эту ошибку, предоставив доступ к приложению от имени своей организации.
 
@@ -76,7 +75,7 @@ ms.locfileid: "80519702"
 
     -   Добавление приложения из коллекции приложений Azure AD
 
-## <a name="next-steps"></a>Дальнейшие действия 
+## <a name="next-steps"></a>Дальнейшие шаги 
 
 [Приложения, разрешения и согласие в Azure Active Directory (конечная точка версии 1)](https://docs.microsoft.com/azure/active-directory/active-directory-apps-permissions-consent)<br>
 

@@ -4,10 +4,9 @@ description: Узнайте о проекте приложения, которы
 ms.topic: conceptual
 ms.date: 12/07/2017
 ms.openlocfilehash: e8fc105657bda6114851f4819be4658926ad621c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75349415"
 ---
 # <a name="your-service-fabric-application-and-next-steps"></a>Ваше приложение Service Fabric и дальнейшие действия
@@ -58,7 +57,7 @@ Service Fabric предлагает несколько способов запи
 ## <a name="learn-about-the-application-lifecycle"></a>Узнайте больше о жизненном цикле приложения
 Как и в случае с другими платформами, приложение в Service Fabric обычно проходит следующие фазы: проектирование, разработка, тестирование, развертывание, обновление, техническое обслуживание и удаление. В [этой статье](service-fabric-application-lifecycle.md) представлен обзор интерфейсов API и их использования различными ролями на всех этапах жизненного цикла приложения Service Fabric.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - [Развертывание кластера Service Fabric на платформе Windows в виртуальной сети Azure](service-fabric-tutorial-create-vnet-and-windows-cluster.md).
 - Визуализируйте кластер, включая развернутые приложения и физическую структуру, с помощью [Service Fabric Explorer](service-fabric-visualizing-your-cluster.md).
 - [Версии и обновление служб](service-fabric-application-upgrade-tutorial.md)

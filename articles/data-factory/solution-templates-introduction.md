@@ -12,10 +12,10 @@ manager: anandsub
 ms.custom: seo-lt-2019
 ms.date: 01/04/2019
 ms.openlocfilehash: b5e4512030431b6d2e5d0f849e82a281c882b177
-ms.sourcegitcommit: 1895459d1c8a592f03326fcb037007b86e2fd22f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82628952"
 ---
 # <a name="templates"></a>Шаблоны
@@ -32,7 +32,7 @@ ms.locfileid: "82628952"
 
     ![Открытие коллекции шаблонов на странице Overview (Обзор)](media/solution-templates-introduction/templates-intro-image1.png)
 
-1.  На вкладке автор в обозреватель ресурсов выберите **+**, затем выберите **конвейер из шаблона** , чтобы открыть галерею шаблонов.
+1.  На вкладке автор в обозреватель ресурсов выберите **+** , затем выберите **конвейер из шаблона** , чтобы открыть галерею шаблонов.
 
     ![Открытие коллекции шаблонов на вкладке Author (Автор)](media/solution-templates-introduction/templates-intro-image2.png)
 
@@ -56,7 +56,7 @@ ms.locfileid: "82628952"
 
     -   [Разностное копирование из базы данных](solution-template-delta-copy-with-control-table.md)
 
-    -   Копирование из \<источника\> в \<назначение\>
+    -   Копировать из \<source\> в\<destination\>
 
         -   [Из Amazon S3 в Azure Data Lake Store 2-го поколения](solution-template-migration-s3-azure.md)
 

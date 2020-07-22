@@ -9,10 +9,9 @@ ms.reviewer: estfan, logicappspm
 ms.topic: article
 ms.date: 05/13/2019
 ms.openlocfilehash: b71aae91f4a065b70537a300aa0bd7016edfd4b4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74790277"
 ---
 # <a name="test-logic-apps-with-mock-data-by-setting-up-static-results"></a>Тестирование приложений логики с помощью макетных данных путем настройки статических результатов
@@ -25,7 +24,7 @@ ms.locfileid: "74790277"
 
 * Подписка Azure. Если у вас еще нет подписки Azure, <a href="https://azure.microsoft.com/free/" target="_blank">зарегистрируйтесь для получения бесплатной учетной записи Azure</a>.
 
-* Основные сведения о [создании приложений логики](../logic-apps/quickstart-create-first-logic-app-workflow.md)
+* Базовые знания [создания приложений логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
 * Приложение логики, в котором необходимо настроить статические результаты
 
@@ -45,7 +44,7 @@ ms.locfileid: "74790277"
 
       Например, ниже приведены обязательные свойства для действия HTTP.
 
-      | Свойство | Описание |
+      | Свойство. | Описание: |
       |----------|-------------|
       | **Состояние** | Возвращаемое состояние действия |
       | **Код состояния** | Конкретный возвращаемый код состояния |
@@ -54,7 +53,7 @@ ms.locfileid: "74790277"
 
       ![Выберите "включить статический результат".](./media/test-logic-apps-mock-data-static-results/enable-static-result.png)
 
-      Чтобы ввести макет данных в формате нотация объектов JavaScript (JSON), выберите **Переключение в режим JSON** (![выберите "переключиться в режим JSON](./media/test-logic-apps-mock-data-static-results/switch-to-json-mode-button.png)").
+      Чтобы ввести макет данных в формате нотация объектов JavaScript (JSON), выберите **Переключение в режим JSON** ( ![ выберите "переключиться в режим JSON" ](./media/test-logic-apps-mock-data-static-results/switch-to-json-mode-button.png) ).
 
    1. Для необязательных свойств откройте список **выберите необязательные поля** и выберите свойства, которые нужно макетировать.
 
@@ -62,7 +61,7 @@ ms.locfileid: "74790277"
 
 1. Когда вы будете готовы сохранить, нажмите кнопку **Готово**.
 
-   В правом верхнем углу окна действия в строке заголовка теперь отображается значок теста колба (![значок для статических результатов](./media/test-logic-apps-mock-data-static-results/static-results-test-beaker-icon.png)), который указывает, что включены статические результаты.
+   В правом верхнем углу окна действия в строке заголовка теперь отображается значок теста колба ( ![ значок для статических результатов ](./media/test-logic-apps-mock-data-static-results/static-results-test-beaker-icon.png) ), который указывает, что включены статические результаты.
 
    ![Значок, демонстрирующий включенные статические результаты](./media/test-logic-apps-mock-data-static-results/static-results-enabled.png)
 
@@ -90,7 +89,7 @@ ms.locfileid: "74790277"
 
 1. После открытия **статического поля результатов** выберите один из шагов:
 
-   * Чтобы вставить полный объект JSON, выберите **параметр переключиться в режим JSON** (![выберите пункт "переключиться в режим JSON"](./media/test-logic-apps-mock-data-static-results/switch-to-json-mode-button.png)):
+   * Чтобы вставить полный объект JSON, выберите **параметр переключиться в режим JSON** ( ![ выберите пункт "переключиться в режим JSON" ](./media/test-logic-apps-mock-data-static-results/switch-to-json-mode-button.png) ):
 
      ![Выберите "переключиться в режим JSON" для полного объекта](./media/test-logic-apps-mock-data-static-results/switch-to-json-mode-button-complete.png)
 
@@ -102,7 +101,7 @@ ms.locfileid: "74790277"
 
    ![Режим JSON](./media/test-logic-apps-mock-data-static-results/json-editing-mode.png)
 
-1. По завершении нажмите кнопку **Готово**. Или, чтобы вернуться к конструктору, выберите **Переключение режима редактора** (![выберите "переключение режима редактора"](./media/test-logic-apps-mock-data-static-results/switch-editor-mode-button.png)).
+1. По завершении нажмите кнопку **Готово**. Или, чтобы вернуться к конструктору, выберите **Переключение режима редактора** ( ![ выберите "переключение режима редактора" ](./media/test-logic-apps-mock-data-static-results/switch-editor-mode-button.png) ).
 
 <a name="find-runs-mock-data"></a>
 
@@ -120,7 +119,7 @@ ms.locfileid: "74790277"
 
 1. Для просмотра действий, использующих статические результаты, выберите Запуск, для которого в столбце **статические результаты** задано значение **включено**.
 
-   В действиях, использующих статические результаты![, отображается значок Test](./media/test-logic-apps-mock-data-static-results/static-results-test-beaker-icon.png)колба (значок для статических результатов), например:
+   В действиях, использующих статические результаты, отображается значок Test колба ( ![ значок для статических результатов ](./media/test-logic-apps-mock-data-static-results/static-results-test-beaker-icon.png) ), например:
 
    ![Журнал выполнения — действия, которые используют статические результаты](./media/test-logic-apps-mock-data-static-results/static-results-enabled-run-details.png)
 
@@ -128,18 +127,18 @@ ms.locfileid: "74790277"
 
 При отключении статических результатов значения из последней установки не отбрасываются. Таким образом, при следующем включении статических результатов можно продолжать использовать предыдущие значения.
 
-1. Найдите действие, в котором необходимо отключить статические выходные данные. В правом верхнем углу действия щелкните значок Test колба (![значок для статических результатов](./media/test-logic-apps-mock-data-static-results/static-results-test-beaker-icon.png)).
+1. Найдите действие, в котором необходимо отключить статические выходные данные. В правом верхнем углу действия щелкните значок Test колба ( ![ значок для статических результатов ](./media/test-logic-apps-mock-data-static-results/static-results-test-beaker-icon.png) ).
 
    ![Отключить статические результаты](./media/test-logic-apps-mock-data-static-results/disable-static-results.png)
 
-1. Выберите **отключить статический результат** > **выполнен**.
+1. Выберите **отключить статический результат**  >  **выполнен**.
 
    ![Отключить статические результаты](./media/test-logic-apps-mock-data-static-results/disable-static-results-button.png)
 
-## <a name="reference"></a>Справочник
+## <a name="reference"></a>Справка
 
 Дополнительные сведения об этом параметре в базовых определениях рабочих процессов см. в разделе [статические результаты — Справочник по схеме для языка определения рабочего процесса](../logic-apps/logic-apps-workflow-definition-language.md#static-results) и [рунтимеконфигуратион. статикресулт-Runtime Settings Configuration.](../logic-apps/logic-apps-workflow-actions-triggers.md#runtime-configuration-settings)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о [Azure Logic Apps](../logic-apps/logic-apps-overview.md)

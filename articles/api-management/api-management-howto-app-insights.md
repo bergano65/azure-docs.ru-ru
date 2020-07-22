@@ -13,18 +13,18 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 06/20/2018
 ms.author: apimpm
-ms.openlocfilehash: 48a83fad3395f6ecf06fb1f1ba95aa1b06a53431
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 8c9df3393a0554d2e65b3918c6760885f89e11ed
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81259142"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86254750"
 ---
 # <a name="how-to-integrate-azure-api-management-with-azure-application-insights"></a>Интеграция управления API Azure в Azure Application Insights
 
 Управление API Azure может быть легко интегрировано в Azure Application Insights. Azure Application Insights — это расширяемая служба управления производительностью приложений (APM), предназначенная для веб-разработчиков, создающих приложения и управляющих ими на нескольких платформах. В этом руководстве описываются все этапы этой интеграции и стратегии для снижения влияния интеграции на производительность вашего экземпляра службы управления API.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 Для выполнения действий, описанных в этом руководстве, вам потребуется экземпляр службы управления API. Если у вас его нет, выполните действия, указанные в [этом руководстве](get-started-create-service-instance.md).
 
@@ -34,24 +34,24 @@ ms.locfileid: "81259142"
 
 1. Откройте **портал Azure** и перейдите к **Application Insights**.  
     ![Создание App Insights](media/api-management-howto-app-insights/apim-app-insights-instance-1.png)  
-2. Щелкните **+ Добавить**.  
+2. Выберите **+ Добавить**.  
     ![Создание App Insights](media/api-management-howto-app-insights/apim-app-insights-instance-2.png)  
 3. Заполните форму. В качестве **Типа приложения** выберите **Универсальный**.
-4. Нажмите кнопку **Создать**.
+4. Нажмите **Создать**.
 
 ## <a name="create-a-connection-between-azure-application-insights-and-azure-api-management-service-instance"></a>Создание подключения между Azure Application Insights и экземпляром службы управления API Azure
 
 1. Перейдите к **экземпляру службы управления API Azure** на **портал Azure**.
 2. Выберите **Application Insights** в меню слева.
-3. Щелкните **+ Добавить**.  
+3. Выберите **+ Добавить**.  
     ![Средство ведения журнала App Insights](media/api-management-howto-app-insights/apim-app-insights-logger-1.png)  
 4. Выберите ранее созданный экземпляр **Application Insights** и укажите краткое описание.
-5. Нажмите кнопку **Создать**.
+5. Нажмите **Создать**.
 6. Только что вы создали средство ведения журнала Azure Application Insights с ключом инструментирования. Оно должно появиться в списке.  
     ![Средство ведения журнала App Insights](media/api-management-howto-app-insights/apim-app-insights-logger-2.png)  
 
 > [!NOTE]
-> Фактически сущность [средства ведения журнала](https://docs.microsoft.com/rest/api/apimanagement/2019-12-01/logger/createorupdate) создается в экземпляре службы управления API с ключом инструментирования экземпляра Application Insights.
+> Фактически сущность [средства ведения журнала](/rest/api/apimanagement/2019-12-01/logger/createorupdate) создается в экземпляре службы управления API с ключом инструментирования экземпляра Application Insights.
 
 ## <a name="enable-application-insights-logging-for-your-api"></a>Включение ведения Application Insights для вашего API
 
@@ -70,13 +70,13 @@ ms.locfileid: "81259142"
 > Если переопределить значение **0** по умолчанию в поле **First bytes of body** (Первые байты тела запроса), можно существенно снизить производительность интерфейсов API.
 
 > [!NOTE]
-> Фактически сущность [Диагностика](https://docs.microsoft.com/rest/api/apimanagement/2019-12-01/diagnostic/createorupdate) с именем applicationinsights создается на уровне API.
+> Фактически сущность [Диагностика](/rest/api/apimanagement/2019-12-01/diagnostic/createorupdate) с именем applicationinsights создается на уровне API.
 
 | Имя параметра                        | Тип значения                        | Описание                                                                                                                                                                                                                                                                                                                                      |
 |-------------------------------------|-----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Включите параметр                              | Логическое                           | Указывает, включено ли ведение журнала для данного API.                                                                                                                                                                                                                                                                                                |
+| Включить                              | Логическое                           | Указывает, включено ли ведение журнала для данного API.                                                                                                                                                                                                                                                                                                |
 | Назначение                         | Средство ведения журнала Azure Application Insights | Указывает используемое средство ведения журнала Azure Application Insights                                                                                                                                                                                                                                                                                           |
-| Выборка (%)                        | Decimal                           | Значения от 0 до 100 (в процентах). <br/> Указывает, какой процент запросов будет записываться в журналы в Azure Application Insights. Выборка в 0 % означает, что в журнал не будет записан ни один запрос, а выборка в 100 % — что в журнал будут записаны все запросы. <br/> Этот параметр используется для снижения влияния на производительность записываемых в журнал запросов Azure Application Insights (см. раздел ниже). |
+| Выборка (%)                        | decimal                           | Значения от 0 до 100 (в процентах). <br/> Указывает, какой процент запросов будет записываться в журналы в Azure Application Insights. Выборка в 0 % означает, что в журнал не будет записан ни один запрос, а выборка в 100 % — что в журнал будут записаны все запросы. <br/> Этот параметр используется для снижения влияния на производительность записываемых в журнал запросов Azure Application Insights (см. раздел ниже). |
 | Всегда записывать ошибки в журнал                   | Логическое                           | Если этот параметр установлен, то все ошибки будут записываться в журналы Azure Application Insights независимо от значения параметра **Выборка**.                                                                                                                                                                                                                  |
 | Основные параметры: заголовки              | list                              | Задает заголовки для запросов и ответов, которые будут записываться в журналы Azure Application Insights.  По умолчанию: заголовки не записываются в журналы.                                                                                                                                                                                                             |
 | Основные параметры: количество первых байт текста  | Целое число                           | Задает количество первых байт текста для запросов и ответов, которые будут записываться в журналы Azure Application Insights.  По умолчанию: текст не записывается в журналы.                                                                                                                                                                                                    |
@@ -126,5 +126,5 @@ Azure Application Insights получает следующие данные:
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-+ Дополнительные сведения об [Azure Application Insights](https://docs.microsoft.com/azure/application-insights/).
++ Дополнительные сведения об [Azure Application Insights](/azure/application-insights/).
 + См. раздел [ведение журналов с помощью Центров событий Azure](api-management-howto-log-event-hubs.md).

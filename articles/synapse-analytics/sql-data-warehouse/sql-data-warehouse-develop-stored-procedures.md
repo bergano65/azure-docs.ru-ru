@@ -6,16 +6,16 @@ author: XiaoyuMSFT
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
-ms.subservice: ''
+ms.subservice: sql-dw
 ms.date: 04/02/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: 3ffdf7a66c2562b43fc2ed02bb088ab1095118fb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 87c7eaa57f9da87bd83f89953afc09632d42b1f8
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81416155"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85213403"
 ---
 # <a name="using-stored-procedures-in-synapse-sql-pool"></a>Использование хранимых процедур в пуле SQL синапсе
 
@@ -72,7 +72,7 @@ GO
 EXEC prc_nesting
 ```
 
-В настоящее время пул SQL не поддерживает [@@NESTLEVEL](/sql/t-sql/functions/nestlevel-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest). Таким образом, необходимо контролировать уровень вложенности. Маловероятно, что превышено ограничение в восьми уровней вложенности. Но в этом случае необходимо переработать код в соответствии с уровнями вложенности в пределах этого ограничения.
+В настоящее время пул SQL не поддерживает [@ @NESTLEVEL ](/sql/t-sql/functions/nestlevel-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest). Таким образом, необходимо контролировать уровень вложенности. Маловероятно, что превышено ограничение в восьми уровней вложенности. Но в этом случае необходимо переработать код в соответствии с уровнями вложенности в пределах этого ограничения.
 
 ## <a name="insertexecute"></a>INSERT..EXECUTE
 
@@ -92,8 +92,8 @@ EXEC prc_nesting
 * параметры только для чтения;
 * параметры по умолчанию;
 * контекст выполнения;
-* инструкция Return.
+* Оператор return
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные советы по разработке см. в статье [Проектные решения и методики программирования для хранилища данных SQL](sql-data-warehouse-overview-develop.md).
+Дополнительные советы по разработке приведены в [обзоре разработки](sql-data-warehouse-overview-develop.md).

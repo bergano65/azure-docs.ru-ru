@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: tutorial
 ms.date: 08/12/2019
 ms.author: mbaldwin
-ms.openlocfilehash: e9198892f95635add27bcfe9e479d0dd6fe3f08d
-ms.sourcegitcommit: b80aafd2c71d7366838811e92bd234ddbab507b6
+ms.openlocfilehash: b3f337798525860748cf7b535c2bce478dad8e27
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81425373"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86043008"
 ---
 # <a name="azure-key-vault-logging"></a>Ведение журнала Azure Key Vault
 
@@ -95,7 +95,7 @@ Set-AzContext -SubscriptionId <subscription ID>
 $kv = Get-AzKeyVault -VaultName 'ContosoKeyVault'
 ```
 
-## <a name="enable-logging"></a><a id="enable"></a>Включение ведения журналов
+## <a name="enable-logging-using-azure-powershell"></a><a id="enable"></a>Включение ведения журнала с помощью Azure PowerShell
 
 Мы включим ведение журналов хранилища ключей с помощью командлета **Set-AzDiagnosticSetting** и переменных, которые мы создали для новой учетной записи хранения и хранилища ключей. Мы также установим для флага **-Enabled** значение **$true** и зададим категорию **AuditEvent** (единственная категория для ведения журнала Key Vault).
 
@@ -105,15 +105,17 @@ Set-AzDiagnosticSetting -ResourceId $kv.ResourceId -StorageAccountId $sa.Id -Ena
 
 Выходные данные выглядят следующим образом:
 
-    StorageAccountId   : /subscriptions/<subscription-GUID>/resourceGroups/ContosoResourceGroup/providers/Microsoft.Storage/storageAccounts/ContosoKeyVaultLogs
-    ServiceBusRuleId   :
-    StorageAccountName :
-        Logs
-        Enabled           : True
-        Category          : AuditEvent
-        RetentionPolicy
-        Enabled : False
-        Days    : 0
+```output
+StorageAccountId   : /subscriptions/<subscription-GUID>/resourceGroups/ContosoResourceGroup/providers/Microsoft.Storage/storageAccountContosoKeyVaultLogs
+ServiceBusRuleId   :
+StorageAccountName :
+    Logs
+    Enabled           : True
+    Category          : AuditEvent
+    RetentionPolicy
+    Enabled : False
+    Days    : 0
+```
 
 Эти выходные данные подтверждают, что для хранилища ключей теперь включено ведение журнала, и данные сохраняются в указанной учетной записи хранения.
 
@@ -131,6 +133,25 @@ Set-AzDiagnosticSetting -ResourceId $kv.ResourceId -StorageAccountId $sa.Id -Ena
   * создание, изменение или удаление ключей или секретов;
   * подписывание, проверка, шифрование, расшифровка, упаковка и распаковка ключей, получение секретов и вывод списка ключей и секретов (и их версий);
 * непроверенные запросы, которые приводят к появлению ответа 401 (например, запросы без токена носителя, с недействительным токеном, а также запросы неправильного формата или просроченные запросы).  
+
+## <a name="enable-logging-using-azure-cli"></a>Включение ведения журнала с помощью Azure PowerShell
+
+```azurecli
+az login
+
+az account set --subscription {AZURE SUBSCRIPTION ID}
+
+az provider register -n Microsoft.KeyVault
+
+az monitor diagnostic-settings create  \
+--name KeyVault-Diagnostics \
+--resource /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myresourcegroup/providers/Microsoft.KeyVault/vaults/mykeyvault \
+--logs    '[{"category": "AuditEvent","enabled": true}]' \
+--metrics '[{"category": "AllMetrics","enabled": true}]' \
+--storage-account /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myresourcegroup/providers/Microsoft.Storage/storageAccounts/mystorageaccount \
+--workspace /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourcegroups/oi-default-east-us/providers/microsoft.operationalinsights/workspaces/myworkspace \
+--event-hub-rule /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myresourcegroup/providers/Microsoft.EventHub/namespaces/myeventhub/authorizationrules/RootManageSharedAccessKey
+```
 
 ## <a name="access-your-logs"></a><a id="access"></a>Доступ к журналам
 
@@ -214,15 +235,10 @@ $blobs | Get-AzStorageBlobContent -Destination C:\Users\username\ContosoKeyVault
 * Запрос состояния параметров диагностики для ресурса хранилища ключей: `Get-AzDiagnosticSetting -ResourceId $kv.ResourceId`
 * Отключение ведения журнала для ресурса хранилища ключей: `Set-AzDiagnosticSetting -ResourceId $kv.ResourceId -StorageAccountId $sa.Id -Enabled $false -Category AuditEvent`
 
+
 ## <a name="interpret-your-key-vault-logs"></a><a id="interpret"></a>Интерпретация журналов хранилища ключей
 
-Отдельные BLOB-объекты хранятся как текст в формате JSON. Давайте рассмотрим пример записи журнала. Выполните следующую команду:
-
-```powershell
-Get-AzKeyVault -VaultName 'contosokeyvault'`
-```
-
-Это действие возвращает запись журнала такого вида:
+Отдельные BLOB-объекты хранятся как текст в формате JSON. Давайте рассмотрим пример записи журнала. 
 
 ```json
     {
@@ -316,5 +332,3 @@ Get-AzKeyVault -VaultName 'contosokeyvault'`
 Справочные материалы по программированию см. в статье [Руководство разработчика хранилища ключей Azure](developers-guide.md).
 
 Полный список командлетов Azure PowerShell 1.0 для хранилища ключей Azure см. в статье [Azure Key Vault cmdlets](/powershell/module/az.keyvault/?view=azps-1.2.0#key_vault) (Командлеты хранилища ключей Azure).
-
-Руководство по смене ключей и аудиту журналов с помощью Azure Key Vault см. в статье [о настройке полной смены ключей и аудита в Key Vault](../secrets/key-rotation-log-monitoring.md).

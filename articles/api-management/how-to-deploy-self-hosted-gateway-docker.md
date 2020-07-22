@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 04/26/2020
 ms.author: apimpm
 ms.openlocfilehash: b9e990988770e8aca015ae8b1159bb4f5e50df57
-ms.sourcegitcommit: 67bddb15f90fb7e845ca739d16ad568cbc368c06
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82205096"
 ---
 # <a name="deploy-an-azure-api-management-self-hosted-gateway-to-docker"></a>Развертывание самостоятельно размещенного шлюза службы управления API Azure в DOCKER
@@ -24,9 +24,9 @@ ms.locfileid: "82205096"
 > [!NOTE]
 > Размещение самостоятельно размещенного шлюза в DOCKER лучше всего подходит для целей использования при оценке и разработке. Kubernetes рекомендуется использовать для использования в рабочей среде. В [этом](how-to-deploy-self-hosted-gateway-kubernetes.md) документе содержатся сведения о развертывании автономного шлюза в Kubernetes.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
-- Выполните следующие действия в кратком руководстве по [созданию экземпляра службы управления API Azure](get-started-create-service-instance.md) .
+- Выполните инструкции из краткого руководства [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md)
 - Создайте среду DOCKER. [DOCKER для настольных систем](https://www.docker.com/products/docker-desktop) является хорошим вариантом для целей разработки и оценки. Сведения о всех выпусках DOCKER, их функциях и исчерпывающей документации по собственно DOCKER см. в [документации по DOCKER](https://docs.docker.com) .
 - [Подготавливает ресурс шлюза в экземпляре управления API](api-management-howto-provision-self-hosted-gateway.md)
 
@@ -62,7 +62,7 @@ CONTAINER ID        IMAGE                                                 COMMAN
 >
 > Используйте <code>docker container logs --help</code> команду, чтобы просмотреть все параметры просмотра журнала.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о шлюзе, размещенном в собственном расположении, см. в статье [Общие сведения о шлюзе службы управления API Azure](self-hosted-gateway-overview.md).
 * [Настройте имя личного домена для самостоятельно размещенного шлюза](api-management-howto-configure-custom-domain-gateway.md).

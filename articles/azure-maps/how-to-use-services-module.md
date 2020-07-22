@@ -9,15 +9,14 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendleton
 ms.openlocfilehash: 6e9d1f35d021c3381f9c2887dfb1c150bb720871
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80804662"
 ---
 # <a name="use-the-azure-maps-services-module"></a>Использование модуля Azure Maps Services
 
-Веб-пакет SDK для Azure Maps предоставляет *Модуль служб*. Этот модуль представляет собой вспомогательную библиотеку, которая упрощает использование служб Azure Maps RESTFUL в веб-приложениях или в приложении Node. js с помощью JavaScript или TypeScript.
+Веб-пакет SDK для Azure Maps предоставляет *Модуль служб*. Этот модуль представляет собой вспомогательную библиотеку, которая упрощает использование Azure Maps служб RESTFUL в веб-приложениях и Node.js приложений с помощью JavaScript или TypeScript.
 
 ## <a name="use-the-services-module-in-a-webpage"></a>Использование модуля "службы" на веб-странице
 
@@ -160,7 +159,7 @@ ms.locfileid: "80804662"
 <br/>
 
 <iframe height="500" style="width: 100%;" scrolling="no" title="Использование модуля "службы"" src="//codepen.io/azuremaps/embed/zbXGMR/?height=500&theme-id=0&default-tab=js,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
-Посмотрите перо <a href='https://codepen.io/azuremaps/pen/zbXGMR/'>с помощью модуля службы</a> , Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на <a href='https://codepen.io'>CodePen</a>.
+Посмотрите перо <a href='https://codepen.io/azuremaps/pen/zbXGMR/'>с помощью модуля службы</a> , Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) на <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 <br/>
@@ -183,9 +182,9 @@ atlas.setDomain('atlas.azure.us');
 var searchURL = new atlas.service.SearchURL(pipeline, 'atlas.azure.us');
 ```
 
-При непосредственном доступе к службам Azure Maps RESTFUL измените домен URL `atlas.azure.us`-адреса на. Например, при использовании службы API поиска измените домен URL-адреса с `https://atlas.microsoft.com/search/` на. `https://atlas.azure.us/search/`
+При непосредственном доступе к службам Azure Maps RESTFUL измените домен URL-адреса на `atlas.azure.us` . Например, при использовании службы API поиска измените домен URL-адреса с `https://atlas.microsoft.com/search/` на `https://atlas.azure.us/search/` .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 

@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 4541874a9e8fc4111e5c65d02f07535c4d14f9f1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c31ebfedeee0fe208f68c190402796b98c73ea1b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77565984"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85829879"
 ---
 # <a name="how-to-secure-your-private-cloud-environment"></a>Как защитить среду частного облака
 
@@ -29,16 +29,16 @@ ms.locfileid: "77565984"
 
 Только пользователи, у которых есть права **владельца** или **участника** в группе ресурсов, увидят службу Клаудсимпле и запустить портал клаудсимпле.
 
-Дополнительные сведения о RBAC см. в статье [что такое управление доступом на основе ролей (RBAC) для ресурсов Azure](../role-based-access-control/overview.md).
+Дополнительные сведения см. в статье [что такое управление доступом на основе ролей в Azure (Azure RBAC)](../role-based-access-control/overview.md).
 
 ## <a name="rbac-for-private-cloud-vcenter"></a>RBAC для частного облака vCenter
 
-При создании частного `CloudOwner@cloudsimple.local` облака пользователь по умолчанию создается в домене единого входа vCenter.  У пользователя Клаудовнер есть права на управление vCenter. Дополнительные источники удостоверений добавляются в службу единого входа vCenter для предоставления доступа разным пользователям.  Предварительно определенные роли и группы настраиваются в vCenter, который можно использовать для добавления дополнительных пользователей.
+`CloudOwner@cloudsimple.local`При создании частного облака пользователь по умолчанию создается в домене единого входа vCenter.  У пользователя Клаудовнер есть права на управление vCenter. Дополнительные источники удостоверений добавляются в службу единого входа vCenter для предоставления доступа разным пользователям.  Предварительно определенные роли и группы настраиваются в vCenter, который можно использовать для добавления дополнительных пользователей.
 
 ### <a name="add-new-users-to-vcenter"></a>Добавление новых пользователей в vCenter
 
-1. [Эскалировать привилегии](escalate-private-cloud-privileges.md) для **клаудовнер\@Клаудсимпле. локальный** пользователь в частном облаке.
-2. Войдите в vCenter с **помощью\@клаудовнер клаудсимпле. local.**
+1. [Эскалировать привилегии](escalate-private-cloud-privileges.md) для **клаудовнер \@ клаудсимпле. локальный** пользователь в частном облаке.
+2. Войдите в vCenter с помощью **клаудовнер \@ клаудсимпле. local.**
 3. [Добавление пользователей с единым входом vCenter](https://docs.vmware.com/en/VMware-vSphere/5.5/com.vmware.vsphere.security.doc/GUID-72BFF98C-C530-4C50-BF31-B5779D2A4BBB.html).
 4. Добавление пользователей в [группы единого входа vCenter](https://docs.vmware.com/en/VMware-vSphere/5.5/com.vmware.vsphere.security.doc/GUID-CDEA6F32-7581-4615-8572-E0B44C11D80D.html).
 
@@ -51,8 +51,8 @@ ms.locfileid: "77565984"
 * [Используйте Active Directory в качестве поставщика удостоверений](set-vcenter-identity.md) в частном облаке vCenter.
 * [Использование Azure AD в качестве поставщика удостоверений](azure-ad.md) в частном облаке vCenter
 
-1. [Эскалировать привилегии](escalate-private-cloud-privileges.md) для **клаудовнер\@Клаудсимпле. локальный** пользователь в частном облаке.
-2. Войдите в vCenter с **помощью\@клаудовнер клаудсимпле. local.**
+1. [Эскалировать привилегии](escalate-private-cloud-privileges.md) для **клаудовнер \@ клаудсимпле. локальный** пользователь в частном облаке.
+2. Войдите в vCenter с помощью **клаудовнер \@ клаудсимпле. local.**
 3. Добавьте пользователей из поставщика удостоверений в [группы единого входа vCenter](https://docs.vmware.com/en/VMware-vSphere/5.5/com.vmware.vsphere.security.doc/GUID-CDEA6F32-7581-4615-8572-E0B44C11D80D.html).
 
 ## <a name="secure-network-on-your-private-cloud-environment"></a>Защита сети в среде частного облака

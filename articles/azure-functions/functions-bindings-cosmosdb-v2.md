@@ -1,24 +1,24 @@
 ---
-title: Привязки Azure Cosmos DB для службы "Функции" версии 2.х
+title: Привязки Azure Cosmos DB для функций 2. XD и более поздних версий
 description: Узнайте, как использовать триггеры и привязки Azure Cosmos DB в службе "Функции Azure".
 author: craigshoemaker
 ms.topic: reference
 ms.date: 02/24/2017
 ms.author: cshoe
-ms.openlocfilehash: f258a7aff52796a53540706bc8413575d63c9e7d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 2c6efd14bd974de1b01b1725b9810f153df74bf8
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77605761"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85482179"
 ---
-# <a name="azure-cosmos-db-trigger-and-bindings-for-azure-functions-2x-overview"></a>Обзор Azure Cosmos DB триггеров и привязок для функций Azure 2. x
+# <a name="azure-cosmos-db-trigger-and-bindings-for-azure-functions-2x-and-higher-overview"></a>Azure Cosmos DB триггеры и привязки для функций Azure 2. x и более поздних обзоров
 
 > [!div class="op_single_selector" title1="Выберите версию используемой среды выполнения функций Azure: "]
 > * [Версия 1](functions-bindings-cosmosdb.md)
-> * [Версия 2](functions-bindings-cosmosdb-v2.md)
+> * [Версии 2 и выше](functions-bindings-cosmosdb-v2.md)
 
-В этом наборе статей объясняется, как работать с привязками [Azure Cosmos DB](../cosmos-db/serverless-computing-database.md) в функциях Azure 2. x. Служба "Функции Azure" поддерживает привязки триггера, а также входные и выходные привязки для Azure Cosmos DB.
+В этом наборе статей объясняется, как работать с привязками [Azure Cosmos DB](../cosmos-db/serverless-computing-database.md) в функциях Azure 2. x и более поздних версий. Служба "Функции Azure" поддерживает привязки триггера, а также входные и выходные привязки для Azure Cosmos DB.
 
 | Действие | Type |
 |---------|---------|
@@ -27,9 +27,9 @@ ms.locfileid: "77605761"
 | Сохранение изменений в документе Azure Cosmos DB  |[Выходная привязка](./functions-bindings-cosmosdb-v2-output.md) |
 
 > [!NOTE]
-> Эта ссылка предназначена для [функций Azure версии 2. x](functions-versions.md).  Для получения дополнительных сведений об использовании Функций версии 1.x см. раздел [Функции 1.х](functions-bindings-cosmosdb.md).
+> Эта ссылка предназначена для [функций Azure версии 2. x и более поздних](functions-versions.md).  Для получения дополнительных сведений об использовании Функций версии 1.x см. раздел [Функции 1.х](functions-bindings-cosmosdb.md).
 >
-> Эта привязка называлась DocumentDB. В Функциях версии 2.x триггер, привязки и пакет вместе называются Cosmos DB.
+> Эта привязка называлась DocumentDB. В функциях версии 2. x и более поздних, триггер, привязки и пакет имеют имя Cosmos DB.
 
 ## <a name="supported-apis"></a>Поддерживаемые API
 
@@ -37,11 +37,11 @@ ms.locfileid: "77605761"
 
 ## <a name="add-to-your-functions-app"></a>Добавление в приложение функций
 
-### <a name="functions-2x-and-higher"></a>Функции 2. x и более поздних версий
+### <a name="functions-2x-and-higher"></a>Функции 2.x и более поздних версий
 
 Для работы с триггером и привязками требуется ссылка на соответствующий пакет. Пакет NuGet используется для библиотек классов .NET, в то время как набор расширений используется для всех других типов приложений.
 
-| Язык                                        | Добавить по...                                   | Remarks 
+| Язык                                        | Добавить по...                                   | Комментарии 
 |-------------------------------------------------|---------------------------------------------|-------------|
 | C#                                              | Установка [пакета NuGet], версия 3. x | |
 | Скрипт C#, Java, JavaScript, Python, PowerShell | Регистрация [пакета расширений]          | [Расширение "инструменты Azure] " рекомендуется использовать с Visual Studio Code. |

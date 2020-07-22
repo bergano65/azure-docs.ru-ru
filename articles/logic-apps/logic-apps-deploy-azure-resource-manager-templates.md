@@ -7,10 +7,10 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 08/01/2019
 ms.openlocfilehash: 432e22879ce0eba89f04a1084e2d4a93a487dd45
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82086442"
 ---
 # <a name="deploy-azure-resource-manager-templates-for-azure-logic-apps"></a>Развертывание шаблонов Azure Resource Manager для Azure Logic Apps
@@ -21,7 +21,7 @@ ms.locfileid: "82086442"
 * [Visual Studio](#visual-studio)
 * [Azure PowerShell](#powershell)
 * [Azure CLI](#cli)
-* [API REST диспетчера ресурсов Azure](../azure-resource-manager/templates/deploy-rest.md)
+* [REST API Azure Resource Manager](../azure-resource-manager/templates/deploy-rest.md)
 * [Azure DevOps](#azure-pipelines)
 
 <a name="portal"></a>
@@ -126,7 +126,7 @@ az group deployment create -g <Azure-resource-group-name> --template-uri https:/
 
 Если вместо авторизации подключений используется [субъект-служба](../active-directory/develop/app-objects-and-service-principals.md) Azure Active Directory (Azure AD), Узнайте, как [указать параметры субъекта — службы в шаблоне приложения логики](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md#authenticate-connections).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Мониторинг приложений логики](../logic-apps/monitor-logic-apps.md)

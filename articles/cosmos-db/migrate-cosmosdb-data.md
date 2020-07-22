@@ -1,18 +1,18 @@
 ---
 title: Перенос сотен терабайт данных в Azure Cosmos DB
 description: В этом документе описывается, как можно перенести 100 терабайтов данных в Cosmos DB
-author: bharathsreenivas
+author: SnehaGunda
+ms.author: sngun
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 10/23/2019
-ms.author: bharathb
-ms.openlocfilehash: 69b400eb7838c986ac6f275da58c7457179ebea6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 1e48b2ff6e469a5f792b64c20631e4bd64fb9fd7
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "72880204"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85263550"
 ---
 # <a name="migrate-hundreds-of-terabytes-of-data-into-azure-cosmos-db"></a>Перенос сотен терабайт данных в Azure Cosmos DB 
 
@@ -45,7 +45,7 @@ Azure Cosmos DB стратегии миграции в настоящее вре
 На следующем рисунке описан процесс миграции с помощью этого пользовательского инструмента. Средство выполняется на наборе виртуальных машин, и каждая виртуальная машина запрашивает сбор данных отслеживания в Azure Cosmos DB, чтобы получить аренду одной из секций с исходными данными. После этого исходный раздел данных считывается средством и принимается в Azure Cosmos DB с помощью библиотеки массового выполнителя. Далее будет обновлен сбор отслеживания для записи хода приема данных и обнаруженных ошибок. После обработки секции данных средство пытается запросить следующую доступную исходную секцию. Обработка следующей исходной секции будет продолжена до тех пор, пока не будут перенесены все данные. Исходный код для этого средства доступен [здесь](https://github.com/Azure-Samples/azure-cosmosdb-bulkingestion).  
 
  
-![Настройка средства миграции](./media/migrate-cosmosdb-data/migrationsetup.png)
+:::image type="content" source="./media/migrate-cosmosdb-data/migrationsetup.png" alt-text="Настройка средства миграции" border="false":::
  
 
  
@@ -145,10 +145,10 @@ Azure Cosmos DB стратегии миграции в настоящее вре
 ## <a name="contact-the-azure-cosmos-db-team"></a>Обратитесь к группе Azure Cosmos DB
 Хотя вы можете следовать этому руководству для успешного переноса больших наборов данных в Azure Cosmos DB, для крупномасштабных миграций рекомендуется обратиться к группе разработчиков Azure Cosmos DB, чтобы проверить моделирование данных и общую архитектурную проверку. Основываясь на наборе данных и рабочей нагрузке, группа разработчиков может также предложить другие средства оптимизации производительности и затрат, которые могут быть применимы к вам. Чтобы обратиться к группе Azure Cosmos DB для помощи в выполнении крупномасштабных миграций, можно открыть запрос в службу поддержки в подтипе проблемы "Общие рекомендации" и "крупные (ТБ +) миграции", как показано ниже.
 
-![Раздел поддержки миграции](./media/migrate-cosmosdb-data/supporttopic.png)
+:::image type="content" source="./media/migrate-cosmosdb-data/supporttopic.png" alt-text="Раздел поддержки миграции":::
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения см. в примерах приложений, использующих библиотеку небольшого выполнителя в [.NET](bulk-executor-dot-net.md) и [Java](bulk-executor-java.md). 
 * Библиотека небольшого Исполнительного исполнителя интегрирована в соединитель Cosmos DB Spark. Дополнительные сведения см. в статье о [соединителе Azure Cosmos DB Spark](spark-connector.md) .  

@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 08/18/2017
 ms.author: masnider
 ms.openlocfilehash: 9aea157d03f344e07a81f0588d3e0127f17ca75d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75834396"
 ---
 # <a name="placement-policies-for-service-fabric-services"></a>Политики размещения для служб Service Fabric
@@ -122,7 +121,7 @@ New-ServiceFabricService -ApplicationName $applicationName -ServiceName $service
 
 Можно ли использовать эти конфигурации для служб в кластере, который не распределен между разными географическими регионами? Можно, но не нужно. Конфигураций с обязательными, недопустимыми и предпочтительными доменами следует избегать, если только без них невозможно обойтись. Не имеет смысла пытаться принудительно запускать определенную рабочую нагрузку в одной стойке или использовать какой-либо сегмент локального кластера вместо другого. Разные аппаратные конфигурации следует распределить между доменами сбоя и обрабатывать с использованием обычных ограничений размещения и свойств узлов.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 - Дополнительные сведения о настройке служб см. в разделе [Настройка параметров Cluster Resource Manager для служб Service Fabric](service-fabric-cluster-resource-manager-configure-services.md).
 
 [Image1]:./media/service-fabric-cluster-resource-manager-advanced-placement-rules-placement-policies/cluster-invalid-placement-domain.png

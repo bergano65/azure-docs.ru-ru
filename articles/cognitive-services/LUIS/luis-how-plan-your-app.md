@@ -1,14 +1,14 @@
 ---
 title: Планирование приложения — LUIS
 description: Определяйте соответствующие приложению намерения и сущности, а затем создавайте планы приложений в Интеллектуальной службе распознавания речи (LUIS).
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/14/2020
-ms.openlocfilehash: 3463078309978ae34918f27a9d75c1dabd59ae66
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 8141e2a47e2a550a5dba50bc22117649c0bd04e2
+ms.sourcegitcommit: 61d850bc7f01c6fafee85bda726d89ab2ee733ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83654115"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84340238"
 ---
 # <a name="plan-your-luis-app-schema-with-subject-domain-and-data-extraction"></a>Планирование схемы приложения LUIS с темой предметной области и извлечение данных
 
@@ -73,7 +73,7 @@ ms.locfileid: "83654115"
 
 Чтобы облегчить извлечение дополнительных компонентов в подсущности. Вы выбираете свои функции, основанные на словаре, который вы видите в разделе User фразы продолжительностью, и значениях, которые должны возвращаться в прогнозируемом ответе.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Изучение лифецилце разработки LUIS](luis-concept-app-iteration.md)

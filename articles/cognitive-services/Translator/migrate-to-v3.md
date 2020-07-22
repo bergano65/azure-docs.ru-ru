@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 05/26/2020
 ms.author: swmachan
-ms.openlocfilehash: 8fae863c03ccbc17e9ec6621e73ddf475f759569
-ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
+ms.openlocfilehash: fb907e0b9c923a77c6956723f6df397fabd84da8
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83996216"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86523984"
 ---
 # <a name="translator-v2-to-v3-migration"></a>Миграция с версии 2 на v3
 
@@ -116,8 +116,8 @@ Global
 
 Нейронный перевод с помощью API перевода текста версии 3 не поддерживает стандартные категории (SMT, speech, tech, generalnn).
 
-| |Конечная точка|    Соответствие требованиям процессора GDPR|    Использование Translator Hub|    Использование Пользовательского переводчика (предварительная версия)|
-|:-----|:-----|:-----|:-----|:-----|
+| Версия | Конечная точка | Соответствие требованиям процессора GDPR | Использование Translator Hub | Использование Пользовательского переводчика (предварительная версия) |
+| :------ | :------- | :------------------------ | :----------------- | :------------------------------ |
 |Переводчик версии 2|    api.microsofttranslator.com|    Нет    |Да    |Нет|
 |Translator версии 3|    api.cognitive.microsofttranslator.com|    Да|    Нет|    Да|
 
@@ -137,7 +137,7 @@ Global
 
 Ни одна из версий транслятора не создает запись переводов. Ваши переводы никогда не передаются третьим лицам. Дополнительные сведения см. на веб-странице Translator [об отсутствии отслеживания](https://www.aka.ms/NoTrace).
 
-## <a name="links"></a>Ссылки
+## <a name="links"></a>Создание ссылок
 
 * [Политика конфиденциальности Майкрософт](https://privacy.microsoft.com/privacystatement)
 * [Юридическая информация о платформе Microsoft Azure](https://azure.microsoft.com/support/legal)

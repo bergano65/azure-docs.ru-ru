@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.topic: troubleshooting
 ms.custom: hdinsightactive
 ms.date: 11/28/2019
-ms.openlocfilehash: 371c00fd63f7a89f4d50ce130e89f10e2a7a38bd
-ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
+ms.openlocfilehash: 71f9bc75bc2b84708af54ba89918cd874099a2d4
+ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82891092"
+ms.lasthandoff: 07/05/2020
+ms.locfileid: "85961903"
 ---
 # <a name="fix-an-apache-hive-out-of-memory-error-in-azure-hdinsight"></a>Устранение ошибки нехватки памяти Apache Hive в Azure HDInsight
 
@@ -50,11 +50,14 @@ where (T1.KEY1 = T2.KEY1….
 
 На выполнение запроса Hive в кластере HDInsight A3 с 24 узлами ушло 26 минут. Клиент заметил следующие предупреждения:
 
+```output
     Warning: Map Join MAPJOIN[428][bigTable=?] in task 'Stage-21:MAPRED' is a cross product
     Warning: Shuffle Join JOIN[8][tables = [t1933775, t1932766]] in Stage 'Stage-4:MAPRED' is a cross product
+```
 
 С механизмом выполнения Apache Tez. выполнение того же запроса заняло 15 минут, после чего появилась следующая ошибка:
 
+```output
     Status: Failed
     Vertex failed, vertexName=Map 5, vertexId=vertex_1443634917922_0008_1_05, diagnostics=[Task failed, taskId=task_1443634917922_0008_1_05_000006, diagnostics=[TaskAttempt 0 failed, info=[Error: Failure while running task:java.lang.RuntimeException: java.lang.OutOfMemoryError: Java heap space
         at
@@ -78,6 +81,7 @@ where (T1.KEY1 = T2.KEY1….
         at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
         at java.lang.Thread.run(Thread.java:745)
     Caused by: java.lang.OutOfMemoryError: Java heap space
+```
 
 Ошибка не устраняется при использовании виртуальной машины большего размера (например, D12).
 
@@ -112,11 +116,13 @@ where (T1.KEY1 = T2.KEY1….
 
 Поскольку компьютер D12 имеет 28 ГБ памяти, мы решили использовать размер контейнера 10 ГБ (10240 МБ) и назначить 80% для Java. назначайте:
 
-    SET hive.tez.container.size=10240
-    SET hive.tez.java.opts=-Xmx8192m
+```console
+SET hive.tez.container.size=10240
+SET hive.tez.java.opts=-Xmx8192m
+```
 
 С новыми настройками запрос был выполнен успешно за 10 минут.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Ошибка нехватки памяти не обязательно означает, что размер контейнера слишком мал. Вместо этого следует настроить параметры памяти, увеличив размер кучи, так чтобы он составлял не менее 80 % от размера памяти контейнера. Дополнительные сведения см. в статье [Оптимизация запросов Hive в Azure HDInsight](hdinsight-hadoop-optimize-hive-query.md).

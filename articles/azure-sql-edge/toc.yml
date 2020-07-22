@@ -6,6 +6,8 @@
       href: overview.md
     - name: Поддерживаемые выпуски и функции
       href: features.md
+    - name: Заметки о выпуске
+      href: release-notes.md
 - name: Краткие руководства
   expanded: true
   items:

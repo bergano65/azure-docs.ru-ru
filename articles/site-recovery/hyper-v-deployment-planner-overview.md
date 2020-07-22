@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 3/13/2020
 ms.author: mayg
-ms.openlocfilehash: 07c1f7f258dbea7bcf7a6e7ea51fdcfdfaa006aa
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e4f1931aab056306ac5e9f9e9ef402ca26ec2d19
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79368729"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86528950"
 ---
 # <a name="about-the-azure-site-recovery-deployment-planner-for-hyper-v-disaster-recovery-to-azure"></a>Сведения об использовании Планировщика развертывания Azure Site Recovery для аварийного восстановления виртуальных машин Hyper-V в Azure
 
@@ -70,7 +70,7 @@ ms.locfileid: "79368729"
 
 ## <a name="support-matrix"></a>Матрица поддержки
 
-| | **Из VMware в Azure** |**Hyper-V в Azure**|**Из Azure в Azure**|**Из Hyper-V на дополнительный сайт**|**Из VMware на дополнительный сайт**
+|**Категории** | **VMware в VMware** |**Hyper-V в Azure**|**Из Azure в Azure**|**Из Hyper-V на дополнительный сайт**|**Из VMware на дополнительный сайт**
 --|--|--|--|--|--
 Поддерживаемые сценарии |Да|Да|Нет|Да*|Нет
 Поддерживаемая версия | vCenter 6,7, 6,5, 6,0 или 5,5| Windows Server 2016, Windows Server 2012 R2 | Н/Д |Windows Server 2016, Windows Server 2012 R2|Н/Д
@@ -79,7 +79,7 @@ ms.locfileid: "79368729"
 
 *Это средство в первую очередь предназначено для сценария аварийного восстановления виртуальных машин Hyper-V в Azure. При аварийном восстановлении виртуальных машин Hyper-V на вторичный сайт это средство может использоваться только для того, чтобы получить рекомендации на стороне источника, такие как необходимая пропускная способность сети, требуемое свободное место на каждом исходном сервере Hyper-V, а также количество необходимых операций пакетной обработки и определения пакетов для начальной репликации.  Пропустите рекомендации и сведения о затратах на Azure в отчете. Кроме того, операция оценки пропускной способности не применяется в сценариях аварийного восстановления виртуальных машин Hyper-V на вторичный сайт.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 Планирование развертывания Hyper-V при помощи программы состоит из трех основных этапов: получение списка виртуальных машин, профилирование и создание отчетов. С помощью этой программы также можно оценить пропускную способность. В следующей таблице представлены требования к серверу, на котором выполняются различные этапы обработки.
 
 | Требование к серверу | Описание |
@@ -90,19 +90,24 @@ ms.locfileid: "79368729"
  |
 
 ## <a name="steps-to-add-servers-into-trustedhosts-list"></a>Инструкции по добавлению серверов в список TrustedHosts
-1.  Все узлы, которые необходимо профилировать, должны быть указаны в списке TrustedHosts для виртуальной машины, на которой будет развертываться программа. Чтобы добавить клиент в список Trustedhosts, выполните указанную ниже команду в сеансе PowerShell с повышенными привилегиями на виртуальной машине. На виртуальной машине можно использовать ОС Windows Server 2012 R2 или Windows Server 2016. 
+1. Все узлы, которые необходимо профилировать, должны быть указаны в списке TrustedHosts для виртуальной машины, на которой будет развертываться программа. Чтобы добавить клиент в список Trustedhosts, выполните указанную ниже команду в сеансе PowerShell с повышенными привилегиями на виртуальной машине. На виртуальной машине можно использовать ОС Windows Server 2012 R2 или Windows Server 2016. 
 
-            set-item wsman:\localhost\Client\TrustedHosts -value '<ComputerName>[,<ComputerName>]' -Concatenate
+   ```powershell
+   set-item wsman:\localhost\Client\TrustedHosts -value '<ComputerName>[,<ComputerName>]' -Concatenate
+   ```
+1. Для каждого узла Hyper-V, который необходимо профилировать, необходимо:
 
-1.  Для каждого узла Hyper-V, который необходимо профилировать, необходимо:
+    а. Указать виртуальную машину, на которой будет выполняться программа, в списке TrustedHosts. Выполните следующую команду в сеансе PowerShell с повышенными привилегиями в узле Hyper-V:
 
-    a. Указать виртуальную машину, на которой будет выполняться программа, в списке TrustedHosts. Выполните следующую команду в сеансе PowerShell с повышенными привилегиями в узле Hyper-V:
-
-            set-item wsman:\localhost\Client\TrustedHosts -value '<ComputerName>[,<ComputerName>]' -Concatenate
+      ```powershell
+      set-item wsman:\localhost\Client\TrustedHosts -value '<ComputerName>[,<ComputerName>]' -Concatenate
+      ```
 
     b. Включить удаленное взаимодействие PowerShell.
 
-            Enable-PSRemoting -Force
+      ```powershell
+      Enable-PSRemoting -Force
+      ```
 
 ## <a name="download-and-extract-the-deployment-planner-tool"></a>Скачивание и извлечение планировщика развертывания
 
@@ -139,5 +144,5 @@ E:\ASR Deployment Planner_v2.3\ASRDeploymentPlanner.exe
 Исправления, добавляемые в каждое обновление, см. на странице [журнала версий планировщик развертывания Azure Site Recovery](https://social.technet.microsoft.com/wiki/contents/articles/51049.asr-deployment-planner-version-history.aspx) .
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
-* [Запустите планировщик развертывания](site-recovery-hyper-v-deployment-planner-run.md).
+## <a name="next-steps"></a>Дальнейшие действия
+* [Запустите планировщик развертывания](./hyper-v-deployment-planner-run.md).

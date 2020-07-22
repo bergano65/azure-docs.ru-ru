@@ -5,18 +5,18 @@ services: synapse-analytics
 author: ronortloff
 manager: craigg
 ms.service: synapse-analytics
-ms.subservice: ''
+ms.subservice: sql-dw
 ms.topic: conceptual
 ms.date: 02/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 3efd8a776542616a9ceefba331b06406540905a8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 43006456142728287ddf4adba1fbb9b45f5ccc89
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80633318"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85211975"
 ---
 # <a name="manage-and-monitor-workload-importance-in-azure-synapse-analytics"></a>Управление и мониторинг важности рабочей нагрузки в Azure синапсе Analytics
 
@@ -47,7 +47,7 @@ SELECT *
   WHERE classifier_id > 12
 ```
 
-Представление каталога [sys. workload_management_workload_classifier_details](/sql/relational-databases/system-catalog-views/sys-workload-management-workload-classifier-details-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)содержит сведения о параметрах, используемых при создании классификатора.  В приведенном ниже запросе показано, что Ексекрепортсклассифиер был ```membername``` создан в параметре для значений с ексекутиверепортс:
+Представление каталога [sys. workload_management_workload_classifier_details](/sql/relational-databases/system-catalog-views/sys-workload-management-workload-classifier-details-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)содержит сведения о параметрах, используемых при создании классификатора.  В приведенном ниже запросе показано, что Ексекрепортсклассифиер был создан в ```membername``` параметре для значений с ексекутиверепортс:
 
 ```sql
 SELECT c.name,cd.classifier_type, classifier_value
@@ -71,7 +71,7 @@ GO
 ## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о классификации см. в разделе [классификация рабочей нагрузки](sql-data-warehouse-workload-classification.md).
-- Дополнительные сведения о важности см. в статье [важность рабочей нагрузки](sql-data-warehouse-workload-importance.md) .
+- Дополнительные сведения о важности см. в разделе [Уровень важности рабочей нагрузки](sql-data-warehouse-workload-importance.md).
 
 > [!div class="nextstepaction"]
 > [Перейдите к разделу Настройка важности рабочей нагрузки](sql-data-warehouse-how-to-configure-workload-importance.md)

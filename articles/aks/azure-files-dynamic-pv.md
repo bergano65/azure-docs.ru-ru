@@ -1,42 +1,41 @@
 ---
-title: Динамическое создание общей папки службы файлов Azure
+title: Динамическое создание общей папки службы Файлов Azure
 titleSuffix: Azure Kubernetes Service
 description: Сведения о том, как динамически создавать постоянный том с файлами Azure для использования с несколькими параллельными pod в Службе Azure Kubernetes (AKS)
 services: container-service
 ms.topic: article
-ms.date: 09/12/2019
-ms.openlocfilehash: 0826035a6c81cdbdd8c93f78cb32835dce675eb4
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.date: 07/01/2020
+ms.openlocfilehash: 78bcd4925451125d5ab56a1da08cc307dc0fc236
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82207689"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85831596"
 ---
 # <a name="dynamically-create-and-use-a-persistent-volume-with-azure-files-in-azure-kubernetes-service-aks"></a>Динамическое создание и использование постоянного тома с файлами Azure в службе Azure Kubernetes (AKS)
 
-Постоянный том — это часть хранилища, которая подготовлена к использованию для модулей pod Kubernetes. Постоянный том может использоваться одним или несколькими модулями и может быть подготовлен динамически или статически. Если несколько модулей pod требуют одновременный доступ в одно и то же хранилище, используйте службу файлов Azure для подключения с помощью [протокола Server Message Block (SMB)][smb-overview]. В этой статье показано, как в кластере Службы Azure Kubernetes с помощью нескольких модулей pod предоставлять общий доступ к динамическому созданию файлов Azure.
+Постоянный том — это часть хранилища, которая подготовлена к использованию для модулей pod Kubernetes. Постоянный том может использоваться одним или несколькими модулями и может быть подготовлен динамически или статически. Если несколько объектов pod требуют одновременный доступ в одно и то же хранилище, используйте службу Файлов Azure для подключения с помощью [протокола Server Message Block (SMB)][smb-overview]. В этой статье показано, как в кластере Службы Azure Kubernetes с помощью нескольких модулей pod предоставлять общий доступ к динамическому созданию файлов Azure.
 
-Дополнительные сведения о томах Kubernetes см. [в статье параметры хранения для приложений в AKS][concepts-storage].
+Дополнительные сведения о томах Kubernetes см. в статье, [посвященной возможностям хранения данных приложений в AKS][concepts-storage].
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
-В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к этому краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
+В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
 
-Также требуется Azure CLI версии 2.0.59 или более поздней. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
+Кроме того, нужно установить и настроить Azure CLI версии 2.0.59 или более поздней. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
 
 ## <a name="create-a-storage-class"></a>Создание класса хранения
 
-Класс хранения используется для определения того, как создается файловый ресурс Azure. Учетная запись хранения автоматически создается в [группе ресурсов узла][node-resource-group] для использования с классом хранения для хранения файловых ресурсов Azure. Выберите один из следующих [вариантов избыточности хранилища Azure][storage-skus] для *skuName*:
+Класс хранения используется для определения того, как создается файловый ресурс Azure. Для хранения общих папок Azure учетная запись хранения создается автоматически в [группе ресурсов узла][node-resource-group] для использования с классом хранилища. Выберите один из следующих [вариантов избыточности хранилища Azure][storage-skus] для *skuName*:
 
 * *Standard_LRS* — локально избыточное хранилище ценовой категории "Стандартный" (LRS);
 * *Standard_GRS* — геоизбыточное хранилище ценовой категории "Стандартный" (GRS);
-* *Standard_ZRS* — хранилище, избыточное по стандартным зонам (ZRS)
+* *Standard_ZRS* — стандартное хранилище, избыточное в пределах зоны (ZRS);
 * *Standard_RAGRS* — геоизбыточное хранилище с доступом на чтение ценовой категории "Стандартный" (RA-GRS);
-* Локально избыточное хранилище уровня "Премиум" *Premium_LRS* (LRS)
-* *Premium_ZRS* избыточного хранилища в зоне уровня "Премиум" (GRS)
+* *Premium_LRS* — локально избыточное хранилище уровня "Премиум" (LRS).
 
 > [!NOTE]
-> Служба файлов Azure поддерживает хранилище уровня "Премиум" в кластерах AKS с Kubernetes 1,13 или более поздней версии, Минимальная общая папка Premium — 100 ГБ.
+> Служба Файлов Azure поддерживает хранилище уровня "Премиум" в кластерах AKS с Kubernetes версии 1.13 или более поздней (минимальный размер общей папки уровня "Премиум" — 100 ГБ)
 
 Дополнительные сведения о классах хранения Kubernetes для файлов Azure см. в разделе о [классах хранения Kubernetes][kubernetes-storage-classes].
 
@@ -46,7 +45,7 @@ ms.locfileid: "82207689"
 kind: StorageClass
 apiVersion: storage.k8s.io/v1
 metadata:
-  name: azurefile
+  name: my-azurefile
 provisioner: kubernetes.io/azure-file
 mountOptions:
   - dir_mode=0777
@@ -59,7 +58,7 @@ parameters:
   skuName: Standard_LRS
 ```
 
-Создайте класс хранения с помощью команды [kubectl Apply][kubectl-apply] :
+Создайте класс хранения с помощью команды [kubectl apply][kubectl-apply].
 
 ```console
 kubectl apply -f azure-file-sc.yaml
@@ -67,7 +66,7 @@ kubectl apply -f azure-file-sc.yaml
 
 ## <a name="create-a-persistent-volume-claim"></a>Создание заявки на доступ к постоянному тому
 
-Утверждение постоянного тома (PVC) использует объект класса хранения для динамической подготовки файлового ресурса Azure. Следующие YAML можно использовать для создания постоянного тома размером *5 ГБ* с доступом *реадвритемани* . Дополнительные сведения о режимах доступа см. в документации [по постоянным томам Kubernetes][access-modes].
+Утверждение постоянного тома (PVC) использует объект класса хранения для динамической подготовки файлового ресурса Azure. Следующий код YAML можно использовать, чтобы создать утверждение постоянного тома в размере *5 ГБ* с доступом *ReadWriteMany*. Дополнительные сведения о режимах доступа см. в документации [по постоянным томам Kubernetes][access-modes].
 
 Теперь создайте файл под названием`azure-file-pvc.yaml` и скопируйте в него следующий код YAML. Убедитесь, что *storageClassName* соответствует классу хранения, созданному на предыдущем шаге.
 
@@ -75,37 +74,37 @@ kubectl apply -f azure-file-sc.yaml
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: azurefile
+  name: my-azurefile
 spec:
   accessModes:
     - ReadWriteMany
-  storageClassName: azurefile
+  storageClassName: my-azurefile
   resources:
     requests:
       storage: 5Gi
 ```
 
 > [!NOTE]
-> При использовании номера SKU *Premium_LRS* для класса хранения минимальное значение для *хранилища* должно быть *100Gi*.
+> Если для класса хранения используется номер SKU *Premium_LRS*, минимальное значение для параметра *storage* должно быть *100Gi*.
 
-Создайте утверждение постоянного тома с помощью команды [kubectl apply][kubectl-apply]:
+Создайте утверждение постоянного тома с помощью команды [kubectl apply][kubectl-apply].
 
 ```console
 kubectl apply -f azure-file-pvc.yaml
 ```
 
-После ее выполнения будет создан файловый ресурс. Также будет создан секрет Kubernetes, содержащий сведения о подключении и учетные данные. Вы можете использовать команду [kubectl get][kubectl-get], чтобы просмотреть состояние PVC:
+После ее выполнения будет создан файловый ресурс. Также будет создан секрет Kubernetes, содержащий сведения о подключении и учетные данные. Вы можете использовать команду [kubectl get][kubectl-get], чтобы просмотреть состояние PVC.
 
 ```console
-$ kubectl get pvc azurefile
+$ kubectl get pvc my-azurefile
 
-NAME        STATUS    VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
-azurefile   Bound     pvc-8436e62e-a0d9-11e5-8521-5a8664dc0477   5Gi        RWX            azurefile      5m
+NAME           STATUS    VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS      AGE
+my-azurefile   Bound     pvc-8436e62e-a0d9-11e5-8521-5a8664dc0477   5Gi        RWX            my-azurefile      5m
 ```
 
 ## <a name="use-the-persistent-volume"></a>Использование постоянного тома
 
-Следующий код YAML создает pod, использующий утверждение постоянного тома *azurefile* для подключения файлового ресурса Azure по пути */mnt/azure*. Для контейнеров Windows Server укажите *mountPath* с помощью соглашения о пути Windows, например *"d:"*.
+В следующем YAML создается модуль Pod, использующий постоянное количество томов *My-азурефиле* для подключения файлового ресурса Azure по пути */МНТ/Азуре* . Для контейнеров Windows Server укажите *mountPath* в формате пути Windows, например *"D:"* .
 
 Создайте файл `azure-pvc-files.yaml` и скопируйте в него следующий код YAML. Убедитесь, что *claimName* соответствует утверждению постоянного тома, созданному на предыдущем шаге.
 
@@ -131,10 +130,10 @@ spec:
   volumes:
     - name: volume
       persistentVolumeClaim:
-        claimName: azurefile
+        claimName: my-azurefile
 ```
 
-Выполните команду [kubectl apply][kubectl-apply], чтобы создать pod.
+Выполните команду [kubectl apply][kubectl-apply], чтобы создать объект pod.
 
 ```console
 kubectl apply -f azure-pvc-files.yaml
@@ -158,20 +157,20 @@ Containers:
 Volumes:
   volume:
     Type:       PersistentVolumeClaim (a reference to a PersistentVolumeClaim in the same namespace)
-    ClaimName:  azurefile
+    ClaimName:  my-azurefile
     ReadOnly:   false
 [...]
 ```
 
 ## <a name="mount-options"></a>Параметры подключения
 
-Значение по умолчанию для *fileMode* и *дирмоде* — *0777* для Kubernetes версии 1.13.0 и выше. Если динамически создается постоянный том с классом хранения, параметры подключения можно указать в объекте класса хранения. В следующем примере задается значение *0777*.
+В Kubernetes версии 1.13.0 и более поздних значение по умолчанию для *fileMode* и *dirMode* — *0777*. При динамическом создании постоянного тома с классом хранилища параметры подключения можно указать в объекте класса хранения. В следующем примере задается значение *0777*.
 
 ```yaml
 kind: StorageClass
 apiVersion: storage.k8s.io/v1
 metadata:
-  name: azurefile
+  name: my-azurefile
 provisioner: kubernetes.io/azure-file
 mountOptions:
   - dir_mode=0777
@@ -184,9 +183,9 @@ parameters:
   skuName: Standard_LRS
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Соответствующие рекомендации см. в разделе рекомендации [по хранению и резервному копированию в AKS][operator-best-practices-storage].
+Соответствующие рекомендации см. в разделе [Рекомендации по хранению и резервному копированию в AKS][operator-best-practices-storage].
 
 Узнайте больше о постоянных томах Kubernetes, использующих службу файлов Azure.
 

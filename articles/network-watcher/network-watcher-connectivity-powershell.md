@@ -5,20 +5,18 @@ description: Узнайте, как использовать функцию ус
 services: network-watcher
 documentationcenter: na
 author: damendo
-manager: twooley
 ms.service: network-watcher
 ms.devlang: na
-ms.topic: article
+ms.topic: troubleshooting
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/11/2017
 ms.author: damendo
-ms.openlocfilehash: abc9389c2c5fd5576795c26a89e3941b6eb5a939
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: aa5d7efed1ce1f41ebb67e2ec377e862ad14ed7a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76842841"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84725041"
 ---
 # <a name="troubleshoot-connections-with-azure-network-watcher-using-powershell"></a>Устранение неполадок подключений с помощью службы "Наблюдатель за сетями Azure" с помощью PowerShell
 
@@ -26,14 +24,14 @@ ms.locfileid: "76842841"
 > - [Портал](network-watcher-connectivity-portal.md)
 > - [PowerShell](network-watcher-connectivity-powershell.md)
 > - [Azure CLI](network-watcher-connectivity-cli.md)
-> - [REST API Azure](network-watcher-connectivity-rest.md)
+> - [Azure REST API](network-watcher-connectivity-rest.md)
 
 Узнайте, как проверить возможность прямого подключения TCP между виртуальной машиной и определенной конечной точкой с помощью функции устранения неполадок подключения.
 
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="before-you-begin"></a>Подготовка к работе
+## <a name="before-you-begin"></a>Перед началом
 
 * Экземпляр службы "Наблюдатель за сетями" в регионе, в котором нужно устранить проблему подключения.
 * Виртуальные машины, на которых требуется устранить неполадки подключения.

@@ -5,19 +5,19 @@ description: Узнайте, как создать шлюз приложений
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
-ms.topic: article
+ms.topic: how-to
 ms.date: 11/14/2019
 ms.author: victorh
-ms.openlocfilehash: 7d37e36a4cdfed462904e2d02871345ad89d7ac9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d889d0c13c911e02d73bb1de76b7c3d1aa240027
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74074553"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84806804"
 ---
 # <a name="create-an-application-gateway-with-internal-redirection-using-the-azure-cli"></a>Создание шлюза приложений с перенаправлением внутреннего трафика при помощи Azure CLI
 
-С помощью Azure CLI можно настроить [перенаправление веб-трафика](multiple-site-overview.md) при создании [шлюза приложений](overview.md). В этом руководстве вы определите внутренний пул с использованием масштабируемого набора виртуальных машин. Затем вы настроите прослушиватели и правила на основе принадлежащих вам доменов, чтобы обеспечить передачу веб-трафика в соответствующий пул. В этом учебнике предполагается, что вы владеете несколькими доменами и в них используются примеры *www\.contoso.com* и *www\.contoso.org*.
+С помощью Azure CLI можно настроить [перенаправление веб-трафика](multiple-site-overview.md) при создании [шлюза приложений](overview.md). В этом руководстве вы определите внутренний пул с использованием масштабируемого набора виртуальных машин. Затем вы настроите прослушиватели и правила на основе принадлежащих вам доменов, чтобы обеспечить передачу веб-трафика в соответствующий пул. В этом руководстве предполагается, что вам принадлежат несколько доменов. Для примера здесь используются домены *www\.contoso.com* и *www\.contoso.org*.
 
 Вы узнаете, как выполнять следующие задачи:
 
@@ -97,7 +97,7 @@ az network application-gateway create \
 
 ## <a name="add-listeners-and-rules"></a>Добавление прослушивателей и правил 
 
-Прослушиватель требуется для того, чтобы шлюз приложений правильно маршрутизировал трафик на внутренние пулы. В этом руководстве создаются два прослушивателя для двух ваших доменов. В этом примере прослушиватели создаются для доменов *www\.contoso.com* и *www\.contoso.org*.
+Прослушиватель требуется для того, чтобы шлюз приложений правильно маршрутизировал трафик на внутренние пулы. В этом руководстве создаются два прослушивателя для двух ваших доменов. В этом примере создаются прослушиватели для доменов *www\.contoso.com* и *www\.contoso.org*.
 
 Добавьте серверные прослушиватели, необходимые для маршрутизации трафика, при помощи команды [az network application-gateway http-listener create](/cli/azure/network/application-gateway/http-listener#az-network-application-gateway-http-listener-create).
 
@@ -120,7 +120,7 @@ az network application-gateway http-listener create \
 
 ### <a name="add-the-redirection-configuration"></a>Добавление конфигурации перенаправления
 
-Добавьте конфигурацию перенаправления, которая отправляет трафик из *www\.consoto.org* в прослушиватель для *www\.contoso.com* в шлюзе приложений, с помощью команды [AZ Network Application-шлюзов Redirect-config Create](/cli/azure/network/application-gateway/redirect-config#az-network-application-gateway-redirect-config-create).
+Добавьте конфигурацию перенаправления, которая отправляет трафик из *www \. consoto.org* в прослушиватель для *www \. contoso.com* в шлюзе приложений, с помощью команды [AZ Network Application-шлюзов Redirect-config Create](/cli/azure/network/application-gateway/redirect-config#az-network-application-gateway-redirect-config-create).
 
 ```azurecli-interactive
 az network application-gateway redirect-config create \
@@ -213,11 +213,11 @@ az network public-ip show \
 
 ![Проверка сайта contoso в шлюзе приложений](./media/redirect-internal-site-cli/application-gateway-nginxtest.png)
 
-Измените адрес на другой домен, например http:\//www.contoso.org, и вы увидите, что трафик был перенаправлен обратно в прослушиватель для www\.contoso.com.
+Измените адрес на другой домен, например http: \/ /www.contoso.org, и вы увидите, что трафик был перенаправлен обратно в прослушиватель для www \. contoso.com.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
-В этом руководстве вы узнали, как выполнять следующие задачи:
+В этом руководстве вы узнали, как:
 
 > * Настройка сети
 > * Создание шлюза приложений

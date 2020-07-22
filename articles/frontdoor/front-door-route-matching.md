@@ -12,10 +12,9 @@ ms.workload: infrastructure-services
 ms.date: 09/10/2018
 ms.author: sharadag
 ms.openlocfilehash: 420aa52293da14a0dfe8fbdfe681440ee4309e6b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80878601"
 ---
 # <a name="how-front-door-matches-requests-to-a-routing-rule"></a>Как Front Door сопоставляет запросы и правила маршрутизации
@@ -29,7 +28,7 @@ ms.locfileid: "80878601"
 Следующие свойства определяют, соответствует ли входящий запрос правилу маршрутизации (левая сторона)
 
 * **Протоколы HTTP** (HTTP/HTTPS)
-* **Узлы** (например, www\.foo.com, \*. Bar.com);
+* **Узлы** (например, www \. foo.com, \* . Bar.com);
 * **Пути** (например, /\*, /users/\*, /file.gif)
 
 Эти свойства развертываются внутри так, чтобы любое сочетание протоколов, узлов и путей становилось набором потенциальных соответствий.
@@ -52,19 +51,19 @@ ms.locfileid: "80878601"
 |-------|--------------------|-------|
 | Объект | foo.contoso.com | /\* |
 | B | foo.contoso.com | /users/\* |
-| В | www\.fabrikam.com, foo.Adventure-Works.com  | /\*, /images/\* |
+| C | www \. Fabrikam.com, foo.Adventure-Works.com  | /\*, /images/\* |
 
 Если следующие входящие запросы были отправлены во Front Door, они будут соответствовать следующим правилам маршрутизации (см. выше):
 
 | Входящий узел внешнего интерфейса | Сопоставленные правила маршрутизации |
 |---------------------|---------------|
 | foo.contoso.com | A, B |
-| www\.Fabrikam.com | В |
+| www \. Fabrikam.com | C |
 | images.fabrikam.com | Ошибка 400: неверный запрос |
-| foo.adventure-works.com | В |
+| foo.adventure-works.com | C |
 | contoso.com | Ошибка 400: неверный запрос |
-| www\.Adventure-Works.com | Ошибка 400: неверный запрос |
-| www\.northwindtraders.com | Ошибка 400: неверный запрос |
+| www \. Adventure-Works.com | Ошибка 400: неверный запрос |
+| www \. northwindtraders.com | Ошибка 400: неверный запрос |
 
 ### <a name="path-matching"></a>Согласование путей
 Определив конкретный узел внешнего интерфейса и отфильтровав возможные правила маршрутизации (оставив только маршруты с соответствующим узлом внешнего интерфейса), служба Front Door затем фильтрует правила маршрутизации на основе пути запроса. Мы используем ту же логику, что и узлы внешнего интерфейса:
@@ -82,7 +81,7 @@ ms.locfileid: "80878601"
 |-------|---------|----------|
 | Объект     | www\.contoso.com | /        |
 | B     | www\.contoso.com | /\*      |
-| В     | www\.contoso.com | /ab      |
+| C     | www\.contoso.com | /ab      |
 | D     | www\.contoso.com | /abc     |
 | E     | www\.contoso.com | /abc/    |
 | F     | www\.contoso.com | /abc/\*  |
@@ -93,19 +92,19 @@ ms.locfileid: "80878601"
 
 | Входящий запрос    | Соответствующий маршрут |
 |---------------------|---------------|
-| www\.contoso.com/            | Объект             |
-| www\.contoso.com/a           | B             |
-| www\.contoso.com/AB          | В             |
-| www\.contoso.com/ABC         | D             |
-| www\.contoso.com/abzzz       | B             |
-| www\.contoso.com/ABC/        | E             |
-| www\.contoso.com/ABC/d       | F             |
-| www\.contoso.com/ABC/DEF     | G.             |
-| www\.contoso.com/ABC/defzzz  | F             |
-| www\.contoso.com/ABC/DEF/GHI | F             |
-| www\.contoso.com/Path        | B             |
-| www\.contoso.com/Path/       | H             |
-| www\.contoso.com/Path/ZZZ    | B             |
+| www \. contoso.com/            | Объект             |
+| www \. contoso.com/a           | B             |
+| www \. contoso.com/AB          | C             |
+| www \. contoso.com/ABC         | D             |
+| www \. contoso.com/abzzz       | B             |
+| www \. contoso.com/ABC/        | E             |
+| www \. contoso.com/ABC/d       | F             |
+| www \. contoso.com/ABC/DEF     | G.             |
+| www \. contoso.com/ABC/defzzz  | F             |
+| www \. contoso.com/ABC/DEF/GHI | F             |
+| www \. contoso.com/Path        | B             |
+| www \. contoso.com/Path/       | H             |
+| www \. contoso.com/Path/ZZZ    | B             |
 
 >[!WARNING]
 > </br> Если нет правил маршрутизации для узла внешнего интерфейса с точным соответствием и универсальным путем маршрута (`/*`), то не будет соответствия и для любого правила маршрутизации.

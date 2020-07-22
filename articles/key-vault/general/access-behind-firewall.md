@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: tutorial
 ms.date: 08/12/2019
 ms.author: ambapat
-ms.openlocfilehash: 07ae08f87c9a3e788944a48f6d5a24e2b076d16f
-ms.sourcegitcommit: 4499035f03e7a8fb40f5cff616eb01753b986278
+ms.openlocfilehash: db5c35db271f84a88fdc03f4f0178ee1c35f727e
+ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2020
-ms.locfileid: "82732331"
+ms.lasthandoff: 05/25/2020
+ms.locfileid: "83834328"
 ---
 # <a name="access-azure-key-vault-behind-a-firewall"></a>Доступ к хранилищу ключей Azure из-за брандмауэра
 
@@ -74,4 +74,4 @@ ms.locfileid: "82732331"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Если у вас возникли вопросы о хранилище ключей, посетите [форумы хранилища ключей Azure](https://social.msdn.microsoft.com/forums/azure/home?forum=AzureKeyVault).
+Если у вас возникли вопросы о Key Vault, посетите [страницу корпорации Майкрософт с вопросами и ответами об Azure Key Vault](https://docs.microsoft.com/answers/topics/azure-key-vault.html).

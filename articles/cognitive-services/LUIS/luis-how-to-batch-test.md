@@ -8,15 +8,15 @@ manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/17/2020
 ms.author: diberry
-ms.openlocfilehash: 4d3535d419b0f99491795b3920fdd295e3128299
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: ee15d08c820492cfa2c0701dfe3b682d57e00187
+ms.sourcegitcommit: 61d850bc7f01c6fafee85bda726d89ab2ee733ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83654016"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84344413"
 ---
 # <a name="batch-testing-with-a-set-of-example-utterances"></a>Пакетное тестирование с помощью набора примеров высказываний
 
@@ -95,7 +95,7 @@ ms.locfileid: "83654016"
 
 [!INCLUDE [Entity roles in batch testing - currently not supported](../../../includes/cognitive-services-luis-roles-not-supported-in-batch-testing.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если тестирование показывает, что приложение LUIS не распознает правильные намерения и сущности, вы можете повысить производительность приложения LUIS, пометив дополнительные высказывания или добавив компоненты.
 

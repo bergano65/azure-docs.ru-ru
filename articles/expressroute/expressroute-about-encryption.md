@@ -8,10 +8,9 @@ ms.topic: conceptual
 ms.date: 05/05/2020
 ms.author: cherylmc
 ms.openlocfilehash: 77755ab6bdbb3c1e6416475f5066b5dd463eb7f5
-ms.sourcegitcommit: 11572a869ef8dbec8e7c721bc7744e2859b79962
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82838762"
 ---
 # <a name="expressroute-encryption"></a>Шифрование ExpressRoute
@@ -44,7 +43,7 @@ ExpressRoute поддерживает несколько технологий ш
 ### <a name="what-is-the-throughput-i-will-get-after-enabling-ipsec-on-my-expressroute-connection"></a>Какова пропускная способность, которую я получаю после включения IPsec для подключения ExpressRoute?
 Если используется VPN-шлюз Azure, проверьте [номера производительности здесь](../vpn-gateway/vpn-gateway-about-vpngateways.md). Если используется сторонний VPN-шлюз, обратитесь к поставщику за номерами производительности.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 Дополнительные сведения о конфигурации Максек см. в разделе [Configure максек](expressroute-howto-macsec.md) .
 
 Дополнительные сведения о конфигурации IPsec см. в разделе [Настройка IPSec](site-to-site-vpn-over-microsoft-peering.md) .

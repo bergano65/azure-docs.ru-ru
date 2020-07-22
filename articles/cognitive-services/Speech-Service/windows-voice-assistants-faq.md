@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 04/15/2020
 ms.author: travisw
-ms.openlocfilehash: aa71057d3819acb335153ee5b4b65960320405be
-ms.sourcegitcommit: 309a9d26f94ab775673fd4c9a0ffc6caa571f598
+ms.openlocfilehash: 3cb4dd16592f3af962b32fe3005d2ad4b241d831
+ms.sourcegitcommit: ba8df8424d73c8c4ac43602678dae4273af8b336
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82997417"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84457020"
 ---
 # <a name="samples-and-faqs"></a>Примеры и часто задаваемые вопросы
 
@@ -43,7 +43,7 @@ ms.locfileid: "82997417"
 
 Когда приложение сначала активируется голосовым методом, оно запускается в компактном представлении. Ознакомьтесь с [руководством по проектированию для предварительной версии активации голоса](windows-voice-assistants-best-practices.md#design-guidance-for-voice-activation-preview) , чтобы получить рекомендации по различным представлениям и переходам между ними для речевых помощников в Windows.
 
-Чтобы перевести переход с Compact представления на полное представление приложения, используйте API `TryEnterViewModeAsync`аппвиев:
+Чтобы перевести переход с Compact представления на полное представление приложения, используйте API Аппвиев `TryEnterViewModeAsync` :
 
 `var appView = ApplicationView.GetForCurrentView();
  await appView.TryEnterViewModeAsync(ApplicationViewMode.Default);`

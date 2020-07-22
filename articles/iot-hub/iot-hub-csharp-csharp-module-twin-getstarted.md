@@ -10,10 +10,9 @@ ms.date: 08/07/2019
 ms.author: menchi
 ms.custom: amqp
 ms.openlocfilehash: 919d1e37e6066c78e83d58be4fe4667ec67e45ad
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81733390"
 ---
 # <a name="get-started-with-iot-hub-module-identity-and-module-twin-net"></a>Приступая к работе с удостоверениями модулей центра Интернета вещей и модулем двойника (.NET)
@@ -32,17 +31,17 @@ ms.locfileid: "81733390"
 > [!NOTE]
 > Сведения о пакетах SDK Azure IoT, которые можно использовать для создания приложений, которые будут работать на устройствах и в серверной части решения, см. в [этой статье](iot-hub-devguide-sdks.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * приведенному.
 
-* Активная учетная запись Azure. Если у вас нет учетной записи, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
+* Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
 
 ## <a name="create-a-hub"></a>Создание концентратора.
 
 [!INCLUDE [iot-hub-include-create-hub](../../includes/iot-hub-include-create-hub.md)]
 
-## <a name="get-the-iot-hub-connection-string"></a>Получение строки подключения для центра Интернета вещей
+## <a name="get-the-iot-hub-connection-string"></a>Получение строки подключения центра Интернета вещей
 
 [!INCLUDE [iot-hub-howto-module-twin-shared-access-policy-text](../../includes/iot-hub-howto-module-twin-shared-access-policy-text.md)]
 
@@ -58,7 +57,7 @@ ms.locfileid: "81733390"
 
    ![Сведения о модуле на портале Azure](./media/iot-hub-csharp-csharp-module-twin-getstarted/module-identity-detail.png)
 
-1. В Visual Studio добавьте новый проект в решение, выбрав **файл** > **создать** > **проект**. В окне Создание нового проекта выберите **консольное приложение (.NET Framework)** и нажмите кнопку **Далее**.
+1. В Visual Studio добавьте новый проект в решение, выбрав **файл**  >  **создать**  >  **проект**. В окне Создание нового проекта выберите **консольное приложение (.NET Framework)** и нажмите кнопку **Далее**.
 
 1. В качестве имени проекта укажите *UpdateModuleTwinReportedProperties*. Для **решения**выберите **Добавить в решение**. Убедитесь, что указана версия платформы .NET 4.6.1 или более поздняя.
 
@@ -66,13 +65,13 @@ ms.locfileid: "81733390"
 
 1. Выберите **создать** , чтобы создать проект.
 
-1. В Visual Studio откройте **инструменты** > **Диспетчер** > пакетов NuGet**Управление пакетами NuGet для решения**. Выберите вкладку **Обзор**.
+1. В Visual Studio откройте **инструменты**  >  **Диспетчер пакетов NuGet**  >  **Управление пакетами NuGet для решения**. Выберите вкладку **Обзор**.
 
 1. Найдите и выберите **Microsoft. Azure. Devices. Client**, а затем нажмите кнопку **установить**.
 
     ![Установка пакета SDK службы .NET для центра Интернета вещей Azure Текущая версия](./media/iot-hub-csharp-csharp-module-twin-getstarted/install-client-sdk.png)
 
-1. Добавьте следующие `using` инструкции в начало файла **Program.CS** :
+1. Добавьте следующие инструкции `using` в начало файла **Program.cs** :
 
     ```csharp
     using Microsoft.Azure.Devices.Client;

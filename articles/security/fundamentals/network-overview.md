@@ -16,10 +16,9 @@ ms.workload: na
 ms.date: 10/29/2018
 ms.author: terrylan
 ms.openlocfilehash: 496ee1bc97f6b72e09a62ae3491af7ccc7328583
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80811101"
 ---
 # <a name="azure-network-security-overview"></a>Обзор сетевой безопасности Azure
@@ -164,7 +163,7 @@ VPN-подключение "точка — сеть" позволяет наст
 
 * IKEv2 VPN — решение VPN на основе стандартов IPsec. IKEv2 VPN можно использовать для подключения с устройств Mac (OSX версии 10.11 и выше).
 
-* [OpenVPN](https://azure.microsoft.com/updates/openvpn-support-for-azure-vpn-gateways/)
+* [OpenVPN](https://azure.microsoft.com/updates/openvpn-support-for-azure-vpn-gateways/).
 
 Дополнительные сведения:
 
@@ -179,7 +178,7 @@ VPN-подключение "точка — сеть" позволяет наст
 Дополнительные сведения:
 
 * [Создание диспетчер ресурсов виртуальной сети с VPN-подключением типа "сеть — сеть" с помощью портал Azure](../../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md)
-* [Сведения о VPN-шлюзе](../../vpn-gateway/vpn-gateway-about-vpngateways.md)
+* [Основные сведения о VPN-шлюзе Azure](../../vpn-gateway/vpn-gateway-about-vpngateways.md)
 
 ### <a name="connect-your-on-premises-network-to-a-virtual-network-with-a-dedicated-wan-link"></a>Подключение локальной сети к виртуальной с помощью выделенного канала глобальной сети
 
@@ -193,7 +192,7 @@ VPN-подключения "точка — сеть" и "сеть — сеть" 
 Дополнительные сведения:
 
 * [Технический обзор ExpressRoute](../../expressroute/expressroute-introduction.md)
-* [ExpressRoute Direct](../../expressroute/expressroute-erdirect-about.md)
+* [Непосредственный ExpressRoute](../../expressroute/expressroute-erdirect-about.md)
 * [ExpressRoute Global Reach](../../expressroute/expressroute-global-reach.md)
 
 ### <a name="connect-virtual-networks-to-each-other"></a>Подключение виртуальных сетей друг к другу
@@ -391,7 +390,7 @@ TAP (точка доступа к терминалу) виртуальной с�
 
 * [TAP виртуальной сети](../../virtual-network/virtual-network-tap-overview.md)
 
-### <a name="logging"></a>Logging
+### <a name="logging"></a>Ведение журнала
 
 Ведение журнала на сетевом уровне является ключевой функцией для любого сценария безопасности сети. В Azure данные, полученные для групп безопасности сети, можно регистрировать в журнале для получения данных на сетевом уровне. При ведении журнала групп безопасности сети данные получают из следующих источников:
 

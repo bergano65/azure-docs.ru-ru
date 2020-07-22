@@ -8,21 +8,21 @@ ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 01/30/2020
 ms.openlocfilehash: b1d941fbf86d453a56a5157ed988a32173c614fc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "81461537"
 ---
 # <a name="scenario-azure-hdinsight-clusters-with-disk-encryption-lose-key-vault-access"></a>Сценарий. потеря доступа к кластерам Azure HDInsight с шифрованием диска Key Vault доступ
 
 В этой статье описываются действия по устранению неполадок и возможные способы решения проблем при взаимодействии с кластерами Azure HDInsight.
 
-## <a name="issue"></a>Проблема
+## <a name="issue"></a>Проблемы
 
-Предупреждение Работоспособность ресурсов Center (RHC) отображается для `The HDInsight cluster is unable to access the key for BYOK encryption at rest`кластеров создание собственных ключей (BYOK), в которых узлы кластера потеряют доступ к клиентам Key Vault (KV). Аналогичные предупреждения также можно увидеть в пользовательском интерфейсе Apache Ambari.
+Предупреждение Работоспособность ресурсов Center (RHC) `The HDInsight cluster is unable to access the key for BYOK encryption at rest` отображается для кластеров создание собственных ключей (BYOK), в которых узлы кластера потеряют доступ к клиентам Key Vault (KV). Аналогичные предупреждения также можно увидеть в пользовательском интерфейсе Apache Ambari.
 
-## <a name="cause"></a>Причина
+## <a name="cause"></a>Причина:
 
 Предупреждение гарантирует, что KV будет доступен с узлов кластера, таким образом обеспечивая подключение к сети, работоспособность KV и политику доступа для управляемого удостоверения, назначенного пользователем. Это оповещение является лишь предупреждением о некотором завершении работы компонента Service Broker при последующих перезагрузках узла. работа кластера будет продолжаться до перезагрузки узлов.
 
@@ -66,7 +66,7 @@ ms.locfileid: "81461537"
 * Настройка Key Vault с [набором блокировок ресурсов](../../azure-resource-manager/management/lock-resources.md).
 * Резервное копирование ключей в аппаратный модуль безопасности.
 
-### <a name="key-deletion"></a>Удаление ключа
+### <a name="key-deletion"></a>Удаление ключей
 
 Перед удалением ключа кластер должен быть удален.
 
@@ -80,12 +80,12 @@ ms.locfileid: "81461537"
 * Используйте ключ без указания срока действия.
 * Если необходимо задать срок действия, поворачивайте ключи до даты окончания срока действия.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы не видите своего варианта проблемы или вам не удается ее устранить, дополнительные сведения можно получить, посетив один из следующих каналов.
 
-* Получите ответы от экспертов Azure через [службу поддержки сообщества Azure](https://azure.microsoft.com/support/community/).
+* Получите ответы специалистов Azure на [сайте поддержки сообщества пользователей Azure](https://azure.microsoft.com/support/community/).
 
-* Подключение с [@AzureSupport](https://twitter.com/azuresupport) — официальная учетная запись Microsoft Azure для улучшения качества обслуживания клиентов. Подключение сообщества Azure к нужным ресурсам: ответы, поддержка и эксперты.
+* Подпишитесь на [@AzureSupport](https://twitter.com/azuresupport) — официальный канал Microsoft Azure для работы с клиентами. Вступайте в сообщество Azure для получения нужных ресурсов: ответов, поддержки и советов экспертов.
 
-* Если вам нужна дополнительная помощь, можно отправить запрос в службу поддержки из [портал Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите пункт **Поддержка** в строке меню или откройте центр **справки и поддержки** . Для получения более подробных сведений см. статью [о создании запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется через один из [планов поддержки Azure](https://azure.microsoft.com/support/plans/).
+* Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки на [портале Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Выберите **Поддержка** в строке меню или откройте центр **Справка и поддержка**. Дополнительные сведения см. в статье [Создание запроса на поддержку Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request). Доступ к управлению подписками и поддержкой выставления счетов уже включен в вашу подписку Microsoft Azure, а техническая поддержка предоставляется в рамках одного из [планов Службы поддержки Azure](https://azure.microsoft.com/support/plans/).

@@ -6,17 +6,16 @@ ms.topic: conceptual
 ms.date: 11/02/2017
 ms.author: tomfitz
 ms.openlocfilehash: 05302d92f2304be35a7b88fac6fabfc17b13c63e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75651726"
 ---
 # <a name="publish-a-service-catalog-application-through-azure-portal"></a>Публикация приложения каталога службы на портале Azure
 
 С помощью портала Azure вы можете публиковать [управляемые приложения Azure](overview.md), предназначенные для членов вашей организации. Например, отдел ИТ может публиковать управляемые приложения, которые обеспечивают соответствие стандартам организации. Эти управляемые приложения доступны в каталоге служб, а не в Azure Marketplace.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 При публикации управляемого приложения необходимо указать удостоверение для управления ресурсами. Мы рекомендуем указать группу пользователей Azure Active Directory См. дополнительные сведения о [создании группы пользователей и добавлении в нее пользователей в Azure Active Directory](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md). 
 
@@ -54,7 +53,7 @@ ZIP-файл, содержащий определение управляемог
 
    ![Создание управляемого приложения](./media/publish-portal/create-app.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Общие сведения об управляемых приложениях Azure см. в разделе [Обзор управляемых приложений Azure](overview.md).
 * См. дополнительные сведения о [примерах проектов для управляемых приложений Azure](sample-projects.md).

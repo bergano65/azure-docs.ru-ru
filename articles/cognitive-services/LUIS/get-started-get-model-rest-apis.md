@@ -5,23 +5,23 @@ description: Из этого краткого руководства по REST A
 services: cognitive-services
 author: diberry
 manager: nitinme
-ms.custom: seodec18
+ms.custom: seodec18, tracking-python
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: quickstart
-ms.date: 02/14/2020
+ms.date: 06/03/2020
 ms.author: diberry
 zone_pivot_groups: programming-languages-set-one
-ms.openlocfilehash: 58f164f1522975faa2e7a7e7d7ed08145a6c5889
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: a4d84aa6dc24bc7d293200e20d60c5fe349a769d
+ms.sourcegitcommit: 1de57529ab349341447d77a0717f6ced5335074e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77524654"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84608576"
 ---
 # <a name="quickstart-change-model-with-rest-apis"></a>Краткое руководство. Изменение модели с помощью REST API
 
-В этом кратком руководстве описано, как добавить примеры фраз в приложение для туристического агентства и выполнить обучение этого приложения. Примерами высказываний называют фразы пользователя на обычном языке, сопоставленные с тем или иным намерением. Предоставляя фразы для настроенных намерений, вы сообщаете LUIS ожидаемые варианты сообщений пользователя для каждого намерения.
+В этом кратком руководстве показано, как добавить речевые фрагменты в приложение Pizza и обучить его. Примерами высказываний называют фразы пользователя на обычном языке, сопоставленные с тем или иным намерением. Предоставляя фразы для настроенных намерений, вы сообщаете LUIS ожидаемые варианты сообщений пользователя для каждого намерения.
 
 ::: zone pivot="programming-language-csharp"
 [!INCLUDE [Get intent with C# and REST](./includes/get-started-get-model-rest-csharp.md)]

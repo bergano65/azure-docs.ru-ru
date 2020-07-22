@@ -6,12 +6,12 @@ ms.date: 04/23/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: seodec18
-ms.openlocfilehash: 12990238455046d837b175318225bb4f3d317706
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 3709511fa8da0a40f4faf4ab2dac9505d69003ab
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82185053"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86118517"
 ---
 # <a name="tutorial-utilize-the-resource-manager-template-reference"></a>Руководство по использованию справочника по шаблонам Resource Manager
 
@@ -36,7 +36,7 @@ ms.locfileid: "82185053"
 
 Для работы с этой статьей необходимо иметь следующее.
 
-* Visual Studio Code с расширением средств Resource Manager. См. сведения об [использовании Visual Studio Code для создания шаблонов Resource Manager](use-vs-code-to-create-template.md).
+* Visual Studio Code с расширением средств Resource Manager. См. [Краткое руководство. Создание шаблонов Azure Resource Manager c помощью Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
 
 ## <a name="open-a-quickstart-template"></a>Открытие шаблона быстрого запуска
 
@@ -75,7 +75,7 @@ ms.locfileid: "82185053"
 
 ## <a name="find-the-template-reference"></a>Поиск ссылки на шаблон
 
-1. Перейти к [справочнику по шаблонам Azure](https://docs.microsoft.com/azure/templates/).
+1. Перейти к [справочнику по шаблонам Azure](/azure/templates/).
 1. В поле **Фильтр по названию** введите **учетные записи хранения** и выберите первый пункт **Учетные записи хранения** в разделе **Справочные материалы > Хранилище**.
 
     ![Учетная запись хранения ссылки на шаблон Resource Manager](./media/template-tutorial-use-template-reference/resource-manager-template-resources-reference-storage-accounts.png)

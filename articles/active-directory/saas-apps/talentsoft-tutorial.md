@@ -12,15 +12,15 @@ ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 12/18/2019
+ms.date: 05/12/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7b130bb88ea9a3e08d788171b1d341b8db21a3ed
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 3f1384d23f77407d2d20066cc2fa086037d546f6
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75532717"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83648469"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-talentsoft"></a>Руководство по Интеграция единого входа Azure Active Directory с Talentsoft
 
@@ -90,7 +90,7 @@ ms.locfileid: "75532717"
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<tenant>.talentsoft.com`.
 
     > [!NOTE]
-    > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Talentsoft](mailto:jlegoff@talentsoft.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Talentsoft](mailto:advancedservices@talentsoft.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите пункт **Сертификат (Base64)** и щелкните **Скачать**, чтобы скачать сертификат. Сохраните этот сертификат на компьютере.
 
@@ -132,11 +132,11 @@ ms.locfileid: "75532717"
 
 ## <a name="configure-talentsoft-sso"></a>Настройка единого входа в Talentsoft
 
-Чтобы настроить единый вход на стороне **Talentsoft**, нужно отправить скачанный **сертификат (Base64)** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки Talentsoft](mailto:jlegoff@talentsoft.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Talentsoft**, нужно отправить скачанный **сертификат (Base64)** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки Talentsoft](mailto:advancedservices@talentsoft.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-talentsoft-test-user"></a>Создание тестового пользователя Talentsoft
 
-Из этого разделе вы узнаете, как создать пользователя B.Simon в приложении Talentsoft. Чтобы добавить пользователей на платформу Talentsoft, обратитесь в  [службу поддержки Talentsoft](mailto:jlegoff@talentsoft.com). Перед использованием единого входа необходимо создать и активировать пользователей.
+Из этого разделе вы узнаете, как создать пользователя B.Simon в приложении Talentsoft. Чтобы добавить пользователей на платформу Talentsoft, обратитесь в [службу поддержки Talentsoft](mailto:advancedservices@talentsoft.com). Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ## <a name="test-sso"></a>Проверка единого входа
 

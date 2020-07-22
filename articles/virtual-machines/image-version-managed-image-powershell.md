@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: e00538d1112492c5b7f9fc0f91c86df6d3500701
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
+ms.openlocfilehash: 7e59ee029b1705f6f789812b870de96bbb74a6e5
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82796594"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86223556"
 ---
 # <a name="migrate-from-a-managed-image-to-a-shared-image-gallery-image"></a>Миграция из управляемого образа в общий образ коллекции образов
 
@@ -33,7 +33,7 @@ ms.locfileid: "82796594"
 
 ## <a name="get-the-gallery"></a>Получение коллекции
 
-Вы можете вывести список всех коллекций и определений изображений по имени. Результаты представлены в формате `gallery\image definition\image version`.
+Вы можете вывести список всех коллекций и определений изображений по имени. Результаты представлены в формате `gallery\image definition\image version` .
 
 ```azurepowershell-interactive
 Get-AzResource -ResourceType Microsoft.Compute/galleries | Format-Table
@@ -50,13 +50,13 @@ $gallery = Get-AzGallery `
 
 ## <a name="create-an-image-definition"></a>Создание определения образа 
 
-Определения образов создают логическую группировку для изображений. Они используются для управления сведениями об образе. Имена определений образов могут состоять из букв верхнего или нижнего регистра, цифр, точек, тире и точек. 
+Образы можно объединять в логические группы с помощью определений образов. Они используются для управления сведениями об образе. В имени определения образа можно использовать прописные и строчные буквы, цифры, точки и дефисы. 
 
-При создании определения образа убедитесь, что содержит все правильные сведения. Так как управляемые образы всегда обобщены, следует задать `-OsState generalized`. 
+При создании определения образа убедитесь, что содержит все правильные сведения. Так как управляемые образы всегда обобщены, следует задать `-OsState generalized` . 
 
-Дополнительные сведения о значениях, которые можно указать для определения изображения, см. в разделе [определения изображений](https://docs.microsoft.com/azure/virtual-machines/windows/shared-image-galleries#image-definitions).
+Дополнительные сведения о значениях, которые можно указать для определения образа, см. в разделе [Определения образов](https://docs.microsoft.com/azure/virtual-machines/windows/shared-image-galleries#image-definitions).
 
-Создайте определение образа с помощью команды [New-азгаллеримажедефинитион](https://docs.microsoft.com/powershell/module/az.compute/new-azgalleryimageversion). В этом примере определение образа называется *мимажедефинитион*и предназначено для универсальной ОС Windows. Чтобы создать определение для образов с помощью ОС Linux, используйте `-OsType Linux`. 
+Создайте определение образа с помощью командлета [New-AzGalleryImageDefinition](https://docs.microsoft.com/powershell/module/az.compute/new-azgalleryimageversion). В этом примере определение образа называется *мимажедефинитион*и предназначено для универсальной ОС Windows. Чтобы создать определение для образов с помощью ОС Linux, используйте `-OsType Linux` . 
 
 ```azurepowershell-interactive
 $imageDefinition = New-AzGalleryImageDefinition `
@@ -86,7 +86,7 @@ $managedImage = Get-AzImage `
 
 Создайте версию образа из управляемого образа с помощью команды [New-азгаллеримажеверсион](https://docs.microsoft.com/powershell/module/az.compute/new-azgalleryimageversion). 
 
-Допустимыми знаками для имени версии образа являются цифры и точки. Числа должны быть в диапазоне 32-битного целого числа. Формат: *majorversion*. *Minorversion*. *Исправление*.
+Допустимыми знаками для имени версии образа являются цифры и точки. Числа должны быть в диапазоне 32-битного целого числа. Формат: *основной номер версии*.*дополнительный номер версии*.*исправление*.
 
 В этом примере используется версия образа *1.0.0*, которая реплицируется в центры обработки данных в регионах *центрально-западная часть США* и *центрально-южная часть США*. При выборе целевых регионов для репликации Помните, что также необходимо включить *Исходный* регион в качестве цели для репликации. 
 
@@ -107,7 +107,7 @@ $job = $imageVersion = New-AzGalleryImageVersion `
    -asJob 
 ```
 
-Репликация образа во все целевые регионы может занять некоторое время, поэтому мы создали задание, чтобы отслеживать ход выполнения. Чтобы просмотреть ход выполнения, введите `$job.State`.
+Репликация образа во все целевые регионы может занять некоторое время, поэтому мы создали задание, чтобы отслеживать ход выполнения. Чтобы просмотреть ход выполнения, введите `$job.State` .
 
 ```azurepowershell-interactive
 $job.State
@@ -117,7 +117,7 @@ $job.State
 > [!NOTE]
 > Прежде чем использовать тот же управляемый образ для создания другой версии образа, необходимо дождаться завершения сборки и репликации версии образа. 
 >
-> Вы также можете сохранить образ в хранилище `-StorageAccountType Premium_LRS`премиун, добавив хранилище или [избыточное в зону](https://docs.microsoft.com/azure/storage/common/storage-redundancy-zrs) , добавив `-StorageAccountType Standard_ZRS` его при создании версии образа.
+> Вы также можете сохранить образ в хранилище класса Premium, добавив `-StorageAccountType Premium_LRS`, или [хранилище, избыточное между зонами](https://docs.microsoft.com/azure/storage/common/storage-redundancy-zrs), добавив `-StorageAccountType Standard_ZRS` при создании версии образа.
 >
 
 ## <a name="delete-the-managed-image"></a>Удаление управляемого образа
@@ -134,3 +134,4 @@ Remove-AzImage `
 
 Убедившись, что репликация завершена, можно создать виртуальную машину из [обобщенного образа](vm-generalized-image-version-powershell.md).
 
+Сведения о том, как предоставить сведения о плане покупки, см. в разделе [предоставление сведений о плане покупки Azure Marketplace при создании образов](marketplace-images.md).

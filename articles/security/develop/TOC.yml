@@ -1,20 +1,6 @@
 - name: Документация по безопасной разработке
   href: index.yml
-- name: Примеры приложений
-  expanded: true
-  items:
-    - name: Не знакомы с безопасной разработкой?
-      items:
-        - name: Веб-приложение в контейнере Linux
-          href: secure-web-app.md
-        - name: Использование веб-приложения с Azure Active Directory
-          href: secure-aad-app.md
-    - name: 'Решения, соответствующие отраслевым стандартам'
-      items:
-        - name: Индустрия платежных карточек
-          href: secure-pci-web-app.md
 - name: Основные понятия
-  expanded: true
   items:
     - name: Рекомендации
       items:
@@ -26,8 +12,8 @@
           href: secure-develop.md
         - name: Развертывание безопасных приложений
           href: secure-deploy.md
-- name: Ресурсы
   expanded: true
+- name: Ресурсы
   items:
     - name: Анализ кода безопасности Майкрософт
       items:
@@ -95,3 +81,4 @@
               href: threat-modeling-tool-sensitive-data.md
             - name: Управление сеансом
               href: threat-modeling-tool-session-management.md
+  expanded: true

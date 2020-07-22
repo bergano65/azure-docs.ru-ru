@@ -24,6 +24,8 @@
   items:
     - name: Подключение к ресурсам Виртуального рабочего стола Windows
       items:
+        - name: Подключение к клиенту Windows Desktop
+          href: connect-windows-7-10-2019.md
         - name: Подключение к веб-клиенту
           href: connect-web-2019.md
         - name: Подключение к клиенту Android

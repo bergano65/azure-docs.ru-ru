@@ -4,10 +4,10 @@ description: Развертывание ресурсов в Azure с помощ�
 ms.topic: conceptual
 ms.date: 08/14/2019
 ms.openlocfilehash: 42eaae316d4fd0575102323933f849a3058228a6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80156401"
 ---
 # <a name="deploy-private-arm-template-with-sas-token"></a>Развертывание закрытого шаблона ARM с маркером SAS
@@ -139,6 +139,6 @@ az deployment group create \
 Пример использования маркера SAS со связанными шаблонами см. в статье [Использование связанных шаблонов в Azure Resource Manager](linked-templates.md).
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Общие сведения о развертывании шаблонов см. в статье [развертывание ресурсов с помощью шаблонов ARM и Azure PowerShell](deploy-powershell.md).
 * Сведения об определении параметров в шаблоне см. в разделе [Создание шаблонов](template-syntax.md#parameters).

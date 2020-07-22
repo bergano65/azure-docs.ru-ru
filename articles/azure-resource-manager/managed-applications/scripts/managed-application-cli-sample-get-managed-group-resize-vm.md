@@ -6,12 +6,12 @@ ms.devlang: azurecli
 ms.topic: sample
 ms.date: 10/25/2017
 ms.author: tomfitz
-ms.openlocfilehash: 878a8d660495c932cc8fa44bb1ed06e79576729b
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: f119fe4b4547bda8249a3620baf938dd8b83c235
+ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "75648781"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86056052"
 ---
 # <a name="get-resources-in-a-managed-resource-group-and-resize-vms-with-azure-cli"></a>Получение ресурсов из управляемой группы ресурсов и изменение размера виртуальных машин с помощью Azure CLI
 
@@ -33,12 +33,12 @@ ms.locfileid: "75648781"
 
 | Get-Help | Примечания |
 |---|---|
-| [az managedapp list](https://docs.microsoft.com/cli/azure/managedapp#az-managedapp-list) | Перечисление управляемых приложений Azure. Укажите значения запроса для поиска результатов. |
-| [az resource list](https://docs.microsoft.com/cli/azure/resource#az-resource-list) | Перечисление ресурсов. Укажите группу ресурсов и значения запроса для поиска результатов. |
-| [az vm resize](https://docs.microsoft.com/cli/azure/vm#az-vm-resize) | Обновление размера виртуальной машины. |
+| [az managedapp list](/cli/azure/managedapp#az-managedapp-list) | Перечисление управляемых приложений Azure. Укажите значения запроса для поиска результатов. |
+| [az resource list](/cli/azure/resource#az-resource-list) | Перечисление ресурсов. Укажите группу ресурсов и значения запроса для поиска результатов. |
+| [az vm resize](/cli/azure/vm#az-vm-resize) | Обновление размера виртуальной машины. |
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Общие сведения об управляемых приложениях Azure см. в [этой статье](../overview.md).
-* Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
+* Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).

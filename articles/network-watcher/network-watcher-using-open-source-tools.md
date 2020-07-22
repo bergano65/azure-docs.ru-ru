@@ -7,17 +7,17 @@ documentationcenter: na
 author: damendo
 ms.service: network-watcher
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
-ms.openlocfilehash: 32d978ee766f6dbe95bd7158b8060a0302ef8206
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 48501a2796f4d826a20af559058490a14785b53e
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82189068"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84738640"
 ---
 # <a name="visualize-network-traffic-patterns-to-and-from-your-vms-using-open-source-tools"></a>Визуализация распределения входящего и исходящего трафика на виртуальных машинах с помощью средств с открытым кодом
 
@@ -84,13 +84,13 @@ CapAnalysis предлагает много возможностей для ви
 
     ![filters][11]
 
-    Посетите [https://www.capanalysis.net/ca/#about](https://www.capanalysis.net/ca/#about) страницу, чтобы узнать больше о всех возможностях CapAnalysis.
+    Посетите страницу [https://www.capanalysis.net/ca/#about](https://www.capanalysis.net/ca/#about) , чтобы узнать больше о всех возможностях CapAnalysis.
 
 ## <a name="conclusion"></a>Заключение
 
 Функция захвата пакетов Наблюдателя за сетями позволяет сохранять полезные данные для экспертизы сети и понимания характеристик сетевого трафика. На этом примере мы показали, как можно легко интегрировать захват пакетов Наблюдателя за сетями со средствами визуализации с открытым кодом. Используя средства с открытым кодом для визуализации захвата пакетов, например CapAnalysis, вы можете тщательно проверять сетевые пакеты и быстро выявлять тенденции трафика в сети.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Информацию о журналах потоков для групп безопасности сети см. [в этой статье](network-watcher-nsg-flow-logging-overview.md).
 

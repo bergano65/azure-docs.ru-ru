@@ -7,14 +7,14 @@ ms.author: saveenr
 ms.reviewer: jasonwhowell
 ms.assetid: 811d172d-9873-4ce9-a6d5-c1a26b374c79
 ms.service: data-lake-analytics
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 06/18/2017
-ms.openlocfilehash: 0a10af73d754596e9b5bb34b2974d7f1647d06f8
-ms.sourcegitcommit: be32c9a3f6ff48d909aabdae9a53bd8e0582f955
+ms.openlocfilehash: aa2a128e25e3751813f056286fff4eb6caa24437
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2020
-ms.locfileid: "60617713"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86121390"
 ---
 # <a name="manage-azure-data-lake-analytics-a-net-app"></a>Управление Azure Data Lake Analytics с помощью приложения .NET
 
@@ -22,7 +22,7 @@ ms.locfileid: "60617713"
 
 Из этой статьи вы узнаете, как управлять учетными записями, источниками данных, пользователями и заданиями Azure Data Lake Analytics, используя приложение, написанное с помощью пакета SDK Azure для .NET. 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Visual Studio 2015, Visual Studio 2013 с обновлением 4 или Visual Studio 2012 с установленным Visual C++**
 * **Microsoft Azure SDK для .NET (версии 2.5 или выше)**.  Вы можете установить его с помощью [установщика веб-платформы](https://www.microsoft.com/web/downloads/platform.aspx).
@@ -219,7 +219,7 @@ if (adlaClient.Account.Exists(rg, adla))
 
 Аналитика озера данных в настоящее время поддерживает следующие источники данных:
 
-* [Azure Data Lake Store](../data-lake-store/data-lake-store-overview.md)
+* [Хранилище озера данных Azure](../data-lake-store/data-lake-store-overview.md)
 * [Учетная запись хранения Azure](../storage/common/storage-introduction.md)
 
 ### <a name="link-to-an-azure-storage-account"></a>Связывание с учетной записью хранения Azure
@@ -441,7 +441,7 @@ var newPolicyParams = new ComputePolicyCreateOrUpdateParameters(userAadObjectId,
 adlaAccountClient.ComputePolicies.CreateOrUpdate(rg, adla, "GaryMcDaniel", newPolicyParams);
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обзор аналитики озера данных Microsoft Azure](data-lake-analytics-overview.md)
 * [Управление Azure Data Lake Analytics с помощью портал Azure](data-lake-analytics-manage-use-portal.md)

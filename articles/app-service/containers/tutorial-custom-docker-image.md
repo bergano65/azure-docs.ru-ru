@@ -7,13 +7,13 @@ ms.assetid: b97bd4e6-dff0-4976-ac20-d5c109a559a8
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: msangapu
-ms.custom: mvc, seodec18
-ms.openlocfilehash: 2609ff908b3c2f872cb63d3dcd7dcd481d316484
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.custom: mvc, seodec18, tracking-python
+ms.openlocfilehash: 88ca971986119b3612c79d0bee381d3a0fc9a977
+ms.sourcegitcommit: 34eb5e4d303800d3b31b00b361523ccd9eeff0ab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82085864"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84906842"
 ---
 # <a name="tutorial-build-a-custom-image-and-run-in-app-service-from-a-private-registry"></a>Руководство по созданию и запуску настраиваемого образа в Службе приложений из частного реестра
 
@@ -139,7 +139,7 @@ az acr credential show --name <azure-container-registry-name>
 }
 </pre>
 
-В окне терминала на локальном компьютере войдите в Реестр контейнеров Azure с помощью команды `docker login`, как показано в примере ниже. Замените *\<azure-container-registry-name>* и *\<registry-username>* значениями для своего реестра. При появлении запроса введите один из паролей из предыдущего шага.
+В окне терминала на локальном компьютере войдите в Реестр контейнеров Azure с помощью команды `docker login`, как показано в примере ниже. Замените *\<azure-container-registry-name>* и *\<registry-username>* значениями вашего реестра. При появлении запроса введите один из паролей из предыдущего шага.
 
 ```bash
 docker login <azure-container-registry-name>.azurecr.io --username <registry-username>
@@ -180,7 +180,7 @@ az acr repository list -n <azure-container-registry-name>
 
 ### <a name="create-web-app"></a>Создание веб-приложения
 
-В Cloud Shell создайте [веб-приложение](app-service-linux-intro.md) в рамках плана службы приложений `myAppServicePlan` с помощью команды [`az webapp create`](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create). Замените _\<app-name>_ уникальным именем приложения, а _\<azure-container-registry-name>_ — именем реестра.
+В Cloud Shell создайте [веб-приложение](app-service-linux-intro.md) в рамках плана службы приложений `myAppServicePlan` с помощью команды [`az webapp create`](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create). Замените _\<app-name>_ уникальным именем приложения, а _\<azure-container-registry-name>_  — именем реестра.
 
 ```azurecli-interactive
 az webapp create --resource-group myResourceGroup --plan myAppServicePlan --name <app-name> --deployment-container-image-name <azure-container-registry-name>.azurecr.io/mydockerimage:v1.0.0
@@ -205,7 +205,7 @@ az webapp create --resource-group myResourceGroup --plan myAppServicePlan --name
 
 ### <a name="configure-registry-credentials-in-web-app"></a>Настройка учетных данных реестра в веб-приложении
 
-Чтобы Служба приложений могла извлечь частный образ, ей требуются сведения о реестре и образе. Предоставьте их, выполнив в Cloud Shell команду [`az webapp config container set`](/cli/azure/webapp/config/container?view=azure-cli-latest#az-webapp-config-container-set). Замените значения *\<app-name>* , *\<azure-container-registry-name>* , _\<registry-username>_ и _\<password>_ .
+Чтобы Служба приложений могла извлечь частный образ, ей требуются сведения о реестре и образе. Предоставьте их, выполнив в Cloud Shell команду [`az webapp config container set`](/cli/azure/webapp/config/container?view=azure-cli-latest#az-webapp-config-container-set). Замените *\<app-name>* , *\<azure-container-registry-name>* , _\<registry-username>_ и _\<password>_ .
 
 ```azurecli-interactive
 az webapp config container set --name <app-name> --resource-group myResourceGroup --docker-custom-image-name <azure-container-registry-name>.azurecr.io/mydockerimage:v1.0.0 --docker-registry-server-url https://<azure-container-registry-name>.azurecr.io --docker-registry-server-user <registry-username> --docker-registry-server-password <password>
@@ -236,23 +236,33 @@ az webapp config appsettings set --resource-group myResourceGroup --name <app-na
 
 ## <a name="change-web-app-and-redeploy"></a>Изменение и повторное развертывание веб-приложения
 
-Откройте файл app/templates/app/index.html в локальном репозитории Git. Найдите первый элемент HTML и измените его.
+Откройте файл *app/templates/app/index.html* в локальном репозитории Git. Измените первый элемент HTML в соответствии со следующим кодом.
 
-```python
+```html
 <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">Azure App Service - Updated Here!</a>
-      </div>
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Azure App Service - Updated Here!</a>
     </div>
-  </nav>
+  </div>
+</nav>
 ```
 
-После того как вы изменили и сохранили файл Python, необходимо перестроить и передать новый образ Docker. Затем перезапустите веб-приложение, чтобы изменения вступили в силу. Используйте те же команды, которые использовались ранее в этом руководстве. Вы можете ознакомиться с разделами [Создание образа на основе файла Docker](#build-the-image-from-the-docker-file) и [Передача образа в реестр контейнеров Azure](#push-image-to-azure-container-registry). [Протестируйте веб-приложение](#test-the-web-app).
+Сохранив изменения, перестройте и отправьте новый образ Docker с помощью тех же команд, которые использовались ранее в этом руководстве. Вы можете ознакомиться с разделами [Создание образа на основе файла Docker](#build-the-image-from-the-docker-file) и [Передача образа в реестр контейнеров Azure](#push-image-to-azure-container-registry).
+
+После отправки нового образа перезапустите веб-приложение, чтобы изменения вступили в силу, с помощью следующей команды:
+
+```azurecli-interactive
+az webapp restart --name <app_name> --resource-group myResourceGroup
+```
+
+Измените `<app_name>` на имя, которое использовалось ранее.
+
+После перезапуска приложения протестируйте его, следуя инструкциям в разделе [Тестирование веб-приложения](#test-the-web-app).
 
 ## <a name="access-diagnostic-logs"></a>Доступ к журналам диагностики
 
-[!INCLUDE [Access diagnostic logs](../../../includes/app-service-web-logs-access-no-h.md)]
+[!INCLUDE [Access diagnostic logs](../../../includes/app-service-web-logs-access-linux-no-h.md)]
 
 ## <a name="enable-ssh-connections"></a>Включение SSH-подключений
 

@@ -3,15 +3,15 @@ title: Управление учетной записью Azure Data Lake Storag
 description: Узнайте, как использовать пакет SDK для .NET для Azure Data Lake Storage 1-го поколения операций управления учетными записями.
 author: twooley
 ms.service: data-lake-store
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: d7ea2b7fffc4edff6cae895e08b955d2e21ff5f2
-ms.sourcegitcommit: 366e95d58d5311ca4b62e6d0b2b47549e06a0d6d
+ms.openlocfilehash: 379f0c5418c2e15786b16cf1e4f67487432fa905
+ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82692119"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "85985936"
 ---
 # <a name="account-management-operations-on-azure-data-lake-storage-gen1-using-net-sdk"></a>Операции управления учетными записями в Azure Data Lake Storage 1-го поколения c использованием .NET SDK
 > [!div class="op_single_selector"]
@@ -48,42 +48,46 @@ ms.locfileid: "82692119"
    4. Закройте **Диспетчер пакетов NuGet**.
 5. Откройте файл **Program.cs**, удалите существующий код и включите следующие инструкции, чтобы добавить ссылки на пространства имен.
 
-        using System;
-        using System.IO;
-        using System.Linq;
-        using System.Text;
-        using System.Threading;
-        using System.Collections.Generic;
-        using System.Security.Cryptography.X509Certificates; // Required only if you are using an Azure AD application created with certificates
+    ```csharp
+    using System;
+    using System.IO;
+    using System.Linq;
+    using System.Text;
+    using System.Threading;
+    using System.Collections.Generic;
+    using System.Security.Cryptography.X509Certificates; // Required only if you are using an Azure AD application created with certificates
                 
-        using Microsoft.Rest;
-        using Microsoft.Rest.Azure.Authentication;
-        using Microsoft.Azure.Management.DataLake.Store;
-        using Microsoft.Azure.Management.DataLake.Store.Models;
-        using Microsoft.IdentityModel.Clients.ActiveDirectory;
+    using Microsoft.Rest;
+    using Microsoft.Rest.Azure.Authentication;
+    using Microsoft.Azure.Management.DataLake.Store;
+    using Microsoft.Azure.Management.DataLake.Store.Models;
+    using Microsoft.IdentityModel.Clients.ActiveDirectory;
+    ```
 
 6. Объявите переменные и укажите значения вместо заполнителей. Кроме того, убедитесь, что локальный путь и имя файла, которые вы указываете, имеются на компьютере.
 
-        namespace SdkSample
+    ```csharp
+    namespace SdkSample
+    {
+        class Program
         {
-            class Program
-            {
-                private static DataLakeStoreAccountManagementClient _adlsClient;
+            private static DataLakeStoreAccountManagementClient _adlsClient;
                 
-                private static string _adlsAccountName;
-                private static string _resourceGroupName;
-                private static string _location;
-                private static string _subId;
+            private static string _adlsAccountName;
+            private static string _resourceGroupName;
+            private static string _location;
+            private static string _subId;
 
-                private static void Main(string[] args)
-                {
-                    _adlsAccountName = "<DATA-LAKE-STORAGE-GEN1-NAME>.azuredatalakestore.net"; 
-                    _resourceGroupName = "<RESOURCE-GROUP-NAME>"; 
-                    _location = "East US 2";
-                    _subId = "<SUBSCRIPTION-ID>";                    
-                }
+            private static void Main(string[] args)
+            {
+                _adlsAccountName = "<DATA-LAKE-STORAGE-GEN1-NAME>.azuredatalakestore.net"; 
+                _resourceGroupName = "<RESOURCE-GROUP-NAME>"; 
+                _location = "East US 2";
+                _subId = "<SUBSCRIPTION-ID>";                    
             }
         }
+    }
+    ```
 
 В остальных разделах статьи рассматривается использование доступных методов .NET при выполнении таких операций, как проверка подлинности, отправка файла и т. д.
 
@@ -95,43 +99,51 @@ ms.locfileid: "82692119"
 ## <a name="create-client-object"></a>Создание клиентского объекта
 В следующем фрагменте кода создается объект клиента учетной записи Data Lake Storage 1-го поколения, который используется для выдачи запросов управления учетной записью для службы, таких как создание учетной записи, удаление учетной записи и т. д.
 
-    // Create client objects and set the subscription ID
-    _adlsClient = new DataLakeStoreAccountManagementClient(armCreds) { SubscriptionId = _subId };
+```csharp
+// Create client objects and set the subscription ID
+_adlsClient = new DataLakeStoreAccountManagementClient(armCreds) { SubscriptionId = _subId };
+```
     
 ## <a name="create-a-data-lake-storage-gen1-account"></a>Создание учетной записи Data Lake Storage 1-го поколения
 В следующем фрагменте кода создается учетная запись Data Lake Storage 1-го поколения в подписке Azure, предоставленной при создании объекта клиента учетной записи Data Lake Storage 1-го поколения.
 
-    // Create Data Lake Storage Gen1 account
-    var adlsParameters = new DataLakeStoreAccount(location: _location);
-    _adlsClient.Account.Create(_resourceGroupName, _adlsAccountName, adlsParameters);
+```csharp
+// Create Data Lake Storage Gen1 account
+var adlsParameters = new DataLakeStoreAccount(location: _location);
+_adlsClient.Account.Create(_resourceGroupName, _adlsAccountName, adlsParameters);
+```
 
 ## <a name="list-all-data-lake-storage-gen1-accounts-within-a-subscription"></a>Получение списка всех учетных записей Data Lake Storage 1-го поколения в рамках подписки
 Добавьте в определение класса следующий метод. С помощью следующего фрагмента можно получить список всех учетных записей Data Lake Storage 1-го поколения в рамках определенной подписки Azure.
 
-    // List all Data Lake Storage Gen1 accounts within the subscription
-    public static List<DataLakeStoreAccountBasic> ListAdlStoreAccounts()
+```csharp
+// List all Data Lake Storage Gen1 accounts within the subscription
+public static List<DataLakeStoreAccountBasic> ListAdlStoreAccounts()
+{
+    var response = _adlsClient.Account.List(_adlsAccountName);
+    var accounts = new List<DataLakeStoreAccountBasic>(response);
+
+    while (response.NextPageLink != null)
     {
-        var response = _adlsClient.Account.List(_adlsAccountName);
-        var accounts = new List<DataLakeStoreAccountBasic>(response);
-
-        while (response.NextPageLink != null)
-        {
-            response = _adlsClient.Account.ListNext(response.NextPageLink);
-            accounts.AddRange(response);
-        }
-
-        return accounts;
+        response = _adlsClient.Account.ListNext(response.NextPageLink);
+        accounts.AddRange(response);
     }
+
+    return accounts;
+}
+```
 
 ## <a name="delete-a-data-lake-storage-gen1-account"></a>Удаление учетной записи Data Lake Storage 1-го поколения
 Следующий фрагмент кода удаляет учетную запись Data Lake Storage 1-го поколения, созданную ранее.
 
-    // Delete Data Lake Storage Gen1 account
-    _adlsClient.Account.Delete(_resourceGroupName, _adlsAccountName);
+```csharp
+// Delete Data Lake Storage Gen1 account
+_adlsClient.Account.Delete(_resourceGroupName, _adlsAccountName);
+```
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 * [Операции файловой системы в Data Lake Storage 1-го поколения c использованием SDK для .NET](data-lake-store-data-operations-net-sdk.md)
 * [Библиотеки Azure Data Lake Store для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/data-lake-store?view=azure-dotnet)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Защита данных в Data Lake Storage Gen1](data-lake-store-secure-data.md)

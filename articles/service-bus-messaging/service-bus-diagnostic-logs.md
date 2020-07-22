@@ -1,26 +1,14 @@
 ---
 title: Журналы диагностики служебной шины Azure | Документация Майкрософт
 description: В этой статье представлен обзор всех журналов операционных и диагностических операций, доступных для служебной шины Azure.
-keywords: ''
-documentationcenter: .net
-services: service-bus-messaging
-author: axisc
-manager: timlt
-editor: spelluru
-ms.assetid: ''
-ms.service: service-bus-messaging
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: data-services
-ms.date: 01/24/2020
-ms.author: aschhab
-ms.openlocfilehash: a80fb97810fee04a4eb50c43178c168e66f29173
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 06/23/2020
+ms.openlocfilehash: eeaa7e92488fd59994fc07ea0081b0f00c8768df
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80618729"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85337529"
 ---
 # <a name="enable-diagnostics-logs-for-service-bus"></a>Включение журналов диагностики для служебной шины
 
@@ -37,7 +25,7 @@ ms.locfileid: "80618729"
 
 Строки JSON журнала операций включают в себя элементы, перечисленные в следующей таблице:
 
-| Имя | Описание |
+| name | Описание |
 | ------- | ------- |
 | ActivityId | Внутренний идентификатор, используемый для идентификации указанного действия |
 | EventName | Имя операции |
@@ -98,7 +86,7 @@ ms.locfileid: "80618729"
 
 1. Настройте параметры диагностики, выполнив следующие действия.
 
-   a. В поле **имя** введите имя для параметров диагностики.  
+   а. В поле **имя** введите имя для параметров диагностики.  
 
    b. Выберите одно из следующих трех назначений для журналов диагностики:  
    - При выборе **архива в учетной записи хранения**необходимо настроить учетную запись хранения, в которой будут храниться журналы диагностики.  

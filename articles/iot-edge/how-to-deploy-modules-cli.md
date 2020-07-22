@@ -1,6 +1,6 @@
 ---
-title: Развертывание модулей из Azure CLI командной строки Azure IoT Edge
-description: Используйте Azure CLI с расширением Azure IoT, чтобы отправить модуль IoT Edge из центра Интернета вещей на устройство IoT Edge, настроенное манифестом развертывания.
+title: Развертывание модулей с помощью командной строки Azure CLI — Azure IoT Edge
+description: Используйте Azure CLI с расширением Azure IoT, чтобы отправить модуль IoT Edge из Центра Интернета вещей на устройство IoT Edge в соответствии с манифестом развертывания.
 author: kgremban
 manager: philmea
 ms.author: kgremban
@@ -24,12 +24,12 @@ ms.locfileid: "82133944"
 
 В этой статье показано, как создать манифест развертывания JSON и применить этот файл для отправки этого развертывания на устройство IoT Edge. Информацию о создании развертываний, предназначенных для нескольких устройств с определенными значениями тегов, см. в разделе [Развертывание и мониторинг модулей IoT Edge в нужном масштабе (предварительная версия)](how-to-deploy-cli-at-scale.md)
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Центр Интернета вещей](../iot-hub/iot-hub-create-using-cli.md) в подписке Azure.
 * [Устройство IoT Edge](how-to-register-device.md#register-with-the-azure-cli) с установленной средой выполнения IoT Edge.
-* [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli) в вашей среде. По крайней мере, Azure CLI версия должна быть 2.0.70 или выше. Для проверки используйте `az --version`. Эта версия поддерживает команды расширения az и представляет собой платформу команд Knack.
-* [Расширение IOT для Azure CLI](https://github.com/Azure/azure-iot-cli-extension).
+* [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli) в вашей среде. Вам понадобится как минимум Azure CLI версии 2.0.70 или более поздней. Для проверки используйте `az --version`. Эта версия поддерживает команды расширения az и представляет собой платформу команд Knack.
+* [Расширение Интернета вещей для Azure CLI](https://github.com/Azure/azure-iot-cli-extension).
 
 ## <a name="configure-a-deployment-manifest"></a>Настройка манифеста развертывания
 
@@ -138,6 +138,6 @@ ms.locfileid: "82133944"
 
    ![Выходные данные команды az iot hub module-identity list](./media/how-to-deploy-cli/list-modules.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Изучите раздел [Развертывание и мониторинг модулей IoT Edge в нужном масштабе (предварительная версия)](how-to-deploy-at-scale.md)

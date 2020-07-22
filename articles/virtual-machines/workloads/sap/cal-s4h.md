@@ -16,10 +16,9 @@ ms.workload: infrastructure-services
 ms.date: 09/15/2016
 ms.author: hermannd
 ms.openlocfilehash: c110a4e0429ba52e01c472097a2241f91d504cf5
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77616207"
 ---
 # <a name="deploy-sap-s4hana-or-bw4hana-on-azure"></a>Развертывание SAP S/4HANA или BW/4HANA в Azure
@@ -42,7 +41,7 @@ ms.locfileid: "77616207"
 ### <a name="create-an-account-in-the-sap-cal"></a>Создание учетной записи в SAP CAL
 1. Для входа в SAP CAL впервые используйте пользователя S-User SAP или других пользователей, зарегистрированных в SAP. Затем определите учетную запись SAP CAL, которая используется SAP CAL для развертывания устройств в Azure. Вот что нужно сделать в определении учетной записи:
 
-    a. Выберите модель развертывания в Azure (Resource Manager или классическая).
+    а. Выберите модель развертывания в Azure (Resource Manager или классическая).
 
     b. Введите подписку Azure. Учетную запись SAP CAL можно назначить только одной подписке. Если вам требуется несколько подписок, необходимо создать еще одну учетную запись SAP CAL.
 
@@ -53,7 +52,7 @@ ms.locfileid: "77616207"
 
 1. Создайте учетную запись SAP CAL. На странице **Учетные записи** отображается три варианта для Azure: 
 
-    a. **Microsoft Azure (classic)** (Microsoft Azure (классическая)) — это классическая модель развертывания. Мы не рекомендуем ее использовать.
+    а. **Microsoft Azure (classic)** (Microsoft Azure (классическая)) — это классическая модель развертывания. Мы не рекомендуем ее использовать.
 
     b. **Microsoft Azure** — это новая модель развертывания с помощью Resource Manager.
 
@@ -111,7 +110,7 @@ ms.locfileid: "77616207"
 
 1. На странице**Сведения об учетной записи** сделайте следующее:
 
-    a. Выберите учетную запись SAP CAL. (Используйте учетную запись, которая связана с моделью развертывания Resource Manager.)
+    а. Выберите учетную запись SAP CAL. (Используйте учетную запись, которая связана с моделью развертывания Resource Manager.)
 
     b. Введите **имя** экземпляра.
 

@@ -4,12 +4,12 @@ ms.service: storsimple
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
-ms.openlocfilehash: 1cf5bbdad555c50c418851904f36a578522843b2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a5a286753e438b7d65f3d33a82669c4f7e79a282
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "67185349"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86544896"
 ---
 #### <a name="to-create-public-endpoints-on-the-cloud-appliance"></a>Создание общедоступных конечных точек на облачном устройстве
 
@@ -18,16 +18,16 @@ ms.locfileid: "67185349"
     
 3. Необходимо создать правило группы безопасности сети (NSG), чтобы управлять исходящим и входящим потоком трафика виртуальной машины. Выполните следующие действия, чтобы создать правило NSG.
     1. Щелкните **Группа безопасности сети**.
-        ![](./media/storsimple-8000-create-public-endpoints-cloud-appliance/sca-create-public-endpt1.png)
+        ![Снимок экрана со страницей виртуальной машины. В разделе Параметры группа безопасности сети выделяется.](./media/storsimple-8000-create-public-endpoints-cloud-appliance/sca-create-public-endpt1.png)
 
     2. Выберите представленную группу безопасности сети по умолчанию.
-        ![](./media/storsimple-8000-create-public-endpoints-cloud-appliance/sca-create-public-endpt2.png)
+        ![Снимок экрана: страница "Группа безопасности сети". Группа безопасности сети по умолчанию выделена.](./media/storsimple-8000-create-public-endpoints-cloud-appliance/sca-create-public-endpt2.png)
 
     3. Выберите **Правила безопасности для входящего трафика**.
-        ![](./media/storsimple-8000-create-public-endpoints-cloud-appliance/sca-create-public-endpt3.png)
+        ![Снимок экрана страницы, показывающей свойства группы безопасности сети по умолчанию. В области навигации правила безопасности для входящего трафика выделены.](./media/storsimple-8000-create-public-endpoints-cloud-appliance/sca-create-public-endpt3.png)
 
     4. Щелкните **+ Добавить**, чтобы создать правило безопасности для входящего трафика.
-        ![](./media/storsimple-8000-create-public-endpoints-cloud-appliance/sca-create-public-endpt4.png)
+        ![Снимок экрана со страницей правил безопасности для входящего трафика. Знак «плюс» и «добавить слово» являются рядом друг с другом и выделяются.](./media/storsimple-8000-create-public-endpoints-cloud-appliance/sca-create-public-endpt4.png)
 
         В колонке "Добавление правила безопасности для входящего трафика" сделайте следующее:
 
@@ -41,17 +41,17 @@ ms.locfileid: "67185349"
 
         5. Нажмите кнопку **ОК** , чтобы создать правило.
 
-            ![](./media/storsimple-8000-create-public-endpoints-cloud-appliance/sca-create-public-endpt5.png)
+            ![Снимок экрана: колонка добавления правила безопасности для входящего трафика. Значения заполняются, как описано в процедуре, и кнопка ОК выделяется.](./media/storsimple-8000-create-public-endpoints-cloud-appliance/sca-create-public-endpt5.png)
 
 4. Последний шаг — связывание группы безопасности сети с подсетью или определенным сетевым интерфейсом. Выполните следующие действия, чтобы связать группу безопасности сети с подсетью.
     1. Выберите **Подсети**.
     2. Щелкните **+ Associate** (+ Связать).
-        ![](./media/storsimple-8000-create-public-endpoints-cloud-appliance/sca-create-public-endpt7.png)
+        ![Снимок экрана со страницей "подсети". Знак «плюс» и «связь слова» расположены рядом друг с другом и выделены.](./media/storsimple-8000-create-public-endpoints-cloud-appliance/sca-create-public-endpt7.png)
 
     3. Выберите виртуальную сеть, а затем — соответствующую подсеть.
     4. Нажмите кнопку **ОК** , чтобы создать правило.
 
-        ![](./media/storsimple-8000-create-public-endpoints-cloud-appliance/sca-create-public-endpt11.png)
+        ![Снимок экрана со страницей связывания подсети. Выбрана виртуальная сеть, и кнопка ОК будет выделена.](./media/storsimple-8000-create-public-endpoints-cloud-appliance/sca-create-public-endpt11.png)
 
 После создания правила вы можете просмотреть его сведения, чтобы определить общедоступный виртуальный IP-адрес. Запишите этот адрес.
 

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 02/12/2020
 ms.author: wellsi
-ms.openlocfilehash: 93bedbf4275dacc3ec84e6df9c55e7e9a7b9d632
-ms.sourcegitcommit: 31236e3de7f1933be246d1bfeb9a517644eacd61
+ms.openlocfilehash: a2fe1c7c1ac8799d615c26fdaee40b92bf3e294b
+ms.sourcegitcommit: 6fd28c1e5cf6872fb28691c7dd307a5e4bc71228
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2020
-ms.locfileid: "82780918"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85212502"
 ---
 # <a name="release-notes-speech-devices-sdk"></a>Заметки о выпуске: пакет SDK для речевых устройств
 
@@ -42,7 +42,7 @@ ms.locfileid: "82780918"
 - Пользователи Windows могут использовать `AudioConfig.fromDefaultMicrophoneInput()` или `AudioConfig.fromMicrophoneInput(deviceName)` для указания микрофона, который будет использоваться.
 - Размер библиотеки оптимизирован.
 - Поддержка многофакторного распознавания с помощью одного объекта распознавателя речи и намерения.
-- Устранение случайного зависания, которое может произойти при прекращении распознавания.
+- Устранение редких проблем, при которых процесс перестает отвечать на запросы при остановке распознавания.
 - Примеры приложений теперь содержат пример файла участников. Properties для демонстрации формата файла.
 - Обновлен компонент [речевого пакета SDK](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) до версии 1.7.0. Дополнительные сведения см. в [заметках о выпуске](https://aka.ms/csspeech/whatsnew).
 

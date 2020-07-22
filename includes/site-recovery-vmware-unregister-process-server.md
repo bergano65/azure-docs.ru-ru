@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 04/28/2019
 ms.author: ramamill
 ms.openlocfilehash: 00b0c1b1a40ad16db177916c57dba6e9d5a187a7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "67185815"
 ---
 Выполните действия в соответствии с конкретными обстоятельствами.
@@ -26,13 +26,13 @@ ms.locfileid: "67185815"
 Используйте эти действия, только если нет способа восстановить компьютер, на котором установлен сервер обработки.
 
 1. Войдите на сервер конфигурации с правами администратора.
-2. Откройте командную строку администратора и перейдите к `%ProgramData%\ASR\home\svsystems\bin`.
+2. Откройте командную строку администратора и перейдите к `%ProgramData%\ASR\home\svsystems\bin` .
 3. Выполните эту команду, чтобы получить список из одного или нескольких серверов обработки.
 
     ```
     perl Unregister-ASRComponent.pl -IPAddress <IP_of_Process_Server> -Component PS
     ```
-    - Х. Нет: серийный номер сервера обработки.
+    - S. Нет: серийный номер сервера обработки.
     - IP/Name: IP-адрес и имя компьютера, на котором выполняется сервер обработки.
     - Пульс: последние пакеты пульса с компьютера сервера обработки.
     ![Команда отмены регистрации](media/site-recovery-vmware-unregister-process-server/Unregister-cmd.PNG)

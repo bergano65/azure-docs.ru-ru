@@ -6,19 +6,19 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.date: 12/06/2019
 ms.author: cynthn
-ms.openlocfilehash: c34a88c39104d3af2c5747d1cd6d3dea6929379a
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 8c826f5e0e36d693dd3ba98640bceae228ba34e8
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78969543"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86119214"
 ---
-# <a name="detailed-steps-create-and-manage-ssh-keys-for-authentication-to-a-linux-vm-in-azure"></a>Подробные инструкции: создание ключей SSH для аутентификации на виртуальной машине Linux в Azure и управление этими ключами 
+# <a name="detailed-steps-create-and-manage-ssh-keys-for-authentication-to-a-linux-vm-in-azure"></a>Подробные инструкции. Создание ключей SSH для аутентификации на виртуальной машине Linux в Azure и управление этими ключами 
 С помощью пары ключей Secure Shell (SSH) в Azure можно создать виртуальную машину Linux, по умолчанию использующую эти ключи для аутентификации, что позволяет обойтись без паролей для входа. Виртуальные машины, созданные с помощью портала Azure, Azure CLI, шаблонов Resource Manager или других инструментов, при развертывании могут включать в себя собственный открытый ключ SSH, который используется для настройки аутентификации на основе ключей SSH для SSH-подключений. 
 
 Эта статья содержит подробные сведения и инструкции для создания файлов пары из открытого и закрытого ключей SSH-RSA для SSH-подключений клиентов, а также для управления этими ключами. Краткое описание команд приведено в разделе [Как создать и использовать пару из открытого и закрытого ключей SSH для виртуальных машин Linux в Azure](mac-create-ssh-keys.md).
 
-Дополнительные способы создания и использования ключей SSH на компьютере Windows описываются в разделе [Использование ключей SSH с Windows в Azure](ssh-from-windows.md).
+Сведения о создании ключей SSH и их использовании для подключения к из компьютера **Windows** см. в статье [Использование ключей SSH с Windows в Azure](ssh-from-windows.md).
 
 [!INCLUDE [virtual-machines-common-ssh-overview](../../../includes/virtual-machines-common-ssh-overview.md)]
 
@@ -35,13 +35,13 @@ ms.locfileid: "78969543"
 
 ## <a name="generate-keys-with-ssh-keygen"></a>Создание ключей с помощью ssh-keygen
 
-Для создания ключей предпочтительно использовать команду `ssh-keygen`, которая доступна в служебных программах OpenSSH в Azure Cloud Shell, на узле macOS или Linux, в [подсистеме Windows для Linux](https://docs.microsoft.com/windows/wsl/about) и других инструментах. Команд `ssh-keygen` задает несколько вопросов, а затем записывает закрытый ключ и соответствующий открытый ключ. 
+Для создания ключей предпочтительно использовать команду `ssh-keygen`, которая доступна в служебных программах OpenSSH в Azure Cloud Shell, на узле macOS или Linux и в Windows 10. Команд `ssh-keygen` задает несколько вопросов, а затем записывает закрытый ключ и соответствующий открытый ключ. 
 
 Ключи SSH по умолчанию хранятся в каталоге `~/.ssh`.  Если у вас нет каталога `~/.ssh`, создайте его с правильными разрешениями с помощью команды `ssh-keygen`.
 
 ### <a name="basic-example"></a>Простой пример
 
-Приведенная ниже команда `ssh-keygen` создает файлы 2048-разрядных открытого и закрытого ключей SSH RSA в каталоге `~/.ssh` по умолчанию. Если в текущем каталоге существует пара ключей SSH, они будут перезаписаны.
+Следующая `ssh-keygen` команда создает в каталоге 4096-разрядные файлы открытого и закрытого ключей SSH RSA по умолчанию `~/.ssh` . Если в текущем каталоге существует пара ключей SSH, они будут перезаписаны.
 
 ```bash
 ssh-keygen -m PEM -t rsa -b 4096
@@ -64,7 +64,7 @@ ssh-keygen \
 
 `ssh-keygen` — программа, с помощью которой создаются ключи.
 
-`-m PEM`= Форматирование ключа в виде PEM
+`-m PEM` — преобразование ключа в формат PEM.
 
 `-t rsa` — тип создаваемого ключа; в данном случае создается ключ в формате RSA.
 
@@ -231,10 +231,10 @@ ssh myvm
 
 При первом входе на сервер с использованием ключа SSH команда запрашивает парольную фразу для этого файла ключа.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Следующий шаг — создание виртуальных машин Linux Azure с помощью нового открытого ключа SSH. Виртуальные машины Azure, созданные с использованием открытого ключа SSH в качестве данных для входа, защищены лучше, чем виртуальные машины, созданные с помощью метода по умолчанию, предусматривающего использование паролей.
 
 * [Создание виртуальной машины Linux с помощью портала Azure](quick-create-portal.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-* [Создание виртуальной машины Linux с Azure CLI](quick-create-cli.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+* [Создание виртуальной машины Linux с помощью Azure CLI](quick-create-cli.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 * [Создание виртуальной машины Linux с помощью шаблона Azure](create-ssh-secured-vm-from-template.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)

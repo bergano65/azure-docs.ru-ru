@@ -13,12 +13,12 @@ ms.topic: quickstart
 ms.date: 12/24/2019
 ms.author: bwren
 ms.custom: mvc, seo-javascript-september2019, seo-javascript-october2019
-ms.openlocfilehash: 1da862a7994d7db5ee8c9f090119e14f19c6b13a
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: d99af6965e4d2e73ed302530d76126e0e6e8a3ef
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80637891"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86505930"
 ---
 # <a name="quickstart-collect-data-from-a-linux-computer-in-a-hybrid-environment-with-azure-monitor"></a>Краткое руководство. Сбор данных с компьютера Linux в гибридной среде с помощью Azure Monitor
 
@@ -115,7 +115,7 @@ ms.locfileid: "80637891"
 
 Azure Monitor может собирать события из системного журнала и счетчиков производительности Linux, указанных для долгосрочного анализа и формирования отчетов. Служба также может выполнять определенные действия при обнаружении указанного условия. Сначала выполните приведенные ниже действия для настройки сбора событий из системного журнала Linux, а также нескольких стандартных счетчиков производительности.  
 
-1. Щелкните **Другие службы** в левом нижнем углу на портале Azure. В поле поиска введите **Log Analytics**. По мере ввода символов список отфильтруется соответствующим образом. Выберите **Рабочие области Log Analytics**.
+1. На портале Azure щелкните **Все службы**. В списке ресурсов введите Log Analytics. По мере ввода символов список отфильтруется соответствующим образом. Выберите **Рабочие области Log Analytics** и выберите в списке рабочих областей Log Analytics нужную рабочую область, затем перейдите к разделу **Дополнительные параметры** для этой рабочей области **Log Analytics**.
 
 2. Выберите **Данные** и **Системный журнал**.  
 
@@ -168,4 +168,4 @@ Azure Monitor может собирать события из системног
 Чтобы узнать, как просматривать и анализировать данные, перейдите к следующему руководству.
 
 > [!div class="nextstepaction"]
-> [Просмотр и анализ данных, собранных с помощью поиска по журналам Log Analytics](../../azure-monitor/learn/tutorial-viewdata.md)
+> [Просмотр и анализ данных, собранных с помощью поиска по журналам Log Analytics](../log-query/get-started-portal.md)

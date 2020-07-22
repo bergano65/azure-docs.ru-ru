@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 02/06/2020
 ms.author: tagore
-ms.openlocfilehash: c41292a05e5c857cd0b1c120784a400f2f5410ab
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a5a9ace105e56d9db61470c35f665954812c3825
+ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78945361"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86134266"
 ---
 # <a name="migrate-iaas-resources-from-classic-to-azure-resource-manager-by-using-azure-cli"></a>Перенос ресурсов IaaS из классического развертывания в развертывание с помощью Azure Resource Manager с использованием Azure CLI
 
@@ -50,11 +50,15 @@ ms.locfileid: "78945361"
 
 Выполните вход со своей учетной записью.
 
-    azure login
+```azurecli
+azure login
+```
 
 Выберите подписку Azure с помощью следующей команды.
 
-    azure account set "<azure-subscription-name>"
+```azurecli
+azure account set "<azure-subscription-name>"
+```
 
 > [!NOTE]
 > Регистрация — однократное действие, но, прежде чем выполнять миграцию, вам нужно зарегистрироваться. Если вы не зарегистрируетесь, отобразится такое сообщение об ошибке: 
@@ -65,42 +69,53 @@ ms.locfileid: "78945361"
 
 Зарегистрируйтесь в поставщике ресурсов миграции с помощью такой команды: Обратите внимание, что в некоторых случаях эта команда истекает. Однако регистрация будет успешной.
 
-    azure provider register Microsoft.ClassicInfrastructureMigrate
+```azurecli
+azure provider register Microsoft.ClassicInfrastructureMigrate
+```
 
 Подождите пять минут для завершения регистрации. Состояние утверждения регистрации можно проверить, выполнив следующую команду. Убедитесь, что RegistrationState имеет значение `Registered` , прежде чем продолжить.
 
-    azure provider show Microsoft.ClassicInfrastructureMigrate
+```azurecli
+azure provider show Microsoft.ClassicInfrastructureMigrate
+```
 
 Теперь переключите интерфейс командной строки в режим `asm`.
 
-    azure config mode asm
+```azurecli
+azure config mode asm
+```
 
 ## <a name="step-3-make-sure-you-have-enough-azure-resource-manager-virtual-machine-vcpus-in-the-azure-region-of-your-current-deployment-or-vnet"></a>Шаг 3. Проверка наличия достаточного числа виртуальных ЦП для виртуальных машин Azure, развертываемых с помощью Resource Manager, в регионе Azure, в котором находится текущее развертывание или виртуальная сеть
 Для этого шага необходимо будет переключиться в режим `arm`. Для этого воспользуйтесь следующей командой.
 
-```
+```azurecli
 azure config mode arm
 ```
 
 Чтобы проверить текущее количество виртуальных ЦП в Azure Resource Manager, используйте приведенную ниже команду CLI. Чтобы узнать больше о квотах на виртуальные ЦП, см. соответствующий раздел статьи [Подписка Azure, границы, квоты и ограничения службы](../../azure-resource-manager/management/azure-subscription-service-limits.md#managing-limits).
 
-```
+```azurecli
 azure vm list-usage -l "<Your VNET or Deployment's Azure region"
 ```
 
 После завершения проверки на этом шаге можно переключиться обратно в режим `asm` .
 
-    azure config mode asm
-
+```azurecli
+azure config mode asm
+```
 
 ## <a name="step-4-option-1---migrate-virtual-machines-in-a-cloud-service"></a>Шаг 4. Вариант 1: миграция виртуальных машин в облачной службе
 Получите список облачных служб, выполнив следующую команду, а затем выберите облачную службу для переноса. Обратите внимание: если виртуальные машины в облачной службе размещены в виртуальной сети или им назначены веб-роли или рабочие роли, вы получите сообщение об ошибке.
 
-    azure service list
+```azurecli
+azure service list
+```
 
 Выполните следующую команду, чтобы получить имя развертывания для облачной службы из подробных выходных данных. В большинстве случаев имя развертывания совпадает с именем облачной службы.
 
-    azure service show <serviceName> -vv
+```azurecli
+azure service show <serviceName> -vv
+```
 
 Во-первых, проверьте возможность переноса облачной службы с помощью следующей команды.
 
@@ -112,32 +127,42 @@ azure service deployment validate-migration <serviceName> <deploymentName> new "
 
 Если вы хотите перенести виртуальные машины в виртуальную сеть, созданную платформой, используйте следующую команду.
 
-    azure service deployment prepare-migration <serviceName> <deploymentName> new "" "" ""
+```azurecli
+azure service deployment prepare-migration <serviceName> <deploymentName> new "" "" ""
+```
 
 Если вы хотите перенести их в существующую виртуальную сеть в модели развертывания с помощью Resource Manager, используйте следующую команду.
 
-    azure service deployment prepare-migration <serviceName> <deploymentName> existing <destinationVNETResourceGroupName> <subnetName> <vnetName>
+```azurecli
+azure service deployment prepare-migration <serviceName> <deploymentName> existing <destinationVNETResourceGroupName> <subnetName> <vnetName>
+```
 
 Когда операция подготовки успешно завершится, вы сможете просмотреть подробные выходные данные о состоянии миграции виртуальных машин, чтобы убедиться, что все они находятся в состоянии `Prepared` .
 
-    azure vm show <vmName> -vv
+```azurecli
+azure vm show <vmName> -vv
+```
 
 Проверьте конфигурацию для подготовленных ресурсов с помощью интерфейса командной строки или портала Azure. Если вы не готовы к миграции и хотите вернуть предыдущее состояние, используйте следующую команду.
 
-    azure service deployment abort-migration <serviceName> <deploymentName>
+```azurecli
+azure service deployment abort-migration <serviceName> <deploymentName>
+```
 
 Если подготовленная конфигурация вас устраивает, можете продолжать процесс. Выполните следующую команду, чтобы зафиксировать ресурсы.
 
-    azure service deployment commit-migration <serviceName> <deploymentName>
-
-
+```azurecli
+azure service deployment commit-migration <serviceName> <deploymentName>
+```
 
 ## <a name="step-4-option-2----migrate-virtual-machines-in-a-virtual-network"></a>Шаг 4. Вариант 2: миграция виртуальных машин в виртуальной сети
 Выберите виртуальную сеть, в которую будете переносить ресурсы. Обратите внимание: если в виртуальной сети есть виртуальные машины, веб-роли или рабочие роли с неподдерживаемыми конфигурациями, вы получите сообщение об ошибке проверки.
 
 Выполните следующую команду, чтобы получить все виртуальные сети в подписке.
 
-    azure network vnet list
+```azurecli
+azure network vnet list
+```
 
 Результат должен выглядеть следующим образом.
 
@@ -153,36 +178,48 @@ azure network vnet validate-migration <virtualNetworkName>
 
 Подготовьте выбранную виртуальную сеть к переносу, используя следующую команду.
 
-    azure network vnet prepare-migration <virtualNetworkName>
+```azurecli
+azure network vnet prepare-migration <virtualNetworkName>
+```
 
 Проверьте конфигурацию для подготовленных виртуальных машин с помощью интерфейса командной строки или портала Azure. Если вы не готовы к миграции и хотите вернуть предыдущее состояние, используйте следующую команду.
 
-    azure network vnet abort-migration <virtualNetworkName>
+```azurecli
+azure network vnet abort-migration <virtualNetworkName>
+```
 
 Если подготовленная конфигурация вас устраивает, можете продолжать процесс. Выполните следующую команду, чтобы зафиксировать ресурсы.
 
-    azure network vnet commit-migration <virtualNetworkName>
+```azurecli
+azure network vnet commit-migration <virtualNetworkName>
+```
 
 ## <a name="step-5-migrate-a-storage-account"></a>Шаг 5. Перенос учетной записи хранения
 После переноса виртуальных машин рекомендуется перенести учетную запись хранения.
 
 Подготовьте учетную запись хранения к переносу, используя следующую команду:
 
-    azure storage account prepare-migration <storageAccountName>
+```azurecli
+azure storage account prepare-migration <storageAccountName>
+```
 
 Проверьте конфигурацию для подготовленной учетной записи с помощью интерфейса командной строки или портала Azure. Если вы не готовы к миграции и хотите вернуть предыдущее состояние, используйте следующую команду.
 
-    azure storage account abort-migration <storageAccountName>
+```azurecli
+azure storage account abort-migration <storageAccountName>
+```
 
 Если подготовленная конфигурация вас устраивает, можете продолжать процесс. Выполните следующую команду, чтобы зафиксировать ресурсы.
 
-    azure storage account commit-migration <storageAccountName>
+```azurecli
+azure storage account commit-migration <storageAccountName>
+```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обзор поддерживаемого платформой переноса ресурсов IaaS из классической модели в модель Azure Resource Manager](migration-classic-resource-manager-overview.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 * [Техническое руководство по поддерживаемому платформой переносу из классической модели в модель Azure Resource Manager](migration-classic-resource-manager-deep-dive.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-* [Планирование переноса ресурсов IaaS из классической модели развертывания в модель Azure Resource Manager.](migration-classic-resource-manager-plan.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+* [Planning for migration of IaaS resources from classic to Azure Resource Manager](migration-classic-resource-manager-plan.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) (Планирование переноса ресурсов IaaS из классической модели в модель Azure Resource Manager)
 * [Перенос ресурсов IaaS из классической модели в модель Azure Resource Manager с помощью Azure PowerShell](../windows/migration-classic-resource-manager-ps.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 * [Community tools to migrate IaaS resources from classic to Azure Resource Manager](../windows/migration-classic-resource-manager-community-tools.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) (Инструменты сообщества для перемещения ресурсов IaaS из классической модели в модель Azure Resource Manager)
 * [Распространенные ошибки миграции](migration-classic-resource-manager-errors.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)

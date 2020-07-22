@@ -5,20 +5,20 @@ author: bandersmsft
 ms.reviewer: dhgandhi
 ms.service: cost-management-billing
 ms.topic: conceptual
-ms.date: 05/04/2020
+ms.date: 06/19/2020
 ms.author: banders
-ms.openlocfilehash: b198a781da6e18c363e90d8bd5314dafc563dcca
-ms.sourcegitcommit: e0330ef620103256d39ca1426f09dd5bb39cd075
+ms.openlocfilehash: 925a69f1f3a408e50cb9dc1d03cb5c1cf673ef41
+ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82791159"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86102690"
 ---
 # <a name="transfer-azure-subscriptions-between-subscribers-and-csps"></a>Перенос подписок Azure между подписчиками и CSP
 
-Эта статья содержит общие действия, которые используются для переноса подписок Azure между партнерами поставщика облачных решений (CSP) и их клиентами.
+Эта статья содержит общие действия, которые используются для передачи подписок Azure между партнерами по программе "Поставщик облачных решений" (CSP) и их клиентами.
 
-## <a name="transfer-ea-subscriptions"></a>Перенос подписок EA
+## <a name="transfer-ea-subscriptions-to-a-csp-partner"></a>Передача подписок с Соглашением Enterprise партнерам по программе CSP
 
 Партнеры по прямым счетам CSP, сертифицированные как [Поставщик управляемых служб Azure Expert](https://partner.microsoft.com/membership/azure-expert-msp), могут запрашивать перенос подписок Azure для клиентов с прямым Соглашением Enterprise (EA). Перенос подписок разрешен только для клиентов, которые приняли Клиентское соглашение Майкрософт (MCA) и приобрели план Azure.
 
@@ -44,7 +44,7 @@ ms.locfileid: "82791159"
     > [!IMPORTANT]
     >  - Перемещение ресурсов Azure между подписками, в зависимости от ресурсов в подписках, может привести к простою службы.
 
-## <a name="all-subscription-transfers-from-a-csp-partner"></a>Все переносы подписок из Партнера CSP
+## <a name="transfer-csp-subscription-to-other-offer"></a>Перенос подписки из предложения "Партнер CSP" в другое предложение
 
 Чтобы перенести любые другие подписки из предложения "Партнер CSP" в любое другое предложение Azure, подписчику необходимо переместить ресурсы между исходными подписками CSP и целевыми подписками.
 
@@ -67,4 +67,4 @@ ms.locfileid: "82791159"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - [Get billing ownership of Azure subscriptions for your MPA account](mpa-request-ownership.md) (Запрос прав владения подписками Azure для учетной записи MPA).
-- Дополнительные сведения см. [Управление учетными записями и подписками с помощью API выставления счетов Azure](index.yml).
+- Дополнительные сведения см. [Управление учетными записями и подписками с помощью API выставления счетов Azure](../index.yml).

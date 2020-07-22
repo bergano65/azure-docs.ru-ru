@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: tutorial
-ms.date: 02/10/2020
+ms.date: 06/25/2020
 ms.author: erhopf
-ms.openlocfilehash: a83ed5c9cec994c1bc4cadd5cf6208c159823658
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: 04a6742d3db8d65e06fe3d7b35ed94ebe5dc13a5
+ms.sourcegitcommit: b56226271541e1393a4b85d23c07fd495a4f644d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "77469023"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85391219"
 ---
 # <a name="tutorial-create-a-tenant-model-preview"></a>Руководство по Создание клиентской модели (предварительная версия)
 
@@ -24,7 +24,7 @@ ms.locfileid: "77469023"
 > [!IMPORTANT]
 > Если ваша организация регистрируется через службу клиентской модели, служба "Речь" получает доступ к языковой модели этой организации. Эта модель формируется на основе сообщений электронной почты и документов Office 365, доступных для всех пользователей в организации. Администратор Office 365 вашей организации может включать и отключать использование языковой модели на уровне организации через портал администрирования Office 365.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этом руководстве описано следующее:
 
 > [!div class="checklist"]
 > * Регистрация в клиентской модели через центр администрирования Microsoft 365

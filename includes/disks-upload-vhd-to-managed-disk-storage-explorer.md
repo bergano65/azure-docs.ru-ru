@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 description: включить файл
 services: virtual-machines
 author: roygara
@@ -9,10 +9,10 @@ ms.date: 09/25/2019
 ms.author: rogarana
 ms.custom: include file
 ms.openlocfilehash: 5104c3b4446a8d3747ce7cc1648ef05dd117eb3d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74013777"
 ---
 Обозреватель службы хранилища 1.10.0 позволяет пользователям отправлять, скачивать и копировать управляемые диски, а также создавать моментальные снимки. Из-за этих дополнительных возможностей можно использовать Обозреватель службы хранилища для переноса данных из локальной среды в Azure и переноса данных между регионами Azure.
@@ -128,4 +128,4 @@ ms.locfileid: "74013777"
 
     ![Открыть моментальный снимок на портале](media/disks-upload-vhd-to-managed-disk-storage-explorer/open-in-portal.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия

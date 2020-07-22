@@ -4,10 +4,9 @@ description: Уведомления о работоспособности слу
 ms.topic: conceptual
 ms.date: 6/27/2019
 ms.openlocfilehash: 21416edc95d345eb183030a9b0cccb7529305d6d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75748650"
 ---
 # <a name="view-service-health-notifications-by-using-the-azure-portal"></a>Просмотр уведомлений о работоспособности служб на портале Azure
@@ -20,18 +19,18 @@ ms.locfileid: "75748650"
 
 ## <a name="view-your-service-health-notifications-in-the-azure-portal"></a>Просмотр уведомлений о работоспособности службы на портале Azure
 
-1. На [портале Azure](https://portal.azure.com) выберите **Монитор**.
+1. В [портал Azure](https://portal.azure.com)выберите **мониторинг**.
 
     ![Снимок экрана с меню портала Azure и выбранной службой Monitor](./media/service-notifications/home-monitor.png)
 
     В Azure Monitor отображено единое представление всех параметров мониторинга и данных. Сначала открывается раздел **Журнал действий** .
 
-1. Выберите **оповещения**.
+1. Выберите **Оповещения**.
 
     ![Снимок экрана журнала мониторинга активности с выбранными оповещениями](./media/service-notifications/service-health-summary.png)
 
 1. Выберите **+Добавить оповещение журнала действий** и настройте оповещение, чтобы в дальнейшем получать оповещения об уведомлениях службы. Дополнительные сведения см. в статье [Создание оповещений журнала действий для уведомлений службы](../azure-monitor/platform/alerts-activity-log-service-notifications.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Узнайте больше об [оповещениях журнала действий](../azure-monitor/platform/activity-log-alerts.md).

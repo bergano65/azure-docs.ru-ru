@@ -1,51 +1,32 @@
 ---
-title: Папки запросов и несколько CSV-файлов с использованием SQL по запросу (Предварительная версия)
+title: Запросы к папкам и нескольким файлам с помощью SQL по запросу (Предварительная версия)
 description: SQL по запросу (Предварительная версия) поддерживает чтение нескольких файлов и папок с помощью подстановочных знаков, которые похожи на подстановочные знаки, используемые в ОС Windows.
 services: synapse analytics
 author: azaricstefan
 ms.service: synapse-analytics
 ms.topic: how-to
-ms.subservice: ''
+ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick, carlrab
-ms.openlocfilehash: 8f8af7fab7113e38b91c3f5f1bcc41b4e4fba2c1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 6c61bd420121800ade48de88cbcaadf37343262d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81457371"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85207637"
 ---
-# <a name="query-folders-and-multiple-csv-files"></a>Запрашивание папок и нескольких CSV-файлов  
+# <a name="query-folders-and-multiple-files"></a>Запрашивание папок и нескольких файлов  
 
-В этой статье вы узнаете, как написать запрос с помощью SQL по запросу (Предварительная версия) в Azure синапсе Analytics.
+В этой статье вы узнаете, как написать запрос с помощью SQL по запросу (предварительная версия) в Azure Synapse Analytics.
 
 SQL по запросу поддерживает чтение нескольких файлов и папок с помощью подстановочных знаков, которые похожи на подстановочные знаки, используемые в ОС Windows. Однако большая гибкость имеется, так как разрешено использование нескольких подстановочных знаков.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
-Прежде чем читать оставшуюся часть этой статьи, ознакомьтесь со статьями, приведенными ниже:
+Для начала **создайте базу данных**, в которой будут выполняться запросы. Затем инициализируйте объекты, выполнив [скрипт настройки](https://github.com/Azure-Samples/Synapse/blob/master/SQL/Samples/LdwSample/SampleDB.sql) для этой базы данных. Этот сценарий установки создает источники данных, учетные данные области базы данных и форматы внешних файлов, которые используются в этих примерах.
 
-- [Изначальная настройка](query-data-storage.md#first-time-setup)
-- [Предварительные требования](query-data-storage.md#prerequisites)
-
-## <a name="read-multiple-files-in-folder"></a>Чтение нескольких файлов в папке
-
-Для выполнения примеров запросов вы будете использовать *CSV-файл или каталог такси* . В нем содержится Нью такси (желтый), который записывает данные с 2016 июля по 2018 июня.
-
-Файлы в *формате CSV или такси* именуются по годам и месяцу:
-
-- yellow_tripdata_2016 -07. CSV
-- yellow_tripdata_2016 -08. CSV
-- yellow_tripdata_2016 -09. CSV
-- ...
-- yellow_tripdata_2018 -04. CSV
-- yellow_tripdata_2018 -05. CSV
-- yellow_tripdata_2018 -06. CSV
-
-Каждый файл имеет следующую структуру:
-        
-    [First 10 rows of the CSV file](./media/querying-folders-and-multiple-csv-files/nyc-taxi.png)
+Для выполнения примеров запросов вы будете использовать *CSV-файл или каталог такси* . В нем содержится Нью такси (желтый), который записывает данные с 2016 июля по 2018 июня. Файлы в *формате CSV или такси* именуются по годам и месяцу с использованием следующего шаблона: yellow_tripdata_ <year> - <month> . csv.
 
 ## <a name="read-all-files-in-folder"></a>Чтение всех файлов в папке
     
@@ -57,28 +38,14 @@ SELECT
     SUM(passenger_count) AS passengers_total,
     COUNT(*) AS [rides_total]
 FROM OPENROWSET(
-    BULK 'https://sqlondemandstorage.blob.core.windows.net/csv/taxi/*.*',
-        FORMAT = 'CSV', 
+        BULK 'csv/taxi/*.csv',
+        DATA_SOURCE = 'sqlondemanddemo',
+        FORMAT = 'CSV', PARSER_VERSION = '2.0',
         FIRSTROW = 2
     )
     WITH (
-        vendor_id VARCHAR(100) COLLATE Latin1_General_BIN2, 
-        pickup_datetime DATETIME2, 
-        dropoff_datetime DATETIME2,
-        passenger_count INT,
-           trip_distance FLOAT,
-        rate_code INT,
-        store_and_fwd_flag VARCHAR(100) COLLATE Latin1_General_BIN2,
-        pickup_location_id INT,
-        dropoff_location_id INT,
-           payment_type INT,
-        fare_amount FLOAT,
-        extra FLOAT,
-        mta_tax FLOAT,
-        tip_amount FLOAT,
-        tolls_amount FLOAT,
-        improvement_surcharge FLOAT,
-        total_amount FLOAT
+        pickup_datetime DATETIME2 2, 
+        passenger_count INT 4
     ) AS nyc
 GROUP BY
     YEAR(pickup_datetime)
@@ -98,28 +65,14 @@ SELECT
     payment_type,  
     SUM(fare_amount) AS fare_total
 FROM OPENROWSET(
-    BULK 'https://sqlondemandstorage.blob.core.windows.net/csv/taxi/yellow_tripdata_2017-*.csv',
-        FORMAT = 'CSV', 
+        BULK 'csv/taxi/yellow_tripdata_2017-*.csv',
+        DATA_SOURCE = 'sqlondemanddemo',
+        FORMAT = 'CSV', PARSER_VERSION = '2.0',
         FIRSTROW = 2
     )
     WITH (
-        vendor_id VARCHAR(100) COLLATE Latin1_General_BIN2, 
-        pickup_datetime DATETIME2, 
-        dropoff_datetime DATETIME2,
-        passenger_count INT,
-        trip_distance FLOAT,
-        rate_code INT,
-        store_and_fwd_flag VARCHAR(100) COLLATE Latin1_General_BIN2,
-        pickup_location_id INT,
-        dropoff_location_id INT,
-        payment_type INT,
-        fare_amount FLOAT,
-        extra FLOAT,
-        mta_tax FLOAT,
-        tip_amount FLOAT,
-        tolls_amount FLOAT,
-        improvement_surcharge FLOAT,
-        total_amount FLOAT
+        payment_type INT 10,
+        fare_amount FLOAT 11
     ) AS nyc
 GROUP BY payment_type
 ORDER BY payment_type;
@@ -147,8 +100,9 @@ SELECT
     SUM(passenger_count) AS passengers_total,
     COUNT(*) AS [rides_total]
 FROM OPENROWSET(
-    BULK 'https://sqlondemandstorage.blob.core.windows.net/csv/taxi/',
-        FORMAT = 'CSV', 
+        BULK 'csv/taxi/',
+        DATA_SOURCE = 'sqlondemanddemo',
+        FORMAT = 'CSV', PARSER_VERSION = '2.0',
         FIRSTROW = 2
     )
     WITH (
@@ -184,7 +138,7 @@ ORDER BY
 Можно считывать файлы из нескольких папок с помощью подстановочных знаков. Следующий запрос будет считывать все файлы из всех папок, расположенных в папке *CSV* , имена которых начинаются с *t* и заканчиваются на *i*.
 
 > [!NOTE]
-> Обратите внимание на существование/в конце пути в приведенном ниже запросе. Он обозначает папку. Если параметр/не указан, запрос будет указывать на файлы с именем *t&ast;i* .
+> Обратите внимание на существование/в конце пути в приведенном ниже запросе. Он обозначает папку. Если параметр/не указан, запрос будет указывать на файлы с именем *t &ast; i* .
 
 ```sql
 SELECT
@@ -192,8 +146,9 @@ SELECT
     SUM(passenger_count) AS passengers_total,
     COUNT(*) AS [rides_total]
 FROM OPENROWSET(
-    BULK 'https://sqlondemandstorage.blob.core.windows.net/csv/t*i/', 
-        FORMAT = 'CSV', 
+        BULK 'csv/t*i/', 
+        DATA_SOURCE = 'sqlondemanddemo',
+        FORMAT = 'CSV', PARSER_VERSION = '2.0',
         FIRSTROW = 2
     )
     WITH (
@@ -231,7 +186,7 @@ ORDER BY
 Можно использовать несколько подстановочных знаков на разных уровнях пути. Например, можно создать предыдущий запрос для чтения файлов только с данными 2017, из всех папок, имена которых начинаются с *t* и заканчиваются на *i*.
 
 > [!NOTE]
-> Обратите внимание на существование/в конце пути в приведенном ниже запросе. Он обозначает папку. Если параметр/не указан, запрос будет указывать на файлы с именем *t&ast;i* .
+> Обратите внимание на существование/в конце пути в приведенном ниже запросе. Он обозначает папку. Если параметр/не указан, запрос будет указывать на файлы с именем *t &ast; i* .
 > Максимальное число подстановочных знаков для каждого запроса — 10.
 
 ```sql
@@ -240,8 +195,9 @@ SELECT
     SUM(passenger_count) AS passengers_total,
     COUNT(*) AS [rides_total]
 FROM OPENROWSET(
-    BULK 'https://sqlondemandstorage.blob.core.windows.net/csv/t*i/yellow_tripdata_2017-*.csv',
-        FORMAT = 'CSV', 
+        BULK 'csv/t*i/yellow_tripdata_2017-*.csv',
+        DATA_SOURCE = 'sqlondemanddemo',
+        FORMAT = 'CSV', PARSER_VERSION = '2.0',
         FIRSTROW = 2
     )
     WITH (

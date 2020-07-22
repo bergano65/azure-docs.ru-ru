@@ -4,15 +4,14 @@ description: Узнайте, как использовать веб-канал �
 author: TheovanKraay
 ms.service: cosmos-db
 ms.subservice: cosmosdb-cassandra
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 11/25/2019
 ms.author: thvankra
-ms.openlocfilehash: 43743f62b08bb00403f5dac88682d06daab757a4
-ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
-ms.translationtype: MT
+ms.openlocfilehash: 417a1dbc72c3b3c35c501351dcc8bda9dc95a78d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82872558"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84431603"
 ---
 # <a name="change-feed-in-the-azure-cosmos-db-api-for-cassandra"></a>Веб-канал изменений в Azure Cosmos DB API для Cassandra
 
@@ -21,6 +20,43 @@ ms.locfileid: "82872558"
 В следующем примере показано, как получить канал изменений для всех строк в API Cassandra таблице пространства ключей с помощью .NET. Предикат COSMOS_CHANGEFEED_START_TIME () используется непосредственно в CQL для запроса элементов в веб-канале изменений с указанного времени начала (в данном случае это текущая дата и время). Полный пример [для C# можно скачать здесь,](https://docs.microsoft.com/samples/azure-samples/azure-cosmos-db-cassandra-change-feed/cassandra-change-feed/) а для Java — [здесь](https://github.com/Azure-Samples/cosmos-changefeed-cassandra-java).
 
 В каждой итерации запрос возобновляется в момент чтения последних изменений, с использованием разбиения на страницы. В таблице в пространства ключей можно увидеть непрерывный поток новых изменений. Будут видны изменения в строках, которые вставляются или обновляются. Наблюдение за операциями удаления с помощью веб-канала изменений в API Cassandra в настоящее время не поддерживается.
+
+# <a name="java"></a>[Java](#tab/java)
+
+```java
+        Session cassandraSession = utils.getSession();
+
+        try {
+              DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");  
+               LocalDateTime now = LocalDateTime.now().minusHours(6).minusMinutes(30);  
+               String query="SELECT * FROM uprofile.user where COSMOS_CHANGEFEED_START_TIME()='" 
+                    + dtf.format(now)+ "'";
+               
+             byte[] token=null; 
+             System.out.println(query); 
+             while(true)
+             {
+                 SimpleStatement st=new  SimpleStatement(query);
+                 st.setFetchSize(100);
+                 if(token!=null)
+                     st.setPagingStateUnsafe(token);
+                 
+                 ResultSet result=cassandraSession.execute(st) ;
+                 token=result.getExecutionInfo().getPagingState().toBytes();
+                 
+                 for(Row row:result)
+                 {
+                     System.out.println(row.getString("user_name"));
+                 }
+             }
+                    
+
+        } finally {
+            utils.close();
+            LOGGER.info("Please delete your table after verifying the presence of the data in portal or from CQL");
+        }
+
+```
 
 # <a name="c"></a>[C#](#tab/csharp)
 
@@ -72,43 +108,6 @@ ms.locfileid: "82872558"
     }
 
 ```
-
-# <a name="java"></a>[Java](#tab/java)
-
-```java
-        Session cassandraSession = utils.getSession();
-
-        try {
-              DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");  
-               LocalDateTime now = LocalDateTime.now().minusHours(6).minusMinutes(30);  
-               String query="SELECT * FROM uprofile.user where COSMOS_CHANGEFEED_START_TIME()='" 
-                    + dtf.format(now)+ "'";
-               
-             byte[] token=null; 
-             System.out.println(query); 
-             while(true)
-             {
-                 SimpleStatement st=new  SimpleStatement(query);
-                 st.setFetchSize(100);
-                 if(token!=null)
-                     st.setPagingStateUnsafe(token);
-                 
-                 ResultSet result=cassandraSession.execute(st) ;
-                 token=result.getExecutionInfo().getPagingState().toBytes();
-                 
-                 for(Row row:result)
-                 {
-                     System.out.println(row.getString("user_name"));
-                 }
-             }
-                    
-
-        } finally {
-            utils.close();
-            LOGGER.info("Please delete your table after verifying the presence of the data in portal or from CQL");
-        }
-
-```
 ---
 
 Чтобы получить изменения в одной строке по первичному ключу, можно добавить в запрос первичный ключ. В следующем примере показано, как отслеживанию изменений в строке, где "user_id = 1"
@@ -144,6 +143,6 @@ ms.locfileid: "82872558"
 
 * **Код ошибки HTTP 429** — если частота веб-канала изменений ограничена, она возвращает пустую страницу.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* [Управление Azure Cosmos DB API Cassandra ресурсами с помощью шаблонов Azure Resource Manager](manage-cassandra-with-resource-manager.md)
+* [Управление ресурсами API Cassandra Azure Cosmos DB с использованием шаблонов Azure Resource Manager](manage-cassandra-with-resource-manager.md)

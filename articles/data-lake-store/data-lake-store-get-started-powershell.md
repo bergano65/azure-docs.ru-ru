@@ -3,15 +3,15 @@ title: Приступая к работе с Azure Data Lake Storage 1-го по
 description: Используйте Azure PowerShell для создания учетной записи Azure Data Lake Storage 1-го поколения и выполнения основных операций.
 author: twooley
 ms.service: data-lake-store
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 06/27/2018
 ms.author: twooley
-ms.openlocfilehash: 42ddab6991b418af3e41da9966cdab69ded87461
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d8c97064af6fecf08af4608cfcd9874ff9bb1936
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "73837894"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85504788"
 ---
 # <a name="get-started-with-azure-data-lake-storage-gen1-using-azure-powershell"></a>Начало работы с Azure Data Lake Storage Gen1 с помощью Azure PowerShell
 
@@ -26,7 +26,7 @@ ms.locfileid: "73837894"
 
 Узнайте, как использовать Azure PowerShell для создания учетной записи Azure Data Lake Storage 1-го поколения и выполнения основных операций, таких как создание папок, отправка и скачивание файлов данных, удаление учетной записи и т. д. Дополнительные сведения о Data Lake Storage 1-го поколения см. в разделе [обзор Data Lake Storage 1-го поколения](data-lake-store-overview.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -161,7 +161,7 @@ Remove-AzDataLakeStoreAccount -Name $dataLakeStorageGen1Name
 
 При появлении запроса введите **Y** , чтобы удалить учетную запись.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Рекомендации по настройке производительности для использования PowerShell с Azure Data Lake Storage 1-го поколения](data-lake-store-performance-tuning-powershell.md)
 * [Использование Azure Data Lake Storage 1-го поколения для обеспечения соответствия требованиям больших данных](data-lake-store-data-scenarios.md)

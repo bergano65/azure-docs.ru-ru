@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 03/03/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ec9349d8ed330a00a64922a44f99910f9eeeb0df
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 6a2d4799966e070f7c50c39c350456b594664c9a
+ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "79136454"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85800680"
 ---
 # <a name="tutorial-integrate-qlik-sense-enterprise-with-azure-active-directory"></a>Руководство по интеграции Azure Active Directory с Qlik Sense Enterprise
 
@@ -87,11 +87,10 @@ ms.locfileid: "79136454"
 
     b. В текстовом поле **Идентификатор** введите URL-адрес в одном из следующих форматов:
 
-    | |
-    |--|
-    | `https://<Fully Qualified Domain Name>.qlikpoc.com`|
-    | `https://<Fully Qualified Domain Name>.qliksense.com`|
-    | |
+    ```http
+    https://<Fully Qualified Domain Name>.qlikpoc.com
+    https://<Fully Qualified Domain Name>.qliksense.com
+    ```
 
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
 

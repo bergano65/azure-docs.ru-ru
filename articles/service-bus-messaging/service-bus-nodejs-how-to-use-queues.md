@@ -1,26 +1,18 @@
 ---
 title: Использование очередей Служебной шины Azure в Node.js с помощью пакета azure-sb
 description: Узнайте, как создать приложения Node.js для отправки и получения сообщений через очередь Служебной шины Azure с помощью пакета azure-sb.
-services: service-bus-messaging
-documentationcenter: nodejs
-author: axisc
-manager: timlt
-editor: spelluru
-ms.assetid: a87a00f9-9aba-4c49-a0df-f900a8b67b3f
-ms.service: service-bus-messaging
-ms.workload: tbd
-ms.tgt_pltfrm: na
+author: spelluru
 ms.devlang: nodejs
 ms.topic: quickstart
-ms.date: 01/27/2020
-ms.author: aschhab
+ms.date: 06/23/2020
+ms.author: spelluru
 ms.custom: seo-javascript-september2019, seo-javascript-october2019
-ms.openlocfilehash: 7ee3939c1a1b450f2458267ab0b70e3924a4869b
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 01841b1e6d6fed684137e1327dd77e276650803c
+ms.sourcegitcommit: 61d92af1d24510c0cc80afb1aebdc46180997c69
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "78330606"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85340611"
 ---
 # <a name="quickstart-use-service-bus-queues-in-azure-with-nodejs-and-the-azure-sb-package"></a>Краткое руководство. Использование очередей служебной шины в Azure с помощью Node.js и пакета azure-sb
 Из этого учебника вы узнаете, как написать приложение Node.js для отправки и получения сообщений через очередь служебной шины Azure с помощью пакета [azure-sb](https://www.npmjs.com/package/azure-sb). Эти примеры написаны на JavaScript и используют [модуль Node.js для Azure](https://www.npmjs.com/package/azure) с интегрированным пакетом azure-sb.

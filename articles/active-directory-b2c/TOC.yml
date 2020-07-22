@@ -36,6 +36,9 @@
           href: tutorial-desktop-app.md
         - name: Одностраничное приложение
           href: tutorial-single-page-app.md
+        - name: Python
+          href: tutorial-web-app-python.md
+          displayName: flask
     - name: Предоставление доступа через API
       items:
         - name: ASP.NET
@@ -87,11 +90,11 @@
         - name: Регистрация поставщика служб SAML
           href: connect-with-saml-service-providers.md
           displayName: 'SP, RP, service provider, connect'
-        - name: Регистрация приложения Graph
+        - name: Регистрация приложения Microsoft Graph
           href: microsoft-graph-get-started.md
           displayName: 'migrate, migration, microsoft graph'
         - name: Добавление приложения веб-API
-          href: add-web-application.md
+          href: add-web-api-application.md
         - name: Добавление собственного клиентского приложения
           href: add-native-application.md
         - name: Использование iOS ObjC и AppAuth
@@ -188,8 +191,12 @@
               displayName: 'ux, input, cors, html, css'
             - name: Настройка языка
               href: custom-policy-localization.md
-            - name: Настраиваемый адрес электронной почты
-              href: custom-email.md
+            - name: Пользовательская проверка по электронной почте
+              items:
+                - name: Mailjet
+                  href: custom-email-mailjet.md
+                - name: SendGrid
+                  href: custom-email-sendgrid.md
               displayName: verification
             - name: Отключение проверки по электронной почте
               href: custom-policy-disable-email-verification.md
@@ -322,6 +329,8 @@
                     - name: Многофакторная идентификация Azure
                       href: multi-factor-auth-technical-profile.md
                       displayName: mfa
+                    - name: "SSPR в Azure\_AD"
+                      href: aad-sspr-technical-profile.md
                     - name: Преобразование утверждений
                       href: claims-transformation-technical-profile.md
                     - name: Поставщик токенов JWT
@@ -354,6 +363,22 @@
               href: relyingparty.md
             - name: Арбитры утверждений
               href: claim-resolver-overview.md
+    - name: Интеграция партнеров
+      items:
+        - name: "Список партнеров Azure\_AD B2C"
+          href: partner-gallery.md
+        - name: Arkose Labs
+          href: partner-arkose-labs.md
+        - name: IDology
+          href: partner-idology.md
+        - name: itsme
+          href: partner-itsme.md
+        - name: Trusona
+          href: partner-trusona.md
+        - name: Twilio
+          href: partner-twilio.md
+        - name: TypingDNA
+          href: partner-typingdna.md
     - name: Использование b2clogin.com
       items:
         - name: Общие сведения о b2clogin.com
@@ -397,6 +422,8 @@
           href: user-migration.md
 - name: Справочник
   items:
+    - name: Регистрация приложений
+      href: app-registrations-training-guide.md
     - name: Модель выставления счетов
       href: billing.md
     - name: Примеры кода

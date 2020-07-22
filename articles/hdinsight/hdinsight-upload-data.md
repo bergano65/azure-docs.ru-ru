@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdiseo17may2017,seoapr2020
 ms.date: 04/27/2020
-ms.openlocfilehash: e73a8a420c7591a45a62ba38123c6b3368e0f738
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d642397ef42227e530bd9eff14c3da6078241281
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82190645"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86085877"
 ---
 # <a name="upload-data-for-apache-hadoop-jobs-in-hdinsight"></a>Отправка данных для заданий Apache Hadoop в HDInsight
 
@@ -58,15 +58,15 @@ HDInsight предоставляет распределенную файлову
 hadoop fs -copyFromLocal <localFilePath> <storageFilePath>
 ```
 
-Например `hadoop fs -copyFromLocal data.txt /example/data/data.txt`.
+Например: `hadoop fs -copyFromLocal data.txt /example/data/data.txt`
 
-Так как файловая система по умолчанию для HDInsight находится в службе хранилища Azure,/ексампле/Дата/дата.ткст на самом деле находится в службе хранилища Azure. Можно также использовать следующую ссылку на файл:
+Так как файловая система по умолчанию для HDInsight находится в службе хранилища Azure,/ексампле/Дата/data.txt на самом деле находится в службе хранилища Azure. Можно также использовать следующую ссылку на файл:
 
-    wasbs:///example/data/data.txt
+`wasbs:///example/data/data.txt`
 
-или диспетчер конфигурации служб
+или
 
-    wasbs://<ContainerName>@<StorageAccountName>.blob.core.windows.net/example/data/davinci.txt
+`wasbs://<ContainerName>@<StorageAccountName>.blob.core.windows.net/example/data/davinci.txt`
 
 Список других команд Hadoop, работающих с файлами, см. в разделе[https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/FileSystemShell.html](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/FileSystemShell.html)
 
@@ -77,7 +77,7 @@ hadoop fs -copyFromLocal <localFilePath> <storageFilePath>
 
 Существуют также несколько приложений, которые предоставляют графический интерфейс для работы с хранилищем Azure. В следующей таблице приведен список некоторых из таких приложений:
 
-| "Клиент"; | Linux | OS X | Windows |
+| Клиент | Linux | OS X | Windows |
 | --- |:---:|:---:|:---:|
 | [Microsoft Visual Studio Tools для HDInsight](hadoop/apache-hadoop-visual-studio-tools-get-started.md#explore-linked-resources) |✔ |✔ |✔ |
 | [Обозреватель службы хранилища Azure](../storage/blobs/storage-quickstart-blobs-storage-explorer.md) |✔ |✔ |✔ |
@@ -98,7 +98,7 @@ hadoop fs -copyFromLocal <localFilePath> <storageFilePath>
 
 |Тип хранилища|Документация|
 |----|----|
-|Хранилище BLOB-объектов Azure|[Копирование данных в хранилище BLOB-объектов Azure или из него с помощью фабрики данных Azure](../data-factory/connector-azure-blob-storage.md)|
+|Хранилище BLOB-объектов Azure|[Копирование данных в хранилище BLOB-объектов Azure и обратно с помощью фабрики данных Azure](../data-factory/connector-azure-blob-storage.md)|
 |Хранилище Azure Data Lake Storage 1-го поколения|[Копирование данных в Azure Data Lake Storage Gen1 и из него с помощью фабрики данных Azure](../data-factory/connector-azure-data-lake-store.md)|
 |Azure Data Lake Storage 2-го поколения |[Загрузка данных в Azure Data Lake Storage 2-го поколения с помощью Фабрики данных Azure](../data-factory/load-azure-data-lake-storage-gen2.md)|
 
@@ -121,7 +121,7 @@ Sqoop — это средство, предназначенное для пер�
 
 Подробные сведения об установке пакетов SDK для Azure см. на странице [Загрузки](https://azure.microsoft.com/downloads/).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 Теперь, когда вы понимаете, как получать данные в HDInsight, ознакомьтесь со следующими статьями, чтобы изучить анализ:
 

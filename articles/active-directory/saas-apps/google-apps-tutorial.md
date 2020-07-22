@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 05/06/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b025d98c230bc82b86a736785fb8e6581ec4519c
-ms.sourcegitcommit: 602e6db62069d568a91981a1117244ffd757f1c2
+ms.openlocfilehash: 091129d1fbca4141e9841af6a9991d44a6663801
+ms.sourcegitcommit: a989fb89cc5172ddd825556e45359bac15893ab7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82864459"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85799196"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-google-cloud-g-suite-connector"></a>Руководство по интеграции единого входа Azure Active Directory с Google Cloud (G Suite) Connector
 
@@ -129,20 +129,19 @@ ms.locfileid: "82864459"
 
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате:
 
-    | |
-    |--|
-    | `google.com/a/<yourdomain.com>` |
-    | `google.com` |
-    | `https://google.com` |
-    | `https://google.com/a/<yourdomain.com>` |
+    ```http
+    google.com/a/<yourdomain.com>
+    google.com
+    https://google.com
+    https://google.com/a/<yourdomain.com>
+    ```
 
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: 
 
-    | |
-    |--|
-    | `https://www.google.com` |
-    | `https://www.google.com/a/<yourdomain.com>` |
-
+    ```http
+    https://www.google.com
+    https://www.google.com/a/<yourdomain.com>
+    ```
 
 1. Чтобы настроить **Google Cloud Platform**, в разделе **Базовая конфигурация SAML** выполните следующие действия:
 
@@ -150,19 +149,19 @@ ms.locfileid: "82864459"
 
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате:
     
-    | |
-    |--|
-    | `google.com/a/<yourdomain.com>` |
-    | `google.com` |
-    | `https://google.com` |
-    | `https://google.com/a/<yourdomain.com>` |
+    ```http
+    google.com/a/<yourdomain.com>
+    google.com
+    https://google.com
+    https://google.com/a/<yourdomain.com>
+    ```
     
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: 
     
-    | |
-    |--|
-    | `https://www.google.com` |
-    | `https://www.google.com/a/<yourdomain.com>` |
+    ```http
+    https://www.google.com
+    https://www.google.com/a/<yourdomain.com>
+    ```
 
     > [!NOTE]
     > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Google Cloud (G Suite) Connector не предоставляет значение идентификатора сущности для конфигурации единого входа, поэтому при снятии флажка **Domain specific issuer** (Издатель для определенного домена) значение идентификатора будет `google.com`. Если установить флажок **Издатель для определенного домена**, он будет равен "`google.com/a/<yourdomainname.com>`". Чтобы установить или снять флажок **Domain specific issuer** (Издатель для определенного домена), необходимо перейти в раздел **Настройка единого входа в Google Cloud (G Suite) Connector**, который описан далее в этом учебнике. Дополнительные сведения можно получить, обратившись в [группу поддержки клиентов Google Cloud (G Suite) Connector](https://www.google.com/contact/).

@@ -10,10 +10,9 @@ ms.topic: conceptual
 ms.date: 11/29/2018
 ms.author: isacabe
 ms.openlocfilehash: 6e9f9c89cf2e5e40d37a1532e688490aae294181
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "73888866"
 ---
 # <a name="connect-an-iot-devkit-device-to-the-remote-monitoring-solution-accelerator"></a>Подключение устройства IoT DevKit к акселератору решения для удаленного мониторинга
@@ -36,7 +35,7 @@ ms.locfileid: "73888866"
 
 1. Убедитесь, что плата IoT DevKit не подключена к компьютеру. Сначала запустите VS Code, а затем подключите плату DevKit к компьютеру.
 
-1. Щелкните `F1` , чтобы открыть палитру команд, введите и выберите **Azure IOT Device Workbench: Open examples...** Затем выберите **IOT DevKit** в качестве доски.
+1. Щелкните `F1`, чтобы открыть палитру команд, затем введите и выберите **Azure IoT Device Workbench. Открыть примеры...** Затем выберите **IoT DevKit** в качестве платы.
 
 1. Найдите **Удаленный мониторинг** и нажмите **Открыть пример**. Откроется новое окно VS Code с содержимым папки проекта.
 
@@ -63,7 +62,7 @@ ms.locfileid: "73888866"
 
 Чтобы скомпилировать и передать код устройства, выполните следующее.
 
-1. Нажмите `F1` , чтобы открыть палитру команд, введите и выберите **Azure IOT Device Workbench: отправить код устройства**:
+1. Нажмите, `F1` чтобы открыть палитру команд, введите и выберите **Azure IOT Device Workbench: отправить код устройства**:
 
 1. VS Code скомпилирует код и передаст его на устройство DevKit.
 

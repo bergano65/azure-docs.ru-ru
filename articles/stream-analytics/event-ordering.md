@@ -5,18 +5,18 @@ author: sidram
 ms.author: sidram
 ms.reviewer: mamccrea
 ms.service: stream-analytics
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/12/2019
-ms.openlocfilehash: c0a108565a6a0f62c6252113f984e8b10967c5db
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e9617018b06d4f62b49946ae5593bd51805355e0
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75461194"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86044572"
 ---
 # <a name="configuring-event-ordering-policies-for-azure-stream-analytics"></a>Настройка политик упорядочивания событий для Azure Stream Analytics
 
-В этой статье описывается, как настроить и использовать последние и неупорядоченные политики событий в Azure Stream Analytics. Эти политики применяются только в том случае, если в запросе используется предложение [timestamp by](https://docs.microsoft.com/stream-analytics-query/timestamp-by-azure-stream-analytics) .
+В этой статье описывается, как настроить и использовать последние и неупорядоченные политики событий в Azure Stream Analytics. Эти политики применяются только в том случае, если в запросе используется предложение [timestamp by](https://docs.microsoft.com/stream-analytics-query/timestamp-by-azure-stream-analytics) , и они применяются только к облачным источникам входных данных.
 
 ## <a name="event-time-and-arrival-time"></a>Время события и время прибытия
 
@@ -76,6 +76,6 @@ ms.locfileid: "75461194"
 1. Убедитесь, что все разделы концентратора событий или центра Интернета вещей получают входные данные. 
 2. Используйте предложение PARTITION BY PartitionID в запросе. 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Рекомендации по распределению времени](stream-analytics-time-handling.md)
 * [Метрики, доступные в Stream Analytics](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-monitoring#metrics-available-for-stream-analytics)

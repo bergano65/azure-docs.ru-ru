@@ -10,10 +10,9 @@ ms.date: 01/30/2019
 ms.reviewer: mimckitt
 ms.custom: mimckitt
 ms.openlocfilehash: 3271041b9f4db100cd05588129c7d714d4478f10
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "83121037"
 ---
 # <a name="sequence-extension-provisioning-in-virtual-machine-scale-sets"></a>Подготовка последовательности расширений в масштабируемых наборах виртуальных машин
@@ -23,7 +22,7 @@ ms.locfileid: "83121037"
 
 В этой статье описывается порядок настройки расширений для экземпляров виртуальных машин в масштабируемых наборах виртуальных машин.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 Для работы с этой статьей нужны знания в следующих областях:
 -   [Расширения](../virtual-machines/extensions/overview.md) виртуальной машины Azure
 -   [Изменением](virtual-machine-scale-sets-upgrade-scale-set.md) масштабируемых наборов виртуальных машин.
@@ -239,7 +238,7 @@ az vmss extension set \
 ```
 
 
-## <a name="troubleshoot"></a>Диагностика
+## <a name="troubleshoot"></a>Устранение неполадок
 
 ### <a name="not-able-to-add-extension-with-dependencies"></a>Не удается добавить расширение с зависимостями
 1. Убедитесь, что расширения, указанные в provisionAfterExtensions, определены в модели масштабируемого набора.

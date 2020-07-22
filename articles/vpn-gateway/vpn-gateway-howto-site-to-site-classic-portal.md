@@ -4,15 +4,14 @@ description: Создание подключения IPsec между локал
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 02/11/2020
 ms.author: cherylmc
-ms.openlocfilehash: e386e5fc9c4d62266e0ca23869bf30ccaffeb91d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 1f096993645aca6999667af88c91d3f55f79d914
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79244450"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84983059"
 ---
 # <a name="create-a-site-to-site-connection-using-the-azure-portal-classic"></a>Создание подключения типа "сеть — сеть" с помощью классического портала Azure
 
@@ -31,7 +30,7 @@ ms.locfileid: "79244450"
 
 ![Схема подключения типа "сеть — сеть" через VPN-шлюз](./media/vpn-gateway-howto-site-to-site-classic-portal/site-to-site-diagram.png)
 
-## <a name="before-you-begin"></a><a name="before"></a>Подготовка к работе
+## <a name="before-you-begin"></a><a name="before"></a>Перед началом
 
 Перед началом настройки убедитесь, что удовлетворены следующие требования:
 

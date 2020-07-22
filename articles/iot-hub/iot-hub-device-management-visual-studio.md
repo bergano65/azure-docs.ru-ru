@@ -8,10 +8,9 @@ ms.topic: conceptual
 ms.date: 08/20/2019
 ms.author: xshi
 ms.openlocfilehash: 6fe5a45dda6632c56b3c6714827950e25e7d26af
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "73953184"
 ---
 # <a name="use-cloud-explorer-for-visual-studio-for-azure-iot-hub-device-management"></a>Управление устройствами Центра Интернета вещей Azure с помощью Cloud Explorer для Visual Studio
@@ -59,7 +58,7 @@ ms.locfileid: "73953184"
 
 ## <a name="sign-in-to-access-your-hub"></a>Войдите, чтобы получить доступ к концентратору
 
-1. В Visual Studio выберите **Просмотреть** > **Cloud Explorer** , чтобы открыть Cloud Explorer.
+1. В Visual Studio выберите **Просмотреть**  >  **Cloud Explorer** , чтобы открыть Cloud Explorer.
 
 1. Щелкните значок управления учетной записью, чтобы отобразить подписки.
 
@@ -89,9 +88,9 @@ ms.locfileid: "73953184"
 
 1. Щелкните устройство правой кнопкой мыши и выберите **Изменить двойник устройства**.
 
-   Откроется файл **Azure-IOT-Device-двойника. JSON** с содержимым двойникаа устройства.
+   Откроется **azure-iot-device-twin.jsв** файле с содержимым двойникаа устройства.
 
-1. Внесите некоторые изменения в **теги** или **Свойства. необходимые** поля в файл **Azure-IOT-Device-двойника. JSON** .
+1. Внесите некоторые изменения в **теги** или **Свойства. нужные** поля **azure-iot-device-twin.js** в файле.
 
 1. Нажмите клавиши **CTRL+S**, чтобы обновить двойник устройства.
 
@@ -107,7 +106,7 @@ ms.locfileid: "73953184"
 
    Результаты отображаются в **выходных данных**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Вы узнали, как использовать Cloud Explorer для Visual Studio с различными параметрами управления.
 

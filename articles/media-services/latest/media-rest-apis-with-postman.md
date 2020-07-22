@@ -14,10 +14,9 @@ ms.topic: article
 ms.date: 12/05/2019
 ms.author: juliako
 ms.openlocfilehash: 872dad95fc5b536c51e251612f40439da020a059
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75779643"
 ---
 # <a name="configure-postman-for-media-services-v3-rest-api-calls"></a>Настройка POST для вызовов REST API служб мультимедиа v3
@@ -49,7 +48,7 @@ ms.locfileid: "75779643"
 
 ### <a name="configure-the-environment"></a>Настройка среды 
 
-1. Откройте приложение**Postman**.
+1. Откройте приложение **POST** .
 2. В правой части экрана выберите параметр **Управление средой**.
 
     ![Управление средой](./media/develop-with-postman/postman-import-env.png)
@@ -103,7 +102,7 @@ ms.locfileid: "75779643"
 - [Создание фильтров с помощью REST API Служб мультимедиа](filters-dynamic-manifest-rest-howto.md)
 - [REST API на основе Azure Resource Manager](https://github.com/Azure-Samples/media-services-v3-arm-templates)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Потоковая передача файлов с помощью REST](stream-files-tutorial-with-rest.md)  
 - [Учебник. кодирование удаленного файла на основе URL-адреса и поток видео — остальное](stream-files-tutorial-with-rest.md)

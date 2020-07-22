@@ -7,16 +7,16 @@ author: msmimart
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 09/20/2018
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 5804ded875ef03d7ade4414eb8f08885634748dd
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: eb402fae083e2c1c57e47aa8ee6f7cef08d5323d
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80051592"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85387972"
 ---
 # <a name="set-up-sign-in-with-a-twitter-account-by-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа с помощью учетной записи Twitter с использованием пользовательских политик Azure в Active Directory B2C
 
@@ -24,7 +24,7 @@ ms.locfileid: "80051592"
 
 В этой статье показано, как включить вход для пользователей учетной записи Twitter с помощью [пользовательских политик](custom-policy-overview.md) в Azure Active Directory B2C (Azure AD B2C).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](custom-policy-get-started.md).
 - Если у вас нет учетной записи Twitter, создайте ее на [странице регистрации Twitter](https://twitter.com/signup).
@@ -47,7 +47,7 @@ ms.locfileid: "80051592"
 Сохраните секретный ключ, который ранее был записан в клиенте Azure AD B2C.
 
 1. Войдите на [портал Azure](https://portal.azure.com/).
-2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C. В верхнем меню выберите фильтр **каталог и подписка** и выберите каталог, содержащий ваш клиент.
+2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C. Выберите фильтр **Каталог и подписка** в верхнем меню и выберите каталог, который содержит ваш клиент.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
 4. На странице "Обзор" выберите **Identity Experience Framework**.
 5. Выберите **Ключи политики**, а затем щелкните **Добавить**.
@@ -134,7 +134,7 @@ ms.locfileid: "80051592"
 1. Найдите элемент **OrchestrationStep**, содержащий `Order="1"` в созданном пути взаимодействия пользователя.
 2. Добавьте следующий элемент в тэг **ClaimsProviderSelects**. Установите для параметра **TargetClaimsExchangeId** соответствующее значение, например `TwitterExchange`:
 
-    ```XML
+    ```xml
     <ClaimsProviderSelection TargetClaimsExchangeId="TwitterExchange" />
     ```
 
@@ -145,17 +145,17 @@ ms.locfileid: "80051592"
 1. Найдите элемент **OrchestrationStep**, содержащий `Order="2"` в пути пользователя.
 2. Добавьте следующий элемент **ClaimsExchange**, убедившись, что для идентификатора используется то же значение, которое использовалось для **TargetClaimsExchangeId**.
 
-    ```XML
+    ```xml
     <ClaimsExchange Id="TwitterExchange" TechnicalProfileReferenceId="Twitter-OAUTH1" />
     ```
 
-    Измените значение **течникалпрофилереференцеид** на идентификатор созданного ранее идентификатора технического профиля. Например, `Twitter-OAUTH1`.
+    Обновите значение **TechnicalProfileReferenceId**, присвоив ему значение идентификатора ранее созданного технического профиля. Например, `Twitter-OAUTH1`.
 
 3. Сохраните файл *TrustFrameworkExtensions.xml* и повторно отправьте его для проверки.
 
 ## <a name="create-an-azure-ad-b2c-application"></a>Создание приложения Azure AD B2C
 
-Связь с Azure AD B2C происходит через приложение, регистрируемое в клиенте B2C. В этом разделе перечислены необязательные действия, которые можно выполнить, чтобы создать тестовое приложение, если вы его еще не создали.
+Взаимодействие с Azure AD B2C осуществляется с помощью приложения, зарегистрированного в клиенте B2C. В этом разделе перечислены необязательные действия, которые можно выполнить, чтобы создать тестовое приложение, если вы его еще не создали.
 
 [!INCLUDE [active-directory-b2c-appreg-idp](../../includes/active-directory-b2c-appreg-idp.md)]
 

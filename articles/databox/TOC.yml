@@ -14,30 +14,52 @@
               href: data-box-quickstart-portal.md
         - name: Учебники
           items:
-            - name: 1. Заказ
-              href: data-box-deploy-ordered.md
-            - name: 2. Настройка
-              href: data-box-deploy-set-up.md
-            - name: "3.\_Подключение и копирование"
+            - name: Импорт данных в Azure
               items:
-                - name: По SMB
-                  href: data-box-deploy-copy-data.md
-                - name: Через NFS
-                  href: data-box-deploy-copy-data-via-nfs.md
-                - name: Через REST
-                  href: data-box-deploy-copy-data-via-rest.md
-                - name: С помощью службы копирования данных
-                  href: data-box-deploy-copy-data-via-copy-service.md
-                - name: На управляемые диски
-                  href: data-box-deploy-copy-data-from-vhds.md
-            - name: '4. Возврат, отправка, проверка'
-              href: data-box-deploy-picked-up.md
+                - name: 1. Заказ
+                  href: data-box-deploy-ordered.md
+                - name: 2. Настройка
+                  href: data-box-deploy-set-up.md
+                - name: "3.\_Подключение и копирование"
+                  items:
+                    - name: По SMB
+                      href: data-box-deploy-copy-data.md
+                    - name: Через NFS
+                      href: data-box-deploy-copy-data-via-nfs.md
+                    - name: Через REST
+                      href: data-box-deploy-copy-data-via-rest.md
+                    - name: С помощью службы копирования данных
+                      href: data-box-deploy-copy-data-via-copy-service.md
+                    - name: На управляемые диски
+                      href: data-box-deploy-copy-data-from-vhds.md
+                - name: '4. Возврат, отправка, проверка'
+                  href: data-box-deploy-picked-up.md
+            - name: Экспорт данных из Azure
+              items:
+                - name: 1. Заказ
+                  href: data-box-deploy-export-ordered.md
+                - name: 2. Настройка
+                  href: data-box-deploy-set-up.md
+                - name: "3.\_Подключение и копирование"
+                  items:
+                    - name: По SMB
+                      href: data-box-deploy-export-copy-data.md
+                    - name: Через NFS
+                      href: data-box-deploy-export-copy-data-via-nfs.md
+                - name: 4. Возврат
+                  href: data-box-deploy-export-picked-up.md
         - name: Основные понятия
           items:
             - name: Руководство по безопасности
               href: data-box-safety.md
             - name: Проверка отслеживания и ведения журнала
-              href: data-box-logs.md
+              items:
+                - name: Для заказов на импорт
+                  href: data-box-logs.md
+                - name: Для заказов на экспорт
+                  href: data-box-export-logs.md
+            - name: Просмотр журналов аудита
+              href: data-box-audit-logs.md
             - name: Обзор требований
               items:
                 - name: Для Data Box
@@ -46,8 +68,12 @@
                   href: data-box-system-requirements-rest.md
             - name: Изучение ограничений
               href: data-box-limits.md
-            - name: Проверка состояния защиты
-              href: data-box-security.md
+            - name: Безопасность
+              items:
+                - name: Базовые средства безопасности
+                  href: security-baseline.md
+                - name: Проверка состояния защиты
+                  href: data-box-security.md
             - name: ВОПРОСЫ И ОТВЕТЫ
               href: data-box-faq.md
         - name: Практическое руководство
@@ -60,6 +86,8 @@
               href: data-box-portal-customer-managed-shipping.md
             - name: Включение управляемого клиентом ключа
               href: data-box-customer-managed-encryption-key-portal.md
+            - name: Использование защищенного хранилища
+              href: data-box-customer-lockbox.md
             - name: Перемещение данных на уровень больших двоичных объектов
               href: data-box-how-to-set-data-tier.md
             - name: Подключение кабелей к устройству
@@ -195,11 +223,19 @@
                   href: ../storage/files/storage-sync-offline-data-transfer.md?toc=/azure/databox/toc.json&bc=/azure/databox/breadcrumb/toc.json
                 - name: Из хранилища HDFS
                   href: ../storage/blobs/data-lake-storage-migrate-on-premises-hdfs-cluster.md?toc=/azure/databox/toc.json&bc=/azure/databox/breadcrumb/toc.json
+    - name: Справочник
+      items:
+        - name: Azure CLI
+          href: /cli/azure/ext/databox/databox
+        - name: Azure PowerShell
+          href: /powershell/module/az.databox
+        - name: Интерфейсы API .NET
+          href: /dotnet/api/overview/azure/databox/management
     - name: Ресурсы
       items:
         - name: Продукт Data Box
           href: 'https://azure.microsoft.com/services/storage/databox/data/'
         - name: Цены на Data Box
-          href: 'https://azure.microsoft.com/pricing/details/storage/databox/'
+          href: 'https://azure.microsoft.com/pricing/details/databox/'
         - name: Цены на Диск Data Box
-          href: 'https://azure.microsoft.com/pricing/details/storage/databox/disk/'
+          href: 'https://azure.microsoft.com/pricing/details/databox/disk/'

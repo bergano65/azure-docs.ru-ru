@@ -4,18 +4,18 @@ ms.service: storsimple
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
-ms.openlocfilehash: 19d2dedc2ccf7015696504a94f5ef7c43a90d3be
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: cbc7c82803115f71db233be94d62a857ba050b63
+ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "67185484"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86050396"
 ---
 #### <a name="to-download-hotfixes"></a>Загрузка исправления
 
 Для загрузки обновления программного обеспечения из каталога обновления Майкрософт выполните следующие действия.
 
-1. Запустите Internet Explorer и перейдите по [http://catalog.update.microsoft.com](https://catalog.update.microsoft.com)адресу.
+1. Запустите Internet Explorer и перейдите по адресу [http://catalog.update.microsoft.com](https://catalog.update.microsoft.com) .
 2. Если вы впервые используете каталог Центра обновления Майкрософт на этом компьютере, нажмите кнопку **Установить** , когда будет предложено установить надстройку каталога Центра обновления Майкрософт.
 
     ![Установка каталога](./media/storsimple-install-update2-hotfix/HCS_InstallCatalog-include.png)
@@ -26,7 +26,7 @@ ms.locfileid: "67185484"
    
     ![Поиск в каталоге](./media/storsimple-install-update5-hotfix/update-catalog-search.png)
 
-4. Нажмите **Загрузить**. Укажите или **выберите** локальное расположение, в которое хотите скачать файлы. Выберите файлы для загрузки в указанное расположение и папку. Этот каталог также можно скопировать в сетевую папку, которая доступна с вашего устройства.
+4. Щелкните элемент **Загрузить**. Укажите или **выберите** локальное расположение, в которое хотите скачать файлы. Выберите файлы для загрузки в указанное расположение и папку. Этот каталог также можно скопировать в сетевую папку, которая доступна с вашего устройства.
 5. Найдите дополнительные исправления, перечисленные в приведенной выше таблице (**4037266**), и скачайте соответствующие файлы в папки, указанные в этой таблице.
 
 > [!NOTE]
@@ -53,18 +53,18 @@ ms.locfileid: "67185484"
     >[!NOTE] 
     > Сначала установите _HcsSoftwareUpdate.exe_. Затем установите _CisMdsAgentUpdate.exe_.
    
-        ```
-        Controller0>Start-HcsHotfix -Path \\10.100.100.100\share
-        \FirstOrderUpdate\HcsSoftwareUpdate.exe -Credential contoso\John
+    ```output
+    Controller0>Start-HcsHotfix -Path \\10.100.100.100\share
+    \FirstOrderUpdate\HcsSoftwareUpdate.exe -Credential contoso\John
    
-        Confirm
+    Confirm
    
-        This operation starts the hotfix installation and could reboot one or
-        both of the controllers. If the device is serving I/Os, these will not
-        be disrupted. Are you sure you want to continue?
-        [Y] Yes [N] No [?] Help (default is "Y"): Y
+    This operation starts the hotfix installation and could reboot one or
+    both of the controllers. If the device is serving I/Os, these will not
+    be disrupted. Are you sure you want to continue?
+    [Y] Yes [N] No [?] Help (default is "Y"): Y
    
-        ```
+    ```
 5. Введите **Y** , когда будет предложено подтвердить установку исправлений.
 6. Проверьте обновление с помощью командлета `Get-HcsUpdateStatus` . Сначала обновится пассивный контроллер. После этого будет выполнена отработка отказа. Затем обновление будет применено на другом контроллере. Установка обновления завершится, когда оба контроллера будут обновлены.
    
@@ -139,41 +139,46 @@ ms.locfileid: "67185484"
     `Enter-HcsMaintenanceMode`
    
     Результат выполнения команды показан ниже.
+
+    ```output
+    Controller0>Enter-HcsMaintenanceMode
+    Checking device state...
    
-        Controller0>Enter-HcsMaintenanceMode
-        Checking device state...
+    In maintenance mode, your device will not service IOs and will be disconnected from the Microsoft Azure StorSimple Manager service. Entering maintenance mode will end the current session and reboot both controllers, which takes a few minutes to complete. Are you sure you want to enter maintenance mode?
+    [Y] Yes [N] No (Default is "Y"): Y
    
-        In maintenance mode, your device will not service IOs and will be disconnected from the Microsoft Azure StorSimple Manager service. Entering maintenance mode will end the current session and reboot both controllers, which takes a few minutes to complete. Are you sure you want to enter maintenance mode?
-        [Y] Yes [N] No (Default is "Y"): Y
+    -----------------------MAINTENANCE MODE------------------------
+    Microsoft Azure StorSimple Appliance Model 8600
+    Name: Update4-8600-mystorsimple
+    Copyright (C) 2014 Microsoft Corporation. All rights reserved.
+    You are connected to Controller0 - Passive
+    ---------------------------------------------------------------
    
-        -----------------------MAINTENANCE MODE------------------------
-        Microsoft Azure StorSimple Appliance Model 8600
-        Name: Update4-8600-mystorsimple
-        Copyright (C) 2014 Microsoft Corporation. All rights reserved.
-        You are connected to Controller0 - Passive
-        ---------------------------------------------------------------
-   
-        Serial Console Menu
-        [1] Log in with full access
-        [2] Log into peer controller with full access
-        [3] Connect with limited access
-        [4] Change language
-        Please enter your choice>
-   
+    Serial Console Menu
+    [1] Log in with full access
+    [2] Log into peer controller with full access
+    [3] Connect with limited access
+    [4] Change language
+    Please enter your choice>
+    ```
+
     После этого оба контроллера перезапускаются и переходят в режим обслуживания.
 2. Чтобы установить обновление встроенного ПО диска, введите:
    
     `Start-HcsHotfix -Path <path to update file> -Credential <credentials in domain\username format>`
    
     Результат выполнения команды показан ниже.
-   
-        Controller1>Start-HcsHotfix -Path \\10.100.100.100\share\ThirdOrderUpdates\ -Credential contoso\john
-        Enter Password:
-        WARNING: In maintenance mode, hotfixes should be installed on each controller sequentially. After the hotfix is installed on this controller, install it on the peer controller.
-        Confirm
-        This operation starts a hotfix installation and could reboot one or both of the controllers. By installing new updates you agree to, and accept any additional terms associated with, the new functionality listed in the release notes (https://go.microsoft.com/fwLink/?LinkID=613790). Are you sure you want to continue?
-        [Y] Yes [N] No (Default is "Y"): Y
-        WARNING: Installation is currently in progress. This operation can take several minutes to complete.
+
+    ```output
+    Controller1>Start-HcsHotfix -Path \\10.100.100.100\share\ThirdOrderUpdates\ -Credential contoso\john
+    Enter Password:
+    WARNING: In maintenance mode, hotfixes should be installed on each controller sequentially. After the hotfix is installed on this controller, install it on the peer controller.
+    Confirm
+    This operation starts a hotfix installation and could reboot one or both of the controllers. By installing new updates you agree to, and accept any additional terms associated with, the new functionality listed in the release notes (https://go.microsoft.com/fwLink/?LinkID=613790). Are you sure you want to continue?
+    [Y] Yes [N] No (Default is "Y"): Y
+    WARNING: Installation is currently in progress. This operation can take several minutes to complete.
+    ```
+
 3. Отслеживайте ход выполнения установки с помощью команды `Get-HcsUpdateStatus` . Обновление завершится, когда `RunInProgress` поменяется на `False`.
 4. После завершения установки контроллер, на котором установлено исправление режима обслуживания, будет перезагружен. Выберите вариант 1, **Log in with full access** (Вход с правами полного доступа), и проверьте версию встроенного ПО диска. Тип:
    
@@ -184,7 +189,8 @@ ms.locfileid: "67185484"
    `XMGJ, XGEG, KZ50, F6C2, VR08, N003, 0107`
    
    Результат выполнения команды показан ниже.
-   
+
+    ```output
        -----------------------MAINTENANCE MODE------------------------
        Microsoft Azure StorSimple Appliance Model 8600
        Name: Update4-8600-mystorsimple
@@ -196,75 +202,76 @@ ms.locfileid: "67185484"
        Controller1>Get-HcsFirmwareVersion
    
        Controller0 : TalladegaFirmware
-           ActiveBIOS:0.45.0010
-              BackupBIOS:0.45.0006
-              MainCPLD:17.0.000b
-              ActiveBMCRoot:2.0.001F
-              BackupBMCRoot:2.0.001F
-              BMCBoot:2.0.0002
-              LsiFirmware:20.00.04.00
-              LsiBios:07.37.00.00
-              Battery1Firmware:06.2C
-              Battery2Firmware:06.2C
-              DomFirmware:X231600
-              CanisterFirmware:3.5.0.56
-              CanisterBootloader:5.03
-              CanisterConfigCRC:0x9134777A
-              CanisterVPDStructure:0x06
-              CanisterGEMCPLD:0x19
-              CanisterVPDCRC:0x142F7DC2
-              MidplaneVPDStructure:0x0C
-              MidplaneVPDCRC:0xA6BD4F64
-              MidplaneCPLD:0x10
-              PCM1Firmware:1.00|1.05
-              PCM1VPDStructure:0x05
-              PCM1VPDCRC:0x41BEF99C
-              PCM2Firmware:1.00|1.05
-              PCM2VPDStructure:0x05
-              PCM2VPDCRC:0x41BEF99C
+        ActiveBIOS:0.45.0010
+           BackupBIOS:0.45.0006
+           MainCPLD:17.0.000b
+           ActiveBMCRoot:2.0.001F
+           BackupBMCRoot:2.0.001F
+           BMCBoot:2.0.0002
+           LsiFirmware:20.00.04.00
+           LsiBios:07.37.00.00
+           Battery1Firmware:06.2C
+           Battery2Firmware:06.2C
+           DomFirmware:X231600
+           CanisterFirmware:3.5.0.56
+           CanisterBootloader:5.03
+           CanisterConfigCRC:0x9134777A
+           CanisterVPDStructure:0x06
+           CanisterGEMCPLD:0x19
+           CanisterVPDCRC:0x142F7DC2
+           MidplaneVPDStructure:0x0C
+           MidplaneVPDCRC:0xA6BD4F64
+           MidplaneCPLD:0x10
+           PCM1Firmware:1.00|1.05
+           PCM1VPDStructure:0x05
+           PCM1VPDCRC:0x41BEF99C
+           PCM2Firmware:1.00|1.05
+           PCM2VPDStructure:0x05
+           PCM2VPDCRC:0x41BEF99C
 
-           EbodFirmware
-              CanisterFirmware:3.5.0.56
-              CanisterBootloader:5.03
-              CanisterConfigCRC:0xB23150F8
-              CanisterVPDStructure:0x06
-              CanisterGEMCPLD:0x14
-              CanisterVPDCRC:0xBAA55828
-              MidplaneVPDStructure:0x0C
-              MidplaneVPDCRC:0xA6BD4F64
-              MidplaneCPLD:0x10
-              PCM1Firmware:3.11
-              PCM1VPDStructure:0x03
-              PCM1VPDCRC:0x6B58AD13
-              PCM2Firmware:3.11
-              PCM2VPDStructure:0x03
-              PCM2VPDCRC:0x6B58AD13
+        EbodFirmware
+           CanisterFirmware:3.5.0.56
+           CanisterBootloader:5.03
+           CanisterConfigCRC:0xB23150F8
+           CanisterVPDStructure:0x06
+           CanisterGEMCPLD:0x14
+           CanisterVPDCRC:0xBAA55828
+           MidplaneVPDStructure:0x0C
+           MidplaneVPDCRC:0xA6BD4F64
+           MidplaneCPLD:0x10
+           PCM1Firmware:3.11
+           PCM1VPDStructure:0x03
+           PCM1VPDCRC:0x6B58AD13
+           PCM2Firmware:3.11
+           PCM2VPDStructure:0x03
+           PCM2VPDCRC:0x6B58AD13
 
-           DisksFirmware
-              SmrtStor:TXA2D20800GA6XYR:KZ50
-              SmrtStor:TXA2D20800GA6XYR:KZ50
-              SmrtStor:TXA2D20800GA6XYR:KZ50
-              SmrtStor:TXA2D20800GA6XYR:KZ50
-              SmrtStor:TXA2D20800GA6XYR:KZ50
-              WD:WD4001FYYG-01SL3:VR08
-              WD:WD4001FYYG-01SL3:VR08
-              WD:WD4001FYYG-01SL3:VR08
-              WD:WD4001FYYG-01SL3:VR08
-              WD:WD4001FYYG-01SL3:VR08
-              WD:WD4001FYYG-01SL3:VR08
-              WD:WD4001FYYG-01SL3:VR08
-              WD:WD4001FYYG-01SL3:VR08
-              WD:WD4001FYYG-01SL3:VR08
-              WD:WD4001FYYG-01SL3:VR08
-              WD:WD4001FYYG-01SL3:VR08
-              WD:WD4001FYYG-01SL3:VR08
-              WD:WD4001FYYG-01SL3:VR08
-              WD:WD4001FYYG-01SL3:VR08
-              WD:WD4001FYYG-01SL3:VR08
-              WD:WD4001FYYG-01SL3:VR08
-              WD:WD4001FYYG-01SL3:VR08
-              WD:WD4001FYYG-01SL3:VR08
-              WD:WD4001FYYG-01SL3:VR08
+        DisksFirmware
+           SmrtStor:TXA2D20800GA6XYR:KZ50
+           SmrtStor:TXA2D20800GA6XYR:KZ50
+           SmrtStor:TXA2D20800GA6XYR:KZ50
+           SmrtStor:TXA2D20800GA6XYR:KZ50
+           SmrtStor:TXA2D20800GA6XYR:KZ50
+           WD:WD4001FYYG-01SL3:VR08
+           WD:WD4001FYYG-01SL3:VR08
+           WD:WD4001FYYG-01SL3:VR08
+           WD:WD4001FYYG-01SL3:VR08
+           WD:WD4001FYYG-01SL3:VR08
+           WD:WD4001FYYG-01SL3:VR08
+           WD:WD4001FYYG-01SL3:VR08
+           WD:WD4001FYYG-01SL3:VR08
+           WD:WD4001FYYG-01SL3:VR08
+           WD:WD4001FYYG-01SL3:VR08
+           WD:WD4001FYYG-01SL3:VR08
+           WD:WD4001FYYG-01SL3:VR08
+           WD:WD4001FYYG-01SL3:VR08
+           WD:WD4001FYYG-01SL3:VR08
+           WD:WD4001FYYG-01SL3:VR08
+           WD:WD4001FYYG-01SL3:VR08
+           WD:WD4001FYYG-01SL3:VR08
+           WD:WD4001FYYG-01SL3:VR08
+           WD:WD4001FYYG-01SL3:VR08
+    ```
    
     Выполните команду `Get-HcsFirmwareVersion` на втором контроллере, чтобы проверить обновление версии программного обеспечения. Затем можно выйти из режима обслуживания. Для этого введите следующую команду для каждого контроллера устройства:
    

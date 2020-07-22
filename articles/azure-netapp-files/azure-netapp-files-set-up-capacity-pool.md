@@ -11,21 +11,21 @@ ms.service: azure-netapp-files
 ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 04/02/2020
 ms.author: b-juche
-ms.openlocfilehash: b21db3e842898e8ce11b560714888b946373300e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: d76af4901103b0eed8cd1cffac744f8fb41d9689
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80616431"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85483505"
 ---
 # <a name="set-up-a-capacity-pool"></a>Настройка пула емкости
 
 Настройка пула емкости позволяет создавать в нем тома.  
 
-## <a name="before-you-begin"></a>Подготовка к работе 
+## <a name="before-you-begin"></a>Перед началом 
 
 Должна быть создана учетная запись NetApp.   
 
@@ -41,7 +41,7 @@ ms.locfileid: "80616431"
     Появится окно New Capacity Pool (Новый пул емкости).
 
 3. Укажите следующую информацию для нового пула емкости.  
-   * **Имя**  
+   * **Name**  
      Придумайте название для пула емкости.  
      Название пула емкости должно быть уникальным для каждой учетной записи NetApp.
 
@@ -57,8 +57,8 @@ ms.locfileid: "80616431"
 
 4. Нажмите кнопку **ОК**.
 
-## <a name="next-steps"></a>Дальнейшие шаги 
+## <a name="next-steps"></a>Следующие шаги 
 
 - [Уровни обслуживания для Azure NetApp Files](azure-netapp-files-service-levels.md)
 - Сведения о ценах на разные уровни обслуживания см. на странице [Цены на службу Azure NetApp Files](https://azure.microsoft.com/pricing/details/storage/netapp/)
-- [Делегирование подсети в Azure NetApp Files](azure-netapp-files-delegate-subnet.md)
+- [Делегирование подсети службе Azure NetApp Files](azure-netapp-files-delegate-subnet.md)

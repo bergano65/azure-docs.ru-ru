@@ -3,12 +3,11 @@ title: Поддерживаемые типы ресурсов в службе р
 description: Поддерживаемые типы ресурсов в службе работоспособности ресурсов Azure
 ms.topic: conceptual
 ms.date: 01/29/2019
-ms.openlocfilehash: 5cc80147730fdc97b1181690f6e70fc538d4afcc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 38c7e0754649d650521cc510bcac326496bcec38
+ms.sourcegitcommit: fc0431755effdc4da9a716f908298e34530b1238
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80478908"
+ms.lasthandoff: 05/24/2020
+ms.locfileid: "83816104"
 ---
 # <a name="resource-types-and-health-checks-in-azure-resource-health"></a>Типы ресурсов и проверки работоспособности в службе работоспособности ресурсов Azure
 Ниже приведен полный список проверок, выполняемых в системе работоспособности ресурсов для разных типов ресурсов.
@@ -26,7 +25,7 @@ ms.locfileid: "80478908"
 ## <a name="microsoftbatchbatchaccounts"></a>Microsoft.Batch/batchAccounts
 |Выполняемые проверки|
 |---|
-|<ul><li>Запускается ли учетная запись пакетной службы?</li><li>Превышена ли квота пула для этой учетной записи пакетной службы?</li></ul>|
+|<ul><li>Работает ли учетная запись пакетной службы?</li><li>Не превышена ли квота пула для этой учетной записи пакетной службы?</li></ul>|
 
 ## <a name="microsoftcacheredis"></a>Microsoft.Cache/Redis;
 |Выполняемые проверки|
@@ -41,32 +40,32 @@ ms.locfileid: "80478908"
 ## <a name="microsoftclassiccomputevirtualmachines"></a>Microsoft.classiccompute/virtualmachines
 |Выполняемые проверки|
 |---|
-|<ul><li>Сервер узла запущен и работает?</li><li>Завершена ли загрузка ОС на узле?</li><li>Контейнер виртуальной машины подготовлен и включен?</li><li>Есть ли сетевое подключение между узлом и учетной записи хранения?</li><li>Завершена ли загрузка гостевой операционной системы?</li><li>Есть ли назначенные работы по техническому обслуживанию?</li><li>Является ли оборудование узла сниженным и прогнозируемым в ближайшее время?</li></ul>|
+|<ul><li>Сервер узла запущен и работает?</li><li>Завершена ли загрузка ОС на узле?</li><li>Контейнер виртуальной машины подготовлен и включен?</li><li>Есть ли сетевое подключение между узлом и учетной записи хранения?</li><li>Завершена ли загрузка гостевой операционной системы?</li><li>Есть ли назначенные работы по техническому обслуживанию?</li><li>Ухудшается ли работоспособность оборудования узла и прогнозируется ли его сбой в ближайшее время?</li></ul>|
 
 ## <a name="microsoftcognitiveservicesaccounts"></a>Microsoft.cognitiveservices/accounts
 |Выполняемые проверки|
 |---|
 |<ul><li>Доступна ли учетная запись из центра обработки данных?</li><li>Доступен ли поставщик ресурсов Cognitive Services?</li><li>Доступна ли служба Cognitive Services из соответствующего региона?</li><li>Успешно ли выполняются операции чтения для учетной записи хранения, в которой хранятся метаданные ресурсов?</li><li>Достигнута ли квота на вызовы API?</li><li>Достигнут ли лимит чтения на вызовы API?</li></ul>|
 
-## <a name="microsoftcomputehostgroupshosts"></a>Microsoft. COMPUTE/хостграупс/hosts
+## <a name="microsoftcomputehostgroupshosts"></a>Microsoft.compute/hostgroups/hosts
 |Выполняемые проверки|
 |---|
-|<ul><li>Является узлом и работает</li><li>Ухудшается ли оборудование узла?</li><li>Является ли узел освобожденным?</li><li>Восстановлена ли служба оборудования узла на другом оборудовании?</li></ul>|
+|<ul><li>Узел включен и работает?</li><li>Ухудшается ли работоспособность оборудования узла?</li><li>Не отменено ли выделение узла?</li><li>Не выполняла ли служба оборудования узла восстановление на другое оборудование?</li></ul>|
 
 ## <a name="microsoftcomputevirtualmachines"></a>Microsoft.compute/virtualmachines
 |Выполняемые проверки|
 |---|
-|<ul><li>Сервер, размещающий эту виртуальную машину, включен и работает?</li><li>Завершена ли загрузка ОС на узле?</li><li>Контейнер виртуальной машины подготовлен и включен?</li><li>Есть ли сетевое подключение между узлом и учетной записи хранения?</li><li>Завершена ли загрузка гостевой операционной системы?</li><li>Есть ли назначенные работы по техническому обслуживанию?</li><li>Является ли оборудование узла сниженным и прогнозируемым в ближайшее время?</li></ul>|
+|<ul><li>Сервер, размещающий эту виртуальную машину, включен и работает?</li><li>Завершена ли загрузка ОС на узле?</li><li>Контейнер виртуальной машины подготовлен и включен?</li><li>Есть ли сетевое подключение между узлом и учетной записи хранения?</li><li>Завершена ли загрузка гостевой операционной системы?</li><li>Есть ли назначенные работы по техническому обслуживанию?</li><li>Ухудшается ли работоспособность оборудования узла и прогнозируется ли его сбой в ближайшее время?</li></ul>|
 
-## <a name="microsoftdatafactoryfactories"></a>Фабрика Microsoft.
+## <a name="microsoftdatafactoryfactories"></a>Microsoft.datafactory/factories
 |Выполняемые проверки|
 |---|
-|<ul><li>Есть ли ошибки конвейерного выполнения?</li><li>Является ли кластер, на котором размещена фабрика данных, работоспособным?</li></ul>|
+|<ul><li>Есть ли ошибки выполнения конвейеров?</li><li>Является ли работоспособным кластер, на котором размещена Фабрика данных?</li></ul>|
 
 ## <a name="microsoftdatalakeanalyticsaccounts"></a>Microsoft.datalakeanalytics/accounts
 |Выполняемые проверки|
 |---|
-|<ul><li>У пользователей возникали проблемы с отправкой или размещением заданий Data Lake Analytics?</li><li>Не удается завершить задания Data Lake Analytics из-за системных ошибок?</li></ul>|
+|<ul><li>У пользователей возникали проблемы с отправкой или размещением заданий Data Lake Analytics?</li><li>Возможно ли, что задания Data Lake Analytics не выполняются из-за системных ошибок?</li></ul>|
 
 
 ## <a name="microsoftdatalakestoreaccounts"></a>Microsoft.datalakestore/accounts
@@ -74,30 +73,30 @@ ms.locfileid: "80478908"
 |---|
 |<ul><li>У пользователей возникали проблемы с отправкой данных в Data Lake Store?</li><li>У пользователей возникали проблемы с загрузкой данных из Data Lake Store?</li></ul>|
 
-## <a name="microsoftdatamigrationservices"></a>Microsoft. Migration/Services
+## <a name="microsoftdatamigrationservices"></a>Microsoft.datamigration/services
 |Выполняемые проверки|
 |---|
-|<ul><li>Не удалось выполнить подготовку к работе службы миграции баз данных?</li><li>Остановлена ли служба миграции баз данных из-за неактивности или запроса пользователя?</li></ul>|
+|<ul><li>Возможно, не удалось подготовить службу переноса базы данных?</li><li>Возможно, служба переноса базы данных остановлена из-за бездействия или по запросу пользователя?</li></ul>|
 
-## <a name="microsoftdatashareaccounts"></a>Microsoft. файл или учетные записи
+## <a name="microsoftdatashareaccounts"></a>Microsoft.DataShare/accounts
 |Выполняемые проверки|
 |---|
-|<ul><li>Работает ли учетная запись общего доступа к данным?</li><li>Доступен ли кластер, на котором размещена общая папка данных?</li></ul>|
+|<ul><li>Работает ли учетная запись Data Share?</li><li>Является ли работоспособным кластер, на котором размещена служба Data Share?</li></ul>|
 
 ## <a name="microsoftdbformariadbservers"></a>Microsoft.DBforMariaDB/servers
 |Выполняемые проверки|
 |---|
-|<ul><li>Сервер недоступен из-за обслуживания?</li><li>Сервер недоступен из-за перенастройки?</li></ul>|
+|<ul><li>Возможно, сервер временно недоступен из-за операций обслуживания?</li><li>Возможно, сервер временно недоступен из-за перенастройки?</li></ul>|
 
 ## <a name="microsoftdbformysqlservers"></a>Microsoft.DBforMySQL/servers
 |Выполняемые проверки|
 |---|
-|<ul><li>Сервер недоступен из-за обслуживания?</li><li>Сервер недоступен из-за перенастройки?</li></ul>|
+|<ul><li>Возможно, сервер временно недоступен из-за операций обслуживания?</li><li>Возможно, сервер временно недоступен из-за перенастройки?</li></ul>|
 
 ## <a name="microsoftdbforpostgresqlservers"></a>Microsoft.DBforPostgreSQL/servers
 |Выполняемые проверки|
 |---|
-|<ul><li>Сервер недоступен из-за обслуживания?</li><li>Сервер недоступен из-за перенастройки?</li></ul>|
+|<ul><li>Возможно, сервер временно недоступен из-за операций обслуживания?</li><li>Возможно, сервер временно недоступен из-за перенастройки?</li></ul>|
 
 ## <a name="microsoftdevicesiothubs"></a>Microsoft.devices/iothubs
 |Выполняемые проверки|
@@ -109,15 +108,15 @@ ms.locfileid: "80478908"
 |---|
 |<ul><li>Существуют ли запросы к базам данных или коллекциям, которые не были выполнены из-за недоступности службы Azure Cosmos DB?</li><li>Существуют ли запросы к документам, которые не были выполнены из-за недоступности службы Azure Cosmos DB?</li></ul>|
 
-## <a name="microsofteventhubnamespaces"></a>Microsoft. eventhub/пространства имен
+## <a name="microsofteventhubnamespaces"></a>Microsoft.eventhub/namespaces
 |Выполняемые проверки|
 |---|
-|<ul><li>Возникает ли в пространстве имен концентраторов событий ошибки, вызванные пользователем?</li><li>Обновляется ли пространство имен концентраторов событий в настоящее время?</li></ul>|
+|<ul><li>Возникают ли в пространстве имен службы "Центры событий" ошибки, вызванные пользователем?</li><li>Возможно, пространство имен службы "Центры событий" сейчас обновляется?</li></ul>|
 
-## <a name="microsofthdinsightclusters"></a>Microsoft. hdinsight/кластеры
+## <a name="microsofthdinsightclusters"></a>Microsoft.hdinsight/clusters
 |Выполняемые проверки|
 |---|
-|<ul><li>Доступны ли основные службы в кластере HDInsight?</li><li>Может ли кластер HDInsight получить доступ к ключу для шифрования неактивных BYOK?</li></ul>|
+|<ul><li>Доступны ли базовые службы в кластере HDInsight?</li><li>Может ли кластер HDInsight обращаться к ключу для шифрования BYOK в хранилище?</li></ul>|
 
 ## <a name="microsoftkeyvaultvaults"></a>Microsoft.KeyVault/vaults
 |Выполняемые проверки|
@@ -129,32 +128,32 @@ ms.locfileid: "80478908"
 |---|
 |<ul><li>Работает ли веб-служба?</li></ul>|
 
-## <a name="microsoftmediamediaservices"></a>Microsoft. Media/mediaservices
+## <a name="microsoftmediamediaservices"></a>Microsoft.Media/mediaservices
 |Выполняемые проверки|
 |---|
 |<ul><li>Работает ли служба мультимедиа?</li></ul>|
 
-## <a name="microsoftnetworkapplicationgateways"></a>Microsoft. Network/аппликатионгатевайс
+## <a name="microsoftnetworkapplicationgateways"></a>Microsoft.network/applicationgateways
 |Выполняемые проверки|
 |---|
-|<ul><li>Снижается ли производительность шлюза приложений?</li><li>Доступен ли шлюз приложений?</li></ul>|
+|<ul><li>Не ухудшается ли работоспособность Шлюза приложений?</li><li>Доступен ли Шлюз приложений?</li></ul>|
 
 ## <a name="microsoftnetworkconnections"></a>Microsoft.network/connections
 |Выполняемые проверки|
 |---|
 |<ul><li>Подключен ли VPN-туннель?</li><li>Существуют ли конфликты конфигурации для соединения?</li><li>Правильно ли настроены предварительные общие ключи?</li><li>Доступно ли VPN-устройство в локальной среде?</li><li>Есть ли несоответствия в политике безопасности IPSec/IKE?</li><li>Правильно ли подготовлено подключение S2S VPN или оно находится в состоянии сбоя?</li><li>Правильно ли подготовлено подключение между виртуальными сетями или оно находится в состоянии сбоя?</li></ul>|
 
-## <a name="microsoftnetworkexpressroutecircuits"></a>Microsoft. Network/експрессраутеЦиркуитс
+## <a name="microsoftnetworkexpressroutecircuits"></a>Microsoft.network/expressroutecircuits
 |Выполняемые проверки|
 |---|
-|<ul><li>Является ли канал ExpressRoute работоспособным?</li></ul>|
+|<ul><li>Работоспособен ли канал ExpressRoute?</li></ul>|
 
-## <a name="microsoftnetworkfrontdoors"></a>Microsoft. Network/фронтдурс
+## <a name="microsoftnetworkfrontdoors"></a>Microsoft.network/frontdoors
 |Выполняемые проверки|
 |---|
-|<ul><li>Зависает ли Серверная дверца с ошибками в пробах работоспособности?</li><li>Откладывается ли изменение конфигурации?</li></ul>|
+|<ul><li>Возвращают ли некоторые внутренние серверы Front Door ошибки при проверке работоспособности?</li><li>Существуют ли отложенные изменения в конфигурации?</li></ul>|
 
-## <a name="microsoftnetworkloadbalancers"></a>Microsoft. Network/LoadBalancers
+## <a name="microsoftnetworkloadbalancers"></a>Microsoft.network/LoadBalancers
 |Выполняемые проверки|
 |---|
 |<ul><li>Доступны ли конечные точки балансировки нагрузки?</li></ul>|
@@ -169,10 +168,10 @@ ms.locfileid: "80478908"
 |---|
 |<ul><li>Успешно ли выполняются для пространства имен операции времени выполнения, такие как регистрации, установки и отправки?</li></ul>|
 
-## <a name="microsoftoperationalinsightsworkspaces"></a>Microsoft. operationalinsights/рабочие области
+## <a name="microsoftoperationalinsightsworkspaces"></a>Microsoft.operationalinsights/workspaces
 |Выполняемые проверки|
 |---|
-|<ul><li>Существуют ли задержки индексации для рабочей области?</li></ul>|
+|<ul><li>Возникают ли задержки индексации для рабочей области?</li></ul>|
 
 ## <a name="microsoftpowerbidedicatedcapacities"></a>Microsoft.PowerBIDedicated/Capacities
 |Выполняемые проверки|
@@ -182,7 +181,7 @@ ms.locfileid: "80478908"
 ## <a name="microsoftpowerbiworkspacecollections"></a>Microsoft.PowerBI/workspaceCollections
 |Выполняемые проверки|
 |---|
-|<ul><li>Работает ли операционная система узла?</li><li>Доступна ли коллекция workspaceCollection из-за пределов центра обработки данных?</li><li>Доступен ли Power BI поставщик ресурсов?</li><li>Доступна ли служба Power BI в соответствующем регионе?</li></ul>|
+|<ul><li>Работает ли операционная система узла?</li><li>Доступна ли коллекция workspaceCollection из-за пределов центра обработки данных?</li><li>Доступен ли поставщик ресурсов Power BI?</li><li>Доступна ли служба Power BI для соответствующего региона?</li></ul>|
 
 ## <a name="microsoftsearchsearchservices"></a>Microsoft.search/searchServices
 |Выполняемые проверки|
@@ -197,14 +196,14 @@ ms.locfileid: "80478908"
 ## <a name="microsoftservicefabricclusters"></a>Microsoft.ServiceFabric/clusters
 |Выполняемые проверки|
 |---|
-|<ul><li>Работает ли кластер Service Fabric?</li><li>Можно ли управлять кластером Service Fabric с помощью Azure Resource Manager?</li></ul>|
+|<ul><li>Работает ли кластер Service Fabric?</li><li>Возможно ли управление кластером Service Fabric через Azure Resource Manager?</li></ul>|
 
-## <a name="microsoftsqlmanagedinstancesdatabases"></a>Microsoft. SQL/Манажединстанцес/базы данных
+## <a name="microsoftsqlmanagedinstancesdatabases"></a>Microsoft.SQL/managedInstances/databases
 |Выполняемые проверки|
 |---|
 |<ul><li>Работает ли база данных?</li></ul>|
 
-## <a name="microsoftsqlserverdatabases"></a>Microsoft. SQL/Server/базы данных
+## <a name="microsoftsqlserversdatabases"></a>Microsoft.SQL/servers/databases
 |Выполняемые проверки|
 |---|
 |<ul><li>Выполнялись ли входы в базу данных?</li></ul>|
@@ -229,7 +228,7 @@ ms.locfileid: "80478908"
 |---|
 |<ul><li>Сервер узла запущен и работает?</li><li>Работает ли сервер Internet Information?</li><li>Работает ли подсистема балансировки нагрузки?</li><li>Доступно ли веб-приложение из центра обработки данных?</li><li>Доступна ли учетная запись хранения, в которой размещается контент сайта?</li></ul>|
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Next Steps
 -  Дополнительные сведения см. в [общих сведениях о панели мониторинга работоспособности службы Azure](service-health-overview.md) и [общих сведениях о службе "Работоспособность ресурсов Azure"](resource-health-overview.md). 
 -  [Azure Resource Health FAQ](resource-health-faq.md) (Часто задаваемые вопросы о службе работоспособности ресурсов Azure)
 - Настройте оповещения о проблемах, связанных с работоспособностью. Дополнительные сведения см. в статье [Создание оповещений журнала действий для уведомлений службы](../azure-monitor/platform/alerts-activity-log-service-notifications.md). 

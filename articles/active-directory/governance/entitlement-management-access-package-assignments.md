@@ -10,24 +10,23 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: how-to
 ms.subservice: compliance
-ms.date: 10/15/2019
+ms.date: 06/18/2020
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 12e3b86f41e7188778393ab717554907ef5d44ec
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 55f17703060d19baebe55ef648cb182cb2c6d00a
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80631748"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85078825"
 ---
 # <a name="view-add-and-remove-assignments-for-an-access-package-in-azure-ad-entitlement-management"></a>Просмотр, Добавление и удаление назначений для пакета Access в управлении назначением Azure AD
 
 В разделе Управление назначением Azure AD можно увидеть, кто назначен для пакетов доступа, их политику и состояние. Если у пакета доступа есть соответствующая политика, можно также напрямую назначить пользователя пакету доступа. В этой статье описывается просмотр, Добавление и удаление назначений для пакетов доступа.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 Чтобы использовать управление назначением Azure AD и назначить пользователям доступ к пакетам, необходимо иметь одну из следующих лицензий:
 
@@ -110,7 +109,7 @@ ms.locfileid: "80631748"
 
     Появится уведомление о том, что назначение удалено. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Запрос на изменение и параметры для пакета Access](entitlement-management-access-package-request-policy.md)
 - [Просмотр отчетов и журналов](entitlement-management-reports.md)

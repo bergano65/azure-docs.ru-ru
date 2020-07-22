@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 07/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1fd01c86086c7491d22f655fcba5da237286412f
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: dbe6aed8ae0403f6ab4a7f9e0ba8b9a2c5d61617
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "68347795"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86168564"
 ---
 # <a name="tutorial-integrate-sap-analytics-cloud-with-azure-active-directory"></a>Руководство по Интеграция SAP Analytics Cloud с Azure Active Directory
 
@@ -85,17 +85,13 @@ ms.locfileid: "68347795"
 
     а. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате:
 
-    | |
-    |-|-|
-    | `https://<sub-domain>.sapanalytics.cloud/` |
-    | `https://<sub-domain>.sapbusinessobjects.cloud/` |
+    - `https://<sub-domain>.sapanalytics.cloud/`
+    - `https://<sub-domain>.sapbusinessobjects.cloud/`
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате:
-    
-    | |
-    |-|-|
-    | `<sub-domain>.sapbusinessobjects.cloud` |
-    | `<sub-domain>.sapanalytics.cloud` |
+
+    - `<sub-domain>.sapbusinessobjects.cloud`
+    - `<sub-domain>.sapanalytics.cloud`
 
     > [!NOTE] 
     > Значения этих URL-адресов приведены только в качестве примера. Замените эти значения фактическим URL-адресом для входа и URL-адресом идентификатора. Чтобы получить URL-адрес входа, обратитесь в [службу поддержки SAP Analytics Cloud Client](https://help.sap.com/viewer/product/SAP_BusinessObjects_Cloud/release/). Вы можете получить URL-адрес идентификатора при загрузке метаданных SAP Analytics Cloud из консоли администрирования. Это объясняется далее в руководстве.

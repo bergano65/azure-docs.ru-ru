@@ -10,18 +10,17 @@ ms.reviewer: klam, estfan
 ms.topic: conceptual
 ms.date: 02/17/2020
 ms.openlocfilehash: e851da0013cf3a9ff6bb1a0fc1c073b5b796c54d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78898539"
 ---
 # <a name="what-is-azure-scheduler"></a>Что такое планировщик Azure?
 
 > [!IMPORTANT]
-> [Azure Logic Apps](../logic-apps/logic-apps-overview.md) заменяет планировщик Azure, который выводится из [эксплуатации](../scheduler/migrate-from-scheduler-to-logic-apps.md#retire-date). Чтобы продолжить работу с заданиями, настроенными в планировщике, выполните [миграцию на Azure Logic Apps](../scheduler/migrate-from-scheduler-to-logic-apps.md) как можно скорее. 
+> Поддержка планировщика Azure [прекращается](../logic-apps/logic-apps-overview.md). Вместо него будет использоваться [Azure Logic Apps](../scheduler/migrate-from-scheduler-to-logic-apps.md#retire-date). Чтобы продолжить работу с заданиями, настроенными в планировщике, выполните [миграцию на Azure Logic Apps](../scheduler/migrate-from-scheduler-to-logic-apps.md) как можно скорее. 
 >
-> Планировщик больше не доступен в портал Azure, но командлеты PowerShell для [REST API](/rest/api/scheduler) и [планировщика Azure](scheduler-powershell-reference.md) в настоящее время остаются доступными, чтобы можно было управлять заданиями и коллекциями заданий.
+> Планировщик больше не доступен на портале Azure, но [REST API](/rest/api/scheduler) и [командлеты PowerShell Планировщика Azure](scheduler-powershell-reference.md) можно использовать и дальше для управления заданиями и коллекциями заданий.
 
 [Планировщик Azure](https://azure.microsoft.com/services/scheduler/) поможет вам создать [задания](../scheduler/scheduler-concepts-terms.md), которые запускаются в облаке, путем декларативного описания действий. Затем служба автоматически планирует и выполняет эти действия. Например, вы можете вызывать службы внутри и вне Azure, например вызвать конечные точки HTTP или HTTPS, а также опубликовать сообщения в очереди службы хранилища Azure и очереди или разделе Служебной шины Azure. Вы можете запускать задания сразу или позже. Планировщик поддерживает [сложные расписания и расширенное повторение](../scheduler/scheduler-advanced-complexity.md). Он определяет, когда запускать задания, хранит историю результатов заданий, которую можно просмотреть, а также надежно планирует выполнение рабочих нагрузок и прогнозирует соответствующее поведение.
 

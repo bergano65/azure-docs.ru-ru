@@ -8,12 +8,12 @@ ms.devlang: nodejs
 ms.topic: tutorial
 ms.date: 11/05/2019
 ms.author: sngun
-ms.openlocfilehash: 9257a87c69e98db1107528551fe9ce0553c50f75
-ms.sourcegitcommit: c535228f0b77eb7592697556b23c4e436ec29f96
+ms.openlocfilehash: b85a70b6d2feba68ed5a766ad05bc6aa22f597f8
+ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82858151"
+ms.lasthandoff: 06/20/2020
+ms.locfileid: "85114696"
 ---
 # <a name="tutorial-build-a-nodejs-web-app-using-the-javascript-sdk-to-manage-a-sql-api-account-in-azure-cosmos-db"></a>Руководство по Создание веб-приложения Node.js с помощью пакета SDK для JavaScript для управления учетной записью API SQL в Azure Cosmos DB 
 
@@ -84,7 +84,7 @@ ms.locfileid: "82858151"
 
 1. Новое приложение можно просмотреть, перейдя в браузере по адресу `http://localhost:3000`.
    
-   ![Изучение Node.js — снимок экрана приложения "Привет, мир" в окне браузера](./media/sql-api-nodejs-application/cosmos-db-node-js-express.png)
+   :::image type="content" source="./media/sql-api-nodejs-application/cosmos-db-node-js-express.png" alt-text="Изучение Node.js — снимок экрана приложения Hello World в окне браузера":::
 
    Остановите приложение, нажав клавиши CTRL+C в окне терминала, и выберите **Y**, чтобы завершить пакетное задание.
 
@@ -438,7 +438,7 @@ ms.locfileid: "82858151"
 
 1. Чтобы протестировать приложение на локальном компьютере, выполните `npm start` в терминале для запуска приложения, а затем обновите в браузере страницу `http://localhost:3000`. Теперь страница будет выглядеть, как показано на следующем снимке экрана:
    
-    ![Снимок экрана приложения «Мой список дел» в окне браузера](./media/sql-api-nodejs-application/cosmos-db-node-js-localhost.png)
+    :::image type="content" source="./media/sql-api-nodejs-application/cosmos-db-node-js-localhost.png" alt-text="Снимок экрана приложения My ToDo List в окне браузера":::
 
     > [!TIP]
     > Если появляется сообщение об ошибке отступа в файле layout.jade или index.jade, выровняйте две первые строки в этих двух файлах по левому краю без пробелов. Если перед первыми двумя строками есть пробелы, удалите их, сохраните оба файла и затем обновите окно браузера. 
@@ -447,7 +447,7 @@ ms.locfileid: "82858151"
 
 3. Страница должна обновиться, чтобы отобразить только что созданный элемент в списке ToDo.
    
-    ![Снимок экрана приложения с новым элементом в списке дел](./media/sql-api-nodejs-application/cosmos-db-node-js-added-task.png)
+    :::image type="content" source="./media/sql-api-nodejs-application/cosmos-db-node-js-added-task.png" alt-text="Снимок экрана приложения с новым элементом в списке дел":::
 
 4. Чтобы завершить задачу, установите флажок в столбце "Завершено" и выберите **Обновить задачи**. После этого созданный документ будет обновлен и удален из представления.
 

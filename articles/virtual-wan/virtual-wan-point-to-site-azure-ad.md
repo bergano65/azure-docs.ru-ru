@@ -4,15 +4,15 @@ description: Узнайте, как настроить проверку подл
 services: virtual-wan
 author: anzaman
 ms.service: virtual-wan
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 03/17/2020
 ms.author: alzam
-ms.openlocfilehash: 703b832d58f2374eac131cfd380ba27f2c890618
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: dd80724d62c71fdec81965fb4aa6a07a6233a288
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80059483"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84753962"
 ---
 # <a name="configure-azure-active-directory-authentication-for-user-vpn"></a>Настройка проверки подлинности Azure Active Directory для VPN пользователя
 
@@ -108,7 +108,7 @@ ms.locfileid: "80059483"
 
    ![новый сайт](media/virtual-wan-point-to-site-azure-ad/p2s2.jpg)
 5. Введите **пул адресов**, с которого VPN клиентам будут назначаться IP адреса.
-6. Нажмите кнопку **подтвердить**.
+6. Щелкните **Confirm** (Подтвердить).
 7. Выполнение операции может занять до 30 минут.
 
 ## <a name="download-vpn-profile"></a><a name="device"></a>Загрузка профиля VPN
@@ -125,7 +125,7 @@ ms.locfileid: "80059483"
 Для подключения необходимо скачать VPN-клиент Azure и импортировать профиль VPN-клиента, скачанный на предыдущих шагах, на каждый компьютер, который нужно подключить к виртуальной сети.
 
 > [!NOTE]
-> Аутентификация Azure AD поддерживается только для подключений&reg; по протоколу опенвпн.
+> Аутентификация Azure AD поддерживается только для &reg; подключений по протоколу опенвпн.
 >
 
 #### <a name="to-download-the-azure-vpn-client"></a>Загрузка VPN-клиента Azure
@@ -158,11 +158,11 @@ ms.locfileid: "80059483"
 
 1. Нажмите кнопку с многоточием (...) рядом с удаляемым профилем клиента. Затем щелкните **Remove** (Удалить).
 
-    !["Удалить"](./media/virtual-wan-point-to-site-azure-ad/delete/delete1.jpg)
+    ![удалить](./media/virtual-wan-point-to-site-azure-ad/delete/delete1.jpg)
 
 2. Выберите **Remove** (Удалить), чтобы выполнить удаление.
 
-    !["Удалить"](./media/virtual-wan-point-to-site-azure-ad/delete/delete2.jpg)
+    ![удалить](./media/virtual-wan-point-to-site-azure-ad/delete/delete2.jpg)
 
 #### <a name="diagnose-connection-issues"></a><a name="diagnose"></a>Diagnose connection issues (Диагностика проблем с подключением)
 

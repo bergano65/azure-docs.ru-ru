@@ -9,15 +9,15 @@ ms.subservice: template
 ms.date: 04/26/2019
 ms.reviewer: jushiman
 ms.custom: mimckitt
-ms.openlocfilehash: af2f000b9f9a7bf64898c46b3126cf180802b445
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: 6f47e07dcffd977121b4142924a77bdb93de3fc3
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83198124"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86503053"
 ---
 # <a name="learn-about-virtual-machine-scale-set-templates"></a>Подробнее о шаблонах масштабируемых наборов виртуальных машин
-[Шаблоны Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/template-deployment-overview#template-deployment-process) прекрасно подходят для развертывания группы связанных ресурсов. В этой серии руководств показано, как создать шаблон базового масштабируемого набора и как изменить этот шаблон в соответствии с различными сценариями. Все примеры взяты из этого [репозитория GitHub](https://github.com/gatneil/mvss).
+[Шаблоны Azure Resource Manager](../azure-resource-manager/templates/overview.md#template-deployment-process) прекрасно подходят для развертывания группы связанных ресурсов. В этой серии руководств показано, как создать шаблон базового масштабируемого набора и как изменить этот шаблон в соответствии с различными сценариями. Все примеры взяты из этого [репозитория GitHub](https://github.com/gatneil/mvss).
 
 Этот шаблон должен быть простым. Полные примеры шаблонов масштабируемых наборов можно найти в [репозитории шаблонов быстрого запуска Azure на сайте GitHub](https://github.com/Azure/azure-quickstart-templates). Папки с этими шаблонами содержат строку `vmss`.
 
@@ -115,7 +115,7 @@ ms.locfileid: "83198124"
 ## <a name="specify-scale-set-properties"></a>Определение свойств масштабируемого набора
 Масштабируемый набор имеет множество свойств, позволяющих настроить входящие в этот набор виртуальные машины. Полный список этих свойств см. в [справочнике по шаблонам](/azure/templates/microsoft.compute/virtualmachinescalesets). Лишь несколько наиболее распространенных свойств определены в этом руководстве.
 ### <a name="supply-vm-size-and-capacity"></a>Определение размера и емкости виртуальных машин
-Для масштабируемого набора следует указать размер виртуальной машины, которую следует создать (имя SKU), и число создаваемых виртуальных машин (емкость SKU). Сведения о доступных размерах (именах SKU) для виртуальных машин см. в [документации по размерам виртуальных машин](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-sizes).
+Для масштабируемого набора следует указать размер виртуальной машины, которую следует создать (имя SKU), и число создаваемых виртуальных машин (емкость SKU). Сведения о доступных размерах (именах SKU) для виртуальных машин см. в [документации по размерам виртуальных машин](../virtual-machines/windows/sizes.md).
 
 ```json
        "sku": {

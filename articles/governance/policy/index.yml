@@ -9,13 +9,13 @@ metadata:
   ms.collection: collection
   author: DCtheGeek
   ms.author: dacoulte
-  ms.date: 05/20/2020
-  ms.openlocfilehash: b28cae1fd59e863c04d744a5c17108f1bd942a4d
-  ms.sourcegitcommit: 6a9f01bbef4b442d474747773b2ae6ce7c428c1f
+  ms.date: 06/29/2020
+  ms.openlocfilehash: c066c3a7cc5b8208a61962ce4f51f7eef4be192b
+  ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 05/27/2020
-  ms.locfileid: "84119352"
+  ms.lasthandoff: 06/30/2020
+  ms.locfileid: "85549943"
 landingContent:
 - title: Сведения о службе "Политика Azure"
   linkLists:
@@ -39,11 +39,11 @@ landingContent:
     links:
     - text: Назначение политики (портал)
       url: ./assign-policy-portal.md
-    - text: Назначение политики (PowerShell)
-      url: ./assign-policy-powershell.md
     - text: Назначение политики (Azure CLI)
       url: ./assign-policy-azurecli.md
-    - text: Назначение политики (шаблон)
+    - text: Назначение политики (Azure PowerShell)
+      url: ./assign-policy-powershell.md
+    - text: Назначение политики (шаблон ARM)
       url: ./assign-policy-template.md
   - linkListType: tutorial
     links:
@@ -73,6 +73,8 @@ landingContent:
       url: ./how-to/author-policies-for-arrays.md
   - linkListType: concept
     links:
+    - text: Соответствие нормативным требованиям
+      url: ./concepts/regulatory-compliance.md
     - text: Политика для Kubernetes
       url: ./concepts/policy-for-kubernetes.md
     - text: Политика для виртуальных машин
@@ -92,7 +94,7 @@ landingContent:
   - linkListType: get-started
     links:
     - text: Раздел вопросов и ответов о Политике Azure на сайте Майкрософт
-      url: /answers/topics/azure-policy.html.html
+      url: /answers/topics/azure-policy.html
     - text: Канал на YouTube, посвященный системе управления Azure
       url: https://www.youtube.com/channel/UCZZ3-oMrVI5ssheMzaWC4uQ
     - text: Функция запроса продукта
@@ -127,9 +129,9 @@ landingContent:
       url: /dotnet/api/microsoft.azure.management.resourcemanager.models.policyassignment
     - text: Пакет Azure SDK для .NET (определения политик)
       url: /dotnet/api/microsoft.azure.management.resourcemanager.models.policydefinition
-    - text: Пакет SDK Azure для Node (Policy)
+    - text: Пакет Azure SDK для JavaScript (Policy)
       url: /javascript/api/@azure/arm-policy
-    - text: Пакет SDK Azure для Node (PolicyInsights)
+    - text: Пакет Azure SDK для JavaScript (PolicyInsights)
       url: /javascript/api/@azure/arm-policyinsights
     - text: Пакет SDK Azure для Python (Policy)
       url: /python/api/azure-mgmt-resource/azure.mgmt.resource.policy

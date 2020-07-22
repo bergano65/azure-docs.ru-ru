@@ -4,15 +4,15 @@ description: В этой статье показано, как проверит�
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
-ms.topic: article
+ms.topic: how-to
 ms.date: 05/16/2017
 ms.author: cherylmc
-ms.openlocfilehash: 40417b078577424b1ba13ce60f4f773a1c8fd4dc
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 93a7c0bb15c17b6939d6d53018e4fed84b1ae020
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75780153"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84984567"
 ---
 # <a name="verify-a-vpn-gateway-connection"></a>Проверка подключения VPN-шлюза
 

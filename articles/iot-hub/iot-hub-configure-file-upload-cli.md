@@ -9,10 +9,9 @@ ms.topic: conceptual
 ms.date: 08/08/2017
 ms.author: robinsh
 ms.openlocfilehash: df3c8d2abf59de6c9f685ad8d93e6689738df8e6
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78302531"
 ---
 # <a name="configure-iot-hub-file-uploads-using-azure-cli"></a>Настройка отправки файлов в Центре Интернета вещей с помощью Azure CLI
@@ -23,7 +22,7 @@ ms.locfileid: "78302531"
 
 Для работы с этим учебником требуется:
 
-* Активная учетная запись Azure. Если у вас нет учетной записи, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
+* Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
 
 * [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 
@@ -138,7 +137,7 @@ az iot hub show --name {your iot hub name}
 Дополнительные сведения об управлении Центром Интернета вещей в Azure см. по следующим ссылкам:
 
 * [Массовое управление удостоверениями устройств Центра Интернета вещей](iot-hub-bulk-identity-mgmt.md)
-* [Метрики Центра Интернета вещей](iot-hub-metrics.md)
+* [Общие сведения о метриках Центра Интернета вещей](iot-hub-metrics.md)
 * [Мониторинг операций](iot-hub-operations-monitoring.md)
 
 Для дальнейшего изучения возможностей Центра Интернета вещей см. следующие статьи:

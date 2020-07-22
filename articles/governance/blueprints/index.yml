@@ -1,21 +1,21 @@
 ### YamlMime:Landing
 title: Документация по Azure Blueprints
-summary: Упростите развертывание, упаковав артефакты, такие как шаблоны Resource Manager, элементы управления доступом на основе ролей и политики, в единое определение схемы.
+summary: Упростите развертывание, упаковав артефакты, такие как шаблоны Azure Resource Manager, элементы управления доступом на основе ролей и политики, в единое определение схемы.
 metadata:
   title: Документация по Azure Blueprints
-  description: Упростите развертывание, упаковав артефакты, такие как шаблоны Resource Manager, элементы управления доступом на основе ролей и политики, в единое определение схемы.
+  description: Упростите развертывание, упаковав артефакты, такие как шаблоны Azure Resource Manager, элементы управления доступом на основе ролей и политики, в единое определение схемы.
   ms.service: blueprints
   ms.topic: landing-page
   ms.collection: collection
   author: DCtheGeek
   ms.author: dacoulte
-  ms.date: 09/01/2019
-  ms.openlocfilehash: d80b82b9e8e41e9bfdc7b9ac180ccc8916481acb
-  ms.sourcegitcommit: 6a9f01bbef4b442d474747773b2ae6ce7c428c1f
-  ms.translationtype: HT
+  ms.date: 06/29/2020
+  ms.openlocfilehash: 04c99d2428bd3c92187ce9383f51d38a9729d22a
+  ms.sourcegitcommit: f684589322633f1a0fafb627a03498b148b0d521
+  ms.translationtype: 
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 05/27/2020
-  ms.locfileid: "84116111"
+  ms.lasthandoff: 07/06/2020
+  ms.locfileid: "85969385"
 landingContent:
 - title: Сведения об Azure Blueprints
   linkLists:
@@ -37,9 +37,11 @@ landingContent:
     links:
     - text: Создание схемы (портал)
       url: ./create-blueprint-portal.md
-    - text: Создание схемы (PowerShell)
+    - text: Создание схемы (Azure CLI)
+      url: ./create-blueprint-azurecli.md
+    - text: Создание схемы (Azure PowerShell)
       url: ./create-blueprint-powershell.md
-    - text: Создание схемы (REST API)
+    - text: Создание схемы (REST)
       url: ./create-blueprint-rest-api.md
   - linkListType: tutorial
     links:
@@ -82,7 +84,7 @@ landingContent:
   - linkListType: get-started
     links:
     - text: Раздел вопросов и ответов об Azure Blueprints на сайте Майкрософт
-      url: /answers/topics/azure-blueprints.html.html
+      url: /answers/topics/azure-blueprints.html
     - text: Канал на YouTube, посвященный системе управления Azure
       url: https://www.youtube.com/channel/UCZZ3-oMrVI5ssheMzaWC4uQ
     - text: Функция запроса продукта
@@ -97,9 +99,11 @@ landingContent:
       url: ./reference/blueprint-functions.md
     - text: Модуль PowerShell (PSGallery)
       url: https://www.powershellgallery.com/packages/Az.Blueprint
+    - text: Azure CLI
+      url: /cli/azure/ext/blueprint/blueprint
     - text: Azure PowerShell
       url: /powershell/module/az.blueprint/#blueprint
-    - text: REST API
-      url: /rest/api/blueprints/
-    - text: .NET
+    - text: Azure SDK для .NET
       url: /dotnet/api/overview/azure/blueprints/management
+    - text: REST
+      url: /rest/api/blueprints/

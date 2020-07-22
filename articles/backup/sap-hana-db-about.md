@@ -3,16 +3,16 @@ title: Сведения о SAP HANA резервного копирования 
 description: В этой статье вы узнаете, как выполнять резервное копирование SAP HANA баз данных, работающих на виртуальных машинах Azure.
 ms.topic: conceptual
 ms.date: 12/11/2019
-ms.openlocfilehash: 52c235c95cea73a0c51c62fcb55f7f711d2eff21
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 980278b3cdb9c97a5a483354a004a8278a745b3b
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79476463"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86503512"
 ---
 # <a name="about-sap-hana-database-backup-in-azure-vms"></a>Сведения о SAP HANA резервного копирования базы данных на виртуальных машинах Azure
 
-SAP HANA базы данных — это критически важные рабочие нагрузки, для которых требуется низкая Целевая точка восстановления (RPO) и целевое время восстановления (RTO). Теперь вы можете [выполнять резервное копирование SAP HANA баз данных, работающих на виртуальных машинах Azure](https://docs.microsoft.com/azure/backup/tutorial-backup-sap-hana-db) , с помощью [Azure Backup](https://docs.microsoft.com/azure/backup/backup-overview).
+SAP HANA базы данных — это критически важные рабочие нагрузки, для которых требуется низкая Целевая точка восстановления (RPO) и целевое время восстановления (RTO). Теперь вы можете [выполнять резервное копирование SAP HANA баз данных, работающих на виртуальных машинах Azure](./tutorial-backup-sap-hana-db.md) , с помощью [Azure Backup](./backup-overview.md).
 
 Azure Backup [backint) создание сертифицировано](https://www.sap.com/dmc/exp/2013_09_adpd/enEN/#/d/solutions?id=8f3fd455-a2d7-4086-aa28-51d8870acaa5) SAP, чтобы обеспечить собственную поддержку резервного копирования, используя собственные API-интерфейсы SAP HANA. Это предложение от Azure Backup соответствует мантру Azure Backup резервным копиям **нулевой инфраструктуры** , что устраняет необходимость в развертывании и управлении инфраструктурой резервного копирования. Теперь вы можете легко выполнять резервное копирование и восстановление SAP HANA баз данных, работающих на виртуальных машинах Azure ([виртуальные машины серии M](../virtual-machines/m-series.md) также поддерживаются сейчас), и использовать возможности управления предприятием, предоставляемые Azure Backup.
 
@@ -25,25 +25,25 @@ Azure Backup [backint) создание сертифицировано](https://
 * **Долгосрочное хранение**: для обеспечения строгого соответствия требованиям и аудита. Храните резервные копии в течение нескольких лет в зависимости от длительности хранения, за пределами которых точки восстановления автоматически удаляются встроенной функцией управления жизненным циклом.
 * **Управление резервным копированием из Azure**. Используйте возможности управления и мониторинга Azure Backup для улучшения процесса управления. Azure CLI также поддерживается.
 
-Чтобы просмотреть сценарии резервного копирования и восстановления, которые поддерживаются сегодня, см. [таблицу поддержки сценариев SAP HANA](https://docs.microsoft.com/azure/backup/sap-hana-backup-support-matrix#scenario-support).
+Чтобы просмотреть сценарии резервного копирования и восстановления, которые поддерживаются сегодня, см. [таблицу поддержки сценариев SAP HANA](./sap-hana-backup-support-matrix.md#scenario-support).
 
 ## <a name="backup-architecture"></a>Архитектура службы Backup
 
 ![Схема архитектуры резервного копирования](./media/sap-hana-db-about/backup-architecture.png)
 
-* Процесс резервного копирования начинается с [создания хранилища служб восстановления](https://docs.microsoft.com/azure/backup/tutorial-backup-sap-hana-db#create-a-recovery-service-vault) в Azure. Это хранилище будет использоваться для хранения резервных копий и точек восстановления, созданных с течением времени.
-* Виртуальная машина Azure с SAP HANA Server зарегистрирована в хранилище, и будут [обнаружены](https://docs.microsoft.com/azure/backup/tutorial-backup-sap-hana-db#discover-the-databases)базы данных для резервного копирования. Чтобы служба Azure Backup обнаружила базы данных, необходимо запустить [сценарий](https://aka.ms/scriptforpermsonhana) на сервере Hana в качестве привилегированного пользователя.
+* Процесс резервного копирования начинается с [создания хранилища служб восстановления](./tutorial-backup-sap-hana-db.md#create-a-recovery-service-vault) в Azure. Это хранилище будет использоваться для хранения резервных копий и точек восстановления, созданных с течением времени.
+* Виртуальная машина Azure с SAP HANA Server зарегистрирована в хранилище, и будут [обнаружены](./tutorial-backup-sap-hana-db.md#discover-the-databases)базы данных для резервного копирования. Чтобы служба Azure Backup обнаружила базы данных, необходимо запустить [сценарий](https://aka.ms/scriptforpermsonhana) на сервере Hana в качестве привилегированного пользователя.
 * Этот скрипт создает пользователя **азуревлбаккуфанаусер** DB и соответствующий ключ с тем же именем в **hdbuserstore**. Сведения о том, что делает сценарий, см. в разделе [что такое сценарий предварительной регистрации](tutorial-backup-sap-hana-db.md#what-the-pre-registration-script-does) .
 * Azure Backup служба теперь устанавливает **подключаемый модуль Azure Backup для Hana** на зарегистрированном SAP HANA сервере.
 * Пользователь **азуревлбаккуфанаусер** DB, созданный сценарием предрегистрации, используется **подключаемым модулем Azure Backup для Hana** для выполнения всех операций резервного копирования и восстановления. При попытке настроить резервное копирование для SAP HANA баз данных без выполнения этого скрипта может появиться следующая ошибка: **усереррорханаскриптнотрун**.
-* Чтобы [настроить резервное копирование](https://docs.microsoft.com/azure/backup/tutorial-backup-sap-hana-db#configure-backup) для обнаруженных баз данных, выберите необходимую политику архивации и включите резервное копирование.
+* Чтобы [настроить резервное копирование](./tutorial-backup-sap-hana-db.md#configure-backup) для обнаруженных баз данных, выберите необходимую политику архивации и включите резервное копирование.
 
 * После настройки резервного копирования Azure Backup служба настраивает следующие параметры Backint) создание на уровне базы данных на защищенном сервере SAP HANA.
-  * [catalog_backup_using_backint: true]
-  * [enable_accumulated_catalog_backup: false]
-  * [parallel_data_backup_backint_channels: 1]
-  * [log_backup_timeout_s: 900)]
-  * [backint_response_timeout: 7200]
+  *  [catalog_backup_using_backint:true];
+  *  [enable_accumulated_catalog_backup:false];
+  *  [parallel_data_backup_backint_channels:1];
+  *  [log_backup_timeout_s:900)];
+  *  [backint_response_timeout:7200].
 
 >[!NOTE]
 >Убедитесь, что эти параметры *отсутствуют* на уровне узла. Параметры уровня узла будут переопределять эти параметры и могут вызвать непредвиденное поведение.
@@ -72,7 +72,7 @@ Azure Backup [backint) создание сертифицировано](https://
 * После установки всех остальных конфигураций (например, IP-адреса, имени системы и т. д.) виртуальная машина будет настроена на получение данных из службы архивации Azure.
 * Теперь восстановите базу данных в виртуальной машине из [резервной копии Azure SAP HANA DB](sap-hana-db-restore.md#restore-to-a-point-in-time-or-to-a-recovery-point) до нужной точки во времени.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Узнайте, как [восстановить базу данных SAP Hana, работающую на виртуальной машине Azure](https://docs.microsoft.com/azure/backup/sap-hana-db-restore) .
-* Узнайте, как [управлять базами данных SAP HANA, резервное копирование которых выполняется с помощью Azure Backup](https://docs.microsoft.com/azure/backup/sap-hana-db-manage).
+* Узнайте, как [восстановить базу данных SAP Hana, работающую на виртуальной машине Azure](./sap-hana-db-restore.md) .
+* Узнайте, как [управлять базами данных SAP HANA, резервное копирование которых выполняется с помощью Azure Backup](./sap-hana-db-manage.md).

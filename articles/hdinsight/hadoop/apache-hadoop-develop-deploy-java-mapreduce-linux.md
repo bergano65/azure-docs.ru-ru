@@ -5,21 +5,21 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 01/16/2020
-ms.openlocfilehash: a37a8bb45c11d5b74f3059a153806e3d083cf452
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 415ffcbef9afbeb60764227d29164af2b06348e1
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76311960"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86086761"
 ---
 # <a name="develop-java-mapreduce-programs-for-apache-hadoop-on-hdinsight"></a>Разработка программ MapReduce на Java для Apache Hadoop в HDInsight
 
 Узнайте, как использовать Apache Maven, чтобы создать приложение MapReduce на основе Java, а также запустить его с помощью Apache Hadoop в Azure HDInsight.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Java Developer Kit (JDK) версии 8](https://aka.ms/azure-jdks).
 
@@ -50,7 +50,7 @@ cd C:\HDI
     * срк\маин\жава\орг\апаче\хадуп\ексамплес: содержит код приложения.
     * срк\тест\жава\орг\апаче\хадуп\ексамплес: содержит тесты для вашего приложения.
 
-1. Удалите созданный код примера. Удалите созданные файлы `AppTest.java`тестов и приложений, а затем `App.java` введите приведенные ниже команды.
+1. Удалите созданный код примера. Удалите созданные файлы тестов и приложений `AppTest.java` , а затем `App.java` введите приведенные ниже команды.
 
     ```cmd
     cd wordcountjava
@@ -68,7 +68,7 @@ notepad pom.xml
 
 ### <a name="add-dependencies"></a>Добавление зависимостей
 
-В `pom.xml`добавьте в `<dependencies>` раздел следующий текст:
+В `pom.xml` добавьте в раздел следующий текст `<dependencies>` :
 
 ```xml
 <dependency>
@@ -102,7 +102,7 @@ notepad pom.xml
 
 Подключаемые модули Maven позволяют настроить этапы сборки проекта. Этот раздел используется для добавления подключаемых модулей, ресурсов и других параметров конфигурации сборки.
 
-Добавьте в `pom.xml` файл следующий код, а затем сохраните и закройте файл. Эти строки должны находиться в файле внутри тегов `<project>...</project>` (например, между тегами `</dependencies>` и `</project>`).
+Добавьте в файл следующий код `pom.xml` , а затем сохраните и закройте файл. Эти строки должны находиться в файле внутри тегов `<project>...</project>` (например, между тегами `</dependencies>` и `</project>`).
 
 ```xml
 <build>
@@ -147,7 +147,7 @@ maven-shade-plugin также создает так называемый uber ja
 
 ## <a name="create-the-mapreduce-application"></a>Создание приложения MapReduce
 
-1. Введите следующую команду, чтобы создать и открыть новый файл `WordCount.java`. Выберите **Да** в командной строке, чтобы создать новый файл.
+1. Введите следующую команду, чтобы создать и открыть новый файл `WordCount.java` . Выберите **Да** в командной строке, чтобы создать новый файл.
 
     ```cmd
     notepad src\main\java\org\apache\hadoop\examples\WordCount.java
@@ -281,7 +281,7 @@ mvn clean package
     zenith  2
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 В этом документе объясняется, как разработать задание MapReduce на Java. Чтобы узнать о других методах работы с HDInsight, см. следующие документы.
 

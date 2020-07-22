@@ -24,27 +24,6 @@
       items:
         - name: Разработка с использованием Helm
           href: quickstart-helm.md
-        - name: Azure Dev Spaces
-          expanded: true
-          items:
-            - name: Использование Azure Dev Spaces для групп разработчиков
-              href: ../dev-spaces/quickstart-team-development.md
-              maintainContext: true
-            - name: "Использование Visual Studio\_Code"
-              href: ../dev-spaces/quickstart-netcore.md
-              maintainContext: true
-            - name: Использование Visual Studio
-              href: ../dev-spaces/quickstart-netcore-visualstudio.md
-              maintainContext: true
-            - name: Использование CLI
-              href: ../dev-spaces/quickstart-cli.md
-              maintainContext: true
-            - name: Использование Azure Dev Spaces с Java
-              href: ../dev-spaces/quickstart-java.md
-              maintainContext: true
-            - name: Использование Azure Dev Spaces с Node.js
-              href: ../dev-spaces/quickstart-nodejs.md
-              maintainContext: true
 - name: Учебники
   items:
     - name: 1. Подготовка приложения для AKS
@@ -116,7 +95,27 @@
     - name: Квоты и региональные ограничения
       href: quotas-skus-regions.md
     - name: Миграция в AKS
-      href: aks-migration.md
+      items:
+        - name: Планирование и выполнение миграции
+          href: aks-migration.md
+        - name: Spring Boot
+          href: /azure/developer/java/migration/migrate-spring-boot-to-azure-kubernetes-service
+          maintainContext: false
+        - name: Tomcat
+          href: /azure/developer/java/migration/migrate-tomcat-to-containers-on-azure-kubernetes-service
+          maintainContext: false
+        - name: WildFly
+          href: /azure/developer/java/migration/migrate-wildfly-to-wildfly-on-azure-kubernetes-service
+          maintainContext: false
+        - name: WebLogic
+          href: /azure/developer/java/migration/migrate-weblogic-to-wildfly-on-azure-kubernetes-service
+          maintainContext: false
+        - name: WebSphere
+          href: /azure/developer/java/migration/migrate-websphere-to-wildfly-on-azure-kubernetes-service
+          maintainContext: false
+        - name: JBoss EAP
+          href: /azure/developer/java/migration/migrate-jboss-eap-to-wildfly-on-azure-kubernetes-service
+          maintainContext: false
     - name: Поддерживаемая версия Kubernetes
       href: supported-kubernetes-versions.md
     - name: Усиление защиты ОС узла
@@ -133,6 +132,10 @@
           href: upgrade-cluster.md
         - name: Использование соглашения об уровне обслуживания с гарантией времени непрерывной работы
           href: uptime-sla.md
+        - name: Использование групп размещения близкого взаимодействия (предварительная версия)
+          href: reduce-latency-ppg.md
+        - name: Обновление образа узла (предварительная версия)
+          href: node-image-upgrade.md
         - name: Обновления ОС узла процесса
           href: node-updates-kured.md
         - name: Настройка кластера AKS.
@@ -176,6 +179,8 @@
           href: azure-nfs-volume.md
         - name: Azure NetApp Files
           href: azure-netapp-files.md
+        - name: Использование дисков Azure (цен. категория "Ультра") (предварительная версия)
+          href: use-ultra-disks.md
     - name: Настройка сети
       items:
         - name: Создание виртуальной сети или использование существующей
@@ -188,8 +193,6 @@
           href: internal-lb.md
         - name: Использование Load Balancer ценовой категории "Стандартный"
           href: load-balancer-standard.md
-        - name: Использование определяемого пользователем маршрута для исходящего трафика
-          href: egress-outboundtype.md
         - name: Использование статического IP-адреса
           href: static-ip.md
         - name: Входящий трафик
@@ -200,6 +203,9 @@
               href: http-application-routing.md
             - name: Использование внутренней сети
               href: ingress-internal-ip.md
+            - name: Включение надстройки AGIC для имеющегося кластера AKS
+              href: ../application-gateway/tutorial-ingress-controller-add-on-existing.md
+              maintainContext: true
             - name: Использование TLS в собственных сертификатах
               href: ingress-own-tls.md
             - name: Использование протокола TLS с сертификатом Let's Encrypt
@@ -208,8 +214,14 @@
                   href: ingress-tls.md
                 - name: Использование статического общедоступного IP-адреса
                   href: ingress-static-ip.md
-        - name: Исходящий трафик
-          href: egress.md
+        - name: Исходящие
+          items:
+            - name: Ограничение и администрирование исходящего трафика кластера
+              href: limit-egress-traffic.md
+            - name: Использование определяемого пользователем маршрута для исходящего трафика
+              href: egress-outboundtype.md
+            - name: Использование базовой подсистемы балансировки нагрузки и статического IP-адреса
+              href: egress.md
         - name: Настройка CoreDNS
           href: coredns-custom.md
     - name: Безопасность и проверка подлинности
@@ -222,6 +234,8 @@
           href: control-kubeconfig-access.md
         - name: Защита трафика для групп pod с помощью политик сети
           href: use-network-policies.md
+        - name: Защита групп pod с помощью Политики Azure (предварительная версия)
+          href: use-pod-security-on-azure-policy.md
         - name: Использование политик безопасности pod (предварительная версия)
           href: use-pod-security-policies.md
         - name: Определение диапазонов разрешенных IP-адресов сервера API
@@ -230,16 +244,14 @@
           href: ../governance/policy/concepts/policy-for-kubernetes.md?toc=/azure/aks/toc.json
         - name: Обновление учетных данных кластера
           href: update-credentials.md
-        - name: Ограничение и администрирование исходящего трафика кластера
-          href: limit-egress-traffic.md
         - name: Включение интеграции с Azure Active Directory
           items:
-            - name: "Интеграция Azure\_AD (предварительная версия)"
+            - name: AAD с управлением AKS
               href: managed-aad.md
-            - name: Использование Azure CLI
+            - name: Интеграция AAD (устарело)
               href: azure-ad-integration-cli.md
-            - name: Использование портала Azure
-              href: azure-ad-integration.md
+        - name: Использование Azure RBAC для авторизации Kubernetes (предварительная версия)
+          href: manage-azure-rbac.md
         - name: "Использование RBAC Kubernetes при интеграции с Azure\_AD"
           href: azure-ad-rbac.md
           maintainContext: true
@@ -249,6 +261,8 @@
           href: private-clusters.md
         - name: BYOK для дисков
           href: azure-disk-customer-managed-keys.md
+        - name: Включение шифрования на основе узла
+          href: enable-host-encryption.md
     - name: Мониторинг и ведение журнала
       items:
         - name: Azure Monitor для контейнеров
@@ -274,59 +288,13 @@
         - name: Использование панели мониторинга Kubernetes
           href: kubernetes-dashboard.md
         - name: Создание файлов Dockerfile для контейнеров Windows Server
-          href: 'https://docs.microsoft.com/virtualization/windowscontainers/manage-docker/manage-windows-dockerfile?context=/azure/aks/context/aks-context'
+          href: /virtualization/windowscontainers/manage-docker/manage-windows-dockerfile?context=/azure/aks/context/aks-context
         - name: Оптимизация файлов Dockerfile для контейнеров Windows Server
-          href: 'https://docs.microsoft.com/virtualization/windowscontainers/manage-docker/optimize-windows-dockerfile?context=/azure/aks/context/aks-context'
+          href: /virtualization/windowscontainers/manage-docker/optimize-windows-dockerfile?context=/azure/aks/context/aks-context
     - name: Разработка и запуск приложений
       items:
-        - name: Разработка с помощью Dev Spaces
-          href: ../dev-spaces/azure-dev-spaces.md
-          maintainContext: true
-          items:
-            - name: Java (VS Code и CLI)
-              items:
-                - name: "1.\_Начало работы"
-                  href: ../dev-spaces/get-started-java.md
-                  maintainContext: true
-                - name: "2.\_Разработка с использованием нескольких служб"
-                  href: ../dev-spaces/multi-service-java.md
-                  maintainContext: true
-                - name: "3.\_Командная разработка"
-                  href: ../dev-spaces/team-development-java.md
-                  maintainContext: true
-            - name: .NET Core (VS Code и CLI)
-              items:
-                - name: "1.\_Начало работы"
-                  href: ../dev-spaces/get-started-netcore.md
-                  maintainContext: true
-                - name: "2.\_Разработка с использованием нескольких служб"
-                  href: ../dev-spaces/multi-service-netcore.md
-                  maintainContext: true
-                - name: "3.\_Командная разработка"
-                  href: ../dev-spaces/team-development-netcore.md
-                  maintainContext: true
-            - name: ".NET Core (Visual Studio\_2017)"
-              items:
-                - name: "1.\_Начало работы"
-                  href: ../dev-spaces/get-started-netcore-visualstudio.md
-                  maintainContext: true
-                - name: "2.\_Разработка с использованием нескольких служб"
-                  href: ../dev-spaces/multi-service-netcore-visualstudio.md
-                  maintainContext: true
-                - name: "3.\_Командная разработка"
-                  href: ../dev-spaces/team-development-netcore-visualstudio.md
-                  maintainContext: true
-            - name: Node.js (VS Code и CLI)
-              items:
-                - name: "1.\_Начало работы"
-                  href: ../dev-spaces/get-started-nodejs.md
-                  maintainContext: true
-                - name: "2.\_Разработка с использованием нескольких служб"
-                  href: ../dev-spaces/multi-service-nodejs.md
-                  maintainContext: true
-                - name: "3.\_Командная разработка"
-                  href: ../dev-spaces/team-development-nodejs.md
-                  maintainContext: true
+        - name: Использование Локального процесса с Kubernetes в Visual Studio Code (предварительная версия)
+          href: ../dev-spaces/how-to/local-process-kubernetes-vs-code.md
         - name: Установка существующих приложений с помощью Helm
           href: kubernetes-helm.md
         - name: С помощью OpenFaaS
@@ -396,7 +364,7 @@
     - name: REST
       href: /rest/api/aks
     - name: PowerShell
-      href: '/powershell/module/az.aks#aks'
+      href: /powershell/module/az.aks#aks
     - name: .NET
       href: /dotnet/api/overview/azure/containerservice
     - name: Python
@@ -417,10 +385,10 @@
       href: 'https://azure.microsoft.com/pricing/details/container-service/'
     - name: Политики поддержки
       href: support-policies.md
-    - name: Схема действий
+    - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
-    - name: Отзыв о продукте
-      href: 'https://feedback.azure.com/forums/914020-azure-kubernetes-service-aks'
+    - name: План развития AKS
+      href: 'https://github.com/Azure/AKS/projects/1'
     - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-container-service'
     - name: Видео

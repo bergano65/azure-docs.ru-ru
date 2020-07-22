@@ -4,16 +4,15 @@ description: Узнайте, как создать или удалить кон�
 services: storage
 author: tamram
 ms.service: storage
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 12/17/2019
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: c95ed6dde3c00c0688ccfd58565fd112427c8899
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 24e754a583125c962e67f849edcec8f8609746a0
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79135944"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84464918"
 ---
 # <a name="create-or-delete-a-container-in-azure-storage-with-net"></a>Создание или удаление контейнера в службе хранилища Azure с помощью .NET
 
@@ -35,7 +34,7 @@ ms.locfileid: "79135944"
 
 Чтобы создать контейнер, вызовите один из следующих методов.
 
-- [Создать](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.create)
+- [Создание](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.create)
 - [CreateAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.createasync)
 - [CreateIfNotExists](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.createifnotexists)
 - [CreateIfNotExistsAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.createifnotexistsasync)
@@ -119,7 +118,7 @@ private static void CreateRootContainer(CloudBlobClient blobClient)
 
 Чтобы удалить контейнер в .NET, используйте один из следующих методов.
 
-- [Удаление](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.delete)
+- [Удалить](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.delete)
 - [DeleteAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.deleteasync)
 - [DeleteIfExists](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.deleteifexists)
 - [DeleteIfExistsAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.deleteifexistsasync)

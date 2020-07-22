@@ -7,10 +7,9 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
 ms.openlocfilehash: 31e3f82b6ea1b1fc15c0832dc03edce2a59f1e1b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "74768356"
 ---
 # <a name="usage-scenarios-for-query-store"></a>Сценарии использования хранилища запросов
@@ -57,5 +56,5 @@ ms.locfileid: "74768356"
  
 Если вы контролируете код приложения, возможно, целесообразно переписать уровень доступа к данным, чтобы использовать хранимые процедуры или параметризованные запросы. Улучшить ситуацию можно и без внесения изменений в приложение: нужно принудительно реализовать параметризацию запросов для всей базы данных (всех запросов) или для отдельных шаблонов запросов с одним хэшем запроса. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Дополнительные сведения см. в разделе [Рекомендации по использованию хранилища запросов](concepts-query-store-best-practices.md)

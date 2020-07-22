@@ -6,19 +6,18 @@ author: curtand
 ms.author: curtand
 manager: daveba
 ms.date: 04/16/2020
-ms.topic: conceptual
+ms.topic: how-to
 ms.service: active-directory
 ms.subservice: users-groups-roles
 ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: krbain
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4b35163387ed4ce71f7a2019835a1d9fdbff3051
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 00dfac7c3036c4fd457c5d3a6bb4eb7bd4e56998
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81532661"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84731330"
 ---
 # <a name="download-a-list-of-users-in-azure-active-directory-portal"></a>Скачивание списка пользователей на портале Azure Active Directory
 
@@ -32,8 +31,8 @@ Azure Active Directory (Azure AD) поддерживает операции мн
 
 1. [Войдите в организацию Azure AD](https://aad.portal.azure.com) с помощью учетной записи администратора пользователя в Организации.
 2. Перейдите к Azure Active Directory > пользователей. Затем выберите пользователей, которых нужно включить в загрузку, загрузив поле в левом столбце рядом с каждым пользователем. Примечание. в настоящее время невозможно выбрать всех пользователей для экспорта. Каждый из них должен быть выбран отдельно.
-3. В Azure AD выберите **Пользователи** > **скачать пользователей**.
-4. На странице **скачать пользователей** выберите **начать** , чтобы получить CSV-файл со списком свойств профиля пользователя. При наличии ошибок можно загрузить и просмотреть файл результатов на странице результатов групповой операции. Файл содержит причину каждой ошибки.
+3. В Azure AD выберите **Пользователи**  >  **скачать пользователей**.
+4. На странице **скачать пользователей** выберите **начать** , чтобы получить CSV-файл со списком свойств профиля пользователя. При наличии ошибок можно загрузить и просмотреть файл результатов на странице Результаты массовой операции. Файл содержит причину каждой ошибки.
 
    ![Выберите, куда нужно загрузить список пользователей.](./media/users-bulk-download/bulk-download.png)
 
@@ -44,7 +43,7 @@ Azure Active Directory (Azure AD) поддерживает операции мн
    - userPrincipalName
    - displayName
    - surname
-   - почта
+   - mail
    - givenName
    - objectId
    - userType
@@ -64,9 +63,9 @@ Azure Active Directory (Azure AD) поддерживает операции мн
    - аусентикатионалтернативефоненумбер
    - аусентикатионемаил
    - алтернатимаиладдресс
-   - Возрастная группа
-   - консентпровидедформинор
-   - легалажеграупклассификатион
+   - ageGroup
+   - consentProvidedForMinor
+   - legalAgeGroupClassification
 
 ## <a name="check-status"></a>Проверка состояния
 

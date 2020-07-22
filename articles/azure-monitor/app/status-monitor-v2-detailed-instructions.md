@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: TimothyMothra
 ms.author: tilee
 ms.date: 04/23/2019
-ms.openlocfilehash: 8f6134e8f8fdb9af3f578afaf0670c32a3896e01
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 2faf33fdd58090a335804f084ef2d1f180a9754a
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81766861"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86499330"
 ---
 # <a name="application-insights-agent-formerly-named-status-monitor-v2-detailed-instructions"></a>Агент Application Insights (прежнее название — монитор состояния v2): подробные инструкции
 
@@ -29,19 +29,17 @@ ms.locfileid: "81766861"
 Для внесения изменений на компьютер PowerShell требуются разрешения уровня администратора.
 ### <a name="execution-policy"></a>Политика выполнения
 - Описание: по умолчанию запуск сценариев PowerShell отключен. Рекомендуется разрешить скрипты RemoteSigned только для текущей области.
-- Справочник: [Общие сведения о политиках выполнения](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-6) и [Set-ExecutionPolicy](
-https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6
-).
-- Команда: `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process`.
+- Справочник: [Общие сведения о политиках выполнения](/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-6) и [Set-ExecutionPolicy](/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6).
+- Команда: `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process` .
 - Необязательный параметр:
     - `-Force`. Обход запроса подтверждения.
 
 **Примеры ошибок**
 
-```
+```output
 Install-Module : The 'Install-Module' command was found in the module 'PowerShellGet', but the module could not be
 loaded. For more information, run 'Import-Module PowerShellGet'.
-    
+
 Import-Module : File C:\Program Files\WindowsPowerShell\Modules\PackageManagement\1.3.1\PackageManagement.psm1 cannot
 be loaded because running scripts is disabled on this system. For more information, see about_Execution_Policies at
 https:/go.microsoft.com/fwlink/?LinkID=135170.
@@ -53,8 +51,7 @@ https:/go.microsoft.com/fwlink/?LinkID=135170.
 Произведите аудит экземпляра PowerShell, выполнив `$PSVersionTable` команду.
 Эта команда создает следующие выходные данные:
 
-
-```
+```output
 Name                           Value
 ----                           -----
 PSVersion                      5.1.17763.316
@@ -81,56 +78,63 @@ SerializationVersion           1.1.0.1
 1. Запустите PowerShell от имени администратора с политикой выполнения с повышенными правами.
 2. Установите поставщик пакетов NuGet.
     - Описание. Этот поставщик необходим для взаимодействия с репозиториями на основе NuGet, например коллекция PowerShell.
-    - Ссылка: [Install-PackageProvider](https://docs.microsoft.com/powershell/module/packagemanagement/install-packageprovider?view=powershell-6).
-    - Команда: `Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201`.
+    - Ссылка: [Install-PackageProvider](/powershell/module/packagemanagement/install-packageprovider?view=powershell-6).
+    - Команда: `Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201` .
     - Дополнительные параметры:
         - `-Proxy`. Указывает прокси-сервер для запроса.
         - `-Force`. Обход запроса подтверждения.
     
     Вы получите этот запрос, если NuGet не настроен:
-        
-        NuGet provider is required to continue
-        PowerShellGet requires NuGet provider version '2.8.5.201' or newer to interact with NuGet-based repositories. The NuGet
-         provider must be available in 'C:\Program Files\PackageManagement\ProviderAssemblies' or
-        'C:\Users\t\AppData\Local\PackageManagement\ProviderAssemblies'. You can also install the NuGet provider by running
-        'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force'. Do you want PowerShellGet to install and import
-         the NuGet provider now?
-        [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"):
-    
+
+    ```output
+    NuGet provider is required to continue
+    PowerShellGet requires NuGet provider version '2.8.5.201' or newer to interact with NuGet-based repositories. 
+    The NuGet provider must be available in 'C:\Program Files\PackageManagement\ProviderAssemblies' or
+    'C:\Users\t\AppData\Local\PackageManagement\ProviderAssemblies'. You can also install the NuGet provider by running
+    'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force'. Do you want PowerShellGet to install and import
+    the NuGet provider now?
+    [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"):
+    ```    
+
 3. Настройте коллекция PowerShell как доверенный репозиторий.
     - Описание: по умолчанию коллекция PowerShell является недоверенным репозиторием.
-    - Ссылка: [Set-PSRepository](https://docs.microsoft.com/powershell/module/powershellget/set-psrepository?view=powershell-6).
-    - Команда: `Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted`.
+    - Ссылка: [Set-PSRepository](/powershell/module/powershellget/set-psrepository?view=powershell-6).
+    - Команда: `Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted` .
     - Необязательный параметр:
         - `-Proxy`. Указывает прокси-сервер для запроса.
 
     Вы получите запрос, если коллекция PowerShell не является доверенным:
 
-        Untrusted repository
-        You are installing the modules from an untrusted repository. If you trust this repository, change its
-        InstallationPolicy value by running the Set-PSRepository cmdlet. Are you sure you want to install the modules from
-        'PSGallery'?
-        [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
+    ```output
+    Untrusted repository
+    You are installing the modules from an untrusted repository. 
+    If you trust this repository, change its InstallationPolicy value 
+    by running the Set-PSRepository cmdlet. Are you sure you want to 
+    install the modules from 'PSGallery'?
+    [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
+    ```
 
     Вы можете подтвердить это изменение и выполнить аудит всех Псрепоситориес, выполнив `Get-PSRepository` команду.
 
 4. Установите последнюю версию PowerShellGet.
     - Описание: Этот модуль содержит средства, используемые для получения других модулей из коллекция PowerShell. Версия 1.0.0.1 поставляется с Windows 10 и Windows Server. Требуется версия 1.6.0 или более поздняя. Чтобы определить, какая версия установлена, выполните `Get-Command -Module PowerShellGet` команду.
     - Ссылка: [Установка PowerShellGet](/powershell/scripting/gallery/installing-psget).
-    - Команда: `Install-Module -Name PowerShellGet`.
+    - Команда: `Install-Module -Name PowerShellGet` .
     - Дополнительные параметры:
         - `-Proxy`. Указывает прокси-сервер для запроса.
         - `-Force`. Обходит предупреждение "уже установлено" и устанавливает последнюю версию.
 
     Эта ошибка возникает, если вы не используете самую новую версию PowerShellGet:
-    
-        Install-Module : A parameter cannot be found that matches parameter name 'AllowPrerelease'.
-        At line:1 char:20
-        Install-Module abc -AllowPrerelease
-                           ~~~~~~~~~~~~~~~~
-            CategoryInfo          : InvalidArgument: (:) [Install-Module], ParameterBindingException
-            FullyQualifiedErrorId : NamedParameterNotFound,Install-Module
-    
+
+    ```output
+    Install-Module : A parameter cannot be found that matches parameter name 'AllowPrerelease'.
+    At line:1 char:20
+    Install-Module abc -AllowPrerelease
+                   ~~~~~~~~~~~~~~~~
+    CategoryInfo          : InvalidArgument: (:) [Install-Module], ParameterBindingException
+    FullyQualifiedErrorId : NamedParameterNotFound,Install-Module
+    ```
+
 5. Перезапустите PowerShell. Невозможно загрузить новую версию в текущем сеансе. Новые сеансы PowerShell будут загружать последнюю версию PowerShellGet.
 
 ## <a name="download-and-install-the-module-via-powershell-gallery"></a>Скачайте и установите модуль с помощью коллекция PowerShell
@@ -140,8 +144,8 @@ SerializationVersion           1.1.0.1
 1. Убедитесь, что выполнены все необходимые условия для коллекция PowerShell.
 2. Запустите PowerShell от имени администратора с политикой выполнения с повышенными правами.
 3. Установите модуль AZ. Аппликатионмонитор.
-    - Ссылка: [Install-Module](https://docs.microsoft.com/powershell/module/powershellget/install-module?view=powershell-6).
-    - Команда: `Install-Module -Name Az.ApplicationMonitor`.
+    - Ссылка: [Install-Module](/powershell/module/powershellget/install-module?view=powershell-6).
+    - Команда: `Install-Module -Name Az.ApplicationMonitor` .
     - Дополнительные параметры:
         - `-Proxy`. Указывает прокси-сервер для запроса.
         - `-AllowPrerelease`. Позволяет устанавливать пакеты Alpha и бета-версии.
@@ -154,7 +158,7 @@ SerializationVersion           1.1.0.1
 
 ### <a name="manually-download-the-latest-nupkg-file"></a>Скачайте последнюю версию файла nupkg вручную
 
-1. Перейдите в расположение https://www.powershellgallery.com/packages/Az.ApplicationMonitor.
+1. Перейдите по адресу https://www.powershellgallery.com/packages/Az.ApplicationMonitor.
 2. Выберите последнюю версию файла в таблице **журнала версий** .
 3. В разделе **Параметры установки**выберите **Загрузка вручную**.
 
@@ -166,10 +170,10 @@ SerializationVersion           1.1.0.1
 #### <a name="unzip-nupkg-as-a-zip-file-by-using-expand-archive-v1010"></a>Распакуйте nupkg как ZIP-файл с помощью команды "развернуть — Архив" (v 1.0.1.0)
 
 - Описание: Базовая версия Microsoft. PowerShell. Archive (v 1.0.1.0) не может распаковать файлы nupkg. Переименуйте файл с расширением ZIP.
-- Ссылка: [разверните-Archive](https://docs.microsoft.com/powershell/module/microsoft.powershell.archive/expand-archive?view=powershell-6).
+- Ссылка: [разверните-Archive](/powershell/module/microsoft.powershell.archive/expand-archive?view=powershell-6).
 - Команда:
 
-    ```
+    ```console
     $pathToNupkg = "C:\az.applicationmonitor.0.3.0-alpha.nupkg"
     $pathToZip = ([io.path]::ChangeExtension($pathToNupkg, "zip"))
     $pathToNupkg | rename-item -newname $pathToZip
@@ -180,10 +184,10 @@ SerializationVersion           1.1.0.1
 #### <a name="unzip-nupkg-by-using-expand-archive-v1100"></a>Распакуйте nupkg с помощью расширения-архива (v 1.1.0.0)
 
 - Описание: Используйте текущую версию расширения-архива для распаковки файлов nupkg без изменения расширения.
-- Ссылка: [разверните узел Archive](https://docs.microsoft.com/powershell/module/microsoft.powershell.archive/expand-archive?view=powershell-6) и [Microsoft. PowerShell. Archive](https://www.powershellgallery.com/packages/Microsoft.PowerShell.Archive/1.1.0.0).
+- Ссылка: [разверните узел Archive](/powershell/module/microsoft.powershell.archive/expand-archive?view=powershell-6) и [Microsoft. PowerShell. Archive](https://www.powershellgallery.com/packages/Microsoft.PowerShell.Archive/1.1.0.0).
 - Команда:
 
-    ```
+    ```console
     $pathToNupkg = "C:\az.applicationmonitor.0.2.1-alpha.nupkg"
     $pathInstalledModule = "$Env:ProgramFiles\WindowsPowerShell\Modules\az.applicationmonitor"
     Expand-Archive -LiteralPath $pathToNupkg -DestinationPath $pathInstalledModule
@@ -193,14 +197,14 @@ SerializationVersion           1.1.0.1
 Установите модуль PowerShell, загруженный вручную, в каталог PowerShell, чтобы он был обнаружен сеансами PowerShell.
 Дополнительные сведения см. [в разделе Установка модуля PowerShell](/powershell/scripting/developer/module/installing-a-powershell-module).
 
-Если вы устанавливаете модуль в любой другой каталог, вручную Импортируйте модуль с помощью [Import-Module](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/import-module?view=powershell-6).
+Если вы устанавливаете модуль в любой другой каталог, вручную Импортируйте модуль с помощью [Import-Module](/powershell/module/microsoft.powershell.core/import-module?view=powershell-6).
 
 > [!IMPORTANT] 
 > Библиотеки DLL будут устанавливаться через относительные пути.
 > Сохраните содержимое пакета в требуемом каталоге среды выполнения и убедитесь, что разрешения на доступ разрешают чтение, но не запись.
 
 1. Измените расширение на ZIP и извлеките содержимое пакета в нужный каталог установки.
-2. Найдите путь к файлу AZ. Аппликатионмонитор. PSD1.
+2. Найдите путь к файлу Az.ApplicationMonitor.psd1.
 3. Запустите PowerShell от имени администратора с политикой выполнения с повышенными правами.
 4. Загрузите модуль с помощью `Import-Module Az.ApplicationMonitor.psd1` команды.
     
@@ -212,24 +216,24 @@ SerializationVersion           1.1.0.1
 Команды PowerShell для загрузки и установки AZ. Аппликатионмонитор из коллекция PowerShell поддерживают `-Proxy` параметр.
 При написании сценариев установки ознакомьтесь с приведенными выше инструкциями.
 
-Пакету SDK для Application Insights потребуется отправить данные телеметрии приложения в корпорацию Майкрософт. Рекомендуется настроить параметры прокси-сервера для приложения в файле Web. config. Дополнительные сведения см. в разделе [Application Insights FAQ: passthrough прокси](https://docs.microsoft.com/azure/azure-monitor/app/troubleshoot-faq#proxy-passthrough).
+Пакету SDK для Application Insights потребуется отправить данные телеметрии приложения в корпорацию Майкрософт. Рекомендуется настроить параметры прокси-сервера для приложения в файле web.config. Дополнительные сведения см. в разделе [Application Insights FAQ: passthrough прокси](../faq.md#proxy-passthrough).
 
 
 ## <a name="enable-monitoring"></a>Включение мониторинга
 
 Используйте `Enable-ApplicationInsightsMonitoring` команду, чтобы включить мониторинг.
 
-Подробное описание использования этого командлета см. в [справочнике по API](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-api-reference#enable-applicationinsightsmonitoring) .
+Подробное описание использования этого командлета см. в [справочнике по API](./status-monitor-v2-api-reference.md#enable-applicationinsightsmonitoring) .
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
  Просмотр телеметрии:
 
 - [Изучите метрики](../../azure-monitor/platform/metrics-charts.md) для мониторинга производительности и использования.
 - [Поиск событий и журналов](../../azure-monitor/app/diagnostic-search.md) для диагностики проблем.
-- [Используйте аналитику](../../azure-monitor/app/analytics.md) для более сложных запросов.
+- [Используйте аналитику](../log-query/log-query-overview.md) для более сложных запросов.
 - [Создание панелей мониторинга](../../azure-monitor/app/overview-dashboard.md).
 
  Добавление данных телеметрии:

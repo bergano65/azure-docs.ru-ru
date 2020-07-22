@@ -1,23 +1,13 @@
 ---
 title: Фильтры разделов в служебной шине Azure | Документация Майкрософт
 description: В этой статье объясняется, как подписчики могут определить, какие сообщения они хотят получить из раздела, указав фильтры.
-services: service-bus-messaging
-documentationcenter: ''
-author: spelluru
-editor: ''
-ms.service: service-bus-messaging
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 04/16/2020
-ms.author: spelluru
-ms.openlocfilehash: 6e780268d4b8c1a512ce82b1ca10a2f6b7b894b7
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
-ms.translationtype: MT
+ms.date: 06/23/2020
+ms.openlocfilehash: b722c040248c199782f6c8dea020ae582762e102
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83125763"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85339961"
 ---
 # <a name="topic-filters-and-actions"></a>Фильтры и действия разделов
 
@@ -34,12 +24,12 @@ ms.locfileid: "83125763"
 -   *Фильтры корреляции*. **CorrelationFilter** содержит набор условий, которые сопоставляются с одним или несколькими из пользовательских и системных свойств для каждого поступающего сообщения. Обычно используется для сопоставления со свойством **correlationId** , но приложение также может выбрать сопоставление со следующими свойствами:
 
     - **ContentType**
-     - **Метка**
+     - **Label**
      - **MessageId**
      - **ReplyTo**
      - **ReplyToSessionId**
      - **SessionId** 
-     - **Кому**
+     - **Чтобы**
      - все определяемые пользователем свойства. 
      
      Совпадение регистрируется, когда значение свойства поступающего сообщения равно тому значению, которое указано в фильтре корреляции. Для строковых выражений при сравнении учитывается регистр. Если вы укажете несколько свойств для сравнения, фильтр объединяет эти условия логическим оператором И (AND). Это означает, что для регистрации совпадения должны выполняться все условия фильтра.
@@ -64,9 +54,9 @@ ms.locfileid: "83125763"
 
 
 > [!NOTE]
-> В настоящее время портал Azure не позволяет указывать правила фильтрации для подписок. Для определения правил подписки можно использовать любой из поддерживаемых пакетов SDK или шаблонов Azure Resource Manager. 
+> Поскольку портал Azure теперь поддерживает работу обозревателя служебной шины, фильтры подписки можно создавать и изменять на портале. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 См. следующие примеры: 
 
 - [.NET — руководство по отправке и получению с фильтрами](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/GettingStarted/BasicSendReceiveTutorialwithFilters/BasicSendReceiveTutorialWithFilters)

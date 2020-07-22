@@ -13,12 +13,12 @@ ms.workload: infrastructure
 ms.date: 07/12/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: cea89087742f1987f693b8bfb627bd71038a0c14
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 98ecb9ab208b6ead3944455b95f7fe6baa044d35
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77616920"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86525115"
 ---
 # <a name="sap-hana-large-instances-deployment"></a>Развертывание SAP HANA (крупные экземпляры) 
 
@@ -36,7 +36,7 @@ ms.locfileid: "77616920"
 - Для каждого региона развертывания Azure:
     - диапазон IP-адресов с маской /29 для подключений ER-P2P между виртуальными сетями Azure и крупными экземплярами HANA;
     - блок CIDR с маской /24 (используется для пула IP-адресов серверов крупных экземпляров HANA).
-    - Необязательно. при использовании [Global REACH ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-global-reach) для прямой маршрутизации из локальной среды в единицы крупных экземпляров Hana или между единицами крупных экземпляров Hana в разных регионах Azure необходимо зарезервировать еще один или 29 диапазон IP-адресов. Этот диапазон может не перекрываться с любыми другими диапазонами IP-адресов, определенными ранее.
+    - Необязательно. при использовании [Global REACH ExpressRoute](../../../expressroute/expressroute-global-reach.md) для прямой маршрутизации из локальной среды в единицы крупных экземпляров Hana или между единицами крупных экземпляров Hana в разных регионах Azure необходимо зарезервировать еще один или 29 диапазон IP-адресов. Этот диапазон может не перекрываться с любыми другими диапазонами IP-адресов, определенными ранее.
 - Значения диапазона IP-адресов, используемые в атрибуте адресного пространства виртуальной сети, каждой виртуальной сети Azure, которая будет подключаться к крупным экземплярам HANA.
 - Данные для каждой системы крупных экземпляров HANA:
   - Требуемое имя узла (в идеале с полным доменным именем).
@@ -53,4 +53,3 @@ ms.locfileid: "77616920"
 1. [Подключение виртуальных машин Azure к крупным экземплярам HANA](hana-connect-azure-vm-large-instances.md)
 2. [Подключение сети к большим экземплярам HANA ExpressRoute](hana-connect-vnet-express-route.md)
 3. [Дополнительные требования к сети (необязательно)](hana-additional-network-requirements.md).
-

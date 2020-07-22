@@ -1,17 +1,16 @@
 ---
 title: Краткое руководство. Резервное копирование виртуальной машины с помощью портала Azure
 description: В этом кратком руководстве вы узнаете, как создать хранилище Служб восстановления, включить защиту на виртуальной машине Azure и выполнить резервное копирование виртуальной машины с помощью портала Azure.
-ms.reviewer: saurse
 ms.devlang: azurecli
 ms.topic: quickstart
-ms.date: 02/06/2020
+ms.date: 05/12/2020
 ms.custom: mvc
-ms.openlocfilehash: 4bff53516447408486a6e40f2f7059ebc811aaa4
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 80944d99c51ae4880a40df8700a73d08a95efe77
+ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "79215332"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83656949"
 ---
 # <a name="back-up-a-virtual-machine-in-azure"></a>Резервное копирование виртуальной машины в Azure
 
@@ -70,7 +69,7 @@ ms.locfileid: "79215332"
 
 1. Выберите вариант **Резервное копирование** для виртуальной машины.
 
-2. Выберите **Дополнительно**, чтобы отобразить дополнительные параметры, а затем выберите **Остановить резервное копирование**.
+2. Выберите **Остановить резервное копирование**.
 
     ![Остановка резервного копирования виртуальной машины на портале Azure](./media/quick-backup-vm-portal/stop-backup.png)
 

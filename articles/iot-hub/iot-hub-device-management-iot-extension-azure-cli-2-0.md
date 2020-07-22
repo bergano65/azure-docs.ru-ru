@@ -11,10 +11,10 @@ ms.tgt_pltfrm: arduino
 ms.date: 01/16/2018
 ms.author: menchi
 ms.openlocfilehash: 88c3d1f4213b161d5e322349a7f0e1bc1dd952e7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80239644"
 ---
 # <a name="use-the-iot-extension-for-azure-cli-for-azure-iot-hub-device-management"></a>Управление устройствами центра Интернета вещей Azure с помощью расширения Интернета вещей для Azure CLI
@@ -51,7 +51,7 @@ ms.locfileid: "80239644"
 
 ## <a name="what-you-need"></a>Необходимые элементы
 
-* Заполните учебник [Raspberry Pi Online Simulator](iot-hub-raspberry-pi-web-simulator-get-started.md) или одно из учебников по устройствам. Например, [Raspberry Pi с Node. js](iot-hub-raspberry-pi-kit-node-get-started.md). Эти элементы охватывают следующие требования.
+* Пройдите одно из руководств по [использованию симулятора Raspberry Pi в подключенном режиме](iot-hub-raspberry-pi-web-simulator-get-started.md), например [Подключение онлайн-симулятора Raspberry Pi к Центру Интернета вещей Azure (Node.js)](iot-hub-raspberry-pi-kit-node-get-started.md). Эти элементы охватывают следующие требования.
 
   - Активная подписка Azure.
   - Центр Интернета вещей Azure в подписке;
@@ -61,7 +61,7 @@ ms.locfileid: "80239644"
 
 * [Python 2.7x или Python 3.x](https://www.python.org/downloads/)
 
-* Azure CLI. Если вам необходимо выполнить установку, см. статью [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). По крайней мере, Azure CLI версия должна быть 2.0.70 или выше. Для проверки используйте `az –version`.
+* Azure CLI. Если вам необходимо выполнить установку, см. статью [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Вам понадобится как минимум Azure CLI версии 2.0.70 или более поздней. Для проверки используйте `az –version`.
 
 [!INCLUDE [iot-hub-cli-version-info](../../includes/iot-hub-cli-version-info.md)]
 
@@ -138,7 +138,7 @@ az iot hub query --hub-name <your hub name> \
   --query-command "SELECT * FROM devices WHERE tags.role != 'temperature&humidity'"
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы узнали, как отслеживать сообщения, отправляемые из устройства Интернета вещей в облако Центра Интернета вещей, и отправлять сообщения из этого облака на устройство.
 

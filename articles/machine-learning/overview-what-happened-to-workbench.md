@@ -5,17 +5,16 @@ description: Узнайте о возможностях, доступных бе
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.topic: conceptual
+ms.topic: how-to
 ms.reviewer: jmartens
 author: j-martens
 ms.author: jmartens
 ms.date: 03/05/2020
-ms.openlocfilehash: 9b49eb6237346a76903202a118331383c5a8f623
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 53f8fb79e965c09ad59ada085b9cfd27014bd140
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78944252"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84433069"
 ---
 # <a name="what-happened-to-azure-machine-learning-workbench"></a>Что случилось с Azure Machine Learning Workbench?
 
@@ -87,7 +86,7 @@ run = exp.submit(source_directory=script_folder,
 
 В последней версии модели развертываются как веб-службы в экземпляры контейнеров Azure (ACI) или в кластеры службы Azure Kubernetes (AKS). Можно также выполнить развертывание в FPGA и Azure IoT Edge.
 
-Дополнительные сведения см. в следующих статьях:
+Дополнительные сведения содержатся в следующих статьях:
 + [Развертывание моделей с помощью Службы машинного обучения Azure](how-to-deploy-and-where.md)
 + [Учебник. Развертывание моделей с помощью Машинное обучение Azure](tutorial-deploy-models-with-aml.md)
 

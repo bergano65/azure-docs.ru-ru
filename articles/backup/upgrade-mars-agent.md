@@ -4,10 +4,9 @@ description: Узнайте, как обновить агент Службы в�
 ms.topic: conceptual
 ms.date: 03/03/2020
 ms.openlocfilehash: 49daf438b855d19961519d93b6c3ec535de4756f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "78672895"
 ---
 # <a name="upgrade-the-microsoft-azure-recovery-services-mars-agent"></a>Обновление агента Службы восстановления Microsoft Azure (MARS)
@@ -71,7 +70,7 @@ ms.locfileid: "78672895"
 
     ![Мастер обновления агента Службы восстановления Microsoft Azure](./media/upgrade-mars-agent/agent-upgrade-wizard.png)
 
-1. Щелкните **Далее**.
+1. Нажмите кнопку **Далее**.
 
 1. Нажмите кнопку **Обновить**.
 

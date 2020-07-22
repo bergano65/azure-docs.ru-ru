@@ -80,8 +80,10 @@
           href: virtual-network-for-azure-services.md
     - name: Службы IP
       items:
-        - name: Назначение IP-адресов
-          href: virtual-network-ip-addresses-overview-arm.md
+        - name: Общедоступные IP-адреса.
+          href: public-ip-addresses.md
+        - name: Частные IP-адреса
+          href: private-ip-addresses.md
         - name: Префикс общедоступного IP-адреса
           href: public-ip-address-prefix.md
         - name: IPv6 для виртуальной сети Azure

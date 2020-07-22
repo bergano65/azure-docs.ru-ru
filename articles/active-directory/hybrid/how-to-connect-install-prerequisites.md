@@ -11,17 +11,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
-ms.date: 02/27/2020
+ms.topic: how-to
+ms.date: 06/25/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6446b039d90e04c9fe7fca28b361f620183a0292
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 11d5c1bb133f0aea241fbc55f96ab5f8818e5ed6
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80875747"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86518119"
 ---
 # <a name="prerequisites-for-azure-ad-connect"></a>Необходимые условия для Azure AD Connect
 В этой статье описаны необходимые условия и требования к оборудованию для Azure AD Connect.
@@ -34,7 +34,7 @@ ms.locfileid: "80875747"
   * [Портал Azure](https://portal.azure.com).
   * [Портал Office](https://portal.office.com).  
 * [Добавьте и подтвердите домен](../active-directory-domains-add-azure-portal.md) , который вы планируете использовать в Azure AD. Например, если вы планируете использовать для своих пользователей домен contoso.com, убедитесь, что он был подтвержден и вы используете не просто домен по умолчанию contoso.onmicrosoft.com.
-* Клиент Azure AD по умолчанию может вмещать 50 тыс. объектов. После подтверждения домена этот предел увеличивается до 300 тыс. объектов. Если вам нужно еще больше объектов в Azure AD, необходимо отправить обращение в службу технической поддержки, чтобы дополнительно увеличить данный предел. Если вам необходимо более 500 тыс. объектов, то потребуется лицензия, например на Office 365, Azure AD Basic, Azure AD Premium или Enterprise Mobility + Security.
+* Клиент Azure AD по умолчанию может вмещать 50 тыс. объектов. После подтверждения домена этот предел увеличивается до 300 тыс. объектов. Если вам нужно еще больше объектов в Azure AD, необходимо отправить обращение в службу технической поддержки, чтобы дополнительно увеличить данный предел. Если вам требуется более 500 тыс объектов, вам потребуется лицензия, например Office 365, Azure AD Premium, Enterprise Mobility and Security.
 
 ### <a name="prepare-your-on-premises-data"></a>Подготовка локальных данных
 * Прежде чем выполнять синхронизацию с Azure AD и Office 365, воспользуйтесь инструментом [IdFix](https://support.office.com/article/Install-and-run-the-Office-365-IdFix-tool-f4bd2439-3e41-4169-99f6-3fabdfa326ac) для выявления в каталоге ошибок, таких как повторяющиеся записи или проблемы с форматированием.
@@ -48,34 +48,35 @@ ms.locfileid: "80875747"
 * Рекомендуется [включить корзину Active Directory](how-to-connect-sync-recycle-bin.md).
 
 ### <a name="azure-ad-connect-server"></a>Сервер Azure AD Connect
->[!IMPORTANT]
->Сервер Azure AD Connect содержит важные данные идентификации и должен рассматриваться как компонент уровня 0, как описано в [модели административного уровня Active Directory](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material) .
+Сервер Azure AD Connect содержит важные данные удостоверения. Важно, чтобы административный доступ к этому серверу был надежно защищен, следуя рекомендациям, описанным в статье [Защита привилегированного доступа](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access). 
 
-* Службу Azure AD Connect нельзя установить на версии Small Business Server или Windows Server Essentials, которые предшествуют версиям 2019 года (поддерживается Windows Server Essentials 2019). Сервер должен использовать Windows Server Standard или более поздней версии.
-* Установка Azure AD Connect на контроллере домена не рекомендуется из-за методов обеспечения безопасности и более ограниченных параметров, которые могут препятствовать правильной установке Azure AD Connect.
-* На сервере Azure AD Connect должен быть установлен полный графический интерфейс пользователя. Установка на ядро сервера **не поддерживается**.
->[!IMPORTANT]
->Установка Azure AD Connect на Small Business Server, Server Essentials или Server Core не поддерживается.
+Azure AD Connect сервер должен рассматриваться как компонент уровня 0, как описано в [модели административного уровня Active Directory](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material).  
 
-* Azure AD Connect должны быть установлены на Windows Server 2012 или более поздней версии. Этот сервер должен быть присоединен к домену и может быть контроллером домена или рядовым сервером.
-* Azure AD Connect сервер не должен включать групповая политика записи PowerShell, если для управления конфигурацией ADFS используется мастер Azure AD Connect. Вы можете включить транскрипцию PowerShell, если используете мастер Azure AD Connect для управления конфигурацией синхронизации.
-* При развертывании служб федерации Active Directory (AD FS) серверы, на которых будут установлены службы AD FS или прокси-служба веб-приложения, должны работать под управлением Windows Server 2012 R2 или более поздней версии. [удаленное управление Windows](#windows-remote-management) .
-* Если развертывается службы федерации Active Directory (AD FS), необходимы [сертификаты TLS/SSL](#tlsssl-certificate-requirements).
-* При развертывании служб федерации Active Directory необходимо настроить [разрешение имен](#name-resolution-for-federation-servers).
-* Если для глобальных администраторов включен MFA, URL-адрес **https://secure.aadcdn.microsoftonline-p.com** должен находиться в списке надежных сайтов. Если он не добавлен, вам будет предложено добавить этот сайт в список надежных сайтов перед появлением запроса MFA. Добавить его в список надежных сайтов можно в Internet Explorer.
-* Корпорация Майкрософт рекомендует повысить безопасность сервера Azure AD Connect, чтобы уменьшить область угроз безопасности для этого критического компонента ИТ – среды.  Следуя приведенным ниже рекомендациям, вы уменьшите риски безопасности Организации.
+Дополнительные сведения о защите среды Active Directory см. в статье рекомендации [по обеспечению безопасности Active Directory](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/best-practices-for-securing-active-directory).
 
-* Разверните Azure AD Connect на присоединенном к домену сервере и ограничьте административный доступ к администраторам домена или другим жестко управляемым группам безопасности.
+#### <a name="installation-prerequisites"></a>Предварительные требования для установки 
 
-Дополнительные сведения см. на следующих ресурсах: 
+- Azure AD Connect должны быть установлены в домене, присоединенном к Windows Server 2012 или более поздней версии. 
+- Службу Azure AD Connect нельзя установить на версии Small Business Server или Windows Server Essentials, которые предшествуют версиям 2019 года (поддерживается Windows Server Essentials 2019). Сервер должен использовать Windows Server Standard или более поздней версии.  
+- На сервере Azure AD Connect должен быть установлен полный графический интерфейс пользователя. Установка Azure AD Connect в Windows Server Core не поддерживается. 
+- Azure AD Connect сервер не должен включать групповая политика записи PowerShell, если для управления конфигурацией ADFS используется мастер Azure AD Connect. Вы можете включить транскрипцию PowerShell, если используете мастер Azure AD Connect для управления конфигурацией синхронизации. 
+- Если развертывается службы федерации Active Directory (AD FS), то: 
+    - серверы, на которых установлены AD FS или прокси-служба веб – приложения, должны иметь версию Windows Server 2012 R2 или более позднюю. удаленное управление Windows . 
+    - необходимо настроить сертификаты TLS/SSL.  См. раздел [Управление протоколами SSL/TLS и комплектами шифров для AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/manage-ssl-protocols-in-ad-fs) и [управления SSL-сертификатами в AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/manage-ssl-certificates-ad-fs-wap).
+    - необходимо настроить разрешение имен. 
+- Если для глобальных администраторов включен MFA, URL-адрес https://secure.aadcdn.microsoftonline-p.com **должен** находиться в списке надежных сайтов. Если он не добавлен, вам будет предложено добавить этот сайт в список надежных сайтов перед появлением запроса MFA. Добавить его в список надежных сайтов можно в Internet Explorer.  
 
-* [Защита групп администраторов](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/appendix-g--securing-administrators-groups-in-active-directory)
+#### <a name="hardening-your-azure-ad-connect-server"></a>Усиление защиты сервера Azure AD Connect 
+Корпорация Майкрософт рекомендует повысить безопасность сервера Azure AD Connect, чтобы сократить направления атак на систему безопасности этого критически важного компонента ИТ-среды. Следуйте приведенным ниже рекомендациям, чтобы устранить некоторые угрозы безопасности в Организации.
 
-* [Защита встроенных учетных записей администраторов](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/appendix-d--securing-built-in-administrator-accounts-in-active-directory)
+- Необходимо рассматривать Azure AD Connect как контроллер домена и другие ресурсы уровня 0:https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material 
+- Административный доступ к серверу Azure AD Connect следует ограничить только администраторами домена или другими жестко управляемыми группами безопасности.
+- Необходимо создать [выделенную учетную запись для всех сотрудников с привилегированным доступом](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access). Администраторы не должны просматривать веб-страницы, проверять свою электронную почту и выполнять обычную работу через высоко-привилегированные учетные записи.
+- Следуйте инструкциям, приведенным в статье [Защита привилегированного доступа](https://docs.microsoft.com/windows-server/security/credentials-protection-and-management/how-to-configure-protected-accounts). 
+- Необходимо убедиться, что каждый компьютер имеет уникальный пароль локального администратора. [Решение "пароль локального администратора" (Lap)](https://support.microsoft.com/help/3062591/microsoft-security-advisory-local-administrator-password-solution-laps) может настраивать уникальные случайные пароли на каждой рабочей станции, а сервер сохраняет их в Active Directory (AD), защищенном ACL. Только допустимые, авторизованные пользователи могут читать или запрашивать сброс паролей учетной записи локального администратора. Вы можете получить Lap для использования на рабочих станциях и серверах из [центра загрузки Майкрософт](https://www.microsoft.com/download/details.aspx?id=46899#:~:text=The%20%22Local%20Administrator%20Password%20Solution,it%20or%20request%20its%20reset.). Дополнительные рекомендации по работе с средой с Lap и лапы можно найти в статье [эксплуатационные стандарты на основе принципа чистого источника](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material#operational-standards-based-on-clean-source-principle). 
+- Для всех сотрудников с привилегированным доступом к информационным системам Организации следует реализовать рабочие станции с выделенным [привилегированным доступом (привилегированным доступом)](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations) . 
+- Вы должны следовать этим [дополнительным рекомендациям](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/reducing-the-active-directory-attack-surface) , чтобы уменьшить область атаки Active Directory среде.
 
-* [Повышение безопасности и непрерывность за счет уменьшения количества областей атаки](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access#2-reduce-attack-surfaces )
-
-* [Сокращение Active Directory уязвимой зоны](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/reducing-the-active-directory-attack-surface)
 
 ### <a name="sql-server-used-by-azure-ad-connect"></a>SQL Server, используемый Azure AD Connect
 * Azure AD Connect требуется база данных SQL Server для хранения учетных данных. По умолчанию устанавливается SQL Server 2012 Express LocalDB (облегченная версия SQL Server Express). Размер экземпляра SQL Server Express может достигать 10 ГБ, позволяя управлять примерно 100 000 объектов. Если вам нужно управлять более значительным числом объектов каталога, в мастере установки укажите другую установку SQL Server. Тип установки SQL Server может повлиять на [производительность Azure AD Connect](https://docs.microsoft.com/azure/active-directory/hybrid/plan-connect-performance-factors#sql-database-factors).
@@ -110,7 +111,7 @@ ms.locfileid: "80875747"
     </system.net>
 ```
 
-* Если на прокси-сервере требуется аутентификация, то [учетная запись службы](reference-connect-accounts-permissions.md#adsync-service-account) должна находиться в домене. Кроме того, во время установки вам необходимо указать путь к [настраиваемой учетной записи службы](how-to-connect-install-custom.md#install-required-components). Кроме того, требуется другое изменение в файле Machine. config. При этом изменении в файле Machine. config мастер установки и модуль синхронизации отвечают на запросы проверки подлинности от прокси-сервера. На всех страницах мастера установки, за исключением страницы **Настройка**, используются учетные данные пользователя, выполнившего вход. На странице **Настройка** перед завершением работы мастера установки контекст переключается на созданную вами [учетную запись службы](reference-connect-accounts-permissions.md#adsync-service-account). Раздел machine.config должен выглядеть следующим образом.
+* Если на прокси-сервере требуется аутентификация, то [учетная запись службы](reference-connect-accounts-permissions.md#adsync-service-account) должна находиться в домене. Кроме того, во время установки вам необходимо указать путь к [настраиваемой учетной записи службы](how-to-connect-install-custom.md#install-required-components). Кроме того, для machine.config потребуется другое изменение. После этого изменения в machine.config мастер установки и модуль синхронизации отвечают на запросы проверки подлинности от прокси-сервера. На всех страницах мастера установки, за исключением страницы **Настройка**, используются учетные данные пользователя, выполнившего вход. На странице **Настройка** перед завершением работы мастера установки контекст переключается на созданную вами [учетную запись службы](reference-connect-accounts-permissions.md#adsync-service-account). Раздел machine.config должен выглядеть следующим образом.
 
 ```
     <system.net>
@@ -129,17 +130,17 @@ ms.locfileid: "80875747"
 Дополнительную информацию об [элементе defaultProxy](https://msdn.microsoft.com/library/kd3cf2ex.aspx) вы можете найти на сайте MSDN.  
 В случае проблем с подключением изучите статью [Устранение неполадок подключения в Azure AD Connect](tshoot-connect-connectivity.md).
 
-### <a name="other"></a>Другой
+### <a name="other"></a>Другое
 * Необязательно: тестовая учетная запись пользователя для проверки синхронизации.
 
 ## <a name="component-prerequisites"></a>Предварительные требования к компонентам
 ### <a name="powershell-and-net-framework"></a>PowerShell и .NET Framework
 Работа Azure AD Connect основана на Microsoft PowerShell и .NET Framework 4.5.1. На сервере должна быть установлена эта или более поздняя версия. В зависимости от установленной версии Windows Server выполните следующие действия.
 
-* Windows Server 2012 R2
+* Windows Server 2012 R2;
   * Microsoft PowerShell устанавливается по умолчанию. Никаких действий не требуется.
   * Платформа .NET Framework 4.5.1 и более поздних версий распространяется через Центр обновления Windows. Убедитесь, что установлены последние обновления для Windows Server в панели управления.
-* Windows Server 2012
+* Windows Server 2012
   * Последняя версия Microsoft PowerShell доступна в составе платформы **Windows Management Framework 4.0**, которую можно скачать из [центра загрузки Майкрософт](https://www.microsoft.com/downloads).
   * .NET Framework 4.5.1 и более поздние версии платформы доступны в [центре загрузки Майкрософт](https://www.microsoft.com/downloads).
 
@@ -151,7 +152,7 @@ ms.locfileid: "80875747"
     ```
 2. For all operating systems, set this registry key and restart the server.
     ```
-    HKEY_LOCAL_MACHINE \Софтваре\микрософт\.NETFramework\v4.0.30319 "SchUseStrongCrypto" = DWORD: 00000001
+    HKEY_LOCAL_MACHINE \Софтваре\микрософт \. NETFramework\v4.0.30319 "SchUseStrongCrypto" = DWORD: 00000001
     ```
 4. If you also want to enable TLS 1.2 between the sync engine server and a remote SQL Server, then make sure you have the required versions installed for [TLS 1.2 support for Microsoft SQL Server](https://support.microsoft.com/kb/3135244).
 

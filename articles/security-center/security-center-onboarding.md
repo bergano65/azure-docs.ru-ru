@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/19/2019
 ms.author: memildin
-ms.openlocfilehash: be26a9d4c66412518079de303ac0764d979c3e7c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: f14f5412b701ce055713fee347175c2dffd5c5b7
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77912058"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86529423"
 ---
 # <a name="onboarding-to-azure-security-center-standard-for-enhanced-security"></a>Подключение к центру безопасности Azure уровня "Стандартный" для повышения уровня безопасности
 Обновите центр безопасности до уровня "Стандартный", чтобы воспользоваться преимуществами управления повышенной безопасностью и защиты от угроз для гибридных облачных рабочих нагрузок. Пробную версию уровня "Стандартный" можно использовать бесплатно. Дополнительные сведения см. на [странице с ценами](https://azure.microsoft.com/pricing/details/security-center/) на центр безопасности.
@@ -105,7 +105,7 @@ ms.locfileid: "77912058"
 
    Колонка **Прямой агент** содержит ссылку для загрузки агента и ключей Windows или Linux для идентификатора рабочей области, используемого при настройке агента.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Из этой статьи вы узнали, как подключить ресурсы Azure и сторонние ресурсы, чтобы получить преимущества расширенной безопасности центра безопасности. Чтобы расширить возможности работы с подключаемыми ресурсами, ознакомьтесь со следующими статьями:
 
 - [Включить сбор данных](security-center-enable-data-collection.md)

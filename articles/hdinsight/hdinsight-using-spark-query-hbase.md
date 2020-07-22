@@ -5,25 +5,25 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/20/2020
-ms.openlocfilehash: e5d9d4f215752d95ee1d676e8a5b126b6d0d3ab2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 3ddb8734a3d15a6cd5f4a43ee069d6364f7523ed
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82190628"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86087492"
 ---
 # <a name="use-apache-spark-to-read-and-write-apache-hbase-data"></a>Чтение и запись данных Apache HBase с помощью Apache Spark
 
 Обычно для запроса Apache HBase применяется низкоуровневый API (сканирует, получает и помещает) или синтаксис SQL, использующий Apache Phoenix. Apache также предоставляет соединитель Apache Spark HBase. Соединитель — это удобная и производительная альтернатива для запроса и изменения данных, хранящихся в HBase.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Предварительные условия
 
 * Два отдельных кластера HDInsight развернуты в одной [виртуальной сети](./hdinsight-plan-virtual-network-deployment.md). Одна HBase и одна Spark с установленным как минимум Spark 2,1 (HDInsight 3,6). Дополнительные сведения см. в статье [Создание кластеров под управлением Linux в HDInsight с помощью портала Azure](hdinsight-hadoop-create-linux-clusters-portal.md).
 
-* Схема универсального кода ресурса (URI) для основного хранилища кластеров. Эта схема будет wasb://для хранилища BLOB-объектов Azure `abfs://` , для Azure Data Lake Storage 2-го поколения или adl://для Azure Data Lake Storage 1-го поколения. Если для хранилища BLOB-объектов включено безопасное перемещение, URI будет иметь `wasbs://`значение.  См. также сведения о [безопасной передаче](../storage/common/storage-require-secure-transfer.md).
+* Схема универсального кода ресурса (URI) для основного хранилища кластеров. Эта схема будет wasb://для хранилища BLOB-объектов Azure, `abfs://` для Azure Data Lake Storage 2-го поколения или ADL://для Azure Data Lake Storage 1-го поколения. Если для хранилища BLOB-объектов включено безопасное перемещение, URI будет иметь значение `wasbs://` .  См. также сведения о [безопасной передаче](../storage/common/storage-require-secure-transfer.md).
 
 ## <a name="overall-process"></a>Общий процесс
 
@@ -40,7 +40,7 @@ ms.locfileid: "82190628"
 
 На этом шаге вы создадите и заполните таблицу в Apache HBase, которую затем можно будет запрашивать с помощью Spark.
 
-1. Используйте `ssh` команду для подключения к кластеру HBase. Измените приведенную ниже команду, `HBASECLUSTER` заменив именем кластера HBase, а затем введите следующую команду:
+1. Используйте `ssh` команду для подключения к кластеру HBase. Измените приведенную ниже команду, заменив `HBASECLUSTER` именем кластера HBase, а затем введите следующую команду:
 
     ```cmd
     ssh sshuser@HBASECLUSTER-ssh.azurehdinsight.net
@@ -52,7 +52,7 @@ ms.locfileid: "82190628"
     hbase shell
     ```
 
-3. Используйте команду `create` , чтобы создать таблицу HBase с семейством из двух столбцов. Введите следующую команду:
+3. Используйте `create` команду, чтобы создать таблицу HBase с семейством из двух столбцов. Введите следующую команду:
 
     ```hbase
     create 'Contacts', 'Personal', 'Office'
@@ -77,13 +77,13 @@ ms.locfileid: "82190628"
     exit
     ```
 
-## <a name="copy-hbase-sitexml-to-spark-cluster"></a>Копирование файл HBase-site. XML в кластер Spark
+## <a name="copy-hbase-sitexml-to-spark-cluster"></a>Копирование hbase-site.xml в кластер Spark
 
-Скопируйте файл файл HBase-site. XML из локального хранилища в корневую папку хранилища по умолчанию кластера Spark.  Измените приведенную ниже команду, чтобы отразить конфигурацию.  Затем из открытого сеанса SSH в кластер HBase введите команду:
+Скопируйте hbase-site.xml из локального хранилища в корневую папку хранилища по умолчанию кластера Spark.  Измените приведенную ниже команду, чтобы отразить конфигурацию.  Затем из открытого сеанса SSH в кластер HBase введите команду:
 
 | Значение синтаксиса | Новое значение|
 |---|---|
-|[Схема универсального кода ресурса (URI)](hdinsight-hadoop-linux-information.md#URI-and-scheme) | Измените в соответствии с хранилищем.  Приведенный ниже синтаксис предназначен для хранилища BLOB-объектов с включенной безопасной переносю.|
+|[Схема URI](hdinsight-hadoop-linux-information.md#URI-and-scheme) | Измените в соответствии с хранилищем.  Приведенный ниже синтаксис предназначен для хранилища BLOB-объектов с включенной безопасной переносю.|
 |`SPARK_STORAGE_CONTAINER`|Замените на имя контейнера хранилища по умолчанию, используемое для кластера Spark.|
 |`SPARK_STORAGE_ACCOUNT`|Замените именем учетной записи хранения по умолчанию, используемой для кластера Spark.|
 
@@ -99,13 +99,13 @@ exit
 
 ## <a name="put-hbase-sitexml-on-your-spark-cluster"></a>Помещение файла hbase-site.xml в кластер Spark
 
-1. Подключитесь к головному узлу кластера Spark с помощью SSH. Измените приведенную ниже команду, `SPARKCLUSTER` заменив именем кластера Spark, а затем введите следующую команду:
+1. Подключитесь к головному узлу кластера Spark с помощью SSH. Измените приведенную ниже команду, заменив `SPARKCLUSTER` именем кластера Spark, а затем введите следующую команду:
 
     ```cmd
     ssh sshuser@SPARKCLUSTER-ssh.azurehdinsight.net
     ```
 
-2. Введите следующую команду, чтобы скопировать `hbase-site.xml` данные из хранилища по умолчанию кластера Spark в папку конфигурации Spark 2 в локальном хранилище кластера:
+2. Введите следующую команду, чтобы скопировать данные `hbase-site.xml` из хранилища по умолчанию кластера Spark в папку конфигурации Spark 2 в локальном хранилище кластера:
 
     ```bash
     sudo hdfs dfs -copyToLocal /hbase-site.xml /etc/spark2/conf
@@ -113,15 +113,51 @@ exit
 
 ## <a name="run-spark-shell-referencing-the-spark-hbase-connector"></a>Запуск оболочки Shell со ссылкой на соединитель Spark HBase
 
+После выполнения предыдущего шага вы сможете запустить оболочку Spark, указав соответствующую версию соединителя Spark HBase. Чтобы найти последнюю подходящую версию ядра для соединителя Spark HBase для вашего кластера, см. раздел [репозиторий ШК Core](https://repo.hortonworks.com/content/groups/public/com/hortonworks/shc/shc-core/).
+
+Например, в следующей таблице перечислены две версии и соответствующие команды, которые использует команда HDInsight. Вы можете использовать те же версии для кластеров, если версии HBase и Spark совпадают с указанными в таблице. 
+
+
 1. В открытом сеансе SSH в кластере Spark введите следующую команду, чтобы запустить оболочку Spark:
 
+    |Версия Spark| Версия HDI HBase  | Версия шк    |  Get-Help  |
+    | :-----------:| :----------: | :-----------: |:----------- |
+    |      2.1    | HDI 3,6 (HBase 1,1) | 1.1.0.3.1.2.2-1    | `spark-shell --packages com.hortonworks:shc-core:1.1.1-2.1-s_2.11 --repositories https://repo.hortonworks.com/content/groups/public/` |
+    |      2.4    | HDI 4,0 (HBase 2,0) | 1.1.1-2.1-s_2.11  | `spark-shell --packages com.hortonworks.shc:shc-core:1.1.0.3.1.2.2-1 --repositories http://repo.hortonworks.com/content/groups/public/` |
+
+2. Не закрывайте этот экземпляр оболочки Spark и продолжайте [определять каталог и запрос](#define-a-catalog-and-query). Если вы не нашли JAR, соответствующие вашим версиям, в репозитории ШК Core, продолжайте чтение. 
+
+Вы можете создать JAR непосредственно из ветви GitHub [Spark-HBase-Connector](https://github.com/hortonworks-spark/shc) . Например, если вы используете Spark 2,3 и HBase 1,1, выполните следующие действия:
+
+1. Клонируйте репозиторий:
+
     ```bash
-    spark-shell --packages com.hortonworks:shc-core:1.1.1-2.1-s_2.11 --repositories https://repo.hortonworks.com/content/groups/public/
-    ```  
+    git clone https://github.com/hortonworks-spark/shc
+    ```
+    
+2. Перейдите к ветви-2,3:
 
-2. Оставьте открытым экземпляр оболочки Spark и перейдите к следующему шагу.
+    ```bash
+    git checkout branch-2.3
+    ```
 
-## <a name="define-a-catalog-and-query"></a>Определение каталога и отправка запроса
+3. Выполните сборку из ветви (создает JAR-файл):
+
+    ```bash
+    mvn clean package -DskipTests
+    ```
+    
+3. Выполните следующую команду (обязательно измените имя JAR-файла, соответствующее созданному JAR-файлу):
+
+    ```bash
+    spark-shell --jars <path to your jar>,/usr/hdp/current/hbase-client/lib/htrace-core-3.1.0-incubating.jar,/usr/hdp/current/hbase-client/lib/hbase-client.jar,/usr/hdp/current/hbase-client/lib/hbase-common.jar,/usr/hdp/current/hbase-client/lib/hbase-server.jar,/usr/hdp/current/hbase-client/lib/hbase-protocol.jar,/usr/hdp/current/hbase-client/lib/htrace-core-3.1.0-incubating.jar
+    ```
+    
+4. Не закрывайте этот экземпляр оболочки Spark и переходите к следующему разделу. 
+
+
+
+## <a name="define-a-catalog-and-query"></a>Определение каталога и запроса
 
 На этом этапе вы определяете объект каталога, который сопоставляет схему из Spark с Apache HBase.  
 
@@ -150,11 +186,11 @@ exit
     |}""".stripMargin
     ```
 
-    Код выполняет следующие действия:  
+    Код.  
 
-     а. Определите схему каталога для таблицы HBase с именем `Contacts`.  
-     b. Определите rowkey как `key` и сопоставьте имена столбцов, используемые в Spark, с семейством столбцов, именем столбца и типом столбца, используемыми в HBase.  
-     c. rowkey также должен быть определен как именованный столбец (`rowkey`), который содержит определенное семейство столбцов `cf` из `rowkey`.  
+    1. Определяет схему каталога для таблицы HBase с именем `Contacts` .  
+    1. Определяет RowKey как `key` и сопоставляет имена столбцов, используемых в Spark, с семейством столбцов, именем столбца и типом столбца, используемым в HBase.  
+    1. Подробно определяет RowKey как именованный столбец ( `rowkey` ), имеющий определенное семейство столбцов `cf` `rowkey` .  
 
 1. Введите следующую команду, чтобы определить метод, который предоставляет кадр данных для `Contacts` таблицы в HBase:
 
@@ -267,6 +303,6 @@ exit
     :q
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Соединитель Apache Spark HBase](https://github.com/hortonworks-spark/shc)

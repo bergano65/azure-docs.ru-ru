@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.service: iot-central
 services: iot-central
 ms.openlocfilehash: 7c708268eaeade1cfb625c73ff8758a1941ff5b8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80157455"
 ---
 # <a name="build-end-to-end-solution-with-azure-iot-central-and-dynamics-365-field-service"></a>Создание комплексного решения с помощью Azure IoT Central и службы Dynamics 365 Field Service 
@@ -32,7 +32,7 @@ ms.locfileid: "80157455"
 * Панель мониторинга устройств IoT Central Azure можно обновить с помощью соответствующей службы и сведений о расписании.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше о [шаблонах IoT Central для государственных организаций](./overview-iot-central-government.md).
 * Дополнительные сведения об [IoT Central](https://docs.microsoft.com/azure/iot-central/core/overview-iot-central)
 * Дополнительные сведения о службах [Dynamics 365 Field Service](https://docs.microsoft.com/dynamics365/field-service/cfs-iot-overview)

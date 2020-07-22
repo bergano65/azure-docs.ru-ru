@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 12/03/2018
 ms.reviewer: dariac
 ms.custom: seodec18
-ms.openlocfilehash: 9f18eef607a5f655aecc0b6ebe1c85a239b34192
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 693e552c8743b435fac6fda9d5ab023be5d9adeb
+ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "77482978"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86221142"
 ---
 # <a name="sync-content-from-a-cloud-folder-to-azure-app-service"></a>Синхронизация содержимого из папки в облаке со службами приложений Azure
 В этой статье показано, как синхронизировать содержимое [службы приложений Azure](https://go.microsoft.com/fwlink/?LinkId=529714) из Dropbox и OneDrive. 
@@ -22,13 +22,13 @@ ms.locfileid: "77482978"
 
 Чтобы включить синхронизацию содержимого, перейдите на страницу приложения службы приложений на [портале Azure](https://portal.azure.com).
 
-В меню слева щелкните **центр** > **развертывания OneDrive** или **Dropbox** > **авторизовать**. Следуйте инструкциям авторизации. 
+В меню слева щелкните **центр развертывания**  >  **OneDrive** или **Dropbox**  >  **авторизовать**. Следуйте инструкциям авторизации. 
 
-![](media/app-service-deploy-content-sync/choose-source.png)
+![Показывает, как авторизовать OneDrive или Dropbox в центре развертывания портал Azure.](media/app-service-deploy-content-sync/choose-source.png)
 
 Необходимо пройти авторизацию только один раз в OneDrive или Dropbox. Если авторизация уже пройдена, просто щелкните **Продолжить**. Авторизованную учетную запись OneDrive или Dropbox можно изменить, щелкнув **Изменить учетную запись**.
 
-![](media/app-service-deploy-content-sync/continue.png)
+![Здесь показано, как изменить удостоверенную учетную запись OneDrive или Dropbox в центре развертывания портал Azure.](media/app-service-deploy-content-sync/continue.png)
 
 На странице **Настройка** выберите папку, которую необходимо синхронизировать. Эта папка создается в следующий указанный путь к содержимому в OneDrive или Dropbox. 
    
@@ -43,7 +43,7 @@ ms.locfileid: "77482978"
 
 Если необходимо синхронизировать содержимое в папке облака с App Service, вернитесь в **Центр развертывания** и нажмите кнопку **Синхронизировать**.
 
-![](media/app-service-deploy-content-sync/synchronize.png)
+![Здесь показано, как синхронизировать облачную папку со службой приложений.](media/app-service-deploy-content-sync/synchronize.png)
    
    > [!NOTE]
    > Из-за основных различий в интерфейсах API **OneDrive для бизнеса** пока не поддерживается. 
@@ -54,13 +54,13 @@ ms.locfileid: "77482978"
 
 Чтобы отключить синхронизацию содержимого, перейдите на страницу приложения службы приложений в [портале Azure](https://portal.azure.com).
 
-В меню слева щелкните **центр** > развертывания**Отключить**.
+В меню слева щелкните **центр развертывания**  >  **Отключить**.
 
-![](media/app-service-deploy-content-sync/disable.png)
+![Показано, как отключить синхронизацию облачных папок с приложением службы приложений в портал Azure.](media/app-service-deploy-content-sync/disable.png)
 
 [!INCLUDE [What happens to my app during deployment?](../../includes/app-service-deploy-atomicity.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [развертывание из локального репозитория Git](deploy-local-git.md)

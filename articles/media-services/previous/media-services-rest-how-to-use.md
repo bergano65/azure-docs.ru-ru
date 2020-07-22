@@ -15,17 +15,17 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.reviewer: johndeu
-ms.openlocfilehash: 597839f633ed2b925b86c5f859a0fb2d3b64dd59
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 288b7302b12d607c9090f699af83691b832256a3
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76773662"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86170825"
 ---
 # <a name="media-services-operations-rest-api-overview"></a>Обзор REST API операций служб мультимедиа 
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с последней версией [служб мультимедиа v3](https://docs.microsoft.com/azure/media-services/latest/). См. также [руководство по миграции из v2 в версии 3](../latest/migrate-from-v2-to-v3.md) .
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
 
 **REST API операций Служб мультимедиа** позволяет создавать задания, ресурсы, динамические каналы и другие компоненты в учетной записи Служб мультимедиа. Дополнительные сведения см. в статье [Media Services Operations REST API Reference](https://docs.microsoft.com/rest/api/media/operations/azure-media-services-rest-api-reference) (Справочник по REST API операций служб мультимедиа).
 
@@ -39,28 +39,30 @@ ms.locfileid: "76773662"
 
 * При запросе сущностей существует ограничение в 1000 сущностей, возвращаемых за один раз, так как в открытой версии 2 REST количество результатов запросов ограничено 1000. Используйте **Skip** и **Take** (.NET) или **top** (REST), как описано в [этом](media-services-dotnet-manage-entities.md#enumerating-through-large-collections-of-entities) и [этом](media-services-rest-manage-entities.md#enumerating-through-large-collections-of-entities) примерах. 
 * Если вы используете JSON и указываете в запросе ключевое слово **__metadata** (например, для ссылки на связанный объект), вы должны задать для заголовка **Accept**[подробный (Verbose) формат JSON](https://www.odata.org/documentation/odata-version-3-0/json-verbose-format/) (см. пример ниже). Odata "не поймет" свойство **__metadata** в запросе, если не задать для него подробный формат.  
-  
-        POST https://media.windows.net/API/Jobs HTTP/1.1
-        Content-Type: application/json;odata=verbose
-        Accept: application/json;odata=verbose
-        DataServiceVersion: 3.0
-        MaxDataServiceVersion: 3.0
-        x-ms-version: 2.19
-        Authorization: Bearer <ENCODED JWT TOKEN> 
-        Host: media.windows.net
-  
-        {
-            "Name" : "NewTestJob", 
-            "InputMediaAssets" : 
-                [{"__metadata" : {"uri" : "https://media.windows.net/api/Assets('nb%3Acid%3AUUID%3Aba5356eb-30ff-4dc6-9e5a-41e4223540e7')"}}]
-        . . . 
+
+    ```console
+    POST https://media.windows.net/API/Jobs HTTP/1.1
+    Content-Type: application/json;odata=verbose
+    Accept: application/json;odata=verbose
+    DataServiceVersion: 3.0
+    MaxDataServiceVersion: 3.0
+    x-ms-version: 2.19
+    Authorization: Bearer <ENCODED JWT TOKEN> 
+    Host: media.windows.net
+
+    {
+        "Name" : "NewTestJob", 
+        "InputMediaAssets" : 
+            [{"__metadata" : {"uri" : "https://media.windows.net/api/Assets('nb%3Acid%3AUUID%3Aba5356eb-30ff-4dc6-9e5a-41e4223540e7')"}}]
+    . . . 
+   ```
 
 ## <a name="standard-http-request-headers-supported-by-media-services"></a>Стандартные заголовки HTTP-запроса, поддерживаемые службами мультимедиа
 Для каждого вызова, отправляемого в службы мультимедиа, предусмотрен набор обязательных заголовков, которые необходимо включить в запрос, а также набор дополнительных заголовков, которые можно включить при необходимости. В таблице ниже перечислены обязательные заголовки.
 
 | Заголовок | Тип | Значение |
 | --- | --- | --- |
-| Авторизация |Носитель |Носитель – единственный принимаемый механизм авторизации. Значение должно содержать маркер доступа, предоставленный Azure Active Directory. |
+| Авторизация |Bearer |Носитель – единственный принимаемый механизм авторизации. Значение должно содержать маркер доступа, предоставленный Azure Active Directory. |
 | x-ms-version |Decimal |2.17 (или последняя версия)|
 | DataServiceVersion |Decimal |3.0 |
 | MaxDataServiceVersion |Decimal |3.0 |
@@ -81,15 +83,15 @@ ms.locfileid: "76773662"
 | Accept-Charset |Тип кодировки, например "UTF-8" |По умолчанию — UTF-8. |
 | X-HTTP-Method |Метод HTTP |Позволяет клиентам или брандмауэрам, которые не поддерживают методы HTTP, например PUT или DELETE, использовать эти методы, туннелированные посредством вызова GET. |
 | Content-Type |Тип содержимого |Тип содержимого текста запросов PUT или POST. |
-| client-request-id |Строка |Определяемое вызывающим объектом значение, по которому можно идентифицировать данный запрос. Если это значение указано, оно будет включено в ответное сообщении в качестве способа сопоставления запроса. <p><p>**Важно.**<p>Значения должны превышать 2096 Б (2 КБ). |
+| client-request-id |Строковый |Определяемое вызывающим объектом значение, по которому можно идентифицировать данный запрос. Если это значение указано, оно будет включено в ответное сообщении в качестве способа сопоставления запроса. <p><p>**Важно**<p>Значения должны превышать 2096 Б (2 КБ). |
 
 ## <a name="standard-http-response-headers-supported-by-media-services"></a>Стандартные ответы HTTP-запроса, поддерживаемые службами мультимедиа
 Ниже приведен набор заголовков, которые могут быть возвращены в зависимости от запрошенного ресурса и действия, которое необходимо выполнить.
 
 | Заголовок | Тип | Значение |
 | --- | --- | --- |
-| request-id |Строка |Уникальный идентификатор текущей операции, создаваемый службой. |
-| client-request-id |Строка |Идентификатор, указанный вызывающим объектом в исходном запросе, если он имеется. |
+| request-id |Строковый |Уникальный идентификатор текущей операции, создаваемый службой. |
+| client-request-id |Строковый |Идентификатор, указанный вызывающим объектом в исходном запросе, если он имеется. |
 | Дата |RFC 1123 date |Дата и время обработки запроса. |
 | Content-Type |Различается |Тип содержимого текста ответа. |
 | Content-Encoding |Различается |Соответственно, Gzip или Deflate. |
@@ -101,7 +103,7 @@ ms.locfileid: "76773662"
 | --- | --- |
 | GET |Возвращает текущее значение объекта. |
 | POST |Создает объект на основе предоставленных данных или отправляет команду. |
-| ОТПРАВКА |Заменяет объект или создает именованный объект (в зависимости от ситуации). |
+| PUT |Заменяет объект или создает именованный объект (в зависимости от ситуации). |
 | DELETE |Удаляет объект. |
 | MERGE |Вносит в существующий объект изменения в именованном свойстве. |
 | HEAD |Возвращает метаданные объекта для ответа GET. |
@@ -120,12 +122,12 @@ ms.locfileid: "76773662"
 
 Дополнительные сведения о написании кода, который позволяет подключиться к REST API с помощью проверки подлинности Azure AD, см. в статье [Использование аутентификации Azure AD для доступа к API служб мультимедиа Azure с помощью REST](media-services-rest-connect-with-aad.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте, как использовать проверку подлинности Azure AD в REST API Служб мультимедиа, изучив сведения из [этой статьи](media-services-rest-connect-with-aad.md).
 
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

@@ -4,19 +4,19 @@ description: Использование службы совместной раб
 services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 02/28/2020
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 41e8b81bc3594c6a378757636f70058510a38cc7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 6adf7e6c5abbba3c018f9a03b5167aec7537c704
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78226866"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85386663"
 ---
 # <a name="dynamic-groups-and-azure-active-directory-b2b-collaboration"></a>Динамические группы и служба совместной работы Azure Active Directory B2B
 
@@ -38,7 +38,7 @@ ms.locfileid: "78226866"
    ```
    user.objectId -ne null
    ```
-1. Нажмите кнопку **OK**. Правило отображается в поле синтаксис правила:
+1. Нажмите кнопку **ОК**. Правило отображается в поле синтаксис правила:
 
    ![Синтаксис правил для динамической группы "все пользователи"](media/use-dynamic-groups/all-user-rule-syntax.png)
 
@@ -71,7 +71,7 @@ ms.locfileid: "78226866"
 
 ![Показывает правило, в котором пользователь является гостем.](media/use-dynamic-groups/all-guest-user-rule-syntax.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Свойства пользователя службы совместной работы Azure Active Directory B2B](user-properties.md)
 - [Добавление пользователя службы совместной работы Azure Active Directory B2B в роль](add-guest-to-role.md)

@@ -7,12 +7,11 @@ ms.service: static-web-apps
 ms.topic: conceptual
 ms.date: 05/08/2020
 ms.author: cshoe
-ms.openlocfilehash: 7f86ce9158b5b07b036c785c2973e8a5883ed686
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
-ms.translationtype: HT
+ms.openlocfilehash: f5f40a615bc5faab6265f42d0728403e2735aa0f
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83594273"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84791628"
 ---
 # <a name="api-support-in-azure-static-web-apps-preview-with-azure-functions"></a>Поддержка API в предварительной версии службы "Статические веб-приложения Azure" благодаря Функциям Azure
 
@@ -32,6 +31,8 @@ ms.locfileid: "83594273"
 Служба "Статические веб-приложения Azure" предоставляет API через решение "Функции Azure". Возможности Функций Azure ориентированы на конкретный набор функций, позволяющих создать API для веб-приложения и обеспечить безопасное подключение веб-приложения к API. Эти возможности предоставляются с некоторыми ограничениями, в том числе следующими.
 
 - Префикс маршрута API должен быть _api_.
+- Приложение-функция API должно быть написано на языке JavaScript.
+- Правила маршрутов для функций API поддерживают только [Перенаправление](routes.md#redirects) и [защиту маршрутов с помощью ролей](routes.md#securing-routes-with-roles).
 - Триггеры и привязки ограничены [HTTP](../azure-functions/functions-bindings-http-webhook.md).
   - Использование всех остальных [триггеров и привязок Функций Azure](../azure-functions/functions-triggers-bindings.md#supported-bindings), за исключением выходных привязок, ограничено.
 - Журналы доступны только при добавлении [Application Insights](../azure-functions/functions-monitoring.md) в приложение решения "Функции".

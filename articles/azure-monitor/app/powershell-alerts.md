@@ -3,12 +3,12 @@ title: Настройка оповещений в Application Insights с пом
 description: Автоматизация настройки Application Insights для получения сообщений электронной почты об изменениях метрик.
 ms.topic: conceptual
 ms.date: 10/31/2016
-ms.openlocfilehash: f35658b08eff7574448e3c72b103178b66acbbe0
-ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
-ms.translationtype: HT
+ms.openlocfilehash: 3a3d614ec57242a2ea4b29a86d6365a2efe56f94
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83701830"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86516963"
 ---
 # <a name="use-powershell-to-set-alerts-in-application-insights"></a>Настройка оповещений в Application Insights с помощью PowerShell
 
@@ -32,28 +32,35 @@ ms.locfileid: "83701830"
 ## <a name="connect-to-azure"></a>Подключение к Azure
 Запустите Azure PowerShell и [подключитесь к вашей подписке](/powershell/azure/overview).
 
-```powershell
-
-    Add-AzAccount
+```azurepowershell
+Add-AzAccount
 ```
 
 
 ## <a name="get-alerts"></a>Получение оповещений
-    Get-AzAlertRule -ResourceGroup "Fabrikam" [-Name "My rule"] [-DetailedOutput]
+
+```azurepowershell
+Get-AzAlertRule -ResourceGroup "Fabrikam" `
+  [-Name "My rule"] `
+  [-DetailedOutput]
+```
 
 ## <a name="add-alert"></a>Добавление оповещения
-    Add-AzMetricAlertRule  -Name "{ALERT NAME}" -Description "{TEXT}" `
-     -ResourceGroup "{GROUP NAME}" `
-     -ResourceId "/subscriptions/{SUBSCRIPTION ID}/resourcegroups/{GROUP NAME}/providers/microsoft.insights/components/{APP RESOURCE NAME}" `
-     -MetricName "{METRIC NAME}" `
-     -Operator GreaterThan  `
-     -Threshold {NUMBER}   `
-     -WindowSize {HH:MM:SS}  `
-     [-SendEmailToServiceOwners] `
-     [-CustomEmails "EMAIL1@X.COM","EMAIL2@Y.COM" ] `
-     -Location "East US" // must be East US at present
-     -RuleType Metric
 
+```azurepowershell
+Add-AzMetricAlertRule -Name "{ALERT NAME}" `
+  -Description "{TEXT}" `
+  -ResourceGroup "{GROUP NAME}" `
+  -ResourceId "/subscriptions/{SUBSCRIPTION ID}/resourcegroups/{GROUP NAME}/providers/microsoft.insights/components/{APP RESOURCE NAME}" `
+  -MetricName "{METRIC NAME}" `
+  -Operator GreaterThan `
+  -Threshold {NUMBER}  `
+  -WindowSize {HH:MM:SS} `
+  [-SendEmailToServiceOwners] `
+  [-CustomEmails "EMAIL1@X.COM","EMAIL2@Y.COM"] `
+  -Location "East US" // must be East US at present `
+  -RuleType Metric
+```
 
 
 ## <a name="example-1"></a>Пример 1
@@ -61,30 +68,35 @@ ms.locfileid: "83701830"
 
 GUID — это идентификатор подписки (не ключ инструментирования приложения).
 
-    Add-AzMetricAlertRule -Name "slow responses" `
-     -Description "email me if the server responds slowly" `
-     -ResourceGroup "Fabrikam" `
-     -ResourceId "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/Fabrikam/providers/microsoft.insights/components/IceCreamWebApp" `
-     -MetricName "request.duration" `
-     -Operator GreaterThan `
-     -Threshold 1 `
-     -WindowSize 00:05:00 `
-     -SendEmailToServiceOwners `
-     -Location "East US" -RuleType Metric
+```azurepowershell
+Add-AzMetricAlertRule -Name "slow responses" `
+  -ResourceGroup "Fabrikam" `
+  -ResourceId "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/Fabrikam/providers/microsoft.insights/components/IceCreamWebApp" `
+  -MetricName "request.duration" `
+  -Operator GreaterThan `
+  -Threshold 1 `
+  -WindowSize 00:05:00 `
+  -SendEmailToServiceOwners `
+  -Location "East US" `
+  -RuleType Metric
+```
 
 ## <a name="example-2"></a>Пример 2
 У меня есть приложение, в котором используется [TrackMetric()](../../azure-monitor/app/api-custom-events-metrics.md#trackmetric) для предоставления метрики salesPerHour. Я хочу, чтобы моим коллегам отправлялось электронное сообщение, если в среднем за 24 часа salesPerHour станет меньше 100.
 
-    Add-AzMetricAlertRule -Name "poor sales" `
-     -Description "slow sales alert" `
-     -ResourceGroup "Fabrikam" `
-     -ResourceId "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/Fabrikam/providers/microsoft.insights/components/IceCreamWebApp" `
-     -MetricName "salesPerHour" `
-     -Operator LessThan `
-     -Threshold 100 `
-     -WindowSize 24:00:00 `
-     -CustomEmails "satish@fabrikam.com","lei@fabrikam.com" `
-     -Location "East US" -RuleType Metric
+```azurepowershell
+Add-AzMetricAlertRule -Name "poor sales" `
+  -Description "slow sales alert" `
+  -ResourceGroup "Fabrikam" `
+  -ResourceId "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/Fabrikam/providers/microsoft.insights/components/IceCreamWebApp" `
+  -MetricName "salesPerHour" `
+  -Operator LessThan `
+  -Threshold 100 `
+  -WindowSize 24:00:00 `
+  -CustomEmails "satish@fabrikam.com","lei@fabrikam.com" `
+  -Location "East US" `
+  -RuleType Metric
+```
 
 Это же правило можно использовать для метрики, передаваемой с помощью [параметра измерения](../../azure-monitor/app/api-custom-events-metrics.md#properties) другого вызова отслеживания, например TrackEvent или trackPageView.
 
@@ -127,7 +139,7 @@ GUID — это идентификатор подписки (не ключ ин�
 Вы можете [автоматизировать реагирование на оповещения](../../azure-monitor/platform/alerts-webhooks.md). При возникновении оповещения Azure будет вызывать выбранный вами веб-адрес.
 
 ## <a name="see-also"></a>См. также раздел
-* [Сценарий настройки Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/create-new-resource#creating-a-resource-automatically)
+* [Сценарий настройки Application Insights](./create-new-resource.md#creating-a-resource-automatically)
 * [Создание ресурсов Application Insights и веб-тестов на основе шаблонов](powershell.md)
 * [Автоматизация связывания Диагностики Microsoft Azure с Application Insights](powershell-azure-diagnostics.md)
 * [Автоматизация реагирования на оповещения](../../azure-monitor/platform/alerts-webhooks.md)

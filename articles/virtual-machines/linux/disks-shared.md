@@ -1,23 +1,24 @@
 ---
-title: Общий доступ к управляемому диску Azure между виртуальными машинами (Предварительная версия)
+title: Общий доступ к управляемому диску Azure между виртуальными машинами
 description: Узнайте, как совместно использовать управляемые диски Azure на нескольких виртуальных машинах.
 author: roygara
 ms.service: virtual-machines
 ms.topic: conceptual
-ms.date: 04/09/2020
+ms.date: 07/16/2020
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 3792a98c4ddcab36496f7e83482f2a1382c93d0d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.custom: references_regions
+ms.openlocfilehash: 3ca8a93357b51ed1817bed63ee624abd9b2daa6c
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81008569"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86502522"
 ---
-# <a name="azure-shared-disks"></a>Общие диски Azure
+# <a name="share-an-azure-managed-disk"></a>Общий доступ к управляемому диску Azure
 
 [!INCLUDE [virtual-machines-disks-shared](../../../includes/virtual-machines-disks-shared.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы хотите включить и использовать общие диски для управляемых дисков, перейдите к статье [Включение общего диска](disks-shared-enable.md)

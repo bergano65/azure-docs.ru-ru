@@ -9,14 +9,14 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 07/07/2019
 ms.author: joanpo
-ms.openlocfilehash: b8d01a383e816bfc73413d21e9cc8d51d326ab14
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 0ced66c1d3023b7edb3220b45e24d3eb54098df8
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "70307187"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86512492"
 ---
-# <a name="use-powershell-to-monitor-the-usage-of-a-sent-data-share"></a>Использование PowerShell для отслеживания использования отправленных общих ресурсов данных
+# <a name="use-powershell-to-set-azure-data-share-sychronization-settings"></a>Настройка параметров синхронизации общего ресурса данных Azure с помощью PowerShell
 
 Этот сценарий PowerShell задает и получает общие параметры синхронизации.
 

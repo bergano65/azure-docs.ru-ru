@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 12/07/2017
 ms.author: sngun
 ms.custom: seodec18
-ms.openlocfilehash: 5c828644cb03d83df38265719cd8afabc24cf739
-ms.sourcegitcommit: 0947111b263015136bca0e6ec5a8c570b3f700ff
+ms.openlocfilehash: 0023308c74d58b1c94bf13fcb47ffb8aa7ade1d6
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "66242572"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85557623"
 ---
 # <a name="migrate-your-data-to-azure-cosmos-db-table-api-account"></a>Перенос данных в учетную запись API таблиц в Azure Cosmos DB
 
@@ -26,11 +26,11 @@ ms.locfileid: "66242572"
 > * импорт данных с помощью AzCopy.
 > * миграция из API таблицы (предварительная версия) в API таблицы. 
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Увеличьте пропускную способность.** Продолжительность переноса данных зависит от пропускной способности, настроенной для отдельного контейнера или набора контейнеров. Увеличьте пропускную способность для крупных миграций. После переноса уменьшите пропускную способность для экономии расходов. Дополнительные сведения об увеличении пропускной способности на портале Azure см. в статье об уровнях производительности и ценовых категориях в Azure Cosmos DB.
 
-* **Создайте ресурсы Azure Cosmos DB.** Перед началом переноса данных заранее создайте все таблицы на портале Azure. Если вы выполняете перенос в учетную запись Azure Cosmos DB, обладающую пропускной способностью уровня базы данных, обязательно укажите ключ раздела при создании таблиц Azure Cosmos DB.
+* **Создайте ресурсы Azure Cosmos DB**. Прежде чем переносить данные, создайте все таблицы на портале Azure. Если вы выполняете перенос в учетную запись Azure Cosmos DB, обладающую пропускной способностью уровня базы данных, обязательно укажите ключ раздела при создании таблиц Azure Cosmos DB.
 
 ## <a name="data-migration-tool"></a>Средство переноса данных
 
@@ -45,34 +45,34 @@ ms.locfileid: "66242572"
     dt.exe [/<option>:<value>] /s:<source-name> [/s.<source-option>:<value>] /t:<target-name> [/t.<target-option>:<value>] 
    ```
 
-Существуют такие параметры для команды:
+Для этой команды поддерживаются следующие параметры.
 
-    /ErrorLog: Optional. Name of the CSV file to redirect data transfer failures
-    /OverwriteErrorLog: Optional. Overwrite error log file
-    /ProgressUpdateInterval: Optional, default is 00:00:01. Time interval to refresh on-screen data transfer progress
-    /ErrorDetails: Optional, default is None. Specifies that detailed error information should be displayed for the following errors: None, Critical, All
-    /EnableCosmosTableLog: Optional. Direct the log to a cosmos table account. If set, this defaults to destination account connection string unless /CosmosTableLogConnectionString is also provided. This is useful if multiple instances of DT are being run simultaneously.
-    /CosmosTableLogConnectionString: Optional. ConnectionString to direct the log to a remote cosmos table account. 
+* **/ErrorLog.** Необязательный параметр. Имя CSV-файла для перенаправления ошибок при переносе данных.
+* **/OverwriteErrorLog.** Необязательный параметр. Разрешает перезапись файла журнала ошибок.
+* **/ProgressUpdateInterval.** Необязательный параметр, по умолчанию имеет значение 00:00:01. Интервал времени для обновления хода выполнения передачи данных на экране.
+* **/ErrorDetails.** Необязательный параметр, по умолчанию имеет значение None (Нет). Позволяет указать, для каких ошибок должны отображаться подробные сведения: None (Нет), Critical (Критические), All (Все)
+* **/EnableCosmosTableLog.** Необязательный параметр. Направляет журнал в учетную запись таблицы Cosmos. Если задано значение, по умолчанию используется строка подключения к конечной учетной записи, если не указан параметр /CosmosTableLogConnectionString. Это полезно в тех случаях, если несколько экземпляров DT выполняются одновременно.
+* **/CosmosTableLogConnectionString.** Необязательный параметр. Строка подключения для направления журнала в удаленную учетную запись таблицы Cosmos.
 
 ### <a name="command-line-source-settings"></a>Параметры источника командной строки
 
 Определить хранилище таблиц Azure или API таблицы (предварительная версия) как источник миграции можно с помощью следующих параметров источника.
 
-    /s:AzureTable: Reads data from Azure Table storage
-    /s.ConnectionString: Connection string for the table endpoint. This can be retrieved from the Azure portal
-    /s.LocationMode: Optional, default is PrimaryOnly. Specifies which location mode to use when connecting to Azure Table storage: PrimaryOnly, PrimaryThenSecondary, SecondaryOnly, SecondaryThenPrimary
-    /s.Table: Name of the Azure Table
-    /s.InternalFields: Set to All for table migration as RowKey and PartitionKey are required for import.
-    /s.Filter: Optional. Filter string to apply
-    /s.Projection: Optional. List of columns to select
+* **/s:AzureTable.** Считывание данных из хранилища таблиц Azure.
+* **/s.ConnectionString.** Строка подключения к конечной точке таблицы. Это значение можно получить на портале Azure.
+* **/s.LocationMode.** Необязательный параметр, по умолчанию имеет значение PrimaryOnly. Позволяет задать режим расположения, который нужно использовать при подключении к хранилищу таблиц Azure: PrimaryOnly, PrimaryThenSecondary, SecondaryOnly, SecondaryThenPrimary.
+* **/s.Table.** Имя таблицы Azure.
+* **/s.InternalFields.** Задайте для миграции таблиц значение All (Все), так как RowKey и PartitionKey являются обязательными для импорта.
+* **/s.Filter.** Необязательный параметр. Применяемая строка фильтра
+* **/s.Projection.** Необязательный параметр. Список столбцов для выбора.
 
 Чтобы получить строку подключения к источнику при импорте из хранилища таблиц Azure, откройте портал Azure, щелкните **Учетные записи хранения** > **Учетная запись** > **Ключи доступа**, а затем нажмите кнопку "Копировать", чтобы скопировать **строку подключения**.
 
-![Снимок экрана: параметры источника HBase](./media/table-import/storage-table-access-key.png)
+:::image type="content" source="./media/table-import/storage-table-access-key.png" alt-text="Снимок экрана: параметры источника HBase":::
 
 Чтобы получить строку подключения к источнику при импорте из учетной записи API таблицы Azure Cosmos DB (предварительная версия), откройте портал Azure, щелкните **Azure Cosmos DB** > **Учетная запись** > **Строка подключения**, а затем нажмите кнопку "Копировать", чтобы скопировать **строку подключения**.
 
-![Снимок экрана: параметры источника HBase](./media/table-import/cosmos-connection-string.png)
+:::image type="content" source="./media/table-import/cosmos-connection-string.png" alt-text="Снимок экрана: параметры источника HBase":::
 
 [Пример команды хранилища таблиц Azure](#azure-table-storage)
 
@@ -82,28 +82,29 @@ ms.locfileid: "66242572"
 
 Определите API таблицы Azure Cosmos DB в качестве целевого объекта для переноса с помощью следующих параметров целевого объекта.
 
-    /t:TableAPIBulk: Uploads data into Azure CosmosDB Table in batches
-    /t.ConnectionString: Connection string for the table endpoint
-    /t.TableName: Specifies the name of the table to write to
-    /t.Overwrite: Optional, default is false. Specifies if existing values should be overwritten
-    /t.MaxInputBufferSize: Optional, default is 1GB. Approximate estimate of input bytes to buffer before flushing data to sink
-    /t.Throughput: Optional, service defaults if not specified. Specifies throughput to configure for table
-    /t.MaxBatchSize: Optional, default is 2MB. Specify the batch size in bytes
+* **/t:TableAPIBulk.** Включает пакетный режим передачи данных в таблицу Azure CosmosDB.
+* **/t.ConnectionString.** Строка подключения к конечной точке таблицы.
+* **/t.TableName.** Позволяет указать имя таблицы для записи данных.
+* **/t.Overwrite.** Необязательный параметр, по умолчанию имеет значение False. Позволяет указать, нужно ли перезаписывать существующие значения.
+* **/t.MaxInputBufferSize.** Необязательный параметр, по умолчанию имеет значение 1 ГБ. Приблизительная оценка байтов входящих данных, которые буферизуются перед записью данных в приемник.
+* **/t.Throughput.** Необязательный параметр. Если он не указан, используются значения по умолчанию для службы. Позволяет указать пропускную способность, которая будет использоваться для таблицы.
+* **/t.MaxBatchSize.** Необязательный параметр, по умолчанию имеет значение 2 МБ. Позволяет указать размер пакета в байтах.
 
 <a id="azure-table-storage"></a>
 ### <a name="sample-command-source-is-azure-table-storage"></a>Пример команды: источник — хранилище таблиц Azure
 
 Ниже приведен пример команды для импорта данных из хранилища таблиц Azure в API таблицы:
 
-```
+```bash
 dt /s:AzureTable /s.ConnectionString:DefaultEndpointsProtocol=https;AccountName=<Azure Table storage account name>;AccountKey=<Account Key>;EndpointSuffix=core.windows.net /s.Table:<Table name> /t:TableAPIBulk /t.ConnectionString:DefaultEndpointsProtocol=https;AccountName=<Azure Cosmos DB account name>;AccountKey=<Azure Cosmos DB account key>;TableEndpoint=https://<Account name>.table.cosmosdb.azure.com:443 /t.TableName:<Table name> /t.Overwrite
 ```
+
 <a id="table-api-preview"></a>
-### <a name="sample-command-source-is-azure-cosmos-db-table-api-preview"></a>Пример команды: источник — API таблицы Azure Cosmos DB (предварительная версия)
+### <a name="sample-command-source-is-azure-cosmos-db-table-api-preview"></a>Пример команды: источник — API таблиц Azure Cosmos DB (предварительная версия)
 
 Ниже приведен пример команды для импорта данных из API таблицы (предварительная версия) в API таблицы (общедоступная версия):
 
-```
+```bash
 dt /s:AzureTable /s.ConnectionString:DefaultEndpointsProtocol=https;AccountName=<Table API preview account name>;AccountKey=<Table API preview account key>;TableEndpoint=https://<Account Name>.documents.azure.com; /s.Table:<Table name> /t:TableAPIBulk /t.ConnectionString:DefaultEndpointsProtocol=https;AccountName=<Azure Cosmos DB account name>;AccountKey=<Azure Cosmos DB account key>;TableEndpoint=https://<Account name>.table.cosmosdb.azure.com:443 /t.TableName:<Table name> /t.Overwrite
 ```
 
@@ -115,7 +116,7 @@ dt /s:AzureTable /s.ConnectionString:DefaultEndpointsProtocol=https;AccountName=
 
 Пример команды импорта:
 
-```
+```bash
 AzCopy /Source:C:\myfolder\ /Dest:https://myaccount.table.cosmosdb.windows.net/mytable1/ /DestKey:key /Manifest:"myaccount_mytable_20140103T112020.manifest" /EntityOperation:InsertOrReplace
 ```
 
@@ -123,7 +124,6 @@ AzCopy /Source:C:\myfolder\ /Dest:https://myaccount.table.cosmosdb.windows.net/m
 
 > [!WARNING]
 > Если вы хотите воспользоваться преимуществами общедоступных таблиц, выполните перенос имеющихся таблиц в предварительной версии, как указано в этом разделе. В противном случае в течение нескольких недель будет выполнен автоматический перенос для имеющихся клиентов предварительной версии. Однако обратите внимание, что для автоматически перенесенных таблиц предварительной версии появятся определенные ограничения, в то время как для созданных таблиц ограничений не будет.
-> 
 
 Доступна общедоступная версия API таблицы. Ниже приведены различия между предварительной и общедоступной версиями таблиц в коде, выполняемом в облаке, а также в коде, выполняемом на клиенте. Поэтому мы не рекомендуем использовать клиентский пакет SDK предварительной версии с учетной записью общедоступной версии API таблицы и наоборот. Клиентам предварительной версии API таблицы, которые хотят продолжить использование имеющихся таблиц, необходимо перенести данные из предварительной версии в общедоступную среду или дождаться автоматического переноса. Если вы ждете автоматического переноса, вам придет уведомление об ограничениях для перенесенных таблиц. После переноса можно создавать таблицы в имеющейся учетной записи без ограничений (ограничения применяются только к перенесенным таблицам).
 

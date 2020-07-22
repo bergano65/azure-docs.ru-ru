@@ -13,16 +13,16 @@ ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 07/12/2019
+ms.date: 08/07/2020
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2192c472e00d123780ec6bc5574e7b9fe326258b
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 0510184e2471d61c8911b5fcd484fd5dec0bce28
+ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75495311"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86144477"
 ---
 # <a name="azure-ad-powershell-cmdlets-for-reporting"></a>Командлеты Azure AD PowerShell для создания отчетов
 
@@ -50,9 +50,9 @@ Install-module AzureADPreview
 | Сценарий                      | Команда PowerShell |
 | :--                           | :--                |
 | Отображаемое имя приложения      | Get-Азуреадаудитдиректорилогс — Filter "Инитиатедби/App/displayName EQ" облачная синхронизация Azure AD " |
-| Категория                      | Get-Азуреадаудитдиректорилогс — фильтрация "Category EQ" Управление приложениями "" |
+| Категория                      | Get-Азуреадаудитдиректорилогс — фильтр "Category EQ" Аппликатионманажемент "" |
 | Дата и время действия            | Get-Азуреадаудитдиректорилогс-Filter "Активитидатетиме gt 2019-04-18" |
-| все вышеперечисленное.              | Get-Азуреадаудитдиректорилогс-Filter "Инитиатедби/App/displayName EQ" облачная синхронизация Azure AD и Категория EQ "Управление приложениями" и Активитидатетиме gt 2019-04-18 "|
+| Все вышеперечисленное              | Get-Азуреадаудитдиректорилогс-Filter "Инитиатедби/App/displayName EQ" облачная синхронизация Azure AD "и Категория EQ" Аппликатионманажемент "и Активитидатетиме gt 2019-04-18"|
 
 
 На следующем рисунке показан пример для этой команды. 
@@ -74,7 +74,7 @@ Install-module AzureADPreview
 | Создать дату и время              | Get-Азуреадаудитсигнинлогс-Filter "Креатеддатетиме gt 2019-04-18T17:30:00.0 Z" (все, начиная с 5:30 PM на 4/18) |
 | Состояние                        | Get-Азуреадаудитсигнинлогс — Filter "Status/errorCode EQ 50105" |
 | Отображаемое имя приложения      | Get-Азуреадаудитсигнинлогс-Filter «appDisplayName EQ ' Сторефронтстудио [WSFED Enabled] '» |
-| все вышеперечисленное.              | Get-Азуреадаудитсигнинлогс-Filter "userDisplayName EQ" Тимоти Перкинс "and Status/errorCode Ne 0 и appDisplayName EQ" Сторефронтстудио [WSFED Enabled] "" |
+| Все вышеперечисленное              | Get-Азуреадаудитсигнинлогс-Filter "userDisplayName EQ" Тимоти Перкинс "and Status/errorCode Ne 0 и appDisplayName EQ" Сторефронтстудио [WSFED Enabled] "" |
 
 
 На следующем рисунке показан пример для этой команды. 

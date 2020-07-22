@@ -4,17 +4,16 @@ description: VPN-подключение P2S можно использовать 
 services: vpn-gateway
 author: anzaman
 ms.service: vpn-gateway
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 04/17/2020
 ms.author: alzam
-ms.openlocfilehash: 00db2ed05285a1637414aa1e3adbe3b047ff0568
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 2dda6cb84fc881b4ca628ff1cecdec7c00555e8b
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81641347"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85414319"
 ---
-# <a name="create-an-azure-active-directory-tenant-for-p2s-openvpn-protocol-connections"></a>Создание клиента Azure Active Directory для подключений по протоколу P2S Опенвпн
+# <a name="create-an-azure-active-directory-tenant-for-p2s-openvpn-protocol-connections"></a>Создание клиента Azure Active Directory для подключений "точка — сеть" по протоколу OpenVPN
 
 При подключении к виртуальной сети можно использовать проверку подлинности на основе сертификатов или аутентификацию RADIUS. Однако при использовании открытого протокола VPN можно также использовать проверку подлинности Azure Active Directory. Эта статья поможет вам настроить клиент Azure AD для проверки подлинности P2S Open VPN.
 
@@ -27,35 +26,35 @@ ms.locfileid: "81641347"
 
 Убедитесь, что у вас есть клиент Azure AD. Если у вас нет клиента Azure AD, можно создать его, выполнив действия, описанные в статье [Создание нового клиента](../active-directory/fundamentals/active-directory-access-create-new-tenant.md) :
 
-* Название организации
+* Имя организации
 * Первоначальное доменное имя
 
-Пример:
+Пример
 
    ![Новый клиент Azure AD](./media/openvpn-create-azure-ad-tenant/newtenant.png)
 
 ## <a name="2-create-azure-ad-tenant-users"></a><a name="users"></a>2. Создание пользователей клиента Azure AD
 
-Клиент Azure AD должен иметь следующие учетные записи: учетную запись глобального администратора и учетную запись главного пользователя. Учетная запись главного пользователя используется как учетная запись главного внедрения (учетная запись службы). При создании учетной записи пользователя клиента Azure AD необходимо настроить роль каталога для типа пользователя, который требуется создать.
+Клиент Azure AD должен иметь следующие учетные записи: учетную запись глобального администратора и учетную запись главного пользователя. Учетная запись главного пользователя используется как главная учетная запись внедрения (учетная запись службы). При создании учетной записи пользователя клиента Azure AD необходимо настроить роль каталога под тип пользователя, который требуется создать.
 
-Выполните действия, описанные в [этой статье](../active-directory/fundamentals/add-users-azure-active-directory.md) , чтобы создать по крайней мере двух пользователей для вашего клиента Azure AD. Не забудьте изменить **роль каталога** , чтобы создать типы учетных записей:
+Выполните действия, описанные в [этой статье](../active-directory/fundamentals/add-users-azure-active-directory.md), чтобы создать по крайней мере двух пользователей для клиента Azure AD. Не забудьте изменить **Роль каталога**, чтобы создать типы учетных записей:
 
 * глобальный администратор.
-* User (Пользователь)
+* Пользователь
 
 ## <a name="3-enable-azure-ad-authentication-on-the-vpn-gateway"></a><a name="enable-authentication"></a>3. Включите проверку подлинности Azure AD на VPN-шлюзе.
 
-1. Укажите идентификатор каталога, который вы хотите использовать для проверки подлинности. Он указан в разделе Свойства страницы Active Directory.
+1. Укажите идентификатор каталога, который хотите использовать для проверки подлинности. Он указан в разделе свойств страницы Active Directory.
 
     ![Идентификатор каталога](./media/openvpn-create-azure-ad-tenant/directory-id.png)
 
 2. Скопируйте идентификатор каталога.
 
-3. Войдите в портал Azure в качестве пользователя, которому назначена роль **глобального администратора** .
+3. Войдите на портал Azure как пользователь с ролью **Глобального администратора**.
 
-4. Затем предоставьте администратору согласие. Скопируйте и вставьте URL-адрес, относящийся к расположению развертывания, в адресной строке браузера:
+4. Затем дайте согласие администратора. Скопируйте и вставьте URL-адрес, относящийся к расположению развертывания, в адресную строку браузера:
 
-    Открытый
+    Общедоступные
 
     ```
     https://login.microsoftonline.com/common/oauth2/authorize?client_id=41b23e61-6c1e-4545-b367-cd054e0ed4b4&response_type=code&redirect_uri=https://portal.azure.com&nonce=1234&prompt=admin_consent
@@ -79,11 +78,11 @@ ms.locfileid: "81641347"
     https://login.chinacloudapi.cn/common/oauth2/authorize?client_id=49f817b6-84ae-4cc0-928c-73f27289b3aa&response_type=code&redirect_uri=https://portal.azure.cn&nonce=1234&prompt=admin_consent
     ```
 
-5. При появлении запроса выберите учетную запись **глобального администратора** .
+5. При появлении запроса выберите учетную запись **Глобальный администратор**.
 
     ![Идентификатор каталога](./media/openvpn-create-azure-ad-tenant/pick.png)
 
-6. При появлении запроса выберите **принять** .
+6. Выберите **Принять** при появлении соответствующего запроса.
 
     ![Принять](./media/openvpn-create-azure-ad-tenant/accept.jpg)
 
@@ -91,38 +90,26 @@ ms.locfileid: "81641347"
 
     ![VPN Azure](./media/openvpn-create-azure-ad-tenant/azurevpn.png)
     
-8. Если у вас нет работающей среды "точка — сеть", следуйте инструкциям, чтобы создать ее. См. дополнительные сведения о [создании и настройке VPN-подключения "точка — сеть" с использованием аутентификации на основе собственного сертификата Azure](vpn-gateway-howto-point-to-site-resource-manager-portal.md). 
+8. Если у вас нет работающей среды "точка — сеть", следуйте инструкциям, чтобы создать ее. См. раздел [Создание VPN-подключения](vpn-gateway-howto-point-to-site-resource-manager-portal.md) типа "точка — сеть" для создания и настройки VPN-шлюза типа "точка — сеть". 
 
     > [!IMPORTANT]
     > SKU уровня "Базовый" не поддерживается для OpenVPN.
 
-9. Включите проверку подлинности Azure AD на VPN-шлюзе, выполнив следующие команды, и вы обязательно измените команду, чтобы она отражала собственную среду:
+9. Включите проверку подлинности Azure AD на VPN-шлюзе, перейдя к **конфигурации "точка — сеть** " и выбрав **опенвпн (SSL)** в качестве **типа туннеля**. Выберите **Azure Active Directory** в качестве **типа проверки подлинности** , а затем введите сведения в разделе **Azure Active Directory** .
 
-    ```azurepowershell-interactive
-    $gw = Get-AzVirtualNetworkGateway -Name <name of VPN gateway> -ResourceGroupName <Resource group>
-    Set-AzVirtualNetworkGateway -VirtualNetworkGateway $gw -VpnClientRootCertificates @()
-    Set-AzVirtualNetworkGateway -VirtualNetworkGateway $gw -AadTenantUri "https://login.microsoftonline.com/<your Directory ID>/" -AadAudienceId "41b23e61-6c1e-4545-b367-cd054e0ed4b4" -AadIssuerUri "https://sts.windows.net/<your Directory ID>/" -VpnClientAddressPool 192.168.0.0/24 -VpnClientProtocol OpenVPN
-    ```
+    ![VPN Azure](./media/openvpn-create-azure-ad-tenant/azure-ad-auth-portal.png)
+
 
    > [!NOTE]
-   > Убедитесь, что в конце `AadIssuerUri` значения включена обратная косая черта. В противном случае команда завершится ошибкой.
+   > Убедитесь, что в конце значения включена обратная косая черта `AadIssuerUri` . В противном случае подключение может завершиться ошибкой.
 
-10. Создайте и скачайте профиль, выполнив следующие команды. Измените значения-ResourceGroupName и-Name в соответствии со своими собственными.
+10. Создайте и скачайте профиль, щелкнув ссылку **скачать VPN-клиент** .
 
-    ```azurepowershell-interactive
-    $profile = New-AzVpnClientConfiguration -Name <name of VPN gateway> -ResourceGroupName <Resource group> -AuthenticationMethod "EapTls"
-    $PROFILE.VpnProfileSASUrl
-    ```
+11. Извлеките скачанный ZIP-файл.
 
-11. После выполнения команд вы увидите результат, аналогичный приведенному ниже. Скопируйте полученный URL-адрес в браузер, чтобы скачать его.
+12. Перейдите к распакованной папке "AzureVPN".
 
-    ![VPN Azure](./media/openvpn-create-azure-ad-tenant/profile.png)
-
-12. Извлеките скачанный ZIP-файл.
-
-13. Перейдите к распакованной папке "AzureVPN".
-
-14. Запишите расположение файла "азуревпнконфиг. XML". Азуревпнконфиг. XML содержит параметр для VPN-подключения и может быть импортирован непосредственно в клиентское приложение VPN Azure. Этот файл также можно передать всем пользователям, которым требуется подключение по электронной почте или другим средствам. Для успешного подключения пользователю понадобятся действительные учетные данные Azure AD.
+13. Запишите расположение файла "azurevpnconfig.xml". azurevpnconfig.xml содержит параметр для VPN-подключения и может быть импортирован непосредственно в клиентское приложение VPN Azure. Этот файл также можно передать всем пользователям, которым требуется подключение по электронной почте или другим средствам. Для успешного подключения пользователю понадобятся действительные учетные данные Azure AD.
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 

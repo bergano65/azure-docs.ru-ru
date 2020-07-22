@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 01/21/2020
-ms.openlocfilehash: f8e694f658d6e9de04c92001214ecd5c32ff7753
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: ddc70ccbbb5c964f16b078470517ce667bc878f1
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78206866"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86082647"
 ---
 # <a name="configure-the-os-patching-schedule-for-linux-based-hdinsight-clusters"></a>Настройка расписания исправлений ОС для кластеров HDInsight под управлением Linux
 
@@ -45,7 +45,7 @@ Run 'do-release-upgrade' to upgrade it
   
 [Расписание — перезагрузка](https://hdiconfigactions.blob.core.windows.net/linuxospatchingrebootconfigv02/schedule-reboots.sh)— задает тип перезагрузки, который будет выполняться на компьютерах в кластере. При отправке действия скрипта настройте его для применения ко всем трем типам узлов: головной узел, Рабочий узел и Zookeeper. Если скрипт не применяется к типу узла, виртуальные машины для этого типа узла не будут обновлены или перезапущены.
 
-`schedule-reboots script` Принимает один числовой параметр:
+`schedule-reboots script`Принимает один числовой параметр:
 
 | Параметр | Допустимые значения | Определение |
 | --- | --- | --- |
@@ -55,7 +55,7 @@ Run 'do-release-upgrade' to upgrade it
 
 Сценарий [install-updates-Schedule-reboots.sh](https://hdiconfigactions.blob.core.windows.net/linuxospatchingrebootconfigv02/install-updates-schedule-reboots.sh) предоставляет параметры для установки различных типов обновлений и ПЕРЕЗАПУСКА виртуальной машины.
 
-`install-updates-schedule-reboots` Сценарий принимает два числовых параметра, как описано в следующей таблице.
+`install-updates-schedule-reboots`Сценарий принимает два числовых параметра, как описано в следующей таблице.
 
 | Параметр | Допустимые значения | Определение |
 | --- | --- | --- |
@@ -65,7 +65,7 @@ Run 'do-release-upgrade' to upgrade it
 > [!NOTE]
 > Сценарий необходимо пометить как сохраненный после применения к существующему кластеру. В противном случае все новые узлы, созданные операциями масштабирования, будут использовать расписание обновления путем частичной замены ОС по умолчанию. Если применить сценарий как часть процесса создания кластера, он будет сохранен автоматически.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Следующие шаги
 
 Конкретные действия по использованию действий скрипта см. в следующих разделах: [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md).
 

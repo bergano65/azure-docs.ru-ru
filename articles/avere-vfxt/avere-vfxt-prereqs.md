@@ -3,15 +3,15 @@ title: Необходимые условия для Avere vFXT — Azure
 description: Необходимые условия для Avere vFXT для Azure
 author: ekpgh
 ms.service: avere-vfxt
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 01/21/2020
 ms.author: rohogue
-ms.openlocfilehash: a183989cc666f00da4be077c719c40d2524fd6e0
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: c1828bcde5c26c5605b867c115127eb2502bdd86
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "79252549"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85505347"
 ---
 # <a name="prepare-to-create-the-avere-vfxt"></a>Подготовка к созданию Avere vFXT
 
@@ -98,7 +98,7 @@ ms.locfileid: "79252549"
 1. Выберите виртуальную сеть для кластера.
 1. В меню слева щелкните **конечные точки службы** .
 1. В верхней части страницы щелкните **Добавить**.
-1. Выберите службу ``Microsoft.Storage``.
+1. Выберите службу ``Microsoft.Storage`` .
 1. Выберите подсеть кластера.
 1. В нижней части страницы щелкните **Добавить**.
 

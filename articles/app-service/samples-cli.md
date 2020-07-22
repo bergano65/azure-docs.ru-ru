@@ -4,20 +4,20 @@ description: В этой статье приведены примеры Azure CL
 tags: azure-service-management
 ms.assetid: 53e6a15a-370a-48df-8618-c6737e26acec
 ms.topic: sample
-ms.date: 12/12/2017
+ms.date: 07/07/2020
 ms.custom: mvc
-ms.openlocfilehash: 499bf25f06030ae9fc5c1f8381ef4cd6ff6873dc
-ms.sourcegitcommit: 31ef5e4d21aa889756fa72b857ca173db727f2c3
+ms.openlocfilehash: beab87618b97da4e61b0525c0c5a6bdd134fb7f8
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81535627"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86169448"
 ---
 # <a name="cli-samples-for-azure-app-service"></a>Примеры интерфейса командной строки для Службы приложений Azure
 
 В следующей таблице содержатся ссылки на скрипты Bash, созданные с помощью Azure CLI.
 
-| | |
+| Скрипт | Описание |
 |-|-|
 |**Создание приложения**||
 | [Создание приложения и развертывание файлов с помощью протокола FTP](./scripts/cli-deploy-ftp.md?toc=%2fcli%2fazure%2ftoc.json)| Создает приложение Службы приложений и развертывает в него файл с использованием протокола FTP. |
@@ -25,7 +25,8 @@ ms.locfileid: "81535627"
 | [Создание приложения с непрерывным развертыванием из GitHub](./scripts/cli-continuous-deployment-github.md?toc=%2fcli%2fazure%2ftoc.json)| Создает приложение Службы приложений с непрерывной публикацией из репозитория GitHub, владельцем которого вы являетесь. |
 | [Создание приложения и развертывание кода из локального репозитория Git](./scripts/cli-deploy-local-git.md?toc=%2fcli%2fazure%2ftoc.json) | Создает приложение Службы приложений и настраивает вживление кода из локального репозитория Git. |
 | [Создание приложения и развертывание кода в промежуточной среде](./scripts/cli-deploy-staging-environment.md?toc=%2fcli%2fazure%2ftoc.json) | Создает приложение Службы приложений со слотом развертывания для изменений промежуточного кода. |
-| [Создание приложения ASP.NET Core в контейнере Docker](./scripts/cli-linux-docker-aspnetcore.md?toc=%2fcli%2fazure%2ftoc.json)| Создает приложение Службы приложений в Linux и загружает образ Docker из Docker Hub. |
+| [Создание приложения ASP.NET Core в контейнере Docker](./scripts/cli-linux-docker-aspnetcore.md?toc=%2fcli%2fazure%2ftoc.json) | Создает приложение Службы приложений в Linux и загружает образ Docker из Docker Hub. |
+| [Создание приложения и его предоставление с использованием частной конечной точки](./scripts/cli-deploy-privateendpoint.md?toc=%2fcli%2fazure%2ftoc.json) | Создает приложение в Службе приложений и частную конечную точку. |
 |**Настройка приложения**||
 | [Сопоставление личного домена с приложением](./scripts/cli-configure-custom-domain.md?toc=%2fcli%2fazure%2ftoc.json)| Создает приложение Службы приложений и сопоставляет c ним имя личного домена. |
 | [Привязка TLS/SSL-сертификата к приложению](./scripts/cli-configure-ssl-certificate.md?toc=%2fcli%2fazure%2ftoc.json)| Создает приложение Службы приложений и привязывает к нему TLS/SSL-сертификат имени личного домена. |
@@ -35,7 +36,7 @@ ms.locfileid: "81535627"
 |**Защита приложения**||
 | [Интеграция со Шлюзом приложений Azure](./scripts/cli-integrate-app-service-with-application-gateway.md?toc=%2fcli%2fazure%2ftoc.json) | Создает приложение Службы приложений и интегрирует его со Шлюзом приложений, используя конечную точку службы и ограничения доступа. |
 |**Подключение приложения к ресурсам**||
-| [Подключение приложения к Базе данных SQL](./scripts/cli-connect-to-sql.md?toc=%2fcli%2fazure%2ftoc.json)| Создает приложение Службы приложений и базу данных SQL, а затем добавляет строку подключения базы данных к параметрам приложения. |
+| [Подключение приложения к Базе данных SQL](./scripts/cli-connect-to-sql.md?toc=%2fcli%2fazure%2ftoc.json)| Создает приложение Службы приложений и базу данных в Базе данных SQL Azure, а затем добавляет строку подключения базы данных к параметрам приложения. |
 | [Подключение приложения к учетной записи хранения](./scripts/cli-connect-to-storage.md?toc=%2fcli%2fazure%2ftoc.json)| Создает приложение Службы приложений и учетную запись хранения, а затем добавляет строку подключения хранилища к параметрам приложения. |
 | [Подключение приложения к кэшу Azure для Redis](./scripts/cli-connect-to-redis.md?toc=%2fcli%2fazure%2ftoc.json) | Создает приложение Службы приложений и кэш Azure для Redis, а затем добавляет сведения о подключении Redis в параметры приложения. |
 | [Подключение приложения к Cosmos DB](./scripts/cli-connect-to-documentdb.md?toc=%2fcli%2fazure%2ftoc.json) | Создает приложение Службы приложений и базу данных Cosmos DB, а затем добавляет сведения о подключении Cosmos DB в параметры приложения. |

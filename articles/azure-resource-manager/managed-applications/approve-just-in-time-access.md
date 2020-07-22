@@ -6,10 +6,9 @@ ms.topic: conceptual
 ms.date: 06/03/2019
 ms.author: evanhi
 ms.openlocfilehash: 4a3604a3256fb2d3f4253891bbc28c7685748cd2
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75651024"
 ---
 # <a name="configure-and-approve-just-in-time-access-for-azure-managed-applications"></a>Настройка и утверждение JIT-доступа для управляемых приложений Azure
@@ -37,7 +36,7 @@ ms.locfileid: "75651024"
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 
-1. Найдите запись Marketplace для управляемого приложения с включенным JIT. Нажмите кнопку **создания**.
+1. Найдите запись Marketplace для управляемого приложения с включенным JIT. Выберите **Создать**.
 
 1. При предоставлении значений для нового управляемого приложения этап **настройки JIT** позволяет включить или отключить JIT-доступ для управляемого приложения. Выберите **Да** , чтобы **включить JIT-доступ**. Этот параметр выбран по умолчанию для управляемых приложений, которые определены с поддержкой JIT в Marketplace.
 
@@ -107,6 +106,6 @@ ms.locfileid: "75651024"
 
    ![Запросы SELECT](./media/approve-just-in-time-access/view-requests.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о публикации управляемого приложения с JIT-доступом см. в статье [запрос своевременного доступа в управляемых приложениях Azure](request-just-in-time-access.md).

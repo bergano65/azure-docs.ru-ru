@@ -14,29 +14,27 @@ ms.topic: sample
 ms.date: 10/09/2017
 ms.author: apimpm
 ms.custom: mvc
-ms.openlocfilehash: 34526c53757690353ff3756b12ad9f8a5250bb0c
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 7e0da9632aca1475b0348bdd43c7b6b5f89e6d14
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75442320"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86506678"
 ---
 # <a name="azure-powershell-samples-for-api-management"></a>Примеры Azure PowerShell для службы управления API
 
 В приведенной ниже таблице содержатся примеры скриптов для работы со службой управления API из PowerShell.
 
-| | |
-|-|-|
-|**Подготовка и управление**||
+| Подготовка и управление | Описание |
+| -------------------- | ----------- |
 |[Добавление пользователей](./scripts/powershell-add-user-and-get-subscription-key.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создание пользователя в службе управления API и получение ключа подписки.|
 |[Создание службы управления API](./scripts/powershell-create-apim-service.md?toc=%2fpowershell%2fmodule%2ftoc.json)|Создание службы управления API номеров SKU для разработчиков.|
 |[Восстановление службы](./scripts/powershell-backup-restore-apim-service.md?toc=%2fpowershell%2fmodule%2ftoc.json)|Резервное копирование и восстановление службы управления API.|
 |[Масштабирование службы управления API](./scripts/powershell-scale-and-addregion-apim-service.md?toc=%2fpowershell%2fmodule%2ftoc.json)|Масштабирование и добавление региона в службу управления API.|
 |[Настройка личного домена](./scripts/powershell-setup-custom-domain.md?toc=%2fpowershell%2fmodule%2ftoc.json)|Настройка личного домена в конечной точке прокси-сервера и портала в службе управления API.|
-|**Определение API**||
+|**Определение API**| **Описание** |
 |[Импорт API](./scripts/powershell-import-api-and-add-to-product.md?toc=%2fpowershell%2fmodule%2ftoc.json)|Импорт API и его добавление в продукт службы управления API.|
-|**Безопасность**||
+|**Безопасность**| **Описание** |
 |[Защита серверной системы](./scripts/powershell-secure-backend-with-mutual-certificate-authentication.md?toc=%2fpowershell%2fmodule%2ftoc.json)|Защита серверной системы при помощи взаимной аутентификации на основе сертификатов.|
-|**Защита**||
+|**Защита**| **Описание** |
 |[Настройка политики с ограничением скорости](./scripts/powershell-setup-rate-limit-policy.md?toc=%2fpowershell%2fmodule%2ftoc.json)|Применение ограничения скорости к политике на уровне продукта. |
-|||

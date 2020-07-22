@@ -11,10 +11,9 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 4a4d3a1480a852218e698862a509c4af45e49eb8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "76714412"
 ---
 # <a name="project-lead-tasks-in-the-team-data-science-process"></a>Задачи руководителя проекта в процессе обработки и анализа данных группы
@@ -57,7 +56,7 @@ ms.locfileid: "76714412"
 
 Чтобы создать репозиторий проекта в проекте **myTeam** вашей команды, выполните следующие действия.
 
-1. Перейдите на страницу **сводки** проекта команды по адресу *https:\//\<имя сервера>/\<название организации>/\<имя команды>*, например **https:\//dev.Azure.com/DataScienceUnit/myTeam**, и выберите **репозиториев** в левой области навигации. 
+1. Перейдите на страницу **сводки** проекта команды по адресу *https: \/ / \<server name> / \<organization name> / \<team name> *, например **https: \/ /dev.Azure.com/DataScienceUnit/myTeam**, и выберите **репозиториев** в левой области навигации. 
    
 1. Выберите имя репозитория в верхней части страницы, а затем в раскрывающемся списке выберите пункт **создать репозиторий** .
    
@@ -83,7 +82,7 @@ ms.locfileid: "76714412"
    
    ![Выбор импорта](./media/project-lead-tasks/project-leads-5-create-project-repo-4.png)
    
-1. В диалоговом окне **Импорт репозитория git** выберите **Git** в качестве **типа источника**и введите URL-адрес репозитория **теамтемплате** в разделе **URL-адрес клона**. URL-адрес *— HTTPS\//\<: имя сервера>\</имя Организации>\</имя группы>/_git\</имя репозитория командного шаблона>*. Например: **https:\//dev.Azure.com/DataScienceUnit/myTeam/_git/TeamTemplate**. 
+1. В диалоговом окне **Импорт репозитория git** выберите **Git** в качестве **типа источника**и введите URL-адрес репозитория **теамтемплате** в разделе **URL-адрес клона**. URL-адрес — *https: \/ / \<server name> / \<organization name> / \<team name> /_git \<team template repository name> /*. Например: **https: \/ /dev.Azure.com/DataScienceUnit/myTeam/_git/TeamTemplate**. 
    
 1. Выберите **Импортировать**. Содержимое репозитория шаблонов команд импортируется в репозиторий проекта. 
    

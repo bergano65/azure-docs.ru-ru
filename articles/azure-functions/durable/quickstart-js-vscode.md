@@ -5,12 +5,12 @@ author: anthonychu
 ms.topic: quickstart
 ms.date: 05/07/2020
 ms.reviewer: azfuncdf, antchu
-ms.openlocfilehash: 6544cd115dbae2268492a8775a780d2f045f4e4a
-ms.sourcegitcommit: b396c674aa8f66597fa2dd6d6ed200dd7f409915
+ms.openlocfilehash: 4ac33a01f574f537d64c706842c7d867f387c804
+ms.sourcegitcommit: 3988965cc52a30fc5fed0794a89db15212ab23d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82889671"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85194473"
 ---
 # <a name="create-your-first-durable-function-in-javascript"></a>Создание устойчивой функции с помощью JavaScript
 
@@ -58,25 +58,6 @@ ms.locfileid: "82889671"
 При необходимости Visual Studio Code устанавливает Azure Functions Core Tools. Кроме того, создается проект приложения-функции в папке. Проект будет содержать файлы конфигурации [host.json](../functions-host-json.md) и [local.settings.json](../functions-run-local.md#local-settings-file).
 
 В корневой папке также создается файл package.json.
-
-### <a name="enable-compatibility-mode"></a>Включение режима совместимости
-
-Сейчас для Устойчивых функций JavaScript требуется включить режим совместимости с Функциями Azure версии 2.
-
-1. Откройте файл *local.settings.json*, чтобы изменить параметры, используемые при локальном выполнении приложения.
-
-1. Добавьте параметр с именем `FUNCTIONS_V2_COMPATIBILITY_MODE` и значением `true`.
-
-    ```json
-    {
-        "IsEncrypted": false,
-        "Values": {
-            "AzureWebJobsStorage": "",
-            "FUNCTIONS_WORKER_RUNTIME": "node",
-            "FUNCTIONS_V2_COMPATIBILITY_MODE": "true"
-        }
-    }
-    ```
 
 ## <a name="install-the-durable-functions-npm-package"></a>Установка пакета npm для расширения "Устойчивые функции"
 
@@ -169,7 +150,7 @@ ms.locfileid: "82889671"
 
     ![Локальные выходные данные в Azure](media/quickstart-js-vscode/functions-f5.png)
 
-1. Отправьте запрос HTTP POST к конечной точке URL-адреса, используя средства наподобие [Postman](https://www.getpostman.com/) или [cURL](https://curl.haxx.se/). Последний сегмент замените именем функции оркестратора (`HelloOrchestrator` в нашем примере). URL-адрес должен выглядеть приблизительно так: `http://localhost:7071/api/orchestrators/HelloOrchestrator`.
+1. Отправьте запрос HTTP POST к конечной точке URL-адреса, используя браузер или средства наподобие [Postman](https://www.getpostman.com/) или [cURL](https://curl.haxx.se/). Последний сегмент замените именем функции оркестратора (`HelloOrchestrator` в нашем примере). URL-адрес должен выглядеть приблизительно так: `http://localhost:7071/api/orchestrators/HelloOrchestrator`.
 
    Полученный ответ является начальным результатом функции HTTP, который сообщает об успешном начале работы устойчивой оркестрации. Он еще не конечный результат оркестрации. Ответ включает несколько полезных URL-адреса. Теперь запросите состояние оркестрации.
 
@@ -201,20 +182,6 @@ ms.locfileid: "82889671"
 [!INCLUDE [functions-create-function-app-vs-code](../../../includes/functions-sign-in-vs-code.md)]
 
 [!INCLUDE [functions-publish-project-vscode](../../../includes/functions-publish-project-vscode.md)]
-
-### <a name="enable-compatibility-mode"></a>Включение режима совместимости
-
-Режим совместимости с Функциями Azure версии 2, который вы уже включили локально, должен поддерживаться и в приложении Azure.
-
-1. На палитре команд найдите и выберите `Azure Functions: Edit Setting...`.
-
-1. Следуя инструкциям, найдите приложение-функцию в подписке Azure.
-
-1. Выберите `Create new App Setting...`.
-
-1. Введите новый ключ параметра `FUNCTIONS_V2_COMPATIBILITY_MODE`.
-
-1. Введите значение `true` для этого параметра.
 
 ## <a name="test-your-function-in-azure"></a>Тестирование функции в Azure
 

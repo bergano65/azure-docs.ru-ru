@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: tutorial
-ms.date: 01/27/2020
+ms.date: 06/29/2020
 ms.author: pafarley
-ms.openlocfilehash: 5e74eda9e30c536c0eba4e847019344c87e10cce
-ms.sourcegitcommit: 9ee0cbaf3a67f9c7442b79f5ae2e97a4dfc8227b
+ms.openlocfilehash: ec39b4c6a478af22363e7ff30fee81ae3509f724
+ms.sourcegitcommit: 73ac360f37053a3321e8be23236b32d4f8fb30cf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "76774335"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85555874"
 ---
 # <a name="tutorial-moderate-e-commerce-product-images-with-azure-content-moderator"></a>Руководство по Модерация изображений товаров для электронной коммерции с помощью Azure Content Moderator
 
@@ -32,7 +32,7 @@ ms.locfileid: "76774335"
 
 Полный кода для этого примера доступен в репозитории [Samples eCommerce Catalog Moderation](https://github.com/MicrosoftContentModerator/samples-eCommerceCatalogModeration) на сайте GitHub.
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

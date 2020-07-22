@@ -5,12 +5,12 @@ ms.topic: article
 ms.date: 01/17/2020
 author: dkkapur
 ms.author: dekapur
-ms.openlocfilehash: a614d6b5d0cf5c6c1df5ffcb90e56960d6b8a2a9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: e9d7e2a706f65b5f2948a24400aa63ba39350661
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82025039"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86259636"
 ---
 # <a name="deploy-on-dedicated-hosts"></a>Развертывание на выделенных узлах
 
@@ -18,7 +18,7 @@ ms.locfileid: "82025039"
 
 Выделенный номер SKU подходит для рабочих нагрузок контейнера, требующих изоляции рабочей нагрузки с точки зрения физического сервера.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 * Ограничение по умолчанию для любой подписки, использующей выделенный номер SKU, равно 0. Если вы хотите использовать этот номер SKU для развертывания рабочих контейнеров, создайте [Поддержка Azure][azure-support] , чтобы увеличить это ограничение.
 
@@ -28,17 +28,17 @@ ms.locfileid: "82025039"
 > Использование выделенного номера SKU доступно только в последней версии API (2019-12-01), которая находится в процессе развертывания. Укажите версию API в шаблоне развертывания.
 >
 
-Начиная с API версии 2019-12-01, в разделе свойств `sku` группы контейнеров шаблона развертывания, который требуется для развертывания ACI, существует свойство. В настоящее время это свойство можно использовать как часть шаблона развертывания Azure Resource Manager для ACI. Дополнительные сведения о развертывании ресурсов ACI с помощью шаблона см. в [руководстве по развертыванию группы с несколькими контейнерами с использованием шаблона диспетчер ресурсов](https://docs.microsoft.com/azure/container-instances/container-instances-multi-container-group). 
+Начиная с API версии 2019-12-01, `sku` в разделе свойств группы контейнеров шаблона развертывания, который требуется для развертывания ACI, существует свойство. В настоящее время это свойство можно использовать как часть шаблона развертывания Azure Resource Manager для ACI. Дополнительные сведения о развертывании ресурсов ACI с помощью шаблона см. в [руководстве по развертыванию группы с несколькими контейнерами с использованием шаблона диспетчер ресурсов](./container-instances-multi-container-group.md). 
 
-`sku` Свойство может иметь одно из следующих значений:
+`sku`Свойство может иметь одно из следующих значений:
 * `Standard`— Стандартный вариант развертывания ACI, который по-прежнему гарантирует безопасность на уровне гипервизора. 
 * `Dedicated`— используется для изоляции уровня рабочей нагрузки с выделенными физическими узлами для группы контейнеров.
 
 ## <a name="modify-your-json-deployment-template"></a>Изменение шаблона развертывания JSON
 
 В шаблоне развертывания измените или добавьте следующие свойства:
-* В `resources`разделе задайте `apiVersion` для `2019-12-01`значение.
-* В свойствах группы контейнеров добавьте `sku` свойство со значением. `Dedicated`
+* В разделе `resources` задайте `apiVersion` для значение `2019-12-01` .
+* В свойствах группы контейнеров добавьте `sku` свойство со значением `Dedicated` .
 
 Ниже приведен пример фрагмента для раздела Resources шаблона развертывания группы контейнеров, который использует выделенный номер SKU:
 
@@ -137,17 +137,17 @@ ms.locfileid: "82025039"
 az group create --name myResourceGroup --location eastus
 ```
 
-Разверните шаблон с помощью команды [az group deployment create][az-group-deployment-create].
+Разверните шаблон с помощью команды [AZ Deployment Group Create][az-deployment-group-create] .
 
 ```azurecli-interactive
-az group deployment create --resource-group myResourceGroup --template-file deployment-template.json
+az deployment group create --resource-group myResourceGroup --template-file deployment-template.json
 ```
 
 В течение нескольких секунд вы должны получить исходный ответ Azure. Успешное развертывание выполняется на выделенном узле.
 
 <!-- LINKS - Internal -->
 [az-group-create]: /cli/azure/group#az-group-create
-[az-group-deployment-create]: /cli/azure/group/deployment#az-group-deployment-create
+[az-deployment-group-create]: /cli/azure/deployment/group#az-deployment-group-create
 
 <!-- LINKS - External -->
 [azure-support]: https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest

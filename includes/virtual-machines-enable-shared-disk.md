@@ -5,19 +5,23 @@ services: virtual-machines
 author: roygara
 ms.service: virtual-machines
 ms.topic: include
-ms.date: 04/08/2020
+ms.date: 07/14/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 0df74b82c847c9738d97d2001573666714c17672
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 29a90b94db5e6e5791361bad004efcf649e1950b
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81008364"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86500616"
 ---
 ## <a name="limitations"></a>Ограничения
 
 [!INCLUDE [virtual-machines-disks-shared-limitations](virtual-machines-disks-shared-limitations.md)]
+
+## <a name="supported-operating-systems"></a>Поддерживаемые операционные системы
+
+Общие диски поддерживают несколько операционных систем. Поддерживаемые операционные системы см. в разделах, посвященных [ОС Windows](../articles/virtual-machines/windows/disks-shared.md#windows) и [Linux](../articles/virtual-machines/linux/disks-shared.md#linux) .
 
 ## <a name="disk-sizes"></a>Размеры диска
 
@@ -27,12 +31,29 @@ ms.locfileid: "81008364"
 
 ### <a name="deploy-a-premium-ssd-as-a-shared-disk"></a>Развертывание SSD уровня "Премиум" как общего диска
 
-Чтобы развернуть управляемый диск с включенной функцией "общий диск", используйте новое `maxShares` свойство и определите значение больше 1. Это сделает диск общим для нескольких виртуальных машин.
+Чтобы развернуть управляемый диск с включенной функцией "общий диск", используйте новое свойство `maxShares` и определите значение больше 1. Это сделает диск общим для нескольких виртуальных машин.
 
 > [!IMPORTANT]
-> Значение параметра `maxShares` может быть задано или изменено только при отключении диска от всех виртуальных машин. Допустимые значения для `maxShares`см. в разделе [размеры дисков](#disk-sizes) .
+> Значение параметра `maxShares` может быть задано или изменено только при отключении диска от всех виртуальных машин. Допустимые значения для см. в разделе [размеры дисков](#disk-sizes) `maxShares` .
 
-Перед использованием следующего шаблона `[parameters('dataDiskName')]`замените, `[resourceGroup().location]` `[parameters('dataDiskSizeGB')]`, и `[parameters('maxShares')]` собственными значениями.
+#### <a name="cli"></a>CLI
+```azurecli
+
+az disk create -g myResourceGroup -n mySharedDisk --size-gb 1024 -l westcentralus --sku PremiumSSD_LRS --max-shares 2
+
+```
+
+#### <a name="powershell"></a>PowerShell
+```azurepowershell-interactive
+
+$datadiskconfig = New-AzDiskConfig -Location 'WestCentralUS' -DiskSizeGB 1024 -AccountType PremiumSSD_LRS -CreateOption Empty
+
+New-AzDisk -ResourceGroupName 'myResourceGroup' -DiskName 'mySharedDisk' -Disk $datadiskconfig
+
+```
+
+#### <a name="azure-resource-manager"></a>Azure Resource Manager
+Перед использованием следующего шаблона замените,, `[parameters('dataDiskName')]` `[resourceGroup().location]` `[parameters('dataDiskSizeGB')]` и `[parameters('maxShares')]` собственными значениями.
 
 ```json
 { 
@@ -75,13 +96,12 @@ ms.locfileid: "81008364"
 
 ### <a name="deploy-an-ultra-disk-as-a-shared-disk"></a>Развертывание Ultra Disk в качестве общего диска
 
-#### <a name="cli"></a>CLI
-
-Чтобы развернуть управляемый диск с включенным компонентом "общий диск" `maxShares` , измените параметр на значение больше 1. Это сделает диск общим для нескольких виртуальных машин.
+Чтобы развернуть управляемый диск с включенным компонентом "общий диск", измените `maxShares` параметр на значение больше 1. Это сделает диск общим для нескольких виртуальных машин.
 
 > [!IMPORTANT]
-> Значение параметра `maxShares` может быть задано или изменено только при отключении диска от всех виртуальных машин. Допустимые значения для `maxShares`см. в разделе [размеры дисков](#disk-sizes) .
+> Значение параметра `maxShares` может быть задано или изменено только при отключении диска от всех виртуальных машин. Допустимые значения для см. в разделе [размеры дисков](#disk-sizes) `maxShares` .
 
+#### <a name="cli"></a>CLI
 ```azurecli
 #Creating an Ultra shared Disk 
 az disk create -g rg1 -n clidisk --size-gb 1024 -l westus --sku UltraSSD_LRS --max-shares 5 --disk-iops-read-write 2000 --disk-mbps-read-write 200 --disk-iops-read-only 100 --disk-mbps-read-only 1
@@ -93,14 +113,23 @@ az disk update -g rg1 -n clidisk --disk-iops-read-write 3000 --disk-mbps-read-wr
 az disk show -g rg1 -n clidisk
 ```
 
+#### <a name="powershell"></a>PowerShell
+```azurepowershell-interactive
+
+$datadiskconfig = New-AzDiskConfig -Location 'WestCentralUS' -DiskSizeGB 1024 -AccountType UltraSSD_LRS -CreateOption Empty -DiskIOPSReadWrite 2000 -DiskMBpsReadWrite 200 -DiskIOPSReadOnly 100 -DiskMBpsReadOnly 1
+
+New-AzDisk -ResourceGroupName 'myResourceGroup' -DiskName 'mySharedDisk' -Disk $datadiskconfig
+
+```
+
 #### <a name="azure-resource-manager"></a>Azure Resource Manager
 
-Чтобы развернуть управляемый диск с включенной функцией "общий диск", используйте `maxShares` свойство и определите значение больше 1. Это сделает диск общим для нескольких виртуальных машин.
+Чтобы развернуть управляемый диск с включенной функцией "общий диск", используйте свойство `maxShares` и определите значение больше 1. Это сделает диск общим для нескольких виртуальных машин.
 
 > [!IMPORTANT]
-> Значение параметра `maxShares` может быть задано или изменено только при отключении диска от всех виртуальных машин. Допустимые значения для `maxShares`см. в разделе [размеры дисков](#disk-sizes) .
+> Значение параметра `maxShares` может быть задано или изменено только при отключении диска от всех виртуальных машин. Допустимые значения для см. в разделе [размеры дисков](#disk-sizes) `maxShares` .
 
-Перед использованием следующего шаблона замените `[parameters('dataDiskName')]`, `[resourceGroup().location]`, `[parameters('dataDiskSizeGB')]`, `[parameters('maxShares')]`, `[parameters('diskIOPSReadWrite')]`, `[parameters('diskMBpsReadWrite')]`, `[parameters('diskIOPSReadOnly')]`и `[parameters('diskMBpsReadOnly')]` собственными значениями.
+Перед использованием следующего шаблона замените,, `[parameters('dataDiskName')]` `[resourceGroup().location]` `[parameters('dataDiskSizeGB')]` , `[parameters('maxShares')]` , `[parameters('diskIOPSReadWrite')]` , `[parameters('diskMBpsReadWrite')]` , `[parameters('diskIOPSReadOnly')]` и `[parameters('diskMBpsReadOnly')]` собственными значениями.
 
 ```json
 {
@@ -170,23 +199,14 @@ az disk show -g rg1 -n clidisk
 
 ### <a name="using-azure-shared-disks-with-your-vms"></a>Использование общих дисков Azure с виртуальными машинами
 
-После развертывания общего диска с помощью `maxShares>1`его можно подключить к одной или нескольким виртуальным машинам.
-
-> [!IMPORTANT]
-> Все виртуальные машины, совместно использующие диск, должны быть развернуты в одной [группе размещения](../articles/virtual-machines/windows/proximity-placement-groups.md).
+После развертывания общего диска с помощью его `maxShares>1` можно подключить к одной или нескольким виртуальным машинам.
 
 ```azurepowershell-interactive
 
 $resourceGroup = "myResourceGroup"
 $location = "WestCentralUS"
-$ppgName = "myPPG"
-$ppg = New-AzProximityPlacementGroup `
-   -Location $location `
-   -Name $ppgName `
-   -ResourceGroupName $resourceGroup `
-   -ProximityPlacementGroupType Standard
 
-$vm = New-AzVm -ResourceGroupName $resourceGroup -Name "myVM" -Location $location -VirtualNetworkName "myVnet" -SubnetName "mySubnet" -SecurityGroupName "myNetworkSecurityGroup" -PublicIpAddressName "myPublicIpAddress" -ProximityPlacementGroup $ppg.Id
+$vm = New-AzVm -ResourceGroupName $resourceGroup -Name "myVM" -Location $location -VirtualNetworkName "myVnet" -SubnetName "mySubnet" -SecurityGroupName "myNetworkSecurityGroup" -PublicIpAddressName "myPublicIpAddress"
 
 $dataDisk = Get-AzDisk -ResourceGroupName $resourceGroup -DiskName "mySharedDisk"
 
@@ -238,6 +258,4 @@ PR_EXCLUSIVE_ACCESS_ALL_REGISTRANTS
 Кроме того, при использовании PR_RESERVE, PR_REGISTER_AND_IGNORE, PR_REGISTER_KEY, PR_PREEMPT_RESERVATION, PR_CLEAR_RESERVATION или PR_RELEASE-RESERVATION необходимо указать постоянный ключ-резервирование.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
-
-Если вы заинтересованы в попытке использовать общие диски, [Зарегистрируйтесь для использования предварительной версии](https://aka.ms/AzureSharedDiskPreviewSignUp).
+## <a name="next-steps"></a>Дальнейшие действия

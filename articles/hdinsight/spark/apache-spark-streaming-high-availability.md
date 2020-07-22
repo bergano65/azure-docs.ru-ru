@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.topic: conceptual
+ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 11/29/2019
-ms.openlocfilehash: ac51b77e1ffc2b476b0a73dac9b6917552a86ce4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 2ec0bf460a73f95e18e2e9221e8cbd8d4e14ff77
+ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "74807159"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86086217"
 ---
 # <a name="create-high-availability-apache-spark-streaming-jobs-with-yarn"></a>Создание в YARN заданий потоковой передачи Apache Spark с высоким уровнем доступности
 
@@ -117,7 +117,7 @@ RDD имеет несколько свойств, которые помогаю�
     // to be able to recover on restart, store all offsets in an external database
     ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 
 * [Общие сведения о потоковой передаче Apache Spark](apache-spark-streaming-overview.md)
 * [Создание Apache Sparkных заданий потоковой передачи с точностью после обработки событий](apache-spark-streaming-exactly-once.md)

@@ -2,19 +2,19 @@
 title: Развертывание и создание прогнозов с помощью ONNX в SQL Azure для пограничных вычислений (предварительная версия)
 description: Узнайте, как обучить модель, преобразовать ее в ONNX, развернуть в SQL Azure для пограничных вычислений (предварительная версия), а затем выполнить собственную функцию прогноза (PREDICT) с данными с помощью переданной модели ONNX.
 keywords: Развертывание SQL для пограничных вычислений
-services: sql-database-edge
-ms.service: sql-database-edge
-ms.subservice: ''
+services: sql-edge
+ms.service: sql-edge
+ms.subservice: machine-learning
 ms.topic: conceptual
 author: dphansen
 ms.author: davidph
 ms.date: 05/19/2020
-ms.openlocfilehash: f0b64dd9f752a2d574a04022c84eae05d9ff6445
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
-ms.translationtype: HT
+ms.openlocfilehash: b5cd655aaf9992c6908a7f9287f691fd36d84871
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83594663"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85476739"
 ---
 # <a name="deploy-and-make-predictions-with-an-onnx-model-in-azure-sql-edge-preview"></a>Развертывание и создание прогнозов с помощью модели ONNX в SQL Azure для пограничных вычислений (предварительная версия)
 
@@ -380,11 +380,11 @@ AS (
         , PTRATIO
         , B
         , LSTAT
-    FROM [onnx].[dbo].[features]
+    FROM [dbo].[features]
     )
 SELECT predict_input.id
     , p.variable1 AS MEDV
-FROM PREDICT(MODEL = @model, DATA = predict_input) WITH (variable1 FLOAT) AS p
+FROM PREDICT(MODEL = @model, DATA = predict_input, RUNTIME=ONNX) WITH (variable1 FLOAT) AS p;
 ```
 
 ## <a name="next-steps"></a>Next Steps

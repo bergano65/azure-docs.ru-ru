@@ -1,28 +1,31 @@
 ---
-title: Подключение к Azure Synapse Link для Azure Cosmos DB
+title: Подключение к Azure Synapse Link (предварительная версия) для Azure Cosmos DB
 description: Подключение Azure Cosmos DB к рабочей области Synapse с помощью Azure Synapse Link
 services: synapse-analytics
 author: ArnoMicrosoft
 ms.service: synapse-analytics
 ms.topic: quickstart
-ms.subservice: ''
+ms.subservice: synapse-link
 ms.date: 04/21/2020
 ms.author: acomet
 ms.reviewer: jrasnick
-ms.openlocfilehash: d72d1feda4c267dfa3d5c0dea6928f1b7541b26d
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: fa33f2d9e0c4606587ca5ef65a3f4a021319431f
+ms.sourcegitcommit: 3988965cc52a30fc5fed0794a89db15212ab23d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83599014"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85195051"
 ---
-# <a name="connect-to-azure-synapse-link-for-azure-cosmos-db"></a>Подключение к Azure Synapse Link для Azure Cosmos DB
+# <a name="connect-to-azure-synapse-link-preview-for-azure-cosmos-db"></a>Подключение к Azure Synapse Link (предварительная версия) для Azure Cosmos DB
 
 В этой статье описывается, как получить доступ к базе данных Azure Cosmos DB из Azure Synapse Analytics Studio с помощью Azure Synapse Link.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Перед подключением базы данных Azure Cosmos DB к рабочей области вам потребуется следующее:
+
+> [!IMPORTANT]
+> Сейчас Azure Synapse Link для Azure Cosmos DB поддерживается для рабочих областей, в которых не включена управляемая виртуальная сеть. 
 
 * имеющаяся база данных Azure Cosmos DB (можно также создать новую учетную запись, следуя инструкциям в этом [кратком руководстве](https://docs.microsoft.com/azure/cosmos-db/how-to-manage-database-account));
 * имеющаяся рабочая область Synapse (можно также создать новую рабочую область, следуя инструкциям в этом [кратком руководстве](https://docs.microsoft.com/azure/synapse-analytics/quickstart-create-workspace)). 

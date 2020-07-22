@@ -1,37 +1,37 @@
 ---
-title: Быстрое начало работы с Azure — настройка DSC на виртуальной машине | Документация Майкрософт
-description: Создание стека LAMP на виртуальной машине Linux с настройкой требуемого состояния
+title: Краткое руководство Azure. Настройка виртуальной машины с Desired State Configuration | Документация Майкрософт
+description: Эта статья поможет вам приступить к настройке виртуальной машины с Desired State Configuration.
 services: automation
 ms.subservice: dsc
 keywords: dsc, configuration, automation
 ms.date: 11/06/2018
 ms.topic: quickstart
 ms.custom: mvc
-ms.openlocfilehash: 1a146ab7c05d200b71a33a72fa6362c3cf62629a
-ms.sourcegitcommit: b55d7c87dc645d8e5eb1e8f05f5afa38d7574846
+ms.openlocfilehash: e7fec2bee61844ac294e5463bd5bc88ec3fb5e98
+ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81457524"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86186084"
 ---
-# <a name="configure-a-virtual-machine-with-desired-state-configuration"></a>Настройка Desired State Configuration на виртуальной машине Linux
+# <a name="configure-a-vm-with-desired-state-configuration"></a>Настройка ВМ с использованием Desired State Configuration
 
-Включив службу State Configuration (служба автоматизации Azure), вы сможете контролировать и отслеживать конфигурации серверов Windows и Linux с помощью платформы Desired State Configuration (DSC). Она позволяет выявлять или автоматически исправлять конфигурации, которые отличаются от требуемой конфигурации. Это руководство описывает процедуру подключения виртуальной машины Linux и развертывания стека LAMP с поддержкой DSC.
+Включив службу State Configuration (служба автоматизации Azure), вы сможете контролировать и отслеживать конфигурации серверов Windows и Linux с помощью платформы Desired State Configuration (DSC). Она позволяет выявлять или автоматически исправлять конфигурации, которые отличаются от требуемой конфигурации. В этом кратком руководстве описано, как включить виртуальную машину Linux и развернуть стек LAMP с помощью службы автоматизации Azure State Configuration.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим кратким руководством вам понадобится:
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
-* Учетная запись службы автоматизации Azure. Указания по созданию учетной записи запуска от имени пользователя для службы автоматизации Azure см. в статье [Проверка подлинности модулей Runbook в Azure с помощью учетной записи запуска от имени](automation-sec-configure-azure-runas-account.md).
+* Учетная запись службы автоматизации Azure. Указания по созданию учетной записи запуска от имени пользователя для службы автоматизации Azure см. в статье [Проверка подлинности модулей Runbook в Azure с помощью учетной записи запуска от имени](./manage-runas-account.md).
 * Виртуальная машина Azure Resource Manager (не классическая) под управлением Red Hat Enterprise Linux, CentOS или Oracle Linux. Инструкции по созданию виртуальной машины см. в статье [Создание первой виртуальной машины Linux на портале Azure](../virtual-machines/linux/quick-create-portal.md).
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 Войдите в Azure по адресу https://portal.azure.com.
 
-## <a name="onboard-a-virtual-machine"></a>Подключение виртуальной машины
+## <a name="enable-a-virtual-machine"></a>Активация виртуальной машины
 
-Подключить компьютер и активировать DSC можно разными способами. В этом руководстве мы рассматриваем подключение с помощью учетной записи службы автоматизации. Сведения о других методах подключения компьютеров к службе State Configuration см. в [этой статье](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding).
+Существует множество различных методов включения компьютера для функции State Configuration. В этом кратком руководстве объясняется, как включить функцию для виртуальной машины с помощью учетной записи службы автоматизации. Дополнительные сведения о различных методах, позволяющих настроить компьютеры для State Configuration, см. в статье [Активация управления для компьютеров с помощью службы автоматизации Azure State Configuration](./automation-dsc-onboarding.md).
 
 1. В области слева на портале Azure выберите **Учетные записи службы автоматизации**. Если в этой области нет такого элемента, щелкните **Все службы** и найдите его в этом представлении.
 1. Выберите из списка учетную запись службы автоматизации.
@@ -39,10 +39,10 @@ ms.locfileid: "81457524"
 2. Чтобы открыть страницу для выбора виртуальной машины, нажмите кнопку **Добавить**.
 3. Найдите виртуальную машину, для которой необходимо включить DSC. Для поиска конкретной виртуальной машины можно применить поле поиска и фильтры.
 4. Выберите виртуальную машину и нажмите кнопку **Подключить**.
-5. Выберите настройки DSC для этой виртуальной машины. Если у вас есть уже готовая конфигурация, укажите ее для параметра `Node Configuration Name`. Также вы можете задать [режим конфигурации](https://docs.microsoft.com/powershell/scripting/dsc/managing-nodes/metaConfig), который определяет правила применения настройки для виртуальной машины.
+5. Выберите настройки DSC для этой виртуальной машины. Если у вас есть уже готовая конфигурация, укажите ее для параметра `Node Configuration Name`. Также вы можете задать [режим конфигурации](/powershell/scripting/dsc/managing-nodes/metaConfig), который определяет правила применения настройки для виртуальной машины.
 6. Нажмите кнопку **ОК**. При развертывании расширения DSC на виртуальной машине отображается состояние `Connecting`.
 
-![Подключение виртуальной машины Azure к DSC](./media/automation-quickstart-dsc-configuration/dsc-onboard-azure-vm.png)
+![Включение виртуальной машины Azure для DSC](./media/automation-quickstart-dsc-configuration/dsc-onboard-azure-vm.png)
 
 ## <a name="import-modules"></a>Импорт модулей
 
@@ -57,7 +57,7 @@ ms.locfileid: "81457524"
 
 ## <a name="import-the-configuration"></a>Импорт конфигурации
 
-В этом руководстве используется конфигурация DSC, которая настраивает на компьютере HTTP-сервер Apache, PHP и MySQL. См. статью [Конфигурации DSC](https://docs.microsoft.com/powershell/scripting/dsc/configurations/configurations).
+В этом руководстве используется конфигурация DSC, которая настраивает на компьютере HTTP-сервер Apache, PHP и MySQL. См. статью [Конфигурации DSC](/powershell/scripting/dsc/configurations/configurations).
 
 В текстовом редакторе введите следующий код и сохраните его локально в виде файла **AMPServer.ps1**.
 
@@ -128,11 +128,7 @@ configuration LAMPServer {
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Из этого руководства вы узнали, как подключить виртуальную машину Linux к службе State Configuration, создали конфигурацию для стека LAMP и развернули ее на виртуальной машине. Дополнительные сведения о применении службы State Configuration (служба автоматизации Azure) для непрерывного развертывания вы найдете в следующей статье:
+Из этого руководства вы узнали, как активировать виртуальную машину Linux к службе State Configuration, создали конфигурацию для стека LAMP и развернули ее на виртуальной машине. Дополнительные сведения о применении службы State Configuration (служба автоматизации Azure) для непрерывного развертывания вы найдете в следующей статье:
 
 > [!div class="nextstepaction"]
-> [Пример использования. Непрерывное развертывание на виртуальных машинах с помощью Automation DSC и Chocolatey](./automation-dsc-cd-chocolatey.md)
-
-* Дополнительные сведения о DSC для PowerShell см. в статье [Общие сведения о службе настройки требуемого состояния Windows PowerShell](https://docs.microsoft.com/powershell/scripting/dsc/overview/overview).
-* Дополнительные сведения об управлении службой State Configuration из PowerShell см. в документации по [Azure PowerShell](https://docs.microsoft.com/powershell/module/azurerm.automation/).
-* Чтобы научиться пересылать отчеты DSC в журналы Azure Monitor для создания отчетов и оповещений, изучите [эту статью](automation-dsc-diagnostics.md).
+> [Настройка непрерывного развертывания с помощью Chocolatey](./automation-dsc-cd-chocolatey.md)

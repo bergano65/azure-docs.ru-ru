@@ -9,10 +9,9 @@ ms.devlang: csharp
 ms.topic: conceptual
 ms.date: 08/08/2017
 ms.openlocfilehash: c4cb230c9f0b56e3ff9d81e0d85134a7f192e6e9
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75429177"
 ---
 # <a name="create-an-iot-hub-using-the-resource-provider-rest-api-net"></a>Создание Центра Интернета вещей с помощью REST API поставщика ресурсов (.NET)
@@ -27,7 +26,7 @@ ms.locfileid: "75429177"
 
 * приведенному.
 
-* Активная учетная запись Azure. Если у вас нет учетной записи, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
+* Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
 
 * [Azure PowerShell 1.0](https://docs.microsoft.com/powershell/azure/install-Az-ps) или более поздней версии.
 
@@ -154,7 +153,7 @@ ms.locfileid: "75429177"
 
 Теперь можно завершить приложение, вызвав метод **CreateIoTHub** , а затем собрать и запустить приложение.
 
-1. Добавьте в конец метода **Main** следующий код:
+1. Добавьте следующий код в конец метода **Main** :
 
     ```csharp
     CreateIoTHub(token.AccessToken);
@@ -170,7 +169,7 @@ ms.locfileid: "75429177"
 > [!NOTE]
 > В этом примере приложения добавляется стандартный Центр Интернета вещей S1, который подлежит оплате. По завершении можно удалить центр Интернета вещей с помощью [портал Azure](https://portal.azure.com/) или с помощью командлета PowerShell **Remove-азресаурце** .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 После развертывания Центра Интернета вещей с использованием REST API вам могут понадобиться дополнительные сведения:
 

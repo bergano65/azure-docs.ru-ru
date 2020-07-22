@@ -8,10 +8,9 @@ ms.date: 05/05/2020
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: b60cf34e8efed2ed63b6e35cfaf7445edb701610
-ms.sourcegitcommit: 11572a869ef8dbec8e7c721bc7744e2859b79962
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/05/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82838507"
 ---
 # <a name="frequently-asked-questions-about-analysis-services-network-connectivity"></a>Часто задаваемые вопросы о Analysis Services сетевом подключении
@@ -44,7 +43,7 @@ ms.locfileid: "82838507"
 **Ответ** . Azure Analysis Services не поддерживает теги Private Links, виртуальных сетей или Service. Существуют некоторые решения с открытым исходным кодом (например, https://github.com/mathwro/Scripts/blob/master/Azure/AllowAzure-AnalysisServer.ps1) которые определяют IP-адрес клиентского приложения, автоматически и временно обновляют правила брандмауэра).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Установка и настройка локального шлюза данных](analysis-services-gateway-install.md)   
 [Подключение к локальным источникам данных с помощью локального шлюза данных](analysis-services-gateway.md)   

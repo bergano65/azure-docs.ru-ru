@@ -4,15 +4,15 @@ description: В этой статье содержатся сведения об
 services: application-gateway
 author: caya
 ms.service: application-gateway
-ms.topic: article
+ms.topic: how-to
 ms.date: 11/4/2019
 ms.author: caya
-ms.openlocfilehash: 3903ccd1c15765d06cd1794a40567e2c70062538
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
+ms.openlocfilehash: f20302a4993da1754255254ce6d69c000750d4ab
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "73795903"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84806781"
 ---
 # <a name="how-to-upgrade-application-gateway-ingress-controller-using-helm"></a>How to upgrade Application Gateway Ingress Controller using Helm (Обновление контроллера входящего трафика Шлюза приложений с помощью Helm) 
 
@@ -34,7 +34,7 @@ ms.locfileid: "73795903"
         https://appgwingress.blob.core.windows.net/ingress-azure-helm-package/
     ```
 
-## <a name="upgrade"></a>Обновление
+## <a name="upgrade"></a>Upgrade
 
 1. Обновите репозиторий АГИК Helm, чтобы получить последний выпуск:
 
@@ -71,7 +71,7 @@ ms.locfileid: "73795903"
     odd-billygoat   22              Fri Jun 21 15:56:06 2019        FAILED  ingress-azure-0.7.0-rc1 0.7.0-rc1       default
     ```
 
-    Установка диаграммы Helm из образца ответа выше имеет имя `odd-billygoat`. Мы будем использовать это имя для остальных команд. Действительное имя развертывания, скорее всего, будет отличаться.
+    Установка диаграммы Helm из образца ответа выше имеет имя `odd-billygoat` . Мы будем использовать это имя для остальных команд. Действительное имя развертывания, скорее всего, будет отличаться.
 
 1. Обновите развертывание Helm до новой версии:
 
@@ -92,7 +92,7 @@ ms.locfileid: "73795903"
     helm history odd-billygoat
     ```
 
-    Образец вывода:
+    Пример результатов выполнения:
 
     ```bash
     REVISION        UPDATED                         STATUS          CHART                   DESCRIPTION

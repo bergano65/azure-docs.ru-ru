@@ -1,30 +1,33 @@
 ---
-title: Поддерживаемые функции Azure Synapse Link для Azure Cosmos DB
+title: Поддерживаемые функции Azure Synapse Link (предварительная версия) для Azure Cosmos DB
 description: Описание текущего набора действий, поддерживаемых Azure Synapse Link для Azure Cosmos DB
 services: synapse-analytics
 author: ArnoMicrosoft
 ms.service: synapse-analytics
 ms.topic: quickstart
-ms.subservice: ''
+ms.subservice: synapse-link
 ms.date: 04/21/2020
 ms.author: acomet
 ms.reviewer: jrasnick
-ms.openlocfilehash: 1b94d7677026f3695d07be4d83a5059373078c2e
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: c9f6a61dfa688980fa6400a2fa93ab8862798750
+ms.sourcegitcommit: 3988965cc52a30fc5fed0794a89db15212ab23d7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83599036"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85194779"
 ---
-# <a name="azure-synapse-link-for-azure-cosmos-db-supported-features"></a>Поддерживаемые функции Azure Synapse Link для Azure Cosmos DB
+# <a name="azure-synapse-link-preview-for-azure-cosmos-db-supported-features"></a>Поддерживаемые функции Azure Synapse Link (предварительная версия) для Azure Cosmos DB
 
-В этой статье описаны функциональные возможности, которые в данный момент поддерживаются Azure Synapse Link для Azure Cosmos DB. 
+В этой статье описаны функциональные возможности, которые в данный момент поддерживаются Azure Synapse Link для Azure Cosmos DB.
 
 ## <a name="azure-synapse-support"></a>Поддержка Azure Synapse
 
 В Azure Cosmos DB существует два типа контейнеров:
 * Контейнер HTAP — контейнер с поддержкой Synapse Link. Для этого контейнера предусмотрено как хранилище транзакций, так и аналитическое хранилище. 
 * Контейнер OLTP — контейнер только с хранилищем транзакций; Synapse Link не поддерживается. 
+
+> [!IMPORTANT]
+> Сейчас Azure Synapse Link для Azure Cosmos DB поддерживается для рабочих областей, в которых не включена управляемая виртуальная сеть. 
 
 Вы можете подключиться к контейнеру Azure Cosmos DB без включения Synapse Link. В этом случае вы сможете только считывать и записывать данные в хранилище транзакций. Ниже приведен список поддерживаемых в настоящее время функций в Synapse Link для Azure Cosmos DB. 
 

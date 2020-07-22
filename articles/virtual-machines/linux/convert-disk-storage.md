@@ -3,16 +3,15 @@ title: Преобразование хранилища управляемых д
 description: Сведения о том, как преобразовать хранилище управляемых дисков Azure с уровня "Стандартный" на "Премиум" или "Премиум" на "Стандартный" с помощью Azure CLI.
 author: roygara
 ms.service: virtual-machines-linux
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 07/12/2018
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: cd9bb92b3ed86c3a57b5fc70411a4593335acedb
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 51ebecf784b7a3ec38f84703a74e96d277afa70c
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75431503"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84658215"
 ---
 # <a name="convert-azure-managed-disks-storage-from-standard-to-premium-or-premium-to-standard"></a>Преобразование хранилища управляемых дисков Azure из уровня "Стандартный" в "Премиум" или "Премиум" в "Стандартный"
 
@@ -142,6 +141,6 @@ az vm start --ids $vmId
 
 Обновление типа диска происходит мгновенно. После преобразования виртуальную машину можно перезапустить.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Сделайте копию виртуальной машины, доступную только для чтения, с помощью [моментальных снимков](snapshot-copy-managed-disk.md).

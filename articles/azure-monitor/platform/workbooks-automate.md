@@ -9,12 +9,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/30/2020
 ms.author: mbullwin
-ms.openlocfilehash: 76ecc3ee17353ebd0bbead1bba959f85d521d0df
-ms.sourcegitcommit: 999ccaf74347605e32505cbcfd6121163560a4ae
+ms.openlocfilehash: e2463c2ea4044af0b20a1dee91b30870639dc7ce
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82982145"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86504926"
 ---
 # <a name="programmatically-manage-workbooks"></a>Программное управление книгами
 
@@ -39,7 +39,7 @@ ms.locfileid: "82982145"
 
     ![Вкладка шаблона коллекции](./media/workbooks-automate/gallery-template.png)
 1. Скопируйте JSON в шаблон коллекции в буфер обмена.
-2. Ниже приведен пример шаблона Azure Resource Manager, который развертывает шаблон книги для Azure Monitor коллекции книг. Вставьте код JSON, скопированный вместо `<PASTE-COPIED-WORKBOOK_TEMPLATE_HERE>`. Справочный шаблон Azure Resource Manager, создающий шаблон книги, можно найти [здесь](https://github.com/microsoft/Application-Insights-Workbooks/blob/master/Documentation/ARM-template-for-creating-workbook-template).
+2. Ниже приведен пример шаблона Azure Resource Manager, который развертывает шаблон книги для Azure Monitor коллекции книг. Вставьте код JSON, скопированный вместо `<PASTE-COPIED-WORKBOOK_TEMPLATE_HERE>` . Справочный шаблон Azure Resource Manager, создающий шаблон книги, можно найти [здесь](https://github.com/microsoft/Application-Insights-Workbooks/blob/master/Documentation/ARM-template-for-creating-workbook-template).
 
     ```json
     {
@@ -77,8 +77,8 @@ ms.locfileid: "82982145"
         ]
     }
     ```
-1. В `galleries` объекте заполните ключи `name` и `category` значениями. Дополнительные сведения о [параметрах](#parameters) см. в следующем разделе.
-2. Разверните этот шаблон Azure Resource Manager с помощью [портал Azure](https://docs.microsoft.com/azure/azure-resource-manager/templates/deploy-portal#deploy-resources-from-custom-template), [интерфейса командной строки](https://docs.microsoft.com/azure/azure-resource-manager/templates/deploy-cli), [PowerShell](https://docs.microsoft.com/azure/azure-resource-manager/templates/deploy-powershell)и т. д.
+1. В `galleries` объекте заполните `name` ключи и `category` значениями. Дополнительные сведения о [параметрах](#parameters) см. в следующем разделе.
+2. Разверните этот шаблон Azure Resource Manager с помощью [портал Azure](../../azure-resource-manager/templates/deploy-portal.md#deploy-resources-from-custom-template), [интерфейса командной строки](../../azure-resource-manager/templates/deploy-cli.md), [PowerShell](../../azure-resource-manager/templates/deploy-powershell.md)и т. д.
 3. Откройте портал Azure и перейдите к коллекции книг, выбранной в шаблоне Azure Resource Manager. В примере шаблона перейдите к коллекции книг Azure Monitor:
     1. Откройте портал Azure и перейдите к Azure Monitor
     2. Открыть `Workbooks` из оглавления
@@ -193,7 +193,7 @@ ms.locfileid: "82982145"
 | Параметр | Объяснение |
 | :------------- |:-------------|
 | `workbookDisplayName` | Понятное имя для книги, используемой в коллекции или сохраненном списке. Должно быть уникальным в области группы ресурсов и источника |
-| `workbookType` | Коллекция, в которой будет отображаться книга. Поддерживаются следующие значения: `tsg`книга,, Azure Monitor и т. д. |
+| `workbookType` | Коллекция, в которой будет отображаться книга. Поддерживаются следующие значения: книга, `tsg` , Azure Monitor и т. д. |
 | `workbookSourceId` | Идентификатор экземпляра ресурса, с которым будет связана книга. Новая книга будет отображена, связанная с этим экземпляром ресурса, например, в таблице ресурсов в содержимом _книги_. Если требуется, чтобы книга отображалась в коллекции книг в Azure Monitor, используйте строку _Azure Monitor_ вместо идентификатора ресурса. |
 | `workbookId` | Уникальный идентификатор GUID для этого экземпляра книги. Используйте _[newGuid ()]_ для автоматического создания нового идентификатора GUID. |
 | `kind` | Используется для указания, является ли созданная книга общей или частной. Используйте значение _Shared_ для общих книг и _пользователя_ для частных. |
@@ -201,16 +201,16 @@ ms.locfileid: "82982145"
 | `serializedData` | Содержит содержимое или полезные данные, используемые в книге. Использование шаблона диспетчер ресурсов из пользовательского интерфейса книг для получения значения |
 
 ### <a name="workbook-types"></a>Типы книг
-Типы книг укажите тип коллекции книг, в которой будет отображаться новый экземпляр книги. Возможны следующие значения.
+Типы книг укажите тип коллекции книг, в которой будет отображаться новый экземпляр книги. Доступны следующие варианты:
 
-| Type | Расположение коллекции |
+| Тип | Расположение коллекции |
 | :------------- |:-------------|
 | `workbook` | Значение по умолчанию, используемое в большинстве отчетов, включая коллекцию книг Application Insights, Azure Monitor и т. д.  |
 | `tsg` | Коллекция руководств по устранению неполадок в Application Insights |
 | `usage` | _Больше_ коллекций в условиях _использования_ в Application Insights |
 
 ### <a name="limitations"></a>Ограничения
-По техническим причинам этот механизм нельзя использовать для создания экземпляров книг в коллекции _книг_ Application Insights. Мы работаем над устранением этого ограничения. В то же время для развертывания Application Insights связанных книг рекомендуется использовать коллекцию руководств по устранению `tsg`неполадок (воркбуктипе:).
+По техническим причинам этот механизм нельзя использовать для создания экземпляров книг в коллекции _книг_ Application Insights. Мы работаем над устранением этого ограничения. В то же время `tsg` для развертывания Application Insights связанных книг рекомендуется использовать коллекцию руководств по устранению неполадок (воркбуктипе:).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

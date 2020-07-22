@@ -8,25 +8,24 @@ author: curtand
 manager: daveba
 ms.service: active-directory
 ms.subservice: users-groups-roles
-ms.topic: article
+ms.topic: how-to
 ms.workload: identity
 ms.date: 04/29/2020
 ms.author: curtand
 ms.reviewer: sumitp
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5c5a483ff7a5a93a6908538fd237cb4cf2dacec6
-ms.sourcegitcommit: b9d4b8ace55818fcb8e3aa58d193c03c7f6aa4f1
-ms.translationtype: MT
+ms.openlocfilehash: 0d0d83d3b981968949d558cb7ee5672094b00555
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82582679"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84727336"
 ---
 # <a name="powershell-and-graph-examples-for-group-based-licensing-in-azure-ad"></a>Примеры PowerShell и Graph для группового лицензирования в Azure AD
 
 Все функции лицензирования на основе групп доступны в [портал Azure](https://portal.azure.com), и в настоящее время PowerShell и Microsoft Graph поддерживают только операции чтения. Но некоторые полезные задачи можно выполнить с помощью существующих [командлетов MSOnline PowerShell](https://docs.microsoft.com/powershell/msonline/v1/azureactivedirectory) и Microsoft Graph. В этом документе приведены примеры того, что можно сделать.
 
 > [!NOTE]
-> Прежде чем приступить к выполнению командлетов, убедитесь, что вы сначала подключаются `Connect-MsolService`  к своей организации, выполнив командлет.
+> Прежде чем приступить к выполнению командлетов, убедитесь, что вы сначала подключаются к своей организации, выполнив `Connect-MsolService`   командлет.
 
 > [!WARNING]
 > Данный код предоставляется в качестве примера для демонстрации. Если вы планируете использовать его в своей среде, попробуйте сначала протестировать его в небольшом масштабе или в отдельной тестовой Организации. Может потребоваться изменить этот код в соответствии с потребностями вашей среды.
@@ -39,7 +38,7 @@ ms.locfileid: "82582679"
 (Get-MsolGroup -ObjectId 99c4216a-56de-42c4-a4ac-e411cd8c7c41).Licenses
 | Select SkuPartNumber
 ```
-Результат
+Выходные данные:
 ```
 SkuPartNumber
 -------------
@@ -55,7 +54,7 @@ EMSPREMIUM
 ```
 GET https://graph.microsoft.com/v1.0/groups/99c4216a-56de-42c4-a4ac-e411cd8c7c41?$select=assignedLicenses
 ```
-Результат
+Выходные данные:
 ```
 HTTP/1.1 200 OK
 {
@@ -92,7 +91,7 @@ Get-MsolGroup -All | Where {$_.Licenses} | Select `
     @{Name="Licenses";Expression={$_.Licenses | Select -ExpandProperty SkuPartNumber}}
 ```
 
-Результат
+Выходные данные:
 ```
 ObjectId                             DisplayName              Licenses
 --------                             -----------              --------
@@ -146,7 +145,7 @@ Get-MsolGroup -All | Where {$_.Licenses}  | Foreach {
 ```
 
 
-Результат
+Выходные данные:
 ```
 GroupName         GroupId                              GroupLicenses       TotalUserCount LicensedUserCount LicenseErrorCount
 ---------         -------                              -------------       -------------- ----------------- -----------------
@@ -165,7 +164,7 @@ Access to Offi... 11151866-5419-4d93-9141-0603bbf78b42 STANDARDPACK             
 ```powershell
 Get-MsolGroup -All -HasLicenseErrorsOnly $true
 ```
-Результат
+Выходные данные:
 ```
 ObjectId                             DisplayName             GroupType Description
 --------                             -----------             --------- -----------
@@ -175,7 +174,7 @@ ObjectId                             DisplayName             GroupType Descripti
 ```
 GET https://graph.microsoft.com/v1.0/groups?$filter=hasMembersWithLicenseErrors+eq+true
 ```
-Результат
+Выходные данные:
 ```
 HTTP/1.1 200 OK
 {
@@ -219,7 +218,7 @@ Get-MsolGroupMember -All -GroupObjectId $groupId |
            @{Name="LicenseError";Expression={$_.IndirectLicenseErrors | Where {$_.ReferencedObjectId -eq $groupId} | Select -ExpandProperty Error}}
 ```
 
-Результат
+Выходные данные:
 
 ```powershell
 ObjectId                             DisplayName      License Error
@@ -233,7 +232,7 @@ ObjectId                             DisplayName      License Error
 GET https://graph.microsoft.com/v1.0/groups/11151866-5419-4d93-9141-0603bbf78b42/membersWithLicenseErrors
 ```
 
-Результат
+Выходные данные:
 ```powershell
 HTTP/1.1 200 OK
 {
@@ -271,7 +270,7 @@ Get-MsolUser -All | Where {$_.IndirectLicenseErrors } | % {
     }  
 ```
 
-Результат
+Выходные данные:
 
 ```powershell
 UserName         UserId                               GroupId                              LicenseError
@@ -378,7 +377,7 @@ Get-MsolUser -All | where {$_.isLicensed -eq $true -and $_.Licenses.AccountSKUID
     @{Name="AssignedFromGroup";Expression={(UserHasLicenseAssignedFromGroup $_ $skuId)}}
 ```
 
-Результат
+Выходные данные:
 
 ```powershell
 ObjectId                             SkuId       AssignedDirectly AssignedFromGroup
@@ -394,7 +393,7 @@ ObjectId                             SkuId       AssignedDirectly AssignedFromGr
 GET https://graph.microsoft.com/v1.0/users/e61ff361-5baf-41f0-b2fd-380a6a5e406a?$select=licenseAssignmentStates
 ```
 
-Результат
+Выходные данные:
 
 ```powershell
 HTTP/1.1 200 OK
@@ -607,7 +606,7 @@ Get-MsolGroupMember -All -GroupObjectId $groupId | Get-MsolUser -ObjectId {$_.Ob
 #END: executing the script
 ```
 
-Результат
+Выходные данные:
 
 ```powershell
 UserId                               OperationResult
@@ -617,9 +616,9 @@ UserId                               OperationResult
 aadbe4da-c4b5-4d84-800a-9400f31d7371 User has no direct license to remove. Skipping.
 ```
 > [!NOTE]
-> Обновите значения переменных `$skuId` , `$groupId`  которые нацелены на удаление прямых лицензий, в соответствии с тестовой средой перед выполнением приведенного выше скрипта. 
+> Обновите значения переменных `$skuId` , `$groupId`   которые нацелены на удаление прямых лицензий, в соответствии с тестовой средой перед выполнением приведенного выше скрипта. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о наборе функций для управления лицензиями с помощью групп см. в следующих статьях:
 

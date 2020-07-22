@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 01/15/2020
 author: sivethe
 ms.author: sivethe
-ms.openlocfilehash: 5df21b2c1926803a65eca911c66b059f36ee18aa
-ms.sourcegitcommit: d6e4eebf663df8adf8efe07deabdc3586616d1e4
+ms.openlocfilehash: 92c94b08602fb32ccebf6115306a5000665affe2
+ms.sourcegitcommit: 1692e86772217fcd36d34914e4fb4868d145687b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81393621"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84171707"
 ---
 # <a name="azure-cosmos-dbs-api-for-mongodb-36-version-supported-features-and-syntax"></a>API Azure Cosmos DB для MongoDB (версии 3.6) — поддержка возможностей и синтаксиса
 
@@ -106,7 +106,7 @@ API Azure Cosmos DB для MongoDB поддерживает приведенны
 |top     |    нет     |
 |whatsmyuri     |   Да      |
 
-<a name="aggregation-pipeline"/>
+<a name="aggregation-pipeline"></a>
 
 ## <a name="aggregation-pipelinea"></a>Конвейер статистической обработки</a>
 

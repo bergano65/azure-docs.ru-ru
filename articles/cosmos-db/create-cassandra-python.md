@@ -1,25 +1,28 @@
 ---
 title: Краткое руководство. Использование API Cassandra с Python в Azure Cosmos DB
 description: В этом руководстве показано, как использовать API Apache Cassandra Azure Cosmos DB для создания приложения профиля с помощью Python.
-author: SnehaGunda
-ms.author: sngun
+author: TheovanKraay
+ms.author: thvankra
 ms.service: cosmos-db
 ms.subservice: cosmosdb-cassandra
 ms.devlang: python
 ms.topic: quickstart
-ms.date: 09/24/2018
-ms.openlocfilehash: 0b432653c452b6763e746f61b86e881c9cee62cc
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.date: 05/18/2020
+ms.custom: tracking-python
+ms.openlocfilehash: dee07db85d8886ab44be096e405143ea0d881ba2
+ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "77134679"
+ms.lasthandoff: 06/20/2020
+ms.locfileid: "85118279"
 ---
 # <a name="quickstart-build-a-cassandra-app-with-python-sdk-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения Cassandra с помощью пакета SDK для Python и Azure Cosmos DB
 
 > [!div class="op_single_selector"]
 > * [.NET](create-cassandra-dotnet.md)
-> * [Java](create-cassandra-java.md)
+> * [.NET Core](create-cassandra-dotnet-core.md)
+> * [Java, версия 3](create-cassandra-java.md)
+> * [Java, версия 4](create-cassandra-java-v4.md)
 > * [Node.js](create-cassandra-nodejs.md)
 > * [Python](create-cassandra-python.md)
 >  
@@ -134,31 +137,31 @@ ms.locfileid: "77134679"
 
 1. Выберите элемент **Строка подключения** в своей учетной записи Azure Cosmos DB на [портале Azure](https://portal.azure.com/). 
 
-    Вы можете использовать кнопку ![Кнопка "Копировать"](./media/create-cassandra-python/copy.png) в правой части экрана, чтобы скопировать значение параметра Contact point (Контакт).
+1. Вы можете использовать кнопку ![Кнопка "Копировать"](./media/create-cassandra-python/copy.png) в правой части экрана, чтобы скопировать значение параметра Contact point (Контакт).
 
-    ![Просмотр и копирование имени пользователя, пароля и контакта в колонку строки подключения на портале Azure](./media/create-cassandra-python/keys.png)
+    :::image type="content" source="./media/create-cassandra-python/keys.png" alt-text="Просмотр и копирование имени пользователя, пароля и контакта в колонке строки подключения на портале Azure":::
 
-2. Откройте файл *config.py*. 
+1. Откройте файл *config.py*. 
 
-3. Вставьте полученное на портале значение параметра Contact point (Контакт) над элементом `<FILLME>` в строке 10.
+1. Вставьте полученное на портале значение параметра Contact point (Контакт) над элементом `<FILLME>` в строке 10.
 
     Теперь строка 10 должна выглядеть примерно так: 
 
     `'contactPoint': 'cosmos-db-quickstarts.cassandra.cosmosdb.azure.com:10350'`
 
-4. Скопируйте значение параметра "Пользователь" на портале и вставьте его над элементом `<FILLME>` в строке 6.
+1. Скопируйте значение параметра "Пользователь" на портале и вставьте его над элементом `<FILLME>` в строке 6.
 
     Теперь строка 6 должна выглядеть примерно так: 
 
     `'username': 'cosmos-db-quickstart',`
     
-5. Скопируйте значение параметра "Пароль" с портала и вставьте его над элементом `<FILLME>` в строке 8.
+1. Скопируйте значение параметра "Пароль" с портала и вставьте его над элементом `<FILLME>` в строке 8.
 
     Теперь строка 8 должна выглядеть примерно так:
 
     `'password' = '2Ggkr662ifxz2Mg==`';`
 
-6. Сохраните файл *config.py*.
+1. Сохраните файл *config.py*.
     
 ## <a name="use-the-x509-certificate"></a>Использование сертификата X509
 
@@ -193,11 +196,11 @@ ms.locfileid: "77134679"
 
     Нажмите клавиши CTRL+C, чтобы остановить выполнение программы и закрыть окно консоли. 
 
-    ![Просмотр и проверка выходных данных](./media/create-cassandra-python/output.png)
+    :::image type="content" source="./media/create-cassandra-python/output.png" alt-text="Просмотр и проверка выходных данных":::
     
 4. На портале Azure откройте **обозреватель данных**, чтобы запросить, изменить и обработать новые данные. 
 
-    ![Просмотр данных в обозревателе данных](./media/create-cassandra-python/data-explorer.png)
+    :::image type="content" source="./media/create-cassandra-python/data-explorer.png" alt-text="Просмотр данных в обозревателе данных":::
 
 ## <a name="review-slas-in-the-azure-portal"></a>Просмотр соглашений об уровне обслуживания на портале Azure
 

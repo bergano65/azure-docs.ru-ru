@@ -4,17 +4,18 @@ description: С помощью этого скрипта создается ма
 author: ju-shim
 tags: azure-resource-manager
 ms.service: virtual-machine-scale-sets
+ms.subservice: autoscale
 ms.devlang: azurecli
 ms.topic: sample
 ms.date: 03/27/2018
 ms.author: jushiman
 ms.custom: mvc
-ms.openlocfilehash: 3502fda1b924aa5351e7edab8e8b712fd0e6bf2c
-ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
+ms.openlocfilehash: 966fd5a3c89fb794b270a9cce6c45c43f4da7354
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83701228"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86494991"
 ---
 # <a name="automatically-scale-a-virtual-machine-scale-set-with-the-azure-cli"></a>Автоматическое масштабирование масштабируемых наборов виртуальных машин с помощью Azure CLI
 С помощью этого скрипта создается масштабируемый набор виртуальных машин под управлением Ubuntu. При этом используются метрики на основе узла для автоматического масштабирования в соответствии с изменением нагрузки на ЦП.
@@ -44,4 +45,4 @@ az group delete --name myResourceGroup
 | [az group delete](/cli/azure/ad/group) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure/overview).
+Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure/overview).

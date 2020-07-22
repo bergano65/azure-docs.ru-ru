@@ -1,5 +1,5 @@
 ---
-title: включить файл
+title: Включить имя файла
 description: включить файл
 services: iot-hub
 author: dominicbetts
@@ -9,10 +9,10 @@ ms.date: 09/07/2018
 ms.author: dobett
 ms.custom: include file
 ms.openlocfilehash: bd08812f83413a997ce655d68d866b145b20dcef
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75912510"
 ---
 ## <a name="extended-iot-scenarios"></a>Расширенные сценарии Интернета вещей

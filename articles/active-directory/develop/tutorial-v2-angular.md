@@ -3,7 +3,7 @@ title: Руководство. Одностраничное приложение
 titleSuffix: Microsoft identity platform
 description: Узнайте, как одностраничные приложения Angular могут вызывать API, которому требуются маркеры доступа от конечной точки платформы удостоверений Майкрософт.
 services: active-directory
-author: hahamil
+author: hamiltonha
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
@@ -12,17 +12,14 @@ ms.workload: identity
 ms.date: 03/05/2020
 ms.author: hahamil
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: c645ab45711698e4a6f582678e2a850e15dea62a
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 7cd2d5d8728e2a0539d5f106ab39c563e6e7c382
+ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82181602"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86231698"
 ---
 # <a name="tutorial-sign-in-users-and-call-the-microsoft-graph-api-from-an-angular-single-page-application"></a>Руководство по входу пользователей в систему и вызову API Microsoft Graph из одностраничного приложения Angular
-
-> [!IMPORTANT]
-> Эта функция в настоящее время находится на стадии предварительной версии. Предварительные версии предоставляются при условии, что вы принимаете [дополнительные условия использования](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Некоторые аспекты этой функции могут быть изменены до выхода общедоступной версии.
 
 В этом учебнике описаны возможности одностраничного приложения Angular, которые указаны ниже.
 - Вход в личные, рабочие и учебные учетные записи.
@@ -141,7 +138,7 @@ ng generate component page-name                  # To add a new page (such as a 
 3. Добавьте в начало файла `src/app/app.component.ts` следующие операторы импорта:
 
     ```javascript
-    import { MsalService } from '@azure/msal-angular';
+    import { MsalService, BroadcastService } from '@azure/msal-angular';
     import { Component, OnInit } from '@angular/core';
     ```
 ## <a name="sign-in-a-user"></a>Вход пользователя
@@ -151,6 +148,8 @@ ng generate component page-name                  # To add a new page (such as a 
 ```javascript
 export class AppComponent implements OnInit {
     constructor(private broadcastService: BroadcastService, private authService: MsalService) { }
+    
+    ngOnInit() { }
 
     login() {
         const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;
@@ -343,7 +342,6 @@ logout() {
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Далее в учебнике по Angular вы узнаете, как выполнить для пользователя вход в систему и получить маркеры:
+Если вы не работали с удостоверениями и управлением доступом, ознакомьтесь с нашими статьями, чтобы узнать о современных методах проверки подлинности, начиная с [аутентификации и авторизации](authentication-vs-authorization.md).
 
-> [!div class="nextstepaction"]
-> [Учебник по Angular](https://docs.microsoft.com/azure/active-directory/develop/tutorial-v2-angular)
+Если вы хотите узнать больше о разработке одностраничных приложений на платформе Microsoft Identity, см. серию статей [Сценарий: одностраничное приложение](scenario-spa-overview.md).

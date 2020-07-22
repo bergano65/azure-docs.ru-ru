@@ -10,24 +10,23 @@ ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: troubleshooting
 ms.date: 10/29/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 745ddcc95bb91e61478307265aec1ac8a7ebba54
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.openlocfilehash: 3ca2600101c302cee1da4d22a3f098436ecb71e7
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75609202"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85355902"
 ---
 # <a name="troubleshooting-errors-during-synchronization"></a>Устранение ошибок синхронизации
 При синхронизации данных удостоверений Windows Server Active Directory (AD DS) с Azure Active Directory (Azure AD) могут возникать ошибки. В этой статье предоставляются общие сведения о различных типах ошибок синхронизации, некоторые возможные сценарии возникновения этих ошибок, а также возможные способы их устранения. Здесь содержатся сведения о распространенных типах ошибок, возможно, рассматриваются не все возможные ошибки.
 
  В этой статье предполагается, что читатель знаком с базовыми [принципами архитектуры Azure AD и Azure AD Connect](plan-connect-design-concepts.md).
 
-С последней версией Azure AD Connect \(августа 2016 или более поздней\)версии отчет об ошибках синхронизации доступен в [портал Azure](https://aka.ms/aadconnecthealth) как часть Azure AD Connect Health для синхронизации.
+С последней версией Azure AD Connect \( августа 2016 или более поздней версии \) отчет об ошибках синхронизации доступен в [портал Azure](https://aka.ms/aadconnecthealth) как часть Azure AD Connect Health для синхронизации.
 
 С 1 сентября 2016 года функция [устойчивости повторяющихся атрибутов Azure AD](how-to-connect-syncservice-duplicate-attribute-resiliency.md) будет включена по умолчанию для всех *новых* клиентов Azure AD. В ближайшие месяцы эта функция будет автоматически включена для имеющихся клиентов.
 
@@ -41,7 +40,7 @@ ms.locfileid: "75609202"
 
 ## <a name="data-mismatch-errors"></a>Ошибки несовпадения данных
 ### <a name="invalidsoftmatch"></a>InvalidSoftMatch
-#### <a name="description"></a>Описание
+#### <a name="description"></a>Описание:
 * Когда \(модуль синхронизации\) Azure AD Connect указывает Azure AD добавить или обновить объекты, Azure AD сопоставляет входящий объект, используя атрибут **sourceAnchor**, с атрибутом **immutableId** объектов в Azure AD. Это сопоставление называется **жестким**.
 * Если перед подготовкой нового объекта **не удалось найти** объект, соответствующий атрибуту **immutableId** и атрибуту **sourceAnchor** входящего объекта, для поиска соответствия Azure AD использует атрибуты proxyAddresses и userPrincipalName. Такое сопоставление называется **мягким**. Мягкое сопоставление предназначено для имеющихся в Azure AD объектов (происходящих их Azure AD) с новыми объектами, добавленными или обновленными при синхронизации, которые представляют ту же сущность (пользователей, группы) в локальной среде.
 * Ошибка **InvalidSoftMatch** возникает, если при жестком сопоставлении не удалось найти соответствующий объект, **А** при мягком сопоставлении он найден, но при этом значение *immutableId* этого объекта и *sourceAnchor* входящего объекта отличаются, предполагая что совпадающий объект синхронизирован с другим объектом из локального каталога AD.
@@ -72,19 +71,19 @@ ms.locfileid: "75609202"
 
 #### <a name="example-case"></a>Пример
 1. Пользователь **Григорий Авдеев** синхронизирован в Azure AD из локального каталога AD в домене *contoso.com*.
-2. **UserPrincipalName** Иван Петров имеет значение **bobs\@contoso.com**.
+2. **UserPrincipalName** Иван Петров имеет значение **bobs \@ contoso.com**.
 3. **abcdefghijklmnopqrstuv==** — это атрибут **sourceAnchor**, вычисленный Azure AD Connect на основе атрибута **objectGUID** из локального каталога Active Directory, который является атрибутом **immutableId** Григория в Azure AD.
 4. Для атрибута **proxyAddresses** Григория используются следующие значения.
    * smtp: bobs@contoso.com.
    * smtp: bob.smith@contoso.com.
-   * **SMTP: Боб\@contoso.com**
+   * **SMTP: Боб \@ contoso.com**
 5. В локальный каталог AD добавлен новый пользователь **Артем Кузнецов**.
-6. В качестве значения **userPrincipalName** Кузнецова для Боба задано значение **бобт\@contoso.com**.
+6. В качестве значения **userPrincipalName** Кузнецова для Боба задано значение **бобт \@ contoso.com**.
 7. **abcdefghijkl0123456789==** — это атрибут **sourceAnchor**, вычисленный Azure AD Connect с использованием атрибута **objectGUID** Артема из локального каталога AD. Объект Артема Кузнецова пока не синхронизирован с Azure AD.
 8. Для атрибута proxyAddresses Артема используются следующие значения:
    * smtp: bobt@contoso.com.
    * smtp: bob.taylor@contoso.com.
-   * **SMTP: Боб\@contoso.com**
+   * **SMTP: Боб \@ contoso.com**
 9. Во время синхронизации Azure AD Connect определит добавление Артема Кузнецова в локальный каталог AD и отправит запрос на изменение аналогичных настроек в Azure AD.
 10. Сначала Azure AD выполнит жесткое сопоставление. Другими словами, выполнит поиск объектов, у которых для атрибута immutableId задано значение abcdefghijkl0123456789==. Так как в Azure AD отсутствуют объекты с таким атрибутом immutableId, жесткое сопоставление завершится ошибкой.
 11. Затем Azure AD выполнит мягкое сопоставление объекта Артема Кузнецова. То есть Azure AD выполнит поиск объектов, у которых для атрибута proxyAddresses задано три значения, в том числе smtp: bob@contoso.com.
@@ -105,19 +104,19 @@ ms.locfileid: "75609202"
 >
 >
 
-#### <a name="related-articles"></a>Связанные статьи
+#### <a name="related-articles"></a>Похожие статьи
 * [Duplicate or invalid attributes prevent directory synchronization in Office 365](https://support.microsoft.com/kb/2647098) (Запрет синхронизации службы каталогов в Office 365 из-за повторяющихся или недопустимых атрибутов)
 
 ### <a name="objecttypemismatch"></a>ObjectTypeMismatch
-#### <a name="description"></a>Описание
+#### <a name="description"></a>Описание:
 При попытке Azure AD мягко сопоставить два объекта может возникнуть ситуация, когда у двух объектов разных типов (пользователя, группы, контакта и т. п.) одинаковые значения атрибутов, используемых в этом процессе. Так как повторение этих атрибутов не допускается в Azure AD, операция может завершиться ошибкой синхронизации ObjectTypeMismatch.
 
 #### <a name="example-scenarios-for-objecttypemismatch-error"></a>Примеры сценариев ошибки ObjectTypeMismatch
 * Администратор создал в Office 365 группу безопасности, поддерживающую почту. Он добавил в локальный каталог AD (пока не синхронизированный с Azure AD) нового пользователя или контакт с тем же значением атрибута proxyAddresses, что и у группы Office 365.
 
 #### <a name="example-case"></a>Примеры
-1. Администратор создал для налогового департамента в Office 365 группу безопасности, поддерживающую почту, а в качестве адреса электронной почты указал tax@contoso.com. Этой группе назначается значение атрибута ProxyAddresses **SMTP: налогоплательщик\@contoso.com**
-2. Новый пользователь присоединяется к Contoso.com, а учетная запись создается для локального пользователя с proxyAddress как **SMTP: налоги\@contoso.com**
+1. Администратор создал для налогового департамента в Office 365 группу безопасности, поддерживающую почту, а в качестве адреса электронной почты указал tax@contoso.com. Этой группе назначается значение атрибута ProxyAddresses **SMTP: налогоплательщик \@ contoso.com**
+2. Новый пользователь присоединяется к Contoso.com, а учетная запись создается для локального пользователя с proxyAddress как **SMTP: налоги \@ contoso.com**
 3. Когда Azure AD Connect синхронизирует новую учетную запись пользователя, произойдет ошибка ObjectTypeMismatch.
 
 #### <a name="how-to-fix-objecttypemismatch-error"></a>Как устранить ошибку ObjectTypeMismatch
@@ -130,7 +129,7 @@ ms.locfileid: "75609202"
 
 ## <a name="duplicate-attributes"></a>Повторяющиеся атрибуты
 ### <a name="attributevaluemustbeunique"></a>AttributeValueMustBeUnique
-#### <a name="description"></a>Описание
+#### <a name="description"></a>Описание:
 В схеме Azure Active Directory запрещено использовать для нескольких объектов одинаковые значения следующих атрибутов. Это значит, что у каждого объекта в Azure AD должно быть уникальное значение для этих атрибутов в заданном экземпляре.
 
 * ProxyAddresses
@@ -143,16 +142,16 @@ ms.locfileid: "75609202"
 
 #### <a name="example-case"></a>Пример
 1. Пользователь **Григорий Авдеев** синхронизирован в Azure AD из локального каталога AD в домене contoso.com.
-2. **UserPrincipalName** в локальной среде Bob Петров имеет значение **bobs\@contoso.com**.
+2. **UserPrincipalName** в локальной среде Bob Петров имеет значение **bobs \@ contoso.com**.
 3. Для атрибута **proxyAddresses** Григория используются следующие значения.
    * smtp: bobs@contoso.com.
    * smtp: bob.smith@contoso.com.
-   * **SMTP: Боб\@contoso.com**
+   * **SMTP: Боб \@ contoso.com**
 4. В локальный каталог AD добавлен новый пользователь **Артем Кузнецов**.
-5. В качестве значения **userPrincipalName** Кузнецова для Боба задано значение **бобт\@contoso.com**.
+5. В качестве значения **userPrincipalName** Кузнецова для Боба задано значение **бобт \@ contoso.com**.
 6. Для атрибута **proxyAddresses****Артема Кузнецова** используются следующие значения: smtp: bobt@contoso.com; smtp: bob.taylor@contoso.com.
 7. Синхронизация объекта Артема Кузнецова выполнена успешно.
-8. Администратор решил заменить значение атрибута **proxyAddresses** Артема на следующее: **SMTP: Боб\@contoso.com**
+8. Администратор решил заменить значение атрибута **proxyAddresses** Артема на следующее: **SMTP: Боб \@ contoso.com**
 9. Azure AD выполнит попытку обновить объект Артема в Azure AD, добавив в него значение выше, но эта операция завершится ошибкой, потому что такое значение уже назначено Григорию Авдееву. В результате отобразится ошибка AttributeValueMustBeUnique.
 
 #### <a name="how-to-fix-attributevaluemustbeunique-error"></a>Как устранить ошибку AttributeValueMustBeUnique
@@ -163,12 +162,12 @@ ms.locfileid: "75609202"
 3. Удалите из объекта ненужное повторяющееся значение. Обратите внимание, что эти изменения необходимо вносить в каталоге, из которого происходит объект. В некоторых случаях может потребоваться удалить один из объектов, участвующих в конфликте.
 4. Если изменения внесены в локальном каталоге AD, выполните их синхронизацию c Azure AD Connect. Это позволит устранить ошибку.
 
-#### <a name="related-articles"></a>Связанные статьи
+#### <a name="related-articles"></a>Похожие статьи
 -[Duplicate or invalid attributes prevent directory synchronization in Office 365](https://support.microsoft.com/kb/2647098) (Запрет синхронизации службы каталогов в Office 365 из-за повторяющихся или недопустимых атрибутов)
 
 ## <a name="data-validation-failures"></a>Сбой проверки данных
 ### <a name="identitydatavalidationfailed"></a>IdentityDataValidationFailed
-#### <a name="description"></a>Описание
+#### <a name="description"></a>Описание:
 Перед записью данных в каталог Azure AD применяет к ним разные ограничения. Эти ограничения улучшают работу пользователей с приложениями, которые зависят от этих данных.
 
 #### <a name="scenarios"></a>Сценарии
@@ -178,15 +177,15 @@ b. Атрибут userPrincipalName не соответствует требуе
 #### <a name="how-to-fix-identitydatavalidationfailed-error"></a>Как устранить ошибку IdentityDataValidationFailed
 а. Убедитесь, что для значения атрибута userPrincipalName указаны поддерживаемые символы и значение соответствует требуемому формату.
 
-#### <a name="related-articles"></a>Связанные статьи
+#### <a name="related-articles"></a>Похожие статьи
 * [Подготовка пользователей к работе путем синхронизации каталогов с Office 365](https://support.office.com/article/Prepare-to-provision-users-through-directory-synchronization-to-Office-365-01920974-9e6f-4331-a370-13aea4e82b3e)
 
 ### <a name="federateddomainchangeerror"></a>Ошибка FederatedDomainChangeError
-#### <a name="description"></a>Описание
+#### <a name="description"></a>Описание:
 Ошибка синхронизации **FederatedDomainChangeError** возникает в конкретном случае, когда суффикс атрибута userPrincipalName пользователя изменяется при переходе из одного федеративного домена в другой.
 
 #### <a name="scenarios"></a>Сценарии
-Суффикс атрибута userPrincipalName синхронизированного пользователя изменился при переходе из одного федеративного домена в другой локальный федеративный домен. Например, *userPrincipalName = bob\@contoso.com* был изменен на *userPrincipalName = Bob\@Fabrikam.com*.
+Суффикс атрибута userPrincipalName синхронизированного пользователя изменился при переходе из одного федеративного домена в другой локальный федеративный домен. Например, *userPrincipalName = bob \@ contoso.com* был изменен на *userPrincipalName = Bob \@ Fabrikam.com*.
 
 #### <a name="example"></a>Пример
 1. Григорий Авдеев (учетная запись для contoso.com) добавлен в AD как новый пользователь. Для атрибута userPrincipalName учетной записи задано значение bob@contoso.com.
@@ -195,16 +194,16 @@ b. Атрибут userPrincipalName не соответствует требуе
 4. Атрибут userPrincipalName Григория не обновляется, поэтому возникла ошибка синхронизации FederatedDomainChangeError.
 
 #### <a name="how-to-fix"></a>Как устранить
-Если суффикс userPrincipalName пользователя был обновлен с Bob@**contoso.com** на Bob\@**Fabrikam.com**, где оба **contoso.com** и **Fabrikam.com** являются **федеративными доменами**, выполните следующие действия, чтобы исправить ошибку синхронизации.
+Если суффикс UserPrincipalName пользователя был обновлен с bob@**contoso.com** на Bob \@ **fabrikam.com**, где оба **contoso.com** и **Fabrikam.com** являются **федеративными доменами**, выполните следующие действия, чтобы исправить ошибку синхронизации.
 
 1. Измените UserPrincipalName пользователя в Azure AD с bob@contoso.com на bob@contoso.onmicrosoft.com. Вы можете использовать следующую команду PowerShell в модуле Azure AD PowerShell: `Set-MsolUserPrincipalName -UserPrincipalName bob@contoso.com -NewUserPrincipalName bob@contoso.onmicrosoft.com`
 2. Разрешите выполнить следующий цикл синхронизации. В этот раз синхронизация пройдет успешно, а для атрибута userPrincipalName Григория будет задано значение bob@fabrikam.com (как и ожидалось).
 
-#### <a name="related-articles"></a>Связанные статьи
+#### <a name="related-articles"></a>Похожие статьи
 * [После изменения UPN учетной записи пользователя на использование другого федеративного домена изменения не синхронизируются с помощью средства Azure Active Directory синхронизации](https://support.microsoft.com/help/2669550/changes-aren-t-synced-by-the-azure-active-directory-sync-tool-after-you-change-the-upn-of-a-user-account-to-use-a-different-federated-domain)
 
 ## <a name="largeobject"></a>LargeObject
-### <a name="description"></a>Описание
+### <a name="description"></a>Описание:
 Если атрибут превышает установленное в схеме Azure AD значение размера, длины и количества, то во время синхронизации возникнет ошибка **LargeObject** или **ExceededAllowedLength**. Как правило, эта ошибка возникает для следующих атрибутов:
 
 * userCertificate
@@ -223,13 +222,13 @@ b. Атрибут userPrincipalName не соответствует требуе
 
 ## <a name="existing-admin-role-conflict"></a>Конфликт с существующей ролью администратора
 
-### <a name="description"></a>Описание
+### <a name="description"></a>Описание:
 **Конфликт с существующей ролью администратора** происходит в объекте пользователя во время синхронизации, если этот объект пользователя имеет следующие характеристики:
 
 - права администратора;
 - такое же значение UserPrincipalName, как у существующего объекта Azure AD.
 
-Azure AD Connect не допускает мягкое сопоставление объекта пользователя из локальной AD с объектом пользователя в Azure AD, которому назначены права администратора.  Дополнительные сведения см. в статье [Указание атрибута UserPrincipalName в Azure AD](plan-connect-userprincipalname.md).
+Azure AD Connect не допускает мягкое сопоставление объекта пользователя из локальной AD с объектом пользователя в Azure AD, которому назначены права администратора.  Дополнительные сведения см. в статье [Заполнение userPrincipalName для Azure AD](plan-connect-userprincipalname.md) .
 
 ![Существующий администратор](media/tshoot-connect-sync-errors/existingadmin.png)
 

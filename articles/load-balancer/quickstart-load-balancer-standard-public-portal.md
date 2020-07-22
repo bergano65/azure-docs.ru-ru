@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 01/08/2020
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: b424fe315737b84479283eed2d77398c8ce4f148
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.openlocfilehash: 99a2de4cd8a19d3f05b9dc37f3bcd08cd84b2e68
+ms.sourcegitcommit: ff19f4ecaff33a414c0fa2d4c92542d6e91332f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "78898834"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85052749"
 ---
 # <a name="quickstart-create-a-load-balancer-to-load-balance-vms-using-the-azure-portal"></a>Краткое руководство. Создание Load Balancer с помощью портала Azure для распределения нагрузки между виртуальными машинами
 
@@ -162,7 +162,7 @@ ms.locfileid: "78898834"
     | Зона доступности | 2 |3|
     |Общедоступный IP-адрес| Номер SKU **Стандартный**|Номер SKU **Стандартный**|
     | Общедоступный IP-адрес — зона доступности| **Избыточное в пределах зоны** |**Избыточное в пределах зоны**|
-    | Группа безопасности сети | Выберите имеющуюся группу *myNetworkSecurity*| Выберите имеющуюся группу *myNetworkSecurity*|
+    | Группа безопасности сети | Выберите имеющуюся группу *myNetworkSecurityGroup*| Выберите имеющуюся группу *myNetworkSecurityGroup*|
 
  ### <a name="create-nsg-rule"></a>Создание правила группы безопасности сети
 

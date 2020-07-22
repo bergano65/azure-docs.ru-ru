@@ -2,13 +2,13 @@
 title: Включение TLS с помощью контейнера расширения
 description: Создайте конечную точку SSL или TLS для группы контейнеров, работающей в службе "экземпляры контейнеров Azure", запустив nginx в контейнере расширения.
 ms.topic: article
-ms.date: 02/14/2020
-ms.openlocfilehash: b9ea9367219db694b89d6bf4a1e52efb373c71c4
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.date: 07/02/2020
+ms.openlocfilehash: f7f5d8e8136f4357067888f5a39fa0c3635122d1
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80984612"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86169856"
 ---
 # <a name="enable-a-tls-endpoint-in-a-sidecar-container"></a>Включение конечной точки TLS в контейнере расширения
 
@@ -26,7 +26,7 @@ ms.locfileid: "80984612"
 
 Для выполнения задач этой статьи можно использовать Azure Cloud Shell или локальный экземпляр Azure CLI. Если вы хотите использовать его локально, рекомендуется использовать версию 2.0.55 или более позднюю. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
-## <a name="create-a-self-signed-certificate"></a>Создание самозаверяющего сертификата
+## <a name="create-a-self-signed-certificate"></a>Создание самозаверяющего сертификата.
 
 Чтобы настроить nginx в качестве поставщика TLS, требуется сертификат TLS/SSL. В этой статье показано, как создать и настроить самозаверяющий сертификат TLS/SSL. В рабочих сценариях следует получить сертификат из центра сертификации.
 
@@ -40,25 +40,25 @@ openssl req -new -newkey rsa:2048 -nodes -keyout ssl.key -out ssl.csr
 
 Следуйте инструкциям на экране, чтобы добавить идентификационные данные. В поле Common Name (общее имя) введите имя узла, связанное с сертификатом. При запросе пароля нажмите клавишу ВВОД без ввода текста, чтобы пропустить Добавление пароля.
 
-Выполните следующую команду, чтобы создать самозаверяющий сертификат (CRT-файл) из запроса на сертификат. Пример:
+Выполните следующую команду, чтобы создать самозаверяющий сертификат (CRT-файл) из запроса на сертификат. Вот несколько примеров:
 
 ```console
 openssl x509 -req -days 365 -in ssl.csr -signkey ssl.key -out ssl.crt
 ```
 
-Теперь в каталоге должны отображаться три файла: запрос сертификата (`ssl.csr`), закрытый ключ (`ssl.key`) и самозаверяющий сертификат (`ssl.crt`). Вы используете `ssl.key` и `ssl.crt` в последующих шагах.
+Теперь в каталоге должны отображаться три файла: запрос сертификата ( `ssl.csr` ), закрытый ключ ( `ssl.key` ) и самозаверяющий сертификат ( `ssl.crt` ). Вы используете `ssl.key` и `ssl.crt` в последующих шагах.
 
 ## <a name="configure-nginx-to-use-tls"></a>Настройка Nginx для использования TLS
 
 ### <a name="create-nginx-configuration-file"></a>Создать файл конфигурации nginx
 
-В этом разделе вы создадите файл конфигурации для nginx, чтобы использовать TLS. Начните с копирования следующего текста в новый файл с именем `nginx.conf`. В Azure Cloud Shell можно использовать Visual Studio Code для создания файла в рабочем каталоге:
+В этом разделе вы создадите файл конфигурации для nginx, чтобы использовать TLS. Начните с копирования следующего текста в новый файл с именем `nginx.conf` . В Azure Cloud Shell для создания файла в рабочей папке можно применить Visual Studio Code.
 
 ```console
 code nginx.conf
 ```
 
-В `location`убедитесь, что для приложения `proxy_pass` задан правильный порт. В этом примере мы устанавливаем порт 80 для `aci-helloworld` контейнера.
+В `location` Убедитесь, что для `proxy_pass` приложения задан правильный порт. В этом примере мы устанавливаем порт 80 для `aci-helloworld` контейнера.
 
 ```console
 # nginx Configuration File
@@ -138,16 +138,16 @@ cat ssl.key | base64 > base64-ssl.key
 
 ### <a name="create-yaml-file"></a>Создание файла YAML
 
-Скопируйте следующий YAML в новый файл с именем `deploy-aci.yaml`. В Azure Cloud Shell можно использовать Visual Studio Code для создания файла в рабочем каталоге:
+Скопируйте следующий YAML в новый файл с именем `deploy-aci.yaml` . В Azure Cloud Shell для создания файла в рабочей папке можно применить Visual Studio Code.
 
 ```console
 code deploy-aci.yaml
 ```
 
-Введите содержимое файлов в кодировке Base64, как указано в разделе `secret`. Например, `cat` для просмотра содержимого каждого из файлов в кодировке Base64. Во время развертывания эти файлы добавляются в [секретный том](container-instances-volume-secret.md) в группе контейнеров. В этом примере секретный том монтируется в контейнер nginx.
+Введите содержимое файлов в кодировке Base64, как указано в разделе `secret` . Например, для `cat` просмотра содержимого каждого из файлов в кодировке Base64. Во время развертывания эти файлы добавляются в [секретный том](container-instances-volume-secret.md) в группе контейнеров. В этом примере секретный том монтируется в контейнер nginx.
 
 ```YAML
-api-version: 2018-10-01
+api-version: 2019-12-01
 location: westus
 name: app-with-ssl
 properties:
@@ -193,7 +193,7 @@ type: Microsoft.ContainerInstance/containerGroups
 
 ### <a name="deploy-the-container-group"></a>Развертывание группы контейнеров
 
-Создайте группу ресурсов с помощью команды [AZ Group Create](/cli/azure/group#az-group-create) :
+Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az-group-create).
 
 ```azurecli-interactive
 az group create --name myResourceGroup --location westus
@@ -207,7 +207,7 @@ az container create --resource-group <myResourceGroup> --file deploy-aci.yaml
 
 ### <a name="view-deployment-state"></a>Просмотр состояния развертывания
 
-Чтобы просмотреть состояние развертывания, используйте команду [az container show](/cli/azure/container#az-container-show) ниже.
+Чтобы просмотреть состояние развертывания, используйте следующую команду [az container show](/cli/azure/container#az-container-show).
 
 ```azurecli
 az container show --resource-group <myResourceGroup> --name app-with-ssl --output table
@@ -223,7 +223,7 @@ app-with-ssl  myresourcegroup  Running   nginx, mcr.microsoft.com/azuredocs/aci-
 
 ## <a name="verify-tls-connection"></a>Проверка подключения TLS
 
-С помощью браузера перейдите по общедоступному IP-адресу группы контейнеров. IP-адрес, показанный в этом `52.157.22.76`примере, — это, **https://52.157.22.76**поэтому URL-адрес имеет значение. Для просмотра работающего приложения необходимо использовать протокол HTTPS из-за конфигурации сервера nginx. Сбой при попытке подключения по протоколу HTTP.
+С помощью браузера перейдите по общедоступному IP-адресу группы контейнеров. IP-адрес, показанный в этом примере, — это `52.157.22.76` , поэтому URL-адрес имеет значение **https://52.157.22.76** . Для просмотра работающего приложения необходимо использовать протокол HTTPS из-за конфигурации сервера nginx. Сбой при попытке подключения по протоколу HTTP.
 
 ![Снимок экрана браузера: приложение, выполняющееся в экземпляре контейнера Azure](./media/container-instances-container-group-ssl/aci-app-ssl-browser.png)
 
@@ -232,7 +232,7 @@ app-with-ssl  myresourcegroup  Running   nginx, mcr.microsoft.com/azuredocs/aci-
 
 >
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье мы рассмотрели, как настроить контейнер Nginx для включения TLS-подключений к веб приложению, работающему в группе контейнеров. Этот пример можно адаптировать для приложений, прослушиваемых через порты, отличные от порта 80. Кроме того, можно обновить файл конфигурации nginx, чтобы автоматически перенаправлять подключения сервера через порт 80 (HTTP) для использования протокола HTTPS.
 

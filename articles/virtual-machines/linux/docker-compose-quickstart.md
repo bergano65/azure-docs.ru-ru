@@ -6,17 +6,17 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.date: 02/14/2019
 ms.author: cynthn
-ms.openlocfilehash: 434a3ef8c9bc1738252d59a5dca5bec16d85e45e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a56ad3fd5999600dfc576f0a0e34ff7221267934
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "78970304"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86502458"
 ---
 # <a name="get-started-with-docker-and-compose-to-define-and-run-a-multi-container-application-in-azure"></a>Приступая к работе с Docker и Compose для определения и запуска многоконтейнерного приложения в Azure
 С помощью [создания](https://github.com/docker/compose)простого текстового файла можно определить приложение, состоящее из нескольких контейнеров DOCKER. После этого приложение будет развернуто с помощью одной команды, которая выполняет все действия, необходимые для развертывания определенной среды. В этой статье показано, как быстро настроить блог WordPress с серверной базой данных SQL MariaDB на виртуальной машине Ubuntu. Решение Compose можно использовать для настройки и более сложных приложений.
 
-Последнее тестирование этой статьи выполнялось 14.02.2019 г. с помощью [Azure Cloud Shell](https://shell.azure.com/bash) и [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) версии 2.0.58.
+Последнее тестирование этой статьи выполнялось 14.02.2019 г. с помощью [Azure Cloud Shell](https://shell.azure.com/bash) и [Azure CLI](/cli/azure/install-azure-cli) версии 2.0.58.
 
 ## <a name="create-docker-host-with-azure-cli"></a>Создание узлов Docker с помощью Azure CLI
 Установите последнюю версию [Azure CLI](/cli/azure/install-az-cli2) и войдите в систему с учетной записью Azure, выполнив команду [az login](/cli/azure/reference-index).
@@ -122,8 +122,7 @@ azureuser_wordpress_1   docker-entrypoint.sh apach ...   Up      0.0.0.0:80->80/
 
 ![Начальный экран WordPress](./media/docker-compose-quickstart/wordpressstart.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные примеры сборки и развертывания многоконтейнерных приложений см. в [справочнике по командной строке Compose](https://docs.docker.com/compose/reference/) и [руководстве пользователя](https://docs.docker.com/compose/).
 * Воспользуйтесь шаблоном диспетчера ресурсов Azure (собственным или полученным из [сообщества](https://azure.microsoft.com/documentation/templates/)), чтобы развернуть виртуальную машину Azure с Docker и настроить приложение при помощи решения Compose. Например, в шаблоне [Развертывание блога WordPress с помощью Docker](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-wordpress-mysql) решения Docker и Compose используются для быстрого развертывания WordPress с серверной базой данных MySQL на виртуальной машине Ubuntu.
 * Попытайтесь интегрировать Docker Compose с кластером Docker Swarm. Сценарии приведены в статье [Using Swarm with Compose](https://docs.docker.com/compose/swarm/) (Совместное использование Compose и Swarm).
-

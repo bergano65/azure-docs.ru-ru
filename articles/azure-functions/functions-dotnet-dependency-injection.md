@@ -1,46 +1,43 @@
 ---
-title: Использование внедрения зависимостей в Функциях Azure .NET
-description: Узнайте, как использовать внедрение зависимостей для регистрации и использования служб в функциях .NET.
+title: Использование внедрения зависимостей в Функциях Azure .NET
+description: Узнайте, как использовать внедрение зависимостей для регистрации и использования служб в функциях .NET
 author: craigshoemaker
-ms.topic: reference
+ms.topic: conceptual
 ms.date: 09/05/2019
 ms.author: cshoe
 ms.reviewer: jehollan
-ms.openlocfilehash: a1ff8e0aedce5d3a6acc9a39084cf0839efdd88e
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: bb9783b38185940f0e75e888c3bc69a1edcc6cbb
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81678456"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86249263"
 ---
-# <a name="use-dependency-injection-in-net-azure-functions"></a>Использование внедрения зависимостей в Функциях Azure .NET
+# <a name="use-dependency-injection-in-net-azure-functions"></a>Использование внедрения зависимостей в Функциях Azure .NET
 
-Функции Azure поддерживают шаблон проектирования программного обеспечения внедрения зависимостей (DI), который является методом для обеспечения [инверсии управления (IOC)](https://docs.microsoft.com/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion) между классами и их зависимостями.
+Функции Azure поддерживают шаблон разработки программного обеспечения с внедрением зависимостей (DI), который является приемом [инверсии управления (IoC)](https://docs.microsoft.com/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion) между классами и их зависимостями.
 
-- Внедрение зависимостей в функции Azure основано на функциях внедрения зависимостей .NET Core. Рекомендуется ознакомиться с [внедрением зависимостей .NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection) . Существуют различия в переопределении зависимостей и считывании значений конфигурации с помощью функций Azure в плане потребления.
+- Внедрение зависимостей в Функциях Azure основано на функциях внедрения зависимостей .NET Core. Рекомендуется ознакомиться с [Внедрением зависимостей .NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection). Существуют различия в переопределении зависимостей и считывании значений конфигурации, если служба Функций Azure использует план потребления.
 
-- Поддержка внедрения зависимостей начинается с функций Azure 2. x.
+- Поддержка внедрения зависимостей появилась в Функциях Azure 2.x.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем можно будет использовать внедрение зависимостей, необходимо установить следующие пакеты NuGet:
 
-- [Microsoft. Azure. functions. Extensions](https://www.nuget.org/packages/Microsoft.Azure.Functions.Extensions/)
+- [Microsoft.Azure.Functions.Extensions](https://www.nuget.org/packages/Microsoft.Azure.Functions.Extensions/);
 
-- [Пакет Microsoft. NET. SDK. functions](https://www.nuget.org/packages/Microsoft.NET.Sdk.Functions/) Version 1.0.28 или более поздней версии
+- пакет [Microsoft.NET.Sdk.Functions](https://www.nuget.org/packages/Microsoft.NET.Sdk.Functions/) версии 1.0.28 или более поздней.
 
 ## <a name="register-services"></a>Регистрация служб
 
-Чтобы зарегистрировать службы, создайте метод для настройки и добавления компонентов в `IFunctionsHostBuilder` экземпляр.  Узел функций Azure создает экземпляр `IFunctionsHostBuilder` и передает его непосредственно в метод.
+Чтобы зарегистрировать службы, создайте метод для настройки и добавления компонентов в экземпляр `IFunctionsHostBuilder`.  Узел функций Azure создает экземпляр `IFunctionsHostBuilder` и передает его непосредственно в метод.
 
-Чтобы зарегистрировать метод, добавьте атрибут `FunctionsStartup` Assembly, указывающий имя типа, используемое при запуске.
+Чтобы зарегистрировать метод, добавьте атрибут сборки `FunctionsStartup`, указывающий имя типа, используемого во время запуска.
 
 ```csharp
-using System;
 using Microsoft.Azure.Functions.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Http;
-using Microsoft.Extensions.Logging;
 
 [assembly: FunctionsStartup(typeof(MyNamespace.Startup))]
 
@@ -52,7 +49,7 @@ namespace MyNamespace
         {
             builder.Services.AddHttpClient();
 
-            builder.Services.AddSingleton((s) => {
+            builder.Services.AddSingleton<IMyService>((s) => {
                 return new MyService();
             });
 
@@ -62,80 +59,85 @@ namespace MyNamespace
 }
 ```
 
+В этом примере используется пакет [Microsoft.Extensions.Http](https://www.nuget.org/packages/Microsoft.Extensions.Http/), необходимый для регистрации `HttpClient` при запуске.
+
 ### <a name="caveats"></a>Предупреждения
 
-Последовательность действий по регистрации выполняется до и после того, как среда выполнения обработает класс Startup. Поэтому следует учитывать следующие элементы:
+Последовательность действий по регистрации выполняется до и после того, как среда выполнения обработает класс запуска. Поэтому помните следующие важные моменты.
 
-- *Класс Startup предназначен только для установки и регистрации.* Не используйте службы, зарегистрированные при запуске в процессе запуска. Например, не пытайтесь зарегистрировать сообщение в средстве ведения журнала, регистрируемом во время запуска. Эта точка процесса регистрации слишком ранняя, чтобы службы были доступны для использования. После выполнения `Configure` метода среда выполнения функций продолжит регистрировать дополнительные зависимости, что может повлиять на работу служб.
+- *Класс запуска предназначен только для установки и регистрации.* Не используйте службы, зарегистрированные при запуске, в процессе запуска. Например, не пытайтесь зарегистрировать сообщение в средстве ведения журнала, регистрируемом во время запуска. Эта точка процесса регистрации слишком ранняя, чтобы службы были доступны для использования. После выполнения метода `Configure` среда выполнения Функций продолжит регистрировать дополнительные зависимости, что может повлиять на работу служб.
 
-- *Контейнер внедрения зависимостей содержит только явно зарегистрированные типы*. Единственными службами, доступными в качестве подставляемых типов, являются настройки `Configure` в методе. В результате такие `BindingContext` типы функций, как и `ExecutionContext` , недоступны во время установки или в качестве типов для вставки.
+- *Контейнер внедрения зависимостей содержит только явно зарегистрированные типы*. Единственными службами, доступными в качестве внедряемых типов, являются те, что настроены в методе `Configure`. В результате такие относящиеся к Функциям типы, как `BindingContext` и `ExecutionContext`, недоступны во время установки или в качестве типов для внедрения.
 
-## <a name="use-injected-dependencies"></a>Использовать внедренные зависимости
+## <a name="use-injected-dependencies"></a>Использование внедренных зависимостей
 
-Внедрение конструктора используется для обеспечения доступности зависимостей в функции. Использование внедрения конструктора требует, чтобы не использовались статические классы.
+Внедрение конструктора используется для обеспечения доступности зависимостей в функции. Использование внедрения конструктора требует, чтобы не использовались статические классы для внедренных служб или классов функций.
 
-В следующем примере показано, как `IMyService` зависимости `HttpClient` и вставляются в функцию, активируемую HTTP. В этом примере используется пакет [Microsoft. Extensions. http](https://www.nuget.org/packages/Microsoft.Extensions.Http/) , необходимый для `HttpClient` регистрации во время запуска.
+В следующем примере показано, как зависимости `IMyService` и `HttpClient` вставляются в функцию, активируемую HTTP.
 
 ```csharp
-using System;
-using System.IO;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace MyNamespace
 {
-    public class HttpTrigger
+    public class MyHttpTrigger
     {
-        private readonly IMyService _service;
         private readonly HttpClient _client;
+        private readonly IMyService _service;
 
-        public HttpTrigger(IMyService service, HttpClient httpClient)
+        public MyHttpTrigger(HttpClient httpClient, MyService service)
         {
-            _service = service;
-            _client = httpClient;
+            this._client = httpClient;
+            this._service = service;
         }
 
-        [FunctionName("GetPosts")]
-        public async Task<IActionResult> Get(
-            [HttpTrigger(AuthorizationLevel.Function, "get", Route = "posts")] HttpRequest req,
+        [FunctionName("MyHttpTrigger")]
+        public async Task<IActionResult> Run(
+            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
             ILogger log)
         {
-            log.LogInformation("C# HTTP trigger function processed a request.");
-            var res = await _client.GetAsync("https://microsoft.com");
-            await _service.AddResponse(res);
+            var response = await _client.GetAsync("https://microsoft.com");
+            var message = _service.GetMessage();
 
-            return new OkResult();
+            return new OkObjectResult("Response from function with injected dependencies.");
         }
     }
 }
 ```
 
+В этом примере используется пакет [Microsoft.Extensions.Http](https://www.nuget.org/packages/Microsoft.Extensions.Http/), необходимый для регистрации `HttpClient` при запуске.
+
 ## <a name="service-lifetimes"></a>Время существования служб
 
-Приложения функций Azure предоставляют те же времена жизни службы, что и [внедрение зависимостей ASP.NET](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection#service-lifetimes). Для приложения-функции различные времена жизни службы ведут себя следующим образом:
+Приложения Функций Azure предоставляют те же самые времена существования служб, что и [внедрение зависимостей ASP.NET](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection#service-lifetimes). Для приложения Функций различные времена существования службы ведут себя следующим образом.
 
-- **Временное**: временные службы создаются при каждом запросе службы.
-- С **областью**действия. время существования службы соответствует времени существования выполнения функции. Службы с заданной областью создаются один раз для каждого выполнения. Последующие запросы для этой службы во время выполнения повторно используют существующий экземпляр службы.
-- **Singleton**: время существования одноэлементной службы соответствует времени существования узла и используется повторно при выполнении функций на этом экземпляре. Для соединений и клиентов, например `SqlConnection` или `HttpClient` экземпляров, рекомендуется использовать службы с жизненным циклом Singleton.
+- **Временная**: временные службы создаются при каждом запросе службы.
+- **С заданной областью**: время существования службы с заданной областью соответствует времени выполнения функции. Службы с заданной областью создаются один раз для каждого выполнения. Последующие запросы к этой службе во время выполнения повторно используют существующий экземпляр службы.
+- **Отдельная**: время существования отдельной службы соответствует времени существования узла. Она повторно используется при повторном выполнении функций на этом экземпляре. Для подключений и клиентов рекомендуется использовать службы со временем жизни «отдельная», например экземпляры `DocumentClient` или `HttpClient`.
 
-Просмотр или Загрузка [образца различных жизненных циклов обслуживания](https://aka.ms/functions/di-sample) на GitHub.
+Просмотрите или скачайте [образцы служб с различными временами существования](https://aka.ms/functions/di-sample) на GitHub.
 
 ## <a name="logging-services"></a>Службы ведения журналов
 
-Если вам нужен собственный поставщик ведения журнала, зарегистрируйте пользовательский тип в качестве `ILoggerProvider` экземпляра. Application Insights автоматически добавляется функциями Azure.
+Если вам нужен собственный поставщик ведения журнала, зарегистрируйте пользовательский тип в качестве экземпляра [`ILoggerProvider`](https://docs.microsoft.com/dotnet/api/microsoft.extensions.logging.iloggerfactory) , который доступен в пакете NuGet [Microsoft. Extensions. Logging. абстракций](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Abstractions/) .
+
+Application Insights автоматически добавляется Функциями Azure.
 
 > [!WARNING]
-> - Не добавляйте `AddApplicationInsightsTelemetry()` в коллекцию служб, так как она регистрирует службы, конфликтующие со службами, предоставляемыми средой.
-> - Не зарегистрируйте собственный `TelemetryConfiguration` объект или `TelemetryClient` при использовании встроенных функций Application Insights. Если необходимо настроить собственный `TelemetryClient` экземпляр, создайте его с помощью внедренного, `TelemetryConfiguration` как показано на странице [мониторинг функций Azure](./functions-monitoring.md#version-2x-and-later-2).
+> - Не добавляйте `AddApplicationInsightsTelemetry()` в коллекцию служб, поскольку он регистрирует службы, конфликтующие со службами, предоставляемыми средой.
+> - Не регистрируйте собственную `TelemetryConfiguration` или `TelemetryClient`, если используются встроенные функции Application Insights. Если необходимо настроить собственный экземпляр `TelemetryClient`, создайте его с помощью внедренного `TelemetryConfiguration`, как показано в [Мониторинг Функций Azure](./functions-monitoring.md#version-2x-and-later-2).
 
-### <a name="iloggert-and-iloggerfactory"></a>ILogger<T> и илогжерфактори
+### <a name="iloggert-and-iloggerfactory"></a>ILogger<T> и ILoggerFactory
 
-Узел внедряет `ILogger<T>` и `ILoggerFactory` применяет службы в конструкторы.  Однако по умолчанию эти новые фильтры ведения журнала будут отфильтрованы из журналов функций.  Вам потребуется изменить `host.json` файл, чтобы включить дополнительные фильтры и категории.  В следующем примере демонстрируется добавление `ILogger<HttpTrigger>` с журналами, которые будут предоставляться узлом.
+Узел внедряет `ILogger<T>` и `ILoggerFactory` службы в конструкторы.  Однако по умолчанию эти новые фильтры журнала отфильтровываются из журналов функций.  Необходимо изменить `host.json` файл, чтобы принять участие в дополнительных фильтрах и категориях.
+
+В следующем примере показано, как добавить `ILogger<HttpTrigger>` с журналами, которые доступны для узла.
 
 ```csharp
 namespace MyNamespace
@@ -160,7 +162,7 @@ namespace MyNamespace
 }
 ```
 
-И `host.json` файл, который добавляет фильтр журнала.
+В следующем примере `host.json` файла добавляется фильтр журнала.
 
 ```json
 {
@@ -179,28 +181,28 @@ namespace MyNamespace
 }
 ```
 
-## <a name="function-app-provided-services"></a>Службы, предоставляемые приложением функции
+## <a name="function-app-provided-services"></a>Службы, предоставляемые приложением-функцией
 
-Узел функции регистрирует множество служб. Следующие службы являются надежными для использования в качестве зависимости в приложении:
+Узел функции регистрирует множество служб. Следующие службы можно уверенно использовать в качестве зависимости в приложении.
 
 |Тип службы|Время существования|Описание|
 |--|--|--|
 |`Microsoft.Extensions.Configuration.IConfiguration`|Одноэлементный|Конфигурация среды выполнения|
-|`Microsoft.Azure.WebJobs.Host.Executors.IHostIdProvider`|Одноэлементный|Отвечает за предоставление идентификатора экземпляра узла|
+|`Microsoft.Azure.WebJobs.Host.Executors.IHostIdProvider`|Отдельная|Отвечает за предоставление идентификатора экземпляра узла.|
 
-Если существуют другие службы, от которых требуется зависимость, [Создайте вопрос и предложите их на GitHub](https://github.com/azure/azure-functions-host).
+Если существуют другие службы, от которых требуется зависимость, [создайте вопрос и предложите его на GitHub](https://github.com/azure/azure-functions-host).
 
 ### <a name="overriding-host-services"></a>Переопределение служб узла
 
-Переопределение служб, предоставляемых узлом, в настоящее время не поддерживается.  Если имеются службы, которые необходимо переопределить, [создайте ошибку и предложите их на GitHub](https://github.com/azure/azure-functions-host).
+Переопределение служб, предоставляемых узлом, в настоящее время не поддерживается.  Если имеются службы, которые необходимо переопределить, [создайте вопрос и предложите его на GitHub](https://github.com/azure/azure-functions-host).
 
-## <a name="working-with-options-and-settings"></a>Работа с параметрами и параметрами
+## <a name="working-with-options-and-settings"></a>Работа с настройками и параметрами
 
-Значения, определенные в [параметрах приложения](./functions-how-to-use-azure-function-app-settings.md#settings) , доступны `IConfiguration` в экземпляре служб, который позволяет считывать значения параметров приложения в классе Startup.
+Значения, определенные в [параметрах приложения](./functions-how-to-use-azure-function-app-settings.md#settings), доступны в экземпляре `IConfiguration`, который позволяет считывать значения параметров приложения в классе запуска.
 
-Значения из `IConfiguration` экземпляра можно извлечь в пользовательский тип. Копирование значений параметров приложения в пользовательский тип упрощает тестирование служб, делая эти значения внедренными. Параметры, считываемые в экземпляр конфигурации, должны быть простыми парами "ключ-значение".
+Значения можно извлечь из экземпляра `IConfiguration` в пользовательский тип. Копирование значений параметров приложения в пользовательский тип упрощает тестирование служб, делая эти значения внедряемыми. Параметры, считываемые в экземпляр конфигурации, должны быть простыми парами «ключ-значение».
 
-Рассмотрим следующий класс, который включает свойство с именем consistent с параметром приложения:
+Рассмотрим следующий класс, который включает свойство, именуемое consistent, с параметром приложения,
 
 ```csharp
 public class MyOptions
@@ -209,7 +211,7 @@ public class MyOptions
 }
 ```
 
-И `local.settings.json` файл, который может структурировать пользовательский параметр следующим образом:
+и файл `local.settings.json`, который может структурировать пользовательский параметр следующим образом.
 ```json
 {
   "IsEncrypted": false,
@@ -219,7 +221,7 @@ public class MyOptions
 }
 ```
 
-В `Startup.Configure` методе можно извлечь значения из `IConfiguration` экземпляра в пользовательский тип с помощью следующего кода:
+Внутри метода `Startup.Configure` можно извлечь значения из экземпляра `IConfiguration` в пользовательский тип с помощью следующего кода.
 
 ```csharp
 builder.Services.AddOptions<MyOptions>()
@@ -229,9 +231,9 @@ builder.Services.AddOptions<MyOptions>()
                                            });
 ```
 
-Вызов `Bind` копирует значения, которые соответствуют именам свойств из конфигурации, в пользовательский экземпляр. Экземпляр Options теперь доступен в контейнере IoC для внедрения в функцию.
+Вызов `Bind` копирует значения, которые соответствуют именам свойств из конфигурации, в пользовательский экземпляр. Экземпляр параметров теперь доступен в контейнере IoC для внедрения в функцию.
 
-Объект Options внедряется в функцию как экземпляр универсального `IOptions` интерфейса. Используйте `Value` свойство для доступа к значениям, найденным в конфигурации.
+Объект параметров внедряется в функцию как экземпляр универсального интерфейса `IOptions`. Используйте свойство `Value` для доступа к значениям, найденным в конфигурации.
 
 ```csharp
 using System;
@@ -248,14 +250,14 @@ public class HttpTrigger
 }
 ```
 
-Дополнительные сведения о работе с параметрами см. в статье [шаблон параметров в ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/configuration/options) .
+Дополнительные сведения о работе с параметрами см. в [Шаблон параметров в ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/configuration/options).
 
 > [!WARNING]
-> Старайтесь не пытаться считывать значения из таких файлов, как *Local. Settings. JSON* или *appSettings. { Environment}. JSON* в плане потребления. Значения, считанные из этих файлов, связанных с триггерами, недоступны при масштабировании приложения, так как инфраструктура размещения не имеет доступа к сведениям о конфигурации.
+> Не пытайтесь считывать значения из таких файлов, как *local.settings.json* или *appsettings.{environment}.json*, в плане потребления. Значения, считываемые из этих файлов, связанных с триггерами, недоступны при масштабировании приложения, так как инфраструктура размещения не имеет доступа к сведениям о конфигурации, так как контроллер масштабирования создает новые экземпляры приложения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения см. в следующих ресурсах:
+Для получения дополнительных сведений см. следующие ресурсы:
 
-- [Мониторинг приложения функции](functions-monitoring.md)
+- [Как выполнять мониторинг приложений-функций](functions-monitoring.md)
 - [Рекомендации по функциям](functions-best-practices.md)

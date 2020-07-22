@@ -8,33 +8,33 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-news-search
 ms.topic: quickstart
-ms.date: 12/12/2019
+ms.date: 06/16/2020
 ms.author: aahi
-ms.custom: seodec2018
-ms.openlocfilehash: 1c424c75a4df193ec412355607c68abeda0560a5
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.custom: seodec2018, tracking-python
+ms.openlocfilehash: 534310609b1d2f375feef81fe45147485216d5ec
+ms.sourcegitcommit: e3c28affcee2423dc94f3f8daceb7d54f8ac36fd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "75448492"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84883722"
 ---
 # <a name="quickstart-perform-a-news-search-using-python-and-the-bing-news-search-rest-api"></a>Краткое руководство. Поиск новостей с помощью REST API Bing для поиска новостей и Python
 
-Из этого краткого руководства вы узнаете, как вызвать API Bing для поиска новостей и получить ответ в формате JSON. Это простое приложение JavaScript отправляет поисковый запрос к API и обрабатывает результаты. Хотя это приложение создается на языке Python, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
+Используйте это краткое руководство, чтобы выполнить вызов API "Поиск новостей Bing". Это простое приложение Python отправляет поисковый запрос к API и обрабатывает результат JSON. 
 
-Вы можете запустить этот пример кода как записную книжку Jupyter в [MyBinder](https://mybinder.org), щелкнув эмблему запуска Binder: 
+Это приложение создано на языке Python. Но API представляет собой веб-службу на основе REST, совместимую с большинством языков программирования.
 
-[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/Microsoft/cognitive-services-notebooks/master?filepath=BingNewsSearchAPI.ipynb)
+Чтобы запустить этот пример кода как записную книжку Jupyter в [MyBinder](https://mybinder.org), выберите эмблему **запуска Binder**: 
+
+[![Запуск Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/Microsoft/cognitive-services-notebooks/master?filepath=BingNewsSearchAPI.ipynb)
 
 Исходный код этого примера также доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/python/Search/BingNewsSearchv7.py).
-
-## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [cognitive-services-bing-news-search-signup-requirements](../../../includes/cognitive-services-bing-news-search-signup-requirements.md)]
 
 ## <a name="create-and-initialize-the-application"></a>Создание и инициализация приложения
 
-1. Создайте файл Python в избранной интегрированной среде разработки или редакторе и импортируйте модуль запроса. Создайте переменные для вашего ключа подписки, конечной точки и условия поиска. Вы можете использовать указанную ниже глобальную конечную точку или конечную точку [пользовательского поддомена](../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемого на портале Azure для вашего ресурса.
+Создайте файл Python в избранной интегрированной среде разработки или редакторе и импортируйте модуль запроса. Создайте переменные для своего ключа подписки, конечной точки и условия поиска. Вы можете использовать глобальную конечную точку, указанную в коде ниже, или конечную точку [личного поддомена](../../cognitive-services/cognitive-services-custom-subdomains.md), которая отображается на портале Azure для вашего ресурса.
 
 ```python
 import requests
@@ -44,34 +44,34 @@ search_term = "Microsoft"
 search_url = "https://api.cognitive.microsoft.com/bing/v7.0/news/search"
 ```
 
-### <a name="create-parameters-for-the-request"></a>Создание параметров для запроса
+## <a name="create-parameters-for-the-request"></a>Создание параметров для запроса
 
-1. Добавьте ключ подписки в новый словарь, используя `"Ocp-Apim-Subscription-Key"` в качестве ключа. Используйте его для параметров поиска.
+Добавьте ключ подписки в новый словарь, используя `Ocp-Apim-Subscription-Key` в качестве ключа. Используйте его для параметров поиска.
 
-    ```python
-    headers = {"Ocp-Apim-Subscription-Key" : subscription_key}
-    params  = {"q": search_term, "textDecorations": True, "textFormat": "HTML"}
-    ```
+```python
+headers = {"Ocp-Apim-Subscription-Key" : subscription_key}
+params  = {"q": search_term, "textDecorations": True, "textFormat": "HTML"}
+```
 
 ## <a name="send-a-request-and-get-a-response"></a>Отправка запроса и получение ответа
 
-1. Используйте библиотеку запросов для вызова API визуального поиска Bing с использованием ключа подписки и объектов словаря, созданных на последнем шаге.
+1. Используйте библиотеку запросов для вызова API "Визуальный поиск Bing" с помощью ключа подписки и объектов словаря, которые вы создали на предыдущем этапе.
 
     ```python
     response = requests.get(search_url, headers=headers, params=params)
     response.raise_for_status()
-    search_results = response.json()
+    search_results = json.dumps(response.json())
     ```
 
-2. `search_results` содержит ответ от API в виде объекта JSON. Доступ к описаниям статей, содержащихся в ответе.
+2. Ознакомьтесь с описаниями статей, содержащимися в ответе API. Он хранится в `search_results` как объект JSON. 
     
     ```python
     descriptions = [article["description"] for article in search_results["value"]]
     ```
 
-## <a name="displaying-the-results"></a>Отображение результатов
+## <a name="display-the-results"></a>Отображение результатов
 
-Эти описания затем можно визуализировать в виде таблицы с ключевым словом поиска, выделенным **полужирным шрифтом**.
+Эти описания затем можно визуализировать в виде таблицы с ключевым словом поиска, выделенным полужирным шрифтом.
 
 ```python
 from IPython.display import HTML

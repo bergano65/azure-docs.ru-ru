@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: c7511279e66ab598e4ae3c26f053915b7393b39d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 9f583e7956cba0de06e5b3277bfea13c463019d9
+ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "74978396"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86171981"
 ---
 # <a name="widevine-license-template-overview"></a>Обзор шаблона лицензии Widevine 
 С помощью служб мультимедиа Azure можно настраивать и запрашивать лицензии Google Widevine. Когда проигрыватель пытается воспроизвести содержимое, защищенное с помощью Widevine, в службу доставки лицензий отправляется запрос на получение лицензии. Если служба лицензий утвердит запрос, служба выдаст лицензию. Лицензия отправляется клиенту и используется для расшифровки и воспроизведения указанного содержимого.
@@ -29,42 +29,44 @@ ms.locfileid: "74978396"
 >[!NOTE]
 > Можно создать пустое сообщение без значений — просто {}. Затем будет создан шаблон лицензии со значениями по умолчанию. Значения по умолчанию подходят для большинства случаев. В сценариях доставки лицензий на основе технологий Майкрософт следует всегда использовать значения по умолчанию. Если необходимо задать значения параметров provider (поставщик) и content_id (идентификатор содержимого), то поставщик должен совпадать с учетными данными Widevine.
 
-    {  
-       "payload": "<license challenge>",
-       "content_id": "<content id>" 
-       "provider": "<provider>"
-       "allowed_track_types": "<types>",
-       "content_key_specs": [  
-          {  
-             "track_type": "<track type 1>"
-          },
-          {  
-             "track_type": "<track type 2>"
-          },
-          …
-       ],
-       "policy_overrides": {  
-          "can_play": <can play>,
-          "can persist": <can persist>,
-          "can_renew": <can renew>,
-          "rental_duration_seconds": <rental duration>,
-          "playback_duration_seconds": <playback duration>,
-          "license_duration_seconds": <license duration>,
-          "renewal_recovery_duration_seconds": <renewal recovery duration>,
-          "renewal_server_url": "<renewal server url>",
-          "renewal_delay_seconds": <renewal delay>,
-          "renewal_retry_interval_seconds": <renewal retry interval>,
-          "renew_with_usage": <renew with usage>
-       }
-    }
+```json
+{  
+   "payload": "<license challenge>",
+   "content_id": "<content id>" 
+   "provider": "<provider>"
+   "allowed_track_types": "<types>",
+   "content_key_specs": [  
+      {  
+         "track_type": "<track type 1>"
+      },
+      {  
+         "track_type": "<track type 2>"
+      },
+      …
+   ],
+   "policy_overrides": {  
+      "can_play": <can play>,
+      "can persist": <can persist>,
+      "can_renew": <can renew>,
+      "rental_duration_seconds": <rental duration>,
+      "playback_duration_seconds": <playback duration>,
+      "license_duration_seconds": <license duration>,
+      "renewal_recovery_duration_seconds": <renewal recovery duration>,
+      "renewal_server_url": "<renewal server url>",
+      "renewal_delay_seconds": <renewal delay>,
+      "renewal_retry_interval_seconds": <renewal retry interval>,
+      "renew_with_usage": <renew with usage>
+   }
+}
+```
 
 ## <a name="json-message"></a>Сообщение JSON
-| Имя | Значение | Описание |
+| Название | Значение | Описание |
 | --- | --- | --- |
 | payload |Строка в кодировке base64 |Запрос на лицензию, отправленный клиентом. |
 | content_id |Строка в кодировке base64 |Идентификатор, используемый для получения идентификатора ключа и ключа содержимого для каждого content_key_specs.track_type. |
 | поставщик |строка |Используется для поиска ключей и политик содержимого. Если для доставки лицензий Widevine используется доставка ключей Майкрософт, этот параметр пропускается. |
-| policy_name |строка |Имя ранее зарегистрированной политики. Необязательный параметр. |
+| policy_name |строка |Имя ранее зарегистрированной политики. Необязательный элемент. |
 | allowed_track_types |enum |SD_ONLY или SD_HD. Контролирует, какие ключи содержимого включаются в лицензию. |
 | content_key_specs |Массив структур JSON, см. раздел "Спецификации ключей содержимого".  |Более точный контроль возвращаемых ключей содержимого. Дополнительные сведения см. в разделе "Спецификации ключей содержимого". Указать можно только одно из значений allowed_track_types и content_key_specs. |
 | use_policy_overrides_exclusively |Логическое значение: true или false |Используйте атрибуты политики, указанные в параметре policy_overrides, и пропустите все сохраненные ранее политики. |
@@ -77,7 +79,7 @@ ms.locfileid: "74978396"
 
 Каждое значение content_key_specs должно быть указано для всех записей независимо от параметра use_policy_overrides_exclusively. 
 
-| Имя | Значение | Описание |
+| Название | Значение | Описание |
 | --- | --- | --- |
 | content_key_specs. track_type |строка |Имя типа записи. Если content_key_specs указан в запросе лицензии, убедитесь, что все типы записей указаны явным образом. Невыполнение этого требования приведет к сбою воспроизведения последних 10 секунд. |
 | content_key_specs  <br/> security_level |uint32 |Определяет требования к надежности клиента для воспроизведения. <br/> — Требуется программное шифрование методом белого ящика. <br/> — Требуются шифрование ПО и скрытый декодер. <br/> — Материал ключа и операции шифрования должны быть выполнены в резервной доверенной аппаратной среде выполнения. <br/> — Операции шифрования и расшифровки содержимого должны быть выполнены в резервной доверенной аппаратной среде выполнения.  <br/> — Шифрование, расшифровка и обработка всех носителей (сжатых и несжатых) должны быть выполнены в резервной доверенной аппаратной среде выполнения. |
@@ -86,7 +88,7 @@ ms.locfileid: "74978396"
 | content_key_specs.key_ID |Двоичные данные строки в кодировке base64, 16 байт |Уникальный идентификатор ключа. |
 
 ## <a name="policy-overrides"></a>Переопределения политики
-| Имя | Значение | Описание |
+| Название | Значение | Описание |
 | --- | --- | --- |
 | policy_overrides. can_play |Логическое значение: true или false |Указывает, допускается ли воспроизведение содержимого. Значение по умолчанию — false. |
 | policy_overrides. can_persist |Логическое значение: true или false |Указывает, что лицензия может быть сохранена в энергонезависимом хранилище для автономного использования. Значение по умолчанию — false. |
@@ -101,7 +103,7 @@ ms.locfileid: "74978396"
 | policy_overrides. renew_with_usage |Логическое значение: true или false |Указывает, что лицензия отправлена на продление в начале использования. Это поле используется, только если can_renew имеет значение true. |
 
 ## <a name="session-initialization"></a>Инициализация сеанса
-| Имя | Значение | Описание |
+| Название | Значение | Описание |
 | --- | --- | --- |
 | provider_session_token |Строка в кодировке base64 |Этот маркер сеанса передается обратно в лицензию и существует в рамках последующих операций продления. Маркер сеанса не сохраняется вне сеансов. |
 | provider_client_token |Строка в кодировке base64 |Маркер клиента для отправки обратно в ответе лицензии. Если запрос лицензии содержит маркер клиента, это значение игнорируется. Маркер клиента сохраняется вне сеансов лицензии. |
@@ -113,92 +115,96 @@ ms.locfileid: "74978396"
 ### <a name="classes-as-defined-in-the-media-services-net-sdk"></a>Классы, как определено в пакете SDK .NET для служб мультимедиа
 Следующие классы являются определениями этих типов:
 
-    public class WidevineMessage
-    {
-        public WidevineMessage();
+```dotnetcli
+public class WidevineMessage
+{
+    public WidevineMessage();
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public AllowedTrackTypes? allowed_track_types { get; set; }
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public ContentKeySpecs[] content_key_specs { get; set; }
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public object policy_overrides { get; set; }
-    }
+    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+    public AllowedTrackTypes? allowed_track_types { get; set; }
+    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+    public ContentKeySpecs[] content_key_specs { get; set; }
+    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+    public object policy_overrides { get; set; }
+}
 
-    [JsonConverter(typeof(StringEnumConverter))]
-    public enum AllowedTrackTypes
-    {
-        SD_ONLY = 0,
-        SD_HD = 1
-    }
-    public class ContentKeySpecs
-    {
-        public ContentKeySpecs();
+[JsonConverter(typeof(StringEnumConverter))]
+public enum AllowedTrackTypes
+{
+    SD_ONLY = 0,
+    SD_HD = 1
+}
+public class ContentKeySpecs
+{
+    public ContentKeySpecs();
 
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string key_id { get; set; }
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public RequiredOutputProtection required_output_protection { get; set; }
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public int? security_level { get; set; }
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string track_type { get; set; }
-    }
+    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+    public string key_id { get; set; }
+    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+    public RequiredOutputProtection required_output_protection { get; set; }
+    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+    public int? security_level { get; set; }
+    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+    public string track_type { get; set; }
+}
 
-    public class RequiredOutputProtection
-    {
-        public RequiredOutputProtection();
+public class RequiredOutputProtection
+{
+    public RequiredOutputProtection();
 
-        public Hdcp hdcp { get; set; }
-    }
+    public Hdcp hdcp { get; set; }
+}
 
-    [JsonConverter(typeof(StringEnumConverter))]
-    public enum Hdcp
-    {
-        HDCP_NONE = 0,
-        HDCP_V1 = 1,
-        HDCP_V2 = 2
-    }
+[JsonConverter(typeof(StringEnumConverter))]
+public enum Hdcp
+{
+    HDCP_NONE = 0,
+    HDCP_V1 = 1,
+    HDCP_V2 = 2
+}
+```
 
 ### <a name="example"></a>Пример
 В следующем примере показано, как использовать API-интерфейсы .NET для настройки простой лицензии Widevine:
 
-    private static string ConfigureWidevineLicenseTemplate()
+```dotnetcli
+private static string ConfigureWidevineLicenseTemplate()
+{
+    var template = new WidevineMessage
     {
-        var template = new WidevineMessage
+        allowed_track_types = AllowedTrackTypes.SD_HD,
+        content_key_specs = new[]
         {
-            allowed_track_types = AllowedTrackTypes.SD_HD,
-            content_key_specs = new[]
+            new ContentKeySpecs
             {
-                new ContentKeySpecs
-                {
-                    required_output_protection = new RequiredOutputProtection { hdcp = Hdcp.HDCP_NONE},
-                    security_level = 1,
-                    track_type = "SD"
-                }
-            },
-            policy_overrides = new
-            {
-                can_play = true,
-                can_persist = true,
-                can_renew = false
+                required_output_protection = new RequiredOutputProtection { hdcp = Hdcp.HDCP_NONE},
+                security_level = 1,
+                track_type = "SD"
             }
-        };
+        },
+        policy_overrides = new
+        {
+            can_play = true,
+            can_persist = true,
+            can_renew = false
+        }
+    };
 
-        string configuration = JsonConvert.SerializeObject(template);
-        return configuration;
-    }
+    string configuration = JsonConvert.SerializeObject(template);
+    return configuration;
+}
+```
 
-## <a name="additional-notes"></a>Дополнительные сведения
+## <a name="additional-notes"></a>Дополнительные замечания
 
 * Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
-## <a name="provide-feedback"></a>Предоставление отзыва
+## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также раздел
 [Использование общего динамического шифрования PlayReady и (или) Widevine DRM](media-services-protect-with-playready-widevine.md)
 

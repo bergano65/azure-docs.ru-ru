@@ -7,15 +7,15 @@ ms.topic: article
 ms.date: 04/20/2020
 ms.author: zarhoads
 ms.openlocfilehash: 1f67605918e093e9ab28aa88be777d27acd831ef
-ms.sourcegitcommit: b1e25a8a442656e98343463aca706f4fde629867
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "82169574"
 ---
 # <a name="quickstart-develop-on-azure-kubernetes-service-aks-with-helm"></a>Краткое руководство. Разработка в службе Azure Kubernetes Service (AKS) с помощью Helm
 
-[Helm][helm] — это средство упаковки с открытым кодом, которое помогает установить приложения Kubernetes и управлять их жизненным циклом. Аналогично диспетчерам пакетов Linux, таких как *APT* и *Yum*, Helm используется для управления чартами Kubernetes, представляющими собой пакеты предварительно настроенных ресурсов Kubernetes.
+[Helm][helm] — это средство упаковки с открытым исходным кодом, помогающее в установке и управлении жизненным циклом приложений Kubernetes. Аналогично диспетчерам пакетов Linux, таким как *APT* и *Yum*, Helm используется для управления диаграммами Kubernetes, которые представляют собой пакеты предварительно настроенных ресурсов Kubernetes.
 
 В этой статье показано, как использовать Helm для упаковки и запуска приложения в AKS. Дополнительные сведения об установке существующего приложения с помощью Helm см. [в статье Установка существующих приложений с использованием Helm в AKS][helm-existing].
 
@@ -94,7 +94,7 @@ az aks get-credentials --resource-group MyResourceGroup --name MyAKS
 
 ## <a name="download-the-sample-application"></a>Загрузка примера приложения
 
-В этом кратком руководстве используется [пример приложения Node. js из Azure dev Spaces примера репозитория][example-nodejs]. Клонирование приложения из GitHub и переход к `dev-spaces/samples/nodejs/getting-started/webfrontend` каталогу.
+В этом кратком руководстве используется [пример Node.js приложения из примера репозитория Azure dev Spaces][example-nodejs]. Клонирование приложения из GitHub и переход к `dev-spaces/samples/nodejs/getting-started/webfrontend` каталогу.
 
 ```console
 git clone https://github.com/Azure/dev-spaces
@@ -168,7 +168,7 @@ service:
 ...
 ```
 
-`appVersion` Обновите `v1` в в *интерфейсе YAML*. Например:
+Обновите `appVersion` `v1` в в *интерфейсе YAML*. Например:
 
 ```yml
 apiVersion: v2
@@ -198,7 +198,7 @@ webfrontend         LoadBalancer  10.0.141.72   <pending>     80:32150/TCP   2m
 webfrontend         LoadBalancer  10.0.141.72   <EXTERNAL-IP> 80:32150/TCP   7m
 ```
 
-Перейдите к подсистеме балансировки нагрузки приложения в браузере, `<EXTERNAL-IP>` используя для просмотра примера приложения.
+Перейдите к подсистеме балансировки нагрузки приложения в браузере, используя `<EXTERNAL-IP>` для просмотра примера приложения.
 
 ## <a name="delete-the-cluster"></a>Удаление кластера
 

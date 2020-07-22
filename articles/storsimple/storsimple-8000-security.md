@@ -15,10 +15,9 @@ ms.workload: TBD
 ms.date: 05/18/2018
 ms.author: alkohli
 ms.openlocfilehash: 4598f71f9b611e68f8eb00676138784833c39f32
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75891512"
 ---
 # <a name="storsimple-security-and-data-protection"></a>Защита устройства StorSimple и данных
@@ -219,7 +218,7 @@ StorSimple использует следующие алгоритмы шифро
 
 Дополнительные сведения см. в политике конфиденциальности Майкрософт в [центре управления безопасностью](https://www.microsoft.com/trustcenter).
 
-## <a name="frequently-asked-questions-faq"></a>Часто задаваемые вопросы
+## <a name="frequently-asked-questions-faq"></a>Вопросы и ответы
 
 Ниже приведены часто задаваемые вопросы о безопасности и Microsoft Azure StorSimple, а также ответы на них.
 
@@ -285,7 +284,7 @@ StorSimple использует следующие алгоритмы шифро
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Развертывание устройства StorSimple](storsimple-8000-deployment-walkthrough-u2.md)
 

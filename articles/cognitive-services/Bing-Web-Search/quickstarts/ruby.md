@@ -8,19 +8,19 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-web-search
 ms.topic: quickstart
-ms.date: 12/09/2019
+ms.date: 05/22/2020
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 5f3e05752967be8872c0e6fd9008bfae05d950fa
-ms.sourcegitcommit: 34a6fa5fc66b1cfdfbf8178ef5cdb151c97c721c
+ms.openlocfilehash: 9400558f8ea26199a2f7ac406fd6d94647243e11
+ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "76169538"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83873800"
 ---
 # <a name="quickstart-use-ruby-to-call-the-bing-web-search-api"></a>Краткое руководство. Вызов API Bing для поиска в Интернете с использованием Ruby  
 
-Из этого краткого руководства вы узнаете, как вызвать API Bing для поиска в Интернете и получить ответ в формате JSON. Это приложение Ruby отправляет поисковый запрос к API и отображает ответ. Хотя это приложение создается на языке Ruby, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
+Используйте это краткое руководство, чтобы вызвать API Поиска в Интернете Bing. Это приложение Ruby отправляет поисковый запрос к API и отображает ответ в формате JSON. Хотя приложение написано на Ruby, API представляет собой веб-службу на основе REST, совместимую с большинством языков программирования.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -43,7 +43,13 @@ require 'json'
 
 ## <a name="define-variables"></a>Определение переменных
 
-Прежде чем продолжить, необходимо задать несколько переменных. В качестве `uri` может быть глобальная конечная точка, приведенная ниже, или конечная точка [пользовательского поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), отображаемая на портале Azure для вашего ресурса. Убедитесь, что `uri` и `path` указаны правильно, и замените значение `accessKey` действительным ключом подписки из своей учетной записи Azure. Вы можете настроить поисковый запрос, заменив значение параметра `term`.
+Прежде чем продолжить, необходимо задать несколько переменных.
+
+1. Для значения `uri` вы можете использовать глобальную конечную точку, указанную в коде ниже, или конечную точку [личного поддомена](../../../cognitive-services/cognitive-services-custom-subdomains.md), которая отображается на портале Azure для вашего ресурса. 
+
+2. Убедитесь, что значения `uri` и `path` указаны правильно, и замените значение `accessKey` ключом подписки из своей учетной записи Azure. 
+
+3. Кроме того, вы можете настроить поисковый запрос, заменив значение параметра `term`.
 
 ```ruby
 accessKey = "YOUR_SUBSCRIPTION_KEY"
@@ -60,7 +66,7 @@ end
 
 ## <a name="make-a-request"></a>Выполнение запроса
 
-Для создания запроса и обработки ответа используйте этот код.
+Для создания запроса и обработки ответа используйте этот код:
 
 ```ruby
 # Construct the endpoint uri.
@@ -135,7 +141,7 @@ puts "\nJSON Response:\n\n"
 puts JSON::pretty_generate(JSON(response.body))
 ```
 
-## <a name="sample-response"></a>Пример ответа
+## <a name="example-json-response"></a>Пример ответа в формате JSON
 
 Ответы из API Bing для поиска в Интернете возвращаются в формате JSON. Представленный пример сокращен для отображения только одного результата.
 
@@ -264,6 +270,6 @@ puts JSON::pretty_generate(JSON(response.body))
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Руководство по одностраничным приложениям для API Bing для Поиска в Интернете](../tutorial-bing-web-search-single-page-app.md)
+> [Руководство по одностраничным приложениям для API "Поиск в Интернете Bing"](../tutorial-bing-web-search-single-page-app.md)
 
 [!INCLUDE [bing-web-search-quickstart-see-also](../../../../includes/bing-web-search-quickstart-see-also.md)]

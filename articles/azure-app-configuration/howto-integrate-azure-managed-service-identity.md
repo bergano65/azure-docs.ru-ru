@@ -8,10 +8,10 @@ ms.service: azure-app-configuration
 ms.topic: conceptual
 ms.date: 2/25/2020
 ms.openlocfilehash: bf97a1eae758778efc8d800666af4a5fcb574429
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80056840"
 ---
 # <a name="integrate-with-azure-managed-identities"></a>Интеграция с управляемыми удостоверениями Azure
@@ -33,12 +33,12 @@ Azure Active Directory [управляемые удостоверения](../ac
 > * настройка приложения на использование управляемого удостоверения при подключении к службе "Конфигурация приложений".
 > * При необходимости настройте приложение для использования управляемого удостоверения при подключении к Key Vault через конфигурацию приложения Key Vault ссылке.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством требуется:
 
 * [пакет SDK для .NET Core](https://www.microsoft.com/net/download/windows);
-* [настроенный Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/quickstart).
+* [Azure Cloud Shell настроены](https://docs.microsoft.com/azure/cloud-shell/quickstart).
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
@@ -60,7 +60,7 @@ Azure Active Directory [управляемые удостоверения](../ac
 
 1. В [портал Azure](https://portal.azure.com)выберите **все ресурсы** и выберите хранилище конфигураций приложений, которое вы создали в кратком руководстве.
 
-1. Выберите **Управление доступом (IAM)**.
+1. Выберите **Управление доступом (IAM)** .
 
 1. На вкладке **Проверить доступ** щелкните **Добавить** в пользовательском интерфейсе карточки **Добавить назначение роли**.
 
@@ -68,7 +68,7 @@ Azure Active Directory [управляемые удостоверения](../ac
 
 1. В поле **Подписка** выберите подписку Azure. Выберите ресурс Службы приложений для своего приложения.
 
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
     ![Добавление управляемого удостоверения](./media/add-managed-identity.png)
 
@@ -84,7 +84,7 @@ Azure Active Directory [управляемые удостоверения](../ac
 
 1. Найдите конечную точку в хранилище конфигураций приложения. Этот URL-адрес указан на вкладке " **ключи доступа** " для магазина в портал Azure.
 
-1. Откройте *appsettings.json* и добавьте следующий скрипт. Замените * \<service_endpoint>*, включая квадратные скобки, URL-адресом хранилища конфигурации приложения. 
+1. Откройте *appsettings.json* и добавьте следующий скрипт. Замените *\<service_endpoint>* , включая квадратные скобки, URL-адресом хранилища конфигураций приложения. 
 
     ```json
     "AppConfig": {
@@ -92,13 +92,13 @@ Azure Active Directory [управляемые удостоверения](../ac
     }
     ```
 
-1. Откройте *Program.CS*и добавьте ссылку на пространства имен `Azure.Identity` и: `Microsoft.Azure.Services.AppAuthentication`
+1. Откройте *Program.CS*и добавьте ссылку на `Azure.Identity` `Microsoft.Azure.Services.AppAuthentication` пространства имен и:
 
     ```csharp-interactive
     using Azure.Identity;
     ```
 
-1. Если вы хотите получить доступ только к значениям, хранящимся непосредственно в конфигурации `CreateWebHostBuilder` приложения, обновите `config.AddAzureAppConfiguration()` метод, заменив метод.
+1. Если вы хотите получить доступ только к значениям, хранящимся непосредственно в конфигурации приложения, обновите `CreateWebHostBuilder` метод, заменив `config.AddAzureAppConfiguration()` метод.
 
     > [!IMPORTANT]
     > `CreateHostBuilder` заменяет `CreateWebHostBuilder` в .NET Core 3.0.  Выберите правильный синтаксис в зависимости от среды.
@@ -117,7 +117,7 @@ Azure Active Directory [управляемые удостоверения](../ac
                 .UseStartup<Startup>();
     ```
 
-    ### <a name="net-core-3x"></a>[.NET Core 3.x](#tab/core3x)
+    ### <a name="net-core-3x"></a>[.NET Core 3.x](#tab/core3x)
 
     ```csharp
         public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -133,7 +133,7 @@ Azure Active Directory [управляемые удостоверения](../ac
     ```
     ---
 
-1. Чтобы использовать значения конфигурации приложения и ссылки Key Vault, обновите *Program.CS* , как показано ниже. Этот код создает новый `KeyVaultClient` объект с помощью `AzureServiceTokenProvider` и передает эту ссылку вызову `UseAzureKeyVault` метода.
+1. Чтобы использовать значения конфигурации приложения и ссылки Key Vault, обновите *Program.CS* , как показано ниже. Этот код создает новый объект `KeyVaultClient` с помощью `AzureServiceTokenProvider` и передает эту ссылку вызову `UseAzureKeyVault` метода.
 
     ### <a name="net-core-2x"></a>[.NET Core 2.x](#tab/core2x)
 
@@ -157,7 +157,7 @@ Azure Active Directory [управляемые удостоверения](../ac
                     .UseStartup<Startup>();
     ```
 
-    ### <a name="net-core-3x"></a>[.NET Core 3.x](#tab/core3x)
+    ### <a name="net-core-3x"></a>[.NET Core 3.x](#tab/core3x)
 
     ```csharp
         public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -202,7 +202,7 @@ git add .
 git commit -m "Initial version"
 ```
 
-Чтобы включить локальное развертывание Git для приложения с помощью сервера сборки KUDU, выполните [`az webapp deployment source config-local-git`](/cli/azure/webapp/deployment/source?view=azure-cli-latest#az-webapp-deployment-source-config-local-git) команду в Cloud Shell.
+Чтобы включить локальное развертывание Git для приложения с помощью сервера сборки KUDU, выполните команду [`az webapp deployment source config-local-git`](/cli/azure/webapp/deployment/source?view=azure-cli-latest#az-webapp-deployment-source-config-local-git) в Cloud Shell.
 
 ```azurecli-interactive
 az webapp deployment source config-local-git --name <app_name> --resource-group <group_name>
@@ -218,7 +218,7 @@ az webapp deployment source config-local-git --name <app_name> --resource-group 
 
 ### <a name="deploy-your-project"></a>Развертывание проекта
 
-В _окне терминала на локальном_компьютере добавьте удаленное хранилище Azure в локальный репозиторий Git. Замените _ \<URL-адрес на>_ URL-адресом удаленного Git, полученным на странице [Включение локального репозитория Git с KUDU](#enable-local-git-with-kudu).
+В _окне терминала на локальном_компьютере добавьте удаленное хранилище Azure в локальный репозиторий Git. Замените _\<url>_ URL-адресом удаленного Git, полученным на странице [Включение локального репозитория Git с KUDU](#enable-local-git-with-kudu).
 
 ```bash
 git remote add azure <url>
@@ -244,7 +244,7 @@ http://<app_name>.azurewebsites.net
 
 Поставщики службы "Конфигурация приложений" для платформы .NET Framework и Java Spring также имеют встроенную поддержку управляемых удостоверений. При настройке одного из этих поставщиков можно использовать конечную точку URL-адреса вашего хранилища вместо полной строки подключения. 
 
-Например, можно обновить консольное приложение .NET Framework, созданное в кратком руководстве, чтобы указать следующие параметры в файле *app. config* :
+Например, можно обновить консольное приложение .NET Framework, созданное в кратком руководстве, чтобы указать следующие параметры в файле *App.config* :
 
 ```xml
     <configSections>

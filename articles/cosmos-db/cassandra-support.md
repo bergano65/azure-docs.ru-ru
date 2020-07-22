@@ -8,12 +8,12 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-cassandra
 ms.topic: overview
 ms.date: 09/24/2018
-ms.openlocfilehash: 978dbf3d8e6a92242c0a984b26bb35cf911a3369
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: e7384237f91bf3af8ccad1a97b27fb62a1845a88
+ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83590437"
+ms.lasthandoff: 06/20/2020
+ms.locfileid: "85118990"
 ---
 # <a name="apache-cassandra-features-supported-by-azure-cosmos-db-cassandra-api"></a>Функции Apache Cassandra, поддерживаемые API Cassandra для Azure Cosmos DB 
 
@@ -108,7 +108,7 @@ API Cassandra для Azure Cosmos DB — это платформа управл�
 
 Вы можете открыть размещенную собственную оболочку Cassandra (CQLSH версии 5.0.1) непосредственно из обозреватель данных на [портале Azure](data-explorer.md) или в [обозревателе Azure Cosmos](https://cosmos.azure.com/). Перед включением оболочки CQL необходимо включить в учетной записи компонент [Записные книжки](enable-notebooks.md) (если он еще не включен, при щелчке `Open Cassandra Shell` появится запрос). Поддерживаемые регионы Azure перечислены в выделенной заметке в разделе [включить записные книжки для учетных записей Azure Cosmos DB](enable-notebooks.md).
 
-![CQLSH](./media/cassandra-support/cqlsh.png)
+:::image type="content" source="./media/cassandra-support/cqlsh.png" alt-text="CQLSH":::
 
 С помощью установленной на локальном компьютере программы CQLSH можно также подключиться к API Cassandra в Azure Cosmos DB. Она входит в состав Apache Cassandra 3.1.1 и работает без дополнительной настройки, задавая переменные среды. В следующих разделах приведены инструкции по установке, настройке и подключению к API Cassandra в Azure Cosmos DB в системах с Windows или Linux с помощью CQLSH.
 

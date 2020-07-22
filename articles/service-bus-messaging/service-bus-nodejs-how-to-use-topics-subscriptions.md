@@ -1,25 +1,17 @@
 ---
 title: Использование разделов Служебной шины Azure с пакетом Node.js azure/service-bus
 description: Сведения о том, как использовать разделы и подписки Служебной шины в Azure в приложении Node.js с помощью пакета azure/service-bus.
-services: service-bus-messaging
-documentationcenter: nodejs
-author: axisc
-manager: timlt
-editor: spelluru
-ms.assetid: b9f5db85-7b6c-4cc7-bd2c-bd3087c99875
-ms.service: service-bus-messaging
-ms.workload: na
-ms.tgt_pltfrm: na
+author: spelluru
 ms.devlang: nodejs
 ms.topic: quickstart
-ms.date: 01/16/2020
-ms.author: aschhab
-ms.openlocfilehash: c85b63b4a56e74b0fef9a122ec995b4106496cbe
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.date: 06/23/2020
+ms.author: spelluru
+ms.openlocfilehash: d4b382a0cf857f9cfe1065815e9b07b8260023a8
+ms.sourcegitcommit: 61d92af1d24510c0cc80afb1aebdc46180997c69
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "78330452"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85339796"
 ---
 # <a name="quickstart-how-to-use-service-bus-topics-and-subscriptions-with-nodejs-and-the-azure-sb-package"></a>Краткое руководство. Использование разделов и подписок служебной шины с Node.js и пакетом azure/sb
 Из этого учебника вы узнаете, как создавать приложения Node.js для отправки сообщений в раздел служебной шины и получения сообщений из подписки служебной шины с помощью пакета [azure-sb](https://www.npmjs.com/package/azure-sb). Эти примеры написаны на JavaScript и используют [модуль Node.js для Azure](https://www.npmjs.com/package/azure) с интегрированным пакетом `azure-sb`.
@@ -80,7 +72,7 @@ var azure = require('azure');
 ```
 
 ### <a name="set-up-a-service-bus-connection"></a>Настройка подключения к Service Bus
-Модуль Azure считывает из переменной среды `AZURE_SERVICEBUS_CONNECTION_STRING` строку подключения, полученную на предыдущем шаге "Извлечение учетных данных". Если эта переменная среды не задана, при вызове `createServiceBusService` необходимо указать сведения об учетной записи.
+Модуль Azure считывает из переменной среды `AZURE_SERVICEBUS_CONNECTION_STRING` строку подключения, которую вы получили при изучении раздела [Предварительные требования](#prerequisites). Если вам нужны инструкции для повторного получения строки подключения, см. раздел [Получение строки подключения](service-bus-quickstart-topics-subscriptions-portal.md#get-the-connection-string). Если эта переменная среды не задана, при вызове `createServiceBusService` необходимо указать сведения об учетной записи.
 
 Пример настройки переменных среды для облачной службы Azure см. в разделе [Пример для Azure CLI](../container-instances/container-instances-environment-variables.md#azure-cli-example).
 

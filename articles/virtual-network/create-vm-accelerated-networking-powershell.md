@@ -9,17 +9,17 @@ editor: ''
 ms.assetid: ''
 ms.service: virtual-network
 ms.devlang: na
-ms.topic: article
+ms.topic: how-to
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 04/15/2020
 ms.author: gsilva
-ms.openlocfilehash: 202acff5bae87174781dc6c914bebf0494dfcf05
-ms.sourcegitcommit: f57297af0ea729ab76081c98da2243d6b1f6fa63
+ms.openlocfilehash: 2dc7b0447a97cdafc88d2cee4612aba22c1e0eea
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82871449"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "84975798"
 ---
 # <a name="create-a-windows-vm-with-accelerated-networking-using-azure-powershell"></a>Создание виртуальной машины Windows с ускоренной сетью с помощью Azure PowerShell
 
@@ -57,7 +57,7 @@ ms.locfileid: "82871449"
 - **Windows Server 2016 Datacenter** 
 - **Windows Server 2012 R2 Datacenter**
 
-## <a name="limitations-and-constraints"></a>Ограничения и ограничения
+## <a name="limitations-and-constraints"></a>Пределы и ограничения
 
 ### <a name="supported-vm-instances"></a>Поддерживаемые экземпляры виртуальных машин
 
@@ -66,6 +66,10 @@ ms.locfileid: "82871449"
 В экземплярах, поддерживающих технологию Hyper-Threading, Технология ускоренной сети поддерживается на экземплярах виртуальных машин с четырьмя и более виртуальных ЦП. Поддерживаются следующие серии: D/Dsv3, D/Dsv4, E/Esv3, EA/Easv4, серия fsv2, Lsv2, MS/MMS и MS/Mmsv2.
 
 Дополнительные сведения об экземплярах ВИРТУАЛЬНЫХ машин см. [в статье размеры виртуальных машин Windows в Azure](../virtual-machines/windows/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
+
+### <a name="custom-images"></a>Пользовательские образы
+
+Если вы используете пользовательский образ и образ поддерживает ускорение работы в сети, убедитесь, что у вас есть необходимые драйверы, работающие с сетевыми адаптерами Mellanox ConnectX-3 и ConnectX-4 LX в Azure.
 
 ### <a name="regions"></a>Регионы
 
@@ -192,7 +196,7 @@ ms.locfileid: "82871449"
 
 ### <a name="create-a-vm-and-attach-the-network-interface"></a>Создание виртуальной машины и подключение сетевого интерфейса
 
-1. Задайте для учетных данных виртуальной `$cred` машины переменную с помощью команды [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential), которая предлагает выполнить вход:
+1. Задайте для учетных данных виртуальной машины `$cred` переменную с помощью команды [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential), которая предлагает выполнить вход:
 
     ```azurepowershell
     $cred = Get-Credential
@@ -244,7 +248,7 @@ ms.locfileid: "82871449"
 
 3. На странице Обзор виртуальной машины, если **состояние** виртуальной машины указано как **Создание**, подождите, пока Azure не завершит создание виртуальной машины. После завершения создания виртуальной машины **состояние** изменится на **выполняется** .
 
-4. На панели инструментов обзор виртуальной машины выберите **подключить** > **RDP** > **скачать RDP-файл**.
+4. На панели инструментов обзор виртуальной машины выберите **подключить**  >  **RDP**  >  **скачать RDP-файл**.
 
 5. Откройте RDP-файл, а затем войдите на виртуальную машину с учетными данными, введенными в разделе [Создание виртуальной машины и подключение к сетевому интерфейсу](#create-a-vm-and-attach-the-network-interface) . Ознакомьтесь с разделом [Подключение к виртуальной машине](../virtual-machines/windows/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json#connect-to-virtual-machine), если вы никогда не подключались к виртуальной машине Windows в Azure.
 
@@ -327,7 +331,7 @@ ms.locfileid: "82871449"
 3. Задайте для параметра примененные обновления значение автоматически, чтобы немедленно отобрать изменения:
 
     ```azurepowershell
-    $vmss.UpgradePolicy.AutomaticOSUpgrade = $true
+    $vmss.UpgradePolicy.Mode = "Automatic"
     
     Update-AzVmss -ResourceGroupName "myResourceGroup" `
         -VMScaleSetName "myScaleSet" `

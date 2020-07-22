@@ -17,10 +17,9 @@ ms.date: 03/27/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: fcb3fe009a6482c8e512899a952694beaed361a7
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "77059073"
 ---
 # <a name="tutorial-configure-bluejeans-for-automatic-user-provisioning"></a>Руководство по настройке BlueJeans для автоматической подготовки пользователей
@@ -51,7 +50,7 @@ ms.locfileid: "77059073"
 
     ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-2. Перейдите в раздел **корпоративные приложения**, а затем выберите **все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -75,7 +74,7 @@ ms.locfileid: "77059073"
 
 * Рекомендуем назначить одного пользователя Azure AD в BlueJeans для тестирования конфигурации автоматической подготовки пользователей. Дополнительные пользователи и/или группы можно назначить позднее.
 
-* При назначении пользователя в BlueJeans в диалоговом окне назначения необходимо выбрать действительную роль для конкретного приложения (при доступности). Пользователи с ролью **доступа по умолчанию** исключаются из подготовки.
+* При назначении пользователя в BlueJeans в диалоговом окне назначения необходимо выбрать действительную роль для конкретного приложения (при доступности). Пользователи с ролью **Доступ по умолчанию** исключаются из подготовки.
 
 ## <a name="configuring-automatic-user-provisioning-to-bluejeans"></a>Настройка автоматической подготовки пользователей в BlueJeans
 
@@ -94,11 +93,11 @@ ms.locfileid: "77059073"
 
     ![Ссылка на BlueJeans в списке приложений](common/all-applications.png)
 
-3. Перейдите на вкладку **Подготовка** .
+3. Выберите вкладку **Подготовка**.
 
     ![Подготовка BlueJeans](./media/bluejeans-provisioning-tutorial/BluejeansProvisioningTab.png)
 
-4. Установите для **режима подготовки** значение **автоматически**.
+4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
 
     ![Подготовка BlueJeans](./media/bluejeans-provisioning-tutorial/Bluejeans1.png)
 
@@ -153,7 +152,7 @@ ms.locfileid: "77059073"
 * [Управление подготовкой учетных записей пользователей для корпоративных приложений](../app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../app-provisioning/check-status-user-account-provisioning.md)
 

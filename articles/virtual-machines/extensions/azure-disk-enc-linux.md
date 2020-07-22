@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 03/19/2020
 ms.author: ejarvi
 ms.openlocfilehash: 22568c7c23771f143f6cd583114949c380d15e3d
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "80066920"
 ---
 # <a name="azure-disk-encryption-for-linux-microsoftazuresecurityazurediskencryptionforlinux"></a>Шифрование дисков Azure для Linux (Microsoft.Azure.Security.AzureDiskEncryptionForLinux)
@@ -26,7 +26,7 @@ ms.locfileid: "80066920"
 
 Шифрование дисков Azure использует подсистему dm-crypt в Linux для шифрования всего диска в [выбранных дистрибутивах Azure Linux](https://aka.ms/adelinux).  Решение интегрируется с Azure Key Vault, обеспечивая управление секретами и ключами шифрования диска.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Полный список необходимых компонентов см. в разделах [Шифрование дисков Azure для виртуальных машин Linux](../linux/disk-encryption-overview.md), в частности следующие разделы:
 
@@ -76,7 +76,7 @@ ms.locfileid: "80066920"
 
 ### <a name="schema-v01-with-aad"></a>Схема v 0,1: с AAD 
 
-Для схемы 0,1 требуется `AADClientID` значение и `AADClientSecret` `AADClientCertificate`.
+Для схемы 0,1 требуется значение `AADClientID` и `AADClientSecret` `AADClientCertificate` .
 
 Использование среды `AADClientSecret`:
 
@@ -143,14 +143,14 @@ ms.locfileid: "80066920"
 
 | Имя | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
-| версия_API | 2019-07-01 | Дата |
+| версия_API | 07.01.2019 | Дата |
 | publisher | Microsoft.Azure.Security | строка |
 | type | AzureDiskEncryptionForLinux | строка |
 | typeHandlerVersion | 1,1, 0,1 | INT |
 | (схема 0,1) аадклиентид | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | guid | 
-| (схема 0,1) AADClientSecret | пароль | строка |
+| (схема 0,1) AADClientSecret | password | строка |
 | (схема 0,1) аадклиентцертификате | thumbprint | строка |
-| используемых (схема 0,1) Кодов | пароль | строка |
+| используемых (схема 0,1) Кодов | password | строка |
 | DiskFormatQuery | {"dev_path":"","name":"","file_system":""} | Словарь JSON |
 | EncryptionOperation | EnableEncryption, EnableEncryptionFormatAll | строка | 
 | (необязательно-по умолчанию RSA-OAEP) кэйенкриптионалгорисм | 'RSA-OAEP', 'RSA-OAEP-256', 'RSA1_5' | строка |
@@ -168,7 +168,7 @@ ms.locfileid: "80066920"
 Пример развертывания шаблона на основе схемы версии 0,1 см. в шаблоне быстрого [запуска Azure 201-Encrypting-Linux-VM](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-running-linux-vm).
 
 >[!WARNING]
-> - Если вы ранее использовали шифрование дисков Azure с Azure AD для шифрования виртуальной машины, необходимо продолжить использовать этот параметр для шифрования виртуальной машины.
+> - Если вы уже использовали службу "Шифрование дисков Azure" c Azure AD для шифрования виртуальной машины, применяйте этот способ шифрования виртуальной машины и далее.
 > - При шифровании томов Linux ОС виртуальная машина должна считаться недоступной. Настоятельно рекомендуется избегать входа по протоколу SSH во время шифрования, чтобы избежать проблем с блокированием открытых файлов, к которым необходимо получить доступ во время процесса шифрования. Чтобы проверить ход выполнения, используйте командлет PowerShell [Get-азвмдискенкриптионстатус](/powershell/module/az.compute/get-azvmdiskencryptionstatus) или команду CLI для [шифрования виртуальных машин](/cli/azure/vm/encryption#az-vm-encryption-show) . Этот процесс может занять несколько часов для тома операционной системы 30 ГБ, а также дополнительное время для шифрования томов данных. Если не используется параметр шифрования всех форматов, время шифрования тома данных будет соответствовать размеру и количеству томов данных. 
 > - Отключение шифрования на виртуальных машинах Linux поддерживается только для томов данных. Если том операционной системы зашифрован, то отключение не поддерживается для томов данных и томов ОС. 
 
@@ -177,17 +177,17 @@ ms.locfileid: "80066920"
 
 ## <a name="troubleshoot-and-support"></a>Устранение неполадок и поддержка
 
-### <a name="troubleshoot"></a>Устранение неполадок
+### <a name="troubleshoot"></a>Диагностика
 
 Дополнительные сведения см. в [руководстве по устранению неполадок с шифрованием дисков Azure](../linux/disk-encryption-troubleshooting.md).
 
 ### <a name="support"></a>Поддержка
 
-Если вам нужна дополнительная помощь в любой момент в этой статье, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack overflow](https://azure.microsoft.com/support/community/). 
+Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/community/). 
 
 Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите в [службу поддержки Azure](https://azure.microsoft.com/support/options/) и выберите получить поддержку. Сведения об использовании службы поддержки Azure см. в статье [часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о расширениях виртуальных машин см. в обзоре [расширений и компонентов виртуальной машины для Linux](features-linux.md).
 * Дополнительные сведения о шифровании дисков Azure для Linux см. в статье [виртуальные машины Linux](../../security/fundamentals/azure-disk-encryption-vms-vmss.md#linux-virtual-machines).

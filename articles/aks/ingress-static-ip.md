@@ -4,13 +4,13 @@ titleSuffix: Azure Kubernetes Service
 description: Сведения об установке и настройке контроллера входящего трафика NGINX со статическим общедоступным IP-адресом в кластере Службы Azure Kubernetes (AKS).
 services: container-service
 ms.topic: article
-ms.date: 04/27/2020
-ms.openlocfilehash: a44a41806af30479f06ec4daba936c7aa71ef5d7
-ms.sourcegitcommit: 856db17a4209927812bcbf30a66b14ee7c1ac777
+ms.date: 07/02/2020
+ms.openlocfilehash: a59bd1cfcc03b0a6c9af218cb7108a0ba094377d
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82561919"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86255291"
 ---
 # <a name="create-an-ingress-controller-with-a-static-public-ip-address-in-azure-kubernetes-service-aks"></a>Создание контроллера входящего трафика со статическим общедоступным IP-адресом в Службе Azure Kubernetes (AKS)
 
@@ -27,7 +27,7 @@ ms.locfileid: "82561919"
 
 ## <a name="before-you-begin"></a>Перед началом
 
-В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к этому краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
+В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
 
 В этой статье используется [Helm 3][helm] для установки контроллера входящих данных nginx и диспетчера сертификатов. Убедитесь, что вы используете последний выпуск Helm. Инструкции по обновлению см. в документации по [установке Helm][helm-install]. Дополнительные сведения о настройке и использовании Helm см. [в статье Установка приложений с помощью Helm в службе Kubernetes Azure (AKS)][use-helm].
 
@@ -62,13 +62,16 @@ az network public-ip create --resource-group MC_myResourceGroup_myAKSCluster_eas
 > В следующем примере создается пространство имен Kubernetes для входящих ресурсов с именем входящие *-Basic*. При необходимости укажите пространство имен для своей среды. Если в кластере AKS не включен RBAC, добавьте `--set rbac.create=false` к командам Helm.
 
 > [!TIP]
-> Если вы хотите включить [Сохранение IP-адреса источника клиента][client-source-ip] для запросов к контейнерам в кластере, `--set controller.service.externalTrafficPolicy=Local` добавьте команду Helm install. Исходный IP-адрес клиента хранится в заголовке запроса в разделе *X-forwardd-for*. При использовании контроллера входящего трафика с включенным сохранением IP-адресов источника клиента передача TLS не будет работать.
+> Если вы хотите включить [Сохранение IP-адреса источника клиента][client-source-ip] для запросов к контейнерам в кластере, добавьте `--set controller.service.externalTrafficPolicy=Local` команду Helm install. Исходный IP-адрес клиента хранится в заголовке запроса в разделе *X-forwardd-for*. При использовании контроллера входящего трафика с включенным сохранением IP-адресов источника клиента передача TLS не будет работать.
 
 Обновите следующий скрипт, указав **IP-адрес** контроллера входящего трафика, и **уникальное имя** , которое вы хотите использовать для префикса FQDN:
 
 ```console
 # Create a namespace for your ingress resources
 kubectl create namespace ingress-basic
+
+# Add the official stable repository
+helm repo add stable https://kubernetes-charts.storage.googleapis.com/
 
 # Use Helm to deploy an NGINX ingress controller
 helm install nginx-ingress stable/nginx-ingress \
@@ -245,7 +248,7 @@ spec:
     app: ingress-demo
 ```
 
-Запустите два демонстрационных приложения с `kubectl apply`помощью:
+Запустите два демонстрационных приложения с помощью `kubectl apply` :
 
 ```console
 kubectl apply -f aks-helloworld.yaml --namespace ingress-basic
@@ -348,9 +351,9 @@ certificate.cert-manager.io/tls-secret created
 
 ## <a name="test-the-ingress-configuration"></a>Проверка конфигурации входящего трафика
 
-Откройте в веб-браузере полное доменное имя контроллера входящего трафика Kubernetes, например *`https://demo-aks-ingress.eastus.cloudapp.azure.com`*.
+Откройте в веб-браузере полное доменное имя контроллера входящего трафика Kubernetes, например *`https://demo-aks-ingress.eastus.cloudapp.azure.com`* .
 
-Как и в этих `letsencrypt-staging`примерах используется, выданный сертификат TLS/SSL не является доверенным для браузера. Чтобы продолжить работу с приложением, примите предупреждение. Информация о сертификате свидетельствует о том, что этот сертификат *Fake LE Intermediate X1* выдан Let's Encrypt. Этот поддельный сертификат указывает на то, что `cert-manager` правильно обработал запрос и получил сертификат от поставщика.
+Как и в этих примерах используется `letsencrypt-staging` , выданный сертификат TLS/SSL не является доверенным для браузера. Чтобы продолжить работу с приложением, примите предупреждение. Информация о сертификате свидетельствует о том, что этот сертификат *Fake LE Intermediate X1* выдан Let's Encrypt. Этот поддельный сертификат указывает на то, что `cert-manager` правильно обработал запрос и получил сертификат от поставщика.
 
 ![Промежуточный сертификат Let's Encrypt](media/ingress/staging-certificate.png)
 
@@ -397,7 +400,7 @@ nginx-ingress           ingress-basic   1               2020-01-11 14:51:03.4541
 cert-manager            ingress-basic   1               2020-01-06 21:19:03.866212286  deployed        cert-manager-v0.13.0    v0.13.0
 ```
 
-Удалите выпуски с `helm uninstall` помощью команды. В следующем примере удаляются развертывания NGINX входящего трафика и диспетчера сертификатов.
+Удалите выпуски с помощью `helm uninstall` команды. В следующем примере удаляются развертывания NGINX входящего трафика и диспетчера сертификатов.
 
 ```
 $ helm uninstall nginx-ingress cert-manager -n ingress-basic
@@ -442,7 +445,7 @@ az network public-ip delete --resource-group MC_myResourceGroup_myAKSCluster_eas
 - [Создать контроллер входящего трафика с динамическим общедоступным IP-адресом и настроить шифрование для автоматического создания TLS-сертификатов.][aks-ingress-tls]
 
 <!-- LINKS - external -->
-[helm-cli]: https://docs.microsoft.com/azure/aks/kubernetes-helm
+[helm-cli]: ./kubernetes-helm.md
 [cert-manager]: https://github.com/jetstack/cert-manager
 [cert-manager-certificates]: https://cert-manager.readthedocs.io/en/latest/reference/certificates.html
 [cert-manager-cluster-issuer]: https://cert-manager.readthedocs.io/en/latest/reference/clusterissuers.html

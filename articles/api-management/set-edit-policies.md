@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/01/2018
 ms.author: apimpm
-ms.openlocfilehash: 2df57477ae5270405a1774b7a4f04ed185fea396
-ms.sourcegitcommit: fad3aaac5af8c1b3f2ec26f75a8f06e8692c94ed
+ms.openlocfilehash: 9249cb1ac64bf61b405bc3537523cc85bca3f00c
+ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "70071701"
+ms.lasthandoff: 07/11/2020
+ms.locfileid: "86252799"
 ---
 # <a name="how-to-set-or-edit-azure-api-management-policies"></a>Настройка или изменение политик службы управления API Azure
 
@@ -38,10 +38,10 @@ ms.locfileid: "70071701"
 4. Выберите один из API, которые вы импортировали ранее.
 5. Выберите вкладку **Конструктор**.
 6. Выберите операцию, к которой требуется применить политику. Если нужно применить политику ко всем операциям, выберите **Все операции**.
-7. Выберите значок **</>** (редактор кода) в разделе Обработка **входящих** или **исходящих** сообщений.
+7. Выберите **</>** значок (редактор кода) в разделе Обработка **входящих** или **исходящих** сообщений.
 8. Вставьте код необходимой политики в один из соответствующих блоков.
 
-    ```XML
+    ```xml
     <policies>
         <inbound>
             <base />
@@ -135,5 +135,5 @@ ms.locfileid: "70071701"
 Также ознакомьтесь со следующими материалами:
 
 + [Преобразование API-интерфейсов](transform-api.md).
-+ Полный перечень операторов политик и их параметров см. в [справочнике по политикам](api-management-policy-reference.md).
++ Полный перечень операторов политик и их параметров см. в [справочнике по политикам](./api-management-policies.md).
 + [Примеры политик](policy-samples.md).

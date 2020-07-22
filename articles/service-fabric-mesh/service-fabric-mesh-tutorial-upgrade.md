@@ -7,10 +7,9 @@ ms.date: 11/29/2018
 ms.author: dekapur
 ms.custom: mvc, devcenter
 ms.openlocfilehash: 7cdb8868f760ef0f35ab90c06b411110f871738c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
-ms.translationtype: MT
+ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 07/02/2020
 ms.locfileid: "75351716"
 ---
 # <a name="tutorial-learn-how-to-upgrade-a-service-fabric-application-using-visual-studio"></a>Руководство. Узнайте, как обновить приложение Service Fabric с помощью Visual Studio
@@ -39,29 +38,29 @@ ms.locfileid: "75351716"
 
 ## <a name="upgrade-a-service-fabric-mesh-service-by-using-visual-studio"></a>Обновление службы сетки Service Fabric с помощью Visual Studio
 
-В этой статье показано, как обновить микрослужбу в приложении. В этом примере мы изменим `WebFrontEnd` службу, чтобы она отображала категорию задач, и увеличит объем ЦП, который он задает. Затем мы выполним обновление развернутой службы.
+В этой статье показано, как обновить микрослужбу в приложении. В этом примере мы изменим службу, `WebFrontEnd` чтобы она отображала категорию задач, и увеличит объем ЦП, который он задает. Затем мы выполним обновление развернутой службы.
 
 ## <a name="modify-the-config"></a>Изменение конфигурации
 
 При создании Service Fabric приложения для сетки Visual Studio добавляет файл **Parameters. YAML** для каждой среды развертывания (облачной и локальной). В этих файлах можно определить параметры и их значения, на которые затем можно будет ссылаться из файлов сетки *. YAML, таких как Service. YAML или Network. YAML.  Visual Studio предоставляет несколько переменных, например, сколько ресурсов ЦП может использовать служба.
 
-Мы будем обновлять `WebFrontEnd_cpu` параметр, чтобы обновить ресурсы ЦП `1.5` **до, в результате чего служба WebService** будет более интенсивно использоваться.
+Мы будем обновлять `WebFrontEnd_cpu` параметр, чтобы обновить ресурсы ЦП до `1.5` , в результате чего служба WebService **WebFrontEnd** будет более интенсивно использоваться.
 
-1. В проекте **тодолистапп** в разделе **среды** > **облака**откройте файл **Parameters. YAML** . Измените значение `WebFrontEnd_cpu`, равное `1.5`. Перед именем параметра рекомендуется использовать имя `WebFrontEnd_` службы, чтобы отличить его от параметров с тем же именем, которые применяются к разным службам.
+1. В проекте **тодолистапп** в разделе **среды**  >  **облака**откройте файл **Parameters. YAML** . Измените `WebFrontEnd_cpu` значение, равное `1.5` . Перед именем параметра рекомендуется использовать имя службы, `WebFrontEnd_` чтобы отличить его от параметров с тем же именем, которые применяются к разным службам.
 
     ```xml
     WebFrontEnd_cpu: 1.5
     ```
 
-2. Откройте файл **Service. YAML проекта WebService** **в разделе** **WebFrontEnd** > **ресурсы службы WebService**.
+2. Откройте файл **Service. YAML проекта WebService** **в разделе** **WebFrontEnd**  >  **ресурсы службы WebService**.
 
-    Обратите внимание, `resources:` что в `cpu:` разделе in задано значение `"[parameters('WebFrontEnd_cpu')]"`. Если проект строится **для облака,** > значение для `'WebFrontEnd_cpu` будет взято из файла Environments**облака** > **Parameters. YAML** и будет `1.5`. Если проект строится для запуска локально, значение будет взято из файла**Local** > **Parameters. YAML** **окружений** > и будет равно "0,5".
+    Обратите внимание, что в `resources:` разделе in `cpu:` задано значение `"[parameters('WebFrontEnd_cpu')]"` . Если проект строится для облака, значение для `'WebFrontEnd_cpu` будет взято из файла Environments **Environments**  >  **облака**  >  **Parameters. YAML** и будет `1.5` . Если проект строится для запуска локально, значение будет взято из **Environments**  >  файла**Local**  >  **Parameters. YAML** окружений и будет равно "0,5".
 
 > [!Tip]
 > По умолчанию файл параметров, являющийся одноранговым узлом файла Profile. YAML, будет использоваться для предоставления значений для этого файла Profile. YAML.
 > Например, среды > облачные > параметры. YAML предоставляет значения параметров для сред > Cloud > Profile. YAML.
 >
-> Это можно переопределить, добавив следующий элемент в файл Profile. YAML: например`parametersFilePath=”relative or full path to the parameters file”` , `parametersFilePath=”C:\MeshParms\CustomParameters.yaml”` или.`parametersFilePath=”..\CommonParameters.yaml”`
+> Это можно переопределить, добавив следующий элемент в файл Profile. YAML: например `parametersFilePath=”relative or full path to the parameters file”` , или. `parametersFilePath=”C:\MeshParms\CustomParameters.yaml”``parametersFilePath=”..\CommonParameters.yaml”`
 
 ## <a name="modify-the-model"></a>Изменение модели
 
@@ -151,7 +150,7 @@ The application was deployed successfully and it can be accessed at http://10.00
 
 Откройте веб-браузер и перейдите к URL-адресу, чтобы увидеть работу сайта в Azure. Теперь вы видите веб-страницу, содержащую столбец категории.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой части руководства было показано следующее.
 > [!div class="checklist"]

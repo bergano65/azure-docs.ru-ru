@@ -1,26 +1,26 @@
 ---
 title: Краткое руководство. Выполнение запроса из учетной записи API SQL для Azure Cosmos DB с использованием Node.js
 description: Сведения о том, как с помощью Node.js создать приложение, которое подключается к учетной записи API SQL для Azure Cosmos DB и запрашивает данные.
-author: deborahc
+author: anfeldma-ms
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: nodejs
 ms.topic: quickstart
-ms.date: 02/26/2020
-ms.author: dech
-ms.openlocfilehash: 0b29f9c1f395e079c97d5877d08bd7bd73c7ea53
-ms.sourcegitcommit: c2065e6f0ee0919d36554116432241760de43ec8
+ms.date: 05/11/2020
+ms.author: anfeldma
+ms.openlocfilehash: e40dc59cf1e8fe3302c59f1067c285bc37141465
+ms.sourcegitcommit: 23604d54077318f34062099ed1128d447989eea8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80240320"
+ms.lasthandoff: 06/20/2020
+ms.locfileid: "85115220"
 ---
 # <a name="quickstart-use-nodejs-to-connect-and-query-data-from-azure-cosmos-db-sql-api-account"></a>Краткое руководство. Подключение и выполнение запроса к данным из учетной записи API SQL для Azure Cosmos DB с помощью Node.js
 
 > [!div class="op_single_selector"]
 > - [.NET версии 3](create-sql-api-dotnet.md)
 > - [.NET версии 4](create-sql-api-dotnet-V4.md)
-> - [Java](create-sql-api-java.md)
+> - [Пакет SDK для Java версии 4](create-sql-api-java.md)
 > - [Node.js](create-sql-api-nodejs.md)
 > - [Python](create-sql-api-python.md)
 > - [Xamarin](create-sql-api-xamarin-dotnet.md)
@@ -59,7 +59,7 @@ ms.locfileid: "80240320"
 
    Справа отобразится область **Добавить контейнер**. Возможно, вам придется прокрутить экран вправо, чтобы увидеть ее.
 
-   ![Панель "Добавить контейнер" в обозревателе данных на портале Azure](./media/create-sql-api-nodejs/azure-cosmosdb-data-explorer.png)
+   :::image type="content" source="./media/create-sql-api-nodejs/azure-cosmosdb-data-explorer.png" alt-text="Панель "Добавить контейнер" в обозревателе данных на портале Azure":::
 
 2. На странице **Добавить контейнер** введите параметры для нового контейнера.
 
@@ -175,7 +175,7 @@ npm install @azure/cosmos
 
 1. В учетной записи Azure Cosmos DB на [портале Azure](https://portal.azure.com/) выберите **Ключи** на панели навигации слева, а затем выберите **Ключи записи-чтения**. На следующем шаге нажмите кнопки копирования в правой части экрана, чтобы скопировать универсальный код ресурса (URI) и первичный ключ в файл _app.js_.
 
-   ![Просмотр и копирование ключа доступа на портале Azure, колонка "Ключи"](./media/create-sql-api-dotnet/keys.png)
+   :::image type="content" source="./media/create-sql-api-dotnet/keys.png" alt-text="Просмотр и копирование ключа доступа на портале Azure, колонка "Ключи"":::
 
 2. Откройте файл _config.js_.
 

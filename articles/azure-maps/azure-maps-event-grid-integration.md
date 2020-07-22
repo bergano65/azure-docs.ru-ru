@@ -1,22 +1,22 @@
 ---
-title: Реагирование на отображение событий с помощью сетки событий | Карты Microsoft Azure
+title: Реагирование на события Azure Maps c помощью Сетки событий
 description: В этой статье вы узнаете, как реагировать на события Microsoft Azure Maps с помощью сетки событий.
-author: philmea
-ms.author: philmea
-ms.date: 02/08/2019
+author: anastasia-ms
+ms.author: v-stharr
+ms.date: 07/16/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
-manager: timlt
+manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: 9c9483af191e5439af0c0b5e433187d6475c178c
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: eb64634f25564abc4044364950b4d462a22608aa
+ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "80335718"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86499517"
 ---
-# <a name="react-to-azure-maps-events-by-using-event-grid"></a>Реагирование на события Azure Maps c помощью Сетки событий 
+# <a name="react-to-azure-maps-events-by-using-event-grid"></a>Реагирование на события Azure Maps c помощью Сетки событий
 
 Azure Maps интегрируется со службой "Сетка событий Azure", чтобы пользователи могли отправлять уведомления о событиях в другие службы и запускать нисходящие процессы. Цель этой статьи — помочь вам настроить бизнес-приложения для прослушивания Azure Maps событий. Это позволяет пользователям реагировать на критические события в надежном, масштабируемом и безопасном режиме. Например, пользователи могут создавать приложения для обновления базы данных, создавать билеты и предоставлять уведомления по электронной почте при каждом входе устройства в геозоны.
 
@@ -30,7 +30,7 @@ Azure Maps интегрируется со службой "Сетка событ
 
 Сетка событий использует [подписки на события](https://docs.microsoft.com/azure/event-grid/concepts#event-subscriptions) для маршрутизации сообщений о событиях подписчикам. Учетная запись Azure Maps выводит следующие типы событий. 
 
-| Тип события. | Описание |
+| Тип события | Описание |
 | ---------- | ----------- |
 | Microsoft.Maps.GeofenceEntered | Вызывается, когда полученные координаты были перемещены извне из заданного геозоны в в пределах |
 | Microsoft.Maps.GeofenceExited | Вызывается, когда полученные координаты перемещаются из заданного геозоны в внешний |
@@ -41,50 +41,43 @@ Azure Maps интегрируется со службой "Сетка событ
 В следующем примере показана схема для Жеофенцересулт:
 
 ```JSON
-{   
-   "id":"451675de-a67d-4929-876c-5c2bf0b2c000", 
-   "topic":"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.Maps/accounts/{accountName}", 
-   "subject":"/spatial/geofence/udid/{udid}/id/{eventId}", 
-   "data":{   
-      "geometries":[   
-         {   
-            "deviceId":"device_1", 
-            "udId":"1a13b444-4acf-32ab-ce4e-9ca4af20b169", 
-            "geometryId":"1", 
-            "distance":999.0, 
-            "nearestLat":47.609833, 
-            "nearestLon":-122.148274 
-         }, 
-         {   
-            "deviceId":"device_1", 
-            "udId":"1a13b444-4acf-32ab-ce4e-9ca4af20b169", 
-            "geometryId":"2", 
-            "distance":999.0, 
-            "nearestLat":47.621954, 
-            "nearestLon":-122.131841 
-         } 
-      ], 
-      "expiredGeofenceGeometryId":[   
-      ], 
-      "invalidPeriodGeofenceGeometryId":[   
-      ] 
-   }, 
-   "eventType":"Microsoft.Maps.GeofenceResult", 
-   "eventTime":"2018-11-08T00:52:08.0954283Z", 
-   "metadataVersion":"1", 
-   "dataVersion":"1.0" 
+{
+    "id":"451675de-a67d-4929-876c-5c2bf0b2c000",
+    "topic":"/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.Maps/accounts/{accountName}",
+    "subject":"/spatial/geofence/udid/{udid}/id/{eventId}",
+    "data":{
+        "geometries":[
+            {
+                "deviceId":"device_1",
+                "udId":"1a13b444-4acf-32ab-ce4e-9ca4af20b169",
+                "geometryId":"1",
+                "distance":999.0,
+                "nearestLat":47.609833,
+                "nearestLon":-122.148274
+            }
+        ],
+        "expiredGeofenceGeometryId":[
+        ],
+        "invalidPeriodGeofenceGeometryId":[
+        ]
+    },
+    "eventType":"Microsoft.Maps.GeofenceResult",
+    "eventTime":"2018-11-08T00:52:08.0954283Z",
+    "metadataVersion":"1",
+    "dataVersion":"1.0"
 }
+
 ```
 
-## <a name="tips-for-consuming-events"></a>Советы по потреблению событий
+## <a name="tips-for-consuming-events"></a>Советы по использованию событий
 
 Приложения, которые обрабатывают события геозоны Azure Maps, должны соответствовать нескольким рекомендациям.
 
 * Настройте несколько подписок для маршрутизации событий в один обработчик событий. Не следует предполагать, что события поступают из определенного источника. Всегда проверяйте раздел сообщения, чтобы убедиться, что сообщение пришло от предполагаемого источника.
-* Используйте `X-Correlation-id` поле в заголовке ответа, чтобы узнать, не устарели ли ваши сведения об объектах. Сообщения могут прибывать не по порядку или с задержкой.
-* Когда запрос GET или POST в API геозоны вызывается с параметром Mode `EnterAndExit`, имеющим значение, то событие Enter или Exit создается для каждой геометрии в геозоны, для которой состояние изменилось с предыдущего вызова геозоны API.
+* Используйте `X-Correlation-id` поле в заголовке ответа, чтобы узнать, не устарели ли ваши сведения об объектах. Сообщения могут поступать не по порядку или с некоторой задержкой.
+* Когда запрос GET или POST в API геозоны вызывается с параметром mode, имеющим значение `EnterAndExit` , то событие Enter или Exit создается для каждой геометрии в геозоны, для которой состояние изменилось с предыдущего вызова ГЕОЗОНЫ API.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о том, как использовать геозоны для операций управления на сайте конструкции, см. в статье
 
