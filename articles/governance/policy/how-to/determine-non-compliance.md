@@ -199,11 +199,11 @@ Audit that an application is installed inside Windows VMs                 NonCom
 
 1. На странице **Соответствие ресурсов** выберите вкладку **Журнал изменений (предварительная версия)** . После этого отобразится список обнаруженных изменений (при наличии).
 
-   :::image type="content" source="../media/determine-non-compliance/change-history-tab.png" alt-text="Вкладка "Журнал изменений политики Azure" на странице "Соответствие ресурсов"" border="false":::
+   :::image type="content" source="../media/determine-non-compliance/change-history-tab.png" alt-text="Вкладка Журнал изменений политики Azure на странице Соответствие ресурсов" border="false":::
 
 1. Выберите одно из обнаруженных изменений. _Отличия между визуальными элементами_ для ресурса представлены на странице **Журнал изменений**.
 
-   :::image type="content" source="../media/determine-non-compliance/change-history-visual-diff.png" alt-text="Отличия между визуальными элементами в Журнале изменений политики Azure на странице "Журнал изменений"" border="false":::
+   :::image type="content" source="../media/determine-non-compliance/change-history-visual-diff.png" alt-text="Отличия между визуальными элементами в Журнале изменений политики Azure на странице Журнал изменений" border="false":::
 
 _Отличия между визуальными элементами_ позволяют обнаружить изменения ресурса. Обнаруженные изменения могут не быть связаны с текущим состоянием соответствия ресурса.
 
