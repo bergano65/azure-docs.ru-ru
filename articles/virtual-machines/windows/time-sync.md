@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 09/17/2018
 ms.author: cynthn
-ms.openlocfilehash: cd9a196e5f957782de91cff69c01fbfa5716369a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1717ebd5709c05e33e658d3798494324a702b1d9
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82100504"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87074041"
 ---
 # <a name="time-sync-for-windows-vms-in-azure"></a>Синхронизация времени для виртуальных машин Windows в Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "82100504"
 >[!NOTE]
 >Краткий обзор службы времени Windows см. в этом [видео](https://aka.ms/WS2016TimeVideo).
 >
-> Дополнительные сведения см. в статье [Точное время в Windows Server 2016](https://docs.microsoft.com/windows-server/networking/windows-time-service/accurate-time). 
+> Дополнительные сведения см. в статье [Точное время в Windows Server 2016](/windows-server/networking/windows-time-service/accurate-time). 
 
 ## <a name="overview"></a>Обзор
 
@@ -172,9 +172,7 @@ w32tm /dumpreg /subkey:Parameters | findstr /i "ntpserver"
 
 Ниже приведены ссылки на дополнительные материалы по синхронизации времени:
 
-- [Инструменты и параметры службы времени Windows](https://docs.microsoft.com/windows-server/networking/windows-time-service/Windows-Time-Service-Tools-and-Settings)
-- [Улучшения Windows Server 2016](https://docs.microsoft.com/windows-server/networking/windows-time-service/windows-server-2016-improvements)
-- [Точное время для Windows Server 2016](https://docs.microsoft.com/windows-server/networking/windows-time-service/accurate-time)
-- [Граница области поддержки для настройки службы времени Windows в высокоточных средах](https://docs.microsoft.com/windows-server/networking/windows-time-service/support-boundary)
-
-
+- [Инструменты и параметры службы времени Windows](/windows-server/networking/windows-time-service/windows-time-service-tools-and-settings)
+- [Улучшения Windows Server 2016](/windows-server/networking/windows-time-service/windows-server-2016-improvements)
+- [Точное время для Windows Server 2016](/windows-server/networking/windows-time-service/accurate-time)
+- [Граница области поддержки для настройки службы времени Windows в высокоточных средах](/windows-server/networking/windows-time-service/support-boundary)
