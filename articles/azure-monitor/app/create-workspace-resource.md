@@ -5,11 +5,12 @@ author: mrbullwinkle
 ms.author: mbullwin
 ms.topic: conceptual
 ms.date: 05/18/2020
-ms.openlocfilehash: e66ae6aa0b9b7e309fbd6fcc3699cb873a266bbe
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 18d3460804528d736cfc74c1c2d358eb08013513
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83647896"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87092972"
 ---
 # <a name="workspace-based-application-insights-resources-preview"></a>Ресурсы рабочей области Application Insights (предварительная версия)
 
@@ -24,7 +25,7 @@ ms.locfileid: "83647896"
 
 ![Ресурс рабочей области Application Insights](./media/create-workspace-resource/create-workspace-based.png)
 
-Если у вас еще нет рабочей области Log Analytics, [обратитесь к документации по созданию рабочей области Log Analytics](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace).
+Если у вас еще нет рабочей области Log Analytics, [обратитесь к документации по созданию рабочей области Log Analytics](../learn/quick-create-workspace.md).
 
 Для общедоступной предварительной версии **ресурсы рабочей области в настоящее время доступны только в западной части США 2, восточной части США и центрально-южной части США.**
 
@@ -39,7 +40,7 @@ ms.locfileid: "83647896"
 
 ## <a name="copy-the-connection-string"></a>Копирование строки подключения
 
-[Строка подключения](https://docs.microsoft.com/azure/azure-monitor/app/sdk-connection-string?tabs=net) определяет ресурс, с которым необходимо связать данные телеметрии. Она также позволяет изменить конечные точки, которые ресурс будет использовать в качестве назначения для данных телеметрии. Необходимо скопировать строку подключения и добавить ее в код приложения или переменную среды.
+[Строка подключения](./sdk-connection-string.md?tabs=net) определяет ресурс, с которым необходимо связать данные телеметрии. Она также позволяет изменить конечные точки, которые ресурс будет использовать в качестве назначения для данных телеметрии. Необходимо скопировать строку подключения и добавить ее в код приложения или переменную среды.
 
 ## <a name="monitoring-configuration"></a>Конфигурация мониторинга
 
@@ -51,14 +52,14 @@ ms.locfileid: "83647896"
 
 Подробную информацию по настройке пакета SDK для Application Insights для мониторинга на основе кода можно найти в соответствующей документации для языка или платформы.
 
-- [ASP.NET](https://docs.microsoft.com/azure/azure-monitor/app/asp-net)
-- [ASP.NET Core ](https://docs.microsoft.com/azure/azure-monitor/app/asp-net-core)
-- [Фоновые задачи и современные консольные приложения (.NET и .NET Core)](https://docs.microsoft.com/azure/azure-monitor/app/worker-service)
-- [Классические консольные приложения (.NET)](https://docs.microsoft.com/azure/azure-monitor/app/console) 
-- [Java ](https://docs.microsoft.com/azure/azure-monitor/app/java-get-started?tabs=maven)
-- [JavaScript](https://docs.microsoft.com/azure/azure-monitor/app/javascript)
-- [Node.js](https://docs.microsoft.com/azure/azure-monitor/app/nodejs)
-- [Python](https://docs.microsoft.com/azure/azure-monitor/app/opencensus-python)
+- [ASP.NET](./asp-net.md)
+- [ASP.NET Core ](./asp-net-core.md)
+- [Фоновые задачи и современные консольные приложения (.NET и .NET Core)](./worker-service.md)
+- [Классические консольные приложения (.NET)](./console.md) 
+- [Java ](./java-get-started.md?tabs=maven)
+- [JavaScript](./javascript.md)
+- [Node.js](./nodejs.md)
+- [Python](./opencensus-python.md)
 
 ### <a name="codeless-monitoring-and-visual-studio-resource-creation"></a>Мониторинг без написания кода и создание ресурсов Visual Studio
 
@@ -101,7 +102,7 @@ az monitor app-insights component create --app
 az monitor app-insights component create --app demoApp --location eastus --kind web -g my_resource_group --workspace "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/test1234/providers/microsoft.operationalinsights/workspaces/test1234555"
 ```
 
-Полную документацию Azure CLI по этой команде можно найти [здесь](https://docs.microsoft.com/cli/azure/ext/application-insights/monitor/app-insights/component?view=azure-cli-latest#ext-application-insights-az-monitor-app-insights-component-create).
+Полную документацию Azure CLI по этой команде можно найти [здесь](/cli/azure/ext/application-insights/monitor/app-insights/component?view=azure-cli-latest#ext-application-insights-az-monitor-app-insights-component-create).
 
 ### <a name="azure-powershell"></a>Azure PowerShell
 
@@ -197,7 +198,7 @@ az monitor app-insights component create --app demoApp --location eastus --kind 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Изучение метрик](../../azure-monitor/platform/metrics-charts.md)
-* [Написание запросов аналитики](../../azure-monitor/app/analytics.md)
+* [Написание запросов аналитики](../log-query/log-query-overview.md)
 
 [api]: ../../azure-monitor/app/api-custom-events-metrics.md
 [diagnostic]: ../../azure-monitor/app/diagnostic-search.md

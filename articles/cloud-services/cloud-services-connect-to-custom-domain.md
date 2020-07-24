@@ -7,18 +7,19 @@ ms.service: cloud-services
 ms.topic: article
 ms.date: 07/18/2017
 ms.author: tagore
-ms.openlocfilehash: d40e392984d2675c748bda00c61cdaeb1c0932da
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fa918a3a6894205ed36c4b576608e7a71e523a92
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75387026"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87092717"
 ---
 # <a name="connecting-azure-cloud-services-roles-to-a-custom-ad-domain-controller-hosted-in-azure"></a>Подключение ролей облачных служб Azure к контроллеру личного домена AD, размещенному в Azure
 Сначала настройте виртуальную сеть в Azure. Затем добавьте к ней контроллер домена Active Directory (размещенный на виртуальной машине Azure). После этого добавьте имеющиеся роли облачных служб в заранее созданную виртуальную сеть и подключите их к контроллеру домена.
 
 Прежде чем начать, пара моментов, которые стоит запомнить:
 
-1. В этом руководстве используется Azure PowerShell. Поэтому убедитесь, что это средство установлено и готово к использованию. Справку об установке Azure PowerShell см. в статье [Установка и настройка Azure PowerShell](/powershell/azure/overview).
+1. В этом руководстве используется Azure PowerShell. Поэтому убедитесь, что это средство установлено и готово к использованию. Справку об установке Azure PowerShell см. в статье [Установка и настройка Azure PowerShell](/powershell/azure/).
 2. Экземпляры контроллера домена AD и веб-ролей или рабочих ролей должны быть в виртуальной сети.
 
 Следуйте этому пошаговому руководству и, если возникнут проблемы, оставьте нам комментарий в конце статьи. Кто-нибудь из наших сотрудников вам ответит (да, мы читаем ваши комментарии).
@@ -140,7 +141,7 @@ $dmcred = New-Object System.Management.Automation.PSCredential ($dmuser, $dmspwd
 Set-AzureServiceADDomainExtension -Service <your-cloud-service-hosted-service-name> -Role <your-role-name> -Slot <staging-or-production> -DomainName $domain -Credential $dmcred -JoinOption 35
 ```
 
-И это все.
+Вот и все!
 
 Облачные службы должны быть присоединены к контроллеру личного домена. Дополнительные сведения о различных параметрах для настройки расширения домена AD см. в справке PowerShell. Вот несколько примеров.
 

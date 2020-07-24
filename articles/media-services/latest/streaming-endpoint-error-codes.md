@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/07/2019
 ms.author: juliako
-ms.openlocfilehash: 7d3a85e6fcc5b9d1c5ca1511cd7edd05ff5d9ae4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1fc201cc1f3d4d26ca7b9e949d2917688e6fea8c
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80582698"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87091986"
 ---
-# <a name="streaming-endpoint-origin-errors"></a>Ошибки конечной точки потоковой передачи (исходная) 
+# <a name="streaming-endpoint-origin-errors"></a>Ошибки конечной точки потоковой передачи (источника) 
 
 В этом разделе описываются ошибки, которые могут быть получены из [службы конечной точки потоковой передачи](streaming-endpoint-concept.md)служб мультимедиа Azure.
 
@@ -163,13 +163,13 @@ ms.locfileid: "80582698"
 - [Концепция: динамические события и выходные данные Live](live-events-outputs-concept.md)
 - [Пример: руководство по динамической потоковой передаче](stream-live-tutorial-with-api.md)
 
-## <a name="416-range-not-satisfiable"></a>416. диапазон невыполним
+## <a name="416-range-not-satisfiable"></a>416 Range Not Satisfiable (запрошенный диапазон невыполним).
 
 |Код ошибки|Шестнадцатеричное значение |Описание ошибки|
 |---|---|---|
 |MPE_STORAGE_INVALID_RANGE|0x808900F1|Ошибка операции с хранилищем, возвращена ошибка HTTP 416, недопустимый диапазон.|
 
-## <a name="500-internal-server-error"></a>500 Internal Server Error (внутренняя ошибка сервера)
+## <a name="500-internal-server-error"></a>500 — внутренняя ошибка сервера
 
 Во время обработки запроса в службах мультимедиа возникли ошибки, которые не позволяют продолжить обработку.  
 
@@ -200,7 +200,7 @@ ms.locfileid: "80582698"
 
 ## <a name="see-also"></a>См. также раздел
 
-- [Коды ошибок кодирования](https://docs.microsoft.com/rest/api/media/jobs/get#joberrorcode)
+- [Коды ошибок кодирования](/rest/api/media/jobs/get#joberrorcode)
 - [Основные понятия служб мультимедиа Azure](concepts-overview.md)
 - [Квоты и ограничения](limits-quotas-constraints.md)
 

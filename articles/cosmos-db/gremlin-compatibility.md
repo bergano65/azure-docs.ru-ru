@@ -7,11 +7,12 @@ ms.subservice: cosmosdb-graph
 ms.topic: reference
 ms.date: 09/10/2019
 ms.author: sngun
-ms.openlocfilehash: 1db7937cb574ce62986f25e0bfa688dc54b5c606
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7257246f618e3028534f3ebd60eaf6f94a3a4720
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84700605"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87092513"
 ---
 # <a name="azure-cosmos-db-gremlin-compatibility"></a>Azure Cosmos DB совместимость Gremlin
 Azure Cosmos DB подсистема графов выглядит в соответствии со спецификацией этапов обхода [Apache TinkerPop](https://tinkerpop.apache.org/docs/current/reference/#graph-traversal-steps) , но существуют различия в реализации, характерные для Azure Cosmos DB. Список поддерживаемых шагов Gremlin см. в статье о [поддержке протокола GREMLIN API](gremlin-support.md) .
@@ -44,7 +45,7 @@ Azure Cosmos DB подсистема графов выглядит в соотв
 
 * **Использование индексов для запросов Gremlin с `.V()` шагами промежуточного обхода**: в настоящее время только первый `.V()` вызов обхода будет использовать индекс для разрешения всех фильтров или предикатов, присоединенных к нему. Последующие вызовы не будут обращаться к индексу, что может увеличить задержку и стоимость запроса.
     
-    При использовании индексирования по умолчанию обычный запрос Read Gremlin, который начинается с `.V()` шага, будет использовать параметры в присоединенных шагах фильтрации, например `.has()` или `.where()` для оптимизации затрат и производительности запроса. Пример:
+    При использовании индексирования по умолчанию обычный запрос Read Gremlin, который начинается с `.V()` шага, будет использовать параметры в присоединенных шагах фильтрации, например `.has()` или `.where()` для оптимизации затрат и производительности запроса. Например.
 
     ```java
     g.V().has('category', 'A')
@@ -68,7 +69,7 @@ Azure Cosmos DB подсистема графов выглядит в соотв
     g.V().has('category', 'A').fold().union(unfold(), __.V().has('category', 'B'))
     ```
 
-    Чтобы проверить производительность запросов, используйте [Gremlin `executionProfile()` Шаг] (Graph-Execution-Profile.md.
+    Производительность запросов можно проверить с помощью [ `executionProfile()` шага Gremlin](graph-execution-profile.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Посетите страницу [Cosmos DB пользователя](https://feedback.azure.com/forums/263030-azure-cosmos-db) , чтобы поделиться отзывами и помочь команде сосредоточиться на важных для вас функциях.

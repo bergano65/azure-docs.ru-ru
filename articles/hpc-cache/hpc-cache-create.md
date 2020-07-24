@@ -4,17 +4,18 @@ description: Создание экземпляра Azure HPC Cache
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: how-to
-ms.date: 06/01/2020
+ms.date: 07/10/2020
 ms.author: v-erkel
-ms.openlocfilehash: 894595ee3660532bf046a39e994fa669f7c6b002
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a988f08b2b6e30543c112b20e5b374130ceddc47
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84434092"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87092496"
 ---
 # <a name="create-an-azure-hpc-cache"></a>Создание Azure HPC Cache
 
-Кэш создается на портале Azure.
+Для создания кэша используйте портал Azure или Azure CLI.
 
 ![снимок экрана с обзором кэша на портале Azure с кнопкой "Создать" внизу](media/hpc-cache-home-page.png)
 
@@ -22,11 +23,13 @@ ms.locfileid: "84434092"
 
 [![Эскиз видео: кэш Azure HPC: Настройка (щелкните, чтобы посетить страницу видео)](media/video-4-setup.png)](https://azure.microsoft.com/resources/videos/set-up-hpc-cache/)
 
+## <a name="portal"></a>[Портал](#tab/azure-portal)
+
 ## <a name="define-basic-details"></a>Определение основных сведений
 
 ![снимок экрана: страница со сведениями о проекте на портале Azure](media/hpc-cache-create-basics.png)
 
-В области **Сведения о проекте** выберите подписку и группу ресурсов, в которых будет размещаться кэш. Убедитесь, что подписка находится в [списке доступа](hpc-cache-prereqs.md#azure-subscription).
+В области **Сведения о проекте** выберите подписку и группу ресурсов, в которых будет размещаться кэш. Убедитесь, что подписка находится в [списке доступа](hpc-cache-prerequisites.md#azure-subscription).
 
 В области **Сведения о службе** задайте имя кэша и следующие атрибуты:
 
@@ -56,9 +59,9 @@ Azure HPC Cache определяет, какие файлы необходимо
 
 ## <a name="enable-azure-key-vault-encryption-optional"></a>Включить шифрование Azure Key Vault (необязательно)
 
-Если кэш находится в регионе, поддерживающем управляемые клиентом ключи шифрования, на вкладках **кэш** и **теги** отображается страница **ключи шифрования диска** . Во время публикации этот параметр поддерживается в восточной части США, юго-центральном регионе США и западной части США 2.
+Если кэш находится в регионе, поддерживающем управляемые клиентом ключи шифрования, на вкладках **кэш** и **теги** отображается страница **ключи шифрования диска** . Ознакомьтесь с [региональными](hpc-cache-overview.md#region-availability) сведениями о доступности, чтобы узнать больше о поддержке регионов.
 
-Если вы хотите управлять ключами шифрования, используемыми в хранилище кэша, укажите сведения о Azure Key Vault на странице **ключи шифрования диска** . Хранилище ключей должно находиться в том же регионе и в той же подписке, что и кэш.
+Если вы хотите управлять ключами шифрования, используемыми для хранилища кэша, укажите сведения о Azure Key Vault на странице **ключи шифрования диска** . Хранилище ключей должно находиться в том же регионе и в той же подписке, что и кэш.
 
 Этот раздел можно пропустить, если не требуется использовать ключи, управляемые клиентом. По умолчанию Azure шифрует данные с помощью ключей, управляемых корпорацией Майкрософт. Дополнительные сведения см. в статье [Шифрование службы хранилища Azure](../storage/common/storage-service-encryption.md) .
 
@@ -95,7 +98,100 @@ Azure HPC Cache определяет, какие файлы необходимо
 > [!NOTE]
 > Если кэш использует ключи шифрования, управляемые клиентом, то кэш может отображаться в списке ресурсов до того, как состояние развертывания изменится на завершено. Как только кэш находится в состоянии **ожидания ключа** , [его можно авторизовать](customer-keys.md#3-authorize-azure-key-vault-encryption-from-the-cache) для использования хранилища ключей.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+## <a name="create-the-cache-with-azure-cli"></a>Создание кэша с помощью Azure CLI
+
+[!INCLUDE [cli-reminder.md](includes/cli-reminder.md)]
+
+> [!NOTE]
+> В настоящее время Azure CLI не поддерживает создание кэша с помощью управляемых клиентом ключей шифрования. воспользуйтесь порталом Azure.
+
+Для создания нового кэша Azure HPC используйте команду [AZ HPC-Cache Create](/cli/azure/ext/hpc-cache/hpc-cache#ext-hpc-cache-az-hpc-cache-create) .
+
+Укажите следующие значения:
+
+* Имя группы ресурсов кэша
+* Имя кэша
+* Регион Azure
+* Подсеть кэша в следующем формате:
+
+  ``--subnet "/subscriptions/<subscription_id>/resourceGroups/<cache_resource_group>/providers/Microsoft.Network/virtualNetworks/<virtual_network_name>/sub
+nets/<cache_subnet_name>"``
+
+  Подсети кэша требуется по крайней мере 64 IP-адресов (/24) и не могут размещать другие ресурсы.
+
+* Емкость кэша. Два значения задают максимальную пропускную способность кэша HPC Azure:
+
+  * Размер кэша (в ГБ)
+  * Номер SKU виртуальных машин, используемых в инфраструктуре кэша
+
+  [AZ HPC — список SKU кэша](/cli/azure/ext/hpc-cache/hpc-cache/skus) показывает доступные номера SKU и допустимые параметры размера кэша для каждого из них. Размер кэша в диапазоне от 3 ТБ до 48 ТБ, но поддерживаются только некоторые значения.
+
+  На этой диаграмме показано, какие комбинации размера кэша и номера SKU действительны во время подготовки этого документа (Июль 2020).
+
+  | Объем кэша | Standard_2G | Standard_4G | Standard_8G |
+  |------------|-------------|-------------|-------------|
+  | 3072 ГБ    | да         | нет          | нет          |
+  | 6144 ГБ    | Да         | да         | нет          |
+  | 12288 ГБ   | Да         | Да         | Да         |
+  | 24576 ГБ   | нет          | да         | Да         |
+  | 49152 ГБ   | Нет          | нет          | да         |
+
+  Ознакомьтесь с разделом **Установка емкости кэша** на вкладке инструкции портала, чтобы получить важные сведения о ценах, пропускной способности и том, как правильно установить размер кэша для рабочего процесса.
+
+Пример создания кэша:
+
+```azurecli
+az hpc-cache create --resource-group doc-demo-rg --name my-cache-0619 \
+    --location "eastus" --cache-size-gb "3072" \
+    --subnet "/subscriptions/<subscription-ID>/resourceGroups/doc-demo-rg/providers/Microsoft.Network/virtualNetworks/vnet-doc0619/subnets/default" \
+    --sku-name "Standard_2G"
+```
+
+Создание кэша занимает несколько минут. При успешном выполнении команда Create возвращает выходные данные следующего вида:
+
+```azurecli
+{
+  "cacheSizeGb": 3072,
+  "health": {
+    "state": "Healthy",
+    "statusDescription": "The cache is in Running state"
+  },
+  "id": "/subscriptions/<subscription-ID>/resourceGroups/doc-demo-rg/providers/Microsoft.StorageCache/caches/my-cache-0619",
+  "location": "eastus",
+  "mountAddresses": [
+    "10.3.0.17",
+    "10.3.0.18",
+    "10.3.0.19"
+  ],
+  "name": "my-cache-0619",
+  "provisioningState": "Succeeded",
+  "resourceGroup": "doc-demo-rg",
+  "sku": {
+    "name": "Standard_2G"
+  },
+  "subnet": "/subscriptions/<subscription-ID>/resourceGroups/doc-demo-rg/providers/Microsoft.Network/virtualNetworks/vnet-doc0619/subnets/default",
+  "tags": null,
+  "type": "Microsoft.StorageCache/caches",
+  "upgradeStatus": {
+    "currentFirmwareVersion": "5.3.42",
+    "firmwareUpdateDeadline": "0001-01-01T00:00:00+00:00",
+    "firmwareUpdateStatus": "unavailable",
+    "lastFirmwareUpdate": "2020-04-01T15:19:54.068299+00:00",
+    "pendingFirmwareVersion": null
+  }
+}
+```
+
+Сообщение содержит некоторую полезную информацию, включая следующие:
+
+* Адреса подключения клиентов. Используйте эти IP-адреса, когда будете готовы к подключению клиентов к кэшу. Дополнительные сведения см. в статье [Подключение кэша HPC для Azure](hpc-cache-mount.md) .
+* Состояние обновления — при выпуске обновления программного обеспечения это сообщение будет изменено. [Программное обеспечение для кэширования можно обновить](hpc-cache-manage.md#upgrade-cache-software) вручную в удобное время, иначе оно будет применено автоматически через несколько дней.
+
+---
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 После того как кэш появится в списке **ресурсов** , можно перейти к следующему шагу.
 

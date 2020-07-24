@@ -5,12 +5,12 @@ author: mscurrell
 ms.author: markscu
 ms.date: 08/02/2018
 ms.topic: how-to
-ms.openlocfilehash: 850f4e3754af790e6b9bab5c68c9bd10849bba37
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 9fac5d3efabc5d9f796c91d688f35e01aeefdca3
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85965286"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87092768"
 ---
 # <a name="rendering-using-azure"></a>Рендеринг с помощью Azure
 
@@ -79,7 +79,7 @@ ms.locfileid: "85965286"
 * Интерфейсы API:
   * создавайте код на языках [REST](/rest/api/batchservice), [.NET](/dotnet/api/overview/azure/batch), [Python](/python/api/overview/azure/batch), [Java](/java/api/overview/azure/batch) или через другие поддерживаемые API-интерфейсы.  Разработчики могут интегрировать возможности пакетной службы Azure в существующие облачные и локальные приложения или рабочие процессы.  Например [подключаемый модуль для Autodesk Maya](https://github.com/Azure/azure-batch-maya) вызывает пакетную службу через API-интерфейс пакетной службы для Python, создавая пулы и управляя ими, назначая задачи и задания, отслеживая состояние выполнения.
 * Программы командной строки:
-  * использование пакетной службы можно закодировать в скрипты [командной строки Azure](/cli/azure/) или [Azure PowerShell](/powershell/azure/overview);
+  * использование пакетной службы можно закодировать в скрипты [командной строки Azure](/cli/azure/) или [Azure PowerShell](/powershell/azure/);
   * в частности, поддержка шаблонов CLI для пакетной службы значительно упрощает создание пулов и отправку заданий.
 * Пользовательские интерфейсы:
   * [Batch Explorer](https://github.com/Azure/BatchExplorer) — это кроссплатформенный клиентский инструмент, который поддерживает управление и мониторинг для учетных записей пакетной службы и предлагает более широкий ряд функций по сравнению с интерфейсом портала Azure.  Для каждого поддерживаемого приложения предоставляется набор шаблонов пулов и заданий, с помощью которых можно легко создавать пулы и отправлять задания.

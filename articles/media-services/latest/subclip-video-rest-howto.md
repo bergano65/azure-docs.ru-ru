@@ -13,23 +13,24 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 06/10/2019
 ms.author: juliako
-ms.openlocfilehash: c39aded55fe36cb130459a4f6f119f872b1adbc4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b112b3844ddb3758b79a086b624a227127e65ce2
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76514329"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87091884"
 ---
 # <a name="subclip-a-video-when-encoding-with-media-services---rest"></a>Подрезать видео при кодировании со службами мультимедиа — остальное
 
-Вы можете обрезать или подрезать видео при его кодировании с помощью [задания](https://docs.microsoft.com/rest/api/media/jobs). Эта функция работает с любыми [преобразованиями](https://docs.microsoft.com/rest/api/media/transforms), созданными с помощью предустановок [BuiltInStandardEncoderPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#builtinstandardencoderpreset) или [StandardEncoderPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#standardencoderpreset). 
+Вы можете обрезать или подрезать видео при его кодировании с помощью [задания](/rest/api/media/jobs). Эта функция работает с любыми [преобразованиями](/rest/api/media/transforms), созданными с помощью предустановок [BuiltInStandardEncoderPreset](/rest/api/media/transforms/createorupdate#builtinstandardencoderpreset) или [StandardEncoderPreset](/rest/api/media/transforms/createorupdate#standardencoderpreset). 
 
 Пример RESTFUL в этом разделе создает задание, которое обрезает видео по мере отправки задания кодирования. 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 Чтобы выполнить действия, описанные в этом разделе, необходимо сделать следующее:
 
-- [Создайте учетную запись служб мультимедиа Azure](create-account-cli-how-to.md).
+- [Создайте учетную запись служб мультимедиа Azure](./create-account-howto.md).
 - [Настройте Postman для вызовов REST API Служб мультимедиа Azure](media-rest-apis-with-postman.md).
     
     Не забудьте выполнить последний шаг, указанный в разделе [Получение токена Azure AD](media-rest-apis-with-postman.md#get-azure-ad-token). 
@@ -83,6 +84,6 @@ ms.locfileid: "76514329"
 
     Вы увидите **ответ** с информацией о созданном и отправленном задании, а также о состоянии задания. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Кодирование с помощью пользовательского преобразования](custom-preset-rest-howto.md) 

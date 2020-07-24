@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: article
 ms.date: 06/11/2020
-ms.openlocfilehash: 48d9990115a0e786d12915acf1eaadc196a00b0b
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: c9ece4860f8babba110da8536e5028f337fbc772
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86170043"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87092955"
 ---
 # <a name="connectors-for-azure-logic-apps"></a>Соединители для Azure Logic Apps
 
@@ -235,7 +235,7 @@ Logic Apps предоставляет эти популярные стандар
 
 Подключитесь к SharePoint Online, чтобы можно было управлять файлами, вложениями, папками и т. д.
 
-[![Значок API ][dynamics-365-icon]<br> **Dynamics 365 <br> **][dynamics-365-doc]
+[! [API Icon] [Dynamics-365-Icon]<br>**Dynamics 365 <br> **] [Dynamics-365-DOC]
 
 Подключитесь к учетной записи Dynamics 365, чтобы можно было создавать и администрировать записи, элементы и многое другое.
 
@@ -259,14 +259,9 @@ Logic Apps предоставляет эти популярные стандар
 
 Мониторинг событий, публикуемых службой "Сетка событий Azure", например при изменении ресурсов Azure или сторонних ресурсов.
 
-
 [![Значок API ][salesforce-icon]<br> **Salesforce**][salesforce-doc]
 
 Подключитесь к учетной записи Salesforce, чтобы вы могли создавать такие элементы, как записи, задания, объекты и многое другое, и управлять ими.
-
-[![Значок API ][twitter-icon]<br> **Twitter**][twitter-doc]
-
-Подключитесь к учетной записи Twitter, чтобы вы могли управлять твитами, подписчиков, временной шкалой и многое другое. Хранение твитов в SQL, Excel или SharePoint.
 
 <a name="on-premises-connectors"></a>
 
@@ -400,7 +395,7 @@ Logic Apps предоставляет эти соединители предпр
 
 ## <a name="triggers-and-action-types"></a>Триггеры и типы действий
 
-Соединители могут предоставлять *триггеры*, *действия*или и то, и другое. *Триггер* — это первый шаг в любом приложении логики, который обычно указывает на событие, которое вызывает срабатывание триггера, и начинает выполнение приложения логики. Например, соединитель FTP имеет триггер, который запускает приложение логики при добавлении или изменении файла. Некоторые триггеры регулярно проверяют указанное событие или данные, а затем срабатывают при обнаружении указанного события или данных. Другие триггеры ожидают, но сразу же срабатывают, когда происходит определенное событие или когда новые данные доступны. Триггеры также передают все необходимые данные в приложение логики. Приложение логики может считывать и использовать эти данные в рамках рабочего процесса. Например, соединитель Twitter имеет триггер «при публикации нового твита», который передает содержимое твита в рабочий процесс приложения логики.
+Соединители могут предоставлять *триггеры*, *действия*или и то, и другое. *Триггер* — это первый шаг в любом приложении логики, который обычно указывает на событие, которое вызывает срабатывание триггера, и начинает выполнение приложения логики. Например, соединитель FTP имеет триггер, который запускает приложение логики при добавлении или изменении файла. Некоторые триггеры регулярно проверяют указанное событие или данные, а затем срабатывают при обнаружении указанного события или данных. Другие триггеры ожидают, но сразу же срабатывают, когда происходит определенное событие или когда новые данные доступны. Триггеры также передают все необходимые данные в приложение логики. Приложение логики может считывать и использовать эти данные в рамках рабочего процесса. Например, соединитель Office 365 Outlook имеет триггер "при поступлении нового электронного письма", который может передавать содержимое из этого сообщения электронной почты в рабочий процесс приложения логики.
 
 После срабатывания триггера Azure Logic Apps создает экземпляр приложения логики и запускает выполнение *действий* в рабочем процессе приложения логики. Действия — это шаги, которые следуют за триггером и выполняют задачи в рабочем процессе приложения логики. Например, можно создать приложение логики, которое получает данные клиента из базы данных SQL и обрабатывает эти данные в последующих действиях.
 
@@ -416,7 +411,7 @@ Logic Apps предоставляет эти соединители предпр
 
 ## <a name="connector-configuration"></a>Конфигурация соединителя
 
-Триггеры и действия каждого соединителя предоставляют собственные свойства для настройки. Во многих соединителях также требуется сначала создать *Подключение* к целевой службе или системе и предоставить учетные данные для проверки подлинности или другие сведения о конфигурации, прежде чем можно будет использовать триггер или действие в приложении логики. Например, необходимо авторизовать подключение к учетной записи Twitter для доступа к данным или для публикации от вашего имени.
+Триггеры и действия каждого соединителя предоставляют собственные свойства для настройки. Во многих соединителях также требуется сначала создать *Подключение* к целевой службе или системе и предоставить учетные данные для проверки подлинности или другие сведения о конфигурации, прежде чем можно будет использовать триггер или действие в приложении логики. Например, прежде чем вы сможете получить доступ к учетной записи электронной почты Office 365 Outlook и работать с ней, необходимо авторизовать подключение к этой учетной записи.
 
 Для соединителей, использующих Azure Active Directory (Azure AD) OAuth, создание подключения означает вход в службу, например Office 365, Salesforce или GitHub, где маркер доступа [шифруется](../security/fundamentals/encryption-overview.md) и безопасно хранится в хранилище секретов Azure. Для других соединителей, таких как FTP и SQL, требуется подключение с подробными сведениями о конфигурации, например адрес сервера, имя пользователя и пароль. Эти сведения о конфигурации подключения также безопасно хранятся в зашифрованном виде. Дополнительные сведения о [шифровании в Azure](../security/fundamentals/encryption-overview.md).
 
@@ -479,6 +474,7 @@ Logic Apps предоставляет эти соединители предпр
 [azure-cognitive-services-text-analytics-icon]: ./media/apis-list/azure-cognitive-services-text-analytics.png
 [azure-cosmos-db-icon]: ./media/apis-list/azure-cosmos-db.png
 [azure-data-lake-icon]: ./media/apis-list/azure-data-lake.png
+[azure-devops-icon]: ./media/apis-list/azure-devops.png
 [azure-document-db-icon]: ./media/apis-list/azure-document-db.png
 [azure-event-grid-icon]: ./media/apis-list/azure-event-grid.png
 [azure-event-grid-publish-icon]: ./media/apis-list/azure-event-grid-publish.png
@@ -497,15 +493,11 @@ Logic Apps предоставляет эти соединители предпр
 [bitly-icon]: ./media/apis-list/bitly.png
 [biztalk-server-icon]: ./media/apis-list/biztalk.png
 [blogger-icon]: ./media/apis-list/blogger.png
-[box-icon]: ./media/apis-list/box.png
 [campfire-icon]: ./media/apis-list/campfire.png
 [common-data-service-icon]: ./media/apis-list/common-data-service.png
-[dropbox-icon]: ./media/apis-list/dropbox.png
-[dynamics-365-icon]: ./media/apis-list/dynamics-crm-online.png
 [dynamics-365-financials-icon]: ./media/apis-list/dynamics-365-financials.png
 [dynamics-365-operations-icon]: ./media/apis-list/dynamics-365-operations.png
 [easy-redmine-icon]: ./media/apis-list/easyredmine.png
-[facebook-icon]: ./media/apis-list/facebook.png
 [file-system-icon]: ./media/apis-list/file-system.png
 [ftp-icon]: ./media/apis-list/ftp.png
 [github-icon]: ./media/apis-list/github.png
@@ -522,11 +514,9 @@ Logic Apps предоставляет эти соединители предпр
 [instagram-icon]: ./media/apis-list/instagram.png
 [instapaper-icon]: ./media/apis-list/instapaper.png
 [jira-icon]: ./media/apis-list/jira.png
-[mailchimp-icon]: ./media/apis-list/mailchimp.png
 [mandrill-icon]: ./media/apis-list/mandrill.png
 [mysql-icon]: ./media/apis-list/mysql.png
 [office-365-outlook-icon]: ./media/apis-list/office-365.png
-[office-365-users-icon]: ./media/apis-list/office-365-users.png
 [onedrive-icon]: ./media/apis-list/onedrive.png
 [onedrive-for-business-icon]: ./media/apis-list/onedrive-business.png
 [oracle-db-icon]: ./media/apis-list/oracle-db.png
@@ -536,7 +526,6 @@ Logic Apps предоставляет эти соединители предпр
 [postgre-sql-icon]: ./media/apis-list/postgre-sql.png
 [project-online-icon]: ./media/apis-list/projecton-line.png
 [redmine-icon]: ./media/apis-list/redmine.png
-[rss-icon]: ./media/apis-list/rss.png
 [salesforce-icon]: ./media/apis-list/salesforce.png
 [sap-icon]: ./media/apis-list/sap.png
 [send-grid-icon]: ./media/apis-list/sendgrid.png
@@ -550,13 +539,9 @@ Logic Apps предоставляет эти соединители предпр
 [sql-server-icon]: ./media/apis-list/sql.png
 [teradata-icon]: ./media/apis-list/teradata.png
 [todoist-icon]: ./media/apis-list/todoist.png
-[trello-icon]: ./media/apis-list/trello.png
 [twilio-icon]: ./media/apis-list/twilio.png
-[twitter-icon]: ./media/apis-list/twitter.png
 [vimeo-icon]: ./media/apis-list/vimeo.png
-[visual-studio-team-services-icon]: ./media/apis-list/visual-studio-team-services.png
 [wordpress-icon]: ./media/apis-list/wordpress.png
-[yammer-icon]: ./media/apis-list/yammer.png
 [youtube-icon]: ./media/apis-list/youtube.png
 
 <!-- Enterprise Integration Pack icons -->
@@ -614,15 +599,10 @@ Logic Apps предоставляет эти соединители предпр
 [azure-sql-data-warehouse-doc]: https://docs.microsoft.com/connectors/sqldw/ "Подключение к хранилищу данных SQL Azure для просмотра данных"
 [azure-table-storage-doc]: https://docs.microsoft.com/connectors/azuretables/ "Подключитесь к учетной записи хранения Azure, чтобы можно было создавать, обновлять и запрашивать таблицы и многое другое."
 [biztalk-server-doc]: https://docs.microsoft.com/connectors/biztalk/ "Подключитесь к BizTalk Server, чтобы можно было запускать приложения на основе BizTalk параллельно с Azure Logic Apps"
-[box-doc]: ./connectors-create-api-box.md "Подключиться к Box. Отправка, получение, удаление, перечисление файлов и многое другое"
-[dropbox-doc]: ./connectors-create-api-dropbox.md "Подключитесь к Dropbox. Отправка, получение, удаление, перечисление файлов и многое другое"
-[dynamics-365-doc]: ./connectors-create-api-crmonline.md "Подключение к Dynamics CRM Online для работы с данными CRM Online"
-[facebook-doc]: ./connectors-create-api-facebook.md "Подключитесь к Facebook. Публикация на временной шкале, получение веб-канала страницы и многое другое"
 [file-system-doc]: ../logic-apps/logic-apps-using-file-connector.md "Подключение к локальной файловой системе"
 [ftp-doc]: ./connectors-create-api-ftp.md "Подключение к FTP и FTPS-серверу для выполнения разных FTP-задач, включая отправку, получение, удаление файлов и другие действия."
 [github-doc]: ./connectors-create-api-github.md "Подключение к GitHub и отслеживание проблем"
 [google-calendar-doc]: ./connectors-create-api-googlecalendar.md "Подключается к Google календарю и может управлять календарем"
-[google-drive-doc]: ./connectors-create-api-googledrive.md "Подключение к GoogleDrive, чтобы можно было работать с данными"
 [google-sheets-doc]: ./connectors-create-api-googlesheet.md "Подключение к Google таблицам, чтобы можно было изменять листы"
 [google-tasks-doc]: ./connectors-create-api-googletasks.md "Подключается к задачам Google, чтобы вы могли управлять своими задачами."
 [ibm-3270-doc]: ./connectors-run-3270-apps-ibm-mainframe-create-api-3270.md "Подключение к приложениям 3270 на мэйнфреймах IBM"
@@ -630,18 +610,14 @@ Logic Apps предоставляет эти соединители предпр
 [ibm-informix-doc]: ./connectors-create-api-informix.md "Подключитесь к Informix в облаке или в локальной среде. Чтение строки, перечисление таблиц и многое другое"
 [ibm-mq-doc]: ./connectors-create-api-mq.md "Подключение к IBM MQ в локальной среде или Azure для отправки и получения сообщений"
 [instagram-doc]: ./connectors-create-api-instagram.md "Подключитесь к Instagram. Активировать или исдействовать события"
-[mailchimp-doc]: ./connectors-create-api-mailchimp.md "Подключитесь к учетной записи MailChimp. Управление почтой и ее Автоматизация"
 [mandrill-doc]: ./connectors-create-api-mandrill.md "Подключение к Mandrill для обмена данными"
 [mysql-doc]: https://docs.microsoft.com/connectors/mysql/ "Подключитесь к локальной базе данных MySQL, чтобы можно было читать и записывать данные."
 [office-365-outlook-doc]: ./connectors-create-api-office365-outlook.md "Подключитесь к учетной записи Office 365, чтобы вы могли отправлять и получать сообщения электронной почты, управлять календарем и контактами и многое другое."
-[office-365-users-doc]: ./connectors-create-api-office365-users.md
 [onedrive-doc]: ./connectors-create-api-onedrive.md "Подключитесь к личному приложению Microsoft OneDrive, чтобы вы могли отправлять, удалять, перечислять файлы и многое другое."
 [onedrive-for-business-doc]: ./connectors-create-api-onedriveforbusiness.md "Подключитесь к Microsoft OneDrive для бизнеса, чтобы вы могли отправлять, удалять, перечислять файлы и многое другое."
 [oracle-db-doc]: ./connectors-create-api-oracledatabase.md "Подключение к базе данных Oracle, чтобы можно было добавлять, вставлять, удалять строки и многое другое."
 [outlook.com-doc]: ./connectors-create-api-outlook.md "Подключение к почтовому ящику Outlook для управления электронной почтой, календарями, контактами и т. д."
 [postgre-sql-doc]: https://docs.microsoft.com/connectors/postgresql/ "Подключитесь к базе данных PostgreSQL, чтобы можно было считывать данные из таблиц."
-[project-online-doc]: ./connectors-create-api-projectonline.md "Подключение к Microsoft Project Online для управления проектами, задачами, ресурсами и т. д."
-[rss-doc]: ./connectors-create-api-rss.md "Публикация и получение элементов канала, активация операций при публикации нового элемента в RSS-канале"
 [salesforce-doc]: ./connectors-create-api-salesforce.md "Подключитесь к учетной записи Salesforce. Управление учетными записями, интересами, возможностями и др."
 [sap-connector-doc]: ../logic-apps/logic-apps-using-sap-connector.md "Подключение к локальному серверу SAP"
 [sendgrid-doc]: ./connectors-create-api-sendgrid.md "Подключитесь к SendGrid. Отправка электронной почты и управление списками получателей"
@@ -653,10 +629,7 @@ Logic Apps предоставляет эти соединители предпр
 [sparkpost-doc]: ./connectors-create-api-sparkpost.md "Подключение к SparkPost для обмена данными"
 [sql-server-doc]: ./connectors-create-api-sqlazure.md "Подключитесь к базе данных SQL Azure или SQL Server. Создание, обновление, получение и удаление записей в таблице базы данных SQL"
 [teradata-doc]: https://docs.microsoft.com/connectors/teradata/ "Подключение к базе данных Teradata для чтения данных из таблиц"
-[trello-doc]: ./connectors-create-api-trello.md "Подключитесь к Trello. Управляйте своими проектами и организуйте что угодно"
 [twilio-doc]: ./connectors-create-api-twilio.md "Подключитесь к Twilio. Отправка и получение сообщений, получение доступных номеров, управление входящими телефонными номерами и многое другое"
-[twitter-doc]: ./connectors-create-api-twitter.md "Подключитесь к Twitter. Получение временных шкал, публикация твитов и многое другое"
-[yammer-doc]: ./connectors-create-api-yammer.md "Подключитесь к Yammer. Публикация сообщений, получение новых сообщений и многое другое"
 [youtube-doc]: ./connectors-create-api-youtube.md "Подключитесь к YouTube. Управляйте своими видео и каналами"
 
 <!--Enterprise Intregation Pack doc links-->

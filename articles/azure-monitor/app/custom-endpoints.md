@@ -4,18 +4,19 @@ description: Измените Azure Monitor по умолчанию конечн
 ms.topic: conceptual
 ms.date: 07/26/2019
 ms.custom: references_regions
-ms.openlocfilehash: d0c9467497a8bd108d37a340d2cdbb887061e3a6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 50a072cd7e509642c36c783e3cc0fd78e4d5adc0
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84194831"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87092870"
 ---
 # <a name="application-insights-overriding-default-endpoints"></a>Application Insights переопределение конечных точек по умолчанию
 
 Чтобы отправить данные из Application Insights в определенные регионы, необходимо переопределить адреса конечных точек по умолчанию. Каждый пакет SDK требует немного других изменений, все из которых описаны в этой статье. Эти изменения потребует настройки образца кода и замены значений заполнителей для `QuickPulse_Endpoint_Address` , `TelemetryChannel_Endpoint_Address` и `Profile_Query_Endpoint_address` с фактическими адресами конечных точек для конкретного региона. В конце этой статьи содержатся ссылки на адреса конечных точек для регионов, где требуется такая конфигурация.
 
 > [!NOTE]
-> [Строки подключения](https://docs.microsoft.com/azure/azure-monitor/app/sdk-connection-string?tabs=net) — это новый предпочтительный метод настройки пользовательских конечных точек в Application Insights.
+> [Строки подключения](./sdk-connection-string.md?tabs=net) — это новый предпочтительный метод настройки пользовательских конечных точек в Application Insights.
 
 ---
 
@@ -76,7 +77,7 @@ using Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.QuickPuls
 
 # <a name="azure-functions"></a>[Функции Azure](#tab/functions)
 
-Для функций Azure теперь рекомендуется использовать [строки подключения](https://docs.microsoft.com/azure/azure-monitor/app/sdk-connection-string?tabs=net) , заданные в параметрах приложения функции. Чтобы получить доступ к параметрам приложения для функции, в области функции выберите **Параметры**  >  **Конфигурация**  >  **приложения параметры**. 
+Для функций Azure теперь рекомендуется использовать [строки подключения](./sdk-connection-string.md?tabs=net) , заданные в параметрах приложения функции. Чтобы получить доступ к параметрам приложения для функции, в области функции выберите **Параметры**  >  **Конфигурация**  >  **приложения параметры**. 
 
 Имя: `APPLICATIONINSIGHTS_CONNECTION_STRING` значение:`Connection String Value`
 
@@ -155,7 +156,7 @@ Live Metrics Endpoint: "QuickPulse_Endpoint_Address"
 
 ## <a name="regions-that-require-endpoint-modification"></a>Регионы, требующие изменения конечной точки
 
-Сейчас только регионы, требующие внесения изменений в конечную точку, — это [Azure для государственных организаций](https://docs.microsoft.com/azure/azure-government/documentation-government-services-monitoringandmanagement#application-insights) и [Azure для Китая](https://docs.microsoft.com/azure/china/resources-developer-guide).
+Сейчас только регионы, требующие внесения изменений в конечную точку, — это [Azure для государственных организаций](../../azure-government/compare-azure-government-global-azure.md#application-insights) и [Azure для Китая](/azure/china/resources-developer-guide).
 
 |Регион |  Имя конечной точки | Значение |
 |-----------------|:------------|:-------------|
@@ -177,7 +178,7 @@ Live Metrics Endpoint: "QuickPulse_Endpoint_Address"
 > [!NOTE]
 > Мониторинг на основе модуля и агента без кода для служб приложений Azure **сейчас не поддерживается** в этих регионах. Как только эта функция станет доступна, эта статья будет обновлена.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения о настраиваемых изменениях для Azure для государственных организаций см. в подробных руководствах по [мониторингу и управлению Azure](https://docs.microsoft.com/azure/azure-government/documentation-government-services-monitoringandmanagement#application-insights).
-- Дополнительные сведения о Azure для Китая см. в [сборник тренировочных заданийе Azure для Китая](https://docs.microsoft.com/azure/china/).
+- Дополнительные сведения о настраиваемых изменениях для Azure для государственных организаций см. в подробных руководствах по [мониторингу и управлению Azure](../../azure-government/compare-azure-government-global-azure.md#application-insights).
+- Дополнительные сведения о Azure для Китая см. в [сборник тренировочных заданийе Azure для Китая](/azure/china/).

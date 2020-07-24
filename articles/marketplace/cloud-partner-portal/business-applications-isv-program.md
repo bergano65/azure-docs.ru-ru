@@ -3,15 +3,16 @@ title: Руководство по адаптации независимого �
 description: Вот как присоединиться к программе Business Applications ISV Connect.
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
-ms.topic: conceptual
-ms.date: 6/25/2020
+ms.topic: article
+author: qianw211
 ms.author: dsindona
-ms.openlocfilehash: 37d8c26bd41f06a39d4404c142aef5faa0bf199c
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.date: 7/14/2020
+ms.openlocfilehash: 65d18bca4f8f7b5d655d91ece1c9d966311b701b
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86170247"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87092224"
 ---
 # <a name="microsoft-business-applications-independent-software-vendor-isv-connect-program-onboarding-guide"></a>Руководство по адаптации независимого поставщика программного обеспечения (ISV) Microsoft Business Applications
 
@@ -38,7 +39,7 @@ ms.locfileid: "86170247"
 
 1.  Войдите в [Центр партнеров](https://partner.microsoft.com/dashboard).
 2.  Щелкните **Параметры** (значок шестеренки) и выберите **Параметры разработчика**.
-3.  Выберите **соглашения**. 
+3.  Выберите **соглашения**.
 4.  Выберите ссылку версия и просмотрите соглашение.
 5.  Чтобы согласиться и принять соглашение, выберите **принять соглашение**.
 
@@ -75,9 +76,8 @@ ms.locfileid: "86170247"
 
 Обратитесь к менеджеру по работе с партнерами или обратитесь в [службу поддержки партнеров Майкрософт](https://aka.ms/marketplacepublishersupport) за помощью к вашей учетной записи. Общие сведения о программе Business Applications ISV Connect см. в следующих статьях:
 
-- **[Business Applications для независимых поставщиков программных продуктов (статья в Интернете)](https://aka.ms/bizappsisvweb)**
-
-- **[Обзор новой программы для Business Applications ISV (PDF)](https://aka.ms/bizappsisvprogram)**
-
-- **[Политики программы подключения ISV](https://aka.ms/bizappsisvpolicies)**
-
+- [Business Applications для независимых поставщиков программных продуктов](https://partner.microsoft.com/solutions/business-applications/isv-overview) (статья в Интернете)
+- [Обзор новой программы для Business Applications ISV](https://aka.ms/BizAppsISVProgram) (PDF)
+- [Часто задаваемые вопросы о программе Business APPLICATIONS ISV Connect](https://assetsprod.microsoft.com/business-applications-partner-faq.pdf) (PDF)
+- [Предстоящие программы для Business Applications независимых поставщиков программных продуктов](https://cloudblogs.microsoft.com/dynamics365/bdm/2019/04/17/upcoming-program-for-business-applications-isvs/) (запись блога)
+- [Политики программы подключения ISV](https://aka.ms/bizappsisvpolicies) (PDF)

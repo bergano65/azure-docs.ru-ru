@@ -11,22 +11,22 @@ ms.workload: ''
 ms.topic: article
 ms.date: 03/04/2020
 ms.author: juliako
-ms.openlocfilehash: 41b2d0ad1e072fb2bf5860ae80f8f25f886b37f7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ed58919c47da13a8a0707a344a389126c6feb6c3
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80582672"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87091969"
 ---
 # <a name="streaming-locators"></a>Указатели потоковой передачи
 
-Чтобы видео в выходном ресурсе стали доступны для воспроизведения в клиентах, необходимо создать [указатель потоковой передачи](https://docs.microsoft.com/rest/api/media/streaminglocators), а затем сформировать URL-адреса потоковой передачи. Чтобы создать URL-адрес, необходимо сцепить имя узла конечной точки потоковой передачи и путь указателя потоковой передачи. Пример .NET приведен в разделе [Создание указателя потоковой передачи](stream-files-tutorial-with-api.md#get-a-streaming-locator).
+Чтобы видео в выходном ресурсе стали доступны для воспроизведения в клиентах, необходимо создать [указатель потоковой передачи](/rest/api/media/streaminglocators), а затем сформировать URL-адреса потоковой передачи. Чтобы создать URL-адрес, необходимо сцепить имя узла конечной точки потоковой передачи и путь указателя потоковой передачи. Пример .NET приведен в разделе [Создание указателя потоковой передачи](stream-files-tutorial-with-api.md#get-a-streaming-locator).
 
 Процесс создания **указателя потоковой передачи** называется публикацией. По умолчанию **указатель потоковой передачи** действителен сразу же после выполнения вызовов API и продолжается до тех пор, пока не будет настроено дополнительное время начала и окончания. 
 
 При создании **указателя потоковой передачи**необходимо указать имя **ресурса** и имя **политики потоковой передачи** . Дополнительные сведения см. в следующих разделах:
 
-* [Активы](assets-concept.md)
+* [Ресурсы](assets-concept.md)
 * [Политики потоковой передачи](streaming-policy-concept.md)
 * [Политики ключей содержимого](content-key-policy-concept.md)
 
@@ -90,17 +90,17 @@ StreamingLocator locator = await client.StreamingLocators.CreateAsync(
 
 Чтобы получить указатели потоковой передачи на основе имени связанного ресурса, используйте следующие операции:
 
-|Язык|API|
+|Language|API|
 |---|---|
-|REST|[листстреаминглокаторс](https://docs.microsoft.com/rest/api/media/assets/liststreaminglocators)|
-|CLI|[AZ AMS Asset List-Streaming-Locator](https://docs.microsoft.com/cli/azure/ams/asset?view=azure-cli-latest#az-ams-asset-list-streaming-locators)|
-|.NET|[листстреаминглокаторс](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.media.assetsoperationsextensions.liststreaminglocators?view=azure-dotnet#Microsoft_Azure_Management_Media_AssetsOperationsExtensions_ListStreamingLocators_Microsoft_Azure_Management_Media_IAssetsOperations_System_String_System_String_System_String_)|
-|Java|[ассетстреаминглокатор](https://docs.microsoft.com/rest/api/media/assets/liststreaminglocators#assetstreaminglocator)|
-|Node.js|[listStreamingLocators](https://docs.microsoft.com/javascript/api/@azure/arm-mediaservices/assets#liststreaminglocators-string--string--string--msrest-requestoptionsbase-)|
+|REST|[листстреаминглокаторс](/rest/api/media/assets/liststreaminglocators)|
+|CLI|[AZ AMS Asset List-Streaming-Locator](/cli/azure/ams/asset?view=azure-cli-latest#az-ams-asset-list-streaming-locators)|
+|.NET|[листстреаминглокаторс](/dotnet/api/microsoft.azure.management.media.assetsoperationsextensions.liststreaminglocators?view=azure-dotnet#Microsoft_Azure_Management_Media_AssetsOperationsExtensions_ListStreamingLocators_Microsoft_Azure_Management_Media_IAssetsOperations_System_String_System_String_System_String_)|
+|Java|[ассетстреаминглокатор](/rest/api/media/assets/liststreaminglocators#assetstreaminglocator)|
+|Node.js|[listStreamingLocators](/javascript/api/@azure/arm-mediaservices/assets#liststreaminglocators-string--string--string--msrest-requestoptionsbase-)|
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также статью
 
-* [Активы](assets-concept.md)
+* [Ресурсы](assets-concept.md)
 * [Политики потоковой передачи](streaming-policy-concept.md)
 * [Политики ключей содержимого](content-key-policy-concept.md)
 * [Учебник. Отправка, кодирование и потоковая передача видео с помощью .NET](stream-files-tutorial-with-api.md)

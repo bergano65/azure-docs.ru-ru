@@ -13,11 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/20/2019
 ms.author: juliako
-ms.openlocfilehash: 37baed076ca074c1d558af36649e90959a0034c9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2bc688a61235a31c3d6b6e88cbb90c0d14cca179
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75750872"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87092020"
 ---
 # <a name="diagnostic-logs-schemas"></a>Схемы для журналов диагностики
 
@@ -29,15 +30,15 @@ ms.locfileid: "75750872"
 
 ## <a name="top-level-diagnostic-logs-schema"></a>Схема журналов диагностики верхнего уровня
 
-Подробное описание схемы журналов диагностики верхнего уровня см. в статье [Поддерживаемые службы, схемы и категории для журналов диагностики Azure](../../azure-monitor/platform/tutorial-dashboards.md).
+Подробное описание схемы журналов диагностики верхнего уровня см. в статье [Поддерживаемые службы, схемы и категории для журналов диагностики Azure](../../azure-monitor/platform/resource-logs-schema.md).
 
 ## <a name="key-delivery-log-schema"></a>Схема журнала доставки ключей
 
-### <a name="properties"></a>Элемент Property
+### <a name="properties"></a>Свойства
 
 Эти свойства относятся к схеме журнала доставки ключей.
 
-|name|Описание:|
+|Имя|Описание|
 |---|---|
 |keyId|ИДЕНТИФИКАТОР запрошенного ключа.|
 |keyType|Может принимать одно из следующих значений: "Clear" (без шифрования), "FairPlay", "PlayReady" или "Widevine".|
@@ -111,6 +112,6 @@ ms.locfileid: "75750872"
 
 * Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Мониторинг метрик и журналов диагностики служб мультимедиа](media-services-metrics-diagnostic-logs.md)

@@ -5,11 +5,12 @@ author: mikkelhegn
 ms.topic: conceptual
 ms.date: 02/23/2018
 ms.author: mikhegn
-ms.openlocfilehash: ea313adb43f8d91ec9e57dd1d0b8d3447a8075f2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 76ca0bb7b81b3896538f08ff2ef52ed1ac6b363f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75465501"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87091612"
 ---
 # <a name="troubleshoot-your-local-development-cluster-setup"></a>Устранение неполадок в работе кластера локальной разработки
 Если у вас возникли проблемы при взаимодействии с кластером локальной разработки Azure Service Fabric, ознакомьтесь со следующими возможностями для решения.
@@ -19,12 +20,13 @@ ms.locfileid: "75465501"
 #### <a name="problem"></a>Проблема
 При выполнении скрипта DevClusterSetup появляется следующее сообщение об ошибке:
 
-    Cannot clean up C:\SfDevCluster\Log fully as references are likely being held to items in it. Please remove those and run this script again.
-    At line:1 char:1 + .\DevClusterSetup.ps1
-    + ~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo : NotSpecified: (:) [Write-Error], WriteErrorException
-    + FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException,DevClusterSetup.ps1
-
+```output
+Cannot clean up C:\SfDevCluster\Log fully as references are likely being held to items in it. Please remove those and run this script again.
+At line:1 char:1 + .\DevClusterSetup.ps1
++ ~~~~~~~~~~~~~~~~~~~~~
++ CategoryInfo : NotSpecified: (:) [Write-Error], WriteErrorException
++ FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException,DevClusterSetup.ps1
+```
 
 #### <a name="solution"></a>Решение
 Закройте текущее и откройте новое окно PowerShell от имени администратора. Теперь можно успешно запустить скрипт.
@@ -42,12 +44,14 @@ ms.locfileid: "75465501"
 #### <a name="problem"></a>Проблема
 Вызов Connect-ServiceFabricCluster завершается со следующей ошибкой:
 
-    Connect-ServiceFabricCluster : The object is closed.
-    At line:1 char:1
-    + Connect-ServiceFabricCluster
-    + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo : InvalidOperation: (:) [Connect-ServiceFabricCluster], FabricObjectClosedException
-    + FullyQualifiedErrorId : CreateClusterConnectionErrorId,Microsoft.ServiceFabric.Powershell.ConnectCluster
+```output
+Connect-ServiceFabricCluster : The object is closed.
+At line:1 char:1
++ Connect-ServiceFabricCluster
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++ CategoryInfo : InvalidOperation: (:) [Connect-ServiceFabricCluster], FabricObjectClosedException
++ FullyQualifiedErrorId : CreateClusterConnectionErrorId,Microsoft.ServiceFabric.Powershell.ConnectCluster
+```
 
 #### <a name="solution"></a>Решение
 Закройте текущее и откройте новое окно PowerShell от имени администратора.
@@ -66,7 +70,7 @@ ms.locfileid: "75465501"
 > 
 > 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Обзор и диагностика кластера с помощью системных отчетов о работоспособности](service-fabric-understand-and-troubleshoot-with-system-health-reports.md)
 * [Визуализация кластера с помощью обозревателя Service Fabric](service-fabric-visualizing-your-cluster.md)
 

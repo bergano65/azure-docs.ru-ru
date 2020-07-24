@@ -14,16 +14,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: b1f8b158c511919a72e72629d72b0e5ff73ff7db
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 58657ca604e7bd0fc081d6a5bb6ef18a8b7b5b48
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78268115"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87091714"
 ---
 # <a name="use-media-services-to-deliver-drm-licenses-or-aes-keys"></a>Доставка лицензий DRM или ключей AES с помощью Служб мультимедиа 
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](../latest/index.yml). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
 
 Службы мультимедиа Azure позволяют принимать и кодировать содержимое, добавлять функции защиты, а также выполнять его потоковую передачу. Дополнительные сведения см. в статье [Использование общего динамического шифрования PlayReady и (или) Widevine DRM](media-services-protect-with-playready-widevine.md). Некоторые клиенты с помощью Служб мультимедиа только доставляют лицензии и (или) ключи, а также выполняют кодирование, шифрование и потоковую передачу содержимого на локальных серверах. В этой статье описано, как с помощью Служб мультимедиа доставлять лицензии PlayReady и (или) Widevine, а также как выполнять другие задачи на локальных серверах. 
 
@@ -354,6 +355,6 @@ namespace DeliverDRMLicenses
 ## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 * [Использование общего динамического шифрования PlayReady и (или) Widevine DRM](media-services-protect-with-playready-widevine.md)
 * [Использование динамического шифрования AES-128 и службы доставки ключей](media-services-protect-with-aes128.md)

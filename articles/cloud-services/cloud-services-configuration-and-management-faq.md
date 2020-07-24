@@ -15,11 +15,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 07/23/2018
 ms.author: genli
-ms.openlocfilehash: c418ed87bd74471ce8c2e8186bd6244eaf6f21de
-ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
+ms.openlocfilehash: 477f38e18f1bee881e4a9df23dd37048f39549be
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85921579"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87092751"
 ---
 # <a name="configuration-and-management-issues-for-azure-cloud-services-frequently-asked-questions-faqs"></a>Проблемы конфигурации и управления для облачных служб Azure. Вопросы и ответы (FAQ)
 
@@ -36,7 +37,7 @@ ms.locfileid: "85921579"
 - [Как автоматизировать установку основного сертификата TLS/SSL (PFX) и промежуточного сертификата (. p7b)?](#how-to-automate-the-installation-of-main-tlsssl-certificatepfx-and-intermediate-certificatep7b)
 - [Каково назначение сертификата «Управление службами Microsoft Azure для MachineKey»?](#what-is-the-purpose-of-the-microsoft-azure-service-management-for-machinekey-certificate)
 
-**Мониторинг и ведение журналов**
+**Мониторинг и ведение журнала**
 
 - [Каковы предстоящие возможности облачной службы в портал Azure, которые могут помочь в управлении и мониторинге приложений?](#what-are-the-upcoming-cloud-service-capabilities-in-the-azure-portal-which-can-help-manage-and-monitor-applications)
 - [Почему IIS останавливает запись в каталог журналов?](#why-does-iis-stop-writing-to-the-log-directory)
@@ -112,11 +113,11 @@ Get-AzurePublishSettingsFile
 
 Этот сертификат используется для шифрования ключей компьютера на веб-ролях Azure. Чтобы узнать больше, ознакомьтесь с [этой рекомендацией](https://docs.microsoft.com/security-updates/securityadvisories/2018/4092731).
 
-Дополнительные сведения см. в следующих статьях:
+См. сведения в следующих статьях:
 - [Настройка и запуск задач запуска для облачной службы](https://docs.microsoft.com/azure/cloud-services/cloud-services-startup-tasks)
 - [Стандартные задачи запуска в облачной службе](https://docs.microsoft.com/azure/cloud-services/cloud-services-startup-tasks-common)
 
-## <a name="monitoring-and-logging"></a>Мониторинг и ведение журналов
+## <a name="monitoring-and-logging"></a>Мониторинг и ведение журнала
 
 ### <a name="what-are-the-upcoming-cloud-service-capabilities-in-the-azure-portal-which-can-help-manage-and-monitor-applications"></a>Какие будущие возможности облачной службы на портале Azure помогут наблюдать за приложениями и управлять ими?
 
@@ -127,7 +128,7 @@ $cert = New-SelfSignedCertificate -DnsName yourdomain.cloudapp.net -CertStoreLoc
 $password = ConvertTo-SecureString -String "your-password" -Force -AsPlainText
 Export-PfxCertificate -Cert $cert -FilePath ".\my-cert-file.pfx" -Password $password
 ```
-В ближайшее время появится возможность выбора BLOB-объектов или локального расположения в качестве расположения для передачи csdef и cscfg. С помощью командлета [New-AzureDeployment](/powershell/module/servicemanagement/azure/new-azuredeployment?view=azuresmps-4.0.0) можно задать значение каждого расположения.
+В ближайшее время появится возможность выбора BLOB-объектов или локального расположения в качестве расположения для передачи csdef и cscfg. С помощью командлета [New-AzureDeployment](/powershell/module/servicemanagement/azure.service/new-azuredeployment?view=azuresmps-4.0.0) можно задать значение каждого расположения.
 
 Возможность наблюдать за метриками на уровне экземпляра. Дополнительные возможности мониторинга см. в статье [Мониторинг облачных служб](cloud-services-how-to-monitor.md).
 
@@ -296,7 +297,7 @@ Azure ничего не будет записывать на диск %approot%.
 Вы можете включить антивредоносное расширение с помощью сценария PowerShell в задаче запуска. Чтобы реализовать этот механизм, выполните действия в следующих статьях. 
  
 - [Создание задачи запуска PowerShell](cloud-services-startup-tasks-common.md#create-a-powershell-startup-task).
-- [Set-AzureServiceAntimalwareExtension](https://docs.microsoft.com/powershell/module/servicemanagement/azure/Set-AzureServiceAntimalwareExtension?view=azuresmps-4.0.0 ).
+- [Set-AzureServiceAntimalwareExtension](/powershell/module/servicemanagement/azure.service/Set-AzureServiceAntimalwareExtension?view=azuresmps-4.0.0 ).
 
 Дополнительные сведения о сценариях развертывания защиты от вредоносных программ и о том, как включить эту защиту на портале, вы найдете в разделе [Сценарии развертывания антивредоносного ПО](../security/fundamentals/antimalware.md#antimalware-deployment-scenarios).
 

@@ -4,11 +4,12 @@ description: Краткое описание командлетов Azure PowerS
 ms.topic: how-to
 ms.date: 01/15/2019
 ms.custom: seodec18
-ms.openlocfilehash: 6108ac9c9f5f10de69369d7aed31cd0ce317044e
-ms.sourcegitcommit: a9784a3fd208f19c8814fe22da9e70fcf1da9c93
+ms.openlocfilehash: 2c80da92c7acad5180c763d259357f5369f225f7
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83779609"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87092785"
 ---
 # <a name="manage-batch-resources-with-powershell-cmdlets"></a>Управление ресурсами пакетной службы с помощью командлетов PowerShell
 
@@ -20,7 +21,7 @@ ms.locfileid: "83779609"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* [Установите и настройте последнюю версию модуля Azure PowerShell](/powershell/azure/overview). Установить определенный модуль пакетной службы Azure, например модуль предварительной версии, можно из [коллекции PowerShell](https://www.powershellgallery.com/packages/Az.Batch/1.0.0).
+* [Установите и настройте последнюю версию модуля Azure PowerShell](/powershell/azure/). Установить определенный модуль пакетной службы Azure, например модуль предварительной версии, можно из [коллекции PowerShell](https://www.powershellgallery.com/packages/Az.Batch/1.0.0).
 
 * Выполните командлет **Connect-AzAccount**, чтобы подключиться к своей подписке (командлеты пакетной службы Azure входят в состав модуля Azure Resource Manager):
 

@@ -13,24 +13,24 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 06/09/2019
 ms.author: juliako
-ms.openlocfilehash: 3d584ee742aa93cdecf4b04d942afb2ed83a7357
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 31fa7fe6b16b7ba97b8ce5e6697f1aaaf88aa294
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "67305039"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87091901"
 ---
 # <a name="subclip-a-video-when-encoding-with-media-services---net"></a>Подрезать видео при кодировании с помощью служб мультимедиа — .NET
 
-Вы можете обрезать или подрезать видео при его кодировании с помощью [задания](https://docs.microsoft.com/rest/api/media/jobs). Эта функция работает с любыми [преобразованиями](https://docs.microsoft.com/rest/api/media/transforms), созданными с помощью предустановок [BuiltInStandardEncoderPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#builtinstandardencoderpreset) или [StandardEncoderPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#standardencoderpreset).
+Вы можете обрезать или подрезать видео при его кодировании с помощью [задания](/rest/api/media/jobs). Эта функция работает с любыми [преобразованиями](/rest/api/media/transforms), созданными с помощью предустановок [BuiltInStandardEncoderPreset](/rest/api/media/transforms/createorupdate#builtinstandardencoderpreset) или [StandardEncoderPreset](/rest/api/media/transforms/createorupdate#standardencoderpreset).
 
 В следующем примере кода C# создается задание, которое обрезает видео в ресурсе при отправке задания кодирования. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Чтобы выполнить действия, описанные в этом разделе, необходимо сделать следующее:
 
-- [Создание учетной записи служб мультимедиа Azure](create-account-cli-how-to.md)
+- [Создание учетной записи служб мультимедиа Azure](./create-account-howto.md)
 - Создание преобразования и входных и выходных ресурсов. Вы можете узнать, как создать преобразование и входные и выходные ресурсы в учебнике [Отправка, кодирование и потоковая передача с помощью .NET](stream-files-tutorial-with-api.md) .
 - Ознакомьтесь с разделом [концепция кодирования](encoding-concept.md) .
 

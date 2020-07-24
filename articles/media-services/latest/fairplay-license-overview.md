@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 12/08/2018
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 4a3516d96e397944adcd31628a561a243e178c2d
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: 433768ddea6e250c66483ec3da4c7737b3538a1d
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86183041"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87092054"
 ---
 # <a name="apple-fairplay-license-requirements-and-configuration"></a>Требования и конфигурация лицензии Apple FairPlay 
 
@@ -27,7 +27,7 @@ ms.locfileid: "86183041"
 
 Службы мультимедиа также предоставляют интерфейсы API, которые можно использовать для настройки лицензий FairPlay. В этом разделе рассматриваются требования к лицензиям FairPlay и показано, как настроить лицензию **FairPlay** с помощью API Служб мультимедиа. 
 
-## <a name="requirements"></a>Requirements (Требования)
+## <a name="requirements"></a>Требования
 
 При использовании Служб мультимедиа для шифрования содержимого HLS с помощью **Apple FairPlay** и доставки лицензий FairPlay требуется следующее.
 
@@ -84,7 +84,7 @@ API Служб мультимедиа можно использовать для
 > [!NOTE]
 > Обычно настраивать параметры политики FairPlay необходимо только один раз, так как у вас будет один набор сертификации и ASK.
 
-В следующем примере для настройки лицензии используется [пакет SDK Служб мультимедиа для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.media.models?view=azure-dotnet).
+В следующем примере для настройки лицензии используется [пакет SDK Служб мультимедиа для .NET](/dotnet/api/microsoft.azure.management.media.models?view=azure-dotnet).
 
 ```csharp
 private static ContentKeyPolicyFairPlayConfiguration ConfigureFairPlayPolicyOptions()
