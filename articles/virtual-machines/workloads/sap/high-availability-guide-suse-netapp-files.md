@@ -15,11 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 04/24/2020
 ms.author: radeltch
-ms.openlocfilehash: 541c775897f95eda932d3e19653cf557756f3efd
-ms.sourcegitcommit: 1692e86772217fcd36d34914e4fb4868d145687b
+ms.openlocfilehash: 261db7d90824aea61ebc974f91eb8f772f8fc68a
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84170891"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87082092"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms-on-suse-linux-enterprise-server-with-azure-netapp-files-for-sap-applications"></a>Обеспечение высокого уровня доступности виртуальных машин Azure для SAP NetWeaver на SUSE Linux Enterprise Server с помощью Azure NetApp Files для приложений SAP
 
@@ -56,7 +57,7 @@ ms.locfileid: "84170891"
 [sap-hana-ha]:sap-hana-high-availability.md
 [nfs-ha]:high-availability-guide-suse-nfs.md
 
-В этой статье описывается развертывание виртуальных машин, их настройка, установка платформы кластера, а также установка высокодоступной системы SAP NetWeaver 7.50 с помощью [Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-introduction/).
+В этой статье описывается развертывание виртуальных машин, их настройка, установка платформы кластера, а также установка высокодоступной системы SAP NetWeaver 7.50 с помощью [Azure NetApp Files](../../../azure-netapp-files/azure-netapp-files-introduction.md).
 В примерах конфигураций, команд установки и т. д. экземпляру ASCS задан номер 00, экземпляру ERS — номер 01, экземпляру основного приложения (PAS) — номер 02, экземпляру приложения (AAS) — номер 03. Используется QAS с идентификатором системы SAP. 
 
 В этой статье объясняется, как обеспечить высокий уровень доступности приложений SAP NetWeaver с помощью Azure NetApp Files. В этой статье нет подробных сведений об уровне базы данных.
@@ -90,12 +91,12 @@ ms.locfileid: "84170891"
 Для обеспечения высокого уровня доступности (HA) центральных служб SAP NetWeaver требуется общее хранилище.
 Ранее для выполнения этой задачи в SUSE Linux было необходимо создавать отдельный высокодоступный кластер NFS. 
 
-Теперь обеспечить высокий уровень доступности SAP NetWeaver можно с помощью общего хранилища, развернутого в службе Azure NetApp Files. Использование службы Azure NetApp Files для общего хранилища избавляет от необходимости развертывания дополнительного [кластера NFS](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-nfs). Для обеспечения высокого уровня доступности центральных служб SAP NetWeaver (ASCS/SCS) по-прежнему требуется Pacemaker.
+Теперь обеспечить высокий уровень доступности SAP NetWeaver можно с помощью общего хранилища, развернутого в службе Azure NetApp Files. Использование службы Azure NetApp Files для общего хранилища избавляет от необходимости развертывания дополнительного [кластера NFS](./high-availability-guide-suse-nfs.md). Для обеспечения высокого уровня доступности центральных служб SAP NetWeaver (ASCS/SCS) по-прежнему требуется Pacemaker.
 
 
 ![Общие сведения о высоком уровне доступности SAP NetWeaver](./media/high-availability-guide-suse-anf/high-availability-guide-suse-anf.png)
 
-SAP NetWeaver ASCS, SAP NetWeaver SCS, SAP NetWeaver ERS и база данных SAP HANA используют виртуальное имя узла и виртуальные IP-адреса. [Load Balancer](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview) в Azure должен использовать виртуальный IP-адрес. Мы рекомендуем [Load Balancer (цен. категория "Стандартный")](https://docs.microsoft.com/azure/load-balancer/quickstart-load-balancer-standard-public-portal). Ниже приведен список конфигурации балансировщика нагрузки (A)SCS и ERS.
+SAP NetWeaver ASCS, SAP NetWeaver SCS, SAP NetWeaver ERS и база данных SAP HANA используют виртуальное имя узла и виртуальные IP-адреса. [Load Balancer](../../../load-balancer/load-balancer-overview.md) в Azure должен использовать виртуальный IP-адрес. Мы рекомендуем [Load Balancer (цен. категория "Стандартный")](../../../load-balancer/quickstart-load-balancer-standard-public-portal.md). Ниже приведен список конфигурации балансировщика нагрузки (A)SCS и ERS.
 
 ### <a name="ascs"></a>(A)SCS
 
@@ -141,17 +142,17 @@ SAP NetWeaver требует общее хранилище для каталог
 
 ### <a name="deploy-azure-netapp-files-resources"></a>Развертывание ресурсов Azure NetApp Files  
 
-Предполагается, что вы уже развернули [виртуальную сеть Azure](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview). Ресурсы Azure NetApp Files и виртуальные машины, к которым будут подключаться ресурсы Azure NetApp Files, должны быть развернуты в одной виртуальной сети Azure или в одноранговых виртуальных сетях Azure.  
+Предполагается, что вы уже развернули [виртуальную сеть Azure](../../../virtual-network/virtual-networks-overview.md). Ресурсы Azure NetApp Files и виртуальные машины, к которым будут подключаться ресурсы Azure NetApp Files, должны быть развернуты в одной виртуальной сети Azure или в одноранговых виртуальных сетях Azure.  
 
-1. Если вы еще не сделали этого, запросите [подключение к Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-register).  
+1. Если вы еще не сделали этого, запросите [подключение к Azure NetApp Files](../../../azure-netapp-files/azure-netapp-files-register.md).  
 
-2. Создайте учетную запись NetApp в выбранном регионе Azure, следуя [этим инструкциям](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-create-netapp-account).  
-3. Настройте пул емкости Azure NetApp Files, следуя [инструкциям по настройке пула емкости Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-set-up-capacity-pool).  
+2. Создайте учетную запись NetApp в выбранном регионе Azure, следуя [этим инструкциям](../../../azure-netapp-files/azure-netapp-files-create-netapp-account.md).  
+3. Настройте пул емкости Azure NetApp Files, следуя [инструкциям по настройке пула емкости Azure NetApp Files](../../../azure-netapp-files/azure-netapp-files-set-up-capacity-pool.md).  
 В архитектуре SAP NetWeaver, представленной в этой статье, используется один пул емкости Azure NetApp Files с номером SKU категории "Премиум". Он является рекомендуемым для рабочей нагрузки приложения SAP NetWeaver в Azure.  
 
-4. Делегируйте подсеть в Azure NetApp Files согласно [инструкциям по делегированию подсети в Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-delegate-subnet).  
+4. Делегируйте подсеть в Azure NetApp Files согласно [инструкциям по делегированию подсети в Azure NetApp Files](../../../azure-netapp-files/azure-netapp-files-delegate-subnet.md).  
 
-5. Разверните тома Azure NetApp Files, следуя [инструкциям по созданию тома для Azure NetApp Files](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-create-volumes). Разверните тома в выделенной [ подсети](https://docs.microsoft.com/rest/api/virtualnetwork/subnets) Azure NetApp Files. IP-адреса томов Azure NetApp Files назначаются автоматически. Учтите, что ресурсы Azure NetApp Files и виртуальные машины Azure должны находиться в одной виртуальной сети Azure или в одноранговых виртуальных сетях Azure. В этом примере используются два тома Azure NetApp Files: sap<b>QAS</b> и trans. Пути к файлам, подключенные к соответствующим точкам подключения, — /usrsap<b>qas</b>/sapmnt<b>QAS</b>, /usrsap<b>qas</b>/usrsap<b>QAS</b>sys и т. д.  
+5. Разверните тома Azure NetApp Files, следуя [инструкциям по созданию тома для Azure NetApp Files](../../../azure-netapp-files/azure-netapp-files-create-volumes.md). Разверните тома в выделенной [ подсети](/rest/api/virtualnetwork/subnets) Azure NetApp Files. IP-адреса томов Azure NetApp Files назначаются автоматически. Учтите, что ресурсы Azure NetApp Files и виртуальные машины Azure должны находиться в одной виртуальной сети Azure или в одноранговых виртуальных сетях Azure. В этом примере используются два тома Azure NetApp Files: sap<b>QAS</b> и trans. Пути к файлам, подключенные к соответствующим точкам подключения, — /usrsap<b>qas</b>/sapmnt<b>QAS</b>, /usrsap<b>qas</b>/usrsap<b>QAS</b>sys и т. д.  
 
    1. volume sap<b>QAS</b> (nfs://10.1.0.4/usrsap<b>qas</b>/sapmnt<b>QAS</b>)
    2. volume sap<b>QAS</b> (nfs://10.1.0.4/usrsap<b>qas</b>/usrsap<b>QAS</b>ascs)
@@ -162,7 +163,7 @@ SAP NetWeaver требует общее хранилище для каталог
    7. volume sap<b>QAS</b> (nfs://10.1.0.4/usrsap<b>qas</b>/usrsap<b>QAS</b>aas)
 
    
-В этом примере мы использовали Azure NetApp Files для всех файловых систем SAP NetWeaver, чтобы продемонстрировать использование этой службы. Файловые системы SAP, которые не нужно подключать через NFS, можно также развернуть как [хранилище дисков Azure](https://docs.microsoft.com/azure/virtual-machines/windows/disks-types#premium-ssd). В этом примере <b>a-e</b> должен быть в Azure NetApp Files, а <b>f-g</b> (т. е. /usr/sap/<b>QAS</b>/D<b>02</b>, /usr/sap/<b>QAS</b>/D<b>03</b>) можно развернуть в качестве хранилища дисков Azure. 
+В этом примере мы использовали Azure NetApp Files для всех файловых систем SAP NetWeaver, чтобы продемонстрировать использование этой службы. Файловые системы SAP, которые не нужно подключать через NFS, можно также развернуть как [хранилище дисков Azure](../../windows/disks-types.md#premium-ssd). В этом примере <b>a-e</b> должен быть в Azure NetApp Files, а <b>f-g</b> (т. е. /usr/sap/<b>QAS</b>/D<b>02</b>, /usr/sap/<b>QAS</b>/D<b>03</b>) можно развернуть в качестве хранилища дисков Azure. 
 
 ### <a name="important-considerations"></a>Важные сведения
 
@@ -170,9 +171,9 @@ SAP NetWeaver требует общее хранилище для каталог
 
 - Минимальный размер пула емкости равен 4 ТиБ. Размер пула емкости можно увеличить шагами по 1 ТиБ.
 - Минимальный размер том — 100 ГиБ.
-- Azure NetApp Files и все виртуальные машины, к которым будут подключаться тома Azure NetApp Files, должны быть развернуты в одной виртуальной сети Azure или в [одноранговых виртуальных сетях](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview) в одном регионе. В настоящее время поддерживается доступ к Azure NetApp Files через пиринг виртуальных сетей в том же регионе. Доступ к NetApp Azure через глобальный пиринг пока не поддерживается.
+- Azure NetApp Files и все виртуальные машины, к которым будут подключаться тома Azure NetApp Files, должны быть развернуты в одной виртуальной сети Azure или в [одноранговых виртуальных сетях](../../../virtual-network/virtual-network-peering-overview.md) в одном регионе. В настоящее время поддерживается доступ к Azure NetApp Files через пиринг виртуальных сетей в том же регионе. Доступ к NetApp Azure через глобальный пиринг пока не поддерживается.
 - В выбранной виртуальной сети должна быть подсеть, делегированная службе Azure NetApp Files.
-- Azure NetApp Files предлагает [политику экспорта](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-configure-export-policy), которая позволяет управлять разрешенными клиентами, типом доступа (чтение и запись, доступ только для чтения и т. д.). 
+- Azure NetApp Files предлагает [политику экспорта](../../../azure-netapp-files/azure-netapp-files-configure-export-policy.md), которая позволяет управлять разрешенными клиентами, типом доступа (чтение и запись, доступ только для чтения и т. д.). 
 - Azure NetApp Files пока еще не поддерживает зоны. В настоящее время служба Azure NetApp Files развернута не во всех зонах доступности региона Azure. Следует учитывать возможную задержку в некоторых регионах Azure. 
 - Тома Azure NetApp Files можно развернуть в виде томов NFSv3 или NFSv4.1. Оба протокола поддерживаются на уровне приложений SAP (ASCS/ERS, серверы приложений SAP). 
 
@@ -316,10 +317,10 @@ SAP NetWeaver требует общее хранилище для каталог
          * Повторите предыдущие шаги, указав порты 32**01**, 33**01**, 5**01**13, 5**01**14, 5**01**16 и TCP в качестве протокола для ASCS ERS.
 
       > [!Note]
-      > Если в серверный пул внутреннего (без общедоступного IP-адреса) Azure Load Balancer ценовой категории "Стандартный" помещаются виртуальные машины без общедоступных IP-адресов, у них не будет исходящего подключения к Интернету без дополнительной настройки, разрешающей маршрутизацию к общедоступным конечным точкам. Подробные сведения о такой настройке см. в статье [Подключение к общедоступной конечной точке для виртуальных машин с помощью Azure Load Balancer (цен. категория "Стандартный") в сценариях обеспечения высокого уровня доступности SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-standard-load-balancer-outbound-connections).  
+      > Если в серверный пул внутреннего (без общедоступного IP-адреса) Azure Load Balancer ценовой категории "Стандартный" помещаются виртуальные машины без общедоступных IP-адресов, у них не будет исходящего подключения к Интернету без дополнительной настройки, разрешающей маршрутизацию к общедоступным конечным точкам. Подробные сведения о такой настройке см. в статье [Подключение к общедоступной конечной точке для виртуальных машин с помощью Azure Load Balancer (цен. категория "Стандартный") в сценариях обеспечения высокого уровня доступности SAP](./high-availability-guide-standard-load-balancer-outbound-connections.md).  
 
       > [!IMPORTANT]
-      > Не включайте метки времени TCP на виртуальных машинах Azure, размещенных за Azure Load Balancer. Включение меток времени TCP помешает работе проб работоспособности. Установите для параметра **net.ipv4.tcp_timestamps** значение **0**. Дополнительные сведения см. в статье [Пробы работоспособности Load Balancer](https://docs.microsoft.com/azure/load-balancer/load-balancer-custom-probe-overview).
+      > Не включайте метки времени TCP на виртуальных машинах Azure, размещенных за Azure Load Balancer. Включение меток времени TCP помешает работе проб работоспособности. Установите для параметра **net.ipv4.tcp_timestamps** значение **0**. Дополнительные сведения см. в статье [Пробы работоспособности Load Balancer](../../../load-balancer/load-balancer-custom-probe-overview.md).
 
 ### <a name="create-pacemaker-cluster"></a>Создание кластера Pacemaker
 
@@ -1436,7 +1437,7 @@ SAP NetWeaver требует общее хранилище для каталог
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Обеспечение высокого уровня доступности SAP NW на виртуальных машинах Azure в SLES с несколькими ИД безопасности для приложений SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-multi-sid)
+* [Обеспечение высокого уровня доступности SAP NW на виртуальных машинах Azure в SLES с несколькими ИД безопасности для приложений SAP](./high-availability-guide-suse-multi-sid.md)
 * [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению][planning-guide]
 * [Развертывание виртуальных машин Azure для SAP NetWeaver][deployment-guide]
 * [SAP NetWeaver на виртуальных машинах Azure. Руководство по развертыванию СУБД SQL Server][dbms-guide]

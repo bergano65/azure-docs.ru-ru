@@ -7,11 +7,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 04/12/2017
 ms.author: yushwang
-ms.openlocfilehash: 6896cc268f6472b1816608067340c2c5868a2547
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f75147da49a602cb384a1c0283192214ae32967f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84984632"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87082024"
 ---
 # <a name="how-to-configure-bgp-on-azure-vpn-gateways-using-powershell"></a>Настройка BGP на VPN-шлюзах Azure с помощью PowerShell
 В этой статье содержится пошаговое описание процесса, который позволит с помощью модели развертывания Resource Manager и PowerShell включить BGP для VPN-подключения типа "сеть — сеть" (S2S), настроенного между локальными сетями, или для подключения между виртуальными сетями.
@@ -44,7 +45,7 @@ ms.locfileid: "84984632"
 
 ### <a name="before-you-begin"></a>Перед началом
 * Убедитесь в том, что у вас уже есть подписка Azure. Если у вас еще нет подписки Azure, вы можете активировать преимущества для [подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) или зарегистрироваться для использования [бесплатной учетной записи](https://azure.microsoft.com/pricing/free-trial/).
-* Установите командлеты PowerShell для Azure Resource Manager. См. дополнительные сведения об [установке и настройке командлетов Azure PowerShell](/powershell/azure/overview). 
+* Установите командлеты PowerShell для Azure Resource Manager. См. дополнительные сведения об [установке и настройке командлетов Azure PowerShell](/powershell/azure/). 
 
 ### <a name="step-1---create-and-configure-vnet1"></a>Шаг 1. Создание и настройка VNet1
 #### <a name="1-declare-your-variables"></a>1. Объявите переменные
@@ -311,6 +312,6 @@ New-AzVirtualNetworkGatewayConnection -Name $Connection21 -ResourceGroupName $RG
 
 ![BGP между виртуальными сетями](./media/vpn-gateway-bgp-resource-manager-ps/bgp-crosspremv2v.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Установив подключение, можно добавить виртуальные машины в виртуальные сети. Инструкции см. в статье о [создании виртуальной машины](../virtual-machines/virtual-machines-windows-hero-tutorial.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+Установив подключение, можно добавить виртуальные машины в виртуальные сети. Инструкции см. в статье о [создании виртуальной машины](../virtual-machines/windows/quick-create-portal.md).

@@ -6,11 +6,12 @@ ms.topic: reference
 ms.date: 09/03/2018
 ms.author: cshoe
 ms.custom: tracking-python
-ms.openlocfilehash: dd98d27f5a14d284174dd779ae20b29f534920b0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b6d8ca41c56239bc994b34119600dfa9db60ada6
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84559957"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87083095"
 ---
 # <a name="azure-table-storage-bindings-for-azure-functions"></a>Привязки хранилища таблиц Azure для службы "Функции Azure"
 
@@ -139,7 +140,7 @@ namespace FunctionAppCloudTable2
 }
 ```
 
-Дополнительную информацию об использовании CloudTable см. в статье [Начало работы с хранилищем таблиц Azure и API таблиц Azure Cosmos DB с помощью .NET](../cosmos-db/table-storage-how-to-use-dotnet.md).
+Дополнительную информацию об использовании CloudTable см. в статье [Начало работы с хранилищем таблиц Azure и API таблиц Azure Cosmos DB с помощью .NET](../cosmos-db/tutorial-develop-table-dotnet.md).
 
 Если при попытке привязать к `CloudTable` вы получаете сообщение об ошибке, убедитесь, что у вас есть ссылка на [правильную версию пакета SDK для службы хранилища](#azure-storage-sdk-version-in-functions-1x).
 
@@ -305,7 +306,7 @@ public class LogEntity : TableEntity
 }
 ```
 
-Дополнительную информацию об использовании CloudTable см. в статье [Начало работы с хранилищем таблиц Azure и API таблиц Azure Cosmos DB с помощью .NET](../cosmos-db/table-storage-how-to-use-dotnet.md).
+Дополнительную информацию об использовании CloudTable см. в статье [Начало работы с хранилищем таблиц Azure и API таблиц Azure Cosmos DB с помощью .NET](../cosmos-db/tutorial-develop-table-dotnet.md).
 
 Если при попытке привязать к `CloudTable` вы получаете сообщение об ошибке, убедитесь, что у вас есть ссылка на [правильную версию пакета SDK для службы хранилища](#azure-storage-sdk-version-in-functions-1x).
 
@@ -562,9 +563,9 @@ public Person[] get(
 |**tableName** | **TableName** | Имя таблицы.| 
 |**partitionKey** | **PartitionKey** |Необязательный элемент. Ключ раздела сущности таблицы, которую нужно считать. Инструкции по использованию этого свойства см. в разделе [Использование](#input---usage) .| 
 |**rowKey** |**RowKey** | Необязательный элемент. Ключ строки сущности таблицы, которую нужно считать. Инструкции по использованию этого свойства см. в разделе [Использование](#input---usage) .| 
-|**take** |**Нимают** | Необязательный элемент. Максимальное количество считываемых сущностей в JavaScript. Инструкции по использованию этого свойства см. в разделе [Использование](#input---usage) .| 
-|**Фильтрация** |**Фильтр** | Необязательный элемент. Выражение фильтра OData для входных данных таблицы в JavaScript. Инструкции по использованию этого свойства см. в разделе [Использование](#input---usage) .| 
-|**connection**; |**Соединение** | Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Параметр может быть именем предопределенного параметра приложения "AzureWebJobs" или именем строки подключения. Например, если имя параметра — "Азуревебжобсмистораже", можно указать "MyStorage" здесь. Среда выполнения функций будет автоматически искать параметр приложения с именем «Азуревебжобсмистораже». Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.|
+|**take** |**Take** | Необязательный элемент. Максимальное количество считываемых сущностей в JavaScript. Инструкции по использованию этого свойства см. в разделе [Использование](#input---usage) .| 
+|**Фильтрация** |**Filter** | Необязательный элемент. Выражение фильтра OData для входных данных таблицы в JavaScript. Инструкции по использованию этого свойства см. в разделе [Использование](#input---usage) .| 
+|**connection**; |**Подключение** | Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Параметр может быть именем предопределенного параметра приложения "AzureWebJobs" или именем строки подключения. Например, если имя параметра — "Азуревебжобсмистораже", можно указать "MyStorage" здесь. Среда выполнения функций будет автоматически искать параметр приложения с именем «Азуревебжобсмистораже». Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.|
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
@@ -606,7 +607,7 @@ public Person[] get(
 
 # <a name="java"></a>[Java](#tab/java)
 
-Атрибут [таблеинпут](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.annotation.tableinput) предоставляет доступ к строке таблицы, которая активировала функцию.
+Атрибут [таблеинпут](/java/api/com.microsoft.azure.functions.annotation.tableinput) предоставляет доступ к строке таблицы, которая активировала функцию.
 
 ---
 
@@ -949,7 +950,7 @@ public static MyPoco TableOutput(
 |**tableName** |**TableName** | Имя таблицы.| 
 |**partitionKey** |**PartitionKey** | Ключ раздела сущности таблицы, которую нужно записать. Дополнительные сведения о том, как использовать это свойство, см. в этом [разделе](#output---usage).| 
 |**rowKey** |**RowKey** | Ключ строки сущности таблицы, которую нужно записать. Дополнительные сведения о том, как использовать это свойство, см. в этом [разделе](#output---usage).| 
-|**connection**; |**Соединение** | Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задано значение `connection` "MyStorage", среда выполнения функций ищет параметр приложения с именем "MyStorage". Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.|
+|**connection**; |**Подключение** | Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задано значение `connection` "MyStorage", среда выполнения функций ищет параметр приложения с именем "MyStorage". Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.|
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
@@ -977,25 +978,25 @@ public static MyPoco TableOutput(
 
 - **Возвращаемое значение**: установите `name` свойство в *function.jsна* `$return` . В этой конфигурации возвращаемое значение функции сохраняется как строка хранилища таблицы.
 
-- **Императив**: передайте значение в метод [Set](https://docs.microsoft.com/python/api/azure-functions/azure.functions.out?view=azure-python#set-val--t-----none) параметра, объявленного как тип [out](https://docs.microsoft.com/python/api/azure-functions/azure.functions.out?view=azure-python) . Значение, передаваемое в `set` , сохраняется как сообщение концентратора событий.
+- **Императив**: передайте значение в метод [Set](/python/api/azure-functions/azure.functions.out?view=azure-python#set-val--t-----none) параметра, объявленного как тип [out](/python/api/azure-functions/azure.functions.out?view=azure-python) . Значение, передаваемое в `set` , сохраняется как сообщение концентратора событий.
 
 # <a name="java"></a>[Java](#tab/java)
 
-Существует два варианта вывода строки хранилища таблицы из функции с помощью аннотации [таблесторажеаутпут](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.annotation.tableoutput?view=azure-java-stablet) :
+Существует два варианта вывода строки хранилища таблицы из функции с помощью аннотации [таблесторажеаутпут](/java/api/com.microsoft.azure.functions.annotation.tableoutput?view=azure-java-stablet) :
 
 - **Возвращаемое значение**: применяя заметку к самой функции, возвращаемое значение функции сохраняется как строка хранилища таблицы.
 
-- **Императивное**: чтобы явно задать значение сообщения, примените заметку к конкретному параметру типа [`OutputBinding<T>`](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.OutputBinding) , где `T` включает `PartitionKey` Свойства и `RowKey` . Эти свойства часто сопровождаются реализацией `ITableEntity` или наследованием `TableEntity` .
+- **Императивное**: чтобы явно задать значение сообщения, примените заметку к конкретному параметру типа [`OutputBinding<T>`](/java/api/com.microsoft.azure.functions.outputbinding) , где `T` включает `PartitionKey` Свойства и `RowKey` . Эти свойства часто сопровождаются реализацией `ITableEntity` или наследованием `TableEntity` .
 
 ---
 
 ## <a name="exceptions-and-return-codes"></a>Исключения и коды возврата
 
-| Привязка | Справка |
+| Привязка | Справочник |
 |---|---|
-| Таблица | [Коды ошибок таблицы](https://docs.microsoft.com/rest/api/storageservices/fileservices/table-service-error-codes) |
-| Большой двоичный объект, таблица, очередь | [Коды ошибок хранилища](https://docs.microsoft.com/rest/api/storageservices/fileservices/common-rest-api-error-codes) |
-| Большой двоичный объект, таблица, очередь | [Устранение неполадок](https://docs.microsoft.com/rest/api/storageservices/fileservices/troubleshooting-api-operations) |
+| Таблица | [Коды ошибок таблицы](/rest/api/storageservices/fileservices/table-service-error-codes) |
+| Большой двоичный объект, таблица, очередь | [Коды ошибок хранилища](/rest/api/storageservices/fileservices/common-rest-api-error-codes) |
+| Большой двоичный объект, таблица, очередь | [Устранение неполадок](/rest/api/storageservices/fileservices/troubleshooting-api-operations) |
 
 ## <a name="next-steps"></a>Следующие шаги
 

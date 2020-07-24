@@ -5,12 +5,12 @@ ms.assetid: 242736be-ec66-4114-924b-31795fd18884
 ms.topic: conceptual
 ms.date: 03/13/2019
 ms.custom: 80e4ff38-5174-43
-ms.openlocfilehash: 8a68c793d9aaf94ad28f2e478254e42ede4800de
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: 611cb5b94ee2ad458fa00a61af673696d7e7a212
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86170366"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87085152"
 ---
 # <a name="work-with-azure-functions-core-tools"></a>Запуск основных инструментов службы "Функции Azure"
 
@@ -29,13 +29,13 @@ ms.locfileid: "86170366"
 > * [Запустите функцию локально.](#start)
 > * [Опубликуйте проект в Azure.](#publish)
 
-## <a name="core-tools-versions"></a>Версии основных инструментов
+## <a name="core-tools-versions"></a>Версии Core Tools
 
 Существует три версии Azure Functions Core Tools. Используемая версия зависит от вашей локальной среды разработки, [выбора языка](supported-languages.md)и требуемого уровня поддержки:
 
 + **Версия 1. x**: поддерживает версию 1. x среды выполнения функций Azure. Эта версия поддерживается только на компьютерах с ОС Windows и устанавливается из [пакета npm](https://www.npmjs.com/package/azure-functions-core-tools).
 
-+ [**Версия 3. x/2. x**](#v2): поддерживает [версию 3. x или 2. x среды выполнения функций Azure](functions-versions.md). Эти версии поддерживают [Windows](/azure/azure-functions/functions-run-local?tabs=windows#v2), [macOS](/azure/azure-functions/functions-run-local?tabs=macos#v2)и [Linux](/azure/azure-functions/functions-run-local?tabs=linux#v2) и используют диспетчеры пакетов для конкретных платформ или NPM для установки.
++ [**Версия 3. x/2. x**](#v2): поддерживает [версию 3. x или 2. x среды выполнения функций Azure](functions-versions.md). Эти версии поддерживают [Windows](?tabs=windows#v2), [macOS](?tabs=macos#v2)и [Linux](?tabs=linux#v2) и используют диспетчеры пакетов для конкретных платформ или NPM для установки.
 
 Если не указано иное, примеры в этой статье относятся к версии 3. x.
 
@@ -48,7 +48,7 @@ ms.locfileid: "86170366"
 
 ### <a name="version-3x-and-2x"></a><a name="v2"></a>Версии 3. x и 2. x
 
-Версия 3. x/2. x инструментов использует среду выполнения функций Azure, созданную на основе .NET Core. Эта версия поддерживается на всех платформах .NET Core, включая [Windows](/azure/azure-functions/functions-run-local?tabs=windows#v2), [macOS](/azure/azure-functions/functions-run-local?tabs=macos#v2)и [Linux](/azure/azure-functions/functions-run-local?tabs=linux#v2). 
+Версия 3. x/2. x инструментов использует среду выполнения функций Azure, созданную на основе .NET Core. Эта версия поддерживается на всех платформах .NET Core, включая [Windows](?tabs=windows#v2), [macOS](?tabs=macos#v2)и [Linux](?tabs=linux#v2). 
 
 > [!IMPORTANT]
 > Вы можете обойти требование для установки пакет SDK для .NET Core с помощью [пакетов расширений].
@@ -132,7 +132,7 @@ ms.locfileid: "86170366"
 
 1. Проверьте `/etc/apt/sources.list.d/dotnetdev.list` файл на наличие одной из следующих строк версии Linux:
 
-    | Дистрибутив Linux | Версия |
+    | Дистрибутив Linux | Version |
     | --------------- | ----------- |
     | Debian 10 | `buster`  |
     | Debian 9  | `stretch` |
@@ -240,7 +240,7 @@ Initialized empty Git repository in C:/myfunctions/myMyFunctionProj/.git/
 
 ### <a name="get-your-storage-connection-strings"></a>Получение параметров строк подключения службы хранилища
 
-Даже при использовании эмулятор хранения Microsoft Azure для разработки может потребоваться проверить фактическое подключение к хранилищу. При условии, что ваша [учетная запись хранения создана](../storage/common/storage-create-storage-account.md), действительную строку подключения к хранилищу можно получить одним из следующих способов:
+Даже при использовании эмулятор хранения Microsoft Azure для разработки может потребоваться проверить фактическое подключение к хранилищу. При условии, что ваша [учетная запись хранения создана](../storage/common/storage-account-create.md), действительную строку подключения к хранилищу можно получить одним из следующих способов:
 
 - В [портал Azure]найдите и выберите **учетные записи хранения**. 
   ![Выберите учетные записи хранения из портал Azure](./media/functions-run-local/select-storage-accounts.png)
@@ -343,7 +343,7 @@ func start
 ```
 func start
 ```
-Эта команда должна [выполняться в виртуальной среде](/azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-python#create-venv).
+Эта команда должна [выполняться в виртуальной среде](./functions-create-first-azure-function-azure-cli.md?pivots=programming-language-python#create-venv).
 
 # <a name="typescript"></a>[TypeScript](#tab/ts)
 
@@ -574,7 +574,7 @@ func deploy
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Узнайте, как разрабатывать, тестировать и публиковать функции Azure с помощью Azure Functions Core Tools [модуль обучения майкрософт](https://docs.microsoft.com/learn/modules/develop-test-deploy-azure-functions-with-core-tools/) Azure functions Core Tools является [открытым исходным кодом и размещается на GitHub](https://github.com/azure/azure-functions-cli).  
+Узнайте, как разрабатывать, тестировать и публиковать функции Azure с помощью Azure Functions Core Tools [модуль обучения майкрософт](/learn/modules/develop-test-deploy-azure-functions-with-core-tools/) Azure functions Core Tools является [открытым исходным кодом и размещается на GitHub](https://github.com/azure/azure-functions-cli).  
 Чтобы зарегистрировать ошибку или отправить запрос на функцию, [откройте вопрос на GitHub](https://github.com/azure/azure-functions-cli/issues).
 
 <!-- LINKS -->

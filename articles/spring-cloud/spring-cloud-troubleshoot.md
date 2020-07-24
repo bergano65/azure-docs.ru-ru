@@ -6,11 +6,13 @@ ms.service: spring-cloud
 ms.topic: troubleshooting
 ms.date: 11/04/2019
 ms.author: brendm
-ms.openlocfilehash: db5363c5d8adaf29e2c460d9ce36afa2d29ae8e7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-java
+ms.openlocfilehash: b7b3236fe1e4052689657316df851753de7edbe5
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84791662"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87083690"
 ---
 # <a name="troubleshoot-common-azure-spring-cloud-issues"></a>Устранение распространенных проблем с пружинным облаком Azure
 
@@ -106,7 +108,7 @@ ms.locfileid: "84791662"
 * подписка активна;
 * Это расположение [поддерживается](spring-cloud-faq.md) в Azure веснного облака.
 * группа ресурсов для экземпляра уже создана;
-* имя ресурса соответствует правилу именования. Оно должно содержать только строчные буквы, цифры и дефисы. Первый символ должен быть буквой. Последний знак должен быть буквой или цифрой. Значение должно содержать от 2 до 32 символов.
+* имя ресурса соответствует правилу именования. Оно должно содержать только строчные буквы, цифры и дефисы. Имя должно начинаться с буквы и заканчиваться буквой или цифрой. Значение должно содержать от 2 до 32 символов.
 
 Если вы хотите настроить экземпляр облачной службы Azure весны с помощью шаблона диспетчер ресурсов, сначала ознакомьтесь со [сведениями о структуре и синтаксисе шаблонов Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-authoring-templates).
 
@@ -157,7 +159,7 @@ ms.locfileid: "84791662"
 > [!WARNING]
 > Эта процедура предоставляет переменные среды с помощью конечной точки теста.  Не продолжайте, если тестовая конечная точка является общедоступной или если приложению назначено доменное имя.
 
-1. Перейдите к `https://<your application test endpoint>/actuator/health`.  
+1. Перейдите по адресу `https://<your application test endpoint>/actuator/health`.  
     - Ответ, аналогичный `{"status":"UP"}`, указывает, что конечная точка включена.
     - Если ответ отрицательный, включите следующую зависимость в файл *POM.xml* :
 

@@ -17,18 +17,18 @@ ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
 ms.custom: tracking-python
-ms.openlocfilehash: af03d0fc091c34bfef7f38b1a215832086de57c6
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.openlocfilehash: 5688caa16faf4a9d83b6d23b24676d43ad16697b
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86220071"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87084302"
 ---
 # <a name="how-to-use-notification-hubs-from-python"></a>Использование концентраторов уведомлений с Python
 
 [!INCLUDE [notification-hubs-backend-how-to-selector](../../includes/notification-hubs-backend-how-to-selector.md)]
 
-Можно обращаться ко всем функциям Центров уведомлений из серверной части Java, PHP, Python или Ruby, используя интерфейс REST Центра уведомлений в соответствии с описанием в статье MSDN [Интерфейсы API REST концентраторов уведомлений](https://msdn.microsoft.com/library/dn223264.aspx).
+Можно обращаться ко всем функциям Центров уведомлений из серверной части Java, PHP, Python или Ruby, используя интерфейс REST Центра уведомлений в соответствии с описанием в статье MSDN [Интерфейсы API REST концентраторов уведомлений](/previous-versions/azure/reference/dn223264(v=azure.100)).
 
 > [!NOTE]
 > Это образец эталонной реализации для отправки уведомлений в Python, который не является официально поддерживаемым пакетом SDK концентраторов уведомлений Python. Этот образец был создан с помощью Python 3.4.
@@ -68,7 +68,7 @@ hub.send_windows_notification(wns_payload)
 
 Если вы еще этого не делали, выполните шаги, описанные в [Учебника по началу работы], до последнего раздела, в котором вам нужно реализовать серверную часть.
 
-Подробные сведения о реализации полноценной оболочки REST можно найти в [MSDN](https://msdn.microsoft.com/library/dn530746.aspx). В этом разделе описана реализация основных действий на языке Python, необходимых для доступа к конечным точкам REST службы "Центры уведомлений" и отправки уведомлений.
+Подробные сведения о реализации полноценной оболочки REST можно найти в [MSDN](/previous-versions/azure/reference/dn530746(v=azure.100)). В этом разделе описана реализация основных действий на языке Python, необходимых для доступа к конечным точкам REST службы "Центры уведомлений" и отправки уведомлений.
 
 1. Проанализируйте строку подключения
 2. Создайте маркер проверки подлинности
@@ -103,7 +103,7 @@ class NotificationHub:
 
 ### <a name="create-security-token"></a>Создание маркера безопасности
 
-Подробные сведения о создании токенов безопасности можно найти [здесь](https://msdn.microsoft.com/library/dn495627.aspx).
+Подробные сведения о создании токенов безопасности можно найти [здесь](/previous-versions/azure/reference/dn495627(v=azure.100)).
 Для создания маркера на основе универсального кода ресурса (URI) текущего запроса и учетных данных, извлеченных из строки подключения, добавьте следующие методы в класс `NotificationHub`.
 
 ```python
@@ -164,7 +164,7 @@ class Notification:
 
 Этот класс представляет собой контейнер для собственного текста уведомления либо набор свойств шаблонного уведомления, а также набор заголовков, содержащих свойства формата (собственная платформа или шаблон) и специальные свойства платформы (например, свойство срока действия Apple и заголовки WNS).
 
-Обратитесь к [документации по REST API для службы "Центры уведомлений"](https://msdn.microsoft.com/library/dn495827.aspx) и изучите форматы специализированных платформ уведомлений, чтобы узнать обо всех доступных параметрах.
+Обратитесь к [документации по REST API для службы "Центры уведомлений"](/previous-versions/azure/reference/dn495827(v=azure.100)) и изучите форматы специализированных платформ уведомлений, чтобы узнать обо всех доступных параметрах.
 
 Имея в распоряжении этот класс, запишите методы отправки уведомлений внутри класса `NotificationHub`.
 
@@ -293,7 +293,7 @@ def send_template_notification(self, properties, tags=""):
 ### <a name="using-debug-property-to-enable-detailed-logging"></a>Включение подробного ведения журнала с помощью свойства отладки
 
 Если включить свойство отладки при инициализации центра уведомлений, в журнал будут записаны подробные сведения о дампе запроса и ответа HTTP, а также детальные выходные данные об отправке уведомлений.
-[Свойство TestSend службы "Центры уведомлений"](https://docs.microsoft.com/previous-versions/azure/reference/dn495827(v=azure.100)) возвращает подробные сведения о результатах отправки уведомлений.
+[Свойство TestSend службы "Центры уведомлений"](/previous-versions/azure/reference/dn495827(v=azure.100)) возвращает подробные сведения о результатах отправки уведомлений.
 Чтобы его использовать, выполните инициализацию с помощью приведенного кода.
 
 ```python
@@ -446,7 +446,7 @@ hub.send_template_notification(template_payload)
 
 ![Снимок экрана консоли с подробными сведениями о запросе H T T, типом содержимого и значениями формата уведомлений служебной шины, выделенными красным цветом.][5]
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье рассмотрено создание простого клиента REST Python для службы "Центры уведомлений". Здесь можно выполнять следующие действия:
 
@@ -456,9 +456,9 @@ hub.send_template_notification(template_payload)
 
 <!-- URLs -->
 [примере оболочки REST Python]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/notificationhubs-rest-python
-[Руководство по началу работы]: https://azure.microsoft.com/documentation/articles/notification-hubs-windows-store-dotnet-get-started/
-[учебника по передаче экстренных новостей]: https://azure.microsoft.com/documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
-[по передаче локализованных экстренных новостей]: https://azure.microsoft.com/documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news/
+[Руководство по началу работы]: ./notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md
+[учебника по передаче экстренных новостей]: ./notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns.md
+[по передаче локализованных экстренных новостей]: ./notification-hubs-windows-store-dotnet-xplat-localized-wns-push-notification.md
 
 <!-- Images. -->
 [1]: ./media/notification-hubs-python-backend-how-to/DetailedLoggingInfo.png

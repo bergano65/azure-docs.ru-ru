@@ -5,15 +5,15 @@ author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: conceptual
-ms.date: 06/29/2020
+ms.date: 07/21/2020
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: f3861ab8839ba0483c5096e29cd09b6268bd765e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 44d58b4e68e9f846b6bdb87765e96bcab90274a3
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85563918"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87083605"
 ---
 # <a name="known-issues-with-azure-data-lake-storage-gen2"></a>Известные проблемы с Azure Data Lake Storage 2-го поколения
 
@@ -110,6 +110,8 @@ Set-AzCurrentStorageAccount -Name premiumGen2Account -ResourceGroupName PremiumG
 #Enable logging
 Set-AzStorageServiceLoggingProperty -ServiceType Blob -LoggingOperations read,write,delete -RetentionDays 14
 ```
+
+Настройка дней хранения еще не поддерживается, но можно удалить журналы вручную с помощью любого поддерживаемого средства, такого как Обозреватель службы хранилища Azure, RESTFUL или пакет SDK.
 
 ### <a name="lifecycle-management-policies"></a>Политики управления жизненным циклом
 

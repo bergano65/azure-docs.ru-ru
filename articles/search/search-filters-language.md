@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 04/22/2020
-ms.openlocfilehash: b0ebbbb64e173e1501f08f8385b14c365759a804
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3bd0f01193b1e6579d60b581b43ad71ebb6001e3
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82116287"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87084200"
 ---
 # <a name="how-to-filter-by-language-in-azure-cognitive-search"></a>Как фильтровать по языку в Azure Когнитивный поиск 
 
@@ -34,7 +34,7 @@ ms.locfileid: "82116287"
 
 Следующий пример относится к примеру с [реальным пространством](search-get-started-portal.md) , в котором есть несколько строковых полей, содержащих содержимое на разных языках. Обратите внимание на назначения анализатора языка для полей в этом индексе. Поля, содержащие строки, работают быстрее в полнотекстовом поиске, когда они объединены с анализатором, спроектированным для обработки лингвистических правил целевого языка.
 
-  ![](./media/search-filters-language/lang-fields.png)
+  ![Снимок экрана, показывающий экран "поля" в примере с недвижимостью. Группа полей выделяется, чтобы указать, как назначения анализатора языка соответствуют языкам выделенных полей.](./media/search-filters-language/lang-fields.png)
 
 > [!Note]
 > Примеры кода, показывающие определения полей с помощью анализаторов языков, см. в разделе [Определение индекса службы поиска Azure](https://docs.microsoft.com/azure/search/search-create-index-dotnet) и [Определение индекса службы поиска Azure с помощью JSON-содержимого правильного формата](search-create-index-rest-api.md).
@@ -60,7 +60,7 @@ parameters =
 > [!Note]
 > Хотя в запросе нет $filter аргумента, этот вариант использования строго связан с концепциями фильтров, поэтому он представлен как сценарий фильтрации.
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также статью
 
 + [Фильтры в Когнитивный поиск Azure](search-filters.md)
 + [Языковые анализаторы](https://docs.microsoft.com/rest/api/searchservice/language-support)

@@ -3,13 +3,14 @@ title: Центры задач в устойчивых функциях — Azur
 description: Сведения о том, что такое центр задач в расширении устойчивых функций для Функций Azure. Узнайте, как настроить центры задач.
 author: cgillum
 ms.topic: conceptual
-ms.date: 11/03/2019
+ms.date: 07/14/2020
 ms.author: azfuncdf
-ms.openlocfilehash: 427ab6c4e0e769ab881af0af3023d514c1b092c6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: afee79aecaad97ec4b441df0758166073b2413cf
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81604619"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87083112"
 ---
 # <a name="task-hubs-in-durable-functions-azure-functions"></a>Центры задач в устойчивых функциях (Функции Azure)
 
@@ -139,6 +140,19 @@ public static async Task<HttpResponseMessage> Run(
 }
 ```
 
+# <a name="python"></a>[Python](#tab/python)
+
+Свойство центра задач в файле `function.json` задается с помощью параметра приложения:
+
+```json
+{
+    "name": "input",
+    "taskHub": "%MyTaskHub%",
+    "type": "orchestrationClient",
+    "direction": "in"
+}
+```
+
 ---
 
 Имена центров задач должны начинаться с буквы и содержать только буквы и цифры. Если значение не указано, будет использоваться имя центра задач по умолчанию, как показано в следующей таблице.
@@ -153,7 +167,7 @@ public static async Task<HttpResponseMessage> Run(
 > [!NOTE]
 > Имя — это то, что отличает один центр задач от другого, если в общей учетной записи хранения таких центров несколько. Если общую учетную запись хранения используют несколько приложений-функций, вам нужно задать разные имена для каждого центра задач в файлах *host.json*. В противном случае несколько приложений функций будут конкурировать друг с другом для сообщений, что может привести к неопределенному поведению, включая согласования, приводящие к неожиданному «зависанию» в `Pending` состоянии «или» `Running` .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Узнайте, как управлять управлением версиями оркестрации](durable-functions-versioning.md)

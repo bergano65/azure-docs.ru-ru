@@ -5,11 +5,12 @@ author: cgillum
 ms.topic: conceptual
 ms.date: 11/02/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 4cb832f8fe11ac2581e97d9cdcc777eaff702ee9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fcd92f1f134b79d23da6848cbb04894b242fcec0
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84698008"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87081820"
 ---
 # <a name="diagnostics-in-durable-functions-in-azure"></a>Диагностика в Устойчивых функциях в Azure
 
@@ -19,7 +20,7 @@ ms.locfileid: "84698008"
 
 [Application Insights](../../azure-monitor/app/app-insights-overview.md) является рекомендуемым средством для выполнения диагностики и мониторинга в Функциях Azure. То же относится и к устойчивым функциям. Общие сведения об использовании Application Insights в приложении-функции см. в статье [Мониторинг Функций Azure](../functions-monitoring.md).
 
-Расширение устойчивых функций в службе "Функции Azure" также генерирует *события отслеживания* для выполнения трассировки на протяжении всего процесса оркестрации. Эти события отслеживания можно найти и запросить с помощью средства [Application Insights Analytics](../../azure-monitor/app/analytics.md) в портал Azure.
+Расширение устойчивых функций в службе "Функции Azure" также генерирует *события отслеживания* для выполнения трассировки на протяжении всего процесса оркестрации. Эти события отслеживания можно найти и запросить с помощью средства [Application Insights Analytics](../../azure-monitor/log-query/log-query-overview.md) в портал Azure.
 
 ### <a name="tracking-data"></a>Данные отслеживания
 
@@ -382,7 +383,7 @@ GET /admin/extensions/DurableTaskExtension/instances/instance123
 
 ## <a name="storage"></a>Память
 
-По умолчанию устойчивые функции хранят состояние в службе хранилища Azure. Такое поведение означает, что вы можете проверить состояние оркестрации с помощью таких средств, как [Обозреватель службы хранилища Microsoft Azure](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer).
+По умолчанию устойчивые функции хранят состояние в службе хранилища Azure. Такое поведение означает, что вы можете проверить состояние оркестрации с помощью таких средств, как [Обозреватель службы хранилища Microsoft Azure](../../vs-azure-tools-storage-manage-with-storage-explorer.md).
 
 ![Снимок экрана Обозреватель службы хранилища Azure](./media/durable-functions-diagnostics/storage-explorer.png)
 
@@ -391,7 +392,7 @@ GET /admin/extensions/DurableTaskExtension/instances/instance123
 > [!WARNING]
 > Хотя просматривать журнал выполнения в службе таблиц более удобно, избегайте использования зависимостей в таблице. Они могут измениться при развитии расширения устойчивых функций.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о мониторинге в функциях Azure](../functions-monitoring.md)

@@ -14,18 +14,18 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: rogardle
-ms.openlocfilehash: 2b0b85792fe1266d2ec6478561193ef0c80ac98f
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.openlocfilehash: c6b064df1fe8943f9202446fb2857d50bcb4e0e1
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86224304"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87083384"
 ---
 # <a name="implement-oracle-data-guard-on-an-azure-linux-virtual-machine"></a>Реализация Oracle Data Guard на виртуальной машине Azure под управлением Linux 
 
 Azure CLI используется для создания ресурсов Azure и управления ими из командной строки или с помощью сценариев. В этой статье описывается, как с помощью Azure CLI развернуть базу данных Oracle Database 12c из образа Azure Marketplace. В этой статье представлено пошаговое руководство по установке и настройке Data Guard на виртуальной машине Azure.
 
-Прежде чем начать, убедитесь, что установлен интерфейс командной строки Azure CLI. Дополнительные сведения см. в разделе [руководства по установке Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
+Прежде чем начать, убедитесь, что установлен интерфейс командной строки Azure CLI. Дополнительные сведения см. в разделе [руководства по установке Azure CLI](/cli/azure/install-azure-cli).
 
 ## <a name="prepare-the-environment"></a>Подготовка среды
 ### <a name="assumptions"></a>Предположения
@@ -57,7 +57,7 @@ az group create --name myResourceGroup --location westus
 
 ### <a name="create-an-availability-set"></a>"Создать группу доступности"
 
-Создавать группу доступности необязательно, но мы рекомендуем это сделать. Дополнительные сведения см. в статье [Рекомендации по группам доступности Azure для виртуальных машин Windows](https://docs.microsoft.com/azure/virtual-machines/windows/infrastructure-availability-sets-guidelines).
+Создавать группу доступности необязательно, но мы рекомендуем это сделать. Дополнительные сведения см. в статье [Рекомендации по группам доступности Azure для виртуальных машин Windows](../../windows/infrastructure-example.md).
 
 ```azurecli
 az vm availability-set create \

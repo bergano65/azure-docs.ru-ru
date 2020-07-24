@@ -4,12 +4,12 @@ description: Сведения о том, как установить расши�
 ms.topic: conceptual
 ms.date: 04/10/2020
 ms.reviewer: azfuncdf
-ms.openlocfilehash: 7eee3c36620d0cc9f5906e355b76e7418c61b477
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b029fa246977dfe4210f6e8df242415f7e4103f1
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85807967"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87081922"
 ---
 # <a name="create-durable-functions-using-the-azure-portal"></a>Создание Устойчивых функций с помощью портала Azure
 
@@ -58,8 +58,6 @@ ms.locfileid: "85807967"
 
    ![Запуск команды npm install в Kudu](./media/durable-functions-create-portal/kudu-npm-install.png)
    
-5. Наконец, [включите режим совместимости](https://docs.microsoft.com/azure/azure-functions/durable/quickstart-js-vscode#enable-compatibility-mode-1) , добавив параметр приложения `FUNCTIONS_V2_COMPATIBILITY_MODE` со значением `true` .
-
 ## <a name="create-an-orchestrator-function"></a>Создание функции оркестратора
 
 1. В приложении-функции выберите **Функции** на левой панели, а затем в верхнем меню выберите **Добавить**. 

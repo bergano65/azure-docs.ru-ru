@@ -12,11 +12,12 @@ ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 05/15/2019
 ms.author: amverma
-ms.openlocfilehash: 469e926932ffa11ef9f2a262b78a587ba435549e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3ca9a21d105be6f17c1aa40ae1a0ab7f01c38184
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77023996"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87083418"
 ---
 # <a name="set-up-message-passing-interface-for-hpc"></a>Настройка интерфейса передачи сообщений для HPC
 
@@ -62,7 +63,7 @@ make -j 8 && make install
 
 Проверьте ключ раздела, как упоминалось выше.
 
-## <a name="mpich"></a>мпич
+## <a name="mpich"></a>MPICH
 
 Установите УККС, как описано выше.
 
@@ -197,6 +198,6 @@ chmod 644 /home/$USER/.ssh/config
 
 В приведенном выше синтаксисе предполагается наличие общего домашнего каталога, иначе каталог. ssh должен быть скопирован на каждый узел.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о [HPC](https://docs.microsoft.com/azure/architecture/topics/high-performance-computing/) в Azure.
+Дополнительные сведения о [HPC](/azure/architecture/topics/high-performance-computing/) в Azure.

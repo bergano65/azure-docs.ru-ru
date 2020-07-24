@@ -13,11 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/19/2019
 ms.author: juliako
-ms.openlocfilehash: 1c2d6287a89c7816c30cf26978859c07dba0251d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 78fa6b343a01e96c000b6c64a55d5fdf1f0284f2
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78197510"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87084659"
 ---
 # <a name="azure-media-services-overview"></a>Общие сведения о службах мультимедиа Azure 
 
@@ -26,7 +27,7 @@ ms.locfileid: "78197510"
 > * [Версия 2](media-services-overview.md)
 
 > [!NOTE]
-> В Службы мультимедиа версии 2 больше не добавляются новые функции. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
+> В Службы мультимедиа версии 2 больше не добавляются новые функции. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](../latest/index.yml). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
 
 Службы мультимедиа Azure (AMS) — это расширяемая облачная платформа, которая позволяет разработчикам создавать масштабируемые приложения для управления и доставки файлов мультимедиа. С помощью служб мультимедиа Azure можно безопасно передавать, сохранять, кодировать и упаковывать видео- или аудиосодержимое для потоковой трансляции разным клиентам (например, на ТВ, ПК и мобильные устройства) или для трансляции по требованию.
 
@@ -41,7 +42,7 @@ ms.locfileid: "78197510"
 
 Сведения о соответствии, конфиденциальности и безопасности в службах мультимедиа см. в [центре управления безопасностью](https://www.microsoft.com/trust-center/?rtc=1)Майкрософт. Для обязательств по конфиденциальности корпорации Майкрософт, обработки данных и рекомендаций по хранению, включая сведения об удалении данных, ознакомьтесь с заявлением корпорации Майкрософт [о конфиденциальности](https://privacy.microsoft.com/PrivacyStatement), [условиями веб-служб](https://www.microsoft.com/licensing/product-licensing/products?rtc=1) ("OST") и [дополнением к обработке данных](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=67) ("DPA"). Используя службы мультимедиа, вы соглашаетесь с использованием OST, DPA и заявления о конфиденциальности.
  
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 Приступить к использованию служб мультимедиа Azure можно только при наличии следующих компонентов.
 
@@ -56,7 +57,7 @@ ms.locfileid: "78197510"
 
 Для сборки решений на базе служб мультимедиа можно использовать
 
-* [REST API для службы мультимедиа.](https://docs.microsoft.com/rest/api/media/operations/azure-media-services-rest-api-reference)
+* [REST API для службы мультимедиа.](/rest/api/media/operations/azure-media-services-rest-api-reference)
 * Один из доступных клиентских пакетов SDK:
     * Пакет SDK служб мультимедиа Azure для .NET
     
@@ -70,7 +71,7 @@ ms.locfileid: "78197510"
     * [Azure-Media-Services-Explorer](https://github.com/Azure/Azure-Media-Services-Explorer) (обозреватель служб мультимедиа Azure (AMSE) является приложением Winforms/С# для Windows)
 
 > [!NOTE]
-> Чтобы получить последнюю версию пакета SDK для Java и приступить к разработке с помощью Java, перейдите к статье [Начало работы с клиентским пакетом SDK для Java для служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/media-services-java-how-to-use). <br/>
+> Чтобы получить последнюю версию пакета SDK для Java и приступить к разработке с помощью Java, перейдите к статье [Начало работы с клиентским пакетом SDK для Java для служб мультимедиа Azure](./media-services-java-how-to-use.md). <br/>
 > Чтобы загрузить последний пакет SDK для PHP для служб мультимедиа, найдите версию 0.5.7 пакета Microsoft/WindowAzure в [репозитории Packagist](https://packagist.org/packages/microsoft/windowsazure#v0.5.7).  
 
 ## <a name="code-samples"></a>Примеры кода

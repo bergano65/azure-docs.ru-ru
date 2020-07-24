@@ -2,21 +2,22 @@
 title: Справочник по YAML для группы контейнеров
 description: Справочник по файлу YAML, поддерживаемому экземплярами контейнеров Azure для настройки группы контейнеров
 ms.topic: article
-ms.date: 08/12/2019
-ms.openlocfilehash: be78c7d498187486a1502da17faa2b8faa5a0982
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/06/2020
+ms.openlocfilehash: d0ec8d13eebba1c60f5a52f8c43bdd8b90eeb913
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84730532"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87084766"
 ---
 # <a name="yaml-reference-azure-container-instances"></a>Справочник по YAML: экземпляры контейнеров Azure
 
 В этой статье описывается синтаксис и свойства файла YAML, поддерживаемого экземплярами контейнеров Azure, для настройки [группы контейнеров](container-instances-container-groups.md). Используйте файл YAML для ввода конфигурации группы в команду [AZ Container Create][az-container-create] в Azure CLI. 
 
-Файл YAML — это удобный способ настройки группы контейнеров для воспроизводимых развертываний. Это краткая альтернатива использованию [шаблона диспетчер ресурсов](/azure/templates/Microsoft.ContainerInstance/2018-10-01/containerGroups) или пакетов SDK для экземпляров контейнеров Azure для создания или обновления группы контейнеров.
+Файл YAML — это удобный способ настройки группы контейнеров для воспроизводимых развертываний. Это краткая альтернатива использованию [шаблона диспетчер ресурсов](/azure/templates/Microsoft.ContainerInstance/2019-12-01/containerGroups) или пакетов SDK для экземпляров контейнеров Azure для создания или обновления группы контейнеров.
 
 > [!NOTE]
-> Эта ссылка относится к файлам YAML для экземпляров контейнеров Azure REST API версии `2018-10-01` .
+> Эта ссылка относится к файлам YAML для экземпляров контейнеров Azure REST API версии `2019-12-01` .
 
 ## <a name="schema"></a>схема 
 
@@ -24,7 +25,7 @@ ms.locfileid: "84730532"
 
 ```yml
 name: string  # Name of the container group
-apiVersion: '2018-10-01'
+apiVersion: '2019-12-01'
 location: string
 tags: {}
 identity: 
@@ -126,6 +127,25 @@ properties: # Properties of container group
     - string
     searchDomains: string
     options: string
+  sku: string # SKU for the container group
+  encryptionProperties:
+    vaultBaseUrl: string
+    keyName: string
+    keyVersion: string
+  initContainers: # Array of init containers in the group
+  - name: string
+    properties:
+      image: string
+      command:
+      - string
+      environmentVariables:
+      - name: string
+        value: string
+        secureValue: string
+      volumeMounts:
+      - name: string
+        mountPath: string
+        readOnly: boolean
 ```
 
 ## <a name="property-values"></a>Значения свойств
@@ -138,7 +158,7 @@ properties: # Properties of container group
 
 |  Имя | Type | Обязательно | Значение |
 |  ---- | ---- | ---- | ---- |
-|  name | string | Да | Имя группы контейнеров. |
+|  name | строка | Да | Имя группы контейнеров. |
 |  версия_API | enum | Да | 2018-10-01 |
 |  location | строка | Нет | Местоположение ресурса. |
 |  tags | object | Нет | Теги ресурсов. |
@@ -162,15 +182,18 @@ properties: # Properties of container group
 
 |  Имя | Type | Обязательно | Значение |
 |  ---- | ---- | ---- | ---- |
-|  containers | массиве | Да | Контейнеры в группе контейнеров. - [Объект контейнера](#container-object) |
-|  imageRegistryCredentials | массиве | Нет | Учетные данные реестра образов, по которым создается группа контейнеров. - [Объект Имажерегистрикредентиал](#imageregistrycredential-object) |
+|  containers | array | Да | Контейнеры в группе контейнеров. - [Объект контейнера](#container-object) |
+|  imageRegistryCredentials | array | Нет | Учетные данные реестра образов, по которым создается группа контейнеров. - [Объект Имажерегистрикредентиал](#imageregistrycredential-object) |
 |  restartPolicy | enum | Нет | Перезапустите политику для всех контейнеров в группе контейнеров. - `Always`Всегда перезагружать- `OnFailure` перезапустить при сбое — `Never` никогда не перезапускать. Всегда, onFailure, никогда |
 |  ipAddress | object | Нет | Тип IP-адреса группы контейнеров. - [IpAddress, объект](#ipaddress-object) |
 |  osType | enum | Да | Тип операционной системы, необходимый контейнерам в группе контейнеров. — Windows или Linux |
-|  volumes. | массиве | Нет | Список томов, которые могут быть подключены контейнерами в этой группе контейнеров. - [Объект Volume](#volume-object) |
+|  volumes. | array | Нет | Список томов, которые могут быть подключены контейнерами в этой группе контейнеров. - [Объект Volume](#volume-object) |
 |  диагностика | object | Нет | Диагностические сведения для группы контейнеров. - [Объект Контаинерграупдиагностикс](#containergroupdiagnostics-object) |
 |  networkProfile | object | Нет | Сведения о сетевом профиле для группы контейнеров. - [Объект Контаинерграупнетворкпрофиле](#containergroupnetworkprofile-object) |
 |  dnsConfig | object | Нет | Сведения о конфигурации DNS для группы контейнеров. - [Объект Днсконфигуратион](#dnsconfiguration-object) |
+| sku | enum | Нет | SKU для группы контейнеров — стандартный или выделенный |
+| енкриптионпропертиес | object | Нет | Свойства шифрования для группы контейнеров. - [Объект Енкриптионпропертиес](#encryptionproperties-object) | 
+| инитконтаинерс | array | Нет | Контейнеры init для группы контейнеров. - [Объект Инитконтаинердефинитион](#initcontainerdefinition-object) |
 
 
 
@@ -189,8 +212,8 @@ properties: # Properties of container group
 
 |  Имя | Type | Обязательно | Значение |
 |  ---- | ---- | ---- | ---- |
-|  server | string | Да | Сервер реестра образа DOCKER без протокола, например "http" и "HTTPS". |
-|  username | string | Да | Имя пользователя для частного реестра. |
+|  server | строка | Да | Сервер реестра образа DOCKER без протокола, например "http" и "HTTPS". |
+|  username | строка | Да | Имя пользователя для частного реестра. |
 |  password | Строка | Нет | Пароль для частного реестра. |
 
 
@@ -200,7 +223,7 @@ properties: # Properties of container group
 
 |  Имя | Type | Обязательно | Значение |
 |  ---- | ---- | ---- | ---- |
-|  ports; | массиве | Да | Список портов, предоставляемых в группе контейнеров. - [Объект Port](#port-object) |
+|  ports; | array | Да | Список портов, предоставляемых в группе контейнеров. - [Объект Port](#port-object) |
 |  тип | enum | Да | Указывает, является ли IP-адрес общедоступным или частной ВИРТУАЛЬНОЙ сетью. — Открытый или частный |
 |  см | Строка | Нет | IP-адрес, предоставляемый общедоступному Интернету. |
 |  днснамелабел | Строка | Нет | Метка имени DNS для IP-адреса. |
@@ -243,23 +266,37 @@ properties: # Properties of container group
 
 |  Имя | Type | Обязательно | Значение |
 |  ---- | ---- | ---- | ---- |
-|  Серверах имен | массиве | Да | DNS-серверы для группы контейнеров. -String |
+|  Серверах имен | array | Да | DNS-серверы для группы контейнеров. -String |
 |  сеарчдомаинс | Строка | Нет | Домены поиска DNS для поиска имени узла в группе контейнеров. |
 |  options | Строка | Нет | Параметры DNS для группы контейнеров. |
 
 
+### <a name="encryptionproperties-object"></a>Объект Енкриптионпропертиес
+
+| Имя  | Type  | Обязательно  | Значение |
+|  ---- | ---- | ---- | ---- |
+| ваултбасеурл  | строка    | Да   | Базовый URL-адрес keyvault. |
+| keyName   | строка    | Да   | Имя ключа шифрования. |
+| кэйверсион    | строка    | Да   | Версия ключа шифрования. |
+
+### <a name="initcontainerdefinition-object"></a>Объект Инитконтаинердефинитион
+
+| Имя  | Type  | Обязательно  | Значение |
+|  ---- | ---- | ---- | ---- |
+| name  | строка |  Да | Имя для контейнера init. |
+| properties    | объект    | Да   | Свойства для контейнера init. - [Объект Инитконтаинерпропертиесдефинитион](#initcontainerpropertiesdefinition-object)
 
 
 ### <a name="containerproperties-object"></a>Объект Контаинерпропертиес
 
 |  Имя | Type | Обязательно | Значение |
 |  ---- | ---- | ---- | ---- |
-|  Изображение | string | Да | Имя образа, используемого для создания экземпляра контейнера. |
-|  . | массиве | Нет | Команды для выполнения в экземпляре контейнера в Exec Form. -String |
-|  ports; | массиве | Нет | Доступные порты в экземпляре контейнера. - [Объект Контаинерпорт](#containerport-object) |
-|  environmentVariables | массиве | Нет | Переменные среды, которые необходимо задать в экземпляре контейнера. - [Объект EnvironmentVariable](#environmentvariable-object) |
+|  Изображение | строка | Да | Имя образа, используемого для создания экземпляра контейнера. |
+|  . | array | Нет | Команды для выполнения в экземпляре контейнера в Exec Form. -String |
+|  ports; | array | Нет | Доступные порты в экземпляре контейнера. - [Объект Контаинерпорт](#containerport-object) |
+|  environmentVariables | array | Нет | Переменные среды, которые необходимо задать в экземпляре контейнера. - [Объект EnvironmentVariable](#environmentvariable-object) |
 |  ресурсов | object | Да | Требования к ресурсам для экземпляра контейнера. - [Объект Ресаурцерекуирементс](#resourcerequirements-object) |
-|  волумемаунтс | массиве | Нет | Тома, доступные для экземпляра контейнера. - [Объект Волумемаунт](#volumemount-object) |
+|  волумемаунтс | array | Нет | Тома, доступные для экземпляра контейнера. - [Объект Волумемаунт](#volumemount-object) |
 |  ливенесспробе | object | Нет | Проверка актуальности. - [Объект Контаинерпробе](#containerprobe-object) |
 |  реадинесспробе | object | Нет | Проба готовности. - [Объект Контаинерпробе](#containerprobe-object) |
 
@@ -280,9 +317,9 @@ properties: # Properties of container group
 
 |  Имя | Type | Обязательно | Значение |
 |  ---- | ---- | ---- | ---- |
-|  Сетев | string | Да | Имя файлового ресурса Azure, который будет подключен как том. |
-|  readOnly | Логическое | Нет | Флаг, указывающий, является ли общий файл Azure, подключенный как том, только для чтения. |
-|  storageAccountName | string | Да | Имя учетной записи хранения, содержащей файловый ресурс Azure. |
+|  Сетев | строка | Да | Имя файлового ресурса Azure, который будет подключен как том. |
+|  readOnly | boolean | Нет | Флаг, указывающий, является ли общий файл Azure, подключенный как том, только для чтения. |
+|  storageAccountName | строка | Да | Имя учетной записи хранения, содержащей файловый ресурс Azure. |
 |  storageAccountKey | Строка | Нет | Ключ доступа к учетной записи хранения, используемый для доступа к файловому ресурсу Azure. |
 
 
@@ -293,9 +330,8 @@ properties: # Properties of container group
 |  Имя | Type | Обязательно | Значение |
 |  ---- | ---- | ---- | ---- |
 |  directory. | Строка | Нет | Имя целевого каталога. Не должен содержать или начинаться с "..".  Если указан параметр ".", каталог томов будет репозиторием Git.  В противном случае, если он указан, том будет содержать репозиторий Git в подкаталоге с заданным именем. |
-|  repository | string | Да | URL-адрес репозитория |
+|  repository | строка | Да | URL-адрес репозитория |
 |  revision | Строка | Нет | Зафиксировать хэш для указанной редакции. |
-
 
 
 
@@ -303,13 +339,20 @@ properties: # Properties of container group
 
 |  Имя | Type | Обязательно | Значение |
 |  ---- | ---- | ---- | ---- |
-|  workspaceId | string | Да | Идентификатор рабочей области для log Analytics |
-|  workspaceKey | string | Да | Ключ рабочей области для log Analytics |
+|  workspaceId | строка | Да | Идентификатор рабочей области для log Analytics |
+|  workspaceKey | строка | Да | Ключ рабочей области для log Analytics |
 |  логтипе | enum | Нет | Используемый тип журнала. -Контаинеринсигхтс или Контаинеринстанцелогс |
 |  метаданные | object | Нет | Метаданные для log Analytics. |
 
 
+### <a name="initcontainerpropertiesdefinition-object"></a>Объект Инитконтаинерпропертиесдефинитион
 
+| Имя  | Type  | Обязательно  | Значение |
+|  ---- | ---- | ---- | ---- |
+| Изображение | Строка    | Нет    | Изображение контейнера init. |
+| .   | array | Нет    | Команда, которую необходимо выполнить в контейнере init в Exec Form. -String |
+| environmentVariables | array  | Нет |Переменные среды, которые необходимо задать в контейнере init. - [Объект EnvironmentVariable](#environmentvariable-object)
+| волумемаунтс |array   | Нет    | Подключения тома, доступные для контейнера init. - [Объект Волумемаунт](#volumemount-object)
 
 ### <a name="containerport-object"></a>Объект Контаинерпорт
 
@@ -347,8 +390,8 @@ properties: # Properties of container group
 |  Имя | Type | Обязательно | Значение |
 |  ---- | ---- | ---- | ---- |
 |  name | строка | Да | Имя подключения тома. |
-|  mountPath | string | Да | Путь в контейнере, куда должен быть подключен том. Не должно содержать двоеточие (:). |
-|  readOnly | Логическое | Нет | Флаг, указывающий, что подключение тома доступно только для чтения. |
+|  mountPath | строка | Да | Путь в контейнере, куда должен быть подключен том. Не должно содержать двоеточие (:). |
+|  readOnly | boolean | Нет | Флаг, указывающий, что подключение тома доступно только для чтения. |
 
 
 
@@ -394,7 +437,7 @@ properties: # Properties of container group
 
 |  Имя | Type | Обязательно | Значение |
 |  ---- | ---- | ---- | ---- |
-|  . | массиве | Нет | Команды для выполнения в контейнере. -String |
+|  . | array | Нет | Команды для выполнения в контейнере. -String |
 
 
 
@@ -403,7 +446,7 @@ properties: # Properties of container group
 
 |  Имя | Type | Обязательно | Значение |
 |  ---- | ---- | ---- | ---- |
-|  путь | Строка | Нет | Путь для проверки. |
+|  path | Строка | Нет | Путь для проверки. |
 |  порт | Целое число | Да | Номер порта для проверки. |
 |  scheme | enum | Нет | Схема. -HTTP или HTTPS |
 
@@ -418,7 +461,7 @@ properties: # Properties of container group
 |  sku | enum | Да | Номер SKU ресурса GPU. -K80, P100, V100 |
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. Руководство по [развертыванию группы с несколькими контейнерами с помощью файла YAML](container-instances-multi-container-yaml.md).
 

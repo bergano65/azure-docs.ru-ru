@@ -15,11 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
-ms.openlocfilehash: 57ec22cb02512577f8737718cae9175403fb5603
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 627eca1f9a775f12fc9d504629c2a3abbcc919a7
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74900880"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87084506"
 ---
 # <a name="manage-streaming-endpoints-with-the-azure-portal"></a>Управление конечными точками потоковой передачи с помощью портала Azure 
 
@@ -66,7 +67,7 @@ ms.locfileid: "74900880"
 * управление кэшем;
 * межсайтовые политики доступа.
 
-Дополнительные сведения об этих свойствах см. [здесь](https://docs.microsoft.com/rest/api/media/operations/streamingendpoint).
+Дополнительные сведения об этих свойствах см. [здесь](/rest/api/media/operations/streamingendpoint).
 
 >[!NOTE]
 >Если включена сеть доставки содержимого, доступ по протоколу IP отсутствует. Доступ по протоколу IP применяется, только если отключена сеть доставки содержимого.
@@ -74,7 +75,7 @@ ms.locfileid: "74900880"
 Конечную точку потоковой передачи можно настроить следующим образом.
 
 1. Выберите конечную точку потоковой передачи, которую хотите настроить.
-2. Щелкните **Параметры**.
+2. Щелкните **Настройки**.
 
 Далее представлено краткое описание полей.
 
@@ -114,11 +115,10 @@ ms.locfileid: "74900880"
 
 ![конечная точка потоковой передачи](./media/media-services-portal-manage-streaming-endpoints/media-services-manage-streaming-endpoints6.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Просмотрите схемы обучения работе со службами мультимедиа.
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
 ## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
-

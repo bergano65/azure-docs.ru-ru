@@ -8,11 +8,12 @@ ms.topic: how-to
 ms.date: 07/24/2018
 ms.author: yushwang
 ms.reviewer: cherylmc
-ms.openlocfilehash: 854ca905ca8f951fb7678e46268b8bef57bd02bf
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7b4707ec7d6de3b617572b194bbad76b608f185a
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84988060"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87082041"
 ---
 # <a name="configure-active-active-s2s-vpn-connections-with-azure-vpn-gateways"></a>Настройка VPN-подключений типа "сеть — сеть" в режиме "активный — активный" для VPN-шлюзов Azure
 
@@ -48,7 +49,7 @@ ms.locfileid: "84988060"
 
 ### <a name="before-you-begin"></a>Перед началом
 * Убедитесь в том, что у вас уже есть подписка Azure. Если у вас еще нет подписки Azure, вы можете активировать преимущества для [подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) или зарегистрироваться для использования [бесплатной учетной записи](https://azure.microsoft.com/pricing/free-trial/).
-* Вам потребуется установить командлеты PowerShell диспетчера ресурсов Azure. Дополнительные сведения об установке командлетов PowerShell см. в разделе [Общие сведения об Azure PowerShell](/powershell/azure/overview).
+* Вам потребуется установить командлеты PowerShell диспетчера ресурсов Azure. Дополнительные сведения об установке командлетов PowerShell см. в разделе [Общие сведения об Azure PowerShell](/powershell/azure/).
 
 ### <a name="step-1---create-and-configure-vnet1"></a>Шаг 1. Создание и настройка VNet1
 #### <a name="1-declare-your-variables"></a>1. Объявите переменные
@@ -443,5 +444,5 @@ Set-AzVirtualNetworkGateway -VirtualNetworkGateway $gw -DisableActiveActiveFeatu
 
 Для обновления может потребоваться 30–45 минут.
 
-## <a name="next-steps"></a>Дальнейшие шаги
-Установив подключение, можно добавить виртуальные машины в виртуальные сети. Инструкции см. в статье о [создании виртуальной машины](../virtual-machines/virtual-machines-windows-hero-tutorial.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+## <a name="next-steps"></a>Дальнейшие действия
+Установив подключение, можно добавить виртуальные машины в виртуальные сети. Инструкции см. в статье о [создании виртуальной машины](../virtual-machines/windows/quick-create-portal.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).

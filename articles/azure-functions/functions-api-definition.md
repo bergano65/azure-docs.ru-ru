@@ -5,11 +5,12 @@ author: alexkarcher-msft
 ms.topic: conceptual
 ms.date: 03/23/2017
 ms.author: alkarche
-ms.openlocfilehash: cbfd0e36307210851070c22e74acb0a858446ce1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 59425456d6d8f4dc426a20deef7b866b3eaa1df4
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81866718"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87083074"
 ---
 # <a name="openapi-20-metadata-support-in-azure-functions-preview"></a>Поддержка метаданных OpenAPI 2.0 в Функциях Azure (предварительная версия)
 Поддержка метаданных OpenAPI 2.0 (прежнее название — Swagger) в Функциях Azure — это предварительная версия функции, которая предназначена для записи определения OpenAPI 2.0 в приложении-функции. Затем можно разместить этот файл с помощью приложения-функции.
@@ -22,7 +23,7 @@ ms.locfileid: "81866718"
 [!INCLUDE [intro](../../includes/functions-bindings-intro.md)]
 
 >[!TIP]
->Мы рекомендуем начать с [учебника по началу работы](./functions-api-definition-getting-started.md), а затем вернуться к этому документу, чтобы узнать больше о конкретных функциях.
+>Мы рекомендуем начать с [учебника по началу работы](./functions-openapi-definition.md), а затем вернуться к этому документу, чтобы узнать больше о конкретных функциях.
 
 ## <a name="enable-openapi-definition-support"></a><a name="enable"></a>Включение поддержки определения OpenAPI
 Все параметры OpenAPI можно настроить на странице **Определение API** в приложении-функции **Функции платформы**.
@@ -35,11 +36,11 @@ ms.locfileid: "81866718"
 ## <a name="generate-a-swagger-skeleton-from-your-functions-metadata"></a><a name="generate-definition"></a>Создание схемы Swagger на основе метаданных функции
 Шаблон поможет вам приступить к написанию первого определения OpenAPI. Функция шаблона определения создает разреженное определение OpenAPI, используя все метаданные в файле function.json для каждой функции "Триггер HTTP". Вам необходимо будет указать дополнительные сведения об API из [спецификации OpenAPI](https://swagger.io/specification/), например шаблоны запросов и ответов.
 
-Пошаговые инструкции см. в статье [Создание метаданных OpenAPI 2.0 (Swagger) для приложения-функции (предварительная версия)](./functions-api-definition-getting-started.md).
+Пошаговые инструкции см. в статье [Создание метаданных OpenAPI 2.0 (Swagger) для приложения-функции (предварительная версия)](./functions-openapi-definition.md).
 
 ### <a name="available-templates"></a><a name="templates"></a>Доступные шаблоны
 
-|name| Описание: |
+|Имя| Описание |
 |:-----|:-----|
 |Созданное определение|Определение OpenAPI с максимальным объемом информации, которую можно извлечь из имеющихся метаданных функции.|
 
@@ -59,7 +60,7 @@ ms.locfileid: "81866718"
 > [!NOTE]
 > Расширение x-ms-summary предоставляет отображаемое имя в Logic Apps, PowerApps и Flow.
 >
-> Дополнительные сведения см. в статье [Customize your Swagger definition for PowerApps](https://docs.microsoft.com/connectors/custom-connectors/openapi-extensions) (Настройка определения Swagger для PowerApps).
+> Дополнительные сведения см. в статье [Customize your Swagger definition for PowerApps](/connectors/custom-connectors/openapi-extensions) (Настройка определения Swagger для PowerApps).
 
 ## <a name="use-cicd-to-set-an-api-definition"></a><a name="CICD"></a>Создание определения API с помощью процесса непрерывной интеграции и доставки
 
@@ -69,12 +70,12 @@ ms.locfileid: "81866718"
    1. Задайте для параметра **API definition source** (Источник определения API) значение **Функция**.
    1. Щелкните **Generate API definition template** (Создать шаблон определения API), а затем **Сохранить**, чтобы создать определение шаблона, которое можно будет изменить позже.
    1. Обратите внимание на URL-адрес и ключ определения API.
-1. [Настройте непрерывную интеграцию и развертывание](https://docs.microsoft.com/azure/azure-functions/functions-continuous-deployment#requirements-for-continuous-deployment).
+1. [Настройте непрерывную интеграцию и развертывание](./functions-continuous-deployment.md#requirements-for-continuous-deployment).
 2. Измените файл swagger.json в системе управления исходным кодом по адресу \site\wwwroot\.azurefunctions\swagger\swagger.json.
 
 Теперь изменения, внесенные в файл swagger.json в репозитории, размещаются приложением-функцией с использованием URL-адреса и ключа определения API, которые указаны на шаге 1.в.
 
-## <a name="next-steps"></a>Дальнейшие шаги
-* [Руководство по началу работы](functions-api-definition-getting-started.md). Попробуйте воспользоваться нашим пошаговым руководством, чтобы увидеть определения OpenAPI в действии.
+## <a name="next-steps"></a>Дальнейшие действия
+* [Руководство по началу работы](./functions-openapi-definition.md). Попробуйте воспользоваться нашим пошаговым руководством, чтобы увидеть определения OpenAPI в действии.
 * [Репозиторий GitHub для функций Azure](https://github.com/Azure/Azure-Functions/). Ознакомьтесь со сведениями о Функциях в репозитории и оставьте свои отзывы о предварительной версии средства поддержки определений API. Добавьте на GitHub сведения обо всех проблемах, которые необходимо устранить.
 * [Справочник разработчика по функциям Azure](functions-reference.md). Сведения о написании кода функций и определении триггеров и привязок.

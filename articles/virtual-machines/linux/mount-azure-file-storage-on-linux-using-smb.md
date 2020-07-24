@@ -7,11 +7,12 @@ ms.topic: how-to
 ms.workload: infrastructure
 ms.date: 06/28/2018
 ms.author: cynthn
-ms.openlocfilehash: 7ab798ccbbbfc9cfc11ae85fd698ecedcb5e8e73
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6a5d4f388d9e5f47a13812687489525590c520c3
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84658155"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87085492"
 ---
 # <a name="mount-azure-file-storage-on-linux-vms-using-smb"></a>Подключение хранилища файлов Azure на виртуальных машинах Linux с помощью протокола SMB
 
@@ -62,7 +63,7 @@ STORAGEKEY=$(az storage account keys list \
 
 Создайте общий ресурс хранилища файлов с помощью команды [az storage share create](/cli/azure/storage/share). 
 
-Имена общих ресурсов должны содержать только строчные буквы, цифры и отдельные дефисы. Также они не могут начинаться с дефиса. Дополнительные сведения о присвоении имен общим папкам и файлам см. в статье [Именование общих ресурсов, каталогов, файлов и метаданных и ссылка на них](https://docs.microsoft.com/rest/api/storageservices/Naming-and-Referencing-Shares--Directories--Files--and-Metadata).
+Имена общих ресурсов должны содержать только строчные буквы, цифры и отдельные дефисы. Также они не могут начинаться с дефиса. Дополнительные сведения о присвоении имен общим папкам и файлам см. в статье [Именование общих ресурсов, каталогов, файлов и метаданных и ссылка на них](/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata).
 
 В этом примере создается файловый ресурс с именем *myshare* и квотой на 10 ГиБ. 
 
@@ -105,9 +106,8 @@ sudo mount -t cifs //$STORAGEACCT.file.core.windows.net/myshare /mnt/MyAzureFile
 
 Для обеспечения безопасности в рабочих средах следует хранить учетные данные за пределами fstab.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка виртуальной машины Linux во время создания с помощью Cloud-init](using-cloud-init.md)
 - [Добавление диска к виртуальной машине Linux](add-disk.md)
 - [Шифрование дисков Azure для виртуальных машин под управлением Linux](disk-encryption-overview.md)
-

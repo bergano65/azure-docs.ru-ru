@@ -14,26 +14,27 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: juliako
-ms.openlocfilehash: a83d6ae2e3ed13f0d03e0fdc87a3b45a4119ba88
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 51d3d859bbd176a6e1fac92b75c6120301a5066f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77162758"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87084523"
 ---
 # <a name="perform-live-streaming-with-on-premises-encoders-using-azure-portal"></a>Проведите динамическую потоковую передачу с помощью локальных кодировщиков, используя портал Azure
 > [!div class="op_single_selector"]
 > * [Портал](media-services-portal-live-passthrough-get-started.md)
 > * [.NET](media-services-dotnet-live-encode-with-onpremises-encoders.md)
-> * [REST](https://docs.microsoft.com/rest/api/media/operations/channel)
+> * [REST](/rest/api/media/operations/channel)
 > 
 > 
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](../latest/index.yml). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
 
 В этом руководстве рассматривается создание **канала** , настроенного для сквозной доставки, с помощью портала Azure. 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 Ниже перечислены необходимые условия для выполнения действий, описанных в этом учебнике.
 
 * Учетная запись Azure. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/). 
@@ -124,17 +125,17 @@ ms.locfileid: "77162758"
 1. Выберите канал, в который нужно добавить событие.
 2. Нажмите кнопку **Интерактивное событие** .
 
-![событие](./media/media-services-portal-passthrough-get-started/media-services-create-events.png)
+![Событие](./media/media-services-portal-passthrough-get-started/media-services-create-events.png)
 
 ## <a name="get-ingest-urls"></a>Получение URL-адресов приема
 После создания канала можно получить URL-адреса приема, которые необходимо передать динамическому кодировщику. Он использует эти адреса для передачи динамического потока на вход.
 
-![Создано](./media/media-services-portal-passthrough-get-started/media-services-channel-created.png)
+![Создание](./media/media-services-portal-passthrough-get-started/media-services-channel-created.png)
 
 ## <a name="watch-the-event"></a>Просмотр события
 Чтобы просмотреть событие, щелкните **Посмотреть** на портале Azure или скопируйте URL-адрес потоковой передачи и используйте проигрыватель по своему усмотрению. 
 
-![Создано](./media/media-services-portal-passthrough-get-started/media-services-default-event.png)
+![Создание](./media/media-services-portal-passthrough-get-started/media-services-default-event.png)
 
 После остановки интерактивное событие автоматически преобразуется в содержимое по запросу.
 
@@ -151,11 +152,10 @@ ms.locfileid: "77162758"
 
 ![Активы](./media/media-services-portal-passthrough-get-started/media-services-assets.png)
 
-## <a name="next-step"></a>Следующий шаг
+## <a name="next-step"></a>Дальнейшие действия
 Просмотрите схемы обучения работе со службами мультимедиа.
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
 ## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
-

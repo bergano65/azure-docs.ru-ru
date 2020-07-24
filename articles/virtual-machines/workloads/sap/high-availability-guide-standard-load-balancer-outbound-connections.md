@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 06/16/2020
 ms.author: radeltch
-ms.openlocfilehash: 9419ed320089ff85722e0d9c0582e92491377ab1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: eca36a2c13fcdc232d4d06ca6e59598fe9a611f2
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84907471"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87082143"
 ---
 # <a name="public-endpoint-connectivity-for-virtual-machines-using-azure-standard-load-balancer-in-sap-high-availability-scenarios"></a>Подключение к общедоступной конечной точке для виртуальных машин с помощью Azure Load Balancer (цен. категория "Стандартный") в сценариях обеспечения высокого уровня доступности SAP
 
@@ -31,11 +31,11 @@ ms.locfileid: "84907471"
 
 ## <a name="overview"></a>Обзор
 
-При реализации высокого уровня доступности для решений SAP с помощью кластеризации один из необходимых компонентов — [Azure Load Balancer](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview). Azure предлагает два SKU балансировщика нагрузки: стандартный и базовый.
+При реализации высокого уровня доступности для решений SAP с помощью кластеризации один из необходимых компонентов — [Azure Load Balancer](../../../load-balancer/load-balancer-overview.md). Azure предлагает два SKU балансировщика нагрузки: стандартный и базовый.
 
 Стандартный балансировщик нагрузки Azure предоставляет некоторые преимущества по сравнению с базовым. Например, он работает в разных зонах доступности Azure, обеспечивает улучшенные возможности мониторинга и ведения журнала, упрощая диагностику неполадок и гарантируя сниженную задержку. Функция «порты высокой доступности» охватывает все порты, т. е. больше не нужно перечислять все индивидуальные порты.  
 
-Существует ряд важных различий между базовым и стандартным SKU балансировщика нагрузки Azure. Одним из них является передача исходящего трафика в общедоступную конечную точку. Полное сравнение базового и стандартного SKU балансировщика нагрузки см. в разделе [Сравнение SKU балансировщиков нагрузки](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview).  
+Существует ряд важных различий между базовым и стандартным SKU балансировщика нагрузки Azure. Одним из них является передача исходящего трафика в общедоступную конечную точку. Полное сравнение базового и стандартного SKU балансировщика нагрузки см. в разделе [Сравнение SKU балансировщиков нагрузки](../../../load-balancer/load-balancer-overview.md).  
  
 Если в серверный пул внутренней (без общедоступного IP-адреса) подсистемы балансировки нагрузки Azure ценовой категории «Стандартный» помещаются виртуальные машины без общедоступных IP-адресов, у них нет исходящего подключения к общедоступным конечным точкам (если только не выполнена дополнительная конфигурация).  
 
@@ -60,20 +60,20 @@ ms.locfileid: "84907471"
 Сначала прочитайте следующую документацию.
 
 * Azure Load Balancer уровня «Стандартный»
-  * [Обзор балансировщика нагрузки Azure (цен. категория «Стандартный»)](https://docs.microsoft.com/azure/load-balancer/load-balancer-standard-overview) — полный обзор балансировщика нагрузки Azure, важные принципы, концепции и руководства 
-  * [Исходящие подключения в Azure](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections#scenarios) — сценарии получения исходящих подключений в Azure
-  * [Исходящие правила балансировщика нагрузки](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-rules-overview) — объясняются понятия исходящих правил балансировщика нагрузки и способы создания исходящих правил
+  * [Обзор балансировщика нагрузки Azure (цен. категория «Стандартный»)](../../../load-balancer/load-balancer-overview.md) — полный обзор балансировщика нагрузки Azure, важные принципы, концепции и руководства 
+  * [Исходящие подключения в Azure](../../../load-balancer/load-balancer-outbound-connections.md#scenarios) — сценарии получения исходящих подключений в Azure
+  * [Исходящие правила балансировщика нагрузки](../../../load-balancer/load-balancer-outbound-connections.md#outboundrules) — объясняются понятия исходящих правил балансировщика нагрузки и способы создания исходящих правил
 * Брандмауэр Azure
-  * [Общие сведения о брандмауэре Azure](https://docs.microsoft.com/azure/firewall/overview) — общие сведения о брандмауэре Azure
-  * [Руководство. Развертывание и настройка брандмауэра Azure](https://docs.microsoft.com/azure/firewall/tutorial-firewall-deploy-portal) — инструкции по настройке брандмауэра Azure с помощью портала Azure
-* [Виртуальные сети — определяемые пользователем правила](https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview#user-defined) — основные понятия и правила маршрутизации Azure  
-* [Теги службы групп безопасности](https://docs.microsoft.com/azure/virtual-network/security-overview#service-tags) — упрощение групп безопасности сети и конфигурации брандмауэра с помощью тегов служб
+  * [Общие сведения о брандмауэре Azure](../../../firewall/overview.md) — общие сведения о брандмауэре Azure
+  * [Руководство. Развертывание и настройка брандмауэра Azure](../../../firewall/tutorial-firewall-deploy-portal.md) — инструкции по настройке брандмауэра Azure с помощью портала Azure
+* [Виртуальные сети — определяемые пользователем правила](../../../virtual-network/virtual-networks-udr-overview.md#user-defined) — основные понятия и правила маршрутизации Azure  
+* [Теги службы групп безопасности](../../../virtual-network/security-overview.md#service-tags) — упрощение групп безопасности сети и конфигурации брандмауэра с помощью тегов служб
 
 ## <a name="additional-external-azure-standard-load-balancer-for-outbound-connections-to-internet"></a>Дополнительные внешние балансировщики нагрузки Azure уровня «Стандартный» для исходящих подключений к Интернету
 
-Одним из вариантов обеспечения исходящего подключения к общедоступным конечным точкам без разрешения входящего подключения к виртуальной машине из общедоступной конечной точки является создание второго балансировщика нагрузки с общедоступным IP-адресом, добавление виртуальных машин в серверный пул второго балансировщика нагрузки и определение только [правил для исходящего трафика](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-rules-overview).  
-Используйте [группы безопасности сети](https://docs.microsoft.com/azure/virtual-network/security-overview) для управления общедоступными конечными точками, которые доступны для исходящих вызовов с виртуальной машины.  
-Дополнительные сведения см. в сценарии 2 в статье [Исходящие подключения](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections#scenarios).  
+Одним из вариантов обеспечения исходящего подключения к общедоступным конечным точкам без разрешения входящего подключения к виртуальной машине из общедоступной конечной точки является создание второго балансировщика нагрузки с общедоступным IP-адресом, добавление виртуальных машин в серверный пул второго балансировщика нагрузки и определение только [правил для исходящего трафика](../../../load-balancer/load-balancer-outbound-connections.md#outboundrules).  
+Используйте [группы безопасности сети](../../../virtual-network/security-overview.md) для управления общедоступными конечными точками, которые доступны для исходящих вызовов с виртуальной машины.  
+Дополнительные сведения см. в сценарии 2 в статье [Исходящие подключения](../../../load-balancer/load-balancer-outbound-connections.md#scenarios).  
 Конфигурация будет выглядеть следующим образом.  
 
 ![Управление подключением к общедоступным конечным точкам с помощью групп безопасности сети](./media/high-availability-guide-standard-load-balancer/high-availability-guide-standard-load-balancer-public.png)
@@ -81,11 +81,11 @@ ms.locfileid: "84907471"
 ### <a name="important-considerations"></a>Важные сведения
 
 - Можно использовать один дополнительный общедоступный балансировщик нагрузки для нескольких виртуальных машин в одной подсети, чтобы обеспечить исходящее подключение к общедоступной конечной точке и оптимизировать затраты.  
-- Используйте [группы безопасности сети](https://docs.microsoft.com/azure/virtual-network/security-overview), чтобы контролировать, какие общедоступные конечные точки доступны с виртуальных машин. Группу безопасности сети можно назначить подсети или каждой виртуальной машине. По возможности используйте [теги службы](https://docs.microsoft.com/azure/virtual-network/security-overview#service-tags), чтобы упростить правила безопасности.  
+- Используйте [группы безопасности сети](../../../virtual-network/security-overview.md), чтобы контролировать, какие общедоступные конечные точки доступны с виртуальных машин. Группу безопасности сети можно назначить подсети или каждой виртуальной машине. По возможности используйте [теги службы](../../../virtual-network/security-overview.md#service-tags), чтобы упростить правила безопасности.  
 - Стандартный балансировщик нагрузки Azure с общедоступным IP-адресом и правилами для исходящего трафика обеспечивает прямой доступ к общедоступной конечной точке. Если в соответствии с корпоративными требованиями безопасности весь исходящий трафик должен проходить через централизованное корпоративное решение для аудита и ведения журнала, вы не сможете выполнить такие требования в этом сценарии.  
 
 >[!TIP]
->По возможности используйте [теги службы](https://docs.microsoft.com/azure/virtual-network/security-overview#service-tags) для упрощения группы безопасности сети. 
+>По возможности используйте [теги службы](../../../virtual-network/security-overview.md#service-tags) для упрощения группы безопасности сети. 
 
 ### <a name="deployment-steps"></a>Шаги по развертыванию
 
@@ -100,7 +100,7 @@ ms.locfileid: "84907471"
 2. Создайте серверный пул **MyBackendPoolOfPublicILB** и добавьте виртуальные машины  
    1. Выберите виртуальную сеть  
    1. Выберите виртуальные машины и их IP-адреса и добавьте их в серверный пул  
-3. [Создайте правила для исходящего трафика](https://docs.microsoft.com/azure/load-balancer/configure-load-balancer-outbound-cli#create-outbound-rule). Сейчас с портала Azure невозможно создать правила для исходящего трафика. Однако их можно создать с помощью [интерфейса командной строки Azure](https://docs.microsoft.com/azure/cloud-shell/overview?view=azure-cli-latest).  
+3. [Создайте правила для исходящего трафика](../../../load-balancer/configure-load-balancer-outbound-cli.md#create-outbound-rule). Сейчас с портала Azure невозможно создать правила для исходящего трафика. Однако их можно создать с помощью [интерфейса командной строки Azure](../../../cloud-shell/overview.md?view=azure-cli-latest).  
 
    ```azurecli
     az network lb outbound-rule create --address-pool MyBackendPoolOfPublicILB --frontend-ip-configs MyPublicILBFrondEndIP --idle-timeout 30 --lb-name MyPublicILB --name MyOutBoundRules  --outbound-ports 10000 --enable-tcp-reset true --protocol All --resource-group MyResourceGroup
@@ -117,13 +117,13 @@ ms.locfileid: "84907471"
 
    ![Исходящее подключение со вторым балансировщиком нагрузки с общедоступным IP-адресом](./media/high-availability-guide-standard-load-balancer/high-availability-guide-standard-load-balancer-network-security-groups.png)
 
-   Дополнительные сведения о группах безопасности сети Azure см. в статье [Группы безопасности](https://docs.microsoft.com/azure/virtual-network/security-overview). 
+   Дополнительные сведения о группах безопасности сети Azure см. в статье [Группы безопасности](../../../virtual-network/security-overview.md). 
 
 ## <a name="azure-firewall-for-outbound-connections-to-internet"></a>Брандмауэр Azure для исходящих подключений к Интернету
 
 Другой вариант обеспечить исходящее подключение к общедоступным конечным точкам, не разрешая входящие подключения к виртуальной машине из общедоступных конечных точек, — это воспользоваться брандмауэром Azure. Брандмауэр Azure — это управляемая служба со встроенными механизмами обеспечения высокой доступности, которая может охватывать несколько зон доступности.  
-Вам также потребуется развернуть [определяемый пользователем маршрут](https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview#custom-routes), связанный с подсетью, в которой развернуты виртуальные машины и балансировщик нагрузки Azure, указывающие на брандмауэр Azure, чтобы направлять трафик через брандмауэр Azure.  
-Дополнительные сведения о развертывании брандмауэра Azure см. в разделе [Развертывание и настройка брандмауэра Azure](https://docs.microsoft.com/azure/firewall/tutorial-firewall-deploy-portal).  
+Вам также потребуется развернуть [определяемый пользователем маршрут](../../../virtual-network/virtual-networks-udr-overview.md#custom-routes), связанный с подсетью, в которой развернуты виртуальные машины и балансировщик нагрузки Azure, указывающие на брандмауэр Azure, чтобы направлять трафик через брандмауэр Azure.  
+Дополнительные сведения о развертывании брандмауэра Azure см. в разделе [Развертывание и настройка брандмауэра Azure](../../../firewall/tutorial-firewall-deploy-portal.md).  
 
 Архитектура выглядит следующим образом:
 
@@ -137,7 +137,7 @@ ms.locfileid: "84907471"
 - Если в компании используется отличное от брандмауэра Azure брандмауэрное решение и политика безопасности требует, чтобы весь исходящий трафик проходил через централизованное корпоративное решение, реализовать такое решение может быть непрактично.  
 
 >[!TIP]
->По возможности используйте [теги службы](https://docs.microsoft.com/azure/virtual-network/security-overview#service-tags), чтобы упростить правила брандмауэра Azure.  
+>По возможности используйте [теги службы](../../../virtual-network/security-overview.md#service-tags), чтобы упростить правила брандмауэра Azure.  
 
 ### <a name="deployment-steps"></a>Шаги по развертыванию
 
@@ -229,5 +229,5 @@ ms.locfileid: "84907471"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Узнайте, как настроить Pacemaker в SUSE в Azure.](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-pacemaker)
-* [Узнайте, как настроить Pacemaker в Red Hat в Azure.](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-rhel-pacemaker)
+* [Узнайте, как настроить Pacemaker в SUSE в Azure.](./high-availability-guide-suse-pacemaker.md)
+* [Узнайте, как настроить Pacemaker в Red Hat в Azure.](./high-availability-guide-rhel-pacemaker.md)

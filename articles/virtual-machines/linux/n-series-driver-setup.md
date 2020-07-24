@@ -8,11 +8,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 01/09/2019
 ms.author: vikancha
-ms.openlocfilehash: 1d463242c923d766b500c1ede796e399e7af9c54
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4a6bf0499eb9ed6700111918c416f118414ae895
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84735937"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87085471"
 ---
 # <a name="install-nvidia-gpu-drivers-on-n-series-vms-running-linux"></a>Установка драйверов GPU NVIDIA на виртуальные машины серии N под управлением Linux
 
@@ -20,7 +21,7 @@ ms.locfileid: "84735937"
 
 Если вы решили установить драйверы GPU NVIDIA вручную, то в этой статье вы найдете сведения о поддерживаемых дистрибутивах, ссылки на драйверы и инструкции по установке и проверке. Сведения о ручной установке драйверов также доступны для [виртуальных машин Windows](../windows/n-series-driver-setup.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
-Характеристики виртуальных машин серии N, сведения о дисках и объеме памяти см. в статье [Размеры виртуальных машин Linux, оптимизированных для GPU](sizes-gpu.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json). 
+Характеристики виртуальных машин серии N, сведения о дисках и объеме памяти см. в статье [Размеры виртуальных машин Linux, оптимизированных для GPU](../sizes-gpu.md?toc=/azure/virtual-machines/linux/toc.json). 
 
 [!INCLUDE [virtual-machines-n-series-linux-support](../../../includes/virtual-machines-n-series-linux-support.md)]
 
@@ -354,7 +355,7 @@ fi
 ## <a name="troubleshooting"></a>Устранение неполадок
 
 * Когда необходимо запрашивать карты, для быстрого получения выходных данных команды можно задать режим сохранения с помощью команды `nvidia-smi`. Чтобы задать режим сохранения, выполните `nvidia-smi -pm 1`. Обратите внимание, что в случае перезапуска виртуальной машины настройка режима не сохранится. Всегда можно написать сценарий настройки режима для выполнения при запуске.
-* Если вы обновили драйверы CUDA NVIDIA до последней версии и обнаруживаете, что подключение RDMA больше не работает, [переустановите драйверы RDMA](https://docs.microsoft.com/azure/virtual-machines/linux/n-series-driver-setup#rdma-network-connectivity), чтобы восстановить подключение. 
+* Если вы обновили драйверы CUDA NVIDIA до последней версии и обнаруживаете, что подключение RDMA больше не работает, [переустановите драйверы RDMA](#rdma-network-connectivity), чтобы восстановить подключение. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

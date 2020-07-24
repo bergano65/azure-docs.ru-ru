@@ -13,13 +13,14 @@ ms.workload: infrastructure
 ms.date: 10/16/2019
 ms.author: saghorpa
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 9cb2647cc5ac2dc60f5ae7327ee39ed2ff625193
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 79ef279423c524f0d409815e7ae163aa699f5428
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82901391"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87082211"
 ---
-# <a name="backup-and-restore"></a>Резервное копирование и восстановление
+# <a name="backup-and-restore-on-sap-hana-on-azure"></a>Резервное копирование и восстановление на SAP HANA в Azure
 
 >[!IMPORTANT]
 >Эта статья не заменяет документацию по администрированию SAP HANA или примечания SAP. Мы надеемся, что у вас есть четкое понимание и опыт в SAP HANA администрировании и операциях, особенно для резервного копирования, восстановления, обеспечения высокой доступности и аварийного восстановления. В этой статье показаны снимки экрана из SAP HANA Studio. Содержимое, структура и характер экранов инструментов администрирования SAP и сами инструменты могут изменяться в разных выпусках SAP HANA.
@@ -400,5 +401,5 @@ SAP HANA регулярно записывает данные на том /hana/
 Чтобы выполнить восстановление до определенной точки во времени, см. раздел "восстановление базы данных до следующего момента времени" раздела [руководство по восстановлению вручную для SAP HANA в Azure из моментального снимка хранилища](https://github.com/Azure/hana-large-instances-self-service-scripts/blob/master/latest/Microsoft%20Snapshot%20Tools%20for%20SAP%20HANA%20on%20Azure%20Guide.md). 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - См. раздел [принципы аварийного восстановления и подготовка](hana-concept-preparation.md).

@@ -7,28 +7,26 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 10/19/2018
 ms.author: yushwang
-ms.openlocfilehash: ec370ca3aa8d89111dcb4737701c7ea58cd48195
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f693f6a40b87d024430c7626736fab0d0a032238
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84986092"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87082007"
 ---
 # <a name="sample-configuration-cisco-asa-device-ikev2no-bgp"></a>Пример конфигурации. Устройство Cisco ASA (IKEv2/без BGP)
 В этой статье представлен пример конфигурации для подключения устройств адаптивной безопасности (ASA) Cisco к VPN-шлюзам Azure. Этот пример применим к устройствам Cisco ASA, работающим под управлением IKEv2 без протокола BGP. 
 
 ## <a name="device-at-a-glance"></a>Краткий обзор устройства
 
-|                        |                                   |
-| ---                    | ---                               |
-| Поставщик устройства          | Cisco                             |
-| Модель устройства           | ASA                               |
-| Целевая версия         | 8.4 и более поздние версии                     |
-| Проверенная модель           | ASA 5505                          |
-| Проверенные версии         | 9.2                               |
-| Версия IKE            | IKEv2                             |
-| BGP                    | Нет                                |
-| Тип VPN-шлюза Azure | Пример VPN-шлюза на основе маршрута           |
-|                        |                                   |
+* Поставщик устройства: **Cisco**
+* Модель устройства: **ASA**           
+* Целевая версия: **8,4 и более поздние** версии
+* Протестированная модель: **ASA 5505**
+* Протестированная версия: **9,2**             
+* Версия IKE: **IKEv2**                  
+* BGP: **нет**      
+* Тип VPN-шлюза Azure: **VPN-шлюз на основе маршрутов**
 
 > [!NOTE]
 > Пример конфигурации подключает устройство Cisco ASA к VPN-шлюзу Azure **на основе маршрута**. Подключение использует пользовательскую политику IPsec/IKE с параметром **UsePolicyBasedTrafficSelectors**, как описано в [этой статье](vpn-gateway-connect-multiple-policybased-rm-ps.md).
@@ -299,5 +297,5 @@ sysopt connection tcpmss 1350
     show run tunnel-group
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Инструкции по настройке распределенных подключений (локальных и между виртуальными сетями) с конфигурацией "активный — активный" см. в статье [Настройка VPN-подключений типа "сеть — сеть" в режиме "активный — активный" для VPN-шлюзов Azure](vpn-gateway-activeactive-rm-powershell.md).

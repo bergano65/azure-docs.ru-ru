@@ -14,13 +14,19 @@
       href: data-lake-analytics-data-lake-tools-for-vscode.md
     - name: Azure PowerShell
       href: data-lake-analytics-get-started-powershell.md
-    - name: Azure CLI
+    - name: Azure CLI;
       href: data-lake-analytics-get-started-cli.md
 - name: Примеры
   items:
-    - name: Встроенные компоненты Политики Azure
+    - name: Встроенные политики службы "Политика Azure"
       displayName: 'samples, policies, definitions'
       href: ./policy-samples.md
+- name: Основные понятия
+  items:
+    - name: Безопасность
+      items:
+        - name: 'Базовые показатели безопасности, учитываемые решением для оценки безопасности Azure'
+          href: security-baseline.md
 - name: Практическое руководство
   items:
     - name: Управление службой Data Lake Analytics
@@ -87,7 +93,7 @@
               href: data-lake-analytics-data-lake-tools-develop-usql-database.md
             - name: Обзор и просмотр заданий
               href: data-lake-analytics-data-lake-tools-view-jobs.md
-            - name: 'Отладка пользовательского кода C#'
+            - name: Отладка пользовательского кода C#
               href: data-lake-analytics-debug-u-sql-jobs.md
             - name: Устранение неполадок в повторяющихся заданиях
               href: data-lake-analytics-data-lake-tools-debug-recurring-job.md

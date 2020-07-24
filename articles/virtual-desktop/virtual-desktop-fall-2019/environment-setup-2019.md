@@ -1,6 +1,6 @@
 ---
-title: Среда виртуальных рабочих столов Windows — Azure
-description: Основные элементы среды виртуальных рабочих столов Windows.
+title: Среда виртуальных рабочих столов Windows (найдет 2019) — Azure
+description: Сведения об основных элементах среды виртуальных рабочих столов Windows (выпуски 2019), например клиентов и пулов узлов.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
@@ -8,14 +8,14 @@ ms.topic: conceptual
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 153532b3c33158ee1a43db7883eb7a9ec621ade7
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 8cb41b4f94b14a94c79b490e38889825fd9d8d1a
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86241681"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87082653"
 ---
-# <a name="windows-virtual-desktop-environment"></a>Среда Виртуального рабочего стола Windows
+# <a name="windows-virtual-desktop-environment-fall-2019-release"></a>Среда виртуальных рабочих столов Windows (выпуск 2019)
 
 >[!IMPORTANT]
 >Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Если вы хотите обеспечить управление объектами Azure Resource Manager для Виртуального рабочего стола Windows, представленными в обновлении за весну 2020 г., см. [эту статью](../environment-setup.md).

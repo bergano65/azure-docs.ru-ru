@@ -4,13 +4,14 @@ description: Дополнительные сведения о подключен
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
-ms.date: 5/6/2019
+ms.date: 07/14/2020
 ms.topic: conceptual
-ms.openlocfilehash: 46aa411826dd3ea578a2d98b0fe631ab0a12ef4a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4214b01f3f3651f8785f8644cf12326bf182bce7
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74769886"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87084183"
 ---
 # <a name="connecting-azure-kubernetes-service-and-azure-database-for-postgresql---single-server"></a>Подключение службы Kubernetes Azure и базы данных Azure для PostgreSQL-Single Server
 
@@ -40,11 +41,6 @@ az aks show --resource-group myResourceGroup --name myAKSCluster --query "nodeRe
 az network nic list --resource-group nodeResourceGroup -o table
 ```
 
-## <a name="open-service-broker-for-azure"></a>Открытый компонент Service Broker для Azure 
-[Open Service Broker для Azure](https://github.com/Azure/open-service-broker-azure/blob/master/README.md) (OSBA) позволяет подготавливать службы Azure непосредственно из Kubernetes или Cloud Foundry. Он представляет собой реализацию [API Open Service Broker](https://www.openservicebrokerapi.org/) для Azure.
-
-С помощью OSBA вы можете создать Базу данных Azure для PostgreSQL и связать ее с кластером AKS, используя машинный язык Kubernetes. Сведения об использовании OSBA с Базой данных Azure для PostgreSQL см. на [сайте GitHub](https://github.com/Azure/open-service-broker-azure/blob/master/docs/modules/postgresql.md). 
-
 
 ## <a name="connection-pooling"></a>Организация пулов соединений
 Пул подключений позволяет свести к минимуму затраты и время, связанные с созданием и закрытием новых подключений к базе данных. Пул — это коллекция подключений, которые можно использовать повторно. 
@@ -52,5 +48,5 @@ az network nic list --resource-group nodeResourceGroup -o table
 С PostgreSQL можно использовать несколько пулов подключений. Один из них — [PgBouncer](https://pgbouncer.github.io/). В Реестре контейнеров Майкрософт доступен упрощенный контейнерный пул PgBouncer, который можно использовать в расширении для объединения подключений AKS к Базе данных Azure для PostgreSQL. Перейдите на [страницу центра Docker](https://hub.docker.com/r/microsoft/azureossdb-tools-pgbouncer/), чтобы просмотреть сведения о получении доступа к этому образу и его использовании. 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
--  [Создание кластера Службы Azure Kubernetes](../aks/kubernetes-walkthrough.md)
+## <a name="next-steps"></a>Дальнейшие действия
+-  [Создание кластера службы Azure Kubernetes](../aks/kubernetes-walkthrough.md)

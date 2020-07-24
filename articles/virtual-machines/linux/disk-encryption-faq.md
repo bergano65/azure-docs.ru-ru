@@ -8,11 +8,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 06/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: d28d7bd85326e8a4cf27dba1f3f605b64477c5aa
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: c0bdc5b9f3d43075cbeba664a5cfb4277c20de57
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83829944"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87082551"
 ---
 # <a name="azure-disk-encryption-for-linux-virtual-machines-faq"></a>Шифрование дисков Azure для виртуальных машин Linux — вопросы и ответы
 
@@ -153,15 +154,15 @@ ms.locfileid: "83829944"
 
 ## <a name="can-i-backup-and-restore-an-encrypted-vm"></a>Можно ли выполнять резервное копирование и восстановление для зашифрованной виртуальной машины? 
 
-Azure Backup предоставляет механизм резервного копирования и восстановления зашифрованных виртуальных машин в пределах одной подписки и одного региона.  Инструкции для этих процессов приводятся в статье [Резервное копирование и восстановление зашифрованной виртуальной машины Azure](https://docs.microsoft.com/azure/backup/backup-azure-vms-encryption).  Восстановление зашифрованной виртуальной машины в другом регионе в настоящее время не поддерживается.  
+Azure Backup предоставляет механизм резервного копирования и восстановления зашифрованных виртуальных машин в пределах одной подписки и одного региона.  Инструкции для этих процессов приводятся в статье [Резервное копирование и восстановление зашифрованной виртуальной машины Azure](../../backup/backup-azure-vms-encryption.md).  Восстановление зашифрованной виртуальной машины в другом регионе в настоящее время не поддерживается.  
 
 ## <a name="where-can-i-go-to-ask-questions-or-provide-feedback"></a>Где можно задать вопрос или оставить отзыв?
 
-Вы можете задать вопрос или оставить отзыв на [странице вопросов и ответов на сайте Майкрософт, посвященной шифрованию дисков Azure](https://docs.microsoft.com/answers/topics/azure-disk-encryption.html).
+Вы можете задать вопрос или оставить отзыв на [странице вопросов и ответов на сайте Майкрософт, посвященной шифрованию дисков Azure](/answers/topics/azure-disk-encryption.html).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Из этого документа вы получили ответы на самые распространенные вопросы, связанные с шифрованием дисков Azure. Дополнительные сведения об этой службе см. в следующих статьях:
 
 - [Шифрование дисков Azure для виртуальных машин IaaS](disk-encryption-overview.md)
-- [Шифрование диска в центре безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-apply-disk-encryption)
-- [Шифрование неактивных данных в Azure](https://docs.microsoft.com/azure/security/fundamentals/encryption-atrest)
+- [Шифрование диска в центре безопасности Azure](../../security-center/security-center-virtual-machine-protection.md)
+- [Шифрование неактивных данных в Azure](../../security/fundamentals/encryption-atrest.md)

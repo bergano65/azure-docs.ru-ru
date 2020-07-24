@@ -7,11 +7,12 @@ ms.reviewer: gamal
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 11/01/2019
-ms.openlocfilehash: 203e5fcaa99f7aebeda34e6968f636ed72851ec8
-ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
+ms.openlocfilehash: 5d0393ab5f2582efa2a4b727543bc799cdb1143e
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85921530"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87082874"
 ---
 # <a name="what-are-wrangling-data-flows"></a>Что такое потоки данных структурирование?
 
@@ -27,7 +28,7 @@ ms.locfileid: "85921530"
 Потоки данных структурирование особенно полезны для инженеров по работе с данными или "интеграторов данных".
 
 > [!NOTE]
-> Поток данных структурирование в настоящее время доступных в общедоступной предварительной версии
+> Поток данных структурирование в настоящее время доступен в общедоступной предварительной версии
 
 ## <a name="use-cases"></a>Варианты использования
 
@@ -45,7 +46,7 @@ ms.locfileid: "85921530"
 
 ## <a name="supported-sources"></a>Поддерживаемые источники
 
-| Соединитель | Формат данных | Authentication type (Тип проверки подлинности) |
+| Соединитель | Формат данных | Тип проверки подлинности |
 | -- | -- | --|
 | [Хранилище BLOB-объектов Azure](connector-azure-blob-storage.md) | CSV, Parquet | Ключ учетной записи |
 | [Azure Data Lake Storage 1-го поколения](connector-azure-data-lake-store.md) | CSV | Субъект-служба |
@@ -67,6 +68,6 @@ ms.locfileid: "85921530"
 
 В настоящее время поток данных структурирование поддерживает запись только в один приемник.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [создать поток данных структурирование](wrangling-data-flow-tutorial.md).

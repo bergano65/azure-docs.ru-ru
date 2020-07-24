@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: how-to
 ms.date: 05/29/2020
 ms.author: wachegha
-ms.openlocfilehash: fd4f57350e97ad38c2c78aec29b1e51d775e8a02
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 4df1aa53c09777ac2470581df07ac132255b005a
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86104118"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87083673"
 ---
 # <a name="add-an-api-to-azure-static-web-apps-preview-with-azure-functions"></a>Добавление API в предварительную версию Статистического веб-приложения Azure с помощью Функций Azure
 
@@ -133,7 +133,7 @@ Visual Studio Code создает проект функций Azure с функ�
 
 ## <a name="run-the-api-locally"></a>Запуск API в локальной среде
 
-Visual Studio Code интегрируется с [Azure Functions Core Tools](https://docs.microsoft.com/azure/azure-functions/functions-run-local), чтобы перед публикацией в Azure можно было запустить этот проект на локальном компьютере разработки.
+Visual Studio Code интегрируется с [Azure Functions Core Tools](../azure-functions/functions-run-local.md), чтобы перед публикацией в Azure можно было запустить этот проект на локальном компьютере разработки.
 
 > [!TIP]
 > Прежде чем продолжать, убедитесь, что все ресурсы, перечисленные в разделе [Предварительные требования](#prerequisites) , установлены.

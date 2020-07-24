@@ -13,20 +13,21 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
-ms.openlocfilehash: ee04fa7120f5510d703d72e662036f4fe952cd66
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 208019bbc86b22443c7d012400d4e4324679aee9
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78330674"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87084472"
 ---
 # <a name="get-started-with-azure-ad-authentication-by-using-the-azure-portal"></a>Приступая к работе с аутентификацией Azure AD с помощью портала Azure
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](../latest/index.yml). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
 
 Узнайте, как использовать аутентификацию Azure Active Directory (Azure AD) для доступа к API служб мультимедиа Azure с помощью портала Azure.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 - Учетная запись Azure. Если у вас нет учетной записи Azure, начните с получения [бесплатной пробной версии](https://azure.microsoft.com/pricing/free-trial/). 
 - Учетная запись служб мультимедиа. Дополнительные сведения см. в статье [Создание учетной записи служб мультимедиа Azure с помощью портала Azure](media-services-portal-create-account.md).
@@ -52,7 +53,7 @@ ms.locfileid: "78330674"
 
 В разделе **Управление приложением AAD и секретным ключом** можно выбрать или создать новое приложение Azure AD и создать секретный ключ. В целях безопасности секретный ключ не отображается после закрытия колонки. Приложение использует идентификатор приложения и секретный ключ проверки подлинности для получения действующего токена для служб мультимедиа.
 
-Необходимо иметь достаточные разрешения для регистрации приложения в арендаторе Azure AD и назначения приложению роли в подписке Azure. Дополнительные сведения см. в разделе [Требуемые разрешения](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#required-permissions).
+Необходимо иметь достаточные разрешения для регистрации приложения в арендаторе Azure AD и назначения приложению роли в подписке Azure. Дополнительные сведения см. в разделе [Требуемые разрешения](../../active-directory/develop/howto-create-service-principal-portal.md#permissions-required-for-registering-an-app).
 
 ### <a name="connect-to-media-services-api"></a>Подключение к API служб мультимедиа
 

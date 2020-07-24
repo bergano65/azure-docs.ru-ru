@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 02/24/2020
 ms.author: cshoe
 ms.custom: tracking-python
-ms.openlocfilehash: 1ff8281a420eb1e967cb9f1d4db620d8f816794b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e30096e84c31f9e73e0ce02daa5765e98bdcd192
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85374242"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87085101"
 ---
 # <a name="azure-cosmos-db-trigger-for-azure-functions-2x-and-higher"></a>Триггер Azure Cosmos DB для функций Azure 2. x и более поздних версий
 
@@ -209,7 +209,7 @@ namespace CosmosDBSamplesV2
 
 # <a name="java"></a>[Java](#tab/java)
 
-В [библиотеке времени выполнения функций Java](https://docs.microsoft.com/java/api/overview/azure/functions/runtime)используйте `@CosmosDBInput` заметку для параметров, считывающих данные из Cosmos DB.
+В [библиотеке времени выполнения функций Java](/java/api/overview/azure/functions/runtime)используйте `@CosmosDBInput` заметку для параметров, считывающих данные из Cosmos DB.
 
 ---
 
@@ -251,7 +251,7 @@ namespace CosmosDBSamplesV2
 
 Триггер не указывает, был ли документ обновлен или вставлен. Вместо этого он представляет сам документ. Если операции обновления и вставки необходимо обрабатывать по-разному, это можно сделать, внедрив поля меток времени для операций обновления и вставки.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Чтение Azure Cosmos DB документа (входная привязка)](./functions-bindings-cosmosdb-v2-input.md)
 - [Сохранение изменений в документе Azure Cosmos DB (Выходная привязка)](./functions-bindings-cosmosdb-v2-output.md)

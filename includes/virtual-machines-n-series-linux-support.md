@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/11/2019
 ms.author: cynthn
 ms.custom: include file
-ms.openlocfilehash: 279f4cb1d8891f64fb01f4f8abb6b23a004c2b4d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 99c8ee79c51205c33d14328530f527ad8e3ff7b4
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84269063"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87085472"
 ---
 ## <a name="supported-distributions-and-drivers"></a>Поддерживаемые дистрибутивы и драйверы
 
@@ -29,9 +29,11 @@ ms.locfileid: "84269063"
 
 Корпорация Майкрософт повторно распространяет установщики драйверов сетки NVIDIA для виртуальных машин серии NV и NVv3, используемых в качестве виртуальных рабочих станций или для виртуальных приложений. Эти драйверы GRID следует устанавливать только на виртуальные машины Azure серии NV под управлением операционных систем, перечисленных в следующей таблице. Эти драйверы содержат лицензии на ПО виртуального графического процессора GRID в Azure. Вам не нужно настраивать сервер лицензий программного обеспечения vGPU NVIDIA.
 
-| Распределение | Драйвер |
+Драйверы сетки, распространяемые Azure, не работают на виртуальных машинах серии, отличных от NV, таких как NC, NCv2, NCv3, ND и NDv2.
+
+| Дистрибутив | Драйвер |
 | --- | -- |
-|Ubuntu 18.04 LTS<br/><br/>Ubuntu 16.04 LTS<br/><br/>Red Hat Enterprise Linux 7,0 до 7,7<br/><br/>7,0 на базе CentOS на 7,7<br/><br/>SUSE Linux Enterprise Server 12 SP2 | NVIDIA GRID 10,1, драйвер ветвей R440|
+|Ubuntu 18.04 LTS<br/><br/>Ubuntu 16.04 LTS<br/><br/>Red Hat Enterprise Linux 7,6 7,8, 8,0, 8,1<br/><br/>CentOS на основе 7,6, 7,7, 8,0, 8 (1911)<br/><br/>SUSE Linux Enterprise Server 12 SP2 | NVIDIA GRID 11, драйвер ветвей R450|
 
 > [!WARNING] 
 > Установка стороннего программного обеспечения на продуктах Red Hat может нарушать условия технической поддержки Red Hat. Ознакомьтесь со [статьей из базы знаний Red Hat](https://access.redhat.com/articles/1067).

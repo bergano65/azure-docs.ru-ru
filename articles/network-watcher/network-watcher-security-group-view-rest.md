@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
-ms.openlocfilehash: 3bf3086d255a6aacfe4001879b3a3f00df2ba219
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 466879daae65b8c7fa896b0ead417c8d5eb51e28
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84738740"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87084353"
 ---
 # <a name="analyze-your-virtual-machine-security-with-security-group-view-using-rest-api"></a>Анализ безопасности виртуальной машины с использованием представления группы безопасности в REST API
 
@@ -25,6 +25,9 @@ ms.locfileid: "84738740"
 > - [PowerShell](network-watcher-security-group-view-powershell.md)
 > - [Azure CLI](network-watcher-security-group-view-cli.md)
 > - [REST API](network-watcher-security-group-view-rest.md)
+
+> [!NOTE]
+> API представления группы безопасности больше не поддерживается и скоро станет устаревшим. Используйте [действующие правила безопасности](https://docs.microsoft.com/azure/network-watcher/network-watcher-security-group-view-overview) , которые предоставляют те же функциональные возможности. 
 
 Представление группы безопасности возвращает настроенные и действующие правила сетевой безопасности, применяемые к виртуальной машине. Эта возможность полезна для аудита и диагностики групп безопасности сети и настроенных на виртуальной машине правил, позволяющих обеспечить разрешение или отклонение трафика соответствующим образом. В этой статье мы покажем, как получить эффективные правила безопасности и применить их к виртуальной машине с помощью REST API.
 
@@ -180,7 +183,7 @@ armclient post "https://management.azure.com/subscriptions/${subscriptionId}/Res
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения об автоматизации проверки групп безопасности сети см. в статье [Auditing Network Security Groups (NSG) with Network Watcher](network-watcher-security-group-view-powershell.md) (Выполнение аудита групп безопасности сети с помощью Наблюдателя за сетями).
 

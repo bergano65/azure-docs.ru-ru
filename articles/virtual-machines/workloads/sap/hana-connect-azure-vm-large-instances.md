@@ -15,15 +15,16 @@ ms.workload: infrastructure
 ms.date: 05/25/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: fb6f88fbfcbd539603e435b11661c428d54f3c34
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3231241e2fbc6e02725b5611d05b9ee4f0f1a35a
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74224731"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87082177"
 ---
 # <a name="connecting-azure-vms-to-hana-large-instances"></a>Подключение виртуальных машин Azure к крупным экземплярам HANA
 
-Статья [Что такое SAP HANA в Azure (большие экземпляры)?](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-overview-architecture) упоминает, что минимальное развертывание крупных экземпляров HANA с уровнем приложений SAP в Azure выглядит следующим образом.
+Статья [Что такое SAP HANA в Azure (большие экземпляры)?](./hana-overview-architecture.md) упоминает, что минимальное развертывание крупных экземпляров HANA с уровнем приложений SAP в Azure выглядит следующим образом.
 
 ![Виртуальная сеть Azure подключена к SAP HANA в Azure (крупные экземпляры) и к локальной сети](./media/hana-overview-architecture/image1-architecture.png)
 
@@ -93,13 +94,13 @@ ms.locfileid: "74224731"
 
 Необязательные диапазоны IP-адресов, которые в конечном итоге необходимо отправить в корпорацию Майкрософт:
 
-- Если вы решили использовать [Global REACH ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-global-reach) , чтобы включить прямую маршрутизацию из локальной среды в единицы крупных экземпляров Hana, необходимо зарезервировать еще один диапазон IP-адресов или 29. Этот диапазон может не перекрываться с любыми другими диапазонами IP-адресов, определенными ранее.
-- Если вы решили использовать [Global REACH ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-global-reach) , чтобы включить прямую маршрутизацию из клиента крупных экземпляров Hana в одном регионе Azure в другой клиент крупных экземпляров Hana в другом регионе Azure, необходимо зарезервировать другой/29 диапазон IP-адресов. Этот диапазон может не перекрываться с любыми другими диапазонами IP-адресов, определенными ранее.
+- Если вы решили использовать [Global REACH ExpressRoute](../../../expressroute/expressroute-global-reach.md) , чтобы включить прямую маршрутизацию из локальной среды в единицы крупных экземпляров Hana, необходимо зарезервировать еще один диапазон IP-адресов или 29. Этот диапазон может не перекрываться с любыми другими диапазонами IP-адресов, определенными ранее.
+- Если вы решили использовать [Global REACH ExpressRoute](../../../expressroute/expressroute-global-reach.md) , чтобы включить прямую маршрутизацию из клиента крупных экземпляров Hana в одном регионе Azure в другой клиент крупных экземпляров Hana в другом регионе Azure, необходимо зарезервировать другой/29 диапазон IP-адресов. Этот диапазон может не перекрываться с любыми другими диапазонами IP-адресов, определенными ранее.
 
 Дополнительные сведения об Global Reach ExpressRoute и использовании крупных экземпляров HANA см. в документах:
 
-- [Сетевая архитектура SAP HANA в Azure (крупные экземпляры)](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-network-architecture)
-- [Подключение виртуальной сети к крупным экземплярам HANA](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-connect-vnet-express-route)
+- [Сетевая архитектура SAP HANA в Azure (крупные экземпляры)](./hana-network-architecture.md)
+- [Подключение виртуальной сети к крупным экземплярам HANA](./hana-connect-vnet-express-route.md)
  
 Необходимо определить и спланировать диапазоны IP-адресов, которые были описаны ранее. Тем не менее передавать все из них в корпорацию Майкрософт не нужно. В корпорацию Майкрософт необходимо отправить следующие диапазоны IP-адресов.
 
@@ -145,6 +146,6 @@ ms.locfileid: "74224731"
 
 Можно также обратиться к последовательности подключения крупных экземпляров HANA, которая описана в документе [SAP HANA on Azure (Large Instances) Setup](https://azure.microsoft.com/resources/sap-hana-on-azure-large-instances-setup/) (Комплексная настройка крупных экземпляров SAP HANA). Многие из следующих действий демонстрируются в примере развертывания в этом документе. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. статью [Подключение виртуальной сети к крупным экземплярам HANA](hana-connect-vnet-express-route.md).

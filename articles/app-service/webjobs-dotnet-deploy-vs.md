@@ -8,12 +8,12 @@ ms.custom: vs-azure
 ms.date: 02/18/2019
 ms.author: glenga
 ms.reviewer: david.ebbo;suwatch;pbatum;naren.soni
-ms.openlocfilehash: 971ab39ddf4b383f92f0cd81e5258ad357e76e99
-ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.openlocfilehash: cf2437443350cf9b21b6abc0d0dd1dbd5d22e41f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85857072"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87083197"
 ---
 # <a name="develop-and-deploy-webjobs-using-visual-studio---azure-app-service"></a>Разработка и развертывание веб-заданий в службе приложений Azure с помощью Visual Studio
 
@@ -30,7 +30,7 @@ ms.locfileid: "85857072"
 > [!NOTE]
 > Веб-задания .NET Core не могут быть связаны с проектами. Если веб-задание необходимо развернуть с помощью приложения, необходимо создать его в [качестве .NET Framework консольного приложения](#webjobs-as-net-framework-console-apps).  
 
-### <a name="deploy-to-azure-app-service"></a>Развертывание в Службе приложений Azure
+### <a name="deploy-to-azure-app-service"></a>Развертывание в службе приложений Azure
 
 Публикация веб-задания .NET Core в службе приложений из Visual Studio использует те же средства, что и публикация ASP.NET Core приложения.
 
@@ -79,7 +79,7 @@ ms.locfileid: "85857072"
 
 ![Диаграмма, отображающая проект веб-задания, связанный с веб-проектом](./media/webjobs-dotnet-deploy-vs/link.png)
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Обязательные условия
 
 Если вы используете Visual Studio 2015, установите [пакет Azure SDK для .NET (Visual Studio 2015)](https://azure.microsoft.com/downloads/).
 
@@ -225,7 +225,7 @@ ms.locfileid: "85857072"
 
 ### <a name="cron-expressions"></a>Выражения CRON
 
-Веб-задания используют те же выражения CRON для планирования, что и триггер таймера в функциях Azure. Дополнительные сведения о поддержке CRON см. в [статье Справочник по триггерам таймера](../azure-functions/functions-bindings-timer.md#ncrontab-expressions).
+Веб-задания используют те же выражения CRON для планирования, что и триггер таймера в функциях Azure. Дополнительные сведения о поддержке CRON см. в статье [триггер таймера для функций Azure](../azure-functions/functions-bindings-timer.md#ncrontab-expressions).
 
 [!INCLUDE [webjobs-cron-timezone-note](../../includes/webjobs-cron-timezone-note.md)]
 
@@ -233,14 +233,14 @@ ms.locfileid: "85857072"
 
 Веб-задания поддерживают следующие параметры:
 
-| **Параметр** | **Type**  | **Описание** |
+| **Параметр** | **Тип**  | **Описание** |
 | ----------- | --------- | --------------- |
 | `is_in_place` | Все | Позволяет выполнять задание на месте без его первоначального копирования во временную папку. Дополнительные сведения см. в разделе [Рабочий каталог](https://github.com/projectkudu/kudu/wiki/WebJobs#webjob-working-directory)веб-заданий. |
 | `is_singleton` | С задержкой | Запускайте веб-задания только в одном экземпляре при масштабировании. Дополнительные сведения см. в разделе [Задание непрерывного задания как singleton](https://github.com/projectkudu/kudu/wiki/WebJobs-API#set-a-continuous-job-as-singleton). |
 | `schedule` | Активируемые | Запуск веб-задания по расписанию на основе CRON. Дополнительные сведения см. в [статье Справочник по триггерам таймера](../azure-functions/functions-bindings-timer.md#ncrontab-expressions). |
 | `stopping_wait_time`| Все | Позволяет управлять поведением при завершении работы. Дополнительные сведения см. в разделе [корректное завершение работы](https://github.com/projectkudu/kudu/wiki/WebJobs#graceful-shutdown). |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Подробнее о пакете SDK веб-заданий](webjobs-sdk-how-to.md)

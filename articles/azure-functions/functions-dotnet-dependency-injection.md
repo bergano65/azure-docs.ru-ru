@@ -6,18 +6,18 @@ ms.topic: conceptual
 ms.date: 09/05/2019
 ms.author: cshoe
 ms.reviewer: jehollan
-ms.openlocfilehash: bb9783b38185940f0e75e888c3bc69a1edcc6cbb
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 02cb862c5ec6f75d546aabcd6e8ac97a4de961a4
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86249263"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87082959"
 ---
 # <a name="use-dependency-injection-in-net-azure-functions"></a>Использование внедрения зависимостей в Функциях Azure .NET
 
-Функции Azure поддерживают шаблон разработки программного обеспечения с внедрением зависимостей (DI), который является приемом [инверсии управления (IoC)](https://docs.microsoft.com/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion) между классами и их зависимостями.
+Функции Azure поддерживают шаблон разработки программного обеспечения с внедрением зависимостей (DI), который является приемом [инверсии управления (IoC)](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion) между классами и их зависимостями.
 
-- Внедрение зависимостей в Функциях Azure основано на функциях внедрения зависимостей .NET Core. Рекомендуется ознакомиться с [Внедрением зависимостей .NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection). Существуют различия в переопределении зависимостей и считывании значений конфигурации, если служба Функций Azure использует план потребления.
+- Внедрение зависимостей в Функциях Azure основано на функциях внедрения зависимостей .NET Core. Рекомендуется ознакомиться с [Внедрением зависимостей .NET Core](/aspnet/core/fundamentals/dependency-injection). Существуют различия в переопределении зависимостей и считывании значений конфигурации, если служба Функций Azure использует план потребления.
 
 - Поддержка внедрения зависимостей появилась в Функциях Azure 2.x.
 
@@ -115,7 +115,7 @@ namespace MyNamespace
 
 ## <a name="service-lifetimes"></a>Время существования служб
 
-Приложения Функций Azure предоставляют те же самые времена существования служб, что и [внедрение зависимостей ASP.NET](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection#service-lifetimes). Для приложения Функций различные времена существования службы ведут себя следующим образом.
+Приложения Функций Azure предоставляют те же самые времена существования служб, что и [внедрение зависимостей ASP.NET](/aspnet/core/fundamentals/dependency-injection#service-lifetimes). Для приложения Функций различные времена существования службы ведут себя следующим образом.
 
 - **Временная**: временные службы создаются при каждом запросе службы.
 - **С заданной областью**: время существования службы с заданной областью соответствует времени выполнения функции. Службы с заданной областью создаются один раз для каждого выполнения. Последующие запросы к этой службе во время выполнения повторно используют существующий экземпляр службы.
@@ -125,7 +125,7 @@ namespace MyNamespace
 
 ## <a name="logging-services"></a>Службы ведения журналов
 
-Если вам нужен собственный поставщик ведения журнала, зарегистрируйте пользовательский тип в качестве экземпляра [`ILoggerProvider`](https://docs.microsoft.com/dotnet/api/microsoft.extensions.logging.iloggerfactory) , который доступен в пакете NuGet [Microsoft. Extensions. Logging. абстракций](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Abstractions/) .
+Если вам нужен собственный поставщик ведения журнала, зарегистрируйте пользовательский тип в качестве экземпляра [`ILoggerProvider`](/dotnet/api/microsoft.extensions.logging.iloggerfactory) , который доступен в пакете NuGet [Microsoft. Extensions. Logging. абстракций](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Abstractions/) .
 
 Application Insights автоматически добавляется Функциями Azure.
 
@@ -250,7 +250,7 @@ public class HttpTrigger
 }
 ```
 
-Дополнительные сведения о работе с параметрами см. в [Шаблон параметров в ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/configuration/options).
+Дополнительные сведения о работе с параметрами см. в [Шаблон параметров в ASP.NET Core](/aspnet/core/fundamentals/configuration/options).
 
 > [!WARNING]
 > Не пытайтесь считывать значения из таких файлов, как *local.settings.json* или *appsettings.{environment}.json*, в плане потребления. Значения, считываемые из этих файлов, связанных с триггерами, недоступны при масштабировании приложения, так как инфраструктура размещения не имеет доступа к сведениям о конфигурации, так как контроллер масштабирования создает новые экземпляры приложения.

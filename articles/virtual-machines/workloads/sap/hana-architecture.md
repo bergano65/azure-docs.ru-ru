@@ -13,11 +13,12 @@ ms.workload: infrastructure
 ms.date: 05/25/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 041da4198b0bdd040a4916008a1135aa2e2a5f7d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fa059ec8159779969c7ef7a5f4c97f3e985993a9
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77614521"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87082194"
 ---
 # <a name="sap-hana-large-instances-architecture-on-azure"></a>Архитектура SAP HANA (крупные экземпляры) в Azure
 
@@ -40,7 +41,7 @@ ms.locfileid: "77614521"
 
    Сведения для приложений и баз данных SAP NetWeaver, которые могут выполняться в Azure, см. в примечании [SAP № 1928533 о поддерживаемых продуктах и типах виртуальных машин Azure](https://launchpad.support.sap.com/#/notes/1928533). См. документацию по развертыванию решений SAP в Azure:
 
-  -  [Выполнение сценариев рабочей нагрузки SAP на виртуальных машинах Windows](../../virtual-machines-windows-sap-get-started.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+  -  [Выполнение сценариев рабочей нагрузки SAP на виртуальных машинах Windows](./get-started.md?toc=/azure/virtual-machines/linux/toc.json)
   -  [Размещение и выполнение сценариев рабочей нагрузки SAP с помощью Azure](get-started.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
 - **Левая часть:** показано сертифицированное оборудование SAP HANA TDI в стеке крупных экземпляров Azure. Единицы крупных экземпляров HANA подключаются к виртуальным сетям подписки Azure с помощью той же технологии, что и подключение из локальной среды в Azure. Начиная с мая 2019, была введена оптимизация, позволяющая обмениваться данными между единицами крупных экземпляров HANA и виртуальными машинами Azure без участия шлюза ExpressRoute. Эта оптимизация, называемая быстрым путем ExpressRoute, отображается в этой архитектуре (красные линии). 

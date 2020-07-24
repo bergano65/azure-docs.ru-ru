@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 05/18/2020
-ms.openlocfilehash: ffbc850c580daee5890f9c75021cc518918d098e
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.openlocfilehash: 073a92f07d17614cb386c5c33a8058af9b59aaea
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86145375"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87084081"
 ---
 # <a name="set-up-a-connection-to-an-azure-storage-account-using-a-managed-identity-preview"></a>Настройка подключения к учетной записи хранения Azure с использованием управляемого удостоверения (предварительная версия)
 
@@ -53,17 +53,19 @@ ms.locfileid: "86145375"
     ![Добавление назначения роли](./media/search-managed-identities/add-role-assignment-storage.png "Добавление назначения роли")
 
 4. Выберите нужные роли в зависимости от типа учетной записи хранения, которую вы намерены индексировать.
-    1. Для хранилища BLOB-объектов Azure службу поиска нужно добавить в роли для **чтения и доступа к данным** и **чтения данных BLOB-объекта хранилища**.
-    1. Для Azure Data Lake Storage 2-го поколения службу поиска нужно добавить в роли для **чтения и доступа к данным** и **чтения данных BLOB-объекта хранилища**.
-    1. Для хранилища таблиц службу поиска нужно добавить в роль для **чтения и доступа к данным**.
+    1. Для хранилища BLOB-объектов Azure необходимо добавить службу поиска в роль **читателя данных BLOB-объекта хранилища** .
+    1. Azure Data Lake Storage 2-го поколения требует, чтобы служба поиска была добавлена в роль **читателя данных BLOB-объекта хранилища** .
+    1. Для хранилища таблиц Azure необходимо добавить службу поиска в роль **чтения и доступа к данным** .
 5.  В поле **Назначение доступа к** сохраните выбранное значение **Пользователь, группа или субъект-служба Azure AD**.
 6.  Найдите службу поиска, выберите ее и щелкните **Сохранить**.
 
+    Пример для хранилища BLOB-объектов Azure и Azure Data Lake Storage 2-го поколения:
+
+    ![Назначение роли для чтения данных BLOB-объектов хранилища](./media/search-managed-identities/add-role-assignment-storage-blob-data-reader.png "Назначение роли для чтения данных BLOB-объектов хранилища")
+
+    Пример для хранилища таблиц Azure:
+
     ![Назначение роли для чтения и доступа к данным](./media/search-managed-identities/add-role-assignment-reader-and-data-access.png "Назначение роли для чтения и доступа к данным")
-
-Обратите внимание, что при подключении к хранилищу BLOB-объектов Azure или Azure Data Lake Storage 2-го поколения необходимо назначить еще и роль для **чтения данных BLOB-объектов хранилища**.
-
-![Назначение роли для чтения данных BLOB-объектов хранилища](./media/search-managed-identities/add-role-assignment-storage-blob-data-reader.png "Назначение роли для чтения данных BLOB-объектов хранилища")
 
 ### <a name="3---create-the-data-source"></a>3\. Создание источника данных
 
@@ -95,7 +97,7 @@ api-key: [admin key]
 }   
 ```
 
-Портал Azure и [пакет SDK для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.datasource?view=azure-dotnet) также поддерживают строку подключения с управляемым удостоверением. Для портала Azure требуется флаг компонента. Он будет предоставлен после регистрации на использование предварительной версии, которую можно выполнить по ссылке в начале этой страницы. 
+Портал Azure и [пакет SDK для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.datasource?view=azure-dotnet) также поддерживают строку подключения с управляемым удостоверением. Для портала Azure требуется флаг компонента, который будет предоставлен после регистрации для использования предварительной версии, которую можно выполнить по ссылке в начале этой страницы. 
 
 ### <a name="4---create-the-index"></a>4\. Создание индекса
 
@@ -144,7 +146,7 @@ api-key: [admin key]
 
 Дополнительные сведения об API создания индексатора см. в разделе [Создание индексатора](https://docs.microsoft.com/rest/api/searchservice/create-indexer).
 
-Дополнительные сведения об определении расписания для индексаторов см. в статье [Планирование расписания для индексаторов службы "Когнитивный поиск Azure"](search-howto-schedule-indexers.md).
+Дополнительные сведения об определении расписаний индексаторов для Когнитивного поиска Azure см. [здесь](search-howto-schedule-indexers.md).
 
 ## <a name="see-also"></a>См. также раздел
 

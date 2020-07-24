@@ -8,17 +8,18 @@ ms.topic: conceptual
 ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: af5e511cbf273bc4e4fa0a08d089a955426fe75c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: caa3717fdf915e205c1a4f82f4e199346ca29fcb
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75454193"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87082822"
 ---
 # <a name="use-the-opc-vault-certificate-management-service"></a>Использование службы управления сертификатами хранилища OPC
 
 В этой статье описывается регистрация приложений и выдача подписанных сертификатов приложений для устройств OPC UA.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 ### <a name="deploy-the-certificate-management-service"></a>Развертывание службы управления сертификатами
 
@@ -37,7 +38,7 @@ ms.locfileid: "75454193"
 
 1. Откройте службу сертификации `https://myResourceGroup-app.azurewebsites.net` и выполните вход.
 2. Перейдите к разделу **Регистрация новых**. Для регистрации приложения пользователю необходимо иметь по крайней мере назначенную роль модуля записи.
-2. Форма ввода соответствует соглашениям об именовании в OPC UA. Например, на следующем снимке экрана показаны параметры примера [эталонного сервера OPC UA](https://github.com/OPCFoundation/UA-.NETStandard/tree/master/SampleApplications/Workshop/Reference) в .NET Standardном стеке OPC UA:
+2. Форма ввода соответствует соглашениям об именовании в OPC UA. Например, на следующем снимке экрана показаны параметры примера [эталонного сервера OPC UA](https://github.com/OPCFoundation/UA-.NETStandard/tree/master/Applications/ReferenceServer) в .NET Standardном стеке OPC UA:
 
    ![Снимок экрана с регистрацией эталонного сервера UA](media/howto-opc-vault-secure/reference-server-registration.png "Регистрация эталонного сервера UA")
 
@@ -101,7 +102,7 @@ ms.locfileid: "75454193"
 
 Теперь устройство OPC UA готово к взаимодействии с другими устройствами OPC UA, защищенными сертификатами, подписанными ЦС, без дальнейшей настройки.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали, как защитить устройства OPC UA, вы можете:
 

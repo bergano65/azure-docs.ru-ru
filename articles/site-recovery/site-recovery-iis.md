@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 11/27/2018
 ms.author: mayg
-ms.openlocfilehash: aece41329d6481b8ad15090a834c8758f86abdc2
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: 7a4408b54b663b2cd8abc22772ac1b799ea50de0
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86131336"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87083775"
 ---
 # <a name="set-up-disaster-recovery-for-a-multi-tier-iis-based-web-application"></a>Настройка аварийного восстановления для многоуровневого веб-приложения на основе IIS
 
@@ -26,7 +26,7 @@ ms.locfileid: "86131336"
 
 В этой статье описывается защита веб-приложения на основе служб IIS с помощью [Azure Site Recovery](site-recovery-overview.md). В ней рассматриваются передовые методы репликации трехуровневого веб-приложения на основе IIS в Azure, выполнение отработки аварийного восстановления и выполнение отработки отказа приложения в Azure.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Прежде чем начать, необходимо знать, как выполнять следующие задачи:
 
@@ -62,7 +62,7 @@ ms.locfileid: "86131336"
 --- | --- | ---
 Hyper-V | Да | Да
 VMware | Да | Да
-Физический сервер | нет | Да
+Физический сервер | Нет | Да
 Azure|Н/Д|Да
 
 ## <a name="replicate-virtual-machines"></a>Репликация виртуальных машин
@@ -73,7 +73,7 @@ Azure|Н/Д|Да
 
 ![Снимок экрана, на котором показано, как задать целевой IP-адрес в области вычислений и сети Site Recovery](./media/site-recovery-active-directory/dns-target-ip.png)
 
-## <a name="create-a-recovery-plan"></a>Создайте план восстановления
+## <a name="create-a-recovery-plan"></a>Создание плана восстановления
 План восстановления позволяет воссоздать последовательность различных уровней в многоуровневом приложении во время отработки отказа. Благодаря этому обеспечивается целостность на уровне приложения. При создании плана восстановления для многоуровневого веб-приложения выполните действия, описанные в [этой статье](site-recovery-create-recovery-plans.md).
 
 ### <a name="add-virtual-machines-to-failover-groups"></a>Добавление виртуальных машин в группы отработки отказа
@@ -102,12 +102,14 @@ Azure|Н/Д|Да
 
 Если строка подключения ссылается на виртуальную машину базы данных с помощью IP-адреса, ее необходимо обновить после отработки отказа. Например, приведенная ниже строка подключения указывает на базу данных с IP-адресом 127.0.1.2.
 
-        <?xml version="1.0" encoding="utf-8"?>
-        <configuration>
-        <connectionStrings>
-        <add name="ConnStringDb1" connectionString="Data Source= 127.0.1.2\SqlExpress; Initial Catalog=TestDB1;Integrated Security=False;" />
-        </connectionStrings>
-        </configuration>
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+<connectionStrings>
+<add name="ConnStringDb1" connectionString="Data Source= 127.0.1.2\SqlExpress; Initial Catalog=TestDB1;Integrated Security=False;" />
+</connectionStrings>
+</configuration>
+```
 
 Чтобы обновить строку подключения на веб-уровне, добавьте [скрипт обновления для подключения IIS](https://gallery.technet.microsoft.com/Update-IIS-connection-2579aadc) в группу 3 в плане восстановления.
 

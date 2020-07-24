@@ -17,12 +17,12 @@ ms.date: 01/04/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: ef5eedaa903480ae670f9bc48d0af89744a99d22
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d91b7816ee05d4b5ef5266b4c2556abdc1175b87
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "71213000"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87084268"
 ---
 # <a name="how-to-send-scheduled-notifications"></a>Практическое руководство. Отправка запланированных уведомлений
 
@@ -30,7 +30,7 @@ ms.locfileid: "71213000"
 
 
 ## <a name="schedule-your-notifications"></a>Планирование уведомлений
-При отправке уведомления просто используйте [ `ScheduledNotification` класс](https://msdn.microsoft.com/library/microsoft.azure.notificationhubs.schedulednotification.aspx) в пакете SDK для центров уведомлений, как показано в следующем примере:
+При отправке уведомления просто используйте [ `ScheduledNotification` класс](/dotnet/api/microsoft.azure.notificationhubs.schedulednotification?view=azure-dotnet#microsoft_azure_notificationhubs_schedulednotification) в пакете SDK для центров уведомлений, как показано в следующем примере:
 
 ```csharp
 Notification notification = new AppleNotification("{\"aps\":{\"alert\":\"Happy birthday!\"}}");
@@ -54,4 +54,4 @@ await hub.CancelNotificationAsync(scheduled.ScheduledNotificationId);
  - [Руководство по отправке push-уведомлений на конкретные устройства Android с помощью Центров уведомлений Azure и Google Cloud Messaging](notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns.md)
  - [Отправка локализованных push-уведомлений](notification-hubs-windows-store-dotnet-xplat-localized-wns-push-notification.md)
  - [Отправка push-уведомлений определенным пользователям](notification-hubs-aspnet-backend-windows-dotnet-wns-notification.md) 
- - [Отправка push-уведомлений на основе расположения](notification-hubs-push-bing-spatial-data-geofencing-notification.md)
+ - [Отправка push-уведомлений с определением геозон с помощью Центров уведомлений Azure и Bing Spatial Data](notification-hubs-push-bing-spatial-data-geofencing-notification.md)

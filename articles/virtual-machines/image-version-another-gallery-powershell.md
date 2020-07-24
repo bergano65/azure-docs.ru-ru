@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: 1fe26a880979a431e456d9a1819dfd1b18d25f77
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.openlocfilehash: 48f0a247ed023583c8489994439a790944b90fdc
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86221227"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87082602"
 ---
 # <a name="copy-an-image-from-another-gallery-using-powershell"></a>Копирование изображения из другой коллекции с помощью PowerShell
 
@@ -100,7 +100,7 @@ Get-AzGalleryImageDefinition `
 }
 ```
 
-Создайте новое определение образа в коллекции назначения с помощью командлета [New-азгаллеримажедефинитион](https://docs.microsoft.com/powershell/module/az.compute/new-azgalleryimageversion) и сведений из выходных данных выше.
+Создайте новое определение образа в коллекции назначения с помощью командлета [New-азгаллеримажедефинитион](/powershell/module/az.compute/new-azgalleryimageversion) и сведений из выходных данных выше.
 
 
 В этом примере определение образа называется *мидестинатионимгдеф* в коллекции с именем *мидестинатионгаллери*.
@@ -123,7 +123,7 @@ $destinationImgDef  = New-AzGalleryImageDefinition `
 
 ## <a name="create-the-image-version"></a>Создание версии образа
 
-Создайте версию образа с помощью команды [New-азгаллеримажеверсион](https://docs.microsoft.com/powershell/module/az.compute/new-azgalleryimageversion). Необходимо передать идентификатор исходного образа в `--managed-image` параметре для создания версии образа в коллекции назначения. 
+Создайте версию образа с помощью команды [New-азгаллеримажеверсион](/powershell/module/az.compute/new-azgalleryimageversion). Необходимо передать идентификатор исходного образа в `--managed-image` параметре для создания версии образа в коллекции назначения. 
 
 Допустимыми знаками для имени версии образа являются цифры и точки. Числа должны быть в диапазоне 32-битного целого числа. Формат: *основной номер версии*.*дополнительный номер версии*.*исправление*.
 
@@ -156,7 +156,7 @@ $job.State
 > [!NOTE]
 > Прежде чем использовать тот же управляемый образ для создания другой версии образа, необходимо дождаться завершения сборки и репликации версии образа.
 >
-> Вы также можете сохранить образ в хранилище класса Premium, добавив `-StorageAccountType Premium_LRS`, или [хранилище, избыточное между зонами](https://docs.microsoft.com/azure/storage/common/storage-redundancy-zrs), добавив `-StorageAccountType Standard_ZRS` при создании версии образа.
+> Вы также можете сохранить образ в хранилище класса Premium, добавив `-StorageAccountType Premium_LRS`, или [хранилище, избыточное между зонами](../storage/common/storage-redundancy.md), добавив `-StorageAccountType Standard_ZRS` при создании версии образа.
 >
 
 

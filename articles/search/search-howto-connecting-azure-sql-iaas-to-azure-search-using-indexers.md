@@ -7,12 +7,13 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 11/04/2019
-ms.openlocfilehash: bf25c74f0190bc67e7da703e242d5d4bb3e299f5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/12/2020
+ms.openlocfilehash: eacfc75b31efaf9a53ed116ed9e75983146d8575
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84020648"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87084132"
 ---
 # <a name="configure-a-connection-from-an-azure-cognitive-search-indexer-to-sql-server-on-an-azure-vm"></a>Настройка подключения из индексатора Когнитивный поиск Azure для SQL Server на виртуальной машине Azure
 
@@ -90,6 +91,6 @@ IP-адрес можно узнать, обратившись к полному 
 #### <a name="include-the-azure-cognitive-search-portal-ip-addresses"></a>Включение IP-адресов портала Когнитивный поиск Azure
 Если вы используете портал Azure для создания индексатора, логике портала Когнитивный поиск Azure также требуется доступ к виртуальной машине SQL Azure во время создания. IP-адреса портала Когнитивный поиск Azure можно найти с помощью команды ping `stamp2.search.ext.azure.com` .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 После настройки вы можете указать SQL Server на виртуальной машине Azure в качестве источника данных для индексатора Azure Когнитивный поиск. Дополнительные сведения см. [в статье подключение базы данных SQL Azure к azure когнитивный Поиск с помощью индексаторов](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md) .
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
-ms.openlocfilehash: 9b81d58bbb79b05ea54af8b3f06f29b4a45a6555
-ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.openlocfilehash: 2be430fc032acd94f851072f80d14a43638c8863
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86058169"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87084591"
 ---
 # <a name="configure-a-content-key-authorization-policy"></a>Настройка политики авторизации ключей содержимого
 [!INCLUDE [media-services-selector-content-key-auth-policy](../../../includes/media-services-selector-content-key-auth-policy.md)]
@@ -57,7 +57,7 @@ ms.locfileid: "86058169"
 ### <a name="token-restriction"></a>Ограничение по маркеру
 Чтобы выбрать политику ограничения по токену, нажмите кнопку **TOKEN** (Токен).
 
-При ограничении этого типа к политике должен прилагаться токен, выданный службой токенов безопасности. Службы мультимедиа поддерживают маркеры в форматах простого веб-маркера ([SWT](https://msdn.microsoft.com/library/gg185950.aspx#BKMK_2)) и JSON Web Token (JWT). Дополнительные сведения см. в статье [JWT token Authentication in Azure Media Services and Dynamic Encryption](http://www.gtrifonov.com/2015/01/03/jwt-token-authentication-in-azure-media-services-and-dynamic-encryption/) (Проверка подлинности токена JWT в Службах мультимедиа Azure и динамическое шифрование).
+При ограничении этого типа к политике должен прилагаться токен, выданный службой токенов безопасности. Службы мультимедиа поддерживают маркеры в форматах простого веб-маркера ([SWT](/previous-versions/azure/azure-services/gg185950(v=azure.100)#BKMK_2)) и JSON Web Token (JWT). Дополнительные сведения см. в статье [JWT token Authentication in Azure Media Services and Dynamic Encryption](http://www.gtrifonov.com/2015/01/03/jwt-token-authentication-in-azure-media-services-and-dynamic-encryption/) (Проверка подлинности токена JWT в Службах мультимедиа Azure и динамическое шифрование).
 
 Службы мультимедиа не предоставляют службу маркеров безопасности. Можно создать настраиваемую службу токенов безопасности для выдачи токенов. Чтобы создать маркер, подписанный указанным ключом, и получить утверждения, указанные в конфигурации ограничения по маркерам, должна быть настроена служба маркеров безопасности. Если маркер является допустимым и утверждения маркера соответствуют утверждениям, настроенным для ключа содержимого, служба доставки ключей для служб мультимедиа возвращает клиенту ключ шифрования.
 
@@ -86,7 +86,7 @@ ms.locfileid: "86058169"
 
 * Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
 ## <a name="provide-feedback"></a>Отзывы
@@ -94,4 +94,3 @@ ms.locfileid: "86058169"
 
 [open_policy]: ./media/media-services-portal-configure-content-key-auth-policy/media-services-protect-content-with-open-restriction.png
 [token_policy]: ./media/media-services-key-authorization-policy/media-services-protect-content-with-token-restriction.png
-

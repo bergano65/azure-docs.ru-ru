@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: cshoe
-ms.openlocfilehash: 1f08d6b8a2ce2381c3bc85891a292ac05561cf34
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: be406744dc9752dd3c924c636e85f43e133c1cca
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85832565"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87085084"
 ---
 # <a name="strategies-for-testing-your-code-in-azure-functions"></a>Методика тестирования кода с помощью Функций Azure
 
@@ -40,13 +40,13 @@ ms.locfileid: "85832565"
 3. [Создайте функцию таймера на основе шаблона](./functions-create-scheduled-function.md) и назовите ее **митимертригжер**.
 4. [Создайте тестовое приложение xUnit](https://xunit.github.io/docs/getting-started-dotnet-core) в решении и назовите его **functions. Tests**.
 5. Использование NuGet для добавления ссылки из тестового приложения в [Microsoft. AspNetCore. MVC](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc/)
-6. [Ссылка на приложение *функций* ](https://docs.microsoft.com/visualstudio/ide/managing-references-in-a-project?view=vs-2017) из приложения *functions. Tests* .
+6. [Ссылка на приложение *функций* ](/visualstudio/ide/managing-references-in-a-project?view=vs-2017) из приложения *functions. Tests* .
 
 ### <a name="create-test-classes"></a>Создание тестовых классов
 
 Теперь, когда проекты созданы, можно создать классы, используемые для выполнения автоматических тестов.
 
-Каждая функция принимает экземпляр [ILogger](https://docs.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger) для обработки ведения журнала сообщений. Некоторые тесты либо не ведут журнал сообщений, либо для них не имеет значения, как это происходит. Другие тесты должны оценивать сообщения, записанные в журнал, чтобы определить, проходит ли тест.
+Каждая функция принимает экземпляр [ILogger](/dotnet/api/microsoft.extensions.logging.ilogger) для обработки ведения журнала сообщений. Некоторые тесты либо не ведут журнал сообщений, либо для них не имеет значения, как это происходит. Другие тесты должны оценивать сообщения, записанные в журнал, чтобы определить, проходит ли тест.
 
 Вы создадите новый класс с именем `ListLogger` , содержащий внутренний список сообщений для оценки во время тестирования. Для реализации требуемого `ILogger` интерфейса классу требуется область. Следующий класс разимитирует область для тестовых случаев, передаваемых в `ListLogger` класс.
 
@@ -192,7 +192,7 @@ namespace Functions.Tests
 
 Класс `TestFactory` реализует следующие элементы.
 
-- **Данные**. это свойство возвращает коллекцию образцов данных [IEnumerable](https://docs.microsoft.com/dotnet/api/system.collections.ienumerable) . Пары "ключ-значение" представляют собой значения, которые передаются в строку запроса.
+- **Данные**. это свойство возвращает коллекцию образцов данных [IEnumerable](/dotnet/api/system.collections.ienumerable) . Пары "ключ-значение" представляют собой значения, которые передаются в строку запроса.
 
 - **Креатедиктионари**: Этот метод принимает пару "ключ-значение" в качестве аргументов и возвращает новый объект, `Dictionary` используемый для `QueryCollection` представления значений строки запроса.
 
@@ -380,7 +380,7 @@ npm test
 
 Затем в тесте установите точку останова и нажмите клавишу **F5**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали, как записывать автоматизированные тесты для функций, изучите следующие ресурсы.
 

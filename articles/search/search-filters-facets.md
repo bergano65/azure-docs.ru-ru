@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 082575a67ea43d62f322e177cff087e5bd572c27
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 852d8f8f85536dc62dd792e5727dd7ec0571ba29
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "72792894"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87084217"
 ---
 # <a name="how-to-build-a-facet-filter-in-azure-cognitive-search"></a>Как создать фильтр аспекта в Azure Когнитивный поиск 
 
@@ -28,7 +28,7 @@ ms.locfileid: "72792894"
 
 Аспекты являются динамическими и возвращаются в запросе. В ответах поиска приводятся фасетные категории, используемые для навигации по результатам. Если вы не знакомы с аспектами, ниже приведен пример структуры фасетной навигации.
 
-  ![](./media/search-filters-facets/facet-nav.png)
+  ![Изображение, показывающее диалоговое окно поиска с отфильтрованными результатами поиска, сгруппированными по бизнес-наименованиям. Стрелка указывает, что результаты представляют собой аспекты, отображаемые в структуре навигации аспекта.](./media/search-filters-facets/facet-nav.png)
 
 Хотите подробнее узнать о фасетной навигации? См. статью [как реализовать аспектную навигацию в Azure когнитивный Поиск](search-faceted-navigation.md).
 
@@ -121,7 +121,7 @@ if (!String.IsNullOrEmpty(categoryFacet))
 
 Хотя это распространенный вариант использования, структура фасетной навигации в настоящее время не предоставляет этого изначально. Разработчики, которым требуются статические аспекты, обычно обходят ограничение, выполняя два отфильтрованных запроса: один в пределах результатов, а другой для создания статического списка аспектов для навигации.
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также статью
 
 + [Фильтры в Когнитивный поиск Azure](search-filters.md)
 + [Create Index (Azure Search Service REST API)](https://docs.microsoft.com/rest/api/searchservice/create-index) (Создание индексов (REST API службы "Поиск Azure")).

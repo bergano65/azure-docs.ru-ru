@@ -6,12 +6,12 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.date: 10/08/2018
 ms.author: guybo
-ms.openlocfilehash: f700dec6486bad9e7024d7c908a70dd0ff2b342c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fc18c278754afd4bb08d564a2f82680fd94bf866
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80066761"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87082585"
 ---
 # <a name="information-for-non-endorsed-distributions"></a>Информация о нерекомендованных дистрибутивах
 
@@ -24,17 +24,18 @@ ms.locfileid: "80066761"
 
 Мы рекомендуем начать с одного из [рекомендованных дистрибутивов Linux в Azure](endorsed-distros.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json). В следующих статьях описывается подготовка различных рекомендованных дистрибутивов Linux, которые поддерживаются в Azure:
 
-* **[Дистрибутивы на основе CentOS](create-upload-centos.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)**
-* **[Debian Linux](debian-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)**
-* **[Oracle Linux](oracle-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)**
-* **[Red Hat Enterprise Linux](redhat-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)**
-* **[SLES и OpenSUSE](suse-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)**
-* **[Ubuntu](create-upload-ubuntu.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)**
+- [Подготовка виртуальной машины на основе CentOS для Azure](create-upload-centos.md)
+- [Подготовка виртуального жесткого диска Debian для Azure](debian-create-upload-vhd.md)
+- [Flatcar Container Linux](flatcar-create-upload-vhd.md)
+- [Oracle Linux](oracle-create-upload-vhd.md)
+- [Red Hat Enterprise Linux](redhat-create-upload-vhd.md)
+- [Подготовка виртуальной машины SLES или openSUSE для Azure](suse-create-upload-vhd.md)
+- [Ubuntu](create-upload-ubuntu.md)
 
 В этой статье приводятся общие рекомендации по работе с дистрибутивом Linux в Azure.
 
 ## <a name="general-linux-installation-notes"></a>Общие замечания по установке Linux
-* Azure не поддерживает формат виртуального жесткого диска Hyper-V (VHDX) и может работать только с *фиксированными виртуальными жесткими дисками*.  Диск можно преобразовать в формат VHD с помощью диспетчера Hyper-V или командлета [Convert-VHD](https://docs.microsoft.com/powershell/module/hyper-v/convert-vhd) . Если вы используете VirtualBox, при создании диска нужно выбрать **фиксированный размер** вместо динамически выделяемого, который используется по умолчанию.
+* Azure не поддерживает формат виртуального жесткого диска Hyper-V (VHDX) и может работать только с *фиксированными виртуальными жесткими дисками*.  Диск можно преобразовать в формат VHD с помощью диспетчера Hyper-V или командлета [Convert-VHD](/powershell/module/hyper-v/convert-vhd) . Если вы используете VirtualBox, при создании диска нужно выбрать **фиксированный размер** вместо динамически выделяемого, который используется по умолчанию.
 * Azure поддерживает виртуальные машины Gen1 (Boot BIOS) & Gen2 (Загрузка UEFI).
 * Максимально допустимый размер виртуального жесткого диска составляет 1023 ГБ.
 * При установке системы Linux рекомендуется использовать стандартные разделы, а не диспетчер логических томов (LVM), который часто используется по умолчанию при установке. Это позволит избежать конфликта имен LVM c клонированными виртуальными машинами, особенно если диск с OC может быть подключен к другой идентичной виртуальной машине в целях устранения неполадок. Для дисков данных можно использовать [LVM](configure-lvm.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) или [RAID](configure-raid.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
@@ -66,7 +67,7 @@ ms.locfileid: "80066761"
 
 * Виртуальный жесткий диск http: \/ / \<mystorageaccount> . BLOB.Core.Windows.NET/VHDs/MyLinuxVM.VHD имеет неподдерживаемый размер 21475270656 байт. Размер должен задаваться целым числом (в МБ).
 
-В таком случае вы можете изменить размер виртуальной машины с помощью консоли диспетчера Hyper-V или командлета Powershell [Resize-VHD](https://technet.microsoft.com/library/hh848535.aspx).  Если вы работаете не в среде Windows, воспользуйтесь командой `qemu-img` для преобразования (если необходимо) и изменения размера VHD.
+В таком случае вы можете изменить размер виртуальной машины с помощью консоли диспетчера Hyper-V или командлета Powershell [Resize-VHD](/powershell/module/hyper-v/resize-vhd?view=win10-ps).  Если вы работаете не в среде Windows, воспользуйтесь командой `qemu-img` для преобразования (если необходимо) и изменения размера VHD.
 
 > [!NOTE]
 > В команде qemu-img версии 2.2.1 и более поздних версиях есть [ошибка](https://bugs.launchpad.net/qemu/+bug/1490611), которая приводит к созданию неверного формата VHD. Эта проблема устранена в QEMU версии 2.6. Рекомендуется использовать либо версию `qemu-img` 2.2.0 или более раннюю, либо версию 2.6 или более позднюю.
@@ -189,4 +190,3 @@ ms.locfileid: "80066761"
    > В Virtualbox после выполнения команды`waagent -force -deprovision` может появиться следующая ошибка: `[Errno 5] Input/output error`. Это сообщение об ошибке не является важным и может быть пропущено.
 
 * Завершите работу виртуальной машины и передайте виртуальный жесткий диск в Azure.
-

@@ -4,11 +4,12 @@ description: Инструкции по использованию триггер
 ms.topic: conceptual
 ms.date: 12/17/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 1f42c6c9b0086d49e539040334c83cfc0c6feb42
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 899bc3fdc94b8232acd3edf3e0cbab3c481ff8f2
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84698067"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87081854"
 ---
 # <a name="bindings-for-durable-functions-azure-functions"></a>Привязки для устойчивых функций (Функции Azure)
 
@@ -18,7 +19,7 @@ ms.locfileid: "84698067"
 
 Триггер оркестрации позволяет создавать [устойчивые функции Orchestrator](durable-functions-types-features-overview.md#orchestrator-functions). Этот триггер поддерживает запуск новых экземпляров функции оркестратора и возобновление существующих экземпляров функции оркестратора, которые "ожидают" задачу.
 
-При использовании средств Visual Studio для Функций Azure триггер оркестрации настраивается с помощью атрибута .NET [OrchestrationTriggerAttribute](https://docs.microsoft.com/dotnet/api/Microsoft.Azure.WebJobs.Extensions.DurableTask.OrchestrationTriggerAttribute?view=azure-dotnet).
+При использовании средств Visual Studio для Функций Azure триггер оркестрации настраивается с помощью атрибута .NET [OrchestrationTriggerAttribute](/dotnet/api/microsoft.azure.webjobs.extensions.durabletask.orchestrationtriggerattribute?view=azure-dotnet).
 
 При написании функции оркестратора на языках сценариев (например,на JavaScript или C#) триггер оркестрации определяется следующим объектом JSON в массиве `bindings` файла *function.json*:
 
@@ -31,7 +32,7 @@ ms.locfileid: "84698067"
 }
 ```
 
-* `orchestration`имя оркестрации, которое клиенты должны использовать, когда им нужно запустить новые экземпляры этой функции Orchestrator. Это необязательное свойство. Если не указан, используется имя функции.
+* `orchestration`имя оркестрации, которое клиенты должны использовать, когда им нужно запустить новые экземпляры этой функции Orchestrator. Это свойство является необязательным. Если не указан, используется имя функции.
 
 Внутри эта привязка триггера опрашивает серии очередей в учетной записи хранения по умолчанию приложения-функции. Эти очереди представляют собой сведения о внутренней реализации расширения, поэтому они не настраиваются явно в свойствах привязки.
 
@@ -138,7 +139,7 @@ module.exports = df.orchestrator(function*(context) {
 }
 ```
 
-* `activity` является именем действия. Это значение представляет собой имя, которое функции Orchestrator используют для вызова этой функции действия. Это необязательное свойство. Если не указан, используется имя функции.
+* `activity` является именем действия. Это значение представляет собой имя, которое функции Orchestrator используют для вызова этой функции действия. Это свойство является необязательным. Если не указан, используется имя функции.
 
 Внутри эта привязка триггера опрашивает очередь в учетной записи хранения по умолчанию приложения-функции. Эта очередь представляет собой сведения о внутренней реализации расширения, поэтому она не настраивается явно в свойствах привязки.
 
@@ -640,7 +641,7 @@ module.exports = async function (context) {
 
 [!INCLUDE [durabletask](../../../includes/functions-host-json-durabletask.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Встроенная Справочник по HTTP API для управления экземплярами](durable-functions-http-api.md)

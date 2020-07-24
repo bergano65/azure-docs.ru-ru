@@ -13,11 +13,12 @@ ms.workload: infrastructure
 ms.date: 05/25/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f7ac8e69c4e149fdd0f365e19f7a0282a547af43
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8c7e8d4875a8bf3f53ac536ae95ac7499a74d45c
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77617188"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87082160"
 ---
 # <a name="connect-a-virtual-network-to-hana-large-instances"></a>Подключение виртуальной сети к крупным экземплярам HANA
 
@@ -95,7 +96,7 @@ New-AzVirtualNetworkGatewayConnection -Name $myConnectionName `
 ```
 
 > [!NOTE]
-> Последний параметр в команде New-Азвиртуалнетворкгатевайконнектион, **експрессраутегатевайбипасс** — это новый параметр, включающий быстрый путь ExpressRoute. Функция, которая сокращает задержку в сети между единицами крупных экземпляров HANA и виртуальными машинами Azure. Функциональные возможности добавлены в 2019 мая. Дополнительные сведения см. в статье [SAP HANA (крупные экземпляры) сетевая архитектура](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-network-architecture). Перед выполнением команд убедитесь, что вы используете последнюю версию командлетов PowerShell.
+> Последний параметр в команде New-Азвиртуалнетворкгатевайконнектион, **експрессраутегатевайбипасс** — это новый параметр, включающий быстрый путь ExpressRoute. Функция, которая сокращает задержку в сети между единицами крупных экземпляров HANA и виртуальными машинами Azure. Функциональные возможности добавлены в 2019 мая. Дополнительные сведения см. в статье [SAP HANA (крупные экземпляры) сетевая архитектура](./hana-network-architecture.md). Перед выполнением команд убедитесь, что вы используете последнюю версию командлетов PowerShell.
 
 Возможно, вам потребуется сделать это несколько раз, чтобы подключить шлюз к нескольким каналам ExpressRoute, связанным с вашей подпиской. Например, скорее всего, вам потребуется подключить тот же шлюз виртуальной сети к каналу ExpressRoute, с помощью которого виртуальная сеть подключается к локальной сети.
 
@@ -138,7 +139,7 @@ New-AzVirtualNetworkGatewayConnection -Name $myConnectionName `
 - Существует ограничение на ASN (номер автономной системы), которое можно использовать для объявления локальных маршрутов для крупных экземпляров HANA. В локальной среде не должны объявляться маршруты с частными ASN в диапазоне 65000 – 65020 или 65515. 
 - В случае подключения локального прямого доступа к крупным экземплярам HANA необходимо рассчитать плату за канал, который подключает вас к Azure. Для цен ознакомьтесь с ценами на [Global REACH надстройку](https://azure.microsoft.com/pricing/details/expressroute/).
 
-Чтобы получить один или оба сценария, применяемые к развертыванию, откройте сообщение поддержки в Azure, как описано в разделе [Открытие запроса на поддержку для крупных экземпляров Hana](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-li-portal#open-a-support-request-for-hana-large-instances) .
+Чтобы получить один или оба сценария, применяемые к развертыванию, откройте сообщение поддержки в Azure, как описано в разделе [Открытие запроса на поддержку для крупных экземпляров Hana](./hana-li-portal.md#open-a-support-request-for-hana-large-instances) .
 
 Необходимые данные и ключевые слова, которые необходимо использовать для маршрутизации и выполнения запроса в Майкрософт, выглядят следующим образом:
 
@@ -156,6 +157,6 @@ New-AzVirtualNetworkGatewayConnection -Name $myConnectionName `
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Дополнительные требования к сети для крупных экземпляров HANA](hana-additional-network-requirements.md)

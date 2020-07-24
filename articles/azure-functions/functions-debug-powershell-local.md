@@ -6,11 +6,12 @@ ms.topic: conceptual
 ms.date: 04/22/2019
 ms.author: tyleonha
 ms.reviewer: glenga
-ms.openlocfilehash: 133e89bd9187ae5e48fa208b407678760d31adfd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 51edbc18a929f4f954fb1a582a417bc1600d1a6f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78163766"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87082993"
 ---
 # <a name="debug-powershell-azure-functions-locally"></a>Локальная отладка функций Azure PowerShell
 
@@ -37,7 +38,7 @@ PSFunctionApp
  | - profile.ps1
 ```
 
-Это приложение-функция аналогично тому, которое вы получаете при выполнении [краткого руководства по PowerShell](functions-create-first-function-powershell.md).
+Это приложение-функция аналогично тому, которое вы получаете при выполнении [краткого руководства по PowerShell](./functions-create-first-function-vs-code.md?pivots=programming-language-powershell).
 
 Код функции в `run.ps1` выглядит как следующий скрипт:
 
@@ -91,10 +92,10 @@ if($name) {
 Для отладки функций PowerShell в Visual Studio Code необходимо установить следующие компоненты:
 
 * [Расширение PowerShell для Visual Studio Code](/powershell/scripting/components/vscode/using-vscode)
-* [Расширение функций Azure для Visual Studio Code](functions-create-first-function-vs-code.md)
+* [Расширение "Функции Azure" для Visual Studio Code](functions-create-first-function-vs-code.md)
 * [PowerShell Core 6,2 или более поздней версии](/powershell/scripting/install/installing-powershell-core-on-windows)
 
-После установки этих зависимостей загрузите существующий проект функций PowerShell или [Создайте свой первый проект функций PowerShell](functions-create-first-function-powershell.md).
+После установки этих зависимостей загрузите существующий проект функций PowerShell или [Создайте свой первый проект функций PowerShell](./functions-create-first-function-vs-code.md?pivots=programming-language-powershell).
 
 >[!NOTE]
 > Если в проекте отсутствуют необходимые файлы конфигурации, вам будет предложено добавить их.
@@ -128,7 +129,7 @@ PowerShell Core устанавливается параллельно с Windows
 * Присоедините отладчик PowerShell к пространству выполнения PowerShell в среде выполнения функций.
 
 >[!NOTE]
-> Необходимо убедиться, что Псворкеринпрокконкурренциуппербаунд имеет значение 1, чтобы обеспечить правильную работу по отладке в Visual Studio Code. Это значение по умолчанию.
+> Необходимо убедиться, что Псворкеринпрокконкурренциуппербаунд имеет значение 1, чтобы обеспечить правильную работу по отладке в Visual Studio Code. Этот тип используется по умолчанию.
 
 После запуска приложения-функции вам потребуется отдельная консоль PowerShell для вызова функции, активируемой HTTP.
 
@@ -242,6 +243,6 @@ At /Path/To/PSFunctionApp/HttpTriggerFunction/run.ps1:13 char:1
 
 Если это произойдет, выполните `continue` команду или, `c` чтобы пропустить эту точку останова. Затем вы останавливается в ожидаемой точке останова.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о разработке функций с помощью PowerShell см. в статье с [руководством разработчика PowerShell для функций Azure](functions-reference-powershell.md).

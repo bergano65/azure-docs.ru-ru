@@ -12,12 +12,12 @@ ms.date: 06/29/2020
 tags: ''
 keywords: ''
 ms.service: multiple
-ms.openlocfilehash: 3cc561a7f7f6f58c439a70315eba857e63def09d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d266dbd0ee908c41a7d29ddbb6d9c73fcfdc7c9e
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85561250"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87083469"
 ---
 # <a name="run-micro-focus-enterprise-server-50-in-a-docker-container-on-azure"></a>Запуск Micro Focus Enterprise Server 5,0 в контейнере DOCKER в Azure
 
@@ -27,7 +27,7 @@ DOCKER добавляет в приложения переносимость и 
 
 В этом руководстве мы устанавливаем **Windows 2016 Datacenter с контейнерами** виртуальных машин из Azure Marketplace. Эта виртуальная машина включает **DOCKER 18.09.0**. В следующих шагах показано, как развернуть контейнер, запустить его, а затем подключиться к нему с помощью эмулятора 3270.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 Прежде чем приступить к работе, ознакомьтесь с этими предварительными условиями.
 
@@ -137,7 +137,7 @@ DOCKER добавляет в приложения переносимость и 
     docker inspect \<containerID\> --format="{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}"
     ~~~
 
-    Пример:
+    Например.
 
     ~~~
     docker inspect 22a0fe3159d0 --format="{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}"
@@ -169,8 +169,8 @@ DOCKER добавляет в приложения переносимость и 
 
 Вот и все! Теперь вы используете приложение CICS и управляете им в контейнере DOCKER.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
--   [Установка Micro Focus Enterprise Server 5,0 и Enterprise Developer 5,0 в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/mainframe-rehosting/microfocus/set-up-micro-focus-azure)
+-   [Установка Micro Focus Enterprise Server 5,0 и Enterprise Developer 5,0 в Azure](./set-up-micro-focus-azure.md)
 
--   [Перенос приложений с мейнфреймов](https://docs.microsoft.com/azure/architecture/cloud-adoption/infrastructure/mainframe-migration/application-strategies)
+-   [Перенос приложений с мейнфреймов](/azure/architecture/cloud-adoption/infrastructure/mainframe-migration/application-strategies)

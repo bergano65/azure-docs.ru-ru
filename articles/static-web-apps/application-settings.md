@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: how-to
 ms.date: 05/08/2020
 ms.author: buhollan
-ms.openlocfilehash: 66ad9c27ca69df230d9ce1d2282e734420fa14f3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 71748959f8b5350a4bd34349eefedbf9d99c76e5
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85373677"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87083622"
 ---
 # <a name="configure-application-settings-for-azure-static-web-apps-preview"></a>Настройка параметров приложения для предварительной версии Статических веб-приложений Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "85373677"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Приложение Статических веб-приложений Azure
-- [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
+- [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest)
 
 ## <a name="types-of-application-settings"></a>Типы параметров приложения
 

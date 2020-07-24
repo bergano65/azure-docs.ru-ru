@@ -3,13 +3,14 @@ title: Шифрование неактивных источников прило
 description: Зашифруйте данные приложения в службе хранилища Azure и развертывайте их как файл пакета.
 ms.topic: article
 ms.date: 03/06/2020
-ms.openlocfilehash: 62179e900ace0d6d7b8b1f07e8f0ab685508f991
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6dfb56a5ef6b1ab3cfbd0762bf7816e37ce0aa39
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79408730"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87081888"
 ---
-# <a name="encryption-at-rest-using-customer-managed-keys"></a>Шифрование неактивных с помощью управляемых клиентом ключей
+# <a name="encrypt-your-application-data-at-rest-using-customer-managed-keys"></a>Шифрование неактивных данных приложения с помощью управляемых клиентом ключей
 
 Для шифрования неактивных данных приложения функции требуется учетная запись хранения Azure и Azure Key Vault. Эти службы используются при запуске приложения из пакета развертывания.
 
@@ -104,7 +105,7 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 
 Если необходимо отозвать доступ приложения-функции к вашей учетной записи хранения, можно отозвать доступ к хранилищу ключей или сменить ключи учетной записи хранения, что сделает URL-адрес SAS недействительным.
 
-## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
+## <a name="frequently-asked-questions"></a>Вопросы и ответы
 
 ### <a name="is-there-any-additional-charge-for-running-my-function-app-from-the-deployment-package"></a>Есть ли дополнительная плата за запуск моего приложения-функции из пакета развертывания?
 
@@ -116,7 +117,7 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 - Форматы TAR и GZIP не поддерживаются.
 - Эта функция несовместима с локальным кэшем.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Key Vault ссылки для службы приложений](../app-service/app-service-key-vault-references.md)
 - [Шифрование службы хранилища Azure для неактивных данных](../storage/common/storage-service-encryption.md)

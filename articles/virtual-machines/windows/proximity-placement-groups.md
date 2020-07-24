@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.date: 01/27/2020
 ms.author: cynthn
 ms.reviewer: zivr
-ms.openlocfilehash: 2401e8c160fd1c2ee3a734f374f1d4409c52ed16
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9ea986b338d977102d78e9c12bcbe5b2f2c510e7
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82098532"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87083452"
 ---
 # <a name="deploy-vms-to-proximity-placement-groups-using-powershell"></a>Развертывание виртуальных машин в группах размещения с помощью PowerShell
 
@@ -24,7 +24,7 @@ ms.locfileid: "82098532"
 
 
 ## <a name="create-a-proximity-placement-group"></a>Создание группы размещения близкого взаимодействия
-Создайте группу размещения близкого взаимодействия с помощью командлета [New-AzProximityPlacementGroup](https://docs.microsoft.com/powershell/module/az.compute/new-azproximityplacementgroup). 
+Создайте группу размещения близкого взаимодействия с помощью командлета [New-AzProximityPlacementGroup](/powershell/module/az.compute/new-azproximityplacementgroup). 
 
 ```azurepowershell-interactive
 $resourceGroup = "myPPGResourceGroup"
@@ -49,7 +49,7 @@ Get-AzProximityPlacementGroup
 
 ## <a name="create-a-vm"></a>Создание виртуальной машины
 
-Создайте виртуальную машину в группе размещения с использованием `-ProximityPlacementGroup $ppg.Id` для ссылки на идентификатор группы размещения с учетом расположения при использовании командлета [New-AzVM](https://docs.microsoft.com/powershell/module/az.compute/new-azvm) для создания виртуальной машины.
+Создайте виртуальную машину в группе размещения с использованием `-ProximityPlacementGroup $ppg.Id` для ссылки на идентификатор группы размещения с учетом расположения при использовании командлета [New-AzVM](/powershell/module/az.compute/new-azvm) для создания виртуальной машины.
 
 ```azurepowershell-interactive
 $vmName = "myVM"
@@ -146,7 +146,7 @@ foreach ($vmId in $vmIDs){
 
 ## <a name="scale-sets"></a>Масштабируемые наборы
 
-Вы также можете создать масштабируемый набор в группе размещения с учетом расположения. Используйте тот же `-ProximityPlacementGroup` параметр с командлетом [New-азвмсс](https://docs.microsoft.com/powershell/module/az.compute/new-azvmss) , чтобы создать масштабируемый набор, и все экземпляры будут созданы в той же группе размещения близости.
+Вы также можете создать масштабируемый набор в группе размещения с учетом расположения. Используйте тот же `-ProximityPlacementGroup` параметр с командлетом [New-азвмсс](/powershell/module/az.compute/new-azvmss) , чтобы создать масштабируемый набор, и все экземпляры будут созданы в той же группе размещения близости.
 
 
 Чтобы добавить или удалить существующий масштабируемый набор в группе размещения с учетом расположения, сначала необходимо закрыть масштабируемый набор. 

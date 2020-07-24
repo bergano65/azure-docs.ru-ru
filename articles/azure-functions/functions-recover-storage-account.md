@@ -5,11 +5,12 @@ author: alexkarcher-msft
 ms.topic: article
 ms.date: 09/05/2018
 ms.author: alkarche
-ms.openlocfilehash: 8fcd0661e2c7cab505121cf0d4d7b4c1d29017f8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d84e1269fecf3bd85538415b5790c22aaf6eb01e
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77063787"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87085118"
 ---
 # <a name="troubleshoot-error-azure-functions-runtime-is-unreachable"></a>Устранение ошибки: "среда выполнения Функций Azure недоступен"
 
@@ -17,7 +18,7 @@ ms.locfileid: "77063787"
 
 > "Ошибка: среда выполнения Функций Azure недоступен. Щелкните здесь, чтобы получить сведения о конфигурации хранилища.
 
-Эта проблема возникает, когда не удается запустить среда выполнения Функций Azure. Наиболее распространенной причиной проблемы является то, что приложение-функция потеряло доступ к своей учетной записи хранения. Дополнительные сведения см. в статье [требования к учетной записи хранения](https://docs.microsoft.com/azure/azure-functions/functions-create-function-app-portal#storage-account-requirements).
+Эта проблема возникает, когда не удается запустить среда выполнения Функций Azure. Наиболее распространенной причиной проблемы является то, что приложение-функция потеряло доступ к своей учетной записи хранения. Дополнительные сведения см. в статье [требования к учетной записи хранения](./functions-create-function-app-portal.md#storage-account-requirements).
 
 Оставшаяся часть этой статьи поможет устранить следующие причины этой ошибки, в том числе способ определения и разрешения каждого случая.
 
@@ -25,7 +26,7 @@ ms.locfileid: "77063787"
 
 Для работы каждого приложения-функции нужна учетная запись хранения. Если эта учетная запись удалена, функция не будет работать.
 
-Начните с поиска имени учетной записи хранения в параметрах приложения. `AzureWebJobsStorage`Или `WEBSITE_CONTENTAZUREFILECONNECTIONSTRING` содержит имя учетной записи хранения, упакованное в строку подключения. Дополнительные сведения см. в разделе [Справочник по параметрам приложений для функций Azure](https://docs.microsoft.com/azure/azure-functions/functions-app-settings#azurewebjobsstorage).
+Начните с поиска имени учетной записи хранения в параметрах приложения. `AzureWebJobsStorage`Или `WEBSITE_CONTENTAZUREFILECONNECTIONSTRING` содержит имя учетной записи хранения, упакованное в строку подключения. Дополнительные сведения см. в разделе [Справочник по параметрам приложений для функций Azure](./functions-app-settings.md#azurewebjobsstorage).
 
 Выполните поиск учетной записи хранения в портал Azure, чтобы узнать, не существует ли она. Если она была удалена, повторно создайте учетную запись хранения и замените строки подключения к хранилищу. Код функции будет потерян, и его необходимо развернуть повторно.
 
@@ -36,12 +37,12 @@ ms.locfileid: "77063787"
 ### <a name="required-application-settings"></a>Необходимые параметры приложения
 
 * Обязательно.
-    * [`AzureWebJobsStorage`](https://docs.microsoft.com/azure/azure-functions/functions-app-settings#azurewebjobsstorage)
+    * [`AzureWebJobsStorage`](./functions-app-settings.md#azurewebjobsstorage)
 * Требуется для функций плана потребления:
-    * [`WEBSITE_CONTENTAZUREFILECONNECTIONSTRING`](https://docs.microsoft.com/azure/azure-functions/functions-app-settings)
-    * [`WEBSITE_CONTENTSHARE`](https://docs.microsoft.com/azure/azure-functions/functions-app-settings)
+    * [`WEBSITE_CONTENTAZUREFILECONNECTIONSTRING`](./functions-app-settings.md)
+    * [`WEBSITE_CONTENTSHARE`](./functions-app-settings.md)
 
-Дополнительные сведения см. в разделе [Справочник по параметрам приложений для функций Azure](https://docs.microsoft.com/azure/azure-functions/functions-app-settings).
+Дополнительные сведения см. в разделе [Справочник по параметрам приложений для функций Azure](./functions-app-settings.md).
 
 ### <a name="guidance"></a>Руководство
 
@@ -51,7 +52,7 @@ ms.locfileid: "77063787"
 
 ## <a name="storage-account-credentials-are-invalid"></a>Недопустимые учетные данные учетной записи хранения
 
-Ранее обсуждаемые строки подключения учетной записи хранения необходимо обновить при повторном создании ключей хранилища. Дополнительные сведения об управлении ключами хранилища см. в статье [Создание учетной записи хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-create-storage-account).
+Ранее обсуждаемые строки подключения учетной записи хранения необходимо обновить при повторном создании ключей хранилища. Дополнительные сведения об управлении ключами хранилища см. в статье [Создание учетной записи хранения Azure](../storage/common/storage-account-create.md).
 
 ## <a name="storage-account-is-inaccessible"></a>Учетная запись хранения недоступна
 
@@ -59,7 +60,7 @@ ms.locfileid: "77063787"
 
 * Приложение-функция развертывается в Среда службы приложений без правильных правил сети, чтобы разрешить входящий и исходящий трафик в учетной записи хранения.
 
-* Брандмауэр учетной записи хранения включен и не настроен для разрешения входящего и исходящего трафика функций. Дополнительные сведения см. в статье [Настройка брандмауэров службы хранилища Azure и виртуальных сетей](https://docs.microsoft.com/azure/storage/common/storage-network-security?toc=%2fazure%2fstorage%2ffiles%2ftoc.json).
+* Брандмауэр учетной записи хранения включен и не настроен для разрешения входящего и исходящего трафика функций. Дополнительные сведения см. в статье [Настройка брандмауэров службы хранилища Azure и виртуальных сетей](../storage/common/storage-network-security.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json).
 
 ## <a name="daily-execution-quota-is-full"></a>Квота ежедневного выполнения заполнена
 
@@ -87,9 +88,9 @@ ms.locfileid: "77063787"
    
 Можно также использовать портал на компьютере, подключенном к виртуальной сети, в которой выполняется приложение, или на виртуальной машине, работающей в виртуальной сети. 
 
-Дополнительные сведения о конфигурации правил для входящих подключений см. в разделе "группы безопасности сети" статьи [рекомендации по работе с сетью для среда службы приложений](https://docs.microsoft.com/azure/app-service/environment/network-info#network-security-groups).
+Дополнительные сведения о конфигурации правил для входящих подключений см. в разделе "группы безопасности сети" статьи [рекомендации по работе с сетью для среда службы приложений](../app-service/environment/network-info.md#network-security-groups).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о мониторинге приложений функции:
 

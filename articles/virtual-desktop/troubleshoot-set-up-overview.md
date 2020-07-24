@@ -8,14 +8,14 @@ ms.topic: troubleshooting
 ms.date: 06/05/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 07857feb2e5552429c445b22c4c4b2f121f29a93
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1010f89057d83a11fb2e156f01509e909270b044
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84976495"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87083578"
 ---
-# <a name="troubleshooting-overview-feedback-and-support"></a>Общие сведения об устранении неисправностей, отзывы и поддержка
+# <a name="troubleshooting-overview-feedback-and-support-for-windows-virtual-desktop"></a>Обзор устранения неполадок, обратная связь и поддержка виртуальных рабочих столов Windows
 
 >[!IMPORTANT]
 >Это содержимое применимо к обновлению за весну 2020 года с объектами Azure Resource Manager для Виртуального рабочего стола Windows. Если вы используете выпуск Виртуального рабочего стола Windows за осень 2019 года без объектов Azure Resource Manager, см. [эту статью](./virtual-desktop-fall-2019/troubleshoot-set-up-overview-2019.md).
@@ -54,7 +54,7 @@ ms.locfileid: "84976495"
 | Проблемы, связанные с использованием Log Analytics для виртуальных рабочих столов Windows | Чтобы получить сведения о проблемах со схемой диагностики, [откройте запрос в службу поддержки Azure](https://azure.microsoft.com/support/create-ticket/).<br><br>Для запросов, визуализации или других проблем в Log Analytics выберите соответствующий тип проблемы в разделе Log Analytics. |
 | Проблемы с использованием приложений M365 | Обратитесь к центру администрирования M365, используя один из [вариантов справки центра администрирования M365](/microsoft-365/admin/contact-support-for-business-products/). |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения об устранении неполадок при создании пула узлов в среде виртуальных рабочих столов Windows см. в разделе [Создание пула узлов](troubleshoot-set-up-issues.md).
 - Инструкции по устранению неполадок при настройке виртуальной машины через Виртуальный рабочий стол Windows см. в статье [Конфигурация виртуальной машины узла сеанса](troubleshoot-vm-configuration.md).

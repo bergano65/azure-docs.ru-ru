@@ -13,14 +13,14 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 06/22/2020
+ms.date: 07/16/2020
 ms.author: sedusch
-ms.openlocfilehash: b6a284d13d0d737eca65b2593813b3d1b999cfdf
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: dbcb39641f35ad0f997db30b320826764a08bff1
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86133155"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87082262"
 ---
 # <a name="azure-virtual-machines-deployment-for-sap-netweaver"></a>Развертывание виртуальных машин Azure для SAP NetWeaver
 
@@ -74,7 +74,7 @@ ms.locfileid: "86133155"
 [azure-cli]:../../../cli-install-nodejs.md
 [azure-cli-2]:https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest
 [azure-portal]:https://portal.azure.com
-[azure-ps]:/powershell/azureps-cmdlets-docs
+[azure-ps]:/powershell/azure/
 [azure-quickstart-templates-github]:https://github.com/Azure/azure-quickstart-templates
 [azure-script-ps]:https://go.microsoft.com/fwlink/p/?LinkID=395017
 [azure-resource-manager/management/azure-subscription-service-limits]:../../../azure-resource-manager/management/azure-subscription-service-limits.md
@@ -285,15 +285,15 @@ ms.locfileid: "86133155"
 [virtual-machines-linux-tutorial]:../../linux/quick-create-cli.md
 [virtual-machines-linux-update-agent]:../../linux/update-agent.md
 [virtual-machines-manage-availability]:../../linux/manage-availability.md
-[virtual-machines-ps-create-preconfigure-windows-resource-manager-vms]:../../virtual-machines-windows-ps-create.md
+[virtual-machines-ps-create-preconfigure-windows-resource-manager-vms]:../../windows/quick-create-powershell.md
 [virtual-machines-sizes]:../../linux/sizes.md
 [virtual-machines-windows-classic-ps-sql-alwayson-availability-groups]:./../../windows/sqlclassic/virtual-machines-windows-classic-ps-sql-alwayson-availability-groups.md
 [virtual-machines-windows-classic-ps-sql-int-listener]:./../../windows/sqlclassic/virtual-machines-windows-classic-ps-sql-int-listener.md
 [virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions]:../../../azure-sql/virtual-machines/windows/business-continuity-high-availability-disaster-recovery-hadr-overview.md
 [virtual-machines-sql-server-infrastructure-services]:../../../azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md
 [virtual-machines-sql-server-performance-best-practices]:../../../azure-sql/virtual-machines/windows/performance-guidelines-best-practices.md
-[virtual-machines-upload-image-windows-resource-manager]:../../virtual-machines-windows-upload-image.md
-[virtual-machines-windows-tutorial]:../../virtual-machines-windows-hero-tutorial.md
+[virtual-machines-upload-image-windows-resource-manager]:../../windows/upload-image.md
+[virtual-machines-windows-tutorial]:../../windows/quick-create-portal.md
 [virtual-machines-workload-template-sql-alwayson]:https://azure.microsoft.com/documentation/templates/sql-server-2014-alwayson-dsc/
 [virtual-network-deploy-multinic-arm-cli]:../linux/multiple-nics.md
 [virtual-network-deploy-multinic-arm-ps]:../windows/multiple-nics.md
@@ -443,8 +443,8 @@ ms.locfileid: "86133155"
 1. **Параметры**:
    * **Память**
      * **Тип диска**. Выберите тип диска ОС. Если вы хотите использовать хранилище класса Premium для дисков данных, рекомендуется также использовать его для диска ОС.
-     * **Использовать управляемые диски**. Если вы хотите использовать Управляемые диски, выберите "Да". Дополнительные сведения об управляемых дисках см. в разделе [Управляемые диски](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/planning-guide-storage#microsoft-azure-storage-resiliency) в руководстве по планированию.
-     * **Учетная запись хранения**. Выберите существующую учетную запись хранения или создайте новую. Запуск приложений SAP поддерживают не все типы хранилищ. Дополнительные сведения о типах хранилищ см. в разделе [Структура хранилища виртуальной машины для развертывания реляционной СУБД](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_general#65fa79d6-a85f-47ee-890b-22e794f51a64).
+     * **Использовать управляемые диски**. Если вы хотите использовать Управляемые диски, выберите "Да". Дополнительные сведения об управляемых дисках см. в разделе [Управляемые диски](./planning-guide-storage.md#microsoft-azure-storage-resiliency) в руководстве по планированию.
+     * **Учетная запись хранения**. Выберите существующую учетную запись хранения или создайте новую. Запуск приложений SAP поддерживают не все типы хранилищ. Дополнительные сведения о типах хранилищ см. в разделе [Структура хранилища виртуальной машины для развертывания реляционной СУБД](./dbms_guide_general.md#65fa79d6-a85f-47ee-890b-22e794f51a64).
    * **Network**
      * **Виртуальная сеть** и **Подсеть**. Чтобы интегрировать виртуальную машину в интрасеть, выберите виртуальную сеть, подключенную к локальной сети.
      * **Общедоступный IP-адрес**. Выберите необходимый общедоступный IP-адрес или введите параметры, чтобы создать его. Общедоступный IP-адрес можно использовать для доступа к виртуальной машине через Интернет. Кроме того, создайте группу безопасности сети, используемую для доступа к виртуальной машине.
@@ -500,7 +500,7 @@ ms.locfileid: "86133155"
 
      В системах большого размера мы настоятельно рекомендуем использовать хранилище Azure класса Premium. Дополнительные сведения о типах хранилищ см. в следующих ресурсах:
       * [Использование хранилища SSD (цен. категория "Премиум") Azure для экземпляра СУБД SAP][2367194]
-      * [Структура хранилища виртуальной машины для развертывания реляционной СУБД](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_general#65fa79d6-a85f-47ee-890b-22e794f51a64)
+      * [Структура хранилища виртуальной машины для развертывания реляционной СУБД](./dbms_guide_general.md#65fa79d6-a85f-47ee-890b-22e794f51a64)
       * [Хранилище класса Premium: высокопроизводительное хранилище для рабочих нагрузок виртуальных машин Azure][storage-premium-storage-preview-portal]
       * [Введение в службу хранилища Microsoft Azure][storage-introduction]
    * **Имя администратора** и **Пароль администратора**. Имя пользователя и пароль.
@@ -545,7 +545,7 @@ ms.locfileid: "86133155"
 ---
 > ![Windows][Logo_Windows] Windows
 >
-> Чтобы подготовить образ Windows, который можно использовать для развертывания нескольких виртуальных машин, необходимо задать абстрагированные или обобщенные параметры Windows (например, ИД безопасности Windows и имя узла) на локальной виртуальной машине. Это можно сделать с помощью инструмента [Sysprep](https://msdn.microsoft.com/library/hh825084.aspx).
+> Чтобы подготовить образ Windows, который можно использовать для развертывания нескольких виртуальных машин, необходимо задать абстрагированные или обобщенные параметры Windows (например, ИД безопасности Windows и имя узла) на локальной виртуальной машине. Это можно сделать с помощью инструмента [Sysprep](/previous-versions/windows/it-pro/windows-8.1-and-8/hh825084(v=win.10)).
 >
 > ![Linux][Logo_Linux] Linux
 >
@@ -562,7 +562,7 @@ ms.locfileid: "86133155"
 
 #### <a name="create-a-virtual-machine-by-using-the-azure-portal"></a>Создание виртуальной машины с помощью портала Azure
 
-Самый простой способ создания новой виртуальной машины из образа управляемых дисков — с помощью портала Azure. Дополнительные сведения о создании образа управляемого диска см. в статье [Создание управляемого образа универсальной виртуальной машины в Azure](https://docs.microsoft.com/azure/virtual-machines/windows/capture-image-resource).
+Самый простой способ создания новой виртуальной машины из образа управляемых дисков — с помощью портала Azure. Дополнительные сведения о создании образа управляемого диска см. в статье [Создание управляемого образа универсальной виртуальной машины в Azure](../../windows/capture-image-resource.md).
 
 1.  Перейдите к <https://ms.portal.azure.com/#blade/HubsExtension/Resources/resourceType/Microsoft.Compute%2Fimages>. или щелкните **Образы** в меню портала Azure.
 1.  Выберите образ управляемого диска, который нужно развернуть, и щелкните **Создать виртуальную машину**.
@@ -583,7 +583,7 @@ ms.locfileid: "86133155"
 1. **Параметры**:
    * **Память**
      * **Тип диска**. Выберите тип диска ОС. Если вы хотите использовать хранилище класса Premium для дисков данных, рекомендуется также использовать его для диска ОС.
-     * **Использовать управляемые диски**. Если вы хотите использовать Управляемые диски, выберите "Да". Дополнительные сведения об управляемых дисках см. в разделе [Управляемые диски](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/planning-guide-storage#microsoft-azure-storage-resiliency) в руководстве по планированию.
+     * **Использовать управляемые диски**. Если вы хотите использовать Управляемые диски, выберите "Да". Дополнительные сведения об управляемых дисках см. в разделе [Управляемые диски](./planning-guide-storage.md#microsoft-azure-storage-resiliency) в руководстве по планированию.
    * **Network**
      * **Виртуальная сеть** и **Подсеть**. Чтобы интегрировать виртуальную машину в интрасеть, выберите виртуальную сеть, подключенную к локальной сети.
      * **Общедоступный IP-адрес**. Выберите необходимый общедоступный IP-адрес или введите параметры, чтобы создать его. Общедоступный IP-адрес можно использовать для доступа к виртуальной машине через Интернет. Кроме того, создайте группу безопасности сети, используемую для доступа к виртуальной машине.
@@ -636,7 +636,7 @@ ms.locfileid: "86133155"
 
      В системах большого размера мы настоятельно рекомендуем использовать хранилище Azure класса Premium. Дополнительные сведения о типах хранилищ см. в следующих ресурсах:
       * [Использование хранилища SSD (цен. категория "Премиум") Azure для экземпляра СУБД SAP][2367194]
-      * [Структура хранилища виртуальной машины для развертывания реляционной СУБД](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_general#65fa79d6-a85f-47ee-890b-22e794f51a64)
+      * [Структура хранилища виртуальной машины для развертывания реляционной СУБД](./dbms_guide_general.md#65fa79d6-a85f-47ee-890b-22e794f51a64)
       * [Хранилище класса Premium: Высокопроизводительное хранилище класса Premium и управляемые диски для виртуальных машин Azure][storage-premium-storage-preview-portal]
       * [Введение в службу хранилища Microsoft Azure][storage-introduction]
    * **User image VHD URI** (Универсальный код ресурса (URI) VHD пользовательского образа) (только для шаблона на основе неуправляемых дисков). Универсальный код ресурса (URI) виртуального жесткого диска частного образа ОС, например https://&lt;имя_учетной_записи>.blob.core.windows.net/vhds/userimage.vhd.
@@ -728,7 +728,7 @@ ms.locfileid: "86133155"
 
      В системах большого размера мы настоятельно рекомендуем использовать хранилище Azure класса Premium. Дополнительные сведения о типах хранилищ см. в следующих ресурсах:
       * [Использование хранилища SSD (цен. категория "Премиум") Azure для экземпляра СУБД SAP][2367194]
-      * [Структура хранилища виртуальной машины для развертывания реляционной СУБД](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_general#65fa79d6-a85f-47ee-890b-22e794f51a64)
+      * [Структура хранилища виртуальной машины для развертывания реляционной СУБД](./dbms_guide_general.md#65fa79d6-a85f-47ee-890b-22e794f51a64)
       * [Хранилище класса Premium: высокопроизводительное хранилище для рабочих нагрузок виртуальных машин Azure][storage-premium-storage-preview-portal]
       * [Введение в службу хранилища Microsoft Azure][storage-introduction]
    * **OS disk VHD URI** (Универсальный код ресурса (URI) VHD диска ОС). Универсальный код ресурса (URI) частного диска ОС, например https://&lt;имя_учетной_записи>.blob.core.windows.net/vhds/osdisk.vhd.
@@ -780,9 +780,9 @@ ms.locfileid: "86133155"
 
 ### <a name="deploy-azure-powershell-cmdlets"></a><a name="604bcec2-8b6e-48d2-a944-61b0f5dee2f7"></a>Развертывание командлетов Azure PowerShell
 
-Выполните действия, описанные в статье [Установка модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps) .
+Выполните действия, описанные в статье [Установка модуля Azure PowerShell](/powershell/azure/install-az-ps) .
 
-Регулярно проверяйте наличие обновлений для командлетов PowerShell. Обычно обновление происходит раз в месяц. Выполните действия, описанные в [этой](https://docs.microsoft.com/powershell/azure/install-az-ps#update-the-azure-powershell-module) статье. Если иное не указано в примечаниях к SAP [1928533] или [2015553], то мы советуем работать с последней версией командлетов Azure PowerShell.
+Регулярно проверяйте наличие обновлений для командлетов PowerShell. Обычно обновление происходит раз в месяц. Выполните действия, описанные в [этой](/powershell/azure/install-az-ps#update-the-azure-powershell-module) статье. Если иное не указано в примечаниях к SAP [1928533] или [2015553], то мы советуем работать с последней версией командлетов Azure PowerShell.
 
 Чтобы проверить версию командлетов Azure PowerShell, установленную на компьютере, выполните следующую команду PowerShell:
 
@@ -792,7 +792,7 @@ ms.locfileid: "86133155"
 
 ### <a name="deploy-azure-cli"></a><a name="1ded9453-1330-442a-86ea-e0fd8ae8cab3"></a>Развертывание Azure CLI
 
-Выполните действия, описанные в статье [установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli)
+Выполните действия, описанные в статье [установка Azure CLI](/cli/azure/install-azure-cli)
 
 Регулярно проверяйте наличие обновлений для Azure CLI. Обычно обновление происходит раз в месяц.
 
@@ -933,7 +933,7 @@ az --version
 
 1. Установите последнюю версию командлетов Azure PowerShell. Дополнительные сведения см. в разделе [Развертывание командлетов Azure PowerShell][deployment-guide-4.1].  
 1. Выполните приведенный ниже командлет PowerShell.
-    Чтобы просмотреть список доступных сред, выполните командлет `commandlet Get-AzEnvironment`. Если нужно использовать глобальный экземпляр Azure, выберите среду **AzureCloud**. Для Azure для Китая в Китае выберите **AzureChinaCloud**.
+    Чтобы получить список доступных сред, выполните командлет `Get-AzEnvironment` . Если нужно использовать глобальный экземпляр Azure, выберите среду **AzureCloud**. Для Azure для Китая в Китае выберите **AzureChinaCloud**.
 
     ```powershell
     $env = Get-AzEnvironment -Name <name of the environment>
@@ -1023,44 +1023,21 @@ az --version
 
 Новое расширение виртуальной машины для SAP использует управляемое удостоверение, назначенное виртуальной машине для доступа к данным мониторинга и конфигурации виртуальной машины. Чтобы установить новое расширение Azure для SAP с помощью PowerShell, необходимо сначала назначить такое удостоверение виртуальной машине и предоставить этому удостоверению доступ ко всем ресурсам, используемым этой виртуальной машиной, например к дискам и сетевым интерфейсам.
 
-Процесс будет автоматизирован в следующей версии Azure PowerShell (> 4.2.0). Эта статья будет обновлена после того, как новая версия станет доступна. Пока вы не выполните эти действия, чтобы установить расширение вручную.
-
 > [!NOTE]
 > Для выполнения следующих действий требуются права владельца для группы ресурсов или отдельных ресурсов (виртуальная машина, диски данных и т. д.).
 
 1. Убедитесь, что используется агент узла SAP 7,21 PL 47 или более поздней версии.
 1. Обязательно удалите текущую версию расширения виртуальной машины для SAP. Установка обеих версий расширения виртуальной машины для SAP на одной виртуальной машине не поддерживается.
-1. Установите последнюю версию командлетов Azure PowerShell. Дополнительные сведения см. в разделе [Развертывание командлетов Azure PowerShell][deployment-guide-4.1].
-1. Выполните действия, описанные в статье [Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью PowerShell][qs-configure-powershell-windows-vm] , чтобы включить для виртуальной машины управляемое удостоверение, назначенное системой. Назначенные пользователем управляемые удостоверения не поддерживаются расширением виртуальной машины для SAP. Однако можно включить и то, и другое, назначенное системой и назначенное пользователю удостоверение.
-    
-    Пример.
-    ```powershell
-    $vm = Get-AzVM -ResourceGroupName <resource-group-name> -Name <vm name>
-    Update-AzVM -ResourceGroupName $vm.ResourceGroupName -VM $vm -IdentityType SystemAssigned
-    ```
-
-1. Назначьте управляемому удостоверению доступ к группе ресурсов виртуальной машины или ко всем сетевым интерфейсам, управляемым дискам и самой виртуальной машине, как описано в статье [назначение управляемого удостоверения доступ к ресурсу с помощью PowerShell][howto-assign-access-powershell] . Пример:
+1. Убедитесь, что установлена последняя версия командлета Azure PowerShell (по крайней мере, 4.3.0). Дополнительные сведения см. в разделе [Развертывание командлетов Azure PowerShell][deployment-guide-4.1].
+1. Выполните приведенный ниже командлет PowerShell.
+    Чтобы получить список доступных сред, выполните командлет `Get-AzEnvironment` . Если нужно использовать глобальный экземпляр Azure, выберите среду **AzureCloud**. Для Azure для Китая в Китае выберите **AzureChinaCloud**.
 
     ```powershell
-    $spID = (Get-AzVM -ResourceGroupName <resource-group-name> -Name <vm name>).identity.principalid
-    $rg = Get-AzResourceGroup -Name $vm.ResourceGroupName
-    New-AzRoleAssignment -ObjectId $spID -RoleDefinitionName "Reader" -Scope $rg.ResourceId
-    ```
-
-1. Выполните следующий командлет PowerShell, чтобы установить расширение Azure для SAP.
-    В настоящее время расширение поддерживается только в AzureCloud. Azure для Китая, Azure для государственных организаций и других специальных сред пока не поддерживаются.
-
-    ```powershell
-    $env = Get-AzEnvironment -Name AzureCloud
+    $env = Get-AzEnvironment -Name <name of the environment>
     Connect-AzAccount -Environment $env
     Set-AzContext -SubscriptionName <subscription name>
 
-    $vm = Get-AzVM -ResourceGroupName <resource-group-name> -Name <vm name>
-    if ($vm.StorageProfile.OsDisk.OsType -eq "Windows") {
-      Set-AzVMExtension -Publisher Microsoft.AzureCAT.AzureEnhancedMonitoring -ExtensionType MonitorX64Windows -Name MonitorX64Windows -TypeHandlerVersion "1.0" -ResourceGroupName $vm.ResourceGroupName -VMName $vm.Name -Settings @{"system" = "SAP"} -Location $vm.Location
-    } else {
-      Set-AzVMExtension -Publisher Microsoft.AzureCAT.AzureEnhancedMonitoring -ExtensionType MonitorX64Linux -Name MonitorX64Linux -TypeHandlerVersion "1.0" -ResourceGroupName $vm.ResourceGroupName -VMName $vm.Name -Settings @{"system" = "SAP"} -Location $vm.Location
-    }
+    Set-AzVMAEMExtension -ResourceGroupName <resource group name> -VMName <virtual machine name> -InstallNewExtension
     ```
 
 #### <a name="configure-the-new-azure-extension-for-sap-with-azure-cli"></a><a name="c8749c24-fada-42ad-b114-f9aae2dc37da"></a>Настройка нового расширения Azure для SAP с Azure CLI
@@ -1116,7 +1093,10 @@ az --version
 
 ### <a name="readiness-check-for-the-azure-extension-for-sap"></a><a name="bb61ce92-8c5c-461f-8c53-39f5e5ed91f2"></a>Проверка готовности расширения Azure для SAP
 
-Эта проверка позволяет убедиться, что все метрики производительности, отображаемые в приложении SAP, предоставляются базовому расширению Azure для SAP. Если вы развернули новое расширение Azure для SAP, следуйте указаниям в разделе [Проверка готовности для нового расширения Azure для SAP][deployment-guide-5.1-new] в этом руководством.
+> [!NOTE]
+> Существует две версии расширения виртуальной машины. В этой главе рассматривается расширение виртуальной машины по умолчанию. Если вы установили новое расширение виртуальной машины, ознакомьтесь с разделом [Проверка готовности для нового расширения Azure для SAP][deployment-guide-5.1-new] .
+
+Эта проверка позволяет убедиться, что все метрики производительности, отображаемые в приложении SAP, предоставляются базовому расширению Azure для SAP.
 
 #### <a name="run-the-readiness-check-on-a-windows-vm"></a>Проверка готовности на виртуальной машине Windows
 
@@ -1167,7 +1147,7 @@ az --version
 
 1. Проверьте выходные данные расширения Azure для SAP.
 
-   а.  Выполнить `more /var/lib/AzureEnhancedMonitor/PerfCounters`
+   а.  Выполните команду `more /var/lib/AzureEnhancedMonitor/PerfCounters`.
 
    **Ожидаемый результат**: возвращается список счетчиков производительности. Файл не должен быть пустым.
 
@@ -1183,7 +1163,7 @@ az --version
 
 1. Проверьте, установлен и запущен ли каталог waagent.
 
-   а.  Выполнить `sudo ls -al /var/lib/waagent/`
+   а.  Выполните команду `sudo ls -al /var/lib/waagent/`.
 
      **Ожидаемый результат**: должно отобразиться содержимое каталога waagent.
 
@@ -1193,7 +1173,7 @@ az --version
 
 1. Проверьте, установлено и запущено ли расширение Azure для SAP.
 
-   а.  Выполнить `sudo sh -c 'ls -al /var/lib/waagent/Microsoft.OSTCExtensions.AzureEnhancedMonitorForLinux-*/'`
+   а.  Выполните команду `sudo sh -c 'ls -al /var/lib/waagent/Microsoft.OSTCExtensions.AzureEnhancedMonitorForLinux-*/'`.
 
    **Ожидаемый результат**: список содержимого каталога расширения Azure для SAP.
 
@@ -1203,7 +1183,7 @@ az --version
 
 1. Установите агент SAP Host Agent, как описано в примечании к SAP [1031096], и проверьте выходные данные `saposcol`.
 
-   а.  Выполнить `/usr/sap/hostctrl/exe/saposcol -d`
+   а.  Выполните команду `/usr/sap/hostctrl/exe/saposcol -d`.
 
    b.  Выполнить `dump ccm`
 
@@ -1215,7 +1195,10 @@ az --version
 
 ### <a name="readiness-check-for-the-new-azure-extension-for-sap"></a><a name="7bf24f59-7347-4c7a-b094-4693e4687ee5"></a>Проверка готовности нового расширения Azure для SAP
 
-Эта проверка позволяет убедиться, что все метрики производительности, отображаемые в приложении SAP, предоставляются базовому расширению Azure для SAP. Если вы развернули старое расширение Azure для SAP, следуйте указаниям в разделе [Проверка готовности расширения Azure для SAP][deployment-guide-5.1] в этом руководством.
+> [!NOTE]
+> Существует две версии расширения виртуальной машины. В этой главе рассматривается новое расширение виртуальной машины. Если вы установили расширение виртуальной машины по умолчанию, см. раздел [Проверка готовности к установке расширения Azure для SAP][deployment-guide-5.1].
+
+Эта проверка позволяет убедиться, что все метрики производительности, отображаемые в приложении SAP, предоставляются базовому расширению Azure для SAP.
 
 #### <a name="run-the-readiness-check-on-a-windows-vm"></a>Проверка готовности на виртуальной машине Windows
 
@@ -1245,7 +1228,7 @@ XML-файл, к которому можно получить доступ, http
 
 1. Проверьте, установлен и запущен ли каталог waagent.
 
-   а.  Выполнить `sudo ls -al /var/lib/waagent/`
+   а.  Выполните команду `sudo ls -al /var/lib/waagent/`.
 
      **Ожидаемый результат**: должно отобразиться содержимое каталога waagent.
 
@@ -1255,7 +1238,7 @@ XML-файл, к которому можно получить доступ, http
 
 1. Проверьте, установлено и запущено ли расширение Azure для SAP.
 
-   а.  Выполнить `sudo sh -c 'ls -al /var/lib/waagent/Microsoft.AzureCAT.AzureEnhancedMonitoring.MonitorX64Linux-*/'`
+   а.  Выполните команду `sudo sh -c 'ls -al /var/lib/waagent/Microsoft.AzureCAT.AzureEnhancedMonitoring.MonitorX64Linux-*/'`.
 
    **Ожидаемый результат**: список содержимого каталога расширения Azure для SAP.
 
@@ -1265,7 +1248,7 @@ XML-файл, к которому можно получить доступ, http
 
 1. Установите агент SAP Host Agent, как описано в примечании к SAP [1031096], и проверьте выходные данные `saposcol`.
 
-   а.  Выполнить `/usr/sap/hostctrl/exe/saposcol -d`
+   а.  Выполните команду `/usr/sap/hostctrl/exe/saposcol -d`.
 
    b.  Выполнить `dump ccm`
 
@@ -1276,6 +1259,9 @@ XML-файл, к которому можно получить доступ, http
 Если какая – либо из этих проверок не пройдена и подробные сведения о том, как повторно развернуть расширение, см. [в разделе Устранение неполадок нового расширения Azure для SAP][deployment-guide-5.3-new].
 
 ### <a name="health-check-for-the-azure-extension-for-sap-configuration"></a><a name="e2d592ff-b4ea-4a53-a91a-e5521edb6cd1"></a>Проверка работоспособности для конфигурации расширения Azure для SAP
+
+> [!NOTE]
+> Существует две версии расширения виртуальной машины. В этой главе рассматривается расширение виртуальной машины по умолчанию. Если вы установили новое расширение виртуальной машины, см. раздел [Проверка работоспособности для нового расширения Azure для конфигурации SAP][deployment-guide-5.2-new].
 
 Если некоторые данные инфраструктуры не предоставляются именно так, как указано в тесте, описанном в разделе [Проверка готовности расширения Azure для SAP][deployment-guide-5.1], то выполните командлет `Test-AzVMAEMExtension`, чтобы проверить, настроены ли параметры инфраструктуры Azure и расширение Azure для SAP должным образом.
 
@@ -1301,6 +1287,9 @@ XML-файл, к которому можно получить доступ, http
 
 ### <a name="health-check-for-the-new-azure-extension-for-sap-configuration"></a><a name="464ac96d-7d3c-435d-a5ae-3faf3bfef4b3"></a>Проверка работоспособности для нового расширения Azure для конфигурации SAP
 
+> [!NOTE]
+> Существует две версии расширения виртуальной машины. В этой главе рассматривается новое расширение виртуальной машины. Если вы установили расширение виртуальной машины по умолчанию, см. раздел [Проверка работоспособности для конфигурации расширения Azure для SAP][deployment-guide-5.2].
+
 Если некоторые данные инфраструктуры не доставляются должным образом, как указано в тесте, описанном в разделе [Проверка готовности для расширения Azure для SAP][deployment-guide-5.1-new], выполните `Get-AzVMExtension` командлет, чтобы проверить, установлено ли расширение Azure для SAP. `Test-AzVMAEMExtension`Еще не поддерживает новое расширение. После того как командлет поддерживает новое расширение, мы будем обновлять эту статью.
 
 1. Установите последнюю версию командлетов Azure PowerShell, как описано в разделе [Развертывание командлетов Azure PowerShell][deployment-guide-4.1].
@@ -1310,12 +1299,15 @@ XML-файл, к которому можно получить доступ, http
    $env = Get-AzEnvironment -Name <name of the environment>
    Connect-AzAccount -Environment $env
    Set-AzContext -SubscriptionName <subscription name>
-   Get-AzVMExtension -ResourceGroupName <resource group name> -VMName <virtual machine name>
+   Test-AzVMAEMExtension -ResourceGroupName <resource group name> -VMName <virtual machine name>
    ```
 
-1. Командлет выводит список всех расширений выбранной виртуальной машины. Убедитесь, что расширение Azure для SAP установлено на виртуальной машине.
+1. Командлет проверяет конфигурацию расширения виртуальной машины для SAP на выбранном вами виртуальном компьютере.
 
 ### <a name="troubleshooting-azure-extension-for-sap"></a><a name="fe25a7da-4e4e-4388-8907-8abc2d33cfd8"></a>Устранение неполадок, связанных с расширением Azure для SAP
+
+> [!NOTE]
+> Существует две версии расширения виртуальной машины. В этой главе рассматривается расширение виртуальной машины по умолчанию. Если вы установили новое расширение виртуальной машины, обратитесь к разделу [Устранение неполадок с новым расширением Azure для SAP][deployment-guide-5.3-new].
 
 #### <a name="windowslogo_windows-azure-performance-counters-do-not-show-up-at-all"></a>![Windows][Logo_Windows] Счетчики производительности Azure вообще не отображаются
 
@@ -1323,7 +1315,7 @@ XML-файл, к которому можно получить доступ, http
 
 ##### <a name="the-installation-directory-of-the-azure-extension-for-sap-is-empty"></a>Каталог установки расширения Azure для SAP пустой
 
-###### <a name="issue"></a>Проблемы
+###### <a name="issue"></a>Проблема
 
 Каталог установки C:\\Packages\\Plugins\\Microsoft.AzureCAT.AzureEnhancedMonitoring.AzureCATExtensionHandler\\&lt;версия>\\drop пустой.
 
@@ -1333,7 +1325,7 @@ XML-файл, к которому можно получить доступ, http
 
 ##### <a name="service-for-azure-extension-for-sap-does-not-exist"></a>Служба расширения Azure для SAP не существует
 
-###### <a name="issue"></a>Проблемы
+###### <a name="issue"></a>Проблема
 
 Служба расширенного мониторинга Azure для Windows отсутствует
 
@@ -1370,7 +1362,7 @@ XML-файл, к которому можно получить доступ, http
 
 ##### <a name="the-installation-directory-of-the-azure-extension-for-sap-is-empty"></a>Каталог установки расширения Azure для SAP пустой
 
-###### <a name="issue"></a>Проблемы
+###### <a name="issue"></a>Проблема
 
 Каталог \\var\\lib\\waagent\\ не содержит подкаталог для расширения Azure для SAP.
 
@@ -1407,13 +1399,16 @@ WARNING: [WARN] Standard Managed Disks are not supported. Extension will be inst
 
 ### <a name="troubleshooting-the-new-azure-extension-for-sap"></a><a name="b7afb8ef-a64c-495d-bb37-2af96688c530"></a>Устранение неполадок нового расширения Azure для SAP
 
+> [!NOTE]
+> Существует две версии расширения виртуальной машины. В этой главе рассматривается новое расширение виртуальной машины. Если вы установили расширение виртуальной машины по умолчанию, см. раздел [Устранение неполадок расширения Azure для SAP][deployment-guide-5.3].
+
 #### <a name="windowslogo_windows-azure-performance-counters-do-not-show-up-at-all"></a>![Windows][Logo_Windows] Счетчики производительности Azure вообще не отображаются
 
 Процесс AzureEnhancedMonitoring собирает метрики производительности в Azure. Если процесс не выполняется на виртуальной машине, сбор метрик производительности невозможен.
 
 ##### <a name="the-installation-directory-of-the-azure-extension-for-sap-is-empty"></a>Каталог установки расширения Azure для SAP пустой
 
-###### <a name="issue"></a>Проблемы
+###### <a name="issue"></a>Проблема
 
 Каталог установки C: \\ packages \\ plugins \\ Microsoft. AzureCAT. AzureEnhancedMonitoring. MonitorX64Windows \\ &lt; версии> пустой.
 
@@ -1433,7 +1428,7 @@ WARNING: [WARN] Standard Managed Disks are not supported. Extension will be inst
 
 ##### <a name="the-installation-directory-of-the-azure-extension-for-sap-is-empty"></a>Каталог установки расширения Azure для SAP пустой
 
-###### <a name="issue"></a>Проблемы
+###### <a name="issue"></a>Проблема
 
 Каталог \\var\\lib\\waagent\\ не содержит подкаталог для расширения Azure для SAP.
 
@@ -1500,7 +1495,7 @@ WARNING: [WARN] Standard Managed Disks are not supported. Extension will be inst
 
 Если ошибки не исчезнут, обратитесь в [службу поддержки][deployment-guide-contact-support].
 
-#### <a name="contact-support"></a><a name="3ba34cfc-c9bb-4648-9c3c-88e8b9130ca2"></a>Обратитесь в службу поддержки
+#### <a name="contact-support"></a><a name="3ba34cfc-c9bb-4648-9c3c-88e8b9130ca2"></a>Обращение в службу поддержки
 
 Непредвиденная ошибка, или нет известного решения. Собирайте файл AzureEnhancedMonitoring_service. log, расположенный в папке К:\паккажес\плугинс\микрософт.азурекат.азуринханцедмониторинг.азурекатекстенсионхандлер \\ \<version\> \Drop (Windows) или/var/log/Azure/Microsoft.OSTCExtensions.AzureEnhancedMonitorForLinux (Linux), и обратитесь в службу поддержки SAP для получения дополнительной помощи.
 

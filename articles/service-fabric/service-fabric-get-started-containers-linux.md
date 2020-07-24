@@ -4,12 +4,12 @@ description: Создание первого приложения-контейн
 ms.topic: conceptual
 ms.date: 1/4/2019
 ms.custom: tracking-python
-ms.openlocfilehash: 783f6a06d57a447998710e2c8ff349b23ef751c5
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 547030b983dd02e7b65d404188dccdcc24d53a22
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86256411"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87083843"
 ---
 # <a name="create-your-first-service-fabric-container-application-on-linux"></a>Создание первого контейнера-приложения Service Fabric в Linux
 > [!div class="op_single_selector"]
@@ -26,6 +26,8 @@ ms.locfileid: "86256411"
   * [Service Fabric пакет SDK и средства](service-fabric-get-started-linux.md).
   * [Предварительные выпуски](https://docs.docker.com/engine/installation/#prior-releases). 
   * [Интерфейс командной строки Service Fabric](service-fabric-cli.md)
+
+* Кластер Linux с тремя или более узлами.
 
 * Реестр контейнеров Azure. [Создайте реестр контейнеров](../container-registry/container-registry-get-started-portal.md) в своей подписке Azure. 
 
@@ -371,7 +373,7 @@ docker rmi myregistry.azurecr.io/samples/helloworldapp
 Чтобы добавить службу контейнеров в приложение, созданное с использованием yeoman, выполните следующие действия:
 
 1. Перейдите в корневой каталог существующего приложения. Например, `cd ~/YeomanSamples/MyApplication`, если `MyApplication` является приложением, созданным с помощью Yeoman.
-2. Выполнить `yo azuresfcontainer:AddService`
+2. Выполните команду `yo azuresfcontainer:AddService`.
 
 <a id="manually"></a>
 

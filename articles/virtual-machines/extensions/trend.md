@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-multiple
 ms.topic: article
 ms.date: 04/20/2018
 ms.author: akjosh
-ms.openlocfilehash: 874e6f9b1c0bebedb5f50ca38d0703420be69de5
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: c4a4f641283a9a4771a236ba844cfe296b31c28c
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86186968"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87082684"
 ---
 # <a name="how-to-install-and-configure-trend-micro-deep-security-as-a-service-on-a-windows-vm"></a>Установка и настройка Trend Micro Deep Security как услуги на ВМ Windows
 
@@ -38,7 +38,7 @@ ms.locfileid: "86186968"
 
 [Портал Azure](https://portal.azure.com) позволяет установить модуль безопасности Trend Micro при создании виртуальной машины с помощью образа из **Marketplace**. Если создается одна виртуальная машина, то использование портала — это простой способ добавления защиты от Trend Micro.
 
-При использовании образа из **Marketplace** открывается мастер, помогающий установить виртуальную машину. В колонке **Settings** (Параметры) (это третья страница мастера) можно установить модуль безопасности Trend Micro.  Общие указания см. в статье [Создание виртуальной машины под управлением Windows на портале Azure](../windows/classic/tutorial.md).
+При использовании образа из **Marketplace** открывается мастер, помогающий установить виртуальную машину. В колонке **Settings** (Параметры) (это третья страница мастера) можно установить модуль безопасности Trend Micro.  Общие указания см. в статье [Создание виртуальной машины под управлением Windows на портале Azure](../windows/quick-create-portal.md).
 
 Перейдя в колонку **Settings** (Параметры) мастера, сделайте следующее.
 
@@ -57,7 +57,7 @@ ms.locfileid: "86186968"
 ## <a name="install-the-deep-security-agent-on-an-existing-vm"></a>Установка агента Deep Security Agent на существующей виртуальной машине
 Чтобы установить агент на существующей виртуальной машине, требуется следующее.
 
-* Модуль Azure PowerShell версии не ниже 0.8.2, установленный на локальном компьютере. Установленную версию Azure PowerShell можно проверить с помощью команды **Get-Module azure | format-table version**. Инструкции и ссылка на последнюю версию см. в статье [Установка и настройка Azure PowerShell](/powershell/azure/overview). Войдите в свою подписку Azure с помощью `Add-AzureAccount`.
+* Модуль Azure PowerShell версии не ниже 0.8.2, установленный на локальном компьютере. Установленную версию Azure PowerShell можно проверить с помощью команды **Get-Module azure | format-table version**. Инструкции и ссылка на последнюю версию см. в статье [Установка и настройка Azure PowerShell](/powershell/azure/). Войдите в свою подписку Azure с помощью `Add-AzureAccount`.
 * Агент ВМ, установленный на конечной виртуальной машине.
 
 Сначала убедитесь, что агент ВМ уже установлен. Укажите имя облачной службы и имя виртуальной машины, а затем выполните следующие команды в командной строке Azure PowerShell уровня администратора. Замените все содержимое внутри кавычек, включая знаки < и >.

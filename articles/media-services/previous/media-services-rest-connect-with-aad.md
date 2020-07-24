@@ -14,17 +14,17 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.reviewer: willzhan; johndeu
-ms.openlocfilehash: 8b4980ee8ea252b4ce13601501e4bf1f7af97d1b
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: be7ac4073bb332a7595dcf211feb7087d0734854
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86166371"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87082738"
 ---
 # <a name="use-azure-ad-authentication-to-access-the-media-services-api-with-rest"></a>Использование аутентификации Azure AD для доступа к API Служб мультимедиа с помощью REST
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](../latest/index.yml). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
 
 Процесс аутентификации Azure AD в службах мультимедиа Azure можно выполнить двумя способами.
 
@@ -36,7 +36,7 @@ ms.locfileid: "86166371"
     > [!NOTE]
     > **Субъект-служба** — это лучшая методика для большинства приложений, подключающихся к службам мультимедиа Azure. 
 
-В этом руководстве описано следующее:
+В этом руководстве вы узнаете, как:
 
 > [!div class="checklist"]
 > * Получение сведений об аутентификации с портала Azure
@@ -167,7 +167,7 @@ ms.locfileid: "86166371"
 В этом разделе показано, как получить доступ к API **ресурсов** с помощью **Postman**.
 
 1. Откройте **POST**.
-2. Выберите **GET**.
+2. Выберите **получить**.
 3. Вставьте конечную точку REST API (например, https://amshelloworld.restv2.westus.media.azure.net/api/Assets)
 4. Перейдите на вкладку **Authorization** (Авторизация). 
 5. Выберите **Bearer Token** (Токен носителя).
@@ -196,7 +196,7 @@ ms.locfileid: "86166371"
 
 Возвращенный ответ содержит ресурсы, которые находятся в вашей учетной записи.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Пример кода доступен в разделе [Azure AD Authentication for Azure Media Services Access: Both via REST API](https://github.com/willzhan/WAMSRESTSoln) (Аутентификация Azure AD для доступа к службам мультимедиа Azure с помощью REST API)
 * [Передача файлов в учетную запись служб мультимедиа с помощью .NET](media-services-dotnet-upload-files.md)

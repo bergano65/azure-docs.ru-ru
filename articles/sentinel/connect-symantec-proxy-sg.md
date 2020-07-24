@@ -14,14 +14,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/17/2020
 ms.author: yelevin
-ms.openlocfilehash: 51a5c5de7bce07aa6a54b9ff81e957c38cfffdd2
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: fe49481357b542ce52de5fc9dab3059cb584c229
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86532028"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87083911"
 ---
 # <a name="connect-your-symantec-proxysg-to-azure-sentinel"></a>Подключение Symantec Проксисг к Azure Sentinel
+
+> [!IMPORTANT]
+> Соединитель данных Symantec Проксисг в Azure Sentinel сейчас находится в общедоступной предварительной версии.
+> Эта функция предоставляется без соглашения об уровне обслуживания и не рекомендуется для рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 В этой статье объясняется, как подключить устройство [Symantec проксисг](https://www.broadcom.com/products/cyber-security/network/gateway/proxy-sg-and-advanced-secure-gateway) к Azure Sentinel. Соединитель данных Symantec Проксисг позволяет легко подключать журналы Symantec Проксисг с помощью Azure Sentinel, просматривать панели мониторинга, создавать пользовательские оповещения и улучшать исследование. При интеграции между Symantec Проксисг и Sentinel a Azure используется системный журнал.
 

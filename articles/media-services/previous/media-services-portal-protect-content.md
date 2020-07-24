@@ -14,16 +14,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
-ms.openlocfilehash: 0c2a9612fab6c685cbc690aa9bbc12d1c7b7b746
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8d0e2487632971579a1a473375eb2200f3a63a46
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74978208"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87084540"
 ---
 # <a name="configure-content-protection-policies-by-using-the-azure-portal"></a>Настройка политик защиты содержимого с помощью портала Azure
 
 > [!NOTE]
-> Для работы с этим учебником требуется учетная запись Azure. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).   > новые функции или функции не добавляются в службы мультимедиа версии 2. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
+> Для работы с этим учебником требуется учетная запись Azure. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).   > новые функции или функции не добавляются в службы мультимедиа версии 2. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](../latest/index.yml). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
 >
 
  Службы мультимедиа Azure позволяют защитить данные мультимедиа, покидающие ваш компьютер, на этапах их хранения, обработки и доставки. С помощью служб мультимедиа Azure можно доставлять содержимое, динамически шифруемое с помощью алгоритма AES с 128-разрядным ключом шифрования. При использовании управления цифровыми правами (DRM) PlayReady и (или) Widevine и Apple FairPlay можно использовать шифрование CENC. 
@@ -104,9 +105,9 @@ ms.locfileid: "74978208"
 #### <a name="drm"></a>DRM
 1. После выбора **DRM** можно увидеть различные политики защиты содержимого (которые в этот момент необходимо настраивать) и набор потоковых протоколов:
 
-    а. **PlayReady and Widevine with MPEG-DASH** (PlayReady и Widevine с MPEG-DASH): динамически шифрует поток MPEG-DASH, используя системы DRM PlayReady и Widevine.
+    А. **PlayReady and Widevine with MPEG-DASH** (PlayReady и Widevine с MPEG-DASH): динамически шифрует поток MPEG-DASH, используя системы DRM PlayReady и Widevine.
 
-    b. **PlayReady and Widevine with MPEG-DASH + FairPlay with HLS** (PlayReady и Widevine с MPEG-DASH + FairPlay с HLS): динамически шифрует поток MPEG-DASH, используя системы DRM PlayReady и Widevine. Этот параметр также шифрует потоки HLS, используя FairPlay.
+    Б. **PlayReady and Widevine with MPEG-DASH + FairPlay with HLS** (PlayReady и Widevine с MPEG-DASH + FairPlay с HLS): динамически шифрует поток MPEG-DASH, используя системы DRM PlayReady и Widevine. Этот параметр также шифрует потоки HLS, используя FairPlay.
 
     c. **PlayReady only with Smooth Streaming, HLS and MPEG-DASH** (PlayReady только с Smooth Streaming, HLS и MPEG-DASH): динамически шифрует потоки Smooth Streaming, HLS и MPEG-DASH, используя систему DRM PlayReady.
 
@@ -127,9 +128,8 @@ ms.locfileid: "74978208"
 
 * Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
 ## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
-

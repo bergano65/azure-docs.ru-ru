@@ -5,11 +5,12 @@ author: cgillum
 ms.topic: conceptual
 ms.date: 11/02/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 4ed604302ca187ad4953e865d68dc73030a37c02
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 14e0b86f11c3eabf93e7d4f0ebf563e59c0c21e9
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77562145"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87081871"
 ---
 # <a name="orchestrator-function-code-constraints"></a>Ограничения кода функции Orchestrator
 
@@ -17,7 +18,7 @@ ms.locfileid: "77562145"
 
 ## <a name="orchestrator-code-constraints"></a>Ограничения кода оркестратора
 
-Функции Orchestrator используют [источники событий](https://docs.microsoft.com/azure/architecture/patterns/event-sourcing) для обеспечения надежного выполнения и поддержания состояния локальной переменной. [Поведение воспроизведения](durable-functions-orchestrations.md#reliability) кода Orchestrator создает ограничения на тип кода, который можно написать в функции Orchestrator. Например, функции Orchestrator должны быть *детерминированными*: функция Orchestrator будет воспроизведена несколько раз, и она должна выдавать один и тот же результат каждый раз.
+Функции Orchestrator используют [источники событий](/azure/architecture/patterns/event-sourcing) для обеспечения надежного выполнения и поддержания состояния локальной переменной. [Поведение воспроизведения](durable-functions-orchestrations.md#reliability) кода Orchestrator создает ограничения на тип кода, который можно написать в функции Orchestrator. Например, функции Orchestrator должны быть *детерминированными*: функция Orchestrator будет воспроизведена несколько раз, и она должна выдавать один и тот же результат каждый раз.
 
 ### <a name="using-deterministic-apis"></a>Использование детерминированных интерфейсов API
 
@@ -65,7 +66,7 @@ ms.locfileid: "77562145"
 
 Чтобы узнать больше о том, как платформа устойчивых задач выполняет функции Orchestrator, просмотрите [Исходный код устойчивой задачи на сайте GitHub](https://github.com/Azure/durabletask). В частности, см. раздел [TaskOrchestrationExecutor.CS](https://github.com/Azure/durabletask/blob/master/src/DurableTask.Core/TaskOrchestrationExecutor.cs) and [TaskOrchestrationContext.CS](https://github.com/Azure/durabletask/blob/master/src/DurableTask.Core/TaskOrchestrationContext.cs).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Узнайте, как вызывать подсистемы взаимодействия](durable-functions-sub-orchestrations.md)

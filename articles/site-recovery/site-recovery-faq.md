@@ -2,14 +2,14 @@
 title: Общие вопросы о службе Azure Site Recovery
 description: В этой статье обсуждаются распространенные вопросы о службе Azure Site Recovery.
 ms.topic: conceptual
-ms.date: 1/24/2020
+ms.date: 7/14/2020
 ms.author: raynew
-ms.openlocfilehash: b02d001d6fad905badaf17422bdd0554e3fc8493
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: 89a5785811b4f4833a5a5ddcef827b258ce1775a
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86133659"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87083741"
 ---
 # <a name="general-questions-about-azure-site-recovery"></a>Общие вопросы об Azure Site Recovery
 
@@ -116,6 +116,19 @@ Site Recovery имеет сертификаты ISO 27001:2013, 27018, HIPAA, DP
 ### <a name="how-can-i-enforce-tls-12-on-hyperv-to-azure-site-recovery-scenarios"></a>Как можно обеспечить применение TLS 1.2 для взаимодействия между HyperV и Azure Site Recovery?
 Обмен данными между микрослужбами Azure Site Recovery выполняется по протоколу TLS 1.2. Site Recovery всегда использует поставщики безопасности, настроенные в системе (ОС), и последнюю доступную версию протокола TLS. Вам достаточно явным образом включить TLS 1.2 в реестре, и тогда Site Recovery будет использовать только TLS 1.2 для взаимодействия со службами. 
 
+### <a name="how-can-i-enforce-restricted-access-on-my-storage-accounts-which-are-accessed-by-site-recovery-service-for-readingwriting-replication-data"></a>Как обеспечить ограниченный доступ к учетным записям хранения, доступ к которым осуществляется службой Site Recovery для чтения и записи данных репликации?
+Вы можете переключиться на управляемое удостоверение хранилища служб восстановления, перейдя к параметру *Identity* . После регистрации хранилища в Azure Active Directory можно подключиться к учетным записям хранения и предоставить следующее назначение ролей хранилищу.
+
+- Учетные записи хранения на основе диспетчер ресурсов (стандартный тип):
+  - [Участник](../role-based-access-control/built-in-roles.md#contributor)
+  - [участник данных BLOB-объектов хранилища](../role-based-access-control/built-in-roles.md#storage-blob-data-contributor);
+- Учетные записи хранения на основе диспетчер ресурсов (тип "Премиум"):
+  - [Участник](../role-based-access-control/built-in-roles.md#contributor)
+  - [владелец данных BLOB-объектов хранилища](../role-based-access-control/built-in-roles.md#storage-blob-data-owner);
+- Классические учетные записи хранения:
+  - [Участник классической учетной записи хранения](../role-based-access-control/built-in-roles.md#classic-storage-account-contributor)
+  - [Роль службы оператора ключей классических учетных записей хранения](../role-based-access-control/built-in-roles.md#classic-storage-account-key-operator-service-role)
+
 ## <a name="disaster-recovery"></a>Аварийное восстановление
 
 ### <a name="what-can-site-recovery-protect"></a>Что можно защитить с помощью службы Site Recovery?
@@ -142,7 +155,7 @@ Site Recovery имеет сертификаты ISO 27001:2013, 27018, HIPAA, DP
 ### <a name="is-disaster-recovery-supported-for-hyper-v-vms"></a>Поддерживается ли аварийное восстановление для виртуальных машин Hyper-V?
 Да, Site Recovery поддерживает аварийное восстановление локальных виртуальных машин Hyper-V. Ознакомьтесь с [часто задаваемыми вопросами об аварийном восстановлении виртуальных машин Hyper-V](hyper-v-azure-common-questions.md).
 
-## <a name="is-disaster-recovery-supported-for-physical-servers"></a>Поддерживается ли аварийное восстановление для физических серверов?
+### <a name="is-disaster-recovery-supported-for-physical-servers"></a>Поддерживается ли аварийное восстановление для физических серверов?
 Да, Site Recovery поддерживает аварийное восстановление локальных физических серверов под управлением Windows и Linux в Azure или на вторичный сайт. Узнайте больше о требованиях к аварийному восстановлению [в Azure](vmware-physical-azure-support-matrix.md#replicated-machines) и [на вторичный сайт](vmware-physical-secondary-support-matrix.md#replicated-vm-support).
 Обратите внимание, что физические серверы после отработки отказа будут работать в качестве виртуальных машин в Azure. Сейчас восстановление размещения из Azure на локальный физический сервер не поддерживается. Восстановление размещения можно выполнить только на виртуальную машину VMware.
 
@@ -209,8 +222,8 @@ Azure Site Recovery реплицирует данные в учетную зап
 3. Изменить каталог на "VX/Scripts" в папке установки<br>
     `# cd VX/scripts`
 4. Создайте скрипт оболочки bash с именем "customscript.sh" с разрешениями на выполнение для привилегированного пользователя.<br>
-    а. Скрипт должен поддерживать параметры командной строки "--Pre" и "--Post" (Обратите внимание на двойные тире).<br>
-    b. При вызове скрипта с предварительным параметром он должен заморозить входные и выходные данные приложения и при вызове после параметра следует разморозить входные и выходные данные приложения.<br>
+    А. Скрипт должен поддерживать параметры командной строки "--Pre" и "--Post" (Обратите внимание на двойные тире).<br>
+    Б. При вызове скрипта с предварительным параметром он должен заморозить входные и выходные данные приложения и при вызове после параметра следует разморозить входные и выходные данные приложения.<br>
     c. Пример шаблона —<br>
 
     `# cat customscript.sh`<br>

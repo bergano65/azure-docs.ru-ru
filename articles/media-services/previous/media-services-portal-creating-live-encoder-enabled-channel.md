@@ -14,21 +14,22 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: juliako
-ms.openlocfilehash: 7d2e4274e6feaebac6536eed2f8a99d251cd5ceb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e9236b5d6159a87ef09219d5e2bdb2e2679fb85a
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77162571"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87084557"
 ---
 # <a name="perform-live-streaming-using-media-services-to-create-multi-bitrate-streams-with-azure-portal"></a>Потоковая трансляция с помощью служб мультимедиа позволяет создавать потоки с несколькими скоростями с помощью портал Azure  
 > [!div class="op_single_selector"]
 > * [Портал](media-services-portal-creating-live-encoder-enabled-channel.md)
 > * [.NET](media-services-dotnet-creating-live-encoder-enabled-channel.md)
-> * [REST API](https://docs.microsoft.com/rest/api/media/operations/channel)
+> * [REST API](/rest/api/media/operations/channel)
 > 
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](../latest/index.yml). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
 
 В этом руководстве подробно описаны все этапы создания **канала** , который получает на вход динамический односкоростной поток данных и преобразует его в мультискоростной.
 
@@ -60,7 +61,7 @@ ms.locfileid: "77162571"
 1. Чтобы остановить потоковую передачу и архивацию содержимого события, завершите работу события.
 1. Удалите событие (и при необходимости ресурс).   
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 Ниже перечислены необходимые условия для выполнения действий, описанных в этом учебнике.
 
@@ -166,7 +167,7 @@ ms.locfileid: "77162571"
 ## <a name="watch-the-event"></a>Просмотр события
 Чтобы просмотреть событие, щелкните **Посмотреть** на портале Azure или скопируйте URL-адрес потоковой передачи и используйте проигрыватель по своему усмотрению. 
 
-![Создано](./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-play-event.png)
+![Создание](./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-play-event.png)
 
 После остановки интерактивное событие автоматически преобразуется в содержимое по требованию.
 
@@ -184,15 +185,14 @@ ms.locfileid: "77162571"
 
 ![Активы](./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-assets.png)
 
-## <a name="considerations"></a>Особенности
+## <a name="considerations"></a>Рекомендации
 * Сейчас максимальная рекомендуемая продолжительность интерактивного события составляет 8 часов. Обратитесь по адресу amshelp@microsoft.com, если необходимо запустить канал на более продолжительные отрезки времени.
 * Убедитесь, что конечная точка потоковой передачи, из которой нужно передавать содержимое потоком, находится в состоянии **Работает**.
 
-## <a name="next-step"></a>Следующий шаг
+## <a name="next-step"></a>Дальнейшие действия
 Просмотрите схемы обучения работе со службами мультимедиа.
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
 ## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
-
