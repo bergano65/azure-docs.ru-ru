@@ -6,11 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 10/01/2019
-ms.openlocfilehash: 6240b0813132f4a14dbe94b870774ebe7a0663aa
-ms.sourcegitcommit: 958f086136f10903c44c92463845b9f3a6a5275f
+ms.openlocfilehash: 0ac35fde59479ffc13c17f8e63d6fccf65c3be27
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83714582"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87001712"
 ---
 # <a name="call-azure-functions-from-azure-logic-apps"></a>Вызов Функций Azure из Azure Logic Apps
 
@@ -256,7 +257,7 @@ function convertToDateString(request, response){
 
 * Идентификатор каталога для вашего клиента в Azure Active Directory (Azure AD)
 
-  Чтобы получить идентификатор каталога клиента, выполните команду PowerShell [`Get-AzureAccount`](https://docs.microsoft.com/powershell/module/servicemanagement/azure/get-azureaccount). Или на портале Azure выполните следующие действия.
+  Чтобы получить идентификатор каталога клиента, выполните команду PowerShell [`Get-AzureAccount`](/powershell/module/servicemanagement/azure.service/get-azureaccount). Или на портале Azure выполните следующие действия.
 
   1. На [портале Azure](https://portal.azure.com) найдите и выберите требуемое приложение-функцию.
 

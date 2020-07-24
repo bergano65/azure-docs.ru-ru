@@ -2,16 +2,17 @@
 title: 'VPN-шлюз Azure: Устранение неполадок подключений типа "точка — сеть": клиенты Mac OS X'
 description: Инструкции по устранению неполадок VPN-подключений "точка — сеть" для клиентов Mac OS X
 services: vpn-gateway
-author: anzaman
+author: kumudD
 ms.service: vpn-gateway
 ms.topic: troubleshooting
 ms.date: 03/27/2018
 ms.author: alzam
-ms.openlocfilehash: f88053c93884e10e46a0f7d70106bda67b057562
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8dbed35659e409e5e3bcad74b378dba1f71b1f29
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77425733"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86998499"
 ---
 # <a name="troubleshoot-point-to-site-vpn-connections-from-mac-os-x-vpn-clients"></a>Устранение неполадок VPN-подключений "точка — сеть" для клиентов Mac OS X
 
@@ -61,5 +62,5 @@ ms.locfileid: "77425733"
   
 3. Если в трассировке сети нет ответа сервера, проверьте, включен ли протокол IKEv2 на странице конфигурации шлюза Azure на веб-сайте портал Azure.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Если потребуется дополнительная поддержка, обратитесь в [службу поддержки Майкрософт](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).

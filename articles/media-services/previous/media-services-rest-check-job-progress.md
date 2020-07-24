@@ -14,19 +14,19 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: 2d5f3382965d9166fabf99ac650e707e29c38a72
-ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.openlocfilehash: a8ada16bbfff66c60a1400542742396b667160dc
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86057115"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87000522"
 ---
 # <a name="how-to-check-job-progress"></a>Практическое руководство. Проверка хода выполнения задания
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](../latest/index.yml). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
 
-При выполнении заданий часто требуется способ отслеживания хода выполнения задачи. Состояние задания можно узнать с помощью свойства State задания. Дополнительные сведения о свойстве State см. в разделе [Свойства объекта Job](https://docs.microsoft.com/rest/api/media/operations/job#job_entity_properties).
+При выполнении заданий часто требуется способ отслеживания хода выполнения задачи. Состояние задания можно узнать с помощью свойства State задания. Дополнительные сведения о свойстве State см. в разделе [Свойства объекта Job](/rest/api/media/operations/job#job_entity_properties).
 
 ## <a name="connect-to-media-services"></a>Подключение к службам мультимедиа
 
@@ -72,6 +72,6 @@ Strict-Transport-Security: max-age=31536000; includeSubDomains
 ## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 
 [Общие сведения об операциях служб мультимедиа REST API](media-services-rest-how-to-use.md)

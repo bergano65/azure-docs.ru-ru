@@ -10,11 +10,12 @@ ms.workload: infrastructure-services
 ms.date: 09/24/2018
 ms.author: vikancha
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 5dfcb4abc7a6859955bc36fad2cee893a78c79cd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2dccfebed26c8064db697413e7417ae08d69a3ac
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84726571"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86998988"
 ---
 # <a name="install-nvidia-gpu-drivers-on-n-series-vms-running-windows"></a>Установка драйверов GPU NVIDIA на виртуальные машины серии N под управлением Windows 
 
@@ -22,7 +23,7 @@ ms.locfileid: "84726571"
 
 Если вы решили установить драйверы NVIDIA GPU вручную, в этой статье содержатся Поддерживаемые операционные системы, драйверы, а также действия по установке и проверке. Сведения о ручной установке драйверов также доступны для [виртуальных машин Linux](../linux/n-series-driver-setup.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
-Основные характеристики, сведения о дисках и объеме памяти см. в статье [Графический процессор](sizes-gpu.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). 
+Основные характеристики, сведения о дисках и объеме памяти см. в статье [Графический процессор](../sizes-gpu.md?toc=/azure/virtual-machines/windows/toc.json). 
 
 [!INCLUDE [virtual-machines-n-series-windows-support](../../../includes/virtual-machines-n-series-windows-support.md)]
 
@@ -46,25 +47,23 @@ ms.locfileid: "84726571"
 
 1. Откройте командную строку и измените каталог на **:\Program Files\NVIDIA Corporation\NVSMI**.
 
-2. Выполните `nvidia-smi`. Если драйвер установлен, то отобразятся выходные данные, аналогичные приведенным ниже. **GPU-Util** отобразит **0 %**, если только в этот момент графический процессор не выполняет рабочую нагрузку на виртуальной машине. Версия драйвера и сведения о GPU могут отличаться от показанных на изображении.
+2. Запустите `nvidia-smi`. Если драйвер установлен, то отобразятся выходные данные, аналогичные приведенным ниже. **GPU-Util** отобразит **0 %**, если только в этот момент графический процессор не выполняет рабочую нагрузку на виртуальной машине. Версия драйвера и сведения о GPU могут отличаться от показанных на изображении.
 
 ![Состояние устройства NVIDIA](./media/n-series-driver-setup/smi.png)  
 
 ## <a name="rdma-network-connectivity"></a>Сетевое подключение RDMA
 
-Сетевое подключение RDMA можно включить на виртуальных машинах серии N с поддержкой RDMA, таких как NC24r, развернутых в одной группе доступности или в одной группе размещения в масштабируемом наборе виртуальных машин. Необходимо добавить расширение HpcVmDrivers для установки драйверов сетевых устройств Windows, обеспечивающих подключения RDMA. Чтобы в виртуальную машину серии N с поддержкой RDMA добавить расширение виртуальной машины, используйте командлеты [Azure PowerShell](/powershell/azure/overview) для Azure Resource Manager.
+Сетевое подключение RDMA можно включить на виртуальных машинах серии N с поддержкой RDMA, таких как NC24r, развернутых в одной группе доступности или в одной группе размещения в масштабируемом наборе виртуальных машин. Необходимо добавить расширение HpcVmDrivers для установки драйверов сетевых устройств Windows, обеспечивающих подключения RDMA. Чтобы в виртуальную машину серии N с поддержкой RDMA добавить расширение виртуальной машины, используйте командлеты [Azure PowerShell](/powershell/azure/) для Azure Resource Manager.
 
 Чтобы установить последнюю версию расширения HpcVMDrivers 1.1 на существующую виртуальную машину myVM с поддержкой RDMA, размещенную в регионе "Западная часть США", выполните следующее.
   ```powershell
   Set-AzVMExtension -ResourceGroupName "myResourceGroup" -Location "westus" -VMName "myVM" -ExtensionName "HpcVmDrivers" -Publisher "Microsoft.HpcCompute" -Type "HpcVmDrivers" -TypeHandlerVersion "1.1"
   ```
-  Дополнительные сведения см. в разделе [Обзор расширений и компонентов виртуальной машины под управлением Windows](extensions-features.md).
+  Дополнительные сведения см. в разделе [Обзор расширений и компонентов виртуальной машины под управлением Windows](../extensions/features-windows.md).
 
-Сеть RDMA поддерживает трафик MPI (Message Passing Interface) для приложений, использующих [Microsoft MPI](https://docs.microsoft.com/message-passing-interface/microsoft-mpi) или Intel MPI 5.x. 
+Сеть RDMA поддерживает трафик MPI (Message Passing Interface) для приложений, использующих [Microsoft MPI](/message-passing-interface/microsoft-mpi) или Intel MPI 5.x. 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Разработчики приложений с ускорением GPU, предназначенных для графических процессоров NVIDIA Tesla, могут также скачать и установить последнюю версию [CUDA Toolkit](https://developer.nvidia.com/cuda-downloads). Дополнительные сведения см. в [руководстве по установке CUDA](https://docs.nvidia.com/cuda/cuda-installation-guide-microsoft-windows/index.html#axzz4ZcwJvqYi).
-
-

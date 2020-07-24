@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 11/09/2018
 ms.author: juliako
-ms.openlocfilehash: 619d40ab56715b4444d8e5649c7fb3401b3f57ff
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 276cb3e6078fec915f266c5eb9aa557f92973dd7
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "71937285"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87001168"
 ---
 # <a name="create-and-monitor-media-services-events-with-event-grid-using-the-azure-cli"></a>Создание и мониторинг событий Служб мультимедиа Azure с помощью Сетки событий и Azure CLI
 
@@ -31,7 +31,7 @@ ms.locfileid: "71937285"
 
     Сейчас в Azure Cloud Shell работают не все команды [интерфейса командной строки Служб мультимедиа версии 3](https://aka.ms/ams-v3-cli-ref). Рекомендуется использовать интерфейс командной строки локально.
 
-- [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md).
+- [Создание учетной записи Служб мультимедиа](./create-account-howto.md).
 
     Запишите значения, которые вы использовали в качестве имени группы ресурсов и имени учетной записи Служб мультимедиа.
 
@@ -69,7 +69,7 @@ az account set --subscription mySubscriptionId
     amsResourceId=$(az ams account show --name <ams_account_name> --resource-group <resource_group_name> --query id --output tsv)
     ```
 
-    Пример:
+    Например.
 
     ```
     amsResourceId=$(az ams account show --name amsaccount --resource-group amsResourceGroup --query id --output tsv)
@@ -84,7 +84,7 @@ az account set --subscription mySubscriptionId
     --endpoint <endpoint_URL>
     ```
 
-    Пример:
+    Например.
 
     ```
     az eventgrid event-subscription create --source-resource-id $amsResourceId --name amsTestEventSubscription --endpoint https://amstesteventgrid.azurewebsites.net/api/updates/
@@ -109,4 +109,3 @@ az account set --subscription mySubscriptionId
 ## <a name="next-steps"></a>Дальнейшие действия
 
 [Отправка, кодирование и потоковая передача](stream-files-tutorial-with-api.md)
-

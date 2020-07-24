@@ -14,16 +14,17 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: 79c24eb078cc3de764ecc1c814e5b8772777eab6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5f7a9f87c73e4c5aa5f905def18534b04688a0a2
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78199501"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87000539"
 ---
 # <a name="use-playready-andor-widevine-dynamic-common-encryption"></a>Использование общего динамического шифрования PlayReady и (или) Widevine DRM
 
 > [!NOTE]
-> Для работы с этим учебником требуется учетная запись Azure. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).   > новые функции или функции не добавляются в службы мультимедиа версии 2. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
+> Для работы с этим учебником требуется учетная запись Azure. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).   > новые функции или функции не добавляются в службы мультимедиа версии 2. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](../latest/index.yml). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
 >   
 
 ## <a name="overview"></a>Обзор
@@ -40,7 +41,7 @@ ms.locfileid: "78199501"
 
 Дополнительные сведения см. в разделе Интеграция с [Axinom](media-services-axinom-integration.md) и [castLabs](media-services-castlabs-integration.md).
 
-Службы мультимедиа поддерживают несколько способов авторизации пользователей, которые запрашивают ключи. Для политики авторизации ключа содержимого можно задать одно или несколько ограничений: открытая авторизация или авторизация с помощью маркера. При ограничении с помощью маркера к политике должен прилагаться маркер, выданный службой маркеров безопасности (STS). Службы мультимедиа поддерживают маркеры в форматах [простого веб-маркера](https://msdn.microsoft.com/library/gg185950.aspx#BKMK_2) (SWT) и [JSON Web Token](https://msdn.microsoft.com/library/gg185950.aspx#BKMK_3) (JWT). 
+Службы мультимедиа поддерживают несколько способов авторизации пользователей, которые запрашивают ключи. Для политики авторизации ключа содержимого можно задать одно или несколько ограничений: открытая авторизация или авторизация с помощью маркера. При ограничении с помощью маркера к политике должен прилагаться маркер, выданный службой маркеров безопасности (STS). Службы мультимедиа поддерживают маркеры в форматах [простого веб-маркера](/previous-versions/azure/azure-services/gg185950(v=azure.100)#BKMK_2) (SWT) и [JSON Web Token](/previous-versions/azure/azure-services/gg185950(v=azure.100)#BKMK_3) (JWT). 
 
 Дополнительные сведения см. [в статье Настройка политики авторизации для ключа содержимого](media-services-protect-with-aes128.md#configure_key_auth_policy).
 
@@ -608,17 +609,16 @@ namespace DynamicEncryptionWithDRM
 
 * Widevine — это служба, которая предоставляется компанией Google Inc. и подпадает под условия предоставления услуг и политику конфиденциальности Google Inc.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
 ## <a name="provide-feedback"></a>Предоставление отзыва
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 
 * [Использование CENC с несколькими подсистемами DRM и контролем доступа](media-services-cenc-with-multidrm-access-control.md)
 * [Настройка упаковки Widevine с использованием служб мультимедиа](https://mingfeiy.com/how-to-configure-widevine-packaging-with-azure-media-services)
-* [Начало работы с клиентским пакетом SDK для Java для служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/media-services-java-how-to-use)
+* [Начало работы с клиентским пакетом SDK для Java для служб мультимедиа Azure](./media-services-java-how-to-use.md)
 * Чтобы скачать последний пакет SDK для PHP для служб мультимедиа, найдите версию 0.5.7 пакета Microsoft/WindowsAzure в [репозитории Packagist](https://packagist.org/packages/microsoft/windowsazure#v0.5.7). 
-

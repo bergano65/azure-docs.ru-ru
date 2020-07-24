@@ -15,18 +15,18 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.reviewer: milanga;cenkdin
-ms.openlocfilehash: 0ddf15ffad086bab5ed6c4e2508cd0874f6ee567
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: d0a449a84bebcc0a296bde51234b0ceb128b2d23
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86166184"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87000131"
 ---
 # <a name="update-media-services-after-rolling-storage-access-keys"></a>Обновление Служб мультимедиа после смены ключей доступа к хранилищу 
 
 При создании новой учетной записи служб мультимедиа Azure (AMS) пользователю предлагается выбрать учетную запись хранения Azure, которая используется для хранения мультимедийного содержимого. К учетной записи служб мультимедиа можно добавить несколько учетных записей хранения. В этой статье показано, как чередовать ключи к хранилищу данных. В нем также показано, как добавлять учетные записи хранения в учетную запись служб мультимедиа. 
 
-Чтобы выполнить действия, описанные в этой статье, необходимо использовать [API Azure Resource Manager](/rest/api/media/operations/azure-media-services-rest-api-reference) и [PowerShell](https://docs.microsoft.com/powershell/module/az.media).  Дополнительные сведения см. [в статье Управление ресурсами Azure с помощью PowerShell и диспетчер ресурсов](../../azure-resource-manager/management/manage-resource-groups-powershell.md).
+Чтобы выполнить действия, описанные в этой статье, необходимо использовать [API Azure Resource Manager](/rest/api/media/operations/azure-media-services-rest-api-reference) и [PowerShell](/powershell/module/az.media).  Дополнительные сведения см. [в статье Управление ресурсами Azure с помощью PowerShell и диспетчер ресурсов](../../azure-resource-manager/management/manage-resource-groups-powershell.md).
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
@@ -72,7 +72,7 @@ Sync-AzMediaServiceStorageKeys -ResourceGroupName $resourceGroupName -AccountNam
  
 ## <a name="steps-to-add-storage-accounts-to-your-ams-account"></a>Инструкции по добавлению учетных записей хранения в учетную запись AMS
 
-В следующей статье показано, как добавить учетные записи хранения в учетную запись AMS: [Управление активами служб мультимедиа в нескольких учетных записях хранения](meda-services-managing-multiple-storage-accounts.md).
+В следующей статье показано, как добавить учетные записи хранения в учетную запись AMS: [Управление активами служб мультимедиа в нескольких учетных записях хранения](./media-services-managing-multiple-storage-accounts.md).
 
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]

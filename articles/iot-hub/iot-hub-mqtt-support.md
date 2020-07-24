@@ -10,12 +10,12 @@ ms.author: robinsh
 ms.custom:
 - amqp
 - mqtt
-ms.openlocfilehash: 2f1f059f3abfd04ae78d9a2a19cff2929e84b8a4
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 72c012ba9ce28c0ca5dd5a315cf94b8895558a0b
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86521128"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87001695"
 ---
 # <a name="communicate-with-your-iot-hub-using-the-mqtt-protocol"></a>Взаимодействие с Центром Интернета вещей с помощью протокола MQTT
 
@@ -41,13 +41,13 @@ ms.locfileid: "86521128"
 
 ## <a name="using-the-device-sdks"></a>Использование пакетов SDK для устройств
 
-Доступны [пакеты SDK для устройств](https://github.com/Azure/azure-iot-sdks) с поддержкой протокола MQTT для Java, Node.js, C, C# и Python. Для установки подключения к Центру Интернета вещей пакеты SDK для устройств используют стандартную строку подключения к Центру Интернета вещей. Чтобы использовать протокол MQTT, параметр протокола клиента должен быть задан как **MQTT**. В параметре протокола клиента можно также указать MQTT через веб-сокеты. По умолчанию пакеты SDK для устройств подключаются к Центру Интернета вещей, если для флага **CleanSession** установлено значение **0**, и используют **качество обслуживания первого уровня** для обмена сообщениями с Центром Интернета вещей.
+Доступны [пакеты SDK для устройств](https://github.com/Azure/azure-iot-sdks) с поддержкой протокола MQTT для Java, Node.js, C, C# и Python. Для установки подключения к Центру Интернета вещей пакеты SDK для устройств используют стандартную строку подключения к Центру Интернета вещей. Чтобы использовать протокол MQTT, параметр протокола клиента должен быть задан как **MQTT**. В параметре протокола клиента можно также указать MQTT через веб-сокеты. По умолчанию пакеты SDK для устройств подключаются к Центру Интернета вещей, если для флага **CleanSession** установлено значение **0**, и используют **качество обслуживания первого уровня** для обмена сообщениями с Центром Интернета вещей. Хотя можно настроить **качество обслуживания 0** для ускорения обмена сообщениями, следует отметить, что доставка не гарантирована и не подтверждена. По этой причине **качество обслуживания 0** часто упоминается как «пожар и забыть».
 
 Когда устройство подключено к Центру Интернета вещей, пакеты SDK для устройства предоставляют методы, позволяющие устройству осуществлять обмен сообщениями с Центром Интернета вещей.
 
 В следующей таблице содержатся ссылки на примеры кода для каждого поддерживаемого языка и указаны параметры, используемые для подключения к Центру Интернета вещей по протоколу MQTT и MQTT через веб-сокеты.
 
-| Язык | Параметр протокола MQTT | Параметр протокола MQTT через веб-сокеты
+| Language | Параметр протокола MQTT | Параметр протокола MQTT через веб-сокеты
 | --- | --- | --- |
 | [Node.js](https://github.com/Azure/azure-iot-sdk-node/blob/master/device/samples/simple_sample_device.js) | azure-iot-device-mqtt.Mqtt | azure-iot-device-mqtt.MqttWs |
 | [Java](https://github.com/Azure/azure-iot-sdk-java/blob/master/device/iot-device-samples/send-receive-sample/src/main/java/samples/com/microsoft/azure/sdk/iot/SendReceive.java) |[IotHubClientProtocol](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.device.iothubclientprotocol?view=azure-java-stable).MQTT | IotHubClientProtocol.MQTT_WS |
@@ -76,8 +76,8 @@ device_client = IoTHubDeviceClient.create_from_connection_string(deviceConnectio
 
 |Язык  |Интервал проверки активности по умолчанию  |Настраивается  |
 |---------|---------|---------|
-|Node.js     |   180 секунд      |     нет    |
-|Java     |    230 секунд     |     нет    |
+|Node.js     |   180 секунд      |     Нет    |
+|Java     |    230 секунд     |     Нет    |
 |C     | 240 секунд |  [Да](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/Iothub_sdk_options.md#mqtt-transport)   |
 |C#     | 300 секунд |  [Да](https://github.com/Azure/azure-iot-sdk-csharp/blob/master/iothub/device/src/Transport/Mqtt/MqttTransportSettings.cs#L89)   |
 |Python (версия 2)   | 60 секунд |  нет   |
@@ -366,7 +366,7 @@ RFC 2396-encoded(<PropertyName1>)=RFC 2396-encoded(<PropertyValue1>)&RFC 2396-en
 
 3. Затем служба отправляет ответное сообщение, содержащее новое значение ETag для коллекции сообщаемых свойств в разделе `$iothub/twin/res/{status}/?$rid={request id}`. В этом ответном сообщении используется то же значение **request ID**, что и в запросе.
 
-Текст запроса содержит документ JSON, в котором имеются новые значения для переданных свойств. Каждый элемент документа JSON обновляет или добавляет соответствующий компонент в документе двойника устройства. Если элементу задано значение `null`, то этот компонент удаляется из содержащего его объекта. Вот несколько примеров:
+Текст запроса содержит документ JSON, в котором имеются новые значения для переданных свойств. Каждый элемент документа JSON обновляет или добавляет соответствующий компонент в документе двойника устройства. Если элементу задано значение `null`, то этот компонент удаляется из содержащего его объекта. Например.
 
 ```json
 {

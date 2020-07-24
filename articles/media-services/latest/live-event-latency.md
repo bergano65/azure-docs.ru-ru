@@ -13,18 +13,18 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 04/22/2019
 ms.author: juliako
-ms.openlocfilehash: 720931cf9f955f63075e3881b6b9f2e884bd3a76
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: 24eb5f8691c94c1f319820f3133b66065504ace3
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86232463"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87000897"
 ---
 # <a name="live-event-low-latency-settings"></a>Параметры низкой задержки в динамических событиях
 
-В этой статье показано, как настроить низкую задержку [события потоковой трансляции](https://docs.microsoft.com/rest/api/media/liveevents). Здесь также рассмотрены результаты настройки низкой задержки в разных проигрывателях. Результаты различаются в зависимости от задержки сети и CDN.
+В этой статье показано, как настроить низкую задержку [события потоковой трансляции](/rest/api/media/liveevents). Здесь также рассмотрены результаты настройки низкой задержки в разных проигрывателях. Результаты различаются в зависимости от задержки сети и CDN.
 
-Чтобы использовать новую функцию **LowLatency**, настройте для параметра **StreamOptionsFlag** значение **LowLatency** в **LiveEvent**. При создании [LiveOutput](https://docs.microsoft.com/rest/api/media/liveoutputs) для воспроизведения HLS задайте для [LiveOutput.Hls.fragmentsPerTsSegment](https://docs.microsoft.com/rest/api/media/liveoutputs/create#hls) значение 1. После запуска потока можно использовать [проигрыватель мультимедиа Azure](https://ampdemo.azureedge.net/) (демонстрационная страница amp) и задать параметры воспроизведения для использования профиля эвристики с низкой задержкой.
+Чтобы использовать новую функцию **LowLatency**, настройте для параметра **StreamOptionsFlag** значение **LowLatency** в **LiveEvent**. При создании [LiveOutput](/rest/api/media/liveoutputs) для воспроизведения HLS задайте для [LiveOutput.Hls.fragmentsPerTsSegment](/rest/api/media/liveoutputs/create#hls) значение 1. После запуска потока можно использовать [проигрыватель мультимедиа Azure](https://ampdemo.azureedge.net/) (демонстрационная страница amp) и задать параметры воспроизведения для использования профиля эвристики с низкой задержкой.
 
 > [!NOTE]
 > В настоящее время Ловлатенци Хеуристикпрофиле в Проигрыватель мультимедиа Azure предназначен для воспроизведения потоков в протоколе MPEG-ТИРЕ с помощью формата CSF или КМАФ (например, `format=mdp-time-csf` или `format=mdp-time-cmaf` ). 
@@ -79,4 +79,3 @@ LiveEvent liveEvent = new LiveEvent(
 
 - [Общие сведения о потоковой трансляции](live-streaming-overview.md)
 - [Руководство по потоковой трансляции](stream-live-tutorial-with-api.md)
-

@@ -8,12 +8,12 @@ ms.author: divswa
 ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 04/22/2020
-ms.openlocfilehash: c9d80ccac311b02d8734663d99a37804f8280771
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: dfe48a1348929bbe8d4af6793d94d52514df9d74
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82115539"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87001542"
 ---
 # <a name="exchange-edifact-messages-for-b2b-enterprise-integration-in-azure-logic-apps-with-enterprise-integration-pack"></a>Обмен сообщениями EDIFACT для интеграции с предприятием B2B в Azure Logic Apps с помощью Пакета интеграции Enterprise
 
@@ -22,7 +22,7 @@ ms.locfileid: "82115539"
 > [!NOTE]
 > В этой статье описываются функции EDIFACT в Azure Logic Apps. Дополнительные сведения см. в статье [Интеграция Enterprise с X12](logic-apps-enterprise-integration-x12.md).
 
-## <a name="before-you-start"></a>Перед началом работы
+## <a name="before-you-start"></a>Прежде чем начать
 
 Вам понадобится следующее:
 
@@ -251,7 +251,7 @@ ms.locfileid: "82115539"
 
 ## <a name="connector-reference"></a>Справочник по соединителям
 
-Дополнительные технические сведения об этом соединителе, такие как действия и ограничения, описанные в файле Swagger соединителя, см. на [странице справочника по соединителю](https://docs.microsoft.com/connectors/edifact/).
+Дополнительные технические сведения об этом соединителе, такие как действия и ограничения, описанные в файле Swagger соединителя, см. на [странице справочника по соединителю](/connectors/edifact/).
 
 > [!NOTE]
 > Для приложений логики в [среде службы интеграции (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md) эта помеченная как ISE версия соединителя [использует ограничения сообщений B2B для ISE](../logic-apps/logic-apps-limits-and-config.md#b2b-protocol-limits).

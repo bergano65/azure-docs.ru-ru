@@ -12,11 +12,12 @@ ms.topic: article
 ms.date: 5/28/2020
 ms.author: inhenkel
 ms.custom: references_regions
-ms.openlocfilehash: cefd366e29fe1c6f68ec38816247f78bb53cd6e6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6ecc8cad4480528477f6bb470c7bc32ee2a20e11
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84196241"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87001355"
 ---
 # <a name="clouds-and-regions-in-which-azure-media-services-v3-exists"></a>Облака и регионы, в которых существуют Службы мультимедиа Azure версии 3
 
@@ -24,7 +25,7 @@ ms.locfileid: "84196241"
 
 ## <a name="feature-availability-in-azure-clouds"></a>Доступность функций в облаках Azure
 
-| Компонент|Глобальные регионы Azure | Azure для государственных организаций|Azure для Германии|Azure China 21Vianet|
+| Функция|Глобальные регионы Azure | Azure для государственных организаций|Azure для Германии|Azure China 21Vianet|
 | --- | --- | --- | --- | --- |
 | [Azure EventGrid](reacting-to-media-services-events.md) | Доступно | Недоступно | Недоступно | Недоступно |
 | [VideoAnalyzerPreset](analyzing-video-audio-files-concept.md) |  Доступно | Недоступно | Недоступно | Недоступно |
@@ -37,14 +38,14 @@ ms.locfileid: "84196241"
 
 [Ливетранскриптион](live-transcription.md) доступен в следующих регионах:
 
-- Юго-Восточная Азия
+- Southeast Asia
 - Западная Европа
 - Северная Европа
 - Восточная часть США
 - Центральная часть США
 - Центрально-южная часть США
 - западная часть США 2
-- Южная Бразилия
+- Brazil South
 
 ## <a name="regionsgeographieslocations"></a>Регионы, географические регионы или расположения
 
@@ -52,7 +53,7 @@ ms.locfileid: "84196241"
 
 ### <a name="region-code-name"></a>Кодовое имя региона
 
-Если необходимо предоставить параметр **расположение**, нужно указать имя и код региона в качестве значения **location**. Для получения кодового имени региона, в котором развернута ваша учетная запись и к которому должен быть направлен ваш вызов, выполните следующую строку в [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest).
+Если необходимо предоставить параметр **расположение**, нужно указать имя и код региона в качестве значения **location**. Для получения кодового имени региона, в котором развернута ваша учетная запись и к которому должен быть направлен ваш вызов, выполните следующую строку в [Azure CLI](/cli/azure/?view=azure-cli-latest).
 
 ```azurecli-interactive
 az account list-locations
@@ -79,42 +80,42 @@ az account list-locations
 
 ### <a name="global-azure"></a>Глобальная среда Azure
 
-|Конечные точки||
-| --- | --- |
+| Служба | Конечная точка |
+| ------- | -------- |
 | Azure Resource Manager |  `https://management.azure.com/` |
-| Аутентификация | `https://login.microsoftonline.com/` |
+| Проверка подлинности | `https://login.microsoftonline.com/` |
 | Аудитория токена | `https://management.core.windows.net/` |
 
 ### <a name="azure-government"></a>Azure для государственных организаций
 
-|Конечные точки||
-| --- | --- |
+| Служба | Конечная точка |
+| ------- | -------- |
 | Azure Resource Manager |  `https://management.usgovcloudapi.net/` |
-| Аутентификация | `https://login.microsoftonline.us/` |
+| Проверка подлинности | `https://login.microsoftonline.us/` |
 | Аудитория токена | `https://management.core.usgovcloudapi.net/` |
 
 ### <a name="azure-germany"></a>Azure для Германии
 
-| Конечные точки ||
-| --- | --- |  
+| Служба | Конечная точка |
+| ------- | -------- |
 | Azure Resource Manager | `https://management.cloudapi.de/` |
-| Аутентификация | `https://login.microsoftonline.de/` |
+| Проверка подлинности | `https://login.microsoftonline.de/` |
 | Аудитория токена | `https://management.core.cloudapi.de/`|
 
 ### <a name="azure-china-21vianet"></a>Azure China 21Vianet
 
-|Конечные точки||
-| --- | --- |
+| Служба | Конечная точка |
+| ------- | -------- |
 | Azure Resource Manager | `https://management.chinacloudapi.cn/` |
-| Аутентификация | `https://login.chinacloudapi.cn/` |
+| Проверка подлинности | `https://login.chinacloudapi.cn/` |
 | Аудитория токена |  `https://management.core.chinacloudapi.cn/` |
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 
 * [Регионы Azure](https://azure.microsoft.com/global-infrastructure/regions/)
 * [Географические регионы Azure](https://azure.microsoft.com/global-infrastructure/geographies/)
 * [Расположения Azure](https://azure.microsoft.com/global-infrastructure/locations/)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Что такое Службы мультимедиа Azure версии 3?](media-services-overview.md)

@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 03/22/2019
 ms.author: cynthn
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: cafe28be1d7c08c24b728de2476cb2210c6e5bd0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 58b8a22ff36f85f25bb6a4b22617029fe3858660
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82098328"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86998873"
 ---
 # <a name="create-a-windows-virtual-machine-from-a-resource-manager-template"></a>Создание виртуальной машины Windows с использованием шаблона Resource Manager
 
@@ -56,7 +56,7 @@ New-AzResourceGroupDeployment `
 
 Ниже приведены некоторые дополнительные ресурсы.
 
-- Чтобы узнать, как создавать шаблоны Resource Manager, ознакомьтесь с [документацией по Azure Resource Manager](/azure/azure-resource-manager/).
+- Чтобы узнать, как создавать шаблоны Resource Manager, ознакомьтесь с [документацией по Azure Resource Manager](../../azure-resource-manager/index.yml).
 - Схемы виртуальных машин Azure см. в [справочнике по шаблонам Azure](/azure/templates/microsoft.compute/allversions).
 - Дополнительные примеры шаблонов виртуальных машин см. в статье [шаблоны](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Compute&pageNumber=1&sort=Popular)быстрого запуска Azure.
 
@@ -64,14 +64,14 @@ New-AzResourceGroupDeployment `
 
 Последняя команда PowerShell из предыдущего скрипта показывает имя виртуальной машины. Чтобы подключиться к виртуальной машине, см. раздел [как подключиться к виртуальной машине Azure под Windows и войти](./connect-logon.md)в нее.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- Если возникнут проблемы с развертыванием, см. статью [Устранение распространенных ошибок развертывания в Azure с помощью Azure Resource Manager](../../resource-manager-common-deployment-errors.md).
+- Если возникнут проблемы с развертыванием, см. статью [Устранение распространенных ошибок развертывания в Azure с помощью Azure Resource Manager](../../azure-resource-manager/templates/common-deployment-errors.md).
 - Сведения о создании виртуальной машины и управлении ею см. в статье [Создание виртуальных машин Windows и управление ими с помощью модуля Azure PowerShell](tutorial-manage-vm.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
 Дополнительные сведения о создании шаблонов, синтаксисе и свойствах JSON для типов ресурсов, которые вы развернули, см. в этих статьях:
 
 - [Microsoft.Network/publicIPAddresses](/azure/templates/microsoft.network/publicipaddresses)
 - [Microsoft.Network/virtualNetworks](/azure/templates/microsoft.network/virtualnetworks)
-- [Microsoft. Network/networkInterfaces](/azure/templates/microsoft.network/networkinterfaces)
-- [Microsoft. COMPUTE/virtualMachines](/azure/templates/microsoft.compute/virtualmachines)
+- [Microsoft.Network/networkInterfaces](/azure/templates/microsoft.network/networkinterfaces)
+- [Microsoft.Compute/virtualMachines](/azure/templates/microsoft.compute/virtualmachines)

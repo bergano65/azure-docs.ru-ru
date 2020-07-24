@@ -7,12 +7,12 @@ ms.subservice: files
 ms.topic: how-to
 ms.date: 06/22/2020
 ms.author: rogarana
-ms.openlocfilehash: 9a8805666e1e162f76cf5fa6f7d828833c573bed
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 40d372eb5569f3a4079acda3ab1e43b3e86cc113
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85510448"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86999604"
 ---
 # <a name="part-four-mount-a-file-share-from-a-domain-joined-vm"></a>Часть 4. Подключение общей папки из виртуальной машины, присоединенной к домену
 
@@ -33,16 +33,25 @@ ms.locfileid: "85510448"
 
 Замените значения заполнителей собственными значениями, а затем используйте следующую команду для подключения общей папки Azure:
 
-```cli
+```PSH
 # Always mount your share using.file.core.windows.net, even if you setup a private endpoint for your share.
-net use <desired-drive-letter>: \\<storage-account-name>.file.core.windows.net\<share-name>
+$connectTestResult = Test-NetConnection -ComputerName <storage-account-name>.file.core.windows.net -Port 445
+if ($connectTestResult.TcpTestSucceeded)
+{
+  net use <desired-drive letter>: \\<storage-account-name>.file.core.windows.net\<fileshare-name>
+} 
+else 
+{
+  Write-Error -Message "Unable to reach the Azure storage account via port 445. Check to make sure your organization or ISP is not blocking port 445, or use Azure P2S VPN, Azure S2S VPN, or Express Route to tunnel SMB traffic over a different port."
+}
+
 ```
 
 Если у вас возникли проблемы при подключении с учетными данными AD DS, обратитесь к статье [не удалось подключить службу файлов Azure с учетными данными AD](storage-troubleshoot-windows-file-connection-problems.md#unable-to-mount-azure-files-with-ad-credentials) .
 
 После успешного подключения общей папки вы успешно включили и настроили локальную проверку подлинности AD DS для файловых ресурсов Azure.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если удостоверение, созданное в AD DS для представления учетной записи хранения, находится в домене или подразделении, обеспечивающем смену паролей, перейдите к следующей статье, чтобы получить инструкции по обновлению пароля:
 

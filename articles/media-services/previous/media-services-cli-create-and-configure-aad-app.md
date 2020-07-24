@@ -13,17 +13,17 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/26/2019
 ms.author: juliako
-ms.openlocfilehash: f136fb666e93adc0fe92aee014e3da9a37bbd6aa
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 82d5c605baf6f95df7fee62379772ce13d696ac6
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "70035813"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87000811"
 ---
 # <a name="use-azure-cli-to-create-an-azure-ad-app-and-configure-it-to-access-media-services-api"></a>Создание и настройка приложения Azure AD для доступа к API Служб мультимедиа с помощью Azure CLI 
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](../latest/index.yml). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
 
 В этой статье показано, как с помощью Azure CLI создать приложение Azure Active Directory (Azure AD) и субъект-службу для доступа к ресурсам Служб мультимедиа Azure. 
 
@@ -49,7 +49,7 @@ az ad sp create-for-rbac --name <appName>
 az role assignment create --assignee < user/app id> --role Contributor --scope <subscription/subscription id>
 ```
 
-Пример:
+Например.
 
 ```azurecli
 az role assignment create --assignee a3e068fa-f739-44e5-ba4d-ad57866e25a1 --role Contributor --scope /subscriptions/0b65e280-7917-4874-9fed-1307f2615ea2/resourceGroups/Default-AzureBatch-SouthCentralUS/providers/microsoft.media/mediaservices/sbbash
@@ -63,7 +63,7 @@ az role assignment create --assignee a3e068fa-f739-44e5-ba4d-ad57866e25a1 --role
 * **группа ресурсов**;
 * **ресурс** (например, учетная запись служб мультимедиа).
 
-Дополнительные сведения см. в статье [Создание субъекта-службы Azure с помощью Azure CLI](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli).
+Дополнительные сведения см. в статье [Создание субъекта-службы Azure с помощью Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli).
 
 Ознакомьтесь также с разделом [Управление доступом на основе ролей с помощью интерфейса командной строки Azure](../../role-based-access-control/role-assignments-cli.md). 
 

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/4/2020
 ms.author: inhenkel
-ms.openlocfilehash: e039a240465478e86ce816890219e5dfaa07dfbf
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8f86c157652f6219afdf1df1da9b8ad385f059aa
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82791057"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87000957"
 ---
 # <a name="media-services-live-event-error-codes"></a>Коды ошибок динамических событий служб мультимедиа
 
@@ -26,7 +26,7 @@ ms.locfileid: "82791057"
 
 ## <a name="liveeventconnectionrejected"></a>LiveEventConnectionRejected;
 
-При оформлении подписки на события [сетки событий](https://docs.microsoft.com/azure/event-grid/) для события в реальном времени может появиться одна из следующих ошибок события [лививентконнектионрежектед](media-services-event-schemas.md#liveeventconnectionrejected) .
+При оформлении подписки на события [сетки событий](../../event-grid/index.yml) для события в реальном времени может появиться одна из следующих ошибок события [лививентконнектионрежектед](media-services-event-schemas.md#liveeventconnectionrejected) .
 
 | Код результата | Описание |
 | ----------- | ----------- |
@@ -54,7 +54,7 @@ ms.locfileid: "82791057"
 |Неизвестные коды ошибок|Эти коды ошибок могут варьироваться от ошибки памяти до дублирования записей в карте хэшей.|
 
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также статью
 
 [Коды ошибок конечной точки потоковой передачи (исходного кода)](streaming-endpoint-error-codes.md)
 

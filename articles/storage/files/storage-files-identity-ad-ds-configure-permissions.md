@@ -7,12 +7,12 @@ ms.subservice: files
 ms.topic: how-to
 ms.date: 06/22/2020
 ms.author: rogarana
-ms.openlocfilehash: 38168db9706bd168b3edc2e740eaea40b23d4b0b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5e293bb98405affd824d4bbc50b6f24c5a0e3c11
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85510586"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86999621"
 ---
 # <a name="part-three-configure-directory-and-file-level-permissions-over-smb"></a>Часть 3. Настройка разрешений на уровне каталога и файлов по протоколу SMB 
 
@@ -51,7 +51,16 @@ ms.locfileid: "85510586"
 Используйте команду Windows, `net use` чтобы подключить файловый ресурс Azure. Не забудьте заменить значения заполнителей в следующем примере собственными значениями. Дополнительные сведения о подключении общих файловых ресурсов см. [в статье использование файлового ресурса Azure с Windows](storage-how-to-use-files-windows.md). 
 
 ```
-net use <desired-drive-letter>: \\<storage-account-name>.file.core.windows.net\<share-name> /user:Azure\<storage-account-name> <storage-account-key>
+$connectTestResult = Test-NetConnection -ComputerName <storage-account-name>.file.core.windows.net -Port 445
+if ($connectTestResult.TcpTestSucceeded)
+{
+  net use <desired-drive-letter>: \\<storage-account-name>.file.core.windows.net\<share-name> /user:Azure\<storage-account-name> <storage-account-key>
+} 
+else 
+{
+  Write-Error -Message "Unable to reach the Azure storage account via port 445. Check to make sure your organization or ISP is not blocking port 445, or use Azure P2S VPN,   Azure S2S VPN, or Express Route to tunnel SMB traffic over a different port."
+}
+
 ```
 
 Если при подключении к службе файлов Azure возникают проблемы, обратитесь к [средству устранения неполадок, опубликованному для ошибок подключения к службе файлов Azure в Windows](https://gallery.technet.microsoft.com/Troubleshooting-tool-for-a9fa1fe5). Мы также предоставляем [рекомендации](https://docs.microsoft.com/azure/storage/files/storage-files-faq#on-premises-access) по обойти сценарии, когда порт 445 заблокирован. 
@@ -85,7 +94,7 @@ icacls <mounted-drive-letter>: /grant <user-email>:(f)
 
 Дополнительные сведения об использовании icacls для задания списков управления доступом Windows и различных типов поддерживаемых разрешений см. [в справочнике по командной строке для icacls](https://docs.microsoft.com/windows-server/administration/windows-commands/icacls).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда эта функция включена и настроена, перейдите к следующей статье, в которой вы подключаете файловый ресурс Azure с виртуальной машины, присоединенной к домену.
 

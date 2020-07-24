@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: 373b863441eb21b52a18bbaece10779260eaeb7a
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: 76717c580136d23030565c5476f8b282897784a7
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86166202"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87000420"
 ---
 # <a name="create-content-keys-with-rest"></a>Создание ключей содержимого с помощью REST
 > [!div class="op_single_selector"]
@@ -41,7 +41,7 @@ ms.locfileid: "86166202"
 1. Создайте случайный 16-разрядный ключ AES (для общего и конвертного шифрования) или 32-разрядного ключа AES (для шифрования в хранилище). 
    
     Это ключ содержимого ресурса, то есть всех файлов, связанных с этим ресурсом. При расшифровке используется один и тот же ключ содержимого. 
-2. Вызовите методы [GetProtectionKeyId](https://docs.microsoft.com/rest/api/media/operations/rest-api-functions#getprotectionkeyid) и [GetProtectionKey](https://msdn.microsoft.com/library/azure/jj683097.aspx#getprotectionkey), чтобы получить правильный сертификат X.509, который должен использоваться для шифрования ключа содержимого.
+2. Вызовите методы [GetProtectionKeyId](/rest/api/media/operations/rest-api-functions#getprotectionkeyid) и [GetProtectionKey](/rest/api/media/operations/rest-api-functions#getprotectionkey), чтобы получить правильный сертификат X.509, который должен использоваться для шифрования ключа содержимого.
 3. Зашифруйте ключ содержимого с помощью открытого ключа сертификата X.509. 
    
    Пакет SDK служб мультимедиа для .NET использует при выполнении шифрования RSA с OAEP.  Примером может служить [функция EncryptSymmetricKeyData](https://github.com/Azure/azure-sdk-for-media-services/blob/dev/src/net/Client/Common/Common.FileEncryption/EncryptionUtils.cs).
@@ -268,4 +268,3 @@ HTTP/1.1 204 No Content
 
 ## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
-

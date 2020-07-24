@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 03/26/2020
 ms.author: juliako
-ms.openlocfilehash: aba987ba232a29ffc240f72039b1e24bb87a2ed4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a635a75a64db59fc56c6890f79af967a58735853
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80345905"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87001134"
 ---
 # <a name="create-a-job-input-from-a-local-file"></a>Создание входных данных задания из локального файла
 
@@ -24,7 +24,7 @@ ms.locfileid: "80345905"
 
 ## <a name="prerequisites"></a>Предварительные требования 
 
-* [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md).
+* [Создание учетной записи Служб мультимедиа](./create-account-howto.md).
 * Изучите, как [управлять активами](manage-asset-concept.md).
 
 ## <a name="net-sample"></a>Пример кода .NET
@@ -32,7 +32,7 @@ ms.locfileid: "80345905"
 С помощью приведенного ниже кода можно создать входной ресурс и использовать его в качестве входных данных задания. Функция CreateInputAsset выполняет следующие задачи:
 
 * создает ресурс;
-* Получает доступный для записи [URL-адрес SAS](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1) [контейнера ресурса в хранилище](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-dotnet#upload-blobs-to-a-container) .
+* Получает доступный для записи [URL-адрес SAS](../../storage/common/storage-sas-overview.md) [контейнера ресурса в хранилище](../../storage/blobs/storage-quickstart-blobs-dotnet.md#upload-blobs-to-a-container) .
 * отправляет файл в контейнер в хранилище через URL-адрес SAS.
 
 [!code-csharp[Main](../../../media-services-v3-dotnet-tutorials/AMSV3Tutorials/UploadEncodeAndStreamFiles/Program.cs#CreateInputAsset)]
@@ -47,7 +47,7 @@ ms.locfileid: "80345905"
 
 ## <a name="job-error-codes"></a>Коды ошибок задания
 
-См. статью о [кодах ошибок](https://docs.microsoft.com/rest/api/media/jobs/get#joberrorcode).
+См. статью о [кодах ошибок](/rest/api/media/jobs/get#joberrorcode).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

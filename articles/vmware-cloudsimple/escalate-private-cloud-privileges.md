@@ -9,17 +9,18 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 63dc18c522a1e2e3b03bdf806945e0be67774b18
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 628824a3d303184e199452b0974c7f99d99a4933
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81870476"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86998958"
 ---
 # <a name="escalate-private-cloud-vcenter-privileges-from-the-cloudsimple-portal"></a>Эскалация привилегий для частного облака vCenter на портале Клаудсимпле
 
 Чтобы получить административный доступ к vCenter, вы можете временно эскалировать привилегии Клаудсимпле.  Используя повышенные привилегии, можно устанавливать решения VMware, добавлять источники удостоверений и управлять пользователями.
 
-Новые пользователи могут быть созданы в домене единого входа vCenter и получают доступ к vCenter.  При создании новых пользователей добавьте их в встроенные группы Клаудсимпле для доступа к vCenter.  Дополнительные сведения см. в статье Клаудсимплеing Model, посвященных [разрешениям для частных облаков VMware vCenter](https://docs.microsoft.com/azure/vmware-cloudsimple/learn-private-cloud-permissions/).
+Новые пользователи могут быть созданы в домене единого входа vCenter и получают доступ к vCenter.  При создании новых пользователей добавьте их в встроенные группы Клаудсимпле для доступа к vCenter.  Дополнительные сведения см. в статье Клаудсимплеing Model, посвященных [разрешениям для частных облаков VMware vCenter](./learn-private-cloud-permissions.md).
 
 > [!CAUTION]
 > Не вносите никаких изменений в конфигурацию для компонентов управления. Действия, выполняемые во время повышенного привилегированного состояния, могут негативно повлиять на систему или привести к недоступности системы.
@@ -85,7 +86,7 @@ ms.locfileid: "81870476"
 > [!IMPORTANT]
 > Чтобы избежать ошибок, выйдите из vCenter и выполните вход снова после отзыва привилегий.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Настройка источников удостоверений vCenter для использования Active Directory](https://docs.microsoft.com/azure/vmware-cloudsimple/set-vcenter-identity/)
-* Установка решения резервного копирования на [виртуальных машинах резервного копирования](https://docs.microsoft.com/azure/vmware-cloudsimple/backup-workloads-veeam/)
+* [Настройка источников удостоверений vCenter для использования Active Directory](./set-vcenter-identity.md)
+* Установка решения резервного копирования на [виртуальных машинах резервного копирования](./backup-workloads-veeam.md)

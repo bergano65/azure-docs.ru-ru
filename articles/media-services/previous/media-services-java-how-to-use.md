@@ -14,21 +14,21 @@ ms.devlang: java
 ms.topic: conceptual
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 3adbb9471cc501861b65efd0321b3b4f72b07aea
-ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.openlocfilehash: e5978cff8da4697cf130e499c8d9273d75118963
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86057863"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87000624"
 ---
 # <a name="get-started-with-the-java-client-sdk-for-azure-media-services"></a>Начало работы с клиентским пакетом SDK для Java для служб мультимедиа Azure  
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](../latest/index.yml). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
 
 В этом руководстве описано, как реализовать простую службу доставки видео с помощью служб мультимедиа Azure и клиентского пакета SDK для Java.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 Ниже перечислены необходимые условия для выполнения действий, описанных в этом учебнике.
 
@@ -65,7 +65,7 @@ ms.locfileid: "86057863"
 * `clientKey`. Ключ клиента приложения Azure AD.
 * `restApiEndpoint`. Конечная точка REST API учетной записи служб мультимедиа Azure.
 
-Вы можете создать приложение Azure AD и получить предыдущие значения конфигурации на портале Azure. Дополнительные сведения см. в разделе **Проверка подлинности субъекта-службы** статьи [Приступая к работе с аутентификацией Azure AD с помощью портала Azure](https://docs.microsoft.com/azure/media-services/media-services-portal-get-started-with-aad).
+Вы можете создать приложение Azure AD и получить предыдущие значения конфигурации на портале Azure. Дополнительные сведения см. в разделе **Проверка подлинности субъекта-службы** статьи [Приступая к работе с аутентификацией Azure AD с помощью портала Azure](./media-services-portal-get-started-with-aad.md).
 
 Этот код также использует локально хранимый видеофайл. Необходимо изменить код, чтобы указать собственный локальный файл для отправки.
 
@@ -320,6 +320,5 @@ ms.locfileid: "86057863"
 
 [Azure Media Services SDK Maven Package]: https://mvnrepository.com/artifact/com.microsoft.azure/azure-media/latest
 [Azure Java Developer Center]: https://azure.microsoft.com/develop/java/
-[Azure for Java developers]: https://docs.microsoft.com/java/azure/
-[Media Services Client Development]: https://msdn.microsoft.com/library/windowsazure/dn223283.aspx
-
+[Azure for Java developers]: /java/azure/
+[Media Services Client Development]: /previous-versions/azure/dn223283(v=azure.100)

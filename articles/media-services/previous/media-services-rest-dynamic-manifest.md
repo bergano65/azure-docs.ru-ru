@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.reviewr: cenkdin
-ms.openlocfilehash: 8166a85d1c3421d95ac2b818e51b6b60e7663165
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: 9bc351f72f5dac38ebfc1983a7b918d46f5fc8ea
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86170672"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87000318"
 ---
 # <a name="creating-filters-with-azure-media-services-rest-api"></a>Создание фильтров с помощью с помощью API REST служб мультимедиа 
 > [!div class="op_single_selector"]
@@ -38,10 +38,10 @@ ms.locfileid: "86170672"
 ## <a name="types-used-to-create-filters"></a>Типы, используемые для создания фильтров
 При создании фильтров используются следующие типы:  
 
-* [Фильтр](https://docs.microsoft.com/rest/api/media/operations/filter)
-* [AssetFilter](https://docs.microsoft.com/rest/api/media/operations/assetfilter)
-* [пресентатионтимеранже](https://docs.microsoft.com/rest/api/media/operations/presentationtimerange)
-* [FilterTrackSelect и FilterTrackPropertyCondition](https://docs.microsoft.com/rest/api/media/operations/filtertrackselect)
+* [Filter](/rest/api/media/operations/filter)
+* [AssetFilter](/rest/api/media/operations/assetfilter)
+* [пресентатионтимеранже](/rest/api/media/operations/presentationtimerange)
+* [FilterTrackSelect и FilterTrackPropertyCondition](/rest/api/media/operations/filtertrackselect)
 
 > [!NOTE]
 > 
@@ -71,7 +71,7 @@ x-ms-client-request-id: 00000000-0000-0000-0000-000000000000
 Host:media.windows.net 
 ```
 
-Тело запроса 
+Текст запроса 
 
 ```console
 {  
@@ -130,7 +130,7 @@ x-ms-client-request-id: 00000000-0000-0000-0000-000000000000
 Host: media.windows.net  
 ```
 
-Тело запроса 
+Текст запроса 
 
 ```console
 {   
@@ -217,7 +217,7 @@ x-ms-client-request-id: 00000000
 ```
 
 ## <a name="update-filters"></a>Обновление фильтров
-Для обновления фильтра новыми значениями свойства используйте операции PATCH, PUT или MERGE.  Дополнительные сведения об этих операциях см. [здесь](https://msdn.microsoft.com/library/dd541276.aspx).
+Для обновления фильтра новыми значениями свойства используйте операции PATCH, PUT или MERGE.  Дополнительные сведения об этих операциях см. [здесь](/openspecs/windows_protocols/ms-odata/59d5abd3-7b12-490a-a0e2-9d9324b91893).
 
 При обновлении фильтра может понадобиться до 2 минут на обновление правил конечной точкой потоковой передачи. Если содержимое было обработано с помощью данного фильтра (и кэшировано на прокси-серверах и в кэшах CDN), обновление этого фильтра может привести к сбоям проигрывателя. Очистите кэш после обновления фильтра. Если такой вариант невозможен, рассмотрите возможность использования другого фильтра.  
 
@@ -371,4 +371,3 @@ Host: media.windows.net
 
 ## <a name="see-also"></a>См. также
 [Обзор динамических манифестов](media-services-dynamic-manifest-overview.md)
-

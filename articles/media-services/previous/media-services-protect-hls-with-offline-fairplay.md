@@ -15,11 +15,12 @@ ms.topic: article
 ms.date: 05/07/2020
 ms.author: willzhan
 ms.reviewer: dwgeo
-ms.openlocfilehash: 618803e8e94f96a63e0c39c27b40a933acac7cb4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: eee718627f35154c878c717e02febe0ea7958fe6
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82995528"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87000556"
 ---
 # <a name="offline-fairplay-streaming-for-ios"></a>Потоковая передача FairPlay в автономном режиме для iOS 
 
@@ -28,7 +29,7 @@ ms.locfileid: "82995528"
 > * [Версия 2](media-services-protect-hls-with-offline-fairplay.md)
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](../latest/index.yml). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
 
 Службы мультимедиа Azure предоставляют набор хорошо спроектированных [служб системы защиты содержимого](https://azure.microsoft.com/services/media-services/content-protection/), которые охватывают:
 
@@ -53,7 +54,7 @@ ms.locfileid: "82995528"
 * Ознакомиться с интерактивной защитой содержимого FairPlay. Дополнительные сведения см. в следующих статьях и образцах:
 
     - [Apple FairPlay Streaming for Azure Media Services generally available](https://azure.microsoft.com/blog/apple-FairPlay-streaming-for-azure-media-services-generally-available/) (Общедоступная версия Apple FairPlay Streaming для служб мультимедиа Azure).
-    - [Защита содержимого HLS с помощью Apple FairPlay или Microsoft PlayReady](https://docs.microsoft.com/azure/media-services/media-services-protect-hls-with-FairPlay).
+    - [Защита содержимого HLS с помощью Apple FairPlay или Microsoft PlayReady](./media-services-protect-hls-with-fairplay.md).
     - [Образец для интерактивной потоковой передачи FPS](https://azure.microsoft.com/resources/samples/media-services-dotnet-dynamic-encryption-with-FairPlay/).
 
 * Получить пакет SDK FPS из сети разработчиков Apple. Пакет SDK FPS состоит из двух компонентов:
@@ -200,7 +201,7 @@ func requestApplicationCertificate() throws -> Data {
 Вы можете найти образцы на этом [демо-сайте](https://aka.ms/poc#22) вместе с соответствующим сертификатом приложения, размещенным в веб-приложении Azure.
 При использовании 3-й или 4-й версии примера пакета SDK сервера FPS, если главный плейлист содержит альтернативный аудио-поток, в автономном режиме воспроизводится только аудио. Таким образом, вам нужно убрать альтернативный аудиопоток. Другими словами, второй и третий образцы, перечисленные ранее, работают в интерактивном и автономном режимах. В первом примере звук будет воспроизводиться только в автономном режиме, в то время как интерактивная потоковая передача работает правильно.
 
-## <a name="faq"></a>ВОПРОСЫ И ОТВЕТЫ
+## <a name="faq"></a>Вопросы и ответы
 Следующие ответы на часто задаваемые вопросы помогут устранить неполадки:
 
 - **Почему в автономном режиме воспроизводится только звук, но нет видео?** Такое поведение, по-видимому, связано с дизайном примера приложения. При наличии альтернативной звуковой дорожки (например, для HLS) во время работы в автономном режиме как для iOS 10, так и для iOS 11 по умолчанию используется альтернативная звуковая дорожка. Чтобы компенсировать это поведение в автономном режиме, удалите из потока альтернативную звуковую дорожку. Чтобы сделать это для служб мультимедиа, добавьте динамический фильтр манифеста audio-only=false. Другими словами URL-адрес HLS оканчивается на .ism/manifest(format=m3u8-aapl,audio-only=false). 
@@ -210,7 +211,7 @@ func requestApplicationCertificate() throws -> Data {
 - **Что делает последний параметр для в следующем интерфейсе API для автономного режима?**
 `Microsoft.WindowsAzure.MediaServices.Client.FairPlay.FairPlayConfiguration.CreateSerializedFairPlayOptionConfiguration(objX509Certificate2, pfxPassword, pfxPasswordId, askId, iv, RentalAndLeaseKeyType.PersistentUnlimited, 0x9999);`
 
-    Документацию по этому API см. в статье [FairPlayConfiguration.CreateSerializedFairPlayOptionConfiguration Method](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.mediaservices.client.FairPlay.FairPlayconfiguration.createserializedFairPlayoptionconfiguration?view=azure-dotnet) (Метод FairPlayConfiguration.CreateSerializedFairPlayOptionConfiguration). Параметр представляет продолжительность автономной аренды, а вторая — как единицу.
+    Документацию по этому API см. в статье [FairPlayConfiguration.CreateSerializedFairPlayOptionConfiguration Method](/dotnet/api/microsoft.windowsazure.mediaservices.client.fairplay.fairplayconfiguration.createserializedfairplayoptionconfiguration?view=azure-dotnet) (Метод FairPlayConfiguration.CreateSerializedFairPlayOptionConfiguration). Параметр представляет продолжительность автономной аренды, а вторая — как единицу.
 - **Какова структура скачанного или автономного файла на устройствах iOS?** Структура скачанного файла на устройстве iOS выглядит как на следующем снимке экрана. В папке `_keys` хранятся скачанные лицензии FPS, один файл хранилища для каждого узла службы лицензий. В папке `.movpkg` хранится аудио- и видеосодержимое. Первая папка, имя которой заканчивается дефисом с числами, содержит видео. Числовое значение равно значению PeakBandwidth для представлений видео. Вторая папка с именем, заканчивающимся тире, за которым следует 0, содержит аудио. Третья папка с именем "Данные" содержит главный список воспроизведения содержимого FPS. Наконец, boot.xml предоставляет полное описание содержимого папки `.movpkg`. 
 
 ![Структура файла примера приложения автономного FairPlay iOS](media/media-services-protect-hls-with-offline-FairPlay/media-services-offline-FairPlay-file-structure.png)
@@ -256,6 +257,6 @@ func requestApplicationCertificate() throws -> Data {
 * Примеры видео FPS используются для тестирования автономного и интерактивного режима потоковой передачи.
 * В разделе "Часто задаваемые вопросы" содержатся ответы на вопросы об автономном режиме FPS.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]

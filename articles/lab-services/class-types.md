@@ -3,11 +3,12 @@ title: Пример типов классов в Службе лаборатор
 description: Предоставляет некоторые типы классов, для которых можно настроить лаборатории с помощью Службы лабораторий Azure.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 8564f5ece9d6df7db852c5ac16f00f1455d013ca
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 21159aacfcd87bb929eaeaf9884b0275c7005e1a
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85443763"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87001629"
 ---
 # <a name="class-types-overview---azure-lab-services"></a>Общие сведения о типах классов — Службы лабораторий Azure
 
@@ -44,11 +45,6 @@ ms.locfileid: "85443763"
 Вы можете настроить компьютер-шаблон в Службах лаборатории Azure с помощью средств, необходимых для обучения учащихся использованию [Jupyter Notebook](http://jupyter-notebook.readthedocs.io). Jupyter Notebook — это проект с открытым кодом, который позволяет легко комбинировать форматированный текст и исполняемый исходный код [Python](https://www.python.org/) на одном холсте, именуемом блокнотом. При запуске записной книжки создается линейная запись входных и выходных данных.  Эти выходные данные могут включать текст, таблицы данных, точечные диаграммы и многое другое.
 
 Подробные сведения о том, как настроить такого рода лабораторию, см. в статье [Set up a lab to teach data science with Python and Jupyter Notebooks](class-type-jupyter-notebook.md) (Настройка лаборатории для обучения обработке и анализу данных с помощью Python и Jupyter Notebook).
-
-## <a name="mobile-app-development-with-android-studio"></a>Разработка мобильных приложений с помощью Android Studio
-Вы можете настроить лабораторию в Службах лабораторий Azure, чтобы изучить вводный класс разработки мобильных приложений. Этот класс посвящен мобильным приложениям Android, которые можно опубликовать в [Google Play Маркет](https://play.google.com/store/apps).  Учащиеся узнают, как использовать [Android Studio](https://developer.android.com/studio) для создания приложений.  [Эмулятор Visual Studio для Android](https://visualstudio.microsoft.com/vs/msft-android-emulator/) используется для локального тестирования приложения.
-
-Подробные сведения о том, как настроить такого рода лабораторию, см. в статье [Set up a lab to teach data mobile application development with Android Studio](class-type-mobile-dev-android-studio.md) (Настройка лаборатории для обучения разработке мобильных приложений с Android Studio).
 
 ## <a name="big-data-analytics"></a>Аналитика больших данных
 Вы можете настроить лабораторию GPU, чтобы обучить класс анализа больших данных. С классом этого типа учащиеся узнают, как работать с большими объемами данных и применять алгоритмы машинного и статистического обучения для получения аналитических данных. Ключевым показателем для учащихся является обучение использованию средств анализа данных, таких как программный пакет с открытым исходным кодом Apache Hadoop, который предоставляет средства для хранения больших данных, управления ими и их обработки. 

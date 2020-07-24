@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/25/2017
 ms.author: allensu
-ms.openlocfilehash: 8f1273f1476ea7da03eb44b700519482deac3284
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e8fedad40c18818932bf37dfe93c1b236357c30b
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84809181"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87001611"
 ---
 # <a name="load-balancing-on-multiple-ip-configurations-using-powershell"></a>Балансировка нагрузки в конфигурациях с несколькими IP-адресами с помощью PowerShell
 
@@ -38,7 +38,7 @@ ms.locfileid: "84809181"
 
 Выполните следующие действия, чтобы реализовать сценарий, описанный в этой статье.
 
-1. Установите Azure PowerShell. Сведения об установке последней версии Azure PowerShell, а также о выборе нужной подписки и входе в учетную запись Azure см. в статье [Как установить и настроить службы Azure PowerShell](/powershell/azure/overview).
+1. Установите Azure PowerShell. Сведения об установке последней версии Azure PowerShell, а также о выборе нужной подписки и входе в учетную запись Azure см. в статье [Как установить и настроить службы Azure PowerShell](/powershell/azure/).
 2. Создайте группу ресурсов, указав приведенные ниже параметры.
 
     ```powershell
@@ -46,7 +46,7 @@ ms.locfileid: "84809181"
     $myResourceGroup = "contosofabrikam"
     ```
 
-    Чтобы узнать больше, ознакомьтесь с шагом 2 в разделе [Создание группы ресурсов](../virtual-machines/virtual-machines-windows-ps-create.md?toc=%2fazure%2fload-balancer%2ftoc.json).
+    Чтобы узнать больше, ознакомьтесь с шагом 2 в разделе [Создание группы ресурсов](../virtual-machines/scripts/virtual-machines-windows-powershell-sample-create-vm.md?toc=%2fazure%2fload-balancer%2ftoc.json).
 
 3. [Создайте группу доступности](../virtual-machines/windows/tutorial-availability-sets.md?toc=%2fazure%2fload-balancer%2ftoc.json) для виртуальных машин. В рамках данного сценария воспользуйтесь следующей командой.
 
@@ -54,14 +54,14 @@ ms.locfileid: "84809181"
     New-AzAvailabilitySet -ResourceGroupName "contosofabrikam" -Name "myAvailset" -Location "West Central US"
     ```
 
-4. Следуйте инструкциям для шагов 3–5 в разделе [Создание виртуальной машины Windows](../virtual-machines/virtual-machines-windows-ps-create.md?toc=%2fazure%2fload-balancer%2ftoc.json), чтобы подготовить среду к созданию виртуальной машины с одной сетевой картой. Выполните шаг 6.1, затем вместо шага 6.2 выполните следующую команду.
+4. Следуйте инструкциям для шагов 3–5 в разделе [Создание виртуальной машины Windows](../virtual-machines/scripts/virtual-machines-windows-powershell-sample-create-vm.md?toc=%2fazure%2fload-balancer%2ftoc.json), чтобы подготовить среду к созданию виртуальной машины с одной сетевой картой. Выполните шаг 6.1, затем вместо шага 6.2 выполните следующую команду.
 
     ```powershell
     $availset = Get-AzAvailabilitySet -ResourceGroupName "contosofabrikam" -Name "myAvailset"
     New-AzVMConfig -VMName "VM1" -VMSize "Standard_DS1_v2" -AvailabilitySetId $availset.Id
     ```
 
-    После этого выполните шаги 6.3–6.8 раздела [Создание виртуальной машины Windows](../virtual-machines/virtual-machines-windows-ps-create.md?toc=%2fazure%2fload-balancer%2ftoc.json).
+    После этого выполните шаги 6.3–6.8 раздела [Создание виртуальной машины Windows](../virtual-machines/scripts/virtual-machines-windows-powershell-sample-create-vm.md?toc=%2fazure%2fload-balancer%2ftoc.json).
 
 5. Добавьте вторую IP-конфигурации в каждую виртуальную машину. Следуйте инструкциям в статье [Назначение виртуальным машинам нескольких IP-адресов](../virtual-network/virtual-network-multiple-ip-addresses-powershell.md#add). Используйте следующие параметры конфигурации.
 
@@ -141,6 +141,6 @@ ms.locfileid: "84809181"
 
 13. Наконец, необходимо настроить записи ресурсов DNS, чтобы они указывали на соответствующие интерфейсные IP-адреса подсистемы балансировки нагрузки. Домены можно разместить в Azure DNS. Дополнительные сведения об использовании Azure DNS с подсистемой балансировки нагрузки см. в разделе [Использование Azure DNS с другими службами Azure](../dns/dns-for-azure-services.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Узнайте больше о том, как объединять службы балансировки нагрузки, в статье [Использование служб балансировки нагрузки в Azure](../traffic-manager/traffic-manager-load-balancing-azure.md).
 - Узнайте, как можно использовать различные типы журналов в Azure для управления подсистемой балансировки нагрузки и устранения неполадок в [журналах Azure Monitor для Azure Load Balancer](../load-balancer/load-balancer-monitor-log.md).

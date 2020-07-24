@@ -8,16 +8,16 @@ ms.topic: how-to
 ms.workload: infrastructure
 ms.date: 05/04/2020
 ms.author: cynthn
-ms.openlocfilehash: 5e59872a4da0136232652008a2980601428eeab6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 60f5813cf5ff0d52b57f7a4b55d86195051f217f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82796789"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86999077"
 ---
 # <a name="create-a-vm-from-a-generalized-image-version-using-the-cli"></a>Создание виртуальной машины из универсальной версии образа с помощью интерфейса командной строки
 
-Создайте виртуальную машину из [универсальной версии образа](https://docs.microsoft.com/azure/virtual-machines/linux/shared-image-galleries#generalized-and-specialized-images) , хранящейся в коллекции общих образов. Если вы хотите создать виртуальную машину с помощью специализированного образа, см. раздел [Создание виртуальной машины на основе специализированного образа](vm-specialized-image-version-powershell.md). 
+Создайте виртуальную машину из [универсальной версии образа](./linux/shared-image-galleries.md#generalized-and-specialized-images) , хранящейся в коллекции общих образов. Если вы хотите создать виртуальную машину с помощью специализированного образа, см. раздел [Создание виртуальной машины на основе специализированного образа](vm-specialized-image-version-powershell.md). 
 
 
 ## <a name="get-the-image-id"></a>Получение идентификатора образа

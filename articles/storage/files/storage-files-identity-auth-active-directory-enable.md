@@ -7,16 +7,16 @@ ms.subservice: files
 ms.topic: how-to
 ms.date: 07/12/2020
 ms.author: rogarana
-ms.openlocfilehash: 0f2f0def9a23437dff57dda2d1a57950cef86275
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 1ea1bfdf2c3b2dcfd49f87a5a75597a464b07913
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86496134"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86999587"
 ---
 # <a name="overview---on-premises-active-directory-domain-services-authentication-over-smb-for-azure-file-shares"></a>Обзор: локальная проверка подлинности домен Active Directory служб по протоколу SMB для файловых ресурсов Azure
 
-Службы [файлов Azure](storage-files-introduction.md)   поддерживает проверку подлинности на основе удостоверений через протокол SMB через два типа доменных служб: Azure Active Directory доменных служб (Azure AD DS) и локальных домен Active Directory служб (AD DS). Использование любого метода аутентификации на основе удостоверений позволяет интегрировать процесс доступа к файловым ресурсам Azure с помощью существующего процесса аутентификации на основе удостоверений, а не управлять им отдельно. В этой серии статей основное внимание уделяется включению и настройке локальной AD DS для проверки подлинности с помощью файловых ресурсов Azure.
+Службы [файлов Azure](storage-files-introduction.md)   поддерживает проверку подлинности на основе удостоверений через протокол SMB с помощью двух типов доменных служб: локальных домен Active Directory служб (AD DS) и Azure Active Directory доменных служб (Azure AD DS). Мы настоятельно рекомендуем ознакомиться с [разделом "как работает](https://docs.microsoft.com/azure/storage/files/storage-files-active-directory-overview#how-it-works) ", чтобы выбрать подходящую службу домена для проверку подлинности. Настройка зависит от выбранной службы домена. В этой серии статей основное внимание уделяется включению и настройке локальной AD DS для проверки подлинности с помощью файловых ресурсов Azure.
 
 Если вы не знакомы с файловыми ресурсами Azure, рекомендуем ознакомиться с нашим [руководством по планированию](storage-files-planning.md) , прежде чем читать следующую серию статей.
 
@@ -37,7 +37,7 @@ ms.locfileid: "86496134"
 > - [Замена локальных файловых серверов файлами Azure (включая установку на частном канале для файлов и аутентификации Active Directory)](https://sec.ch9.ms/ch9/3358/0addac01-3606-4e30-ad7b-f195f3ab3358/ITOpsTalkAzureFiles_high.mp4)
 > - [Использование файлов Azure в качестве контейнера профилей для виртуальных рабочих столов Windows (включая установку на основе проверки подлинности AD и конфигурации Фслогикс)](https://www.youtube.com/embed/9S5A1IJqfOQ)
 
-## <a name="prerequisites"></a>Предварительные требования 
+## <a name="prerequisites"></a>Обязательные условия 
 
 Перед включением проверки подлинности AD DS для файловых ресурсов Azure убедитесь, что выполнены следующие предварительные требования: 
 

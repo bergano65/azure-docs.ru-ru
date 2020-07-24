@@ -13,11 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/18/2019
 ms.author: juliako
-ms.openlocfilehash: 6b0f21c3fa7a9c827f7201f4b899a33ea77eaf08
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2337a7543f84d7eba5f565d875129cf22e8b27ed
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74888501"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87001219"
 ---
 # <a name="connect-to-media-services-v3-api---java"></a>Подключение к API служб мультимедиа v3 — Java
 
@@ -25,7 +26,7 @@ ms.locfileid: "74888501"
 
 В этой статье Visual Studio Code используется для разработки примера приложения.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 - Следуйте инструкциям по [написанию Java с Visual Studio Code](https://code.visualstudio.com/docs/java/java-tutorial) для установки:
 
@@ -33,8 +34,8 @@ ms.locfileid: "74888501"
    - Apache Maven
    - Пакет расширений Java
 - Убедитесь, что заданы `JAVA_HOME` `PATH` переменные среды и.
-- [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md). Обязательно запомните имя группы ресурсов и имя учетной записи служб мультимедиа.
-- Выполните действия, описанные в разделе [API Access](access-api-cli-how-to.md) . Запишите идентификатор подписки, идентификатор приложения (идентификатор клиента), ключ проверки подлинности (секрет) и идентификатор клиента, которые понадобятся вам на более позднем этапе.
+- [Создание учетной записи Служб мультимедиа](./create-account-howto.md). Обязательно запомните имя группы ресурсов и имя учетной записи служб мультимедиа.
+- Выполните действия, описанные в разделе [API Access](./access-api-howto.md) . Запишите идентификатор подписки, идентификатор приложения (идентификатор клиента), ключ проверки подлинности (секрет) и идентификатор клиента, которые понадобятся вам на более позднем этапе.
 
 Также ознакомьтесь:
 
@@ -93,7 +94,7 @@ mvn archetype:generate -DgroupId=com.azure.ams -DartifactId=testAzureApp -Darche
    import com.microsoft.azure.management.mediaservices.v2018_07_01.implementation.MediaManager;
    import com.microsoft.rest.LogLevel;
    ```
-1. Чтобы создать Active Directory учетные данные, необходимые для выполнения запросов, добавьте следующий код в метод Main класса App и задайте значения, полученные из [API доступа](access-api-cli-how-to.md):
+1. Чтобы создать Active Directory учетные данные, необходимые для выполнения запросов, добавьте следующий код в метод Main класса App и задайте значения, полученные из [API доступа](./access-api-howto.md):
    
    ```java
    final String clientId = "00000000-0000-0000-0000-000000000000";
@@ -118,15 +119,15 @@ mvn archetype:generate -DgroupId=com.azure.ams -DartifactId=testAzureApp -Darche
    ```
 1. Запустите приложение.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 
 - [Основные понятия служб мультимедиа Azure](concepts-overview.md)
 - [пакет SDK для Java](https://aka.ms/ams-v3-java-sdk)
 - [Справочник по Java](https://aka.ms/ams-v3-java-ref)
 - [com. Microsoft. Azure. mediaservices. v2018_07_01: Azure-руководства-Media](https://search.maven.org/artifact/com.microsoft.azure.mediaservices.v2018_07_01/azure-mgmt-media/1.0.0-beta/jar)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь можно включать `import com.microsoft.azure.management.mediaservices.v2018_07_01.*;` и приступить к управлению сущностями.
 
-Дополнительные примеры кода см. в репозитории [примеров пакета SDK для Java](https://docs.microsoft.com/samples/azure-samples/media-services-v3-java/azure-media-services-v3-samples-using-java/) .
+Дополнительные примеры кода см. в репозитории [примеров пакета SDK для Java](/samples/azure-samples/media-services-v3-java/azure-media-services-v3-samples-using-java/) .

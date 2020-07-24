@@ -8,13 +8,14 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: timlt
-ms.openlocfilehash: 3cf88b4d3c4c74493235d2997db4d464bb055b81
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: dabcadea96f4ced5bdf73a35ef533e6d290595c2
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77023758"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87001882"
 ---
-# <a name="summary-of-customer-data-request-features"></a>Сводка о возможностях запроса данных клиента
+# <a name="azure-iot-central-customer-data-request-features"></a>Функции запроса данных клиента Azure IoT Central
 
 Azure IoT Central — это полностью управляемое решение Интернета вещей (IoT) (модели "программное обеспечение как услуга"), которое облегчает подключение и мониторинг ресурсов Интернета вещей, а также управление ими в любом масштабе. С помощью этого решения можно также получать аналитические сведения из данных Интернета вещей и предпринимать обоснованные действия.
 

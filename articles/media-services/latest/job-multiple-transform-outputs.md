@@ -11,11 +11,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 02/17/2020
 ms.author: juliako
-ms.openlocfilehash: dbbeeb33ee46b37ec920fe598483c332d3439689
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7c39b133773cbe35d78e04c4e40de9d62c4eba18
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77563145"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87001117"
 ---
 # <a name="create-a-job-with-multiple-transform-outputs"></a>Создание задания с несколькими выходами преобразования
 
@@ -130,8 +131,8 @@ private static async Task<Job> SubmitJobAsync(IAzureMediaServicesClient client,
 ```
 ## <a name="job-error-codes"></a>Коды ошибок задания
 
-См. статью о [кодах ошибок](https://docs.microsoft.com/rest/api/media/jobs/get#joberrorcode).
+См. статью о [кодах ошибок](/rest/api/media/jobs/get#joberrorcode).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Примеры для служб мультимедиа Azure v3 с использованием .NET](https://github.com/Azure-Samples/media-services-v3-dotnet/tree/master/) 

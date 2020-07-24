@@ -6,17 +6,18 @@ ms.suite: integration
 ms.reviewer: jehollan, klam, logicappspm
 ms.topic: article
 ms.date: 11/08/2019
-ms.openlocfilehash: afd2735bae2a79ad942c347219019ef200b61070
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ec2225633e5621c51067b64af2968a0dc0f5da87
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75428707"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87001423"
 ---
 # <a name="call-or-trigger-logic-apps-by-using-azure-functions-and-azure-service-bus"></a>Вызов или Активация приложений логики с помощью функций Azure и служебной шины Azure
 
 Вы можете использовать [функции Azure](../azure-functions/functions-overview.md) для активации приложения логики, когда требуется развернуть долгосрочный прослушиватель или задачу. Например, можно создать функцию Azure, которая прослушивает очередь [служебной шины Azure](../service-bus-messaging/service-bus-messaging-overview.md) и сразу же запускает приложение логики в качестве триггера push-уведомлений.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -118,11 +119,11 @@ ms.locfileid: "75428707"
 
    * В примере используется сообщение с типом содержимого `application/json`. При необходимости этот тип можно изменить.
    
-   * Из-за возможных одновременно выполняемых функций, больших объемов или интенсивных загрузок не рекомендуется создавать экземпляры [класса HttpClient](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient) с помощью `using` инструкции и напрямую создавать экземпляр HttpClient для каждого запроса. Дополнительные сведения см. [в статье Использование хттпклиентфактори для реализации устойчивых HTTP-запросов](https://docs.microsoft.com/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests#issues-with-the-original-httpclient-class-available-in-net-core).
+   * Из-за возможных одновременно выполняемых функций, больших объемов или интенсивных загрузок не рекомендуется создавать экземпляры [класса HttpClient](/dotnet/api/system.net.http.httpclient) с помощью `using` инструкции и напрямую создавать экземпляр HttpClient для каждого запроса. Дополнительные сведения см. [в статье Использование хттпклиентфактори для реализации устойчивых HTTP-запросов](/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests#issues-with-the-original-httpclient-class-available-in-net-core).
    
    * По возможности повторно используйте экземпляр HTTP-клиентов. Дополнительные сведения см. [в статье Управление подключениями в функциях Azure](../azure-functions/manage-connections.md).
 
-   В этом примере используется [ `Task.Run` метод](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.run) в [асинхронном](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/async) режиме. Дополнительные сведения см. [в разделе Асинхронное программирование с использованием Async и await](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/async/).
+   В этом примере используется [ `Task.Run` метод](/dotnet/api/system.threading.tasks.task.run) в [асинхронном](/dotnet/csharp/language-reference/keywords/async) режиме. Дополнительные сведения см. [в разделе Асинхронное программирование с использованием Async и await](/dotnet/csharp/programming-guide/concepts/async/).
 
    ```csharp
    using System;
@@ -147,6 +148,6 @@ ms.locfileid: "75428707"
 
    Приложение логики должно активироваться сразу же, как только функция получит это сообщение.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Вызов, активация или вложение рабочих процессов с помощью конечных точек HTTP](../logic-apps/logic-apps-http-endpoint.md)

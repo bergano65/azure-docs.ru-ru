@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 11/13/2018
 ms.author: genli
-ms.openlocfilehash: 278d976f044deb8a7387763306cf07f8b6b55d90
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 945f8896a844e7a73107df44d03abc7290f4e3fc
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86087798"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86999144"
 ---
 #  <a name="cannot-rdp-to-azure-virtual-machines-because-the-dhcp-client-service-is-disabled"></a>Не удается подключиться по протоколу удаленного рабочего стола к виртуальным машинам Azure из-за того, что отключена служба DHCP-клиента
 
@@ -46,7 +46,7 @@ wevtutil qe system /c:1 /f:text /q:"Event[System[Provider[@Name='Service Control
 
 Для классических виртуальных машин придется переключиться в автономный режим и собрать журналы вручную.
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Служба DHCP-клиента не работает на виртуальной машине.
 
@@ -204,7 +204,7 @@ wevtutil qe system /c:1 /f:text /q:"Event[System[Provider[@Name='Service Control
 
 #### <a name="attach-the-os-disk-to-a-recovery-vm"></a>Подключите диск ОС к виртуальной машине восстановления.
 
-1. [Подключите диск операционной системы к виртуальной машине восстановления](../windows/troubleshoot-recovery-disks-portal.md).
+1. [Подключите диск операционной системы к виртуальной машине восстановления](./troubleshoot-recovery-disks-portal-windows.md).
 2. Установите подключение с помощью удаленного рабочего стола к виртуальной машине, используемой для восстановления. Убедитесь, что в консоли "Управление дисками" для подключенного диска отображается состояние **Подключен**. Запишите или запомните букву диска, которая присвоена подключенному диску ОС.
 3.  Откройте экземпляр командной строки с повышенными привилегиями (**Запуск от имени администратора**). Затем выполните следующий сценарий. В этом сценарии предполагается, что буква диска, назначенная подключенному диску ОС, — **F**. Замените букву, соответствующую значению в виртуальной машине.
 
@@ -222,8 +222,8 @@ wevtutil qe system /c:1 /f:text /q:"Event[System[Provider[@Name='Service Control
     reg unload HKLM\BROKENSYSTEM
     ```
 
-4. [Отключение диска операционной системы и повторное создание виртуальной машины](../windows/troubleshoot-recovery-disks-portal.md). Затем проверьте, устранена ли проблема.
+4. [Отключение диска операционной системы и повторное создание виртуальной машины](./troubleshoot-recovery-disks-portal-windows.md). Затем проверьте, устранена ли проблема.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вам все еще нужна помощь, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), которая поможет устранить проблему.

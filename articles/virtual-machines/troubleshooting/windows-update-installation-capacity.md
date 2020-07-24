@@ -14,11 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 05/11/2020
 ms.author: v-miegge
-ms.openlocfilehash: bb7b641a7169c6577320f07a964d278ac1727b1c
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 596303223554589ef26938486ccfd2281ccd46f5
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83663312"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86999111"
 ---
 # <a name="troubleshoot-os-start-up--windows-update-installation-capacity"></a>Устранение неполадок при запуске ОС, связанных с нехваткой места для установки в Центре обновления Windows
 
@@ -48,7 +49,7 @@ ms.locfileid: "83663312"
 
 ### <a name="create-and-access-a-repair-vm"></a>Создание виртуальной машины для восстановления и вход на нее
 
-1. Выполните шаги 1–3 из списка [команд для восстановления виртуальной машины](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/repair-windows-vm-using-azure-virtual-machine-repair-commands), чтобы подготовить виртуальную машину для восстановления.
+1. Выполните шаги 1–3 из списка [команд для восстановления виртуальной машины](./repair-windows-vm-using-azure-virtual-machine-repair-commands.md), чтобы подготовить виртуальную машину для восстановления.
 1. Подключитесь к этой виртуальной машине для восстановления по протоколу удаленного рабочего стола.
 
 ### <a name="free-up-space-on-the-disk"></a>Освобождение места на диске
@@ -59,10 +60,10 @@ ms.locfileid: "83663312"
 - Очистите диск.
 - Дефрагментируйте диск.
 
-1. Проверьте, есть ли свободное место на диске. Если размер диска менее 1 ТБ, увеличьте его до максимального возможного размера 1 ТБ [с помощью PowerShell](https://docs.microsoft.com/azure/virtual-machines/windows/expand-os-disk).
+1. Проверьте, есть ли свободное место на диске. Если размер диска менее 1 ТБ, увеличьте его до максимального возможного размера 1 ТБ [с помощью PowerShell](../windows/expand-os-disk.md).
 1. Если размер диска уже равен 1 ТБ, придется очистить диск.
-   1. Отсоедините диск данных [от неисправной виртуальной машины](https://docs.microsoft.com/azure/virtual-machines/windows/detach-disk).
-   1. Подключите его [к работоспособной виртуальной машине](https://docs.microsoft.com/azure/virtual-machines/windows/attach-disk-ps#attach-an-existing-data-disk-to-a-vm).
+   1. Отсоедините диск данных [от неисправной виртуальной машины](../windows/detach-disk.md).
+   1. Подключите его [к работоспособной виртуальной машине](../windows/attach-disk-ps.md#attach-an-existing-data-disk-to-a-vm).
    1. Освободите место с помощью [средства очистки диска](https://support.microsoft.com/help/4026616/windows-10-disk-cleanup).
 1. Когда изменение размера и (или) очистка завершатся, дефрагментируйте диск с помощью следующей команды:
 
@@ -122,4 +123,4 @@ ms.locfileid: "83663312"
    
 ### <a name="rebuild-the-vm"></a>Перестроение виртуальной машины
 
-Чтобы заново собрать виртуальную машину, [выполните шаг 5 из списка команд для восстановления виртуальной машины](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/repair-windows-vm-using-azure-virtual-machine-repair-commands#repair-process-example).
+Чтобы заново собрать виртуальную машину, [выполните шаг 5 из списка команд для восстановления виртуальной машины](./repair-windows-vm-using-azure-virtual-machine-repair-commands.md#repair-process-example).

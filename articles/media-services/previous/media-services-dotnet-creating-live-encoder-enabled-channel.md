@@ -15,18 +15,18 @@ ms.topic: conceptual
 ms.date: 03/18/2019
 ms.author: anilmur
 ms.reviewer: juliako
-ms.openlocfilehash: 37969986b1d015ed08113da42a309eef42df569c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 22777b24c9456e9593a59f8dc91ed4e10b6f6f4e
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "69015507"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87000743"
 ---
 # <a name="how-to-perform-live-streaming-using-azure-media-services-to-create-multi-bitrate-streams-with-net"></a>Потоковая трансляция с использованием служб мультимедиа Azure для создания потоков с разными скоростями с помощью .NET
 > [!div class="op_single_selector"]
 > * [Портал](media-services-portal-creating-live-encoder-enabled-channel.md)
 > * [.NET](media-services-dotnet-creating-live-encoder-enabled-channel.md)
-> * [REST API](https://docs.microsoft.com/rest/api/media/operations/channel)
+> * [REST API](/rest/api/media/operations/channel)
 > 
 > [!NOTE]
 > Для работы с этим учебником требуется учетная запись Azure. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F).
@@ -87,7 +87,7 @@ ms.locfileid: "69015507"
 7. Показ и скрытие планшетов. Запуск и остановка объявления. Используются API для длительных операций.
 8. Очистка канала и всех связанных с ним ресурсов.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 Ниже перечислены необходимые условия для выполнения действий, описанных в этом учебнике.
 
 * Учетная запись Azure. Если ее нет, можно создать бесплатную пробную учетную запись всего за несколько минут. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F). Вы получаете кредиты, которые можно использовать, чтобы попробовать платные службы Azure. Даже после того как кредиты использованы, учетная запись остается за вами и вы можете использовать бесплатные службы и функции Azure, например компонент веб-приложений в службы приложений Azure.
@@ -501,12 +501,10 @@ namespace EncodeLiveStreamWithAmsClear
 }
 ```
 
-## <a name="next-step"></a>Следующий шаг
+## <a name="next-step"></a>Дальнейшие действия
 Просмотрите схемы обучения работе со службами мультимедиа.
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
 ## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
-
-

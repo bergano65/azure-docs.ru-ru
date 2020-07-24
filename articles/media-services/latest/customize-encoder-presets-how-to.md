@@ -12,12 +12,12 @@ ms.topic: article
 ms.date: 05/03/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 2bcd5f0e6229c4130dddb48c1a20de1c711c6fcf
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 28525c198bb6863e942f5ff33d17226769efdc21
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86519887"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87001151"
 ---
 # <a name="how-to-encode-with-a-custom-transform---net"></a>Кодирование с помощью пользовательского преобразования — .NET
 
@@ -32,7 +32,7 @@ ms.locfileid: "86519887"
 
 ## <a name="prerequisites"></a>Предварительные требования 
 
-[Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md)
+[Создание учетной записи Служб мультимедиа](./create-account-howto.md)
 
 ## <a name="download-the-sample"></a>Скачивание примера приложения
 
@@ -46,9 +46,9 @@ ms.locfileid: "86519887"
 
 ## <a name="create-a-transform-with-a-custom-preset"></a>Создание преобразования с помощью настраиваемой предустановки 
 
-При создании [преобразования](https://docs.microsoft.com/rest/api/media/transforms) необходимо указать, что требуется создать в качестве выходных данных. Обязательный параметр — это объект [TransformOutput](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#transformoutput), как показано в приведенном ниже примере кода. Каждый объект **TransformOutput** содержит **предустановку** (Preset). Эта **Предустановка** описывает пошаговые инструкции по обработке видео и (или) аудио-обработки, которые используются для создания нужных **трансформаутпут**. Следующая предустановка **TransformOutput** создает настраиваемый кодек и параметры слоя вывода.
+При создании [преобразования](/rest/api/media/transforms) необходимо указать, что требуется создать в качестве выходных данных. Обязательный параметр — это объект [TransformOutput](/rest/api/media/transforms/createorupdate#transformoutput), как показано в приведенном ниже примере кода. Каждый объект **TransformOutput** содержит **предустановку** (Preset). Эта **Предустановка** описывает пошаговые инструкции по обработке видео и (или) аудио-обработки, которые используются для создания нужных **трансформаутпут**. Следующая предустановка **TransformOutput** создает настраиваемый кодек и параметры слоя вывода.
 
-При создании [преобразования](https://docs.microsoft.com/rest/api/media/transforms) сначала проверьте, существует ли оно, с помощью метода **Get**, как показано в следующем коде. В службах мультимедиа v3 методы **Get** для сущностей возвращают **значение NULL** , если сущность не существует (в имени не учитывается регистр).
+При создании [преобразования](/rest/api/media/transforms) сначала проверьте, существует ли оно, с помощью метода **Get**, как показано в следующем коде. В службах мультимедиа v3 методы **Get** для сущностей возвращают **значение NULL** , если сущность не существует (в имени не учитывается регистр).
 
 ### <a name="example"></a>Пример
 

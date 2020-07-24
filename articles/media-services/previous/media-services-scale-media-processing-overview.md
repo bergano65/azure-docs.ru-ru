@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/26/2019
 ms.author: juliako
-ms.openlocfilehash: 780d3ab5047bff321d0c554880ba2995bcf25524
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6d199271d20b9094ffaac0384863a404c7d0ed0b
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "70102917"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87000012"
 ---
 # <a name="scaling-media-processing-overview"></a>Обзор масштабирования обработка мультимедиа 
 На этой странице описывается, как и для чего можно масштабировать обработку мультимедиа. 
@@ -53,19 +53,19 @@ ms.locfileid: "70102917"
 ## <a name="quotas-and-limitations"></a>Квоты и ограничения
 Сведения о квотах и ограничениях, а также о том, как отправить запрос в службу поддержки, см. в разделе [Квоты и ограничения](media-services-quotas-and-limitations.md).
 
-## <a name="next-step"></a>Следующий шаг
+## <a name="next-step"></a>Дальнейшие действия
 Выполните задачу масштабирования обработки мультимедиа с помощью одной из следующих технологий: 
 
 > [!div class="op_single_selector"]
 > * [.NET](media-services-dotnet-encoding-units.md)
 > * [Портал](media-services-portal-scale-media-processing.md)
-> * [REST](https://docs.microsoft.com/rest/api/media/operations/encodingreservedunittype)
+> * [REST](/rest/api/media/operations/encodingreservedunittype)
 > * [Java](https://github.com/southworkscom/azure-sdk-for-media-services-java-samples)
 > * [PHP](https://github.com/Azure/azure-sdk-for-php/tree/master/examples/MediaServices)
 > 
 
 > [!NOTE]
-> Чтобы получить последнюю версию пакета SDK для Java и приступить к разработке с помощью Java, перейдите к статье [Начало работы с клиентским пакетом SDK для Java для служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/media-services-java-how-to-use). <br/>
+> Чтобы получить последнюю версию пакета SDK для Java и приступить к разработке с помощью Java, перейдите к статье [Начало работы с клиентским пакетом SDK для Java для служб мультимедиа Azure](./media-services-java-how-to-use.md). <br/>
 > Чтобы загрузить последний пакет SDK для PHP для служб мультимедиа, найдите версию 0.5.7 пакета Microsoft/WindowAzure в [репозитории Packagist](https://packagist.org/packages/microsoft/windowsazure#v0.5.7).  
 
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
@@ -73,4 +73,3 @@ ms.locfileid: "70102917"
 
 ## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
-

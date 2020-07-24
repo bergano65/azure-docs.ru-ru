@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 6d86c90828c081a542fa5574493a46e8a2e44640
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7310c037511fdf1a7d6f3763fd61d292078ea83e
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82187483"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86998904"
 ---
 # <a name="cloudsimple-security-overview"></a>Общие сведения о безопасности Клаудсимпле
 
@@ -29,7 +29,7 @@ ms.locfileid: "82187483"
 
 ### <a name="datacenter-security"></a>Безопасность центра обработки данных
 
-Корпорация Майкрософт имеет целый отдел, посвященный проектированию, созданию и эксплуатации физических средств, поддерживающих Azure. Эта команда инвестируется в поддержание состояния физической безопасности. Дополнительные сведения о физической безопасности см. в статье [средства, локальные и физическая безопасность Azure](../security/azure-physical-security.md).
+Корпорация Майкрософт имеет целый отдел, посвященный проектированию, созданию и эксплуатации физических средств, поддерживающих Azure. Эта команда инвестируется в поддержание состояния физической безопасности. Дополнительные сведения о физической безопасности см. в статье [средства, локальные и физическая безопасность Azure](../security/fundamentals/physical-security.md).
 
 ### <a name="equipment-location"></a>Расположение оборудования
 

@@ -13,20 +13,21 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/25/2019
 ms.author: juliako
-ms.openlocfilehash: 0381a2e2b8fd2a8b60e7cb702e0336a5678df057
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1ac82687cb28344f682c58a132f04d71184d5d74
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74896100"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87001202"
 ---
 # <a name="connect-to-media-services-v3-api---nodejs"></a>Подключение к API служб мультимедиа v3 — Node.js
 
 В этой статье показано, как подключиться к пакету SDK для служб мультимедиа Azure версии 3 node.js с помощью метода входа субъекта-службы.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 - Установите [Node.js](https://nodejs.org/en/download/).
-- [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md). Обязательно запомните имя группы ресурсов и имя учетной записи служб мультимедиа.
+- [Создание учетной записи Служб мультимедиа](./create-account-howto.md). Обязательно запомните имя группы ресурсов и имя учетной записи служб мультимедиа.
 
 > [!IMPORTANT]
 > Проверьте [соглашения об именовании](media-services-apis-overview.md#naming-conventions).
@@ -69,7 +70,7 @@ npm install azure-arm-mediaservices
 
 1. Создайте JS-файл с помощью любимого редактора.
 1. Откройте файл и вставьте в него следующий код.
-1. Задайте значения в разделе "Конфигурация конечной точки" для значений, полученных из [API доступа](access-api-cli-how-to.md).
+1. Задайте значения в разделе "Конфигурация конечной точки" для значений, полученных из [API доступа](./access-api-howto.md).
 
 ```js
 'use strict';
@@ -113,7 +114,7 @@ msRestAzure.loginWithServicePrincipalSecret(aadClientId, aadSecret, aadTenantId,
 });
 ```
 
-## <a name="run-your-app"></a>Запуск приложения для Android
+## <a name="run-your-app"></a>Запустите приложение.
 
 Откройте командную строку. Перейдите к каталогу примера и выполните следующие команды:
 
@@ -122,12 +123,11 @@ npm install
 node index.js
 ```
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 
 - [Основные понятия служб мультимедиа Azure](concepts-overview.md)
 - [NPM install azure-arm-mediaservices](https://www.npmjs.com/package/azure-arm-mediaservices/)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Изучите справочную документацию [Node.js](/javascript/api/overview/azure/mediaservices/management) Служб мультимедиа и ознакомьтесь с [примерами](https://github.com/Azure-Samples/media-services-v3-node-tutorials), показывающими как использовать API Служб мультимедиа с Node.js.
-

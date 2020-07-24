@@ -14,17 +14,17 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako
-ms.openlocfilehash: e787617ab6e04a5ff2e7f5d4921a5bf7a4a1eb5d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d00dd096bcfba32912337b122aefd0c00195ee8e
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "64867097"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87000862"
 ---
 # <a name="monitor-job-progress-using-net"></a>Мониторинг хода выполнения задания с помощью .NET 
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](../latest/index.yml). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
 
 При выполнении заданий часто требуется способ отслеживания хода выполнения задачи. Вы можете проверить ход выполнения, определив обработчик событий StateChanged (как описано в этой статье) или используя хранилище очередей Azure для наблюдения за уведомлениями о заданиях служб мультимедиа (как описано [здесь](media-services-dotnet-check-job-progress-with-queues.md) ).
 
@@ -110,11 +110,10 @@ ms.locfileid: "64867097"
 ```
 
 
-## <a name="next-step"></a>Следующий шаг
+## <a name="next-step"></a>Дальнейшие действия
 Просмотрите схемы обучения работе со службами мультимедиа.
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
 ## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
-

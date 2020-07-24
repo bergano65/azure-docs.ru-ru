@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: 63715f668438519131eba5bfff7aa38fc73267d0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 120b7e044452dc47126923449a3e1a6e55cfd6a8
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "61094657"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87000029"
 ---
 # <a name="retry-logic-in-the-media-services-sdk-for-net"></a>Логика повторного выполнения операций в пакете SDK служб мультимедиа для .NET  
 
@@ -50,7 +50,7 @@ ms.locfileid: "61094657"
 | IOException |Нет |Да |Нет |Нет |
 
 ### <a name="webexception-status-codes"></a><a name="WebExceptionStatus"></a> Коды состояний WebException
-В таблице ниже показано, для каких кодов ошибок WebException реализована логика повторного выполнения операций. Перечисление [WebExceptionStatus](https://msdn.microsoft.com/library/system.net.webexceptionstatus.aspx) определяет коды состояний.  
+В таблице ниже показано, для каких кодов ошибок WebException реализована логика повторного выполнения операций. Перечисление [WebExceptionStatus](/dotnet/api/system.net.webexceptionstatus?view=netcore-3.1) определяет коды состояний.  
 
 | Состояние | Веб-запрос | Память | Запрос | Сохранение изменений |
 | --- | --- | --- | --- | --- |
@@ -88,4 +88,3 @@ ms.locfileid: "61094657"
 
 ## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
-

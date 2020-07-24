@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/25/2018
 ms.author: allensu
-ms.openlocfilehash: 03bedba280fca4c051685eabdfa47eaaf00f05d3
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: edc17b9636792ce00458716e3461077fa689b3ed
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85963331"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87001579"
 ---
 # <a name="create-a-public-load-balancer-with-ipv6-using-azure-cli"></a>Создание общедоступной подсистемы балансировки нагрузки с поддержкой IPv6 с помощью Azure CLI
 
@@ -268,7 +268,7 @@ Azure Load Balancer является балансировщиком нагруз
 
 ## <a name="create-the-back-end-vm-resources-and-attach-each-nic"></a>Создание внутренних ресурсов виртуальных машин и присоединение каждого сетевого адаптера
 
-Чтобы создать виртуальные машины, необходима учетная запись хранения. Для балансировки нагрузки виртуальные машины должны входить в группу доступности. Дополнительные сведения о создании виртуальных машин см. в статье [Создание виртуальной машины Windows с помощью PowerShell](../virtual-machines/virtual-machines-windows-ps-create.md?toc=%2fazure%2fload-balancer%2ftoc.json).
+Чтобы создать виртуальные машины, необходима учетная запись хранения. Для балансировки нагрузки виртуальные машины должны входить в группу доступности. Дополнительные сведения о создании виртуальных машин см. в статье [Создание виртуальной машины Windows с помощью PowerShell](../virtual-machines/windows/quick-create-powershell.md?toc=%2fazure%2fload-balancer%2ftoc.json).
 
 1. Настройте переменные PowerShell.
 
