@@ -5,11 +5,12 @@ author: tfitzmac
 ms.topic: conceptual
 ms.date: 02/06/2020
 ms.author: tomfitz
-ms.openlocfilehash: cb66a2684e0b83f4f0cc01a07cc724f6beab4d68
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 91e3cd0b99825fd72eb342ce7a8555b046455538
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77087548"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87063365"
 ---
 # <a name="microsoftmanagedidentityidentityselector-ui-element"></a>Элемент пользовательского интерфейса Microsoft. ManagedIdentity. Идентитиселектор
 
@@ -19,15 +20,15 @@ ms.locfileid: "77087548"
 
 Элемент управления состоит из следующих элементов:
 
-![Первый шаг Microsoft. ManagedIdentity. Идентитиселектор](./media/managed-application-elements/microsoft.managedidentity.identityselector1.png)
+![Первый шаг Microsoft. ManagedIdentity. Идентитиселектор](./media/managed-application-elements/microsoft-managedidentity-identityselector-1.png)
 
 Когда пользователь нажимает кнопку **Добавить**, открывается следующая форма. Пользователь может выбрать одно или несколько назначенных пользователю удостоверений для ресурса.
 
-![Второй шаг Microsoft. ManagedIdentity. Идентитиселектор](./media/managed-application-elements/microsoft.managedidentity.identityselector2.png)
+![Второй шаг Microsoft. ManagedIdentity. Идентитиселектор](./media/managed-application-elements/microsoft-managedidentity-identityselector-2.png)
 
 Выбранные удостоверения отображаются в таблице. Пользователь может добавлять или удалять элементы из этой таблицы.
 
-![Третий шаг Microsoft. ManagedIdentity. Идентитиселектор](./media/managed-application-elements/microsoft.managedidentity.identityselector3.png)
+![Третий шаг Microsoft. ManagedIdentity. Идентитиселектор](./media/managed-application-elements/microsoft-managedidentity-identityselector-3.png)
 
 ## <a name="schema"></a>схема
 
@@ -77,7 +78,7 @@ ms.locfileid: "77087548"
 - Если **параметр options. хидесистемассигнедидентити** имеет значение **true**, Пользовательский интерфейс для настройки назначенного системой удостоверения не отображается. Значение по умолчанию для этого параметра — **false**.
 - Если **параметр options. хидеусерассигнедидентити** имеет значение **true**, Пользовательский интерфейс для настройки назначенного пользователю удостоверения не отображается. Ресурсу не назначено удостоверение, назначенное пользователем. Значение по умолчанию для этого параметра — **false**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Общие сведения о создании определений пользовательского интерфейса см. в статье [Начало работы с CreateUiDefinition](create-uidefinition-overview.md).
 - Дополнительные сведения об общих свойствах элементов пользовательского интерфейса см. в статье [Элементы CreateUiDefinition](create-uidefinition-elements.md).
