@@ -13,11 +13,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 44299a55424f9b0338ee49d2742aeedf16db22e8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b27bd52ad8794222d52d37032b0cd4fdf99f47b7
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84732095"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87057930"
 ---
 # <a name="assign-custom-admin-roles-using-the-microsoft-graph-api-in-azure-active-directory"></a>Назначение специальных ролей администратора с помощью API Microsoft Graph в Azure Active Directory 
 
@@ -25,11 +26,11 @@ ms.locfileid: "84732095"
 
 ## <a name="required-permissions"></a>Необходимые разрешения
 
-Подключитесь к своей организации Azure AD с использованием учетной записи глобального администратора или администратора привилегированных пользователей для назначения или удаления ролей.
+Подключитесь к Организации Azure AD с помощью учетной записи глобального администратора или администратора привилегированных ролей, чтобы назначить или удалить роли.
 
 ## <a name="post-operations-on-roleassignment"></a>Операции POST в назначении ролей
 
-HTTP-запрос для создания назначения ролей между пользователем и определением роли.
+### <a name="example-1-create-a-role-assignment-between-a-user-and-a-role-definition"></a>Пример 1. Создание назначения роли между пользователем и определением роли.
 
 POST
 
@@ -44,7 +45,7 @@ Content-type: application/json
 {
     "principalId":"ab2e1023-bddc-4038-9ac1-ad4843e7e539",
     "roleDefinitionId":"194ae4cb-b126-40b2-bd5b-6091b380977d",
-    "resourceScopes":"/"
+    "directoryScopeId":"/"  // Don't use "resourceScope" attribute in Azure AD role assignments. It will be deprecated soon.
 }
 ```
 
@@ -54,7 +55,7 @@ Content-type: application/json
 HTTP/1.1 201 Created
 ```
 
-HTTP-запрос на создание назначения ролей, когда субъект или определение роли не существует.
+### <a name="example-2-create-a-role-assignment-where-the-principal-or-role-definition-does-not-exist"></a>Пример 2. Создание назначения роли, в котором не существует субъект или определение роли
 
 POST
 
@@ -68,7 +69,7 @@ https://graph.microsoft.com/beta/roleManagement/directory/roleAssignments
 {
     "principalId":" 2142743c-a5b3-4983-8486-4532ccba12869",
     "roleDefinitionId":"194ae4cb-b126-40b2-bd5b-6091b380977d",
-    "resourceScopes":"/"
+    "directoryScopeId":"/"  //Don't use "resourceScope" attribute in Azure AD role assignments. It will be deprecated soon.
 }
 ```
 
@@ -77,11 +78,31 @@ https://graph.microsoft.com/beta/roleManagement/directory/roleAssignments
 ``` HTTP
 HTTP/1.1 404 Not Found
 ```
+### <a name="example-3-create-a-role-assignment-on-a-single-resource-scope"></a>Пример 3. Создание назначения роли для отдельной области ресурса
 
-HTTP-запрос на создание назначения ролей в области одного ресурса во встроенном определении роли.
+POST
 
-> [!NOTE] 
-> На сегодняшний момент встроенные роли имеют ограничение — они могут назначаться только в области "/" в масштабах организации или в области "/AU/*". Назначение в области одного ресурса не работает со встроенными ролями, но работает с пользовательскими ролями.
+``` HTTP
+https://graph.microsoft.com/beta/roleManagement/directory/roleAssignments
+```
+
+Текст
+
+``` HTTP
+{
+    "principalId":" 2142743c-a5b3-4983-8486-4532ccba12869",
+    "roleDefinitionId":"e9b2b976-1dea-4229-a078-b08abd6c4f84",    //role template ID of a custom role
+    "directoryScopeId":"/13ff0c50-18e7-4071-8b52-a6f08e17c8cc"  //object ID of an application
+}
+```
+
+Ответ
+
+``` HTTP
+HTTP/1.1 201 Created
+```
+
+### <a name="example-4-create-an-administrative-unit-scoped-role-assignment-on-a-built-in-role-definition-which-is-not-supported"></a>Пример 4. Создание назначения роли административной области для встроенного определения роли, которое не поддерживается
 
 POST
 
@@ -94,8 +115,8 @@ https://graph.microsoft.com/beta/roleManagement/directory/roleAssignments
 ``` HTTP
 {
     "principalId":"ab2e1023-bddc-4038-9ac1-ad4843e7e539",
-    "roleDefinitionId":"194ae4cb-b126-40b2-bd5b-6091b380977d",
-    "resourceScopes":"/ab2e1023-bddc-4038-9ac1-ad4843e7e539"
+    "roleDefinitionId":"29232cdf-9323-42fd-ade2-1d097af3e4de",    //role template ID of Exchange Administrator
+    "directoryScopeId":"/administrativeUnits/13ff0c50-18e7-4071-8b52-a6f08e17c8cc"    //object ID of an administrative unit
 }
 ```
 
@@ -109,23 +130,17 @@ HTTP/1.1 400 Bad Request
         "code":"Request_BadRequest",
         "message":
         {
-            "lang":"en",
-            "value":"Provided authorization scope is not supported for built-in role definitions."},
-            "values":
-            [
-                {
-                    "item":"scope",
-                    "value":"/ab2e1023-bddc-4038-9ac1-ad4843e7e539"
-                }
-            ]
+            "message":"The given built-in role is not supported to be assigned to a single resource scope."
         }
     }
 }
 ```
 
+Для области административного разделения разрешено только подмножество встроенных ролей. Список встроенных ролей, поддерживаемых в административной единице, см. в [этой документации](https://docs.microsoft.com/azure/active-directory/users-groups-roles/roles-admin-units-assign-roles) .
+
 ## <a name="get-operations-on-roleassignment"></a>Операции GET в назначении ролей
 
-HTTP-запрос для получения назначения ролей для указанного субъекта.
+### <a name="example-5-get-role-assignments-for-a-given-principal"></a>Пример 5. Получение назначений ролей для данного участника
 
 GET
 
@@ -137,21 +152,25 @@ https://graph.microsoft.com/beta/roleManagement/directory/roleAssignments&$filte
 
 ``` HTTP
 HTTP/1.1 200 OK
-{ 
-    "id":"mhxJMipY4UanIzy2yE-r7JIiSDKQoTVJrLE9etXyrY0-1"
-    "principalId":"ab2e1023-bddc-4038-9ac1-ad4843e7e539",
-    "roleDefinitionId":"10dae51f-b6af-4016-8d66-8c2a99b929b3",
-    "resourceScopes":"/"
-} ,
 {
-    "id":"CtRxNqwabEKgwaOCHr2CGJIiSDKQoTVJrLE9etXyrY0-1"
-    "principalId":"ab2e1023-bddc-4038-9ac1-ad4843e7e539",
-    "roleDefinitionId":"3671d40a-1aac-426c-a0c1-a3821ebd8218",
-    "resourceScopes":"/"
+"value":[
+            { 
+                "id":"mhxJMipY4UanIzy2yE-r7JIiSDKQoTVJrLE9etXyrY0-1"
+                "principalId":"ab2e1023-bddc-4038-9ac1-ad4843e7e539",
+                "roleDefinitionId":"10dae51f-b6af-4016-8d66-8c2a99b929b3",
+                "directoryScopeId":"/"  
+            } ,
+            {
+                "id":"CtRxNqwabEKgwaOCHr2CGJIiSDKQoTVJrLE9etXyrY0-1"
+                "principalId":"ab2e1023-bddc-4038-9ac1-ad4843e7e539",
+                "roleDefinitionId":"fe930be7-5e62-47db-91af-98c3a49a38b1",
+                "directoryScopeId":"/"
+            }
+        ]
 }
 ```
 
-HTTP-запрос для получения назначения ролей для указанного определения роли.
+### <a name="example-6-get-role-assignments-for-a-given-role-definition"></a>Пример 6. Получение назначений ролей для заданного определения роли.
 
 GET
 
@@ -164,14 +183,18 @@ https://graph.microsoft.com/beta/roleManagement/directory/roleAssignments&$filte
 ``` HTTP
 HTTP/1.1 200 OK
 {
-    "id":"CtRxNqwabEKgwaOCHr2CGJIiSDKQoTVJrLE9etXyrY0-1"
-    "principalId":"ab2e1023-bddc-4038-9ac1-ad4843e7e539",
-    "roleDefinitionId":"3671d40a-1aac-426c-a0c1-a3821ebd8218",
-    "resourceScopes":"/"
+"value":[
+            {
+                "id":"CtRxNqwabEKgwaOCHr2CGJIiSDKQoTVJrLE9etXyrY0-1"
+                "principalId":"ab2e1023-bddc-4038-9ac1-ad4843e7e539",
+                "roleDefinitionId":"fe930be7-5e62-47db-91af-98c3a49a38b1",
+                "directoryScopeId":"/"
+            }
+     ]
 }
 ```
 
-HTTP-запрос для получения назначения по идентификатору.
+### <a name="example-7-get-a-role-assignment-by-id"></a>Пример 7. получение назначения роли по ИДЕНТИФИКАТОРу.
 
 GET
 
@@ -187,13 +210,44 @@ HTTP/1.1 200 OK
     "id":"mhxJMipY4UanIzy2yE-r7JIiSDKQoTVJrLE9etXyrY0-1",
     "principalId":"ab2e1023-bddc-4038-9ac1-ad4843e7e539",
     "roleDefinitionId":"10dae51f-b6af-4016-8d66-8c2a99b929b3",
-    "resourceScopes":"/"
+    "directoryScopeId":"/"
+}
+```
+
+### <a name="example-8-get-role-assignments-for-a-given-scope"></a>Пример 8. Получение назначений ролей для заданной области
+
+
+GET
+
+``` HTTP
+GET https://graph.microsoft.com/beta/roleManagement/directory/roleAssignments?$filter=directoryScopeId eq '/d23998b1-8853-4c87-b95f-be97d6c6b610'
+```
+
+Ответ
+
+``` HTTP
+HTTP/1.1 200 OK
+{
+"value":[
+            { 
+                "id":"mhxJMipY4UanIzy2yE-r7JIiSDKQoTVJrLE9etXyrY0-1"
+                "principalId":"ab2e1023-bddc-4038-9ac1-ad4843e7e539",
+                "roleDefinitionId":"10dae51f-b6af-4016-8d66-8c2a99b929b3",
+                "directoryScopeId":"/d23998b1-8853-4c87-b95f-be97d6c6b610"
+            } ,
+            {
+                "id":"CtRxNqwabEKgwaOCHr2CGJIiSDKQoTVJrLE9etXyrY0-1"
+                "principalId":"ab2e1023-bddc-4038-9ac1-ad4843e7e539",
+                "roleDefinitionId":"3671d40a-1aac-426c-a0c1-a3821ebd8218",
+                "directoryScopeId":"/d23998b1-8853-4c87-b95f-be97d6c6b610"
+            }
+        ]
 }
 ```
 
 ## <a name="delete-operations-on-roleassignment"></a>Операции DELETE в назначении ролей
 
-HTTP-запрос для удаления назначения ролей между пользователем и определением роли.
+### <a name="example-9-delete-a-role-assignment-between-a-user-and-a-role-definition"></a>Пример 9. Удаление назначения роли между пользователем и определением роли.
 
 DELETE
 
@@ -206,7 +260,7 @@ GET https://graph.microsoft.com/beta/roleManagement/directory/roleAssignments/lA
 HTTP/1.1 204 No Content
 ```
 
-HTTP-запрос на удаление назначения ролей, которое больше не существует.
+### <a name="example-10-delete-a-role-assignment-that-no-longer-exists"></a>Пример 10. Удаление назначения роли, которое больше не существует
 
 DELETE
 
@@ -220,7 +274,7 @@ GET https://graph.microsoft.com/beta/roleManagement/directory/roleAssignments/lA
 HTTP/1.1 404 Not Found
 ```
 
-HTTP-запрос для удаления назначения ролей между собой и определением роли.
+### <a name="example-11-delete-a-role-assignment-between-self-and-global-administrator-role-definition"></a>Пример 11. Удаление назначения роли с помощью определения роли Self и глобального администратора
 
 DELETE
 
@@ -239,12 +293,14 @@ HTTP/1.1 400 Bad Request
         "message":
         {
             "lang":"en",
-            "value":"Cannot remove self from built-in role definitions."},
+            "value":"Removing self from Global Administrator built-in role is not allowed"},
             "values":null
         }
     }
 }
 ```
+
+Мы запрещаем пользователям удалять собственные роли глобального администратора, чтобы избежать ситуации, когда у клиента нет глобальных администраторов. Разрешено удаление других ролей, назначенных Self.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

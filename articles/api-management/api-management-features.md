@@ -10,14 +10,14 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 11/01/2019
+ms.date: 07/15/2020
 ms.author: apimpm
-ms.openlocfilehash: c0cabab6f867df918c4ac86d035918c483e12da9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7ec89d985c025814d903ae9a16f9b0f5123b3571
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82203174"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87056425"
 ---
 # <a name="feature-based-comparison-of-the-azure-api-management-tiers"></a>Сравнение возможностей категорий управления API Azure
 
@@ -42,7 +42,7 @@ ms.locfileid: "82203174"
 | [Архивация и восстановление](api-management-howto-disaster-recovery-backup-restore.md)               | Нет          | Да       | Да   | Да      | Да     |
 | [Управление через Git](api-management-configuration-repository-git.md)                        | Нет          | Да       | Да   | Да      | Да     |
 | API прямого управления                                                                        | Нет          | Да       | Да   | Да      | Да     |
-| Журналы и метрики Azure Monitor                                                               | Нет          | Да       | Да   | Да      | Да     |
+| Журналы и метрики Azure Monitor                                                               | Да         | Да       | Да   | Да      | Да     |
 | Статический IP-адрес                                                                                    | Нет          | Да       | Да   | Да      | Да     |
 
 <sup>1</sup> позволяет использовать Azure AD (и Azure AD B2C) в качестве поставщика удостоверений для входа пользователей на портале разработчика.<br/>

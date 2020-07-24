@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/01/2019
 ms.author: willzhan
-ms.openlocfilehash: 63b835d5d6c442f19f6d1fbe1710547ab96e1b40
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d5d6c7738516337b3db90bbc5d1a94515e96b3ce
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82160245"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87060601"
 ---
 # <a name="offline-playready-streaming-for-windows-10-with-media-services-v3"></a>Автономная потоковая передача PlayReady для Windows 10 с помощью служб мультимедиа v3
 
@@ -44,7 +44,7 @@ ms.locfileid: "82160245"
 * Формат MP4 поддерживается многими проигрывателями и инструментами кодирования, но между контейнером MP4 и DRM нет привязки.
 * В долгосрочной перспективе CFF и CENC являются самыми оптимальными вариантами. Тем не менее в настоящее время экосистемы поддержки инструментов и проигрывателей еще не существует. Нам необходимо решение сегодня.
  
-Идея состоит в том, что формат файла потоковой передачи Smooth Streaming ([PIFF](https://docs.microsoft.com/iis/media/smooth-streaming/protected-interoperable-file-format)) с H264/AAC имеет привязку к PlayReady (AES-128 CTR). Отдельный ISMV-файл потоковой передачи Smooth Streaming (при условии, что в видео мультиплексный звук) сам по себе имеет формат fMP4 и может использоваться для воспроизведения. Если содержимое потоковой передачи Smooth Streaming проходит через шифрование PlayReady, каждый ISMV-файл получает фрагментированный MP4-формат, который защищен с помощью PlayReady. Мы можем выбрать ISMV-файл с предпочтительной скоростью и переименовать его в MP4 для скачивания.
+Идея состоит в том, что формат файла потоковой передачи Smooth Streaming ([PIFF](/iis/media/smooth-streaming/protected-interoperable-file-format)) с H264/AAC имеет привязку к PlayReady (AES-128 CTR). Отдельный ISMV-файл потоковой передачи Smooth Streaming (при условии, что в видео мультиплексный звук) сам по себе имеет формат fMP4 и может использоваться для воспроизведения. Если содержимое потоковой передачи Smooth Streaming проходит через шифрование PlayReady, каждый ISMV-файл получает фрагментированный MP4-формат, который защищен с помощью PlayReady. Мы можем выбрать ISMV-файл с предпочтительной скоростью и переименовать его в MP4 для скачивания.
 
 Для поэтапной загрузки существует два варианта размещения MP4, защищенного с помощью PlayReady:
 

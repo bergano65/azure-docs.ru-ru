@@ -4,11 +4,12 @@ description: Узнайте, как просматривать сведения 
 services: container-service
 ms.topic: article
 ms.date: 03/05/2019
-ms.openlocfilehash: b7a74803af916f9e9de72dd528273007ce37832f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2ef38aa76f4ef9152e7bc55a1d74c84ef426f0ac
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77595388"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87056754"
 ---
 # <a name="get-kubelet-logs-from-azure-kubernetes-service-aks-cluster-nodes"></a>Получение журналов kubelet из узлов кластера Службы Azure Kubernetes (AKS)
 
@@ -31,6 +32,12 @@ ms.locfileid: "77595388"
 ```console
 sudo journalctl -u kubelet -o cat
 ```
+
+> [!NOTE]
+> Для узлов Windows данные журнала находятся в `C:\k` и могут быть просмотрены с помощью команды *More* :
+> ```
+> more C:\k\kubelet.log
+> ```
 
 Пример выходных данных указывает на данные журнала *kubelet*.
 
@@ -58,7 +65,7 @@ I0508 12:28:48.321952    8672 kubelet_node_status.go:497] Using Node Hostname fr
 I0508 12:28:58.344656    8672 kubelet_node_status.go:497] Using Node Hostname from cloudprovider: "aks-agentpool-11482510-0"
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об устранении неполадок с главного сервера Kubernetes, см. в статье [Включение и просмотр журналов главного узла Kubernetes в Службе Azure Kubernetes (AKS)][aks-master-logs].
 

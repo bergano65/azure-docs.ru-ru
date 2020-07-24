@@ -6,17 +6,18 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 01/01/2018
-ms.openlocfilehash: 0f5f01c757bf651beddaa76fc3eb8046b21b31eb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9163071237041d7c8510a644c573e3763434bb0c
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75979396"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87060671"
 ---
 # <a name="create-edit-or-extend-json-for-logic-app-workflow-definitions-in-azure-logic-apps"></a>Создание, редактирование и расширение JSON для определений рабочего процесса приложений логики в Azure Logic Apps
 
 При создании корпоративных решений по интеграции с автоматизированными рабочими процессами на основе [Azure Logic Apps](../logic-apps/logic-apps-overview.md) для описания и проверки определений используется простой декларативный язык JSON (JavaScript Object Notation) и [схема WDL (языка определения рабочего процесса)](../logic-apps/logic-apps-workflow-definition-language.md). Эти форматы позволяют легко читать и понимать определения приложений логики даже без глубоких знаний о программировании.
 Если вы хотите автоматизировать создание и развертывание приложений логики, включите определения приложений логики в [шаблоны Azure Resource Manager](../azure-resource-manager/templates/overview.md) в качестве [ресурсов Azure](../azure-resource-manager/management/overview.md).
-Тогда вы сможете создавать приложения логики, управлять ими и развертывать их с помощью [Azure PowerShell](https://docs.microsoft.com/powershell/module/az.logicapp), [Azure CLI](../azure-resource-manager/templates/deploy-cli.md) или [интерфейсов API REST для Azure Logic Apps](https://docs.microsoft.com/rest/api/logic/).
+Тогда вы сможете создавать приложения логики, управлять ими и развертывать их с помощью [Azure PowerShell](/powershell/module/az.logicapp), [Azure CLI](../azure-resource-manager/templates/deploy-cli.md) или [интерфейсов API REST для Azure Logic Apps](/rest/api/logic/).
 
 Вы можете открыть определения приложений логики в формате JSON, используя редактор представления кода на портале Azure или в Visual Studio, или любой другой текстовый редактор.
 Если вы пока не знакомы с приложениями логики, изучите статью [о создании первого приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).

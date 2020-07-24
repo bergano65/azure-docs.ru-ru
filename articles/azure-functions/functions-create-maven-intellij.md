@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 07/01/2018
 ms.author: jehollan
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 7ced455e8124abed75dc7b2bbf7f92eb13613347
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b1eb430f94ef545fa74ed225c427a121a47f7cf8
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85556763"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87055782"
 ---
 # <a name="create-your-first-azure-function-with-java-and-intellij"></a>Создание первой функции Azure с помощью Java и IntelliJ
 
@@ -44,7 +44,7 @@ ms.locfileid: "85556763"
 2. Чтобы войти в учетную запись Azure, откройте боковую панель **Azure Explorer**, а затем щелкните значок **Azure Sign In** (Вход в Azure) в верхней строке (или в меню IDEA **Tools/Azure/Azure Sign in** (Средства/Azure/Вход в Azure)).
     ![Команда Azure Sign In (Вход в Azure) в IntelliJ][intellij-azure-login]
 
-3. В окне **Azure Sign In** (Вход в Azure) выберите **Device Login** (Имя пользователя устройства) и щелкните **Sign in** (Вход) ([другие варианты входа](https://docs.microsoft.com/azure/developer/java/toolkit-for-intellij/sign-in-instructions)).
+3. В окне **Azure Sign In** (Вход в Azure) выберите **Device Login** (Имя пользователя устройства) и щелкните **Sign in** (Вход) ([другие варианты входа](/azure/developer/java/toolkit-for-intellij/sign-in-instructions)).
 
    ![Окно Azure Sign In (Вход в Azure) с выбранным именем пользователя устройства][intellij-azure-popup]
 
@@ -156,7 +156,7 @@ ms.locfileid: "85556763"
 Итак, вы создали проект с функцией Java, активируемой по HTTP-запросу, запустили ее на своем локальном компьютере и развернули в Azure. Теперь расширьте свою функцию путем...
 
 > [!div class="nextstepaction"]
-> [Добавления выходной привязки очереди службы хранилища Azure](/azure/azure-functions/functions-add-output-binding-storage-queue-java)
+> [Добавления выходной привязки очереди службы хранилища Azure](./functions-add-output-binding-storage-queue-java.md)
 
 
 [marketplace]:./media/functions-create-first-java-intellij/marketplace.png

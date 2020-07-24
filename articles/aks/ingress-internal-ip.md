@@ -4,13 +4,13 @@ titleSuffix: Azure Kubernetes Service
 description: Сведения об установке и настройке контроллера входящего трафика NGINX для внутренней частной сети в кластере Службы Azure Kubernetes (AKS).
 services: container-service
 ms.topic: article
-ms.date: 07/02/2020
-ms.openlocfilehash: eecf34c6ad622c374e6f43670972279e297662a9
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.date: 07/21/2020
+ms.openlocfilehash: a20ef3155e41a438aed7cea7e7d9814b3add4d14
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86251592"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87056984"
 ---
 # <a name="create-an-ingress-controller-to-an-internal-virtual-network-in-azure-kubernetes-service-aks"></a>Создание контроллера входящего трафика для внутренней виртуальной сети в Службе Azure Kubernetes (AKS)
 
@@ -35,7 +35,7 @@ ms.locfileid: "86251592"
 
 По умолчанию контроллер входящего трафика NGINX создается с динамическим общедоступным назначением IP-адресов. Общим требованием к конфигурации является использование внутренней частной сети и IP-адреса. Такой подход позволяет ограничить доступ к службам внутренними пользователями без внешнего доступа.
 
-Создайте файл с именем *internal-ingress.yaml*, используя приведенный ниже пример файла манифеста. Этот пример назначает IP-адрес *10.240.0.42* ресурсу *loadBalancerIP*. Укажите собственный внутренний IP-адрес для использования с контроллером входящего трафика. Убедитесь, что этот IP-адрес не используется в вашей виртуальной сети.
+Создайте файл с именем *internal-ingress.yaml*, используя приведенный ниже пример файла манифеста. Этот пример назначает IP-адрес *10.240.0.42* ресурсу *loadBalancerIP*. Укажите собственный внутренний IP-адрес для использования с контроллером входящего трафика. Убедитесь, что этот IP-адрес не используется в вашей виртуальной сети. Кроме того, если вы используете существующую виртуальную сеть и подсеть, необходимо настроить кластер AKS с правильными разрешениями для управления виртуальной сетью и подсетью. Дополнительные сведения см. [в статье Использование сети кубенет со своими диапазонами IP-адресов в службе Kubernetes Azure (AKS)][aks-configure-kubenet-networking] или [Настройка сети CNI Azure в службе Azure Kubernetes (AKS)][aks-configure-advanced-networking] .
 
 ```yaml
 controller:
@@ -185,7 +185,7 @@ kubectl apply -f ingress-demo.yaml --namespace ingress-basic
 Создайте файл `hello-world-ingress.yaml` и скопируйте в него следующий пример кода YAML:
 
 ```yaml
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
   name: hello-world-ingress
@@ -358,3 +358,5 @@ kubectl delete namespace ingress-basic
 [aks-http-app-routing]: http-application-routing.md
 [aks-ingress-own-tls]: ingress-own-tls.md
 [client-source-ip]: concepts-network.md#ingress-controllers
+[aks-configure-kubenet-networking]: configure-kubenet.md
+[aks-configure-advanced-networking]: configure-azure-cni.md

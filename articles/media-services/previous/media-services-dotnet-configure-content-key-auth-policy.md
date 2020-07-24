@@ -14,13 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 58d52cd194ca4391c61f2477189984273df1198a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e05c7a8388b662731c04ac4098d6eecb1d89fe4f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84712400"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87060156"
 ---
-# <a name="configure-a-content-key-authorization-policy"></a>Настройка политики авторизации ключей содержимого
+# <a name="configure-a-content-key-authorization-policy-by-using-the-media-services-net-sdk"></a>Настройка политики авторизации ключей содержимого с помощью пакета SDK Служб мультимедиа для .NET
 
 [!INCLUDE [media-services-selector-content-key-auth-policy](../../../includes/media-services-selector-content-key-auth-policy.md)]
 
@@ -33,11 +34,11 @@ ms.locfileid: "84712400"
 
 Когда поток запрашивается проигрывателем, Службы мультимедиа, используя указанный ключ, выполняют динамическое шифрование содержимого с помощью AES или DRM. Чтобы расшифровать поток, проигрыватель запросит ключ у службы доставки ключей. Чтобы определить, есть ли у пользователя право на получение ключа, служба оценивает политики авторизации, заданные для ключа.
 
-Службы мультимедиа поддерживают несколько способов аутентификации пользователей, которые запрашивают ключи. Политике авторизации ключа содержимого можно задать одно или несколько ограничений: открытая авторизация или авторизация с помощью токена. При ограничении с помощью маркера к политике должен прилагаться маркер, выданный службой маркеров безопасности (STS). Службы мультимедиа поддерживают маркеры в формате простого веб-маркера ([SWT](https://msdn.microsoft.com/library/gg185950.aspx#BKMK_2)) и в формате JSON Web Token ([JWT](https://msdn.microsoft.com/library/gg185950.aspx#BKMK_3)).
+Службы мультимедиа поддерживают несколько способов аутентификации пользователей, которые запрашивают ключи. Политике авторизации ключа содержимого можно задать одно или несколько ограничений: открытая авторизация или авторизация с помощью токена. При ограничении с помощью маркера к политике должен прилагаться маркер, выданный службой маркеров безопасности (STS). Службы мультимедиа поддерживают маркеры в формате простого веб-маркера ([SWT](/previous-versions/azure/azure-services/gg185950(v=azure.100)#BKMK_2)) и в формате JSON Web Token ([JWT](/previous-versions/azure/azure-services/gg185950(v=azure.100)#BKMK_3)).
 
 Службы мультимедиа не предоставляют службу маркеров безопасности. Вы можете создать настраиваемую службу STS или выдавать токены с помощью службы контроля доступа Azure. Чтобы создать маркер, подписанный указанным ключом, и получить утверждения, указанные в конфигурации ограничения по маркерам, должна быть настроена служба маркеров безопасности (как описано в этой статье). Если маркер является допустимым и утверждения маркера соответствуют утверждениям, настроенным для ключа содержимого, служба доставки ключей для служб мультимедиа возвращает клиенту ключ шифрования.
 
-Дополнительные сведения см. в следующих статьях:
+См. сведения в следующих статьях:
 
 - [JWT token Authentication in Azure Media Services and Dynamic Encryption](http://www.gtrifonov.com/2015/01/03/jwt-token-authentication-in-azure-media-services-and-dynamic-encryption/) (Аутентификация токена JWT в службах мультимедиа Azure и динамическое шифрование)
 - [Integrate Azure Media Services OWIN MVC based app with Azure Active Directory and restrict content key delivery based on JWT claims](http://www.gtrifonov.com/2015/01/24/mvc-owin-azure-media-services-ad-integration/) (Интеграция приложения на основе OWIN MVC Служб мультимедиа Azure с Azure Active Directory и ограничение доставки ключей содержимого на основе утверждений JWT)
@@ -436,6 +437,5 @@ ms.locfileid: "84712400"
 ## <a name="provide-feedback"></a>Отзывы
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда политика авторизации для ключа содержимого настроена, перейдите к статье о [настройке политики доставки ресурсов](media-services-dotnet-configure-asset-delivery-policy.md).
-

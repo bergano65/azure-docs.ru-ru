@@ -3,11 +3,12 @@ title: Службы обмена сообщениями Azure — Service Manage
 description: Эта статья содержит сведения о нерекомендуемых Service Manager Azure REST API & командлетах PowerShell для диспетчер ресурсов REST API командлетов PowerShell.
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 7ef744a3a35888be9d72addca61ef389f2cf97cc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 65dab975ba7c5e4bdcf654088e7a42c2d92d7dee
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85340769"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87059652"
 ---
 # <a name="deprecation-of-azure-service-manager-support-for-azure-service-bus-relay-and-event-hubs"></a>Нерекомендуемая поддержка Azure Service Manager для служебной шины, ретранслятора и концентраторов событий Azure
 
@@ -19,7 +20,7 @@ ms.locfileid: "85340769"
 
 Дополнительные сведения о Service Manager и диспетчер ресурсов API-интерфейсах для служебной шины Azure, ретранслятора и концентраторов событий см. в документации по REST API:
 
-- [служебной шине Azure](/rest/api/servicebus/)
+- [Служебная шина Azure](/rest/api/servicebus/)
 - [Центры событий Azure](/rest/api/eventhub/)
 - [Azure Relay](/rest/api/relay/)
 
@@ -53,23 +54,23 @@ ms.locfileid: "85340769"
 ## <a name="service-manager-powershell---resource-manager-powershell"></a>Service Manager PowerShell диспетчер ресурсов PowerShell
 | Service Manager команда PowerShell (не рекомендуется) | Новые команды диспетчер ресурсов | Новая команда диспетчер ресурсов |
 | ----- | ----- | ----- | 
-| [Get-AzureSBAuthorizationRule](/powershell/module/servicemanagement/azure/get-azuresbauthorizationrule?view=azuresmps-4.0.0) | [Get-AzureRmServiceBusAuthorizationRule.](/powershell/module/azurerm.servicebus/get-azurermservicebusauthorizationrule?view=azurermps-6.13.0) | [Get-Азсервицебусаусоризатионруле](/powershell/module/az.servicebus/get-azservicebusauthorizationrule?view=azps-1.6.0) |
-| [Get-AzureSBLocation](/powershell/module/servicemanagement/azure/get-azuresblocation?view=azuresmps-4.0.0) | [Get-Азурермсервицебусжеодрконфигуратион](/powershell/module/azurerm.servicebus/get-azurermservicebusgeodrconfiguration?view=azurermps-6.13.0) | [Get-Азсервицебусжеодрконфигуратион](/powershell/module/az.servicebus/get-azservicebusgeodrconfiguration?view=azps-1.6.0) |
-| [Get-AzureSBNamespace](/powershell/module/servicemanagement/azure/get-azuresbnamespace?view=azuresmps-4.0.0) | [Get-AzureRmServiceBusNamespace](/powershell/module/azurerm.servicebus/get-azurermservicebusnamespace?view=azurermps-6.13.0) | [Get-Азсервицебуснамеспаце](/powershell/module/az.servicebus/get-azservicebusnamespace?view=azps-1.6.0) |
-| [New-AzureSBAuthorizationRule](/powershell/module/servicemanagement/azure/new-azuresbauthorizationrule?view=azuresmps-4.0.0) | [New-AzureRmServiceBusAuthorizationRule.](/powershell/module/azurerm.servicebus/new-azurermservicebusauthorizationrule?view=azurermps-6.13.0) | [New-Азсервицебусаусоризатионруле](/powershell/module/az.servicebus/new-azservicebusauthorizationrule?view=azps-1.6.0) |
-| [New-AzureSBNamespace](/powershell/module/servicemanagement/azure/new-azuresbnamespace?view=azuresmps-4.0.0) | [New-AzureRmServiceBusNamespace](/powershell/module/azurerm.servicebus/new-azurermservicebusnamespace?view=azurermps-6.13.0) | [New-Азсервицебуснамеспаце](/powershell/module/az.servicebus/new-azservicebusnamespace?view=azps-1.6.0) |
+| [Get-AzureSBAuthorizationRule](/powershell/module/servicemanagement/azure.service/get-azuresbauthorizationrule?view=azuresmps-4.0.0) | [Get-AzureRmServiceBusAuthorizationRule.](/powershell/module/azurerm.servicebus/get-azurermservicebusauthorizationrule?view=azurermps-6.13.0) | [Get-Азсервицебусаусоризатионруле](/powershell/module/az.servicebus/get-azservicebusauthorizationrule?view=azps-1.6.0) |
+| [Get-AzureSBLocation](/powershell/module/servicemanagement/azure.service/get-azuresblocation?view=azuresmps-4.0.0) | [Get-Азурермсервицебусжеодрконфигуратион](/powershell/module/azurerm.servicebus/get-azurermservicebusgeodrconfiguration?view=azurermps-6.13.0) | [Get-Азсервицебусжеодрконфигуратион](/powershell/module/az.servicebus/get-azservicebusgeodrconfiguration?view=azps-1.6.0) |
+| [Get-AzureSBNamespace](/powershell/module/servicemanagement/azure.service/get-azuresbnamespace?view=azuresmps-4.0.0) | [Get-AzureRmServiceBusNamespace](/powershell/module/azurerm.servicebus/get-azurermservicebusnamespace?view=azurermps-6.13.0) | [Get-Азсервицебуснамеспаце](/powershell/module/az.servicebus/get-azservicebusnamespace?view=azps-1.6.0) |
+| [New-AzureSBAuthorizationRule](/powershell/module/servicemanagement/azure.service/new-azuresbauthorizationrule?view=azuresmps-4.0.0) | [New-AzureRmServiceBusAuthorizationRule.](/powershell/module/azurerm.servicebus/new-azurermservicebusauthorizationrule?view=azurermps-6.13.0) | [New-Азсервицебусаусоризатионруле](/powershell/module/az.servicebus/new-azservicebusauthorizationrule?view=azps-1.6.0) |
+| [New-AzureSBNamespace](/powershell/module/servicemanagement/azure.service/new-azuresbnamespace?view=azuresmps-4.0.0) | [New-AzureRmServiceBusNamespace](/powershell/module/azurerm.servicebus/new-azurermservicebusnamespace?view=azurermps-6.13.0) | [New-Азсервицебуснамеспаце](/powershell/module/az.servicebus/new-azservicebusnamespace?view=azps-1.6.0) |
 | [Remove-Азурермрелайаусоризатионруле](/powershell/module/azurerm.relay/remove-azurermrelayauthorizationrule?view=azurermps-6.13.0) | [Remove-AzureRmEventHubAuthorizationRule](/powershell/module/azurerm.eventhub/remove-azurermeventhubauthorizationrule?view=azurermps-6.13.0) | [Remove-Азсервицебусаусоризатионруле](/powershell/module/az.servicebus/remove-azservicebusauthorizationrule?view=azps-1.6.0) |
-| [Remove-AzureSBNamespace](/powershell/module/servicemanagement/azure/remove-azuresbnamespace?view=azuresmps-4.0.0) | [Remove-AzureRmServiceBusNamespace](/powershell/module/azurerm.servicebus/remove-azurermservicebusnamespace?view=azurermps-6.13.0) | [Remove-Азсервицебуснамеспаце](/powershell/module/az.servicebus/remove-azservicebusnamespace?view=azps-1.6.0) |
-| [Set-AzureSBAuthorizationRule](/powershell/module/servicemanagement/azure/set-azuresbauthorizationrule?view=azuresmps-4.0.0) | [Set-AzureRmServiceBusAuthorizationRule.](/powershell/module/azurerm.servicebus/set-azurermservicebusauthorizationrule?view=azurermps-6.13.0) | [Set-Азсервицебусаусоризатионруле](/powershell/module/az.servicebus/set-azservicebusauthorizationrule?view=azps-1.6.0) |
+| [Remove-AzureSBNamespace](/powershell/module/servicemanagement/azure.service/remove-azuresbnamespace?view=azuresmps-4.0.0) | [Remove-AzureRmServiceBusNamespace](/powershell/module/azurerm.servicebus/remove-azurermservicebusnamespace?view=azurermps-6.13.0) | [Remove-Азсервицебуснамеспаце](/powershell/module/az.servicebus/remove-azservicebusnamespace?view=azps-1.6.0) |
+| [Set-AzureSBAuthorizationRule](/powershell/module/servicemanagement/azure.service/set-azuresbauthorizationrule?view=azuresmps-4.0.0) | [Set-AzureRmServiceBusAuthorizationRule.](/powershell/module/azurerm.servicebus/set-azurermservicebusauthorizationrule?view=azurermps-6.13.0) | [Set-Азсервицебусаусоризатионруле](/powershell/module/az.servicebus/set-azservicebusauthorizationrule?view=azps-1.6.0) |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Обратитесь к следующей документации. 
 
 - Последняя документация по REST API
-    - [служебной шине Azure](/rest/api/servicebus/)
+    - [Служебная шина Azure](/rest/api/servicebus/)
     - [Центры событий Azure](/rest/api/eventhub/)
     - [Azure Relay](/rest/api/relay/)
 - Последняя документация по PowerShell
-    - [служебной шине Azure](/powershell/module/azurerm.servicebus/?view=azurermps-6.13.0#service_bus)
+    - [Служебная шина Azure](/powershell/module/azurerm.servicebus/?view=azurermps-6.13.0#service_bus)
     - [Центры событий Azure](/powershell/module/azurerm.eventhub/?view=azurermps-6.13.0#event_hub)
     - [Сетка событий Azure](/powershell/module/azurerm.eventgrid/?view=azurermps-6.13.0#event_grid)

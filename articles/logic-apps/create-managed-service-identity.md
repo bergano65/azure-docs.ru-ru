@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: article
 ms.date: 02/10/2020
-ms.openlocfilehash: 190cc74bc2967cdee7f3154e0d6a6fedd8ee90dd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 06c10cffcfa5c68b1da8ba366ca270f1c2fa6ea4
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85565040"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87060968"
 ---
 # <a name="authenticate-access-to-azure-resources-by-using-managed-identities-in-azure-logic-apps"></a>Проверка подлинности и получение доступа к ресурсам Azure с помощью управляемых удостоверений в Azure Logic Apps.
 
@@ -306,8 +306,8 @@ Azure Logic Apps поддерживает [*назначенные систем�
 
 * [Портал Azure](#azure-portal-assign-access)
 * [Шаблон Azure Resource Manager](../role-based-access-control/role-assignments-template.md)
-* Azure PowerShell ([New-AzRoleAssignment](https://docs.microsoft.com/powershell/module/az.resources/new-azroleassignment)). Дополнительные сведения см. в разделе [Добавление назначения ролей с помощью Azure RBAC и Azure PowerShell](../role-based-access-control/role-assignments-powershell.md).
-* Azure CLI ([az role assignment create](https://docs.microsoft.com/cli/azure/role/assignment?view=azure-cli-latest#az-role-assignment-create)). Дополнительные сведения см. в разделе [Добавление назначения ролей с помощью Azure RBAC и Azure CLI](../role-based-access-control/role-assignments-cli.md).
+* Azure PowerShell ([New-AzRoleAssignment](/powershell/module/az.resources/new-azroleassignment)). Дополнительные сведения см. в разделе [Добавление назначения ролей с помощью Azure RBAC и Azure PowerShell](../role-based-access-control/role-assignments-powershell.md).
+* Azure CLI ([az role assignment create](/cli/azure/role/assignment?view=azure-cli-latest#az-role-assignment-create)). Дополнительные сведения см. в разделе [Добавление назначения ролей с помощью Azure RBAC и Azure CLI](../role-based-access-control/role-assignments-cli.md).
 * [Azure REST API](../role-based-access-control/role-assignments-rest.md)
 
 <a name="azure-portal-assign-access"></a>
@@ -387,18 +387,18 @@ Azure Logic Apps поддерживает [*назначенные систем�
    | **Аутентификация** | Да | Тип проверки подлинности, используемый для аутентификации доступа к целевому ресурсу или сущности |
    ||||
 
-   В качестве конкретного примера предположим, что вы хотите выполнить операцию [со снимком BLOB-объекта](https://docs.microsoft.com/rest/api/storageservices/snapshot-blob) на большом двоичном объекте в учетной записи хранилища Azure, где вы ранее настроили доступ к удостоверению. Однако [соединитель хранилища BLOB-объектов](https://docs.microsoft.com/connectors/azureblob/) Azure в настоящее время не поддерживает эту операцию. Вместо этого операцию можно выполнить с помощью [действия HTTP](../logic-apps/logic-apps-workflow-actions-triggers.md#http-action) или другой операции [REST API службы BLOB-объектов](https://docs.microsoft.com/rest/api/storageservices/operations-on-blobs).
+   В качестве конкретного примера предположим, что вы хотите выполнить операцию [со снимком BLOB-объекта](/rest/api/storageservices/snapshot-blob) на большом двоичном объекте в учетной записи хранилища Azure, где вы ранее настроили доступ к удостоверению. Однако [соединитель хранилища BLOB-объектов](/connectors/azureblob/) Azure в настоящее время не поддерживает эту операцию. Вместо этого операцию можно выполнить с помощью [действия HTTP](../logic-apps/logic-apps-workflow-actions-triggers.md#http-action) или другой операции [REST API службы BLOB-объектов](/rest/api/storageservices/operations-on-blobs).
 
    > [!IMPORTANT]
    > Чтобы получить доступ к учетным записям хранения Azure за брандмауэром с помощью HTTP-запросов и управляемых удостоверений, убедитесь, что вы также настроили учетную запись хранения с [исключением, которое разрешает доступ доверенным службам от Майкрософт](../connectors/connectors-create-api-azureblobstorage.md#access-trusted-service).
 
-   Для запуска [операции снимка BLOB-объекта](https://docs.microsoft.com/rest/api/storageservices/snapshot-blob) в действии HTTP указываются следующие свойства:
+   Для запуска [операции снимка BLOB-объекта](/rest/api/storageservices/snapshot-blob) в действии HTTP указываются следующие свойства:
 
    | Свойство | Обязательно | Пример значения | Описание |
    |----------|----------|---------------|-------------|
    | **Метод** | Да | `PUT`| Метод HTTP, используемый операцией снимка BLOB-объекта |
    | **URI** | Да | `https://{storage-account-name}.blob.core.windows.net/{blob-container-name}/{folder-name-if-any}/{blob-file-name-with-extension}` | Идентификатор ресурса для файла хранилища BLOB-объектов Azure в глобальной (общедоступной) среде Azure, который использует этот синтаксис |
-   | **Заголовки** | Да, для службы хранилища Azure | `x-ms-blob-type` = `BlockBlob` <p>`x-ms-version` = `2019-02-02` | Значения заголовков `x-ms-blob-type` и `x-ms-version`, необходимые для операций службы хранилища Azure. <p><p>**Важно!** В исходящих HTTP-триггерах и запросах действий для службы хранилища Azure для заголовка требуется свойство `x-ms-version` и версия API для операции, которую требуется выполнить. <p>Дополнительные сведения см. в следующих статьях: <p><p>- [Заголовок запроса — снимок BLOB-объекта](https://docs.microsoft.com/rest/api/storageservices/snapshot-blob#request) <br>- [Управление версиями для служб хранилища Azure](https://docs.microsoft.com/rest/api/storageservices/versioning-for-the-azure-storage-services#specifying-service-versions-in-requests) |
+   | **Заголовки** | Да, для службы хранилища Azure | `x-ms-blob-type` = `BlockBlob` <p>`x-ms-version` = `2019-02-02` | Значения заголовков `x-ms-blob-type` и `x-ms-version`, необходимые для операций службы хранилища Azure. <p><p>**Важно!** В исходящих HTTP-триггерах и запросах действий для службы хранилища Azure для заголовка требуется свойство `x-ms-version` и версия API для операции, которую требуется выполнить. <p>Дополнительные сведения см. в следующих статьях: <p><p>- [Заголовок запроса — снимок BLOB-объекта](/rest/api/storageservices/snapshot-blob#request) <br>- [Управление версиями для служб хранилища Azure](/rest/api/storageservices/versioning-for-the-azure-storage-services#specifying-service-versions-in-requests) |
    | **Запросы** | Да, для данной операции | `comp` = `snapshot` | Имя параметра запроса и значение для операции снимка BLOB-объекта. |
    |||||
 
@@ -441,7 +441,7 @@ Azure Logic Apps поддерживает [*назначенные систем�
    Дополнительные сведения об авторизации доступа с помощью Azure AD для службы хранилища Azure см. в следующих разделах:
 
    * [Авторизация доступа к BLOB-объектам и очередям с помощью Azure Active Directory](../storage/common/storage-auth-aad.md)
-   * [Авторизация доступа к хранилищу Azure с помощью Azure Active Directory](https://docs.microsoft.com/rest/api/storageservices/authorize-with-azure-active-directory#use-oauth-access-tokens-for-authentication)
+   * [Авторизация доступа к хранилищу Azure с помощью Azure Active Directory](/rest/api/storageservices/authorize-with-azure-active-directory#use-oauth-access-tokens-for-authentication)
 
 1. Продолжите создание приложения логики нужным образом.
 

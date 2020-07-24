@@ -14,14 +14,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/17/2020
 ms.author: yelevin
-ms.openlocfilehash: e4185de879fa6136531e6d4c64908befa1d3bc45
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: df4292a40335e58c64b8ebc50ffb6ac1ceee8836
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86531975"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87059901"
 ---
 # <a name="connect-your-proofpoint-tap-to-azure-sentinel-with-azure-function"></a>Подключение Proofpoint On Demand TAP к Azure Sentinel с помощью функции Azure
+
+> [!IMPORTANT]
+> Соединитель данных TAP для Proofpoint On Demand в Azure Sentinel в настоящее время находится в общедоступной предварительной версии.
+> Эта функция предоставляется без соглашения об уровне обслуживания и не рекомендуется для рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Соединитель защиты от назначенных атак Proofpoint On Demand (TAP) позволяет легко подключать все журналы решений безопасности [PROOFPOINT On Demand TAP](https://www.proofpoint.com/us/products/advanced-threat-protection/targeted-attack-protection) с помощью Azure Sentinel, просматривать панели мониторинга, создавать пользовательские оповещения и улучшать исследование. Интеграция между Proofpoint On Demand TAP и Azure Sentinel позволяет использовать функции Azure для извлечения данных журнала с помощью REST API.
 

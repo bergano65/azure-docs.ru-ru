@@ -3,17 +3,18 @@ title: Резервное копирование файловых ресурсо
 description: Узнайте, как использовать REST API для резервного копирования файловых ресурсов Azure в хранилище служб восстановления.
 ms.topic: conceptual
 ms.date: 02/16/2020
-ms.openlocfilehash: 2cf385830ec1be17cb62432e6ef9cba7d82a9db1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7059dbae9d448b710880f1f9d72b843a6d77d98b
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84710615"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87055016"
 ---
 # <a name="backup-azure-file-share-using-azure-backup-via-rest-api"></a>Резервное копирование файлового ресурса Azure с помощью Azure Backup через API-интерфейс.
 
 В этой статье описывается, как создать резервную копию файлового ресурса Azure с помощью Azure Backup с помощью REST API.
 
-В этой статье предполагается, что вы уже создали хранилище служб восстановления и политику для настройки резервного копирования для общей папки. Если вы этого не сделали, см. руководства по созданию [хранилища](https://docs.microsoft.com/azure/backup/backup-azure-arm-userestapi-createorupdatevault) и [созданию](https://docs.microsoft.com/azure/backup/backup-azure-arm-userestapi-createorupdatepolicy) политик REST API для создания новых хранилищ и политик.
+В этой статье предполагается, что вы уже создали хранилище служб восстановления и политику для настройки резервного копирования для общей папки. Если вы этого не сделали, см. руководства по созданию [хранилища](./backup-azure-arm-userestapi-createorupdatevault.md) и [созданию](./backup-azure-arm-userestapi-createorupdatepolicy.md) политик REST API для создания новых хранилищ и политик.
 
 В этой статье мы будем использовать следующие ресурсы:
 
@@ -31,7 +32,7 @@ ms.locfileid: "84710615"
 
 ### <a name="discover-storage-accounts-with-unprotected-azure-file-shares"></a>Обнаружение учетных записей хранения с незащищенными файловыми ресурсами Azure
 
-Хранилищу необходимо найти все учетные записи хранения Azure в подписке с общими папками, которые можно архивировать в хранилище служб восстановления. Это можно сделать с помощью [операции обновления](https://docs.microsoft.com/rest/api/backup/protectioncontainers/refresh). Это асинхронная операция *POST* , которая гарантирует, что хранилище получает последний список всех незащищенных файловых ресурсов Azure в текущей подписке и кэширует их. После кэширования общей папки службы восстановления могут получить доступ к общей папке и защитить ее.
+Хранилищу необходимо найти все учетные записи хранения Azure в подписке с общими папками, которые можно архивировать в хранилище служб восстановления. Это можно сделать с помощью [операции обновления](/rest/api/backup/protectioncontainers/refresh). Это асинхронная операция *POST* , которая гарантирует, что хранилище получает последний список всех незащищенных файловых ресурсов Azure в текущей подписке и кэширует их. После кэширования общей папки службы восстановления могут получить доступ к общей папке и защитить ее.
 
 ```http
 POST https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{vaultresourceGroupname}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/refreshContainers?api-version=2016-12-01&$filter={$filter}
@@ -55,7 +56,7 @@ POST https://management.azure.com/Subscriptions/00000000-0000-0000-0000-00000000
 
 #### <a name="responses"></a>Ответы
 
-Операция обновления — это [асинхронная операция](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-async-operations). Это означает, что такая операция создает другую операцию, которая должна отслеживаться отдельно.
+Операция обновления — это [асинхронная операция](../azure-resource-manager/management/async-operations.md). Это означает, что такая операция создает другую операцию, которая должна отслеживаться отдельно.
 
 Он возвращает два ответа: 202 (принято) при создании другой операции и 200 (ОК) после завершения этой операции.
 
@@ -107,7 +108,7 @@ Date   : Mon, 27 Jan 2020 10:53:04 GMT
 
 ### <a name="get-list-of-storage-accounts-that-can-be-protected-with-recovery-services-vault"></a>Получение списка учетных записей хранения, которые можно защитить с помощью хранилища служб восстановления
 
-Чтобы убедиться в том, что выполняется кэширование, перечислите все защищенные учетные записи хранения в подписке. Затем найдите нужную учетную запись хранения в ответе. Это делается с помощью операции [Get протектаблеконтаинерс](https://docs.microsoft.com/rest/api/backup/protectablecontainers/list) .
+Чтобы убедиться в том, что выполняется кэширование, перечислите все защищенные учетные записи хранения в подписке. Затем найдите нужную учетную запись хранения в ответе. Это делается с помощью операции [Get протектаблеконтаинерс](/rest/api/backup/protectablecontainers/list) .
 
 ```http
 GET https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/azurefiles/providers/Microsoft.RecoveryServices/vaults/azurefilesvault/backupFabrics/Azure/protectableContainers?api-version=2016-12-01&$filter=backupManagementType eq 'AzureStorage'
@@ -159,7 +160,7 @@ protectableContainers/StorageContainer;Storage;AzureFiles;testvault2",
 
 ### <a name="register-storage-account-with-recovery-services-vault"></a>Регистрация учетной записи хранения в хранилище служб восстановления
 
-Этот шаг необходим, только если вы не зарегистрировали учетную запись хранения в хранилище ранее. Хранилище можно зарегистрировать с помощью [операции протектионконтаинерс-Register](https://docs.microsoft.com/rest/api/backup/protectioncontainers/register).
+Этот шаг необходим, только если вы не зарегистрировали учетную запись хранения в хранилище ранее. Хранилище можно зарегистрировать с помощью [операции протектионконтаинерс-Register](/rest/api/backup/protectioncontainers/register).
 
 ```http
 PUT https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}?api-version=2016-12-01
@@ -208,7 +209,7 @@ PUT https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
  }
 ```
 
-Полный список определений текста запроса и другие сведения см. в разделе [протектионконтаинерс-Register](https://docs.microsoft.com/rest/api/backup/protectioncontainers/register#azurestoragecontainer).
+Полный список определений текста запроса и другие сведения см. в разделе [протектионконтаинерс-Register](/rest/api/backup/protectioncontainers/register#azurestoragecontainer).
 
 Это асинхронная операция, которая возвращает два ответа: "202 Accepted", когда операция принята, и "200 ОК" после завершения операции.  Чтобы отвести состояние операции, используйте заголовок Location для получения последнего состояния операции.
 
@@ -240,7 +241,7 @@ protectionContainers/StorageContainer;Storage;AzureFiles;testvault2",
 
 ### <a name="inquire-all-unprotected-files-shares-under-a-storage-account"></a>Запрос всех незащищенных файлов, общих для учетной записи хранения
 
-Сведения о защищенных элементах в учетной записи хранения можно запросить с помощью операции " [контейнеры защиты — запрос](https://docs.microsoft.com/rest/api/backup/protectioncontainers/inquire) ". Это асинхронная операция, и результаты должны быть отслеживаниются с помощью заголовка Location.
+Сведения о защищенных элементах в учетной записи хранения можно запросить с помощью операции " [контейнеры защиты — запрос](/rest/api/backup/protectioncontainers/inquire) ". Это асинхронная операция, и результаты должны быть отслеживаниются с помощью заголовка Location.
 
 ```http
 POST https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/inquire?api-version=2016-12-01
@@ -275,7 +276,7 @@ Date  : Mon, 27 Jan 2020 10:53:05 GMT
 
 ### <a name="select-the-file-share-you-want-to-back-up"></a>Выберите общую папку для резервного копирования
 
-Вы можете получить список всех защищаемых элементов в подписке и найти нужную общую папку для резервного копирования с помощью операции [Get баккуппротектаблеитемс](https://docs.microsoft.com/rest/api/backup/backupprotectableitems/list) .
+Вы можете получить список всех защищаемых элементов в подписке и найти нужную общую папку для резервного копирования с помощью операции [Get баккуппротектаблеитемс](/rest/api/backup/backupprotectableitems/list) .
 
 ```http
 GET https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupProtectableItems?api-version=2016-12-01&$filter={$filter}
@@ -350,7 +351,7 @@ Status Code:200
 
 ### <a name="enable-backup-for-the-file-share"></a>Включить резервное копирование для общей папки
 
-После определения соответствующей общей папки с понятным именем выберите политику для защиты. Дополнительные сведения о существующих политиках в хранилище см. в разделе [API политики списка](https://docs.microsoft.com/rest/api/backup/backuppolicies/list). Ссылаясь на имя политики, выберите [соответствующую политику](https://docs.microsoft.com/rest/api/backup/protectionpolicies/get). См. дополнительные сведения о [создании политик](https://docs.microsoft.com/azure/backup/backup-azure-arm-userestapi-createorupdatepolicy).
+После определения соответствующей общей папки с понятным именем выберите политику для защиты. Дополнительные сведения о существующих политиках в хранилище см. в разделе [API политики списка](/rest/api/backup/backuppolicies/list). Ссылаясь на имя политики, выберите [соответствующую политику](/rest/api/backup/protectionpolicies/get). См. дополнительные сведения о [создании политик](./backup-azure-arm-userestapi-createorupdatepolicy.md).
 
 Включение защиты — это асинхронная операция *размещения* , которая создает "защищенный элемент".
 
@@ -466,11 +467,11 @@ POST https://management.azure.com/subscriptions/00000000-0000-0000-0000-00000000
 
 Чтобы активировать резервное копирование по запросу, используйте компоненты текста запроса.
 
-| Имя       | Type                       | Описание:                       |
+| Имя       | Type                       | Описание                       |
 | ---------- | -------------------------- | --------------------------------- |
-| Элемент Property | азурефилешаребаккупрекуес | Свойства Баккупрекуестресаурце |
+| Свойства | азурефилешаребаккупрекуес | Свойства Баккупрекуестресаурце |
 
-Полный список определений в тексте запроса и другие сведения см. в [документации по активации резервного копирования для защищенных элементов для REST API](https://docs.microsoft.com/rest/api/backup/backups/trigger#request-body).
+Полный список определений в тексте запроса и другие сведения см. в [документации по активации резервного копирования для защищенных элементов для REST API](/rest/api/backup/backups/trigger#request-body).
 
 Пример текста запроса
 
@@ -488,7 +489,7 @@ POST https://management.azure.com/subscriptions/00000000-0000-0000-0000-00000000
 
 ### <a name="responses"></a>Ответы
 
-Активация резервного копирования по запросу — это [асинхронная операция](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-async-operations). Это означает, что такая операция создает другую операцию, которая должна отслеживаться отдельно.
+Активация резервного копирования по запросу — это [асинхронная операция](../azure-resource-manager/management/async-operations.md). Это означает, что такая операция создает другую операцию, которая должна отслеживаться отдельно.
 
 Он возвращает два ответа: 202 (принято) при создании другой операции и 200 (ОК) после завершения этой операции.
 
@@ -539,8 +540,8 @@ GET https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
 }
 ```
 
-Так как задание резервного копирования — это длительная операция, оно должно отслеживаться, как описано в [документации по мониторингу заданий для REST API](https://docs.microsoft.com/azure/backup/backup-azure-arm-userestapi-managejobs#tracking-the-job).
+Так как задание резервного копирования — это длительная операция, оно должно отслеживаться, как описано в [документации по мониторингу заданий для REST API](./backup-azure-arm-userestapi-managejobs.md#tracking-the-job).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как [восстановить файловые ресурсы Azure с помощью API-интерфейса](restore-azure-file-share-rest-api.md).

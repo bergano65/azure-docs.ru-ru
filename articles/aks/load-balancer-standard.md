@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 06/14/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: 11f8442f188ea6ce7ee1de5a093362279da4594c
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 417ca42e014c0bb197d7dd834b960f25fcfdf468
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86251169"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87056808"
 ---
 # <a name="use-a-public-standard-load-balancer-in-azure-kubernetes-service-aks"></a>Использование общедоступной Load Balancer (цен. категория "Стандартный") в службе Kubernetes Azure (AKS)
 
@@ -167,7 +167,7 @@ az aks update \
 
 #### <a name="create-the-cluster-with-your-own-public-ip-or-prefixes"></a>Создание кластера с собственными общедоступными IP-адресами или префиксами
 
-Вы можете настроить собственные IP-адреса или префиксы IP-адресов для исходящего трафика во время создания кластера, например, чтобы добавить конечные точки исходящего трафика в список разрешений. Добавьте параметры, показанные выше, на шаге создания кластера, чтобы определить собственные общедоступные IP-адреса и префиксы IP-адресов в самом начале жизненного цикла кластера.
+Вы можете использовать собственные IP-адреса или префиксы IP-адресов для исходящего трафика во время создания кластера для поддержки таких сценариев, как добавление конечных точек исходящего трафика в список разрешений. Добавьте параметры, показанные выше, на шаге создания кластера, чтобы определить собственные общедоступные IP-адреса и префиксы IP-адресов в самом начале жизненного цикла кластера.
 
 Чтобы создать кластер с указанными общедоступными IP-адресами, используйте команду *az aks create* с параметром *load-balancer-outbound-ips*.
 
@@ -229,7 +229,7 @@ az aks update \
 > [!IMPORTANT]
 > Необходимо [рассчитать требуемую квоту и проверить требования][requirements] перед настройкой *аллокатедаутбаундпортс* , чтобы избежать проблем с подключением или масштабированием.
 
-Можно также использовать **`load-balancer-outbound-ports`** параметры при создании кластера, но необходимо также указать **`load-balancer-managed-outbound-ip-count`** , **`load-balancer-outbound-ips`** или **`load-balancer-outbound-ip-prefixes`** .  Например:
+Можно также использовать **`load-balancer-outbound-ports`** параметры при создании кластера, но необходимо также указать **`load-balancer-managed-outbound-ip-count`** , **`load-balancer-outbound-ips`** или **`load-balancer-outbound-ip-prefixes`** .  Например.
 
 ```azurecli-interactive
 az aks create \
@@ -291,6 +291,24 @@ spec:
     app: azure-vote-front
   loadBalancerSourceRanges:
   - MY_EXTERNAL_IP_RANGE
+```
+
+## <a name="maintain-the-clients-ip-on-inbound-connections"></a>Обслуживание IP-адреса клиента при входящих подключениях
+
+По умолчанию служба типа `LoadBalancer` [в Kubernetes](https://kubernetes.io/docs/tutorials/services/source-ip/#source-ip-for-services-with-type-loadbalancer) и в AKS не сохраняет IP-адрес клиента при подключении к модулю Pod. Исходным IP-адресом пакета, который доставляется в модуль Pod, будет частный IP-адрес узла. Чтобы сохранить IP-адрес клиента, необходимо задать для параметра `service.spec.externalTrafficPolicy` значение `local` в определении службы. Ниже приведен пример манифеста.
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: azure-vote-front
+spec:
+  type: LoadBalancer
+  externalTrafficPolicy: Local
+  ports:
+  - port: 80
+  selector:
+    app: azure-vote-front
 ```
 
 ## <a name="additional-customizations-via-kubernetes-annotations"></a>Дополнительные настройки через заметки Kubernetes

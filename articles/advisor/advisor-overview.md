@@ -3,12 +3,12 @@ title: Общие сведения об Azure Advisor
 description: Использование Azure Advisor для оптимизации развернутых служб Azure.
 ms.topic: article
 ms.date: 02/01/2019
-ms.openlocfilehash: 0c6c79dd764f92475b3b0121ae46706c0dfc0bcb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 17b68e220b7011dee2cc8fca440d58d980c28e6d
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85117783"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87057683"
 ---
 # <a name="introduction-to-azure-advisor"></a>Общие сведения об Azure Advisor
 
@@ -51,19 +51,19 @@ ms.locfileid: "85117783"
 
 ### <a name="what-permissions-do-i-need-to-access-advisor"></a>Какие разрешения требуются для использования Advisor?
  
-Рекомендации Помощника могут просматривать *владельцы*, *участники* или *читатели* подписки.
+Вы можете получить доступ к рекомендациям помощника в качестве *владельца*, *участника*или *читателя* подписки, группы ресурсов или ресурса.
 
 ### <a name="what-resources-does-advisor-provide-recommendations-for"></a>Для каких ресурсов Advisor предоставляет рекомендации?
 
 Advisor предоставляет рекомендации для шлюза приложений, служб приложений, групп доступности, кэша Azure, фабрики данных Azure, базы данных Azure для MySQL, базы данных Azure для PostgreSQL, базы данных Azure для MariaDB, Azure ExpressRoute, Azure Cosmos DB, общедоступных IP-адресов Azure, хранилища данных SQL, серверов SQL, учетных записей хранения, профилей диспетчера трафика и виртуальных машин.
 
-Помощник Azure также включает рекомендации из [центра безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-recommendations) , которые могут включать рекомендации для дополнительных типов ресурсов.
+Помощник Azure также включает рекомендации из [центра безопасности Azure](../security-center/security-center-recommendations.md) , которые могут включать рекомендации для дополнительных типов ресурсов.
 
 ### <a name="can-i-postpone-or-dismiss-a-recommendation"></a>Можно ли отложить или закрыть рекомендацию?
 
 Чтобы отложить или закрыть рекомендацию, щелкните ссылку **Отложить**. Можно указать период времени, на который откладывается рекомендация, или выбрать значение **Никогда**, чтобы закрыть ее.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы узнать больше о рекомендациях Помощника, ознакомьтесь с приведенными ниже материалами.
 

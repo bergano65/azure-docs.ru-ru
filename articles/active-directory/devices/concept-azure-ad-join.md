@@ -5,30 +5,31 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: devices
 ms.topic: conceptual
-ms.date: 06/27/2019
+ms.date: 07/20/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ca08b81a71cd61e727b11bbeb88c0c235d25c5e6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3839c7b87e5d07368727d037b585965dce91303a
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85554912"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87058106"
 ---
 # <a name="azure-ad-joined-devices"></a>Устройства, присоединенные к Azure AD
 
 Присоединение к Azure AD предназначено для организаций, в которых облачные технологии стоят на первом месте. Любая организация, независимо от размера или отрасли, может развернуть присоединенные к Azure AD устройства. Присоединение к Azure AD работает даже в гибридной среде, обеспечивая доступ как к локальным, так и к облачным приложениям и ресурсам.
 
-| Присоединение к Azure AD | Описание: |
+| Присоединение к Azure AD | Описание |
 | --- | --- |
 | **Определение** | Присоединено только к Azure AD, для входа на устройство требуется учетная запись организации |
 | **Основная аудитория** | Подходит для полностью облачных и гибридных организаций. |
 |   | Применимо ко всем пользователям в организации. |
 | **Владение устройствами** | План |
 | **Операционные системы** | Все устройства Windows 10. |
+|   | [Виртуальные машины Windows Server 2019, работающие в Azure](howto-vm-sign-in-azure-ad-windows.md) (Server Core не поддерживается) |
 | **Подготовка** | Самообслуживание. OOBE и параметры Windows |
 |   | Массовая регистрация |
 |   | Windows Autopilot |

@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: fd2e5a4d057e1074c6cce0f374846bc9e0a64950
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 0ea178655646f7f130476acaffc35c60181968ea
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86525098"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87058704"
 ---
 # <a name="access-the-vmware-solution-by-cloudsimple-portal-from-the-azure-portal"></a>Доступ к решению VMware с помощью портала Клаудсимпле из портал Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "86525098"
 
 Пользователи со встроенными ролями **владельца** и **участника** могут получить доступ к порталу клаудсимпле.  Роли должны быть настроены в группе ресурсов, в которой развернута служба Клаудсимпле.  Роли также можно настроить в объекте службы Клаудсимпле.  Дополнительные сведения о проверке роли см. в статье [Просмотр назначений ролей](../role-based-access-control/check-access.md) . Только пользователи со встроенными ролями **владельца** и **участника** могут получить доступ к порталу клаудсимпле.  Роли должны быть настроены в подписке.  Дополнительные сведения о проверке роли см. в статье [Просмотр назначений ролей](../role-based-access-control/check-access.md) .
 
-При использовании настраиваемых ролей роль должна иметь одну из следующих операций в ```Actions``` .  Дополнительные сведения о пользовательских ролях см. в статье [пользовательские роли для ресурсов Azure](../role-based-access-control/custom-roles.md).  Если какая-либо из операций является частью ```NotActions``` , пользователь не может получить доступ к порталу клаудсимпле.
+При использовании настраиваемых ролей роль должна иметь одну из следующих операций в ```Actions``` .  Дополнительные сведения о пользовательских ролях см. в статье [пользовательские роли Azure](../role-based-access-control/custom-roles.md).  Если какая-либо из операций является частью ```NotActions``` , пользователь не может получить доступ к порталу клаудсимпле.
 
 ```
 Microsoft.VMwareCloudSimple/*

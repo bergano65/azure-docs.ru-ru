@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 07/01/2018
 ms.author: jehollan
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 1e4c989e4550c1ea504a08d3cc975f2add5a4ba2
-ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.openlocfilehash: 6f521cccdc8814fad8605460bf87c0d0fca20378
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86054735"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87055615"
 ---
 # <a name="create-your-first-function-with-java-and-eclipse"></a>Создание первой функции с помощью Java и Eclipse 
 
@@ -28,7 +28,7 @@ ms.locfileid: "86054735"
 -  [Пакет Java Developer Kit](https://www.azul.com/downloads/zulu/), версия 8.
 -  [Apache Maven](https://maven.apache.org) 3.0 или более поздней версии.
 -  [Eclipse](https://www.eclipse.org/downloads/packages/) с поддержкой Java и Maven.
--  [Azure CLI](https://docs.microsoft.com/cli/azure)
+-  [Azure CLI](/cli/azure)
 
 > [!IMPORTANT] 
 > Переменной среде JAVA_HOME необходимо присвоить расположение установки JDK, чтобы завершить выполнение заданий этого краткого руководства.
@@ -43,7 +43,7 @@ ms.locfileid: "86054735"
 1. Обязательно заполните значения для всех полей `resourceGroup` , включая, `appName` и `appRegion` (используйте другое AppName, отличное от **fabrikam-Function-20170920120101928**), и в конечном итоге **завершите работу**.
     ![Eclipse Maven Create2](media/functions-create-first-java-eclipse/functions-create-eclipse2.png)  
 
-Maven создает файлы проекта в новой папке с именем _artifactId_. Созданный код проекта представляет собой простую функцию[активации HTTP](/azure/azure-functions/functions-bindings-http-webhook), которая возвращает текст HTTP-запроса.
+Maven создает файлы проекта в новой папке с именем _artifactId_. Созданный код проекта представляет собой простую функцию[активации HTTP](./functions-bindings-http-webhook.md), которая возвращает текст HTTP-запроса.
 
 ## <a name="run-functions-locally-in-the-ide"></a>Запуск функций в локальной среде IDE
 
@@ -86,7 +86,7 @@ az login
 [INFO] ------------------------------------------------------------------------
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о разработке функции Java см. в статье [Azure Functions Java developer guide](functions-reference-java.md) (Руководство разработчика Java для Функций Azure).
 - Добавьте в проект дополнительные функции с помощью различных триггеров целевого объекта Maven`azure-functions:add`.

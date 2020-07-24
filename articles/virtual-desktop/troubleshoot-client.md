@@ -8,11 +8,12 @@ ms.topic: troubleshooting
 ms.date: 03/31/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 76348a0aee48cc6d768e8233e376f266eca31917
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0efff05f84bf02908dfc8b966b80539d309f491d
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "83006000"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87059135"
 ---
 # <a name="troubleshoot-the-remote-desktop-client"></a>Устранение неполадок клиента удаленный рабочий стол
 
@@ -61,7 +62,7 @@ nslookup rdweb.wvd.microsoft.com
 
 ## <a name="web-client-does-not-show-my-resources"></a>Веб-клиент не отображает мои ресурсы
 
-Сначала проверьте используемую учетную запись Azure Active Directory. Если вы уже вошли в систему с учетной записью Azure Active Directory, отличной от той, которую вы хотите использовать для виртуального рабочего стола запуск, то следует либо подписать наш или использовать частное окно браузера.
+Сначала проверьте используемую учетную запись Azure Active Directory. Если вы уже вошли в систему под учетной записью Azure Active Directory, отличной от той, которую вы хотите использовать для виртуальных рабочих столов Windows, то следует либо подписать наш или использовать частное окно браузера.
 
 Если вы используете выпуск 2019 для виртуальных рабочих столов Windows, используйте ссылку на веб-клиент в [этой статье](./virtual-desktop-fall-2019/connect-web-2019.md) для подключения к ресурсам.
 

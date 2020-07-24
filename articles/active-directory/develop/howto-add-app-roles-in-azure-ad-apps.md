@@ -9,16 +9,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
 ms.topic: how-to
-ms.date: 09/24/2018
+ms.date: 07/15/2020
 ms.author: kkrishna
 ms.reviewer: kkrishna, jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 940ef671ab58074aaded49acb70db68a4971c1f2
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: 0ec314e6b5abde60102dacfc81c9303cef16e887
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86187036"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87058621"
 ---
 # <a name="how-to-add-app-roles-in-your-application-and-receive-them-in-the-token"></a>Руководство. Добавление ролей приложения в приложение, зарегистрированное в Azure Active Directory, и их получение в токене
 
@@ -76,7 +76,7 @@ ms.locfileid: "86187036"
 > [!NOTE]
 >`displayName` не может содержать пробелы.
 
-Вы можете определить роли приложения, чтобы выбрать `users`, `applications` или обе эти роли. Если они доступны для `applications`, роли приложения отображаются как разрешения приложения в колонке **Необходимые разрешения**. В следующем примере показана роль приложения, предназначенная для `Application`.
+Вы можете определить роли приложения, чтобы выбрать `users`, `applications` или обе эти роли. Если доступно `applications` , роли приложений отображаются как разрешения приложения в разделе **Управление** > **разрешения API > добавить разрешение > мои интерфейсы api > выберите API > приложения**. В следующем примере показана роль приложения, предназначенная для `Application`.
 
 ```Json
 "appId": "8763f1c4-f988-489c-a51e-158e9ef97d6a",
@@ -118,6 +118,10 @@ ms.locfileid: "86187036"
 1. Выберите роль и нажмите кнопку **Выбрать**.
 1. Нажмите кнопку **Назначить** внизу, чтобы завершить назначение пользователей и групп для приложения.
 1. Убедитесь, что добавленные пользователи и группы отображаются в обновленном списке **Пользователи и группы**.
+
+### <a name="receive-roles-in-tokens"></a>Получение ролей в токенах
+
+Когда пользователи, назначенные различным ролям приложений, входят в приложение, их маркеры будут иметь назначенные им роли в `roles` утверждении.
 
 ## <a name="more-information"></a>Дополнительные сведения
 

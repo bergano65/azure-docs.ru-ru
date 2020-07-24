@@ -3,21 +3,17 @@ title: Использование Azure AD в службе Kubernetes Azure
 description: Узнайте, как использовать Azure AD в службе Kubernetes Azure (AKS).
 services: container-service
 manager: gwallace
-author: TomGeske
 ms.topic: article
-ms.date: 07/08/2020
+ms.date: 07/20/2020
 ms.author: thomasge
-ms.openlocfilehash: b30c5b0e81f4748d5e94c05d016be83163c1e78e
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 06a97126df449b77bf3fcc48bd23231512c9dff2
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86251133"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87056658"
 ---
-# <a name="aks-managed-azure-active-directory-integration-preview"></a>AKS-управляемая интеграция Azure Active Directory (Предварительная версия)
-
-> [!NOTE]
-> На существующие кластеры AKS (Azure Kubernetes Service) с интеграцией Azure Active Directory (Azure AD) не влияют новые возможности Azure AD, управляемые AKS.
+# <a name="aks-managed-azure-active-directory-integration"></a>Интеграция Azure Active Directory с управляемым AKS
 
 Интеграция Azure AD с AKS разработана для упрощения процесса интеграции Azure AD, где пользователям ранее требовалось было создавать клиентское приложение, серверное приложение и требовалось клиент Azure AD для предоставления разрешений на чтение каталога. В новой версии поставщик ресурсов AKS управляет клиентскими и серверными приложениями.
 
@@ -27,60 +23,72 @@ ms.locfileid: "86251133"
 
 Дополнительные сведения о потоке интеграции AAD см. в [документации по основным понятиям интеграции Azure Active Directory](concepts-identity.md#azure-active-directory-integration).
 
+## <a name="region-availability"></a>Доступность по регионам
+
+Интеграция Azure Active Directory с управляемыми AKSми доступна в общедоступных регионах, где [поддерживается AKS](https://azure.microsoft.com/global-infrastructure/services/?products=kubernetes-service).
+
+* В настоящее время Azure для государственных организаций не поддерживается.
+* В настоящее время в Azure Китая 21Vianet не поддерживается.
+
+## <a name="limitations"></a>Ограничения 
+
+* Невозможно отключить управляемую AKS интеграцию Azure AD
+* кластеры, не поддерживающие RBAC, не поддерживаются для интеграции с AKS, управляемой AAD
+* Изменение клиента Azure AD, связанного с интеграцией AAD, управляемой AKS, не поддерживается
+
 > [!IMPORTANT]
-> Функции предварительной версии AKS доступны на уровне самообслуживания. Предварительные версии предоставляются "как есть" и "как есть" и исключаются из соглашений об уровне обслуживания и ограниченной гарантии. Предварительные версии AKS частично охвачены службой поддержки клиентов. Таким образом, эти функции не предназначены для использования в рабочей среде. Дополнительные сведения доступны в следующих статьях поддержки.
->
-> - [Политики поддержки AKS](support-policies.md)
+> Функции предварительной версии AKS доступны на уровне самообслуживания. Предварительные версии предоставляются "как есть" и "как есть" и исключаются из соглашений об уровне обслуживания и ограниченной гарантии. Предварительные версии AKS частично охвачены службой поддержки клиентов. Таким образом, эти функции не предназначены для использования в рабочей среде. Дополнительные сведения доступны в следующих статьях поддержки. 
+> - [Политики поддержки AKS](support-policies.md) 
 > - [Часто задаваемые вопросы о поддержке Azure](faq.md)
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="prerequisites"></a>Предварительные требования
 
-* Найдите идентификатор клиента учетной записи Azure, перейдя в портал Azure и выбрав Azure Active Directory > свойства > идентификатор каталога.
+* Azure CLI версии 2.9.0 или более поздней.
+* Kubectl с минимальной версией [1,18](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.18.md#v1180)
 
 > [!Important]
 > Необходимо использовать Kubectl с минимальной версией 1,18
 
-Нужно установить следующие ресурсы:
-
-- Azure CLI версии 2.5.1 или более поздней.
-- Расширение AKS-Preview 0.4.38
-- Kubectl с минимальной версией [1,18](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.18.md#v1180)
-
-Чтобы установить или обновить расширение AKS-Preview или более поздней версии, используйте следующие Azure CLI команды:
-
-```azurecli
-az extension add --name aks-preview
-az extension list
-```
-
-```azurecli
-az extension update --name aks-preview
-az extension list
-```
-
 Чтобы установить kubectl, выполните следующие команды:
 
-```azurecli
+```azurecli-interactive
 sudo az aks install-cli
 kubectl version --client
 ```
 
 Используйте [эти инструкции](https://kubernetes.io/docs/tasks/tools/install-kubectl/) для других операционных систем.
 
+```azurecli-interactive 
+az feature register --name AAD-V2 --namespace Microsoft.ContainerService    
+``` 
+
+Состояние **Registered** (Зарегистрировано) может появиться через несколько минут. Состояние регистрации можно проверить с помощью команды [az feature list](/cli/azure/feature?view=azure-cli-latest#az-feature-list): 
+
+```azurecli-interactive 
+az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/AAD-V2')].{Name:name,State:properties.state}"    
+``` 
+
+Когда отобразится правильный статус, обновите регистрацию поставщика ресурсов `Microsoft.ContainerService` с помощью команды [az provider register](/cli/azure/provider?view=azure-cli-latest#az-provider-register):    
+
+```azurecli-interactive 
+az provider register --namespace Microsoft.ContainerService 
+``` 
+
+
+## <a name="before-you-begin"></a>Перед началом
+
+Для кластера требуется группа Azure AD. Эта группа необходима в качестве группы администраторов кластера для предоставления разрешений администратора кластера. Вы можете использовать существующую группу Azure AD или создать новую. Запишите идентификатор объекта вашей группы Azure AD.
+
 ```azurecli-interactive
-az feature register --name AAD-V2 --namespace Microsoft.ContainerService
+# List existing groups in the directory
+az ad group list --filter "displayname eq '<group-name>'" -o table
 ```
 
-Состояние **Registered** (Зарегистрировано) может появиться через несколько минут. Состояние регистрации можно проверить с помощью команды [az feature list](/cli/azure/feature?view=azure-cli-latest#az-feature-list):
+Чтобы создать новую группу Azure AD для администраторов кластера, используйте следующую команду:
 
 ```azurecli-interactive
-az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/AAD-V2')].{Name:name,State:properties.state}"
-```
-
-Когда отобразится правильный статус, обновите регистрацию поставщика ресурсов `Microsoft.ContainerService` с помощью команды [az provider register](/cli/azure/provider?view=azure-cli-latest#az-provider-register):
-
-```azurecli-interactive
-az provider register --namespace Microsoft.ContainerService
+# Create an Azure AD group
+az ad group create --display-name myAKSAdminGroup --mail-nickname myAKSAdminGroup
 ```
 
 ## <a name="create-an-aks-cluster-with-azure-ad-enabled"></a>Создание кластера AKS с включенной службой Azure AD
@@ -94,31 +102,19 @@ az provider register --namespace Microsoft.ContainerService
 az group create --name myResourceGroup --location centralus
 ```
 
-Вы можете использовать существующую группу Azure AD или создать новую. Вам потребуется идентификатор объекта для группы Azure AD.
-
-```azurecli-interactive
-# List existing groups in the directory
-az ad group list
-```
-
-Чтобы создать новую группу Azure AD для администраторов кластера, используйте следующую команду:
-
-```azurecli-interactive
-# Create an Azure AD group
-az ad group create --display-name MyDisplay --mail-nickname MyDisplay
-```
-
 Создание кластера AKS и включение административного доступа для вашей группы Azure AD
 
 ```azurecli-interactive
 # Create an AKS-managed Azure AD cluster
-az aks create -g MyResourceGroup -n MyManagedCluster --enable-aad [--aad-admin-group-object-ids <id>] [--aad-tenant-id <id>]
+az aks create -g myResourceGroup -n myManagedCluster --enable-aad --aad-admin-group-object-ids <id> [--aad-tenant-id <id>]
 ```
 
 Успешное создание кластера Azure AD, управляемого AKS, содержит следующий раздел в тексте ответа.
-```
+```output
 "AADProfile": {
-    "adminGroupObjectIds": null,
+    "adminGroupObjectIds": [
+      "5d24****-****-****-****-****afa27aed"
+    ],
     "clientAppId": null,
     "managed": true,
     "serverAppId": null,
@@ -127,7 +123,7 @@ az aks create -g MyResourceGroup -n MyManagedCluster --enable-aad [--aad-admin-g
   }
 ```
 
-Кластер создается в течение нескольких минут.
+После создания кластера можно приступить к его созданию.
 
 ## <a name="access-an-azure-ad-enabled-cluster"></a>Доступ к кластеру с поддержкой Azure AD
 
@@ -136,7 +132,7 @@ az aks create -g MyResourceGroup -n MyManagedCluster --enable-aad [--aad-admin-g
 Получите учетные данные пользователя для доступа к кластеру:
  
 ```azurecli-interactive
- az aks get-credentials --resource-group myResourceGroup --name MyManagedCluster
+ az aks get-credentials --resource-group myResourceGroup --name myManagedCluster
 ```
 Следуйте инструкциям по входу.
 
@@ -162,8 +158,33 @@ aks-nodepool1-15306047-2   Ready    agent   102m   v1.15.10
 Чтобы выполнить эти действия, необходимо иметь доступ к встроенной роли [администратора кластера службы Kubernetes Azure](../role-based-access-control/built-in-roles.md#azure-kubernetes-service-cluster-admin-role) .
 
 ```azurecli-interactive
-az aks get-credentials --resource-group myResourceGroup --name MyManagedCluster --admin
+az aks get-credentials --resource-group myResourceGroup --name myManagedCluster --admin
 ```
+
+## <a name="upgrading-to-aks-managed-azure-ad-integration"></a>Обновление до управляемой AKS интеграции Azure AD
+
+Если кластер использует устаревшую интеграцию Azure AD, вы можете выполнить обновление до управляемой AKS интеграции Azure AD.
+
+```azurecli-interactive
+az aks update -g myResourceGroup -n myManagedCluster --enable-aad --aad-admin-group-object-ids <id> [--aad-tenant-id <id>]
+```
+
+Успешная миграция кластера Azure AD, управляемого AKS, содержит следующий раздел в тексте ответа.
+
+```output
+"AADProfile": {
+    "adminGroupObjectIds": [
+      "5d24****-****-****-****-****afa27aed"
+    ],
+    "clientAppId": null,
+    "managed": true,
+    "serverAppId": null,
+    "serverAppSecret": null,
+    "tenantId": "72f9****-****-****-****-****d011db47"
+  }
+```
+
+Если вы хотите получить доступ к кластеру, выполните действия, описанные [здесь][access-cluster].
 
 ## <a name="non-interactive-sign-in-with-kubelogin"></a>Неинтерактивный вход с помощью кубелогин
 
@@ -195,3 +216,5 @@ az aks get-credentials --resource-group myResourceGroup --name MyManagedCluster 
 [operator-best-practices-identity]: operator-best-practices-identity.md
 [azure-ad-rbac]: azure-ad-rbac.md
 [azure-ad-cli]: azure-ad-integration-cli.md
+[access-cluster]: #access-an-azure-ad-enabled-cluster
+[aad-migrate]: #upgrading-to-aks-managed-azure-ad-integration

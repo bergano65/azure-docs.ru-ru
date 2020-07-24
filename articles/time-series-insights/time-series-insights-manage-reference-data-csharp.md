@@ -11,16 +11,16 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 04/15/2020
 ms.custom: seodec18
-ms.openlocfilehash: f0ce0f7d90540274d24a7e0248e6f197b74033a1
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: a8da2355b62d7be36b10ac9a1ce4b53e87b4b288
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81416985"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87059220"
 ---
-# <a name="manage-ga-reference-data-for-an-azure-time-series-insights-environment-using-c"></a>Управление общедоступными эталонными данными для среды Аналитики временных рядов Azure с помощью C#
+# <a name="manage-reference-data-for-an-azure-time-series-insights-gen-1-environment-using-c"></a>Управление эталонными данными для среды "аналитика временных рядов Azure" с помощью C #
 
-В этой статье показано, как объединить C#, [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet) и Azure Active Directory, чтобы сделать программные запросы API к общедоступному [API управления эталонными данными](https://docs.microsoft.com/rest/api/time-series-insights/ga-reference-data-api) службы Аналитики временных рядов Azure.
+В этой статье показано, как объединить C#, [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet)и Azure Active Directory, чтобы программные запросы API были предоставлены в справочнике по Azure Time Series Insights Gen 1 [Управление данными API](https://docs.microsoft.com/rest/api/time-series-insights/ga-reference-data-api).
 
 > [!TIP]
 > Ознакомьтесь с примерами общедоступного кода C# по адресу [https://github.com/Azure-Samples/Azure-Time-Series-Insights](https://github.com/Azure-Samples/Azure-Time-Series-Insights/tree/master/csharp-tsi-ga-sample).
@@ -30,7 +30,7 @@ ms.locfileid: "81416985"
 Приведенный ниже пример кода демонстрирует следующие возможности.
 
 * Получение маркера доступа с помощью [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet) **PublicClientApplication**.
-* Последовательные операции создания, чтения, обновления и удаления для общедоступного [API управления эталонными данными](https://docs.microsoft.com/rest/api/time-series-insights/ga-reference-data-api).
+* Последовательные операции создания, чтения, обновления и удаления для [Управление данными API-интерфейса](https://docs.microsoft.com/rest/api/time-series-insights/ga-reference-data-api)"Gen 1 Reference".
 * Распространенные коды ответов, включая [коды распространенных ошибок](https://docs.microsoft.com/rest/api/time-series-insights/ga-reference-data-api#validation-and-error-handling).
     
     API управления эталонными данными обрабатывает каждый элемент по отдельности, а ошибка с одним элементом не мешает успешному выполнению других. Например, если запрос содержит 100 элементов и один элемент содержит ошибку, то 99 элементов записываются, а один — отклоняется.
@@ -39,8 +39,8 @@ ms.locfileid: "81416985"
 
 Перед компиляцией и запуском примера кода выполните следующие шаги.
 
-1. [Подготовьте к работе общедоступную среду Аналитики временных рядов](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-get-started
-).
+1. [Подготавливает среду Azure "аналитика временных рядов" для поколения 1](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-get-started
+) .
 
 1. [Создайте эталонный набор данных](time-series-insights-add-reference-data-set.md) в своей среде. Используйте следующую схему эталонных данных:
 
@@ -309,4 +309,4 @@ namespace CsharpTsiMsalGaSample
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Ознакомьтесь со справочной документацией по общедоступному [API управления эталонными данными](https://docs.microsoft.com/rest/api/time-series-insights/ga-reference-data-api).
+- Прочитайте справочную документацию по [API управление данными](https://docs.microsoft.com/rest/api/time-series-insights/ga-reference-data-api) для Gen 1.

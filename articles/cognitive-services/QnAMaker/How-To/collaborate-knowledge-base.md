@@ -2,13 +2,13 @@
 title: Совместная работа с базой знаний — QnA Maker
 description: QnA Maker позволяет нескольким пользователям совместно работать с базой знаний. Эта возможность предоставляется в рамках управления доступом на основе ролей в Azure.
 ms.topic: conceptual
-ms.date: 03/17/2020
-ms.openlocfilehash: 1a2908b4b65017f427682627ce5d83b186956a58
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.date: 07/13/2020
+ms.openlocfilehash: 4c550a36dd045873df4bc4a382e1c884466f95ad
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83650780"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87054076"
 ---
 # <a name="collaboration-with-authors-and-editors"></a>Совместная работа с авторами и редакторами
 
@@ -30,15 +30,15 @@ QnA Maker позволяет нескольким пользователям с�
 
 1. Войдите на портал [Azure](https://portal.azure.com/) и перейдите к ресурсу QnA Maker.
 
-    ![Список ресурсов QnA Maker](../media/qnamaker-how-to-collaborate-knowledge-base/qnamaker-resource-list.PNG)
+    ![Список ресурсов QnA Maker](../media/qnamaker-how-to-collaborate-knowledge-base/qnamaker-resource-list.png)
 
 1. Перейдите на вкладку **Управление доступом (IAM)**.
 
-    ![IAM в QnA Maker](../media/qnamaker-how-to-collaborate-knowledge-base/qnamaker-iam.PNG)
+    ![IAM в QnA Maker](../media/qnamaker-how-to-collaborate-knowledge-base/qnamaker-iam.png)
 
-1. Нажмите **Добавить**.
+1. Выберите **Добавить**.
 
-    ![Добавление IAM в QnA Maker](../media/qnamaker-how-to-collaborate-knowledge-base/qnamaker-iam-add.PNG)
+    ![Добавление IAM в QnA Maker](../media/qnamaker-how-to-collaborate-knowledge-base/qnamaker-iam-add.png)
 
 1. Выберите роль из следующего списка:
 
@@ -46,19 +46,25 @@ QnA Maker позволяет нескольким пользователям с�
     |--|
     |Владелец|
     |Участник|
-    |Модуль чтения QnA Maker|
-    |Редактор QnA Maker|
+    |Модуль чтения Cognitive Services QnA Maker|
+    |Редактор Cognitive Services QnA Maker|
     |Пользователь служб Cognitive Services|
 
-    ![Добавление роли IAM QnA Maker](../media/qnamaker-how-to-collaborate-knowledge-base/qnamaker-iam-add-role.PNG)
+    :::image type="content" source="../media/qnamaker-how-to-collaborate-knowledge-base/qnamaker-add-role-iam.png" alt-text="QnA Maker Добавление роли IAM.":::
 
 1. Введите адрес электронной почты пользователя и нажмите кнопку " **сохранить**".
 
-    ![Добавление адреса электронной почты для IAM в QnA Maker](../media/qnamaker-how-to-collaborate-knowledge-base/qnamaker-iam-add-email.PNG)
+    ![Добавление адреса электронной почты для IAM в QnA Maker](../media/qnamaker-how-to-collaborate-knowledge-base/qnamaker-iam-add-email.png)
+
+### <a name="view-qna-maker-knowledge-bases"></a>Просмотр QnA Maker баз знаний
 
 Когда пользователь, которому вы предоставили доступ к QnA Maker службе с журналами на [портале QnA Maker](https://qnamaker.ai), он может просматривать все базы знаний в этой службе в зависимости от их роли.
 
-## <a name="next-steps"></a>Следующие шаги
+При выборе базы знаний ее текущая роль на этом QnA Makerном ресурсе отображается рядом с именем базы знаний.
+
+:::image type="content" source="../media/qnamaker-how-to-collaborate-knowledge-base/qnamaker-knowledge-base-role-name.png" alt-text="Снимок экрана базы знаний в режиме редактирования с именем роли в круглых скобках рядом с именем базы знаний в левом верхнем углу веб-страницы.":::
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Тестирование базы знаний](./test-knowledge-base.md)

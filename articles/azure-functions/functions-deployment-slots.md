@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: conceptual
 ms.date: 04/15/2020
 ms.author: cshoe
-ms.openlocfilehash: f8abc670535f240d436e90c34f7245a3d176f517
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: f84dc17c6c074fc4dbda8a13fad3586a397fdf10
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86242786"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87055418"
 ---
 # <a name="azure-functions-deployment-slots"></a>Слоты развертывания функций Azure
 
@@ -96,7 +96,7 @@ ms.locfileid: "86242786"
 
 ## <a name="add-a-slot"></a>Добавление слота
 
-Добавить слот можно с помощью [интерфейса командной строки](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-create) или портала. Ниже показано, как создать новый слот на портале.
+Добавить слот можно с помощью [интерфейса командной строки](/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-create) или портала. Ниже показано, как создать новый слот на портале.
 
 1. Перейдите к приложению функции.
 
@@ -110,7 +110,7 @@ ms.locfileid: "86242786"
 
 ## <a name="swap-slots"></a>Поменять местами слоты
 
-Вы можете поменять местами слоты с помощью [интерфейса командной строки](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-swap) или портала. Ниже показано, как поменять местами слоты на портале.
+Вы можете поменять местами слоты с помощью [интерфейса командной строки](/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-swap) или портала. Ниже показано, как поменять местами слоты на портале.
 
 1. Перейдите к приложению-функции.
 1. Выберите **слоты развертывания**, а затем щелкните **заменить**.
@@ -129,13 +129,13 @@ ms.locfileid: "86242786"
 
 ## <a name="remove-a-slot"></a>Удаление слота
 
-Вы можете удалить слот с помощью [интерфейса командной строки](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-delete) или портала. Ниже показано, как удалить слот на портале.
+Вы можете удалить слот с помощью [интерфейса командной строки](/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-delete) или портала. Ниже показано, как удалить слот на портале.
 
 1. Перейдите в раздел **слоты развертывания** в приложении функции и выберите имя слота.
 
     :::image type="content" source="./media/functions-deployment-slots/functions-navigate-slots.png" alt-text="Поиск слотов в портал Azure." border="true":::
 
-1. Нажмите кнопку **Удалить**.
+1. Выберите **Удалить**.
 
     :::image type="content" source="./media/functions-deployment-slots/functions-delete-deployment-slot.png" alt-text="Удалите слот развертывания в портал Azure." border="true":::
 
@@ -149,13 +149,13 @@ ms.locfileid: "86242786"
 
 ## <a name="automate-slot-management"></a>Автоматизация управления слотами
 
-С помощью [Azure CLI](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest)можно автоматизировать следующие действия для слота:
+С помощью [Azure CLI](/cli/azure/functionapp/deployment/slot?view=azure-cli-latest)можно автоматизировать следующие действия для слота:
 
-- [create](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-create)
-- [delete](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-delete)
-- [list](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-list)
-- [позиции](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-swap)
-- [Автоматическая замена](https://docs.microsoft.com/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-auto-swap)
+- [create](/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-create)
+- [delete](/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-delete)
+- [list](/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-list)
+- [позиции](/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-swap)
+- [Автоматическая замена](/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-auto-swap)
 
 ## <a name="change-app-service-plan"></a>Изменение плана службы приложений
 

@@ -15,11 +15,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: media
 ms.date: 01/21/2020
 ms.author: juliako
-ms.openlocfilehash: 18503e64dc6f38daab61599153cd0e0fb6fadb20
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 92a97ddbd9497954b35efa33de7c2f843d4dd934
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76509229"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87060688"
 ---
 # <a name="create-and-monitor-media-services-events-with-event-grid-using-the-azure-portal"></a>Создание и мониторинг событий Служб мультимедиа Azure с помощью Сетки событий и портала Azure
 
@@ -29,10 +30,10 @@ ms.locfileid: "76509229"
 
 По завершении можно увидеть, что данные событий отправлены в веб-приложение.
 
-## <a name="prerequisites"></a>Предварительные условия 
+## <a name="prerequisites"></a>Обязательные условия 
 
 * Активная подписка Azure.
-* Создайте учетную запись Служб мультимедиа Azure, как описано в [этом руководстве](create-account-cli-quickstart.md).
+* Создайте учетную запись Служб мультимедиа Azure, как описано в [этом руководстве](./create-account-howto.md).
 
 ## <a name="create-a-message-endpoint"></a>Создание конечной точки сообщения
 
@@ -85,6 +86,6 @@ ms.locfileid: "76509229"
 
 ![Просмотр события подписки](./media/monitor-events-portal/view-subscription-event.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Отправка, кодирование и потоковая передача](stream-files-tutorial-with-api.md)

@@ -3,15 +3,16 @@ title: Разрешения в Azure Advisor
 description: Разрешения Advisor и способ, которым они могут препятствовать настройке подписок или отложить или отклонить рекомендации.
 ms.topic: article
 ms.date: 04/03/2019
-ms.openlocfilehash: c850d757044066d5c4a793e076436906d715833c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6b5dfdeb888b0577a40562536bd7a6dfc271cb19
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75422314"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87057584"
 ---
 # <a name="permissions-in-azure-advisor"></a>Разрешения в Azure Advisor
 
-Помощник по Azure предоставляет рекомендации на основе использования и конфигурации ресурсов и подписок Azure. Advisor использует [встроенные роли](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles) , предоставляемые [контролем доступа на основе ролей](https://docs.microsoft.com/azure/role-based-access-control/overview) (RBAC), для управления доступом к рекомендациям и функциональным возможностям Advisor. 
+Помощник по Azure предоставляет рекомендации на основе использования и конфигурации ресурсов и подписок Azure. Advisor использует [встроенные роли](../role-based-access-control/built-in-roles.md) , предоставляемые [контролем доступа на основе ролей](../role-based-access-control/overview.md) (RBAC), для управления доступом к рекомендациям и функциональным возможностям Advisor. 
 
 ## <a name="roles-and-their-access"></a>Роли и их доступ
 
@@ -38,15 +39,15 @@ ms.locfileid: "75422314"
 
 ### <a name="unable-to-configure-subscriptions-or-resource-groups"></a>Не удалось настроить подписки или группы ресурсов
 
-При попытке настроить подписки или группы ресурсов в помощнике можно увидеть, что параметр включения или исключения отключен. Это состояние означает, что у вас нет достаточного уровня разрешений для этой группы ресурсов или подписки. Чтобы устранить эту проблему, Узнайте, как [предоставить пользователю доступ](https://docs.microsoft.com/azure/role-based-access-control/quickstart-assign-role-user-portal).
+При попытке настроить подписки или группы ресурсов в помощнике можно увидеть, что параметр включения или исключения отключен. Это состояние означает, что у вас нет достаточного уровня разрешений для этой группы ресурсов или подписки. Чтобы устранить эту проблему, Узнайте, как [предоставить пользователю доступ](../role-based-access-control/quickstart-assign-role-user-portal.md).
 
 ### <a name="unable-to-postpone-or-dismiss-a-recommendation"></a>Не удается отложить или закрыть рекомендацию
 
-Если при попытке отложить или закрыть рекомендацию появляется сообщение об ошибке, возможно, у вас недостаточно разрешений. Убедитесь, что у вас есть по крайней мере права участника на затронутый ресурс рекомендации, которую вы откладываете или отправим. Чтобы устранить эту проблему, Узнайте, как [предоставить пользователю доступ](https://docs.microsoft.com/azure/role-based-access-control/quickstart-assign-role-user-portal).
+Если при попытке отложить или закрыть рекомендацию появляется сообщение об ошибке, возможно, у вас недостаточно разрешений. Убедитесь, что у вас есть по крайней мере права участника на затронутый ресурс рекомендации, которую вы откладываете или отправим. Чтобы устранить эту проблему, Узнайте, как [предоставить пользователю доступ](../role-based-access-control/quickstart-assign-role-user-portal.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье приводятся общие сведения о том, как помощник использует RBAC для управления разрешениями пользователей и устранения распространенных проблем. Дополнительные сведения о Помощнике см. в таких разделах.
 
-- [Что такое Помощник по Azure?](https://docs.microsoft.com/azure/advisor/advisor-overview)
-- [Приступая к работе с помощником Azure](https://docs.microsoft.com/azure/advisor/advisor-get-started)
+- [Что такое Помощник по Azure?](./advisor-overview.md)
+- [Приступая к работе с помощником Azure](./advisor-get-started.md)

@@ -3,12 +3,12 @@ title: Восстановление баз данных SQL Server на вирт
 description: В этой статье описывается, как восстановить SQL Server базы данных, работающие на виртуальной машине Azure и резервные копии которых Azure Backup.
 ms.topic: conceptual
 ms.date: 05/22/2019
-ms.openlocfilehash: 5d7fc52aaaca0bf99955919c954cc22ab0d9d3d8
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 2c3b81c4d0bc4c7548fec8ec131fea66684a7aa8
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86538457"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87054573"
 ---
 # <a name="restore-sql-server-databases-on-azure-vms"></a>Восстановление баз данных SQL Server на виртуальных машинах Azure
 
@@ -23,7 +23,7 @@ Azure Backup можете восстановить базы данных SQL Ser
 - Восстановление до определенной даты или времени (во второй) с помощью резервных копий журнала транзакций. Azure Backup автоматически определяет соответствующую полную разностную резервную копию и цепочку резервных копий журналов, которые требуются для восстановления в зависимости от выбранного времени.
 - Восстановление определенной полной или разностной резервной копии для восстановления до определенной точки восстановления.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Перед восстановлением базы данных обратите внимание на следующее.
 
@@ -127,9 +127,9 @@ Azure Backup можете восстановить базы данных SQL Ser
     >   - Выполните команду `cmdkey /add:<storageacct>.file.core.windows.net /user:AZURE\<storageacct> /pass:<storagekey>`.
     >   - Проверка доступа с помощью`dir \\<storageacct>.file.core.windows.net\<filesharename>`
     >- Запуск восстановления в качестве файлов из хранилища архивации в `\\<storageacct>.file.core.windows.net\<filesharename>` качестве пути<BR>
-    Вы можете скачать PsExec через<https://docs.microsoft.com/sysinternals/downloads/psexec>
+    Вы можете загрузить PsExec со страницы [Sysinternals](/sysinternals/downloads/psexec) .
 
-1. Щелкните **ОК**.
+1. Нажмите кнопку **ОК**.
 
     ![Выберите восстановить как файлы](./media/backup-azure-sql-database/restore-as-files.png)
 

@@ -1,20 +1,20 @@
 ---
 title: Создание предложения модуля Azure IoT Edge с помощью Центра партнеров в Azure Marketplace
-description: Сведения о том, как создать, настроить и опубликовать предложение модуля IoT Edge в Azure Marketplace с помощью Центра партнеров
+description: Узнайте, как создать, настроить и опубликовать предложение модуля IoT Edge в Azure Marketplace с помощью центра партнеров.
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
-ms.topic: conceptual
+ms.topic: article
 author: anbene
 ms.author: mingshen
-ms.date: 06/17/2020
-ms.openlocfilehash: 11deb9b8146924d1a493872219ad85556d13c405
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.date: 07/22/2020
+ms.openlocfilehash: b2a1e523e2af8c0be9c4211dfc8a0ffd2a889ca0
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86520278"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87053656"
 ---
-# <a name="create-configure-and-publish-an-iot-edge-module-offer-in-azure-marketplace"></a>Создание, настройка и публикация предложения модуля IoT Edge в Azure Marketplace
+# <a name="create-an-iot-edge-module-offer"></a>Создание предложения модуля IoT Edge
 
 В этой статье описывается, как создать и опубликовать предложение модуля IoT Edge для Azure Marketplace. Сначала [создайте учетную запись на коммерческой платформе в Центре партнеров](create-account.md), если вы еще этого не сделали. Убедитесь, что ваша учетная запись зарегистрирована в программе коммерческой платформы.
 
@@ -230,7 +230,7 @@ ms.locfileid: "86520278"
 4. Terms and conditions (Условия)
 5. Адрес политики конфиденциальности (ссылка)
 6. Имя
-7. Итоги
+7. Сводка
 8. Описание
 9. Полезные ссылки
 10. Снимки экрана и видео
@@ -406,7 +406,7 @@ ms.locfileid: "86520278"
 
 **Имя администратора для реестра контейнеров Azure**: укажите [имя администратора](../../container-registry/container-registry-authentication.md#admin-account), связанное с реестром контейнеров Azure, в котором находится образ контейнера. Имя пользователя и пароль необходимы, чтобы обеспечить компании доступ к реестру. Чтобы получить имя пользователя и пароль администратора, задайте для свойства **admin-enabled** значение **True** с помощью интерфейса командной строки Azure (Azure CLI). При необходимости можно на портале Azure выбрать для параметра **Пользователь-администратор** значение **Включить**.
 
-:::image type="content" source="media/example-iot-update-container-registry.png" alt-text="Показано диалоговое окно Обновить реестр контейнеров.":::
+:::image type="content" source="media/example-iot-update-container-registry.png" alt-text="Показано диалоговое окно "Обновить реестр контейнеров".":::
 
 #### <a name="call-out-description"></a>Описание вызова
 

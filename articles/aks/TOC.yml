@@ -42,7 +42,7 @@
       href: tutorial-kubernetes-upgrade-cluster.md
 - name: Примеры
   items:
-    - name: Встроенные компоненты Политики Azure
+    - name: Встроенные политики службы "Политика Azure"
       displayName: 'samples, policies, definitions'
       href: ./policy-samples.md
 - name: Основные понятия
@@ -66,6 +66,9 @@
       items:
         - name: Обзор
           href: best-practices.md
+        - name: Базовая архитектура для кластера AKS
+          href: /azure/architecture/reference-architectures/containers/aks/secure-baseline-aks/
+          maintainContext: true
         - name: Для операторов кластера
           items:
             - name: Мультитенантность и изоляция кластера

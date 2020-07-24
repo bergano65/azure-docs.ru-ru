@@ -2,13 +2,13 @@
 title: Изменение базы знаний — QnA Maker
 description: QnA Maker позволяет управлять содержимым базы знаний, предоставляя возможности удобного редактирования.
 ms.topic: conceptual
-ms.date: 05/19/2020
-ms.openlocfilehash: 66adf9e1fe227f11514276147de32e8691db7fab
-ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
+ms.date: 07/16/2020
+ms.openlocfilehash: 52aaaf630806ed6c71101860a1286f88a23ec3fa
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83993581"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87054026"
 ---
 # <a name="edit-qna-pairs-in-your-knowledge-base"></a>Изменение пар QnA в базе знаний
 
@@ -111,6 +111,10 @@ QnA Maker позволяет управлять содержимым базы з
 ## <a name="add-metadata"></a>Добавление метаданных
 
 Чтобы добавить пары метаданных, сначала выберите **Параметры представления**, а затем выберите **Показать метаданные**. Отобразится столбец метаданных. Затем выберите знак, **+** чтобы добавить пару метаданных. Эта пара состоит из одного ключа и одного значения.
+
+Дополнительные сведения о метаданных см. в кратком руководстве по QnA Maker портале для метаданных.
+* [Создание и добавление метаданных в пару QnA](../quickstarts/add-question-metadata-portal.md#add-metadata-to-filter-the-answers)
+* [Прогнозирование запросов — Фильтрация ответов по метаданным](../quickstarts/get-answer-from-knowledge-base-using-url-tool.md)
 
 ## <a name="save-changes-to-the-qna-pairs"></a>Сохранение изменений в парах QnA
 

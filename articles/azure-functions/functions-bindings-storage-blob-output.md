@@ -6,11 +6,12 @@ ms.topic: reference
 ms.date: 02/13/2020
 ms.author: cshoe
 ms.custom: tracking-python
-ms.openlocfilehash: 56c11c2ae867769eb5eab00a2a6a3ecb616449b1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d7ba52c34c376139538a5d0bf7747cceb6b46cb2
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84560023"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87056118"
 ---
 # <a name="azure-blob-storage-output-binding-for-azure-functions"></a>Выходная привязка хранилища BLOB-объектов Azure для функций Azure
 
@@ -354,8 +355,8 @@ public static void Run(
 |**type** | н/д | Нужно задать значение `blob`. |
 |**direction** | н/д | Нужно задать значение `out` для выходной привязки. Исключения приведены в этом [разделе](#usage). |
 |**name** | Недоступно | Имя переменной, представляющей большой двоичный объект в коде функции.  Задайте значение `$return`, ссылающееся на возвращаемое значение функции.|
-|**path** |**BlobPath** | Путь к контейнеру больших двоичных объектов. |
-|**connection**; |**Соединение**| Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задать для `connection` значение MyStorage, среда выполнения службы "Функции" будет искать параметр приложения с именем AzureWebJobsMyStorage. Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.<br><br>Строка подключения необходима для учетной записи хранения общего назначения, а не [учетной записи хранения только для больших двоичных объектов](../storage/common/storage-account-overview.md#types-of-storage-accounts).|
+|**путь** |**BlobPath** | Путь к контейнеру больших двоичных объектов. |
+|**connection**; |**Подключение**| Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задать для `connection` значение MyStorage, среда выполнения службы "Функции" будет искать параметр приложения с именем AzureWebJobsMyStorage. Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.<br><br>Строка подключения необходима для учетной записи хранения общего назначения, а не [учетной записи хранения только для больших двоичных объектов](../storage/common/storage-account-overview.md#types-of-storage-accounts).|
 |н/д | **Доступ** | Указывает, какая операция будет выполняться (запись или чтение). |
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
@@ -391,11 +392,11 @@ public static void Run(
 
 ## <a name="exceptions-and-return-codes"></a>Исключения и коды возврата
 
-| Привязка |  Справка |
+| Привязка |  Справочник |
 |---|---|
-| BLOB-объект | [Коды ошибок больших двоичных объектов](https://docs.microsoft.com/rest/api/storageservices/fileservices/blob-service-error-codes) |
-| Большой двоичный объект, таблица, очередь |  [Коды ошибок хранилища](https://docs.microsoft.com/rest/api/storageservices/fileservices/common-rest-api-error-codes) |
-| Большой двоичный объект, таблица, очередь |  [Устранение неполадок](https://docs.microsoft.com/rest/api/storageservices/fileservices/troubleshooting-api-operations) |
+| BLOB-объект | [Коды ошибок больших двоичных объектов](/rest/api/storageservices/fileservices/blob-service-error-codes) |
+| Большой двоичный объект, таблица, очередь |  [Коды ошибок хранилища](/rest/api/storageservices/fileservices/common-rest-api-error-codes) |
+| Большой двоичный объект, таблица, очередь |  [Устранение неполадок](/rest/api/storageservices/fileservices/troubleshooting-api-operations) |
 
 ## <a name="next-steps"></a>Следующие шаги
 

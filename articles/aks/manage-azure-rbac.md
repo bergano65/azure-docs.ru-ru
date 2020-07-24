@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 07/07/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: fc0464c226b8edc2dae01f8ea54c3e5b2e11f2d6
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: bb4c689da38606561c657a3e4d85fd9e391267bf
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86244266"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87056732"
 ---
 # <a name="use-azure-rbac-for-kubernetes-authorization-preview"></a>Использование Azure RBAC для авторизации Kubernetes (предварительная версия)
 
@@ -35,14 +35,14 @@ ms.locfileid: "86244266"
 - Зарегистрируйтесь для просмотра <https://aka.ms/aad-rbac-sign-up-form> .
 - Убедитесь, что `EnableAzureRBACPreview` включен флаг компонента.
 - Убедитесь, что `AAD-V2` включен флаг компонента.
-- Убедитесь, что `aks-preview` установлено расширение CLI v 0.4.55 или более поздней версии.
+- Убедитесь, что установлено `aks-preview` [расширение CLI][az-extension-add] v 0.4.55 или более поздней версии.
 - Убедитесь, что установлен [kubectl v 1.18.3 +][az-aks-install-cli].
 
 #### <a name="register-enableazurerbacpreview-and-aad-v2-preview-features"></a>`EnableAzureRBACPreview`Функции регистрации и `AAD-V2` предварительной версии
 
 Чтобы создать кластер AKS, использующий Azure RBAC для авторизации Kubernetes, необходимо включить `EnableAzureRBACPreview` `AAD-V2` Флаги компонентов и в подписке.
 
-Зарегистрируйте `EnableAzureRBACPreview` флаг функции с помощью команды [AZ Feature Register][az-feature-register] , как показано в следующем примере:
+Зарегистрируйте `EnableAzureRBACPreview` `AAD-V2` флаги и, используя команду [AZ Feature Register][az-feature-register] , как показано в следующем примере:
 
 ```azurecli-interactive
 az feature register --namespace "Microsoft.ContainerService" --name "EnableAzureRBACPreview"
@@ -64,9 +64,9 @@ az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/A
 az provider register --namespace Microsoft.ContainerService
 ```
 
-#### <a name="install-aks-preview-cli-extension"></a>Установка расширения интерфейса командной строки aks-preview
+#### <a name="install-aks-preview-cli-extension"></a>Установка расширения интерфейса командной строки предварительной версии AKS
 
-Чтобы создать кластер AKS, использующий Azure RBAC, требуется расширение CLI *AKS-Preview* версии 0.4.55 или выше. Установите расширение Azure CLI *aks-preview* с помощью команды [az extension add][az-extension-add], а затем проверьте наличие доступных обновлений с помощью команды [az extension update][az-extension-update].
+Чтобы создать кластер AKS, использующий Azure RBAC, требуется расширение CLI *AKS-Preview* версии 0.4.55 или выше. Установите расширение Azure CLI *AKS-Preview* с помощью команды [AZ Extension Add][az-extension-add] или установите все доступные обновления с помощью команды [AZ Extension Update][az-extension-update] .
 
 ```azurecli-interactive
 # Install the aks-preview extension

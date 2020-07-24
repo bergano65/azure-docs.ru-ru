@@ -1,14 +1,14 @@
 ---
-title: Расширение базы знаний в QnA Maker
+title: Рекомендуемые вопросы об активном обучении — QnA Maker
 description: Улучшите качество базы знаний с помощью активного обучения. Просмотр, принятие или отклонение, добавление без удаления или изменения существующих вопросов.
 ms.topic: conceptual
 ms.date: 04/06/2020
-ms.openlocfilehash: 88ccbc52e0eb3447d0b99cac9ba41761e292a6fd
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: bb95ddc40e122e2589d0396b94f0de921aab9350
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86231783"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87053939"
 ---
 # <a name="accept-active-learning-suggested-questions-in-the-knowledge-base"></a>Принять предлагаемые активные обучающие вопросы в базе знаний
 
@@ -139,9 +139,9 @@ Content-Type: application/json
 
 |Свойство тела JSON|Тип|Назначение|
 |--|--|--|--|
-|`feedbackRecords`|массиве|Список отзывов.|
+|`feedbackRecords`|array|Список отзывов.|
 |`userId`|строка|Идентификатор пользователя, который принимает предлагаемые вопросы. Пользователь должен иметь формат идентификатора пользователя. Например, адрес электронной почты может быть допустимым ИДЕНТИФИКАТОРом пользователя в вашей архитектуре. Необязательный элемент.|
-|`userQuestion`|строка|Точный текст запроса пользователя. Обязательный.|
+|`userQuestion`|строка|Точный текст запроса пользователя. Обязательный элемент.|
 |`qnaID`|number|Идентификатор вопроса, найденный в [ответе женератеансвер](metadata-generateanswer-usage.md#generateanswer-response-properties). |
 
 Пример текста JSON выглядит следующим образом:

@@ -3,18 +3,18 @@ title: Удаление хранилища Службы восстановлен
 description: Из этой статьи вы узнаете, как удалить зависимости, а затем удалить хранилище служб восстановления Azure Backup.
 ms.topic: conceptual
 ms.date: 06/04/2020
-ms.openlocfilehash: e6aaab80cabbdd8a58d8adc64409bf1bcd8ebf03
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5446c54ac070555987dfc05afa67825f307ee61b
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85563116"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87055191"
 ---
 # <a name="delete-an-azure-backup-recovery-services-vault"></a>Удаление хранилища служб восстановления Azure Backup
 
 В этой статье описывается, как удалить хранилище служб восстановления [Azure Backup](backup-overview.md) . В нем содержатся инструкции по удалению зависимостей, а также удалению хранилища.
 
-## <a name="before-you-start"></a>Перед началом работы
+## <a name="before-you-start"></a>Прежде чем начать
 
 Вы не можете удалить хранилище Служб восстановления, имеющее одну из следующих зависимостей:
 
@@ -27,7 +27,7 @@ ms.locfileid: "85563116"
 
 - Невозможно удалить хранилище, поскольку в нем имеются ресурсы. Убедитесь, что отсутствуют архивные элементы, защищенные серверы или серверы управления архивацией, связанные с этим хранилищем. Отмените регистрацию следующих контейнеров, связанных с этим хранилищем, прежде чем продолжить удаление.
 
-- Удалить хранилище Служб восстановления невозможно, так как в нем есть элементы резервного копирования, находящиеся в состоянии обратимого удаления. Обратимо удаленные элементы удаляются навсегда по истечении 14 дней после операции удаления. Попробуйте удалить хранилище после окончательного удаления архивных элементов и в хранилище не останется элементов с обратимым удалением. Дополнительные сведения см. в разделе [обратимое удаление для Azure Backup](https://docs.microsoft.com/azure/backup/backup-azure-security-feature-cloud).
+- Удалить хранилище Служб восстановления невозможно, так как в нем есть элементы резервного копирования, находящиеся в состоянии обратимого удаления. Обратимо удаленные элементы удаляются навсегда по истечении 14 дней после операции удаления. Попробуйте удалить хранилище после окончательного удаления архивных элементов и в хранилище не останется элементов с обратимым удалением. Дополнительные сведения см. в разделе [обратимое удаление для Azure Backup](./backup-azure-security-feature-cloud.md).
 
 ## <a name="proper-way-to-delete-a-vault"></a>Правильный способ удаления хранилища
 
@@ -36,9 +36,9 @@ ms.locfileid: "85563116"
 
 Чтобы правильно удалить хранилище, необходимо выполнить действия в следующем порядке:
 
-- **Шаг 1**. Отключите функцию обратимого удаления. Инструкции по отключению обратимого удаления [см. здесь](https://docs.microsoft.com/azure/backup/backup-azure-security-feature-cloud#enabling-and-disabling-soft-delete) .
+- **Шаг 1**. Отключите функцию обратимого удаления. Инструкции по отключению обратимого удаления [см. здесь](./backup-azure-security-feature-cloud.md#enabling-and-disabling-soft-delete) .
 
-- **Шаг 2**. После отключения обратимого удаления проверьте наличие элементов, которые ранее были в состоянии обратимого удаления. Если элементы в обратимо удаленном состоянии, необходимо отменить *Удаление* и *Удалить* их снова. [Выполните следующие действия](https://docs.microsoft.com/azure/backup/backup-azure-security-feature-cloud#permanently-deleting-soft-deleted-backup-items) , чтобы найти элементы обратимого удаления и окончательно удалить их.
+- **Шаг 2**. После отключения обратимого удаления проверьте наличие элементов, которые ранее были в состоянии обратимого удаления. Если элементы в обратимо удаленном состоянии, необходимо отменить *Удаление* и *Удалить* их снова. [Выполните следующие действия](./backup-azure-security-feature-cloud.md#permanently-deleting-soft-deleted-backup-items) , чтобы найти элементы обратимого удаления и окончательно удалить их.
 
 - **Шаг 3**. чтобы проверить наличие защищенных элементов, необходимо проверить все следующие три места:
 
@@ -209,7 +209,7 @@ ms.locfileid: "85563116"
            [<CommonParameters>]
     ```
 
-  Дополнительные [сведения](https://docs.microsoft.com/powershell/module/az.recoveryservices/disable-azrecoveryservicesbackupautoprotection?view=azps-2.6.0) о том, как отключить защиту для элемента, защищенного с помощью Azure Backup.
+  Дополнительные [сведения](/powershell/module/az.recoveryservices/disable-azrecoveryservicesbackupautoprotection) о том, как отключить защиту для элемента, защищенного с помощью Azure Backup.
 
 - Отключите защиту и удалите данные для всех защищенных резервным копированием элементов в облаке (например, виртуальная машина IaaS, файловый ресурс Azure и т. д.):
 
@@ -225,7 +225,7 @@ ms.locfileid: "85563116"
        [<CommonParameters>]
     ```
 
-    [Дополнительные сведения](https://docs.microsoft.com/powershell/module/az.recoveryservices/disable-azrecoveryservicesbackupprotection?view=azps-2.6.0&viewFallbackFrom=azps-2.5.0)   сведения о отключении защиты для элемента, защищенного с помощью резервной копии.
+    [Дополнительные сведения](/powershell/module/az.recoveryservices/disable-azrecoveryservicesbackupprotection)   сведения о отключении защиты для элемента, защищенного с помощью резервной копии.
 
 - Для локальных файлов и папок, защищенных с помощью агента Azure Backup (MARS), которые архивируются в Azure, используйте следующую команду PowerShell для удаления резервных данных из каждого модуля MARS PowerShell:
 
@@ -263,7 +263,7 @@ ms.locfileid: "85563116"
               [<CommonParameters>]
     ```
 
-    Дополнительные [сведения](https://docs.microsoft.com/powershell/module/az.recoveryservices/unregister-azrecoveryservicesbackupcontainer?view=azps-2.6.0) об отмене регистрации сервера Windows или другого контейнера из хранилища.
+    Дополнительные [сведения](/powershell/module/az.recoveryservices/unregister-azrecoveryservicesbackupcontainer) об отмене регистрации сервера Windows или другого контейнера из хранилища.
 
 - Для локальных компьютеров, защищенных с помощью MABS (Microsoft Azure Backup Server) или DPM, в Azure (защита данных System Center управляется:
 
@@ -278,7 +278,7 @@ ms.locfileid: "85563116"
           [<CommonParameters>]
     ```
 
-    Дополнительные [сведения](https://docs.microsoft.com/powershell/module/az.recoveryservices/unregister-azrecoveryservicesbackupcontainer?view=azps-2.6.0) о отмене регистрации контейнера управления архивацией из хранилища.
+    Дополнительные [сведения](/powershell/module/az.recoveryservices/unregister-azrecoveryservicesbackupcontainer) о отмене регистрации контейнера управления архивацией из хранилища.
 
 После окончательного удаления резервных копий данных и отмены регистрации всех контейнеров перейдите к удалению хранилища.
 
@@ -293,7 +293,7 @@ ms.locfileid: "85563116"
       [<CommonParameters>]
    ```
 
-Дополнительные [сведения](https://docs.microsoft.com/powershell/module/az.recoveryservices/remove-azrecoveryservicesvault) об удалении хранилища служб восстановления.
+Дополнительные [сведения](/powershell/module/az.recoveryservices/remove-azrecoveryservicesvault) об удалении хранилища служб восстановления.
 
 ## <a name="delete-the-recovery-services-vault-by-using-cli"></a>Удаление хранилища служб восстановления с помощью интерфейса командной строки
 
@@ -330,7 +330,7 @@ ms.locfileid: "85563116"
                        [--yes]
     ```
 
-    Дополнительные сведения см. в этой [статье](https://docs.microsoft.com/cli/azure/backup/vault?view=azure-cli-latest) .
+    Дополнительные сведения см. в этой [статье](/cli/azure/backup/vault?view=azure-cli-latest) .
 
 ## <a name="delete-the-recovery-services-vault-by-using-azure-resource-manager"></a>Удалите хранилище служб восстановления с помощью Azure Resource Manager
 
@@ -367,7 +367,7 @@ ms.locfileid: "85563116"
 
 3. В портал Azure убедитесь, что хранилище удалено.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Сведения о хранилищах](backup-azure-recovery-services-vault-overview.md) 
  служб восстановления [Сведения о мониторинге хранилищ служб восстановления и управлении ими](backup-azure-manage-windows-server.md)
