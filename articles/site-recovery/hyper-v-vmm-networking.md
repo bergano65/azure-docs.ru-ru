@@ -7,11 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/12/2019
 ms.author: raynew
-ms.openlocfilehash: a61f7ff69e648262eb721eb61a98b09dbbee924c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c0426872c29fa126514f22a5f4fb57f19903c967
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "73961431"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87021670"
 ---
 # <a name="set-up-ip-addressing-to-connect-to-a-secondary-on-premises-site-after-failover"></a>Настройка назначения IP-адресов для подключения к локальному веб-сайту после отработки отказа
 
@@ -60,7 +61,7 @@ ms.locfileid: "73961431"
 На следующем рисунке показаны подсети до и после отработки отказа:
 
 
-**Перед отработкой отказа**
+**До отработки отказа**
 
 ![До отработки отказа](./media/hyper-v-vmm-networking/network-design2.png)
 
@@ -78,12 +79,12 @@ ms.locfileid: "73961431"
 
 После включения защиты для виртуальной машины воспользуйтесь следующим примером сценария, чтобы проверить назначенный ей адрес. Этот IP-адрес будет задан в качестве IP-адреса отработки отказа и назначен виртуальной машине во время отработки отказа:
 
-    ```
-    $vm = Get-SCVirtualMachine -Name <VM_NAME>
-    $na = $vm[0].VirtualNetworkAdapters>
-    $ip = Get-SCIPAddress -GrantToObjectID $na[0].id
-    $ip.address 
-    ```
+```powershell
+$vm = Get-SCVirtualMachine -Name <VM_NAME>
+$na = $vm[0].VirtualNetworkAdapters>
+$ip = Get-SCIPAddress -GrantToObjectID $na[0].id
+$ip.address
+```
 
 ## <a name="use-a-different-ip-address"></a>Использование другого IP-адреса
 
@@ -92,7 +93,7 @@ ms.locfileid: "73961431"
 - Используйте низкие значения срока жизни для приложений интрасети.
 - Используйте следующий сценарий в плане восстановления Site Recovery, чтобы своевременно обновить DNS-сервер. Сценарий не требуется, если используется динамическая регистрация DNS.
 
-    ```
+    ```powershell
     param(
     string]$Zone,
     [string]$name,
@@ -115,7 +116,7 @@ ms.locfileid: "73961431"
 - В этом сценарии не нужно выполнять отработку отказа всей подсети, а также вносить изменения для перенастройки VPN или сетевых маршрутов. Отработка отказа и некоторые обновления DNS обеспечивают доступность приложений.
 - Если DNS настроен для разрешения динамических обновлений, после запуска по завершении отработки отказа виртуальные машины зарегистрируются, используя новый IP-адрес.
 
-**Перед отработкой отказа**
+**До отработки отказа**
 
 ![Другой IP-адрес — до отработки отказа](./media/hyper-v-vmm-networking/network-design10.png)
 
@@ -124,7 +125,7 @@ ms.locfileid: "73961431"
 ![Другой IP-адрес — после отработки отказа](./media/hyper-v-vmm-networking/network-design11.png)
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Выполнение отработки отказа](hyper-v-vmm-failover-failback.md)
 

@@ -17,12 +17,12 @@ ms.date: 12/12/2017
 ms.author: markvi
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
-ms.openlocfilehash: 6f18c9fe43b0b714e5709b014c051520b3722138
-ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.openlocfilehash: d8aa6cc7894b13789fe196e32c401128572346bf
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85855140"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87019069"
 ---
 # <a name="faqs-and-known-issues-with-managed-identities-for-azure-resources"></a>Часто задаваемые вопросы об управляемых удостоверениях для ресурсов Azure, а также известные проблемы в их работе
 
@@ -55,9 +55,12 @@ ms.locfileid: "85855140"
 
 Нет, мы не планируем реализовать поддержку управляемых удостоверений для ресурсов Azure в облачных службах Azure.
 
-### <a name="does-managed-identities-for-azure-resources-work-with-the-active-directory-authentication-library-adal-or-the-microsoft-authentication-library-msal"></a>Можно ли использовать управляемые удостоверения для ресурсов Azure с библиотекой проверки подлинности Active Directory (ADAL) или библиотекой проверки подлинности Майкрософт (MSAL)?
+### <a name="what-is-the-credential-associated-with-a-managed-identity-how-long-is-it-valid-and-how-often-is-it-rotated"></a>Что такое учетные данные, связанные с управляемым удостоверением? Сколько времени оно действительно и как часто оно поворачивается?
 
-Нет, управляемые удостоверения для ресурсов Azure еще не интегрированы с библиотеками ADAL и MSAL. Дополнительные сведения о получении маркера для управляемых удостоверений для ресурсов Azure с помощью конечной точки REST см. в статье [Как использовать управляемые удостоверения для ресурсов Azure на виртуальной машине Azure для получения маркера доступа](how-to-use-vm-token.md).
+> [!NOTE]
+> Проверка подлинности управляемых удостоверений — это внутренняя реализация, которая может быть изменена без предварительного уведомления.
+
+Управляемые удостоверения используют проверку подлинности на основе сертификатов. Срок действия всех учетных данных управляемого удостоверения составляет 90 дней, и он будет выполнен после 45 дней.
 
 ### <a name="what-is-the-security-boundary-of-managed-identities-for-azure-resources"></a>Что такое периметр безопасности для управляемых удостоверений для ресурсов Azure?
 
@@ -133,7 +136,7 @@ az vm update -n <VM Name> -g <Resource Group> --remove tags.fixVM
  - Управляемые удостоверения, назначаемые системой, нужно отключить и снова включить. 
  - Управляемые удостоверения, назначаемые пользователем, нужно удалить, повторно создать и присоединить к необходимым ресурсам (например, виртуальным машинам).
 
-Дополнительные сведения см. в статье [Перенос подписки Azure в другой каталог Azure AD (Предварительная версия)](../../role-based-access-control/transfer-subscription.md).
+Дополнительные сведения см. в статье [Передача подписки Azure в другой каталог Azure AD (предварительная версия)](../../role-based-access-control/transfer-subscription.md).
 
 ### <a name="moving-a-user-assigned-managed-identity-to-a-different-resource-groupsubscription"></a>Перемещение управляемого удостоверения, назначаемого пользователем, в другую группу ресурсов/подписку
 

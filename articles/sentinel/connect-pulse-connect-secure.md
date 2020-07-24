@@ -14,14 +14,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/17/2020
 ms.author: yelevin
-ms.openlocfilehash: 01d41b20c543262280e215cf4e31fd0cccce877f
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: f7f6de717f0ed9a2e27e15199b6f0ea566e0fdcd
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86531970"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87021636"
 ---
 # <a name="connect-your-pulse-connect-secure-to-azure-sentinel"></a>Подключение к службе Pulse Connect Secure в Azure Sentinel
+
+> [!IMPORTANT]
+> Соединитель защищенных данных Pulse Connect в Azure Sentinel сейчас находится в общедоступной предварительной версии.
+> Эта функция предоставляется без соглашения об уровне обслуживания и не рекомендуется для рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 В этой статье объясняется, как подключить устройство [Pulse Connect Secure](https://www.pulsesecure.net/products/pulse-connect-secure/) в Azure Sentinel. Соединитель защищенных данных Pulse Connect позволяет легко подключать Пульс подключения к безопасным журналам с помощью Azure Sentinel, просматривать панели мониторинга, создавать пользовательские оповещения и улучшать исследование. Интеграция между Pulse Connect Secure и Azure Sentinel позволяет использовать системный журнал.
 

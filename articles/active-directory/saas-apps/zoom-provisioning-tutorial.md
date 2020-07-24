@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/3/2019
 ms.author: Zhchia
-ms.openlocfilehash: 94c261da0c935cb7a41dde768069099b4e5ed251
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fb5e51503fa20cd3ace6070cb1b51f5bf32d0e13
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80384081"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87016271"
 ---
 # <a name="tutorial-configure-zoom-for-automatic-user-provisioning"></a>Учебник. Настройка масштабирования для автоматической подготовки пользователей
 
@@ -153,6 +153,9 @@ ms.locfileid: "80384081"
 
 ## <a name="connector-limitations"></a>Ограничения соединителя
 * Только масштаб допускает не более 9 999 основных пользователей в настоящее время.
+
+## <a name="change-log"></a>Журнал изменений
+* 05/14/2020 — поддержка операций обновления, добавленных для электронной почты [Type EQ "Рабочий"] атрибут.
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

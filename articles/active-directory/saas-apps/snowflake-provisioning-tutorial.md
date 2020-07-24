@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: 99565c8dc8b5cbaea9f449a9f6262a37ae5b66d0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 46ebb122b0165d469b1c40871d5939e50a8595c9
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85367195"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87016345"
 ---
 # <a name="tutorial-configure-snowflake-for-automatic-user-provisioning"></a>Учебник. Настройка снежинки для автоматической подготовки пользователей
 
@@ -163,6 +163,10 @@ ms.locfileid: "85367195"
 ## <a name="connector-limitations"></a>Ограничения соединителя
 
 * Срок действия маркеров SCIM, созданных с «снежинка», истекает через 6 месяцев. Следует иметь в виду, что их необходимо обновить до истечения срока действия, чтобы разрешить синхронизацию подготовки для продолжения работы. 
+
+## <a name="change-log"></a>Журнал изменений
+
+* 07/21/2020. Включение обратимого удаления для всех пользователей (с помощью активного атрибута).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

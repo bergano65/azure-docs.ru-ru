@@ -5,27 +5,27 @@ ms.service: time-series-insights
 services: time-series-insights
 author: deepakpalled
 ms.author: dpalled
-manager: cshankar
+manager: diviso
 ms.topic: conceptual
 ms.workload: big-data
-ms.date: 04/15/2020
+ms.date: 07/07/2020
 ms.custom: seodec18
-ms.openlocfilehash: 10616c8003d9bbbe42cb70bd1bac4193044907c0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 170b90816535562d6740449157840cedb00f291d
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81416992"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87020514"
 ---
 # <a name="share-a-custom-view-using-a-parameterized-url"></a>Предоставление общего доступа к пользовательскому представлению с помощью параметризованного URL-адреса
 
-Чтобы предоставить общий доступ к пользовательскому представлению в обозревателе "аналитика временных рядов", можно программно создать параметризованный URL-адрес пользовательского представления.
+Чтобы предоставить общий доступ к пользовательскому представлению в обозревателе службы "аналитика временных рядов Azure", можно программно создать параметризованный URL-адрес пользовательского представления.
 
-Обозреватель "аналитика временных рядов" поддерживает параметры запроса URL-адресов для указания представлений в интерфейсе непосредственно из URL-адреса. Например, используя только URL-адрес, можно указать целевую среду, предикат поиска и нужный период времени. Когда пользователь выбирает настраиваемый URL-адрес, интерфейс предоставляет ссылку непосредственно на этот ресурс на портале временных рядов Insights. Применяются политики доступа к данным.
+Обозреватель службы "аналитика временных рядов Azure" поддерживает параметры запроса URL-адреса для указания представлений в интерфейсе непосредственно из URL-адреса. Например, используя только URL-адрес, можно указать целевую среду, предикат поиска и нужный период времени. Когда пользователь выбирает настраиваемый URL-адрес, интерфейс предоставляет ссылку непосредственно на этот ресурс на портале службы "аналитика временных рядов Azure". Применяются политики доступа к данным.
 
 > [!TIP]
-> * Просмотрите [демонстрацию бесплатной временной серии Insights](https://insights.timeseries.azure.com/samples).
-> * Ознакомьтесь с документацией по [обозревателю "аналитика временных рядов](./time-series-insights-explorer.md) ".
+> * Просмотрите бесплатную [демонстрацию службы "аналитика временных рядов Azure](https://insights.timeseries.azure.com/samples)".
+> * Ознакомьтесь с сопроводительной документацией по [обозревателю службы "аналитика временных рядов Azure](./time-series-insights-explorer.md) ".
 
 ## <a name="environment-id"></a>Идентификатор среды
 
@@ -33,7 +33,7 @@ ms.locfileid: "81416992"
 
 Пример параметра идентификатора среды: `?environmentId=10000000-0000-0000-0000-100000000108`.
 
-## <a name="time"></a>Время
+## <a name="time"></a>Time
 
 С помощью параметризованного URL-адреса можно указать абсолютное или относительное значение времени.
 
@@ -53,7 +53,7 @@ ms.locfileid: "81416992"
 
 Например, `&relativeMillis=3600000` позволяет отобразить данные за последние 60 минут.
 
-Допустимые значения соответствуют меню **быстрого времени** обозревателя "аналитика временных рядов" и включают:
+Допустимые значения соответствуют меню **быстрого времени** в обозревателе службы "аналитика временных рядов Azure" и включают:
 
 * `1800000`(Последние 30 минут)
 * `3600000`(Последние 60 мин.)
@@ -66,7 +66,7 @@ ms.locfileid: "81416992"
 
 ### <a name="optional-parameters"></a>Необязательные параметры
 
-`timeSeriesDefinitions=<collection of term objects>`Параметр задает термины предиката, которые будут отображаться в представлении Time Series Insights:
+`timeSeriesDefinitions=<collection of term objects>`Параметр задает термины предиката, которые будут отображаться в представлении "аналитика временных рядов Azure":
 
 | Параметр | Элемент URL-адреса | Описание |
 | --- | --- | --- |
@@ -98,7 +98,7 @@ ms.locfileid: "81416992"
 
 ### <a name="examples"></a>Примеры
 
-Чтобы добавить определения временных рядов в среду "аналитика временных рядов" в качестве параметра URL-адреса, добавьте:
+Чтобы добавить определения временных рядов в среду "аналитика временных рядов Azure" в качестве параметра URL-адреса, добавьте:
 
 ```URL parameter
 &timeSeriesDefinitions=[{"name":"F1PressureId","splitBy":"Id","measureName":"Pressure","predicate":"'Factory1'"},{"name":"F2TempStation","splitBy":"Station","measureName":"Temperature","predicate":"'Factory2'"},
@@ -117,16 +117,16 @@ ms.locfileid: "81416992"
 https://insights.timeseries.azure.com/samples?environmentId=10000000-0000-0000-0000-100000000108&relativeMillis=3600000&timeSeriesDefinitions=[{"name":"F1PressureId","splitBy":"Id","measureName":"Pressure","predicate":"'Factory1'"},{"name":"F2TempStation","splitBy":"Station","measureName":"Temperature","predicate":"'Factory2'"},{"name":"F3VibrationPL","splitBy":"ProductionLine","measureName":"Vibration","predicate":"'Factory3'"}]
 ```
 
-[![Параметризованный URL-адрес обозревателя аналитики временных рядов](media/parameterized-url/share-parameterized-url.png)](media/parameterized-url/share-parameterized-url.png#lightbox)
+[![Параметризованный URL-адрес обозревателя службы "аналитика временных рядов Azure"](media/parameterized-url/share-parameterized-url.png)](media/parameterized-url/share-parameterized-url.png#lightbox)
 
 > [!TIP]
 > См. Обозреватель в режиме реального времени, используя приведенный выше пример [URL-адреса](https://insights.timeseries.azure.com/samples?environmentId=10000000-0000-0000-0000-100000000108&relativeMillis=3600000&timeSeriesDefinitions=[{"name":"F1PressureId","splitBy":"Id","measureName":"Pressure","predicate":"'Factory1'"},{"name":"F2TempStation","splitBy":"Station","measureName":"Temperature","predicate":"'Factory2'"},{"name":"F3VibrationPL","splitBy":"ProductionLine","measureName":"Vibration","predicate":"'Factory3'"}]) .
 
-Приведенный выше URL-адрес описывает и отображает параметризованное представление обозревателя "аналитика временных рядов". 
+Приведенный выше URL-адрес описывает и отображает параметризованное представление обозревателя службы "аналитика временных рядов Azure". 
 
 * Параметризованные предикаты.
 
-  [![В обозревателе "аналитика временных рядов" параметризованные предикаты.](media/parameterized-url/share-parameterized-url-predicates.png)](media/parameterized-url/share-parameterized-url-predicates.png#lightbox)
+  [![Параметризованные предикаты в обозревателе службы "аналитика временных рядов Azure".](media/parameterized-url/share-parameterized-url-predicates.png)](media/parameterized-url/share-parameterized-url-predicates.png#lightbox)
 
 * Общее полное представление диаграммы.
 
@@ -136,4 +136,4 @@ https://insights.timeseries.azure.com/samples?environmentId=10000000-0000-0000-0
 
 * Узнайте, как [запрашивать данные с помощью C#](time-series-insights-query-data-csharp.md).
 
-* Сведения о [обозревателе "аналитика временных рядов](./time-series-insights-explorer.md)".
+* Сведения о обозревателе службы " [аналитика временных рядов Azure](./time-series-insights-explorer.md)".

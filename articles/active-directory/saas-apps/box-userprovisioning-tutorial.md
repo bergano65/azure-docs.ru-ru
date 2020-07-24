@@ -12,14 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/26/2017
+ms.date: 07/20/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c1397b4189a9c2c15e3878687ea8c67c1da7567f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0be9298e56cf2e5c816c45fcb7e84eb20c11ef4d
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77058575"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87018185"
 ---
 # <a name="tutorial-configure-box-for-automatic-user-provisioning"></a>Руководство по настройке Box для автоматической подготовки пользователей
 
@@ -28,7 +29,7 @@ ms.locfileid: "77058575"
 > [!NOTE]
 > В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../app-provisioning/user-provisioning.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 Чтобы настроить интеграцию Azure AD с Box, вам потребуется:
 
@@ -37,6 +38,9 @@ ms.locfileid: "77058575"
 
 > [!NOTE]
 > Мы *не рекомендуем* использовать рабочую среду для тестирования действий, описанных в этом руководстве.
+
+> [!NOTE]
+> Сначала необходимо включить приложения в приложении Box.
 
 При проверке действий в этом руководстве соблюдайте следующие рекомендации:
 

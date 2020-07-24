@@ -12,11 +12,12 @@ ms.date: 04/07/2020
 ms.author: kenwith
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 48727e377c2b6707e570cad103e4b08bcb44a1cb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c785e2b13e7d5c57ff6d5ce9161fea1a80da77e1
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84764933"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87019545"
 ---
 # <a name="work-with-existing-on-premises-proxy-servers"></a>Работа с имеющимися локальными прокси-серверами
 
@@ -116,7 +117,7 @@ ms.locfileid: "84764933"
 | mscrl.microsoft.com:80<br>crl.microsoft.com:80<br>ocsp.msocsp.com:80<br>www.microsoft.com:80 | Соединитель использует эти URL-адреса для проверки сертификатов. |
 | login.windows.net<br>secure.aadcdn.microsoftonline-p.com<br>*.microsoftonline.com<br>* .microsoftonline-p.com<br>*.msauth.net<br>* .msauthimages.net<br>*.msecnd.net<br>* .msftauth.net<br>*.msftauthimages.net<br>* .phonefactor.net<br>enterpriseregistration.windows.net<br>management.azure.com<br>policykeyservice.dc.ad.msft.net<br>ctdl.windowsupdate.com:80 | Соединитель использует эти URL-адреса во время регистрации. |
 
-Если брандмауэр или прокси-сервер позволяет настроить списки разрешенных DNS, можно разрешить подключения к \*.msappproxy.net и \*.servicebus.windows.net. Если нет, необходимо разрешить доступ к [диапазонам IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/details.aspx?id=41653). Список диапазонов IP-адресов обновляется еженедельно.
+Если брандмауэр или прокси-сервер позволяет настроить списки разрешенных DNS, можно разрешить подключения к \*.msappproxy.net и \*.servicebus.windows.net. В противном случае необходимо разрешить доступ к [диапазонам IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/details.aspx?id=41653). Список диапазонов IP-адресов обновляется еженедельно.
 
 Невозможно разрешить подключения по полному доменному имени. Вместо этого укажите диапазоны IP-адресов. Используйте следующие параметры:
 
@@ -152,6 +153,9 @@ ms.locfileid: "84764933"
 4.  Настройте необходимые параметры прокси-сервера. 
 
 Эти параметры позволяют соединителю использовать один и тот же прокси-сервер для обмена данными с Azure и серверным приложением. Если соединителю для обмена данными с Azure не требуется использовать прямой прокси-сервер или другой прямой прокси-сервер, можно настроить его путем изменения файла ApplicationProxyConnectorService.exe.config, как описано в разделах «Обход исходящих прокси-серверов» или «Использование исходящего прокси-сервера».
+
+> [!NOTE]
+> Существует множество способов настройки Интернет-прокси в операционной системе. Параметры прокси-сервера, настроенные с помощью команды NETSH WINHTTP (выполнить `NETSH WINHTTP SHOW PROXY` для проверки), переопределяют параметры прокси-сервера, настроенные на шаге 2. 
 
 Служба обновления соединителя также будет использовать прокси-сервер компьютера. Это поведение можно изменить, отредактировав файл ApplicationProxyConnectorUpdaterService.exe.config.
 

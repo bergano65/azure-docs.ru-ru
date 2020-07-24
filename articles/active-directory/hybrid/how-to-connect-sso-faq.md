@@ -16,12 +16,12 @@ ms.date: 10/07/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 674befe7d01d0ef88026afeb2cb9179b167a88ca
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f621ed1342928b7f05fc8b84bfc2fceadf494fb5
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85357942"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87019737"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-frequently-asked-questions"></a>Простой единый вход Azure Active Directory: Часто задаваемые вопросы
 
@@ -102,6 +102,10 @@ ms.locfileid: "85357942"
    >Указанная учетная запись не должна входить в группу защищенных пользователей. В противном случае операция завершится ошибкой.
 
    2. Вызовите процедуру `Update-AzureADSSOForest -OnPremCredentials $creds`. Эта команда обновляет ключ расшифровки Kerberos для компьютерной учетной записи `AZUREADSSO` в этом лесу AD и обновляет его в Azure AD.
+   
+   >[!NOTE]
+   >Если вы не являетесь администратором домена и вам были назначены разрешения администратора домена, следует вызвать метод`Update-AzureADSSOForest -OnPremCredentials $creds -PreserveCustomPermissionsOnDesktopSsoAccount`
+   
    3. Повторите предыдущие шаги для каждого леса AD, где настроена эта функция.
 
    >[!IMPORTANT]

@@ -14,11 +14,12 @@ ms.date: 01/04/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: aa84ad9f48f79a77bad1445dadc8c5c965b13655
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d7dc3212007e9b9ec67d0d235135d4d46f20b950
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85248706"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87022129"
 ---
 # <a name="azure-notification-hubs-secure-push"></a>Безопасные push-уведомления посредством центров уведомлений Azure
 
@@ -121,7 +122,7 @@ ms.locfileid: "85248706"
 4. Теперь мы обработаем входящее уведомление и используем вышеуказанный метод для извлечения содержимого и его отображения. Во-первых, мы должны создать для приложения iOS возможность работы в фоновом режиме при получении push-уведомления. В **XCode** выберите проект приложения в панели слева, затем выберите основную платформу в разделе **Targets** (Целевые объекты) центральной панели.
 5. Затем щелкните вкладку **Capabilities** (Возможности) в верхней части центральной панели и установите флажок **Remote Notifications** (Удаленные уведомления).
 
-    ![][IOS1]
+    ![Снимок экрана XCode с выбранным проектом приложения и открытой вкладкой возможностей. Флажок Удаленные уведомления установлен.][IOS1]
 
 6. В файле `AppDelegate.m` добавьте следующий метод для обработки push-уведомлений.
 

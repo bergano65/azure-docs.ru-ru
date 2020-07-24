@@ -15,11 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/3/2019
 ms.author: jeedes
-ms.openlocfilehash: 423ba8c7aea9659a4c91f68a01392954c2ba6db2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0c83d43fe1a2068fa4c9f24a10c0975610142a84
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77059178"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87018695"
 ---
 # <a name="tutorial-configure-4me-for-automatic-user-provisioning"></a>Учебник. Настройка 4ME для автоматической подготовки пользователей
 
@@ -127,7 +128,7 @@ ms.locfileid: "77059178"
 
     ![Сопоставления пользователей 4ME](media/4me-provisioning-tutorial/4me-user-mapping.png)
     
-11. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в 4ME в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в 4ME для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+11. Проверьте атрибуты пользователя, которые синхронизированы из Azure AD в 4ME в разделе **сопоставление атрибутов** . Атрибуты, выбранные как свойства **Matching** , используются для сопоставления учетных записей пользователей в 4ME для операций обновления. Убедитесь, что [4ME поддерживает фильтрацию](https://developer.4me.com/v1/scim/users/) по выбранному атрибуту сопоставления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
     ![Сопоставления пользователей 4ME](media/4me-provisioning-tutorial/4me-user-attributes.png)
     

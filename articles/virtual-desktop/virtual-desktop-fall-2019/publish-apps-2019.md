@@ -1,5 +1,5 @@
 ---
-title: Публикация встроенных приложений в виртуальных рабочих столах Windows в Azure
+title: Публикация встроенных приложений в виртуальном рабочем столе Windows — 2019 — Azure
 description: Как опубликовать встроенные приложения в виртуальном рабочем столе Windows.
 services: virtual-desktop
 author: Heidilohr
@@ -8,13 +8,14 @@ ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 7a453ef44a1ede86290f4130a6147eaaad09fa97
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e20d2ca8f2f0ef2b8c0290702a2b9e91cc22bb09
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85214151"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87020379"
 ---
-# <a name="publish-built-in-apps-in-windows-virtual-desktop"></a>Публикация встроенных приложений в виртуальном рабочем столе Windows
+# <a name="publish-built-in-apps-in-windows-virtual-desktop---fall-2019"></a>Публикация встроенных приложений в виртуальном рабочем столе Windows — выпадение 2019
 
 >[!IMPORTANT]
 >Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Если вы хотите обеспечить управление объектами Azure Resource Manager для Виртуального рабочего стола Windows, представленными в обновлении за весну 2020 г., см. [эту статью](../publish-apps.md).
@@ -48,7 +49,7 @@ ms.locfileid: "85214151"
 New-RdsRemoteApp <tenantname> <hostpoolname> <appgroupname> -Name <remoteappname> -FriendlyName <remoteappname> -FilePath "shell:Appsfolder\Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge"
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как настроить веб-каналы, чтобы организовать отображение приложений для пользователей в [настраиваемом веб-канале для пользователей виртуальных рабочих столов Windows](customize-feed-virtual-desktop-users-2019.md).
 - Дополнительные сведения о функции присоединения приложения MSIX см. в статье Настройка присоединения приложения [MSIX](../app-attach.md).

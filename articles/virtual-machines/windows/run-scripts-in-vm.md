@@ -8,12 +8,12 @@ ms.author: robreed
 ms.date: 05/02/2018
 ms.topic: how-to
 manager: carmonm
-ms.openlocfilehash: bd65f33663dea3663f14fb4167448e39b9b7d0b7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c2999d5bd6d780d5815f22d18e6e8cdd580987af
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82099773"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87020174"
 ---
 # <a name="run-scripts-in-your-windows-vm"></a>Запуск сценариев в виртуальной машине Windows
 
@@ -34,7 +34,7 @@ ms.locfileid: "82099773"
 Функция [Выполнить команду](run-command.md) позволяет управлять виртуальными машинами и приложениями и устранять неполадки с помощью сценариев и доступна даже тогда, когда машина недоступна, например, если гостевой брандмауэр не имеет открытых портов RDP или SSH.
 
 * Выполнение сценариев в виртуальных машинах Azure.
-* Можно выполнить с помощью [портала Microsoft Azure](run-command.md), [REST API](/rest/api/compute/virtual%20machines%20run%20commands/runcommand), [Azure CLI](/cli/azure/vm/run-command?view=azure-cli-latest#az-vm-run-command-invoke), или [PowerShell](https://docs.microsoft.com/powershell/module/az.compute/invoke-azvmruncommand)
+* Можно выполнить с помощью [портала Microsoft Azure](run-command.md), [REST API](/rest/api/compute/virtual%20machines%20run%20commands/runcommand), [Azure CLI](/cli/azure/vm/run-command?view=azure-cli-latest#az-vm-run-command-invoke), или [PowerShell](/powershell/module/az.compute/invoke-azvmruncommand)
 * Быстро запустите сценарий и просмотрите выходные данные и повторите при необходимости на портале Microsoft Azure.
 * Сценарий можно ввести непосредственно или выполнив один из встроенных сценариев.
 * Запустить сценарий PowerShell на компьютерах Windows и сценарий Bash на компьютерах Linux.
@@ -57,7 +57,7 @@ ms.locfileid: "82099773"
 
 ## <a name="serial-console"></a>Последовательная консоль
 
-[Последовательная консоль](serial-console.md)обеспечивает прямой доступ к виртуальной машине аналогично подключению клавиатуры к виртуальной машине.
+[Последовательная консоль](../troubleshooting/serial-console-windows.md)обеспечивает прямой доступ к виртуальной машине аналогично подключению клавиатуры к виртуальной машине.
 
 * Выполнение команд в виртуальных машинах Azure
 * Можно выполнять с помощью текстовой консоли на компьютере, на портале Microsoft Azure.
@@ -71,4 +71,4 @@ ms.locfileid: "82099773"
 * [Расширение пользовательских сценариев](../extensions/custom-script-windows.md)
 * [Запуск команды](run-command.md)
 * [Гибридная рабочая роль Runbook](../../automation/automation-hybrid-runbook-worker.md)
-* [Серийная консоль](serial-console.md)
+* [Серийная консоль](../troubleshooting/serial-console-windows.md)

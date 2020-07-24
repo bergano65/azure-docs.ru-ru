@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/08/2019
 ms.author: juliako
-ms.openlocfilehash: c230e1e950bb924631032940642a6202acf4ade8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5df104efb65152f5bcb71a86911e694611d8a742
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80382942"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87022877"
 ---
 # <a name="monitor-media-services-metrics"></a>Monitor Media Services metrics (Мониторинг метрик службы мультимедиа)
 
@@ -28,7 +28,7 @@ Azure Monitor предоставляет несколько способов в�
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md)
+- [Создание учетной записи Служб мультимедиа](./create-account-howto.md)
 - Просмотр [мониторинга метрик и журналов диагностики служб мультимедиа](media-services-metrics-diagnostic-logs.md)
 
 ## <a name="view-metrics-in-azure-portal"></a>Просмотр метрик в портал Azure
@@ -67,7 +67,7 @@ az monitor metrics list --resource \
 
 Чтобы получить другие метрики, замените "исходящий" на имя метрики, которое вас интересует.
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также статью
 
 * [Метрики Azure Monitor](../../azure-monitor/platform/data-platform.md)
 * [Создание, Просмотр оповещений метрик и управление ими с помощью Azure Monitor](../../azure-monitor/platform/alerts-metric.md).

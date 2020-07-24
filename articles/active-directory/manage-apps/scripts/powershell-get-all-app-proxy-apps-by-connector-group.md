@@ -1,5 +1,5 @@
 ---
-title: Пример PowerShell. Вывод списка всех групп соединителей прокси приложения
+title: Список групп соединителей Azure AD Application Proxy для приложений
 description: Пример PowerShell, в котором перечислены все группы соединителей прокси приложения Azure Active Directory (Azure AD) с назначенными приложениями.
 services: active-directory
 author: msmimart
@@ -12,11 +12,12 @@ ms.date: 12/05/2019
 ms.author: mimart
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9dcf2eb6a1904e4a7223a19e598f0c06ddc36f71
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8f381d64e06d8b7abf67b08297baa616397cc439
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75482170"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87019443"
 ---
 # <a name="get-all-application-proxy-apps-and-list-by-connector-group"></a>Получение всех приложений и списков прокси приложения по группам соединителей
 
@@ -44,7 +45,7 @@ ms.locfileid: "75482170"
 | [Get-AzureADApplicationProxyConnectorGroup](https://docs.microsoft.com/powershell/module/azuread/get-azureadapplicationproxyconnectorgroup?view=azureadps-2.0) | Извлекает список всех групп соединителей или сведения о указанной группе соединителей. |
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о модуле Azure AD PowerShell см. в статье [Общие сведения о модуле Azure AD PowerShell](https://docs.microsoft.com/powershell/azure/active-directory/overview?view=azureadps-2.0).
 

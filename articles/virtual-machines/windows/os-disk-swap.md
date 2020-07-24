@@ -7,11 +7,12 @@ ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 04/24/2018
 ms.author: cynthn
-ms.openlocfilehash: c96fa4c453911c4ca4b8cf6d8f74647b4532109f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2d4abd68e60201a17e56ee105777614c42691bfc
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84711550"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87020344"
 ---
 # <a name="change-the-os-disk-used-by-an-azure-vm-using-powershell"></a>Изменение диска ОС виртуальной машины Azure с помощью PowerShell
 
@@ -24,7 +25,7 @@ ms.locfileid: "84711550"
 Убедитесь, что тип и размер виртуальной машины совместимы с диском, который необходимо подключить. Например, если диск, который вы хотите использовать, размещен в хранилище уровня "Премиум", то виртуальная машина должна поддерживать это хранилище (например, она должна относиться к серии DS). Оба диска должны также иметь одинаковый размер.
 И убедитесь, что вы не используете незашифрованную виртуальную машину с зашифрованным диском ОС, это не поддерживается. Если виртуальная машина не использует шифрование дисков Azure, диск ОС, для которого выполняется переключение, не должен использовать шифрование дисков Azure.
 
-Получите список дисков в группе ресурсов с помощью команды [Get-AzDisk](https://docs.microsoft.com/powershell/module/az.compute/get-azdisk).
+Получите список дисков в группе ресурсов с помощью команды [Get-AzDisk](/powershell/module/az.compute/get-azdisk).
 
 ```azurepowershell-interactive
 Get-AzDisk -ResourceGroupName myResourceGroup | Format-Table -Property Name

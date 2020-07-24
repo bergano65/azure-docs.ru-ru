@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/27/2019
+ms.date: 05/06/2020
 ms.author: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a8b7fa5aea835329be8f65a3bb1775ba5b0d97d4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5ca536ddacb0f81459625b733eb79282e145afba
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85389872"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87016346"
 ---
 # <a name="tutorial-configure-slack-for-automatic-user-provisioning"></a>Руководство по настройке Slack для автоматической подготовки пользователей
 
@@ -131,7 +131,7 @@ ms.locfileid: "85389872"
    |timezone|Строка|
    |userType|Строка|
    |urn: scim: схемы: расширение: корпоративный: 1.0. Department|Строка|
-   |urn: scim: схемы: расширение: Enterprise: 1.0. Manager|Справка|
+   |urn: scim: схемы: расширение: Enterprise: 1.0. Manager|Справочник|
    |urn: scim: схемы: расширение: Enterprise: 1.0. Емплойинумбер|Строка|
    |urn: scim: схемы: расширение: Enterprise: 1.0. costCenter|Строка|
    |urn: scim: схемы: расширение: Enterprise: 1.0. Организация|Строка|
@@ -169,7 +169,7 @@ ms.locfileid: "85389872"
 2. Используйте [индикатор выполнения](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-when-will-provisioning-finish-specific-user), чтобы узнать состояние цикла подготовки и приблизительное время до его завершения.
 3. Если конфигурация подготовки, вероятно, находится в неработоспособном состоянии, приложение перейдет в карантин. Дополнительные сведения о режимах карантина см. [здесь](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-quarantine-status).
 
-## <a name="connector-limitations"></a>Ограничения соединителя
+## <a name="troubleshooting-tips"></a>Советы по устранению неполадок
 
 * При настройке атрибута **displayName** в Slack возможно следующее:
 
@@ -179,11 +179,15 @@ ms.locfileid: "85389872"
   
   * Допускаются следующие знаки пунктуации: точки, символы подчеркивания, дефисы, апострофы, скобки (например, **( [ { } ] )**) и разделители (например, **, / ;**).
   
+  * свойство displayName не может содержать символ "@". Если включен символ "@", то в журналах подготовки может найти пропущенное событие с описанием "Аттрибутевалидатионфаилед".
+
   * Обновление выполняется, только если в рабочей области или организации Slack **включена синхронизации профиля** и указано, что **пользователи не могут изменять свои отображаемые имена**.
-  
+
 * Атрибут **userName** в Slack должен содержать до 21 символа и иметь уникальное значение.
 
 * Временной резерв допускает сопоставление только с атрибутами **username** и **Email**.  
+  
+* Общие коды ерорр описаны в официальной документации по резервному времени.https://api.slack.com/scim#errors
 
 ## <a name="change-log"></a>Журнал изменений
 

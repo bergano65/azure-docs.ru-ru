@@ -15,11 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/07/2017
 ms.author: jegeib
-ms.openlocfilehash: 56afed264facb6a02040cef01cd5d5d41526ec49
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 809e9fa5143ede65f5bc6bf8d81020d508272fd8
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85322659"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87021840"
 ---
 # <a name="security-frame-authorization--mitigations"></a>Механизм безопасности. Авторизация | Устранение рисков 
 | Продукт или служба | Статья |
@@ -34,7 +35,7 @@ ms.locfileid: "85322659"
 | **Граница доверия Service Fabric** | <ul><li>[Ограничение доступа клиента к операциям кластера с помощью RBAC](#cluster-rbac)</li></ul> |
 | **Dynamics CRM** | <ul><li>[Выполните моделирование безопасности и используйте безопасность на уровне полей, если это необходимо](#modeling-field)</li></ul> |
 | **Портал Dynamics CRM** | <ul><li>[Выполняйте моделирование безопасности учетных записей на портале с учетом отличия модели безопасности для портала от модели безопасности для CRM](#portal-security)</li></ul> |
-| **Хранилище Azure** | <ul><li>[Предоставьте детальное разрешение диапазону сущностей в хранилище таблиц Azure](#permission-entities)</li><li>[С помощью Azure Resource Manager включите для учетной записи хранения Azure управление доступом на основе ролей (RBAC)](#rbac-azure-manager)</li></ul> |
+| **Служба хранилища Azure** | <ul><li>[Предоставьте детальное разрешение диапазону сущностей в хранилище таблиц Azure](#permission-entities)</li><li>[С помощью Azure Resource Manager включите для учетной записи хранения Azure управление доступом на основе ролей (RBAC)](#rbac-azure-manager)</li></ul> |
 | **Мобильный клиент** | <ul><li>[Реализуйте неявное обнаружение снятия защиты или получение административного доступа](#rooting-detection)</li></ul> |
 | **WCF** | <ul><li>[Слабая ссылка на класс в WCF](#weak-class-wcf)</li><li>[Реализация управления авторизацией в WCF](#wcf-authz)</li></ul> |
 | **Веб-интерфейс API** | <ul><li>[Реализуйте надлежащий механизм авторизации в веб-API ASP.NET](#authz-aspnet)</li></ul> |
@@ -236,7 +237,7 @@ WHERE userID=:id < - session var
 | **Применимые технологии** | Универсальный шаблон |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | [Использование назначений ролей для управления доступом к ресурсам в подписке Azure](https://azure.microsoft.com/documentation/articles/role-based-access-control-configure/)  |
-| **Шаги** | Контроль доступа на основе ролей (RBAC) Azure обеспечивает точное управление доступом для Azure. С помощью RBAC можно предоставлять пользователям доступ, необходимый только для выполнения поставленных перед ними задач.|
+| **Шаги** | Управление доступом на основе ролей в Azure (Azure RBAC) обеспечивает детальное управление доступом для Azure. С помощью RBAC можно предоставлять пользователям доступ, необходимый только для выполнения поставленных перед ними задач.|
 
 ## <a name="restrict-clients-access-to-cluster-operations-using-rbac"></a><a id="cluster-rbac"></a>С помощью RBAC ограничьте доступ клиента к операциям кластера
 

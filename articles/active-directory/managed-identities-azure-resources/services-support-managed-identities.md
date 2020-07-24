@@ -11,12 +11,12 @@ ms.subservice: msi
 manager: markvi
 ms.collection: M365-identity-device-management
 ms.custom: references_regions
-ms.openlocfilehash: 5bf397cac26d3cc46e11f8ac60110629a528cd62
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: 49692c08787103b09e6e1502f7a9a58736239fdf
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86229828"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87019001"
 ---
 # <a name="services-that-support-managed-identities-for-azure-resources"></a>Службы с поддержкой управляемых удостоверений для ресурсов Azure
 
@@ -134,11 +134,11 @@ ms.locfileid: "86229828"
 
 
 
-### <a name="azure-event-grid"></a>Сетка событий Azure. 
+### <a name="azure-event-grid"></a>Сетка событий Azure 
 
 Тип управляемого удостоверения |Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
-| Назначено системой | Preview (Предварительный просмотр) | Недоступно | Недоступно | Недоступно |
+| Назначено системой | Предварительный просмотр | Предварительный просмотр | Недоступно | Preview (Предварительный просмотр) |
 | Назначено пользователем | Недоступно | Недоступно  | Недоступно  | Недоступно |
 
 
@@ -224,7 +224,7 @@ ms.locfileid: "86229828"
 
 ### <a name="azure-service-fabric"></a>Azure Service Fabric
 
-[Управляемое удостоверение для приложений Service Fabric](https://docs.microsoft.com/azure/service-fabric/concepts-managed-identity) доступно в предварительной версии и во всех регионах.
+[Управляемое удостоверение для приложений Service Fabric](https://docs.microsoft.com/azure/service-fabric/concepts-managed-identity) доступно во всех регионах.
 
 Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
@@ -287,7 +287,7 @@ ms.locfileid: "86229828"
 | Назначено пользователем | [Доступно в поддерживаемых регионах](https://docs.microsoft.com/azure/virtual-machines/windows/image-builder-overview#regions) | Недоступно | Недоступно | Недоступно |
 
 Сведения о настройке управляемого удостоверения для построителя образов виртуальных машин Azure (в регионах, где это возможно) см. в разделе [Общие сведения о построителе образов](https://docs.microsoft.com/azure/virtual-machines/windows/image-builder-overview#permissions).
-### <a name="azure-signalr-service"></a>Служба Azure SignalR
+### <a name="azure-signalr-service"></a>Служба SignalR Azure
 
 Тип управляемого удостоверения | Все общедоступные версии<br>Глобальные регионы Azure | Azure для государственных организаций | Azure для Германии | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |

@@ -11,11 +11,12 @@ ms.topic: end-user-help
 ms.date: 01/24/2019
 ms.author: curtand
 ms.reviewer: olhaun
-ms.openlocfilehash: b6bda6d35391543e416c377557e34de317e293eb
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 04076ed5b91f8e840a084b784477d07eea5adee7
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83741572"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87015976"
 ---
 # <a name="add-non-microsoft-accounts-to-the-microsoft-authenticator-app"></a>Добавление учетных записей сторонних поставщиков в приложение Microsoft Authenticator
 
@@ -49,7 +50,7 @@ ms.locfileid: "83741572"
 
 ### <a name="add-your-google-account-to-the-app"></a>Добавление учетной записи Google в приложение
 
-1. Откройте на компьютере страницу Google, перейдите в раздел **Set up alternative second step** (Настроить дополнительный второй шаг) и выберите **Настройка** из раздела **Приложение для проверки подлинности**.
+1. На странице Безопасность учетной записи Google на компьютере ( https://myaccount.google.com/security) перейдите к разделу **Добавление дополнительных шагов, чтобы проверить его** , выберите пункт **Настройка** в **приложении проверки подлинности** .
 
 2. На странице **Get codes from the Authenticator app** (Получить коды из приложения Authenticator) выберите **Android** или **iPhone** в зависимости от типа вашего телефона, а затем щелкните **Next** (Далее).
 

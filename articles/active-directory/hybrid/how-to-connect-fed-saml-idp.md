@@ -14,12 +14,12 @@ ms.date: 07/13/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c8559ba3bf78b6adc8e6ca3d3c628cd3c0b9fec0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 274f603fa0d7a48b99a7caed5d465d44bc68e9ca
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85359710"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87019970"
 ---
 #  <a name="use-a-saml-20-identity-provider-idp-for-single-sign-on"></a>Использование поставщика удостоверений (IdP) SAML 2.0 для единого входа
 
@@ -250,7 +250,7 @@ ms.locfileid: "85359710"
 
 С помощью Azure AD Connect можно подготавливать субъектов-пользователей для доменов каталога Azure AD из локальной службы Active Directory. Дополнительные сведения см. в статье [Интеграция локальных каталогов с Azure Active Directory](whatis-hybrid-identity.md).
 
-С помощью Windows PowerShell также можно автоматизировать добавление новых пользователей в Azure AD и синхронизировать изменения из локального каталога. Для использования командлетов Windows PowerShell необходимо скачать [модули Azure Active Directory](https://docs.microsoft.com/powershell/azure/install-adv2?view=azureadps-2.0).
+С помощью Windows PowerShell также можно автоматизировать добавление новых пользователей в Azure AD и синхронизировать изменения из локального каталога. Для использования командлетов Windows PowerShell необходимо скачать [модули Azure Active Directory](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0).
 
 Ниже приведена процедура добавления отдельного пользователя в Azure AD.
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по настройке входящей подготовки SuccessFactors в Azure Active Directory | Документация Майкрософт
+title: Руководство по настройке входящей подготовки SuccessFactors в AD и Azure AD | Документация Майкрософт
 description: Узнайте, как настроить входящую подготовку из SuccessFactors.
 services: active-directory
 author: cmmdesai
@@ -14,11 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 12/05/2019
 ms.author: chmutali
-ms.openlocfilehash: d9317a68c8967fbe0728e8c47e59dd33367c6163
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 77b4336fd9430b523f4f9fa288b7451117f7e0c5
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84702181"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87016978"
 ---
 # <a name="tutorial-configure-sap-successfactors-to-active-directory-user-provisioning-preview"></a>Руководство. Настройка SAP SuccessFactors для Active Directory подготовки пользователей (Предварительная версия)
 Цель этого учебника — продемонстрировать шаги, которые необходимо выполнить, чтобы подготовить пользователей из SuccessFactors Employee Central к Active Directory (AD) и Azure AD с дополнительным адресом электронной почты для SuccessFactors. Эта интеграция доступна в общедоступной предварительной версии и поддерживает получение более [70 атрибутов пользователей](../app-provisioning/sap-successfactors-attribute-reference.md) из SuccessFactors Employee Central.
@@ -356,7 +357,7 @@ SuccessFactors решение Active Directory для подготовки по�
    > [!div class="mx-imgBorder"]
    > ![Индикатор выполнения подготовки](./media/sap-successfactors-inbound-provisioning/prov-progress-bar-stats.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Дополнительные сведения о поддерживаемых атрибутах SuccessFactors для входящей подготовки](../app-provisioning/sap-successfactors-attribute-reference.md)
 * [Узнайте, как настроить обратную запись электронной почты в SuccessFactors](sap-successfactors-writeback-tutorial.md)

@@ -6,12 +6,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/12/2019
 ms.author: raynew
-ms.openlocfilehash: 6759b2c0f679a865d0bdcf8ea8cd39f258a9cf25
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: dfbdff01064b483085233ece47d1d3b635b68743
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86132119"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87021466"
 ---
 # <a name="about-disaster-recovery-of-vmware-vms-to-azure"></a>Сведения об аварийном восстановлении виртуальных машин VMware в Azure
 
@@ -23,6 +23,9 @@ ms.locfileid: "86132119"
 
 - [Azure Backup](../backup/backup-overview.md) позволяет создавать резервные копии локальных данных и данных виртуальной машины Azure. Вы можете выполнять архивацию файлов и папок, конкретных рабочих нагрузок или всей виртуальной машины. 
 - [Azure Site Recovery](site-recovery-overview.md) обеспечивает устойчивость и аварийное восстановление для приложений и рабочих нагрузок, выполняющихся на локальных компьютерах или виртуальных машинах IaaS Azure. Site Recovery управляет репликацией и выполняет отработку отказа в Azure при возникновении сбоев. Эта служба также выполняет восстановление из Azure на основной сайт. 
+
+> [!NOTE]
+> Site Recovery не будет перемещать или хранить данные клиента из целевого региона, в котором было настроено аварийное восстановление для исходных компьютеров. Клиенты могут выбрать хранилище служб восстановления из другого региона, если это необходимо. Хранилище служб восстановления содержит метаданные, но не имеет фактических данных клиента.
 
 ## <a name="how-does-site-recovery-do-disaster-recovery"></a>Каким образом служба Site Recovery выполняет аварийное восстановление?
 

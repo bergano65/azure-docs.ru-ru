@@ -2,25 +2,22 @@
 title: Использование ограничений клиентов для управления доступом к приложениям SaaS в Azure AD
 description: Сведения об использовании ограничений клиентов для управления доступом пользователей к приложениям на основе их клиента Azure AD.
 services: active-directory
-documentationcenter: ''
 author: kenwith
 manager: celestedg
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/28/2019
 ms.author: kenwith
-ms.reviewer: richagi
+ms.reviewer: hpsin
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cd302791aa783f1a95d48f666366aa845fcaadbb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ae90a682ea2d1abb8159ec28ed02ed122494f512
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84763029"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87019256"
 ---
 # <a name="use-tenant-restrictions-to-manage-access-to-saas-cloud-applications"></a>Использование ограничений клиентов для управления доступом к облачным приложениям SaaS
 
@@ -101,7 +98,7 @@ ms.locfileid: "84763029"
 
 2. В области слева выберите **Azure Active Directory**. Появится страница с общими сведениями об Azure Active Directory.
 
-3. В окне заголовка **Другие возможности** выберите **Ограничения клиента**.
+3. На странице Обзор выберите **ограничения клиента**.
 
 Администратор клиента, для которого задан контекст Restricted-Access-Context, может использовать этот отчет, чтобы просматривать попытки входа, заблокированные из-за политики ограничения клиентов, включая использованное удостоверение и идентификатор целевого каталога. Входы отображаются, если на клиенте установлено соответствующее ограничение для клиента пользователя или ресурса.
 

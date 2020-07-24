@@ -8,11 +8,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/18/2019
-ms.openlocfilehash: 78dde3f6706ecbc54daca162ac718911752fa0ca
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: c79d810979641d1dc128c741c2124d9b5887aa3d
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83832968"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87020752"
 ---
 # <a name="common-query-patterns-in-azure-stream-analytics"></a>Общие шаблоны запросов в Azure Stream Analytics
 
@@ -83,7 +84,7 @@ FROM Input
 ```
 ## <a name="data-aggregation-over-time"></a>Агрегация данных за определенный период времени
 
-Для вычисления данных в пределах временного окна их можно агрегировать. В этом примере количество для каждого конкретного автомобиля вычислено за последние 10 минут.
+Для вычисления данных в пределах временного окна их можно агрегировать. В этом примере число вычислено за последние 10 секунд для каждого конкретного автомобиля.
 
 **Входные данные**
 

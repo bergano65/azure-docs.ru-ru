@@ -14,11 +14,12 @@ ms.author: curtand
 ms.reviewer: elkuzmen
 ms.custom: it-pro;seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0cd2de0929b22dda6e566316c4eda966d8d62e24
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d2ccf986f81ec3abed54c85640b8afb1c5cf7172
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84732656"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87015890"
 ---
 # <a name="take-over-an-unmanaged-directory-as-administrator-in-azure-active-directory"></a>Смена неуправляемого каталога от имени администратора в Azure Active Directory
 
@@ -31,7 +32,7 @@ ms.locfileid: "84732656"
 
 * При выполнении ["внешней" перенаправление администратора](#external-admin-takeover) для неуправляемого каталога Azure вы добавляете доменное имя DNS неуправляемого каталога в управляемый каталог Azure. После добавления доменного имени в управляемом каталоге Azure создается сопоставление пользователей с ресурсами, чтобы пользователи могли продолжать обращаться к службам без прерываний. 
 
-## <a name="internal-admin-takeover"></a>Внутренняя смена администратором
+## <a name="internal-admin-takeover"></a>Внутренняя передача контроля
 
 Некоторые продукты, включающие SharePoint и OneDrive, например Office 365, не поддерживают внешнюю смену. Если это ваш сценарий или вы являетесь администратором и хотите получить доступ к неуправляемой или "теневой" Организации Azure AD, создав пользователей, которые использовали самостоятельную регистрацию, это можно сделать с помощью внутреннего перенаправление администратора.
 
@@ -73,7 +74,7 @@ ms.locfileid: "84732656"
 > [!NOTE]
 > Все пользователи Power BI или службы Rights Management Azure, у которых есть лицензии, назначенные в организации Office 365, должны сохранять свои панели мониторинга при удалении доменного имени. Они должны выполнить вход с именем пользователя, например *user \@ fourthcoffeexyz.onmicrosoft.com* , а не *user \@ FourthCoffee. XYZ*.
 
-## <a name="external-admin-takeover"></a>Внешняя смена администратором
+## <a name="external-admin-takeover"></a>Внешняя передача контроля
 
 Если вы уже управляете организацией с помощью служб Azure или Office 365, вы не можете добавить пользовательское доменное имя, если оно уже проверено в другой организации Azure AD. Однако из вашей управляемой организации в Azure AD вы можете использовать неуправляемую организацию в качестве внешней перенаправление администратора. Общая процедура соответствует той, которая описана в статье [Краткое руководство. Добавление личного домена в Azure Active Directory](../fundamentals/add-custom-domain.md).
 
@@ -86,7 +87,7 @@ ms.locfileid: "84732656"
 ### <a name="support-for-external-admin-takeover"></a>Поддержка внешней смены администратором
 Внешняя смена администратором поддерживается следующими веб-службами:
 
-- управление правами Azure;
+- Azure Rights Management
 - Exchange Online
 
 Поддерживаемые планы обслуживания:
@@ -143,12 +144,12 @@ ms.locfileid: "84732656"
    ```powershell
    Get-MsolDomainVerificationDns –DomainName *your_domain_name* –Mode DnsTxtRecord
    ```
-    Пример:
+    Например.
    ```
    Get-MsolDomainVerificationDns –DomainName contoso.com –Mode DnsTxtRecord
    ```
 
-4. Скопируйте значение (запрос защиты), которое возвращает эта команда. Пример:
+4. Скопируйте значение (запрос защиты), которое возвращает эта команда. Например.
    ```powershell
    MS=32DD01B82C05D27151EA9AE93C5890787F0E65D9
    ```
@@ -159,7 +160,7 @@ ms.locfileid: "84732656"
    Confirm-MsolDomain –DomainName *your_domain_name* –ForceTakeover Force
    ```
   
-   Пример:
+   Например.
   
    ```powershell
    Confirm-MsolDomain –DomainName contoso.com –ForceTakeover Force
@@ -170,8 +171,8 @@ ms.locfileid: "84732656"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Добавление имени личного домена в Azure Active Directory](../fundamentals/add-custom-domain.md)
-* [Как установить и настроить Azure PowerShell](/powershell/azure/overview)
-* [Azure PowerShell](/powershell/azure/overview)
+* [Как установить и настроить Azure PowerShell](/powershell/azure/)
+* [Azure PowerShell](/powershell/azure/)
 * [Справка по командлетам Azure](/powershell/azure/get-started-azureps)
 * [Set-MsolCompanySettings](/powershell/module/msonline/set-msolcompanysettings?view=azureadps-1.0)
 

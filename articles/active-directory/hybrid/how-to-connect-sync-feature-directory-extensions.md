@@ -16,12 +16,12 @@ ms.date: 11/12/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3afec7c31488529af9ba15100c914899a0d1d808
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d64bfe66f5fb871ff9f85a5d58d128ac44643846
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85357466"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87019767"
 ---
 # <a name="azure-ad-connect-sync-directory-extensions"></a>Синхронизация Azure AD Connect: расширения каталогов
 Расширения каталогов можно использовать для расширения схемы в Azure Active Directory (Azure AD) с помощью собственных атрибутов из локального каталога Active Directory. Эта функция позволяет создавать бизнес-приложения с помощью атрибутов, которыми вы по-прежнему можете управлять локально. Эти атрибуты можно использовать с помощью [расширений](https://docs.microsoft.com/graph/extensibility-overview
@@ -33,8 +33,8 @@ ms.locfileid: "85357466"
 
 Дополнительные атрибуты для синхронизации выбираются в разделе пользовательских параметров мастера установки.
 
->[!NOTE]
->Значения в поле доступных атрибутов следует вводить с учетом регистра.
+> [!NOTE]
+> В Azure AD Connect версиях, предшествующих 1.2.65.0, в поле поиска для **доступных атрибутов** учитывается регистр.
 
 ![Мастер расширения схемы](./media/how-to-connect-sync-feature-directory-extensions/extension2.png)  
 
@@ -93,7 +93,7 @@ ms.locfileid: "85357466"
 
    ![Снимок экрана с элементами в динамической группе](./media/how-to-connect-sync-feature-directory-extensions/dynamicgroup4.png)  
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте больше о настройке [службы синхронизации Azure AD Connect](how-to-connect-sync-whatis.md) .
 
 Узнайте больше об [интеграции локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).

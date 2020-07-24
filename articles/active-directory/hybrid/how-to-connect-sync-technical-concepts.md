@@ -16,19 +16,19 @@ ms.date: 01/15/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 251d156afbd367e83945397760a6afe98a1cfb98
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 01e53b30a4c27296e30e031ffb771697afa8e1e9
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85356939"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87019681"
 ---
 # <a name="azure-ad-connect-sync-technical-concepts"></a>Синхронизация Azure AD Connect: технические концепции
 В этой статье приводится сводка раздела [Основные сведения об архитектуре](how-to-connect-sync-technical-concepts.md).
 
 Служба синхронизации Azure AD Connect основана на устойчивой платформе синхронизации метакаталогов.
 В следующих разделах описываются основные понятия синхронизации метакаталогов.
-Основывающиеся на MIIS, ILM и FIM, службы синхронизации Azure Active Directory предоставляют следующую платформу для подключения к источникам данных, синхронизации данных между источниками данных, а также для подготовки и отзыва удостоверений.
+Сборка на базе MIIS (сервер интеграции идентификации Майкрософт), ILM (Диспетчер жизненного цикла удостоверений) и FIM (Forefront Identity Manager) службы Azure Active Directory Sync предоставляют следующую платформу для подключения к источникам данных, синхронизации данных между источниками данных, а также подготовки и отмены инициализации удостоверений.
 
 ![Технические концепции](./media/how-to-connect-sync-technical-concepts/scenario.png)
 

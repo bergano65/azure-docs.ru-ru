@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 11/19/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8679f9a03fded546db68f058bca716ba053aa0fe
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5884685f12c4697558a008287f446e52e5105d3b
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "73161208"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87016791"
 ---
 # <a name="atlassian-jira-and-confluence-admin-guide-for-azure-active-directory"></a>Atlassian JIRA и Confluence в руководстве администратора для Azure Active Directory
 
@@ -28,7 +28,7 @@ ms.locfileid: "73161208"
 
 Подключаемый модуль единого входа Azure Active Directory (Azure AD) позволяет пользователям использовать рабочую или учебную учетную запись для входа в Atlassian Jira и продукты Confluence на основе сервера. Этот модуль реализует единый вход на основе SAML 2.0.
 
-## <a name="how-it-works"></a>Принцип работы
+## <a name="how-it-works"></a>Принципы работы
 
 При входе в приложение Atlassian Jira или Confluence пользователи видят кнопку **Login with Azure AD** (Войти с помощью Azure AD) на странице входа. Если они нажмут эту кнопку, им потребуется выполнить вход с помощью страницы для входа в Azure AD организации (то есть их рабочей или учебной учетной записи).
 
@@ -54,7 +54,7 @@ ms.locfileid: "73161208"
 * Приложения Jira или Confluence также доступны вне сети компании.
 * Подключаемый модуль работает только с локальными версиями Jira и Confluence.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Прежде чем начать установку подключаемого модуля, убедитесь в выполнении следующих требований.
 
@@ -139,7 +139,7 @@ ms.locfileid: "73161208"
 
 * **Enable Single Signout** (Включение единого выхода). Позволяет выбрать, нужно ли выходить из Azure AD, когда пользователь выходит из системы Jira или Confluence.
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 
 * **Получено несколько ошибок сертификата**. Войдите в Azure AD и удалите несколько сертификатов, которые доступны для приложения. Оставьте только один сертификат.
 
@@ -147,7 +147,7 @@ ms.locfileid: "73161208"
 
 * **Необходимо отключить WebSudo (отключение безопасного сеанса администратора)**.
 
-  * Для Jira безопасные сеансы администратора (то есть подтверждение пароля перед доступом к функциям администрирования) включены по умолчанию. Если вы хотите удалить эту возможность в вашем экземпляре Jira, укажите следующую строку в файле jira-config.properties: `ira.websudo.is.disabled = true`
+  * Для Jira безопасные сеансы администратора (то есть подтверждение пароля перед доступом к функциям администрирования) включены по умолчанию. Если вы хотите удалить эту возможность в вашем экземпляре Jira, укажите следующую строку в файле jira-config.properties: `jira.websudo.is.disabled = true`
 
   * Для Confluence выполните действия, указанные на [сайте технической поддержки Confluence](https://confluence.atlassian.com/doc/configuring-secure-administrator-sessions-218269595.html).
 

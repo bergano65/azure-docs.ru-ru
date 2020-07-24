@@ -6,11 +6,12 @@ ms.service: storsimple
 ms.topic: how-to
 ms.date: 10/03/2017
 ms.author: alkohli
-ms.openlocfilehash: 009e8c7e1cb59d68f3d3aa15de32ec47083095f9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3b9a7bf243931443b8273253dee7618c0e594aaf
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85513102"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87020871"
 ---
 # <a name="use-azure-resource-manager-sdk-based-scripts-to-manage-storsimple-devices"></a>Использование сценариев Azure Resource Manager для управления устройствами StorSimple на основе пакета SDK
 
@@ -24,7 +25,7 @@ ms.locfileid: "85513102"
 
 #### <a name="table-of-azure-resource-manager-sdk-based-sample-scripts"></a>Таблица сценариев на основе пакета SDK для Azure Resource Manager
 
-| Сценарии Azure Resource Manager                    | Описание:                                                                                                                                                                                                       |
+| Сценарии Azure Resource Manager                    | Описание                                                                                                                                                                                                       |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Authorize-ServiceEncryptionRollover.ps1](https://raw.githubusercontent.com/anoobbacker/storsimpledevicemgmttools/master/Authorize-ServiceEncryptionRollover.ps1)          | Этот сценарий позволяет авторизовать устройство StorSimple для изменения ключей шифрования данных службы.                                                                                                           |
 | [Create-StorSimpleCloudAppliance.ps1](https://raw.githubusercontent.com/anoobbacker/storsimpledevicemgmttools/master/Create-StorSimpleCloudAppliance.ps1)              | В этом сценарии создается облачное устройство StorSimple 8010 или 8020. Затем можно настроить и зарегистрировать облачное устройство в службе диспетчера данных StorSimple.                                                       |
@@ -48,13 +49,13 @@ ms.locfileid: "85513102"
 
 В этом разделе приведен пример сценария и подробно описаны различные шаги, необходимые для его запуска.
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Обязательные условия
 
 Перед началом работы убедитесь, что у вас есть следующие компоненты:
 
 *   Azure PowerShell установлен. Чтобы установить модули Azure PowerShell, сделайте следующее:
-    * В среде Windows следуйте инструкциям в статье [Установка и настройка Azure PowerShell](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps). Если необходимо, вы можете установить Azure PowerShell на узле Windows Server для StorSimple.
-    * В среде Linux или MacOS следуйте инструкциям в статье [Установка и настройка Azure PowerShell в macOS и Linux](https://docs.microsoft.com/powershell/azure/azurerm/install-azurermps-maclinux).
+    * В среде Windows следуйте инструкциям в статье [Установка и настройка Azure PowerShell](/powershell/azure/install-az-ps). Если необходимо, вы можете установить Azure PowerShell на узле Windows Server для StorSimple.
+    * В среде Linux или MacOS следуйте инструкциям в статье [Установка и настройка Azure PowerShell в macOS и Linux](/powershell/azure/install-az-ps).
 
 Дополнительные сведения об использовании Azure PowerShell см. в статье [Начало работы с Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps).
 
@@ -165,6 +166,6 @@ PS C:\Scripts\StorSimpleSDKTools>
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Использование службы диспетчера устройств StorSimple для администрирования устройства StorSimple](storsimple-8000-manager-service-administration.md).

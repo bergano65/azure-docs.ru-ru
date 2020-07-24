@@ -12,12 +12,12 @@ ms.date: 05/18/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit
-ms.openlocfilehash: b9ea9e756587af124ca94518d9f15271310ddee3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3baa659d454a24a132eda914d50acddbd5df8a90
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85389384"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87020072"
 ---
 # <a name="register-a-saml-application-in-azure-ad-b2c"></a>Регистрация приложения SAML в Azure AD B2C
 
@@ -353,6 +353,51 @@ Azure AD B2C обеспечивает взаимодействие с SAML од�
 * Укажите URI издателя: `https://contoso.onmicrosoft.com/app-name`.
 
 Выберите **Вход** — отобразится экран входа для пользователей. После входа утверждение SAML возвращается в пример приложения.
+
+## <a name="enable-encypted-assertions"></a>Включить утверждения зашифровано
+Для шифрования утверждений SAML, отправляемых обратно поставщику услуг, Azure AD B2C будет использовать сертификат открытого ключа поставщика услуг. Открытый ключ должен существовать в метаданных SAML, описанных в приведенном выше [разделе "самлметадатаурл"](#samlmetadataurl) , как кэйдескриптор с использованием шифрования.
+
+Ниже приведен пример Кэйдескриптор метаданных SAML с помощью параметра use для шифрования:
+
+```xml
+<KeyDescriptor use="encryption">
+  <KeyInfo xmlns="https://www.w3.org/2000/09/xmldsig#">
+    <X509Data>
+      <X509Certificate>valid certificate</X509Certificate>
+    </X509Data>
+  </KeyInfo>
+</KeyDescriptor>
+```
+
+Чтобы включить Azure AD B2C для отправки зашифрованных утверждений, задайте для элемента метаданных **вантсенкриптедассертион** значение true в техническом профиле проверяющей стороны, как показано ниже.
+
+```xml
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TrustFrameworkPolicy
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns="http://schemas.microsoft.com/online/cpim/schemas/2013/06"
+  PolicySchemaVersion="0.3.0.0"
+  TenantId="contoso.onmicrosoft.com"
+  PolicyId="B2C_1A_signup_signin_saml"
+  PublicPolicyUri="http://contoso.onmicrosoft.com/B2C_1A_signup_signin_saml">
+ ..
+ ..
+  <RelyingParty>
+    <DefaultUserJourney ReferenceId="SignUpOrSignIn" />
+    <TechnicalProfile Id="PolicyProfile">
+      <DisplayName>PolicyProfile</DisplayName>
+      <Protocol Name="SAML2"/>
+      <Metadata>
+          <Item Key="WantsEncryptedAssertions">true</Item>
+      </Metadata>
+     ..
+     ..
+     ..
+    </TechnicalProfile>
+  </RelyingParty>
+</TrustFrameworkPolicy>
+```
 
 ## <a name="sample-policy"></a>Пример политики
 

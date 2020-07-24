@@ -1,5 +1,5 @@
 ---
-title: Устранение неполадок с подключением к службе Виртуального рабочего стола Windows (Azure)
+title: Устранение неполадок подключения к службе Windows Virtual Desktop пружины 2020 — Azure
 description: Сведения об устранении проблем при настройке клиентских подключений в среде клиента Виртуального рабочего стола Windows.
 services: virtual-desktop
 author: Heidilohr
@@ -8,12 +8,12 @@ ms.topic: troubleshooting
 ms.date: 06/19/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 56a31caeefb3589527fdbbac118fa3a544a0d1a1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9aced0e420826cd73526a54da728c20d8d8e0142
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85208899"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87020429"
 ---
 # <a name="windows-virtual-desktop-service-connections"></a>Подключения к службе Виртуального рабочего стола Windows
 

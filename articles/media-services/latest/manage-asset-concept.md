@@ -13,16 +13,16 @@ ms.topic: article
 ms.date: 03/26/2020
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 9136fd702fad5c12a8ec97a68ff8a592a203d7d2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6accd303ba11c4c1406c7a157fa8176972fc7a3a
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80582198"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87022913"
 ---
 # <a name="manage-assets"></a>Управление активами
 
-В службах мультимедиа Azure [ресурс-контейнер](https://docs.microsoft.com/rest/api/media/assets) 
+В службах мультимедиа Azure [ресурс-контейнер](/rest/api/media/assets) 
 
 * Отправка файлов мультимедиа в ресурс
 * прием и архивация динамических потоков в ресурс
@@ -56,13 +56,13 @@ ms.locfileid: "80582198"
     ```
 2. Получите URL-адрес SAS с разрешениями на чтение и запись, которые будут использоваться для передачи цифровых файлов в контейнер ресурса.
 
-    Можно использовать API Служб мультимедиа для вывода [списка URL-адресов контейнеров ресурса](https://docs.microsoft.com/rest/api/media/assets/listcontainersas).
+    Можно использовать API Служб мультимедиа для вывода [списка URL-адресов контейнеров ресурса](/rest/api/media/assets/listcontainersas).
 
-    **Ассетконтаинерсас. листконтаинерсас** принимает параметр [листконтаинерсасинпут](https://docs.microsoft.com/rest/api/media/assets/listcontainersas#listcontainersasinput) , для которого задано значение `expiryTime` . Время должно быть установлено в < 24 часа.
+    **Ассетконтаинерсас. листконтаинерсас** принимает параметр [листконтаинерсасинпут](/rest/api/media/assets/listcontainersas#listcontainersasinput) , для которого задано значение `expiryTime` . Время должно быть установлено в < 24 часа.
 
-    [Листконтаинерсасинпут](https://docs.microsoft.com/rest/api/media/assets/listcontainersas#listcontainersasinput) возвращает несколько URL-адресов SAS, так как для каждой учетной записи хранения существует два ключа учетной записи хранения. Учетная запись хранения имеет два ключа, так как она помогает выполнять отработку отказа и легкое вращение ключей учетной записи хранения. Первый URL-адрес SAS представляет первый ключ учетной записи хранения, а второй URL-адрес SAS — второй ключ.
+    [Листконтаинерсасинпут](/rest/api/media/assets/listcontainersas#listcontainersasinput) возвращает несколько URL-адресов SAS, так как для каждой учетной записи хранения существует два ключа учетной записи хранения. Учетная запись хранения имеет два ключа, так как она помогает выполнять отработку отказа и легкое вращение ключей учетной записи хранения. Первый URL-адрес SAS представляет первый ключ учетной записи хранения, а второй URL-адрес SAS — второй ключ.
 3. Используйте API-интерфейсы или пакеты SDK службы хранилища Azure (например, [REST API](../../storage/common/storage-rest-api-auth.md) или [пакет SDK для .NET](../../storage/blobs/storage-quickstart-blobs-dotnet.md)) для отправки файлов в контейнер ресурсов.
-4. Используйте API Служб мультимедиа версии 3, чтобы создать преобразование и задание для обработки входного ресурса. Дополнительные сведения см. в статье [Преобразования и задания](transform-concept.md).
+4. Используйте API Служб мультимедиа версии 3, чтобы создать преобразование и задание для обработки входного ресурса. Дополнительные сведения см. в статье [Преобразования и задания](./transforms-jobs-concept.md).
 5. Потоковая передача содержимого из выходного ресурса.
 
 ### <a name="create-a-new-asset"></a>Создание ресурса
@@ -76,7 +76,7 @@ ms.locfileid: "80582198"
 PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Media/mediaServices/{amsAccountName}/assets/{assetName}?api-version=2018-07-01
 ```
 
-Пример REST см. в разделе [Создание ресурса с помощью REST](https://docs.microsoft.com/rest/api/media/assets/createorupdate#examples).
+Пример REST см. в разделе [Создание ресурса с помощью REST](/rest/api/media/assets/createorupdate#examples).
 
 В примере показано, как создать **текст запроса** , в котором можно указать описание, имя контейнера, учетную запись хранения и другие полезные сведения.
 
@@ -100,18 +100,18 @@ curl -X PUT \
  Asset asset = await client.Assets.CreateOrUpdateAsync(resourceGroupName, accountName, assetName, new Asset());
 ```
 
-### <a name="see-also"></a>См. также раздел
+### <a name="see-also"></a>См. также статью
 
 * [Создание входных данных задания из локального файла](job-input-from-local-file-how-to.md)
 * [Создание входных данных задания из URL-адреса HTTPS](job-input-from-http-how-to.md)
 
 ## <a name="ingest-and-archive-live-streams-into-an-asset"></a>Прием и архивация динамических потоков в ресурс
 
-В службах мультимедиа выходной объект в [реальном времени](https://docs.microsoft.com/rest/api/media/liveoutputs) подобен цифровому видеозаписывающему, который будет перехватывать и записывать Ваш динамический поток в ресурс в учетной записи служб мультимедиа. Записанное содержимое сохраняется в контейнере [, определенном ресурсом](https://docs.microsoft.com/rest/api/media/assets) ресурса.
+В службах мультимедиа выходной объект в [реальном времени](/rest/api/media/liveoutputs) подобен цифровому видеозаписывающему, который будет перехватывать и записывать Ваш динамический поток в ресурс в учетной записи служб мультимедиа. Записанное содержимое сохраняется в контейнере [, определенном ресурсом](/rest/api/media/assets) ресурса.
 
 Дополнительные сведения можно найти в разделе
 
-* [Использование DVR в облаке](live-event-cloud-dvr.md)
+* [Использование средства цифровой видеозаписи в облаке](live-event-cloud-dvr.md)
 * [Руководство по потоковой передаче Live](stream-live-tutorial-with-api.md)
 
 ## <a name="output-the-results-of-a-job-to-an-asset"></a>Вывод результатов задания в ресурс-контейнер
@@ -129,7 +129,7 @@ curl -X PUT \
 
 Дополнительные сведения можно найти в разделе
 
-[Учебник. Отправка, кодирование и потоковая передача видео со службами мультимедиа v3](stream-files-tutorial-with-api.md)
+[Руководство по Отправка, кодировка и потоковая передача видео с помощью Служб мультимедиа версии 3](stream-files-tutorial-with-api.md)
 
 ## <a name="download-results-of-a-job-from-an-output-asset"></a>Скачивание результатов задания из выходного ресурса
 
@@ -145,6 +145,6 @@ curl -X PUT \
 
 Ознакомьтесь с полными примерами кода, демонстрирующими передачу, кодирование, анализ, потоковую передачу и по запросу: 
 
-* [Java](https://docs.microsoft.com/samples/azure-samples/media-services-v3-java/azure-media-services-v3-samples-using-java/), 
-* [.NET](https://docs.microsoft.com/samples/azure-samples/media-services-v3-dotnet/azure-media-services-v3-samples-using-net/), 
-* [Остальные](https://docs.microsoft.com/samples/azure-samples/media-services-v3-rest-postman/azure-media-services-postman-collection/).
+* [Java](/samples/azure-samples/media-services-v3-java/azure-media-services-v3-samples-using-java/), 
+* [.NET](/samples/azure-samples/media-services-v3-dotnet/azure-media-services-v3-samples-using-net/), 
+* [Остальные](/samples/azure-samples/media-services-v3-rest-postman/azure-media-services-postman-collection/).

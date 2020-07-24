@@ -3,24 +3,24 @@ title: Как использовать хранилище очередей (C++)
 description: Узнайте, как использовать службу хранилища очередей в Azure. Примеры написаны на C++.
 author: mhopkins-msft
 ms.author: mhopkins
-ms.date: 05/11/2017
+ms.date: 07/16/2020
 ms.service: storage
 ms.subservice: queues
 ms.topic: how-to
 ms.reviewer: dineshm
-ms.openlocfilehash: 0ae099e74db3137be49d59d01c83807108bf370f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6a4f8b99be564779b350bff2ab5b37f3c7ccc6f2
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84809260"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87020986"
 ---
 # <a name="how-to-use-queue-storage-from-c"></a>Использование хранилища очередей из C++
 [!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]
 
 [!INCLUDE [storage-try-azure-tools-queues](../../../includes/storage-try-azure-tools-queues.md)]
 
-## <a name="overview"></a>Общие сведения
+## <a name="overview"></a>Обзор
 В этом руководстве показано, как реализовать типичные сценарии с использованием службы хранения очередей Azure. Примеры написаны на C++ и используют [клиентскую библиотеку хранилища Azure для C++](https://github.com/Azure/azure-storage-cpp/blob/master/README.md). Здесь описаны такие сценарии, как **вставка**, **просмотр**, **получение** и **удаление** сообщений очереди, а также **создание и удаление очередей**.
 
 > [!NOTE]
@@ -40,7 +40,7 @@ ms.locfileid: "84809260"
 Чтобы установить клиентскую библиотеку хранилища для C++, можно использовать следующие методы.
 
 * **Linux:** Следуйте инструкциям, приведенным в [файле сведений о клиентской библиотеке хранилища Azure для C++ README: Начало работы на странице Linux](https://github.com/Azure/azure-storage-cpp#getting-started-on-linux) .
-* **Windows:** В Windows используйте [vcpkg](https://github.com/microsoft/vcpkg) в качестве диспетчера зависимостей. Следуйте инструкциям из этого [краткого руководства](https://github.com/microsoft/vcpkg#quick-start), чтобы инициализировать vcpkg. Затем, чтобы установить библиотеку, используйте следующую команду:
+* **Windows:** В Windows используйте [vcpkg](https://github.com/microsoft/vcpkg) в качестве диспетчера зависимостей. Выполните инструкции из [краткого руководства](https://github.com/microsoft/vcpkg#quick-start) , чтобы инициализировать vcpkg. Затем, чтобы установить библиотеку, используйте следующую команду:
 
 ```powershell
 .\vcpkg.exe install azure-storage-cpp
@@ -49,7 +49,7 @@ ms.locfileid: "84809260"
 Руководство по созданию исходного кода и экспорту в NuGet можно найти в файле [сведений](https://github.com/Azure/azure-storage-cpp#download--install) .
 
 ## <a name="configure-your-application-to-access-queue-storage"></a>Настройка приложения для доступа к хранилищу очередей
-Если нужно использовать API-интерфейсы Azure для доступа к очередям, добавьте следующие инструкции импорта в верхнюю часть файла C++.  
+Если нужно использовать API-интерфейсы Azure для доступа к очередям, добавьте следующие инструкции импорта в верхнюю часть файла C++.
 
 ```cpp
 #include <was/storage_account.h>
@@ -57,21 +57,21 @@ ms.locfileid: "84809260"
 ```
 
 ## <a name="set-up-an-azure-storage-connection-string"></a>Настройка строки подключения к хранилищу Azure
-Клиент хранилища Azure использует строку подключения с целью хранения конечных точек и учетных данных для доступа к службам управления данными. При запуске в клиентском приложении необходимо указать строку подключения для хранилища в следующем формате (в качестве параметров *AccountName* и *AccountKey* укажите имя и ключ доступа своей учетной записи хранения, их можно получить на [портале Azure](https://portal.azure.com)). Сведения о учетных записях хранения и ключах доступа см. в статье [об учетных записях хранения Azure](../common/storage-create-storage-account.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json). В этом примере показано, как объявить статическое поле для размещения строки подключения:  
+Клиент хранилища Azure использует строку подключения с целью хранения конечных точек и учетных данных для доступа к службам управления данными. При запуске в клиентском приложении необходимо указать строку подключения к хранилищу в следующем формате, используя имя учетной записи хранения и ключ доступа к хранилищу для учетной записи хранения, указанной в [портал Azure](https://portal.azure.com) для значений *AccountName* и *AccountKey* . Сведения о учетных записях хранения и ключах доступа см. в статье [об учетных записях хранения Azure](../common/storage-create-storage-account.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json). В этом примере показано, как объявить статическое поле для размещения строки подключения:
 
 ```cpp
 // Define the connection-string with your values.
 const utility::string_t storage_connection_string(U("DefaultEndpointsProtocol=https;AccountName=your_storage_account;AccountKey=your_storage_account_key"));
 ```
 
-Чтобы протестировать приложение на локальном компьютере Windows, можно использовать [эмулятор хранения](../common/storage-use-emulator.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json) Microsoft Azure, установленный вместе с [пакетом SDK Azure](https://azure.microsoft.com/downloads/). Эмулятор хранения — это программа, моделирующая службы больших двоичных объектов, очередей и таблиц, доступных в Azure на локальном компьютере разработки. В следующем примере показано, как объявить статическое поле для размещения строки подключения для эмулятора локального хранилища.  
+Чтобы протестировать приложение на локальном компьютере Windows, можно использовать [эмулятор хранения азурите](../common/storage-use-azurite.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json). Азурите — это служебная программа, имитирующая службы BLOB-объектов и очередей, доступные в Azure на локальном компьютере разработки. В следующем примере показано, как объявить статическое поле для размещения строки подключения для эмулятора локального хранилища.
 
 ```cpp
-// Define the connection-string with Azure Storage Emulator.
+// Define the connection-string with Azurite.
 const utility::string_t storage_connection_string(U("UseDevelopmentStorage=true;"));  
 ```
 
-Чтобы запустить эмулятор хранения Azure, нажмите кнопку **Пуск** или клавишу **Windows**. Начните набирать **эмулятор хранения Azure** и выберите **эмулятор хранения Microsoft Azure** из списка приложений.
+Сведения о запуске Азурите см. в статье [использование эмулятора азурите для локальной разработки службы хранилища Azure](../common/storage-use-azurite.md).
 
 В приведенных ниже примерах предполагается, что вы использовали одно из этих двух определений для получения строки подключения к хранилищу.
 

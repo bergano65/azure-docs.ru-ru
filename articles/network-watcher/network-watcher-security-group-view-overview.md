@@ -1,6 +1,6 @@
 ---
-title: Общие сведения о представлении групп безопасности в Наблюдателе за сетями Azure | Документация Майкрософт
-description: Эта страница содержит обзор представления системы безопасности в Наблюдателе за сетями.
+title: Общие сведения о действующем представлении правил безопасности в наблюдателе за сетями Azure | Документация Майкрософт
+description: На этой странице представлен обзор возможностей представления "наблюдатель за сетями — действующие правила безопасности"
 services: network-watcher
 documentationcenter: na
 author: damendo
@@ -11,11 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/26/2017
 ms.author: damendo
-ms.openlocfilehash: 18619cc0f7a21a39d0802575c484c68c5fa1a624
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f4c601184a060c3dfc4f033bcf983bf773f7167f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76840763"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87022656"
 ---
 # <a name="introduction-to-effective-security-rules-view-in-azure-network-watcher"></a>Общие сведения о действующем представлении правил безопасности в наблюдателе за сетями Azure
 
@@ -31,7 +32,12 @@ ms.locfileid: "76840763"
 
 ![Детализация][2]
 
-### <a name="next-steps"></a>Дальнейшие шаги
+### <a name="next-steps"></a>Дальнейшие действия
+
+Вы также можете использовать *эффективные группы безопасности* с помощью других методов, перечисленных ниже.
+* [REST API](https://docs.microsoft.com/rest/api/virtualnetwork/NetworkInterfaces/ListEffectiveNetworkSecurityGroups)
+* [PowerShell](https://docs.microsoft.com/powershell/module/az.network/get-azeffectivenetworksecuritygroup?view=azps-4.4.0)
+* [Azure CLI](https://docs.microsoft.com/cli/azure/network/nic?view=azure-cli-latest#az-network-nic-list-effective-nsg)
 
 Узнайте, как выполнять аудит параметров группы безопасности сети, ознакомившись с разделом [Automate NSG auditing with Azure Network Watcher Security group view](network-watcher-nsg-auditing-powershell.md) (Автоматизация аудита NSG с помощью представления групп безопасности Наблюдателя за сетями Azure).
 
