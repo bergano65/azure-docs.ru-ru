@@ -6,12 +6,13 @@ ms.author: jeanb
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 06/11/2019
-ms.openlocfilehash: 872eec62e7a629d76533aa6c9906cbdb64c32236
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/10/2020
+ms.openlocfilehash: fd741a9401a3936ec02939562e8e85046e829d31
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80745560"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87075919"
 ---
 # <a name="introduction-to-stream-analytics-windowing-functions"></a>Общие сведения о функциях управления окнами Stream Analytics
 
@@ -34,7 +35,8 @@ ms.locfileid: "80745560"
 !["Прыгающее" окно Stream Analytics](media/stream-analytics-window-functions/stream-analytics-window-functions-hopping-intro.png)
 
 ## <a name="sliding-window"></a>"Скользящее" окно
-Функции скользящего окна, в отличие от окон "переворачивающегося" или прыгающее», выдают выходные данные **только** при возникновении события. Каждое окно будет иметь по крайней мере одно событие, и окно постоянно перемещается вперед с помощью ε (Эпсилон). Как и в случае с "прыгающими" окнами, каждое событие может принадлежать к нескольким "скользящим" окнам.
+
+Скользящие окна, в отличие от окон "переворачивающегося" или прыгающее», выводят события только для точек во времени при фактическом изменении содержимого окна. Иными словами, когда событие входит в окно или выходит из него. Каждое окно имеет по крайней мере одно событие, как в случае прыгающее» окон, события могут принадлежать к более чем одному скользящему окну.
 
 !["Скользящее" окно Stream Analytics](media/stream-analytics-window-functions/stream-analytics-window-functions-sliding-intro.png)
 
@@ -49,6 +51,11 @@ ms.locfileid: "80745560"
 
 Если указан ключ секции, то события группируются по ключу, и "сеансовое" окно применяется отдельно к каждой группе. Такое секционирование удобно в случаях, когда требуются разные "сеансовые" окна для различных пользователей или устройств.
 
+## <a name="snapshot-window"></a>окно моментального снимка;
+
+Окна моментального снимка группирует события, имеющие одинаковую метку времени. В отличие от других типов окон, для которых требуется определенная функция окна (например, [сессионвиндов ()](https://docs.microsoft.com/stream-analytics-query/session-window-azure-stream-analytics), можно применить окно моментального снимка, добавив System. timestamp () в предложение GROUP BY.
+
+![Окно моментального снимка Stream Analytics](media/stream-analytics-window-functions/snapshot.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Введение в Azure Stream Analytics](stream-analytics-introduction.md)

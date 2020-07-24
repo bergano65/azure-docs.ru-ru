@@ -3,12 +3,12 @@ title: Поддержка оценки VMware в службе "Миграция 
 description: Узнайте о поддержке оценки виртуальных машин VMware с помощью средства оценки сервера службы "Миграция Azure".
 ms.topic: conceptual
 ms.date: 06/08/2020
-ms.openlocfilehash: 4ca59e3b9eaf62a46ca4df3a582e7b8f290e7da6
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 1c1e349f31f6650c0f0910642d60193ebc0dd3a5
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86108810"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87078006"
 ---
 # <a name="support-matrix-for-vmware-assessment"></a>Таблица поддержки для оценки виртуальных машин VMware 
 
@@ -87,7 +87,7 @@ ms.locfileid: "86108810"
 **Виртуальные машины Windows** | Windows Server 2016<br/> Windows Server 2012 R2<br/> Windows Server 2012<br/> Windows Server 2008 R2 (64-разрядная версия).
 **Учетные данные vCenter Server** | Для визуализации зависимостей требуется учетная запись vCenter Server с доступом только для чтения и разрешения для гостевых операций на виртуальных машинах.
 **Разрешения виртуальной машины Windows** |  Для анализа зависимостей устройству Миграции Azure требуется учетная запись администратора домена или учетная запись локального администратора для доступа к виртуальным машинам Windows.
-**Разрешения виртуальной машины Linux** | Red Hat Enterprise Linux 7, 6, 5<br/> Ubuntu Linux 14.04, 16.04<br/> Debian 7, 8.<br/> Oracle Linux 6, 7<br/> CentOS 5, 6, 7.
+**Виртуальные машины Linux** | Red Hat Enterprise Linux 7, 6, 5<br/> Ubuntu Linux 14.04, 16.04<br/> Debian 7, 8.<br/> Oracle Linux 6, 7<br/> CentOS 5, 6, 7.
 **Учетная запись Linux** | Для анализа зависимостей на компьютерах Linux устройству Миграции Azure требуется учетная запись пользователя с правами root.<br/><br/> Или у учетной записи пользователя должны быть следующие разрешения для файлов /bin/netstat и /bin/ls: CAP_DAC_READ_SEARCH и CAP_SYS_PTRACE.
 **Необходимые агенты** | На компьютерах, которые вы хотите проанализировать, не требуется агент.
 **Средства VMware** | Средства VMware (после версии 10.2) должны быть установлены и запущены на каждой виртуальной машине, которую необходимо проанализировать.

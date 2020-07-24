@@ -5,12 +5,12 @@ ms.assetid: 6223b6bd-84ec-48df-943f-461d84605694
 ms.topic: article
 ms.date: 10/16/2019
 ms.custom: seodec18
-ms.openlocfilehash: d611be27d8d576748019dee46022ca4cb70e966a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b917ef9234ef2e0d36526bc1688dfae2020d6b51
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85253449"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87075480"
 ---
 # <a name="back-up-your-app-in-azure"></a>Резервное копирование приложения в Azure
 Функция архивации и восстановления в [службе приложений Azure](overview.md) позволяет легко создавать резервные копии приложений вручную или по расписанию. Можно настроить бессрочное хранение резервных копий. Вы можете восстановить приложение до моментального снимка предыдущего состояния, перезаписав существующее приложение или восстановив другое.
@@ -159,7 +159,7 @@ ms.locfileid: "85253449"
 
 ## <a name="automate-with-scripts"></a>Автоматизация с помощью сценариев
 
-Управление резервным копированием можно автоматизировать с помощью сценариев, воспользовавшись [Azure CLI](/cli/azure/install-azure-cli) или [Azure PowerShell](/powershell/azure/overview).
+Управление резервным копированием можно автоматизировать с помощью сценариев, воспользовавшись [Azure CLI](/cli/azure/install-azure-cli) или [Azure PowerShell](/powershell/azure/).
 
 Примеры см. в разделах:
 

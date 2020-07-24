@@ -5,15 +5,15 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: how-to
-ms.date: 03/19/2020
+ms.date: 07/16/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 73811aa58b09e394468596f42e0ff221b2bb240b
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 1f813d0ada516f6090b97e5858cefab110636f90
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86262219"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87077604"
 ---
 # <a name="connect-with-the-windows-desktop-client"></a>Подключение к клиенту Windows Desktop
 
@@ -25,7 +25,7 @@ ms.locfileid: "86262219"
 > Обновление Виртуального рабочего стола Windows за весну 2020 года пока предоставляется как общедоступная предварительная версия. без соглашений об уровне обслуживания. Мы не рекомендуем использовать ее для выполнения производственных рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
 > Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-Вы можете получить доступ к ресурсам виртуальных рабочих столов Windows на устройствах с Windows 7, Windows 10 и Windows 10 IoT Корпоративная с помощью настольного клиента Windows.
+Вы можете получить доступ к ресурсам виртуальных рабочих столов Windows на устройствах с Windows 7, Windows 10 и Windows 10 IoT Корпоративная с помощью настольного клиента Windows. Клиент не поддерживает окно 8 или Windows 8.1.
 
 >[!NOTE]
 >Клиент Windows по умолчанию будет выдавать значение 2019 для виртуальных рабочих столов Windows. Однако если клиент обнаруживает, что у пользователя также есть Azure Resource Manager ресурсы, он автоматически добавляет ресурсы или уведомляет пользователя о том, что они доступны.
@@ -69,7 +69,7 @@ ms.locfileid: "86262219"
      - Виртуальный рабочий стол Windows, выпуск за осень 2019 года: `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`
      - Виртуальный рабочий стол Windows, выпуск за весну 2020 года: `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`
    - Если вместо этого вы используете поле **электронной почты** , введите свой адрес электронной почты. Это означает, что клиент будет искать URL-адрес, связанный с вашим адресом электронной почты, если администратор настроил [Обнаружение электронной почты](/windows-server/remote/remote-desktop-services/rds-email-discovery).
-3. Нажмите **Далее**.
+3. Выберите **Далее**.
 4. При появлении запроса войдите в систему со своей учетной записью.
 5. Ресурсы должны отображаться в центре подключений, сгруппированном по рабочим областям.
 

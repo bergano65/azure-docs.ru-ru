@@ -5,15 +5,15 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: conceptual
-ms.date: 07/13/2020
+ms.date: 07/22/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: b7ab9e63bfe92967eca22b60dceec0de882768a6
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 721f9c623255b964e38da1c0f4b7bbf72d0c721d
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86532458"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87075625"
 ---
 # <a name="windows-virtual-desktop-faq"></a>Вопросы и ответы о виртуальных рабочих столах Windows
 
@@ -25,7 +25,7 @@ ms.locfileid: "86532458"
 
 Необходимо назначить роль администратора доступа пользователей в группе приложений, чтобы публиковать группы приложений для пользователей или групп пользователей.
 
-Чтобы запретить администратору управлять сеансами пользователей, например отправлять сообщения пользователям, выписывать пользователей и т. д., можно создавать пользовательские роли. Вот несколько примеров: 
+Чтобы запретить администратору управлять сеансами пользователей, например отправлять сообщения пользователям, выписывать пользователей и т. д., можно создавать пользовательские роли. Например. 
 
 ```powershell
 "actions": [
@@ -62,7 +62,7 @@ Azure Лигхсаусе не полностью поддерживает упр
 
 При запуске командлета PowerShell отображаются только имя и расположение ресурса.
 
-Вот несколько примеров:
+Например.
 
 ```powershell
 Get-AzWvdHostPool -Name 0224hp -ResourceGroupName 0224rg
@@ -74,7 +74,7 @@ westus   0224hp Microsoft.DesktopVirtualization/hostpools
 
 Чтобы просмотреть все свойства ресурса, добавьте либо `format-list` или `fl` в конец командлета.
 
-Вот несколько примеров:
+Например.
 
 ```powershell
 Get-AzWvdHostPool -Name 0224hp -ResourceGroupName 0224rg |fl
@@ -82,7 +82,7 @@ Get-AzWvdHostPool -Name 0224hp -ResourceGroupName 0224rg |fl
 
 Чтобы просмотреть конкретные свойства, добавьте определенные имена свойств после `format-list` или `fl` .
 
-Вот несколько примеров:
+Например.
 
 ```powershell
 Get-AzWvdHostPool -Name demohp -ResourceGroupName 0414rg |fl CustomRdpProperty
@@ -121,7 +121,7 @@ CustomRdpProperty : audiocapturemode:i:0;audiomode:i:0;drivestoredirect:s:;redir
 | Ресурс | Требование |
 |---|---|
 | Устойчивое состояние операций ввода-вывода | 10 |
-| Вход и выход в систему операций ввода-вывода | 5 |
+| Вход и выход в систему операций ввода-вывода | 50 |
 
 Пример в этой таблице относится только к одному пользователю, но его можно использовать для оценки требований к общему числу пользователей в вашей среде. Например, требуется около 1 000 операций ввода-вывода в секунду для 100 пользователей и около 5 000 операций ввода-вывода во время входа и выхода.
 

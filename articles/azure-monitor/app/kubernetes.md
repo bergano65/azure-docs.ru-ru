@@ -5,17 +5,18 @@ ms.topic: conceptual
 author: tokaplan
 ms.author: alkaplan
 ms.date: 04/25/2019
-ms.openlocfilehash: a5e73039db541023b1fd4a9b75e7c14030c8e219
-ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
+ms.openlocfilehash: 4bb1af6ca2126b7ae58a6c836624ec78a071a5a5
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83797887"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87075280"
 ---
 # <a name="zero-instrumentation-application-monitoring-for-kubernetes-hosted-applications-with-istio---deprecated"></a>Мониторинг приложений, размещенных в Kubernetes, без инструментирования с помощью Istio (НЕРЕКОМЕНДУЕМЫЙ МЕТОД)
 
 > [!IMPORTANT]
 > Эта функциональность предоставляется в режиме нерекомендуемой, а после 1 августа 2020 года ее поддержка прекратится.
-> В настоящее время мониторинг без кода можно включить только для [Java через автономный агент](https://docs.microsoft.com/azure/azure-monitor/app/java-in-process-agent). Для мониторинга приложений в AKS на других языках используйте пакеты средств разработки: [ASP.Net Core](https://docs.microsoft.com/azure/azure-monitor/app/asp-net-core), [ASP.Net](https://docs.microsoft.com/azure/azure-monitor/app/asp-net), [Node.js](https://docs.microsoft.com/azure/azure-monitor/app/nodejs), [JavaScript](https://docs.microsoft.com/azure/azure-monitor/app/javascript) и [Python](https://docs.microsoft.com/azure/azure-monitor/app/opencensus-python).
+> В настоящее время мониторинг без кода можно включить только для [Java через автономный агент](./java-in-process-agent.md). Для мониторинга приложений в AKS на других языках используйте пакеты средств разработки: [ASP.Net Core](./asp-net-core.md), [ASP.Net](./asp-net.md), [Node.js](./nodejs.md), [JavaScript](./javascript.md) и [Python](./opencensus-python.md).
 
 Azure Monitor теперь использует технологию сетки служб Istio для кластера Kubernetes, что позволяет без дополнительной настройки поддерживать мониторинг для любого размещенного в Kubernetes приложения. Вы можете использовать стандартные возможности Application Insights, такие как [схема приложений](../../azure-monitor/app/app-map.md) для моделирования зависимостей, [Live Metrics Stream](../../azure-monitor/app/live-stream.md) для мониторинга в режиме реального времени, мощные визуализации на [панели мониторинга](../../azure-monitor/app/overview-dashboard.md), [Обозреватель метрик](../../azure-monitor/platform/metrics-getting-started.md)и [Книги](../../azure-monitor/platform/workbooks-overview.md). Эта возможность поможет пользователям выявлять узкие места производительности и точки вероятного отказа для всех рабочих нагрузок Kubernetes, размещенных в выбранном пространстве имен Kubernetes. Используя возможности имеющихся сеток с служб и совмещая их с такими решениями, как Istio, служба Azure Monitor способна поддерживать мониторинг приложений с автоматическим инструментированием, не внося никаких изменений в код приложения.
 
@@ -24,10 +25,10 @@ Azure Monitor теперь использует технологию сетки 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- [Кластер Kubernetes](https://docs.microsoft.com/azure/aks/concepts-clusters-workloads).
+- [Кластер Kubernetes](../../aks/concepts-clusters-workloads.md).
 - Доступ из консоли к кластеру, чтобы выполнить *kubectl*.
 - [Ресурс Application Insights](create-new-resource.md).
-- Наличие сетки служб. Если в кластере не установлена платформа Istio, изучите статью [Установка и использование Istio в Службе Azure Kubernetes (AKS)](https://docs.microsoft.com/azure/aks/istio-install).
+- Наличие сетки служб. Если в кластере не установлена платформа Istio, изучите статью [Установка и использование Istio в Службе Azure Kubernetes (AKS)](../../aks/servicemesh-istio-install.md).
 
 ## <a name="capabilities"></a>Возможности
 

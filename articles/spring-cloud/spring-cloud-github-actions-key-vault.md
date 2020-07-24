@@ -1,18 +1,20 @@
 ---
-title: Проверка подлинности Azure Веснного облака с Key Vault в действиях GitHub
+title: Проверка подлинности Azure Spring Cloud с использованием Key Vault в GitHub Actions
 description: Как использовать хранилище ключей с рабочим процессом CI/CD для Azure Веснного облака с действиями GitHub
 author: MikeDodaro
 ms.author: barbkess
 ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 01/20/2019
-ms.openlocfilehash: 4a836ae195674556c486592a421c188f7c40e3f0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-java
+ms.openlocfilehash: 433cd9e7b8cfe69ce5008366db884659cccbc149
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84484347"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87076026"
 ---
-# <a name="authenticate-azure-spring-cloud-with-key-vault-in-github-actions"></a>Проверка подлинности Azure Веснного облака с Key Vault в действиях GitHub
+# <a name="authenticate-azure-spring-cloud-with-key-vault-in-github-actions"></a>Проверка подлинности Azure Spring Cloud с использованием Key Vault в GitHub Actions
 Хранилище ключей — это безопасное место для хранения ключей. Корпоративным пользователям необходимо хранить учетные данные для сред CI/CD в области, в которой они контролируются. Ключ для получения учетных данных в хранилище ключей должен быть ограничен областью действия ресурса.  Он имеет доступ только к области хранилища ключей, а не ко всей области Azure. Он похож на ключ, который может открыть только надежное поле, а не главный ключ, который может открыть все двери в здании. Это способ получить ключ с помощью другого ключа, который полезен в рабочем процессе CICD. 
 
 ## <a name="generate-credential"></a>Создание учетных данных
@@ -107,5 +109,5 @@ jobs:
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Действия весны GitHub Cloud](./spring-cloud-howto-github-actions.md)

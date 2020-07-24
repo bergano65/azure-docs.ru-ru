@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/14/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: e58df0997c62a131a3c9987369f8e076a62d6654
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 82114164d70eae71678e70ff2bdb7ea44a54d4cd
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81408348"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87076304"
 ---
 # <a name="security-control-logging-and-monitoring"></a>Управление безопасностью: ведение журнала и мониторинг
 
@@ -124,9 +124,9 @@ ms.locfileid: "81408348"
 
 Включите сбор событий защиты от вредоносных программ для виртуальных машин Azure и облачных служб.
 
-- [Настройка антивредоносного по Майкрософт для виртуальных машин](https://docs.microsoft.com/powershell/module/servicemanagement/azure/set-azurevmmicrosoftantimalwareextension?view=azuresmps-4.0.0)
+- [Настройка антивредоносного по Майкрософт для виртуальных машин](/powershell/module/servicemanagement/azure.service/set-azurevmmicrosoftantimalwareextension?view=azuresmps-4.0.0)
 
-- [Настройка антивредоносного по Майкрософт для облачных служб](https://docs.microsoft.com/powershell/module/servicemanagement/azure/set-azureserviceantimalwareextension?view=azuresmps-4.0.0)
+- [Настройка антивредоносного по Майкрософт для облачных служб](/powershell/module/servicemanagement/azure.service/set-azureserviceantimalwareextension?view=azuresmps-4.0.0)
 
 - [Знакомство с антивредоносным по Майкрософт](https://docs.microsoft.com/azure/security/fundamentals/antimalware)
 

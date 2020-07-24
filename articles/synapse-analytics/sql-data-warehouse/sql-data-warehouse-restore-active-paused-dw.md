@@ -11,12 +11,12 @@ ms.date: 08/29/2018
 ms.author: anjangsh
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: fab00848f6541f6f6eb386168c5bae76e822856a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f8dc7be63506e586b90d1e389d26ac591dce9c3b
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85205226"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87075875"
 ---
 # <a name="restore-an-existing-sql-pool"></a>Восстановление существующего пула SQL
 
@@ -28,14 +28,14 @@ ms.locfileid: "85205226"
 
 ## <a name="before-you-begin"></a>Перед началом
 
-1. Не забудьте [установить Azure PowerShell](/powershell/azure/overview?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
+1. Не забудьте [установить Azure PowerShell](/powershell/azure/?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
 2. Наличие существующей точки восстановления, из которой необходимо выполнить восстановление. Если вы хотите создать новое восстановление, см. [руководство по созданию новой точки восстановления, определенной пользователем](sql-data-warehouse-restore-points.md).
 
 ## <a name="restore-an-existing-sql-pool-through-powershell"></a>Восстановление существующего пула SQL с помощью PowerShell
 
 Чтобы восстановить существующий пул SQL из точки восстановления, используйте командлет PowerShell [RESTORE-азсклдатабасе](/powershell/module/az.sql/restore-azsqldatabase?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) .
 
-1. Откройте PowerShell.
+1. Откройте средство PowerShell.
 
 2. Подключитесь к своей учетной записи Azure и выведите список всех подписок, связанных с ней.
 
@@ -100,7 +100,7 @@ $RestoredDatabase.status
 
     ![Точки автоматического восстановления](./media/sql-data-warehouse-restore-active-paused-dw/restoring-11.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Восстановление удаленного пула SQL](sql-data-warehouse-restore-deleted-dw.md)
 - [Восстановление из пула SQL с географическим резервным копированием](sql-data-warehouse-restore-from-geo-backup.md)

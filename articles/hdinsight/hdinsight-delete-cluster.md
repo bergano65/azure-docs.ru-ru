@@ -8,16 +8,16 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: H1Hack27Feb2017,hdinsightactive
 ms.date: 11/29/2019
-ms.openlocfilehash: 60f3ce0ad4f6ee6b1a38130867e0bcd1420620ef
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 3903500e87dd162779d1732a4cfe405ba34e702c
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86086370"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87074744"
 ---
 # <a name="delete-an-hdinsight-cluster-using-your-browser-powershell-or-the-azure-cli"></a>Удаление кластера HDInsight с помощью браузера, PowerShell или Azure CLI
 
-Начисление оплаты начинается после создания кластера HDInsight и прекращается только после его удаления. Для выставления счетов учитывается уровень Pro в минуту, поэтому кластер следует всегда удалять, когда он больше не используется. В этом документе вы узнаете, как удалить кластер с помощью [портал Azure](https://portal.azure.com), [Azure PowerShell AZ](https://docs.microsoft.com/powershell/azure/overview)и [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest).
+Начисление оплаты начинается после создания кластера HDInsight и прекращается только после его удаления. Для выставления счетов учитывается уровень Pro в минуту, поэтому кластер следует всегда удалять, когда он больше не используется. В этом документе вы узнаете, как удалить кластер с помощью [портал Azure](https://portal.azure.com), [Azure PowerShell AZ](https://docs.microsoft.com/powershell/azure/)и [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest).
 
 > [!IMPORTANT]  
 > При удалении кластера HDInsight не происходит удаления связанных с ним учетных записей хранения Azure или Data Lake Storage. Данные, хранящиеся в этих службах, можно повторно использовать в будущем.

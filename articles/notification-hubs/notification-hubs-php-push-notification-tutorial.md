@@ -14,18 +14,18 @@ ms.date: 01/04/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: fb2d2d33d380819a88da57a78c449e22256bf41b
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: daebf7c6a5fc9056e16b77a40ee9f90db598749f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86169533"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87076629"
 ---
 # <a name="how-to-use-notification-hubs-from-php"></a>Использование концентраторов уведомлений из PHP
 
 [!INCLUDE [notification-hubs-backend-how-to-selector](../../includes/notification-hubs-backend-how-to-selector.md)]
 
-Доступ ко всем функциям концентраторов уведомлений можно получить из серверной части Java/PHP/Ruby с помощью интерфейса RESTFUL центра уведомлений, как описано в разделе MSDN [интерфейсы API для концентраторов уведомлений](https://msdn.microsoft.com/library/dn223264.aspx).
+Доступ ко всем функциям концентраторов уведомлений можно получить из серверной части Java/PHP/Ruby с помощью интерфейса RESTFUL центра уведомлений, как описано в разделе MSDN [интерфейсы API для концентраторов уведомлений](/previous-versions/azure/reference/dn223264(v=azure.100)).
 
 В этом разделе описывается:
 
@@ -56,7 +56,7 @@ $hub->sendNotification($notification, null);
 Если вы еще не сделали это, следуйте инструкциям в разделе [Приступая к работе] вплоть до последнего раздела, в котором необходимо реализовать серверную часть.
 Кроме того, при необходимости можно воспользоваться кодом из [Примере оболочки PHP REST] и перейти непосредственно к разделу [Завершение работы с руководством](#complete-tutorial).
 
-Подробные сведения о реализации полноценной оболочки REST можно найти в [MSDN](https://msdn.microsoft.com/library/dn530746.aspx). В этом разделе описывается реализация основных действий на PHP, необходимых для доступа к конечным точкам REST службы "Центры уведомлений".
+Подробные сведения о реализации полноценной оболочки REST можно найти в [MSDN](/previous-versions/azure/reference/dn530746(v=azure.100)). В этом разделе описывается реализация основных действий на PHP, необходимых для доступа к конечным точкам REST службы "Центры уведомлений".
 
 1. Проанализируйте строку подключения
 2. Создайте маркер проверки подлинности
@@ -102,7 +102,7 @@ class NotificationHub {
 
 ### <a name="create-a-security-token"></a>Создание маркера безопасности
 
-В документации Azure содержатся сведения о том, как [создавать маркер безопасности SAS](https://docs.microsoft.com/previous-versions/azure/reference/dn495627(v=azure.100)#create-sas-security-token).
+В документации Azure содержатся сведения о том, как [создавать маркер безопасности SAS](/previous-versions/azure/reference/dn495627(v=azure.100)#create-sas-security-token).
 
 Для создания маркера на основе универсального кода ресурса (URI) текущего запроса и учетных данных, извлеченных из строки подключения, добавьте метод `generateSasToken` в класс `NotificationHub`.
 
@@ -151,7 +151,7 @@ class Notification {
 
 Этот класс представляет собой контейнер для текста собственного уведомления либо набор свойств, в случае с шаблонным уведомлением, а также набор заголовков, содержащих свойства формата (собственная платформа или шаблон) и специальные свойства платформы (например, свойство срока действия Apple и заголовки WNS).
 
-Обратитесь к [документации по REST API для службы "Центры уведомлений"](https://msdn.microsoft.com/library/dn495827.aspx) и изучите форматы специализированных платформ уведомлений, чтобы узнать обо всех доступных параметрах.
+Обратитесь к [документации по REST API для службы "Центры уведомлений"](/previous-versions/azure/reference/dn495827(v=azure.100)) и изучите форматы специализированных платформ уведомлений, чтобы узнать обо всех доступных параметрах.
 
 Имея этот класс, мы можем создавать методы отправки уведомлений внутри класса `NotificationHub`.
 
@@ -278,7 +278,7 @@ $hub->sendNotification($notification, null);
 
 После выполнения кода PHP на целевом устройстве должно отобразиться уведомление.
 
-## <a name="next-steps"></a>Next Steps
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этом разделе было показано, как создать простой клиент Java REST для службы "Центры уведомлений". Здесь можно выполнять следующие действия:
 
@@ -290,4 +290,3 @@ $hub->sendNotification($notification, null);
 
 [Примере оболочки PHP REST]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/notificationhubs-rest-php
 [Руководство. Отправка push-уведомлений в приложения iOS с помощью Центров уведомлений Azure](ios-sdk-get-started.md))
-

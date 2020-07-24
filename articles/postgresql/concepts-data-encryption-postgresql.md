@@ -6,12 +6,12 @@ ms.author: manishku
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 01/13/2020
-ms.openlocfilehash: 1300ef64b6081135c400baa10aa73b8139aec170
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: e8ab6e2e62bdcb08754d011a6b576cb615371a09
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86025596"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87076455"
 ---
 # <a name="azure-database-for-postgresql-single-server-data-encryption-with-a-customer-managed-key"></a>Шифрование данных с помощью управляемых клиентом ключей для отдельного сервера базы данных Azure для PostgreSQL
 
@@ -51,7 +51,7 @@ Key Vault — это облачная внешняя система управ
 * **wrapKey**. Для шифрования ключа DEK.
 * **unwrapKey**. Для расшифровки ключа DEK.
 
-Администратор хранилища ключей может также [включить ведение журнала событий аудита Key Vault](../azure-monitor/insights/azure-key-vault.md), чтобы их можно было проверить позже.
+Администратор хранилища ключей может также [включить ведение журнала событий аудита Key Vault](../azure-monitor/insights/key-vault-insights-overview.md), чтобы их можно было проверить позже.
 
 Если сервер настроен для использования управляемого клиентом ключа, хранящегося в хранилище ключей, он отправляет ключ DEK в хранилище ключей для шифрования. Key Vault возвращает зашифрованный ключ DEK, который сохраняется в базе данных пользователя. Аналогично при необходимости сервер отправляет защищенный ключ DEK в хранилище ключей для расшифровки. Если включено ведение журнала, аудиторы могут использовать Azure Monitor для просмотра журналов событий аудита Key Vault.
 

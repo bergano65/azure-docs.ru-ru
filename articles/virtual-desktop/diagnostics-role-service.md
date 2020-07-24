@@ -8,14 +8,14 @@ ms.topic: troubleshooting
 ms.date: 04/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 2ead16c655d4790e81931371e67da8106dabf83e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4b9e63ca3c6822f4fd9ff215ccddaaf82ff55369
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85200551"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87075659"
 ---
-# <a name="identify-and-diagnose-issues"></a>Выявление и диагностика неполадок
+# <a name="identify-and-diagnose-windows-virtual-desktop-issues"></a>Определение и диагностика проблем с виртуальными рабочими столами Windows
 
 >[!IMPORTANT]
 >Это содержимое применимо к обновлению за весну 2020 года с объектами Azure Resource Manager для Виртуального рабочего стола Windows. Если вы используете выпуск Виртуального рабочего стола Windows за осень 2019 года без объектов Azure Resource Manager, см. [эту статью](./virtual-desktop-fall-2019/diagnostics-role-service-2019.md).

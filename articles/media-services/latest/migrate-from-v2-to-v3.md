@@ -15,11 +15,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: media
 ms.date: 03/09/2020
 ms.author: juliako
-ms.openlocfilehash: 72d413c5d8bc982d885d889da35b29a3607410cc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c9ec677e356f5d4e70a49c9de10f0fdb2039917d
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79472073"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87078055"
 ---
 # <a name="migration-guidance-for-moving-from-media-services-v2-to-v3"></a>Руководство по миграции из версии 2 в версию 3 Служб мультимедиа
 
@@ -29,7 +30,7 @@ ms.locfileid: "79472073"
 
 Если у вас есть видеослужба, разработанная на основе [устаревших API Служб мультимедиа версии 2](../previous/media-services-overview.md), ознакомьтесь со следующими рекомендациями и советами перед переносом в API версии 3. В версии 3 API существует множество преимуществ и новых функций, которые улучшают возможности разработки и Служб мультимедиа. Однако, как указано в разделе с [известными проблемами](#known-issues) этой статьи, из-за изменений между версиями API существуют определенные ограничения. Эта страница будет сохранена, так как команда Служб мультимедиа продолжает улучшать API версии 3 и устранять "пробелы" между версиями. 
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 * Обзор [служб мультимедиа версии 2 и V3](media-services-v2-vs-v3.md)
 * [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
@@ -64,9 +65,9 @@ ms.locfileid: "79472073"
 
     * Управление службами мультимедиа v3, [динамические события](live-events-outputs-concept.md) 
     * Просмотр [ресурсов](assets-concept.md)(не управляемых) v3, 
-    * [Получение сведений о доступе к API](access-api-portal.md). 
+    * [Получение сведений о доступе к API](./access-api-howto.md). 
 
-    Для всех других задач управления (например, [преобразований, заданий](transforms-jobs-concept.md) и [защиты содержимого](content-protection-overview.md)) используйте [REST API](https://docs.microsoft.com/rest/api/media/), [CLI](https://aka.ms/ams-v3-cli-ref)или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
+    Для всех других задач управления (например, [преобразований, заданий](transforms-jobs-concept.md) и [защиты содержимого](content-protection-overview.md)) используйте [REST API](/rest/api/media/), [CLI](https://aka.ms/ams-v3-cli-ref)или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
 * Подготовьте зарезервированные единицы мультимедиа (MRU) в вашей учетной записи, чтобы управлять параллелизмом и производительностью заданий, особенно тех, что касаются видео- или аудиоанализа. Дополнительные сведения см. в статье [Обзор масштабирования обработки мультимедиа](../previous/media-services-scale-media-processing-overview.md). Вы можете управлять Мрус с помощью [интерфейса командной строки (CLI) 2,0 для служб мультимедиа v3](media-reserved-units-cli-how-to.md), с помощью [портал Azure](../previous/media-services-portal-scale-media-processing.md)или с помощью [API v2](../previous/media-services-dotnet-encoding-units.md). Подготавливать единицы MRU нужно с учетом того, какая версия API Служб мультимедиа используется: версия 2 или 3.
 * С помощью API версии 2 нельзя управлять сущностями Cлужбы мультимедиа, созданными с помощью API версии 3.  
 * Не все сущности в API v2 автоматически отображаются в API V3.  Ниже приведены примеры сущностей в двух версиях, которые несовместимы:  

@@ -6,13 +6,14 @@ ms.service: storsimple
 ms.topic: conceptual
 ms.date: 01/23/2018
 ms.author: alkohli
-ms.openlocfilehash: b16132c24d35ee2c9902fa2b21c44416d8376b4d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 92a9370ec866b6d2c14988871e3c742a40679885
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77470910"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87077798"
 ---
-# <a name="use-the-new-authentication-for-your-storsimple"></a>Использование нового режима аутентификации для StorSimple
+# <a name="use-azuer-active-directory-ad-authentication-for-your-storsimple"></a>Использование проверки подлинности Azure Active Directory (AD) для StorSimple
 
 [!INCLUDE [storsimple-8000-eol-banner](../../includes/storsimple-8000-eol-banner.md)]
 
@@ -38,7 +39,7 @@ ms.locfileid: "77470910"
 
 Если вы используете StorSimple серии 8000, убедитесь, что в правила брандмауэра включен следующий URL-адрес:
 
-| Шаблон URL-адреса                         | Cloud | Компонент или функция         |
+| Шаблон URL-адреса                         | Облако | Компонент или функция         |
 |------------------------------------|-------|----------------------------------|
 | `https://login.windows.net`        | Azure Public |Служба аутентификации AAD      |
 | `https://login.microsoftonline.us` | US (США) |Служба аутентификации AAD      |
@@ -87,7 +88,7 @@ ms.locfileid: "77470910"
     > [!NOTE] 
     > Если вы создаете облачное устройство StorSimple в службе, зарегистрированной на устройстве StorSimple серии 8000, во время этого процесса не создавайте регистрационный ключ. Дождитесь завершения создания устройства, а затем создайте регистрационный ключ.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Развертывание локального устройства StorSimple (с обновлением 3 и более поздней версии)](storsimple-8000-deployment-walkthrough-u2.md)
 

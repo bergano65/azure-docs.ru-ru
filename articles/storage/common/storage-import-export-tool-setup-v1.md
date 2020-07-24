@@ -8,14 +8,14 @@ ms.topic: how-to
 ms.date: 01/15/2017
 ms.author: twooley
 ms.subservice: common
-ms.openlocfilehash: bd74caf391fcf1538bf920f41638b23672b47015
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ca74e3aea8a847344c75ca7167c46675e1339459
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85512222"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87077826"
 ---
-# <a name="setting-up-the-azure-importexport-tool"></a>Настройка инструмента импорта и экспорта Azure
+# <a name="setting-up-the-azure-importexport-tool-v1"></a>Настройка средства импорта и экспорта Azure v1
 Инструмент импорта и экспорта Microsoft Azure используется в службе импорта и экспорта Microsoft Azure для подготовки и исправления дисков. Это средство может выполнять перечисленные ниже функции.  
 
 -   С его помощью перед созданием задания импорта можно скопировать данные на жесткие диски, которые будут отправлены в центр обработки данных Microsoft Azure.  
@@ -24,7 +24,7 @@ ms.locfileid: "85512222"
 
 -   Это средство также позволяет восстанавливать на дисках поврежденные или отсутствующие файлы после завершения задания экспорта.  
 
-## <a name="prerequisites"></a>Предварительные условия  
+## <a name="prerequisites"></a>Обязательные условия  
 При подготовке дисков для задания импорта необходимо выполнить следующие условия.  
 
 -   У вас должна быть активная подписка Azure.  
@@ -247,7 +247,7 @@ Examples:
         es\drama /dstdir:movies/drama/ /skipwrite
 ```  
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Подготовка жестких дисков для задания импорта](../storage-import-export-tool-preparing-hard-drives-import-v1.md)   
 * [Предварительный просмотр использования дисков для задания экспорта](../storage-import-export-tool-previewing-drive-usage-export-v1.md)   

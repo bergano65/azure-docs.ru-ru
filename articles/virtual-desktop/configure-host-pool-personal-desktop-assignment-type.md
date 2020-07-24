@@ -1,6 +1,6 @@
 ---
 title: Тип назначения персонального рабочего стола "виртуальный рабочий стол Windows" — Azure
-description: Как настроить тип назначения для пула узлов персонального рабочего стола "виртуальный рабочий стол Windows".
+description: Настройка автоматического или прямого назначения для пула узлов личного рабочего стола Windows.
 services: virtual-desktop
 author: HeidiLohr
 ms.service: virtual-desktop
@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 07/09/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 12caa6fce4d49e86d1ad5da16aa7abba30f26207
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 8b000e9a83e6896266f0a6fc05195fc5599bc65f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86260824"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87077628"
 ---
 # <a name="configure-the-personal-desktop-host-pool-assignment-type"></a>Настройка типа назначения пула узлов персонального рабочего стола
 

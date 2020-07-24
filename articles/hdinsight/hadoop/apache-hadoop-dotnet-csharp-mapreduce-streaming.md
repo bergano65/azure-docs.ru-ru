@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/28/2020
-ms.openlocfilehash: 77d8143743f899bcb9fd3927de223d84d406ed6f
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 0a20a120f72c70cb50cae37cece54d5efad31f47
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86086795"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87074804"
 ---
 # <a name="use-c-with-mapreduce-streaming-on-apache-hadoop-in-hdinsight"></a>Использование C# для потоковой передачи MapReduce в Apache Hadoop в HDInsight
 
@@ -47,7 +47,7 @@ Apache Hadoop потоковая передача позволяет выпол�
 
 * Способ передачи EXE-файлов в кластер. В этом документе для передачи файлов в основное хранилище кластера используются средства Data Lake для Visual Studio.
 
-* При использовании PowerShell вам потребуется [модуль Az](https://docs.microsoft.com/powershell/azure/overview).
+* При использовании PowerShell вам потребуется [модуль Az](https://docs.microsoft.com/powershell/azure/).
 
 * Кластер Apache Hadoop в HDInsight. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](../hadoop/apache-hadoop-linux-tutorial-get-started.md).
 
@@ -267,7 +267,7 @@ yourselves      3
 youth   17
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Используйте MapReduce в Apache Hadoop в HDInsight](hdinsight-use-mapreduce.md).
 * [Используйте определяемую пользователем функцию C# с Apache Hive и Apache Pig](apache-hadoop-hive-pig-udf-dotnet-csharp.md).

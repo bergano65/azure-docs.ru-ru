@@ -8,11 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 674ca8bea110d60557d1e50e7b68c9c3f7a92bf2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f90f5f4298fcca77e293965ddd377598bcfd1930
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77564590"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87077313"
 ---
 # <a name="use-azure-ad-as-an-identity-provider-for-vcenter-on-cloudsimple-private-cloud"></a>Использование Azure AD в качестве поставщика удостоверений для vCenter в частном облаке Клаудсимпле
 
@@ -45,7 +46,7 @@ Azure AD — это облачный каталог и служба управл
 > [!NOTE]
 > Если у вас уже есть Azure AD, этот раздел можно пропустить.
 
-1. Настройте Azure AD в подписке, как описано в [документации по Azure AD](../active-directory/fundamentals/get-started-azure-ad.md).
+1. Настройте Azure AD в подписке, как описано в [документации по Azure AD](../active-directory/fundamentals/active-directory-whatis.md).
 2. Включите Azure Active Directory Premium в подписке, как описано в статье [Регистрация для Azure Active Directory Premium](../active-directory/fundamentals/active-directory-get-started-premium.md).
 3. Настройте имя личного домена и проверьте имя личного домена, как описано в разделе [Добавление имени личного домена в Azure Active Directory](../active-directory/fundamentals/add-custom-domain.md).
     1. Настройте запись DNS для регистратора домена, используя сведения, предоставленные в Azure.
@@ -58,17 +59,17 @@ Azure AD — это облачный каталог и служба управл
 > [!NOTE]
 > Это важный шаг для включения Azure AD в качестве источника удостоверений для vCenter.  Чтобы избежать проблем, убедитесь, что все шаги выполнены правильно.
 
-1. Включите доменные службы Azure AD, как описано в разделе [включение Azure Active Directory доменных служб с помощью портал Azure](../active-directory-domain-services/active-directory-ds-getting-started.md).
-2. Настройте сеть, которая будет использоваться доменными службами Azure AD, как описано в разделе [включение Azure Active Directory доменных служб с помощью портал Azure](../active-directory-domain-services/active-directory-ds-getting-started-network.md).
-3. Настройте группу администраторов для управления доменными службами Azure AD, как описано в разделе [включение Azure Active Directory доменных служб с помощью портал Azure](../active-directory-domain-services/active-directory-ds-getting-started-admingroup.md).
-4. Обновите параметры DNS для доменных служб Azure AD, как описано в разделе [Включение доменных служб Azure Active Directory](../active-directory-domain-services/active-directory-ds-getting-started-dns.md).  Если вы хотите подключиться к AD через Интернет, настройте запись DNS для общедоступного IP-адреса доменных служб Azure AD в доменное имя.
-5. Включите синхронизацию хэшей паролей для пользователей.  Этот шаг включает синхронизацию хэшей паролей, необходимых для проверки подлинности с помощью NT LAN Manager (NTLM) и Kerberos, в доменных службах Azure AD. Когда синхронизация хэшей паролей настроена, пользователи могут входить в управляемый домен с помощью учетных данных организации. См. раздел [Включение синхронизации хэшей паролей для Azure Active Directory доменных служб](../active-directory-domain-services/active-directory-ds-getting-started-password-sync.md).
+1. Включите доменные службы Azure AD, как описано в разделе [включение Azure Active Directory доменных служб с помощью портал Azure](../active-directory-domain-services/tutorial-create-instance.md).
+2. Настройте сеть, которая будет использоваться доменными службами Azure AD, как описано в разделе [включение Azure Active Directory доменных служб с помощью портал Azure](../active-directory-domain-services/tutorial-create-instance.md).
+3. Настройте группу администраторов для управления доменными службами Azure AD, как описано в разделе [включение Azure Active Directory доменных служб с помощью портал Azure](../active-directory-domain-services/tutorial-create-instance.md).
+4. Обновите параметры DNS для доменных служб Azure AD, как описано в разделе [Включение доменных служб Azure Active Directory](../active-directory-domain-services/tutorial-create-instance.md).  Если вы хотите подключиться к AD через Интернет, настройте запись DNS для общедоступного IP-адреса доменных служб Azure AD в доменное имя.
+5. Включите синхронизацию хэшей паролей для пользователей.  Этот шаг включает синхронизацию хэшей паролей, необходимых для проверки подлинности с помощью NT LAN Manager (NTLM) и Kerberos, в доменных службах Azure AD. Когда синхронизация хэшей паролей настроена, пользователи могут входить в управляемый домен с помощью учетных данных организации. См. раздел [Включение синхронизации хэшей паролей для Azure Active Directory доменных служб](../active-directory-domain-services/tutorial-create-instance.md).
     1. Если имеются только облачные пользователи, они должны изменить свой пароль с помощью <a href="http://myapps.microsoft.com/" target="_blank">панели доступа Azure AD</a> , чтобы сохранить хэши паролей в формате, ТРЕБУЕМом протоколом NTLM или Kerberos.  Следуйте инструкциям в разделе [Включение синхронизации хэшей паролей с управляемым доменом для облачных учетных записей пользователей](../active-directory-domain-services/tutorial-create-instance.md#enable-user-accounts-for-azure-ad-ds).  Этот шаг необходимо выполнить для отдельных пользователей и всех новых пользователей, созданных в каталоге Azure AD с помощью портал Azure или командлетов Azure AD PowerShell. Пользователям, которым требуется доступ к доменным службам Azure AD, необходимо использовать <a href="http://myapps.microsoft.com/" target="_blank">панель доступа Azure AD</a> и получить доступ к своим профилям для смены пароля.
 
         > [!NOTE]
         > Если у вашей организации есть только учетные записи пользователей в облаке, все пользователи, которые хотят воспользоваться доменными службами Azure Active Directory, должны изменить свои пароли. Облачная учетная запись пользователей — это учетная запись, созданная в каталоге Azure AD с помощью портала Azure или командлетов Azure AD PowerShell. Такие учетные записи пользователей не синхронизированы из локального каталога.
 
-    2. Если вы синхронизируете пароли из локальной службы Active Directory, выполните действия, описанные в документации по [Active Directory](../active-directory-domain-services/active-directory-ds-getting-started-password-sync-synced-tenant.md).
+    2. Если вы синхронизируете пароли из локальной службы Active Directory, выполните действия, описанные в документации по [Active Directory](../active-directory-domain-services/tutorial-configure-password-hash-sync.md).
 
 6.  Настройте защищенный протокол LDAP для доменных служб Azure Active Directory, как описано в разделе [Настройка защищенных протоколов LDAP (LDAPS) для управляемого домена доменных служб Azure AD](../active-directory-domain-services/tutorial-configure-ldaps.md).
     1. Отправьте сертификат для использования защищенным протоколом LDAP, как описано в разделе Azure [Получение сертификата для защищенного протокола LDAP](../active-directory-domain-services/tutorial-configure-ldaps.md#create-a-certificate-for-secure-ldap).  Клаудсимпле рекомендует использовать подписанный сертификат, выданный центром сертификации, чтобы убедиться, что vCenter может доверять сертификату.
@@ -84,7 +85,7 @@ Azure AD — это облачный каталог и служба управл
 
     | **Параметр** | **Описание** |
     |------------|-----------------|
-    | **Name** | Имя источника удостоверений. |
+    | **имя**; | Имя источника удостоверений. |
     | **Базовое DN для пользователей** | Базовое различающееся имя для пользователей.  Для Azure AD используйте: `OU=AADDC Users,DC=<domain>,DC=<domain suffix>` Пример: `OU=AADDC Users,DC=cloudsimplecustomer,DC=com` .|
     | **Доменное имя** | Полное доменное имя домена, например example.com. В этом текстовом поле не следует указывать IP-адрес. |
     | **Псевдоним домена** | *(необязательно)* NetBIOS-имя домена. Если используются проверки подлинности SSPI, добавьте NetBIOS-имя домена Active Directory в качестве псевдонима источника удостоверений. |
@@ -102,6 +103,6 @@ Azure AD — это облачный каталог и служба управл
 > [!CAUTION]
 > Новые пользователи должны быть добавлены только в *облако-Owner-Group*, *Cloud-Global-Cluster-Admin-Group*, *Cloud-Global-Storage-* Admin-Group, Cloud-Global- *Network-* Admin-Group или *Cloud-Global-ВМ-Admin-Group*.  Пользователи, добавленные в группу *администраторов* , будут удалены автоматически.  Только учетные записи служб должны быть добавлены в группу *администраторов* .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Сведения о модели разрешений частного облака](learn-private-cloud-permissions.md)

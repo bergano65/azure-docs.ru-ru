@@ -10,12 +10,12 @@ ms.service: storage
 ms.subservice: common
 services: storage
 tags: ''
-ms.openlocfilehash: 28d7f6a9fa5d128783f2eb1dfcbcb75775cc499e
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: efae9cd2a73bf6df89007ac313ca6dfe6efe6ddd
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86113111"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87075951"
 ---
 # <a name="troubleshoot-latency-using-storage-analytics-logs"></a>Устранение неполадок с помощью журналов Аналитики Службы хранилища
 
@@ -97,12 +97,12 @@ ms.locfileid: "86113111"
 
    В следующей таблице приведены сведения о OperationType и результатах состоянии RequestStatus высокой задержки.
 
-   |   |Состоянии RequestStatus =<br>Успех|Состоянии RequestStatus =<br>ЖЕСТКИХ NetworkError|Рекомендация|
+   | Тип большого двоичного объекта |Состоянии RequestStatus =<br>Успех|Состоянии RequestStatus =<br>ЖЕСТКИХ NetworkError|Рекомендация|
    |---|---|---|---|
-   |GetBlob|Да|нет|[**Операция с большим двоичным объектом:** Состоянии RequestStatus = успешное завершение](#getblob-operation-requeststatus--success)|
-   |GetBlob|нет|Да|[**Операция с большим двоичным объектом:** Состоянии RequestStatus = (SAS) NetworkError](#getblob-operation-requeststatus--sasnetworkerror)|
-   |PutBlob|Да|нет|[**Операция размещения:** Состоянии RequestStatus = успешное завершение](#put-operation-requeststatus--success)|
-   |PutBlob|нет|Да|[**Операция размещения:** Состоянии RequestStatus = (SAS) NetworkError](#put-operation-requeststatus--sasnetworkerror)|
+   |GetBlob|Да|Нет|[**Операция с большим двоичным объектом:** Состоянии RequestStatus = успешное завершение](#getblob-operation-requeststatus--success)|
+   |GetBlob|Нет|Да|[**Операция с большим двоичным объектом:** Состоянии RequestStatus = (SAS) NetworkError](#getblob-operation-requeststatus--sasnetworkerror)|
+   |PutBlob|Да|Нет|[**Операция размещения:** Состоянии RequestStatus = успешное завершение](#put-operation-requeststatus--success)|
+   |PutBlob|Нет|Да|[**Операция размещения:** Состоянии RequestStatus = (SAS) NetworkError](#put-operation-requeststatus--sasnetworkerror)|
 
 ## <a name="status-results"></a>Результаты состояния
 

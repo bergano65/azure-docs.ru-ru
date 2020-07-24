@@ -2,16 +2,17 @@
 title: 'VPN-шлюз Azure: Настройка оповещений для событий журнала диагностики'
 description: Действия по настройке оповещений для событий журнала диагностики VPN-шлюза
 services: vpn-gateway
-author: anzaman
+author: kumudD
 ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 06/12/2019
 ms.author: alzam
-ms.openlocfilehash: 3417d2b6e105626bceb992db088a4d0113aa798f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 21fcebf6667eb1bc7741dfb4ba268af42567d58e
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84983093"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87075588"
 ---
 # <a name="set-up-alerts-on-resource-log-events-from-vpn-gateway"></a>Настройка оповещений о событиях журнала ресурсов из VPN-шлюза
 
@@ -34,7 +35,7 @@ ms.locfileid: "84983093"
 
 1. В портал Azure найдите **log Analytics** в разделе **все службы** и выберите **log Analytics рабочие области**.
 
-   ![Параметры для перехода в Log Analytics рабочие области](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert0.png "Создание")
+   ![Параметры для перехода в Log Analytics рабочие области](./media/vpn-gateway-howto-setup-alerts-virtual-network-gateway-log/log-alert0.png "Создать")
 
 2. На странице **log Analytics** выберите **создать** .
 
@@ -194,6 +195,6 @@ ms.locfileid: "84983093"
        -Name 'The Azure to Redmond tunnel is disconnected'
    ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о настройке оповещений в метриках туннеля см. в разделе [Настройка оповещений в метриках VPN-шлюза](vpn-gateway-howto-setup-alerts-virtual-network-gateway-metric.md).

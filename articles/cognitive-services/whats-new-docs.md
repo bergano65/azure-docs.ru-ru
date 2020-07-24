@@ -7,18 +7,18 @@ ms.topic: conceptual
 ms.author: erhopf
 ms.service: cognitive-services
 ms.date: 07/09/2020
-ms.openlocfilehash: da09cb8aa112cdf927c1a67401ab3f6a92e85ece
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.openlocfilehash: 59d19bd2a1dca2a3bc3c6ec3aee9e63b8f12b5d3
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86225316"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87075186"
 ---
 # <a name="cognitive-services-docs-whats-new-for-june-1-2020---june-30-2020"></a>Cognitive Services документы: новые возможности для 1 июня 2020-30 июня 2020
 
 Добро пожаловать в Cognitive Services документы с 1 июня 2020 до 30 июня 2020. В этой статье перечислены некоторые основные изменения, внесенные в документы в течение этого периода.
 
-## <a name="computer-vision"></a>API Компьютерного зрения
+## <a name="computer-vision"></a>Компьютерное зрение
 
 ### <a name="updated-articles"></a>Обновленные статьи
 
@@ -69,16 +69,16 @@ ms.locfileid: "86225316"
 ### <a name="new-articles"></a>Новые статьи
 
 - [Основные понятия пользовательских команд](/azure/cognitive-services/speech-service/custom-commands-references)
-- [Добавление подтверждений для команды](/azure/cognitive-services/speech-service/how-to-custom-commands-add-confirmations)
-- [Настройка параметра как сущности внешнего каталога](/azure/cognitive-services/speech-service/how-to-custom-commands-add-external-catalog-string-entity)
+- [Добавление подтверждений для команды](/azure/cognitive-services/speech-service/how-to-custom-commands-add-interaction-rules#add-confirmations-to-a-command)
+- [Настройка параметра как сущности внешнего каталога](/azure/cognitive-services/speech-service/how-to-custom-commands-add-parameter-configuration#configure-parameter-as-external-catalog-entity)
 - [Использование шаблонов создания языков для речевых ответов](/azure/cognitive-services/speech-service/how-to-custom-commands-add-language-generation-templates)
-- [Реализация исправлений в команде](/azure/cognitive-services/speech-service/how-to-custom-commands-add-one-step-correction)
+- [Реализация исправлений в команде](/azure/cognitive-services/speech-service/how-to-custom-commands-add-parameter-configuration)
 - [Добавление параметров в команды](/azure/cognitive-services/speech-service/how-to-custom-commands-add-parameters-to-commands)
-- [Добавление простых команд](/azure/cognitive-services/speech-service/how-to-custom-commands-add-simple-commands)
-- [Добавление проверок к пользовательским параметрам команды](/azure/cognitive-services/speech-service/how-to-custom-commands-add-validations)
-- [Создание приложения с пользовательскими командами](/azure/cognitive-services/speech-service/how-to-custom-commands-create-empty-project)
+- [Добавление простых команд](/azure/cognitive-services/speech-service/how-to-custom-commands-create-application-with-simple-commands)
+- [Добавление проверок к пользовательским параметрам команды](/azure/cognitive-services/speech-service/how-to-custom-commands-add-parameter-configuration#add-validation-to-parameters)
+- [Создание приложения с пользовательскими командами](/azure/cognitive-services/speech-service/how-to-custom-commands-create-application-with-simple-commands#create-empty-application)
 - [CI/CD для набора средств "Пользовательское распознавание речи"](/azure/cognitive-services/speech-service/how-to-custom-speech-continuous-integration-continuous-deployment)
-- [Создание сквозного речевого помощника с помощью пользовательских команд](/azure/cognitive-services/speech-service/quickstart-custom-commands-e2e-application)
+- [Создание сквозного речевого помощника с помощью пользовательских команд](/azure/cognitive-services/speech-service/quickstart-custom-commands-application)
 - [Краткое руководство. Тестирование модели с использованием звукового файла в Speech Studio](/azure/cognitive-services/speech-service/quickstarts/speech-studio-test-model)
 - [Основные сведения о распознавании говорящего](/azure/cognitive-services/speech-service/speaker-recognition-basics)
 - [Что такое служба Распознавание говорящего Azure?](/azure/cognitive-services/speech-service/speaker-recognition-overview)
@@ -100,7 +100,7 @@ ms.locfileid: "86225316"
 - [Краткое руководство. Вызов API "Анализ текста" в Cognitive Services с помощью REST API Python](/azure/cognitive-services/text-analytics/quickstarts/python)
 - [Краткое руководство. Использование Ruby для вызова API анализа текста Cognitive Services](/azure/cognitive-services/text-analytics/quickstarts/ruby)
 
-## <a name="translator"></a>API перевода
+## <a name="translator"></a>Переводчик
 
 ### <a name="updated-articles"></a>Обновленные статьи
 

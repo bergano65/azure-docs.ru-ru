@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 06/28/2018
+ms.date: 07/10/2020
 ms.author: terrylan
-ms.openlocfilehash: d723e60afe543808c88b1ae040e2979412ff324c
-ms.sourcegitcommit: 0b2367b4a9171cac4a706ae9f516e108e25db30c
+ms.openlocfilehash: 4f3b4b5e26c8feab44a01d3714c194eee0fc98e9
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86273478"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87076282"
 ---
 # <a name="azure-customer-data-protection"></a>Защита данных клиентов в Azure   
 По умолчанию у операционного и технического персонала службы поддержки корпорации Майкрософт нет доступа к пользовательским данным. При предоставлении доступа к данным, связанным с обращением в службу поддержки, она предоставляется только с помощью JIT-модели с политиками, которые подлежат аудиту и проверены в соответствии с политиками соответствия и конфиденциальности.  Требования к управлению доступом устанавливаются следующей политикой безопасности Azure:

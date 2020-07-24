@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 04/16/2020
-ms.openlocfilehash: e8619bd7159bbbd418548a5e014dd92f7b9c9e84
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 8e68bd2d164e3a8de60a9061363b839c4dfd4777
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86086387"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87074760"
 ---
 # <a name="create-virtual-networks-for-azure-hdinsight-clusters"></a>Создание виртуальных сетей для кластеров Azure HDInsight
 
@@ -27,7 +27,7 @@ ms.locfileid: "86086387"
 
 Ниже приведены другие необходимые условия для примеров в этой статье.
 
-* Если вы используете PowerShell, необходимо установить [модуль AZ](https://docs.microsoft.com/powershell/azure/overview).
+* Если вы используете PowerShell, необходимо установить [модуль AZ](https://docs.microsoft.com/powershell/azure/).
 * Если вы хотите использовать Azure CLI и еще не установили ее, см. статью [установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
 > [!IMPORTANT]  
@@ -370,7 +370,7 @@ az network nsg rule create -g RESOURCEGROUP --nsg-name hdisecure -n ssh --protoc
 
 После выполнения этих действий можно подключаться к ресурсам в виртуальной сети, используя полные доменные имена (FQDN). Теперь можно установить HDInsight в виртуальной сети.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Полный пример настройки HDInsight для подключения к локальной сети см. в статье [Подключение hdinsight к локальной сети](./connect-on-premises-network.md).
 * Сведения о настройке кластеров Apache HBase в виртуальных сетях Azure см. [в статье Создание кластеров Apache HBase в HDInsight в виртуальной сети Azure](hbase/apache-hbase-provision-vnet.md).

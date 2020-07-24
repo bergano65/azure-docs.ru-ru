@@ -1,14 +1,14 @@
 ---
-title: Функции — LUIS
+title: Функции машинного обучения с LUIS
 description: Свойства добавляются в языковую модель, чтобы предоставить указания о принципах распознавания входных данных, которые требуется пометить или классифицировать.
 ms.topic: conceptual
 ms.date: 06/10/2020
-ms.openlocfilehash: fbf39382e418bef9a7d39886076a4100a26ce3e7
-ms.sourcegitcommit: f98ab5af0fa17a9bba575286c588af36ff075615
+ms.openlocfilehash: 02a6fd27dbe22a40b29b47515edec5506d3b2075
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85362464"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87075167"
 ---
 # <a name="machine-learning-features"></a>Функции машинного обучения
 

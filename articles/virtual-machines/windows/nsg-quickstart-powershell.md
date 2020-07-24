@@ -7,17 +7,18 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 12/13/2017
 ms.author: cynthn
-ms.openlocfilehash: a0dcc53d84edb4dd697213106c02626df24acfd8
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: bae6da2e299065bada3b4e8a9657f00ef07e138b
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "81869396"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87075565"
 ---
 # <a name="how-to-open-ports-and-endpoints-to-a-vm-in-azure-using-powershell"></a>Как открыть порты и конечные точки для виртуальной машины в Azure с помощью PowerShell
 [!INCLUDE [virtual-machines-common-nsg-quickstart](../../../includes/virtual-machines-common-nsg-quickstart.md)]
 
 ## <a name="quick-commands"></a>Быстрые команды
-Для создания группы безопасности сети и правил ACL потребуется [последняя версия Azure PowerShell](/powershell/azureps-cmdlets-docs). Эти действия можно также [выполнить с помощью портала Azure](nsg-quickstart-portal.md).
+Для создания группы безопасности сети и правил ACL потребуется [последняя версия Azure PowerShell](/powershell/azure/). Эти действия можно также [выполнить с помощью портала Azure](nsg-quickstart-portal.md).
 
 Войдите в свою учетную запись Azure.
 
@@ -27,7 +28,7 @@ Connect-AzAccount
 
 В следующих примерах замените имена параметров собственными значениями. Примеры имен параметров: *myResourceGroup*, *mystorageaccount* и *myVM*.
 
-Создайте правило с помощью командлета [New-AzNetworkSecurityRuleConfig](https://docs.microsoft.com/powershell/module/az.network/new-aznetworksecurityruleconfig). В следующем примере создается правило с именем *myNetworkSecurityGroupRule*. Это правило разрешает *TCP*-трафик через порт *80*:
+Создайте правило с помощью командлета [New-AzNetworkSecurityRuleConfig](/powershell/module/az.network/new-aznetworksecurityruleconfig). В следующем примере создается правило с именем *myNetworkSecurityGroupRule*. Это правило разрешает *TCP*-трафик через порт *80*:
 
 ```powershell
 $httprule = New-AzNetworkSecurityRuleConfig `
@@ -43,7 +44,7 @@ $httprule = New-AzNetworkSecurityRuleConfig `
     -DestinationPortRange 80
 ```
 
-Затем создайте группу безопасности сети с помощью командлета [New-AzureNetworkSecurityGroup](https://docs.microsoft.com/powershell/module/az.network/new-aznetworksecuritygroup) и назначьте только что созданное правило HTTP, как показано ниже. В следующем примере создается группа безопасности сети с именем *myNetworkSecurityGroup*.
+Затем создайте группу безопасности сети с помощью командлета [New-AzureNetworkSecurityGroup](/powershell/module/az.network/new-aznetworksecuritygroup) и назначьте только что созданное правило HTTP, как показано ниже. В следующем примере создается группа безопасности сети с именем *myNetworkSecurityGroup*.
 
 ```powershell
 $nsg = New-AzNetworkSecurityGroup `
@@ -53,7 +54,7 @@ $nsg = New-AzNetworkSecurityGroup `
     -SecurityRules $httprule
 ```
 
-Теперь давайте назначим подсети вашу группу безопасности сети. В следующем примере показано назначение виртуальной сети *myVnet* переменной *$vnet* с помощью [Get-AzVirtualNetwork](https://docs.microsoft.com/powershell/module/az.network/get-azvirtualnetwork).
+Теперь давайте назначим подсети вашу группу безопасности сети. В следующем примере показано назначение виртуальной сети *myVnet* переменной *$vnet* с помощью [Get-AzVirtualNetwork](/powershell/module/az.network/get-azvirtualnetwork).
 
 ```powershell
 $vnet = Get-AzVirtualNetwork `
@@ -61,7 +62,7 @@ $vnet = Get-AzVirtualNetwork `
     -Name "myVnet"
 ```
 
-Свяжите группу безопасности сети с подсетью с помощью командлета [Set-AzVirtualNetworkSubnetConfig](https://docs.microsoft.com/powershell/module/az.network/set-azvirtualnetworksubnetconfig). В следующем примере подсеть *mySubnet* связывается с группой безопасности сети:
+Свяжите группу безопасности сети с подсетью с помощью командлета [Set-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/set-azvirtualnetworksubnetconfig). В следующем примере подсеть *mySubnet* связывается с группой безопасности сети:
 
 ```powershell
 $subnetPrefix = $vnet.Subnets|?{$_.Name -eq 'mySubnet'}
@@ -73,7 +74,7 @@ Set-AzVirtualNetworkSubnetConfig `
     -NetworkSecurityGroup $nsg
 ```
 
-Наконец, обновите виртуальную сеть с помощью командлета [Set-AzVirtualNetwork](https://docs.microsoft.com/powershell/module/az.network/set-azvirtualnetwork), чтобы изменения вступили в силу.
+Наконец, обновите виртуальную сеть с помощью командлета [Set-AzVirtualNetwork](/powershell/module/az.network/set-azvirtualnetwork), чтобы изменения вступили в силу.
 
 ```powershell
 Set-AzVirtualNetwork -VirtualNetwork $vnet
@@ -91,4 +92,3 @@ Set-AzVirtualNetwork -VirtualNetwork $vnet
 * [Общие сведения об Azure Resource Manager](../../azure-resource-manager/management/overview.md)
 * [Безопасность сети](../../virtual-network/security-overview.md)
 * [Обзор Azure Load Balancer](../../load-balancer/load-balancer-overview.md)
-

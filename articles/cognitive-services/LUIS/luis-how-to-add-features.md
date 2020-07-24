@@ -1,5 +1,5 @@
 ---
-title: Функции — LUIS
+title: Использование функций для улучшения списка слов LUIS
 titleSuffix: Azure Cognitive Services
 description: Использование Интеллектуальной службы распознавания речи для добавления функций приложения, которые улучшают обнаружение или прогнозирование намерений и сущностей, которые относятся к категориям и шаблонам
 services: cognitive-services
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 05/17/2020
 ms.author: diberry
-ms.openlocfilehash: 7d9f1e520ab5c96b9c5288383324b165a4cd74f0
-ms.sourcegitcommit: 61d850bc7f01c6fafee85bda726d89ab2ee733ce
+ms.openlocfilehash: 25698fe2b05cbfb564e441e488bfa93221a9618a
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84344447"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87075202"
 ---
 # <a name="use-features-to-boost-signal-of-word-list"></a>Использование функций для повышения сигнала списка слов
 

@@ -6,11 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/22/2019
-ms.openlocfilehash: 680cd9b44cc447f9bdea38cb9d04fc661fba9c79
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b33bd5ba20e21d757e412e9dac7c474308c4561d
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77659260"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87077154"
 ---
 # <a name="oms-portal-moving-to-azure"></a>Перемещение портала OMS в Azure
 
@@ -40,7 +41,7 @@ ms.locfileid: "77659260"
 - Вам нужно [перенести разрешения пользователя](#user-access-and-role-migration) на портал Azure.
 - Дополнительные сведения о переходе на решение OMS "Управление обновлениями" см. в разделе [Перенос развертываний обновлений OMS в Azure](../../automation/migrate-oms-update-deployments.md).
 
-Дополнительные сведения о переходе на портал Azure см. в статье [Часто задаваемые вопросы о переходе от портала OMS к порталу Azure для пользователей Log Analytics](oms-portal-faq.md). 
+Дополнительные сведения о переходе на портал Azure см. в статье [Часто задаваемые вопросы о переходе от портала OMS к порталу Azure для пользователей Log Analytics](../overview.md). 
 
 ## <a name="user-access-and-role-migration"></a>Миграция прав доступа и ролей пользователей
 Управление доступом на портале Azure предусматривает больше возможностей и функций, чем управление доступом на портале OMS. Дополнительные сведения об управлении доступом в Log Analytics см. в разделе [Разработка рабочей области журналов Azure Monitor](design-logs-deployment.md) .
@@ -69,7 +70,7 @@ ms.locfileid: "77659260"
 
 ### <a name="alert-extension"></a>Перенос оповещений  
 
-Оповещения были [расширены в портал Azure](alerts-extend.md) существующие предупреждения будут по прежнему отображаться на портале OMS, но вы можете управлять ими только в портал Azure. Если вы работаете с оповещениями программным способом с помощью REST API для оповещений Log Analytics или шаблона ресурса оповещений Log Analytics, вам нужно будет использовать группы действий вместо действий во всех вызовах API, шаблонах Azure Resource Manager и командах PowerShell.
+Оповещения были [расширены в портал Azure](./alerts-unified-log.md) существующие предупреждения будут по прежнему отображаться на портале OMS, но вы можете управлять ими только в портал Azure. Если вы работаете с оповещениями программным способом с помощью REST API для оповещений Log Analytics или шаблона ресурса оповещений Log Analytics, вам нужно будет использовать группы действий вместо действий во всех вызовах API, шаблонах Azure Resource Manager и командах PowerShell.
 
 ### <a name="alert-management-solution"></a>Решение для управления оповещениями
 В отличие от предыдущего объявления, [решение для управления оповещениями](alert-management-solution.md) по-прежнему будет доступным и будет полностью поддерживаться на портале Azure. Вы можете установить это решение из Azure Marketplace.
@@ -101,7 +102,7 @@ ms.locfileid: "77659260"
 Вы можете по-прежнему использовать параметры диагностики для отправки журналов NSG в Log Analytics. Это означает, что все существующие сохраненные поиски, предупреждения и информационные панели будут продолжать работать. Пользователи, которые уже установили это решение, смогут работать с ним до получения дополнительных уведомлений. С 5 сентября решение "Аналитика групп безопасности сетей Azure" будет удалено из marketplace. Оно будет доступно только через сообщество в виде [шаблона быстрого запуска Azure](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Operationalinsights).
 
 ## <a name="system-center-operations-manager"></a>System Center Operations Manager
-Если вы уже [подключили группу управления Operations Manager к Log Analytics](om-agents.md), работа этого решения не изменится. Чтобы настроить новые подключения, следуйте указаниям в записи блога о [настройке Operations Management Suite с помощью пакета управления Microsoft System Center Operations Manager](https://blogs.technet.microsoft.com/momteam/2018/07/25/microsoft-system-center-operations-manager-management-pack-to-configure-operations-management-suite/).
+Если вы уже [подключили группу управления Operations Manager к Log Analytics](om-agents.md), работа этого решения не изменится. Чтобы настроить новые подключения, следуйте указаниям в записи блога о [настройке Operations Management Suite с помощью пакета управления Microsoft System Center Operations Manager](https://techcommunity.microsoft.com/t5/system-center-blog/bg-p/SystemCenterBlog).
 
-## <a name="next-steps"></a>Дальнейшие шаги
-- Просмотрите [вопросы и ответы о переходе от портала OMS на портал Azure для пользователей Log Analytics](oms-portal-faq.md).
+## <a name="next-steps"></a>Дальнейшие действия
+- Просмотрите [вопросы и ответы о переходе от портала OMS на портал Azure для пользователей Log Analytics](../overview.md).

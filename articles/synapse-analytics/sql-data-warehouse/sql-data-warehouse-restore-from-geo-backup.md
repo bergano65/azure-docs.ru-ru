@@ -11,12 +11,12 @@ ms.date: 07/12/2019
 ms.author: anjangsh
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 2b7e980f2ffd31bd10b481fe4fc8e0617c40717a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3c8d78c164cefbab03d9d3fa783c75ded9773d38
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85205090"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87075820"
 ---
 # <a name="geo-restore-for-sql-pool"></a>Геовосстановление для пула SQL
 
@@ -36,8 +36,8 @@ ms.locfileid: "85205090"
 > Можно выполнить геовосстановление в хранилище 2-го поколения! Для этого в качестве необязательного параметра укажите имя ServiceObjectiveName 2-го поколения (например, DW1000**c**).
 >
 
-1. Перед началом убедитесь, что [установлен Azure PowerShell](/powershell/azure/overview?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
-2. Откройте PowerShell.
+1. Перед началом убедитесь, что [установлен Azure PowerShell](/powershell/azure/?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
+2. Откройте средство PowerShell.
 3. Подключитесь к своей учетной записи Azure и выведите список всех подписок, связанных с ней.
 4. Выберите подписку, содержащую восстанавливаемое хранилище данных.
 5. Получите хранилище данных, которое необходимо восстановить.
@@ -77,7 +77,7 @@ $GeoRestoredDatabase.status
 Выполните действия, описанные ниже, чтобы восстановить пул SQL из географической резервной копии.
 
 1. Войдите в учетную запись [портал Azure](https://portal.azure.com/) .
-2. Щелкните **+ Create a resource** (+ Создать ресурс).
+2. Щелкните **Создать ресурс**.
 
    ![Создать хранилище данных](./media/sql-data-warehouse-restore-from-geo-backup/georestore-new.png)
 
@@ -95,7 +95,7 @@ $GeoRestoredDatabase.status
 
 6. После восстановления хранилища данных убедитесь, что **состояние** находится в сети.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Восстановление существующего пула SQL](sql-data-warehouse-restore-active-paused-dw.md)
 - [Восстановление удаленного пула SQL](sql-data-warehouse-restore-deleted-dw.md)

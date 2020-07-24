@@ -7,13 +7,14 @@ ms.date: 05/16/2018
 ms.topic: conceptual
 ms.service: iot-hub
 services: iot-hub
-ms.openlocfilehash: a05fbf6e1908f88014cd8da99fafb875de033f45
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0bb7b91cd31761b801ad469b8ce556b29e09fd3a
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79499311"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87074714"
 ---
-# <a name="summary-of-customer-data-request-features"></a>Сводка о возможностях запроса данных клиента
+# <a name="customer-data-request-features-for-azure-iot-hub-devices"></a>Функции запроса данных клиента для устройств центра Интернета вещей Azure
 
 Центр Интернета вещей Azure — это предназначенная для корпоративных клиентов облачная служба на базе REST API, которая обеспечивает безопасный двухсторонний обмен данными между миллионами устройств и секционированной службой Azure.
 

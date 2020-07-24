@@ -11,19 +11,19 @@ author: lobrien
 manager: cgronlun
 ms.date: 06/15/2020
 ms.custom: tracking-python
-ms.openlocfilehash: f162aca8c30d890ecf662a88fb5f2182edb14c9e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1b8dfa37047113d84470f86cd67c601ebf48f793
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85298248"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87078085"
 ---
 # <a name="use-automated-ml-in-an-azure-machine-learning-pipeline-in-python"></a>Использование автоматизированного ML в конвейере Машинное обучение Azure в Python
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
 
 Функция автоматического выполнения машинного обучения Машинное обучение Azure позволяет обнаруживать высокопроизводительные модели без повторной реализации всех возможных подходов. В сочетании с конвейерами Машинное обучение Azure можно создавать развертываемые рабочие процессы, которые позволяют быстро обнаружить алгоритм, который лучше всего подходит для ваших данных. В этой статье показано, как эффективно присоединиться к этапу подготовки данных к автоматическому этапу ML. С помощью автоматизированного ML можно быстро обнаружить оптимальный алгоритм, который лучше всего подходит для ваших данных, в то же время размещаясь в пути к Млопс и эксплуатации жизненного цикла модели с конвейерами.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 * Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Машинного обучения Azure](https://aka.ms/AMLFree) уже сегодня.
 
@@ -97,6 +97,8 @@ if not compute_name in ws.compute_targets :
 
 compute_target = ws.compute_targets[compute_name]
 ```
+
+[!INCLUDE [low-pri-note](../../includes/machine-learning-low-pri-vm.md)]
 
 Промежуточные данные между подготовкой данных и автоматическим этапом ML можно хранить в хранилище данных по умолчанию рабочей области, поэтому нам не нужно выполнять больше вызовов `get_default_datastore()` для `Workspace` объекта. 
 
@@ -268,7 +270,7 @@ prepped_data = Dataset.get_by_name(ws, 'Data_prepared')
 
 Сравнение двух методов:
 
-| Метод |  | 
+| Метод | Преимущества и недостатки | 
 |-|-|
 |`PipelineOutputTabularDataset`| Более высокая производительность | 
 || Естественный маршрут от`PipelineData` | 
@@ -504,7 +506,7 @@ model.get_port_data_reference().download('.')
 
 Наконец, фактические метрики и модель загружаются на локальный компьютер, как было сказано в разделе "анализ результатов конвейера" выше.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Запустите эту записную книжку Jupyter, где [приведен полный пример автоматизированного ML в конвейере](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/nyc-taxi-data-regression-model-building/nyc-taxi-data-regression-model-building.ipynb) , который использует регрессию для прогнозирования такси году
 - [Создание автоматизированных экспериментов ML без написания кода](how-to-use-automated-ml-for-ml-models.md)

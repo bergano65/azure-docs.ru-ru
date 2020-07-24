@@ -2,23 +2,23 @@
 title: 'Настройка проверки подлинности Azure AD для VPN-подключения пользователя: Виртуальная глобальная сеть'
 description: Узнайте, как настроить проверку подлинности Azure Active Directory для VPN пользователей.
 services: virtual-wan
-author: anzaman
+author: kumudD
 ms.service: virtual-wan
 ms.topic: how-to
 ms.date: 03/17/2020
 ms.author: alzam
-ms.openlocfilehash: dd80724d62c71fdec81965fb4aa6a07a6233a288
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2028cae4908214db28de2545f02f5f2997eeb8af
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84753962"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87077486"
 ---
 # <a name="configure-azure-active-directory-authentication-for-user-vpn"></a>Настройка проверки подлинности Azure Active Directory для VPN пользователя
 
 В этой статье показано, как настроить аутентификацию Azure AD для VPN пользователей в виртуальной глобальной сети для подключения к ресурсам в Azure через VPN-подключение Опенвпн. Проверка подлинности Azure Active Directory доступна только для шлюзов, использующих протокол OpenVPN и клиенты под управлением Windows.
 
-Этот тип подключения требует, чтобы клиент был настроен на клиентском компьютере. Дополнительные сведения о виртуальной глобальной сети см. в [обзоре виртуальной глобальной сети](virtual-wan-about.md).
+Этот тип подключения требует, чтобы клиент был настроен на клиентском компьютере. Дополнительные сведения о Виртуальной глобальной сети см. в [этой статье](virtual-wan-about.md).
 
 Вы узнаете, как выполнять следующие задачи:
 
@@ -38,7 +38,7 @@ ms.locfileid: "84753962"
 
 Перед началом настройки убедитесь, что удовлетворены следующие требования:
 
-* У вас есть виртуальная сеть, к которой необходимо подключиться. Ни одна из подсетей локальной сети не должна перекрывать виртуальные сети, к которым вы хотите подключиться. Чтобы создать виртуальную сеть на портал Azure, см. [Краткое руководство](../virtual-network/quick-create-portal.md).
+* У вас есть виртуальная сеть, к которой необходимо подключиться. Ни одна из подсетей локальной сети не должна перекрывать виртуальные сети, к которым вы хотите подключиться. Сведения о создании виртуальной сети на портале Azure см. в [этой статье](../virtual-network/quick-create-portal.md).
 
 * В вашей виртуальной сети не должны находиться виртуальные сетевые шлюзы. Если в виртуальной сети есть шлюз (VPN или ExpressRoute), необходимо удалить его. Эта конфигурация требует, чтобы виртуальные сети были подключены к шлюзу концентратора Виртуальной глобальной сети.
 
@@ -158,11 +158,11 @@ ms.locfileid: "84753962"
 
 1. Нажмите кнопку с многоточием (...) рядом с удаляемым профилем клиента. Затем щелкните **Remove** (Удалить).
 
-    ![удалить](./media/virtual-wan-point-to-site-azure-ad/delete/delete1.jpg)
+    ![delete](./media/virtual-wan-point-to-site-azure-ad/delete/delete1.jpg)
 
 2. Выберите **Remove** (Удалить), чтобы выполнить удаление.
 
-    ![удалить](./media/virtual-wan-point-to-site-azure-ad/delete/delete2.jpg)
+    ![delete](./media/virtual-wan-point-to-site-azure-ad/delete/delete2.jpg)
 
 #### <a name="diagnose-connection-issues"></a><a name="diagnose"></a>Diagnose connection issues (Диагностика проблем с подключением)
 

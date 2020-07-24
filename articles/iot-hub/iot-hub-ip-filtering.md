@@ -7,11 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 05/25/2020
 ms.author: robinsh
-ms.openlocfilehash: 742706f4daa518faf06e5c8b735e679f345f1279
-ms.sourcegitcommit: 1f25aa993c38b37472cf8a0359bc6f0bf97b6784
+ms.openlocfilehash: 1ba3c89ea4f964f9e6fd5f902aab29a83a058f25
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83849892"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87074718"
 ---
 # <a name="use-ip-filters"></a>Использование фильтрации IP-адресов
 
@@ -124,7 +125,7 @@ az resource update -n <iothubName> -g <resourceGroupName> --resource-type Micros
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Фильтры IP-адресов Центра Интернета вещей можно получать и обновлять с помощью [Azure PowerShell](/powershell/azure/overview).
+Фильтры IP-адресов Центра Интернета вещей можно получать и обновлять с помощью [Azure PowerShell](/powershell/azure/).
 
 ```powershell
 # Get your IoT Hub resource using its name and its resource group name

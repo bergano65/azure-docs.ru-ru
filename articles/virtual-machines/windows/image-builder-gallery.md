@@ -7,11 +7,12 @@ ms.date: 05/05/2020
 ms.topic: how-to
 ms.service: virtual-machines-windows
 ms.subservice: imaging
-ms.openlocfilehash: 65e8818e19ac5ad20bb87fd8eb27a4c36c2839cf
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 0db618d63964c6f271f9a14b91849e704cfd7820
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83656672"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87077514"
 ---
 # <a name="preview-create-a-windows-image-and-distribute-it-to-a-shared-image-gallery"></a>Предварительный просмотр: Создание образа Windows и его распространение в Общей коллекции образов 
 
@@ -23,7 +24,7 @@ ms.locfileid: "83656672"
 
 Конструктор образов Azure автоматически выполняет команду sysprep для подготовки образа. Это универсальная команда, которую можно [переопределить](https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md#vms-created-from-aib-images-do-not-create-successfully) при необходимости. 
 
-Учитывайте, сколько раз была произведена настройка. Команду Sysprep для образа Windows можно выполнить до 8 раз. После этого потребуется повторно создать образ Windows. Дополнительные сведения см. в разделе [Ограничения на количество выполнений команды Sysprep](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--generalize--a-windows-installation#limits-on-how-many-times-you-can-run-sysprep). 
+Учитывайте, сколько раз была произведена настройка. Команду Sysprep для образа Windows можно выполнить до 8 раз. После этого потребуется повторно создать образ Windows. Дополнительные сведения см. в разделе [Ограничения на количество выполнений команды Sysprep](/windows-hardware/manufacture/desktop/sysprep--generalize--a-windows-installation#limits-on-how-many-times-you-can-run-sysprep). 
 
 > [!IMPORTANT]
 > Конструктор образов Azure сейчас находится на этапе общедоступной предварительной версии.
@@ -97,7 +98,7 @@ New-AzResourceGroup `
 
 
 ## <a name="create-a-user-assigned-identity-and-set-permissions-on-the-resource-group"></a>Создание назначаемого пользователем удостоверения и задание разрешений для группы ресурсов
-Для вставки образа в Общую коллекцию образов Azure (SIG) Конструктор образов будет использовать предоставленное [удостоверение пользователя](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-powershell). В этом примере вы создадите определение роли Azure с детализированными действиями для распространения образа в SIG. Затем определение роли будет назначено удостоверению пользователя.
+Для вставки образа в Общую коллекцию образов Azure (SIG) Конструктор образов будет использовать предоставленное [удостоверение пользователя](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-powershell.md). В этом примере вы создадите определение роли Azure с детализированными действиями для распространения образа в SIG. Затем определение роли будет назначено удостоверению пользователя.
 
 ```powershell
 # setup role def names, these need to be unique

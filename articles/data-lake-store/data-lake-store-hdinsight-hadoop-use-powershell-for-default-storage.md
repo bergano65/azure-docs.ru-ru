@@ -6,12 +6,12 @@ ms.service: data-lake-store
 ms.topic: how-to
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: 053ee85318d8ac9ccd5fb8b63fb44df966d34821
-ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.openlocfilehash: f7c41dc11e7321d6fb9e6f8c030eb74b586a1b3e
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85855044"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87075033"
 ---
 # <a name="create-hdinsight-clusters-with-azure-data-lake-storage-gen1-as-default-storage-by-using-powershell"></a>Создание кластеров HDInsight, использующих Azure Data Lake Storage 1-го поколения в качестве хранилища по умолчанию, с помощью PowerShell
 
@@ -31,14 +31,14 @@ ms.locfileid: "85855044"
 
 Чтобы настроить HDInsight для работы с Data Lake Storage 1-го поколения с помощью PowerShell, следуйте инструкциям в следующих пяти разделах.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 Прежде чем приступить к изучению этого руководства, убедитесь, что выполнены следующие требования.
 
 * **Подписка на Azure**. Перейдите на сайт [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-* **Azure PowerShell 1.0 или более поздняя версия**. Инструкции см. в статье [Приступая к работе с командлетами Azure PowerShell](/powershell/azure/overview).
+* **Azure PowerShell 1.0 или более поздняя версия**. Инструкции см. в статье [Приступая к работе с командлетами Azure PowerShell](/powershell/azure/).
 * **Пакет средств разработки программного обеспечения для Windows (пакет SDK)**. Инструкции по установке пакета Windows SDK приведены на странице [Загружаемые файлы и инструменты для Windows 10](https://dev.windows.com/downloads). Пакет SDK используется для создания сертификата безопасности.
 * **Субъект-служба Azure Active Directory**. В этом руководстве описывается создание субъекта-службы в Azure Active Directory (Azure AD). Чтобы создать субъект-службу, необходимо быть администратором Azure AD. Если вы являетесь администратором, то можете пропустить это предварительное требование и продолжить работу с руководством.
 
@@ -77,7 +77,7 @@ ms.locfileid: "85855044"
     New-AzResourceGroup -Name $resourceGroupName -Location "East US 2"
     ```
 
-    Вы должны увидеть подобные выходные данные:
+    Вы должны увидеть следующий результат:
 
     ```output
     ResourceGroupName : hdiadlgrp
@@ -127,7 +127,7 @@ ms.locfileid: "85855044"
 
 Чтобы настроить аутентификацию Active Directory для Data Lake Storage 1-го поколения, необходимо выполнить инструкции, приведенные в двух следующих разделах.
 
-### <a name="create-a-self-signed-certificate"></a>Создание самозаверяющего сертификата
+### <a name="create-a-self-signed-certificate"></a>Создание самозаверяющего сертификата.
 Прежде чем выполнять дальнейшие действия, описанные в этом разделе, убедитесь, что на вашем компьютере установлен [пакет SDK Windows](https://dev.windows.com/en-us/downloads). Вам также необходимо создать каталог, например *C:\mycertdir*, для создания сертификата.
 
 1. В окне PowerShell перейдите в расположение, где установлен пакет Windows SDK (обычно это *C:\Program Files (x86)\Windows Kits\10\bin\x86*), и с помощью служебной программы [MakeCert][makecert] создайте самозаверяющий сертификат и закрытый ключ. Используйте следующие команды:
@@ -281,7 +281,7 @@ hdfs dfs -ls adl:///
 
 С помощью команды `hdfs dfs -put` вы можете передать несколько файлов в Data Lake Storage 1-го поколения, а затем с помощью команды `hdfs dfs -ls` проверить, успешно ли они передались.
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 * [Использование Data Lake Storage 1-го поколения с кластерами Azure HDInsight](../hdinsight/hdinsight-hadoop-use-data-lake-store.md)
 * [Создание кластеров HDInsight, использующих Data Lake Storage 1-го поколения, с помощью портала Azure](data-lake-store-hdinsight-hadoop-use-portal.md)
 

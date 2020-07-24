@@ -15,12 +15,12 @@ ms.date: 11/13/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 11/13/2019
-ms.openlocfilehash: 0fe4ae76645ec2a0ae8aae93b9db987ece9a45b9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 85ebb7f5ac52f4eea25f9e6f1a2b1b5ac6f4caa5
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85255132"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87077919"
 ---
 # <a name="push-notifications-with-azure-notification-hubs-frequently-asked-questions"></a>Часто задаваемые вопросы об отправке push-уведомлений с помощью Центров уведомлений Azure
 
@@ -138,7 +138,7 @@ Push-уведомления поддерживаются для [iOS](ios-sdk-ge
 
 ### <a name="what-is-the-push-notification-delivery-security-model"></a>Какая модель безопасности доставки push-уведомлений используется?
 
-Центры уведомлений Azure используют модель безопасности на основе [подписанного URL-адреса](../storage/common/storage-dotnet-shared-access-signature-part-1.md). Маркеры подписанного URL-адреса можно использовать на уровне корневого пространства имен или на детализированном уровне Центров уведомлений. Для этих маркеров подписанного URL-адреса можно задать различные правила авторизации, например разрешения для отправки сообщений или прослушивания уведомлений. Дополнительные сведения см. в документе о [модели безопасности Центров уведомлений].
+Центры уведомлений Azure используют модель безопасности на основе [подписанного URL-адреса](../storage/common/storage-sas-overview.md). Маркеры подписанного URL-адреса можно использовать на уровне корневого пространства имен или на детализированном уровне Центров уведомлений. Для этих маркеров подписанного URL-адреса можно задать различные правила авторизации, например разрешения для отправки сообщений или прослушивания уведомлений. Дополнительные сведения см. в документе о [модели безопасности Центров уведомлений].
 
 ### <a name="how-should-i-handle-sensitive-payload-in-push-notifications"></a>Как обрабатываются конфиденциальные полезные данные в push-уведомлениях?
 
@@ -151,7 +151,7 @@ Push-уведомления поддерживаются для [iOS](ios-sdk-ge
 
 Для отправки конфиденциальных полезных данных мы советуем использовать шаблон безопасных push-уведомлений. Отправитель посылает уведомление для проверки связи с идентификатором сообщения на устройство без конфиденциальных полезных данных. Когда приложение на устройстве получает эти полезные данные, оно может напрямую вызвать безопасный API, чтобы получить информацию о сообщении. Руководство по реализации этой схемы см. на странице [Безопасные push-уведомления посредством центров уведомлений Azure].
 
-## <a name="operations"></a>Операции
+## <a name="operations"></a>Operations
 
 ### <a name="what-support-is-provided-for-disaster-recovery"></a>Какая поддержка предоставляется для аварийного восстановления?
 
@@ -191,7 +191,7 @@ Push-уведомления поддерживаются для [iOS](ios-sdk-ge
 
 Центры уведомлений Microsoft Azure позволяют просматривать данные телеметрии на [портале Azure]. Дополнительные сведения о доступных метриках в Центрах уведомлений см. на [этой странице].
 
-Можно также программно получить доступ к метрикам. Дополнительные сведения см. в следующих статьях:
+Можно также программно получить доступ к метрикам. См. сведения в следующих статьях:
 
 - [Получение метрик Azure Monitor с помощью .NET](https://azure.microsoft.com/resources/samples/monitor-dotnet-metrics-api/). В этом примере используются имя пользователя и пароль. Чтобы использовать сертификат, перегрузите метод ФромсервицепринЦипал, чтобы предоставить сертификат, как показано в [этом примере](https://github.com/Azure/azure-libraries-for-net/blob/master/src/ResourceManagement/ResourceManager/Authentication/AzureCredentialsFactory.cs). 
 - [Получение метрик и журналов действий для ресурса](https://azure.microsoft.com/resources/samples/monitor-dotnet-query-metrics-activitylogs/)
@@ -203,15 +203,15 @@ Push-уведомления поддерживаются для [iOS](ios-sdk-ge
 [Портал Azure]: https://portal.azure.com
 [Цены на центры уведомлений]: https://azure.microsoft.com/pricing/details/notification-hubs/
 [Notification Hubs SLA]: https://azure.microsoft.com/support/legal/sla/
-[Использование интерфейса REST центров уведомлений]: https://msdn.microsoft.com/library/azure/dn530746.aspx
+[Использование интерфейса REST центров уведомлений]: /previous-versions/azure/reference/dn530746(v=azure.100)
 [Mobile Services Pricing]: https://azure.microsoft.com/pricing/details/mobile-services/
-[Регистрация из внутренней службы приложения]: https://msdn.microsoft.com/library/azure/dn743807.aspx
-[Управление регистрацией]: https://msdn.microsoft.com/library/azure/dn530747.aspx
-[Безопасность]: https://msdn.microsoft.com/library/azure/dn495373.aspx
-[Безопасные push-уведомления посредством центров уведомлений Azure]: https://azure.microsoft.com/documentation/articles/notification-hubs-aspnet-backend-ios-secure-push/
-[Центры уведомлений Azure — рекомендации по диагностике]: https://azure.microsoft.com/documentation/articles/notification-hubs-diagnosing/
+[Регистрация из внутренней службы приложения]: /previous-versions/azure/azure-services/dn743807(v=azure.100)
+[Управление регистрацией]: /previous-versions/azure/azure-services/dn530747(v=azure.100)
+[Безопасность]: /previous-versions/azure/azure-services/dn495373(v=azure.100)
+[Безопасные push-уведомления посредством центров уведомлений Azure]: ./notification-hubs-aspnet-backend-ios-push-apple-apns-secure-notification.md
+[Центры уведомлений Azure — рекомендации по диагностике]: ./notification-hubs-push-notification-fixer.md
 [Метрики]: ../azure-monitor/platform/metrics-supported.md#microsoftnotificationhubsnamespacesnotificationhubs
-[Экспорт и импорт регистраций]: https://docs.microsoft.com/azure/notification-hubs/export-modify-registrations-bulk
+[Экспорт и импорт регистраций]: ./export-modify-registrations-bulk.md
 [Портал Azure]: https://portal.azure.com
 [complete samples]: https://github.com/Azure/azure-notificationhubs-samples
 [App Service Pricing]: https://azure.microsoft.com/pricing/details/app-service/

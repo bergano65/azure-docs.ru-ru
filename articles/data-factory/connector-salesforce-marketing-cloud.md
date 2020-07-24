@@ -11,13 +11,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 10/25/2019
-ms.openlocfilehash: 1a5a2682198f9ce9f5cb39f21e244c723ca513d9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/17/2020
+ms.openlocfilehash: 1f0fb1ee8580c0c7f6eb30228b65e0a3780ef0a8
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81416647"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87076804"
 ---
 # <a name="copy-data-from-salesforce-marketing-cloud-using-azure-data-factory"></a>Копирование данных из Salesforce Marketing Cloud с помощью Фабрики данных Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "81416647"
 
 Данные из Salesforce Marketing Cloud можно скопировать в любое хранилище данных, поддерживаемое в качестве приемника. Список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования, приведен в таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
 
-Соединитель Cloud Marketing в Salesforce поддерживает аутентификацию OAuth 2. Она построена на основе [REST API маркетинга в облаке Salesforce](https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/index-api.htm).
+Соединитель Cloud Marketing для Salesforce поддерживает аутентификацию OAuth 2 и поддерживает как устаревшие, так и расширенные типы пакетов. Соединитель строится на основе [REST API маркетинга в облаке Salesforce](https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/index-api.htm).
 
 >[!NOTE]
 >Этот соединитель не поддерживает извлечение пользовательских объектов или пользовательские модули обработки данных.
@@ -52,13 +52,17 @@ ms.locfileid: "81416647"
 | Свойство | Описание | Обязательно |
 |:--- |:--- |:--- |
 | type | Для свойства type нужно задать значение **Salesforce Marketing Cloud**. | Да |
+| connectionProperties | Группа свойств, определяющих способ подключения к облаку Salesforce Marketing. | Да |
+| ***В разделе `connectionProperties` :*** | | |
+| authenticationType | Указывает используемый метод проверки подлинности. Допустимые значения: `Enhanced sts OAuth 2.0` или `OAuth_2.0` .<br><br>Устаревший пакет Cloud Marketing для Salesforce поддерживает только `OAuth_2.0` , в то время как расширенные потребности в пакетах `Enhanced sts OAuth 2.0` . <br>С 1 августа 2019 г. в маркетинговом облаке Salesforce была удалена возможность создания устаревших пакетов. Все новые пакеты являются расширенными пакетами. | Да |
+| host | Для расширенного пакета узел должен быть [поддоменом](https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/your-subdomain-tenant-specific-endpoints.htm) , представленным 28-символьной строкой, начинающейся с букв "MC", например `mc563885gzs27c5t9-63k636ttgm` . <br>Для устаревшего пакета укажите `www.exacttargetapis.com` . | Да |
 | clientid | Идентификатор клиента, связанного с приложением Salesforce Marketing Cloud.  | Да |
-| clientSecret | Секрет клиента, связанного с приложением Salesforce Marketing Cloud. Вы можете обозначить это поле как SecureString, чтобы безопасно хранить его в ADF, или сохранить пароль в Azure Key Vault и разрешить действию копирования ADF передавать его оттуда при копировании данных. Дополнительные сведения см. в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
+| clientSecret | Секрет клиента, связанного с приложением Salesforce Marketing Cloud. Вы можете пометить это поле как SecureString, чтобы безопасно хранить его в ADF-файле, или сохранить секрет в Azure Key Vault и позволить ADF копировать из него при выполнении копирования данных. Дополнительные сведения см. [в статье хранение учетных данных в Key Vault](store-credentials-in-key-vault.md). | Да |
 | useEncryptedEndpoints | Указывает, шифруются ли конечные точки источника данных с помощью протокола HTTPS. Значение по умолчанию — true.  | Нет |
 | useHostVerification | Указывает, должно ли имя узла в сертификате сервера совпадать с именем узла сервера при подключении по протоколу TLS. Значение по умолчанию — true.  | Нет |
 | usePeerVerification | Указывает, следует ли проверять удостоверение сервера при подключении по протоколу TLS. Значение по умолчанию — true.  | Нет |
 
-**Пример.**
+**Пример. Использование расширенной проверки подлинности OAuth 2 STS для расширенного пакета** 
 
 ```json
 {
@@ -66,14 +70,66 @@ ms.locfileid: "81416647"
     "properties": {
         "type": "SalesforceMarketingCloud",
         "typeProperties": {
-            "clientId" : "<clientId>",
+            "connectionProperties": {
+                "host": "<subdomain e.g. mc563885gzs27c5t9-63k636ttgm>",
+                "authenticationType": "Enhanced sts OAuth 2.0",
+                "clientId": "<clientId>",
+                "clientSecret": {
+                     "type": "SecureString",
+                     "value": "<clientSecret>"
+                },
+                "useEncryptedEndpoints": true,
+                "useHostVerification": true,
+                "usePeerVerification": true
+            }
+        }
+    }
+}
+
+```
+
+**Пример. Использование проверки подлинности OAuth 2 для устаревшего пакета** 
+
+```json
+{
+    "name": "SalesforceMarketingCloudLinkedService",
+    "properties": {
+        "type": "SalesforceMarketingCloud",
+        "typeProperties": {
+            "connectionProperties": {
+                "host": "www.exacttargetapis.com",
+                "authenticationType": "OAuth_2.0",
+                "clientId": "<clientId>",
+                "clientSecret": {
+                     "type": "SecureString",
+                     "value": "<clientSecret>"
+                },
+                "useEncryptedEndpoints": true,
+                "useHostVerification": true,
+                "usePeerVerification": true
+            }
+        }
+    }
+}
+
+```
+
+Если вы использовали связанную службу Cloud Marketing Salesforce со следующими полезными данными, она по-прежнему поддерживается "как есть", хотя вы можете использовать новую пересылку, которая добавляет поддержку расширенных пакетов.
+
+```json
+{
+    "name": "SalesforceMarketingCloudLinkedService",
+    "properties": {
+        "type": "SalesforceMarketingCloud",
+        "typeProperties": {
+            "clientId": "<clientId>",
             "clientSecret": {
                  "type": "SecureString",
                  "value": "<clientSecret>"
             },
-            "useEncryptedEndpoints" : true,
-            "useHostVerification" : true,
-            "usePeerVerification" : true
+            "useEncryptedEndpoints": true,
+            "useHostVerification": true,
+            "usePeerVerification": true
         }
     }
 }

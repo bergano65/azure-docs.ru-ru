@@ -7,11 +7,12 @@ ms.topic: conceptual
 ms.date: 2/7/2019
 ms.author: yalavi
 ms.subservice: alerts
-ms.openlocfilehash: dec4d6824644cabf8b1872da207b8554fee0b3d3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5dc603a890a112cf475e6ceafb79145dec5a56ea
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77659481"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87077227"
 ---
 # <a name="unified-alerting--monitoring-in-azure-monitor-replaces-classic-alerting--monitoring"></a>Унифицированные оповещения и мониторинг в Azure Monitor заменяют классические оповещения и мониторинг
 
@@ -27,7 +28,7 @@ Azure Monitor стала единой службой мониторинга по
 Мы рекомендуем вам начать работу и воссоздать оповещения на новой платформе. Для клиентов, имеющих большое количество оповещений, мы делаем [на стадиях](alerts-understand-migration.md#rollout-phases) [добровольное средство переноса](alerts-using-migration-tool.md) , которое позволяет перемещать существующие классические предупреждения в новую систему предупреждений без перерывов или дополнительных затрат.
 
 > [!IMPORTANT]
-> Классические правила генерации оповещений, созданные в журнале действий, не будут устаревшими или перенесенными. Все классические правила генерации оповещений, созданные в журнале действий, доступны и используются "как есть" из нового Azure Monitor — "Оповещения". Дополнительные сведения см. в статье [Создание, просмотр и управление оповещениями журнала действий с помощью Azure Monitor](../../azure-monitor/platform/alerts-activity-log.md). Аналогичным образом оповещения о работоспособности служб могут быть доступны и использоваться "как есть" в новом разделе "Работоспособность служб". Дополнительные сведения см. в статье [Создание оповещений журнала действий для уведомлений службы](../../azure-monitor/platform/alerts-activity-log-service-notifications.md).
+> Классические правила генерации оповещений, созданные в журнале действий, не будут устаревшими или перенесенными. Все классические правила генерации оповещений, созданные в журнале действий, доступны и используются "как есть" из нового Azure Monitor — "Оповещения". Дополнительные сведения см. в статье [Создание, просмотр и управление оповещениями журнала действий с помощью Azure Monitor](../../azure-monitor/platform/alerts-activity-log.md). Аналогичным образом оповещения о работоспособности служб могут быть доступны и использоваться "как есть" в новом разделе "Работоспособность служб". Дополнительные сведения см. в статье [Создание оповещений журнала действий для уведомлений службы](../../service-health/alerts-activity-log-service-notifications-portal.md).
 
 ## <a name="unified-metrics-and-alerts-in-application-insights"></a>Унифицированные метрики и оповещения в Application Insights
 
@@ -38,7 +39,7 @@ Azure Monitor стала единой службой мониторинга по
 - **Метрики платформы Application Insights**. Вы получаете популярные встроенные метрики из Application Insights. Дополнительные сведения см. в разделе [Предварительно агрегированные метрики](../../azure-monitor/app/pre-aggregated-metrics-log-metrics.md#pre-aggregated-metrics).
 - **Доступность Application Insights и веб-тест** дают возможность оценить скорость отклика и доступность веб-приложения или сервера. Дополнительные сведения см. в статье [Наблюдение за доступностью и скоростью реагирования веб-сайта](../../azure-monitor/app/monitor-web-app-availability.md).
 - **Пользовательские метрики Application Insights**, позволяющие определять и выдавать собственные метрики для мониторинга и оповещений. Дополнительные сведения см. в разделе [Измерения пользовательских метрик и предварительное агрегирование](../../azure-monitor/app/pre-aggregated-metrics-log-metrics.md#custom-metrics-dimensions-and-pre-aggregation).
-- **Аномалии сбоев Application Insights (часть интеллектуального обнаружения)**. Вы автоматически получаете уведомление (почти в реальном времени), когда работа веб-приложения сопровождается чрезмерно частыми неудачно завершенными HTTP-запросами и вызовами зависимостей. Дополнительные сведения см. в этой статье об использовании [интеллектуального обнаружения — аномалий ошибок](https://docs.microsoft.com/azure/azure-monitor/app/proactive-failure-diagnostics).
+- **Аномалии сбоев Application Insights (часть интеллектуального обнаружения)**. Вы автоматически получаете уведомление (почти в реальном времени), когда работа веб-приложения сопровождается чрезмерно частыми неудачно завершенными HTTP-запросами и вызовами зависимостей. Дополнительные сведения см. в этой статье об использовании [интеллектуального обнаружения — аномалий ошибок](../app/proactive-failure-diagnostics.md).
 
 ## <a name="unified-metrics-and-alerts-for-other-azure-resources"></a>Унифицированные метрики и оповещения для других ресурсов Azure
 
@@ -53,11 +54,11 @@ Azure Monitor стала единой службой мониторинга по
 Как отмечалось ранее, в ближайшие месяцы мы прекратим поддержку классической платформы мониторинга и оповещений, используемой в настоящее время в разделе [Оповещения (классические)](../../azure-monitor/platform/alerts-classic.overview.md) портала Azure, с учетом ее замены на новую систему.
 Старые классические средства мониторинга и оповещения будут прекращены до 31 августа 2019; включая замыкание связанных API, портал Azure интерфейс и службы в нем. В частности, будет прекращена поддержка таких функций:
 
-- Старые (классические) метрики и оповещения для ресурсов Azure, находящиеся в настоящее время в разделе [Оповещения (классические)](../../azure-monitor/platform/alerts-classic.overview.md) портала Azure. Доступны как ресурс [microsoft.insights/alertrules](https://docs.microsoft.com/rest/api/monitor/alertrules).
-- Старая (классическая) платформа и пользовательские метрики для Application Insights, а также оповещения о них, которые в настоящее время находятся в разделе [Оповещения (классические)](../../azure-monitor/platform/alerts-classic.overview.md) портала Azure. Доступны как ресурс [microsoft.insights/alertrules](https://docs.microsoft.com/rest/api/monitor/alertrules).
+- Старые (классические) метрики и оповещения для ресурсов Azure, находящиеся в настоящее время в разделе [Оповещения (классические)](../../azure-monitor/platform/alerts-classic.overview.md) портала Azure. Доступны как ресурс [microsoft.insights/alertrules](/rest/api/monitor/alertrules).
+- Старая (классическая) платформа и пользовательские метрики для Application Insights, а также оповещения о них, которые в настоящее время находятся в разделе [Оповещения (классические)](../../azure-monitor/platform/alerts-classic.overview.md) портала Azure. Доступны как ресурс [microsoft.insights/alertrules](/rest/api/monitor/alertrules).
 - Старые (классические) оповещения по аномалиям сбоев, которые в настоящее время доступны в виде [интеллектуального обнаружения в Application Insights](../../azure-monitor/app/proactive-diagnostics.md) на портале Azure. Настроенные оповещения находятся в разделе [Оповещения (классические)](../../azure-monitor/platform/alerts-classic.overview.md) портала Azure.
 
-Все классические системы мониторинга и оповещения, в том числе соответствующие [API](https://msdn.microsoft.com/library/azure/dn931945.aspx), [PowerShell](../../azure-monitor/platform/alerts-classic-portal.md), [CLI](../../azure-monitor/platform/alerts-classic-portal.md), [портал Azure страница](../../azure-monitor/platform/alerts-classic-portal.md)и [шаблон ресурсов](../../azure-monitor/platform/alerts-enable-template.md) , будут оставаться пригодными для использования до конца августа 2019. 
+Все классические системы мониторинга и оповещения, в том числе соответствующие [API](/rest/api/monitor/alertrules), [PowerShell](../../azure-monitor/platform/alerts-classic-portal.md), [CLI](../../azure-monitor/platform/alerts-classic-portal.md), [портал Azure страница](../../azure-monitor/platform/alerts-classic-portal.md)и [шаблон ресурсов](../../azure-monitor/platform/alerts-enable-template.md) , будут оставаться пригодными для использования до конца августа 2019. 
 
 В конце 2019 августа в Azure Monitor:
 
@@ -85,7 +86,7 @@ Azure Monitor стала единой службой мониторинга по
 - Все перенесенные правила генерации оповещений, которые редактируются для использования новых функций оповещений метрик, таких как частота, несколько ресурсов и измерений, [динамические пороговые значения](alerts-dynamic-thresholds.md), изменение ресурса или сигнала и т. д.
 - Все перенесенные группы действий, которые редактируются для использования новых уведомлений, или такие типы действий, как SMS, голосовое вызов и/или интеграция ITSM.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о [новой унифицированной службе Azure Monitor](../../azure-monitor/overview.md).
 * Дополнительные сведения о новых [оповещениях Azure](../../azure-monitor/platform/alerts-overview.md).

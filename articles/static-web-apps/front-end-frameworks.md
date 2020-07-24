@@ -5,20 +5,20 @@ services: static-web-apps
 author: craigshoemaker
 ms.service: static-web-apps
 ms.topic: conceptual
-ms.date: 06/10/2020
+ms.date: 07/18/2020
 ms.author: cshoe
-ms.openlocfilehash: 41f0c44ad65af5fdf2560da3f977a28f135af878
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3220b9d56ff7107245a0a00aac44bb58f87099f9
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84976716"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87075973"
 ---
 # <a name="configure-front-end-frameworks-and-libraries-with-azure-static-web-apps-preview"></a>Настройка интерфейсных платформ и библиотек с помощью предварительной версии статических веб-приложений Azure
 
 Статические веб-приложения Azure требуют наличия соответствующих значений конфигурации в [файле конфигурации сборки](github-actions-workflow.md) для интерфейсной платформы или библиотеки.
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 
 В следующей таблице перечислены параметры для ряда платформ и библиотек<sup>1</sup>.
 
@@ -28,7 +28,7 @@ ms.locfileid: "84976716"
 
 - **Настраиваемая команда сборки**: Если для платформы требуется команда, отличающаяся от `npm run build` или `npm run azure:build` , можно определить [пользовательскую команду сборки](github-actions-workflow.md#custom-build-commands).
 
-| Инфраструктура | Расположение артефакта приложения | Настраиваемая команда сборки |
+| Инфраструктура | Расположение артефактов приложения | Настраиваемая команда сборки |
 |--|--|--|
 | [Alpine.js](https://github.com/alpinejs/alpine/) | `/` | н/д <sup>2</sup> |
 | [Angular](https://angular.io/) | `dist/<APP_NAME>` | `npm run build -- --prod` |
@@ -36,7 +36,7 @@ ms.locfileid: "84976716"
 | [аурелиа](https://aurelia.io/) | `dist` | н/д |
 | [Backbone.js](https://backbonejs.org/) | `/` | н/д |
 | [Ember](https://emberjs.com/) | `dist` | н/д |
-| [флуттер](https://flutter.dev/) | `build/web` | `flutter build web` |
+| [Flutter](https://flutter.dev/) | `build/web` | `flutter build web` |
 | [Framework7](https://framework7.io/) | `www` | `npm run build-prod` |
 | [глиммер](https://glimmerjs.com/) | `dist` | н/д |
 | [HTML](https://developer.mozilla.org/docs/Web/HTML) | `/` | н/д |
@@ -55,12 +55,12 @@ ms.locfileid: "84976716"
 | [Svelte](https://svelte.dev/) | `public` | н/д |
 | [Three.js](https://threejs.org/) | `/` | н/д |
 | [TypeScript](https://www.typescriptlang.org/) | `dist` | н/д |
-| [Vue](http://vuejs.com/) | `dist` | н/д |
+| [Vue.js](https://vuejs.org/) | `dist` | н/д |
 
 <sup>1</sup> приведенная выше таблица не является исчерпывающим списком платформ и библиотек, которые работают со статическими веб-приложениями Azure.
 
 <sup>2</sup> неприменимо
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Конфигурация сборки и рабочего процесса](github-actions-workflow.md)

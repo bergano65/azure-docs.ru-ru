@@ -1,5 +1,5 @@
 ---
-title: Подключение оповещений Orca к Azure Sentinel | Документация Майкрософт
+title: Подключение оповещений системы безопасности Orca к Azure Sentinel | Документация Майкрософт
 description: Узнайте, как подключить данные оповещений системы безопасности Orca к Azure Sentinel, просмотреть панели мониторинга, создать настраиваемые оповещения и улучшить исследование.
 services: sentinel
 documentationcenter: na
@@ -14,14 +14,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/17/2020
 ms.author: yelevin
-ms.openlocfilehash: 1f2f67281079142f0c4fe4985738dc48332a107d
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 735f4b447d7258a9b444f3b75a6537dec20b1307
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86532263"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87076267"
 ---
-# <a name="connect-your-orca-alerts-to-azure-sentinel"></a>Подключение оповещений Orca к Azure Sentinel 
+# <a name="connect-your-orca-security-alerts-to-azure-sentinel"></a>Подключение оповещений системы безопасности Orca к Azure Sentinel 
+
+> [!IMPORTANT]
+> Соединитель оповещений системы безопасности Orca в Azure Sentinel сейчас находится в общедоступной предварительной версии.
+> Эта функция предоставляется без соглашения об уровне обслуживания и не рекомендуется для рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Соединитель оповещений системы безопасности Orca позволяет легко переносить оповещения о решении системы безопасности для [оповещений Orca](https://orca.security/) в Azure Sentinel, чтобы их можно было просматривать в книгах, использовать их для создания пользовательских оповещений и внедрять их для улучшения расследования. Интеграция оповещений системы безопасности Orca и Azure Sentinel позволяет использовать REST API.
 

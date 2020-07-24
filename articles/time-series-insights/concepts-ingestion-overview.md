@@ -1,6 +1,6 @@
 ---
-title: Обзор приема-служба "аналитика временных рядов Azure" | Документация Майкрософт
-description: Сведения о приеме данных в службе "аналитика временных рядов Azure".
+title: Общие сведения о приеме-Azure Time Series Insights Gen2 | Документация Майкрософт
+description: Сведения о приеме данных в Gen2 службы "аналитика временных рядов Azure".
 author: lyrana
 ms.author: lyhughes
 manager: deepakpalled
@@ -8,18 +8,18 @@ ms.workload: big-data
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 06/03/2020
+ms.date: 07/07/2020
 ms.custom: seodec18
-ms.openlocfilehash: ecee6817b58639d1b60264c818ab9517e5d133e0
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: 33cafd058e55951f7da4e925a603c2c442d4aed1
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86050113"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87077660"
 ---
-# <a name="azure-time-series-insights-data-ingestion-overview"></a>Обзор приема данных службы "аналитика временных рядов Azure"
+# <a name="azure-time-series-insights-gen2-data-ingestion-overview"></a>Обзор приема данных Gen2а временных рядов Azure
 
-Среда службы "аналитика временных рядов Azure" содержит *подсистему приема* для накопления, обработки и хранения данных временных рядов. По мере поступления данных в источники событий служба "аналитика временных рядов Azure" будет потреблять и хранить данные практически в реальном времени.
+Среда Gen2 "аналитика временных рядов Azure" содержит *подсистему приема* для накопления, обработки и хранения данных временных рядов. По мере поступления данных в источники событий служба "аналитика временных рядов Azure" Gen2 будет потреблять и хранить данные практически в реальном времени.
 
 [![Обзор приема](media/concepts-ingress-overview/ingress-overview.png)](media/concepts-ingress-overview/ingress-overview.png#lightbox)
 
@@ -27,14 +27,14 @@ ms.locfileid: "86050113"
 
 В следующих статьях подробно рассмотрена обработка данных, включая рекомендации по следующим рекомендациям.
 
-* Ознакомьтесь с [источниками событий](concepts-streaming-ingestion-event-sources.md) и рекомендациями по выбору отметки времени источника события.
+* Ознакомьтесь с [источниками событий](./concepts-streaming-ingestion-event-sources.md) и рекомендациями по выбору отметки времени источника события.
 
-* Проверка поддерживаемых [типов данных](concepts-supported-data-types.md)
+* Проверка поддерживаемых [типов данных](./concepts-supported-data-types.md)
 
 * Узнайте, как подсистема приема будет применять набор [правил](./concepts-json-flattening-escaping-rules.md) к свойствам JSON для создания столбцов учетной записи хранения.
 
-* Проверьте [ограничения пропускной способности](concepts-streaming-throughput-limitations.md) среды, чтобы спланировать требования к масштабированию.
+* Проверьте [ограничения пропускной способности](./concepts-streaming-ingress-throughput-limits.md) среды, чтобы спланировать требования к масштабированию.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Продолжайте работу, чтобы узнать больше о [источниках событий](concepts-streaming-ingestion-event-sources.md) для среды службы "аналитика временных рядов Azure". 
+* Продолжите работу, чтобы узнать больше о [источниках событий](./concepts-streaming-ingestion-event-sources.md) для среды Gen2 "аналитика временных рядов Azure". 

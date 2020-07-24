@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: allensu
-ms.openlocfilehash: c739c6483832c08a91f2a5318853bf48e5d41854
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: d61527a7a57c82c0e1485ef249306618def9a57c
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86496967"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87077935"
 ---
 # <a name="what-is-azure-private-endpoint"></a>Что такое частная конечная точка Azure?
 
@@ -78,6 +78,13 @@ ms.locfileid: "86496967"
 |**Сетка событий Azure** | Microsoft.EventGrid/domains    | домен |
 |**Веб-приложения Azure** | Microsoft.Web/sites    | sites |
 |**Машинное обучение Azure** | Microsoft.MachineLearningServices/workspaces    | Рабочая область |
+|**SignalR** | Microsoft.SignalRService/SignalR    | signalR |
+|**Azure Monitor** | Microsoft. Insights/Привателинкскопес    | азуремонитор |
+|**Cognitive Services** | (Microsoft. CognitiveServices/Accounts    | account |
+|**Синхронизация файлов Azure** | Microsoft. StorageSync/Сторажесинксервицес    | AFS |
+    
+  
+
   
  
 ## <a name="network-security-of-private-endpoints"></a>Сетевая безопасность частных конечных точек 

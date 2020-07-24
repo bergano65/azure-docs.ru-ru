@@ -1,6 +1,6 @@
 ---
-title: Служба анализа журналов диагностики виртуальных рабочих столов Windows — Azure
-description: Использование log Analytics с функцией диагностики виртуальных рабочих столов Windows.
+title: Анализ журналов диагностики виртуальных рабочих столов Windows (2019) — Azure
+description: Узнайте, как использовать log Analytics с функцией диагностики виртуальных рабочих столов Windows (выпуски 2019).
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
@@ -8,14 +8,14 @@ ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: beb48b90afd54b044eb6d0ceaff32b53ebfcdc34
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c4c59268f63252813c7e08608d5d8ee499b11f53
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85205974"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87077623"
 ---
-# <a name="use-log-analytics-for-the-diagnostics-feature"></a>Использование Log Analytics для функции диагностики
+# <a name="use-log-analytics-for-the-diagnostics-feature-fall-2019-release"></a>Используйте Log Analytics для функции диагностики (выпуска 2019)
 
 >[!IMPORTANT]
 >Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Если вы хотите обеспечить управление объектами Azure Resource Manager для Виртуального рабочего стола Windows, представленными в обновлении за весну 2020 г., см. [эту статью](../diagnostics-log-analytics.md).
@@ -134,6 +134,6 @@ Set-RdsTenant -Name <TenantName> -AzureSubscriptionId <SubscriptionID> -LogAnaly
 
 Этот командлет потребуется выполнить для каждого клиента, с которого необходимо запретить отправку данных.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы просмотреть распространенные сценарии ошибок, которые может определить функция диагностики, см. раздел [Определение и диагностика проблем](diagnostics-role-service-2019.md#common-error-scenarios).

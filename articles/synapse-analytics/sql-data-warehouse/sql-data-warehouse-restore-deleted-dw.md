@@ -11,12 +11,12 @@ ms.date: 08/29/2018
 ms.author: anjangsh
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: f369be97c65c7d6704e61241c4455eb60166b2c5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fc21dc67dd6c686eedf307660a8d8b7afd60db71
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85205158"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87075843"
 ---
 # <a name="restore-a-deleted-sql-pool-using-azure-synapse-analytics"></a>Восстановление удаленного пула SQL с помощью Azure синапсе Analytics
 
@@ -32,8 +32,8 @@ ms.locfileid: "85205158"
 
 Чтобы восстановить удаленный пул SQL, используйте командлет [RESTORE-азсклдатабасе](/powershell/module/az.sql/restore-azsqldatabase?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) . Если соответствующий сервер также был удален, вы не сможете восстановить это хранилище данных.
 
-1. Перед началом убедитесь, что [установлен Azure PowerShell](/powershell/azure/overview?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
-2. Откройте PowerShell.
+1. Перед началом убедитесь, что [установлен Azure PowerShell](/powershell/azure/?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
+2. Откройте средство PowerShell.
 3. Подключитесь к своей учетной записи Azure и выведите список всех подписок, связанных с ней.
 4. Выберите подписку, содержащую удаляемый пул SQL, который нужно восстановить.
 5. Получение конкретного удаленного хранилища данных.
@@ -79,13 +79,13 @@ $RestoredDatabase.status
 
 4. Выберите удаленное хранилище данных SQL, которое необходимо восстановить.
 
-    ![Выбор удаленных баз данных](./media/sql-data-warehouse-restore-deleted-dw/restoring-deleted-11.png)
+    ![Выбор элемента "Удаленные базы данных"](./media/sql-data-warehouse-restore-deleted-dw/restoring-deleted-11.png)
 
 5. Укажите новое **имя базы данных** и нажмите кнопку **ОК** .
 
     ![Указание нового имени базы данных](./media/sql-data-warehouse-restore-deleted-dw/restoring-deleted-21.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Восстановление существующего пула SQL](sql-data-warehouse-restore-active-paused-dw.md)
 - [Восстановление из пула SQL с географическим резервным копированием](sql-data-warehouse-restore-from-geo-backup.md)

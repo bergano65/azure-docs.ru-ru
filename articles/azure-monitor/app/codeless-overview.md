@@ -6,12 +6,12 @@ author: MS-jgol
 ms.author: jgol
 ms.date: 05/31/2020
 ms.reviewer: mbullwin
-ms.openlocfilehash: 87342dcd316b0364522baa01e632b704665c998e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b9be0808d4edc9662c1d3a4144f3102242560564
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85363743"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87075361"
 ---
 # <a name="what-is-auto-instrumentation-or-codeless-attach---azure-monitor-application-insights"></a>Что такое автоматическое инструментирование или Application Insights присоединения Azure Monitor?
 
@@ -41,7 +41,7 @@ Application Insights интегрированы с различными пост
 
 ### <a name="windows"></a>Windows
 
-[Наблюдение за приложениями в службе приложений Azure](https://docs.microsoft.com/azure/azure-monitor/app/azure-web-apps?tabs=net) доступно для приложения .NET и включено по умолчанию. .NET Core можно включить одним щелчком, а Java и Node.js доступны в закрытой предварительной версии.
+[Наблюдение за приложениями в службе приложений Azure](./azure-web-apps.md?tabs=net) доступно для приложения .NET и включено по умолчанию. .NET Core можно включить одним щелчком, а Java и Node.js доступны в закрытой предварительной версии.
 
 ### <a name="linux"></a>Linux 
 
@@ -49,24 +49,24 @@ Application Insights интегрированы с различными пост
 
 ## <a name="azure-functions"></a>Функции Azure
 
-Функция базового мониторинга для функций Azure по умолчанию включена для сбора данных журнала, производительности, ошибок и HTTP-запросов. Для приложений Java можно включить более широкие возможности мониторинга с помощью распределенной трассировки и получения сведений о сквозной транзакции. Эта функция Java доступна в общедоступной предварительной версии, и [ее можно включить в портал Azure](https://docs.microsoft.com/azure/azure-monitor/app/monitor-functions).
+Функция базового мониторинга для функций Azure по умолчанию включена для сбора данных журнала, производительности, ошибок и HTTP-запросов. Для приложений Java можно включить более широкие возможности мониторинга с помощью распределенной трассировки и получения сведений о сквозной транзакции. Эта функция Java доступна в общедоступной предварительной версии, и [ее можно включить в портал Azure](./monitor-functions.md).
 
 ## <a name="azure-kubernetes-service"></a>Служба Azure Kubernetes
 
-Инструментирование без кодирования в службе Kubernetes Azure в настоящее время доступно для приложений Java через [автономный агент](https://docs.microsoft.com/azure/azure-monitor/app/java-in-process-agent). 
+Инструментирование без кодирования в службе Kubernetes Azure в настоящее время доступно для приложений Java через [автономный агент](./java-in-process-agent.md). 
 
 ## <a name="azure-windows-vms-and-virtual-machine-scale-set"></a>Виртуальные машины Azure и масштабируемый набор виртуальных машин Windows
 
-[Автоматическое инструментирование для виртуальных машин Azure и масштабируемый набор виртуальных машин](https://docs.microsoft.com/azure/azure-monitor/app/azure-vm-vmss-apps) доступны для приложений .NET 
+[Автоматическое инструментирование для виртуальных машин Azure и масштабируемый набор виртуальных машин](./azure-vm-vmss-apps.md) доступны для приложений .NET 
 
 ## <a name="on-premises-servers"></a>Локальные серверы
-Вы можете легко включить мониторинг для [локальных серверов Windows для приложений .NET](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-overview) и приложений [Java](https://docs.microsoft.com/azure/azure-monitor/app/java-in-process-agent).
+Вы можете легко включить мониторинг для [локальных серверов Windows для приложений .NET](./status-monitor-v2-overview.md) и приложений [Java](./java-in-process-agent.md).
 
 ## <a name="other-environments"></a>Другие среды
-Универсальный автономный агент Java работает в любой среде, нет необходимости выполнять инструментирование кода. [Следуйте указаниям по](https://docs.microsoft.com/azure/azure-monitor/app/java-in-process-agent) включению Application Insights и прочитайте о невероятных возможностях агента Java. Агент находится в общедоступной предварительной версии и доступен во всех регионах. 
+Универсальный автономный агент Java работает в любой среде, нет необходимости выполнять инструментирование кода. [Следуйте указаниям по](./java-in-process-agent.md) включению Application Insights и прочитайте о невероятных возможностях агента Java. Агент находится в общедоступной предварительной версии и доступен во всех регионах. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Обзор Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview)
+* [Обзор Application Insights](./app-insights-overview.md)
 * [Сопоставление приложений](./../../azure-monitor/app/app-map.md)
 * [Поиск и диагностика проблем производительности с помощью Azure Application Insights](./../../azure-monitor/learn/tutorial-performance.md)

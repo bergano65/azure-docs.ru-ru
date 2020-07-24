@@ -12,11 +12,12 @@ ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 05/07/2019
 ms.author: amverma
-ms.openlocfilehash: a4cd74c9c85ee7413cde9f0fb4cf3ffb54c9b3d0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7110f3417937b623260983a9d94e9e6834fc8fc9
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76906741"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87077375"
 ---
 # <a name="hc-series-virtual-machine-overview"></a>Обзор виртуальных машин серии HC
 
@@ -60,8 +61,8 @@ Intel Xeon Platinum, Gold и серебряные процессоры такж�
 | Поддержка Azure Циклеклауд    | Да                         |
 | Поддержка пакетной службы Azure         | Да                         |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения о размерах виртуальных машин HPC для [Linux](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-hpc) и [Windows](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-hpc) в Azure.
+* Дополнительные сведения о размерах виртуальных машин HPC для [Linux](../../sizes-hpc.md) и [Windows](../../sizes-hpc.md) в Azure.
 
-* Дополнительные сведения о [HPC](https://docs.microsoft.com/azure/architecture/topics/high-performance-computing/) в Azure.
+* Дополнительные сведения о [HPC](/azure/architecture/topics/high-performance-computing/) в Azure.
