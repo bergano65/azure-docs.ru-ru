@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 06/18/2020
 ms.author: mlearned
-ms.openlocfilehash: 01dcd6b7b366b7a1ada581ec154409ee7598e7a6
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 2994a616d60258e81cbd5a409690abc18538183a
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86250844"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87015533"
 ---
 # <a name="manage-system-node-pools-in-azure-kubernetes-service-aks"></a>Управление пулами системных узлов в службе Kubernetes Azure (AKS)
 
@@ -28,14 +28,16 @@ ms.locfileid: "86250844"
 При создании кластеров AKS, поддерживающих пулы системных узлов, и управлении ими действуют следующие ограничения.
 
 * См. раздел [квоты, ограничения размера виртуальной машины и доступность регионов в службе Azure Kubernetes (AKS)][quotas-skus-regions].
-* Кластер AKS должен быть построен с масштабируемыми наборами виртуальных машин в качестве типа виртуальной машины.
+* Кластер AKS должен быть построен с масштабируемыми наборами виртуальных машин в качестве типа виртуальной машины и балансировщика нагрузки *стандартного* SKU.
 * Имя пула узлов может содержать только буквы в нижнем регистре и должно начинаться с буквы в нижнем регистре. Для пулов узлов Linux длина должна составлять от 1 до 12 символов. Для пулов узлов Windows длина должна составлять от 1 до 6 символов.
 * Для установки режима пула узлов необходимо использовать API версии 2020-03-01 или более поздней. Кластеры, созданные в версиях API старше 2020-03-01, содержат только пулы пользовательских узлов, но их можно перенести для включения пулов системных узлов, следуя [шагам обновления режима пула](#update-existing-cluster-system-and-user-node-pools).
 * Режим пула узлов является обязательным свойством и должен быть задан явно при использовании шаблонов ARM или прямых вызовов API.
 
 ## <a name="system-and-user-node-pools"></a>Пулы системных и пользовательских узлов
 
-Узлы пулов системных узлов имеют метку **kubernetes.Azure.com/mode: System**. Каждый кластер AKS содержит по крайней мере один пул системных узлов. Пулы системных узлов имеют следующие ограничения.
+Для пула системных узлов AKS автоматически присваивает метке **kubernetes.Azure.com/mode: System** узлам. Это приводит к тому, что AKS предпочитает планирование системных модулей в пулах узлов, содержащих эту метку. Эта метка не препятствует планированию модулей Pod приложения на пулах системных узлов. Однако мы рекомендуем изолировать критически важные системные модули из модулей Pod приложения, чтобы предотвратить случайное уничтожение системных модулей в ненастроенных или мошеннических приложениях. Это поведение можно реализовать, создав выделенный пул системных узлов. Используйте `CriticalAddonsOnly=true:NoSchedule` таинт, чтобы запретить планирование модулей приложений для пулов системных узлов.
+
+Пулы системных узлов имеют следующие ограничения.
 
 * Пулы систем osType должны быть Linux.
 * Пулы узлов пользователей osType могут быть Linux или Windows.
@@ -46,6 +48,7 @@ ms.locfileid: "86250844"
 
 Вы можете выполнять следующие операции с пулами узлов:
 
+* Создание выделенного пула системных узлов (предпочтительное планирование системных модулей для пулов узлов `mode:system` )
 * Измените пул узлов системы так, чтобы он был пулом узлов пользователей при наличии другого пула узлов системы, который будет использоваться в кластере AKS.
 * Измените пул узлов пользователей, чтобы он был пулом системных узлов.
 * Удаление пулов узлов пользователей.
@@ -55,7 +58,7 @@ ms.locfileid: "86250844"
 
 ## <a name="create-a-new-aks-cluster-with-a-system-node-pool"></a>Создание нового кластера AKS с пулом системных узлов
 
-При создании нового кластера AKS автоматически создается пул системных узлов с одним узлом. Исходный пул узлов по умолчанию имеет режим System. При создании пулов узлов с помощью команды AZ AKS нодепул Add эти пулы узлов являются пулами пользовательских узлов, если только вы не укажете параметр mode явным образом.
+При создании нового кластера AKS автоматически создается пул системных узлов с одним узлом. Исходный пул узлов по умолчанию имеет режим System. При создании пулов узлов с помощью `az aks nodepool add` эти пулы узлов являются пулами пользовательских узлов, если только вы не укажете параметр mode явным образом.
 
 В следующем примере создается группа ресурсов с именем *myResourceGroup* в регионе *eastus*.
 
@@ -63,54 +66,73 @@ ms.locfileid: "86250844"
 az group create --name myResourceGroup --location eastus
 ```
 
-Используйте команду [az aks create][az-aks-create], чтобы создать кластер AKS. В следующем примере создается кластер с именем *myAKSCluster* с одним системным пулом, содержащим один узел. Для рабочих нагрузок убедитесь, что вы используете пулы системных узлов по крайней мере на трех узлах. Выполнение этой операции займет несколько минут.
+Используйте команду [az aks create][az-aks-create], чтобы создать кластер AKS. В следующем примере создается кластер с именем *myAKSCluster* с одним выделенным системным пулом, содержащим один узел. Для рабочих нагрузок убедитесь, что вы используете пулы системных узлов по крайней мере на трех узлах. Выполнение этой операции займет несколько минут.
 
 ```azurecli-interactive
+# Create a new AKS cluster with a single system pool
 az aks create -g myResourceGroup --name myAKSCluster --node-count 1 --generate-ssh-keys
 ```
 
-## <a name="add-a-system-node-pool-to-an-existing-aks-cluster"></a>Добавление пула системных узлов в существующий кластер AKS
+## <a name="add-a-dedicated-system-node-pool-to-an-existing-aks-cluster"></a>Добавление выделенного пула системных узлов в существующий кластер AKS
 
-В существующие кластеры AKS можно добавить один или несколько пулов системных узлов. Следующая команда добавляет пул узлов системы типов Mode со счетчиком по умолчанию для трех узлов.
+> [!Important]
+> После создания пула узлов изменить таинтс узла через интерфейс командной строки невозможно.
+
+В существующие кластеры AKS можно добавить один или несколько пулов системных узлов. Рекомендуется запланировать модули для приложений на пулах узлов пользователей и выделить пулы системных узлов только для критических системных модулей. Это предотвращает случайное удаление системных модулей из незаконных приложений. Применяйте это поведение с `CriticalAddonsOnly=true:NoSchedule` [таинт][aks-taints] для пулов системных узлов. 
+
+Следующая команда добавляет выделенный пул узлов системы типов Mode со счетчиком по умолчанию для трех узлов.
 
 ```azurecli-interactive
-az aks nodepool add -g myResourceGroup --cluster-name myAKSCluster -n mynodepool --mode system
+az aks nodepool add \
+    --resource-group myResourceGroup \
+    --cluster-name myAKSCluster \
+    --name systempool \
+    --node-count 3 \
+    --node-taints CriticalAddonsOnly=true:NoSchedule \
+    --mode system
 ```
 ## <a name="show-details-for-your-node-pool"></a>Отображение сведений о пуле узлов
 
 Сведения о пуле узлов можно проверить с помощью следующей команды.  
 
 ```azurecli-interactive
-az aks nodepool show -g myResourceGroup --cluster-name myAKSCluster -n mynodepool
+az aks nodepool show -g myResourceGroup --cluster-name myAKSCluster -n systempool
 ```
 
-Для пулов узлов системы определен режим **системы** типов, а для пулов узлов пользователей определен режим типа **User** .
+Для пулов узлов системы определен режим **системы** типов, а для пулов узлов пользователей определен режим типа **User** . Для системного пула убедитесь, что для параметра таинт задано значение `CriticalAddonsOnly=true:NoSchedule` , что позволит предотвратить планирование модулей приложений из существ, запланированных в этом пуле узлов.
 
 ```output
 {
   "agentPoolType": "VirtualMachineScaleSets",
   "availabilityZones": null,
-  "count": 3,
+  "count": 1,
   "enableAutoScaling": null,
   "enableNodePublicIp": false,
-  "id": "/subscriptions/666d66d8-1e43-4136-be25-f25bb5de5883/resourcegroups/myResourceGroup/providers/Microsoft.ContainerService/managedClusters/myAKSCluster/agentPools/mynodepool",
+  "id": "/subscriptions/yourSubscriptionId/resourcegroups/myResourceGroup/providers/Microsoft.ContainerService/managedClusters/myAKSCluster/agentPools/systempool",
   "maxCount": null,
   "maxPods": 110,
   "minCount": null,
   "mode": "System",
-  "name": "mynodepool",
+  "name": "systempool",
+  "nodeImageVersion": "AKSUbuntu-1604-2020.06.30",
   "nodeLabels": {},
-  "nodeTaints": null,
-  "orchestratorVersion": "1.15.10",
-  "osDiskSizeGb": 100,
+  "nodeTaints": [
+    "CriticalAddonsOnly=true:NoSchedule"
+  ],
+  "orchestratorVersion": "1.16.10",
+  "osDiskSizeGb": 128,
   "osType": "Linux",
-  "provisioningState": "Succeeded",
+  "provisioningState": "Failed",
+  "proximityPlacementGroupId": null,
   "resourceGroup": "myResourceGroup",
   "scaleSetEvictionPolicy": null,
   "scaleSetPriority": null,
   "spotMaxPrice": null,
   "tags": null,
   "type": "Microsoft.ContainerService/managedClusters/agentPools",
+  "upgradeSettings": {
+    "maxSurge": null
+  },
   "vmSize": "Standard_DS2_v2",
   "vnetSubnetId": null
 }
@@ -146,6 +168,16 @@ az aks nodepool update -g myResourceGroup --cluster-name myAKSCluster -n mynodep
 az aks nodepool delete -g myResourceGroup --cluster-name myAKSCluster -n mynodepool
 ```
 
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Чтобы удалить кластер, используйте команду [AZ Group Delete][az-group-delete] , чтобы удалить группу ресурсов AKS:
+
+```azurecli-interactive
+az group delete --name myResourceGroup --yes --no-wait
+```
+
+
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали, как создавать пулы узлов системы в кластере AKS и управлять ими. Дополнительные сведения об использовании нескольких пулов узлов см. в статье [Использование пулов с несколькими][use-multiple-node-pools]узлами.
@@ -159,6 +191,7 @@ az aks nodepool delete -g myResourceGroup --cluster-name myAKSCluster -n mynodep
 [kubernetes-label-syntax]: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#syntax-and-character-set
 
 <!-- INTERNAL LINKS -->
+[aks-taints]: use-multiple-node-pools.md#schedule-pods-using-taints-and-tolerations
 [aks-windows]: windows-container-cli.md
 [az-aks-get-credentials]: /cli/azure/aks#az-aks-get-credentials
 [az-aks-create]: /cli/azure/aks#az-aks-create
