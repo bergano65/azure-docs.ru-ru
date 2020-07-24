@@ -8,11 +8,12 @@ ms.topic: conceptual
 ms.date: 03/10/2020
 ms.author: victorh
 ms.reviewer: tyao
-ms.openlocfilehash: eb97a2d848441a153db47b41644a6226e9d75782
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: fd38d900285f6cda0c98dd1f49076ea04180b18c
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83747747"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87068308"
 ---
 # <a name="set-up-a-geo-filtering-waf-policy-for-your-front-door"></a>Настройка политики геофильтрации для брандмауэра веб-приложения (WAF), связанного с Azure Front Door Service
 
@@ -26,7 +27,7 @@ ms.locfileid: "83747747"
 ### <a name="set-up-your-powershell-environment"></a>Настройка среды PowerShell
 В Azure PowerShell доступен набор командлетов, которые используют модель [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) для управления ресурсами Azure. 
 
-Вы можете установить [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview) на локальном компьютере и использовать его в любом сеансе PowerShell. Следуя инструкциям на странице, войдите с учетными данными Azure и установите модуль Az PowerShell.
+Вы можете установить [Azure PowerShell](https://docs.microsoft.com/powershell/azure/) на локальном компьютере и использовать его в любом сеансе PowerShell. Следуя инструкциям на странице, войдите с учетными данными Azure и установите модуль Az PowerShell.
 
 #### <a name="connect-to-azure-with-an-interactive-dialog-for-sign-in"></a>Подключение к Azure с помощью интерактивного диалогового окна для входа
 

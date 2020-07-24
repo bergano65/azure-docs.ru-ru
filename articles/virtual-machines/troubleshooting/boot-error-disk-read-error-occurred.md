@@ -14,11 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 06/01/2020
 ms.author: v-miegge
-ms.openlocfilehash: dea09b1ac29db99e1c52a31a605007fa4129e8ea
-ms.sourcegitcommit: d118ad4fb2b66c759b70d4d8a18e6368760da3ad
+ms.openlocfilehash: f59903ed111be1fe414f4b3ded250d754c91d323
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84302606"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87069153"
 ---
 # <a name="troubleshoot-boot-error---disk-read-error-occurred"></a>Устранение неполадок при ошибке загрузки "Произошла ошибка чтения диска"
 
@@ -26,7 +27,7 @@ ms.locfileid: "84302606"
 
 ## <a name="symptoms"></a>Симптомы
 
-При использовании [диагностики загрузки](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/boot-diagnostics) для просмотра снимка экрана виртуальной машины вы увидите, что отображается следующее сообщение: "A disk read error occurred. Press Ctrl+Alt+Del to restart" (Операционная система не найдена. Попробуйте отключить драйверы, которые не содержат операционную систему. Нажмите клавиши CTRL+ALT+DEL для перезапуска).
+При использовании [диагностики загрузки](./boot-diagnostics.md) для просмотра снимка экрана виртуальной машины вы увидите, что отображается следующее сообщение: "A disk read error occurred. Press Ctrl+Alt+Del to restart" (Операционная система не найдена. Попробуйте отключить драйверы, которые не содержат операционную систему. Нажмите клавиши CTRL+ALT+DEL для перезапуска).
 
    ![Сообщение об ошибке: Произошла ошибка чтения диска. Нажмите клавиши CTRL+ALT+DEL для перезапуска.](./media/disk-read-error-occurred/1.png)
 
@@ -50,7 +51,7 @@ ms.locfileid: "84302606"
 
 ### <a name="create-and-access-a-repair-vm"></a>Создание виртуальной машины для восстановления и вход на нее
 
-1. Выполните шаги 1–3 из списка [команд для восстановления виртуальной машины](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/repair-windows-vm-using-azure-virtual-machine-repair-commands), чтобы подготовить виртуальную машину для восстановления.
+1. Выполните шаги 1–3 из списка [команд для восстановления виртуальной машины](./repair-windows-vm-using-azure-virtual-machine-repair-commands.md), чтобы подготовить виртуальную машину для восстановления.
 1. Используйте подключение к удаленному рабочему столу, чтобы подключиться к виртуальной машине для восстановления.
 
 ### <a name="set-partition-status-to-active"></a>Перевод раздела в состояние "Active" (Активно)
@@ -142,4 +143,4 @@ ms.locfileid: "84302606"
    
 ### <a name="rebuild-the-vm"></a>Перестроение виртуальной машины
 
-Чтобы перестроить виртуальную машину, [выполните шаг 5 из списка команд для восстановления виртуальной машины](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/repair-windows-vm-using-azure-virtual-machine-repair-commands#repair-process-example).
+Чтобы перестроить виртуальную машину, [выполните шаг 5 из списка команд для восстановления виртуальной машины](./repair-windows-vm-using-azure-virtual-machine-repair-commands.md#repair-process-example).

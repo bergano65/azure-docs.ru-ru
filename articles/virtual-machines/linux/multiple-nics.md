@@ -8,11 +8,12 @@ ms.topic: article
 ms.workload: infrastructure
 ms.date: 06/07/2018
 ms.author: cynthn
-ms.openlocfilehash: ecbff4beadd9d10a8489c89cc322c0bb67ec5f40
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 054462834d2712b8db10b40f2d7befdf330eec48
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84706687"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87069509"
 ---
 # <a name="how-to-create-a-linux-virtual-machine-in-azure-with-multiple-network-interface-cards"></a>Как создать виртуальную машину Linux в Azure с несколькими сетевыми картами
 
@@ -166,7 +167,7 @@ az vm start --resource-group myResourceGroup --name myVM
 }
 ```
 
-Вы можете прочитать дополнительные сведения о [создании нескольких экземпляров с помощью объекта *copy*](../../resource-group-create-multiple.md). 
+Вы можете прочитать дополнительные сведения о [создании нескольких экземпляров с помощью объекта *copy*](../../azure-resource-manager/templates/copy-resources.md). 
 
 Можно также использовать, `copyIndex()` чтобы добавить номер к имени ресурса, которое позволяет создавать `myNic1` , `myNic2` и т. д. Ниже приведен пример добавления значения индекса:
 
@@ -240,7 +241,7 @@ Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 ping bing.com -c 4 -I eth1
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь с [размерами виртуальных машин Linux](sizes.md), когда будете создавать виртуальную машину с несколькими сетевыми картами. Обратите внимание на максимальное число сетевых карт, поддерживаемых каждым из размеров виртуальной машины.
 
 Для дальнейшего обеспечения безопасности виртуальных машин используйте JIT-доступ к виртуальной машине. Эта функция при необходимости открывает правила группы безопасности сети для SSH-трафика на определенный период времени. Дополнительные сведения см. в статье [Управление доступом к виртуальным машинам с помощью JIT](../../security-center/security-center-just-in-time.md).

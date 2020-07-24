@@ -1,5 +1,5 @@
 ---
-title: Создание масштабируемого набора из обобщенного образа
+title: Создание масштабируемого набора из обобщенного образа с помощью Azure CLI
 description: Создание масштабируемого набора с помощью обобщенного образа в коллекции общих образов.
 author: cynthn
 ms.service: virtual-machine-scale-sets
@@ -9,13 +9,14 @@ ms.topic: how-to
 ms.date: 05/01/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: 59e29be2aade993c8aeae64b4aa4918b36a26b26
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3cde06b652befa8fbb655273c19f65bd2f38e850
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82797140"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87069841"
 ---
-# <a name="create-a-scale-set-from-a-generalized-image"></a>Создание масштабируемого набора из обобщенного образа
+# <a name="create-a-scale-set-from-a-generalized-image-with-azure-cli"></a>Создание масштабируемого набора из обобщенного образа с помощью Azure CLI
 
 Создайте масштабируемый набор из обобщенной версии образа, хранящейся в [общей коллекции образов](shared-image-galleries.md) , с помощью Azure CLI. Если требуется создать масштабируемый набор с помощью специализированной версии образа, см. раздел [Создание экземпляров масштабируемых наборов на основе специализированного образа](instance-specialized-image-version-cli.md).
 
@@ -53,7 +54,7 @@ az vmss create \
 
 Создание и настройка всех ресурсов и виртуальных машин масштабируемого набора занимает несколько минут.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 С помощью [построителя образов Azure (Предварительная версия)](../virtual-machines/linux/image-builder-overview.md) можно автоматизировать создание версий изображений, а также использовать его для обновления и [создания новой версии образа из существующей версии образа](../virtual-machines/linux/image-builder-gallery-update-image-version.md). 
 
 Вы также можете создать ресурс коллекции общих образов с помощью шаблонов. Существует несколько шаблонов быстрого запуска Azure: 

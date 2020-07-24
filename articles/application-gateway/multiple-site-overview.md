@@ -4,21 +4,23 @@ description: В этой статье предоставлен обзор под
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
-ms.date: 03/11/2020
+ms.date: 07/20/2020
 ms.author: amsriva
 ms.topic: conceptual
-ms.openlocfilehash: 4d945a255dacd35c61c3c80574b7d46b56de4aab
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b3e6bc6d2dd5568dcc11a37c6ab44bd3b4089c66
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80257416"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87067957"
 ---
 # <a name="application-gateway-multiple-site-hosting"></a>Размещение нескольких сайтов с помощью шлюза приложений
 
-Размещение нескольких сайтов позволяет настроить несколько веб-приложений на одном и том же порту шлюза приложений. Эта функция позволяет настроить более эффективную топологию развернутых служб, добавляя до 100 веб-сайтов в один шлюз приложений. Каждый веб-сайт может быть направлен в свой собственный внутренний пул. В следующем примере шлюз приложений обслуживает трафик для `contoso.com` `fabrikam.com` двух внутренних пулов серверов, именуемых ContosoServerPool и FabrikamServerPool.
+Размещение нескольких сайтов позволяет настроить несколько веб-приложений на одном и том же порту шлюза приложений. Он позволяет настроить более эффективную топологию для развертываний, добавив до 100 веб-сайтов в один шлюз приложений. Каждый веб-сайт может быть направлен в свой собственный внутренний пул. Например, три домена, contoso.com, fabrikam.com и adatum.com, указывают на IP-адрес шлюза приложений. Создайте три прослушивателя с несколькими сайтами и настройте каждый прослушиватель для соответствующего порта и параметра протокола. 
 
-![imageURLroute](./media/multiple-site-overview/multisite.png)
+Можно также определить имена узлов с подстановочными знаками в прослушивателе с несколькими сайтами и до 5 имен узлов на прослушиватель. Дополнительные сведения см. [в разделе имена узлов с подстановочными знаками в прослушивателе](#wildcard-host-names-in-listener-preview).
+
+:::image type="content" source="./media/multiple-site-overview/multisite.png" alt-text="Шлюз приложений для нескольких сайтов":::
 
 > [!IMPORTANT]
 > Правила обрабатываются в том порядке, в котором они указаны на портале для номера SKU v1. Для SKU версии 2 точные совпадения имеют более высокий приоритет. Мы настоятельно рекомендуем в первую очередь настроить многосайтовые прослушиватели, чтобы настроить базовый прослушиватель.  Это позволит гарантировать, что трафик будет перенаправлен на правильный внутренний сервер. Если базовый прослушиватель стоит первым в списке и совпадает с входящим запросом, он будет обрабатываться прослушивателем.
@@ -26,6 +28,56 @@ ms.locfileid: "80257416"
 Запросы для `http://contoso.com` маршрутизируются в ContosoServerPool, а запросы для `http://fabrikam.com` — в FabrikamServerPool.
 
 Аналогичным образом можно разместить несколько поддоменов одного и того же родительского домена в одном развертывании шлюза приложений. Например, можно разместить `http://blog.contoso.com` и `http://app.contoso.com` в одном развертывании шлюза приложений.
+
+## <a name="wildcard-host-names-in-listener-preview"></a>Имена узлов с подстановочными знаками в прослушивателе (Предварительная версия)
+
+Шлюз приложений позволяет выполнять маршрутизацию на основе узла с помощью многосайтового прослушивателя HTTP (S). Теперь у вас есть возможность использовать подстановочные знаки, например звездочку (*) и вопросительный знак (?) в имени узла, и до 5 имен узлов для каждого многосайтового прослушивателя HTTP (S). Например, `*.contoso.com`.
+
+Используя подстановочный знак в имени узла, можно сопоставить несколько имен узлов в одном прослушивателе. Например, `*.contoso.com` может сопоставляться с `ecom.contoso.com` , а `b2b.contoso.com` также `customer1.b2b.contoso.com` и т. д. Используя массив имен узлов, можно настроить более одного имени узла для прослушивателя, чтобы маршрутизировать запросы к внутреннему пулу. Например, прослушиватель может содержать, `contoso.com, fabrikam.com` который будет принимать запросы для имен узлов.
+
+:::image type="content" source="./media/multiple-site-overview/wildcard-listener-diag.png" alt-text="Прослушиватель с подстановочными знаками":::
+
+>[!NOTE]
+> Эта функция доступна в предварительной версии и доступна только для Standard_v2 и WAF_v2 SKU шлюза приложений. Дополнительные сведения о предварительных версиях см. в [статье условия использования](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
+В [портал Azure](create-multiple-sites-portal.md)можно определить их в отдельных текстовых полях, как показано на снимке экрана ниже.
+
+:::image type="content" source="./media/multiple-site-overview/wildcard-listener-example.png" alt-text="Пример конфигурации прослушивателя с подстановочными знаками":::
+
+>[!NOTE]
+>Если вы создаете прослушиватель с несколькими сайтами или добавляете в существующий прослушиватель портал Azure с несколькими сайтами несколько имен узлов, по умолчанию он будет добавлен к `HostNames` параметру конфигурации прослушивателя, что расширяет возможности существующего `HostName` параметра в конфигурации.
+
+В [Azure PowerShell](tutorial-multiple-sites-powershell.md)необходимо использовать `-HostNames` вместо `-HostName` . При использовании имен узлов можно указать до 5 имен узлов в виде значений с разделителями-запятыми и использовать подстановочные знаки. Например `-HostNames "*.contoso.com,*.fabrikam.com"`.
+
+В [Azure CLI](tutorial-multiple-sites-cli.md)необходимо использовать `--host-names` вместо `--host-name` . При использовании имен узлов можно указать до 5 имен узлов в виде значений с разделителями-запятыми и использовать подстановочные знаки. Например `--host-names "*.contoso.com,*.fabrikam.com"`.
+
+### <a name="allowed-characters-in-the-host-names-field"></a>Разрешенные символы в поле имен узлов:
+
+* `(A-Z,a-z,0-9)`— буквенно-цифровые символы
+* `-`— дефис или минус
+* `.`-period в качестве разделителя
+*   `*`-может сопоставляться с несколькими символами в допустимом диапазоне
+*   `?`— может сопоставляться с одним символом в допустимом диапазоне
+
+### <a name="conditions-for-using-wildcard-characters-and-multiple-host-names-in-a-listener"></a>Условия использования подстановочных знаков и нескольких имен узлов в прослушивателе:
+
+*   В одном прослушивателе можно указать до 5 имен узлов.
+*   Звездочку `*` можно упомянуть только один раз в компоненте доменного имени или имени узла. Например, Component1 *. component2*. component3. `(*.contoso-*.com)` является допустимым;
+*   В имени узла может быть только две звездочки `*` . Например, `*.contoso.*` является допустимым и `*.contoso.*.*.com` является недопустимым.
+*   В имени узла может быть не более 4 символов-шаблонов. Например, `????.contoso.com` `w??.contoso*.edu.*` являются допустимыми, но являются `????.contoso.*` недопустимыми.
+*   Использование звездочки и вопросительного `*` знака `?` вместе в компоненте имени узла ( `*?` или `?*` или `**` ) недопустимо. Например, `*?.contoso.com` и `**.contoso.com` являются недопустимыми.
+
+### <a name="considerations-and-limitations-of-using-wildcard-or-multiple-host-names-in-a-listener"></a>Рекомендации и ограничения использования подстановочных знаков или нескольких имен узлов в прослушивателе:
+
+*   Для [завершения SSL-и сквозного SSL](ssl-overview.md) необходимо настроить протокол как HTTPS и передать сертификат, который будет использоваться в конфигурации прослушивателя. Если это прослушиватель с несколькими сайтами, вы также можете ввести имя узла, обычно это CN сертификата SSL. При указании нескольких имен узлов в прослушивателе или использовании подстановочных знаков необходимо учитывать следующее.
+    *   Если это имя узла с подстановочным знаком, например *. contoso.com, необходимо отправить шаблонный сертификат с именем CN, например *. contoso.com
+    *   Если в одном прослушивателе упоминается несколько имен узлов, необходимо отправить сертификат SAN (альтернативные имена субъектов) с именем CNs, совпадающим с указанными именами узлов.
+*   Регулярное выражение нельзя использовать для упоминания имени узла. Для формирования шаблона имени узла можно использовать только подстановочные знаки, такие как звездочка (*) и вопросительный знак (?).
+*   Для проверки работоспособности серверной части нельзя связать несколько [пользовательских проверок](application-gateway-probe-overview.md) на параметры HTTP. Вместо этого можно проверить один из веб-сайтов в серверной части или использовать "127.0.0.1" для проверки localhost внутреннего сервера. Однако при использовании в прослушивателе подстановочных знаков или нескольких имен узлов запросы всех указанных шаблонов доменов будут направляться во внутренний пул в зависимости от типа правила (базовый или на основе пути).
+*   Свойства "Hostname" принимают в качестве входных данных одну строку, где можно указать только одно имя домена без подстановочных знаков, а "Hostname" принимает массив строк в качестве входных данных, где можно указать до 5 доменных имен с подстановочными знаками. Однако оба свойства нельзя использовать одновременно.
+*   Нельзя создать правило [перенаправления](redirect-overview.md) с целевым прослушивателем, который использует подстановочный знак или несколько имен узлов.
+
+Пошаговое руководство по настройке имен узлов с подстановочными знаками в многосайтовых прослушивателях см. в статье [Создание нескольких сайтов с помощью портал Azure](create-multiple-sites-portal.md) или [с помощью Azure PowerShell](tutorial-multiple-sites-powershell.md) или [Azure CLI](tutorial-multiple-sites-cli.md) .
 
 ## <a name="host-headers-and-server-name-indication-sni"></a>Заголовки узлов и указание имени сервера (SNI)
 
@@ -41,92 +93,8 @@ ms.locfileid: "80257416"
 
 Шлюз приложений использует заголовки узлов HTTP 1.1 для размещения нескольких веб-сайтов на одном общедоступном IP-адресе и порте. Сайты, размещенные в шлюзе приложений, также могут поддерживать разгрузку TLS с помощью расширения TLS указание имени сервера (SNI). В рамках этого сценария это значит, что браузер клиента и внутренняя веб-ферма должны поддерживать HTTP/1.1 и расширение TLS, как определено в стандарте RFC 6066.
 
-## <a name="listener-configuration-element"></a>Элемент конфигурации прослушивателя
-
-Существующие элементы конфигурации HTTPListener расширены для поддержки имен узлов и элементов индикации имени сервера. Он используется шлюзом приложений для маршрутизации трафика в соответствующий внутренний пул. 
-
-Следующий пример кода является фрагментом элемента HttpListeners из файла шаблона:
-
-```json
-"httpListeners": [
-    {
-        "name": "appGatewayHttpsListener1",
-        "properties": {
-            "FrontendIPConfiguration": {
-                "Id": "/subscriptions/<subid>/resourceGroups/<rgName>/providers/Microsoft.Network/applicationGateways/applicationGateway1/frontendIPConfigurations/DefaultFrontendPublicIP"
-            },
-            "FrontendPort": {
-                "Id": "/subscriptions/<subid>/resourceGroups/<rgName>/providers/Microsoft.Network/applicationGateways/applicationGateway1/frontendPorts/appGatewayFrontendPort443'"
-            },
-            "Protocol": "Https",
-            "SslCertificate": {
-                "Id": "/subscriptions/<subid>/resourceGroups/<rgName>/providers/Microsoft.Network/applicationGateways/applicationGateway1/sslCertificates/appGatewaySslCert1'"
-            },
-            "HostName": "contoso.com",
-            "RequireServerNameIndication": "true"
-        }
-    },
-    {
-        "name": "appGatewayHttpListener2",
-        "properties": {
-            "FrontendIPConfiguration": {
-                "Id": "/subscriptions/<subid>/resourceGroups/<rgName>/providers/Microsoft.Network/applicationGateways/applicationGateway1/frontendIPConfigurations/appGatewayFrontendIP'"
-            },
-            "FrontendPort": {
-                "Id": "/subscriptions/<subid>/resourceGroups/<rgName>/providers/Microsoft.Network/applicationGateways/applicationGateway1/frontendPorts/appGatewayFrontendPort80'"
-            },
-            "Protocol": "Http",
-            "HostName": "fabrikam.com",
-            "RequireServerNameIndication": "false"
-        }
-    }
-],
-```
-
-Комплексное развертывание с помощью шаблона можно изучить на примере [шаблона Resource Manager, использующего размещение нескольких сайтов](https://github.com/Azure/azure-quickstart-templates/blob/master/201-application-gateway-multihosting).
-
-## <a name="routing-rule"></a>Правило маршрутизации
-
-В правиле маршрутизации не требуется никаких изменений. Следует все так же выбрать базовое правило маршрутизации, чтобы привязать соответствующий сайт прослушивателя к нужному внутреннему пулу адресов.
-
-```json
-"requestRoutingRules": [
-{
-    "name": "<ruleName1>",
-    "properties": {
-        "RuleType": "Basic",
-        "httpListener": {
-            "id": "/subscriptions/<subid>/resourceGroups/<rgName>/providers/Microsoft.Network/applicationGateways/applicationGateway1/httpListeners/appGatewayHttpsListener1')]"
-        },
-        "backendAddressPool": {
-            "id": "/subscriptions/<subid>/resourceGroups/<rgName>/providers/Microsoft.Network/applicationGateways/applicationGateway1/backendAddressPools/ContosoServerPool')]"
-        },
-        "backendHttpSettings": {
-            "id": "/subscriptions/<subid>/resourceGroups/<rgName>/providers/Microsoft.Network/applicationGateways/applicationGateway1/backendHttpSettingsCollection/appGatewayBackendHttpSettings')]"
-        }
-    }
-
-},
-{
-    "name": "<ruleName2>",
-    "properties": {
-        "RuleType": "Basic",
-        "httpListener": {
-            "id": "/subscriptions/<subid>/resourceGroups/<rgName>/providers/Microsoft.Network/applicationGateways/applicationGateway1/httpListeners/appGatewayHttpListener2')]"
-        },
-        "backendAddressPool": {
-            "id": "/subscriptions/<subid>/resourceGroups/<rgName>/providers/Microsoft.Network/applicationGateways/applicationGateway1/backendAddressPools/FabrikamServerPool')]"
-        },
-        "backendHttpSettings": {
-            "id": "/subscriptions/<subid>/resourceGroups/<rgName>/providers/Microsoft.Network/applicationGateways/applicationGateway1/backendHttpSettingsCollection/appGatewayBackendHttpSettings')]"
-        }
-    }
-
-}
-]
-```
-
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Изучив размещение нескольких сайтов, перейдите к [созданию шлюза приложений с использованием размещения нескольких сайтов](tutorial-multiple-sites-powershell.md) , чтобы создать шлюз приложений с возможностью поддержки нескольких веб-приложений.
+После изучения нескольких размещений сайтов перейдите к разделу [Создание многосайтового приложения с помощью портал Azure](create-multiple-sites-portal.md) или [с помощью Azure PowerShell](tutorial-multiple-sites-powershell.md) или [с помощью Azure CLI](tutorial-multiple-sites-cli.md) для пошагового указания по созданию шлюза приложений для размещения нескольких веб-сайтов.
 
+Комплексное развертывание с помощью шаблона можно изучить на примере [шаблона Resource Manager, использующего размещение нескольких сайтов](https://github.com/Azure/azure-quickstart-templates/blob/master/201-application-gateway-multihosting).

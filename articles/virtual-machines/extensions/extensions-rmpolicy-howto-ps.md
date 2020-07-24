@@ -1,5 +1,5 @@
 ---
-title: Ограничение установки расширения виртуальной машины с помощью политики Azure
+title: Использование политики Azure для ограничения установки расширения виртуальной машины (Windows)
 description: Служба "Политика Azure" позволяет ограничить развертывание расширений.
 services: virtual-machines-linux
 documentationcenter: ''
@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 03/23/2018
 ms.author: akjosh
 ms.reviewer: cynthn
-ms.openlocfilehash: 96cd16c08421a4e365391c0db0b257f71a06551f
-ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
+ms.openlocfilehash: e4959c9dca909afde4bf6d351d79ecca1e4022a0
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85919794"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87069761"
 ---
 # <a name="use-azure-policy-to-restrict-extensions-installation-on-windows-vms"></a>Ограничение установки расширений на виртуальных машинах Windows с помощью службы "Политика Azure"
 
@@ -98,7 +98,7 @@ nano $home/clouddrive/parameters.json
 
 ## <a name="create-the-policy"></a>Создание политики
 
-Определение политики — это объект для хранения конфигурации, которую нужно использовать. Для определения политики используются файлы правил и параметров. Создайте определение политики с помощью командлета [New-AzPolicyDefinition](https://docs.microsoft.com/powershell/module/az.resources/new-azpolicydefinition).
+Определение политики — это объект для хранения конфигурации, которую нужно использовать. Для определения политики используются файлы правил и параметров. Создайте определение политики с помощью командлета [New-AzPolicyDefinition](/powershell/module/az.resources/new-azpolicydefinition).
 
  Правила и параметры этой политики представлены в виде файлов, которые вы создали в формате JSON и сохранили с помощью Cloud Shell.
 
@@ -117,9 +117,9 @@ $definition = New-AzPolicyDefinition `
 
 ## <a name="assign-the-policy"></a>Назначение политики
 
-В этом примере назначается политика для группы ресурсов с помощью командлета [New-AzPolicyAssignment](https://docs.microsoft.com/powershell/module/az.resources/new-azpolicyassignment). На всех виртуальных машинах, созданных в группе ресурсов **myResourceGroup**, невозможно будет установить агент доступа к виртуальной машине и пользовательские расширения. 
+В этом примере назначается политика для группы ресурсов с помощью командлета [New-AzPolicyAssignment](/powershell/module/az.resources/new-azpolicyassignment). На всех виртуальных машинах, созданных в группе ресурсов **myResourceGroup**, невозможно будет установить агент доступа к виртуальной машине и пользовательские расширения. 
 
-Командлет [Get-AzSubscription | Format-Table](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription) предоставит вам идентификатор подписки, который следует указать вместо образца в примере.
+Командлет [Get-AzSubscription | Format-Table](/powershell/module/az.accounts/get-azsubscription) предоставит вам идентификатор подписки, который следует указать вместо образца в примере.
 
 ```azurepowershell-interactive
 $scope = "/subscriptions/<subscription id>/resourceGroups/myResourceGroup"
@@ -164,5 +164,5 @@ Remove-AzPolicyAssignment -Name not-allowed-vmextension-windows -Scope $scope
 Remove-AzPolicyDefinition -Name not-allowed-vmextension-windows
 ```
     
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения см. в статье [Что такое служба "Политика Azure"?](../../governance/policy/overview.md)

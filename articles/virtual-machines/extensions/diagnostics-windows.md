@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 12/15/2015
 ms.author: mimckitt
-ms.openlocfilehash: 5aeae50c9cb7497c20f785f2a32c96f5a4fdec1e
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: 9bb9b993b88b8f4b31bc56c6bb3fc16972bb6e41
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86186985"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87069817"
 ---
 # <a name="use-powershell-to-enable-azure-diagnostics-in-a-virtual-machine-running-windows"></a>Включение системы диагностики Azure на виртуальной машине под управлением Windows с помощью PowerShell
 
@@ -29,7 +29,7 @@ ms.locfileid: "86186985"
 ## <a name="enable-the-diagnostics-extension-if-you-use-the-resource-manager-deployment-model"></a>Включения расширения диагностики при использовании модели развертывания диспетчера ресурсов
 Вы можете включить расширение диагностики при создании виртуальной машины Windows, используя модель развертывания диспетчера ресурсов Azure. Для этого в шаблон диспетчера ресурсов нужно добавить конфигурацию расширения. Дополнительные сведения см. в статье [Создание виртуальной машины Windows с мониторингом и диагностикой с использованием шаблона диспетчера ресурсов Azure](diagnostics-template.md).
 
-Чтобы включить расширение диагностики на уже существующей виртуальной машине, созданной с помощью модели развертывания Resource Manager, можете использовать командлет PowerShell [Set-AzVMDiagnosticsExtension](https://docs.microsoft.com/powershell/module/az.compute/set-azvmdiagnosticsextension), как показано ниже.
+Чтобы включить расширение диагностики на уже существующей виртуальной машине, созданной с помощью модели развертывания Resource Manager, можете использовать командлет PowerShell [Set-AzVMDiagnosticsExtension](/powershell/module/az.compute/set-azvmdiagnosticsextension), как показано ниже.
 
 ```azurepowershell
 $vm_resourcegroup = "myvmresourcegroup"
@@ -52,7 +52,7 @@ Set-AzVMDiagnosticsExtension -ResourceGroupName $vm_resourcegroup -VMName $vm_na
 Set-AzVMDiagnosticsExtension -ResourceGroupName $vm_resourcegroup -VMName $vm_name -DiagnosticsConfigurationPath $diagnosticsconfig_path -StorageAccountName $diagnosticsstorage_name -StorageAccountKey $diagnosticsstorage_key
 ```
 
-После включения расширения диагностики на виртуальной машине получить текущие параметры можно с помощью командлета [Get-AzVmDiagnosticsExtension](https://docs.microsoft.com/powershell/module/az.compute/get-azvmdiagnosticsextension).
+После включения расширения диагностики на виртуальной машине получить текущие параметры можно с помощью командлета [Get-AzVmDiagnosticsExtension](/powershell/module/az.compute/get-azvmdiagnosticsextension).
 
 ```azurepowershell
 Get-AzVMDiagnosticsExtension -ResourceGroupName $vm_resourcegroup -VMName $vm_name
@@ -67,13 +67,13 @@ $xmlconfig = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64
 Write-Host $xmlconfig
 ```
 
-Для удаления расширения диагностики с виртуальной машины вы можете использовать командлет [Remove-AzVmDiagnosticsExtension](https://docs.microsoft.com/powershell/module/az.compute/remove-azvmdiagnosticsextension).  
+Для удаления расширения диагностики с виртуальной машины вы можете использовать командлет [Remove-AzVmDiagnosticsExtension](/powershell/module/az.compute/remove-azvmdiagnosticsextension).  
 
 ## <a name="enable-the-diagnostics-extension-if-you-use-the-classic-deployment-model"></a>Включения расширения диагностики при использовании классической модели развертывания
 
 [!INCLUDE [classic-vm-deprecation](../../../includes/classic-vm-deprecation.md)]
 
-Включить расширение диагностики на виртуальной машине, созданной на основе классической модели развертывания, можно с помощью командлета [Set-AzureVMDiagnosticsExtension](https://docs.microsoft.com/powershell/module/servicemanagement/azure/set-azurevmdiagnosticsextension) . В следующем примере показано, как создать новую виртуальную машину, используя классическую модель развертывания при включенном расширении диагностики.
+Включить расширение диагностики на виртуальной машине, созданной на основе классической модели развертывания, можно с помощью командлета [Set-AzureVMDiagnosticsExtension](/powershell/module/servicemanagement/azure.service/set-azurevmdiagnosticsextension) . В следующем примере показано, как создать новую виртуальную машину, используя классическую модель развертывания при включенном расширении диагностики.
 
 ```azurepowershell
 $VM = New-AzureVMConfig -Name $VM -InstanceSize Small -ImageName $VMImage
@@ -82,7 +82,7 @@ $VM = Set-AzureVMDiagnosticsExtension -DiagnosticsConfigurationPath $Config_Path
 New-AzVM -Location $Location -ServiceName $Service_Name -VM $VM
 ```
 
-Чтобы включить расширение диагностики на существующей виртуальной машине, созданной с помощью классической модели развертывания, сначала используйте командлет [Get-AzureVM](https://docs.microsoft.com/powershell/module/servicemanagement/azure/get-azurevm) , который позволит получить конфигурацию виртуальной машины. Затем обновите конфигурацию виртуальной машины, чтобы активировать расширение диагностики, с помощью командлета [Set-AzureVMDiagnosticsExtension](https://docs.microsoft.com/powershell/module/servicemanagement/azure/set-azurevmdiagnosticsextension) . И, наконец, примените обновленную конфигурацию к виртуальной машине с помощью командлета [Update-AzureVM](https://docs.microsoft.com/powershell/module/servicemanagement/azure/update-azurevm).
+Чтобы включить расширение диагностики на существующей виртуальной машине, созданной с помощью классической модели развертывания, сначала используйте командлет [Get-AzureVM](/powershell/module/servicemanagement/azure.service/get-azurevm) , который позволит получить конфигурацию виртуальной машины. Затем обновите конфигурацию виртуальной машины, чтобы активировать расширение диагностики, с помощью командлета [Set-AzureVMDiagnosticsExtension](/powershell/module/servicemanagement/azure.service/set-azurevmdiagnosticsextension) . И, наконец, примените обновленную конфигурацию к виртуальной машине с помощью командлета [Update-AzureVM](/powershell/module/servicemanagement/azure.service/update-azurevm).
 
 ```azurepowershell
 $VM = Get-AzureVM -ServiceName $Service_Name -Name $VM_Name
@@ -212,5 +212,4 @@ Update-AzureVM -ServiceName $Service_Name -Name $VM_Name -VM $VM_Update.VM
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные рекомендации по использованию системы диагностики Azure и других методов для устранения неполадок см. в статье [Включение системы диагностики Azure в облачных службах Azure](../../cloud-services/cloud-services-dotnet-diagnostics.md).
-* Пояснение различных параметров XML-конфигураций для расширения диагностики см. в статье, посвященной [схеме конфигураций диагностики](https://msdn.microsoft.com/library/azure/mt634524.aspx).
-
+* Пояснение различных параметров XML-конфигураций для расширения диагностики см. в статье, посвященной [схеме конфигураций диагностики](/azure/azure-monitor/platform/diagnostics-extension-versions).

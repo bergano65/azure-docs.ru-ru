@@ -9,12 +9,12 @@ ms.author: ericg
 ms.service: app-service
 ms.workload: web
 ms.custom: fasttrack-edit, references_regions
-ms.openlocfilehash: fdad2f7c2ce4f82529866b4235ebebab8da664d3
-ms.sourcegitcommit: bcb962e74ee5302d0b9242b1ee006f769a94cfb8
+ms.openlocfilehash: 4fab75aef2a94ba7108085e9d5b5dbbf190342f6
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86054582"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87068306"
 ---
 # <a name="using-private-endpoints-for-azure-web-app-preview"></a>Использование частных конечных точек для веб-приложения Azure (предварительная версия)
 
@@ -72,8 +72,8 @@ ms.locfileid: "86054582"
 
 |Имя |Type |Значение |
 |-----|-----|------|
-|mywebapp.azurewebsites.net|CNAME|clustername.azurewebsites.windows.net|
-|clustername.azurewebsites.windows.net|CNAME|cloudservicename.cloudapp.net|
+|mywebapp.azurewebsites.net|CNAME.|clustername.azurewebsites.windows.net|
+|clustername.azurewebsites.windows.net|CNAME.|cloudservicename.cloudapp.net|
 |cloudservicename.cloudapp.net|Объект|40.122.110.154| 
 
 
@@ -82,9 +82,9 @@ ms.locfileid: "86054582"
 
 |Имя |Type |Значение |Комментарий |
 |-----|-----|------|-------|
-|mywebapp.azurewebsites.net|CNAME|mywebapp.privatelink.azurewebsites.net|
-|mywebapp.privatelink.azurewebsites.net|CNAME|clustername.azurewebsites.windows.net|
-|clustername.azurewebsites.windows.net|CNAME|cloudservicename.cloudapp.net|
+|mywebapp.azurewebsites.net|CNAME.|mywebapp.privatelink.azurewebsites.net|
+|mywebapp.privatelink.azurewebsites.net|CNAME.|clustername.azurewebsites.windows.net|
+|clustername.azurewebsites.windows.net|CNAME.|cloudservicename.cloudapp.net|
 |cloudservicename.cloudapp.net|Объект|40.122.110.154|< — этот общедоступный IP-адрес не является частной конечной точкой, вы получите ошибку 403.|
 
 Необходимо настроить частный DNS-сервер или Azure DNS частную зону. для тестов можно изменить запись узла тестового компьютера.
@@ -93,7 +93,7 @@ ms.locfileid: "86054582"
 
 |Имя |Type |Значение |Комментарий |
 |-----|-----|------|-------|
-|mywebapp.azurewebsites.net|CNAME|mywebapp.privatelink.azurewebsites.net|
+|mywebapp.azurewebsites.net|CNAME.|mywebapp.privatelink.azurewebsites.net|
 |mywebapp.privatelink.azurewebsites.net|Объект|10.10.10.8|<--вы управляете этой записью в системе DNS, чтобы указать IP-адрес частной конечной точки.|
 
 После этой конфигурации DNS можно получить доступ к веб-приложению в частном порядке с именем по умолчанию mywebappname.azurewebsites.net.
@@ -127,7 +127,7 @@ ms.locfileid: "86054582"
 - Сведения о развертывании частной конечной точки для веб-приложения с помощью портала см. в статье [как подключиться к веб-приложению с помощью портала][howtoguide1] .
 - Сведения о развертывании закрытой конечной точки для веб-приложения с помощью Azure CLI см. в статье [как подключиться к веб-приложению с Azure CLI][howtoguide2]
 - Сведения о развертывании закрытой конечной точки для веб-приложения с помощью PowerShell см. в статье [как подключиться к веб-][howtoguide3] приложению через PowerShell.
-
+- Сведения о развертывании частной конечной точки для веб-приложения с помощью шаблона Azure см. в статье [как подключиться к веб-приложению с][howtoguide4] использованием шаблона Azure.
 
 
 <!--Links-->
@@ -143,3 +143,4 @@ ms.locfileid: "86054582"
 [howtoguide1]: https://docs.microsoft.com/azure/private-link/create-private-endpoint-webapp-portal
 [howtoguide2]: https://docs.microsoft.com/azure/app-service/scripts/cli-deploy-privateendpoint
 [howtoguide3]: https://docs.microsoft.com/azure/app-service/scripts/powershell-deploy-private-endpoint
+[howtoguide4]: https://docs.microsoft.com/azure/app-service/scripts/template-deploy-private-endpoint

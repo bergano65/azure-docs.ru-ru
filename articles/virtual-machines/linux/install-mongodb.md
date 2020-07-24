@@ -11,11 +11,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 12/15/2017
 ms.author: cynthn
-ms.openlocfilehash: e1bc7c8a6f97d6dc6bb1d6cb54825425244b2158
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 953e474eb5d160b38981d61fbfda051f1da9f968
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78944891"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87069584"
 ---
 # <a name="how-to-install-and-configure-mongodb-on-a-linux-vm"></a>Как установить и настроить MongoDB на виртуальной машине Linux
 
@@ -206,12 +207,11 @@ az group deployment show \
     --output tsv
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этих примерах подключение к экземпляру MongoDB выполняется локально с помощью виртуальной машины. Чтобы подключится к экземпляру MongoDB из другой виртуальной машины или сети, [создайте соответствующие правила группы безопасности сети](nsg-quickstart.md).
 
 В этих примерах в целях разработки развертывается основная среда MongoDB. Примените необходимые параметры конфигурации безопасности для среды. Дополнительные сведения о безопасности MongoDB см. на [этой странице](https://docs.mongodb.com/manual/security/).
 
 Дополнительные сведения о создании с использованием шаблонов см. в статье [Общие сведения о диспетчере ресурсов Azure](../../azure-resource-manager/management/overview.md).
 
-Для скачивания и выполнения скриптов на виртуальных машинах в шаблонах Azure Resource Manager используется расширение настраиваемых скриптов. Дополнительные сведения см. в статье [Использование расширения пользовательских сценариев Azure на виртуальных машинах Linux](extensions-customscript.md).
-
+Для скачивания и выполнения скриптов на виртуальных машинах в шаблонах Azure Resource Manager используется расширение настраиваемых скриптов. Дополнительные сведения см. в статье [Использование расширения пользовательских сценариев Azure на виртуальных машинах Linux](../extensions/custom-script-linux.md).

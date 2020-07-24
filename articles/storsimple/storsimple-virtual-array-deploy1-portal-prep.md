@@ -8,15 +8,16 @@ ms.topic: conceptual
 ms.date: 07/25/2019
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 7f2c7a6f9c1146627f81dc20386c59a91724b245
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c1a3d0b05f04ad8c182d428843479160666b96ee
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84698960"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87070323"
 ---
 # <a name="deploy-storsimple-virtual-array---prepare-the-azure-portal"></a>Развертывание виртуального массива StorSimple. Подготовка портала Azure
 
-![](./media/storsimple-virtual-array-deploy1-portal-prep/getstarted4.png)
+![Диаграмма, на которой показаны шаги, необходимые для развертывания виртуального массива. Первый шаг помечен как начало работы и выделен.](./media/storsimple-virtual-array-deploy1-portal-prep/getstarted4.png)
 
 
 ## <a name="overview"></a>Обзор
@@ -51,7 +52,7 @@ ms.locfileid: "84698960"
 * Скачайте [контрольный список для настройки виртуального массива StorSimple в качестве файлового сервера](https://download.microsoft.com/download/E/E/6/EE690BB0-B442-4B84-8165-4731EE727ACF/MicrosoftAzureStorSimpleVirtualArrayFileServerConfigurationChecklist.pdf).
 * Скачайте [контрольный список для настройки виртуального массива StorSimple в качестве сервера iSCSI](https://download.microsoft.com/download/E/E/6/EE690BB0-B442-4B84-8165-4731EE727ACF/MicrosoftAzureStorSimpleVirtualArrayiSCSIServerConfigurationChecklist.pdf).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 Ниже приведены предварительные требования для настройки службы диспетчера устройств StorSimple, виртуального массива StorSimple и сети центра обработки данных.
 
@@ -126,7 +127,7 @@ ms.locfileid: "84698960"
 
 #### <a name="to-get-the-virtual-array-image"></a>Получение образа виртуального массива
 
-1. Войдите на [портал Azure](https://portal.azure.com/). 
+1. Войдите на [портал Microsoft Azure](https://portal.azure.com/). 
 2. На портале Azure щелкните **Больше служб > Диспетчеры устройств StorSimple**.
 3. Выберите имеющуюся службу диспетчера устройств StorSimple. В колонке **Диспетчеры устройств StorSimple** щелкните **Быстрый запуск**. 
 4. Щелкните ссылку на образ, который вы хотите скачать из Центра загрузки Майкрософт. Размер файла образа составляет около 4,8 ГБ.
@@ -161,7 +162,7 @@ ms.locfileid: "84698960"
    
       ![Добавление учетных данных имеющейся учетной записи хранения](./media/storsimple-virtual-array-manage-storage-accounts/ova-add-storageacct.png)
 
-## <a name="next-step"></a>Следующий шаг
+## <a name="next-step"></a>Дальнейшие действия
 
 Далее необходимо подготовить виртуальную машину для виртуального массива StorSimple. Инструкции зависят от используемой ОС сервера виртуальных машин.
 

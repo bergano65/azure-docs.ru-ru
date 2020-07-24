@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: conceptual
 ms.date: 07/20/2020
 ms.author: absha
-ms.openlocfilehash: 0245a23e46770840295904685c913826950c0642
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 892ace66c4994f4c2e263d529d69e505ed9c1c1f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86517864"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87068031"
 ---
 # <a name="application-gateway-configuration-overview"></a>Обзор настройки шлюза приложений
 
@@ -25,7 +25,7 @@ ms.locfileid: "86517864"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 ### <a name="azure-virtual-network-and-dedicated-subnet"></a>Виртуальная сеть Azure и выделенная подсеть
 
@@ -284,9 +284,9 @@ Set-AzApplicationGateway -ApplicationGateway $gw
 С помощью правил перезаписи можно добавлять, удалять или обновлять заголовки запросов и ответов HTTP (S), а также URL-пути и параметры строки запроса, так как пакеты запросов и ответов перемещаются между клиентом и серверным пулом через шлюз приложений.
 
 Для заголовков и параметров URL-адреса можно задать статические значения или другие заголовки и серверные переменные. Это позволяет использовать важные варианты использования, такие как извлечение IP-адресов клиентов, удаление конфиденциальных сведений о серверной части, добавление дополнительной защиты и т. д.
-Дополнительные сведения см. в следующих источниках.
+Дополнительные сведения можно найти в разделе
 
- - [Общие сведения о перезаписи HTTP-заголовков](rewrite-http-headers-url.md)
+ - [Перезапись заголовков HTTP и обзора URL-адресов](rewrite-http-headers-url.md)
  - [Настройка перезаписи HTTP-заголовка](rewrite-http-headers-portal.md)
  - [Настройка переопределения URL-адресов](rewrite-url-portal.md)
 

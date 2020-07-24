@@ -7,12 +7,12 @@ author: msmbaldwin
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: c3212ed201b5106b9c84e4e1add92508d42e675f
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: ce52c73752691693ff42832d37c222f95edd0d51
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86494366"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87069720"
 ---
 # <a name="creating-and-configuring-a-key-vault-for-azure-disk-encryption"></a>Создание и настройка хранилища ключей для службы "Шифрование дисков Azure"
 
@@ -39,7 +39,7 @@ ms.locfileid: "86494366"
 
 ## <a name="install-tools-and-connect-to-azure"></a>Установка средств и подключение к Azure
 
-Действия, описанные в этой статье, можно выполнить с помощью [Azure CLI](/cli/azure/), [модуля Azure PowerShell Az](/powershell/azure/overview) или [портала Azure](https://portal.azure.com). 
+Действия, описанные в этой статье, можно выполнить с помощью [Azure CLI](/cli/azure/), [модуля Azure PowerShell Az](/powershell/azure/) или [портала Azure](https://portal.azure.com). 
 
 Доступ к порталу возможен через браузер, тогда как Azure CLI и Azure PowerShell нужно установить локально, как описано в статье [об установке средств для службы "Шифрование дисков Azure" для Linux ](disk-encryption-linux.md#install-tools-and-connect-to-azure).
 

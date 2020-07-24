@@ -10,12 +10,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: ba6ceec3064c5c876ca899ab58881e23913b9701
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 85b0137f8d89def2f38ffe82199950c9158888d0
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81429022"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87070045"
 ---
 # <a name="design-decisions-and-coding-techniques-for-synapse-sql-features-in-azure-synapse-analytics"></a>Разработка решений и методов программирования для функций синапсе SQL в Azure синапсе Analytics
 В этой статье вы найдете список ресурсов для пула SQL и функций SQL по запросу (Предварительная версия) синапсе SQL. Рекомендуемые статьи делятся на два раздела: основные решения по проектированию и методики разработки и программирования.
@@ -25,8 +25,8 @@ ms.locfileid: "81429022"
 ## <a name="key-design-decisions"></a>Основные проектные решения
 Приведенные ниже статьи выделяют основные понятия и архитектурные решения для синапсе разработки SQL.
 
-|                                                          |   Пул SQL   | Использование SQL по запросу |
-| -----------------------------------------------------    | ---- | ---- |
+| Статья | Пул SQL | Использование SQL по запросу |
+| ------- | -------- | ------------- |
 | [Соединения](connect-overview.md)                    | Да | Да |
 | [Классы и параллелизм ресурсов](../sql-data-warehouse/resource-classes-for-workload-management.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) | Да    | Нет |
 | [Транзакции](develop-transactions.md)              | Да | Нет |
@@ -44,8 +44,8 @@ ms.locfileid: "81429022"
 
 Ниже приводятся статьи, посвященные конкретным методам программирования, советам и рекомендациям по разработке.
 
-|                                            | Пул SQL | Использование SQL по запросу |
-| ------------------------------------------ | ------------------ | ----------------------- |
+| Статья | Пул SQL | Использование SQL по запросу |
+| ------- | -------- | ------------- |
 | [Хранимые процедуры](develop-stored-procedures.md)  | Да                | Нет                      |
 | [Метки](develop-label.md)                           | Да                | Нет                      |
 | [Представления](develop-views.md)                             | Да                | Да                     |

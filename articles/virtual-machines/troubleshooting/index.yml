@@ -10,12 +10,12 @@ metadata:
   author: genlin
   ms.author: genli
   ms.date: 09/09/2019
-  ms.openlocfilehash: 4111df079f6e4c0d49ab1381add835d493b3540a
-  ms.sourcegitcommit: 253d4c7ab41e4eb11cd9995190cd5536fcec5a3c
+  ms.openlocfilehash: 1b70dfb508ef00f370f0a6fa1456ab7178ec0eae
+  ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 03/25/2020
-  ms.locfileid: "77519246"
+  ms.lasthandoff: 07/23/2020
+  ms.locfileid: "87069044"
 landingContent:
 - title: Устранение сбоев развертывания
   linkLists:
@@ -28,65 +28,65 @@ landingContent:
     - text: Устранение ошибок, связанных с недопустимым шаблоном
       url: ../../azure-resource-manager/templates/error-invalid-template.md
     - text: Устранение ошибок, связанных с недоступностью номера SKU
-      url: https://docs.microsoft.com/azure/azure-resource-manager/templates/error-sku-not-available
+      url: ../../azure-resource-manager/templates/error-sku-not-available.md
 - title: Руководство по развертыванию виртуальных машин
   linkLists:
   - linkListType: how-to-guide
     links:
     - text: Подготовка диска VHD или VHDX для Windows к отправке в Azure
-      url: https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image
+      url: ../windows/prepare-for-upload-vhd-image.md
     - text: Развертывание или создание клиентских операционных систем Windows в Azure
-      url: https://docs.microsoft.com/azure/virtual-machines/windows/client-images
+      url: ../windows/client-images.md
     - text: Устранение ошибок, связанных с квотами
-      url: https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-quota-errors
+      url: ../../azure-resource-manager/templates/error-resource-quota.md
 - title: Не удается подключиться к виртуальной машине
   linkLists:
   - linkListType: how-to-guide
     links:
     - text: Быстрые действия для решения распространенных неполадок при подключении к удаленному рабочему столу
-      url: https://docs.microsoft.com/azure/virtual-machines/windows/troubleshoot-rdp-connection
+      url: ./troubleshoot-rdp-connection.md
     - text: Устранение неполадок с RDP-подключением к виртуальной машине по идентификатору события
-      url: https://docs.microsoft.com/azure/virtual-machines/troubleshooting/event-id-troubleshoot-vm-rdp-connecton
+      url: ./event-id-troubleshoot-vm-rdp-connecton.md
     - text: Устранение ошибок аутентификации при подключении к виртуальной машине Azure по протоколу RDP
-      url: https://docs.microsoft.com/azure/virtual-machines/troubleshooting/troubleshoot-authentication-error-rdp-vm
+      url: ./troubleshoot-authentication-error-rdp-vm.md
     - text: Сбой подключения удаленного рабочего стола к виртуальной машине из-за отключенного сетевого интерфейса
-      url: https://docs.microsoft.com/azure/virtual-machines/troubleshooting/troubleshoot-rdp-nic-disabled
+      url: ./troubleshoot-rdp-nic-disabled.md
 - title: Сброс паролей
   linkLists:
   - linkListType: how-to-guide
     links:
     - text: Сброс службы удаленных рабочих столов или ее пароля для входа в систему на виртуальной машине под управлением Windows
-      url: https://docs.microsoft.com/azure/virtual-machines/troubleshooting/reset-rdp
+      url: ./reset-rdp.md
     - text: Сброс локального пароля Windows для виртуальной машины Azure вне сети
-      url: https://docs.microsoft.com/azure/virtual-machines/troubleshooting/reset-local-password-without-agent
+      url: ./reset-local-password-without-agent.md
     - text: Устранение некоторых ошибок подключения по протоколу RDP к виртуальной машине Windows в Azure
-      url: https://docs.microsoft.com/azure/virtual-machines/troubleshooting/troubleshoot-specific-rdp-errors
+      url: ./troubleshoot-specific-rdp-errors.md
     - text: Устранение неполадок с подключением к виртуальной машине Azure через удаленный рабочий стол
-      url: https://docs.microsoft.com/azure/virtual-machines/troubleshooting/troubleshoot-rdp-connection
+      url: ./troubleshoot-rdp-connection.md
 - title: Виртуальная машина не загружается
   linkLists:
   - linkListType: how-to-guide
     links:
     - text: Ошибка загрузки, при которой поступает сообщение о проверке диска
-      url: https://docs.microsoft.com/azure/virtual-machines/troubleshooting/troubleshoot-check-disk-boot-error
+      url: ./troubleshoot-check-disk-boot-error.md
     - text: Ошибка загрузки BitLocker
-      url: https://docs.microsoft.com/azure/virtual-machines/windows/troubleshoot-bitlocker-boot-error
+      url: ./troubleshoot-bitlocker-boot-error.md
     - text: Ошибка обновления конфигурации загрузки
-      url: https://docs.microsoft.com/azure/virtual-machines/troubleshooting/troubleshoot-vm-boot-configure-update
+      url: ./troubleshoot-vm-boot-configure-update.md
     - text: Распространенные ошибки "синий экран"
-      url: https://docs.microsoft.com/azure/virtual-machines/troubleshooting/troubleshoot-common-blue-screen-error
+      url: ./troubleshoot-common-blue-screen-error.md
 - title: Не удается запустить или остановить виртуальную машину
   linkLists:
   - linkListType: how-to-guide
     links:
     - text: Устранение неполадок с развертыванием виртуальной машины
-      url: https://docs.microsoft.com/azure/virtual-machines/windows/restart-resize-error-troubleshooting
+      url: ./restart-resize-error-troubleshooting.md
     - text: Устранение неполадок с распределением (классическая модель развертывания)
-      url: https://docs.microsoft.com/azure/virtual-machines/troubleshooting/allocation-failure-classic
+      url: ./allocation-failure-classic.md
     - text: Ошибка обновления конфигурации загрузки
-      url: https://docs.microsoft.com/azure/virtual-machines/troubleshooting/troubleshoot-vm-boot-configure-update
+      url: ./troubleshoot-vm-boot-configure-update.md
     - text: Жизненный цикл и состояния виртуальной машины
-      url: https://docs.microsoft.com/azure/virtual-machines/windows/states-lifecycle
+      url: ../windows/states-lifecycle.md
 - title: Непредвиденный перезапуск виртуальной машины
   linkLists:
   - linkListType: how-to-guide
@@ -96,50 +96,50 @@ landingContent:
     - text: Диагностика и восстановление после сбоев загрузки, которые возникают после перезапуска
       url: https://azure.microsoft.com/blog/boot-diagnostics-for-virtual-machines-v2/
     - text: Общие сведения о плановом обслуживании виртуальных машин в Azure
-      url: https://docs.microsoft.com/azure/virtual-machines/windows/maintenance-and-updates
+      url: ../maintenance-and-updates.md?bc=/azure/virtual-machines/windows/breadcrumb/toc.json&toc=/azure/virtual-machines/windows/toc.json
     - text: Зависание виртуальной машины Azure при запуске в Центре обновления Windows
-      url: https://docs.microsoft.com/azure/virtual-machines/troubleshooting/troubleshoot-stuck-updating-boot-error
+      url: ./troubleshoot-stuck-updating-boot-error.md
 - title: Проблемы с управлением виртуальными дисками
   linkLists:
   - linkListType: how-to-guide
     links:
     - text: Часто задаваемые вопросы о виртуальных дисках
-      url: https://docs.microsoft.com/azure/virtual-machines/windows/faq-for-disks
+      url: ../windows/faq-for-disks.md
     - text: Устранение неполадок с выделением ресурсов при изменении размера виртуальных машин
-      url: https://docs.microsoft.com/azure/virtual-machines/troubleshooting/allocation-failure
+      url: ./allocation-failure.md
     - text: Временный диск виртуальной машины
-      url: https://docs.microsoft.com/azure/virtual-machines/windows/managed-disks-overview#temporary-disk
+      url: ../windows/managed-disks-overview.md#temporary-disk
     - text: Обзор Управляемых дисков Azure
-      url: https://docs.microsoft.com/azure/virtual-machines/windows/managed-disks-overview
+      url: ../windows/managed-disks-overview.md
 - title: Проблемы с шифрованием дисков
   linkLists:
   - linkListType: how-to-guide
     links:
     - text: Устранение неполадок с шифрованием дисков Azure
-      url: https://docs.microsoft.com/azure/security/azure-security-disk-encryption-tsg
+      url: ../../security/fundamentals/azure-disk-encryption-vms-vmss.md
     - text: 'Шифрование дисков Azure: часто задаваемые вопросы'
-      url: https://docs.microsoft.com/azure/security/azure-security-disk-encryption-faq
+      url: ../../security/fundamentals/azure-disk-encryption-vms-vmss.md
     - text: Устранение неполадок с расширениями Azure
-      url: https://docs.microsoft.com/azure/virtual-machines/extensions/troubleshoot
+      url: ../extensions/troubleshoot.md
 - title: Проблемы с производительностью виртуальной машины
   linkLists:
   - linkListType: how-to-guide
     links:
     - text: Устранение неполадок c коллекциями общих образов (долго выполняется репликация)
-      url: https://docs.microsoft.com/en-us/azure/virtual-machines/windows/troubleshooting-shared-images#replication-is-slow
+      url: ../windows/troubleshooting-shared-images.md#replication-is-slow
 - title: Проблемы с расширением виртуальной машины
   linkLists:
   - linkListType: how-to-guide
     links:
     - text: Общие действия по устранению неполадок с расширениями
-      url: https://docs.microsoft.com/azure/virtual-machines/extensions/troubleshoot
+      url: ../extensions/troubleshoot.md
     - text: Установка расширения в виртуальной машине
-      url: https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/diagnostics-windows
+      url: ../extensions/diagnostics-windows.md
     - text: Расширение Custom Script в ОС Windows
-      url: https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/custom-script-windows#tips-and-tricks
+      url: ../extensions/custom-script-windows.md#tips-and-tricks
 - title: Резервное копирование и восстановление
   linkLists:
   - linkListType: how-to-guide
     links:
     - text: Устранение неполадок при резервном копировании виртуальных машин на портале Azure
-      url: https://docs.microsoft.com/azure/backup/backup-azure-vms-troubleshoot
+      url: ../../backup/backup-azure-vms-troubleshoot.md

@@ -16,11 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 07/24/2019
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 2df092d49f2dfe9153b52be677e8ee6314dd9b60
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bf9e00e8acba241f1445977dcc53724b9981039f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82982978"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87068685"
 ---
 # <a name="cluster-an-sap-ascsscs-instance-on-a-windows-failover-cluster-by-using-a-file-share-in-azure"></a>Кластеризация экземпляра SAP ASCS/SCS в отказоустойчивом кластере Windows с помощью файлового ресурса в Azure
 
@@ -31,7 +32,7 @@ ms.locfileid: "82982978"
 
 Отказоустойчивый кластер представляет собой группу из 1 + n независимых серверов (узлов), работающих совместно для повышения доступности приложений и служб. В случае отказа узла отказоустойчивый кластер Windows Server вычисляет допустимое количество сбоев, при котором сохранится работоспособность кластера для предоставления приложений и служб. Возможность отказоустойчивой кластеризации можно добавить, используя разные режимы кворума.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 Прежде чем перейти к задачам, приведенным в этой статье, ознакомьтесь с этой статьей.
 
 * [Архитектура высокого уровня доступности и сценарии для SAP NetWeaver на виртуальных машинах Azure][sap-high-availability-architecture-scenarios]
@@ -113,7 +114,7 @@ _**Рис. 4.** Масштабируемый файловый ресурс, ис
 При выборе Локальные дисковые пространства рассмотрите следующие варианты использования:
 
 - Виртуальные машины, используемые для создания кластера Локальные дисковые пространства, необходимо развернуть в группе доступности Azure.
-- Для аварийного восстановления кластера Локальные дисковые пространства можно использовать [службы Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-support-matrix#replicated-machines---storage).
+- Для аварийного восстановления кластера Локальные дисковые пространства можно использовать [службы Azure Site Recovery](../../../site-recovery/azure-to-azure-support-matrix.md#replicated-machines---storage).
 - Не поддерживается растяжение прямого кластера дискового пространства в разных Зоны доступности Azure.
 
 ### <a name="sap-prerequisites-for-scale-out-file-shares-in-azure"></a>Предварительные требования SAP для масштабируемого файлового ресурса в Azure
@@ -167,7 +168,7 @@ _**Рис. 5.** Экземпляр SAP ASCS/SCS и масштабируемый 
 
 В таком случае в качестве общего диска кластера вы можете использовать стороннее решение SIOS.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Подготовка инфраструктуры Azure для SAP высокого уровня доступности с использованием отказоустойчивого кластера Windows и файлового ресурса для экземпляра SAP (A)SCS][sap-high-availability-infrastructure-wsfc-file-share]
 * [Установка SAP NetWeaver высокого уровня доступности в Azure с использованием отказоустойчивого кластера Windows и общего диска для экземпляра SAP (A)SCS][sap-high-availability-installation-wsfc-shared-disk]
