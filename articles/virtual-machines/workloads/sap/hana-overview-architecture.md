@@ -13,11 +13,12 @@ ms.workload: infrastructure
 ms.date: 07/12/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 39fcf5d0fe2273c4debd3ae5ebe5fd1190ddc959
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d413b2babda4c73f9f29ce3750bf7d0461db43c1
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77616956"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87065104"
 ---
 #  <a name="what-is-sap-hana-on-azure-large-instances"></a>Что такое SAP HANA в Azure (большие экземпляры)?
 
@@ -38,7 +39,7 @@ SAP HANA в Azure (крупные экземпляры) — это уникал�
 - "Редакция 3" (редакция 3): — это отметки, которые были сделаны доступными для развертывания клиентом до июля 2019
 - "Редакция 4" (версия 4): Новая конструкция отметок, развернутая в близком к узлам виртуальных машин Azure и на которую пока выпущены следующие регионы Azure:
     -  Западная часть США 2 
-    -  Восточная часть США 
+    -  East US 
     -  Западная Европа
     -  Северная Европа
 
@@ -53,8 +54,8 @@ SAP HANA в Azure (крупные экземпляры) — это уникал�
 - [Как установить и настроить SAP HANA в Azure (крупные экземпляры)](hana-installation.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 - [Высокая доступность и аварийное восстановление SAP HANA (крупные экземпляры) в Azure](hana-overview-high-availability-disaster-recovery.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 - [Устранение неполадок SAP HANA (крупные экземпляры) и мониторинг в Azure](troubleshooting-monitoring.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-- [Настройка высокого уровня доступности в SUSE с помощью STONITH](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/ha-setup-with-stonith)
-- [Резервное копирование и восстановление ОС для номеров SKU типа II для версий 3](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/os-backup-type-ii-skus)
+- [Настройка высокого уровня доступности в SUSE с помощью STONITH](./ha-setup-with-stonith.md)
+- [Резервное копирование и восстановление ОС для номеров SKU типа II для версий 3](./os-backup-type-ii-skus.md)
 
 **Следующие шаги**
 - См. раздел [Know the terms](hana-know-terms.md) (Определение терминов)

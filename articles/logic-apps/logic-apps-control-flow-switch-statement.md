@@ -6,11 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 10/08/2018
-ms.openlocfilehash: 4f24efc4ea306046ab09119b859fa1d0853b25b6
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: d2c8271f0bc33bc47e64c85846061a9b77bbe66f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83834532"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87066220"
 ---
 # <a name="create-switch-statements-that-run-workflow-actions-based-on-specific-values-in-azure-logic-apps"></a>Создание операторов switch, которые запускают действия рабочего процесса на основе определенных значений в Azure Logic Apps
 
@@ -120,7 +121,7 @@ ms.locfileid: "83834532"
 
 ## <a name="get-support"></a>Получение поддержки
 
-* Если у вас есть вопросы, посетите [страницу вопросов и ответов по Azure Logic Apps на сайте Майкрософт](https://docs.microsoft.com/answers/topics/azure-logic-apps.html).
+* Если у вас есть вопросы, посетите [страницу вопросов и ответов по Azure Logic Apps на сайте Майкрософт](/answers/topics/azure-logic-apps.html).
 * Отправить предложения по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Azure Logic Apps](https://aka.ms/logicapps-wish).
 
 ## <a name="next-steps"></a>Дальнейшие действия

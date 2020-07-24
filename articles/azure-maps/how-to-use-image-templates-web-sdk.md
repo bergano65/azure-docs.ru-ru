@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendleton
 ms.custom: codepen
-ms.openlocfilehash: 28fee67ccfc1e67d89d0151c8e14bd7c0b688749
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 12c407ecacdce6b9052ca70ef70a2ae87928b6c2
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85207098"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87064693"
 ---
 # <a name="how-to-use-image-templates"></a>Использование шаблонов образов
 
@@ -106,7 +106,7 @@ map.imageSprite.createFromTemplate('myTemplatedIcon', 'marker-flat', 'teal', '#f
 
 
 > [!TIP]
-> Шаблоны изображений можно использовать за пределами схемы. Жетимажетемплате масштабируются возвращает строку SVG, которая содержит заполнители. `{color}`, `{secondaryColor}`, `{scale}`, `{text}`. Замените эти значения заполнителей, чтобы создать допустимую строку SVG. Затем можно либо добавить строку SVG непосредственно в HTML DOM, либо преобразовать ее в универсальный код ресурса (URI) данных и вставить в тег Image. Пример:
+> Шаблоны изображений можно использовать за пределами схемы. Жетимажетемплате масштабируются возвращает строку SVG, которая содержит заполнители. `{color}`, `{secondaryColor}`, `{scale}`, `{text}`. Замените эти значения заполнителей, чтобы создать допустимую строку SVG. Затем можно либо добавить строку SVG непосредственно в HTML DOM, либо преобразовать ее в универсальный код ресурса (URI) данных и вставить в тег Image. Например.
 > ```JavaScript
 > //Retrieve an SVG template and replace the placeholder values.
 > var svg = atlas.getImageTemplate('marker').replace(/{color}/, 'red').replace(/{secondaryColor}/, 'white').replace(/{text}/, '').replace(/{scale}/, 1);
@@ -119,10 +119,10 @@ map.imageSprite.createFromTemplate('myTemplatedIcon', 'marker-flat', 'teal', '#f
 
 Если приложение использует один и тот же значок с разными значками или если вы создаете модуль, который добавляет дополнительные шаблоны изображений, вы можете легко добавлять и получать эти значки из веб-пакета SDK Azure Maps. Используйте следующие статические функции в `atlas` пространстве имен.
 
-| name | Тип возвращаемых данных | Описание: | 
+| Имя | Тип возвращаемых данных | Описание | 
 |-|-|-|
 | `addImageTemplate(templateName: string, template: string, override: boolean)` | | Добавляет пользовательский шаблон изображения SVG в пространство имен Atlas. |
-|  `getImageTemplate(templateName: string, scale?: number)`| string | Извлекает шаблон SVG по имени. |
+|  `getImageTemplate(templateName: string, scale?: number)`| строка | Извлекает шаблон SVG по имени. |
 | `getAllImageTemplateNames()` | string[] |  Извлекает шаблон SVG по имени. |
 
 Шаблоны изображений SVG поддерживают следующие значения заполнителей:
@@ -148,44 +148,337 @@ map.imageSprite.createFromTemplate('myTemplatedIcon', 'marker-flat', 'teal', '#f
 
 **Шаблоны значков символов**
 
-|||||
-|:-:|:-:|:-:|:-:|
-| marker | жирный маркер | маркер-окружность | Плоский маркер |
-|![значок маркера](./media/image-templates/marker.png)|![значок жирного маркера](./media/image-templates/marker-thick.png)|![значок "маркер-окружность"](./media/image-templates/marker-circle.png)|![значок с плоским маркером](./media/image-templates/marker-flat.png)|
-||||
-| квадратный маркер | маркер-квадратный — кластер | стрелка-маркер | маркер-шарик-закрепление | 
-|![значок квадратного маркера](./media/image-templates/marker-square.png)|![значок "маркер — квадратный — кластер"](./media/image-templates/marker-square-cluster.png)|![значок стрелки-маркера](./media/image-templates/marker-arrow.png)|![значок "маркер-шарик-закрепление"](./media/image-templates/marker-ball-pin.png)|
-||||
-| маркер-квадратное округление | маркер-квадратный-Скругленный — кластер | Флаг | Flag-треугольник |
-| ![значок "маркер-квадрат-Скругленный"](./media/image-templates/marker-square-rounded.png) | ![значок "маркер-квадрат-Скругленный — кластер"](./media/image-templates/marker-square-rounded-cluster.png) | ![значок флага](./media/image-templates/flag.png) | ![значок флага-треугольник](./media/image-templates/flag-triangle.png) |
-||||
-| треугольник | треугольник — толстый | стрелка на треугольник вверх | треугольная стрелка — слева |
-| ![значок треугольника](./media/image-templates/triangle.png) | ![значок с толстым треугольником](./media/image-templates/triangle-thick.png) | ![значок стрелки "треугольник"](./media/image-templates/triangle-arrow-up.png) | ![значок стрелки влево](./media/image-templates/triangle-arrow-left.png) |
-||||
-| шестиугольник | шестиугольник — толстая | шестиугольник — округленный | шестиугольник-Скругленный-толстый |
-| ![значок шестиугольника](./media/image-templates/hexagon.png) | ![шестиугольник — толстый значок](./media/image-templates/hexagon-thick.png) | ![значок в кружке](./media/image-templates/hexagon-rounded.png) | ![значок в шестиугольнике-закругленный — толстый](./media/image-templates/hexagon-rounded-thick.png) |
-||||
-| pin | закрепить-округлить | Скругленный квадрат | скругленное-квадратное-толстое |
-| ![значок закрепления](./media/image-templates/pin.png) | ![значок "закрепить на круге"](./media/image-templates/pin-round.png) | ![значок скругленного квадрата](./media/image-templates/rounded-square.png) | ![значок со скругленной квадратной линией](./media/image-templates/rounded-square-thick.png) |
-||||
-| Стрелка вверх | стрелка — тонкая | car ||
-| ![значок стрелки "вверх"](./media/image-templates/arrow-up.png) | ![Стрелка-вверх-тонкий значок](./media/image-templates/arrow-up-thin.png) | ![значок автомобиля](./media/image-templates/car.png) | |
+:::row:::
+   :::column span="":::
+      marker
+   :::column-end:::
+   :::column span="":::
+      жирный маркер
+   :::column-end:::
+   :::column span="":::
+      маркер-окружность
+   :::column-end:::
+   :::column span="":::
+      Плоский маркер
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      ![значок маркера](./media/image-templates/marker.png)
+   :::column-end:::
+   :::column span="":::
+      ![значок жирного маркера](./media/image-templates/marker-thick.png)
+   :::column-end:::
+   :::column span="":::
+      ![значок "маркер-окружность"](./media/image-templates/marker-circle.png)
+   :::column-end:::
+   :::column span="":::
+      ![значок с плоским маркером](./media/image-templates/marker-flat.png)
+   :::column-end:::
+:::row-end:::
+<br>
+
+:::row:::
+   :::column span="":::
+      квадратный маркер
+   :::column-end:::
+   :::column span="":::
+      маркер-квадратный — кластер
+   :::column-end:::
+   :::column span="":::
+      стрелка-маркер
+   :::column-end:::
+   :::column span="":::
+      маркер-шарик-закрепление
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      ![значок квадратного маркера](./media/image-templates/marker-square.png)
+   :::column-end:::
+   :::column span="":::
+      ![значок "маркер — квадратный — кластер"](./media/image-templates/marker-square-cluster.png)
+   :::column-end:::
+   :::column span="":::
+      ![значок стрелки-маркера](./media/image-templates/marker-arrow.png)
+   :::column-end:::
+   :::column span="":::
+      ![значок "маркер-шарик-закрепление"](./media/image-templates/marker-ball-pin.png)
+   :::column-end:::
+:::row-end:::
+<br>
+
+:::row:::
+   :::column span="":::
+      маркер-квадратное округление
+   :::column-end:::
+   :::column span="":::
+      маркер-квадратный-Скругленный — кластер
+   :::column-end:::
+   :::column span="":::
+      flag
+   :::column-end:::
+   :::column span="":::
+      Flag-треугольник
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      ![значок "маркер-квадрат-Скругленный"](./media/image-templates/marker-square-rounded.png)
+   :::column-end:::
+   :::column span="":::
+      ![значок "маркер-квадрат-Скругленный — кластер"](./media/image-templates/marker-square-rounded-cluster.png)
+   :::column-end:::
+   :::column span="":::
+      ![значок флага](./media/image-templates/flag.png)
+   :::column-end:::
+   :::column span="":::
+      ![значок флага-треугольник](./media/image-templates/flag-triangle.png)
+   :::column-end:::
+:::row-end:::
+<br>
+
+:::row:::
+   :::column span="":::
+      треугольник
+   :::column-end:::
+   :::column span="":::
+      треугольник — толстый
+   :::column-end:::
+   :::column span="":::
+      стрелка на треугольник вверх
+   :::column-end:::
+   :::column span="":::
+      треугольная стрелка — слева
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      ![значок треугольника](./media/image-templates/triangle.png)
+   :::column-end:::
+   :::column span="":::
+      ![значок с толстым треугольником](./media/image-templates/triangle-thick.png)
+   :::column-end:::
+   :::column span="":::
+      ![значок стрелки "треугольник"](./media/image-templates/triangle-arrow-up.png)
+   :::column-end:::
+   :::column span="":::
+      ![значок стрелки влево](./media/image-templates/triangle-arrow-left.png)
+   :::column-end:::
+:::row-end:::
+<br>
+
+:::row:::
+   :::column span="":::
+      шестиугольник
+   :::column-end:::
+   :::column span="":::
+      шестиугольник — толстая
+   :::column-end:::
+   :::column span="":::
+      шестиугольник — округленный
+   :::column-end:::
+   :::column span="":::
+      шестиугольник-Скругленный-толстый
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      ![значок шестиугольника](./media/image-templates/hexagon.png)
+   :::column-end:::
+   :::column span="":::
+      ![шестиугольник — толстый значок](./media/image-templates/hexagon-thick.png)
+   :::column-end:::
+   :::column span="":::
+      ![значок в кружке](./media/image-templates/hexagon-rounded.png)
+   :::column-end:::
+   :::column span="":::
+      ![значок в шестиугольнике-закругленный — толстый](./media/image-templates/hexagon-rounded-thick.png)
+   :::column-end:::
+:::row-end:::
+<br>
+
+:::row:::
+   :::column span="":::
+      pin
+   :::column-end:::
+   :::column span="":::
+      закрепить-округлить
+   :::column-end:::
+   :::column span="":::
+      Скругленный квадрат
+   :::column-end:::
+   :::column span="":::
+      скругленное-квадратное-толстое
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      ![значок закрепления](./media/image-templates/pin.png)
+   :::column-end:::
+   :::column span="":::
+      ![значок "закрепить на круге"](./media/image-templates/pin-round.png)
+   :::column-end:::
+   :::column span="":::
+      ![значок скругленного квадрата](./media/image-templates/rounded-square.png)
+   :::column-end:::
+   :::column span="":::
+      ![значок со скругленной квадратной линией](./media/image-templates/rounded-square-thick.png)
+   :::column-end:::
+:::row-end:::
+<br>
+
+:::row:::
+   :::column span="":::
+      Стрелка вверх
+   :::column-end:::
+   :::column span="":::
+      стрелка — тонкая
+   :::column-end:::
+   :::column span="":::
+      car
+   :::column-end:::
+   :::column span="":::
+      &nbsp;
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      ![значок стрелки "вверх"](./media/image-templates/arrow-up.png)
+   :::column-end:::
+   :::column span="":::
+      ![Стрелка-вверх-тонкий значок](./media/image-templates/arrow-up-thin.png)
+   :::column-end:::
+   :::column span="":::
+      ![значок автомобиля](./media/image-templates/car.png)
+   :::column-end:::
+   :::column span="":::
+      &nbsp;
+   :::column-end:::
+:::row-end:::
+
 
 **Шаблоны узорной заливки многоугольников**
 
-|||||
-|:-:|:-:|:-:|:-:|
-| программы | повернутый | круги | круги — с интервалами |
-| ![значок проверки](./media/image-templates/checker.png) | ![значок, повернутый в шашку](./media/image-templates/checker-rotated.png) | ![значок кругов](./media/image-templates/circles.png) | ![значок "кружки — пробел"](./media/image-templates/circles-spaced.png) |
-|||||
-| по диагонали вверх | диагональные линии вниз | диагональные полосы | диагональные полосы-вниз |
-| ![значок "диагональные линии"](./media/image-templates/diagonal-lines-up.png) | ![значок "диагональные линии"](./media/image-templates/diagonal-lines-down.png) | ![значок "диагональные полосы"](./media/image-templates/diagonal-stripes-up.png) | ![значок "диагональные полосы"](./media/image-templates/diagonal-stripes-down.png) |
-|||||
-| Сетка-линии | повернутый-Grid-Line | повернутый-Grid-полосковые полосы | Заливка x |
-| ![значок сетки — линии](./media/image-templates/grid-lines.png) | ![значок "повернутый-Grid-Line"](./media/image-templates/rotated-grid-lines.png) | ![значок "повернутый-Grid-полоск"](./media/image-templates/rotated-grid-stripes.png) | ![значок "x-Fill"](./media/image-templates/x-fill.png) |
-|||||
-| зигзаг — зигзаг | зигзаг-зигзаг-по вертикали | количество |  |
-| ![значок зигзаг-зигзаг](./media/image-templates/zig-zag.png) | ![значок зигзаг-зигзаг-Vertical](./media/image-templates/zig-zag-vertical.png) | ![значок точек](./media/image-templates/dots.png) | |
+:::row:::
+   :::column span="":::
+      программы
+   :::column-end:::
+   :::column span="":::
+      повернутый
+   :::column-end:::
+   :::column span="":::
+      круги
+   :::column-end:::
+   :::column span="":::
+      круги — с интервалами
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      ![значок проверки](./media/image-templates/checker.png)
+   :::column-end:::
+   :::column span="":::
+      ![значок, повернутый в шашку](./media/image-templates/checker-rotated.png)
+   :::column-end:::
+   :::column span="":::
+      ![значок кругов](./media/image-templates/circles.png)
+   :::column-end:::
+   :::column span="":::
+      ![значок "кружки — пробел"](./media/image-templates/circles-spaced.png)
+   :::column-end:::
+:::row-end:::
+<br>
+
+:::row:::
+   :::column span="":::
+      по диагонали вверх
+   :::column-end:::
+   :::column span="":::
+      диагональные линии вниз
+   :::column-end:::
+   :::column span="":::
+      диагональные полосы
+   :::column-end:::
+   :::column span="":::
+      диагональные полосы-вниз
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      ![значок "диагональные линии"](./media/image-templates/diagonal-lines-up.png)
+   :::column-end:::
+   :::column span="":::
+      ![значок "диагональные линии"](./media/image-templates/diagonal-lines-down.png)
+   :::column-end:::
+   :::column span="":::
+      ![значок "диагональные полосы"](./media/image-templates/diagonal-stripes-up.png)
+   :::column-end:::
+   :::column span="":::
+      ![значок "диагональные полосы"](./media/image-templates/diagonal-stripes-down.png)
+   :::column-end:::
+:::row-end:::
+<br>
+
+:::row:::
+   :::column span="":::
+      Сетка-линии
+   :::column-end:::
+   :::column span="":::
+      повернутый-Grid-Line
+   :::column-end:::
+   :::column span="":::
+      повернутый-Grid-полосковые полосы
+   :::column-end:::
+   :::column span="":::
+      Заливка x
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      ![значок сетки — линии](./media/image-templates/grid-lines.png)
+   :::column-end:::
+   :::column span="":::
+      ![значок "повернутый-Grid-Line"](./media/image-templates/rotated-grid-lines.png)
+   :::column-end:::
+   :::column span="":::
+      ![значок "повернутый-Grid-полоск"](./media/image-templates/rotated-grid-stripes.png)
+   :::column-end:::
+   :::column span="":::
+      ![значок "x-Fill"](./media/image-templates/x-fill.png)
+   :::column-end:::
+:::row-end:::
+<br>
+
+:::row:::
+   :::column span="":::
+      зигзаг — зигзаг
+   :::column-end:::
+   :::column span="":::
+      зигзаг-зигзаг-по вертикали
+   :::column-end:::
+   :::column span="":::
+      количество
+   :::column-end:::
+   :::column span="":::
+      &nbsp;
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      ![значок зигзаг-зигзаг](./media/image-templates/zig-zag.png)
+   :::column-end:::
+   :::column span="":::
+      ![значок зигзаг-зигзаг-Vertical](./media/image-templates/zig-zag-vertical.png)
+   :::column-end:::
+   :::column span="":::
+      ![значок точек](./media/image-templates/dots.png)
+   :::column-end:::
+   :::column span="":::
+      &nbsp;
+   :::column-end:::
+:::row-end:::
+<br>
 
 **Значки предварительно загруженных изображений**
 

@@ -6,11 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 10/09/2018
-ms.openlocfilehash: a7f9ab478067cecbac6f01a5a969bf48653b6dd1
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: 796558c2579504b673fd15c468ce635c6b1cca8e
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83831506"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87066368"
 ---
 # <a name="create-conditional-statements-that-control-workflow-actions-in-azure-logic-apps"></a>Создание условных операторов, которые управляют действиями в рабочих процессах Azure Logic Apps
 
@@ -109,7 +110,7 @@ ms.locfileid: "83831506"
 
 ## <a name="get-support"></a>Получение поддержки
 
-* Если у вас есть вопросы, посетите [страницу вопросов и ответов по Azure Logic Apps на сайте Майкрософт](https://docs.microsoft.com/answers/topics/azure-logic-apps.html).
+* Если у вас есть вопросы, посетите [страницу вопросов и ответов по Azure Logic Apps на сайте Майкрософт](/answers/topics/azure-logic-apps.html).
 * Оставить предложения по функциям или проголосовать за них вы можете на [сайте отзывов пользователей Azure Logic Apps](https://aka.ms/logicapps-wish).
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 06/24/2020
 ms.author: radeltch
-ms.openlocfilehash: 999ab77538a145189e0576c920216fa55d8508f6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: eed53725507325351dcf51fbe368331c2a4fd2f8
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85366834"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87065129"
 ---
 # <a name="setting-up-pacemaker-on-red-hat-enterprise-linux-in-azure"></a>Настройка кластера Pacemaker в Red Hat Enterprise Linux в Azure
 
@@ -120,7 +120,7 @@ ms.locfileid: "85366834"
    </code></pre>
 
    > [!IMPORTANT]
-   > Если необходимо обновить агент ограждения Azure и при этом используется пользовательская роль, не забудьте обновить пользовательскую роль, включив в нее действие **powerOff**. Подробности см. в статье [Создание пользовательской роли для агента ограждения](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-rhel-pacemaker#1-create-a-custom-role-for-the-fence-agent).  
+   > Если необходимо обновить агент ограждения Azure и при этом используется пользовательская роль, не забудьте обновить пользовательскую роль, включив в нее действие **powerOff**. Подробности см. в статье [Создание пользовательской роли для агента ограждения](#1-create-a-custom-role-for-the-fence-agent).  
 
 1. **[A]** Установите разрешения имен.
 
@@ -220,7 +220,7 @@ ms.locfileid: "85366834"
 
 ### <a name="1-create-a-custom-role-for-the-fence-agent"></a>**[1]** Создайте пользовательскую роль для агента ограждения.
 
-У субъекта-службы по умолчанию нет разрешений на доступ к ресурсам Azure. Необходимо предоставить ему разрешения на запуск и остановку (отключение) всех виртуальных машин кластера. Если вы еще не создали эту пользовательскую роль, ее можно создать с помощью [PowerShell](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-powershell) или [Azure CLI](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-cli).
+У субъекта-службы по умолчанию нет разрешений на доступ к ресурсам Azure. Необходимо предоставить ему разрешения на запуск и остановку (отключение) всех виртуальных машин кластера. Если вы еще не создали эту пользовательскую роль, ее можно создать с помощью [PowerShell](../../../role-based-access-control/role-assignments-powershell.md) или [Azure CLI](../../../role-based-access-control/role-assignments-cli.md).
 
 Используйте следующее содержимое для входного файла. Необходимо адаптировать содержимое для ваших подписок, поэтому замените c276fc76-9cd4-44c9-99a7-4fd71546436e и e91d47c4-76f3-4271-a796-21b4ecfe3624 идентификаторами своих подписок. Если у вас имеется только одна подписка, удалите вторую запись в AssignableScopes.
 
@@ -291,7 +291,7 @@ op monitor interval=3600
 </code></pre>
 
 > [!TIP]
->Для агента ограждения Azure требуется исходящее подключение к общедоступным конечным точкам. См. сведения об этом и возможные решения в статье [Подключение к общедоступной конечной точке для виртуальных машин с помощью стандартного внутреннего балансировщика нагрузки](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-standard-load-balancer-outbound-connections).  
+>Для агента ограждения Azure требуется исходящее подключение к общедоступным конечным точкам. См. сведения об этом и возможные решения в статье [Подключение к общедоступной конечной точке для виртуальных машин с помощью стандартного внутреннего балансировщика нагрузки](./high-availability-guide-standard-load-balancer-outbound-connections.md).  
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

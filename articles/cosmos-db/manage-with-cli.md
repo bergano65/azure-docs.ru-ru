@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 06/03/2020
 ms.author: mjbrown
-ms.openlocfilehash: fe348c2bbd901934c6365be6efefafb44ef8d875
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 97b5118f74cbd098beea804c312ed08f1a152873
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85262418"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87067172"
 ---
 # <a name="manage-azure-cosmos-resources-using-azure-cli"></a>Управление ресурсами Azure Cosmos с помощью Azure CLI
 
@@ -36,7 +36,7 @@ ms.locfileid: "85262418"
 * [Вывод списка строк подключения](#list-connection-strings)
 * [Повторное создание ключей учетных записей](#regenerate-account-key)
 
-### <a name="create-an-azure-cosmos-db-account"></a>создание учетной записи Azure Cosmos DB;
+### <a name="create-an-azure-cosmos-db-account"></a>Создание учетной записи Azure Cosmos DB
 
 Создание учетной записи Azure Cosmos DB с помощью API SQL, согласованности сеансов в Западная часть США 2 и Восточная часть США 2.
 
@@ -274,7 +274,7 @@ az cosmosdb sql database throughput update \
 
 ### <a name="manage-lock-on-a-database"></a>Управление блокировкой базы данных
 
-Установите блокировку удаления для базы данных. Дополнительные сведения о том, как включить эту функцию, см. в статье [предотвращение изменений в](role-based-access-control.md#preventing-changes-from-cosmos-sdk)пакетах SDK.
+Установите блокировку удаления для базы данных. Дополнительные сведения о том, как включить эту функцию, см. в статье [предотвращение изменений в](role-based-access-control.md#prevent-sdk-changes)пакетах SDK.
 
 ```azurecli-interactive
 resourceGroupName='myResourceGroup'
@@ -433,7 +433,7 @@ az cosmosdb sql container throughput update \
 
 ### <a name="manage-lock-on-a-container"></a>Управление блокировкой контейнера
 
-Размещение блокировки удаления для контейнера. Дополнительные сведения о том, как включить эту функцию, см. в статье [предотвращение изменений в](role-based-access-control.md#preventing-changes-from-cosmos-sdk)пакетах SDK.
+Размещение блокировки удаления для контейнера. Дополнительные сведения о том, как включить эту функцию, см. в статье [предотвращение изменений в](role-based-access-control.md#prevent-sdk-changes)пакетах SDK.
 
 ```azurecli-interactive
 resourceGroupName='myResourceGroup'
@@ -464,7 +464,7 @@ lockid=$(az lock show --name $containerLockName \
 az lock delete --ids $lockid
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об Azure CLI см.:
 

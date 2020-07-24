@@ -2,17 +2,17 @@
 title: Переход на Опенвпн или IKEv2 из SSTP | VPN-шлюз Azure
 description: Эта статья поможет вам понять способы преодоления ограничения одновременных подключений по протоколу SSTP 128.
 services: vpn-gateway
-author: anzaman
+author: kumudD
 ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: alzam
-ms.openlocfilehash: e98fd0d57219599fb1c3934638a928542e4311a7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1531bca6c56c159b7535536fb31a577f0d7253ef
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84983338"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87064674"
 ---
 # <a name="transition-to-openvpn-protocol-or-ikev2-from-sstp"></a>Переход на протокол Опенвпн или IKEv2 из SSTP
 
@@ -116,7 +116,7 @@ ZIP-файл также содержит значения важных пара�
 |AES256     |   SHA256        | SHA256    | GROUP_ECP256 |
 |AES256     |   SHA256        | SHA256    | GROUP_2 |
 
-**Туннель**
+**IPsec**
 
 |**Шифр** | **Целостность** | **Группа PFS** |
 |---        | ---            | ---        |
@@ -160,7 +160,7 @@ ZIP-файл также содержит значения важных пара�
 
 * [Настройка OpenVPN для подключения "точка — сеть" VPN-шлюза Azure (предварительная версия)](vpn-gateway-howto-openvpn.md)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Настройка подключения типа "точка — сеть" к виртуальной сети с использованием аутентификации RADIUS и PowerShell](point-to-site-how-to-radius-ps.md)
 

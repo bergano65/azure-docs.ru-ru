@@ -8,11 +8,12 @@ ms.author: divswa
 ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 04/29/2020
-ms.openlocfilehash: 9398b40763e8226cedf788f9cefbf5ed28cd649d
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 61f3f2af61bc24f76d061de672a3eaacd54f7f0e
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83739538"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87066130"
 ---
 # <a name="exchange-x12-messages-for-b2b-enterprise-integration-in-azure-logic-apps-with-enterprise-integration-pack"></a>Обмен сообщениями X12 для интеграции с предприятием B2B в Azure Logic Apps с помощью Пакета интеграции Enterprise
 
@@ -86,7 +87,7 @@ ms.locfileid: "83739538"
 
 ![Схемы для входящих сообщений](./media/logic-apps-enterprise-integration-x12/x12-receive-settings-schemas.png)
 
-В этом разделе выберите [схему](../logic-apps/logic-apps-enterprise-integration-schemas.md) из [учетной записи интеграции](../logic-apps/logic-apps-enterprise-integration-accounts.md) для каждого типа транзакции (ST01) и приложения отправителя (GS02). Конвейер получения EDI будет разбирать входящие сообщения, сопоставляя заданные здесь значения и схему со значениями ST01 и GS02 во входящем сообщении и схемой входящего сообщения. После заполнения каждой строки автоматически будет добавляться новая строка.
+В этом разделе выберите [схему](../logic-apps/logic-apps-enterprise-integration-schemas.md) из [учетной записи интеграции](./logic-apps-enterprise-integration-create-integration-account.md) для каждого типа транзакции (ST01) и приложения отправителя (GS02). Конвейер получения EDI будет разбирать входящие сообщения, сопоставляя заданные здесь значения и схему со значениями ST01 и GS02 во входящем сообщении и схемой входящего сообщения. После заполнения каждой строки автоматически будет добавляться новая строка.
 
 | Свойство | Описание |
 |----------|-------------|
@@ -209,7 +210,7 @@ ms.locfileid: "83739538"
 
 ![Схемы для исходящих сообщений](./media/logic-apps-enterprise-integration-x12/x12-send-settings-schemas.png)
 
-В этом разделе выберите [схему](../logic-apps/logic-apps-enterprise-integration-schemas.md) из [учетной записи интеграции](../logic-apps/logic-apps-enterprise-integration-accounts.md) для каждого типа транзакции (ST01). После заполнения каждой строки автоматически будет добавляться новая строка.
+В этом разделе выберите [схему](../logic-apps/logic-apps-enterprise-integration-schemas.md) из [учетной записи интеграции](./logic-apps-enterprise-integration-create-integration-account.md) для каждого типа транзакции (ST01). После заполнения каждой строки автоматически будет добавляться новая строка.
 
 | Свойство | Описание |
 |----------|-------------|
@@ -235,7 +236,7 @@ ms.locfileid: "83739538"
 
 ![Контрольный номер версии для исходящих сообщений](./media/logic-apps-enterprise-integration-x12/x12-send-settings-control-version-number.png)
 
-В этом разделе выберите [схему](../logic-apps/logic-apps-enterprise-integration-schemas.md) из [учетной записи интеграции](../logic-apps/logic-apps-enterprise-integration-accounts.md) для каждого обмена. После заполнения каждой строки автоматически будет добавляться новая строка.
+В этом разделе выберите [схему](../logic-apps/logic-apps-enterprise-integration-schemas.md) из [учетной записи интеграции](./logic-apps-enterprise-integration-create-integration-account.md) для каждого обмена. После заполнения каждой строки автоматически будет добавляться новая строка.
 
 | Свойство | Описание |
 |----------|-------------|
@@ -380,7 +381,7 @@ ms.locfileid: "83739538"
 
 ## <a name="connector-reference"></a>Справочник по соединителям
 
-Дополнительные технические сведения об этом соединителе, в том числе о действиях и ограничениях, описываемых файлом Swagger соединителя, см. на [странице справки соединителя](https://docs.microsoft.com/connectors/x12/).
+Дополнительные технические сведения об этом соединителе, в том числе о действиях и ограничениях, описываемых файлом Swagger соединителя, см. на [странице справки соединителя](/connectors/x12/).
 
 > [!NOTE]
 > Для приложений логики в [среде службы интеграции (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md) эта помеченная как ISE версия соединителя [использует ограничения сообщений B2B для ISE](../logic-apps/logic-apps-limits-and-config.md#b2b-protocol-limits).

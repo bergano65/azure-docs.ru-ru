@@ -5,12 +5,13 @@ author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 6/3/2020
-ms.openlocfilehash: a6d340543289fa07370e053681599348a86940cf
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 7/20/2020
+ms.openlocfilehash: 0b495bf21b1f78e5e6a9285f67e1769d2d2a0db1
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84343410"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87065704"
 ---
 # <a name="supported-azure-database-for-mariadb-server-versions"></a>Поддерживаемые версии сервера базы данных Azure для MariaDB
 
@@ -25,21 +26,21 @@ MariaDB использует схему именования X. Y. Z. X — ос
 
 ## <a name="mariadb-version-102"></a>MariaDB версии 10,2
 
-Версия исправления: 10.2.31
+Версия исправления: 10.2.32
 
-Дополнительные сведения об улучшениях и исправлениях в этой версии см. в [документации по MariaDB](https://mariadb.com/kb/en/mariadb-10231-release-notes/) .
+Дополнительные сведения об улучшениях и исправлениях в этой версии см. в [документации по MariaDB](https://mariadb.com/kb/en/mariadb-10232-release-notes/) .
 
 ## <a name="mariadb-version-103"></a>MariaDB версии 10,3
 
-Версия исправления: 10.3.22
+Версия исправления: 10.3.23
 
-Дополнительные сведения об улучшениях и исправлениях в этой версии см. в [документации по MariaDB](https://mariadb.com/kb/en/mariadb-10322-release-notes/) .
+Дополнительные сведения об улучшениях и исправлениях в этой версии см. в [документации по MariaDB](https://mariadb.com/kb/en/mariadb-10323-release-notes/) .
 
 ## <a name="managing-updates-and-upgrades"></a>Управление обновлениями
 Служба автоматически управляет обновлениями для обновлений исправлений. Например, 10.2.21 в 10.2.23.  
 
 Сейчас обновления основного и дополнительного номера версии не поддерживаются. Например, обновление с версии MariaDB 10.2 до MariaDB 10.3 не поддерживается. Если вы хотите выполнить обновление с 10,2 до 10,3, сделайте [дамп и восстановите](./howto-migrate-dump-restore.md) его на сервере, который был создан с использованием новой версии модуля.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о квотах и ограничениях для конкретных ресурсов с учетом вашего **уровня служб** представлены в статье [Параметры и производительность базы данных Azure для PostgreSQL: возможности, доступные в каждой ценовой категории](./concepts-pricing-tiers.md).

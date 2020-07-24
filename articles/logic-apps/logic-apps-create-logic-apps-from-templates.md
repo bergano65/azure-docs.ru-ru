@@ -8,11 +8,12 @@ ms.author: klam
 ms.reviewer: estfan, logicappspm
 ms.topic: article
 ms.date: 10/15/2017
-ms.openlocfilehash: 8f9513c3ac28b8f65d9023fc529927b208323ca1
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: 7eca9b4a8cf09f2f35d56dc22fc25169be192f47
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83834464"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87066236"
 ---
 # <a name="create-logic-app-workflows-from-prebuilt-templates"></a>Создание рабочих процессов приложения логики на основе предварительно созданных шаблонов
 
@@ -49,7 +50,7 @@ ms.locfileid: "83834464"
    | **Подписка** | *Имя вашей подписки Azure* | Выберите подписку Azure, которую нужно использовать. | 
    | **Группа ресурсов** | *Имя вашей группы ресурсов Azure* | Создайте или выберите [группу ресурсов Azure](../azure-resource-manager/management/overview.md) для этого приложения логики, а также организуйте все ресурсы, связанные с этим приложением. | 
    | **Расположение** | *Ваш регион центра обработки данных Azure* | Выберите регион центра обработки данных для развертывания приложения логики, например западная часть США. | 
-   | **Служба Log Analytics** | **Выкл.** (по умолчанию) или **Вкл.** | Настройте [ведение журнала диагностики](../logic-apps/monitor-logic-apps-log-analytics.md) для приложения логики с помощью [журналов Azure Monitor](../log-analytics/log-analytics-overview.md). Требуется наличие рабочей области Log Analytics. | 
+   | **Служба Log Analytics** | **Выкл.** (по умолчанию) или **Вкл.** | Настройте [ведение журнала диагностики](../logic-apps/monitor-logic-apps-log-analytics.md) для приложения логики с помощью [журналов Azure Monitor](../azure-monitor/log-query/log-query-overview.md). Требуется наличие рабочей области Log Analytics. | 
    |||| 
 
 4. Когда вы будете готовы, установите флажок **Закрепить на панели мониторинга**. Таким образом приложение логики автоматически отобразится на панели мониторинга Azure и откроется после развертывания. Выберите **Создать**.
@@ -145,7 +146,7 @@ ms.locfileid: "83834464"
 
 ## <a name="get-support"></a>Получение поддержки
 
-* В случае наличия вопросов посетите страницу [Вопросы и ответы Майкрософт по Azure Logic Apps](https://docs.microsoft.com/answers/topics/azure-logic-apps.html).
+* В случае наличия вопросов посетите страницу [Вопросы и ответы Майкрософт по Azure Logic Apps](/answers/topics/azure-logic-apps.html).
 * Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
 
 ## <a name="next-steps"></a>Дальнейшие действия

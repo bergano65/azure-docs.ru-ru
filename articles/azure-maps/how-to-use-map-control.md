@@ -1,23 +1,31 @@
 ---
-title: Начало работы с элементом управления веб-карт | Карты Microsoft Azure
-description: Узнайте, как использовать клиентскую библиотеку JavaScript с картой Microsoft Azure Maps для отображения карт и встроенных функций Azure Maps в веб-приложения или мобильное приложение.
-author: philmea
-ms.author: philmea
-ms.date: 01/15/2020
+title: Начало работы с элементом управления веб-карты Microsoft Azure Maps
+description: Узнайте, как использовать клиентскую библиотеку JavaScript для управления картами Microsoft Azure Maps для отображения карт и встроенных функций Azure Maps в веб-приложения или мобильное приложение.
+author: anastasia-ms
+ms.author: v-stharr
+ms.date: 07/20/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
-manager: timlt
-ms.openlocfilehash: 6becb504671c1fa380207fda9d7d553fca8ceddf
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+manager: philmea
+ms.openlocfilehash: bdbdbfada3c7c4cfb4350bb11a33defd743b7195
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80335250"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87064213"
 ---
 # <a name="use-the-azure-maps-map-control"></a>Использование элемента управления картой в Azure Maps
 
 Библиотека JavaScript на стороне клиента Map Control позволяет отображать карты и встроенные функции Azure Maps в веб-приложение или мобильном приложении.
+
+## <a name="prerequisites"></a>Обязательные условия
+
+Для использования Map Control на веб-странице необходимо выполнить одно из следующих условий.
+
+* [Создайте учетную запись Azure Maps](quick-demo-map-app.md#create-an-azure-maps-account) и [получите ключ первичной подписки](quick-demo-map-app.md#get-the-primary-key-for-your-account), также известный как первичный ключ или ключ подписки.
+
+* Получите учетные данные Azure Active Directory (AAD) с [параметрами проверки подлинности](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.authenticationoptions).
 
 ## <a name="create-a-new-map-in-a-web-page"></a>Создание карты на веб-странице
 
@@ -36,19 +44,18 @@ ms.locfileid: "80335250"
 
     * Загрузите исходный код веб-пакета SDK Azure Maps локально с помощью пакета [Azure-Maps-Control](https://www.npmjs.com/package/azure-maps-control) NPM и разместите его в своем приложении. Этот пакет также включает определения TypeScript.
 
-        > **npm install azure-maps-control**
+    > **npm install azure-maps-control**
 
-       Затем добавьте ссылки на стили и источник сценария Azure Maps в элемент `<head>` файла.
+    Затем добавьте ссылки на таблицу стилей Azure Maps в `<head>` элемент файла:
 
-        ```HTML
-        <link rel="stylesheet" href="node_modules/azure-maps-control/dist/atlas.min.css" type="text/css"> 
-        <script src="node_modules/azure-maps-control/dist/atlas.min.js"></script>
-        ```
+    ```HTML
+    <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" type="text/css" />
+     ```
 
-    > [!Note]
+    > [!NOTE]
     > Определения typescript можно импортировать в приложение, добавив следующий код:
     >
-    > ```Javascript
+    > ```javascript
     > import * as atlas from 'azure-maps-control';
     > ```
 
@@ -70,54 +77,59 @@ ms.locfileid: "80335250"
 4. В основной области страницы добавьте элемент `<div>` и присвойте ему `id`**myMap**.
 
    ```HTML
-    <body>
+    <body onload="InitMap()">
         <div id="myMap"></div>
     </body>
    ```
 
-5. Чтобы инициализировать элемент управления картой, определите новый тег скрипта в тексте HTML. Передайте объект `id` Map `<div>` или `HTMLElement` (например, `document.getElementById('myMap')` ) в качестве первого параметра при создании экземпляра `Map` класса. Используйте собственный ключ учетной записи Azure Maps или учетные данные Azure Active Directory (AAD), чтобы выполнить проверку подлинности сопоставления с помощью [параметров проверки подлинности](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.authenticationoptions). 
+5. Теперь мы инициализируем элемент управления картой. Чтобы проверить подлинность элемента управления, необходимо либо владеть Azure Maps ключом подписки, либо использовать учетные данные Azure Active Directory (AAD) с [параметрами проверки подлинности](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.authenticationoptions).
 
-   Если вам нужно создать учетную запись или найти свой ключ, следуйте инструкциям в разделе [Создание учетной записи](quick-demo-map-app.md#create-an-account-with-azure-maps) и [Получение первичного ключа](quick-demo-map-app.md#get-the-primary-key-for-your-account) . 
+    Если вы используете ключ подписки для проверки подлинности, скопируйте и вставьте следующий элемент script в `<head>` элемент и ниже первого `<script>` элемента. Замените на `<Your Azure Maps Key>` ключ первичной подписки Azure Maps.
 
-   Параметр **language** задает язык, который используется для метки схемы и элементов управления. Дополнительные сведения о поддерживаемых языках см. в разделе [Поддерживаемые языки](supported-languages.md). Если для проверки подлинности используется ключ подписки, используйте следующую команду:
-
-   ```HTML
+     ```HTML
     <script type="text/javascript">
-        var map = new atlas.Map('myMap', {
-            center: [-122.33, 47.6],
-            zoom: 12,
-            language: 'en-US',
-            authOptions: {
-                authType: 'subscriptionKey',
-                subscriptionKey: '<Your Azure Maps Key>'
+        function InitMap()
+        {
+            var map = new atlas.Map('myMap', {
+                center: [-122.33, 47.6],
+                zoom: 12,
+                language: 'en-US',
+                authOptions: {
+                    authType: 'subscriptionKey',
+                    subscriptionKey: '<Your Azure Maps Key>'
+                }
             }
         });
     </script>
     ```
 
-   Если для проверки подлинности используется Azure Active Directory (AAD), используйте следующую команду:
+    Если для проверки подлинности используется Azure Active Directory (AAD), скопируйте и вставьте следующий элемент script в `<head>` элемент и ниже первого `<script>` элемента.
 
-   ```HTML
+      ```HTML
     <script type="text/javascript">
-        var map = new atlas.Map('myMap', {
-            center: [-122.33, 47.6],
-            zoom: 12,
-            language: 'en-US',
-            authOptions: {
-                authType: 'aad',
-                clientId: '<Your AAD Client Id>',
-                aadAppId: '<Your AAD App Id>',
-                aadTenant: '<Your AAD Tenant Id>'
+        function InitMap()
+        {
+            var map = new atlas.Map('myMap', {
+                center: [-122.33, 47.6],
+                zoom: 12,
+                language: 'en-US',
+                authOptions: {
+                    authType: 'aad',
+                    clientId: '<Your AAD Client Id>',
+                    aadAppId: '<Your AAD App Id>',
+                    aadTenant: '<Your AAD Tenant Id>'
+                }
             }
         });
     </script>
    ```
 
-   Список примеров, демонстрирующих интеграцию Azure Active Directory (AAD) с Azure Maps, можно найти [здесь](https://github.com/Azure-Samples/Azure-Maps-AzureAD-Samples). 
-    
-   Дополнительные сведения см. в статье [Проверка подлинности с помощью Azure Maps](azure-maps-authentication.md) документа, а также в [Azure Maps примерах проверки подлинности Azure AD](https://github.com/Azure-Samples/Azure-Maps-AzureAD-Samples).
+    Дополнительные сведения о проверке подлинности с помощью Azure Maps см. в статье [Проверка подлинности с помощью Azure Maps](azure-maps-authentication.md) документа. Кроме того, список примеров, демонстрирующих интеграцию Azure Active Directory (AAD) с Azure Maps, можно найти [здесь](https://github.com/Azure-Samples/Azure-Maps-AzureAD-Samples).
 
-6. При необходимости возможно добавление следующих элементов метатега в заголовок вашей страницы.
+    >[!TIP]
+    >В этом примере мы передали `id` карту `<div>` . Другой способ сделать это — передать `HTMLElement` объект, передав в `document.getElementById('myMap')` качестве первого параметра.
+
+6. Кроме того, может оказаться полезным добавить следующие `meta` элементы в `head` элемент страницы:
 
    ```HTML
     <!-- Ensures that IE and Edge uses the latest version and doesn't emulate an older version -->
@@ -127,7 +139,7 @@ ms.locfileid: "80335250"
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    ```
 
-7. Все файлы HTML должны выглядеть примерно так, как в следующем коде:
+7. Если поместить все вместе, ваш HTML-файл должен выглядеть примерно так, как в следующей разметке:
 
    ```HTML
     <!DOCTYPE html>
@@ -147,6 +159,23 @@ ms.locfileid: "80335250"
         <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" type="text/css">
         <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
 
+
+        <script type="text/javascript">
+            //Create an instance of the map control and set some options.
+            function InitMap()
+            {
+                var map = new atlas.Map('myMap', {
+                    center: [-122.33, 47.6],
+                    zoom: 12,
+                    language: 'en-US',
+                    authOptions: {
+                        authType: 'subscriptionKey',
+                        subscriptionKey: '<Your Azure Maps Key>'
+                    }
+                });
+            }
+        </script>
+
         <style>
             html, body {
                 margin: 0;
@@ -158,21 +187,8 @@ ms.locfileid: "80335250"
             }
         </style>
     </head>
-    <body>
+    <body onload="InitMap()">
         <div id="myMap"></div>
-
-        <script type="text/javascript">
-            //Create an instance of the map control and set some options.
-            var map = new atlas.Map('myMap', {
-                center: [-122.33, 47.6],
-                zoom: 12,
-                language: 'en-US',
-                authOptions: {
-                    authType: 'subscriptionKey',
-                    subscriptionKey: '<Your Azure Maps Key>'
-                }
-            });
-        </script>
     </body>
     </html>
     ```
@@ -206,8 +222,8 @@ map = new atlas.Map('myMap', {
 });
 ```
 
-> [!Note]
-> С помощью веб-пакета SDK можно загрузить несколько экземпляров карт на одной странице с разными языками и региональными параметрами. Кроме того, эти параметры можно обновить после загрузки сопоставлений с помощью `setStyle` функции Map. 
+> [!NOTE]
+> Можно загрузить несколько экземпляров карт на одной странице с разными языками и региональными параметрами. Кроме того, эти параметры можно обновить после загрузки сопоставлений с помощью `setStyle` функции Map.
 
 Ниже приведен пример Azure Maps с языком, для которого задано значение "fr-FR", а для регионального представления задано значение "Авто".
 
@@ -219,7 +235,7 @@ map = new atlas.Map('myMap', {
 
 Azure Maps веб-пакет SDK поддерживает облако Azure для государственных организаций. Все URL-адреса JavaScript и CSS, используемые для доступа к Azure Maps Web SDK, остаются неизменными. Для подключения к облачной версии Azure Maps платформы Azure для государственных организаций необходимо выполнить следующие задачи.
 
-При использовании интерактивного элемента управления картой добавьте следующую строку кода перед созданием экземпляра `Map` класса. 
+При использовании интерактивного элемента управления картой добавьте следующую строку кода перед созданием экземпляра `Map` класса.
 
 ```javascript
 atlas.setDomain('atlas.azure.us');

@@ -1,18 +1,19 @@
 ---
 title: Рекомендации по использованию службы поиска Azure Maps | Microsoft Azure Maps
 description: Получите и используйте наши рекомендации по использованию службы поиска Microsoft Azure Maps.
-author: philmea
-ms.author: philmea
+author: anastasia-ms
+ms.author: v-stharr
 ms.date: 01/23/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 8f8f5a2f605f8e8b7109267e5223593eb1e2cfb9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5e98763a3a1c8273cdeec5e945dd324ae43e773f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84264372"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87064272"
 ---
 # <a name="best-practices-for-azure-maps-search-service"></a>Рекомендации по использованию службы поиска Azure Maps
 
@@ -27,7 +28,7 @@ Azure Maps [Служба поиска](https://docs.microsoft.com/rest/api/maps/
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для обращения к служебным API Azure Maps вам потребуется учетная запись Azure Maps и ключ. Дополнительные сведения см. в разделах [Создание учетной записи](quick-demo-map-app.md#create-an-account-with-azure-maps) и [Получение первичного ключа](quick-demo-map-app.md#get-the-primary-key-for-your-account). 
+Для обращения к служебным API Azure Maps вам потребуется учетная запись Azure Maps и ключ. Дополнительные сведения см. в разделах [Создание учетной записи](quick-demo-map-app.md#create-an-azure-maps-account) и [Получение первичного ключа](quick-demo-map-app.md#get-the-primary-key-for-your-account). 
 
 Дополнительные сведения о проверке подлинности в Azure Maps см. в статье [Управление аутентификацией в Azure Maps](./how-to-manage-authentication.md).
 
@@ -84,7 +85,7 @@ Azure Maps [Служба поиска](https://docs.microsoft.com/rest/api/maps/
 
 ### <a name="reverse-geocode-and-filter-for-a-geography-entity-type"></a>Обратное геокодирование и фильтр по типу сущности географических регионов
 
-При выполнении поиска с обратным геокодированием с помощью [API-интерфейса Search Address Reverse](https://docs.microsoft.com/rest/api/maps/search/getsearchaddressreverse) служба может возвращать полигональные контуры административных областей. Например, йои может потребоваться получить многоугольник области для города. Чтобы сузить область поиска до конкретных типов сущности географических регионов, включите в запрос параметр `entityType`. 
+При выполнении поиска с обратным геокодированием с помощью [API-интерфейса Search Address Reverse](https://docs.microsoft.com/rest/api/maps/search/getsearchaddressreverse) служба может возвращать полигональные контуры административных областей. Например, может потребоваться получить многоугольник области для города. Чтобы сузить область поиска до конкретных типов сущности географических регионов, включите в запрос параметр `entityType`. 
 
 Полученный ответ будет содержать идентификатор географического региона и соответствующий тип сущности. Если указать более одной сущности, конечная точка вернет *наименьшую доступную сущность*. Полученный геометрический идентификатор можно использовать для получения геометрического вида географического региона через [службу Search Polygon](https://docs.microsoft.com/rest/api/maps/search/getsearchpolygon).
 
@@ -966,7 +967,7 @@ https://atlas.microsoft.com/search/address/json?subscription-key={subscription-k
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения см. в следующих разделах.
+Дополнительные сведения см. в следующих статьях:
 
 > [!div class="nextstepaction"]
 > [Создание запросов для службы поиска Azure Maps](https://docs.microsoft.com/azure/azure-maps/how-to-search-for-address)

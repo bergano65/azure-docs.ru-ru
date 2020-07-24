@@ -1,5 +1,5 @@
 ---
-title: Создайте управляемую закрытую конечную точку для подключения к результатам источника данных.
+title: Создание управляемой частной конечной точки для подключения к результатам источника данных
 description: Из этой статьи вы узнаете, как создать управляемую закрытую конечную точку для источников данных из рабочей области Azure синапсе.
 author: RonyMSFT
 ms.service: synapse-analytics
@@ -8,12 +8,12 @@ ms.subservice: security
 ms.date: 04/15/2020
 ms.author: ronytho
 ms.reviewer: jrasnick
-ms.openlocfilehash: c6f0054364e5bbfb80fc4c1b9db6a4c15f365a81
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fae958542f1bc391f285104d80d1e19131470abe
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85193895"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87065476"
 ---
 # <a name="create-a-managed-private-endpoint-to-your-data-source-preview"></a>Создание управляемой частной конечной точки для источника данных (Предварительная версия)
 
@@ -31,7 +31,7 @@ ms.locfileid: "85193895"
 
 ## <a name="step-3-select-the-data-source-type"></a>Шаг 3. Выбор типа источника данных
 
-Выберите тип источника данных. В этом случае целевой источник данных является учетной записью ADLS 2-го поколения. Выберите **Continue** (Продолжить).
+Выберите тип источника данных. В этом случае целевой источник данных является учетной записью ADLS 2-го поколения. Выберите пункт **Продолжить**.
 ![Выберите целевой тип источника данных](./media/how-to-create-managed-private-endpoints/managed-private-endpoint-3.png)
 
 ## <a name="step-4-enter-information-about-the-data-source"></a>Шаг 4. Ввод сведений об источнике данных
@@ -46,6 +46,6 @@ ms.locfileid: "85193895"
 Вы также можете увидеть, что *состояние утверждения* — *Ожидание*. Владелец целевого ресурса может утвердить или отклонить запрос на подключение частной конечной точки. Если владелец утверждает запрос на подключение к закрытой конечной точке, устанавливается частная ссылка. Если отказано, то частная ссылка не устанавливается.
 ![Состояние запроса на создание управляемой частной конечной точки](./media/how-to-create-managed-private-endpoints/managed-private-endpoint-5.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 См. дополнительные сведения об [управляемых частных конечных точках](./synapse-workspace-managed-private-endpoints.md) и статью

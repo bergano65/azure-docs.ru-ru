@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 06/04/2020
 ms.topic: conceptual
-ms.openlocfilehash: dbfb50b40b4705cae55ba6e4f1ef950b586b5fb5
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: 2cbed4d6dd2a9c5e63e73d89e5327fa3759777fd
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86185880"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87064455"
 ---
 # <a name="startstop-vms-during-off-hours-overview"></a>Обзор функции "Запуск и остановка виртуальных машин в нерабочее время"
 
@@ -49,7 +49,7 @@ ms.locfileid: "86185880"
 
 ### <a name="permissions-for-pre-existing-automation-account-and-log-analytics-workspace"></a>Разрешения для уже существующей учетной записи службы автоматизации и рабочей области Log Analytics
 
-Чтобы подключить виртуальные машины к функции "Запуск и остановка виртуальных машин в нерабочее время" с помощью существующей учетной записи службы автоматизации и рабочей области Log Analytics, вам потребуются следующие разрешения для области группы ресурсов. Дополнительные сведения о пользовательских ролях можно получить в статье [Пользовательские роли для ресурсов Azure](../role-based-access-control/custom-roles.md).
+Чтобы подключить виртуальные машины к функции "Запуск и остановка виртуальных машин в нерабочее время" с помощью существующей учетной записи службы автоматизации и рабочей области Log Analytics, вам потребуются следующие разрешения для области группы ресурсов. Дополнительные сведения о ролях см. в статье [пользовательские роли Azure](../role-based-access-control/custom-roles.md).
 
 | Разрешение | Область|
 | --- | --- |

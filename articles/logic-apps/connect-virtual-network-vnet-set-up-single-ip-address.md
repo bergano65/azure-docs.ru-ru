@@ -6,11 +6,12 @@ ms.suite: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: conceptual
 ms.date: 05/06/2020
-ms.openlocfilehash: 2132dc464ee404339d9de03c0c797426aea04ce2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9ee804f7bed01ca0c7f365a04e6108afd9598157
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82927145"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87066391"
 ---
 # <a name="set-up-a-single-ip-address-for-one-or-more-integration-service-environments-in-azure-logic-apps"></a>Настройте один IP-адрес для одной или нескольких сред службы интеграции в Azure Logic Apps
 
@@ -18,7 +19,7 @@ ms.locfileid: "82927145"
 
 В этом разделе показано, как маршрутизировать исходящий трафик через брандмауэр Azure, но вы можете применить аналогичные концепции к сетевому виртуальному устройству, такому как сторонний брандмауэр из Azure Marketplace. Хотя в этом разделе основное внимание уделяется установке нескольких экземпляров ISE, этот подход можно также использовать для одной интегрированной среды сценариев, если в сценарии требуется ограничить количество IP-адресов, которым требуется доступ. Оцените оправданность дополнительных затрат на брандмауэр или сетевой виртуальный модуль для вашего сценария. Дополнительные сведения о [ценах на брандмауэр Azure](https://azure.microsoft.com/pricing/details/azure-firewall/).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 * Брандмауэр Azure, работающий в той же виртуальной сети, что и интегрированная среда сценариев. Если у вас нет брандмауэра, сначала [добавьте подсеть](../virtual-network/virtual-network-manage-subnet.md#add-a-subnet) с именем `AzureFirewallSubnet` в виртуальную сеть. Затем можно [создать и развернуть брандмауэр](../firewall/tutorial-firewall-deploy-portal.md#deploy-the-firewall) в виртуальной сети.
 
@@ -48,7 +49,7 @@ ms.locfileid: "82927145"
 
    ![Настройка правила для направления исходящего трафика](./media/connect-virtual-network-vnet-set-up-single-ip-address/add-rule-to-route-table.png)
 
-   | Свойство. | Значение | Описание: |
+   | Свойство | Значение | Описание |
    |----------|-------|-------------|
    | **Имя маршрута** | <*уникальный-Route-Name*> | Уникальное имя маршрута в таблице маршрутов |
    | **Префикс адреса** | <*адрес назначения*> | Префикс адреса для целевой системы, куда будет отправлен исходящий трафик. Убедитесь, что для этого адреса используется [нотация между междоменной маршрутизацией (CIDR)](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) . В этом примере этот префикс адреса предназначен для сервера SFTP, который описан в разделе [Настройка правила сети](#set-up-network-rule). |
@@ -72,18 +73,18 @@ ms.locfileid: "82927145"
 
    **Свойства коллекции сетевых правил**
 
-   | Свойство. | Значение | Описание |
+   | Свойство | Значение | Описание |
    |----------|-------|-------------|
-   | **Name** | <*сеть-Rule-Collection-Name*> | Имя коллекции правил сети |
+   | **имя**; | <*сеть-Rule-Collection-Name*> | Имя коллекции правил сети |
    | **Priority** | <*уровень приоритета*> | Порядок приоритета, используемый для запуска коллекции правил. Дополнительные сведения см. в статье [что такое основные понятия брандмауэра Azure](../firewall/firewall-faq.md#what-are-some-azure-firewall-concepts)? |
    | **Действие** | **Разрешить** | Тип действия, выполняемого для этого правила |
    |||
 
    **Свойства правила сети**
 
-   | Свойство. | Значение | Описание |
+   | Свойство | Значение | Описание |
    |----------|-------|-------------|
-   | **Name** | <*сеть-имя правила*> | Имя правила сети |
+   | **имя**; | <*сеть-имя правила*> | Имя правила сети |
    | **Протокол** | <*протоколы подключения*> | Используемые протоколы соединения. Например, если вы используете правила NSG, выберите **TCP** и **UDP**, а не только **TCP**. |
    | **Исходные адреса** | <*ISE — подсеть — адреса*> | IP-адреса подсети, в которых выполняется интегрированная среда сценариев, и место происхождения трафика от приложения логики. |
    | **Адреса назначения** | <*Destination-IP-адрес*> | IP-адрес целевой системы, на который будет отправлен исходящий трафик. В этом примере этот IP-адрес предназначен для сервера SFTP. |
@@ -95,9 +96,9 @@ ms.locfileid: "82927145"
    * [Настройка правила сети](../firewall/tutorial-firewall-deploy-portal.md#configure-a-network-rule)
    * [Логика обработки правил Брандмауэра Azure](../firewall/rule-processing.md#network-rules-and-applications-rules)
    * [Часто задаваемые вопросы о службе "Брандмауэр Azure"](../firewall/firewall-faq.md)
-   * [Azure PowerShell: New-Азфиреваллнетворкруле](https://docs.microsoft.com/powershell/module/az.network/new-azfirewallnetworkrule)
-   * [Azure CLI: az Network Firewall Network — Rule](https://docs.microsoft.com/cli/azure/ext/azure-firewall/network/firewall/network-rule?view=azure-cli-latest#ext-azure-firewall-az-network-firewall-network-rule-create)
+   * [Azure PowerShell: New-Азфиреваллнетворкруле](/powershell/module/az.network/new-azfirewallnetworkrule)
+   * [Azure CLI: az Network Firewall Network — Rule](/cli/azure/ext/azure-firewall/network/firewall/network-rule?view=azure-cli-latest#ext-azure-firewall-az-network-firewall-network-rule-create)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Подключение к виртуальным сетям Azure из Azure Logic Apps](../logic-apps/connect-virtual-network-vnet-isolated-environment.md)

@@ -3,14 +3,14 @@ title: Обзор функции "Управление обновлениями"
 description: В этой статье представлен обзор функции "Управление обновлениями", которая реализует обновления для компьютеров на платформе Windows и Linux.
 services: automation
 ms.subservice: update-management
-ms.date: 06/23/2020
+ms.date: 07/15/2020
 ms.topic: conceptual
-ms.openlocfilehash: 127a83bbe29a5e102a82cf169919a44f52532228
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: 228a24fbc4fb68a72f2cb8abb7d4382127be2147
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86185693"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87064419"
 ---
 # <a name="update-management-overview"></a>Общие сведения о службе "Управление обновлениями"
 
@@ -98,7 +98,7 @@ ms.locfileid: "86185693"
 
 |Операционная система  |Примечания  |
 |---------|---------|
-|Клиент Windows     | Клиентские операционные системы (например, Windows 7 и Windows 10) не поддерживаются.<br> Для Виртуального рабочего стола Azure Windows (WVD) рекомендуемый метод<br> управления обновлениями — с помощью [Центра обновления Windows для бизнеса](/windows/deployment/update/waas-manage-updates-wufb), который используется для управления обновлениями клиентских компьютеров с Windows 10. |
+|Клиент Windows     | Клиентские операционные системы (например, Windows 7 и Windows 10) не поддерживаются.<br> Для Виртуального рабочего стола Azure Windows (WVD) рекомендуемый метод<br> для управления обновлениями используется [Конечная точка майкрософт Configuration Manager](../virtual-desktop/configure-automatic-updates.md) для управления исправлениями на клиентском компьютере Windows 10. |
 |Nano Server Windows Server 2016     | Не поддерживается.       |
 |Узлы Службы Azure Kubernetes | Не поддерживается. Используйте процесс установки исправлений, описанный в статье [Применение обновлений безопасности и ядра для узлов Linux в Службе Kubernetes Azure (AKS)](../aks/node-updates-kured.md)|
 
@@ -193,15 +193,15 @@ ms.locfileid: "86185693"
 |`*.blob.core.windows.net` | `*.blob.core.usgovcloudapi.net`|
 |`*.azure-automation.net` | `*.azure-automation.us`|
 
+При создании правил безопасности сетевой группы или настройке брандмауэра Azure для разрешения трафика в службу автоматизации и Log Analytics рабочей области используйте [тег службы](../virtual-network/service-tags-overview.md#available-service-tags) **гуестандхибридманажемент** и **азуремонитор**. Это упрощает текущее управление правилами безопасности сети. Для безопасного и частного подключения к службе автоматизации виртуальных машин Azure см. раздел [Использование частной связи Azure](how-to/private-link-security.md). Сведения о получении тега текущей службы и сведений о диапазоне для включения в локальные конфигурации брандмауэра см. в разделе [Загружаемые файлы JSON](../virtual-network/service-tags-overview.md#discover-service-tags-by-using-downloadable-json-files).
+
 Для компьютеров с Windows необходимо также разрешить передачу трафика на любые конечные точки, необходимые Центру обновления Windows. Обновленный список обязательных конечных точек приведен в разделе [Проблемы с HTTP- и прокси-сервером](/windows/deployment/update/windows-update-troubleshooting#issues-related-to-httpproxy). При наличии локального [сервера Центра обновления Windows](/windows-server/administration/windows-server-update-services/plan/plan-your-wsus-deployment) необходимо также разрешить трафик на сервер, указанный в [ключе WSUS](/windows/deployment/update/waas-wu-settings#configuring-automatic-updates-by-editing-the-registry).
 
 Сведения о требуемых конечных точках для компьютеров с Red Hat Linux см. в статье [IP-адреса для серверов доставки содержимого RHUI](../virtual-machines/workloads/redhat/redhat-rhui.md#the-ips-for-the-rhui-content-delivery-servers). Сведения о других дистрибутивах Linux см. в документации поставщика.
 
 Дополнительные сведения о портах, необходимых для гибридной рабочей роли Runbook, см. в разделе об [адресах Управления обновлениями для гибридной рабочей роли Runbook](automation-hybrid-runbook-worker.md#update-management-addresses-for-hybrid-runbook-worker).
 
-При определении исключений рекомендуем использовать адреса из списка. Вы можете скачать [список диапазонов IP-адресов центров обработки данных Microsoft Azure](https://www.microsoft.com/download/details.aspx?id=41653). Файл обновляется еженедельно, и в нем отражаются развернутые в настоящее время диапазоны и все предстоящие изменения диапазонов IP-адресов.
-
-При наличии компьютеров без доступа к Интернету следуйте инструкциям, приведенным в [статье об их подключении](../azure-monitor/platform/gateway.md).
+Если политики безопасности ИТ не позволяют компьютерам в сети подключаться к Интернету, можно настроить [шлюз log Analytics](../azure-monitor/platform/gateway.md) , а затем настроить компьютер для подключения через шлюз к службе автоматизации Azure и Azure Monitor.
 
 ## <a name="update-classifications"></a>Классификации обновлений
 

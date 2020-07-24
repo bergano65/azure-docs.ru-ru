@@ -5,11 +5,12 @@ author: tfitzmac
 ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: tomfitz
-ms.openlocfilehash: 999a7386ee7c5b3ef76f87280cc2d0cd45f143cd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 924aff8f2ba3d796b65f52494845f3b10018065c
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75652259"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87063956"
 ---
 # <a name="microsoftcommonsection-ui-element"></a>Элемент пользовательского интерфейса Microsoft.Common.Section
 
@@ -17,7 +18,7 @@ ms.locfileid: "75652259"
 
 ## <a name="ui-sample"></a>Пример элемента пользовательского интерфейса
 
-![Элемент пользовательского интерфейса Microsoft.Common.Section](./media/managed-application-elements/microsoft.common.section.png)
+![Элемент пользовательского интерфейса Microsoft.Common.Section](./media/managed-application-elements/microsoft-common-section.png)
 
 ## <a name="schema"></a>схема
 
@@ -48,7 +49,7 @@ ms.locfileid: "75652259"
 - Этот элемент не поддерживает свойство `toolTip`.
 
 ## <a name="sample-output"></a>Пример выходных данных
-Для доступа к выходным значениям элементов в `elements` используйте функции [basics()](create-uidefinition-functions.md#basics) или [steps()](create-uidefinition-functions.md#steps) и точечную нотацию:
+Для доступа к выходным значениям элементов в `elements` используйте функции [basics()](create-ui-definition-referencing-functions.md#basics) или [steps()](create-ui-definition-referencing-functions.md#steps) и точечную нотацию:
 
 ```json
 steps('configuration').section1.text1
@@ -56,7 +57,7 @@ steps('configuration').section1.text1
 
 Элементы типа `Microsoft.Common.Section` не содержат выходные значения.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Общие сведения о создании определений пользовательского интерфейса см. в статье [Начало работы с CreateUiDefinition](create-uidefinition-overview.md).
 * Дополнительные сведения об общих свойствах элементов пользовательского интерфейса см. в статье [Элементы CreateUiDefinition](create-uidefinition-elements.md).

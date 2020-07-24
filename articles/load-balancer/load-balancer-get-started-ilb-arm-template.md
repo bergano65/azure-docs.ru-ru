@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/25/2017
 ms.author: allensu
-ms.openlocfilehash: 7e8f34f3d68a957dbd5bb13b69f751184d224e2c
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 785054222dc3281b11b5e6abe1b82f67e2fc5ace
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85961121"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87066646"
 ---
 # <a name="create-an-internal-load-balancer-using-a-template"></a>Создайте внутренний балансировщик нагрузки с помощью шаблона
 
@@ -40,7 +40,7 @@ ms.locfileid: "85961121"
 
 Чтобы развернуть шаблон, загруженный с помощью PowerShell, выполните описанные ниже действия.
 
-1. Если вы ранее не использовали Azure PowerShell, следуйте инструкциям в статье [Установка и настройка Azure PowerShell](/powershell/azure/overview) , чтобы выполнить вход в Azure и выбрать подписку.
+1. Если вы ранее не использовали Azure PowerShell, следуйте инструкциям в статье [Установка и настройка Azure PowerShell](/powershell/azure/) , чтобы выполнить вход в Azure и выбрать подписку.
 2. Скачайте файл параметров на локальный диск.
 3. Измените и сохраните файл.
 4. Выполните командлет **New-азресаурцеграупдеплоймент** , чтобы создать группу ресурсов с помощью шаблона.
@@ -75,7 +75,7 @@ ms.locfileid: "85961121"
     azure group create --name TestRG --location westus --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-2-vms-internal-load-balancer/azuredeploy.json --parameters-file parameters.json
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Настройка режима распределения балансировщика нагрузки с помощью соответствия исходному IP-адресу](load-balancer-distribution-mode.md)
 

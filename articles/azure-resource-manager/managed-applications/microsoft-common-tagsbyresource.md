@@ -5,11 +5,12 @@ author: tfitzmac
 ms.topic: conceptual
 ms.date: 11/11/2019
 ms.author: tomfitz
-ms.openlocfilehash: 23a7c54a84ec083b8fa470f26582913fcc3d2ee6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e730201812005a9b469a964e4acd081ebe86b100
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75652207"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87063938"
 ---
 # <a name="microsoftcommontagsbyresource-ui-element"></a>Элемент пользовательского интерфейса Microsoft. Common. Тагсбиресаурце
 
@@ -17,7 +18,7 @@ ms.locfileid: "75652207"
 
 ## <a name="ui-sample"></a>Пример элемента пользовательского интерфейса
 
-![Элемент пользовательского интерфейса Microsoft.Common.DropDown](./media/managed-application-elements/microsoft.common.tagsbyresource.png)
+![Элемент пользовательского интерфейса Microsoft.Common.DropDown](./media/managed-application-elements/microsoft-common-tagsbyresource.png)
 
 ## <a name="schema"></a>схема
 
@@ -70,7 +71,7 @@ ms.locfileid: "75652207"
 
 - Используйте функцию [If](../templates/template-functions-logical.md#if) при доступе к параметру тагсбиресаурце. Он позволяет назначить пустой объект, если ни один из тегов не назначен данному типу ресурса.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Общие сведения о создании определений пользовательского интерфейса см. в статье [Начало работы с CreateUiDefinition](create-uidefinition-overview.md).
 - Дополнительные сведения об общих свойствах элементов пользовательского интерфейса см. в статье [Элементы CreateUiDefinition](create-uidefinition-elements.md).

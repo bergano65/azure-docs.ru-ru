@@ -3,17 +3,17 @@ title: Использование модуля схем помещений Azure
 description: Узнайте, как с помощью модуля схем помещений Microsoft Azure Maps выполнять отрисовку карт путем внедрения библиотек JavaScript из этого модуля.
 author: anastasia-ms
 ms.author: v-stharr
-ms.date: 05/18/2020
+ms.date: 07/20/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 6e7b6c7ddb33d42cca66698c87c82477f3e55621
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 5f7bca363e22524546e7ee46bf44ddb18dacf00d
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86517473"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87064230"
 ---
 # <a name="use-the-azure-maps-indoor-maps-module"></a>Использование модуля схем помещений Azure Maps
 
@@ -42,16 +42,14 @@ ms.locfileid: "86517473"
 
  Или же скачайте модуль *схем помещений Azure Maps*. Модуль *схем помещений Azure Maps* содержит клиентскую библиотеку для доступа к службам Azure Maps. Выполните следующие действия, чтобы установить и загрузить модуль *схем помещений* в веб-приложение:  
   
-  1. Скачайте [пакет azure-maps-indoor](https://www.npmjs.com/package/azure-maps-indoor).
+  1. Установите [пакет Azure-Maps-помещений](https://www.npmjs.com/package/azure-maps-indoor).
   
-  2. Установите пакет NPM. Не забудьте применить права администратора в консоли.
-
       ```powershell
       >npm install azure-maps-control
       >npm install azure-maps-indoor
       ```
 
-  3. Укажите ссылки на ресурсы JavaScript и таблиц стилей для модуля *схем помещений Azure Maps* в элементе `<head>` HTML-файла:
+  2. Укажите ссылки на ресурсы JavaScript и таблиц стилей для модуля *схем помещений Azure Maps* в элементе `<head>` HTML-файла:
 
       ```html
       <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" type="text/css" />
@@ -71,7 +69,7 @@ const map = new atlas.Map("map-id", {
   //or, you can use bounds: [# west, # south, # east, # north] and replace # with your map's bounds
   style: "blank",
   view: 'Auto',
-  authOptions: { 
+  authOptions: {
       authType: 'subscriptionKey',
       subscriptionKey: subscriptionKey
   },

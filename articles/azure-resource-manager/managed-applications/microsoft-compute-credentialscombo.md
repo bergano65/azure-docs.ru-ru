@@ -5,11 +5,12 @@ author: tfitzmac
 ms.topic: conceptual
 ms.date: 09/29/2018
 ms.author: tomfitz
-ms.openlocfilehash: baee83e08505ddabb4680b5bbb4101479010ea47
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 47c88e08e5d2eac09fbcd5b60a8ccd73b46c9616
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75652142"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87063785"
 ---
 # <a name="microsoftcomputecredentialscombo-ui-element"></a>Элемент пользовательского интерфейса Microsoft.Compute.CredentialsCombo
 
@@ -19,15 +20,15 @@ ms.locfileid: "75652142"
 
 Для пользователей Windows:
 
-![Microsoft.Compute.CredentialsCombo для Windows](./media/managed-application-elements/microsoft.compute.credentialscombo-windows.png)
+![Microsoft.Compute.CredentialsCombo для Windows](./media/managed-application-elements/microsoft-compute-credentialscombo-windows.png)
 
 Для пользователей Linux с выбранным паролем:
 
-![Microsoft.Compute.CredentialsCombo для пароля Linux](./media/managed-application-elements/microsoft.compute.credentialscombo-linux-password.png)
+![Microsoft.Compute.CredentialsCombo для пароля Linux](./media/managed-application-elements/microsoft-compute-credentialscombo-linux-password.png)
 
 Для пользователей Linux с выбранным открытым ключом SSH:
 
-![Microsoft.Compute.CredentialsCombo для ключа Linux](./media/managed-application-elements/microsoft.compute.credentialscombo-linux-key.png)
+![Microsoft.Compute.CredentialsCombo для ключа Linux](./media/managed-application-elements/microsoft-compute-credentialscombo-linux-key.png)
 
 ## <a name="schema"></a>схема
 
@@ -116,7 +117,7 @@ ms.locfileid: "75652142"
 - Если для параметра `options.hidePassword` задано значение **true**, возможность использования проверки пароля скрыта. Его можно использовать только тогда, когда параметр `osPlatform` имеет значение **Linux**. Значение по умолчанию — **false**.
 - Дополнительные ограничения на разрешенные пароли можно реализовать с помощью свойства `customPasswordRegex`. Строка в `customValidationMessage` отображается, если пароль не прошел пользовательскую проверку. Значение по умолчанию для обоих свойств — **null**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Общие сведения о создании определений пользовательского интерфейса см. в статье [Начало работы с CreateUiDefinition](create-uidefinition-overview.md).
 * Дополнительные сведения об общих свойствах элементов пользовательского интерфейса см. в статье [Элементы CreateUiDefinition](create-uidefinition-elements.md).

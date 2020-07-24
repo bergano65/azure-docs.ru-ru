@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 04/21/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 8b2f4e7a16c967b26b545d1405f973bf8b8afaae
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 217d5b060ca1b7d32cd334049db9b7c68b7949a0
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82086136"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87065087"
 ---
 # <a name="what-sap-software-is-supported-for-azure-deployments"></a>Программное обеспечение SAP, поддерживаемое для развертываний Azure
 В этой статье описывается, как можно узнать, какое программное обеспечение SAP поддерживается для развертываний Azure, а также какие выпуски операционной системы или выпуски СУБД.
@@ -87,12 +87,12 @@ ms.locfileid: "82086136"
 В Azure есть две службы, которые можно использовать для запуска базы данных HANA:
 
 - Виртуальные машины Azure
-- [Крупные экземпляры HANA](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-overview-architecture)
+- [Крупные экземпляры HANA](./hana-overview-architecture.md)
 
 Для работы SAP HANA SAP имеет больше и более надежных условий инфраструктуры, чем для запуска NetWeaver или других приложений SAP и СУБД. В результате для выполнения SAP HANA СУБД будет вычислено меньшее количество виртуальных машин Azure. Список поддерживаемых инфраструктур Azure, поддерживаемых для SAP HANA, можно найти в [каталоге оборудования](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure), который называется SAP HANA. 
 
 > [!NOTE]
-> Единицы, начинающиеся с буквы ", являются единицами [крупных экземпляров Hana](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-overview-architecture) . 
+> Единицы, начинающиеся с буквы ", являются единицами [крупных экземпляров Hana](./hana-overview-architecture.md) . 
 
 > [!NOTE]
 > SAP не имеет особой сертификации, зависящей от SAP HANA основных выпусках. В отличие от общего мнения, в **сценарии сертификации** на уровне сертификатов на [платформах IaaS, сертифицированных Hana](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure), этот столбец **не дает никаких инструкций о сертификации основного или дополнительного выпуска Hana**. Необходимо предположить, что все перечисленные единицы, которые можно использовать для HANA 1,0 и HANA 2,0, если сертифицированные выпуски операционных систем для конкретных единиц поддерживаются также выпусками HANA 1,0. 
@@ -138,12 +138,11 @@ ms.locfileid: "82086136"
 Поддержка платформы SAP Hybris Commerce в Azure подробно описана в [документации по Hybris](https://help.sap.com/viewer/a74589c3a81a4a95bf51d87258c0ab15/1811/en-US/8c71300f866910149b40c88dfc0de431.html). В соответствии с поддерживаемой СУБД для платформы SAP Hybris Commerce он выглядит следующим образом:
 
 - SQL Server и Oracle на платформе операционной системы Windows. Те же минимальные выпуски относятся к SAP NetWeaver. Дополнительные сведения см. в [примечании по поддержке SAP #1928533](https://launchpad.support.sap.com/#/notes/1928533) .
-- SAP HANA в Red Hat и SUSE Linux. SAP HANA сертифицированные типы виртуальных машин необходимы, как описано выше в [этом документе](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-supported-product-on-azure#sap-hana-support). Бизнес-платформа SAP (Hybris) считается рабочей нагрузкой OLTP
+- SAP HANA в Red Hat и SUSE Linux. SAP HANA сертифицированные типы виртуальных машин необходимы, как описано выше в [этом документе](#sap-hana-support). Бизнес-платформа SAP (Hybris) считается рабочей нагрузкой OLTP
 - SQL Azure DB на базе SAP (Hybris) Commerce Platform версии 1811
 
 
 
 
-## <a name="next-steps"></a>Следующие шаги
-Ознакомьтесь со следующими шагами [планирования и внедрения SAP NetWeaver на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/planning-guide) .
-
+## <a name="next-steps"></a>Дальнейшие шаги
+Ознакомьтесь со следующими шагами [планирования и внедрения SAP NetWeaver на виртуальных машинах Azure](./planning-guide.md) .
