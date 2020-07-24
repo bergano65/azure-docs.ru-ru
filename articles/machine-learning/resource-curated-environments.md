@@ -10,16 +10,16 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 07/08/2020
-ms.openlocfilehash: 9d0964fb28451abe0a77276d6f9d605fcaac2514
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.openlocfilehash: 72ccf2a765f50358635e4a803ed0b92e60bd7d19
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86156444"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87012218"
 ---
 # <a name="azure-machine-learning-curated-environments"></a>Машинное обучение Azure проверенные среды
 
-В этой статье перечислены проверенные среды в Машинное обучение Azure, а также пакеты и каналы, предварительно установленные в них.
+В этой статье перечислены проверенные среды в Машинное обучение Azure, а также пакеты и каналы, предварительно установленные в них. Проверенные среды предоставляются Машинное обучение Azure и доступны в рабочей области по умолчанию. Они поддерживаются кэшированными образами DOCKER, что сокращает затраты на подготовку к запуску и позволяет ускорить развертывание. Используйте эти среды для быстрого начала работы с различными платформами машинного обучения.
 
 > [!NOTE]
 > Этот список обновляется с 2020 июня. Используйте пакет SDK для Python, чтобы получить самый обновленный список. Дополнительные сведения см. в [статье о средах](./how-to-use-environments.md#use-a-curated-environment).
@@ -533,7 +533,7 @@ ms.locfileid: "86156444"
   - azureml-Training-рестклиентс-a Drive = = 1.8.0
   - azureml-Training-Core = = 1.8.0
 
-## <a name="pytorch"></a>PyTorch;
+## <a name="pytorch"></a>PyTorch
 
 - [ЦП AzureML PyTorch 1,0](#azureml-pytorch-10-cpu)
 - [Графический процессор AzureML PyTorch 1,0](#azureml-pytorch-10-gpu)

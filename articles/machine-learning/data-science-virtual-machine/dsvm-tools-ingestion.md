@@ -10,11 +10,12 @@ author: lobrien
 ms.author: laobri
 ms.topic: conceptual
 ms.date: 12/12/2019
-ms.openlocfilehash: d86858f8d7f09628457b718ca3c481934d720081
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 736504febea16af53c2c05bc367513b2dde93ccf
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84708014"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87012320"
 ---
 # <a name="data-science-virtual-machine-data-ingestion-tools"></a>Средства приема данных виртуальных машин для обработки и анализа данных
 
@@ -24,7 +25,7 @@ ms.locfileid: "84708014"
 
 ## <a name="adlcopy"></a>AdlCopy
 
-|    |           |
+| Категория | Значение |
 | ------------- | ------------- |
 | Что это такое?   | Средство для копирования данных из хранилища BLOB-объектов Azure в Azure Data Lake Store. Оно также может копировать данные между двумя учетными записями Azure Data Lake Store.      |
 | Поддерживаемые версии DSVM      | Windows      |
@@ -35,7 +36,7 @@ ms.locfileid: "84708014"
 
 ## <a name="azure-cli"></a>Azure CLI
 
-|    |           |
+| Категория | Значение |
 | ------------- | ------------- |
 | Что это такое?   | Средство управления для Azure. Он также содержит команды для перемещения данных из платформ данных Azure, таких как хранилище BLOB-объектов Azure и Azure Data Lake Store.     |
 | Поддерживаемые версии DSVM      | Windows, Linux     |
@@ -47,7 +48,7 @@ ms.locfileid: "84708014"
 
 ## <a name="azcopy"></a>AzCopy
 
-|    |           |
+| Категория | Значение |
 | ------------- | ------------- |
 | Что это такое?   | Средство для копирования данных в локальные файлы, хранилище BLOB-объектов Azure, файлы и таблицы и обратно.      |
 | Поддерживаемые версии DSVM      | Windows      |
@@ -59,7 +60,7 @@ ms.locfileid: "84708014"
 
 ## <a name="azure-cosmos-db-data-migration-tool"></a>Средство переноса данных Azure Cosmos DB
 
-|    |           |
+| Категория | Значение |
 | ------------- | ------------- |
 | Что это такое?   | Средство для импорта данных из различных источников в Azure Cosmos DB, базу данных NoSQL в облаке. К этим источникам относятся JSON-файлы, CSV-файлы, SQL, MongoDB, хранилище таблиц Azure, Amazon DynamoDB и Azure Cosmos DB коллекции API SQL.      |
 | Поддерживаемые версии DSVM      | Windows      |
@@ -70,7 +71,7 @@ ms.locfileid: "84708014"
 
 ## <a name="azure-storage-explorer"></a>Обозреватель службы хранилища Azure
 
-|    |           |
+| Категория | Значение |
 | ------------- | ------------- |
 | Что это такое?   | Графический пользовательский интерфейс для взаимодействия с файлами, хранящимися в облаке Azure. |
 | Поддерживаемые версии DSVM      | Windows      |
@@ -81,7 +82,7 @@ ms.locfileid: "84708014"
 
 ## <a name="bcp"></a>bcp
 
-|    |           |
+| Категория | Значение |
 | ------------- | ------------- |
 | Что это такое?   | Средство SQL Server для копирования данных между SQL Server и файлом данных.      |
 | Поддерживаемые версии DSVM      | Windows      |
@@ -92,7 +93,7 @@ ms.locfileid: "84708014"
 
 ## <a name="blobfuse"></a>blobfuse
 
-|    |           |
+| Категория | Значение |
 | ------------- | ------------- |
 | Что это такое?   | Средство для подключения контейнера хранилища BLOB-объектов Azure в файловой системе Linux.      |
 | Поддерживаемые версии DSVM      | Linux      |

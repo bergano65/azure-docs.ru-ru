@@ -1,5 +1,5 @@
 ---
-title: Инструменты разработки
+title: Средства разработки
 titleSuffix: Azure Data Science Virtual Machine
 description: Сведения о средствах и интегрированных средах разработки, доступных на виртуальной машине для обработки и анализа данных.
 keywords: средства анализа и обработки данных, виртуальная машина для анализа и обработки данных, средства для анализа и обработки данных, анализ и обработка данных Linux
@@ -10,12 +10,12 @@ author: lobrien
 ms.author: laobri
 ms.topic: conceptual
 ms.date: 12/12/2019
-ms.openlocfilehash: c48cf6a7a82e90d3c9d8dc4c35e37dfb944af99f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 42a595246f45b2c7423aaf77c95f17243cf8813c
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80282687"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87012389"
 ---
 # <a name="development-tools-on-the-azure-data-science-virtual-machine"></a>Средства разработки на виртуальной машине Azure для обработки и анализа данных
 
@@ -23,7 +23,7 @@ ms.locfileid: "80282687"
 
 ## <a name="visual-studio-community-edition"></a>выпуск Visual Studio Community;
 
-|    |           |
+| Категория | Значение |
 | ------------- | ------------- |
 | Что это такое?   | Среда IDE общего назначения      |
 | Поддерживаемые версии DSVM      | Windows: Visual Studio 2017, Windows 2019: Visual Studio 2019      |
@@ -37,7 +37,7 @@ ms.locfileid: "80282687"
 
 ## <a name="visual-studio-code"></a>Visual Studio Code 
 
-|    |           |
+| Категория | Значение |
 | ------------- | ------------- |
 | Что это такое?   | Среда IDE общего назначения      |
 | Поддерживаемые версии DSVM      | Windows, Linux     |
@@ -47,7 +47,7 @@ ms.locfileid: "80282687"
 
 ## <a name="rstudio-desktop"></a>RStudio Desktop;
 
-|    |           |
+| Категория | Значение |
 | ------------- | ------------- |
 | Что это такое?   | Интегрированная среда разработки клиента для языка R   |
 | Поддерживаемые версии DSVM      | Windows, Linux      |
@@ -57,7 +57,7 @@ ms.locfileid: "80282687"
 
 ## <a name="rstudio-server"></a>RStudio Server
 
-|    |           |
+| Категория | Значение |
 | ------------- | ------------- |
 | Что это такое?   | Интегрированная среда разработки клиента для языка R   |
 | Что это такое?   | Интегрированная веб-среда разработки для R    |
@@ -68,7 +68,7 @@ ms.locfileid: "80282687"
 
 ## <a name="juno"></a>Juno 
 
-|    |           |
+| Категория | Значение |
 | ------------- | ------------- |
 | Что это такое?   | Интегрированная среда разработки клиента для языка Julia   |
 | Поддерживаемые версии DSVM      | Windows, Linux      |
@@ -78,7 +78,7 @@ ms.locfileid: "80282687"
 
 ## <a name="pycharm"></a>PyCharm
 
-|    |           |
+| Категория | Значение |
 | ------------- | ------------- |
 | Что это такое?   | Интегрированная среда разработки клиента для языка Python    |
 | Поддерживаемые версии DSVM      | Windows 2019, Linux      |

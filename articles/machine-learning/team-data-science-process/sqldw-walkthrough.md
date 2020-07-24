@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, tracking-python, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: a748b9284407b5ecd8cc8f6225c6762e7017d4d9
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: d5a332acbf6550fcc3a4256e1bc0531b31dd6c6a
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86026123"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87012261"
 ---
 # <a name="the-team-data-science-process-in-action-using-azure-synapse-analytics"></a>Процесс обработки и анализа данных группы в действии: использование Azure синапсе Analytics
 В этом учебнике мы пошаговым руководством по созданию и развертыванию модели машинного обучения с помощью Azure синапсе Analytics для общедоступного набора данных — набора данных о [поездках в такси Нью](https://www.andresmh.com/nyctaxitrips/) . Созданная модель двоичной классификации прогнозирует, оплачивается ли TIP для поездки.  Модели включают в себя многоклассовую классификацию (будь то TIP) и регрессия (распределение для оплаченных сумм советов).
@@ -602,7 +602,7 @@ AND pickup_longitude != '0' AND dropoff_longitude != '0'
 
 **Выходные данные.** По результатам запроса формируется таблица (из 2 803 538 строк) с координатами посадки и высадки пассажиров и дальностью поездок в милях. Ниже приведены результаты для первых трех строк:
 
-|  | pickup_latitude | pickup_longitude | dropoff_latitude | dropoff_longitude | DirectDistance |
+| (Номер строки) | pickup_latitude | pickup_longitude | dropoff_latitude | dropoff_longitude | DirectDistance |
 | --- | --- | --- | --- | --- | --- |
 | 1 |40,731804 |–74,001083 |40,736622 |–73,988953 |0,7169601222 |
 | 2 |40,715794 |–74,010635 |40,725338 |–74,00399 |0,7448343721 |

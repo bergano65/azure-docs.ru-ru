@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 07/08/2020
-ms.openlocfilehash: 415c624153971e88afac3b18920a3ba3a8f2cfae
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.openlocfilehash: 118c80b27d10714703d631f0e2560540eb2d39cf
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86147027"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87012558"
 ---
 # <a name="what-is-an-azure-machine-learning-workspace"></a>Что такое рабочая область Машинного обучения Azure?
 
@@ -47,13 +47,18 @@ ms.locfileid: "86147027"
 
 Вы можете взаимодействовать с рабочей областью следующими способами:
 
+> [!IMPORTANT]
+> Средства, отмеченные ниже (Предварительная версия), сейчас доступны в общедоступной предварительной версии.
+> Предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендуется для рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
 + В Интернете:
     + [Машинное обучение Azure Studio](https://ml.azure.com) 
     + [Конструктор машинное обучение Azure (Предварительная версия)](concept-designer.md) доступен только в рабочих областях [Enterprise Edition](overview-what-is-azure-ml.md#sku) .
 + В любой среде Python с [пакетом SDK для машинное обучение Azure для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py).
-+ В любой среде R с [машинное обучение Azureным пакетом SDK для r](https://azure.github.io/azureml-sdk-for-r/reference/index.html).
++ В любой среде R с [машинное обучение Azureным пакетом SDK для r (Предварительная версия)](https://azure.github.io/azureml-sdk-for-r/reference/index.html).
 + В командной строке с помощью [расширения CLI](https://docs.microsoft.com/azure/machine-learning/reference-azure-machine-learning-cli) машинное обучение Azure
 + [Расширение Машинное обучение Azure VS Code](how-to-manage-resources-vscode.md#workspaces)
+
 
 ## <a name="machine-learning-with-a-workspace"></a>Машинное обучение с рабочей областью
 
