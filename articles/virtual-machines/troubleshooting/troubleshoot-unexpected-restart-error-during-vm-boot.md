@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 06/22/2020
 ms.author: v-mibufo
-ms.openlocfilehash: daefaca45adb061295928c64b6a0e328a12d8a3e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 186b1c46303be59e191a1754361e07a2003b997a
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85268757"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87036188"
 ---
 # <a name="os-start-up--computer-restarted-unexpectedly-or-encountered-an-unexpected-error"></a>Запуск ОС — компьютер неожиданно перезагружается или произошла непредвиденная ошибка
 
@@ -27,7 +27,7 @@ ms.locfileid: "85268757"
 
 ## <a name="symptom"></a>Симптом
 
-При использовании [диагностики загрузки](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/boot-diagnostics) для просмотра снимка экрана виртуальной машины вы увидите, что на снимке экрана отображается сбой установки Windows со следующей ошибкой:
+При использовании [диагностики загрузки](./boot-diagnostics.md) для просмотра снимка экрана виртуальной машины вы увидите, что на снимке экрана отображается сбой установки Windows со следующей ошибкой:
 
 **Компьютер неожиданно перезапустился, или произошла непредвиденная ошибка. Установка Windows не может быть продолжена. Чтобы установить Windows, нажмите кнопку "ОК", чтобы перезагрузить компьютер, а затем перезапустите установку.**
 
@@ -35,9 +35,9 @@ ms.locfileid: "85268757"
  
 ![Ошибка при запуске служб программой установки Windows: компьютер был неожиданно перезагружен или произошла непредвиденная ошибка. Установка Windows не может быть продолжена. Чтобы установить Windows, нажмите кнопку "ОК", чтобы перезагрузить компьютер, а затем перезапустите установку.](./media/unexpected-restart-error-during-vm-boot/2.png)
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
-Компьютер пытается выполнить начальную загрузку [обобщенного образа](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--generalize--a-windows-installation), но при этом возникают проблемы из-за обработки пользовательского файла ответов (unattend.xml). Пользовательские файлы ответов не поддерживаются в Azure. 
+Компьютер пытается выполнить начальную загрузку [обобщенного образа](/windows-hardware/manufacture/desktop/sysprep--generalize--a-windows-installation), но при этом возникают проблемы из-за обработки пользовательского файла ответов (unattend.xml). Пользовательские файлы ответов не поддерживаются в Azure. 
 
 Файл ответов — это специальный XML-файл, в котором содержатся определения параметров и значения параметров конфигурации, которые необходимо автоматизировать во время установки операционной системы Windows Server. Параметры конфигурации включают в себя инструкции по разбивать диски на разделы, где можно найти устанавливаемый образ Windows, ключи продуктов для применения и другие команды, которые вы хотите запустить.
 
@@ -57,7 +57,7 @@ ms.locfileid: "85268757"
 
 - В предыдущей команде замените на `<NameOfYourAnswerFile.XML>` имя файла.
 
-Чтобы устранить эту проблему, следуйте [указаниям Azure по подготовке и записи образа](https://docs.microsoft.com/azure/virtual-machines/windows/upload-generalized-managed) и подготовке нового обобщенного образа. Во время работы программы Sysprep не используйте `/unattend:<answerfile>` флаг. Вместо этого используйте только следующие флаги:
+Чтобы устранить эту проблему, следуйте [указаниям Azure по подготовке и записи образа](../windows/upload-generalized-managed.md) и подготовке нового обобщенного образа. Во время работы программы Sysprep не используйте `/unattend:<answerfile>` флаг. Вместо этого используйте только следующие флаги:
 
 `sysprep /oobe /generalize /shutdown`
 

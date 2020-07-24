@@ -6,17 +6,19 @@ ms.service: spring-cloud
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: brendm
-ms.openlocfilehash: 2e29f6a75b303518ac34ecf9b570bd7638cf0c3a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-java
+ms.openlocfilehash: 6c7ed01cb0af164531fbee99fe0d71246c47d6f6
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79471036"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87037242"
 ---
 # <a name="set-up-a-staging-environment-in-azure-spring-cloud"></a>Настройка промежуточной среды в облаке Azure весны
 
 В этой статье описывается настройка промежуточного развертывания с помощью шаблона развертывания "синий-зеленый" в Azure Веснного облака. Сине-зеленое развертывание — это шаблон непрерывной поставки Azure DevOps, который предполагает сохранение существующей (синей) версии при развертывании новой (зеленой). В этой статье показано, как разместить промежуточное развертывание в рабочей среде, не изменяя рабочее развертывание напрямую.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 В этой статье предполагается, что вы уже развернули приложение Пиггиметрикс из нашего [руководства по запуску облачного приложения Azure весны](spring-cloud-quickstart-launch-app-portal.md). Пиггиметрикс состоит из трех приложений: "шлюз", "учетная запись-служба" и "auth-Service".  
 

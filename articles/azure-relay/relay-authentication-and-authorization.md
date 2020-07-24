@@ -3,12 +3,12 @@ title: Проверка подлинности и авторизация в ре
 description: В этой статье представлен обзор проверки подлинности подписанного URL-адресом (SAS) в службе Azure Relay.
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 63e075bc9bf75005a92866f9fa0f90ddaba2f016
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4b0a5c7a092155a006419eedd170a63abed42bb3
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85316940"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87033383"
 ---
 # <a name="azure-relay-authentication-and-authorization"></a>Проверка подлинности и авторизация в ретрансляторе Azure
 
@@ -20,7 +20,7 @@ ms.locfileid: "85316940"
 
 Ключи для SAS можно настроить в пространстве имен ретранслятора. В отличие от обмена сообщениями в служебной шине, при [гибридных подключениях в ретрансляторе](relay-hybrid-connections-protocol.md) поддерживаются неавторизованные и анонимные отправители. Вы можете включить анонимный доступ для сущности при ее создании, как показано на следующем снимке экрана с портала:
 
-![][0]
+![В диалоговом окне "создание гибридного подключения" имеется текстовое поле "имя", а флажок "требуется проверка подлинности клиента" установлен.][0]
 
 Чтобы использовать SAS, в пространстве имен ретранслятора можно настроить объект [SharedAccessAuthorizationRule](/dotnet/api/microsoft.servicebus.messaging.sharedaccessauthorizationrule), который состоит из следующих элементов:
 
@@ -35,7 +35,7 @@ ms.locfileid: "85316940"
 
 Поддержка проверки подлинности SAS для ретранслятора Azure включена в пакет Azure SDK для .NET 2.0 и более поздних версий. SAS включает в себя поддержку правила [SharedAccessAuthorizationRule](/dotnet/api/microsoft.servicebus.messaging.sharedaccessauthorizationrule). Все интерфейсы API, которые принимают строку подключения в качестве параметра, поддерживают строки подключения SAS.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о SAS см. в статье [Аутентификация служебной шины с помощью подписанных URL-адресов](../service-bus-messaging/service-bus-sas.md).
 - Подробные сведения о функции гибридных подключений см. в руководстве [Протокол гибридных подключений ретранслятора Azure](relay-hybrid-connections-protocol.md).

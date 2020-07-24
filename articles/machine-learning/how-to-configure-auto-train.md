@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: how-to
 ms.date: 05/20/2020
 ms.custom: seodec18, tracking-python
-ms.openlocfilehash: 528696daf4bddd1f448266243b511e600351606a
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 4815e51d22501d6110f3bc26a878513d6d700ce7
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86202594"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87031292"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Настройка экспериментов автоматизированного машинного обучения на Python
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -212,26 +212,26 @@ automl_config = AutoMLConfig(task = "classification")
 Для задачи `forecasting` временных рядов требуются дополнительные параметры в объекте конфигурации:
 
 1. `time_column_name`: Обязательный параметр, определяющий имя столбца в обучающих данных, который содержит допустимый временной ряд.
-1. `max_horizon`: Определяет период времени, в течение которого необходимо прогнозировать данные, на основе периодичности обучающих данных. Например, если у вас есть обучающие данные с интервалами времени в один день, вы определяете, данные за сколько дней требуются для обучения модели.
-1. `grain_column_names`: Определяет имена столбцов в обучающих данных, которые содержат отдельные временные ряды в обучающих данных. Например, при прогнозировании продаж определенной торговой марки по магазинам необходимо определить столбцы "Магазин" и "Торговая марка" в качестве столбцов детализации. Для каждого интервала и группирования будут созданы отдельные временные ряды и прогнозы. 
+1. `forecast_horizon`: Определяет количество периодов, на которые вы хотите прогнозировать. Целочисленный горизонт находится в единицах частоты TimeSeries. Например, при наличии обучающих данных с ежедневной частотой вы определяете, на сколько дней необходимо обучать модель.
+1. `time_series_id_column_names`: Определяет столбцы, которые однозначно идентифицируют временные ряды в данных, имеющих несколько строк с одинаковой отметкой времени. Например, при прогнозировании продаж определенной торговой марки по магазину в качестве идентификаторов временных рядов необходимо определить столбцы Store и Brand. Для каждой группировки будут созданы отдельные прогнозы. Если идентификаторы временных рядов не определены, предполагается, что набор данных имеет один временный ряд.
 
 Примеры используемых ниже параметров см. в [примере записной книжки](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/forecasting-orange-juice-sales/auto-ml-forecasting-orange-juice-sales.ipynb).
 
 ```python
-# Setting Store and Brand as grains for training.
-grain_column_names = ['Store', 'Brand']
-nseries = data.groupby(grain_column_names).ngroups
+# Setting Store and Brand as time series identifiers for training.
+time_series_id_column_names = ['Store', 'Brand']
+nseries = data.groupby(time_series_id_column_names).ngroups
 
-# View the number of time series data with defined grains
+# View the number of time series data with defined time series identifiers
 print('Data contains {0} individual time-series.'.format(nseries))
 ```
 
 ```python
 time_series_settings = {
     'time_column_name': time_column_name,
-    'grain_column_names': grain_column_names,
+    'time_series_id_column_names': time_series_id_column_names,
     'drop_column_names': ['logQuantity'],
-    'max_horizon': n_test_periods
+    'forecast_horizon': n_test_periods
 }
 
 automl_config = AutoMLConfig(task = 'forecasting',

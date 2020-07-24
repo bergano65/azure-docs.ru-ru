@@ -14,14 +14,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/21/2020
 ms.author: yelevin
-ms.openlocfilehash: 964bab2b81f6ce69e77fd69cab55f6d1894e4edb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c57f4a49ac89f1347fc88f8bacddce3abab7e44e
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85368407"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87038228"
 ---
 # <a name="connect-ai-vectra-detect-to-azure-sentinel"></a>Подключение определения Вектра AI к Azure Sentinel
+
+> [!IMPORTANT]
+> Соединитель данных AI Вектра в Azure Sentinel сейчас находится в общедоступной предварительной версии.
+> Эта функция предоставляется без соглашения об уровне обслуживания и не рекомендуется для рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 В этой статье объясняется, как подключить устройство [искусственного интеллекта Вектра](https://www.vectra.ai/product/cognito-detect) к Azure Sentinel. Соединитель данных AI Вектра позволяет легко перенести данные из искусственного интеллекта в Azure Sentinel, чтобы их можно было просматривать в книгах, использовать для создания пользовательских оповещений и внедрять их для улучшения расследования.
 

@@ -5,11 +5,12 @@ author: tfitzmac
 ms.topic: conceptual
 ms.date: 06/28/2018
 ms.author: tomfitz
-ms.openlocfilehash: 53c9653b44a6c9d26d49d37b351cf6000676e2d4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 711f5293b205c1f500c6d9e08154342285ef959b
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75651973"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87033222"
 ---
 # <a name="microsoftnetworkvirtualnetworkcombo-ui-element"></a>Элемент пользовательского интерфейса Microsoft.Network.VirtualNetworkCombo
 
@@ -19,11 +20,11 @@ ms.locfileid: "75651973"
 
 Выбрав новую виртуальную сеть, пользователь может настроить префикс адреса и имя каждой подсети. Настройка подсетей является необязательной.
 
-![Microsoft.Network.VirtualNetworkCombo — новая виртуальная сеть](./media/managed-application-elements/microsoft.network.virtualnetworkcombo-new.png)
+![Microsoft.Network.VirtualNetworkCombo — новая виртуальная сеть](./media/managed-application-elements/microsoft-network-virtualnetworkcombo-new.png)
 
 Выбрав существующую виртуальную сеть, пользователь должен сопоставить каждую подсеть, необходимую для шаблона развертывания, с имеющейся подсетью. Настройка подсетей в этом случае является обязательной.
 
-![Microsoft.Network.VirtualNetworkCombo — существующая виртуальная сеть](./media/managed-application-elements/microsoft.network.virtualnetworkcombo-existing.png)
+![Microsoft.Network.VirtualNetworkCombo — существующая виртуальная сеть](./media/managed-application-elements/microsoft-network-virtualnetworkcombo-existing.png)
 
 ## <a name="schema"></a>схема
 
@@ -113,7 +114,7 @@ ms.locfileid: "75651973"
 - Создание подсетей в имеющейся виртуальной сети не поддерживается.
 - Если для параметра `options.hideExisting` задано значение **true**, пользователь не может выбрать имеющуюся виртуальную сеть. Значение по умолчанию — **false**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Общие сведения о создании определений пользовательского интерфейса см. в статье [Начало работы с CreateUiDefinition](create-uidefinition-overview.md).
 * Дополнительные сведения об общих свойствах элементов пользовательского интерфейса см. в статье [Элементы CreateUiDefinition](create-uidefinition-elements.md).

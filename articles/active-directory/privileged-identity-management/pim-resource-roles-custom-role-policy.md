@@ -1,6 +1,6 @@
 ---
-title: Использование пользовательских ролей для ресурсов Azure в PIM — Azure AD | Документация Майкрософт
-description: Узнайте, как использовать настраиваемые роли ресурсов Azure в Azure AD Privileged Identity Management (PIM).
+title: Использование настраиваемых ролей Azure в PIM — Azure AD | Документация Майкрософт
+description: Узнайте, как использовать пользовательские роли Azure в Azure AD Privileged Identity Management (PIM).
 services: active-directory
 documentationcenter: ''
 author: curtand
@@ -14,14 +14,14 @@ ms.subservice: pim
 ms.date: 11/08/2019
 ms.author: curtand
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aa51508746d0024be0a5acfaeeac62e86db67d3f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d1c9255de6b9f449a89a994cb3286139daa28ea9
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84743751"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87034105"
 ---
-# <a name="use-custom-roles-for-azure-resources-in-privileged-identity-management"></a>Использование пользовательских ролей для ресурсов Azure в управление привилегированными пользователями
+# <a name="use-azure-custom-roles-in-privileged-identity-management"></a>Использование пользовательских ролей Azure в управление привилегированными пользователями
 
 Вам может потребоваться применить параметры управление привилегированными пользователями (PIM) к некоторым пользователям привилегированной роли в Организации Azure Active Directory (Azure AD), обеспечивая более широкие автономность для других пользователей. Рассмотрим пример сценария, в котором ваша организация нанимает несколько контрактов, чтобы помочь в разработке приложения, которое будет выполняться в подписке Azure.
 
@@ -31,7 +31,7 @@ ms.locfileid: "84743751"
 
 ## <a name="create-the-custom-role"></a>Создание настраиваемой роли
 
-Чтобы создать для ресурса настраиваемую роль, выполните инструкции, описанные в статье [Создание пользовательских ролей для управления доступом на основе ролей в Azure](../role-based-access-control-custom-roles.md).
+Чтобы создать настраиваемую роль для ресурса, выполните действия, описанные в разделе [пользовательские роли Azure](../role-based-access-control-custom-roles.md).
 
 После создания настраиваемой роли присвойте ей описательное имя, чтобы легко определять, какие из встроенных ролей нужно дублировать.
 
@@ -48,7 +48,7 @@ ms.locfileid: "84743751"
 
 Наконец, [назначьте роли](pim-resource-roles-assign-roles.md) определенной группе участников, для которых вы хотите применить настроенные параметры.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка параметров роли ресурсов Azure в управление привилегированными пользователями](pim-resource-roles-configure-role-settings.md)
 - [Пользовательские роли в Azure](../../role-based-access-control/custom-roles.md)

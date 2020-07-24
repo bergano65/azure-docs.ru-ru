@@ -8,14 +8,14 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 06/30/2020
 ms.author: cherylmc
-ms.openlocfilehash: 3505427ab88a2241aa2781366c3d15179b03f050
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: 72408b4f17aa5e8601095b27478806883739a7a8
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86231166"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87031632"
 ---
-# <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
+# <a name="expressroute-connectivity-partners-and-peering-locations"></a>Партнеры по подключению ExpressRoute и расположения пиринга
 
 > [!div class="op_single_selector"]
 > * [Расположения по поставщикам](expressroute-locations.md)
@@ -133,6 +133,7 @@ ms.locfileid: "86231166"
 | **[Neutrona Networks](https://www.neutrona.com/index.php/azure-expressroute/)** |Поддерживается |Поддерживается |Даллас, Лос-Анджелес, Майами, Сан-Паулу, Вашингтон (округ Колумбия) |
 | **[Next Generation Data](https://www.nextgenerationdata.co.uk/ngd-cloud-gateway/)** |Поддерживается |Поддерживается |Ньюпорт (Уэльс) |
 | **[NEXTDC](https://www.nextdc.com/services/axon-ethernet/microsoft-expressroute)** |Поддерживается |Поддерживается |Мельбурн, Перт, Сидней, Сидней 2 |
+| **[Нумерация](https://www.nos.pt/empresas/corporate/cloud/cloud/Pages/nos-cloud-connect.aspx)** |Поддерживается |Поддерживается |Амстердам 2 |
 | **[NTT Communications](https://www.ntt.com/en/services/network/virtual-private-network.html)** |Поддерживается |Поддерживается |Амстердам, Гонконг (САР), Лондон, Лос-Анджелес, Осака, Сингапур, Сидней, Токио, Вашингтон (округ Колумбия) |
 | **[NTT EAST](https://business.ntt-east.co.jp/service/crossconnect/)** |Поддерживается |Поддерживается |Токио |
 | **[Глобальные центры обработки данных NTT в регионе "Европа, Ближний Восток и Африка"](https://www.ntt.com/en/services/data-center.html)** |Поддерживается |Поддерживается |Берлин |
@@ -355,7 +356,7 @@ ms.locfileid: "86231166"
 | **[OneAs1a](https://www.oneas1a.com/connectivity.html)** | Азия |
 | **[Orange Networks](https://orange-networks.com/blog/88-azureexpressroute)** | Европа |
 | **[Perficient](https://www.perficient.com/Partners/Microsoft/Cloud/Azure-ExpressRoute)** | Северная Америка |
-| **[Presidio](https://info.presidio.com/microsoft-azure-expressroute)** | Северная Америка |
+| **[Presidio](https://www.presidio.com/subpage/1107/microsoft-azure)** | Северная Америка |
 | **[sol-tec](https://www.sol-tec.com/what-we-do/)** | Европа |
 | **[Venha Pra Nuvem](https://venhapranuvem.com.br/)** | Южная Америка |
 | **[Vigilant.IT](https://vigilant.it/expressroute)** | Австралия |

@@ -6,11 +6,13 @@ ms.service: spring-cloud
 ms.topic: conceptual
 ms.date: 10/07/2019
 ms.author: brendm
-ms.openlocfilehash: 0e49d59386b19aa8da46b8c8e6acfe50e2124541
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-java
+ms.openlocfilehash: d9a3c831275a6e758a6c5b5f377a80b074e0953e
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76278533"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87037412"
 ---
 # <a name="use-persistent-storage-in-azure-spring-cloud"></a>Использование постоянного хранилища в Azure Spring Cloud
 
@@ -80,7 +82,7 @@ az extension add --name spring-cloud
     > [!WARNING]
     > Если отключить постоянное хранилище приложений, все это хранилище будет освобождено, а все сохраненные данные будут безвозвратно утеряны.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о [квотах приложений и служб](spring-cloud-quotas.md).
 * Узнайте, как [вручную масштабировать приложение](spring-cloud-tutorial-scale-manual.md).

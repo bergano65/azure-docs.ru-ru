@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: troubleshooting
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: caf73ffbc18a603ace22acfbd0da490048da698a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a2fe1b8bdc80a5265add22bd3602050034471fe2
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "71058120"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87036443"
 ---
 # <a name="troubleshoot-application-connectivity-issues-on-virtual-machines-in-azure"></a>Устранение проблем с подключением к приложениям на виртуальных машинах в Azure
 
@@ -117,7 +117,7 @@ ms.locfileid: "71058120"
   
   * Убедитесь, что конфигурация конечной точки для виртуальной машины разрешает входящий трафик, в частности протокол (TCP или UDP), а также номера общедоступных и частных портов.
   * Убедитесь, что списки управления доступом (ACL) для конечной точки не блокируют входящий трафик из Интернета.
-  * Дополнительные сведения см. в статье [Настройка конечных точек виртуальной машины](../windows/classic/setup-endpoints.md).
+  * Дополнительные сведения см. в статье [Настройка конечных точек виртуальной машины](/previous-versions/azure/virtual-machines/windows/classic/setup-endpoints).
 * Для виртуальных машин, созданных с использованием модели развертывания с помощью Resource Manager:
   
   * Убедитесь, что конфигурация правила NAT для входящего трафика для виртуальной машины разрешает входящий трафик, в частности протокол (TCP или UDP), а также номера общедоступных и частных портов.
@@ -138,11 +138,9 @@ ms.locfileid: "71058120"
 
 ## <a name="step-4-if-you-cannot-access-the-application-use-ip-verify-to-check-the-settings"></a>Шаг 4. Проверка параметров доступа к приложению с помощью командлета проверки IP-потока 
 
-Дополнительные сведения см. в статье [Обзор мониторинга сети Azure](https://docs.microsoft.com/azure/network-watcher/network-watcher-monitoring-overview). 
+Дополнительные сведения см. в статье [Обзор мониторинга сети Azure](../../network-watcher/network-watcher-monitoring-overview.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 [Устранение неполадок удаленный рабочий стол подключений к виртуальной машине Azure под управлением Windows](troubleshoot-rdp-connection.md)
 
 [Устранение неполадок подключения Secure Shell (SSH) к виртуальной машине Azure под управлением Linux](troubleshoot-ssh-connection.md)
-
-

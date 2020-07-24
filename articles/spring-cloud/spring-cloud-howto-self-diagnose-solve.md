@@ -6,16 +6,18 @@ ms.author: brendm
 ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 05/29/2020
-ms.openlocfilehash: 581d77a5568b9533d85ff476b63001c8a237bc4e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-java
+ms.openlocfilehash: 1f48cd185f2aa25954627a9ff26f3e59b8e76e7a
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84457207"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87037318"
 ---
 # <a name="how-to-self-diagnose-and-solve-problems-in-azure-spring-cloud"></a>Самостоятельное устранение неполадок и решение проблем в Azure Веснного облака
 Служба диагностики Azure весны в облаке — это интерактивный интерфейс, помогающий устранять неполадки в приложении. Настройка не требуется. При обнаружении проблем в облачной диагностике Azure можно обнаружить ошибки и ознакомиться с информацией, помогающей устранить проблему и устранить ее.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 Для работы с этим учебником необходимы указанные ниже компоненты.
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
@@ -50,6 +52,6 @@ ms.locfileid: "84457207"
 
  ![Связанные сведения](media/spring-cloud-diagnose/related-details.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Мониторинг ресурсов Spring Cloud с помощью оповещений и групп действий](spring-cloud-tutorial-alerts-action-groups.md)
 * [Средства управления безопасностью для службы Azure Spring Cloud](spring-cloud-concept-security-controls.md)

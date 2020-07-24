@@ -13,11 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 08/06/2019
 ms.author: alsin
-ms.openlocfilehash: 06cb3fe5d551ddfc95fcbd37cd9620adebd825c5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e31a10b1086679b7c2493f5a6d6b62f75e363dd4
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "70883928"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87036477"
 ---
 # <a name="use-serial-console-to-access-grub-and-single-user-mode"></a>Использование последовательной консоли для доступа к GRUB и однопользовательским режимам
 Общий единый загрузчик (GRUB), скорее всего, является первым, что вы видите при загрузке виртуальной машины (ВМ). Так как она отображается до запуска операционной системы, GRUB недоступен через SSH. В GRUB можно изменить конфигурацию загрузки для загрузки в однопользовательский режим, помимо прочего.
@@ -36,7 +37,7 @@ ms.locfileid: "70883928"
 ## <a name="general-grub-access"></a>Общий доступ к GRUB
 Чтобы получить доступ к GRUB, Перезагрузите виртуальную машину, пока открыта панель последовательной консоли. Для некоторых дистрибутивов требуется ввод с клавиатуры для отображения GRUB, а другие автоматически отображают GRUB в течение нескольких секунд, чтобы разрешить ввод с клавиатуры пользователя для отмены времени ожидания.
 
-Чтобы иметь возможность доступа к однопользовательскому режиму, необходимо убедиться, что на виртуальной машине включен GRUB. В зависимости от распределения может потребоваться выполнить некоторые настройки, чтобы убедиться в том, что GRUB включен. Сведения о конкретном распространении см. в следующем разделе и нашей [поддержке для Linux на странице Azure](https://blogs.msdn.microsoft.com/linuxonazure/2018/10/23/why-proactively-ensuring-you-have-access-to-grub-and-sysrq-in-your-linux-vm-could-save-you-lots-of-down-time/) .
+Чтобы иметь возможность доступа к однопользовательскому режиму, необходимо убедиться, что на виртуальной машине включен GRUB. В зависимости от распределения может потребоваться выполнить некоторые настройки, чтобы убедиться в том, что GRUB включен. Сведения о конкретном распространении см. в следующем разделе.
 
 ### <a name="restart-your-vm-to-access-grub-in-serial-console"></a>Перезагрузка виртуальной машины для доступа к GRUB в последовательной консоли
 Вы можете перезапустить виртуальную машину в последовательной консоли, наведя указатель мыши на кнопку **перезапуска** и выбрав **restart VM (перезапуск виртуальной машины**). В нижней части панели отображается уведомление о перезапуске.
@@ -90,8 +91,8 @@ GRUB_CMDLINE_LINUX="console=tty1 console=ttyS0,115200n8 earlyprintk=ttyS0,115200
 1. Включите пароль для привилегированного пользователя, выполнив следующие действия.
     * Запустите `passwd root` (Задайте надежный пароль root).
 1. Убедитесь, что корневой пользователь может войти только через ttyS0, выполнив следующие действия.  
-    а. Выполните команду `edit /etc/ssh/sshd_config` и убедитесь, что для пермитрутлогин задано значение `no` .  
-    b. Выполните команду `edit /etc/securetty file` , чтобы разрешить вход только через ttyS0.
+    А. Выполните команду `edit /etc/ssh/sshd_config` и убедитесь, что для пермитрутлогин задано значение `no` .  
+    Б. Выполните команду `edit /etc/securetty file` , чтобы разрешить вход только через ttyS0.
 
 Теперь, если система загружается в однопользовательский режим, вы можете войти с помощью пароля root.
 
@@ -112,7 +113,7 @@ GRUB_CMDLINE_LINUX="console=tty1 console=ttyS0,115200n8 earlyprintk=ttyS0,115200
 
    Перед переходом в однопользовательский режим вам будет предложено ввести пароль администратора. Это пароль, созданный в предыдущих инструкциях.
 
-    ![](../media/virtual-machines-serial-console/virtual-machine-linux-serial-console-rhel-enter-emergency-shell.gif)
+    ![Анимированное изображение, показывающее интерфейс командной строки. Пользователь выбирает сервер, находит конец строки ядра, а затем вводит указанный текст.](../media/virtual-machines-serial-console/virtual-machine-linux-serial-console-rhel-enter-emergency-shell.gif)
 
 ### <a name="enter-single-user-mode-without-root-account-enabled-in-rhel"></a>Переход в однопользовательский режим без включенной учетной записи root в RHEL
 Если вы не включили привилегированного пользователя, следуя приведенным выше инструкциям, вы по-прежнему можете сбросить корневой пароль, выполнив следующие действия.
@@ -136,7 +137,7 @@ GRUB_CMDLINE_LINUX="console=tty1 console=ttyS0,115200n8 earlyprintk=ttyS0,115200
 1. Теперь у вас есть корень. Вы можете сбросить пароль, введя, `passwd` а затем используя приведенные выше инструкции для входа в однопользовательский режим. 
 1. Когда все будет готово, введите `reboot -f` для перезагрузки.
 
-![](../media/virtual-machines-serial-console/virtual-machine-linux-serial-console-rhel-emergency-mount-no-root.gif)
+![Анимированное изображение, показывающее интерфейс командной строки. Пользователь выбирает сервер, находит конец строки ядра и вводит указанные команды.](../media/virtual-machines-serial-console/virtual-machine-linux-serial-console-rhel-emergency-mount-no-root.gif)
 
 > [!NOTE]
 > Выполнение описанных выше инструкций приведет к аварийной оболочке, что позволяет выполнять такие задачи, как редактирование `fstab` . Однако мы рекомендуем сбрасывать корневой пароль и использовать его для входа в однопользовательский режим.
@@ -163,7 +164,7 @@ GRUB_CMDLINE_LINUX="console=tty1 console=ttyS0,115200n8 earlyprintk=ttyS0,115200
 1. В текстовом редакторе откройте */etc/default/grub*.
 1. Закомментируйте `GRUB_HIDDEN_TIMEOUT=1` строку.
 1. Убедитесь, что есть `GRUB_TIMEOUT_STYLE=menu` строка.
-1. Выполните `sudo update-grub`.
+1. Запустите `sudo update-grub`.
 
 ### <a name="single-user-mode-in-ubuntu"></a>Однопользовательский режим в Ubuntu
 Если Ubuntu не может загрузиться в обычном режиме, она автоматически перейдет в однопользовательский режим. Чтобы войти в однопользовательский режим вручную, выполните следующие действия.
@@ -237,10 +238,10 @@ GRUB_CMDLINE_LINUX="console=tty1 console=ttyS0,115200n8 earlyprintk=ttyS0,115200
 ### <a name="single-user-mode-in-oracle-linux"></a>Однопользовательский режим в Oracle Linux
 Чтобы включить однопользовательский режим в Oracle Linux, выполните предыдущие инструкции для RHEL.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о последовательной консоли см. в следующих статьях:
 * [Документация по последовательной консоли Linux](serial-console-linux.md)
-* [Использование последовательной консоли для включения GRUB в различных дистрибутивах](https://blogs.msdn.microsoft.com/linuxonazure/2018/10/23/why-proactively-ensuring-you-have-access-to-grub-and-sysrq-in-your-linux-vm-could-save-you-lots-of-down-time/)
+* [Использование последовательной консоли для включения GRUB в различных дистрибутивах](/archive/blogs/linuxonazure/why-proactively-ensuring-you-have-access-to-grub-and-sysrq-in-your-linux-vm-could-save-you-lots-of-down-time)
 * [Использование последовательной консоли для вызовов NMI и Сисрк](serial-console-nmi-sysrq.md)
 * [Последовательная консоль для виртуальных машин Windows](serial-console-windows.md)
 * [Диагностика загрузки](boot-diagnostics.md)

@@ -11,11 +11,12 @@ author: iainfoulds
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 348082ad96a5efa4d8f866c3675044edf7b6f8a8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4e3425407fdb131fb1499b2cd085fbe6d427804a
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80652152"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87035304"
 ---
 # <a name="reporting-options-for-azure-ad-password-management"></a>Параметры отчетов для управления паролями Azure AD
 
@@ -50,9 +51,9 @@ ms.locfileid: "80652152"
 6. В меню **Фильтр** в верхней части панели выберите раскрывающийся список **Служба** и измените его на тип службы **самостоятельного управления паролями** .
 7. При необходимости этот список можно отфильтровать по определенному **действию**.
 
-### <a name="converged-registration-preview"></a>Конвергентная регистрация (предварительная версия)
+### <a name="combined-registration"></a>Объединенная регистрация
 
-Если вы участвуете в общедоступной предварительной версии согласованной регистрации, сведения о действиях пользователей в журналах аудита будут найдены **Security**в разделе  >  **методы проверки подлинности**безопасности.
+Если включена [Объединенная регистрация](https://docs.microsoft.com/azure/active-directory/authentication/concept-registration-mfa-sspr-combined), сведения о действиях пользователей в журналах аудита будут найдены в разделе **Security**  >  **методы проверки подлинности**безопасности.
 
 ## <a name="description-of-the-report-columns-in-the-azure-portal"></a>Описание столбцов отчета на портале Azure
 
@@ -168,7 +169,7 @@ ms.locfileid: "80652152"
      >[!NOTE]
      >Сбой не означает, что пользователь не может сбросить свой пароль. Он означает, что пользователь не завершил процесс регистрации. Если в учетной записи содержатся непроверенные, но правильные данные (например, непроверенный телефонный номер), их по-прежнему можно использовать для сброса пароля.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Отчеты об использовании и аналитике SSPR и MFA](howto-authentication-methods-usage-insights.md)
 * [Как развернуть самостоятельный сброс пароля?](howto-sspr-deployment.md)

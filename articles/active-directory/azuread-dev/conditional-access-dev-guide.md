@@ -13,13 +13,14 @@ ms.custom: aaddev
 ms.topic: conceptual
 ms.workload: identity
 ROBOTS: NOINDEX
-ms.openlocfilehash: 5c1c03a407315fc4f1b3eb967531e2800fc7497f
-ms.sourcegitcommit: 493b27fbfd7917c3823a1e4c313d07331d1b732f
+ms.openlocfilehash: 8895e52209622025f943aaa6a4261b68a7e2899c
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83738053"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87034845"
 ---
-# <a name="developer-guidance-for-azure-active-directory-conditional-access"></a>Руководство по условному доступу в Azure Active Directory для разработчиков
+# <a name="developer-guidance-for-the-azure-active-directory-conditional-access-feature"></a>Руководство разработчика для функции условного доступа Azure Active Directory
 
 [!INCLUDE [active-directory-azuread-dev](../../../includes/active-directory-azuread-dev.md)]
 

@@ -15,18 +15,18 @@ ms.workload: infrastructure
 ms.date: 03/05/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: bccaf45cf617bd31a584b6c73f3dd08877bc8587
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e44edff9ac81588e4f861b7a1d1ae1a1628d5e04
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "71266060"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87035644"
 ---
 # <a name="sap-hana-high-availability-for-azure-virtual-machines"></a>Обеспечение высокого уровня доступности для SAP HANA на виртуальных машинах Azure
 
 Вы можете использовать многочисленные возможности Azure для развертывания критически важных баз данных, таких как SAP HANA, на виртуальных машинах Azure. Эта статья содержит рекомендации по организации доступа для экземпляров SAP HANA, размещенных на виртуальных машинах Azure. Здесь описаны несколько сценариев, которые можно реализовать на основе инфраструктуры Azure для повышения уровня доступности SAP HANA в Azure. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 В статье предполагается, что вы знакомы с концепцией инфраструктуры как услуги (IaaS) в Azure, т. е. умеете выполнять такие задачи: 
 
@@ -37,9 +37,9 @@ ms.locfileid: "71266060"
 
 Вот несколько статей, в которых хорошо объясняется, как использовать SAP HANA в Azure.
 
-- [Ручная установка SAP HANA с одним экземпляром на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-get-started)
+- [Ручная установка SAP HANA с одним экземпляром на виртуальных машинах Azure](./hana-get-started.md)
 - [Высокий уровень доступности SAP HANA на виртуальных машинах Azure](sap-hana-high-availability.md)
-- [Резервное копирование SAP HANA на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-backup-guide)
+- [Резервное копирование SAP HANA на виртуальных машинах Azure](./sap-hana-backup-guide.md)
 
 Еще мы рекомендуем ознакомиться со следующими статьями о SAP HANA.
 
@@ -52,7 +52,7 @@ ms.locfileid: "71266060"
 - [Service auto-restart](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/2.0.01/en-US/cf10efba8bea4e81b1dc1907ecc652d3.html) (Автоматический перезапуск службы)
 - [Configuring SAP HANA System Replication](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/2.0.01/en-US/676844172c2442f0bf6c8b080db05ae7.html) (Настройка репликации системы SAP HANA)
 
-Если вы уже умеете развертывать виртуальные машины в Azure, мы рекомендуем прочитать статью [Управление доступностью виртуальных машин Windows в Azure](https://docs.microsoft.com/azure/virtual-machines/windows/manage-availability), прежде чем определить архитектуру доступности в Azure.
+Если вы уже умеете развертывать виртуальные машины в Azure, мы рекомендуем прочитать статью [Управление доступностью виртуальных машин Windows в Azure](../../windows/manage-availability.md), прежде чем определить архитектуру доступности в Azure.
 
 ## <a name="service-level-agreements-for-azure-components"></a>Соглашения об уровне обслуживания для компонентов Azure
 
@@ -60,16 +60,16 @@ ms.locfileid: "71266060"
 
 [SLA для виртуальных машин](https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_8/) описывает три разных соглашения об уровне обслуживания для трех различных конфигураций:
 
-- Одна виртуальная машина, у которой диск ОС и все диски с данными размещены на [дисках SSD ценовой категории "Премиум"](https://docs.microsoft.com/azure/virtual-machines/windows/managed-disks-overview). Этот вариант гарантирует время работоспособности на уровне 99,9 % в месяц.
-- Несколько (не менее двух) виртуальных машин, организованных в [группу доступности Azure](https://docs.microsoft.com/azure/virtual-machines/windows/tutorial-availability-sets). Этот вариант гарантирует время работоспособности на уровне 99,95 % в месяц.
-- Несколько (по крайней мере, две) виртуальные машины, упорядоченные в [зоне доступность](https://docs.microsoft.com/azure/availability-zones/az-overview). Этот параметр обеспечивает ежемесячное время бесперебойной работы 99,99%.
+- Одна виртуальная машина, у которой диск ОС и все диски с данными размещены на [дисках SSD ценовой категории "Премиум"](../../windows/managed-disks-overview.md). Этот вариант гарантирует время работоспособности на уровне 99,9 % в месяц.
+- Несколько (не менее двух) виртуальных машин, организованных в [группу доступности Azure](../../windows/tutorial-availability-sets.md). Этот вариант гарантирует время работоспособности на уровне 99,95 % в месяц.
+- Несколько (по крайней мере, две) виртуальные машины, упорядоченные в [зоне доступность](../../../availability-zones/az-overview.md). Этот параметр обеспечивает ежемесячное время бесперебойной работы 99,99%.
 
 Сравните свои требования к уровню доступности с теми параметрами, которые предложены в соглашениях об уровне обслуживания для компонентов Azure. По результатам этого анализа выберите такой сценарий SAP HANA, который обеспечит необходимый уровень доступности.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Доступность SAP HANA в пределах одного региона Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-availability-one-region)
-- [Доступность SAP HANA в разных регионах Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-hana-availability-across-regions) 
+- [Доступность SAP HANA в пределах одного региона Azure](./sap-hana-availability-one-region.md)
+- [Доступность SAP HANA в разных регионах Azure](./sap-hana-availability-across-regions.md) 
 
 
 
@@ -86,5 +86,3 @@ ms.locfileid: "71266060"
 
 
   
-
-

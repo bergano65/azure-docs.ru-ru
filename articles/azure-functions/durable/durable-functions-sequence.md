@@ -5,11 +5,12 @@ author: cgillum
 ms.topic: conceptual
 ms.date: 11/29/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 8da4ce7801cc98f9ffb32eb7b506eaf1ccd877dd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b117fca23b26919f3c404dd32ba64c0c89d66ae7
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77562073"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87033570"
 ---
 # <a name="function-chaining-in-durable-functions---hello-sequence-sample"></a>Цепочки функций в устойчивых функциях — пример последовательности Hello
 
@@ -59,7 +60,7 @@ ms.locfileid: "77562073"
 
 Все функции оркестрации JavaScript должны включать [ `durable-functions` модуль](https://www.npmjs.com/package/durable-functions). Это библиотека, позволяющая писать Устойчивые функции JavaScript. Есть три существенных различия между функциями оркестратора и другими функциями JavaScript:
 
-1. Функция является [функцией генератора.](https://docs.microsoft.com/scripting/javascript/advanced/iterators-and-generators-javascript)
+1. Функция является [функцией генератора.](/scripting/javascript/advanced/iterators-and-generators-javascript)
 2. Эта функция упаковывается в вызов к методу `orchestrator` модуля `durable-functions` (в нашем примере это `df`).
 3. Функции должны быть синхронными. Так как метод orchestrator обрабатывает вызов аргумента context.done, функция должна возвращать значение.
 
@@ -77,7 +78,7 @@ ms.locfileid: "77562073"
 
 Функция `E1_SayHello` реализует достаточно простую операцию форматирования строки.
 
-Вместо привязки к можно `IDurableActivityContext` выполнить прямую привязку к типу, который передается в функцию действия. Пример:
+Вместо привязки к можно `IDurableActivityContext` выполнить прямую привязку к типу, который передается в функцию действия. Например.
 
 [!code-csharp[Main](~/samples-durable-functions/samples/precompiled/HelloSequence.cs?range=34-38)]
 
@@ -175,7 +176,7 @@ Content-Type: application/json; charset=utf-8
 
 Просмотрите журналы выполнения функции. `E1_HelloSequence`Функция была запущена и выполнена несколько раз из-за поведения воспроизведения, описанного в разделе [надежность оркестрации](durable-functions-orchestrations.md#reliability) . С другой стороны, функция `E1_SayHello` выполнялась только три раза, поскольку для таких процессов логика повторов не применяется.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом примере показана простая оркестрация с цепочкой функций. В приведенном ниже примере кода показана реализация шаблона развертывания и объединения.
 

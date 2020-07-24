@@ -3,12 +3,12 @@ title: Служебная шина Azure — приостановка сущно
 description: В этой статье объясняется, как временно приостановить и повторно активировать объекты сообщений служебной шины Azure (очереди, разделы и подписки).
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 4c4e554ada8c66b56d5d466c7becfc813701402a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: da7c25c8ef9f3daa32984ac26aa62710ab775951
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85339997"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87038143"
 ---
 # <a name="suspend-and-reactivate-messaging-entities-disable"></a>Приостановка и повторная активация сущностей обмена сообщениями (отключение)
 
@@ -20,7 +20,7 @@ ms.locfileid: "85339997"
 
 На портале раздел **свойств** соответствующей сущности позволяет изменить состояние. на следующем снимке экрана показан переключатель для очереди:
 
-![][1]
+![Снимок экрана функции служебной шины с выделенным параметром "Свойства" и параметром "состояние очереди", установленным в значение "активный" и выделено красным цветом.][1]
 
 Портал позволяет отключать очереди только полностью. Также можно отключить операции отправки и получения по отдельности, используя API служебной шины [NamespaceManager](/dotnet/api/microsoft.servicebus.namespacemanager) в пакете SDK для .NET Framework, или с помощью шаблона Azure Resource Manager через Azure CLI или Azure PowerShell.
 
@@ -47,7 +47,7 @@ $q.Status = "Disabled"
 Set-AzServiceBusQueue -ResourceGroup mygrp -NamespaceName myns -QueueName myqueue -QueueObj $q
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об обмене сообщениями через служебную шину см. в следующих статьях:
 

@@ -5,11 +5,12 @@ author: tfitzmac
 ms.topic: conceptual
 ms.date: 06/15/2018
 ms.author: tomfitz
-ms.openlocfilehash: 6d1e4a84904ef7022d9ce85803bf10285bf0b8ac
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7580ac0650706d6aee49bbf0e8235e8c5dab33f4
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75652480"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87033362"
 ---
 # <a name="microsoftcommoninfobox-ui-element"></a>Элемент пользовательского интерфейса Microsoft.Common.InfoBox
 
@@ -17,7 +18,7 @@ ms.locfileid: "75652480"
 
 ## <a name="ui-sample"></a>Пример элемента пользовательского интерфейса
 
-![Microsoft.Common.InfoBox](./media/managed-application-elements/microsoft.common.infobox.png)
+![Microsoft.Common.InfoBox](./media/managed-application-elements/microsoft-common-infobox.png)
 
 
 ## <a name="schema"></a>схема
@@ -46,7 +47,7 @@ ms.locfileid: "75652480"
 * Установите для параметра `icon` одно из следующих значений: **Нет**, **Сведения**, **Предупреждение** или **Ошибка**.
 * Свойство `uri` необязательное.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Общие сведения о создании определений пользовательского интерфейса см. в статье [Начало работы с CreateUiDefinition](create-uidefinition-overview.md).
 * Дополнительные сведения об общих свойствах элементов пользовательского интерфейса см. в статье [Элементы CreateUiDefinition](create-uidefinition-elements.md).

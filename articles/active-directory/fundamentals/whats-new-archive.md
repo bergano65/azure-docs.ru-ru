@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: dhanyahk
 ms.custom: it-pro, seo-update-azuread-jan, has-adal-ref
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f04fcae1ba218949019637e9a101492a487b430f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e27adde84f62f8c8d79389e1de4e867439d5a3be
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85603746"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87034743"
 ---
 # <a name="archive-for-whats-new-in-azure-active-directory"></a>Архив сведений о новых возможностях в Azure Active Directory
 
@@ -3323,7 +3323,7 @@ Azure AD Connect предпочтительней использовать дл�
 
 **Тип:** измененная функция **Категория службы:** Privileged Identity Management **Возможности продукта:** Управление привилегированными пользователями (PIM)
 
-Теперь, когда вышло обновление общедоступной предварительной версии Azure AD Privileged Identity Management (PIM) для управления доступом на основе ролей (RBAC) Azure, вы можете:
+С помощью общедоступной предварительной версии обновления Azure AD Privileged Identity Management (PIM) для управления доступом на основе ролей Azure (Azure RBAC) теперь можно:
 
 * Использовать Just Enough Administration (JEA).
 * Требовать утверждения для активации ролей ресурсов.

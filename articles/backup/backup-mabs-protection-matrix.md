@@ -3,12 +3,12 @@ title: Матрица защиты MABS (Azure Backup Server) v3 UR1
 description: В этой статье приводится матрица поддержки, в которой перечислены все рабочие нагрузки, типы данных и установки, которые защищает Azure Backup Server.
 ms.date: 03/19/2020
 ms.topic: conceptual
-ms.openlocfilehash: cfcb8fbf9f793cfbe11d2c25b3d2caa7018d0fd4
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 974820389e84f727a9aab284716b3be9020c6dd8
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86538740"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87032601"
 ---
 # <a name="mabs-azure-backup-server-v3-ur1-protection-matrix"></a>Матрица защиты MABS (Azure Backup Server) v3 UR1
 
@@ -54,7 +54,7 @@ ms.locfileid: "86538740"
 
 | **Рабочая нагрузка** | **Version**                               | **Установка Azure Backup Server**                      | **Поддерживаемые Azure Backup Server** | **Защита и восстановление**                                 |
 | ------------ | ----------------------------------------- | ------------------------------------------------------------ | ---------------------------------- | ------------------------------------------------------------ |
-| Linux        | Linux, работающий как Hyper-V или гостевая ОС VMware | Физический сервер, локальная виртуальная машина Hyper-V, виртуальная машина Windows в VMWare | V3 UR1                             | Hyper-V должен работать под управлением Windows Server 2012 R2 или Windows Server 2016. Защита: вся виртуальная машина   <br><br>   Восстановление: вся виртуальная машина   <br><br>    Поддерживаются только моментальные снимки с файловой согласованностью.    <br><br>   Полный список поддерживаемых дистрибутивов и версий Linux см. в статье [Linux по дистрибутивам, одобренным в Azure](../virtual-machines/linux/endorsed-distros.md). |
+| Linux        | Linux, работающий как Hyper-V или гостевая ОС VMware | Физический сервер, локальная виртуальная машина Hyper-V, виртуальная машина Windows в VMWare | V3 UR1                             | Hyper-V должен работать под управлением Windows Server 2012 R2, Windows Server 2016 или Windows Server 2019. Защита: вся виртуальная машина   <br><br>   Восстановление: вся виртуальная машина   <br><br>    Поддерживаются только моментальные снимки с файловой согласованностью.    <br><br>   Полный список поддерживаемых дистрибутивов и версий Linux см. в статье [Linux по дистрибутивам, одобренным в Azure](../virtual-machines/linux/endorsed-distros.md). |
 
 ## <a name="azure-expressroute-support"></a>Поддержка Azure ExpressRoute
 

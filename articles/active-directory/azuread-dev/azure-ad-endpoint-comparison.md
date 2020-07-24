@@ -8,17 +8,17 @@ ms.service: active-directory
 ms.subservice: azuread-dev
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 11/26/2019
+ms.date: 07/17/2020
 ms.author: ryanwi
 ms.reviewer: saeeda, hirsin, jmprieur, sureshja, jesakowi, lenalepa, kkrishna, negoe
 ms.custom: aaddev
 ROBOTS: NOINDEX
-ms.openlocfilehash: 67a54a2cd4fa071fd47bcebb9aa53fd11fefd61e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 001de375edab7505ed4687d848aca0ad0965dbfb
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80154922"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87034913"
 ---
 # <a name="why-update-to-microsoft-identity-platform-v20"></a>Зачем выполнять обновление до платформы удостоверений Майкрософт (версия 2.0)?
 
@@ -141,34 +141,7 @@ client_id=2d4d11a2-f814-46a7-890a-274a72a7309e
 
 ### <a name="restrictions-on-redirect-urls"></a>Ограничения для URL-адресов перенаправления
 
-Приложения, зарегистрированные для платформы Microsoft Identity, ограничены ограниченным набором значений URL-адресов перенаправления. URL-адрес перенаправления для веб-приложений и служб должен начинаться со схемы `https`, и во всех его значениях должен использоваться один домен DNS.  Система регистрации сравнивает полное DNS-имя существующего URL-адреса перенаправления и DNS-имя добавляемого URL-адреса перенаправления. `http://localhost` также поддерживается в качестве URL-адреса перенаправления.  
-
-Запрос на добавление DNS-имени завершится ошибкой при выполнении любого из следующих условий.  
-
-* Если полное DNS-имя нового URL-адреса перенаправления не соответствует DNS-имени существующего URL-адреса перенаправления.
-* Если полное DNS-имя нового URL-адреса перенаправления не является поддоменом существующего URL-адреса перенаправления.
-
-#### <a name="example-1"></a>Пример 1
-
-Если в приложении используется URL-адрес перенаправления `https://login.contoso.com`, можно добавить URL-адрес перенаправления с полностью совпадающим DNS-именем, как показано в примере ниже.
-
-`https://login.contoso.com/new`
-
-Или же можно использовать ссылку на поддомен DNS login.contoso.com, как показано в примере ниже.
-
-`https://new.login.contoso.com`
-
-#### <a name="example-2"></a>Пример 2
-
-Если вы хотите, чтобы в приложении использовались URL-адреса перенаправления `login-east.contoso.com` и `login-west.contoso.com`, добавьте их в таком порядке:
-
-`https://contoso.com`  
-`https://login-east.contoso.com`  
-`https://login-west.contoso.com`  
-
-Можно добавить два последних, так как они являются поддоменами первого URL-адреса перенаправления, contoso.com.
-
-Для конкретного приложения можно использовать только 20 URL-адресов ответа. это ограничение применяется ко всем типам приложений, поддерживаемым регистрацией (одностраничное приложение (SPA), собственный клиент, веб-приложение и служба).  
+Наиболее актуальные сведения об ограничениях для URL-адресов перенаправления для приложений, зарегистрированных для платформы Microsoft Identity, см. в статье [ограничения URL-адресов для перенаправления и](https://docs.microsoft.com/azure/active-directory/develop/reply-url) ограничения для ответа в документации по платформе удостоверений Майкрософт.
 
 Чтобы узнать, как зарегистрировать приложение для использования с платформой идентификации Майкрософт, см. статью [Регистрация приложения с помощью нового интерфейса Регистрация приложений](../develop/quickstart-register-app.md?toc=/azure/active-directory/azuread-dev/toc.json&bc=/azure/active-directory/azuread-dev/breadcrumb/toc.json).
 

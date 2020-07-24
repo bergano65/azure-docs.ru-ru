@@ -15,11 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/23/2019
 ms.author: mlottner
-ms.openlocfilehash: 4253e496aca4cbf71fab7ef0ee388b1356df5c16
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 82103da3f2547baab62d0d95cf9a6084ef099cba
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84456799"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87033773"
 ---
 # <a name="select-and-deploy-a-security-agent-on-your-iot-device"></a>Выбор и развертывание агента безопасности на устройстве IoT
 
@@ -43,19 +44,18 @@ ms.locfileid: "84456799"
 
 |     | Агент безопасности на основе C | Агент безопасности на основе C# |
 | --- | ----------- | --------- |
-| Открытый исходный код | Доступно в рамках [лицензии MIT](https://en.wikipedia.org/wiki/MIT_License) в [GitHub](https://aka.ms/iot-security-github-c) | Доступно в рамках [лицензии MIT](https://en.wikipedia.org/wiki/MIT_License) в [GitHub](https://aka.ms/iot-security-github-cs) |
-| Язык разработки    | C | C# |
-| Поддерживаемые платформы Windows | Нет | Да |
-| Предварительные требования для Windows | --- | [WMI](https://docs.microsoft.com/windows/desktop/wmisdk/) |
-| Поддерживаемые платформы Linux? | Да, x64 и x86 | Да, только x64 |
-| Предварительные условия (и необходимые компоненты) для Linux | libunwind8, libcurl3, UUID — среда выполнения, аудит, аудиспд — подключаемые модули | libunwind8, libcurl3, UUID-Runtime, audited, аудиспд-plugins, sudo, netstat, iptables |
-| Место на диске | 10,5 МБ | 90 МБ |
-| Объем памяти (в среднем) | 5,5 МБ | 33 МБ |
-| [Проверка подлинности](concept-security-agent-authentication-methods.md) в центре Интернета вещей | Да | Да |
-| [Сбор](how-to-agent-configuration.md#supported-security-events) данных безопасности | Да | Да |
-| Агрегация событий | Да | Да |
-| Удаленная настройка через [модуль безопасности двойника](concept-security-module.md) | Да | Да |
-|
+| **Открытый исходный код** | Доступно в рамках [лицензии MIT](https://en.wikipedia.org/wiki/MIT_License) в [GitHub](https://aka.ms/iot-security-github-c) | Доступно в рамках [лицензии MIT](https://en.wikipedia.org/wiki/MIT_License) в [GitHub](https://aka.ms/iot-security-github-cs) |
+| **Язык разработки**    | C | C# |
+| **Поддерживаемые платформы Windows** | Нет | Да |
+| **Предварительные требования для Windows** | --- | [WMI](https://docs.microsoft.com/windows/desktop/wmisdk/) |
+| **Поддерживаемые платформы Linux?** | Да, x64 и x86 | Да, только x64 |
+| **Предварительные требования для Linux** | libunwind8, libcurl3, UUID — среда выполнения, аудит, аудиспд — подключаемые модули | libunwind8, libcurl3, UUID-Runtime, audited, аудиспд-plugins, sudo, netstat, iptables |
+| **Место на диске** | 10,5 МБ | 90 МБ |
+| **Объем памяти (в среднем)** | 5,5 МБ | 33 МБ |
+| **[Проверка подлинности](concept-security-agent-authentication-methods.md) в центре Интернета вещей** | Да | Да |
+| **[Сбор](how-to-agent-configuration.md#supported-security-events) данных безопасности** | Да | Да |
+| **Агрегация событий** | Да | Да |
+| **Удаленная настройка через [модуль безопасности двойника](concept-security-module.md)** | Да | Да |
 
 ## <a name="security-agent-installation-guidelines"></a>Рекомендации по установке агента безопасности
 
@@ -99,7 +99,7 @@ ms.locfileid: "84456799"
 |C#|Windows 10 IoT Базовая, сборка 17763    |X64|
 |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы узнать больше о параметрах конфигурации, перейдите к руководству по настройке агента.
 > [!div class="nextstepaction"]

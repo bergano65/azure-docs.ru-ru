@@ -4,12 +4,12 @@ description: Пакетная служба поддерживает Azure AD д�
 ms.topic: how-to
 ms.date: 01/28/2020
 ms.custom: has-adal-ref
-ms.openlocfilehash: a8601c69c37e973118a7ec9521070864caffb101
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: 7daf26d7c52e07be999bb93edd6fe694f79d1be2
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86170315"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87032465"
 ---
 # <a name="authenticate-batch-service-solutions-with-active-directory"></a>Аутентификация решений пакетной службы с помощью Active Directory
 
@@ -193,7 +193,7 @@ ms.locfileid: "86170315"
 }
 ```
 
-Дополнительные сведения о создании настраиваемой роли см. в статье [Настраиваемые роли в Azure](../role-based-access-control/custom-roles.md).
+Общие сведения о создании настраиваемой роли см. в статье [пользовательские роли Azure](../role-based-access-control/custom-roles.md).
 
 ### <a name="get-the-tenant-id-for-your-azure-active-directory"></a>Получение идентификатора клиента для Azure Active Directory
 

@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 02/28/2018
-ms.openlocfilehash: c18604a9f4b95f4b586efaf3201dd0a679d8d316
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9b306bc55c97b977d0f06fa3e7a56f734f2f9db9
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "60342616"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87030646"
 ---
 # <a name="azure-database-for-mysql-videos"></a>Видеоролики, посвященные базе данных Azure для MySQL
 
@@ -19,7 +19,7 @@ ms.locfileid: "60342616"
 
 >[!VIDEO https://channel9.msdn.com/Events/Connect/2017/T147/player]
 
-База данных Azure для PostgreSQL и база данных Azure для MySQL объединяют ядра СУБД Community Edition и возможности полностью управляемой службы. Это позволяет сосредоточиться на приложениях вместо необходимости управлять базой данных. Просмотрите видео, чтобы получить краткий обзор преимуществ использования этой службы и увидеть некоторые из возможностей в действии.
+База данных Azure для PostgreSQL и база данных Azure для MySQL объединяют ядра СУБД Community Edition и возможности полностью управляемой службы. Это позволяет сосредоточиться на приложениях вместо необходимости управлять базой данных. Просмотрите видео, чтобы получить краткий обзор преимуществ использования этой службы и увидеть некоторые из возможностей в действии. См. статью создание [базы данных Azure для PostgreSQL](https://azure.microsoft.com/resources/videos/create-an-azure-database-for-postgresql-server-in-the-azure-portal) и [базы данных Azure для MySQL](https://azure.microsoft.com/resources/videos/create-an-azure-database-for-mysql-server-by-using-the-azure-portal).
 
 [Близкое знакомство с возможностями управляемых служб для MySQL и PostgreSQL](https://channel9.msdn.com/Events/Connect/2017/T148)
 

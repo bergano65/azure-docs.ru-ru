@@ -11,11 +11,12 @@ author: vaidyas
 ms.reviewer: larryfr
 ms.date: 03/06/2020
 ms.custom: tracking-python
-ms.openlocfilehash: 3afe5d0993f7e647cbae1281cb9e7387df6e2f50
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b2f42729b97f4a02e549766dc816db8361b3b8e6
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84560408"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87030935"
 ---
 # <a name="deploy-a-machine-learning-model-to-azure-functions-preview"></a>Развертывание модели машинного обучения в функциях Azure (Предварительная версия)
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-basic-enterprise-sku.md)]
@@ -55,6 +56,7 @@ ms.locfileid: "84560408"
     >
     > По умолчанию при упаковке для функций входные данные обрабатываются как текст. Если вы заинтересованы в использовании необработанных байт входных данных (например, для триггеров BLOB-объектов), следует использовать [амлрекуест, чтобы принимать необработанные данные](https://docs.microsoft.com/azure/machine-learning/how-to-deploy-and-where#binary-data).
 
+Дополнительные сведения о скрипте входа см. в разделе [Определение кода оценки](https://docs.microsoft.com/azure/machine-learning/how-to-deploy-and-where#script) .
 
 * **Зависимости**, такие как вспомогательные скрипты или пакеты Python или Conda, необходимые для запуска сценария записи или модели
 
@@ -293,7 +295,7 @@ print(blob.location)
 
 Дополнительные сведения об использовании триггеров больших двоичных объектов см. в статье [Создание функции, активируемой с помощью хранилища BLOB-объектов Azure](/azure/azure-functions/functions-create-storage-blob-triggered-function) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Научитесь настраивать приложение функций в документации по [функциям](/azure/azure-functions/functions-create-function-linux-custom-image) .
 * Дополнительные сведения о службе хранилища BLOB-объектов см. в статье триггеры [хранилища BLOB-объектов Azure](https://docs.microsoft.com/azure/azure-functions/functions-bindings-storage-blob).

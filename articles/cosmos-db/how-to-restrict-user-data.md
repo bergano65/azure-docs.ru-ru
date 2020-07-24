@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 12/9/2019
 ms.author: tvoellm
-ms.openlocfilehash: 88899dc697839b16c2b0cd24ac9233f87da26b41
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 16452337eeda86a9b019897954179bfe6db6e1b2
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85261228"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87031998"
 ---
 # <a name="restrict-user-access-to-data-operations-only"></a>Ограничение доступа пользователей только операциями с данными
 
@@ -35,10 +35,10 @@ ms.locfileid: "85261228"
 > Чтобы выполнить команды в следующих разделах, необходимо установить Azure PowerShell Module 3.0.0 или более поздней версии, а также [роль владельца Azure](../role-based-access-control/built-in-roles.md#owner) в подписке, которую вы пытаетесь изменить.
 
 В сценариях PowerShell в следующих разделах Замените следующие заполнители значениями, характерными для вашей среды:
-- `$MySubscriptionId`— Идентификатор подписки, содержащий учетную запись Azure Cosmos, в которой необходимо ограничить разрешения. Например: `e5c8766a-eeb0-40e8-af56-0eb142ebf78e`.
-- `$MyResourceGroupName`— Группа ресурсов, содержащая учетную запись Azure Cosmos. Например: `myresourcegroup`.
-- `$MyAzureCosmosDBAccountName`— Имя учетной записи Azure Cosmos. Например: `mycosmosdbsaccount`.
-- `$MyUserName`— Имя входа ( username@domain ) пользователя, для которого необходимо ограничить доступ. Например: `cosmosdbuser@contoso.com`.
+- `$MySubscriptionId`— Идентификатор подписки, содержащий учетную запись Azure Cosmos, в которой необходимо ограничить разрешения. Например, так: `e5c8766a-eeb0-40e8-af56-0eb142ebf78e`.
+- `$MyResourceGroupName`— Группа ресурсов, содержащая учетную запись Azure Cosmos. Например, так: `myresourcegroup`.
+- `$MyAzureCosmosDBAccountName`— Имя учетной записи Azure Cosmos. Например, так: `mycosmosdbsaccount`.
+- `$MyUserName`— Имя входа ( username@domain ) пользователя, для которого необходимо ограничить доступ. Например, так: `cosmosdbuser@contoso.com`.
 
 ## <a name="select-your-azure-subscription"></a>Выбор подписки Azure
 
@@ -51,7 +51,7 @@ Select-AzSubscription $MySubscriptionId
 
 ## <a name="create-the-custom-azure-active-directory-role"></a>Создание настраиваемой роли Azure Active Directory
 
-Следующий скрипт создает назначение роли Azure Active Directory с доступом только для ключа для учетных записей Azure Cosmos. Эта роль основана на [пользовательских ролях для ресурсов Azure](../role-based-access-control/custom-roles.md) и [детализированных действиях для Azure Cosmos DB](../role-based-access-control/resource-provider-operations.md#microsoftdocumentdb). Эти роли и действия являются частью `Microsoft.DocumentDB` пространства имен Azure Active Directory.
+Следующий скрипт создает назначение роли Azure Active Directory с доступом только для ключа для учетных записей Azure Cosmos. Роль основана на [пользовательских ролях Azure](../role-based-access-control/custom-roles.md) и [детализированных действиях для Azure Cosmos DB](../role-based-access-control/resource-provider-operations.md#microsoftdocumentdb). Эти роли и действия являются частью `Microsoft.DocumentDB` пространства имен Azure Active Directory.
 
 1. Сначала создайте документ JSON `AzureCosmosKeyOnlyAccess.json` с именем со следующим содержимым:
 
@@ -94,7 +94,7 @@ $cdba.Properties.disableKeyBasedMetadataWriteAccess="True"
 $cdba | Set-AzResource -Force
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения об [управлении доступом на основе ролей Cosmos DB](role-based-access-control.md)
 - Получите общие сведения о [безопасном доступе к данным в Cosmos DB](secure-access-to-data.md)

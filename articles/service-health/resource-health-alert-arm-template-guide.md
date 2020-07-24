@@ -3,12 +3,12 @@ title: Шаблон для создания оповещений Работос�
 description: Создание оповещений, которые уведомляют о том, когда ресурсы Azure стали недоступны, программными средствами.
 ms.topic: conceptual
 ms.date: 9/4/2018
-ms.openlocfilehash: 18a3b2df2d159d2903c69debd79cccfc6d0af63e
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 399c37f123d06e251514d0cafc3c1c4918ce3edd
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86255886"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87037939"
 ---
 # <a name="configure-resource-health-alerts-using-resource-manager-templates"></a>Настройка оповещений о работоспособности ресурсов с помощью шаблонов Resource Manager
 
@@ -25,7 +25,7 @@ ms.locfileid: "86255886"
 
 Чтобы следовать инструкциям на этой странице, необходимо заранее сделать следующее:
 
-1. Необходимо установить [модуль Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-Az-ps)
+1. Необходимо установить [модуль Azure PowerShell](/powershell/azure/install-az-ps)
 2. [Создать или повторно использовать группу действий](../azure-monitor/platform/action-groups.md), настроенную на уведомление.
 
 ## <a name="instructions"></a>Инструкции
@@ -454,5 +454,5 @@ ms.locfileid: "86255886"
 
 
 Создание оповещений службы "Работоспособность служб":
--  [Создание оповещений журнала действий для уведомлений службы](../azure-monitor/platform/alerts-activity-log-service-notifications.md) 
+-  [Создание оповещений журнала действий для уведомлений службы](./alerts-activity-log-service-notifications-portal.md) 
 -  [Схема событий журнала действий Azure](../azure-monitor/platform/activity-log-schema.md)

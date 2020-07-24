@@ -1,44 +1,47 @@
 ---
-title: Требования к данным Azure AD SSPR — Azure Active Directory
-description: Требования к данным для самостоятельного сброса пароля Azure AD и информация о том, как их выполнить
+title: Предварительное заполнение контактной информации для самостоятельного сброса пароля — Azure Active Directory
+description: Узнайте, как предварительно заполнить контактные данные пользователей Azure Active Directory самостоятельного сброса пароля (SSPR), чтобы они могли использовать эту функцию без завершения процесса регистрации.
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 12/09/2019
+ms.date: 07/17/2020
 ms.author: iainfou
 author: iainfoulds
 manager: daveba
-ms.reviewer: sahenry
+ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 42f7e120745357d3bd5735cca568bdd6971ea061
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 116fa2a4c71fc8ebc67387cf02090bbd664b862a
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80652356"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87035389"
 ---
-# <a name="deploy-password-reset-without-requiring-end-user-registration"></a>Развертывание сброса пароля без регистрации пользователя
+# <a name="pre-populate-user-authentication-contact-information-for-azure-active-directory-self-service-password-reset-sspr"></a>Предварительное заполнение контактных данных для проверки подлинности пользователя для Azure Active Directory самостоятельного сброса пароля (SSPR)
 
-Для развертывания функции самостоятельного сброса пароля (SSPR) в Azure Active Directory (Azure AD) нужно указать данные проверки подлинности. В некоторых организациях пользователи вводят данные проверки подлинности самостоятельно. Другие организации предпочитают выполнять синхронизацию с данными, которые уже существуют в Active Directory. Эти синхронизированные данные становятся доступными для Azure AD и SSPR без вмешательства пользователя, если вы отвечаете следующим требованиям.
+Чтобы использовать Azure Active Directory (Azure AD) самостоятельный сброс пароля (SSPR), необходимо наличие контактной информации для проверки подлинности пользователя. В некоторых организациях пользователи регистрируют свои данные для проверки подлинности самостоятельно. Другие организации предпочитают синхронизировать данные проверки подлинности, которые уже существуют в домен Active Directory Services (AD DS). Эти синхронизированные данные становятся доступными для Azure AD и SSPR без вмешательства пользователя. Если пользователям необходимо изменить или сбросить пароль, они могут сделать это, даже если они ранее не зарегистрировали свои контактные данные.
 
-* правильно отформатировать данные в локальном каталоге;
-* настроить [Azure AD Connect, используя стандартные параметры](../hybrid/how-to-connect-install-express.md).
+Вы можете предварительно заполнить контактную информацию для проверки подлинности, если вы отвечаете следующим требованиям.
 
-Для правильной работы номера телефонов должны быть указаны в формате *+код_страны номер_телефона*. Например, +1 4255551234.
+* Вы правильно отформатируете данные в локальном каталоге.
+* Вы настроили [Azure AD Connect](../hybrid/how-to-connect-install-express.md) для клиента Azure AD.
+
+Номера телефонов должны быть в формате *+ Каунтрикоде PhoneNumber*, например *+ 1 4251234567*.
 
 > [!NOTE]
-> Между кодом страны и номером телефона должен быть пробел.
+> Между кодом страны и номером телефона должно быть пробела.
 >
-> Функция сброса пароля не поддерживает добавочные номера. Даже добавочные номера в формате +1 4255551234X12345 будут удаляться.
+> Функция сброса пароля не поддерживает добавочные номера. Даже добавочные номера в формате *+1 4251234567X12345* будут удаляться.
 
 ## <a name="fields-populated"></a>Заполненные поля
 
-Если вы используете параметры по умолчанию, в Azure AD Connect выполняются следующие сопоставления.
+Если вы используете параметры по умолчанию в Azure AD Connect, то для заполнения контактной информации для проверки подлинности для SSPR будут выполнены следующие сопоставления:
 
-| Локальная служба Active Directory | Azure AD |
-| --- | --- |
-| TelephoneNumber | Рабочий телефон |
-| mobile | Мобильный телефон |
+| Локальная служба Active Directory | Azure AD     |
+|------------------------------|--------------|
+| TelephoneNumber              | Рабочий телефон |
+| mobile                       | Мобильный телефон |
 
 После того как пользователь проверит свой номер мобильного телефона, в поле *Телефон* в разделе **Контактная информация для проверки подлинности** в Azure AD также заносится этот номер.
 
@@ -48,10 +51,12 @@ ms.locfileid: "80652356"
 
 ![Контактная информация для проверки подлинности пользователя в Azure AD][Contact]
 
-* Если поле " **Телефон** " заполнено и в политике SSPR включен **мобильный телефон** , он увидит это число на странице регистрации сброса пароля и в ходе рабочего процесса сброса пароля.
-* Поле **дополнительного телефона** не используется для сброса пароля.
-* Если поле **электронной почты** заполнено и в политике SSPR включена **Электронная почта** , пользователь увидит это сообщение на странице регистрации сброса пароля и в ходе рабочего процесса сброса пароля.
-* Если поле " **дополнительный адрес электронной почты** " заполнено и в политике SSPR включена **Электронная почта** , пользователь **не** увидит это сообщение на странице регистрации сброса пароля, но он увидит его во время рабочего процесса сброса пароля.
+Следующие рекомендации относятся к контактным сведениям для проверки подлинности:
+
+* Если поле " *Телефон* " заполнено и в политике SSPR включен *мобильный телефон* , он увидит это число на странице регистрации сброса пароля и в ходе рабочего процесса сброса пароля.
+* Поле *дополнительного телефона* не используется для сброса пароля.
+* Если поле *электронной почты* заполнено и в политике SSPR включена *Электронная почта* , пользователь увидит это сообщение на странице регистрации сброса пароля и в ходе рабочего процесса сброса пароля.
+* Если поле " *дополнительный адрес электронной почты* " заполнено и в политике SSPR включена *Электронная почта* , пользователь не увидит это сообщение на странице регистрации сброса пароля, но он увидит его во время рабочего процесса сброса пароля.
 
 ## <a name="security-questions-and-answers"></a>Контрольные вопросы и ответы на них
 
@@ -65,19 +70,25 @@ ms.locfileid: "80652356"
 * **Адрес электронной почты для проверки подлинности**
 * **Контрольные вопросы и ответы на них**
 
-Если вы указали значение для **мобильного телефона** или **альтернативного адреса электронной почты**, пользователи могут немедленно использовать эти значения для сброса паролей, даже если они не зарегистрированы для службы. Кроме того, эти значения будут отображаться для пользователей при первой регистрации, и они смогут изменить их при необходимости. После успешной регистрации эти значения сохраняются в полях **Телефон для проверки** подлинности и **адрес электронной почты для проверки подлинности** соответственно.
+Если вы указали значение для *мобильного телефона* или *альтернативного адреса электронной почты*, пользователи могут сразу же использовать эти значения для сброса паролей, даже если они не зарегистрированы для службы.
+
+Пользователи также видят эти значения при первой регистрации, а также могут изменить их при необходимости. После успешной регистрации эти значения сохраняются в полях *Телефон для проверки* подлинности и *адрес электронной почты для проверки подлинности* соответственно.
 
 ## <a name="set-and-read-the-authentication-data-through-powershell"></a>Установка и чтение данных проверки подлинности с помощью PowerShell
 
 С помощью PowerShell можно заполнить следующие поля:
 
-* **Дополнительный адрес электронной почты**
-* **Мобильный телефон**
-* **Рабочий телефон** — его можно указать, только если это значение не синхронизируется с локальным каталогом.
+* *Дополнительный адрес электронной почты*
+* *Мобильный телефон*;
+* *Рабочий телефон*.
+    * Можно задать, только если синхронизация выполняется с локальным каталогом.
+
+> [!IMPORTANT]
+> Существует известная нехватка четности в функциях команд между PowerShell v1 и PowerShell v2. [Microsoft Graph REST API (бета-версия) для методов проверки подлинности](/graph/api/resources/authenticationmethods-overview) — это текущий инженерный фокус для обеспечения современного взаимодействия.
 
 ### <a name="use-powershell-version-1"></a>Использование PowerShell версии 1
 
-Чтобы начать работу, необходимо [скачать и установить модуль Azure AD PowerShell](https://msdn.microsoft.com/library/azure/jj151815.aspx#bkmk_installmodule). После его установки вы можете выполнить следующие шаги по настройке каждого поля.
+Чтобы приступить к работе, [скачайте и установите модуль Azure AD PowerShell](https://msdn.microsoft.com/library/azure/jj151815.aspx#bkmk_installmodule). После установки выполните следующие действия, чтобы настроить каждое поле.
 
 #### <a name="set-the-authentication-data-with-powershell-version-1"></a>Настройка данных проверки подлинности с помощью PowerShell версии 1
 
@@ -85,10 +96,10 @@ ms.locfileid: "80652356"
 Connect-MsolService
 
 Set-MsolUser -UserPrincipalName user@domain.com -AlternateEmailAddresses @("email@domain.com")
-Set-MsolUser -UserPrincipalName user@domain.com -MobilePhone "+1 1234567890"
-Set-MsolUser -UserPrincipalName user@domain.com -PhoneNumber "+1 1234567890"
+Set-MsolUser -UserPrincipalName user@domain.com -MobilePhone "+1 4251234567"
+Set-MsolUser -UserPrincipalName user@domain.com -PhoneNumber "+1 4252345678"
 
-Set-MsolUser -UserPrincipalName user@domain.com -AlternateEmailAddresses @("email@domain.com") -MobilePhone "+1 1234567890" -PhoneNumber "+1 1234567890"
+Set-MsolUser -UserPrincipalName user@domain.com -AlternateEmailAddresses @("email@domain.com") -MobilePhone "+1 4251234567" -PhoneNumber "+1 4252345678"
 ```
 
 #### <a name="read-the-authentication-data-with-powershell-version-1"></a>Считывание данных проверки подлинности с помощью PowerShell версии 1
@@ -115,9 +126,9 @@ Get-MsolUser -UserPrincipalName user@domain.com | select -Expand StrongAuthentic
 
 ### <a name="use-powershell-version-2"></a>Использование PowerShell версии 2
 
-Чтобы начать работу, необходимо [скачать и установить модуль Azure AD PowerShell версии 2](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0). После его установки вы можете выполнить следующие шаги по настройке каждого поля.
+Чтобы приступить к работе, [скачайте и установите модуль PowerShell для Azure AD версии 2](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0).
 
-Чтобы быстро установить одну из последних версий PowerShell, поддерживающую Install-Module, выполните приведенные ниже команды. (Первая строка проверяет, установлен ли модуль.)
+Чтобы быстро установить из последних версий PowerShell, поддерживающих `Install-Module` , выполните следующие команды. В первой строке проверяется, установлен ли модуль.
 
 ```PowerShell
 Get-Module AzureADPreview
@@ -125,16 +136,18 @@ Install-Module AzureADPreview
 Connect-AzureAD
 ```
 
+После установки модуля выполните следующие действия, чтобы настроить каждое поле.
+
 #### <a name="set-the-authentication-data-with-powershell-version-2"></a>Настройка данных проверки подлинности с помощью PowerShell версии 2
 
 ```PowerShell
 Connect-AzureAD
 
 Set-AzureADUser -ObjectId user@domain.com -OtherMails @("email@domain.com")
-Set-AzureADUser -ObjectId user@domain.com -Mobile "+1 2345678901"
-Set-AzureADUser -ObjectId user@domain.com -TelephoneNumber "+1 1234567890"
+Set-AzureADUser -ObjectId user@domain.com -Mobile "+1 4251234567"
+Set-AzureADUser -ObjectId user@domain.com -TelephoneNumber "+1 4252345678"
 
-Set-AzureADUser -ObjectId user@domain.com -OtherMails @("emails@domain.com") -Mobile "+1 1234567890" -TelephoneNumber "+1 1234567890"
+Set-AzureADUser -ObjectId user@domain.com -OtherMails @("emails@domain.com") -Mobile "+1 4251234567" -TelephoneNumber "+1 4252345678"
 ```
 
 #### <a name="read-the-authentication-data-with-powershell-version-2"></a>Считывание данных проверки подлинности с помощью PowerShell версии 2
@@ -151,16 +164,9 @@ Get-AzureADUser | select DisplayName,UserPrincipalName,otherMails,Mobile,Telepho
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Как развернуть самостоятельный сброс пароля?](howto-sspr-deployment.md)
-* [Сброс или изменение пароля](../user-help/active-directory-passwords-update-your-own-password.md)
-* [Регистрация для самостоятельного сброса пароля](../user-help/active-directory-passwords-reset-register.md)
-* [Требования к лицензированию самостоятельного сброса пароля в Azure AD](concept-sspr-licensing.md)
-* [Доступные пользователям методы проверки подлинности](concept-sspr-howitworks.md#authentication-methods)
-* [Параметры политики для SSPR](concept-sspr-policy.md)
-* [Что такое обратная запись паролей и каково ее назначение](howto-sspr-writeback.md)
-* [Как сообщать о действиях в SSPR](howto-sspr-reporting.md)
-* [Обзор всех параметров SSPR и их значение](concept-sspr-howitworks.md)
-* [Как устранить неполадки самостоятельного сброса пароля](active-directory-passwords-troubleshoot.md)
-* [Вопросы, не вошедшие в другие статьи](active-directory-passwords-faq.md)
+После того как контактные данные для проверки подлинности предварительно заполнены для пользователей, следуйте указаниям в следующем руководстве по включению самостоятельного сброса пароля.
+
+> [!div class="nextstepaction"]
+> [Включение самостоятельного сброса пароля Azure AD](tutorial-enable-sspr.md)
 
 [Contact]: ./media/howto-sspr-authenticationdata/user-authentication-contact-info.png "Глобальные администраторы могут изменять контактные данные для аутентификации пользователя"

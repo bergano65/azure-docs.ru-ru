@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
-ms.openlocfilehash: 50c52369a5a957a4dd6279cac5079e2dea023106
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1d264b0ae0b06079a45cd1e862144a6920133901
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "61463409"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87038449"
 ---
 # <a name="sample-presets-for-media-encoder-standard-mes"></a>Предустановки задач для Media Encoder Standard (MES)
 
@@ -29,7 +29,7 @@ ms.locfileid: "61463409"
 Службы мультимедиа полностью поддерживают настройку всех значений в предустановках в соответствии с конкретными требованиями к кодированию. Если вам необходимо изменить предустановку кодирования, используйте одну из предустановок системы, приведенных в этом разделе, в качестве шаблона для своей настраиваемой конфигурации. Описание каждого элемента в этих предустановках и его допустимых значений см. в разделе [Схема Media Encoder Standard](media-services-mes-schema.md).  
   
 > [!NOTE]
->  При использовании предустановки для кодирования видео в формате 4K необходимо получить зарезервированные единицы типа `S3`. Дополнительные сведения см. в статье [Масштабирование кодирования](https://azure.microsoft.com/documentation/articles/media-services-portal-encoding-units).  
+>  При использовании предустановки для кодирования видео в формате 4K необходимо получить зарезервированные единицы типа `S3`. Дополнительные сведения см. в статье [Масштабирование кодирования](./media-services-scale-media-processing-overview.md).  
 
 #### <a name="video-rotation-default-setting-in-presets"></a>Настройка по умолчанию в предустановках: поворот видео
 При работе с Media Encoder Standard поворот видео включен по умолчанию. Если видео записано на мобильном устройстве в книжной ориентации, эти предустановки повернут его в альбомную ориентацию до кодирования.
@@ -86,4 +86,4 @@ ms.locfileid: "61463409"
   
  [H264 Single Bitrate Low Quality SD для Android](media-services-mes-preset-H264-Single-Bitrate-Low-Quality-SD-for-Android.md). Данная предустановка создает отдельный MP4-файл со скоростью 56 Кбит/с и стереофоническим звуком в формате AAC.  
   
- Дополнительные сведения о кодировщиках служб мультимедиа см. в разделе [Обзор и сравнение кодировщиков мультимедиа Azure по запросу](https://azure.microsoft.com/documentation/articles/media-services-encode-asset/).
+ Дополнительные сведения о кодировщиках служб мультимедиа см. в разделе [Обзор и сравнение кодировщиков мультимедиа Azure по запросу](./media-services-encode-asset.md).

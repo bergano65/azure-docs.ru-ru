@@ -6,12 +6,13 @@ ms.author: brendm
 ms.service: spring-cloud
 ms.topic: conceptual
 ms.date: 04/23/2020
-ms.openlocfilehash: 8d002fae52fec1fafb2ad8e63bd8e3b779a1537c
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.custom: devx-track-java
+ms.openlocfilehash: 2e001e5e927d9d4c5dc4c3eb74f7b5ad33617b99
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85984829"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87037582"
 ---
 # <a name="security-controls-for-azure-spring-cloud-service"></a>Средства управления безопасностью для службы Azure Spring Cloud
 Средства управления безопасностью встроены в облачную службу Azure весны.
@@ -24,10 +25,10 @@ ms.locfileid: "85984829"
 |:-------------|:-------|:-------------------------------|:----------------------|
 | Шифрование неактивных на стороне сервера: ключи, управляемые корпорацией Майкрософт | Да | Источник и артефакты, загруженные пользователем, параметры сервера конфигурации, параметры приложения и данные в постоянном хранилище хранятся в службе хранилища Azure, которая автоматически шифрует неактивных данных.<br><br>Кэш сервера конфигурации, двоичные файлы среды выполнения, созданные из отправленного источника, а журналы приложений в течение времени существования приложения, сохраняются на диске, управляемом Azure, который автоматически шифрует неактивных данных.<br><br>Образы контейнеров, созданные из отправленных пользователем источников, сохраняются в реестре контейнеров Azure, который автоматически шифрует неактивных содержимое образа. | [Шифрование службы хранилища Azure для неактивных данных](https://docs.microsoft.com/azure/storage/common/storage-service-encryption)<br><br>[Шифрование управляемых дисков Azure на стороне сервера](https://docs.microsoft.com/azure/virtual-machines/linux/disk-encryption)<br><br>[Хранение образа контейнера в реестре контейнеров Azure](https://docs.microsoft.com/azure/container-registry/container-registry-storage) |
 | Временное шифрование | Да | Общедоступные конечные точки пользовательского приложения по умолчанию используют HTTPS для входящего трафика. |  |
-| Вызовы API в зашифрованном виде | Да | Вызовы управления для настройки облачной службы Azure весны выполняются через вызовы Azure Resource Manager по протоколу HTTPS. | [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/) |
+| Вызовы API в зашифрованном виде | Да | Вызовы управления для настройки облачной службы Azure весны выполняются через вызовы Azure Resource Manager по протоколу HTTPS. | [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/) |
 
 **Управление безопасностью доступа к сети**
 
 | Управление безопасностью | Да/нет | Примечания | Документация |
 |:-------------|:-------|:-------------------------------|:----------------------|
-| Тег службы | Да | Используйте тег службы **азуреспрингклауд** , чтобы определить исходящие элементы управления доступом к сети в [группах безопасности сети](https://docs.microsoft.com/azure/virtual-network/security-overview#security-rules) или [брандмауэре Azure](https://docs.microsoft.com/azure/firewall/service-tags), чтобы разрешить трафик в облачные приложения Azure весны.<br><br>*Примечание.* Сейчас только новый экземпляр облачной службы Azure весны, созданный после 2020/07/07, поддерживает тег службы **азуреспрингклауд** . | [Теги служб](https://docs.microsoft.com/azure/virtual-network/service-tags-overview) |
+| Тег службы | Да | Используйте тег службы **азуреспрингклауд** , чтобы определить исходящие элементы управления доступом к сети в [группах безопасности сети](https://docs.microsoft.com/azure/virtual-network/security-overview#security-rules) или [брандмауэре Azure](https://docs.microsoft.com/azure/firewall/service-tags), чтобы разрешить трафик в облачные приложения Azure весны.<br><br>*Примечание.* Сейчас только новый экземпляр облачной службы Azure весны, созданный после 2020/07/14, поддерживает тег службы **азуреспрингклауд** . | [Теги служб](https://docs.microsoft.com/azure/virtual-network/service-tags-overview) |

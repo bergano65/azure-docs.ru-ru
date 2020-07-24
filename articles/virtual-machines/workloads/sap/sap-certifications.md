@@ -16,16 +16,16 @@ ms.workload: infrastructure-services
 ms.date: 04/21/2020
 ms.author: juergent
 ms.custom: ''
-ms.openlocfilehash: df80113b85153f4e52bcbefa7b33dab9da296173
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f78d5f839c5dd7816ae28eeed175503427abb43c
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82084827"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87035848"
 ---
 # <a name="sap-certifications-and-configurations-running-on-microsoft-azure"></a>Сертификаты и конфигурации SAP на платформе Microsoft Azure
 
-Компания SAP и корпорация Майкрософт имеют долгую историю плодотворного сотрудничества, которое обеспечивает взаимные преимущества для их клиентов. Корпорация Майкрософт регулярно обновляет свою платформу и отправляет компании SAP сведения о новых сертификатах. Тем самым гарантируется, что Microsoft Azure остается лучшей платформой для выполнения рабочих нагрузок SAP. В следующих таблицах представлены поддерживаемые конфигурации Azure и список сертификатов SAP, который регулярно пополняется. Этот список содержит обзор, который может отклоняться от официальных списков SAP. Сведения о том, как получить подробные данные, описаны в статье [что такое программное обеспечение SAP поддерживается для развертываний Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-supported-product-on-azure) .
+Компания SAP и корпорация Майкрософт имеют долгую историю плодотворного сотрудничества, которое обеспечивает взаимные преимущества для их клиентов. Корпорация Майкрософт регулярно обновляет свою платформу и отправляет компании SAP сведения о новых сертификатах. Тем самым гарантируется, что Microsoft Azure остается лучшей платформой для выполнения рабочих нагрузок SAP. В следующих таблицах представлены поддерживаемые конфигурации Azure и список сертификатов SAP, который регулярно пополняется. Этот список содержит обзор, который может отклоняться от официальных списков SAP. Сведения о том, как получить подробные данные, описаны в статье [что такое программное обеспечение SAP поддерживается для развертываний Azure](./sap-supported-product-on-azure.md) .
 
 ## <a name="sap-hana-certifications"></a>Сертификаты SAP HANA
 Справочные материалы:
@@ -54,7 +54,7 @@ ms.locfileid: "82084827"
 | --- | --- | --- | --- |
 | ПО SAP Business Suite | Windows, SUSE Linux Enterprise, Red Hat Enterprise Linux, Oracle Linux |SQL Server, Oracle (только Windows и Oracle Linux), DB2, SAP ASE |От A5 до A11, D11 до D14, DS11 в DS14, DS11_v2ся к DS15_v2, GS1 до GS5, D2s_v3 D64s_v3, D2as_v4 D64as_v4, M64s, M64ms, M128s, M128ms, M64ls, M32ls, M32ts, E2s_v3, E64s_v3, E2as_v4, E64as_v4 |
 | SAP Business All-in-One | Windows, SUSE Linux Enterprise, Red Hat Enterprise Linux, Oracle Linux |SQL Server, Oracle (только Windows и Oracle Linux), DB2, SAP ASE |От A5 до A11, D11 до D14, DS11 в DS14, DS11_v2ся к DS15_v2, GS1 до GS5, D2s_v3 D64s_v3, D2as_v4 D64as_v4, M64s, M64ms, M128s, M128ms, M64ls, M32ls, M32ts, E2s_v3, E64s_v3, E2as_v4, E64as_v4 |
-| Бизнес-аналитика SAP BusinessObjects | Windows |Недоступно |От A5 до A11, D11 до D14, DS11 в DS14, DS11_v2ся к DS15_v2, GS1 до GS5, D2s_v3 D64s_v3, D2as_v4 D64as_v4, M64s, M64ms, M128s, M128ms, M64ls, M32ls, M32ts, E2s_v3, E64s_v3, E2as_v4, E64as_v4 |
+| Бизнес-аналитика SAP BusinessObjects | Windows |Н/Д |От A5 до A11, D11 до D14, DS11 в DS14, DS11_v2ся к DS15_v2, GS1 до GS5, D2s_v3 D64s_v3, D2as_v4 D64as_v4, M64s, M64ms, M128s, M128ms, M64ls, M32ls, M32ts, E2s_v3, E64s_v3, E2as_v4, E64as_v4 |
 | SAP NetWeaver | Windows, SUSE Linux Enterprise, Red Hat Enterprise Linux, Oracle Linux |SQL Server, Oracle (только Windows и Oracle Linux), DB2, SAP ASE |От A5 до A11, D11 до D14, DS11 в DS14, DS11_v2ся к DS15_v2, GS1 до GS5, D2s_v3 D64s_v3, D2as_v4 D64as_v4, M64s, M64ms, M128s, M128ms, M64ls, M32ls, M32ts, E2s_v3, E64s_v3, E2as_v4, E64as_v4 |
 
 ## <a name="other-sap-workload-supported-on-azure"></a>Другие рабочие нагрузки SAP, поддерживаемые в Azure

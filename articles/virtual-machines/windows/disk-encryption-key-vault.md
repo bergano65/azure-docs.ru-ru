@@ -8,12 +8,12 @@ author: msmbaldwin
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: ec0862a0d4de644630c972387f01feaa1a327e67
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: fa87fc874be5e60d018b5663b4655d069930ab88
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86500758"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87036154"
 ---
 # <a name="creating-and-configuring-a-key-vault-for-azure-disk-encryption"></a>Создание и настройка хранилища ключей для службы "Шифрование дисков Azure"
 
@@ -25,7 +25,7 @@ ms.locfileid: "86500758"
 Создание и настройка хранилища ключей для использования со службой "Шифрование дисков Azure" состоит из трех этапов.
 
 > [!Note]
-> Необходимо выбрать параметр в параметрах политики доступа Azure Key Vault, чтобы разрешить доступ к шифрованию дисков Azure для шифрования тома.
+> Необходимо выбрать параметр в параметрах политики доступа Azure Key Vault, чтобы разрешить доступ к шифрованию дисков Azure для шифрования тома. Если брандмауэр включен в хранилище ключей, необходимо перейти на вкладку "сети" в хранилище ключей и разрешить доступ к доверенным службам Майкрософт. 
 
 1. Создание группы ресурсов при необходимости.
 2. Создание хранилища ключей. 
@@ -43,7 +43,7 @@ ms.locfileid: "86500758"
 
 ## <a name="install-tools-and-connect-to-azure"></a>Установка средств и подключение к Azure
 
-Действия, описанные в этой статье, можно выполнить с помощью [Azure CLI](/cli/azure/), [модуля Azure PowerShell Az](/powershell/azure/overview) или [портала Azure](https://portal.azure.com).
+Действия, описанные в этой статье, можно выполнить с помощью [Azure CLI](/cli/azure/), [модуля Azure PowerShell Az](/powershell/azure/) или [портала Azure](https://portal.azure.com).
 
 Доступ к порталу возможен через браузер, тогда как Azure CLI и Azure PowerShell нужно установить локально, как описано в статье [об установке средств для службы "Шифрование дисков Azure" для Windows ](disk-encryption-windows.md#install-tools-and-connect-to-azure).
 

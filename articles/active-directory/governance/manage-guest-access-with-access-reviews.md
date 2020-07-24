@@ -3,7 +3,7 @@ title: Управление гостевым доступом с помощью 
 description: Управление гостевыми пользователями как участниками группы или участниками, назначенными приложению, с помощью проверок доступа Azure Active Directory
 services: active-directory
 documentationcenter: ''
-author: msaburnley
+author: barclayn
 manager: daveba
 editor: markwahl-msft
 ms.service: active-directory
@@ -12,15 +12,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.subservice: compliance
-ms.date: 12/13/2018
-ms.author: ajburnle
+ms.date: 07/22/2020
+ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8bf2f9503ae704110786a1e73aec3da18c17e4ea
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 66f8020ec2561bf06716db0720a7ec4292f36eb3
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75932428"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87034128"
 ---
 # <a name="manage-guest-access-with-azure-ad-access-reviews"></a>Управление гостевым доступом с помощью проверок доступа Azure AD
 
@@ -32,7 +33,7 @@ ms.locfileid: "75932428"
 > [!NOTE]
 > В этой статье рассматривается проверка доступа гостевых пользователей. Если вы хотите проверять доступ всех пользователей, а не только гостей, то ознакомьтесь с разделом [Управление пользовательским доступом с помощью проверок доступа Azure AD](manage-user-access-with-access-reviews.md). Если вы хотите просмотреть членство пользователей в административных ролях, например Глобальный администратор, см. статью [Запуск проверки доступа в Azure AD privileged Identity Management](../privileged-identity-management/pim-how-to-start-security-review.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 - Azure AD Premium P2
 

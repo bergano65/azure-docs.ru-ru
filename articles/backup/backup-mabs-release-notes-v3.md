@@ -4,11 +4,12 @@ description: В этой статье содержатся сведения об
 ms.topic: conceptual
 ms.date: 06/03/2020
 ms.asset: 0c4127f2-d936-48ef-b430-a9198e425d81
-ms.openlocfilehash: 2f67b73612bd970c903b179a4a02c787ee0320b0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1f4900bb129ee67cd75d2b793f4179e3135569a6
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84629170"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87032567"
 ---
 # <a name="release-notes-for-microsoft-azure-backup-server"></a>Заметки о выпуске Microsoft Azure Backup Server
 
@@ -53,13 +54,13 @@ ms.locfileid: "84629170"
 
 **Обходной путь.** Выполните следующие действия для обновления до MABS версии 3 с помощью русского пакета установки:
 
-1. [Создайте резервную копию](https://docs.microsoft.com/sql/relational-databases/backup-restore/create-a-full-database-backup-sql-server?view=sql-server-2017#SSMSProcedure) базы данных SQL и удалите MABS версии 2 (выберите сохранение защищенных данных во время удаления).
+1. [Создайте резервную копию](/sql/relational-databases/backup-restore/create-a-full-database-backup-sql-server#SSMSProcedure) базы данных SQL и удалите MABS версии 2 (выберите сохранение защищенных данных во время удаления).
 2. Обновитесь до SQL 2017 (Enterprise) и удалите отчеты в рамках обновления.
-3. [Установите](https://docs.microsoft.com/sql/reporting-services/install-windows/install-reporting-services?view=sql-server-2017#install-your-report-server) SQL Server Reporting Services (SSRS).
-4. [Установите](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) SQL Server Management Studio (SSMS).
-5. Настройте отчетность с использованием параметров, как описано в разделе о [настройке SSRS с помощью SQL 2017](https://docs.microsoft.com/azure/backup/backup-azure-microsoft-azure-backup#upgrade-mabs).
+3. [Установка](/sql/reporting-services/install-windows/install-reporting-services#install-your-report-server) SQL Server Reporting Services (службы SSRS).
+4. [Установите](/sql/ssms/download-sql-server-management-studio-ssms) SQL Server Management Studio (SSMS).
+5. Настройте отчетность с использованием параметров, как описано в разделе о [настройке SSRS с помощью SQL 2017](./backup-azure-microsoft-azure-backup.md#upgrade-mabs).
 6. [Установите](backup-azure-microsoft-azure-backup.md) MABS версии 3.
-7. [Восстановите](https://docs.microsoft.com/sql/relational-databases/backup-restore/restore-a-database-backup-using-ssms?view=sql-server-2017) SQL с помощью SSMS и запустите средство DPM-Sync, как описано [здесь](https://docs.microsoft.com/system-center/dpm/back-up-the-dpm-server?view=sc-dpm-2019#using-dpmsync).
+7. [Восстановите](/sql/relational-databases/backup-restore/restore-a-database-backup-using-ssms) SQL с помощью SSMS и запустите средство DPM-Sync, как описано [здесь](/system-center/dpm/back-up-the-dpm-server?view=sc-dpm-2019#using-dpmsync).
 8. Обновите свойство DataBaseVersion в таблице dbo.tbl_DLS_GlobalSetting, используя следующую команду:
 
     ```sql
@@ -96,7 +97,7 @@ ms.locfileid: "84629170"
 
     Последние файлы отчетов можно найти по пути`<MABS Installation Directory>\Program Files\Microsoft Azure Backup Server\DPM\DPM\bin\DpmReports`
 
-    Например: `C:\Program Files\Microsoft Azure Backup Server\DPM\DPM\bin\DpmReports`
+    Пример: `C:\Program Files\Microsoft Azure Backup Server\DPM\DPM\bin\DpmReports`
 
     ![Замена файлов последними файлами отчетов](./media/backup-mabs-release-notes-v3/replace-files.png)
 
@@ -104,6 +105,6 @@ ms.locfileid: "84629170"
 
 1. После замены файлов перезапустите службы MABS и используйте файлы отчетов.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Новые возможности в MABS](backup-mabs-whats-new-mabs.md)

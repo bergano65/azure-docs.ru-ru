@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 05/28/2020
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 2d8d4c369cef8bf996628e8c89a424f04dcdbe71
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: abec9811cd407c1fab91cfb60412aabdd969690d
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84888072"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87036987"
 ---
 # <a name="object-replication-for-block-blobs-preview"></a>Репликация объектов для блочных BLOB-объектов (предварительная версия)
 
@@ -63,6 +63,8 @@ ms.locfileid: "84888072"
 - Центральная Франция
 - Восточная Канада
 - Центральная Канада
+- Восточная часть США 2
+- Центральная часть США
 
 Как исходная, так и целевая учетная запись должны находиться в одном из этих регионов, чтобы можно было использовать репликацию объектов. Учетные записи могут находиться в двух разных регионах.
 
@@ -74,7 +76,7 @@ ms.locfileid: "84888072"
 ### <a name="prerequisites-for-object-replication"></a>Необходимые условия для репликации объектов
 
 Для репликации объектов требуется, чтобы были включены следующие функции службы хранилища Azure. 
-- [Веб-канал изменений](storage-blob-change-feed.md)
+- [Канал изменений](storage-blob-change-feed.md)
 - [Управление версиями](versioning-overview.md)
 
 Перед настройкой репликации объектов включите необходимые ей компоненты. В исходной учетной записи должен быть включен канал изменений, а управление версиями BLOB-объектов должно быть включено как в исходной, так и в целевой учетной записи. Дополнительные сведения о включении этих функций см. в следующих статьях:

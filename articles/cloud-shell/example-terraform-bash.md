@@ -13,11 +13,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/15/2017
 ms.author: tarcher
-ms.openlocfilehash: 8bacadd8941131f608411e61cc15c120c1b2bc60
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-terraform
+ms.openlocfilehash: e13e6d9ac2f4600e41f221efd23997f712dffc54
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79458160"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87032091"
 ---
 # <a name="deploy-with-terraform-from-bash-in-azure-cloud-shell"></a>Развертывание с помощью Terraform и Bash в Azure Cloud Shell
 В этой статье описывается создание группы ресурсов с помощью [поставщика Terraform AzureRM](https://www.terraform.io/docs/providers/azurerm/index.html).
@@ -186,6 +188,6 @@ Destroy complete! Resources: 1 destroyed.
 
 Ресурс Azure успешно создан с помощью Terraform. Ознакомьтесь со следующими действиями, чтобы продолжить изучение Cloud Shell.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 [Microsoft AzureRM Provider](https://www.terraform.io/docs/providers/azurerm/#) (Поставщик Microsoft AzureRM)<br>
 [Краткое руководство по использованию Bash в Azure Cloud Shell](quickstart.md)

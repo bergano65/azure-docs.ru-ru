@@ -6,17 +6,19 @@ ms.author: brendm
 ms.service: spring-cloud
 ms.topic: conceptual
 ms.date: 05/20/2020
-ms.openlocfilehash: e932930e43e6131e8e1e82fe2f42246c967a19fe
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-java
+ms.openlocfilehash: 5cfc13700decf0176b283f5f1f9bd81503c1b10a
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84205945"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87037599"
 ---
 # <a name="manage-and-monitor-app-with-azure-spring-boot-actuator"></a>Администрирование и мониторинг приложений с помощью Azure Spring Boot Actuator
 
 После развертывания нового двоичного файла в приложении может потребоваться проверить функциональные возможности и просмотреть сведения о работающем приложении. В этой статье объясняется, как получить доступ к API из конечной точки теста, предоставляемой с помощью Azure Веснного облака, и предоставить готовые к работе функции для вашего приложения.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 В этой статье предполагается, что у вас есть пружинное приложение 2. x, которое может быть успешно развернуто и загружено в облачной службе Azure весны.  См [. раздел Краткое руководство. Запуск существующего облачного приложения Azure весны с помощью портал Azure](spring-cloud-quickstart-launch-app-portal.md)
 
 ## <a name="verify-app-through-test-endpoint"></a>Проверка приложения с помощью конечной точки теста
@@ -70,6 +72,6 @@ ms.locfileid: "84205945"
 
 Чтобы просмотреть все конечные точки встроенные, см. раздел [предоставление конечных точек](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html#production-ready-endpoints-exposing-endpoints) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Общие сведения о метриках для Azure Веснного облака](spring-cloud-concept-metrics.md)
 * [Основные сведения о состоянии приложения в Azure веснного облака](spring-cloud-concept-app-status.md))

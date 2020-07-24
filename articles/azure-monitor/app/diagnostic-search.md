@@ -3,11 +3,12 @@ title: Поиск в Azure Application Insights | Документация Ма
 description: Поиск и фильтрация необработанных данных телеметрии, отправляемых веб-приложением.
 ms.topic: conceptual
 ms.date: 07/30/2019
-ms.openlocfilehash: 8039a55784f63030f330d6c1e2061e99b8b63bbf
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7a264f25f92bed1b93848c323fd59eafd7b09215
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84695663"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87033621"
 ---
 # <a name="using-search-in-application-insights"></a>Поиск в Application Insights
 
@@ -147,4 +148,4 @@ ms.locfileid: "84695663"
 * [Создание сложных запросов в Analytics](../../azure-monitor/log-query/get-started-portal.md)
 * [Журналы, исключения и пользовательские средства диагностики для ASP.NET в Application Insights](../../azure-monitor/app/asp-net-trace-logs.md)
 * [Наблюдение за доступностью и скоростью реагирования веб-сайта](../../azure-monitor/app/monitor-web-app-availability.md)
-* [Устранение неполадок](../../azure-monitor/app/troubleshoot-faq.md)
+* [Устранение неполадок](../faq.md)

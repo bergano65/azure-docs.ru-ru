@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/22/2018
 ms.author: genli
-ms.openlocfilehash: 8600971ffd23b1c253e8de807d365c46409b37bc
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 4831a084153c28576cca7c40dfefeb8c5ff3c4e6
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86081457"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87036392"
 ---
 #  <a name="an-internal-error-occurs-when-you-try-to-connect-to-an-azure-vm-through-remote-desktop"></a>Внутренняя ошибка при попытке подключения к виртуальной Машине Azure через удаленный рабочий стол
 
@@ -33,7 +33,7 @@ ms.locfileid: "86081457"
 - не удается подключиться к удаленному компьютеру с этого компьютера. Повторите попытку подключения. Если проблема не исчезнет, ​​обратитесь к владельцу удаленного компьютера или к администратору сети.
 
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Эта проблема может возникать из-за следующих причин:
 
@@ -55,8 +55,7 @@ ms.locfileid: "86081457"
 
 #### <a name="step-1-check-the-rdp-port"></a>Шаг 1. Проверка порта RDP
 
-1. В экземпляре PowerShell используйте [netstat](https://docs.microsoft.com/windows-server/administration/windows-commands/netstat
-) для проверки того, используется ли порт 8080 другими приложениями.
+1. В экземпляре PowerShell используйте [netstat](/windows-server/administration/windows-commands/netstat) для проверки того, используется ли порт 8080 другими приложениями.
 
     ```powershell
     Netstat -anob |more
@@ -186,7 +185,7 @@ ms.locfileid: "86081457"
 
 #### <a name="attach-the-os-disk-to-a-recovery-vm"></a>Подключите диск ОС к виртуальной машине восстановления.
 
-1. [Подключите диск операционной системы к виртуальной машине восстановления](../windows/troubleshoot-recovery-disks-portal.md).
+1. [Подключите диск операционной системы к виртуальной машине восстановления](./troubleshoot-recovery-disks-portal-windows.md).
 2. После подключения диска ОС к виртуальной машине восстановления убедитесь, что в консоли управления дисками он помечен как **В сети**. Запишите или запомните букву диска, которая присвоена подключенному диску ОС.
 3. Установите подключение с помощью удаленного рабочего стола к виртуальной машине, используемой для восстановления.
 
@@ -299,4 +298,4 @@ ms.locfileid: "86081457"
     REG ADD "HKLM\BROKENSYSTEM\ControlSet002\Control\Terminal Server\WinStations\RDP-Tcp" /v fAllowSecProtocolNegotiation /t REG_DWORD /d 1 /f reg unload HKLM\BROKENSYSTEM
     ```
 
-5. [Отключите диск ОС и повторно создайте виртуальную машину](../windows/troubleshoot-recovery-disks-portal.md), а затем проверьте, устранена ли проблема.
+5. [Отключите диск ОС и повторно создайте виртуальную машину](./troubleshoot-recovery-disks-portal-windows.md), а затем проверьте, устранена ли проблема.

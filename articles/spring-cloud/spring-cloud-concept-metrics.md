@@ -6,12 +6,13 @@ ms.service: spring-cloud
 ms.topic: conceptual
 ms.date: 12/06/2019
 ms.author: brendm
-ms.openlocfilehash: 7ef7614b32dd88e804b1a74749ee87504f9cea40
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.custom: devx-track-java
+ms.openlocfilehash: 1fcec8b591192bba862bf91040e5d6ca1ef9bcd8
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86205467"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87037735"
 ---
 # <a name="understand-metrics-for-azure-spring-cloud"></a>Общие сведения о метриках для Azure Веснного облака
 
@@ -88,13 +89,13 @@ Azure Веснного облака предоставляет пять диаг
 
 ### <a name="error"></a>Ошибка
 >[!div class="mx-tdCol2BreakAll"]
->| Name (Имя) | Имя метрики пружинного выключателя | Единицы | Сведения |
+>| Имя | Имя метрики пружинного выключателя | Единица измерения | Подробности |
 >|----|----|----|------------|
->| Tomcat. Global. Error | Tomcat. Global. Error | Count | Количество ошибок, произошедших в обработанных запросах |
+>| Tomcat. Global. Error | Tomcat. Global. Error | Счетчик | Количество ошибок, произошедших в обработанных запросах |
 
 ### <a name="performance"></a>Производительность
 >[!div class="mx-tdCol2BreakAll"]
->| Name (Имя) | Имя метрики пружинного выключателя | Единицы | Сведения |
+>| Имя | Имя метрики пружинного выключателя | Единица измерения | Подробности |
 >|----|----|----|------------|
 >| System. ЦП. Использование | System. ЦП. Использование | Процент | Последняя загрузка ЦП для всей системы. Это значение равно Double в интервале [0,0, 1,0]. Значение 0,0 означает, что все ЦП были неактивны в течение последнего наблюдаемого периода времени, а значение 1,0 означает, что все ЦП были активно запущены 100% времени в течение последнего наблюдаемого периода.|
 >| обработка. ЦП. Использование | Процент использования ЦП приложением | Процент | Последняя загрузка ЦП для виртуальная машина Java процесса. Это значение равно Double в интервале [0,0, 1,0]. Значение 0,0 означает, что ни один из процессоров не выполнял поток из процесса ВИРТУАЛЬНОЙ машины Java в течение последнего наблюдаемого периода времени, а значение 1,0 означает, что все ЦП активно работали потоки из ВИРТУАЛЬНОЙ машины Java 100% времени в течение последнего наблюдаемого периода. Потоки из ВИРТУАЛЬНОЙ машины Java включают в себя потоки приложений, а также внутренние потоки ВИРТУАЛЬНОЙ машины Java.|
@@ -105,30 +106,30 @@ Azure Веснного облака предоставляет пять диаг
 >| виртуальной машины Java. GC. Live. Data. size | виртуальной машины Java. GC. Live. Data. size | Байты | Размер пула памяти старого поколения после полного GC. |
 >| виртуальной машины Java. GC. Memory. выдвинуто | виртуальной машины Java. GC. Memory. выдвинуто | Байты | Число положительных увеличений размера пула памяти старого поколения до сборки мусора в после сборки мусора. |
 >| виртуальной машины Java. GC. Memory. распределяемый | виртуальной машины Java. GC. Memory. распределяемый | Байты | Увеличивается при увеличении размера пула памяти создания Титов после одного сборщика мусора до следующего. |
->| виртуальной машины Java. GC. Pause. Total. Count | виртуальной машины Java. GC. Pause (Итого — число) | Count | Общее число GC после запуска этого ЖМВ, включая Титов и Old GC. |
+>| виртуальной машины Java. GC. Pause. Total. Count | виртуальной машины Java. GC. Pause (Итого — число) | Счетчик | Общее число GC после запуска этого ЖМВ, включая Титов и Old GC. |
 >| виртуальной машины Java. GC. Pause. Общее. время | виртуальной машины Java. GC. Pause (всего-время) | Миллисекунды | Общее время, затраченное на сборку мусора после запуска ЖМВ, включая Титов и Old GC. |
 
 ### <a name="request"></a>Запрос
 >[!div class="mx-tdCol2BreakAll"]
->| Name (Имя) | Имя метрики пружинного выключателя | Единицы | Сведения |
+>| Имя | Имя метрики пружинного выключателя | Единица измерения | Подробности |
 >|----|----|----|------------|
 >| Tomcat. Global. Sent | Tomcat. Global. Sent | Байты | Объем отправленного веб-сервера Tomcat данных |
 >| Tomcat. Global. Received. | Tomcat. Global. Received. | Байты | Объем полученного веб-сервера Tomcat данных |
->| Tomcat. Global. Request. Total. Count | Tomcat. Global. Request (всего — Count) | Count | Общее число обработанных запросов веб-сервера Tomcat |
+>| Tomcat. Global. Request. Total. Count | Tomcat. Global. Request (всего — Count) | Счетчик | Общее число обработанных запросов веб-сервера Tomcat |
 >| Tomcat. Global. Request. Max | Tomcat. Global. Request. Max | Миллисекунды | Максимальное время, в течение которого веб-сервер Tomcat обработать запрос |
 
 ### <a name="session"></a>Сеанс
 >[!div class="mx-tdCol2BreakAll"]
->| Name (Имя) | Имя метрики пружинного выключателя | Единицы | Сведения |
+>| Имя | Имя метрики пружинного выключателя | Единица измерения | Подробности |
 >|----|----|----|------------|
->| Tomcat. Sessions. Active. Max | Tomcat. Sessions. Active. Max | Count | Максимальное количество сеансов, которые были активными одновременно |
+>| Tomcat. Sessions. Active. Max | Tomcat. Sessions. Active. Max | Счетчик | Максимальное количество сеансов, которые были активными одновременно |
 >| Tomcat. Sessions. Alive. Max | Tomcat. Sessions. Alive. Max | Миллисекунды | Наибольшее время (в секундах) истечения срока действия сеанса |
->| Tomcat. Sessions. Created | Tomcat. Sessions. Created | Count | Число созданных сеансов |
->| Tomcat. Sessions. Expires | Tomcat. Sessions. Expires | Count | Число просроченных сеансов |
->| Tomcat. Sessions. отклонено | Tomcat. Sessions. отклонено | Count | Число сеансов, которые не были созданы, так как достигнуто максимальное число активных сеансов. |
->| Tomcat. Sessions. Active. Current | Tomcat. Sessions. Active. Current | Count | Число активных сеансов Tomcat |
+>| Tomcat. Sessions. Created | Tomcat. Sessions. Created | Счетчик | Число созданных сеансов |
+>| Tomcat. Sessions. Expires | Tomcat. Sessions. Expires | Счетчик | Число просроченных сеансов |
+>| Tomcat. Sessions. отклонено | Tomcat. Sessions. отклонено | Счетчик | Число сеансов, которые не были созданы, так как достигнуто максимальное число активных сеансов. |
+>| Tomcat. Sessions. Active. Current | Tomcat. Sessions. Active. Current | Счетчик | Число активных сеансов Tomcat |
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также статью
 * [Начало работы с обозревателем метрик Azure](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-getting-started)
 
 * [Анализ журналов и метрик с помощью параметров диагностики](https://docs.microsoft.com/azure/spring-cloud/diagnostic-services)

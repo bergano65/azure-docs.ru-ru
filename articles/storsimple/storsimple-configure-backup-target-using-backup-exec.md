@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/05/2016
 ms.author: matd
-ms.openlocfilehash: 699df6ab44a08645c9f46e95cd2ad279de75ea70
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 397dac67ea94db22829080a65dfae857bb3706dd
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85509665"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87036936"
 ---
 # <a name="storsimple-as-a-backup-target-with-backup-exec"></a>Использование StorSimple в качестве целевого объекта архивации с помощью Backup Exec
 
@@ -310,11 +310,11 @@ StorSimple является решением, интегрированным с 
 
 Ниже приведен пример схемы архивации GFS на 4 недели, месяц и год.
 
-| Периодичность и тип архивации | Полная архивация | Добавочная (день 1–5)  |   
+| Периодичность и тип архивации | Полное | Добавочная (день 1–5)  |   
 |---|---|---|
 | Еженедельная (неделя 1–4) | Суббота | Понедельник — пятница |
-| Ежемесячная  | Суббота  |   |
-| Ежегодная | Суббота  |   |
+| Ежемесячно  | Суббота  |   |
+| Ежегодно | Суббота  |   |
 
 
 ### <a name="assign-storsimple-volumes-to-a-backup-exec-backup-job"></a>Назначение томов StorSimple заданию архивации Backup Exec
@@ -381,14 +381,14 @@ StorSimple является решением, интегрированным с 
 
 ### <a name="gfs-example-schedule-gfs-rotation-weekly-monthly-and-yearly-schedule"></a>Примеры расписания GFS: еженедельное, ежемесячное и ежегодное расписание по схеме GFS
 
-| Неделя | Полная архивация | Добавочная, день 1 | Добавочная, день 2 | Добавочная, день 3 | Добавочная, день 4 | Добавочная, день 5 |
+| Неделя | Полное | Добавочная, день 1 | Добавочная, день 2 | Добавочная, день 3 | Добавочная, день 4 | Добавочная, день 5 |
 |---|---|---|---|---|---|---|
 | 1-я неделя | Локальный том RAID  | Локальный том RAID | Локальный том RAID | Локальный том RAID | Локальный том RAID | Локальный том RAID |
 | 2-я неделя | StorSimple, со 2-ой по 4-ю неделю |   |   |   |   |   |
 | 3-я неделя | StorSimple, со 2-ой по 4-ю неделю |   |   |   |   |   |
 | 4-я неделя | StorSimple, со 2-ой по 4-ю неделю |   |   |   |   |   |
-| Ежемесячная | StorSimple, ежемесячная |   |   |   |   |   |
-| Ежегодная | StorSimple, ежегодная  |   |   |   |   |   |
+| Ежемесячно | StorSimple, ежемесячная |   |   |   |   |   |
+| Ежегодно | StorSimple, ежегодная  |   |   |   |   |   |
 
 
 ### <a name="assign-storsimple-volumes-to-a-backup-exec-archive-and-deduplication-job"></a>Назначение томов StorSimple заданию архивации или дедупликации Backup Exec
@@ -439,7 +439,7 @@ StorSimple является решением, интегрированным с 
 
 ![Схема жизненного цикла резервной копии](./media/storsimple-configure-backup-target-using-backup-exec/backuplifecycle.png)
 
-### <a name="requirements"></a>Requirements (Требования)
+### <a name="requirements"></a>Требования
 
 -   Сервер, на котором выполняется скрипт, должен иметь доступ к облачным ресурсам Azure.
 -   У учетной записи пользователя должны быть необходимые разрешения.
@@ -448,7 +448,7 @@ StorSimple является решением, интегрированным с 
 
 ### <a name="to-start-or-delete-a-cloud-snapshot"></a>Запуск или удаление моментального снимка облака
 
-1. [Установите Azure PowerShell](/powershell/azure/overview).
+1. [Установите Azure PowerShell](/powershell/azure/).
 2. Скачайте и установите скрипт [Manage-CloudSnapshots.ps1](https://github.com/anoobbacker/storsimpledevicemgmttools/blob/master/Manage-CloudSnapshots.ps1) PowerShell.
 3. На сервере, на котором запускается скрипт, запустите PowerShell от имени администратора. Запустите скрипт с параметром `-WhatIf $true`, чтобы просмотреть внесенные изменения. Когда проверка будет завершена, передайте параметр `-WhatIf $false`. Выполните следующую команду:
    ```powershell
@@ -487,7 +487,7 @@ StorSimple является решением, интегрированным с 
 - [Using GPT drives](https://msdn.microsoft.com/windows/hardware/gg463524.aspx#EHD) (Использование дисков GPT)
 - [Включение и настройка теневых копий общих папок](https://technet.microsoft.com/library/cc771893.aspx)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как выполнить [восстановление из набора резервных копий](storsimple-restore-from-backup-set-u2.md).
 - Узнайте, как выполнить [отработку отказа и аварийное восстановление устройства](storsimple-device-failover-disaster-recovery.md).

@@ -9,13 +9,14 @@ ms.topic: how-to
 ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
-ms.date: 04/27/2020
+ms.date: 07/17/2020
 ms.custom: tracking-python
-ms.openlocfilehash: 31daec93352c0e142075a55c61f2b8d3a6d56fab
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 10b9e055ce5b1e2ba27d942a987bf6b38291f094
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85080244"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87031428"
 ---
 # <a name="use-workspace-behind-azure-firewall-for-azure-machine-learning"></a>Использование рабочей области за брандмауэром Azure для Машинное обучение Azure
 
@@ -49,7 +50,7 @@ ms.locfileid: "85080244"
 | **\*. instances.azureml.net** | Машинное обучение Azureные экземпляры вычислений |
 | **\*. instances.azureml.ms** | Машинное обучение Azureные экземпляры вычислений, когда в рабочей области включена частная ссылка |
 | **windows.net** | хранилище BLOB-объектов Azure |
-| **vault.azure.net** | Хранилище ключей Azure; |
+| **vault.azure.net** | Azure Key Vault |
 | **azurecr.io** | Реестр контейнеров Azure |
 | **mcr.microsoft.com** | Реестр контейнеров Microsoft для базовых образов DOCKER |
 
@@ -62,6 +63,7 @@ ms.locfileid: "85080244"
 | **anaconda.com** | Используется при установке пакетов conda |
 | **pypi.org** | Используется при установке пакетов PIP |
 
+
 ## <a name="r-hosts"></a>Узлы R
 
 Узлы в этом разделе используются для установки пакетов R. Они необходимы во время разработки, обучения и развертывания.
@@ -73,7 +75,7 @@ ms.locfileid: "85080244"
 | ---- | ---- |
 | **cloud.r-project.org** | Используется при установке пакетов CRAN. |
 
-Дальнейшие шаги
+Дальнейшие действия
 
 * [[Развертывание и настройка брандмауэра Azure](../firewall/tutorial-firewall-deploy-portal.md)]
 * [Защита заданий экспериментирования и вывода машинного обучения Azure в виртуальной сети Azure](how-to-enable-virtual-network.md)
