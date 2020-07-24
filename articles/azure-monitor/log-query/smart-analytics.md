@@ -6,16 +6,17 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 01/15/2019
-ms.openlocfilehash: 51584ccf5f845be8a06b1e049cae11e636edef11
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 82960845e357579b82c493958287cb602d75182e
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77659838"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87067404"
 ---
 # <a name="log-analytics-smart-analytics-examples"></a>Примеры смарт-аналитики Log Analytics
 Эта статья содержит примеры использования функций смарт-аналитики в Log Analytics для анализа активности пользователей. Вы можете использовать эти примеры для анализа приложений, отслеживаемых Application Insights, или применять общие сведения из этих запросов для выполнения аналогичного анализа других данных. 
 
-Дополнительные сведения о ключевых словах, используемых в этих примерах, можно получить в [справочнике по языку Kusto](https://docs.microsoft.com/azure/kusto/query/). Пройдите [урок по созданию запросов](get-started-queries.md), если вы еще не работали с Log Analytics.
+Дополнительные сведения о ключевых словах, используемых в этих примерах, можно получить в [справочнике по языку Kusto](/azure/kusto/query/). Пройдите [урок по созданию запросов](get-started-queries.md), если вы еще не работали с Log Analytics.
 
 ## <a name="cohorts-analytics"></a>Аналитика когорт
 
@@ -211,7 +212,7 @@ traces
 | project PatternMatch = iff(RSquare2 > minRsquare and Slope>0, "Spike detected", "No Match")
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о языке можно получить в статье [Overview](/azure/kusto/query) (Обзор).
 - Изучите урок по [написанию запросов в Log Analytics](get-started-queries.md).

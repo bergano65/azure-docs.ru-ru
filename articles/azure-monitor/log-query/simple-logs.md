@@ -6,11 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 09/12/2019
-ms.openlocfilehash: 59bcb42edaf7d46498a3514b4f1c919c6e8cc0c4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7bdb0ae813600f53df44ee1a61a4cbbb56bb0bfe
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77660263"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87067495"
 ---
 # <a name="simple-logs-experience-in-azure-monitor-preview"></a>Простой журнал в Azure Monitor (Предварительная версия)
 Azure Monitor предоставляет [широкие возможности](get-started-portal.md) для создания [запросов журналов](log-query-overview.md) с помощью языка ККЛ. Вы можете не требовать полной мощности ККЛ хотя и предпочесть упрощенный интерфейс для основных требований к запросам. Простая процедура работы с журналами позволяет создавать простые запросы без непосредственного взаимодействия с ККл. Можно также использовать простые журналы в качестве средства обучения для ККЛ, так как требуется более сложные запросы.
@@ -23,7 +24,7 @@ Azure Monitor предоставляет [широкие возможности]
 При работе с простыми журналами извлекаются данные из таблицы *AzureDiagnostics*, *азуреметрикс*и *AzureActivity* для выбранного ресурса. 
 
 ## <a name="using-simple-logs"></a>Использование простых журналов
-Перейдите к любому Cosmos DB или Key Vault в подписке Azure с [параметрами диагностики, настроенными для получения журналов в рабочей области log Analytics](../platform/resource-logs-collect-storage.md). Щелкните **журналы** в меню **мониторинг** , чтобы открыть простой журнал.
+Перейдите к любому Cosmos DB или Key Vault в подписке Azure с [параметрами диагностики, настроенными для получения журналов в рабочей области log Analytics](../platform/resource-logs.md#send-to-azure-storage). Щелкните **журналы** в меню **мониторинг** , чтобы открыть простой журнал.
 
 ![Меню](media/simple-logs/menu.png)
 
@@ -43,7 +44,7 @@ Azure Monitor предоставляет [широкие возможности]
 ![Изменить ККЛ](media/simple-logs/edit-kql.png)
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Завершите [работу с руководством по использованию log Analytics в портал Azure](get-started-portal.md).
 - Заполните учебник по [написанию запросов к журналам](get-started-portal.md).

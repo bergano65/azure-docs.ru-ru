@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/12/2019
-ms.openlocfilehash: dc9425b25fa594d06473865f1add9c91c7760a97
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b1756bd72dc78bfafc8959c4ff1c8f95d255c931
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85557217"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87067564"
 ---
 # <a name="integrate-system-center-operations-manager-with-azure-monitor-for-vms-map-feature"></a>Интеграция System Center Operations Manager с функцией карт Azure Monitor для виртуальных машин
 
@@ -20,7 +20,7 @@ ms.locfileid: "85557217"
 >[!NOTE]
 >Если вы уже развернули Сопоставление служб, вы можете просматривать карты в Azure Monitor для виртуальных машин, включая дополнительные функции для мониторинга работоспособности и производительности виртуальных машин. Функция Map Azure Monitor для виртуальных машин предназначена для замены автономного Сопоставление службного решения. Дополнительные сведения см. в разделе [Общие сведения об Azure Monitor для виртуальных машин](vminsights-overview.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 * Группа управления System Center Operations Manager (2012 R2 или более поздней версии).
 * Log Analytics рабочей области, настроенной для поддержки Azure Monitor для виртуальных машин.
@@ -138,9 +138,9 @@ ms.locfileid: "85557217"
 
 Официальная документация Azure по созданию субъекта-службы представлена в следующих статьях:
 
-* [Использование Azure PowerShell для создания субъекта-службы и доступа к ресурсам](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-authenticate-service-principal)
-* [Использование интерфейса командной строки Azure для создания субъекта-службы и доступа к ресурсам](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-authenticate-service-principal-cli)
-* [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal)
+* [Использование Azure PowerShell для создания субъекта-службы и доступа к ресурсам](../../active-directory/develop/howto-authenticate-service-principal-powershell.md)
+* [Использование интерфейса командной строки Azure для создания субъекта-службы и доступа к ресурсам](/azure/azure-resource-manager/resource-group-authenticate-service-principal-cli)
+* [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../../active-directory/develop/howto-create-service-principal-portal.md)
 
 ### <a name="suggestions"></a>Предложения
 

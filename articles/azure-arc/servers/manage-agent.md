@@ -6,14 +6,14 @@ ms.service: azure-arc
 ms.subservice: azure-arc-servers
 author: mgoedtel
 ms.author: magoedte
-ms.date: 05/18/2020
+ms.date: 07/14/2020
 ms.topic: conceptual
-ms.openlocfilehash: 086491484592c8015bdb519bb498e73da3836f6f
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 122f88e8bf14d3e3b082930716cffc3621afd336
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86103914"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87067698"
 ---
 # <a name="managing-and-maintaining-the-connected-machine-agent"></a>Обслуживание агента Connected Machine и управление им
 
@@ -142,6 +142,9 @@ ms.locfileid: "86103914"
 * **-v или --verbose**. Включение подробного ведения журнала.
 
 Вы можете выполнить команды **Connect** (Подключить), **Disconnect** (Отключить) и **Reconnect** (Повторное подключение) вручную, войдя в систему интерактивно, или автоматизированно с помощью того же субъекта-службы, который использовался для подключения нескольких агентов, или с [маркером доступа](../../active-directory/develop/access-tokens.md) платформы удостоверений Майкрософт. Если вы не использовали субъект-службу для регистрации компьютера в Azure Arc для серверов (предварительная версия), ознакомьтесь с [этой статьей](onboard-service-principal.md#create-a-service-principal-for-onboarding-at-scale), чтобы создать субъект-службу.
+
+>[!NOTE]
+>Для запуска **азкмажент**требуются права доступа *root* на компьютерах Linux.
 
 ### <a name="connect"></a>Подключение
 

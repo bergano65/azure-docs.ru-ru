@@ -5,11 +5,12 @@ ms.topic: conceptual
 author: lgayhardt
 ms.author: lagayhar
 ms.date: 11/01/2018
-ms.openlocfilehash: dd04087db32f0bbfa75dafa7e12c355e5ab7b515
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: da75498d6e4616b287ddb11c69df2469baaf2655
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77670072"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87067627"
 ---
 # <a name="how-to-use-micrometer-with-azure-application-insights-java-sdk"></a>Как использовать Micrometer с пакетом SDK Azure Application Insights для Java
 Мониторинг приложений Micrometer измеряет метрики для кода приложения на основе виртуальной машины Java и позволяет экспортировать данные в предпочитаемые системы мониторинга. В этой статье вы узнаете, как использовать Micrometer с Application Insights для приложений Spring Boot и других приложений.
@@ -21,7 +22,7 @@ ms.locfileid: "77670072"
 * [Micrometer Spring Legacy](https://micrometer.io/docs/ref/spring/1.5) 1.1.0 или более поздней версии (возвращение кода автонастройки на платформе Spring к более ранней версии).
 * [Ресурс ApplicationInsights](../../azure-monitor/app/create-new-resource.md )
 
-Шаги
+Этапы
 
 1. Обновите файл pom.xml приложения Spring Boot и включите в него следующие зависимости:
 
@@ -267,7 +268,7 @@ ms.locfileid: "77670072"
     New GuavaCacheMetrics().bind(registry);
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о Микрометер см. в официальной [документации микрометер](https://micrometer.io/docs).
-* Дополнительные сведения о пружины в Azure см. в официальной [пружине в документации по Azure](https://docs.microsoft.com/java/azure/spring-framework/?view=azure-java-stable).
+* Дополнительные сведения о пружины в Azure см. в официальной [пружине в документации по Azure](/java/azure/spring-framework/?view=azure-java-stable).
