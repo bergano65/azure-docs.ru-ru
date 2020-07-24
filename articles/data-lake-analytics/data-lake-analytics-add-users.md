@@ -3,18 +3,16 @@ title: Добавление пользователей к учетной зап�
 description: Узнайте, как правильно добавить пользователей в учетную запись Data Lake Analytics с помощью мастера добавления пользователей и Azure PowerShell.
 services: data-lake-analytics
 ms.service: data-lake-analytics
-author: saveenr
-ms.author: saveenr
-ms.reviewer: jasonwhowell
+ms.reviewer: jasonh
 ms.assetid: db35f16e-1565-4873-a851-bd987accdc58
 ms.topic: how-to
 ms.date: 05/24/2018
-ms.openlocfilehash: 16ec54bb2a41927a92d953586af59ae3653a29c0
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 09f866d7ed72e82770a7f3a0fe5da24bb864851f
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86117463"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87126080"
 ---
 # <a name="adding-a-user-in-the-azure-portal"></a>Добавление пользователя на портале Azure
 
@@ -42,7 +40,7 @@ ms.locfileid: "86117463"
 
 ## <a name="adding-a-user-using-powershell"></a>Добавление пользователя с помощью PowerShell
 
-1. Следуйте инструкциям в руководстве по [установке и настройке Azure PowerShell](https://azure.microsoft.com/documentation/articles/powershell-install-configure/).
+1. Следуйте инструкциям в руководстве по [установке и настройке Azure PowerShell](/powershell/azure/).
 2. Скачайте сценарий PowerShell [Add-AdlaJobUser.ps1](https://github.com/Azure/AzureDataLake/blob/master/Samples/PowerShell/ADLAUsers/Add-AdlaJobUser.ps1).
 3. Запустите этот скрипт PowerShell. 
 
@@ -53,7 +51,7 @@ ms.locfileid: "86117463"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Обзор аналитики озера данных Microsoft Azure](data-lake-analytics-overview.md)
+* [Обзор Azure Data Lake Analytics](data-lake-analytics-overview.md)
 * [Начало работы с Azure Data Lake Analytics с помощью портала Azure](data-lake-analytics-get-started-portal.md)
 * [Управление Azure Data Lake Analytics с помощью Azure PowerShell](data-lake-analytics-manage-use-powershell.md)
 

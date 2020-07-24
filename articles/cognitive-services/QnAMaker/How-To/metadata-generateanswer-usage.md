@@ -3,19 +3,17 @@ title: Метаданные с использованием API GenerateAnswer �
 titleSuffix: Azure Cognitive Services
 description: QnA Maker позволяет добавлять метаданные в виде пар "ключ-значение" в пары "вопрос — ответ". Вы можете фильтровать результаты по запросам пользователей и хранить дополнительные сведения, которые можно использовать в дальнейших беседах.
 services: cognitive-services
-author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
-ms.date: 03/31/2020
-ms.author: diberry
-ms.openlocfilehash: 171efd0e5750555130588f783c4a858def11afec
-ms.sourcegitcommit: fc718cc1078594819e8ed640b6ee4bef39e91f7f
+ms.date: 07/16/2020
+ms.openlocfilehash: 863143cb2ec1085bf03b070c225f2be5e8e4393d
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83993513"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87126182"
 ---
 # <a name="get-an-answer-with-the-generateanswer-api-and-metadata"></a>Получение ответа с помощью API и метаданных Женератеансвер
 
@@ -146,7 +144,7 @@ var response = await _services.QnAServices[QnAMakerKey].GetAnswersAsync(turnCont
 
 Предыдущий JSON запросил только ответы, которые имеют пороговую оценку 30% или выше.
 
-## <a name="use-qna-maker-with-a-bot-in-nodejs"></a>Использование QnA Maker с программой-роботом в Node. js
+## <a name="use-qna-maker-with-a-bot-in-nodejs"></a>Использование QnA Maker с программой-роботом в Node.js
 
 Платформа Bot предоставляет доступ к свойствам QnA Maker с помощью API- [интерфейса «ответ](https://docs.microsoft.com/javascript/api/botbuilder-ai/qnamaker?view=botbuilder-ts-latest#generateanswer-string---undefined--number--number-)»:
 
@@ -184,13 +182,40 @@ var qnaResults = await this.qnaMaker.getAnswers(stepContext.context, qnaMakerOpt
 {
     "question": "When does this hotel close?",
     "top": 1,
-    "strictFilters": [
-      {
-        "name": "restaurant",
-        "value": "paradise"
-      }]
+    "strictFilters": [ { "name": "restaurant", "value": "paradise"}]
 }
 ```
+
+### <a name="logical-and-by-default"></a>Логическое и по умолчанию
+
+Чтобы объединить несколько фильтров метаданных в запросе, добавьте фильтры дополнительных метаданных в массив `strictFilters` Свойства. По умолчанию значения логически объединены (и). Логическое сочетание требует, чтобы все фильтры совпадали с парами QnA, чтобы пара возвращалась в ответе.
+
+Это эквивалентно использованию `strictFiltersCompoundOperationType` свойства со значением `AND` .
+
+### <a name="logical-or-using-strictfilterscompoundoperationtype-property"></a>Логическое или с использованием свойства Стриктфилтерскомпаундоператионтипе
+
+При объединении нескольких фильтров метаданных, если важен только один или несколько соответствующих фильтров, используйте `strictFiltersCompoundOperationType` свойство со значением `OR` .
+
+Это позволяет базе знаний возвращать ответы при совпадении фильтра, но не возвращает ответы, не имеющие метаданных.
+
+```json
+{
+    "question": "When do facilities in this hotel close?",
+    "top": 1,
+    "strictFilters": [
+      { "name": "type","value": "restaurant"},
+      { "name": "type", "value": "bar"},
+      { "name": "type", "value": "poolbar"}
+    ],
+    "strictFiltersCompoundOperationType": "OR"
+}
+```
+
+### <a name="metadata-examples-in-quickstarts"></a>Примеры метаданных в кратком руководстве
+
+Дополнительные сведения о метаданных см. в кратком руководстве по QnA Maker портале для метаданных.
+* [Создание и добавление метаданных в пару QnA](../quickstarts/add-question-metadata-portal.md#add-metadata-to-filter-the-answers)
+* [Прогнозирование запросов — Фильтрация ответов по метаданным](../quickstarts/get-answer-from-knowledge-base-using-url-tool.md)
 
 <a name="keep-context"></a>
 
@@ -241,7 +266,7 @@ var qnaResults = await this.qnaMaker.getAnswers(stepContext.context, qnaMakerOpt
 
 ## <a name="common-http-errors"></a>Распространенные ошибки HTTP
 
-|Код|Объяснение|
+|Код|Пояснение|
 |:--|--|
 |"2xx"|Успех|
 |400|Параметры запроса указаны неправильно. Это означает, что требуемые параметры отсутствуют, имеют неправильный формат или слишком большой размер|

@@ -2,19 +2,19 @@
 title: Как защитить одностраничное приложение с помощью неинтерактивного входа
 titleSuffix: Azure Maps
 description: Настройка одностраничного приложения с помощью неинтерактивного контроля доступа на основе ролей Azure AD и Azure Maps веб-пакета SDK.
-author: philmea
-ms.author: philmea
+author: anastasia-ms
+ms.author: v-stharr
 ms.date: 06/12/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: d33fbdf2e95faaa82c13b4fc0d52ea3f188c3f86
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 96dd1cf6a5d6cea69899bf920c86018384ebbc3c
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84988442"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87126468"
 ---
 # <a name="how-to-secure-a-single-page-application-with-non-interactive-sign-in"></a>Как защитить одностраничное приложение с помощью неинтерактивного входа
 
@@ -108,14 +108,14 @@ ms.locfileid: "84988442"
     > [!div class="mx-imgBorder"]
     > ![Предоставление RBAC](./media/how-to-manage-authentication/how-to-grant-rbac.png)
 
-2. На вкладке **назначения ролей** в разделе **роль**выберите встроенное определение роли Azure Maps, например **Azure Maps модуль чтения данных** или **участник данных Azure Maps**. В разделе **назначение доступа к**выберите **приложение-функция**. Выберите участника по имени. Затем нажмите кнопку **Save** (Сохранить).
+2. На вкладке **назначения ролей** в разделе **роль**выберите встроенное определение роли Azure Maps, например **Azure Maps модуль чтения данных** или **участник данных Azure Maps**. В разделе **назначение доступа к**выберите **приложение-функция**. Выберите участника по имени. Затем нажмите кнопку **Сохранить**.
 
    * См. Дополнительные сведения о [добавлении и удалении назначений ролей](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal).
 
 > [!WARNING]
 > Azure Maps определения встроенных ролей предоставляют очень большие разрешения на доступ к множеству Azure Maps интерфейсов API. Чтобы ограничить доступ через API к минимуму, см. раздел [Создание пользовательского определения роли и назначение назначенного системой удостоверения](https://docs.microsoft.com/azure/role-based-access-control/custom-roles) пользовательскому определению роли. Это обеспечит минимальный уровень привилегий, необходимых приложению для доступа к Azure Maps.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дальнейшее понимание сценария одностраничного приложения:
 > [!div class="nextstepaction"]

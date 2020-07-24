@@ -7,11 +7,12 @@ ms.author: cschorm
 ms.date: 3/17/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 3b416e6ccb035ede06a360c2697a9b20ca417d98
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3e284bc76da9ca40341d72f772aa7ee947a11638
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84725908"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87124312"
 ---
 # <a name="connect-azure-functions-apps-for-processing-data"></a>Подключение приложений функций Azure для обработки данных
 
@@ -77,7 +78,7 @@ namespace FunctionSample
 
 Теперь можно скомпилировать и запустить функцию. Хотя функции Azure в конечном итоге предназначены для работы в облаке, вы также можете выполнять и отлаживать функции Azure локально.
 
-Дополнительные сведения об этом см. в разделе [Отладка триггера сетки событий в локальной](../azure-functions/functions-debug-event-grid-trigger-local.md)среде.
+Дополнительные сведения об этом см. в разделе [*Отладка триггера сетки событий в локальной*](../azure-functions/functions-debug-event-grid-trigger-local.md)среде.
 
 ### <a name="add-the-azure-digital-twins-sdk-to-your-azure-function-app"></a>Добавление пакета SDK для цифрового двойников Azure в приложение функции Azure
 
@@ -162,9 +163,9 @@ az functionapp identity assign -g <your-resource-group> -n <your-App-Service-(fu
 az dt role-assignment create --dt-name <your-Azure-Digital-Twins-instance> --assignee "<principal-ID>" --role "Azure Digital Twins Owner (Preview)"
 ```
 
-Дополнительные сведения об управляемом удостоверении см. [в статье Использование управляемых удостоверений для службы приложений и функций Azure](../app-service/overview-managed-identity.md).
+Дополнительные сведения об управляемом удостоверении см. [*в статье Использование управляемых удостоверений для службы приложений и функций Azure*](../app-service/overview-managed-identity.md).
 
-Наконец, можно сделать так, чтобы URL-адрес вашего экземпляра Azure Digital двойников был доступен для вашей функции, задав переменную среды. Дополнительные сведения об этом см. в разделе [переменные среды](https://docs.microsoft.com/sandbox/functions-recipes/environment-variables).
+Наконец, можно сделать так, чтобы URL-адрес вашего экземпляра Azure Digital двойников был доступен для вашей функции, задав переменную среды. Дополнительные сведения об этом см. в разделе [*переменные среды*](https://docs.microsoft.com/sandbox/functions-recipes/environment-variables).
 
 > [!TIP]
 > URL-адрес экземпляра Azure Digital двойников создается путем добавления *https://* в начало *имени узла*для цифрового двойникова Azure. Чтобы просмотреть имя узла, а также все свойства экземпляра, можно запустить `az dt show --dt-name <your-Azure-Digital-Twins-instance>` .
@@ -208,7 +209,7 @@ az functionapp config appsettings set -g <your-resource-group> -n <your-App-Serv
 
 ### <a name="assign-access-roles"></a>Назначение ролей доступа
 
-Так как Azure Digital двойников использует управление доступом на основе ролей для управления доступом (см [. раздел Основные понятия: безопасность для решений для цифрового двойников Azure](concepts-security.md) ), необходимо также добавить роль для каждого приложения-функции, которое будет иметь доступ к Azure Digital двойников.
+Так как Azure Digital двойников использует управление доступом на основе ролей для управления доступом (см [*. раздел Основные понятия: безопасность для решений для цифрового двойников Azure*](concepts-security.md) ), необходимо также добавить роль для каждого приложения-функции, которое будет иметь доступ к Azure Digital двойников.
 
 Чтобы назначить роль, требуется **идентификатор ресурса** созданного экземпляра Azure Digital двойников. Если вы не зарегистрировали его ранее при создании экземпляра, его можно получить с помощью следующей команды:
 
@@ -223,7 +224,7 @@ az dt show --name <your-instance-name> -g <your-resource-group-name>
 az role assignment create --role "Azure Digital Twins Owner (Preview)" --assignee <object-ID> --scope <resource-ID>
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье описано, как настроить функцию Azure для использования с Azure Digital двойников. Затем вы можете подписать функцию Azure на службу "Сетка событий", чтобы прослушать конечную точку. Эта конечная точка может быть следующей:
 * Конечная точка сетки событий, присоединенная к Azure Digital двойников для обработки сообщений, поступающих от самого себя в Azure Digital двойников (например, сообщений об изменении свойств, сообщений телеметрии, созданных [цифровым двойников](concepts-twins-graph.md) в графе двойника, или сообщений о жизненном цикле).
@@ -231,4 +232,4 @@ az role assignment create --role "Azure Digital Twins Owner (Preview)" --assigne
 * Конечная точка сетки событий, получающая сообщения от других служб
 
 Далее Узнайте, как создать базовую функцию Azure для приема данных центра Интернета вещей в Azure Digital двойников:
-* [Пошаговое руководство. прием данных телеметрии из центра Интернета вещей](how-to-ingest-iot-hub-data.md)
+* [*Пошаговое руководство. прием данных телеметрии из центра Интернета вещей*](how-to-ingest-iot-hub-data.md)

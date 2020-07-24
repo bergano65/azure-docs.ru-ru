@@ -15,12 +15,12 @@ ms.date: 07/13/2020
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d973cf47ed691914b22d62e1a99315c6ea9183d8
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: fd737a22a37d6edc47c2769a470af00537d720eb
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86511608"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87124159"
 ---
 # <a name="azure-custom-roles"></a>Настраиваемые роли Azure
 
@@ -192,7 +192,7 @@ Microsoft.CostManagement/*/query/*
 - Пользовательские роли с `DataActions` не могут быть назначены в области группы управления.
 - Azure Resource Manager не проверяет существование группы управления в назначаемой области определения роли.
 
-Дополнительные сведения о настраиваемых ролях и группах управления см. в статье [организация ресурсов с помощью групп управления Azure](../governance/management-groups/overview.md#custom-rbac-role-definition-and-assignment).
+Дополнительные сведения о настраиваемых ролях и группах управления см. в статье [организация ресурсов с помощью групп управления Azure](../governance/management-groups/overview.md#azure-custom-role-definition-and-assignment).
 
 ## <a name="input-and-output-formats"></a>Форматы входных и выходных данных
 

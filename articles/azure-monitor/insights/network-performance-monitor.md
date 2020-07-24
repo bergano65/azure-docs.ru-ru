@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: vinynigam
 ms.author: vinigam
 ms.date: 02/20/2018
-ms.openlocfilehash: 51111d92e85c6ddbdfac85c333293c2af8b31fbe
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 68be8d08939464d200da588c481447f8206c9117
+ms.sourcegitcommit: 0820c743038459a218c40ecfb6f60d12cbf538b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86498973"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87117197"
 ---
 # <a name="network-performance-monitor-solution-in-azure"></a>Решение "Монитор производительности сети" в Azure
 
@@ -65,6 +65,9 @@ ms.locfileid: "86498973"
 
 
 ## <a name="set-up-and-configure"></a>Установка и настройка
+
+> [!NOTE]
+> Агент Log Analytics также называется агентом Microsoft Monitoring Agent (MMA) или агентом OMS Linux.
 
 ### <a name="install-and-configure-agents"></a>Установка и настройка агентов 
 
@@ -171,7 +174,7 @@ ms.locfileid: "86498973"
 
 В следующей таблице приведены методы сбора данных и другие сведения о сборе данных для монитора производительности сети.
 
-| Платформа | Direct Agent | Агент System Center Operations Manager | Хранилище Azure | Нужен ли Operations Manager? | Отправка данных агента Operations Manager через группу управления | Частота сбора |
+| Платформа | Direct Agent | Агент System Center Operations Manager | Служба хранилища Azure | Нужен ли Operations Manager? | Отправка данных агента Operations Manager через группу управления | Частота сбора |
 | --- | --- | --- | --- | --- | --- | --- |
 | Windows | &#8226; | &#8226; |  |  |  |Подтверждения TCP/сообщения ICMP ECHO отправляются каждые 5 секунд. Данные отправляются каждые 3 минуты. |
  
@@ -254,7 +257,7 @@ ms.locfileid: "86498973"
 
 Все данные, представленные графически с помощью панели мониторинга Монитор производительности сети и страниц детализации, также доступны в виде запросов в [журнале](../log-query/log-query-overview.md). Вы можете выполнять интерактивный анализ данных в репозитории и сопоставлять данные из разных источников. Кроме того, вы можете создавать пользовательские оповещения и представления, а также экспортировать данные в Excel, PowerBI или ссылку с общим доступом. В области **Общие запросы** на панели мониторинга есть некоторые полезные запросы, которые можно использовать в качестве отправной точки для создания собственных запросов и отчетов. 
 
-## <a name="alerts"></a>видны узлы
+## <a name="alerts"></a>Оповещения
 
 Монитор производительности сети использует функции оповещения [Azure Monitor](../platform/alerts-overview.md).
 

@@ -7,20 +7,20 @@ ms.author: baanders
 ms.date: 4/10/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 6d51abab46cd8450dd3a09e5e5ef47e6267b990d
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 7f7239e0c13478af712d8e8d9dad8fda23fe42c7
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86258084"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87125538"
 ---
 # <a name="manage-a-graph-of-digital-twins-using-relationships"></a>Управление графиком цифровых двойников с помощью связей
 
 Основой Azure Digital двойников является [двойника граф](concepts-twins-graph.md) , представляющий всю среду. Граф двойника состоит из отдельных цифровых двойников, подключенных через **связи**.
 
-После создания рабочего [экземпляра Azure Digital двойников](how-to-set-up-instance.md) и настройки [проверки подлинности](how-to-authenticate-client.md) для клиентского приложения можно использовать [**интерфейсы API дигиталтвинс**](how-to-use-apis-sdks.md) , чтобы создавать, изменять и удалять цифровые двойников и их связи в экземпляре Digital двойников. Вы также можете использовать [пакет SDK для .NET (C#)](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Azure.DigitalTwins.Core)или [Azure Digital двойников CLI](how-to-use-cli.md).
+Получив рабочий [экземпляр Azure Digital двойников](how-to-set-up-instance-scripted.md) и настроив код [проверки подлинности](how-to-authenticate-client.md) в клиентском приложении, вы можете использовать [**API дигиталтвинс**](how-to-use-apis-sdks.md) для создания, изменения и удаления цифровых двойников и их отношений в экземпляре Azure Digital двойников. Вы также можете использовать [пакет SDK для .NET (C#)](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Azure.DigitalTwins.Core)или [Azure Digital двойников CLI](how-to-use-cli.md).
 
-Эта статья посвящена управлению связями и графу в целом. для работы с отдельными цифровыми двойниковми см. раздел [как управлять цифровыми двойников](how-to-manage-twin.md).
+Эта статья посвящена управлению связями и графу в целом. для работы с отдельными цифровыми двойниковми см. раздел [*как управлять цифровыми двойников*](how-to-manage-twin.md).
 
 [!INCLUDE [visualizing with Azure Digital Twins explorer](../../includes/digital-twins-visualization.md)]
 
@@ -62,7 +62,7 @@ public async static Task CreateRelationship(DigitalTwinsClient client, string sr
 }
 ```
 
-Дополнительные сведения о вспомогательном классе `BasicRelationship` см. в разделе Практические руководства. [Использование интерфейсов API и пакетов SDK для цифровых двойников Azure](how-to-use-apis-sdks.md).
+Дополнительные сведения о вспомогательном классе `BasicRelationship` см. в разделе Практические руководства. [*Использование интерфейсов API и пакетов SDK для цифровых двойников Azure*](how-to-use-apis-sdks.md).
 
 ## <a name="list-relationships"></a>Список связей
 
@@ -108,7 +108,7 @@ public async Task<List<BasicRelationship>> FindOutgoingRelationshipsAsync(string
 
 Предыдущий пример кода посвящен поиску исходящих связей. Следующий пример похож на, но вместо этого находит входящие связи. Они также удаляются после их обнаружения.
 
-Обратите внимание, что вызовы Инкомингрелатионшип не возвращают полный
+Обратите внимание, что `IncomingRelationship` вызовы не возвращают полный текст связи.
 
 ```csharp
 async Task<List<IncomingRelationship>> FindIncomingRelationshipsAsync(string dtId)
@@ -301,10 +301,10 @@ foreach (JsonElement row in data.RootElement.EnumerateArray())
 ```
 ## <a name="manage-relationships-with-cli"></a>Управление связями с помощью интерфейса командной строки
 
-Двойников и их отношения также можно управлять с помощью цифрового двойников Azure CLI. Команды можно найти в [этом пошаговом окне. Используйте интерфейс командной строки Azure Digital двойников](how-to-use-cli.md).
+Двойников и их отношения также можно управлять с помощью цифрового двойников Azure CLI. Команды можно найти в [*этом пошаговом окне. Используйте интерфейс командной строки Azure Digital двойников*](how-to-use-cli.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о запросах к графу двойников для Azure Digital двойника:
-* [Основные понятия: язык запросов](concepts-query-language.md)
-* [Пошаговое руководство. запрос графа двойника](how-to-query-graph.md)
+* [*Основные понятия: язык запросов*](concepts-query-language.md)
+* [*Пошаговое руководство. запрос графа двойника*](how-to-query-graph.md)

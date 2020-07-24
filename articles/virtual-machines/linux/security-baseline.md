@@ -1,5 +1,5 @@
 ---
-title: Виртуальные машины Linux базового уровня безопасности для производительности системы безопасности Azure
+title: Базовый план безопасности Azure для Виртуальные машины Linux
 description: Базовый план безопасности Виртуальные машины Linux содержит практические руководства и ресурсы для реализации рекомендаций по безопасности, указанных в статье о производительности системы безопасности Azure.
 author: msmbaldwin
 ms.service: virtual-machines-linux
@@ -7,14 +7,14 @@ ms.topic: conceptual
 ms.date: 07/13/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 2d8c4d67ed9b268bae55711fae8c4def33b967fc
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: bd6157f2775b2496e489cfbf03b35f49fb6f5442
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86532008"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87124720"
 ---
-# <a name="linux-virtual-machines-security-baseline-for-azure-security-benchmark"></a>Виртуальные машины Linux базового уровня безопасности для производительности системы безопасности Azure
+# <a name="azure-security-baseline-for-linux-virtual-machines"></a>Базовый план безопасности Azure для Виртуальные машины Linux
 
 Базовый план безопасности Azure для Виртуальные машины Linux содержит рекомендации, которые помогут повысить уровень безопасности развертывания.
 
@@ -568,7 +568,7 @@ ms.locfileid: "86532008"
 
 * [Управление доступом на основе ролей (RBAC) для ресурсов Azure](../../role-based-access-control/overview.md)
 
-* [Встроенные роли управления доступом на основе ролей в Azure](../../role-based-access-control/built-in-roles.md#virtual-machine-contributor)
+* [Встроенные роли Azure](../../role-based-access-control/built-in-roles.md#virtual-machine-contributor)
 
 **Мониторинг центра безопасности Azure**: недоступен
 

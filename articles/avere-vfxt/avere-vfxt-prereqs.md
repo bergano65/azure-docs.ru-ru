@@ -6,12 +6,12 @@ ms.service: avere-vfxt
 ms.topic: how-to
 ms.date: 01/21/2020
 ms.author: rohogue
-ms.openlocfilehash: c1828bcde5c26c5605b867c115127eb2502bdd86
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 24c803bd94f56af551f3afa2cb7350219b4fa448
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85505347"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87124737"
 ---
 # <a name="prepare-to-create-the-avere-vfxt"></a>Подготовка к созданию Avere vFXT
 
@@ -38,7 +38,7 @@ ms.locfileid: "85505347"
 |----------|--------|-------|
 | Администратор группы ресурсов создает Вфкст | Виртуальная сеть, контроллер кластера и узлы кластера должны быть созданы в группе ресурсов. | [Администратор доступа пользователей](../role-based-access-control/built-in-roles.md#user-access-administrator) и роли [участника](../role-based-access-control/built-in-roles.md#contributor) , которые находятся в пределах целевой группы ресурсов. |
 | Использование существующей внешней виртуальной сети | Контроллер кластера и узлы кластера создаются в группе ресурсов Вфкст, но используют существующую виртуальную сеть в другой группе ресурсов. | (1) [администратор доступа пользователей](../role-based-access-control/built-in-roles.md#user-access-administrator) и роли [участников](../role-based-access-control/built-in-roles.md#contributor) , областью действия которых является группа ресурсов вфкст; и (2) [участник виртуальных машин](../role-based-access-control/built-in-roles.md#virtual-machine-contributor), [администратор доступа пользователей](../role-based-access-control/built-in-roles.md#user-access-administrator)и роли [участников авере](../role-based-access-control/built-in-roles.md#avere-contributor) , областью действия которых является группа ресурсов виртуальной сети. |
-| Настраиваемая роль для создателей кластера | Ограничения на размещение ресурсов отсутствуют. Этот метод дает значительные права, не являющиеся владельцами. | Владелец подписки создает настраиваемую роль RBAC, как описано в [этой статье](avere-vfxt-non-owner.md). |
+| Настраиваемая роль для создателей кластера | Ограничения на размещение ресурсов отсутствуют. Этот метод дает значительные права, не являющиеся владельцами. | Владелец подписки создает настраиваемую роль Azure, как описано в [этой статье](avere-vfxt-non-owner.md). |
 
 ## <a name="quota-for-the-vfxt-cluster"></a>Квота для кластера vFXT
 
@@ -104,6 +104,6 @@ ms.locfileid: "85505347"
 
    ![Снимок экрана портала Azure с заметками для шагов создания конечной точки службы](media/avere-vfxt-service-endpoint.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После выполнения этих предварительных требований можно создать кластер. Инструкции см. в статье [Развертывание кластера vFXT](avere-vfxt-deploy.md).

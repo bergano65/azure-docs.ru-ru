@@ -13,18 +13,19 @@ author: DavidTrigano
 ms.author: datrigan
 ms.reviewer: vanto
 ms.date: 05/26/2020
-ms.openlocfilehash: 6599963b216409103f72b4e46a30961c6d60e32c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 213a4fdb0e064e1c36a04f7190f14fab80cb4daa
+ms.sourcegitcommit: 0820c743038459a218c40ecfb6f60d12cbf538b3
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84695561"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87117353"
 ---
 # <a name="get-started-with-azure-sql-managed-instance-auditing"></a>Приступая к работе с аудитом Управляемый экземпляр Azure SQL
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
 
-Аудит [управляемый экземпляр Azure SQL](sql-managed-instance-paas-overview.md) отслеживает события базы данных и записывает их в журнал аудита в учетной записи хранения Azure. Аудит также дает следующие возможности:
+Аудит [управляемый экземпляр Azure SQL](sql-managed-instance-paas-overview.md) отслеживает события базы данных и записывает их в журнал аудита в учетной записи хранения Azure. Аудит также дает следующие возможности.
 
-- Аудит может помочь вам соблюсти требования нормативов, проанализировать работу с базой данных и получить представление о расхождениях и аномалиях, которые могут указывать на бизнес-проблемы или предполагаемые нарушения безопасности.
+- Помогает поддерживать соответствие нормативным требованиям, лучше понимать происходящее в базах данных, а также получать аналитические сведения о расхождениях и аномалиях, которые могут указывать на проблемы в бизнесе или потенциальные нарушения безопасности.
 - Средства аудита способствуют соблюдению стандартов соответствия, но не гарантируют их выполнение. Дополнительные сведения о программах Azure, поддерживающих соответствие стандартам, см. в [центр управления безопасностью Azure](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942), где можно найти самый актуальный список сертификатов соответствия.
 
 ## <a name="set-up-auditing-for-your-server-to-azure-storage"></a>Настройка аудита для сервера в службе хранилища Azure
@@ -113,7 +114,7 @@ ms.locfileid: "84695561"
 
         ```SQL
         CREATE SERVER AUDIT [<your_audit_name>]
-        TO URL ( PATH ='<container_url>' [, RETENTION_DAYS =  integer ])
+        TO URL ( PATH ='<container_url>' , RETENTION_DAYS =  integer )
         GO
         ```
 
@@ -243,7 +244,7 @@ ms.locfileid: "84695561"
 - Параметр завершения работы **не поддерживается**.
 - Значение 0 для `queue_delay`**не поддерживается**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Полный список методов использования журнала аудита см. в статье Приступая к [работе с аудитом базы данных SQL Azure](../../azure-sql/database/auditing-overview.md).
 - Дополнительные сведения о программах Azure, поддерживающих соответствие стандартам, см. в [центр управления безопасностью Azure](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942), где можно найти самый актуальный список сертификатов соответствия.

@@ -5,22 +5,22 @@ services: networking
 author: skishen525
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 11/05/2019
+ms.date: 07/23/2020
 ms.author: sukishen
-ms.openlocfilehash: aa77ac3652d8646a3354cb137ba7cf4240e58e6c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d9a8b44cc6e78eda4a3e0b18d59d2372e7129c05
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85482893"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87124189"
 ---
 # <a name="about-azure-networking-msp-partners"></a>Сведения о партнерах программы для поставщиков сетевых устройств и служб Azure (MSP)
 
-[Программа для поставщиков сетевых устройств и служб Azure (MSP)](https://azure.microsoft.com/blog/enhancing-the-customer-experience-with-the-azure-networking-msp-partner-program/) позволяет поставщикам управляемых служб, операторам связи и системным интеграторам, которые специализируются на сетевых службах, предоставлять облачные гибридные сетевые службы, ориентированные на портфель сетевых продуктов и служб Azure.
+[Партнерская программа поставщика управляемых услуг сети Azure (MSP)](https://azure.microsoft.com/blog/enhancing-the-customer-experience-with-the-azure-networking-msp-partner-program/) позволяет сетевым службам, MSP, Telco и Systems Integrators (SIs), предоставлять облачные и гибридные сетевые службы в центре Azure по портфелю сетевых продуктов и служб.
 
 Партнеры программы для поставщиков сетевых устройств и служб Azure (MSP) — это специализированные поставщики управляемых служб, которые предлагают облачные сетевые продукты корпоративного уровня и помогают решать задачи, связанные с любыми аспектами облачных и гибридных систем. К управляемым сетевым службам относятся следующие компоненты и процессы: сетевая архитектура, планирование, развертывание, эксплуатация, обслуживание и оптимизация.
 
-![MSP][0]
+:::image type="content" source="./media/networking-partners-msp/msp.jpg" alt-text="переключающ":::
 
 Клиенты могут приобрести предложения служб под управлением MSP в Azure Marketplace или напрямую у соответствующего MSP. MSP могут развертывать сетевые ресурсы Azure и управлять ими в клиентских подписках и группах ресурсов с помощью [Azure Lighthouse](https://azure.microsoft.com/services/azure-lighthouse/).
 
@@ -32,6 +32,7 @@ ms.locfileid: "85482893"
 | ---| ---| ---| ---| ---|
 |[ANS Group (Соединенное Королевство)](https://www.ans.co.uk/)|[Azure Managed Svc + ANS Glass: 10-недельная реализация](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/ans_group.glassms)|[Сетевое подключение ExpressRoute &: Оценка за 2 недели](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/ans_group.ans_er)|[Виртуальная глобальная сеть Azure + Fortinet: Оценка за 2 недели](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/ans_group.ans_vw)|||
 |[Aryaka Networks](https://www.aryaka.com/azure-msp-vwan-managed-service-provider-launch-partner-aryaka/)||[Aryaka Azure Connect](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/aryaka.cloudconnect_azure_19?tab=Overview)|[Aryaka, Виртуальная глобальная сеть Azure](https://azuremarketplace.microsoft.com/marketplace/apps/aryaka.cloudconnect_azure_19?tab=Overview) | | |
+|[аксесдн](https://www.axesdn.com/en/azure-msp.html)||[АКСЕСДН под управлением Azure ExpressRoute](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/1584591601184.axesdn_managed_azure_expressroute?tab=Overview)|[АКСЕСДН управляемой виртуальной глобальной сети Azure](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/1584591601184.axesdn_managed_azure_virtualwan?tab=Overview) | | |
 |[BT](https://www.globalservices.bt.com/en/solutions/products/cloud-connect-azure)|[Консалтинг по преобразованию сети: оценка (1 ч)](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/bt-americas-inc.network-transformation-consulting);[BT Cloud Connect Azure](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/bt-americas-inc.bt-cca-lh-001?tab=Overview)|[BT Cloud Connect Azure ExpressRoute](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/bt-americas-inc.bt-cca-lh-003?tab=Overview)|[BT Cloud Connect, Виртуальная глобальная сеть Azure](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/bt-americas-inc.bt-cca-lh-002?tab=Overview)|||
 |[CenturyLink](https://www.centurylink.com/business.html)||[Консультационные виртуальные цепи ExpressRoute: 8 — реализация WK](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/centurylink2362604-2362604.centurylink_consultingservicesforexpressroute)||||
 |[Coevolve](https://www.coevolve.com/services/azure-networking-services/)|||[Управляемое решение Virtual Edge SD-WAN в VMware](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/coevolveptylimited1581027739259.managed-vmware-sdwan-edge?tab=Overview)|||
@@ -53,7 +54,7 @@ ms.locfileid: "85482893"
 |[Vigilant IT](https://vigilant.it/manage-cloud-service/)|[Проверка работоспособности Azure: оценка (5 дн.)](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/vigilant-it.ahc01)|[ExpressRoute: реализация (5 дн.)](https://azuremarketplace.microsoft.com/en-us/marketplace/consulting-services/vigilant-it.erd01)|||
 |[Vandis](https://www.vandis.com/microsoft-azure-practice/)||[Управляемая служба ExpressRoute от Vandis](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/vandis.vandis_managed_expressroute?tab=Overview)|[Управляемая глобальная виртуальная сеть Vandis от Fortinet](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/vandis.vandis_managed_vwan_powered_by_fortinet?tab=Overview); [Управляемая глобальная виртуальная сеть Vandis от Palo Alto Networks](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/vandis.vandis_managed_vwan_powered_by_palo_alto_networks?tab=Overview)|
 
-В Azure Marketplace предлагаются новые управляемые службы безопасности и управляемые службы MEC из следующих партнеров по сетям MSP Azure: [Амдокс](https://www.amdocs.com/); [Аксесдн](https://www.axesdn.com/en/azure-msp.html); [CenturyLink](https://www.centurylink.com/business/networking/cloud-connectivity.html);  [Подразделение Telekom](https://www.telekom.com/en/media/media-information/archive/deutsche-telekom-offers-managed-network-services-for-microsoft-azure-598406);  [Доступ IX](https://www.ixreach.com/services/sdn-cloud-connect/);  В [облаке](https://intercloud.com/partners/microsoft-azure/);  [Кинкс](https://www.kinx.net/service/cloud/?lang=en); [Омниклаудс](https://omniclouds.com/services/);  [Сежонг телекоммуникации](https://www.sejongtelecom.net/en/pages/service/cloud_ms); [Федеративная беспроводная сеть](https://www.federatedwireless.com/caas/)
+Azure Marketplace предлагает управляемые службы ExpressRoute, виртуальные глобальные сети, службы безопасности и зоны частных пограничных услуг со следующих партнеров по сети Azure для сетей MSP: [Амдокс](https://www.amdocs.com/);  [Подразделение Telekom](https://www.telekom.com/en/media/media-information/archive/deutsche-telekom-offers-managed-network-services-for-microsoft-azure-598406);  [Доступ IX](https://www.ixreach.com/services/sdn-cloud-connect/);  В [облаке](https://intercloud.com/partners/microsoft-azure/);  [Кинкс](https://www.kinx.net/service/cloud/?lang=en); [Омниклаудс](https://omniclouds.com/);  [Сежонг телекоммуникации](https://www.sejongtelecom.net/en/pages/service/cloud_ms); [Федеративная беспроводная сеть](https://www.federatedwireless.com/caas/)
 
 ## <a name="expressroute-partners"></a><a name="expressroute"></a>Партнеры ExpressRoute
 
@@ -62,6 +63,3 @@ ms.locfileid: "85482893"
 ## <a name="virtual-wan-partners"></a><a name="vwan"></a>Участники Виртуальной глобальной сети
 
 Дополнительные сведения о партнерах см. в статье [Партнеры Виртуальной глобальной сети и расположения виртуальных концентраторов](../virtual-wan/virtual-wan-locations-partners.md).
-
-<!--Image References-->
-[0]: ./media/networking-partners-msp/msp.png "Описание программы MSP"

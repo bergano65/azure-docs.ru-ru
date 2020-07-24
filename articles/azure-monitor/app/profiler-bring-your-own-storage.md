@@ -6,12 +6,12 @@ author: renatosalas
 ms.author: regutier
 ms.date: 04/14/2020
 ms.reviewer: mbullwin
-ms.openlocfilehash: 50dcd3f438645c99e0ed3cfdded7a101ee5f1852
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 719f0cfa0a1f80568acf3231ce3ffab441e5f6b7
+ms.sourcegitcommit: 0820c743038459a218c40ecfb6f60d12cbf538b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86539862"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87117395"
 ---
 # <a name="configure-bring-your-own-storage-byos-for-application-insights-profiler-and-snapshot-debugger"></a>Настройка собственного хранилища (BYOS) для Application Insights Profiler и Snapshot Debugger
 
@@ -30,7 +30,7 @@ ms.locfileid: "86539862"
 1. Служба Application Insights Profiler или Snapshot Debugger проанализирует входящий большой двоичный объект и выполнит обратную запись результатов анализа и файлов журнала в хранилище BLOB-объектов. В зависимости от доступной емкости вычислений этот процесс может происходить в любое время после отправки.
 1. При просмотре трассировок профилировщика или анализе snapshot Debugger служба получает результаты анализа из хранилища BLOB-объектов.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 * Не забудьте создать учетную запись хранения в том же расположении, что и ресурс Application Insights. Пример: Если ресурс Application Insights находится в западной части США 2, ваша учетная запись хранения должна быть также в западной части США 2. 
 * Предоставьте роли "участник данных BLOB-объекта хранилища" для приложения AAD "доступ к доверенному хранилищу служб диагностики" в учетной записи хранения через пользовательский интерфейс управления доступом (IAM).
 * Если частная связь включена, Настройте дополнительный параметр, чтобы разрешить подключение к нашей доверенной службе Майкрософт из виртуальной сети. 
@@ -63,7 +63,7 @@ _ ![ Рис. 1,1](media/profiler-bring-your-own-storage/figure-11.png)_.
 Если вы также используете частную ссылку, требуется одна дополнительная настройка, чтобы разрешить подключение к нашей доверенной службе Майкрософт из виртуальной сети. См. [документацию по сетевой безопасности хранилища](../../storage/common/storage-network-security.md#trusted-microsoft-services).
 
 ### <a name="link-your-storage-account-with-your-application-insights-resource"></a>Связывание учетной записи хранения с ресурсом Application Insights
-Чтобы настроить BYOS для диагностики на уровне кода (профилировщик или отладчик), существует два варианта:
+Чтобы настроить BYOS для диагностики на уровне кода (профилировщик или отладчик), существует три варианта:
 
 * Использование командлетов Azure PowerShell
 * Использование интерфейса командной строки Azure (CLI)
@@ -95,7 +95,7 @@ _ ![ Рис. 1,1](media/profiler-bring-your-own-storage/figure-11.png)_.
     Remove-AzApplicationInsightsLinkedStorageAccount -ResourceId $appInsights.Id
     ```
 
-    Пример
+    Пример.
     ```powershell
     $appInsights = Get-AzApplicationInsights -ResourceGroupName "byos-test" -Name "byos-test-westus2-ai"
     Remove-AzApplicationInsightsLinkedStorageAccount -ResourceId $appInsights.Id
@@ -110,7 +110,7 @@ _ ![ Рис. 1,1](media/profiler-bring-your-own-storage/figure-11.png)_.
     New-AzApplicationInsightsLinkedStorageAccount -ResourceId $appInsights.Id -LinkedStorageAccountResourceId $storageAccount.Id
     ```
 
-    Пример
+    Пример.
     ```powershell
     $storageAccount = Get-AzStorageAccount -ResourceGroupName "byos-test" -Name "byosteststoragewestus2"
     $appInsights = Get-AzApplicationInsights -ResourceGroupName "byos-test" -Name "byos-test-westus2-ai"
@@ -135,7 +135,7 @@ _ ![ Рис. 1,1](media/profiler-bring-your-own-storage/figure-11.png)_.
     az monitor app-insights component linked-storage link --resource-group "{resource_group_name}" --app "{application_insights_name}" --storage-account "{storage_account_name}"
     ```
     
-    Пример
+    Пример.
     ```powershell
     az monitor app-insights component linked-storage link --resource-group "byos-test" --app "byos-test-westus2-ai" --storage-account "byosteststoragewestus2"
     ```
@@ -191,7 +191,7 @@ _ ![ Рис. 1,1](media/profiler-bring-your-own-storage/figure-11.png)_.
     New-AzResourceGroupDeployment -ResourceGroupName "{your_resource_name}" -TemplateFile "{local_path_to_arm_template}"
     ```
 
-    Пример
+    Пример.
     ```powershell
     New-AzResourceGroupDeployment -ResourceGroupName "byos-test" -TemplateFile "D:\Docs\byos.template.json"
     ```
@@ -229,7 +229,7 @@ _ ![ Рис. 1,1](media/profiler-bring-your-own-storage/figure-11.png)_.
 1. Включите диагностику на уровне кода (профилировщик или отладчик) в интересующей рабочей нагрузке с помощью портал Azure. (> службы приложений Application Insights) _ ![ Рис. 2,0](media/profiler-bring-your-own-storage/figure-20.png)_. 
  _рис. 2,0_
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 ### <a name="template-schema-schema_uri-isnt-supported"></a>Схема шаблона "{schema_uri}" не поддерживается.
 * Убедитесь, что `$schema` свойство шаблона является допустимым. Он должен соответствовать следующему шаблону:`https://schema.management.azure.com/schemas/{schema_version}/deploymentTemplate.json#`
 * Убедитесь, что `schema_version` шаблон находится в допустимых значениях: `2014-04-01-preview, 2015-01-01, 2018-05-01, 2019-04-01, 2019-08-01` .
