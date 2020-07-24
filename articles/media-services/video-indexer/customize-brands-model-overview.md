@@ -9,12 +9,13 @@ ms.service: media-services
 ms.subservice: video-indexer
 ms.topic: article
 ms.date: 05/15/2019
-ms.author: anzaman
-ms.openlocfilehash: ca3d825fb2f4184448cc279d9408f47ad4ad004a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.author: kumud
+ms.openlocfilehash: a1b2738e3be2e2b8a388ef80ca94764cdae99b08
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "73838373"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87047356"
 ---
 # <a name="customize-a-brands-model-in-video-indexer"></a>Настройка модели торговых марок в Индексаторе видео
 
@@ -32,7 +33,7 @@ ms.locfileid: "73838373"
 
 Чтобы использовать собственные торговые марки, ознакомьтесь со следующими шагами.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Customize a Brands model with the Video Indexer API](customize-brands-model-with-api.md) (Настройка модели торговых марок с помощью API Индексатора видео)
 

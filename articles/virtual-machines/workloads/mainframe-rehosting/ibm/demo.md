@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 02/22/2019
 tags: ''
 keywords: ''
-ms.openlocfilehash: 83f7f16d8406744a10451e8d488b7719845c525d
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: b2509539551b3991690e6d0313e069ae015eb892
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86135941"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87052398"
 ---
 # <a name="set-up-an-application-developers-controlled-distribution-adcd-in-ibm-zdt-v1"></a>Настройка управляемого распределения для разработчиков приложений (АДКД) в IBM зд&T v1
 
@@ -27,7 +27,7 @@ ms.locfileid: "86135941"
 
 Как и зд&T, Адкдс доступны только для клиентов и партнеров IBM и предназначены исключительно для целей разработки и тестирования. Они не предназначены для использования в рабочих средах. Многочисленные установочные пакеты IBM доступны для загрузки через [Passport Advantage](https://www.ibm.com/support/knowledgecenter/en/SSTQBD_12.0.0/com.ibm.zsys.rdt.guide.adcd.doc/topics/installation_ps.html) или [IBM партнерворлд](https://www.ibm.com/partnerworld/public).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 - Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начать работу.
 
@@ -72,7 +72,7 @@ ms.locfileid: "86135941"
 
 2. Перейдите на вкладку **SSH** и скопируйте команду SSH в буфер обмена.
 
-3. Войдите в виртуальную машину, используя свои учетные данные и [SSH-клиент](/azure/virtual-machines/linux/use-remote-desktop) по выбору. В этой демонстрации используются расширения Linux для Windows 10, которые добавляют оболочку Bash в командную строку Windows. Выводится так же.
+3. Войдите в виртуальную машину, используя свои учетные данные и [SSH-клиент](../../../linux/use-remote-desktop.md) по выбору. В этой демонстрации используются расширения Linux для Windows 10, которые добавляют оболочку Bash в командную строку Windows. Выводится так же.
 
 4. При входе в систему создайте каталог для отправки пакетов IBM. Помните, что в Linux учитывается регистр. Например, в этой демонстрации предполагается, что пакеты передаются в:
 
@@ -186,11 +186,11 @@ ms.locfileid: "86135941"
 
 Поздравляем! Теперь вы используете среду IBM мэйнфреймов в Azure.
 
-## <a name="learn-more"></a>Подробнее
+## <a name="learn-more"></a>Дополнительные сведения
 
-- [Миграция мэйнфреймов: мифы и факты](https://docs.microsoft.com/azure/architecture/cloud-adoption/infrastructure/mainframe-migration/myths-and-facts)
-- [IBM DB2 Пурескале в Azure](https://docs.microsoft.com/azure/virtual-machines/linux/ibm-db2-purescale-azure)
-- [Устранение неполадок](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/)
+- [Миграция мэйнфреймов: мифы и факты](/azure/architecture/cloud-adoption/infrastructure/mainframe-migration/myths-and-facts)
+- [IBM DB2 Пурескале в Azure](../../../linux/ibm-db2-purescale-azure.md)
+- [Устранение неполадок](../../../troubleshooting/index.yml)
 - [Декрытие мэйнфрейма с миграцией Azure](https://azure.microsoft.com/resources/demystifying-mainframe-to-azure-migration/)
 
 <!-- INTERNAL LINKS -->

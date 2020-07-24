@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/19/2019
 ms.author: johndeu
-ms.openlocfilehash: 30ca3bb86426b144fa6cbf5c63888d9546919ebf
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 6454bc863cb5fd628d581fff380c5ab61354f762
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85954697"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87053054"
 ---
 # <a name="smooth-streaming-protocol-ms-sstr-amendment-for-hevc"></a>Поправка к протоколу Smooth Streaming (MS-SSTR) для HEVC 
 
@@ -64,7 +64,7 @@ ms.locfileid: "85954697"
 
 ### <a name="121-normative-references"></a>1.2.1. Нормативные ссылки 
 
->  [MS-SSTR] *V20140502* протокола Smooth Streaming[https://msdn.microsoft.com/library/ff469518.aspx](https://msdn.microsoft.com/library/ff469518.aspx)
+>  [MS-SSTR] *V20140502* протокола Smooth Streaming[https://msdn.microsoft.com/library/ff469518.aspx](/openspecs/windows_protocols/ms-sstr/8383f27f-7efe-4c60-832a-387274457251)
 > 
 >   [ISO/IEC 14496-12]. Международная организация по стандартизации (ISO). "Information technology -- Coding of audio-visual objects -- Part 12: ISO Base Media File Format" (Информационные технологии. Кодирование аудиовизуальных объектов. Часть 12. Формат базового медиафайла ISO), ISO/IEC 14496-12:2014, издание 4, добавлено исправление 1, поправки 1, 2.
 >   <https://standards.iso.org/ittf/PubliclyAvailableStandards/c061988_ISO_IEC_14496-12_2012.zip>

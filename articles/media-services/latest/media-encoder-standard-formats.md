@@ -14,15 +14,16 @@ ms.topic: article
 ms.date: 02/10/2019
 ms.author: juliako
 ms.reviewer: anilmur
-ms.openlocfilehash: f1d4d4f4006702ebe0d057e56cf24a022e73b83e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: dd8c38f9f08bbcaccc39d2f0d1843af720c12932
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79251366"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87053231"
 ---
 # <a name="standard-encoder-formats-and-codecs"></a>Стандартные форматы и кодеки кодировщика
 
-В этой статье содержится список наиболее распространенных форматов для импорта и экспорта файлов, которые можно использовать с [StandardEncoderPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#standardencoderpreset). Сведения о создании настраиваемых предустановок с помощью **StandardEncoderPreset** см. в разделе [Создание преобразования с помощью настраиваемой предустановки](customize-encoder-presets-how-to.md).
+В этой статье содержится список наиболее распространенных форматов для импорта и экспорта файлов, которые можно использовать с [StandardEncoderPreset](/rest/api/media/transforms/createorupdate#standardencoderpreset). Сведения о создании настраиваемых предустановок с помощью **StandardEncoderPreset** см. в разделе [Создание преобразования с помощью настраиваемой предустановки](customize-encoder-presets-how-to.md).
 
 ## <a name="input-containerfile-formats"></a>Контейнер ввода и форматы файлов
 
@@ -35,7 +36,7 @@ ms.locfileid: "79251366"
 | Windows Media Video (WMV)/ASF (.wmv, .asf) |Да |
 | AVI (без сжатия 8 бит/10 бит) (.avi) |Да |
 | MP4 (MP4, M4A, M4V) и ISMV (ISMA, ISMV) |Да |
-| [Microsoft Digital Video Recording(DVR-MS)](https://msdn.microsoft.com/library/windows/desktop/dd692984) (.dvr-ms) |Да |
+| [Microsoft Digital Video Recording(DVR-MS)](/previous-versions/windows/desktop/mstv/about-the-dvr-ms-file-format) (.dvr-ms) |Да |
 | Matroska/WebM (.mkv) |Да |
 | WAVE/WAV (.wav) |Да |
 | QuickTime (.mov) |Да |
@@ -46,7 +47,7 @@ ms.locfileid: "79251366"
 
 * файлы MXF, GXF и QuickTime со звуковыми дорожками с чередованием стерео или форматом 5.1;
 
-или
+or
 
 * файлы MXF, GXF и QuickTime, где звук переносится как отдельные дорожки PCM, но сопоставление каналов (стерео или 5.1) можно определить по метаданным файла.
 
@@ -98,6 +99,6 @@ ms.locfileid: "79251366"
 | MP4 <br/><br/>(включая контейнеры MP4 с несколькими скоростями) |H.264 (профили High, Main и Baselin) |AAC-LC, HE-AAC v1, HE-AAC v2 |
 | MPEG2-TS |H.264 (профили High, Main и Baselin) |AAC-LC, HE-AAC v1, HE-AAC v2 |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Создание преобразования с помощью настраиваемой предустановки](customize-encoder-presets-how-to.md)

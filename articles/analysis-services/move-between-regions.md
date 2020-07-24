@@ -7,11 +7,13 @@ ms.topic: how-to
 ms.date: 06/09/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: ff012dc78f3981b6fb5fdbd8a5bde45083dd997b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: references_regions
+ms.openlocfilehash: 4844f3e34a6b49559affbb4d4ed7bc5b5e38e538
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84699436"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87050367"
 ---
 # <a name="move-analysis-services-to-a-different-region"></a>Переместить Analysis Services в другой регион
 
@@ -46,13 +48,13 @@ ms.locfileid: "84699436"
 > [!NOTE]
 > При использовании локального шлюза данных для подключения к источникам данных необходимо также переместить ресурс шлюза в регион целевого сервера. Дополнительные сведения см. в статье [Установка и настройка локального шлюза данных](analysis-services-gateway-install.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 - **Учетная запись хранения Azure**: требуется для хранения ABF файла резервной копии.
 - **SQL Server Management Studio (SSMS)**: требуется для резервного копирования и восстановления баз данных модели.
 - **Azure PowerShell**. Требуется только в том случае, если вы решили выполнить эту задачу с помощью PowerShell.
 
-## <a name="prepare"></a>Подготовка.
+## <a name="prepare"></a>Подготовка
 
 ### <a name="backup-model-databases"></a>Резервное копирование баз данных
 
@@ -195,13 +197,13 @@ ms.locfileid: "84699436"
 
 4. Выберите **Создать**.
 
-5. Выберите **создать собственный шаблон в редакторе**.
+5. Выберите **Создать собственный шаблон в редакторе**.
 
 6. Выберите **загрузить файл**и следуйте инструкциям, чтобы загрузить **template.jsв** файл, который вы экспортировали и изменили.
 
 7. Убедитесь, что в редакторе шаблонов отображаются правильные свойства нового целевого сервера.
 
-8. Нажмите кнопку **Сохранить**.
+8. Щелкните **Сохранить**.
 
 9. Введите или выберите значения свойств:
 

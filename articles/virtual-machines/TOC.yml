@@ -1,29 +1,29 @@
 - name: Документация по Виртуальным машинам
   href: index.yml
 - name: Виртуальные машины Linux в Azure
-  href: 'https://docs.microsoft.com/azure/virtual-machines/linux/'
+  href: ./linux/index.yml
 - name: Виртуальные машины Windows в Azure
-  href: 'https://docs.microsoft.com/azure/virtual-machines/windows/'
+  href: ./windows/index.yml
 - name: Документация по расширениям виртуальных машин
   href: ./extensions/overview.md
 - name: Рабочие нагрузки
   items:
     - name: Red Hat
-      href: ./workloads/redhat/redhat-overview.md
+      href: ./workloads/redhat/overview.md
     - name: Высокопроизводительные вычисления
       href: ./workloads/hpc/overview.md
     - name: SAP
       href: ./workloads/sap/get-started.md
     - name: Oracle;
-      href: ./workloads/oracle/oracle-considerations.md
+      href: ./workloads/oracle/oracle-overview.md
     - name: Повторное размещение мейнфреймов
       href: ./workloads/mainframe-rehosting/overview.md
 - name: Классические развертывания
   items:
     - name: Виртуальные машины Linux (классическое развертывание)
-      href: 'https://docs.microsoft.com/previous-versions/azure/virtual-machines/linux/classic/'
+      href: /previous-versions/azure/virtual-machines/linux/classic/
     - name: Виртуальные машины Windows (классическое развертывание)
-      href: 'https://docs.microsoft.com/previous-versions/azure/virtual-machines/windows/classic/'
+      href: /previous-versions/azure/virtual-machines/windows/classic/
 - name: Ресурсы
   items:
     - name: Развитие навыков с помощью Microsoft Learn

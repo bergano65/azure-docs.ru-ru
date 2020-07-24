@@ -5,21 +5,22 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 04/15/2020
+ms.date: 07/20/2020
 ms.author: iainfou
 author: iainfoulds
 manager: daveba
-ms.reviewer: sahenry
+ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7997359fb29afc876b184b811e0409cfdbeb265a
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: 2eff16e0d1aa242ed4ca8b427c7af8e8defa7804
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83826474"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87051291"
 ---
-# <a name="password-management-frequently-asked-questions"></a>Вопросы и ответы об управлении паролями
+# <a name="self-service-password-reset-frequently-asked-questions"></a>Часто задаваемые вопросы о самостоятельном сбросе пароля
 
-Ниже приведены некоторые вопросы и ответы о сбросе пароля.
+Ниже приведены некоторые часто задаваемые вопросы, связанные с самостоятельным сбросом пароля.
 
 Если у вас есть общие вопросы об Azure Active Directory (Azure AD) и самостоятельном сбросе пароля (SSPR), которые еще не рассматривались, их можно задать участникам сообщества на [странице Майкрософт с вопросами и ответами о службе Azure Active Directory](https://docs.microsoft.com/answers/topics/azure-active-directory.html). В сообщество входят инженеры, менеджеры по продуктам, MVP и ИТ-специалисты.
 
@@ -37,7 +38,7 @@ ms.locfileid: "83826474"
 
   > **Ответ.** Да. Если функция сброса пароля активирована и у пользователя есть лицензия, он может перейти на портал регистрации данных для сброса паролей (https://aka.ms/ssprsetup) и зарегистрировать свои собственные данные для проверки подлинности. Пользователь также может зарегистрироваться с помощью панели доступа (https://myapps.microsoft.com). Для регистрации через панель доступа необходимо выбрать изображение профиля, щелкнуть **Профиль**, а затем — **Регистрация для сброса пароля**.
   >
-  >
+  > Если включить [объединенную регистрацию](concept-registration-mfa-sspr-combined.md), пользователи смогут одновременно регистрироваться одновременно с SSPR и службой многофакторной идентификации Azure.
 * **Вопрос.  Если включить сброс пароля для группы, а затем понадобится включить сброс пароля для всех пользователей, придется ли повторно регистрировать пользователей?**
 
   > **Ответ.** Нет. Для пользователей, которые заполнили данные для проверки подлинности, повторная регистрация не требуется.

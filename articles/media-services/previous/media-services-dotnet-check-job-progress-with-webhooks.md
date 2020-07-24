@@ -14,17 +14,17 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: c0e4d281880b3870c81352efca146ece7100be74
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 0a82050bef36e139c122ea97f777fb5cb1906974
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85964317"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87052962"
 ---
 # <a name="use-azure-webhooks-to-monitor-media-services-job-notifications-with-net"></a>Использование веб-перехватчиков Azure для наблюдения за уведомлениями о заданиях служб мультимедиа с использованием .NET 
 
 > [!NOTE]
-> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
+> В Cлужбы мультимедиа версии 2 больше не добавляются новые компоненты или функциональные возможности. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](../latest/index.yml). Также изучите руководство по [миграции из версии 2 в версию 3](../latest/migrate-from-v2-to-v3.md).
 
 При выполнении заданий часто требуется способ отслеживания хода выполнения задачи. Уведомления о заданиях служб мультимедиа можно отслеживать с помощью объектов webhook Azure или [хранилища очередей Azure](media-services-dotnet-check-job-progress-with-queues.md). В этой статье приведены сведения о работе с веб-перехватчиками.
 
@@ -42,7 +42,7 @@ ms.locfileid: "85964317"
 
 Определения разных Функций Azure для служб мультимедиа .NET (включая приведенные в этой статье) см. [здесь](https://github.com/Azure-Samples/media-services-dotnet-functions-integration).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 Ниже перечислены необходимые условия для выполнения действий, описанных в этом учебнике.
 
@@ -61,7 +61,7 @@ ms.locfileid: "85964317"
 
 Раздел [параметров приложения](media-services-dotnet-how-to-use-azure-functions.md#configure-function-app-settings) определяет параметры, используемые в веб-перехватчике, определенном в этой статье. Добавьте также в приложение параметры ниже. 
 
-|name|Определение|Пример| 
+|Имя|Определение|Пример| 
 |---|---|---|
 |SigningKey |Ключ подписи.| j0txf1f8msjytzvpe40nxbpxdcxtqcgxy0nt|
 |WebHookEndpoint | Адрес конечной точки объекта webhook. После создания функции веб-перехватчика скопируйте URL-адрес из ссылки **Получить URL-адрес функции**. | HTTPS: \/ /juliakofuncapp.azurewebsites.NET/API/Notification_Webhook_Function?Code=iN2phdrTnCxmvaKExFWOTulfnm4C71mMLIy8tzLr7Zvf6Z22HHIK5g = =.|
@@ -518,7 +518,7 @@ URL to the manifest for client streaming using HLS protocol: http://mediapkeewmg
             }
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 

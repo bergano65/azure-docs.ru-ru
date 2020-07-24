@@ -15,14 +15,14 @@ ms.topic: how-to
 ms.date: 01/23/2017
 ms.author: mazha
 ms.custom: has-adal-ref
-ms.openlocfilehash: 20db31b63a82431b7dd59c6c5c92a1fb756c5c06
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9f891327a60d5438369c56dd858bfcefff182cdf
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84888421"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87049340"
 ---
-# <a name="get-started-with-azure-cdn-development"></a>Приступая к разработке для Azure CDN
+# <a name="get-started-with-the-azure-cdn-library-for-net"></a>Приступая к работе с библиотекой Azure CDN для .NET
 > [!div class="op_single_selector"]
 > * [Node.js](cdn-app-dev-node.md)
 > * [.NET](cdn-app-dev-net.md)

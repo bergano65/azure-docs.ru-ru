@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 3c5e22c14d0df46ddac9a503f43df8d54c3c93d5
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: d9b4766b42704da8c81704822f263a6ddf46ce5a
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85964759"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87052840"
 ---
 # <a name="how-to-generate-thumbnails-using-media-encoder-standard-with-net"></a>Создание эскизов с помощью Media Encoder Standard c использованием .NET 
 
@@ -282,7 +282,7 @@ Media Encoder Standard можно использовать для создани
 Во всех примерах выше рассматривались способы отправки задачи кодирования для создания изображений. Но также можно объединить кодирование видео и аудио с созданием эскизов. Предустановки JSON и XML ниже указывают **стандартному кодировщику служб мультимедиа** создавать эскиз во время кодирования.
 
 ### <a name="json-preset"></a><a id="json"></a>Предустановка JSON
-Сведения о схеме см. [здесь](https://msdn.microsoft.com/library/mt269962.aspx).
+Сведения о схеме см. [здесь](/azure/media-services/previous/media-services-mes-schema).
 
 ```json
     {
@@ -347,7 +347,7 @@ Media Encoder Standard можно использовать для создани
 ```
 
 ### <a name="xml-preset"></a><a id="xml"></a>Предустановка XML
-Сведения о схеме см. [здесь](https://msdn.microsoft.com/library/mt269962.aspx).
+Сведения о схеме см. [здесь](/azure/media-services/previous/media-services-mes-schema).
 
 ```csharp
     <?xml version="1.0" encoding="utf-16"?>
@@ -548,7 +548,7 @@ namespace EncodeAndGenerateThumbnails
 }
 ```
 
-## <a name="considerations"></a>Особенности
+## <a name="considerations"></a>Рекомендации
 Действительны следующие условия.
 
 * Использование явных меток времени для элементов Start, Step или Range предполагает, что входные данные составляют не менее одной минуты.
@@ -564,7 +564,7 @@ namespace EncodeAndGenerateThumbnails
   * По умолчанию Start:{Best}
 * Для атрибута Image должен быть указан формат выходных данных: Jpg/Png/BmpFormat. Если он присутствует, Media Encoder Standard сопоставляет JpgVideo с JpgFormat и т. д. OutputFormat представляет новый макрос, связанный с кодеком изображений: {Index}, который необходимо указывать для форматов вывода изображений (один и только один раз).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы можете проверить [ход выполнения задания](media-services-check-job-progress.md), пока задание кодировки находится в ожидании.
 
@@ -576,4 +576,3 @@ namespace EncodeAndGenerateThumbnails
 
 ## <a name="see-also"></a>См. также
 [Обзор кодирования с помощью служб мультимедиа](media-services-encode-asset.md)
-

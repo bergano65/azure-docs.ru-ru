@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/14/2019
-ms.openlocfilehash: 77fe4b4ffbf7c189a5bf64e662f395fc78e53944
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 021e5e8ee01745dd0b534e53dbb6d75b5b78c419
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82581500"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87049612"
 ---
 # <a name="enable-azure-monitor-for-vms-using-azure-powershell-or-resource-manager-templates"></a>Включение Azure Monitor для виртуальных машин с помощью шаблонов Azure PowerShell или диспетчер ресурсов
 
@@ -31,7 +31,7 @@ ms.locfileid: "82581500"
 * [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](../../azure-resource-manager/templates/deploy-powershell.md)
 * [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure CLI](../../azure-resource-manager/templates/deploy-cli.md)
 
-Чтобы использовать Azure CLI, сначала необходимо установить и использовать CLI локально. Необходимо запустить Azure CLI версии 2.0.27 или более поздней. Для определения версии выполните `az --version`. Сведения об установке или обновлении Azure CLI см. в разделе [установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
+Чтобы использовать Azure CLI, сначала необходимо установить и использовать CLI локально. Необходимо запустить Azure CLI версии 2.0.27 или более поздней. Для определения версии выполните `az --version`. Сведения об установке или обновлении Azure CLI см. в разделе [установка Azure CLI](/cli/azure/install-azure-cli).
 
 1. Скопируйте и вставьте в него следующий синтаксис JSON:
 
@@ -122,7 +122,7 @@ ms.locfileid: "82581500"
 * [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](../../azure-resource-manager/templates/deploy-powershell.md)
 * [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure CLI](../../azure-resource-manager/templates/deploy-cli.md)
 
-Чтобы использовать Azure CLI, сначала необходимо установить и использовать CLI локально. Необходимо запустить Azure CLI версии 2.0.27 или более поздней. Для определения версии выполните `az --version`. Сведения об установке или обновлении Azure CLI см. в разделе [установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
+Чтобы использовать Azure CLI, сначала необходимо установить и использовать CLI локально. Необходимо запустить Azure CLI версии 2.0.27 или более поздней. Для определения версии выполните `az --version`. Сведения об установке или обновлении Azure CLI см. в разделе [установка Azure CLI](/cli/azure/install-azure-cli).
 
 ### <a name="download-templates"></a>Загрузить шаблоны
 
@@ -178,7 +178,7 @@ provisioningState       : Succeeded
 
 Для каждой виртуальной машины или масштабируемого набора виртуальных машин в сценарии проверяется, установлено ли расширение виртуальной машины. Если расширение виртуальной машины установлено, сценарий попытается переустановить его. Если расширение виртуальной машины не установлено, скрипт устанавливает Log Analytics и расширения виртуальной машины агента зависимостей.
 
-Убедитесь, что используется модуль Azure PowerShell AZ Version 1.0.0 или более поздней версии с `Enable-AzureRM` включенными псевдонимами совместимости. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps). При использовании PowerShell на локальном компьютере также нужно запустить `Connect-AzAccount`, чтобы создать подключение к Azure.
+Убедитесь, что используется модуль Azure PowerShell AZ Version 1.0.0 или более поздней версии с `Enable-AzureRM` включенными псевдонимами совместимости. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). При использовании PowerShell на локальном компьютере также нужно запустить `Connect-AzAccount`, чтобы создать подключение к Azure.
 
 Чтобы получить список сведений об аргументах сценария и пример использования, выполните команду `Get-Help`.
 

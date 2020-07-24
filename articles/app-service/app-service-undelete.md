@@ -5,12 +5,12 @@ author: btardif
 ms.author: byvinyal
 ms.date: 9/23/2019
 ms.topic: article
-ms.openlocfilehash: 94a5fd3ae1de0708f0e5550547f7ab2fc9f881cb
-ms.sourcegitcommit: 5cace04239f5efef4c1eed78144191a8b7d7fee8
+ms.openlocfilehash: c3c79944aa4add0a32dbb584b13606e32e146a1a
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86146226"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87050292"
 ---
 # <a name="restore-deleted-app-service-app-using-powershell"></a>Восстановление удаленного приложения Службы приложений с помощью PowerShell
 
@@ -58,7 +58,7 @@ Get-AzDeletedWebApp -Name <your_deleted_app> -Location <your_deleted_app_locatio
 Найдите приложение, которое вы хотите восстановить, и используйте `Restore-AzDeletedWebApp`.
 
 ```powershell
-Restore-AzDeletedWebApp -ResourceGroupName <my_rg> -Name <my_app> -TargetAppServicePlanName <my_asp>
+Restore-AzDeletedWebApp -TargetResourceGroupName <my_rg> -Name <my_app> -TargetAppServicePlanName <my_asp>
 ```
 > [!NOTE]
 > Слоты развертывания не восстанавливаются в составе приложения. Если необходимо восстановить промежуточный слот, используйте флажок `-Slot <slot-name>`.
@@ -66,7 +66,7 @@ Restore-AzDeletedWebApp -ResourceGroupName <my_rg> -Name <my_app> -TargetAppServ
 
 Входные данные для команды
 
-- **Группа ресурсов**. Целевая группа ресурсов, в которой будет восстановлено приложение
+- **Целевая группа ресурсов**: Целевая группа ресурсов, в которую будет восстановлено приложение
 - **Name** (Имя). Имя приложения, должно быть глобально уникальным.
 - **TargetAppServicePlanName**: план Службы приложений, связанный с приложением
 

@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: annaba
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
-ms.openlocfilehash: ca19ccb925721126f7e7d8495addd0794766f376
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 94955e27dcadb3acbea03926d6d1ed73e9c5c9ed
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86202881"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87051355"
 ---
 # <a name="get-started-with-certificate-based-authentication-in-azure-active-directory"></a>Приступая к работе с аутентификацией на основе сертификата в Azure Active Directory
 
@@ -33,7 +33,7 @@ ms.locfileid: "86202881"
 - Показано, как настроить и использовать аутентификацию на основе сертификата для пользователей клиентов в тарифных планах Office 365 корпоративный, бизнес, для образования и для US Gov организаций. В тарифных планах Office 365 China, US Government Defense и US Government Federal доступна предварительная версия этой функции.
 - Предполагается, что у вас уже настроены [инфраструктура открытых ключей (PKI)](https://go.microsoft.com/fwlink/?linkid=841737) и [AD FS](../hybrid/how-to-connect-fed-whatis.md).
 
-## <a name="requirements"></a>Requirements (Требования)
+## <a name="requirements"></a>Требования
 
 Для настройки аутентификации на основе сертификата должны выполняться следующие условия:
 
@@ -93,7 +93,7 @@ ms.locfileid: "86202881"
     }
 ```
 
-Для настройки можно использовать [Azure Active Directory PowerShell версии 2](/powershell/azure/install-adv2?view=azureadps-2.0):
+Для настройки можно использовать [Azure Active Directory PowerShell версии 2](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0):
 
 1. Запустите Windows PowerShell с правами администратора.
 2. Установите модуль Azure AD версии [2.0.0.33](https://www.powershellgallery.com/packages/AzureAD/2.0.0.33) или более поздней.
@@ -122,7 +122,7 @@ ms.locfileid: "86202881"
 
 ### <a name="add"></a>Add
 
-Чтобы создать доверенный центр сертификации, используйте командлет [New-AzureADTrustedCertificateAuthority](/azurepowershell/module/azuread/new-azureadtrustedcertificateauthority?view=azureadps-2.0) и задайте правильное значение атрибута **crlDistributionPoint**.
+Чтобы создать доверенный центр сертификации, используйте командлет [New-AzureADTrustedCertificateAuthority](/powershell/module/azuread/new-azureadtrustedcertificateauthority?view=azureadps-2.0) и задайте правильное значение атрибута **crlDistributionPoint**.
 
 ```azurepowershell
     $cert=Get-Content -Encoding byte "[LOCATION OF THE CER FILE]"

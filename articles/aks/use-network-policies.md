@@ -5,11 +5,12 @@ description: Узнайте, как для защитить входящий и 
 services: container-service
 ms.topic: article
 ms.date: 05/06/2019
-ms.openlocfilehash: 7e494c6ac89289a9b271d16b871b8a22e1ca9e6a
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: 598747c0d64db2ae62f740dca4c3e4141f2562f2
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83683194"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87050481"
 ---
 # <a name="secure-traffic-between-pods-using-network-policies-in-azure-kubernetes-service-aks"></a>Защита трафика между группами pod с использованием политик сети в Службе Azure Kubernetes (AKS)
 
@@ -157,13 +158,13 @@ kubectl label namespace/development purpose=development
 Теперь создайте пример серверной группы pod, в которой выполняется NGINX. Эту серверную группу pod можно использовать для имитации серверного веб-приложения. Создайте этот pod в пространстве имен *development* и откройте порт *80* для обслуживания веб-трафика. Добавьте к pod метку с помощью *app=webapp,role=backend*. Так мы сможем указать его в политике сети в приведенном ниже разделе.
 
 ```console
-kubectl run backend --image=nginx --labels app=webapp,role=backend --namespace development --expose --port 80 --generator=run-pod/v1
+kubectl run backend --image=nginx --labels app=webapp,role=backend --namespace development --expose --port 80
 ```
 
 Чтобы проверить, можно ли связаться с веб-страницей NGINX по умолчанию, создайте другую группу pod и подключите сеанс терминала.
 
 ```console
-kubectl run --rm -it --image=alpine network-policy --namespace development --generator=run-pod/v1
+kubectl run --rm -it --image=alpine network-policy --namespace development
 ```
 
 В командной строке оболочки введите `wget`, чтобы подтвердить, что вы можете получить доступ к веб-странице NGINX по умолчанию.
@@ -219,7 +220,7 @@ kubectl apply -f backend-policy.yaml
 Давайте узнаем, сможете ли вы использовать веб-страницу NGINX в серверной группе pod. Создайте еще один тестовый pod и подключите сеанс терминала.
 
 ```console
-kubectl run --rm -it --image=alpine network-policy --namespace development --generator=run-pod/v1
+kubectl run --rm -it --image=alpine network-policy --namespace development
 ```
 
 В командной строке оболочки введите `wget`, чтобы узнать, можете ли вы получить доступ к веб-странице NGINX по умолчанию. На этот раз установите значение времени ожидания в *2* секунды. Теперь политика сети блокирует весь входящий трафик, поэтому загрузить страницу не удается, как показано в следующем примере.
@@ -276,7 +277,7 @@ kubectl apply -f backend-policy.yaml
 Запланируйте запуск pod с метками *app=webapp,role=frontend* и подключите сеанс терминала.
 
 ```console
-kubectl run --rm -it frontend --image=alpine --labels app=webapp,role=frontend --namespace development --generator=run-pod/v1
+kubectl run --rm -it frontend --image=alpine --labels app=webapp,role=frontend --namespace development
 ```
 
 В командной строке оболочки введите `wget`, чтобы узнать, можете ли вы получить доступ к веб-странице NGINX по умолчанию.
@@ -306,7 +307,7 @@ exit
 Политика сети разрешает трафик из групп pod с метками *app:webapp,role:frontend*, но должна блокировать весь остальной трафик. Давайте проверим, сможет ли другая группа pod без этих меток получить доступ к серверной группе pod NGINX. Создайте еще один тестовый pod и подключите сеанс терминала.
 
 ```console
-kubectl run --rm -it --image=alpine network-policy --namespace development --generator=run-pod/v1
+kubectl run --rm -it --image=alpine network-policy --namespace development
 ```
 
 В командной строке оболочки введите `wget`, чтобы узнать, можете ли вы получить доступ к веб-странице NGINX по умолчанию. Политика сети блокирует входящий трафик, поэтому загрузить страницу не удается, как показано в следующем примере.
@@ -339,7 +340,7 @@ kubectl label namespace/production purpose=production
 Запланируйте запуск тестового pod в пространстве имен *production*, которое помечено как *app=webapp,role=frontend*. Подключите сеанс терминала.
 
 ```console
-kubectl run --rm -it frontend --image=alpine --labels app=webapp,role=frontend --namespace production --generator=run-pod/v1
+kubectl run --rm -it frontend --image=alpine --labels app=webapp,role=frontend --namespace production
 ```
 
 В командной строке оболочки введите `wget`, чтобы подтвердить, что вы можете получить доступ к веб-странице NGINX по умолчанию.
@@ -403,7 +404,7 @@ kubectl apply -f backend-policy.yaml
 Запланируйте запуск еще одной группы pod в пространстве имен *production* и подключите сеанс терминала.
 
 ```console
-kubectl run --rm -it frontend --image=alpine --labels app=webapp,role=frontend --namespace production --generator=run-pod/v1
+kubectl run --rm -it frontend --image=alpine --labels app=webapp,role=frontend --namespace production
 ```
 
 В командной строке оболочки введите `wget`, чтобы увидеть, что теперь политика сети запрещает трафик.
@@ -425,7 +426,7 @@ exit
 Вы запретили трафик пространства имен *production*. Теперь запланируйте запуск тестовой группы pod в пространстве имен *development* и подключите сеанс терминала.
 
 ```console
-kubectl run --rm -it frontend --image=alpine --labels app=webapp,role=frontend --namespace development --generator=run-pod/v1
+kubectl run --rm -it frontend --image=alpine --labels app=webapp,role=frontend --namespace development
 ```
 
 В командной строке оболочки введите `wget`, чтобы увидеть, что теперь политика сети разрешает трафик.

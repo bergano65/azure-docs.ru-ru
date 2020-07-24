@@ -10,11 +10,12 @@ ms.subservice: video-indexer
 ms.topic: article
 ms.date: 05/12/2020
 ms.author: juliako
-ms.openlocfilehash: bb57af37308badcd3123af3348178aaac061f376
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: d533735af340b23e8a79b6c5953df748a548609c
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83652177"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87046958"
 ---
 # <a name="video-indexer-frequently-asked-questions"></a>Индексатор видео: вопросы и ответы
 
@@ -58,13 +59,13 @@ ms.locfileid: "83652177"
 
 ### <a name="what-media-formats-does-video-indexer-support"></a>Какие форматы мультимедиа поддерживает Индексатор видео?
 
-Индексатор видео поддерживает самые распространенные форматы мультимедиа. См. [список стандартных форматов кодировщика мультимедиа Azure](https://docs.microsoft.com/azure/media-services/latest/media-encoder-standard-formats).
+Индексатор видео поддерживает самые распространенные форматы мультимедиа. См. [список стандартных форматов кодировщика мультимедиа Azure](../latest/media-encoder-standard-formats.md).
 
 ### <a name="how-do-i-upload-a-media-file-into-video-indexer-and-what-are-the-limitations"></a>Как отправить файл мультимедиа в Индексатор видео и каковы ограничения?
 
 На веб-портале Индексатора видео можно отправить файл мультимедиа с помощью диалогового окна отправки файла или предоставив прямой URL-адрес, по которому размещен исходный файл (как в [этом примере](https://nimbuscdn-nimbuspm.streaming.mediaservices.windows.net/2b533311-b215-4409-80af-529c3e853622/Ignite-short.mp4)). URL-адреса для доступа к файлам через iFrame или код внедрения (как в [этом примере](https://www.videoindexer.ai/accounts/7e1282e8-083c-46ab-8c20-84cae3dc289d/videos/5cfa29e152/?t=4.11)) не поддерживаются. 
 
-Дополнительные сведения см. в этом [практическом руководстве](https://docs.microsoft.com/azure/media-services/video-indexer/upload-index-videos).
+Дополнительные сведения см. в этом [практическом руководстве](./upload-index-videos.md).
 
 #### <a name="limitations"></a>Ограничения
 
@@ -75,7 +76,7 @@ ms.locfileid: "83652177"
 
 ### <a name="how-long-does-it-take-video-indexer-to-extract-insights-from-media"></a>Сколько времени требуется Индексатору видео для извлечения аналитических сведений из мультимедиа?
 
-Время, необходимое для индексации аудио- или видеофайла с помощью API Индексатора видео или веб-интерфейса Индексатора видео, зависит от нескольких параметров, таких как длина и качество файла, объем аналитических данных в файле, количество [зарезервированных единиц](https://docs.microsoft.com/azure/media-services/previous/media-services-scale-media-processing-overview) и наличие включенной [конечной точки потоковой передачи](https://docs.microsoft.com/azure/media-services/previous/media-services-streaming-endpoints-overview). Однако чтобы получить более точное представление, мы рекомендуем вам запустить несколько тестовых файлов со своим собственным содержимым и вычислить среднее значение.
+Время, необходимое для индексации аудио- или видеофайла с помощью API Индексатора видео или веб-интерфейса Индексатора видео, зависит от нескольких параметров, таких как длина и качество файла, объем аналитических данных в файле, количество [зарезервированных единиц](../previous/media-services-scale-media-processing-overview.md) и наличие включенной [конечной точки потоковой передачи](../previous/media-services-streaming-endpoints-overview.md). Однако чтобы получить более точное представление, мы рекомендуем вам запустить несколько тестовых файлов со своим собственным содержимым и вычислить среднее значение.
 
 ### <a name="can-i-create-customized-workflows-to-automate-processes-with-video-indexer"></a>Могу ли я создавать настраиваемые рабочие процессы для автоматизации процессов с помощью Индексатора видео?
 

@@ -1,6 +1,6 @@
 ---
-title: Мониторинг приложений Apache Spark
-description: Используйте Azure синапсе Studio для мониторинга приложений Apache Spark.
+title: Мониторинг Apache Spark приложений в синапсе Studio
+description: Используйте синапсе Studio для мониторинга приложений Apache Spark.
 services: synapse-analytics
 author: matt1883
 ms.service: synapse-analytics
@@ -9,14 +9,14 @@ ms.subservice: monitoring
 ms.date: 04/15/2020
 ms.author: mahi
 ms.reviewer: mahi
-ms.openlocfilehash: e646f1bc1a25f58dd54437cbd77750479ac9ae99
-ms.sourcegitcommit: f684589322633f1a0fafb627a03498b148b0d521
+ms.openlocfilehash: a4dc2604dbd62da1baa4278ff3463f41337886bf
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85970911"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87052513"
 ---
-# <a name="use-the-azure-synapse-studio-preview-to-monitor-your-apache-spark-applications"></a>Использование Azure синапсе Studio (Предварительная версия) для мониторинга приложений Apache Spark
+# <a name="use-synapse-studio-preview-to-monitor-your-apache-spark-applications"></a>Использование синапсе Studio (Предварительная версия) для мониторинга приложений Apache Spark
 
 С помощью Azure синапсе Analytics вы можете использовать Spark для запуска записных книжек, заданий и других видов приложений в пулах Spark в рабочей области.
 
@@ -24,7 +24,7 @@ ms.locfileid: "85970911"
 
 ## <a name="accessing-the-list-of-apache-spark-applications"></a>Доступ к списку приложений Apache Spark
 
-Чтобы просмотреть список Apache Spark приложений в рабочей области, сначала [откройте Azure синапсе Studio](https://web.azuresynapse.net/) и выберите рабочую область.
+Чтобы просмотреть список Apache Spark приложений в рабочей области, сначала [откройте синапсе Studio](https://web.azuresynapse.net/) и выберите рабочую область.
 
 ![Войти в рабочую область](./media/common/login-workspace.png)
 
@@ -50,8 +50,8 @@ ms.locfileid: "85970911"
 
 Чтобы просмотреть сведения об одном из Apache Spark приложений, выберите Apache Spark приложение и просмотрите сведения. Если приложение Apache Spark все еще выполняется, можно отслеживать ход выполнения. [Дополнительные сведения](apache-spark-applications.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о выполнении конвейера мониторинга см. в статье запуск конвейера мониторинга в [Azure синапсе Studio](how-to-monitor-pipeline-runs.md) . 
+Дополнительные сведения о выполнении мониторинга конвейера см. в статье [конвейер мониторинга запуск синапсе Studio](how-to-monitor-pipeline-runs.md) . 
 
-Дополнительные сведения об отладке Apache Spark приложении см. в статье [мониторинг Apache Spark приложений в Azure синапсе Studio](apache-spark-applications.md) .
+Дополнительные сведения об отладке Apache Spark приложении см. в статье [мониторинг Apache Spark приложений в синапсе Studio](apache-spark-applications.md) .

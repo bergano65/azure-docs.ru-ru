@@ -3,11 +3,12 @@ title: Удаление Application Insights в Visual Studio — Azure Monitor
 description: Удаление Application Insights пакета SDK для ASP.NET и ASP.NET Core в Visual Studio.
 ms.topic: conceptual
 ms.date: 04/06/2020
-ms.openlocfilehash: 1c9ff8d3d305645ac7d113421e2c6c5f8451bd2b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 08a6d29e9170dde4bf3cc12015d126874006a778
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80805109"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87049770"
 ---
 # <a name="how-to-remove-application-insights-in-visual-studio"></a>Удаление Application Insights в Visual Studio
 
@@ -228,4 +229,4 @@ ms.locfileid: "80805109"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview)
+- [Azure Monitor](../overview.md)

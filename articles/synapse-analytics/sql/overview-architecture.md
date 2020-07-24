@@ -1,5 +1,5 @@
 ---
-title: Архитектура Azure Synapse Analytics
+title: Архитектура Synapse SQL
 description: Узнайте, как в Azure Synapse Analytics с помощью массового параллелизма (MPP) и возможностей службы хранилища Azure можно достичь высокой эффективности и масштабируемости.
 services: synapse-analytics
 author: mlee3gsd
@@ -10,11 +10,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: d073bc82b3a9e42e443caa5d3e7855fd4eb5b98b
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 9f2f3eee12bb8741f6d079f6f081a08f4e2db9b5
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83658910"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87046859"
 ---
 # <a name="azure-synapse-sql-architecture"></a>Архитектура Azure Synapse Analytics 
 

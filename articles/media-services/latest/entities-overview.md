@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 01/21/2020
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 7e4f1141a9d4bd58451782e8412063a22565556d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a9f9463cd1cac49e36ea52cafaf4d07f4e709ca7
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80584532"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87053259"
 ---
 # <a name="filtering-ordering-and-paging-of-media-services-entities"></a>Фильтрация, упорядочение и разбиение на страницы объектов служб мультимедиа
 
@@ -45,7 +45,7 @@ ms.locfileid: "80584532"
 - `ge`: Проверка того, что поле *больше или равно* значению константы.
 - `le`: Проверка того, что поле *меньше или равно* значению константы.
 
-## <a name="filter"></a>Filter
+## <a name="filter"></a>Фильтр
 
 Используйте `$filter` для предоставления параметра фильтра OData, чтобы найти только интересующие вас объекты.
 
@@ -64,13 +64,13 @@ var firstPage = await MediaServicesArmClient.Assets.ListAsync(CustomerResourceGr
 
 ## <a name="order-by"></a>Упорядочить по
 
-Используйте `$orderby` для сортировки возвращаемых объектов по указанному параметру. Пример:  
+Используйте `$orderby` для сортировки возвращаемых объектов по указанному параметру. Например.  
 
 ```
 GET https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/mediaresources/providers/Microsoft.Media/mediaServices/amstestaccount/assets?api-version=2018-07-01$orderby=properties/created%20gt%202018-05-11T17:39:08.387Z
 ```
 
-Чтобы отсортировать результаты по возрастанию или по убыванию, добавьте либо `asc` `desc` к имени поля, разделенному пробелом. Например: `$orderby properties/created desc`.
+Чтобы отсортировать результаты по возрастанию или по убыванию, добавьте либо `asc` `desc` к имени поля, разделенному пробелом. Например, так: `$orderby properties/created desc`.
 
 ## <a name="skip-token"></a>Пропустить токен
 
@@ -156,36 +156,36 @@ client.Jobs.List(config.ResourceGroup, config.AccountName, VideoAnalyzerTransfor
 
 В следующей таблице показано, как можно применить параметры фильтрации и упорядочивания к разным сущностям.
 
-|Имя сущности|Имя свойства|Filter|Номер|
+|Имя сущности|Имя свойства|Фильтр|Порядок|
 |---|---|---|---|
-|[Активы](https://docs.microsoft.com/rest/api/media/assets/)|name|`eq`, `gt`, `lt`, `ge`, `le`|`asc` и `desc`|
+|[Ресурсы](/rest/api/media/assets/)|name|`eq`, `gt`, `lt`, `ge`, `le`|`asc` и `desc`|
 ||properties.alternateId |`eq`||
 ||properties.assetId |`eq`||
 ||properties.created| `eq`, `gt`, `lt`| `asc` и `desc`|
-|[Политики ключа содержимого](https://docs.microsoft.com/rest/api/media/contentkeypolicies)|name|`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
+|[Политики ключа содержимого](/rest/api/media/contentkeypolicies)|name|`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
 ||properties.created    |`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
 ||properties.description    |`eq`, `ne`, `ge`, `le`, `gt`, `lt`||
 ||properties.lastModified|`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
 ||properties.policyId|`eq`, `ne`||
-|[Задания](https://docs.microsoft.com/rest/api/media/jobs)| name  | `eq`            | `asc` и `desc`|
+|[Задания](/rest/api/media/jobs)| name  | `eq`            | `asc` и `desc`|
 ||properties.state        | `eq`, `ne`        |                         |
 ||properties.created      | `gt`, `ge`, `lt`, `le`| `asc` и `desc`|
 ||properties.lastModified | `gt`, `ge`, `lt`, `le` | `asc` и `desc`| 
-|[Указатели потоковой передачи](https://docs.microsoft.com/rest/api/media/streaminglocators)|name|`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
+|[Указатели потоковой передачи](/rest/api/media/streaminglocators)|name|`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
 ||properties.created    |`eq`, `ne`, `ge`, `le`,  `gt`, `lt`|`asc` и `desc`|
 ||properties.endTime    |`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
-|[Политики потоковой передачи](https://docs.microsoft.com/rest/api/media/streamingpolicies)|name|`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
+|[Политики потоковой передачи](/rest/api/media/streamingpolicies)|name|`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
 ||properties.created    |`eq`, `ne`, `ge`, `le`, `gt`, `lt`|`asc` и `desc`|
-|[Преобразования](https://docs.microsoft.com/rest/api/media/transforms)| name | `eq`            | `asc` и `desc`|
+|[Преобразования](/rest/api/media/transforms)| name | `eq`            | `asc` и `desc`|
 || properties.created      | `gt`, `ge`, `lt`, `le`| `asc` и `desc`|
 || properties.lastModified | `gt`, `ge`, `lt`, `le`| `asc` и `desc`|
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Список ресурсов](https://docs.microsoft.com/rest/api/media/assets/list)
-* [Список политик ключей содержимого](https://docs.microsoft.com/rest/api/media/contentkeypolicies/list)
-* [Список заданий](https://docs.microsoft.com/rest/api/media/jobs/list)
-* [Перечисление политик потоковой передачи](https://docs.microsoft.com/rest/api/media/streamingpolicies/list)
-* [Перечисление указателей потоковой передачи](https://docs.microsoft.com/rest/api/media/streaminglocators/list)
+* [Список ресурсов](/rest/api/media/assets/list)
+* [Список политик ключей содержимого](/rest/api/media/contentkeypolicies/list)
+* [Список заданий](/rest/api/media/jobs/list)
+* [Перечисление политик потоковой передачи](/rest/api/media/streamingpolicies/list)
+* [Перечисление указателей потоковой передачи](/rest/api/media/streaminglocators/list)
 * [Краткое руководство по потоковой передаче видеофайлов — .NET](stream-files-dotnet-quickstart.md)
 * [Квоты и ограничения](limits-quotas-constraints.md)

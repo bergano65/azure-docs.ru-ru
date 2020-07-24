@@ -1,6 +1,6 @@
 ---
-title: Мониторинг Apache Spark приложений
-description: Используйте Azure синапсе Studio для мониторинга приложений Apache Spark.
+title: Мониторинг Apache Spark приложений с помощью синапсе Studio
+description: Используйте синапсе Studio для мониторинга приложений Apache Spark.
 services: synapse-analytics
 author: matt1883
 ms.service: synapse-analytics
@@ -9,14 +9,14 @@ ms.subservice: monitoring
 ms.date: 04/15/2020
 ms.author: mahi
 ms.reviewer: mahi
-ms.openlocfilehash: 20c4216e7af0cb4100204ebae1b484a53e3c50a6
-ms.sourcegitcommit: f684589322633f1a0fafb627a03498b148b0d521
+ms.openlocfilehash: ecc34b84e5be2d0470cc5a58a71a70e9ffcab1b6
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85971353"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87052560"
 ---
-# <a name="use-the-azure-synapse-studio-to-monitor-your-apache-spark-applications"></a>Мониторинг Apache Spark приложений с помощью Azure синапсе Studio
+# <a name="use-synapse-studio-to-monitor-your-apache-spark-applications"></a>Использование синапсе Studio для мониторинга приложений Apache Spark
 
 С помощью Azure синапсе Analytics вы можете использовать Apache Spark для запуска записных книжек, заданий и других типов приложений в пулах Apache Spark в рабочей области.
 
@@ -33,7 +33,7 @@ ms.locfileid: "85971353"
 
 Прежде чем приступить к изучению этого руководства, убедитесь, что выполнены следующие требования.
 
-- Рабочая область Azure синапсе Studio. Инструкции см. в статье [Создание рабочей области Azure синапсе Studio](https://docs.microsoft.com/azure/machine-learning/how-to-manage-workspace#create-a-workspace).
+- Рабочая область синапсе Studio. Инструкции см. [в разделе Создание рабочей области синапсе Studio](https://docs.microsoft.com/azure/machine-learning/how-to-manage-workspace#create-a-workspace).
 
 - Пул Apache Spark.
 
@@ -145,6 +145,6 @@ ms.locfileid: "85971353"
 
    ![сведения о невыполненном задании](./media/how-to-monitor-spark-applications/failed-job-info.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о выполнении конвейера мониторинга см. в статье запуск конвейера мониторинга в [Azure синапсе Studio](how-to-monitor-pipeline-runs.md) .  
+Дополнительные сведения о выполнении конвейера мониторинга см. в статье [выполнение конвейера мониторинга с помощью синапсе Studio](how-to-monitor-pipeline-runs.md) .  

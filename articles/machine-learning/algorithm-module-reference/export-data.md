@@ -9,11 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 02/22/2020
-ms.openlocfilehash: 807771fd4018c9666f059c965370ebc36d0105df
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 279ba2ca5b82d7bad5b55736179f92a0146bdc84
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79456307"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87048150"
 ---
 # <a name="export-data-module"></a>Экспорт модуля данных
 
@@ -27,6 +28,7 @@ ms.locfileid: "79456307"
 - Общая папка Azure
 - Azure Data Lake
 - Azure Data Lake 2-го поколения
+- База данных SQL Azure
 
 Прежде чем экспортировать данные, необходимо сначала зарегистрировать хранилище данных в рабочей области Машинное обучение Azure. Дополнительные сведения см. [в статье доступ к данным в службах хранилища Azure](../how-to-access-data.md).
 

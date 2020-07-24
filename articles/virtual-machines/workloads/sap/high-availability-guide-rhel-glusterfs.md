@@ -14,11 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/16/2018
 ms.author: radeltch
-ms.openlocfilehash: 388a2db2c888be541d89c5f4274bd38b37e4ca28
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e6b8708edeeb4b3b69dab82265d13db2a4c22e08
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77591920"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87051660"
 ---
 # <a name="glusterfs-on-azure-vms-on-red-hat-enterprise-linux-for-sap-netweaver"></a>GlusterFS в виртуальных машинах Azure с Red Hat Enterprise Linux для SAP NetWeaver
 
@@ -101,7 +102,7 @@ ms.locfileid: "77591920"
 
 ### <a name="deploy-linux-manually-via-azure-portal"></a>Развертывание Linux вручную с помощью портала Azure
 
-Сначала необходимо создать виртуальные машины для этого кластера. После этого следует создать подсистему балансировки нагрузки и использовать виртуальные машины во внутренних пулах. Мы рекомендуем [подсистему балансировки нагрузки ценовой категории "Стандартный"](https://docs.microsoft.com/azure/load-balancer/load-balancer-standard-overview).  
+Сначала необходимо создать виртуальные машины для этого кластера. После этого следует создать подсистему балансировки нагрузки и использовать виртуальные машины во внутренних пулах. Мы рекомендуем [подсистему балансировки нагрузки ценовой категории "Стандартный"](../../../load-balancer/load-balancer-overview.md).  
 
 1. Создание группы ресурсов
 1. Создайте виртуальную сеть
@@ -347,7 +348,7 @@ ms.locfileid: "77591920"
    sudo gluster volume start <b>NW2</b>-aers
    </code></pre>
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Настройка кластера Pacemaker в SUSE Linux Enterprise Server в Azure](high-availability-guide-rhel.md)
 * [SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению][planning-guide]

@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: dannyevers
 ms.author: mingshen
 ms.date: 04/13/2020
-ms.openlocfilehash: aee2016b422dcf447dbae047c8a77ae93bf79ab7
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 5bed073799521498efe5302ab9af616dcdf9f9ab
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86107161"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87053572"
 ---
 # <a name="create-your-azure-virtual-machine-technical-assets"></a>Создание технических ресурсов виртуальной машины Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "86107161"
 
 Для управления виртуальными машинами и виртуальными жесткими дисками рекомендуется использовать одну из следующих сред сценариев:
 
-* [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview)
+* [Azure PowerShell](https://docs.microsoft.com/powershell/azure/)
 * [Azure CLI](https://code.visualstudio.com/)
 
 Кроме того, мы рекомендуем добавить следующие инструменты в среду разработки:

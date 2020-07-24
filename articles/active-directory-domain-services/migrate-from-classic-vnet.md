@@ -9,12 +9,12 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 07/09/2020
 ms.author: iainfou
-ms.openlocfilehash: e2802445bbb80a4412787362a3ee9aaee4adcd40
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.openlocfilehash: f77d9cd72476f9f2c30ca22bb2296efe1fd6cf9d
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86223505"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87051674"
 ---
 # <a name="migrate-azure-active-directory-domain-services-from-the-classic-virtual-network-model-to-resource-manager"></a>Перенос доменных служб Azure Active Directory из классической модели виртуальной сети в диспетчер ресурсов
 
@@ -145,11 +145,11 @@ AD DS Azure обычно использует первые два доступн
 
 | Шаг    | Выполнено через  | Предполагаемое время  | Простой  | Выполнить откат или восстановление? |
 |---------|--------------------|-----------------|-----------|-------------------|
-| [Шаг 1. обновление и размещение новой виртуальной сети](#update-and-verify-virtual-network-settings) | Портал Azure | 15 минут | Время простоя не требуется | Недоступно |
+| [Шаг 1. обновление и размещение новой виртуальной сети](#update-and-verify-virtual-network-settings) | портал Azure; | 15 минут | Время простоя не требуется | Н/Д |
 | [Шаг 2. Подготовка управляемого домена к миграции](#prepare-the-managed-domain-for-migration) | PowerShell | 15 – 30 минут в среднем | Время простоя AD DS Azure начинается после завершения этой команды. | Можно выполнить откат и восстановление. |
 | [Шаг 3. Перемещение управляемого домена в существующую виртуальную сеть](#migrate-the-managed-domain) | PowerShell | 1 – 3 часа в среднем | После завершения этой команды будет доступен один контроллер домена. время простоя заканчивается. | В случае сбоя доступны операции отката (Self-Service) и восстановление. |
 | [Шаг 4. Тестирование и ожидание контроллера домена реплики](#test-and-verify-connectivity-after-the-migration)| PowerShell и портал Azure | 1 час или более, в зависимости от числа тестов | Оба контроллера домена доступны и должны работать нормально. | Недоступно После успешного переноса первой виртуальной машины нет возможности отката или восстановления. |
-| [Шаг 5. Дополнительные действия по настройке](#optional-post-migration-configuration-steps) | портал Azure и виртуальные машины | Недоступно | Время простоя не требуется | Недоступно |
+| [Шаг 5. Дополнительные действия по настройке](#optional-post-migration-configuration-steps) | портал Azure и виртуальные машины | Н/Д | Время простоя не требуется | Н/Д |
 
 > [!IMPORTANT]
 > Чтобы избежать дополнительных простоев, ознакомьтесь со всеми этими статьями и рекомендациями по миграции перед началом процесса миграции. Процесс миграции влияет на доступность контроллеров домена AD DS Azure в течение определенного периода времени. Пользователи, службы и приложения не могут пройти проверку подлинности в управляемом домене в процессе миграции.
@@ -319,7 +319,7 @@ Migrate-Aadds `
 
 Чтобы восстановить управляемый домен из резервной копии, [откройте билет обращения в службу поддержки, используя портал Azure][azure-support]. Укажите идентификатор каталога, имя домена и причину восстановления. Для завершения процесса поддержки и восстановления может потребоваться несколько дней.
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 
 При возникновении проблем после миграции на модель развертывания диспетчер ресурсов ознакомьтесь с некоторыми из следующих распространенных областей устранения неполадок:
 
@@ -335,7 +335,7 @@ Migrate-Aadds `
 <!-- INTERNAL LINKS -->
 [azure-bastion]: ../bastion/bastion-overview.md
 [network-considerations]: network-considerations.md
-[azure-powershell]: /powershell/azure/overview
+[azure-powershell]: /powershell/azure/
 [network-ports]: network-considerations.md#network-security-groups-and-required-ports
 [Connect-AzAccount]: /powershell/module/az.accounts/connect-azaccount
 [Set-AzContext]: /powershell/module/az.accounts/set-azcontext

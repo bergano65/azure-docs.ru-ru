@@ -9,16 +9,17 @@ ms.service: media-services
 ms.subservice: video-indexer
 ms.topic: article
 ms.date: 06/26/2019
-ms.author: anzaman
-ms.openlocfilehash: 09e6fd8530ddb1745a92c6f31f4d5a5843a2ac10
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.author: kumud
+ms.openlocfilehash: 937a73847e867e826b3a577adf0c85184d7a93d0
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76513173"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87047239"
 ---
 # <a name="customizing-content-models-in-video-indexer"></a>Настройка моделей содержимого в индексаторе видео
 
-Индексатор видео позволяет настраивать некоторые модели для адаптации к конкретному варианту использования. Эти модели включают [торговые марки](customize-brands-model-overview.md), [язык](customize-language-model-overview.md)и [лицо](customize-person-model-overview.md). Эти модели можно легко настроить с помощью веб-сайта индексатора видео или API.
+Индексатор видео позволяет адаптировать некоторые модели к конкретным вариантам использования. Эти модели включают [торговые марки](customize-brands-model-overview.md), [язык](customize-language-model-overview.md)и [лицо](customize-person-model-overview.md). Их можно легко настроить с помощью веб-сайта или API Индексатора видео.
 
 В этой статье приводятся ссылки на статьи, в которых объясняются преимущества каждого типа настройки. В этой статье также приводятся ссылки на практические руководства, показывающие, как можно реализовать настройку каждой модели.
 
@@ -38,12 +39,12 @@ ms.locfileid: "76513173"
 * [Настройка языковых моделей с помощью веб-сайта индексатора видео](customize-language-model-with-website.md)
 * [Настройка языковых моделей с помощью API индексатора видео](customize-language-model-with-api.md)
  
-## <a name="person-model"></a>Модель Person
+## <a name="person-model"></a>Модель действующего лица
 
 * [Общие сведения о настройке моделей пользователей](customize-person-model-overview.md)
 * [Настройка моделей Person с помощью веб-сайта индексатора видео](customize-person-model-with-website.md)
 * [Настройка моделей Person с помощью API индексатора видео](customize-person-model-with-api.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Общие сведения об Индексаторе видео](video-indexer-overview.md)

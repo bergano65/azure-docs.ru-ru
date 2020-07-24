@@ -13,11 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/05/2019
 ms.author: juliako
-ms.openlocfilehash: 872dad95fc5b536c51e251612f40439da020a059
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 16c74e10e88d3f8eacd8f59222adbdb19be813ef
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75779643"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87053194"
 ---
 # <a name="configure-postman-for-media-services-v3-rest-api-calls"></a>Настройка POST для вызовов REST API служб мультимедиа v3
 
@@ -27,8 +28,8 @@ ms.locfileid: "75779643"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md). Обязательно запомните имя группы ресурсов и имя учетной записи Служб мультимедиа. 
-- Получите информацию, необходимую для [доступа к API-интерфейсам](access-api-cli-how-to.md).
+- [Создание учетной записи Служб мультимедиа](./create-account-howto.md). Обязательно запомните имя группы ресурсов и имя учетной записи Служб мультимедиа. 
+- Получите информацию, необходимую для [доступа к API-интерфейсам](./access-api-howto.md).
 - Установите клиент REST [Postman](https://www.getpostman.com/) для выполнения REST API, как показано в некоторых руководствах по REST AMS. 
 
     Мы используем **Postman**, но подойдет любое средство REST. Другие варианты: **Visual Studio Code** с подключаемым модулем RESTful или **Telerik Fiddler**. 
@@ -91,18 +92,18 @@ ms.locfileid: "75779643"
 
     ![Получение маркера AAD](./media/develop-with-postman/postman-get-aad-auth-token.png)
 
-## <a name="troubleshooting"></a>Устранение неполадок 
+## <a name="troubleshooting"></a>Диагностика 
 
 * Если приложение завершается с ошибкой "HTTP 504: время ожидания шлюза", убедитесь, что для переменной расположения не было явно задано значение, отличное от ожидаемого расположения учетной записи служб мультимедиа. 
 * Если возникает ошибка "учетная запись не найдена", убедитесь, что для свойства Location в тексте сообщения JSON задано расположение учетной записи служб мультимедиа. 
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 
 - [Передача файлов в учетную запись Служб мультимедиа с помощью REST](upload-files-rest-how-to.md)
 - [Создание фильтров с помощью REST API Служб мультимедиа](filters-dynamic-manifest-rest-howto.md)
 - [REST API на основе Azure Resource Manager](https://github.com/Azure-Samples/media-services-v3-arm-templates)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Потоковая передача файлов с помощью REST](stream-files-tutorial-with-rest.md)  
-- [Учебник. кодирование удаленного файла на основе URL-адреса и поток видео — остальное](stream-files-tutorial-with-rest.md)
+- [Руководство. Кодирование удаленного файла на основе URL-адреса и потоковой передачи видео с помощью REST](stream-files-tutorial-with-rest.md)

@@ -8,11 +8,12 @@ author: mlearned
 ms.author: mlearned
 description: 'Создание подключения субъекта-службы с поддержкой Azure Arc '
 keywords: Kubernetes, Arc, Azure, контейнеры
-ms.openlocfilehash: 3c95c6bb85c7c1bc097b7751a560a658863c0afd
-ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
+ms.openlocfilehash: 02689dba32c8cc91e4a4a4de4dee98bc990b4dd6
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83725607"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87050068"
 ---
 # <a name="create-an-azure-arc-enabled-onboarding-service-principal-preview"></a>Создание подключения субъекта-службы с поддержкой Azure Arc (предварительная версия)
 
@@ -44,7 +45,7 @@ az ad sp create-for-RBAC --skip-assignment --name "https://azure-arc-for-k8s-onb
 
 ## <a name="assign-permissions"></a>Назначение разрешений
 
-После создания субъект-службы назначьте роль "Подключение Azure Arc для Kubernetes" только что созданному участнику. Это встроенная роль Azure с ограниченными разрешениями, которая позволяет субъекту только регистрировать кластеры в Azure. Субъект не может обновлять, удалять или изменять другие кластеры или ресурсы в подписке.
+После создания нового субъекта-службы назначьте роль "кластер Kubernetes-Azure для адаптации" только что созданному участнику. Это встроенная роль Azure с ограниченными разрешениями, которая позволяет субъекту только регистрировать кластеры в Azure. Субъект не может обновлять, удалять или изменять другие кластеры или ресурсы в подписке.
 
 Учитывая ограниченные возможности, клиенты могут легко повторно использовать этот субъект для подключения нескольких кластеров.
 

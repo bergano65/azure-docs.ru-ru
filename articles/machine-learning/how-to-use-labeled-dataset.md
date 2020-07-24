@@ -8,14 +8,14 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: how-to
 ms.date: 05/14/2020
-ms.openlocfilehash: 80932ebbedeca3f5e0a1b4cc2e68d73ef5b0d63a
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: 9aec584271975982e1d58cc3525faee0d403e1af
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86025732"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87048080"
 ---
-# <a name="create-and-explore-azure-machine-learning-dataset-with-labels-preview"></a>Создание и изучение набора данных Машинное обучение Azure с помощью меток (Предварительная версия)
+# <a name="create-and-explore-azure-machine-learning-dataset-with-labels"></a>Создание и изучение набора данных с метками в Машинном обучении Azure
 
 Из этой статьи вы узнаете, как экспортировать метки данных из проекта маркировки данных в Машинном обучении Azure и выгрузить их в популярные форматы, например в виде кадра данных Pandas для исследования или набора данных Torchvision для преобразования изображений. 
 

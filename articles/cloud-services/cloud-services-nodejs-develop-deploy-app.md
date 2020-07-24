@@ -9,11 +9,12 @@ ms.devlang: nodejs
 ms.topic: conceptual
 ms.date: 08/17/2017
 ms.author: tagore
-ms.openlocfilehash: 774d2bb58fd7dd75825be8f433f078d70c13fe8c
-ms.sourcegitcommit: dee7b84104741ddf74b660c3c0a291adf11ed349
+ms.openlocfilehash: 25cde21d72de49c5a4f51121f2aa4295319899ac
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85919982"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87049209"
 ---
 # <a name="build-and-deploy-a-nodejs-application-to-an-azure-cloud-service"></a>Построение и развертывание приложения Node.js в облачной службе Azure
 
@@ -30,7 +31,7 @@ ms.locfileid: "85919982"
 
 ![В окне браузера отображается веб-страница "Hello World"][A web browser displaying the Hello World web page]
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 > [!NOTE]
 > В этом учебнике используется Azure PowerShell, для которого требуется операционная система Windows.
 
@@ -170,16 +171,16 @@ Publish-AzureServiceProject -ServiceName $ServiceName  -Location "East US" -Laun
    > [!NOTE]
    > При удалении службы учетная запись хранения, созданная при первоначальной публикации службы, не удаляется. Оплата за использование хранилища будет насчитываться. Если хранилище не используется другими объектами, его можно удалить.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительную информацию см. в [центре разработчиков Node.js].
 
 <!-- URL List -->
 
 [веб-сайтами Azure, облачными службами и виртуальными машинами]: /azure/architecture/guide/technology-choices/compute-decision-tree
 [использовать упрощенное веб-приложение]: ../app-service/app-service-web-get-started-nodejs.md
-[Azure PowerShell]: /powershell/azureps-cmdlets-docs
+[Azure PowerShell]: /powershell/azure/
 [пакет SDK для Azure для .NET 2.7]: https://www.microsoft.com/en-us/download/details.aspx?id=48178
-[Подключите PowerShell]: /powershell/azureps-cmdlets-docs
+[Подключите PowerShell]: /powershell/azure/
 [nodejs.org]: https://nodejs.org/
 [общие сведения о создании размещенной службы для Azure]: https://azure.microsoft.com/documentation/services/cloud-services/
 [Центр разработчика Node.js]: https://azure.microsoft.com/develop/nodejs/

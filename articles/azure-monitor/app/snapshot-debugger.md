@@ -4,11 +4,12 @@ description: Отладочные моментальные снимки авто
 ms.topic: conceptual
 ms.date: 10/23/2019
 ms.reviewer: cweining
-ms.openlocfilehash: 18f43ba90157d71ec9488b6858fa9f41b2ee42a5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c920ab019d5d802ea862ab923297670da766a456
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84692025"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87049678"
 ---
 # <a name="debug-snapshots-on-exceptions-in-net-apps"></a>Отладочные моментальные снимки для исключений в приложениях .NET
 При возникновении исключения, можно автоматически собирать отладочный моментальный снимок из работающего веб-приложения. Моментальный снимок отображает состояние исходного кода и переменных в момент порождения этого исключения. Snapshot Debugger в [Azure Application Insights](../../azure-monitor/app/app-insights-overview.md) отслеживает данные телеметрии исключений из веб-приложения. Он собирает моментальные снимки для наиболее частых исключений, чтобы предоставить вам необходимые сведения для диагностики проблем в рабочей среде. Включите в приложение [пакет NuGet сборщика моментальных снимков](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector) и при необходимости настройте параметры коллекции в [ApplicationInsights.config](../../azure-monitor/app/configuration-with-applicationinsights-config.md). Моментальные снимки отображаются на [исключениях](../../azure-monitor/app/asp-net-exceptions.md) на портале Application Insights.
@@ -24,7 +25,7 @@ ms.locfileid: "84692025"
 
 Поддерживаются следующие среды:
 
-* [служба приложений Azure](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json);
+* [Служба приложений Azure](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json)
 * [Облачные службы Azure](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json) под управлением ОС семейства 4 или более поздней версии
 * [Службы Service Fabric Azure](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json) , работающие под Windows Server 2012 R2 или более поздней версии
 * [Виртуальные машины Azure и масштабируемые наборы виртуальных машин](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json) под Windows Server 2012 R2 или более поздней версии
@@ -45,7 +46,7 @@ ms.locfileid: "84692025"
 Владельцам подписки следует назначить роль `Application Insights Snapshot Debugger` пользователям, которые будут проверять моментальные снимки. Владельцы подписок могут назначить эту роль отдельным пользователям или группам для целевого ресурса Application Insights или его группы ресурсов или подписки.
 
 1. Перейдите к ресурсу Application Insights на портале Azure.
-1. Щелкните **Управление доступом (IAM)** .
+1. Выберите **Управление доступом (IAM)**.
 1. Нажмите кнопку **+ добавить назначение роли** .
 1. В раскрывающемся списке **Роли** выберите **Отладчик моментальных снимков Application Insights**.
 1. Выполните поиск и введите имя пользователя, который будет добавлен.
@@ -88,7 +89,7 @@ ms.locfileid: "84692025"
 Каждый раз, когда приложение вызывает [TrackException](../../azure-monitor/app/asp-net-exceptions.md#exceptions), сборщик моментальных снимков вычисляет идентификатор проблемы из типа вызываемого исключения и метод создания исключения.
 При этом значение счетчика увеличивается для соответствующего идентификатора проблемы. Когда счетчик достигает значения `ThresholdForSnapshotting`, идентификатор проблемы добавляется в план сбора.
 
-Сборщик Snapshot Collector также отслеживает исключения во время их создания, используя подписку на событие [AppDomain.CurrentDomain.FirstChanceException](https://docs.microsoft.com/dotnet/api/system.appdomain.firstchanceexception). При возникновении этого события идентификатор проблемы исключения вычисляется и сравнивается с идентификаторами в плане сбора.
+Сборщик Snapshot Collector также отслеживает исключения во время их создания, используя подписку на событие [AppDomain.CurrentDomain.FirstChanceException](/dotnet/api/system.appdomain.firstchanceexception). При возникновении этого события идентификатор проблемы исключения вычисляется и сравнивается с идентификаторами в плане сбора.
 Если обнаружено соответствие, создается моментальный снимок выполняющегося процесса. Моментальному снимку назначается уникальный идентификатор, и к исключению добавляется метка с этим идентификатором. После возврата ответа обработчиком FirstChanceException вызванное исключение обрабатывается в обычном режиме. Со временем исключение снова достигает метода TrackException. Тогда оно вместе с идентификатором моментального снимка сообщается в Application Insights.
 
 Основной процесс продолжает выполняться и обслуживать трафик для пользователей с небольшим прерыванием. Тем временем моментальный снимок передается в процесс передачи моментальных снимков. Отправитель моментальных снимков создает минидамп и передает его в Application Insights вместе с соответствующими PDB-файлами символов.
@@ -116,7 +117,7 @@ ms.locfileid: "84692025"
 Для службы вычислений Azure и других типов служб файлы символов должны находиться в одной папке с DLL-файлом основного приложения (как правило, `wwwroot/bin`) или быть доступными по текущему пути.
 
 > [!NOTE]
-> Дополнительные сведения о различных доступных параметрах символов см. в [документации по Visual Studio](https://docs.microsoft.com/visualstudio/ide/reference/advanced-build-settings-dialog-box-csharp?view=vs-2019#output
+> Дополнительные сведения о различных доступных параметрах символов см. в [документации по Visual Studio](/visualstudio/ide/reference/advanced-build-settings-dialog-box-csharp?view=vs-2019#output
 ). Для получения наилучших результатов рекомендуется использовать «Full», «Portable» или «Embedded».
 
 ### <a name="optimized-builds"></a>Оптимизированные сборки
@@ -126,10 +127,10 @@ ms.locfileid: "84692025"
 > [!TIP]
 > Установите расширение сайта Application Insights в службе приложений для получения поддержки деоптимизации.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Включите Snapshot Debugger Application Insights для приложения:
 
-* [служба приложений Azure](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json);
+* [Служба приложений Azure](snapshot-debugger-appservice.md?toc=/azure/azure-monitor/toc.json)
 * [Oблачныe службы Azure2](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json)
 * [Службы Service Fabric Azure](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json)
 * [Профилирование веб-приложений, работающих на виртуальной машине Azure или в масштабируемом наборе виртуальных машин, с помощью Application Insights Profiler](snapshot-debugger-vm.md?toc=/azure/azure-monitor/toc.json)
@@ -137,6 +138,6 @@ ms.locfileid: "84692025"
 
 Кроме Application Insights Snapshot Debugger:
  
-* [Установите в коде точки прикрепления](https://docs.microsoft.com/visualstudio/debugger/debug-live-azure-applications), чтобы получать моментальные снимки не ожидая исключений.
+* [Установите в коде точки прикрепления](/visualstudio/debugger/debug-live-azure-applications), чтобы получать моментальные снимки не ожидая исключений.
 * В статье [Диагностика исключений в веб-приложениях с помощью Application Insights](../../azure-monitor/app/asp-net-exceptions.md) объясняется, как отобразить дополнительные исключения в Application Insights.
 * В статье [Интеллектуальное обнаружение в Application Insights](../../azure-monitor/app/proactive-diagnostics.md) описывается автоматическое обнаружение аномалий производительности.

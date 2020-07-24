@@ -15,11 +15,12 @@ ms.workload: infrastructure
 ms.date: 07/12/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 5a7343bcf6ba4388beda118b242fa47d13baaa89
-ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
+ms.openlocfilehash: 842ab7a1562c731e790ba03b2fd5acdc3987a90d
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84022596"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87051958"
 ---
 # <a name="sap-maxdb-livecache-and-content-server-deployment-on-azure-vms"></a>Развертывание SAP MaxDB, liveCache и сервера содержимого на виртуальных машинах Azure
 
@@ -73,7 +74,7 @@ ms.locfileid: "84022596"
 
 [azure-cli]:../../../cli-install-nodejs.md
 [azure-portal]:https://portal.azure.com
-[azure-ps]:/powershell/azureps-cmdlets-docs
+[azure-ps]:/powershell/azure/
 [azure-quickstart-templates-github]:https://github.com/Azure/azure-quickstart-templates
 [azure-script-ps]:https://go.microsoft.com/fwlink/p/?LinkID=395017
 [azure-resource-manager/management/azure-subscription-service-limits]:../../../azure-resource-manager/management/azure-subscription-service-limits.md
@@ -308,7 +309,7 @@ ms.locfileid: "84022596"
 
 
 
-В этом документе рассматривается несколько аспектов, которые следует учитывать при развертывании MaxDB, liveCache и сервера содержимого в Azure IaaS. Перед чтением этого документа следует ознакомиться с документом [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md), а также с другими руководствами в [документации по рабочей нагрузке SAP в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/get-started). 
+В этом документе рассматривается несколько аспектов, которые следует учитывать при развертывании MaxDB, liveCache и сервера содержимого в Azure IaaS. Перед чтением этого документа следует ознакомиться с документом [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md), а также с другими руководствами в [документации по рабочей нагрузке SAP в Azure](./get-started.md). 
 
 ## <a name="specifics-for-the-sap-maxdb-deployments-on-windows"></a>Особенности развертываний SAP MaxDB в Windows
 ### <a name="sap-maxdb-version-support-on-azure"></a>Поддерживаемые версии SAP MaxDB в Azure
@@ -328,7 +329,7 @@ ms.locfileid: "84022596"
 
 ### <a name="sap-maxdb-configuration-guidelines-for-sap-installations-in-azure-vms"></a>Рекомендации по конфигурации SAP MaxDB для установки SAP на виртуальные машины Azure
 #### <a name="storage-configuration"></a><a name="b48cfe3b-48e9-4f5b-a783-1d29155bd573"></a>Конфигурация хранилища
-Рекомендации для службы хранилища Azure и SAP MaxDB соответствуют общим рекомендациям, приведенным в разделе [Структура хранилища виртуальной машины для развертывания реляционной СУБД](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_general#65fa79d6-a85f-47ee-890b-22e794f51a64).
+Рекомендации для службы хранилища Azure и SAP MaxDB соответствуют общим рекомендациям, приведенным в разделе [Структура хранилища виртуальной машины для развертывания реляционной СУБД](./dbms_guide_general.md#65fa79d6-a85f-47ee-890b-22e794f51a64).
 
 > [!IMPORTANT]
 > Как и в других базах данных, в SAP MaxDB тоже есть файлы данных и файлы журналов, но в терминологии SAP MaxDB вместо понятия "файл" используется "том". Например, в SAP MaxDB существуют тома данных и тома журналов. Не путайте их с томами жестких дисков. 

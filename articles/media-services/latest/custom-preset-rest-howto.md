@@ -12,12 +12,12 @@ ms.topic: article
 ms.custom: ''
 ms.date: 05/14/2019
 ms.author: juliako
-ms.openlocfilehash: 30e22cb786e5dc2a667fe41ca8edf398cf0b7613
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4bd092dbee09a783dcbd6e36c82a70ff5decaf83
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "65761799"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87053326"
 ---
 # <a name="how-to-encode-with-a-custom-transform---rest"></a>Как кодировать с пользовательским преобразованием — остальное
 
@@ -32,7 +32,7 @@ ms.locfileid: "65761799"
 
 ## <a name="prerequisites"></a>Предварительные требования 
 
-- [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md). <br/>Обязательно запомните имя группы ресурсов и имя учетной записи Служб мультимедиа. 
+- [Создание учетной записи Служб мультимедиа](./create-account-howto.md). <br/>Обязательно запомните имя группы ресурсов и имя учетной записи Служб мультимедиа. 
 - [Настройте Postman для вызовов REST API Служб мультимедиа Azure](media-rest-apis-with-postman.md).<br/>Не забудьте выполнить последний шаг, указанный в разделе [Получение токена Azure AD](media-rest-apis-with-postman.md#get-azure-ad-token). 
 
 ## <a name="define-a-custom-preset"></a>Определение пользовательской предустановки
@@ -133,7 +133,7 @@ ms.locfileid: "65761799"
 
 ## <a name="create-a-new-transform"></a>Создание нового преобразования  
 
-В этом примере мы создадим **Преобразование** на основе пользовательской предустановки, определенной ранее. При создании преобразования сначала следует использовать [Get](https://docs.microsoft.com/rest/api/media/transforms/get) , чтобы проверить, существует ли он. Если преобразование существует, используйте его повторно. 
+В этом примере мы создадим **Преобразование** на основе пользовательской предустановки, определенной ранее. При создании преобразования сначала следует использовать [Get](/rest/api/media/transforms/get) , чтобы проверить, существует ли он. Если преобразование существует, используйте его повторно. 
 
 В скачанной коллекции POST выберите преобразования **и задания** -> **создать или обновить преобразование**.
 
@@ -151,4 +151,4 @@ PUT https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:r
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Просмотреть [другие операции RESTful](https://docs.microsoft.com/rest/api/media/)
+Просмотреть [другие операции RESTful](/rest/api/media/)

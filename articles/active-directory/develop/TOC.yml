@@ -34,7 +34,7 @@
       items:
         - name: ASP.NET
           href: quickstart-v2-aspnet-webapp.md
-        - name: ASP.NET Core
+        - name: "ASP.NET\_Core"
           href: quickstart-v2-aspnet-core-webapp.md
         - name: Node.js
           href: quickstart-v2-nodejs-webapp.md
@@ -343,8 +343,6 @@
               href: msal-js-use-ie-browser.md
             - name: Известные проблемы c Internet Explorer и Microsoft Edge
               href: msal-js-known-issues-ie-edge-browsers.md
-            - name: Известные проблемы c Safari
-              href: msal-js-known-issues-safari-browser.md
             - name: Обработка ошибок и исключений
               href: msal-handling-exceptions.md?tabs=javascript
             - name: Logging
@@ -462,7 +460,7 @@
       items:
         - name: Обзор
           href: authentication-national-cloud.md
-        - name: Аутентификация
+        - name: Проверка подлинности
           href: msal-national-cloud.md
     - name: Автоматическая подготовка пользователей (SCIM)
       items:

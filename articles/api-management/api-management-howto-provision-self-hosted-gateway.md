@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 03/31/2020
 ms.author: apimpm
-ms.openlocfilehash: 2870a654faad4e760a9d022488cb2c4c406cbeab
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e79248e16ca21ae84022f8ac7f280d93f489c6a4
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82203137"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87050344"
 ---
 # <a name="provision-a-self-hosted-gateway-in-azure-api-management"></a>Предоставление автономного шлюза в службе управления API Azure
 
@@ -31,8 +31,8 @@ ms.locfileid: "82203137"
 
 ## <a name="provision-a-self-hosted-gateway"></a>Предоставление независимого шлюза
 
-1. Выберите **шлюзы** в разделе **Параметры**.
-2. Щелкните **+ Добавить**.
+1. Выберите **шлюзы** в разделе **развертывание и инфраструктура**.
+2. Выберите **+ Добавить**.
 3. Введите **имя** и **регион** шлюза.
 > [!TIP]
 > **Регион** указывает предполагаемое расположение узлов шлюза, которые будут связаны с этим ресурсом шлюза. Он семантически эквивалентен похожему свойству, связанному с любым ресурсом Azure, но ему может быть присвоено произвольное строковое значение.

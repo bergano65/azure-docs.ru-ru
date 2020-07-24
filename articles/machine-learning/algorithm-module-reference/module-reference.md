@@ -9,12 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 05/19/2020
-ms.openlocfilehash: 1996f607d05cb84a80acbb105504ce0b5d3bb0c1
-ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.openlocfilehash: a588c58c74ab9632f3c3c61e223dd37704103714
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85856895"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87048104"
 ---
 # <a name="algorithm--module-reference-for-azure-machine-learning-designer-preview"></a>Справочник по модулям и алгоритмам для конструктора Машинного обучения Azure (предварительная версия)
 
@@ -43,7 +43,7 @@ ms.locfileid: "85856895"
 
 | Функциональность | Описание | Модуль |
 | --- |--- | --- |
-| Регрессия | Прогнозирование значения. | [Регрессия с помощью увеличивающегося дерева принятия решений](boosted-decision-tree-regression.md) <br/> [Регрессия с использованием модели леса принятия решений](decision-forest-regression.md) <br/> [Линейная регрессия](linear-regression.md)  <br/> [Регрессия нейронной сети](neural-network-regression.md)  <br/> |
+| Регрессия | Прогнозирование значения. | [Регрессия с помощью увеличивающегося дерева принятия решений](boosted-decision-tree-regression.md) <br/> [Регрессия с использованием модели леса принятия решений](decision-forest-regression.md) <br/> [Быстрая квантильная регрессия леса](fast-forest-quantile-regression.md)  <br/> [Линейная регрессия](linear-regression.md)  <br/> [Регрессия нейронной сети](neural-network-regression.md)  <br/> [Регрессия Пуассона](poisson-regression.md)  <br/>|
 | Кластеризация | Группирование данных.| [Кластеризация методом K-средних](k-means-clustering.md)
 | Классификация | Прогнозирование класса.  Выбор одного из двоичных (для двух классов) или мультиклассовых алгоритмов.| [Мультиклассовое увеличивающееся дерево принятия решений](multiclass-boosted-decision-tree.md) <br/> [Мультиклассовый лес принятия решений](multiclass-decision-forest.md) <br/> [Мультиклассовая регрессионная логистическая модель](multiclass-logistic-regression.md)  <br/> [Мультиклассовая нейронная сеть](multiclass-neural-network.md) <br/> [Многоклассовый классификатор "один — все"](one-vs-all-multiclass.md) <br/> [Двухклассовое усредненное восприятие](two-class-averaged-perceptron.md) <br/>  [Two-Class Boosted Decision Tree](two-class-boosted-decision-tree.md) (Двухклассовое увеличивающееся дерево принятия решений);  <br/> [Двухклассовый лес принятия решений](two-class-decision-forest.md) <br/>  [Двухклассовая регрессионная логистическая модель](two-class-logistic-regression.md) <br/> [Двухклассовая нейронная сеть](two-class-neural-network.md) <br/> [Двухклассовый метод опорных векторов](two-class-support-vector-machine.md) | 
 
@@ -51,7 +51,7 @@ ms.locfileid: "85856895"
 
 | Функциональность | Описание | Модуль |
 | --- |--- | --- |
-| Обучение модели | Обработка данных с помощью алгоритма. |  [Обучение модели кластеризации](train-clustering-model.md) <br/> [Train Model](train-model.md) (Обучение модели); <br/> [Обучение модели PyTorch](train-pytorch-model.md) <br/> [Настройка гиперпараметров модели](tune-model-hyperparameters.md) |
+| Обучение модели | Обработка данных с помощью алгоритма. |  [Обучение модели кластеризации](train-clustering-model.md) <br/> [Train Model](train-model.md) (Обучение модели); <br/> [Обучение модели Pytorch](train-pytorch-model.md) <br/> [Настройка гиперпараметров модели](tune-model-hyperparameters.md) |
 | Анализ и оценка модели | Измерение точности обученной модели. | [Применение преобразования](apply-transformation.md) <br/> [Назначение данных в кластеры](assign-data-to-clusters.md) <br/> [Перекрестная проверка модели](cross-validate-model.md) <br/> [Анализ модели](evaluate-model.md) <br/> [Оценка моделей изображений](score-image-model.md) <br/> [Оценка модели](score-model.md) |
 | Язык Python | Внедрение кода в модуль для интеграции Python с вашим конвейером. | [Создание модели Python](create-python-model.md) <br/> [Выполнение скриптов Python](execute-python-script.md) |
 | Язык R | Внедрение кода в модуль для интеграции R с вашим конвейером. | [Выполнение скрипта R](execute-r-script.md) |

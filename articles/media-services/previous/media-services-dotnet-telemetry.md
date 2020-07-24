@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: 1ffaefc51121aeb7421d6e49a3c0e58c76d4391e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c101f6f2007e9d772f03be5d69e56d5f52866d6d
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "61464952"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87052780"
 ---
 # <a name="configuring-azure-media-services-telemetry-with-net"></a>Настройка телеметрии служб мультимедиа Azure с использованием .NET 
 
@@ -30,9 +30,9 @@ ms.locfileid: "61464952"
 
 Данные телеметрии можно использовать одним из следующих способов.
 
-- Можно считывать данные непосредственно из хранилища таблиц Azure (например, с помощью пакета SDK для хранилища). Описание таблиц хранилища телеметрии см. в разделе об **использовании данных телеметрии**[этой](https://msdn.microsoft.com/library/mt742089.aspx) статьи.
+- Можно считывать данные непосредственно из хранилища таблиц Azure (например, с помощью пакета SDK для хранилища). Описание таблиц хранилища телеметрии см. в разделе об **использовании данных телеметрии**[этой](/previous-versions/azure/mt742089(v=azure.100)) статьи.
 
-либо
+Или
 
 - Для чтения данных из хранилища можно использовать поддержку, реализованную в пакете SDK служб мультимедиа для .NET. В этой статье показано, как включить телеметрию для указанной учетной записи AMS и как запросить метрики с помощью пакета SDK служб мультимедиа Azure для .NET.  
 

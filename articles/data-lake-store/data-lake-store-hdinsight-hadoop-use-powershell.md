@@ -6,12 +6,12 @@ ms.service: data-lake-store
 ms.topic: how-to
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: 902210f0ba6fc195cd219dd5a24e7098ed484d8f
-ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.openlocfilehash: b1a228e9d15a349f032291fb0678bdd0ad9d95b3
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85855654"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87048849"
 ---
 # <a name="use-azure-powershell-to-create-an-hdinsight-cluster-with-azure-data-lake-storage-gen1-as-additional-storage"></a>Использование Azure PowerShell для создания кластера HDInsight с Azure Data Lake Storage 1-го поколения (в качестве дополнительного хранилища)
 
@@ -51,7 +51,7 @@ ms.locfileid: "85855654"
 Перед началом работы с этим учебником необходимо иметь следующее:
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-* **Azure PowerShell 1,0 или более поздней**версии. Ознакомьтесь со статьей [Установка и настройка Azure PowerShell](/powershell/azure/overview).
+* **Azure PowerShell 1,0 или более поздней**версии. Ознакомьтесь со статьей [Установка и настройка Azure PowerShell](/powershell/azure/).
 * **Windows SDK**. Его можно установить [отсюда](https://dev.windows.com/en-us/downloads). Пакет используется для создания сертификата безопасности.
 * **Субъект-служба Azure Active Directory**. В этом учебнике приведены инструкции по созданию субъекта-службы в Azure AD. Однако, чтобы создать субъект-службу, необходимо быть администратором Azure AD. Если вы являетесь администратором Azure AD, то можете пропустить это предварительное требование и продолжить работу с учебником.
 
@@ -87,7 +87,7 @@ ms.locfileid: "85855654"
     New-AzResourceGroup -Name $resourceGroupName -Location "East US 2"
     ```
 
-    Вы должны увидеть подобные выходные данные:
+    Вы должны увидеть следующий результат:
 
     ```output
     ResourceGroupName : hdiadlgrp
@@ -136,10 +136,10 @@ ms.locfileid: "85855654"
 
 Чтобы настроить для Data Lake Storage 1-го поколения проверку подлинности в Active Directory, вам необходимо сделать следующее.
 
-* Создание самозаверяющего сертификата
+* Создание самозаверяющего сертификата.
 * создать приложение в Azure Active Directory и субъект-службу.
 
-### <a name="create-a-self-signed-certificate"></a>Создание самозаверяющего сертификата
+### <a name="create-a-self-signed-certificate"></a>Создание самозаверяющего сертификата.
 
 Прежде чем выполнять дальнейшие действия, описанные в этом разделе, убедитесь, что на вашем компьютере установлен [пакет SDK Windows](https://dev.windows.com/en-us/downloads). Вам также необходимо создать каталог, например **C:\mycertdir**, в котором будет создан сертификат.
 
