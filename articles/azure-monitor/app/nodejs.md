@@ -3,11 +3,12 @@ title: Мониторинг служб Node.js с помощью Azure Applicati
 description: Используйте Application Insights для мониторинга производительности и диагностики проблем в службах Node.js.
 ms.topic: conceptual
 ms.date: 06/01/2020
-ms.openlocfilehash: bb6ef87c99cbeeed4e8f3e5f98b8c57ce8667a71
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 80b4c4336a3e253e38790520a7eb4458ca36ff30
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84309770"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87024390"
 ---
 # <a name="monitor-your-nodejs-services-and-apps-with-application-insights"></a>Мониторинг служб и приложений Node.js с помощью Application Insights
 
@@ -23,14 +24,14 @@ ms.locfileid: "84309770"
 
 Выполните указанные ниже задачи, чтобы настроить мониторинг для приложения или службы.
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Обязательные условия
 
 Чтобы начать, у вас должна быть подписка Azure. Вы можете [создать ее бесплатно][azure-free-offer]. Если у вашей организации уже есть подписка Azure, администратору необходимо выполнить [эти инструкции][add-aad-user], чтобы добавить вас в эту подписку.
 
 [azure-free-offer]: https://azure.microsoft.com/free/
-[add-aad-user]: https://docs.microsoft.com/azure/active-directory/active-directory-users-create-azure-portal
+[add-aad-user]: ../../active-directory/fundamentals/add-users-azure-active-directory.md
 
-### <a name="set-up-an-application-insights-resource"></a><a name="resource"></a> Настройка ресурса Application Insights
+### <a name="set-up-an-application-insights-resource"></a><a name="resource"></a>Настройка ресурса Application Insights
 
 1. Войдите на [портал Azure][portal].
 2. [Создание ресурса Application Insights](create-new-resource.md)
@@ -372,7 +373,7 @@ appInsights.defaultClient.addTelemetryProcessor(removeStackTraces);
 
 Можно создать несколько Application Insights ресурсов и отправить каждому из них разные данные, используя соответствующие ключи инструментирования ("iKey").
 
- Пример:
+ Например.
 
 ```javascript
 let appInsights = require("applicationinsights");
@@ -395,7 +396,7 @@ client.config.PROPERTYNAME = VALUE;
 
 Эти свойства зависят от клиента, поэтому их можно настроить `appInsights.defaultClient` отдельно от клиентов, созданных с помощью `new appInsights.TelemetryClient()` .
 
-| Свойство.                        | Описание:                                                                                                |
+| Свойство                        | Описание                                                                                                |
 | ------------------------------- |------------------------------------------------------------------------------------------------------------|
 | instrumentationKey              | Идентификатор ресурса Application Insights.                                                      |
 | endpointUrl                     | Конечная точка приема, в которую отправляются полезные данные телеметрии.                                                      |
@@ -411,7 +412,7 @@ client.config.PROPERTYNAME = VALUE;
 | коррелатионидретринтервалмс    | Время ожидания перед повторной попыткой получения идентификатора для корреляции между компонентами (по умолчанию `30000` ).     |
 | коррелатионхеадерексклудеддомаинс| Список доменов, исключаемых из вставки заголовка корреляции между компонентами (по умолчанию см. [config. TS](https://github.com/Microsoft/ApplicationInsights-node.js/blob/develop/Library/Config.ts)).|
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Навигация и панели мониторинга на портале Application Insights](../../azure-monitor/app/overview-dashboard.md)
 * [Знакомство с аналитикой в Application Insights](../../azure-monitor/log-query/get-started-portal.md)
@@ -419,4 +420,4 @@ client.config.PROPERTYNAME = VALUE;
 <!--references-->
 
 [portal]: https://portal.azure.com/
-[FAQ]: ../../azure-monitor/app/troubleshoot-faq.md
+[FAQ]: ../faq.md

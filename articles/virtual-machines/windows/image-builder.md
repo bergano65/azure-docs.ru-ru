@@ -7,12 +7,12 @@ ms.date: 05/05/2020
 ms.topic: how-to
 ms.service: virtual-machines-windows
 ms.subservice: imaging
-ms.openlocfilehash: 6fa1f6bcc6c91a493225726bc0df60d2d0b4a1e3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f0d8a37f0edc161cbd73bf7438dc1c9486c4251b
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85119194"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87027943"
 ---
 # <a name="preview-create-a-windows-vm-with-azure-image-builder"></a>Предварительная версия: создание виртуальной машины Windows с помощью Azure Image Builder
 
@@ -102,7 +102,7 @@ az group create -n $imageResourceGroup -l $location
 ```
 
 ## <a name="create-a-user-assigned-identity-and-set-permissions-on-the-resource-group"></a>Создание назначаемого пользователем удостоверения и задание разрешений для группы ресурсов
-Построитель образов будет использовать предоставленное [удостоверение пользователя](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm#user-assigned-managed-identity) для внедрения образа в группу ресурсов. В этом примере вы создадите определение роли Azure с детализированными действиями для распространения образа. Затем определение роли будет назначено удостоверению пользователя.
+Построитель образов будет использовать предоставленное [удостоверение пользователя](../../active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm.md#user-assigned-managed-identity) для внедрения образа в группу ресурсов. В этом примере вы создадите определение роли Azure с детализированными действиями для распространения образа. Затем определение роли будет назначено удостоверению пользователя.
 
 ## <a name="create-user-assigned-managed-identity-and-grant-permissions"></a>Создание управляемого удостоверения, назначаемого пользователем, и предоставление разрешений 
 ```bash
@@ -269,6 +269,6 @@ az group delete -n $imageResourceGroup
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о компонентах JSON, использованных в этой статье, см. в разделе [Справочник по шаблонам для Image Builder](../linux/image-builder-json.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).

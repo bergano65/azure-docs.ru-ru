@@ -10,12 +10,12 @@ ms.date: 04/15/2020
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: 1db26e6e1308299325e15b4c856fc2ebbaed8326
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a56fdf8bc3bfa93c12cce66664e68b223fa97ff2
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84807606"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87029541"
 ---
 # <a name="authorizing-access-to-data-in-azure-storage"></a>Авторизация доступа к данным в службе хранилища Azure
 
@@ -23,8 +23,8 @@ ms.locfileid: "84807606"
 
 В следующей таблице описаны параметры, предоставляемые службой хранилища Azure для авторизации доступа к ресурсам.
 
-|  |Общий ключ (ключ учетной записи хранения)  |Подписанный URL-адрес (SAS)  |Azure Active Directory (Azure AD)  |Локальные службы домен Active Directory (Предварительная версия) |Анонимный открытый доступ на чтение  |
-|---------|---------|---------|---------|---------|---------|
+| Артефакт Azure | Общий ключ (ключ учетной записи хранения) | Подписанный URL-адрес (SAS) | Azure Active Directory (Azure AD) | Локальные службы домен Active Directory (Предварительная версия) | Анонимный открытый доступ на чтение |
+| -------------- | -------------------------------- | ----------------------------- | --------------------------------- | ------------------------------------------------------ | ---------------------------- |
 |Большие двоичные объекты Azure     |[Поддерживается](/rest/api/storageservices/authorize-with-shared-key/)         |[Поддерживается](storage-sas-overview.md)         |[Поддерживается](storage-auth-aad.md)         |Не поддерживается|[Поддерживается](../blobs/storage-manage-access-to-resources.md)         |
 |Службы файлов Azure (SMB)     |[Поддерживается](/rest/api/storageservices/authorize-with-shared-key/)         |Не поддерживается         |[Поддерживается, только с доменными службами AAD](../files/storage-files-active-directory-overview.md)         |[Поддерживается, учетные данные должны быть синхронизированы с Azure AD.](../files/storage-files-active-directory-overview.md)|Не поддерживается         |
 |Службы файлов Azure (остальные)     |[Поддерживается](/rest/api/storageservices/authorize-with-shared-key/)         |[Поддерживается](storage-sas-overview.md)         |Не поддерживается         |Не поддерживается |Не поддерживается         |
@@ -45,7 +45,7 @@ ms.locfileid: "84807606"
 
 По умолчанию все ресурсы в службе хранилища Azure защищены и доступны только владельцу учетной записи. Хотя вы можете использовать любую из описанных выше стратегий авторизации, чтобы предоставить клиентам доступ к ресурсам в вашей учетной записи хранения, корпорация Майкрософт рекомендует использовать Azure AD, когда это возможно, в виду максимальной безопасности и простоты использования.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Авторизация доступа к BLOB-объектам и очередям Azure с помощью Azure Active Directory](storage-auth-aad.md)
 - [Авторизация с помощью общего ключа](/rest/api/storageservices/authorize-with-shared-key/)

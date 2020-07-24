@@ -9,19 +9,19 @@ ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 01/02/2018
 ms.author: cynthn
-ms.openlocfilehash: 15df3178f2860fa066a82cb1429e0c1a6e5c2b08
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 511c3aa65bf0a10e42d7a54c98662cc388a5d711
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82083428"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87028230"
 ---
 # <a name="use-the-d-drive-as-a-data-drive-on-a-windows-vm"></a>Использование диска D в качестве диска данных на виртуальной машине Windows
 Если вашему приложению нужно использовать диск D для хранения данных, следуйте приведенным указаниям, чтобы использовать другой диск в качестве временного. Никогда не используйте временный диск для хранения данных, которые нужно сохранить.
 
 Если изменить размер виртуальной машины или выполнить команду **Остановить (освободить)** , виртуальная машина может быть перемещена в новый гипервизор. Запланированное или незапланированное событие технического обслуживания также может вызвать такое перемещение. В этом случае временному диску будет назначена первая доступная буква диска. Если у вас есть приложение, которому требуется именно диск D, необходимо выполнить приведенные ниже действия, чтобы временно переместить файл pagefile.sys, подключить новый диск данных и назначить ему букву D, и затем переместить файл pagefile.sys обратно на временный диск. После завершения Azure не заберет обратно диск D, если виртуальная машина будет перемещена в другой гипервизор.
 
-Дополнительные сведения об использовании временного диска в Azure см. в статье [Understanding the temporary drive on Microsoft Azure Virtual Machines](https://blogs.msdn.microsoft.com/mast/2013/12/06/understanding-the-temporary-drive-on-windows-azure-virtual-machines/) (Основные сведения об использовании временного диска в виртуальных машинах Microsoft Azure).
+Дополнительные сведения об использовании временного диска в Azure см. в статье [Understanding the temporary drive on Microsoft Azure Virtual Machines](/archive/blogs/mast/understanding-the-temporary-drive-on-windows-azure-virtual-machines) (Основные сведения об использовании временного диска в виртуальных машинах Microsoft Azure).
 
 ## <a name="attach-the-data-disk"></a>Подключение диска данных
 Сначала необходимо подключить диск данных к виртуальной машине. Дополнительные сведения о выполнении этого задания с помощью портала см. в статье [Как подключить управляемый диск данных к виртуальной машине Windows на портале Azure](attach-managed-disk-portal.md).
@@ -59,4 +59,3 @@ ms.locfileid: "82083428"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Можно увеличить объем хранилища, доступного для виртуальной машины, [присоединив дополнительный диск данных](attach-managed-disk-portal.md).
-

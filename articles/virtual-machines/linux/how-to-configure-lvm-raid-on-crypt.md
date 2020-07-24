@@ -7,11 +7,12 @@ ms.topic: article
 ms.author: jofrance
 ms.date: 03/17/2020
 ms.custom: seodec18
-ms.openlocfilehash: 4e342ff44af38b8e79dc8695c1270b1f5c68e0a8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3be8863d86fd1525e6f64b46ddf5ca3c702ecdea
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80657447"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87029235"
 ---
 # <a name="configure-lvm-and-raid-on-encrypted-devices"></a>Настройка LVM и RAID на зашифрованных устройствах
 
@@ -40,15 +41,15 @@ ms.locfileid: "80657447"
 
 Аналогичным образом, устройство RAID создается поверх зашифрованного слоя на дисках. Файловая система создается поверх устройства RAID и добавляется в/etc/fstab как обычное устройство.
 
-## <a name="considerations"></a>Особенности
+## <a name="considerations"></a>Рекомендации
 
 Рекомендуется использовать LVM-on-шифрования. RAID можно использовать, если LVM не может использоваться из-за ограничений конкретного приложения или среды.
 
-Вы будете использовать параметр **енкриптформаталл** . Дополнительные сведения об этом параметре см. [в статье Использование функции енкриптформаталл для дисков данных на виртуальных машинах Linux](https://docs.microsoft.com/azure/virtual-machines/linux/disk-encryption-linux#use-encryptformatall-feature-for-data-disks-on-linux-vms).
+Вы будете использовать параметр **енкриптформаталл** . Дополнительные сведения об этом параметре см. [в статье Использование функции енкриптформаталл для дисков данных на виртуальных машинах Linux](./disk-encryption-linux.md#use-encryptformatall-feature-for-data-disks-on-linux-vms).
 
 Несмотря на то, что этот метод можно использовать при шифровании операционной системы, мы просто зашифрованы диски с данными.
 
-В процедурах предполагается, что вы уже проверили предварительные требования в [сценариях шифрования дисков Azure на виртуальных машинах Linux](https://docs.microsoft.com/azure/virtual-machines/linux/disk-encryption-linux) и в [кратком руководстве создание и шифрование виртуальной машины Linux с Azure CLI](https://docs.microsoft.com/azure/virtual-machines/linux/disk-encryption-cli-quickstart).
+В процедурах предполагается, что вы уже проверили предварительные требования в [сценариях шифрования дисков Azure на виртуальных машинах Linux](./disk-encryption-linux.md) и в [кратком руководстве создание и шифрование виртуальной машины Linux с Azure CLI](./disk-encryption-cli-quickstart.md).
 
 Версия с двумя проходами шифрования дисков Azure находится на пути устаревания и больше не должна использоваться в новых шифрованиях.
 
@@ -459,4 +460,3 @@ df -h
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Устранение неполадок с шифрованием дисков Azure](disk-encryption-troubleshooting.md)
-

@@ -8,18 +8,18 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 07/14/2017
 ms.author: cynthn
-ms.openlocfilehash: dfcc0c550af9df6c884c8cd864ed90daf5f78e2f
-ms.sourcegitcommit: 849bb1729b89d075eed579aa36395bf4d29f3bd9
+ms.openlocfilehash: 25d8dc467ce8f7e34faaeaa2c61fd0c5da1da4e8
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82082923"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87027960"
 ---
 # <a name="deploy-an-azure-virtual-machine-using-c-and-a-resource-manager-template"></a>Развертывание виртуальной машины Azure с помощью C# и шаблона Resource Manager
 
 В этой статье описывается развертывание шаблона Azure Resource Manager с помощью C#. Созданный шаблон развертывает одну виртуальную машину под управлением Windows Server в новой виртуальной сети с одной подсетью.
 
-Подробное описание ресурса виртуальной машины см. в статье [Виртуальные машины в шаблоне Azure Resource Manager](template-description.md). Дополнительные сведения обо всех ресурсах в шаблоне см. в статье [Пошаговое руководство по созданию шаблона Resource Manager](../../azure-resource-manager/resource-manager-template-walkthrough.md).
+Подробное описание ресурса виртуальной машины см. в статье [Виртуальные машины в шаблоне Azure Resource Manager](template-description.md). Дополнительные сведения обо всех ресурсах в шаблоне см. в статье [Пошаговое руководство по созданию шаблона Resource Manager](../../azure-resource-manager/templates/quickstart-create-templates-use-the-portal.md).
 
 На выполнение этих действий требуется примерно 10 минут.
 
@@ -27,7 +27,7 @@ ms.locfileid: "82082923"
 
 На этом шаге нужно убедиться, что экземпляр Visual Studio установлен, и создать консольное приложение, используемое для развертывания шаблона.
 
-1. Если вы этого еще не сделали, установите [Visual Studio](https://docs.microsoft.com/visualstudio/install/install-visual-studio). На странице рабочих нагрузок выберите **Разработка классических приложений .NET** и нажмите кнопку **Установить**. В сводке вы увидите, что **средства разработки .NET Framework 4–4.6** выберутся автоматически. Если вы уже установили Visual Studio, можно добавить рабочую нагрузку .NET с помощью средства запуска Visual Studio.
+1. Если вы этого еще не сделали, установите [Visual Studio](/visualstudio/install/install-visual-studio). На странице рабочих нагрузок выберите **Разработка классических приложений .NET** и нажмите кнопку **Установить**. В сводке вы увидите, что **средства разработки .NET Framework 4–4.6** выберутся автоматически. Если вы уже установили Visual Studio, можно добавить рабочую нагрузку .NET с помощью средства запуска Visual Studio.
 2. В Visual Studio выберите **Файл** > **Создать** > **Проект**.
 3. В разделе **Шаблоны** > **Visual C#** выберите пункт **Консольное приложение (.NET Framework)** , укажите имя *myDotnetProject* и расположение проекта, а затем нажмите кнопку **OK**.
 
@@ -325,5 +325,5 @@ azure.ResourceGroups.DeleteByName(groupName);
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* При наличии проблем с развертыванием ознакомьтесь с информацией об [устранении распространенных ошибок при развертывании Azure с помощью Azure Resource Manager](../../resource-manager-common-deployment-errors.md).
+* При наличии проблем с развертыванием ознакомьтесь с информацией об [устранении распространенных ошибок при развертывании Azure с помощью Azure Resource Manager](../../azure-resource-manager/templates/common-deployment-errors.md).
 * Узнайте, как развернуть виртуальную машину и ее вспомогательные ресурсы, ознакомившись с разделом [Развертывание ресурсов Azure с помощью языка C#](csharp.md).

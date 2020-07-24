@@ -5,18 +5,18 @@ services: multi-factor-authentication
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 04/13/2020
+ms.date: 07/20/2020
 ms.author: iainfou
 author: iainfoulds
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e8ef25df8fdb11715ebba954e31a97939d6ac0e1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 860616cbea598e40494155e250254b3c607c1173
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85476841"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87027501"
 ---
 # <a name="enable-per-user-azure-multi-factor-authentication-to-secure-sign-in-events"></a>Включение Многофакторной идентификации Azure для отдельных пользователей для защиты событий входа
 
@@ -78,7 +78,7 @@ ms.locfileid: "85476841"
 
 ## <a name="change-state-using-powershell"></a>Изменение состояния с помощью PowerShell
 
-Чтобы изменить состояние пользователя с помощью [Azure AD PowerShell](/powershell/azure/overview), измените параметр `$st.State` для учетной записи пользователя. Существует три возможных состояния учетной записи пользователя:
+Чтобы изменить состояние пользователя с помощью [Azure AD PowerShell](/powershell/azure/), измените параметр `$st.State` для учетной записи пользователя. Существует три возможных состояния учетной записи пользователя:
 
 * *Enabled*
 * *Enforced* (Применено);
@@ -177,12 +177,12 @@ Get-MsolUser -All | Set-MfaState -State Disabled
 ```
 
 > [!NOTE]
-> Мы недавно изменили поведение и этот сценарий PowerShell. Ранее сценарий сохранял методы MFA, отключал MFA и восстанавливал методы. Это больше не требуется, так как поведение по умолчанию для отключения не приводит к очистке методов.
->
 > Если Многофакторная идентификация Azure (MFA) повторно включается для объекта пользователя, который уже содержит сведения о регистрации, такие как телефон или электронная почта, администраторы должны проконтролировать, чтобы этот пользователь повторно зарегистрировался в службе Многофакторной идентификации с помощью портала Azure или PowerShell. Если пользователь не зарегистрируется повторно, его состояние в MFA не изменится с *Enabled* (Включено) на *Enforced* (Применено) в пользовательском интерфейсе управления MFA.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы настроить параметры Многофакторной идентификации Azure, например надежные IP-адреса, пользовательские голосовые сообщения и предупреждения о мошенничестве, см. статью [Настройка параметров Многофакторной идентификации Azure](howto-mfa-mfasettings.md). Сведения об управлении параметрами пользователей для Многофакторной идентификации Azure см. в [этой статье](howto-mfa-userdevicesettings.md).
+Сведения о настройке параметров многофакторной идентификации Azure см. в статье [Настройка параметров многофакторной идентификации Azure](howto-mfa-mfasettings.md).
+
+Сведения об управлении параметрами пользователей для Многофакторной идентификации Azure см. в [этой статье](howto-mfa-userdevicesettings.md).
 
 Чтобы понять, почему пользователь получил или не получил запрос на многофакторную проверку подлинности, см. статью об [отчетах службы "Многофакторная идентификация Azure"](howto-mfa-reporting.md).

@@ -16,12 +16,12 @@ ms.date: 01/04/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: ecfd6bf9d20309619155bf35c87bdb4c08665f73
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: 3b2684122e7de97282b1054fa9ad0390469b0f0e
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86169550"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87030272"
 ---
 # <a name="how-to-use-notification-hubs-from-java"></a>Использование концентраторов уведомлений из Java
 
@@ -30,7 +30,7 @@ ms.locfileid: "86169550"
 В этой статье описаны основные функции нового, полностью поддерживаемого официального пакета SDK для Java Центра уведомлений Azure.
 Это проект с открытым кодом. Вы можете просмотреть весь код пакета SDK в [пакет SDK для Java].
 
-Вы можете обращаться ко всем функциям центров уведомлений из серверной части Java/PHP/Python/Ruby, используя интерфейс REST в соответствии с описанием в разделе MSDN [Интерфейсы API REST центров уведомлений](https://msdn.microsoft.com/library/dn223264.aspx). Пакет SDK для Java предоставляет тонкую оболочку для этих интерфейсов REST на Java.
+Вы можете обращаться ко всем функциям центров уведомлений из серверной части Java/PHP/Python/Ruby, используя интерфейс REST в соответствии с описанием в разделе MSDN [Интерфейсы API REST центров уведомлений](/previous-versions/azure/reference/dn223264(v=azure.100)). Пакет SDK для Java предоставляет тонкую оболочку для этих интерфейсов REST на Java.
 
 Сейчас пакет SDK поддерживает:
 
@@ -73,7 +73,7 @@ hub.setWindowsCredential(new WindowsCredential("sid","key"));
 hub = namespaceManager.createNotificationHub(hub);
 ```
 
- OR
+ ИЛИ
 
 ```java
 hub = new NotificationHub("connection string", "hubname");
@@ -387,7 +387,7 @@ hub.sendNotification(n);
   * [Отправка кроссплатформенных уведомлений проверенным пользователям]
 
 [пакет SDK для Java]: https://github.com/Azure/azure-notificationhubs-java-backend
-[Get started tutorial]: notification-hubs-ios-apple-push-notification-apns-get-started.md
+[Get started tutorial]: ./notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md
 [Приступая к работе с центрами уведомлений]: notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md
 [Отправка экстренных новостей]: notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns.md
 [Отправка локализованных экстренных новостей]: notification-hubs-windows-store-dotnet-xplat-localized-wns-push-notification.md

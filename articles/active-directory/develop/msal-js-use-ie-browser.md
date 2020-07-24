@@ -13,13 +13,14 @@ ms.date: 05/16/2019
 ms.author: nacanuma
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: c4f3c4153e1404a5576427be7ef218f5a669387e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 633166f3bb46212991920d6720737f8268b3f401
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76695863"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87026860"
 ---
-# <a name="known-issues-on-internet-explorer-and-microsoft-edge-browsers-msaljs"></a>Известные проблемы с браузерами Internet Explorer и Microsoft Edge browsers (MSAL.js)
+# <a name="known-issues-on-internet-explorer-browsers-msaljs"></a>Известные проблемы в браузерах Internet Explorer (MSAL.js)
 
 Библиотека проверки подлинности Microsoft для JavaScript (MSAL.js) создается для [JavaScript ES5](https://fr.wikipedia.org/wiki/ECMAScript#ECMAScript_Edition_5_.28ES5.29) , чтобы его можно было запускать в Internet Explorer. Однако есть несколько моментов, которые следует иметь в курсе.
 
@@ -52,5 +53,5 @@ ms.locfileid: "76695863"
 
 По завершении восстановите параметры безопасности Internet Explorer.  Выберите **Параметры**  ->  **Параметры браузера**  ->  **Безопасность**  ->  **Сбросить все зоны на уровень по умолчанию**.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об [известных проблемах при использовании MSAL.js в Internet Explorer](msal-js-use-ie-browser.md).

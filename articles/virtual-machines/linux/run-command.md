@@ -8,11 +8,12 @@ ms.author: robreed
 ms.date: 04/26/2019
 ms.topic: article
 manager: carmonm
-ms.openlocfilehash: a14fafde8ecea0370c74cdbfd39a85d8dfb15612
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 0210b3bf13bc852e2ace0e8b490b3ddf952dc288
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83651068"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87028980"
 ---
 # <a name="run-shell-scripts-in-your-linux-vm-by-using-run-command"></a>Выполнение скриптов оболочки в виртуальной машине Linux с помощью функции выполнения команд
 
@@ -81,7 +82,7 @@ az vm run-command invoke -g myResourceGroup -n myVm --command-id RunShellScript 
 
 ### <a name="powershell"></a>PowerShell
 
-Ниже приведен пример с использованием командлета [Invoke-AzVMRunCommand](https://docs.microsoft.com/powershell/module/az.compute/invoke-azvmruncommand) для выполнения скрипта PowerShell на виртуальной машине Azure. Этот командлет ожидает, что скрипт, указанный в параметре `-ScriptPath`, расположен в локальной среде, в которой выполняется командлет.
+Ниже приведен пример с использованием командлета [Invoke-AzVMRunCommand](/powershell/module/az.compute/invoke-azvmruncommand) для выполнения скрипта PowerShell на виртуальной машине Azure. Этот командлет ожидает, что скрипт, указанный в параметре `-ScriptPath`, расположен в локальной среде, в которой выполняется командлет.
 
 ```powershell-interactive
 Invoke-AzVMRunCommand -ResourceGroupName '<myResourceGroup>' -Name '<myVMName>' -CommandId 'RunPowerShellScript' -ScriptPath '<pathToScript>' -Parameter @{"arg1" = "var1";"arg2" = "var2"}

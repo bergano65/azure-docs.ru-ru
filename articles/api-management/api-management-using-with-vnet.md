@@ -10,15 +10,15 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 06/10/2020
+ms.date: 07/22/2020
 ms.author: apimpm
 ms.custom: references_regions
-ms.openlocfilehash: e7323793dcbbd05fc5abf032d140b2caa5975da4
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: e3acfb9552db9fa972b0a407e52cece014b45389
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86249467"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87025019"
 ---
 # <a name="how-to-use-azure-api-management-with-virtual-networks"></a>Как использовать управление API Azure с виртуальными сетями
 Виртуальные сети Azure позволяют размещать любые ресурсы Azure в сети, недоступной из Интернета, доступом к которой управляете вы сами. Эти сети можно подключать к локальным сетям с помощью различных технологий VPN. Начать изучение виртуальных сетей Azure лучше всего со статьи [Что такое виртуальная сеть Azure?](../virtual-network/virtual-networks-overview.md).
@@ -119,7 +119,7 @@ ms.locfileid: "86249467"
 | * / 5671, 5672, 443          | Исходящие           | TCP                | VIRTUAL_NETWORK / EventHub            | Зависимость для [политики ведения журнала Центра событий](api-management-howto-log-event-hubs.md) и агента мониторинга | Внешний и внутренний  |
 | * / 445                      | Исходящие           | TCP                | VIRTUAL_NETWORK / Storage             | Зависимость от общей папки Azure для [GIT](api-management-configuration-repository-git.md)                      | Внешний и внутренний  |
 | * / 443                     | Исходящие           | TCP                | VIRTUAL_NETWORK / AzureCloud            | Расширение работоспособности и мониторинга         | Внешний и внутренний  |
-| */1886, 443                     | Исходящие           | TCP                | VIRTUAL_NETWORK / AzureMonitor         | Публикация [журналов диагностики и метрик](api-management-howto-use-azure-monitor.md) и [работоспособность ресурсов](../service-health/resource-health-overview.md)                     | Внешний и внутренний  |
+| */1886, 443                     | Исходящие           | TCP                | VIRTUAL_NETWORK / AzureMonitor         | Публикация [журналов диагностики и метрик](api-management-howto-use-azure-monitor.md), [работоспособность ресурсов](../service-health/resource-health-overview.md) и [Application Insights](api-management-howto-app-insights.md)                   | Внешний и внутренний  |
 | */25, 587, 25028                       | Исходящие           | TCP                | VIRTUAL_NETWORK — INTERNET            | Подключение к SMTP-ретранслятору для отправки сообщений электронной почты                    | Внешний и внутренний  |
 | * / 6381 - 6383              | Входящий и исходящий | TCP                | VIRTUAL_NETWORK — VIRTUAL_NETWORK     | Доступ к службе Redis для политик [кэша](api-management-caching-policies.md) между компьютерами         | Внешний и внутренний  |
 | */4290              | Входящий и исходящий | UDP                | VIRTUAL_NETWORK — VIRTUAL_NETWORK     | Счетчики синхронизации для политик [ограничения скорости](api-management-access-restriction-policies.md#LimitCallRateByKey) между компьютерами         | Внешний и внутренний  |
@@ -152,6 +152,8 @@ ms.locfileid: "86249467"
 + **Портал Azure Diagnostics.** Включает поток журналов диагностики на портале Azure при использовании расширения управления API внутри виртуальной сети; требуется исходящий доступ к `dc.services.visualstudio.com` на порте 443. Это помогает в устранении неполадок, которые могут возникнуть при использовании расширения.
 
 + **Azure Load Balancer**. Разрешение входящего запроса из тега службы `AZURE_LOAD_BALANCER` не является требованием для номера SKU `Developer`, так как за ним развертывается только одна единица вычислений. Но входящие запросы с адреса [168.63.129.16](../virtual-network/what-is-ip-address-168-63-129-16.md) становятся критически важными при масштабировании до более высокого номера SKU, например `Premium`, как так сбой проверки работоспособности из Load Balancer не позволяет выполнить развертывание.
+
++ **Application Insights**. Если в службе управления API включена функция мониторинга [Application Insights Azure](api-management-howto-app-insights.md) , необходимо разрешить исходящее подключение к [конечной точке телеметрии](/azure/azure-monitor/app/ip-addresses#outgoing-ports) из виртуальной сети. 
 
 + **Принудительное туннелирование трафика в локальный брандмауэр с помощью Express Route или сетевого виртуального устройства.** Стандартная конфигурация клиента заключается в определении собственного маршрута по умолчанию (0.0.0.0/0), когда весь трафик из делегированной подсети Управления API принудительно проходит через локальный брандмауэр или виртуальное сетевое устройство. Этот поток трафика неизменно прерывает подключение к службе управления API Azure, так как исходящий трафик или блокируется локально, или преобразуется с помощью NAT в нераспознаваемый набор адресов, которые больше не относятся к различным конечным точкам Azure. Для решения проблемы требуется выполнить несколько приведенных ниже действий.
 

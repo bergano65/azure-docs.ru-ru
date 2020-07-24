@@ -8,12 +8,12 @@ ms.date: 07/10/2020
 ms.author: rogarana
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: e0773515809ffdc50167a3cba1f767ac8635bcee
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 9f61835887c26e41b3338286065df4ca9d05f513
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86502577"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87029014"
 ---
 # <a name="enable-end-to-end-encryption-using-encryption-at-host---azure-cli"></a>Включение сквозного шифрования с помощью шифрования на узле Azure CLI
 
@@ -33,7 +33,7 @@ ms.locfileid: "86502577"
 
 Размеры виртуальных машин также можно найти программно. Чтобы узнать, как получить их программно, ознакомьтесь с разделом [Поиск поддерживаемых размеров виртуальных машин](#finding-supported-vm-sizes) .
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Чтобы иметь возможность использовать шифрование на узле для виртуальных машин или масштабируемых наборов виртуальных машин, необходимо включить эту функцию в подписке. Отправьте сообщение электронной почты encryptionAtHost@microsoft.com с идентификаторами подписки, чтобы включить функцию для ваших подписок.
 
@@ -43,34 +43,144 @@ ms.locfileid: "86502577"
 
 [!INCLUDE [virtual-machines-disks-encryption-create-key-vault-cli](../../../includes/virtual-machines-disks-encryption-create-key-vault-cli.md)]
 
-## <a name="enable-encryption-at-host-for-disks-attached-to-vm-and-virtual-machine-scale-sets"></a>Включить шифрование на узле для дисков, подключенных к виртуальным машинам и масштабируемым наборам виртуальных машин
+## <a name="examples"></a>Примеры
 
-Вы можете включить шифрование на узле, задав новое свойство Енкриптионасост в Секуритипрофиле виртуальных машин или масштабируемых наборов виртуальных машин с помощью API-интерфейса **2020-06-01** и более поздних версий.
+### <a name="create-a-vm-with-encryption-at-host-enabled-with-customer-managed-keys"></a>Создайте виртуальную машину с шифрованием на узле, поддерживающем ключи, управляемые клиентом. 
 
-`"securityProfile": { "encryptionAtHost": "true" }`
-
-## <a name="example-scripts"></a>Примеры скриптов
-
-### <a name="enable-encryption-at-host-for-disks-attached-to-a-vm-with-customer-managed-keys"></a>Включить шифрование на узле для дисков, подключенных к виртуальной машине с помощью управляемых клиентом ключей
-
-Создайте виртуальную машину с управляемыми дисками с помощью URI ресурса Дискенкриптионсет, созданного ранее.
-
-Замените `<yourPassword>` , `<yourVMName>` , `<yourVMSize>` , `<yourDESName>` , `<yoursubscriptionID>` , `<yourResourceGroupName>` , и `<yourRegion>` , а затем запустите скрипт.
+Создайте виртуальную машину с управляемыми дисками с помощью URI ресурса Дискенкриптионсет, созданного ранее, чтобы зашифровать кэш ОС и дисков данных с помощью управляемых клиентом ключей. Временные диски шифруются с помощью ключей, управляемых платформой. 
 
 ```azurecli
-az group deployment create -g <yourResourceGroupName> \
---template-uri "https://raw.githubusercontent.com/Azure-Samples/managed-disks-powershell-getting-started/master/EncryptionAtHost/CreateVMWithDisksEncryptedAtHostWithCMK.json" \
---parameters "virtualMachineName=<yourVMName>" "adminPassword=<yourPassword>" "vmSize=<yourVMSize>" "diskEncryptionSetId=/subscriptions/<yoursubscriptionID>/resourceGroups/<yourResourceGroupName>/providers/Microsoft.Compute/diskEncryptionSets/<yourDESName>" "region=<yourRegion>"
+rgName=yourRGName
+vmName=yourVMName
+location=eastus
+vmSize=Standard_DS2_v2
+image=UbuntuLTS 
+diskEncryptionSetName=yourDiskEncryptionSetName
+
+diskEncryptionSetId=$(az disk-encryption-set show -n $diskEncryptionSetName -g $rgName --query [id] -o tsv)
+
+az vm create -g $rgName \
+-n $vmName \
+-l $location \
+--encryption-at-host \
+--image $image \
+--size $vmSize \
+--generate-ssh-keys \
+--os-disk-encryption-set $diskEncryptionSetId \
+--data-disk-sizes-gb 128 128 \
+--data-disk-encryption-sets $diskEncryptionSetId $diskEncryptionSetId
 ```
 
-### <a name="enable-encryption-at-host-for-disks-attached-to-a-vm-with-platform-managed-keys"></a>Включить шифрование на узле для дисков, подключенных к виртуальной машине с помощью ключей, управляемых платформой
+### <a name="create-a-vm-with-encryption-at-host-enabled-with-platform-managed-keys"></a>Создайте виртуальную машину с шифрованием на узле, поддерживающем ключи, управляемые платформой. 
 
-Замените `<yourPassword>` , `<yourVMName>` , `<yourVMSize>` , `<yourResourceGroupName>` и `<yourRegion>` , а затем запустите скрипт.
+Создайте виртуальную машину с шифрованием на узле, чтобы шифровать кэш ОС, дисков данных и временных дисков с ключами, управляемыми платформой. 
 
 ```azurecli
-az group deployment create -g <yourResourceGroupName> \
---template-uri "https://raw.githubusercontent.com/Azure-Samples/managed-disks-powershell-getting-started/master/EncryptionAtHost/CreateVMWithDisksEncryptedAtHostWithPMK.json" \
---parameters "virtualMachineName=<yourVMName>" "adminPassword=<yourPassword>" "vmSize=<yourVMSize>" "region=<yourRegion>"
+rgName=yourRGName
+vmName=yourVMName
+location=eastus
+vmSize=Standard_DS2_v2
+image=UbuntuLTS 
+
+az vm create -g $rgName \
+-n $vmName \
+-l $location \
+--encryption-at-host \
+--image $image \
+--size $vmSize \
+--generate-ssh-keys \
+--data-disk-sizes-gb 128 128 \
+```
+
+### <a name="update-a-vm-to-enable-encryption-at-host"></a>Обновите виртуальную машину, чтобы включить шифрование на узле. 
+
+```azurecli
+rgName=yourRGName
+vmName=yourVMName
+
+az vm update -n $vmName \
+-g $rgName \
+--set securityProfile.encryptionAtHost=true
+```
+
+### <a name="check-the-status-of-encryption-at-host-for-a-vm"></a>Проверка состояния шифрования на узле виртуальной машины
+
+```azurecli
+rgName=yourRGName
+vmName=yourVMName
+
+az vm show -n $vmName \
+-g $rgName \
+--query [securityProfile.encryptionAtHost] -o tsv
+```
+
+### <a name="create-a-virtual-machine-scale-set-with-encryption-at-host-enabled-with-customer-managed-keys"></a>Создайте масштабируемый набор виртуальных машин с шифрованием на узле, поддерживающем ключи, управляемые клиентом. 
+
+Создайте масштабируемый набор виртуальных машин с управляемыми дисками с помощью URI ресурса Дискенкриптионсет, созданного ранее, чтобы зашифровать кэш ОС и дисков данных с помощью управляемых клиентом ключей. Временные диски шифруются с помощью ключей, управляемых платформой. 
+
+```azurecli
+rgName=yourRGName
+vmssName=yourVMSSName
+location=westus2
+vmSize=Standard_DS3_V2
+image=UbuntuLTS 
+diskEncryptionSetName=yourDiskEncryptionSetName
+
+diskEncryptionSetId=$(az disk-encryption-set show -n $diskEncryptionSetName -g $rgName --query [id] -o tsv)
+
+az vmss create -g $rgName \
+-n $vmssName \
+--encryption-at-host \
+--image UbuntuLTS \
+--upgrade-policy automatic \
+--admin-username azureuser \
+--generate-ssh-keys \
+--os-disk-encryption-set $diskEncryptionSetId \
+--data-disk-sizes-gb 64 128 \
+--data-disk-encryption-sets $diskEncryptionSetId $diskEncryptionSetId
+```
+
+### <a name="create-a-virtual-machine-scale-set-with-encryption-at-host-enabled-with-platform-managed-keys"></a>Создайте масштабируемый набор виртуальных машин с шифрованием на узле, поддерживающем ключи, управляемые платформой. 
+
+Создайте масштабируемый набор виртуальных машин с шифрованием на узле, чтобы шифровать кэш ОС, дисков данных и временных дисков с ключами, управляемыми платформой. 
+
+```azurecli
+rgName=yourRGName
+vmssName=yourVMSSName
+location=westus2
+vmSize=Standard_DS3_V2
+image=UbuntuLTS 
+
+az vmss create -g $rgName \
+-n $vmssName \
+--encryption-at-host \
+--image UbuntuLTS \
+--upgrade-policy automatic \
+--admin-username azureuser \
+--generate-ssh-keys \
+--data-disk-sizes-gb 64 128 \
+```
+
+### <a name="update-a-virtual-machine-scale-set-to-enable-encryption-at-host"></a>Обновите масштабируемый набор виртуальных машин, чтобы включить шифрование на узле. 
+
+```azurecli
+rgName=yourRGName
+vmssName=yourVMName
+
+az vmss update -n $vmssName \
+-g $rgName \
+--set virtualMachineProfile.securityProfile.encryptionAtHost=true
+```
+
+### <a name="check-the-status-of-encryption-at-host-for-a-virtual-machine-scale-set"></a>Проверка состояния шифрования на узле для масштабируемого набора виртуальных машин
+
+```azurecli
+rgName=yourRGName
+vmssName=yourVMName
+
+az vmss show -n $vmssName \
+-g $rgName \
+--query [virtualMachineProfile.securityProfile.encryptionAtHost] -o tsv
 ```
 
 ## <a name="finding-supported-vm-sizes"></a>Поиск поддерживаемых размеров виртуальных машин

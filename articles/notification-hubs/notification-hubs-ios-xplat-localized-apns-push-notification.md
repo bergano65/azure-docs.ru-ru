@@ -16,12 +16,12 @@ ms.date: 01/04/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 01/04/2019
-ms.openlocfilehash: a8614156be5d516d16aff698b604cf0e661d7311
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4bc392cb6d499d967656358e920f46e261af2906
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "72385657"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87030340"
 ---
 # <a name="tutorial-send-localized-push-notifications-to-ios-using-azure-notification-hubs"></a>Руководство. Отправка локализованных push-уведомлений в iOS с помощью центров уведомлений Azure
 
@@ -73,7 +73,7 @@ ms.locfileid: "72385657"
 
 Дополнительные сведения о шаблонах см. в статье [Шаблоны](notification-hubs-templates-cross-platform-push-messages.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 * Выполните задания руководства [Отправка push-уведомлений на определенные устройства iOS с помощью инфраструктуры "Центры уведомлений Azure"](notification-hubs-ios-xplat-segmented-apns-push-notification.md) и подготовьте код, так как он используется в текущем руководстве.
 * Visual Studio 2019 является необязательным.
@@ -273,7 +273,7 @@ ms.locfileid: "72385657"
 [14]: ./media/notification-hubs-ios-send-localized-breaking-news/ios_localized2.png
 
 <!-- URLs. -->
-[How To: Service Bus Notification Hubs (iOS Apps)]: https://msdn.microsoft.com/library/jj927168.aspx
+[How To: Service Bus Notification Hubs (iOS Apps)]: /previous-versions/azure/reference/dn223264(v=azure.100)
 [Использование концентраторов уведомлений для передачи экстренных новостей]: notification-hubs-ios-xplat-segmented-apns-push-notification.md
 [Mobile Service]: /develop/mobile/tutorials/get-started
 [Notify users with Notification Hubs: ASP.NET]: notification-hubs-aspnet-backend-ios-apple-apns-notification.md
@@ -290,5 +290,5 @@ ms.locfileid: "72385657"
 [JavaScript and HTML]: ../get-started-with-push-js.md
 [Windows Developer Preview registration steps for Mobile Services]: ../mobile-services-windows-developer-preview-registration.md
 [wns object]: https://go.microsoft.com/fwlink/p/?LinkId=260591
-[Notification Hubs Guidance]: https://msdn.microsoft.com/library/jj927170.aspx
-[Notification Hubs How-To for iOS]: https://msdn.microsoft.com/library/jj927168.aspx
+[Notification Hubs Guidance]: /previous-versions/azure/azure-services/jj927170(v=azure.100)
+[Notification Hubs How-To for iOS]: /previous-versions/azure/reference/dn223264(v=azure.100)

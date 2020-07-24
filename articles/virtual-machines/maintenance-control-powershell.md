@@ -7,11 +7,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 01/31/2020
 ms.author: cynthn
-ms.openlocfilehash: e0bb3586d637c9399db057b7cd3225bf8cd36e2f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3204de6ea497666108ce63b1a3cfa77c6faa6b59
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84675848"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87028657"
 ---
 # <a name="control-updates-with-maintenance-control-and-azure-powershell"></a>Управление обновлениями с помощью управления обслуживанием и Azure PowerShell
 
@@ -46,7 +47,7 @@ New-AzResourceGroup `
    -Name myMaintenanceRG
 ```
 
-Используйте [New-азмаинтенанцеконфигуратион](https://docs.microsoft.com/powershell/module/az.maintenance/new-azmaintenanceconfiguration) для создания конфигурации обслуживания. В этом примере создается конфигурация обслуживания с именем *myConfig* , областью действия которой является узел. 
+Используйте [New-азмаинтенанцеконфигуратион](/powershell/module/az.maintenance/new-azmaintenanceconfiguration) для создания конфигурации обслуживания. В этом примере создается конфигурация обслуживания с именем *myConfig* , областью действия которой является узел. 
 
 ```azurepowershell-interactive
 $config = New-AzMaintenanceConfiguration `
@@ -60,7 +61,7 @@ $config = New-AzMaintenanceConfiguration `
 
 При попытке создать конфигурацию с тем же именем, но в другом расположении возникнет ошибка. Имена конфигураций должны быть уникальными для вашей подписки.
 
-Вы можете запросить доступные конфигурации обслуживания с помощью команды [Get-азмаинтенанцеконфигуратион](https://docs.microsoft.com/powershell/module/az.maintenance/get-azmaintenanceconfiguration).
+Вы можете запросить доступные конфигурации обслуживания с помощью команды [Get-азмаинтенанцеконфигуратион](/powershell/module/az.maintenance/get-azmaintenanceconfiguration).
 
 ```azurepowershell-interactive
 Get-AzMaintenanceConfiguration | Format-Table -Property Name,Id
@@ -68,7 +69,7 @@ Get-AzMaintenanceConfiguration | Format-Table -Property Name,Id
 
 ## <a name="assign-the-configuration"></a>Назначение конфигурации
 
-Используйте [New-азконфигуратионассигнмент](https://docs.microsoft.com/powershell/module/az.maintenance/new-azconfigurationassignment) , чтобы назначить конфигурацию изолированной виртуальной машине или выделенному узлу Azure.
+Используйте [New-азконфигуратионассигнмент](/powershell/module/az.maintenance/new-azconfigurationassignment) , чтобы назначить конфигурацию изолированной виртуальной машине или выделенному узлу Azure.
 
 ### <a name="isolated-vm"></a>Изолированная виртуальная машина
 
@@ -105,7 +106,7 @@ New-AzConfigurationAssignment `
 
 ## <a name="check-for-pending-updates"></a>Проверить наличие ожидающих обновлений
 
-Чтобы узнать, есть ли ожидающие обновления, используйте [Get-азмаинтенанцеупдате](https://docs.microsoft.com/powershell/module/az.maintenance/get-azmaintenanceupdate) . Используйте `-subscription` , чтобы указать подписку Azure виртуальной машины, если она отличается от той, в которую вы выполнили вход.
+Чтобы узнать, есть ли ожидающие обновления, используйте [Get-азмаинтенанцеупдате](/powershell/module/az.maintenance/get-azmaintenanceupdate) . Используйте `-subscription` , чтобы указать подписку Azure виртуальной машины, если она отличается от той, в которую вы выполнили вход.
 
 Если обновления для отображения отсутствуют, эта команда возвратит значение Nothing. В противном случае он вернет объект Псапплюпдате:
 
@@ -151,7 +152,7 @@ Get-AzMaintenanceUpdate `
 
 ## <a name="apply-updates"></a>Применение обновлений
 
-Используйте [New-азапплюпдате](https://docs.microsoft.com/powershell/module/az.maintenance/new-azapplyupdate) для применения ожидающих обновлений.
+Используйте [New-азапплюпдате](/powershell/module/az.maintenance/new-azapplyupdate) для применения ожидающих обновлений.
 
 ### <a name="isolated-vm"></a>Изолированная виртуальная машина
 
@@ -182,7 +183,7 @@ New-AzApplyUpdate `
 ```
 
 ## <a name="check-update-status"></a>Проверить состояние обновления
-Чтобы проверить состояние обновления, используйте команду [Get-азапплюпдате](https://docs.microsoft.com/powershell/module/az.maintenance/get-azapplyupdate) . Команды, показанные ниже, показывают состояние последнего обновления с помощью `default` для `-ApplyUpdateName` параметра. Можно заменить имя обновления (возвращаемое командой [New-азапплюпдате](https://docs.microsoft.com/powershell/module/az.maintenance/new-azapplyupdate) ), чтобы получить состояние конкретного обновления.
+Чтобы проверить состояние обновления, используйте команду [Get-азапплюпдате](/powershell/module/az.maintenance/get-azapplyupdate) . Команды, показанные ниже, показывают состояние последнего обновления с помощью `default` для `-ApplyUpdateName` параметра. Можно заменить имя обновления (возвращаемое командой [New-азапплюпдате](/powershell/module/az.maintenance/new-azapplyupdate) ), чтобы получить состояние конкретного обновления.
 
 ```text
 Status         : Completed
@@ -226,7 +227,7 @@ Get-AzApplyUpdate `
 
 ## <a name="remove-a-maintenance-configuration"></a>Удаление конфигурации обслуживания
 
-Удалите конфигурацию обслуживания с помощью [Remove-азмаинтенанцеконфигуратион](https://docs.microsoft.com/powershell/module/az.maintenance/remove-azmaintenanceconfiguration) .
+Удалите конфигурацию обслуживания с помощью [Remove-азмаинтенанцеконфигуратион](/powershell/module/az.maintenance/remove-azmaintenanceconfiguration) .
 
 ```azurepowershell-interactive
 Remove-AzMaintenanceConfiguration `
@@ -234,5 +235,5 @@ Remove-AzMaintenanceConfiguration `
    -Name $config.Name
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения см. в разделе [обслуживание и обновления](maintenance-and-updates.md).

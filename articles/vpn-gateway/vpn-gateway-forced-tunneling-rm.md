@@ -8,11 +8,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 02/01/2018
 ms.author: cherylmc
-ms.openlocfilehash: bd1022079b382353591857eacdedff344ed49f63
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 028ac730396c71549bfc338d3496109c98dfdc73
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84984157"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87027841"
 ---
 # <a name="configure-forced-tunneling-using-the-azure-resource-manager-deployment-model"></a>Настройка принудительного туннелирования с помощью модели развертывания Azure Resource Manager
 
@@ -61,7 +62,7 @@ ms.locfileid: "84984157"
 
 ## <a name="before-you-begin"></a><a name="before"></a>Перед началом
 
-Установите последнюю версию командлетов PowerShell для Azure Resource Manager. Дополнительные сведения об установке командлетов PowerShell см. в статье [Установка и настройка Azure PowerShell](/powershell/azure/overview).
+Установите последнюю версию командлетов PowerShell для Azure Resource Manager. Дополнительные сведения об установке командлетов PowerShell см. в статье [Установка и настройка Azure PowerShell](/powershell/azure/).
 
 > [!IMPORTANT]
 > Необходимо установить последнюю версию командлетов Azure PowerShell. В противном случае при выполнении некоторых командлетов могут возникать ошибки проверки.

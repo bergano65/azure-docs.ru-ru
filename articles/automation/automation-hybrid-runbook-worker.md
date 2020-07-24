@@ -3,14 +3,14 @@ title: Обзор гибридной рабочей роли Runbook в служ
 description: Эта статья содержит общие сведения о гибридной рабочей роли Runbook, которую можно использовать для выполнения модулей runbook на компьютерах в локальном центре обработки данных или центре обработки данных поставщика облачных служб.
 services: automation
 ms.subservice: process-automation
-ms.date: 06/24/2020
+ms.date: 07/16/2020
 ms.topic: conceptual
-ms.openlocfilehash: 0960dfe067e5092f3d64f66cad1d49c2bea28ae6
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: 69680fbb442b4e636b72f480ed21f36924362a13
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86186254"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87024832"
 ---
 # <a name="hybrid-runbook-worker-overview"></a>Обзор гибридной рабочей роли Runbook
 
@@ -77,6 +77,17 @@ ms.locfileid: "86186254"
 >[!NOTE]
 >Тег службы **гуестандхибридманажемент** сейчас не поддерживает выполнение задания Runbook в песочнице Azure, только непосредственно в гибридной рабочей роли Runbook.
 
+## <a name="support-for-impact-level-5-il5"></a>Поддержка уровня влияния 5 (IL5)
+
+Гибридную рабочую роль Runbook службы автоматизации Azure можно использовать в Azure для государственных организаций, чтобы обеспечить поддержку рабочих нагрузок уровня 5 в любой из следующих двух конфигураций:
+
+* [Изолированная виртуальная машина](../azure-government/documentation-government-impact-level-5.md#isolated-virtual-machines). При развертывании они используют весь физический узел для виртуальной машины, предоставляя необходимый уровень изоляции, необходимый для поддержки рабочих нагрузок IL5.
+
+* [Выделенные узлы Azure](../azure-government/documentation-government-impact-level-5.md#azure-dedicated-hosts), которые предоставляют физические серверы, на которых можно разместить одну или несколько виртуальных машин, выделенных для одной подписки Azure.
+
+>[!NOTE]
+>Изоляция вычислений через гибридную рабочую роль Runbook доступна для коммерческих облаков Azure и государственных организаций США. 
+
 ## <a name="update-management-on-hybrid-runbook-worker"></a>Управление обновлениями в гибридной рабочей роли Runbook
 
 Если включена служба автоматизации Azure [Управление обновлениями](automation-update-management.md) , любой компьютер, подключенный к рабочей области log Analytics, автоматически настраивается в качестве гибридного рабочего процесса Runbook. Каждая рабочая роль может поддерживать модули runbook, связанные с управлением обновлениями.
@@ -85,13 +96,7 @@ ms.locfileid: "86186254"
 
 ### <a name="update-management-addresses-for-hybrid-runbook-worker"></a>Адреса для решения по управлению обновлениями в гибридной рабочей роли Runbook
 
-В дополнение к стандартным адресам и портам, которые требуются гибридной рабочей роли Runbook, для Управления обновлениями необходимы адреса из следующей таблицы. Для связи с этими адресами используется порт 443.
-
-|Azure Public  |Azure для государственных организаций  |
-|---------|---------|
-|`*.ods.opinsights.azure.com`     | `*.ods.opinsights.azure.us`         |
-|`*.oms.opinsights.azure.com`     | `*.oms.opinsights.azure.us`        |
-|`*.blob.core.windows.net` | `*.blob.core.usgovcloudapi.net`|
+Поверх стандартных адресов и портов, необходимых для гибридной рабочей роли Runbook, Управление обновлениями предъявляют дополнительные требования к конфигурации сети, описанные в разделе « [планирование сети](automation-update-management.md#ports) ».
 
 ## <a name="azure-automation-state-configuration-on-a-hybrid-runbook-worker"></a>Использование State Configuration службы автоматизации Azure в гибридной рабочей роли Runbook
 
@@ -114,4 +119,5 @@ ms.locfileid: "86186254"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы узнать, как настроить модули runbook для автоматизации процессов в локальном центре обработки данных или другой облачной среде, см. статью [Запуск модулей runbook в гибридной рабочей роли Runbook](automation-hrw-run-runbooks.md).
+
 * Дополнительные сведения см. в статье [Устранение неполадок с гибридными рабочими ролями Runbook](troubleshoot/hybrid-runbook-worker.md#general).

@@ -9,12 +9,12 @@ ms.subservice: autoscale
 ms.date: 04/18/2019
 ms.reviewer: avverma
 ms.custom: avverma
-ms.openlocfilehash: 597a9e3b018f4ddb68710dff65094f35828b3c4b
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: 37602f7b9a8669ce0e8db984f7f7617cffdd431c
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86232667"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87029286"
 ---
 # <a name="vertical-autoscale-with-virtual-machine-scale-sets"></a>Вертикальное автомасштабирование масштабируемых наборов виртуальных машин
 
@@ -89,7 +89,7 @@ ms.locfileid: "86232667"
 ## <a name="create-an-azure-automation-account-with-run-as-capability"></a>Создание учетной записи службы автоматизации Azure с возможностью запуска от имени
 Сначала необходимо создать учетную запись службы автоматизации Azure, в которой будут размещаться модули runbook, используемые в масштабируемых наборах виртуальных машин. Недавно в [службе автоматизации Azure](https://azure.microsoft.com/services/automation/) появился компонент "Учетная запись запуска от имени". Этот компонент позволяет настраивать субъект-службу для автоматического запуска модулей runbook от имени пользователя. Дополнительные сведения см. в разделе:
 
-* [Проверка подлинности модулей Runbook в Azure с помощью учетной записи запуска от имени](../automation/automation-sec-configure-azure-runas-account.md)
+* [Проверка подлинности модулей Runbook в Azure с помощью учетной записи запуска от имени](../automation/manage-runas-account.md)
 
 ## <a name="import-azure-automation-vertical-scale-runbooks-into-your-subscription"></a>Импорт в подписку модулей Runbook службы автоматизации Azure для вертикального масштабирования
 

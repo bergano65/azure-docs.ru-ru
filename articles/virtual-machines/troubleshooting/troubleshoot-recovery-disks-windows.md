@@ -12,11 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 08/09/2018
 ms.author: genli
-ms.openlocfilehash: 66cda98f272e7353b620059a731972714db585ae
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1c7b6ee73513c7e51e3bb18c3835a1d395a4c516
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75374138"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87028267"
 ---
 # <a name="troubleshoot-a-windows-vm-by-attaching-the-os-disk-to-a-recovery-vm-using-azure-powershell"></a>Устранение неполадок с виртуальной машиной Windows при подключении диска операционной системы к виртуальной машине восстановления с помощью Azure PowerShell
 Если возникает проблема с загрузкой или диском на виртуальной машине Windows в Azure, возможно, вам нужно устранить неполадки, связанные с самим диском. Например, такая ситуация может возникнуть из-за сбоя обновления приложения, который мешает успешно загрузить виртуальную машину. В этой статье подробно описано, как с помощью Azure PowerShell подключить диск к другой виртуальной машине Windows для устранения ошибок, а затем исправить исходную виртуальную машину. 
@@ -41,7 +42,7 @@ ms.locfileid: "75374138"
 
 Вы можете использовать команды восстановления виртуальной машины для автоматизации шагов 1, 2, 3, 4, 6 и 7. Дополнительную документацию и инструкции см. [в статье восстановление ВИРТУАЛЬНОЙ машины Windows с помощью команд восстановления виртуальной машины Azure](repair-windows-vm-using-azure-virtual-machine-repair-commands.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
-Убедитесь, что у вас установлена и настроена [последняя версия Azure PowerShell](/powershell/azure/overview) и выполнен вход в подписку.
+Убедитесь, что у вас установлена и настроена [последняя версия Azure PowerShell](/powershell/azure/) и выполнен вход в подписку.
 
 ```powershell
 Connect-AzAccount

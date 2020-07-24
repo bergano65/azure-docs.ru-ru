@@ -9,14 +9,15 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 05/07/2019
+ms.date: 07/15/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 073eca94ad93c69811b02abe2c8649940a394e8e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 992c29cb8380cf6acbe970b2fd5e958b6b2b33dc
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80882477"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87026719"
 ---
 # <a name="protected-web-api-code-configuration"></a>Защищенный веб-API: конфигурация кода
 
@@ -30,7 +31,7 @@ ms.locfileid: "80882477"
 
 Как и веб-приложения, веб-API ASP.NET и ASP.NET Core защищены, так как их действия контроллера начинаются с атрибута **[авторизовать]** . Действия контроллера могут вызываться только в том случае, если API вызывается с разрешенным удостоверением.
 
-Ответьте на следующие вопросы.
+Оцените следующие вопросы.
 
 - Только приложение может вызывать веб-API. Как API знает удостоверение приложения, которое его вызывает?
 - Если приложение вызывает API от имени пользователя, каково удостоверение пользователя?
@@ -90,11 +91,33 @@ HttpResponseMessage response = await _httpClient.GetAsync(apiUri);
 }
 ```
 
+#### <a name="case-where-you-used-a-custom-app-id-uri-for-your-web-api"></a>Если вы использовали идентификатор URI пользовательского приложения для веб-API
+
+Если вы приняли URI идентификатора приложения, предложенный порталом регистрации приложений, вам не нужно указывать аудиторию (см. [URI идентификатора приложения и области действия](scenario-protected-web-api-app-registration.md#application-id-uri-and-scopes)). В противном случае следует добавить `Audience` свойство, значение которого является универсальным кодом ресурса (URI) идентификатора приложения для веб-API.
+
+```Json
+{
+  "AzureAd": {
+    "Instance": "https://login.microsoftonline.com/",
+    "ClientId": "[Client_id-of-web-api-eg-2ec40e65-ba09-4853-bcde-bcb60029e596]",
+    "TenantId": "common",
+    "Audience": "custom App ID URI for your web API"
+  },
+  // more lines
+}
+```
+
 ### <a name="code-initialization"></a>Инициализация кода
 
 При вызове приложения в действии контроллера, которое содержит атрибут **[Authorization]** , ASP.NET и ASP.NET Core извлекают маркер доступа из токена носителя заголовка авторизации. Затем маркер доступа перенаправляется в по промежуточного слоя JwtBearer, который вызывает расширения Microsoft IdentityModel для .NET.
 
-В ASP.NET Core это по промежуточного слоя инициализируется в файле Startup.cs.
+#### <a name="using-microsoftidentityweb-templates"></a>Использование шаблонов Microsoft. Identity. Web
+
+Вы можете создать веб-API с нуля с помощью шаблонов проектов Microsoft. Identity. Web. Дополнительные сведения см. в [статье шаблон проекта Microsoft. Identity. Web-Web API](https://aka.ms/ms-id-web/webapi-project-templates) .
+
+#### <a name="starting-from-an-existing-aspnet-core-31-application"></a>Начиная с существующего приложения ASP.NET Core 3,1
+
+Сегодня ASP.NET Core 3,1 использует библиотеку Microsoft. AspNetCore. AzureAD. UI. По промежуточного слоя инициализируется в файле Startup.cs.
 
 ```csharp
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -103,33 +126,37 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 По промежуточного слоя добавляется в веб-API с помощью следующей инструкции:
 
 ```csharp
- services.AddAuthentication(AzureADDefaults.JwtBearerAuthenticationScheme)
-         .AddAzureADBearer(options => Configuration.Bind("AzureAd", options));
+// This method gets called by the runtime. Use this method to add services to the container.
+public void ConfigureServices(IServiceCollection services)
+{
+  services.AddAuthentication(AzureADDefaults.JwtBearerAuthenticationScheme)
+          .AddAzureADBearer(options => Configuration.Bind("AzureAd", options));
+}
 ```
 
- В настоящее время шаблоны ASP.NET Core создают веб-интерфейсы API Azure Active Directory (Azure AD), которые входят в состав пользователей вашей организации или в любой организации. Они не входят в систему пользователей с личными учетными записями. Но вы можете изменить шаблоны, чтобы использовать конечную точку платформы идентификации Майкрософт, добавив следующий код в Startup.cs:
+ В настоящее время шаблоны ASP.NET Core создают веб-интерфейсы API Azure Active Directory (Azure AD), которые входят в состав пользователей вашей организации или в любой организации. Они не входят в систему пользователей с личными учетными записями. Однако можно изменить шаблоны для использования конечной точки платформы идентификации Майкрософт с помощью [Microsoft. Identity. Web](https://www.nuget.org/packages/Microsoft.Identity.Web), доступного в качестве пакета NuGet, заменив код в *Startup.CS*:
 
 ```csharp
-services.Configure<JwtBearerOptions>(AzureADDefaults.JwtBearerAuthenticationScheme, options =>
-{
-    // This is a Microsoft identity platform web API.
-    options.Authority += "/v2.0";
-
-    // The web API accepts as audiences both the Client ID (options.Audience) and api://{ClientID}.
-    options.TokenValidationParameters.ValidAudiences = new []
-    {
-     options.Audience,
-     $"api://{options.Audience}"
-    };
-
-    // Instead of using the default validation (validating against a single tenant,
-    // as we do in line-of-business apps),
-    // we inject our own multitenant validation logic (which even accepts both v1 and v2 tokens).
-    options.TokenValidationParameters.IssuerValidator = AadIssuerValidator.GetIssuerValidator(options.Authority).Validate;;
-});
+using Microsoft.Identity.Web;
 ```
 
-Предыдущий фрагмент кода извлекается из пошагового руководства по ASP.NET Core веб-API в [Microsoft. Identity. Web/вебаписервицеколлектионекстенсионс. CS # L50-L63](https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2/blob/154282843da2fc2958fad151e2a11e521e358d42/Microsoft.Identity.Web/WebApiServiceCollectionExtensions.cs#L50-L63). Метод **аддпротектедвебапи** , который выполняет больше, чем показывает фрагмент, вызывается из Startup.cs.
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+ // Adds Microsoft Identity platform (AAD v2.0) support to protect this API
+ services.AddMicrosoftWebApiAuthentication(Configuration, "AzureAd");
+
+ services.AddControllers();
+}
+```
+
+> [!NOTE]
+> Если используется Microsoft. Identity. Web и не задан параметр `Audience` in *appsettings.json*, используется следующее:
+> -  `$"{ClientId}"`Если вы установили [маркер доступа](scenario-protected-web-api-app-registration.md#accepted-token-version) , который принимает версию `2` , или для Azure AD B2C веб-API.
+> - `$"api://{ClientId}`во всех остальных случаях (для [маркеров доступа](access-tokens.md)v 1.0).
+> Дополнительные сведения см. в разделе [Исходный код](https://github.com/AzureAD/microsoft-identity-web/blob/d2ad0f5f830391a34175d48621a2c56011a45082/src/Microsoft.Identity.Web/Resource/RegisterValidAudience.cs#L70-L83)Microsoft. Identity. Web.
+
+Предыдущий фрагмент кода извлекается из [пошагового руководства по ASP.NET Core веб-API](https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2/blob/63087e83326e6a332d05fee6e1586b66d840b08f/1.%20Desktop%20app%20calls%20Web%20API/TodoListService/Startup.cs#L23-L28). Подробные сведения о **аддмикрософтвебапиаусентикатион** доступны в [Microsoft. Identity. Web](https://github.com/AzureAD/microsoft-identity-web/blob/d2ad0f5f830391a34175d48621a2c56011a45082/src/Microsoft.Identity.Web/WebApiExtensions/WebApiServiceCollectionExtensions.cs#L27). Этот метод вызывает [аддмикрософтвебапи](https://github.com/AzureAD/microsoft-identity-web/blob/d2ad0f5f830391a34175d48621a2c56011a45082/src/Microsoft.Identity.Web/WebApiExtensions/WebApiAuthenticationBuilderExtensions.cs#L58), который сам указывает по промежуточного слоя на проверку маркера. Дополнительные сведения см. в разделе [Исходный код](https://github.com/AzureAD/microsoft-identity-web/blob/d2ad0f5f830391a34175d48621a2c56011a45082/src/Microsoft.Identity.Web/WebApiExtensions/WebApiAuthenticationBuilderExtensions.cs#L104-L122).
 
 ## <a name="token-validation"></a>Проверка маркеров
 
@@ -149,7 +176,7 @@ services.Configure<JwtBearerOptions>(AzureADDefaults.JwtBearerAuthenticationSche
 
 В следующей таблице описаны проверяющие элементы управления.
 
-| Проверяющий элемент управления | Описание: |
+| Проверяющий элемент управления | Описание |
 |---------|---------|
 | **валидатеаудиенце** | Гарантирует, что маркер предназначен для приложения, которое проверяет маркер. |
 | **ValidateIssuer** | Гарантирует, что маркер был выдан доверенной службой STS, то есть от доверенного лица. |
@@ -158,15 +185,42 @@ services.Configure<JwtBearerOptions>(AzureADDefaults.JwtBearerAuthenticationSche
 | **валидатесигнатуре** | Гарантирует, что маркер не был изменен. |
 | **валидатетокенреплай** | Гарантирует, что маркер не воспроизводится. Существует особый случай использования некоторых протоколов OneTime. |
 
+#### <a name="customizing-token-validation"></a>Настройка проверки маркера
+
 Проверяющие элементы управления связаны со свойствами класса **TokenValidationParameters** . Свойства инициализируются из конфигурации ASP.NET и ASP.NET Core.
 
-В большинстве случаев изменять параметры не требуется. Приложения, не являющиеся отдельными клиентами, являются исключениями. Эти веб-приложения принимают пользователей из любой организации или из личных учетных записей Майкрософт. Издатели в этом случае должны быть проверены.
+В большинстве случаев изменять параметры не требуется. Приложения, не являющиеся отдельными клиентами, являются исключениями. Эти веб-приложения принимают пользователей из любой организации или из личных учетных записей Майкрософт. Издатели в этом случае должны быть проверены. Microsoft. Identity. Web также отвечает за проверку издателя. Дополнительные сведения см. в разделе Microsoft. Identity. Web [аадиссуервалидатор](https://github.com/AzureAD/microsoft-identity-web/blob/master/src/Microsoft.Identity.Web/Resource/AadIssuerValidator.cs).
+
+Если вы хотите настроить параметры проверки маркера в ASP.NET Core, используйте следующий фрагмент кода в *Startup.CS*:
+
+```c#
+services.AddMicrosoftWebApiAuthentication(Configuration);
+services.Configure<JwtBearerOptions>(JwtBearerDefaults.AuthenticationScheme, options =>
+{
+  var existingOnTokenValidatedHandler = options.Events.OnTokenValidated;
+  options.Events.OnTokenValidated = async context =>
+  {
+       await existingOnTokenValidatedHandler(context);
+      // Your code to add extra configuration that will be executed after the current event implementation.
+      options.TokenValidationParameters.ValidIssuers = new[] { /* list of valid issuers */ };
+      options.TokenValidationParameters.ValidAudiences = new[] { /* list of valid audiences */};
+  }
+});
+```
+
+В следующем примере кода для ASP.NET MVC показано, как выполнить проверку пользовательской лексемы:
+
+https://github.com/azure-samples/active-directory-dotnet-webapi-manual-jwt-validation
 
 ## <a name="token-validation-in-azure-functions"></a>Проверка токенов в функциях Azure
 
-Вы также можете проверить входящие маркеры доступа в функциях Azure. Примеры такой проверки можно найти в [Microsoft .NET](https://github.com/Azure-Samples/ms-identity-dotnet-webapi-azurefunctions), [NodeJS](https://github.com/Azure-Samples/ms-identity-nodejs-webapi-azurefunctions)и [Python](https://github.com/Azure-Samples/ms-identity-python-webapi-azurefunctions).
+Вы также можете проверить входящие маркеры доступа в функциях Azure. Примеры такой проверки можно найти в следующих примерах кода на сайте GitHub:
 
-## <a name="next-steps"></a>Дальнейшие шаги
+- .NET: [Azure-Samples/MS-Identity-DotNet-webapi-азурефунктионс](https://github.com/Azure-Samples/ms-identity-dotnet-webapi-azurefunctions)
+- Node.js: [Azure-Samples/MS-Identity-NodeJS-webapi-азурефунктионс](https://github.com/Azure-Samples/ms-identity-nodejs-webapi-azurefunctions)
+- Python: [Azure-Samples/MS-Identity-Python-webapi-азурефунктионс)](https://github.com/Azure-Samples/ms-identity-python-webapi-azurefunctions)
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Проверка областей и ролей приложений в коде](scenario-protected-web-api-verification-scope-app-roles.md)

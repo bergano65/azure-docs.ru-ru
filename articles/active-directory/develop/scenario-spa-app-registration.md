@@ -12,11 +12,12 @@ ms.workload: identity
 ms.date: 05/19/2020
 ms.author: hahamil
 ms.custom: aaddev
-ms.openlocfilehash: 9dc5b446e2ab26ca43c2a300e1af1237353325a3
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: 238bcc6c706f2fab969c98b73ca879d064498693
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83682395"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87026515"
 ---
 # <a name="single-page-application-app-registration"></a>Одностраничное приложение: Регистрация приложения
 
@@ -37,7 +38,7 @@ ms.locfileid: "83682395"
 - [MSAL.js 2.0 с потоком кода авторизации](#redirect-uri-msaljs-20-with-auth-code-flow) (рекомендуется)
 - [MSAL.js 1.0 с неявным потоком](#redirect-uri-msaljs-10-with-implicit-flow)
 
-## <a name="redirect-uri-msaljs-20-with-auth-code-flow"></a>URI перенаправления: MSAL.js 2.0 с потоком кода авторизации
+## <a name="redirect-uri-msaljs-20-with-auth-code-flow"></a>URI перенаправления: [MSAL.js 2,0 с потоком кода проверки подлинности](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-browser)
 
 Выполните следующие действия, чтобы добавить URI перенаправления для приложения с библиотекой MSAL.js 2.0 или более поздней версии. MSAL.js 2.0 и более поздние версии поддерживают поток кода авторизации с использованием PKCE и CORS, что связано с [ограничениями в браузерах на прием сторонних файлов cookie](reference-third-party-cookies-spas.md). Неявный поток предоставления разрешений в MSAL.js 2.0 и более поздних версиях не поддерживается.
 
@@ -49,7 +50,9 @@ ms.locfileid: "83682395"
 
 Итак, вы завершили регистрацию одностраничного приложения (SPA) и настроили URI перенаправления, на который будут перенаправляться все клиенты и оправляться маркеры безопасности. Когда вы завершите настройку URI перенаправления, используя плитку **Одностраничное приложение** на панели **Добавить платформу**, для регистрации приложения будет настроена поддержка потока кода авторизации с помощью PKCE и CORS.
 
-## <a name="redirect-uri-msaljs-10-with-implicit-flow"></a>URI перенаправления: MSAL.js 1.0 с неявным потоком
+Следуйте указаниям в [руководстве](tutorial-v2-javascript-auth-code.md) .
+
+## <a name="redirect-uri-msaljs-10-with-implicit-flow"></a>URI перенаправления: [MSAL.js 1,0 с неявным потоком](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-core)
 
 Выполните следующие действия, чтобы добавить URI перенаправления для одностраничного приложения с библиотекой MSAL.js 1.3 или более ранней версии, которая использует поток неявного предоставления разрешений. Приложения, которые используют MSAL.js 1.3 или более раннюю версию, не поддерживают поток кода авторизации.
 
@@ -63,6 +66,8 @@ ms.locfileid: "83682395"
 1. Щелкните **Настроить**, чтобы завершить добавление URI перенаправления.
 
 Итак, вы завершили регистрацию одностраничного приложения (SPA) и настроили URI перенаправления, на который будут перенаправляться все клиенты и оправляться маркеры безопасности. Установив флажки **Маркеры идентификации** и **Маркеры доступа**, вы включили неявный поток предоставления разрешений.
+
+Следуйте указаниям в [руководстве](tutorial-v2-javascript-spa.md) . 
 
 ## <a name="note-about-authorization-flows"></a>Примечание о потоках авторизации
 

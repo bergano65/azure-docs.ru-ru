@@ -9,16 +9,17 @@ ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 05/06/2020
+ms.date: 07/21/2020
 ms.author: hirsin
 ms.reviewer: hirsin
 ms.custom: aaddev, identityplatformtop40
 ms:custom: fasttrack-edit
-ms.openlocfilehash: e0e327d169c246d023be1aca27d6844b9b92f03e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2fbbf5f9d01ed4a469967dac87faa3b130905757
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82926720"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87027110"
 ---
 # <a name="microsoft-identity-platform-id-tokens"></a>Маркеры ИДЕНТИФИКАТОРов платформы Microsoft Identity
 
@@ -86,10 +87,10 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjFMVE16YWtpaGlSbGFfOHoyQkVKVlhlV01x
 |`ver` | Строка со значением 1.0 или 2.0 | Указывает номер версии маркера "id_token". |
 
 > [!NOTE]
-> Версии v1 и v2 id_token имеют различия в объеме информации, которая будет рассматриваться в приведенных выше примерах. В версии фактически указана конечная точка платформы Azure AD, из которой она была выдана. [Реализация OAuth Azure AD](https://docs.microsoft.com/azure/active-directory/develop/about-microsoft-identity-platform) развивалась по годам. В настоящее время у нас есть две разные конечные точки oAuth для приложений AzureAD. Можно использовать любую из новых конечных точек, которые относятся к категории версии 2 или старой, которая называется v1. Конечные точки OAuth для обоих типов различаются. Конечная точка версии 2 — это новая версия, в которой мы пытаемся перенести все функции конечной точки версии 1 и рекомендовать новым разработчикам использовать конечную точку версии 2.
+> V 1.0 и v 22.0 id_token имеют различия в объеме информации, которая будет рассматриваться в приведенных выше примерах. В версии фактически указана конечная точка платформы Azure AD, из которой она была выдана. [Реализация OAuth Azure AD](about-microsoft-identity-platform.md) развивалась по годам. В настоящее время существуют две разные конечные точки АУС для приложений Azure AD. Можно использовать любую из новых конечных точек, отнесенных к категории v 2.0 или v 1.0. Конечные точки OAuth для обоих типов различаются. Конечная точка версии 2.0 более новая, и функции конечной точки версии 1.0 переносятся в эту конечную точку. Новые разработчики должны использовать конечную точку версии 2.0.
 >
-> - V1: Azure Active Directory конечных точек:`https://login.microsoftonline.com/common/oauth2/authorize`
-> - V2: конечные точки платформы идентификации Майкрософт:`https://login.microsoftonline.com/common/oauth2/v2.0/authorize`
+> - v 1.0: конечные точки Azure AD:`https://login.microsoftonline.com/common/oauth2/authorize`
+> - Версия 2.0: конечные точки Microsoft Идентитипплатформ:`https://login.microsoftonline.com/common/oauth2/v2.0/authorize`
 
 ## <a name="validating-an-id_token"></a>Проверка маркера id_token
 
@@ -101,7 +102,7 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjFMVE16YWtpaGlSbGFfOHoyQkVKVlhlV01x
 * Аудитория. Утверждение `aud` должно соответствовать идентификатору вашего приложения.
 * Nonce. Утверждение `nonce` в полезных данных должно соответствовать параметру nonce, переданному в конечную точку, или авторизации конечной точки во время первоначального запроса.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о [маркерах доступа](access-tokens.md)
 * Настройте утверждения JWT в id_token с помощью [необязательных утверждений](active-directory-optional-claims.md).

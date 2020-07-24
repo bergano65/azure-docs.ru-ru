@@ -11,15 +11,16 @@ ms.workload: ''
 ms.topic: article
 ms.date: 03/04/2020
 ms.author: juliako
-ms.openlocfilehash: 2972c60aa5874c21a6f7bce21020ad58b5f3b556
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4e6e0d18665ac5fc28da2935c20b467f9d7662d8
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78304567"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87023251"
 ---
 # <a name="create-a-streaming-locator-and-build-urls"></a>Создание указателя потоковой передачи и формирование URL-адресов
 
-Чтобы создать URL-адрес потоковой передачи в службах мультимедиа Azure, сначала необходимо создать [указатель потоковой передачи](streaming-locators-concept.md). Затем вы объединяете имя узла [конечной точки потоковой передачи](https://docs.microsoft.com/rest/api/media/streamingendpoints) и путь **указателя потоковой передачи** . В этом примере используется **конечная точка потоковой передачи** *по умолчанию*. При первом создании учетной записи службы мультимедиа эта **Конечная точка потоковой передачи** *по умолчанию* будет находиться в остановленном состоянии, поэтому необходимо вызвать метод **Start** для запуска потоковой передачи.
+Чтобы создать URL-адрес потоковой передачи в службах мультимедиа Azure, сначала необходимо создать [указатель потоковой передачи](streaming-locators-concept.md). Затем вы объединяете имя узла [конечной точки потоковой передачи](/rest/api/media/streamingendpoints) и путь **указателя потоковой передачи** . В этом примере используется **конечная точка потоковой передачи** *по умолчанию*. При первом создании учетной записи службы мультимедиа эта **Конечная точка потоковой передачи** *по умолчанию* будет находиться в остановленном состоянии, поэтому необходимо вызвать метод **Start** для запуска потоковой передачи.
 
 В этой статье показано, как создать указатель потоковой передачи и создать URL-адрес потоковой передачи с помощью пакетов SDK для Java и .NET.
 
@@ -159,12 +160,12 @@ private static async Task<IList<string>> GetStreamingUrlsAsync(
 
 См. полный пример кода: [енкодингвисмеспредефинедпресет](https://github.com/Azure-Samples/media-services-v3-dotnet/blob/master/VideoEncoding/EncodingWithMESPredefinedPreset/Program.cs)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 
 * [Создание фильтров с помощью .NET](filters-dynamic-manifest-dotnet-howto.md)
 * [Создание фильтров с помощью REST](filters-dynamic-manifest-rest-howto.md)
 * [Create filters with CLI](filters-dynamic-manifest-cli-howto.md) (Создание фильтров с помощью .NET)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Защитите содержимое с помощью DRM](protect-with-drm.md).

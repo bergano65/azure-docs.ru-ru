@@ -3,15 +3,16 @@ title: Мониторинг производительности на вирту
 description: Мониторинг производительности приложений для ВИРТУАЛЬНОЙ машины Azure и масштабируемых наборов виртуальных машин Azure. Загрузка диаграммы и время отклика, сведения о зависимостях и Настройка оповещений о производительности.
 ms.topic: conceptual
 ms.date: 08/26/2019
-ms.openlocfilehash: d75e14dccef565f0029d06583e74d5693726dd99
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8b025c5196d65234a632bd1f939bc1116b72dce0
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77661334"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87024638"
 ---
 # <a name="deploy-the-azure-monitor-application-insights-agent-on-azure-virtual-machines-and-azure-virtual-machine-scale-sets"></a>Развертывание агента Azure Monitor Application Insights на виртуальных машинах Azure и масштабируемых наборах виртуальных машин Azure
 
-Включение мониторинга для веб-приложений на основе .NET, работающих на [виртуальных машинах Azure](https://azure.microsoft.com/services/virtual-machines/) и [масштабируемых наборах виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machine-scale-sets/) , теперь стало проще, чем когда бы то ни было. Получите все преимущества использования Application Insights без изменения кода.
+Включение мониторинга для веб-приложений на основе .NET, работающих на [виртуальных машинах Azure](https://azure.microsoft.com/services/virtual-machines/) и [масштабируемых наборах виртуальных машин Azure](../../virtual-machine-scale-sets/index.yml) , теперь стало проще, чем когда бы то ни было. Получите все преимущества использования Application Insights без изменения кода.
 
 В этой статье описывается включение мониторинга Application Insights с помощью агента Application Insights и предоставляются предварительные рекомендации по автоматизации процесса для крупномасштабных развертываний.
 
@@ -29,15 +30,15 @@ ms.locfileid: "77661334"
 
     * Для виртуальных машин Azure и масштабируемых наборов виртуальных машин Azure рекомендуется как минимум включить этот уровень мониторинга. После этого в зависимости от конкретного сценария можно оценить, требуется ли ручное инструментирование.
 
-    * Агент Application Insights выполняет автоматическую сбор одинаковых зависимых сигналов в виде пакета SDK для .NET. Дополнительные сведения см. в разделе [Автоматическая коллекция зависимостей](https://docs.microsoft.com/azure/azure-monitor/app/auto-collect-dependencies#net) .
+    * Агент Application Insights выполняет автоматическую сбор одинаковых зависимых сигналов в виде пакета SDK для .NET. Дополнительные сведения см. в разделе [Автоматическая коллекция зависимостей](./auto-collect-dependencies.md#net) .
         > [!NOTE]
         > В настоящее время поддерживаются только приложения, размещенные в среде .NET IIS. Используйте пакет SDK для инструментирования приложений ASP.NET Core, Java и Node.js, размещенных на виртуальных машинах Azure и масштабируемых наборах виртуальных машин.
 
 * Пакет SDK **на основе кода**
 
-    * Этот подход гораздо более настраиваемый, но требует [добавления зависимости от Application Insights пакетов NUGET SDK](https://docs.microsoft.com/azure/azure-monitor/app/asp-net). Этот метод также означает, что вам нужно самостоятельно управлять обновлениями для последних версий пакетов.
+    * Этот подход гораздо более настраиваемый, но требует [добавления зависимости от Application Insights пакетов NUGET SDK](./asp-net.md). Этот метод также означает, что вам нужно самостоятельно управлять обновлениями для последних версий пакетов.
 
-    * Если необходимо выполнить пользовательские вызовы API для отслеживания событий или зависимостей, не отслеживаемых по умолчанию с помощью мониторинга на основе агентов, необходимо использовать этот метод. Дополнительные сведения см. в [статье об API для получения пользовательских событий и метрик](https://docs.microsoft.com/azure/azure-monitor/app/api-custom-events-metrics) .
+    * Если необходимо выполнить пользовательские вызовы API для отслеживания событий или зависимостей, не отслеживаемых по умолчанию с помощью мониторинга на основе агентов, необходимо использовать этот метод. Дополнительные сведения см. в [статье об API для получения пользовательских событий и метрик](./api-custom-events-metrics.md) .
 
 > [!NOTE]
 > Если будет обнаружено отслеживание на основе агента и ручное инструментирование на основе пакета SDK, будут учитываться только параметры инструментирования вручную. Это позволяет предотвратить отправку повторяющихся данных. Чтобы узнать больше об этом, ознакомьтесь с [разделом устранение неполадок](#troubleshooting) ниже.
@@ -45,10 +46,10 @@ ms.locfileid: "77661334"
 ## <a name="manage-application-insights-agent-for-net-applications-on-azure-virtual-machines-using-powershell"></a>Управление агентом Application Insights для приложений .NET на виртуальных машинах Azure с помощью PowerShell
 
 > [!NOTE]
-> Перед установкой агента Application Insights вам потребуется строка подключения. [Создайте новый Application Insights ресурс](https://docs.microsoft.com/azure/azure-monitor/app/create-new-resource) или скопируйте строку подключения из существующего ресурса Application Insights.
+> Перед установкой агента Application Insights вам потребуется строка подключения. [Создайте новый Application Insights ресурс](./create-new-resource.md) или скопируйте строку подключения из существующего ресурса Application Insights.
 
 > [!NOTE]
-> Не знакомы с PowerShell? Ознакомьтесь с [руководством по началу работы](https://docs.microsoft.com/powershell/azure/get-started-azureps?view=azps-2.5.0).
+> Не знакомы с PowerShell? Ознакомьтесь с [руководством по началу работы](/powershell/azure/get-started-azureps?view=azps-2.5.0).
 
 Установка или обновление агента Application Insights как расширения для виртуальных машин Azure
 ```powershell
@@ -98,7 +99,7 @@ Get-AzResource -ResourceId "/subscriptions/<mySubscriptionId>/resourceGroups/<my
 # Location          : southcentralus
 # ResourceId        : /subscriptions/<mySubscriptionId>/resourceGroups/<myVmResourceGroup>/providers/Microsoft.Compute/virtualMachines/<myVmName>/extensions/ApplicationMonitoring
 ```
-Вы также можете просмотреть установленные расширения в [колонке виртуальной машины Azure](https://docs.microsoft.com/azure/virtual-machines/extensions/overview) на портале.
+Вы также можете просмотреть установленные расширения в [колонке виртуальной машины Azure](../../virtual-machines/extensions/overview.md) на портале.
 
 > [!NOTE]
 > Проверьте установку, щелкнув Live Metrics Stream в ресурсе Application Insights, связанном со строкой подключения, которая использовалась для развертывания расширения агента Application Insights. При отправке данных из нескольких виртуальных машин выберите целевые виртуальные машины Azure в разделе Имя сервера. Начало потока данных может занять до минуты.
@@ -162,7 +163,7 @@ Get-AzResource -ResourceId /subscriptions/<mySubscriptionId>/resourceGroups/<myR
 # ResourceId        : /subscriptions/<mySubscriptionId>/resourceGroups/<myResourceGroup>/providers/Microsoft.Compute/virtualMachineScaleSets/<myVmssName>/extensions/ApplicationMonitoringWindows
 ```
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 
 Найдите советы по устранению неполадок для Application Insights расширения агента мониторинга для приложений .NET, выполняющихся на виртуальных машинах Azure и в масштабируемых наборах виртуальных машин.
 
@@ -174,6 +175,6 @@ Get-AzResource -ResourceId /subscriptions/<mySubscriptionId>/resourceGroups/<myR
 C:\WindowsAzure\Logs\Plugins\Microsoft.Azure.Diagnostics.ApplicationMonitoringWindows\<version>\
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте, как [развернуть приложение в масштабируемом наборе виртуальных машин Azure](../../virtual-machine-scale-sets/virtual-machine-scale-sets-deploy-app.md).
 * [Настройте веб-тесты доступности](monitor-web-app-availability.md) , которые будут оповещены, если ваша конечная точка не работает.

@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.workload: identity
 ms.date: 07/01/2020
 ms.author: rolyon
-ms.openlocfilehash: db1b030aed34498ade91a195d5ca68725b579ba3
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.openlocfilehash: 664687d096a3a9c6ce9a6c7de0025604e046b0a1
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86230848"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87029983"
 ---
 # <a name="transfer-an-azure-subscription-to-a-different-azure-ad-directory-preview"></a>Перенос подписки Azure в другой каталог Azure AD (Предварительная версия)
 
@@ -75,7 +75,7 @@ ms.locfileid: "86230848"
 | Служба хранилища Azure и Azure Data Lake Storage 2-го поколения | Да | Да |  | Необходимо повторно создать все списки ACL. |
 | Хранилище Azure Data Lake Storage 1-го поколения | Да |  |  | Необходимо повторно создать все списки ACL. |
 | Файлы Azure | Да | Да |  | Необходимо повторно создать все списки ACL. |
-| Синхронизация файлов Azure | Да | Да |  |  |
+| Служба синхронизации файлов Azure | Да | Да |  |  |
 | управляемые диски Azure. | Да | Н/Д |  |  |
 | Службы контейнеров Azure для Kubernetes | Да | Да |  |  |
 | Доменные службы Azure Active Directory | Да | Нет |  |  |
@@ -145,7 +145,7 @@ ms.locfileid: "86230848"
 
 ### <a name="save-custom-roles"></a>Сохранение пользовательских ролей
 
-1. Список пользовательских ролей можно получить с помощью [списка AZ Role Definition](https://docs.microsoft.com/cli/azure/role/definition#az-role-definition-list) . Дополнительные сведения см. в [статье Создание или изменение пользовательских ролей для ресурсов Azure с помощью Azure CLI](custom-roles-cli.md).
+1. Список пользовательских ролей можно получить с помощью [списка AZ Role Definition](https://docs.microsoft.com/cli/azure/role/definition#az-role-definition-list) . Дополнительные сведения см. в [статье Создание или обновление пользовательских ролей Azure с помощью Azure CLI](custom-roles-cli.md).
 
     ```azurecli
     az role definition list --custom-role-only true --output json --query '[].{roleName:roleName, roleType:roleType}'
@@ -215,7 +215,7 @@ ms.locfileid: "86230848"
 
 ### <a name="list-key-vaults"></a>получение списка хранилищ ключей;
 
-При создании хранилища ключей оно автоматически привязывается к Azure Active Directory ИДЕНТИФИКАТОРу клиента по умолчанию для подписки, в которой он создается. Все записи политики доступа также привязываются к этому идентификатору клиента. Дополнительные сведения см. в статье [перемещение Azure Key Vault в другую подписку](../key-vault/general/keyvault-move-subscription.md).
+При создании хранилища ключей оно автоматически привязывается к Azure Active Directory ИДЕНТИФИКАТОРу клиента по умолчанию для подписки, в которой он создается. Все записи политики доступа также привязываются к этому идентификатору клиента. Дополнительные сведения см. в статье [перемещение Azure Key Vault в другую подписку](../key-vault/general/move-subscription.md).
 
 > [!WARNING]
 > Если для ресурса, например учетной записи хранения или базы данных SQL, используется шифрование неактивных ресурсов, которое зависит от хранилища ключей, которое не находится в той же подписке, которое передается, это может привести к неустранимому сценарию. В этом случае следует предпринять действия по использованию другого хранилища ключей или временно отключить ключи, управляемые клиентом, чтобы избежать такого неисправимого сценария.
@@ -291,7 +291,7 @@ ms.locfileid: "86230848"
 
 ### <a name="create-custom-roles"></a>Создание настраиваемых ролей
         
-- Используйте команду [AZ Role Definition Create](https://docs.microsoft.com/cli/azure/role/definition#az-role-definition-create) , чтобы создать каждую настраиваемую роль из файлов, созданных ранее. Дополнительные сведения см. в [статье Создание или изменение пользовательских ролей для ресурсов Azure с помощью Azure CLI](custom-roles-cli.md).
+- Используйте команду [AZ Role Definition Create](https://docs.microsoft.com/cli/azure/role/definition#az-role-definition-create) , чтобы создать каждую настраиваемую роль из файлов, созданных ранее. Дополнительные сведения см. в [статье Создание или обновление пользовательских ролей Azure с помощью Azure CLI](custom-roles-cli.md).
 
     ```azurecli
     az role definition create --role-definition <role_definition>
@@ -339,7 +339,7 @@ ms.locfileid: "86230848"
 
 ### <a name="update-key-vaults"></a>Обновление хранилищ ключей
 
-В этом разделе описаны основные шаги по обновлению хранилища ключей. Дополнительные сведения см. в статье [перемещение Azure Key Vault в другую подписку](../key-vault/general/keyvault-move-subscription.md).
+В этом разделе описаны основные шаги по обновлению хранилища ключей. Дополнительные сведения см. в статье [перемещение Azure Key Vault в другую подписку](../key-vault/general/move-subscription.md).
 
 1. Обновите идентификатор клиента, связанный со всеми существующими хранилищами ключей в подписке, в целевой каталог.
 

@@ -14,15 +14,16 @@ ms.date: 04/29/2020
 ms.author: curtand
 ms.reviewer: sumitp
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0d0d83d3b981968949d558cb7ee5672094b00555
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: eb464f758aca33e0b6547f69e2a9cc842582ea3f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84727336"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87025223"
 ---
 # <a name="powershell-and-graph-examples-for-group-based-licensing-in-azure-ad"></a>Примеры PowerShell и Graph для группового лицензирования в Azure AD
 
-Все функции лицензирования на основе групп доступны в [портал Azure](https://portal.azure.com), и в настоящее время PowerShell и Microsoft Graph поддерживают только операции чтения. Но некоторые полезные задачи можно выполнить с помощью существующих [командлетов MSOnline PowerShell](https://docs.microsoft.com/powershell/msonline/v1/azureactivedirectory) и Microsoft Graph. В этом документе приведены примеры того, что можно сделать.
+Все функции лицензирования на основе групп доступны в [портал Azure](https://portal.azure.com), и в настоящее время PowerShell и Microsoft Graph поддерживают только операции чтения. Но некоторые полезные задачи можно выполнить с помощью существующих [командлетов MSOnline PowerShell](/powershell/module/msonline) и Microsoft Graph. В этом документе приведены примеры того, что можно сделать.
 
 > [!NOTE]
 > Прежде чем приступить к выполнению командлетов, убедитесь, что вы сначала подключаются к своей организации, выполнив `Connect-MsolService`   командлет.
@@ -618,7 +619,7 @@ aadbe4da-c4b5-4d84-800a-9400f31d7371 User has no direct license to remove. Skipp
 > [!NOTE]
 > Обновите значения переменных `$skuId` , `$groupId`   которые нацелены на удаление прямых лицензий, в соответствии с тестовой средой перед выполнением приведенного выше скрипта. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о наборе функций для управления лицензиями с помощью групп см. в следующих статьях:
 

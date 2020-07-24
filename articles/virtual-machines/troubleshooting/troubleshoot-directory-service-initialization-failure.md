@@ -14,11 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 05/05/2020
 ms.author: v-miegge
-ms.openlocfilehash: 118c81dd52951729bfbbb97a510e693861666ee6
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 909481964f8aa3272715e235fa011562225a9422
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83663942"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87028368"
 ---
 # <a name="troubleshoot-windows-stop-error--directory-service-initialization-failure"></a>Устранение STOP-ошибки Windows — ошибка при инициализации службы каталогов
 
@@ -26,7 +27,7 @@ ms.locfileid: "83663942"
 
 ## <a name="symptom"></a>Симптом
 
-При использовании [диагностики загрузки](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/boot-diagnostics) для просмотра снимка экрана виртуальной машины на снимке экрана показано, что виртуальная машина должна быть перезапущена из-за ошибки, и отображается код завершения **0xC00002E1** в Windows Server 2008 R2 или **0xC00002E2** в Windows Server 2012 или более поздней версии.
+При использовании [диагностики загрузки](./boot-diagnostics.md) для просмотра снимка экрана виртуальной машины на снимке экрана показано, что виртуальная машина должна быть перезапущена из-за ошибки, и отображается код завершения **0xC00002E1** в Windows Server 2008 R2 или **0xC00002E2** в Windows Server 2012 или более поздней версии.
 
 ![На заставке Windows Server 2012 выводится сообщение "На вашем ПК возникла проблема, и его необходимо перезагрузить. Мы лишь собираем некоторые сведения об ошибке, а затем выполним перезагрузку".](./media/troubleshoot-directory-service-initialization-failure/1.png)
 
@@ -61,7 +62,7 @@ ms.locfileid: "83663942"
 
 ### <a name="create-and-access-a-repair-vm"></a>Создание виртуальной машины для восстановления и получение доступа к ней
 
-1. Выполните [шаги 1–3 списка команд для восстановления виртуальной машины](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/repair-windows-vm-using-azure-virtual-machine-repair-commands#repair-process-example), чтобы подготовить виртуальную машину для восстановления.
+1. Выполните [шаги 1–3 списка команд для восстановления виртуальной машины](./repair-windows-vm-using-azure-virtual-machine-repair-commands.md#repair-process-example), чтобы подготовить виртуальную машину для восстановления.
 1. Используйте подключение к удаленному рабочему столу, чтобы подключиться к виртуальной машине для восстановления.
 
 ### <a name="free-up-space-on-disk"></a>Освобождение места на диске
@@ -69,11 +70,11 @@ ms.locfileid: "83663942"
 Так как диск теперь подключен к виртуальной машине для восстановления, убедитесь, что диск, на котором находится внутренняя база данных Active Directory, имеет достаточно места для правильной работы.
 
 1. Проверьте, не заполнен ли диск, щелкнув диск правой кнопкой мыши и выбрав **Свойства**.
-1. Если на диске менее 300 МБ свободного места, [увеличьте его до 1 ТБ с помощью PowerShell](https://docs.microsoft.com/azure/virtual-machines/windows/expand-os-disk).
+1. Если на диске менее 300 МБ свободного места, [увеличьте его до 1 ТБ с помощью PowerShell](../windows/expand-os-disk.md).
 1. Если на занятое пространство на диске достигло 1 ТБ, выполните очистку диска.
 
-   1. Используйте PowerShell, чтобы [отключить диск данных](https://docs.microsoft.com/azure/virtual-machines/windows/detach-disk#detach-a-data-disk-using-powershell) от поврежденной виртуальной машины.
-   1. После отключения от поврежденной виртуальной машины [подключите диск данных](https://docs.microsoft.com/azure/virtual-machines/windows/attach-disk-ps#attach-an-existing-data-disk-to-a-vm) к работающей виртуальной машине.
+   1. Используйте PowerShell, чтобы [отключить диск данных](../windows/detach-disk.md#detach-a-data-disk-using-powershell) от поврежденной виртуальной машины.
+   1. После отключения от поврежденной виртуальной машины [подключите диск данных](../windows/attach-disk-ps.md#attach-an-existing-data-disk-to-a-vm) к работающей виртуальной машине.
    1. Освободите дополнительное место с помощью [средства очистки диска](https://support.microsoft.com/help/4026616/windows-10-disk-cleanup).
 
 1. **Необязательно**. Если требуется больше места, откройте экземпляр CMD и введите команду `defrag <LETTER ASSIGNED TO THE OS DISK>: /u /x /g`, чтобы выполнить дефрагментацию диска:
@@ -182,7 +183,7 @@ ms.locfileid: "83663942"
 
 ### <a name="rebuild-the-vm"></a>Перестроение виртуальной машины
 
-1. Чтобы заново собрать виртуальную машину, выполните [шаг 5 из списка команд для восстановления ВМ](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/repair-windows-vm-using-azure-virtual-machine-repair-commands#repair-process-example).
+1. Чтобы заново собрать виртуальную машину, выполните [шаг 5 из списка команд для восстановления ВМ](./repair-windows-vm-using-azure-virtual-machine-repair-commands.md#repair-process-example).
 
 ### <a name="reconfigure-the-storage-area-network-policy"></a>Перенастройка политики сети хранения данных
 

@@ -12,13 +12,14 @@ ms.tgt_pltfrm: ''
 ms.workload: infrastructure
 ms.date: 07/07/2017
 ms.author: kumud
-ms.openlocfilehash: 0e5aaf07b49546aca9f44dcb9a43a79127c82341
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c301c66c3b668ae48314c4d1eb06657d8573209c
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "73890244"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87030419"
 ---
-# <a name="peer-two-virtual-networks"></a>Пиринг между двумя виртуальными сетями
+# <a name="use-an-azure-cli-sample-script-to-connect-two-virtual-networks"></a>Использование примера сценария Azure CLI для подключения двух виртуальных сетей
 
 Этот скрипт создает и соединяет две виртуальные сети в одном регионе через сеть Azure. В результате выполнения скрипта будет создан пиринг между двумя виртуальными сетями.
 

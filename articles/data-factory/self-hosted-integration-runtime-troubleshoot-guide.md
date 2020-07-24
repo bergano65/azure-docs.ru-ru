@@ -5,20 +5,46 @@ services: data-factory
 author: nabhishek
 ms.service: data-factory
 ms.topic: troubleshooting
-ms.date: 06/24/2020
+ms.date: 07/19/2020
 ms.author: abnarain
-ms.openlocfilehash: e77d621d5699c434e691de0a523e58e49166d8d6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 521756081db938e749849e6f3630dbd60700d24f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85315127"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87023892"
 ---
 # <a name="troubleshoot-self-hosted-integration-runtime"></a>Устранение неполадок с локальной средой выполнения интеграции
 
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 В этой статье рассматриваются стандартные методы устранения неполадок с локальной средой выполнения интеграции в Фабрике данных Azure.
+
+## <a name="gather-self-hosted-integration-runtime-logs-from-azure-data-factory"></a>Сбор собственных журналов среды выполнения интеграции из фабрики данных Azure
+
+Для неудачных действий, выполняемых на автономных и общих IR-серверах, фабрика данных Azure поддерживает просмотр и отправку журналов ошибок. Чтобы получить идентификатор отчета об ошибке, выполните следующие действия, а затем введите идентификатор отчета, чтобы найти связанные известные проблемы.
+
+1. Перейдите на страницу **запуски действий** .
+
+1. В столбце " **Ошибка** " нажмите кнопку ниже.
+
+    ![Страница "запуски действий"](media/self-hosted-integration-runtime-troubleshoot-guide/activity-runs-page.png)
+
+1. Вы увидите связанные журналы для запуска невыполненного действия. Нажмите кнопку **отправить журналы** , чтобы получить дополнительную помощь.
+
+    ![Отправить журналы](media/self-hosted-integration-runtime-troubleshoot-guide/send-logs.png)
+
+1. Можно выбрать журналы, которые вы хотите отправить. Для *автономных IR*-файлов можно передать журналы, связанные с неудачными действиями, или все журналы на собственном узле IR. Для *общих IR*-файлов можно отправлять только журналы, связанные с неудачными действиями.
+
+    ![Выбор журналов](media/self-hosted-integration-runtime-troubleshoot-guide/choose-logs.png)
+
+1. При отправке журналов следует сохранить запись идентификатора отчета, если требуется дополнительная помощь по устранению проблемы.
+
+    ![Отправить журналы](media/self-hosted-integration-runtime-troubleshoot-guide/upload-logs.png)
+
+> [!NOTE]
+> Просмотр журнала и отправка запросов будут выполняться во всех подключенных к сети экземплярах для самостоятельного размещения. Убедитесь, что все автономные экземпляры IR в сети в случае отсутствия журналов. 
+
 
 ## <a name="common-errors-and-resolutions"></a>Распространенные ошибки и способы их устранения
 
@@ -275,7 +301,7 @@ ms.locfileid: "85315127"
     ![Рабочий процесс подтверждения TCP 4](media/self-hosted-integration-runtime-troubleshoot-guide/tcp-4-handshake-workflow.png) 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Для получения дополнительных сведений об устранении неполадок воспользуйтесь следующими ресурсами:
 

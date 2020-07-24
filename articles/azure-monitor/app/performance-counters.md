@@ -3,15 +3,16 @@ title: Счетчики производительности в Application Insi
 description: Мониторинг системных и пользовательских счетчиков производительности .NET в Application Insights.
 ms.topic: conceptual
 ms.date: 12/13/2018
-ms.openlocfilehash: 274e02c484c091cbb13ac2cf69bf99672f579f33
-ms.sourcegitcommit: 595cde417684e3672e36f09fd4691fb6aa739733
+ms.openlocfilehash: e60663d9e767db020fc93eba1f4c1c6babb32294
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83701468"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87024424"
 ---
 # <a name="system-performance-counters-in-application-insights"></a>Системные счетчики производительности в Application Insights
 
-В Windows предусмотрены самые разные [счетчики производительности](https://docs.microsoft.com/windows/desktop/PerfCtrs/about-performance-counters), которые отображают показатели использования ЦП, памяти, диска и сети. Вы также можете определить собственные счетчики производительности. Сбор данных со счетчиков производительности поддерживается, если приложение запущено под управлением службы IIS на локальном узле или виртуальной машине, к которой у вас есть доступ с правами администратора. Хотя приложения, работающие как веб-приложения Azure, не имеют прямого доступа к счетчикам производительности, Application Insights собирает информацию с части доступных счетчиков.
+В Windows предусмотрены самые разные [счетчики производительности](/windows/desktop/perfctrs/about-performance-counters), которые отображают показатели использования ЦП, памяти, диска и сети. Вы также можете определить собственные счетчики производительности. Сбор данных со счетчиков производительности поддерживается, если приложение запущено под управлением службы IIS на локальном узле или виртуальной машине, к которой у вас есть доступ с правами администратора. Хотя приложения, работающие как веб-приложения Azure, не имеют прямого доступа к счетчикам производительности, Application Insights собирает информацию с части доступных счетчиков.
 
 ## <a name="view-counters"></a>Просмотр счетчиков
 
@@ -39,7 +40,7 @@ ms.locfileid: "83701468"
 
     `Get-Counter -ListSet *`
 
-    (См. [`Get-Counter`](https://technet.microsoft.com/library/hh849685.aspx).)
+    (См. [`Get-Counter`](/powershell/module/microsoft.powershell.diagnostics/get-counter?view=powershell-5.1).)
 2. Откройте файл ApplicationInsights.config.
 
    * Если вы добавили Application Insights в приложение во время разработки, отредактируйте файл ApplicationInsights.config в проекте и повторно разверните его на серверах.
@@ -108,7 +109,7 @@ using Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector;
 ```
 
 ## <a name="performance-counters-in-analytics"></a>Счетчики производительности в службе аналитики
-В [службе аналитики](../../azure-monitor/app/analytics.md) можно выполнять поиск отчетов по счетчикам производительности и отображать их.
+В [службе аналитики](../log-query/log-query-overview.md) можно выполнять поиск отчетов по счетчикам производительности и отображать их.
 
 Схема **PerformanceCounters** предоставляет `category`, имя `counter` и имя `instance` каждого счетчика производительности.  В данных телеметрии для каждого приложения вы увидите только счетчики для этого приложения. Например, вот как можно увидеть, какие счетчики доступны. 
 
@@ -152,4 +153,3 @@ using Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector;
 
 * [Отслеживание зависимостей](../../azure-monitor/app/asp-net-dependencies.md)
 * [Отслеживание исключений](../../azure-monitor/app/asp-net-exceptions.md)
-

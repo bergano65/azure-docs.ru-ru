@@ -9,11 +9,12 @@ ms.subservice: management
 ms.date: 03/10/2020
 ms.reviewer: mimckitt
 ms.custom: mimckitt
-ms.openlocfilehash: 9498babd9605c46d752c5fe1eb1b077f6d911351
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f7a61ed039a3d8ed643e3b1b3d79384e35847986
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "83121020"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87029303"
 ---
 # <a name="modify-a-virtual-machine-scale-set"></a>Изменение масштабируемого набора виртуальных машин
 
@@ -319,13 +320,13 @@ $ az vmss get-instance-view --resource-group myResourceGroup --name myScaleSet -
     POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myScaleSet/reimage?api-version={apiVersion}
     ```
 
-- Командлет [Set-AzVmssVm](https://docs.microsoft.com/powershell/module/az.compute/set-azvmssvm) в Azure PowerShell:
+- Командлет [Set-AzVmssVm](/powershell/module/az.compute/set-azvmssvm) в Azure PowerShell:
 
     ```powershell
     Set-AzVmssVM -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet" -InstanceId instanceId -Reimage
     ```
 
-- Можно использовать команду [az vmss reimage](https://docs.microsoft.com/cli/azure/vmss) в Azure CLI.
+- Можно использовать команду [az vmss reimage](/cli/azure/vmss) в Azure CLI.
 
     ```azurecli
     az vmss reimage --resource-group myResourceGroup --name myScaleSet --instance-id instanceId
@@ -339,7 +340,7 @@ $ az vmss get-instance-view --resource-group myResourceGroup --name myScaleSet -
 ### <a name="create-time-properties"></a>Свойства времени создания
 Некоторые свойства можно задать только при создании масштабируемого набора. Эти свойства включают в себя:
 
-- зоны доступности;
+- Зоны доступности
 - издатель ссылки на образ;
 - предложение ссылки на образ.
 - тип учетной записи хранения управляемого диска ОС.
@@ -368,12 +369,12 @@ $ az vmss get-instance-view --resource-group myResourceGroup --name myScaleSet -
 Приложения также часто развертывают с помощью пользовательского образа. Этот сценарий описан в следующем разделе.
 
 ### <a name="os-updates"></a>обновления ОС;
-При использовании образов платформы Azure их можно обновить, изменив *imageReference* (дополнительные сведения см. в [документации по REST API](https://docs.microsoft.com/rest/api/compute/virtualmachinescalesets/createorupdate)).
+При использовании образов платформы Azure их можно обновить, изменив *imageReference* (дополнительные сведения см. в [документации по REST API](/rest/api/compute/virtualmachinescalesets/createorupdate)).
 
 >[!NOTE]
 > Для образов платформы обычно указывается последняя версия в качестве эталонной версии образа. Во время создания, масштабирования и повторного создания образов виртуальные машины создаются на основе последней доступной версии. Тем не менее это **не** означает, что образ ОС будет автоматически обновляться по мере выпуска новых версий. Отдельный компонент, обеспечивающий автоматическое обновление ОС, в настоящий момент находится на этапе предварительной версии. Дополнительные сведения см. в [документации по автоматическому обновлению ОС](virtual-machine-scale-sets-automatic-upgrade.md).
 
-При использовании пользовательских образов их можно обновить, изменив идентификатор *imageReference* (дополнительные сведения см. в [документации по REST API](https://docs.microsoft.com/rest/api/compute/virtualmachinescalesets/createorupdate)).
+При использовании пользовательских образов их можно обновить, изменив идентификатор *imageReference* (дополнительные сведения см. в [документации по REST API](/rest/api/compute/virtualmachinescalesets/createorupdate)).
 
 ## <a name="examples"></a>Примеры
 
@@ -449,5 +450,5 @@ $ az vmss get-instance-view --resource-group myResourceGroup --name myScaleSet -
 > Эти команды предполагают наличие только одной конфигурации IP и балансировщика нагрузки в масштабируемом наборе. Если их несколько, может потребоваться использовать индекс списка, отличный от *0*.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Общие задачи управления масштабируемыми наборами можно также выполнять с помощью [Azure CLI](virtual-machine-scale-sets-manage-cli.md) или [Azure PowerShell](virtual-machine-scale-sets-manage-powershell.md).

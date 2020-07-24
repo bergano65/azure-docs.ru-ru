@@ -7,17 +7,18 @@ ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 11/19/2019
 ms.author: shants
-ms.openlocfilehash: 79ef649502af8962253121ea18804966b1fa043e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4858a2e448955877107f6928b0aa01726e5db082
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84677939"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87028591"
 ---
 # <a name="handling-planned-maintenance-using-powershell"></a>Обработка планового обслуживания с помощью PowerShell
 
 **Эта статья относится к виртуальным машинам под управлением Linux и Windows.**
 
-Вы можете использовать Azure PowerShell, чтобы узнать, когда планируется [обслуживание](maintenance-notifications.md)виртуальных машин. Информацию о плановом обслуживании можно получить с помощью командлета [Get-AzVM](https://docs.microsoft.com/powershell/module/az.compute/get-azvm), используя параметр `-status`.
+Вы можете использовать Azure PowerShell, чтобы узнать, когда планируется [обслуживание](maintenance-notifications.md)виртуальных машин. Информацию о плановом обслуживании можно получить с помощью командлета [Get-AzVM](/powershell/module/az.compute/get-azvm), используя параметр `-status`.
   
 Сведения об обслуживании возвращаются, только если имеется запланированное обслуживание. Если нет запланированного обслуживания, влияющего на виртуальную машину, командлет не возвращает информацию об обслуживании. 
 
@@ -28,7 +29,7 @@ Get-AzVM -ResourceGroupName myResourceGroup -Name myVM -Status
 
 В разделе MaintenanceRedeployStatus возвращаются следующие свойства: 
 
-| Значение | Описание:   |
+| Значение | Описание   |
 |-------|---------------|
 | IsCustomerInitiatedMaintenanceAllowed | Указывает, можно ли сейчас запустить обслуживание на виртуальной машине |
 | PreMaintenanceWindowStartTime         | Начало периода самообслуживания, когда можно инициировать обслуживание на виртуальной машине |
@@ -39,7 +40,7 @@ Get-AzVM -ResourceGroupName myResourceGroup -Name myVM -Status
 
 
 
-Вы также можете получить информацию о состоянии обслуживания всех виртуальных машин в группе ресурсов с помощью командлета [Get-AzVM](https://docs.microsoft.com/powershell/module/az.compute/get-azvm), не указывая виртуальную машину.
+Вы также можете получить информацию о состоянии обслуживания всех виртуальных машин в группе ресурсов с помощью командлета [Get-AzVM](/powershell/module/az.compute/get-azvm), не указывая виртуальную машину.
  
 ```powershell
 Get-AzVM -ResourceGroupName myResourceGroup -Status
@@ -99,6 +100,6 @@ Get-AzureVM -ServiceName <Service name> -Name <VM name>
 Restart-AzureVM -InitiateMaintenance -ServiceName <service name> -Name <VM name>
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы также можете управлять плановым обслуживанием с помощью [Azure CLI](maintenance-notifications-cli.md) или [портала](maintenance-notifications-portal.md).

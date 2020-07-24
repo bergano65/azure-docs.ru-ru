@@ -8,14 +8,15 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 10/30/2019
+ms.date: 07/14/2020
 ms.author: jmprieur
 ms.custom: aaddev, tracking-python
-ms.openlocfilehash: 72168c54bd7968ce9c0315d3f3e47bae09e45004
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6cc846d8d330459587745795edf21c5ac04f2291
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85052223"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87026345"
 ---
 # <a name="web-app-that-signs-in-users-code-configuration"></a>Веб-приложение, которое входит в систему пользователей: конфигурация кода
 
@@ -28,7 +29,7 @@ ms.locfileid: "85052223"
 
 | Платформа | Библиотека | Описание |
 |----------|---------|-------------|
-| ![.NET](media/sample-v2-code/logo_NET.png) | [Расширения модели удостоверений для .NET](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/wiki) | По ASP.NET и ASP.NET Core, расширения модели идентификации Майкрософт для .NET предлагают набор библиотек DLL, выполняющихся как в .NET Framework, так и в .NET Core. Из веб-приложения ASP.NET или ASP.NET Core можно управлять проверкой маркера с помощью класса **TokenValidationParameters** (в частности, в некоторых сценариях партнеров). |
+| ![.NET](media/sample-v2-code/logo_NET.png) | [Расширения модели удостоверений для .NET](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/wiki) | По ASP.NET и ASP.NET Core, расширения модели идентификации Майкрософт для .NET предлагают набор библиотек DLL, выполняющихся как в .NET Framework, так и в .NET Core. Из веб-приложения ASP.NET или ASP.NET Core можно управлять проверкой маркера с помощью класса **TokenValidationParameters** (в частности, в некоторых сценариях партнеров). На практике сложность инкапсулирована в библиотеке [Microsoft. Identity. Web](https://aka.ms/ms-identity-web) . |
 | ![Java](media/sample-v2-code/small_logo_java.png) | [MSAL Java](https://github.com/AzureAD/microsoft-authentication-library-for-java/wiki) | Поддержка веб-приложений Java |
 | ![Python](media/sample-v2-code/small_logo_python.png) | [MSAL Python](https://github.com/AzureAD/microsoft-authentication-library-for-python/wiki) | Поддержка веб-приложений Python |
 
@@ -62,7 +63,7 @@ ms.locfileid: "85052223"
 
 ## <a name="configuration-files"></a>Файлы конфигурации.
 
-Веб-приложения, которые входят в систему пользователей с помощью платформы Microsoft Identity, обычно настраиваются с помощью файлов конфигурации. Параметры, которые необходимо заполнить:
+Веб-приложения, которые входят в систему пользователей с помощью платформы Microsoft Identity, настраиваются с помощью файлов конфигурации. Параметры, которые необходимо заполнить:
 
 - Облачный экземпляр ( `Instance` ), если вы хотите, чтобы приложение выполнялось в национальных облаках, например
 - Аудитория в ИДЕНТИФИКАТОРе клиента ( `TenantId` )
@@ -210,13 +211,21 @@ SESSION_TYPE = "filesystem"  # So the token cache will be stored in a server-sid
 Чтобы добавить проверку подлинности на платформе Microsoft Identity (прежнее название — Azure AD 2.0), необходимо добавить следующий код. Комментарии в коде должны быть описательными.
 
 > [!NOTE]
-> Если вы запускаете проект с веб-проектом ASP.NET Core по умолчанию в Visual Studio или с помощью `dotnet new mvc --auth SingleAuth` или `dotnet new webapp --auth SingleAuth` , вы увидите код, подобный следующему: `services.AddAuthentication(AzureADDefaults.AuthenticationScheme).AddAzureAD(options => Configuration.Bind("AzureAd", options));` .
-> 
+> Если вы хотите непосредственно начать с новых шаблонов ASP.NET Core для платформы Microsoft Identity, использующих Microsoft. Identity. Web, можно скачать предварительную версию пакета NuGet, содержащую шаблоны проектов для .NET Core 3,1 и .NET 5,0. После установки можно напрямую создать экземпляр ASP.NET Core веб-приложений (MVC или Блазор). Дополнительные сведения см. в [статье шаблоны проектов веб-приложений Microsoft. Identity. Web App](https://aka.ms/ms-id-web/webapp-project-templates) . Это самый простой подход, так как он выполняет все приведенные ниже действия.
+>
+> Если вы предпочитаете запускать проект с текущим веб-проектом ASP.NET Core по умолчанию в Visual Studio или с помощью `dotnet new mvc --auth SingleAuth` или `dotnet new webapp --auth SingleAuth` , вы увидите код, подобный следующему:
+>
+>```c#
+>  services.AddAuthentication(AzureADDefaults.AuthenticationScheme)
+>          .AddAzureAD(options => Configuration.Bind("AzureAd", options));
+> ```
+>
 > В этом коде используется устаревший пакет NuGet **Microsoft. AspNetCore. Authentication. AzureAD. UI** , который используется для создания приложения Azure AD версии 1.0. В этой статье объясняется, как создать приложение платформы удостоверений Microsoft Identity (Azure AD 2.0), заменяющее этот код.
+>
 
 1. Добавьте в проект пакеты NuGet [Microsoft. Identity. Web](https://www.nuget.org/packages/Microsoft.Identity.Web) и [Microsoft. Identity. Web. UI](https://www.nuget.org/packages/Microsoft.Identity.Web.UI) . Удалите пакет NuGet Microsoft. AspNetCore. Authentication. AzureAD. UI, если он имеется.
 
-2. Обновите код в `ConfigureServices` , чтобы он использовал `AddSignIn` методы и `AddMicrosoftIdentityUI` .
+2. Обновите код в `ConfigureServices` , чтобы он использовал `AddMicrosoftWebAppAuthentication` методы и `AddMicrosoftIdentityUI` .
 
    ```c#
    public class Startup
@@ -225,7 +234,7 @@ SESSION_TYPE = "filesystem"  # So the token cache will be stored in a server-sid
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
-     services.AddSignIn(Configuration, "AzureAd");
+     services.AddMicrosoftWebAppAuthentication(Configuration, "AzureAd");
 
      services.AddRazorPages().AddMvcOptions(options =>
      {
@@ -250,18 +259,23 @@ SESSION_TYPE = "filesystem"  # So the token cache will be stored in a server-sid
    ```
 
 В приведенном выше коде:
-- `AddSignIn`Метод расширения определен в **Microsoft. Identity. Web**. Им
+- `AddMicrosoftWebAppAuthentication`Метод расширения определен в **Microsoft. Identity. Web**. Им
   - Добавляет службу проверки подлинности.
   - Настраивает параметры для чтения файла конфигурации (здесь из раздела "AzureAD").
   - Настраивает параметры OpenID Connect Connect, чтобы центр сертификации был конечной точкой платформы Microsoft Identity.
   - Проверяет издателя маркера.
   - Гарантирует, что утверждения, соответствующие имени, сопоставляются с `preferred_username` утверждением в маркере идентификации.
 
-- В дополнение к объекту конфигурации можно указать имя раздела конфигурации при вызове `AddSignIn` . По умолчанию это `AzureAd` .
+- В дополнение к объекту конфигурации можно указать имя раздела конфигурации при вызове `AddMicrosoftWebAppAuthentication` . По умолчанию это `AzureAd` .
 
-- `AddSignIn`имеет другие параметры для расширенных сценариев. Например, трассировка событий по промежуточного слоя OpenID Connect позволяет устранить неполадки в веб-приложении, если проверка подлинности не работает. При установке необязательного параметра `subscribeToOpenIdConnectMiddlewareDiagnosticsEvents` `true` будет показано, как обрабатывается информация по по промежуточного слоя ASP.NET Core по мере продвижения от HTTP-ответа к удостоверению пользователя в `HttpContext.User` .
+- `AddMicrosoftWebAppAuthentication`имеет другие параметры для расширенных сценариев. Например, трассировка событий по промежуточного слоя OpenID Connect позволяет устранить неполадки в веб-приложении, если проверка подлинности не работает. При установке необязательного параметра `subscribeToOpenIdConnectMiddlewareDiagnosticsEvents` `true` будет показано, как обрабатывается информация по по промежуточного слоя ASP.NET Core по мере продвижения от HTTP-ответа к удостоверению пользователя в `HttpContext.User` .
 
-- `AddMicrosoftIdentityUI`Метод расширения определен в **Microsoft. Identity. Web. UI**. Он предоставляет контроллер по умолчанию для управления выходом.
+- `AddMicrosoftIdentityUI`Метод расширения определен в **Microsoft. Identity. Web. UI**. Он предоставляет контроллер по умолчанию для управления входом и выходом.
+
+Дополнительные сведения о том, как Microsoft. Identity. Web позволяет создавать веб-приложения, можно найти в<https://aka.ms/ms-id-web/webapp>
+
+> [!WARNING]
+> В настоящее время Microsoft. Identity. Web не поддерживает сценарий использования **отдельных учетных записей пользователей** (хранение учетных записей пользователей в приложении) при использовании Azure AD как и внешнего поставщика входа. Дополнительные сведения см. в [статье AzureAD/Microsoft-Identity-Web # 133](https://github.com/AzureAD/microsoft-identity-web/issues/133)
 
 # <a name="aspnet"></a>[ASP.NET](#tab/aspnet)
 
@@ -324,7 +338,7 @@ Session(app)
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В следующей статье вы узнаете, как активировать вход и выход.
 

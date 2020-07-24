@@ -7,12 +7,12 @@ ms.date: 06/17/2020
 ms.topic: how-to
 ms.service: virtual-machines-windows
 ms.subservice: imaging
-ms.openlocfilehash: c8a5e1b1324ca49d8b540998a82ebf125b3c5364
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5be21eea9dbb9ea0925ac014fce6272ce8c32a0d
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84975866"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87028147"
 ---
 # <a name="preview-create-a-windows-vm-with-azure-image-builder-using-powershell"></a>Предварительная версия: создание виртуальной машины Windows с помощью Azure Image Builder с использованием PowerShell
 
@@ -25,7 +25,7 @@ ms.locfileid: "84975866"
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
-Если вы решили использовать PowerShell локально, для работы с этой статьей установите модуль PowerShell Az и подключитесь к учетной записи Azure с помощью командлета [Connect-AzAccount](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount). См. сведения об [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps).
+Если вы решили использовать PowerShell локально, для работы с этой статьей установите модуль PowerShell Az и подключитесь к учетной записи Azure с помощью командлета [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount). См. сведения об [установке модуля Azure PowerShell](/powershell/azure/install-az-ps).
 
 > [!IMPORTANT]
 > Хотя модули PowerShell **AZ. имажебуилдер** и **AZ. манажедсервицеидентити** доступны в предварительной версии, их необходимо установить отдельно с помощью `Install-Module` командлета с `AllowPrerelease` параметром. После того как эти модули PowerShell станут общедоступными, они становятся частью будущих выпусков AZ PowerShell и доступны в рамках Azure Cloud Shell.
@@ -36,7 +36,7 @@ ms.locfileid: "84975866"
 
 [!INCLUDE [cloud-shell-try-it](../../../includes/cloud-shell-try-it.md)]
 
-Если вы используете несколько подписок Azure, выберите ту, за ресурсы в которой будут выставляться счета. Выберите определенную подписку с помощью командлета [Set-азконтекст](https://docs.microsoft.com/powershell/module/az.accounts/set-azcontext) .
+Если вы используете несколько подписок Azure, выберите ту, за ресурсы в которой будут выставляться счета. Выберите определенную подписку с помощью командлета [Set-азконтекст](/powershell/module/az.accounts/set-azcontext) .
 
 ```azurepowershell-interactive
 Set-AzContext -SubscriptionId 00000000-0000-0000-0000-000000000000
@@ -100,7 +100,7 @@ Write-Output $subscriptionID
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Создайте [группу ресурсов Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) с помощью командлета [New-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup). Группа ресурсов — это логический контейнер, в котором ресурсы Azure развертываются и администрируются как группа.
+Создайте [группу ресурсов Azure](../../azure-resource-manager/management/overview.md) с помощью командлета [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). Группа ресурсов — это логический контейнер, в котором ресурсы Azure развертываются и администрируются как группа.
 
 В следующем примере создается группа ресурсов на основе имени в `$imageResourceGroup` переменной в регионе, указанном в `$location` переменной. Эта группа ресурсов используется для хранения артефакта шаблона конфигурации образа и образа.
 
@@ -168,7 +168,7 @@ New-AzRoleAssignment @RoleAssignParams
 ```
 
 > [!NOTE]
-> Если появится сообщение об ошибке: "_New-азроледефинитион: превышен предел определения роли. Невозможно создать дополнительные определения ролей._ см. раздел [Устранение неполадок в Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/troubleshooting).
+> Если появится сообщение об ошибке: "_New-азроледефинитион: превышен предел определения роли. Невозможно создать дополнительные определения ролей._ см. раздел [Устранение неполадок в Azure RBAC](../../role-based-access-control/troubleshooting.md).
 
 ## <a name="create-a-shared-image-gallery"></a>Создание Общей коллекции образов.
 
@@ -198,9 +198,9 @@ $GalleryParams = @{
 New-AzGalleryImageDefinition @GalleryParams
 ```
 
-## <a name="create-an-image"></a>Создание образа
+## <a name="create-an-image"></a>Создание изображения
 
-Создайте исходный объект построителя образов Azure. Допустимые значения параметров см. [в статье Поиск образов виртуальных машин Windows в Azure Marketplace с помощью Azure PowerShell](https://docs.microsoft.com/azure/virtual-machines/windows/cli-ps-findimage) .
+Создайте исходный объект построителя образов Azure. Допустимые значения параметров см. [в статье Поиск образов виртуальных машин Windows в Azure Marketplace с помощью Azure PowerShell](./cli-ps-findimage.md) .
 
 ```azurepowershell-interactive
 $SrcObjParams = @{
@@ -339,6 +339,6 @@ Remove-AzImageBuilderTemplate -ResourceGroupName $imageResourceGroup -Name $imag
 Remove-AzResourceGroup -Name $imageResourceGroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о компонентах JSON, использованных в этой статье, см. в разделе [Справочник по шаблонам для Image Builder](../linux/image-builder-json.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).

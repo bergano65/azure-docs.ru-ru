@@ -1,25 +1,25 @@
 ---
 title: Укажите ключ шифрования для запроса к хранилищу BLOB-объектов
 titleSuffix: Azure Storage
-description: Клиенты, выполняющие запросы к хранилищу BLOB-объектов Azure, имеют возможность указать ключ шифрования для каждого запроса (Предварительная версия). Включение ключа шифрования в запрос обеспечивает детальный контроль над параметрами шифрования для операций с хранилищем BLOB-объектов.
+description: Клиенты, выполняющие запросы к хранилищу BLOB-объектов Azure, имеют возможность предоставлять ключ шифрования для каждого запроса. Включение ключа шифрования в запрос обеспечивает детальный контроль над параметрами шифрования для операций с хранилищем BLOB-объектов.
 services: storage
 author: tamram
 ms.service: storage
-ms.date: 03/12/2020
+ms.date: 07/20/2020
 ms.topic: conceptual
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: 0e5a85bcc4ded3b4bf3fcbcaf095d7c8ef01c458
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fec3d760450fb5cc20deed14dac03f58f23c2b4b
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84805315"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87029745"
 ---
-# <a name="provide-an-encryption-key-on-a-request-to-blob-storage-preview"></a>Укажите ключ шифрования для запроса к хранилищу BLOB-объектов (Предварительная версия)
+# <a name="provide-an-encryption-key-on-a-request-to-blob-storage"></a>Укажите ключ шифрования для запроса к хранилищу BLOB-объектов
 
-Клиенты, выполняющие запросы к хранилищу BLOB-объектов Azure, имеют возможность указать ключ шифрования для каждого запроса (Предварительная версия). Включение ключа шифрования в запрос обеспечивает детальный контроль над параметрами шифрования для операций с хранилищем BLOB-объектов. Предоставляемые клиентом ключи могут храниться в Azure Key Vault или в другом хранилище ключей.
+Клиенты, выполняющие запросы к хранилищу BLOB-объектов Azure, имеют возможность предоставлять ключ шифрования для каждого запроса. Включение ключа шифрования в запрос обеспечивает детальный контроль над параметрами шифрования для операций с хранилищем BLOB-объектов. Предоставляемые клиентом ключи могут храниться в Azure Key Vault или в другом хранилище ключей.
 
 ## <a name="encrypting-read-and-write-operations"></a>Шифрование операций чтения и записи
 
@@ -39,7 +39,7 @@ ms.locfileid: "84805315"
 
 Для вызовов RESTFUL клиенты могут использовать следующие заголовки для безопасной передачи сведений о ключе шифрования в запрос в хранилище BLOB-объектов:
 
-|Заголовок запроса | Описание: |
+|Заголовок запроса | Описание |
 |---------------|-------------|
 |`x-ms-encryption-key` |Требуется для запросов Write и Read. Значение ключа шифрования AES-256 в кодировке Base64. |
 |`x-ms-encryption-key-sha256`| Требуется для запросов Write и Read. Значение SHA256 ключа шифрования в кодировке Base64. |
@@ -61,7 +61,7 @@ ms.locfileid: "84805315"
 - [Set BLOB Properties (Задание свойств службы BLOB-объекта)](/rest/api/storageservices/set-blob-properties)
 - [Set BLOB Metadata (Задание метаданных BLOB-объекта)](/rest/api/storageservices/set-blob-metadata)
 - [Get BLOB (Получение BLOB-объекта)](/rest/api/storageservices/get-blob)
-- [Get BLOB Properties (Получение свойств BLOB-объекта)](/rest/api/storageservices/get-blob-properties)
+- [Получение свойств большого двоичного объекта](/rest/api/storageservices/get-blob-properties)
 - [Get BLOB Metadata (Получение метаданных BLOB-объекта)](/rest/api/storageservices/get-blob-metadata)
 - [Создание моментального снимка большого двоичного объекта](/rest/api/storageservices/snapshot-blob)
 
@@ -74,7 +74,7 @@ ms.locfileid: "84805315"
 >
 > Обязательно Защитите ключ шифрования, предоставленный в запросе к хранилищу BLOB-объектов, в безопасном хранилище ключей, например Azure Key Vault. Если выполнить операцию записи для контейнера или большого двоичного объекта без ключа шифрования, операция завершится ошибкой, а доступ к объекту будет потерян.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Указание предоставленного клиентом ключа для запроса к хранилищу BLOB-объектов с помощью .NET](../blobs/storage-blob-customer-provided-key.md)
 - [Шифрование службы хранилища Azure для неактивных данных](storage-service-encryption.md)

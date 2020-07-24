@@ -9,12 +9,12 @@ ms.subservice: autoscale
 ms.date: 06/25/2020
 ms.reviwer: jushiman
 ms.custom: avverma
-ms.openlocfilehash: 915b6430378cfff2a847e31de26950fcb9de6ff5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1ee4c8a52098bfa7c012e85f25371c306b106b86
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85374599"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87029439"
 ---
 # <a name="troubleshooting-autoscale-with-virtual-machine-scale-sets"></a>Устранение неполадок при автомасштабировании масштабируемых наборов виртуальных машин
 **Описание проблемы**. Вы создали в Azure Resource Manager инфраструктуру автомасштабирования с помощью масштабируемых наборов виртуальных машин (например, развернув шаблон, похожий на этот: https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-bottle-autoscale ) и установили определенные правила масштабирования. Все работает великолепно, но независимо от уровня нагрузки на виртуальные машины автомасштабирование не выполняется.
@@ -73,7 +73,7 @@ ms.locfileid: "85374599"
     Если данных здесь нет, это значит, что проблема связана с расширением системы диагностики, которое запущено на виртуальных машинах. Если данные есть, проблема вызвана ошибкой в правилах масштабирования или в службе аналитики. Проверьте [состояние Azure](https://azure.microsoft.com/status/).
     
     Если после выполнения этих действий по-прежнему возникают проблемы автомасштабирования, можно попробовать найти решение в следующих источниках: 
-    * Прочитайте форумы на [странице вопросов и ответов на сайте Microsoft](https://docs.microsoft.com/answers/topics/azure-virtual-machines.html) или на [сайте Stack Overflow](https://stackoverflow.com/questions/tagged/azure). 
+    * Прочитайте форумы на [странице вопросов и ответов на сайте Microsoft](/answers/topics/azure-virtual-machines.html) или на [сайте Stack Overflow](https://stackoverflow.com/questions/tagged/azure). 
     * Зарегистрируйте обращение в службу поддержки. Подготовьте шаблон и представление данных о производительности, чтобы предоставить их.
 
 [audit]: ./media/virtual-machine-scale-sets-troubleshoot/image3.png

@@ -13,17 +13,18 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/14/2018
 ms.author: alsin
-ms.openlocfilehash: 493340764f507c4fa364a5000f65cc232630b243
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 571df9c07e71682e2be51a73e3837c79cb074c3a
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77167030"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87028470"
 ---
 # <a name="windows-commands---cmd-and-powershell"></a>Команды Windows — CMD и PowerShell
 
 В этом разделе приведены примеры команд для выполнения общих задач в сценариях, где может потребоваться использовать SAC для доступа к виртуальной машине Windows, например, когда необходимо устранить ошибки RDP-соединения.
 
-SAC включена во все версии Windows, начиная с Windows Server 2003, но по умолчанию отключена. SAC использует драйвер ядра `sacdrv.sys`, службу `Special Administration Console Helper` (`sacsvr`) и процесс `sacsess.exe`. Дополнительные сведения см. в статье [Emergency Management Services Tools and Settings](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc787940(v%3dws.10)) (Средства и параметры служб аварийного управления).
+SAC включена во все версии Windows, начиная с Windows Server 2003, но по умолчанию отключена. SAC использует драйвер ядра `sacdrv.sys`, службу `Special Administration Console Helper` (`sacsvr`) и процесс `sacsess.exe`. Дополнительные сведения см. в статье [Emergency Management Services Tools and Settings](/previous-versions/windows/it-pro/windows-server-2003/cc787940(v%3dws.10)) (Средства и параметры служб аварийного управления).
 
 SAC позволяет подключаться к вашей операционной системе через последовательный порт. Когда вы запускаете CMD из SAC, `sacsess.exe` запускает `cmd.exe` в вашей операционной системе. Если вы подключаетесь к виртуальной машине по RDP, в диспетчере задач можно увидеть, что вы одновременно подключаетесь к SAC через функцию последовательной консоли. CMD, к которой вы обращаетесь через SAC, аналогична `cmd.exe`, которую вы используете при подключении через RDP. Доступны все те же команды и средства, в том числе возможность запуска PowerShell из этого экземпляра CMD. Основное различие между SAC и средой восстановления Windows (Windows RE) заключается в том, что SAC позволяет вам управлять вашей операционной системой, в то время как WinRE загружается в другую минимальную сборку ОС. Хотя виртуальные машины Azure не поддерживают возможность доступа к WinRE с помощью функции последовательной консоли, управление виртуальными машинами Azure можно осуществлять с помощью SAC.
 
@@ -69,13 +70,13 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="start-service"></a>Запуск службы
 `net start termservice`
 
-или
+or
 
 `sc start termservice`
 ### <a name="stop-service"></a>Остановка службы
 `net stop termservice`
 
-или
+or
 
 `sc stop termservice`
 ## <a name="manage-networking-features"></a>Управление компонентами сети
@@ -90,7 +91,7 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="set-nic-to-use-dhcp"></a>Настройка сетевого адаптера для использования DHCP
 `netsh interface ip set address name="<interface name>" source=dhcp`
 
-Дополнительные сведения о `netsh`[см. здесь](https://docs.microsoft.com/windows-server/networking/technologies/netsh/netsh-contexts).
+Дополнительные сведения о `netsh`[см. здесь](/windows-server/networking/technologies/netsh/netsh-contexts).
 
 Виртуальные машины Azure всегда должны использовать DHCP в гостевой ОС, чтобы получить IP-адрес. Параметр статического IP-адреса Azure по-прежнему использует DHCP, чтобы предоставить статический IP-адрес виртуальной машине.
 ### <a name="ping"></a>Проверка связи
@@ -182,11 +183,11 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="scan-for-system-file-corruption"></a>Поиск повреждений системного файла
 `sfc /scannow`
 
-См. также сведения в статье [Repair a Windows Image](https://docs.microsoft.com/windows-hardware/manufacture/desktop/repair-a-windows-image) (Исправление образа Windows).
+См. также сведения в статье [Repair a Windows Image](/windows-hardware/manufacture/desktop/repair-a-windows-image) (Исправление образа Windows).
 ### <a name="scan-for-system-file-corruption"></a>Поиск повреждений системного файла
 `dism /online /cleanup-image /scanhealth`
 
-См. также сведения в статье [Repair a Windows Image](https://docs.microsoft.com/windows-hardware/manufacture/desktop/repair-a-windows-image) (Исправление образа Windows).
+См. также сведения в статье [Repair a Windows Image](/windows-hardware/manufacture/desktop/repair-a-windows-image) (Исправление образа Windows).
 ### <a name="export-file-permissions-to-text-file"></a>Экспорт разрешений для файла в текстовый файл
 `icacls %programdata%\Microsoft\Crypto\RSA\MachineKeys /t /c > %temp%\MachineKeys_permissions_before.txt`
 ### <a name="save-file-permissions-to-acl-file"></a>Сохранение разрешений для файла в файл ACL
@@ -209,11 +210,11 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="show-os-version"></a>Отображение версии ОС
 `ver`
 
-или
+or
 
 `wmic os get caption,version,buildnumber /format:list`
 
-или
+or
 
 `systeminfo  find /i "os name"`
 
@@ -221,7 +222,7 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="view-os-install-date"></a>Отображение даты установки ОС
 `systeminfo | find /i "original"`
 
-или
+or
 
 `wmic os get installdate`
 ### <a name="view-last-boot-time"></a>Отображение времени последней загрузки
@@ -229,7 +230,7 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="view-time-zone"></a>Отображение часового пояса
 `systeminfo | find /i "time zone"`
 
-или
+or
 
 `wmic timezone get caption,standardname /format:list`
 ### <a name="restart-windows"></a>Перезапуск Windows
@@ -294,7 +295,7 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="show-nic-properties"></a>Отображение свойств сетевого адаптера
 `get-netadapter | where {$_.ifdesc.startswith('Microsoft Hyper-V Network Adapter')} |  format-list status,name,ifdesc,macadDresS,driverversion,MediaConNectState,MediaDuplexState`
 
-или
+or
 
 `get-wmiobject win32_networkadapter -filter "servicename='netvsc'" |  format-list netenabled,name,macaddress`
 
@@ -304,7 +305,7 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="enable-nic"></a>Включение сетевого адаптера
 `get-netadapter | where {$_.ifdesc.startswith('Microsoft Hyper-V Network Adapter')} | enable-netadapter`
 
-или
+or
 
 `(get-wmiobject win32_networkadapter -filter "servicename='netvsc'").enable()`
 
@@ -321,7 +322,7 @@ SAC позволяет подключаться к вашей операцион
 > [!NOTE]
 > Командлет Write-Progress может не работать с этой командой. Чтобы отключить индикатор выполнения, можно использовать PowerShell в качестве меры по устранению рисков `$ProgressPreference = "SilentlyContinue"` .
 
-или
+or
 
 `get-wmiobject Win32_PingStatus -Filter 'Address="8.8.8.8"' | format-table -autosize IPV4Address,ReplySize,ResponseTime`
 
@@ -329,7 +330,7 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="port-ping"></a>Проверка связи с портом
 `test-netconnection -ComputerName bing.com -Port 80`
 
-или
+or
 
 `(new-object Net.Sockets.TcpClient).BeginConnect('bing.com','80',$null,$null).AsyncWaitHandle.WaitOne(300)`
 
@@ -337,7 +338,7 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="test-dns-name-resolution"></a>Тестирование разрешений DNS-имен
 `resolve-dnsname bing.com`
 
-или
+or
 
 `[System.Net.Dns]::GetHostAddresses('bing.com')`
 
@@ -347,7 +348,7 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="show-windows-firewall-rule-by-port"></a>Отображение правила брандмауэра Windows по номеру порта
 `get-netfirewallportfilter | where {$_.localport -eq 3389} | foreach {Get-NetFirewallRule -Name $_.InstanceId} | format-list Name,Enabled,Profile,Direction,Action`
 
-или
+or
 
 `(new-object -ComObject hnetcfg.fwpolicy2).rules | where {$_.localports -eq 3389 -and $_.direction -eq 1} | format-table Name,Enabled`
 
@@ -362,7 +363,7 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="verify-user-account-is-enabled"></a>Проверка включения учетной записи пользователя
 `(get-localuser | where {$_.SID -like "S-1-5-21-*-500"}).Enabled`
 
-или
+or
 
 `(get-wmiobject Win32_UserAccount -Namespace "root\cimv2" -Filter "SID like 'S-1-5-%-500'").Disabled`
 
@@ -376,7 +377,7 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="view-user-account-properties"></a>Просмотр свойств учетной записи пользователя
 `get-localuser | where {$_.SID -like "S-1-5-21-*-500"} | format-list *`
 
-или
+or
 
 `get-wmiobject Win32_UserAccount -Namespace "root\cimv2" -Filter "SID like 'S-1-5-%-500'" |  format-list Name,Disabled,Status,Lockout,Description,SID`
 
@@ -435,7 +436,7 @@ SAC позволяет подключаться к вашей операцион
 
 Чтобы запросить метаданные экземпляра, требуется подключение к гостевой сети, так как выполняется вызов REST через узел Azure к службе метаданных экземпляра. Поэтому, если вы можете запросить метаданные экземпляра, это говорит о том, что гость может общаться по сети со службой, размещенной в Azure.
 
-Дополнительные сведения см. в статье [Служба метаданных экземпляров Azure](https://docs.microsoft.com/azure/virtual-machines/windows/instance-metadata-service).
+Дополнительные сведения см. в статье [Служба метаданных экземпляров Azure](../windows/instance-metadata-service.md).
 
 ### <a name="instance-metadata"></a>Метаданные экземпляра
 `$im = invoke-restmethod -headers @{"metadata"="true"} -uri http://169.254.169.254/metadata/instance?api-version=2017-08-01 -method get`
@@ -476,7 +477,7 @@ SAC позволяет подключаться к вашей операцион
 ### <a name="mac-address-instance-metadata"></a>MAC-адрес (метаданные экземпляра)
 `$im.network.interface.macAddress`
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Страницу основной документации по работе с последовательной консолью Windows см. [здесь](serial-console-windows.md).
 * Последовательная консоль также доступна для виртуальных машин [Linux](serial-console-linux.md).
 * См. дополнительные сведения в статье [Устранение неполадок виртуальных машин Windows в Azure с использованием диагностики загрузки](boot-diagnostics.md).

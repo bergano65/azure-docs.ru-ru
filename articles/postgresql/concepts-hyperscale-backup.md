@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: conceptual
 ms.date: 04/28/2020
-ms.openlocfilehash: bcc94b62812f1668bf8c5e5abb268fddf3da1fa5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 22bc3d6efca24a88b28217b2e06ac79d33f16b2e
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82515447"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87030085"
 ---
 # <a name="backup-and-restore-in-azure-database-for-postgresql---hyperscale-citus"></a>Резервное копирование и восстановление в базе данных Azure для PostgreSQL — масштабирование (Цитус)
 
@@ -32,7 +32,11 @@ ms.locfileid: "82515447"
 
 ## <a name="restore"></a>Восстановить
 
-В базе данных Azure для PostgreSQL при восстановлении кластера (Цитус) создается новый кластер из резервных копий исходных узлов.
+В базе данных Azure для PostgreSQL при восстановлении кластера (Цитус) создается новый кластер из резервных копий исходных узлов. 
+
+> [!IMPORTANT]
+>Вы можете восстановить только кластер с масштабированием в пределах одной и той же подписки и группы ресурсов и с другим именем кластера.
+
 
 > [!IMPORTANT]
 > Невозможно восстановить удаленные кластеры с масштабированием (Цитус). При удалении кластера все узлы, принадлежащие к кластеру, удаляются и не могут быть восстановлены. Для защиты ресурсов кластера, после случайного удаления или непредвиденных изменений администраторы могут использовать [блокировки управления](/azure/azure-resource-manager/management/lock-resources).

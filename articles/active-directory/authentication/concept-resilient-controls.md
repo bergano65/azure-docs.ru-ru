@@ -12,11 +12,12 @@ ms.workload: identity
 ms.date: 06/08/2020
 ms.author: martinco
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 15d2b029937c58d45a2c1148c568cd396cea336a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ec20a1bda8021e61f5147142a8e6bddd6cf5d166
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84634648"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87027620"
 ---
 # <a name="create-a-resilient-access-control-management-strategy-with-azure-active-directory"></a>Создание устойчивой стратегии управления доступом с помощью Azure Active Directory
 
@@ -119,7 +120,7 @@ ms.locfileid: "84634648"
 * Настройте набор резервных политик, если нарушение доступа к одному типу учетных данных или одному механизму контроля доступа влияет на доступ к вашим приложениям. Настройте политику в состоянии "только отчет", которое требует присоединение к домену в качестве элемента управления, в качестве резервной копии активной политики, для которой требуется сторонний поставщик MFA.
 * Снизьте риск того, что плохие субъекты будут угадывать пароли, когда не требуется MFA, следуя рекомендациям, изложенным в руководстве по паролями [здесь](https://aka.ms/passwordguidance).
 * Разверните [Самостоятельный сброс пароля (SSPR) в Azure AD](https://docs.microsoft.com/azure/active-directory/authentication/quickstart-sspr) и [Защита паролем Azure AD](https://docs.microsoft.com/azure/active-directory/authentication/howto-password-ban-bad-on-premises-deploy), чтобы убедиться, что пользователи не используют простой пароль и условия, которые вы запретили.
-* Если не достигнут определенный уровень проверки подлинности, используйте политики, которые ограничивают доступ в рамках приложения, вместо простого возврата к полному доступу. Пример:
+* Если не достигнут определенный уровень проверки подлинности, используйте политики, которые ограничивают доступ в рамках приложения, вместо простого возврата к полному доступу. Например.
   * Настройте политику резервного копирования, которая отправляет утверждение ограниченного сеанса в Exchange и SharePoint.
   * Если ваша организация использует Microsoft Cloud App Security, рассмотрите возможность использования политики MCAS, и тогда MCAS разрешит доступ только для чтения, но не для передачи.
 * Присвойте имена политикам, чтобы их легко было найти во время сбоя. Включите следующие элементы в название политики.
@@ -220,7 +221,7 @@ EMnnn - ENABLE IN EMERGENCY: [Disruption][i/n] - [Apps] - [Controls] [Conditions
 -   Определите, успешно ли выполнена основная проверка подлинности для VPN.
 
 После восстановления службы и подготовки к повторному применению MFA для пользователей включите расширение NPS: 
--   Важный раздел реестра из Backup HKEY_LOCAL_MACHINE \Систем\куррентконтролсет\сервицес\ауссрв\параметерс 
+-   Импорт раздела реестра из Backup HKEY_LOCAL_MACHINE \Систем\куррентконтролсет\сервицес\ауссрв\параметерс 
 -   Перезапустите службу сетевой политики (IAS), чтобы изменения вступили в силу. 
 -   Определите, успешно ли выполнена основная проверка подлинности, а также дополнительная проверка подлинности для VPN.
 -   Проверьте NPS-сервер и журнал VPN, чтобы определить, какие пользователи вошли в аварийное окно.
@@ -281,7 +282,7 @@ EMnnn - ENABLE IN EMERGENCY: [Disruption][i/n] - [Apps] - [Controls] [Conditions
 >[!NOTE]
  > Настройка [доверенных IP-адресов](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-mfasettings) для MFA Azure доступна только с [лицензиями Azure AD Premium](https://docs.microsoft.com/azure/active-directory/authentication/concept-mfa-licensing).
 
-## <a name="learn-more"></a>Подробнее
+## <a name="learn-more"></a>Дополнительные сведения
 
 * [Настройка сервера Многофакторной идентификации Azure для веб-приложений IIS](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfaserver-iis)
 * [Управление учетными записями администратора для аварийного доступа в Azure AD](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-emergency-access)

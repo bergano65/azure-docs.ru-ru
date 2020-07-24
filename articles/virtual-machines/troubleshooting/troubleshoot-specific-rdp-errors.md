@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: b3e06ff28c7980910636edeb06c5863859120484
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: f3e4c411223a3e8fc0602602cd941a00f7a19cca
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86081576"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87028249"
 ---
 # <a name="troubleshooting-specific-rdp-error-messages-to-a-windows-vm-in-azure"></a>Устранение некоторых ошибок подключения по протоколу RDP к виртуальной машине Windows в Azure
 При попытке подключиться к удаленному рабочему столу виртуальной машины Windows в Azure могут возникать определенные ошибки. В этой статье описаны некоторые наиболее распространенные сообщения об ошибках, а также действия по их устранению. Если вам не удается подключиться к виртуальной машине по протоколу RDP, но сообщение об ошибке не появляется, см. [руководство по устранению неполадок с подключением к удаленному рабочему столу](troubleshoot-rdp-connection.md).
@@ -46,7 +46,7 @@ mstsc <File name>.RDP /admin
 
 Если вы не планируете устанавливать более двух одновременных подключений к удаленному рабочему столу виртуальной машины, вы можете удалить роль сервера удаленных рабочих столов с помощью диспетчера серверов.
 
-Дополнительные сведения см. в записи блога [RDP to Azure VM fails with "No Remote Desktop License Servers available"](https://blogs.msdn.microsoft.com/mast/2014/01/21/rdp-to-azure-vm-fails-with-no-remote-desktop-license-servers-available/) (RDP-подключение к виртуальной машине Azure выдает ошибку, связанную с отсутствием серверов лицензирования удаленных рабочих столов).
+Дополнительные сведения см. в записи блога [RDP to Azure VM fails with "No Remote Desktop License Servers available"](/archive/blogs/mast/rdp-to-azure-vm-fails-with-no-remote-desktop-license-servers-available) (RDP-подключение к виртуальной машине Azure выдает ошибку, связанную с отсутствием серверов лицензирования удаленных рабочих столов).
 
 <a id="rdpname"></a>
 
@@ -108,9 +108,8 @@ mstsc <File name>.RDP /admin
 
 Убедитесь в том, что у учетной записи, которую вы используете для подключения, есть права для входа на удаленный рабочий стол. Для устранения этой проблемы воспользуйтесь учетной записью администратора домена или локального администратора, чтобы создать подключение к удаленному рабочему столу. Чтобы добавить требуемую учетную запись в локальную группу пользователей удаленного рабочего стола, используйте оснастку "Консоль управления (MMC)" (**Служебные программы > Локальные пользователи и группы > Группы > Пользователи удаленного рабочего стола**).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Если описанные выше ошибки отсутствуют и при подключении по протоколу RDP возникает неизвестная проблема, см. [руководство по устранению неполадок с подключением к удаленному рабочему столу](troubleshoot-rdp-connection.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
-* Сведения об устранении неполадок с доступом к приложениям, работающим на виртуальной машине, см. в статье [Устранение проблем с подключением к приложениям на виртуальных машинах Linux в Azure](../linux/troubleshoot-app-connection.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
-* Если вы подключаетесь к виртуальной машине Linux в Azure по протоколу SSH и у вас возникают проблемы, см. статью [Устранение неполадок с SSH-подключением к виртуальной машине Azure Linux: сбой, ошибка или отклонение](../linux/troubleshoot-ssh-connection.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
-
+* Сведения об устранении неполадок с доступом к приложениям, работающим на виртуальной машине, см. в статье [Устранение проблем с подключением к приложениям на виртуальных машинах Linux в Azure](./troubleshoot-app-connection.md?toc=/azure/virtual-machines/linux/toc.json).
+* Если вы подключаетесь к виртуальной машине Linux в Azure по протоколу SSH и у вас возникают проблемы, см. статью [Устранение неполадок с SSH-подключением к виртуальной машине Azure Linux: сбой, ошибка или отклонение](./troubleshoot-ssh-connection.md?toc=/azure/virtual-machines/linux/toc.json).

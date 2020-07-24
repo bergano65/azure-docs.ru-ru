@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18, contperfq4
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bc81cca10bacc581e72c7caa70a0b74b7ae99f9a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 347232d452b5d309da7cdb7c8fe34f0e41abde00
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85604222"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87025344"
 ---
 # <a name="associate-or-add-an-azure-subscription-to-your-azure-active-directory-tenant"></a>Связывание или добавление подписки Azure в клиент Azure Active Directory
 
@@ -85,13 +85,13 @@ ms.locfileid: "85604222"
 
 После связывания подписки с другим каталогом, возможно, потребуется выполнить следующие задачи для возобновления операций:
 
-- Если у вас есть хранилища ключей, необходимо изменить идентификатор клиента хранилища ключей. Дополнительные сведения см. в разделе [Изменение идентификатора клиента хранилища ключей после перемещения подписки](../../key-vault/general/subscription-move-fix.md).
+- Если у вас есть хранилища ключей, необходимо изменить идентификатор клиента хранилища ключей. Дополнительные сведения см. в разделе [Изменение идентификатора клиента хранилища ключей после перемещения подписки](../../key-vault/general/move-subscription.md).
 
 - Если вы использовали управляемые системой удостоверения для ресурсов, необходимо повторно включить эти удостоверения. Если вы использовали назначенные пользователем управляемые удостоверения, необходимо повторно создать эти удостоверения. После повторного включения или создания управляемых удостоверений необходимо повторно установить разрешения, назначенные этим удостоверениям. Дополнительные сведения см. в статье [Что такое управляемые удостоверения для ресурсов Azure](../managed-identities-azure-resources/overview.md).
 
 - Если вы зарегистрировали Azure Stack с помощью этой подписки, необходимо выполнить повторную регистрацию. Дополнительные сведения см. в статье [регистрация Azure Stack в Azure](/azure-stack/operator/azure-stack-registration).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о создании нового клиента Azure AD см. [в разделе Краткое руководство. Создание нового клиента в Azure Active Directory](active-directory-access-create-new-tenant.md).
 

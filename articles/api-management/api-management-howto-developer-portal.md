@@ -11,14 +11,14 @@ ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 03/15/2020
+ms.date: 07/15/2020
 ms.author: apimpm
-ms.openlocfilehash: ecbd4d97bb092ccbdb286e4865bf04e770ca9473
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7d479f18e8764a69cdc81f99d723534e4895b0e4
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85207895"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87025087"
 ---
 # <a name="azure-api-management-developer-portal-overview"></a>Обзор портала разработчика в службе управления API Azure
 
@@ -29,6 +29,9 @@ ms.locfileid: "85207895"
 ![Портал разработчика API Management](media/api-management-howto-developer-portal/cover.png)
 
 [!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
+
+> [!NOTE]
+> <a name="migrate-from-legacy"></a>Новый портал разработчика несовместим с устаревшим порталом разработчика, и автоматическая миграция невозможна. Необходимо вручную создать содержимое (страницы, текст, файлы мультимедиа) и настроить внешний вид нового портала. Инструкции см. в [руководстве по порталу разработчика](api-management-howto-developer-portal-customize.md) .
 
 ## <a name="managed-and-self-hosted-versions"></a><a name="managed-vs-self-hosted"></a>Управляемые и собственные версии
 
@@ -82,19 +85,13 @@ ms.locfileid: "85207895"
 
 Если портал был подготовлен после объявления общедоступной доступности, он уже должен иметь новое содержимое по умолчанию. Никаких действий с вашей стороны не требуется.
 
-### <a name="how-can-i-migrate-from-the-old-developer-portal-to-the-developer-portal"></a>Как перейти со старого портала разработчика на портал разработчика?
-
-Порталы несовместимы, и вам нужно перенести содержимое вручную.
-
-### <a name="does-the-portal-have-all-the-features-of-the-old-portal"></a>Содержит ли портал все функции старого портала?
+### <a name="does-the-portal-have-all-the-features-of-the-legacy-portal"></a>Содержит ли портал все функции устаревшего портала?
 
 Портал разработчика больше не поддерживает *приложения* и *проблемы*.
 
-Проверка подлинности с помощью OAuth в интерактивной консоли разработчика пока не поддерживается. Ход выполнения можно отслеживать с помощью [проблемы GitHub](https://github.com/Azure/api-management-developer-portal/issues/208).
+### <a name="has-the-legacy-portal-been-deprecated"></a>Устарел ли устаревший портал?
 
-### <a name="has-the-old-portal-been-deprecated"></a>Устарел ли старый портал?
-
-Старые порталы для разработчиков и издателей теперь являются *устаревшими* компонентами — они будут получать только обновления для системы безопасности. Новые функции будут реализованы только на новом портале разработчика.
+Устаревшие порталы для разработчиков и издателей теперь являются *устаревшими* компонентами — они будут получать только обновления для системы безопасности. Новые функции будут реализованы только на новом портале разработчика.
 
 Устаревшие устаревшие порталы будут объявлены отдельно. Если у вас есть вопросы, проблемы или комментарии, их следует вызывать [в выделенной проблемы GitHub](https://github.com/Azure/api-management-developer-portal/issues/121).
 
@@ -205,15 +202,15 @@ New-AzRoleAssignment -SignInName "user1@contoso.com" -RoleDefinitionName "APIM N
 
 | Браузер                     | Поддерживается       |
 |-----------------------------|-----------------|
-| Apple Safari;                | Да<sup>1</sup> |
+| Apple Safari.                | Да<sup>1</sup> |
 | Google Chrome               | Да<sup>1</sup> |
 | Microsoft Edge              | Да<sup>1</sup> |
 | Microsoft Internet Explorer | Нет              |
-| Mozilla Firefox             | Да<sup>1</sup> |
+| Mozilla Firefox;             | Да<sup>1</sup> |
 
  <small><sup>1</sup> поддерживается в двух последних рабочих версиях.</small>
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о новом портале разработчика:
 

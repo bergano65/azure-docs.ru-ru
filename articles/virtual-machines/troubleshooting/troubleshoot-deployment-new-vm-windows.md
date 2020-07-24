@@ -15,11 +15,12 @@ ms.topic: troubleshooting
 ms.date: 06/15/2018
 ms.author: daberry
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 78db1ba0eaff0dce83ed13e9f20c3c5a5b96bf9c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2b2f21cab4740013eb2de1d69f558c95461c493e
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "83120969"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87028402"
 ---
 # <a name="troubleshoot-deployment-issues-when-creating-a-new-windows-vm-in-azure"></a>Устранение неполадок развертывания при создании виртуальной машины Windows в Azure
 [!INCLUDE [virtual-machines-troubleshoot-deployment-new-vm-opening](../../../includes/virtual-machines-troubleshoot-deployment-new-vm-opening-include.md)]
@@ -36,7 +37,7 @@ ms.locfileid: "83120969"
 
 [Просмотр операций развертывания](../../azure-resource-manager/templates/deployment-history.md)
 
-[Просмотр журналов действий для управления ресурсами Azure](../../resource-group-audit.md)
+[Просмотр журналов действий для управления ресурсами Azure](../../azure-resource-manager/management/view-activity-logs.md)
 
 [!INCLUDE [virtual-machines-troubleshoot-deployment-new-vm-issue1](../../../includes/virtual-machines-troubleshoot-deployment-new-vm-issue1-include.md)]
 
@@ -52,7 +53,7 @@ ms.locfileid: "83120969"
 
 **Способы устранения:**
 
-Чтобы устранить эти ошибки, используйте [командлет Add-AzVhd, чтобы передать исходный виртуальный жесткий диск](https://docs.microsoft.com/powershell/module/az.compute/add-azvhd), доступный в локальной среде, с теми же параметрами, которые установлены для операционной системы (универсальной или специализированной). Чтобы передать диск как универсальный, сначала обязательно выполните команду sysprep.
+Чтобы устранить эти ошибки, используйте [командлет Add-AzVhd, чтобы передать исходный виртуальный жесткий диск](/powershell/module/az.compute/add-azvhd), доступный в локальной среде, с теми же параметрами, которые установлены для операционной системы (универсальной или специализированной). Чтобы передать диск как универсальный, сначала обязательно выполните команду sysprep.
 
 **Ошибки записи:**
 
@@ -87,7 +88,5 @@ ms.locfileid: "83120969"
   * создайте новую виртуальную машину в другой группе доступности (в том же регионе);
   * добавьте новую виртуальную машину в ту же виртуальную сеть.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 При возникновении проблем во время запуска остановленной виртуальной машины Windows или в случае изменения размера существующей виртуальной машины Windows в Azure см. раздел [Устранение неполадок в развертывании Resource Manager при перезагрузке или изменении размера существующей виртуальной машины Windows в Azure](restart-resize-error-troubleshooting.md).
-
-

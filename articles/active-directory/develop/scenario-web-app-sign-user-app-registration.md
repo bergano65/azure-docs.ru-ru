@@ -8,14 +8,15 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 10/30/2019
+ms.date: 07/14/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 7d2eb5356b1abc54508fd6bf8d35fd9fc39d02ec
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1adff446e6d41e30db109d0871811dc651f1f4f5
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80881585"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87026269"
 ---
 # <a name="web-app-that-signs-in-users-app-registration"></a>Веб-приложение, которое входит в систему пользователей: регистрация приложения
 
@@ -40,9 +41,9 @@ ms.locfileid: "80881585"
 > Используемый портал отличается в зависимости от того, выполняется ли ваше приложение в Microsoft Azure общедоступном облаке или в национальной или независимых облаке. Дополнительные сведения см. в статье [местные облака](./authentication-national-cloud.md#app-registration-endpoints).
 
 
-1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи. Кроме того, можно войти в портал Azure для национального облака.
-1. Если ваша учетная запись предоставляет доступ к нескольким клиентам, выберите свою учетную запись в правом верхнем углу. Затем задайте для сеанса портала требуемый клиент Azure Active Directory (Azure AD).
-1. В левой области выберите службу **Azure Active Directory** , а затем выберите **Регистрация приложений**  >  **Новая регистрация**.
+1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи. Кроме того, можно войти в [портал Azure](https://docs.microsoft.com/azure/active-directory/develop/authentication-national-cloud#app-registration-endpoints) для национального облака.
+2. Если ваша учетная запись предоставляет доступ к нескольким клиентам, выберите свою учетную запись в правом верхнем углу. Затем задайте для сеанса портала требуемый клиент Azure Active Directory (Azure AD).
+3. В левой области выберите службу **Azure Active Directory** , а затем выберите **Регистрация приложений**  >  **Новая регистрация**.
 
 # <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
 
@@ -50,12 +51,14 @@ ms.locfileid: "80881585"
    1. Выберите поддерживаемые типы учетных записей для приложения. (См. раздел [Поддерживаемые типы учетных записей](./v2-supported-account-types.md).)
    1. В разделе **Имя** введите понятное имя приложения, которое будет отображаться пользователям приложения. Например, введите **AspNetCore-webapp**.
    1. Для **URI перенаправления**добавьте тип приложения и назначение URI, которые будут принимать возвращенные ответы токена после успешной проверки подлинности. Например, введите **https://localhost:44321** . Затем выберите **зарегистрировать**.
+   ![registration](media/scenario-webapp/scenario-webapp-app-registration-1.png)
 1. Выберите меню **Проверка подлинности**, а затем добавьте следующие сведения:
    1. В качестве **URL-адреса ответа**добавьте **https://localhost:44321/signin-oidc** тип **Web**.
    1. В разделе **Дополнительные параметры** задайте для параметра **URL-адрес выхода** значение **https://localhost:44321/signout-oidc** .
    1. В разделе **Неявное предоставление разрешения** установите флажок **Токены идентификатора**.
-   1. Нажмите кнопку **Сохранить**.
-
+   1. Выберите **Сохранить**.
+  ![registration](media/scenario-webapp/scenario-webapp-app-registration-2.png)
+ 
 # <a name="aspnet"></a>[ASP.NET](#tab/aspnet)
 
 1. После появления страницы **Регистрация приложения** введите сведения о регистрации приложения:
@@ -65,7 +68,7 @@ ms.locfileid: "80881585"
 1. Выберите **Зарегистрировать**, чтобы создать приложение.
 1. Выберите меню **Проверка подлинности** .
 1. В разделе **Дополнительные параметры**  |  **неявное предоставление** выберите **токены идентификации**. Для работы с этим образцом необходимо включить [неявный поток предоставления](v2-oauth2-implicit-grant-flow.md) для входа пользователя.
-1. Нажмите кнопку **Сохранить**.
+1. Щелкните **Сохранить**.
 
 # <a name="java"></a>[Java](#tab/java)
 
@@ -116,9 +119,9 @@ ms.locfileid: "80881585"
 > - Мйорг (учетные записи только в этом каталоге организации)
 > - Анйорг (учетные записи в любом каталоге организации)
 >
-> Вы можете создать приложение, которое будет выполнять вход пользователей с помощью личных учетных записей Майкрософт (например, Skype, Xbox или Outlook.com). Сначала создайте многоклиентское приложение. Поддерживаемые типы учетных записей — это учетные записи в любом каталоге Организации. Затем измените `signInAudience` свойство в манифесте приложения с портал Azure. Дополнительные сведения см. в описании [шага 1,3](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/1-WebApp-OIDC/1-3-AnyOrgOrPersonal#step-1-register-the-sample-with-your-azure-ad-tenant) в руководстве по ASP.NET Core. Этот шаг можно обобщить для веб-приложений на любом языке.
+> Вы можете создать приложение, которое будет выполнять вход пользователей с помощью личных учетных записей Майкрософт (например, Skype, Xbox или Outlook.com). Сначала создайте многоклиентское приложение. Поддерживаемые типы учетных записей — это учетные записи в любом каталоге Организации. Затем измените [`accessTokenAcceptedVersion`](https://docs.microsoft.com/azure/active-directory/develop/reference-app-manifest#accesstokenacceptedversion-attribute) значение свойства на **2** , а свойство — на [`signInAudience`](https://docs.microsoft.com/azure/active-directory/develop/reference-app-manifest#signinaudience-attribute) `AzureADandPersonalMicrosoftAccount` в [манифесте приложения](https://docs.microsoft.com/azure/active-directory/develop/reference-app-manifest) из портал Azure. Дополнительные сведения см. в описании [шага 1,3](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/1-WebApp-OIDC/1-3-AnyOrgOrPersonal#step-1-register-the-sample-with-your-azure-ad-tenant) в руководстве по ASP.NET Core. Этот шаг можно обобщить для веб-приложений на любом языке.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Настройка кода приложения](scenario-web-app-sign-user-app-configuration.md)

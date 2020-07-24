@@ -7,11 +7,12 @@ ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 10/10/2019
 ms.author: cynthn
-ms.openlocfilehash: 7d378f111104feb678d3d89f4a4c51998c67f2e1
-ms.sourcegitcommit: f1132db5c8ad5a0f2193d751e341e1cd31989854
+ms.openlocfilehash: 49554c053af0ceecf2b7f0b1162b7212694239db
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2020
-ms.locfileid: "84234531"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87028096"
 ---
 # <a name="create-a-windows-vm-from-a-specialized-disk-by-using-powershell"></a>Создание виртуальной машины Windows из специализированного диска с помощью PowerShell
 
@@ -32,7 +33,7 @@ ms.locfileid: "84234531"
 
 ## <a name="option-1-use-an-existing-disk"></a>Вариант 1. Использование существующего диска
 
-Если вы удалили виртуальную машину и вам требуется повторно использовать диск операционной системы, чтобы создать новую, примените [Get-AzDisk](https://docs.microsoft.com/powershell/module/az.compute/get-azdisk).
+Если вы удалили виртуальную машину и вам требуется повторно использовать диск операционной системы, чтобы создать новую, примените [Get-AzDisk](/powershell/module/az.compute/get-azdisk).
 
 ```powershell
 $resourceGroupName = 'myResourceGroup'
@@ -67,7 +68,7 @@ $osDisk = Get-AzDisk `
 
 ### <a name="take-a-snapshot-of-the-os-disk"></a>Создание моментального снимка диска операционной системы
 
-Вы можете сделать моментальный снимок всей виртуальной машины (включая все диски) или одного диска. Ниже показано, как создать моментальный снимок только диска операционной системы виртуальной машины с помощью командлета [New-AzSnapshot](https://docs.microsoft.com/powershell/module/az.compute/new-azsnapshot). 
+Вы можете сделать моментальный снимок всей виртуальной машины (включая все диски) или одного диска. Ниже показано, как создать моментальный снимок только диска операционной системы виртуальной машины с помощью командлета [New-AzSnapshot](/powershell/module/az.compute/new-azsnapshot). 
 
 Сначала задайте некоторые параметры. 
 
@@ -115,7 +116,7 @@ $snapShot = New-AzSnapshot `
 
 ### <a name="create-a-new-disk-from-the-snapshot"></a>Создайте новый диск из моментального снимка.
 
-Создайте управляемый диск из моментального снимка, используя [New-AzDisk](https://docs.microsoft.com/powershell/module/az.compute/new-azdisk). В этом примере используется *myOSDisk* для имени диска.
+Создайте управляемый диск из моментального снимка, используя [New-AzDisk](/powershell/module/az.compute/new-azdisk). В этом примере используется *myOSDisk* для имени диска.
 
 Создайте группу ресурсов для новой виртуальной машины.
 
@@ -235,7 +236,7 @@ $vm = Add-AzVMNetworkInterface -VM $vmConfig -Id $nic.Id
 
 ### <a name="add-the-os-disk"></a>Добавление диска операционной системы 
 
-Добавьте диск операционной системы в конфигурацию с помощью [Set-AzVMOSDisk](https://docs.microsoft.com/powershell/module/az.compute/set-azvmosdisk). В этом примере для диска устанавливается размер *128 ГБ*, а управляемый диск подключается в качестве диска ОС *Windows*.
+Добавьте диск операционной системы в конфигурацию с помощью [Set-AzVMOSDisk](/powershell/module/az.compute/set-azvmosdisk). В этом примере для диска устанавливается размер *128 ГБ*, а управляемый диск подключается в качестве диска ОС *Windows*.
  
 ```powershell
 $vm = Set-AzVMOSDisk -VM $vm -ManagedDiskId $osDisk.Id -StorageAccountType Standard_LRS `
@@ -244,7 +245,7 @@ $vm = Set-AzVMOSDisk -VM $vm -ManagedDiskId $osDisk.Id -StorageAccountType Stand
 
 ### <a name="complete-the-vm"></a>Завершение процесса подготовки виртуальной машины 
 
-Создайте виртуальную машину, используя созданную конфигурацию [New-AzVM](https://docs.microsoft.com/powershell/module/az.compute/new-azvm).
+Создайте виртуальную машину, используя созданную конфигурацию [New-AzVM](/powershell/module/az.compute/new-azvm).
 
 ```powershell
 New-AzVM -ResourceGroupName $destinationResourceGroup -Location $location -VM $vm
@@ -269,4 +270,3 @@ $vmList.Name
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Войдите на свою новую виртуальную машину. Дополнительные сведения см. в статье [Как подключиться к виртуальной машине Azure под управлением Windows и войти на нее](connect-logon.md).
-

@@ -8,12 +8,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 12/15/2017
 ms.author: cynthn
-ms.openlocfilehash: 51e4862fe55428f112841ef7176cdb916653de0b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e0853b08ced0b9ca328d5e7f506ca54299aebeee
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82083280"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87028198"
 ---
 # <a name="use-windows-client-in-azure-for-devtest-scenarios"></a>Использование клиента Windows в Azure для сценариев разработки и тестирования
 В сценариях разработки и тестирования Azure можно использовать Windows 7, Windows 8 или Windows 10 Корпоративная (x64) при условии, что у вас есть соответствующая подписка Visual Studio (прежнее название — MSDN). В этой статье описываются требования к доступности при запуске Windows 7, Windows 8.1 и Windows 10 Корпоративная в Azure и использовании образов из коллекции Azure.
@@ -35,14 +35,14 @@ ms.locfileid: "82083280"
 
 | Название предложения | Номер предложения | Доступные образы клиента |
 |:--- |:---:|:---:|
-| [Разработка и тестирование с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-0023p/) |0023P |быть под управлением ОС Windows 10; |
-| [Подписчики Visual Studio Enterprise (MPN)](https://azure.microsoft.com/offers/ms-azr-0029p/) |0029P |быть под управлением ОС Windows 10; |
-| [Подписчики Visual Studio Professional](https://azure.microsoft.com/offers/ms-azr-0059p/) |0059P |быть под управлением ОС Windows 10; |
-| [Подписчики Visual Studio Test Professional](https://azure.microsoft.com/offers/ms-azr-0060p/) |0060P |быть под управлением ОС Windows 10; |
-| [Visual Studio Premium с подпиской MSDN (преимущество)](https://azure.microsoft.com/offers/ms-azr-0061p/) |0061P |быть под управлением ОС Windows 10; |
-| [Подписчики Visual Studio Enterprise](https://azure.microsoft.com/offers/ms-azr-0063p/) |0063P |быть под управлением ОС Windows 10; |
-| [Подписчики Visual Studio Enterprise (BizSpark)](https://azure.microsoft.com/offers/ms-azr-0064p/) |0064P |быть под управлением ОС Windows 10; |
-| [Enterprise — разработка и тестирование](https://azure.microsoft.com/offers/ms-azr-0148p/) |0148P |быть под управлением ОС Windows 10; |
+| [Разработка и тестирование с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-0023p/) |0023P |Windows 10 |
+| [Подписчики Visual Studio Enterprise (MPN)](https://azure.microsoft.com/offers/ms-azr-0029p/) |0029P |Windows 10 |
+| [Подписчики Visual Studio Professional](https://azure.microsoft.com/offers/ms-azr-0059p/) |0059P |Windows 10 |
+| [Подписчики Visual Studio Test Professional](https://azure.microsoft.com/offers/ms-azr-0060p/) |0060P |Windows 10 |
+| [Visual Studio Premium с подпиской MSDN (преимущество)](https://azure.microsoft.com/offers/ms-azr-0061p/) |0061P |Windows 10 |
+| [Подписчики Visual Studio Enterprise](https://azure.microsoft.com/offers/ms-azr-0063p/) |0063P |Windows 10 |
+| [Подписчики Visual Studio Enterprise (BizSpark)](https://azure.microsoft.com/offers/ms-azr-0064p/) |0064P |Windows 10 |
+| [Enterprise — разработка и тестирование](https://azure.microsoft.com/offers/ms-azr-0148p/) |0148P |Windows 10 |
 
 ## <a name="check-your-azure-subscription"></a>Проверка подписки Azure
 Если вы не знаете идентификатор своего предложения, его можно найти на портале Azure одним из двух способов:  
@@ -58,5 +58,4 @@ ms.locfileid: "82083280"
 ![Сведения об идентификаторе предложения на портале учетных записей Azure](./media/client-images/offer-id-azure-account-portal.png) 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Теперь вы можете развернуть виртуальные машины с помощью [PowerShell](quick-create-powershell.md), [шаблонов Resource Manager](ps-template.md) или [Visual Studio](../../vs-azure-tools-resource-groups-deployment-projects-create-deploy.md).
-
+Теперь вы можете развернуть виртуальные машины с помощью [PowerShell](quick-create-powershell.md), [шаблонов Resource Manager](ps-template.md) или [Visual Studio](../../azure-resource-manager/templates/create-visual-studio-deployment-project.md).

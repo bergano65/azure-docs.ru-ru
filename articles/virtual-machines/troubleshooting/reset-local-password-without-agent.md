@@ -13,11 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 04/25/2019
 ms.author: genli
-ms.openlocfilehash: 11d1a4743f9aaf70d96e6cfd1f22ff31def440f1
-ms.sourcegitcommit: 053e5e7103ab666454faf26ed51b0dfcd7661996
+ms.openlocfilehash: cb2f08c4788c90f8bdb2af9c6ef95fd1ac43b994
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84021268"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87028674"
 ---
 # <a name="reset-local-windows-password-for-azure-vm-offline"></a>Сброс локального пароля Windows для виртуальной машины Azure вне сети
 Локальный пароль Windows для виртуальной машины Azure можно сбросить с помощью [портала Azure или Azure PowerShell](reset-rdp.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) (если установлен гостевой агент Azure). Этот метод является основным способом сброса пароля для виртуальной машины Azure. Если в работе гостевого агента Azure возникают неполадки (агент не отвечает или не устанавливается после передачи пользовательского образа), то можно сбросить пароль Windows вручную. В этой статье описывается, как сбросить пароль локальной учетной записи, подключив исходный виртуальный диск операционной системы к другой виртуальной машине. Действия, описанные в этой статье, не применяются к контроллерам домена Windows. 
@@ -106,7 +107,7 @@ ms.locfileid: "84021268"
 > [!NOTE]
 > Приведенные действия не применяются к контроллерам домена Windows. Они подходят только для отдельного сервера или сервера, который является членом домена.
 
-Всегда рекомендуется сначала попытаться сбросить пароль с помощью [портала Azure или Azure PowerShell](https://docs.microsoft.com/previous-versions/azure/virtual-machines/windows/classic/reset-rdp), прежде чем выполнять следующие шаги. Прежде чем начать, обязательно сохраните резервную копию виртуальной машины. 
+Всегда рекомендуется сначала попытаться сбросить пароль с помощью [портала Azure или Azure PowerShell](/previous-versions/azure/virtual-machines/windows/classic/reset-rdp), прежде чем выполнять следующие шаги. Прежде чем начать, обязательно сохраните резервную копию виртуальной машины. 
 
 1. Удалите затронутую виртуальную машину на портале Azure. При удалении виртуальной машины удаляются только метаданные, на которые ссылается виртуальная машина в Azure. Когда виртуальная машина удаляется, виртуальные диски остаются.
    

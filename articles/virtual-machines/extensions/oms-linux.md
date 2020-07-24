@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/18/2020
 ms.author: akjosh
-ms.openlocfilehash: 905a42c5a9bc297e2c27408a58a5b3019755fdef
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d7ebb23cfc0ffdcfcac7ecb4ecbd9b9a665e6130
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84736659"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87029099"
 ---
 # <a name="log-analytics-virtual-machine-extension-for-linux"></a>Расширение виртуальной машины Log Analytics для Linux
 
@@ -204,7 +204,7 @@ az vm extension list --resource-group myResourceGroup --vm-name myVM -o table
 
 | Код ошибки | Значение | Возможное действие |
 | :---: | --- | --- |
-| 9 | Преждевременный вызов операции включения | [Обновите агент Azure Linux](https://docs.microsoft.com/azure/virtual-machines/linux/update-agent) до новейшей версии. |
+| 9 | Преждевременный вызов операции включения | [Обновите агент Azure Linux](./update-linux-agent.md) до новейшей версии. |
 | 10 | Виртуальная машина уже подключена к рабочей области Log Analytics | Для подключения виртуальной машины к рабочей области, указанной в схеме расширения, задайте для stopOnMultipleConnections значение false в общих параметрах или удалите это свойство. Счет для этой виртуальной машины выставляется за каждую рабочую область, к которой она подключена. |
 | 11 | Для расширения предоставлена недопустимая конфигурация | Изучите приведенные выше примеры, чтобы задать все значения свойств, необходимые для развертывания. |
 | 17 | Сбой установки пакета Log Analytics | 

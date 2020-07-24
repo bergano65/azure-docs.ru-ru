@@ -6,11 +6,13 @@ ms.service: analysis-services
 ms.topic: conceptual
 ms.date: 10/30/2019
 ms.author: chlound
-ms.openlocfilehash: 78bc629598c0635b7760285d0507b7a85a4ab551
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: references_regions
+ms.openlocfilehash: 9d8c3c7668da939227b3e8aaef002b4292c7d962
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79127010"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87025325"
 ---
 # <a name="refresh-with-logic-apps"></a>Обновление с помощью Logic Apps
 
@@ -18,7 +20,7 @@ ms.locfileid: "79127010"
 
 Дополнительные сведения об использовании API-интерфейсов RESTFUL с Azure Analysis Services см. в разделе [асинхронное обновление с помощью REST API](analysis-services-async-refresh.md).
 
-## <a name="authentication"></a>Аутентификация
+## <a name="authentication"></a>Проверка подлинности
 
 Все вызовы должны пройти проверку подлинности с помощью допустимого маркера Azure Active Directory (OAuth 2).  В примерах, приведенных в этой статье, для проверки подлинности в Azure Analysis Services используется субъект-служба (SPN). Дополнительные сведения см. в статье [Создание субъекта-службы с помощью портал Azure](../active-directory/develop/howto-create-service-principal-portal.md).
 
@@ -27,7 +29,7 @@ ms.locfileid: "79127010"
 > [!IMPORTANT]
 > В следующих примерах предполагается, что брандмауэр Azure Analysis Services отключен. Если брандмауэр включен, общедоступный IP-адрес инициатора запроса должен быть список разрешений в брандмауэре Azure Analysis Services. Дополнительные сведения о Azure Logic Apps диапазонах IP-адресов для региона см. в разделе [ограничения и сведения о конфигурации для Azure Logic Apps](../logic-apps/logic-apps-limits-and-config.md#configuration).
 
-### <a name="prerequisites"></a>Предварительные условия
+### <a name="prerequisites"></a>Обязательные условия
 
 #### <a name="create-a-service-principal-spn"></a>Создание субъекта-службы (SPN)
 
@@ -61,7 +63,7 @@ ms.locfileid: "79127010"
 
 Настройте действие HTTP следующим образом:
 
-|Свойство.  |Значение  |
+|Свойство  |Значение  |
 |---------|---------|
 |**Метод**     |POST         |
 |**URI**     | https://*/серверс/* имя*сервера консультантов*/Моделс/*имя базы данных*/рефрешес <br /> <br /> Пример: https: \/ /westus.asazure.Windows.NET/Servers/MyServer/Models/AdventureWorks/refreshes|
@@ -112,7 +114,7 @@ ms.locfileid: "79127010"
 
 Сохраните приложение логики.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Примеры](analysis-services-samples.md)  
 [REST API](https://docs.microsoft.com/rest/api/analysisservices/servers)

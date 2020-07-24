@@ -1,5 +1,5 @@
 ---
-title: Миграция политик условного доступа — Azure Active Directory
+title: Миграция политик условного доступа с помощью многофакторной проверки подлинности Azure Active Directory
 description: В этой статье описано, как перенести классическую политику, которая требует применения многофакторной проверки подлинности, на портале Azure.
 services: active-directory
 ms.service: active-directory
@@ -11,11 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: nigu
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d1dc7b7227dbaee488726a75fe7120bd26614dbf
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5cc99241f5fa7c09c69db13dcb3f6c3aaa75e376
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "83993734"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87027399"
 ---
 # <a name="migrate-a-classic-policy-in-the-azure-portal"></a>Перенос классической политики в портал Azure
 
@@ -53,7 +54,7 @@ ms.locfileid: "83993734"
    1. Щелкните **Выбрать приложения**.
    1. Нажмите кнопку **Выбрать**.
    1. На странице **Выбор** выберите облачное приложение и нажмите кнопку **Выбрать**.
-   1. На странице **облачные приложения** нажмите кнопку **Готово**.
+   1. На странице **Облачные приложения** нажмите кнопку **Готово**.
 1. Если выбран параметр **Требовать многофакторную проверку подлинности**:
    1. В разделе **Элементы управления доступом** щелкните **Предоставить**.
    1. На странице **Предоставление** щелкните **Разрешить доступ**, а затем щелкните **Требовать многофакторную проверку подлинности**.
@@ -68,7 +69,7 @@ ms.locfileid: "83993734"
 
 ![Отключить классические политики](./media/policy-migration-mfa/14.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о переносе классических политик на портале Azure см. в [этой статье](policy-migration.md).
 - [Используйте режим "только отчет" для условного доступа, чтобы определить влияние новых политик.](concept-conditional-access-report-only.md)

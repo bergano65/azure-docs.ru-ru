@@ -9,11 +9,12 @@ ms.subservice: security
 ms.date: 09/05/2019
 ms.reviewer: jushiman
 ms.custom: mimckitt
-ms.openlocfilehash: 030e2c23d68a3fbbc96dd7591583cb27b650d011
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4480ad425d9a3953fd5779f99d27b5b6b037e61e
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "83200016"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87029422"
 ---
 # <a name="security-controls-for-azure-virtual-machine-scale-sets"></a>Элементы управления безопасностью для масштабируемых наборов виртуальных машин Azure
 
@@ -28,13 +29,13 @@ ms.locfileid: "83200016"
 | Поддержка конечных точек службы| Да | |
 | Поддержка внедрения виртуальной сети| Да | |
 | Поддержка сетевой изоляции и брандмауэров| Да |  |
-| Поддержка принудительного туннелирования| Да | См. раздел [Настройка принудительного туннелирования с помощью модели развертывания Azure Resource Manager](/azure/vpn-gateway/vpn-gateway-forced-tunneling-rm). |
+| Поддержка принудительного туннелирования| Да | См. раздел [Настройка принудительного туннелирования с помощью модели развертывания Azure Resource Manager](../vpn-gateway/vpn-gateway-forced-tunneling-rm.md). |
 
 ## <a name="monitoring--logging"></a>Мониторинг & ведения журнала
 
 | Управление безопасностью | Да/нет | Примечания|
 |---|---|--|
-| Поддержка мониторинга Azure (log Analytics, App Insights и т. д.)| Да | См. статью [мониторинг и обновление виртуальной машины Linux в Azure](/azure/virtual-machines/linux/tutorial-monitoring) и [Отслеживание и обновление виртуальной машины Windows в Azure](/azure/virtual-machines/windows/tutorial-monitoring). |
+| Поддержка мониторинга Azure (log Analytics, App Insights и т. д.)| Да | См. статью [мониторинг и обновление виртуальной машины Linux в Azure](../virtual-machines/linux/tutorial-monitor.md) и [Отслеживание и обновление виртуальной машины Windows в Azure](../virtual-machines/windows/tutorial-monitor.md). |
 | Ведение журнала и аудит в плоскости управления и управления| Да |  |
 | Ведение журнала и аудит в плоскости данных | Нет |  |
 
@@ -42,7 +43,7 @@ ms.locfileid: "83200016"
 
 | Управление безопасностью | Да/нет | Примечания|
 |---|---|--|
-| Аутентификация| Да |  |
+| Проверка подлинности| Да |  |
 | Авторизация| Да |  |
 
 ## <a name="data-protection"></a>Защита данных
@@ -50,7 +51,7 @@ ms.locfileid: "83200016"
 | Управление безопасностью | Да/нет | Примечания |
 |---|---|--|
 | Шифрование неактивных на стороне сервера: ключи, управляемые корпорацией Майкрософт | Да | См. раздел [Шифрование дисков Azure для масштабируемых наборов виртуальных машин](disk-encryption-overview.md). |
-| Шифрование при передаче (например, шифрование ExpressRoute, Шифрование виртуальной сети и шифрование виртуальной сети)| Да | Виртуальные машины Azure поддерживают шифрование [ExpressRoute](/azure/expressroute) и виртуальной сети. См. раздел [Шифрование транзитного пути в виртуальных машинах](/azure/security/security-azure-encryption-overview#in-transit-encryption-in-vms). |
+| Шифрование при передаче (например, шифрование ExpressRoute, Шифрование виртуальной сети и шифрование виртуальной сети)| Да | Виртуальные машины Azure поддерживают шифрование [ExpressRoute](../expressroute/index.yml) и виртуальной сети. См. раздел [Шифрование транзитного пути в виртуальных машинах](../security/fundamentals/encryption-overview.md#in-transit-encryption-in-vms). |
 | Шифрование неактивных на стороне сервера: ключи, управляемые клиентом (BYOK) | Да | Ключи, управляемые клиентом, являются поддерживаемым сценарием шифрования Azure. см. раздел [о шифровании дисков Azure для масштабируемых наборов виртуальных машин](disk-encryption-overview.md) .|
 | Шифрование на уровне столбцов (службы данных Azure)| Н/Д | |
 | Вызовы API в зашифрованном виде| Да | Через HTTPS и TLS. |
@@ -61,6 +62,6 @@ ms.locfileid: "83200016"
 |---|---|--|
 | Поддержка управления конфигурацией (управление версиями конфигураций и т. д.)| Да |  | 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [встроенных средствах управления безопасностью в службах Azure](../security/fundamentals/security-controls.md).

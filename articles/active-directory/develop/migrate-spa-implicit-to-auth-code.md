@@ -9,20 +9,17 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
 ms.workload: identity
-ms.date: 06/01/2020
+ms.date: 07/17/2020
 ms.author: hahamil
 ms.custom: aaddev
-ms.openlocfilehash: 0c7fe0629724217f36d3b28e74aaafdfd15c9a61
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b7316756aab7875dce50a3783cb95ca42676b970
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85799247"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87027093"
 ---
 # <a name="migrate-a-javascript-single-page-app-from-implicit-grant-to-auth-code-flow"></a>Перенос одностраничного приложения JavaScript из неявного потока предоставления разрешения в поток кода авторизации
-
-> [!IMPORTANT]
-> Эта функция в настоящее время находится на стадии предварительной версии. Предварительные версии предоставляются при условии, что вы принимаете [дополнительные условия использования](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Некоторые аспекты этой функции могут быть изменены до выхода общедоступной версии.
 
 Библиотека проверки подлинности для JavaScript от Майкрософт (MSAL.js) версии 2.0 обеспечивает поддержку потока кода авторизации с использованием PKCE и CORS для одностраничных приложений на платформе удостоверений Майкрософт. Выполните действия, описанные в следующих разделах, чтобы перенести приложение с MSAL.js 1.x, использующее неявный поток предоставления разрешения, на MSAL.js версии 2.0 или выше (далее *2.x*) и поток кода авторизации.
 

@@ -12,16 +12,16 @@ ms.date: 5/4/2020
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: 55adff17445639ee5685613b418054075c704449
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2fe41cdc6fa1adef96568981df5bb13129fe900f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85477249"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87026736"
 ---
 # <a name="whats-new-for-authentication"></a>Новые возможности для проверки подлинности.
 
->Получайте уведомления об обновлениях этой страницы. Добавьте [этот URL-адрес](https://docs.microsoft.com/api/search/rss?search=%22whats%20new%20for%20authentication%22&locale=en-us) своему читателю RSS-канала.
+> Получите уведомления об обновлениях этой страницы, вставляя этот URL-адрес в модуль чтения RSS.<br/>`https://docs.microsoft.com/api/search/rss?search=%22whats%20new%20for%20authentication%22&locale=en-us`
 
 Система проверки подлинности изменяет и добавляет функции на постоянной основе для безопасности и соответствия стандартам. Чтобы вы оставались в курсе последних разработок, в этой статье предоставлены такие сведения:
 
@@ -37,7 +37,7 @@ ms.locfileid: "85477249"
 
 Пока не запланировано.  Изменения, которые находятся в рабочей среде или поступают в рабочую среду, см. ниже.
 
-## <a name="may-2020"></a>Май 2020 г.
+## <a name="may-2020"></a>Май 2020 г.
 
 ### <a name="azure-government-endpoints-are-changing"></a>Изменения конечных точек Azure для государственных организаций
 
@@ -90,7 +90,7 @@ ms.locfileid: "85477249"
 Когда ответ на проверку подлинности отправляется из login.microsoftonline.com в приложение через перенаправление HTTP, служба Добавляет пустой фрагмент в URL-адрес ответа.  Это не позволяет классу атак перенаправления, гарантируя, что браузер очищает любой существующий фрагмент в запросе проверки подлинности.  Никакие приложения не должны иметь зависимости от этого поведения.
 
 
-## <a name="august-2019"></a>Август 2019 г.
+## <a name="august-2019"></a>Август 2019 г.
 
 ### <a name="post-form-semantics-will-be-enforced-more-strictly---spaces-and-quotes-will-be-ignored"></a>Семантика отправки формы будет требовать более строгого пробела, а кавычки будут пропущены.
 

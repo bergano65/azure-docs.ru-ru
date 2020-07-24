@@ -11,12 +11,12 @@ author: msmimart
 manager: celestedg
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e0498a2015b75221763ab5fdd4f6e94428922bd6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e6238e89b3941668f831f3128bb0e723a4097e48
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85386748"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87027518"
 ---
 # <a name="add-an-api-connector-to-a-user-flow"></a>Добавление соединителя API в поток пользователя
 
@@ -44,7 +44,7 @@ ms.locfileid: "85386748"
 
    ![Задание утверждений соединителя API](./media/self-service-sign-up-add-api-connector/api-connector-claims.png)
 
-10. Нажмите кнопку **Сохранить**.
+10. Щелкните **Сохранить**.
 
 ## <a name="enable-the-api-connector-in-a-user-flow"></a>Включение соединителя API в потоке пользователя
 
@@ -61,7 +61,7 @@ ms.locfileid: "85386748"
 
    ![Добавление API в поток пользователя](./media/self-service-sign-up-add-api-connector/api-connectors-user-flow-select.png)
 
-6. Нажмите кнопку **Сохранить**.
+6. Щелкните **Сохранить**.
 
 Узнайте, [где можно включить соединитель API в потоке пользователя](api-connectors-overview.md#where-you-can-enable-an-api-connector-in-a-user-flow).
 
@@ -76,7 +76,7 @@ POST <API-endpoint>
 Content-type: application/json
 
 {
- "email_address": "johnsmith@fabrikam.onmicrosoft.com",
+ "email": "johnsmith@fabrikam.onmicrosoft.com",
  "identities": [ //Sent for Google and Facebook identity providers
      {
      "signInType":"federated",
@@ -99,7 +99,7 @@ Content-type: application/json
 Пользовательские атрибуты можно создать для пользователя с помощью extension_ формата ** \<extensions-app-id> _AttributeName** . API должен рассчитывать на получение утверждений в том же сериализованном формате. API-интерфейс может возвращать утверждения с помощью или без него `<extensions-app-id>` . Дополнительные сведения о настраиваемых атрибутах см. в разделе [Определение настраиваемых атрибутов для самостоятельной регистрации](user-flow-add-custom-attributes.md).
 
 > [!TIP] 
-> [**удостоверения ("удостоверения")**](https://docs.microsoft.com/graph/api/resources/objectidentity?view=graph-rest-1.0) и **адрес электронной почты ("email_address")** можно использовать для идентификации пользователя, прежде чем он будет иметь учетную запись в клиенте. Утверждение "удостоверения" отправляется, когда пользователь проходит проверку подлинности с помощью Google или Facebook, а "email_address" всегда отправляется.
+> [**удостоверения ("удостоверения")**](https://docs.microsoft.com/graph/api/resources/objectidentity?view=graph-rest-1.0) и **адреса электронной почты ("Электронная почта")** можно использовать для идентификации пользователя, прежде чем они будут иметь учетную запись в клиенте. Утверждение "удостоверения" отправляется, когда пользователь проходит проверку подлинности с помощью Google или Facebook и всегда отправляется сообщение электронной почты.
 
 ## <a name="expected-response-types-from-the-web-api"></a>Ожидаемые типы ответов из веб-API
 
@@ -138,13 +138,13 @@ Content-type: application/json
 | version                                            | Строка            | Да      | Версия API.                                                                                                                                                                                                                                                                |
 | action                                             | Строка            | Да      | Необходимое значение: `Continue`.                                                                                                                                                                                                                                                              |
 | \<builtInUserAttribute>                            | \<attribute-type> | Нет       | Значения могут храниться в каталоге, если они выбраны в качестве **утверждения для получения** в конфигурации соединителя API и **пользовательских атрибутов** для потока пользователя. Значения могут возвращаться в токене, если выбрано в качестве **утверждения приложения**.                                              |
-| \<extension\_{extensions-app-id}\_CustomAttribute> | \<attribute-type> | Нет       | Возвращаемое утверждение, по желанию, не может содержать `_<extensions-app-id>_` . Значения хранятся в каталоге, если они выбраны в качестве **утверждения для получения** в конфигурации соединителя API и **пользовательского атрибута** для потока пользователя. Пользовательские атрибуты не могут быть отправлены обратно в токен. |
+| \<extension\_{extensions-app-id}\_CustomAttribute> | \<attribute-type> | Нет       | Возвращаемое утверждение не обязательно должно содержать `_<extensions-app-id>_` . Значения хранятся в каталоге, если они выбраны в качестве **утверждения для получения** в конфигурации соединителя API и **пользовательского атрибута** для потока пользователя. Пользовательские атрибуты не могут быть отправлены обратно в токен. |
 
 ### <a name="blocking-response"></a>Блокирующий ответ
 
 Блокирующий ответ завершает поток пользователя. Он может быть специально выдан API-интерфейсом для прекращения продолжения работы потока пользователя путем отображения страницы блокировки для пользователя. На странице Block отображается `userMessage` предоставленный API-интерфейс.
 
-Ниже приведен пример блокирующего ответа.
+Пример блокирующего ответа:
 
 ```http
 HTTP/1.1 200 OK
@@ -166,7 +166,7 @@ Content-type: application/json
 | userMessage | Строка | Да      | Сообщение, отображаемое для пользователя.                                            |
 | код        | Строка | Нет       | Код ошибки. Может использоваться в целях отладки. Не отображается для пользователя. |
 
-#### <a name="end-user-experience-with-a-blocking-response"></a>Реагирование на работу пользователей с блокирующим ответом
+#### <a name="end-user-experience-with-a-blocking-response"></a>Взаимодействие с конечным пользователем с блокирующим ответом
 
 ![Пример блокировки страницы](./media/api-connectors-overview/blocking-page-response.png)
 
@@ -193,18 +193,18 @@ Content-type: application/json
 | ----------- | ------- | -------- | -------------------------------------------------------------------------- |
 | version     | Строка  | Да      | Версия API.                                                    |
 | action      | Строка  | Да      | Необходимое значение: `ValidationError`.                                           |
-| status      | Целое число | Да      | `400`Для ответа ValidationError должно быть значение.                        |
+| status      | Тип Integer | Да      | `400`Для ответа ValidationError должно быть значение.                        |
 | userMessage | Строка  | Да      | Сообщение, отображаемое для пользователя.                                            |
 | код        | Строка  | Нет       | Код ошибки. Может использоваться в целях отладки. Не отображается для пользователя. |
 
-#### <a name="end-user-experience-with-a-validation-error-response"></a>Пользовательский интерфейс с ответом на ошибку проверки
+#### <a name="end-user-experience-with-a-validation-error-response"></a>Взаимодействие с пользователем при проверке — ошибка проверки
 
 ![Страница "пример проверки"](./media/api-connectors-overview/validation-error-postal-code.png)
 
 ### <a name="integration-with-azure-functions"></a>Интеграция с Функциями Azure
 Вы можете использовать триггер HTTP в службе "функции Azure" как простой способ создания API для использования с соединителем API. С помощью функции Azure можно, [например](code-samples-self-service-sign-up.md#api-connector-azure-function-quickstarts), выполнить логику проверки и ограничить число входов для конкретных доменов. Вы также можете вызывать и вызывать другие веб-API, пользовательские хранилища и другие облачные службы.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 <!-- - Learn [where you can enable an API connector](api-connectors-overview.md#where-you-can-enable-an-api-connector-in-a-user-flow) -->
 - Узнайте, как [Добавить пользовательский рабочий процесс утверждения для самостоятельной регистрации](self-service-sign-up-add-approvals.md)

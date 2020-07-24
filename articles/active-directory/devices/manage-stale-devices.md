@@ -11,11 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: spunukol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 292ba1d52b107acd164408767747e5a33cb0c67d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 94a4b2a44902dde798f760f970ccff2c1e8f15c5
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85252701"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87025644"
 ---
 # <a name="how-to-manage-stale-devices-in-azure-ad"></a>Руководство. управление устаревшими устройствами в Azure AD
 
@@ -56,7 +57,7 @@ ms.locfileid: "85252701"
 
     ![Метка активности](./media/manage-stale-devices/01.png)
 
-- Командлет [Get-MsolDevice](/powershell/module/msonline/get-msoldevice?view=azureadps-1.0):
+- Командлет [Get-азуреаддевице](/powershell/module/azuread/Get-AzureADDevice)
 
     ![Метка активности](./media/manage-stale-devices/02.png)
 
@@ -88,7 +89,7 @@ ms.locfileid: "85252701"
 
 ### <a name="system-managed-devices"></a>Устройства, управляемые системой
 
-Не удаляйте устройства, управляемые системой. Обычно это устройства, такие как автопилот. После удаления эти устройства нельзя будет повторно подготавливать. Новый командлет `get-msoldevice` по умолчанию пропускает устройства, управляемые системой. 
+Не удаляйте устройства, управляемые системой. Обычно это устройства, такие как автопилот. После удаления эти устройства нельзя будет повторно подготавливать. Новый командлет `Get-AzureADDevice` по умолчанию пропускает устройства, управляемые системой. 
 
 ### <a name="hybrid-azure-ad-joined-devices"></a>Гибридные устройства, присоединенные к Azure AD
 
@@ -128,26 +129,25 @@ ms.locfileid: "85252701"
 
 Типичная процедура состоит из следующих шагов:
 
-1. подключение к Azure Active Directory с помощью командлета [Connect-MsolService](/powershell/module/msonline/connect-msolservice?view=azureadps-1.0);
+1. Подключение к Azure Active Directory с помощью командлета [Connect-AzureAD](/powershell/module/azuread/connect-azuread)
 1. Получение списка устройств
-1. отключение устройства с помощью командлета [Disable-MsolDevice](/powershell/module/msonline/disable-msoldevice?view=azureadps-1.0); 
+1. Отключите устройство с помощью командлета [Set-азуреаддевице](/powershell/module/azuread/Set-AzureADDevice) (отключите с помощью параметра-AccountEnabled). 
 1. Ожидание периода времени перед удалением, в зависимости от количества указанных вами дней.
-1. удаление устройства с помощью командлета [Remove-MsolDevice](/powershell/module/msonline/remove-msoldevice?view=azureadps-1.0).
+1. Удалите устройство с помощью командлета [Remove-азуреаддевице](/powershell/module/azuread/Remove-AzureADDevice) .
 
 ### <a name="get-the-list-of-devices"></a>Получение списка устройств
 
 Чтобы получить список всех устройств и сохранить эти данные в CSV-файл, выполните:
 
 ```PowerShell
-Get-MsolDevice -all | select-object -Property Enabled, DeviceId, DisplayName, DeviceTrustType, Approxi
-mateLastLogonTimestamp | export-csv devicelist-summary.csv
+Get-AzureADDevice -All:$true | select-object -Property Enabled, DeviceId, DisplayName, DeviceTrustType, ApproximateLastLogonTimestamp | export-csv devicelist-summary.csv
 ```
 
 Если в вашем каталоге имеется большое количество устройств, используйте фильтр меток времени, чтобы уменьшить количество возвращенных устройств. Чтобы получить и сохранить в CSV-файл список всех устройств, у которых метка времени старше указанной даты, выполните: 
 
 ```PowerShell
 $dt = [datetime]’2017/01/01’
-Get-MsolDevice -all -LogonTimeBefore $dt | select-object -Property Enabled, DeviceId, DisplayName, DeviceTrustType, ApproximateLastLogonTimestamp | export-csv devicelist-olderthan-Jan-1-2017-summary.csv
+Get-AzureADDevice | Where {$_.ApproximateLastLogonTimeStamp -le $dt} | select-object -Property Enabled, DeviceId, DisplayName, DeviceTrustType, ApproximateLastLogonTimestamp | export-csv devicelist-olderthan-Jan-1-2017-summary.csv
 ```
 
 ## <a name="what-you-should-know"></a>Необходимая информация
@@ -179,6 +179,6 @@ Get-MsolDevice -all -LogonTimeBefore $dt | select-object -Property Enabled, Devi
 - **Устройства, присоединенные к AAD** — пользователь не может использовать устройство для входа. 
 - **Мобильные устройства** — пользователь не получит доступа к ресурсам AAD, например к Office 365. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы получить общие сведения о том, как управлять устройствами на портале Azure, см. раздел [Управление устройствами с помощью портала Azure (предварительная версия)](device-management-azure-portal.md)

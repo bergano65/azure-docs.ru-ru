@@ -9,11 +9,12 @@ ms.subservice: disks
 ms.date: 10/15/2019
 ms.reviewer: mimckitt
 ms.custom: mimckitt
-ms.openlocfilehash: a20abec6ab9925408dd769c5238186af9b7c3d1c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 70995575e745b74561745363a1290564c9ce3002
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "83195890"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87029643"
 ---
 # <a name="encrypt-os-and-attached-data-disks-in-a-virtual-machine-scale-set-with-azure-powershell"></a>Зашифруйте ОС и подключенные диски данных в масштабируемом наборе виртуальных машин с помощью Azure PowerShell
 
@@ -50,7 +51,7 @@ Set-AzKeyVaultAccessPolicy -VaultName $vaultName -EnabledForDiskEncryption
 
 ## <a name="create-a-scale-set"></a>Создание масштабируемого набора
 
-Первым делом настройте имя и пароль администратора для экземпляров виртуальных машин с помощью командлета [Get-Credential](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.security/Get-Credential):
+Первым делом настройте имя и пароль администратора для экземпляров виртуальных машин с помощью командлета [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential?view=powershell-5.1):
 
 ```azurepowershell-interactive
 $cred = Get-Credential
@@ -146,7 +147,7 @@ EncryptionExtensionInstalled : True
 Disable-AzVmssDiskEncryption -ResourceGroupName $rgName -VMScaleSetName $vmssName
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - В этой статье вы зашифровали масштабируемый набор виртуальных машин с помощью Azure PowerShell. Можно также использовать шаблоны [Azure CLI](disk-encryption-cli.md) или [Azure Resource Manager](disk-encryption-azure-resource-manager.md).
 - Если вы хотите, чтобы шифрование дисков Azure применялось после подготовки другого расширения, можно использовать [последовательность расширения](virtual-machine-scale-sets-extension-sequencing.md).

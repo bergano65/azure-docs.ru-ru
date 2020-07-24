@@ -3,11 +3,12 @@ title: Мониторинг с помощью многошаговых веб-т
 description: Настройка многошаговых веб-тестов для мониторинга веб-приложений в Azure Application Insights
 ms.topic: conceptual
 ms.date: 05/26/2020
-ms.openlocfilehash: 04361f7b3306c5f7c164a849d8b05d7cf4756999
-ms.sourcegitcommit: 64fc70f6c145e14d605db0c2a0f407b72401f5eb
+ms.openlocfilehash: 2df8b7450423c901665090608da83f68b43b30e5
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83873353"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87024782"
 ---
 # <a name="multi-step-web-tests"></a>Многошаговые веб-тесты
 
@@ -16,7 +17,7 @@ ms.locfileid: "83873353"
 > [!NOTE]
 > Многошаговые веб-тесты зависят от файлов веб-тестов в Visual Studio. Как было [объявлено](https://devblogs.microsoft.com/devops/cloud-based-load-testing-service-eol/) ранее, Visual Studio 2019 станет последней версией с поддержкой веб-тестов. При этом важно отметить следующее. Несмотря на отсутствие новых возможностей, предоставляемые возможности веб-тестов будут доступными в Visual Studio 2019 в течение всего жизненного цикла поддержки этого продукта. Группа разработчиков Azure Monitor ответила на многие вопросы о перспективах многоэтапных тестов доступности — см. [здесь](https://github.com/MicrosoftDocs/azure-docs/issues/26050#issuecomment-468814101).  
 > </br>
-> **Облако Azure для государственных организаций** [не поддерживает](https://docs.microsoft.com/azure/azure-government/) многошаговые веб-тесты.
+> **Облако Azure для государственных организаций** [не поддерживает](../../azure-government/index.yml) многошаговые веб-тесты.
 
 
 ## <a name="pre-requisites"></a>Предварительные требования
@@ -36,7 +37,7 @@ ms.locfileid: "83873353"
 > [!WARNING]
 > Мы не рекомендуем использовать средство записи многошаговых веб-тестов. Оно было разработано для статических страниц HTML с простыми взаимодействиями и не предоставляет возможностей для работы с современными веб-страницами.
 
-Рекомендации по созданию веб-тестов в Visual Studio см. в [официальной документации по Visual Studio 2019](https://docs.microsoft.com/visualstudio/test/how-to-create-a-web-service-test?view=vs-2019).
+Рекомендации по созданию веб-тестов в Visual Studio см. в [официальной документации по Visual Studio 2019](/visualstudio/test/how-to-create-a-web-service-test?view=vs-2019).
 
 ## <a name="upload-the-web-test"></a>Отправка веб-теста
 

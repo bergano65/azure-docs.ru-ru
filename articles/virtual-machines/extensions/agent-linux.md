@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 10/17/2016
 ms.author: akjosh
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 4143e049f0a89d1218d9442eaebc1c5ebaf4cc77
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: 560ae8d837cf57e471a9f39d5ccdcf152a156b1e
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86186832"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87029082"
 ---
 # <a name="understanding-and-using-the-azure-linux-agent"></a>Что такое агент Linux для Azure и как его использовать
 
@@ -68,7 +68,7 @@ ms.locfileid: "86186832"
 * Прилагаемый DVD, используемый во время загрузки, для развернутых приложений IaaS. На этом DVD содержится OVF-совместимый файл конфигурации, включающий всю информацию для подготовки кроме самих пар ключей SSH.
 * Чтобы получить развертывание и настройку топологии, используется конечная точка TCP с REST API.
 
-## <a name="requirements"></a>Requirements (Требования)
+## <a name="requirements"></a>Требования
 Следующие системы протестированы и гарантированно поддерживают работу с агентом Linux для Azure:
 
 > [!NOTE]
@@ -344,5 +344,4 @@ Default: y
 * Если вам нужно настроить точку подключения диска ресурсов и пространство подкачки в образах облаков Ubuntu во время подготовки, см. следующие ресурсы.
   
   * [Вики-сайт по Ubuntu: настройка разделов подкачки](https://go.microsoft.com/fwlink/?LinkID=532955&clcid=0x409)
-  * [Внедрение пользовательских данных в виртуальную машину Azure](../windows/classic/inject-custom-data.md)
-
+  * [Внедрение пользовательских данных в виртуальную машину Azure](../windows/tutorial-automate-vm-deployment.md)

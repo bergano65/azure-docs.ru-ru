@@ -6,12 +6,12 @@ ms.service: analysis-services
 ms.topic: conceptual
 ms.date: 05/07/2020
 ms.author: chlound
-ms.openlocfilehash: c3c9827814b7d638745761dbb5f3c7d2e581491b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5314c933b01a1fb9c4ea9902a6fbb698c104d195
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85389978"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87025410"
 ---
 # <a name="refresh-with-azure-automation"></a>Обновление с помощью службы автоматизации Azure
 
@@ -19,11 +19,11 @@ ms.locfileid: "85389978"
 
 В примере в этой статье используется [модуль SQLServer PowerShell](https://docs.microsoft.com/powershell/module/sqlserver/?view=sqlserver-ps). Пример модуля Runbook PowerShell, демонстрирующий обновление модели, приведен далее в этой статье.  
 
-## <a name="authentication"></a>Аутентификация
+## <a name="authentication"></a>Проверка подлинности
 
 Все вызовы должны пройти проверку подлинности с помощью допустимого маркера Azure Active Directory (OAuth 2).  В примере, приведенном в этой статье, для проверки подлинности в Azure Analysis Services используется субъект-служба (SPN). Дополнительные сведения см. в статье [Создание субъекта-службы с помощью портал Azure](../active-directory/develop/howto-create-service-principal-portal.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 > [!IMPORTANT]
 > В следующем примере предполагается, что Azure Analysis Services брандмауэр отключен. Если включен брандмауэр, общедоступный IP-адрес инициатора запроса должен быть включен в правило брандмауэра.
@@ -64,11 +64,14 @@ ms.locfileid: "85389978"
 
     ![Импортировать модуль Runbook](./media/analysis-services-refresh-azure-automation/8.png)
 
-4. Найдите файл **Refresh-Model.ps1** , укажите **имя** и **Описание**, а затем нажмите кнопку **создать**.
+4. Найдите файл [Refresh-Model.ps1](#sample-powershell-runbook) , укажите **имя** и **Описание**, а затем нажмите кнопку **создать**.
+
+    > [!NOTE]
+    > Используйте сценарий из [примера модуля Runbook PowerShell](#sample-powershell-runbook) в нижней части этого документа, чтобы создать файл с именем Refresh-Model.ps1 и сохранить его на локальном компьютере для импорта в Runbook.
 
     ![Импортировать модуль Runbook](./media/analysis-services-refresh-azure-automation/9.png)
 
-5. Когда модуль Runbook создан, он автоматически переходит в режим редактирования.  Нажмите **Публиковать**.
+5. Когда модуль Runbook создан, он автоматически переходит в режим редактирования.  Нажмите кнопку **Опубликовать**.
 
     ![Публикация модуля Runbook](./media/analysis-services-refresh-azure-automation/10.png)
 
@@ -140,7 +143,7 @@ ms.locfileid: "85389978"
 **Текст** — это документ JSON, который должен содержать следующие свойства:
 
 
-|Свойство.  |Значение  |
+|Свойство  |Значение  |
 |---------|---------|
 |**аналисиссервицесдатабасе**     |Имя базы данных Azure Analysis Services <br/> Пример: AdventureWorksDB         |
 |**аналисиссервицессервер**     |Имя сервера Azure Analysis Services. <br/> Пример: https: \/ /westus.asazure.Windows.NET/Servers/MyServer/Models/AdventureWorks/         |
@@ -220,7 +223,7 @@ else
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Примеры](analysis-services-samples.md)  
 [REST API](https://docs.microsoft.com/rest/api/analysisservices/servers)
