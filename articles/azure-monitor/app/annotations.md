@@ -3,15 +3,16 @@ title: Заметки о выпуске для Application Insights | Докум
 description: Добавление маркеров развертывания или сборки для диаграмм обозревателя метрик в Application Insights.
 ms.topic: conceptual
 ms.date: 07/01/2019
-ms.openlocfilehash: 0ad773ca6a7102ac718d43dfbbf6a4f834e681a0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8f6ffed8ae2039ec36ec8bd86518e6b359da65ec
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81010743"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87093040"
 ---
 # <a name="annotations-on-metric-charts-in-application-insights"></a>Заметки к диаграммам метрик в Application Insights
 
-Заметки показывают, где развертывается новая сборка или другие важные события. Заметки позволяют легко определить, влияют ли ваши изменения на производительность приложения. Они могут автоматически создаваться системой сборки [Azure pipelines](https://docs.microsoft.com/azure/devops/pipelines/tasks/) . Заметки можно также создавать, чтобы помечать какие-либо события, используя PowerShell.
+Заметки показывают, где развертывается новая сборка или другие важные события. Заметки позволяют легко определить, влияют ли ваши изменения на производительность приложения. Они могут автоматически создаваться системой сборки [Azure pipelines](/azure/devops/pipelines/tasks/) . Заметки можно также создавать, чтобы помечать какие-либо события, используя PowerShell.
 
 ## <a name="release-annotations-with-azure-pipelines-build"></a>Заметки о выпуске с Azure Pipelines сборкой
 
@@ -112,7 +113,7 @@ ms.locfileid: "81010743"
 
 Можно изменить скрипт, например, чтобы создать заметки в прошлом.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Создание рабочих элементов](../../azure-monitor/app/diagnostic-search.md#create-work-item)
 * [Автоматизация с помощью PowerShell](../../azure-monitor/app/powershell.md)

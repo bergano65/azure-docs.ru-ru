@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.date: 04/25/2018
 ms.author: azfuncdf
 ms.openlocfilehash: 826e475eb71563b52d687903aeac4ec936e267f6
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86540304"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87093006"
 ---
 # <a name="how-to-run-durable-functions-as-webjobs"></a>Запуск Устойчивые функции как веб-заданий
 
@@ -21,7 +21,7 @@ ms.locfileid: "86540304"
 
 Пример цепочки Устойчивые функции можно найти в пакете SDK для веб-заданий версии 2. x: Скачайте или клонировать [репозиторий устойчивые функции](https://github.com/azure/azure-functions-durable-extension/), а затем *выберите ветвь версии* 1 и перейдите к папке *Samples \\ вебжобссдк \\ chaining* .
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 В этой статье предполагается, что вы знакомы с основами пакета SDK для веб-заданий, разработки библиотеки классов C# для Функций Azure и устойчивых функций. Ознакомиться с этими темами вам помогут следующие ресурсы:
 
@@ -192,9 +192,9 @@ while (true)
 
 1. Если вы хотите просмотреть журналы в Application Insights при локальном запуске проекта:
 
-    а. Создайте ресурс Application Insights и используйте для него **Общий** тип приложения.
+    А. Создайте ресурс Application Insights и используйте для него **Общий** тип приложения.
 
-    b. Сохраните ключ инструментирования в файл *App.config*.
+    Б. Сохраните ключ инструментирования в файл *App.config*.
 
 1. Запустите проект.
 

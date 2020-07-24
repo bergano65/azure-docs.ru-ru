@@ -3,28 +3,40 @@ ms.service: logic-apps
 ms.topic: include
 author: ecfan
 ms.author: estfan
-ms.date: 11/03/2016
-ms.openlocfilehash: 3a0cb48e7fe5f3eef101f644e4f72fcfa2689d6e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/21/2020
+ms.openlocfilehash: 06a503e800309d8689735417931820d9f16a6e75
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74789462"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87102958"
 ---
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Учетная запись [OneDrive](https://OneDrive.com). 
+* Учетная запись [OneDrive для бизнеса](https://OneDrive.com) 
 
-Чтобы использовать учетную запись OneDrive для бизнеса в приложении логики, вы должны авторизовать приложение логики для подключения к вашей учетной записи OneDrive для бизнеса. К счастью, это можно легко сделать из приложения логики на портале Azure. 
+Прежде чем использовать учетную запись OneDrive для бизнеса с Logic Apps, необходимо авторизовать Logic Apps, чтобы подключиться к учетной записи OneDrive для бизнеса в портал Azure.
 
-Ниже приведены инструкции по авторизации приложения логики для подключения к учетной записи OneDrive для бизнеса 
+Выполните следующие действия, чтобы авторизовать Logic Apps для подключения к учетной записи OneDrive для бизнеса:  
 
-1. Чтобы создать подключение к OneDrive для бизнеса, в конструкторе приложений логики в раскрывающемся списке выберите параметр **Показать API, управляемые Майкрософт**, а затем введите в поле поиска *OneDrive для бизнеса*. Выберите триггер или действие, которые хотите использовать:   
-   ![](./media/connectors-create-api-onedriveforbusiness/onedriveforbusiness-1.png)
-2. Если вы ранее не создавали подключения к OneDrive для бизнеса, вам будет предложено ввести учетные данные OneDrive для бизнеса. Эти учетные данные будут использоваться для авторизации приложения логики, чтобы оно могло подключиться и получить доступ к данным вашей учетной записи OneDrive для бизнеса.  
-   ![](./media/connectors-create-api-onedriveforbusiness/onedriveforbusiness-2.png)
-3. Укажите имя пользователя и пароль своей учетной записи OneDrive для бизнеса, чтобы авторизовать приложение логики.  
-   ![](./media/connectors-create-api-onedriveforbusiness/onedriveforbusiness-3.png)   
-4. Подключение создано, и теперь вы можете перейти к другим действиям в приложении логики:   
-   ![](./media/connectors-create-api-onedriveforbusiness/onedriveforbusiness-4.png)   
+1. Войдите на портал Azure. 
 
+1. В разделе **службы Azure**выберите **Logic Apps**. Затем выберите имя приложения логики из списка.
+
+1. В меню приложения логики выберите **Конструктор приложений логики** в разделе **средства разработки**.
+
+1. В конструкторе Logic Apps выберите в раскрывающемся списке параметр **отобразить API, управляемые Майкрософт** , а затем введите в поле поиска *OneDrive для бизнеса* . Выберите триггер или действие для использования:  
+
+   ![Снимок экрана конструктора Logic Apps, показывающий триггер повторения с действиями API OneDrive для бизнеса.](./media/connectors-create-api-onedriveforbusiness/onedriveforbusiness-1.png)
+
+2. Если вы ранее не создавали подключения к OneDrive для бизнеса, выполните запрос, чтобы указать учетные данные OneDrive для бизнеса. Эти учетные данные используются для авторизации приложения логики для доступа к данным вашей учетной записи OneDrive для бизнеса:  
+
+   ![Снимок экрана: конструктор Logic Apps, отображающий запрос на вход в OneDrive для бизнеса.](./media/connectors-create-api-onedriveforbusiness/onedriveforbusiness-2.png)
+
+3. Укажите имя пользователя и пароль OneDrive для бизнеса, чтобы авторизовать приложение логики:  
+
+   ![Снимок экрана: страница входа в OneDrive для бизнеса, в которой отображается запрос на вход.](./media/connectors-create-api-onedriveforbusiness/onedriveforbusiness-3.png)   
+
+4. Теперь подключение будет указано на шаге. Щелкните Сохранить, а затем продолжите создание приложения логики. 
+
+   ![Снимок экрана конструктора Logic Apps, в котором отображается триггер с подключением OneDrive для бизнеса.](./media/connectors-create-api-onedriveforbusiness/onedriveforbusiness-4.png)   

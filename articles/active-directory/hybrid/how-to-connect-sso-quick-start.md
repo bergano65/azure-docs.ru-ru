@@ -16,12 +16,12 @@ ms.date: 04/16/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 58e779e6feeba27711a1746fbf7d6878725790fa
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bc955fe64ae68cb1248b0e616357bccf82f5f036
+ms.sourcegitcommit: 0820c743038459a218c40ecfb6f60d12cbf538b3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85358010"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87115757"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-quickstart"></a>Azure Active Directory простой единый вход: Краткое руководство
 
@@ -162,9 +162,9 @@ ms.locfileid: "85358010"
 
 4. Введите в соответствующие поля приведенные ниже значения и нажмите кнопку **ОК**.
    - **Путь раздела**: ***Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\microsoftazuread-sso.com\autologon***.
-   - **Имя значения**: ***https***.
-   - **Тип значения**: ***REG_DWORD***.
-   - **Данные значения**: ***00000001***.
+   - **Имя значения**: ***HTTPS***
+   - **Тип значения**: ***REG_DWORD***
+   - **Данные значения**: ***00000001*** .
  
      ![Единый вход](./media/how-to-connect-sso-quick-start/sso16.png)
  
@@ -234,7 +234,7 @@ Mozilla Firefox не выполняет аутентификацию Kerberos а
 >[!IMPORTANT]
 >Этот шаг не требуется выполнять _немедленно_ после включения функции. Меняйте ключи расшифровки Kerberos по крайней мере каждые 30 дней.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Подробное техническое руководство](how-to-connect-sso-how-it-works.md). Поймите, как работает функция простого единого входа.
 - [Часто задаваемые вопросы](how-to-connect-sso-faq.md). Получите ответы на часто задаваемые вопросы о простом едином входе.

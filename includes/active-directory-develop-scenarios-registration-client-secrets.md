@@ -11,15 +11,15 @@ ms.devlang: na
 ms.topic: include
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 04/18/2018
+ms.date: 07/15/2020
 ms.author: jmprieur
 ms.custom: include file
-ms.openlocfilehash: a5d34ac7eea50b67bd679d8cb8ddecf7ca277abd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a3acdbb93dd20f0b89e4f99d64f5f7a30ce40623
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76773383"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87102955"
 ---
 ## <a name="register-secrets-or-certificates"></a>Регистрация секретов или сертификатов
 
@@ -31,12 +31,10 @@ ms.locfileid: "76773383"
 
 ![Сертификат & секретной страницы](../articles/active-directory/develop/media/quickstart-update-azure-ad-app-preview/credentials-certificates-secrets.png)
 
-- Секрет приложения (также называемый секретом клиента) создается Azure AD во время регистрации приложения конфиденциального клиента. Это поколение происходит при выборе **нового секрета клиента**. На этом этапе необходимо скопировать строку секрета в буфер обмена для использования в приложении перед нажатием **сохранить**. Эта строка больше не будет представлена.
+- *Секрет клиента* создается путем выбора **нового секрета клиента** в регистрации приложения в портал Azure. При создании секрета клиента _необходимо_ записать строку секрета, прежде чем переходить от области **Сертификаты & секреты** . Строка секрета никогда не отображается снова.
 - Во время регистрации приложения для отправки сертификата используется кнопка **отправить сертификат** . Azure AD поддерживает только сертификаты, которые непосредственно зарегистрированы в приложении, и не подчиняются цепочкам сертификатов.
 
 Дополнительные сведения см. в разделе [Краткое руководство. Настройка клиентского приложения для доступа к веб-API | Добавьте учетные данные в приложение](../articles/active-directory/develop/quickstart-configure-app-access-web-apis.md#add-credentials-to-your-web-application).
-
-
 
 ### <a name="register-client-secrets-by-using-powershell"></a>Регистрация секретов клиента с помощью PowerShell
 
