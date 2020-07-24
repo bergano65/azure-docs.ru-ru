@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/26/2020
 ms.author: mathoma
-ms.openlocfilehash: 4e704a25e0c9700afbe4fa85031d7ff4d6a8d0c1
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: e1a4a366b3e4fa045df69683d6e72b157ccf0a1f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85965571"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87003633"
 ---
 # <a name="create-an-fci-with-azure-shared-disks-sql-server-on-azure-vms"></a>Создание FCI с общими дисками Azure (SQL Server на виртуальных машинах Azure)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -28,7 +28,7 @@ ms.locfileid: "85965571"
 Дополнительные сведения см. в обзоре [FCI с SQL Server на виртуальных машинах Azure и в](failover-cluster-instance-overview.md) разделе рекомендации по работе с [кластерами](hadr-cluster-best-practices.md). 
 
 
-## <a name="prerequisites"></a>Предварительные условия 
+## <a name="prerequisites"></a>Обязательные условия 
 
 Перед выполнением инструкций, приведенных в этой статье, у вас уже должны быть:
 
@@ -157,7 +157,7 @@ New-Cluster -Name <FailoverCluster-Name> -Node ("<node1>","<node2>") –StaticAd
 1. На вкладке **Выбор серверов или кластера** введите имена обеих виртуальных машин.
 1. На вкладке **Параметры тестирования** выберите **Выполнять только выбранные тесты**. 
 1. Выберите **Далее**.
-1. В разделе **Выбор теста**выберите все тесты, *Кроме* **Локальные дисковые пространства**.
+1. В разделе **Выбор теста**выберите все тесты, *Кроме* **хранилища** .
 
 ## <a name="test-cluster-failover"></a>Тестовая отработка отказа кластера
 
@@ -181,9 +181,7 @@ New-Cluster -Name <FailoverCluster-Name> -Node ("<node1>","<node2>") –StaticAd
 
 1. Щелкните **Новая установка отказоустойчивого кластера SQL Server**. Следуйте указаниям мастера, чтобы установить экземпляр отказоустойчивого кластера SQL Server.
 
-   Каталоги данных экземпляра отказоустойчивого кластера должны находиться в кластеризованном хранилище. В случае с Локальными дисковыми пространствами это не общий диск, а точка подключения к тому на каждом сервере. Локальные дисковые пространства синхронизируют том между обоими узлами. Том будет представлен кластеру в виде общий том кластера (CSV). Используйте точки подключения CSV для каталогов данных.
-
-   ![Каталоги данных](./media/failover-cluster-instance-storage-spaces-direct-manually-configure/20-data-dicrectories.png)
+Каталоги данных FCI должны находиться на общих дисках Azure. 
 
 1. После выполнения инструкций мастера программа установки установит экземпляр отказоустойчивого кластера SQL Server на первом узле.
 
@@ -222,7 +220,7 @@ New-AzSqlVM -Name $vm.Name -ResourceGroupName $vm.ResourceGroupName -Location $v
 - Поддерживается только SQL Server 2019 в Windows Server 2019. 
 - Поддерживается только регистрация в поставщике ресурсов виртуальной машины SQL в [режиме упрощенного управления](sql-vm-resource-provider-register.md#management-modes) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы еще не сделали этого, настройте подключение к FCI с [именем виртуальной сети и подсистемой балансировки нагрузки Azure](hadr-vnn-azure-load-balancer-configure.md) или [именем распределенной сети (DNN)](hadr-distributed-network-name-dnn-configure.md). 
 

@@ -3,14 +3,14 @@ title: Безопасность данных службы автоматизац
 description: Эта статья поможет вам узнать, как служба автоматизации Azure защищает конфиденциальность и обеспечивает защиту данных.
 services: automation
 ms.subservice: shared-capabilities
-ms.date: 06/03/2020
+ms.date: 07/20/2020
 ms.topic: conceptual
-ms.openlocfilehash: cc96f2dd81b618b4170acd4b415a09248adbb7d5
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: 610c2050150a533e246bc74ed7750ce87f7cf617
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86186169"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87004653"
 ---
 # <a name="management-of-azure-automation-data"></a>Управление данными службы автоматизации Azure
 
@@ -50,7 +50,7 @@ ms.locfileid: "86186169"
 | Данные | Политика |
 |:--- |:--- |
 | Учетные записи |Учетная запись окончательно удаляется через 30 дней после удаления пользователем. |
-| Активы |Актив окончательно удаляется через 30 дней после удаления пользователем или через 30 дней после удаления пользователем учетной записи, которая содержала этот актив. |
+| Активы |Актив окончательно удаляется через 30 дней после удаления пользователем или через 30 дней после удаления пользователем учетной записи, которая содержала этот актив. Активы включают переменные, расписания, учетные данные, сертификаты, пакеты Python 2 и подключения. |
 | Узлы DSC |Узел DSC окончательно удаляется через 30 дней после отмены регистрации в учетной записи службы автоматизации на портале Azure или с помощью командлета [Unregister-AzAutomationDscNode](/powershell/module/az.automation/unregister-azautomationdscnode?view=azps-3.7.0) в Windows PowerShell. Также узел окончательно удаляется через 30 дней после удаления пользователем учетной записи, которая содержала этот узел. |
 | Задания |Задание удаляется окончательно через 30 дней после изменения его состояния, например после его завершения, остановки или приостановки. |
 | Модули |Модуль окончательно удаляется через 30 дней после удаления пользователем или через 30 дней после удаления пользователем учетной записи, которая содержала этот модуль. |
@@ -66,7 +66,7 @@ ms.locfileid: "86186169"
 
 ### <a name="runbooks"></a>Модули runbook
 
-Модули Runbook можно экспортировать в файлы сценариев с помощью портала Azure или командлета [Get-AzureAutomationRunbookDefinition](/powershell/module/servicemanagement/azure/get-azureautomationrunbookdefinition) в Windows PowerShell. Чтобы импортировать файлы скрипта в другую учетную запись службы автоматизации, воспользуйтесь руководством [Управление модулями runbook в службе автоматизации Azure](manage-runbooks.md).
+Модули Runbook можно экспортировать в файлы сценариев с помощью портала Azure или командлета [Get-AzureAutomationRunbookDefinition](/powershell/module/servicemanagement/azure.service/get-azureautomationrunbookdefinition) в Windows PowerShell. Чтобы импортировать файлы скрипта в другую учетную запись службы автоматизации, воспользуйтесь руководством [Управление модулями runbook в службе автоматизации Azure](manage-runbooks.md).
 
 ### <a name="integration-modules"></a>Модули интеграции
 

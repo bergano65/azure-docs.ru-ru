@@ -8,18 +8,18 @@ ms.author: dobett
 ms.date: 03/27/2020
 ms.topic: how-to
 manager: philmea
-ms.openlocfilehash: 9ca1c8f4a8e92babf65ec049b3784882bd3af689
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7638b44dc3e727e2530e656541272ddad292d1fc
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82744974"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87002494"
 ---
 # <a name="manage-iot-central-from-azure-powershell"></a>Управление IoT Central в Azure PowerShell
 
 [!INCLUDE [iot-central-selector-manage](../../../includes/iot-central-selector-manage.md)]
 
-Вместо создания приложений IoT Central и управления ими на веб-сайте [диспетчера приложений Azure IOT Central](https://aka.ms/iotcentral) можно использовать [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview) для управления приложениями.
+Вместо создания приложений IoT Central и управления ими на веб-сайте [диспетчера приложений Azure IOT Central](https://aka.ms/iotcentral) можно использовать [Azure PowerShell](https://docs.microsoft.com/powershell/azure/) для управления приложениями.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -48,7 +48,7 @@ Install-Module Az.IotCentral
 
 ## <a name="create-an-application"></a>Создание приложения
 
-Используйте командлет [New-AzIotCentralApp](https://docs.microsoft.com/powershell/module/az.iotcentral/New-AzIotCentralApp), чтобы создать приложение IoT Central в подписке Azure. Пример:
+Используйте командлет [New-AzIotCentralApp](https://docs.microsoft.com/powershell/module/az.iotcentral/New-AzIotCentralApp), чтобы создать приложение IoT Central в подписке Azure. Например.
 
 ```powershell
 # Create a resource group for the IoT Central application

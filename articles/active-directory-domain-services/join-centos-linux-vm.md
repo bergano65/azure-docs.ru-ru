@@ -9,13 +9,14 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
-ms.date: 01/23/2020
+ms.date: 07/13/2020
 ms.author: iainfou
-ms.openlocfilehash: 062150c5d19a97a13fdd5567c2875bc69c839639
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9eb6a43557da43e8f792bcc3858e7123f2b6c607
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84734764"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87005163"
 ---
 # <a name="join-a-centos-linux-virtual-machine-to-an-azure-active-directory-domain-services-managed-domain"></a>Присоединение виртуальной машины CentOS Linux к управляемому домену доменных служб Azure Active Directory
 
@@ -105,7 +106,7 @@ sudo yum install realmd sssd krb5-workstation krb5-libs oddjob oddjob-mkhomedir 
     kinit contosoadmin@AADDSCONTOSO.COM
     ```
 
-1. Наконец, Присоедините компьютер к управляемому домену с помощью `realm join` команды. Используйте ту же учетную запись пользователя, которая входит в управляемый домен, указанный в предыдущей `kinit` команде, например `contosoadmin@AADDSCONTOSO.COM` :
+1. Наконец, присоедините виртуальную машину к управляемому домену с помощью `realm join` команды. Используйте ту же учетную запись пользователя, которая входит в управляемый домен, указанный в предыдущей `kinit` команде, например `contosoadmin@AADDSCONTOSO.COM` :
 
     ```console
     sudo realm join --verbose AADDSCONTOSO.COM -U 'contosoadmin@AADDSCONTOSO.COM'
@@ -194,7 +195,7 @@ Successfully enrolled machine in realm
     sudo yum update
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если при подключении виртуальной машины к управляемому домену или при входе с помощью учетной записи домена возникли проблемы, см. раздел [Устранение неполадок при присоединении к домену](join-windows-vm.md#troubleshoot-domain-join-issues).
 

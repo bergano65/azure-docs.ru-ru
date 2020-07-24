@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/27/2019
 ms.author: mlottner
-ms.openlocfilehash: fe117cf8d05ba3392b71858acf94d1fc88c1a527
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 98afd1eb1f8a73c2d6dd3f293a07cdb70780d238
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81311564"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87004772"
 ---
 # <a name="pricing-and-associated-costs"></a>Цены и связанные затраты
 
@@ -50,11 +50,11 @@ ms.locfileid: "81311564"
 
 1. В разделе **Безопасность**щелкните **Обзор**.
 
-1. Щелкните **Параметры**.
+1. Щелкните **Настройки**.
 
 В следующей таблице приводится сводка связанных затрат и последствий каждого из них.
 
-|     | Использование | Комментировать |
+| Параметр | Использование | Комментировать |
 | --- | --- | --- |
 | **Хранилище Log Analytics** |  |
 | Рекомендации и оповещения для устройств| Рекомендации по безопасности и предупреждения, созданные службой | Не является обязательным |
@@ -73,7 +73,7 @@ ms.locfileid: "81311564"
 | | Подробные сведения об исследовании [предупреждений](concept-security-alerts.md) и [рекомендаций](concept-recommendations.md) недоступны |
 |
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также статью
 
 - Доступ к [необработанным данным безопасности](how-to-security-data-access.md)
 - [Исследование устройства](how-to-investigate-device.md)

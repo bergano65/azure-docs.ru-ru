@@ -11,11 +11,12 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 07/06/2020
 ms.author: iainfou
-ms.openlocfilehash: 923502132fdbe0b4a56c0fc23c19475e9074b8ff
-ms.sourcegitcommit: e132633b9c3a53b3ead101ea2711570e60d67b83
+ms.openlocfilehash: 19b7962462e5cdb03bad0c6004b8c19f781ccc69
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86040254"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87005282"
 ---
 # <a name="create-a-group-managed-service-account-gmsa-in-azure-active-directory-domain-services"></a>Создание групповой управляемой учетной записи службы (gMSA) в доменных службах Azure Active Directory
 
@@ -34,7 +35,7 @@ ms.locfileid: "86040254"
 * Связанный с вашей подпиской клиент Azure Active Directory, синхронизированный с локальным или облачным каталогом.
     * Если потребуется, [создайте клиент Azure Active Directory][create-azure-ad-tenant] или [свяжите подписку Azure со своей учетной записью][associate-azure-ad-tenant].
 * Управляемый домен доменных служб Azure Active Directory, включенный и настроенный в клиенте Azure AD.
-    * При необходимости выполните инструкции из руководства по [созданию и настройке домена, управляемого Azure Active Directory доменных служб][create-azure-ad-ds-instance].
+    * При необходимости выполните инструкции из руководства по [созданию и настройке управляемого домена доменных служб Azure Active Directory][create-azure-ad-ds-instance].
 * Виртуальная машина управления Windows Server, присоединенная к управляемому домену AD DS Azure.
     * При необходимости выполните инструкции из руководства по [созданию виртуальной машины управления][tutorial-create-management-vm].
 
@@ -94,7 +95,7 @@ New-ADServiceAccount -Name WebFarmSvc `
 
 Теперь приложения и службы можно настроить для использования gMSA по мере необходимости.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Gmsa см. в статье [Приступая к работе с групповыми управляемыми учетными записями служб][gmsa-start].
 

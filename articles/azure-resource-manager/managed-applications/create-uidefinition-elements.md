@@ -3,13 +3,14 @@ title: Создание элементов определения пользов
 description: Сведения об элементах, используемых при создании определений пользовательского интерфейса для портала Azure.
 author: tfitzmac
 ms.topic: conceptual
-ms.date: 02/06/2020
+ms.date: 07/13/2020
 ms.author: tomfitz
-ms.openlocfilehash: 12bf5d131001d95a3f4327f95c24125dbf3fb510
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 221e4dc2e909561c70b1cd1b86df026619c2b31f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77086704"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87004313"
 ---
 # <a name="createuidefinition-elements"></a>Элементы CreateUiDefinition
 
@@ -47,12 +48,14 @@ ms.locfileid: "77086704"
 
 Документация для каждого элемента содержит примеры пользовательского интерфейса, схемы, примечания о поведении элемента (обычно в отношении проверки и поддерживаемой настройки) и пример выходных данных.
 
+- [Microsoft. Common. CheckBox](microsoft-common-checkbox.md)
 - [Элемент пользовательского интерфейса Microsoft.Common.DropDown](microsoft-common-dropdown.md)
 - [Элемент пользовательского интерфейса Microsoft.Common.FileUpload](microsoft-common-fileupload.md)
 - [Microsoft.Common.InfoBox](microsoft-common-infobox.md)
 - [Элемент пользовательского интерфейса Microsoft.Common.OptionsGroup](microsoft-common-optionsgroup.md)
 - [Элемент пользовательского интерфейса Microsoft.Common.PasswordBox](microsoft-common-passwordbox.md)
 - [Элемент пользовательского интерфейса Microsoft.Common.Section](microsoft-common-section.md)
+- [Microsoft. Common. Slider](microsoft-common-slider.md)
 - [Microsoft. Common. Тагсбиресаурце](microsoft-common-tagsbyresource.md)
 - [Microsoft.Common.TextBlock](microsoft-common-textblock.md)
 - [Элемент пользовательского интерфейса Microsoft.Common.TextBox](microsoft-common-textbox.md)
@@ -62,9 +65,11 @@ ms.locfileid: "77086704"
 - [Microsoft. ManagedIdentity. Идентитиселектор](microsoft-managedidentity-identityselector.md)
 - [Элемент пользовательского интерфейса Microsoft.Network.PublicIpAddressCombo](microsoft-network-publicipaddresscombo.md)
 - [Элемент пользовательского интерфейса Microsoft.Network.VirtualNetworkCombo](microsoft-network-virtualnetworkcombo.md)
+- [Microsoft. Solutions. Армапиконтрол](microsoft-solutions-armapicontrol.md)
+- [Microsoft. Solutions. Ресаурцеселектор](microsoft-solutions-resourceselector.md)
 - [Элемент пользовательского интерфейса Microsoft.Storage.MultiStorageAccountCombo](microsoft-storage-multistorageaccountcombo.md)
 - [Элемент пользовательского интерфейса Microsoft.Storage.StorageAccountSelector](microsoft-storage-storageaccountselector.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Общие сведения о создании определений пользовательского интерфейса см. в статье [Начало работы с CreateUiDefinition](create-uidefinition-overview.md).

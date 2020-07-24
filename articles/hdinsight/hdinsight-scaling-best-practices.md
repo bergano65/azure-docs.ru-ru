@@ -8,18 +8,18 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020
 ms.date: 04/29/2020
-ms.openlocfilehash: fc14c3bd069162c390c09fddbfe9169b90bf66ce
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: a9d419052f000b220c993109e45d371398607275
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86086013"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87006456"
 ---
 # <a name="scale-azure-hdinsight-clusters"></a>Масштабирование кластеров Azure HDInsight
 
 HDInsight обеспечивает эластичность с помощью параметров для увеличения и уменьшения количества рабочих узлов в кластерах. Такая эластичность позволяет сжимать кластер после нескольких часов или выходных дней. И разверните его во время пиковых бизнес-требований.
 
-Увеличьте масштаб кластера перед периодической пакетной обработкой, чтобы кластер получил достаточно ресурсов. После завершения обработки и использования уменьшается масштаб кластера HDInsight до меньшего количества рабочих узлов.
+Увеличьте масштаб кластера перед периодической пакетной обработкой, чтобы кластер получил достаточно ресурсов.  После завершения обработки и использования уменьшается масштаб кластера HDInsight до меньшего количества рабочих узлов.
 
 Вы можете масштабировать кластер вручную, используя один из методов, описанных ниже. Можно также использовать параметры [автомасштабирования](hdinsight-autoscale-clusters.md) для автоматического увеличения и уменьшения масштаба в ответ на определенные метрики.
 
@@ -30,7 +30,7 @@ HDInsight обеспечивает эластичность с помощью п
 
 Корпорация Майкрософт предоставляет следующие служебные программы для масштабирования кластеров:
 
-|Служебная программа | Описание:|
+|Служебная программа | Описание|
 |---|---|
 |[PowerShell Az](https://docs.microsoft.com/powershell/azure)|[`Set-AzHDInsightClusterSize`](https://docs.microsoft.com/powershell/module/az.hdinsight/set-azhdinsightclustersize) `-ClusterName CLUSTERNAME -TargetInstanceCount NEWSIZE`|
 |[PowerShell AzureRM](https://docs.microsoft.com/powershell/azure/azurerm) |[`Set-AzureRmHDInsightClusterSize`](https://docs.microsoft.com/powershell/module/azurerm.hdinsight/set-azurermhdinsightclustersize) `-ClusterName CLUSTERNAME -TargetInstanceCount NEWSIZE`|
@@ -107,6 +107,14 @@ HDInsight обеспечивает эластичность с помощью п
 
     выполните повторную балансировку реплик разделов после масштабирования. Дополнительные сведения см. в документе о [высоком уровне доступности данных при использовании Apache Kafka в HDInsight](./kafka/apache-kafka-high-availability.md).
 
+* Apache Hive LLAP
+
+    После масштабирования на `N` рабочие узлы HDInsight автоматически настроит следующие конфигурации и перезапустите Hive.
+
+  * Максимальное число одновременных запросов:`hive.server2.tez.sessions.per.default.queue = min(N, 32)`
+  * Число узлов, используемых LLAP Hive:`num_llap_nodes  = N`
+  * Число узлов для запуска управляющей программы Hive LLAP:`num_llap_nodes_for_llap_daemons = N`
+
 ## <a name="how-to-safely-scale-down-a-cluster"></a>Безопасное масштабирование кластера
 
 ### <a name="scale-down-a-cluster-with-running-jobs"></a>Уменьшение масштаба кластера с выполняющимися заданиями
@@ -138,7 +146,7 @@ HDInsight обеспечивает эластичность с помощью п
 yarn application -kill <application_id>
 ```
 
-Пример:
+Например.
 
 ```bash
 yarn application -kill "application_1499348398273_0003"
@@ -260,7 +268,7 @@ hdfs dfsadmin -D 'fs.default.name=hdfs://mycluster/' -safemode leave
     balancer
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Автоматическое масштабирование кластеров Azure HDInsight](hdinsight-autoscale-clusters.md)
 

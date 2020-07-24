@@ -8,11 +8,12 @@ ms.service: cloud-services
 ms.topic: article
 ms.date: 07/05/2017
 ms.author: tagore
-ms.openlocfilehash: 80481bc11933b0404079221f23b5054024f00acb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 471aa6e5297f8b68f08567a66e3f07e9688ca57e
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80811356"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87002936"
 ---
 # <a name="manage-cloud-services-in-the-azure-portal"></a>Управление облачными службами с помощью портала Azure
 В области **Облачные службы** портала Azure вы можете:
@@ -76,7 +77,7 @@ ms.locfileid: "80811356"
 
 - Если вы хотите использовать статический IP-адрес для вашего рабочего слота, необходимо также зарезервировать такой адрес для промежуточного слота. В противном случае переключение завершится ошибкой.
 
-- Все экземпляры роли должны быть запущены перед выполнением переключения. Состояние экземпляров можно проверить в колонке **Обзор** на портале Azure. Также можно использовать команду [Get-AzureRole](/powershell/module/servicemanagement/azure/get-azurerole?view=azuresmps-3.7.0) в Windows PowerShell.
+- Все экземпляры роли должны быть запущены перед выполнением переключения. Состояние экземпляров можно проверить в колонке **Обзор** на портале Azure. Также можно использовать команду [Get-AzureRole](/powershell/module/servicemanagement/azure.service/get-azurerole?view=azuresmps-3.7.0) в Windows PowerShell.
 
 Обратите внимание, что обновления гостевой ОС и операции восстановления службы также могут быть причиной сбоя переключения развертывания. Дополнительные сведения см. в статье [Устранение неполадок, которые могут возникнуть при развертывании облачной службы](cloud-services-troubleshoot-deployment-problems.md).
 
@@ -118,7 +119,7 @@ ms.locfileid: "80811356"
 
 [Azure portal]: https://portal.azure.com
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Общая настройка облачной службы](cloud-services-how-to-configure-portal.md).
 * Узнайте, как [развернуть облачную службу](cloud-services-how-to-create-deploy-portal.md).
 * Настройте [имя пользовательского домена](cloud-services-custom-domain-name-portal.md).

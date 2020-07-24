@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 04/01/2020
-ms.openlocfilehash: be206b312394eab6367f179872c8c36b7f4f3d44
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: eaddae04c198742007947831046139d80828534b
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86083225"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87006591"
 ---
 # <a name="customize-hdinsight-clusters-using-bootstrap"></a>Настройка кластеров HDInsight с помощью начальной загрузки
 
@@ -46,9 +46,9 @@ ms.locfileid: "86083225"
 
 Сведения об установке дополнительных компонентов в кластере HDInsight во время создания см. в статье [Настройка кластеров hdinsight с помощью действия сценария (Linux)](hdinsight-hadoop-customize-cluster-linux.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
-* При использовании PowerShell вам потребуется [модуль Az](https://docs.microsoft.com/powershell/azure/overview).
+* При использовании PowerShell вам потребуется [модуль Az](https://docs.microsoft.com/powershell/azure/).
 
 ## <a name="use-azure-powershell"></a>Использование Azure PowerShell
 
@@ -138,7 +138,7 @@ $OozieConfigValues = @{ "oozie.service.coord.normal.default.timeout"="150" }  # 
 }
 ```
 
-## <a name="see-also"></a>Дополнительно
+## <a name="see-also"></a>См. также статью
 
 * статью [Установка кластеров в HDInsight с использованием Hadoop, Spark, Kafka и других технологий](hdinsight-hadoop-provision-linux-clusters.md), в которой даются указания по созданию кластера HDInsight с использованием других настраиваемых параметров.
 * [Разработка скриптов действия скрипта для HDInsight](hdinsight-hadoop-script-actions-linux.md)

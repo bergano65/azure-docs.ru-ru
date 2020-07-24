@@ -9,13 +9,14 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
-ms.date: 01/22/2020
+ms.date: 07/13/2020
 ms.author: iainfou
-ms.openlocfilehash: 7cbd9250ecfb05e52204e1754046e02e4045fa6b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7eaf8b6b5cddc8a01b59cda0cafc819e06a5ec7c
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84734713"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87005010"
 ---
 # <a name="join-an-ubuntu-linux-virtual-machine-to-an-azure-active-directory-domain-services-managed-domain"></a>Присоединение виртуальной машины Ubuntu Linux к управляемому домену доменных служб Azure Active Directory
 
@@ -140,7 +141,7 @@ sudo apt-get install krb5-user samba sssd sssd-tools libnss-sss libpam-sss ntp n
     kinit contosoadmin@AADDSCONTOSO.COM
     ```
 
-1. Наконец, Присоедините компьютер к управляемому домену с помощью `realm join` команды. Используйте ту же учетную запись пользователя, которая входит в управляемый домен, указанный в предыдущей `kinit` команде, например `contosoadmin@AADDSCONTOSO.COM` :
+1. Наконец, присоедините виртуальную машину к управляемому домену с помощью `realm join` команды. Используйте ту же учетную запись пользователя, которая входит в управляемый домен, указанный в предыдущей `kinit` команде, например `contosoadmin@AADDSCONTOSO.COM` :
 
     ```console
     sudo realm join --verbose AADDSCONTOSO.COM -U 'contosoadmin@AADDSCONTOSO.COM' --install=/
@@ -281,7 +282,7 @@ rdns=false
     sudo apt-get update
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если при подключении виртуальной машины к управляемому домену или при входе с помощью учетной записи домена возникли проблемы, см. раздел [Устранение неполадок при присоединении к домену](join-windows-vm.md#troubleshoot-domain-join-issues).
 

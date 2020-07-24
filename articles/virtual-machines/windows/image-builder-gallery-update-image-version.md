@@ -6,13 +6,14 @@ ms.author: cynthn
 ms.date: 05/05/2020
 ms.topic: how-to
 ms.service: virtual-machines-windows
-ms.openlocfilehash: ee3e2a224789c899dcfabdbee56b949ea86f0a08
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bdae608d573bc411242b4bf66ea033a7df421cfc
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82872273"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87005707"
 ---
-# <a name="preview-create-a-new-vm-image-version-from-an-existing-image-version-using-azure-image-builder"></a>Предварительная версия. Создание новой версии образа виртуальной машины из существующей версии образа с помощью Azure Image Builder
+# <a name="preview-create-a-new-vm-image-version-from-an-existing-image-version-using-azure-image-builder-in-windows"></a>Предварительная версия. Создание новой версии образа виртуальной машины из существующей версии образа с помощью Azure Image Builder в Windows
 
 В этой статье показано, как взять существующую версию образа в [коллекции общих образов](shared-image-galleries.md), обновить ее и опубликовать в коллекции как новую версию образа.
 
@@ -174,6 +175,6 @@ dir c:\
 - `buildActions2`Это было создано как часть обновления первой версии образа для создания второй версии образа.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о компонентах JSON, использованных в этой статье, см. в разделе [Справочник по шаблонам для Image Builder](../linux/image-builder-json.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).

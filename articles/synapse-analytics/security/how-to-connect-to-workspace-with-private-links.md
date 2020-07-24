@@ -1,5 +1,5 @@
 ---
-title: Подключение к рабочей области Azure Synapse с использованием частных каналов
+title: Подключение к рабочей области синапсе с помощью частных ссылок
 description: В этой статье поясняется, как подключиться к рабочей области Azure Synapse с использованием частных каналов.
 author: RonyMSFT
 ms.service: synapse-analytics
@@ -8,12 +8,12 @@ ms.subservice: security
 ms.date: 04/15/2020
 ms.author: ronytho
 ms.reviewer: jrasnick
-ms.openlocfilehash: 0f2e01390a1ddd179e50523a8b5748994524a52e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 17636bf993df5105093ca690e36db22493a2472e
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85193878"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87005979"
 ---
 # <a name="connect-to-your-azure-synapse-workspace-using-private-links-preview"></a>Подключение к рабочей области Azure Synapse с использованием частных каналов (предварительная версия)
 
@@ -47,7 +47,7 @@ ms.locfileid: "85193878"
 
 На вкладке **Конфигурация** выберите **виртуальную сеть** и **подсеть** для создания частной конечной точки. Также необходимо создать запись DNS, которая сопоставляется с этой частной конечной точкой.
 
-Выберите значение **Да** для параметра **Интеграция с частной зоной DNS**, если вы хотите интегрировать частную конечную точку с частной зоной DNS. Если у вас нет частной зоны DNS, связанной с виртуальной сетью, будет создана новая частная зона DNS. По завершении выберите **Проверка и создание**.
+Выберите значение **Да** для параметра **Интеграция с частной зоной DNS**, если вы хотите интегрировать частную конечную точку с частной зоной DNS. Если у вас нет частной зоны DNS, связанной с виртуальная сеть Microsoft Azure, создается новая частная зона DNS. По завершении выберите **Проверка и создание**.
 
 ![Выбор подписки и сведений о регионе](./media/how-to-connect-to-workspace-with-private-links/private-endpoint-4.png)
 
@@ -57,7 +57,7 @@ ms.locfileid: "85193878"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Узнайте больше о [виртуальной сети Управляемых дисков](./synapse-workspace-managed-vnet.md).
+Дополнительные сведения об [управляемой виртуальной сети рабочей области](./synapse-workspace-managed-vnet.md)
 
 См. дополнительные сведения об [управляемых частных конечных точках](./synapse-workspace-managed-private-endpoints.md) и статью
 

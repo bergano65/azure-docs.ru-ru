@@ -12,12 +12,12 @@ author: dalechen
 ms.author: ninarn
 ms.reviewer: carlrab, vanto
 ms.date: 01/14/2020
-ms.openlocfilehash: acc61cefbc9d89f11eae5b6549add57871035ddb
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 0b28fa788e7b35e94482104d807c228db21f49b4
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86078975"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87003922"
 ---
 # <a name="troubleshoot-transient-connection-errors-in-sql-database-and-sql-managed-instance"></a>Устранение временных ошибок подключения в базе данных SQL и Управляемый экземпляр SQL
 
@@ -148,8 +148,8 @@ ms.locfileid: "86078975"
 
 Параметры **ConnectRetryCount** и **ConnectRetryInterval** позволяют объекту **SqlConnection** повторять операцию подключения, не извещая об этом программу и не вынуждая ее управлять этим процессом. Повторные попытки будут выполняться в следующих ситуациях:
 
-- при вызове метода mySqlConnection.Open;
-- при вызове метода mySqlConnection.Execute.
+- Вызов метода SqlConnection. Open
+- SqlConnection.Exeвызов метода милые
 
 Есть один важный нюанс. Если во время выполнения *запроса* возникает временная ошибка, объект **SqlConnection** не пытается подключиться еще раз. Как следствие, запрос повторно не выполняется. Но перед отправкой запроса для выполнения объект **SqlConnection** очень быстро проверит наличие соединения. Если эта быстрая проверка обнаружит проблемы с подключением, **SqlConnection** повторит операцию подключения. Если повторная попытка подключения завершится успешно, запрос отправится на выполнение.
 
@@ -443,7 +443,7 @@ public bool IsTransient(Exception ex)
 }
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Библиотеки подключений для Базы данных SQL и SQL Server](connect-query-content-reference-guide.md#libraries)
 - [Организация пулов соединений (ADO.NET)](https://docs.microsoft.com/dotnet/framework/data/adonet/sql-server-connection-pooling)

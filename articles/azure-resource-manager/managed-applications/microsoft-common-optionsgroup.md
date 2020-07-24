@@ -3,21 +3,25 @@ title: Элемент пользовательского интерфейса Op
 description: Сведения об элементе пользовательского интерфейса Microsoft.Common.OptionsGroup для портала Azure. Позволяет пользователям выбирать доступные варианты при развертывании управляемого приложения.
 author: tfitzmac
 ms.topic: conceptual
-ms.date: 06/27/2018
+ms.date: 07/09/2020
 ms.author: tomfitz
-ms.openlocfilehash: c1da0b0082bfe046adf9596a10397e9063c888be
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: aa73b4cbded98291a14792a7151df9fdfb885b53
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75652350"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87004202"
 ---
 # <a name="microsoftcommonoptionsgroup-ui-element"></a>Элемент пользовательского интерфейса Microsoft.Common.OptionsGroup
 
-Элемент управления для выбора со строкой доступных вариантов.
+Элемент управления OptionsGroup позволяет пользователям выбрать один вариант из двух или более вариантов. Пользователь может выбрать только один вариант.
+
+> [!NOTE]
+> В прошлом этот элемент управления отображал параметры по горизонтали. Теперь элемент управления представляет параметры по вертикали в виде переключателей.
 
 ## <a name="ui-sample"></a>Пример элемента пользовательского интерфейса
 
-![Элемент пользовательского интерфейса Microsoft.Common.OptionsGroup](./media/managed-application-elements/microsoft.common.optionsgroup.png)
+:::image type="content" source="./media/managed-application-elements/microsoft-common-optionsgroup-2.png" alt-text="Элемент пользовательского интерфейса Microsoft.Common.OptionsGroup":::
 
 ## <a name="schema"></a>схема
 
@@ -57,7 +61,7 @@ ms.locfileid: "75652350"
 - Если указано, значение по умолчанию должно быть меткой в `constraints.allowedValues`. Если не указано, по умолчанию выбирается первый элемент в `constraints.allowedValues`. Значение по умолчанию — **null**.
 - В `constraints.allowedValues` должен содержаться по крайней мере один элемент.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Общие сведения о создании определений пользовательского интерфейса см. в статье [Начало работы с CreateUiDefinition](create-uidefinition-overview.md).
 * Дополнительные сведения об общих свойствах элементов пользовательского интерфейса см. в статье [Элементы CreateUiDefinition](create-uidefinition-elements.md).

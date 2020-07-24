@@ -2,13 +2,13 @@
 title: Использование концентратора событий из приложения Apache Kafka — Центры событий Azure | Документация Майкрософт
 description: В этой статье содержатся сведения о поддержке Apache Kafka в службе "Центры событий Azure".
 ms.topic: article
-ms.date: 06/23/2020
-ms.openlocfilehash: 733623895176bb3b573c2efcbda8a40b9e2d87c0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/20/2020
+ms.openlocfilehash: 6dad797f6769e9804cce7d47ed74794fdddcfb0b
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85320534"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87002484"
 ---
 # <a name="use-azure-event-hubs-from-apache-kafka-applications"></a>Использование Центров событий Azure из приложений Apache Kafka
 Центры событий предоставляют конечную точку Kafka, которую существующие приложения на основе Kafka могут использовать в качестве альтернативы запуска собственного кластера Kafka. Центры событий поддерживают [Apache Kafka 1.0](https://kafka.apache.org/documentation/) и более новые версии протокола и работают с имеющимися приложениями Kafka, в том числе с MirrorMaker.  
@@ -27,7 +27,7 @@ ms.locfileid: "85320534"
 | --- | --- |
 | Кластер | Пространство имен |
 | Раздел | Концентратор событий |
-| Partition (Раздел) | Partition (Раздел)|
+| Секция | Секция|
 | Группа потребителей | Группа потребителей |
 | Offset | Offset|
 
@@ -79,16 +79,14 @@ sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule require
 
 Ниже приведен список функций Kafka, которые еще не поддерживаются:
 
-*   идемпотентный производитель;
 *   Транзакция
 *   Сжатие
 *   хранение на основе размера;
 *   сжатие журнала;
-*   добавлений секций в существующий раздел;
 *   поддержка API HTTP Kafka;
 *   потоки Kafka.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этой статье приведены ознакомительные сведения о Центрах событий для компонента Kafka. См. сведения в [руководстве для разработчиков Apache Kafka по Центрам событий Azure](apache-kafka-developer-guide.md).
 
 

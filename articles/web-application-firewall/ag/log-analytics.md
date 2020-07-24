@@ -7,14 +7,14 @@ ms.service: web-application-firewall
 ms.topic: article
 ms.date: 09/06/2019
 ms.author: victorh
-ms.openlocfilehash: 4d6b984fd451a835afaa51482f0158e9f315f8fc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 22273cf23e48de62d99a8c149ae3e2b1c05db3af
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82130917"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87005435"
 ---
-# <a name="use-log-analytics-to-examine-application-gateway-web-application-firewall-logs"></a>Использование Log Analytics для проверки журналов брандмауэра веб-приложения Шлюза приложений
+# <a name="use-log-analytics-to-examine-application-gateway-web-application-firewall-waf-logs"></a>Использование Log Analytics для проверки журналов брандмауэра веб-приложения шлюза приложений (WAF)
 
 После работоспособности WAF шлюза приложений можно включить журналы, чтобы проверить, что происходит с каждым запросом. Журналы брандмауэра дают представление об оценке, сопоставлении и блокировке WAF. С помощью Azure Monitor Log Analytics можно просмотреть данные в журналах брандмауэра, чтобы получить еще больше ценных сведений. Дополнительные сведения о создании рабочей области Log Analytics см. в разделе [создание log Analytics рабочей области на портал Azure](../../azure-monitor/learn/quick-create-workspace.md). Дополнительные сведения о запросах журналов см. [в разделе Общие сведения о запросах журналов в Azure Monitor](../../azure-monitor/log-query/log-query-overview.md).
 

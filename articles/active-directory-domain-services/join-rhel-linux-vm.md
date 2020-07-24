@@ -9,13 +9,14 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
-ms.date: 01/23/2020
+ms.date: 07/13/2020
 ms.author: iainfou
-ms.openlocfilehash: d43c12681c7230dc4959261ffd6d96f74ea095d7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f2a6cb422c1133f0ed53d2c1061501a47d9c92f1
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84734730"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87005095"
 ---
 # <a name="join-a-red-hat-enterprise-linux-virtual-machine-to-an-azure-active-directory-domain-services-managed-domain"></a>Присоединение виртуальной машины Red Hat Enterprise Linux к управляемому домену доменных служб Azure Active Directory
 
@@ -93,7 +94,7 @@ sudo yum install adcli sssd authconfig krb5-workstation
 
 Теперь, когда необходимые пакеты установлены на виртуальной машине, присоедините виртуальную машину к управляемому домену. Опять же, выполните соответствующие действия для версии RHEL дистрибутив.
 
-### <a name="rhel-7"></a>RHEL 7
+### <a name="rhel-7"></a>RHEL 7
 
 1. Используйте `realm discover` команду для обнаружения управляемого домена. В следующем примере обнаруживается *AADDSCONTOSO.com*области. Укажите собственное управляемое доменное имя в верхнем регистре:
 
@@ -115,7 +116,7 @@ sudo yum install adcli sssd authconfig krb5-workstation
     kinit contosoadmin@AADDSCONTOSO.COM
     ```
 
-1. Наконец, Присоедините компьютер к управляемому домену с помощью `realm join` команды. Используйте ту же учетную запись пользователя, которая входит в управляемый домен, указанный в предыдущей `kinit` команде, например `contosoadmin@AADDSCONTOSO.COM` :
+1. Наконец, присоедините виртуальную машину к управляемому домену с помощью `realm join` команды. Используйте ту же учетную запись пользователя, которая входит в управляемый домен, указанный в предыдущей `kinit` команде, например `contosoadmin@AADDSCONTOSO.COM` :
 
     ```console
     sudo realm join --verbose AADDSCONTOSO.COM -U 'contosoadmin@AADDSCONTOSO.COM'
@@ -141,7 +142,7 @@ Successfully enrolled machine in realm
     * Убедитесь, что виртуальная машина развернута в том же или в одноранговой виртуальной сети, в которой доступен управляемый домен.
     * Убедитесь, что параметры DNS-сервера для виртуальной сети были обновлены, чтобы они указывали на контроллеры домена управляемого домена.
 
-1. Сначала присоедините домен с помощью `adcli join` команды. Эта команда также создаст keytab для проверки подлинности компьютера. Используйте учетную запись пользователя, которая является частью управляемого домена.
+1. Сначала присоедините домен с помощью `adcli join` команды. Эта команда также создает keytab для проверки подлинности компьютера. Используйте учетную запись пользователя, которая является частью управляемого домена.
 
     ```console
     sudo adcli join aaddscontoso.com -U contosoadmin
@@ -313,7 +314,7 @@ sudo getent passwd contosoadmin
     sudo yum update
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если при подключении виртуальной машины к управляемому домену или при входе с помощью учетной записи домена возникли проблемы, см. раздел [Устранение неполадок при присоединении к домену](join-windows-vm.md#troubleshoot-domain-join-issues).
 

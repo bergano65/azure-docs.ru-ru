@@ -9,16 +9,16 @@ ms.topic: how-to
 ms.date: 04/23/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: 1ccf03deee2a2f72c1eb2008e1acc5bf67d16447
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a22c0941a405dd2fcf37403e3a12113bc51cb774
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82796776"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87005809"
 ---
 # <a name="create-a-vm-using-a-specialized-image-version-with-the-azure-cli"></a>Создание виртуальной машины с помощью специализированной версии образа с Azure CLI
 
-Создайте виртуальную машину из [специализированной версии образа](https://docs.microsoft.com/azure/virtual-machines/linux/shared-image-galleries#generalized-and-specialized-images) , хранящейся в коллекции общих образов. Если вы хотите создать виртуальную машину с помощью обобщенной версии образа, см. статью [Создание виртуальной машины из обобщенной версии образа](vm-generalized-image-version-cli.md).
+Создайте виртуальную машину из [специализированной версии образа](./linux/shared-image-galleries.md#generalized-and-specialized-images) , хранящейся в коллекции общих образов. Если вы хотите создать виртуальную машину с помощью обобщенной версии образа, см. статью [Создание виртуальной машины из обобщенной версии образа](vm-generalized-image-version-cli.md).
 
 При необходимости замените имена ресурсов в этом примере. 
 
@@ -58,5 +58,3 @@ az vm create --resource-group myResourceGroup \
 - [Создание определения образа в коллекции общих образов](https://azure.microsoft.com/resources/templates/101-sig-image-definition-create/)
 - [Создание версии образа в коллекции общих образов](https://azure.microsoft.com/resources/templates/101-sig-image-version-create/)
 - [Создание виртуальной машины из версии образа](https://azure.microsoft.com/resources/templates/101-vm-from-sig/)
-
-

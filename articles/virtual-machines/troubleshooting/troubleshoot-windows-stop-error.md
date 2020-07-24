@@ -14,11 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 06/26/2020
 ms.author: v-mibufo
-ms.openlocfilehash: 67064cf694445acf8472b958660133c2f2d31db9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 33b4c59e14301e496d0eddafa7bdfdf201b7aa29
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85660953"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87005911"
 ---
 # <a name="windows-stop-error---status-no-memory"></a>STOP-ошибка Windows "Status No Memory" (Состояние: недостаточно памяти)
 
@@ -26,7 +27,7 @@ ms.locfileid: "85660953"
 
 ## <a name="symptom"></a>Симптом
 
-При использовании [диагностики загрузки](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/boot-diagnostics) для просмотра снимка экрана виртуальной машины вы увидите, что на снимке экрана отображается код ошибки: `0xC0000017` . В зависимости от используемой версии Windows этот код может отображаться как в **диспетчере загрузки Windows** , так и на **экране восстановления**.
+При использовании [диагностики загрузки](./boot-diagnostics.md) для просмотра снимка экрана виртуальной машины вы увидите, что на снимке экрана отображается код ошибки: `0xC0000017` . В зависимости от используемой версии Windows этот код может отображаться как в **диспетчере загрузки Windows** , так и на **экране восстановления**.
 
    **диспетчер загрузки Windows;**
 
@@ -36,7 +37,7 @@ ms.locfileid: "85660953"
  
    ![На экране восстановления говорится о том, что необходимо восстановить компьютер или устройство. Недостаточно памяти для создания устройства Ramdisk. Также должен отобразиться код ошибки «0xC0000017».](./media/troubleshoot-windows-stop-error/2.png)
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Диск операционной системы либо полон, либо фрагментирован, либо операционная система не может получить доступ к памяти, файлу подкачки или обоим файлам.
 
@@ -56,7 +57,7 @@ ms.locfileid: "85660953"
 
 ### <a name="create-and-access-a-repair-vm"></a>Создание виртуальной машины для восстановления и вход на нее
 
-1. Выполните [шаги 1–3 списка команд для восстановления виртуальной машины](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/repair-windows-vm-using-azure-virtual-machine-repair-commands), чтобы подготовить виртуальную машину для восстановления.
+1. Выполните [шаги 1–3 списка команд для восстановления виртуальной машины](./repair-windows-vm-using-azure-virtual-machine-repair-commands.md), чтобы подготовить виртуальную машину для восстановления.
 1. Используйте подключение к удаленному рабочему столу, чтобы подключиться к виртуальной машине для восстановления.
 
 ### <a name="for-generation-2-vms-assign-a-letter-to-the-extensible-firmware-interface-efi-partition"></a>Для виртуальных машин поколения 2 назначьте букву для секции EFI:
@@ -93,7 +94,7 @@ ms.locfileid: "85660953"
 Теперь, когда поврежденный диск подключен к виртуальной машине восстановления, необходимо убедиться, что операционная система на этом диске имеет достаточно места для правильной работы. 
 
 1. Проверьте, заполнен ли диск, щелкнув правой кнопкой мыши диск подключенного диска и выбрав пункт **Свойства**.
-1. Если на диске **менее 300 МБ свободного места**, [увеличьте его до 1 ТБ с помощью PowerShell](https://docs.microsoft.com/azure/virtual-machines/windows/expand-os-disk).
+1. Если на диске **менее 300 МБ свободного места**, [увеличьте его до 1 ТБ с помощью PowerShell](../windows/expand-os-disk.md).
 1. Когда размер диска составляет **1 ТБ**, необходимо выполнить очистку диска. Для освобождения места можно использовать [средство очистки диска](https://support.microsoft.com/help/4026616/windows-10-disk-cleanup) .
 1. Откройте окно командной строки с повышенными привилегиями (Запуск от имени администратора) и выполните дефрагментацию диска:
 
@@ -222,4 +223,4 @@ ms.locfileid: "85660953"
    
 ### <a name="rebuild-the-vm"></a>Перестроение виртуальной машины
 
-Чтобы перестроить виртуальную машину, [выполните шаг 5 из списка команд для восстановления виртуальной машины](https://docs.microsoft.com/azure/virtual-machines/troubleshooting/repair-windows-vm-using-azure-virtual-machine-repair-commands#repair-process-example).
+Чтобы перестроить виртуальную машину, [выполните шаг 5 из списка команд для восстановления виртуальной машины](./repair-windows-vm-using-azure-virtual-machine-repair-commands.md#repair-process-example).

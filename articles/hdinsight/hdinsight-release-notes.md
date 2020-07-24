@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 07/14/2020
-ms.openlocfilehash: 0481f92666c8ca547dc427e117f9917afb257629
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: ef243d5b151f95a00e22ac7636a46b93090ccce3
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86511880"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87006540"
 ---
 # <a name="azure-hdinsight-release-notes"></a>Заметки о выпуске Azure HDInsight
 
@@ -62,4 +62,4 @@ HDInsight постоянно повышает надежность и произ
 Zeppelin неправильно усекает начальные нули в выходных данных таблицы для формата строки. Мы устранили эту ошибку в этом выпуске.
 
 ## <a name="component-version-change"></a>Изменение версий компонентов
-В этом выпуска не вносилось изменений в версии компонентов. Текущие версии компонентов для HDInsight 4,0 AD HDInsight 3,6 можно найти в [этом документе](https://docs.microsoft.com/azure/hdinsight/hdinsight-component-versioning#apache-hadoop-components-available-with-different-hdinsight-versions).
+В этом выпуска не вносилось изменений в версии компонентов. Текущие версии компонентов для HDInsight 4,0 и HDInsight 3,6 можно найти в [этом документе](https://docs.microsoft.com/azure/hdinsight/hdinsight-component-versioning#apache-hadoop-components-available-with-different-hdinsight-versions).

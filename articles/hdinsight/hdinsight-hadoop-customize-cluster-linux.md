@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020
 ms.date: 04/21/2020
-ms.openlocfilehash: 36aaee030dd5267a391dd9a235dd5f8dc0932fa0
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 383c64c585f05869e1d01b5c99693fcf560cdedc
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86087097"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87006677"
 ---
 # <a name="customize-azure-hdinsight-clusters-by-using-script-actions"></a>Настройка кластеров Azure HDInsight с помощью действий сценариев
 
@@ -124,14 +124,14 @@ Status            : Succeeded
 
 Сценарии действия сценария можно использовать с помощью следующих служебных программ:
 
-* Портал Azure
+* портал Azure;
 * Azure PowerShell
 * Azure CLI
 * Пакет SDK для HDInsight .NET
 
 В HDInsight доступны скрипты для установки следующих компонентов в кластерах HDInsight.
 
-| name | Сценарий |
+| Имя | Скрипт |
 | --- | --- |
 | добавление учетной записи хранения Azure; |`https://hdiconfigactions.blob.core.windows.net/linuxaddstorageaccountv01/add-storage-account-v01.sh`. Ознакомьтесь со статьей [Добавление дополнительных учетных записей хранения в HDInsight](hdinsight-hadoop-add-storage.md). |
 | установка Hue; |`https://hdiconfigactions.blob.core.windows.net/linuxhueconfigactionv02/install-hue-uber-v02.sh`. Ознакомьтесь со статьей [Установка и использование Hue на кластерах HDInsight Hadoop](hdinsight-hadoop-hue-linux.md). |
@@ -153,10 +153,10 @@ Status            : Succeeded
 
     В приведенной ниже таблице описываются элементы формы.
 
-    | Свойство. | Значение |
+    | Свойство | Значение |
     | --- | --- |
     | Выберите скрипт | Чтобы использовать собственный скрипт, выберите __Настраиваемый__. В противном случае выберите один из предоставленных скриптов. |
-    | name |Укажите имя для действия сценария. |
+    | Имя |Укажите имя для действия сценария. |
     | URI bash-скрипта |Укажите URI сценария. |
     | Головной/рабочий/ZooKeeper |Укажите узлы, на которых выполняется скрипт: **head**, **Worker**или **ZooKeeper**. |
     | Параметры |Укажите параметры, если они требуются для сценария. |
@@ -195,7 +195,7 @@ Status            : Succeeded
 
 ### <a name="use-a-script-action-during-cluster-creation-from-azure-powershell"></a>Использование действия сценария при создании кластера с помощью Azure PowerShell
 
-В этом разделе описывается использование командлета [Add-аздинсигхтскриптактион](https://docs.microsoft.com/powershell/module/az.hdinsight/add-azhdinsightscriptaction) для вызова сценариев для настройки кластера. Перед началом работы убедитесь, что установили и настроили Azure PowerShell. Для использования этих команд PowerShell необходим [модуль AZ](https://docs.microsoft.com/powershell/azure/overview).
+В этом разделе описывается использование командлета [Add-аздинсигхтскриптактион](https://docs.microsoft.com/powershell/module/az.hdinsight/add-azhdinsightscriptaction) для вызова сценариев для настройки кластера. Перед началом работы убедитесь, что установили и настроили Azure PowerShell. Для использования этих команд PowerShell необходим [модуль AZ](https://docs.microsoft.com/powershell/azure/).
 
 Следующий сценарий демонстрирует применение действия сценария при создании кластера с помощью PowerShell:
 
@@ -227,10 +227,10 @@ Status            : Succeeded
 
     В приведенной ниже таблице описываются элементы формы.
 
-    | Свойство. | Значение |
+    | Свойство | Значение |
     | --- | --- |
     | Выберите скрипт | Чтобы использовать собственный скрипт, выберите __Пользовательский__. В противном случае выберите предоставленный скрипт. |
-    | name |Укажите имя для действия сценария. |
+    | Имя |Укажите имя для действия сценария. |
     | URI bash-скрипта |Укажите URI сценария. |
     | Головной, рабочий или Zookeeper |Укажите узлы, на которых выполняется скрипт: **head**, **Worker**или **ZooKeeper**. |
     | Параметры |Укажите параметры, если они требуются для сценария. |
@@ -241,7 +241,7 @@ Status            : Succeeded
 
 ### <a name="apply-a-script-action-to-a-running-cluster-from-azure-powershell"></a>Применение действия сценария в работающем кластере с помощью Azure PowerShell
 
-Для использования этих команд PowerShell необходим [модуль AZ](https://docs.microsoft.com/powershell/azure/overview). Следующий пример демонстрирует применение действия сценария к работающему кластеру:
+Для использования этих команд PowerShell необходим [модуль AZ](https://docs.microsoft.com/powershell/azure/). Следующий пример демонстрирует применение действия сценария к работающему кластеру:
 
 [!code-powershell[main](../../powershell_scripts/hdinsight/use-script-action/use-script-action.ps1?range=105-117)]
 
@@ -306,7 +306,7 @@ NodeTypes       : {HeadNode, WorkerNode}
 
 ### <a name="azure-powershell"></a>Azure PowerShell
 
-| командлет | Функция |
+| командлет | Компонент |
 | --- | --- |
 | `Get-AzHDInsightPersistedScriptAction` |Получение сведений о действиях сохраняемого сценария Этот командлет не отменяет действия, выполняемые сценарием, он удаляет только флаг PERSISTED.|
 | `Get-AzHDInsightScriptActionHistory` |Получение журнала действий сценариев, применяемых в кластере, или сведений о конкретном сценарии. |
@@ -319,7 +319,7 @@ NodeTypes       : {HeadNode, WorkerNode}
 
 ### <a name="azure-cli"></a>Azure CLI
 
-| Get-Help | Описание |
+| Команда | Описание |
 | --- | --- |
 | [`az hdinsight script-action delete`](https://docs.microsoft.com/cli/azure/hdinsight/script-action?view=azure-cli-latest#az-hdinsight-script-action-delete) |Удаляет указанное действие сохраненного скрипта в кластере. Эта команда не отменяет действия, выполненные сценарием, но удаляет только флаг PERSISTED.|
 |[`az hdinsight script-action execute`](https://docs.microsoft.com/cli/azure/hdinsight/script-action?view=azure-cli-latest#az-hdinsight-script-action-execute)|Для выполнения действий скриптов в указанном кластере HDInsight.|
@@ -335,7 +335,7 @@ NodeTypes       : {HeadNode, WorkerNode}
 > [!NOTE]  
 > В этом примере также показано, как установить приложение HDInsight с помощью пакета SDK для .NET.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Разработка действий сценариев с помощью HDInsight](hdinsight-hadoop-script-actions-linux.md)
 * [Добавление дополнительных учетных записей хранения Azure в HDInsight](hdinsight-hadoop-add-storage.md)

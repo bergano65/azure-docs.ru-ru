@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/28/2020
-ms.openlocfilehash: 3756e7d1f58c37038347888a21d98326cd4eb71f
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 8ab181eb72b5a3ab54ad8dba19d23288926b8969
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86087458"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87006319"
 ---
 # <a name="use-azure-storage-shared-access-signatures-to-restrict-access-to-data-in-hdinsight"></a>Использование подписанных URL-адресов хранилища Azure для ограничения доступа к данным в HDInsight
 
@@ -31,7 +31,7 @@ HDInsight имеет полный доступ к данным в учетных
 
 * Существующий [контейнер хранилища](../storage/blobs/storage-quickstart-blobs-portal.md).  
 
-* При использовании PowerShell вам потребуется [модуль Az](https://docs.microsoft.com/powershell/azure/overview).
+* При использовании PowerShell вам потребуется [модуль Az](https://docs.microsoft.com/powershell/azure/).
 
 * Если вы хотите использовать Azure CLI и еще не установили его, обратитесь к разделу [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
@@ -50,7 +50,7 @@ HDInsight имеет полный доступ к данным в учетных
   * Сценарий PowerShell, способный создать кластер HDInsight и настроить его для использования SAS. Обновленная версия используется далее.
   * Пример файла:`hdinsight-dotnet-python-azure-storage-shared-access-signature-master\sampledata\sample.log`
 
-## <a name="shared-access-signatures"></a>Подписи коллективного доступа
+## <a name="shared-access-signatures"></a>Подписанные URL-адреса
 
 Существуют две формы подписанных URL-адресов:
 
@@ -211,7 +211,7 @@ Set-AzStorageblobcontent `
 
 3. Выберите **Параметры** и добавьте значения для следующих записей:
 
-    |Item |Описание: |
+    |Элемент |Описание |
     |---|---|
     |StorageConnectionString|Строка подключения к учетной записи хранения, для которой необходимо создать хранимую политику и SAS. Требуется формат: `DefaultEndpointsProtocol=https;AccountName=myaccount;AccountKey=mykey`, где `myaccount` — это имя вашей учетной записи хранения, а `mykey` — ключ к учетной записи хранения.|
     |ContainerName;|Контейнер в учетной записи хранения, доступ к которому необходимо ограничить.|
@@ -433,7 +433,7 @@ Remove-AzResourceGroup `
 
     На этот раз операция должна завершиться успешно.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали, как добавить хранилище с ограниченным доступом в кластер HDInsight, Узнайте о других способах работы с данными в кластере:
 

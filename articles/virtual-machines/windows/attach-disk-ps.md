@@ -7,11 +7,12 @@ ms.topic: how-to
 ms.date: 10/16/2018
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 6f16784d89d1f3edec491d5c7ae312dbd46212f1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6be91be4d1189fb99ffa39ec96d555d4534cdb2b
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84658135"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87005741"
 ---
 # <a name="attach-a-data-disk-to-a-windows-vm-with-powershell"></a>Подключение диска данных к виртуальной машине Windows с помощью PowerShell
 
@@ -20,9 +21,9 @@ ms.locfileid: "84658135"
 Во-первых, ознакомьтесь со следующими советами:
 
 * Размер виртуальной машины определяет, сколько дисков данных к ней можно подключить. Дополнительные сведения см. в статье [размеры виртуальных машин](sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
-* Для использования хранилища категории "Премиум" (SSD) необходима [виртуальная машина соответствующего типа](sizes-memory.md), например серии DS или GS.
+* Для использования хранилища категории "Премиум" (SSD) необходима [виртуальная машина соответствующего типа](../sizes-memory.md), например серии DS или GS.
 
-В этой статье используется PowerShell в [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview), который постоянно обновляется до последней версии. Чтобы открыть Cloud Shell, выберите **Попробовать** в верхнем углу любого блока кода.
+В этой статье используется PowerShell в [Azure Cloud Shell](../../cloud-shell/overview.md), который постоянно обновляется до последней версии. Чтобы открыть Cloud Shell, выберите **Попробовать** в верхнем углу любого блока кода.
 
 ## <a name="add-an-empty-data-disk-to-a-virtual-machine"></a>Добавление пустого диска данных в виртуальную машину
 
@@ -48,7 +49,7 @@ Update-AzVM -VM $vm -ResourceGroupName $rgName
 
 ### <a name="using-managed-disks-in-an-availability-zone"></a>Использование управляемых дисков в зоне доступности
 
-Чтобы создать диск в зоне доступности, запустите командлет [New-AzDiskConfig](https://docs.microsoft.com/powershell/module/az.compute/new-azdiskconfig) с параметром `-Zone`. В следующем примере создается диск в зоне *1*.
+Чтобы создать диск в зоне доступности, запустите командлет [New-AzDiskConfig](/powershell/module/az.compute/new-azdiskconfig) с параметром `-Zone`. В следующем примере создается диск в зоне *1*.
 
 ```powershell
 $rgName = 'myResourceGroup'
@@ -68,7 +69,7 @@ Update-AzVM -VM $vm -ResourceGroupName $rgName
 
 ### <a name="initialize-the-disk"></a>Инициализировать диск
 
-После добавления пустого диска его необходимо инициализировать. Чтобы инициализировать этот диск, можно войти в содержащую его виртуальную машину и использовать средство управления дисками. Если при создании виртуальной машины вы установили на нее [WinRM](https://docs.microsoft.com/windows/desktop/WinRM/portal) и сертификат, то вы можете инициализировать диск удаленно с помощью PowerShell. Можно также использовать расширение пользовательского сценария.
+После добавления пустого диска его необходимо инициализировать. Чтобы инициализировать этот диск, можно войти в содержащую его виртуальную машину и использовать средство управления дисками. Если при создании виртуальной машины вы установили на нее [WinRM](/windows/desktop/winrm/portal) и сертификат, то вы можете инициализировать диск удаленно с помощью PowerShell. Можно также использовать расширение пользовательского сценария.
 
 ```azurepowershell-interactive
     $location = "location-name"
@@ -114,6 +115,6 @@ $vm = Add-AzVMDataDisk -CreateOption Attach -Lun 0 -VM $vm -ManagedDiskId $disk.
 Update-AzVM -VM $vm -ResourceGroupName $rgName
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы также можете развернуть управляемые диски с помощью шаблонов. Дополнительные сведения см. в статьях [Использование управляемых дисков в](using-managed-disks-template-deployments.md) шаблонах Azure Resource Manager или [шаблон](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-multiple-data-disk) быстрого запуска для развертывания нескольких дисков данных.

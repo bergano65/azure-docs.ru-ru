@@ -7,12 +7,12 @@ ms.service: web-application-firewall
 ms.topic: article
 ms.date: 03/26/2020
 ms.author: tyao
-ms.openlocfilehash: 077f127648688b25d45b433fa2bc94ee011b3f2d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f41dc688996b2431060a3cde209ca1ed4a21fe8c
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80336070"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87005622"
 ---
 # <a name="configure-an-ip-restriction-rule-with-a-web-application-firewall-for-azure-front-door"></a>Настройка правила ограничения IP-адресов с помощью брандмауэра веб-приложения для передней дверцы Azure
 
@@ -24,14 +24,14 @@ ms.locfileid: "80336070"
 
 ## <a name="configure-a-waf-policy-with-the-azure-portal"></a>Настройка политики WAF с помощью портал Azure
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Обязательные условия
 
 Создайте профиль передней дверцы Azure, следуя инструкциям, описанным в разделе [Краткое руководство. Создание передней дверцы для глобального веб-приложения высокой доступности](../../frontdoor/quickstart-create-front-door.md).
 
 ### <a name="create-a-waf-policy"></a>Создание политики WAF
 
 1. На портал Azure выберите **создать ресурс**, введите **брандмауэр веб-приложения** в поле поиска, а затем выберите **БРАНДМАУЭР веб-приложения (WAF)**.
-2. Нажмите кнопку **создания**.
+2. Выберите **Создать**.
 3. На странице **Создание политики WAF** используйте следующие значения для заполнения вкладки " **основные** ":
    
    |Параметр  |Значение  |
@@ -40,7 +40,7 @@ ms.locfileid: "80336070"
    |Подписка     |Выберите свою подписку.|
    |Группа ресурсов     |Выберите группу ресурсов, в которой находится Передняя дверца.|
    |Имя политики     |Введите имя политики|
-   |Состояние политики     |Включено|
+   |Состояние политики     |Активировано|
 
    Нажмите кнопку **Далее: параметры политики.**
 
@@ -53,7 +53,7 @@ ms.locfileid: "80336070"
    |Параметр  |Значение  |
    |---------|---------|
    |Имя настраиваемого правила     |фдвафкуструле|
-   |Состояние     |Включено|
+   |Состояние     |Активировано|
    |Тип правила     |Соответствие|
    |Приоритет    |100|
    |Тип соответствия     |IP-адрес|
@@ -68,7 +68,7 @@ ms.locfileid: "80336070"
 6. Выберите **Далее: Ассоциация**.
 7. Выберите **добавить интерфейсный узел**.
 8. В качестве **внешнего узла**выберите интерфейсный узел и щелкните **Добавить**.
-9. Выберите **Review + create** (Просмотреть и создать).
+9. Выберите **Просмотр и создание**.
 10. После завершения проверки политики выберите **создать**.
 
 ### <a name="test-your-waf-policy"></a>Тестирование политики WAF
@@ -83,7 +83,7 @@ ms.locfileid: "80336070"
 
 ## <a name="configure-a-waf-policy-with-the-azure-cli"></a>Настройка политики WAF с помощью Azure CLI
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Обязательные условия
 Прежде чем приступить к настройке политики ограничения IP-адресов, настройте среду CLI и создайте профиль передней дверцы Azure.
 
 #### <a name="set-up-the-azure-cli-environment"></a>Настройка среды Azure CLI
@@ -162,13 +162,13 @@ az network front-door waf-policy rule match-condition add \
 
 ## <a name="configure-a-waf-policy-with-azure-powershell"></a>Настройка политики WAF с Azure PowerShell
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Обязательные условия
 Прежде чем приступить к настройке политики ограничения IP-адресов, настройте среду PowerShell и создайте профиль передней дверцы Azure.
 
 #### <a name="set-up-your-powershell-environment"></a>Настройка среды PowerShell
 Azure PowerShell предоставляет набор командлетов, использующих модель [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) для управления ресурсами Azure.
 
-Вы можете установить [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview) на локальном компьютере и использовать его в любом сеансе PowerShell. Следуйте инструкциям на странице, чтобы войти в PowerShell с помощью учетных данных Azure, а затем установите модуль AZ.
+Вы можете установить [Azure PowerShell](https://docs.microsoft.com/powershell/azure/) на локальном компьютере и использовать его в любом сеансе PowerShell. Следуйте инструкциям на странице, чтобы войти в PowerShell с помощью учетных данных Azure, а затем установите модуль AZ.
 
 1. Подключитесь к Azure с помощью следующей команды, а затем используйте интерактивное диалоговое окно для входа.
     ```

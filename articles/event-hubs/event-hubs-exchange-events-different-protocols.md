@@ -3,12 +3,12 @@ title: Концентраторы событий Azure — обмен событ
 description: В этой статье показано, как через Центры событий Azure организовать обмен событиями между потребителями и производителями, которые используют разные протоколы (AMQP, Apache Kafka и HTTPS).
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: ec3122dcf151fe3e7b7b9578725e810ddca22bdf
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6cdc4b9040f314b4ec41f84cc7436f0f2e3d6af6
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85320610"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87002511"
 ---
 # <a name="exchange-events-between-consumers-and-producers-that-use-different-protocols-amqp-kafka-and-https"></a>Обмен событиями через Центры событий Azure между потребителями и производителями, использующими разные протоколы (AMQP, Apache Kafka и HTTPS).
 Центры событий Azure поддерживают для потребителей и производителей три протокола: AMQP, Kafka и HTTPS. В каждом из этих протоколов описан собственный способ представления сообщений, что приводит нас к логичному вопросу: как будут выглядеть разные компоненты и значения события при поступлении к потребителю, если в Центр событий они отправлялись по одному протоколу, а потребитель использовал для получения другой протокол? В этой статье обсуждаются современные рекомендации для производителей и потребителей, которые позволяют обеспечить правильную обработку потребителем всех значений в событии.
@@ -331,7 +331,7 @@ String myStringProperty = new String(rawbytes, StandardCharsets.UTF_8);
 ## <a name="next-steps"></a>Дальнейшие действия
 Из этой статьи вы узнали, как выполнять потоковую передачу данных в Центры событий без необходимости менять клиенты протоколов или запускать собственные кластеры. Дополнительные сведения о Центрах событий и Центрах событий для Kafka см. в следующих статьях:  
 
-* [Сведения о Центрах событий](event-hubs-what-is-event-hubs.md)
+* [Сведения о Центрах событий](./event-hubs-about.md)
 * [Azure Event Hubs for Apache Kafka (preview)](event-hubs-for-kafka-ecosystem-overview.md) (Центры событий Azure для Apache Kafka (предварительный просмотр))
 * [Дополнительные примеры для службы "Центры событий" для Kafka на сайте GitHub](https://github.com/Azure/azure-event-hubs-for-kafka)
 * Используйте [MirrorMaker](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=27846330) для [потоковой передачи событий из Kafka в локальной среде в концентраторы событий в облаке.](event-hubs-kafka-mirror-maker-tutorial.md)

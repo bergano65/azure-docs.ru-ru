@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/04/2019
+ms.date: 07/17/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 4297ee64742b81e86eb8b85c0a6c405fac07d67f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 79807e8e0f798a73063576a00b8d0c32cdfe5a4b
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85386170"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87005350"
 ---
 # <a name="set-redirect-urls-to-b2clogincom-for-azure-active-directory-b2c"></a>Установка b2clogin.com в качестве URL-адреса перенаправления для Azure Active Directory B2C
 
@@ -58,7 +58,7 @@ ms.locfileid: "85386170"
 https://{your-tenant-name}.b2clogin.com/{your-tenant-id}/oauth2/authresp
 ```
 
-Во втором варианте используется доменное имя клиента в формате `your-tenant-name.onmicrosoft.com` . Пример:
+Во втором варианте используется доменное имя клиента в формате `your-tenant-name.onmicrosoft.com` . Например.
 
 ```
 https://{your-tenant-name}.b2clogin.com/{your-tenant-name}.onmicrosoft.com/oauth2/authresp
@@ -89,29 +89,47 @@ https://contosob2c.b2clogin.com/00000000-0000-0000-0000-000000000000/B2C_1_signu
 
 ## <a name="microsoft-authentication-library-msal"></a>Библиотека проверки подлинности Майкрософт (MSAL)
 
-### <a name="validateauthority-property"></a>Валидатеаусорити, свойство
+### <a name="msalnet-validateauthority-property"></a>MSAL.NET Валидатеаусорити, свойство
 
-Если вы используете [MSAL.NET][msal-dotnet] v2 или более раннюю версию, установите свойство **валидатеаусорити** в значение `false` On Client, чтобы разрешить перенаправление в *b2clogin.com*. Этот параметр не является обязательным для MSAL.NET v3 и более поздних версий.
+Если вы используете [MSAL.NET][msal-dotnet] v2 или более раннюю версию, установите свойство **валидатеаусорити** в значение `false` On Client, чтобы разрешить перенаправление в *b2clogin.com*. Установка этого значения в `false` MSAL.NET v3 и более поздних версий не требуется.
 
 ```csharp
 ConfidentialClientApplication client = new ConfidentialClientApplication(...); // Can also be PublicClientApplication
 client.ValidateAuthority = false; // MSAL.NET v2 and earlier **ONLY**
 ```
 
-Если вы используете [MSAL для JavaScript][msal-js]:
+### <a name="msal-for-javascript-validateauthority-property"></a>MSAL для свойства Валидатеаусорити JavaScript
+
+Если вы используете [MSAL для JavaScript][msal-js] v 1.2.2 или более ранней версии, задайте для свойства **валидатеаусорити** значение `false` .
 
 ```JavaScript
+// MSAL.js v1.2.2 and earlier
 this.clientApplication = new UserAgentApplication(
   env.auth.clientId,
   env.auth.loginAuthority,
   this.authCallback.bind(this),
   {
-    validateAuthority: false
+    validateAuthority: false // Required in MSAL.js v1.2.2 and earlier **ONLY**
   }
 );
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+Если задано значение `validateAuthority: true` в MSAL.js 1.3.0 + (значение по умолчанию), необходимо также указать допустимый издатель маркера с помощью `knownAuthorities` :
+
+```JavaScript
+// MSAL.js v1.3.0+
+this.clientApplication = new UserAgentApplication(
+  env.auth.clientId,
+  env.auth.loginAuthority,
+  this.authCallback.bind(this),
+  {
+    validateAuthority: true, // Supported in MSAL.js v1.3.0+
+    knownAuthorities: ['tenant-name.b2clogin.com'] // Required if validateAuthority: true
+  }
+);
+```
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о миграции веб-приложений на основе OWIN в b2clogin.com см. в статье [Миграция веб-API на основе OWIN в b2clogin.com](multiple-token-endpoints.md).
 

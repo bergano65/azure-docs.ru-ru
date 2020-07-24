@@ -5,12 +5,12 @@ author: tfitzmac
 ms.topic: conceptual
 ms.date: 09/05/2018
 ms.author: tomfitz
-ms.openlocfilehash: 31e9e88bc37dc19d1d81dc55d52786de60706313
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: c4eb3972be85ac7e291380f64127c20424b0d0f0
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86134546"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87004292"
 ---
 # <a name="microsoftcommonfileupload-ui-element"></a>Элемент пользовательского интерфейса Microsoft.Common.FileUpload
 
@@ -18,7 +18,7 @@ ms.locfileid: "86134546"
 
 ## <a name="ui-sample"></a>Пример элемента пользовательского интерфейса
 
-![Элемент пользовательского интерфейса Microsoft.Common.FileUpload](./media/managed-application-elements/microsoft.common.fileupload.png)
+![Элемент пользовательского интерфейса Microsoft.Common.FileUpload](./media/managed-application-elements/microsoft-common-fileupload.png)
 
 ## <a name="schema"></a>схема
 
@@ -78,7 +78,7 @@ ms.locfileid: "86134546"
 
 При тестировании определения CreateUiDefinition некоторые браузеры (например, Google Chrome) обрезают ULR-адреса, созданные элементом Microsoft.Common.FileUpload, в консоли браузера. Чтобы скопировать полные URL-адреса, вам может потребоваться щелкнуть правой кнопкой мыши отдельные ссылки.
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Комментарии
 
 - `constraints.accept` — указывает типы файлов, которые отображаются в файловом диалоговом окне браузера. Сведения о допустимых значениях см. в [спецификации HTML5](https://html.spec.whatwg.org/multipage/input.html#attr-input-accept). Значение по умолчанию — **null**.
 - Если `options.multiple` имеет значение **true**, пользователь может выбрать несколько файлов в файловом диалоговом окне браузера. Значение по умолчанию — **false**.

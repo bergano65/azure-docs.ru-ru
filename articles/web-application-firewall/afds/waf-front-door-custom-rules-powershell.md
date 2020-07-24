@@ -7,11 +7,12 @@ ms.service: web-application-firewall
 ms.topic: article
 ms.date: 09/05/2019
 ms.author: victorh
-ms.openlocfilehash: 493ed1a31a23366a90b80d3ab510218c8dce0e9c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 40f0195ced375da09891eb577bd81f36b2f37cba
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "74186634"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87005554"
 ---
 # <a name="configure-a-web-application-firewall-policy-using-azure-powershell"></a>Настройка политики брандмауэра веб-приложения с помощью Azure PowerShell
 
@@ -28,7 +29,7 @@ ms.locfileid: "74186634"
 
 В Azure PowerShell доступен набор командлетов, которые используют модель [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) для управления ресурсами Azure. 
 
-Вы можете установить [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview) на локальном компьютере и использовать его в любом сеансе PowerShell. Выполните инструкции на странице, чтобы войти с помощью учетных данных Azure, и установите команду AZ PowerShell Module.
+Вы можете установить [Azure PowerShell](https://docs.microsoft.com/powershell/azure/) на локальном компьютере и использовать его в любом сеансе PowerShell. Выполните инструкции на странице, чтобы войти с помощью учетных данных Azure, и установите команду AZ PowerShell Module.
 
 #### <a name="sign-in-to-azure"></a>Вход в Azure
 
@@ -109,7 +110,7 @@ $myWAFPolicy=New-AzFrontDoorWafPolicy -Name $policyName -ResourceGroupName $reso
 > [!NOTE]
 > Свойство *вебаппликатионфиреваллполицилинк* необходимо установить только один раз, чтобы связать политику безопасности с внешним интерфейсом передней дверцы. Последующие обновления политики автоматически применяются к интерфейсной части.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [передней дверце](../../frontdoor/front-door-overview.md) 
 - Дополнительные сведения о [WAF с помощью передней дверцы](afds-overview.md)

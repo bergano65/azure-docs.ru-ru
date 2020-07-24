@@ -14,12 +14,12 @@ ms.workload: iaas-sql-server
 ms.date: 12/21/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 2c5ef71059fd3ba96299624818a13ebe1ae0929b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2a25625e085ee07a2dc036fd40f70e6b0376b42a
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84737858"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87003888"
 ---
 # <a name="how-to-use-azure-powershell-to-provision-sql-server-on-azure-virtual-machines"></a>Использование Azure PowerShell для инициализации SQL Server на виртуальных машинах Azure
 
@@ -152,7 +152,7 @@ New-AzResourceGroup -Name $ResourceGroupName -Location $Location
 
 ## <a name="create-a-storage-account"></a>Создание учетной записи хранения
 
-Виртуальной машине требуются ресурсы хранения для диска операционной системы, а также файлов данных и журналов SQL Server. Для упрощения создайте один диск для всех ресурсов. Позже можно будет подключить дополнительные диски, выполнив командлет [Add-Azure Disk](https://docs.microsoft.com/powershell/module/servicemanagement/azure/add-azuredisk), чтобы поместить файлы данных и журналов SQL Server на выделенные диски. Чтобы создать стандартную учетную запись хранения в новой группе ресурсов, используйте командлет [New-AzStorageAccount](https://docs.microsoft.com/powershell/module/az.storage/new-azstorageaccount). Укажите переменные, которые ранее были инициализированы для имени учетной записи хранения, имени SKU хранилища и расположения.
+Виртуальной машине требуются ресурсы хранения для диска операционной системы, а также файлов данных и журналов SQL Server. Для упрощения создайте один диск для всех ресурсов. Позже можно будет подключить дополнительные диски, выполнив командлет [Add-Azure Disk](/powershell/module/servicemanagement/azure.service/add-azuredisk), чтобы поместить файлы данных и журналов SQL Server на выделенные диски. Чтобы создать стандартную учетную запись хранения в новой группе ресурсов, используйте командлет [New-AzStorageAccount](https://docs.microsoft.com/powershell/module/az.storage/new-azstorageaccount). Укажите переменные, которые ранее были инициализированы для имени учетной записи хранения, имени SKU хранилища и расположения.
 
 Выполните этот командлет, чтобы создать учетную запись хранения.
 
