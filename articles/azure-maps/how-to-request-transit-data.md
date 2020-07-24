@@ -1,20 +1,20 @@
 ---
 title: Запрос транзитных данных | Карты Microsoft Azure
 description: В этой статье вы узнаете, как запросить общие транзитные данные с помощью службы мобильности Microsoft Azure Maps.
-author: philmea
-ms.author: philmea
+author: anastasia-ms
+ms.author: v-stharr
 ms.date: 09/06/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: 135da2102b77f1d6a94b4458e10fba8c4f2b8534
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: c50a3cee3cf4d0ac7aa55eb4e9d80e97e5248876
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86517507"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87126556"
 ---
 # <a name="request-public-transit-data-using-the-azure-maps-mobility-service"></a>Запрос общедоступных транзитных данных с помощью службы Azure Maps Mobility Service 
 
@@ -28,7 +28,7 @@ ms.locfileid: "86517507"
 * Запрос на перенаправление геометрического маршрута и подробное расписание для маршрута с помощью [API-интерфейса для получения пути](https://aka.ms/https://azure.microsoft.com/services/azure-maps/).
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Сначала необходимо иметь учетную запись Azure Maps и ключ подписки, чтобы выполнять вызовы Azure Maps общедоступных транзитных API. Для получения сведений следуйте инструкциям в разделе [Создание учетной записи](quick-demo-map-app.md#create-an-azure-maps-account) для создания учетной записи Azure Maps. Выполните действия, описанные в разделе [Получение первичного ключа](quick-demo-map-app.md#get-the-primary-key-for-your-account) , чтобы получить первичный ключ для вашей учетной записи. Дополнительные сведения о проверке подлинности в Azure Maps см. в [этой статье](./how-to-manage-authentication.md).
 
