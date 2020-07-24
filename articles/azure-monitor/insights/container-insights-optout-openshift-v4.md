@@ -3,12 +3,12 @@ title: Как отключить мониторинг кластера Azure и 
 description: В этой статье описывается, как можно отключить мониторинг кластера OpenShift для Azure Red Hat и Red Hat OpenShift версии 4 с Azure Monitor для контейнеров.
 ms.topic: conceptual
 ms.date: 04/24/2020
-ms.openlocfilehash: 768c4db8d72778b555a4f343cf2e23b8fa861991
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bf61457b9c8cff40eb3fee2c93c7184fbaae6db5
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82196443"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87091153"
 ---
 # <a name="how-to-stop-monitoring-your-azure-and-red-hat-openshift-v4-cluster"></a>Как отключить мониторинг кластера Azure и Red Hat OpenShift v4
 
@@ -49,4 +49,4 @@ ms.locfileid: "82196443"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Если Рабочая область Log Analytics создана только для поддержки мониторинга кластера и больше не нужна, ее необходимо удалить вручную. Если вы не знакомы с удалением рабочей области, см. статью [удаление log Analytics рабочей области Azure](../../log-analytics/log-analytics-manage-del-workspace.md).
+Если Рабочая область Log Analytics создана только для поддержки мониторинга кластера и больше не нужна, ее необходимо удалить вручную. Если вы не знакомы с удалением рабочей области, см. статью [удаление log Analytics рабочей области Azure](../platform/delete-workspace.md).

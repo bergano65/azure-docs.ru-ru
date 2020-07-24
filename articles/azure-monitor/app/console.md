@@ -4,12 +4,12 @@ description: Отслеживайте доступность, производи
 ms.topic: conceptual
 ms.date: 05/21/2020
 ms.reviewer: lmolkova
-ms.openlocfilehash: d3d1d8aafaea8dcb9e67b842acfbd493e02e4854
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 955988cd16af5269c474061cf60fb18a040909e3
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86086251"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87091238"
 ---
 # <a name="application-insights-for-net-console-applications"></a>Application Insights для консольных приложений .NET
 
@@ -18,7 +18,7 @@ ms.locfileid: "86086251"
 Вам потребуется подписка [Microsoft Azure](https://azure.com). Войдите с помощью учетной записи Майкрософт, которую вы, возможно, уже используете для Windows, XBox Live или других облачных служб Майкрософт. Возможно, у вашей группы есть подписка организации Azure: попросите ее владельца добавить вас к ней с помощью вашей учетной записи Майкрософт.
 
 > [!NOTE]
-> Для любых консольных приложений *настоятельно рекомендуется* использовать пакет [Microsoft. ApplicationInsights. воркерсервице](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WorkerService) и [связанные с ним](../../azure-monitor/app/worker-service.md) инструкции. Этот пакет предназначен [`NetStandard2.0`](https://docs.microsoft.com/dotnet/standard/net-standard) для использования и поэтому может использоваться в .NET Core 2,1 или более поздней версии, а также .NET Framework 4.7.2 или более поздней версии.
+> Для любых консольных приложений *настоятельно рекомендуется* использовать пакет [Microsoft. ApplicationInsights. воркерсервице](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WorkerService) и [связанные с ним](../../azure-monitor/app/worker-service.md) инструкции. Этот пакет предназначен [`NetStandard2.0`](/dotnet/standard/net-standard) для использования и поэтому может использоваться в .NET Core 2,1 или более поздней версии, а также .NET Framework 4.7.2 или более поздней версии.
 
 ## <a name="getting-started"></a>Начало работы
 

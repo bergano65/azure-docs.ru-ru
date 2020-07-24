@@ -5,20 +5,20 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 11/26/2019
+ms.date: 07/20/2020
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: f6f4978ef2b6ddc487f60e6a1193164ec07e5548
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3f4ab13c893ec7125ae720cae63b0c1e45f6f3de
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84809103"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87091289"
 ---
 # <a name="specify-a-customer-provided-key-on-a-request-to-blob-storage-with-net"></a>Указание предоставленного клиентом ключа для запроса к хранилищу BLOB-объектов с помощью .NET
 
-Клиенты, выполняющие запросы к хранилищу BLOB-объектов Azure, имеют возможность предоставить ключ шифрования для отдельного запроса. Включение ключа шифрования в запрос обеспечивает детальный контроль над параметрами шифрования для операций с хранилищем BLOB-объектов. Предоставленные клиентом ключи (Предварительная версия) можно хранить в Azure Key Vault или в другом хранилище ключей.
+Клиенты, выполняющие запросы к хранилищу BLOB-объектов Azure, имеют возможность предоставить ключ шифрования для отдельного запроса. Включение ключа шифрования в запрос обеспечивает детальный контроль над параметрами шифрования для операций с хранилищем BLOB-объектов. Предоставляемые клиентом ключи могут храниться в Azure Key Vault или в другом хранилище ключей.
 
 В этой статье показано, как указать предоставленный клиентом ключ для запроса с помощью .NET.
 
@@ -72,7 +72,7 @@ async static Task UploadBlobWithClientKey(string accountName, string containerNa
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Шифрование службы хранилища Azure для неактивных данных](../common/storage-service-encryption.md)
 - [Авторизация доступа к BLOB-объектам и очередям с Azure Active Directory и управляемыми удостоверениями для ресурсов Azure](../common/storage-auth-aad-msi.md)

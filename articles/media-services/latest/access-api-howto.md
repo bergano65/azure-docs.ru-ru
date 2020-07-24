@@ -13,11 +13,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 05/21/2020
 ms.author: juliako
-ms.openlocfilehash: 9788c4663908497b51fbaaf7f824125d857e7c81
-ms.sourcegitcommit: 318d1bafa70510ea6cdcfa1c3d698b843385c0f6
+ms.openlocfilehash: 33c762e2f2a9bed90991f7b85e0fb83fbb43765c
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83774412"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87090167"
 ---
 # <a name="get-credentials-to-access-media-services-api"></a>Получение учетных данных для доступа к API служб мультимедиа  
 
@@ -55,7 +56,7 @@ ms.locfileid: "83774412"
 
 В разделе **Управление приложением AAD и секретным ключом** можно выбрать или создать новое приложение Azure AD и создать секретный ключ. В целях безопасности секретный ключ не отображается после закрытия колонки. Приложение использует идентификатор приложения и секретный ключ проверки подлинности для получения действующего токена для служб мультимедиа.
 
-Необходимо иметь достаточные разрешения для регистрации приложения в арендаторе Azure AD и назначения приложению роли в подписке Azure. Дополнительные сведения см. в разделе [Требуемые разрешения](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#required-permissions).
+Необходимо иметь достаточные разрешения для регистрации приложения в арендаторе Azure AD и назначения приложению роли в подписке Azure. Дополнительные сведения см. в разделе [Требуемые разрешения](../../active-directory/develop/howto-create-service-principal-portal.md#permissions-required-for-registering-an-app).
 
 #### <a name="connect-to-media-services-api"></a>Подключение к API служб мультимедиа
 

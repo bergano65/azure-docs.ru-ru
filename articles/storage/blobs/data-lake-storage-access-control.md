@@ -8,11 +8,12 @@ ms.topic: conceptual
 ms.date: 03/16/2020
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: 4f5be29dd42b03e86abb2be392ea42f875536fb5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5d478723af7d13cc3480f6c2a80bf9b76ba4b84f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84193525"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87091357"
 ---
 # <a name="access-control-in-azure-data-lake-storage-gen2"></a>Управление доступом в Azure Data Lake Storage 2-го поколения
 
@@ -64,9 +65,9 @@ Azure Data Lake Storage 2-го поколения поддерживает об�
 
 Сведения о задании разрешений на уровне файлов и каталогов см. в следующих статьях:
 
-|||
+| Среда | Статья |
 |--------|-----------|
-|Обозреватель службы хранилища Azure |[Использование Обозреватель службы хранилища Azure для управления каталогами, файлами и списками ACL в Azure Data Lake Storage 2-го поколения](data-lake-storage-explorer.md#managing-access)|
+|Обозреватель службы хранилища Azure |[Использование Обозревателя службы хранилища Azure для управления каталогами, файлами и списками управления доступом в Azure Data Lake Storage 2-го поколения](data-lake-storage-explorer.md#managing-access)|
 |.NET |[Использование .NET для управления каталогами, файлами и списками ACL в Azure Data Lake Storage 2-го поколения](data-lake-storage-directory-file-acl-dotnet.md)|
 |Java|[Использование Java для управления каталогами, файлами и списками ACL в Azure Data Lake Storage 2-го поколения](data-lake-storage-directory-file-acl-java.md)|
 |Python|[Использование Python для управления каталогами, файлами и списками ACL в Azure Data Lake Storage 2-го поколения](data-lake-storage-directory-file-acl-python.md)|
@@ -292,7 +293,7 @@ def set_default_acls_for_new_child(parent, child):
 
 - У вызывающего пользователя есть разрешения "суперпользователя",
 
-либо
+Или
 
 - Для родительского каталога требуются разрешения на запись и выполнение.
 - Чтобы удалить каталог и все вложенные в него каталоги, требуются разрешения на чтение, запись и выполнение.
@@ -347,6 +348,6 @@ az ad sp show --id 18218b12-1895-43e9-ad80-6e8fc1ea88ce --query objectId
 * [POSIX ACL on Ubuntu](https://help.ubuntu.com/community/FilePermissionsACLs) (POSIX ACL для Ubuntu)
 * [ACL с использованием списков управления доступом в Linux](https://bencane.com/2012/05/27/acl-using-access-control-lists-on-linux/)
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 
 * [Общие сведения об Azure Data Lake Storage 2-го поколения](../blobs/data-lake-storage-introduction.md)

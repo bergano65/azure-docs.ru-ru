@@ -7,10 +7,11 @@ ms.topic: conceptual
 ms.date: 12/02/2019
 ms.author: tisande
 ms.openlocfilehash: 5b2801b0a71f04803955e9d8bc18a97133019996
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79246556"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87090779"
 ---
 # <a name="working-with-arrays-and-objects-in-azure-cosmos-db"></a>Работа с массивами и объектами в Azure Cosmos DB
 
@@ -25,7 +26,7 @@ ms.locfileid: "79246556"
     FROM Families f
 ```
 
-Результаты:
+Вы получите такие результаты:
 
 ```json
     [
@@ -60,7 +61,7 @@ API SQL обеспечивает поддержку итерации по мас
     FROM Families.children
 ```
 
-Результаты:
+Вы получите такие результаты:
 
 ```json
     [
@@ -96,7 +97,7 @@ API SQL обеспечивает поддержку итерации по мас
     FROM c IN Families.children
 ```
 
-Результаты:
+Вы получите такие результаты:
 
 ```json
     [
@@ -129,7 +130,7 @@ API SQL обеспечивает поддержку итерации по мас
     WHERE c.grade = 8
 ```
 
-Результаты:
+Вы получите такие результаты:
 
 ```json
     [{

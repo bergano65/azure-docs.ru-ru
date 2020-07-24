@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.author: mbaldwin
-ms.openlocfilehash: bb5288d043ab5638bb33c357cea55c64b03fcf1d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d2d4af5086e3cf4099013969cd359f8e11873c6d
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81432129"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87090643"
 ---
 # <a name="provide-key-vault-authentication-with-a-managed-identity"></a>Предоставление Key Vault проверки подлинности с помощью управляемого удостоверения
 
@@ -35,14 +35,14 @@ ms.locfileid: "81432129"
    - [Создание хранилища ключей с помощью Azure PowerShell](../secrets/quick-create-powershell.md)
    - [Создание хранилища ключей с помощью портала Azure](../secrets/quick-create-portal.md)
 - Существующее приложение службы приложений, к которому предоставляется доступ к хранилищу ключей. Его можно быстро создать, выполнив действия, описанные в [документации по службе приложений](../../app-service/overview.md).
-- [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) или [Azure PowerShell](/powershell/azure/overview). Кроме того, можно использовать [портал Azure](https://portal.azure.com).
+- [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) или [Azure PowerShell](/powershell/azure/). Кроме того, можно использовать [портал Azure](https://portal.azure.com).
 
 
 ## <a name="adding-a-system-assigned-identity"></a>Добавление назначаемого системой удостоверения 
 
 Во-первых, необходимо добавить назначенное системой удостоверение в приложение. 
  
-### <a name="azure-portal"></a>Портал Azure 
+### <a name="azure-portal"></a>портал Azure; 
 
 Чтобы настроить управляемое удостоверение на портале, сначала необходимо создать обычное приложение, а затем активировать соответствующую функцию. 
 
@@ -52,7 +52,7 @@ ms.locfileid: "81432129"
 
 1. На вкладке **Назначено системой** для параметра **Состояние** установите значение **Вкл**. Выберите команду **Сохранить**. 
 
-    ![](../media/managed-identity-system-assigned.png)
+   ![Снимок экрана, показывающий сохранение назначенного системой удостоверения.](../media/managed-identity-system-assigned.png)
 
 ### <a name="azure-cli"></a>Azure CLI
 
@@ -86,9 +86,9 @@ az functionapp identity assign --name myApp --resource-group myResourceGroup
   "type": "SystemAssigned"
 }
 ```
-## <a name="grant-your-app-access-to-key-vault"></a>Предоставьте приложению доступ к Key Vault 
+## <a name="grant-your-app-access-to-key-vault"></a>Предоставление приложению доступа к Key Vault 
 
-### <a name="azure-portal"></a>Портал Azure
+### <a name="azure-portal"></a>портал Azure;
 
 1.  Перейдите к Key Vault ресурсу. 
 
@@ -100,7 +100,7 @@ az functionapp identity assign --name myApp --resource-group myResourceGroup
 
 1.  Нажмите кнопку **Добавить** , чтобы завершить добавление новой политики доступа.
 
-    ![](../media/managed-identity-access-policy.png)
+    ![Снимок экрана, показывающий Добавление новой политики доступа в портал Azure.](../media/managed-identity-access-policy.png)
 
 ### <a name="azure-cli"></a>Azure CLI
 

@@ -6,11 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 02/28/2020
-ms.openlocfilehash: 786655f8e8ee7e21f2615361b0bb1ea336ccb479
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 207b597bc865c8234d447759ab8b0f53dc35413c
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84190735"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87090286"
 ---
 # <a name="common-scenarios-examples-tutorials-and-walkthroughs-for-azure-logic-apps"></a>Распространенные сценарии, примеры, учебники и пошаговые руководства для Azure Logic Apps
 
@@ -35,10 +36,10 @@ ms.locfileid: "84190735"
     * [Планирование и выполнение повторяющихся автоматизированных задач, процессов и рабочих процессов с помощью Azure Logic Apps](../logic-apps/concepts-schedule-automated-recurring-tasks-workflows.md)
     * [Учебник. Создание автоматических повторяющихся рабочих процессов на основе расписания с помощью Azure Logic Apps](../logic-apps/tutorial-build-schedule-recurring-logic-app-workflow.md)
 
-  * Триггер **при получении сообщения электронной почты** позволяет приложению логики проверять наличие нового сообщения электронной почты от любого поставщика почты, поддерживаемого Logic Apps, например [Office 365 Outlook](../connectors/connectors-create-api-office365-outlook.md), [Gmail](https://docs.microsoft.com/connectors/gmail/), [Outlook.com](https://docs.microsoft.com/connectors/outlook/)и т. д.
+  * Триггер **при получении сообщения электронной почты** позволяет приложению логики проверять наличие нового сообщения электронной почты от любого поставщика почты, поддерживаемого Logic Apps, например [Office 365 Outlook](../connectors/connectors-create-api-office365-outlook.md), [Gmail](/connectors/gmail/), [Outlook.com](/connectors/outlook/)и т. д.
 
     > [!IMPORTANT]
-    > Только учетные записи для бизнеса G-Suite могут использовать соединитель Gmail без ограничений в приложениях логики. Если у вас есть учетная запись потребителя Gmail, вы можете использовать этот соединитель только с определенными утвержденными Google службами. Кроме того, вы можете [создать клиентское приложение Google, которое будет использоваться для проверки подлинности в соединителе Gmail](https://docs.microsoft.com/connectors/gmail/#authentication-and-bring-your-own-application). Дополнительные сведения см. в статье [Политики безопасности и конфиденциальности данных для соединителей Google в Azure Logic Apps](../connectors/connectors-google-data-security-privacy-policy.md).
+    > Только учетные записи для бизнеса G-Suite могут использовать соединитель Gmail без ограничений в приложениях логики. Если у вас есть учетная запись потребителя Gmail, вы можете использовать этот соединитель только с определенными утвержденными Google службами. Кроме того, вы можете [создать клиентское приложение Google, которое будет использоваться для проверки подлинности в соединителе Gmail](/connectors/gmail/#authentication-and-bring-your-own-application). Дополнительные сведения см. в статье [Политики безопасности и конфиденциальности данных для соединителей Google в Azure Logic Apps](../connectors/connectors-google-data-security-privacy-policy.md).
 
     Дополнительные сведения см. в следующих статьях:<p>
 
@@ -104,11 +105,11 @@ ms.locfileid: "84190735"
 * [Обзор: Автоматизация развертывания приложений логики](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md)
 * [Создание шаблонов Azure Resource Manager для автоматизации развертываний для Azure Logic Apps](../logic-apps/logic-apps-create-azure-resource-manager-templates.md)
 * [Развертывание шаблонов Azure Resource Manager для Azure Logic Apps](../logic-apps/logic-apps-deploy-azure-resource-manager-templates.md)
-* [Пример. подключение к очередям служебной шины Azure из Azure Logic Apps и развертывание с помощью Azure Pipelines в Azure DevOps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/connect-to-azure-service-bus-queues-from-azure-logic-apps-and-deploy-with-azure-devops-pipelines/)
-* [Пример. подключение к учетным записям хранения Azure из Azure Logic Apps и развертывание с помощью Azure Pipelines в Azure DevOps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/connect-to-azure-storage-accounts-from-azure-logic-apps-and-deploy-with-azure-devops-pipelines/)
-* [Пример. Настройка действия приложения-функции для Azure Logic Apps и развертывание с помощью Azure Pipelines в Azure DevOps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/set-up-an-azure-function-app-action-for-azure-logic-apps-and-deploy-with-azure-devops-pipelines/)
-* [Пример. подключение к учетной записи интеграции из Azure Logic Apps и развертывание с помощью Azure Pipelines в Azure DevOps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-deployment-samples/connect-to-an-integration-account-from-azure-logic-apps-and-deploy-by-using-azure-devops-pipelines/)
-* [Пример. Координация Azure Pipelines с помощью Azure Logic Apps](https://docs.microsoft.com/samples/azure-samples/azure-logic-apps-pipeline-orchestration/azure-devops-orchestration-with-logic-apps/)
+* [Пример. подключение к очередям служебной шины Azure из Azure Logic Apps и развертывание с помощью Azure Pipelines в Azure DevOps](/samples/azure-samples/azure-logic-apps-deployment-samples/connect-to-azure-service-bus-queues-from-azure-logic-apps-and-deploy-with-azure-devops-pipelines/)
+* [Пример. подключение к учетным записям хранения Azure из Azure Logic Apps и развертывание с помощью Azure Pipelines в Azure DevOps](/samples/azure-samples/azure-logic-apps-deployment-samples/connect-to-azure-storage-accounts-from-azure-logic-apps-and-deploy-with-azure-devops-pipelines/)
+* [Пример. Настройка действия приложения-функции для Azure Logic Apps и развертывание с помощью Azure Pipelines в Azure DevOps](/samples/azure-samples/azure-logic-apps-deployment-samples/set-up-an-azure-function-app-action-for-azure-logic-apps-and-deploy-with-azure-devops-pipelines/)
+* [Пример. подключение к учетной записи интеграции из Azure Logic Apps и развертывание с помощью Azure Pipelines в Azure DevOps](/samples/azure-samples/azure-logic-apps-deployment-samples/connect-to-an-integration-account-from-azure-logic-apps-and-deploy-by-using-azure-devops-pipelines/)
+* [Пример. Координация Azure Pipelines с помощью Azure Logic Apps](/samples/azure-samples/azure-logic-apps-pipeline-orchestration/azure-devops-orchestration-with-logic-apps/)
 
 ### <a name="manage"></a>Управление
 
@@ -142,7 +143,7 @@ Azure Logic Apps интегрируется со многими службами
 * [Руководство. Создание информационной панели социального страхования на основе искусственного интеллекта с помощью Power BI и Azure Logic Apps](https://aka.ms/logicappsdemo)
 * [Руководство. Отслеживание изменений виртуальной машины с помощью Azure Logic Apps и службы "Сетка событий Azure"](../event-grid/monitor-virtual-machine-changes-event-grid-logic-app.md)
 * [Руководство по удаленному мониторингу и отправке уведомлений в Центре Интернета вещей с помощью службы Azure Logic Apps, обеспечивающей подключение между Центром Интернета вещей и почтовым ящиком](../iot-hub/iot-hub-monitoring-notifications-with-azure-logic-apps.md)
-* [Блог. вызов служб SOAP с помощью Azure Logic Apps](https://blogs.msdn.microsoft.com/logicapps/2016/04/07/using-soap-services-with-logic-apps/)
+* [Блог. вызов служб SOAP с помощью Azure Logic Apps](/archive/blogs/logicapps/using-soap-services-with-logic-apps)
 
 ## <a name="end-to-end-scenarios"></a>Комплексные сценарии
 
@@ -152,7 +153,7 @@ Azure Logic Apps интегрируется со многими службами
 
 Узнайте, как Azure Logic Apps, а также другие службы Azure и продукты Майкрософт помогли [этим компаниям](https://aka.ms/logic-apps-customer-stories) повысить гибкость и сосредоточиться на основных бизнес-целях благодаря упрощению, организации, автоматизации и оркестрации сложных процессов.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о [соединителях для Logic Apps](../connectors/apis-list.md)
 * Узнайте о [сценариях интеграции B2B Enterprise с Azure Logic Apps](../logic-apps/logic-apps-enterprise-integration-overview.md)

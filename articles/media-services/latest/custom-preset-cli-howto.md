@@ -12,12 +12,12 @@ ms.topic: article
 ms.custom: ''
 ms.date: 05/14/2019
 ms.author: juliako
-ms.openlocfilehash: 7c1b446ccf04199449f012e738f6a03660735f50
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3b718a0a67381e2b1eb19d2397ecf86e4a9c196d
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80382959"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87090133"
 ---
 # <a name="how-to-encode-with-a-custom-transform---azure-cli"></a>Как кодировать с помощью пользовательского преобразования Azure CLI
 
@@ -32,7 +32,7 @@ ms.locfileid: "80382959"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-[Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md).
+[Создание учетной записи Служб мультимедиа](./create-account-howto.md).
 
 Обязательно запомните имя группы ресурсов и имя учетной записи Служб мультимедиа.
 
@@ -140,6 +140,6 @@ az ams transform create -a amsaccount -g amsResourceGroup -n customTransformName
 
 Чтобы службы мультимедиа применяли преобразование к указанному видео или аудио, необходимо отправить задание с этим преобразованием. Полный пример, демонстрирующий, как отправить задание под преобразованием, см. в разделе [Краткое руководство. Streaming Video Files-Azure CLI](stream-files-cli-quickstart.md).
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также статью
 
 [Azure CLI](/cli/azure/ams)

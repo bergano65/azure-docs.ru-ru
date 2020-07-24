@@ -14,22 +14,23 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/11/2020
 ms.author: juliako
-ms.openlocfilehash: 75ba2ad87eabd7ff6b0625ad95ab24a8ae58dd0f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: cb3b319c583422b32798fce9cef4c73a4aa1f8de
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79461050"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87090048"
 ---
 # <a name="manage-streaming-endpoints-with--media-services-v3"></a>Управление конечными точками потоковой передачи с помощью служб мультимедиа v3
 
 При создании учетной записи служб мультимедиа [Конечная точка потоковой передачи](streaming-endpoint-concept.md) **по умолчанию** добавляется в учетную запись в **остановленном** состоянии. Чтобы начать потоковую передачу содержимого и воспользоваться [динамической упаковкой](dynamic-packaging-overview.md) и [динамическим шифрованием](content-protection-overview.md), конечная точка потоковой передачи, из которой требуется потоковая передача содержимого, должна находиться в состоянии **выполняется** .
 
-В этой статье показано, как выполнить команду [запуска](https://docs.microsoft.com/rest/api/media/streamingendpoints/start) в конечной точке потоковой передачи с помощью различных технологий. 
+В этой статье показано, как выполнить команду [запуска](/rest/api/media/streamingendpoints/start) в конечной точке потоковой передачи с помощью различных технологий. 
  
 > [!NOTE]
 > Плата взимается, только когда конечная точка потоковой передачи используется.
     
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 Обзор. 
 
@@ -45,7 +46,7 @@ POST https://management.azure.com/subscriptions/00000000-0000-0000-0000-00000000
 
 Дополнительные сведения можно найти в разделе 
 
-* Справочная документация по [запуску StreamingEndpoint](https://docs.microsoft.com/rest/api/media/streamingendpoints/start) .
+* Справочная документация по [запуску StreamingEndpoint](/rest/api/media/streamingendpoints/start) .
 * Запуск конечной точки потоковой передачи является асинхронной операцией. 
 
     Сведения о мониторинге длительных операций см. в разделе [длительные операции](media-services-apis-overview.md).
@@ -69,7 +70,7 @@ az ams streaming-endpoint start [--account-name]
                                 [--subscription]
 ```
 
-Дополнительные сведения см. в статье [AZ AMS Streaming-Endpoint Start](https://docs.microsoft.com/cli/azure/ams/streaming-endpoint?view=azure-cli-latest#az-ams-streaming-endpoint-start).
+Дополнительные сведения см. в статье [AZ AMS Streaming-Endpoint Start](/cli/azure/ams/streaming-endpoint?view=azure-cli-latest#az-ams-streaming-endpoint-start).
 
 ## <a name="use-sdks"></a>Использование пакетов SDK
 
@@ -102,7 +103,7 @@ if (streamingEndpoint != null)
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Спецификация OpenAPI служб мультимедиа v3 (Swagger)](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/mediaservices/resource-manager/Microsoft.Media/stable/2018-07-01)
-* [Операции конечной точки потоковой передачи](https://docs.microsoft.com/rest/api/media/streamingendpoints)
+* [Операции конечной точки потоковой передачи](/rest/api/media/streamingendpoints)

@@ -11,18 +11,18 @@ ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 10/03/2019
 ms.author: diberry
-ms.openlocfilehash: a49452653f8ac4bcc62758d801a235be0929d314
-ms.sourcegitcommit: 537c539344ee44b07862f317d453267f2b7b2ca6
+ms.openlocfilehash: 831e766fbb10d616b3fbaf8f878228a9a51ece37
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84686636"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87090949"
 ---
 # <a name="entities-per-culture-in-your-luis-model"></a>Сущности для языков и региональных параметров в модели LUIS
 
 Служба "Распознавание речи" (LUIS) включает готовые сущности. При включении предварительно созданной сущности в приложение LUIS включает соответствующий прогноз сущности в ответ конечной точки. Все примеры фраз также помечаются с помощью сущности. Поведение предварительно созданных сущностей **нельзя** изменить. Если не указано иное, предварительно созданные сущности доступны во всех языковых стандартах (языках и региональных параметрах) приложений LUIS. В следующей таблице показаны предварительно созданные сущности, которые поддерживаются для каждого языка и региональных параметров.
 
-|Язык и региональные параметры|Подкатегории языков и региональных параметров|Примечания|
+|Культура|Подкатегории языков и региональных параметров|Примечания|
 |--|--|--|
 |Китайский|[zh-CN](#chinese-entity-support)||
 |Нидерландский|[nl-NL](#dutch-entity-support)||
@@ -44,8 +44,8 @@ ms.locfileid: "84686636"
 
 Поддерживаются следующие сущности:
 
-|Предварительно созданная сущность|```zh-CN``` |
-------|:------:|
+| Предварительно созданная сущность | zh-CN |
+| --------------- | :---: |
 [Возраст](luis-reference-prebuilt-age.md):<br>year<br>month<br>week<br>day   |    V2, V3   |
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    V2, V3   |
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>Дата<br>daterange<br>time<br>timerange   |    V2, V3   |
@@ -60,14 +60,14 @@ ms.locfileid: "84686636"
 [персоннаме](luis-reference-prebuilt-person.md)   |    V2, V3   |
 [PhoneNumber](luis-reference-prebuilt-phonenumber.md)   |    V2, V3   |
 [Температура](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    V2, V3   |
-[URL](luis-reference-prebuilt-url.md)   |    V2, V3   |
+[URL-адрес](luis-reference-prebuilt-url.md)   |    V2, V3   |
 
 ## <a name="dutch-entity-support"></a>Поддержка сущностей для голландского языка
 
 Поддерживаются следующие сущности:
 
-|Предварительно созданная сущность|```nl-NL``` |
-------|:------:|
+| Предварительно созданная сущность | nl-NL |
+| --------------- | :---: |
 [Возраст](luis-reference-prebuilt-age.md):<br>year<br>month<br>week<br>day   |    V2, V3   |
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    V2, V3   |
 [DateTime](luis-reference-prebuilt-deprecated.md)   |    -   |
@@ -82,14 +82,14 @@ ms.locfileid: "84686636"
 [персоннаме](luis-reference-prebuilt-person.md)   |    -   |
 [PhoneNumber](luis-reference-prebuilt-phonenumber.md)   |    V2, V3   |
 [Температура](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    V2, V3   |
-[URL](luis-reference-prebuilt-url.md)   |    V2, V3   |
+[URL-адрес](luis-reference-prebuilt-url.md)   |    V2, V3   |
 
 ## <a name="english-american-entity-support"></a>Поддержка сущностей для английского языка (США)
 
 Поддерживаются следующие сущности:
 
-|Предварительно созданная сущность|```en-US``` |
-------|:------:|
+| Предварительно созданная сущность | ru-RU |
+| --------------- | :---: |
 [Возраст](luis-reference-prebuilt-age.md):<br>year<br>month<br>week<br>day   |    V2, V3   |
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    V2, V3   |
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>Дата<br>daterange<br>time<br>timerange   |    V2, V3   |
@@ -104,14 +104,14 @@ ms.locfileid: "84686636"
 [персоннаме](luis-reference-prebuilt-person.md)   |    V2, V3   |
 [PhoneNumber](luis-reference-prebuilt-phonenumber.md)   |    V2, V3   |
 [Температура](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    V2, V3   |
-[URL](luis-reference-prebuilt-url.md)   |    V2, V3   |
+[URL-адрес](luis-reference-prebuilt-url.md)   |    V2, V3   |
 
 ## <a name="french-france-entity-support"></a>Поддержка сущностей для французского языка (Франция)
 
 Поддерживаются следующие сущности:
 
-|Предварительно созданная сущность|```fr-FR``` |
-------|:------:|
+| Предварительно созданная сущность | fr-FR |
+| --------------- | :---: |
 [Возраст](luis-reference-prebuilt-age.md):<br>year<br>month<br>week<br>day   |    V2, V3   |
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    V2, V3   |
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>Дата<br>daterange<br>time<br>timerange   |    V2, V3   |
@@ -126,14 +126,14 @@ ms.locfileid: "84686636"
 [персоннаме](luis-reference-prebuilt-person.md)   |   -   |
 [PhoneNumber](luis-reference-prebuilt-phonenumber.md)   |    V2, V3   |
 [Температура](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    V2, V3   |
-[URL](luis-reference-prebuilt-url.md)   |    V2, V3   |
+[URL-адрес](luis-reference-prebuilt-url.md)   |    V2, V3   |
 
 ## <a name="french-canadian-entity-support"></a>Поддержка сущностей для французского языка (Канада)
 
 Поддерживаются следующие сущности:
 
-|Предварительно созданная сущность|```fr-CA``` |
-------|:------:|
+| Предварительно созданная сущность | fr-CA |
+| --------------- | :---: |
 [Возраст](luis-reference-prebuilt-age.md):<br>year<br>month<br>week<br>day   |    V2, V3   |
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    V2, V3   |
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>Дата<br>daterange<br>time<br>timerange   |    V2, V3   |
@@ -148,14 +148,14 @@ ms.locfileid: "84686636"
 [персоннаме](luis-reference-prebuilt-person.md)   |    -   |
 [PhoneNumber](luis-reference-prebuilt-phonenumber.md)   |    V2, V3   |
 [Температура](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    V2, V3   |
-[URL](luis-reference-prebuilt-url.md)   |    V2, V3   |
+[URL-адрес](luis-reference-prebuilt-url.md)   |    V2, V3   |
 
 ## <a name="german-entity-support"></a>Поддержка сущностей для немецкого языка
 
 Поддерживаются следующие сущности:
 
-|Предварительно созданная сущность|```de-DE``` |
-------|:------:|
+|Предварительно созданная сущность | de-DE |
+| -------------- | :---: |
 [Возраст](luis-reference-prebuilt-age.md):<br>year<br>month<br>week<br>day   |    V2, V3   |
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    V2, V3   |
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>Дата<br>daterange<br>time<br>timerange   |    V2, V3   |
@@ -170,7 +170,7 @@ ms.locfileid: "84686636"
 [персоннаме](luis-reference-prebuilt-person.md)   |    -   |
 [PhoneNumber](luis-reference-prebuilt-phonenumber.md)   |    V2, V3   |
 [Температура](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    V2, V3   |
-[URL](luis-reference-prebuilt-url.md)   |    V2, V3   |
+[URL-адрес](luis-reference-prebuilt-url.md)   |    V2, V3   |
 
 ## <a name="italian-entity-support"></a>Поддержка сущностей для итальянского языка
 
@@ -178,8 +178,8 @@ ms.locfileid: "84686636"
 
 Поддерживаются следующие сущности:
 
-|Предварительно созданная сущность|```it-IT``` |
-------|:------:|
+| Предварительно созданная сущность | it-IT |
+| --------------- | :---: |
 [Возраст](luis-reference-prebuilt-age.md):<br>year<br>month<br>week<br>day   |    V2, V3   |
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    V2, V3   |
 [DateTime](luis-reference-prebuilt-deprecated.md)   |    -   |
@@ -194,14 +194,14 @@ ms.locfileid: "84686636"
 [персоннаме](luis-reference-prebuilt-person.md)   |    -   |
 [PhoneNumber](luis-reference-prebuilt-phonenumber.md)   |    V2, V3   |
 [Температура](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    V2, V3   |
-[URL](luis-reference-prebuilt-url.md)   |    V2, V3   |
+[URL-адрес](luis-reference-prebuilt-url.md)   |    V2, V3   |
 
 ## <a name="japanese-entity-support"></a>Поддержка сущностей для японского языка
 
 Поддерживаются следующие сущности:
 
-|Предварительно созданная сущность|```ja-JP``` |
-------|:------:|
+|Предварительно созданная сущность | ja-JP |
+| -------------- | :---: |
 [Возраст](luis-reference-prebuilt-age.md):<br>year<br>month<br>week<br>day   |    V2,-   |
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    V2,-   |
 [DateTime](luis-reference-prebuilt-deprecated.md)   |    -   |
@@ -216,14 +216,14 @@ ms.locfileid: "84686636"
 [персоннаме](luis-reference-prebuilt-person.md)   |    -   |
 [PhoneNumber](luis-reference-prebuilt-phonenumber.md)   |    V2, V3   |
 [Температура](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    V2,-   |
-[URL](luis-reference-prebuilt-url.md)   |    V2, V3   |
+[URL-адрес](luis-reference-prebuilt-url.md)   |    V2, V3   |
 
 ## <a name="korean-entity-support"></a>Поддержка сущностей для корейского языка
 
 Поддерживаются следующие сущности:
 
-|Предварительно созданная сущность|```ko-KR``` |
-------|:------:|
+| Предварительно созданная сущность | ko-KR |
+| --------------- | :---: |
 [Возраст](luis-reference-prebuilt-age.md):<br>year<br>month<br>week<br>day   |    -   |
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    -   |
 [DateTime](luis-reference-prebuilt-deprecated.md)   |    -   |
@@ -238,14 +238,14 @@ ms.locfileid: "84686636"
 [персоннаме](luis-reference-prebuilt-person.md)   |    -   |
 [PhoneNumber](luis-reference-prebuilt-phonenumber.md)   |    V2, V3   |
 [Температура](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    -   |
-[URL](luis-reference-prebuilt-url.md)   |    V2, V3   |
+[URL-адрес](luis-reference-prebuilt-url.md)   |    V2, V3   |
 
 ## <a name="portuguese-brazil-entity-support"></a>Поддержка сущностей для португальского языка (Бразилия)
 
 Поддерживаются следующие сущности:
 
-|Предварительно созданная сущность|```pt-BR``` |
-------|:------:|
+| Предварительно созданная сущность | pt-BR |
+| --------------- | :---: |
 [Возраст](luis-reference-prebuilt-age.md):<br>year<br>month<br>week<br>day   |    V2, V3   |
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    V2, V3   |
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>Дата<br>daterange<br>time<br>timerange   |    V2, V3   |
@@ -260,14 +260,14 @@ ms.locfileid: "84686636"
 [персоннаме](luis-reference-prebuilt-person.md)   |    -   |
 [PhoneNumber](luis-reference-prebuilt-phonenumber.md)   |    V2, V3   |
 [Температура](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    V2, V3   |
-[URL](luis-reference-prebuilt-url.md)   |    V2, V3   |
+[URL-адрес](luis-reference-prebuilt-url.md)   |    V2, V3   |
 
 ## <a name="spanish-spain-entity-support"></a>Поддержка сущностей для испанского языка (Испания)
 
 Поддерживаются следующие сущности:
 
-|Предварительно созданная сущность|```es-ES``` |
-------|:------:|
+| Предварительно созданная сущность | es-ES |
+| --------------- | :---: |
 [Возраст](luis-reference-prebuilt-age.md):<br>year<br>month<br>week<br>day   |    V2, V3   |
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    V2, V3   |
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>Дата<br>daterange<br>time<br>timerange   |    V2, V3   |
@@ -282,14 +282,14 @@ ms.locfileid: "84686636"
 [персоннаме](luis-reference-prebuilt-person.md)   |    -   |
 [PhoneNumber](luis-reference-prebuilt-phonenumber.md)   |    V2, V3   |
 [Температура](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    V2, V3   |
-[URL](luis-reference-prebuilt-url.md)   |    V2, V3   |
+[URL-адрес](luis-reference-prebuilt-url.md)   |    V2, V3   |
 
 ## <a name="spanish-mexico-entity-support"></a>Поддержка сущностей для испанского языка (Мексика)
 
 Поддерживаются следующие сущности:
 
-|Предварительно созданная сущность|```es-MX``` |
-------|:------:|
+| Предварительно созданная сущность | es-MX |
+| --------------- | :---: |
 [Возраст](luis-reference-prebuilt-age.md):<br>year<br>month<br>week<br>day   |    -   |
 [Currency (денежная единица)](luis-reference-prebuilt-currency.md):<br>доллар<br>дробная единица (например, пенни)  |    -   |
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>Дата<br>daterange<br>time<br>timerange   |    -   |
@@ -304,7 +304,7 @@ ms.locfileid: "84686636"
 [персоннаме](luis-reference-prebuilt-person.md)   |    -   |
 [PhoneNumber](luis-reference-prebuilt-phonenumber.md)   |    V2, V3   |
 [Температура](luis-reference-prebuilt-temperature.md):<br>Фаренгейта<br>Кельвина<br>Ранкина<br>Делиля<br>Цельсия   |    -   |
-[URL](luis-reference-prebuilt-url.md)   |    V2, V3   |
+[URL-адрес](luis-reference-prebuilt-url.md)   |    V2, V3   |
 
 См. примечания об [устаревших предварительно созданных сущностях](luis-reference-prebuilt-deprecated.md).
 
@@ -316,8 +316,8 @@ KeyPhrase недоступна во всех подкатегориях порт
 
 <!--
 
-|Prebuilt entity|```tr-tr``` |
-------|:------:|
+| Prebuilt entity | tr-tr |
+| --------------- | :---: |
 [Age](luis-reference-prebuilt-age.md):<br>year<br>month<br>week<br>day   |    -   |
 [Currency (money)](luis-reference-prebuilt-currency.md):<br>dollar<br>fractional unit (ex: penny)  |    -   |
 [DatetimeV2](luis-reference-prebuilt-datetimev2.md):<br>date<br>daterange<br>time<br>timerange   |    -   |
@@ -344,6 +344,6 @@ KeyPhrase is not available.
 
 GeographyV2 и PersonName не включаются в проект Recognizers-Text. Чтобы устранить проблемы с этими предварительно созданными сущностями, отправьте [запрос в службу поддержки](../../azure-portal/supportability/how-to-create-azure-support-request.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о сущностях [number](luis-reference-prebuilt-number.md), [datetimeV2](luis-reference-prebuilt-datetimev2.md) и [currency](luis-reference-prebuilt-currency.md).

@@ -3,12 +3,12 @@ title: Вопросы и ответы по миграции Azure
 description: Получите ответы на часто задаваемые вопросы о службе "миграция Azure".
 ms.topic: conceptual
 ms.date: 04/15/2020
-ms.openlocfilehash: 9b71888b284fd9cc125def4758d1e3800a92acf2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 307a1d417b54ad9546c6e409ad8b105ea443da0e
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81530323"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87090014"
 ---
 # <a name="azure-migrate-common-questions"></a>Служба "миграция Azure": распространенные вопросы
 
@@ -17,7 +17,7 @@ ms.locfileid: "81530323"
 - Вопросы об [устройстве "миграция Azure](common-questions-appliance.md) "
 - Вопросы об [обнаружении, оценке и визуализации зависимостей](common-questions-discovery-assessment.md)
 
-## <a name="what-is-azure-migrate"></a>Что представляет собой служба "Миграция Azure"?
+## <a name="what-is-azure-migrate"></a>Что такое служба "Миграция Azure"?
 
 Служба "миграция Azure" предоставляет центральный концентратор для наблюдения за обнаружением, оценкой и миграцией локальных приложений и рабочих нагрузок, а также виртуальных машин частного и общедоступного облака в Azure. Центр предоставляет средства миграции Azure для оценки и миграции, а также сторонних сторонних поставщиков программного обеспечения. [Подробнее.](migrate-services-overview.md)
 
@@ -32,6 +32,10 @@ ms.locfileid: "81530323"
 [Azure Site Recovery](../site-recovery/site-recovery-overview.md) является решением для аварийного восстановления. 
 
 Средство миграции Azure Migration Tool использует некоторые серверные функции Site Recovery для переноса на несколько локальных компьютеров.
+
+## <a name="i-have-a-project-with-the-previous-classic-experience-of-azure-migrate-how-do-i-start-using-the-new-version"></a>У меня есть проект с предыдущим классическим интерфейсом службы "миграция Azure". Разделы справки начать использовать новую версию?
+
+Нельзя обновить проекты или компоненты из предыдущей версии на новую. Необходимо [создать новый проект службы "миграция Azure](create-manage-projects.md)" и [Добавить в него средства оценки и миграции](how-to-add-tool-first-time.md) . Используйте учебники, чтобы понять, как использовать доступные средства оценки и миграции. Если к классическому проекту присоединена Рабочая область Log Analytics, ее можно присоединить к проекту текущей версии после удаления классического проекта.
 
 ## <a name="whats-the-difference-between-azure-migrate-server-assessment-and-the-map-toolkit"></a>В чем разница между службой "миграция Azure": Оценка серверов и набор средств MAP Toolkit?
 

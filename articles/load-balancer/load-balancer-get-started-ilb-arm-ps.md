@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/02/2020
 ms.author: allensu
-ms.openlocfilehash: dcf54e5a9bee5f7dc6cba9e3cb178027f53ed5fb
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 7e962b87b1bd7ef200aa276d8dbecffd5d3fed04
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85961291"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87090439"
 ---
 # <a name="create-an-internal-load-balancer-by-using-the-azure-powershell-module"></a>Создание внутренней подсистемы балансировки нагрузки с помощью модуля Azure PowerShell
 
@@ -250,7 +250,7 @@ Primary              : False
 
 Назначьте сетевой адаптер виртуальной машине с помощью команды `Add-AzVMNetworkInterface`.
 
-Пошаговые инструкции по созданию виртуальной машины и назначению сетевого адаптера см. в статье [Создание виртуальной машины Windows с помощью PowerShell](../virtual-machines/virtual-machines-windows-ps-create.md?toc=%2fazure%2fload-balancer%2ftoc.json).
+Пошаговые инструкции по созданию виртуальной машины и назначению сетевого адаптера см. в статье [Создание виртуальной машины Windows с помощью PowerShell](../virtual-machines/scripts/virtual-machines-windows-powershell-sample-create-vm.md?toc=%2fazure%2fload-balancer%2ftoc.json).
 
 ## <a name="add-the-network-interface"></a>Добавление сетевого интерфейса
 
@@ -335,7 +335,7 @@ Remove-AzLoadBalancer -Name NRP-LB -ResourceGroupName NRP-RG
 > [!NOTE]
 > Используйте дополнительный параметр **-Force**, чтобы избежать запроса подтверждения удаления.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Настройка режима распределения для подсистемы балансировки нагрузки](load-balancer-distribution-mode.md)
 * [Настройка параметров времени ожидания простоя TCP для подсистемы балансировки нагрузки](load-balancer-tcp-idle-timeout.md)

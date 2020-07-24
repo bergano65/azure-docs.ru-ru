@@ -10,13 +10,13 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 04/13/2020
 ms.author: trbye
-zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: 04ece5ccf91056af02bd450eb760534b82de5959
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+zone_pivot_groups: programming-languages-set-two-with-js
+ms.openlocfilehash: f10f50c30c1a8561f8a0b959fd17138f3e8aab8d
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81399615"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87090912"
 ---
 # <a name="learn-the-basics-of-speech-translation"></a>Основные сведения о переводе речи
 
@@ -44,10 +44,14 @@ ms.locfileid: "81399615"
 [!INCLUDE [Python Basics include](includes/how-to/speech-translation-basics/speech-translation-basics-python.md)]
 ::: zone-end
 
+::: zone pivot="programming-language-javascript"
+[!INCLUDE [JavaScript Basics include](includes/how-to/speech-translation-basics/speech-translation-basics-javascript.md)]
+::: zone-end
+
 ::: zone pivot="programming-language-more"
 [!INCLUDE [More languages include](includes/how-to/speech-translation-basics/more.md)]
 ::: zone-end
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Использовать сжатые звуковые форматы кодеков](how-to-use-codec-compressed-audio-input-streams.md)

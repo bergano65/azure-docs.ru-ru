@@ -6,11 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/04/2018
-ms.openlocfilehash: c1622ef16155206d779c6d703fc7da568d233e7e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bda1acde914aa068fe3a87d307a29583f87af34f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77664785"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87091187"
 ---
 # <a name="vmware-monitoring-deprecated-solution-in-azure-monitor"></a>Мониторинг VMware (не рекомендуется) решение в Azure Monitor
 
@@ -49,14 +50,14 @@ vSphere ESXi Host версий 5.5, 6.0 и 6.5
     ![vspherefwproperties](./media/vmware/vsphere3.png)  
 1. Проверьте консоль vSphere, чтобы удостовериться в правильной настройке системного журнала. Подтвердите на узле ESXI, что этот порт **1514** настроен.
 1. Скачайте и установите агент Log Analytics для Linux на сервере Linux. Дополнительные сведения см. в [документации по агенту Log Analytics для Linux](https://github.com/Microsoft/OMS-Agent-for-Linux).
-1. Установив агент Log Analytics для Linux, перейдите в каталог /etc/opt/microsoft/omsagent/sysconf/omsagent.d и скопируйте файл vmware_esxi.conf в каталог /etc/opt/microsoft/omsagent/conf/omsagent.d. Измените владельца или группу и разрешения для файла. Пример:
+1. Установив агент Log Analytics для Linux, перейдите в каталог /etc/opt/microsoft/omsagent/sysconf/omsagent.d и скопируйте файл vmware_esxi.conf в каталог /etc/opt/microsoft/omsagent/conf/omsagent.d. Измените владельца или группу и разрешения для файла. Например.
 
     ```
     sudo cp /etc/opt/microsoft/omsagent/sysconf/omsagent.d/vmware_esxi.conf /etc/opt/microsoft/omsagent/conf/omsagent.d
    sudo chown omsagent:omiusers /etc/opt/microsoft/omsagent/conf/omsagent.d/vmware_esxi.conf
     ```
 1. Перезапустите агент Log Analytics для Linux, выполнив `sudo /opt/microsoft/omsagent/bin/service_control restart`.
-1. Проверьте подключение между сервером Linux и узлом ESXi, выполнив команду `nc` на узле ESXi. Пример:
+1. Проверьте подключение между сервером Linux и узлом ESXi, выполнив команду `nc` на узле ESXi. Например.
 
     ```
     [root@ESXiHost:~] nc -z 123.456.789.101 1514
@@ -74,7 +75,7 @@ vSphere ESXi Host версий 5.5, 6.0 и 6.5
 
 В следующей таблице содержатся методы сбора данных и другие связанные сведения.
 
-| platform | Агент Log Analytics для Linux | Агент SCOM | Хранилище Azure | Нужен ли SCOM? | Отправка данных агента SCOM через группу управления | Частота сбора |
+| platform | Агент Log Analytics для Linux | Агент SCOM | Служба хранилища Azure | Нужен ли SCOM? | Отправка данных агента SCOM через группу управления | Частота сбора |
 | --- | --- | --- | --- | --- | --- | --- |
 | Linux |&#8226; |  |  |  |  |Каждые 3 минуты |
 
@@ -155,7 +156,7 @@ vSphere ESXi Host версий 5.5, 6.0 и 6.5
 ![DockerDashboardView](./media/vmware/dockerdashboardview.png)
 
 #### <a name="create-alerts-from-queries"></a>Создание оповещений из запросов
-Созданные запросы можно использовать для оповещения при возникновении определенных событий. Подробные сведения о создании оповещений см. в статье [Оповещения в Log Analytics](../platform/alerts-overview.md). Примеры оповещающих и других запросов см. в записи блога [Monitor VMware using OMS Log Analytics](https://blogs.technet.microsoft.com/msoms/2016/06/15/monitor-vmware-using-oms-log-analytics) (Мониторинг VMware с помощью OMS Log Analytics).
+Созданные запросы можно использовать для оповещения при возникновении определенных событий. Подробные сведения о создании оповещений см. в статье [Оповещения в Log Analytics](../platform/alerts-overview.md). Примеры оповещающих и других запросов см. в записи блога [Monitor VMware using OMS Log Analytics](/archive/blogs/msoms/monitor-vmware-using-oms-log-analytics) (Мониторинг VMware с помощью OMS Log Analytics).
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 ### <a name="what-do-i-need-to-do-on-the-esxi-host-setting-what-impact-will-it-have-on-my-current-environment"></a>Что нужно настраивать для узла ESXi? Какое влияние это окажет на мою текущую среду?
@@ -187,15 +188,15 @@ vSphere ESXi Host версий 5.5, 6.0 и 6.5
   1. Log Analytics ожидает передачи данных через порт 1514. Чтобы проверить, что он открыт, выполните следующую команду: `netstat -a | grep 1514`
   1. Вы увидите, что порт `1514/tcp` открыт. В противном случае проверьте, правильно ли установлен агент OMS. Если сведения о порте не отображаются, порт системного журнала не открыт на виртуальной машине.
 
-    а. Убедитесь, что агент Log Analytics запущен, с помощью `ps -ef | grep oms`. Если это не так, запустите его, выполнив команду `sudo /opt/microsoft/omsagent/bin/service_control start`
+    А. Убедитесь, что агент Log Analytics запущен, с помощью `ps -ef | grep oms`. Если это не так, запустите его, выполнив команду `sudo /opt/microsoft/omsagent/bin/service_control start`
 
-     b. Откройте файл `/etc/opt/microsoft/omsagent/conf/omsagent.d/vmware_esxi.conf` .
+     Б. Откройте файл `/etc/opt/microsoft/omsagent/conf/omsagent.d/vmware_esxi.conf`.
 
      c. Убедитесь, что настройки пользователей и группы допустимы. Они должны выглядеть следующим образом: `-rw-r--r-- 1 omsagent omiusers 677 Sep 20 16:46 vmware_esxi.conf`
 
      d. Если файл не существует или настройки пользователя и группы неправильны, выполните действия по исправлению, приведенные в разделе [Подготовка сервера под управлением Linux](#prepare-a-linux-server).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Используйте [запросы журналов в Log Analytics](../log-query/log-query-overview.md) для просмотра подробных данных об узле VMware.
 * [Создавайте собственные панели мониторинга](../learn/tutorial-logs-dashboards.md), отображающие данные об узле VMware.
 * [Создавайте оповещения](../platform/alerts-overview.md), информирующие о возникновении определенных событий узла VMware.

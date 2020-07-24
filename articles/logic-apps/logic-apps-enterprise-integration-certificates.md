@@ -8,12 +8,12 @@ ms.author: divswa
 ms.reviewer: estfan, logicappspm
 ms.topic: article
 ms.date: 08/17/2018
-ms.openlocfilehash: 19a1883685193e80da5f1365ec2a30db0b8754f6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7d57536eee62c415058dd454f3da6ee5f3d04898
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81450148"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87090337"
 ---
 # <a name="improve-security-for-b2b-messages-by-using-certificates"></a>Повышение безопасности сообщений B2B с помощью сертификатов
 
@@ -46,7 +46,7 @@ ms.locfileid: "81450148"
 
    | Свойство | Значение | Описание | 
    |----------|-------|-------------|
-   | **Name** | <*имя сертификата*> | Имя сертификата, в этом примере — "publicCert" | 
+   | **имя**; | <*имя сертификата*> | Имя сертификата, в этом примере — "publicCert" | 
    | **Тип сертификата** | Общие | Тип вашего сертификата |
    | **Сертификат** | <*имя файла сертификата*> | Чтобы найти и выбрать файл сертификата, который требуется загрузить, выберите значок папки рядом с полем **Сертификат**. |
    ||||
@@ -59,7 +59,7 @@ ms.locfileid: "81450148"
 
 ## <a name="upload-a-private-certificate"></a>Передача закрытого сертификата
 
-Чтобы использовать *закрытый сертификат* в приложениях логики с возможностями "бизнес-бизнес", необходимо сначала передать этот сертификат в учетную запись интеграции. Также потребуется закрытый ключ, который необходимо сначала добавить в [хранилище Azure Key Vault](../key-vault/key-vault-get-started.md). 
+Чтобы использовать *закрытый сертификат* в приложениях логики с возможностями "бизнес-бизнес", необходимо сначала передать этот сертификат в учетную запись интеграции. Также потребуется закрытый ключ, который необходимо сначала добавить в [хранилище Azure Key Vault](../key-vault/general/overview.md). 
 
 После определения свойств в создаваемых [соглашениях](logic-apps-enterprise-integration-agreements.md) сертификат можно будет использовать для защиты сообщений "бизнес-бизнес".
 
@@ -68,7 +68,7 @@ ms.locfileid: "81450148"
 
 1. [Добавьте закрытый ключ в хранилище Azure Key Vault](../key-vault/certificates/certificate-scenarios.md#import-a-certificate) и укажите **имя ключа**.
    
-2. Авторизуйте Azure Logic Apps для выполнения операций в Azure Key Vault. Для предоставления доступа субъекту-службе Logic Apps используйте команду PowerShell [Set-AzKeyVaultAccessPolicy](https://docs.microsoft.com/powershell/module/az.keyvault/set-azkeyvaultaccesspolicy), например:
+2. Авторизуйте Azure Logic Apps для выполнения операций в Azure Key Vault. Для предоставления доступа субъекту-службе Logic Apps используйте команду PowerShell [Set-AzKeyVaultAccessPolicy](/powershell/module/az.keyvault/set-azkeyvaultaccesspolicy), например:
 
    `Set-AzKeyVaultAccessPolicy -VaultName 'TestcertKeyVault' -ServicePrincipalName 
    '7cd684f4-8a78-49b0-91ec-6a35d38739ba' -PermissionsToKeys decrypt, sign, get, list`
@@ -85,12 +85,12 @@ ms.locfileid: "81450148"
 
    | Свойство | Значение | Описание | 
    |----------|-------|-------------|
-   | **Name** | <*имя сертификата*> | Имя сертификата, в этом примере — "privateCert" | 
-   | **Тип сертификата** | Private | Тип вашего сертификата |
+   | **имя**; | <*имя сертификата*> | Имя сертификата, в этом примере — "privateCert" | 
+   | **Тип сертификата** | Частное | Тип вашего сертификата |
    | **Сертификат** | <*имя файла сертификата*> | Чтобы найти и выбрать файл сертификата, который требуется загрузить, выберите значок папки рядом с полем **Сертификат**. При использовании хранилища ключей для закрытого ключа отправленный файл будет общедоступным сертификатом. | 
    | **Группа ресурсов** | <*Интеграция-учетная запись-ресурс-группа*> | Группа ресурсов учетной записи интеграции, в этом примере — "MyResourceGroup" | 
    | **хранилище ключей;** | <*ключ-хранилище — имя*> | Имя хранилища ключей Azure |
-   | **Имя раздела** | <*имя ключа*> | Имя ключа |
+   | **Имя ключа** | <*имя ключа*> | Имя ключа |
    ||||
 
    ![Щелкните "Добавить" и укажите данные сертификата](media/logic-apps-enterprise-integration-certificates/private-certificate-details.png)

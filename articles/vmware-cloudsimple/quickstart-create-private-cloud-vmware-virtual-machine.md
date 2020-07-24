@@ -8,11 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 4ac818cfd267b781366c0e32c9f93cc885dff99c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 000e30f2656b88c068654fd8099cdff0ce0a4b37
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77566154"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87091272"
 ---
 # <a name="create-vmware-virtual-machines-on-your-private-cloud"></a>Создание виртуальных машин VMware в частном облаке
 
@@ -24,7 +25,7 @@ ms.locfileid: "77566154"
 
 ## <a name="access-the-cloudsimple-portal"></a>Доступ к порталу CloudSimple
 
-1. Выбор пункта **Все службы**.
+1. Выберите элемент **Все службы**.
 2. Выполните поиск по запросу **Клаудсимпле Services**.
 3. Выберите службу Клаудсимпле, для которой нужно создать частное облако.
 4. На странице **Обзор** щелкните **Перейти на портал клаудсимпле** , чтобы открыть новую вкладку браузера для клаудсимпле Portal.  При появлении запроса войдите с помощью учетных данных для входа в Azure.  
@@ -101,7 +102,7 @@ ms.locfileid: "77566154"
 
 Приложениям и рабочим нагрузкам, выполняемым в среде частного облака, требуется разрешение имен и службы DHCP для назначения адресов и поиска по IP-адресам. Для предоставления этих служб требуется определенная инфраструктура DHCP и DNS. Вы можете настроить виртуальную машину в vCenter, чтобы предоставить эти службы в среде частного облака.
 
-Предварительные условия
+Обязательные условия
 
 * Группа распределенных портов с настроенной виртуальной ЛС
 
@@ -121,9 +122,9 @@ Linux предлагает различные пакеты для настрой
 
 В этих разделах Майкрософт описывается настройка сервера Windows Server в качестве DNS-сервера и в качестве DHCP-сервера.
 
-[Windows Server как DNS-сервер](https://docs.microsoft.com/windows-server/networking/dns/dns-top)
+[Windows Server как DNS-сервер](/windows-server/networking/dns/dns-top)
 
-[Windows Server как DHCP-сервер](https://docs.microsoft.com/windows-server/networking/technologies/dhcp/dhcp-top)
+[Windows Server как DHCP-сервер](/windows-server/networking/technologies/dhcp/dhcp-top)
 
 ## <a name="customize-networking-configuration-optional"></a>Настройка конфигурации сети (необязательно)
 
@@ -199,7 +200,7 @@ netstat -an | grep 80
 python2.7 -m SimpleHTTPServer 80
 ```
 
-или
+or
 
 ```
 python3 -m http.server 80

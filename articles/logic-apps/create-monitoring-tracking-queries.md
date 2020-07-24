@@ -6,15 +6,16 @@ ms.suite: integration
 ms.reviewer: divswa, logicappspm
 ms.topic: article
 ms.date: 01/30/2020
-ms.openlocfilehash: 46989ed2468469443d4e91a1834bc20b12c25a1e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: cb1af437fc663fcb95c768ec295862209a26064e
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76908076"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87090405"
 ---
 # <a name="view-and-create-queries-for-monitoring-and-tracking-in-azure-monitor-logs-for-azure-logic-apps"></a>Просмотр и создание запросов для мониторинга и отслеживания в журналах Azure Monitor для Azure Logic Apps
 
-Можно просматривать базовые запросы, которые формируют результаты из [журналов Azure Monitor](../log-analytics/log-analytics-overview.md) , и создавать запросы, которые фильтруют результаты по конкретным критериям. Например, можно найти сообщения с определенным контрольным номером обмена. Запросы используют [язык запросов Kusto](https://aka.ms/LogAnalyticsLanguageReference), который можно изменить, если нужно просмотреть различные результаты. Дополнительные сведения см. в разделе [Azure Monitor запросы журналов](../azure-monitor/log-query/query-language.md).
+Можно просматривать базовые запросы, которые формируют результаты из [журналов Azure Monitor](../azure-monitor/log-query/log-query-overview.md) , и создавать запросы, которые фильтруют результаты по конкретным критериям. Например, можно найти сообщения с определенным контрольным номером обмена. Запросы используют [язык запросов Kusto](https://aka.ms/LogAnalyticsLanguageReference), который можно изменить, если нужно просмотреть различные результаты. Дополнительные сведения см. в разделе [Azure Monitor запросы журналов](../azure-monitor/log-query/query-language.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -62,7 +63,7 @@ ms.locfileid: "76908076"
 
      ![Начать с пустого запроса](./media/create-monitoring-tracking-queries/create-query-from-blank.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Схемы отслеживания AS2](../logic-apps/logic-apps-track-integration-account-as2-tracking-schemas.md)
 * [Схемы отслеживания X12](../logic-apps/logic-apps-track-integration-account-x12-tracking-schema.md)

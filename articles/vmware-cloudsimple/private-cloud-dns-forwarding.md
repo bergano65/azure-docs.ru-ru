@@ -8,11 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: aa2af4302613aad23bfd78b4883bbb46c5e5ddbb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3571455db6ecc600bf0948087b40c281d72512ce
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "76961131"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87091255"
 ---
 # <a name="enable-cloudsimple-private-cloud-dns-servers-to-forward-dns-lookup-of-on-premises-resources-to-your-dns-servers"></a>Включение DNS-серверов частного облака Клаудсимпле для пересылки DNS-запросов локальных ресурсов на DNS-серверы
 
@@ -31,7 +32,7 @@ DNS-серверы частного облака могут пересылать
 Сетевое подключение должно присутствовать в сети частного облака к локальной сети для работы пересылки DNS.  Можно настроить сетевое подключение с помощью:
 
 * [Подключение из локальной среды к Клаудсимпле с помощью ExpressRoute](on-premises-connection.md)
-* [Настройка VPN-шлюза типа "сеть — сеть"](https://docs.microsoft.com/azure/vmware-cloudsimple/vpn-gateway#set-up-a-site-to-site-vpn-gateway)
+* [Настройка VPN-шлюза типа "сеть — сеть"](./vpn-gateway.md#set-up-a-site-to-site-vpn-gateway)
 
 Для этого подключения необходимо открыть порты брандмауэра, чтобы пересылка DNS работала.  Используются порты TCP 53 или UDP-порт 53.
 
@@ -50,7 +51,7 @@ DNS-серверы частного облака могут пересылать
 * Укажите доменное имя локального домена в области сведений.
 * Укажите список локальных DNS-серверов, на которые будет перенаправлен Поиск из частного облака в области сведений.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Дополнительные сведения о конфигурации локального брандмауэра](on-premises-firewall-configuration.md)
 * [Конфигурация локального DNS-сервера](on-premises-dns-setup.md)

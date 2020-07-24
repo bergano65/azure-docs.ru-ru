@@ -3,12 +3,12 @@ title: Как отключить мониторинг кластера Azure Red
 description: В этой статье описывается, как можно отключить мониторинг кластера OpenShift для Azure Red Hat с помощью Azure Monitor для контейнеров.
 ms.topic: conceptual
 ms.date: 04/24/2020
-ms.openlocfilehash: e1d3200af62ad185fa942fa2c8f7f3b4e6bfd89b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 26c8a574894e117694545508174d0ce7d0f0f5ed
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82196196"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87091221"
 ---
 # <a name="how-to-stop-monitoring-your-azure-red-hat-openshift-v3-cluster"></a>Как отключить мониторинг кластера Azure Red Hat OpenShift v3
 
@@ -22,7 +22,7 @@ ms.locfileid: "82196196"
 * [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](../../azure-resource-manager/templates/deploy-powershell.md)
 * [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure CLI](../../azure-resource-manager/templates/deploy-cli.md)
 
-Если вы решили использовать Azure CLI, необходимо сначала установить интерфейс командной строки и использовать его локально. Необходимо запустить Azure CLI версии 2.0.65 или более поздней. Для определения версии выполните `az --version`. Если вам необходимо установить или обновить Azure CLI, ознакомьтесь со статьей [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli).
+Если вы решили использовать Azure CLI, необходимо сначала установить интерфейс командной строки и использовать его локально. Необходимо запустить Azure CLI версии 2.0.65 или более поздней. Для определения версии выполните `az --version`. Если вам необходимо установить или обновить Azure CLI, ознакомьтесь со статьей [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
 ### <a name="create-template"></a>Создание шаблона
 
@@ -128,4 +128,4 @@ ProvisioningState       : Succeeded
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Если рабочая область была создана только для мониторинга кластера и больше не требуется, ее необходимо удалить вручную. Если вы не знакомы с удалением рабочей области, см. статью [удаление log Analytics рабочей области Azure](../../log-analytics/log-analytics-manage-del-workspace.md).
+Если рабочая область была создана только для мониторинга кластера и больше не требуется, ее необходимо удалить вручную. Если вы не знакомы с удалением рабочей области, см. статью [удаление log Analytics рабочей области Azure](../platform/delete-workspace.md).

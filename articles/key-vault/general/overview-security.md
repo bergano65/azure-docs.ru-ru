@@ -11,11 +11,12 @@ ms.topic: conceptual
 ms.date: 04/18/2019
 ms.author: mbaldwin
 Customer intent: As a key vault administrator, I want to learn the options available to secure my vaults
-ms.openlocfilehash: cd8557a33971be9fd0913bfdf84397d344901581
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: 8d6dd38c3d1802c3b5bec82edbda4f9d344fa28b
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83834384"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87090524"
 ---
 # <a name="azure-key-vault-security"></a>Безопасность Azure Key Vault
 
@@ -64,7 +65,7 @@ ms.locfileid: "83834384"
 > [!IMPORTANT]
 > Политика доступа к Key Vault не поддерживает детализированные разрешения на уровне объектов, таких как определенный ключ, секрет или сертификат. Если пользователю предоставлено разрешение на создание и удаление ключей, он может выполнять эти операции со всеми ключами в этом хранилище ключей.
 
-Чтобы задать политики доступа для хранилища ключей, можно использовать [портал Azure](https://portal.azure.com/), [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest), [Azure PowerShell](/powershell/azureps-cmdlets-docs) или [REST API управления Key Vault](/rest/api/keyvault/).
+Чтобы задать политики доступа для хранилища ключей, можно использовать [портал Azure](https://portal.azure.com/), [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest), [Azure PowerShell](/powershell/azure/) или [REST API управления Key Vault](/rest/api/keyvault/).
 
 Вы можете ограничить доступ к плоскости данных с помощью [конечных точек службы виртуальной сети для Azure Key Vault](overview-vnet-service-endpoints.md). Вы можете настроить [брандмауэры и правила виртуальной сети](network-security.md) в качестве дополнительного уровня безопасности.
 

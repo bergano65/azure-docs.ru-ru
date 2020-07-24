@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 04/17/2020
 ms.author: swmachan
-ms.openlocfilehash: 563f4693c358c570caa2566f58002ddfe6c7bc69
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: 512632faae453ebdf7cb7b279fe2d29b25d23d6b
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83584643"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87090864"
 ---
 # <a name="translator-30-translate"></a>Переводчик 3,0: преобразование
 
@@ -123,7 +123,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
   </tr>
 </table> 
 
-## <a name="request-body"></a>Тело запроса
+## <a name="request-body"></a>Текст запроса
 
 Текст запроса является массивом в формате JSON. Каждый элемент этого массива представляет собой объект JSON со строковым свойством `Text`, который являет собой строку для перевода.
 
@@ -317,6 +317,7 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
 curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=zh-Hans" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json; charset=UTF-8" -d "[{'Text':'Hello, what is your name?'}, {'Text':'I am fine, thank you.'}]"
 ```
 
+Ответ содержит перевод всех фрагментов текста в том же порядке, что и в запросе.
 Текст ответа:
 
 ```
@@ -390,7 +391,7 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
   </tr>
 </table> 
 
-Пример:
+Например.
 
 ```curl
 curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=de&profanityAction=Marked" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json; charset=UTF-8" -d "[{'Text':'This is a freaking good idea.'}]"

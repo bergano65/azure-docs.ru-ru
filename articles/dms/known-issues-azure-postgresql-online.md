@@ -3,8 +3,8 @@ title: 'Известные проблемы: оперативная миграц
 titleSuffix: Azure Database Migration Service
 description: Сведения об известных проблемах и ограничениях миграции с помощью оперативной миграции из PostgreSQL в базу данных Azure для PostgreSQL с использованием Azure Database Migration Service.
 services: database-migration
-author: HJToland3
-ms.author: jtoland
+author: arunkumarthiags
+ms.author: arthiaga
 manager: craigg
 ms.reviewer: craigg
 ms.service: dms
@@ -14,12 +14,12 @@ ms.custom:
 - seo-dt-2019
 ms.topic: article
 ms.date: 02/20/2020
-ms.openlocfilehash: 3d1bc627ccb8814ab2dfb61fb0653ef0ac644038
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 564581a102ac3fab504e82db00ef54b3e45d0c19
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80235264"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87090745"
 ---
 # <a name="known-issuesmigration-limitations-with-online-migrations-from-postgresql-to-azure-db-for-postgresql"></a>Известные проблемы и ограничения миграции при оперативной миграции из PostgreSQL в базу данных Azure для PostgreSQL
 
@@ -91,12 +91,12 @@ ms.locfileid: "80235264"
 
 При попытке выполнить миграцию через Интернет из AWS RDS PostgreSQL в базу данных Azure для PostgreSQL могут возникать следующие ошибки.
 
-- **Ошибка**: значение по умолчанию столбца "{Column}" в таблице "{Table}" в базе данных "{Database}" отличается на исходном и целевом серверах. It's '{value on source}' on source and '{value on target}' on target" (Значение по умолчанию столбца "{столбец}" в таблице "{таблица}" в базе данных "{база данных}" на исходном сервере не совпадает с таким же параметром на целевом сервере. Это значение "{значение на исходном сервере}" на исходном сервере и "{значение на целевом сервере}" на целевом).
+- **Ошибка**. "The Default value of column '{column}' in table '{table}' in database '{database}' is different on source and target servers. It's '{value on source}' on source and '{value on target}' on target" (Значение по умолчанию столбца "{столбец}" в таблице "{таблица}" в базе данных "{база данных}" на исходном сервере не совпадает с таким же параметром на целевом сервере. Это значение "{значение на исходном сервере}" на исходном сервере и "{значение на целевом сервере}" на целевом).
 
   **Ограничение**. Эта ошибка возникает, когда значение по умолчанию для схемы столбца отличается между исходной и целевой базами данных.
   **Обходное решение**. Убедитесь, что схема на целевом объекте соответствует схеме в источнике. Дополнительные сведения о переносе схемы см. в [документации по миграции Azure PostgreSQL Online](https://docs.microsoft.com/azure/dms/tutorial-postgresql-azure-postgresql-online#migrate-the-sample-schema).
 
-- **Ошибка**: Целевая база данных "{Database}" содержит "{число таблиц}", где база данных источника "{Database}" содержит таблицы "{число таблиц}". The number of tables on source and target databases should match" (Количество таблиц в целевой базе данных "{база данных}": {количество таблиц}. Количество таблиц в базе данных-источнике "{база данных}": {количество таблиц}. Количество таблиц в базах данных-источнике и целевой базе данных должно совпадать).
+- **Ошибка**. "Target database '{database}' has '{number of tables}' tables where as source database '{database}' has '{number of tables}' tables. The number of tables on source and target databases should match" (Количество таблиц в целевой базе данных "{база данных}": {количество таблиц}. Количество таблиц в базе данных-источнике "{база данных}": {количество таблиц}. Количество таблиц в базах данных-источнике и целевой базе данных должно совпадать).
 
   **Ограничение**. Эта ошибка возникает, когда число таблиц отличается между исходной и целевой базами данных.
 

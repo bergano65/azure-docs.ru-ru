@@ -1,14 +1,14 @@
 ---
-title: Расширение базы знаний в QnA Maker
+title: Использование активного обучения с базой знаний — QnA Maker
 description: Улучшите качество базы знаний с помощью активного обучения. Просмотр, принятие или отклонение, добавление без удаления или изменения существующих вопросов.
 ms.topic: conceptual
 ms.date: 03/18/2020
-ms.openlocfilehash: 33b3c547b0aea9a1e235bf8a05d01aa16b468a71
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 004ee9d4cced0116831718b1601d5d510dea5a4d
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80071136"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87090932"
 ---
 # <a name="use-active-learning-to-improve-your-knowledge-base"></a>Использование активного обучения для расширения базы знаний
 
@@ -46,7 +46,7 @@ ms.locfileid: "80071136"
 
 [Ознакомьтесь с дополнительными предлагаемыми вопросами](improve-knowledge-base.md) на странице **редактирования** каждой базы знаний.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Создание базы знаний](./manage-knowledge-bases.md)

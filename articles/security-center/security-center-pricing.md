@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/28/2020
 ms.author: memildin
-ms.openlocfilehash: 4487d1452611b269eec756cdbc76e8e55c466cd2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 882f8ab7e4f55809759f3a94fd04fb2c410fe188
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85801144"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87089725"
 ---
 # <a name="upgrade-to-standard-tier-for-enhanced-security"></a>Обновление до уровня "Стандартный" для повышения безопасности
 
@@ -43,7 +43,7 @@ ms.locfileid: "85801144"
 1. В главном меню **центра безопасности** выберите **параметры ценообразования &** .
 2. Выберите подписку, которую требуется обновить до уровня "Стандартный".
 3. Выберите **ценовую категорию**.
-4. Выберите **Стандартный** для обновления.
+4. Выберите **стандартный** для обновления.
 5. Нажмите кнопку **Сохранить**.
 
 [![Цены на центр безопасности](media/security-center-pricing/pricing-tier-page.png)](media/security-center-pricing/pricing-tier-page.png#lightbox)
@@ -68,7 +68,7 @@ ms.locfileid: "85801144"
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этой статье представлены общие сведения о ценах на центр безопасности. Дополнительные сведения о повышенной безопасности уровня "Стандартный" и повышенной защите от угроз см. в следующих статьях:
 
 - [Защита от угроз с помощью Центра безопасности Azure](threat-protection.md)

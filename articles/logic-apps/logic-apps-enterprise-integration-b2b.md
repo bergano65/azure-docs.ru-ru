@@ -8,11 +8,12 @@ ms.author: divswa
 ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 02/10/2020
-ms.openlocfilehash: b576fc99e2f203bb3d690a8135ee76cee26b3de8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2fd96777a5fe74d44aeed5f6de82e54b2663a024
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82792366"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87090388"
 ---
 # <a name="receive-and-confirm--b2b-as2-messages-by-using-azure-logic-apps-and-enterprise-integration-pack"></a>Получение и подтверждение сообщений AS2 для B2B с помощью Azure Logic Apps и Пакет интеграции Enterprise
 
@@ -20,7 +21,7 @@ ms.locfileid: "82792366"
 
 В этой статье показано, как создать приложение логики, которое получает HTTP-запрос с помощью триггера запроса, декодирует содержимое сообщения с помощью действий AS2 и X12, а затем возвращает ответ с помощью действия Response.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 * Подписка Azure. Если у вас еще нет подписки, зарегистрируйтесь, чтобы [получить бесплатную учетную запись Azure](https://azure.microsoft.com/free/).
 
@@ -34,7 +35,7 @@ ms.locfileid: "82792366"
 
   Если вы не знакомы с приложениями логики, ознакомьтесь с [Azure Logic Apps?](../logic-apps/logic-apps-overview.md) и [Краткое руководство. Создание первого приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
-* [Учетная запись интеграции](../logic-apps/logic-apps-enterprise-integration-accounts.md) , связанная с подпиской Azure и связанная с приложением логики. Как приложение логики, так и учетная запись интеграции должны находиться в одном расположении или регионе Azure.
+* [Учетная запись интеграции](./logic-apps-enterprise-integration-create-integration-account.md) , связанная с подпиской Azure и связанная с приложением логики. Как приложение логики, так и учетная запись интеграции должны находиться в одном расположении или регионе Azure.
 
 * По крайней мере два [торговых партнера](../logic-apps/logic-apps-enterprise-integration-partners.md) , которые вы уже определили в вашей учетной записи интеграции вместе с [соглашениями AS2 и X12](logic-apps-enterprise-integration-agreements.md) для этих партнеров.
 
@@ -104,7 +105,7 @@ ms.locfileid: "82792366"
 
 1. В разделе действие **декодирования AS2** выберите **новый шаг**.
 
-1. В разделе **Выбор действия**в поле поиска выберите **встроенный**. В поле поиска введите `condition`. В списке **действия** выберите **условие**.
+1. В разделе **Выбор действия**в поле поиска выберите **встроенный**. В поле поиска введите `condition`. В списке **Действия** выберите **Условие**.
 
    ![Добавить действие "условие"](./media/logic-apps-enterprise-integration-b2b/add-condition-action.png)
 
@@ -177,7 +178,7 @@ ms.locfileid: "82792366"
 
 Чтобы подключить собственные бизнес-приложения и использовать эти API в приложении логики, можно добавить дополнительные действия или [написать пользовательские API](../logic-apps/logic-apps-create-api-app.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Получение и реагирование на входящие вызовы HTTPS](../connectors/connectors-native-reqres.md)
 * [Обмен сообщениями AS2 для интеграции B2B Enterprise](../logic-apps/logic-apps-enterprise-integration-as2.md)

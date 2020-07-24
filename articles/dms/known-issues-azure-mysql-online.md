@@ -3,8 +3,8 @@ title: 'Известные проблемы: оперативная миграц
 titleSuffix: Azure Database Migration Service
 description: Сведения об известных проблемах и ограничениях миграции при оперативной миграции в базу данных Azure для MySQL при использовании Azure Database Migration Service.
 services: database-migration
-author: HJToland3
-ms.author: jtoland
+author: arunkumarthiags
+ms.author: arthiaga
 manager: craigg
 ms.reviewer: craigg
 ms.service: dms
@@ -14,12 +14,12 @@ ms.custom:
 - seo-dt-2019
 ms.topic: article
 ms.date: 02/20/2020
-ms.openlocfilehash: 8c3de28ea934302086a5b14e61482e6a4ab9a7ca
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9a2e28439efaa1983c4deeff4c6746108fc28e4e
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80235278"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87090711"
 ---
 # <a name="online-migration-issues--limitations-to-azure-db-for-mysql-with-azure-database-migration-service"></a>Проблемы оперативной миграции & ограничения для базы данных Azure для MySQL с Azure Database Migration Service
 
@@ -135,6 +135,8 @@ ms.locfileid: "80235278"
     ```
 
 - В Azure Database Migration Service предел переносимых баз данных в одном действии миграции равен четырем.
+
+- Служба DMS Azure не поддерживает ссылочное действие CASCADE, которое помогает автоматически удалять или обновлять совпадающую строку в дочерней таблице при удалении или обновлении строки в родительской таблице. Дополнительные сведения см. в разделе ссылочные действия статьи [ограничения внешнего ключа](https://dev.mysql.com/doc/refman/8.0/en/create-table-foreign-keys.html). В Azure DMS необходимо удалить ограничения внешнего ключа на целевом сервере базы данных во время начальной загрузки данных, а также нельзя использовать ссылочные действия. Если Рабочая нагрузка зависит от обновления связанной дочерней таблицы через это ссылочное действие, рекомендуется выполнить [дамп и восстановить](https://docs.microsoft.com/azure/mysql/concepts-migrate-dump-restore) его. 
 
 - **Ошибка:** Размер строки слишком велик (> 8126). Изменение некоторых столбцов на текст или большой двоичный объект может помочь. В текущем формате строки префикс большого двоичного объекта в 0 байт хранится в строке.
 

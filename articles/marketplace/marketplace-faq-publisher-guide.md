@@ -6,13 +6,13 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 author: keferna
 ms.author: keferna
-ms.date: 05/08/2020
-ms.openlocfilehash: ad4e80c98097955703e4a6fb3c64e93a338f2720
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.date: 07/22/2020
+ms.openlocfilehash: 93366bf963350bf9cbdbda15ec4070c21a1dc975
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86121169"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87090150"
 ---
 # <a name="common-questions-about-microsoft-commercial-marketplace"></a>Распространенные вопросы о коммерческой платформе Майкрософт
 
@@ -46,7 +46,7 @@ ms.locfileid: "86121169"
 
 ### <a name="is-there-a-listing-fee-for-the-microsoft-commercial-marketplace"></a>Предусмотрена ли оплата за публикацию предложения на коммерческой платформе Майкрософт?
 
-Нет, на нашей коммерческой платформе нет никаких затрат на публикацию предложений. Мы оставляем небольшую долю от продаж в качестве плату за транзакцию и инвестируем ее в программу вознаграждений Marketplace Rewards, инновации платформы и операции платформы.
+Нет, на нашей коммерческой платформе нет никаких затрат на публикацию предложений. Мы оставляем небольшую долю от продаж в качестве плату за транзакцию и инвестируем ее в программу вознаграждений Marketplace Rewards, инновации платформы и операции платформы. Эта плата за транзакции сокращается для предложений выгодно [Azure для совместной продажи](https://docs.microsoft.com/azure/marketplace/marketplace-co-sell) .
 
 ### <a name="how-do-i-sign-up-to-be-a-publisher-in-the-microsoft-commercial-marketplace"></a>Как зарегистрироваться для размещения предложений на коммерческой платформе Майкрософт?
 

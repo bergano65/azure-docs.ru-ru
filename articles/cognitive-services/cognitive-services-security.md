@@ -1,21 +1,21 @@
 ---
-title: Безопасность
+title: Безопасность Cognitive Services Azure
 titleSuffix: Azure Cognitive Services
 description: Узнайте о различных вопросах безопасности, касающихся Cognitive Services использования.
 services: cognitive-services
-author: aahill
+author: erhopf
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: conceptual
-ms.date: 06/30/2020
-ms.author: aahi
+ms.date: 07/10/2020
+ms.author: erhopf
 ms.custom: tracking-python
-ms.openlocfilehash: d97b944d5d18a39d6eaf84b55363f487a2c17dbf
-ms.sourcegitcommit: 32592ba24c93aa9249f9bd1193ff157235f66d7e
+ms.openlocfilehash: 51a9829a7ea19665e1081a48207f176b1a8e68c0
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85611413"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87090847"
 ---
 # <a name="azure-cognitive-services-security"></a>Безопасность Cognitive Services Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "85611413"
 
 Для пользователей .NET рассмотрите рекомендации по <a href="https://docs.microsoft.com/dotnet/framework/network-programming/tls" target="_blank">обеспечению безопасности <span class="docon docon-navigate-external x-hidden-focus"></span> транспортного уровня </a>.
 
-## <a name="authentication"></a>Аутентификация
+## <a name="authentication"></a>Проверка подлинности
 
 При обсуждении проверки подлинности существует несколько распространенных заблуждений. Проверка подлинности и авторизация часто путают друг с другом. Удостоверение является также основным компонентом в системе безопасности. Удостоверение — это коллекция сведений об <a href="https://en.wikipedia.org/wiki/Principal_(computer_security)" target="_blank">участнике <span class="docon docon-navigate-external x-hidden-focus"></span> </a>. Поставщики удостоверений (IdP) предоставляют удостоверения для служб проверки подлинности. Проверка подлинности — это процедура проверки удостоверения пользователя. Авторизация — это спецификация прав доступа и привилегий на ресурсы для заданного удостоверения. Некоторые из Cognitive Services предложений включают управление доступом на основе ролей (RBAC). RBAC можно использовать для упрощения некоторых формальностей, участвующих в управлении участниками вручную. Дополнительные сведения см. в статье [Управление доступом на основе ролей для ресурсов Azure](../role-based-access-control/overview.md).
 
@@ -113,7 +113,7 @@ echo "${ENVIRONMENT_VARIABLE_KEY}"
 
 # <a name="c"></a>[C#](#tab/csharp)
 
-Дополнительные сведения см. в <a href="https://docs.microsoft.com/dotnet/api/system.environment.getenvironmentvariable" target="_blank"> `Environment.GetEnvironmentVariable` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
+Дополнительные сведения см. на веб-сайте <a href="https://docs.microsoft.com/dotnet/api/system.environment.getenvironmentvariable" target="_blank">`Environment.GetEnvironmentVariable` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 
 ```csharp
 using static System.Environment;
@@ -132,7 +132,7 @@ class Program
 
 # <a name="c"></a>[C++](#tab/cpp)
 
-Дополнительные сведения см. в <a href="https://docs.microsoft.com/cpp/c-runtime-library/reference/getenv-wgetenv" target="_blank"> `getenv` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
+Дополнительные сведения см. на веб-сайте <a href="https://docs.microsoft.com/cpp/c-runtime-library/reference/getenv-wgetenv" target="_blank">`getenv` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 
 ```cpp
 #include <stdlib.h>
@@ -147,7 +147,7 @@ int main()
 
 # <a name="java"></a>[Java](#tab/java)
 
-Дополнительные сведения см. в <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/System.html#getenv(java.lang.String)" target="_blank"> `System.getenv` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
+Дополнительные сведения см. на веб-сайте <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/System.html#getenv(java.lang.String)" target="_blank">`System.getenv` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 
 ```java
 import java.lang.*;
@@ -164,7 +164,7 @@ public class Program {
 
 # <a name="nodejs"></a>[Node.js](#tab/node-js)
 
-Дополнительные сведения см. в <a href="https://nodejs.org/api/process.html#process_process_env" target="_blank"> `process.env` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
+Дополнительные сведения см. на веб-сайте <a href="https://nodejs.org/api/process.html#process_process_env" target="_blank">`process.env` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 
 ```javascript
 // Get the named env var, and assign it to the value variable
@@ -174,7 +174,7 @@ const value =
 
 # <a name="python"></a>[Python](#tab/python)
 
-Дополнительные сведения см. в <a href="https://docs.python.org/2/library/os.html#os.environ" target="_blank"> `os.environ` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
+Дополнительные сведения см. на веб-сайте <a href="https://docs.python.org/2/library/os.html#os.environ" target="_blank">`os.environ` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 
 ```python
 import os
@@ -185,7 +185,7 @@ value = os.environ['ENVIRONMENT_VARIABLE_KEY']
 
 # <a name="objective-c"></a>[Objective-C](#tab/objective-c)
 
-Дополнительные сведения см. в <a href="https://developer.apple.com/documentation/foundation/nsprocessinfo/1417911-environment?language=objc" target="_blank"> `environment` <span class="docon docon-navigate-external x-hidden-focus"></span> </a>разделе.
+Дополнительные сведения см. на веб-сайте <a href="https://developer.apple.com/documentation/foundation/nsprocessinfo/1417911-environment?language=objc" target="_blank">`environment` <span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 
 ```objectivec
 // Get the named env var, and assign it to the value variable
@@ -203,9 +203,19 @@ NSString* value =
 
 * Переводчик
 
-Для Language Understanding инженеры Майкрософт не будут получать доступ к данным клиентов в номере SKU E0. Чтобы запросить возможность использования номера SKU E0, заполните и отправьте [форму запроса на обслуживание Luis](https://aka.ms/cogsvc-cmk). Для получения сведений о состоянии вашего запроса потребуется около 3-5 рабочих дней. В зависимости от спроса вы можете поместить в очередь и утвердить, как только пространство станет доступным. После утверждения для использования SKU E0 с LUIS необходимо создать новый ресурс Language Understanding из портал Azure и выбрать параметр E0 в качестве ценовой категории. Пользователи не смогут выполнить обновление с F0 на новый SKU E0.
+Для следующих служб инженеры Майкрософт не будут получать доступ к данным клиентов на уровне E0: 
 
-Служба "речь" в настоящее время не поддерживает защищенное хранилище. Однако данные клиента могут храниться с помощью BYOS ("использовать собственное хранилище"), что позволяет использовать аналогичные элементы управления данными для [защищенное хранилище](../security/fundamentals/customer-lockbox-overview.md). Помните, что данные службы речи остаются и обрабатываются в регионе, где был создан речевой ресурс. Это относится к любым неоставшимся данным и передаче данных. При использовании функций настройки, например Пользовательское распознавание речи и пользовательского голоса, все данные клиента передаются, сохраняются и обрабатываются в том же регионе, где находятся ресурсы BYOS (если используется) и служба речи.
+* Распознавание речи
+* Распознавание лиц
+* Content Moderator
+* Персонализатор
+
+> [!IMPORTANT]
+> Для **распознавателя форм**специалисты Майкрософт не будут получать доступ к данным клиентов в ресурсах, созданных после 10 июля 2020.
+
+Чтобы запросить возможность использования номера SKU E0, заполните и отправьте эту [форму запроса](https://aka.ms/cogsvc-cmk). Для получения сведений о состоянии вашего запроса потребуется около 3-5 рабочих дней. В зависимости от спроса вы можете поместить в очередь и утвердить, как только пространство станет доступным. После утверждения для использования SKU E0 с LUIS необходимо создать новый ресурс на основе портал Azure и выбрать в качестве ценовой категории значение E0. Пользователи не смогут выполнить обновление с F0 на новый SKU E0.
+
+Служба "речь" в настоящее время не поддерживает защищенное хранилище. Тем не менее данные клиентов можно хранить с помощью функции "BYOS", что позволяет использовать аналогичные элементы управления данными для защищенное хранилище. Помните, что данные службы речи остаются и обрабатываются в регионе, где был создан речевой ресурс. Это относится к любым неоставшимся данным и передаче данных. При использовании функций настройки, например Пользовательское распознавание речи и пользовательского голоса, все данные клиента передаются, сохраняются и обрабатываются в том же регионе, где находятся ресурсы BYOS (если используется) и служба речи.
 
 > [!IMPORTANT]
 > Корпорация Майкрософт **не** использует данные клиентов для улучшения своих речевых моделей. Кроме того, если ведение журнала конечных точек отключено и никакие настройки не используются, данные клиента не сохраняются. 

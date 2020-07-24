@@ -3,11 +3,12 @@ title: Перенос в концентраторы событий Azure для 
 description: В этой статье показано, как через Центры событий Azure организовать обмен событиями между потребителями и производителями, которые используют разные протоколы (AMQP, Apache Kafka и HTTPS).
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 8f6c4cbdcbbc1d589b0803f36305f9a9fe6eebfa
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: cf585cdc0a43c595ec013ba78a2e3ae191c40b8d
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85322735"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87090660"
 ---
 # <a name="migrate-to-azure-event-hubs-for-apache-kafka-ecosystems"></a>Миграция в Центры событий Azure для экосистем Apache Kafka
 Концентраторы событий Azure предоставляют конечную точку Apache Kafka, которая позволяет подключаться к концентраторам событий с помощью протокола Kafka. Внося минимальные изменения в существующее приложение Kafka, вы можете подключиться к концентраторам событий Azure и воспользоваться преимуществами экосистемы Azure. Концентраторы событий для Kafka поддерживают [Apache Kafka версии 1,0](https://kafka.apache.org/10/documentation.html) и более поздних.
@@ -17,7 +18,7 @@ ms.locfileid: "85322735"
 ### <a name="create-an-azure-account"></a>Создание учетной записи Azure
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
 
-### <a name="create-an-event-hubs-namespace"></a>Создание пространства имен в Центрах событий
+### <a name="create-an-event-hubs-namespace"></a>Создание пространства имен Центров событий
 Выполните пошаговые инструкции из статьи [Создание концентратора событий](event-hubs-create.md) , чтобы создать пространство имен концентраторов событий и концентратор событий. 
 
 ### <a name="connection-string"></a>Строка подключения
@@ -48,16 +49,16 @@ sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule require
 
 Если `sasl.jaas.config` Конфигурация не поддерживается в вашей платформе, найдите конфигурации, используемые для задания имени пользователя и пароля SASL и используйте их. Задайте для параметра имя пользователя значение `$ConnectionString` и пароль для строки подключения к концентратору событий.
 
-## <a name="post-migration"></a>Действия после миграции
+## <a name="post-migration"></a>После миграции
 Запустите приложение Kafka, которое отправляет события в концентратор событий. Затем убедитесь, что концентратор событий получает события с помощью портал Azure. На странице **Обзор** пространства имен концентраторов событий перейдите в представление **сообщения** в разделе **метрики** . Обновите страницу, чтобы обновить диаграмму. На отображение полученных сообщений может уйти несколько секунд. 
 
 [![Проверка получения сообщения концентратором событий](./media/getstarted-dotnet-standard-send-v2/verify-messages-portal.png)](./media/getstarted-dotnet-standard-send-v2/verify-messages-portal.png#lightbox)
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о Центрах событий и Центрах событий для Kafka см. в следующих статьях:  
 
 - [Руководство по устранению неполадок Apache Kafka для концентраторов событий](apache-kafka-troubleshooting-guide.md)
 - [Часто задаваемые вопросы — концентраторы событий для Apache Kafka](apache-kafka-frequently-asked-questions.md)
 - [Apache Kafka Guide для разработчиков концентраторов событий Azure](apache-kafka-developer-guide.md)
-- [Рекомендуемые конфигурации](https://github.com/Azure/azure-event-hubs-for-kafka/blob/master/CONFIGURATION.md)
+- [Рекомендуемые конфигурации](apache-kafka-configurations.md)

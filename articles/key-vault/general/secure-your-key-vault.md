@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: conceptual
 ms.date: 05/11/2020
 ms.author: sudbalas
-ms.openlocfilehash: 1aea1f3b2401d7b9639c32927ffa7390727d25b2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4c888fe0f2f4df722948cc6d22e1ef50fd1a3d42
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85833644"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87090507"
 ---
 # <a name="secure-access-to-a-key-vault"></a>Безопасный доступ к хранилищу ключей
 
@@ -59,7 +59,7 @@ Azure Key Vault — это облачная служба, которая обе
 
 ## <a name="management-plane-and-rbac"></a>Плоскость управления и RBAC
 
-В плоскости управления для авторизации операций, которые может выполнять вызывающий объект, используется RBAC (Управление доступом на основе ролей). В модели RBAC каждая подписка Azure содержит экземпляр Azure AD. Вы можете предоставить доступ пользователям, группам и приложениям из этого каталога. Доступ предоставляется для управления ресурсами в подписке Azure, использующими модель развертывания Azure Resource Manager. Чтобы предоставить доступ, можно использовать [портал Azure](https://portal.azure.com/), [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest), [Azure PowerShell](/powershell/azureps-cmdlets-docs) или [REST API Azure Resource Manager](https://msdn.microsoft.com/library/azure/dn906885.aspx).
+В плоскости управления для авторизации операций, которые может выполнять вызывающий объект, используется RBAC (Управление доступом на основе ролей). В модели RBAC каждая подписка Azure содержит экземпляр Azure AD. Вы можете предоставить доступ пользователям, группам и приложениям из этого каталога. Доступ предоставляется для управления ресурсами в подписке Azure, использующими модель развертывания Azure Resource Manager. Чтобы предоставить доступ, можно использовать [портал Azure](https://portal.azure.com/), [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest), [Azure PowerShell](/powershell/azure/) или [REST API Azure Resource Manager](https://msdn.microsoft.com/library/azure/dn906885.aspx).
 
 Вы можете создать хранилище ключей в группе ресурсов и управлять доступом с помощью Azure AD. Можно предоставить пользователям или группе возможность управлять хранилищами ключей в группе ресурсов. Вы можете предоставить доступ в определенной области путем назначения соответствующей роли RBAC. Чтобы предоставить пользователю доступ к управлению хранилищами ключей, ему необходимо назначить предопределенную роль `key vault Contributor` в определенной области. Роли RBAC можно назначить следующие области:
 
@@ -82,7 +82,7 @@ Azure Key Vault — это облачная служба, которая обе
 
 Полный список операций с хранилищем и секретами, а также сведения об операциях, разрешенных при настройке политик доступа к хранилищу ключей, см. в следующей ссылке. [Справочник по операциям Key Vault](https://docs.microsoft.com/rest/api/keyvault/#vault-operations)
 
-<a id="key-vault-access-policies"></a> Политики доступа к Key Vault предоставляют доступ отдельно к ключам, секретам и сертификатам. Можно предоставить пользователю доступ только к ключам, но не к секретам. Разрешения на доступ к ключам, секретам и сертификатам устанавливаются на уровне хранилища. Политика доступа к Key Vault не поддерживает детализированные разрешения на уровне объектов, таких как определенный ключ, секрет или сертификат. Чтобы задать политики доступа для хранилища ключей, можно использовать [портал Azure](https://portal.azure.com/), [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest), [Azure PowerShell](/powershell/azureps-cmdlets-docs) или [REST API управления Key Vault](https://msdn.microsoft.com/library/azure/mt620024.aspx).
+<a id="key-vault-access-policies"></a> Политики доступа к Key Vault предоставляют доступ отдельно к ключам, секретам и сертификатам. Можно предоставить пользователю доступ только к ключам, но не к секретам. Разрешения на доступ к ключам, секретам и сертификатам устанавливаются на уровне хранилища. Политика доступа к Key Vault не поддерживает детализированные разрешения на уровне объектов, таких как определенный ключ, секрет или сертификат. Чтобы задать политики доступа для хранилища ключей, можно использовать [портал Azure](https://portal.azure.com/), [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest), [Azure PowerShell](/powershell/azure/) или [REST API управления Key Vault](https://msdn.microsoft.com/library/azure/mt620024.aspx).
 
 > [!IMPORTANT]
 > Политики доступа к Key Vault применяются на уровне хранилища. Если пользователю предоставлено разрешение на создание и удаление ключей, он может выполнять эти операции со всеми ключами в этом хранилище ключей.

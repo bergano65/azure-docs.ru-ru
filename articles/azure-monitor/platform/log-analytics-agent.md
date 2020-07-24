@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/04/2020
-ms.openlocfilehash: c6bd45324313ebc44bd4c59cd6f09e2eaab28d32
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 9f8850b83b2af7f0d3007cd716f9e077361a02e2
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86505148"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87091119"
 ---
 # <a name="log-analytics-agent-overview"></a>Общие сведения об агенте Log Analytics
 Агент Log Analytics разработан для комплексного управления на виртуальных машинах, размещенных на облаке, на локальных компьютерах, и других отслеживаемых с помощью [System Center Operations Manager](/system-center/scom/) компьютерах. Агенты Windows и Linux отправляют в рабочую область вашего Log Analytics в Azure Monitor собранные данные из разных источников, а также уникальные журналы и метрики, как задано в решении мониторинга. Агент Log Analytics также поддерживает аналитику и другие службы в Azure Monitor, такие как [Azure Monitor для виртуальных машин](../insights/vminsights-enable-overview.md), [Центр безопасности Azure](../../security-center/index.yml) и [Служба автоматизации Azure](../../automation/automation-intro.md).
@@ -153,6 +153,7 @@ alternatives --set python `which python2`
 |Glibc |    Библиотека C GNU | 2.5-12 
 |Openssl    | Библиотеки OpenSSL | 1.0. x или 1.1. x |
 |Curl | Веб-клиент cURL | 7.15.5 |
+|Python | | 2.6 + или 3.3 +
 |Python-ctypes | | 
 |PAM | Подключаемые модули аутентификации | | 
 
