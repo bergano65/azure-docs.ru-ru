@@ -6,11 +6,12 @@ ms.author: manishku
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 01/13/2020
-ms.openlocfilehash: e2f732a8cf51c51de1b6125717eafb672d7fff74
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: 90ca46ace5f774e288b40a969f8f7e9802e79857
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86027415"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87080885"
 ---
 # <a name="azure-database-for-mysql-data-encryption-with-a-customer-managed-key"></a>Шифрование данных в Базе данных Azure для MySQL с помощью управляемого клиентом ключа
 
@@ -51,7 +52,7 @@ Key Vault — это облачная внешняя система управ
 * **wrapKey**. Для шифрования ключа DEK.
 * **unwrapKey**. Для расшифровки ключа DEK.
 
-Администратор хранилища ключей может также [включить ведение журнала событий аудита Key Vault](../azure-monitor/insights/azure-key-vault.md), чтобы их можно было проверить позже.
+Администратор хранилища ключей может также [включить ведение журнала событий аудита Key Vault](../azure-monitor/insights/key-vault-insights-overview.md), чтобы их можно было проверить позже.
 
 Если сервер настроен для использования управляемого клиентом ключа, хранящегося в хранилище ключей, он отправляет ключ DEK в хранилище ключей для шифрования. Key Vault возвращает зашифрованный ключ DEK, который сохраняется в базе данных пользователя. Аналогично при необходимости сервер отправляет защищенный ключ DEK в хранилище ключей для расшифровки. Если включено ведение журнала, аудиторы могут использовать Azure Monitor для просмотра журналов событий аудита Key Vault.
 

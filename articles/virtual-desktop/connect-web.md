@@ -1,5 +1,5 @@
 ---
-title: Подключение к веб-клиенту Виртуального рабочего стола Windows — Azure
+title: Подключение к виртуальному рабочему столу Windows с помощью веб-клиента в Azure
 description: Сведения о подключении к Виртуальному рабочему столу Windows с помощью веб-клиента.
 services: virtual-desktop
 author: Heidilohr
@@ -8,13 +8,14 @@ ms.topic: how-to
 ms.date: 09/24/2019
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: bb3a73566cd2477e493ca8621336fb3a51f3b3b8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 4bb54db8a18baa237f1c32c223b5f609638c7523
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85212468"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87080630"
 ---
-# <a name="connect-with-the-web-client"></a>Подключение к веб-клиенту
+# <a name="connect-to-windows-virtual-desktop-with-the-web-client"></a>Подключение к виртуальному рабочему столу Windows с помощью веб-клиента
 
 >[!IMPORTANT]
 >Это содержимое применимо к обновлению за весну 2020 года с объектами Azure Resource Manager для Виртуального рабочего стола Windows. Если вы используете выпуск Виртуального рабочего стола Windows за осень 2019 года без объектов Azure Resource Manager, см. [эту статью](./virtual-desktop-fall-2019/connect-web-2019.md).

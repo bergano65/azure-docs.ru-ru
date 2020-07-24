@@ -9,12 +9,12 @@ ms.subservice: management
 ms.date: 06/26/2020
 ms.reviewer: jushiman
 ms.custom: avverma
-ms.openlocfilehash: af0dea5297cca02b12aecdc8252e62030032b93e
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 558dd152aa1c6638155ad4215dc16f08d33d2e2f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85601349"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87080545"
 ---
 # <a name="azure-virtual-machine-scale-set-automatic-os-image-upgrades"></a>Автоматические обновления образа ОС масштабируемого набора виртуальных машин Azure
 
@@ -56,14 +56,14 @@ ms.locfileid: "85601349"
 | Canonical               | UbuntuServer  | 18.04-LTS          |
 | Rogue Wave (OpenLogic)  | CentOS        | 7,5 %                |
 | CoreOS                  | CoreOS        | объем стабилен             |
-| Microsoft Corporation   | WindowsServer | 2012-R2-Datacenter |
-| Microsoft Corporation   | WindowsServer | 2016-Datacenter    |
-| Microsoft Corporation   | WindowsServer | 2016-Datacenter-Smalldisk |
-| Microsoft Corporation   | WindowsServer | 2016-Datacenter-with-Containers |
-| Microsoft Corporation   | WindowsServer | 2019-Datacenter |
-| Microsoft Corporation   | WindowsServer | 2019 — центр обработки данных — Смаллдиск |
-| Microsoft Corporation   | WindowsServer | 2019-Datacenter-with-Containers |
-| Microsoft Corporation   | WindowsServer | Datacenter-Core-1903-with-Containers-смаллдиск |
+| Корпорация Майкрософт   | WindowsServer | 2012-R2-Datacenter |
+| Корпорация Майкрософт   | WindowsServer | 2016-Datacenter    |
+| Корпорация Майкрософт   | WindowsServer | 2016-Datacenter-Smalldisk |
+| Корпорация Майкрософт   | WindowsServer | 2016-Datacenter-with-Containers |
+| Корпорация Майкрософт   | WindowsServer | 2019-Datacenter |
+| Корпорация Майкрософт   | WindowsServer | 2019 — центр обработки данных — Смаллдиск |
+| Корпорация Майкрософт   | WindowsServer | 2019-Datacenter-with-Containers |
+| Корпорация Майкрософт   | WindowsServer | Datacenter-Core-1903-with-Containers-смаллдиск |
 
 
 ## <a name="requirements-for-configuring-automatic-os-image-upgrade"></a>Требования к настройке автоматического обновления образа ОС
@@ -143,7 +143,7 @@ az vmss update --name myScaleSet --resource-group myResourceGroup --set UpgradeP
 
 Для масштабируемого набора можно дополнительно настроить проверки работоспособности приложений, с помощью которых платформа сможет получать точную информацию о текущем состоянии приложения. Проверки работоспособности приложения — это проверки пользовательского балансировщика нагрузки, которые используются в качестве сообщения о работоспособности. Приложение, работающее на экземпляре виртуальной машины из масштабируемого набора, может отвечать на внешние HTTP- или TCP-запросы, указывающие на его работоспособность. Дополнительные сведения о работе проверок пользовательского балансировщика нагрузки см. в статье [Проверки балансировщика нагрузки](../load-balancer/load-balancer-custom-probe-overview.md). Пробы работоспособности приложений не поддерживаются для масштабируемых наборов Service Fabric. Для не связанных с Service Fabric масштабируемых наборов требуются или проверки работоспособности приложения Load Balancer, или [расширение работоспособности приложения](virtual-machine-scale-sets-health-extension.md).
 
-Если масштабируемый набор настроен для использования нескольких групп размещения, необходимо использовать проверки с [балансировщиком нагрузки уровня "Стандартный"](https://docs.microsoft.com/azure/load-balancer/load-balancer-standard-overview).
+Если масштабируемый набор настроен для использования нескольких групп размещения, необходимо использовать проверки с [балансировщиком нагрузки уровня "Стандартный"](../load-balancer/load-balancer-overview.md).
 
 ### <a name="configuring-a-custom-load-balancer-probe-as-application-health-probe-on-a-scale-set"></a>Настройка пользовательской проверки балансировщика нагрузки в качестве проверки работоспособности приложения в масштабируемом наборе
 Мы рекомендуем явно создать проверку балансировщика нагрузки на работоспособность масштабируемого набора. Вы можете использовать одну конечную точку для имеющейся пробы HTTP или TCP, но для пробы работоспособности может потребоваться подход, отличный от традиционного для пробы подсистемы балансировки нагрузки. Например, при традиционной проверке подсистемы балансировки нагрузки может вернуться сообщение о нерабочем состоянии, если нагрузка на экземпляр слишком высока. Такая проверка может оказаться непригодной для определения работоспособности экземпляра во время автоматического обновления ОС. Настройте для проверки высокую частоту (менее двух минут).
@@ -161,7 +161,7 @@ az vmss update --name myScaleSet --resource-group myResourceGroup --set UpgradeP
 ```
 
 > [!NOTE]
-> При использовании автоматического обновления ОС с помощью Service Fabric домен обновления развертывает новый образ ОС, чтобы обеспечить высокий уровень доступности для служб, работающих в Service Fabric. Для использования автоматических обновлений ОС в Service Fabric ваш кластер должен быть настроен на использование уровня надежности Silver или выше. Дополнительные сведения о характеристиках устойчивости кластера Service Fabric см. в [этой документации](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-capacity#the-durability-characteristics-of-the-cluster).
+> При использовании автоматического обновления ОС с помощью Service Fabric домен обновления развертывает новый образ ОС, чтобы обеспечить высокий уровень доступности для служб, работающих в Service Fabric. Для использования автоматических обновлений ОС в Service Fabric ваш кластер должен быть настроен на использование уровня надежности Silver или выше. Дополнительные сведения о характеристиках устойчивости кластера Service Fabric см. в [этой документации](../service-fabric/service-fabric-cluster-capacity.md#durability-characteristics-of-the-cluster).
 
 ### <a name="keep-credentials-up-to-date"></a>Срок обновления учетных данных
 Если в масштабируемом наборе используются учетные данные для доступа к внешним ресурсам, например расширение виртуальной машины, настроенное для использования маркера SAS для учетной записи хранения, убедитесь, что учетные данные обновлены. Если срок действия учетных данных, включая сертификаты и токены, истек, обновление завершится ошибкой, а первый пакет виртуальных машин останется в состоянии сбоя.
@@ -295,5 +295,5 @@ az vmss rolling-upgrade start --resource-group "myResourceGroup" --name "myScale
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fvm-scale-sets%2Fmaster%2Fpreview%2Fupgrade%2Fautoupdate.json" target="_blank"><img src="https://azuredeploy.net/deploybutton.png"/></a>
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные примеры использования автоматических обновлений ОС с масштабируемыми наборами см. в [репозитории GitHub](https://github.com/Azure/vm-scale-sets/tree/master/preview/upgrade).

@@ -9,11 +9,12 @@ author: vijetajo
 ms.author: vijetaj
 ms.topic: conceptual
 ms.date: 04/02/2020
-ms.openlocfilehash: dec9d7d6f4676c3550bb6c0be79e25d907e5b3da
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: ed552a57e51ce9249f84bab6bb72bfe783e43edb
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83682476"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87078114"
 ---
 # <a name="data-science-with-a-linux-data-science-virtual-machine-in-azure"></a>Обработка и анализ данных с помощью Виртуальной машины для обработки и анализа данных с Linux в Azure
 
@@ -29,7 +30,7 @@ ms.locfileid: "83682476"
 
 * **Подписка Azure**. Сведения о том, как получить подписку Azure, см. на странице [Создайте бесплатную учетную запись Azure уже сегодня](https://azure.microsoft.com/free/).
 * [**Виртуальная машина для обработки и анализа данных с Linux**](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-dsvm.ubuntu-1804). Дополнительные сведения см. в статье по [подготовке Виртуальной машины для обработки и анализа данных с Linux](linux-dsvm-intro.md).
-* Клиент [**X2Go**](https://wiki.x2go.org/doku.php), установленный на компьютере, и открытый сеанс XFCE. Дополнительные сведения см. в статье по [установке и настройке клиента X2Go](linux-dsvm-intro.md#x2go).
+* Клиент [**X2Go**](https://wiki.x2go.org/doku.php), установленный на компьютере, и открытый сеанс XFCE. Дополнительные сведения см. в статье по [установке и настройке клиента X2Go](dsvm-ubuntu-intro.md#x2go).
 * Для более плавной прокрутки в веб-браузере Firefox в DSVM переключите флаг `gfx.xrender.enabled` в режим `about:config`. [Подробнее](https://www.reddit.com/r/firefox/comments/4nfmvp/ff_47_unbearable_slow_over_remote_x11/). Рекомендуется также задать для параметра `mousewheel.enable_pixel_scrolling` значение `False`. [Подробнее](https://support.mozilla.org/questions/981140).
 * **Учетная запись Машинного обучения Azure**. Если у вас ее еще нет, зарегистрируйте новую учетную запись на [домашней странице Машинного обучения Azure](https://azure.microsoft.com/free/services/machine-learning//).
 
@@ -312,7 +313,7 @@ predictSpam.service(1, 1, 1)
 
 ### <a name="jupyterhub"></a>JupyterHub
 
-Дистрибутив Anaconda на DSVM для обработки и анализа данных поставляется с Jupyter Notebook, кроссплатформенной средой для совместного использования кода Python, R или Julia и анализа. Доступ к Jupyter Notebook можно получить через JupyterHub. Для входа введите учетные данные локального пользователя Linux по адресу https://\<DNS-имя или IP-адрес DSVM\>:8000/. Все файлы конфигурации JupyterHub находятся в каталоге /etc/jupyterhub.
+Дистрибутив Anaconda на DSVM для обработки и анализа данных поставляется с Jupyter Notebook, кроссплатформенной средой для совместного использования кода Python, R или Julia и анализа. Доступ к Jupyter Notebook можно получить через JupyterHub. Войдите в систему, используя имя пользователя и пароль локального Linux в https:// \<DSVM DNS name or IP address\> : 8000/. Все файлы конфигурации JupyterHub находятся в каталоге /etc/jupyterhub.
 
 > [!NOTE]
 > Чтобы использовать диспетчер пакетов Python (с помощью команды `pip`) из Jupyter Notebook в текущем ядре, используйте в ячейке кода такую команду:

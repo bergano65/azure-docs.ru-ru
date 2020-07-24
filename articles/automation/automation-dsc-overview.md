@@ -10,12 +10,12 @@ ms.author: magoedte
 ms.date: 06/22/2020
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 6a1c6bb39e743a96ad110a60e41cc59306e7a2ae
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: 437a917e0f9b6e7a7370e828c8e3ee95218cea3f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86186390"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87079746"
 ---
 # <a name="azure-automation-state-configuration-overview"></a>Обзор службы State Configuration службы автоматизации Azure
 
@@ -53,7 +53,7 @@ State Configuration службы автоматизации Azure — это с
 
 Узлы, управление которыми осуществляется с помощью "Настройка состояния службы автоматизации Azure", отправляют подробные отчеты с данными о состоянии на встроенный опрашивающий сервер. В службе "Настройка состояния службы автоматизации Azure" можно настроить отправку этих данных в рабочую область Log Analytics. См. раздел [Пересылка данных отчетов службы State Configuration службы автоматизации Azure в журналах Azure Monitor](automation-dsc-diagnostics.md).
 
-## <a name="prerequisites"></a>Предварительные требования:
+## <a name="prerequisites"></a>Обязательные условия
 
 При использовании службы State Configuration службы автоматизации Azure учитывайте требования, описанные в этом разделе.
 
@@ -73,7 +73,7 @@ State Configuration службы автоматизации Azure — это с
 >[!NOTE]
 >Номер SKU автономного продукта [Microsoft Hyper-V Server](/windows-server/virtualization/hyper-v/hyper-v-server-2016) не содержит реализацию DSC. Поэтому управлять им с помощью PowerShell DSC или службы State Configuration службы автоматизации Azure невозможно.
 
-Для узлов под управлением Linux расширение DSC для Linux поддерживает все дистрибутивы Linux, перечисленные в разделе [Поддерживаемые дистрибутивы Linux](https://github.com/Azure/azure-linux-extensions/tree/master/DSC#4-supported-linux-distributions).
+Для узлов под управлением Linux расширение DSC для Linux поддерживает все дистрибутивы Linux, перечисленные в [документации по DSC PowerShell](/powershell/scripting/dsc/getting-started/lnxgettingstarted).
 
 ### <a name="dsc-requirements"></a>Требования DSC
 

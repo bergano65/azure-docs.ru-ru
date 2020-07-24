@@ -1,5 +1,5 @@
 ---
-title: Расположение данных для виртуальных рабочих столов Windows — Azure
+title: Расположение данных для пружины 2020 виртуальных рабочих столов Windows — Azure
 description: Краткое описание расположений, в которых хранятся данные и метаданные виртуального рабочего стола Windows.
 services: virtual-desktop
 author: Heidilohr
@@ -8,14 +8,14 @@ ms.topic: conceptual
 ms.date: 04/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 853f5766c4fd6344eecfd7be1d7911163133a8a5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 96072b8008f42f58ec6a3aff32728c087b8e3290
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82611540"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87080579"
 ---
-# <a name="data-locations-for-windows-virtual-desktop"></a>Расположения данных для виртуального рабочего стола Windows
+# <a name="data-and-metadata-locations-for-windows-virtual-desktop"></a>Расположение данных и метаданных для виртуальных рабочих столов Windows
 
 >[!IMPORTANT]
 >Это содержимое применимо к обновлению за весну 2020 года с объектами Azure Resource Manager для Виртуального рабочего стола Windows. Если вы используете выпуск Виртуального рабочего стола Windows за осень 2019 года без объектов Azure Resource Manager, см. [эту статью](./virtual-desktop-fall-2019/data-locations-2019.md).

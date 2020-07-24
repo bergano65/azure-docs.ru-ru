@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: divswa, logicappspm
 ms.topic: article
 ms.date: 05/04/2020
-ms.openlocfilehash: 69d018db26a42c331ff41d242eae54d6fcc43990
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 66796a819c0ca7e114d82210a988fc7e13003941
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86536257"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87078192"
 ---
 # <a name="monitor-run-status-review-trigger-history-and-set-up-alerts-for-azure-logic-apps"></a>Мониторинг состояния выполнения, Просмотр журнала триггеров и Настройка оповещений для Azure Logic Apps
 
@@ -86,7 +86,7 @@ ms.locfileid: "86536257"
      Теперь можно просмотреть такие сведения, как входные и выходные данные для этого шага, например:
 
    > [!NOTE]
-   > Все сведения о времени выполнения и события шифруются в службе Logic Apps. Они расшифровываются только в том случае, когда пользователь запрашивает просмотр этих данных. Вы можете [Скрыть входные и выходные данные в журнале выполнения](../logic-apps/logic-apps-securing-a-logic-app.md#obfuscate) или управлять доступом пользователей к этим сведениям с помощью [управления доступом на основе ролей (RBAC) Azure](../role-based-access-control/overview.md).
+   > Все сведения о времени выполнения и события шифруются в службе Logic Apps. Они расшифровываются только в том случае, когда пользователь запрашивает просмотр этих данных. Вы можете [Скрыть входные и выходные данные в журнале выполнения](../logic-apps/logic-apps-securing-a-logic-app.md#obfuscate) или управлять доступом пользователей к этим сведениям с помощью [управления доступом на основе ролей Azure (Azure RBAC)](../role-based-access-control/overview.md).
 
 <a name="review-trigger-history"></a>
 

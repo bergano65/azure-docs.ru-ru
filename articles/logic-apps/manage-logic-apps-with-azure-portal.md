@@ -8,19 +8,19 @@ ms.author: ladolan
 ms.reviewer: estfan, jonfan, logicappspm
 ms.topic: article
 ms.custom: mvc
-ms.date: 04/29/2020
-ms.openlocfilehash: d80972cd200b8f85e14d316c4c06a38f88ac81b5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/20/2020
+ms.openlocfilehash: d50f577a7170982be004cc8957114f79675fbc6e
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82598170"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87078627"
 ---
 # <a name="manage-logic-apps-in-the-azure-portal"></a>Управление приложениями логики в портал Azure
 
 Управлять приложениями логики можно с помощью [портал Azure](https://portal.azure.com) или [Visual Studio](manage-logic-apps-with-visual-studio.md). В этой статье показано, как изменять, отключать, включать и удалять приложения логики в портал Azure. Если вы не знакомы с Azure Logic Apps, см. статью [что такое Azure Logic Apps](logic-apps-overview.md)?
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -36,7 +36,7 @@ ms.locfileid: "82598170"
 
 1. В строке поиска Azure введите `logic apps` и выберите **Logic Apps**.
 
-   ![Поиск и выбор "Logic Apps"](./media/manage-logic-apps-with-azure-portal/find-select-logic-apps.png)
+   ![Снимок экрана портал Azure меню с Logic Apps поиска и выбора в строке поиска.](./media/manage-logic-apps-with-azure-portal/find-select-logic-apps.png)
 
 1. На странице **Logic Apps** найдите и выберите приложение логики, которым требуется управлять.
 
@@ -54,12 +54,12 @@ ms.locfileid: "82598170"
 
 1. На панели " **Свойства** " можно просмотреть и скопировать следующие сведения о приложении логики:
 
-   * **Name**
+   * **имя**;
    * **Идентификатор ресурса**
    * **Группа ресурсов**
    * **Расположение**
-   * **Type** 
-   * **Имя подписки**
+   * **Тип** 
+   * **Название подписки**
    * **Идентификатор подписки**
    * **Конечная точка доступа**
    * **Исходящие IP-адреса среды выполнения**
@@ -100,19 +100,19 @@ ms.locfileid: "82598170"
 
    * На панели инструментов нажмите кнопку **Отключить**.
 
-     ![Отключение единого приложения логики в портал Azure](./media/manage-logic-apps-with-azure-portal/disable-single-logic-app.png)
+     ![Снимок экрана: панель инструментов приложения логики, на которой выбрана кнопка "отключить".](./media/manage-logic-apps-with-azure-portal/disable-single-logic-app.png)
 
      Если приложение логики уже отключено, отображается только параметр **Enable (включить** ).
 
    * На панели инструментов выберите **включить**.
 
-     ![Включение единого приложения логики в портал Azure](./media/manage-logic-apps-with-azure-portal/enable-single-logic-app.png)
+     ![Снимок экрана: панель инструментов приложения логики, на которой выбрана кнопка "включить".](./media/manage-logic-apps-with-azure-portal/enable-single-logic-app.png)
 
      Если приложение логики уже включено, то отображается только параметр **Отключить** . 
 
    В портал Azure отображается уведомление на главной панели инструментов Azure, которая подтверждает успешность выполнения операции.
 
-   ![Уведомление для подтверждения состояния операции](./media/manage-logic-apps-with-azure-portal/operation-confirmation-notification.png)
+   ![Снимок экрана портал Azure, отображающий уведомление для подтверждения состояния операции](./media/manage-logic-apps-with-azure-portal/operation-confirmation-notification.png)
 
 <a name="disable-or-enable-multiple-logic-apps"></a>
 
@@ -122,15 +122,15 @@ ms.locfileid: "82598170"
 
 1. Чтобы проверить, включено ли приложение логики в настоящее время или отключено, на странице **Logic Apps** просмотрите столбец **состояние** для этого приложения логики. 
 
-   ![Столбец состояния Logic Apps](./media/manage-logic-apps-with-azure-portal/view-logic-app-status.png)
+   ![Снимок экрана: страница портал Azure Logic Apps, отображающая список приложений логики, отсортированных по столбцу состояния.](./media/manage-logic-apps-with-azure-portal/view-logic-app-status.png)
 
    Если столбец **состояние** не отображается, на панели инструментов **Logic Apps** выберите **пробная версия**.
 
-   ![Включить предварительную версию](./media/manage-logic-apps-with-azure-portal/select-try-preview.png)
+   ![Снимок экрана со страницей портал Azure Logic Apps, в которой выбрана кнопка "попробовать предварительный просмотр".](./media/manage-logic-apps-with-azure-portal/select-try-preview.png)
 
 1. В столбце CheckBox выберите приложения логики, которые необходимо включить или отключить. На панели инструментов выберите **Отключить** или **включить**.
 
-   ![Включение или отключение нескольких приложений логики в портал Azure](./media/manage-logic-apps-with-azure-portal/enable-disable-multiple-logic-apps.png)
+   ![Снимок экрана портал Azure Logic Apps страница с отображением кнопок включения и отключения для нескольких приложений логики.](./media/manage-logic-apps-with-azure-portal/enable-disable-multiple-logic-apps.png)
 
 1. Когда появится окно подтверждения, выберите **Да** , чтобы продолжить.
 
@@ -158,11 +158,11 @@ ms.locfileid: "82598170"
 
 1. В меню приложения логики выберите **Обзор**. На панели инструментов приложения логики выберите **Удалить**.
 
-   ![На панели инструментов приложения логики выберите "Удалить".](./media/manage-logic-apps-with-azure-portal/delete-single-logic-app.png)
+   ![Снимок экрана панели инструментов приложения логики, на котором отображается выбранная кнопка "Удалить".](./media/manage-logic-apps-with-azure-portal/delete-single-logic-app.png)
 
 1. Когда появится окно подтверждения, введите имя приложения логики и выберите **Удалить**.
 
-   ![Подтвердите удаление приложения логики](./media/manage-logic-apps-with-azure-portal/delete-confirmation-single-logic-app.png)
+   ![Снимок экрана Logic Apps запрос на подтверждение удаления приложения логики.](./media/manage-logic-apps-with-azure-portal/delete-confirmation-single-logic-app.png)
 
    В портал Azure отображается уведомление на главной панели инструментов Azure, которая подтверждает успешность выполнения операции.
 
@@ -174,11 +174,11 @@ ms.locfileid: "82598170"
 
 1. В столбце CheckBox выберите приложения логики, которые необходимо удалить. На панели инструментов нажмите кнопку **Удалить**.
 
-   ![Удаление нескольких приложений логики](./media/manage-logic-apps-with-azure-portal/delete-multiple-logic-apps.png)
+   ![Снимок экрана с Logic Apps страницей, отображающий несколько приложений логики в списке, выбранном для удаления.](./media/manage-logic-apps-with-azure-portal/delete-multiple-logic-apps.png)
 
 1. Когда появится окно подтверждения, введите `yes` и выберите **Удалить**.
 
-   ![Подтвердите удаление приложений логики](./media/manage-logic-apps-with-azure-portal/delete-confirmation-multiple-logic-apps.png)
+   ![Снимок экрана Logic Apps запроса на подтверждение удаления нескольких приложений логики.](./media/manage-logic-apps-with-azure-portal/delete-confirmation-multiple-logic-apps.png)
 
    В портал Azure отображается уведомление на главной панели инструментов Azure, которая подтверждает успешность выполнения операции.
 
@@ -196,13 +196,13 @@ ms.locfileid: "82598170"
 
 1. В меню приложения логики в разделе **средства разработки**выберите **версии**.
 
-   ![В меню приложения логики выберите "версии" в разделе "средства разработки".](./media/manage-logic-apps-with-azure-portal/logic-apps-menu-versions.png)
+   ![Снимок экрана приложения логики в портал Azure, отображающий страницу выбора версий в разделе "средства разработки".](./media/manage-logic-apps-with-azure-portal/logic-apps-menu-versions.png)
 
 1. Выберите **версию** приложения логики для управления из списка. Для фильтрации списка можно ввести идентификатор **версии** в строке поиска.
 
 1. На странице **версия журнала** вы увидите сведения о предыдущей версии в режиме только для чтения. Можно выбрать один из режимов: **конструктор** Logic Apps и **представление кода** .
 
-   ![Страница версии журнала для приложения логики с представлением кода и конструктором приложений логики](./media/manage-logic-apps-with-azure-portal/history-version.png)
+   ![Снимок экрана: страница версии журнала Logic Apps, отображающая параметры представления кода и конструктора.](./media/manage-logic-apps-with-azure-portal/history-version.png)
 
 <a name="promote-previous-versions"></a>
 
@@ -212,11 +212,11 @@ ms.locfileid: "82598170"
 
 1. На странице **версия журнала** выберите **повысить уровень**.
 
-   ![Кнопка "повысить уровень" в журнале версий приложения логики](./media/manage-logic-apps-with-azure-portal/promote-button.png)
+   ![Снимок экрана: журнал версий приложения логики, отображающий кнопку для продвижения предыдущей версии.](./media/manage-logic-apps-with-azure-portal/promote-button.png)
 
 1. На открывшейся странице **конструктора Logic Apps** измените версию, которую требуется повысить. Можно переключаться между режимами **конструктора** и **представления кода** . Вы также можете обновить **Параметры**, **шаблоны**и **соединители**.
 
-   ![Страница конструктора Logic Apps для повышения предыдущей версии](./media/manage-logic-apps-with-azure-portal/promote-page.png)
+   ![Снимок экрана конструктора Logic Apps, отображающий кнопку для продвижения предыдущей версии приложения логики.](./media/manage-logic-apps-with-azure-portal/promote-page.png)
 
 1. Чтобы сохранить обновления и завершить продвижение предыдущей версии, нажмите кнопку **сохранить**. (Чтобы отменить изменения, нажмите кнопку **отменить**.) 
 

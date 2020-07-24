@@ -6,11 +6,12 @@ ms.suite: integration
 ms.reviewer: arthii, logicappspm
 ms.topic: article
 ms.date: 05/15/2020
-ms.openlocfilehash: 6624cd0ff70ab359f4af36ca2f1f107d8f0b5fd9
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 7c52e8dfa3cda40cc663b5d7f27b67c7d2ad0b60
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83659272"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87078649"
 ---
 # <a name="install-on-premises-data-gateway-for-azure-logic-apps"></a>Установка локального шлюза данных для Azure Logic Apps
 
@@ -21,7 +22,7 @@ ms.locfileid: "83659272"
 * [Локальный шлюз данных Microsoft Power Apps](/powerapps/maker/canvas-apps/gateway-reference)
 * [Локальный шлюз данных](../analysis-services/analysis-services-gateway.md)
 
-В этой статье показано, как скачать, установить и настроить локальный шлюз данных, чтобы обращаться к локальным источникам данных из Azure Logic Apps. Вы можете узнать больше о том, [как работает шлюз данных](#gateway-cloud-service), далее в этом разделе. Дополнительные сведения о шлюзе см. в разделе [Что такое локальный шлюз данных?](https://docs.microsoft.com/data-integration/gateway/service-gateway-onprem) Чтобы автоматизировать установку шлюза и задачи управления, посетите коллекцию PowerShell, чтобы ознакомиться с [командлетами PowerShell для шлюза данных](https://www.powershellgallery.com/packages/DataGateway/3000.15.15).
+В этой статье показано, как скачать, установить и настроить локальный шлюз данных, чтобы обращаться к локальным источникам данных из Azure Logic Apps. Вы можете узнать больше о том, [как работает шлюз данных](#gateway-cloud-service), далее в этом разделе. Дополнительные сведения о шлюзе см. в разделе [Что такое локальный шлюз данных?](/data-integration/gateway/service-gateway-onprem) Чтобы автоматизировать установку шлюза и задачи управления, посетите коллекцию PowerShell, чтобы ознакомиться с [командлетами PowerShell для шлюза данных](https://www.powershellgallery.com/packages/DataGateway/3000.15.15).
 
 <a name="requirements"></a>
 
@@ -79,7 +80,7 @@ ms.locfileid: "83659272"
 
   * Шлюз поддерживает два режима: стандартный режим и персональный режим, который применяется только для Power BI. На одном компьютере невозможно запустить несколько шлюзов в одном режиме.
 
-  * Azure Logic Apps поддерживает операции чтения и записи через шлюз. Однако эти операции имеют [ограничения для размера полезных данных](https://docs.microsoft.com/data-integration/gateway/service-gateway-onprem#considerations).
+  * Azure Logic Apps поддерживает операции чтения и записи через шлюз. Однако эти операции имеют [ограничения для размера полезных данных](/data-integration/gateway/service-gateway-onprem#considerations).
 
 <a name="install-gateway"></a>
 
@@ -142,8 +143,8 @@ ms.locfileid: "83659272"
 
 Локальный шлюз данных использует [Служебную шину Azure](../service-bus-messaging/service-bus-messaging-overview.md) для подключения к облаку и устанавливает соответствующие исходящие подключения к связанному со шлюзом региону Azure. Если для рабочей среды требуется, чтобы при доступе к Интернету трафик проходил через прокси-сервер или брандмауэр, то это ограничение может помешать подключению локального шлюза данных к облачной службе шлюза и Служебной шине Azure. Шлюз имеет несколько параметров подключения, которые можно настроить. Дополнительные сведения см. в следующих статьях:
 
-* [Настройка параметров подключения для локального шлюза данных](https://docs.microsoft.com/data-integration/gateway/service-gateway-communication)
-* [Настройка параметров прокси-сервера для локального шлюза данных](https://docs.microsoft.com/data-integration/gateway/service-gateway-proxy)
+* [Настройка параметров подключения для локального шлюза данных](/data-integration/gateway/service-gateway-communication)
+* [Настройка параметров прокси-сервера для локального шлюза данных](/data-integration/gateway/service-gateway-proxy)
 
 <a name="high-availability"></a>
 
@@ -155,7 +156,7 @@ ms.locfileid: "83659272"
 
 * На основном шлюзе должны быть установлены обновления от ноября 2017 г. или более ранние.
 
-Настроив основной шлюз, перейдите к установке другого шлюза и выберите **Добавить в существующий кластер шлюза**, выберите основной шлюз, который является первым установленным вами шлюзом, и укажите ключ восстановления для него. Дополнительные сведения см. в разделе [Кластеры с высоким уровнем доступности для локальных шлюзов данных](https://docs.microsoft.com/data-integration/gateway/service-gateway-install#add-another-gateway-to-create-a-cluster).
+Настроив основной шлюз, перейдите к установке другого шлюза и выберите **Добавить в существующий кластер шлюза**, выберите основной шлюз, который является первым установленным вами шлюзом, и укажите ключ восстановления для него. Дополнительные сведения см. в разделе [Кластеры с высоким уровнем доступности для локальных шлюзов данных](/data-integration/gateway/service-gateway-install#add-another-gateway-to-create-a-cluster).
 
 <a name="update-gateway-installation"></a>
 
@@ -185,7 +186,7 @@ ms.locfileid: "83659272"
 
 ## <a name="tenant-level-administration"></a>Администрирование на уровне арендатора
 
-Чтобы увидеть все локальные шлюзы данных в арендаторе Azure AD, глобальные администраторы в этом арендаторе могут войти в [центр администрирования Power Platform](https://powerplatform.microsoft.com) в качестве администратора арендатора и выбрать параметр **Шлюзы данных**. Дополнительные сведения см. в разделе [Предварительная версия: управление локальным шлюзом данных](https://docs.microsoft.com/data-integration/gateway/service-gateway-tenant-level-admin).
+Чтобы увидеть все локальные шлюзы данных в арендаторе Azure AD, глобальные администраторы в этом арендаторе могут войти в [центр администрирования Power Platform](https://powerplatform.microsoft.com) в качестве администратора арендатора и выбрать параметр **Шлюзы данных**. Дополнительные сведения см. в разделе [Предварительная версия: управление локальным шлюзом данных](/data-integration/gateway/service-gateway-tenant-level-admin).
 
 <a name="restart-gateway"></a>
 
@@ -196,7 +197,7 @@ ms.locfileid: "83659272"
 > [!NOTE]
 > Учетная запись службы Windows отличается от учетной записи, которая использовалась для подключения к локальным источникам данных, и от учетной записи Azure, которая использовалась для входа в облачные службы.
 
-Как и любая другая служба Windows, шлюз может быть запущен и остановлен различными способами. Дополнительные сведения см. в разделе [Перезапуск локального шлюза данных](https://docs.microsoft.com/data-integration/gateway/service-gateway-restart).
+Как и любая другая служба Windows, шлюз может быть запущен и остановлен различными способами. Дополнительные сведения см. в разделе [Перезапуск локального шлюза данных](/data-integration/gateway/service-gateway-restart).
 
 <a name="gateway-cloud-service"></a>
 
@@ -260,9 +261,9 @@ ms.locfileid: "83659272"
 
 ## <a name="faq-and-troubleshooting"></a>Часто задаваемые вопросы и устранение неполадок
 
-* [Вопросы и ответы о локальном шлюзе данных](https://docs.microsoft.com/data-integration/gateway/service-gateway-onprem-faq)
-* [Устранение неполадок с локальным шлюзом данных](https://docs.microsoft.com/data-integration/gateway/service-gateway-tshoot)
-* [Мониторинг и оптимизация производительности шлюза](https://docs.microsoft.com/data-integration/gateway/service-gateway-performance)
+* [Вопросы и ответы о локальном шлюзе данных](/data-integration/gateway/service-gateway-onprem-faq)
+* [Устранение неполадок с локальным шлюзом данных](/data-integration/gateway/service-gateway-tshoot)
+* [Мониторинг и оптимизация производительности шлюза](/data-integration/gateway/service-gateway-performance)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

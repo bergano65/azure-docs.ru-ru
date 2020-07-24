@@ -5,12 +5,12 @@ author: mscurrell
 ms.author: markscu
 ms.date: 03/05/2020
 ms.topic: how-to
-ms.openlocfilehash: 262431cfcc906b6df1054aaa7dc2b9573c3b8833
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: e4f33f0974462197382ea6ac5d2b68d61909f73b
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85965252"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87079244"
 ---
 # <a name="using-azure-batch-rendering"></a>Использование службы рендеринга пакетной службы Azure
 
@@ -19,7 +19,7 @@ ms.locfileid: "85965252"
 * Интерфейсы API:
   * Напишите код на основе любого из API пакетной службы.  Разработчики могут интегрировать возможности пакетной службы Azure в существующие облачные и локальные приложения или рабочие процессы.
 * Средства командной строки.
-  * Использование пакетной службы можно закодировать в скрипты [командной строки Azure](/cli/azure/) или [PowerShell](/powershell/azure/overview).
+  * Использование пакетной службы можно закодировать в скрипты [командной строки Azure](/cli/azure/) или [PowerShell](/powershell/azure/).
   * В частности, [поддержка шаблонов CLI для пакетной службы](./batch-cli-templates.md) значительно упрощает создание пулов и отправку заданий.
 * Пользовательский интерфейс Batch Explorer
   * [Batch Explorer](https://github.com/Azure/BatchLabs) — это кроссплатформенный клиентский инструмент, который поддерживает администрирование и мониторинг учетных записей пакетной службы.

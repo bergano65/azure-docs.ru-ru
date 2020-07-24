@@ -6,11 +6,12 @@ ms.workload: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: article
 ms.date: 05/28/2020
-ms.openlocfilehash: b5c4005c95a88a40a836b9c0f6d1fd01e0417ed0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d8211127d7c886b86f97e83a61b3b3ebb055851e
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84170279"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87078671"
 ---
 # <a name="call-trigger-or-nest-logic-apps-by-using-https-endpoints-in-azure-logic-apps"></a>Вызов, активация или вложение приложений логики с помощью конечных точек HTTPS в Azure Logic Apps
 
@@ -27,7 +28,7 @@ ms.locfileid: "84170279"
 
 Если вы не знакомы с приложениями логики, см. статью [что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [Краткое руководство. Создание первого приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 * Подписка Azure. Если у вас нет ее, вы можете [зарегистрироваться для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -387,7 +388,7 @@ ms.locfileid: "84170279"
 
 #### <a name="q-what-about-url-security"></a>Вопрос. Как обеспечивается безопасность URL-адресов?
 
-Ответ **. Azure**безопасно создает URL-адреса обратного вызова приложения логики с помощью [подписанного общего доступа (SAS)](https://docs.microsoft.com/rest/api/storageservices/delegate-access-with-shared-access-signature). Эта подпись передается в качестве параметра запроса и должна быть проверена перед запуском приложения логики. Azure создает эту подпись на основе уникального сочетания секретного ключа для каждого приложения логики, имени триггера и выполняемой операции. Не имея доступа к секретному ключу приложения логики, создать действительную подпись невозможно.
+Ответ **. Azure**безопасно создает URL-адреса обратного вызова приложения логики с помощью [подписанного общего доступа (SAS)](/rest/api/storageservices/delegate-access-with-shared-access-signature). Эта подпись передается в качестве параметра запроса и должна быть проверена перед запуском приложения логики. Azure создает эту подпись на основе уникального сочетания секретного ключа для каждого приложения логики, имени триггера и выполняемой операции. Не имея доступа к секретному ключу приложения логики, создать действительную подпись невозможно.
 
 > [!IMPORTANT]
 > Для производственных и более высоких систем безопасности мы настоятельно рекомендуем вызывать приложение логики непосредственно из браузера по следующим причинам:
@@ -404,6 +405,6 @@ ms.locfileid: "84170279"
 * Настройка доменов управления API в [портал Azure](https://portal.azure.com/)
 * настройка политики для проверки базовой проверки подлинности.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Получение и реагирование на входящие вызовы HTTPS с помощью Azure Logic Apps](../connectors/connectors-native-reqres.md)

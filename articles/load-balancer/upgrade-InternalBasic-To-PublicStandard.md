@@ -1,5 +1,5 @@
 ---
-title: Обновление с базового общедоступного до уровня Standard Public-Azure Load Balancer
+title: Обновление с базового внутреннего на стандартное общедоступное Azure Load Balancer
 description: В этой статье показано, как обновить внутренний Load Balancer Azure Basic до уровня "Стандартный" общедоступного Load Balancer
 services: load-balancer
 author: irenehua
@@ -7,12 +7,12 @@ ms.service: load-balancer
 ms.topic: how-to
 ms.date: 01/23/2020
 ms.author: irenehua
-ms.openlocfilehash: 6b4d2a5cf441eb702bc33fc862fec9cc28a998b5
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 225252f2cd47c36de2c7eed4ed1e5dae3ebd81b2
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84809352"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87078760"
 ---
 # <a name="upgrade-azure-internal-load-balancer---outbound-connection-required"></a>Обновление внутренней Load Balancer Azure — требуется исходящее подключение
 [Azure Load Balancer (цен. Категория "Стандартный")](load-balancer-overview.md) предлагает широкий набор функций и высокий уровень доступности через избыточность зоны. Дополнительные сведения о Load Balancer SKU см. в разделе [Таблица сравнения](https://docs.microsoft.com/azure/load-balancer/skus#skus). Так как стандартный внутренний Load Balancer не предоставляет исходящего подключения, мы предоставляем решение для создания стандартного общедоступного Load Balancer.
@@ -104,7 +104,7 @@ ms.locfileid: "84809352"
    
     1. Выберите внутренний пул, соответствующий внутреннему пулу базового Load Balancer, выберите следующее значение: 
       - **Виртуальная машина**: раскрывающийся список и выберите виртуальные машины из соответствующего серверного пула базовых Load Balancer.
-    1. Нажмите кнопку **Сохранить**.
+    1. Щелкните **Сохранить**.
     >[!NOTE]
     >Для виртуальных машин, имеющих общедоступные IP-адреса, необходимо сначала создать стандартные, но не гарантируют, что IP-адрес не гарантируется. Отменяйте связь между виртуальными машинами и свяжите их с новыми стандартными IP-адресами. Затем вы сможете выполнить инструкции по добавлению виртуальных машин в серверный пул Load Balancer (цен. категория "Стандартный"). 
 
@@ -134,6 +134,6 @@ ms.locfileid: "84809352"
   
 Вы можете отправить сообщение электронной почты slbupgradesupport@microsoft.com , открыть обращение в службу поддержки Azure или выполнить оба действия.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Дополнительные сведения о Load Balancer (цен. категория "Стандартный")](load-balancer-overview.md)

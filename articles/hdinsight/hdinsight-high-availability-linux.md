@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 10/28/2019
-ms.openlocfilehash: 21ecf33291924097f076aa28088eb4eac652ce67
-ms.sourcegitcommit: cec9676ec235ff798d2a5cad6ee45f98a421837b
+ms.openlocfilehash: f97b4877d87acec923812fd0289d5161529dbe7a
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85849655"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87081038"
 ---
 # <a name="availability-and-reliability-of-apache-hadoop-clusters-in-hdinsight"></a>Доступность и надежность кластеров Apache Hadoop в HDInsight
 
@@ -119,7 +119,7 @@ curl -u admin:$password "https://$clusterName.azurehdinsight.net/api/v1/clusters
 
 Следующие оповещения помогают отслеживать доступность кластера.
 
-| Имя предупреждения                               | Описание:                                                                                                                                                                                  |
+| Имя предупреждения                               | Описание                                                                                                                                                                                  |
 |------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Состояние мониторинга метрики                    | Это предупреждение указывает состояние процесса монитора метрик, определяемое сценарием состояния монитора.                                                                                   |
 | Пульс агента Ambari                   | Это оповещение активируется, если сервер потерял связь с агентом.                                                                                                                        |
@@ -268,7 +268,7 @@ get *
 
 Размер узла можно выбрать только во время создания кластера. Список различных размеров виртуальных машин, доступных для HDInsight, можно найти на [странице цен на HDInsight](https://azure.microsoft.com/pricing/details/hdinsight/).
 
-При создании кластера можно указать размер узлов. Следующая информация содержит рекомендации по заданию размера с помощью [портал Azure](https://portal.azure.com/), [Azure PowerShellого модуля AZ](/powershell/azureps-cmdlets-docs)и [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest):
+При создании кластера можно указать размер узлов. Следующая информация содержит рекомендации по заданию размера с помощью [портал Azure](https://portal.azure.com/), [Azure PowerShellого модуля AZ](/powershell/azure/)и [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest):
 
 * **Портал Azure.** При создании кластера можно задать размер для узлов этого кластера:
 
@@ -278,12 +278,12 @@ get *
 
 * **Azure PowerShell**. при использовании командлета [New-аздинсигхтклустер](https://docs.microsoft.com/powershell/module/az.hdinsight/new-azhdinsightcluster) можно задать размер головного, рабочего и ZooKeeper узлов с помощью `-HeadNodeSize` `-WorkerNodeSize` параметров, и `-ZookeeperNodeSize` .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об элементах, обсуждаемых в этой статье, см. в следующих статьях:
 
 * [Справочник по REST Apache Ambari](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md)
 * [Установка и настройка CLI Azure](https://docs.microsoft.com//cli/azure/install-azure-cli?view=azure-cli-latest)
-* [Установка и Настройка модуля Azure PowerShell AZ](/powershell/azure/overview)
+* [Установка и Настройка модуля Azure PowerShell AZ](/powershell/azure/)
 * [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](hdinsight-hadoop-manage-ambari.md)
 * [«Подготовка кластеров HDInsight на основе Linux»](hdinsight-hadoop-provision-linux-clusters.md)

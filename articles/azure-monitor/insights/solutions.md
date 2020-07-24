@@ -6,19 +6,20 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/12/2020
-ms.openlocfilehash: 4edcb22ed6bd33b1174354cf0cbb9a590e35c207
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2da00b44be7018bef80e466231efb75a8eb99754
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84906893"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87081548"
 ---
 # <a name="monitoring-solutions-in-azure-monitor"></a>Решения мониторинга в Azure Monitor
+
 Решения мониторинга используют службы в Azure для обеспечения дополнительного анализа работы конкретного приложения или службы. Эта статья содержит краткий обзор решений мониторинга в Azure и подробные сведения об их использовании и установке. В Azure Monitor вы можете добавить решения мониторинга для всех используемых приложений и служб. Обычно они предоставляются бесплатно, но сбор данных может повлечь определенную плату за использование ресурсов.
 
 ## <a name="use-monitoring-solutions"></a>Использование решений для мониторинга
 
-На странице **Обзор** в Azure Monitor отображаются плитки для каждого решения, установленного в этой рабочей области. 
+На странице **Обзор** в Azure Monitor отображаются плитки для каждого решения, установленного в этой рабочей области.
 
 1. Перейдите на [портал Azure](https://ms.portal.azure.com). Найдите и выберите **Monitor**.
 1. В меню **Анализ** выберите пункт **Больше**.
@@ -31,12 +32,13 @@ ms.locfileid: "84906893"
 
 ## <a name="list-installed-monitoring-solutions"></a>Список установленных решений мониторинга
 
+### <a name="portal"></a>[Портал](#tab/portal)
+
 Используйте следующую процедуру, чтобы вывести список решений мониторинга, которые установлены в вашей подписке.
 
 1. Перейдите на [портал Azure](https://ms.portal.azure.com). Найдите в поиске и выберите пункт **Решения**.
 1. Отображается список решений, установленных во всех рабочих областях. После имени каждого решения указано имя рабочей области, в которой оно установлено.
 1. Раскрывающиеся списки в верхней части экрана позволяют отфильтровать список по подписке или группе ресурсов.
-
 
 ![Просмотр всех решений](media/solutions/list-solutions-all.png)
 
@@ -44,7 +46,26 @@ ms.locfileid: "84906893"
 
 ![Свойства решения](media/solutions/solution-properties.png)
 
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Чтобы получить список решений для мониторинга, установленных в вашей подписке, используйте команду [AZ Monitor log-Analytics Solution List](/cli/azure/ext/log-analytics-solution/monitor/log-analytics/solution#ext-log-analytics-solution-az-monitor-log-analytics-solution-list) .   Перед выполнением `list` команды следуйте предварительным требованиям, приведенным в [статье Установка решения для мониторинга](#install-a-monitoring-solution).
+
+```azurecli
+# List all log-analytics solutions in the current subscription.
+az monitor log-analytics solution list
+
+# List all log-analytics solutions for a specific subscription
+az monitor log-analytics solution list --subscription MySubscription
+
+# List all log-analytics solutions in a resource group
+az monitor log-analytics solution list --resource-group MyResourceGroup
+```
+
+* * *
+
 ## <a name="install-a-monitoring-solution"></a>Установка решения для мониторинга
+
+### <a name="portal"></a>[Портал](#tab/portal)
 
 В [Azure Marketplace](https://azuremarketplace.microsoft.com) доступны решения мониторинга, предлагаемые корпорацией Майкрософт и ее партнерами. Вы можете выполнять поиск доступных решений и устанавливать их с помощью описанной ниже процедуры. При установке решения необходимо выбрать [рабочую область Log Analytics](../platform/manage-access.md), в которой требуется установить решение, а также расположение для хранения его данных.
 
@@ -61,12 +82,76 @@ ms.locfileid: "84906893"
 Участники сообщества могут отправлять решения для управления в шаблоны быстрого запуска Azure. Все эти решения вы можете установить сразу или скачать в виде шаблонов для последующей установки.
 
 1. Выполните действия, описанные в разделе [Рабочая область Log Analytics и учетная запись службы автоматизации](#log-analytics-workspace-and-automation-account), чтобы установить связь между рабочей областью и учетной записью.
-2. Перейдите к [шаблонам быстрого запуска Azure](https://azure.microsoft.com/documentation/templates/). 
+2. Перейдите к [шаблонам быстрого запуска Azure](https://azure.microsoft.com/documentation/templates/).
 3. Найдите интересующее вас решение.
 4. Выберите решение из результатов, чтобы просмотреть сведения о нем.
 5. Нажмите кнопку **Deploy to Azure** (Развернуть в Azure).
 6. Вам предложат указать сведения, например группу ресурсов и расположение, а также значения для любых параметров в решении.
 7. Щелкните **Приобрести** для установки решения.
+
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+### <a name="prepare-your-environment"></a>Подготовка среды
+
+1. Установка Azure CLI
+
+   Необходимо [установить Azure CLI](/cli/azure/install-azure-cli) перед выполнением справочных команд CLI.  При желании можно также использовать Azure Cloud Shell для выполнения действий, описанных в этой статье.  Azure Cloud Shell — это среда интерактивной оболочки, которая используется в браузере.  Начните Cloud Shell с помощью одного из следующих методов:
+
+   - Откройте Cloud Shell, перейдя по[https://shell.azure.com](https://shell.azure.com)
+
+   - Нажмите кнопку **Cloud Shell** в строке меню в верхнем правом углу [портал Azure](https://portal.azure.com)
+
+1. Войдите.
+
+   Если вы используете локальную установку CLI, выполните вход с помощью команды [AZ login](/cli/azure/reference-index#az-login) .  Выполните аутентификацию, следуя инструкциям в окне терминала.
+
+    ```azurecli
+    az login
+    ```
+
+1. Установка расширения `log-analytics`
+
+   `log-analytics`Команда является экспериментальным расширением основного Azure CLI. Дополнительные сведения о расширениях см. в статье [Использование расширения с Azure CLI](/cli/azure/azure-cli-extensions-overview?).
+
+   ```azurecli
+   az extension add --name log-analytics
+   ```
+
+   Ожидается следующее предупреждение.
+
+   ```output
+   The installed extension `log-analytics` is experimental and not covered by customer support.  Please use with discretion.
+   ```
+
+### <a name="install-a-solution-with-the-azure-cli"></a>Установка решения с Azure CLI
+
+При установке решения необходимо выбрать [рабочую область Log Analytics](/azure/azure-monitor/platform/manage-access), в которой требуется установить решение, а также расположение для хранения его данных.  С Azure CLI Управление рабочими областями осуществляется с помощью команд ссылки на [рабочую область "az Monitor журнала-Analytics](/cli/azure/monitor/log-analytics/workspace) ".  Выполните действия, описанные в разделе [Рабочая область Log Analytics и учетная запись службы автоматизации](#log-analytics-workspace-and-automation-account), чтобы установить связь между рабочей областью и учетной записью.
+
+Используйте команду [AZ Monitor log-Analytics](/cli/azure/ext/log-analytics-solution/monitor/log-analytics/solution) для установки решения для мониторинга.  Параметры в квадратных скобках являются необязательными.
+
+```azurecli
+az monitor log-analytics solution create --name
+                                         --plan-product
+                                         --plan-publisher
+                                         --resource-group
+                                         --workspace
+                                         [--no-wait]
+                                         [--tags]
+```
+
+Ниже приведен пример кода, который создает решение аналитики журналов для продукта плана Омсгаллери/Containers.
+
+```azurecli
+az monitor log-analytics solution create --resource-group MyResourceGroup \
+                                         --name Containers({SolutionName}) \
+                                         --tags key=value \
+                                         --plan-publisher Microsoft  \
+                                         --plan-product "OMSGallery/Containers" \
+                                         --workspace "/subscriptions/{SubID}/resourceGroups/{ResourceGroup}/providers/ \
+                                           Microsoft.OperationalInsights/workspaces/{WorkspaceName}"
+```
+
+* * *
 
 ## <a name="log-analytics-workspace-and-automation-account"></a>Рабочая область Log Analytics и учетная запись службы автоматизации
 
@@ -88,9 +173,25 @@ ms.locfileid: "84906893"
 
 ## <a name="remove-a-monitoring-solution"></a>Удаление решения для мониторинга
 
-Чтобы удалить установленное решение, найдите его в [списке установленных решений](#list-installed-monitoring-solutions). Щелкните имя решения, чтобы открыть страницу сводки, и выберите **Удалить**.
+### <a name="portal"></a>[Портал](#tab/portal)
+
+Чтобы удалить установленное решение с помощью портала, выберите его в [списке установленных решений](#list-installed-monitoring-solutions). Щелкните имя решения, чтобы открыть страницу сводки, и выберите **Удалить**.
+
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Чтобы удалить установленное решение с помощью Azure CLI, используйте команду [AZ Monitor log-Analytics решение Delete](/cli/azure/ext/log-analytics-solution/monitor/log-analytics/solution#ext-log-analytics-solution-az-monitor-log-analytics-solution-delete) .
+
+```azurecli
+az monitor log-analytics solution delete --name
+                                         --resource-group
+                                         [--no-wait]
+                                         [--yes]
+```
+
+* * *
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Получите список решений мониторинга от корпорации Майкрософт [здесь](solutions-inventory.md).
 * Узнайте из статьи [Анализ данных Log Analytics в Azure Monitor](../log-query/log-query-overview.md), как создавать запросы для анализа данных, собранных решением для мониторинга.
+* См. все [команды Azure CLI для Azure Monitor](/cli/azure/azure-cli-reference-for-monitor).

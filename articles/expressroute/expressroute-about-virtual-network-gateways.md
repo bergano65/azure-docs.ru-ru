@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 10/14/2019
 ms.author: mialdrid
-ms.openlocfilehash: 58e75e4efecf390c4c1449b7ec59684554fa7516
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e7779e0638ea61c70758394dc212910ba8f1d7f6
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84710513"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87081140"
 ---
 # <a name="about-expressroute-virtual-network-gateways"></a>Сведения о шлюзах виртуальной сети ExpressRoute
 
@@ -43,7 +43,7 @@ ms.locfileid: "84710513"
 >
 >
 
-## <a name="gateway-subnet"></a><a name="gwsub"></a>Подсеть шлюза
+## <a name="gateway-subnet"></a><a name="gwsub"></a>подсеть шлюза.
 
 Перед созданием шлюза ExpressRoute необходимо создать подсеть шлюза. Подсеть шлюза содержит IP-адреса, которые используют виртуальные машины и службы шлюза виртуальной сети. При создании шлюза виртуальной сети виртуальные машины шлюза развертываются в подсети шлюза и настраиваются с использованием требуемых параметров шлюза ExpressRoute. Никогда не развертывайте все остальное (например, дополнительные виртуальные машины) в подсети шлюза. Чтобы подсеть шлюза работала правильно, ее нужно назвать GatewaySubnet. Такое имя позволяет Azure определить, что это подсеть для развертывания виртуальных машин и служб шлюза виртуальной сети.
 
@@ -88,7 +88,7 @@ Add-AzVirtualNetworkSubnetConfig -Name 'GatewaySubnet' -AddressPrefix 10.0.3.0/2
 
 | **Классический** | **Resource Manager** |
 | --- | --- |
-| [PowerShell](https://docs.microsoft.com/powershell/module/servicemanagement/azure/?view=azuresmps-4.0.0#azure) |[PowerShell](https://docs.microsoft.com/powershell/module/az.network#networking) |
+| [PowerShell](/powershell/module/servicemanagement/azure.service/?view=azuresmps-4.0.0#azure) |[PowerShell](https://docs.microsoft.com/powershell/module/az.network#networking) |
 | [REST API](https://msdn.microsoft.com/library/jj154113.aspx) |[REST API](https://msdn.microsoft.com/library/mt163859.aspx) |
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -3,12 +3,12 @@ title: Установка агента Службы восстановления
 description: Узнайте, как установить агент Службы восстановления Microsoft Azure (MARS) для резервного копирования компьютеров Windows.
 ms.topic: conceptual
 ms.date: 03/03/2020
-ms.openlocfilehash: 7a43f585e978b7d6974ac89fbb5d93f15aebb1d7
-ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.openlocfilehash: b9842f6b07621301a0a8a32f5eb7fae5ece153bc
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85855238"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87079372"
 ---
 # <a name="install-the-azure-backup-mars-agent"></a>Установка агента MARS Azure Backup
 
@@ -29,7 +29,7 @@ Azure Backup использует агент MARS для резервного к
 
 ![Шаги архивации](./media/backup-configure-vault/initial-backup-process.png)
 
-## <a name="before-you-start"></a>Перед началом работы
+## <a name="before-you-start"></a>Прежде чем начать
 
 * Узнайте [, как Azure BACKUP использует агент MARS для резервного копирования компьютеров Windows](backup-architecture.md#architecture-direct-backup-of-on-premises-windows-server-machines-or-azure-vm-files-or-folders).
 * Сведения об [архитектуре резервного копирования](backup-architecture.md#architecture-back-up-to-dpmmabs) , запускающей агент Mars на сервере-получателе MABS или Data Protection Manager.
@@ -42,10 +42,10 @@ Azure Backup использует агент MARS для резервного к
 
 ## <a name="modify-storage-replication"></a>Изменение репликации хранилища
 
-По умолчанию в хранилищах используется [геоизбыточное хранилище (GRS)](https://docs.microsoft.com/azure/storage/common/storage-redundancy-grs).
+По умолчанию в хранилищах используется [геоизбыточное хранилище (GRS)](../storage/common/storage-redundancy.md).
 
 * Если хранилище является основным механизмом резервного копирования, рекомендуется использовать GRS.
-* Вы можете использовать [локально избыточное хранилище (LRS)](https://docs.microsoft.com/azure/storage/common/storage-redundancy-lrs?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) для сокращения затрат на хранилище Azure.
+* Вы можете использовать [локально избыточное хранилище (LRS)](../storage/common/storage-redundancy.md?toc=/azure/storage/blobs/toc.json) для сокращения затрат на хранилище Azure.
 
 Чтобы изменить тип репликации хранилища, выполните следующие действия.
 
@@ -95,7 +95,7 @@ Azure Backup использует агент MARS для резервного к
 * Регион Azure в соответствии с расположением хранилища служб восстановления
 * Служба хранилища Azure в соответствии с расположением хранилища служб восстановления
 
-Дополнительные сведения см. в разделе [требования к маршрутизации ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-routing).
+Дополнительные сведения см. в разделе [требования к маршрутизации ExpressRoute](../expressroute/expressroute-routing.md).
 
 > [!NOTE]
 > Общедоступный пиринг не рекомендуется использовать для новых каналов.
@@ -131,7 +131,7 @@ Azure Backup использует агент MARS для резервного к
 
     ![Скачивание учетных данных хранилища](./media/backup-try-azure-backup-in-10-mins/download-vault-credentials.png)
 
-1. Нажмите кнопку **Сохранить**. Файл будет скачан в папку "Downloads". Невозможно открыть файл учетных данных хранилища.
+1. Щелкните **Сохранить**. Файл будет скачан в папку "Downloads". Невозможно открыть файл учетных данных хранилища.
 
 ## <a name="install-and-register-the-agent"></a>Установка и регистрация агента
 
@@ -160,8 +160,8 @@ Azure Backup использует агент MARS для резервного к
     * Сохраните парольную фразу в безопасном месте. Он понадобится для восстановления резервной копии.
     * Если вы потеряли или забудете парольную фразу, корпорация Майкрософт не сможет помочь вам восстановить данные резервных копий.
 
-1. Нажмите кнопку **Готово**. Теперь агент установлен, и ваш компьютер зарегистрирован в хранилище. вы можете настроить параметры резервного копирования, в том числе расписание.
+1. Нажмите кнопку **Завершить**. Теперь агент установлен, и ваш компьютер зарегистрирован в хранилище. вы можете настроить параметры резервного копирования, в том числе расписание.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [выполнять резервное копирование компьютеров Windows с помощью агента MARS Azure Backup](backup-windows-with-mars-agent.md)

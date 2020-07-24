@@ -5,12 +5,12 @@ ms.assetid: 501722c3-f2f7-4224-a220-6d59da08a320
 ms.topic: conceptual
 ms.date: 04/04/2019
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 5560d24601b8aef0d8a4058cc2c04e27e9c86362
-ms.sourcegitcommit: 1e6c13dc1917f85983772812a3c62c265150d1e7
+ms.openlocfilehash: c3d43bc20c31475a00a0ea81e4abdeb5405162a7
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86170417"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87081803"
 ---
 # <a name="monitor-azure-functions"></a>Мониторинг Функций Azure
 
@@ -58,7 +58,7 @@ ms.locfileid: "86170417"
 
 ![Открытие Application Insights на странице обзора приложения-функции](media/functions-monitoring/ai-link.png)
 
-Дополнительные сведения об использовании Application Insights см. в [документации по Application Insights](https://docs.microsoft.com/azure/application-insights/). В этом разделе представлено несколько примеров просмотра данных в Application Insights. Если вы уже знакомы с Application Insights, можете сразу переходить к [разделам, посвященным конфигурации и настройке данных телеметрии](#configure-categories-and-log-levels).
+Дополнительные сведения об использовании Application Insights см. в [документации по Application Insights](/azure/application-insights/). В этом разделе представлено несколько примеров просмотра данных в Application Insights. Если вы уже знакомы с Application Insights, можете сразу переходить к [разделам, посвященным конфигурации и настройке данных телеметрии](#configure-categories-and-log-levels).
 
 ![Вкладка обзора Application Insights](media/functions-monitoring/metrics-explorer.png)
 
@@ -68,12 +68,12 @@ ms.locfileid: "86170417"
 | ---- | ----------- |
 | **[Сбои](../azure-monitor/app/asp-net-exceptions.md)** |  Создание диаграмм и оповещений на основе сбоев функции и исключений сервера. **Имя операции** обозначает имя функции. Сбои в зависимостях здесь не отображаются, если вы не настроили для них пользовательскую телеметрию. |
 | **[Производительность](../azure-monitor/app/performance-counters.md)** | Анализ проблем с производительностью путем просмотра использования ресурсов и пропускной способности для **экземпляров облачных ролей**. Эти данные можно использовать для отладки в тех случаях, когда функции создают чрезмерную нагрузку на базовые ресурсы. |
-| **[Метрики](../azure-monitor/app/metrics-explorer.md)** | Создание диаграмм и оповещений на основе метрик. Используются такие метрики: число вызовов функций, время выполнения и частота успешных попыток. |
+| **[Метрики](../azure-monitor/platform/metrics-charts.md)** | Создание диаграмм и оповещений на основе метрик. Используются такие метрики: число вызовов функций, время выполнения и частота успешных попыток. |
 | **[Интерактивные метрики](../azure-monitor/app/live-stream.md)** | Просмотр данных метрик по мере их создания почти в реальном времени. |
 
 ## <a name="query-telemetry-data"></a>Запросы к данным телеметрии
 
-[Аналитика в Application Insights](../azure-monitor/app/analytics.md) предоставляет доступ ко всем данным телеметрии в формате таблиц в базе данных. Функция аналитики поддерживает язык запросов для извлечения, обработки и визуализации данных. 
+[Аналитика в Application Insights](../azure-monitor/log-query/log-query-overview.md) предоставляет доступ ко всем данным телеметрии в формате таблиц в базе данных. Функция аналитики поддерживает язык запросов для извлечения, обработки и визуализации данных. 
 
 Выберите **Журналы** для просмотра или запроса событий в журналах.
 
@@ -153,7 +153,7 @@ traces
 
 ### <a name="version-2x-and-higher"></a>Версия 2.x и более поздние
 
-Среда выполнения Функций версии 2.x и более поздних использует [иерархию фильтра ведения журнала .NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1#log-filtering). 
+Среда выполнения Функций версии 2.x и более поздних использует [иерархию фильтра ведения журнала .NET Core](/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1#log-filtering). 
 
 ```json
 {
@@ -246,7 +246,7 @@ traces
 
 ## <a name="configure-sampling"></a>Настройка выборки
 
-В Application Insights есть функция [выборки](../azure-monitor/app/sampling.md), которая позволяет избежать создания слишком большого объема данных телеметрии для завершенных выполнений в периоды пиковой нагрузки. Если скорость входящих выполнений превышает заданное пороговое значение, служба Application Insights будет случайным образом игнорировать часть входящих выполнений. Максимальное количество выполнений в секунду по умолчанию — 20 (пять в версии 1.x). Вы можете настроить выборку в файле [host.json](https://docs.microsoft.com/azure/azure-functions/functions-host-json#applicationinsights).  Ниже приведен пример:
+В Application Insights есть функция [выборки](../azure-monitor/app/sampling.md), которая позволяет избежать создания слишком большого объема данных телеметрии для завершенных выполнений в периоды пиковой нагрузки. Если скорость входящих выполнений превышает заданное пороговое значение, служба Application Insights будет случайным образом игнорировать часть входящих выполнений. Максимальное количество выполнений в секунду по умолчанию — 20 (пять в версии 1.x). Вы можете настроить выборку в файле [host.json](./functions-host-json.md#applicationinsights).  Ниже приведен пример:
 
 ### <a name="version-2x-and-later"></a>Версия 2.x и более поздние
 
@@ -285,9 +285,9 @@ traces
 
 ### <a name="ilogger"></a>ILogger
 
-Используйте параметр [ILogger](https://docs.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger) в функциях вместо параметра `TraceWriter`. Журналы, созданные с помощью `TraceWriter`, тоже отправляются в Application Insights, но `ILogger` позволяют использовать [структурированное ведение журналов](https://softwareengineering.stackexchange.com/questions/312197/benefits-of-structured-logging-vs-basic-logging).
+Используйте параметр [ILogger](/dotnet/api/microsoft.extensions.logging.ilogger) в функциях вместо параметра `TraceWriter`. Журналы, созданные с помощью `TraceWriter`, тоже отправляются в Application Insights, но `ILogger` позволяют использовать [структурированное ведение журналов](https://softwareengineering.stackexchange.com/questions/312197/benefits-of-structured-logging-vs-basic-logging).
 
-Объект `ILogger` позволяет вызывать для создания журналов [методы расширения ILogger](https://docs.microsoft.com/dotnet/api/microsoft.extensions.logging.loggerextensions#methods)`Log<level>`. Следующий код записывает журнал `Information` с категорией "Function.<YOUR_FUNCTION_NAME>.User."
+Объект `ILogger` позволяет вызывать для создания журналов [методы расширения ILogger](/dotnet/api/microsoft.extensions.logging.loggerextensions#methods)`Log<level>`. Следующий код записывает журнал `Information` с категорией "Function.<YOUR_FUNCTION_NAME>.User."
 
 ```cs
 public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, ILogger logger)
@@ -553,7 +553,7 @@ module.exports = function (context, req) {
     var operationIdOverride = {"ai.operation.id":context.traceContext.traceparent};
 
     client.trackEvent({name: "my custom event", tagOverrides:operationIdOverride, properties: {customProperty2: "custom property value"}});
-    client.trackException({exception: new Error("handled exceptions can be logged with this method"), tagOverrides:operationIdOverride);
+    client.trackException({exception: new Error("handled exceptions can be logged with this method"), tagOverrides:operationIdOverride});
     client.trackMetric({name: "custom metric", value: 3, tagOverrides:operationIdOverride});
     client.trackTrace({message: "trace message", tagOverrides:operationIdOverride});
     client.trackDependency({target:"http://dbname", name:"select customers proc", data:"SELECT * FROM Customers", duration:231, resultCode:0, success: true, dependencyTypeName: "ZSQL", tagOverrides:operationIdOverride});
@@ -577,7 +577,7 @@ module.exports = function (context, req) {
     var operationIdOverride = {"ai.operation.id":context.operationId};
 
     client.trackEvent({name: "my custom event", tagOverrides:operationIdOverride, properties: {customProperty2: "custom property value"}});
-    client.trackException({exception: new Error("handled exceptions can be logged with this method"), tagOverrides:operationIdOverride);
+    client.trackException({exception: new Error("handled exceptions can be logged with this method"), tagOverrides:operationIdOverride});
     client.trackMetric({name: "custom metric", value: 3, tagOverrides:operationIdOverride});
     client.trackTrace({message: "trace message", tagOverrides:operationIdOverride});
     client.trackDependency({target:"http://dbname", name:"select customers proc", data:"SELECT * FROM Customers", duration:231, resultCode:0, success: true, dependencyTypeName: "ZSQL", tagOverrides:operationIdOverride});
@@ -679,14 +679,11 @@ az webapp log tail --resource-group <RESOURCE_GROUP_NAME> --name <FUNCTION_APP_N
 
 ### <a name="azure-powershell"></a>Azure PowerShell
 
-Вы можете включить потоковую передачу журналов с помощью [Azure PowerShell](/powershell/azure/overview). Чтобы добавить учетную запись Azure, выбрать подписку и включить потоковую передачу файлов журнала в PowerShell, используйте следующие команды.
+Вы можете включить потоковую передачу журналов с помощью [Azure PowerShell](/powershell/azure/). Для PowerShell используйте команду [Set-азвебапп](/powershell/module/az.websites/set-azwebapp) , чтобы включить ведение журнала в приложении-функции, как показано в следующем фрагменте кода: 
 
-```powershell
-Add-AzAccount
-Get-AzSubscription
-Get-AzSubscription -SubscriptionName "<subscription name>" | Select-AzSubscription
-Get-AzWebSiteLog -Name <FUNCTION_APP_NAME> -Tail
-```
+:::code language="powershell" source="~/powershell_scripts/app-service/monitor-with-logs/monitor-with-logs.ps1" range="19-20":::
+
+Дополнительные сведения см. в [полном примере кода](../app-service/scripts/powershell-monitor.md#sample-script). 
 
 ## <a name="scale-controller-logs-preview"></a>Журналы контроллера масштабирования (Предварительная версия)
 

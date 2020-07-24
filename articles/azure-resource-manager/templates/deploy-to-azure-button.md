@@ -2,13 +2,13 @@
 title: Кнопка "Развертывание в Azure"
 description: Используйте кнопку для развертывания шаблонов Azure Resource Manager из репозитория GitHub.
 ms.topic: conceptual
-ms.date: 05/04/2020
-ms.openlocfilehash: e403d095f7419ed13742dcfa8e8407a92ad10be0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.date: 07/20/2020
+ms.openlocfilehash: 9fe69eba2a91bf19e0662ae071c222905c348666
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82744093"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87079472"
 ---
 # <a name="use-a-deployment-button-to-deploy-templates-from-github-repository"></a>Использование кнопки развертывания для развертывания шаблонов из репозитория GitHub
 
@@ -28,7 +28,11 @@ ms.locfileid: "82744093"
 
 ## <a name="create-url-for-deploying-template"></a>Создание URL-адреса для развертывания шаблона
 
-Чтобы создать URL-адрес для шаблона, начните с необработанного URL-адреса шаблона в репозитории:
+Чтобы создать URL-адрес для шаблона, начните с необработанного URL-адреса шаблона в репозитории. Чтобы просмотреть необработанный URL-адрес, выберите **необработанный**.
+
+:::image type="content" source="./media/deploy-to-azure-button/select-raw.png" alt-text="выбрать необработанный":::
+
+URL-адрес имеет формат:
 
 ```html
 https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-storage-account-create/azuredeploy.json

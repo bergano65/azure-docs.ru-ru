@@ -6,12 +6,12 @@ author: harelbr
 ms.author: harelbr
 ms.date: 06/26/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: 7ca4df620739b2ab55b8ba986031cc48fe87f1fa
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5a4cb788a24252a2de7b9d669b166b25ed48be1c
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80294915"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87081599"
 ---
 # <a name="manage-application-insights-smart-detection-rules-using-azure-resource-manager-templates"></a>Управление правилами интеллектуального обнаружения Application Insights с помощью шаблонов Azure Resource Manager
 
@@ -22,7 +22,7 @@ ms.locfileid: "80294915"
 
 Для правила интеллектуального обнаружения можно настроить следующие параметры:
 - Включено ли правило (по умолчанию используется значение **true**.)
-- Если сообщения электронной почты должны отправляться пользователям, связанным с ролью " [читатель мониторинга](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-reader) " в подписке и ролям [участников мониторинга](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#monitoring-contributor) , при обнаружении обнаружения (значение по умолчанию — **true**).
+- Если сообщения электронной почты должны отправляться пользователям, связанным с ролью " [читатель мониторинга](../../role-based-access-control/built-in-roles.md#monitoring-reader) " в подписке и ролям [участников мониторинга](../../role-based-access-control/built-in-roles.md#monitoring-contributor) , при обнаружении обнаружения (значение по умолчанию — **true**).
 - Можно указать дополнительных получателей, которые должны получать уведомление при обнаружении.
     -  Конфигурация электронной почты недоступна для правил интеллектуального обнаружения, помеченных как _Предварительная версия_.
 
@@ -188,7 +188,7 @@ ms.locfileid: "80294915"
 > [!NOTE]
 > Этот шаблон Azure Resource Manager уникален для правила генерации оповещений об аномалиях сбоя и отличается от других правил интеллектуального обнаружения, описанных в этой статье. Если вы хотите управлять аномалиями сбоев вручную, это выполняется в Azure Monitor предупреждений, в то время как все другие правила интеллектуального обнаружения управляются на панели интеллектуального обнаружения в пользовательском интерфейсе.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об автоматическом обнаружении.
 

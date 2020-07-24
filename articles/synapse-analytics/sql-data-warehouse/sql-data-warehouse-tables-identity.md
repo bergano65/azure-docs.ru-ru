@@ -7,15 +7,16 @@ manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: sql-dw
-ms.date: 04/30/2019
+ms.date: 07/20/2020
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 60f2e3f949a4f627839a07137ebaf77518db87a4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d19f59635920951b506e41884f4ab79be78e247d
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85213981"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87080732"
 ---
 # <a name="using-identity-to-create-surrogate-keys-in-synapse-sql-pool"></a>Использование удостоверения для создания суррогатных ключей в пуле синапсе SQL
 
@@ -23,7 +24,7 @@ ms.locfileid: "85213981"
 
 ## <a name="what-is-a-surrogate-key"></a>Что такое суррогатный ключ
 
-Суррогатный ключ таблицы представляет собой столбец с уникальным идентификатором каждой строки. Ключ не генерируется из данных таблицы. Разработчики моделей данных создают суррогатные ключи для таблиц, когда проектируют модели хранилища данных. Чтобы просто и эффективно достичь этой цели, не оказывая влияния на производительность загрузки, можно использовать свойство IDENTITY.  
+Суррогатный ключ таблицы представляет собой столбец с уникальным идентификатором каждой строки. Ключ не генерируется из данных таблицы. Разработчики моделей данных создают суррогатные ключи для таблиц, когда проектируют модели хранилища данных. Чтобы просто и эффективно достичь этой цели, не оказывая влияния на производительность загрузки, можно использовать свойство IDENTITY. Свойство IDENTITY имеет некоторые ограничения, как описано в [CREATE TABLE (Transact-SQL) Identity (свойство)](/sql/t-sql/statements/create-table-transact-sql-identity-property?view=azure-sqldw-latest). Одним из ограничений идентификации является то, что оно не обязательно должно быть уникальным. Если задать идентификатор вставки, а не повторное заполнение значения идентификатора, это приведет к более уникальным значениям, но может не гарантировать уникальность во всех ситуациях. Если вы не можете использовать значения идентификаторов из-за ограничений на УДОСТОВЕРЕНие, создайте отдельную таблицу, содержащую текущее значение, и управляйте доступом к таблице и назначению числа с помощью приложения. 
 
 ## <a name="creating-a-table-with-an-identity-column"></a>Создание таблицы со столбцом IDENTITY
 
@@ -49,7 +50,7 @@ WITH
 
 ### <a name="allocation-of-values"></a>Распределение значений
 
-Свойство IDENTITY не гарантирует порядок, в котором распределяются суррогатные значения, что отражает поведение SQL Server и базы данных SQL Azure. Однако в пуле синапсе SQL отсутствие гарантии является более произносится.
+Свойство IDENTITY не гарантирует, что порядок размещения суррогатных значений будет выделен из-за распределенной архитектуры хранилища данных. Свойство IDENTITY предназначено для горизонтального масштабирования всех распределений в пуле SQL синапсе, не влияя на производительность нагрузки. 
 
 Ниже приведен характерный пример.
 
@@ -238,7 +239,7 @@ AND     tb.name = 'T1'
 ;
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения о таблицах](sql-data-warehouse-tables-overview.md)
 - [CREATE TABLE (Transact-SQL) IDENTITY (Свойство)](/sql/t-sql/statements/create-table-transact-sql-identity-property?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)

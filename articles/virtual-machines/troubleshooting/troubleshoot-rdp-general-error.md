@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: f996ffa864fb4178ddedecde7c5511d5d9cf39a1
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: df318fea4960601dcbfa84149fdc47bedc9104a2
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85985812"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87079831"
 ---
 # <a name="troubleshoot-an-rdp-general-error-in-azure-vm"></a>Устранение общей ошибки RDP на виртуальной машине Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "85985812"
 
 **Убедитесь, что удаленный компьютер включен и подключен к сети, и удаленный доступ включен.**
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Эта проблема возникает из-за перечисленных ниже причин.
 
@@ -183,7 +183,7 @@ ms.locfileid: "85985812"
 
 #### <a name="step-1-turn-on-remote-desktop"></a>Шаг 1. Включение удаленного рабочего стола
 
-1. [Подключите диск операционной системы к виртуальной машине восстановления](../windows/troubleshoot-recovery-disks-portal.md).
+1. [Подключите диск операционной системы к виртуальной машине восстановления](./troubleshoot-recovery-disks-portal-windows.md).
 2. Установите подключение с помощью удаленного рабочего стола к виртуальной машине, используемой для восстановления.
 3. Убедитесь, что диск помечен как " **подключенный** " в консоли управления дисками. Запишите или запомните букву диска, которая присвоена подключенному диску ОС.
 4. Установите подключение с помощью удаленного рабочего стола к виртуальной машине, используемой для восстановления.

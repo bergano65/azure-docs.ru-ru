@@ -71,13 +71,13 @@
     - name: Комплект SDK для службы "Блокчейн Azure"
       href: 'https://github.com/Microsoft/vscode-azure-blockchain-ethereum/wiki'
     - name: REST API службы "Блокчейн"
-      href: 'https://docs.microsoft.com/rest/api/blockchain/'
+      href: /rest/api/blockchain/
     - name: Примеры кода
       href: 'https://github.com/Azure-Samples/blockchain'
     - name: Блог
       href: 'https://azure.microsoft.com/blog/topics/blockchain/'
     - name: Страница вопросов (раздел вопросов и ответов на сайте Майкрософт)
-      href: 'https://docs.microsoft.com/answers/topics/azure-blockchain-service.html'
+      href: /answers/topics/azure-blockchain-service.html
     - name: Поддержка сообщества
       href: 'https://techcommunity.microsoft.com/t5/Blockchain/bd-p/AzureBlockchain'
     - name: Поддержка Stack Overflow

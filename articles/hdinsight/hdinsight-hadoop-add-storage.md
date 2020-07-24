@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020
 ms.date: 04/27/2020
-ms.openlocfilehash: 44262c30dc49182314fb70dbb814be25c49e9d50
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 23e7b0f8dcb0c64259627d5350511ebdc48d6fac
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86080012"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87078976"
 ---
 # <a name="add-additional-storage-accounts-to-hdinsight"></a>Добавление дополнительных учетных записей хранения в HDInsight
 
@@ -22,13 +22,13 @@ ms.locfileid: "86080012"
 > [!IMPORTANT]  
 > Сведения в этом документе посвящены добавлению дополнительных учетных записей хранения в кластер после его создания. Сведения о добавлении учетных записей хранения во время создания кластера см. в статье о [настройке кластеров HDInsight с использованием Apache Hadoop, Apache Spark, Apache Kafka и других платформ](hdinsight-hadoop-provision-linux-clusters.md).
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 * Кластер Hadoop в HDInsight. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](./hadoop/apache-hadoop-linux-tutorial-get-started.md).
 * Имя и ключ учетной записи хранения. См. [раздел Управление ключами доступа учетной записи хранения](../storage/common/storage-account-keys-manage.md).
-* При использовании PowerShell вам потребуется модуль AZ.  См. [обзор Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview).
+* При использовании PowerShell вам потребуется модуль AZ.  См. [обзор Azure PowerShell](https://docs.microsoft.com/powershell/azure/).
 
-## <a name="how-it-works"></a>Принцип работы
+## <a name="how-it-works"></a>Принципы работы
 
 Во время обработки скрипт выполняет следующие действия:
 
@@ -49,7 +49,7 @@ ms.locfileid: "86080012"
 
 Используйте [действие скрипта](hdinsight-hadoop-customize-cluster-linux.md#script-action-to-a-running-cluster) , чтобы применить изменения со следующими соображениями.
 
-|Свойство. | Значение |
+|Свойство | Значение |
 |---|---|
 |URI bash-скрипта|`https://hdiconfigactions.blob.core.windows.net/linuxaddstorageaccountv01/add-storage-account-v01.sh`|
 |Типы узлов|Head|
@@ -134,6 +134,6 @@ foreach ($name in $value ) { $name.Name.Split(".")[4]}
 > [!IMPORTANT]  
 > Смена ключа хранилища для основной учетной записи хранения, подключенной к кластеру, не поддерживается.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы узнали, как добавлять дополнительные учетные записи хранения в существующий кластер HDInsight. Дополнительные сведения о действиях скриптов см. в статье [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md).

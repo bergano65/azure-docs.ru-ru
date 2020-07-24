@@ -1,5 +1,5 @@
 ---
-title: Защита веб-приложений и API службы приложений Azure
+title: Защита веб-приложений и интерфейсов API Службы приложений Azure
 description: Эта статья поможет вам приступить к защите веб-приложений и API службы приложений Azure в центре безопасности Azure.
 services: security-center
 documentationcenter: na
@@ -10,13 +10,14 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 01/27/2019
 ms.author: memildin
-ms.openlocfilehash: 2d81e1a1218add504e1e35015276b6924da0e3e3
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 35b91aab8c228fc7dced5dfe06e33f939f4634f5
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77616487"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87080800"
 ---
-# <a name="protect-your-azure-app-service-web-apps-and-apis"></a>Защита веб-приложений и API службы приложений Azure
+# <a name="protect-your-azure-app-service-web-apps-and-apis"></a>Защита веб-приложений и интерфейсов API Службы приложений Azure
 
 Служба приложений Azure — это полностью управляемая платформа для создания и размещения веб-приложений и интерфейсов API, не беспокоясь о необходимости управлять инфраструктурой. Она обеспечивает управление, мониторинг и оперативную аналитику для удовлетворения требований к производительности, безопасности и соответствию корпоративного уровня. Дополнительные сведения см. в статье [служба приложений Azure](https://azure.microsoft.com/services/app-service/).
 
@@ -56,7 +57,7 @@ ms.locfileid: "77616487"
 
 
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 В этой статье вы ознакомились с подробными сведениями о возможностях мониторинга в центре безопасности Azure. Дополнительные сведения о центре безопасности Azure см. в следующих статьях:
 
 * [Настройка политик безопасности в центре безопасности Azure](tutorial-security-policy.md) — узнайте, как настроить параметры безопасности в центре безопасности Azure.

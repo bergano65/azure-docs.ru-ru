@@ -3,17 +3,18 @@ title: Пакет обнаружения безопасности с Application
 description: Мониторинг приложения с помощью Application Insights Azure и интеллектуального обнаружения для потенциальных проблем безопасности.
 ms.topic: conceptual
 ms.date: 12/12/2017
-ms.openlocfilehash: b23ada6fe4596a2eee242cc9145789521caf697f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1ed304e903bb50591e61e294b6701f8268f9d8e1
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77669732"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87081633"
 ---
 # <a name="application-security-detection-pack-preview"></a>Пакет обнаружения угроз безопасности приложений (предварительная версия)
 
 Application Insights автоматически анализирует данные телеметрии, создаваемые вашим приложением, и обнаруживает потенциальные проблемы безопасности. Эта функция позволяет выявлять потенциальные проблемы безопасности и обрабатывать их, исправляя приложения или принимая необходимые меры безопасности.
 
-Для этого компонента не требуется особая настройка, кроме [настройки приложения для отправки телеметрии](https://docs.microsoft.com/azure/application-insights/app-insights-usage-overview).
+Для этого компонента не требуется особая настройка, кроме [настройки приложения для отправки телеметрии](./usage-overview.md).
 
 ## <a name="when-would-i-get-this-type-of-smart-detection-notification"></a>Когда я буду получать уведомления интеллектуального обнаружения такого типа?
 Есть три типа проблем безопасности, которые обнаруживаются.

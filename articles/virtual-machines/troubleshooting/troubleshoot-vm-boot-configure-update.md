@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 09/18/2018
 ms.author: delhan
-ms.openlocfilehash: 415895b894261ade9b2332eb3fb926eba74fe937
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: d7e56fe36af3d841cfd888dd6c1bf05502837cdd
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86078414"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87079848"
 ---
 # <a name="vm-startup-is-stuck-on-getting-windows-ready-dont-turn-off-your-computer-in-azure"></a>При запуске виртуальная машина зависла на сообщении "Подготовка Windows. Не выключайте компьютер" в Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "86078414"
 
 ![Пример сообщения](./media/troubleshoot-vm-configure-update-boot/message2.png)
 
-## <a name="cause"></a>Причина:
+## <a name="cause"></a>Причина
 
 Обычно эта проблема возникает, когда сервер выполняет окончательную перезагрузку после изменения конфигурации. Изменение конфигурации может быть инициализировано обновлениями Windows либо изменением ролей или функций сервера. Если размер обновления, устанавливаемого в Центре обновления Windows, большой, операционной системе потребуется больше времени, чтобы перенастроить изменения.
 
@@ -45,7 +45,7 @@ ms.locfileid: "86078414"
 ### <a name="attach-the-os-disk-to-a-recovery-vm"></a>Подключите диск ОС к виртуальной машине восстановления.
 
 1. Сделайте снимок диска ОС затронутой виртуальной машины в качестве резервной копии. Дополнительные сведения см. в статье [Создание моментального снимка](../windows/snapshot-copy-managed-disk.md).
-2. [Подключите диск операционной системы к виртуальной машине восстановления](../windows/troubleshoot-recovery-disks-portal.md).
+2. [Подключите диск операционной системы к виртуальной машине восстановления](./troubleshoot-recovery-disks-portal-windows.md).
 3. Подключитесь по протоколу удаленного рабочего стола к виртуальной машине восстановления. 
 4. Если диск ОС зашифрован, необходимо отключить шифрование перед переходом к следующему шагу. Дополнительные сведения см. в разделе [расшифровка зашифрованного диска ОС в виртуальной машине, которая не может быть загружена](troubleshoot-bitlocker-boot-error.md#solution).
 
@@ -99,7 +99,7 @@ ms.locfileid: "86078414"
         reg unload HKLM\BROKENSYSTEM
         ```
 
-3. [Отсоедините диск ОС и снова подключите его к необходимой виртуальной машине](../windows/troubleshoot-recovery-disks-portal.md).
+3. [Отсоедините диск ОС и снова подключите его к необходимой виртуальной машине](./troubleshoot-recovery-disks-portal-windows.md).
 4. Запустите виртуальную машину и получите доступ к последовательной консоли.
 5. Выберите параметр **Отправить немаскируемое прерывание (NMI)** , чтобы активировать дамп памяти.
     ![изображение, куда следует отправить немаскируемое прерывание](./media/troubleshoot-vm-configure-update-boot/run-nmi.png)

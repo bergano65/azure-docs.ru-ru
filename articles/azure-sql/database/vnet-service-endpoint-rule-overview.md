@@ -11,12 +11,12 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: vanto, genemi
 ms.date: 11/14/2019
-ms.openlocfilehash: 51d7ae8671d4b57e1822aa1c4ee5bf30a5f24cbd
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2ed9e9e4ec658fc506ad2bd449ee1a49d510503f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85253993"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87081344"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-servers-in-azure-sql-database"></a>Использование конечных точек службы и правил виртуальной сети для серверов в базе данных SQL Azure
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -31,8 +31,6 @@ ms.locfileid: "85253993"
 ## <a name="how-to-create-a-virtual-network-rule"></a>Как создать правило виртуальной сети
 
 Если вы собираетесь просто создать правило виртуальной сети, то можете сразу перейти к инструкциям и пояснениям, приведенным [далее в этой статье](#anchor-how-to-by-using-firewall-portal-59j).
-
-<!--<a name="anch-details-about-vnet-rules-38q"/> -->
 
 ## <a name="details-about-virtual-network-rules"></a>Сведения о правилах виртуальной сети
 
@@ -121,7 +119,7 @@ PolyBase часто используют для загрузки данных в
 > [!IMPORTANT]
 > Модуль PowerShell Azure Resource Manager по-прежнему поддерживается базой данных SQL Azure, но вся будущая разработка предназначена для модуля AZ. SQL. Модуль AzureRM продолжит принимать исправления ошибок до 2020 декабря.  Аргументы для команд в модуле AZ и в модулях AzureRm существенно идентичны. Дополнительные сведения о совместимости см. [в разделе Введение в новый модуль Azure PowerShell AZ](/powershell/azure/new-azureps-module-az).
 
-#### <a name="steps"></a>Шаги
+#### <a name="steps"></a>Этапы
 
 1. В PowerShell **Зарегистрируйте сервер** , на котором размещена служба Azure синапсе, с Azure Active Directory (AAD):
 
@@ -229,7 +227,7 @@ PolyBase часто используют для загрузки данных в
 
 - [Virtual Network Rules][rest-api-virtual-network-rules-operations-862r] (Правила виртуальной сети)
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 Необходима подсеть, помеченная определенным *именем типа* конечной точки службы для виртуальной сети, относящимся к базе данных SQL Azure.
 
@@ -282,7 +280,7 @@ PolyBase часто используют для загрузки данных в
 - [Конечные точки службы виртуальной сети Azure][vm-virtual-network-service-endpoints-overview-649d]
 - [Правила брандмауэра уровня сервера и базы данных][sql-db-firewall-rules-config-715d]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [С помощью PowerShell создайте конечную точку службы виртуальной сети, а затем правило виртуальной сети для базы данных SQL Azure.][sql-db-vnet-service-endpoint-rule-powershell-md-52d]
 - [Правила виртуальной сети: операции][rest-api-virtual-network-rules-operations-862r] с REST API

@@ -3,11 +3,12 @@ title: Обзор версий среды выполнения для решен
 description: Решение "Функции Azure" поддерживает разные версии среды выполнения. В этой статье приводятся различия между ними и рекомендации по выбору подходящей для вас версии.
 ms.topic: conceptual
 ms.date: 12/09/2019
-ms.openlocfilehash: 0989795d802b21e07ad9fea3bd417f0408df706c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 29dd4a1ea60c463655c5b9a17fedcf6d51eee927
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "83996726"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87081684"
 ---
 # <a name="azure-functions-runtime-versions-overview"></a>Обзор версий среды выполнения для решения "Функции Azure"
 
@@ -90,7 +91,7 @@ ms.locfileid: "83996726"
 
 #### <a name="net"></a>.NET
 
-* [Синхронные операции сервера по умолчанию отключены](https://docs.microsoft.com/dotnet/core/compatibility/2.2-3.0#http-synchronous-io-disabled-in-all-servers).
+* [Синхронные операции сервера по умолчанию отключены](/dotnet/core/compatibility/2.2-3.0#http-synchronous-io-disabled-in-all-servers).
 
 ### <a name="changing-version-of-apps-in-azure"></a>Изменение версии приложений в Azure
 
@@ -192,7 +193,7 @@ ms.locfileid: "83996726"
 
 [!INCLUDE [Timeout Duration section](../../includes/functions-timeout-duration.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в следующих ресурсах:
 

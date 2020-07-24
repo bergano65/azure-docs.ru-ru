@@ -7,11 +7,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 04/22/2020
 ms.author: cynthn
-ms.openlocfilehash: 950f4cfda73b40db0de8ba035868573cda1a5017
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c3e914b904b0f6f1d3a4fae6c43c81cdf4eae819
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84675805"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87080018"
 ---
 # <a name="managing-platform-updates-with-maintenance-control"></a>Управление обновлениями платформы с помощью управления обслуживанием 
 
@@ -22,12 +23,12 @@ ms.locfileid: "84675805"
 С помощью управления обслуживанием можно:
 - Пакетных обновлений в одном пакете обновления.
 - Подождите 35 дней, чтобы применить обновления. 
-- Автоматизируйте обновление платформы для окна обслуживания с помощью функций Azure.
+- Автоматизируйте обновление платформы для окна обслуживания с помощью [функций Azure](https://github.com/Azure/azure-docs-powershell-samples/tree/master/maintenance-auto-scheduler).
 - Конфигурации обслуживания работают в подписках и группах ресурсов. 
 
 ## <a name="limitations"></a>Ограничения
 
-- Виртуальные машины должны находиться на [выделенном узле](./linux/dedicated-hosts.md)или быть созданы с использованием [ИЗОЛИРОВАННОГО размера виртуальной машины](./linux/isolation.md).
+- Виртуальные машины должны находиться на [выделенном узле](./linux/dedicated-hosts.md)или быть созданы с использованием [ИЗОЛИРОВАННОГО размера виртуальной машины](isolation.md).
 - Через 35 дней будет автоматически применено обновление.
 - Пользователь должен иметь доступ к **участнику ресурсов** .
 
@@ -39,6 +40,8 @@ ms.locfileid: "84675805"
 - [Azure PowerShell](maintenance-control-powershell.md)
 - [Портал Azure](maintenance-control-portal.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+Пример использования функций Azure см. в разделе [Планирование обновлений обслуживания с помощью функции управления обслуживанием и функций Azure](https://github.com/Azure/azure-docs-powershell-samples/tree/master/maintenance-auto-scheduler).
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в разделе [обслуживание и обновления](maintenance-and-updates.md).

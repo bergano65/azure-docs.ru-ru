@@ -8,14 +8,14 @@ ms.topic: how-to
 ms.date: 03/25/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: a7ca15a301de3c54195c0978aa31121c3624a98a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 39df24380917c51f3b492bb62c98024d3d090458
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85209459"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87080664"
 ---
-# <a name="connect-with-the-android-client"></a>Подключение к клиенту Android
+# <a name="connect-to-windows-virtual-desktop-with-the-android-client"></a>Подключение к виртуальному рабочему столу Windows с помощью клиента Android
 
 > Применимо к: Android 4,1 и более поздней версии, Чромебукс с Чромеос 53 и более поздними версиями.
 
@@ -54,6 +54,6 @@ ms.locfileid: "85209459"
 
 Когда вы подпишетесь на веб-канал, его содержимое будет регулярно автоматически обновляться. Ресурсы могут добавляться, изменяться или удаляться в соответствии с изменениями, внесенными администратором.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об использовании клиента Android см. в статье Начало [работы с клиентом Android](/windows-server/remote/remote-desktop-services/clients/remote-desktop-android/).

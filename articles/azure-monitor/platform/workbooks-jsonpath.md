@@ -9,15 +9,16 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 05/06/2020
 ms.author: lagayhar
-ms.openlocfilehash: 58a2657f6b9aee101384146c4ebb43023953bfcb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: efa54933ac7d57ec0dcff9ae11b6fb5c2c87a897
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82892216"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87081395"
 ---
 # <a name="how-to-use-jsonpath-to-transform-json-data-in-workbooks"></a>Как использовать JSONPath для преобразования данных JSON в книги
 
-Книги могут запрашивать данные из многих источников. Некоторые конечные точки, например [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/management/overview) или Пользовательская конечная точка, могут возвращать результаты в формате JSON. Если данные JSON, возвращенные запрашиваемой конечной точкой, не настроены в нужном формате, JSONPath можно использовать для преобразования результатов.
+Книги могут запрашивать данные из многих источников. Некоторые конечные точки, например [Azure Resource Manager](../../azure-resource-manager/management/overview.md) или Пользовательская конечная точка, могут возвращать результаты в формате JSON. Если данные JSON, возвращенные запрашиваемой конечной точкой, не настроены в нужном формате, JSONPath можно использовать для преобразования результатов.
 
 JSONPath — это язык запросов для JSON, похожий на XPath for XML. Как и XPath, JSONPath позволяет извлечь и фильтрация данные из структуры JSON.
 
@@ -82,6 +83,6 @@ JSONPath — это язык запросов для JSON, похожий на X
 
 ![ Изменение элемента запроса с помощью источника данных JSON и формата результата JSON Path](./media/workbooks-jsonpath/query-jsonpath.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - [Общие сведения о книгах](workbooks-overview.md)
 - [Группы в Azure Monitor книгах](workbooks-groups.md)

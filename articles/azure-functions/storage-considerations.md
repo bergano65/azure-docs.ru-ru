@@ -3,11 +3,12 @@ title: Рекомендации по хранению для Функций Azur
 description: Узнайте о требованиях к хранению в Функциях Azure и о шифровании хранимых данных.
 ms.topic: conceptual
 ms.date: 01/21/2020
-ms.openlocfilehash: 324516240d09a5443908cbffec514e4caba2b604
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 2efd583b319e3f3b1fa3db307ea4a3cf53710165
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83648804"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87079610"
 ---
 # <a name="storage-considerations-for-azure-functions"></a>Рекомендации по хранению для Функций Azure
 
@@ -40,7 +41,7 @@ ms.locfileid: "83648804"
 
 Подключение к учетной записи хранения сохраняется в параметре приложения [AzureWebJobsStorage](./functions-app-settings.md#azurewebjobsstorage). 
 
-При повторном создании ключей хранилища необходимо обновить указанные выше строки подключения учетной записи хранения. [Дополнительные сведения об управлении ключом хранилища данных см. здесь](https://docs.microsoft.com/azure/storage/common/storage-create-storage-account).
+При повторном создании ключей хранилища необходимо обновить указанные выше строки подключения учетной записи хранения. [Дополнительные сведения об управлении ключом хранилища данных см. здесь](../storage/common/storage-account-create.md).
 
 ### <a name="shared-storage-accounts"></a>Общие учетные записи хранения
 
@@ -79,5 +80,3 @@ files_in_share = os.listdir("/path/to/mount")
 
 > [!div class="nextstepaction"]
 > [Масштабирование и размещение Функций Azure](functions-scale.md)
-
-

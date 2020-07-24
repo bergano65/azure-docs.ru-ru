@@ -1,20 +1,17 @@
 ---
 title: Работа с журналом версий расширения Desired State Configuration в Azure
 description: В этой статье рассказывается, как работать с журналом версий расширения Desired State Configuration (DSC) в Azure.
-ms.date: 06/21/2018
+ms.date: 07/22/2020
 keywords: dsc, powershell, azure, расширение
-author: mgoedtel
-ms.author: magoedte
 services: automation
-ms.service: automation
 ms.subservice: dsc
 ms.topic: conceptual
-ms.openlocfilehash: 0bb82ce92a151bd8e955c136751d8e7f307bbf1b
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: b45512faf09cfe745023d29d32f89a4432cc3b2b
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86186424"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87079763"
 ---
 # <a name="work-with-azure-desired-state-configuration-extension-version-history"></a>Работа с журналом версий расширения Desired State Configuration в Azure
 
@@ -23,6 +20,29 @@ ms.locfileid: "86186424"
 В этой статье содержатся сведения о каждой версии расширения Azure DSC для виртуальных машин, поддерживаемых средах, а также приводятся комментарии и примечания о новых функциях или изменениях.
 
 ## <a name="latest-version"></a>Последняя версия
+
+### <a name="version-280"></a>Версия 2,80
+
+- **Дата выпуска:**
+  - 26 сентября, Сен-2019 (Azure) | 6 июля 2020 г. (Azure Китая ВИАНЕТ 21) | 20 июля 2020 г. (Azure для государственных организаций)
+- **Поддержка ОС:**
+  - Windows Server 2019
+  - Windows Server 2016
+  - Windows Server 2012 R2
+  - Windows Server 2012
+  - Windows Server 2008 R2 с пакетом обновления 1 (SP1)
+  - Клиент Windows 7, 8.1, 10
+  - Nano Server
+- **Поддержка WMF:**
+  - WMF 5.1
+  - WMF 5.0 RTM
+  - Обновление WMF 4.0
+  - WMF 4.0
+- **Среда**.
+  - Azure
+  - Azure для Китая (21Vianet)
+  - Azure для государственных организаций
+- **Примечания.** В этот выпуск не включены новые функции.
 
 ### <a name="version-276"></a>Версия 2.76
 

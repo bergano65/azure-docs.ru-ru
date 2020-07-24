@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/22/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: e539e2a26e53ded8a2c42491c1e1e596a2180ed7
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f5c81897f74163191de4b167ffa56225ca0698ca
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85268747"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87079045"
 ---
 # <a name="azure-security-baseline-for-expressroute"></a>Базовый план безопасности Azure для ExpressRoute
 
@@ -116,7 +116,7 @@ ms.locfileid: "85268747"
 
 Вы можете использовать Azure PowerShell или Azure CLI для поиска или выполнения действий с ресурсами на основе их тегов.
 
-* [использование тегов для упорядочения ресурсов в Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
+* [Упорядочение ресурсов Azure с помощью тегов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -246,7 +246,7 @@ ms.locfileid: "85268747"
 
 * [Общие сведения о RBAC в Azure](https://docs.microsoft.com/azure/role-based-access-control/overview)
 
-* [Использование RBAC в API партнера ExpressRoute диспетчер ресурсов](https://docs.microsoft.com/azure/expressroute/cross-connections-api-developmentment)
+* [Использование RBAC в API партнера ExpressRoute диспетчер ресурсов](https://docs.microsoft.com/azure/expressroute/cross-connections-api-development)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -931,7 +931,7 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 ### <a name="103-test-security-response-procedures"></a>10.3. Проверка процедур реагирования на угрозы
 
-**Рекомендации**. Выполните упражнения, чтобы периодически протестировать возможности ваших систем реагировать на угрозы. Выявите слабые точки и пробелы и пересмотрите план по мере необходимости.
+**Руководство**. проведение упражнений по тестированию возможностей реагирования на инциденты систем на регулярной ритмичности. Выявите слабые точки и пробелы и пересмотрите план по мере необходимости.
 
 * [См. публикацию NIST: руководство по тестированию, обучению и выполнению программ для ИТ-планов и возможностей](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-84.pdf)
 
@@ -979,7 +979,7 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 **Руководство**. * [Следуйте правилам взаимодействия Майкрософт, чтобы убедиться, что тесты на проникновение не нарушают политики Майкрософт](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1)
 
-* [Дополнительные сведения о стратегии корпорации Майкрософт и реализации "красной команды", а также о тестировании на основе уязвимости для облачной инфраструктуры, служб и приложений Майкрософт см. здесь](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
+* [Дополнительные сведения о стратегии корпорации Майкрософт и ее выполнении, а также о тестировании на основе уязвимости для облачной инфраструктуры, служб и приложений Майкрософт см. здесь.](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 

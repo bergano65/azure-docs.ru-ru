@@ -10,12 +10,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 06/29/2020
 ms.author: mbullwin
-ms.openlocfilehash: 897e615234e17cfe36790778d00cd56371afd91f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f27771291d95770a693fa56041f7dce3de459d13
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85560137"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87081429"
 ---
 # <a name="azure-monitor-workbooks-data-sources"></a>Источники данных Azure Monitor книг
 
@@ -61,7 +61,7 @@ ms.locfileid: "85560137"
 
 ## <a name="azure-data-explorer"></a>Azure Data Explorer
 
-Книги теперь поддерживают запросы из кластеров [Azure обозреватель данных](https://docs.microsoft.com/azure/data-explorer/) с мощным языком запросов [Kusto](https://docs.microsoft.com/azure/kusto/query/index) .   
+Книги теперь поддерживают запросы из кластеров [Azure обозреватель данных](/azure/data-explorer/) с мощным языком запросов [Kusto](/azure/kusto/query/index) .   
 
 ![Снимок экрана окна запроса Kusto](./media/workbooks-overview/data-explorer.png)
 
@@ -90,7 +90,7 @@ Azure Monitor обладает функциональными возможнос
 > [!NOTE]
 > Предлагаемый способ запроса сведений об оповещении Azure — использование источника данных [графа ресурсов Azure](#azure-resource-graph) путем запроса к `AlertsManagementResources` таблице.
 >
-> Примеры см. в [справочнике по таблицам Graph ресурсов Azure](https://docs.microsoft.com/azure/governance/resource-graph/reference/supported-tables-resources)или в [шаблоне оповещений](https://github.com/microsoft/Application-Insights-Workbooks/blob/master/Workbooks/Azure%20Resources/Alerts/Alerts.workbook) .
+> Примеры см. в [справочнике по таблицам Graph ресурсов Azure](../../governance/resource-graph/reference/supported-tables-resources.md)или в [шаблоне оповещений](https://github.com/microsoft/Application-Insights-Workbooks/blob/master/Workbooks/Azure%20Resources/Alerts/Alerts.workbook) .
 >
 > Источник данных предупреждений останется доступным в течение определенного периода времени, пока авторы переходят на использование ARG. Использование этого источника данных в шаблонах не рекомендуется. 
 
@@ -109,9 +109,9 @@ Azure Monitor обладает функциональными возможнос
 > [!NOTE]
 > Не записывайте никакие секреты в полях ( `headers` ,, `parameters` `body` , `url` ), так как они будут видны всем пользователям книги.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Узнайте](workbooks-visualizations.md) больше о книгах с множеством разнообразных вариантов визуализации.
 * [Управление](workbooks-access-control.md) доступом к ресурсам книги и предоставление общего доступа к ним.
-* [Советы по оптимизации запросов Log Analytics](https://docs.microsoft.com/azure/azure-monitor/log-query/query-optimization)
+* [Советы по оптимизации запросов Log Analytics](../log-query/query-optimization.md)
 * 

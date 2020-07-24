@@ -4,17 +4,18 @@ description: В статье приведены инструкции по доб
 author: JasonWHowell
 ms.author: jasonh
 ms.service: data-catalog
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 08/01/2019
-ms.openlocfilehash: 698da509be2f375925459bbdd4a35d21c6ff4407
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0d0f3a45842638915947f5df04e06e2c81a7f5f1
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84171231"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87081191"
 ---
 # <a name="how-to-data-profile-data-sources-in-azure-data-catalog"></a>Как источники данных профиля данных в каталоге данных Azure
 
-## <a name="introduction"></a>Вступление
+## <a name="introduction"></a>Введение
 
 **Каталог данных Microsoft Azure** — это полностью управляемая облачная служба, выполняющая функции систем регистрации и обнаружения корпоративных источников данных. Другими словами, **Каталог данных Azure** помогает пользователям находить, изучать и использовать источники данных, а также помогать организациям получать больше возможностей из существующих данных. Если источник данных зарегистрирован в **каталоге данных Azure**, его метаданные копируются и индексируются службой, но на этом работа с ними не заканчивается.
 

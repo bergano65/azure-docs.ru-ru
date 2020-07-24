@@ -6,11 +6,12 @@ ms.suite: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: conceptual
 ms.date: 06/03/2020
-ms.openlocfilehash: b8bf409d759b74e6a5ef0d840aebbe807a04448a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: b2a45218118282f4f1cadb29c9022fc05b30f907
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84324866"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87078731"
 ---
 # <a name="export-flows-from-power-automate-and-deploy-to-azure-logic-apps"></a>Экспорт потоков из Power Automate и их развертывание в Azure Logic Apps
 
@@ -19,11 +20,11 @@ ms.locfileid: "84324866"
 > [!NOTE]
 > В Azure Logic Apps доступны не все соединители Power автоматизиру. Можно выполнить миграцию только тех потоков автоматизации, которые имеют эквивалентные соединители в Azure Logic Apps. Например, триггер кнопки, соединитель утверждения и соединитель уведомлений относятся только к автоматизации питания. В настоящее время потоки на основе OpenAPI в Power автоматизировать не поддерживаются для экспорта и развертывания в качестве шаблонов приложений логики.
 >
-> * Чтобы узнать, какие соединители Power автоматизировать не имеют Logic Apps эквивалентов, см. раздел [Power автоматизиру Connectors](https://docs.microsoft.com/connectors/connector-reference/connector-reference-powerautomate-connectors).
+> * Чтобы узнать, какие соединители Power автоматизировать не имеют Logic Apps эквивалентов, см. раздел [Power автоматизиру Connectors](/connectors/connector-reference/connector-reference-powerautomate-connectors).
 >
-> * Чтобы узнать, какие соединители Logic Apps не имеют эквивалентов Power автоматизировать, см. раздел [Logic Apps Connectors](https://docs.microsoft.com/connectors/connector-reference/connector-reference-powerautomate-connectors).
+> * Чтобы узнать, какие соединители Logic Apps не имеют эквивалентов Power автоматизировать, см. раздел [Logic Apps Connectors](/connectors/connector-reference/connector-reference-powerautomate-connectors).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -65,17 +66,17 @@ ms.locfileid: "84324866"
 
    1. Выберите или укажите значения входных параметров для шаблона.
 
-      | Свойство. | Описание |
+      | Свойство | Описание |
       |----------|-------------|
       | **Подписка** | Подписка Azure, используемая для выставления счетов |
       | **Группа ресурсов** | Группа ресурсов Azure, которая будет использоваться для приложения логики. Можно использовать существующую группу или создать новую. |
       | **Расположение** | Регион Azure, который будет использоваться при создании новой группы ресурсов |
-      | **Название приложения логики** | Имя, используемое для ресурса приложения логики |
+      | **Имя приложения логики** | Имя, используемое для ресурса приложения логики |
       | **Расположение приложения логики** | Регион Azure, в котором вы хотите создать ресурс приложения логики, если он отличается от группы ресурсов Azure |
       | <*имя соединения*> | Одно или несколько имен для ранее созданных подключений, которые может использовать приложение логики <p><p>**Примечание**. Если это приложение логики является первым, все подключения создаются как новые, поэтому можно принять имена по умолчанию. В противном случае можно указать имена для ранее созданных подключений, которые можно использовать в нескольких приложениях логики. |
       |||
 
-      Пример:
+      Например.
 
       ![Укажите входные параметры для шаблона](./media/export-from-microsoft-flow-logic-app-template/template-input-parameters.png)
 
@@ -155,7 +156,7 @@ ms.locfileid: "84324866"
 
    ![Изменить параметры развертывания](./media/export-from-microsoft-flow-logic-app-template/edit-parameters-deployment.png)
 
-   При запуске развертывания его состояние отобразится в окне **Выходные данные** Visual Studio. Если состояние не отображается, откройте список **Показать вывод из** и выберите свою группу ресурсов Azure. Пример:
+   При запуске развертывания его состояние отобразится в окне **Выходные данные** Visual Studio. Если состояние не отображается, откройте список **Показать вывод из** и выберите свою группу ресурсов Azure. Например.
 
    ![окно выходных данных](./media/export-from-microsoft-flow-logic-app-template/output-window.png)
 
@@ -171,7 +172,7 @@ ms.locfileid: "84324866"
 
 Дополнительные сведения об этих шагах развертывания см [. в разделе Краткое руководство. Создание автоматизированных задач, процессов и рабочих процессов с помощью Azure Logic Apps — Visual Studio.](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md#deploy-to-Azure)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о [соединителях для Azure Logic Apps](../connectors/apis-list.md)
 * Дополнительные сведения о [Azure Logic Apps](../logic-apps/logic-apps-overview.md)

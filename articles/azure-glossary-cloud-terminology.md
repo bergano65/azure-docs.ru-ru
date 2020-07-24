@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/16/2017
 ms.author: monicar
-ms.openlocfilehash: fa7464c70593c83c708aba49235ecdde1be0cc9f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 8a06435d4b5a4c11f74073e67e3f48fd2ed0779d
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84807760"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87079576"
 ---
 # <a name="microsoft-azure-glossary-a-dictionary-of-cloud-terminology-on-the-azure-platform"></a>Словарь терминов Microsoft Azure: словарь терминов, связанных с облаком на платформе Azure
 
@@ -51,7 +51,7 @@ ms.locfileid: "84807760"
 
 ## <a name="azure-powershell"></a><a name="powershell"></a>Azure PowerShell
 Интерфейс командной строки для управления службами Azure через командную строку на компьютерах с ОС Windows. Некоторыми службами или компонентами служб можно управлять только с помощью PowerShell или интерфейса командной строки.
-См. статью [Установка и настройка Azure PowerShell](/powershell/azure/overview)
+См. статью [Установка и настройка Azure PowerShell](/powershell/azure/)
 
 ## <a name="azure-resource-manager-deployment-model"></a><a name="arm-model"></a>модель развертывания с помощью Azure Resource Manager
 Одна из двух [моделей развертывания](resource-manager-deployment-model.md) , которые используются для развертывания ресурсов в Microsoft Azure (вторая — классическая модель развертывания). Некоторые службы Azure поддерживают только модель развертывания с помощью Resource Manager, некоторые — только классическую модель развертывания, а другие — обе модели. Поддерживаемые модели указаны в документации по соответствующей службе Azure.
@@ -153,7 +153,7 @@ JSON-файл, который декларативно определяет од
 ## <a name="web-app"></a>Веб-приложение
 Другое название [приложения службы приложений](#app-service-app).
 
-## <a name="see-also"></a>См. также
+## <a name="see-also"></a>См. также статью
 
 * [Начало работы с Azure](https://azure.microsoft.com/get-started/)
 * [Центр облачных ресурсов](https://azure.microsoft.com/resources/)  

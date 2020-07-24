@@ -7,15 +7,16 @@ ms.topic: conceptual
 ms.date: 01/29/2019
 ms.author: vitalyg
 ms.subservice: metrics
-ms.openlocfilehash: 00935762a5e19ec47074021aff59992fd3b801bf
-ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
+ms.openlocfilehash: 762264cfe7e0441671411e2c277a0796cd527399
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83797447"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87081531"
 ---
 # <a name="metric-chart-examples"></a>Примеры диаграмм метрик 
 
-Платформа Azure предоставляет [более тысячи метрик](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-supported), многие из которых обладают измерениями. Используя [фильтры измерения](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-charts), применяя тип диаграммы управления [разделение](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-charts) и изменяя параметры диаграммы, вы можете создавать эффективные представления и панели мониторинга диагностики, которые содержат подробные сведения о работоспособности инфраструктуры и приложения. В данной статье приведены некоторые примеры диаграмм, которые можно создать с помощью [Обозревателя метрик](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-charts), и инструкции с обязательными шагами, которые необходимо выполнить для настройки каждой диаграммы.
+Платформа Azure предоставляет [более тысячи метрик](./metrics-supported.md), многие из которых обладают измерениями. Используя [фильтры измерения](./metrics-charts.md), применяя тип диаграммы управления [разделение](./metrics-charts.md) и изменяя параметры диаграммы, вы можете создавать эффективные представления и панели мониторинга диагностики, которые содержат подробные сведения о работоспособности инфраструктуры и приложения. В данной статье приведены некоторые примеры диаграмм, которые можно создать с помощью [Обозревателя метрик](./metrics-charts.md), и инструкции с обязательными шагами, которые необходимо выполнить для настройки каждой диаграммы.
 
 Хотите поделиться примерами хороших диаграмм со всем миром? Присоединитесь к этой странице на GitHub и делитесь собственными примерами диаграмм!
 
@@ -37,7 +38,7 @@ ms.locfileid: "83797447"
 
 ### <a name="how-to-configure-this-chart"></a>Как настроить эту диаграмму:
 
-Сначала необходимо включить мониторинг [доступности Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/monitor-web-app-availability) для веб-сайта. Затем выберите ресурс Application Insights и укажите метрику "Доступность". Примените разделение на измерении **Местоположение запуска**.
+Сначала необходимо включить мониторинг [доступности Application Insights](../app/monitor-web-app-availability.md) для веб-сайта. Затем выберите ресурс Application Insights и укажите метрику "Доступность". Примените разделение на измерении **Местоположение запуска**.
 
 ## <a name="volume-of-storage-account-transactions-by-api-name"></a>Объем транзакций учетной записи хранения выполненных определенным API
 

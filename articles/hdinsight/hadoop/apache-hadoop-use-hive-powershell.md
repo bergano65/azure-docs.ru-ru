@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/24/2019
-ms.openlocfilehash: 5588920c860de09ea1561cf5ed4b28a08085438c
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 327a8a0de0d144a5c1d8494a6dd22a8b89a7bd93
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86207770"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87081055"
 ---
 # <a name="run-apache-hive-queries-using-powershell"></a>Выполнение запросов Apache Hive с помощью PowerShell
 
@@ -28,7 +28,7 @@ ms.locfileid: "86207770"
 
 * Кластер Apache Hadoop в HDInsight. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](./apache-hadoop-linux-tutorial-get-started.md).
 
-* Установите [модуль Az](https://docs.microsoft.com/powershell/azure/overview) для PowerShell.
+* Установите [модуль Az](https://docs.microsoft.com/powershell/azure/) для PowerShell.
 
 ## <a name="run-a-hive-query"></a>Выполнение запроса Hive
 
@@ -86,7 +86,7 @@ Azure PowerShell предоставляет *командлеты* , позво�
    >
    > Дополнительные сведения о командлете **Here-Strings** см. <a href="https://technet.microsoft.com/library/ee692792.aspx" target="_blank">здесь</a>.
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 
 Если данные не возвращаются при завершении задания, просмотрите журналы ошибок. Чтобы просмотреть информацию об ошибке для данного задания, добавьте следующий текст в конце файла `hivejob.ps1`, сохраните его, а затем запустите снова.
 

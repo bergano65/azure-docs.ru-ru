@@ -3,15 +3,16 @@ title: Публикации устойчивых функций в службе 
 description: Узнайте, как настроить автоматическую публикацию в службе "Сетка событий Azure" для устойчивых функций.
 ms.topic: conceptual
 ms.date: 04/25/2020
-ms.openlocfilehash: c0106f3754e0cdcbf1f295fbe3f1b5def8dc3ca1
-ms.sourcegitcommit: bb0afd0df5563cc53f76a642fd8fc709e366568b
+ms.openlocfilehash: e4651dd7548ba76380bfc2d1b314e67d7abe63d9
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83124319"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87081752"
 ---
 # <a name="durable-functions-publishing-to-azure-event-grid-preview"></a>Публикации устойчивых функций в службе "Сетка событий Azure" (предварительная версия)
 
-В этой статье показано, как настроить Устойчивые функции для публикации событий жизненного цикла оркестрации (например, события создания, завершения и сбоя) в пользовательском [разделе Сетки событий Azure](https://docs.microsoft.com/azure/event-grid/overview).
+В этой статье показано, как настроить Устойчивые функции для публикации событий жизненного цикла оркестрации (например, события создания, завершения и сбоя) в пользовательском [разделе Сетки событий Azure](../../event-grid/overview.md).
 
 Ниже приведены некоторые сценарии, где эта функция полезна:
 
@@ -25,7 +26,7 @@ ms.locfileid: "83124319"
 
 * Установите [Microsoft.Azure.WebJobs.Extensions.DurableTask](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.DurableTask) в проекте Устойчивых функций.
 * Установите [эмулятор службы хранилища Azure](../../storage/common/storage-use-emulator.md) (только для Windows) или используйте существующую учетную запись хранения Azure.
-* Установите [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) или используйте [Azure Cloud Shell](../../cloud-shell/overview.md).
+* Установите [Azure CLI](/cli/azure/?view=azure-cli-latest) или используйте [Azure Cloud Shell](../../cloud-shell/overview.md).
 
 ## <a name="create-a-custom-event-grid-topic"></a>Создание пользовательского раздела сетки событий
 
@@ -167,7 +168,7 @@ az eventgrid topic key list --name <topic_name> -g eventResourceGroup --query "k
 
 ### <a name="add-an-event-grid-subscription"></a>Добавление подписки в службе "Сетка событий"
 
-Теперь вы можете добавить подписку на Сетку событий для созданного вами раздела. Дополнительные сведения см. в статье [Основные понятия в службе "Сетка событий Azure"](https://docs.microsoft.com/azure/event-grid/concepts).
+Теперь вы можете добавить подписку на Сетку событий для созданного вами раздела. Дополнительные сведения см. в статье [Основные понятия в службе "Сетка событий Azure"](../../event-grid/concepts.md).
 
 1. В новой функции выберите элемент **Интеграция** а затем выберите параметр **триггера Сетки событий (eventGridEvent)** . 
 

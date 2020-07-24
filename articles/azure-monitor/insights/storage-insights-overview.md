@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 05/11/2020
-ms.openlocfilehash: 7ab7071f504231290f72646e59a30fa855cff6cf
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d71201da0c4af35720a309fe0dfa068cd2c69630
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84944497"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87081616"
 ---
 # <a name="monitoring-your-storage-service-with-azure-monitor-for-storage"></a>Мониторинг службы хранилища с помощью Azure Monitor для службы хранилища
 
@@ -31,7 +31,7 @@ Azure Monitor для хранилища обеспечивает комплек
 
 * **Настраиваемые параметры** — место, где можно выбрать нужные метрики, изменить или установить пороговые значения, соответствующие вашим ограничениям, и сохранить в качестве собственной книги. Диаграммы из книги можно закрепить на панели мониторинга Azure.  
 
-Эта функция не требует включения или настройки. Данные метрики хранилища из учетных записей хранения собираются по умолчанию. Если вы не знакомы с метриками, доступными в службе хранилища Azure, просмотрите их описание и определение в [этой статье](../../storage/common/storage-metrics-in-azure-monitor.md).
+Эта функция не требует включения или настройки. Данные метрики хранилища из учетных записей хранения собираются по умолчанию. Если вы не знакомы с метриками, доступными в службе хранилища Azure, просмотрите их описание и определение в [этой статье](../../storage/common/monitor-storage.md).
 
 >[!NOTE]
 >Доступ к функции является бесплатным. Оплачиваются только ключевые возможности Azure Monitor, которые вы настраиваете или подключаете, в соответствии со сведениями о [ценах на Azure Monitor](https://azure.microsoft.com/pricing/details/monitor/).
@@ -198,7 +198,7 @@ Azure Monitor для хранилища обеспечивает комплек
 
 1. Выберите **Параметры столбцов** в сетке метрик.
 
-2. На панели **Изменить настройки столбца** в разделе **столбцы** выберите **microsoft.storage/storageaccounts-Capacity-UsedCapacity$|microsoft.storage/storageaccounts/blobservices-Capacity-BlobCapacity$|microsoft.storage/storageaccounts/fileservices-Capacity-FileCapacity$|microsoft.storage/storageaccounts/queueservices-Capacity-QueueCapacity$|microsoft.storage/storageaccounts/tableservices-Capacity-TableCapacity$** . В раскрывающемся списке **Цветовая палитра** выберите **Зеленый**.
+2. В области **изменить параметры столбца** выберите в разделе **столбцы** **Microsoft. хранилище/storageaccounts-Capacity-используемая емкость составляет $ `|` Microsoft. хранилище/Storageaccounts/блобсервицес-Capacity-BlobCapacity $ `|` Microsoft. хранилище/storageaccounts/филесервицес-Capacity-филекапаЦити $ `|` Microsoft. Storage/storageaccounts/куеуесервицес-Capacity-куеуекапаЦити $ `|` Майкрософт. Storage/storageaccounts/таблесервицес-Capacity-TableCapacity $**. В раскрывающемся списке **Цветовая палитра** выберите **Зеленый**.
 
 3. Чтобы сохранить изменения, выберите **Сохранить и закрыть**.
 
@@ -246,7 +246,7 @@ Azure Monitor для хранилища обеспечивает комплек
 
 ### <a name="how-to-analyze-and-troubleshoot-the-data-shown-in-azure-monitor-for-storage"></a>Как анализировать данные и устранять связанные с ними проблемы в Azure Monitor для службы хранилища?
 
- Дополнительные сведения о том, как анализировать данные и устранять связанные с ними проблемы в Azure Monitor для службы хранилища, см. в статье [Мониторинг, диагностика и устранение неисправностей службы хранилища Microsoft Azure](https://docs.microsoft.com/azure/storage/common/storage-monitoring-diagnosing-troubleshooting).
+ Дополнительные сведения о том, как анализировать данные и устранять связанные с ними проблемы в Azure Monitor для службы хранилища, см. в статье [Мониторинг, диагностика и устранение неисправностей службы хранилища Microsoft Azure](../../storage/common/storage-monitoring-diagnosing-troubleshooting.md).
 
 ### <a name="why-dont-i-see-all-the-types-of-errors-in-metrics"></a>Почему в метриках отображаются не все типы ошибок?
 
@@ -269,7 +269,7 @@ Azure Monitor для хранилища обеспечивает комплек
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Настройте [оповещения метрики](../platform/alerts-metric.md) и [уведомления о работоспособности служб](../../service-health/alerts-activity-log-service-notifications.md), чтобы получать автоматизированные оповещения для обнаружения проблем.
+* Настройте [оповещения метрики](../platform/alerts-metric.md) и [уведомления о работоспособности служб](../../service-health/alerts-activity-log-service-notifications-portal.md), чтобы получать автоматизированные оповещения для обнаружения проблем.
 
 * Узнайте, в каких ситуациях применяются книги, как создавать и настраивать отчеты и многое другое, изучив статью [Создание интерактивных отчетов с использованием книг Azure Monitor](../platform/workbooks-overview.md).
 

@@ -3,12 +3,12 @@ title: Поддержка операции перемещения типом р�
 description: Список типов ресурсов Azure, подлежащих перемещению в новую группу ресурсов или подписку.
 ms.topic: conceptual
 ms.date: 07/13/2020
-ms.openlocfilehash: 7b7f6f05c9cae80cffb64245a3fc8a6b0890d577
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 16197210326d73284a4a83edc7876e4faddded86
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86539233"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87079495"
 ---
 # <a name="move-operation-support-for-resources"></a>Поддержка операции перемещения для ресурсов
 
@@ -288,19 +288,19 @@ ms.locfileid: "86539233"
 
 ## <a name="microsoftapimanagement"></a>Microsoft.ApiManagement
 
+> [!IMPORTANT]
+> Невозможно переместить службу управления API, для которой настроено значение "SKU потребления".
+
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Группа ресурсов | Подписка |
 > | ------------- | ----------- | ---------- |
-> | checkfeedbackrequired | нет | Нет |
-> | checknameavailability | нет | Нет |
-> | checkservicenameavailability | нет | Нет |
-> | Операции | нет | Нет |
-> | reportfeedback | Нет | Нет |
+> | checkfeedbackrequired | Нет | нет |
+> | checknameavailability | Нет | нет |
+> | checkservicenameavailability | Нет | нет |
+> | Операции | Нет | Нет |
+> | reportfeedback | Нет | нет |
 > | служба | Да | Да |
 > | validateservicename | Нет | Нет |
-
-> [!IMPORTANT]
-> Невозможно переместить службу управления API, для которой настроено значение "SKU потребления".
 
 ## <a name="microsoftappconfiguration"></a>Microsoft.AppConfiguration
 
@@ -330,15 +330,15 @@ ms.locfileid: "86539233"
 
 ## <a name="microsoftappservice"></a>Microsoft.AppService
 
+> [!IMPORTANT]
+> См. статью [Руководство по перемещению службы приложений](./move-limitations/app-service-move-limitations.md).
+
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Группа ресурсов | Подписка |
 > | ------------- | ----------- | ---------- |
 > | apiapps | Нет | Нет |
 > | appidentities | Нет | Нет |
 > | gateways | нет | нет |
-
-> [!IMPORTANT]
-> См. статью [Руководство по перемещению службы приложений](./move-limitations/app-service-move-limitations.md).
 
 ## <a name="microsoftattestation"></a>Microsoft.Attestation
 
@@ -375,24 +375,24 @@ ms.locfileid: "86539233"
 
 ## <a name="microsoftautomation"></a>Microsoft.Automation
 
+> [!IMPORTANT]
+> Модули Runbook должны находиться в той же группе ресурсов, что и учетная запись службы автоматизации.
+>
+> Дополнительные сведения см. [в статье Перемещение учетной записи службы автоматизации Azure в другую подписку](../../automation/how-to/move-account.md?toc=/azure/azure-resource-manager/toc.json).
+
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Группа ресурсов | Подписка |
 > | ------------- | ----------- | ---------- |
 > | automationaccounts | Да | Да |
 > | automationaccounts / configurations | Да | Да |
-> | automationaccounts / jobs | нет | Нет |
-> | automationaccounts / privateendpointconnectionproxies | нет | Нет |
+> | automationaccounts / jobs | нет | нет |
+> | automationaccounts / privateendpointconnectionproxies | Нет | Нет |
 > | automationaccounts / privateendpointconnections | Нет | Нет |
-> | automationaccounts / privatelinkresources | Нет | нет |
+> | automationaccounts / privatelinkresources | нет | Нет |
 > | automationaccounts / runbooks | Да | Да |
-> | automationaccounts / softwareupdateconfigurations | Нет | нет |
+> | automationaccounts / softwareupdateconfigurations | нет | Нет |
 > | automationaccounts / webhooks | Нет | Нет |
-> | Операции | Нет | нет |
-
-> [!IMPORTANT]
-> Модули Runbook должны находиться в той же группе ресурсов, что и учетная запись службы автоматизации.
->
-> Дополнительные сведения см. [в статье Перемещение учетной записи службы автоматизации Azure в другую подписку](../../automation/how-to/move-account.md?toc=/azure/azure-resource-manager/toc.json).
+> | Операции | нет | Нет |
 
 ## <a name="microsoftavs"></a>Microsoft.AVS
 
@@ -626,21 +626,21 @@ ms.locfileid: "86539233"
 
 ## <a name="microsoftcache"></a>Microsoft.Cache
 
+> [!IMPORTANT]
+> Если экземпляр кэша Azure для Redis настроен с помощью виртуальной сети, его нельзя переместить в другую подписку. См. [ограничения перемещения сети](./move-limitations/networking-move-limitations.md).
+
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Группа ресурсов | Подписка |
 > | ------------- | ----------- | ---------- |
-> | checknameavailability | Нет | нет |
+> | checknameavailability | нет | Нет |
 > | Расположения | Нет | Нет |
-> | locations / operationresults | Нет | Нет |
-> | locations / operationsstatus | нет | Нет |
-> | Операции | нет | Нет |
+> | locations / operationresults | нет | нет |
+> | locations / operationsstatus | нет | нет |
+> | Операции | нет | нет |
 > | redis | Да | Да |
-> | Redis/евентгридфилтерс | нет | Нет |
-> | redis / privatelinkresources | нет | Нет |
-> | redisenterprise | Нет | Нет |
-
-> [!IMPORTANT]
-> Если экземпляр кэша Azure для Redis настроен с помощью виртуальной сети, его нельзя переместить в другую подписку. См. [ограничения перемещения сети](./move-limitations/networking-move-limitations.md).
+> | Redis/евентгридфилтерс | нет | нет |
+> | redis / privatelinkresources | Нет | Нет |
+> | redisenterprise | нет | нет |
 
 ## <a name="microsoftcapacity"></a>Microsoft.Capacity
 
@@ -700,16 +700,16 @@ ms.locfileid: "86539233"
 
 ## <a name="microsoftcertificateregistration"></a>Microsoft.CertificateRegistration
 
+> [!IMPORTANT]
+> См. статью [Руководство по перемещению службы приложений](./move-limitations/app-service-move-limitations.md).
+
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Группа ресурсов | Подписка |
 > | ------------- | ----------- | ---------- |
 > | certificateorders | Да | Да |
 > | certificateorders / certificates | Нет | Нет |
 > | Операции | Нет | Нет |
-> | validatecertificateregistrationinformation | Нет | Нет |
-
-> [!IMPORTANT]
-> См. статью [Руководство по перемещению службы приложений](./move-limitations/app-service-move-limitations.md).
+> | validatecertificateregistrationinformation | Нет | нет |
 
 ## <a name="microsoftchangeanalysis"></a>Microsoft.ChangeAnalysis
 
@@ -720,105 +720,105 @@ ms.locfileid: "86539233"
 
 ## <a name="microsoftclassiccompute"></a>Microsoft.ClassicCompute
 
+> [!IMPORTANT]
+> См. [Руководство по перемещению классического развертывания](./move-limitations/classic-model-move-limitations.md). Ресурсы классической модели развертывания можно перемещать между подписками с помощью операции, характерной для этого сценария.
+
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Группа ресурсов | Подписка |
 > | ------------- | ----------- | ---------- |
-> | capabilities | Нет | нет |
+> | capabilities | нет | Нет |
 > | checkdomainnameavailability | Нет | Нет |
-> | domainnames | Да | Нет |
-> | domainnames / capabilities | нет | Нет |
-> | domainnames / internalloadbalancers | нет | Нет |
-> | domainnames / servicecertificates | нет | Нет |
-> | domainnames / slots | нет | Нет |
-> | domainnames / slots / roles | нет | Нет |
-> | domainnames / slots / roles / metricdefinitions | нет | Нет |
-> | domainnames / slots / roles / metrics | нет | Нет |
-> | movesubscriptionresources | нет | Нет |
-> | operatingsystemfamilies | нет | Нет |
-> | operatingsystems | нет | Нет |
-> | Операции | нет | Нет |
-> | operationstatuses | нет | Нет |
-> | quotas | нет | Нет |
-> | resourcetypes | нет | Нет |
-> | validatesubscriptionmoveavailability | нет | Нет |
-> | virtualmachines | Да | Нет |
-> | virtualmachines / diagnosticsettings | нет | Нет |
-> | virtualmachines / metricdefinitions | нет | Нет |
-> | virtualmachines / metrics | нет | Нет |
-
-> [!IMPORTANT]
-> См. [Руководство по перемещению классического развертывания](./move-limitations/classic-model-move-limitations.md). Ресурсы классической модели развертывания можно перемещать между подписками с помощью операции, характерной для этого сценария.
+> | domainnames | Да | нет |
+> | domainnames / capabilities | нет | нет |
+> | domainnames / internalloadbalancers | Нет | нет |
+> | domainnames / servicecertificates | нет | нет |
+> | domainnames / slots | нет | нет |
+> | domainnames / slots / roles | нет | нет |
+> | domainnames / slots / roles / metricdefinitions | нет | нет |
+> | domainnames / slots / roles / metrics | нет | нет |
+> | movesubscriptionresources | нет | нет |
+> | operatingsystemfamilies | нет | нет |
+> | operatingsystems | нет | нет |
+> | Операции | нет | нет |
+> | operationstatuses | нет | нет |
+> | quotas | нет | нет |
+> | resourcetypes | нет | нет |
+> | validatesubscriptionmoveavailability | нет | нет |
+> | virtualmachines | Да | нет |
+> | virtualmachines / diagnosticsettings | нет | нет |
+> | virtualmachines / metricdefinitions | Нет | нет |
+> | virtualmachines / metrics | нет | нет |
 
 ## <a name="microsoftclassicinfrastructuremigrate"></a>Microsoft.ClassicInfrastructureMigrate
 
+> [!IMPORTANT]
+> См. [Руководство по перемещению классического развертывания](./move-limitations/classic-model-move-limitations.md). Ресурсы классической модели развертывания можно перемещать между подписками с помощью операции, характерной для этого сценария.
+
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Группа ресурсов | Подписка |
 > | ------------- | ----------- | ---------- |
-> | classicinfrastructureresources | нет | Нет |
-
-> [!IMPORTANT]
-> См. [Руководство по перемещению классического развертывания](./move-limitations/classic-model-move-limitations.md). Ресурсы классической модели развертывания можно перемещать между подписками с помощью операции, характерной для этого сценария.
+> | classicinfrastructureresources | Нет | Нет |
 
 ## <a name="microsoftclassicnetwork"></a>Microsoft.ClassicNetwork
 
+> [!IMPORTANT]
+> См. [Руководство по перемещению классического развертывания](./move-limitations/classic-model-move-limitations.md). Ресурсы классической модели развертывания можно перемещать между подписками с помощью операции, характерной для этого сценария.
+
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Группа ресурсов | Подписка |
 > | ------------- | ----------- | ---------- |
-> | capabilities | нет | Нет |
+> | capabilities | Нет | Нет |
 > | expressroutecrossconnections | Нет | Нет |
-> | expressroutecrossconnections / peerings | Нет | Нет |
-> | gatewaysupporteddevices | нет | Нет |
-> | networksecuritygroups | нет | Нет |
-> | Операции | нет | Нет |
-> | quotas | нет | Нет |
-> | reservedips | нет | Нет |
-> | virtualnetworks | нет | Нет |
-> | virtualnetworks / remotevirtualnetworkpeeringproxies | нет | Нет |
-> | virtualnetworks / virtualnetworkpeerings | нет | Нет |
-
-> [!IMPORTANT]
-> См. [Руководство по перемещению классического развертывания](./move-limitations/classic-model-move-limitations.md). Ресурсы классической модели развертывания можно перемещать между подписками с помощью операции, характерной для этого сценария.
+> | expressroutecrossconnections / peerings | нет | нет |
+> | gatewaysupporteddevices | нет | нет |
+> | networksecuritygroups | нет | нет |
+> | Операции | нет | нет |
+> | quotas | нет | нет |
+> | reservedips | нет | нет |
+> | virtualnetworks | нет | нет |
+> | virtualnetworks / remotevirtualnetworkpeeringproxies | нет | нет |
+> | virtualnetworks / virtualnetworkpeerings | нет | нет |
 
 ## <a name="microsoftclassicstorage"></a>Microsoft.ClassicStorage
 
+> [!IMPORTANT]
+> См. [Руководство по перемещению классического развертывания](./move-limitations/classic-model-move-limitations.md). Ресурсы классической модели развертывания можно перемещать между подписками с помощью операции, характерной для этого сценария.
+
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Группа ресурсов | Подписка |
 > | ------------- | ----------- | ---------- |
-> | capabilities | нет | Нет |
+> | capabilities | Нет | Нет |
 > | checkstorageaccountavailability | Нет | Нет |
-> | disks | Нет | Нет |
-> | images | нет | Нет |
-> | Операции | нет | Нет |
-> | osimages | нет | Нет |
-> | osplatformimages | нет | Нет |
-> | publicimages | нет | Нет |
-> | quotas | нет | Нет |
-> | storageaccounts | Да | Нет |
-> | storageaccounts / blobservices | нет | Нет |
-> | storageaccounts / fileservices | нет | Нет |
-> | storageaccounts / metricdefinitions | нет | Нет |
-> | storageaccounts / metrics | нет | Нет |
-> | storageaccounts / queueservices | нет | Нет |
-> | storageaccounts / services | нет | Нет |
-> | storageaccounts / services / diagnosticsettings | нет | Нет |
-> | storageaccounts / services / metricdefinitions | нет | Нет |
-> | storageaccounts / services / metrics | нет | Нет |
-> | storageaccounts / tableservices | нет | Нет |
-> | storageaccounts / vmimages | нет | Нет |
-> | vmimages | нет | Нет |
-
-> [!IMPORTANT]
-> См. [Руководство по перемещению классического развертывания](./move-limitations/classic-model-move-limitations.md). Ресурсы классической модели развертывания можно перемещать между подписками с помощью операции, характерной для этого сценария.
+> | disks | нет | нет |
+> | images | нет | нет |
+> | Операции | нет | нет |
+> | osimages | нет | нет |
+> | osplatformimages | нет | нет |
+> | publicimages | нет | нет |
+> | quotas | нет | нет |
+> | storageaccounts | Да | нет |
+> | storageaccounts / blobservices | нет | нет |
+> | storageaccounts / fileservices | Нет | нет |
+> | storageaccounts / metricdefinitions | нет | нет |
+> | storageaccounts / metrics | нет | нет |
+> | storageaccounts / queueservices | нет | нет |
+> | storageaccounts / services | нет | нет |
+> | storageaccounts / services / diagnosticsettings | нет | нет |
+> | storageaccounts / services / metricdefinitions | нет | нет |
+> | storageaccounts / services / metrics | нет | нет |
+> | storageaccounts / tableservices | нет | нет |
+> | storageaccounts / vmimages | нет | нет |
+> | vmimages | нет | нет |
 
 ## <a name="microsoftclassicsubscription"></a>Microsoft.ClassicSubscription
 
+> [!IMPORTANT]
+> См. [Руководство по перемещению классического развертывания](./move-limitations/classic-model-move-limitations.md). Ресурсы классической модели развертывания можно перемещать между подписками с помощью операции, характерной для этого сценария.
+
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Группа ресурсов | Подписка |
 > | ------------- | ----------- | ---------- |
-> | Операции | нет | Нет |
-
-> [!IMPORTANT]
-> См. [Руководство по перемещению классического развертывания](./move-limitations/classic-model-move-limitations.md). Ресурсы классической модели развертывания можно перемещать между подписками с помощью операции, характерной для этого сценария.
+> | Операции | Нет | Нет |
 
 ## <a name="microsoftcognitiveservices"></a>Microsoft.CognitiveServices
 
@@ -844,53 +844,53 @@ ms.locfileid: "86539233"
 
 ## <a name="microsoftcompute"></a>Microsoft.Compute;
 
+> [!IMPORTANT]
+> См. [Руководство по перемещению виртуальных машин](./move-limitations/virtual-machines-move-limitations.md).
+
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Группа ресурсов | Подписка |
 > | ------------- | ----------- | ---------- |
 > | availabilitysets | Да | Да |
-> | diskaccesses | нет | Нет |
-> | diskencryptionsets | нет | Нет |
+> | diskaccesses | Нет | нет |
+> | diskencryptionsets | Нет | нет |
 > | disks | Да | Да |
 > | galleries | Нет | Нет |
 > | galleries / images | Нет | Нет |
-> | galleries / images / versions | нет | нет |
-> | hostgroups | нет | нет |
+> | galleries / images / versions | нет | Нет |
+> | hostgroups | нет | Нет |
 > | hostgroups / hosts | Нет | Нет |
 > | images | Да | Да |
-> | Расположения | нет | нет |
-> | locations / artifactpublishers | нет | нет |
-> | locations / capsoperations | нет | нет |
-> | locations / diskoperations | нет | нет |
+> | Расположения | нет | Нет |
+> | locations / artifactpublishers | нет | Нет |
+> | locations / capsoperations | нет | Нет |
+> | locations / diskoperations | нет | Нет |
 > | locations / loganalytics | Нет | Нет |
-> | locations / operations | нет | нет |
-> | locations / publishers | нет | нет |
-> | locations / runcommands | нет | нет |
-> | locations / usages | нет | нет |
-> | locations / virtualmachines | нет | нет |
-> | locations / vmsizes | нет | нет |
-> | locations / vsmoperations | нет | нет |
-> | Операции | нет | нет |
+> | locations / operations | нет | Нет |
+> | locations / publishers | нет | Нет |
+> | locations / runcommands | нет | Нет |
+> | locations / usages | нет | Нет |
+> | locations / virtualmachines | нет | Нет |
+> | locations / vmsizes | нет | Нет |
+> | locations / vsmoperations | нет | Нет |
+> | Операции | нет | Нет |
 > | proximityplacementgroups | Да | Да |
-> | restorepointcollections | нет | нет |
-> | restorepointcollections / restorepoints | нет | нет |
-> | sharedvmextensions | нет | нет |
-> | sharedvmimages | нет | нет |
+> | restorepointcollections | нет | Нет |
+> | restorepointcollections / restorepoints | нет | Нет |
+> | sharedvmextensions | нет | Нет |
+> | sharedvmimages | нет | Нет |
 > | sharedvmimages / versions | Нет | Нет |
 > | snapshots | Да | Да |
-> | sshpublickeys | нет | нет |
+> | sshpublickeys | нет | Нет |
 > | virtualmachines | Да | Да |
 > | virtualmachines / extensions | Да | Да |
-> | virtualmachines / metricdefinitions | нет | нет |
+> | virtualmachines / metricdefinitions | нет | Нет |
 > | virtualmachines / runcommands | Нет | Нет |
 > | virtualmachinescalesets | Да | Да |
 > | virtualmachinescalesets / extensions | Нет | Нет |
 > | virtualmachinescalesets / networkinterfaces | Нет | Нет |
-> | virtualmachinescalesets / publicipaddresses | нет | нет |
-> | virtualmachinescalesets / virtualmachines | нет | нет |
+> | virtualmachinescalesets / publicipaddresses | нет | Нет |
+> | virtualmachinescalesets / virtualmachines | нет | Нет |
 > | virtualmachinescalesets / virtualmachines / networkinterfaces | Нет | Нет |
-
-> [!IMPORTANT]
-> См. [Руководство по перемещению виртуальных машин](./move-limitations/virtual-machines-move-limitations.md).
 
 ## <a name="microsoftconsumption"></a>Microsoft.Consumption
 
@@ -1613,25 +1613,25 @@ ms.locfileid: "86539233"
 
 ## <a name="microsofthdinsight"></a>Microsoft.HDInsight
 
-> [!div class="mx-tableFixed"]
-> | Тип ресурса | Группа ресурсов | Подписка |
-> | ------------- | ----------- | ---------- |
-> | clusters | Да | Да |
-> | clusters / applications | нет | нет |
-> | clusters / operationresults | нет | нет |
-> | Расположения | нет | нет |
-> | locations / azureasyncoperations | Нет | Нет |
-> | locations / billingspecs | Нет | Нет |
-> | locations / capabilities | Нет | нет |
-> | locations / operationresults | Нет | нет |
-> | locations / usages | Нет | нет |
-> | locations / validatecreaterequest | Нет | нет |
-> | Операции | Нет | нет |
-
 > [!IMPORTANT]
 > Кластеры HDInsight можно переместить в новую подписку или группу ресурсов. Однако перемещение между подписками недоступно для сетевых ресурсов, связанных с кластером HDInsight (таких как виртуальная сеть, сетевой адаптер или подсистема балансировки нагрузки). Также невозможно переместить в новую группу ресурсов сетевой адаптер, который подключен к виртуальной машине кластера.
 >
 > При перемещении кластера HDInsight в новую подписку сначала необходимо переместить другие ресурсы (такие как учетная запись хранения). А затем переместить сам кластер HDInsight.
+
+> [!div class="mx-tableFixed"]
+> | Тип ресурса | Группа ресурсов | Подписка |
+> | ------------- | ----------- | ---------- |
+> | clusters | Да | Да |
+> | clusters / applications | Нет | нет |
+> | clusters / operationresults | Нет | Нет |
+> | Расположения | Нет | Нет |
+> | locations / azureasyncoperations | Нет | Нет |
+> | locations / billingspecs | нет | Нет |
+> | locations / capabilities | нет | Нет |
+> | locations / operationresults | нет | Нет |
+> | locations / usages | нет | Нет |
+> | locations / validatecreaterequest | нет | Нет |
+> | Операции | нет | Нет |
 
 ## <a name="microsofthealthcareapis"></a>Microsoft.HealthcareApis
 
@@ -1699,63 +1699,63 @@ ms.locfileid: "86539233"
 
 ## <a name="microsoftinsights"></a>microsoft.insights
 
+> [!IMPORTANT]
+> Убедитесь, что переход на новую подписку не превышает [квоты для подписки](azure-subscription-service-limits.md#azure-monitor-limits).
+
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Группа ресурсов | Подписка |
 > | ------------- | ----------- | ---------- |
 > | actiongroups | Да | Да |
-> | activitylogalerts | нет | нет |
+> | activitylogalerts | нет | Нет |
 > | alertrules | Да | Да |
 > | autoscalesettings | Да | Да |
-> | baseline | нет | нет |
-> | calculatebaseline | нет | нет |
+> | baseline | нет | Нет |
+> | calculatebaseline | нет | Нет |
 > | components | Да | Да |
-> | components / events | нет | нет |
-> | components / linkedstorageaccounts | нет | нет |
-> | компоненты и метаданные | нет | нет |
-> | components / metrics | нет | нет |
-> | components / pricingplans | нет | нет |
-> | components / query | нет | нет |
-> | datacollectionrules | нет | нет |
-> | diagnosticsettings | нет | нет |
-> | diagnosticsettingscategories | нет | нет |
-> | eventcategories | нет | нет |
-> | eventtypes | нет | нет |
-> | extendeddiagnosticsettings | нет | нет |
-> | guestdiagnosticsettings | нет | нет |
-> | listmigrationdate | нет | нет |
-> | Расположения | нет | нет |
-> | locations / operationresults | нет | нет |
-> | logdefinitions | нет | нет |
-> | logprofiles | нет | нет |
-> | журналы | нет | нет |
-> | metricalerts | нет | нет |
-> | metricbaselines | нет | нет |
-> | metricbatch | нет | нет |
-> | metricdefinitions | нет | нет |
-> | metricnamespaces | нет | нет |
-> | Метрики | нет | нет |
-> | migratealertrules | нет | нет |
-> | migratetonewpricingmodel | нет | нет |
-> | myworkbooks | нет | нет |
-> | notificationgroups | нет | нет |
-> | Операции | нет | нет |
-> | privatelinkscopeoperationstatuses | нет | нет |
+> | components / events | нет | Нет |
+> | components / linkedstorageaccounts | нет | Нет |
+> | компоненты и метаданные | нет | Нет |
+> | components / metrics | нет | Нет |
+> | components / pricingplans | нет | Нет |
+> | components / query | нет | Нет |
+> | datacollectionrules | нет | Нет |
+> | diagnosticsettings | нет | Нет |
+> | diagnosticsettingscategories | нет | Нет |
+> | eventcategories | нет | Нет |
+> | eventtypes | нет | Нет |
+> | extendeddiagnosticsettings | нет | Нет |
+> | guestdiagnosticsettings | нет | Нет |
+> | listmigrationdate | нет | Нет |
+> | Расположения | нет | Нет |
+> | locations / operationresults | нет | Нет |
+> | logdefinitions | нет | Нет |
+> | logprofiles | нет | Нет |
+> | журналы | нет | Нет |
+> | metricalerts | нет | Нет |
+> | metricbaselines | нет | Нет |
+> | metricbatch | нет | Нет |
+> | metricdefinitions | нет | Нет |
+> | metricnamespaces | нет | Нет |
+> | Метрики | нет | Нет |
+> | migratealertrules | нет | Нет |
+> | migratetonewpricingmodel | нет | Нет |
+> | myworkbooks | нет | Нет |
+> | notificationgroups | нет | Нет |
+> | Операции | нет | Нет |
+> | privatelinkscopeoperationstatuses | нет | Нет |
 > | privatelinkscopes | Нет | Нет |
-> | privatelinkscopes / privateendpointconnectionproxies | нет | нет |
-> | privatelinkscopes / privateendpointconnections | нет | нет |
-> | privatelinkscopes / scopedresources | нет | нет |
+> | privatelinkscopes / privateendpointconnectionproxies | нет | Нет |
+> | privatelinkscopes / privateendpointconnections | нет | Нет |
+> | privatelinkscopes / scopedresources | нет | Нет |
 > | rollbacktolegacypricingmodel | Нет | Нет |
 > | scheduledqueryrules | Да | Да |
 > | Топология | Нет | Нет |
 > | транзакции | Нет | Нет |
-> | vminsightsonboardingstatuses | Нет | Нет |
+> | vminsightsonboardingstatuses | Нет | нет |
 > | webtests | Да | Да |
-> | веб-тесты и жеттестресултфиле | нет | Нет |
+> | веб-тесты и жеттестресултфиле | Нет | нет |
 > | workbooks | Да | Да |
 > | workbooktemplates | Да | Да |
-
-> [!IMPORTANT]
-> Убедитесь, что переход на новую подписку не превышает [квоты для подписки](azure-subscription-service-limits.md#azure-monitor-limits).
 
 ## <a name="microsoftiotcentral"></a>Microsoft.IoTCentral
 
@@ -1779,25 +1779,25 @@ ms.locfileid: "86539233"
 
 ## <a name="microsoftkeyvault"></a>Microsoft.KeyVault
 
+> [!IMPORTANT]
+> Хранилища ключей, используемые для шифрования дисков, невозможно переместить в группы ресурсов в той же подписке или между подписками.
+
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Группа ресурсов | Подписка |
 > | ------------- | ----------- | ---------- |
-> | checknameavailability | нет | нет |
-> | deletedvaults | нет | нет |
+> | checknameavailability | нет | Нет |
+> | deletedvaults | нет | Нет |
 > | hsmpools | Нет | Нет |
-> | Расположения | нет | нет |
-> | locations / deletedvaults | нет | нет |
-> | locations / deletevirtualnetworkorsubnets | нет | нет |
+> | Расположения | нет | Нет |
+> | locations / deletedvaults | нет | Нет |
+> | locations / deletevirtualnetworkorsubnets | нет | Нет |
 > | locations / operationresults | Нет | Нет |
 > | манажедхсмс | Нет | Нет |
-> | Операции | Нет | Нет |
+> | Операции | Нет | нет |
 > | vaults | Да | Да |
-> | vaults / accesspolicies | нет | Нет |
-> | vaults / eventgridfilters | нет | Нет |
-> | vaults / secrets | нет | Нет |
-
-> [!IMPORTANT]
-> Хранилища ключей, используемые для шифрования дисков, невозможно переместить в группы ресурсов в той же подписке или между подписками.
+> | vaults / accesspolicies | Нет | нет |
+> | vaults / eventgridfilters | Нет | нет |
+> | vaults / secrets | Нет | Нет |
 
 ## <a name="microsoftkubernetes"></a>Microsoft.Kubernetes
 
@@ -1866,7 +1866,7 @@ ms.locfileid: "86539233"
 > | ------------- | ----------- | ---------- |
 > | hostingenvironments | нет | нет |
 > | integrationaccounts | Да | Да |
-> | integrationserviceenvironments | Да | Нет |
+> | integrationserviceenvironments | Да | нет |
 > | integrationserviceenvironments / managedapis | Да | нет |
 > | isolatedenvironments | Нет | нет |
 > | Расположения | Нет | нет |
@@ -1964,7 +1964,7 @@ ms.locfileid: "86539233"
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Группа ресурсов | Подписка |
 > | ------------- | ----------- | ---------- |
-> | marketplaceregistrationdefinitions | нет | Нет |
+> | marketplaceregistrationdefinitions | Нет | Нет |
 > | Операции | Нет | Нет |
 > | operationstatuses | нет | Нет |
 > | registrationassignments | нет | Нет |
@@ -2016,7 +2016,7 @@ ms.locfileid: "86539233"
 > | privatestores | Нет | нет |
 > | privatestores / offers | Нет | нет |
 > | products | Нет | Нет |
-> | publishers | Нет | Нет |
+> | publishers | нет | Нет |
 > | publishers / offers | нет | Нет |
 > | publishers / offers / amendments | нет | Нет |
 > | регистрация | нет | Нет |
@@ -2115,130 +2115,130 @@ ms.locfileid: "86539233"
 
 ## <a name="microsoftnetwork"></a>Microsoft.Network.
 
+> [!IMPORTANT]
+> См. [руководство по перемещению сети](./move-limitations/networking-move-limitations.md).
+
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Группа ресурсов | Подписка |
 > | ------------- | ----------- | ---------- |
-> | applicationgatewayavailablerequestheaders | Нет | нет |
-> | applicationgatewayavailableresponseheaders | Нет | нет |
+> | applicationgatewayavailablerequestheaders | нет | нет |
+> | applicationgatewayavailableresponseheaders | нет | нет |
 > | applicationgatewayavailableservervariables | Нет | Нет |
-> | applicationgatewayavailablessloptions | Нет | нет |
-> | applicationgatewayavailablewafrulesets | Нет | нет |
-> | applicationgateways | Нет | нет |
-> | applicationgatewaywebapplicationfirewallpolicies | Нет | нет |
+> | applicationgatewayavailablessloptions | нет | нет |
+> | applicationgatewayavailablewafrulesets | нет | нет |
+> | applicationgateways | нет | нет |
+> | applicationgatewaywebapplicationfirewallpolicies | нет | нет |
 > | applicationsecuritygroups | Да | Да |
-> | azurefirewallfqdntags | Нет | нет |
+> | azurefirewallfqdntags | нет | нет |
 > | azurefirewalls | Нет | Нет |
 > | bastionhosts | Нет | Нет |
-> | bgpservicecommunities | Нет | нет |
-> | checkfrontdoornameavailability | Нет | нет |
-> | checktrafficmanagernameavailability | Нет | нет |
+> | bgpservicecommunities | нет | нет |
+> | checkfrontdoornameavailability | нет | нет |
+> | checktrafficmanagernameavailability | нет | нет |
 > | connections | Да | Да |
 > | ddoscustompolicies | Да | Да |
-> | ddosprotectionplans | Нет | нет |
-> | dnsoperationresults | Нет | нет |
-> | dnsoperationstatuses | Нет | нет |
+> | ddosprotectionplans | нет | нет |
+> | dnsoperationresults | нет | нет |
+> | dnsoperationstatuses | нет | нет |
 > | dnszones | Да | Да |
-> | dnszones / a | Нет | нет |
-> | dnszones / aaaa | Нет | нет |
-> | dnszones / all | Нет | нет |
-> | dnszones / caa | Нет | нет |
-> | dnszones / cname | Нет | нет |
-> | dnszones / mx | Нет | нет |
-> | dnszones / ns | Нет | нет |
-> | dnszones / ptr | Нет | нет |
-> | dnszones / recordsets | Нет | нет |
-> | dnszones / soa | Нет | нет |
+> | dnszones / a | нет | нет |
+> | dnszones / aaaa | нет | нет |
+> | dnszones / all | нет | нет |
+> | dnszones / caa | нет | нет |
+> | dnszones / cname | нет | нет |
+> | dnszones / mx | нет | нет |
+> | dnszones / ns | нет | нет |
+> | dnszones / ptr | нет | нет |
+> | dnszones / recordsets | нет | нет |
+> | dnszones / soa | нет | нет |
 > | dnszones / srv | Нет | Нет |
-> | dnszones / txt | Нет | нет |
-> | expressroutecircuits | Нет | нет |
-> | expressroutegateways | Нет | нет |
-> | expressrouteserviceproviders | Нет | нет |
+> | dnszones / txt | нет | нет |
+> | expressroutecircuits | нет | нет |
+> | expressroutegateways | нет | нет |
+> | expressrouteserviceproviders | нет | нет |
 > | firewallpolicies | Да | Да |
-> | frontdooroperationresults | Нет | нет |
+> | frontdooroperationresults | нет | нет |
 > | frontdoors | Нет | Нет |
 > | фронтдурс/фронтендендпоинтс | Нет | Нет |
 > | frontdoorwebapplicationfirewallmanagedrulesets | Нет | Нет |
 > | frontdoorwebapplicationfirewallpolicies | Нет | Нет |
-> | getdnsresourcereference | нет | нет |
-> | internalnotify | нет | нет |
+> | getdnsresourcereference | нет | Нет |
+> | internalnotify | нет | Нет |
 > | ипаллокатионс | Да | Да |
 > | ipgroups | Да | Да |
 > | loadbalancers | Да — Базовый SKU<br>Нет — Стандартный SKU | Да — Базовый SKU<br>Нет — Стандартный SKU |
 > | localnetworkgateways | Да | Да |
-> | Расположения | Нет | нет |
-> | locations / autoapprovedprivatelinkservices | Нет | нет |
-> | locations / availabledelegations | Нет | нет |
-> | locations / availableprivateendpointtypes | Нет | нет |
-> | locations / availableservicealiases | Нет | нет |
-> | locations / baremetaltenants | Нет | нет |
-> | locations / batchnotifyprivateendpointsforresourcemove | Нет | нет |
-> | locations / batchvalidateprivateendpointsforresourcemove | Нет | нет |
-> | locations / checkacceleratednetworkingsupport | Нет | нет |
-> | locations / checkdnsnameavailability | Нет | нет |
-> | locations / checkprivatelinkservicevisibility | Нет | нет |
-> | locations / commitinternalazurenetworkmanagerconfiguration | Нет | нет |
-> | locations / effectiveresourceownership | Нет | нет |
-> | locations / nfvoperationresults | Нет | нет |
-> | locations / nfvoperations | Нет | нет |
-> | locations / operationresults | Нет | нет |
+> | Расположения | нет | нет |
+> | locations / autoapprovedprivatelinkservices | нет | нет |
+> | locations / availabledelegations | нет | нет |
+> | locations / availableprivateendpointtypes | нет | нет |
+> | locations / availableservicealiases | нет | нет |
+> | locations / baremetaltenants | нет | нет |
+> | locations / batchnotifyprivateendpointsforresourcemove | нет | нет |
+> | locations / batchvalidateprivateendpointsforresourcemove | нет | нет |
+> | locations / checkacceleratednetworkingsupport | нет | нет |
+> | locations / checkdnsnameavailability | нет | нет |
+> | locations / checkprivatelinkservicevisibility | нет | нет |
+> | locations / commitinternalazurenetworkmanagerconfiguration | нет | нет |
+> | locations / effectiveresourceownership | нет | нет |
+> | locations / nfvoperationresults | нет | нет |
+> | locations / nfvoperations | нет | нет |
+> | locations / operationresults | нет | нет |
 > | locations / operations | Нет | Нет |
-> | locations / servicetags | Нет | нет |
+> | locations / servicetags | нет | нет |
 > | locations / setresourceownership | Нет | Нет |
 > | locations / supportedvirtualmachinesizes | Нет | Нет |
-> | locations / usages | Нет | нет |
+> | locations / usages | нет | нет |
 > | locations / validateresourceownership | Нет | Нет |
-> | locations / virtualnetworkavailableendpointservices | Нет | Нет |
-> | natgateways | Нет | Нет |
-> | networkexperimentprofiles | Нет | Нет |
+> | locations / virtualnetworkavailableendpointservices | Нет | нет |
+> | natgateways | Нет | нет |
+> | networkexperimentprofiles | Нет | нет |
 > | networkintentpolicies | Да | Да |
 > | networkinterfaces | Да | Да |
-> | networkprofiles | Нет | нет |
+> | networkprofiles | нет | нет |
 > | networksecuritygroups | Да | Да |
 > | networkwatchers | Да | нет |
-> | networkwatchers / connectionmonitors | Да | Нет |
+> | networkwatchers / connectionmonitors | Да | нет |
 > | networkwatchers / flowlogs | Да | нет |
 > | networkwatchers / pingmeshes | Да | нет |
-> | Операции | Нет | нет |
-> | p2svpngateways | Нет | нет |
-> | privatednsoperationresults | Нет | нет |
-> | privatednsoperationstatuses | Нет | нет |
+> | Операции | нет | нет |
+> | p2svpngateways | нет | нет |
+> | privatednsoperationresults | нет | нет |
+> | privatednsoperationstatuses | нет | нет |
 > | privatednszones | Да | Да |
-> | privatednszones / a | Нет | нет |
-> | privatednszones / aaaa | Нет | нет |
+> | privatednszones / a | нет | нет |
+> | privatednszones / aaaa | нет | нет |
 > | privatednszones / all | Нет | Нет |
-> | privatednszones / cname | Нет | нет |
-> | privatednszones / mx | Нет | нет |
+> | privatednszones / cname | нет | нет |
+> | privatednszones / mx | нет | нет |
 > | privatednszones / ptr | Нет | Нет |
-> | privatednszones / soa | Нет | нет |
+> | privatednszones / soa | нет | нет |
 > | privatednszones / srv | Нет | Нет |
 > | privatednszones / txt | Нет | Нет |
 > | privatednszones / virtualnetworklinks | Да | Да |
-> | privatednszonesinternal | нет | нет |
+> | privatednszonesinternal | нет | Нет |
 > | privateendpointredirectmaps | Нет | Нет |
 > | privateendpoints | Да | Да |
 > | privatelinkservices | Нет | Нет |
 > | publicipaddresses | Да — Базовый SKU<br>Нет — Стандартный SKU | Да — Базовый SKU<br>Нет — Стандартный SKU |
 > | publicipprefixes | Да | Да |
-> | routefilters | Нет | нет |
+> | routefilters | нет | нет |
 > | routetables | Да | Да |
 > | securitypartnerproviders | Да | Да |
 > | serviceendpointpolicies | Да | Да |
-> | trafficmanagergeographichierarchies | Нет | нет |
+> | trafficmanagergeographichierarchies | нет | нет |
 > | trafficmanagerprofiles | Да | Да |
-> | trafficmanagerprofiles / heatmaps | Нет | нет |
-> | trafficmanagerusermetricskeys | Нет | нет |
-> | virtualhubs | Нет | нет |
+> | trafficmanagerprofiles / heatmaps | нет | нет |
+> | trafficmanagerusermetricskeys | нет | нет |
+> | virtualhubs | нет | нет |
 > | virtualnetworkgateways | Да | Да |
 > | virtualnetworks | Да | Да |
 > | virtualnetworktaps | Нет | Нет |
 > | virtualrouters | Да | Да |
-> | virtualwans | нет | нет |
+> | virtualwans | нет | Нет |
 > | vpngateways (Virtual WAN) | Нет | Нет |
 > | vpnserverconfigurations | Нет | Нет |
-> | vpnsites (Virtual WAN) | нет | нет |
-
-> [!IMPORTANT]
-> См. [руководство по перемещению сети](./move-limitations/networking-move-limitations.md).
+> | vpnsites (Virtual WAN) | нет | Нет |
 
 ## <a name="microsoftnotificationhubs"></a>Microsoft.NotificationHubs
 
@@ -2272,28 +2272,28 @@ ms.locfileid: "86539233"
 
 ## <a name="microsoftoperationalinsights"></a>Microsoft.OperationalInsights
 
+> [!IMPORTANT]
+> Убедитесь, что переход на новую подписку не превышает [квоты для подписки](azure-subscription-service-limits.md#azure-monitor-limits).
+>
+> Рабочие области, имеющие связанную учетную запись автоматизации, нельзя перемещать. Прежде чем начать операцию перемещения, не забудьте удалить связь с учетными записями службы автоматизации.
+
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Группа ресурсов | Подписка |
 > | ------------- | ----------- | ---------- |
-> | clusters | Нет | Нет |
+> | clusters | Нет | нет |
 > | deletedworkspaces | Нет | нет |
 > | linktargets | Нет | нет |
 > | Расположения | Нет | нет |
 > | locations / operationstatuses | Нет | нет |
 > | Операции | Нет | нет |
-> | storageinsightconfigs | Нет | нет |
+> | storageinsightconfigs | Нет | Нет |
 > | workspaces | Да | Да |
 > | workspaces / datasources | Нет | Нет |
-> | workspaces / linkedservices | Нет | Нет |
-> | workspaces / linkedstorageaccounts | нет | Нет |
-> | workspaces / metadata | Нет | Нет |
-> | workspaces / query | нет | Нет |
+> | workspaces / linkedservices | нет | Нет |
+> | workspaces / linkedstorageaccounts | Нет | Нет |
+> | workspaces / metadata | нет | Нет |
+> | workspaces / query | Нет | Нет |
 > | workspaces / scopedprivatelinkproxies | Нет | Нет |
-
-> [!IMPORTANT]
-> Убедитесь, что переход на новую подписку не превышает [квоты для подписки](azure-subscription-service-limits.md#azure-monitor-limits).
->
-> Рабочие области, имеющие связанную учетную запись автоматизации, нельзя перемещать. Прежде чем начать операцию перемещения, не забудьте удалить связь с учетными записями службы автоматизации.
 
 ## <a name="microsoftoperationsmanagement"></a>Microsoft.OperationsManagement
 
@@ -2406,29 +2406,29 @@ ms.locfileid: "86539233"
 
 ## <a name="microsoftrecoveryservices"></a>Microsoft.RecoveryServices
 
+> [!IMPORTANT]
+> Ознакомьтесь с разделом [Руководство по перемещению служб восстановления](../../backup/backup-azure-move-recovery-services-vault.md?toc=/azure/azure-resource-manager/toc.json).
+
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Группа ресурсов | Подписка |
 > | ------------- | ----------- | ---------- |
-> | backupprotecteditems | нет | Нет |
-> | Расположения | нет | Нет |
-> | locations / allocatedstamp | нет | Нет |
-> | locations / allocatestamp | нет | Нет |
-> | locations / backupaadproperties | нет | Нет |
-> | locations / backupcrossregionrestore | нет | Нет |
-> | locations / backupcrrjob | нет | Нет |
-> | locations / backupcrrjobs | нет | Нет |
-> | locations / backupcrroperationresults | нет | Нет |
-> | locations / backupcrroperationsstatus | нет | Нет |
-> | locations / backupprevalidateprotection | нет | Нет |
-> | locations / backupstatus | нет | Нет |
+> | backupprotecteditems | Нет | нет |
+> | Расположения | Нет | нет |
+> | locations / allocatedstamp | Нет | нет |
+> | locations / allocatestamp | Нет | нет |
+> | locations / backupaadproperties | Нет | нет |
+> | locations / backupcrossregionrestore | Нет | нет |
+> | locations / backupcrrjob | Нет | нет |
+> | locations / backupcrrjobs | Нет | нет |
+> | locations / backupcrroperationresults | Нет | нет |
+> | locations / backupcrroperationsstatus | Нет | нет |
+> | locations / backupprevalidateprotection | Нет | нет |
+> | locations / backupstatus | Нет | Нет |
 > | locations / backupvalidatefeatures | Нет | Нет |
 > | locations / checknameavailability | Нет | Нет |
-> | Операции | Нет | нет |
-> | replicationeligibilityresults | Нет | нет |
+> | Операции | нет | нет |
+> | replicationeligibilityresults | нет | нет |
 > | vaults | Да | Да |
-
-> [!IMPORTANT]
-> Ознакомьтесь с разделом [Руководство по перемещению служб восстановления](../../backup/backup-azure-move-recovery-services-vault.md?toc=/azure/azure-resource-manager/toc.json).
 
 ## <a name="microsoftredhatopenshift"></a>Microsoft.RedHatOpenShift
 
@@ -2511,7 +2511,7 @@ ms.locfileid: "86539233"
 > | subscriptions / resourcegroups | нет | Нет |
 > | subscriptions / resourcegroups / resources | нет | Нет |
 > | subscriptions / resources | нет | Нет |
-> | subscriptions / tagnames | нет | нет |
+> | subscriptions / tagnames | нет | Нет |
 > | subscriptions / tagnames / tagvalues | Нет | Нет |
 > | tags | Нет | нет |
 > | templatespecs | нет | нет |
@@ -2532,17 +2532,17 @@ ms.locfileid: "86539233"
 
 ## <a name="microsoftsearch"></a>Microsoft.Search
 
+> [!IMPORTANT]
+> Вы не можете за одну операцию переместить ресурсы поиска, размещенные в разных регионах. Переместите их в отдельных операциях.
+
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Группа ресурсов | Подписка |
 > | ------------- | ----------- | ---------- |
 > | checknameavailability | Нет | Нет |
-> | checkservicenameavailability | Нет | Нет |
-> | Операции | нет | Нет |
-> | resourcehealthmetadata | нет | Нет |
+> | checkservicenameavailability | нет | нет |
+> | Операции | нет | нет |
+> | resourcehealthmetadata | нет | нет |
 > | searchservices | Да | Да |
-
-> [!IMPORTANT]
-> Вы не можете за одну операцию переместить ресурсы поиска, размещенные в разных регионах. Переместите их в отдельных операциях.
 
 ## <a name="microsoftsecurity"></a>Microsoft.Security
 
@@ -2556,7 +2556,7 @@ ms.locfileid: "86539233"
 > | applicationwhitelistings | нет | Нет |
 > | assessmentmetadata | нет | Нет |
 > | assessments | нет | Нет |
-> | autodismissalertsrules | нет | Нет |
+> | autodismissalertsrules | нет | нет |
 > | automations | Да | Да |
 > | autoprovisioningsettings | нет | Нет |
 > | complianceresults | нет | Нет |
@@ -2748,6 +2748,9 @@ ms.locfileid: "86539233"
 
 ## <a name="microsoftsql"></a>Microsoft.Sql
 
+> [!IMPORTANT]
+> База данных и сервер должны быть в одной группе ресурсов. При перемещении сервера SQL Server все его базы данных также перемещаются. Это поведение применяется к базам данных SQL Azure и Azure синапсе Analytics.
+
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Группа ресурсов | Подписка |
 > | ------------- | ----------- | ---------- |
@@ -2796,7 +2799,7 @@ ms.locfileid: "86539233"
 > | locations / longtermretentionservers | нет | Нет |
 > | locations / manageddatabaseazureasyncoperation | нет | Нет |
 > | locations / manageddatabasecompleterestoreazureasyncoperation | нет | Нет |
-> | locations / manageddatabasecompleterestoreoperationresults | нет | Нет |
+> | locations / manageddatabasecompleterestoreoperationresults | нет | нет |
 > | locations / manageddatabaseoperationresults | нет | Нет |
 > | locations / manageddatabaserestoreazureasyncoperation | нет | Нет |
 > | locations / manageddatabaserestoreoperationresults | нет | Нет |
@@ -2822,7 +2825,7 @@ ms.locfileid: "86539233"
 > | locations / securityalertpoliciesazureasyncoperation | нет | Нет |
 > | locations / securityalertpoliciesoperationresults | нет | Нет |
 > | locations / serveradministratorazureasyncoperation | нет | Нет |
-> | locations / serveradministratoroperationresults | нет | нет |
+> | locations / serveradministratoroperationresults | нет | Нет |
 > | locations / serverazureasyncoperation | нет | Нет |
 > | locations / serverkeyazureasyncoperation | нет | Нет |
 > | locations / serverkeyoperationresults | нет | Нет |
@@ -2846,11 +2849,11 @@ ms.locfileid: "86539233"
 > | managedinstances / administrators | нет | Нет |
 > | managedinstances / databases | нет | Нет |
 > | managedinstances / databases / backuplongtermretentionpolicies | нет | Нет |
-> | managedinstances / databases / vulnerabilityassessments | нет | Нет |
+> | managedinstances / databases / vulnerabilityassessments | нет | нет |
 > | managedinstances / metricdefinitions | нет | Нет |
 > | managedinstances / metrics | нет | Нет |
-> | managedinstances / recoverabledatabases | нет | Нет |
-> | managedinstances / tdecertificates | Нет | Нет |
+> | managedinstances / recoverabledatabases | Нет | Нет |
+> | managedinstances / tdecertificates | нет | Нет |
 > | managedinstances / vulnerabilityassessments | нет | Нет |
 > | Операции | нет | Нет |
 > | servers | Да | Да |
@@ -2859,8 +2862,8 @@ ms.locfileid: "86539233"
 > | servers / advisors | нет | Нет |
 > | servers / aggregateddatabasemetrics | нет | Нет |
 > | servers / auditingpolicies | нет | Нет |
-> | servers / auditingsettings | нет | Нет |
-> | servers / automatictuning | Нет | Нет |
+> | servers / auditingsettings | Нет | Нет |
+> | servers / automatictuning | нет | Нет |
 > | servers / communicationlinks | нет | Нет |
 > | servers / connectionpolicies | нет | Нет |
 > | servers / databases | Да | Да |
@@ -2890,8 +2893,8 @@ ms.locfileid: "86539233"
 > | servers / databases / vulnerabilityassessmentscans | нет | Нет |
 > | servers / databases / vulnerabilityassessmentsettings | нет | Нет |
 > | servers / databases / workloadgroups | нет | Нет |
-> | servers / databasesecuritypolicies | нет | Нет |
-> | servers / disasterrecoveryconfiguration | Нет | Нет |
+> | servers / databasesecuritypolicies | Нет | Нет |
+> | servers / disasterrecoveryconfiguration | нет | Нет |
 > | servers / dnsaliases | нет | Нет |
 > | servers / elasticpoolestimates | нет | Нет |
 > | servers / elasticpools | Да | Да |
@@ -2899,9 +2902,9 @@ ms.locfileid: "86539233"
 > | servers / elasticpools / metricdefinitions | нет | Нет |
 > | servers / elasticpools / metrics | нет | Нет |
 > | servers / encryptionprotector | нет | Нет |
-> | servers / extendedauditingsettings | нет | Нет |
+> | servers / extendedauditingsettings | Нет | Нет |
 > | servers / failovergroups | Нет | Нет |
-> | servers / import | Нет | Нет |
+> | servers / import | нет | Нет |
 > | servers / importexportoperationresults | нет | Нет |
 > | servers / jobaccounts | Да | Да |
 > | servers / jobagents | Да | Да |
@@ -2916,14 +2919,11 @@ ms.locfileid: "86539233"
 > | servers / securityalertpolicies | нет | Нет |
 > | servers / serviceobjectives | нет | Нет |
 > | servers / syncagents | нет | Нет |
-> | servers / tdecertificates | нет | Нет |
+> | servers / tdecertificates | Нет | Нет |
 > | servers / usages | Нет | Нет |
 > | servers / virtualnetworkrules | Нет | Нет |
-> | servers / vulnerabilityassessments | Нет | Нет |
+> | servers / vulnerabilityassessments | нет | нет |
 > | virtualclusters | Да | Да |
-
-> [!IMPORTANT]
-> База данных и сервер должны быть в одной группе ресурсов. При перемещении сервера SQL Server все его базы данных также перемещаются. Это поведение применяется к базам данных SQL Azure и Azure синапсе Analytics.
 
 ## <a name="microsoftsqlvirtualmachine"></a>Microsoft.SqlVirtualMachine
 
@@ -3012,17 +3012,17 @@ ms.locfileid: "86539233"
 
 ## <a name="microsoftstreamanalytics"></a>Microsoft.StreamAnalytics
 
+> [!IMPORTANT]
+> Задания Stream Analytics в состоянии выполнения нельзя переместить.
+
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Группа ресурсов | Подписка |
 > | ------------- | ----------- | ---------- |
-> | clusters | нет | нет |
+> | clusters | нет | Нет |
 > | Расположения | Нет | Нет |
 > | locations / quotas | Нет | Нет |
-> | Операции | Нет | Нет |
+> | Операции | Нет | нет |
 > | streamingjobs | Да | Да |
-
-> [!IMPORTANT]
-> Задания Stream Analytics в состоянии выполнения нельзя переместить.
 
 ## <a name="microsoftstreamanalyticsexplorer"></a>Microsoft.StreamAnalyticsExplorer
 
@@ -3110,17 +3110,17 @@ ms.locfileid: "86539233"
 
 ## <a name="microsoftvisualstudio"></a>microsoft.visualstudio
 
+> [!IMPORTANT]
+> Чтобы изменить подписку на Azure DevOps, см. статью [Изменить подписку Azure, используемую для выставления счетов](/azure/devops/organizations/billing/change-azure-subscription?toc=/azure/azure-resource-manager/toc.json).
+
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Группа ресурсов | Подписка |
 > | ------------- | ----------- | ---------- |
-> | account | Нет | нет |
-> | account / extension | Нет | нет |
+> | account | нет | нет |
+> | account / extension | нет | нет |
 > | account / project | Нет | Нет |
 > | checknameavailability | Нет | Нет |
-> | Операции | нет | нет |
-
-> [!IMPORTANT]
-> Чтобы изменить подписку на Azure DevOps, см. статью [Изменить подписку Azure, используемую для выставления счетов](/azure/devops/organizations/billing/change-azure-subscription?toc=/azure/azure-resource-manager/toc.json).
+> | Операции | нет | Нет |
 
 ## <a name="microsoftvmware"></a>Microsoft.VMware
 
@@ -3178,63 +3178,63 @@ ms.locfileid: "86539233"
 
 ## <a name="microsoftweb"></a>Microsoft.Web
 
+> [!IMPORTANT]
+> См. статью [Руководство по перемещению службы приложений](./move-limitations/app-service-move-limitations.md).
+
 > [!div class="mx-tableFixed"]
 > | Тип ресурса | Группа ресурсов | Подписка |
 > | ------------- | ----------- | ---------- |
 > | availablestacks | Нет | Нет |
 > | billingmeters | Нет | Нет |
 > | certificates | Нет | Да |
-> | checknameavailability | Нет | нет |
+> | checknameavailability | нет | нет |
 > | connectiongateways | Да | Да |
 > | connections | Да | Да |
 > | customapis | Да | Да |
-> | deletedsites | Нет | нет |
-> | deploymentlocations | Нет | нет |
-> | georegions | Нет | нет |
-> | hostingenvironments | Нет | нет |
-> | hostingenvironments / eventgridfilters | Нет | нет |
-> | hostingenvironments / multirolepools | Нет | нет |
+> | deletedsites | нет | нет |
+> | deploymentlocations | нет | нет |
+> | georegions | нет | нет |
+> | hostingenvironments | нет | нет |
+> | hostingenvironments / eventgridfilters | нет | нет |
+> | hostingenvironments / multirolepools | нет | нет |
 > | hostingenvironments / workerpools | Нет | Нет |
-> | ishostingenvironmentnameavailable | Нет | нет |
-> | ishostnameavailable | Нет | нет |
-> | isusernameavailable | Нет | нет |
+> | ishostingenvironmentnameavailable | нет | нет |
+> | ishostnameavailable | нет | нет |
+> | isusernameavailable | нет | нет |
 > | kubeenvironments | Да | Да |
-> | listsitesassignedtohostname | Нет | нет |
-> | Расположения | Нет | нет |
-> | locations / apioperations | Нет | нет |
-> | locations / connectiongatewayinstallations | Нет | нет |
+> | listsitesassignedtohostname | нет | нет |
+> | Расположения | нет | нет |
+> | locations / apioperations | нет | нет |
+> | locations / connectiongatewayinstallations | нет | нет |
 > | locations / deletedsites | нет | нет |
-> | locations / deletevirtualnetworkorsubnets | Нет | нет |
-> | locations / extractapidefinitionfromwsdl | Нет | нет |
-> | locations / getnetworkpolicies | Нет | нет |
-> | locations / listwsdlinterfaces | Нет | нет |
-> | locations / managedapis | Нет | нет |
-> | locations / operationresults | Нет | нет |
-> | locations / operations | Нет | нет |
-> | locations / runtimes | Нет | нет |
-> | Операции | Нет | нет |
+> | locations / deletevirtualnetworkorsubnets | нет | нет |
+> | locations / extractapidefinitionfromwsdl | нет | нет |
+> | locations / getnetworkpolicies | нет | нет |
+> | locations / listwsdlinterfaces | нет | нет |
+> | locations / managedapis | нет | нет |
+> | locations / operationresults | нет | нет |
+> | locations / operations | нет | нет |
+> | locations / runtimes | нет | нет |
+> | Операции | нет | нет |
 > | publishingusers | Нет | Нет |
-> | к просмотру фильмов | Нет | нет |
+> | к просмотру фильмов | нет | нет |
 > | resourcehealthmetadata | Нет | Нет |
-> | runtimes | Нет | нет |
+> | runtimes | нет | нет |
 > | serverfarms | Да | Да |
-> | serverfarms / eventgridfilters | Нет | нет |
+> | serverfarms / eventgridfilters | нет | нет |
 > | sites | Да | Да |
 > | sites / eventgridfilters | Нет | Нет |
-> | sites / hostnamebindings | Нет | нет |
-> | sites / networkconfig | Нет | нет |
+> | sites / hostnamebindings | нет | нет |
+> | sites / networkconfig | нет | нет |
 > | sites / premieraddons | Да | Да |
 > | sites / slots | Да | Да |
-> | sites / slots / eventgridfilters | Нет | нет |
-> | sites / slots / hostnamebindings | Нет | нет |
-> | sites / slots / networkconfig | Нет | нет |
+> | sites / slots / eventgridfilters | нет | нет |
+> | sites / slots / hostnamebindings | нет | нет |
+> | sites / slots / networkconfig | нет | нет |
 > | sourcecontrols | Нет | Нет |
-> | staticsites | Нет | Нет |
-> | validate | нет | нет |
-> | verifyhostingenvironmentvnet | нет | нет |
-
-> [!IMPORTANT]
-> См. статью [Руководство по перемещению службы приложений](./move-limitations/app-service-move-limitations.md).
+> | staticsites | нет | Нет |
+> | validate | нет | Нет |
+> | verifyhostingenvironmentvnet | нет | Нет |
 
 ## <a name="microsoftwindowsesu"></a>Microsoft.WindowsESU
 

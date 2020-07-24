@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 03/23/2018
 ms.author: akjosh
-ms.openlocfilehash: a259217280be343f383372a066d4033368c2b651
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 831ce1ccb2c09a85ddfff8fa65172b1871119a61
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86526701"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87079899"
 ---
 # <a name="troubleshoot-remote-desktop-connections-to-an-azure-virtual-machine"></a>Устранение неполадок с подключением к виртуальной машине Azure через удаленный рабочий стол
 Подключение протокола удаленного рабочего стола (RDP) к виртуальной машине Azure под управлением Windows может завершиться неудачно по нескольким причинам. В этом случае доступ к виртуальной машине будет невозможен. Эта проблема может быть вызвана службой удаленного рабочего стола на виртуальной машине, сетевым подключением или клиентом удаленного рабочего стола на главном компьютере. В этой статье описываются некоторые из наиболее распространенных методов устранения проблем подключения по протоколу RDP. 
@@ -104,7 +104,7 @@ ms.locfileid: "86526701"
 Если у вас по-прежнему возникают проблемы с протоколом RDP, то вы можете [отправить запрос в службу поддержки](https://azure.microsoft.com/support/options/) или прочитать [более подробные сведения об основных понятиях и этапах устранения неполадок RDP](detailed-troubleshoot-rdp.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
 ## <a name="troubleshoot-using-azure-powershell"></a>Устранение неполадок с помощью Azure PowerShell
-[Установите и настройте последнюю версию Azure PowerShell](/powershell/azure/overview), если у вас ее еще нет.
+[Установите и настройте последнюю версию Azure PowerShell](/powershell/azure/), если у вас ее еще нет.
 
 В следующих примерах используются переменные, такие как `myResourceGroup`, `myVM` и `myVMAccessExtension`. Замените имена этих переменных и расположения собственными значениями.
 

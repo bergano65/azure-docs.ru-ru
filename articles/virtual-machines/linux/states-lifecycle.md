@@ -8,16 +8,17 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 08/09/2018
 ms.author: vashan
-ms.openlocfilehash: c1452252e6cbd7b741c14c2ea52728ba144c65a1
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6cce718c22c591210dd31eb7c0b983d7a7322d7f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81757850"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87080171"
 ---
 # <a name="virtual-machines-lifecycle-and-states"></a>Жизненный цикл и состояния виртуальных машин
 
 [!INCLUDE [virtual-machines-common-states-lifecycle](../../../includes/virtual-machines-common-states-lifecycle.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения см. в статье [Мониторинг виртуальных машин в Azure](monitor.md).
+Дополнительные сведения о мониторинге виртуальной машины см. в статье [мониторинг виртуальных машин в Azure](../../azure-monitor/insights/monitor-vm-azure.md).

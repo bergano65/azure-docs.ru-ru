@@ -3,11 +3,12 @@ title: Модуль PowerShell для служб лаборатории Azure | 
 description: В этой статье содержатся сведения о модуле PowerShell, который помогает управлять артефактами в службах лаборатории Azure.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: d9c184f3917be378eb77d1bf4096bfebb5ee1884
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6f5809dcf981a1ecf30cda06af03d2b8a06d3694
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85445599"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87078816"
 ---
 # <a name="azlabservices-powershell-module-preview"></a>Модуль PowerShell Az.LabServices (предварительная версия)
 AZ. Лабсервицес — это модуль PowerShell, упрощающий управление службами лаборатории Azure. Она предоставляет функции с композицией для создания, запроса, обновления и удаления учетных записей лаборатории, лабораторий, виртуальных машин и образов. Дополнительные сведения об этом модуле см. на [домашней странице AZ. лабсервицес на сайте GitHub](https://github.com/Azure/azure-devtestlab/tree/master/samples/ClassroomLabs/Modules/Library).
@@ -23,7 +24,7 @@ Get-AzLabAccount | Get-AzLab | Get-AzLabVm -Status Running | Stop-AzLabVm
 ```
 
 ## <a name="get-started"></a>Начало работы
-1. Установите [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview) , если он не существует на вашем компьютере. 
+1. Установите [Azure PowerShell](https://docs.microsoft.com/powershell/azure/) , если он не существует на вашем компьютере. 
 2. Скачайте файл [AZ. лабсервицес. PSM1](https://github.com/Azure/azure-devtestlab/blob/master/samples/ClassroomLabs/Modules/Library/Az.LabServices.psm1) на свой компьютер.
 3. Импортируйте модуль:
 
@@ -36,5 +37,5 @@ Get-AzLabAccount | Get-AzLab | Get-AzLabVm -Status Running | Stop-AzLabVm
     Get-AzLabAccount | Get-AzLab
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 См. [домашнюю страницу AZ. лабсервицес на сайте GitHub](https://github.com/Azure/azure-devtestlab/tree/master/samples/ClassroomLabs/Modules/Library).

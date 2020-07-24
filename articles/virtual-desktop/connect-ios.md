@@ -8,14 +8,14 @@ ms.topic: how-to
 ms.date: 02/08/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 6fa3a120788bf6b196409491584e068609b65e60
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: af6063c93997d1faf6453cfe7e184bd4cc2427da
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85209060"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87080647"
 ---
-# <a name="connect-with-the-ios-client"></a>Подключение с помощью клиента iOS
+# <a name="connect-to-windows-virtual-desktop-with-the-ios-client"></a>Подключение к виртуальному рабочему столу Windows с помощью клиента iOS
 
 > Применимо к: iOS 13,0 или более поздней версии. Совместимо с iPhone, iPad и iPod Touch.
 
@@ -52,6 +52,6 @@ ms.locfileid: "85209060"
 
 Когда вы подпишетесь на веб-канал, его содержимое будет регулярно автоматически обновляться. Ресурсы могут добавляться, изменяться или удаляться в соответствии с изменениями, внесенными администратором.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы узнать больше о том, как использовать клиент iOS, ознакомьтесь с документацией по [началу работы с клиентом iOS](/windows-server/remote/remote-desktop-services/clients/remote-desktop-ios/) .

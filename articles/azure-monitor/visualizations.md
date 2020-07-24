@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/17/2020
-ms.openlocfilehash: 0176454b38dfa88480e63fedfae175a63192eaee
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 4c5290d9f5ec47969ae43e5986d31484927a0ac5
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86498599"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87081361"
 ---
 # <a name="visualizing-data-from-azure-monitor"></a>Визуализация данных из Azure Monitor
 В этой статье приводится обзор доступных методов для визуализации метрик и данных журналов, хранящихся в Azure Monitor.
@@ -40,6 +40,8 @@ ms.locfileid: "86498599"
 [Панели мониторинга Azure](../azure-portal/azure-portal-dashboards.md) являются основной технологией представления данных в Azure. Они особенно полезны тем, что централизованно отображают сведения об инфраструктуре и службах Azure, позволяя быстро выявлять серьезные проблемы.
 
 ![Панель мониторинга](media/visualizations/dashboard.png)
+
+Ниже приведено видео пошаговое руководство по созданию панелей мониторинга.
 
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4AslH]
 

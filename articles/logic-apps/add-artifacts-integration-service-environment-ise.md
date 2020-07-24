@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: klam, logicappspm
 ms.topic: conceptual
 ms.date: 02/28/2020
-ms.openlocfilehash: a4811bcb47120ba37337c73604e33826d9affcbb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d8fe945b028b574e71ae24b1483ad8e7fd67b01d
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85830032"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87078729"
 ---
 # <a name="add-resources-to-your-integration-service-environment-ise-in-azure-logic-apps"></a>Добавление ресурсов в среду службы интеграции (ISE) в Azure Logic Apps
 
@@ -20,7 +20,7 @@ ms.locfileid: "85830032"
 > [!IMPORTANT]
 > Чтобы приложения логики и учетные записи интеграции работали вместе в среде службы интеграции, они должны использовать *ту же среду службы интеграции*, что и их расположение.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -44,7 +44,7 @@ ms.locfileid: "85830032"
 
    | Свойство | Обязательно | Описание |
    |----------|----------|-------------|
-   | **Name** | Да | Имя создаваемого приложения логики |
+   | **имя**; | Да | Имя создаваемого приложения логики |
    | **Подписка** | Да | Имя подписки Azure, которую нужно использовать. |
    | **Группа ресурсов** | Да | Имя для группы ресурсов Azure (новой или существующей) для использования |
    | **Расположение** | Да | В разделе **среды службы Integration**Services выберите интегрированную среду сценариев, если она еще не выбрана. <p><p> **Важно**. для использования приложений логики с учетной записью интеграции необходимо использовать одну интегрированную среду сценариев. |
@@ -76,7 +76,7 @@ ms.locfileid: "85830032"
 
    | Свойство | Обязательно | Описание |
    |----------|----------|-------------|
-   | **Name** | Да | Имя создаваемой учетной записи интеграции |
+   | **имя**; | Да | Имя создаваемой учетной записи интеграции |
    | **Подписка** | Да | Имя подписки Azure, которую вы хотите использовать. |
    | **Группа ресурсов** | Да | Имя для группы ресурсов Azure (новой или существующей) для использования |
    | **Ценовая категория** | Да | Ценовая категория, используемая для учетной записи интеграции |
@@ -127,10 +127,10 @@ ms.locfileid: "85830032"
 
    ![Выбор и изменение настраиваемого соединителя](./media/add-artifacts-integration-service-environment-ise/edit-custom-connectors.png)
 
-1. Продолжайте создание соединителя обычным способом из [определения OpenAPI](https://docs.microsoft.com/connectors/custom-connectors/define-openapi-definition#import-the-openapi-definition) или [SOAP](https://docs.microsoft.com/connectors/custom-connectors/create-register-logic-apps-soap-connector#2-define-your-connector).
+1. Продолжайте создание соединителя обычным способом из [определения OpenAPI](/connectors/custom-connectors/define-openapi-definition#import-the-openapi-definition) или [SOAP](/connectors/custom-connectors/create-register-logic-apps-soap-connector#2-define-your-connector).
 
 1. Сведения об управлении пользовательскими соединителями в интегрированной среде сценариев см. в статье [Управление средой службы интеграции](../logic-apps/ise-manage-integration-service-environment.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Управление средами службы интеграции](../logic-apps/ise-manage-integration-service-environment.md)

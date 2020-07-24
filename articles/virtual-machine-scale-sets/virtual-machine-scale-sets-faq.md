@@ -9,12 +9,12 @@ ms.subservice: faq
 ms.date: 06/30/2020
 ms.reviewer: jushiman
 ms.custom: mimckitt
-ms.openlocfilehash: cf58b62001ce5d193e3a06973215d82138ad4b59
-ms.sourcegitcommit: 9b5c20fb5e904684dc6dd9059d62429b52cb39bc
+ms.openlocfilehash: 8170cfcbbf200c6ba5030aff5716f46b537d8c97
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85855586"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87080477"
 ---
 # <a name="azure-virtual-machine-scale-sets-faqs"></a>Часто задаваемые вопросы о масштабируемых наборах виртуальных машин Azure
 
@@ -71,15 +71,15 @@ ms.locfileid: "85855586"
 
 ### <a name="what-are-best-practices-for-azure-autoscale"></a>Существуют ли рекомендации по автомасштабированию Azure?
 
-Рекомендации по автомасштабированию виртуальных компонентов см. в [этой статье](https://docs.microsoft.com/azure/monitoring-and-diagnostics/insights-autoscale-best-practices).
+Рекомендации по автомасштабированию виртуальных компонентов см. в [этой статье](../azure-monitor/platform/autoscale-best-practices.md).
 
 ### <a name="where-do-i-find-metric-names-for-autoscaling-that-uses-host-based-metrics"></a>Где можно найти имена метрик на основе узла, используемые в процессе автомасштабирования?
 
-Имена метрик на основе узла, используемые в процессе автомасштабирования, перечислены в статье [Метрики, поддерживаемые Azure Monitor](https://azure.microsoft.com/documentation/articles/monitoring-supported-metrics/).
+Имена метрик на основе узла, используемые в процессе автомасштабирования, перечислены в статье [Метрики, поддерживаемые Azure Monitor](../azure-monitor/platform/metrics-supported.md).
 
 ### <a name="are-there-any-examples-of-autoscaling-based-on-an-azure-service-bus-topic-and-queue-length"></a>Существуют ли какие-либо образцы автомасштабирования на основе раздела или длины очереди служебной шины Azure?
 
-Да. Образцы автомасштабирования на основе раздела или длины очереди служебной шины Azure см. в статье [Общие метрики автомасштабирования Azure Monitor](https://azure.microsoft.com/documentation/articles/insights-autoscale-common-metrics/).
+Да. Образцы автомасштабирования на основе раздела или длины очереди служебной шины Azure см. в статье [Общие метрики автомасштабирования Azure Monitor](../azure-monitor/platform/autoscale-common-metrics.md).
 
 Для очереди служебной шины используйте следующий код JSON:
 
@@ -104,9 +104,9 @@ ms.locfileid: "85855586"
 
 Вы можете создать на виртуальной машине конфигурацию автомасштабирования с использованием метрик уровня узла или метрик на основе гостевой ОС.
 
-Список поддерживаемых метрик см. в статье [Общие метрики автомасштабирования Azure Monitor](https://docs.microsoft.com/azure/monitoring-and-diagnostics/insights-autoscale-common-metrics).
+Список поддерживаемых метрик см. в статье [Общие метрики автомасштабирования Azure Monitor](../azure-monitor/platform/autoscale-common-metrics.md).
 
-Полное определение конфигурации масштабируемых наборов см. в статье [Расширенная настройка автомасштабирования с помощью шаблонов Resource Manager для масштабируемых наборов виртуальных машин](https://docs.microsoft.com/azure/monitoring-and-diagnostics/insights-advanced-autoscale-virtual-machine-scale-sets).
+Полное определение конфигурации масштабируемых наборов см. в статье [Расширенная настройка автомасштабирования с помощью шаблонов Resource Manager для масштабируемых наборов виртуальных машин](../azure-monitor/platform/autoscale-virtual-machine-scale-sets.md).
 
 В этой конфигурации используется метрика ЦП уровня узла и метрика количества сообщений.
 
@@ -114,13 +114,13 @@ ms.locfileid: "85855586"
 
 ### <a name="how-do-i-set-alert-rules-on-a-virtual-machine-scale-set"></a>Как можно задать правила оповещений в масштабируемом наборе виртуальных машин?
 
-Оповещения на основе метрик в масштабируемых наборах виртуальных машин можно создать с помощью PowerShell или Azure CLI. Дополнительные сведения см. в статье [Примеры для быстрого запуска Azure Monitor с помощью PowerShell](https://azure.microsoft.com/documentation/articles/insights-powershell-samples/#create-alert-rules) и разделе [Работа с оповещениями](https://azure.microsoft.com/documentation/articles/insights-cli-samples/#work-with-alerts).
+Оповещения на основе метрик в масштабируемых наборах виртуальных машин можно создать с помощью PowerShell или Azure CLI. Дополнительные сведения см. в статье [Примеры для быстрого запуска Azure Monitor с помощью PowerShell](../azure-monitor/samples/powershell-samples.md#create-metric-alerts) и разделе [Работа с оповещениями](../azure-monitor/samples/cli-samples.md#work-with-alerts).
 
 Идентификатор целевого ресурса масштабируемого набора виртуальных машин выглядит следующим образом:
 
 /subscriptions/идентификатор_подписки/resourceGroups/группа_ресурсов/providers/Microsoft.Compute/virtualMachineScaleSets/имя_набора.
 
-В качестве метрики, для которой будут устанавливаться оповещения, можно выбрать любой счетчик производительности виртуальной машины. Дополнительные сведения см. в разделе [Метрики гостевой ОС для виртуальных машин под управлением Windows, развернутых с помощью Resource Manager](https://azure.microsoft.com/documentation/articles/insights-autoscale-common-metrics/#guest-os-metrics-resource-manager-based-windows-vms) и [Метрики гостевой ОС для виртуальных машин под управлением Linux](https://azure.microsoft.com/documentation/articles/insights-autoscale-common-metrics/#guest-os-metrics-linux-vms) статьи [Общие метрики автомасштабирования Azure Monitor](https://azure.microsoft.com/documentation/articles/insights-autoscale-common-metrics/).
+В качестве метрики, для которой будут устанавливаться оповещения, можно выбрать любой счетчик производительности виртуальной машины. Дополнительные сведения см. в разделе [Метрики гостевой ОС для виртуальных машин под управлением Windows, развернутых с помощью Resource Manager](../azure-monitor/platform/autoscale-common-metrics.md#guest-os-metrics-for-resource-manager-based-windows-vms) и [Метрики гостевой ОС для виртуальных машин под управлением Linux](../azure-monitor/platform/autoscale-common-metrics.md#guest-os-metrics-linux-vms) статьи [Общие метрики автомасштабирования Azure Monitor](../azure-monitor/platform/autoscale-common-metrics.md).
 
 ### <a name="how-do-i-set-up-autoscale-on-a-virtual-machine-scale-set-by-using-powershell"></a>Как можно задать параметры автомасштабирования в масштабируемом наборе виртуальных машин с помощью PowerShell?
 
@@ -159,7 +159,7 @@ ms.locfileid: "85855586"
 
 Этот код поддерживает операционные системы Linux и Windows.
 
-Дополнительные сведения см. в разделе о [создании и обновлении масштабируемого набора виртуальных машин](https://msdn.microsoft.com/library/mt589035.aspx).
+Дополнительные сведения см. в разделе о [создании и обновлении масштабируемого набора виртуальных машин](/rest/api/compute/virtualmachinescalesets/createorupdate).
 
 
 ### <a name="how-do-i-use-self-signed-certificates-provisioned-for-azure-service-fabric-clusters"></a>Разделы справки использовать самозаверяющие сертификаты, подготовленные для кластеров Azure Service Fabric?
@@ -169,7 +169,7 @@ ms.locfileid: "85855586"
 az sf cluster create -h
 ```
 
-Самозаверяющие сертификаты нельзя использовать для отношений распределенного доверия, предоставляемых центром сертификации, и для кластеров Service Fabric, предназначенных для размещения корпоративных рабочих решений. Дополнительные рекомендации по безопасности Service Fabric см. в статьях [Рекомендации по безопасности Azure Service Fabric](https://docs.microsoft.com/azure/security/fundamentals/service-fabric-best-practices) и [Сценарии защиты кластера Service Fabric](https://azure.microsoft.com/documentation/articles/service-fabric-cluster-security/).
+Самозаверяющие сертификаты нельзя использовать для отношений распределенного доверия, предоставляемых центром сертификации, и для кластеров Service Fabric, предназначенных для размещения корпоративных рабочих решений. Дополнительные рекомендации по безопасности Service Fabric см. в статьях [Рекомендации по безопасности Azure Service Fabric](../security/fundamentals/service-fabric-best-practices.md) и [Сценарии защиты кластера Service Fabric](../service-fabric/service-fabric-cluster-security.md).
 
 ### <a name="can-i-specify-an-ssh-key-pair-to-use-for-ssh-authentication-with-a-linux-virtual-machine-scale-set-from-a-resource-manager-template"></a>Можно ли определить пару ключей SSH, используемых в процессе проверки подлинности SSH с помощью масштабируемого набора виртуальных машин Linux, развернутого из шаблона Resource Manager?
 
@@ -197,7 +197,7 @@ az sf cluster create -h
 
 Этот блок JSON используется в [этом шаблоне](https://github.com/Azure/azure-quickstart-templates/blob/master/101-vm-sshkey/azuredeploy.json)быстрого запуска Azure.
 
-Дополнительные сведения см. в разделе о [создании и обновлении масштабируемого набора виртуальных машин](https://msdn.microsoft.com/library/azure/mt589035.aspx#linuxconfiguration).
+Дополнительные сведения см. в разделе о [создании и обновлении масштабируемого набора виртуальных машин](/rest/api/compute/virtualmachinescalesets/createorupdate#linuxconfiguration).
 
 ### <a name="how-do-i-remove-deprecated-certificates"></a>Как удалить устаревшие сертификаты?
 
@@ -224,10 +224,10 @@ az sf cluster create -h
 }
 ```
 
-Имя элемента конфигурации Linux | Обязательно | Тип | Описание:
+Имя элемента конфигурации Linux | Обязательно | Тип | Описание
 --- | --- | --- | ---
 ssh | Нет | Коллекция | Указывает конфигурацию ключа SSH для операционной системы Linux.
-путь | Да | Строка | Указывает путь к файлу Linux, где должны храниться ключи SSH или сертификат.
+path | Да | Строка | Указывает путь к файлу Linux, где должны храниться ключи SSH или сертификат.
 keyData | Да | Строка | Указывает открытый ключ SSH в кодировке Base64.
 
 Пример см. в [шаблоне быстрого запуска 101-vm-sshkey на сайте GitHub](https://github.com/Azure/azure-quickstart-templates/blob/master/101-vm-sshkey/azuredeploy.json).
@@ -240,7 +240,7 @@ keyData | Да | Строка | Указывает открытый ключ SSH
 
 Чтобы добавить дополнительные секреты из одного хранилища ключей, обновите список $vmss.properties.osProfile.secrets[0].vaultCertificates.
 
-Ожидаемую структуру входных данных см. в разделе о [создании и обновлении масштабируемого набора виртуальных машин](https://msdn.microsoft.com/library/azure/mt589035.aspx).
+Ожидаемую структуру входных данных см. в разделе о [создании и обновлении масштабируемого набора виртуальных машин](/rest/api/compute/virtualmachinescalesets/createorupdate).
 
 Сначала найдите секрет в объекте масштабируемого набора виртуальных машин, который находится в хранилище ключей. Затем добавьте ссылку на сертификат (URL-адрес и имя хранилища секретов) в список, связанный с хранилищем.
 
@@ -268,7 +268,7 @@ keyData | Да | Строка | Указывает открытый ключ SSH
 
 ### <a name="where-do-i-put-certificates-for-linux-vms"></a>Куда следует поместить сертификаты виртуальных машин Linux?
 
-Дополнительные сведения о развертывании сертификатов виртуальных машин Linux из хранилища ключей, управляемого клиентом, см. в [этой записи блога](https://blogs.technet.microsoft.com/kv/2015/07/14/deploy-certificates-to-vms-from-customer-managed-key-vault/).
+Дополнительные сведения о развертывании сертификатов виртуальных машин Linux из хранилища ключей, управляемого клиентом, см. в [этой записи блога](/archive/blogs/kv/deploy-certificates-to-vms-from-customer-managed-key-vault).
 
 ### <a name="how-do-i-add-a-new-vault-certificate-to-a-new-certificate-object"></a>Как добавить новый сертификат хранилища в новый объект сертификата?
 
@@ -304,7 +304,7 @@ Update-AzVmss -VirtualMachineScaleSet $vmss -ResourceGroup $rg -Name $vmssName
 
 Чтобы развернуть файлы сертификата открытого ключа (CER-файлы) в масштабируемый набор виртуальных машин, вы можете создать PFX-файл, содержащий только CER-файлы. Для этого используйте параметр `X509ContentType = Pfx`. Например, отправьте CER-файл как объект x509Certificate2 в C# и PowerShell, а затем вызовите метод X509Certificate.Export.
 
-Дополнительные сведения о методе X509Certificate.Export см. в [этой статье](https://msdn.microsoft.com/library/24ww6yzk(v=vs.110.aspx)).
+Дополнительные сведения о методе X509Certificate.Export см. в [этой статье](/dotnet/api/system.security.cryptography.x509certificates.x509certificate.export?view=netcore-3.1#system_security_cryptography_x509certificates_x509certificate_export_system_security_cryptography_x509certificates_x509contenttype_system_string_).
 
 ### <a name="how-do-i-pass-in-certificates-as-base64-strings"></a>Разделы справки передать сертификаты как строки Base64?
 
@@ -334,7 +334,7 @@ Update-AzVmss -VirtualMachineScaleSet $vmss -ResourceGroup $rg -Name $vmssName
 
 Дополнительные сведения см. [в центре управления безопасностью Майкрософт](https://www.microsoft.com/TrustCenter/Compliance/PCI).
 
-### <a name="does-managed-identities-for-azure-resources-work-with-virtual-machine-scale-sets"></a>Работают ли [управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/msi-overview) с масштабируемыми наборами виртуальных машин?
+### <a name="does-managed-identities-for-azure-resources-work-with-virtual-machine-scale-sets"></a>Работают ли [управляемые удостоверения для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md) с масштабируемыми наборами виртуальных машин?
 
 Да. Некоторые примеры шаблонов MSI можно просмотреть в разделе Шаблоны быстрого запуска Azure для [Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-msi) и [Windows](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-msi).
 
@@ -346,7 +346,7 @@ Update-AzVmss -VirtualMachineScaleSet $vmss -ResourceGroup $rg -Name $vmssName
 
 В Azure CLI есть возможность только удалить отдельный экземпляр. При попытке удалить один экземпляр с блокировкой, блокировка учитывается, и вы не сможете удалить этот экземпляр.
 
-## <a name="extensions"></a>Расширения
+## <a name="extensions"></a>Модули
 
 ### <a name="how-do-i-delete-a-virtual-machine-scale-set-extension"></a>Как удалить расширение масштабируемого набора виртуальных машин?
 
@@ -436,7 +436,7 @@ Update-AzVmss -ResourceGroupName $rgname -Name $vmssname -VirtualMachineScaleSet
 
 ### <a name="how-do-i-execute-a-custom-script-thats-hosted-in-a-private-storage-account"></a>Разделы справки выполнить пользовательский скрипт, размещенный в частной учетной записи хранения?
 
-Чтобы выполнить настраиваемый скрипт, размещенный в учетной записи частного хранилища, настройте защищенные параметры с использованием имени и ключа учетной записи хранения. Дополнительные сведения см. в разделе [расширение пользовательских скриптов](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-extensions-customscript/#template-example-for-a-windows-vm-with-protected-settings).
+Чтобы выполнить настраиваемый скрипт, размещенный в учетной записи частного хранилища, настройте защищенные параметры с использованием имени и ключа учетной записи хранения. Дополнительные сведения см. в разделе [расширение пользовательских скриптов](../virtual-machines/extensions/custom-script-windows.md?toc=/azure/virtual-machines/windows/toc.json#property-managedidentity).
 
 ## <a name="passwords"></a>Пароли
 
@@ -448,7 +448,7 @@ Update-AzVmss -ResourceGroupName $rgname -Name $vmssname -VirtualMachineScaleSet
 
     Обновите учетные данные администратора непосредственно в модели масштабируемого набора (например, с помощью обозревателя ресурсов Azure, PowerShell или CLI). После обновления масштабируемого набора у всех новых виртуальных машин будут новые учетные данные. Для имеющихся виртуальных машин новые данные доступны только в том случае, если они будут пересозданы с использованием нового образа.
 
-- Сбросьте пароль с помощью расширений доступа к виртуальной машине. Обязательно следуйте требованиям к паролю, как описано [здесь](https://docs.microsoft.com/azure/virtual-machines/windows/faq#what-are-the-password-requirements-when-creating-a-vm).
+- Сбросьте пароль с помощью расширений доступа к виртуальной машине. Обязательно следуйте требованиям к паролю, как описано [здесь](../virtual-machines/windows/faq.md#what-are-the-password-requirements-when-creating-a-vm).
 
     Используйте следующий пример сценария PowerShell:
 
@@ -465,7 +465,7 @@ Update-AzVmss -ResourceGroupName $rgname -Name $vmssname -VirtualMachineScaleSet
     Update-AzVmss -ResourceGroupName $vmssResourceGroup -Name $vmssName -VirtualMachineScaleSet $vmss
     ```
 
-## <a name="networking"></a>Сети
+## <a name="networking"></a>Сеть
 
 ### <a name="is-it-possible-to-assign-a-network-security-group-nsg-to-a-scale-set-so-that-it-applies-to-all-the-vm-nics-in-the-set"></a>Можно ли назначить группу безопасности сети масштабируемому набору, чтобы она применялась ко всем сетевым картам виртуальных машин в наборе?
 
@@ -523,7 +523,7 @@ IP-адреса выбираются из указанной подсети.
 
 ### <a name="can-i-use-scale-sets-with-accelerated-networking"></a>Можно ли использовать масштабируемые наборы с ускоренной сетью?
 
-Да. Чтобы использовать ускоренную сеть, в настройках networkInterfaceConfigurations масштабируемого набора задайте для параметра enableAcceleratedNetworking значение true. Например:
+Да. Чтобы использовать ускоренную сеть, в настройках networkInterfaceConfigurations масштабируемого набора задайте для параметра enableAcceleratedNetworking значение true. Например.
 
 ```json
 "networkProfile": {
@@ -635,7 +635,7 @@ IP-адреса выбираются из указанной подсети.
 
 ### <a name="how-to-i-update-my-virtual-machine-scale-set-to-a-new-image-how-do-i-manage-patching"></a>Как обновить образ масштабируемого набора виртуальных машин и как управлять установкой исправлений?
 
-Дополнительные сведения об обновлении масштабируемого набора виртуальных машин и управлении установкой исправлений см. в [этой статье.](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-upgrade-scale-set)
+Дополнительные сведения об обновлении масштабируемого набора виртуальных машин и управлении установкой исправлений см. в [этой статье.](./virtual-machine-scale-sets-upgrade-scale-set.md)
 
 ### <a name="can-i-use-the-reimage-operation-to-reset-a-vm-without-changing-the-image-that-is-i-want-reset-a-vm-to-factory-settings-rather-than-to-a-new-image"></a>Можно ли использовать операцию пересоздания образа, чтобы сбросить параметры виртуальной машины, не изменяя образ? (То есть я хочу сбросить параметры виртуальной машины к значениям по умолчанию, а не создавать новый образ.)
 
@@ -656,7 +656,7 @@ az vmss extension set --name MicrosoftMonitoringAgent --publisher Microsoft.Ente
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 
 ### <a name="how-do-i-turn-on-boot-diagnostics"></a>Как включить диагностику загрузки?
 
@@ -671,7 +671,7 @@ az vmss extension set --name MicrosoftMonitoringAgent --publisher Microsoft.Ente
 }
 ```
 
-После создания виртуальной машины в свойстве InstanceView отобразятся сведения для снимка экрана и т. д. Ниже приведен пример:
+После создания виртуальной машины в свойстве InstanceView отобразятся сведения для снимка экрана и т. д. Ниже приведен пример.
 
 ```json
 "bootDiagnostics": {

@@ -7,12 +7,12 @@ ms.topic: reference
 ms.date: 02/19/2020
 ms.author: cshoe
 ms.custom: tracking-python
-ms.openlocfilehash: ee4961c6c1bb8cafe25ec2c84affdf0f1789e9f2
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: aedf39f99ace6e1119dde7089a3c83b96ac41fb1
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85603032"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87079712"
 ---
 # <a name="azure-service-bus-trigger-for-azure-functions"></a>Триггер служебной шины Azure для функций Azure
 
@@ -297,7 +297,7 @@ def main(msg: func.ServiceBusMessage):
 |**queueName**|**QueueName**|Имя очереди для отслеживания.  Задается только в том случае, если отслеживается очередь, но не раздел.
 |**topicName**|**топикнаме**|Имя отслеживаемого раздела. Задается только в том случае, если отслеживается раздел, но не очередь.|
 |**subscriptionName**|**SubscriptionName**|Имя отслеживаемой подписки. Задается только в том случае, если отслеживается раздел, но не очередь.|
-|**connection**;|**Соединение**|Имя параметра приложения, содержащего строку подключения к служебной шине, используемую для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задано значение `connection` "мисервицебус", среда выполнения функций ищет параметр приложения с именем "азуревебжобсмисервицебус". Если оставить строку `connection` пустой, то среда выполнения службы "Функции" будет использовать строку подключения к служебной шине по умолчанию для параметра приложения AzureWebJobsServiceBus.<br><br>Чтобы получить строку подключения, следуйте инструкциям, указанным в разделе [Получение учетных данных управления](../service-bus-messaging/service-bus-quickstart-portal.md#get-the-connection-string). Строка подключения указывается для пространства имен служебной шины, и она не должна ограничиваться определенной очередью или разделом. |
+|**connection**;|**Подключение**|Имя параметра приложения, содержащего строку подключения к служебной шине, используемую для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задано значение `connection` "мисервицебус", среда выполнения функций ищет параметр приложения с именем "азуревебжобсмисервицебус". Если оставить строку `connection` пустой, то среда выполнения службы "Функции" будет использовать строку подключения к служебной шине по умолчанию для параметра приложения AzureWebJobsServiceBus.<br><br>Чтобы получить строку подключения, следуйте инструкциям, указанным в разделе [Получение учетных данных управления](../service-bus-messaging/service-bus-quickstart-portal.md#get-the-connection-string). Строка подключения указывается для пространства имен служебной шины, и она не должна ограничиваться определенной очередью или разделом. |
 |**accessRights**|**Доступ**|Права доступа для строки подключения. Доступные значения: `manage` и `listen`. Значение по умолчанию — `manage`. Это означает, что у свойства `connection` есть разрешение на **управление**. При использовании строки подключения без разрешения на **управление** задайте для свойства `accessRights` значение "listen". В противном случае выполнение операций, для которых требуются права на управление, в среде выполнения Функций Azure может завершиться ошибкой. В функциях Azure версии 2. x и более поздних это свойство недоступно, поскольку последняя версия пакета SDK служебной шины не поддерживает операции управления.|
 |**иссессионсенаблед**|**иссессионсенаблед**|`true`При подключении к очереди или подписке с [поддержкой сеансов](../service-bus-messaging/message-sessions.md) . `false`в противном случае — значение по умолчанию.|
 
@@ -312,10 +312,10 @@ def main(msg: func.ServiceBusMessage):
 * `string`. Если сообщение является текстом.
 * `byte[]`. Используется для двоичных данных.
 * Пользовательский тип. Если сообщение содержит JSON, то служба "Функции Azure" пытается выполнить десериализацию данных JSON.
-* `BrokeredMessage`— Возвращает десериализованное сообщение с помощью метода [BrokeredMessage. @ Body \<T> ()](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.getbody?view=azure-dotnet#Microsoft_ServiceBus_Messaging_BrokeredMessage_GetBody__1) .
-* [`MessageReceiver`](https://docs.microsoft.com/dotnet/api/microsoft.azure.servicebus.core.messagereceiver?view=azure-dotnet)— Используется для получения и подтверждения сообщений из контейнера сообщений (требуется, если параметр [`autoComplete`](functions-bindings-service-bus-output.md#hostjson-settings) имеет значение `false` ).
+* `BrokeredMessage`— Возвращает десериализованное сообщение с помощью метода [BrokeredMessage. @ Body \<T> ()](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.getbody?view=azure-dotnet#Microsoft_ServiceBus_Messaging_BrokeredMessage_GetBody__1) .
+* [`MessageReceiver`](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver?view=azure-dotnet)— Используется для получения и подтверждения сообщений из контейнера сообщений (требуется, если параметр [`autoComplete`](functions-bindings-service-bus-output.md#hostjson-settings) имеет значение `false` ).
 
-Эти типы параметров предназначены для функций Azure версии 1. x; для 2. x и более поздних версий используйте [`Message`](https://docs.microsoft.com/dotnet/api/microsoft.azure.servicebus.message) вместо `BrokeredMessage` .
+Эти типы параметров предназначены для функций Azure версии 1. x; для 2. x и более поздних версий используйте [`Message`](/dotnet/api/microsoft.azure.servicebus.message) вместо `BrokeredMessage` .
 
 # <a name="c-script"></a>[Скрипт C#](#tab/csharp-script)
 
@@ -324,9 +324,9 @@ def main(msg: func.ServiceBusMessage):
 * `string`. Если сообщение является текстом.
 * `byte[]`. Используется для двоичных данных.
 * Пользовательский тип. Если сообщение содержит JSON, то служба "Функции Azure" пытается выполнить десериализацию данных JSON.
-* `BrokeredMessage`— Возвращает десериализованное сообщение с помощью метода [BrokeredMessage. @ Body \<T> ()](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.getbody?view=azure-dotnet#Microsoft_ServiceBus_Messaging_BrokeredMessage_GetBody__1) .
+* `BrokeredMessage`— Возвращает десериализованное сообщение с помощью метода [BrokeredMessage. @ Body \<T> ()](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.getbody?view=azure-dotnet#Microsoft_ServiceBus_Messaging_BrokeredMessage_GetBody__1) .
 
-Эти параметры предназначены для функций Azure версии 1. x; для 2. x и более поздних версий используйте [`Message`](https://docs.microsoft.com/dotnet/api/microsoft.azure.servicebus.message) вместо `BrokeredMessage` .
+Эти параметры предназначены для функций Azure версии 1. x; для 2. x и более поздних версий используйте [`Message`](/dotnet/api/microsoft.azure.servicebus.message) вместо `BrokeredMessage` .
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -352,13 +352,13 @@ def main(msg: func.ServiceBusMessage):
 
 Среда выполнения службы "Функции" получает сообщение в [режиме PeekLock](../service-bus-messaging/service-bus-performance-improvements.md#receive-mode). Она вызывает `Complete` для сообщения, если функция выполнена успешно, или `Abandon` в случае сбоя. Если функция выполняется дольше времени ожидания `PeekLock`, блокировка возобновляется автоматически до тех пор, пока выполняется функция. 
 
-Параметр `maxAutoRenewDuration` можно задать в файле *host.json*. Этот параметр сопоставляется с параметром [OnMessageOptions.MaxAutoRenewDuration](https://docs.microsoft.com/dotnet/api/microsoft.azure.servicebus.messagehandleroptions.maxautorenewduration?view=azure-dotnet). В соответствии с документацией по служебной шине максимально допустимое значение для этого параметра равно 5 минутам, тогда как ограничение времени выполнения функций можно увеличить с 5 минут по умолчанию до 10 минут. Этого не стоит делать для функций служебной шины, потому что лимит продления служебной шины будет превышен.
+Параметр `maxAutoRenewDuration` можно задать в файле *host.json*. Этот параметр сопоставляется с параметром [OnMessageOptions.MaxAutoRenewDuration](/dotnet/api/microsoft.azure.servicebus.messagehandleroptions.maxautorenewduration?view=azure-dotnet). В соответствии с документацией по служебной шине максимально допустимое значение для этого параметра равно 5 минутам, тогда как ограничение времени выполнения функций можно увеличить с 5 минут по умолчанию до 10 минут. Этого не стоит делать для функций служебной шины, потому что лимит продления служебной шины будет превышен.
 
 ## <a name="message-metadata"></a>Метаданные сообщения
 
 Триггер служебной шины предоставляет несколько [свойств метаданных](./functions-bindings-expressions-patterns.md#trigger-metadata). Эти свойства можно использовать как часть выражений привязки в других привязках или как параметры в коде. Эти свойства являются членами класса [Message](/dotnet/api/microsoft.azure.servicebus.message?view=azure-dotnet) .
 
-|Свойство.|Type|Описание:|
+|Свойство|Type|Описание|
 |--------|----|-----------|
 |`ContentType`|`string`|Идентификатор типа содержимого, используемый отправителем и получателем для логики конкретного приложения.|
 |`CorrelationId`|`string`|Идентификатор корреляции.|
@@ -377,6 +377,6 @@ def main(msg: func.ServiceBusMessage):
 
 См. [примеры кода](#example), в которых используются эти свойства, в предыдущих разделах этой статьи.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Отправка сообщений служебной шины Azure из функций Azure (Выходная привязка)](./functions-bindings-service-bus-output.md)

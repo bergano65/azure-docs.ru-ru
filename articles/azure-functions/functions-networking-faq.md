@@ -6,11 +6,12 @@ ms.topic: troubleshooting
 ms.date: 4/11/2019
 ms.author: alkarche
 ms.reviewer: glenga
-ms.openlocfilehash: acb1e942c1f342ce6fee7d8aeacafcc1d7b6fd91
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7d3493cc76dfb05cca3c89114b279b99ab49bac2
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75409532"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87081650"
 ---
 # <a name="frequently-asked-questions-about-networking-in-azure-functions"></a>Часто задаваемые вопросы о сети в службе "функции Azure"
 
@@ -54,11 +55,11 @@ ms.locfileid: "75409532"
 
 ## <a name="how-can-i-deploy-my-function-app-in-a-virtual-network"></a>Как развернуть мое приложение-функцию в виртуальной сети?
 
-Развертывание в Среда службы приложений является единственным способом создания приложения-функции, которое полностью находится внутри виртуальной сети. Дополнительные сведения об использовании внутренней подсистемы балансировки нагрузки с Среда службы приложений см. в статье [Создание и использование внутренней подсистемы балансировки нагрузки с среда службы приложений](https://docs.microsoft.com/azure/app-service/environment/create-ilb-ase).
+Развертывание в Среда службы приложений является единственным способом создания приложения-функции, которое полностью находится внутри виртуальной сети. Дополнительные сведения об использовании внутренней подсистемы балансировки нагрузки с Среда службы приложений см. в статье [Создание и использование внутренней подсистемы балансировки нагрузки с среда службы приложений](../app-service/environment/create-ilb-ase.md).
 
 Сценарии, в которых необходим только односторонний доступ к ресурсам виртуальной сети или менее полные сетевые изоляции, см. в статье [Общие сведения о функциях сети](functions-networking-options.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о работе в сети и функциях: 
 
