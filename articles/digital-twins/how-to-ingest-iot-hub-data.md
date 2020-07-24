@@ -7,11 +7,12 @@ ms.author: cschorm
 ms.date: 3/17/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 351f7ed131d545d2aa83df753cac3f26e76e4ccb
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7c73f007f85a963a09de4e05222082fd52f784c0
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84725857"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87131571"
 ---
 # <a name="ingest-iot-hub-telemetry-into-azure-digital-twins"></a>Прием данных телеметрии центра Интернета вещей в Azure Digital двойников
 
@@ -37,11 +38,11 @@ Azure Digital двойников управляет данными из устр
 
 :::image type="content" source="media/how-to-ingest-iot-hub-data/events.png" alt-text="Устройство центра Интернета вещей отправляет данные телеметрии температуры с помощью центра Интернета вещей, службы "Сетка событий" или системных разделов в функцию Azure, которая обновляет свойство температуры двойников в Azure Digital двойников." border="false":::
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
 Прежде чем продолжить работу с этим примером, необходимо выполнить следующие предварительные требования.
 1. Создайте Центр Интернета вещей. Инструкции см. в разделе " *Создание центра Интернета вещей* " [этого руководства центра Интернета вещей](../iot-hub/quickstart-send-telemetry-cli.md) .
-2. Создайте по крайней мере одну функцию Azure для обработки событий из центра Интернета вещей. См. статью [как настроить функцию Azure для обработки данных](how-to-create-azure-function.md) , чтобы создать базовую функцию Azure, которая может подключаться к Azure Digital двойников и вызывать функции API цифровых двойников Azure. Остальная часть этого руководства будет строиться на основе этой функции.
+2. Создайте по крайней мере одну функцию Azure для обработки событий из центра Интернета вещей. См. статью [*как настроить функцию Azure для обработки данных*](how-to-create-azure-function.md) , чтобы создать базовую функцию Azure, которая может подключаться к Azure Digital двойников и вызывать функции API цифровых двойников Azure. Остальная часть этого руководства будет строиться на основе этой функции.
 3. Настройте назначение события для данных концентратора. В [портал Azure](https://portal.azure.com/)перейдите к своему экземпляру центра Интернета вещей. В разделе *события*создайте подписку для функции Azure. 
 
     :::image type="content" source="media/how-to-ingest-iot-hub-data/add-event-subscription.png" alt-text="Портал Azure: Добавление подписки на события":::
@@ -54,7 +55,7 @@ Azure Digital двойников управляет данными из устр
 
 ## <a name="create-an-azure-function-in-visual-studio"></a>Создание функции Azure в Visual Studio
 
-В этом разделе применяются те же действия по запуску Visual Studio и схема функций Azure из [руководства: Настройка функции Azure для обработки данных](how-to-create-azure-function.md). Скелет обрабатывает аутентификацию и создает клиент службы, готовый к обработке данных и вызов интерфейсов API цифровых двойников Azure в ответе. 
+В этом разделе применяются те же действия по запуску Visual Studio и схема функций Azure из [*руководства: Настройка функции Azure для обработки данных*](how-to-create-azure-function.md). Скелет обрабатывает аутентификацию и создает клиент службы, готовый к обработке данных и вызов интерфейсов API цифровых двойников Azure в ответе. 
 
 Основой функции скелета является следующее:
 
@@ -267,9 +268,9 @@ public static async Task UpdateTwinProperty(DigitalTwinsClient client, string tw
 
 ## <a name="debug-azure-function-apps-locally"></a>Локальная отладка приложений функций Azure
 
-Можно выполнить отладку функций Azure с помощью триггера службы "Сетка событий" локально. Дополнительные сведения об этом см. в разделе [Отладка триггера сетки событий в локальной](../azure-functions/functions-debug-event-grid-trigger-local.md)среде.
+Можно выполнить отладку функций Azure с помощью триггера службы "Сетка событий" локально. Дополнительные сведения об этом см. в разделе [*Отладка триггера сетки событий в локальной*](../azure-functions/functions-debug-event-grid-trigger-local.md)среде.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте о поступлении и исходящих данных в Azure Digital двойников:
-* [Основные понятия: интеграция с другими службами](concepts-integration.md)
+* [*Основные понятия: интеграция с другими службами*](concepts-integration.md)

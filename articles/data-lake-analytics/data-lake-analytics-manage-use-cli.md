@@ -2,18 +2,16 @@
 title: Управление Azure Data Lake Analytics с помощью Azure CLI
 description: В этой статье описано, как с помощью Azure CLI управлять источниками данных, пользователями и заданиями Data Lake Analytics.
 services: data-lake-analytics
-author: jasonwhowell
-ms.author: jasonh
 ms.assetid: 4e5a3a0a-6d7f-43ed-aeb5-c3b3979a1e0a
 ms.service: data-lake-analytics
 ms.topic: how-to
 ms.date: 01/29/2018
-ms.openlocfilehash: f2e77e31049e2643f1488eb3f6be906de735ad2b
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: d4b9a7be36bd4c0a4044f3e76b96b21a16eb80de
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86121424"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87132523"
 ---
 # <a name="manage-azure-data-lake-analytics-using-the-azure-command-line-interface-cli"></a>Управление Azure Data Lake Analytics с помощью интерфейса командной строки (CLI) Azure
 
@@ -22,7 +20,7 @@ ms.locfileid: "86121424"
 Узнайте, как управлять учетными записями, источниками данных, пользователями и заданиями Azure Data Lake Analytics с помощью Azure CLI. Для просмотра статей, посвященных управлению с помощью других инструментов, щелкните селектор вкладок выше.
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Для работы с этим руководством вам потребуются следующие ресурсы:
 
@@ -91,7 +89,7 @@ ms.locfileid: "86121424"
 Data Lake Analytics сейчас поддерживает два источника данных:
 
 * [Хранилище озера данных Azure](../data-lake-store/data-lake-store-overview.md)
-* [Хранилище Azure](../storage/common/storage-introduction.md)
+* [Служба хранилища Azure](../storage/common/storage-introduction.md)
 
 При создании учетной записи аналитики необходимо указать учетную запись хранения озера данных Azure в качестве учетной записи хранения по умолчанию. В учетной записи хранения Data Lake, используемой по умолчанию, хранятся метаданные задания и журналы аудита задания. После создания учетной записи аналитики можно добавить дополнительные учетные записи хранения озера данных и учетные записи хранения Azure. 
 

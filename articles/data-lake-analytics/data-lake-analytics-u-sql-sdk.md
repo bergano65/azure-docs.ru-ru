@@ -4,16 +4,15 @@ description: Узнайте, как запускать и тестировать
 services: data-lake-analytics
 ms.service: data-lake-analytics
 author: yanacai
-ms.author: yanacai
-ms.reviewer: jasonwhowell
+ms.reviewer: jasonh
 ms.topic: how-to
 ms.date: 03/01/2017
-ms.openlocfilehash: 58521b16e0f4ff133fd032abd4451f785256bbee
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: daf72fcf7baba289b4145d06d878c8a7232f1c6a
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86110476"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87132421"
 ---
 # <a name="run-and-test-u-sql-with-azure-data-lake-u-sql-sdk"></a>Выполнение и тестирование U-SQL с помощью пакета SDK Azure Data Lake для U-SQL
 
@@ -144,21 +143,21 @@ LocalRunHelper run -Script path_to_usql_script.usql [optional_arguments]
 
 |Аргумент|Значение по умолчанию|Описание|
 |--------|-------------|-----------|
-|-CodeBehind|False|Сценарий содержит код программной части .cs.|
+|-CodeBehind|Неверно|Сценарий содержит код программной части .cs.|
 |-CppSDK| |Каталог CppSDK.|
 |-DataRoot| Переменная среды DataRoot|Корневая папка для локального выполнения. По умолчанию используется значение из переменной среды LOCALRUN_DATAROOT.|
 |-MessageOut| |Сохранение в файл всех сообщений, предназначенных для вывода на консоль.|
 |-Parallel|1|Запуск плана с указанным значением параллелизма.|
 |-References| |Список путей к дополнительным справочным сборкам или файлам данных кода программной части с разделителем ";".|
-|-UdoRedirect|False|Создание конфигурации перенаправления сборки Udo.|
+|-UdoRedirect|Неверно|Создание конфигурации перенаправления сборки Udo.|
 |-UseDatabase|master|База данных, в которой нужно регистрировать временную сборку кода программной части.|
-|-Verbose|False|Отображение подробных выходных данных среды выполнения.|
+|-Verbose|Неверно|Отображение подробных выходных данных среды выполнения.|
 |-WorkDir|Текущий каталог|Задает каталог для работы и выходных данных компилятора.|
 |-RunScopeCEP|0|Используемый режим ScopeCEP.|
 |-ScopeCEPTempPath|temp|Временный путь для потоковой передачи данных.|
 |-OptFlags| |Разделенный запятыми список флагов оптимизатора.|
 
-Ниже приведен пример:
+Ниже приведен пример.
 
 `LocalRunHelper run -Script d:\test\test1.usql -WorkDir d:\test\bin -CodeBehind -References "d:\asm\ref1.dll;d:\asm\ref2.dll" -UseDatabase testDB –Parallel 5 -Verbose`
 

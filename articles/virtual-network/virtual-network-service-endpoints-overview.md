@@ -13,11 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 11/08/2019
 ms.author: sumi
 ms.custom: ''
-ms.openlocfilehash: 692d86fa27ea42df6fe1128b64e408a5d4a4d08b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6935ea505643f253daf4c0b7d818137f52583682
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85444460"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87132829"
 ---
 # <a name="virtual-network-service-endpoints"></a>Конечные точки служб для виртуальной сети
 
@@ -79,7 +80,7 @@ ms.locfileid: "85444460"
 
 ![Защита служб Azure в виртуальных сетях](./media/virtual-network-service-endpoints-overview/VNet_Service_Endpoints_Overview.png)
 
-### <a name="configuration"></a>Параметр Configuration
+### <a name="configuration"></a>Конфигурация
 
 - Настройка конечных точек службы в подсети в виртуальной сети. Конечные точки работают с любым типом вычислительных экземпляров, выполняющихся в этой подсети.
 - Вы можете настроить несколько конечных точек службы для всех поддерживаемых служб Azure (например, службы хранилища Azure или базы данных SQL Azure) в подсети.
@@ -87,7 +88,7 @@ ms.locfileid: "85444460"
 - Виртуальная сеть, в которой настраивается конечная точка, может относиться к той же подписке, что и ресурс службы Azure, либо же к другой подписке. Дополнительные сведения о разрешениях, которые требуются для настройки конечных точек и защиты служб Azure, см. в разделе [Подготовка](#provisioning).
 - Вы можете защитить новые или существующие ресурсы в виртуальных сетях с помощью конечных точек служб для поддерживаемых служб.
 
-### <a name="considerations"></a>Особенности
+### <a name="considerations"></a>Рекомендации
 
 - После включения конечной точки службы исходные IP-адреса переключаются с использования общедоступных адресов IPv4 для использования их частного IPv4-адреса при взаимодействии со службой из этой подсети. Во время этого переключения все открытые TCP-подключения к службе закрываются. Убедитесь, что при включении или отключении конечной точки службы в подсети не выполняются критически важные задачи. Также удостоверьтесь, что приложения могут автоматически подключаться к службам Azure после этого переключения IP-адресов.
 
@@ -122,7 +123,7 @@ ms.locfileid: "85444460"
 
 Конечные точки службы можно настроить в виртуальных сетях независимо от пользователя с доступом на запись к виртуальной сети. Чтобы защитить ресурсы службы Azure для виртуальной сети, пользователь должен иметь разрешение на доступ к *Microsoft. Network/virtualNetworks/подсети/жоинвиасервицеендпоинт/Action* для добавленных подсетей. Встроенные роли администратора служб включают это разрешение по умолчанию. Разрешение можно изменить, создав пользовательские роли.
 
-Дополнительные сведения о встроенных ролях см. в статье [встроенные роли для ресурсов Azure](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json). Дополнительные сведения о назначении конкретных разрешений настраиваемым ролям см. в статье [пользовательские роли для ресурсов Azure](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
+Дополнительные сведения о встроенных ролях см. в статье [встроенные роли Azure](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json). Дополнительные сведения о назначении конкретных разрешений настраиваемым ролям см. в статье [пользовательские роли Azure](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 
 Виртуальные сети и ресурсы служб Azure могут находиться в одной или разных подписках. Если они находятся в разных подписках, ресурсы должны быть размещены в одном клиенте Active Directory (AD). 
 
@@ -138,11 +139,11 @@ ms.locfileid: "85444460"
 
 Политики конечной точки службы виртуальной сети позволяют фильтровать трафик виртуальной сети в службах Azure. Этот фильтр разрешает только определенные ресурсы службы Azure через конечные точки службы. Политики конечных точек служб предоставляют возможность детального контроля доступа трафика из виртуальной сети к службам Azure. Дополнительные сведения см. в статье [политики конечной точки службы виртуальной сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoint-policies-overview).
 
-## <a name="faqs"></a>Часто задаваемые вопросы
+## <a name="faqs"></a>Вопросы и ответы
 
 Часто задаваемые вопросы см. в разделе [вопросы и ответы о конечной точке службы виртуальной сети](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq#virtual-network-service-endpoints).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка конечных точек служб для виртуальной сети](tutorial-restrict-network-access-to-resources.md)
 - [Защита учетной записи хранения Azure в виртуальной сети](../storage/common/storage-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
@@ -151,4 +152,3 @@ ms.locfileid: "85444460"
 - [Интеграция служб Azure в виртуальные сети](virtual-network-for-azure-services.md)
 - [Политики конечных точек служб для виртуальной сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoint-policies-overview)
 - [Шаблон Azure Resource Manager](https://azure.microsoft.com/resources/templates/201-vnet-2subnets-service-endpoints-storage-integration)
-

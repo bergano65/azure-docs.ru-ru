@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/12/2020
 ms.author: erhopf
-ms.openlocfilehash: 017de2f66d6e57c9081e0d1ed53232a4634d4f4f
-ms.sourcegitcommit: c4ad4ba9c9aaed81dfab9ca2cc744930abd91298
+ms.openlocfilehash: 4c448b8ed50863457da69db3f74b959f04e26ec1
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84740287"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87131860"
 ---
 # <a name="speech-service-whats-new-in-docs"></a>Служба речи: новые возможности в документах
 
@@ -56,32 +56,32 @@ ms.locfileid: "84740287"
 
 ### <a name="github-issues-opened-in-may"></a>Проблемы GitHub, открытые в Май
 
-Эти проблемы были открыты в июне. В этой таблице перечислены пользователи, которые открыли ошибку, когда она была открыта, и ее состояние.  
+Эти проблемы были открыты в мае. В этой таблице перечислены пользователи, которые открыли ошибку, когда она была открыта, и ее состояние.  
 
 Эта таблица обновляется ежемесячно и отражает только проблемы, открытые в мае.  
 
-|ID|Пользователь|Описание|Opened (Открыто)|Состояние|Тип|
+|ID|Пользователь|Описание|Opened (Открыто)|Состояние|Type|
 | :--- | :--- | :--- | :--- | :--- | :--- |
-|[56045](https://github.com/MicrosoftDocs/azure-docs/issues/56045)|рхалали|Действие удалено, так как отсутствует конечная точка Bot|2020-05-31|Закрыто|Проблема|
-|[56038](https://github.com/MicrosoftDocs/azure-docs/issues/56038)|рхалали|Неправильные шаги программы-робота публикации|2020-05-31|Открыть|Проблема|
-|[56014](https://github.com/MicrosoftDocs/azure-docs/issues/56014)|мосдав|Добавить дополнительный документ о формате примеров PCM|2020-05-30|Открыть|Проблема|
-|[55984](https://github.com/MicrosoftDocs/azure-docs/issues/55984)|чсчрае|Заголовок не соответствует боковой панели|2020-05-29|Закрыто|Проблема|
-|[55857](https://github.com/MicrosoftDocs/azure-docs/issues/55857)|нитинбхатиа — dev|Ошибка CLI с волным файлом|2020-05-28|Закрыто|Проблема|
-|[55717](https://github.com/MicrosoftDocs/azure-docs/pull/55717)|даргилко|Обновление speech-sdk.md|2020-05-27|Открыть|Запрос на вытягивание|
-|[55299](https://github.com/MicrosoftDocs/azure-docs/issues/55299)|Тирумала-K|Странная ошибка с неподдерживаемым именем голоса|2020-05-20|Закрыто|Проблема|
-|[55099](https://github.com/MicrosoftDocs/azure-docs/issues/55099)|кмуре — рифаина|Неплохая документация по API перевода речи в текст|2020-05-18|Открыть|Проблема|
-|[55032](https://github.com/MicrosoftDocs/azure-docs/issues/55032)|дуббисвордс|Класс распознавания речи Microsoft CognitiveServices Спичрекогнизер, не удается собрать полученный текст|2020-05-18|Закрыто|Проблема|
-|[55031](https://github.com/MicrosoftDocs/azure-docs/issues/55031)|дуббисвордс|Не ясно|2020-05-18|Закрыто|Проблема|
-|[55027](https://github.com/MicrosoftDocs/azure-docs/issues/55027)|овишеш|Графика, не видимая в темной теме|2020-05-17|Закрыто|Проблема|
-|[54919](https://github.com/MicrosoftDocs/azure-docs/issues/54919)|кмуре — рифаина|отсутствует раздел?|2020-05-15|Открыть|Проблема|
-|[54743](https://github.com/MicrosoftDocs/azure-docs/issues/54743)|фифтинжой|Сбой запуска контейнеров речевых служб|2020-05-13|Открыть|Проблема|
-|[54550](https://github.com/MicrosoftDocs/azure-docs/issues/54550)|Маниш-95|Пример для файла произношения|2020-05-11|Открыть|Проблема|
-|[54522](https://github.com/MicrosoftDocs/azure-docs/issues/54522)|пжмлп|Неверный пример Java.|2020-05-10|Открыть|Проблема|
-|[54387](https://github.com/MicrosoftDocs/azure-docs/issues/54387)|ziadhassan7|Не удается получить оценку произношения|2020-05-08|Закрыто|Проблема|
-|[54382](https://github.com/MicrosoftDocs/azure-docs/issues/54382)|jgtellez1|Шаблон файла YAML|2020-05-07|Закрыто|Проблема|
-|[54208](https://github.com/MicrosoftDocs/azure-docs/issues/54208)|папаруш|В образце кода на языке C# не предлагается говорить пользователю.|2020-05-06|Закрыто|Проблема|
-|[54132](https://github.com/MicrosoftDocs/azure-docs/pull/54132)|ансонсу|Обновление TTS с версии 1.3 на версию 1.4|2020-05-05|Закрыто|Запрос на вытягивание|
-|[54111](https://github.com/MicrosoftDocs/azure-docs/pull/54111)|ансонсу|Обновление пользовательской САМОНАСТРАИВАЮЩИХСЯ ПОРОГОВЫХ значений последней версии до 2.2.0 v|2020-05-05|Закрыто|Запрос на вытягивание|
-|[53919](https://github.com/MicrosoftDocs/azure-docs/issues/53919)|эйаст|Ссылки на проекты GitHub нарушаются|2020-05-03|Открыть|Проблема|
-|[53892](https://github.com/MicrosoftDocs/azure-docs/issues/53892)|viju2008|Свойство для определения: максимальное время распознавания звука для микрофона Android. Прекращение распознавания речи через 15 секунд|2020-05-02|Закрыто|Проблема|
-|[53796](https://github.com/MicrosoftDocs/azure-docs/pull/53796)|сингхсаумя|Пользовательские команды: обновление документов|2020-05-01|Закрыто|Запрос на вытягивание|
+|[56045](https://github.com/MicrosoftDocs/azure-docs/issues/56045)|рхалали|Действие удалено, так как отсутствует конечная точка Bot|2020-05-31|Закрытое|Проблема|
+|[56038](https://github.com/MicrosoftDocs/azure-docs/issues/56038)|рхалали|Неправильные шаги программы-робота публикации|2020-05-31|Открытое|Проблема|
+|[56014](https://github.com/MicrosoftDocs/azure-docs/issues/56014)|мосдав|Добавить дополнительный документ о формате примеров PCM|2020-05-30|Открытое|Проблема|
+|[55984](https://github.com/MicrosoftDocs/azure-docs/issues/55984)|чсчрае|Заголовок не соответствует боковой панели|2020-05-29|Закрытое|Проблема|
+|[55857](https://github.com/MicrosoftDocs/azure-docs/issues/55857)|нитинбхатиа — dev|Ошибка CLI с волным файлом|2020-05-28|Закрытое|Проблема|
+|[55717](https://github.com/MicrosoftDocs/azure-docs/pull/55717)|даргилко|Обновление speech-sdk.md|2020-05-27|Открытое|Запрос на вытягивание|
+|[55299](https://github.com/MicrosoftDocs/azure-docs/issues/55299)|Тирумала-K|Странная ошибка с неподдерживаемым именем голоса|2020-05-20|Закрытое|Проблема|
+|[55099](https://github.com/MicrosoftDocs/azure-docs/issues/55099)|кмуре — рифаина|Неплохая документация по API перевода речи в текст|2020-05-18|Открытое|Проблема|
+|[55032](https://github.com/MicrosoftDocs/azure-docs/issues/55032)|дуббисвордс|Класс распознавания речи Microsoft CognitiveServices Спичрекогнизер, не удается собрать полученный текст|2020-05-18|Закрытое|Проблема|
+|[55031](https://github.com/MicrosoftDocs/azure-docs/issues/55031)|дуббисвордс|Не ясно|2020-05-18|Закрытое|Проблема|
+|[55027](https://github.com/MicrosoftDocs/azure-docs/issues/55027)|овишеш|Графика, не видимая в темной теме|2020-05-17|Закрытое|Проблема|
+|[54919](https://github.com/MicrosoftDocs/azure-docs/issues/54919)|кмуре — рифаина|отсутствует раздел?|2020-05-15|Открытое|Проблема|
+|[54743](https://github.com/MicrosoftDocs/azure-docs/issues/54743)|фифтинжой|Сбой запуска контейнеров речевых служб|2020-05-13|Открытое|Проблема|
+|[54550](https://github.com/MicrosoftDocs/azure-docs/issues/54550)|Маниш-95|Пример для файла произношения|2020-05-11|Открытое|Проблема|
+|[54522](https://github.com/MicrosoftDocs/azure-docs/issues/54522)|пжмлп|Неверный пример Java.|2020-05-10|Открытое|Проблема|
+|[54387](https://github.com/MicrosoftDocs/azure-docs/issues/54387)|ziadhassan7|Не удается получить оценку произношения|2020-05-08|Закрытое|Проблема|
+|[54382](https://github.com/MicrosoftDocs/azure-docs/issues/54382)|jgtellez1|Шаблон файла YAML|2020-05-07|Закрытое|Проблема|
+|[54208](https://github.com/MicrosoftDocs/azure-docs/issues/54208)|папаруш|В образце кода на языке C# не предлагается говорить пользователю.|2020-05-06|Закрытое|Проблема|
+|[54132](https://github.com/MicrosoftDocs/azure-docs/pull/54132)|ансонсу|Обновление TTS с версии 1.3 на версию 1.4|2020-05-05|Закрытое|Запрос на вытягивание|
+|[54111](https://github.com/MicrosoftDocs/azure-docs/pull/54111)|ансонсу|Обновление пользовательской САМОНАСТРАИВАЮЩИХСЯ ПОРОГОВЫХ значений последней версии до 2.2.0 v|2020-05-05|Закрытое|Запрос на вытягивание|
+|[53919](https://github.com/MicrosoftDocs/azure-docs/issues/53919)|эйаст|Ссылки на проекты GitHub нарушаются|2020-05-03|Открытое|Проблема|
+|[53892](https://github.com/MicrosoftDocs/azure-docs/issues/53892)|viju2008|Свойство для определения: максимальное время распознавания звука для микрофона Android. Прекращение распознавания речи через 15 секунд|2020-05-02|Закрытое|Проблема|
+|[53796](https://github.com/MicrosoftDocs/azure-docs/pull/53796)|сингхсаумя|Пользовательские команды: обновление документов|2020-05-01|Закрытое|Запрос на вытягивание|

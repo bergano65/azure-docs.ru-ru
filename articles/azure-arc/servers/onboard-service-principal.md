@@ -6,14 +6,14 @@ ms.service: azure-arc
 ms.subservice: azure-arc-servers
 author: mgoedtel
 ms.author: magoedte
-ms.date: 02/04/2020
+ms.date: 07/23/2020
 ms.topic: conceptual
-ms.openlocfilehash: ac6a00efa7db848e4c05703c81ba835fbf5f77e3
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.openlocfilehash: 7ac04b29853ce0d4f6ac4004bdfad4effd283170
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86103795"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87132999"
 ---
 # <a name="connect-hybrid-machines-to-azure-at-scale"></a>Подключение гибридных компьютеров к Azure в большом масштабе
 
@@ -76,7 +76,7 @@ ms.locfileid: "86103795"
 
 ## <a name="install-the-agent-and-connect-to-azure"></a>Установка агента и подключение к Azure
 
-Ниже описывается установка и настройка агента Connected Machine на гибридных компьютерах с помощью шаблона сценария, который выполняет действия, аналогичные описанным в статье [Подключение гибридных компьютеров к Azure на портале Azure](onboard-portal.md). Разница заключается в последнем шаге установки подключения к Azure Arc с помощью команды `azcmagent` и субъекта-службы. 
+Ниже описывается установка и настройка агента Connected Machine на гибридных компьютерах с помощью шаблона сценария, который выполняет действия, аналогичные описанным в статье [Подключение гибридных компьютеров к Azure на портале Azure](onboard-portal.md). Разница заключается в последнем шаге установки подключения к Azure Arc с помощью команды `azcmagent` и субъекта-службы.
 
 Ниже приведены параметры команды `azcmagent` для использования субъекта-службы.
 
@@ -110,6 +110,10 @@ msiexec /i AzureConnectedMachineAgent.msi /l*v installationlog.txt /qn | Out-Str
   --subscription-id "{subscriptionID}"
 ```
 
+>[!NOTE]
+>Сценарий поддерживает только запуск из 64-разрядной версии Windows PowerShell.
+>
+
 ### <a name="linux-installation-script"></a>Сценарий установки для Linux
 
 Ниже приведен пример сценария установки агента Connected Machine для Linux, который был изменен, чтобы использовать субъект-службу для поддержки полностью автоматизированной, неинтерактивной установки агента.
@@ -131,12 +135,15 @@ azcmagent connect \
   --subscription-id "{subscriptionID}"
 ```
 
+>[!NOTE]
+>Для запуска **азкмажент**требуются права доступа *root* на компьютерах Linux.
+
 После установки агента и настройки его подключения к Azure Arc для серверов (предварительная версия) перейдите на портал Azure, чтобы убедиться, что сервер подключен. Просмотрите свои компьютеры на [портале Azure](https://aka.ms/hybridmachineportal).
 
 ![Успешное соединение с сервером](./media/onboard-portal/arc-for-servers-successful-onboard.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Узнайте, как управлять компьютером с помощью [Политики Azure](../../governance/policy/overview.md), например, для [гостевой конфигурации](../../governance/policy/concepts/guest-configuration.md) виртуальной машины, проверять отправку отчетов с компьютера в ожидаемую рабочую область Log Analytics, включать мониторинг с помощью [Azure Monitor с виртуальными машинами](../../azure-monitor/insights/vminsights-enable-at-scale-policy.md) и многое другое.
+- Узнайте, как управлять компьютером с помощью [Политики Azure](../../governance/policy/overview.md), например для [гостевой конфигурации](../../governance/policy/concepts/guest-configuration.md) виртуальной машины, проверять отправку отчетов с компьютера в ожидаемую рабочую область Log Analytics, включать мониторинг с помощью [Azure Monitor с виртуальными машинами](../../azure-monitor/insights/vminsights-enable-at-scale-policy.md) и т. д.
 
 - Узнайте больше об [агенте Log Analytics](../../azure-monitor/platform/log-analytics-agent.md). Агент Log Analytics для Windows и Linux необходим, если требуется упреждающе отслеживать ОС и рабочие нагрузки на компьютере, выполнять управление с помощью runbook службы автоматизации или с помощью решений, таких как Управление обновлениями, или использовать другие службы Azure, например, [Центр безопасности Azure](../../security-center/security-center-intro.md).

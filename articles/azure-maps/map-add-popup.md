@@ -1,19 +1,20 @@
 ---
 title: Добавление всплывающего окна в точку на карте | Карты Microsoft Azure
 description: В этой статье вы узнаете, как добавить всплывающее окно в точку с помощью веб-пакета SDK Microsoft Azure Maps.
-author: Philmea
-ms.author: philmea
+author: anastasia-ms
+ms.author: v-stharr
 ms.date: 02/27/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: d7ca2f07e4568257baf72f2f298631b86f776c2a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2888f6c58bb67cf68df2263bbabb87180bc57288
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "83119261"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87130569"
 ---
 # <a name="add-a-popup-to-the-map"></a>Добавление всплывающего окна на карту
 

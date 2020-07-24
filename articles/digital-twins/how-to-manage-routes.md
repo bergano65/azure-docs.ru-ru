@@ -7,12 +7,12 @@ ms.author: alkarche
 ms.date: 6/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 923ae652872246916b2a4c5e8be95871983dbe95
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bc22cf5a21709ccacafe068a60541cc9990d1131
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85559829"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87132268"
 ---
 # <a name="manage-endpoints-and-routes-in-azure-digital-twins"></a>Управление конечными точками и маршрутами в цифровом двойников Azure
 
@@ -23,14 +23,9 @@ ms.locfileid: "85559829"
 * [Сетка событий](../event-grid/overview.md)
 * [Служебная шина](../service-bus-messaging/service-bus-messaging-overview.md)
 
-Дополнительные сведения о различных конечных точках см. в статье [Выбор между службами обмена сообщениями Azure](https://docs.microsoft.com/azure/event-grid/compare-messaging-services).
+Дополнительные сведения о различных конечных точках см. в статье [*Выбор между службами обмена сообщениями Azure*](https://docs.microsoft.com/azure/event-grid/compare-messaging-services).
 
 Управление конечными точками и маршрутами осуществляется с помощью [**API-интерфейсов евентраутес**](how-to-use-apis-sdks.md), [пакета SDK для .NET (C#)](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Azure.DigitalTwins.Core)или [Azure Digital двойников CLI](how-to-use-cli.md). Они также могут управляться с помощью [портал Azure](https://portal.azure.com).
-
-> [!NOTE]
-> Управление маршрутами событий через портал Azure в настоящее время доступно только пользователям Azure с учетными записями корпоративного домена. 
->
->Если вы используете личную [учетная запись Майкрософт (MSA)](https://account.microsoft.com/account/Account), например @outlook.com учетную запись, используйте интерфейсы API или интерфейс командной строки Azure Digital двойников для управления маршрутами событий, как описано в этой статье.
 
 ## <a name="create-an-endpoint-for-azure-digital-twins"></a>Создание конечной точки для Azure Digital двойников
 
@@ -70,7 +65,14 @@ az dt endpoint create eventhub --endpoint-name <Event-Hub-endpoint-name> --event
 
 ## <a name="manage-event-routes-with-apis"></a>Управление маршрутами событий с помощью API
 
-Чтобы фактически передавать данные из Azure Digital двойников в конечную точку, необходимо определить маршрут события. **API-интерфейсы** Azure Digital двойников евентраутес позволяют разработчикам связывать потоки событий во всей системе и в подчиненных службах. Дополнительные сведения о маршрутах событий см. в статье [Маршрутизация событий цифровых двойников Azure](concepts-route-events.md).
+Чтобы фактически передавать данные из Azure Digital двойников в конечную точку, необходимо определить маршрут события. **API-интерфейсы** Azure Digital двойников евентраутес позволяют разработчикам связывать потоки событий во всей системе и в подчиненных службах. Дополнительные сведения о маршрутах событий см. в статье [*Маршрутизация событий цифровых двойников Azure*](concepts-route-events.md).
+
+После завершения настройки конечных точек можно перейти к созданию маршрута события.
+
+>[!NOTE]
+>Если вы недавно развернули конечные точки, убедитесь, что они завершили развертывание, **прежде чем** пытаться использовать их для нового маршрута событий. Если развертывание маршрута завершается сбоем из-за неготовности конечных точек, подождите несколько минут и повторите попытку.
+>
+> Если вы создаете скрипт для этого потока, это можно сделать, создав период времени ожидания в 2-3 минут до завершения развертывания службы конечной точки перед переходом к настройке маршрута.
 
 В примерах в этой статье используется пакет SDK для C#.
 
@@ -145,11 +147,11 @@ catch (RequestFailedException e)
 
 Ниже приведены поддерживаемые фильтры маршрутов.
 
-| Имя фильтра | Описание: | Схема фильтра | Поддерживаемые значения | 
+| Имя фильтра | Описание | Схема фильтра | Поддерживаемые значения | 
 | --- | --- | --- | --- |
 | Type | [Тип события](./concepts-route-events.md#types-of-event-messages) , переданного через ваш экземпляр Digital двойника | `"filter" : "type = '<eventType>'"` | `Microsoft.DigitalTwins.Twin.Create` <br> `Microsoft.DigitalTwins.Twin.Delete` <br> `Microsoft.DigitalTwins.Twin.Update`<br>`Microsoft.DigitalTwins.Relationship.Create`<br>`Microsoft.DigitalTwins.Relationship.Update`<br> `Microsoft.DigitalTwins.Relationship.Delete` <br> `microsoft.iot.telemetry`  |
 | Источник | Имя экземпляра Digital двойников для Azure | `"filter" : "source = '<hostname>'"`|  **Для уведомлений**:`<yourDigitalTwinInstance>.<yourRegion>.azuredigitaltwins.net` <br> **Для телеметрии**:`<yourDigitalTwinInstance>.<yourRegion>.azuredigitaltwins.net/digitaltwins/<twinId>`|
-| Субъект | Описание события в контексте источника событий выше | `"filter": " subject = '<subject>'"` | **Для уведомлений**: Тема`<twinid>` <br> или формат URI для субъектов, которые уникально идентифицируются несколькими частями или идентификаторами:<br>`<twinid>/relationships/<relationshipid>`<br> **Для телеметрии**: субъект — это путь к компоненту (если данные телеметрии создаются из компонента двойника), например `comp1.comp2` . Если данные телеметрии не выдаются из компонента, то его поле subject будет пустым. |
+| Тема | Описание события в контексте источника событий выше | `"filter": " subject = '<subject>'"` | **Для уведомлений**: Тема`<twinid>` <br> или формат URI для субъектов, которые уникально идентифицируются несколькими частями или идентификаторами:<br>`<twinid>/relationships/<relationshipid>`<br> **Для телеметрии**: субъект — это путь к компоненту (если данные телеметрии создаются из компонента двойника), например `comp1.comp2` . Если данные телеметрии не выдаются из компонента, то его поле subject будет пустым. |
 | Схема данных | Идентификатор модели ДТДЛ | `"filter": "dataschema = 'dtmi:example:com:floor4;2'"` | **Для телеметрии**: Схема данных — это идентификатор модели двойника или компонента, который создает данные телеметрии. <br>**Для уведомлений**: Схема данных не поддерживается|
 | Тип содержимого | Тип содержимого значения данных | `"filter": "datacontenttype = '<contentType>'"` | `application/json` |
 | Версия спецификации | Используемая версия схемы событий | `"filter": "specversion = '<version>'"` | Этот параметр должен содержать значение `1.0`. Это означает, что схема Клаудевентс версии 1,0 |
@@ -174,7 +176,7 @@ catch (RequestFailedException e)
 
 ## <a name="manage-endpoints-and-routes-with-cli"></a>Управление конечными точками и маршрутами с помощью интерфейса командной строки
 
-Также можно управлять конечными точками и маршрутами с помощью интерфейса командной строки Azure Digital двойников. Команды можно найти в [этом пошаговом окне. Используйте интерфейс командной строки Azure Digital двойников](how-to-use-cli.md).
+Также можно управлять конечными точками и маршрутами с помощью интерфейса командной строки Azure Digital двойников. Команды можно найти в [*этом пошаговом окне. Используйте интерфейс командной строки Azure Digital двойников*](how-to-use-cli.md).
 
 ## <a name="monitor-event-routes"></a>Мониторинг маршрутов событий
 
@@ -186,7 +188,7 @@ catch (RequestFailedException e)
 
 Здесь можно просмотреть метрики для своего экземпляра и создать пользовательские представления.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о различных типах сообщений о событиях, которые можно получить:
-* [Пошаговое руководство. анализ данных события](how-to-interpret-event-data.md)
+* [*Пошаговое руководство. анализ данных события*](how-to-interpret-event-data.md)

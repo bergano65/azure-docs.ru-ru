@@ -1,19 +1,20 @@
 ---
 title: Отображение направлений маршрута на карте | Карты Microsoft Azure
 description: В этой статье вы узнаете, как отображать направления между двумя расположениями на карте с помощью веб-пакета SDK Microsoft Azure Maps.
-author: Philmea
-ms.author: philmea
+author: anastasia-ms
+ms.author: v-stharr
 ms.date: 07/29/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: codepen
-ms.openlocfilehash: 1cde1aaa7c9dba3e28407439a46b0e0a3326e4fc
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ac2a3afaf1697d03a9484e7055a10447bb05ea3b
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "83123978"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87130313"
 ---
 # <a name="show-directions-from-a-to-b"></a>Отображение направлений от точки А до точки Б
 
@@ -65,7 +66,7 @@ ms.locfileid: "83123978"
 
 Запрос маршрута, источник данных, символ, уровни линии и границы камеры создаются внутри [прослушивателя событий](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events). Опять же, мы хотим убедиться, что результаты отображаются после полной загрузки карт.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Рекомендации по использованию службы построения маршрутов](how-to-use-best-practices-for-search.md)

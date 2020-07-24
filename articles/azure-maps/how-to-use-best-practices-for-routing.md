@@ -1,18 +1,19 @@
 ---
 title: Рекомендации для Azure Maps Служба построения маршрутов | Карты Microsoft Azure
 description: Узнайте, как маршрутизировать автомобили с помощью Служба построения маршрутов из карт Microsoft Azure.
-author: philmea
-ms.author: philmea
+author: anastasia-ms
+ms.author: v-stharr
 ms.date: 03/11/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 24fa4c48f6ca03e4049483a9acfff067d5a6a736
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 79e9096030aada9fa368bb2e78af323139c0586c
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84266701"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87132217"
 ---
 # <a name="best-practices-for-azure-maps-route-service"></a>Рекомендации для службы маршрутов Azure Maps
 
@@ -28,9 +29,9 @@ ms.locfileid: "84266701"
 * Оптимизируйте альтернативные маршруты с помощью вспомогательных точек. Например, вы предлагаете альтернативные маршруты, которые проходят станцию зарядки электрических транспортных средств.
 * Использование [Служба построения маршрутов](https://docs.microsoft.com/rest/api/maps/route) с веб-пакетом SDK для Azure Maps
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Обязательные условия
 
-Чтобы вызвать API Azure Maps, требуется учетная запись Azure Maps и ключ. Дополнительные сведения см. в разделах [Создание учетной записи](quick-demo-map-app.md#create-an-account-with-azure-maps) и [Получение первичного ключа](quick-demo-map-app.md#get-the-primary-key-for-your-account). Первичный ключ также называется первичным ключом подписки или ключом подписки.
+Чтобы вызвать API Azure Maps, требуется учетная запись Azure Maps и ключ. Дополнительные сведения см. в разделах [Создание учетной записи](quick-demo-map-app.md#create-an-azure-maps-account) и [Получение первичного ключа](quick-demo-map-app.md#get-the-primary-key-for-your-account). Первичный ключ также называется первичным ключом подписки или ключом подписки.
 
 Дополнительные сведения о проверке подлинности в Azure Maps см. в статье [Управление аутентификацией в Azure Maps](./how-to-manage-authentication.md). Дополнительные сведения о покрытии Служба построения маршрутов см. в разделе [покрытие маршрутизации](routing-coverage.md).
 
@@ -324,7 +325,7 @@ https://atlas.microsoft.com/route/directions/json?api-version=1.0&subscription-k
 
 Веб-пакет SDK для Azure Maps предоставляет [модуль службы](https://docs.microsoft.com/javascript/api/azure-maps-rest/?view=azure-maps-typescript-latest). Этот модуль представляет собой вспомогательную библиотеку, которая упрощает использование Azure Maps интерфейсов API для Node.js приложений с помощью JavaScript или TypeScript. Модуль службы можно использовать для отображения возвращаемых маршрутов на карте. Модуль автоматически определяет, какой API следует использовать с запросами GET и POST.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в следующих статьях:
 

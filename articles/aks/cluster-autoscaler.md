@@ -4,12 +4,12 @@ description: Узнайте, как использовать средство а
 services: container-service
 ms.topic: article
 ms.date: 07/18/2019
-ms.openlocfilehash: 9aa06ea2fbc3aff218a4940fa60da767fabca500
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: af09d594dd745b64901965499df4245fa2e6a85f
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86252034"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87130840"
 ---
 # <a name="automatically-scale-a-cluster-to-meet-application-demands-on-azure-kubernetes-service-aks"></a>Автоматическое масштабирование кластера в соответствии с требованиями приложения в Службе контейнеров Azure
 
@@ -44,7 +44,7 @@ ms.locfileid: "86252034"
 
 Дополнительные сведения о причинах, которые препятствуют средству автомасштабирования вертикально уменьшать масштаб, описаны в разделе [Какие типы pod могут помешать средству автомасштабирования кластера удалить узел?][autoscaler-scaledown]
 
-Средство автомасштабирования кластера использует параметры запуска для выбора интервалов времени между событиями масштабирования, пороговых значений для ресурсов и т. п. Дополнительные сведения о параметрах, используемых средством автомасштабирования кластера, см. в разделе [Какие параметры использует средство автомасштабирования кластера?][autoscaler-parameters].
+Средство автомасштабирования кластера использует параметры запуска для выбора интервалов времени между событиями масштабирования, пороговых значений для ресурсов и т. п. Дополнительные сведения о том, какие параметры использует Автомасштабирование кластера, см [. в разделе что такое параметры автомасштабирования кластера?][autoscaler-parameters]
 
 Средство автомасштабирования кластера и средство горизонтального автомасштабирования могут работать вместе, и часто оба средства развертываются в кластере. При совместной работе средство горизонтального автомасштабирования pod берет на себя управление числом pod, необходимых для удовлетворения требований приложения. Средство автомасштабирования кластера контролирует, в свою очередь, количество узлов для работы запланированного числа pod.
 
@@ -56,7 +56,7 @@ ms.locfileid: "86252034"
 Если вам нужен новый кластер AKS, выполните команду [az aks create][az-aks-create]. Чтобы включить и настроить средство автомасштабирования кластера в пуле узлов для этого кластера, примените параметр *--enable-cluster-autoscaler* и укажите минимальное ( *--min-count*) и максимальное ( *--max-count*) число узлов.
 
 > [!IMPORTANT]
-> Компонент Kubernetes является средством автомасштабирования кластера. Хотя в кластере AKS используется масштабируемый набор виртуальных машин для узлов, не включайте и не изменяйте вручную параметры автомасштабирования масштабируемого набора на портале Azure или с помощью Azure CLI. Разрешите средству автомасштабирования кластера Kubernetes устанавливать необходимые параметры масштабирования. Дополнительные сведения см. в разделе часто задаваемых вопросов [Можно ли изменять теги и другие свойства ресурсов AKS в группе ресурсов узла?](faq.md#can-i-modify-tags-and-other-properties-of-the-aks-resources-in-the-node-resource-group).
+> Компонент Kubernetes является средством автомасштабирования кластера. Хотя в кластере AKS используется масштабируемый набор виртуальных машин для узлов, не включайте и не изменяйте вручную параметры автомасштабирования масштабируемого набора на портале Azure или с помощью Azure CLI. Разрешите средству автомасштабирования кластера Kubernetes устанавливать необходимые параметры масштабирования. Дополнительные сведения см. в разделе часто задаваемых вопросов [Можно ли изменять теги и другие свойства ресурсов AKS в группе ресурсов узла?][aks-faq-node-resource-group].
 
 В следующем примере создается кластер AKS с одним пулом узлов на базе масштабируемого набора виртуальных машин. Он также включает средство автомасштабирования кластера в пуле узлов для этого кластера и задает минимальное (*1*) и максимальное (*3*) число узлов.
 
@@ -77,6 +77,26 @@ az aks create \
 ```
 
 Создание кластера и настройка параметров автомасштабирования кластера занимает несколько минут.
+
+## <a name="update-an-existing-aks-cluster-to-enable-the-cluster-autoscaler"></a>Обновление существующего кластера AKS для включения автомасштабирования кластера
+
+Используйте команду [AZ AKS Update][az-aks-update] , чтобы включить и настроить Автомасштабирование кластера в пуле узлов для существующего кластера. Используйте параметр *--Enable-Cluster-Автомасштабирование* и укажите узел *--min-Count* и *--Max-Count*.
+
+> [!IMPORTANT]
+> Компонент Kubernetes является средством автомасштабирования кластера. Хотя в кластере AKS используется масштабируемый набор виртуальных машин для узлов, не включайте и не изменяйте вручную параметры автомасштабирования масштабируемого набора на портале Azure или с помощью Azure CLI. Разрешите средству автомасштабирования кластера Kubernetes устанавливать необходимые параметры масштабирования. Дополнительные сведения см. в разделе часто задаваемых вопросов [Можно ли изменять теги и другие свойства ресурсов AKS в группе ресурсов узла?][aks-faq-node-resource-group].
+
+В следующем примере обновляется существующий кластер AKS, чтобы включить Автомасштабирование кластера в пуле узлов для кластера и задать минимум *1* и максимум *3* узла:
+
+```azurecli-interactive
+az aks update \
+  --resource-group myResourceGroup \
+  --name myAKSCluster \
+  --enable-cluster-autoscaler \
+  --min-count 1 \
+  --max-count 3
+```
+
+Обновление кластера и Настройка параметров автомасштабирования кластера займет несколько минут.
 
 ## <a name="change-the-cluster-autoscaler-settings"></a>Изменение параметров средства автомасштабирования кластера
 
@@ -136,7 +156,7 @@ az extension update --name aks-preview
 
 ### <a name="set-the-cluster-autoscaler-profile-on-an-existing-aks-cluster"></a>Назначение профиля средства автомасштабирования кластера имеющемуся кластеру AKS
 
-Чтобы назначить профиль средства автомасштабирования кластера своему кластеру, используйте команду [az aks update][az-aks-update] с параметром *cluster-autoscaler-profile*. В следующем примере для интервала сканирования в профиле задается значение 30 с.
+Чтобы назначить профиль средства автомасштабирования кластера своему кластеру, используйте команду [az aks update][az-aks-update-preview] с параметром *cluster-autoscaler-profile*. В следующем примере для интервала сканирования в профиле задается значение 30 с.
 
 ```azurecli-interactive
 az aks update \
@@ -145,7 +165,7 @@ az aks update \
   --cluster-autoscaler-profile scan-interval=30s
 ```
 
-При включении средства автомасштабирования кластера в пулах узлов в кластере для таких кластеров также будет использоваться профиль этого средства. Пример:
+При включении средства автомасштабирования кластера в пулах узлов в кластере для таких кластеров также будет использоваться профиль этого средства. Например.
 
 ```azurecli-interactive
 az aks nodepool update \
@@ -179,7 +199,7 @@ az aks create \
 
 ### <a name="reset-cluster-autoscaler-profile-to-default-values"></a>Восстановление значений по умолчанию для профиля средства автомасштабирования кластера
 
-Чтобы сбросить профиль средства автомасштабирования кластера в кластере, используйте команду [az aks update][az-aks-update].
+Чтобы сбросить профиль средства автомасштабирования кластера в кластере, используйте команду [az aks update][az-aks-update-preview].
 
 ```azurecli-interactive
 az aks update \
@@ -190,7 +210,7 @@ az aks update \
 
 ## <a name="disable-the-cluster-autoscaler"></a>Отключение средства автомасштабирования кластера
 
-Когда отпадет потребность в средстве автомасштабирования кластера, его можно отключить с помощью команды [az aks update][az-aks-update], указав параметр *--disable-cluster-autoscaler*. При отключении средства автомасштабирования кластера узлы не удаляются.
+Когда отпадет потребность в средстве автомасштабирования кластера, его можно отключить с помощью команды [az aks update][az-aks-update-preview], указав параметр *--disable-cluster-autoscaler*. При отключении средства автомасштабирования кластера узлы не удаляются.
 
 ```azurecli-interactive
 az aks update \
@@ -203,7 +223,7 @@ az aks update \
 
 ## <a name="re-enable-a-disabled-cluster-autoscaler"></a>Повторное включение отключенного средства автомасштабирования кластера
 
-Если вы хотите повторно включить средство автомасштабирования кластера в имеющемся кластере, это можно сделать с помощью команды [az aks update][az-aks-update], указав параметры *--enable-cluster-autoscaler*, *--min-count* и *--max-count*.
+Если вы хотите повторно включить средство автомасштабирования кластера в имеющемся кластере, это можно сделать с помощью команды [az aks update][az-aks-update-preview], указав параметры *--enable-cluster-autoscaler*, *--min-count* и *--max-count*.
 
 ## <a name="retrieve-cluster-autoscaler-logs-and-status"></a>Получение журналов и состояния средства автомасштабирования кластера
 
@@ -213,7 +233,7 @@ AKS управляет средством автомасштабирования
 
 Чтобы настроить принудительную отправку журналов из средства автомасштабирования кластера в Log Analytics, выполните следующие действия.
 
-1. Настройте правило для журналов ресурсов, чтобы журналы средства автоматического масштабирования кластера принудительно отправлялись в Log Analytics. Подробные инструкции приведены [в этой статье](./view-master-logs.md#enable-resource-logs). Не забудьте при выборе параметров в разделе "Журналы" установить флажок для `cluster-autoscaler`.
+1. Настройте правило для журналов ресурсов, чтобы журналы средства автоматического масштабирования кластера принудительно отправлялись в Log Analytics. Подробные инструкции приведены [в этой статье][aks-view-master-logs]. Не забудьте при выборе параметров в разделе "Журналы" установить флажок для `cluster-autoscaler`.
 1. На портале Azure щелкните раздел "Журналы" для своего кластера.
 1. Введите следующий пример запроса в Log Analytics:
 
@@ -232,11 +252,11 @@ AzureDiagnostics
 kubectl get configmap -n kube-system cluster-autoscaler-status -o yaml
 ```
 
-Дополнительные сведения о том, какие данные записываются в журнал из средства автомасштабирования, см. в разделе часто задаваемых вопросов в рамках проекта для [Kubernetes и средства автомасштабирования на сайте GitHub](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#ca-doesnt-work-but-it-used-to-work-yesterday-why).
+Дополнительные сведения о том, какие данные записываются в журнал из средства автомасштабирования, см. в разделе часто задаваемых вопросов в рамках проекта для [Kubernetes и средства автомасштабирования на сайте GitHub][kubernetes-faq].
 
 ## <a name="use-the-cluster-autoscaler-with-multiple-node-pools-enabled"></a>Использование средства автомасштабирования кластера при включенной поддержке нескольких пулов узлов
 
-Средство автомасштабирования кластера можно использовать при включенной поддержке [нескольких пулов узлов](use-multiple-node-pools.md). Изучите этот документ, чтобы узнать, как включить несколько пулов узлов и добавить дополнительные пулы узлов в имеющийся кластер. При одновременном использовании обеих функций средство автомасштабирования кластера включается для каждого отдельного пула узлов в кластере и может передавать каждому из них уникальные правила автомасштабирования.
+Средство автомасштабирования кластера можно использовать при включенной поддержке [нескольких пулов узлов][aks-multiple-node-pools]. Изучите этот документ, чтобы узнать, как включить несколько пулов узлов и добавить дополнительные пулы узлов в имеющийся кластер. При одновременном использовании обеих функций средство автомасштабирования кластера включается для каждого отдельного пула узлов в кластере и может передавать каждому из них уникальные правила автомасштабирования.
 
 Приведенная ниже команда предполагает, что вы выполнили [начальные инструкции](#create-an-aks-cluster-and-enable-the-cluster-autoscaler), приведенные ранее в этом документе, и хотите обновить максимальное число имеющихся в пуле узлов с *3* до *5*. Чтобы обновить параметры пула узлов, используйте команду [az aks nodepool update][az-aks-nodepool-update].
 
@@ -268,22 +288,27 @@ az aks nodepool update \
 
 <!-- LINKS - internal -->
 [aks-faq]: faq.md
+[aks-faq-node-resource-group]: faq.md#can-i-modify-tags-and-other-properties-of-the-aks-resources-in-the-node-resource-group
+[aks-multiple-node-pools]: use-multiple-node-pools.md
 [aks-scale-apps]: tutorial-kubernetes-scale.md
 [aks-support-policies]: support-policies.md
 [aks-upgrade]: upgrade-cluster.md
+[aks-view-master-logs]: ./view-master-logs.md#enable-resource-logs
 [autoscaler-profile-properties]: #using-the-autoscaler-profile
 [azure-cli-install]: /cli/azure/install-azure-cli
 [az-aks-show]: /cli/azure/aks#az-aks-show
 [az-extension-add]: /cli/azure/extension#az-extension-add
 [az-extension-update]: /cli/azure/extension#az-extension-update
 [az-aks-create]: /cli/azure/aks#az-aks-create
+[az-aks-update]: /cli/azure/aks#az-aks-update
 [az-aks-scale]: /cli/azure/aks#az-aks-scale
 [az-feature-register]: /cli/azure/feature#az-feature-register
 [az-feature-list]: /cli/azure/feature#az-feature-list
 [az-provider-register]: /cli/azure/provider#az-provider-register
 
 <!-- LINKS - external -->
-[az-aks-update]: https://github.com/Azure/azure-cli-extensions/tree/master/src/aks-preview
+[az-aks-update-preview]: https://github.com/Azure/azure-cli-extensions/tree/master/src/aks-preview
 [az-aks-nodepool-update]: https://github.com/Azure/azure-cli-extensions/tree/master/src/aks-preview#enable-cluster-auto-scaler-for-a-node-pool
 [autoscaler-scaledown]: https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#what-types-of-pods-can-prevent-ca-from-removing-a-node
 [autoscaler-parameters]: https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#what-are-the-parameters-to-ca
+[kubernetes-faq]: https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#ca-doesnt-work-but-it-used-to-work-yesterday-why

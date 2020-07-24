@@ -10,12 +10,12 @@ ms.author: vanto
 ms.topic: article
 ms.date: 02/20/2020
 ms.reviewer: ''
-ms.openlocfilehash: 8104302afa84446e2d57c7156f33bc0160e31472
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: 00369ae45a13414ce46f324e37afe24be24a48e0
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85986789"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87132948"
 ---
 # <a name="playbook-for-addressing-common-security-requirements-with-azure-sql-database-and-azure-sql-managed-instance"></a>Сборник тренировочных заданий для решения общих требований к безопасности базы данных SQL Azure и Azure SQL Управляемый экземпляр
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -33,7 +33,7 @@ ms.locfileid: "85986789"
 
 ### <a name="deployment-offers-not-covered-in-this-guide"></a>Предложения по развертыванию, не описанные в этом разделе
 
-- Хранилище данных SQL Azure
+- Хранилище данных SQL Azure
 - Виртуальные машины SQL Azure (IaaS)
 - SQL Server
 
@@ -62,12 +62,12 @@ ms.locfileid: "85986789"
 
 Мы планируем продолжить обновление рекомендаций и рекомендаций, перечисленных здесь. Укажите входные данные или любые исправления для этого документа, используя ссылку **отзыва** в нижней части этой статьи.
 
-## <a name="authentication"></a>Аутентификация
+## <a name="authentication"></a>Проверка подлинности
 
 Аутентификацией называют процесс подтверждения личности пользователя. База данных SQL Azure и SQL Управляемый экземпляр поддерживают два типа проверки подлинности:
 
 - Проверка подлинности SQL
-- Аутентификация Azure Active Directory
+- Проверка подлинности Azure Active Directory
 
 > [!NOTE]
 > Azure Active Directoryная проверка подлинности может не поддерживаться для всех средств и сторонних приложений.
@@ -112,7 +112,7 @@ ms.locfileid: "85986789"
 > - Маркер доступа Azure AD кэшируется на стороне клиента, и его время существования зависит от конфигурации токена. См. статью Настройка [времени жизни маркеров в Azure Active Directory](../../active-directory/develop/active-directory-configurable-token-lifetimes.md)
 > - Рекомендации по устранению неполадок аутентификация Azure AD см. в следующем блоге: [Устранение неполадок Azure AD](https://techcommunity.microsoft.com/t5/azure-sql-database/troubleshooting-problems-related-to-azure-ad-authentication-with/ba-p/1062991).
 
-### <a name="azure-multi-factor-authentication"></a>Многофакторная идентификация Azure
+### <a name="azure-multi-factor-authentication"></a>Многофакторная проверка подлинности Azure
 
 > Упоминалось в: упражнения #2, контроль доступа ISO (AC)
 
@@ -228,10 +228,10 @@ ms.locfileid: "85986789"
 - В базах данных SQL:
   - Используйте детализированные разрешения и определяемые пользователем роли базы данных (или роли сервера в Управляемый экземпляр):
     1. Создание необходимых ролей
-       - [СОЗДАНИЕ РОЛИ](https://docs.microsoft.com/sql/t-sql/statements/create-role-transact-sql)
+       - [CREATE ROLE](https://docs.microsoft.com/sql/t-sql/statements/create-role-transact-sql)
        - [CREATE SERVER ROLE](https://docs.microsoft.com/sql/t-sql/statements/create-server-role-transact-sql)
     1. Создание необходимых пользователей
-       - [СОЗДАНИЕ ПОЛЬЗОВАТЕЛЯ](https://docs.microsoft.com/sql/t-sql/statements/create-user-transact-sql)
+       - [CREATE USER](https://docs.microsoft.com/sql/t-sql/statements/create-user-transact-sql)
     1. Добавление пользователей в качестве членов ролей
        - [ALTER ROLE](https://docs.microsoft.com/sql/t-sql/statements/alter-role-transact-sql)
        - [ALTER SERVER ROLE](https://docs.microsoft.com/sql/t-sql/statements/alter-server-role-transact-sql)
@@ -240,9 +240,9 @@ ms.locfileid: "85986789"
   - Не следует назначать пользователям ненужные роли.
 
 - В Azure Resource Manager:
-  - Используйте встроенные роли, если доступны или пользовательские роли RBAC, и назначьте необходимые разрешения.
-    - [Встроенные роли для Azure](../../role-based-access-control/built-in-roles.md)
-    - [Пользовательские роли для ресурсов Azure](../../role-based-access-control/custom-roles.md)
+  - Используйте встроенные роли, если они доступны или пользовательские роли Azure, и назначьте необходимые разрешения.
+    - [Встроенные роли Azure](../../role-based-access-control/built-in-roles.md)
+    - [Настраиваемые роли Azure](../../role-based-access-control/custom-roles.md)
 
 **Рекомендации:**
 
@@ -291,7 +291,7 @@ ms.locfileid: "85986789"
 - Выявление комплексной иерархии пользователей (и автоматизированных процессов), обращающихся к системе.
 
 - Создайте роли в соответствии с необходимыми группами пользователей и назначьте разрешения ролям.
-  - Для задач уровня управления в портал Azure или с помощью автоматизации PowerShell используйте роли RBAC. Либо найдите встроенную роль, соответствующую требованию, либо создайте настраиваемую роль RBAC с помощью доступных разрешений.
+  - Для задач уровня управления в портал Azure или с помощью автоматизации PowerShell используйте роли RBAC. Либо найдите встроенную роль, соответствующую требованию, либо создайте настраиваемую роль Azure с помощью доступных разрешений.
   - Создание ролей сервера для задач на уровне сервера (создание новых имен входа, баз данных) в управляемом экземпляре.
   - Создание ролей базы данных для задач уровня базы данных.
 
@@ -342,8 +342,8 @@ ms.locfileid: "85986789"
   - [Подписывание хранимых процедур](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/signing-stored-procedures-in-sql-server)
 
 - Для управления ресурсами Azure:
-  - [Встроенные роли для Azure](../../role-based-access-control/built-in-roles.md)
-  - [Пользовательские роли для ресурсов Azure](../../role-based-access-control/custom-roles.md)
+  - [Встроенные роли Azure](../../role-based-access-control/built-in-roles.md)
+  - [Настраиваемые роли Azure](../../role-based-access-control/custom-roles.md)
   - [Использование Azure AD Privileged Identity Management для повышения прав доступа](https://www.microsoft.com/itshowcase/using-azure-ad-privileged-identity-management-for-elevated-access)
 
 ### <a name="perform-regular-code-reviews"></a>Выполнение регулярных проверок кода
@@ -798,6 +798,6 @@ ms.locfileid: "85986789"
 
 - Дополнительные функции обеспечения непрерывности бизнес-процессов, такие как группы автоматической отработки отказа в различных геообъектовах Azure, можно настроить, как описано здесь: [Обзор непрерывности бизнес-процессов](business-continuity-high-availability-disaster-recover-hadr-overview.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. [Обзор возможностей безопасности базы данных SQL Azure](security-overview.md) .

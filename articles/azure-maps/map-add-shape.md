@@ -1,19 +1,20 @@
 ---
 title: Добавление слоя многоугольников на карту | Карты Microsoft Azure
 description: В этой статье вы узнаете, как визуализировать многоугольник и несколько многоугольников на карте в веб-пакете SDK Microsoft Azure Maps.
-author: Philmea
-ms.author: philmea
+author: anastasia-ms
+ms.author: v-stharr
 ms.date: 07/29/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: ecbb5d636b6a6e2fa89d34380e87b6979110f6e3
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: a8ae7bc6c7f6aac199d4e3dd386c94d41c20965d
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83648525"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87130517"
 ---
 # <a name="add-a-polygon-layer-to-the-map"></a>Добавление слоя многоугольников на карту
 

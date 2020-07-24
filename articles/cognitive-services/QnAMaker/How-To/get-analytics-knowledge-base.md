@@ -3,20 +3,18 @@ title: Аналитика в базе знаний — QnA Maker
 titleSuffix: Azure Cognitive Services
 description: QnA Maker сохраняет все журналы чатов и другие данные телеметрии, если во время создания службы QnA Maker вы включили App Insights. Чтобы получить журналы чатов из App Insights, воспользуйтесь приведенными здесь примерами запросов.
 services: cognitive-services
-author: diberry
 manager: nitinme
 displayName: chat history, history, chat logs, logs
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 11/05/2019
-ms.author: diberry
-ms.openlocfilehash: d247c55112bc1c3cd921c0eda8e4ddadd6b5aed9
-ms.sourcegitcommit: 58faa9fcbd62f3ac37ff0a65ab9357a01051a64f
+ms.openlocfilehash: 00b7b88aa4ce0cab2a2379756e40054f27fc633b
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80878074"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87131656"
 ---
 # <a name="get-analytics-on-your-knowledge-base"></a>Получение аналитических данных о базе знаний
 
@@ -118,7 +116,7 @@ traces | extend id = operation_ParentId
 | order  by timestamp  desc
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Выберите капактий](./improve-knowledge-base.md)

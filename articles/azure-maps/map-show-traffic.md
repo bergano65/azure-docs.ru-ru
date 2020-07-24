@@ -1,19 +1,20 @@
 ---
 title: Отображение данных дорожного движения на карте | Microsoft Azure Maps
 description: В этой статье вы узнаете, как отображать данные дорожного движения на карте с помощью веб-пакета SDK Microsoft Azure Maps.
-author: Philmea
-ms.author: philmea
+author: anastasia-ms
+ms.author: v-stharr
 ms.date: 07/29/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 9c17c3cc22d478d81ed3c2b2ae9f61c173aad6cd
-ms.sourcegitcommit: a8ee9717531050115916dfe427f84bd531a92341
+ms.openlocfilehash: 3beafb28f67f5f1e1584d23a3d9603add2d09bee
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83123927"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87130177"
 ---
 # <a name="show-traffic-on-the-map"></a>Отображение данных дорожного движения на карте
 

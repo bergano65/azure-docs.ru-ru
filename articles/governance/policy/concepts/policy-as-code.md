@@ -1,14 +1,14 @@
 ---
 title: Рабочие процессы политики разработки как кода
 description: Научитесь проектировать рабочие процессы для развертывания определений политик Azure как кода и автоматически проверять ресурсы.
-ms.date: 05/20/2020
+ms.date: 07/23/2020
 ms.topic: conceptual
-ms.openlocfilehash: 17964459c6c06e6d7df09da4d3f0813350f209ec
-ms.sourcegitcommit: f684589322633f1a0fafb627a03498b148b0d521
+ms.openlocfilehash: 02ff979feac1afb5f1664e6387e0abcde69b60eb
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85970949"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87131503"
 ---
 # <a name="design-policy-as-code-workflows"></a>Рабочие процессы политики разработки как кода
 
@@ -20,6 +20,24 @@ ms.locfileid: "85970949"
 Политика как код — это сочетание этих идей. По сути, это хранение определения политик в системе управления версиями и тестирование и проверка их при каждом внесении изменений. Однако это не должно быть областью политик, вовлеченных в инфраструктуру как код или DevOps.
 
 Этап проверки также должен быть компонентом других рабочих процессов непрерывной интеграции или непрерывного развертывания. Примеры включают развертывание среды приложения или виртуальной инфраструктуры. Делая проверку политики Azure ранним компонентом процесса сборки и развертывания, группы приложений и операций обнаруживают, являются ли их изменения несоответствующими, долго до того, как они будут слишком поздно и пытаются выполнить развертывание в рабочей среде.
+
+## <a name="definitions-and-foundational-information"></a>Определения и базовые сведения
+
+Прежде чем приступать к подробным сведениям о политике в качестве рабочего процесса кода, ознакомьтесь со следующими определениями и примерами.
+
+- [Определение политики](./definition-structure.md)
+- [Определение инициативы](./initiative-definition-structure.md)
+
+Имена файлов выявляются в соответствии с частями определения политики или инициативы:
+- `policy(set).json`— Полное определение
+- `policy(set).parameters.json`— `properties.parameters` Часть определения;
+- `policy.rules.json`— `properties.policyRule` Часть определения;
+- `policyset.definitions.json`— `properties.policyDefinitions` Часть определения;
+
+Примеры этих форматов файлов доступны в [репозитории GitHub в политике Azure](https://github.com/Azure/azure-policy/):
+
+- Определение политики: [Добавление тега к ресурсам](https://github.com/Azure/azure-policy/tree/master/samples/Tags/add-tag)
+- Определение инициативы: [теги выставления счетов](https://github.com/Azure/azure-policy/tree/master/samples/PolicyInitiatives/multiple-billing-tags)
 
 ## <a name="workflow-overview"></a>Обзор рабочего процесса
 

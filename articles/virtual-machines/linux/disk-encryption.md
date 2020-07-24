@@ -8,12 +8,12 @@ ms.author: rogarana
 ms.service: virtual-machines-linux
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: 0847f2360a3562f96454992470e3cc2000f66b11
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: fba16f9245c8d438268338329ebadad7a57ef206
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86502730"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87131928"
 ---
 # <a name="server-side-encryption-of-azure-disk-storage"></a>Шифрование Хранилище дисков Azure на стороне сервера
 
@@ -80,8 +80,7 @@ ms.locfileid: "86502730"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Включение сквозного шифрования с помощью шифрования в Host-CLI](disks-enable-host-based-encryption-cli.md)
-- [Включение двойного шифрования при хранении для управляемых дисков — CLI](disks-enable-double-encryption-at-rest-cli.md)
-- [Включить управляемые пользователем ключи для управляемых дисков — CLI](disks-enable-customer-managed-keys-cli.md)
-- [Включить управляемые пользователем ключи для управляемых дисков (портал)](disks-enable-customer-managed-keys-portal.md)
+- Включите сквозное шифрование с помощью шифрования на узле с интерфейсом [командной строки](disks-enable-host-based-encryption-cli.md) или [портал Azure](disks-enable-host-based-encryption-portal.md).
+- Включите двойное шифрование при неактивных дисках для управляемых дисков с помощью [интерфейса командной строки](disks-enable-double-encryption-at-rest-cli.md) или [портал Azure](disks-enable-double-encryption-at-rest-portal.md).
+- Включите управляемые пользователем ключи для управляемых дисков с помощью [интерфейса командной строки](disks-enable-customer-managed-keys-cli.md) или [портал Azure](disks-enable-customer-managed-keys-portal.md).
 - [Что такое хранилище ключей Azure?](../../key-vault/general/overview.md)
