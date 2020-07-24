@@ -9,11 +9,12 @@ ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
 ms.custom: monitoring
-ms.openlocfilehash: 5613453667e3bb278f4da22ebed4502def70235b
-ms.sourcegitcommit: 50673ecc5bf8b443491b763b5f287dde046fdd31
+ms.openlocfilehash: b4bb17fce7be7aeff2a6978177106201e4c80aee
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83675902"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87087277"
 ---
 # <a name="azure-storage-analytics-metrics-classic"></a>Метрики Аналитики Службы хранилища Azure (классические)
 
@@ -145,18 +146,16 @@ queueClient.SetServiceProperties(serviceProperties);
 
 Чтобы скачивать метрики для длительного хранения или анализа в локальной среде, необходимо использовать соответствующий инструмент или написать код для чтения таблиц. Необходимо скачать минутные метрики для анализа. Эти таблицы не отображаются при выводе списка таблиц в учетной записи хранения. Однако к ним можно обращаться напрямую по имени. Многие инструменты обзора хранилищ поддерживают эти таблицы и позволяют просматривать их напрямую. Список доступных инструментов указан в разделе [Клиентские инструменты службы хранилища Azure](/azure/storage/storage-explorers).
 
-||||  
+|Метрики|Имена таблиц|Примечания| 
 |-|-|-|  
-|**Метрики**|**Имена таблиц**|**Примечания**|  
 |Часовые метрики|$MetricsHourPrimaryTransactionsBlob<br /><br /> $MetricsHourPrimaryTransactionsTable<br /><br /> $MetricsHourPrimaryTransactionsQueue<br /><br /> $MetricsHourPrimaryTransactionsFile|В версиях, выпущенных до 15 августа 2013 года, эти таблицы назывались так:<br /><br /> $MetricsTransactionsBlob<br /><br /> $MetricsTransactionsTable<br /><br /> $MetricsTransactionsQueue<br /><br /> Метрики для службы файлов доступны начиная с версии от 5 апреля 2015 года.|  
 |Минутные метрики|$MetricsMinutePrimaryTransactionsBlob<br /><br /> $MetricsMinutePrimaryTransactionsTable<br /><br /> $MetricsMinutePrimaryTransactionsQueue<br /><br /> $MetricsMinutePrimaryTransactionsFile|Могут быть включены только с помощью PowerShell или программно.<br /><br /> Метрики для службы файлов доступны начиная с версии от 5 апреля 2015 года.|  
 |Capacity|$MetricsCapacityBlob|Только для службы BLOB-объектов.|  
 
 Подробные сведения о схемах для этих таблиц см. в разделе [Схема таблицы метрик аналитики хранилища](/rest/api/storageservices/storage-analytics-metrics-table-schema). В примере строк ниже показана только часть доступных столбцов, однако они иллюстрируют некоторые важные возможности сохранения метрик с помощью метрик хранилища.  
 
-||||||||||||  
+|PartitionKey|RowKey|Timestamp|TotalRequests|TotalBillableRequests|TotalIngress|TotalEgress|Доступность|AverageE2ELatency|AverageServerLatency|PercentSuccess| 
 |-|-|-|-|-|-|-|-|-|-|-|  
-|**PartitionKey**|**RowKey**|**Timestamp**|**TotalRequests**|**TotalBillableRequests**|**TotalIngress**|**TotalEgress**|**Доступность**|**AverageE2ELatency**|**AverageServerLatency**|**PercentSuccess**|  
 |20140522T1100|user;All|2014-05-22T11:01:16.7650250Z|7|7|4003|46801|100|104.4286|6.857143|100|  
 |20140522T1100|user;QueryEntities|2014-05-22T11:01:16.7640250Z|5|5|2694|45951|100|143.8|7.8|100|  
 |20140522T1100|user;QueryEntity|2014-05-22T11:01:16.7650250Z|1|1|538|633|100|3|3|100|  

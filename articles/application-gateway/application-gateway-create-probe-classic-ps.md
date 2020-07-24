@@ -1,5 +1,5 @@
 ---
-title: Создание пользовательской пробы с помощью PowerShell — шлюза приложений Azure
+title: Создание пользовательской пробы с помощью классической модели развертывания (шлюз приложений Azure)
 description: Узнайте, как создавать пользовательские проверки для шлюза приложений с помощью PowerShell в классической модели развертывания.
 services: application-gateway
 author: vhorne
@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: how-to
 ms.date: 11/13/2019
 ms.author: victorh
-ms.openlocfilehash: 3a555fff758fdd1f4ddff60c7828a3e44af008ce
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1445d1418bde6d5d15e365c59ceb56e7661faccb
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84807286"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87088076"
 ---
 # <a name="create-a-custom-probe-for-azure-application-gateway-classic-by-using-powershell"></a>Создание пользовательской проверки для шлюза приложений (классического) Azure с помощью PowerShell
 
@@ -28,7 +28,7 @@ ms.locfileid: "84807286"
 
 [!INCLUDE [azure-ps-prerequisites-include.md](../../includes/azure-ps-prerequisites-include.md)]
 
-## <a name="create-an-application-gateway"></a>Создание шлюза приложений
+## <a name="create-an-application-gateway"></a>Создание Шлюза приложений
 
 Создание шлюза приложений:
 
@@ -142,7 +142,7 @@ Get-AzureApplicationGateway AppGwTest
 
 |Параметр|Описание|
 |---|---|
-|**Name** |Имя пользовательской пробы. |
+|**имя**; |Имя пользовательской пробы. |
 | **Протокол** | Используемый протокол (возможные значения: HTTP или HTTPS).|
 | **Host** и **Path** | Полный путь URL-адреса, который вызывается шлюзом приложений для определения работоспособности экземпляра. Например, если у вас есть веб-сайт http: \/ /contoso.com/, то пользовательская пробная проверка может быть настроена на "http: \/ /contoso.com/Path/custompath.htm" для проверки на наличие успешного HTTP-ответа.|
 | **Интервал** | Задает интервал между пробами в секундах.|
@@ -198,7 +198,7 @@ Get-AzureApplicationGateway AppGwTest
 Set-AzureApplicationGatewayConfig -Name "<application gateway name>" -Configfile "<path to file>"
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы хотите настроить протокол TLS, который ранее назывался разгрузкой SSL (SSL), см. раздел [Настройка шлюза приложений для разгрузки TLS](application-gateway-ssl.md).
 

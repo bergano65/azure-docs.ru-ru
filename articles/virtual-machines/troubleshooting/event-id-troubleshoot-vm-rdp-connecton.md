@@ -14,11 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: azurecli
 ms.date: 11/01/2018
 ms.author: delhan
-ms.openlocfilehash: d569bf454a62272a5c60cc92abc0f24715218894
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 507cd6cfe9f251dbc304b579d634ff986b001264
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85958401"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87088603"
 ---
 # <a name="troubleshoot-azure-vm-rdp-connection-issues-by-event-id"></a>Устранение неполадок с RDP-подключением к виртуальной машине по идентификатору события 
 
@@ -105,7 +106,7 @@ wevtutil qe system /c:1 /f:text /q:"Event[System[Provider[@Name='Schannel'] and 
 **Описание:** При попытке доступа к закрытому ключу учетных данных TLS-сервера произошла неустранимая ошибка. Код ошибки, возвращаемый из криптографического модуля, — 0x8009030D.  <br />
 Внутреннее состояние ошибки: 10001.
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 Эта проблема возникает из-за того, что доступ к локальным ключам шифрования RSA в папке MachineKeys на виртуальной машине невозможен. Эта проблема может возникать по любой из следующих причин:
 
 1. Неверная настройка разрешений в папке Machinekeys или в файлах RSA.
@@ -226,7 +227,7 @@ wevtutil qe system /c:1 /f:text /q:"Event[System[Provider[@Name='Schannel'] and 
 **Компьютер:**      *имя компьютера* <br />
 **Описание:** произошла неустранимая ошибка при создании учетных данных сервера TLS. Внутреннее состояние ошибки: 10013.
  
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Эта проблема вызвана политиками безопасности. Когда более старые версии TLS (например, 1.0) отключены, RDP-доступ завершается ошибкой.
 
@@ -277,7 +278,7 @@ NULL <br />
 *text* <br />
 Посредник подключений к удаленному рабочему столу не готов для связи по RPC.
 
-### <a name="cause"></a>Причина:
+### <a name="cause"></a>Причина
 
 Эта проблема возникает из-за изменения имени узла сервера посредника подключений к удаленному рабочему столу. Это неподдерживаемое изменение. 
 
@@ -287,15 +288,14 @@ NULL <br />
 
 Чтобы устранить эту проблему, необходимо переустановить роль посредника подключений к удаленному рабочему столу и внутреннюю базу данных Windows.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
-[Сведения о событиях Schannel](https://technet.microsoft.com/library/dn786445(v=ws.11).aspx)
+[Сведения о событиях Schannel](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn786445(v=ws.11))
 
-[Технический обзор Schannel SSP](https://technet.microsoft.com/library/dn786429(v=ws.11).aspx)
+[Технический обзор Schannel SSP](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn786429(v=ws.11))
 
-[Описание сбоя RDP с кодом события 1058 и 36870 с сертификатом узла сеансов удаленных рабочих столов и SSL-подключением](https://blogs.technet.microsoft.com/askperf/2014/10/22/rdp-fails-with-event-id-1058-event-36870-with-remote-desktop-session-host-certificate-ssl-communication/)
+[Описание сбоя RDP с кодом события 1058 и 36870 с сертификатом узла сеансов удаленных рабочих столов и SSL-подключением](https://techcommunity.microsoft.com/t5/ask-the-performance-team/bg-p/AskPerf)
 
-[Описание сбоя Schannel с кодом 36872 или 36870 на контроллере домена](https://blogs.technet.microsoft.com/instan/2009/01/05/schannel-36872-or-schannel-36870-on-a-domain-controller/)
+[Описание сбоя Schannel с кодом 36872 или 36870 на контроллере домена](/archive/blogs/instan/schannel-36872-or-schannel-36870-on-a-domain-controller)
 
-[Описание события с кодом 1058 — аутентификация и шифрование служб удаленных рабочих столов](https://technet.microsoft.com/library/ee890862(v=ws.10).aspx)
-
+[Описание события с кодом 1058 — аутентификация и шифрование служб удаленных рабочих столов](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee890862(v=ws.10))

@@ -70,6 +70,8 @@
           href: diagnostics-log-analytics-2019.md
     - name: Публикация встроенных приложений
       href: publish-apps-2019.md
+    - name: Настройка Многофакторной идентификации Azure
+      href: ../set-up-mfa.md
 - name: Основные понятия
   items:
     - name: Среда Виртуального рабочего стола Windows

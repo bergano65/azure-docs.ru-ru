@@ -5,15 +5,15 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: how-to
-ms.date: 06/19/2020
+ms.date: 07/20/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: c666a11f8d5e13d022309eddab16edb6aab76381
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 5fb992edea38c3dff9beffab1f131d3e7a6fdbf6
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86527767"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87087226"
 ---
 # <a name="customize-remote-desktop-protocol-rdp-properties-for-a-host-pool"></a>Настройка свойств протокол удаленного рабочего стола (RDP) для пула узлов
 
@@ -30,18 +30,6 @@ ms.locfileid: "86527767"
 ## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем начать работу, выполните эти [ инструкции](powershell-module.md), чтобы настроить модуль PowerShell для Виртуального рабочего стола Windows и войти в Azure.
-
-## <a name="default-rdp-properties"></a>Свойства RDP по умолчанию
-
-По умолчанию опубликованные RDP-файлы содержат следующие свойства.
-
-|Свойства RDP | Настольные системы | RemoteApps |
-|---|---| --- |
-| Режим с несколькими мониторами | Активировано | Недоступно |
-| Перенаправление дисков включено | Диски, буфер обмена, принтеры, COM-порты, USB-устройства и SmartCards| Диски, буфер обмена и принтеры |
-| Режим удаленного звука | Воспроизвести локально | Воспроизвести локально |
-
-Все пользовательские свойства, определяемые для пула узлов, будут переопределять эти значения по умолчанию.
 
 ## <a name="configure-rdp-properties-in-the-azure-portal"></a>Настройка свойств RDP в портал Azure
 

@@ -14,16 +14,16 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 03/25/2019
 ms.author: genli
-ms.openlocfilehash: 580ec443dc087f270e30856c336a5699bbf1ae71
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 03c1d8e6d6b5b1d55fee964b509c1bc08537cf6b
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "71058448"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87088586"
 ---
 # <a name="reset-remote-desktop-services-or-its-administrator-password-in-a-windows-vm"></a>Сброс служб удаленных рабочих столов или пароля администратора на виртуальной машине Windows
 Если не удается подключиться к виртуальной машине Windows, можно сбросить пароль локального администратора или конфигурацию служб удаленных рабочих столов (не поддерживается для контроллеров домена Windows). Для сброса пароля используйте портал Azure или расширение VMAccess в Azure PowerShell. Войдите на виртуальную машину и сбросьте пароль для этого локального администратора.  
-Если вы используете PowerShell, то убедитесь, что у вас [установлен и настроен последний модуль PowerShell](/powershell/azure/overview) и вы вошли в подписку Azure. Вы также можете [выполнить эти действия для виртуальных машин, созданных с использованием классической модели](https://docs.microsoft.com/azure/virtual-machines/windows/classic/reset-rdp).
+Если вы используете PowerShell, то убедитесь, что у вас [установлен и настроен последний модуль PowerShell](/powershell/azure/) и вы вошли в подписку Azure. Вы также можете [выполнить эти действия для виртуальных машин, созданных с использованием классической модели](/azure/virtual-machines/windows/classic/reset-rdp).
 
 Службы удаленных рабочих столов и учетные данные можно сбросить следующим образом.
 
@@ -55,11 +55,11 @@ ms.locfileid: "71058448"
 
 ## <a name="reset-by-using-the-vmaccess-extension-and-powershell"></a>Сброс с помощью расширения VMAccess и PowerShell
 
-Сначала убедитесь, что у вас [установлен и настроен последний модуль PowerShell](/powershell/azure/overview) и вы вошли в подписку Azure, выполнив командлет [Connect-AzAccount](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount).
+Сначала убедитесь, что у вас [установлен и настроен последний модуль PowerShell](/powershell/azure/) и вы вошли в подписку Azure, выполнив командлет [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount).
 
 ### <a name="reset-the-local-administrator-account-password"></a>**Сброс пароля учетной записи локального администратора**
 
-- Сбросьте пароль или имя пользователя администратора, выполнив командлет PowerShell [Set-AzVMAccessExtension](https://docs.microsoft.com/powershell/module/az.compute/set-azvmaccessextension). Параметр `typeHandlerVersion` должен быть версии 2.0 или выше, так как версия 1 признана нерекомендуемой. 
+- Сбросьте пароль или имя пользователя администратора, выполнив командлет PowerShell [Set-AzVMAccessExtension](/powershell/module/az.compute/set-azvmaccessextension). Параметр `typeHandlerVersion` должен быть версии 2.0 или выше, так как версия 1 признана нерекомендуемой. 
 
     ```powershell
     $SubID = "<SUBSCRIPTION ID>" 
@@ -77,7 +77,7 @@ ms.locfileid: "71058448"
 
 ### <a name="reset-the-remote-desktop-services-configuration"></a>**Сброс конфигурации служб удаленных рабочих столов**
 
-1. Сбросьте параметры удаленного доступа к виртуальной машине с помощью командлета PowerShell [Set-AzVMAccessExtension](https://docs.microsoft.com/powershell/module/az.compute/set-azvmaccessextension). Следующий пример сбрасывает параметры расширения доступа `myVMAccess` на виртуальной машине `myVM` в группе ресурсов `myResourceGroup`.
+1. Сбросьте параметры удаленного доступа к виртуальной машине с помощью командлета PowerShell [Set-AzVMAccessExtension](/powershell/module/az.compute/set-azvmaccessextension). Следующий пример сбрасывает параметры расширения доступа `myVMAccess` на виртуальной машине `myVM` в группе ресурсов `myResourceGroup`.
 
     ```powershell
     Set-AzVMAccessExtension -ResourceGroupName "myResoureGroup" -VMName "myVM" -Name "myVMAccess" -Location WestUS -typeHandlerVersion "2.0" -ForceRerun
@@ -94,7 +94,6 @@ ms.locfileid: "71058448"
 
 - [Сведения о расширениях и функциях виртуальных машин Azure](../extensions/features-windows.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
-- [Подключитесь к виртуальной машине Azure с помощью RDP или SSH](https://msdn.microsoft.com/library/azure/dn535788.aspx).
+- [Подключитесь к виртуальной машине Azure с помощью RDP или SSH](/previous-versions/azure/dn535788(v=azure.100)).
 
 - [Устранение неполадок удаленный рабочий стол подключений к виртуальной машине Azure под управлением Windows](troubleshoot-rdp-connection.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
-

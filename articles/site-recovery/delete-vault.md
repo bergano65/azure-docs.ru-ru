@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 11/05/2019
 ms.author: rajanaki
-ms.openlocfilehash: e1254a2998a0acbf86b3689c66b83502c0334282
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: 8237888d46e1f1ad48e678234cf1edce3558876a
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86134488"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87089589"
 ---
 # <a name="delete-a-site-recovery-services-vault"></a>Удаление хранилища Служб восстановления для Site Recovery
 
@@ -21,7 +21,7 @@ ms.locfileid: "86134488"
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 
-## <a name="before-you-start"></a>Перед началом работы
+## <a name="before-you-start"></a>Прежде чем начать
 
 Прежде чем можно будет удалить хранилище, необходимо удалить зарегистрированные серверы и элементы в хранилище. То, что необходимо удалить, зависит от развернутых сценариев репликации. 
 
@@ -64,12 +64,14 @@ ms.locfileid: "86134488"
 
 Используйте приведенные ниже команды, чтобы удалить хранилище Site Recovery, даже если оно содержит защищенные элементы.
 
-    Connect-AzAccount
+```azurepowershell
+Connect-AzAccount
 
-    Select-AzSubscription -SubscriptionName "XXXXX"
+Select-AzSubscription -SubscriptionName "XXXXX"
 
-    $vault = Get-AzRecoveryServicesVault -Name "vaultname"
+$vault = Get-AzRecoveryServicesVault -Name "vaultname"
 
-    Remove-AzRecoveryServicesVault -Vault $vault
+Remove-AzRecoveryServicesVault -Vault $vault
+```
 
 Дополнительные сведения о [Get-азрековерисервицесваулт](/powershell/module/az.recoveryservices/get-azrecoveryservicesvault)и [Remove-азрековерисервицесваулт](/powershell/module/az.recoveryservices/remove-azrecoveryservicesvault).

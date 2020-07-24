@@ -1,5 +1,5 @@
 ---
-title: Подключение к виртуальному рабочему столу Windows из Android — Azure
+title: Подключение к виртуальному рабочему столу Windows — 2019 из Android — Azure
 description: Как подключиться к виртуальному рабочему столу Windows с помощью клиента Android.
 services: virtual-desktop
 author: heidilohr
@@ -8,11 +8,12 @@ ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 802e957c9473276dfa73a3ffd93fdd7c526dbf26
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ccea4e39146500cb9d3796c4ca99725e2e2ac429
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85213250"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87087158"
 ---
 # <a name="connect-with-the-android-client"></a>Подключение к клиенту Android
 
@@ -50,6 +51,6 @@ ms.locfileid: "85213250"
 
 Когда вы подпишетесь на веб-канал, его содержимое будет регулярно автоматически обновляться. Ресурсы могут добавляться, изменяться или удаляться в соответствии с изменениями, внесенными администратором.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения об использовании клиента Android см. в статье Начало [работы с клиентом Android](/windows-server/remote/remote-desktop-services/clients/remote-desktop-android/).

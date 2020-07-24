@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 06/06/2020
 ms.author: victorh
 ms.custom: fasttrack-edit, references_regions
-ms.openlocfilehash: 4caed3f330dd3e50fe2652a2cd33c0e4249f2fd9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0a82a35f1736aa7908928cbca3397cbe9c705e5b
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85254350"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87088112"
 ---
 # <a name="autoscaling-and-zone-redundant-application-gateway-v2"></a>Автоматическое масштабирование и Шлюз приложений, избыточный между зонами, версии 2 
 
@@ -148,7 +148,7 @@ SKU Standard_v2 и WAF_v2 доступен в следующих региона�
 
 В следующей таблице перечислены функции, доступные в каждом SKU.
 
-|                                                   | SKU версии 1   | SKU версии 2   |
+| Функция                                           | SKU версии 1   | SKU версии 2   |
 | ------------------------------------------------- | -------- | -------- |
 | Автомасштабирование                                       |          | &#x2713; |
 | Избыточность в пределах зоны                                   |          | &#x2713; |

@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/16/2017
 ms.author: rohink
-ms.openlocfilehash: af19586807bf676f1f449f7402b364a054721eec
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: e9d995a69a4fc54d6f001ced7503a9138d737dbc
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86187597"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87089045"
 ---
 # <a name="using-powershell-to-manage-traffic-manager"></a>Использование PowerShell для управления диспетчером трафика
 
@@ -38,7 +38,7 @@ Azure Resource Manager представляет собой предпочтит�
 
 В данных инструкциях используется Microsoft Azure PowerShell. В следующей статье объясняется, как установить и настроить Azure PowerShell:
 
-* [Как установить и настроить Azure PowerShell](/powershell/azure/overview)
+* [Как установить и настроить Azure PowerShell](/powershell/azure/)
 
 Для приведенных в этой статье примеров предполагается, что у вас уже есть группа ресурсов. Чтобы создать группу ресурсов, выполните следующую команду:
 

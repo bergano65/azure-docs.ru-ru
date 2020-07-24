@@ -6,22 +6,22 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 07/06/2020
+ms.date: 07/16/2020
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: 26faad0bb8aeb8dff693eea4cb9d47e0df1814b4
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: 30e8bd7fda08795ecc1aa78b0d2507e7c915ad0d
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86027344"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87087260"
 ---
 # <a name="configure-azure-storage-connection-strings"></a>Настройка строк подключения службы хранилища Azure
 
 Строка подключения содержит сведения об авторизации, необходимые приложению для доступа к данным в учетной записи хранения Azure во время выполнения с помощью авторизации общего ключа. Настройка строки подключения позволяет выполнить следующие действия:
 
-* подключиться к эмулятору хранилища Azure;
+* Подключитесь к эмулятору хранения Азурите.
 * получить доступ к учетной записи хранения в Azure;
 * получить доступ к указанным ресурсам Azure через подписанный URL-адрес (SAS).
 
@@ -37,15 +37,15 @@ ms.locfileid: "86027344"
 * Приложение, работающее на настольном компьютере или на устройстве, может хранить строку подключения в файле **app.config** или **web.config**. Добавьте строку подключения в раздел **AppSettings** в этих файлах.
 * Приложение, работающее в облачной службе Azure, может хранить строку подключения в [файле схемы конфигурации службы Azure (.cscfg)](https://msdn.microsoft.com/library/ee758710.aspx). Добавьте строку подключения в раздел **ConfigurationSettings** файла конфигурации службы.
 
-Хранение строки подключения в файле конфигурации упрощает обновление строки подключения для переключения между эмулятором хранения и учетной записью хранения Azure в облаке. Вам потребуется только изменить строку подключения, чтобы указать целевую среду.
+Хранение строки подключения в файле конфигурации упрощает обновление строки подключения для переключения между [эмулятором хранения азурите](../common/storage-use-azurite.md) и учетной записью хранения Azure в облаке. Вам потребуется только изменить строку подключения, чтобы указать целевую среду.
 
 Вы можете использовать [Microsoft Azure Configuration Manager](https://www.nuget.org/packages/Microsoft.Azure.ConfigurationManager/) для доступа к строке подключения в среде выполнения независимо от того, где выполняется приложение.
 
-## <a name="configure-a-connection-string-for-the-storage-emulator"></a>Настройка строки подключения для эмулятора хранения
+## <a name="configure-a-connection-string-for-azurite"></a>Настройка строки подключения для Азурите
 
 [!INCLUDE [storage-emulator-connection-string-include](../../../includes/storage-emulator-connection-string-include.md)]
 
-Дополнительные сведения об эмуляторе хранения см. в статье [Использование эмулятора хранения Azure для разработки и тестирования](storage-use-emulator.md).
+Дополнительные сведения о Азурите см. [в статье Использование эмулятора азурите для локальной разработки службы хранилища Azure](../common/storage-use-azurite.md).
 
 ## <a name="configure-a-connection-string-for-an-azure-storage-account"></a>Настройка строки подключения для учетной записи хранения Azure
 
@@ -138,8 +138,8 @@ EndpointSuffix=core.chinacloudapi.cn;
 
 [!INCLUDE [storage-cloud-configuration-manager-include](../../../includes/storage-cloud-configuration-manager-include.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Использование эмулятора хранения Azure для разработки и тестирования](storage-use-emulator.md)
+* [Использование эмулятора Азурите для разработки локальных хранилищ Azure](../common/storage-use-azurite.md)
 * [Клиентские инструменты службы хранилища Azure](storage-explorers.md)
 * [Использование подписанных URL-адресов](storage-sas-overview.md)

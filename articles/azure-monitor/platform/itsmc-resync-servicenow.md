@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: nolavime
 ms.date: 04/12/2020
-ms.openlocfilehash: f09f5010c18f5ea064b02f0fbbae107bf473e1f8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a3382f93990612b0ab34eb0848cbf3d6577c44ff
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81313672"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87087940"
 ---
 # <a name="how-to-manually-fix-servicenow-sync-problems"></a>Как вручную исправить проблемы синхронизации ServiceNow
 
@@ -38,7 +38,7 @@ Azure Monitor может подключаться к поставщикам уп
     1. Щелкните имя соединителя, чтобы настроить его.
     1. Удаление всех соединителей, которые больше не используются
 
-    1. Обновление полей в соответствии с [этими определениями](https://docs.microsoft.com/azure/azure-monitor/platform/itsmc-connections) в зависимости от типа партнера
+    1. Обновление полей в соответствии с [этими определениями](./itsmc-connections.md) в зависимости от типа партнера
 
     1. Щелкните "синхронизировать"
 
@@ -50,6 +50,6 @@ Azure Monitor может подключаться к поставщикам уп
 
 е)    Просмотрите уведомления, чтобы узнать, завершился ли процесс успешно 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о [подключениях управления ИТ Service Management](itsmc-connections.md)

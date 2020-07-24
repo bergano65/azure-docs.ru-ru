@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 4/9/2019
 ms.author: mayg
-ms.openlocfilehash: bced6a9e6c59dc32657dbabef986e29e0447b28b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 29457f2f5021fed9d8785f5764c4119de4be1fa9
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "60947228"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87089555"
 ---
 # <a name="cost-estimation-report-by-azure-site-recovery-deployment-planner"></a>Отчет об оценке затрат, созданный в планировщике развертывания Azure Site Recovery 
 
@@ -107,9 +107,9 @@ ms.locfileid: "60947228"
 
 1. Укажите значения в следующих столбцах на основе приблизительного размера и числа виртуальных машин, которые соответствуют этой конфигурации: 
 
-    а. **Число виртуальных машин**
+    А. **Число виртуальных машин**
 
-    b. **IaaS size (Your selection)** (Размер IaaS (по вашему выбору)).
+    Б. **IaaS size (Your selection)** (Размер IaaS (по вашему выбору)).
 
     c. **Storage type** (Тип хранилища): Standard или Premium.
 
@@ -167,16 +167,16 @@ eastus, eastus2, westus, centralus, northcentralus, southcentralus, northeurope,
 ## <a name="supported-currencies"></a>Поддерживаемые валюты
 При помощи планировщика развертывания Site Recovery можно создать отчет с использованием любой из следующих валют.
 
-|Валюта|Имя||Валюта|Имя||Валюта|Имя|
+|Валюта|Имя|Валюта|Имя|Валюта|Имя|
 |---|---|---|---|---|---|---|---|
-|ARS|Аргентинское песо ($)||AUD|Австралийский доллар ($)||BRL|Бразильский реал (R$)|
-|CAD|Канадский доллар ($)||CHF|Швейцарский франк (chf)||DKK|Датская крона (kr)|
-|EUR|Евро (€)||GBP|Британский фунт (£)||HKD|Гонконгский доллар (HK$)|
-|IDR|Индонезийская рупия (Rp)||INR|Индийская рупия (₹)||JPY|Японская йена (¥)|
-|KRW|Корейская вона (₩)||MXN|Мексиканское песо (MX$)||MYR|Малайзийский ринггит (RM$)|
+|ARS|Аргентинское песо ($)|AUD|Австралийский доллар ($)|BRL|Бразильский реал (R$)|
+|CAD|Канадский доллар ($)|CHF|Швейцарский франк (chf)|DKK|Датская крона (kr)|
+|EUR|Евро (€)|GBP|Британский фунт (£)|HKD|Гонконгский доллар (HK$)|
+|IDR|Индонезийская рупия (Rp)|INR|Индийская рупия (₹)|JPY|Японская йена (¥)|
+|KRW|Корейская вона (₩)|MXN|Мексиканское песо (MX$)|MYR|Малайзийский ринггит (RM$)|
 |NOK|Норвежская крона (kr)||NZD|Новозеландский доллар ($)||RUB|Российский рубль (руб)|
-|SAR|Саудовский риял (SR)||SEK|Шведская крона (kr)||TWD|Тайваньский доллар (NT$)|
-|TRY|Турецкая лира (TL)||USD| Доллар США ($)||ZAR|Южноафриканский рэнд (R)|
+|SAR|Саудовский риял (SR)|SEK|Шведская крона (kr)|TWD|Тайваньский доллар (NT$)|
+|TRY|Турецкая лира (TL)|USD| Доллар США ($)|ZAR|Южноафриканский рэнд (R)|
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о способах защиты см. в статье [Set up disaster recovery of on-premises Hyper-V VMs to Azure](hyper-v-azure-tutorial.md) (Настройка аварийного восстановления локальных виртуальных машин Hyper-V в Azure).

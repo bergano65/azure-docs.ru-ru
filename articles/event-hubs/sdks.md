@@ -3,12 +3,12 @@ title: Концентраторы событий Azure — клиентские 
 description: В этой статье содержатся сведения о клиентских пакетах SDK для концентраторов событий Azure.
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 4c3557556500f2a536e20331bd3d05d84f608f0b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 2b75a66197b152425198b94a68ac77e392cb4c0e
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85312550"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87087566"
 ---
 # <a name="azure-event-hubs---client-sdks"></a>Концентраторы событий Azure — клиентские пакеты SDK
 В этой статье содержатся следующие сведения о пакетах SDK, поддерживаемых концентраторами событий Azure: 
@@ -20,14 +20,14 @@ ms.locfileid: "85312550"
 ## <a name="client-sdks"></a>Клиентские пакеты SDK
 В следующей таблице описаны все доступные в настоящее время клиенты среды выполнения концентраторов событий Azure. Хотя некоторые из этих библиотек включают в себя ограниченные функции управления, также существуют специальные библиотеки, предназначенные для операций управления. Основное внимание этих библиотек заключается в том, чтобы **отправлять и получать сообщения** из концентратора событий.
 
-| Язык | Пакет | Справка | 
+| Язык | Пакет | Справочник | 
 | -------- | ------- | --------------- | 
 | . NET Standard (**Последняя версия** и поддерживает .NET Core и .NET Framework) | [Azure. Messaging. EventHubs](https://www.nuget.org/packages/Azure.Messaging.EventHubs/) |<ul><li>[Расположение GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/eventhub/Azure.Messaging.EventHubs)</li><li>[Руководство](get-started-dotnet-standard-send-v2.md)</li></ul> |
 |       | [Azure. Messaging. EventHubs. Processor](https://www.nuget.org/packages/Azure.Messaging.EventHubs.Processor/) | <ul><li>[Расположение GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/eventhub/Azure.Messaging.EventHubs.Processor)</li><li>[Руководство](get-started-dotnet-standard-send-v2.md)</li></ul> |
 | . NET Standard (**устаревший** и поддерживает .NET Core и .NET Framework) | [Microsoft.Azure.EventHubs](https://www.nuget.org/packages/Microsoft.Azure.EventHubs/) | <ul><li>[Расположение GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/eventhub/Microsoft.Azure.EventHubs)</li><li>[Руководство](event-hubs-dotnet-standard-getstarted-send.md)</li></ul> | 
 |       | [Microsoft.Azure.EventHubs.Processor](https://www.nuget.org/packages/Microsoft.Azure.EventHubs.Processor) | <ul><li>[Расположение GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/eventhub/Microsoft.Azure.EventHubs.Processor)</li><li>[Руководство](event-hubs-dotnet-standard-getstarted-send.md)</li></ul> |
 | . NET Framework (**старая**версия) | [WindowsAzure.Messaging](https://www.nuget.org/packages/WindowsAzure.ServiceBus/) |<ul><li>[Руководство](event-hubs-dotnet-framework-getstarted-send.md)</li></ul> |
-| Java | [Azure-Messaging-eventhubs](https://search.maven.org/search?q=a:azure-messaging-eventhubs) | <ul><li>[Расположение GitHub](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/eventhubs/azure-messaging-eventhubs)</li><li>[Руководство](get-started-java-send-v2.md)</li></ul> |
+| Java | [azure-messaging-eventhubs](https://search.maven.org/search?q=a:azure-messaging-eventhubs) | <ul><li>[Расположение GitHub](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/eventhubs/azure-messaging-eventhubs)</li><li>[Руководство](get-started-java-send-v2.md)</li></ul> |
 |      | [Azure-eventhubs](https://search.maven.org/search?q=a:azure-eventhubs) **(устаревшая)** | <ul><li>[Расположение GitHub](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/eventhubs/microsoft-azure-eventhubs)</li><li>[Руководство](event-hubs-java-get-started-send.md)</li></ul> |
 | Python |  [azure-eventhub](https://pypi.org/project/azure-eventhub/) | <ul><li>[Расположение GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/eventhub/azure-eventhub)</li><li>[Руководство](get-started-python-send-v2.md)</li></ul> |
 |        | [azure-eventhub-checkpointstoreblob-aio](https://pypi.org/project/azure-eventhub-checkpointstoreblob-aio/) | <ul><li>[Расположение GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/eventhub/azure-eventhub-checkpointstoreblob-aio)</li><li>[Руководство](get-started-python-send-v2.md)</li></ul> |
@@ -39,7 +39,7 @@ ms.locfileid: "85312550"
 ## <a name="management-sdks"></a>Пакеты SDK для управления
 В приведенной ниже таблице перечислены все доступные библиотеки, предназначенные для операций управления. Ни одна из этих библиотек не содержит операций среды выполнения и предназначена исключительно для **управления сущностями концентраторов событий**.
 
-| Язык | Пакет | Справка | 
+| Язык | Пакет | Справочник | 
 | -------- | ------- | --------------- | 
 | .NET Standard | [Microsoft.Azure.Management.EventHub](https://www.nuget.org/packages/Microsoft.Azure.Management.EventHub) |<ul><li>[Расположение GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/eventhub/Microsoft.Azure.Management.EventHub)</li><li>[Руководство](get-started-dotnet-standard-send-v2.md)</li></ul> |
 
@@ -48,6 +48,6 @@ ms.locfileid: "85312550"
 
 Дополнительные сведения о Центрах событий см. в следующих источниках:
 
-* [Общие сведения о Центрах событий](event-hubs-what-is-event-hubs.md)
+* [Общие сведения о Центрах событий](./event-hubs-about.md)
 * [Создание концентратора событий](event-hubs-create.md)
 * [Часто задаваемые вопросы о Центрах событий](event-hubs-faq.md)

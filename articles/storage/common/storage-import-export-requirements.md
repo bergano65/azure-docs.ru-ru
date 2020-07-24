@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 08/12/2019
 ms.author: alkohli
 ms.subservice: common
-ms.openlocfilehash: 6da9490d5d9a876922fb9c2ba5d908db411adb1a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 877d1442c346b321562cb396a77224a6b40c7df2
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85512409"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87087243"
 ---
 # <a name="azure-importexport-system-requirements"></a>Требования к системе для импорта и экспорта Azure
 
@@ -26,12 +26,12 @@ ms.locfileid: "85512409"
 
 |Платформа |Версия |
 |---------|---------|
-|Windows     | Windows 7 Корпоративная, Windows 7 Максимальная <br> Windows 8 Pro, Windows 8 Корпоративная, Windows 8.1 Pro, Windows 8.1 Корпоративная <br> быть под управлением ОС Windows 10;        |
+|Windows     | Windows 7 Корпоративная, Windows 7 Максимальная <br> Windows 8 Pro, Windows 8 Корпоративная, Windows 8.1 Pro, Windows 8.1 Корпоративная <br> Windows 10        |
 |Windows Server     |Windows Server 2008 R2 <br> Windows Server 2012, Windows Server 2012 R2         |
 
 ## <a name="other-required-software-for-windows-client"></a>Другое необходимое программное обеспечение для клиента Windows
 
-|Платформа |Версия |
+|Платформа |Version |
 |---------|---------|
 |.NET Framework    | 4.5.1       |
 | BitLocker        |  _          |
@@ -50,7 +50,7 @@ ms.locfileid: "85512409"
 Каждое задание может использоваться для обмена данными только с одной учетной записью хранения. Другими словами, отдельное задание импорта и экспорта не может распространяться на несколько учетных записей хранения. Сведения о создании учетной записи хранения см. в разделе [Создание учетной записи хранения](storage-account-create.md).
 
 > [!IMPORTANT]
-> Служба импорта и экспорта Azure не поддерживает учетные записи хранения, в которых включена функция [конечных точек службы виртуальной сети](../../virtual-network/virtual-network-service-endpoints-overview.md)   . 
+> Для учетных записей хранения, в которых включена функция [конечных точек службы виртуальной сети](../../virtual-network/virtual-network-service-endpoints-overview.md)   , используйте параметр **Разрешить доверенные службы Майкрософт...** [Включение службы импорта](/storage-network-security.md) и экспорта для выполнения импорта и экспорта данных в Azure и обратно.
 
 ## <a name="supported-storage-types"></a>Поддерживаемые типы хранилища
 
@@ -60,7 +60,7 @@ ms.locfileid: "85512409"
 |Задание  |Служба хранилища |Поддерживается  |Не поддерживается  |
 |---------|---------|---------|---------|
 |Импорт     |  Хранилище BLOB-объектов Azure <br><br> Хранилище файлов Azure       | Поддерживаются блочные и страничные BLOB-объекты <br><br> Поддерживаются файлы          |
-|Экспортировать     |   Хранилище BLOB-объектов Azure       | Поддерживаются блочные, страничные и добавочные BLOB-объекты         | Служба файлов Azure не поддерживается
+|Экспорт     |   Хранилище BLOB-объектов Azure       | Поддерживаются блочные, страничные и добавочные BLOB-объекты         | Служба файлов Azure не поддерживается
 
 
 ## <a name="supported-hardware"></a>Поддерживаемое оборудование
@@ -72,7 +72,7 @@ ms.locfileid: "85512409"
 Ниже представлен список поддерживаемых дисков для использования со службой импорта и экспорта Azure.
 
 
-|Тип диска  |Размер  |Поддерживается |
+|Тип диска  |Size  |Поддерживается |
 |---------|---------|---------|
 |SSD    |   2,5"      |SATA III          |
 |HDD     |  2,5"<br>3,5"       |SATA II, SATA III         |
@@ -92,6 +92,6 @@ ms.locfileid: "85512409"
 
 Во время подготовки жестких дисков и копирования данных с помощью инструмента WAImportExport можно использовать внешние адаптеры USB. Большинство стандартных адаптеров USB 3.0 или более поздних версий должны работать.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Перенос данных с помощью служебной программы командной строки AzCopy](storage-use-azcopy.md)

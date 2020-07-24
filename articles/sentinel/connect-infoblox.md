@@ -14,14 +14,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/17/2020
 ms.author: yelevin
-ms.openlocfilehash: ed4f2d769dbda3dec7b353fddfd1e5e0f3d00f9b
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: c8af1c32607e5fc7bf548b40069e18923c666303
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86532173"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87089657"
 ---
 # <a name="connect-your-infoblox-nios-to-azure-sentinel"></a>Подключение Инфоблокс Ниос к Azure Sentinel
+
+> [!IMPORTANT]
+> Соединитель данных Инфоблокс Ниос в Azure Sentinel сейчас находится в общедоступной предварительной версии.
+> Эта функция предоставляется без соглашения об уровне обслуживания и не рекомендуется для рабочих нагрузок. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 В этой статье описывается подключение [устройства Инфоблокс Networking System (Ниос)](https://www.infoblox.com/glossary/network-identity-operating-system-nios/) к Azure Sentinel. Соединитель данных Инфоблокс Ниос позволяет легко подключать журналы Инфоблокс к Azure Sentinel, просматривать панели мониторинга, создавать пользовательские оповещения и улучшать исследование. При интеграции между Инфоблокс Ниос и Sentinel Azure используется системный журнал.
 

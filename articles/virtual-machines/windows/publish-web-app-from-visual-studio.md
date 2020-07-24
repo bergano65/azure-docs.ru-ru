@@ -10,18 +10,18 @@ ms.workload: azure-vs
 ms.topic: how-to
 ms.date: 11/03/2017
 ms.author: ghogen
-ms.openlocfilehash: d864230ff524f6c008f9f05c16505cd9d0e9f229
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bdc03e8c136606ab7768705b0c8dbcc97782966f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82583352"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87088399"
 ---
 # <a name="publish-an-aspnet-web-app-to-an-azure-vm-from-visual-studio"></a>Публикация веб-приложения ASP.NET на виртуальную машину Azure из Visual Studio
 
 В этом документе описывается публикация веб-приложения ASP.NET на виртуальной машине Azure с помощью функции публикации **виртуальные машины Microsoft Azure** в Visual Studio 2019.  
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 Чтобы использовать Visual Studio для публикации проекта ASP.NET на виртуальную машину Azure, ее необходимо правильно настроить.
 
 - Компьютер должен быть настроен для запуска веб-приложения ASP.NET и установки WebDeploy. Дополнительные сведения см. в статье [Создание виртуальной машины ASP.NET с помощью WebDeploy](https://github.com/aspnet/Tooling/blob/AspNetVMs/docs/create-asp-net-vm-with-webdeploy.md).
@@ -111,7 +111,7 @@ ms.locfileid: "82583352"
 
 ### <a name="set-up-cicd-for-automated-deployment-to-azure-vm"></a>Настройка непрерывной интеграции и непрерывного развертывания для автоматизированного развертывания на виртуальную машину Azure
 
-Чтобы настроить конвейер непрерывной поставки с помощью Azure Pipelines, ознакомьтесь со статьей [Deploy to a Windows Virtual Machine](https://docs.microsoft.com/vsts/build-release/apps/cd/deploy-webdeploy-iis-deploygroups) (Развертывание на виртуальную машину Windows).
+Чтобы настроить конвейер непрерывной поставки с помощью Azure Pipelines, ознакомьтесь со статьей [Deploy to a Windows Virtual Machine](/vsts/build-release/apps/cd/deploy-webdeploy-iis-deploygroups) (Развертывание на виртуальную машину Windows).
 
 [VM Overview - DNS Name]: ../../../includes/media/publish-web-app-from-visual-studio/VMOverviewDNSName.png
 [IP Address Config - DNS Name]: ../../../includes/media/publish-web-app-from-visual-studio/IPAddressConfigDNSName.png

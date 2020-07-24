@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 10/25/2019
-ms.openlocfilehash: 479c5165c206ced9f387d7b4a475945173da8a16
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: 6d720eee668edf2de968f0ce6955a5a586a92419
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86086234"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87087685"
 ---
 # <a name="custom-roles-for-sql-server-to-azure-sql-managed-instance-online-migrations"></a>Пользовательские роли для SQL Server в Azure SQL Управляемый экземпляр оперативные миграции
 
@@ -83,7 +83,7 @@ Azure Database Migration Service использует идентификатор
 
 Приведенный выше код JSON должен храниться в трех текстовых файлах. для создания ролей можно использовать командлеты AzureRM, AZ PowerShell или Azure CLI, чтобы создать роли с помощью **New-AzureRmRoleDefinition (AzureRM)** или **New-азроледефинитион (AZ)**.
 
-Дополнительные сведения см. в статье [пользовательские роли для ресурсов Azure](https://docs.microsoft.com/azure/role-based-access-control/custom-roles).
+Дополнительные сведения см. в статье [пользовательские роли Azure](https://docs.microsoft.com/azure/role-based-access-control/custom-roles).
 
 После создания этих пользовательских ролей необходимо добавить назначения ролей для пользователей и ИДЕНТИФИКАТОРов приложений в соответствующие ресурсы или группы ресурсов:
 
@@ -138,7 +138,7 @@ Azure Database Migration Service использует идентификатор
 }
 ```
 
-## <a name="role-assignment"></a>Назначение роли
+## <a name="role-assignment"></a>Назначение ролей
 
 Чтобы назначить роль для пользователей или ИДЕНТИФИКАТОРов приложений, откройте портал Azure выполните следующие действия.
 
@@ -148,6 +148,6 @@ Azure Database Migration Service использует идентификатор
 
   ИДЕНТИФИКАТОРы приложений теперь отображаются на вкладке **назначения ролей** .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Ознакомьтесь с руководством по миграции для вашего сценария в [руководстве по миграции базы данных](https://datamigration.microsoft.com/)Майкрософт.

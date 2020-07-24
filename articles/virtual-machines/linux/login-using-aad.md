@@ -1,18 +1,18 @@
 ---
 title: Вход на виртуальную машину Linux с учетными данными Azure Active Directory
 description: Узнайте, как создать и настроить виртуальную машину Linux для входа с помощью Azure Active Directory проверки подлинности.
-author: iainfoulds
+author: SanDeo-MSFT
 ms.service: virtual-machines-linux
 ms.topic: article
 ms.workload: infrastructure
 ms.date: 08/29/2019
-ms.author: iainfou
-ms.openlocfilehash: c5275a979cbffe7fb6600978487454ac11cd2002
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.author: sandeo
+ms.openlocfilehash: 89b89d30de46727f4d5b52a236a4b0133e663bb9
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86510435"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87088773"
 ---
 # <a name="preview-log-in-to-a-linux-virtual-machine-in-azure-using-azure-active-directory-authentication"></a>Предварительный просмотр. Войдите на виртуальную машину Linux в Azure, используя проверку подлинности Azure Active Directory
 
@@ -113,7 +113,7 @@ az vm extension set \
 
 ## <a name="configure-role-assignments-for-the-vm"></a>Настройка назначений ролей для виртуальной машины
 
-Политика управления доступом на основе ролей (RBAC) Azure определяет, кто может входить на виртуальную машину. Для авторизации входа на виртуальную машину используются две роли RBAC:
+Политика управления доступом на основе ролей Azure (Azure RBAC) определяет, кто может входить в виртуальную машину. Для авторизации входа на виртуальную машину используются две роли RBAC:
 
 - **Имя для входа администратора виртуальной машины.** Пользователи с этой ролью могут входить на виртуальную машину Azure с правами администратора Windows или привилегированного пользователя Linux.
 - **Имя для входа пользователя виртуальной машины.** Пользователи с этой ролью могут входить на виртуальную машину Azure с правами обычного пользователя.

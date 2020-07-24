@@ -1,5 +1,5 @@
 ---
-title: Отправка запросов и подключение к Synapse SQL с помощью Visual Studio и SSDT
+title: Подключение и запрос синапсе SQL с помощью Visual Studio и SSDT
 description: Используйте Visual Studio для отправки запросов к пулу SQL с помощью Azure Synapse Analytics.
 services: synapse analytics
 author: azaricstefan
@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: v-stazar
 ms.reviewer: jrasnick
-ms.openlocfilehash: 3f98a9d6dd79ba1da1a3be1e9e187ed4e8eca8ee
-ms.sourcegitcommit: 845a55e6c391c79d2c1585ac1625ea7dc953ea89
+ms.openlocfilehash: 93c975bbbc69a43f1bd47bd4b1e7b857338ac1c0
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2020
-ms.locfileid: "85962992"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87089249"
 ---
 # <a name="connect-to-synapse-sql-with-visual-studio-and-ssdt"></a>Подключение к Synapse SQL с помощью Visual Studio и SSDT
 > [!div class="op_single_selector"]

@@ -7,15 +7,15 @@ ms.topic: article
 ms.author: brbell
 ms.reviewer: mimckitt
 ms.date: 06/15/2020
-ms.openlocfilehash: 7ce816aba6bee36cd20eed6d31b0642dc8931e0b
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 502883a0c4eb36be9e89ba8693f4d32ba7f16ebd
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86503036"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87088875"
 ---
 # <a name="azure-vm-sizes-with-no-local-temporary-disk"></a>Размеры виртуальных машин Azure без локального временного диска 
-В этой статье приведены ответы на часто задаваемые вопросы о размерах виртуальных машин Azure, у которых нет локального временного диска (т. е. нет локальной временной поддержки). Дополнительные сведения об этих размерах виртуальных машин см. в статьях [спецификации для dv4 и Dsv4 (общего назначения рабочих нагрузок)](dv4-dsv4-series.md) или [спецификации для Ev4 и Esv4 (рабочих нагрузок, оптимизированных для памяти)](ev4-esv4-series.md).
+В этой статье приведены ответы на часто задаваемые вопросы о размерах виртуальных машин Azure, у которых нет локального временного диска (т. е. локальный временный диск отсутствует). Дополнительные сведения об этих размерах виртуальных машин см. в статьях [спецификации для dv4 и Dsv4 (общего назначения рабочих нагрузок)](dv4-dsv4-series.md) или [спецификации для Ev4 и Esv4 (рабочих нагрузок, оптимизированных для памяти)](ev4-esv4-series.md).
 
 > [!IMPORTANT]
 > Размеры виртуальных машин серии dv4, Dsv4, Ev4 и Esv4 теперь доступны в общедоступной предварительной версии. Чтобы зарегистрироваться в общедоступной предварительной версии, заполните эту [форму](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR_Y3toRKxchLjARedqtguBRURE1ZSkdDUzg1VzJDN0cwWUlKTkcyUlo5Mi4u). 

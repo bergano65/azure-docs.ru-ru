@@ -12,11 +12,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 09/24/2018
 ms.author: hermannd
-ms.openlocfilehash: e93b3412785817050ac53030be9ff2172a678c06
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5c3a24bc9d754a15a0b372667fbcd689365a9aec
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77617121"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87088314"
 ---
 # <a name="verify-and-troubleshoot-sap-hana-scale-out-high-availability-setup-on-sles-12-sp3"></a>Проверка и устранение неполадок при настройке горизонтального масштабирования SAP HANA с высоким уровнем доступности в SLES 12 SP3 
 
@@ -171,7 +172,7 @@ nc: connect to 10.0.2.40 port 40002 (tcp) failed: Connection refused
 
 В качестве примера приведено содержимое файла **corosync.conf** из тестовой системы.
 
-Первый раздел — это **totem**, как описано в разделе [Установка кластера](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-pacemaker#cluster-installation) (шаг 11). Вы можете игнорировать значение для **mcastaddr**. Просто сохраните существующую запись. Записи для **token** и **consensus** должны быть настроены в соответствии с [документацией по SAP HANA для Microsoft Azure][sles-pacemaker-ha-guide].
+Первый раздел — это **totem**, как описано в разделе [Установка кластера](./high-availability-guide-suse-pacemaker.md#cluster-installation) (шаг 11). Вы можете игнорировать значение для **mcastaddr**. Просто сохраните существующую запись. Записи для **token** и **consensus** должны быть настроены в соответствии с [документацией по SAP HANA для Microsoft Azure][sles-pacemaker-ha-guide].
 
 <pre><code>
 totem {
@@ -278,7 +279,7 @@ systemctl restart corosync
 
 ## <a name="sbd-device"></a>Устройство SBD
 
-Сведения о том, как настроить устройство SBD на виртуальной машине Azure, представлены в разделе [Ограждение SBD](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-pacemaker#sbd-fencing).
+Сведения о том, как настроить устройство SBD на виртуальной машине Azure, представлены в разделе [Ограждение SBD](./high-availability-guide-suse-pacemaker.md#sbd-fencing).
 
 Для начала убедитесь, что на сервере SBD имеются записи ACL для каждого узла кластера. Выполните следующую команду на виртуальной машине сервера SBD:
 
@@ -421,7 +422,7 @@ sbd -d /dev/sdm message hso-hana-vm-s2-2 test
 /dev/disk/by-id/scsi-36001405e614138d4ec64da09e91aea68:   notice: servant: Received command test from hso-hana-vm-s2-1 on disk /dev/disk/by-id/scsi-36001405e614138d4ec64da09e91aea68
 </code></pre>
 
-Убедитесь, что записи в папке **/etc/sysconfig/sbd** соответствуют описанию из раздела [Настройка кластера Pacemaker в SUSE Linux Enterprise Server в Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-pacemaker#sbd-fencing). Убедитесь, что в **/etc/iscsi/iscsid.conf** установлен параметр автоматического запуска.
+Убедитесь, что записи в папке **/etc/sysconfig/sbd** соответствуют описанию из раздела [Настройка кластера Pacemaker в SUSE Linux Enterprise Server в Azure](./high-availability-guide-suse-pacemaker.md#sbd-fencing). Убедитесь, что в **/etc/iscsi/iscsid.conf** установлен параметр автоматического запуска.
 
 Ниже перечислены важные записи из папки **/etc/sysconfig/sbd**. По мере необходимости адаптируйте значение **id**:
 
@@ -975,7 +976,6 @@ https://&ltnode&gt:7630
 ![Один переход Hawk](media/hana-vm-scale-out-HA-troubleshooting/hawk-5.png)
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве по устранению неполадок описываются вопросы высокой доступности для SAP HANA в конфигурации горизонтального масштабирования. Еще один важный компонент ландшафта SAP, помимо базы данных, — стек SAP NetWeaver. Узнайте о [высоком уровне доступности для SAP NetWeaver на виртуальных машинах Azure, использующих SUSE Enterprise Linux Server][sap-nw-ha-guide-sles].
-

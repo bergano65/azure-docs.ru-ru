@@ -12,12 +12,12 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: ''
 ms.date: 04/23/2020
-ms.openlocfilehash: 46b899b1891a6759ea2b9501f43c687990198f1f
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: ab1865608146880bbf612b7cb08c2a673c93b31f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86078023"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87087969"
 ---
 # <a name="configure-always-encrypted-by-using-azure-key-vault"></a>Настройка Always Encrypted с помощью Azure Key Vault 
 
@@ -45,7 +45,7 @@ Always Encrypted — это технология шифрования данны
 - [SQL Server Management Studio](https://msdn.microsoft.com/library/mt238290.aspx) версии 13.0.700.242 или более поздней версии.
 - [NET Framework версии 4.6](https://msdn.microsoft.com/library/w0x726c2.aspx) или более поздней версии (на клиентском компьютере).
 - [Visual Studio](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx).
-- [Azure PowerShell](/powershell/azure/overview) или [Azure CLI](/cli/azure/install-azure-cli)
+- [Azure PowerShell](/powershell/azure/) или [Azure CLI](/cli/azure/install-azure-cli)
 
 ## <a name="enable-client-application-access"></a>Разрешить доступ к клиентскому приложению
 
@@ -159,7 +159,7 @@ GO
 
 Для каждого пациента необходимо зашифровать данные в столбцах **SSN** и **BirthDate**. Для столбца SSN будет использоваться детерминированное шифрование, которое поддерживает уточняющие запросы на соответствие условию, операции объединения и группировки, а для столбца BirthDate — случайное шифрование, которое не поддерживает какие-либо операции.
 
-Задайте для параметра **Тип шифрования** столбца SSN значение **Детерминированное**, а для столбца BirthDate — **Случайное**. Нажмите кнопку **Далее**.
+Задайте для параметра **Тип шифрования** столбца SSN значение **Детерминированное**, а для столбца BirthDate — **Случайное**. Щелкните **Далее**.
 
 ![Шифрование столбцов…](./media/always-encrypted-azure-key-vault-configure/column-selection.png)
 
@@ -171,7 +171,7 @@ GO
 
 1. Выберите **Хранилище ключей Azure**.
 2. Из раскрывающегося списка выберите нужное хранилище ключей.
-3. Нажмите кнопку **Далее**.
+3. Щелкните **Далее**.
 
 ![Настройка главного ключа](./media/always-encrypted-azure-key-vault-configure/master-key-configuration.png)
 
@@ -596,7 +596,7 @@ SELECT FirstName, LastName, SSN, BirthDate FROM Patients;
    
    ![Новое консольное приложение](./media/always-encrypted-azure-key-vault-configure/ssms-plaintext.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 После настройки базы данных для использования Always Encrypted может потребоваться выполнить следующие действия.
 

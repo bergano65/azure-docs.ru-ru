@@ -3,8 +3,8 @@ title: Руководство. Миграция PostgreSQL в базу данн�
 titleSuffix: Azure Database Migration Service
 description: Узнайте, как выполнить оперативную миграцию из локальной среды в базу данных Azure для PostgreSQL с помощью Azure Database Migration Service через интерфейс командной строки.
 services: dms
-author: HJToland3
-ms.author: jtoland
+author: arunkumarthiags
+ms.author: arthiaga
 manager: craigg
 ms.reviewer: craigg
 ms.service: dms
@@ -12,11 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 04/11/2020
-ms.openlocfilehash: e8f79512e132ff4632c067b23ad6e80a76b8d4cf
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e6a39a7967c061a90e75d717402cf63da15b06b3
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81113887"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87087634"
 ---
 # <a name="tutorial-migrate-postgresql-to-azure-db-for-postgresql-online-using-dms-via-the-azure-cli"></a>Руководство. Миграция PostgreSQL в базу данных Azure для PostgreSQL Online с помощью DMS через Azure CLI
 
@@ -29,7 +30,7 @@ Azure Database Migration Service можно использовать для пе
 > * создание экземпляра Azure Database Migration Service;
 > * создание проекта миграции с помощью Azure Database Migration Service;
 > * выполнение миграции.
-> * мониторинг миграции.
+> * Мониторинг миграции.
 
 > [!NOTE]
 > Чтобы выполнить сетевую миграцию с помощью Azure Database Migration Service, требуется создать экземпляр ценовой категории "Премиум". Мы будем шифровать диск, чтобы предотвратить кражу данных в процессе миграции.
@@ -107,7 +108,7 @@ Azure Database Migration Service можно использовать для пе
     psql -h hostname -U db_username -d db_name < your_schema.sql 
     ```
 
-    Пример:
+    Например.
 
     ```
     psql -h mypgserver-20170401.postgres.database.azure.com  -U postgres -d dvdrental < dvdrentalSchema.sql
@@ -170,7 +171,7 @@ Azure Database Migration Service можно использовать для пе
            az extension list-available –otable
            ```
 
-       * Чтобы установить расширение веб-приложения, выполните следующую команду.
+       * Чтобы установить расширение, выполните следующую команду:
 
            ```azurecli
            az extension add –n dms-preview
@@ -181,7 +182,7 @@ Azure Database Migration Service можно использовать для пе
        ```azurecli
        az extension list -otable
        ```
-       Вы должны увидеть следующий результат.
+       Должен появиться следующий результат:
 
        ```output
        ExtensionType    Name
@@ -229,7 +230,7 @@ Azure Database Migration Service можно использовать для пе
     az network nic list -g <ResourceGroupName>--query '[].ipConfigurations | [].privateIpAddress'
     ```
 
-    Пример:
+    Например.
 
     ```azurecli
     az network nic list -g PostgresDemo --query '[].ipConfigurations | [].privateIpAddress'
@@ -360,7 +361,7 @@ Azure Database Migration Service можно использовать для пе
    az dms project task show --service-name PostgresCLI --project-name PGMigration --resource-group PostgresDemo --name Runnowtask
    ```
 
-   OR
+   ИЛИ
 
     ```azurecli
    az dms project task show --service-name PostgresCLI --project-name PGMigration --resource-group PostgresDemo --name Runnowtask --expand output
@@ -475,7 +476,7 @@ Azure Database Migration Service можно использовать для пе
     az dms project task cutover -h
     ```
 
-    Пример:
+    Например.
 
     ```azurecli
     az dms project task cutover --service-name PostgresCLI --project-name PGMigration --resource-group PostgresDemo --name Runnowtask  --object-name Inventory
@@ -523,7 +524,7 @@ Azure Database Migration Service можно использовать для пе
     az dms delete -g ProgresDemo -n PostgresCLI
      ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения об известных проблемах, ограничениях при выполнении сетевой миграции в Базу данных Azure для PostgreSQL см. в [этой](known-issues-azure-postgresql-online.md) статье.
 * См. дополнительные сведения о [службе Azure Database Migration Service](https://docs.microsoft.com/azure/dms/dms-overview).

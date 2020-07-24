@@ -8,11 +8,12 @@ ms.topic: article
 ms.date: 06/22/2017
 ms.author: cynthn
 ms.custom: tracking-python
-ms.openlocfilehash: b5f8b0e8f22a476ad379b55275d79c2874966852
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 92b6d8c6cd59f82439beec24c003aac6673014e7
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84551981"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87088331"
 ---
 # <a name="create-and-manage-windows-vms-in-azure-using-python"></a>Развертывание виртуальной машины Azure с помощью Python
 
@@ -25,13 +26,13 @@ ms.locfileid: "84551981"
 > * Создание ресурсов
 > * Выполнение задач управления.
 > * Удаление ресурсов
-> * Запуск приложения
+> * Выполнение приложения
 
 На выполнение этих действий требуется примерно 20 минут.
 
 ## <a name="create-a-visual-studio-project"></a>Создание проекта Visual Studio
 
-1. Если вы этого еще не сделали, установите [Visual Studio](https://docs.microsoft.com/visualstudio/install/install-visual-studio). На странице рабочих нагрузок выберите **Разработка на Python** и нажмите кнопку **Установить**. В сводке вы увидите, что вариант **64-разрядная версия Python 3 (3.6.0)** выберется автоматически. Если вы уже установили Visual Studio, можно добавить рабочую нагрузку Python с помощью средства запуска Visual Studio.
+1. Если вы этого еще не сделали, установите [Visual Studio](/visualstudio/install/install-visual-studio). На странице рабочих нагрузок выберите **Разработка на Python** и нажмите кнопку **Установить**. В сводке вы увидите, что вариант **64-разрядная версия Python 3 (3.6.0)** выберется автоматически. Если вы уже установили Visual Studio, можно добавить рабочую нагрузку Python с помощью средства запуска Visual Studio.
 2. После установки и запуска Visual Studio щелкните **Файл** > **Создать** > **Проект**.
 3. В разделе **Шаблоны** > **Python** > **Приложение Python** укажите имя *myPythonProject* и расположение проекта, а затем нажмите кнопку **ОК**.
 
@@ -565,6 +566,5 @@ compute_client = ComputeManagementClient(
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- При наличии проблем с развертыванием ознакомьтесь с информацией об [устранении неполадок развертываний групп ресурсов с помощью портала Azure](../../resource-manager-troubleshoot-deployments-portal.md).
-- Узнайте больше о [библиотеке Azure для Python](https://docs.microsoft.com/python/api/overview/azure/?view=azure-python).
-
+- При наличии проблем с развертыванием ознакомьтесь с информацией об [устранении неполадок развертываний групп ресурсов с помощью портала Azure](../../azure-resource-manager/templates/deployment-history.md).
+- Узнайте больше о [библиотеке Azure для Python](/python/api/overview/azure/?view=azure-python).

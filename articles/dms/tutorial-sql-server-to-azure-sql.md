@@ -3,8 +3,8 @@ title: Руководство. Миграция SQL Server в автономны
 titleSuffix: Azure Database Migration Service
 description: Узнайте, как выполнить миграцию из SQL Server в базу данных SQL Azure в автономном режиме с помощью Azure Database Migration Service.
 services: dms
-author: HJToland3
-ms.author: jtoland
+author: pochiraju
+ms.author: rajpo
 manager: craigg
 ms.reviewer: craigg
 ms.service: dms
@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 01/08/2020
-ms.openlocfilehash: 45a343fdbd41abf1388556131f1f53a675d8ab49
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a0d2353364767dfb1fd73d517926d0fa63c11a1d
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85316227"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87087719"
 ---
 # <a name="tutorial-migrate-sql-server-to-azure-sql-database-offline-using-dms"></a>Руководство. Перенос баз данных из SQL Server в Базу данных SQL Azure в автономном режиме с помощью DMS
 
@@ -28,10 +28,10 @@ Azure Database Migration Service можно использовать для пе
 >
 > - получение доступа к локальной базе данных с помощью помощника по миграции данных;
 > - перенос примера схемы с помощью помощника по миграции данных;
-> - создание экземпляра Azure Database Migration Service;
+> - Создайте экземпляр Azure Database Migration Service.
 > - создание проекта миграции с использованием Azure Database Migration Service.
 > - выполнение миграции.
-> - мониторинг миграции.
+> - Мониторинг миграции.
 > - скачивание отчета о миграции.
 
 [!INCLUDE [online-offline](../../includes/database-migration-service-offline-online.md)]
@@ -193,7 +193,7 @@ Azure Database Migration Service можно использовать для пе
 
 После создания службы найдите ее на портале Azure, откройте и создайте проект миграции.
 
-1. В меню портал Azure выберите **все службы**. Найдите и выберите **Azure Database Migration Services**.
+1. В меню портала Azure выберите **Все службы**. Найдите и выберите **Azure Database Migration Services**.
 
      ![Поиск всех экземпляров Azure Database Migration Service](media/tutorial-sql-server-to-azure-sql/dms-search.png)
 

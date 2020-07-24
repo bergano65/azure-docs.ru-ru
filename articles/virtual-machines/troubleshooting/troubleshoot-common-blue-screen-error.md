@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 09/28/2018
 ms.author: genli
-ms.openlocfilehash: 30b4386c223240217096550330c0920ad9ab6871
-ms.sourcegitcommit: e995f770a0182a93c4e664e60c025e5ba66d6a45
+ms.openlocfilehash: b382efc4d283d64ce0f833bde9104fa2e3bc973a
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86132923"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87088551"
 ---
 # <a name="windows-shows-blue-screen-error-when-booting-an-azure-vm"></a>Отображение ошибки "синий экран" при загрузке виртуальной машины Azure под управлением Windows
 В этой статье описываются ошибки "синий экран", которые могут возникнуть при загрузке виртуальной машины Windows в Microsoft Azure. Представляем шаги, которые помогут вам при сборе данных для запроса в службу поддержки. 
@@ -47,7 +47,7 @@ ms.locfileid: "86132923"
 ### <a name="attach-the-os-disk-to-a-recovery-vm"></a>Подключите диск ОС к виртуальной машине восстановления.
 
 1. Сделайте снимок диска ОС затронутой виртуальной машины в качестве резервной копии. Дополнительные сведения см. в статье [Создание моментального снимка](../windows/snapshot-copy-managed-disk.md).
-2. [Подключите диск операционной системы к виртуальной машине восстановления](../windows/troubleshoot-recovery-disks-portal.md). 
+2. [Подключите диск операционной системы к виртуальной машине восстановления](./troubleshoot-recovery-disks-portal-windows.md). 
 3. Подключитесь по протоколу удаленного рабочего стола к виртуальной машине восстановления.
 
 ### <a name="locate-dump-file-and-submit-a-support-ticket"></a>Найдите файл дампа и отправьте запрос в службу поддержки
@@ -100,9 +100,6 @@ ms.locfileid: "86132923"
     reg unload HKLM\BROKENSYSTEM
     ```
 
-3. [Отсоедините диск ОС и снова подключите его к необходимой виртуальной машине](../windows/troubleshoot-recovery-disks-portal.md).
+3. [Отсоедините диск ОС и снова подключите его к необходимой виртуальной машине](./troubleshoot-recovery-disks-portal-windows.md).
 4. Запустите виртуальную машину, чтобы воспроизвести проблему. Затем файл дампа будет создан.
 5. Подключите диск ОС к виртуальной машине для восстановления, соберите файл дампа, а затем [отправьте запрос в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) с этим файлом.
-
-
-

@@ -1,5 +1,5 @@
 ---
-title: Настройка GPU для Виртуального рабочего стола Windows в Azure
+title: Настройка GPU для виртуальных рабочих столов Windows — 2019 — Azure
 description: Сведения о включении отрисовки и кодирования с поддержкой ускорения за счет GPU на Виртуальном рабочем столе Windows.
 services: virtual-desktop
 author: gundarev
@@ -7,14 +7,14 @@ ms.service: virtual-desktop
 ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: denisgun
-ms.openlocfilehash: 33bc63887b73adaf570b385d2a289fcd97ff1632
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bbb0985e309601562587f3f1b26427f46a4a8987
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85206110"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87087175"
 ---
-# <a name="configure-graphics-processing-unit-gpu-acceleration-for-windows-virtual-desktop"></a>Настройка ускорения графического процессора (GPU) для Виртуального рабочего стола Windows
+# <a name="configure-graphics-processing-unit-gpu-acceleration-for-windows-virtual-desktop-fall-2019"></a>Настройка ускорения графического процессора для виртуальных рабочих столов Windows — 2019
 
 >[!IMPORTANT]
 >Это содержимое применимо к выпуску за осень 2019 года, который не поддерживает объекты Azure Resource Manager для Виртуального рабочего стола Windows. Если вы хотите обеспечить управление объектами Azure Resource Manager для Виртуального рабочего стола Windows, представленными в обновлении за весну 2020 г., см. [эту статью](../configure-vm-gpu.md).

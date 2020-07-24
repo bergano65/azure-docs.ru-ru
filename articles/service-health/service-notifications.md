@@ -3,11 +3,12 @@ title: Просмотр уведомлений о работоспособнос
 description: Уведомления о работоспособности служб позволяют просматривать соответствующие сообщения, публикуемые Microsoft Azure.
 ms.topic: conceptual
 ms.date: 6/27/2019
-ms.openlocfilehash: 21416edc95d345eb183030a9b0cccb7529305d6d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 9f8297ae708d3f4e7921221f2c4bacee12a7a2b1
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "75748650"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87089572"
 ---
 # <a name="view-service-health-notifications-by-using-the-azure-portal"></a>Просмотр уведомлений о работоспособности служб на портале Azure
 
@@ -29,8 +30,8 @@ ms.locfileid: "75748650"
 
     ![Снимок экрана журнала мониторинга активности с выбранными оповещениями](./media/service-notifications/service-health-summary.png)
 
-1. Выберите **+Добавить оповещение журнала действий** и настройте оповещение, чтобы в дальнейшем получать оповещения об уведомлениях службы. Дополнительные сведения см. в статье [Создание оповещений журнала действий для уведомлений службы](../azure-monitor/platform/alerts-activity-log-service-notifications.md).
+1. Выберите **+Добавить оповещение журнала действий** и настройте оповещение, чтобы в дальнейшем получать оповещения об уведомлениях службы. Дополнительные сведения см. в статье [Создание оповещений журнала действий для уведомлений службы](./alerts-activity-log-service-notifications-portal.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Узнайте больше об [оповещениях журнала действий](../azure-monitor/platform/activity-log-alerts.md).

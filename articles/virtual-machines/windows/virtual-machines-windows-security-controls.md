@@ -8,12 +8,12 @@ manager: barbkess
 ms.topic: conceptual
 ms.date: 09/05/2019
 ms.author: mbaldwin
-ms.openlocfilehash: ac1ed9ac25d65d0391175fc6d43b48048da74926
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6ab6133faef4a6c7a8eb929e5f4cd1840e971a99
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82101592"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87088348"
 ---
 # <a name="security-controls-for-windows-virtual-machines"></a>Элементы управления безопасностью для Виртуальные машины Windows
 
@@ -28,13 +28,13 @@ ms.locfileid: "82101592"
 | Поддержка конечных точек службы| Да | |
 | Поддержка внедрения виртуальной сети| Да | |
 | Поддержка сетевой изоляции и брандмауэров| Да |  |
-| Поддержка принудительного туннелирования| Да | См. раздел [Настройка принудительного туннелирования с помощью модели развертывания Azure Resource Manager](/azure/vpn-gateway/vpn-gateway-forced-tunneling-rm). |
+| Поддержка принудительного туннелирования| Да | См. раздел [Настройка принудительного туннелирования с помощью модели развертывания Azure Resource Manager](../../vpn-gateway/vpn-gateway-forced-tunneling-rm.md). |
 
 ## <a name="monitoring--logging"></a>Мониторинг & ведения журнала
 
 | Управление безопасностью | Да/нет | Примечания|
 |---|---|--|
-| Поддержка мониторинга Azure (log Analytics, App Insights и т. д.)| Да | [Мониторинг и обновление виртуальной машины Windows в Azure](tutorial-monitoring.md). |
+| Поддержка мониторинга Azure (log Analytics, App Insights и т. д.)| Да | [Мониторинг и обновление виртуальной машины Windows в Azure](./tutorial-monitor.md). |
 | Ведение журнала и аудит в плоскости управления и управления| Да |  |
 | Ведение журнала и аудит в плоскости данных | Нет |  |
 
@@ -49,10 +49,10 @@ ms.locfileid: "82101592"
 
 | Управление безопасностью | Да/нет | Примечания |
 |---|---|--|
-| Шифрование неактивных на стороне сервера: ключи, управляемые корпорацией Майкрософт | Да | См. раздел [шифрование виртуальных дисков на виртуальной машине Windows](/azure/virtual-machines/windows/disk-encryption-overview). |
-| Шифрование при передаче (например, шифрование ExpressRoute, Шифрование виртуальной сети и шифрование виртуальной сети)| Да | Виртуальные машины Azure поддерживают шифрование [ExpressRoute](/azure/expressroute) и виртуальной сети. См. раздел [Шифрование транзитного пути в виртуальных машинах](/azure/security/security-azure-encryption-overview#in-transit-encryption-in-vms). |
-| Шифрование неактивных на стороне сервера: ключи, управляемые клиентом (BYOK) | Да | Ключи, управляемые клиентом, являются поддерживаемым сценарием шифрования Azure. см. раздел [Общие сведения о шифровании Azure](/azure/security/security-azure-encryption-overview#in-transit-encryption-in-vms).|
-| Шифрование на уровне столбцов (службы данных Azure)| Недоступно | |
+| Шифрование неактивных на стороне сервера: ключи, управляемые корпорацией Майкрософт | Да | См. раздел [шифрование виртуальных дисков на виртуальной машине Windows](./disk-encryption-overview.md). |
+| Шифрование при передаче (например, шифрование ExpressRoute, Шифрование виртуальной сети и шифрование виртуальной сети)| Да | Виртуальные машины Azure поддерживают шифрование [ExpressRoute](../../expressroute/index.yml) и виртуальной сети. См. раздел [Шифрование транзитного пути в виртуальных машинах](../../security/fundamentals/encryption-overview.md#in-transit-encryption-in-vms). |
+| Шифрование неактивных на стороне сервера: ключи, управляемые клиентом (BYOK) | Да | Ключи, управляемые клиентом, являются поддерживаемым сценарием шифрования Azure. см. раздел [Общие сведения о шифровании Azure](../../security/fundamentals/encryption-overview.md#in-transit-encryption-in-vms).|
+| Шифрование на уровне столбцов (службы данных Azure)| Н/Д | |
 | Вызовы API в зашифрованном виде| Да | Через HTTPS и TLS. |
 
 

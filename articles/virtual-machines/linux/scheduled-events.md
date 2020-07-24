@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.date: 06/01/2020
 ms.author: ericrad
 ms.reviewer: mimckitt
-ms.openlocfilehash: ba06350a564990899a593714a1f49d1e00ea544a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f91b5879922fc473ff1e46f817b3d649b1b30a9c
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85262112"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87088739"
 ---
 # <a name="azure-metadata-service-scheduled-events-for-linux-vms"></a>Служба метаданных Azure: подслужба "Запланированные события" для виртуальных машин Linux
 
@@ -39,7 +39,7 @@ ms.locfileid: "85262112"
 
 Запланированные события предусматривают события в следующих случаях:
 
-- [инициированное платформой обслуживание](https://docs.microsoft.com/azure/virtual-machines/linux/maintenance-and-updates) (например, перезагрузка виртуальной машины, динамическая миграция или обновление с сохранением памяти для узла);
+- [инициированное платформой обслуживание](../maintenance-and-updates.md?bc=/azure/virtual-machines/linux/breadcrumb/toc.json&toc=/azure/virtual-machines/linux/toc.json) (например, перезагрузка виртуальной машины, динамическая миграция или обновление с сохранением памяти для узла);
 - виртуальная машина работает на [оборудовании со сниженной производительностью](https://azure.microsoft.com/blog/find-out-when-your-virtual-machine-hardware-is-degraded-with-scheduled-events), сбой которого прогнозируется в ближайшее время;
 - обслуживание, инициированное пользователем (например, пользователь перезагружает или повторно развертывает виртуальную машину).
 - Вытеснение экземпляров [точечных виртуальных машин](spot-vms.md) и [точечных масштабируемых наборов](../../virtual-machine-scale-sets/use-spot.md).
@@ -138,7 +138,7 @@ curl -H Metadata:true http://169.254.169.254/metadata/scheduledevents?api-versio
 | Ресурсы| Список ресурсов, на которые влияет это событие. Список обязательно будет содержать виртуальные машины максимум из одного [домена обновления](manage-availability.md), но в нем не могут содержаться все машины из такого домена. <br><br> Пример <br><ul><li> ["FrontEnd_IN_0", "BackEnd_IN_0"] |
 | EventStatus | Состояние этого события. <br><br> Значения: <ul><li>`Scheduled`: это запланированное событие состоится по истечении времени, указанного в свойстве `NotBefore`.<li>`Started`: это событие запущено.</ul> Состояние `Completed` (или аналогичное) никогда не предоставляется. После завершения событие не повторяется.
 | NotBefore| Время, после которого это событие может состояться. <br><br> Пример <br><ul><li> Пн, 19 сентября 2016 г., 18:29:47 (GMT)  |
-| Описание: | Описание этого события. <br><br> Пример. <br><ul><li> Сервер узла находится в состоянии обслуживания. |
+| Описание | Описание этого события. <br><br> Пример. <br><ul><li> Сервер узла находится в состоянии обслуживания. |
 | EventSource | Инициатор события. <br><br> Пример. <br><ul><li> `Platform`: Это событие инициируется platfrom. <li>`User`: Это событие инициируется пользователем. |
 
 ### <a name="event-scheduling"></a>Планирование события
@@ -189,7 +189,7 @@ import json
 import socket
 import urllib2
 
-metadata_url = "http://169.254.169.254/metadata/scheduledevents?api-version=2019-01-01"
+metadata_url = "http://169.254.169.254/metadata/scheduledevents?api-version=2019-08-01"
 this_host = socket.gethostname()
 
 
@@ -233,4 +233,4 @@ if __name__ == '__main__':
 - Смотрите демонстрационную версию службы "Запланированные события" в серии [Пятница с Azure](https://channel9.msdn.com/Shows/Azure-Friday/Using-Azure-Scheduled-Events-to-Prepare-for-VM-Maintenance). 
 - Просмотрите примеры кода запланированных событий в статье [Azure Metadata Service: Scheduled Events Samples](https://github.com/Azure-Samples/virtual-machines-scheduled-events-discover-endpoint-for-non-vnet-vm) (Служба метаданных Azure: примеры запланированных событий).
 - Дополнительные сведения об API, доступных в [службе метаданных экземпляра](instance-metadata-service.md).
-- Подробнее о [плановом обслуживании виртуальных машин Linux в Azure](planned-maintenance.md).
+- Подробнее о [плановом обслуживании виртуальных машин Linux в Azure](../maintenance-and-updates.md?bc=/azure/virtual-machines/linux/breadcrumb/toc.json&toc=/azure/virtual-machines/linux/toc.json).

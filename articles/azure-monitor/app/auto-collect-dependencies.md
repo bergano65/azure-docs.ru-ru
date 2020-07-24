@@ -5,15 +5,16 @@ ms.topic: reference
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 05/06/2020
-ms.openlocfilehash: 21e98ee9dc59e7520fb715f1146e492b9198f883
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ba7830cc1c0a3e6a563b4343b37ec07f7d508af4
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82891607"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87087991"
 ---
 # <a name="dependency-auto-collection"></a>Автоматический сбор зависимостей
 
-Ниже приведен список поддерживаемых в настоящее время вызовов зависимостей, которые автоматически определяются как зависимости без каких-либо дополнительных изменений в код приложения. Эти зависимости отображаются в представлениях [схемы приложений](https://docs.microsoft.com/azure/application-insights/app-insights-app-map) и [диагностики транзакций](https://docs.microsoft.com/azure/application-insights/app-insights-transaction-diagnostics) Application Insights. Если зависимость отсутствует в списке ниже, можно по-прежнему отслеживать ее самостоятельно с помощью [отслеживания вызова зависимости](https://docs.microsoft.com/azure/application-insights/app-insights-api-custom-events-metrics#trackdependency).
+Ниже приведен список поддерживаемых в настоящее время вызовов зависимостей, которые автоматически определяются как зависимости без каких-либо дополнительных изменений в код приложения. Эти зависимости отображаются в представлениях [схемы приложений](./app-map.md) и [диагностики транзакций](./transaction-diagnostics.md) Application Insights. Если зависимость отсутствует в списке ниже, можно по-прежнему отслеживать ее самостоятельно с помощью [отслеживания вызова зависимости](./api-custom-events-metrics.md#trackdependency).
 
 ## <a name="net"></a>.NET
 
@@ -22,7 +23,7 @@ ms.locfileid: "82891607"
 | Веб-формы ASP.NET | 4.5+ |
 | ASP.NET MVC 3 | 4+ |
 | ASP.NET WebAPI | 4.5+ |
-| ASP.NET Core | 1.1+ |
+| ASP.NET Core | 1.1+ |
 | <b>Библиотеки обмена данными</b> |
 | [HttpClient](https://www.microsoft.com/net/) | 4.5+, .NET Core 1.1+ |
 | [SqlClient](https://www.nuget.org/packages/System.Data.SqlClient) | .NET Core 1.0+, NuGet 4.3.0 |
@@ -61,7 +62,7 @@ ms.locfileid: "82891607"
 
 > [!NOTE]
 > *За исключением поддержки программирования.
-> <br>†Требуется установка [агента виртуальной машины Java](https://docs.microsoft.com/azure/application-insights/app-insights-java-agent#install-the-application-insights-agent-for-java).
+> <br>†Требуется установка [агента виртуальной машины Java](./java-agent.md#install-the-application-insights-agent-for-java).
 
 ## <a name="nodejs"></a>Node.js
 
@@ -85,7 +86,7 @@ ms.locfileid: "82891607"
 | ------------------------|----------|
 | [XMLHttpRequest](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest) | Все |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Настройка отслеживания зависимостей для платформы [.NET](../../azure-monitor/app/asp-net-dependencies.md).
 - Настройка отслеживания зависимостей для [Java](../../azure-monitor/app/java-agent.md).

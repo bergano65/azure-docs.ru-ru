@@ -3,8 +3,8 @@ title: Руководство. Миграция Oracle Online в базу дан
 titleSuffix: Azure Database Migration Service
 description: Из этой статьи вы узнаете, как выполнить сетевой перенос из Oracle в локальной среде или на виртуальной машине в Базу данных Azure для PostgreSQL с помощью Azure Database Migration Service.
 services: dms
-author: HJToland3
-ms.author: jtoland
+author: arunkumarthiags
+ms.author: arthiaga
 manager: craigg
 ms.reviewer: craigg
 ms.service: dms
@@ -12,11 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: article
 ms.date: 01/24/2020
-ms.openlocfilehash: 956523e2b51795a4bc97c653dab8b408b06061f4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 37bf610d1ecc6a05e8dd142ff3d72dd9ed72e51f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78255567"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87087770"
 ---
 # <a name="tutorial-migrate-oracle-to-azure-database-for-postgresql-online-using-dms-preview"></a>Руководство. Миграция Oracle в базу данных Azure для PostgreSQL через Интернет с помощью DMS (Предварительная версия)
 
@@ -27,10 +28,10 @@ ms.locfileid: "78255567"
 >
 > * оценка мероприятий по миграции с помощью средства ora2pg;
 > * перенос примера схемы с помощью средства ora2pg;
-> * создание экземпляра Azure Database Migration Service;
+> * Создайте экземпляр Azure Database Migration Service.
 > * создание проекта миграции с использованием Azure Database Migration Service.
 > * выполнение миграции.
-> * мониторинг миграции.
+> * Мониторинг миграции.
 
 > [!NOTE]
 > Чтобы выполнить сетевую миграцию с помощью Azure Database Migration Service, требуется создать экземпляр ценовой категории "Премиум".
@@ -185,7 +186,7 @@ ms.locfileid: "78255567"
 psql -f [FILENAME] -h [AzurePostgreConnection] -p 5432 -U [AzurePostgreUser] -d database 
 ```
 
-Пример:
+Например.
 
 ```
 psql -f %namespace%\schema\sequences\sequence.sql -h server1-server.postgres.database.azure.com -p 5432 -U username@server1-server -d database
@@ -238,7 +239,7 @@ Azure Database Migration Service также может создать схему
 
     Если имя схемы в источнике Oracle совпадает с именем в Базе данных Azure для PostgreSQL, то Azure Database Migration Service *создает схему таблицы, используя тот же регистр, что и в целевом объекте*.
 
-    Пример:
+    Например.
 
     | Исходная схема Oracle | Целевая PostgreSQL Database.Schema | schema.table.column, созданная DMS |
     | ------------- | ------------- | ------------- |
@@ -382,7 +383,7 @@ Azure Database Migration Service также может создать схему
  > [!NOTE]
  > Так как PostgreSQL по умолчанию хранит schema.table.column в нижнем регистре, преобразуйте имена из верхнего в нижний регистр с помощью скрипта из раздела **Настройка схемы в Базе данных Azure для PostgreSQL** выше в этой статье.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения об известных проблемах, ограничениях при выполнении сетевой миграции в Базу данных Azure для PostgreSQL см. в [этой](known-issues-azure-postgresql-online.md) статье.
 * См. дополнительные сведения о [службе Azure Database Migration Service](https://docs.microsoft.com/azure/dms/dms-overview).

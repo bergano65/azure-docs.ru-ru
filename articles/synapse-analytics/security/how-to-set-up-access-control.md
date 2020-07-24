@@ -9,12 +9,12 @@ ms.subservice: security
 ms.date: 04/15/2020
 ms.author: mahi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 1a8023a700e83892fae9a16bb2bfbe2a2eb0b307
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e66af8e55f7b60347d9577c64b7183c6ef8b44f4
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85193419"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87089317"
 ---
 # <a name="secure-your-synapse-workspace-preview"></a>Защита рабочей области Synapse (предварительная версия)
 
@@ -112,7 +112,7 @@ ms.locfileid: "85193419"
 
 Пользователям в каждой роли необходимо выполнить следующие действия:
 
-|   | Шаг | Администраторы рабочей области | Администраторы Spark | Администраторы SQL |
+| Number | Шаг | Администраторы рабочей области | Администраторы Spark | Администраторы SQL |
 | --- | --- | --- | --- | --- |
 | 1 | Отправка файла Parquet в CNT1 | YES | YES | YES |
 | 2 | Чтение файла Parquet с помощью SQL по запросу | YES | NO | YES |

@@ -6,14 +6,14 @@ ms.suite: integration
 author: divyaswarnkar
 ms.reviewer: estfan, logicappspm
 ms.topic: article
-ms.date: 06/17/2020
+ms.date: 07/20/2020
 tags: connectors
-ms.openlocfilehash: c2f3af4b0e2fafdd95798b412f37ed20204cd42f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a277c6205dfb9dfa04565fb3ebcb3da589669764
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84807747"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87087889"
 ---
 # <a name="monitor-create-and-manage-sftp-files-by-using-ssh-and-azure-logic-apps"></a>Мониторинг и создание SFTP-файлов, а также управление ими с помощью SSH и Azure Logic Apps
 
@@ -23,6 +23,7 @@ ms.locfileid: "84807747"
 > В настоящее время соединитель SFTP-SSH не поддерживает эти серверы SFTP:
 > 
 > * IBM Power
+> * мессажевай
 > * OpenText безопасная MFT
 > * OpenText ГКСС
 
@@ -85,7 +86,7 @@ ms.locfileid: "84807747"
 
 * Выполняет кэширование подключения к серверу SFTP *продолжительностью до 1 часа*, что повышает производительность и уменьшает количество попыток подключения к серверу. Чтобы указать длительность этого поведения кэширования, измените свойство [**ClientAliveInterval**](https://man.openbsd.org/sshd_config#ClientAliveInterval) в конфигурации SSH на SFTP-сервере.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [зарегистрируйтесь для получения бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
@@ -136,7 +137,7 @@ ms.locfileid: "84807747"
 
    `puttygen <path-to-private-key-file-in-PuTTY-format> -O private-openssh -o <path-to-private-key-file-in-OpenSSH-format>`
 
-   Пример:
+   Например.
 
    `puttygen /tmp/sftp/my-private-key-putty.ppk -O private-openssh -o /tmp/sftp/my-private-key-openssh.pem`
 
@@ -156,7 +157,7 @@ ms.locfileid: "84807747"
 
 1. Сохраните файл закрытого ключа с `.pem` расширением имени файла.
 
-## <a name="considerations"></a>Особенности
+## <a name="considerations"></a>Рекомендации
 
 В этом разделе описываются рекомендации по проверке триггеров и действий этого соединителя.
 

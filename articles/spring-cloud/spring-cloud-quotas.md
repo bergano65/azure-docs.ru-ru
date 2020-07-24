@@ -6,11 +6,13 @@ ms.service: spring-cloud
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: brendm
-ms.openlocfilehash: dc4426fc08efff44bc46ba37eb6fbc6fe31f356b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.custom: devx-track-java
+ms.openlocfilehash: cda22c63a70c5121e6a6972c66bdc0a4bb5158fc
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84735444"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87089470"
 ---
 # <a name="quotas-and-service-plans-for-azure-spring-cloud"></a>Квоты и планы обслуживания для Azure Веснного облака
 
@@ -29,6 +31,6 @@ vCPU | 1 на экземпляр службы | 4 на экземпляр слу
 
 В течение периода действия предварительной версии Azure Веснное облако предлагает только один уровень служб. При достижении предельного значения вы получите ошибку 400, которая считывает: "квота превышает *лимит подписки для подписки в* регионе региона *, где создана облачная служба Azure" Весна*".
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Некоторые ограничения по умолчанию можно увеличить. Если для установки требуется увеличение, [Создайте запрос в службу поддержки](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request).
