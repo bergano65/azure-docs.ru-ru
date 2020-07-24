@@ -3,11 +3,12 @@ title: API Application Insights для пользовательских собы
 description: Вставьте несколько строк кода в свое устройство или классическое приложение, на веб-страницу или в службу, чтобы отслеживать использование приложения и диагностировать неполадки.
 ms.topic: conceptual
 ms.date: 05/11/2020
-ms.openlocfilehash: ae96609446818802b70cab9c31f6527264046eb9
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 43951a415256577144b93c7deea168e30e7a13ba
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "83115665"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87014734"
 ---
 # <a name="application-insights-api-for-custom-events-and-metrics"></a>API Application Insights для пользовательских событий и метрик
 
@@ -30,7 +31,7 @@ ms.locfileid: "83115665"
 
 Вы можете [прикрепить свойства и метрики](#properties) к большинству этих вызовов телеметрии.
 
-## <a name="before-you-start"></a><a name="prep"></a>Перед началом работы
+## <a name="before-you-start"></a><a name="prep"></a>Прежде чем начать
 
 Если у вас еще нет ссылки на пакет SDK Application Insights, выполните указанные ниже действия.
 
@@ -144,7 +145,7 @@ telemetry.trackEvent({name: "WinGame"});
 
 ### <a name="custom-events-in-analytics"></a>Пользовательские события в службе аналитики
 
-Данные телеметрии доступны в таблице `customEvents` в [службе аналитики Application Insights](analytics.md). Каждая строка представляет собой вызов `trackEvent(..)` в приложении.
+Данные телеметрии доступны в таблице `customEvents` в [службе аналитики Application Insights](../log-query/log-query-overview.md). Каждая строка представляет собой вызов `trackEvent(..)` в приложении.
 
 Если действует [выборка](../../azure-monitor/app/sampling.md), свойство itemCount имеет значение больше 1. Например, itemCount==10 означает, что из 10 вызовов trackEvent() процесс выборки передал только один. Чтобы получить правильное количество пользовательских событий, необходимо использовать код, такой как `customEvents | summarize sum(itemCount)` .
 
@@ -200,7 +201,7 @@ telemetry.trackMetric({name: "queueLength", value: 42.0});
 
 ### <a name="custom-metrics-in-analytics"></a>Настраиваемые метрики в аналитике
 
-Данные телеметрии доступны в таблице `customMetrics` в [службе аналитики Application Insights](analytics.md). Каждая строка представляет собой вызов `trackMetric(..)` в приложении.
+Данные телеметрии доступны в таблице `customMetrics` в [службе аналитики Application Insights](../log-query/log-query-overview.md). Каждая строка представляет собой вызов `trackMetric(..)` в приложении.
 
 * `valueSum` — это сумма измерений. Чтобы получить среднее значение, разделите текущее значение на значение `valueCount`.
 * `valueCount` — число измерений, агрегированных в этот вызов `trackMetric(..)`.
@@ -270,7 +271,7 @@ appInsights.stopTrackPage("Page1", url, properties, measurements);
 
 ### <a name="page-telemetry-in-analytics"></a>Телеметрия страниц в службе аналитики
 
-В [службе аналитики](analytics.md) две таблицы содержат данные по операциям в браузере.
+В [службе аналитики](../log-query/log-query-overview.md) две таблицы содержат данные по операциям в браузере.
 
 * Таблица `pageViews` содержит данные по URL-адресу и названию страницы.
 * Таблица `browserTimings` содержит данные по производительности клиента, например время, затраченное на обработку входящих данных.
@@ -306,7 +307,7 @@ TrackRequest используется в серверном пакете SDK, ч
 
 ## <a name="operation-context"></a>Контекст операции
 
-Вы можете коррелировать элементы телеметрии между собой. Для этого свяжите их с контекстом операции. Стандартный модуль отслеживания запросов делает это для исключений и других событий, отправляемых во время обработки HTTP-запроса. В службе [Поиск](../../azure-monitor/app/diagnostic-search.md) и службе [Analytics](analytics.md) можно легко найти все события, связанные с запросом при помощи его идентификатора операции.
+Вы можете коррелировать элементы телеметрии между собой. Для этого свяжите их с контекстом операции. Стандартный модуль отслеживания запросов делает это для исключений и других событий, отправляемых во время обработки HTTP-запроса. В службе [Поиск](../../azure-monitor/app/diagnostic-search.md) и службе [Analytics](../log-query/log-query-overview.md) можно легко найти все события, связанные с запросом при помощи его идентификатора операции.
 
 Дополнительные сведения о корреляции см. в статье [Корреляция данных телеметрии в Application Insights](../../azure-monitor/app/correlation.md).
 
@@ -344,7 +345,7 @@ using (var operation = telemetryClient.StartOperation<RequestTelemetry>("operati
 
 ### <a name="requests-in-analytics"></a>Запросы в аналитике
 
-В [службе аналитики Application Insights](analytics.md) запросы приводятся в таблице `requests`.
+В [службе аналитики Application Insights](../log-query/log-query-overview.md) запросы приводятся в таблице `requests`.
 
 Если действует [выборка](../../azure-monitor/app/sampling.md), свойство itemCount будет иметь значение больше 1. Например, itemCount==10 означает, что из 10 вызовов trackRequest() процесс выборки передал только один. Чтобы получить правильное число запросов и среднюю длительность, разбитую по именам запросов, используйте следующий код:
 
@@ -426,7 +427,7 @@ catch (ex)
 
 ### <a name="exceptions-in-analytics"></a>Исключения в службе аналитики
 
-В [службе аналитики Application Insights](analytics.md) исключения приводятся в таблице `exceptions`.
+В [службе аналитики Application Insights](../log-query/log-query-overview.md) исключения приводятся в таблице `exceptions`.
 
 Если действует [выборка](../../azure-monitor/app/sampling.md), свойство `itemCount` имеет значение больше 1. Например, itemCount==10 означает, что из 10 вызовов trackException() процесс выборки передал только один. Чтобы получить правильное число исключений, разбитое по типам исключений, используйте следующий код:
 
@@ -435,7 +436,7 @@ exceptions
 | summarize sum(itemCount) by type
 ```
 
-Большая часть важных сведений о стеке уже извлечена в отдельные переменные, однако вы можете разобрать структуру `details`, чтобы получить дополнительные сведения. Так как это динамическая структура, результат следует привести к требуемому типу. Пример:
+Большая часть важных сведений о стеке уже извлечена в отдельные переменные, однако вы можете разобрать структуру `details`, чтобы получить дополнительные сведения. Так как это динамическая структура, результат следует привести к требуемому типу. Например.
 
 ```kusto
 exceptions
@@ -487,10 +488,10 @@ trackTrace(message: string, properties?: {[string]:string}, severityLevel?: Seve
 
 Зарегистрируйте событие диагностики, например вход в метод или выход из него.
 
- Параметр | Описание:
+ Параметр | Описание
 ---|---
 `message` | Диагностические данные Могут содержать не только имя.
-`properties` | Преобразование строки в строку: дополнительные данные, используемые для [фильтрации исключений](https://azure.microsoft.com/documentation/articles/app-insights-api-custom-events-metrics/#properties) на портале. Значение по умолчанию: empty.
+`properties` | Преобразование строки в строку: дополнительные данные, используемые для [фильтрации исключений](#properties) на портале. Значение по умолчанию: empty.
 `severityLevel` | Поддерживаемые значения: [северитилевел. TS](https://github.com/microsoft/ApplicationInsights-JS/blob/17ef50442f73fd02a758fbd74134933d92607ecf/shared/AppInsightsCommon/src/Interfaces/Contracts/Generated/SeverityLevel.ts)
 
 Вы можете выполнять поиск содержимого сообщения, но (в отличие от значений свойств) не можете фильтровать его.
@@ -498,7 +499,7 @@ trackTrace(message: string, properties?: {[string]:string}, severityLevel?: Seve
 Ограничения по размеру `message` гораздо выше, чем ограничение для свойств.
 Преимуществом TrackTrace является возможность добавления в сообщения относительно длинных данных, например данных POST.  
 
-Кроме того, вы можете настроить для сообщения уровень серьезности. Как и для других данных телеметрии, вы можете добавлять значения свойства, используемые для фильтрации или поиска различных наборов трассировки. Пример:
+Кроме того, вы можете настроить для сообщения уровень серьезности. Как и для других данных телеметрии, вы можете добавлять значения свойства, используемые для фильтрации или поиска различных наборов трассировки. Например.
 
 *C#*
 
@@ -521,7 +522,7 @@ telemetry.trackTrace("Slow Database response", SeverityLevel.Warning, properties
 
 ### <a name="traces-in-analytics"></a>Трассировки в службе аналитики
 
-В [службе аналитики Application Insights](analytics.md) вызовы TrackTrace приводятся в таблице `traces`.
+В [службе аналитики Application Insights](../log-query/log-query-overview.md) вызовы TrackTrace приводятся в таблице `traces`.
 
 Если действует [выборка](../../azure-monitor/app/sampling.md), свойство itemCount имеет значение больше 1. Например, itemCount==10 означает, что из 10 вызовов `trackTrace()` процесс выборки передал только один. Чтобы получить правильное количество вызовов трассировки, следует использовать такой код, как `traces | summarize sum(itemCount)`.
 
@@ -600,7 +601,7 @@ finally
 
 ### <a name="dependencies-in-analytics"></a>Зависимости в службе аналитики
 
-В [службе аналитики Application Insights](analytics.md) вызовы trackDependency приводятся в таблице `dependencies`.
+В [службе аналитики Application Insights](../log-query/log-query-overview.md) вызовы trackDependency приводятся в таблице `dependencies`.
 
 Если действует [выборка](../../azure-monitor/app/sampling.md), свойство itemCount имеет значение больше 1. Например, itemCount==10 означает, что из 10 вызовов trackDependency() процесс выборки передал только один. Чтобы получить правильное число зависимостей, разбитое по конечным компонентам, используйте следующий код:
 
@@ -809,7 +810,7 @@ telemetry.TrackEvent(event);
 
 ### <a name="custom-measurements-and-properties-in-analytics"></a>Пользовательские измерения и свойства в службе аналитики
 
-В [службе аналитики](analytics.md) пользовательские метрики и свойства приводятся в атрибутах `customMeasurements` и `customDimensions` каждой записи телеметрии.
+В [службе аналитики](../log-query/log-query-overview.md) пользовательские метрики и свойства приводятся в атрибутах `customMeasurements` и `customDimensions` каждой записи телеметрии.
 
 Например, если вы добавили свойство game в телеметрию запросов, следующий запрос подсчитывает число различных значений свойства game и показывает среднее значение пользовательской метрики score:
 
@@ -1061,7 +1062,7 @@ var appInsights = window.appInsights || function(config){ ...
 
 ## <a name="telemetrycontext"></a>Класс TelemetryContext
 
-Экземпляр TelemetryClient включает свойство Context, содержащее несколько значений, которые отправляются вместе со всеми данными телеметрии. Как правило, их задают модули стандартной телеметрии, но их также можно задать самостоятельно. Пример:
+Экземпляр TelemetryClient включает свойство Context, содержащее несколько значений, которые отправляются вместе со всеми данными телеметрии. Как правило, их задают модули стандартной телеметрии, но их также можно задать самостоятельно. Например.
 
 ```csharp
 telemetry.Context.Operation.Name = "MyOperationName";
@@ -1091,8 +1092,8 @@ telemetry.Context.Operation.Name = "MyOperationName";
 
 ## <a name="reference-docs"></a>Справочная документация
 
-* [Справочник по ASP.NET](https://docs.microsoft.com/dotnet/api/overview/azure/insights?view=azure-dotnet)
-* [Справочник по Java](https://docs.microsoft.com/java/api/overview/azure/appinsights?view=azure-java-stable/)
+* [Справочник по ASP.NET](/dotnet/api/overview/azure/insights?view=azure-dotnet)
+* [Справочник по Java](/java/api/overview/azure/appinsights?view=azure-java-stable/)
 * [Справочник по JavaScript](https://github.com/Microsoft/ApplicationInsights-JS/blob/master/API-reference.md)
 
 ## <a name="sdk-code"></a>Код пакета SDK
@@ -1108,7 +1109,7 @@ telemetry.Context.Operation.Name = "MyOperationName";
 
 * *Какие исключения могут создаваться при вызовах Track_()?*
 
-    Отсутствует. Вам не нужно помещать их в предложения try-catch. Если пакет SDK сталкивается с проблемами, он добавляет в журнал сообщения, которые отображаются в консоли отладки и, если сообщения проходят, — в поиске по журналу диагностики.
+    Нет. Вам не нужно помещать их в предложения try-catch. Если пакет SDK сталкивается с проблемами, он добавляет в журнал сообщения, которые отображаются в консоли отладки и, если сообщения проходят, — в поиске по журналу диагностики.
 * *Существует ли REST API для получения данных из портала?*
 
     Да, [API доступа к данным](https://dev.applicationinsights.io/). К другим способам извлечения данных относятся [экспорт из Analytics в Power BI](../../azure-monitor/app/export-power-bi.md ) и [непрерывный экспорт](../../azure-monitor/app/export-telemetry.md).
@@ -1116,4 +1117,4 @@ telemetry.Context.Operation.Name = "MyOperationName";
 ## <a name="next-steps"></a><a name="next"></a>Следующие шаги
 
 * [Поиск событий и журналов](../../azure-monitor/app/diagnostic-search.md)
-* [Устранение неполадок](../../azure-monitor/app/troubleshoot-faq.md)
+* [Устранение неполадок](../faq.md)

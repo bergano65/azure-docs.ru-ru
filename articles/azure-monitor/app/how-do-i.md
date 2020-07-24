@@ -3,12 +3,12 @@ title: Выполнение заданий в Azure Application Insights | До�
 description: Вопросы и ответы об Application Insights
 ms.topic: conceptual
 ms.date: 04/04/2017
-ms.openlocfilehash: bda0091fe06c93150d5b3cae27f278f3fd9a91ea
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.openlocfilehash: 63a958e1d3fb784651043181bff0428666fad6db
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86224474"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87014599"
 ---
 # <a name="how-do-i--in-application-insights"></a>Как работать с Application Insights
 ## <a name="get-an-email-when-"></a>Получать уведомление по электронной почте, если...
@@ -74,7 +74,7 @@ telemetry.TrackMetric("Alarm", 0.5);
 [Создание новых оповещений с помощью PowerShell](../../azure-monitor/platform/alerts-log.md)
 
 ## <a name="use-powershell-to-manage-application-insights"></a>Использование PowerShell для управления Application Insights
-* [Создание новых ресурсов](https://docs.microsoft.com/azure/azure-monitor/app/create-new-resource#creating-a-resource-automatically)
+* [Создание новых ресурсов](./create-new-resource.md#creating-a-resource-automatically)
 * [Создание новых оповещений](../../azure-monitor/platform/alerts-log.md)
 
 ## <a name="separate-telemetry-from-different-versions"></a>Разделение телеметрии разных версий

@@ -13,16 +13,16 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 06/20/2018
 ms.author: apimpm
-ms.openlocfilehash: 8be8ffa1b569c365c8fa9b985d2b8319b7c0731b
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: faef2721b48ffab12264c585d2dec55ab9334016
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86249841"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87015295"
 ---
 # <a name="how-to-use-role-based-access-control-in-azure-api-management"></a>Как использовать управление доступом на основе ролей в службе управления API Azure
 
-Служба управления API Azure использует управление доступом на основе ролей (RBAC) для детализированного контроля доступа к службам и сущностям управления API (например, к интерфейсам API и политикам). В этой статье содержатся общие сведения о встроенных и пользовательских ролях в службе управления API. Дополнительные сведения об управлении доступом на портале Azure, см. в руководстве по [началу работы с управлением доступом на портале Azure](../role-based-access-control/overview.md).
+Служба управления API Azure использует управление доступом на основе ролей Azure (Azure RBAC) для обеспечения точного управления доступом к службам и сущностям управления API (например, к API и политикам). В этой статье содержатся общие сведения о встроенных и пользовательских ролях в службе управления API. Дополнительные сведения об управлении доступом на портале Azure, см. в руководстве по [началу работы с управлением доступом на портале Azure](../role-based-access-control/overview.md).
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 

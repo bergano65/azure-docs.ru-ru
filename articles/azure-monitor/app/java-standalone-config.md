@@ -3,12 +3,12 @@ title: Мониторинг приложений Java в любом месте A
 description: Наблюдение за производительностью приложений Java, работающих в любой среде, без инструментирования приложения. Найдите основную причину проблем d с помощью распределенной трассировки и схемы приложения.
 ms.topic: conceptual
 ms.date: 04/16/2020
-ms.openlocfilehash: 0c66ad01f265dde7da2f48b17b3ad4438d59a0ae
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 3a01f2e9339f3ba4f8f50fc41617fabf9da9d8cd
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85319692"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87014207"
 ---
 # <a name="configuration-options---java-standalone-agent-for-azure-monitor-application-insights"></a>Параметры конфигурации — автономный агент Java для Azure Monitor Application Insights
 
@@ -115,8 +115,8 @@ Application Insights Предварительная версия Java 3,0 авт
 | `threshold`  | Log4j  | Logback | ИЮЛ     |
 |--------------|--------|---------|---------|
 | OFF          | OFF    | OFF     | OFF     |
-| АВАРИЙ        | АВАРИЙ  | ОШИБКА   | SEVERE  |
-| ОШИБКА/СЕРЬЕЗНАЯ | ОШИБКА  | ОШИБКА   | SEVERE  |
+| АВАРИЙ        | АВАРИЙ  | ошибка   | SEVERE  |
+| ОШИБКА/СЕРЬЕЗНАЯ | ошибка  | ошибка   | SEVERE  |
 | ПРЕДУПРЕЖДАТЬ/ПРЕДУПРЕЖДЕНИЕ | ДАТЬ   | ДАТЬ    | ПРЕДУПРЕЖДЕНИЕ |
 | ИНФОРМАЦИЯ         | ИНФОРМАЦИЯ   | ИНФОРМАЦИЯ    | ИНФОРМАЦИЯ    |
 | CONFIG       | DEBUG  | DEBUG   | CONFIG  |
@@ -216,7 +216,7 @@ Application Insights Предварительная версия Java 3,0 авт
 
 ## <a name="http-proxy"></a>Прокси-сервер HTTP
 
-Если приложение находится за брандмауэром и не может напрямую подключаться к Application Insights (см. [IP-адреса, используемые Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/ip-addresses)), можно настроить Application Insights Java 3,0 Preview для использования прокси-сервера http:
+Если приложение находится за брандмауэром и не может напрямую подключаться к Application Insights (см. [IP-адреса, используемые Application Insights](./ip-addresses.md)), можно настроить Application Insights Java 3,0 Preview для использования прокси-сервера http:
 
 ```json
 {

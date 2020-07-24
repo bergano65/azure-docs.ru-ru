@@ -3,11 +3,12 @@ title: Анализ использования с помощью Azure Applicati
 description: Получение сведений о пользователях и их действиях с веб-приложением.
 ms.topic: conceptual
 ms.date: 03/25/2019
-ms.openlocfilehash: 7f4f46f183291684fa59e5aa35b65c8ac3352563
-ms.sourcegitcommit: cf7caaf1e42f1420e1491e3616cc989d504f0902
+ms.openlocfilehash: 1acc803d66bef29a77266d4e38e1605ffd75f36f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83797791"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87014071"
 ---
 # <a name="usage-analysis-with-application-insights"></a>Анализ использования с помощью Application Insights
 
@@ -33,7 +34,7 @@ ms.locfileid: "83797791"
     </script>
     ```
 
-    Чтобы узнать о более сложных настройках для мониторинга веб-сайтов, ознакомьтесь со статьей [о работе с пакетом SDK для JavaScript](https://docs.microsoft.com/azure/azure-monitor/app/javascript).
+    Чтобы узнать о более сложных настройках для мониторинга веб-сайтов, ознакомьтесь со статьей [о работе с пакетом SDK для JavaScript](./javascript.md).
 
 3. **Код мобильного приложения.** Используйте пакет SDK для Центра приложений, чтобы собирать события из приложения, а затем отправлять копии этих событий в Application Insights для анализа, следуя инструкциям в [этом руководстве](../../azure-monitor/learn/mobile-center-quickstart.md).
 
@@ -44,7 +45,7 @@ ms.locfileid: "83797791"
 ## <a name="include-user-and-session-id-in-your-telemetry"></a>Добавление идентификатора пользователя и сеанса к телеметрии
 Для долговременного отслеживания пользователей Application Insights требуется способ их идентификации. Инструмент "События" — это единственный инструмент использования, не требующий идентификатор пользователя или сеанса.
 
-Начните отправку идентификаторов пользователей и сеансов с помощью [этого процесса](https://docs.microsoft.com/azure/application-insights/app-insights-usage-send-user-context).
+Начните отправку идентификаторов пользователей и сеансов с помощью [этого процесса](./usage-send-user-context.md).
 
 ## <a name="explore-usage-demographics-and-statistics"></a>Изучение демографических данных об использовании и статистики
 Узнайте, когда люди используют ваше приложение, какие страницы им наиболее интересны, где находятся ваши пользователи, какие браузеры и операционные системы они используют. 

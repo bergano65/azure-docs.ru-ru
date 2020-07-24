@@ -10,12 +10,12 @@ ms.service: api-management
 ms.topic: article
 ms.date: 04/26/2020
 ms.author: apimpm
-ms.openlocfilehash: 7321331adcfc81e26b40e7a3c4869b8b1e50fc0e
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 02962e9c5be2c4b73d121a53a7b595c573ad6cd0
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86254390"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87015227"
 ---
 # <a name="deploy-to-azure-kubernetes-service"></a>Развертывание в Службе Azure Kubernetes
 
@@ -29,7 +29,7 @@ ms.locfileid: "86254390"
 
 ## <a name="deploy-the-self-hosted-gateway-to-aks"></a>Развертывание самостоятельно размещенного шлюза в AKS
 
-1. В разделе **Параметры**выберите **шлюзы** .
+1. Выберите **шлюзы** в разделе **развертывание и инфраструктура**.
 2. Выберите ресурс самостоятельно размещенного шлюза, который планируется развернуть.
 3. Выберите **развертывание**.
 4. Обратите внимание, что новый маркер в текстовом поле **токен** был создан автоматически при использовании значений **срока действия** по умолчанию и **секретного ключа** . При необходимости настройте один или оба варианта и нажмите кнопку **создать** , чтобы создать новый маркер.

@@ -10,12 +10,12 @@ ms.author: peterlu
 author: peterclu
 ms.date: 06/28/2020
 ms.custom: designer
-ms.openlocfilehash: a2074b1ecd37fd18a9a0ac9091f05e734765e40b
-ms.sourcegitcommit: 3541c9cae8a12bdf457f1383e3557eb85a9b3187
+ms.openlocfilehash: 181f0d62f160a6644e0423be052012521752525f
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86199986"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87012949"
 ---
 # <a name="what-is-azure-machine-learning-designer-preview"></a>Что такое конструктор Машинного обучения Azure (предварительная версия)? 
 [!INCLUDE [applies-to-skus](../../includes/aml-applies-to-enterprise-sku.md)]
@@ -115,25 +115,6 @@ ms.locfileid: "86199986"
 Опубликованный конвейер выполняется на основе вычислительных ресурсов, которые определяются в черновике конвейера для каждого модуля.
 
 Конструктор создает такой же объект [PublishedPipeline](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.publishedpipeline?view=azure-ml-py), что и пакет SDK.
-
-
-## <a name="moving-from-the-visual-interface-to-the-designer"></a>Переход с визуального интерфейса на конструктор
-
-Визуальный интерфейс (предварительная версия) был обновлен и теперь стал конструктором Машинного обучения Azure (предварительная версия). Архитектура конструктора была переработана для использования серверной части на основе конвейеров, которая полностью интегрируется с другими функциями Машинного обучения Azure. 
-
-В результате этих изменений некоторые понятия и термины визуального интерфейса были изменены или переименованы. Наиболее важные концептуальные изменения см. в таблице ниже. 
-
-| Понятие в конструкторе | Ранее в визуальном интерфейсе |
-| ---- |:----:|
-| Черновик конвейера | Эксперимент |
-| Конечная точка для прогнозирования в реальном времени | Веб-служба |
-
-### <a name="migrating-to-the-designer"></a>Перенос в конструктор
-
-Вы можете преобразовать существующие эксперименты и веб-службы визуального интерфейса в конвейеры и конечные точки для прогнозирования в реальном времени в конструкторе. Чтобы перенести ресурсы из визуального интерфейса, выполните указанные ниже действия.
-
-[!INCLUDE [migrate from the visual interface](../../includes/aml-vi-designer-migration.md)]
-
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -6,11 +6,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 04/23/2020
 ms.topic: conceptual
-ms.openlocfilehash: d2b9f705c73e667f34e46fdeed3c80af1e65fb12
-ms.sourcegitcommit: 0b80a5802343ea769a91f91a8cdbdf1b67a932d3
+ms.openlocfilehash: 61aec3936ffef488b989f54894568d206c759b12
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/25/2020
-ms.locfileid: "83830112"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87014989"
 ---
 # <a name="automation-account-authentication-overview"></a>Общие сведения о проверке подлинности учетной записи службы автоматизации
 
@@ -47,5 +48,5 @@ ms.locfileid: "83830112"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения о создании учетной записи службы автоматизации на портале Azure см. в статье [Создание автономной учетной записи службы автоматизации Azure](automation-create-standalone-account.md).
-* Если вы предпочитаете работать с шаблонами, см. статью [Создание учетной записи службы автоматизации с помощью шаблона Azure Resource Manager](automation-create-account-template.md).
+* Если вы предпочитаете работать с шаблонами, см. статью [Создание учетной записи службы автоматизации с помощью шаблона Azure Resource Manager](quickstart-create-automation-account-template.md).
 * Для использования Amazon Web Services прочитайте статью [Аутентификация модулей runbook службы автоматизации Azure с помощью Amazon Web Services](automation-config-aws-account.md).

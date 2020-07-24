@@ -3,13 +3,14 @@ title: Функции HTTP в Устойчивые функции — функц
 description: Сведения об интегрированных функциях HTTP в расширении Устойчивые функции для функций Azure.
 author: cgillum
 ms.topic: conceptual
-ms.date: 09/04/2019
+ms.date: 07/14/2020
 ms.author: azfuncdf
-ms.openlocfilehash: 1ffa116f6877b58d54c22f918b4e83574b85860c
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 16a133205b13a3d0a4aa76f75c8ce316f6c09199
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82800725"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87014904"
 ---
 # <a name="http-features"></a>Функции HTTP
 
@@ -53,6 +54,57 @@ ms.locfileid: "82800725"
 **function.json**
 
 [!code-json[Main](~/samples-durable-functions/samples/javascript/HttpStart/function.json)]
+
+# <a name="python"></a>[Python](#tab/python)
+
+**__init__. Корректировка**
+
+```python
+import logging
+import azure.functions as func
+import azure.durable_functions as df
+
+async def main(req: func.HttpRequest, starter: str) -> func.HttpResponse:
+    client = df.DurableOrchestrationClient(starter)
+    function_name = req.route_params['functionName']
+    event_data = req.get_body()
+
+    instance_id = await client.start_new(function_name, instance_id, event_data)
+    
+    logging.info(f"Started orchestration with ID = '{instance_id}'.")
+    return client.create_check_status_response(req, instance_id)
+```
+
+**function.json**
+
+```json
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "authLevel": "function",
+      "name": "req",
+      "type": "httpTrigger",
+      "direction": "in",
+      "route": "orchestrators/{functionName}",
+      "methods": [
+        "post",
+        "get"
+      ]
+    },
+    {
+      "name": "$return",
+      "type": "http",
+      "direction": "out"
+    },
+    {
+      "name": "starter",
+      "type": "orchestrationClient",
+      "direction": "in"
+    }
+  ]
+}
+```
 
 ---
 
@@ -147,6 +199,22 @@ module.exports = df.orchestrator(function*(context){
     }
 });
 ```
+# <a name="python"></a>[Python](#tab/python)
+
+```python
+import azure.functions as func
+import azure.durable_functions as df
+from datetime import datetime, timedelta
+
+def orchestrator_function(context: df.DurableOrchestrationContext):
+    url = context.get_input()
+    response = yield context.call_http('GET', url)
+    
+    if response["statusCode"] >= 400:
+        # handling of error codes goes here
+
+main = df.Orchestrator.create(orchestrator_function)
+```
 
 ---
 
@@ -169,7 +237,7 @@ API "Call HTTP" может автоматически реализовать к�
 
 Устойчивые функции изначально поддерживает вызовы API, которые принимают маркеры Azure Active Directory (Azure AD) для авторизации. Эта поддержка использует [управляемые удостоверения Azure](../../active-directory/managed-identities-azure-resources/overview.md) для получения этих маркеров.
 
-Следующий код является примером функции .NET Orchestrator. Функция выполняет проверку подлинности вызовов для перезапуска виртуальной машины с помощью Azure Resource Manager [виртуальных машин REST API](https://docs.microsoft.com/rest/api/compute/virtualmachines).
+Следующий код является примером функции .NET Orchestrator. Функция выполняет проверку подлинности вызовов для перезапуска виртуальной машины с помощью Azure Resource Manager [виртуальных машин REST API](/rest/api/compute/virtualmachines).
 
 # <a name="c"></a>[C#](#tab/csharp)
 
@@ -221,6 +289,30 @@ module.exports = df.orchestrator(function*(context) {
 });
 ```
 
+# <a name="python"></a>[Python](#tab/python)
+
+```python
+import azure.functions as func
+import azure.durable_functions as df
+
+def orchestrator_function(context: df.DurableOrchestrationContext):
+    subscription_id = "mySubId"
+    resource_group = "myRg"
+    vm_name = "myVM"
+    api_version = "2019-03-01"
+    token_source = df.ManagedIdentityTokenSource("https://management.core.windows.net")
+
+    # get a list of the Azure subscriptions that I have access to
+    restart_response = yield context.call_http("POST", 
+        f"https://management.azure.com/subscriptions/${subscription_id}/resourceGroups/${resource_group}/providers/Microsoft.Compute/virtualMachines/${vm_name}/restart?api-version=${api_version}",
+        None,
+        None,
+        token_source)
+    return restart_response
+
+main = df.Orchestrator.create(orchestrator_function)
+```
+
 ---
 
 В предыдущем примере `tokenSource` параметр настроен для получения маркеров Azure AD для [Azure Resource Manager](../../azure-resource-manager/management/overview.md). Токены идентифицируются с помощью URI ресурса `https://management.core.windows.net` . В этом примере предполагается, что текущее приложение-функция выполняется локально или развернуто как приложение-функция с управляемым удостоверением. Предполагается, что локальным удостоверением или управляемым удостоверением предоставлено разрешение на управление виртуальными машинами в указанной группе ресурсов `myRG` .
@@ -255,7 +347,7 @@ HTTP-запросы, отправленные функциями Orchestrator и
 
 ### <a name="extensibility-net-only"></a>Расширяемость (только .NET)
 
-Настройка поведения внутреннего HTTP-клиента оркестрации возможна с помощью [внедрения зависимостей .NET для функций Azure](https://docs.microsoft.com/azure/azure-functions/functions-dotnet-dependency-injection). Эта возможность может быть полезной для внесения небольших изменений в поведение. Он также может быть полезен для модульного тестирования HTTP-клиента путем внедрения макетов объектов.
+Настройка поведения внутреннего HTTP-клиента оркестрации возможна с помощью [внедрения зависимостей .NET для функций Azure](../functions-dotnet-dependency-injection.md). Эта возможность может быть полезной для внесения небольших изменений в поведение. Он также может быть полезен для модульного тестирования HTTP-клиента путем внедрения макетов объектов.
 
 В следующем примере демонстрируется использование внедрения зависимостей для отключения проверки сертификата TLS/SSL для функций Orchestrator, вызывающих внешние конечные точки HTTP.
 
@@ -285,7 +377,7 @@ public class MyDurableHttpMessageHandlerFactory : IDurableHttpMessageHandlerFact
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Сведения о устойчивых сущностях](durable-functions-entities.md)

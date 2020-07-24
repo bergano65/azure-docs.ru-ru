@@ -8,12 +8,12 @@ ms.date: 07/07/2020
 ms.author: owend
 ms.reviewer: minewiskan
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 4ce23e9da84d01a288c1c37c6a6d884db2ed3969
-ms.sourcegitcommit: 124f7f699b6a43314e63af0101cd788db995d1cb
+ms.openlocfilehash: ce8f7347e4813e72ede426ab17f09221ab859136
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86077564"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87015414"
 ---
 # <a name="add-a-service-principal-to-the-server-administrator-role"></a>Добавление субъекта-службы к роли администратора сервера 
 
@@ -44,7 +44,7 @@ ms.locfileid: "86077564"
 
 ## <a name="using-a-resource-manager-template"></a>Использование шаблона Resource Manager
 
-Кроме того, администраторов сервера можно настроить, развернув сервер Analysis Services из шаблона Azure Resource Manager. В разделе [Управление доступом на основе ролей](../role-based-access-control/overview.md) в Azure удостоверению, которое используется для развертывания, должна быть присвоена роль **участника** для доступа к ресурсу.
+Кроме того, администраторов сервера можно настроить, развернув сервер Analysis Services из шаблона Azure Resource Manager. Удостоверение, под которым выполняется развертывание, должно принадлежать к роли **участника** для ресурса в [контроле доступа на основе ролей Azure (Azure RBAC)](../role-based-access-control/overview.md).
 
 > [!IMPORTANT]
 > Субъект-служба добавляется в формате `app:{service-principal-client-id}@{azure-ad-tenant-id}`.
@@ -119,5 +119,3 @@ az ad sp show --id <ManagedIdentityServicePrincipalObjectId> --query appId -o ts
 
 * [Скачивание модуля PowerShell SQL Server](https://docs.microsoft.com/sql/ssms/download-sql-server-ps-module)   
 * [Скачивание SSMS](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms)   
-
-

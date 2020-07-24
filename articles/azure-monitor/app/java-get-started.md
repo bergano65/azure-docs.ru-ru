@@ -5,11 +5,12 @@ ms.topic: conceptual
 author: lgayhardt
 ms.author: lagayhar
 ms.date: 05/24/2019
-ms.openlocfilehash: e56ba304d197984110de5127a0f163ac0accf1aa
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d3835f88eb581693d10f68a9a495329466a657a2
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81537514"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87014496"
 ---
 # <a name="quickstart-get-started-with-application-insights-in-a-java-web-project"></a>Краткое руководство. Начало работы с Application Insights в веб-проекте Java
 
@@ -171,7 +172,7 @@ Application Insights — это расширяемая служба аналит
 ![Детализация конкретного примера представления](./media/java-get-started/007-instance.png)
 
 ### <a name="analytics-powerful-query-language"></a>Аналитика: мощный язык запросов
-По мере увеличения объема накопленных данных вы сможете использовать запросы для объедения данных и поиска отдельных экземпляров.  [Аналитика](../../azure-monitor/app/analytics.md) — это мощный инструмент, который не только позволяет изучать сведения о производительности и использовании, но и диагностировать возможные неполадки.
+По мере увеличения объема накопленных данных вы сможете использовать запросы для объедения данных и поиска отдельных экземпляров.  [Аналитика](../log-query/log-query-overview.md) — это мощный инструмент, который не только позволяет изучать сведения о производительности и использовании, но и диагностировать возможные неполадки.
 
 ![Пример аналитики](./media/java-get-started/0025.png)
 
@@ -263,7 +264,7 @@ Application Insights — это расширяемая служба аналит
   * `tabular`— данные счетчика производительности имеют формат строки таблицы.
 
 #### <a name="windows-performance-counters"></a>Счетчики производительности Windows
-Каждый [счетчик производительности Windows](https://msdn.microsoft.com/library/windows/desktop/aa373083.aspx) входит в состав категории (аналогично поле является членом класса). Категория может быть глобальной либо иметь пронумерованные или именованные экземпляры.
+Каждый [счетчик производительности Windows](/windows/win32/perfctrs/performance-counters-portal) входит в состав категории (аналогично поле является членом класса). Категория может быть глобальной либо иметь пронумерованные или именованные экземпляры.
 
 ```XML
     <PerformanceCounters>
@@ -299,15 +300,15 @@ Application Insights может тестировать ваш веб-сайт ч
 
 [Дополнительные сведения о настройке веб-тестов доступности см. здесь.][availability]
 
-## <a name="questions-problems"></a>Вопросы? Проблемы?
+## <a name="questions-problems"></a>Есть вопросы? Проблемы?
 [Устранение неполадок Java](java-troubleshoot.md)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * [Отслеживайте вызовы зависимостей.](java-agent.md)
 * [Отслеживайте счетчики производительности Unix.](java-collectd.md)
 * Добавляйте [мониторинг на веб-страницы](javascript.md), чтобы отслеживать время загрузки страниц, вызовы AJAX и исключения браузера.
 * Пишите [пользовательскую телеметрию](../../azure-monitor/app/api-custom-events-metrics.md) для отслеживания использования в браузере или на сервере.
-* Использование [аналитики](../../azure-monitor/app/analytics.md) для мощных запросов телеметрии из приложения
+* Использование [аналитики](../log-query/log-query-overview.md) для мощных запросов телеметрии из приложения
 * Дополнительные сведения см. в разделе [Azure for Java developers](/java/azure) (Azure для разработчиков Java).
 
 <!--Link references-->

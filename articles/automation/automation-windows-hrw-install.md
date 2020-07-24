@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 06/24/2020
 ms.topic: conceptual
-ms.openlocfilehash: 6913ae8cbd8c73bd2763bd89172280feee9df973
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: 31c769039009889559b6aa05bb76139d63c42feb
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86185625"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87015023"
 ---
 # <a name="deploy-a-windows-hybrid-runbook-worker"></a>Развертывание гибридной рабочей роли Runbook для Windows
 
@@ -18,7 +18,7 @@ ms.locfileid: "86185625"
 
 После успешного развертывания рабочей роли Runbook ознакомьтесь с [запуском модулей runbook в гибридной рабочей роли Runbook](automation-hrw-run-runbooks.md), чтобы узнать, как настроить модули runbook для автоматизации процессов в локальном центре обработки данных или другой облачной среде.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 
 Прежде чем начать, убедитесь, что у вас есть следующее.
 
@@ -173,7 +173,7 @@ Heartbeat
 
 2. Чтобы подтвердить версию гибридной рабочей роли Runbook, перейдите к `C:\Program Files\Microsoft Monitoring Agent\Agent\AzureAutomation\` вложенной папке **версии** и запишите ее.
 
-### <a name="step-3---install-the-runbook-environment-and-connect-to-azure-automation"></a>Шаг 3. Установка среды Runbook и подключение к службе автоматизации Azure
+### <a name="step-2---install-the-runbook-environment-and-connect-to-azure-automation"></a>Шаг 2. Установка среды Runbook и подключение к службе автоматизации Azure
 
 Когда вы настраиваете в агенте отправку данных в рабочую область Log Analytics, возможность службы автоматизации Azure отправляет на агент модуль PowerShell `HybridRegistration`, который содержит командлет `Add-HybridRunbookWorker`. Используйте этот командлет для установки среды Runbook на компьютере и его регистрации в службе автоматизации Azure.
 
@@ -202,7 +202,7 @@ Add-HybridRunbookWorker –GroupName <String> -Url <Url> -Key <String>
 
 * При необходимости задайте параметр `Verbose`, чтобы получить сведения об установке.
 
-### <a name="step-4----install-powershell-modules"></a>Шаг 4. Установка модулей PowerShell
+### <a name="step-3----install-powershell-modules"></a>Шаг 3. Установка модулей PowerShell
 
 Модули Runbook могут использовать любые из действий и командлетов, которые определены в модулях, установленных в вашей среде службы автоматизации Azure. Так как эти модули не развертываются автоматически на локальных компьютерах, их необходимо установить вручную. Исключением является модуль Azure. Этот модуль устанавливается по умолчанию и предоставляет доступ к командлетам для всех служб и действий службы автоматизации Azure.
 

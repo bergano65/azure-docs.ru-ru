@@ -11,12 +11,12 @@ author: juliemsft
 ms.author: jrasnick
 ms.reviewer: carlrab
 ms.date: 03/12/2019
-ms.openlocfilehash: 3d785edb82e62363dd96d9fd67447f1be7ffe8f5
-ms.sourcegitcommit: 93462ccb4dd178ec81115f50455fbad2fa1d79ce
+ms.openlocfilehash: b90acafb9146ec6cd796a0916ad46bf880398b22
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2020
-ms.locfileid: "85982625"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87013986"
 ---
 # <a name="manage-databases-in-azure-sql-database-by-using-azure-automation"></a>Управление базами данных в службе Azure SQL с помощью службы автоматизации Azure
 
@@ -34,13 +34,13 @@ ms.locfileid: "85982625"
 
 ## <a name="how-azure-automation-can-help-manage-your-databases"></a>Как служба автоматизации Azure может помочь в управлении базами данных
 
-С помощью службы автоматизации Azure вы можете управлять базами данных в службе SQL Azure, используя [командлеты PowerShell](https://docs.microsoft.com/powershell/module/servicemanagement/azure/#sql) , доступные в [средствах Azure PowerShell](/powershell/azure/overview). В службе автоматизации Azure доступны командлеты PowerShell для базы данных SQL Azure, позволяющие выполнять все задачи управления базами данных SQL в рамках службы. Кроме того, вы можете сопоставить эти командлеты в службе автоматизации Azure с командлетами для других служб Azure для автоматизации сложных задач в службах Azure и сторонних системах.
+С помощью службы автоматизации Azure вы можете управлять базами данных в службе SQL Azure, используя [командлеты PowerShell](/powershell/module/servicemanagement/azure.service/#sql) , доступные в [средствах Azure PowerShell](/powershell/azure/). В службе автоматизации Azure доступны командлеты PowerShell для базы данных SQL Azure, позволяющие выполнять все задачи управления базами данных SQL в рамках службы. Кроме того, вы можете сопоставить эти командлеты в службе автоматизации Azure с командлетами для других служб Azure для автоматизации сложных задач в службах Azure и сторонних системах.
 
 Служба автоматизации Azure также может взаимодействовать непосредственно с серверами SQL Server, выполняя команды SQL с помощью PowerShell.
 
 Модули Runbook и коллекции модулей для [службы автоматизации Azure](../../automation/automation-runbook-gallery.md) предлагают разнообразные модули Runbook от Майкрософт и сообщества, которые можно импортировать в службу автоматизации Azure. Чтобы использовать модуль runbook, скачайте его из коллекции. Вы также можете напрямую импортировать модули runbook из этой коллекции или из своей учетной записи службы автоматизации на портале Azure.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали об основах службы автоматизации Azure и о том, как ее можно использовать для управления базой данных SQL Azure, перейдите по следующим ссылкам, чтобы получить дополнительные сведения о службе автоматизации Azure.
 

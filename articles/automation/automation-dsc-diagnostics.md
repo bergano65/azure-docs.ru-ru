@@ -9,12 +9,12 @@ ms.author: magoedte
 ms.date: 11/06/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 0560d9a5156f06f7ae7473f63359d9d17926b7ab
-ms.sourcegitcommit: ec682dcc0a67eabe4bfe242fce4a7019f0a8c405
+ms.openlocfilehash: 425a7ff0553ddeac502c59e240f5ab152d6e0d79
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86186458"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87015159"
 ---
 # <a name="integrate-with-azure-monitor-logs"></a>Интеграция с журналами Azure Monitor
 
@@ -34,7 +34,7 @@ ms.locfileid: "86186458"
 
 Чтобы начать отправку отчетов Automation State Configuration в журналы Azure Monitor, необходимо следующее.
 
-- Выпуск за ноябрь 2016 года или более поздний выпуск [Azure PowerShell](/powershell/azure/overview) (вер. 2.3.0).
+- Выпуск за ноябрь 2016 года или более поздний выпуск [Azure PowerShell](/powershell/azure/) (вер. 2.3.0).
 - Учетная запись службы автоматизации Azure. Дополнительные сведения см. в статье [Общие сведения о службе автоматизации Azure](automation-intro.md).
 - Рабочая область Log Analytics с предложением службы "Автоматизация и управление". Дополнительные сведения см. в статье [Начало работы с Log Analytics в Azure Monitor](../azure-monitor/log-query/get-started-portal.md).
 - Как минимум один узел службы "Настройка состояния службы автоматизации Azure". Дополнительные сведения см. в статье [Подключение компьютеров для управления с помощью State Configuration службы автоматизации Azure](automation-dsc-onboarding.md).

@@ -73,8 +73,6 @@
               href: how-dev-spaces-works-routing.md
             - name: Удаленная отладка
               href: how-dev-spaces-works-remote-debugging.md
-            - name: Локальный процесс с Kubernetes
-              href: how-dev-spaces-works-local-process-kubernetes.md
         - name: Принцип работы VS Code с Dev Spaces
           href: how-vs-code-works-with-dev-spaces.md
         - name: Конфигурация сети в различных сетевых топологиях
@@ -111,10 +109,6 @@
           href: how-to/ingress-https-traefik.md
         - name: Использование NGINX для пользовательского входящего трафика и HTTPS
           href: how-to/ingress-https-nginx.md
-        - name: Использование Локального процесса с Kubernetes в Visual Studio Code (предварительная версия)
-          href: how-to/local-process-kubernetes-vs-code.md
-        - name: Использование Локального процесса с Kubernetes в Visual Studio (предварительная версия)
-          href: how-to/local-process-kubernetes-visual-studio.md
     - name: Устранение неполадок
       href: troubleshooting.md
     - name: ВОПРОСЫ И ОТВЕТЫ

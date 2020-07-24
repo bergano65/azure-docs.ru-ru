@@ -5,12 +5,12 @@ author: ofirmanor
 ms.topic: conceptual
 ms.subservice: alerts
 ms.date: 03/14/2019
-ms.openlocfilehash: 951894bcd047d93809b41f47213ad670823a27e0
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: fff1aac5df50550e43ae3e87c63c2130c6b39644
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85445378"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87013969"
 ---
 # <a name="common-alert-schema-definitions"></a>Определения общей схемы оповещений
 
@@ -149,7 +149,7 @@ ms.locfileid: "85445378"
 ### <a name="log-alerts"></a>Оповещения журналов
 
 > [!NOTE]
-> Для оповещений журнала, в которых определена пользовательская тема электронного сообщения или полезные данные JSON, включение общей схемы возвращает тему электронного сообщения или схему полезных данных, как показано ниже. Максимальный размер оповещений, для которых включена общая схема, ограничен 256 КБ. Результаты поиска не внедряются в полезные данные оповещений журнала, если их внедрение приведет к превышению этого значения. Вы можете проверить это условие, установив флаг `IncludeSearchResults`. Если результаты поиска не включаются, используйте поисковый запрос в сочетании с [API Log Analytics](https://docs.microsoft.com/rest/api/loganalytics/dataaccess/query/get). 
+> Для оповещений журнала, в которых определена пользовательская тема электронного сообщения или полезные данные JSON, включение общей схемы возвращает тему электронного сообщения или схему полезных данных, как показано ниже. Максимальный размер оповещений, для которых включена общая схема, ограничен 256 КБ. Результаты поиска не внедряются в полезные данные оповещений журнала, если их внедрение приведет к превышению этого значения. Вы можете проверить это условие, установив флаг `IncludeSearchResults`. Если результаты поиска не включаются, используйте поисковый запрос в сочетании с [API Log Analytics](/rest/api/loganalytics/dataaccess/query/get). 
 
 #### <a name="monitoringservice--log-analytics"></a>`monitoringService` = `Log Analytics`
 
@@ -220,7 +220,7 @@ ms.locfileid: "85445378"
                     "Heartbeat"
                 ]
             }
-        ]
+        ],
     "IncludeSearchResults": "True",
     "AlertType": "Metric measurement"
     }
@@ -500,5 +500,4 @@ ms.locfileid: "85445378"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - См. сведения об [общей схеме оповещений](https://aka.ms/commonAlertSchemaDocs).
-- Узнайте, как [создать приложение логики, которое использует общую схему оповещений для обработки всех оповещений](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-common-schema-integrations). 
-
+- Узнайте, как [создать приложение логики, которое использует общую схему оповещений для обработки всех оповещений](./alerts-common-schema-integrations.md). 

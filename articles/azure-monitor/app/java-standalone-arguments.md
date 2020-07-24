@@ -3,12 +3,12 @@ title: Мониторинг приложений Java, выполняемых в
 description: Мониторинг производительности приложений Java, выполняющихся в любой среде с автономным агентом Java без инструментирования приложения. Распределенная трассировка и схема приложения.
 ms.topic: conceptual
 ms.date: 04/16/2020
-ms.openlocfilehash: 527f1eaf04be7b5e8c89c12912a06d2f5d50321f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 6499fbc62a78cb333c623dbea8269144e623921c
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82508043"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87014247"
 ---
 # <a name="configuring-jvm-args-java-standalone-agent-for-azure-monitor-application-insights"></a>Настройка изолированного агента Java ВИРТУАЛЬНОЙ машины Java args для Azure Monitor Application Insights
 
@@ -16,7 +16,7 @@ ms.locfileid: "82508043"
 
 ## <a name="azure-environments"></a>Среды Azure
 
-Настройка [служб приложений](https://docs.microsoft.com/azure/app-service/configure-language-java#set-java-runtime-options).
+Настройка [служб приложений](../../app-service/configure-language-java.md#set-java-runtime-options).
 
 ## <a name="spring-boot"></a>Spring Boot
 

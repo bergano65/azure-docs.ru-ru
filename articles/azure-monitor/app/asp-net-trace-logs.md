@@ -3,12 +3,12 @@ title: Просмотр журналов трассировки .NET в Applicat
 description: Поиск в журналах, созданных с помощью Trace, Log4Net или NLog.
 ms.topic: conceptual
 ms.date: 05/08/2019
-ms.openlocfilehash: d010fe4389e22c9909800f5329911b6b5619d7b6
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: aad81855b58ee96789d097fbfbd3e7f9b17f6900
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85829539"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87014581"
 ---
 # <a name="explore-netnet-core-and-python-trace-logs-in-application-insights"></a>Просмотр журналов трассировки Python, .NET или .NET Core в Application Insights
 
@@ -84,7 +84,7 @@ System.Diagnostics.Trace.TraceWarning("Slow response - database01");
 ```
 
 ## <a name="use-eventsource-events"></a>Использование событий EventSource
-Можно настроить отправку событий [System.Diagnostics.Tracing.EventSource](https://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource.aspx) в Application Insights в виде трассировок. Сначала установите пакет NuGet `Microsoft.ApplicationInsights.EventSourceListener`. Затем измените раздел `TelemetryModules` файла [ApplicationInsights.config](../../azure-monitor/app/configuration-with-applicationinsights-config.md).
+Можно настроить отправку событий [System.Diagnostics.Tracing.EventSource](/dotnet/api/system.diagnostics.tracing.eventsource?view=netcore-3.1) в Application Insights в виде трассировок. Сначала установите пакет NuGet `Microsoft.ApplicationInsights.EventSourceListener`. Затем измените раздел `TelemetryModules` файла [ApplicationInsights.config](../../azure-monitor/app/configuration-with-applicationinsights-config.md).
 
 ```xml
     <Add Type="Microsoft.ApplicationInsights.EventSourceListener.EventSourceTelemetryModule, Microsoft.ApplicationInsights.EventSourceListener">
@@ -190,7 +190,7 @@ logger.warning('Hello, World!')
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 ### <a name="how-do-i-do-this-for-java"></a>Как это сделать в Java?
-В инструментировании Java без программирования (рекомендуется) журналы собираются без каких-либо дополнительных настроек при использовании [агента Java 3.0](https://docs.microsoft.com/azure/azure-monitor/app/java-in-process-agent).
+В инструментировании Java без программирования (рекомендуется) журналы собираются без каких-либо дополнительных настроек при использовании [агента Java 3.0](./java-in-process-agent.md).
 
 Если вы используете пакет SDK для Java, воспользуйтесь [адаптерами журналов Java](../../azure-monitor/app/java-trace-logs.md).
 
@@ -200,7 +200,7 @@ logger.warning('Hello, World!')
 
 ### <a name="theres-no-log-adapter-option-in-the-configuration-tool"></a>В средстве настройки нет параметра для адаптера журналов
 * Сначала установите платформу ведения журналов.
-* Если вы используете класс System.Diagnostics.Trace, убедитесь, что он [настроен в *web.config*](https://msdn.microsoft.com/library/system.diagnostics.eventlogtracelistener.aspx).
+* Если вы используете класс System.Diagnostics.Trace, убедитесь, что он [настроен в *web.config*](/dotnet/api/system.diagnostics.eventlogtracelistener?view=dotnet-plat-ext-3.1).
 * У вас должна быть установлена последняя версия Application Insights. В Visual Studio выберите **Сервис** > **Расширения и обновления** и откройте вкладку **Обновления**. Если в списке есть расширение **Developer Analytics Tools**, выберите его, чтобы обновить.
 
 ### <a name="i-get-the-instrumentation-key-cannot-be-empty-error-message"></a><a name="emptykey">Я получаю сообщение об ошибке "Instrumentation key cannot be empty" (Ключ инструментирования не может быть пустым)</a>
@@ -228,5 +228,5 @@ logger.warning('Hello, World!')
 [diagnostic]: ../../azure-monitor/app/diagnostic-search.md
 [exceptions]: asp-net-exceptions.md
 [portal]: https://portal.azure.com/
-[qna]: ../../azure-monitor/app/troubleshoot-faq.md
+[qna]: ../faq.md
 [start]: ../../azure-monitor/app/app-insights-overview.md

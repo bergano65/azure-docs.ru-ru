@@ -4,11 +4,12 @@ description: Общие сведения о предоставлении API, р
 ms.topic: conceptual
 ms.date: 04/28/2020
 ms.reviewer: sunayv
-ms.openlocfilehash: 8ded1c5fba902adeaeb883894452c00c4ae1d617
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 7d968c62afbfc92952f747e1e7627c98fe07436d
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "83115832"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87015091"
 ---
 # <a name="exporting-an-azure-hosted-api-to-powerapps-and-microsoft-flow"></a>Экспорт размещенного в Azure API в PowerApps и Microsoft Flow
 
@@ -57,7 +58,7 @@ ms.locfileid: "83115832"
 
 2. Используйте настройки, указанные в таблице.
 
-    |Параметр|Описание:|
+    |Параметр|Описание|
     |--------|------------|
     |**Среда**|Выберите среду, в которую нужно сохранить настраиваемый соединитель. Дополнительные сведения см. в статье [Обзор сред](https://powerapps.microsoft.com/tutorials/environments-overview/).|
     |**Имя пользовательского API**|Введите имя, которое разработчики PowerApps and Microsoft Flow увидят в своих списках соединителей.|
@@ -102,7 +103,7 @@ ms.locfileid: "83115832"
 
 4. На вкладке **Общие** просмотрите данные, которые поступают из определения OpenAPI.
 
-5. Если появится запрос на ввод сведений о проверке подлинности, введите значения для соответствующего типа проверки подлинности на вкладке **Безопасность**. Нажмите кнопку **Продолжить**.
+5. Если появится запрос на ввод сведений о проверке подлинности, введите значения для соответствующего типа проверки подлинности на вкладке **Безопасность**. Нажмите кнопку **Continue**(Продолжить).
 
     ![Вкладка "Безопасность"](media/app-service-export-api-to-powerapps-and-flow/tab-security.png)
 
@@ -145,9 +146,9 @@ PowerApps и Microsoft Flow поддерживают коллекцию пост
 
 - Чтобы настроить регистрацию для API, используйте возможность [проверки подлинности и авторизации в службе приложений](../app-service/configure-authentication-provider-aad.md).
 
-- Чтобы настроить регистрацию для соединителя, выполните действия, описанные в разделе [Добавление приложения](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications). Регистрации требуется делегированный доступ к вашему API и URL-адресу ответа из `https://msmanaged-na.consent.azure-apim.net/redirect`. 
+- Чтобы настроить регистрацию для соединителя, выполните действия, описанные в разделе [Добавление приложения](../active-directory/develop/quickstart-register-app.md). Регистрации требуется делегированный доступ к вашему API и URL-адресу ответа из `https://msmanaged-na.consent.azure-apim.net/redirect`. 
 
-Дополнительные сведения см. в примерах регистрации Azure AD для [PowerApps](https://powerapps.microsoft.com/tutorials/customapi-azure-resource-manager-tutorial/) и [Microsoft Flow](https://docs.microsoft.com/connectors/custom-connectors/azure-active-directory-authentication). В этих примерах в качестве API используется Azure Resource Manager. Замените свой API при выполнении этих шагов.
+Дополнительные сведения см. в примерах регистрации Azure AD для [PowerApps](https://powerapps.microsoft.com/tutorials/customapi-azure-resource-manager-tutorial/) и [Microsoft Flow](/connectors/custom-connectors/azure-active-directory-authentication). В этих примерах в качестве API используется Azure Resource Manager. Замените свой API при выполнении этих шагов.
 
 Требуются следующие значения конфигурации:
 - **Идентификатор клиента.** Идентификатор клиента регистрации соединителя Azure AD.
@@ -168,5 +169,3 @@ PowerApps и Microsoft Flow поддерживают коллекцию пост
 - **Authorization URL** (URL-адрес для авторизации) URL-адрес для авторизации OAuth 2.0.
 - **Token URL** (URL-адрес токена): URL-адрес токена OAuth 2.0.
 - **Refresh URL** (URL-адрес обновления): URL-адрес обновления OAuth 2.0.
-
-
