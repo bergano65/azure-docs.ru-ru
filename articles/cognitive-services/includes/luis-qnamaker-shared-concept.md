@@ -2,19 +2,17 @@
 title: Включить имя файла
 description: включить файл
 services: cognitive-services
-author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
 ms.custom: include file
 ms.date: 04/16/2020
-ms.author: diberry
-ms.openlocfilehash: 1c3631b4a2964c5e3a8d8267d1934a5822966342
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: ac0192da3afa76c3c21056f218f2b249c44d1c36
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83673447"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87133906"
 ---
 Cognitive Services предоставляет две службы обработки естественных языков, [Language Understanding](../luis/what-is-luis.md) и [QnA Maker](../qnamaker/overview/overview.md), каждая из которых имеет разные цели. Узнайте, когда следует использовать каждую службу и как они дополняют друг друга.
 
@@ -43,7 +41,7 @@ Language Understanding (LUIS) и QnA Maker решают различные пр�
 
 ## <a name="when-do-you-use-luis"></a>Когда вы используете LUIS?
 
-Используйте LUIS, если необходимо знать намерение utterance как часть процесса в роботе Chat. Продолжим пример текста `How do I get to the Human Resources building on the Seattle North campus?` . После того, как пользователь знает намерение найти расположение, вы можете передать сведения о utterance (извлеченные с сущностями) в другую службу, например транспортный сервер, чтобы получить ответ.
+Используйте LUIS, если вам нужно знать намерение речевого фрагмента в рамках процесса чат-бота. Продолжим пример текста `How do I get to the Human Resources building on the Seattle North campus?` . После того, как пользователь знает намерение найти расположение, вы можете передать сведения о utterance (извлеченные с сущностями) в другую службу, например транспортный сервер, чтобы получить ответ.
 
 Для определения намерения не нужно объединять LUIS и QnA Maker.
 
@@ -51,7 +49,7 @@ Language Understanding (LUIS) и QnA Maker решают различные пр�
 
 ## <a name="when-do-you-use-qna-maker"></a>Когда вы используете QnA Maker?
 
-Используйте QnA Maker, если у вас есть статическая база знаний с ответами. Такую базу знаний, сформированную из документов PDF и URL-адресов, можно настроить под свои требования.
+Используйте QnA Maker, если у вас статическая база знаний с ответами. Такую базу знаний, сформированную из документов PDF и URL-адресов, можно настроить в соответствии со своими требованиями.
 
 Продолжая работу с примером utterance, `How do I get to the Human Resources building on the Seattle North campus?` отправьте текст в качестве запроса в опубликованную службу QnA Maker и получите наилучший ответ.
 
@@ -75,7 +73,7 @@ Language Understanding (LUIS) и QnA Maker решают различные пр�
 
 Используйте средство CLI для **[диспетчеризации](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/Dispatch)** инфраструктуры, чтобы создать процесс для работы с обеими службами. Это средство создает наиболее LUISное приложение для целей, которые переправляются между LUIS и QnA Maker как дочерние приложения. Дополнительные [сведения](https://docs.microsoft.com/azure/bot-service/bot-builder-tutorial-dispatch?view=azure-bot-service-4.0&tabs=cs) об интеграции с LUIS, QnA Maker и Bot Framework.
 
-Используйте образец программы Bot Builder **NLP с Dispatch**, в [C#](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore/14.nlp-with-dispatch) или [node. js](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/javascript_nodejs/14.nlp-with-dispatch), чтобы реализовать этот тип робота Chat.
+Используйте образец программы Bot Builder, **NLP с Dispatch**, в [C#](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/csharp_dotnetcore/14.nlp-with-dispatch) или [Node.js](https://github.com/microsoft/BotBuilder-Samples/tree/master/samples/javascript_nodejs/14.nlp-with-dispatch), чтобы реализовать этот тип робота Chat.
 
 ## <a name="best-practices"></a>Рекомендации
 
@@ -84,9 +82,9 @@ Language Understanding (LUIS) и QnA Maker решают различные пр�
 * Рекомендации по [Luis](../luis/luis-concept-best-practices.md)
 * Рекомендации по [QnA Maker](../qnamaker/concepts/best-practices.md)
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также статью
 
-* [Распознавание речи (LUIS)](../luis/what-is-luis.md)
+* [Language Understanding (LUIS)](../luis/what-is-luis.md)
 * [QnA Maker](../qnamaker/overview/overview.md)
 * [Диспетчер CLI](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/Dispatch)
 * [Примеры для платформы Bot](https://github.com/Microsoft/BotBuilder-Samples)

@@ -1,20 +1,21 @@
 ---
-title: Методы проверки подлинности
+title: методы проверки подлинности;
 titleSuffix: Azure Maps
 description: В этой статье вы узнаете о Azure Active Directory и проверке подлинности с помощью общего ключа. Оба используются для служб Microsoft Azure Maps. Узнайте, как получить ключ подписки Azure Maps.
-author: philmea
-ms.author: philmea
+author: anastasia-ms
+ms.author: v-stharr
 ms.date: 06/12/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: fe79b630291959ce4dc8b4743127986088a876ae
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e270a9a1a773442a4d1d28d9bbfe37639cac7c65
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84987537"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87133390"
 ---
 # <a name="authentication-with-azure-maps"></a>Аутентификация в Azure Maps
 
@@ -89,7 +90,7 @@ Azure Maps поддерживает доступ ко всем типам уча
 
 Для поддержки сценариев приложений существуют следующие типы определений ролей.
 
-| Определение роли Azure       | Описание:                                                                                              |
+| Определение роли Azure       | Описание                                                                                              |
 | :-------------------------- | :------------------------------------------------------------------------------------------------------- |
 | Читатель данных Azure Maps      | Предоставляет доступ к неизменяемым Azure Maps API-интерфейсам RESTFUL.                                                       |
 | Участник данных Azure Maps | Предоставляет доступ к изменяемым Azure Maps API-интерфейсам RESTFUL. Изменяемость определяется действиями: Write и DELETE. |
@@ -128,7 +129,7 @@ Azure Maps поддерживает доступ ко всем типам уча
 > [!Tip]
 > Общая рекомендация Майкрософт — назначение доступа к области учетных записей Azure Maps, так как она предотвращает **непредвиденный доступ к другим учетным записям Azure Maps** , существующим в той же подписке Azure.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о RBAC см. в разделе [Обзор управления доступом на основе ролей](https://docs.microsoft.com/azure/role-based-access-control/overview) .
 

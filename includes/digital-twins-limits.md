@@ -5,12 +5,12 @@ ms.service: digital-twins
 ms.topic: include
 ms.date: 6/9/2020
 ms.author: baanders
-ms.openlocfilehash: 21d910fb0e0992b35aa19ce65fc216734e30265c
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 3035bd71a91f7cad6fb951d74081b77d8445a81f
+ms.sourcegitcommit: 0e8a4671aa3f5a9a54231fea48bcfb432a1e528c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86515917"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87133898"
 ---
 ### <a name="functional-limits"></a>Функциональные ограничения
 
@@ -45,6 +45,6 @@ ms.locfileid: "86515917"
 
 ### <a name="other-limits"></a>Другие ограничения
 
-Ограничения для типов данных и полей в документах ДТДЛ для цифровых двойников моделей Azure можно найти в документации по спецификациям на сайте GitHub: [Digital двойников Definition Language (дтдл) — версия 2](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md).
+Ограничения для типов данных и полей в документах ДТДЛ для цифровых двойников моделей Azure можно найти в документации по спецификациям на сайте GitHub: [*Digital двойников Definition Language (дтдл) — версия 2*](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md).
  
 Сведения о задержке запросов и другие рекомендации по написанию запросов на этапе предварительной версии можно найти в [*этой инструкции: запрос к графу двойника*](../articles/digital-twins/how-to-query-graph.md).
