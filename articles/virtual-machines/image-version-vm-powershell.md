@@ -9,18 +9,18 @@ ms.workload: infrastructure
 ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: caa8e928a10deb3d6d97e601c607074c09e0572e
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.openlocfilehash: 681bd0aff909552531d682186d5b22dce5ef33f9
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86223522"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87010773"
 ---
 # <a name="preview-create-an-image-from-a-vm"></a>Предварительная версия: создание образа из виртуальной машины
 
 Если у вас уже есть виртуальная машина, которую вы хотите использовать для создания нескольких идентичных виртуальных машин, вы можете использовать эту виртуальную машину, чтобы создать образ в общей коллекции образов с помощью Azure PowerShell. Вы также можете создать образ из виртуальной машины с помощью [Azure CLI](image-version-vm-cli.md).
 
-Вы можете записать образ из [специализированных и обобщенных](https://docs.microsoft.com/azure/virtual-machines/windows/shared-image-galleries#generalized-and-specialized-images) виртуальных машин с помощью Azure PowerShell. 
+Вы можете записать образ из [специализированных и обобщенных](./windows/shared-image-galleries.md#generalized-and-specialized-images) виртуальных машин с помощью Azure PowerShell. 
 
 Изображения в коллекции образов имеют два компонента, которые будут созданы в этом примере:
 - **Определение образа** содержит сведения о образе и требования для его использования. Сюда входит, является ли образ Windows или Linux, специализированным или обобщенным, заметками о выпуске, а также минимальным и максимальным требованиями к памяти. Это определение типа образа. 
@@ -54,7 +54,7 @@ $gallery = Get-AzGallery `
 
 ## <a name="get-the-vm"></a>Получение виртуальной машины
 
-Список виртуальных машин, доступных в группе ресурсов, можно просмотреть с помощью командлета [Get-AzVM](https://docs.microsoft.com/powershell/module/az.compute/get-azvm). Зная имя виртуальной машины и группу ресурсов, в которой она находится, можно `Get-AzVM` снова использовать для получения объекта виртуальной машины и сохранить его в переменной для последующего использования. Этот пример получает виртуальную машину с именем *саурцевм* из группы ресурсов "myResourceGroup" и назначает ее переменной *$sourceVm*. 
+Список виртуальных машин, доступных в группе ресурсов, можно просмотреть с помощью командлета [Get-AzVM](/powershell/module/az.compute/get-azvm). Зная имя виртуальной машины и группу ресурсов, в которой она находится, можно `Get-AzVM` снова использовать для получения объекта виртуальной машины и сохранить его в переменной для последующего использования. Этот пример получает виртуальную машину с именем *саурцевм* из группы ресурсов "myResourceGroup" и назначает ее переменной *$sourceVm*. 
 
 ```azurepowershell-interactive
 $sourceVm = Get-AzVM `
@@ -62,7 +62,7 @@ $sourceVm = Get-AzVM `
    -ResourceGroupName myResourceGroup
 ```
 
-Рекомендуется стоп\деаллокате виртуальную машину перед созданием образа с помощью команды " [останавливается-AzVM](https://docs.microsoft.com/powershell/module/az.compute/stop-azvm)".
+Рекомендуется стоп\деаллокате виртуальную машину перед созданием образа с помощью команды " [останавливается-AzVM](/powershell/module/az.compute/stop-azvm)".
 
 ```azurepowershell-interactive
 Stop-AzVM `
@@ -77,9 +77,9 @@ Stop-AzVM `
 
 При создании определения образа убедитесь, что содержит все правильные сведения. Если вы обобщенно используете виртуальную машину (с помощью Sysprep для Windows или waagent-unготовить для Linux), то следует создать определение образа с помощью `-OsState generalized` . Если виртуальная машина не была обобщена, создайте определение образа с помощью `-OsState specialized` .
 
-Дополнительные сведения о значениях, которые можно указать для определения образа, см. в разделе [Определения образов](https://docs.microsoft.com/azure/virtual-machines/windows/shared-image-galleries#image-definitions).
+Дополнительные сведения о значениях, которые можно указать для определения образа, см. в разделе [Определения образов](./windows/shared-image-galleries.md#image-definitions).
 
-Создайте определение образа с помощью командлета [New-AzGalleryImageDefinition](https://docs.microsoft.com/powershell/module/az.compute/new-azgalleryimageversion). 
+Создайте определение образа с помощью командлета [New-AzGalleryImageDefinition](/powershell/module/az.compute/new-azgalleryimageversion). 
 
 В этом примере определение образа называется *мимажедефинитион*и предназначено для специализированной виртуальной машины под Windows. Чтобы создать определение для образов с помощью Linux, используйте `-OsType Linux` . 
 
@@ -99,7 +99,7 @@ $imageDefinition = New-AzGalleryImageDefinition `
 
 ## <a name="create-an-image-version"></a>Создание версии образа
 
-Создайте версию образа с помощью команды [New-азгаллеримажеверсион](https://docs.microsoft.com/powershell/module/az.compute/new-azgalleryimageversion). 
+Создайте версию образа с помощью команды [New-азгаллеримажеверсион](/powershell/module/az.compute/new-azgalleryimageversion). 
 
 Допустимыми знаками для имени версии образа являются цифры и точки. Числа должны быть в диапазоне 32-битного целого числа. Формат: *основной номер версии*.*дополнительный номер версии*.*исправление*.
 
@@ -133,7 +133,7 @@ $job.State
 > [!NOTE]
 > Прежде чем использовать тот же управляемый образ для создания другой версии образа, необходимо дождаться завершения сборки и репликации версии образа.
 >
-> Вы также можете сохранить образ в хранилище класса Premium, добавив `-StorageAccountType Premium_LRS`, или [хранилище, избыточное между зонами](https://docs.microsoft.com/azure/storage/common/storage-redundancy-zrs), добавив `-StorageAccountType Standard_ZRS` при создании версии образа.
+> Вы также можете сохранить образ в хранилище класса Premium, добавив `-StorageAccountType Premium_LRS`, или [хранилище, избыточное между зонами](../storage/common/storage-redundancy.md), добавив `-StorageAccountType Standard_ZRS` при создании версии образа.
 >
 
 ## <a name="next-steps"></a>Дальнейшие действия

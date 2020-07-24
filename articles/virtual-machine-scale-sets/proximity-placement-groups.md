@@ -9,11 +9,12 @@ ms.subservice: availability
 ms.date: 07/01/2019
 ms.reviewer: zivr
 ms.custom: mimckitt
-ms.openlocfilehash: 8e455d4d016f97a466838c07fc7af2422f72cc00
-ms.sourcegitcommit: 6fd8dbeee587fd7633571dfea46424f3c7e65169
+ms.openlocfilehash: 1525ef7c1e19aa9821df3f111fdce3518d37afd5
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83727103"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87011062"
 ---
 # <a name="preview-creating-and-using-proximity-placement-groups-using-powershell"></a>Предварительный просмотр: Создание и использование групп размещения близкого взаимодействия с помощью PowerShell
 
@@ -29,7 +30,7 @@ ms.locfileid: "83727103"
 
 
 ## <a name="create-a-proximity-placement-group"></a>Создание группы размещения близкого взаимодействия
-Создайте группу размещения близкого взаимодействия с помощью командлета [New-AzProximityPlacementGroup](https://docs.microsoft.com/powershell/module/az.compute/new-azproximityplacementgroup). 
+Создайте группу размещения близкого взаимодействия с помощью командлета [New-AzProximityPlacementGroup](/powershell/module/az.compute/new-azproximityplacementgroup). 
 
 ```azurepowershell-interactive
 $resourceGroup = "myPPGResourceGroup"
@@ -54,7 +55,7 @@ Get-AzProximityPlacementGroup
 
 ## <a name="create-a-scale-set"></a>Создание масштабируемого набора
 
-Создайте масштаб в группе размещения близкого взаимодействия с помощью `-ProximityPlacementGroup $ppg.Id` для ссылки на идентификатор группы размещения близкого взаимодействия при использовании [New-AzVMSS](https://docs.microsoft.com/powershell/module/az.compute/new-azvmss) для создания масштабируемого набора.
+Создайте масштаб в группе размещения близкого взаимодействия с помощью `-ProximityPlacementGroup $ppg.Id` для ссылки на идентификатор группы размещения близкого взаимодействия при использовании [New-AzVMSS](/powershell/module/az.compute/new-azvmss) для создания масштабируемого набора.
 
 ```azurepowershell-interactive
 $scalesetName = "myVM"

@@ -4,11 +4,12 @@ description: Мониторинг топологий сложных прилож
 ms.topic: conceptual
 ms.date: 03/15/2019
 ms.reviewer: sdash
-ms.openlocfilehash: 7c5c9173704535b1e34ffde5867bd512e3e02ed8
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1f9f19ea9370b9da3e69d871e8b53ccf7f64a6a5
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "80989533"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87008512"
 ---
 # <a name="application-map-triage-distributed-applications"></a>Схема приложений: рассмотрение распределенных приложений
 
@@ -38,7 +39,7 @@ ms.locfileid: "80989533"
 
 Щелкните любой компонент, чтобы просмотреть соответствующие данные аналитики и перейти к интерфейсу для рассмотрения производительности и сбоев этого компонента.
 
-![Flyout](media/app-map/application-map-002.png)
+![Всплывающий элемент](media/app-map/application-map-002.png)
 
 ### <a name="investigate-failures"></a>Анализ сбоев
 
@@ -72,7 +73,7 @@ ms.locfileid: "80989533"
 
 ![Снимок экрана с аналитическими возможностями. Линейный график, суммирующий среднюю продолжительность ответа запроса за последние 12 часов.](media/app-map/log-analytics.png)
 
-### <a name="alerts"></a>Предупреждения
+### <a name="alerts"></a>Оповещения
 
 Чтобы просмотреть активные оповещения и основные правила, которые их активируют, щелкните **Оповещения**.
 
@@ -156,7 +157,7 @@ namespace CustomInitializer.Telemetry
 
 **Агент Java**
 
-Для [агента Java 3,0](https://docs.microsoft.com/azure/azure-monitor/app/java-in-process-agent) имя роли облака задается следующим образом:
+Для [агента Java 3,0](./java-in-process-agent.md) имя роли облака задается следующим образом:
 
 ```json
 {
@@ -250,7 +251,7 @@ appInsights.addTelemetryInitializer((envelope) => {
 
 Дополнительные сведения о том, как переопределить свойство имени облачной роли с помощью инициализаторов телеметрии, см. в разделе [Добавление свойств: ITelemetryInitializer](api-filtering-sampling.md#addmodify-properties-itelemetryinitializer).
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshooting"></a>Диагностика
 
 Если схема приложений не работает должным образом, попробуйте сделать следующее:
 
@@ -258,15 +259,15 @@ appInsights.addTelemetryInitializer((envelope) => {
 
 1. Убедитесь, что вы используете официально поддерживаемый пакет SDK. Неподдерживаемые пакеты SDK и пакеты SDK сообщества могут не поддерживать корреляцию.
 
-    Список поддерживаемых пакетов SDK см. в этой [статье](https://docs.microsoft.com/azure/application-insights/app-insights-platforms) .
+    Список поддерживаемых пакетов SDK см. в этой [статье](./platforms.md).
 
 2. Обновите все компоненты до последней версии пакета SDK.
 
-3. Если вы используете функции Azure с C#, обновите до [функций версии 2](https://docs.microsoft.com/azure/azure-functions/functions-versions).
+3. Если вы используете функции Azure с C#, обновите до [функций версии 2](../../azure-functions/functions-versions.md).
 
 4. Подтвердите правильность настройки [имени облачной роли](#set-cloud-role-name) .
 
-5. Если вы пропустили зависимость, убедитесь, что она находится в списке [автоматически собранных зависимостей](https://docs.microsoft.com/azure/application-insights/auto-collect-dependencies). Если нет, вы можете по-прежнему отследить ее вручную с помощью [вызова зависимости отслеживания](https://docs.microsoft.com/azure/application-insights/app-insights-api-custom-events-metrics#trackdependency).
+5. Если вы пропустили зависимость, убедитесь, что она находится в списке [автоматически собранных зависимостей](./auto-collect-dependencies.md). Если нет, вы можете по-прежнему отследить ее вручную с помощью [вызова зависимости отслеживания](./api-custom-events-metrics.md#trackdependency).
 
 ### <a name="too-many-nodes-on-the-map"></a>Слишком много узлов на карте
 
@@ -280,7 +281,7 @@ appInsights.addTelemetryInitializer((envelope) => {
 
 * Тип зависимости должен представлять логический тип зависимости. Например, HTTP, SQL или BLOB-объект Azure являются типичными типами зависимостей. Он не должен содержать уникальные идентификаторы.
 
-* Назначение имени облачной роли описано в [приведенном выше разделе](https://docs.microsoft.com/azure/azure-monitor/app/app-map#set-cloud-role-name).
+* Назначение имени облачной роли описано в [приведенном выше разделе](#set-cloud-role-name).
 
 ## <a name="portal-feedback"></a>Отзывы на портале
 
@@ -288,7 +289,7 @@ appInsights.addTelemetryInitializer((envelope) => {
 
 ![Изображение MapLink-1](./media/app-map/14-updated.png)
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения о работе корреляции в Application Insights см. в [статье корреляция телеметрии](correlation.md).
 * Средство [диагностики сквозных транзакций](transaction-diagnostics.md) сопоставляет данные телеметрии на стороне сервера от всех Application Insights отслеживаемых компонентов в едином представлении.

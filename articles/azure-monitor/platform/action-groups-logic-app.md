@@ -6,11 +6,12 @@ ms.author: dukek
 ms.topic: conceptual
 ms.date: 07/18/2018
 ms.subservice: alerts
-ms.openlocfilehash: 655a3acc44a1418778b37fbef85e5df75d042317
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: f592c42bc06c6bcd33ce6e10c506f8af0d8e0cf2
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78206242"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87008393"
 ---
 # <a name="how-to-trigger-complex-actions-with-azure-monitor-alerts"></a>Как активировать сложные действия с помощью оповещений Azure Monitor
 
@@ -40,7 +41,7 @@ ms.locfileid: "78206242"
 
 3.  Присвойте **Имя** приложению логики, выберите значение **Группа ресурсов** и т. д.
 
-    ![Создайте приложение логики](media/action-groups-logic-app/create-logic-app-dialog.png "Создайте приложение логики")
+    ![Создайте приложение логики](media/action-groups-logic-app/create-logic-app-dialog.png "Создание приложения логики")
 
 4.  Выберите **Создать**, чтобы создать приложение логики. Отображается всплывающее сообщение, указывающее на создание приложения логики. Выберите **Launch Resource** (Запустить ресурс), чтобы открыть **Конструктор Logic Apps**.
 
@@ -127,7 +128,7 @@ ms.locfileid: "78206242"
 
 14. В верхней части окна **Конструктор Logic Apps** выберите **Сохранить**, чтобы сохранить приложение логики.
 
-15. Откройте существующую группу действий и добавьте в нее действие, которое ссылается на приложение логики. Если у вас нет группы действий, см. раздел [Создание групп действий и управление ими в портал Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-action-groups) для ее создания. Обязательно сохраните изменения.
+15. Откройте существующую группу действий и добавьте в нее действие, которое ссылается на приложение логики. Если у вас нет группы действий, см. раздел [Создание групп действий и управление ими в портал Azure](./action-groups.md) для ее создания. Обязательно сохраните изменения.
 
     ![Обновление группы действий](media/action-groups-logic-app/update-action-group.png "Обновление группы действий")
 
@@ -292,8 +293,7 @@ ms.locfileid: "78206242"
 ## <a name="calling-other-applications-besides-microsoft-teams"></a>Вызов других приложений помимо Microsoft Teams
 Служба Logic Apps имеет ряд различных соединителей, которые позволяют активировать действия в самых разных приложениях и базах данных. К таким приложениям, например, относятся Slack, SQL Server, Oracle, Salesforce. Дополнительные сведения о соединителях Azure Logic Apps см. в [этой статье](../../connectors/apis-list.md).  
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Изучите [обзор оповещений журнала действий Azure](../../azure-monitor/platform/alerts-overview.md) и узнайте, как получать оповещения.  
-* Узнайте, как [настроить оповещения при поступлении уведомлений о Работоспособности служб Azure](../../azure-monitor/platform/alerts-activity-log-service-notifications.md).
+* Узнайте, как [настроить оповещения при поступлении уведомлений о Работоспособности служб Azure](../../service-health/alerts-activity-log-service-notifications-portal.md).
 * Дополнительные сведения о группах действий см. в статье [Создание групп действий и управление ими на портале Azure](../../azure-monitor/platform/action-groups.md).
-

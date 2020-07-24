@@ -11,18 +11,18 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 05/10/2020
 ms.author: vikancha
-ms.openlocfilehash: cbba0401815f6754939cdaeb6e7343cf085dff68
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: bc7bfecbcb387fa0da0809a9a2287b243e861c49
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84736974"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87010875"
 ---
 # <a name="amd-gpu-driver-extension-for-windows"></a>Расширение драйвера GPU AMD для Windows
 
-В этой статье представлен обзор расширения виртуальной машины, которое позволяет развертывать драйверы GPU AMD на виртуальных машинах Windows [серии NVv4](https://docs.microsoft.com/azure/virtual-machines/nvv4-series) . При установке драйверов AMD с помощью этого расширения вы принимаете и принимаете условия [лицензионного соглашения AMD](https://amd.com/radeonsoftwarems). Во время установки драйвера виртуальная машина может быть перезагружена для завершения процедуры.
+В этой статье представлен обзор расширения виртуальной машины, которое позволяет развертывать драйверы GPU AMD на виртуальных машинах Windows [серии NVv4](../nvv4-series.md) . При установке драйверов AMD с помощью этого расширения вы принимаете и принимаете условия [лицензионного соглашения AMD](https://amd.com/radeonsoftwarems). Во время установки драйвера виртуальная машина может быть перезагружена для завершения процедуры.
 
-Инструкции по установке драйверов вручную и сведения о поддерживаемых сейчас версиях приводятся [здесь](https://docs.microsoft.com/azure/virtual-machines/windows/n-series-amd-driver-setup).
+Инструкции по установке драйверов вручную и сведения о поддерживаемых сейчас версиях приводятся [здесь](../windows/n-series-amd-driver-setup.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -33,7 +33,7 @@ ms.locfileid: "84736974"
 | Distribution | Версия |
 |---|---|
 | Windows 10 EMS | Сборка 1903 |
-| быть под управлением ОС Windows 10; | Сборка 1809 |
+| Windows 10 | Сборка 1809 |
 | Windows Server 2016 | Ядро |
 | Windows Server 2019 | Ядро |
 
@@ -81,7 +81,7 @@ ms.locfileid: "84736974"
 
 Расширения виртуальной машины Azure можно развернуть с помощью шаблонов Azure Resource Manager. Шаблоны идеально подходят для развертывания одной или нескольких виртуальных машин, требующих настройки после развертывания.
 
-Конфигурацию JSON для расширения виртуальной машины можно вложить в ресурс виртуальной машины или поместить в корень или на верхний уровень JSON-файла шаблона Resource Manager. Размещение конфигурации JSON влияет на значения имени и типа ресурса. Дополнительные сведения см. в разделе [Указание имени и типа дочернего ресурса в шаблоне Resource Manager](../../azure-resource-manager/resource-manager-template-child-resource.md). 
+Конфигурацию JSON для расширения виртуальной машины можно вложить в ресурс виртуальной машины или поместить в корень или на верхний уровень JSON-файла шаблона Resource Manager. Размещение конфигурации JSON влияет на значения имени и типа ресурса. Дополнительные сведения см. в разделе [Указание имени и типа дочернего ресурса в шаблоне Resource Manager](../../azure-resource-manager/templates/child-resource-name-type.md). 
 
 В следующем примере предполагается, что расширение виртуальной машины расположено в ресурсе виртуальной машины. При вложении ресурса расширения JSON помещается в объект `"resources": []` виртуальной машины.
 
@@ -172,4 +172,4 @@ C:\WindowsAzure\Logs\Plugins\Microsoft.HpcCompute.NvidiaGpuDriverMicrosoft\
 ## <a name="next-steps"></a>Дальнейшие действия
 См. дополнительные сведения о [расширениях и компонентах виртуальных машин Windows](features-windows.md).
 
-См. дополнительные сведения о [размерах виртуальных машин серии N, оптимизированных для GPU](../windows/sizes-gpu.md).
+См. дополнительные сведения о [размерах виртуальных машин серии N, оптимизированных для GPU](../sizes-gpu.md).

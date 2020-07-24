@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 05/04/2020
-ms.openlocfilehash: 81040adf6cfbb8820ec7f306c7d614830e3a2613
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 1808623821d71169ec35beab1d33d4eb2c32c189
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "82791121"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87008410"
 ---
 # <a name="create-and-run-custom-availability-tests-using-azure-functions"></a>Создание и запуск пользовательских тестов доступности с помощью функций Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "82791121"
 
 - Если у вас есть Application Insights ресурс:
     - По умолчанию функции Azure создают ресурс Application Insights, но если вы хотите использовать один из уже созданных ресурсов, необходимо указать это во время создания.
-    - Следуйте инструкциям, чтобы [создать ресурс функций Azure и функцию, активируемую с помощью таймера](https://docs.microsoft.com/azure/azure-functions/functions-create-scheduled-function) ("закончить перед очисткой") со следующими параметрами.
+    - Следуйте инструкциям, чтобы [создать ресурс функций Azure и функцию, активируемую с помощью таймера](../../azure-functions/functions-create-scheduled-function.md) ("закончить перед очисткой") со следующими параметрами.
         -  Выберите вкладку **мониторинг** в верхней части окна.
 
             ![ Создание приложения "функции Azure" с собственным ресурсом App Insights](media/availability-azure-functions/create-function-app.png)
@@ -35,9 +35,9 @@ ms.locfileid: "82791121"
         - Выберите **Проверка и создать** .
 - Если у вас еще нет созданного ресурса Application Insights для функции, активируемой с помощью таймера:
     - По умолчанию при создании приложения "функции Azure" будет создан ресурс Application Insights.
-    - Следуйте инструкциям, чтобы [создать ресурс функций Azure и функцию, активируемую с помощью таймера](https://docs.microsoft.com/azure/azure-functions/functions-create-scheduled-function) (до завершения очистки).
+    - Следуйте инструкциям, чтобы [создать ресурс функций Azure и функцию, активируемую с помощью таймера](../../azure-functions/functions-create-scheduled-function.md) (до завершения очистки).
 
-## <a name="sample-code"></a>Пример кода
+## <a name="sample-code"></a>Образец кода
 
 Скопируйте приведенный ниже код в файл run. CSX (это заменит уже существующий код). Для этого перейдите в приложение функций Azure и выберите функцию триггера таймера слева.
 
@@ -45,7 +45,7 @@ ms.locfileid: "82791121"
 >![Функция Azure Run. CSX в портал Azure](media/availability-azure-functions/runcsx.png)
 
 > [!NOTE]
-> Для адреса конечной точки, который будет использоваться: `EndpointAddress= https://dc.services.visualstudio.com/v2/track` . Если ресурс не находится в регионе, например Azure для государственных организаций или Azure для Китая, в этом случае обратитесь к этой статье, чтобы узнать о [переопределении конечных точек по умолчанию](https://docs.microsoft.com/azure/azure-monitor/app/custom-endpoints#regions-that-require-endpoint-modification) и выбрать соответствующую конечную точку канала телеметрии для вашего региона.
+> Для адреса конечной точки, который будет использоваться: `EndpointAddress= https://dc.services.visualstudio.com/v2/track` . Если ресурс не находится в регионе, например Azure для государственных организаций или Azure для Китая, в этом случае обратитесь к этой статье, чтобы узнать о [переопределении конечных точек по умолчанию](./custom-endpoints.md#regions-that-require-endpoint-modification) и выбрать соответствующую конечную точку канала телеметрии для вашего региона.
 
 ```C#
 #load "runAvailabilityTest.csx"

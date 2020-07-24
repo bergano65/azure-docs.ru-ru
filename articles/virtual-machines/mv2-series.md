@@ -7,11 +7,12 @@ ms.subservice: sizes
 ms.topic: article
 ms.date: 04/07/2020
 ms.author: jushiman
-ms.openlocfilehash: 4576a8bdcb6077a9d5de20c52f99325fdcacc0f4
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 21c28f3b6b498b162cbff276755b098c5ebba7c1
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84673704"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87010484"
 ---
 # <a name="mv2-series"></a>Серия Mv2
 
@@ -27,7 +28,7 @@ ms.locfileid: "84673704"
 
 Обновления с сохранением памяти: Не поддерживается
 
-Ускоритель записи: [поддерживается](https://docs.microsoft.com/azure/virtual-machines/windows/how-to-enable-write-accelerator)
+Ускоритель записи: [поддерживается](./windows/how-to-enable-write-accelerator.md)
 
 |Размер | vCPU | Память: ГиБ | Временное хранилище (SSD): ГиБ | Максимальное число дисков данных | Максимальная пропускная способность временного хранилища с кэшированием: операций ввода-вывода / Мбит/с (размер кэша в Гиб) | Максимальная пропускная способность дисков без кэширования: операций ввода-вывода в секунду / МБит/с | Максимальное количество сетевых адаптеров / ожидаемая пропускная способность сети (Мбит/с) |
 |---|---|---|---|---|---|---|---|

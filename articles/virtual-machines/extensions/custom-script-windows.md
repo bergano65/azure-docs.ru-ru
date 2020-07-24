@@ -10,12 +10,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 05/02/2019
 ms.author: robreed
-ms.openlocfilehash: b85aab2491f4186cf4d6ee73144bc235a40cdeac
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5ab8d45c12d7b2c408328e306b1a6961cbe5272a
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85478490"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87010943"
 ---
 # <a name="custom-script-extension-for-windows"></a>Расширение Custom Script в ОС Windows
 
@@ -124,13 +124,13 @@ ms.locfileid: "85478490"
 | Имя | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
 | версия_API | 2015-06-15 | Дата |
-| publisher | Microsoft.Compute; | string |
-| type | CustomScriptExtension | string |
+| publisher | Microsoft.Compute; | строка |
+| type | CustomScriptExtension | строка |
 | typeHandlerVersion | 1,10 | INT |
 | fileUris (пример) | https://raw.githubusercontent.com/Microsoft/dotnet-core-sample-templates/master/dotnet-core-music-windows/scripts/configure-music-app.ps1 | массиве |
 | метка времени (например) | 123456789 | 32-разрядное целое число |
-| commandToExecute (пример) | powershell -ExecutionPolicy Unrestricted -File configure-music-app.ps1 | string |
-| storageAccountName (пример) | examplestorageacct | string |
+| commandToExecute (пример) | powershell -ExecutionPolicy Unrestricted -File configure-music-app.ps1 | строка |
+| storageAccountName (пример) | examplestorageacct | строка |
 | storageAccountKey (пример) | TmJK/1N3AbAZ3q/+hOXoi/l73zOqsaxXDhqa9Y83/v5UpXQp2DQIBuv2Tifp60cE/OaHsJZmQZ7teQfczQj8hg== | строка |
 | managedIdentity (пример) | {} или {"clientId": "31b403aa-c364-4240-A7FF-d85fb6cd7232"} или {"objectId": "12dd289c-0583-46e5-b9b4-115d5c19ef4b" } | Объект JSON |
 
@@ -144,7 +144,7 @@ ms.locfileid: "85478490"
 * `timestamp` (необязательный, 32-битное целое число) используется только для повторного запуска скрипта при изменении значения этого поля.  Любое целочисленное значение допустимо, оно только должно отличаться от предыдущего значения.
 * `storageAccountName`: (необязательное, строка) имя учетной записи хранения. Если указаны учетные данные хранилища, все значения `fileUris` должны иметь формат URL-адресов для BLOB-объектов Azure.
 * `storageAccountKey`: (необязательное, строка) ключ доступа для учетной записи хранения.
-* `managedIdentity`: (необязательный, объект JSON) [управляемое удостоверение](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) для скачивания файлов
+* `managedIdentity`: (необязательный, объект JSON) [управляемое удостоверение](../../active-directory/managed-identities-azure-resources/overview.md) для скачивания файлов
   * `clientId`: (необязательный, строка) идентификатор клиента управляемого удостоверения
   * `objectId`: (необязательный, строка) идентификатор объекта управляемого удостоверения
 
@@ -160,9 +160,9 @@ ms.locfileid: "85478490"
 > [!NOTE]
 > Это свойство **должно** быть задано только в защищенных параметрах.
 
-CustomScript (начиная с версии 1.10) поддерживает [управляемое удостоверение](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) для скачивания файлов с URL-адресов, указанных в параметре "fileUris". Это предоставляет CustomScript доступ к частным BLOB-объектам или контейнерам службы хранилища Azure без необходимости передавать секреты, такие как маркеры SAS или ключи учетной записи хранения.
+CustomScript (начиная с версии 1.10) поддерживает [управляемое удостоверение](../../active-directory/managed-identities-azure-resources/overview.md) для скачивания файлов с URL-адресов, указанных в параметре "fileUris". Это предоставляет CustomScript доступ к частным BLOB-объектам или контейнерам службы хранилища Azure без необходимости передавать секреты, такие как маркеры SAS или ключи учетной записи хранения.
 
-Чтобы использовать эту функцию, пользователь должен добавить [назначенное системой](https://docs.microsoft.com/azure/app-service/overview-managed-identity?tabs=dotnet#add-a-system-assigned-identity) или [назначенное пользователем](https://docs.microsoft.com/azure/app-service/overview-managed-identity?tabs=dotnet#add-a-user-assigned-identity) удостоверение на виртуальную машину или VMSS, где ожидается выполнение CustomScript, и [предоставить управляемому удостоверению доступ к контейнеру службы хранилища Azure или BLOB-объектов](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/tutorial-vm-windows-access-storage#grant-access).
+Чтобы использовать эту функцию, пользователь должен добавить [назначенное системой](../../app-service/overview-managed-identity.md?tabs=dotnet#add-a-system-assigned-identity) или [назначенное пользователем](../../app-service/overview-managed-identity.md?tabs=dotnet#add-a-user-assigned-identity) удостоверение на виртуальную машину или VMSS, где ожидается выполнение CustomScript, и [предоставить управляемому удостоверению доступ к контейнеру службы хранилища Azure или BLOB-объектов](../../active-directory/managed-identities-azure-resources/tutorial-vm-windows-access-storage.md#grant-access).
 
 Чтобы использовать назначенное системой удостоверение на целевой виртуальной машине или VMSS, задайте в поле "managedidentity" пустой объект JSON. 
 
@@ -283,7 +283,7 @@ The response content cannot be parsed because the Internet Explorer engine is no
 ```
 ## <a name="virtual-machine-scale-sets"></a>Масштабируемые наборы виртуальных машин Microsoft Azure
 
-Сведения о развертывании расширения пользовательских скриптов в масштабируемом наборе см. в [Add-AzVmssExtension](https://docs.microsoft.com/powershell/module/az.compute/add-azvmssextension?view=azps-3.3.0)
+Сведения о развертывании расширения пользовательских скриптов в масштабируемом наборе см. в [Add-AzVmssExtension](/powershell/module/az.compute/add-azvmssextension?view=azps-3.3.0)
 
 ## <a name="classic-vms"></a>классические виртуальные машины;
 
@@ -301,7 +301,7 @@ The response content cannot be parsed because the Internet Explorer engine is no
 
 ### <a name="powershell"></a>PowerShell
 
-Выполнив команду [Set-AzureVMCustomScriptExtension](/powershell/module/servicemanagement/azure/set-azurevmcustomscriptextension), вы сможете добавить расширение пользовательских сценариев на существующую виртуальную машину.
+Выполнив команду [Set-AzureVMCustomScriptExtension](/powershell/module/servicemanagement/azure.service/set-azurevmcustomscriptextension), вы сможете добавить расширение пользовательских сценариев на существующую виртуальную машину.
 
 ```powershell
 # define your file URI

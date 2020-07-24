@@ -6,11 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/28/2018
-ms.openlocfilehash: 1b3ae6295a639c3d59643b106b920cb606572e0a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 0bca809d6c25594c1c614f694e71e39a4f61e2a4
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77670582"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87008189"
 ---
 # <a name="collect-iis-logs-in-azure-monitor"></a>Сбор журналов IIS в Azure Monitor
 Службы IIS (Internet Information Services) хранят данные об активности пользователей в файлах журналов, собираемых службой Azure Monitor и сохраняемых как [данные журнала](data-platform.md).
@@ -18,7 +19,7 @@ ms.locfileid: "77670582"
 ![Журналы IIS](media/data-sources-iis-logs/overview.png)
 
 ## <a name="configuring-iis-logs"></a>Настройка журналов IIS
-Служба Azure Monitor собирает записи из файлов журналов, созданных службами IIS, поэтому вам необходимо [настроить IIS для ведения журнала](https://technet.microsoft.com/library/hh831775.aspx).
+Служба Azure Monitor собирает записи из файлов журналов, созданных службами IIS, поэтому вам необходимо [настроить IIS для ведения журнала](/previous-versions/orphan-topics/ws.11/hh831775(v=ws.11)).
 
 Служба Azure Monitor поддерживает только те файлы журналов IIS, которые хранятся в формате W3C, и не поддерживает настраиваемые поля или расширенное ведение журналов IIS. Она не собирает журналы в формате NCSA или в собственном формате IIS.
 
@@ -32,7 +33,7 @@ Azure Monitor собирает записи журнала IIS из каждог
 ## <a name="iis-log-record-properties"></a>Свойства записей в журналах IIS
 Записи в журналах IIS относятся к типу **W3CIISLog** и обладают свойствами, описанными в таблице ниже.
 
-| Свойство. | Описание: |
+| Свойство | Описание |
 |:--- |:--- |
 | Компьютер |Имя компьютера, с которого было получено событие. |
 | cIP |IP-адрес клиента. |
@@ -67,6 +68,6 @@ Azure Monitor собирает записи журнала IIS из каждог
 | W3CIISLog &#124; где Кшост = = "www \. contoso.com" &#124; суммировать Count () по ксуристем |Число записей журнала IIS по URL-адресу узла www \. contoso.com. |
 | W3CIISLog &#124; summarize sum(csBytes) by Computer &#124; take 500000 |Общее количество байтов, полученных каждым компьютером IIS. |
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Настройте в службе Azure Monitor сбор других [источников данных](agent-data-sources.md) для анализа.
 * Узнайте больше о [запросах журнала](../log-query/log-query-overview.md), которые можно применять для анализа данных, собираемых из источников данных и решений.

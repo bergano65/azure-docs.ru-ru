@@ -14,11 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: azurecli
 ms.date: 11/22/2018
 ms.author: delhan
-ms.openlocfilehash: 5d8aa456a6454dd511b7dcda5d3f74a739033356
-ms.sourcegitcommit: 318d1bafa70510ea6cdcfa1c3d698b843385c0f6
+ms.openlocfilehash: c0426c5359e4d82d0316613586b9298596d82605
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83774339"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87009770"
 ---
 # <a name="disable-the-guest-os-firewall-in-azure-vm"></a>Отключение брандмауэра гостевой ОС на виртуальной машине Azure
 
@@ -73,7 +74,7 @@ ms.locfileid: "83774339"
 
 #### <a name="mitigation-3-pstools-commands"></a>Решение 3. Команды PSTools
 
-1.  На виртуальной машине для устранения неполадок скачайте средство [PSTools](https://docs.microsoft.com/sysinternals/downloads/pstools).
+1.  На виртуальной машине для устранения неполадок скачайте средство [PSTools](/sysinternals/downloads/pstools).
 
 2.  Откройте экземпляр командной строки и создайте подключение к виртуальной машине по выделенному IP-адресу.
 

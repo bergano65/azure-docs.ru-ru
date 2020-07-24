@@ -6,11 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/14/2020
-ms.openlocfilehash: 5dcdfba6e8dd00c8ba09e5e98293a30d19e51c99
-ms.sourcegitcommit: fdec8e8bdbddcce5b7a0c4ffc6842154220c8b90
+ms.openlocfilehash: 6201a4e0551f0f75dde65b2bc4b8b560a0f5ea20
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83635957"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87008002"
 ---
 # <a name="azure-diagnostics-extension-overview"></a>Обзор расширения "Диагностика Azure"
 Расширение "Диагностика Azure" — это [агент в Azure Monitor](agents-overview.md), собирающий данные мониторинга из гостевой операционной системы на вычислительных ресурсах Azure, включая виртуальные машины. В этой статье представлен обзор расширения "Диагностика Azure", в том числе его специальных функциональных возможностей и параметров установки и настройки. 
@@ -33,7 +34,7 @@ ms.locfileid: "83635957"
 
 - Расширение "Диагностика Azure" может работать только с виртуальными машинами Azure. Агент Log Analytics совместим с виртуальными машинами в Azure, других облачных и локальной среде.
 - Расширение "Диагностика Azure" отправляет данные в службу хранилища Azure, в [метрики мониторинга Azure](data-platform-metrics.md) (только для ОС Windows) и в Центры событий. Агент Log Analytics собирает данные в [журналы Azure Monitor](data-platform-logs.md).
-- Агент Log Analytics является обязательным компонентом [решений](../monitor-reference.md#insights-and-core-solutions), [Azure Monitor для виртуальных машин](../insights/vminsights-overview.md) и других служб, например [Центра безопасности Azure](/azure/security-center/).
+- Агент Log Analytics является обязательным компонентом [решений](../monitor-reference.md#insights-and-core-solutions), [Azure Monitor для виртуальных машин](../insights/vminsights-overview.md) и других служб, например [Центра безопасности Azure](../../security-center/index.yml).
 
 ## <a name="costs"></a>Затраты
 Плата за расширение "Диагностика Azure" не взимается, но, возможно, вам придется оплатить получение данных. На странице [Цены на Azure Monitor](https://azure.microsoft.com/pricing/details/monitor/) указаны назначения для сбора данных.
@@ -49,8 +50,8 @@ ms.locfileid: "83635957"
 | Счетчики производительности | Числовые значения, представляющие собой оценки производительности разных элементов операционной системы и рабочих нагрузок. |
 | Журналы IIS             | Информация о потреблении для веб-сайтов на IIS, которые выполняются в гостевой ОС. |
 | Журналы приложений     | Сообщения трассировки, записанные вашим приложением. |
-| Журналы .NET EventSource |События записи кода с использованием класса .NET [EventSource](https://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource.aspx) |
-| [Журналы трассировки событий Windows на основе манифеста](https://docs.microsoft.com/windows/desktop/etw/about-event-tracing) |События трассировки событий Windows, созданные любым процессом. |
+| Журналы .NET EventSource |События записи кода с использованием класса .NET [EventSource](/dotnet/api/system.diagnostics.tracing.eventsource?view=netcore-3.1) |
+| [Журналы трассировки событий Windows на основе манифеста](/windows/desktop/etw/about-event-tracing) |События трассировки событий Windows, созданные любым процессом. |
 | Аварийные дампы (журналы)   | Информация о состоянии процесса, собираемая при сбое приложения. |
 | Файловые журналы    | Журналы, созданные вашим приложением или службой. |
 | Журналы диагностики агента | Информация о самой службе "Диагностика Azure". |
@@ -116,4 +117,3 @@ ms.locfileid: "83635957"
 
 * Узнайте, как [использовать счетчики производительности в Диагностике Azure](../../cloud-services/diagnostics-performance-counters.md).
 * Если возникнут проблемы с запуском диагностики или поиском данных в таблицах хранилища Azure, см. статью [Устранение неполадок с помощью системы диагностики Azure](diagnostics-extension-troubleshooting.md).
-

@@ -6,11 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/14/2020
-ms.openlocfilehash: 44368ab90abd189c6a8a0792494828c87142eb20
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a367e819ab9f12d9adcb448848c80eaeea73d113
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77672401"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87008036"
 ---
 # <a name="collect-data-from-azure-diagnostics-extension-to-azure-monitor-logs"></a>Собирайте данные из расширения системы диагностики Azure в журналы Azure Monitor
 Расширение системы диагностики Azure — это [агент в Azure Monitor](agents-overview.md) , собирающий данные мониторинга из операционной системы на виртуальной машине для ресурсов вычислений Azure, включая виртуальные машины. В этой статье описывается сбор данных, собираемых расширением диагностики из службы хранилища Azure, в журналы Azure Monitor.
@@ -60,8 +61,8 @@ ms.locfileid: "77672401"
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [Сбор журналов и метрик для поддерживаемых служб Azure](collect-azure-metrics-logs.md).
+* [Сбор журналов и метрик для поддерживаемых служб Azure](./resource-logs.md#send-to-log-analytics-workspace).
 * [Включите решения](../../azure-monitor/insights/solutions.md) , чтобы обеспечить глубокое понимание данных.
 * [Воспользуйтесь запросами поиска](../../azure-monitor/log-query/log-query-overview.md) для анализа данных.

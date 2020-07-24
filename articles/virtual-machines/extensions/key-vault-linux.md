@@ -8,12 +8,12 @@ ms.service: virtual-machines-linux
 ms.topic: article
 ms.date: 12/02/2019
 ms.author: mbaldwin
-ms.openlocfilehash: f209a8b1d7ba5ab4fc213e43d56c04aebc3bd410
-ms.sourcegitcommit: f844603f2f7900a64291c2253f79b6d65fcbbb0c
+ms.openlocfilehash: d2deb59b5a10177b1a6e57046c013ec9dac0fb06
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86224270"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87010807"
 ---
 # <a name="key-vault-virtual-machine-extension-for-linux"></a>Расширение виртуальной машины Key Vault для Linux
 
@@ -71,7 +71,7 @@ ms.locfileid: "86224270"
 > [!NOTE]
 > Наблюдаемые URL-адреса сертификатов должны иметь формат `https://myVaultName.vault.azure.net/secrets/myCertName`.
 > 
-> Это связано с тем, что путь `/secrets` возвращает полный сертификат, включая закрытый ключ, а путь `/certificates` — нет. Дополнительные сведения о сертификатах можно найти в статье [Сертификаты Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates#key-vault-certificates).
+> Это связано с тем, что путь `/secrets` возвращает полный сертификат, включая закрытый ключ, а путь `/certificates` — нет. Дополнительные сведения о сертификатах можно найти в статье [Сертификаты Key Vault](../../key-vault/general/about-keys-secrets-certificates.md).
 
 > [!NOTE]
 > Свойство "authenticationSettings" необязательно для сценариев, если у виртуальной машины несколько назначенных удостоверений.
@@ -204,7 +204,7 @@ Azure PowerShell можно использовать для развертыва
 Ознакомьтесь со следующими ограничениями и требованиями.
 - Ограничения, касающиеся решения Key Vault:
   - оно должно существовать во время развертывания; 
-  - Политика доступа Key Vault должна быть настроена для удостоверения виртуальной машины или масштабируемого набора виртуальных машин с помощью управляемого удостоверения. См. статью [Проверка подлинности в Key Vault с помощью управляемого удостоверения](../../key-vault/managed-identity.md).
+  - Политика доступа Key Vault должна быть настроена для удостоверения виртуальной машины или масштабируемого набора виртуальных машин с помощью управляемого удостоверения. См. статью [Проверка подлинности в Key Vault с помощью управляемого удостоверения](../../key-vault/general/managed-identity.md).
 
 
 ## <a name="troubleshoot-and-support"></a>Устранение неполадок и поддержка

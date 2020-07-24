@@ -7,12 +7,12 @@ ms.subservice: diagnostic-extension
 ms.topic: conceptual
 ms.date: 02/17/2020
 ms.author: bwren
-ms.openlocfilehash: 10d4c2d6650502510bd160cc452ac2289130263b
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: a3e9a14edf9235baff2955c9f8419dc78e45755c
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85549503"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87007985"
 ---
 # <a name="install-and-configure-windows-azure-diagnostics-extension-wad"></a>Установка и настройка расширения "Диагностика Microsoft Azure" (WAD)
 [Расширение "Диагностика Microsoft Azure"](diagnostics-extension-overview.md) — это агент в Azure Monitor, собирающий данные мониторинга из операционной системы на виртуальной машине и рабочих нагрузок виртуальных машин Azure и других вычислительных ресурсов. В этой статье приводятся сведения об установке и настройке расширения диагностики Windows, а также описание того, как данные хранятся в учетной записи хранения и Azure.
@@ -77,7 +77,7 @@ ms.locfileid: "85549503"
 Сведения о развертывании расширения диагностики с помощью шаблонов Azure Resource Manager см. в статье [Использование мониторинга и системы диагностики с виртуальной машиной Windows и шаблонами Azure Resource Manager](../../virtual-machines/extensions/diagnostics-template.md). 
 
 ## <a name="azure-cli-deployment"></a>Развертывание с помощью Azure CLI
-Azure CLI можно использовать для развертывания расширения системы диагностики Azure на существующей виртуальной машине с помощью [az vm extension set](https://docs.microsoft.com/cli/azure/vm/extension?view=azure-cli-latest#az-vm-extension-set), как в примере ниже. 
+Azure CLI можно использовать для развертывания расширения системы диагностики Azure на существующей виртуальной машине с помощью [az vm extension set](/cli/azure/vm/extension?view=azure-cli-latest#az-vm-extension-set), как в примере ниже. 
 
 ```azurecli
 az vm extension set \
@@ -133,7 +133,7 @@ az vm extension set \
 
 
 ## <a name="powershell-deployment"></a>Развертывание с помощью PowerShell
-PowerShell можно использовать для развертывания расширения системы диагностики Azure на существующей виртуальной машине с помощью [Set-AzVMDiagnosticsExtension](https://docs.microsoft.com/powershell/module/servicemanagement/azure/set-azurevmdiagnosticsextension), как в примере ниже. 
+PowerShell можно использовать для развертывания расширения системы диагностики Azure на существующей виртуальной машине с помощью [Set-AzVMDiagnosticsExtension](/powershell/module/servicemanagement/azure.service/set-azurevmdiagnosticsextension), как в примере ниже. 
 
 ```powershell
 Set-AzVMDiagnosticsExtension -ResourceGroupName "myvmresourcegroup" `

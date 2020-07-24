@@ -15,11 +15,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: media
 ms.date: 03/09/2020
 ms.author: juliako
-ms.openlocfilehash: fd094e35ceaa718ec1b258d74106b39744cbd16f
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 091a5d33e49e2abe811bf3cc250d04d69506165d
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "79087821"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87011640"
 ---
 # <a name="media-services-v2-vs-v3"></a>Службы мультимедиа версии 2 и v3
 
@@ -27,7 +28,7 @@ ms.locfileid: "79087821"
 
 ## <a name="general-changes-from-v2"></a>Общие изменения из v2
 
-* Для ресурсов, созданных с помощью v3, службы мультимедиа поддерживают только [Шифрование хранилища на стороне сервера хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-service-encryption).
+* Для ресурсов, созданных с помощью v3, службы мультимедиа поддерживают только [Шифрование хранилища на стороне сервера хранилища Azure](../../storage/common/storage-service-encryption.md).
     * Вы можете использовать API версии 3 с ресурсами, созданными с помощью API версии 2, в которых есть [шифрование хранилища](../previous/media-services-rest-storage-encryption.md) (AES 256), предоставляемое Службами мультимедиа.
     * Вы не можете создать ресурсы с устаревшим [шифрованием хранилища](../previous/media-services-rest-storage-encryption.md) AES 256 с помощью API версии 3.
 * Свойства [ресурса](assets-concept.md)в v3 отличаются от версии 2. см. [сведения о сопоставлении свойств](#map-v3-asset-properties-to-v2).
@@ -87,11 +88,11 @@ API версии 3 содержит следующие недочеты функ
 
 ### <a name="map-v3-asset-properties-to-v2"></a>Свойства ресурса V3 на карте версии 2
 
-В следующей таблице показано, как свойства [ресурса](https://docs.microsoft.com/rest/api/media/assets/createorupdate#asset)в v3 сопоставляются со свойствами ресурса в версии 2.
+В следующей таблице показано, как свойства [ресурса](/rest/api/media/assets/createorupdate#asset)в v3 сопоставляются со свойствами ресурса в версии 2.
 
 |v3, свойства|свойства v2|
 |---|---|
-|`id`-(уникальный) полный путь Azure Resource Manager см. в разделе примеры в [активе](https://docs.microsoft.com/rest/api/media/assets/createorupdate) .||
+|`id`-(уникальный) полный путь Azure Resource Manager см. в разделе примеры в [активе](/rest/api/media/assets/createorupdate) .||
 |`name`-(Unique) см. [соглашения об именовании](media-services-apis-overview.md#naming-conventions) ||
 |`alternateId`|`AlternateId`|
 |`assetId`|`Id`-(уникальное) значение начинается с `nb:cid:UUID:` префикса.|
@@ -106,11 +107,11 @@ API версии 3 содержит следующие недочеты функ
 
 Чтобы защитить неактивные ресурсы, их нужно зашифровать на стороне хранилища. В следующей таблице показано, как происходит шифрование на стороне хранилища в Службах мультимедиа.
 
-|Вариант шифрования|Описание:|Службы мультимедиа версии 2|Службы мультимедиа версии 3|
+|Вариант шифрования|Описание|Службы мультимедиа версии 2|Службы мультимедиа версии 3|
 |---|---|---|---|
 |Шифрование хранилища Служб мультимедиа|Шифрование AES-256, ключ, управляемый службами мультимедиа.|Поддерживается<sup>(1)</sup>|Не поддерживается<sup>(2)</sup>|
-|[Шифрование службы хранилища для неактивных данных](https://docs.microsoft.com/azure/storage/common/storage-service-encryption)|Шифрование на стороне сервера, предоставляемое службой хранилища Azure, ключом, управляемым Azure или клиентом.|Поддерживается|Поддерживается|
-|[Шифрование хранилища на стороне клиента](https://docs.microsoft.com/azure/storage/common/storage-client-side-encryption)|Шифрование на стороне клиента, предлагаемое службой хранилища Azure, ключ, управляемый клиентом, в Key Vault.|Не поддерживается|Не поддерживается|
+|[Шифрование службы хранилища для неактивных данных](../../storage/common/storage-service-encryption.md)|Шифрование на стороне сервера, предоставляемое службой хранилища Azure, ключом, управляемым Azure или клиентом.|Поддерживается|Поддерживается|
+|[Шифрование хранилища на стороне клиента](../../storage/common/storage-client-side-encryption.md)|Шифрование на стороне клиента, предлагаемое службой хранилища Azure, ключ, управляемый клиентом, в Key Vault.|Не поддерживается|Не поддерживается|
 
 <sup>1</sup> хотя службы мультимедиа поддерживают обработку содержимого в Clear/без какой-либо формы шифрования, делать это не рекомендуется.
 

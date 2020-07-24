@@ -14,16 +14,17 @@ ms.topic: article
 ms.date: 09/22/2019
 ms.author: juliako
 ms.reviewer: adsolank
-ms.openlocfilehash: c24218dc116803ca0e0a1f166b7b54b24fc4d5ef
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: d4589e2e923bf4068cc3a707c69f0304a1539745
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "78163800"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87011555"
 ---
 # <a name="indexing-media-files-with-azure-media-indexer-2-preview"></a>Индексирование файлов мультимедиа с помощью индексатора мультимедийных данных Azure 2 (предварительная версия)
 
 > [!NOTE]
-> Процессор мультимедиа **Azure Media indexer 2** будет снят с учета. Даты прекращения поддержки см. в разделе, посвященном [устаревшим компонентам](legacy-components.md). [Индексатор видео служб мультимедиа Azure](https://docs.microsoft.com/azure/media-services/video-indexer/) заменяет этот устаревший обработчик мультимедиа. Дополнительные сведения см. в статье [Переход с Azure Media Indexer и Azure Media Indexer 2 на Индексатор видео Служб мультимедиа Azure](migrate-indexer-v1-v2.md).
+> Процессор мультимедиа **Azure Media indexer 2** будет снят с учета. Даты прекращения поддержки см. в разделе, посвященном [устаревшим компонентам](legacy-components.md). [Индексатор видео служб мультимедиа Azure](../video-indexer/index.yml) заменяет этот устаревший обработчик мультимедиа. Дополнительные сведения см. в статье [Переход с Azure Media Indexer и Azure Media Indexer 2 на Индексатор видео Служб мультимедиа Azure](migrate-indexer-v1-v2.md).
 
 Обработчик мультимедиа **индексатор мультимедийных данных Azure 2 (предварительная версия)** позволяет сделать мультимедийные файлы и содержимое доступными для поиска, а также создавать дорожки для субтитров. По сравнению с предыдущей версией [индексатора мультимедийных данных](media-services-index-content.md), **индексатор мультимедийных данных Azure 2 (предварительная версия)** быстрее выполняет индексирование и предлагает более широкую поддержку языков. В число поддерживаемых языков входят английский, испанский, французский, немецкий, итальянский, китайский (мандаринский диалект, упрощенное письмо), португальский, арабский, русский и японский.
 
@@ -31,7 +32,7 @@ ms.locfileid: "78163800"
 
 В этой статье показано, как создавать задания индексирования с помощью **индексатора мультимедийных данных Azure 2 (предварительная версия)**.
 
-## <a name="considerations"></a>Особенности
+## <a name="considerations"></a>Рекомендации
 
 Действительны следующие условия.
  
@@ -300,4 +301,3 @@ namespace IndexContent
 [Общие сведения об аналитике служб мультимедиа Azure](media-services-analytics-overview.md)
 
 [Демонстрационные материалы для медиааналитики Azure](https://azuremedialabs.azurewebsites.net/demos/Analytics.html)
-

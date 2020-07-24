@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d1d30a32a58dd2385a214d813307c645c56afdc8
-ms.sourcegitcommit: 0100d26b1cac3e55016724c30d59408ee052a9ab
+ms.openlocfilehash: 85beb04e39c5c47b9ee71ee96c2dff8910766ea3
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86024469"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87009057"
 ---
 # <a name="conditional-access-grant"></a>Условный доступ: предоставление
 
@@ -38,7 +38,7 @@ ms.locfileid: "86024469"
 - [Требовать, чтобы устройство было помечено как соответствующее (Microsoft Intune)](/intune/protect/device-compliance-get-started)
 - [Требовать гибридное устройство, присоединенное к Azure AD](../devices/concept-azure-ad-join-hybrid.md)
 - [Требовать утвержденное клиентское приложение](app-based-conditional-access.md)
-- [Требовать политику защиты приложений.](app-protection-based-conditional-access.md)
+- [Требование политики защиты приложений](app-protection-based-conditional-access.md)
 - [Требовать смены пароля](#require-password-change)
 
 Когда Администраторы выбирают вариант объединения этих параметров, они могут выбрать следующие методы.
@@ -81,7 +81,6 @@ ms.locfileid: "86024469"
 - Microsoft Edge
 - Microsoft Excel
 - Microsoft Flow
-- Microsoft Intune Managed Browser
 - Microsoft Invoicing.
 - Microsoft Kaizala
 - Microsoft Launcher;
@@ -114,7 +113,7 @@ ms.locfileid: "86024469"
 
 Примеры конфигурации см. в статье [как требовать утвержденные клиентские приложения для облачного доступа к приложениям с помощью условного доступа](app-based-conditional-access.md) .
 
-### <a name="require-app-protection-policy"></a>Требовать политику защиты приложений.
+### <a name="require-app-protection-policy"></a>Требование политики защиты приложений
 
 В политике условного доступа можно настроить для клиентского приложения [политику защиты приложений Intune](/intune/app-protection-policy) , чтобы доступ к выбранным облачным приложениям был доступен. 
 
@@ -123,9 +122,22 @@ ms.locfileid: "86024469"
 Этот параметр применяется к следующим клиентским приложениям.
 
 - Кортана от Microsoft
+- Microsoft Edge
+- Microsoft Excel
+- Microsoft Office
 - Microsoft OneDrive
+- Microsoft OneNote;
 - Microsoft Outlook
 - Планировщик (Майкрософт);
+- Microsoft Power BI
+- Microsoft PowerPoint
+- Microsoft SharePoint
+- Microsoft Word
+- Многострочная для Intune
+- Девять сообщений электронной почты & календарь
+
+> [!NOTE]
+> Microsoft Kaizala, Microsoft Skype для бизнеса и Microsoft Visio не поддерживают предоставление **политики защиты приложений** . Если требуется, чтобы эти приложения работали, используйте только **утвержденные приложения** , предоставляемые исключительно. Использование предложения OR между двумя грантами не будет работать для этих трех приложений.
 
 **Замечания**
 
@@ -155,7 +167,7 @@ ms.locfileid: "86024469"
 
 Если ваша организация создала условия использования, в разделе предоставление элементов управления могут отображаться дополнительные параметры. Эти параметры позволяют администраторам требовать подтверждения условий использования в качестве условия доступа к ресурсам, защищенным политикой. Дополнительные сведения об условиях использования можно найти в статье [Azure Active Directory условия использования](terms-of-use.md).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Условный доступ: элементы управления сеансом](concept-conditional-access-session.md)
 

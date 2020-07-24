@@ -9,11 +9,12 @@ ms.topic: article
 ms.workload: infrastructure
 ms.date: 05/7/2019
 ms.author: haroldw
-ms.openlocfilehash: c338e9a6a793d1c2d0557d70242996175d5a85ed
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: e254c0c87465b79a37d9a849cc966e34eed01474
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "81759455"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87010569"
 ---
 # <a name="openshift-in-azure"></a>Использование OpenShift в Azure
 
@@ -29,7 +30,7 @@ OpenShift включает Kubernetes для оркестрации контей
 
 ## <a name="azure-red-hat-openshift"></a>Azure Red Hat OpenShift
 
-Microsoft Azure Red Hat OpenShift — это полностью управляемое предложение OpenShift, работающее в Azure. Эта служба управляется и поддерживается совместно корпорацией Майкрософт и Red Hat. Дополнительные сведения см. в документации по [службе Azure Red Hat OpenShift](https://docs.microsoft.com/azure/openshift/) .
+Microsoft Azure Red Hat OpenShift — это полностью управляемое предложение OpenShift, работающее в Azure. Эта служба управляется и поддерживается совместно корпорацией Майкрософт и Red Hat. Дополнительные сведения см. в документации по [службе Azure Red Hat OpenShift](../../openshift/index.yml) .
 
 ## <a name="openshift-container-platform"></a>Платформа контейнеров OpenShift
 
@@ -41,7 +42,7 @@ OpenShift Container Platform — это [коммерческая версия](
 
 OKD — это высокоуровневый проект OpenShift с [открытым кодом](https://www.okd.io/), который поддерживается сообществом. OKD можно установить в ОС CentOS или Red Hat Enterprise Linux (RHEL).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие предварительные требования для OpenShift в Azure](./openshift-container-platform-3x-prerequisites.md)
 - [Развертывание платформы OpenShift Container Platform](./openshift-container-platform-3x.md)

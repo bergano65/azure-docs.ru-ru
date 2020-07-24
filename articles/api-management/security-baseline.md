@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/04/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: b5640a42c0fdcb0bd958011db28c19854b16a547
-ms.sourcegitcommit: dabd9eb9925308d3c2404c3957e5c921408089da
+ms.openlocfilehash: 4e951b7eb2d3d5e49ab80af2604d5b44565dd25e
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2020
-ms.locfileid: "86252765"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87008546"
 ---
 # <a name="azure-security-baseline-for-api-management"></a>Базовый план безопасности Azure для Управления API
 
@@ -640,7 +640,7 @@ ms.locfileid: "86252765"
 
 ### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4.6. Контроль доступа к ресурсам с помощью RBAC
 
-**Руководство**. Используйте управление доступом на основе ролей для управления доступом к Управлению API Azure. Служба управления API Azure использует управление доступом на основе ролей (RBAC) для детализированного контроля доступа к службам и сущностям управления API (например, к интерфейсам API и политикам).
+**Руководство**. Используйте управление доступом на основе ролей для управления доступом к Управлению API Azure. Служба управления API Azure использует управление доступом на основе ролей Azure (Azure RBAC) для обеспечения точного управления доступом к службам и сущностям управления API (например, к API и политикам).
 
 * [Практическое руководство по использованию управления доступом на основе ролей в службе "Управление API Azure"](./api-management-role-based-access-control.md)
 

@@ -1,18 +1,18 @@
 ---
 title: Создание предложения виртуальной машины Azure в Azure Marketplace
-description: Создание предложения виртуальной машины в Azure Marketplace с необходимым SKU.
+description: Узнайте, как создать предложение виртуальной машины в Azure Marketplace с требуемым планом.
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
-ms.topic: conceptual
+ms.topic: article
 author: emuench
 ms.author: mingshen
-ms.date: 06/17/2020
-ms.openlocfilehash: fe53de2c81f9e9df5fd9270951f943b0b3505f1e
-ms.sourcegitcommit: d7008edadc9993df960817ad4c5521efa69ffa9f
+ms.date: 07/17/2020
+ms.openlocfilehash: 6df1620f2d1097ac23e5dfa3903fefc74d13fa65
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86110986"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87012031"
 ---
 # <a name="create-an-azure-virtual-machine-offer-on-azure-marketplace"></a>Создание предложения виртуальной машины Azure в Azure Marketplace
 
@@ -286,7 +286,7 @@ ms.locfileid: "86110986"
 
 ## <a name="plan-overview"></a>Обзор планов
 
-В Центре партнеров можно настроить различные параметры плана в рамках одного предложения. Раньше планы назывались SKU. Для предложения необходимо настроить хотя бы один план, который будет зависеть от аудитории монетизации, региона Azure, функций или образов виртуальных машин.
+В Центре партнеров можно настроить различные параметры плана в рамках одного предложения. Для предложения требуется по крайней мере один план (прежнее название — номер SKU), который может варьироваться в зависимости от аудитории монетизацию, региона Azure, функций или образов виртуальных машин.
 
 После создания планов откройте вкладку **Обзор планов**, на которой отображаются следующие сведения.
 
@@ -413,7 +413,6 @@ ms.locfileid: "86110986"
 >[!Note]
 >Частные предложения не поддерживаются подписками Azure, установленными через торгового посредника по программе поставщика облачных решений (CSP).
 
-
 #### <a name="hide-a-plan"></a>Скрыть план
 
 Если виртуальная машина предназначена только для косвенного использования, когда на нее ссылается другой шаблон решения или управляемое приложение, установите этот флажок, чтобы опубликовать виртуальную машину, но скрыть ее от клиентов, чтобы они не могли найти или просмотреть ее напрямую.
@@ -516,10 +515,10 @@ ms.locfileid: "86110986"
 
 Также на этой странице приводятся ссылки на материалы по работе с предложением в зависимости от его статуса.
 
-- Если предложение является черновиком: [Удаление черновика предложения](update-existing-offer.md#delete-a-draft-offer))
-- Если предложение является интерактивным: [больше не продавать предложение](update-existing-offer.md#stop-selling-an-offer-or-plan).
-- Если предложение находится на этапе предварительной версии: [Go-Live](publishing-status.md#publisher-approval))
-- Если вы еще не завершили выход из издателя, [Отмените публикацию](update-existing-offer.md#cancel-publishing).
+- Если предложение находится в статусе черновика: [Удалить черновик предложения](update-existing-offer.md#delete-a-draft-offer)
+- Если предложение запущено: [Остановить продажу предложения](update-existing-offer.md#stop-selling-an-offer-or-plan)
+- Если предложение доступно в предварительной версии: [Запустить](publishing-status.md#publisher-approval)
+- Если вы еще не завершили выход из издателя: [Отменить публикацию](update-existing-offer.md#cancel-publishing)
 
 ## <a name="marketplace-examples"></a>Примеры из Marketplace
 

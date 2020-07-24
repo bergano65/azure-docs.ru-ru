@@ -6,15 +6,15 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 06/16/2020
+ms.date: 07/16/2020
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 9cb9f1a33c37487f4bfb1419d45d4e42a862d815
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: ddf9a1309cb4f9156cec3aeb5d2ddd9d22cde485
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84888116"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87011454"
 ---
 # <a name="configure-object-replication-for-block-blobs-preview"></a>Настройка репликации объектов для блочных BLOB-объектов (предварительная версия)
 
@@ -52,7 +52,7 @@ ms.locfileid: "84888116"
 
     :::image type="content" source="media/object-replication-configure/configure-replication-policy.png" alt-text="Снимок экрана, показывающий правила репликации на портале Azure":::
 
-1. При необходимости укажите один или несколько фильтров, чтобы скопировать только BLOB-объекты, соответствующие шаблону префикса. Например, если указать префикс `b`, реплицируются только те BLOB-объекты, имя которых начинается с этой буквы. В качестве части префикса можно указать виртуальный каталог.
+1. При необходимости укажите один или несколько фильтров, чтобы скопировать только BLOB-объекты, соответствующие шаблону префикса. Например, если указать префикс `b`, реплицируются только те BLOB-объекты, имя которых начинается с этой буквы. В качестве части префикса можно указать виртуальный каталог. Строка префикса не поддерживает подстановочные знаки.
 
     На следующем рисунке показаны фильтры, которые ограничивают то, какие именно BLOB-объекты копируются в рамках правила репликации.
 
@@ -68,7 +68,7 @@ ms.locfileid: "84888116"
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
-Чтобы создать политику репликации с помощью PowerShell, сначала установите версию [2.0.1-preview](https://www.powershellgallery.com/packages/Az.Storage/2.0.1-preview) модуля PowerShell Az.Storage. Чтобы установить предварительную версию модуля, сделайте следующее.
+Чтобы создать политику репликации с помощью PowerShell, сначала установите версию [2.0.1-Preview](https://www.powershellgallery.com/packages/Az.Storage/2.0.1-preview) или более позднюю версию модуля "az. Storage PowerShell". Чтобы установить предварительную версию модуля, сделайте следующее.
 
 1. Удалите все предыдущие установки Azure PowerShell из Windows с помощью параметра **Apps & features** (Приложения и компоненты) в разделе **Параметры**.
 

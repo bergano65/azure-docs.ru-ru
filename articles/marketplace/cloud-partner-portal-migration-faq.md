@@ -6,13 +6,13 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: article
 author: anbene
 ms.author: mingshen
-ms.date: 06/29/2020
-ms.openlocfilehash: e708d9a32d63c306a2d1ee8d06b044652f108dde
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.date: 07/14/2020
+ms.openlocfilehash: eafa6c4911e934d391a380e5eb494ca8f7766959
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86231885"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87012065"
 ---
 # <a name="frequently-asked-questions-about-transitioning-from-the-cloud-partner-portal-to-partner-center"></a>Часто задаваемые вопросы о переходе от Портал Cloud Partner в центр партнеров
 
@@ -30,7 +30,7 @@ ms.locfileid: "86231885"
 | Новые покупки и развертывания | Без изменений. Ваши клиенты могут продолжать покупать и развертывать предложения без перерывов. |
 | выплаты; | Все покупки и развертывания будут по своему счету использоваться как обычные. Узнайте больше о том [, как получить оплату в коммерческом магазине](partner-center-portal/get-paid.md). |
 | Интеграция API с существующими [API Портала Cloud Partner](cloud-partner-portal-api-overview.md) | Существующие API Портал Cloud Partner по-прежнему поддерживаются, и существующие интеграции по-прежнему работают. Дополнительные сведения см [. в разделе Поддержка API-интерфейсов портал Cloud Partner RESTful.](#are-the-cloud-partner-portal-rest-apis-still-supported) |
-| Analytics | Вы можете продолжить мониторинг продаж, оценить производительность и оптимизировать предложения в коммерческом магазине, просмотрев аналитику в центре партнеров. Дополнительные сведения см. в статье [доступ к аналитическим отчетам для коммерческого рынка в центре партнеров](partner-center-portal/analytics.md). |
+| Analytics | Вы можете продолжить мониторинг продаж, оценить производительность и оптимизировать предложения в коммерческом магазине, просмотрев аналитику в центре партнеров. Существуют различия между отображением аналитических отчетов в CPP и центре партнеров. Например, **аналитические сведения о продавцах** в cpp имеют вкладку **заказы & использование** , которая отображает данные для предложений на основе использования и предложений на основе использования, а в центре партнеров на странице **заказы** есть отдельная вкладка для предложений SaaS. Дополнительные сведения см. в статье [доступ к аналитическим отчетам для коммерческого рынка в центре партнеров](partner-center-portal/analytics.md). |
 |||
 
 ## <a name="do-i-need-to-create-a-new-account-to-manage-my-offers-in-partner-center"></a>Нужно ли создавать новую учетную запись для управления моими предложениями в центре партнеров?
@@ -50,6 +50,19 @@ ms.locfileid: "86231885"
 | Страница "Журнал" | [https://cloudpartner.azure.com/#history](https://cloudpartner.azure.com/#history) | Функция журнала пока не поддерживается в Центре партнеров. |
 | Панель мониторинга аналитики | [https://cloudpartner.azure.com/#insights](https://cloudpartner.azure.com/#insights) | [https://partner.microsoft.com/dashboard/commercial-marketplace/analytics/summary](https://partner.microsoft.com/dashboard/commercial-marketplace/analytics/summary) |
 | Отчет о выплатах | [https://cloudpartner.azure.com/#insights/payout](https://cloudpartner.azure.com/#insights/payout) | [https://partner.microsoft.com/dashboard/payouts/reports/incentivepayments](https://partner.microsoft.com/dashboard/payouts/reports/incentivepayments) |
+|||
+
+## <a name="payout-report-differences"></a>Различия в отчете о выплатах
+
+Это различия в отчете о выплатах между снятым Портал Cloud Partner и текущим центром партнеров:
+
+| Портал Cloud Partner | Центр партнеров |
+| --- | --- |
+| **Ссылка**: https://cloudpartner.azure.com/ | **Ссылка**: https://partner.microsoft.com/dashboard/payouts/reports/transactionhistory и https://partner.microsoft.com/dashboard/payouts/reports/incentivepayments |
+| **Navigation**: Отчеты о выплатах, предоставленные в выплатах Insights | **Navigation**: Отчет о выплатах, предоставленные в Центре партнеров — значок "Выплата" |
+| **Область**.<ul><li>Транзакция по каждой позиции ("Выполняется сбор", "Собрано" и "Оплачено").</li><li>Отчеты — все позиции после создания заказа на покупку, включая сбор и выставление счетов, а также состояние сбора и позиции, которые еще не подлежат оплате.</li></ul> | **Область**.<ul><li>Позиции после их классификации как подлежащих оплате.</li><li>Клиенты платят сначала корпорации Майкрософт, а затем ISV могут видеть запуск отчета о выплатах.</li><li>В отчете о выплатах не отображается состояние выполнения сбора и выставления счетов.</li></ul> |
+| **Транзакция не готова к выплате**. "Идет выставление счетов" | **Транзакция не готова к выплате**. "Следующий предполагаемый платеж": выплата не обработана. |
+| **Состояние выплаты**: "Н/Д" | **Состояние выплаты**:<ul><li>"Не обработано": подлежит оплате.</li><li>"Предстоящие": оплата будет отправлена издателю со следующей ежемесячной выплатой.</li><li>"Отправлено": платеж отправлен в банк.</li></ul> |
 |||
 
 ## <a name="what-about-offers-i-published-in-the-cloud-partner-portal"></a>Как насчет предложений, опубликованных в Портал Cloud Partner?

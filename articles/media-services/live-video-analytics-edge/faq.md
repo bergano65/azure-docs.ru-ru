@@ -3,11 +3,12 @@ title: Интерактивная аналитика видео на IoT Edge ч
 description: В этом разделе содержатся ответы на IoT Edge часто задаваемые вопросы о службе "Анализ видео".
 ms.topic: conceptual
 ms.date: 04/27/2020
-ms.openlocfilehash: 0a6c1c0f26116227454fa0968264644ea7a43178
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 705c74b1ba6d3a28911185b82a558099e87dc18d
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84260737"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87011521"
 ---
 # <a name="frequently-asked-questions-faqs"></a>Часто задаваемые вопросы (FAQ)
 
@@ -19,14 +20,14 @@ ms.locfileid: "84260737"
 
 |Переменная   |Описание|
 |---|---|
-|[System.DateTime](https://docs.microsoft.com/dotnet/framework/data/adonet/sql/linq/system-datetime-methods)|Представляет текущее время, обычно выраженное как дата и время суток.|
+|[System.DateTime](/dotnet/framework/data/adonet/sql/linq/system-datetime-methods)|Представляет текущее время, обычно выраженное как дата и время суток.|
 |System. Графтопологинаме   |Представляет топологию графа мультимедиа, содержащую схему графа.|
 |System. Графинстанценаме|  Представляет экземпляр графа мультимедиа, содержит значения параметров и ссылается на топологию.|
 
 ## <a name="configuration-and-deployment"></a>Конфигурация и развертывание
 
 Можно ли развернуть модуль Media ребра на устройстве с Windows 10?
-    * Да. См. статью о [контейнерах Linux в Windows 10](https://docs.microsoft.com/virtualization/windowscontainers/deploy-containers/linux-containers).
+    * Да. См. статью о [контейнерах Linux в Windows 10](/virtualization/windowscontainers/deploy-containers/linux-containers).
 
 ## <a name="capture-from-ip-camera-and-rtsp-settings"></a>Запись из IP-камеры и параметров RTSP
 
@@ -84,6 +85,6 @@ ms.locfileid: "84260737"
 * Как Ливевидео аналитика на IoT Edge оплачивается?
     * Дополнительные сведения см. на [странице с ценами](https://azure.microsoft.com/pricing/details/media-services/) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Краткое руководство. Начало работы. Общие сведения об Аналитике видеотрансляции в IoT Edge](get-started-detect-motion-emit-events-quickstart.md)

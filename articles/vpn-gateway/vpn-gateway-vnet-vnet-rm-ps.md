@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 02/15/2019
 ms.author: cherylmc
-ms.openlocfilehash: 5477eea12ee41bae42365555e38aa95ca0faeb3a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 318656a779aa5ba2279f075fcc44589fe2039682
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84987095"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87009498"
 ---
 # <a name="configure-a-vnet-to-vnet-vpn-gateway-connection-using-powershell"></a>Настройка подключения VPN-шлюза между виртуальными сетями с помощью PowerShell
 
@@ -81,7 +81,7 @@ ms.locfileid: "84987095"
 
 * Так как создание шлюза занимает до 45 минут, время ожидания в Azure Cloud Shell периодически истекает в этом руководстве. Вы можете перезапустить Cloud Shell, щелкнув в левом верхнем углу терминала. Обязательно повторно объявите любые переменные при перезапуске терминала.
 
-* Если вы предпочитаете устанавливать последнюю версию модуля Azure PowerShell локально, см. статью [Общие сведения об Azure PowerShell](/powershell/azure/overview).
+* Если вы предпочитаете устанавливать последнюю версию модуля Azure PowerShell локально, см. статью [Общие сведения об Azure PowerShell](/powershell/azure/).
 
 ### <a name="step-1---plan-your-ip-address-ranges"></a><a name="Step1"></a>Шаг 1. Планирование диапазонов IP-адресов
 
@@ -364,7 +364,7 @@ ms.locfileid: "84987095"
    ```azurepowershell-interactive
    Select-AzSubscription -SubscriptionName $Sub5
    ```
-3. Создайте новую группу ресурсов.
+3. Создание группы ресурсов
 
    ```azurepowershell-interactive
    New-AzResourceGroup -Name $RG5 -Location $Location5
@@ -481,7 +481,7 @@ ms.locfileid: "84987095"
 
 [!INCLUDE [vpn-gateway-vnet-vnet-faq](../../includes/vpn-gateway-faq-vnet-vnet-include.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Установив подключение, можно добавить виртуальные машины в виртуальные сети. Дополнительную информацию см. в [документации по виртуальным машинам](https://docs.microsoft.com/azure/).
 * Сведения о BGP см. в статьях [Обзор использования BGP с VPN-шлюзами Azure](vpn-gateway-bgp-overview.md) и [Настройка BGP на VPN-шлюзах Azure с помощью Azure Resource Manager и PowerShell](vpn-gateway-bgp-resource-manager-ps.md).

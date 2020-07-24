@@ -7,11 +7,12 @@ ms.topic: conceptual
 ms.date: 12/13/2019
 ms.author: bwren
 ms.subservice: ''
-ms.openlocfilehash: a2569ca3f998030680bd7dbd872d71ccd372a25d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 73f2b3ea90cc94fa3411552c7b812fe53eb4dbbb
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77672435"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87008104"
 ---
 # <a name="create-diagnostic-setting-in-azure-using-a-resource-manager-template"></a>Создание параметра диагностики в Azure с помощью шаблона диспетчер ресурсов
 [Параметры диагностики](diagnostic-settings.md) в Azure Monitor укажите, куда следует отправить [журналы платформы](platform-logs-overview.md) , собираемые ресурсами Azure и платформой Azure, от которых они зависят. В этой статье приводятся подробные сведения и примеры использования [шаблона Azure Resource Manager](../../azure-resource-manager/templates/template-syntax.md) для создания и настройки параметров диагностики для получения журналов платформы в разные места назначения.
@@ -29,7 +30,7 @@ ms.locfileid: "77672435"
 
 
 ## <a name="resource-logs"></a>Журналы ресурсов
-Для журналов ресурсов добавьте в шаблон ресурс типа `<resource namespace>/providers/diagnosticSettings` . Раздел Properties соответствует формату, описанному в разделе [параметры диагностики — создание или обновление](https://docs.microsoft.com/rest/api/monitor/diagnosticsettings/createorupdate). Укажите `category` в `logs` разделе для каждой категории, действующей для ресурса, который требуется получить. Добавьте `metrics` свойство для сбора метрик ресурсов в те же места назначения, если [ресурс поддерживает метрики](metrics-supported.md).
+Для журналов ресурсов добавьте в шаблон ресурс типа `<resource namespace>/providers/diagnosticSettings` . Раздел Properties соответствует формату, описанному в разделе [параметры диагностики — создание или обновление](/rest/api/monitor/diagnosticsettings/createorupdate). Укажите `category` в `logs` разделе для каждой категории, действующей для ресурса, который требуется получить. Добавьте `metrics` свойство для сбора метрик ресурсов в те же места назначения, если [ресурс поддерживает метрики](metrics-supported.md).
 
 Ниже приведен шаблон, собирающий категорию журнала ресурсов для определенного ресурса в Log Analytics рабочей области, учетной записи хранения и концентратора событий.
 
@@ -143,7 +144,7 @@ ms.locfileid: "77672435"
 ```
 
 ## <a name="activity-log"></a>Журнал действий
-Для журнала действий Azure Добавьте ресурс типа `Microsoft.Insights/diagnosticSettings` . Доступные категории перечислены в списке [категории в журнале действий](activity-log-view.md#categories-in-the-activity-log). Ниже приведен шаблон, собирающий все категории журналов действий в Log Analytics рабочей области, учетной записи хранения и концентратора событий.
+Для журнала действий Azure Добавьте ресурс типа `Microsoft.Insights/diagnosticSettings` . Доступные категории перечислены в списке [категории в журнале действий](./activity-log.md#view-the-activity-log). Ниже приведен шаблон, собирающий все категории журналов действий в Log Analytics рабочей области, учетной записи хранения и концентратора событий.
 
 
 ```json
@@ -235,6 +236,6 @@ ms.locfileid: "77672435"
 ```
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте больше о [журналах платформы в Azure](platform-logs-overview.md).
 * Сведения о [параметрах диагностики](diagnostic-settings.md).

@@ -7,13 +7,14 @@ ms.date: 01/11/2019
 ms.topic: how-to
 ms.service: virtual-machines-linux
 ms.subservice: disks
-ms.openlocfilehash: a658bfc0815a03d0f6944d1c42eacdd04397458d
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: c1dfcad5a4fb6611543e6421e82889f239f14951
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "84660891"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87010838"
 ---
-# <a name="benchmarking-a-disk"></a>Тестирование производительности диска
+# <a name="benchmark-your-application-on-azure-disk-storage"></a>Тестирование производительности приложения на Хранилище дисков Azure
 
 Тестирование производительности — это процесс моделирования различных рабочих нагрузок приложения и измерения его производительности при каждой из них. Выполнив действия, описанные в статье [Хранилище Azure класса Premium. Проектирование для обеспечения высокой производительности](premium-storage-performance.md), вы собрали требования к производительности приложения. Применив инструменты тестирования производительности в виртуальных машинах с приложением, можно определить уровень производительности, которого оно может достичь при использовании хранилища класса «Премиум». В этой статье приведены примеры тестирования производительности виртуальной машины серии DS14 (цен. категория "Стандартный"), для которой подготовлены диски хранилища класса Premium.
 
@@ -23,7 +24,7 @@ ms.locfileid: "84660891"
 
 [!INCLUDE [virtual-machines-disks-benchmarking](../../../includes/virtual-machines-managed-disks-benchmarking.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Перейдите к нашей статье о [проектировании для обеспечения высокой производительности](premium-storage-performance.md).
 
