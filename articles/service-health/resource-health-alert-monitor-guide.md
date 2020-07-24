@@ -3,12 +3,12 @@ title: Создание оповещений Работоспособность 
 description: Создайте оповещение, используя портал Azure, которые уведомляют Вас о том, что ресурсы Azure становятся недоступными.
 ms.topic: conceptual
 ms.date: 6/23/2020
-ms.openlocfilehash: b44df4f63fa2ae2bde9be431e2df268144a036fa
-ms.sourcegitcommit: 3543d3b4f6c6f496d22ea5f97d8cd2700ac9a481
+ms.openlocfilehash: 3a0f4704880d040106a2e4112d621b6d8ffbede6
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86529222"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87091578"
 ---
 # <a name="configure-resource-health-alerts-using-azure-portal"></a>Настройка оповещений о работоспособности ресурсов на портале Azure
 
@@ -45,7 +45,7 @@ ms.locfileid: "86529222"
 1. На [портале](https://portal.azure.com/)Azure выберите **работоспособность службы**.
 
     ![Выбор работоспособности службы](./media/resource-health-alert-monitor-guide/service-health-selection.png)
-2. В разделе **работоспособность ресурсов** выберите **работоспособность ресурсов**.
+2. В разделе **работоспособность ресурсов** выберите **работоспособность службы**.
 3. Щелкните **Добавить оповещение о работоспособности ресурсов** и заполните поля.
 4. В разделе Цель оповещения выберите **подписку**, **типы ресурсов**, **группы ресурсов** и **ресурс** , для которых вы хотите получать оповещения.
 

@@ -24,7 +24,7 @@
 - name: Инструкции
   items:
     - name: Настройка оповещений о событиях работоспособности служб
-      href: alerts-activity-log-service-notifications.md
+      href: ./alerts-activity-log-service-notifications-portal.md
     - name: Просмотр уведомлений о работоспособности служб на портале Azure
       href: service-notifications.md
     - name: Отправка оповещений во внешние системы с помощью веб-перехватчика

@@ -6,19 +6,20 @@ ms.author: brendm
 ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 05/13/2020
-ms.openlocfilehash: 2aadc5806f0c5c610dc28b32039ca944af87ab13
-ms.sourcegitcommit: f7e160c820c1e2eb57dc480b2a8fd6bef7053e91
+ms.custom: devx-track-java
+ms.openlocfilehash: 1b9d7326ec13176fbe65ba430a8a33bb93a48f74
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86231732"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87091459"
 ---
-# <a name="how-to-enable-system-assigned-managed-identity-for-azure-spring-cloud-application"></a>Как включить управляемое системой удостоверение для приложения Azure весны в облаке
+# <a name="how-to-enable-system-assigned-managed-identity-for-azure-spring-cloud-application"></a>Как включить управляемое удостоверение, назначенное системой, для приложения Azure Spring Cloud
 Управляемые удостоверения для ресурсов Azure предоставляют автоматически управляемое удостоверение в Azure Active Directory к ресурсу Azure, например к облачному приложению Azure весны. Это удостоверение можно использовать для аутентификации в любой службе, которая поддерживает аутентификацию Azure AD, не храня какие-либо учетные данные в коде.
 
 В этой статье показано, как включить и отключить назначенные системой управляемые удостоверения для облачного приложения Azure весны с помощью портал Azure и CLI (доступно в версии 0.2.4).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Обязательные условия
 Если вы не знакомы с управляемыми удостоверениями для ресурсов Azure, см. [раздел Обзор](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview).
 Вам потребуется развернутый экземпляр облака Azure весны. Следуйте инструкциям [краткого руководства, чтобы выполнить развертывание с помощью Azure CLI](spring-cloud-quickstart-launch-app-cli.md).
 

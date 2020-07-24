@@ -3,11 +3,12 @@ title: Отправка оповещений о работоспособност
 description: Передача в экземпляр PagerDuty персонализированных уведомлений о событиях работоспособности служб.
 ms.topic: conceptual
 ms.date: 06/10/2019
-ms.openlocfilehash: bb449a5279f3cea55e6aec2f72edfd11fb26227a
-ms.sourcegitcommit: 877491bd46921c11dd478bd25fc718ceee2dcc08
+ms.openlocfilehash: 5c70af2ad2ded919cda0b174705d1d3245eac627
+ms.sourcegitcommit: 3d79f737ff34708b48dd2ae45100e2516af9ed78
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "77654075"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87091544"
 ---
 # <a name="send-azure-service-health-alerts-with-pagerduty-using-webhooks"></a>Отправка оповещений о работоспособности службы Azure в PagerDuty с помощью веб-перехватчиков
 
@@ -24,9 +25,9 @@ ms.locfileid: "77654075"
 
 1.  В разделе **Integration Settings** (Параметры интеграции) выберите следующее:
 
-    а. **Integration Type** (Тип интеграции): Microsoft Azure.
+    А. **Integration Type** (Тип интеграции): Microsoft Azure.
 
-    b. **Имя интеграции**:\<Name\>
+    Б. **Имя интеграции**:\<Name\>
 
     ![Раздел параметров интеграции в PagerDuty](./media/webhook-alerts/pagerduty-integration-settings.png)
 
@@ -38,13 +39,13 @@ ms.locfileid: "77654075"
 
 ## <a name="create-an-alert-using-pagerduty-in-the-azure-portal"></a>Создание оповещения с помощью PagerDuty на портале Azure
 ### <a name="for-a-new-action-group"></a>Для новой группы действий сделайте следующее.
-1. Выполните шаги 1–8 из раздела [Создание оповещения для уведомления о работоспособности службы для новой группы действий с помощью портала Azure](../azure-monitor/platform/alerts-activity-log-service-notifications.md).
+1. Выполните шаги 1–8 из раздела [Создание оповещения для уведомления о работоспособности службы для новой группы действий с помощью портала Azure](./alerts-activity-log-service-notifications-portal.md).
 
 1. В списке **Действия** определите следующие сведения.
 
-    а. **Тип действия: ** *Веб-перехватчик*.
+    А. **Тип действия: ** *Веб-перехватчик*.
 
-    b. **Подробности**: **URL-адрес интеграции** для PagerDuty, который вы сохранили ранее.
+    Б. **Подробности**: **URL-адрес интеграции** для PagerDuty, который вы сохранили ранее.
 
     c. **Имя**: имя, псевдоним или идентификатор веб-перехватчика.
 
@@ -59,9 +60,9 @@ ms.locfileid: "77654075"
 
 1. В список **Действия** добавьте следующие сведения.
 
-    а. **Тип действия: ** *Веб-перехватчик*.
+    А. **Тип действия: ** *Веб-перехватчик*.
 
-    b. **Подробности**: **URL-адрес интеграции** для PagerDuty, который вы сохранили ранее.
+    Б. **Подробности**: **URL-адрес интеграции** для PagerDuty, который вы сохранили ранее.
 
     c. **Имя**: имя, псевдоним или идентификатор веб-перехватчика.
 
@@ -83,8 +84,8 @@ ms.locfileid: "77654075"
 
 1. Откройте [PagerDuty](https://www.pagerduty.com/) и убедитесь, что интеграция настроена успешно.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 - Узнайте, как [настроить уведомления веб-перехватчика для существующих систем управления проблемами](service-health-alert-webhook-guide.md).
 - Ознакомьтесь со [схемой веб-перехватчика оповещений журнала действий](../azure-monitor/platform/activity-log-alerts-webhook.md). 
-- Дополнительные сведения об уведомлениях о работоспособности службы см. в [этой статье](../azure-monitor/platform/service-notifications.md).
+- Дополнительные сведения об уведомлениях о работоспособности службы см. в [этой статье](./service-notifications.md).
 - Дополнительные сведения о группах действий см. в статье [Создание групп действий и управление ими на портале Azure](../azure-monitor/platform/action-groups.md).
